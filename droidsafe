@@ -1,0 +1,146 @@
+#!/usr/bin/env python3
+
+import os
+import sys
+import argparse
+import subprocess
+
+# droidsafe <pass> <args>
+# workdir = assumed to be . if not specified
+# approot = assumed to be . if not specified
+# apk = find in the app_root, give user choice if multiple, if not specified
+# spec = must be specified for some passes
+
+PASSES = ["pegspeccheck", "specdump", "peg-extract"]
+PASSES_STR = ', '.join(PASSES)
+ARG_MAP = { 
+    'outputdir' : '-Ddroidblaze.work.dir',
+    'approot' : '-Ddroidsafe.approot',
+    'apk' : '-Ddroidblaze.target.apk',
+    'secspec' : '-Ddroidsafe.secspec',
+    'pass' : '-Ddroidblaze.run.analyses',
+    'unclassified' : '-Ddroidsafe.print_unclassified',
+}
+DEFAULT_PASS = PASSES[0]
+
+def run_droidsafe(args):
+    cwd = os.environ['APAC_HOME'] + os.sep + "peg-extract"
+    command = []
+    command.append("ant")
+
+    for arg in args:
+        if args[arg] != "":
+            command.append(ARG_MAP[arg] + "=" + args[arg])
+    
+    command.append("run")
+    print(command)
+    subprocess.call(command, cwd=cwd)
+    return
+
+
+def check_env_vars(): 
+    if not "ANDROID_SDK_HOME" in os.environ:
+        print("Need to set ANDROID_SDK_HOME to the root of your android sdk installation.")
+        sys.exit(1)
+        
+    if not "APAC_HOME" in os.environ:
+        print("Need to set APAC_HOME to the root of your apac repository.")
+        sys.exit(1)
+
+def parse_args(parser):
+    parser.add_argument('pass',  nargs="?", 
+                        help="The pass to run: "+ PASSES_STR + " (default: " + DEFAULT_PASS + ")", 
+                        default=DEFAULT_PASS)
+    parser.add_argument('-o', '--outputdir',
+                        metavar="dir", help="Output directory for droidsafe, assumed to be . if not specified", 
+                        default=".")
+    parser.add_argument('-r', '--approot', 
+                        metavar="dir", help="Application root directory, used to analyze source when available.", 
+                        default="")
+    parser.add_argument('-a', '--apk', 
+                        metavar="file", help="Apk for android application, if not specified, will search for apk in approot", 
+                        default="")
+    parser.add_argument('-s', '--secspec', metavar="file", 
+                        help="Security specification file", default="")
+    parser.add_argument('-u', '--unclassified', help='Create a file in config_files that lists the system calls that are unclassified', action="store_true")
+    args = vars(parser.parse_args())
+    return args
+
+def find_apk_file(args):
+    #apk was given on command line, do nothing
+    if args['apk'] != "":
+        return args['apk']
+
+    #otherwise try to find in approot
+    apk_files = []
+    for r,d,f in os.walk(args['approot']):
+        for files in f:
+            if files.endswith(".apk"):
+                apk_files.append(os.path.join(r,files))
+
+    #give users a choice
+    if len(apk_files) > 1:
+        print("Choose APK from ", args['approot'])
+        for item in enumerate(apk_files):
+            print("[%d] %s" % item)
+
+        try:
+            idx = int(input("Enter the file's number: "))
+        except ValueError:
+            print("Invalid number.")
+            sys.exit(1)
+
+        try:
+            return apk_files[idx]
+        except IndexError:
+            print("Number out of range.")
+            sys.exit(1)
+    elif len(apk_files) == 1:
+        return apk_files[0]
+
+    #nothing found
+    return ""
+
+def build_args(args, parser):
+    args['outputdir'] = os.path.abspath(args['outputdir'])
+    
+    if args['unclassified']:
+        args['unclassified'] = 'Y'
+    else:
+        args['unclassified'] = 'N'
+    
+    if args['approot'] != "":
+        args['approot'] = os.path.abspath(args['approot'])
+
+    if args['apk'] != "":
+        args['apk'] = os.path.abspath(args['apk'])
+
+    if args['secspec'] != "":
+        args['secspec'] = os.path.abspath(args['secspec'])
+
+    if not args['pass'] in PASSES:
+        print("Error: Pass given is not a valid DroidSafe pass: " + PASSES_STR)
+        sys.exit(1)
+
+    #determine apk file, we require at least an apk file
+    args['apk'] = find_apk_file(args)
+    
+    if args['apk'] == "":
+        print("Cannot find apk file!\n\nFor help issue: droidsafe --help")
+        sys.exit(1)
+    print ("\nUsing apk: ", args['apk'], "\n")
+
+
+# Gather our code in a main() function
+def main():
+    check_env_vars()
+    parser = argparse.ArgumentParser(description='DroidSafe Tools')
+    args = parse_args(parser)
+    build_args(args, parser)
+    run_droidsafe(args)
+
+
+# Standard boilerplate to call the main() function to begin
+# the program.
+if __name__ == '__main__':
+    main()
