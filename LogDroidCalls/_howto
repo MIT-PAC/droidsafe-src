@@ -1,0 +1,359 @@
+
+// ***
+// 1: Three files read at startup
+//    o _packages file contains a list of Android sytem package names
+//      This file lives in dir LogDroidCalls/
+//      The _packages already has been built. 
+//      Comments at top of _packages file are instructions how _packages was created
+//    o _exempt_classes (optional) Classes listed here even though they are classes
+//      in an android system package will not be processed.
+//    o _exempt_methods (optional) Methods listed here even though they are methods
+//      in classes that are in an android system package will not be processed
+
+// ***
+// 2: The _android_jars file contains a list of Android .jar files
+// Build this file by hand. This file lives in dir LogDroidCalls/
+
+// ***
+// 3: Build jar file, droidcalls.jar, that inserts Log.d instructions
+//    in android .class files.
+// The jar file already has been built.
+  cd  to the LogDroidCalls/
+  ant jar
+
+// ***
+// 4: Create a file named: custom_rules.xml
+// Below is a template to use for creating custom_rules.xml
+//
+
+  <?xml version="1.0" encoding="UTF-8"?>
+
+  <!--
+    Target -post-compile is called after all .java file in android application
+    have been compiled to .class files
+
+    Set these env vars from command line
+    export PATH=/path/to/android/tools:/path/to/android/platform-tools:$PATH
+    export JAVA_HOME=/Library/Java/Home
+    export LDC_DIR=/path/to/LogDroidCalls // path to dir that conatins both
+                                          // droidcalls.jar and _packages
+
+    Properties in this custom_rules.xml file
+    set ASM_PATH to the directory containing the required asm jar files
+
+    asm jar file(s) are needed to run droidcalls.jar
+    check the fileset dir="${ASM_PATH}"  task
+    ams.jar, if it exists, contains all the asm methods you need
+    otherwise you may have to include these three jar files
+      asm-3.3.jar
+      asm-tree-3.3.jar
+      asm-util-3.3.jar
+  -->
+
+  <project name="custom_rules">
+
+    <!-- droidcalls.jar and _packages must be in the same dir -->
+    <!-- Env var $LDC_DIR must be path to that dir               -->
+
+    <property environment="env" />
+
+    <!-- LDC_JARFILE contains the program that will insert  -->
+    <!-- log instruction byte-code into the .class files    -->
+    <property name="LDC_JARFILE" value ="droidcalls.jar" />
+    <!-- EDIT the value if needed -->
+    <property name="ASM_PATH" value="/Users/rjk/Library/Asm"/>
+
+    <target name="-post-compile">
+      <echo>RUNNING JAR FILE ${env.LDC_DIR}/${LDC_JARFILE} </echo>
+      <java classname="LogDroidCalls.LogDroidCalls" fork="true" >
+        <classpath>
+          <!-- Set your env var $LDC_DIR to a path to dir LogDroidCalls -->
+          <fileset dir="${env.LDC_DIR}" >
+            <include name="${LDC_JARFILE}" />
+          </fileset>
+
+          <fileset dir="${ASM_PATH}" >
+            <!-- EDIT in the requied asm jar files if needed -->
+            <include name="asm.jar" />
+          </fileset>
+        </classpath>
+
+        <!-- Pass path to android application to LogDroidCalls -->
+        <arg value="${user.dir}" />
+        <arg value="${env.LDC_DIR}" />
+      </java>
+    </target>
+
+  </project>
+
+
+// ***
+// 5: Build and install the android app
+// Build application class files
+
+  // These three env vars must exist
+  export PATH=/Library/android-sdk-macosx/tools:/Library/android-sdk-macosx/platform-tools:$PATH
+  export JAVA_HOME=/Library/Java/Home
+  export LDC_DIR=/path/to/LogDroidCalls // path to dir containing logdroidcalls.jar
+
+  // Create file build.xml
+  cd <android project dir>
+  android update project --name <project-name> --target 1 --path .
+  // CHANGED TO ABOVE
+  // CHANGED TO ABOVE android update project --path .  // Creates build.xml
+  // CHANGED TO ABOVE => Edit the project name in 2nd line in build.xml - <project name="MY-PROJECT-NAME"...
+
+  // Start the emulator
+  android avd
+
+  The goal is the create a Proxy.java, compile a .class from it,
+  alter bytecode of .class files that invoke android system calls. 
+  So need to perform two builds - one to build the Proxy.java
+  class, another that compiles Proxy.java
+  Choose one of two  rebuild and install cycles
+    If "ant debug install" removes bin/class
+      a: ant clean
+      b: make sure cusomt_rules.xml is present
+      c: ant debug
+      d: ant debug install
+    If "ant debug install" does not remove bin/class
+      a: ant clean
+
+      b: make sure custom_rules.xml is present
+
+      // compile code with custom_rules.xml present.
+      // A Proxy.java  class with static methods will be created.
+      // .class files will be altered, each android system call will
+      // be replace with a call to a static java method in Proxy class.
+      // The android system call will be called from the static java method.
+      b: ant debug
+
+      c: mv custom_rules.xml custom_rules.moved
+
+      // Recompile everthing and re-create Proxy.java
+      // o will not recompile .class files
+      // o coverts application .class files to .dex
+      // o packages everything to a .apk file
+      // o installs the .apk file to emulator 
+  	  d: ant debug install
+
+
+
+// ***
+// 6: Run the application on the emulator
+//    and Redirect logcat contents to a file
+// Log.d messages will be in tht efile
+
+  // This puts logcat messages in file
+  adb logcat *:D > <filename>
+
+  // <filename> will contain Log.d message listing android system calls that were made.
+  // Other Log message will be in <filename> as well.
+  // Each Log.d system call message look something like:
+  // D/pkg-name/class.method( 17008): android/widget/RadioBUtton.setChecked
+
+// ****
+// ****
+
+  adb logcat -f <filename> -D // outputs to <filename>
+                              // priority level is "D" for debug
+                              //          can b V, D, I, W, E, F, S
+  adb logcat *:D // To veiw all Debug 
+  // ***
+
+  adb is three processes: client  Both run on client machine
+                          server  Binds to port 5037 listening for client
+                                  Connect to all running emulator(or device instances)
+                          daemon Runs in bg on emulator (or device instance)
+
+  adb pull <remote> <local> Copy file from emulator to devel computer
+  ./ddms // ddms connects to adb and opens a connection to VM's debugger
+  
+
+
+Something about in manifest <uses-sdk android:minSdkVersion="integer"...
+Something about keep build target set to same version as I have
+defined for android:minSdkVersion
+
+--
+
+An applicatioin can request permission to access "device data" such as
+user's contacts, SMS messages, mountable storage(SD card), camera, Bluetooth, etc
+request happens at instrall time
+The 4 type of app compontents:
+ *Activities: represents a single screen with a user iface
+             -pass Intent to startActivity()
+ *Services:   runs in bg for o long-running operations
+                             o to perform work for remote processes
+              has no user iface
+             -pass Intent to startService() or to bindService()
+  Content provider: Manages a shared set of app data in persistant storage.
+              ex: Android provides a content provider that manages user's contact info
+              ex: Note Pad uses a content provider to save private-to-user data
+             -call query() on a ContentResolver
+ *Broadcast receivers: responds to system-wide broadcast announcements.
+              broadcast is delivered as an Intent object
+              origin of broadcasts
+                ex system announcing that screen is turned off, battery low,
+                   picture captured
+                ex app initiated broadcasts likelet other apps know that some data has
+                   been downloaded
+             -pass Intent to sendBroadcast(), or senedOrderedBroadcast() or sendSticyBroadcase()
+  Any app can start another app's component!!
+      ex app can send msg to system specifying your "intent"
+         to activate a component ie to start an activity
+         in another app (ex camera app) to capture a photo
+         Does this without linking. The camera app is started, instantiated, and
+         runs in process belonging to camera and NOT your app that called it.
+  * these 3 astricked componet types are activated by asyn. msg or "intent"
+    Content provider must go thru ContentResolver
+
+--
+
+Dalvik
+  Android uses a special virtual machine: Dalvik Vitrual Machine.
+  Dalvik Vitrual Machine uses its own bytecode format which is different from Java bytecode.
+  Java class files need to get converted to Dalvik bytecod format.
+  Android SDK has tool calle dx which converts Java class files to .dex (Dalvik Executable) file
+  All class file of an app are placed in one compressed .dex file
+
+.apk
+  .apk (Android Package) file: .dex file + resouces (images & XML file) are packed into .apk file.
+aapt
+  The program aapt (Android Asset Packaging Tool) does this
+
+adb
+  .apk file is complete Android application. Is deployed to an Android device by adb.
+
+SDK
+  has all the command line based tools to do this
+
+ADT (Eclipse plugin)
+  does all this transparantly
+
+AndroidManifest.xml
+
+R.java
+  Is auto-generated and is in gen/... directory
+  Auto Contains static ID integer values that reference certain resouces of the project, which must exist in res/
+  Maintained by Eclipse ADT tools.
+
+res/
+  Contains resources
+
+assets/
+  Contains any other data
+
+Lifecycle - Android may stop/destroy application eg q. incoming call.
+  onSaveInstanceState() - called after Activity is stopped
+                          Use this to save data
+  onPause() - always called if Activity end
+                          Use to release resource or save data
+  onResume() - called if Activity is re-started.
+                          Use to init fields
+Configuration Change - change in orientation
+  Causes a restore of applicsation
+  on simulator use: Ctrl+F11
+
+android.content.Context
+  Connection to Android system
+                project resouces
+                info about application env
+                Android Services eg Location Service
+
+Google v Android AVD
+  ? Something about Google Maps
+
+
+GPU emulation ?
+Hardware button ?
+If problems with communication with emulator or Adnroid device
+  Window=>Open Perspective=>Other=>DDMS  "Reset adb"
+
+==
+
+To connect to source code so can browse source code
+  Right click on android.jar
+  Select Properties=>Java Source Attachment
+
+AVD Android virtual device = runs in the Android device emulator
+When creating an AVD decide on either
+  o Android device - contains program from Android Open Source Project
+  o Goolge device  = "also"(?) will contain several Google apps ex. Google Maps app
+    eg To use Google Maps, you must run the app on an AVD with Google API's
+
+  To create and run Android Virtual Device
+  and will display it under "Virtual devices"
+    Windows=>AVD Manager
+    Click "New"
+    Click Snapshot[x] enabled
+    Click "Create AVD"
+
+    Now can select the device and click Start button
+    ... finally it will start
+
+
+BUG FIX - dragging Text Fields did not work 
+  Problem with spell checker in EditText - Edit no drag to draw area
+    edit xml, adding line
+    android:inputType="textNoSuggestions"
+
+--
+System calls for services controlled by kernel
+System call for an ARM device - most Android devices use ARM
+SYSCALLS.TXT
+  Contains list of all syscall stubs to generate 
+           numeric identifier
+           signature
+  Android System call numbers are in bionic/libc/SYSCALLS.TXT
+Bionic C Library Overview
+  is lightweight wrappers around kernel facilities
+  Android-specific features
+    access to system properteis <sys/system_properties.h.
+    Android-specific user/group management
+      o Android uses Linux user/group management to secure
+        process permissions like access to various filesystem dirs
+        Each installed application gets its own uid_t/gid_t >= 10000
+        uid_t/gid_t < 10000 are system daemons
+      o getpwnam() recognizes some hard-coded subsystem names (eg "radio")
+        and translates them to their low-uwer-id values
+        ? Something about recognigin app_1234 (which is app loaded with uid 10000 + 1234)
+      o getgrnam works similarly ?
+      o getgrouplist() always returns a single group for any user name, which
+        is the one passed as an input parameter ?
+      o getgrpid() will only return a structure that contains a single-element
+        members list, corresponding to the user with the "same numerical value
+        than the group" ?
+      o see bionic/libc/bionic/stubs.c for details
+    getservent()
+      Is no /etc/services on Android. C library embeds a constant list of services
+      in its executable, which is parsed on demand
+      See: bionic/libc/netbsd/net/getservent.c
+           bionic/libc/netbsd/net/services.c
+      The list is rarely used
+      getservent() returne thread-local data
+      getservbyport() | are also implemented 
+      getservbyname() | in similar fashion
+    getprotoent()
+      Is no /etc/protocol on Android.
+      getprotoent() is not implemented
+
+Android exposes a native API to apps thru "Native Development Kit(NDK")
+described in
+  http://mobilepearls.com/labs/native-android-api/STABLE-APIS.html
+  Can write an app with native code - but to access features of platform
+  need to go through JNI see: docs/NATIVE-ACTIVITY.html (not yet written?
+
+Java Native Interface (JNI)
+  
+Resource Bundles have to do with language/locale/etc
+
+--
+
+COMMAND LINE
+  To create virtual Android device
+      android create avd -n (NAME) -t 1
+
+  To invoke virtual machine
+      emulator -avd NAME
+      window=>AVD Manager lists AVD Names
