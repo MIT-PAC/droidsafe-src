@@ -9,7 +9,7 @@ To Run DroidSafe:
   * Set ANDROID_SDK_HOME environment variable to root directory of your android SDK
 
 1. Environment variables
-* Set APAC_HOME to point to .. (root of apac repo, .. of this directory)
+* Set APAC_HOME to point to .. (trunk of droidsafe repo, .. of this directory)
 * Set ANDROID_SDK_HOME environment variable to root directory of your android SDK
 * Add APAC_HOME/bin to your path
 
