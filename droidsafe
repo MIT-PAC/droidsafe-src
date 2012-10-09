@@ -20,6 +20,7 @@ ARG_MAP = {
     'secspec' : '-Ddroidsafe.secspec',
     'pass' : '-Ddroidblaze.run.analyses',
     'unclassified' : '-Ddroidsafe.print_unclassified',
+    'bytecode' : '-Ddroidsafe.use_bytecode',
 }
 DEFAULT_PASS = PASSES[0]
 
@@ -63,6 +64,7 @@ def parse_args(parser):
     parser.add_argument('-s', '--secspec', metavar="file", 
                         help="Security specification file", default="")
     parser.add_argument('-u', '--unclassified', help='Create a file in config_files that lists the system calls that are unclassified', action="store_true")
+    parser.add_argument('-b', '--bytecode', help='Instead of converting the dex to bytecode for analysis, use the java bytecode directly', action="store_true")
     args = vars(parser.parse_args())
     return args
 
@@ -108,7 +110,12 @@ def build_args(args, parser):
         args['unclassified'] = 'Y'
     else:
         args['unclassified'] = 'N'
-    
+
+    if args['bytecode']:
+        args['bytecode'] = 'Y'
+    else:
+        args['bytecode'] = 'N'
+
     if args['approot'] != "":
         args['approot'] = os.path.abspath(args['approot'])
 
