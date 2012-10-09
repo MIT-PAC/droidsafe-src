@@ -116,5 +116,12 @@ public class DroidSafeCalls {
                   activityClass), 0));
   }
                                             
+  /**
+   * Runs the activity specified by activity class.
+   */
+  public static void startActivity (Context context, Class activityClass) {
+    context.startActivity (new Intent (context, activityClass));
+  }
+
 
 }
