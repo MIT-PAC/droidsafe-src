@@ -104,6 +104,14 @@ public class DroidSafeCalls {
               sortOrder);
   }
 
+  public static Cursor managedQuery (Activity activity, String uri_str, 
+          String[] projection, String selection, String selectionArgs,
+                                     String sortOrder) {
+
+    return activity.managedQuery (Uri.parse (uri_str), projection, selection,
+                                  selectionArgs, sortOrder);
+  }
+
   /**
    * Setups the RemoteView (usually used in a widget) to run the specified
    * activity when it is clicked.
