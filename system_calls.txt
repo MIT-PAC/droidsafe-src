@@ -592,7 +592,7 @@ spec        android.content.Intent: void setSourceBounds(android.graphics.Rect)
 spec        android.content.Intent: int fillIn(android.content.Intent, int)
 spec        android.content.Intent: boolean filterEquals(android.content.Intent)
 spec        android.content.Intent: int filterHashCode()
-spec        android.content.Intent: java.lang.String toString()
+safe        android.content.Intent: java.lang.String toString()
 spec        android.content.Intent: java.lang.String toURI()
 spec        android.content.Intent: java.lang.String toUri(int)
 spec        android.content.Intent: int describeContents()
@@ -963,9 +963,10 @@ spec        android.os.Environment: java.lang.String getExternalStorageState()
 
 
 
-# Handlers seem dangerous and we don't really know how to support them
-ban         android.os.Handler: boolean postDelayed(java.lang.Runnable,long)
-ban         android.os.Handler: void <init>()
+# Handlers seem dangerous and we don't really know how to support them.  But
+# they exist in the apps we need to analyze, so spec for now
+spec        android.os.Handler: boolean postDelayed(java.lang.Runnable,long)
+spec        android.os.Handler: void <init>()
 
 
 # Parcel objects seem related to IPC, so potentially security-critical:
@@ -1125,9 +1126,6 @@ safe        android.view.MenuItem: int getItemId()
 safe        android.view.MenuItem: android.view.MenuItem setVisible(boolean)
 safe        android.view.MenuItem: android.view.MenuItem setEnabled(boolean)
 spec        android.view.MenuItem: android.view.MenuItem setShortcut(char, char) # could this fool users into doing something they don't want?
-# added this non-existent method because droidsafe sometimes confuses chars and ints
-spec        android.view.MenuItem: android.view.MenuItem setShortcut(int, int) # could this fool users into doing something they don't want?
-
 
 safe        android.view.View: void <init>(android.content.Context)
 safe        android.view.View: void <init>(android.content.Context, android.util.AttributeSet)
@@ -1623,11 +1621,12 @@ safe        android.widget.TextView: boolean getFreezesText()
 spec        android.widget.TextView: void setEditableFactory(android.text.Editable$Factory)
 spec        android.widget.TextView: void setSpannableFactory(android.text.Spannable$Factory)
 
-# This can set the text in a widget AND a button or menu item.
-# This is banned.  To set text in a widget (which is safe), use
+# This used to be banned because it could be used to confuse a user
+# as to what a button does.  However, as long as the button text is a constant
+# this seems ok.  To set text in a widget (which is safe), use
 # DroidSafe.setText().  This should be done for KeepState as well at 
 # some point
-ban         android.widget.TextView: void setText(java.lang.CharSequence)
+spec        android.widget.TextView: void setText(java.lang.CharSequence)
 safe        android.widget.TextView: void setTextKeepState(java.lang.CharSequence)
 
 safe        android.widget.TextView: void setText(java.lang.CharSequence, android.widget.TextView$BufferType)
@@ -2956,7 +2955,7 @@ safe        java.lang.NumberFormatException: void <init>(java.lang.String)
 safe        java.lang.Object: void <init>()
 safe        java.lang.Object: java.lang.Object clone()
 safe        java.lang.Object: boolean equals(java.lang.Object)
-safe        java.lang.Object: java.lang.Object finalize()
+#safe        java.lang.Object: java.lang.Object finalize() #not in the android jar file
 safe        java.lang.Object: int hashCode()
 safe        java.lang.Object: void notify()
 safe        java.lang.Object: void notifyAll()
@@ -3303,9 +3302,10 @@ spec        java.lang.System: java.lang.String setProperty(java.lang.String, jav
 # Anything related with the security manager seems security-critical:
 spec        java.lang.System: void setSecurityManager(java.lang.SecurityManager)
 
-# We do not allow explicit threads (at least for now):
-ban         java.lang.Thread: void <init>(java.lang.Runnable)
-ban         java.lang.Thread: void start()
+# We wish we could not allow explicit threads, but are stuck for now
+spec        java.lang.Thread: void <init>(java.lang.Runnable)
+spec        java.lang.Thread: void <init>(java.lang.Runnable,java.lang.String)
+spec        java.lang.Thread: void start()
 safe        java.lang.Thread: void sleep(long)
 
 safe        java.lang.Throwable: void <init>()
@@ -3855,7 +3855,10 @@ safe        java.util.EnumSet: java.util.EnumSet range(java.lang.Enum,java.lang.
 safe        java.util.EnumSet: java.util.EnumSet clone()
 safe        java.util.EnumSet: java.lang.Object clone()
 
-safe        java.util.Date: void <init>()
+# Getting the date can be a possible trigger
+# Other calls only manipulate a date.  Its possible the comparison functions
+# should be spec just so that we might see possible trigger comparisons.
+spec        java.util.Date: void <init>()
 safe        java.util.Date: void <init>(int, int, int)
 safe        java.util.Date: void <init>(int, int, int, int, int)
 safe        java.util.Date: void <init>(int, int, int, int, int, int)
@@ -4910,3 +4913,250 @@ spec        android.widget.ToggleButton: void setChecked(boolean)
 safe        android.os.AsyncTask: boolean isCancelled()
 # also should be safe to publish progress (should always do it)
 safe        android.os.AsyncTask: void publishProgress(java.lang.Object[])
+
+safe 	    android.widget.ArrayAdapter: void <init>(android.content.Context, int)
+safe	    android.widget.ArrayAdapter: void <init>(android.content.Context, int, int)
+safe	    android.widget.ArrayAdapter: void <init>(android.content.Context, int, java.lang.Object[])
+safe	    android.widget.ArrayAdapter: void <init>(android.content.Context, int, int, java.lang.Object[])
+safe	    android.widget.ArrayAdapter: void <init>(android.content.Context, int, java.util.List)
+safe	    android.widget.ArrayAdapter: void <init>(android.content.Context, int, int, java.util.List)
+safe	    android.widget.ArrayAdapter: void add(java.lang.Object)
+safe	    android.widget.ArrayAdapter: void addAll(java.util.Collection)
+safe	    android.widget.ArrayAdapter: void addAll(java.lang.Object[])
+safe	    android.widget.ArrayAdapter: void insert(java.lang.Object, int)
+safe	    android.widget.ArrayAdapter: void remove(java.lang.Object)
+safe	    android.widget.ArrayAdapter: void clear()
+safe	    android.widget.ArrayAdapter: void sort(java.util.Comparator)
+safe	    android.widget.ArrayAdapter: void notifyDataSetChanged()
+safe	    android.widget.ArrayAdapter: void setNotifyOnChange(boolean)
+safe	    android.widget.ArrayAdapter: android.content.Context getContext()
+safe	    android.widget.ArrayAdapter: int getCount()
+safe	    android.widget.ArrayAdapter: java.lang.Object getItem(int)
+safe	    android.widget.ArrayAdapter: int getPosition(java.lang.Object)
+safe	    android.widget.ArrayAdapter: long getItemId(int)
+safe	    android.widget.ArrayAdapter: android.view.View getView(int, android.view.View, android.view.ViewGroup)
+safe	    android.widget.ArrayAdapter: void setDropDownViewResource(int)
+safe	    android.widget.ArrayAdapter: android.view.View getDropDownView(int, android.view.View, android.view.ViewGroup)
+safe	    android.widget.ArrayAdapter: android.widget.ArrayAdapter createFromResource(android.content.Context, int, int)
+safe	    android.widget.ArrayAdapter: android.widget.Filter getFilter()
+
+safe	    java.text.SimpleDateFormat: void <init>()
+safe	    java.text.SimpleDateFormat: void <init>(java.lang.String)
+safe	    java.text.SimpleDateFormat: void <init>(java.lang.String, java.text.DateFormatSymbols)
+safe	    java.text.SimpleDateFormat: void <init>(java.lang.String, java.util.Locale)
+safe	    java.text.SimpleDateFormat: void applyLocalizedPattern(java.lang.String)
+safe	    java.text.SimpleDateFormat: void applyPattern(java.lang.String)
+safe	    java.text.SimpleDateFormat: java.lang.Object clone()
+safe	    java.text.SimpleDateFormat: boolean equals(java.lang.Object)
+safe	    java.text.SimpleDateFormat: java.text.AttributedCharacterIterator formatToCharacterIterator(java.lang.Object)
+safe	    java.text.SimpleDateFormat: java.lang.StringBuffer format(java.util.Date, java.lang.StringBuffer, java.text.FieldPosition)
+safe 	    java.text.SimpleDateFormat: java.util.Date get2DigitYearStart()
+safe	    java.text.SimpleDateFormat: java.text.DateFormatSymbols getDateFormatSymbols()
+safe	    java.text.SimpleDateFormat: int hashCode()
+safe	    java.text.SimpleDateFormat: java.util.Date parse(java.lang.String, java.text.ParsePosition)
+safe	    java.text.SimpleDateFormat: void set2DigitYearStart(java.util.Date)
+safe	    java.text.SimpleDateFormat: void setDateFormatSymbols(java.text.DateFormatSymbols)
+safe	    java.text.SimpleDateFormat: java.lang.String toLocalizedPattern()
+safe	    java.text.SimpleDateFormat: java.lang.String toPattern()
+
+safe	    java.text.Format: void <init>()
+safe	    java.text.Format: java.lang.Object clone()
+safe	    java.text.Format: java.lang.String format(java.lang.Object)
+safe	    java.text.Format: java.lang.StringBuffer format(java.lang.Object, java.lang.StringBuffer, java.text.FieldPosition)
+safe	    java.text.Format: java.text.AttributedCharacterIterator formatToCharacterIterator(java.lang.Object)
+safe	    java.text.Format: java.lang.Object parseObject(java.lang.String)
+safe	    java.text.Format: java.lang.Object parseObject(java.lang.String, java.text.ParsePosition)
+
+#
+# New calls for SuperSudoku (jhp)
+#
+# These seem to be simply UI building calls, we didn't want to support these
+# yet, but they are here.  Possibly could be considered safe.
+spec        android.view.ViewGroup: void addView(android.view.View)
+spec        android.widget.Button: void <init>(android.content.Context)
+spec        android.widget.EditText: void <init>(android.content.Context)
+spec        android.widget.RelativeLayout: void <init>(android.content.Context)
+spec        android.widget.RelativeLayout$LayoutParams: void <init>(int,int)
+spec        android.widget.RelativeLayout$LayoutParams: void addRule(int,int)
+
+# this just creates an array of the specified type, seems safe
+safe        java.lang.reflect.Array: java.lang.Object newInstance(java.lang.Class,int[])
+# tree sets are safe
+safe        java.util.TreeSet: boolean add(java.lang.Object)
+safe        java.util.TreeSet: void <init>()
+
+#
+# New calls for SysMon (jhp)
+#
+spec        android.widget.AdapterView: void setOnItemClickListener(android.widget.AdapterView$OnItemClickListener)
+spec        android.os.SystemClock: long elapsedRealtime()
+spec        android.os.Handler: void removeCallbacks(java.lang.Runnable)
+spec        android.widget.CompoundButton: void setChecked(boolean)
+spec        android.widget.CompoundButton: void setOnCheckedChangeListener(android.widget.CompoundButton$OnCheckedChangeListener)
+safe        android.content.ContextWrapper: android.content.Context getApplicationContext()
+# The account manager controls information about the accounts (such as email accounts or other
+# places where contacts can be stored).  The first is just the manager (and arguably safe), but the
+# second contains information on how to authenticate the accounts themselves.  Pretty dangerous
+# stuff
+spec        android.accounts.AccountManager: android.accounts.AccountManager get(android.content.Context)
+spec        android.accounts.AccountManager: android.accounts.AuthenticatorDescription[] getAuthenticatorTypes()
+# Gets information abou the application packages that are installed
+spec        android.content.ContextWrapper: android.content.pm.PackageManager getPackageManager()
+# Gets the image for a package
+spec        android.content.pm.PackageManager: android.graphics.drawable.Drawable getDrawable(java.lang.String,int,android.content.pm.ApplicationInfo)
+spec        android.content.pm.PackageManager: java.lang.CharSequence getText(java.lang.String,int,android.content.pm.ApplicationInfo)
+# inflates a view from a resource id
+spec        android.view.LayoutInflater: android.view.View inflate(int,android.view.ViewGroup,boolean)
+# set the displayed image to the specified image
+spec        android.widget.ImageView: void setImageDrawable(android.graphics.drawable.Drawable)
+
+# none of these seem that dangerous, but also seem relatively unusual
+# and might as well appear in the spec
+spec        android.os.Environment: boolean isExternalStorageRemovable()
+spec        android.os.Environment: java.io.File getDataDirectory()
+spec        android.os.Environment: java.io.File getDownloadCacheDirectory()
+spec        android.os.Environment: java.io.File getRootDirectory()
+# information about a file system
+spec        android.os.StatFs: int getAvailableBlocks()
+spec        android.os.StatFs: int getBlockCount()
+spec        android.os.StatFs: int getBlockSize()
+spec        android.os.StatFs: void <init>(java.lang.String)
+
+# Adds something to the current view
+spec        android.view.ViewGroup: void addView(android.view.View,android.view.ViewGroup$LayoutParams)
+safe        android.widget.LinearLayout: void <init>(android.content.Context)
+
+# this is completely safe, but its good to make it visible because it MUST be
+# performed in onPause and onStop
+spec        android.media.MediaPlayer: void release()
+
+# various calls that setup the mediaplayer.  Arguably at least some of these
+# could be safe (what can you do with a player?)
+spec        android.media.MediaPlayer: void <init>()
+spec        android.media.MediaPlayer: void prepare()
+spec        android.media.MediaPlayer: void setDataSource(java.lang.String)
+spec        android.media.MediaPlayer: void start()
+
+spec        android.speech.SpeechRecognizer: void startListening(android.content.Intent)
+spec        android.speech.SpeechRecognizer: android.speech.SpeechRecognizer createSpeechRecognizer(android.content.Context)
+spec        android.speech.SpeechRecognizer: void setRecognitionListener(android.speech.RecognitionListener)
+spec        android.os.Bundle: java.util.ArrayList getStringArrayList(java.lang.String)
+
+# Information about various connectivity
+spec        android.net.ConnectivityManager: android.net.NetworkInfo getActiveNetworkInfo()
+spec        android.net.NetworkInfo: android.net.NetworkInfo$State getState()
+spec        android.net.NetworkInfo: boolean isRoaming()
+spec        android.net.NetworkInfo: java.lang.String getExtraInfo()
+spec        android.net.NetworkInfo: java.lang.String getTypeName()
+spec        android.net.TrafficStats: long getTotalRxBytes()
+spec        android.net.TrafficStats: long getTotalRxPackets()
+spec        android.net.TrafficStats: long getTotalTxBytes()
+spec        android.net.TrafficStats: long getTotalTxPackets()
+
+# vibrate for the specified number of milliseconds
+spec        android.os.Vibrator: void vibrate(long)
+
+spec        android.widget.ListView: boolean dispatchKeyEvent(android.view.KeyEvent)
+spec        android.view.ViewGroup: boolean dispatchKeyShortcutEvent(android.view.KeyEvent)
+spec        android.widget.AdapterView: boolean dispatchPopulateAccessibilityEvent(android.view.accessibility.AccessibilityEvent)
+spec        android.view.ViewGroup: boolean dispatchTouchEvent(android.view.MotionEvent)
+spec        android.view.ViewGroup: boolean dispatchTrackballEvent(android.view.MotionEvent)
+spec        android.widget.AbsListView: boolean onGenericMotionEvent(android.view.MotionEvent)
+spec        android.widget.ListView: boolean onKeyDown(int,android.view.KeyEvent)
+spec        android.widget.ListView: boolean onKeyMultiple(int,int,android.view.KeyEvent)
+spec        android.widget.ListView: boolean onKeyUp(int,android.view.KeyEvent)
+spec        android.widget.AbsListView: boolean onTouchEvent(android.view.MotionEvent)
+spec        android.accounts.AccountManager: void addOnAccountsUpdatedListener(android.accounts.OnAccountsUpdateListener,android.os.Handler,boolean)
+spec        android.provider.ContactsContract$CommonDataKinds$Email: java.lang.CharSequence getTypeLabel(android.content.res.Resources,int,java.lang.CharSequence)
+spec        android.provider.ContactsContract$CommonDataKinds$Phone: java.lang.CharSequence getTypeLabel(android.content.res.Resources,int,java.lang.CharSequence)
+spec        android.widget.Spinner: void setAdapter(android.widget.SpinnerAdapter)
+spec        android.widget.Spinner: void setPrompt(java.lang.CharSequence)
+spec        android.accounts.AccountManager: void removeOnAccountsUpdatedListener(android.accounts.OnAccountsUpdateListener)
+spec        android.content.ContentProviderOperation$Builder: android.content.ContentProviderOperation build()
+spec        android.content.ContentProviderOperation$Builder: android.content.ContentProviderOperation$Builder withValue(java.lang.String,java.lang.Object)
+spec        android.content.ContentProviderOperation$Builder: android.content.ContentProviderOperation$Builder withValueBackReference(java.lang.String,int)
+spec        android.content.ContentProviderOperation: android.content.ContentProviderOperation$Builder newInsert(android.net.Uri)
+spec        android.content.ContentResolver: android.content.ContentProviderResult[] applyBatch(java.lang.String,java.util.ArrayList)
+spec        android.widget.AdapterView: int getSelectedItemPosition()
+spec        android.content.ContextWrapper: java.lang.String getPackageName()
+spec        android.net.VpnService: android.content.Intent prepare(android.content.Context)
+spec        android.widget.AdapterView: void setOnItemSelectedListener(android.widget.AdapterView$OnItemSelectedListener)
+
+spec        android.content.BroadcastReceiver: void abortBroadcast()
+spec        android.os.Bundle: java.lang.Object get(java.lang.String)
+spec        android.os.Vibrator: boolean hasVibrator()
+spec        android.speech.SpeechRecognizer: boolean isRecognitionAvailable(android.content.Context)
+spec        android.telephony.SmsMessage: android.telephony.SmsMessage createFromPdu(byte[])
+spec        android.telephony.SmsMessage: java.lang.String getMessageBody()
+safe        android.widget.LinearLayout$LayoutParams: void <init>(int,int,float)
+spec        java.lang.Thread: void interrupt()
+
+spec        android.net.VpnService: void <init>()
+spec        android.net.wifi.WifiInfo: java.lang.String getSSID()
+spec        android.net.wifi.WifiManager: android.net.wifi.WifiInfo getConnectionInfo()
+
+# asks for a list of activities that can respond to the specified Intent
+spec        android.content.pm.PackageManager: java.util.List queryIntentActivities(android.content.Intent,int)
+
+# variety of io/calls.  Only the writes themselves seemingly need to be spec
+safe        java.nio.Buffer: java.nio.Buffer clear()
+safe        java.nio.Buffer: java.nio.Buffer flip()
+safe        java.nio.Buffer: java.nio.Buffer limit(int)
+safe        java.nio.Buffer: java.nio.Buffer position(int)
+safe        java.nio.ByteBuffer: byte get(int)
+safe        java.nio.ByteBuffer: byte[] array()
+safe        java.nio.ByteBuffer: java.nio.ByteBuffer allocate(int)
+safe        java.nio.ByteBuffer: java.nio.ByteBuffer put(byte[])
+safe        java.nio.ByteBuffer: java.nio.ByteBuffer put(byte)
+spec        java.nio.channels.DatagramChannel: int read(java.nio.ByteBuffer)
+spec        java.nio.channels.DatagramChannel: int write(java.nio.ByteBuffer)
+spec        java.nio.channels.DatagramChannel: java.net.DatagramSocket socket()
+spec        java.nio.channels.DatagramChannel: java.nio.channels.DatagramChannel connect(java.net.SocketAddress)
+spec        java.nio.channels.DatagramChannel: java.nio.channels.DatagramChannel open()
+spec        java.nio.channels.SelectableChannel: java.nio.channels.SelectableChannel configureBlocking(boolean)
+spec        java.nio.channels.spi.AbstractInterruptibleChannel: void close()
+
+spec        android.net.VpnService$Builder: android.net.VpnService$Builder addAddress(java.lang.String,int)
+spec        android.net.VpnService$Builder: android.net.VpnService$Builder addDnsServer(java.lang.String)
+spec        android.net.VpnService$Builder: android.net.VpnService$Builder addRoute(java.lang.String,int)
+spec        android.net.VpnService$Builder: android.net.VpnService$Builder addSearchDomain(java.lang.String)
+spec        android.net.VpnService$Builder: android.net.VpnService$Builder setConfigureIntent(android.app.PendingIntent)
+spec        android.net.VpnService$Builder: android.net.VpnService$Builder setMtu(int)
+spec        android.net.VpnService$Builder: android.net.VpnService$Builder setSession(java.lang.String)
+
+spec        android.net.VpnService$Builder: android.os.ParcelFileDescriptor establish()
+spec        android.net.VpnService$Builder: void <init>(android.net.VpnService)
+spec        android.net.VpnService: boolean protect(java.net.DatagramSocket)
+spec        android.os.Handler: boolean sendEmptyMessage(int)
+spec        android.os.Handler: void <init>(android.os.Handler$Callback)
+spec        android.os.ParcelFileDescriptor: java.io.FileDescriptor getFileDescriptor()
+spec        android.os.ParcelFileDescriptor: void close()
+spec        android.widget.AbsSpinner: void setAdapter(android.widget.SpinnerAdapter)
+
+# com.p.morsecode
+spec        android.graphics.Color: int parseColor(java.lang.String)
+spec        android.os.Handler: android.os.Message obtainMessage(int,java.lang.Object)
+spec        android.os.Handler: boolean sendMessageDelayed(android.os.Message,long)
+spec        android.view.Window: void setFlags(int,int)
+spec        android.widget.AdapterView: java.lang.Object getItemAtPosition(int)
+
+# CountdownTimer
+spec        android.app.KeyguardManager$KeyguardLock: void disableKeyguard()
+spec        android.app.KeyguardManager$KeyguardLock: void reenableKeyguard()
+spec        android.app.KeyguardManager: android.app.KeyguardManager$KeyguardLock newKeyguardLock(java.lang.String)
+spec        android.app.KeyguardManager: boolean inKeyguardRestrictedInputMode()
+spec        android.app.NotificationManager: void cancelAll()
+spec        android.app.PendingIntent: android.app.PendingIntent getBroadcast(android.content.Context,int,android.content.Intent,int)
+spec        android.content.IntentFilter: void setPriority(int)
+spec        android.net.Uri: android.net.Uri parse(java.lang.String)
+spec        android.os.Handler: android.os.Message obtainMessage(int)
+spec        android.os.Handler: boolean sendMessage(android.os.Message)
+spec        android.os.Handler: void removeMessages(int)
+spec        android.os.PowerManager$WakeLock: void acquire()
+spec        android.os.PowerManager$WakeLock: void release()
+spec        android.os.PowerManager: android.os.PowerManager$WakeLock newWakeLock(int,java.lang.String)
+spec        android.view.Menu: android.view.MenuItem add(int,int,int,int)
+spec        android.view.MenuItem: android.view.MenuItem setIcon(int)
+spec        android.widget.AdapterView: java.lang.Object getSelectedItem()
+spec        android.widget.AdapterView: void setSelection(int)
+spec        android.widget.LinearLayout: void setOrientation(int)

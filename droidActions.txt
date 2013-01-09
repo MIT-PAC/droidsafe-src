@@ -92,7 +92,7 @@ android.database.DatabaseErrorHandler);	//Open the database according to the fla
     // gets a readable database
     // android.database.sqlite.SQLiteOpenHelper: android.database.sqlite.SQLiteDatabase getReadableDatabase();
     android.database.sqlite.SQLiteOpenHelper: void <init>(android.content.Context, path, android.database.sqlite.SQLiteDatabase$CursorFactory, int);
-    android.database.sqlite.SQLiteQueryBuilder: android.database.Cursor query(android.database.sqlite.SQLiteDatabase, java.lang.String[], java.lang.String, java.lang.String[], java.lang.String, java.lang.String, java.lang.String);
+//    android.database.sqlite.SQLiteQueryBuilder: android.database.Cursor query(android.database.sqlite.SQLiteDatabase, java.lang.String[], java.lang.String, java.lang.String[], java.lang.String, java.lang.String, java.lang.String);
     android.app.Activity: android.database.Cursor managedQuery(android.net.Uri, java.lang.String[], java.lang.String, java.lang.String[], java.lang.String);
     android.database.sqlite.SQLiteOpenHelper: android.database.sqlite.SQLiteDatabase getReadableDatabase();
 	Preconditions:
@@ -314,6 +314,7 @@ StartRecordAudio (int audio_source){
 	android.media.MediaRecorder: void setOutputFile(java.lang.String);	//Sets the path of the output file to be produced.
 	android.media.MediaRecorder: void setOutputFormat(int);	//Sets the format of the output file produced during recording.
 	android.media.MediaRecorder: void start();	//Begins capturing and encoding data to the file specified with setOutputFile().
+	android.media.MediaRecorder: void <init>();    //create a media recorder
 
 	Preconditions:
 
