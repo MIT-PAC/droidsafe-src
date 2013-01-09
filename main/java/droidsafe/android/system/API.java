@@ -1,0 +1,262 @@
+/*
+ * InterestingMethods.java   2012-06-28
+ *
+ * Copyright (c) 2012 DroidBlaze (UC Berkeley)
+ *
+ */
+
+package droidsafe.android.system;
+
+import java.util.Arrays;
+import java.util.HashSet;
+import java.util.LinkedHashSet;
+import java.util.List;
+import java.util.Set;
+import java.util.jar.JarFile;
+import java.io.*;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
+import soot.Scene;
+import soot.SootClass;
+import soot.SootMethod;
+
+import droidsafe.utils.*;
+import droidsafe.main.Config;
+import droidsafe.speclang.*;
+
+
+/**
+ * This class represents the Android API classes and methods and our classification 
+ * of those methods.  
+ * 
+ * There are sets for classification of the methods into safe, spec, and ban.
+ * 
+ * @author mgordon
+ *
+ */
+public class API {
+	private final static Logger logger = LoggerFactory.getLogger(API.class);
+	/** all safe methods */
+	private final SootMethodList safe_methods = new SootMethodList(); 
+	/** all spec methods */
+	private final SootMethodList spec_methods = new SootMethodList();
+	/** All the system methods defined in the API */
+	private final SootMethodList all_sys_methods = new SootMethodList();
+	/** All banned methods as described in config-files */
+	private final SootMethodList banned_methods = new SootMethodList();
+	/** Set of all Android Classes */
+	private Set<SootClass> allSystemClasses;
+	/** the current runtime instance */
+	private static API v;
+	/** The classes that define the droidsafe library */
+	private final Set<String> droidSafeLibraryClasses = 
+			new HashSet<String>(Arrays.asList(
+					"edu.mit.csail.droidsafe.DroidSafeCalls"
+					));
+	
+	static {
+		v = new API();
+	}
+	
+	/**
+	 * Return the current runtime instance.
+	 */
+	public static API v() {
+		return v;
+	}
+
+	public void init() {
+		try {
+			//load the classes from the android.jar for the version of android we are using
+			JarFile androidJar = new JarFile(new File(System.getenv ("APAC_HOME"), 
+					"lib/android/android.jar"));
+
+			allSystemClasses = SootUtils.loadClassesFromJar(androidJar, false);
+
+			all_sys_methods.addAllMethods(androidJar);
+		} catch (Exception e) {
+			logger.error("Error loading android.jar", e);
+			System.exit(1);
+		}
+
+		try {
+			//load the classes from the droidcalls library
+			File dsLib = new File(System.getenv ("APAC_HOME"), 
+					"android-lib/droidcalls.jar");
+			JarFile dsJar = new JarFile(dsLib);
+			SootUtils.loadClassesFromJar(dsJar, false);
+			all_sys_methods.addAllMethods(dsJar);			
+		} catch (Exception e) {
+			Utils.ERROR_AND_EXIT(logger, "Error loading droidsafe call jar (maybe it does not exist).");
+		}
+
+		// Read in the system call descriptors.  The file format has lines
+		// of the form <type>[|flags] <descr>.  More detail is in the
+		// comments at the top of the file.  Descriptors are matched on
+		// the string representation.  The canonical form is <class>:
+		// <return_type> <method>(args) Arbitrary white space is supported
+		// in the file, the code below reduces all white space to a single
+		// space and removes spaces between arguments
+		File sys_calls_file = null;
+		String errors = "";
+        int line_num = 0;
+		try {
+			sys_calls_file= new File(System.getenv ("APAC_HOME"), 
+					"config-files/system_calls.txt");
+			LineNumberReader br 
+			= new LineNumberReader (new FileReader (sys_calls_file));
+			String line = null;
+			while ((line = br.readLine()) != null) {
+                line_num = br.getLineNumber();
+				line = line.trim();
+				line = line.replaceFirst (" *[#].*$", "");
+				if (line.isEmpty())
+					continue;
+				String[] sa = line.split ("[\\s]+", 2);
+				String[] labels = sa[0].split ("[|]");
+				String call_typ = labels[0];
+				for (int ii = 1; ii  < labels.length; ii++)
+					if (!labels[ii].equals ("model"))
+						errors += "unexpected flag " + labels[ii] + "\n";
+
+				String method_descr = sa[1];
+				method_descr = method_descr.replaceAll (", *", ",");
+				method_descr = method_descr.replaceAll ("[\\s]+", " ");
+				method_descr = "<" + method_descr + ">";
+				// System.out.printf ("Adding sys %s: '%s'\n", call_typ, method_descr);
+				if (!all_sys_methods.contains (method_descr))
+					errors += String.format ("invalid method signature '%s'\n",
+							method_descr);
+				if (safe_methods.contains (method_descr) 
+                    || spec_methods.contains (method_descr)
+                    || banned_methods.contains (method_descr))
+					errors += String.format ("dup method signature '%s'\n", 
+							method_descr);
+				if (call_typ.equals ("safe")) {
+					safe_methods.addMethod (method_descr);
+				} else if (call_typ.equals ("spec"))
+					spec_methods.addMethod (method_descr);
+				else if (call_typ.equals ("ban")) {
+					banned_methods.addMethod(method_descr);
+				} else {
+					errors += String.format ("unexpected call type '%s'\n", 
+							call_typ); 
+				}
+			}
+		} catch (Exception e) {
+			throw new RuntimeException ("error reading " + sys_calls_file 
+                                        + "at line " + line_num, e);
+		}
+		if (errors != "")
+			throw new RuntimeException 
+			(String.format ("Errors in %s: \n%s", sys_calls_file, errors));
+        if ("Y".equals(System.getProperty("droidsafe.print_unclassified")))
+			dumpUnclassifiedMethodsToFile();
+	}
+
+  /** 
+   * Returns whether or not a method should be included in the spec.
+   * It returns true for any method in
+   * a system class (any class in Android.jar) that is not explicitly marked
+   * as safe in system_calls.txt (see safe_methods)
+   */
+	public boolean isInterestingMethod(String methodSig) {
+		if (all_sys_methods.contains(methodSig) && !safe_methods.contains (methodSig)) {
+			return true;
+		}
+
+		return false;
+	}
+
+  public String api_xref (String method_sig, String txt) {
+    String sig = method_sig.replace ("<", "");
+    sig = sig.replace (">", "");
+    String[] sa = sig.split (":* ");
+    String class_name = sa[0].replace (".", "/");
+    String ret_type = sa[1];
+    String method = sa[2].replaceAll (", *", ", ");
+    return String.format 
+      ("<a href=\"http://developer.android.com/reference/%s.html#%s\">%s</a>", 
+       class_name, method, txt);
+  }
+
+    public void dumpUnclassifiedMethodsToFile() {
+    	try {
+    		File unclassified = new File(System.getenv ("APAC_HOME"), 
+    				"config-files/sys_methods_to_classify.txt");
+    		FileWriter fstream = new FileWriter(unclassified);
+    		BufferedWriter out = new BufferedWriter(fstream);
+
+    		for (SootMethod sm : all_sys_methods) {
+    			String m = sm.getSignature();
+    			if (!(spec_methods.contains(m) || banned_methods.contains(m) || safe_methods.contains(m)))
+    				out.write(m.substring(1, m.length() - 1) + "\n");
+    		}
+    		out.close();
+    	} catch (Exception e) {
+    		logger.error("Error writing unclassified methods file", e);
+    		System.exit(1);
+    	}
+    	
+    }
+
+    /** 
+     * Used by the specification create to check if a method is legal to put in the 
+     * spec.  Must check the method, and all superclass definitions of the method.
+     * 
+     * @param sig
+     * @return
+     */
+    public boolean isBannedMethod(String sig) {
+    	return banned_methods.contains(sig);
+    }
+    
+    /**
+     * Return true if this is a system method define in anrdoid.jar.
+     */
+    public boolean isSystemMethod(String sig) {
+    	return all_sys_methods.contains(sig);
+    }
+    
+    /**
+     * Given a signature for a method, find the system method that is would 
+     * be called given the types of the receiver and params of the signature.
+     */
+    public SootMethod findSupportedMethod(String sig) {
+    	return all_sys_methods.getMethod(sig);
+    }
+    
+    /**
+     * Return true if this method is contained in the list of safe or spec methods.
+     * Return false if a banned method or if a user method.
+     * This method will perform a polymorphic search. 
+     */
+    public boolean isSupportedMethod(String sig) {
+    	if (safe_methods.contains(sig) || spec_methods.contains(sig))
+    		return true;
+    	
+    	//if we get here, we might have a call that either overrides an 
+    	//api call or has args that implement superclass or interface
+    	//so do a smarter search
+    	if (spec_methods.containsPoly(sig))
+    		return true;
+    	
+    	return safe_methods.containsPoly(sig);
+    }
+    
+    /**
+     * @return True if this class is a droidsafe library class.
+     */
+    public boolean isDroidSafeLibraryClass(String name) {
+    	return droidSafeLibraryClasses.contains(name);
+    }
+    
+    /**
+     * Return true if this class is a system class defined in android.jar.
+     */
+    public boolean isSystemClass(SootClass clz) {
+    	return allSystemClasses.contains(clz);
+    }
+ }
