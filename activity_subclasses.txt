@@ -1,0 +1,16 @@
+# List of all classes that inherit from Activity.
+# If an Android application class inherits from Activity or
+# inherits from any of the subclasses of Activity listed in
+# this file, then the methods of the Android application
+# class will be inspected.
+android.accounts.AccountAuthenticatorActivity
+android.app.ActivityGroup
+android.app.AliasActivity
+android.support.v13.dreams.BasicDream
+android.app.ExpandableListActivity
+android.support.v4.app.FragmentActivity
+android.app.ListActivity
+android.app.NativeActivity
+android.app.LauncherActivity
+android.preference.PreferenceActivity
+android.app.TabActivity
