@@ -6,8 +6,10 @@ import java.io.OutputStream;
 import java.io.OutputStreamWriter;
 import java.io.PrintWriter;
 import java.util.LinkedHashMap;
+import java.util.LinkedHashSet;
 import java.util.LinkedList;
 import java.util.Map;
+import java.util.Set;
 
 import java.util.List;
 
@@ -15,11 +17,15 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import droidsafe.android.system.Components;
+import droidsafe.utils.SootUtils;
+import droidsafe.utils.Utils;
 
 import soot.Local;
 import soot.Printer;
+import soot.RefLikeType;
 import soot.Scene;
 import soot.SootField;
+import soot.SootMethodRef;
 import soot.SourceLocator;
 import soot.Type;
 import soot.ArrayType;
@@ -28,11 +34,14 @@ import soot.RefType;
 import soot.SootClass;
 import soot.SootMethod;
 import soot.VoidType;
+import soot.jimple.InvokeExpr;
 import soot.jimple.JasminClass;
 import soot.jimple.Jimple;
 import soot.jimple.JimpleBody;
 import soot.jimple.StmtBody;
 import soot.util.JasminOutputStream;
+import soot.Value;
+import droidsafe.main.Constants;
 
 /**
  * Create a harness class that will call the entry points of the android application
@@ -48,14 +57,19 @@ public class Harness {
 	private SootMethod harnessMain;
 	public static String HARNESS_CLASS_NAME = "DroidSafeMain";
 	
-	private Map<SootClass, SootField> fieldsMap;
+	private Map<SootClass, Local> localsMap;
 	private int FIELD_ID = 0;
+	
+	private int localID = 0;
 	
 	/**
 	 * Create a harness class with a main method that includes calls into
 	 * all the entry points of the android application.
 	 */
 	public static Harness create() {
+		if (!EntryPoints.v().isCalculated())
+			Utils.ERROR_AND_EXIT(logger, "Entrypoints need to be calculated before harness created");		
+		
 		Harness harness = new Harness();
 		
 		return harness;
@@ -76,56 +90,122 @@ public class Harness {
 		harnessMain.setDeclaringClass(harnessClass);
 		harnessClass.addMethod(harnessMain);
 		
-		addFields();
 		createBody();
 		writeHarnessClass();
 	}
-	
-	private void addFields() {
-		fieldsMap = new LinkedHashMap<SootClass, SootField>();
-		
-		//add fields for all component classes 
-		for (SootClass c : Hierarchy.v().getAllAppComponents()) {
-			RefType type = RefType.v(c);
-			SootField f = new SootField(fieldName(c.getName()), type, Modifier.PRIVATE | Modifier.STATIC);
-			harnessClass.addField(f);
-			logger.debug("Adding field to harness class: {}", f.toString());
-			fieldsMap.put(c, f);
-		}
-		
-		//add fields for all runtime objects that could be passed into entry points
-		for (String n : Components.RUNTIME_OBJECTS) {
-			SootClass c = Scene.v().getSootClass(n);
-			RefType type = RefType.v(c);
-			SootField f = new SootField(fieldName(c.getName()), type, Modifier.PRIVATE | Modifier.STATIC);
-			harnessClass.addField(f);
-			logger.debug("Adding field to harness class: {}", f.toString());
-			fieldsMap.put(c, f);
-		}
-	}
+
 	
 	private void createBody() {
 		JimpleBody body = Jimple.v().newBody(harnessMain);
 		harnessMain.setActiveBody(body);
 		
 		//add access to the arg
-		Local arg = Jimple.v().newLocal("l0", ArrayType.v(RefType.v("java.lang.String"), 1));
+		Local arg = Jimple.v().newLocal("l" + localID++, ArrayType.v(RefType.v("java.lang.String"), 1));
 	    body.getLocals().add(arg);
 	  
 	    body.getUnits().add(Jimple.v().newIdentityStmt(arg, 
 	            Jimple.v().newParameterRef(ArrayType.v
 	              (RefType.v("java.lang.String"), 1), 0)));
 	    
-		//create objects for all components of application
-		for (Map.Entry<SootClass, SootField> e : fieldsMap.entrySet()) {
+	    
+	    
+	    localsMap = new LinkedHashMap<SootClass, Local>();
+		
+		for (SootMethod entryPoint : EntryPoints.v().getAppEntryPoints()) {
+			SootClass clazz = entryPoint.getDeclaringClass();
+			
+			if (clazz.isInterface())
+				continue;
+			
+			//first create the local for the declaring class if we have not created it before
+			if (!localsMap.containsKey(clazz) && !entryPoint.isStatic()) {
+				RefType type = RefType.v(clazz);
+				
+				//add the local
+				Local receiver = Jimple.v().newLocal("l" + localID++, type);
+				body.getLocals().add(receiver);
+				
+				//add the call to the new object
+				body.getUnits().add(Jimple.v().newAssignStmt(receiver, Jimple.v().newNewExpr(type)));
+				
+				//create a constructor for this call unless the call itself is a constructor
+				if (!entryPoint.isConstructor())
+					addConstructorCall(body, receiver, type);
+				
+				logger.debug("Adding new receiver object to harness main method: {}", clazz.toString());
+				localsMap.put(clazz, receiver);
+				
+			}
+			
+			//next create locals for all arguments
+			//List of argument position to locals created...
+			List<Value> args = new LinkedList<Value>();
+			for (Object argType : entryPoint.getParameterTypes()) {
+				//if a reference, create dummy object
+				if (argType instanceof RefType) {
+					SootClass clz = ((RefType)argType).getSootClass();
+					//if an interface, find a direct implementor of and instantiate that...
+					if (clz.isInterface()) {
+						clz = SootUtils.getDirectImplementor(clz);
+					}
+					
+					Local argLocal = Jimple.v().newLocal("l" + localID++, (Type)argType);
+					body.getLocals().add(argLocal);
+					
+					//add the call to the new object
+					body.getUnits().add(Jimple.v().newAssignStmt(argLocal, Jimple.v().newNewExpr(RefType.v(clz))));
+					
+					addConstructorCall(body, argLocal, RefType.v(clz));
+					args.add(argLocal);
+				} else if (argType instanceof ArrayType) {
+					logger.warn("Using null for array argument of method {} in harness.", entryPoint);
+					args.add(SootUtils.getNullValue((Type)argType));
+				} else {
+					args.add(SootUtils.getNullValue((Type)argType));
+				}
+			}
+
+			//now create call to entry point
+			Local receiver = localsMap.get(clazz);
+			logger.debug("method args {} = size of args list {}", entryPoint.getParameterCount(), args.size());
+			body.getUnits().add(Jimple.v().newInvokeStmt(makeInvokeExpression(entryPoint, receiver, args)));
 			
 		}
-	
-		//create objects for any classes used as arguments for entry points
-	
-		//create methods for all entry points
 		
 		body.getUnits().add(Jimple.v().newReturnVoidStmt());
+	}
+	
+	/**
+	 * Given a method, create the appropriate invoke jimple expression to invoke it on the local, and with 
+	 * args.
+	 */
+	public static InvokeExpr makeInvokeExpression(SootMethod method, Local local, List<Value> args) {
+		if (method.isConstructor()) {	
+			return Jimple.v().newSpecialInvokeExpr(local, method.makeRef(), args);
+		} else if (method.isStatic()) {
+			return Jimple.v().newStaticInvokeExpr(method.makeRef(), args);
+		} else {
+			return Jimple.v().newVirtualInvokeExpr(local, method.makeRef(), args);
+		}
+	}
+	
+	public static void addConstructorCall(JimpleBody body, Local local, RefType type) {
+		SootClass clazz = type.getSootClass();
+		
+		//add the call to the constructor with its args
+		SootMethod constructor = SootUtils.findSimpliestConstructor(clazz);
+		if (constructor == null) {
+			Utils.ERROR_AND_EXIT(logger, "Cannot find constructor for {}.  Cannot create harness.", clazz);
+		}
+		
+		//create list of dummy arg values for the constructor call, right now all constants
+		List<Value> args = new LinkedList<Value>();
+		for (Object argType : constructor.getParameterTypes()) {
+			args.add(SootUtils.getNullValue((Type)argType));
+		}
+		
+		//add constructor call to body nested in invoke statement
+		body.getUnits().add(Jimple.v().newInvokeStmt(Jimple.v().newSpecialInvokeExpr(local, constructor.makeRef(), args)));
 	}
 	
 	/**

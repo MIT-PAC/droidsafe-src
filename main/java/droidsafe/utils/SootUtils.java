@@ -37,7 +37,13 @@ import soot.SootClass;
 import soot.SootMethod;
 import soot.SootMethodRef;
 import soot.Type;
+import soot.Value;
 import soot.VoidType;
+import soot.jimple.DoubleConstant;
+import soot.jimple.FloatConstant;
+import soot.jimple.IntConstant;
+import soot.jimple.LongConstant;
+import soot.jimple.NullConstant;
 
 /**
  * Class to hold general utility methods that are helpful for Soot.
@@ -260,5 +266,53 @@ public class SootUtils {
         }
         return classSet;
     }
+    
+    /**
+     * For the given class, return a constructor with the fewest number of 
+     * arguments.
+     */
+    public static SootMethod findSimpliestConstructor(SootClass clz) {
+    	SootMethod currentCons = null;
+    	int currentConsArgs = Integer.MAX_VALUE;
+    	
+    	for (SootMethod method : clz.getMethods()) {
+    		if (method.isConstructor() && method.getParameterCount() < currentConsArgs) {
+    			currentCons = method;
+    			currentConsArgs = method.getParameterCount();
+    		}
+    	}
+    	
+    	return currentCons;
+    }
 	
+    /**
+     * Given a type, return a valid value for that type.
+     */
+    public static Value getNullValue(Type type) {
+    	if (type instanceof BooleanType)
+    		return IntConstant.v(1);
+    	else if (type instanceof IntType)
+    		return IntConstant.v(0);
+    	else if (type instanceof LongType)
+    		return LongConstant.v(0);
+    	else if (type instanceof FloatType)
+    		return FloatConstant.v((float) 0.0);
+    	else if (type instanceof DoubleType) 
+    		return DoubleConstant.v(0.0);
+    	else if (type instanceof CharType) 	
+    		return IntConstant.v(48); 
+    	else {
+    		return NullConstant.v();
+    	}
+    }
+    
+    /**
+     * Return a direct implementor of a given interface.
+     */
+    public static SootClass getDirectImplementor(SootClass clz) {
+    	if (!clz.isInterface())
+    		Utils.ERROR_AND_EXIT(logger, "Trying to get implementor of a non interface: {}", clz);
+    	
+    	return (SootClass)Scene.v().getActiveHierarchy().getDirectImplementersOf(clz).get(0);
+    }
 }

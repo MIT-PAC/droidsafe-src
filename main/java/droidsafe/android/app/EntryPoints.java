@@ -28,15 +28,15 @@ public class EntryPoints {
 	private final static Logger logger = LoggerFactory.getLogger(EntryPoints.class);
 	
 	/** if true then search for entry points in libraries */
-	private final boolean ENTRY_POINTS_IN_LIBRARIES = true;
+	private static final boolean ENTRY_POINTS_IN_LIBRARIES = true;
 	
-	private LinkedHashSet<SootMethod> systemSupers;
 	private LinkedHashSet<SootMethod> appEntryPoints;
+	
+	private boolean calculated = false; 
 	
 	private static EntryPoints V;
 	
-	public EntryPoints() {
-		systemSupers = new LinkedHashSet<SootMethod>();
+	private EntryPoints() {
 		appEntryPoints = new LinkedHashSet<SootMethod>();
 	}
 	
@@ -44,9 +44,6 @@ public class EntryPoints {
 		return appEntryPoints;
 	}
 	
-	public Set<SootMethod> getAPIInheritedEntryPoints() {
-		return systemSupers;
-	}
 
 	/**
 	 * Return the singleton entry point object for the app
@@ -59,6 +56,10 @@ public class EntryPoints {
 		return V;
 	}
 	
+	public boolean isCalculated() {
+		return calculated;
+	}
+	
 	 /**
      * Find all entry points into the application code.
      * 
@@ -67,7 +68,7 @@ public class EntryPoints {
      *    
      */
     public void calculate() {
-    	
+    	calculated = true;
     	for (SootClass clazz : Scene.v().getApplicationClasses()) {
     		if (clazz.isInterface() || clazz.getName().equals(Harness.HARNESS_CLASS_NAME))
     			continue;

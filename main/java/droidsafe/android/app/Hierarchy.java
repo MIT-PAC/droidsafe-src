@@ -9,6 +9,7 @@ import droidsafe.android.system.API;
 import droidsafe.android.system.Components;
 import droidsafe.utils.SootUtils;
 
+import soot.Scene;
 import soot.SootClass;
 import soot.SootMethod;
 
@@ -38,7 +39,7 @@ public class Hierarchy {
 	}
 	
 	protected Hierarchy() {
-		sootHierarchy = new soot.Hierarchy();
+		sootHierarchy = Scene.v().getActiveHierarchy();
 	}
 	
 	/**
