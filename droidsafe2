@@ -15,11 +15,13 @@ def run_droidsafe(args):
     command.append("java")
     command.append("-cp")
 
-    jars = "";
+    classpath = "";
     for jar in JARS:
-    	jars += libs + jar + ":";
-    jars += "."
-    command.append(jars)
+    	classpath += libs + jar + ":";
+    #needed for logback configuration
+    classpath += APAC_HOME + os.sep + "config-files"
+    classpath += ":."
+    command.append(classpath)
 
     command.append(MAIN_CLASS)
 
