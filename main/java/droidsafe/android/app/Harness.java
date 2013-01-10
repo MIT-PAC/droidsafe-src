@@ -146,9 +146,17 @@ public class Harness {
 					SootClass clz = ((RefType)argType).getSootClass();
 					//if an interface, find a direct implementor of and instantiate that...
 					if (clz.isInterface()) {
-						clz = SootUtils.getDirectImplementor(clz);
+						clz = SootUtils.getCloseImplementor(clz);
 					}
 					
+					if (clz ==  null) {
+						//if clz is null, then we have an interface with no known implementors, 
+						//so just pass null
+						args.add(SootUtils.getNullValue((RefType)argType));
+						continue;
+					}
+					
+					//if we got here, we found a class to instantiate, either the org or an implementor
 					Local argLocal = Jimple.v().newLocal("l" + localID++, (Type)argType);
 					body.getLocals().add(argLocal);
 					

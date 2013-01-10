@@ -309,10 +309,23 @@ public class SootUtils {
     /**
      * Return a direct implementor of a given interface.
      */
-    public static SootClass getDirectImplementor(SootClass clz) {
+    public static SootClass getCloseImplementor(SootClass clz) {
     	if (!clz.isInterface())
     		Utils.ERROR_AND_EXIT(logger, "Trying to get implementor of a non interface: {}", clz);
     	
-    	return (SootClass)Scene.v().getActiveHierarchy().getDirectImplementersOf(clz).get(0);
+    	List<SootClass> implementors = (List<SootClass>)Scene.v().getActiveHierarchy().getDirectImplementersOf(clz); 
+    	
+    	if (implementors.isEmpty()) {
+    		logger.debug("Cannot find direct implementors of {}. Trying to find indirect.", clz);
+    		implementors = Scene.v().getActiveHierarchy().getImplementersOf(clz);
+    		if (implementors.isEmpty()) {
+    			//could not find any implementors
+    			return null;
+    		}
+    	}
+    	
+    	
+    	
+    	return implementors.get(0); 
     }
 }
