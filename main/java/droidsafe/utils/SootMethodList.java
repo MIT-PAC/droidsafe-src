@@ -18,6 +18,14 @@ import soot.SootMethod;
 import soot.SootMethodRef;
 import soot.Type;
 
+/**
+ * This class encapsulates a list of soot methods for checking containment.  It
+ * packages some useful helper functions to search for containment strictly or with
+ * inheritance and polymorphism / virtual calls.
+ * 
+ * @author mgordon
+ *
+ */
 public class SootMethodList implements Iterable<SootMethod>{
 	private final static Logger logger = LoggerFactory.getLogger(SootMethodList.class);
 	
@@ -35,30 +43,52 @@ public class SootMethodList implements Iterable<SootMethod>{
 		methods.add(method);
 	}
 	
+	/**
+	 * Strict contains
+	 */
 	public boolean contains(SootMethod method) {
 		return methods.contains(method);
 	}
 	
+	/**
+	 * Strict contains
+	 */
 	public boolean contains(String signature) {
 		if (!Scene.v().containsMethod(signature))
 			return false;
 		return methods.contains(Scene.v().getMethod(signature));
 	}
 	
+	/**
+	 * Search for polymorphic containment based on inheritance of
+	 * receiver and arguments.
+	 */
 	public boolean containsPoly(String signature) {
 		SootMethod method = SootUtils.resolveMethod(signature);
 		return containsPoly(method);
 	}
 	
+	/**
+	 * Search for polymorphic containment based on inheritance of
+	 * receiver and arguments.
+	 */
 	public boolean containsPoly(SootMethod method) {
 		return getMethod(method) != null;
 	}
 	
+	/** 
+	 * Given a signature return the closest method that can be matched in this 
+	 * method list given polymorphism.
+	 */
 	public SootMethod getMethod(String signature) {
 		SootMethod method = SootUtils.resolveMethod(signature);
 		return getMethod(method);
 	}
 	
+	/** 
+	 * Given a signature return the closest method that can be matched in this 
+	 * method list given polymorphism.
+	 */
 	public SootMethod getMethod(SootMethod method) {
 		//return the method if the direct method exists
 		if (methods.contains(method)) 
@@ -95,6 +125,10 @@ public class SootMethodList implements Iterable<SootMethod>{
 		return null;
 	}
 
+	/**
+	 * Add all methods from the jar file. Note this does not add them to 
+	 * soot's scene
+	 */
 	public void addAllMethods(JarFile jarFile) {
 		List<String> classes = Utils.getClassesFromJar(jarFile);
 		

@@ -1,10 +1,16 @@
 package droidsafe.main;
 
 import java.io.IOException;
+import java.util.LinkedList;
+import java.util.List;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import soot.Scene;
+import soot.SootMethod;
+
+import droidsafe.analyses.PTA;
 import droidsafe.android.app.EntryPoints;
 import droidsafe.android.app.Harness;
 import droidsafe.android.app.TagImplementedSystemMethods;
@@ -32,10 +38,23 @@ public class Main {
 		Project.v().init();
 		SootConfig.init();
 		API.v().init();
-		//create tags for the implemented system methods
+		logger.info("Create tags for the overriden system methods in user code.");
 		TagImplementedSystemMethods.run();
+		logger.info("Finding entry points in user code.");
 		EntryPoints.v().calculate();
+		logger.info("Creating Harness.");
 		Harness.create();
+		logger.info("Setting Harness Main as entry point.");
+		setHarnessMainAsEntryPoint();
+		logger.info("Starting PTA...");
+		PTA.run();
 		logger.info("Ending DroidSafe Run");
+		
+	}
+	
+	private static void setHarnessMainAsEntryPoint() {
+		List<SootMethod> entryPoints = new LinkedList<SootMethod>();
+		entryPoints.add(Harness.v().getMain());
+		Scene.v().setEntryPoints(entryPoints);
 	}
 }

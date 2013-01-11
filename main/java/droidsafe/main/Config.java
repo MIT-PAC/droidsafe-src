@@ -1,6 +1,7 @@
 package droidsafe.main;
 
 import java.io.File;
+import java.lang.reflect.Field;
 import java.util.LinkedHashMap;
 
 import org.apache.commons.cli.CommandLine;

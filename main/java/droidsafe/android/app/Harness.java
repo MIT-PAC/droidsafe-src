@@ -62,17 +62,31 @@ public class Harness {
 	
 	private int localID = 0;
 	
+	public static Harness v;
+	
 	/**
 	 * Create a harness class with a main method that includes calls into
 	 * all the entry points of the android application.
 	 */
-	public static Harness create() {
+	public static void create() {
 		if (!EntryPoints.v().isCalculated())
 			Utils.ERROR_AND_EXIT(logger, "Entrypoints need to be calculated before harness created");		
 		
-		Harness harness = new Harness();
-		
-		return harness;
+		v = new Harness();
+	}
+	
+	public static Harness v() {
+		if (v == null)
+			Utils.ERROR_AND_EXIT(logger, "Harness not created!");
+		return v;
+	}
+
+	/**
+	 * Return the main method for the harness that includes all the calls
+	 * to the entry points.
+	 */
+	public SootMethod getMain() {
+		return harnessMain;
 	}
 	
 	private Harness() {
@@ -244,9 +258,5 @@ public class Harness {
 			logger.error("Error writing harness class file {}", e);
 			System.exit(1);
 		}
-	}
-	
-	private String fieldName(String clz) {
-		return clz.substring(clz.lastIndexOf(".") + 1).toLowerCase() + FIELD_ID++;
 	}
 }
