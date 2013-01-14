@@ -307,25 +307,60 @@ public class SootUtils {
     }
     
     /**
-     * Return a direct implementor of a given interface.
+     * Return a concrete implementor of interface or abstract class.
+     */
+    public static SootClass getCloseConcrete(SootClass clz) {
+    	if (clz.isInterface()) 
+    		return getCloseImplementor(clz);
+    	else if (clz.isAbstract()) 
+    		return getCloseSubclass(clz);
+    	else 
+    		return null;
+    }
+    
+    /**
+     * Return a concrete implementor of a given interface.  Try to find direct implementors first
+     */
+    public static SootClass getCloseSubclass(SootClass clz) {
+    	if (!clz.isAbstract() && !clz.isInterface())
+    		Utils.ERROR_AND_EXIT(logger, "Trying to get close subclass of a non abstract class: {}", clz);
+    	
+    	logger.debug("Trying to get direct subclasses for: {}", clz);
+    	//try to get direct implementors by adding them first
+    	List<SootClass> implementors = 
+    			new LinkedList<SootClass>();
+    	
+    	implementors.addAll((List<SootClass>)Scene.v().getActiveHierarchy().getDirectSubclassesOf(clz));  
+    	
+    	implementors.addAll(Scene.v().getActiveHierarchy().getSubclassesOf(clz));
+    
+    	//return the first concrete class
+    	for (SootClass c : implementors) 
+    		if (c.isConcrete())
+    			return c;
+
+    	return null;
+    }
+    
+    /**
+     * Return a concrete implementor of a given interface.  Try to find direct implementors first
      */
     public static SootClass getCloseImplementor(SootClass clz) {
     	if (!clz.isInterface())
     		Utils.ERROR_AND_EXIT(logger, "Trying to get implementor of a non interface: {}", clz);
     	
-    	List<SootClass> implementors = (List<SootClass>)Scene.v().getActiveHierarchy().getDirectImplementersOf(clz); 
-    	
-    	if (implementors.isEmpty()) {
-    		logger.debug("Cannot find direct implementors of {}. Trying to find indirect.", clz);
-    		implementors = Scene.v().getActiveHierarchy().getImplementersOf(clz);
-    		if (implementors.isEmpty()) {
-    			//could not find any implementors
-    			return null;
-    		}
-    	}
-    	
-    	
-    	
-    	return implementors.get(0); 
+    	//try to get direct implementors by adding them first
+    	List<SootClass> implementors = new LinkedList<SootClass>();
+    			
+    	implementors.addAll((List<SootClass>)Scene.v().getActiveHierarchy().getDirectImplementersOf(clz));  
+
+    	implementors.addAll(Scene.v().getActiveHierarchy().getImplementersOf(clz));
+    
+    	//return the first concrete class
+    	for (SootClass c : implementors) 
+    		if (c.isConcrete())
+    			return c;
+
+    	return null;
     }
 }

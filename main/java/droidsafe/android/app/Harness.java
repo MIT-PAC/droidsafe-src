@@ -128,7 +128,7 @@ public class Harness {
 		for (SootMethod entryPoint : EntryPoints.v().getAppEntryPoints()) {
 			SootClass clazz = entryPoint.getDeclaringClass();
 			
-			if (clazz.isInterface())
+			if (clazz.isInterface() || clazz.isAbstract())
 				continue;
 			
 			//first create the local for the declaring class if we have not created it before
@@ -159,8 +159,8 @@ public class Harness {
 				if (argType instanceof RefType) {
 					SootClass clz = ((RefType)argType).getSootClass();
 					//if an interface, find a direct implementor of and instantiate that...
-					if (clz.isInterface()) {
-						clz = SootUtils.getCloseImplementor(clz);
+					if (!clz.isConcrete()) {
+						clz = SootUtils.getCloseConcrete(clz);
 					}
 					
 					if (clz ==  null) {

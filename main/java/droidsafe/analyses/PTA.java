@@ -7,6 +7,7 @@ import org.slf4j.LoggerFactory;
 
 import droidsafe.android.app.EntryPoints;
 
+import soot.Scene;
 import soot.jimple.paddle.PaddleTransformer;
 import soot.jimple.spark.SparkTransformer;
 import soot.options.PaddleOptions;
@@ -25,6 +26,7 @@ public class PTA {
 	public static String ALGORITHM = "paddle"; //"spark";
 	
 	public static void run() {
+		Scene.v().loadDynamicClasses();
 		if (ALGORITHM.equals("paddle"))
 			setPaddlePointsToAnalysis();
 		else if (ALGORITHM.equals("spark"))
@@ -74,13 +76,13 @@ public class PTA {
 	private static void setPaddlePointsToAnalysis() {
 		logger.info("[paddle] Starting analysis ...");
 		
-		System.out.println(System.getProperty("java.library.path"));
+		//System.out.println(System.getProperty("java.library.path"));
 		
 		HashMap opt = new HashMap();
 		opt.put("enabled","true");
 		opt.put("verbose","false");
 		opt.put("bdd","true");
-		opt.put("backend","buddy");
+		opt.put("backend","javabdd");
 		opt.put("context","kcfa");
 		opt.put("k","2");
 		//		opt.put("context-heap","true");
