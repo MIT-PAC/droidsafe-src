@@ -23,9 +23,9 @@ def run_droidsafe(args):
     classpath += ":."
     command.append(classpath)
 
-    #needed for paddle
-    command.append("-Djava.library.path=" + APAC_HOME + "lib");
-
+    command.append("-Xms1g");
+    command.append("-Xmx16g");
+    
     command.append(MAIN_CLASS)
 
     for arg in args[1:]:
