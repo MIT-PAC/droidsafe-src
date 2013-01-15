@@ -39,6 +39,9 @@ public class CallGraphFromEntryPoints {
 			//playingWithContext(entryPoint);
 			
 		}
+		
+		//playing();
+		
 		//playingWithPaddle(Scene.v().getMethod("<irdc.ex07_11.recorder: void onStop()>"));
 		//playingWithGeom(Scene.v().getMethod("<irdc.ex07_11.recorder: void onStop()>"));
 	}
@@ -69,7 +72,7 @@ public class CallGraphFromEntryPoints {
 		
 	}
 	
-	private static void playing(SootMethod m) {
+	private static void playing() {
 		CallGraph cg = Scene.v().getCallGraph();
 		QueueReader<Edge> edges = cg.listener();
 		while (edges.hasNext()) {
@@ -98,6 +101,8 @@ public class CallGraphFromEntryPoints {
 			seen.add(edge);
 		}
 	}
+	
+	
 	
 	private static void findReachableMethodsFrom(SootMethod m) {
 		

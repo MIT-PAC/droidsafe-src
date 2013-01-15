@@ -39,6 +39,7 @@ import soot.jimple.InvokeExpr;
 import soot.jimple.JasminClass;
 import soot.jimple.Jimple;
 import soot.jimple.JimpleBody;
+import soot.jimple.NopStmt;
 import soot.jimple.StmtBody;
 import soot.util.JasminOutputStream;
 import soot.Value;
@@ -128,7 +129,9 @@ public class Harness {
 	            Jimple.v().newParameterRef(ArrayType.v
 	              (RefType.v("java.lang.String"), 1), 0)));
 	    
-	    
+	    //create a nop as target of goto below, to create loop over all possible events
+	    NopStmt beginCalls = Jimple.v().newNopStmt();
+	    body.getUnits().add(beginCalls);
 	    
 	    localsMap = new LinkedHashMap<SootClass, Local>();
 		
@@ -201,6 +204,9 @@ public class Harness {
 			entryPointInvokes.add(call);
 			body.getUnits().add(call);
 		}
+		
+		//create the loop back to the beginning of the calls
+		body.getUnits().add(Jimple.v().newGotoStmt(beginCalls));
 		
 		body.getUnits().add(Jimple.v().newReturnVoidStmt());
 	}
