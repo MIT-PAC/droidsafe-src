@@ -2,7 +2,7 @@
   
   <appender name="FILE" class="ch.qos.logback.core.FileAppender">
     <file>droidsafe/droidsafe.log</file>
-
+    <append>false</append>
     <encoder>
       <pattern>%level [%thread] %logger{10} [%file:%line] %msg%n</pattern>
     </encoder>
