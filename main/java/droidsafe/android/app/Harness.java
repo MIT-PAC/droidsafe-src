@@ -33,6 +33,7 @@ import soot.Modifier;
 import soot.RefType;
 import soot.SootClass;
 import soot.SootMethod;
+import soot.Unit;
 import soot.VoidType;
 import soot.jimple.InvokeExpr;
 import soot.jimple.JasminClass;
@@ -55,11 +56,11 @@ public class Harness {
 	
 	private SootClass harnessClass;
 	private SootMethod harnessMain;
+	private List<Unit> entryPointInvokes;
 	public static String HARNESS_CLASS_NAME = "DroidSafeMain";
 	
 	private Map<SootClass, Local> localsMap;
-	private int FIELD_ID = 0;
-	
+		
 	private int localID = 0;
 	
 	public static Harness v;
@@ -89,7 +90,13 @@ public class Harness {
 		return harnessMain;
 	}
 	
+	public SootClass getHarnessClass() {
+		return harnessClass;
+	}
+	
 	private Harness() {
+		entryPointInvokes = new LinkedList<Unit>();
+		
 		//create the harness class
 		harnessClass = new SootClass(HARNESS_CLASS_NAME, Modifier.PUBLIC | Modifier.FINAL);
 		harnessClass.setSuperclass(Scene.v().getSootClass("java.lang.Object"));
@@ -190,8 +197,9 @@ public class Harness {
 			//now create call to entry point
 			Local receiver = localsMap.get(clazz);
 			logger.debug("method args {} = size of args list {}", entryPoint.getParameterCount(), args.size());
-			body.getUnits().add(Jimple.v().newInvokeStmt(makeInvokeExpression(entryPoint, receiver, args)));
-			
+			Unit call = Jimple.v().newInvokeStmt(makeInvokeExpression(entryPoint, receiver, args));
+			entryPointInvokes.add(call);
+			body.getUnits().add(call);
 		}
 		
 		body.getUnits().add(Jimple.v().newReturnVoidStmt());

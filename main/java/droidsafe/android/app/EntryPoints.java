@@ -30,7 +30,7 @@ public class EntryPoints {
 	/** if true then search for entry points in libraries */
 	private static final boolean ENTRY_POINTS_IN_LIBRARIES = true;
 	
-	private LinkedHashSet<SootMethod> appEntryPoints;
+	private Set<SootMethod> appEntryPoints;
 	
 	private boolean calculated = false; 
 	
@@ -44,6 +44,10 @@ public class EntryPoints {
 		return appEntryPoints;
 	}
 	
+	
+	public boolean isEntryPoint(SootMethod m) {
+		return appEntryPoints.contains(m);
+	}
 
 	/**
 	 * Return the singleton entry point object for the app
@@ -92,6 +96,7 @@ public class EntryPoints {
     			}
     		}
     	}
+    	appEntryPoints = Collections.unmodifiableSet(appEntryPoints);
     }
     
 }

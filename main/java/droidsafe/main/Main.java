@@ -10,6 +10,7 @@ import org.slf4j.LoggerFactory;
 import soot.Scene;
 import soot.SootMethod;
 
+import droidsafe.analyses.CallGraphFromEntryPoints;
 import droidsafe.analyses.PTA;
 import droidsafe.android.app.EntryPoints;
 import droidsafe.android.app.Harness;
@@ -48,6 +49,7 @@ public class Main {
 		setHarnessMainAsEntryPoint();
 		logger.info("Starting PTA...");
 		PTA.run();
+		CallGraphFromEntryPoints.run();
 		logger.info("Ending DroidSafe Run");
 		
 	}
@@ -56,5 +58,6 @@ public class Main {
 		List<SootMethod> entryPoints = new LinkedList<SootMethod>();
 		entryPoints.add(Harness.v().getMain());
 		Scene.v().setEntryPoints(entryPoints);
+		//Scene.v().setMainClass(Harness.v().getHarnessClass());
 	}
 }
