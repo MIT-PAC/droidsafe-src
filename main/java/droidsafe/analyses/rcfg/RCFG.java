@@ -17,7 +17,7 @@ import soot.jimple.spark.geom.geomPA.GeomPointsTo;
 import soot.jimple.toolkits.callgraph.CallGraph;
 import soot.jimple.toolkits.callgraph.Edge;
 
-import droidsafe.analyses.PTA;
+import droidsafe.analyses.GeoPTA;
 import droidsafe.android.app.EntryPoints;
 import droidsafe.android.app.Harness;
 import droidsafe.android.system.API;
@@ -46,9 +46,7 @@ public class RCFG {
 	}
 	
 	public static void generate() {
-		if (!PTA.ALGORITHM.equals("geo"))
-			Utils.ERROR_AND_EXIT(logger, "GenerateRCFG currently requires geometric context sensitive PTA.");
-		
+
 		v = new RCFG();
 		v.createRCFG();
 	}

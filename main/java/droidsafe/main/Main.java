@@ -11,7 +11,7 @@ import soot.Scene;
 import soot.SootMethod;
 
 import droidsafe.analyses.CallGraphFromEntryPoints;
-import droidsafe.analyses.PTA;
+import droidsafe.analyses.GeoPTA;
 import droidsafe.analyses.rcfg.RCFG;
 import droidsafe.android.app.EntryPoints;
 import droidsafe.android.app.Harness;
@@ -49,7 +49,7 @@ public class Main {
 		logger.info("Setting Harness Main as entry point.");
 		setHarnessMainAsEntryPoint();
 		logger.info("Starting PTA...");
-		PTA.run();
+		GeoPTA.run();
 		RCFG.generate();
 		logger.info("Ending DroidSafe Run");
 		

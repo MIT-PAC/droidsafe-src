@@ -43,128 +43,127 @@ import soot.util.queue.QueueReader;
  * @author mgordon
  *
  */
-public class PTA {
-	private final static Logger logger = LoggerFactory.getLogger(PTA.class);
-	public static GeomPointsTo gPTA;
+public class GeoPTA {
+	private final static Logger logger = LoggerFactory.getLogger(GeoPTA.class);
+	private GeomPointsTo gPTA;
 	
-	public static String ALGORITHM = "geo";
+	private static GeoPTA v;
 	
+	/**
+	 * Return the instance of the PTA.
+	 */
+	public static GeoPTA v() {
+		return v;
+	}
+	
+	/**
+	 * Runs Soot's geometric PTA and resolve the context.
+	 */
 	public static void run() {
 		Scene.v().loadDynamicClasses();
-		if (ALGORITHM.equals("paddle"))
-			setPaddlePointsToAnalysis();
-		else if (ALGORITHM.equals("spark"))
-			setSparkPointsToAnalysis();
-		else if (ALGORITHM.equals("geo")) 
-			setGeomPointsToAnalysis();
-	
-		/*
-		SootMethod src = Harness.v().getMain();
-		CallGraph cg = Scene.v().getCallGraph();
-
-		Iterator<MethodOrMethodContext> targets = new Targets(cg.edgesOutOf(src));
-		while (targets.hasNext()) {
-			SootMethod tgt = (SootMethod)targets.next();
-			System.out.println(src + " may call " + tgt);
-		}
-		*/
 		
-		//dumpPTA();
+		setGeomPointsToAnalysis();
+		
+		v = new GeoPTA();
+	}
+	
+	private GeoPTA() {
+		gPTA = (GeomPointsTo)Scene.v().getPointsToAnalysis();
 	}
 	
 	static void dumpPTA() {
-		if (ALGORITHM.equals("geo")) {
-			GeomPointsTo ptsProvider = (GeomPointsTo)Scene.v().getPointsToAnalysis();
-			GeomEvaluator eval = new GeomEvaluator(ptsProvider, System.out);
-			//eval.reportBasicMetrics();
-			
-			ZArrayNumberer<CallsiteContextVar> ct_sens_objs = new ZArrayNumberer<CallsiteContextVar>();
-			Vector<CallsiteContextVar> outList = new Vector<CallsiteContextVar>();
-			CallsiteContextVar context_obj = null;
-			
-			for ( IVarAbstraction pobj : ptsProvider.allocations ) {
-				AllocNode obj = (AllocNode)pobj.getWrappedNode();
-				SootMethod sm = obj.getMethod();
-				
-				if ( sm == null ) {
-					context_obj = new CallsiteContextVar(null, obj);
-					ct_sens_objs.add(context_obj);
-				}
-				else {
-					int sm_int = ptsProvider.getIDFromSootMethod(sm);
-					if ( ptsProvider.isReachableMethod(sm_int) ) {
-						// We also temporarily build the 1cfa object
-						List<CgEdge> edges = ptsProvider.getCallEdgesInto(sm_int);
-						
-						for ( CgEdge ce : edges ) {
-							context_obj = new CallsiteContextVar(ce, obj);
-							ct_sens_objs.add(context_obj);
-						}
-					}
-				}
+
+		GeomPointsTo ptsProvider = (GeomPointsTo)Scene.v().getPointsToAnalysis();
+		GeomEvaluator eval = new GeomEvaluator(ptsProvider, System.out);
+		//eval.reportBasicMetrics();
+
+		ZArrayNumberer<CallsiteContextVar> ct_sens_objs = new ZArrayNumberer<CallsiteContextVar>();
+		Vector<CallsiteContextVar> outList = new Vector<CallsiteContextVar>();
+		CallsiteContextVar context_obj = null;
+
+		for ( IVarAbstraction pobj : ptsProvider.allocations ) {
+			AllocNode obj = (AllocNode)pobj.getWrappedNode();
+			SootMethod sm = obj.getMethod();
+
+			if ( sm == null ) {
+				context_obj = new CallsiteContextVar(null, obj);
+				ct_sens_objs.add(context_obj);
 			}
-			
-			
-			for ( IVarAbstraction pn : ptsProvider.pointers ) {
-				pn = pn.getRepresentative();
-				Node v = pn.getWrappedNode();
-			
-				if ( pn != pn.getRepresentative() )
-					continue;
-				
-				int method = ptsProvider.getMappedMethodID(v);
-				SootMethod pointerMethod = ptsProvider.getSootMethodFromID(method);
-			
-				if (pointerMethod == null)
-					continue;
-				
-				System.out.println(pn);
-				System.out.println(v);
-				
-				pn.print_context_sensitive_points_to(System.out);
-				
-				if (v instanceof AllocDotField) 
-					System.out.printf("\tAlloc dot field\n");
-				
-				PrintStream file = System.out;
-				
-				if ( v instanceof LocalVarNode ) {
-					// We map the local pointer to its 1-cfa versions
-					LocalVarNode lvn = (LocalVarNode)v;
-					SootMethod sm = lvn.getMethod();
-					int sm_int = ptsProvider.getIDFromSootMethod(sm);
-					LinkedList<CgEdge> edges = ptsProvider.getCallEdgesInto(sm_int);
-					
-					for ( Iterator<CgEdge> it = edges.iterator(); it.hasNext(); ) {
-						CgEdge p = it.next();
-					
-						long l = p.map_offset;
-						long r = l + ptsProvider.max_context_size_block[p.s];
-						file.printf("%s (%s)->\n %s\n", p.sootEdge.getSrc(), p.sootEdge.srcUnit(), p.sootEdge.getTgt());
-						
-						file.print( pn.get_all_context_sensitive_objects(l, r, ct_sens_objs, outList) );
-						
-						for ( CallsiteContextVar cobj : outList ) {
-							cobj.inQ = false;
-							file.printf( "%s: %s\n", cobj.var.getClass(), cobj.var);
-						}
-						
+			else {
+				int sm_int = ptsProvider.getIDFromSootMethod(sm);
+				if ( ptsProvider.isReachableMethod(sm_int) ) {
+					// We also temporarily build the 1cfa object
+					List<CgEdge> edges = ptsProvider.getCallEdgesInto(sm_int);
+
+					for ( CgEdge ce : edges ) {
+						context_obj = new CallsiteContextVar(ce, obj);
+						ct_sens_objs.add(context_obj);
 					}
 				}
-				else {
-					file.print( pn.get_all_context_sensitive_objects(1, GeomPointsTo.MAX_CONTEXTS, ct_sens_objs, outList) );
-					
-					for ( CallsiteContextVar cobj : outList ) {
-						cobj.inQ = false;
-						file.print( " " + cobj.getNumber() );
-					}
-					file.println();
-				}
-				
-				System.out.println();
 			}
 		}
+
+
+		for ( IVarAbstraction pn : ptsProvider.pointers ) {
+			pn = pn.getRepresentative();
+			Node v = pn.getWrappedNode();
+
+			if ( pn != pn.getRepresentative() )
+				continue;
+
+			int method = ptsProvider.getMappedMethodID(v);
+			SootMethod pointerMethod = ptsProvider.getSootMethodFromID(method);
+
+			if (pointerMethod == null)
+				continue;
+
+			System.out.println(pn);
+			System.out.println(v);
+
+			pn.print_context_sensitive_points_to(System.out);
+
+			if (v instanceof AllocDotField) 
+				System.out.printf("\tAlloc dot field\n");
+
+			PrintStream file = System.out;
+
+			if ( v instanceof LocalVarNode ) {
+				// We map the local pointer to its 1-cfa versions
+				LocalVarNode lvn = (LocalVarNode)v;
+				SootMethod sm = lvn.getMethod();
+				int sm_int = ptsProvider.getIDFromSootMethod(sm);
+				LinkedList<CgEdge> edges = ptsProvider.getCallEdgesInto(sm_int);
+
+				for ( Iterator<CgEdge> it = edges.iterator(); it.hasNext(); ) {
+					CgEdge p = it.next();
+
+					long l = p.map_offset;
+					long r = l + ptsProvider.max_context_size_block[p.s];
+					file.printf("%s (%s)->\n %s\n", p.sootEdge.getSrc(), p.sootEdge.srcUnit(), p.sootEdge.getTgt());
+
+					file.print( pn.get_all_context_sensitive_objects(l, r, ct_sens_objs, outList) );
+
+					for ( CallsiteContextVar cobj : outList ) {
+						cobj.inQ = false;
+						file.printf( "%s: %s\n", cobj.var.getClass(), cobj.var);
+					}
+
+				}
+			}
+			else {
+				file.print( pn.get_all_context_sensitive_objects(1, GeomPointsTo.MAX_CONTEXTS, ct_sens_objs, outList) );
+
+				for ( CallsiteContextVar cobj : outList ) {
+					cobj.inQ = false;
+					file.print( " " + cobj.getNumber() );
+				}
+				file.println();
+			}
+
+			System.out.println();
+		}
 	}
+
 	
 	static void setGeomPointsToAnalysis() {
 		logger.info("[GeomPTA] Starting analysis ...");
