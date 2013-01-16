@@ -12,6 +12,7 @@ import soot.SootMethod;
 
 import droidsafe.analyses.CallGraphFromEntryPoints;
 import droidsafe.analyses.PTA;
+import droidsafe.analyses.rcfg.RCFG;
 import droidsafe.android.app.EntryPoints;
 import droidsafe.android.app.Harness;
 import droidsafe.android.app.TagImplementedSystemMethods;
@@ -49,7 +50,7 @@ public class Main {
 		setHarnessMainAsEntryPoint();
 		logger.info("Starting PTA...");
 		PTA.run();
-		CallGraphFromEntryPoints.run();
+		RCFG.generate();
 		logger.info("Ending DroidSafe Run");
 		
 	}

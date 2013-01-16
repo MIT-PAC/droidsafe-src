@@ -69,7 +69,7 @@ public class PTA {
 		}
 		*/
 		
-		dumpPTA();
+		//dumpPTA();
 	}
 	
 	static void dumpPTA() {
@@ -115,7 +115,7 @@ public class PTA {
 				int method = ptsProvider.getMappedMethodID(v);
 				SootMethod pointerMethod = ptsProvider.getSootMethodFromID(method);
 			
-				if (pointerMethod == null || !pointerMethod.getName().equals("sendIntent"))
+				if (pointerMethod == null)
 					continue;
 				
 				System.out.println(pn);

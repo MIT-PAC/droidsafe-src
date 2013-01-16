@@ -13,6 +13,7 @@ import org.slf4j.LoggerFactory;
 import droidsafe.android.system.API;
 import droidsafe.utils.SootUtils;
 
+import soot.MethodOrMethodContext;
 import soot.Scene;
 import soot.SootClass;
 import soot.SootMethod;

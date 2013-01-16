@@ -18,6 +18,7 @@ import java.io.*;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import soot.MethodOrMethodContext;
 import soot.Scene;
 import soot.SootClass;
 import soot.SootMethod;
@@ -162,14 +163,15 @@ public class API {
    * a system class (any class in Android.jar) that is not explicitly marked
    * as safe in system_calls.txt (see safe_methods)
    */
-	public boolean isInterestingMethod(String methodSig) {
-		if (all_sys_methods.contains(methodSig) && !safe_methods.contains (methodSig)) {
+	public boolean isInterestingMethod(SootMethod method) {
+		if (all_sys_methods.contains(method) && !safe_methods.contains (method)) {
 			return true;
 		}
 
 		return false;
 	}
 
+		
   public String api_xref (String method_sig, String txt) {
     String sig = method_sig.replace ("<", "");
     sig = sig.replace (">", "");
@@ -218,6 +220,13 @@ public class API {
      */
     public boolean isSystemMethod(String sig) {
     	return all_sys_methods.contains(sig);
+    }
+    
+    /**
+     * Return true if this is a system method define in anrdoid.jar.
+     */
+    public boolean isSystemMethod(SootMethod m) {
+    	return all_sys_methods.contains(m);
     }
     
     /**

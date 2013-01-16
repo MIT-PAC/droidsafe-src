@@ -34,73 +34,10 @@ public class CallGraphFromEntryPoints {
 
 	public static void run() {
 		for (SootMethod entryPoint : EntryPoints.v().getAppEntryPoints()) {
-			findReachableMethodsFrom(entryPoint);
-			//playing(entryPoint);
-			//playingWithContext(entryPoint);
-			
-		}
-		
-		//playing();
-		
-		//playingWithPaddle(Scene.v().getMethod("<irdc.ex07_11.recorder: void onStop()>"));
-		//playingWithGeom(Scene.v().getMethod("<irdc.ex07_11.recorder: void onStop()>"));
-	}
-	
-	private static void playingWithGeom(SootMethod m) {
-		
-		
-	}
-	
-	private static void playingWithPaddle(SootMethod m) {
-		/*AbsReachableMethods reachable = soot.jimple.paddle.Results.v().reachableMethods();
-		Rctxt_method methods = reachable.contextMethods();
-		Iterator iterator = methods.iterator();
-		while (iterator.hasNext()) {
-			Object obj = iterator.next();
-			System.out.printf("%s %s\n", obj.getClass(), obj);	
-		}*/
-		
-		AbsCallGraph acg = soot.jimple.paddle.Results.v().callGraph();
-		Iterator it = acg.edgesOutOf(m).iterator();
-		while (it.hasNext()) {
-			Object obj = it.next();
-			System.out.printf("%s %s\n", obj.getClass(), obj);
-		}
-		
-		
-			
-		
-	}
-	
-	private static void playing() {
-		CallGraph cg = Scene.v().getCallGraph();
-		QueueReader<Edge> edges = cg.listener();
-		while (edges.hasNext()) {
-			Edge edge = edges.next();
-			System.out.printf("Edge from %s to %s.\n", edge.src(), edge.tgt());
-			System.out.printf("\tEdge context from %s to %s\n", edge.srcCtxt(), edge.tgtCtxt());
-			System.out.printf("\tOther edge from %s to %s\n\n", edge.getSrc(), edge.getTgt());
+			findReachableMethodsFrom(entryPoint);		
 		}
 	}
-	
-	
-	private static void playingWithContext(SootMethod m) {
-		ContextSensitiveCallGraph cscg = Scene.v().getContextSensitiveCallGraph();
-		Iterator edges = cscg.allEdges();
-		Set<ContextSensitiveEdge> seen = new LinkedHashSet<ContextSensitiveEdge>();
-		while (edges.hasNext()) {
-			ContextSensitiveEdge edge = (ContextSensitiveEdge)edges.next();
-			if (seen.contains(edge))
-				continue;
-			
-			if (EntryPoints.v().isEntryPoint(edge.src())) {
-				//System.out.printf("Edge\n  %s (%s)\n  %s (%s)\n", edge.src(), edge.srcCtxt(), edge.tgt(), edge.tgtCtxt());
-				System.out.printf("Edge\n  %s\n  %s\n", edge.src(), edge.tgt());
-			}
-			
-			seen.add(edge);
-		}
-	}
+
 	
 	
 	
@@ -119,7 +56,7 @@ public class CallGraphFromEntryPoints {
 			MethodOrMethodContext meth = reachables.next();
 			if (meth instanceof SootMethod) {
 				SootMethod sm = (SootMethod)meth;
-				if (API.v().isInterestingMethod(sm.getSignature()))
+				if (API.v().isInterestingMethod(sm))
 					System.out.printf("  %s\n",meth);
 			} else {
 				Utils.ERROR_AND_EXIT(logger, "Unknown edge in callgraph {}", meth);
