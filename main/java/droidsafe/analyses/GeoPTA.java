@@ -3,6 +3,7 @@ package droidsafe.analyses;
 import java.io.PrintStream;
 import java.util.HashMap;
 import java.util.Iterator;
+import java.util.LinkedHashSet;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Set;
@@ -11,12 +12,18 @@ import java.util.Vector;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import ch.qos.logback.classic.pattern.Util;
+
 import droidsafe.android.app.EntryPoints;
 import droidsafe.android.app.Harness;
+import droidsafe.utils.Utils;
 
+import soot.Local;
 import soot.MethodOrMethodContext;
 import soot.Scene;
+import soot.SootField;
 import soot.SootMethod;
+import soot.Value;
 import soot.jimple.paddle.PaddleTransformer;
 import soot.jimple.spark.SparkTransformer;
 import soot.jimple.spark.geom.geomPA.CallsiteContextVar;
@@ -30,6 +37,7 @@ import soot.jimple.spark.pag.AllocNode;
 import soot.jimple.spark.pag.LocalVarNode;
 import soot.jimple.spark.pag.Node;
 import soot.jimple.toolkits.callgraph.CallGraph;
+import soot.jimple.toolkits.callgraph.Edge;
 import soot.jimple.toolkits.callgraph.Targets;
 import soot.options.PaddleOptions;
 import soot.options.SparkOptions;
@@ -105,6 +113,88 @@ public class GeoPTA {
 		}
 	}
 	
+	/**
+	 * Return true if this value is a pointer that is represented in the 
+	 * PTA graph.
+	 */
+	public boolean isPointer(Value v) {
+		if (v instanceof Local && getInternalNode(v) != null)
+			return true;
+		
+		//might need more stuff here.
+		
+		return false;
+	}
+	
+	/**
+	 * Return true if the value is a pointer in the pointer assignment graph.
+	 */
+	public IVarAbstraction getInternalNode(Value v) {
+		if (v instanceof Local) {
+			LocalVarNode node = ptsProvider.findLocalVarNode(v);
+			IVarAbstraction internalNode = ptsProvider.getInternalNode(node);
+			return internalNode;
+		} else if (v instanceof SootField) {
+			Utils.ERROR_AND_EXIT(logger, "Unknown type for pointer: {}", v.getClass());
+		}
+		
+		Utils.ERROR_AND_EXIT(logger, "Unknown type for pointer: {}", v.getClass());
+		return null;
+	}
+	
+	/**
+	 * Given a value that is a pointer, and a context edge from the call graph, 
+	 * return the points to set of allocation nodes that can be pointed to in the
+	 * context.
+	 */
+	public Set<AllocNode> getPTSet(Value v, Edge context) {
+		
+		if (context == null) 
+			Utils.ERROR_AND_EXIT(logger, "Null context edge for pta query.");
+		
+		IVarAbstraction ivar = getInternalNode(v);
+		Node sparkNode = ivar.getWrappedNode();
+		
+		if (ivar == null) 
+			Utils.ERROR_AND_EXIT(logger, "Error getting internal PTA node for {} of {}.", v, v.getClass());
+		
+		Set<AllocNode> allocNodes = new LinkedHashSet<AllocNode>();
+		//don't really know why this is needed, sometimes maybe the internal analysis
+		//delegates some nodes
+		ivar = ivar.getRepresentative();
+		CgEdge cgEdge = ptsProvider.getInternalEdgeFromSootEdge(context);
+		
+		if (sparkNode instanceof LocalVarNode) {
+			long l = cgEdge.map_offset;
+			long r = l + ptsProvider.max_context_size_block[cgEdge.s];
+			
+			Vector<CallsiteContextVar> outList = new Vector<CallsiteContextVar>();
+			ivar.get_all_context_sensitive_objects(l, r, ct_sens_objs, outList);
+			
+			for (CallsiteContextVar ccv : outList) {
+				//this var assignment here seems to denote if the alloc can be included 
+				//in further searches, so once we grab, make sure to say it is no
+				//longer in another queue.
+				ccv.inQ = false;
+				allocNodes.add((AllocNode)ccv.var);
+			}
+		} else {
+			Utils.ERROR_AND_EXIT(logger, "Unknown type of spark node for points to query {}.", sparkNode.getClass());
+		}
+		
+		if (allocNodes.isEmpty()) {
+			logger.debug("empty getPTSet query: {} on ivar {} with context {} {}.", v, ivar.getClass(), context, context.hashCode());
+			/*Set<AllocNode> noContext = ivar.get_all_points_to_objects();
+			for (AllocNode node : noContext) {
+				allocNodes.add(node);
+			}*/
+		}
+		return allocNodes;
+	}
+	
+	/**
+	 * Print out all points to sets.
+	 */
 	public void dumpPTA() {
 		Vector<CallsiteContextVar> outList = new Vector<CallsiteContextVar>();
 		
@@ -121,7 +211,7 @@ public class GeoPTA {
 			if (pointerMethod == null)
 				continue;
 
-			System.out.println(pn);
+			//System.out.println(pn);
 			System.out.println(v);
 
 			if (v instanceof AllocDotField) 
@@ -145,7 +235,7 @@ public class GeoPTA {
 					long r = l + ptsProvider.max_context_size_block[p.s];
 					
 					
-					file.printf("%s (%s)->\n %s\n", p.sootEdge.getSrc(), p.sootEdge.srcUnit(), p.sootEdge.getTgt());
+					file.printf("%s (%s)->\n %s %s\n", p.sootEdge.getSrc(), p.sootEdge.srcUnit(), p.sootEdge.getTgt(), p.sootEdge.hashCode());
 					
 					pn.get_all_context_sensitive_objects(l, r, ct_sens_objs, outList);
 
