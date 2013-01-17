@@ -179,7 +179,7 @@ public class GeoPTA {
 				allocNodes.add((AllocNode)ccv.var);
 			}
 		} else {
-			Utils.ERROR_AND_EXIT(logger, "Unknown type of spark node for points to query {}.", sparkNode.getClass());
+			Utils.ERROR_AND_EXIT(logger, "Unknown type of spark node for points to query {}.", v.getClass());
 		}
 		
 		if (allocNodes.isEmpty()) {
