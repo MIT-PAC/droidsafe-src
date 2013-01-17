@@ -88,7 +88,7 @@ safe        android.app.Activity: android.view.View findViewById(int)
 safe        android.app.Activity: android.app.ActionBar getActionBar()
 
 # Putting this back to safe, because I think the MIT folks have thought it through. (Perhaps the ones below should be safe too.):
-safe|model  android.app.Activity: void setContentView(int)
+spec|model  android.app.Activity: void setContentView(int)
 
 spec        android.app.Activity: void setContentView(android.view.View)
 spec        android.app.Activity: void setContentView(android.view.View, android.view.ViewGroup$LayoutParams)
