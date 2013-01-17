@@ -19,6 +19,7 @@ import droidsafe.android.app.TagImplementedSystemMethods;
 
 import droidsafe.android.app.Project;
 import droidsafe.android.system.API;
+import droidsafe.transforms.ScalarAppOptimizations;
 
 
 /**
@@ -40,6 +41,8 @@ public class Main {
 		Project.v().init();
 		SootConfig.init();
 		API.v().init();
+		logger.info("Calling scalar optimizations.");
+		ScalarAppOptimizations.run();		
 		logger.info("Create tags for the overriden system methods in user code.");
 		TagImplementedSystemMethods.run();
 		logger.info("Finding entry points in user code.");

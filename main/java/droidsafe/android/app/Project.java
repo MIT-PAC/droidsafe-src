@@ -163,6 +163,10 @@ public class Project {
 		return libClasses.contains(clz);
 	}
 	
+	public boolean isAppClass(String clz) {
+		return appClasses.contains(clz);
+	}
+	
 	/**
 	 * Return set of all classes defined in bin/classes of app.
 	 */

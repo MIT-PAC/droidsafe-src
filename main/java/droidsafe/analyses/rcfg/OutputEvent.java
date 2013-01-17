@@ -173,7 +173,7 @@ public class OutputEvent {
 					for (AllocNode node : nodes) 
 						formatter.format("\t\tNode: %s (%s)\n", node, node.getClass());
 				} else {
-					formatter.format("\tArg %d: %s\n", i, getArgValue(i).getClass());
+					formatter.format("\tArg %d: %s (%s)\n", i, getArgValue(i).getClass(), getArgValue(i));
 				}
 			}
 		}

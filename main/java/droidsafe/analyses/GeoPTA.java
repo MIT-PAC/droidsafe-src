@@ -42,6 +42,7 @@ import soot.jimple.toolkits.callgraph.Targets;
 import soot.options.PaddleOptions;
 import soot.options.SparkOptions;
 import soot.util.queue.QueueReader;
+import soot.RefLikeType;
 
 /**
  * Configure and run the Soot Spark PTA.  This class assumes the soot 
@@ -118,6 +119,9 @@ public class GeoPTA {
 	 * PTA graph.
 	 */
 	public boolean isPointer(Value v) {
+		if (!(v.getType() instanceof RefLikeType)) 
+			return false;
+		
 		if (v instanceof Local && getInternalNode(v) != null)
 			return true;
 		
@@ -179,7 +183,7 @@ public class GeoPTA {
 				allocNodes.add((AllocNode)ccv.var);
 			}
 		} else {
-			Utils.ERROR_AND_EXIT(logger, "Unknown type of spark node for points to query {}.", v.getClass());
+			Utils.ERROR_AND_EXIT(logger, "Unknown type of spark node for points to query for value {} spark node {}.", v.getClass(), sparkNode);
 		}
 		
 		if (allocNodes.isEmpty()) {
