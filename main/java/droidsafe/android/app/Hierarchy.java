@@ -12,6 +12,7 @@ import droidsafe.utils.SootUtils;
 import soot.Scene;
 import soot.SootClass;
 import soot.SootMethod;
+import soot.SootMethodRef;
 
 
 /**
@@ -106,5 +107,24 @@ public class Hierarchy {
 	 */
 	public boolean isImplementedSystemMethod(SootMethod method) {
 		return method.getTag(TagImplementedSystemMethods.SYSTEM_OVERRIDE_TAG) != null;
+	}
+	
+	/**
+	 * Given a soot method ref (a reference to a method that may not exist in the class
+	 * but should be in a superclass), can the method ref be resolved to the tgtMeth.
+	 */
+	public boolean canResolveTo(SootMethodRef mr, SootMethod tgtMeth) {
+		SootMethod called = mr.resolve();
+		Set<SootClass> tgtParents = SootUtils.getParents(tgtMeth.getDeclaringClass());
+		
+		//if the class of the method ref is not the class of the concrete method class
+		//if if the class of the method ref is not a subclass of the concrete method class
+		//it can never resolve to
+		if (!tgtMeth.getDeclaringClass().equals(called.getDeclaringClass()) &&
+				!tgtParents.contains(called.getDeclaringClass()))
+			return false;
+		
+		SootMethod possibleMethod = sootHierarchy.resolveConcreteDispatch(tgtMeth.getDeclaringClass(), called);
+		return possibleMethod == tgtMeth;
 	}
 }

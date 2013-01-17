@@ -45,7 +45,10 @@ import soot.util.queue.QueueReader;
  */
 public class GeoPTA {
 	private final static Logger logger = LoggerFactory.getLogger(GeoPTA.class);
-	private GeomPointsTo gPTA;
+	private GeomPointsTo ptsProvider;
+	/** list of all objects that are context sensitive for resolution */
+	private ZArrayNumberer<CallsiteContextVar> ct_sens_objs;
+	private CallGraph callGraph;
 	
 	private static GeoPTA v;
 	
@@ -64,21 +67,19 @@ public class GeoPTA {
 		
 		setGeomPointsToAnalysis();
 		
-		v = new GeoPTA();
+		v = new GeoPTA();		
 	}
 	
 	private GeoPTA() {
-		gPTA = (GeomPointsTo)Scene.v().getPointsToAnalysis();
+		ptsProvider = (GeomPointsTo)Scene.v().getPointsToAnalysis();
+		callGraph = Scene.v().getCallGraph();
+		resolveContext();
+		//dumpPTA();
 	}
-	
-	static void dumpPTA() {
 
-		GeomPointsTo ptsProvider = (GeomPointsTo)Scene.v().getPointsToAnalysis();
-		GeomEvaluator eval = new GeomEvaluator(ptsProvider, System.out);
-		//eval.reportBasicMetrics();
 
-		ZArrayNumberer<CallsiteContextVar> ct_sens_objs = new ZArrayNumberer<CallsiteContextVar>();
-		Vector<CallsiteContextVar> outList = new Vector<CallsiteContextVar>();
+	private void resolveContext() {
+		ct_sens_objs = new ZArrayNumberer<CallsiteContextVar>();
 		CallsiteContextVar context_obj = null;
 
 		for ( IVarAbstraction pobj : ptsProvider.allocations ) {
@@ -102,8 +103,11 @@ public class GeoPTA {
 				}
 			}
 		}
-
-
+	}
+	
+	public void dumpPTA() {
+		Vector<CallsiteContextVar> outList = new Vector<CallsiteContextVar>();
+		
 		for ( IVarAbstraction pn : ptsProvider.pointers ) {
 			pn = pn.getRepresentative();
 			Node v = pn.getWrappedNode();
@@ -120,8 +124,6 @@ public class GeoPTA {
 			System.out.println(pn);
 			System.out.println(v);
 
-			pn.print_context_sensitive_points_to(System.out);
-
 			if (v instanceof AllocDotField) 
 				System.out.printf("\tAlloc dot field\n");
 
@@ -136,12 +138,16 @@ public class GeoPTA {
 
 				for ( Iterator<CgEdge> it = edges.iterator(); it.hasNext(); ) {
 					CgEdge p = it.next();
+					if (p.sootEdge == null)
+						continue;
 
 					long l = p.map_offset;
 					long r = l + ptsProvider.max_context_size_block[p.s];
+					
+					
 					file.printf("%s (%s)->\n %s\n", p.sootEdge.getSrc(), p.sootEdge.srcUnit(), p.sootEdge.getTgt());
-
-					file.print( pn.get_all_context_sensitive_objects(l, r, ct_sens_objs, outList) );
+					
+					pn.get_all_context_sensitive_objects(l, r, ct_sens_objs, outList);
 
 					for ( CallsiteContextVar cobj : outList ) {
 						cobj.inQ = false;
@@ -164,7 +170,6 @@ public class GeoPTA {
 		}
 	}
 
-	
 	static void setGeomPointsToAnalysis() {
 		logger.info("[GeomPTA] Starting analysis ...");
 		

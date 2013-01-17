@@ -1,5 +1,7 @@
 package droidsafe.analyses.rcfg;
 
+import java.util.Arrays;
+import java.util.HashSet;
 import java.util.Iterator;
 import java.util.LinkedHashSet;
 import java.util.LinkedList;
@@ -41,6 +43,9 @@ public class RCFG {
 	
 	private static RCFG v;
 	
+	/** list of names of methods to ignore when creating the RCFG output events */
+	private static final Set<String> IGNORE_SYS_METHOD_WITH_NAME = new HashSet(Arrays.asList("<clinit>"));
+	
 	public static RCFG v() {
 		return v;
 	}
@@ -49,6 +54,8 @@ public class RCFG {
 
 		v = new RCFG();
 		v.createRCFG();
+		
+		logger.info("\n" + v.toString());
 	}
 	
 	public Set<RCFGNode> getNodes() {
@@ -98,10 +105,9 @@ public class RCFG {
 		while (edgesOut.hasNext()) {
 			Edge edge = edgesOut.next();
 			if (API.v().isSystemMethod(edge.tgt())) {
-				if (API.v().isInterestingMethod(edge.tgt())) {
-					OutputEvent oe = new OutputEvent();
-					oe.setContextEdge(edgeInto);
-					oe.setThisEdge(edge);
+				if (!IGNORE_SYS_METHOD_WITH_NAME.contains(edge.tgt().getName()) &&
+						API.v().isInterestingMethod(edge.tgt())) {
+					OutputEvent oe = new OutputEvent(edge, edgeInto);
 					rCFGNode.addOutputEvent(oe);
 				}
 				//do something to save the method and context (args and this)
@@ -118,5 +124,15 @@ public class RCFG {
 		}
 		
 		//maybe somehow cache methods at a certain depth if there are other edges into it
+	}
+	
+	public String toString() {
+		StringBuilder str = new StringBuilder();
+		
+		for (RCFGNode node : rCFG) {
+			str.append(node + "\n");
+		}
+		
+		return str.toString();
 	}
 }

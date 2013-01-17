@@ -1,5 +1,6 @@
 package droidsafe.analyses.rcfg;
 
+import java.util.LinkedList;
 import java.util.List;
 
 import soot.SootMethod;
@@ -11,6 +12,7 @@ public class RCFGNode {
 	private List<OutputEvent> outputEvents;
 
 	public RCFGNode(Edge entryEdge) {
+		outputEvents = new LinkedList<OutputEvent>();
 		this.entryEdge = entryEdge;
 	}
 	
@@ -26,4 +28,18 @@ public class RCFGNode {
 		outputEvents.add(e);
 	}
 	
+	public SootMethod getEntryPoint() {
+		return entryEdge.tgt();
+	}
+	
+	public String toString() {
+		StringBuilder str = new StringBuilder();
+		
+		str.append(getEntryPoint() + "\n");
+		for (OutputEvent oe : outputEvents) {
+			str.append("\t" + oe.toString().replaceAll("\n", "\n\t") + "\n");
+		}
+		
+		return str.toString();
+	}
 }
