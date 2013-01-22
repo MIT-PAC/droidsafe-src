@@ -113,7 +113,7 @@ public class Harness {
 		harnessClass.addMethod(harnessMain);
 		
 		createBody();
-		writeHarnessClass();
+		SootUtils.writeByteCodeAndJimple(Project.v().getOutputDir() + File.separator + HARNESS_CLASS_NAME, getHarnessClass());
 	}
 
 	
@@ -242,35 +242,5 @@ public class Harness {
 		
 		//add constructor call to body nested in invoke statement
 		body.getUnits().add(Jimple.v().newInvokeStmt(Jimple.v().newSpecialInvokeExpr(local, constructor.makeRef(), args)));
-	}
-	
-	/**
-	 * Write the harness class file in the output directory.
-	 */
-	private void writeHarnessClass() {
-		String fileName = Project.v().getOutputDir() + File.separator + HARNESS_CLASS_NAME + ".class";
-		try {
-			OutputStream streamOut = new JasminOutputStream(
-					new FileOutputStream(fileName));
-			PrintWriter writerOut = new PrintWriter(
-					new OutputStreamWriter(streamOut));
-			
-			JasminClass jasminClass = new soot.jimple.JasminClass(harnessClass);
-		    jasminClass.print(writerOut);
-		    writerOut.flush();
-		    streamOut.close();
-		    
-		    fileName = Project.v().getOutputDir() + File.separator + HARNESS_CLASS_NAME + ".jimple";
-		    streamOut = new FileOutputStream(fileName);
-		    writerOut = new PrintWriter(
-		                                new OutputStreamWriter(streamOut));
-		    Printer.v().printTo(harnessClass, writerOut);
-		    writerOut.flush();
-		    streamOut.close();
-			
-		} catch (Exception e) {
-			logger.error("Error writing harness class file {}", e);
-			System.exit(1);
-		}
 	}
 }

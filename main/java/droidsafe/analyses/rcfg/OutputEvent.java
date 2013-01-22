@@ -20,8 +20,10 @@ import soot.jimple.InstanceInvokeExpr;
 import soot.jimple.InvokeExpr;
 import soot.jimple.InvokeStmt;
 import soot.jimple.Stmt;
+import soot.jimple.StringConstant;
 import soot.jimple.spark.pag.AllocNode;
 import soot.jimple.spark.pag.Node;
+import soot.jimple.spark.pag.StringConstantNode;
 import soot.jimple.toolkits.callgraph.Edge;
 
 /**
@@ -168,10 +170,16 @@ public class OutputEvent {
 			}
 			for (int i = 0; i < getNumArgs(); i++) {
 				if (isArgPointer(i)) {
-					str.append("\tArg " + i + "\n");
 					Set<AllocNode> nodes = getArgPTSet(i);
-					for (AllocNode node : nodes) 
-						formatter.format("\t\tNode: %s (%s)\n", node, node.getClass());
+					formatter.format("\tArg %d (size %d)\n", i, nodes.size());
+					for (AllocNode node : nodes) {
+						if (node instanceof StringConstantNode) {
+							formatter.format("\t\tString Constant: %s %s\n", node, ((StringConstantNode)node).getString());
+						} else {
+							formatter.format("\t\tNode: %s (%s), New expr: %s (%s)\n", node, node.getClass(), node.getNewExpr(), 
+								node.getNewExpr().getClass());
+						}
+					}
 				} else {
 					formatter.format("\tArg %d: %s (%s)\n", i, getArgValue(i).getClass(), getArgValue(i));
 				}

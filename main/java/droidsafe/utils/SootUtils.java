@@ -1,5 +1,10 @@
 package droidsafe.utils;
 
+import java.io.File;
+import java.io.FileOutputStream;
+import java.io.OutputStream;
+import java.io.OutputStreamWriter;
+import java.io.PrintWriter;
 import java.util.Enumeration;
 import java.util.HashSet;
 import java.util.LinkedHashSet;
@@ -15,6 +20,7 @@ import java.util.regex.Pattern;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import droidsafe.android.app.Project;
 import droidsafe.main.Config;
 import droidsafe.speclang.ArgumentValue;
 import droidsafe.speclang.Method;
@@ -30,6 +36,7 @@ import soot.IntType;
 import soot.LongType;
 import soot.NullType;
 import soot.PrimType;
+import soot.Printer;
 import soot.RefType;
 import soot.Scene;
 import soot.ShortType;
@@ -42,8 +49,10 @@ import soot.VoidType;
 import soot.jimple.DoubleConstant;
 import soot.jimple.FloatConstant;
 import soot.jimple.IntConstant;
+import soot.jimple.JasminClass;
 import soot.jimple.LongConstant;
 import soot.jimple.NullConstant;
+import soot.util.JasminOutputStream;
 
 /**
  * Class to hold general utility methods that are helpful for Soot.
@@ -363,4 +372,35 @@ public class SootUtils {
 
     	return null;
     }
+    
+    /**
+	 * Write the class and jimple file in the output directory. Prefix is the absolute 
+	 * file name prefix for the class and jimple files (.class and .jimple will be appended).
+	 */
+	public static void writeByteCodeAndJimple(String filePrefix, SootClass clz) {
+		String fileName = filePrefix + ".class";
+		try {
+			OutputStream streamOut = new JasminOutputStream(
+					new FileOutputStream(fileName));
+			PrintWriter writerOut = new PrintWriter(
+					new OutputStreamWriter(streamOut));
+			
+			JasminClass jasminClass = new soot.jimple.JasminClass(clz);
+		    jasminClass.print(writerOut);
+		    writerOut.flush();
+		    streamOut.close();
+		    
+		    fileName = filePrefix + ".jimple";
+		    streamOut = new FileOutputStream(fileName);
+		    writerOut = new PrintWriter(
+		                                new OutputStreamWriter(streamOut));
+		    Printer.v().printTo(clz, writerOut);
+		    writerOut.flush();
+		    streamOut.close();
+			
+		} catch (Exception e) {
+			logger.error("Error writing class to file {}", e);
+			System.exit(1);
+		}
+	}
 }

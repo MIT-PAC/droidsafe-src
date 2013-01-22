@@ -6,6 +6,7 @@ import java.util.LinkedHashMap;
 
 import org.apache.commons.cli.CommandLine;
 import org.apache.commons.cli.CommandLineParser;
+import org.apache.commons.cli.GnuParser;
 import org.apache.commons.cli.HelpFormatter;
 import org.apache.commons.cli.Option;
 import org.apache.commons.cli.OptionBuilder;
@@ -30,6 +31,7 @@ public class Config {
 	
 	public String APP_ROOT_DIR;
 	public File ANDROID_LIB_DIR;
+	public String target = "specdump";
 	
 	private static final String ANDROID_LIB_DIR_REL = "android-lib";
 	
@@ -54,6 +56,14 @@ public class Config {
                 .create("approot");
 		options.addOption(approot);
 		
+		Option target  = OptionBuilder.withArgName( "target" )
+                .hasArg()
+                .withDescription( "Target pass to run" )
+                .create( "t"); 
+		options.addOption(target);
+		
+		Option help = new Option( "help", "print this message" );
+		options.addOption(help);
 	}
 	
 	/**
@@ -61,7 +71,21 @@ public class Config {
 	 * 
 	 * @param cmd
 	 */
-	private void setVars(CommandLine cmd) {
+	private void setVars(Options options, CommandLine cmd) {
+		if (cmd.hasOption("help")) {
+			printOptions(options);
+			System.exit(0);
+		}
+		
+		if (cmd.hasOption("target")) {
+			this.target = cmd.getOptionValue("target");
+		}
+		
+		if (!Main.TARGETS.contains(target)) {
+			logger.error("Unsupported Target: {}.", target);
+			System.exit(1);
+		}
+		
 		APP_ROOT_DIR = getPathFromCWD(cmd.getOptionValue("approot"));
 		logger.info("approot: {}", APP_ROOT_DIR);
 	}
@@ -120,11 +144,11 @@ public class Config {
 		Options options = new Options();
 		setOptions(options);
 		
-		CommandLineParser parser = new PosixParser();
+		CommandLineParser parser = new GnuParser();
 		
 		try {
 			CommandLine cmd = parser.parse( options, args);
-			setVars(cmd);
+			setVars(options, cmd);
 		} catch (Exception e) {
 			logger.error("Error parsing command line options", e);
 			printOptions(e.getMessage(), options);

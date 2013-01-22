@@ -285,8 +285,8 @@ public class GeoPTA {
 		opt.put("rta","false");                   
 		opt.put("field-based","false");           
 		opt.put("types-for-sites","false");        
-		opt.put("merge-stringbuffer","true");   
-		opt.put("string-constants","false");     
+		opt.put("merge-stringbuffer","false");   
+		opt.put("string-constants","true");     
 		opt.put("simulate-natives","true");      
 		opt.put("simple-edges-bidirectional","false");
 		opt.put("on-fly-cg","true");            
@@ -325,8 +325,8 @@ public class GeoPTA {
 		opt.put("rta","false");                   
 		opt.put("field-based","false");           
 		opt.put("types-for-sites","false");        
-		opt.put("merge-stringbuffer","true");   
-		opt.put("string-constants","false");     
+		opt.put("merge-stringbuffer","false");   
+		opt.put("string-constants","true");     
 		opt.put("simulate-natives","true");      
 		opt.put("simple-edges-bidirectional","false");
 		opt.put("on-fly-cg","true");            
