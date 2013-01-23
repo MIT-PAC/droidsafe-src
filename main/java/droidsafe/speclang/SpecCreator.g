@@ -164,7 +164,7 @@ api_call returns [Method value]
             if (!m.checkValidSpecMethod()) {
                 String msg = "Error: Not a valid method ";
                 
-                if (API.v().isBannedMethod(m.toDroidBlazeString(true))) 
+                if (API.v().isBannedMethod(m.getSignature(true))) 
                     msg = "Error: Banned method ";
                      
                 if (singleMethodParse)

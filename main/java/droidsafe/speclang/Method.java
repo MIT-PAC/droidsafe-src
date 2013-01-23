@@ -17,7 +17,7 @@ import soot.SootClass;
 import soot.SootMethod;
 import soot.tagkit.LineNumberTag;
 
-import droidsafe.speclang.SourceLocationTag;
+import droidsafe.utils.SourceLocationTag;
 import droidsafe.utils.Utils;
 import droidsafe.android.system.API;
 
@@ -153,6 +153,14 @@ public class Method implements Comparable<Method> {
 		this.lines = new ArrayList<SourceLocationTag>();
 		setUpperMostMethod();
 	}
+	
+	/**
+	 * Create a method from an underlying soot method, a string of the receiver,
+	 * and the argument values.
+	 */
+	public Method(SootMethod method, ArgumentValue[] args) {
+		this(method.getDeclaringClass().toString(), method.getReturnType().toString(), method.getName(), args, "");
+	}
 
 	/**
 	 * Create a method without a receiver
@@ -166,14 +174,14 @@ public class Method implements Comparable<Method> {
 	}
 	
 	/**
-	 * Create a new method from a droidblaze method signature.
+	 * Create a new method from a soot method signature.
 	 * 
-	 * @param dbSig The droidblaze method signature string
+	 * @param sootSig The soot method signature string
 	 */
-	public Method(String dbSig) {
+	public Method(String sootSig) {
 		//<android.media.MediaRecorder: void setOutputFile(java.lang.String)>
 		Pattern sigRE = Pattern.compile("<(\\S+): (\\S+) (\\S+)\\((.*)\\)>");
-		Matcher matcher = sigRE.matcher(dbSig);
+		Matcher matcher = sigRE.matcher(sootSig);
 		boolean b = matcher.matches();
 		
 		if (!b && matcher.groupCount() != 4)
@@ -208,33 +216,6 @@ public class Method implements Comparable<Method> {
 	
 	public boolean hasReceiver() {
 		return !receiver.equals("");			
-	}
-
-	/**
-	 * Return a string representation of the method that matches the format used 
-	 * for methods in DroidBlaze.  Used for conformance checking.
-	 * 
-	 * @param useUpperMost if true, return the signature for the uppermost super definition
-	 * this method.
-	 * 
-	 * @return DroidBlaze String representation of method
-	 */
-	public String toDroidBlazeString(boolean useUpperMost) {
-		String ret = "<";
-		
-		if (hasReceiver()) 
-			ret += "#" + receiver + "#";
-		
-		ret += useUpperMost ? upperMostCName : cname; 
-		ret += ": " + rtype + " " + methName + "(";
-		
-		for (int i = 0; i < args.length; i++) {
-          if (i > 0)
-            ret += ",";
-          ret += args[i].getType();
-		}
-		
-		return ret + ")>";
 	}
 	
 	/**

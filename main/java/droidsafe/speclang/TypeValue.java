@@ -1,5 +1,6 @@
 package droidsafe.speclang;
 
+import soot.Type;
 import droidsafe.utils.SootUtils;
 
 public class TypeValue extends ArgumentValue {
@@ -9,6 +10,10 @@ public class TypeValue extends ArgumentValue {
 	 */
 	public TypeValue(String value) {
 		super(SootUtils.toSootType(value));
+	}
+	
+	public TypeValue(Type type) {
+		super(type);
 	}
 	
 

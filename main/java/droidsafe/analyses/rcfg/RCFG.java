@@ -23,6 +23,8 @@ import droidsafe.analyses.GeoPTA;
 import droidsafe.android.app.EntryPoints;
 import droidsafe.android.app.Harness;
 import droidsafe.android.system.API;
+import droidsafe.utils.SootUtils;
+import droidsafe.utils.SourceLocationTag;
 import droidsafe.utils.Utils;
 
 /**
@@ -107,7 +109,8 @@ public class RCFG {
 			if (API.v().isSystemMethod(edge.tgt())) {
 				if (!IGNORE_SYS_METHOD_WITH_NAME.contains(edge.tgt().getName()) &&
 						API.v().isInterestingMethod(edge.tgt())) {
-					OutputEvent oe = new OutputEvent(edge, edgeInto);
+					SourceLocationTag line = SootUtils.getSourceLocation(edge.srcStmt(), edge.src().getDeclaringClass());
+					OutputEvent oe = new OutputEvent(edge, edgeInto, rCFGNode, line);
 					rCFGNode.addOutputEvent(oe);
 				}
 				//do something to save the method and context (args and this)

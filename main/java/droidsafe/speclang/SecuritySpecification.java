@@ -22,6 +22,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import droidsafe.android.system.API;
+import droidsafe.utils.SourceLocationTag;
 import droidsafe.utils.Utils;
 
 import soot.Scene;
@@ -51,9 +52,20 @@ public class SecuritySpecification  {
 	}
 	
 	/**
+	 * Add the outputevent's conformance information to the input event, but if one of the 
+	 * output event already exists in the spec, then combine the current output event 
+	 * with the stored output event by widening. 
+	 */
+	public void addToInputEventCombine(Method inputEvent, List<Method> oes) {
+		for (Method oe : oes) {
+			addToInputEventCombine(inputEvent, oe);
+		}
+	}
+	
+	/**
 	 * Add the outputevent's conformance information to the input event, but if the 
 	 * output event already exists in the spec, then combine the current output event 
-	 * with the stored output event by widening.  Only used for spec dump.
+	 * with the stored output event by widening. 
 	 */
 	public void addToInputEventCombine(Method inputEvent, Method outputEvent) {
 		
@@ -207,7 +219,7 @@ public class SecuritySpecification  {
             List<String> banned_methods = new ArrayList<String>();
         	for (Method oe : outm) {
                 String msig = "";
-        		String dbSig = oe.toDroidBlazeString(true);
+        		String dbSig = oe.getSignature(true);
         		boolean unsup = !API.v().isSupportedMethod(dbSig);
                 if (unsup) {
                   msig += "<b>";

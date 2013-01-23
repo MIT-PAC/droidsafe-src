@@ -32,6 +32,10 @@ public class RCFGNode {
 		return entryEdge.tgt();
 	}
 	
+	public List<OutputEvent> getOutputEvents() {
+		return outputEvents;
+	}
+	
 	public String toString() {
 		StringBuilder str = new StringBuilder();
 		

@@ -1,4 +1,4 @@
-// $ANTLR 3.4 /Users/mgordon/research/ds2/src/main/java/droidsafe/speclang/SpecCreator.g 2013-01-09 15:56:34
+// $ANTLR 3.4 /Users/mgordon/research/ds2/src/main/java/droidsafe/speclang/SpecCreator.g 2013-01-22 21:25:35
 package droidsafe.speclang;
       import org.antlr.runtime.*;
       import java.util.HashMap;
@@ -1106,7 +1106,7 @@ public class SpecCreator extends TreeParser {
                         if (!m.checkValidSpecMethod()) {
                             String msg = "Error: Not a valid method ";
                             
-                            if (API.v().isBannedMethod(m.toDroidBlazeString(true))) 
+                            if (API.v().isBannedMethod(m.getSignature(true))) 
                                 msg = "Error: Banned method ";
                                  
                             if (singleMethodParse)

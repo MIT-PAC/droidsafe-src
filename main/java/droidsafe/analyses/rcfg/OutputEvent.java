@@ -1,6 +1,7 @@
 package droidsafe.analyses.rcfg;
 
 import java.util.Formatter;
+import java.util.LinkedHashSet;
 import java.util.Locale;
 import java.util.Set;
 
@@ -10,8 +11,11 @@ import org.slf4j.LoggerFactory;
 import droidsafe.analyses.GeoPTA;
 import droidsafe.android.app.Harness;
 import droidsafe.android.app.Hierarchy;
+import droidsafe.utils.SootUtils;
+import droidsafe.utils.SourceLocationTag;
 import droidsafe.utils.Utils;
 import soot.SootMethod;
+import soot.Type;
 import soot.Unit;
 import soot.Value;
 import soot.ValueBox;
@@ -40,10 +44,15 @@ public class OutputEvent {
 	private Edge contextEdge;
 	/** The invoke expression call to an API method */
 	private InvokeExpr invokeExpr;
-		
-	public OutputEvent(Edge thisEdge, Edge contextEdge) {
+	/** The parent RFCG Node */
+	private RCFGNode parent;	
+	private SourceLocationTag linesTag = null;
+	
+	public OutputEvent(Edge thisEdge, Edge contextEdge, RCFGNode parent, SourceLocationTag ln) {
 		this.thisEdge = thisEdge;
 		this.contextEdge = contextEdge;
+		this.parent = parent;
+		this.linesTag = ln;
 		
 		setInvoke();
 	}
@@ -121,6 +130,21 @@ public class OutputEvent {
 	}
 	
 	/**
+	 * Return all of the types possible in the points to set of the receiver.
+	 */
+	public Set<Type> getReceiverTypes() {
+		return GeoPTA.v().getTypes(getReceiver(), contextEdge);		
+	}
+	
+	/**
+	 * Return the type of the value for the argument, does not look 
+	 * at the points to set.
+	 */
+	public Type getArgumentType(int i) {
+		return getArgValue(i).getType();
+	}
+	
+	/**
 	 * Return the points to set for the pointer argument at index i.
 	 */
 	public Set<AllocNode> getArgPTSet(int i) {
@@ -156,7 +180,15 @@ public class OutputEvent {
 	public boolean isArgPointer(int i) {
 		return GeoPTA.v().isPointer(getArgValue(i));
 	}
-
+	
+	public RCFGNode getParent() {
+		return parent;
+	}
+	
+	public SourceLocationTag getSourceLocationTag() {
+		return linesTag;
+	}
+	
 	public String toString() {
 		StringBuilder str = new StringBuilder();
 		Formatter formatter = new Formatter(str, Locale.US);

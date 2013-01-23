@@ -52,6 +52,8 @@ import soot.jimple.IntConstant;
 import soot.jimple.JasminClass;
 import soot.jimple.LongConstant;
 import soot.jimple.NullConstant;
+import soot.jimple.Stmt;
+import soot.tagkit.LineNumberTag;
 import soot.util.JasminOutputStream;
 
 /**
@@ -115,7 +117,14 @@ public class SootUtils {
 		}
 	}
 	
+	public static boolean isStringType(Type t) {
+		return t.equals(RefType.v("java.lang.String"));
+	}
 	  
+	public static boolean isClassType(Type t) {
+		return t.equals(RefType.v("java.lang.Class"));
+	}
+	
     /**
      * Return true if type is a integral type (byte, char, short, int, or long).
      */
@@ -225,6 +234,11 @@ public class SootUtils {
 	
 		List<SootMethod> possibleMethods = findPossibleInheritedMethods(clz, method.getName(), 
 				method.getRtype(), method.getArgs().length);
+		
+		/*if (possibleMethods.isEmpty()) {
+			Utils.ERROR_AND_EXIT(logger, "No possible methods targets for signature {}", signature);
+		}*/
+			
 		
 		boolean isStatic = possibleMethods.get(0).isStatic();
 		for (SootMethod possibleMethod : possibleMethods) 
@@ -402,5 +416,17 @@ public class SootUtils {
 			logger.error("Error writing class to file {}", e);
 			System.exit(1);
 		}
+	}
+	
+
+	public static SourceLocationTag getSourceLocation(Stmt stmt, SootClass clz) {
+		 SourceLocationTag line = null;
+         
+		 LineNumberTag tag = (LineNumberTag) stmt.getTag("LineNumberTag");
+		 if (tag != null) {
+			 line = new SourceLocationTag(clz.toString(),  tag.getLineNumber());
+		 }
+		 
+		 return line;
 	}
 }

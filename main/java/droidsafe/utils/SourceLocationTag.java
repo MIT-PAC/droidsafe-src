@@ -1,4 +1,4 @@
-package droidsafe.speclang;
+package droidsafe.utils;
 
 import java.io.Serializable;
 

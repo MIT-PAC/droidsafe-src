@@ -23,6 +23,7 @@ import soot.MethodOrMethodContext;
 import soot.Scene;
 import soot.SootField;
 import soot.SootMethod;
+import soot.Type;
 import soot.Value;
 import soot.jimple.paddle.PaddleTransformer;
 import soot.jimple.spark.SparkTransformer;
@@ -144,6 +145,20 @@ public class GeoPTA {
 		
 		Utils.ERROR_AND_EXIT(logger, "Unknown type for pointer: {}", v.getClass());
 		return null;
+	}
+	
+	/**
+	 * For a given pointer in the context, return all the types that the objects pointed to 
+	 * by the pointer can realize.
+	 */
+	public Set<Type> getTypes(Value v, Edge context) {
+		Set<Type> types = new LinkedHashSet<Type>();
+		
+		for (AllocNode node : getPTSet(v, context)) {
+			types.add(node.getType());
+		}
+		
+		return types;
 	}
 	
 	/**

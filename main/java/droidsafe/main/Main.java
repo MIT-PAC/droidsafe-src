@@ -17,6 +17,7 @@ import soot.SootMethod;
 
 import droidsafe.analyses.CallGraphFromEntryPoints;
 import droidsafe.analyses.GeoPTA;
+import droidsafe.analyses.RCFGToSSL;
 import droidsafe.analyses.rcfg.RCFG;
 import droidsafe.android.app.EntryPoints;
 import droidsafe.android.app.Harness;
@@ -73,7 +74,7 @@ public class Main {
 		logger.info("Ending DroidSafe Run");
 		
 		if (Config.v().target.equals("specdump")) {
-			
+			RCFGToSSL.run();
 		} else if (Config.v().target.equals("confcheck")) {
 			
 		}
