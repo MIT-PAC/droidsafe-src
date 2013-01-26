@@ -198,7 +198,7 @@ safe        android.app.Application: void <init>()
 safe        android.app.Application: void onTerminate()
 
 # I don't think getting the service is dangerous (using it might be)
-safe        android.app.Activity: java.lang.Object getSystemService(java.lang.String)
+spec        android.app.Activity: java.lang.Object getSystemService(java.lang.String)
 
 # similar to setting a buttons text, should be in XML
 spec        android.app.Activity: void setTitle(java.lang.CharSequence)
