@@ -20,6 +20,7 @@ import droidsafe.android.system.Components;
 import droidsafe.utils.SootUtils;
 import droidsafe.utils.Utils;
 
+import soot.Body;
 import soot.Local;
 import soot.Printer;
 import soot.RefLikeType;
@@ -35,10 +36,10 @@ import soot.SootClass;
 import soot.SootMethod;
 import soot.Unit;
 import soot.VoidType;
+import soot.jimple.IntConstant;
 import soot.jimple.InvokeExpr;
 import soot.jimple.JasminClass;
 import soot.jimple.Jimple;
-import soot.jimple.JimpleBody;
 import soot.jimple.NopStmt;
 import soot.jimple.StmtBody;
 import soot.util.JasminOutputStream;
@@ -118,7 +119,7 @@ public class Harness {
 
 	
 	private void createBody() {
-		JimpleBody body = Jimple.v().newBody(harnessMain);
+		Body body = Jimple.v().newBody(harnessMain);
 		harnessMain.setActiveBody(body);
 		
 		//add access to the arg
@@ -167,31 +168,11 @@ public class Harness {
 			for (Object argType : entryPoint.getParameterTypes()) {
 				//if a reference, create dummy object
 				if (argType instanceof RefType) {
-					SootClass clz = ((RefType)argType).getSootClass();
-					//if an interface, find a direct implementor of and instantiate that...
-					if (!clz.isConcrete()) {
-						clz = SootUtils.getCloseConcrete(clz);
-					}
-					
-					if (clz ==  null) {
-						//if clz is null, then we have an interface with no known implementors, 
-						//so just pass null
-						args.add(SootUtils.getNullValue((RefType)argType));
-						continue;
-					}
-					
-					//if we got here, we found a class to instantiate, either the org or an implementor
-					Local argLocal = Jimple.v().newLocal("l" + localID++, (Type)argType);
-					body.getLocals().add(argLocal);
-					
-					//add the call to the new object
-					body.getUnits().add(Jimple.v().newAssignStmt(argLocal, Jimple.v().newNewExpr(RefType.v(clz))));
-					
-					addConstructorCall(body, argLocal, RefType.v(clz));
-					args.add(argLocal);
+					Value v = createNewAndConstructorCall(body, entryPoint, ((RefType)argType));
+					args.add(v);
 				} else if (argType instanceof ArrayType) {
-					logger.warn("Using null for array argument of method {} in harness.", entryPoint);
-					args.add(SootUtils.getNullValue((Type)argType));
+					Value v = createNewArrayAndObject(body, entryPoint, (ArrayType)argType);
+					args.add(v);
 				} else {
 					args.add(SootUtils.getNullValue((Type)argType));
 				}
@@ -211,6 +192,81 @@ public class Harness {
 		body.getUnits().add(Jimple.v().newReturnVoidStmt());
 	}
 	
+	private Value createNewArrayAndObject(Body body, SootMethod entryPoint, ArrayType type) {
+		Type baseType = type.getArrayElementType();
+		
+		//create new array to local		
+		Local arrayLocal = Jimple.v().newLocal("l" + localID++, type);
+		body.getLocals().add(arrayLocal);
+		
+		if (type.numDimensions > 1) {
+			//multiple dimensions, have to do some crap...
+			List<Value> ones = new LinkedList<Value>();
+			for (int i = 0; i < type.numDimensions; i++)
+				ones.add(IntConstant.v(1));
+			
+			body.getUnits().add(Jimple.v().newAssignStmt(arrayLocal,
+				Jimple.v().newNewMultiArrayExpr(type, ones)));
+		} else {
+			//single dimension, add new expression
+			body.getUnits().add(Jimple.v().newAssignStmt(arrayLocal, 
+				Jimple.v().newNewArrayExpr(baseType, IntConstant.v(1))));
+		}
+		
+		//get down to an element through the dimensions
+		Local elementPtr = arrayLocal;
+		while (((ArrayType)elementPtr.getType()).getElementType() instanceof ArrayType) {
+			Local currentLocal = Jimple.v().newLocal("l" + localID++, ((ArrayType)elementPtr).getElementType());
+			body.getUnits().add(Jimple.v().newAssignStmt(
+					currentLocal, 
+					Jimple.v().newArrayRef(elementPtr, IntConstant.v(0))));
+			elementPtr = currentLocal;
+		}
+
+		//if a ref type, then create the new and constructor and assignment to array element
+		if (baseType instanceof RefType) {
+			//create the new expression and constructor call for a new local
+			Value eleLocal = createNewAndConstructorCall(body, entryPoint, (RefType)baseType);
+			//assign the new local to the array access
+			body.getUnits().add(Jimple.v().newAssignStmt(
+					Jimple.v().newArrayRef(elementPtr, IntConstant.v(0)), 
+					eleLocal));	
+		}	
+
+		return arrayLocal;
+	}
+	
+	/**
+	 * Add to the body code to create a new object and assign it to a local, and then call the constructor
+	 * on the local.  If the type is an interface, then try to find a close implementor
+	 * return the local so it can be used in array assignments
+	 */
+	private Value createNewAndConstructorCall(Body body, SootMethod entryPoint, RefType type) {
+		SootClass clz = type.getSootClass();
+		//if an interface, find a direct implementor of and instantiate that...
+		if (!clz.isConcrete()) {
+			clz = SootUtils.getCloseConcrete(clz);
+		}
+		
+		if (clz ==  null) {
+			//if clz is null, then we have an interface with no known implementors, 
+			//so just pass null
+			logger.warn("Cannot find any known implementors of {} when building harness for entry {}", 
+					type.getSootClass(), entryPoint);
+			return SootUtils.getNullValue(type);
+		}
+		
+		//if we got here, we found a class to instantiate, either the org or an implementor
+		Local argLocal = Jimple.v().newLocal("l" + localID++, type);
+		body.getLocals().add(argLocal);
+		
+		//add the call to the new object
+		body.getUnits().add(Jimple.v().newAssignStmt(argLocal, Jimple.v().newNewExpr(RefType.v(clz))));
+		
+		addConstructorCall(body, argLocal, RefType.v(clz));
+		return argLocal;
+	}
+	
 	/**
 	 * Given a method, create the appropriate invoke jimple expression to invoke it on the local, and with 
 	 * args.
@@ -225,7 +281,7 @@ public class Harness {
 		}
 	}
 	
-	public static void addConstructorCall(JimpleBody body, Local local, RefType type) {
+	public static void addConstructorCall(Body body, Local local, RefType type) {
 		SootClass clazz = type.getSootClass();
 		
 		//add the call to the constructor with its args
