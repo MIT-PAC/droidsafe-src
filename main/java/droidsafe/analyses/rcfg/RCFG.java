@@ -11,21 +11,38 @@ import java.util.Set;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import soot.AnySubType;
+import soot.ArrayType;
+import soot.Body;
 import soot.MethodOrMethodContext;
+import soot.RefType;
 import soot.Scene;
+import soot.SootClass;
 import soot.SootMethod;
+import soot.Unit;
+import soot.jimple.InstanceInvokeExpr;
+import soot.jimple.InvokeExpr;
+import soot.jimple.NewExpr;
+import soot.jimple.Stmt;
+import soot.jimple.StmtBody;
+import soot.jimple.internal.JAssignStmt;
 import soot.jimple.spark.geom.geomPA.CgEdge;
 import soot.jimple.spark.geom.geomPA.GeomPointsTo;
+import soot.jimple.spark.pag.AllocNode;
 import soot.jimple.toolkits.callgraph.CallGraph;
 import soot.jimple.toolkits.callgraph.Edge;
+import soot.util.Chain;
+import soot.Type;
 
 import droidsafe.analyses.GeoPTA;
 import droidsafe.android.app.EntryPoints;
 import droidsafe.android.app.Harness;
 import droidsafe.android.system.API;
+import droidsafe.transforms.AddAllocsForAPICalls;
 import droidsafe.utils.SootUtils;
 import droidsafe.utils.SourceLocationTag;
 import droidsafe.utils.Utils;
+
 
 /**
  * This class will generate the reduced control flow graph starting from
@@ -73,8 +90,6 @@ public class RCFG {
 		//from it, and for each edge to an entry point, create and populate
 		//the rCFG node
 		
-		//int mainID = ptsProvider.getIDFromSootMethod(Harness.v().getMain());
-		
 		Iterator<Edge> edgesIt = sparkCG.edgesOutOf(Harness.v().getMain());
 		while (edgesIt.hasNext()) {
 			Edge edge = edgesIt.next();
@@ -102,10 +117,12 @@ public class RCFG {
 		visited.add(edgeInto);
 		
 		//find all calls to api and save context and call to rCFGNode
-		Iterator<Edge> edgesOut = sparkCG.edgesOutOf(method);
+		List<Edge> edgesOut = csEdgesOutOf(edgeInto);
+		edgesOut.addAll(edgesFromAPIAllocs(edgeInto));
 		List<Edge> appEdgesOut = new LinkedList<Edge>();
-		while (edgesOut.hasNext()) {
-			Edge edge = edgesOut.next();
+		
+		for (Edge edge : edgesOut) {
+			logger.info("Looking at method call for: {}.", edge.tgt());
 			if (API.v().isSystemMethod(edge.tgt())) {
 				if (!IGNORE_SYS_METHOD_WITH_NAME.contains(edge.tgt().getName()) &&
 						API.v().isInterestingMethod(edge.tgt())) {
@@ -128,6 +145,103 @@ public class RCFG {
 		
 		//maybe somehow cache methods at a certain depth if there are other edges into it
 	}
+	
+	private List<Edge> edgesFromAPIAllocs(Edge edgeInto) {
+		List<Edge> newEdges = new LinkedList<Edge>();
+		SootMethod src = edgeInto.tgt();
+		
+		StmtBody stmtBody = (StmtBody)src.getActiveBody();
+
+		// get body's unit as a chain
+		Chain<Unit> units = stmtBody.getUnits();
+
+		// get a snapshot iterator of the unit since we are going to
+		// mutate the chain when iterating over it.
+		Iterator<Unit> stmtIt = units.snapshotIterator();
+
+		while (stmtIt.hasNext()) {
+			Stmt stmt = (Stmt)stmtIt.next();
+			InstanceInvokeExpr expr = SootUtils.getInstanceInvokeExpr(stmt);
+			if (expr == null) 
+				continue;
+			
+			for (AllocNode alloc : GeoPTA.v().getPTSet(expr.getBase(), edgeInto)) {
+				if (AddAllocsForAPICalls.v().isGeneratedExpr((NewExpr)alloc.getNewExpr())) {
+					Type t = alloc.getType();
+				
+					if ( t instanceof AnySubType ||
+							 t instanceof ArrayType ) {
+						logger.error("Weird type in call to object retrieved from API {}", stmt);
+						System.exit(1);
+					}
+					SootClass recClass = ((RefType)t).getSootClass();
+					List<SootMethod> methods = 
+							SootUtils.getOverridingMethodsIncluding(recClass, expr.getMethodRef().getSubSignature().getString());
+					for (SootMethod m : methods) {
+						Edge newEdge = new Edge(src, stmt, m);
+						newEdges.add(newEdge);
+					}
+				}
+			}
+		}
+		
+		return newEdges;
+	}
+	
+	private List<Edge> csEdgesOutOf(Edge edgeInto) {
+		SootMethod method = edgeInto.tgt();
+		List<Edge> csEdges = new LinkedList<Edge>();
+		Iterator<Edge> ciEdges = sparkCG.edgesOutOf(method);
+		
+		//iterate over all the ci edges from soot, and check to see
+		//if they are valid given 
+		while (ciEdges.hasNext()) {
+			Edge curEdge = ciEdges.next();
+			SootMethod target = curEdge.tgt();
+			//get the internal edge from the CS analysis
+			CgEdge cgEdge = ptsProvider.getInternalEdgeFromSootEdge(curEdge);
+			if (cgEdge == null) {
+				//hmm, edge is not in the cs call graph at all, add it just in case...
+				csEdges.add(curEdge);
+				continue;
+			}
+			
+			//if always obsoleted, then continue
+			if (cgEdge.is_obsoleted)
+				continue;
+			
+			//otherwise check in the context if it is a valid edge
+			if (cgEdge.base_var != null && !ptsProvider.thread_run_callsites.contains(curEdge.srcStmt())) { 
+				//virtual call
+				boolean keepEdge = false;
+				
+				for (AllocNode an : GeoPTA.v().getPTSet(cgEdge.base_var, edgeInto)) {
+					Type t = an.getType();
+					if ( t instanceof AnySubType ||
+							 t instanceof ArrayType ) {
+						keepEdge = true;
+						break;
+					}
+					
+					// Only the virtual calls do the following test
+					if ( Scene.v().getActiveHierarchy().
+							resolveConcreteDispatch( ((RefType)t).getSootClass(), target) == target ) {
+						keepEdge = true;
+						break;
+					}					
+				}
+				if (keepEdge) {
+					csEdges.add(curEdge);
+				}
+			} else {
+				//not a virtual call, always add
+				csEdges.add(curEdge);
+			}
+		}
+		
+		return csEdges;
+	}
+
 	
 	public String toString() {
 		StringBuilder str = new StringBuilder();

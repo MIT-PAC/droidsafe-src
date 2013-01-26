@@ -18,9 +18,12 @@ import java.io.*;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import soot.ArrayType;
 import soot.MethodOrMethodContext;
+import soot.RefType;
 import soot.Scene;
 import soot.SootClass;
+import soot.Type;
 import soot.SootMethod;
 
 import droidsafe.utils.*;
@@ -87,7 +90,7 @@ public class API {
 			File dsLib = new File(System.getenv ("APAC_HOME"), 
 					"android-lib/droidcalls.jar");
 			JarFile dsJar = new JarFile(dsLib);
-			SootUtils.loadClassesFromJar(dsJar, false);
+			SootUtils.loadClassesFromJar(dsJar, true);
 			all_sys_methods.addAllMethods(dsJar);			
 		} catch (Exception e) {
 			Utils.ERROR_AND_EXIT(logger, "Error loading droidsafe call jar (maybe it does not exist).");
@@ -267,5 +270,14 @@ public class API {
      */
     public boolean isSystemClass(SootClass clz) {
     	return allSystemClasses.contains(clz);
+    }
+    
+    public boolean isSystemClassReference(Type t) {
+    	if (t instanceof RefType) 
+    		return isSystemClass(((RefType)t).getSootClass());
+    	else if (t instanceof ArrayType) 
+    		return isSystemClassReference(((ArrayType)t).getElementType());
+    	else 
+    		return false;
     }
  }

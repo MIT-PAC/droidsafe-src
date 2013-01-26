@@ -111,7 +111,7 @@ public class Hierarchy {
 	
 	/**
 	 * Given a soot method ref (a reference to a method that may not exist in the class
-	 * but should be in a superclass), can the method ref be resolved to the tgtMeth.
+	 * but should be in a superclass), can the method ref be resolved to the tgtMeth.	
 	 */
 	public boolean canResolveTo(SootMethodRef mr, SootMethod tgtMeth) {
 		SootMethod called = mr.resolve();

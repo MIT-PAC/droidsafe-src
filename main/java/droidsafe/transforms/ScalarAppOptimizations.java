@@ -19,6 +19,8 @@ public class ScalarAppOptimizations {
 		for (SootClass clz : Scene.v().getClasses()) {
 			if (Project.v().isAppClass(clz.toString())) {
 				for (SootMethod meth : clz.getMethods()) {
+					if (!meth.isConcrete())
+						continue;
 					logger.info("Calling Constant Prop and folding on {}", meth);
 					G.v().soot_jimple_toolkits_scalar_ConstantPropagatorAndFolder().
 						transform(meth.retrieveActiveBody());

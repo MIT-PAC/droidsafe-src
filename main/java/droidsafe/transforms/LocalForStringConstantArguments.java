@@ -44,7 +44,8 @@ public class LocalForStringConstantArguments extends BodyTransformer {
 		for (SootClass clz : Scene.v().getClasses()) {
 			if (Project.v().isAppClass(clz.toString())) {
 				for (SootMethod meth : clz.getMethods()) {
-					transformer.transform(meth.retrieveActiveBody());
+					if (meth.isConcrete())
+						transformer.transform(meth.retrieveActiveBody());
 				}
 			}
 		}

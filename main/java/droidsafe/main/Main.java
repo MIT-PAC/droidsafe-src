@@ -25,6 +25,7 @@ import droidsafe.android.app.TagImplementedSystemMethods;
 
 import droidsafe.android.app.Project;
 import droidsafe.android.system.API;
+import droidsafe.transforms.AddAllocsForAPICalls;
 import droidsafe.transforms.LocalForStringConstantArguments;
 import droidsafe.transforms.ScalarAppOptimizations;
 import droidsafe.utils.SootUtils;
@@ -65,13 +66,16 @@ public class Main {
 		Harness.create();
 		logger.info("Setting Harness Main as entry point.");
 		setHarnessMainAsEntryPoint();
-		
-		writeAllAppClasses();
+	
+		AddAllocsForAPICalls.run();
 		
 		logger.info("Starting PTA...");
 		GeoPTA.run();
+		
 		RCFG.generate();
 		logger.info("Ending DroidSafe Run");
+		
+		writeAllAppClasses();
 		
 		if (Config.v().target.equals("specdump")) {
 			RCFGToSSL.run();
@@ -90,7 +94,7 @@ public class Main {
 	
 	private static void writeAllAppClasses() {
 		for (SootClass clz : Scene.v().getClasses()) {
-			if (clz.isApplicationClass()) {
+			if (clz.isApplicationClass() && Project.v().isAppClass(clz.toString())) {
 				SootUtils.writeByteCodeAndJimple(Project.v().getOutputDir() + File.separator + clz.toString(), clz);
 			}
 		}

@@ -37,6 +37,7 @@ import soot.jimple.spark.pag.AllocDotField;
 import soot.jimple.spark.pag.AllocNode;
 import soot.jimple.spark.pag.LocalVarNode;
 import soot.jimple.spark.pag.Node;
+import soot.jimple.spark.pag.VarNode;
 import soot.jimple.toolkits.callgraph.CallGraph;
 import soot.jimple.toolkits.callgraph.Edge;
 import soot.jimple.toolkits.callgraph.Targets;
@@ -160,6 +161,59 @@ public class GeoPTA {
 		
 		return types;
 	}
+
+	private Set<AllocNode> getPTSet(Node sparkNode, IVarAbstraction ivar, Edge context) {
+		Set<AllocNode> allocNodes = new LinkedHashSet<AllocNode>();
+		
+		try {
+			if (context == null) 
+				Utils.ERROR_AND_EXIT(logger, "Null context edge for pta query.");
+
+
+			if (ivar == null) 
+				Utils.ERROR_AND_EXIT(logger, "Error getting internal PTA node for {} of {}.", v, v.getClass());
+
+
+			//don't really know why this is needed, sometimes maybe the internal analysis
+			//delegates some nodes
+			ivar = ivar.getRepresentative();
+			CgEdge cgEdge = ptsProvider.getInternalEdgeFromSootEdge(context);
+
+			if (sparkNode instanceof LocalVarNode) {
+				long l = cgEdge.map_offset;
+				long r = l + ptsProvider.max_context_size_block[cgEdge.s];
+
+				Vector<CallsiteContextVar> outList = new Vector<CallsiteContextVar>();
+				ivar.get_all_context_sensitive_objects(l, r, ct_sens_objs, outList);
+
+				for (CallsiteContextVar ccv : outList) {
+					//this var assignment here seems to denote if the alloc can be included 
+					//in further searches, so once we grab, make sure to say it is no
+					//longer in another queue.
+					ccv.inQ = false;
+					allocNodes.add((AllocNode)ccv.var);
+				}
+			} else {
+				Utils.ERROR_AND_EXIT(logger, "Unknown type of spark node for points to query for value {} spark node {}.", v.getClass(), sparkNode);
+			}
+
+			if (allocNodes.isEmpty()) {
+				logger.debug("empty getPTSet query: {} on ivar {} with context {} {}.", v, ivar.getClass(), context, context.hashCode());
+				/*Set<AllocNode> noContext = ivar.get_all_points_to_objects();
+		for (AllocNode node : noContext) {
+			allocNodes.add(node);
+		}*/
+			} 
+		} catch (Exception e) {
+			logger.error("Some sort of error getting points to set for {} in {}", v, context.tgt(), e);
+		}
+		return allocNodes;
+	}
+	
+	public Set<AllocNode> getPTSet(Node sparkNode, Edge context) {
+		IVarAbstraction ivar = ptsProvider.consG.get(sparkNode);
+		return getPTSet(sparkNode, ivar, context);
+	}
 	
 	/**
 	 * Given a value that is a pointer, and a context edge from the call graph, 
@@ -167,48 +221,10 @@ public class GeoPTA {
 	 * context.
 	 */
 	public Set<AllocNode> getPTSet(Value v, Edge context) {
-		
-		if (context == null) 
-			Utils.ERROR_AND_EXIT(logger, "Null context edge for pta query.");
-		
 		IVarAbstraction ivar = getInternalNode(v);
 		Node sparkNode = ivar.getWrappedNode();
 		
-		if (ivar == null) 
-			Utils.ERROR_AND_EXIT(logger, "Error getting internal PTA node for {} of {}.", v, v.getClass());
-		
-		Set<AllocNode> allocNodes = new LinkedHashSet<AllocNode>();
-		//don't really know why this is needed, sometimes maybe the internal analysis
-		//delegates some nodes
-		ivar = ivar.getRepresentative();
-		CgEdge cgEdge = ptsProvider.getInternalEdgeFromSootEdge(context);
-		
-		if (sparkNode instanceof LocalVarNode) {
-			long l = cgEdge.map_offset;
-			long r = l + ptsProvider.max_context_size_block[cgEdge.s];
-			
-			Vector<CallsiteContextVar> outList = new Vector<CallsiteContextVar>();
-			ivar.get_all_context_sensitive_objects(l, r, ct_sens_objs, outList);
-			
-			for (CallsiteContextVar ccv : outList) {
-				//this var assignment here seems to denote if the alloc can be included 
-				//in further searches, so once we grab, make sure to say it is no
-				//longer in another queue.
-				ccv.inQ = false;
-				allocNodes.add((AllocNode)ccv.var);
-			}
-		} else {
-			Utils.ERROR_AND_EXIT(logger, "Unknown type of spark node for points to query for value {} spark node {}.", v.getClass(), sparkNode);
-		}
-		
-		if (allocNodes.isEmpty()) {
-			logger.debug("empty getPTSet query: {} on ivar {} with context {} {}.", v, ivar.getClass(), context, context.hashCode());
-			/*Set<AllocNode> noContext = ivar.get_all_points_to_objects();
-			for (AllocNode node : noContext) {
-				allocNodes.add(node);
-			}*/
-		}
-		return allocNodes;
+		return getPTSet(sparkNode, ivar, context);
 	}
 	
 	/**
@@ -293,7 +309,7 @@ public class GeoPTA {
 		opt.put("geom-runs", "1");
 		opt.put("enabled","true");
 		opt.put("verbose","false");
-		opt.put("ignore-types","false");          
+		opt.put("ignore-types","true");          
 		opt.put("force-gc","false");            
 		opt.put("pre-jimplify","false");          
 		opt.put("vta","false");                   

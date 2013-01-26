@@ -25,6 +25,7 @@ import droidsafe.main.Config;
 import droidsafe.speclang.ArgumentValue;
 import droidsafe.speclang.Method;
 
+import soot.AnySubType;
 import soot.ArrayType;
 import soot.BooleanType;
 import soot.ByteType;
@@ -37,6 +38,7 @@ import soot.LongType;
 import soot.NullType;
 import soot.PrimType;
 import soot.Printer;
+import soot.RefLikeType;
 import soot.RefType;
 import soot.Scene;
 import soot.ShortType;
@@ -48,7 +50,9 @@ import soot.Value;
 import soot.VoidType;
 import soot.jimple.DoubleConstant;
 import soot.jimple.FloatConstant;
+import soot.jimple.InstanceInvokeExpr;
 import soot.jimple.IntConstant;
+import soot.jimple.InvokeExpr;
 import soot.jimple.JasminClass;
 import soot.jimple.LongConstant;
 import soot.jimple.NullConstant;
@@ -140,12 +144,17 @@ public class SootUtils {
      * Get all superclasses and super interfaces of a soot class.
      */
     public static Set<SootClass> getParents(SootClass sc) {
-        Set<SootClass>   ret = new HashSet<SootClass>();
+        Set<SootClass>   ret = new LinkedHashSet<SootClass>();
         Queue<SootClass> q   = new LinkedList<SootClass>();
         q.add(sc);
 
         while (!q.isEmpty()) {
             SootClass curr = q.poll();
+            if (curr == null) {
+            	logger.info("Strange, null found in getParents on {}", sc);
+            	continue;
+            }
+            
             if (curr.toString().equals("java.lang.Object")) {
                 continue;
             }
@@ -157,6 +166,19 @@ public class SootUtils {
         }
 
         return ret;
+    }
+    
+    /**
+     * Given a class or interface, get all classes that have this as ancestor.
+     */
+    public static List<SootClass> getChildren(SootClass sc) {
+    	Hierarchy hier = Scene.v().getActiveHierarchy();
+        
+    	if (sc.isInterface())
+            return hier.getSubinterfacesOf(sc);
+    	else 
+    		return hier.getSubclassesOf(sc);
+    		
     }
     
     /**
@@ -413,8 +435,7 @@ public class SootUtils {
 		    streamOut.close();
 			
 		} catch (Exception e) {
-			logger.error("Error writing class to file {}", e);
-			System.exit(1);
+			logger.error("Error writing class to file {}", clz, e);
 		}
 	}
 	
@@ -429,4 +450,45 @@ public class SootUtils {
 		 
 		 return line;
 	}
+	
+	public static Type getBaseType(RefLikeType type) {
+		if (type instanceof ArrayType) 
+			return ((ArrayType)type).getArrayElementType();
+		else if (type instanceof AnySubType) 
+			return ((AnySubType)type).getBase();
+		else 
+			return type;
+	}
+	
+	/**
+	 * Try to grab an instance invoke expr from a statement, if it does not
+	 * have one, return null.
+	 */
+	public static InstanceInvokeExpr getInstanceInvokeExpr(Stmt stmt) {
+		if (!stmt.containsInvokeExpr()) 
+			return null;
+		
+		InvokeExpr expr = (InvokeExpr)stmt.getInvokeExpr();
+		
+		if (!(expr instanceof InstanceInvokeExpr)) 
+			return null;
+		
+		return (InstanceInvokeExpr)expr;
+	}
+	
+	public static List<SootMethod> getOverridingMethodsIncluding(SootClass clz, String subSig) {
+		LinkedList<SootMethod> methods = new LinkedList<SootMethod>();
+		
+		for (SootClass child : getChildren(clz)) {
+			if (child.declaresMethod(subSig)) {
+				SootMethod meth = child.getMethod(subSig);
+				if (!meth.isAbstract())
+					methods.add(meth);
+			}
+		}
+		
+		return methods;
+	}
 }
+
+

@@ -77,6 +77,10 @@ public class EntryPoints {
     	for (SootClass clazz : Scene.v().getApplicationClasses()) {
     		if (clazz.isInterface() || clazz.getName().equals(Harness.HARNESS_CLASS_NAME))
     			continue;
+    		
+    		//don't add entry points into the system classes...
+    		if (API.v().isSystemClass(clazz))
+    			continue;
     		    		
     		//don't add modeling for library classes if we want to ignore them
     		if (!ENTRY_POINTS_IN_LIBRARIES && Project.v().isLibClass(clazz.getName()))

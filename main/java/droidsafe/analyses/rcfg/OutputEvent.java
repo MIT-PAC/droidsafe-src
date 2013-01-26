@@ -69,16 +69,19 @@ public class OutputEvent {
 			
 			if (value instanceof InvokeExpr) {
 				InvokeExpr ie = (InvokeExpr)value;
-				if (Hierarchy.v().canResolveTo(ie.getMethodRef(), this.getTarget())) {
-					if (invokeExpr != null)
-						Utils.ERROR_AND_EXIT(logger, "Found multiple matches for calling context in context statement {}.", context);
-					invokeExpr = ie;
-				}
+				logger.debug("Found invoke in output event {} matches {}?", ie, this.getTarget());
+				//old check that does not work for threads since start calls run...
+				//if (Hierarchy.v().canResolveTo(ie.getMethodRef(), this.getTarget())) 
+				if (invokeExpr != null)
+					Utils.ERROR_AND_EXIT(logger, "Found multiple matches for calling context in context statement {}.", context);
+				invokeExpr = ie;
 			}
 		}
 		
-		if (invokeExpr == null) 
-			Utils.ERROR_AND_EXIT(logger, "Cannot find context invoke expr in context: {}.", context);
+		if (invokeExpr == null) {
+			logger.error("Cannot find context invoke expr in context: {}.", context);
+			System.exit(1);
+		}
 		
 		//do some checks for things we might not fully understand yet.
 		if (invokeExpr instanceof DynamicInvokeExpr) {
