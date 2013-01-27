@@ -2,6 +2,7 @@ package droidsafe.transforms;
 
 import java.util.Iterator;
 import java.util.LinkedHashSet;
+import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
@@ -24,6 +25,7 @@ import soot.Value;
 import soot.Type;
 import soot.jimple.AssignStmt;
 import soot.jimple.InstanceInvokeExpr;
+import soot.jimple.IntConstant;
 import soot.jimple.InvokeExpr;
 import soot.jimple.Jimple;
 import soot.jimple.JimpleBody;
@@ -110,17 +112,17 @@ public class AddAllocsForAPICalls extends BodyTransformer {
 				continue;
 			
 			if (target.getReturnType() instanceof ArrayType) {
-				logger.error("Found call to api method that returns an array of api objects.  Not supported yet!  {}", target);
-				System.exit(1);
+				logger.debug("Instrumenting call to %s with new alloc node (array)", target);
+				List<Stmt> stmts = getNewArrayAndAlloc(target, stmtBody, origAssign.getLeftOp());
+				units.insertAfter(stmts, stmt);
+			} else {
+				logger.debug("Instrumenting call to %s with new alloc node\n", target);
+				NewExpr newExpr = Jimple.v().newNewExpr((RefType)target.getReturnType());
+				generatedExpr.add(newExpr);
+				AssignStmt assignStmt = Jimple.v().newAssignStmt(origAssign.getLeftOp(), newExpr);
+			
+				units.insertAfter(assignStmt, stmt);
 			}
-				
-			logger.debug("Instrumenting call to %s with new alloc node\n", target);
-			
-			NewExpr newExpr = Jimple.v().newNewExpr((RefType)target.getReturnType());
-			generatedExpr.add(newExpr);
-			AssignStmt assignStmt = Jimple.v().newAssignStmt(origAssign.getLeftOp(), newExpr);
-			units.insertAfter(assignStmt, stmt);
-			
 			//if a call to something in the library or a subclass of library
 			
 			//if that method can return an object from library
@@ -129,6 +131,66 @@ public class AddAllocsForAPICalls extends BodyTransformer {
 		}
 	}
 	
+	private List<Stmt> getNewArrayAndAlloc(SootMethod target, Body stmtBody, Value assignTo) {
+		List<Stmt> stmts = new LinkedList<Stmt>();
+		ArrayType type = (ArrayType)target.getReturnType();
+		
+		Type baseType = type.getArrayElementType();
+		
+		//create new array to local		
+		Local arrayLocal = Jimple.v().newLocal("l" + localID++, type);
+		stmtBody.getLocals().add(arrayLocal);
+		
+		if (type.numDimensions > 1) {
+			//multiple dimensions, have to do some crap...
+			List<Value> ones = new LinkedList<Value>();
+			for (int i = 0; i < type.numDimensions; i++)
+				ones.add(IntConstant.v(1));
+			
+			stmts.add(Jimple.v().newAssignStmt(arrayLocal,
+				Jimple.v().newNewMultiArrayExpr(type, ones)));
+		} else {
+			//single dimension, add new expression
+			stmts.add(Jimple.v().newAssignStmt(arrayLocal, 
+				Jimple.v().newNewArrayExpr(baseType, IntConstant.v(1))));
+		}
+		
+		//get down to an element through the dimensions
+		Local elementPtr = arrayLocal;
+		while (((ArrayType)elementPtr.getType()).getElementType() instanceof ArrayType) {
+			Local currentLocal = Jimple.v().newLocal("l" + localID++, ((ArrayType)elementPtr).getElementType());
+			stmts.add(Jimple.v().newAssignStmt(
+					currentLocal, 
+					Jimple.v().newArrayRef(elementPtr, IntConstant.v(0))));
+			elementPtr = currentLocal;
+		}
+
+		//if a ref type, then create the new and the assignment to array element
+		if (baseType instanceof RefType) {
+			//create the new expr with a new local
+			Local eleLocal = Jimple.v().newLocal("l" + localID++, type);
+			stmtBody.getLocals().add(eleLocal);
+			
+			//add the call to the new object
+			NewExpr newExpr = Jimple.v().newNewExpr((RefType)baseType);
+			stmts.add(Jimple.v().newAssignStmt(eleLocal, newExpr));
+			//remember this as a generated new expression (alloc node will use later)
+			generatedExpr.add(newExpr);
+			
+			//don't really care about constructor here...actually have no idea about this value
+			
+			//assign the new local to the array access
+			stmts.add(Jimple.v().newAssignStmt(
+					Jimple.v().newArrayRef(elementPtr, IntConstant.v(0)), 
+					eleLocal));	
+		}	
+		
+		//The assignment of the array to the local that held the return of the api method
+		AssignStmt assignStmt = Jimple.v().newAssignStmt(assignTo, arrayLocal);
+		stmts.add(assignStmt);
+		
+		return stmts;
+	}
 	
 	private RefType getRefTypeOfReceiver(InvokeExpr expr) {
 		if (expr instanceof InstanceInvokeExpr) {
