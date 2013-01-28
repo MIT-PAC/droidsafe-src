@@ -67,6 +67,8 @@ public class Main {
 		logger.info("Setting Harness Main as entry point.");
 		setHarnessMainAsEntryPoint();
 	
+		writeAllAppClasses();
+		
 		AddAllocsForAPICalls.run();
 		
 		logger.info("Starting PTA...");

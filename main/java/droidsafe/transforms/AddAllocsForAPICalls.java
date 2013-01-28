@@ -98,13 +98,11 @@ public class AddAllocsForAPICalls extends BodyTransformer {
 						
 			InvokeExpr expr = (InvokeExpr)stmt.getInvokeExpr();
 			AssignStmt origAssign = (AssignStmt)stmt;
-			RefType recType = getRefTypeOfReceiver(expr);
+			SootMethod target = getTarget(expr);
 				
-			if (recType == null)  //for some reason, not what we are looking for
+			if (target == null)  //for some reason, not what we are looking for
 				continue;
-			
-			SootMethod target = Scene.v().getActiveHierarchy().resolveConcreteDispatch( recType.getSootClass(), expr.getMethod());
-			
+						
 			if (!API.v().isSystemMethod(target))
 				continue;
 			
@@ -192,17 +190,27 @@ public class AddAllocsForAPICalls extends BodyTransformer {
 		return stmts;
 	}
 	
-	private RefType getRefTypeOfReceiver(InvokeExpr expr) {
+	private SootMethod getTarget(InvokeExpr expr) {
 		if (expr instanceof InstanceInvokeExpr) {
 			InstanceInvokeExpr iie = (InstanceInvokeExpr)expr;
 			if (iie.getBase().getType() instanceof RefLikeType)  {
 				Type recType = SootUtils.getBaseType((RefLikeType)iie.getBase().getType());
-				if (recType instanceof RefType)
-					return (RefType)recType;
+				if (recType instanceof RefType) {
+					RefType recRefType = (RefType)recType;
+					SootClass recClass = recRefType.getSootClass();
+					//we have found a type for the receiver that we can handle
+					//if it is an abstract or interface, then just return the abstract method
+					//all we care about is the return type
+					if (recClass.isInterface() || recClass.isAbstract()) {
+						return expr.getMethod();
+					} else  {//if concrete, then try to find the exact method, but who really cares, we just need the 
+						//return type
+						return Scene.v().getActiveHierarchy().resolveConcreteDispatch( recRefType.getSootClass(), expr.getMethod());
+					}
+				}
 			}
 		} else if (expr instanceof StaticInvokeExpr) {
-			if (((StaticInvokeExpr)expr).getType() instanceof RefType)
-				return (RefType)((StaticInvokeExpr)expr).getType();
+			return ((StaticInvokeExpr)expr).getMethod();
 		} else {
 			logger.error("Unknown invoke expr {}", expr);
 			System.exit(1);
