@@ -164,7 +164,7 @@ public class GeoPTA {
 
 	private Set<AllocNode> getPTSet(Node sparkNode, IVarAbstraction ivar, Edge context) {
 		Set<AllocNode> allocNodes = new LinkedHashSet<AllocNode>();
-		
+
 		try {
 			if (context == null) 
 				Utils.ERROR_AND_EXIT(logger, "Null context edge for pta query.");
@@ -178,32 +178,37 @@ public class GeoPTA {
 			//delegates some nodes
 			ivar = ivar.getRepresentative();
 			CgEdge cgEdge = ptsProvider.getInternalEdgeFromSootEdge(context);
-
-			if (sparkNode instanceof LocalVarNode) {
-				long l = cgEdge.map_offset;
-				long r = l + ptsProvider.max_context_size_block[cgEdge.s];
-
-				Vector<CallsiteContextVar> outList = new Vector<CallsiteContextVar>();
-				ivar.get_all_context_sensitive_objects(l, r, ct_sens_objs, outList);
-
-				for (CallsiteContextVar ccv : outList) {
-					//this var assignment here seems to denote if the alloc can be included 
-					//in further searches, so once we grab, make sure to say it is no
-					//longer in another queue.
-					ccv.inQ = false;
-					allocNodes.add((AllocNode)ccv.var);
-				}
+			if (cgEdge == null) {
+				//static initializer, no call edge, return context insenstive pta set
+				allocNodes = ivar.get_all_points_to_objects();
 			} else {
-				Utils.ERROR_AND_EXIT(logger, "Unknown type of spark node for points to query for value {} spark node {}.", v.getClass(), sparkNode);
-			}
+				//not a static initializer, regular call
+				if (sparkNode instanceof LocalVarNode) {
+					long l = cgEdge.map_offset;
+					long r = l + ptsProvider.max_context_size_block[cgEdge.s];
 
-			if (allocNodes.isEmpty()) {
-				logger.debug("empty getPTSet query: {} on ivar {} with context {} {}.", v, ivar.getClass(), context, context.hashCode());
-				/*Set<AllocNode> noContext = ivar.get_all_points_to_objects();
+					Vector<CallsiteContextVar> outList = new Vector<CallsiteContextVar>();
+					ivar.get_all_context_sensitive_objects(l, r, ct_sens_objs, outList);
+
+					for (CallsiteContextVar ccv : outList) {
+						//this var assignment here seems to denote if the alloc can be included 
+						//in further searches, so once we grab, make sure to say it is no
+						//longer in another queue.
+						ccv.inQ = false;
+						allocNodes.add((AllocNode)ccv.var);
+					}
+				} else {
+					Utils.ERROR_AND_EXIT(logger, "Unknown type of spark node for points to query for value {} spark node {}.", v.getClass(), sparkNode);
+				}
+
+				if (allocNodes.isEmpty()) {
+					logger.debug("empty getPTSet query: {} on ivar {} with context {} {}.", v, ivar.getClass(), context, context.hashCode());
+					/*Set<AllocNode> noContext = ivar.get_all_points_to_objects();
 		for (AllocNode node : noContext) {
 			allocNodes.add(node);
 		}*/
-			} 
+				}
+			}
 		} catch (Exception e) {
 			logger.error("Some sort of error getting points to set for {} in {}", v, context.tgt(), e);
 		}

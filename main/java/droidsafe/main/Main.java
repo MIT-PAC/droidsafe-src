@@ -66,9 +66,7 @@ public class Main {
 		Harness.create();
 		logger.info("Setting Harness Main as entry point.");
 		setHarnessMainAsEntryPoint();
-	
-		writeAllAppClasses();
-		
+			
 		AddAllocsForAPICalls.run();
 		
 		logger.info("Starting PTA...");
@@ -82,7 +80,7 @@ public class Main {
 		if (Config.v().target.equals("specdump")) {
 			RCFGToSSL.run();
 		} else if (Config.v().target.equals("confcheck")) {
-			
+			logger.error("Not implemented yet!");
 		}
 		
 	}
