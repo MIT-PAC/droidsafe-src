@@ -21,6 +21,7 @@ ARG_MAP = {
     'pass' : '-Ddroidblaze.run.analyses',
     'unclassified' : '-Ddroidsafe.print_unclassified',
     'bytecode' : '-Ddroidsafe.use_bytecode',
+    'ignorelibs' : '-Ddroidsafe.ignore_libs',
 }
 DEFAULT_PASS = PASSES[0]
 
@@ -64,7 +65,10 @@ def parse_args(parser):
     parser.add_argument('-s', '--secspec', metavar="file", 
                         help="Security specification file", default="")
     parser.add_argument('-u', '--unclassified', help='Create a file in config_files that lists the system calls that are unclassified', action="store_true")
-    parser.add_argument('-b', '--bytecode', help='Instead of converting the dex to bytecode for analysis, use the java bytecode directly', action="store_true")
+    parser.add_argument('-b', '--bytecode', help='Instead of converting the dex to bytecode for analysis, use the java bytecode directly.  Used with --approot.', action="store_true")
+    parser.add_argument('-i', '--ignorelibs', help='During analysis, ignore classes defined in jar files in libs directory (WARNING: unsound analysis).', action="store_true")
+
+
     args = vars(parser.parse_args())
     return args
 
@@ -111,13 +115,23 @@ def build_args(args, parser):
     else:
         args['unclassified'] = 'N'
 
+    if args['approot'] != "":
+        args['approot'] = os.path.abspath(args['approot'])
+
     if args['bytecode']:
+        if args['approot'] == "":
+            print("-b, --bytecode must be used with -a, --approot!\n\nFor help issue: droidsafe --help")
+            sys.exit(1)
         args['bytecode'] = 'Y'
     else:
         args['bytecode'] = 'N'
 
-    if args['approot'] != "":
-        args['approot'] = os.path.abspath(args['approot'])
+    if args['ignorelibs']:
+        args['ignorelibs'] = 'Y'
+    else:
+        args['ignorelibs'] = 'N'
+
+                                 
 
     if args['apk'] != "":
         args['apk'] = os.path.abspath(args['apk'])
