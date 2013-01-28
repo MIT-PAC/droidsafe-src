@@ -4,6 +4,7 @@ import android.widget.TextView;
 import android.widget.Button;
 import android.widget.Chronometer;
 import android.widget.DigitalClock;
+import android.app.Activity;
 import android.app.AlarmManager;
 import android.app.PendingIntent;
 import android.content.BroadcastReceiver;
@@ -102,6 +103,14 @@ public class DroidSafeCalls {
     return context.getContentResolver()
       .query (Uri.parse (uri_str), projection, selection, selectionArgs,
               sortOrder);
+  }
+
+  public static Cursor managedQuery (Activity activity, String uri_str, 
+          String[] projection, String selection, String []selectionArgs,
+                                     String sortOrder) {
+
+    return activity.managedQuery (Uri.parse (uri_str), projection, selection,
+                                  selectionArgs, sortOrder);
   }
 
   /**
