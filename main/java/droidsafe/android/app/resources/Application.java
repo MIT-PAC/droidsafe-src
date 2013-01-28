@@ -66,10 +66,53 @@ public class Application {
 	static String[] activity_entry_points = {"onCreate", "onStart", "OnResume",
 		"onPause", "onStop", "onDestroy",
 	"onRestart"};
+	
+	static String blanks = "                                               ";
 
 	private static boolean already_read_activity_subclasses = false;
 	private static HashSet activity_subclasses = new HashSet(); // Filled from config-files/activity_subclasses.txt 
 	// Entries look like "android.app.ActivityGroup"
+
+	private static Application v;
+	
+	public static Application v() {
+		return v;
+	}
+	
+	public static void resolveManifest(String rootDir)  {
+		try {
+			v = new Application (new File (rootDir));
+
+			// Dump manifest information
+			AndroidManifest am = v.manifest;
+			logger.info ("Manifest = %s\n", am.manifest);
+			logger.info ("appliction = %s\n", am.application);
+			logger.info ("Activities: \n");
+			for (Activity a : am.activities) {
+				logger.info ("  %s\n", a);
+			}
+
+			// Dump layout information
+			logger.info ("\nLayouts:\n");
+			for (Layout l : v.layouts) {
+				logger.info ("  layout %s: %s\n", l.name, l.view);
+			}
+
+			String package_name = am.manifest.package_name;
+
+			// Process the activities of the application
+			for (Activity a : v.manifest.activities)
+				v.process_activity (a);
+
+			// Process all of the layouts
+			for (Layout l : v.layouts) {
+				logger.info ("  Processing layout %s\n", l.name);
+				v.process_view (l, l.view);
+			} 
+		} catch (Exception e) {
+			logger.error("Error resolving resources and manifest: ", e);
+		}
+	}
 
 	/** Processes the application located in the specified directory **/
 	public Application (File application_base) throws Exception {
@@ -398,5 +441,54 @@ public class Application {
 			return null;
 		}
 	}
+
+
+	static void dump_node (Node n, int indent) {
+
+		String tab = blanks.substring (0, indent);
+
+		if (n.getNodeType() == Node.TEXT_NODE) {
+			// text nodes appear to be any text that occurs between real nodes.
+			// This is pretty uninteresting, so just skip them
+			// logger.info ("%sText Node %s, %s\n", tab, n.getNodeValue(), 
+			//                   n.getTextContent());
+		} else {
+			logger.info ("%sNode %s [%s]\n", tab, n.getNodeName(), 
+					node_type(n));
+		}
+
+		// Print out the attributes (if any)
+		NamedNodeMap attributes = n.getAttributes();
+		if (attributes != null) {
+			for (int ii = 0; ii < attributes.getLength(); ii++) {
+				Node attr = attributes.item (ii);
+				logger.info ("%s  attribute %s = %s\n", tab, attr.getNodeName(), 
+						attr.getNodeValue());
+			}
+		}
+
+		// Handle any child nodes
+		NodeList children = n.getChildNodes();
+		if (children != null) {
+			for (int ii = 0; ii < children.getLength(); ii++) {
+				Node child = children.item(ii);
+				dump_node (child, indent+2);
+			}
+		}
+	}
+
+	/** Returns a textual representation of a node type **/
+	static String node_type (Node n) {
+
+		switch (n.getNodeType()) {
+		case Node.DOCUMENT_NODE: return ("Document");
+		case Node.DOCUMENT_TYPE_NODE: return ("Document type");
+		case Node.ELEMENT_NODE: return ("Element");
+		case Node.ENTITY_NODE: return ("Entity");
+		case Node.TEXT_NODE: return ("Text");
+		default: return String.format ("node type %d", n.getNodeType());
+		}
+	}
+	
 	
 }

@@ -1,4 +1,4 @@
-package droidsafe.android.app;
+package droidsafe.android.app.resources;
 
 import java.util.*;
 import java.io.*;
