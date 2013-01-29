@@ -5,6 +5,7 @@ import java.io.FileOutputStream;
 import java.io.OutputStream;
 import java.io.OutputStreamWriter;
 import java.io.PrintWriter;
+import java.util.Iterator;
 import java.util.LinkedHashMap;
 import java.util.LinkedHashSet;
 import java.util.LinkedList;
@@ -16,6 +17,7 @@ import java.util.List;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import droidsafe.android.system.API;
 import droidsafe.android.system.Components;
 import droidsafe.utils.SootUtils;
 import droidsafe.utils.Utils;
@@ -26,6 +28,7 @@ import soot.Printer;
 import soot.RefLikeType;
 import soot.Scene;
 import soot.SootField;
+import soot.SootFieldRef;
 import soot.SootMethodRef;
 import soot.SourceLocator;
 import soot.Type;
@@ -36,12 +39,16 @@ import soot.SootClass;
 import soot.SootMethod;
 import soot.Unit;
 import soot.VoidType;
+import soot.jimple.AssignStmt;
 import soot.jimple.IntConstant;
 import soot.jimple.InvokeExpr;
 import soot.jimple.JasminClass;
 import soot.jimple.Jimple;
+import soot.jimple.NewExpr;
 import soot.jimple.NopStmt;
+import soot.jimple.Stmt;
 import soot.jimple.StmtBody;
+import soot.util.Chain;
 import soot.util.JasminOutputStream;
 import soot.Value;
 import droidsafe.main.Constants;
@@ -62,8 +69,12 @@ public class Harness {
 	public static String HARNESS_CLASS_NAME = "DroidSafeMain";
 	
 	private Map<SootClass, Local> localsMap;
+	private Set<SootField> generatedFields;
 		
 	private int localID = 0;
+	private int fieldID = 0;
+	
+	public static final String FIELDNAME = "_ds_generated_field";
 	
 	public static Harness v;
 	
@@ -98,10 +109,13 @@ public class Harness {
 	
 	private Harness() {
 		entryPointInvokes = new LinkedList<Unit>();
+		generatedFields = new LinkedHashSet<SootField>();
 		
 		//create the harness class
 		harnessClass = new SootClass(HARNESS_CLASS_NAME, Modifier.PUBLIC | Modifier.FINAL);
 		harnessClass.setSuperclass(Scene.v().getSootClass("java.lang.Object"));
+		
+		searchForAllocsOfAPIImplementors();
 		 
 		//create the harness main method
 		List<Type> args = new LinkedList<Type>();
@@ -114,9 +128,72 @@ public class Harness {
 		harnessClass.addMethod(harnessMain);
 		
 		createBody();
+		
+		harnessClass.setApplicationClass();
+		Scene.v().addClass(harnessClass);
+		
 		SootUtils.writeByteCodeAndJimple(Project.v().getOutputDir() + File.separator + HARNESS_CLASS_NAME, getHarnessClass());
 	}
 
+	/**
+	 * we have to find all creation sites of objects of application classes.  We want to call
+	 * any method that overrides an api method on the object (allocnode) in the harness class
+	 * so that the pta can reason correctly about the calls. 
+	 */
+	private void searchForAllocsOfAPIImplementors() {
+		for (SootClass clz : Scene.v().getClasses()) {
+			//not a class we are interested in
+			if (clz.isLibraryClass() || clz.isInterface() ||
+					clz.equals(harnessClass) || API.v().isSystemClass(clz)) 
+				continue;
+			
+			//loop through all methods, and then allocation statements
+			//looking for allocations of objects that have API parents
+			for (SootMethod method : clz.getMethods()) {
+				if (!clz.declaresMethod(method.getSubSignature()))
+    				continue;
+				StmtBody stmtBody = (StmtBody)method.retrieveActiveBody();
+				Chain<Unit> units = stmtBody.getUnits();
+				Iterator<Unit> stmtIt = units.snapshotIterator();
+				while (stmtIt.hasNext()) {
+					Stmt stmt = (Stmt)stmtIt.next();
+					if (!(stmt instanceof AssignStmt))
+						continue;
+					AssignStmt assignStmt = (AssignStmt)stmt;
+					//find all assignments statements with rval as new expr
+					if (assignStmt.getRightOp() instanceof NewExpr) {
+						NewExpr newExpr = (NewExpr)assignStmt.getRightOp();
+
+						//looking for a new expr of a class that is an app class and inherits from api
+						if (newExpr.getType() instanceof RefType &&
+								((RefType)newExpr.getType()).getSootClass().isApplicationClass() &&
+								!API.v().isSystemClass(((RefType)newExpr.getType()).getSootClass()) &&
+								Hierarchy.v().inheritsFromAndroid(((RefType)newExpr.getType()).getSootClass())) {
+
+							//creating a new class in user code that inherits from an api class
+							logger.debug("Found an alloc of a app class that inherits from API {}: in {} ({})", newExpr, method, clz);
+							handleAllocOfAPIImplementors(newExpr, assignStmt, clz, units);
+						}
+					}
+				}
+			}
+		}
+	}
+	
+	private void handleAllocOfAPIImplementors(NewExpr expr, AssignStmt stmt, SootClass clz, Chain<Unit> units) {
+		//create field in the harness class
+		SootField field = new SootField(FIELDNAME + fieldID, expr.getType(), Modifier.PUBLIC | Modifier.STATIC);
+		harnessClass.addField(field);
+		
+		//remember this field for later so we can create all api overriding calls in it
+		generatedFields.add(field);
+		
+		SootFieldRef fieldRef = field.makeRef();
+		
+		//add an assignment of the field right after the new call
+		units.insertAfter(Jimple.v().newAssignStmt(Jimple.v().newStaticFieldRef(fieldRef), stmt.getLeftOp()), 
+				stmt);
+	}
 	
 	private void createBody() {
 		Body body = Jimple.v().newBody(harnessMain);

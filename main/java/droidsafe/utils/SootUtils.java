@@ -526,6 +526,7 @@ public class SootUtils {
 		
 		return hier.isClassSuperclassOfIncluding(c1, c2) ? c2 : c1;
 	}
+	
 }
 
 

@@ -42,18 +42,16 @@ import com.sun.org.apache.bcel.internal.classfile.JavaClass;
 import droidsafe.analyses.CallGraphFromEntryPoints;
 import droidsafe.android.app.resources.AndroidManifest.Activity;
 import droidsafe.android.app.resources.Layout.View;
+import droidsafe.android.system.Components;
 
 
 /**
- * Representation of the Android Application as a whole.  Also contains
+ * Representation of the Android Resources and Manifest file.  Also contains
  * processing routines for DroidSafe (these should perhaps be elsewhere)
  */
 @SuppressWarnings("all")
 public class Resources {
-
 	private final static Logger logger = LoggerFactory.getLogger(Resources.class);
-	
-	public final static String ACTIVITY_CLASS = "android.app.Activity";
 
 	/** Base directory of the application **/
 	File application_base = null;
@@ -129,6 +127,11 @@ public class Resources {
 		}
 	}
 
+	public boolean isResourceClass(SootClass clz) {
+		return clz.getShortName().equals("R") ||
+				clz.getShortName().startsWith("R$");
+	}
+	
 	/** Processes the application located in the specified directory **/
 	public Resources (File application_base) throws Exception {
 
@@ -317,7 +320,7 @@ public class Resources {
 	// Returns true if cn is class android/app/Activity or is a class
 	// that inherits from android/app/Activity
 	private boolean classNodeIsAnAndroidActivity(final SootClass cn) {
-		return Scene.v().getActiveHierarchy().isClassSubclassOfIncluding(cn, Scene.v().getSootClass(ACTIVITY_CLASS));
+		return Scene.v().getActiveHierarchy().isClassSubclassOfIncluding(cn, Scene.v().getSootClass(Components.ACTIVITY_CLASS));
 	}
 
 

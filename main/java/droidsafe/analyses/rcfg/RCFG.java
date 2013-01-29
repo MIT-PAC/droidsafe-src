@@ -38,6 +38,8 @@ import soot.Type;
 import droidsafe.analyses.GeoPTA;
 import droidsafe.android.app.EntryPoints;
 import droidsafe.android.app.Harness;
+import droidsafe.android.app.Project;
+import droidsafe.android.app.resources.Resources;
 import droidsafe.android.system.API;
 import droidsafe.transforms.AddAllocsForAPICalls;
 import droidsafe.utils.SootUtils;
@@ -66,6 +68,8 @@ public class RCFG {
 	/** list of names of methods to ignore when creating the RCFG output events */
 	private static final Set<String> IGNORE_SYS_METHOD_WITH_NAME = new HashSet(Arrays.asList("<clinit>"));
 	
+	private Set<SootMethod> visitedMethods;
+	
 	public static RCFG v() {
 		return v;
 	}
@@ -76,6 +80,10 @@ public class RCFG {
 		v.createRCFG();
 		
 		logger.info("\n" + v.toString());
+	}
+	
+	private RCFG() {
+		visitedMethods = new LinkedHashSet<SootMethod>();
 	}
 	
 	public Set<RCFGNode> getNodes() {
@@ -101,7 +109,7 @@ public class RCFG {
 			startAtEntry(edge);
 		}
 		
-		
+		checkForUnreachableMethods();
 	}
 	
 	private void startAtEntry(Edge edge) {
@@ -116,9 +124,10 @@ public class RCFG {
 		SootMethod method = edgeInto.tgt();
 		
 		visited.add(edgeInto);
+		visitedMethods.add(method);
 		
 		//find all calls to api and save context and call to rCFGNode
-		List<Edge> edgesOut = csEdgesOutOf(edgeInto);
+		Set<Edge> edgesOut = csEdgesOutOf(edgeInto);
 		edgesOut.addAll(edgesFromAPIAllocs(edgeInto));
 		List<Edge> appEdgesOut = new LinkedList<Edge>();
 		
@@ -138,13 +147,64 @@ public class RCFG {
 			}
 		}
 		
+		checkForCompleteness(edgesOut, method);
+		
 		//recurse into all calls of app methods
 		for (Edge edge : appEdgesOut) {
 			if (!visited.contains(edge))
 				visitNode(edge, rCFGNode, visited);
 		}
 		
-		//maybe somehow cache methods at a certain depth if there are other edges into it
+		//maybe cache methods at a certain depth if there are other edges into it
+	}
+	
+	/**
+	 * Check that we have considered all invoke statements in the code of the method.
+	 */
+	private void checkForCompleteness(Set<Edge> edges, SootMethod src) {
+		//first build a set with all invokes we in the edges list
+		Set<Stmt> invokes = new LinkedHashSet<Stmt>();
+		for (Edge edge : edges) {
+			invokes.add(edge.srcStmt());
+		}
+		
+		
+		StmtBody stmtBody = (StmtBody)src.getActiveBody();
+
+		// get body's unit as a chain
+		Chain<Unit> units = stmtBody.getUnits();
+
+		// get a snapshot iterator of the unit since we are going to
+		// mutate the chain when iterating over it.
+		Iterator<Unit> stmtIt = units.snapshotIterator();
+
+		while (stmtIt.hasNext()) {
+			Stmt stmt = (Stmt)stmtIt.next();
+			if (!stmt.containsInvokeExpr())
+				continue;
+			InvokeExpr invokeExpr = stmt.getInvokeExpr();
+						
+			if (!invokes.contains(stmt))
+				logger.warn("Found invoke statement that was not in the callgraph edge list when build rCFG: {} in {} (might be dead code)", stmt, src);
+			
+		}
+	}
+	
+	/**
+	 * Loop over methods in the application we did not hit, because the analysis thinks they
+	 * are unreachable, and inform the user of any calls in unreachable methods.
+	 */
+	private void checkForUnreachableMethods() {
+		for (SootClass clz : Scene.v().getClasses()) {
+			if (clz.isApplicationClass() && Project.v().isAppClass(clz.toString()) &&
+					!Resources.v().isResourceClass(clz)) {
+				for (SootMethod method : clz.getMethods()) {
+					if (!visitedMethods.contains(method) && method.isDeclared()) {
+						checkForCompleteness(new LinkedHashSet<Edge>(), method);
+					}
+				}
+			}
+		}
 	}
 	
 	private List<Edge> edgesFromAPIAllocs(Edge edgeInto) {
@@ -220,9 +280,9 @@ public class RCFG {
 		return null;
 	}
 	
-	private List<Edge> csEdgesOutOf(Edge edgeInto) {
+	private Set<Edge> csEdgesOutOf(Edge edgeInto) {
 		SootMethod method = edgeInto.tgt();
-		List<Edge> csEdges = new LinkedList<Edge>();
+		Set<Edge> csEdges = new LinkedHashSet<Edge>();
 		Iterator<Edge> ciEdges = sparkCG.edgesOutOf(method);
 		
 		//iterate over all the ci edges from soot, and check to see

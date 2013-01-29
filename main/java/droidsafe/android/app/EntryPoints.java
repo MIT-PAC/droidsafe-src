@@ -83,6 +83,12 @@ public class EntryPoints {
     		if (API.v().isSystemClass(clazz))
     			continue;
     		    		
+    		//only add entry points for android component classes
+    		//other entry points will be handled by searching for allocations 
+    		//of classes that inherit from an api class / interface.
+    		if (!Hierarchy.v().isAndroidComponentClass(clazz))
+    			continue;
+    		
     		//don't add modeling for library classes if we want to ignore them
     		if (!ENTRY_POINTS_IN_LIBRARIES && Project.v().isLibClass(clazz.getName()))
     			continue;
