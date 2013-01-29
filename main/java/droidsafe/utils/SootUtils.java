@@ -462,6 +462,10 @@ public class SootUtils {
 
 	public static SourceLocationTag getSourceLocation(Stmt stmt, SootClass clz) {
 		 SourceLocationTag line = null;
+		 
+		 if (stmt == null || clz == null) {
+			 return line;
+		 }
          
 		 LineNumberTag tag = (LineNumberTag) stmt.getTag("LineNumberTag");
 		 if (tag != null) {
@@ -527,6 +531,38 @@ public class SootUtils {
 		return hier.isClassSuperclassOfIncluding(c1, c2) ? c2 : c1;
 	}
 	
+	/**
+	 * Starting at a class, return all the set of all concrete classes that implement then class,
+	 * stop the search at each concrete class at each branch.  So if we pass in a concrete class, just return it.
+	 */
+	public static List<SootClass> smallestConcreteSetofImplementors(SootClass clz) {
+		List<SootClass> clazzes = new LinkedList<SootClass>();
+		Hierarchy h = Scene.v().getActiveHierarchy();
+		
+		if (clz.isConcrete()) {
+			clazzes.add(clz);
+			return clazzes;
+		} 
+		
+		List<SootClass> imps;
+		
+		if (clz.isAbstract() && !clz.isInterface()) {
+			imps = h.getDirectSubclassesOf(clz);
+		} else if (clz.isInterface()) {
+			imps = h.getDirectSubinterfacesOf(clz);
+		} else {
+			return clazzes;
+		}
+		
+		for (SootClass imp : imps) {
+			if (imp.isConcrete())
+				clazzes.add(imp);
+			else
+				clazzes.addAll(smallestConcreteSetofImplementors(imp));
+		}
+		
+		return clazzes;
+	}
 }
 
 

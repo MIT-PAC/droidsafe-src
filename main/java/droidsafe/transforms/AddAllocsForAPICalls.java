@@ -69,7 +69,7 @@ public class AddAllocsForAPICalls extends BodyTransformer {
 		return v;
 	}
 	
-	public boolean isGeneratedExpr(NewExpr expr) {
+	public boolean isGeneratedExpr(Object expr) {
 		return generatedExpr.contains(expr);
 	}
 	
@@ -115,14 +115,21 @@ public class AddAllocsForAPICalls extends BodyTransformer {
 				units.insertAfter(stmts, stmt);
 			} else {
 				logger.debug("Instrumenting call to %s with new alloc node\n", target);
-				NewExpr newExpr = Jimple.v().newNewExpr((RefType)target.getReturnType());
-				generatedExpr.add(newExpr);
-				AssignStmt assignStmt = Jimple.v().newAssignStmt(origAssign.getLeftOp(), newExpr);
-			
-				units.insertAfter(assignStmt, stmt);
+				//create a new express for each concrete type that this return type could take on
+				//if it is already a concrete just, then just use this, have to search for concrete
+				//if abstract or interface.
+				
+				List<SootClass> clzs = SootUtils.smallestConcreteSetofImplementors(((RefType)target.getReturnType()).getSootClass());
+				for (SootClass clz : clzs) {
+					NewExpr newExpr = Jimple.v().newNewExpr(RefType.v(clz));
+					generatedExpr.add(newExpr);
+					AssignStmt assignStmt = Jimple.v().newAssignStmt(origAssign.getLeftOp(), newExpr);
+					units.insertAfter(assignStmt, stmt);
+				}
 			}
 		}
 	}
+	
 	
 	private List<Stmt> getNewArrayAndAlloc(SootMethod target, Body stmtBody, Value assignTo) {
 		List<Stmt> stmts = new LinkedList<Stmt>();
@@ -164,13 +171,19 @@ public class AddAllocsForAPICalls extends BodyTransformer {
 			Local eleLocal = Jimple.v().newLocal("l" + localID++, type);
 			stmtBody.getLocals().add(eleLocal);
 			
-			//add the call to the new object
-			NewExpr newExpr = Jimple.v().newNewExpr((RefType)baseType);
-			stmts.add(Jimple.v().newAssignStmt(eleLocal, newExpr));
-			//remember this as a generated new expression (alloc node will use later)
-			generatedExpr.add(newExpr);
+			//the basetype might be a interface or an abstract, we cannot create new objects of these types
+			//so find concrete classes if the reference is to an non-concrete class.
+			List<SootClass> clzs = SootUtils.smallestConcreteSetofImplementors(((RefType)baseType).getSootClass());
 			
+			for (SootClass clz : clzs) {
+				//add the call to the new objects for all concrete classes
+				NewExpr newExpr = Jimple.v().newNewExpr(RefType.v(clz));
+				stmts.add(Jimple.v().newAssignStmt(eleLocal, newExpr));
+				//remember this as a generated new expression (alloc node will use later)
+				generatedExpr.add(newExpr);
+			}
 			//don't really care about constructor here...actually have no idea about this value
+			
 			
 			//assign the new local to the array access
 			stmts.add(Jimple.v().newAssignStmt(

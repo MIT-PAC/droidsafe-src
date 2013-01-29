@@ -66,7 +66,7 @@ public class RCFG {
 	private static RCFG v;
 	
 	/** list of names of methods to ignore when creating the RCFG output events */
-	private static final Set<String> IGNORE_SYS_METHOD_WITH_NAME = new HashSet(Arrays.asList("<clinit>"));
+	private static final Set<String> IGNORE_SYS_METHOD_WITH_NAME = new HashSet(Arrays.asList("<clinit>", "finalize"));
 	
 	private Set<SootMethod> visitedMethods;
 	
@@ -162,6 +162,10 @@ public class RCFG {
 	 * Check that we have considered all invoke statements in the code of the method.
 	 */
 	private void checkForCompleteness(Set<Edge> edges, SootMethod src) {
+
+		if (!src.isConcrete())
+			return;
+		
 		//first build a set with all invokes we in the edges list
 		Set<Stmt> invokes = new LinkedHashSet<Stmt>();
 		for (Edge edge : edges) {
@@ -169,7 +173,7 @@ public class RCFG {
 		}
 		
 		
-		StmtBody stmtBody = (StmtBody)src.getActiveBody();
+		StmtBody stmtBody = (StmtBody)src.retrieveActiveBody();
 
 		// get body's unit as a chain
 		Chain<Unit> units = stmtBody.getUnits();
@@ -227,7 +231,7 @@ public class RCFG {
 				continue;
 			
 			for (AllocNode alloc : GeoPTA.v().getPTSet(expr.getBase(), edgeInto)) {
-				if (AddAllocsForAPICalls.v().isGeneratedExpr((NewExpr)alloc.getNewExpr())) {
+				if (AddAllocsForAPICalls.v().isGeneratedExpr(alloc.getNewExpr())) {
 					Type t = alloc.getType();
 				
 					 if ( t instanceof AnySubType ||

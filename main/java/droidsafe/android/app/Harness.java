@@ -156,41 +156,45 @@ public class Harness {
 			if (clz.isLibraryClass() || clz.isInterface() ||
 					clz.equals(harnessClass) || API.v().isSystemClass(clz)) 
 				continue;
-			
+
 			//loop through all methods, and then allocation statements
 			//looking for allocations of objects that have API parents
 			for (SootMethod method : clz.getMethods()) {
 				if (!clz.declaresMethod(method.getSubSignature())
 						|| !method.isConcrete()) 
-    				continue;
-				StmtBody stmtBody = (StmtBody)method.retrieveActiveBody();
-				Chain<Unit> units = stmtBody.getUnits();
-				Iterator<Unit> stmtIt = units.snapshotIterator();
-				while (stmtIt.hasNext()) {
-					Stmt stmt = (Stmt)stmtIt.next();
-					if (!(stmt instanceof AssignStmt))
-						continue;
-					AssignStmt assignStmt = (AssignStmt)stmt;
-					//find all assignments statements with rval as new expr
-					if (assignStmt.getRightOp() instanceof NewExpr) {
-						NewExpr newExpr = (NewExpr)assignStmt.getRightOp();
+					continue;
+				try {
+					StmtBody stmtBody = (StmtBody)method.retrieveActiveBody();
+					Chain<Unit> units = stmtBody.getUnits();
+					Iterator<Unit> stmtIt = units.snapshotIterator();
+					while (stmtIt.hasNext()) {
+						Stmt stmt = (Stmt)stmtIt.next();
+						if (!(stmt instanceof AssignStmt))
+							continue;
+						AssignStmt assignStmt = (AssignStmt)stmt;
+						//find all assignments statements with rval as new expr
+						if (assignStmt.getRightOp() instanceof NewExpr) {
+							NewExpr newExpr = (NewExpr)assignStmt.getRightOp();
 
-						//looking for a new expr of a class that is an app class and inherits from api
-						if (newExpr.getType() instanceof RefType &&
-								((RefType)newExpr.getType()).getSootClass().isApplicationClass() &&
-								!API.v().isSystemClass(((RefType)newExpr.getType()).getSootClass()) &&
-								Hierarchy.v().inheritsFromAndroid(((RefType)newExpr.getType()).getSootClass())) {
+							//looking for a new expr of a class that is an app class and inherits from api
+							if (newExpr.getType() instanceof RefType &&
+									((RefType)newExpr.getType()).getSootClass().isApplicationClass() &&
+									!API.v().isSystemClass(((RefType)newExpr.getType()).getSootClass()) &&
+									Hierarchy.v().inheritsFromAndroid(((RefType)newExpr.getType()).getSootClass())) {
 
-							//creating a new class in user code that inherits from an api class
-							logger.debug("Found an alloc of a app class that inherits from API {}: in {} ({})", newExpr, method, clz);
-							handleAllocOfAPIImplementors(newExpr, assignStmt, clz, units);
+								//creating a new class in user code that inherits from an api class
+								logger.debug("Found an alloc of a app class that inherits from API {}: in {} ({})", newExpr, method, clz);
+								handleAllocOfAPIImplementors(newExpr, assignStmt, clz, units);
+							}
 						}
 					}
+				} catch (Exception e) {
+					logger.warn("Error trying to look for allocations in method {} of {} (probably a library method with some natives)", method, clz);
 				}
 			}
 		}
 	}
-	
+
 	private void handleAllocOfAPIImplementors(NewExpr expr, AssignStmt stmt, SootClass clz, Chain<Unit> units) {
 		//create field in the harness class
 		SootField field = new SootField(FIELDNAME + fieldID, expr.getType(), Modifier.PUBLIC | Modifier.STATIC);

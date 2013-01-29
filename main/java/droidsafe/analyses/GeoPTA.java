@@ -162,7 +162,10 @@ public class GeoPTA {
 		return types;
 	}
 
-	private Set<AllocNode> getPTSet(Node sparkNode, IVarAbstraction ivar, Edge context) {
+	/**
+	 * v used only for error reporting
+	 */
+	private Set<AllocNode> getPTSet(Node sparkNode, IVarAbstraction ivar, Edge context, Value v) {
 		Set<AllocNode> allocNodes = new LinkedHashSet<AllocNode>();
 
 		try {
@@ -171,7 +174,7 @@ public class GeoPTA {
 
 
 			if (ivar == null) 
-				Utils.ERROR_AND_EXIT(logger, "Error getting internal PTA node for {} of {}.", v, v.getClass());
+				Utils.ERROR_AND_EXIT(logger, "Error getting internal PTA node for {} of {}.", ivar, ivar.getClass());
 
 
 			//don't really know why this is needed, sometimes maybe the internal analysis
@@ -197,12 +200,15 @@ public class GeoPTA {
 						ccv.inQ = false;
 						allocNodes.add((AllocNode)ccv.var);
 					}
+				} else if (sparkNode == null) {
+					logger.info("Null sparkNode for ivar query: {} in {}", ivar, context);
 				} else {
-					Utils.ERROR_AND_EXIT(logger, "Unknown type of spark node for points to query for value {} spark node {}.", v.getClass(), sparkNode);
+					Utils.ERROR_AND_EXIT(logger, "Unknown type of spark node for points to query for value v {}, ivar {} spark node {}.", 
+							v, ivar, sparkNode);
 				}
 
 				if (allocNodes.isEmpty()) {
-					logger.debug("empty getPTSet query: {} on ivar {} with context {} {}.", v, ivar.getClass(), context, context.hashCode());
+					logger.debug("empty getPTSet query: v {} (ivar {}) with context {}.", v, ivar, context);
 					/*Set<AllocNode> noContext = ivar.get_all_points_to_objects();
 		for (AllocNode node : noContext) {
 			allocNodes.add(node);
@@ -210,14 +216,14 @@ public class GeoPTA {
 				}
 			}
 		} catch (Exception e) {
-			logger.error("Some sort of error getting points to set for {} in {}", v, context.tgt(), e);
+			logger.error("Some sort of error getting points to set for {} in {} with {}", v, context.tgt(), e);
 		}
 		return allocNodes;
 	}
 	
 	public Set<AllocNode> getPTSet(Node sparkNode, Edge context) {
 		IVarAbstraction ivar = ptsProvider.consG.get(sparkNode);
-		return getPTSet(sparkNode, ivar, context);
+		return getPTSet(sparkNode, ivar, context, null);
 	}
 	
 	/**
@@ -226,10 +232,11 @@ public class GeoPTA {
 	 * context.
 	 */
 	public Set<AllocNode> getPTSet(Value v, Edge context) {
+		//logger.info("Querying pt set for: {} in {}", v, context);
 		IVarAbstraction ivar = getInternalNode(v);
 		Node sparkNode = ivar.getWrappedNode();
 		
-		return getPTSet(sparkNode, ivar, context);
+		return getPTSet(sparkNode, ivar, context, v);
 	}
 	
 	/**

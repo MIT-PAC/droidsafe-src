@@ -42,7 +42,7 @@ public class OutputEvent {
 	private Edge thisEdge;
 	/** the cg context edge from previous caller to caller */
 	private Edge contextEdge;
-	/** The invoke expression call to an API method */
+	/** The invoke expression call to an API method, might be null EX finalize*/
 	private InvokeExpr invokeExpr;
 	/** The parent RFCG Node */
 	private RCFGNode parent;	
@@ -63,6 +63,10 @@ public class OutputEvent {
 	private void setInvoke() {
 		Unit context = thisEdge.srcUnit();
 		invokeExpr = null;
+		
+		if (context == null) {
+			return;
+		}
 		
 		for (Object vb : context.getUseAndDefBoxes()) {
 			Value value = ((ValueBox)vb).getValue();
