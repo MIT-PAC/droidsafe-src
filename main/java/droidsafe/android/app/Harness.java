@@ -127,7 +127,17 @@ public class Harness {
 		harnessMain.setDeclaringClass(harnessClass);
 		harnessClass.addMethod(harnessMain);
 		
-		createBody();
+		StmtBody body = Jimple.v().newBody(harnessMain);
+		harnessMain.setActiveBody(body);
+		
+		Stmt beginCalls = mainMethodHeader(body);
+		addCallsToComponentEntryPoints(body);
+		addCallsToNonComponentEntryPoints(body);
+		
+		//create the loop back to the beginning of the calls
+		body.getUnits().add(Jimple.v().newGotoStmt(beginCalls));
+		
+		body.getUnits().add(Jimple.v().newReturnVoidStmt());
 		
 		harnessClass.setApplicationClass();
 		Scene.v().addClass(harnessClass);
@@ -195,10 +205,37 @@ public class Harness {
 				stmt);
 	}
 	
-	private void createBody() {
-		Body body = Jimple.v().newBody(harnessMain);
-		harnessMain.setActiveBody(body);
-		
+	private void addCallsToNonComponentEntryPoints(StmtBody body) {
+		//for each field that we generated, add a call to any method that overrides 
+		//an api method
+		for (SootField field : generatedFields) {
+			SootClass clz = ((RefType)field.getType()).getSootClass();
+			
+			for (SootMethod method : clz.getMethods()) {
+				//Messages.log("    Checking for method: " + method.getSignature());
+    			if (!clz.declaresMethod(method.getSubSignature()))
+    				continue;
+ 
+    			if (Hierarchy.v().isImplementedSystemMethod(method)) {
+    				logger.info("Adding call in harness to non-component entry point: {}", method.toString());
+    				//create a local to point to the field
+    				Local receiver = Jimple.v().newLocal("l" + localID++, field.getType());
+    				body.getLocals().add(receiver);
+    				//assign the local to the field
+    				body.getUnits().add(Jimple.v().newAssignStmt(receiver, 
+    						Jimple.v().newStaticFieldRef(field.makeRef())));
+    				//create a call to this entry point
+    				createCall(method, body, receiver);
+    			} 
+			}
+		}
+	}
+	
+	/**
+	 * create the header for the main method including the saving of args
+	 * and the start of the loop for entry points calls, return the label for the loop
+	 */
+	private Stmt mainMethodHeader(StmtBody body) {
 		//add access to the arg
 		Local arg = Jimple.v().newLocal("l" + localID++, ArrayType.v(RefType.v("java.lang.String"), 1));
 	    body.getLocals().add(arg);
@@ -210,6 +247,11 @@ public class Harness {
 	    //create a nop as target of goto below, to create loop over all possible events
 	    NopStmt beginCalls = Jimple.v().newNopStmt();
 	    body.getUnits().add(beginCalls);
+	    
+	    return beginCalls;
+	}
+	
+	private void addCallsToComponentEntryPoints(StmtBody body) {
 	    
 	    localsMap = new LinkedHashMap<SootClass, Local>();
 		
@@ -239,34 +281,34 @@ public class Harness {
 				
 			}
 			
-			//next create locals for all arguments
-			//List of argument position to locals created...
-			List<Value> args = new LinkedList<Value>();
-			for (Object argType : entryPoint.getParameterTypes()) {
-				//if a reference, create dummy object
-				if (argType instanceof RefType) {
-					Value v = createNewAndConstructorCall(body, entryPoint, ((RefType)argType));
-					args.add(v);
-				} else if (argType instanceof ArrayType) {
-					Value v = createNewArrayAndObject(body, entryPoint, (ArrayType)argType);
-					args.add(v);
-				} else {
-					args.add(SootUtils.getNullValue((Type)argType));
-				}
-			}
-
-			//now create call to entry point
 			Local receiver = localsMap.get(clazz);
-			logger.debug("method args {} = size of args list {}", entryPoint.getParameterCount(), args.size());
-			Unit call = Jimple.v().newInvokeStmt(makeInvokeExpression(entryPoint, receiver, args));
-			entryPointInvokes.add(call);
-			body.getUnits().add(call);
+			//create the call to the entry point method
+			createCall(entryPoint, body, receiver);
 		}
-		
-		//create the loop back to the beginning of the calls
-		body.getUnits().add(Jimple.v().newGotoStmt(beginCalls));
-		
-		body.getUnits().add(Jimple.v().newReturnVoidStmt());
+	}
+	
+	private void createCall(SootMethod method, StmtBody body, Local receiver) {
+		//next create locals for all arguments
+		//List of argument position to locals created...
+		List<Value> args = new LinkedList<Value>();
+		for (Object argType : method.getParameterTypes()) {
+			//if a reference, create dummy object
+			if (argType instanceof RefType) {
+				Value v = createNewAndConstructorCall(body, method, ((RefType)argType));
+				args.add(v);
+			} else if (argType instanceof ArrayType) {
+				Value v = createNewArrayAndObject(body, method, (ArrayType)argType);
+				args.add(v);
+			} else {
+				args.add(SootUtils.getNullValue((Type)argType));
+			}
+		}
+
+		//now create call to entry point
+		logger.debug("method args {} = size of args list {}", method.getParameterCount(), args.size());
+		Stmt call = Jimple.v().newInvokeStmt(makeInvokeExpression(method, receiver, args));
+		entryPointInvokes.add(call);
+		body.getUnits().add(call);
 	}
 	
 	private Value createNewArrayAndObject(Body body, SootMethod entryPoint, ArrayType type) {

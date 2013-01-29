@@ -129,7 +129,8 @@ public class Resources {
 
 	public boolean isResourceClass(SootClass clz) {
 		return clz.getShortName().equals("R") ||
-				clz.getShortName().startsWith("R$");
+				clz.getShortName().startsWith("R$") ||
+				clz.getShortName().equals("BuildConfig");
 	}
 	
 	/** Processes the application located in the specified directory **/

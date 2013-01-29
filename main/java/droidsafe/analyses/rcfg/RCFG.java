@@ -103,8 +103,8 @@ public class RCFG {
 		while (edgesIt.hasNext()) {
 			Edge edge = edgesIt.next();
 			
-			if (!EntryPoints.v().isEntryPoint(edge.tgt()))
-				continue;
+			/*if (!EntryPoints.v().isEntryPoint(edge.tgt()))
+				continue;*/
 		
 			startAtEntry(edge);
 		}
