@@ -160,7 +160,8 @@ public class Harness {
 			//loop through all methods, and then allocation statements
 			//looking for allocations of objects that have API parents
 			for (SootMethod method : clz.getMethods()) {
-				if (!clz.declaresMethod(method.getSubSignature()))
+				if (!clz.declaresMethod(method.getSubSignature())
+						|| !method.isConcrete()) 
     				continue;
 				StmtBody stmtBody = (StmtBody)method.retrieveActiveBody();
 				Chain<Unit> units = stmtBody.getUnits();
@@ -213,7 +214,8 @@ public class Harness {
 			
 			for (SootMethod method : clz.getMethods()) {
 				//Messages.log("    Checking for method: " + method.getSignature());
-    			if (!clz.declaresMethod(method.getSubSignature()))
+    			if (!clz.declaresMethod(method.getSubSignature()) ||
+    					!method.isConcrete())
     				continue;
  
     			if (Hierarchy.v().isImplementedSystemMethod(method)) {
