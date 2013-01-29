@@ -7,6 +7,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.w3c.dom.*;
 
+import soot.RefType;
 import soot.Scene;
 import soot.SootClass;
 import soot.SootField;
@@ -60,12 +61,15 @@ public class Application {
 	/** Map of all onclick handlers registered in the xml and source,
 	 *  layout id -> view -> method sig 
 	 */
-	HashMap<Layout, HashMap<View, String>> handlers 
-	= new LinkedHashMap<Layout, HashMap<View, String>>();
+	HashMap<Layout, HashMap<View, SootMethod>> handlers 
+	= new LinkedHashMap<Layout, HashMap<View, SootMethod>>();
 
 	static String[] activity_entry_points = {"onCreate", "onStart", "OnResume",
 		"onPause", "onStop", "onDestroy",
 	"onRestart"};
+	
+	/** did we successfully run this pass */
+	private boolean resolved = false;
 	
 	static String blanks = "                                               ";
 
@@ -109,6 +113,7 @@ public class Application {
 				logger.info ("  Processing layout %s\n", l.name);
 				v.process_view (l, l.view);
 			} 
+			v.resolved = true;
 		} catch (Exception e) {
 			logger.error("Error resolving resources and manifest: ", e);
 		}
@@ -207,10 +212,9 @@ public class Application {
 
 	/** Processes an entry point **/
 	// full_classname looks like: "com.example.helladroid.HelloAndroid"
-	private void process_entry (String full_classname, String methSubSig) 
+	private void process_entry (SootClass cn, String methSubSig) 
 			throws UnsupportedIdiomException, MissingElementException {
 
-		SootClass cn = Scene.v().getSootClass(full_classname);
 		SootMethod m = cn.getMethod(methSubSig);
 		if (m == null) 
 			throw new MissingElementException ("Method " + methSubSig 
@@ -239,26 +243,27 @@ public class Application {
 					bad_idiom ("No class associated with layout '%s'", layout.name);
 			logger.info ("Found on_click entry point %s.%s for view %s " +
 					"in layout %s, resource name %s", 
-					class_name (layout.cn), view.on_click,
+					layout.cn, view.on_click,
 					view.name, layout.name, view.get_resource_name());
 
 			//build the method signature in the soot format
-			String methodSig = soot_method_signature (layout.cn, view.on_click,
-					"(android.view.View)");
-
+			List<RefType> viewArg = new LinkedList<RefType>();
+			viewArg.add(RefType.v("android.view.View"));
+			SootMethod method = layout.cn.getMethod(view.on_click, viewArg);
+			
 			//record the handler in the map for the layout
 			//for the entire application there could be multiple layouts, and multiple
 			//handler per layout
 			if (!handlers.containsKey(layout)) 
-				handlers.put(layout, new HashMap<View, String>());
+				handlers.put(layout, new HashMap<View, SootMethod>());
 
-			logger.info("Putting: %s %s %s\n", layout, view, methodSig);
-			handlers.get(layout).put(view, methodSig);	 	
+			logger.info("Putting: %s %s %s\n", layout, view, method);
+			handlers.get(layout).put(view, method);	 	
 
 			// Its not entirely clear why we are processing the on_click entry
 			// point itself.  What are we looking for here?
 			try {
-				process_entry (class_name (layout.cn), view.on_click);
+				process_entry (layout.cn, view.on_click);
 			} catch (MissingElementException mee) {
 				logger.info ("Warning, Error processing on click handler %s in "
 						+ "layout %s: %s", view.on_click, layout.name, 
@@ -380,7 +385,7 @@ public class Application {
 	 */
 	public String findLayoutName(Integer i) {
 		if (resolved) {
-			String ret = manifest.resource_info.get(i); 
+			String ret = resource_info.get(i); 
 			return (ret == null ? "" : ret);
 		}
 		else 
@@ -395,7 +400,7 @@ public class Application {
 	 */
 	public Integer findViewID(String l) {
 		if (resolved) {
-			return manifest.resource_info.inverse().get(l);
+			return resource_info.inverse().get(l);
 		} else
 			return null;
 	}
@@ -410,7 +415,7 @@ public class Application {
 	 * 
 	 * @param i The view ID that is the arg to setContentView
 	 */
-	public Map<Layout.View, String> getOnClickHandlers(Integer i) {
+	public Map<Layout.View, SootMethod> getOnClickHandlers(Integer i) {
 		if (resolved) {
 			//find the layout
 			String fullname = findLayoutName(i);
@@ -421,20 +426,20 @@ public class Application {
 		    String name = name_ext[1];
 		    
 			if (name == null || name.equals("")) {
-				Messages.print("Warning: name of layout null when analyzing setContentView()");
+				logger.info("Warning: name of layout null when analyzing setContentView()");
 				return null;
 			}
 				
-			Layout layout = manifest.find_layout_by_name(name);
+			Layout layout = find_layout_by_name(name);
 			if (layout == null) {
-				Messages.print("Warning: cannot find layout when analyzing setContentView()");
+				logger.info("Warning: cannot find layout when analyzing setContentView()");
 				return null;
 			}
 			
-			HashMap<Layout.View, String> handlers = manifest.handlers.get(layout);
-			if (handlers == null) 
-				return new HashMap<Layout.View, String>();
-			return handlers;
+			HashMap<Layout.View, SootMethod> ret = handlers.get(layout);
+			if (ret == null) 
+				return new HashMap<Layout.View, SootMethod>();
+			return ret;
 			
 		} else  {
 			//Messages.print("Unresolved!");

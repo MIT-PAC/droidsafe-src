@@ -7,6 +7,8 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.w3c.dom.*;
 
+import soot.SootMethod;
+
 import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.parsers.DocumentBuilder;
 
@@ -62,7 +64,7 @@ public class ResolveOnClick {
     logger.info ("\n%d Layout file with XML onClick handlers", 
                     app.handlers.size());
     for (Layout layout : app.handlers.keySet()) {
-      HashMap<View, String> lmap = app.handlers.get (layout);
+      HashMap<View, SootMethod> lmap = app.handlers.get (layout);
       logger.info ("layout %s", layout.name);
       for (View view : lmap.keySet()) {
         logger.info ("  view %s -> method %s", view, lmap.get(view));
