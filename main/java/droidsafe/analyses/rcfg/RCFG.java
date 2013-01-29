@@ -23,6 +23,7 @@ import soot.Unit;
 import soot.jimple.InstanceInvokeExpr;
 import soot.jimple.InvokeExpr;
 import soot.jimple.NewExpr;
+import soot.jimple.StaticInvokeExpr;
 import soot.jimple.Stmt;
 import soot.jimple.StmtBody;
 import soot.jimple.internal.JAssignStmt;
@@ -169,23 +170,54 @@ public class RCFG {
 				if (AddAllocsForAPICalls.v().isGeneratedExpr((NewExpr)alloc.getNewExpr())) {
 					Type t = alloc.getType();
 				
-					if ( t instanceof AnySubType ||
+					 if ( t instanceof AnySubType ||
 							 t instanceof ArrayType ) {
 						logger.error("Weird type in call to object retrieved from API {}", stmt);
 						System.exit(1);
 					}
-					SootClass recClass = ((RefType)t).getSootClass();
-					List<SootMethod> methods = 
-							SootUtils.getOverridingMethodsIncluding(recClass, expr.getMethodRef().getSubSignature().getString());
-					for (SootMethod m : methods) {
+					SootClass allocType = ((RefType)t).getSootClass();
+					SootClass staticRecClass = getStaticReceiverClassType(expr);
+					
+					SootClass narrowerClass = SootUtils.narrowerClass(allocType, staticRecClass);
+					
+					//get narrower methods since we don't know the exact type of this call...
+					Set<SootMethod> allMethods = 
+							SootUtils.getOverridingMethodsIncluding(narrowerClass, expr.getMethodRef().getSubSignature().getString());
+					
+					//get the method that would be called with the exact type of the receiver
+					SootMethod method = Scene.v().getActiveHierarchy().
+							resolveConcreteDispatch( narrowerClass, expr.getMethod());
+					
+					allMethods.add(method);
+					
+					for (SootMethod m : allMethods) {
 						Edge newEdge = new Edge(src, stmt, m);
 						newEdges.add(newEdge);
 					}
 				}
 			}
 		}
-		
+
 		return newEdges;
+	}
+
+	/**
+	 * Given an invoke statement, return the class of the receiver's static type definition.
+	 */
+	private SootClass getStaticReceiverClassType(InvokeExpr expr) {
+		if (expr instanceof InstanceInvokeExpr) {
+			Type baseType = ((InstanceInvokeExpr)expr).getBase().getType();
+			
+			if (baseType instanceof RefType) {
+				return ((RefType)baseType).getSootClass();
+			}
+		} else if (expr instanceof StaticInvokeExpr) {
+			return ((StaticInvokeExpr)expr).getMethod().getDeclaringClass();
+		} else {
+			logger.error("Unknown type of invoke expr found when trying to get receiver's static type: {}", expr);
+			System.exit(1);
+		}
+		return null;
 	}
 	
 	private List<Edge> csEdgesOutOf(Edge edgeInto) {
@@ -238,7 +270,7 @@ public class RCFG {
 				csEdges.add(curEdge);
 			}
 		}
-		
+	
 		return csEdges;
 	}
 

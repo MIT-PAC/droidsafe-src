@@ -1,6 +1,7 @@
 package droidsafe.analyses;
 
 import java.io.BufferedWriter;
+import java.io.File;
 import java.io.FileWriter;
 import java.util.LinkedList;
 import java.util.List;
@@ -36,12 +37,14 @@ public class RCFGToSSL {
 	
 	private SecuritySpecification spec;
 	
+	public static final String SSL_FILE_NAME = "template-spec.ssl";
+	
 	public static void run() {
 		RCFGToSSL v = new RCFGToSSL();
 		
 		v.createSSL(RCFG.v());
 		
-		String fname = Project.v().getOutputDir() + "/" + "NAME" + ".ssl";
+		String fname = Project.v().getOutputDir() + File.separator + SSL_FILE_NAME;
 		writeSpecToFile(v.getSpec().toString(), fname);
 
         String html_fname = Project.v().getOutputDir() + "/spec.html";

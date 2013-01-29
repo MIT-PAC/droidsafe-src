@@ -175,13 +175,13 @@ public class SootUtils {
     /**
      * Given a class or interface, get all classes that have this as ancestor.
      */
-    public static List<SootClass> getChildren(SootClass sc) {
+    public static List<SootClass> getChildrenIncluding(SootClass sc) {
     	Hierarchy hier = Scene.v().getActiveHierarchy();
         
     	if (sc.isInterface())
-            return hier.getSubinterfacesOf(sc);
+            return hier.getSubinterfacesOfIncluding(sc);
     	else 
-    		return hier.getSubclassesOf(sc);
+    		return hier.getSubclassesOfIncluding(sc);
     		
     }
     
@@ -425,11 +425,12 @@ public class SootUtils {
 			PrintWriter writerOut = new PrintWriter(
 					new OutputStreamWriter(streamOut));
 			
+			/*
 			JasminClass jasminClass = new soot.jimple.JasminClass(clz);
 		    jasminClass.print(writerOut);
 		    writerOut.flush();
 		    streamOut.close();
-		    
+		    */
 		    fileName = filePrefix + ".jimple";
 		    streamOut = new FileOutputStream(fileName);
 		    writerOut = new PrintWriter(
@@ -495,10 +496,12 @@ public class SootUtils {
 		return (InstanceInvokeExpr)expr;
 	}
 	
-	public static List<SootMethod> getOverridingMethodsIncluding(SootClass clz, String subSig) {
-		LinkedList<SootMethod> methods = new LinkedList<SootMethod>();
+	public static Set<SootMethod> getOverridingMethodsIncluding(SootClass clz, String subSig) {
+		Set<SootMethod> methods = new LinkedHashSet<SootMethod>();
 		
-		for (SootClass child : getChildren(clz)) {
+		List<SootClass> childrenIncluding = getChildrenIncluding(clz);
+				
+		for (SootClass child : childrenIncluding) {
 			if (child.declaresMethod(subSig)) {
 				SootMethod meth = child.getMethod(subSig);
 				if (!meth.isAbstract())
@@ -507,6 +510,21 @@ public class SootUtils {
 		}
 		
 		return methods;
+	}
+	
+	/**
+	 * Given two classes that are related (one is a parent of the other or vice versa), return 
+	 * the child class.
+	 */
+	public static SootClass narrowerClass(SootClass c1, SootClass c2) {
+		Hierarchy hier = Scene.v().getActiveHierarchy();
+		if (!hier.isClassSuperclassOfIncluding(c1, c2) &&
+				!hier.isClassSuperclassOf(c2, c1)) {
+			logger.error("Trying to get wider class for non related classes {} and {}", c1, c2);
+			System.exit(1);
+		}
+		
+		return hier.isClassSuperclassOfIncluding(c1, c2) ? c2 : c1;
 	}
 }
 

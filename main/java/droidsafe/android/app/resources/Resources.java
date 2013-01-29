@@ -78,10 +78,6 @@ public class Resources {
 	
 	Set<SootMethod> allHandlers = new LinkedHashSet<SootMethod>();
 
-	static String[] activity_entry_points = {"onCreate", "onStart", "OnResume",
-		"onPause", "onStop", "onDestroy",
-	"onRestart"};
-	
 	/** did we successfully run this pass */
 	private boolean resolved = false;
 	
