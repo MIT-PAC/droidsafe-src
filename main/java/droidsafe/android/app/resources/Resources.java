@@ -16,10 +16,14 @@ import soot.jimple.AbstractStmtSwitch;
 import soot.jimple.IntConstant;
 import soot.jimple.InvokeExpr;
 import soot.jimple.InvokeStmt;
+import soot.jimple.Jimple;
 import soot.jimple.Stmt;
 import soot.jimple.StmtBody;
 import soot.jimple.VirtualInvokeExpr;
 import soot.jimple.internal.JAssignStmt;
+import soot.tagkit.ConstantValueTag;
+import soot.tagkit.IntegerConstantValueTag;
+import soot.tagkit.Tag;
 import soot.util.Chain;
 
 
@@ -45,9 +49,9 @@ import droidsafe.android.app.resources.Layout.View;
  * processing routines for DroidSafe (these should perhaps be elsewhere)
  */
 @SuppressWarnings("all")
-public class Application {
+public class Resources {
 
-	private final static Logger logger = LoggerFactory.getLogger(Application.class);
+	private final static Logger logger = LoggerFactory.getLogger(Resources.class);
 	
 	public final static String ACTIVITY_CLASS = "android.app.Activity";
 
@@ -71,6 +75,8 @@ public class Application {
 	 */
 	HashMap<Layout, HashMap<View, SootMethod>> handlers 
 	= new LinkedHashMap<Layout, HashMap<View, SootMethod>>();
+	
+	Set<SootMethod> allHandlers = new LinkedHashSet<SootMethod>();
 
 	static String[] activity_entry_points = {"onCreate", "onStart", "OnResume",
 		"onPause", "onStop", "onDestroy",
@@ -85,15 +91,15 @@ public class Application {
 	private static HashSet activity_subclasses = new HashSet(); // Filled from config-files/activity_subclasses.txt 
 	// Entries look like "android.app.ActivityGroup"
 
-	private static Application v;
+	private static Resources v;
 	
-	public static Application v() {
+	public static Resources v() {
 		return v;
 	}
 	
 	public static void resolveManifest(String rootDir)  {
 		try {
-			v = new Application (new File (rootDir));
+			v = new Resources (new File (rootDir));
 
 			// Dump manifest information
 			AndroidManifest am = v.manifest;
@@ -128,7 +134,7 @@ public class Application {
 	}
 
 	/** Processes the application located in the specified directory **/
-	public Application (File application_base) throws Exception {
+	public Resources (File application_base) throws Exception {
 
 		this.application_base = application_base;
 
@@ -165,13 +171,22 @@ public class Application {
 		//find all classes that start with R$ and assume they are 
 		//generated resource classes
 		for (SootClass clz : Scene.v().getClasses()) {
-			if (clz.isApplicationClass() & clz.getName().startsWith("R$")) {
-				String component = clz.getName().substring(2);
+			if (clz.isApplicationClass() & clz.getShortName().startsWith("R$")) {
+				String component = clz.getShortName().substring(2);
 				for (SootField field : clz.getFields()) {
-					logger.info ("field {}.{} = {}", component, field, 0);
-					
 					Integer value = new Integer(0);
 					
+					Tag tag = field.getTag("IntegerConstantValueTag");
+					//ug, the initializer value is stored in a tag
+					//not documented anywhere...except a mailing list post from years ago
+					if (tag instanceof IntegerConstantValueTag)
+						value = new Integer(((IntegerConstantValueTag)tag).getIntValue());
+					else {
+						logger.error("Unknown initial value for field of resource class: {} ({})", field, tag);
+						System.exit(1);
+					}
+					
+					logger.info ("field {}.{} = {}", component, field, String.format("%08X", value));
 					resource_info.put ((Integer) value, 
 							component + "." + field.getName());
 				}
@@ -189,12 +204,19 @@ public class Application {
 		// with dot (.), but sometimes they don't.  So if we don't find it with
 		// the fully qualified name, we search for those using the pcackage base
 		// as well.
-		final SootClass cn = Scene.v().getSootClass(package_name + "." + activity.name);
-		if (cn == null) {
-			logger.info ("Warning: No class file found for manifest activity '{}' "
+		String className;
+		if (activity.name.startsWith("."))
+			className = package_name + activity.name;
+		else 
+			className = activity.name;
+		
+		final SootClass cn = Scene.v().getSootClass(className);
+		if (!Scene.v().containsClass(className) || cn == null) {
+			logger.error ("No class file found for manifest activity '{}' "
 					+ "(package {})", activity.name, package_name);
-			return;
+			System.exit(1);
 		}
+		
 		logger.info ("read in class file " + cn.getName());
 
 		// Process methods of cn only if cn is an "Activity" or inherits Activity
@@ -213,9 +235,9 @@ public class Application {
 	// full_classname looks like: "com.example.helladroid.HelloAndroid"
 	private void process_entry (SootClass cn, String methSubSig) 
 			throws UnsupportedIdiomException, MissingElementException {
-
 		SootMethod m = cn.getMethod(methSubSig);
-		if (m == null) 
+		
+		if (!cn.declaresMethod(methSubSig) || m == null) 
 			throw new MissingElementException ("Method " + methSubSig 
 					+ " not found in class " + cn);
 		logger.info ("process entry {}.{}()", cn, m);
@@ -253,16 +275,18 @@ public class Application {
 			//record the handler in the map for the layout
 			//for the entire application there could be multiple layouts, and multiple
 			//handler per layout
-			if (!handlers.containsKey(layout)) 
+			if (!handlers.containsKey(layout)) { 
 				handlers.put(layout, new HashMap<View, SootMethod>());
+			}
 
 			logger.info("Putting: {} {} {}\n", layout, view, method);
-			handlers.get(layout).put(view, method);	 	
+			handlers.get(layout).put(view, method);	
+			allHandlers.add(method);
 
 			// Its not entirely clear why we are processing the on_click entry
 			// point itself.  What are we looking for here?
 			try {
-				process_entry (layout.cn, view.on_click);
+				process_entry (layout.cn, method.getSubSignature());
 			} catch (MissingElementException mee) {
 				logger.info ("Warning, Error processing on click handler {} in "
 						+ "layout {}: {}", view.on_click, layout.name, 
@@ -281,17 +305,15 @@ public class Application {
 	private void process_method (final Activity activity, final SootClass cn, final SootMethod m) 
 			throws UnsupportedIdiomException {
 		//find all invoke calls in method...
-		
+
 		StmtBody stmtBody = (StmtBody)m.retrieveActiveBody();
 		for( Iterator stmtIt = stmtBody.getUnits().iterator(); stmtIt.hasNext(); ) {
-			 final Stmt stmt = (Stmt) stmtIt.next();
-			 stmt.apply(new AbstractStmtSwitch() {
-				 public void caseInvokeStatement(InvokeStmt stmt) throws Exception {
-					 InvokeExpr expr = stmt.getInvokeExpr();
-					 if (expr instanceof VirtualInvokeExpr)
-						 v.process_invoke(cn, m, (VirtualInvokeExpr)expr, activity);
-				 }
-			 });
+			final Stmt stmt = (Stmt) stmtIt.next();
+			if (stmt.containsInvokeExpr()) {
+				InvokeExpr expr = stmt.getInvokeExpr();
+				if (expr instanceof VirtualInvokeExpr)
+					v.process_invoke(cn, m, (VirtualInvokeExpr)expr, activity);
+			}
 		}
 	}
 
@@ -309,8 +331,8 @@ public class Application {
 	 **/
 	private void process_invoke (SootClass cn, SootMethod m, VirtualInvokeExpr expr,
 			Activity activity) throws UnsupportedIdiomException {
-		logger.info ("process_invoke [{}] {}.{} calling {}", cn.getSuperclass(),
-				cn, m, expr);
+		//logger.info ("process_invoke [{}] {}.{} calling {}", cn.getSuperclass(),
+		//		cn, m, expr);
 		
 		//if we don't have a reference, return
 		if (!(expr.getBase().getType() instanceof RefType))
@@ -427,6 +449,14 @@ public class Application {
 	
 	public boolean isResolved() {
 		return resolved;
+	}
+	
+	public Set<SootMethod> getAllHandlers() {
+		return allHandlers;
+	}
+	
+	public boolean isHandler(SootMethod m) {
+		return allHandlers.contains(m);
 	}
 	
 	/**

@@ -10,6 +10,7 @@ import java.util.Set;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import droidsafe.android.app.resources.Resources;
 import droidsafe.android.system.API;
 import droidsafe.utils.SootUtils;
 
@@ -97,10 +98,16 @@ public class EntryPoints {
     			
     			if (Hierarchy.v().isImplementedSystemMethod(method)) {
     				appEntryPoints.add(method);
-    				logger.info("Found entry point: {}", method.toString());
-    			}
+    				logger.info("Found entry point as implemented system method: {}", method.toString());
+    			} 
     		}
     	}
+    	
+    	for (SootMethod method : Resources.v().getAllHandlers()) {
+    		appEntryPoints.add(method);
+    		logger.info("Found entry point as xml onclick: {}", method.toString());
+    	}
+    	
     	appEntryPoints = Collections.unmodifiableSet(appEntryPoints);
     }
     

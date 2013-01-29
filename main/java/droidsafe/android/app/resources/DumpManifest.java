@@ -29,7 +29,7 @@ public class DumpManifest {
     }
 
     // Initialize information about the application
-    Application app = new Application (new File (args[0]));
+    Resources app = new Resources (new File (args[0]));
 
     // Read the manifest and find all of the activities
     AndroidManifest am = app.manifest;
