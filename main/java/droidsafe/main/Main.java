@@ -24,6 +24,7 @@ import droidsafe.android.app.Harness;
 import droidsafe.android.app.TagImplementedSystemMethods;
 
 import droidsafe.android.app.Project;
+import droidsafe.android.app.resources.Application;
 import droidsafe.android.system.API;
 import droidsafe.transforms.AddAllocsForAPICalls;
 import droidsafe.transforms.LocalForStringConstantArguments;
@@ -60,6 +61,8 @@ public class Main {
 		ScalarAppOptimizations.run();		
 		logger.info("Create tags for the overriden system methods in user code.");
 		TagImplementedSystemMethods.run();
+		logger.info("Resolving resources and Manifest.");
+		Application.resolveManifest(Config.v().APP_ROOT_DIR);
 		logger.info("Finding entry points in user code.");
 		EntryPoints.v().calculate();
 		logger.info("Creating Harness.");

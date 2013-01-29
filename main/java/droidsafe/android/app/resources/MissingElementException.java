@@ -22,7 +22,7 @@ public class MissingElementException extends Exception {
   public MissingElementException (SootClass cn, SootMethod m,
                                   String msg) {
 
-    super (String.format ("%s in %s.%s at line %d", msg, cn.getName(), m.getName(),
+    super (String.format ("{} in {}.{} at line {}", msg, cn.getName(), m.getName(),
                           SootUtils.getMethodLocation(m).getLine()));
   }
 

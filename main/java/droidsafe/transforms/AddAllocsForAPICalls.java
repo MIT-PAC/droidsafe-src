@@ -121,11 +121,6 @@ public class AddAllocsForAPICalls extends BodyTransformer {
 			
 				units.insertAfter(assignStmt, stmt);
 			}
-			//if a call to something in the library or a subclass of library
-			
-			//if that method can return an object from library
-			
-			//then create a new instruction for that local of the class that is returned by the method
 		}
 	}
 	

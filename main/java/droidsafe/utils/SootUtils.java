@@ -7,6 +7,7 @@ import java.io.OutputStreamWriter;
 import java.io.PrintWriter;
 import java.util.Enumeration;
 import java.util.HashSet;
+import java.util.Iterator;
 import java.util.LinkedHashSet;
 import java.util.LinkedList;
 import java.util.List;
@@ -46,6 +47,7 @@ import soot.SootClass;
 import soot.SootMethod;
 import soot.SootMethodRef;
 import soot.Type;
+import soot.Unit;
 import soot.Value;
 import soot.VoidType;
 import soot.jimple.DoubleConstant;
@@ -57,7 +59,9 @@ import soot.jimple.JasminClass;
 import soot.jimple.LongConstant;
 import soot.jimple.NullConstant;
 import soot.jimple.Stmt;
+import soot.jimple.StmtBody;
 import soot.tagkit.LineNumberTag;
+import soot.util.Chain;
 import soot.util.JasminOutputStream;
 
 /**
@@ -439,6 +443,21 @@ public class SootUtils {
 		}
 	}
 	
+	/**
+	 * Return the source location of a method based on its first statement.
+	 */
+	public static SourceLocationTag getMethodLocation(SootMethod method) {
+		if (method.isConcrete()) {
+			Chain<Unit> stmts = ((StmtBody)method.retrieveActiveBody()).getUnits();
+			Iterator stmtIt = stmts.snapshotIterator();
+			
+			if (stmtIt.hasNext()) {
+				return getSourceLocation((Stmt)stmtIt.next(), method.getDeclaringClass());
+			}		
+		}
+		
+		return null;
+	}
 
 	public static SourceLocationTag getSourceLocation(Stmt stmt, SootClass clz) {
 		 SourceLocationTag line = null;

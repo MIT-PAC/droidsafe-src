@@ -51,7 +51,7 @@ public class BaseElement {
     if (attributes == null)
       return null;
 
-    logger.info("getting attribute '%s'", name);
+    logger.info("getting attribute '{}'", name);
     Node n = attributes.getNamedItem (name);
     if (n == null)
       n = attributes.getNamedItem ("android:" + name);
@@ -130,7 +130,7 @@ public class BaseElement {
       Field[] fields = e.getClass().getDeclaredFields();
       for (Field f : fields) {
         Attribute a = f.getAnnotation (Attribute.class);
-        logger.info ("Field %s, annotation %s", f.getName(), a);
+        logger.info ("Field {}, annotation {}", f.getName(), a);
         if (a == null)
           continue;
         String name = f.getName();
@@ -187,7 +187,7 @@ public class BaseElement {
       // Messages.print ("%sText Node %s, %s\n", tab, n.getNodeValue(), 
       //                   n.getTextContent());
     } else {
-      logger.info ("%sNode %s [%s]\n", tab, n.getNodeName(), 
+      logger.info ("{}Node {} [{}]\n", tab, n.getNodeName(), 
                          node_type(n));
     }
 
@@ -196,7 +196,7 @@ public class BaseElement {
     if (attributes != null) {
       for (int ii = 0; ii < attributes.getLength(); ii++) {
         Node attr = attributes.item (ii);
-        logger.info ("%s  attribute %s = %s\n", tab, attr.getNodeName(), 
+        logger.info ("{}  attribute {} = {}\n", tab, attr.getNodeName(), 
                            attr.getNodeValue());
       }
     }

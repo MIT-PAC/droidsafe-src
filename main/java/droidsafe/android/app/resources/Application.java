@@ -12,7 +12,15 @@ import soot.Scene;
 import soot.SootClass;
 import soot.SootField;
 import soot.SootMethod;
+import soot.jimple.AbstractStmtSwitch;
+import soot.jimple.IntConstant;
 import soot.jimple.InvokeExpr;
+import soot.jimple.InvokeStmt;
+import soot.jimple.Stmt;
+import soot.jimple.StmtBody;
+import soot.jimple.VirtualInvokeExpr;
+import soot.jimple.internal.JAssignStmt;
+import soot.util.Chain;
 
 
 import java.util.jar.JarEntry;
@@ -89,17 +97,17 @@ public class Application {
 
 			// Dump manifest information
 			AndroidManifest am = v.manifest;
-			logger.info ("Manifest = %s\n", am.manifest);
-			logger.info ("appliction = %s\n", am.application);
+			logger.info ("Manifest = {}\n", am.manifest);
+			logger.info ("appliction = {}\n", am.application);
 			logger.info ("Activities: \n");
 			for (Activity a : am.activities) {
-				logger.info ("  %s\n", a);
+				logger.info ("  {}\n", a);
 			}
 
 			// Dump layout information
 			logger.info ("\nLayouts:\n");
 			for (Layout l : v.layouts) {
-				logger.info ("  layout %s: %s\n", l.name, l.view);
+				logger.info ("  layout {}: {}\n", l.name, l.view);
 			}
 
 			String package_name = am.manifest.package_name;
@@ -110,7 +118,7 @@ public class Application {
 
 			// Process all of the layouts
 			for (Layout l : v.layouts) {
-				logger.info ("  Processing layout %s\n", l.name);
+				logger.info ("  Processing layout {}\n", l.name);
 				v.process_view (l, l.view);
 			} 
 			v.resolved = true;
@@ -134,10 +142,10 @@ public class Application {
 		// Get all of the layout files and read them.
 		File layout_dir = new File (application_base, "res/layout");
 		for (File layout_source : layout_dir.listFiles()) {
-			// logger.info ("considering layout file %s", layout_source);
+			// logger.info ("considering layout file {}", layout_source);
 			String name = layout_source.getName();
 			String[] name_ext = name.split ("[.]", 2);
-			// logger.info ("name/ext = %s/%s", name_ext[0], name_ext[1]);
+			// logger.info ("name/ext = {}/{}", name_ext[0], name_ext[1]);
 			if (name_ext[1].equals ("xml"))
 				layouts.add (new Layout (layout_source));
 		}
@@ -160,21 +168,12 @@ public class Application {
 			if (clz.isApplicationClass() & clz.getName().startsWith("R$")) {
 				String component = clz.getName().substring(2);
 				for (SootField field : clz.getFields()) {
-					field.
-				}
-			}
-		}
-
-		for (String f : layout_dir.list()) {
-			logger.info ("considering resource class file %s", f);
-			if (f.startsWith ("R$") && f.endsWith (".class")) {
-				String component = f.substring (2, f.length()-6);
-				MyClassNode cn = get_class (package_name, f.replace (".class", ""));
-				for (int ii = 0; ii < cn.fields.size(); ii++) {
-					FieldNode field = (FieldNode) cn.fields.get(ii);
-					logger.info ("field %s.%s = %s", component, field.name, field.value);
-					resource_info.put ((Integer) field.value, 
-							component + "." + field.name);
+					logger.info ("field {}.{} = {}", component, field, 0);
+					
+					Integer value = new Integer(0);
+					
+					resource_info.put ((Integer) value, 
+							component + "." + field.getName());
 				}
 			}
 		}
@@ -192,8 +191,8 @@ public class Application {
 		// as well.
 		final SootClass cn = Scene.v().getSootClass(package_name + "." + activity.name);
 		if (cn == null) {
-			logger.info ("Warning: No class file found for manifest activity '%s' "
-					+ "(package %s)", activity.name, package_name);
+			logger.info ("Warning: No class file found for manifest activity '{}' "
+					+ "(package {})", activity.name, package_name);
 			return;
 		}
 		logger.info ("read in class file " + cn.getName());
@@ -201,11 +200,11 @@ public class Application {
 		// Process methods of cn only if cn is an "Activity" or inherits Activity
 		if (classNodeIsAnAndroidActivity(cn)) {
 			for (SootMethod m : cn.getMethods()) {
-				logger.info ("  processing method %s", m.getName());
+				logger.info ("  processing method {}", m.getName());
 				process_method(activity, cn, m);
 			}
 		} else {
-			logger.info ("Class %s not processed, it is not an Activity "
+			logger.info ("Class {} not processed, it is not an Activity "
 					+ " or subclass of Activity.", cn);
 		}
 	}
@@ -219,7 +218,7 @@ public class Application {
 		if (m == null) 
 			throw new MissingElementException ("Method " + methSubSig 
 					+ " not found in class " + cn);
-		logger.info ("process entry %s.%s()", cn, m);
+		logger.info ("process entry {}.{}()", cn, m);
 		process_method (null, cn, m);
 	}
 
@@ -229,20 +228,20 @@ public class Application {
 	 */
 	void process_view (Layout layout, View view) throws Exception {
 
-		logger.info ("  processing view %s.%s", layout.name, view.name);
+		logger.info ("  processing view {}.{}", layout.name, view.name);
 		if ((view.on_click != null) && (layout.activity == null)) {
 			// It seems reasonable that apps may have unused layout files
-			logger.info ("Warning: on click handler %s in layout %s ignored, "
-					+ "%s is not inflated anywhere", view.on_click,
+			logger.info ("Warning: on click handler {} in layout {} ignored, "
+					+ "{} is not inflated anywhere", view.on_click,
 					layout.name, layout.name);
-			// bad_idiom ("No Activity associated with layout '%s'", layout.name);
+			// bad_idiom ("No Activity associated with layout '{}'", layout.name);
 		} else if (view.on_click != null) {
 			if (layout.activity == null) 
 				// bad_idiom ("No Activity associated with layout '%s'", layout.name);
 				if (layout.cn ==  null)
 					bad_idiom ("No class associated with layout '%s'", layout.name);
-			logger.info ("Found on_click entry point %s.%s for view %s " +
-					"in layout %s, resource name %s", 
+			logger.info ("Found on_click entry point {}.{} for view {} " +
+					"in layout {}, resource name {}", 
 					layout.cn, view.on_click,
 					view.name, layout.name, view.get_resource_name());
 
@@ -257,7 +256,7 @@ public class Application {
 			if (!handlers.containsKey(layout)) 
 				handlers.put(layout, new HashMap<View, SootMethod>());
 
-			logger.info("Putting: %s %s %s\n", layout, view, method);
+			logger.info("Putting: {} {} {}\n", layout, view, method);
 			handlers.get(layout).put(view, method);	 	
 
 			// Its not entirely clear why we are processing the on_click entry
@@ -265,8 +264,8 @@ public class Application {
 			try {
 				process_entry (layout.cn, view.on_click);
 			} catch (MissingElementException mee) {
-				logger.info ("Warning, Error processing on click handler %s in "
-						+ "layout %s: %s", view.on_click, layout.name, 
+				logger.info ("Warning, Error processing on click handler {} in "
+						+ "layout {}: {}", view.on_click, layout.name, 
 						mee.getMessage());
 			}
 		}
@@ -279,11 +278,21 @@ public class Application {
 	 * Processes a method.  If the method is in an activity, activity should
 	 * reference that activity.
 	 */
-	private void process_method (Activity activity, SootClass cn, SootMethod m) 
+	private void process_method (final Activity activity, final SootClass cn, final SootMethod m) 
 			throws UnsupportedIdiomException {
-
 		//find all invoke calls in method...
 		
+		StmtBody stmtBody = (StmtBody)m.retrieveActiveBody();
+		for( Iterator stmtIt = stmtBody.getUnits().iterator(); stmtIt.hasNext(); ) {
+			 final Stmt stmt = (Stmt) stmtIt.next();
+			 stmt.apply(new AbstractStmtSwitch() {
+				 public void caseInvokeStatement(InvokeStmt stmt) throws Exception {
+					 InvokeExpr expr = stmt.getInvokeExpr();
+					 if (expr instanceof VirtualInvokeExpr)
+						 v.process_invoke(cn, m, (VirtualInvokeExpr)expr, activity);
+				 }
+			 });
+		}
 	}
 
 
@@ -298,26 +307,37 @@ public class Application {
 	 * Process an invoke opcode.  This is responsible for method call
 	 * specific processing 
 	 **/
-	private void process_invoke (SootClass cn, SootMethod m, InvokeExpr expr,
+	private void process_invoke (SootClass cn, SootMethod m, VirtualInvokeExpr expr,
 			Activity activity) throws UnsupportedIdiomException {
-		
-
-		logger.info ("process_invoke [%s] %s.%s calling %s", cn.getSuperclass(),
+		logger.info ("process_invoke [{}] {}.{} calling {}", cn.getSuperclass(),
 				cn, m, expr);
-
-		// If calling setContentView, remember the layout file associated with
-		// this activity
-		if (method_inst.name.equals ("setContentView")&&
-				method_inst.desc.equals ("(I)V")) {
-
-			int resource_id = (Integer) ldc.cst;
+		
+		//if we don't have a reference, return
+		if (!(expr.getBase().getType() instanceof RefType))
+			return;
+		
+		SootMethod calling = 
+				Scene.v().getActiveHierarchy().resolveConcreteDispatch(((RefType)expr.getBase().getType()).getSootClass(), expr.getMethod());
+		
+		SootMethod setContentView = Scene.v().getMethod("<android.app.Activity: void setContentView(int)>");
+		
+		if (calling.equals(setContentView)) {
+			//now check if the single argument is a constant
+						
+			if (!(expr.getArgs().get(0) instanceof IntConstant)) {
+				logger.error("Found call to setContentView(int) with non-constant argument: {}", expr.getArgs().get(0));
+				System.exit(1);
+				return;
+			}
+			
+			int resource_id = ((IntConstant)expr.getArgs().get(0)).value;
 			
 			// This can happen.  We should probably change content_view to a list
 			if (activity.content_view != 0)
 				bad_idiom (cn, m, "Multiple setContentView calls in one Activity");
 
 			activity.content_view = resource_id;
-			logger.info ("  setContentView (%08X -> %s)", resource_id, 
+			logger.info ("  setContentView ({} -> {})", resource_id, 
 					resource_info.get(resource_id));
 			String resource_name = resource_info.get(resource_id);
 			if (resource_name == null) 
@@ -330,7 +350,7 @@ public class Application {
 
 			// Remember the class that instantiated this view/layout
 			layout.cn = cn;
-			logger.info ("Found activity/class %s/%s for layout %s\n", activity, 
+			logger.info ("Found activity/class {}/{} for layout {}\n", activity, 
 					cn, layout.name);
 		}
 	}
@@ -455,10 +475,10 @@ public class Application {
 		if (n.getNodeType() == Node.TEXT_NODE) {
 			// text nodes appear to be any text that occurs between real nodes.
 			// This is pretty uninteresting, so just skip them
-			// logger.info ("%sText Node %s, %s\n", tab, n.getNodeValue(), 
+			// logger.info ("{}Text Node {}, {}\n", tab, n.getNodeValue(), 
 			//                   n.getTextContent());
 		} else {
-			logger.info ("%sNode %s [%s]\n", tab, n.getNodeName(), 
+			logger.info ("{}Node {} [{}]\n", tab, n.getNodeName(), 
 					node_type(n));
 		}
 
@@ -467,7 +487,7 @@ public class Application {
 		if (attributes != null) {
 			for (int ii = 0; ii < attributes.getLength(); ii++) {
 				Node attr = attributes.item (ii);
-				logger.info ("%s  attribute %s = %s\n", tab, attr.getNodeName(), 
+				logger.info ("{}  attribute {} = {}\n", tab, attr.getNodeName(), 
 						attr.getNodeValue());
 			}
 		}

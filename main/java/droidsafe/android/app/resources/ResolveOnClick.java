@@ -43,11 +43,11 @@ public class ResolveOnClick {
 
     // Read the manifest and find all of the activities
     AndroidManifest am = app.manifest;
-    logger.info ("Manifest = %s\n", am.manifest);
-    logger.info ("appliction = %s\n", am.application);
+    logger.info ("Manifest = {}\n", am.manifest);
+    logger.info ("appliction = {}\n", am.application);
     logger.info ("Activities: \n");
     for (Activity a : am.activities) {
-      logger.info ("  %s\n", a);
+      logger.info ("  {}\n", a);
     }
 
     // Process the activities of the application
@@ -56,7 +56,7 @@ public class ResolveOnClick {
 
     // Process all of the layouts
     for (Layout l : app.layouts) {
-      logger.info ("  Processing layout %s\n", l.name);
+      logger.info ("  Processing layout {}\n", l.name);
       app.process_view (l, l.view);
     } 
 
@@ -65,9 +65,9 @@ public class ResolveOnClick {
                     app.handlers.size());
     for (Layout layout : app.handlers.keySet()) {
       HashMap<View, SootMethod> lmap = app.handlers.get (layout);
-      logger.info ("layout %s", layout.name);
+      logger.info ("layout {}", layout.name);
       for (View view : lmap.keySet()) {
-        logger.info ("  view %s -> method %s", view, lmap.get(view));
+        logger.info ("  view {} -> method {}", view, lmap.get(view));
       }
     }
   }

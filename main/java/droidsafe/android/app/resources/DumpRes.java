@@ -40,7 +40,7 @@ public class DumpRes {
     Application app = new Application (new File (args[0]));
 
     for (Integer res_val : app.resource_info.keySet()) {
-    	logger.info ("%08X  %s", res_val, 
+    	logger.info ("{}  {}", String.format("%08X", res_val), 
                          app.resource_info.get (res_val));
     }
   }

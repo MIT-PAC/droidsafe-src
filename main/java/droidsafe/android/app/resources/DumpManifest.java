@@ -33,33 +33,33 @@ public class DumpManifest {
 
     // Read the manifest and find all of the activities
     AndroidManifest am = app.manifest;
-    logger.info ("Manifest      = %s", am.manifest);
-    logger.info ("application   = %s", am.application);
-    logger.info ("uses-sdk      : %s", am.uses_sdk);
+    logger.info ("Manifest      = {}", am.manifest);
+    logger.info ("application   = {}", am.application);
+    logger.info ("uses-sdk      : {}", am.uses_sdk);
     logger.info ("Activities: ");
     for (Activity a : am.activities) {
-      logger.info ("  %s", a);
+      logger.info ("  {}", a);
     }
     logger.info ("Services:");
     for (Service s : am.services) {
-      logger.info ("  %s", s);
+      logger.info ("  {}", s);
     }
 
     logger.info ("Receivers:");
     for (Receiver r : am.receivers) 
-      logger.info ("  %s", r);
+      logger.info ("  {}", r);
 
     logger.info ("Providers:");
     for (Provider p : am.providers)
-      logger.info ("  %s", p);
+      logger.info ("  {}", p);
 
     logger.info ("UsesPermissions");
     for (UsesPermission up : am.uses_permissions)
-      logger.info ("  %s", up);
+      logger.info ("  {}", up);
 
     logger.info ("Permissions");
     for (Permission p : am.permissions)
-      logger.info ("  %s", p);
+      logger.info ("  {}", p);
   }
 }
 
