@@ -62,6 +62,12 @@ public class Config {
                 .create( "t"); 
 		options.addOption(target);
 		
+		Option spec = OptionBuilder.withArgName("ssl_file")
+				.hasArg()
+				.withDescription("Security Specification for application (used with confcheck)")
+				.create("s");
+		options.addOption(spec);
+		
 		Option help = new Option( "help", "print this message" );
 		options.addOption(help);
 	}
