@@ -140,7 +140,7 @@ public class RCFGToSSL {
 		//a points to set could be empty if the alloc node is in library code
 		if (allConstants && ptsToSet.size() > 0) {
 			//if we have all constants, create the concrete argument list from the constants
-			ConcreteListArgumentValue clrv = new ConcreteListArgumentValue();
+			ConcreteListArgumentValue clrv = new ConcreteListArgumentValue(t);
 			for (ConcreteArgumentValue s : constants) 
 				clrv.add(s);
 			return clrv;
@@ -155,7 +155,7 @@ public class RCFGToSSL {
 	 * a method.
 	 */
 	private ArgumentValue getArgumentValueForPrimitive(Value value, Type type) {
-		ConcreteListArgumentValue listArg = new ConcreteListArgumentValue();
+		ConcreteListArgumentValue listArg = new ConcreteListArgumentValue(type);
 		
 		if (value instanceof IntConstant) {
 			int intValue = ((IntConstant)value).value;

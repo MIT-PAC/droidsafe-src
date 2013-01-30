@@ -6,7 +6,6 @@ public class CharValue extends ConcreteArgumentValue {
 	private char value;
 	
 	public CharValue(char value) {
-		super(CharType.v());
 		this.value = value;
 	}
 

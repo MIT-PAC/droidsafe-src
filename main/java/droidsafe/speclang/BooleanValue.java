@@ -9,7 +9,7 @@ public class BooleanValue extends ConcreteArgumentValue {
 	public static BooleanValue FALSE = new BooleanValue(false);
 	
 	private BooleanValue(boolean value) {
-		super(BooleanType.v());
+		super();
 		this.value = value;
 	}
 	

@@ -9,7 +9,7 @@ public class StringValue extends ConcreteArgumentValue {
 	private String value;
 
 	public StringValue(String value) {
-		super(RefType.v("java.lang.String"));
+		super();
 		this.value = value;
 		escape();
 	}

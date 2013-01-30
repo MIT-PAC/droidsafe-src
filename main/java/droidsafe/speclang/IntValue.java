@@ -6,7 +6,7 @@ public class IntValue extends ConcreteArgumentValue {
 	private int value;
 	
 	public IntValue(int value) {
-		super(IntType.v());
+		super();
 		this.value = value;
 	}
 

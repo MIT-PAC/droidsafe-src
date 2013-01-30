@@ -21,8 +21,8 @@ public class ConcreteListArgumentValue extends ArgumentValue  {
 	
 	private LinkedList<ConcreteArgumentValue> args;
 	
-	public ConcreteListArgumentValue() {
-		super(VoidType.v());
+	public ConcreteListArgumentValue(Type type) {
+		super(type);
 		args = new LinkedList<ConcreteArgumentValue>();
 	}
 
@@ -63,12 +63,10 @@ public class ConcreteListArgumentValue extends ArgumentValue  {
 	 * @param val2
 	 * @return A new object with the combined list
 	 */
-	public static ConcreteListArgumentValue combine(ConcreteListArgumentValue val1,
+	public static ConcreteListArgumentValue combine(Type type, ConcreteListArgumentValue val1,
 			ConcreteListArgumentValue val2) {
-		if (val1.getType() != val2.getType())
-			logger.error("Trying to combine two concrete arguments of different type");
 		
-		ConcreteListArgumentValue ret = new ConcreteListArgumentValue();
+		ConcreteListArgumentValue ret = new ConcreteListArgumentValue(type);
 		
 		ret.addAll(val1);
 		ret.addAll(val2);
@@ -81,41 +79,11 @@ public class ConcreteListArgumentValue extends ArgumentValue  {
 	 */
 	public void setType(Type type) {
 		this.type = type;
-		for (ConcreteArgumentValue value : args) {
-			value.setType(type);
-		}
 	}
 	
 	public Type getType() {
-		if (!allOneType())  
-			Utils.ERROR_AND_EXIT(logger, "Divergent arguments for argument value list!");
-		return args.get(0).getType();
+		return type;
 	}
-	
-	public void checkAllOneType() {
-		if (!allOneType()) {
-			Utils.ERROR_AND_EXIT(logger, "Alternatives for security spec language not all one type!");
-		}
-	}
-	
-	public boolean allOneType() {
-		
-		if (args.size() == 0)
-			return true;
-
-		
-		Type last = args.get(0).getType();
-		
-		for (ConcreteArgumentValue arg : args) {
-			if (last != arg.getType())
-				return false;
-		}
-		
-		this.type = last;
-		
-		return true;
-	}
-	
 	
 	public String toString() {
 		String ret = "";

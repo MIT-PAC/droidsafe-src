@@ -7,7 +7,7 @@ public class ClassValue  extends ConcreteArgumentValue {
 	private String value;
 
 	public ClassValue(String value) {
-		super(RefType.v("java.lang.Class"));
+		super();
 		this.value = value;
 	}
 
