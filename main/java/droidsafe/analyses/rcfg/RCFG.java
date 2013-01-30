@@ -144,9 +144,13 @@ public class RCFG {
 				}
 				//do something to save the method and context (args and this)
 			} else {
+				
+				//TODO: For now ignore library methods from the ignore list
+				if (IGNORE_SYS_METHOD_WITH_NAME.contains(edge.tgt().getName()) &&
+						Project.v().isLibClass(edge.tgt().getDeclaringClass().toString()))
+					continue;
 				//it is an app edge, so recurse into later
-				if (!IGNORE_SYS_METHOD_WITH_NAME.contains(edge.tgt().getName()))
-					appEdgesOut.add(edge);
+				appEdgesOut.add(edge);
 			}
 		}
 		

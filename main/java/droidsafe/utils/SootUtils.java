@@ -266,7 +266,7 @@ public class SootUtils {
 		Method method = new Method(signature);
 		SootClass clz = Scene.v().getSootClass(method.getCname());
 	
-		
+		/*
 		List<SootMethod> possibleMethods = findPossibleInheritedMethods(clz, method.getName(), 
 				method.getRtype(), method.getArgs().length);
 		
@@ -274,21 +274,21 @@ public class SootUtils {
 		for (SootMethod possibleMethod : possibleMethods) 
 			if (isStatic != possibleMethod.isStatic())
 				Utils.ERROR_AND_EXIT(logger, "Static modifier disagrees among possible sources of inherited method!");
-	
+		 */
 		List<Type> argTypes = new LinkedList<Type>();
 		for (ArgumentValue value : method.getArgs()) {
 			argTypes.add(value.getType());
 		}
-		
-			//Use soot's method reference to try to resolve the specific call if args are not exact
+		/*
+		//Use soot's method reference to try to resolve the specific call if args are not exact
 		SootMethodRef methodRef = Scene.v().makeMethodRef(clz, method.getName(), argTypes, 
 				toSootType(method.getRtype()), isStatic);
 		SootMethod resolvedM = methodRef.resolve();
-		
-		/*
-		SootMethod sub = clz.getMethod(method.getSubSignature());
-		SootMethod resolvedM = Scene.v().getActiveHierarchy().resolveConcreteDispatch(clz, sub);
 		*/
+
+		SootMethod ref = new SootMethod(method.getName(), argTypes, toSootType(method.getRtype()));
+		SootMethod resolvedM = Scene.v().getActiveHierarchy().resolveConcreteDispatch(clz, ref);
+		
 		if (resolvedM == null || !Scene.v().containsMethod(resolvedM.getSignature())) {
 			logger.error("Error resolving method: {} ", signature);
 			System.exit(1);
