@@ -57,16 +57,15 @@ public abstract class ArgumentValue {
 	 * @param val2
 	 * @return the combined argument value.
 	 */
-	public static ArgumentValue combine(ArgumentValue val1, ArgumentValue val2) {
+	public static ArgumentValue combine(ArgumentValue val1, ArgumentValue val2, Type actualArgumentType) {
 		if (!val1.getType().equals(val2.getType())) {
-			logger.error("Trying to combine values with differing type: {} ({}) and {} ({})", val1, val1.getType(), val2, val2.getType());
-			System.exit(1);
+			return new TypeValue(actualArgumentType);
 		}
 		
 		ArgumentValue ret;
 		if (val1.isConcreteList() && val2.isConcreteList()) {
 			ret = ConcreteListArgumentValue.combine((ConcreteListArgumentValue)val1, 
-													(ConcreteListArgumentValue)val2);
+													(ConcreteListArgumentValue)val2, actualArgumentType);
 		} else if (val1.isConcreteList())
 			ret = val2;
 		else if (val2.isConcreteList())

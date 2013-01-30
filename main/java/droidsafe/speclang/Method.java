@@ -16,6 +16,7 @@ import soot.Scene;
 import soot.SootClass;
 import soot.SootMethod;
 import soot.tagkit.LineNumberTag;
+import soot.Type;
 
 import droidsafe.utils.SourceLocationTag;
 import droidsafe.utils.Utils;
@@ -130,7 +131,7 @@ public class Method implements Comparable<Method> {
 		logger.info("Calling incorporate method on: {}", meth2);
 		
 		for (int i = 0; i < args.length; i++) {
-			args[i] = ArgumentValue.combine(args[i], meth2.args[i]); 
+			args[i] = ArgumentValue.combine(args[i], meth2.args[i], getActualArgType(i)); 
 		}
 		
 		//combine the line numbers the method to incorporate and resort them
@@ -366,7 +367,10 @@ public class Method implements Comparable<Method> {
 	public void setArg(int i, ArgumentValue v) {
 		args[i] = v;
 	}
-	
+
+	public Type getActualArgType(int i) {
+		return sootMethod.getParameterType(i);
+	}
 
 	/** Sort by class and method name **/
 	public int compareTo (Method m) {
