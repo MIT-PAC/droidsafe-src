@@ -59,7 +59,7 @@ public abstract class ArgumentValue {
 	 */
 	public static ArgumentValue combine(ArgumentValue val1, ArgumentValue val2) {
 		if (!val1.getType().equals(val2.getType())) {
-			logger.error("Trying to combine values with differing type: {} {}", val1.getType(), val2.getType());
+			logger.error("Trying to combine values with differing type: {} ({}) and {} ({})", val1, val1.getType(), val2, val2.getType());
 			System.exit(1);
 		}
 		

@@ -24,22 +24,41 @@ import droidsafe.android.system.API;
 public class Method implements Comparable<Method> {
 	private static final Logger logger = LoggerFactory.getLogger(Method.class);
 	
-	
-	/** full qualified class name */
-	private String cname;
-	/** fully qualified class name of the uppermost superclass that defines this method */
-	private String upperMostCName;
-	/** name of method */
-	private String methName;
+	/** Concrete Soot Method */
+	private SootMethod sootMethod;
 	/** argument full qualified types */
 	private ArgumentValue[] args;
 	/** receiver (could be a type or an object reference) */
 	private String receiver;
-	/** return type */
-	private String rtype;
 	/** locations where this method, either a call or a handler appear in source */
 	private List<SourceLocationTag> lines;
 
+	public Method(SootMethod method, ArgumentValue[] args, String receiver) {
+		this.sootMethod = method;
+		this.args = args;
+		this.receiver = receiver;
+		lines = new ArrayList<SourceLocationTag>();
+	}
+	
+	public Method(SootMethod method) {
+		this.sootMethod = method;
+		
+		//create argument list from types of method
+		ArgumentValue[] argTypes = new ArgumentValue[sootMethod.getParameterCount()];
+		for (int i = 0; i < argTypes.length; i++) {
+			argTypes[i] = new TypeValue(sootMethod.getParameterType(i));
+		}
+		
+		this.args = argTypes;
+		setTypes();
+		this.receiver = null;
+		
+		lines = new ArrayList<SourceLocationTag>();
+	}
+	
+	public SootMethod getSootMethod() {
+		return sootMethod;
+	}
 	
 	/**
 	 * check to see if these two method objects refer to the same method
@@ -49,30 +68,16 @@ public class Method implements Comparable<Method> {
 	 * @return true if same underlying method that is called.
 	 */
 	public boolean isSameMethod(Method meth2) {
-		if (!cname.equals(meth2.cname) || !methName.equals(meth2.methName) ||
-				!receiver.equals(meth2.receiver)) {	
-			return false;
-		}
-		
-		//check all the args for the same underlying type
-		if (args.length != meth2.args.length)
-			return false;
-		for (int i = 0; i < args.length; i++) {
-			if (!args[i].getType().equals(meth2.args[i].getType())) {
-				return false;
-			}
-		}
-				
-		return true;
+		return meth2.getSootMethod().equals(sootMethod);
 	}
 	
 	/**
- 	 * Change the types of the arguments to argee with the parameter method
+ 	 * Change the types of the arguments to agree with the underlying soot method
 	 */
-	public void setTypes(SootMethod method) {
-		if (!(method.getSubSignature().equals(this.getSubSignature()))) {
+	public void setTypes() {
+		if (!(sootMethod.getSubSignature().equals(this.getSubSignature()))) {
 			for (int i = 0; i < this.args.length; i++) {
-				this.args[i].setType(method.getParameterType(i));
+				this.args[i].setType(sootMethod.getParameterType(i));
 			}
 		}
 	}
@@ -122,6 +127,8 @@ public class Method implements Comparable<Method> {
 		if (!isSameMethod(meth2))
 			Utils.ERROR_AND_EXIT(logger,"Error: Trying to combine concrete value restrictions on different methods!");
 		
+		logger.info("Calling incorporate method on: {}", meth2);
+		
 		for (int i = 0; i < args.length; i++) {
 			args[i] = ArgumentValue.combine(args[i], meth2.args[i]); 
 		}
@@ -135,44 +142,7 @@ public class Method implements Comparable<Method> {
 		Collections.sort(lines);
 	}
 	
-	/**
-	 * Create a method without a receiver
-	 * 
-	 * @param cname the fully qualified class name
-	 * @param name the name of the method
-	 * @param args the arguments of the method
-	 * @param receiver the string of the receiver (either a class or object id)
-	 */
-	public Method(String cname, String rtype, String name, ArgumentValue[] args, String receiver) {
-		this.cname = cname;
-		this.upperMostCName = cname;
-		this.methName = name;
-		this.args = args;
-		this.receiver = receiver;
-		this.rtype = rtype;
-		this.lines = new ArrayList<SourceLocationTag>();
-		setUpperMostMethod();
-	}
-	
-	/**
-	 * Create a method from an underlying soot method, a string of the receiver,
-	 * and the argument values.
-	 */
-	public Method(SootMethod method, ArgumentValue[] args) {
-		this(method.getDeclaringClass().toString(), method.getReturnType().toString(), method.getName(), args, "");
-	}
 
-	/**
-	 * Create a method without a receiver
-	 * 
-	 * @param cname the fully qualified class name
-	 * @param name the name of the method
-	 * @param args the arguments of the method
-	 */
-	public Method(String cname, String rtype, String name, ArgumentValue[] args) {
-		this(cname, rtype, name, args, "");
-	}
-	
 	/**
 	 * Create a new method from a soot method signature.
 	 * 
@@ -203,6 +173,7 @@ public class Method implements Comparable<Method> {
 			argsArr[i++] = new TypeValue(st.nextToken());
 		}
 		
+		/*
 		this.cname = cname;
 		this.upperMostCName = cname;
 		this.args = argsArr;
@@ -210,34 +181,25 @@ public class Method implements Comparable<Method> {
 		this.rtype = rtype;
 		this.lines = new ArrayList<SourceLocationTag>();
 		this.receiver = "";
-		
-		setUpperMostMethod();
+		*/
 	}
 	
 	public boolean hasReceiver() {
-		return !receiver.equals("");			
+		return receiver != null && !receiver.equals("");			
 	}
 	
 	/**
 	 * Return the method in Soot's Subsignature format.
 	 */
 	public String getSubSignature() {
-		String ret = rtype + " " + methName + "(";
-		
-		for (int i = 0; i < args.length; i++) {
-          if (i > 0)
-            ret += ",";
-          ret += args[i].getType();
-		}
-		
-		return ret + ")";
+		return sootMethod.getSubSignature();
 	}
 	
 	/**
 	 * Return the signature for the method in Soot format. 
 	 */
-	public String getSignature(boolean useUpperMost) {
-		return  "<" + (useUpperMost ? upperMostCName : cname) + ": " + getSubSignature() + ">";
+	public String getSignature() {
+		return  sootMethod.getSignature();
 	}
 	
 	/**
@@ -256,7 +218,7 @@ public class Method implements Comparable<Method> {
 			}
 		}
 		
-		if (flagUnsupported && !API.v().isSupportedMethod(this.getSignature(true)))
+		if (flagUnsupported && !API.v().isSupportedMethod(sootMethod))
 			ret += "**";
 		
         return ret + toSignatureString();
@@ -272,7 +234,7 @@ public class Method implements Comparable<Method> {
         if (hasReceiver()) 
 			ret += receiver + " ";
 		
-		ret += cname + ": " + rtype + " " + methName + "(";
+		ret += getCname() + ": " + getRtype() + " " + this.getName() + "(";
 		
 		for (int i = 0; i < args.length; i++) {
           if (i > 0)
@@ -291,8 +253,8 @@ public class Method implements Comparable<Method> {
     }
 
 	public String toXML() {
-		String ret = "<method name=\"" + methName + "\" class=\"" + 
-				cname + "\" rtype=\"" + rtype +  "\" receiver=\"" + receiver + "\">\n"; 
+		String ret = "<method name=\"" + getName() + "\" class=\"" + 
+				getCname() + "\" rtype=\"" + getRtype() +  "\" receiver=\"" + receiver + "\">\n"; 
 		
 		for (ArgumentValue arg : args)
 			ret += "<arg type = \"" + arg + "\"/>";
@@ -303,46 +265,16 @@ public class Method implements Comparable<Method> {
 	}
 	
 	/**
-	 * Given the string representation for the this object from PTA, 
-	 * be more specific with the class of the method if possible.
-	 * 
-	 * @param alloc 
-	 */
-	public void processPTAInfo(String alloc) {
-		Pattern re = Pattern.compile("AllocNode (\\d+) new (\\S+) (.*)");
-		Matcher matcher = re.matcher(alloc);
-		
-		//if a match, set the class name to the class of the allocation
-		if (matcher.matches()) {
-			//System.out.println("Could not match: " + thisArg);
-			upperMostCName = cname;
-			cname = matcher.group(2);	
-			return;
-		}
-		
-		re = Pattern.compile("Fail Safe Node of (\\S+)");
-		matcher = re.matcher(alloc);
-		
-		//if a match, set the class name to the class of the allocation
-		if (matcher.matches()) {
-			//System.out.println("Could not match: " + thisArg);
-			upperMostCName = cname;
-			cname = matcher.group(1);
-			return;
-		}
-	}
-	
-	/**
 	 * Try to find the line number of the declaration of this method.
 	 * Must be using byte code and not dex file conversion.
 	 */
 	public SourceLocationTag getDeclSourceLocation() {
 		
 		//check to see if this method is defined, if not, return null
-		if (!Scene.v().containsMethod(getSignature(false)))
+		if (!Scene.v().containsMethod(getSignature()))
 			return null;
 		
-		SootMethod method = Scene.v().getMethod(getSignature(false));
+		SootMethod method = Scene.v().getMethod(getSignature());
 		
 		if (!method.hasActiveBody())
 			return null;
@@ -361,34 +293,20 @@ public class Method implements Comparable<Method> {
 	 * @return
 	 */
 	public boolean checkValidSpecMethod() {
-		return API.v().isSupportedMethod(this.getSignature(false));
+		return API.v().isSupportedMethod(sootMethod);
 	}
 	
-	private void setUpperMostMethod() {
-		SootClass clazz = Scene.v().getSootClass(cname);
-		
-    	while (clazz != null) {
-    		if (clazz.declaresMethod(this.getSubSignature())) {
-    			this.setUpperMostCName(clazz.getName());
-    		}
-    		
-    		if (clazz.hasSuperclass())
-    			clazz = clazz.getSuperclass();
-    		else
-    			clazz = null;
-    	}
-	}
 
 	@Override
 	public int hashCode() {
 		final int prime = 31;
 		int result = 1;
-		result = prime * result + Arrays.deepHashCode(args);
-		result = prime * result + ((cname == null) ? 0 : cname.hashCode());
-		result = prime * result + ((methName == null) ? 0 : methName.hashCode());
+		result = prime * result + Arrays.hashCode(args);
+		result = prime * result + ((lines == null) ? 0 : lines.hashCode());
 		result = prime * result
 				+ ((receiver == null) ? 0 : receiver.hashCode());
-		result = prime * result + ((rtype == null) ? 0 : rtype.hashCode());
+		result = prime * result
+				+ ((sootMethod == null) ? 0 : sootMethod.hashCode());
 		return result;
 	}
 
@@ -403,25 +321,20 @@ public class Method implements Comparable<Method> {
 		Method other = (Method) obj;
 		if (!Arrays.equals(args, other.args))
 			return false;
-		if (cname == null) {
-			if (other.cname != null)
+		if (lines == null) {
+			if (other.lines != null)
 				return false;
-		} else if (!cname.equals(other.cname))
-			return false;
-		if (methName == null) {
-			if (other.methName != null)
-				return false;
-		} else if (!methName.equals(other.methName))
+		} else if (!lines.equals(other.lines))
 			return false;
 		if (receiver == null) {
 			if (other.receiver != null)
 				return false;
 		} else if (!receiver.equals(other.receiver))
 			return false;
-		if (rtype == null) {
-			if (other.rtype != null)
+		if (sootMethod == null) {
+			if (other.sootMethod != null)
 				return false;
-		} else if (!rtype.equals(other.rtype))
+		} else if (!sootMethod.equals(other.sootMethod))
 			return false;
 		return true;
 	}
@@ -431,11 +344,11 @@ public class Method implements Comparable<Method> {
 	}
 	
 	public String getCname() {
-		return cname;
+		return sootMethod.getDeclaringClass().getName();
 	}
 
 	public String getName() {
-		return methName;
+		return sootMethod.getName();
 	}
 
 	public ArgumentValue[] getArgs() {
@@ -447,24 +360,13 @@ public class Method implements Comparable<Method> {
 	}
 
 	public String getRtype() {
-		return rtype;
+		return sootMethod.getReturnType().toString();
 	}
 	
 	public void setArg(int i, ArgumentValue v) {
 		args[i] = v;
 	}
 	
-	public void setCName(String cname) {
-		this.cname = cname;
-	}
-	
-	public void setUpperMostCName(String str) {
-		this.upperMostCName = str;
-	}
-	
-	public String getUpperMostCName() {
-		return upperMostCName;
-	}
 
 	/** Sort by class and method name **/
 	public int compareTo (Method m) {
@@ -474,11 +376,11 @@ public class Method implements Comparable<Method> {
 		}
 
 		//otherwise, compare them on class name then arg
-		String str1 = cname + " " + methName;
+		String str1 = getCname() + " " + getName();
 		for (ArgumentValue arg : args)
 			str1 += " " + args.toString();
 		
-		String str2 = m.cname + " " + m.methName;
+		String str2 = m.getCname() + " " + m.getName();
 		for (ArgumentValue arg : m.args)
 			str2 += " " + args.toString();
 		return str1.compareTo(str2);

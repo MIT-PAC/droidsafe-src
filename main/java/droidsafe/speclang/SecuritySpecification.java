@@ -219,8 +219,8 @@ public class SecuritySpecification  {
             List<String> banned_methods = new ArrayList<String>();
         	for (Method oe : outm) {
                 String msig = "";
-        		String dbSig = oe.getSignature(true);
-        		boolean unsup = !API.v().isSupportedMethod(dbSig);
+        		String dbSig = oe.getSignature();
+        		boolean unsup = !API.v().isSupportedMethod(oe.getSootMethod());
                 if (unsup) {
                   msig += "<b>";
                 }

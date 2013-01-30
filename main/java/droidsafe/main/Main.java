@@ -82,6 +82,7 @@ public class Main {
 		
 		if (Config.v().target.equals("specdump")) {
 			RCFGToSSL.run();
+			
 		} else if (Config.v().target.equals("confcheck")) {
 			logger.error("Not implemented yet!");
 		}

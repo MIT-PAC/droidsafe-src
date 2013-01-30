@@ -233,7 +233,7 @@ public class API {
     }
     
     /**
-     * Given a signature for a method, find the system method that is would 
+     * Given a signature for a method, find the system method that would 
      * be called given the types of the receiver and params of the signature.
      */
     public SootMethod findSupportedMethod(String sig) {
@@ -245,17 +245,17 @@ public class API {
      * Return false if a banned method or if a user method.
      * This method will perform a polymorphic search. 
      */
-    public boolean isSupportedMethod(String sig) {
-    	if (safe_methods.contains(sig) || spec_methods.contains(sig))
+    public boolean isSupportedMethod(SootMethod method) {
+    	if (safe_methods.contains(method) || spec_methods.contains(method))
     		return true;
     	
     	//if we get here, we might have a call that either overrides an 
     	//api call or has args that implement superclass or interface
     	//so do a smarter search
-    	if (spec_methods.containsPoly(sig))
+    	if (spec_methods.containsPoly(method))
     		return true;
     	
-    	return safe_methods.containsPoly(sig);
+    	return safe_methods.containsPoly(method);
     }
     
     /**

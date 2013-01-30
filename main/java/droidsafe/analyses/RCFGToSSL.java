@@ -14,6 +14,8 @@ import soot.BooleanType;
 import soot.CharType;
 import soot.IntType;
 import soot.RefType;
+import soot.Scene;
+import soot.SootMethod;
 import soot.Type;
 import soot.Value;
 import soot.jimple.ClassConstant;
@@ -58,7 +60,7 @@ public class RCFGToSSL {
 		writeSpecToFile(v.getSpec().toString(), fname);
 
         String html_fname = Project.v().getOutputDir() + "/spec.html";
-        writeSpecToFile(v.getSpec().toHtmlString(), html_fname);        
+        writeSpecToFile(v.getSpec().toHtmlString(), html_fname);
 	}
 	
 	protected RCFGToSSL() {
@@ -71,7 +73,7 @@ public class RCFGToSSL {
 	
 	private void createSSL(RCFG rcfg) {
 		for (RCFGNode node : rcfg.getNodes()) {
-			Method ie = new Method(node.getEntryPoint().getSignature());
+			Method ie = new Method(node.getEntryPoint());
 			for (OutputEvent oe : node.getOutputEvents())
 				spec.addToInputEventCombine(ie, methodsFromOutputEvent(oe));
 		}
@@ -91,8 +93,7 @@ public class RCFGToSSL {
 			}
 		}
 
-		
-		Method method = new Method(oe.getTarget(), args);
+		Method method = new Method(oe.getTarget(), args, null);
 		//transfer over the source location information of the call
 		if (oe.getSourceLocationTag() != null)
 			method.addLineTag(oe.getSourceLocationTag());

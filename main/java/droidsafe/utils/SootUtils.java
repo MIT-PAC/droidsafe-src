@@ -56,6 +56,7 @@ import soot.jimple.InstanceInvokeExpr;
 import soot.jimple.IntConstant;
 import soot.jimple.InvokeExpr;
 import soot.jimple.JasminClass;
+import soot.jimple.Jimple;
 import soot.jimple.LongConstant;
 import soot.jimple.NullConstant;
 import soot.jimple.Stmt;
@@ -244,6 +245,7 @@ public class SootUtils {
     	
     	for (SootClass parent : classes) {
     		for (SootMethod method : parent.getMethods()) {
+    			logger.debug("Looking at {} in {}", method, parent);
     			if (method.getName().equals(name) &&
     					method.getParameterCount() == numArgs &&
     					method.getReturnType().toString().equals(returnType))
@@ -260,42 +262,53 @@ public class SootUtils {
      * of a method defined in the scene.  The receiver type can be a subtype as well.
      */
     public static SootMethod resolveMethod(String signature) {
+    	return null;
+    	/*
     	if (Scene.v().containsMethod(signature))
 			return Scene.v().getMethod(signature);
 		
 		Method method = new Method(signature);
 		SootClass clz = Scene.v().getSootClass(method.getCname());
 	
-		/*
+
 		List<SootMethod> possibleMethods = findPossibleInheritedMethods(clz, method.getName(), 
 				method.getRtype(), method.getArgs().length);
 		
 		boolean isStatic = possibleMethods.get(0).isStatic();
-		for (SootMethod possibleMethod : possibleMethods) 
-			if (isStatic != possibleMethod.isStatic())
-				Utils.ERROR_AND_EXIT(logger, "Static modifier disagrees among possible sources of inherited method!");
-		 */
+		for (SootMethod possibleMethod : possibleMethods) {
+			logger.debug("{}: is static {}", possibleMethod, possibleMethod.isStatic());
+			if (isStatic != possibleMethod.isStatic()) {
+				logger.error ("Static modifier disagrees among possible sources of inherited method! {}", signature);
+				System.exit(1);
+			}
+		}
+
 		List<Type> argTypes = new LinkedList<Type>();
 		for (ArgumentValue value : method.getArgs()) {
 			argTypes.add(value.getType());
 		}
-		/*
+	
 		//Use soot's method reference to try to resolve the specific call if args are not exact
 		SootMethodRef methodRef = Scene.v().makeMethodRef(clz, method.getName(), argTypes, 
 				toSootType(method.getRtype()), isStatic);
 		SootMethod resolvedM = methodRef.resolve();
-		*/
-
-		SootMethod ref = new SootMethod(method.getName(), argTypes, toSootType(method.getRtype()));
-		SootMethod resolvedM = Scene.v().getActiveHierarchy().resolveConcreteDispatch(clz, ref);
 		
+		logger.debug("Resolved: {}", resolvedM);
+			
 		if (resolvedM == null || !Scene.v().containsMethod(resolvedM.getSignature())) {
 			logger.error("Error resolving method: {} ", signature);
 			System.exit(1);
 		}
 		
 		
-		return resolvedM;
+		for (SootMethod meth : Scene.v().getSootClass("android.view.View").getMethods()) {
+			if (meth.getName().equals("setOnClickListener"))
+				logger.debug("After resolveMethod {}: {} isStatic? {}", signature, meth, meth.isStatic());
+		}
+		
+		
+		*/
+	
 	}
     
     /**

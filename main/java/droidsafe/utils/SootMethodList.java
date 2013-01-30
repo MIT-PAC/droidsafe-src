@@ -90,6 +90,7 @@ public class SootMethodList implements Iterable<SootMethod>{
 	 * method list given polymorphism.
 	 */
 	public SootMethod getMethod(SootMethod method) {
+		logger.debug("Calling getMethod() with {}", method);
 		//return the method if the direct method exists
 		if (methods.contains(method)) 
 			return method;

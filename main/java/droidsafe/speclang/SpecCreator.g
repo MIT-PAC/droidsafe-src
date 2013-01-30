@@ -79,14 +79,15 @@ input_event returns [Method value]
         {       
             Method m = null;
             
-                        
+            /** needs to change...            
             if (rec != null && !rec.equals("")) {
                 m = new Method($cname.text, $rt.text, $mname.text, 
                 				args != null ? args.toArray(new ArgumentValue[0]):new ArgumentValue[0], rec);
             } else {
                 m = new Method($cname.text, $rt.text, $mname.text, 
                 			args!=null?args.toArray(new ArgumentValue[0]):new ArgumentValue[0]);
-            }		
+            }
+            */		
             $value = m;
         }       
   	; 
@@ -151,7 +152,7 @@ api_call returns [Method value]
         {
             Method m = null;
             
-                        
+            /**            
             if (rec != null && !rec.equals("")) {
                 m = new Method($cname.text, $rt.text, $mname.text, 
                 	args != null ? args.toArray(new ArgumentValue[0]) : new ArgumentValue[0], 
@@ -177,7 +178,7 @@ api_call returns [Method value]
             }
            
             m.setTypes(API.v().findSupportedMethod(m.getSignature(false)));
-            
+            */
             $value = m;
         }       
   	; 
