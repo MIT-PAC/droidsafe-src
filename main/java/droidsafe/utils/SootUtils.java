@@ -162,11 +162,16 @@ public class SootUtils {
             if (curr.toString().equals("java.lang.Object")) {
                 continue;
             }
-
-            q.addAll(curr.getInterfaces());
-            q.add(curr.getSuperclass());
-            ret.addAll(curr.getInterfaces());
-            ret.add(curr.getSuperclass());
+            
+            if (!curr.isPhantom()){ 
+            	q.addAll(curr.getInterfaces());
+            	ret.addAll(curr.getInterfaces());
+            }
+            
+            if (curr.hasSuperclass() && !curr.isPhantom()) {
+            	q.add(curr.getSuperclass());
+            	ret.add(curr.getSuperclass());
+            }
         }
 
         return ret;
@@ -192,6 +197,9 @@ public class SootUtils {
      */
     public static boolean isSubTypeOf(Type child, Type parent) {
     	if (child.equals(parent))
+    		return true;
+    	else if (child instanceof NullType ||
+    			parent instanceof NullType)
     		return true;
     	else if (parent instanceof PrimType) {
     		//special case the integral types because they can be cast to
@@ -252,37 +260,39 @@ public class SootUtils {
      * of a method defined in the scene.  The receiver type can be a subtype as well.
      */
     public static SootMethod resolveMethod(String signature) {
-		if (Scene.v().containsMethod(signature))
+    	if (Scene.v().containsMethod(signature))
 			return Scene.v().getMethod(signature);
 		
 		Method method = new Method(signature);
 		SootClass clz = Scene.v().getSootClass(method.getCname());
 	
+		
 		List<SootMethod> possibleMethods = findPossibleInheritedMethods(clz, method.getName(), 
 				method.getRtype(), method.getArgs().length);
-		
-		/*if (possibleMethods.isEmpty()) {
-			Utils.ERROR_AND_EXIT(logger, "No possible methods targets for signature {}", signature);
-		}*/
-			
 		
 		boolean isStatic = possibleMethods.get(0).isStatic();
 		for (SootMethod possibleMethod : possibleMethods) 
 			if (isStatic != possibleMethod.isStatic())
-				Utils.ERROR_AND_EXIT(logger, "Static modify disagrees among possible sources of inherited method!");
+				Utils.ERROR_AND_EXIT(logger, "Static modifier disagrees among possible sources of inherited method!");
 	
 		List<Type> argTypes = new LinkedList<Type>();
 		for (ArgumentValue value : method.getArgs()) {
 			argTypes.add(value.getType());
 		}
-				
-		//Use soot's method reference to try to resolve the specific call if args are not exact
+		
+			//Use soot's method reference to try to resolve the specific call if args are not exact
 		SootMethodRef methodRef = Scene.v().makeMethodRef(clz, method.getName(), argTypes, 
 				toSootType(method.getRtype()), isStatic);
 		SootMethod resolvedM = methodRef.resolve();
 		
-		if (resolvedM == null || !Scene.v().containsMethod(resolvedM.getSignature()))
-			Utils.ERROR_AND_EXIT(logger, "Error resolving method: " + signature);
+		/*
+		SootMethod sub = clz.getMethod(method.getSubSignature());
+		SootMethod resolvedM = Scene.v().getActiveHierarchy().resolveConcreteDispatch(clz, sub);
+		*/
+		if (resolvedM == null || !Scene.v().containsMethod(resolvedM.getSignature())) {
+			logger.error("Error resolving method: {} ", signature);
+			System.exit(1);
+		}
 		
 		
 		return resolvedM;
@@ -475,6 +485,21 @@ public class SootUtils {
 		 return line;
 	}
 	
+	
+	
+	/**
+	 * Wrapped resolve concrete dispatch method that will throw a more useful exception when
+	 * it cannot find the method.
+	 */
+	public static SootMethod resolveConcreteDispatch(SootClass clz, SootMethod meth) 
+			throws CannotFindMethodException {
+		try {
+			return Scene.v().getActiveHierarchy().resolveConcreteDispatch( clz, meth);
+		} catch (Exception e) {
+			throw new CannotFindMethodException(clz, meth);
+		}
+	}
+	
 	public static Type getBaseType(RefLikeType type) {
 		if (type instanceof ArrayType) 
 			return ((ArrayType)type).getArrayElementType();
@@ -517,15 +542,26 @@ public class SootUtils {
 	}
 	
 	/**
-	 * Given two classes that are related (one is a parent of the other or vice versa), return 
-	 * the child class.
+	 * Given two classes that could be related (one is a parent of the other or vice versa), return 
+	 * the child class.  If not related, then return null
 	 */
 	public static SootClass narrowerClass(SootClass c1, SootClass c2) {
 		Hierarchy hier = Scene.v().getActiveHierarchy();
+		
+		if (c1.isInterface() && c2.isInterface()) {
+			logger.error("Cannot find a narrower concrete class for {} and {}", c1, c2);
+			System.exit(1);
+		}
+			
+		if (c1.isInterface())
+			return c2;
+		
+		if (c2.isInterface())
+			return c1;
+		
 		if (!hier.isClassSuperclassOfIncluding(c1, c2) &&
 				!hier.isClassSuperclassOf(c2, c1)) {
-			logger.error("Trying to get wider class for non related classes {} and {}", c1, c2);
-			System.exit(1);
+			return null;
 		}
 		
 		return hier.isClassSuperclassOfIncluding(c1, c2) ? c2 : c1;

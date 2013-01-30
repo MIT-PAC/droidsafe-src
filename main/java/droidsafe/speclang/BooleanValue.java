@@ -12,6 +12,10 @@ public class BooleanValue extends ConcreteArgumentValue {
 		super(BooleanType.v());
 		this.value = value;
 	}
+	
+	public static BooleanValue getBooleanValue(int i) {
+		return i == 0 ? FALSE : TRUE;
+	}
 
 	@Override
 	public String toStringValue() {

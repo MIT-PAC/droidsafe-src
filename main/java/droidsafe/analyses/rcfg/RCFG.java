@@ -42,6 +42,7 @@ import droidsafe.android.app.Project;
 import droidsafe.android.app.resources.Resources;
 import droidsafe.android.system.API;
 import droidsafe.transforms.AddAllocsForAPICalls;
+import droidsafe.utils.CannotFindMethodException;
 import droidsafe.utils.SootUtils;
 import droidsafe.utils.SourceLocationTag;
 import droidsafe.utils.Utils;
@@ -79,7 +80,7 @@ public class RCFG {
 		v = new RCFG();
 		v.createRCFG();
 		
-		logger.info("\n" + v.toString());
+		//logger.info("\n" + v.toString());
 	}
 	
 	private RCFG() {
@@ -132,10 +133,11 @@ public class RCFG {
 		List<Edge> appEdgesOut = new LinkedList<Edge>();
 		
 		for (Edge edge : edgesOut) {
-			logger.info("Looking at method call for: {}.", edge.tgt());
+			//logger.info("Looking at method call for: {}->{} ({}).", edge.src(), edge.tgt(), edge.srcStmt());
 			if (API.v().isSystemMethod(edge.tgt())) {
 				if (!IGNORE_SYS_METHOD_WITH_NAME.contains(edge.tgt().getName()) &&
 						API.v().isInterestingMethod(edge.tgt())) {
+					logger.info("Found output event: {}", edge);
 					SourceLocationTag line = SootUtils.getSourceLocation(edge.srcStmt(), edge.src().getDeclaringClass());
 					OutputEvent oe = new OutputEvent(edge, edgeInto, rCFGNode, line);
 					rCFGNode.addOutputEvent(oe);
@@ -143,7 +145,8 @@ public class RCFG {
 				//do something to save the method and context (args and this)
 			} else {
 				//it is an app edge, so recurse into later
-				appEdgesOut.add(edge);
+				if (!IGNORE_SYS_METHOD_WITH_NAME.contains(edge.tgt().getName()))
+					appEdgesOut.add(edge);
 			}
 		}
 		
@@ -151,6 +154,7 @@ public class RCFG {
 		
 		//recurse into all calls of app methods
 		for (Edge edge : appEdgesOut) {
+			logger.info("Visiting edge: {}", edge);
 			if (!visited.contains(edge))
 				visitNode(edge, rCFGNode, visited);
 		}
@@ -164,6 +168,9 @@ public class RCFG {
 	private void checkForCompleteness(Set<Edge> edges, SootMethod src) {
 
 		if (!src.isConcrete())
+			return;
+		
+		if (Project.v().isLibClass(src.getDeclaringClass().toString()))
 			return;
 		
 		//first build a set with all invokes we in the edges list
@@ -244,13 +251,26 @@ public class RCFG {
 					
 					SootClass narrowerClass = SootUtils.narrowerClass(allocType, staticRecClass);
 					
+					//if the two classes are unrelated, then trust the staticrecclass, it should
+					//be more general
+					if (narrowerClass == null) {
+						narrowerClass = staticRecClass;
+					}
+					
 					//get narrower methods since we don't know the exact type of this call...
 					Set<SootMethod> allMethods = 
 							SootUtils.getOverridingMethodsIncluding(narrowerClass, expr.getMethodRef().getSubSignature().getString());
 					
-					//get the method that would be called with the exact type of the receiver
-					SootMethod method = Scene.v().getActiveHierarchy().
-							resolveConcreteDispatch( narrowerClass, expr.getMethod());
+					//get the method that would be called with the exact type of the receive
+					
+					SootMethod method = null;
+					try {
+						method = SootUtils.
+								resolveConcreteDispatch( narrowerClass, expr.getMethod());
+					} catch (CannotFindMethodException e) {
+						logger.info("Cannot find concrete dispatch for {}", e);
+						continue;
+					}
 					
 					allMethods.add(method);
 					
@@ -319,9 +339,18 @@ public class RCFG {
 						break;
 					}
 					
+					SootMethod resolved = null; 
+					try {
+						resolved = SootUtils.
+							resolveConcreteDispatch( ((RefType)t).getSootClass(), target);
+					} catch (CannotFindMethodException e) {
+						SourceLocationTag tag = SootUtils.getSourceLocation(curEdge.srcStmt(), method.getDeclaringClass());
+						logger.info("Cannot find a method for dispatch at line {}", tag, e);
+						continue;
+					}
+					
 					// Only the virtual calls do the following test
-					if ( Scene.v().getActiveHierarchy().
-							resolveConcreteDispatch( ((RefType)t).getSootClass(), target) == target ) {
+					if ( resolved == target ) {
 						keepEdge = true;
 						break;
 					}					

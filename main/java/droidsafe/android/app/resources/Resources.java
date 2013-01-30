@@ -338,6 +338,10 @@ public class Resources {
 		if (!(expr.getBase().getType() instanceof RefType))
 			return;
 		
+		//cannot possibly be a call to setContentView with another name...
+		if (!expr.getMethod().getName().equals("setContentView"))
+			return;
+		
 		SootMethod calling = 
 				Scene.v().getActiveHierarchy().resolveConcreteDispatch(((RefType)expr.getBase().getType()).getSootClass(), expr.getMethod());
 		

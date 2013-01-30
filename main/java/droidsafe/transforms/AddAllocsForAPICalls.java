@@ -110,7 +110,7 @@ public class AddAllocsForAPICalls extends BodyTransformer {
 				continue;
 			
 			if (target.getReturnType() instanceof ArrayType) {
-				logger.debug("Instrumenting call to %s with new alloc node (array)", target);
+				logger.debug("Instrumenting call to {} with new alloc node (array)", target);
 				List<Stmt> stmts = getNewArrayAndAlloc(target, stmtBody, origAssign.getLeftOp());
 				units.insertAfter(stmts, stmt);
 			} else {

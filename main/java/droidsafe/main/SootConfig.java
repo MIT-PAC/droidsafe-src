@@ -55,6 +55,8 @@ public class SootConfig {
 		 soot.options.Options.v().set_keep_line_number(true);
 		 soot.options.Options.v().set_whole_program(true);
 		 soot.options.Options.v().setPhaseOption("cg", "verbose:true");
+		 soot.options.Options.v().setPhaseOption("cg", "trim-clinit:true");
+		 
 		 
 		 // don't optimize the program 
 		 soot.options.Options.v().setPhaseOption("wjop", "enabled:false");

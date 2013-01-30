@@ -10,9 +10,16 @@ import java.util.Set;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import soot.BooleanType;
+import soot.CharType;
+import soot.IntType;
 import soot.RefType;
 import soot.Type;
 import soot.Value;
+import soot.jimple.ClassConstant;
+import soot.jimple.IntConstant;
+import soot.jimple.LongConstant;
+import soot.jimple.StringConstant;
 import soot.jimple.spark.pag.AllocNode;
 import soot.jimple.spark.pag.ClassConstantNode;
 import soot.jimple.spark.pag.StringConstantNode;
@@ -22,9 +29,12 @@ import droidsafe.analyses.rcfg.RCFG;
 import droidsafe.analyses.rcfg.RCFGNode;
 import droidsafe.android.app.Project;
 import droidsafe.speclang.ArgumentValue;
+import droidsafe.speclang.BooleanValue;
+import droidsafe.speclang.CharValue;
 import droidsafe.speclang.ClassValue;
 import droidsafe.speclang.ConcreteArgumentValue;
 import droidsafe.speclang.ConcreteListArgumentValue;
+import droidsafe.speclang.IntValue;
 import droidsafe.speclang.Method;
 import droidsafe.speclang.SecuritySpecification;
 import droidsafe.speclang.TypeValue;
@@ -77,10 +87,11 @@ public class RCFGToSSL {
 			if (oe.isArgPointer(i)) {
 				args[i] = getArgumentValueForPointer(oe.getArgPTSet(i), oe.getArgumentType(i));
 			} else {
-				args[i] = getArgumentValueForPrimitive(oe.getArgValue(i));
+				args[i] = getArgumentValueForPrimitive(oe.getArgValue(i), oe.getTarget().getParameterType(i));
 			}
 		}
 
+		
 		Method method = new Method(oe.getTarget(), args);
 		//transfer over the source location information of the call
 		if (oe.getSourceLocationTag() != null)
@@ -138,7 +149,36 @@ public class RCFGToSSL {
 		}
 	}
 	
-	private ArgumentValue getArgumentValueForPrimitive(Value value) {
-		return new TypeValue(value.getType());
+	/**
+	 * Create an argument in the SSL IR from the type and the value of the parameter of
+	 * a method.
+	 */
+	private ArgumentValue getArgumentValueForPrimitive(Value value, Type type) {
+		ConcreteListArgumentValue listArg = new ConcreteListArgumentValue();
+		
+		if (value instanceof IntConstant) {
+			int intValue = ((IntConstant)value).value;
+
+			if (type instanceof BooleanType) {
+				listArg.add(BooleanValue.getBooleanValue(intValue));
+			} else if (type instanceof CharType) {
+				listArg.add(new CharValue((char)intValue));
+			} else if (type instanceof IntType) {
+				listArg.add(new IntValue(intValue));
+			} else {
+				logger.error("Unknown type for int constant when converting to method: {}", type);
+			}
+			return listArg;
+		} else if (value instanceof LongConstant) {
+			//TODO: should have a long constant as well
+			return new TypeValue(type);
+		} else if (value instanceof StringConstant) {
+			listArg.add(new StringValue(((StringConstant)value).value));
+			return listArg;
+		} else if (value instanceof ClassConstant) {
+			listArg.add(new ClassValue(((ClassConstant)value).value));
+			return listArg;
+		} else 
+			return new TypeValue(type);
 	}
 }
