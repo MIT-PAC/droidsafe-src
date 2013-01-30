@@ -126,8 +126,7 @@ public class RCFGToSSL {
 			if (node instanceof StringConstantNode) {
 				//create new string values just in case this is all constants
 				String value = ((StringConstantNode)node).getString();
-				//must strip quotes
-				constants.add(new StringValue(value.substring(1, value.length() - 1)));
+				constants.add(new StringValue(value));
 			} else if (node instanceof ClassConstantNode) {
 				//create a new concrete arg value just in case this is all constants
 				constants.add(new ClassValue(((ClassConstantNode)node).getClassConstant().toString()));

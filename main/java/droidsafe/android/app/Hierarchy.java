@@ -25,7 +25,6 @@ import soot.SootMethodRef;
 public class Hierarchy {
 	
 	private static Hierarchy v;
-	private soot.Hierarchy sootHierarchy;
 	private List<SootClass> appComponents;
 	
 	/**
@@ -39,15 +38,15 @@ public class Hierarchy {
 		return v;
 	}
 	
-	protected Hierarchy() {
-		sootHierarchy = Scene.v().getActiveHierarchy();
+	protected Hierarchy() {	
 	}
+
 	
 	/**
 	 * Return true if this class inherits from an android component class.
 	 */
 	public boolean isAndroidComponentClass(SootClass clz) {
-		List<SootClass> supers = sootHierarchy.getSuperclassesOf(clz);
+		List<SootClass> supers = Scene.v().getActiveHierarchy().getSuperclassesOf(clz);
 		
 		for (SootClass sup : supers) {
 			if (Components.CLASS_NAMES.contains(sup.getName()))
@@ -124,7 +123,7 @@ public class Hierarchy {
 				!tgtParents.contains(called.getDeclaringClass()))
 			return false;
 		
-		SootMethod possibleMethod = sootHierarchy.resolveConcreteDispatch(tgtMeth.getDeclaringClass(), called);
+		SootMethod possibleMethod = Scene.v().getActiveHierarchy().resolveConcreteDispatch(tgtMeth.getDeclaringClass(), called);
 		return possibleMethod == tgtMeth;
 	}
 }

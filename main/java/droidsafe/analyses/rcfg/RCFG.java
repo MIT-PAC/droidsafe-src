@@ -200,7 +200,7 @@ public class RCFG {
 			InvokeExpr invokeExpr = stmt.getInvokeExpr();
 						
 			if (!invokes.contains(stmt))
-				logger.warn("Found invoke statement that was not in the callgraph edge list when build rCFG: {} in {} (might be dead code)", stmt, src);
+				logger.info("Found invoke statement that was not in the callgraph edge list when build rCFG: {} in {} (might be dead code)", stmt, src);
 			
 		}
 	}
@@ -225,7 +225,15 @@ public class RCFG {
 	private List<Edge> edgesFromAPIAllocs(Edge edgeInto) {
 		List<Edge> newEdges = new LinkedList<Edge>();
 		SootMethod src = edgeInto.tgt();
-		
+
+		if (src.isNative()) {
+			logger.warn("Found a native method during analysis: {}. It could do anything!", src);
+			return newEdges;
+		}
+			
+		if (!src.isConcrete())
+			return newEdges;
+			
 		StmtBody stmtBody = (StmtBody)src.getActiveBody();
 
 		// get body's unit as a chain

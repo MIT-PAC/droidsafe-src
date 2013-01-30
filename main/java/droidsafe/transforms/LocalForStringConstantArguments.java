@@ -86,7 +86,7 @@ public class LocalForStringConstantArguments extends BodyTransformer {
 					
 					//add an assignment of the local to the string constant
 					//right before the call
-					AssignStmt assignStmt = Jimple.v().newAssignStmt(arg, StringConstant.v(((StringConstant)v).toString()));
+					AssignStmt assignStmt = Jimple.v().newAssignStmt(arg, StringConstant.v(((StringConstant)v).value));
 					units.insertBefore(assignStmt, stmt);
 					
 					//replace the string constant with the local in the call

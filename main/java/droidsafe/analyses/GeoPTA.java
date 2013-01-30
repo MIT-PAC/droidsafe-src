@@ -216,7 +216,7 @@ public class GeoPTA {
 				}
 			}
 		} catch (Exception e) {
-			logger.error("Some sort of error getting points to set for {} in {}", v, context.tgt(), e);
+			logger.info("Some sort of error getting points to set for {} in {}", v, context.tgt(), e);
 		}
 		return allocNodes;
 	}

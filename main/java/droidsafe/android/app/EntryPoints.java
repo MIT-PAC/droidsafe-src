@@ -82,7 +82,7 @@ public class EntryPoints {
     		//don't add entry points into the system classes...
     		if (API.v().isSystemClass(clazz))
     			continue;
-    		    		
+    		
     		//only add entry points for android component classes
     		//other entry points will be handled by searching for allocations 
     		//of classes that inherit from an api class / interface.

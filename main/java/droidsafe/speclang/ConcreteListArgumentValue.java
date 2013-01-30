@@ -63,10 +63,10 @@ public class ConcreteListArgumentValue extends ArgumentValue  {
 	 * @param val2
 	 * @return A new object with the combined list
 	 */
-	public static ConcreteListArgumentValue combine(Type type, ConcreteListArgumentValue val1,
-			ConcreteListArgumentValue val2) {
+	public static ConcreteListArgumentValue combine(ConcreteListArgumentValue val1,
+			ConcreteListArgumentValue val2, Type actualType) {
 		
-		ConcreteListArgumentValue ret = new ConcreteListArgumentValue(type);
+		ConcreteListArgumentValue ret = new ConcreteListArgumentValue(actualType);
 		
 		ret.addAll(val1);
 		ret.addAll(val2);
