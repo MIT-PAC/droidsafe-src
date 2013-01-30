@@ -1,4 +1,4 @@
-// $ANTLR 3.4 /Users/mgordon/research/droidsafe/src/main/java/droidsafe/speclang/SpecCreator.g 2013-01-30 14:55:43
+// $ANTLR 3.4 /Users/mgordon/research/droidsafe/src/main/java/droidsafe/speclang/SpecCreator.g 2013-01-30 15:05:59
 package droidsafe.speclang;
       import org.antlr.runtime.*;
       import java.util.HashMap;
@@ -10,6 +10,8 @@ package droidsafe.speclang;
       import org.slf4j.Logger;
       import org.slf4j.LoggerFactory;
       import droidsafe.android.system.API;
+      import soot.NullType;
+      import soot.RefLikeType;
       
 
 import org.antlr.runtime.*;
@@ -119,11 +121,11 @@ public class SpecCreator extends TreeParser {
 
 
     // $ANTLR start "spec"
-    // /Users/mgordon/research/droidsafe/src/main/java/droidsafe/speclang/SpecCreator.g:52:1: spec : ^( SPEC whitelist ^( EVENT_BLOCK_DECLS ( event_block )* ) ) ;
+    // /Users/mgordon/research/droidsafe/src/main/java/droidsafe/speclang/SpecCreator.g:54:1: spec : ^( SPEC whitelist ^( EVENT_BLOCK_DECLS ( event_block )* ) ) ;
     public final void spec() throws RecognitionException {
         try {
-            // /Users/mgordon/research/droidsafe/src/main/java/droidsafe/speclang/SpecCreator.g:53:2: ( ^( SPEC whitelist ^( EVENT_BLOCK_DECLS ( event_block )* ) ) )
-            // /Users/mgordon/research/droidsafe/src/main/java/droidsafe/speclang/SpecCreator.g:53:4: ^( SPEC whitelist ^( EVENT_BLOCK_DECLS ( event_block )* ) )
+            // /Users/mgordon/research/droidsafe/src/main/java/droidsafe/speclang/SpecCreator.g:55:2: ( ^( SPEC whitelist ^( EVENT_BLOCK_DECLS ( event_block )* ) ) )
+            // /Users/mgordon/research/droidsafe/src/main/java/droidsafe/speclang/SpecCreator.g:55:4: ^( SPEC whitelist ^( EVENT_BLOCK_DECLS ( event_block )* ) )
             {
             initActions();
 
@@ -140,7 +142,7 @@ public class SpecCreator extends TreeParser {
 
             if ( input.LA(1)==Token.DOWN ) {
                 match(input, Token.DOWN, null); 
-                // /Users/mgordon/research/droidsafe/src/main/java/droidsafe/speclang/SpecCreator.g:54:43: ( event_block )*
+                // /Users/mgordon/research/droidsafe/src/main/java/droidsafe/speclang/SpecCreator.g:56:43: ( event_block )*
                 loop1:
                 do {
                     int alt1=2;
@@ -153,7 +155,7 @@ public class SpecCreator extends TreeParser {
 
                     switch (alt1) {
                 	case 1 :
-                	    // /Users/mgordon/research/droidsafe/src/main/java/droidsafe/speclang/SpecCreator.g:54:43: event_block
+                	    // /Users/mgordon/research/droidsafe/src/main/java/droidsafe/speclang/SpecCreator.g:56:43: event_block
                 	    {
                 	    pushFollow(FOLLOW_event_block_in_spec73);
                 	    event_block();
@@ -195,14 +197,14 @@ public class SpecCreator extends TreeParser {
 
 
     // $ANTLR start "whitelist"
-    // /Users/mgordon/research/droidsafe/src/main/java/droidsafe/speclang/SpecCreator.g:58:1: whitelist : ^( WHITELIST ^( STMT_LIST ( statement_list )? ) ) ;
+    // /Users/mgordon/research/droidsafe/src/main/java/droidsafe/speclang/SpecCreator.g:60:1: whitelist : ^( WHITELIST ^( STMT_LIST ( statement_list )? ) ) ;
     public final void whitelist() throws RecognitionException {
         List<Method> statement_list1 =null;
 
 
         try {
-            // /Users/mgordon/research/droidsafe/src/main/java/droidsafe/speclang/SpecCreator.g:59:5: ( ^( WHITELIST ^( STMT_LIST ( statement_list )? ) ) )
-            // /Users/mgordon/research/droidsafe/src/main/java/droidsafe/speclang/SpecCreator.g:60:6: ^( WHITELIST ^( STMT_LIST ( statement_list )? ) )
+            // /Users/mgordon/research/droidsafe/src/main/java/droidsafe/speclang/SpecCreator.g:61:5: ( ^( WHITELIST ^( STMT_LIST ( statement_list )? ) ) )
+            // /Users/mgordon/research/droidsafe/src/main/java/droidsafe/speclang/SpecCreator.g:62:6: ^( WHITELIST ^( STMT_LIST ( statement_list )? ) )
             {
             match(input,WHITELIST,FOLLOW_WHITELIST_in_whitelist100); 
 
@@ -211,7 +213,7 @@ public class SpecCreator extends TreeParser {
 
             if ( input.LA(1)==Token.DOWN ) {
                 match(input, Token.DOWN, null); 
-                // /Users/mgordon/research/droidsafe/src/main/java/droidsafe/speclang/SpecCreator.g:60:30: ( statement_list )?
+                // /Users/mgordon/research/droidsafe/src/main/java/droidsafe/speclang/SpecCreator.g:62:30: ( statement_list )?
                 int alt2=2;
                 int LA2_0 = input.LA(1);
 
@@ -220,7 +222,7 @@ public class SpecCreator extends TreeParser {
                 }
                 switch (alt2) {
                     case 1 :
-                        // /Users/mgordon/research/droidsafe/src/main/java/droidsafe/speclang/SpecCreator.g:60:30: statement_list
+                        // /Users/mgordon/research/droidsafe/src/main/java/droidsafe/speclang/SpecCreator.g:62:30: statement_list
                         {
                         pushFollow(FOLLOW_statement_list_in_whitelist105);
                         statement_list1=statement_list();
@@ -267,7 +269,7 @@ public class SpecCreator extends TreeParser {
 
 
     // $ANTLR start "input_event"
-    // /Users/mgordon/research/droidsafe/src/main/java/droidsafe/speclang/SpecCreator.g:71:1: input_event returns [Method value] : ^( INPUT_EVENT ^( RECEIVER ( receiver )? ) ^( CLASS cname= ID ) ^( RTYPE rt= ID ) ^( METHOD mname= ID ) ^( ARGS ( arg_list )? ) ) ;
+    // /Users/mgordon/research/droidsafe/src/main/java/droidsafe/speclang/SpecCreator.g:73:1: input_event returns [Method value] : ^( INPUT_EVENT ^( RECEIVER ( receiver )? ) ^( CLASS cname= ID ) ^( RTYPE rt= ID ) ^( METHOD mname= ID ) ^( ARGS ( arg_list )? ) ) ;
     public final Method input_event() throws RecognitionException {
         Method value = null;
 
@@ -281,8 +283,8 @@ public class SpecCreator extends TreeParser {
 
 
         try {
-            // /Users/mgordon/research/droidsafe/src/main/java/droidsafe/speclang/SpecCreator.g:72:4: ( ^( INPUT_EVENT ^( RECEIVER ( receiver )? ) ^( CLASS cname= ID ) ^( RTYPE rt= ID ) ^( METHOD mname= ID ) ^( ARGS ( arg_list )? ) ) )
-            // /Users/mgordon/research/droidsafe/src/main/java/droidsafe/speclang/SpecCreator.g:72:6: ^( INPUT_EVENT ^( RECEIVER ( receiver )? ) ^( CLASS cname= ID ) ^( RTYPE rt= ID ) ^( METHOD mname= ID ) ^( ARGS ( arg_list )? ) )
+            // /Users/mgordon/research/droidsafe/src/main/java/droidsafe/speclang/SpecCreator.g:74:4: ( ^( INPUT_EVENT ^( RECEIVER ( receiver )? ) ^( CLASS cname= ID ) ^( RTYPE rt= ID ) ^( METHOD mname= ID ) ^( ARGS ( arg_list )? ) ) )
+            // /Users/mgordon/research/droidsafe/src/main/java/droidsafe/speclang/SpecCreator.g:74:6: ^( INPUT_EVENT ^( RECEIVER ( receiver )? ) ^( CLASS cname= ID ) ^( RTYPE rt= ID ) ^( METHOD mname= ID ) ^( ARGS ( arg_list )? ) )
             {
             List<ArgumentValue> args = null; String rec = "";
 
@@ -293,7 +295,7 @@ public class SpecCreator extends TreeParser {
 
             if ( input.LA(1)==Token.DOWN ) {
                 match(input, Token.DOWN, null); 
-                // /Users/mgordon/research/droidsafe/src/main/java/droidsafe/speclang/SpecCreator.g:74:24: ( receiver )?
+                // /Users/mgordon/research/droidsafe/src/main/java/droidsafe/speclang/SpecCreator.g:76:24: ( receiver )?
                 int alt3=2;
                 int LA3_0 = input.LA(1);
 
@@ -302,7 +304,7 @@ public class SpecCreator extends TreeParser {
                 }
                 switch (alt3) {
                     case 1 :
-                        // /Users/mgordon/research/droidsafe/src/main/java/droidsafe/speclang/SpecCreator.g:74:25: receiver
+                        // /Users/mgordon/research/droidsafe/src/main/java/droidsafe/speclang/SpecCreator.g:76:25: receiver
                         {
                         pushFollow(FOLLOW_receiver_in_input_event167);
                         receiver2=receiver();
@@ -350,7 +352,7 @@ public class SpecCreator extends TreeParser {
 
             if ( input.LA(1)==Token.DOWN ) {
                 match(input, Token.DOWN, null); 
-                // /Users/mgordon/research/droidsafe/src/main/java/droidsafe/speclang/SpecCreator.g:78:20: ( arg_list )?
+                // /Users/mgordon/research/droidsafe/src/main/java/droidsafe/speclang/SpecCreator.g:80:20: ( arg_list )?
                 int alt4=2;
                 int LA4_0 = input.LA(1);
 
@@ -359,7 +361,7 @@ public class SpecCreator extends TreeParser {
                 }
                 switch (alt4) {
                     case 1 :
-                        // /Users/mgordon/research/droidsafe/src/main/java/droidsafe/speclang/SpecCreator.g:78:21: arg_list
+                        // /Users/mgordon/research/droidsafe/src/main/java/droidsafe/speclang/SpecCreator.g:80:21: arg_list
                         {
                         pushFollow(FOLLOW_arg_list_in_input_event253);
                         arg_list3=arg_list();
@@ -415,13 +417,13 @@ public class SpecCreator extends TreeParser {
 
 
     // $ANTLR start "boolean_value"
-    // /Users/mgordon/research/droidsafe/src/main/java/droidsafe/speclang/SpecCreator.g:95:1: boolean_value returns [BooleanValue value] : ( ^( BOOLEAN_VALUE TRUE ) | ^( BOOLEAN_VALUE FALSE ) );
+    // /Users/mgordon/research/droidsafe/src/main/java/droidsafe/speclang/SpecCreator.g:97:1: boolean_value returns [BooleanValue value] : ( ^( BOOLEAN_VALUE TRUE ) | ^( BOOLEAN_VALUE FALSE ) );
     public final BooleanValue boolean_value() throws RecognitionException {
         BooleanValue value = null;
 
 
         try {
-            // /Users/mgordon/research/droidsafe/src/main/java/droidsafe/speclang/SpecCreator.g:96:5: ( ^( BOOLEAN_VALUE TRUE ) | ^( BOOLEAN_VALUE FALSE ) )
+            // /Users/mgordon/research/droidsafe/src/main/java/droidsafe/speclang/SpecCreator.g:98:5: ( ^( BOOLEAN_VALUE TRUE ) | ^( BOOLEAN_VALUE FALSE ) )
             int alt5=2;
             int LA5_0 = input.LA(1);
 
@@ -462,7 +464,7 @@ public class SpecCreator extends TreeParser {
             }
             switch (alt5) {
                 case 1 :
-                    // /Users/mgordon/research/droidsafe/src/main/java/droidsafe/speclang/SpecCreator.g:96:7: ^( BOOLEAN_VALUE TRUE )
+                    // /Users/mgordon/research/droidsafe/src/main/java/droidsafe/speclang/SpecCreator.g:98:7: ^( BOOLEAN_VALUE TRUE )
                     {
                     match(input,BOOLEAN_VALUE,FOLLOW_BOOLEAN_VALUE_in_boolean_value299); 
 
@@ -477,7 +479,7 @@ public class SpecCreator extends TreeParser {
                     }
                     break;
                 case 2 :
-                    // /Users/mgordon/research/droidsafe/src/main/java/droidsafe/speclang/SpecCreator.g:97:7: ^( BOOLEAN_VALUE FALSE )
+                    // /Users/mgordon/research/droidsafe/src/main/java/droidsafe/speclang/SpecCreator.g:99:7: ^( BOOLEAN_VALUE FALSE )
                     {
                     match(input,BOOLEAN_VALUE,FOLLOW_BOOLEAN_VALUE_in_boolean_value313); 
 
@@ -509,7 +511,7 @@ public class SpecCreator extends TreeParser {
 
 
     // $ANTLR start "class_value"
-    // /Users/mgordon/research/droidsafe/src/main/java/droidsafe/speclang/SpecCreator.g:100:1: class_value returns [ClassValue value] : ^( CLASS_VALUE cv= ID ) ;
+    // /Users/mgordon/research/droidsafe/src/main/java/droidsafe/speclang/SpecCreator.g:102:1: class_value returns [ClassValue value] : ^( CLASS_VALUE cv= ID ) ;
     public final ClassValue class_value() throws RecognitionException {
         ClassValue value = null;
 
@@ -517,8 +519,8 @@ public class SpecCreator extends TreeParser {
         CommonTree cv=null;
 
         try {
-            // /Users/mgordon/research/droidsafe/src/main/java/droidsafe/speclang/SpecCreator.g:101:3: ( ^( CLASS_VALUE cv= ID ) )
-            // /Users/mgordon/research/droidsafe/src/main/java/droidsafe/speclang/SpecCreator.g:101:5: ^( CLASS_VALUE cv= ID )
+            // /Users/mgordon/research/droidsafe/src/main/java/droidsafe/speclang/SpecCreator.g:103:3: ( ^( CLASS_VALUE cv= ID ) )
+            // /Users/mgordon/research/droidsafe/src/main/java/droidsafe/speclang/SpecCreator.g:103:5: ^( CLASS_VALUE cv= ID )
             {
             match(input,CLASS_VALUE,FOLLOW_CLASS_VALUE_in_class_value342); 
 
@@ -548,7 +550,7 @@ public class SpecCreator extends TreeParser {
 
 
     // $ANTLR start "concrete_value"
-    // /Users/mgordon/research/droidsafe/src/main/java/droidsafe/speclang/SpecCreator.g:104:1: concrete_value returns [ConcreteArgumentValue value] : ( ^( INT_VALUE INT_LITERAL ) | ^( STRING_VALUE STRING_LITERAL ) | ^( CHAR_VALUE CHAR_LITERAL ) | boolean_value | class_value );
+    // /Users/mgordon/research/droidsafe/src/main/java/droidsafe/speclang/SpecCreator.g:106:1: concrete_value returns [ConcreteArgumentValue value] : ( ^( INT_VALUE INT_LITERAL ) | ^( STRING_VALUE STRING_LITERAL ) | ^( CHAR_VALUE CHAR_LITERAL ) | boolean_value | class_value );
     public final ConcreteArgumentValue concrete_value() throws RecognitionException {
         ConcreteArgumentValue value = null;
 
@@ -562,7 +564,7 @@ public class SpecCreator extends TreeParser {
 
 
         try {
-            // /Users/mgordon/research/droidsafe/src/main/java/droidsafe/speclang/SpecCreator.g:105:3: ( ^( INT_VALUE INT_LITERAL ) | ^( STRING_VALUE STRING_LITERAL ) | ^( CHAR_VALUE CHAR_LITERAL ) | boolean_value | class_value )
+            // /Users/mgordon/research/droidsafe/src/main/java/droidsafe/speclang/SpecCreator.g:107:3: ( ^( INT_VALUE INT_LITERAL ) | ^( STRING_VALUE STRING_LITERAL ) | ^( CHAR_VALUE CHAR_LITERAL ) | boolean_value | class_value )
             int alt6=5;
             switch ( input.LA(1) ) {
             case INT_VALUE:
@@ -600,7 +602,7 @@ public class SpecCreator extends TreeParser {
 
             switch (alt6) {
                 case 1 :
-                    // /Users/mgordon/research/droidsafe/src/main/java/droidsafe/speclang/SpecCreator.g:105:5: ^( INT_VALUE INT_LITERAL )
+                    // /Users/mgordon/research/droidsafe/src/main/java/droidsafe/speclang/SpecCreator.g:107:5: ^( INT_VALUE INT_LITERAL )
                     {
                     match(input,INT_VALUE,FOLLOW_INT_VALUE_in_concrete_value367); 
 
@@ -615,7 +617,7 @@ public class SpecCreator extends TreeParser {
                     }
                     break;
                 case 2 :
-                    // /Users/mgordon/research/droidsafe/src/main/java/droidsafe/speclang/SpecCreator.g:106:5: ^( STRING_VALUE STRING_LITERAL )
+                    // /Users/mgordon/research/droidsafe/src/main/java/droidsafe/speclang/SpecCreator.g:108:5: ^( STRING_VALUE STRING_LITERAL )
                     {
                     match(input,STRING_VALUE,FOLLOW_STRING_VALUE_in_concrete_value379); 
 
@@ -630,7 +632,7 @@ public class SpecCreator extends TreeParser {
                     }
                     break;
                 case 3 :
-                    // /Users/mgordon/research/droidsafe/src/main/java/droidsafe/speclang/SpecCreator.g:107:5: ^( CHAR_VALUE CHAR_LITERAL )
+                    // /Users/mgordon/research/droidsafe/src/main/java/droidsafe/speclang/SpecCreator.g:109:5: ^( CHAR_VALUE CHAR_LITERAL )
                     {
                     match(input,CHAR_VALUE,FOLLOW_CHAR_VALUE_in_concrete_value392); 
 
@@ -645,7 +647,7 @@ public class SpecCreator extends TreeParser {
                     }
                     break;
                 case 4 :
-                    // /Users/mgordon/research/droidsafe/src/main/java/droidsafe/speclang/SpecCreator.g:108:6: boolean_value
+                    // /Users/mgordon/research/droidsafe/src/main/java/droidsafe/speclang/SpecCreator.g:110:6: boolean_value
                     {
                     pushFollow(FOLLOW_boolean_value_in_concrete_value404);
                     boolean_value7=boolean_value();
@@ -658,7 +660,7 @@ public class SpecCreator extends TreeParser {
                     }
                     break;
                 case 5 :
-                    // /Users/mgordon/research/droidsafe/src/main/java/droidsafe/speclang/SpecCreator.g:109:5: class_value
+                    // /Users/mgordon/research/droidsafe/src/main/java/droidsafe/speclang/SpecCreator.g:111:5: class_value
                     {
                     pushFollow(FOLLOW_class_value_in_concrete_value413);
                     class_value8=class_value();
@@ -688,7 +690,7 @@ public class SpecCreator extends TreeParser {
 
 
     // $ANTLR start "concrete_values"
-    // /Users/mgordon/research/droidsafe/src/main/java/droidsafe/speclang/SpecCreator.g:112:1: concrete_values returns [ConcreteListArgumentValue value] : ^( CVALUE_LIST ( concrete_value )+ ) ;
+    // /Users/mgordon/research/droidsafe/src/main/java/droidsafe/speclang/SpecCreator.g:114:1: concrete_values returns [ConcreteListArgumentValue value] : ^( CVALUE_LIST ( concrete_value )+ ) ;
     public final ConcreteListArgumentValue concrete_values() throws RecognitionException {
         ConcreteListArgumentValue value = null;
 
@@ -697,15 +699,15 @@ public class SpecCreator extends TreeParser {
 
 
         try {
-            // /Users/mgordon/research/droidsafe/src/main/java/droidsafe/speclang/SpecCreator.g:113:5: ( ^( CVALUE_LIST ( concrete_value )+ ) )
-            // /Users/mgordon/research/droidsafe/src/main/java/droidsafe/speclang/SpecCreator.g:113:7: ^( CVALUE_LIST ( concrete_value )+ )
+            // /Users/mgordon/research/droidsafe/src/main/java/droidsafe/speclang/SpecCreator.g:115:5: ( ^( CVALUE_LIST ( concrete_value )+ ) )
+            // /Users/mgordon/research/droidsafe/src/main/java/droidsafe/speclang/SpecCreator.g:115:7: ^( CVALUE_LIST ( concrete_value )+ )
             {
-            ConcreteListArgumentValue ret = new ConcreteListArgumentValue();
+            ConcreteListArgumentValue ret = new ConcreteListArgumentValue(NullType.v());
 
             match(input,CVALUE_LIST,FOLLOW_CVALUE_LIST_in_concrete_values450); 
 
             match(input, Token.DOWN, null); 
-            // /Users/mgordon/research/droidsafe/src/main/java/droidsafe/speclang/SpecCreator.g:115:13: ( concrete_value )+
+            // /Users/mgordon/research/droidsafe/src/main/java/droidsafe/speclang/SpecCreator.g:117:13: ( concrete_value )+
             int cnt7=0;
             loop7:
             do {
@@ -719,7 +721,7 @@ public class SpecCreator extends TreeParser {
 
                 switch (alt7) {
             	case 1 :
-            	    // /Users/mgordon/research/droidsafe/src/main/java/droidsafe/speclang/SpecCreator.g:116:17: concrete_value
+            	    // /Users/mgordon/research/droidsafe/src/main/java/droidsafe/speclang/SpecCreator.g:118:17: concrete_value
             	    {
             	    pushFollow(FOLLOW_concrete_value_in_concrete_values482);
             	    concrete_value9=concrete_value();
@@ -746,7 +748,6 @@ public class SpecCreator extends TreeParser {
 
 
 
-                        ret.checkAllOneType();
                         value = ret;
                     
 
@@ -768,7 +769,7 @@ public class SpecCreator extends TreeParser {
 
 
     // $ANTLR start "arg"
-    // /Users/mgordon/research/droidsafe/src/main/java/droidsafe/speclang/SpecCreator.g:125:1: arg returns [ArgumentValue value] : ( ^( TYPE_VALUE ID ) | concrete_values );
+    // /Users/mgordon/research/droidsafe/src/main/java/droidsafe/speclang/SpecCreator.g:126:1: arg returns [ArgumentValue value] : ( ^( TYPE_VALUE ID ) | concrete_values );
     public final ArgumentValue arg() throws RecognitionException {
         ArgumentValue value = null;
 
@@ -778,7 +779,7 @@ public class SpecCreator extends TreeParser {
 
 
         try {
-            // /Users/mgordon/research/droidsafe/src/main/java/droidsafe/speclang/SpecCreator.g:126:3: ( ^( TYPE_VALUE ID ) | concrete_values )
+            // /Users/mgordon/research/droidsafe/src/main/java/droidsafe/speclang/SpecCreator.g:127:3: ( ^( TYPE_VALUE ID ) | concrete_values )
             int alt8=2;
             int LA8_0 = input.LA(1);
 
@@ -797,7 +798,7 @@ public class SpecCreator extends TreeParser {
             }
             switch (alt8) {
                 case 1 :
-                    // /Users/mgordon/research/droidsafe/src/main/java/droidsafe/speclang/SpecCreator.g:126:5: ^( TYPE_VALUE ID )
+                    // /Users/mgordon/research/droidsafe/src/main/java/droidsafe/speclang/SpecCreator.g:127:5: ^( TYPE_VALUE ID )
                     {
                     match(input,TYPE_VALUE,FOLLOW_TYPE_VALUE_in_arg539); 
 
@@ -812,7 +813,7 @@ public class SpecCreator extends TreeParser {
                     }
                     break;
                 case 2 :
-                    // /Users/mgordon/research/droidsafe/src/main/java/droidsafe/speclang/SpecCreator.g:127:5: concrete_values
+                    // /Users/mgordon/research/droidsafe/src/main/java/droidsafe/speclang/SpecCreator.g:128:5: concrete_values
                     {
                     pushFollow(FOLLOW_concrete_values_in_arg550);
                     concrete_values11=concrete_values();
@@ -842,7 +843,7 @@ public class SpecCreator extends TreeParser {
 
 
     // $ANTLR start "arg_list"
-    // /Users/mgordon/research/droidsafe/src/main/java/droidsafe/speclang/SpecCreator.g:130:1: arg_list returns [List<ArgumentValue> value] : ( arg )+ ;
+    // /Users/mgordon/research/droidsafe/src/main/java/droidsafe/speclang/SpecCreator.g:131:1: arg_list returns [List<ArgumentValue> value] : ( arg )+ ;
     public final List<ArgumentValue> arg_list() throws RecognitionException {
         List<ArgumentValue> value = null;
 
@@ -851,12 +852,12 @@ public class SpecCreator extends TreeParser {
 
 
         try {
-            // /Users/mgordon/research/droidsafe/src/main/java/droidsafe/speclang/SpecCreator.g:131:5: ( ( arg )+ )
-            // /Users/mgordon/research/droidsafe/src/main/java/droidsafe/speclang/SpecCreator.g:132:9: ( arg )+
+            // /Users/mgordon/research/droidsafe/src/main/java/droidsafe/speclang/SpecCreator.g:132:5: ( ( arg )+ )
+            // /Users/mgordon/research/droidsafe/src/main/java/droidsafe/speclang/SpecCreator.g:133:9: ( arg )+
             {
             LinkedList<ArgumentValue> ret = new LinkedList<ArgumentValue>();
 
-            // /Users/mgordon/research/droidsafe/src/main/java/droidsafe/speclang/SpecCreator.g:133:9: ( arg )+
+            // /Users/mgordon/research/droidsafe/src/main/java/droidsafe/speclang/SpecCreator.g:134:9: ( arg )+
             int cnt9=0;
             loop9:
             do {
@@ -870,7 +871,7 @@ public class SpecCreator extends TreeParser {
 
                 switch (alt9) {
             	case 1 :
-            	    // /Users/mgordon/research/droidsafe/src/main/java/droidsafe/speclang/SpecCreator.g:134:13: arg
+            	    // /Users/mgordon/research/droidsafe/src/main/java/droidsafe/speclang/SpecCreator.g:135:13: arg
             	    {
             	    pushFollow(FOLLOW_arg_in_arg_list604);
             	    arg12=arg();
@@ -913,7 +914,7 @@ public class SpecCreator extends TreeParser {
 
 
     // $ANTLR start "receiver"
-    // /Users/mgordon/research/droidsafe/src/main/java/droidsafe/speclang/SpecCreator.g:139:1: receiver returns [String value] : ( ID | INT_LITERAL );
+    // /Users/mgordon/research/droidsafe/src/main/java/droidsafe/speclang/SpecCreator.g:140:1: receiver returns [String value] : ( ID | INT_LITERAL );
     public final String receiver() throws RecognitionException {
         String value = null;
 
@@ -922,7 +923,7 @@ public class SpecCreator extends TreeParser {
         CommonTree INT_LITERAL14=null;
 
         try {
-            // /Users/mgordon/research/droidsafe/src/main/java/droidsafe/speclang/SpecCreator.g:140:5: ( ID | INT_LITERAL )
+            // /Users/mgordon/research/droidsafe/src/main/java/droidsafe/speclang/SpecCreator.g:141:5: ( ID | INT_LITERAL )
             int alt10=2;
             int LA10_0 = input.LA(1);
 
@@ -941,7 +942,7 @@ public class SpecCreator extends TreeParser {
             }
             switch (alt10) {
                 case 1 :
-                    // /Users/mgordon/research/droidsafe/src/main/java/droidsafe/speclang/SpecCreator.g:140:7: ID
+                    // /Users/mgordon/research/droidsafe/src/main/java/droidsafe/speclang/SpecCreator.g:141:7: ID
                     {
                     ID13=(CommonTree)match(input,ID,FOLLOW_ID_in_receiver648); 
 
@@ -950,7 +951,7 @@ public class SpecCreator extends TreeParser {
                     }
                     break;
                 case 2 :
-                    // /Users/mgordon/research/droidsafe/src/main/java/droidsafe/speclang/SpecCreator.g:141:7: INT_LITERAL
+                    // /Users/mgordon/research/droidsafe/src/main/java/droidsafe/speclang/SpecCreator.g:142:7: INT_LITERAL
                     {
                     INT_LITERAL14=(CommonTree)match(input,INT_LITERAL,FOLLOW_INT_LITERAL_in_receiver658); 
 
@@ -976,7 +977,7 @@ public class SpecCreator extends TreeParser {
 
 
     // $ANTLR start "api_call"
-    // /Users/mgordon/research/droidsafe/src/main/java/droidsafe/speclang/SpecCreator.g:144:1: api_call returns [Method value] : ^( API_CALL ^( RECEIVER ( receiver )? ) ^( CLASS cname= ID ) ^( RTYPE rt= ID ) ^( METHOD mname= ID ) ^( ARGS ( arg_list )? ) ) ;
+    // /Users/mgordon/research/droidsafe/src/main/java/droidsafe/speclang/SpecCreator.g:145:1: api_call returns [Method value] : ^( API_CALL ^( RECEIVER ( receiver )? ) ^( CLASS cname= ID ) ^( RTYPE rt= ID ) ^( METHOD mname= ID ) ^( ARGS ( arg_list )? ) ) ;
     public final Method api_call() throws RecognitionException {
         Method value = null;
 
@@ -990,8 +991,8 @@ public class SpecCreator extends TreeParser {
 
 
         try {
-            // /Users/mgordon/research/droidsafe/src/main/java/droidsafe/speclang/SpecCreator.g:145:4: ( ^( API_CALL ^( RECEIVER ( receiver )? ) ^( CLASS cname= ID ) ^( RTYPE rt= ID ) ^( METHOD mname= ID ) ^( ARGS ( arg_list )? ) ) )
-            // /Users/mgordon/research/droidsafe/src/main/java/droidsafe/speclang/SpecCreator.g:145:6: ^( API_CALL ^( RECEIVER ( receiver )? ) ^( CLASS cname= ID ) ^( RTYPE rt= ID ) ^( METHOD mname= ID ) ^( ARGS ( arg_list )? ) )
+            // /Users/mgordon/research/droidsafe/src/main/java/droidsafe/speclang/SpecCreator.g:146:4: ( ^( API_CALL ^( RECEIVER ( receiver )? ) ^( CLASS cname= ID ) ^( RTYPE rt= ID ) ^( METHOD mname= ID ) ^( ARGS ( arg_list )? ) ) )
+            // /Users/mgordon/research/droidsafe/src/main/java/droidsafe/speclang/SpecCreator.g:146:6: ^( API_CALL ^( RECEIVER ( receiver )? ) ^( CLASS cname= ID ) ^( RTYPE rt= ID ) ^( METHOD mname= ID ) ^( ARGS ( arg_list )? ) )
             {
             List<ArgumentValue> args = null; String rec = "";
 
@@ -1002,7 +1003,7 @@ public class SpecCreator extends TreeParser {
 
             if ( input.LA(1)==Token.DOWN ) {
                 match(input, Token.DOWN, null); 
-                // /Users/mgordon/research/droidsafe/src/main/java/droidsafe/speclang/SpecCreator.g:147:24: ( receiver )?
+                // /Users/mgordon/research/droidsafe/src/main/java/droidsafe/speclang/SpecCreator.g:148:24: ( receiver )?
                 int alt11=2;
                 int LA11_0 = input.LA(1);
 
@@ -1011,7 +1012,7 @@ public class SpecCreator extends TreeParser {
                 }
                 switch (alt11) {
                     case 1 :
-                        // /Users/mgordon/research/droidsafe/src/main/java/droidsafe/speclang/SpecCreator.g:147:25: receiver
+                        // /Users/mgordon/research/droidsafe/src/main/java/droidsafe/speclang/SpecCreator.g:148:25: receiver
                         {
                         pushFollow(FOLLOW_receiver_in_api_call706);
                         receiver15=receiver();
@@ -1059,7 +1060,7 @@ public class SpecCreator extends TreeParser {
 
             if ( input.LA(1)==Token.DOWN ) {
                 match(input, Token.DOWN, null); 
-                // /Users/mgordon/research/droidsafe/src/main/java/droidsafe/speclang/SpecCreator.g:151:20: ( arg_list )?
+                // /Users/mgordon/research/droidsafe/src/main/java/droidsafe/speclang/SpecCreator.g:152:20: ( arg_list )?
                 int alt12=2;
                 int LA12_0 = input.LA(1);
 
@@ -1068,7 +1069,7 @@ public class SpecCreator extends TreeParser {
                 }
                 switch (alt12) {
                     case 1 :
-                        // /Users/mgordon/research/droidsafe/src/main/java/droidsafe/speclang/SpecCreator.g:151:21: arg_list
+                        // /Users/mgordon/research/droidsafe/src/main/java/droidsafe/speclang/SpecCreator.g:152:21: arg_list
                         {
                         pushFollow(FOLLOW_arg_list_in_api_call792);
                         arg_list16=arg_list();
@@ -1142,7 +1143,7 @@ public class SpecCreator extends TreeParser {
 
 
     // $ANTLR start "api_action"
-    // /Users/mgordon/research/droidsafe/src/main/java/droidsafe/speclang/SpecCreator.g:186:1: api_action returns [List<Method> value] : ^( API_ACTION ^( ACTION_NAME name= ID ) ^( ARGS ( arg_list )? ) ) ;
+    // /Users/mgordon/research/droidsafe/src/main/java/droidsafe/speclang/SpecCreator.g:187:1: api_action returns [List<Method> value] : ^( API_ACTION ^( ACTION_NAME name= ID ) ^( ARGS ( arg_list )? ) ) ;
     public final List<Method> api_action() throws RecognitionException {
         List<Method> value = null;
 
@@ -1152,8 +1153,8 @@ public class SpecCreator extends TreeParser {
 
 
         try {
-            // /Users/mgordon/research/droidsafe/src/main/java/droidsafe/speclang/SpecCreator.g:187:3: ( ^( API_ACTION ^( ACTION_NAME name= ID ) ^( ARGS ( arg_list )? ) ) )
-            // /Users/mgordon/research/droidsafe/src/main/java/droidsafe/speclang/SpecCreator.g:188:9: ^( API_ACTION ^( ACTION_NAME name= ID ) ^( ARGS ( arg_list )? ) )
+            // /Users/mgordon/research/droidsafe/src/main/java/droidsafe/speclang/SpecCreator.g:188:3: ( ^( API_ACTION ^( ACTION_NAME name= ID ) ^( ARGS ( arg_list )? ) ) )
+            // /Users/mgordon/research/droidsafe/src/main/java/droidsafe/speclang/SpecCreator.g:189:9: ^( API_ACTION ^( ACTION_NAME name= ID ) ^( ARGS ( arg_list )? ) )
             {
 
                         List<ArgumentValue> args = new LinkedList<ArgumentValue>();
@@ -1174,7 +1175,7 @@ public class SpecCreator extends TreeParser {
 
             if ( input.LA(1)==Token.DOWN ) {
                 match(input, Token.DOWN, null); 
-                // /Users/mgordon/research/droidsafe/src/main/java/droidsafe/speclang/SpecCreator.g:194:18: ( arg_list )?
+                // /Users/mgordon/research/droidsafe/src/main/java/droidsafe/speclang/SpecCreator.g:195:18: ( arg_list )?
                 int alt13=2;
                 int LA13_0 = input.LA(1);
 
@@ -1183,7 +1184,7 @@ public class SpecCreator extends TreeParser {
                 }
                 switch (alt13) {
                     case 1 :
-                        // /Users/mgordon/research/droidsafe/src/main/java/droidsafe/speclang/SpecCreator.g:194:19: arg_list
+                        // /Users/mgordon/research/droidsafe/src/main/java/droidsafe/speclang/SpecCreator.g:195:19: arg_list
                         {
                         pushFollow(FOLLOW_arg_list_in_api_action904);
                         arg_list17=arg_list();
@@ -1262,7 +1263,7 @@ public class SpecCreator extends TreeParser {
 
 
     // $ANTLR start "statement"
-    // /Users/mgordon/research/droidsafe/src/main/java/droidsafe/speclang/SpecCreator.g:234:1: statement returns [List<Method> value] : ( api_call | api_action );
+    // /Users/mgordon/research/droidsafe/src/main/java/droidsafe/speclang/SpecCreator.g:235:1: statement returns [List<Method> value] : ( api_call | api_action );
     public final List<Method> statement() throws RecognitionException {
         List<Method> value = null;
 
@@ -1273,7 +1274,7 @@ public class SpecCreator extends TreeParser {
 
 
         try {
-            // /Users/mgordon/research/droidsafe/src/main/java/droidsafe/speclang/SpecCreator.g:235:4: ( api_call | api_action )
+            // /Users/mgordon/research/droidsafe/src/main/java/droidsafe/speclang/SpecCreator.g:236:4: ( api_call | api_action )
             int alt14=2;
             int LA14_0 = input.LA(1);
 
@@ -1292,7 +1293,7 @@ public class SpecCreator extends TreeParser {
             }
             switch (alt14) {
                 case 1 :
-                    // /Users/mgordon/research/droidsafe/src/main/java/droidsafe/speclang/SpecCreator.g:236:9: api_call
+                    // /Users/mgordon/research/droidsafe/src/main/java/droidsafe/speclang/SpecCreator.g:237:9: api_call
                     {
                     pushFollow(FOLLOW_api_call_in_statement946);
                     api_call18=api_call();
@@ -1309,7 +1310,7 @@ public class SpecCreator extends TreeParser {
                     }
                     break;
                 case 2 :
-                    // /Users/mgordon/research/droidsafe/src/main/java/droidsafe/speclang/SpecCreator.g:241:9: api_action
+                    // /Users/mgordon/research/droidsafe/src/main/java/droidsafe/speclang/SpecCreator.g:242:9: api_action
                     {
                     pushFollow(FOLLOW_api_action_in_statement958);
                     api_action19=api_action();
@@ -1341,7 +1342,7 @@ public class SpecCreator extends TreeParser {
 
 
     // $ANTLR start "statement_list"
-    // /Users/mgordon/research/droidsafe/src/main/java/droidsafe/speclang/SpecCreator.g:246:1: statement_list returns [List<Method> value] : ( statement )+ ;
+    // /Users/mgordon/research/droidsafe/src/main/java/droidsafe/speclang/SpecCreator.g:247:1: statement_list returns [List<Method> value] : ( statement )+ ;
     public final List<Method> statement_list() throws RecognitionException {
         List<Method> value = null;
 
@@ -1350,12 +1351,12 @@ public class SpecCreator extends TreeParser {
 
 
         try {
-            // /Users/mgordon/research/droidsafe/src/main/java/droidsafe/speclang/SpecCreator.g:247:4: ( ( statement )+ )
-            // /Users/mgordon/research/droidsafe/src/main/java/droidsafe/speclang/SpecCreator.g:248:9: ( statement )+
+            // /Users/mgordon/research/droidsafe/src/main/java/droidsafe/speclang/SpecCreator.g:248:4: ( ( statement )+ )
+            // /Users/mgordon/research/droidsafe/src/main/java/droidsafe/speclang/SpecCreator.g:249:9: ( statement )+
             {
             LinkedList<Method> ret = new LinkedList<Method>();
 
-            // /Users/mgordon/research/droidsafe/src/main/java/droidsafe/speclang/SpecCreator.g:249:9: ( statement )+
+            // /Users/mgordon/research/droidsafe/src/main/java/droidsafe/speclang/SpecCreator.g:250:9: ( statement )+
             int cnt15=0;
             loop15:
             do {
@@ -1369,7 +1370,7 @@ public class SpecCreator extends TreeParser {
 
                 switch (alt15) {
             	case 1 :
-            	    // /Users/mgordon/research/droidsafe/src/main/java/droidsafe/speclang/SpecCreator.g:249:10: statement
+            	    // /Users/mgordon/research/droidsafe/src/main/java/droidsafe/speclang/SpecCreator.g:250:10: statement
             	    {
             	    pushFollow(FOLLOW_statement_in_statement_list1002);
             	    statement20=statement();
@@ -1412,7 +1413,7 @@ public class SpecCreator extends TreeParser {
 
 
     // $ANTLR start "event_block"
-    // /Users/mgordon/research/droidsafe/src/main/java/droidsafe/speclang/SpecCreator.g:253:1: event_block : ^( EVENT_BLOCK input_event ^( STMT_LIST ( statement_list )? ) ) ;
+    // /Users/mgordon/research/droidsafe/src/main/java/droidsafe/speclang/SpecCreator.g:254:1: event_block : ^( EVENT_BLOCK input_event ^( STMT_LIST ( statement_list )? ) ) ;
     public final void event_block() throws RecognitionException {
         List<Method> statement_list21 =null;
 
@@ -1420,8 +1421,8 @@ public class SpecCreator extends TreeParser {
 
 
         try {
-            // /Users/mgordon/research/droidsafe/src/main/java/droidsafe/speclang/SpecCreator.g:254:2: ( ^( EVENT_BLOCK input_event ^( STMT_LIST ( statement_list )? ) ) )
-            // /Users/mgordon/research/droidsafe/src/main/java/droidsafe/speclang/SpecCreator.g:255:5: ^( EVENT_BLOCK input_event ^( STMT_LIST ( statement_list )? ) )
+            // /Users/mgordon/research/droidsafe/src/main/java/droidsafe/speclang/SpecCreator.g:255:2: ( ^( EVENT_BLOCK input_event ^( STMT_LIST ( statement_list )? ) ) )
+            // /Users/mgordon/research/droidsafe/src/main/java/droidsafe/speclang/SpecCreator.g:256:5: ^( EVENT_BLOCK input_event ^( STMT_LIST ( statement_list )? ) )
             {
             match(input,EVENT_BLOCK,FOLLOW_EVENT_BLOCK_in_event_block1037); 
 
@@ -1436,7 +1437,7 @@ public class SpecCreator extends TreeParser {
 
             if ( input.LA(1)==Token.DOWN ) {
                 match(input, Token.DOWN, null); 
-                // /Users/mgordon/research/droidsafe/src/main/java/droidsafe/speclang/SpecCreator.g:255:43: ( statement_list )?
+                // /Users/mgordon/research/droidsafe/src/main/java/droidsafe/speclang/SpecCreator.g:256:43: ( statement_list )?
                 int alt16=2;
                 int LA16_0 = input.LA(1);
 
@@ -1445,7 +1446,7 @@ public class SpecCreator extends TreeParser {
                 }
                 switch (alt16) {
                     case 1 :
-                        // /Users/mgordon/research/droidsafe/src/main/java/droidsafe/speclang/SpecCreator.g:255:43: statement_list
+                        // /Users/mgordon/research/droidsafe/src/main/java/droidsafe/speclang/SpecCreator.g:256:43: statement_list
                         {
                         pushFollow(FOLLOW_statement_list_in_event_block1044);
                         statement_list21=statement_list();

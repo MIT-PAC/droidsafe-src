@@ -17,6 +17,8 @@ options {
       import org.slf4j.Logger;
       import org.slf4j.LoggerFactory;
       import droidsafe.android.system.API;
+      import soot.NullType;
+      import soot.RefLikeType;
       }
 
 @members {
@@ -110,14 +112,13 @@ concrete_value returns [ConcreteArgumentValue value]
   ; 
     
 concrete_values returns [ConcreteListArgumentValue value]
-    : {ConcreteListArgumentValue ret = new ConcreteListArgumentValue();}
+    : {ConcreteListArgumentValue ret = new ConcreteListArgumentValue(NullType.v());}
         ^(CVALUE_LIST
             (
                 concrete_value {ret.add($concrete_value.value);}
             )+
         )
         {
-            ret.checkAllOneType();
             $value = ret;
         }
     ;
