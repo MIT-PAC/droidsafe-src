@@ -412,7 +412,8 @@ public class Harness {
 		//add the call to the constructor with its args
 		SootMethod constructor = SootUtils.findSimpliestConstructor(clazz);
 		if (constructor == null) {
-			Utils.ERROR_AND_EXIT(logger, "Cannot find constructor for {}.  Cannot create harness.", clazz);
+			logger.info("Cannot find constructor for {}.  Not going to call constructor.", clazz);
+			return;
 		}
 		
 		//create list of dummy arg values for the constructor call, right now all constants
