@@ -151,7 +151,7 @@ public class AndroidManifest {
   class Activity extends BaseElement {
 
     /** The resource number of the view associated with this activity **/
-    int content_view = 0;
+    Set<Integer> content_views = new LinkedHashSet<Integer>();
 
     public String label;
     public String name;

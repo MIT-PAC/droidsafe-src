@@ -48,6 +48,11 @@ import droidsafe.android.system.Components;
 /**
  * Representation of the Android Resources and Manifest file.  Also contains
  * processing routines for DroidSafe (these should perhaps be elsewhere)
+ * 
+ * 1. Read in AndroidManifest and save its info in AndroidManifest
+ * 2. Read all R*.java generated classes to find the id's of the layouts
+ * 3. Find all invokes of setContentView(id) to determine the layouts an activity
+ *    can inflate, and remember onclick handlers defined in the layout
  */
 @SuppressWarnings("all")
 public class Resources {
@@ -251,46 +256,43 @@ public class Resources {
 	void process_view (Layout layout, View view) throws Exception {
 
 		logger.info ("  processing view {}.{}", layout.name, view.name);
-		if ((view.on_click != null) && (layout.activity == null)) {
+		if ((view.on_click != null) && (layout.activities.isEmpty())) {
 			// It seems reasonable that apps may have unused layout files
 			logger.info ("Warning: on click handler {} in layout {} ignored, "
 					+ "{} is not inflated anywhere", view.on_click,
 					layout.name, layout.name);
 			// bad_idiom ("No Activity associated with layout '{}'", layout.name);
 		} else if (view.on_click != null) {
-			if (layout.activity == null) 
-				// bad_idiom ("No Activity associated with layout '%s'", layout.name);
-				if (layout.cn ==  null)
-					bad_idiom ("No class associated with layout '%s'", layout.name);
-			logger.info ("Found on_click entry point {}.{} for view {} " +
-					"in layout {}, resource name {}", 
-					layout.cn, view.on_click,
-					view.name, layout.name, view.get_resource_name());
+			for (SootClass cn : layout.classes) {
+				logger.info ("Found on_click entry point {}.{} for view {} " +
+						"in layout {}, resource name {}", 
+						cn, view.on_click,
+						view.name, layout.name, view.get_resource_name());
+				//build the method signature in the soot format
+				List<RefType> viewArg = new LinkedList<RefType>();
+				viewArg.add(RefType.v("android.view.View"));
+				SootMethod method = cn.getMethod(view.on_click, viewArg);
 
-			//build the method signature in the soot format
-			List<RefType> viewArg = new LinkedList<RefType>();
-			viewArg.add(RefType.v("android.view.View"));
-			SootMethod method = layout.cn.getMethod(view.on_click, viewArg);
-			
-			//record the handler in the map for the layout
-			//for the entire application there could be multiple layouts, and multiple
-			//handler per layout
-			if (!handlers.containsKey(layout)) { 
-				handlers.put(layout, new HashMap<View, SootMethod>());
-			}
+				//record the handler in the map for the layout
+				//for the entire application there could be multiple layouts, and multiple
+				//handler per layout
+				if (!handlers.containsKey(layout)) { 
+					handlers.put(layout, new HashMap<View, SootMethod>());
+				}
 
-			logger.info("Putting: {} {} {}\n", layout, view, method);
-			handlers.get(layout).put(view, method);	
-			allHandlers.add(method);
+				logger.info("Putting: {} {} {}\n", layout, view, method);
+				handlers.get(layout).put(view, method);	
+				allHandlers.add(method);
 
-			// Its not entirely clear why we are processing the on_click entry
-			// point itself.  What are we looking for here?
-			try {
-				process_entry (layout.cn, method.getSubSignature());
-			} catch (MissingElementException mee) {
-				logger.info ("Warning, Error processing on click handler {} in "
-						+ "layout {}: {}", view.on_click, layout.name, 
-						mee.getMessage());
+				// Its not entirely clear why we are processing the on_click entry
+				// point itself.  What are we looking for here?
+				try {
+					process_entry (cn, method.getSubSignature());
+				} catch (MissingElementException mee) {
+					logger.info ("Warning, Error processing on click handler {} in "
+							+ "layout {}: {}", view.on_click, layout.name, 
+							mee.getMessage());
+				}
 			}
 		}
 		for (View child : view.children)
@@ -357,12 +359,10 @@ public class Resources {
 			}
 			
 			int resource_id = ((IntConstant)expr.getArgs().get(0)).value;
-			
-			// This can happen.  We should probably change content_view to a list
-			if (activity.content_view != 0)
-				bad_idiom (cn, m, "Multiple setContentView calls in one Activity");
+				
+			logger.info ("Multiple setContentView calls in one Activity: {} {}", cn, m);
 
-			activity.content_view = resource_id;
+			activity.content_views.add(new Integer(resource_id));
 			logger.info ("  setContentView ({} -> {})", resource_id, 
 					resource_info.get(resource_id));
 			String resource_name = resource_info.get(resource_id);
@@ -372,10 +372,10 @@ public class Resources {
 			Layout layout = find_layout_by_name (layout_name);
 			if (layout == null) 
 				bad_idiom (cn, m, "No layout named %s", layout);
-			layout.activity = activity;
+			layout.activities.add(activity);
 
 			// Remember the class that instantiated this view/layout
-			layout.cn = cn;
+			layout.classes.add(cn);
 			logger.info ("Found activity/class {}/{} for layout {}\n", activity, 
 					cn, layout.name);
 		}

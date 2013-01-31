@@ -31,10 +31,10 @@ public class Layout {
   View view;
 
   /** The activity (if any) associated with this layout **/
-  Activity activity = null;
+  Set<Activity> activities = new LinkedHashSet<Activity>();
 
-  /** The class (if any) that instantiates this view (with setContentView) **/
-  SootClass cn;
+  /** The classes (if any) that instantiates this view (with setContentView) **/
+  Set<SootClass> classes = new LinkedHashSet<SootClass>();
 
   public Layout (File layout_source) throws Exception {
 
