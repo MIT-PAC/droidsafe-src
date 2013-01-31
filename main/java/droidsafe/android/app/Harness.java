@@ -189,7 +189,7 @@ public class Harness {
 						}
 					}
 				} catch (Exception e) {
-					logger.warn("Error trying to look for allocations in method {} of {} (probably a library method with some natives)", method, clz);
+					logger.warn("Trying to look for allocations in method {} of {} (probably a native method)", method, clz, e);
 				}
 			}
 		}
