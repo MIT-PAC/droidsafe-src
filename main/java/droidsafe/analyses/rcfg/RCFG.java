@@ -114,8 +114,17 @@ public class RCFG {
 	}
 	
 	private void startAtEntry(Edge edge) {
+		SootMethod method = edge.tgt();
+		
+		//don't create entry points for edges into api
+		if (API.v().isSystemMethod(edge.tgt()))  {
+			logger.info("For RCFG, ignoring entry point: {}", method);
+			return;
+		}
+			
 		//create node, and add to it the RCFG
 		RCFGNode node = new RCFGNode(edge);
+		logger.info("Creating new RCFG node from edge {}", edge);
 		rCFG.add(node);
 		//visit the call graph from this point
 		visitNode(edge, node, new LinkedHashSet<Edge>());
