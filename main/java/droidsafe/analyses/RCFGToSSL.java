@@ -94,6 +94,7 @@ public class RCFGToSSL {
 		}
 
 		Method method = new Method(oe.getTarget(), args, null);
+		//logger.info("Created method with target: {}", method.getSootMethod());
 		//transfer over the source location information of the call
 		if (oe.getSourceLocationTag() != null)
 			method.addLineTag(oe.getSourceLocationTag());

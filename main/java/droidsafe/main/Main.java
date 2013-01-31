@@ -26,6 +26,7 @@ import droidsafe.android.app.TagImplementedSystemMethods;
 import droidsafe.android.app.Project;
 import droidsafe.android.app.resources.Resources;
 import droidsafe.android.system.API;
+import droidsafe.android.system.Permissions;
 import droidsafe.transforms.AddAllocsForAPICalls;
 import droidsafe.transforms.LocalForStringConstantArguments;
 import droidsafe.transforms.ScalarAppOptimizations;
@@ -55,6 +56,7 @@ public class Main {
 		Project.v().init();
 		SootConfig.init();
 		API.v().init();
+		Permissions.init();
 		logger.info("Creating locals for all string constant arguments.");
 		LocalForStringConstantArguments.run();
 		logger.info("Calling scalar optimizations.");

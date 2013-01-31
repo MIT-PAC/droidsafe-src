@@ -64,7 +64,8 @@ public class SootMethodList implements Iterable<SootMethod>{
 	 * receiver and arguments.
 	 */
 	public boolean containsPoly(String signature) {
-		SootMethod method = SootUtils.resolveMethod(signature);
+		SootMethod method = 
+				SootUtils.resolveMethod(Scene.v().getSootClass(SootUtils.grabClass(signature)), signature);
 		return containsPoly(method);
 	}
 	
@@ -81,7 +82,8 @@ public class SootMethodList implements Iterable<SootMethod>{
 	 * method list given polymorphism.
 	 */
 	public SootMethod getMethod(String signature) {
-		SootMethod method = SootUtils.resolveMethod(signature);
+		SootMethod method =
+				SootUtils.resolveMethod(Scene.v().getSootClass(SootUtils.grabClass(signature)), signature);
 		return getMethod(method);
 	}
 	
@@ -109,7 +111,7 @@ public class SootMethodList implements Iterable<SootMethod>{
 		for (SootMethod possible : possibleMethods) {
 			boolean allTrue = true;
 			for (int i = 0; i < method.getParameterCount(); i++) {	
-				boolean subType = SootUtils.isSubTypeOf(method.getParameterType(i), possible.getParameterType(i));
+				boolean subType = SootUtils.isSubTypeOfIncluding(method.getParameterType(i), possible.getParameterType(i));
 				if (!subType) {
 					allTrue = false;
 					break;

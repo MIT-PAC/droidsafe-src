@@ -47,6 +47,8 @@ public class OutputEvent {
 	/** The parent RFCG Node */
 	private RCFGNode parent;	
 	private SourceLocationTag linesTag = null;
+	/** the defined target of the output event */
+	private SootMethod target = null;
 	
 	public OutputEvent(Edge thisEdge, Edge contextEdge, RCFGNode parent, SourceLocationTag ln) {
 		this.thisEdge = thisEdge;

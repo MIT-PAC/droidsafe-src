@@ -21,6 +21,7 @@ import soot.Type;
 import droidsafe.utils.SourceLocationTag;
 import droidsafe.utils.Utils;
 import droidsafe.android.system.API;
+import droidsafe.android.system.Permissions;
 
 public class Method implements Comparable<Method> {
 	private static final Logger logger = LoggerFactory.getLogger(Method.class);
@@ -219,6 +220,9 @@ public class Method implements Comparable<Method> {
 			}
 		}
 		
+		for (String str : Permissions.v().getPermissions(sootMethod)) 
+			ret += "// Requires permission: " + str + "\n";
+		
 		if (flagUnsupported && !API.v().isSupportedMethod(sootMethod))
 			ret += "**";
 		
@@ -227,6 +231,7 @@ public class Method implements Comparable<Method> {
 	
     /**
      * Returns the signature portion of the string in security spec format
+     * with arg values and not arg types from the soot method
      */
     public String toSignatureString() {
 	

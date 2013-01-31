@@ -13,6 +13,7 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Queue;
 import java.util.Set;
+import java.util.StringTokenizer;
 import java.util.jar.JarEntry;
 import java.util.jar.JarFile;
 import java.util.regex.Matcher;
@@ -25,6 +26,7 @@ import droidsafe.android.app.Project;
 import droidsafe.main.Config;
 import droidsafe.speclang.ArgumentValue;
 import droidsafe.speclang.Method;
+import droidsafe.speclang.TypeValue;
 
 import soot.AnySubType;
 import soot.ArrayType;
@@ -73,6 +75,8 @@ import soot.util.JasminOutputStream;
  */
 public class SootUtils {
 	private final static Logger logger = LoggerFactory.getLogger(SootUtils.class);
+	
+	public static final Pattern sigRE = Pattern.compile("<(\\S+): (\\S+) (\\S+)\\((.*)\\)>");
 	
 	/**
 	 * Given a string representing a type in soot, (ex: int, java.lang.Class[]), return 
@@ -196,7 +200,7 @@ public class SootUtils {
      * return true.If both are arraytypes, make sure element type of child is subtype of element 
      * type of parent.
      */
-    public static boolean isSubTypeOf(Type child, Type parent) {
+    public static boolean isSubTypeOfIncluding(Type child, Type parent) {
     	if (child.equals(parent))
     		return true;
     	else if (child instanceof NullType ||
@@ -209,7 +213,7 @@ public class SootUtils {
     			return true;
     		return parent.equals(child);
     	} else if (parent instanceof ArrayType && child instanceof ArrayType) 	{
-    		return isSubTypeOf(((ArrayType)child).getElementType(), ((ArrayType)parent).getElementType());
+    		return isSubTypeOfIncluding(((ArrayType)child).getElementType(), ((ArrayType)parent).getElementType());
     	} else if (parent instanceof RefType && child instanceof RefType) {
     		SootClass pClass = ((RefType)parent).getSootClass();
     		SootClass cClass = ((RefType)child).getSootClass();
@@ -224,6 +228,105 @@ public class SootUtils {
     	} else {
     		return false;
     	}
+    }
+    
+    /**
+     * Given the signature of a method that make or may not concretely exist, search 
+     * for the concrete call that will be resolved for the signature.
+     * 
+     * This search entails a polymorphic search over all the methods of the class
+     * for return types and parameter types.  
+     * 
+     * It then searches parent classes if the method cannot be found in this class.
+     */
+    public static SootMethod resolveMethod(SootClass clz, String signature) {
+    	if (Scene.v().containsMethod(signature)) 
+    		return Scene.v().getMethod(signature);
+    	
+    	//check this class for the method with polymorpism
+    	String mName = grabName(signature);
+    	String[] args = grabArgs(signature);
+    	String rtype = grabReturnType(signature);
+    	
+    	for (SootMethod curr : clz.getMethods()) {
+    		if (!curr.getName().equals(mName) || curr.getParameterCount() != args.length)
+    			continue;
+    		
+    		//check the return types
+    		Type returnType = toSootType(rtype);
+    		if (!isSubTypeOfIncluding(returnType, curr.getReturnType())) 
+    			continue;
+    		
+    		for (int i = 0; i < args.length; i++) 
+    			if (!isSubTypeOfIncluding(toSootType(args[i]), curr.getParameterType(i)))
+    				continue;
+    		
+    		//if we got here all is well and we found a method that matches!
+    		return curr;
+    	}
+    	
+    	//if not found, and at object can't find it
+    	if (clz.getName().equals("java.lang.Object") ||
+    			clz.getSuperclass() == null)
+    		return null;
+    	
+    	//now check the parents
+    	return resolveMethod(clz.getSuperclass(), signature);
+    }
+   
+    /**
+     * Grab the args string from the method signature 
+     */
+    public static String[] grabArgs(String signature) {
+    	Matcher matcher = sigRE.matcher(signature);
+		boolean b = matcher.matches();
+		
+		if (!b && matcher.groupCount() != 4)
+			logger.error("Bad method signature: {}", signature);
+		
+		//args, create the args string array
+		String args = matcher.group(4);
+		return args.split(",");		
+    }
+    
+    /**
+     * Grab the class from the signature
+     */
+    public static String grabClass(String signature) {
+		Matcher matcher = sigRE.matcher(signature);
+		boolean b = matcher.matches();
+		
+		if (!b && matcher.groupCount() != 4)
+			logger.error("Bad method signature: {}", signature);
+		
+		return matcher.group(1);
+    }
+    
+    /**
+     * Grab the method name from the signature
+     */
+    public static String grabName(String signature) {
+		Matcher matcher = sigRE.matcher(signature);
+		boolean b = matcher.matches();
+		
+		if (!b && matcher.groupCount() != 4)
+			logger.error("Bad method signature: {}", signature);
+		
+		return matcher.group(3);
+    }
+    
+    /**
+     * Grab the method return type string from the signature
+     */
+    public static String grabReturnType(String signature) {
+    	Matcher matcher = sigRE.matcher(signature);
+		boolean b = matcher.matches();
+		
+		if (!b && matcher.groupCount() != 4)
+			Utils.ERROR_AND_EXIT(logger,"Cannot create Method from DroidBlaze Signature");
+		
+		return matcher.group(2);
+		
     }
     
     /**
@@ -256,60 +359,6 @@ public class SootUtils {
     	return methods;
     }
     
-    /**
-     * Given a method signature string, try to resolve the method from the scene of currently
-     * loaded methods.  The use case is where the given method string has arguments that are subtypes
-     * of a method defined in the scene.  The receiver type can be a subtype as well.
-     */
-    public static SootMethod resolveMethod(String signature) {
-    	return null;
-    	/*
-    	if (Scene.v().containsMethod(signature))
-			return Scene.v().getMethod(signature);
-		
-		Method method = new Method(signature);
-		SootClass clz = Scene.v().getSootClass(method.getCname());
-	
-
-		List<SootMethod> possibleMethods = findPossibleInheritedMethods(clz, method.getName(), 
-				method.getRtype(), method.getArgs().length);
-		
-		boolean isStatic = possibleMethods.get(0).isStatic();
-		for (SootMethod possibleMethod : possibleMethods) {
-			logger.debug("{}: is static {}", possibleMethod, possibleMethod.isStatic());
-			if (isStatic != possibleMethod.isStatic()) {
-				logger.error ("Static modifier disagrees among possible sources of inherited method! {}", signature);
-				System.exit(1);
-			}
-		}
-
-		List<Type> argTypes = new LinkedList<Type>();
-		for (ArgumentValue value : method.getArgs()) {
-			argTypes.add(value.getType());
-		}
-	
-		//Use soot's method reference to try to resolve the specific call if args are not exact
-		SootMethodRef methodRef = Scene.v().makeMethodRef(clz, method.getName(), argTypes, 
-				toSootType(method.getRtype()), isStatic);
-		SootMethod resolvedM = methodRef.resolve();
-		
-		logger.debug("Resolved: {}", resolvedM);
-			
-		if (resolvedM == null || !Scene.v().containsMethod(resolvedM.getSignature())) {
-			logger.error("Error resolving method: {} ", signature);
-			System.exit(1);
-		}
-		
-		
-		for (SootMethod meth : Scene.v().getSootClass("android.view.View").getMethods()) {
-			if (meth.getName().equals("setOnClickListener"))
-				logger.debug("After resolveMethod {}: {} isStatic? {}", signature, meth, meth.isStatic());
-		}
-		
-		
-		*/
-	
-	}
     
     /**
      * Load classes from the given jar file into Soot's current scene.  
