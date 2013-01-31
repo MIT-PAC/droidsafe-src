@@ -184,16 +184,17 @@ public class Resources {
 					Tag tag = field.getTag("IntegerConstantValueTag");
 					//ug, the initializer value is stored in a tag
 					//not documented anywhere...except a mailing list post from years ago
-					if (tag instanceof IntegerConstantValueTag)
+					if (tag instanceof IntegerConstantValueTag) {
 						value = new Integer(((IntegerConstantValueTag)tag).getIntValue());
-					else {
-						logger.error("Unknown initial value for field of resource class: {} ({})", field, tag);
-						System.exit(1);
-					}
-					
-					logger.info ("field {}.{} = {}", component, field, String.format("%08X", value));
-					resource_info.put ((Integer) value, 
+						logger.info ("field {}.{} = {}", component, field, String.format("%08X", value));
+						resource_info.put ((Integer) value, 
 							component + "." + field.getName());
+					}
+					else {
+						logger.info("Unknown initial value for field of resource class: {} ()", field.getName(), tag);
+						//hopefully we will not need this resource value in analysis, if so we will die
+						//when we try to search for this...
+					}
 				}
 			}
 		}
