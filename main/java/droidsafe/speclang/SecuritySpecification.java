@@ -33,6 +33,11 @@ public class SecuritySpecification  {
 	
 	private Set<Method> whitelist;
 	private Map<Method, List<Method>> eventBlocks;
+    private static int popup_id = 0;
+    private boolean jquery = true;
+    private boolean jquery_mobile = false;
+    String ANDROID_API_BASE = "http://developer.android.com/reference";
+    String JAVA_API_BASE = "http://docs.oracle.com/javase/6/docs/api";
 	
 	public SecuritySpecification() {
 		whitelist = new LinkedHashSet<Method>();
@@ -193,7 +198,7 @@ public class SecuritySpecification  {
 	}
 	
     /** Returns an HTML spec with extra information **/
-	public String toHtmlString() {
+	public String orig_toHtmlString() {
 		StringBuffer buf = new StringBuffer();
 		buf.append("<h4>whitelist</h4>\n");
         for (Method m : whitelist) {
@@ -256,6 +261,102 @@ public class SecuritySpecification  {
         return buf.toString();
 	}
 
+    /** Returns an HTML spec with extra information **/
+	public String toHtmlString() {
+		StringBuffer buf = new StringBuffer();
+        buf.append (jquery_header("SpecDump"));
+
+		buf.append("<h4>whitelist</h4>\n");
+        for (Method m : whitelist) {
+        	buf.append(m.toString() + "<br>");
+        }
+        
+        // Sort the methods for consistent output
+        List<Method> entry_points = new ArrayList<Method>(eventBlocks.keySet());
+        Collections.sort (entry_points);
+        
+        // Set of all banned methods in the application (sorted, no dups)
+        TreeSet<String> all_banned_methods = new TreeSet<String>();
+
+        for (Method ie : entry_points) {
+            buf.append (html_entry_point (ie));
+
+            buf.append ("<div style='padding-left:20px'>\n");
+
+            // Sort the api calls from this method
+            List<Method> outm = new ArrayList<Method>(eventBlocks.get(ie));
+            Collections.sort (outm);
+
+            List<String> methods = new ArrayList<String>();
+            List<String> banned_methods = new ArrayList<String>();
+        	for (Method oe : outm) {
+              // String dbSig = oe.toDroidBlazeString(true);
+              // boolean unsup = !InterestingMethods.isSupportedMethod(dbSig);
+              // if (unsup) {
+              //   banned_methods.add (dbSig);
+              // }
+                
+                methods.add (html_api_call (oe));
+        	} 
+            for (String m : methods) {
+                buf.append (m + "<br>\n");
+            }
+            Collections.sort (banned_methods);
+            if (false) {
+              if (banned_methods.size() > 0) 
+                buf.append ("<br>");
+              for (String m : banned_methods) {
+                m = m.replaceFirst ("^<", "");
+                m = m.replaceFirst (">$", "");
+                m = m.replaceAll ("<", "&lt;");
+                all_banned_methods.add (m);
+                buf.append (m + "<br>\n");
+              }
+            }
+            buf.append ("\n</div>\n");
+        } 
+        buf.append ("\n<p>"+ all_banned_methods.size() +" banned methods<p>\n");
+        for (String m : all_banned_methods)
+          buf.append (m + "<br>\n");
+        return buf.toString();
+	}
+
+  /** Header for JQuery **/
+  public String jquery_header (String title) {
+    return "<!DOCTYPE html>\n"
+      + "<html>\n"
+      + "<head>\n"
+      + "<title>Spec</title>\n"
+      + "<script src='http://people.csail.mit.edu/jhp/jquery.js'></script>\n"
+      + "<script src='http://people.csail.mit.edu/jhp/utils.js'></script>\n"
+      + "<script src='http://code.jquery.com/ui/1.10.0/jquery-ui.js'></script>\n"
+      + "<link rel='stylesheet' href='http://code.jquery.com/ui/1.10.0/themes/base/jquery-ui.css' />\n"
+      + "<style> a {text-decoration:none} </style>\n"
+      + "</head>\n"
+      + "<body>\n"
+	  + "<h1>" + title + "</h1>\n";
+  }
+
+  /** Header for JQueryMobile **/
+  public String jquerymobile_header(String title) {
+
+    return "<!DOCTYPE html>\n"
+      + "<html>\n"
+      + "<head>\n"
+      + "<title>Spec</title>\n"
+      + "<meta name''viewport' content='width=device-width, initial-scale=1'>\n"
+      + "<link rel='stylesheet' href='http://code.jquery.com/mobile/1.2.0/jquery.mobile-1.2.0.min.css' />\n"
+      + "<script src='http://code.jquery.com/jquery-1.8.2.min.js'></script>\n"
+      + "<script src='http://code.jquery.com/mobile/1.2.0/jquery.mobile-1.2.0.min.js'></script>\n"
+      + "</head>\n"
+      + "<body>\n"
+      + "<div data-role='page'>\n"
+      + "<div data-role='header'>\n"
+	  + "<h1>" + title + "</h1>\n"
+      + "</div><!-- /header -->\n";
+
+  }
+
   public String source_locations_to_title (Method m) {
 
     Map<String,String> classmap = new LinkedHashMap<String,String>();
@@ -278,8 +379,195 @@ public class SecuritySpecification  {
 
     return out;
   }
+
+  /** 
+   * Returns the relative path from the android diretory to the source html
+   * created by java2html
+   */
+  public String app_source_path (String app_class) {
+
+    // change package separator (.) into path separator (/)
+    String filename = app_class.replace (".", "/");
+
+    // Remove any internal classes from the name
+    filename = filename.replaceFirst ("[$][0-9]+", "");
+
+    return "../jsrc/" +  filename + ".java.html";
+  }
       
+  /**
+   * Returns cross references for each line where m is called in the 
+   * application.  Each cross reference is on a separate line
+   */
+  public String source_locations_xref (Method m) {
+
+    String out = "";
+
+    List<SourceLocationTag> locs = m.get_lines();
+    for (SourceLocationTag loc : locs) {
+      String cname = loc.getClz();
+      int line = loc.getLine();
+      out += String.format ("<a href=%s#%d> %s:%d</a><br>",
+                            app_source_path (cname), line, cname, line);
+    }
+    return out;
+  }
+      
+  public String get_entry_location (Method m) {
+    SourceLocationTag tag = m.getDeclSourceLocation();    
+    return tag.toString();
+  }
     
+  /** Return the terminal classname from a fully specified classname **/
+  public String extract_classname (String fullname) {
+    return fullname.replaceFirst ("^.*[.]", "");
+  }
+
+  /** Return the package name from a fully specified classname **/
+  public String extract_package (String fullname) {
+    return fullname.replaceFirst ("[.][^.]*$", "");
+  }
+
+  /** Create HTML for some text that has both a popup and a cross ref **/
+  public String html_tooltip_xref (String txt, String popup_txt, String xref) {
+
+      String out = String.format ("<a title='%s' href=%s>%s</a>", 
+                                  popup_txt, xref, txt);
+      return out;
+  }
+
+  /** Create a popup for short_txt that will display poup_txt **/
+  public String html_popup (String short_txt, String popup_txt, 
+                            String popup_title) {
+
+    String popup = String.format 
+      ("<div class='hide' id=popup%d title='%s'>%s</div>\n",
+       popup_id, popup_title, popup_txt);
+
+    String txt = String.format ("<a class=popup href=popup id=uppop%d>%s</a>",
+                                popup_id++, short_txt);
+
+    return txt + "\n" + popup;
+  }
+
+  /** Create HTMl for some text and a popup **/
+  public String html_tooltip (String short_txt, String popup_txt) {
+
+    String out = "";
+    if (jquery) {
+      out = String.format ("<div title='%s'>%s</div>", popup_txt, short_txt);
+    } else if (jquery_mobile) {
+      String popup = String.format ("<div data-role=popup id=popup%d>\n"
+                                    + "  <p>%s</p>\n"
+                                    + "</div>\n",
+                                    popup_id, popup_txt);
+
+      String txt = String.format ("<a href=#popup%d data-rel=popup>%s</a>",
+                                  popup_id++, short_txt);
+      out = popup + txt;
+    }
+
+    return out;
+  }
+  
+  public String html_api_call (Method m) {
+
+    String out = "";
+    String full_cname = m.getCname();
+    String method_name = m.getName().replaceAll("<", "&lt;") + " ";
+    String txt = String.format ("<span style='%s' title='%s'>%s</span>", 
+                                "color:green", full_cname,
+                                extract_classname (full_cname));
+    txt += " " + method_name;
+    String dbSig = m.getSignature();
+    out += api_xref (dbSig, txt);
+    txt = "(";
+    String delim = "";
+    for (ArgumentValue arg : m.getArgs()) {
+      txt += delim;
+      if (arg.isType()) {
+        String full_arg_cname = arg.toString();
+        txt += String.format 
+          ("<a href='%s/%s.html' title='%s'><span style='%s'>%s</span></a>",
+           ANDROID_API_BASE, 
+           full_arg_cname.replace (".", "/").replace("$", "."), 
+           full_arg_cname, "color:green", extract_classname (full_arg_cname));
+      } else {
+        txt += arg.toString();
+      }
+      delim = ", ";
+    }
+    txt += ")";
+    out += txt;
+    String call_txt = String.format ("[%d call%s]", m.get_lines().size(),
+                                     (m.get_lines().size() == 1) ? "" : "s");
+    String calls = html_popup (call_txt, source_locations_xref(m), "calls");
+    return (out + calls + "\n");
+  }
+
+  public String api_xref (String method_sig, String txt) {
+    String sig = method_sig.replace ("<", "");
+    sig = sig.replace (">", "");
+    String[] sa = sig.split (":* ");
+    String class_name = sa[0].replace (".", "/");
+    String ret_type = sa[1];
+    String method = sa[2].replaceAll (", *", ", ");
+    String base = ANDROID_API_BASE;
+    if (class_name.startsWith ("java"))
+      base = JAVA_API_BASE;
+    return String.format 
+      ("<a href='%s/%s.html#%s'>%s</a>", 
+       base, class_name, method, txt);
+  }
+
+
+  /** Returns the HTML for an entry point **/
+  public String html_entry_point (Method m) {
+
+    // + "(" + get_entry_location(ie) + ")</h4>\n");
+
+    String out = "";
+
+    // Jquery version
+    if (jquery) {
+      out = "<h3>";
+      String full_cname = m.getCname();
+      String src_path = full_cname.replace(".", "/");
+      src_path = src_path.replaceFirst ("[$][0-9]+", "");
+      src_path = "jsrc/" +  src_path + ".java.html";
+      src_path += "#" + m.getDeclSourceLocation().getLine();
+      out += html_tooltip_xref (extract_classname (full_cname), 
+                                full_cname, "../" + src_path) + ": ";
+    
+      out += m.getName().replaceAll("<", "&lt;") + " ";
+
+      out += "()";
+      ArgumentValue[] args = m.getArgs();
+      out += "</h3>\n";
+
+    // jquerymobile version
+    } else if (jquery_mobile) {
+      out = "<div data-role=collapsible data-collapsed=false><h3>";
+      String full_cname = m.getCname();
+      out += html_tooltip (extract_classname (full_cname), full_cname) + ": ";
+
+      out += m.getName().replaceAll("<", "&lt;") + " ";
+
+      out += "()";
+      ArgumentValue[] args = m.getArgs();
+      out += "</h3>\n</div>\n";
+    }
+
+    return out;
+
+  }
+
+  public String collapsible_header (String header, String text) {
+
+    return String.format ("<div data-role=collapsible data-collapsed=false>"
+                          + "<%s>%s</%s>\n", header, text);
+  }
+
 
 	public String toReadableString() {
 		StringBuffer buf = new StringBuffer();
