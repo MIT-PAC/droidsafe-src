@@ -163,8 +163,26 @@ public class Harness {
 				if (!clz.declaresMethod(method.getSubSignature())
 						|| !method.isConcrete()) 
 					continue;
+				
+				if (method.isNative()) 
+					continue;
+				
+				StmtBody stmtBody = null;
+				
 				try {
-					StmtBody stmtBody = (StmtBody)method.retrieveActiveBody();
+					try {
+						 stmtBody = (StmtBody)method.retrieveActiveBody();
+					} catch (Exception e) {
+						if (e.getMessage().startsWith("Unrecognized bytecode instruction: 168") &&
+								Project.v().isLibClass(clz.toString())) {
+							logger.warn("\nError with underlying Soot translation for method {} {}. It is a method from a jar" +
+									"library.  Ignoring error and continuing...\n", method, clz);
+							clz.removeMethod(method);
+							continue;
+						} else {
+							throw new Exception();
+						}
+					}
 					Chain<Unit> units = stmtBody.getUnits();
 					Iterator<Unit> stmtIt = units.snapshotIterator();
 					while (stmtIt.hasNext()) {
