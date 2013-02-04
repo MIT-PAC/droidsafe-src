@@ -7,6 +7,9 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.w3c.dom.*;
 
+import soot.Scene;
+import soot.SootClass;
+
 import droidsafe.analyses.CallGraphFromEntryPoints;
 
 import javax.xml.parsers.DocumentBuilderFactory;
@@ -33,6 +36,9 @@ public class AndroidManifest {
   public List<Service> services = new ArrayList<Service>();
   public List<Receiver> receivers = new ArrayList<Receiver>();
   public List<Provider> providers = new ArrayList<Provider>();
+  /** All component classes registered in the manifest */
+  Set<SootClass> components = new LinkedHashSet<SootClass>();
+  
   public UsesSDK uses_sdk = null;
   public List<UsesPermission> uses_permissions 
     = new ArrayList<UsesPermission>();
@@ -60,6 +66,13 @@ public class AndroidManifest {
 
     this.manifest = new Manifest (null, e);
  }
+
+  /**
+   * Return the set of all components as sootclasses.
+   */
+  public Set<SootClass> getComponents() {
+	  return components;
+  }
 
   /** 
    * Process a node in an AndroidManifest and any of its childen.  Upon
@@ -105,7 +118,6 @@ public class AndroidManifest {
     }
   }
 
-  
 
   /** Manifest is the top level of the Android Manifest **/
   class Manifest extends BaseElement {
@@ -147,8 +159,38 @@ public class AndroidManifest {
       return name;
     }
   }
+  
+  public abstract class ComponentBaseElement extends BaseElement {
+	  public SootClass sootClass;
+	  
+	  public ComponentBaseElement (Node n, BaseElement parent) throws 
+	        InvalidPropertiesFormatException {
+		  super(n, parent);
+	  }
+	  
+	  public void setSootClass(String name) {
+		  String className;
+		  
+		  if (name.startsWith("."))
+				className = Resources.v().package_name + name;
+			else 
+				className = name;
+		  
+		  try {
+			  sootClass = Scene.v().getSootClass(className);
+		  } catch (Exception e) {
+			  logger.error("Unable to resolve underlying class for component: {}", name);
+			  System.exit(1);
+		  }
+		  
+	  }
+	  
+	  public SootClass getSootClass() {
+		  return sootClass;
+	  }
+  }
 
-  class Activity extends BaseElement {
+  public class Activity extends ComponentBaseElement {
 
     /** The resource number of the view associated with this activity **/
     Set<Integer> content_views = new LinkedHashSet<Integer>();
@@ -156,7 +198,7 @@ public class AndroidManifest {
     public String label;
     public String name;
     public List<IntentFilter> intent_filters = new ArrayList<IntentFilter>();
-
+        
     public Activity (BaseElement parent, Node n) 
       throws InvalidPropertiesFormatException {
 
@@ -188,7 +230,7 @@ public class AndroidManifest {
 
   }
 
-  public class Service extends BaseElement {
+  public class Service extends ComponentBaseElement {
 
     public boolean enabled;
     public boolean exported;
@@ -239,7 +281,7 @@ public class AndroidManifest {
 
   }
 
-  public class Receiver extends BaseElement {
+  public class Receiver extends ComponentBaseElement {
 
     @Attribute public boolean enabled = true;
     @Attribute public boolean exported = true;
@@ -309,7 +351,7 @@ public class AndroidManifest {
    * using and developing content providers, see the API Guide,
    * Content Providers.
    */
-  public class Provider extends BaseElement {
+  public class Provider extends ComponentBaseElement {
 
     @Attribute public String authorities;
     @Attribute public boolean enabled = true;

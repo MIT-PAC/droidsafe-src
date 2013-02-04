@@ -179,8 +179,13 @@ public class Harness {
 									"library.  Ignoring error and continuing...\n", method, clz);
 							clz.removeMethod(method);
 							continue;
+						} if (Project.v().isLibClass(clz.toString())) {
+							logger.warn("\nError with in analyzing library method. Ignoring and continuing...\n", method, clz);
+							clz.removeMethod(method);
+							continue;
 						} else {
-							throw new Exception();
+							logger.error("Unknown error in building Harness", e);
+							System.exit(1);
 						}
 					}
 					Chain<Unit> units = stmtBody.getUnits();

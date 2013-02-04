@@ -130,7 +130,7 @@ public class RCFGToSSL {
 				constants.add(new StringValue(value));
 			} else if (node instanceof ClassConstantNode) {
 				//create a new concrete arg value just in case this is all constants
-				constants.add(new ClassValue(((ClassConstantNode)node).getClassConstant().toString()));
+				constants.add(new ClassValue(((ClassConstantNode)node).getClassConstant().getValue()));
 			} else {
 				allConstants = false;
 				break;
@@ -177,7 +177,7 @@ public class RCFGToSSL {
 			listArg.add(new StringValue(((StringConstant)value).value));
 			return listArg;
 		} else if (value instanceof ClassConstant) {
-			listArg.add(new ClassValue(((ClassConstant)value).value));
+			listArg.add(new ClassValue(((ClassConstant)value).getValue()));
 			return listArg;
 		} else 
 			return new TypeValue(type);

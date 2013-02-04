@@ -8,7 +8,7 @@ public class ClassValue  extends ConcreteArgumentValue {
 
 	public ClassValue(String value) {
 		super();
-		this.value = value;
+		this.value = value.replaceAll("/", ".");
 	}
 
 	@Override

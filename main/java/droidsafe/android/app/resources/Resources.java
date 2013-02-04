@@ -41,6 +41,9 @@ import com.sun.org.apache.bcel.internal.classfile.JavaClass;
 
 import droidsafe.analyses.CallGraphFromEntryPoints;
 import droidsafe.android.app.resources.AndroidManifest.Activity;
+import droidsafe.android.app.resources.AndroidManifest.Provider;
+import droidsafe.android.app.resources.AndroidManifest.Receiver;
+import droidsafe.android.app.resources.AndroidManifest.Service;
 import droidsafe.android.app.resources.Layout.View;
 import droidsafe.android.system.Components;
 
@@ -96,6 +99,10 @@ public class Resources {
 		return v;
 	}
 	
+	public AndroidManifest getManifest() {
+		return manifest;
+	}
+	
 	public static void resolveManifest(String rootDir)  {
 		try {
 			v = new Resources (new File (rootDir));
@@ -118,14 +125,35 @@ public class Resources {
 			String package_name = am.manifest.package_name;
 
 			// Process the activities of the application
-			for (Activity a : v.manifest.activities)
+			for (Activity a : v.manifest.activities) {
 				v.process_activity (a);
+				a.setSootClass(a.name);
+				am.components.add(a.getSootClass());
+			}
 
 			// Process all of the layouts
 			for (Layout l : v.layouts) {
 				logger.info ("  Processing layout {}\n", l.name);
 				v.process_view (l, l.view);
-			} 
+			}
+		
+			//set all the underlying soot classes for the components 
+			//other than activity
+			for (Service s : v.manifest.services) {
+				s.setSootClass(s.name);
+				am.components.add(s.getSootClass());
+			}
+			
+			for (Provider p : v.manifest.providers) {
+				p.setSootClass(p.name);
+				am.components.add(p.getSootClass());
+			}
+			
+			for (Receiver r : v.manifest.receivers) {
+				r.setSootClass(r.name);
+				am.components.add(r.getSootClass());
+			}
+			
 			v.resolved = true;
 		} catch (Exception e) {
 			logger.error("Error resolving resources and manifest: ", e);
@@ -217,11 +245,14 @@ public class Resources {
 			className = activity.name;
 		
 		final SootClass cn = Scene.v().getSootClass(className);
+		
 		if (!Scene.v().containsClass(className) || cn == null) {
 			logger.error ("No class file found for manifest activity '{}' "
 					+ "(package {})", activity.name, package_name);
 			System.exit(1);
 		}
+		
+		
 		
 		logger.info ("read in class file " + cn.getName());
 

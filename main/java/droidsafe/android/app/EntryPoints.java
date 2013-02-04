@@ -19,6 +19,8 @@ import soot.Scene;
 import soot.SootClass;
 import soot.SootMethod;
 
+import droidsafe.android.app.resources.AndroidManifest.Activity;
+
 /**
  * Calculate the entry points of the android application we are analyzing.
  * Must be called after soot has been configured.
@@ -28,9 +30,6 @@ import soot.SootMethod;
  */
 public class EntryPoints {
 	private final static Logger logger = LoggerFactory.getLogger(EntryPoints.class);
-	
-	/** if true then search for entry points in libraries */
-	private static final boolean ENTRY_POINTS_IN_LIBRARIES = true;
 	
 	private Set<SootMethod> appEntryPoints;
 	
@@ -75,6 +74,7 @@ public class EntryPoints {
      */
     public void calculate() {
     	calculated = true;
+    	
     	for (SootClass clazz : Scene.v().getApplicationClasses()) {
     		if (clazz.isInterface() || clazz.getName().equals(Harness.HARNESS_CLASS_NAME))
     			continue;
@@ -89,9 +89,10 @@ public class EntryPoints {
     		if (!Hierarchy.v().isAndroidComponentClass(clazz))
     			continue;
     		
-    		//don't add modeling for library classes if we want to ignore them
-    		if (!ENTRY_POINTS_IN_LIBRARIES && Project.v().isLibClass(clazz.getName()))
+    		if (!Resources.v().getManifest().getComponents().contains(clazz)) {
+    			logger.info("Class for component found, but it is not in manifest, so ignoring: {}", clazz.toString());
     			continue;
+    		}
     		
     		//Messages.log("Checking class for missing modeling: " + clazz.getName());
     			    	
