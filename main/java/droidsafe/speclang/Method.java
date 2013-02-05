@@ -31,11 +31,11 @@ public class Method implements Comparable<Method> {
 	/** argument full qualified types */
 	private ArgumentValue[] args;
 	/** receiver (could be a type or an object reference) */
-	private String receiver;
+	private Object receiver;
 	/** locations where this method, either a call or a handler appear in source */
 	private List<SourceLocationTag> lines;
 
-	public Method(SootMethod method, ArgumentValue[] args, String receiver) {
+	public Method(SootMethod method, ArgumentValue[] args, Object receiver) {
 		this.sootMethod = method;
 		this.args = args;
 		this.receiver = receiver;
@@ -144,47 +144,6 @@ public class Method implements Comparable<Method> {
 		Collections.sort(lines);
 	}
 	
-
-	/**
-	 * Create a new method from a soot method signature.
-	 * 
-	 * @param sootSig The soot method signature string
-	 */
-	public Method(String sootSig) {
-		//<android.media.MediaRecorder: void setOutputFile(java.lang.String)>
-		Pattern sigRE = Pattern.compile("<(\\S+): (\\S+) (\\S+)\\((.*)\\)>");
-		Matcher matcher = sigRE.matcher(sootSig);
-		boolean b = matcher.matches();
-		
-		if (!b && matcher.groupCount() != 4)
-			Utils.ERROR_AND_EXIT(logger,"Cannot create Method from DroidBlaze Signature");
-		
-		//class
-		String cname = matcher.group(1);
-		//return-type
-		String rtype = matcher.group(2);
-		//name
-		String name = matcher.group(3);
-		//args, create the args string array
-		String args = matcher.group(4);
-		StringTokenizer st = new StringTokenizer(args, ",");
-		
-		ArgumentValue[] argsArr = new ArgumentValue[st.countTokens()];
-		int i = 0;
-		while (st.hasMoreTokens()) {
-			argsArr[i++] = new TypeValue(st.nextToken());
-		}
-		
-		/*
-		this.cname = cname;
-		this.upperMostCName = cname;
-		this.args = argsArr;
-		this.methName = name;
-		this.rtype = rtype;
-		this.lines = new ArrayList<SourceLocationTag>();
-		this.receiver = "";
-		*/
-	}
 	
 	public boolean hasReceiver() {
 		return receiver != null && !receiver.equals("");			
@@ -238,9 +197,11 @@ public class Method implements Comparable<Method> {
         String ret = "";
 
         if (hasReceiver()) 
-			ret += receiver + " ";
+			ret += receiver;
+        else 
+        	ret += getCname();
 		
-		ret += getCname() + ": " + getRtype() + " " + this.getName() + "(";
+		ret += ": " + getRtype() + " " + this.getName() + "(";
 		
 		for (int i = 0; i < args.length; i++) {
           if (i > 0)
@@ -345,7 +306,7 @@ public class Method implements Comparable<Method> {
 		return true;
 	}
 
-	public void setReceiver(String rec) {
+	public void setReceiver(Object rec) {
 		this.receiver = rec;
 	}
 	
@@ -361,7 +322,7 @@ public class Method implements Comparable<Method> {
 		return args;
 	}
 
-	public String getReceiver() {
+	public Object getReceiver() {
 		return receiver;
 	}
 

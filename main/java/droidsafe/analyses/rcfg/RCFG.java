@@ -136,34 +136,20 @@ public class RCFG {
 		visited.add(edgeInto);
 		visitedMethods.add(method);
 		
+		Set<Edge> appEdgesOut = new LinkedHashSet<Edge>();
+		Set<Edge> allEdges = new LinkedHashSet<Edge>();
+		
 		//find all calls to api and save context and call to rCFGNode
-		Set<Edge> edgesOut = csEdgesOutOf(edgeInto);
-		edgesOut.addAll(edgesFromAPIAllocs(edgeInto));
-		List<Edge> appEdgesOut = new LinkedList<Edge>();
 		
-		for (Edge edge : edgesOut) {
-			//logger.info("Looking at method call for: {}->{} ({}).", edge.src(), edge.tgt(), edge.srcStmt());
-			if (API.v().isSystemMethod(edge.tgt())) {
-				if (!IGNORE_SYS_METHOD_WITH_NAME.contains(edge.tgt().getName()) &&
-						API.v().isInterestingMethod(edge.tgt())) {
-					logger.info("Found output event: {}", edge);
-					SourceLocationTag line = SootUtils.getSourceLocation(edge.srcStmt(), edge.src().getDeclaringClass());
-					OutputEvent oe = new OutputEvent(edge, edgeInto, rCFGNode, line);
-					rCFGNode.addOutputEvent(oe);
-				}
-				//do something to save the method and context (args and this)
-			} else {
-				
-				//TODO: For now ignore library methods from the ignore list
-				if (IGNORE_SYS_METHOD_WITH_NAME.contains(edge.tgt().getName()) &&
-						Project.v().isLibClass(edge.tgt().getDeclaringClass().toString()))
-					continue;
-				//it is an app edge, so recurse into later
-				appEdgesOut.add(edge);
-			}
-		}
+		//first check on the calls directly in the call graph
+		//and do this in a context sensitive way
+		csEdges(rCFGNode, edgeInto, appEdgesOut, allEdges);
+		//next add calls that can happen in the runtime for any
+		//api objects that are created
+		edgesFromAPIAllocs(rCFGNode, edgeInto, appEdgesOut, allEdges);
 		
-		checkForCompleteness(edgesOut, method);
+		
+		checkForCompleteness(allEdges, method);
 		
 		//recurse into all calls of app methods
 		for (Edge edge : appEdgesOut) {
@@ -173,6 +159,37 @@ public class RCFG {
 		}
 		
 		//maybe cache methods at a certain depth if there are other edges into it
+	}
+	
+	/** 
+	 * Found an edge that could be an output event or an app edge, 
+	 * 
+	 * if an output event create one and add necessary information, 
+	 * 
+	 * if an app edge, add edge to the set of app edges to inspect
+	 */
+	private void processEdge(RCFGNode rCFGNode, Edge edge, Edge edgeInto, 
+			AllocNode receiver, Set<Edge> appEdgesOut, Set<Edge> allEdges) {
+		allEdges.add(edge);
+		//logger.info("Looking at method call for: {}->{} ({}).", edge.src(), edge.tgt(), edge.srcStmt());
+		if (API.v().isSystemMethod(edge.tgt())) {
+			if (!IGNORE_SYS_METHOD_WITH_NAME.contains(edge.tgt().getName()) &&
+					API.v().isInterestingMethod(edge.tgt())) {
+				logger.info("Found output event: {}", edge);
+				SourceLocationTag line = SootUtils.getSourceLocation(edge.srcStmt(), edge.src().getDeclaringClass());
+				OutputEvent oe = new OutputEvent(edge, edgeInto, rCFGNode, receiver, line);
+				rCFGNode.addOutputEvent(oe);
+			}
+			//do something to save the method and context (args and this)
+		} else {
+			
+			//TODO: For now ignore library methods from the ignore list
+			if (IGNORE_SYS_METHOD_WITH_NAME.contains(edge.tgt().getName()) &&
+					Project.v().isLibClass(edge.tgt().getDeclaringClass().toString()))
+				return;
+			//it is an app edge, so recurse into later
+			appEdgesOut.add(edge);
+		}
 	}
 	
 	/**
@@ -231,17 +248,23 @@ public class RCFG {
 		}
 	}
 	
-	private List<Edge> edgesFromAPIAllocs(Edge edgeInto) {
-		List<Edge> newEdges = new LinkedList<Edge>();
+	/***
+	 * We have to be extra careful for calls with the receiver as a generated alloc expression
+	 * from an api call (see droidsafe.transforms.AddAllocsForAPICalls).  We don't know the exact type
+	 * of the expression, so we need to add calls for all overriding methods of the receiver and method
+	 * combination.
+	 */
+	private void edgesFromAPIAllocs(RCFGNode rCFGNode, Edge edgeInto, 
+			Set<Edge> appEdgesOut, Set<Edge> allEdges) {
 		SootMethod src = edgeInto.tgt();
 
 		if (src.isNative()) {
 			logger.warn("Found a native method during analysis: {}. It could do anything!", src);
-			return newEdges;
+			return;
 		}
 			
 		if (!src.isConcrete())
-			return newEdges;
+			return;
 			
 		StmtBody stmtBody = (StmtBody)src.getActiveBody();
 
@@ -297,13 +320,13 @@ public class RCFG {
 					
 					for (SootMethod m : allMethods) {
 						Edge newEdge = new Edge(src, stmt, m);
-						newEdges.add(newEdge);
+						processEdge(rCFGNode, newEdge, edgeInto, null, appEdgesOut, allEdges);
 					}
 				}
 			}
 		}
 
-		return newEdges;
+		return;
 	}
 
 	/**
@@ -325,21 +348,20 @@ public class RCFG {
 		return null;
 	}
 	
-	private Set<Edge> csEdgesOutOf(Edge edgeInto) {
+	private void csEdges(RCFGNode rCFGNode, Edge edgeInto, Set<Edge> appEdgesOut, Set<Edge> allEdges) {
 		SootMethod method = edgeInto.tgt();
-		Set<Edge> csEdges = new LinkedHashSet<Edge>();
 		Iterator<Edge> ciEdges = sparkCG.edgesOutOf(method);
 		
 		//iterate over all the ci edges from soot, and check to see
-		//if they are valid given 
+		//if they are valid given the context
 		while (ciEdges.hasNext()) {
 			Edge curEdge = ciEdges.next();
 			SootMethod target = curEdge.tgt();
 			//get the internal edge from the CS analysis
 			CgEdge cgEdge = ptsProvider.getInternalEdgeFromSootEdge(curEdge);
 			if (cgEdge == null) {
-				//hmm, edge is not in the cs call graph at all, add it just in case...
-				csEdges.add(curEdge);
+				//hmm, edge is not in the cs call graph at all, process it just in case...
+				processEdge(rCFGNode, curEdge, edgeInto, null, appEdgesOut, allEdges);
 				continue;
 			}
 			
@@ -350,13 +372,12 @@ public class RCFG {
 			//otherwise check in the context if it is a valid edge
 			if (cgEdge.base_var != null && !ptsProvider.thread_run_callsites.contains(curEdge.srcStmt())) { 
 				//virtual call
-				boolean keepEdge = false;
 				
 				for (AllocNode an : GeoPTA.v().getPTSet(cgEdge.base_var, edgeInto)) {
 					Type t = an.getType();
 					if ( t instanceof AnySubType ||
 							 t instanceof ArrayType ) {
-						keepEdge = true;
+						processEdge(rCFGNode, curEdge, edgeInto, null, appEdgesOut, allEdges);
 						break;
 					}
 					
@@ -372,20 +393,24 @@ public class RCFG {
 					
 					// Only the virtual calls do the following test
 					if ( resolved == target ) {
-						keepEdge = true;
+						processEdge(rCFGNode, curEdge, edgeInto, an, appEdgesOut, allEdges);
 						break;
 					}					
 				}
-				if (keepEdge) {
-					csEdges.add(curEdge);
-				}
 			} else {
 				//not a virtual call, always add
-				csEdges.add(curEdge);
+				InstanceInvokeExpr invoke = SootUtils.getInstanceInvokeExpr(curEdge.srcStmt());
+				if (invoke != null) {
+					for (AllocNode node : GeoPTA.v().getPTSet(invoke.getBase(), edgeInto)) {
+						processEdge(rCFGNode, curEdge, edgeInto, node, appEdgesOut, allEdges);
+					}
+					
+				} else  //no receiver  
+					processEdge(rCFGNode, curEdge, edgeInto, null, appEdgesOut, allEdges);
 			}
 		}
 	
-		return csEdges;
+		return;
 	}
 
 	

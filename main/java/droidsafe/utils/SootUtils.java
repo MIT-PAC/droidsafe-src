@@ -630,7 +630,7 @@ public class SootUtils {
 	}
 	
 	/**
-	 * Starting at a class, return all the set of all concrete classes that implement then class,
+	 * Starting at a class, return all the set of all concrete classes that implement the class,
 	 * stop the search at each concrete class at each branch.  So if we pass in a concrete class, just return it.
 	 */
 	public static List<SootClass> smallestConcreteSetofImplementors(SootClass clz) {

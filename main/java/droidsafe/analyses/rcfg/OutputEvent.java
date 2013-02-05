@@ -23,6 +23,7 @@ import soot.jimple.DynamicInvokeExpr;
 import soot.jimple.InstanceInvokeExpr;
 import soot.jimple.InvokeExpr;
 import soot.jimple.InvokeStmt;
+import soot.jimple.SpecialInvokeExpr;
 import soot.jimple.Stmt;
 import soot.jimple.StringConstant;
 import soot.jimple.spark.pag.AllocNode;
@@ -45,15 +46,16 @@ public class OutputEvent {
 	/** The invoke expression call to an API method, might be null EX finalize*/
 	private InvokeExpr invokeExpr;
 	/** The parent RFCG Node */
-	private RCFGNode parent;	
+	private RCFGNode parent;
 	private SourceLocationTag linesTag = null;
-	/** the defined target of the output event */
-	private SootMethod target = null;
+	/** The specific receiver node that triggers this output event */
+	private AllocNode receiverNode;
 	
-	public OutputEvent(Edge thisEdge, Edge contextEdge, RCFGNode parent, SourceLocationTag ln) {
+	public OutputEvent(Edge thisEdge, Edge contextEdge, RCFGNode parent, AllocNode receiverNode, SourceLocationTag ln) {
 		this.thisEdge = thisEdge;
 		this.contextEdge = contextEdge;
 		this.parent = parent;
+		this.receiverNode = receiverNode;
 		this.linesTag = ln;
 		
 		setInvoke();
@@ -88,6 +90,20 @@ public class OutputEvent {
 			logger.error("Cannot find context invoke expr in context: {}.", context);
 			System.exit(1);
 		}
+		/* TODO: put this check back in when we have correctly implemented calls on generated API allocs
+		if (invokeExpr instanceof SpecialInvokeExpr) {
+			Set<AllocNode> nodes = GeoPTA.v().getPTSet(((SpecialInvokeExpr)invokeExpr).getBase(), contextEdge);
+			if (nodes.size() != 1) {
+				logger.error("Found special invoke expr with an strange PTA set: {} has size {}", invokeExpr, nodes.size());
+				System.exit(1);
+			}
+			receiverNode = nodes.iterator().next();
+		}
+		
+		if (hasReceiver() != (invokeExpr instanceof InstanceInvokeExpr)) {
+			logger.error("Presense of receiver is wrong for invoke expr type: {} and {} receiver (line {}).", invokeExpr, hasReceiver(), linesTag);
+			System.exit(1);
+		}*/
 		
 		//do some checks for things we might not fully understand yet.
 		if (invokeExpr instanceof DynamicInvokeExpr) {
@@ -107,7 +123,7 @@ public class OutputEvent {
 	 * @return
 	 */
 	public boolean hasReceiver() {
-		return (invokeExpr instanceof InstanceInvokeExpr); 
+		return receiverNode != null; 
 	}
 	
 	
@@ -116,7 +132,8 @@ public class OutputEvent {
 	 */
 	public Value getReceiver() {
 		if (!hasReceiver()) {
-			Utils.ERROR_AND_EXIT(logger, "Trying to get receiver for output event without one: {}.", this.toString());
+			logger.error("Trying to get receiver for output event without one: {}.", this.toString());
+			System.exit(1);
 		}
 		
 		return ((InstanceInvokeExpr)invokeExpr).getBase();
@@ -134,15 +151,17 @@ public class OutputEvent {
 	 * Return the points to set of the receiver (if it exists) in the context of this
 	 * output event.
 	 */
-	public Set<AllocNode> getReceiverPTSet() {
-		return GeoPTA.v().getPTSet(getReceiver(), contextEdge);
+	public AllocNode getReceiverAlloc() {
+		getReceiver();
+		
+		return receiverNode; 
 	}
 	
 	/**
-	 * Return all of the types possible in the points to set of the receiver.
+	 * Return the type in the points to set of the receiver.
 	 */
-	public Set<Type> getReceiverTypes() {
-		return GeoPTA.v().getTypes(getReceiver(), contextEdge);		
+	public Type getReceiverType() {
+		return receiverNode.getType();
 	}
 	
 	/**
@@ -206,9 +225,9 @@ public class OutputEvent {
 		if (hasReceiver()) {
 			formatter.format("\tReceiver: %s (%s)\n", getReceiver(), getReceiver().getClass());
 			str.append("\t\tPT Set:\n");
-			for (AllocNode node : getReceiverPTSet()) {
-				formatter.format("\t\tNode: %s (%s)\n", node, node.getClass());
-			}
+			
+			formatter.format("\t\tNode: %s (%s)\n", receiverNode, receiverNode.getClass());
+			
 			for (int i = 0; i < getNumArgs(); i++) {
 				if (isArgPointer(i)) {
 					Set<AllocNode> nodes = getArgPTSet(i);

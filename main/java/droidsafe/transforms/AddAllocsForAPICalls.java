@@ -40,6 +40,17 @@ import droidsafe.android.app.Project;
 import droidsafe.android.system.API;
 import droidsafe.utils.SootUtils;
 
+/**
+ * This transformation creates allocation statements so that the underlying PTA can 
+ * know about objects that are returned from API methods.  The problem we are solves is 
+ * that we are not analyzing the API code directly, so if a method returns an object,
+ * we don't see the allocation site for the object, and the PTA will not know about it.
+ * So we patch the pta by creating an explicit allocation for the return object of any api 
+ * call that returns an api object.  This allocation is added right after the call.
+ * 
+ * @author mgordon
+ *
+ */
 public class AddAllocsForAPICalls extends BodyTransformer {
 	private final static Logger logger = LoggerFactory.getLogger(AddAllocsForAPICalls.class);
 	private Set<NewExpr> generatedExpr;
@@ -114,17 +125,33 @@ public class AddAllocsForAPICalls extends BodyTransformer {
 				List<Stmt> stmts = getNewArrayAndAlloc(target, stmtBody, origAssign.getLeftOp());
 				units.insertAfter(stmts, stmt);
 			} else {
-				logger.debug("Instrumenting call to %s with new alloc node\n", target);
+				logger.debug("Instrumenting call to {} with new alloc node\n", target);
 				//create a new express for each concrete type that this return type could take on
 				//if it is already a concrete just, then just use this, have to search for concrete
 				//if abstract or interface.
+				SootClass returnClass = ((RefType)target.getReturnType()).getSootClass();
+				SootClass lvalClass = ((RefType)origAssign.getLeftOp().getType()).getSootClass();
 				
-				List<SootClass> clzs = SootUtils.smallestConcreteSetofImplementors(((RefType)target.getReturnType()).getSootClass());
+				List<SootClass> clzs = SootUtils.smallestConcreteSetofImplementors(returnClass);
+				Set<SootClass> visited = new LinkedHashSet<SootClass>();
+				
 				for (SootClass clz : clzs) {
-					NewExpr newExpr = Jimple.v().newNewExpr(RefType.v(clz));
-					generatedExpr.add(newExpr);
-					AssignStmt assignStmt = Jimple.v().newAssignStmt(origAssign.getLeftOp(), newExpr);
-					units.insertAfter(assignStmt, stmt);
+					//between the defined return type and the type of anything 
+					SootClass narrower = SootUtils.narrowerClass(clz, lvalClass);
+					
+					//this class is not related to the defined class of the lval
+					//can't instantiate
+					if (narrower == null) 
+						continue;
+					//add an new expr for the more specific class between the defined
+					//type of the lval and this current class that the reference could take on
+					if (!visited.contains(narrower)) {
+						NewExpr newExpr = Jimple.v().newNewExpr(RefType.v(clz));
+						generatedExpr.add(newExpr);
+						AssignStmt assignStmt = Jimple.v().newAssignStmt(origAssign.getLeftOp(), newExpr);
+						units.insertAfter(assignStmt, stmt);
+						visited.add(narrower);
+					}
 				}
 			}
 		}
