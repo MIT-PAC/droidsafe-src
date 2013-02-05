@@ -289,17 +289,40 @@ public class SecuritySpecification  {
 
             List<String> methods = new ArrayList<String>();
             List<String> banned_methods = new ArrayList<String>();
-        	for (Method oe : outm) {
-              // String dbSig = oe.toDroidBlazeString(true);
-              // boolean unsup = !InterestingMethods.isSupportedMethod(dbSig);
-              // if (unsup) {
-              //   banned_methods.add (dbSig);
-              // }
-                
-                methods.add (html_api_call (oe));
+
+            // Determine the set of descriptors for all of the methods
+            Set<String> all_descrs = new LinkedHashSet<String>();
+        	for (Method oe : outm) { 
+              all_descrs.addAll (api_descriptors (oe));
         	} 
-            for (String m : methods) {
-                buf.append (m + "<br>\n");
+            List<String> all_descrs_sorted = new ArrayList<String>();
+            all_descrs_sorted.addAll (all_descrs);
+            Collections.sort (all_descrs_sorted);
+
+            // Loop through each descriptor and print the methods for each
+            for (String descr : all_descrs_sorted) {
+              String mstr = "";
+              int danger = -100;
+              for (Method oe : outm) { 
+                if (api_descriptors (oe).contains (descr)) {
+                  mstr +=  html_api_call (oe);
+                  mstr += "<br>\n";
+                  int d = api_danger(oe);
+                  if (d > danger)
+                    danger = d;
+                }
+              } 
+              String style = "";
+              if (danger > 0)
+                style = "color:red";
+              else if (danger < 0)
+                style = "color:green";
+              descr = String.format ("<span style='%s'>%s</span>", style, 
+                                     descr);
+              buf.append ("<h4> Descriptor " + descr + "</h4>\n");
+              buf.append ("<div style='padding-left:20px'>\n");
+              buf.append (mstr);
+              buf.append ("</div>\n");
             }
             Collections.sort (banned_methods);
             if (false) {
@@ -319,7 +342,7 @@ public class SecuritySpecification  {
         for (String m : all_banned_methods)
           buf.append (m + "<br>\n");
         return buf.toString();
-	}
+    }
 
   /** Header for JQuery **/
   public String jquery_header (String title) {
@@ -331,7 +354,7 @@ public class SecuritySpecification  {
       + "<script src='http://people.csail.mit.edu/jhp/utils.js'></script>\n"
       + "<script src='http://code.jquery.com/ui/1.10.0/jquery-ui.js'></script>\n"
       + "<link rel='stylesheet' href='http://code.jquery.com/ui/1.10.0/themes/base/jquery-ui.css' />\n"
-      + "<style> a {text-decoration:none} </style>\n"
+      + "<style> a {text-decoration:none} h4 {margin-top:0px;margin-bottom:0px;} </style>\n"
       + "</head>\n"
       + "<body>\n"
 	  + "<h1>" + title + "</h1>\n";
@@ -668,4 +691,67 @@ public class SecuritySpecification  {
 		
 		return methods;
 	}
+
+  /** 
+   * Returns the relative dangerousness of the API.  0 is average,
+   * Negative numbers are safer, positive numbers are more dangerous.
+   */
+  public int api_danger (Method m) {
+    
+    int danger = 0;
+    String cname = m.getCname();
+    String sig = m.getSignature();
+    String perms = api_descriptors(m).toString();
+
+    if (perms.contains ("intent"))
+      danger++;
+    if (perms.contains ("permission"))
+      danger++;
+    if (perms.contains ("reflect") || perms.contains("thread") 
+        || perms.contains ("loader"))
+      danger++;
+
+    if ((danger == 0) && (perms.contains("gui")))
+      danger--;
+
+    return danger;
+  }
+
+  /** Returns a set of descriptors for each method **/
+  public Set<String> api_descriptors (Method m) {
+
+    Set<String> apid = new LinkedHashSet<String>();
+    apid.addAll (m.getPermissions());
+    String cname = m.getCname();
+    String sig = m.getSignature();
+
+    if (cname.startsWith ("java")) {
+      if (cname.contains ("reflect"))
+        apid.add ("java.reflection");
+      else if (cname.contains(".io") || cname.contains (".nio"))
+        apid.add ("java.io");
+      else if (cname.contains (".net"))
+        apid.add ("java.net");
+      else if (cname.contains (".rmi"))
+        apid.add ("java.rmi");
+      else if (cname.contains ("Thread") || cname.contains ("Runnable") 
+               || (cname.contains ("Process")))
+        apid.add ("java.thread");
+      else if (cname.contains ("Loader"))
+        apid.add ("java.classloader");
+    } else if (cname.startsWith ("android")) {
+      // Anything that is in the Intent class or passed an intent
+      if (sig.contains ("Intent"))
+        apid.add ("android.intent");
+      if (cname.contains ("opengl"))
+        apid.add ("android.gui");
+    }
+
+    if (apid.size() == 0)
+      apid.add ("misc");
+
+    return apid;
+  }
+         
+      
 }

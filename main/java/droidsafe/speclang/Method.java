@@ -8,6 +8,7 @@ import java.util.List;
 import java.util.StringTokenizer;
 import java.util.regex.Pattern;
 import java.util.regex.Matcher;
+import java.util.Set;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -187,6 +188,11 @@ public class Method implements Comparable<Method> {
 		
         return ret + toSignatureString();
 	}
+
+    /** Return the permissions this method requires **/
+    public Set<String> getPermissions() {
+      return Permissions.v().getPermissions(sootMethod);
+    }
 	
     /**
      * Returns the signature portion of the string in security spec format
