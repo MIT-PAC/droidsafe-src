@@ -9,6 +9,7 @@ import org.w3c.dom.*;
 
 import soot.Scene;
 import soot.SootClass;
+import soot.SootMethod;
 
 import droidsafe.analyses.CallGraphFromEntryPoints;
 
@@ -176,10 +177,18 @@ public class AndroidManifest {
 			else 
 				className = name;
 		  
+		  
+		  
 		  try {
+			  if (!Scene.v().containsClass(className))
+				  throw new Exception();
+			  
 			  sootClass = Scene.v().getSootClass(className);
+			  
+			  if (sootClass.isPhantom() || !sootClass.isInScene())
+				  throw new Exception();
 		  } catch (Exception e) {
-			  logger.error("Unable to resolve underlying class for component: {}", name);
+			  logger.error("Unable to resolve underlying class for component in Manifest (Manifest Error): {}", name);
 			  System.exit(1);
 		  }
 		  
