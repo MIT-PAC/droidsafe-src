@@ -69,6 +69,13 @@ public class RCFG {
 	/** list of names of methods to ignore when creating the RCFG output events */
 	private static final Set<String> IGNORE_SYS_METHOD_WITH_NAME = new HashSet(Arrays.asList("<clinit>", "finalize"));
 	
+	private static final Set<String> IGNORE_SYS_METHODS_WITH_SUBSIG = 
+			new HashSet(Arrays.asList(
+					"boolean equals(java.lang.Object)",
+					"int hashCode()",
+					"java.lang.String toString()"
+					));
+	
 	private Set<SootMethod> visitedMethods;
 	
 	public static RCFG v() {
@@ -174,6 +181,7 @@ public class RCFG {
 		//logger.info("Looking at method call for: {}->{} ({}).", edge.src(), edge.tgt(), edge.srcStmt());
 		if (API.v().isSystemMethod(edge.tgt())) {
 			if (!IGNORE_SYS_METHOD_WITH_NAME.contains(edge.tgt().getName()) &&
+					!IGNORE_SYS_METHODS_WITH_SUBSIG.contains(edge.tgt().getSubSignature()) &&
 					API.v().isInterestingMethod(edge.tgt())) {
 				logger.info("Found output event: {}", edge);
 				SourceLocationTag line = SootUtils.getSourceLocation(edge.srcStmt(), edge.src().getDeclaringClass());
