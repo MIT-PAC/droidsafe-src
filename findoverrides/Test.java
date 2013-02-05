@@ -1,7 +1,7 @@
 
 /**
  * <pre>
- * This program lists jdk classes that are overridded by the methods of
+ * This program lists jdk method that are overridded by the methods of
  * an android application.
  *
  * This program links to the verifier, sends bytecode from classes in two
@@ -111,8 +111,8 @@ class Test {
  /**
   * @parents This method fills parents with parents, grandparent, ... of
   *          the class.method given by treenode, methoname, desc.
-  *          parents[parents.size()-1) contains the parent.
-  *          parents[0] containts the great-great... grandparent
+  *          parents[0] contains the parent
+  *          parents[parents.size()-1) contains the great-great... grandparent
   */
   private static void get_parents_recurse(final Visitations visitations,
                                           final Vector<String> parents,
@@ -309,7 +309,6 @@ class Test {
                                 myclassnode.name + "." +
                                 methodnode.name + " " +
                                 methodnode.desc);
-
             for (String parent_classnames : parents) {
               System.out.println("  " + parent_classnames);
             }
@@ -318,12 +317,12 @@ class Test {
 
             // Method vm is an android application         - vm.mark is 0
             // vm overrides a jdk or android system method - parents.size > 0
-            // The jdk/android system method that vm overrides
-            // is parents[parents.size-1]
+            // The jdk/android system method that vm overrides is
+            // parents[0]
             // Put the method that vm overrides in the String format
             // required by Tracks.set_entry_points(Vector<String>)
             // Add the Sting to the Vector entry_points
-            final String class_name = parents.elementAt(parents.size() - 1);
+            final String class_name = parents.elementAt(0);
             final String entry_point = class_name + "." +
                                        methodnode.name + " " +
                                        methodnode.desc;
@@ -356,7 +355,8 @@ class Test {
       // and all VMs from CLASS_LIST_2 have 0 as their mark
       final Vector<String> overrides = Test.find_overrides();
 
-      System.out.println("------------------- ");
+      System.out.println("\n-------------------\n");
+      System.out.println("List of class.methods from LIST_1 that LIST_2 overrides\n");
       for(String str : overrides) {
         System.out.println(str);
       }
