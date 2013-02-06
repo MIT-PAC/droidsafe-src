@@ -38,6 +38,7 @@ public class SecuritySpecification  {
     private boolean jquery_mobile = false;
     String ANDROID_API_BASE = "http://developer.android.com/reference";
     String JAVA_API_BASE = "http://docs.oracle.com/javase/6/docs/api";
+    String TARGET = "iframe_content";
 	
 	public SecuritySpecification() {
 		whitelist = new LinkedHashSet<Method>();
@@ -264,8 +265,12 @@ public class SecuritySpecification  {
     /** Returns an HTML spec with extra information **/
 	public String toHtmlString() {
 		StringBuffer buf = new StringBuffer();
-        buf.append (jquery_header("SpecDump"));
+        buf.append (jquery_header());
 
+        // initialize the columns 
+        buf.append ("<div class=grid>");
+        buf.append ("<div class=col1>");
+        buf.append ("<h1> SpecDump </h1>");
 		buf.append("<h4>whitelist</h4>\n");
         for (Method m : whitelist) {
         	buf.append(m.toString() + "<br>");
@@ -341,11 +346,21 @@ public class SecuritySpecification  {
         buf.append ("\n<p>"+ all_banned_methods.size() +" banned methods<p>\n");
         for (String m : all_banned_methods)
           buf.append (m + "<br>\n");
+
+        // Terminate the overall div and the columns
+        buf.append ("</div>\n"  // column 1 div
+                    + "<div class=col2 id=content>\n"
+                    + "<iframe name=iframe_content height=795px width=100%>\n"
+                    + "</iframe>\n"
+                    + "</div>\n" // column2 div
+                    + "</div>\n" // overall div
+                    );
+
         return buf.toString();
     }
 
   /** Header for JQuery **/
-  public String jquery_header (String title) {
+  public String jquery_header () {
     return "<!DOCTYPE html>\n"
       + "<html>\n"
       + "<head>\n"
@@ -354,10 +369,11 @@ public class SecuritySpecification  {
       + "<script src='http://people.csail.mit.edu/jhp/utils.js'></script>\n"
       + "<script src='http://code.jquery.com/ui/1.10.0/jquery-ui.js'></script>\n"
       + "<link rel='stylesheet' href='http://code.jquery.com/ui/1.10.0/themes/base/jquery-ui.css' />\n"
+      + "<link rel='stylesheet' href='http://people.csail.mit.edu/jhp/specdump.css' />\n"
       + "<style> a {text-decoration:none} h4 {margin-top:0px;margin-bottom:0px;} </style>\n"
       + "</head>\n"
       + "<body>\n"
-	  + "<h1>" + title + "</h1>\n";
+      ;
   }
 
   /** Header for JQueryMobile **/
@@ -430,8 +446,8 @@ public class SecuritySpecification  {
     for (SourceLocationTag loc : locs) {
       String cname = loc.getClz();
       int line = loc.getLine();
-      out += String.format ("<a href=%s#%d> %s:%d</a><br>",
-                            app_source_path (cname), line, cname, line);
+      out += String.format ("<a href=%s#%d target=%s> %s:%d</a><br>",
+                            app_source_path (cname), line, TARGET, cname, line);
     }
     return out;
   }
@@ -454,8 +470,8 @@ public class SecuritySpecification  {
   /** Create HTML for some text that has both a popup and a cross ref **/
   public String html_tooltip_xref (String txt, String popup_txt, String xref) {
 
-      String out = String.format ("<a title='%s' href=%s>%s</a>", 
-                                  popup_txt, xref, txt);
+      String out = String.format ("<a title='%s' target='%s' href=%s>%s</a>", 
+                                  popup_txt, TARGET, xref, txt);
       return out;
   }
 
@@ -511,9 +527,9 @@ public class SecuritySpecification  {
       if (arg.isType()) {
         String full_arg_cname = arg.toString();
         txt += String.format 
-          ("<a href='%s/%s.html' title='%s'><span style='%s'>%s</span></a>",
+          ("<a href='%s/%s.html' target=%s title='%s'><span style='%s'>%s</span></a>",
            ANDROID_API_BASE, 
-           full_arg_cname.replace (".", "/").replace("$", "."), 
+           full_arg_cname.replace (".", "/").replace("$", "."), TARGET,
            full_arg_cname, "color:green", extract_classname (full_arg_cname));
       } else {
         txt += arg.toString();
@@ -539,8 +555,8 @@ public class SecuritySpecification  {
     if (class_name.startsWith ("java"))
       base = JAVA_API_BASE;
     return String.format 
-      ("<a href='%s/%s.html#%s'>%s</a>", 
-       base, class_name, method, txt);
+      ("<a href='%s/%s.html#%s' target=%s>%s</a>", 
+       base, class_name, method, TARGET, txt);
   }
 
 
