@@ -350,7 +350,7 @@ public class SecuritySpecification  {
         // Terminate the overall div and the columns
         buf.append ("</div>\n"  // column 1 div
                     + "<div class=col2 id=content>\n"
-                    + "<iframe name=iframe_content height=795px width=100%>\n"
+                    + "<iframe name=iframe_content height=195px width=100%>\n"
                     + "</iframe>\n"
                     + "</div>\n" // column2 div
                     + "</div>\n" // overall div
@@ -471,10 +471,12 @@ public class SecuritySpecification  {
   }
 
   /** Create HTML for some text that has both a popup and a cross ref **/
-  public String html_tooltip_xref (String txt, String popup_txt, String xref) {
+  public String html_tooltip_xref (String txt, String popup_txt, String attrs,
+                                   String xref) {
 
-      String out = String.format ("<a title='%s' target='%s' href=%s>%s</a>", 
-                                  popup_txt, TARGET, xref, txt);
+      String out = String.format 
+        ("<a title='%s' target='%s' %s href=%s>%s</a>", 
+         popup_txt, TARGET, attrs, xref, txt);
       return out;
   }
 
@@ -581,10 +583,11 @@ public class SecuritySpecification  {
       	src_path = src_path.substring(0, src_path.indexOf("$"));
       }
       src_path = "jsrc/" +  src_path + ".java.html";
-      src_path += "#" + m.getDeclSourceLocation().getLine();
+      // analysis seems to return the following line, so subtract 1
+      src_path += "#" + (m.getDeclSourceLocation().getLine()-1);
             
       out += html_tooltip_xref (extract_classname (full_cname), 
-                                full_cname, "../" + src_path) + ": ";
+                           full_cname, "class=code", "../" + src_path) + ": ";
     
       out += m.getName().replaceAll("<", "&lt;") + " ";
 
