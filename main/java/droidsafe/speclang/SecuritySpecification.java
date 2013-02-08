@@ -286,7 +286,7 @@ public class SecuritySpecification  {
         for (Method ie : entry_points) {
             buf.append (html_entry_point (ie));
 
-            buf.append ("<div style='padding-left:20px'>\n");
+            buf.append ("<div style='padding-left:15px'>\n");
 
             // Sort the api calls from this method
             List<Method> outm = new ArrayList<Method>(eventBlocks.get(ie));
@@ -311,7 +311,6 @@ public class SecuritySpecification  {
               for (Method oe : outm) { 
                 if (api_descriptors (oe).contains (descr)) {
                   mstr +=  html_api_call (oe);
-                  mstr += "<br>\n";
                   int d = api_danger(oe);
                   if (d > danger)
                     danger = d;
@@ -325,7 +324,7 @@ public class SecuritySpecification  {
               descr = String.format ("<span style='%s'>%s</span>", style, 
                                      descr);
               buf.append ("<h4> Descriptor " + descr + "</h4>\n");
-              buf.append ("<div style='padding-left:20px'>\n");
+              buf.append ("<div style='padding-left:15px'>\n");
               buf.append (mstr);
               buf.append ("</div>\n");
             }
@@ -449,7 +448,7 @@ public class SecuritySpecification  {
     for (SourceLocationTag loc : locs) {
       String cname = loc.getClz();
       int line = loc.getLine();
-      out += String.format ("<a href=%s#%d target=%s> %s:%d</a><br>",
+      out += String.format ("<a href=%s#%d class=code target=%s> %s:%d</a><br>",
                             app_source_path (cname), line, TARGET, cname, line);
     }
     return out;
@@ -514,9 +513,13 @@ public class SecuritySpecification  {
     return out;
   }
   
+  /**
+   * Returns the HTML for an API call.  The source line numbers for each
+   * call are included as an expandable box
+   */
   public String html_api_call (Method m) {
 
-    String out = "";
+    String out = "<h5>";
     String full_cname = m.getCname();
     String method_name = m.getName().replaceAll("<", "&lt;") + " ";
     String txt = String.format ("<span style='%s' title='%s'>%s</span>", 
@@ -542,11 +545,16 @@ public class SecuritySpecification  {
       delim = ", ";
     }
     txt += ")";
-    out += txt;
-    String call_txt = String.format ("[%d call%s]", m.get_lines().size(),
-                                     (m.get_lines().size() == 1) ? "" : "s");
-    String calls = html_popup (call_txt, source_locations_xref(m), "calls");
-    return (out + calls + "\n");
+    out += txt + "</h5>";
+    out += "<div style='padding-left:15px' class=calls>";
+    out += source_locations_xref(m);
+    out += "</div>";
+    if (false) {
+      String call_txt = String.format ("[%d call%s]", m.get_lines().size(),
+                                       (m.get_lines().size() == 1) ? "" : "s");
+      String calls = html_popup (call_txt, source_locations_xref(m), "calls");
+    }
+    return (out + "\n");
   }
 
   public String api_xref (String method_sig, String txt) {
