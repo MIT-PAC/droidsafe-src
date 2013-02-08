@@ -430,7 +430,10 @@ public class SecuritySpecification  {
 
     // Remove any internal classes from the name
     filename = filename.replaceFirst ("[$][0-9]+", "");
-
+    if (filename.indexOf("$") > 0) { 
+    	filename = filename.substring(0, filename.indexOf("$"));
+    }
+    
     return "../jsrc/" +  filename + ".java.html";
   }
       
@@ -571,10 +574,15 @@ public class SecuritySpecification  {
     if (jquery) {
       out = "<h3>";
       String full_cname = m.getCname();
-      String src_path = full_cname.replace(".", "/");
+
+      String src_path = full_cname.replace(".", "/");                        
       src_path = src_path.replaceFirst ("[$][0-9]+", "");
+      if (src_path.indexOf("$") > 0) { 
+      	src_path = src_path.substring(0, src_path.indexOf("$"));
+      }
       src_path = "jsrc/" +  src_path + ".java.html";
       src_path += "#" + m.getDeclSourceLocation().getLine();
+            
       out += html_tooltip_xref (extract_classname (full_cname), 
                                 full_cname, "../" + src_path) + ": ";
     
