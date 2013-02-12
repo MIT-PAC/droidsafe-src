@@ -16,9 +16,11 @@ import org.slf4j.LoggerFactory;
 import soot.Scene;
 import soot.SootClass;
 import soot.SootMethod;
+import soot.options.Options;
 import soot.tagkit.LineNumberTag;
 import soot.Type;
 
+import droidsafe.main.Config;
 import droidsafe.utils.SourceLocationTag;
 import droidsafe.utils.Utils;
 import droidsafe.android.system.API;
@@ -174,7 +176,7 @@ public class Method implements Comparable<Method> {
 	public String toString(boolean flagUnsupported) {
 	String ret = "";
 		
-		if (!lines.isEmpty()) {
+		if (!lines.isEmpty() && !Config.v().noSourceInfo) {
 			for (SourceLocationTag line : lines) {
 				ret += "// " + line + "\n";
 			}

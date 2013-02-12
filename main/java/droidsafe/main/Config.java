@@ -32,6 +32,7 @@ public class Config {
 	public String APP_ROOT_DIR;
 	public File ANDROID_LIB_DIR;
 	public String target = "specdump";
+	public boolean noSourceInfo = false;
 	
 	private static final String ANDROID_LIB_DIR_REL = "android-lib";
 	
@@ -70,6 +71,9 @@ public class Config {
 		
 		Option help = new Option( "help", "print this message" );
 		options.addOption(help);
+		
+		Option noSourceInfo = new Option("nosourceinfo", "Do not print source information in spec");
+		options.addOption(noSourceInfo);
 	}
 	
 	/**
@@ -90,6 +94,10 @@ public class Config {
 		if (!Main.TARGETS.contains(target)) {
 			logger.error("Unsupported Target: {}.", target);
 			System.exit(1);
+		}
+		
+		if (cmd.hasOption("nosourceinfo")) {
+			this.noSourceInfo = true;
 		}
 		
 		APP_ROOT_DIR = getPathFromCWD(cmd.getOptionValue("approot"));

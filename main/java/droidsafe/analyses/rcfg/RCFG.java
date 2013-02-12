@@ -113,7 +113,6 @@ public class RCFG {
 			
 			/*if (!EntryPoints.v().isEntryPoint(edge.tgt()))
 				continue;*/
-		
 			startAtEntry(edge);
 		}
 		
@@ -177,6 +176,7 @@ public class RCFG {
 	 */
 	private void processEdge(RCFGNode rCFGNode, Edge edge, Edge edgeInto, 
 			AllocNode receiver, Set<Edge> appEdgesOut, Set<Edge> allEdges) {
+					
 		allEdges.add(edge);
 		//logger.info("Looking at method call for: {}->{} ({}).", edge.src(), edge.tgt(), edge.srcStmt());
 		if (API.v().isSystemMethod(edge.tgt())) {
@@ -406,18 +406,22 @@ public class RCFG {
 					}					
 				}
 			} else {
-				//not a virtual call, always add
-				InstanceInvokeExpr invoke = SootUtils.getInstanceInvokeExpr(curEdge.srcStmt());
-				if (invoke != null) {
-					for (AllocNode node : GeoPTA.v().getPTSet(invoke.getBase(), edgeInto)) {
-						processEdge(rCFGNode, curEdge, edgeInto, node, appEdgesOut, allEdges);
-					}
-					
-				} else  //no receiver  
+				if (curEdge.srcStmt() == null) //probably a call to cinit
 					processEdge(rCFGNode, curEdge, edgeInto, null, appEdgesOut, allEdges);
+				else { //regular call
+					//not a virtual call, always add
+					InstanceInvokeExpr invoke = SootUtils.getInstanceInvokeExpr(curEdge.srcStmt());
+					if (invoke != null) {
+						for (AllocNode node : GeoPTA.v().getPTSet(invoke.getBase(), edgeInto)) {
+							processEdge(rCFGNode, curEdge, edgeInto, node, appEdgesOut, allEdges);
+						}
+
+					} else  //no receiver  
+						processEdge(rCFGNode, curEdge, edgeInto, null, appEdgesOut, allEdges);
+				}
 			}
 		}
-	
+
 		return;
 	}
 

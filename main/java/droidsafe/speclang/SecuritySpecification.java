@@ -591,9 +591,8 @@ public class SecuritySpecification  {
       	src_path = src_path.substring(0, src_path.indexOf("$"));
       }
       src_path = "jsrc/" +  src_path + ".java.html";
-      // analysis seems to return the following line, so subtract 1
-      src_path += "#" + (m.getDeclSourceLocation().getLine()-1);
-            
+      if (m.getDeclSourceLocation() != null)
+    	  src_path += "#" + m.getDeclSourceLocation().getLine();
       out += html_tooltip_xref (extract_classname (full_cname), 
                            full_cname, "class=code", "../" + src_path) + ": ";
     

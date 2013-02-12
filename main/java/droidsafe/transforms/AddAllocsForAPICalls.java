@@ -125,7 +125,7 @@ public class AddAllocsForAPICalls extends BodyTransformer {
 				List<Stmt> stmts = getNewArrayAndAlloc(target, stmtBody, origAssign.getLeftOp());
 				units.insertAfter(stmts, stmt);
 			} else {
-				logger.debug("Instrumenting call to {} with new alloc node\n", target);
+				logger.debug("Instrumenting call to {} with new alloc node in {}\n", target, b.getMethod());
 				//create a new express for each concrete type that this return type could take on
 				//if it is already a concrete just, then just use this, have to search for concrete
 				//if abstract or interface.
