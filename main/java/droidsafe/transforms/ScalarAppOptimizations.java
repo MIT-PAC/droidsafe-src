@@ -21,11 +21,11 @@ public class ScalarAppOptimizations {
 				for (SootMethod meth : clz.getMethods()) {
 					if (!meth.isConcrete())
 						continue;
-					logger.info("Calling Constant Prop and folding on {}", meth);
+					logger.debug("Calling Constant Prop and folding on {}", meth);
 					G.v().soot_jimple_toolkits_scalar_ConstantPropagatorAndFolder().
 						transform(meth.retrieveActiveBody());
 					
-					logger.info("Calling CSE on {}", meth);
+					logger.debug("Calling CSE on {}", meth);
 					G.v().soot_jimple_toolkits_scalar_CommonSubexpressionEliminator().
 						transform(meth.retrieveActiveBody());
 				}

@@ -132,7 +132,7 @@ public class Method implements Comparable<Method> {
 		if (!isSameMethod(meth2))
 			Utils.ERROR_AND_EXIT(logger,"Error: Trying to combine concrete value restrictions on different methods!");
 		
-		logger.info("Calling incorporate method on: {}", meth2);
+		//logger.info("Calling incorporate method on: {}", meth2);
 		
 		for (int i = 0; i < args.length; i++) {
 			args[i] = ArgumentValue.combine(args[i], meth2.args[i], getActualArgType(i)); 

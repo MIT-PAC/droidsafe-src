@@ -159,7 +159,7 @@ public class RCFG {
 		
 		//recurse into all calls of app methods
 		for (Edge edge : appEdgesOut) {
-			logger.info("Visiting edge: {}", edge);
+			logger.debug("Visiting edge: {}", edge);
 			if (!visited.contains(edge))
 				visitNode(edge, rCFGNode, visited);
 		}
@@ -183,7 +183,7 @@ public class RCFG {
 			if (!IGNORE_SYS_METHOD_WITH_NAME.contains(edge.tgt().getName()) &&
 					!IGNORE_SYS_METHODS_WITH_SUBSIG.contains(edge.tgt().getSubSignature()) &&
 					API.v().isInterestingMethod(edge.tgt())) {
-				logger.info("Found output event: {}", edge);
+				logger.debug("Found output event: {}", edge);
 				SourceLocationTag line = SootUtils.getSourceLocation(edge.srcStmt(), edge.src().getDeclaringClass());
 				OutputEvent oe = new OutputEvent(edge, edgeInto, rCFGNode, receiver, line);
 				rCFGNode.addOutputEvent(oe);
