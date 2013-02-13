@@ -1,6 +1,9 @@
 <configuration>
   
   <appender name="FILE" class="ch.qos.logback.core.FileAppender">
+    <filter class="ch.qos.logback.classic.filter.ThresholdFilter">
+      <level>INFO</level>
+    </filter>
     <file>droidsafe/droidsafe.log</file>
     <append>false</append>
     <encoder>
