@@ -261,6 +261,9 @@ public class SecuritySpecification  {
           buf.append (m + "<br>\n");
         return buf.toString();
 	}
+  
+    /** Returns a commented out initial whitelist containing all calls **/
+    // public String toWhitelistString() {}
 
     /** Returns an HTML spec with extra information **/
 	public String toHtmlString() {
@@ -271,6 +274,7 @@ public class SecuritySpecification  {
         buf.append ("<div class=grid>");
         buf.append ("<div class=col1>");
         buf.append ("<h1> SpecDump </h1>");
+        buf.append ("<div style='padding-left:0px'>");
 		buf.append("<h4>whitelist</h4>\n");
         for (Method m : whitelist) {
         	buf.append(m.toString() + "<br>");
@@ -308,9 +312,11 @@ public class SecuritySpecification  {
             for (String descr : all_descrs_sorted) {
               String mstr = "";
               int danger = -100;
+              int dcnt = 0;
               for (Method oe : outm) { 
                 if (api_descriptors (oe).contains (descr)) {
-                  mstr +=  html_api_call (oe);
+                  dcnt++;
+                  mstr +=  html_api_call (oe, ie);
                   int d = api_danger(oe);
                   if (d > danger)
                     danger = d;
@@ -323,7 +329,9 @@ public class SecuritySpecification  {
                 style = "color:green";
               descr = String.format ("<span style='%s'>%s</span>", style, 
                                      descr);
-              buf.append ("<h4> Descriptor " + descr + "</h4>\n");
+              String cnt = String.format (" (<span class=count>%d</span>)", 
+                                          dcnt);
+              buf.append ("<h4> Descriptor " + descr + cnt + "</h4>\n");
               buf.append ("<div style='padding-left:15px'>\n");
               buf.append (mstr);
               buf.append ("</div>\n");
@@ -347,7 +355,8 @@ public class SecuritySpecification  {
           buf.append (m + "<br>\n");
 
         // Terminate the overall div and the columns
-        buf.append ("</div>\n"  // column 1 div
+        buf.append ("</div>"  // specdump div
+                    + "</div>\n"  // column 1 div
                     + "<div class=col2 id=content>\n"
                     + "<iframe name=iframe_content height=195px width=100%>\n"
                     + "</iframe>\n"
@@ -367,6 +376,7 @@ public class SecuritySpecification  {
       + "<script src='http://people.csail.mit.edu/jhp/jquery.js'></script>\n"
       + "<script src='http://people.csail.mit.edu/jhp/utils.js'></script>\n"
       + "<script src='http://code.jquery.com/ui/1.10.0/jquery-ui.js'></script>\n"
+      + "<script src='../spec.js'></script>"
       + "<link rel='stylesheet' href='http://code.jquery.com/ui/1.10.0/themes/base/jquery-ui.css' />\n"
       + "<link rel='stylesheet' href='http://people.csail.mit.edu/jhp/specdump.css' />\n"
       + "<style> a {text-decoration:none} h4 {margin-top:0px;margin-bottom:0px;} </style>\n"
@@ -513,13 +523,37 @@ public class SecuritySpecification  {
     return out;
   }
   
+  /** 
+   * Returns a simple text version of the short signature (one with
+   * unqualified classnames and constant values
+   */
+  public String short_sig (Method m) {
+
+    String out = extract_classname (m.getCname()) + " " 
+      + m.getName().replace ("<init>", "_init_") + " (";
+
+    String delim = "";
+    for (ArgumentValue arg : m.getArgs()) {
+      out += delim;
+      if (arg.isType()) {
+        out += extract_classname (arg.toString());
+      } else { // constant of some sort
+        out += arg.toString();
+      }
+      delim = ", ";
+    }
+
+    return out + ")";
+  }
+
   /**
    * Returns the HTML for an API call.  The source line numbers for each
    * call are included as an expandable box
    */
-  public String html_api_call (Method m) {
+  public String html_api_call (Method m, Method event) {
 
-    String out = "<h5>";
+    String out = String.format ("<h5 api='%s|%s'>", short_sig (m), 
+                                short_sig(event));
     String full_cname = m.getCname();
     String method_name = m.getName().replaceAll("<", "&lt;") + " ";
     String txt = String.format ("<span style='%s' title='%s'>%s</span>", 
