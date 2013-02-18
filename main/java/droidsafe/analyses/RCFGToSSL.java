@@ -3,6 +3,8 @@ package droidsafe.analyses;
 import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileWriter;
+import java.util.Arrays;
+import java.util.HashSet;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Set;
@@ -51,6 +53,20 @@ public class RCFGToSSL {
 	
 	public static final String SSL_FILE_NAME = "template-spec.ssl";
 	
+	/**
+	 * if true, ignore creating output events for the packages defined in IGNORE_OE_FROM_PACKAGES 
+	 */
+	public static final boolean IGNORE_OE_FROM_DEFINED_PACKAGES = false;
+	
+	/** List of packages to ignore from the android API, use only second level package name: 
+	 * android.something.
+	 */
+	public static final Set<String> IGNORE_OE_FROM_PACKAGES = new HashSet(Arrays.asList(
+			"android.graphics", 
+			"android.view",
+			"android.widget"
+			));
+	
 	public static void run() {
 		RCFGToSSL v = new RCFGToSSL();
 		
@@ -79,9 +95,27 @@ public class RCFGToSSL {
 		}
 	}
 	
+	private boolean shouldIgnore(OutputEvent oe) {
+		if (!IGNORE_OE_FROM_DEFINED_PACKAGES)
+			return false;
+		
+		String[] className = oe.getTarget().getDeclaringClass().getName().split("\\.");
+				
+		if (className.length < 2)
+			return false;
+		
+		String packageStart = className[0] + "." + className[1];
+		
+		return IGNORE_OE_FROM_PACKAGES.contains(packageStart);
+	}
+	
 	private List<Method> methodsFromOutputEvent(OutputEvent oe) {
 		List<Method> methods = new LinkedList<Method>();
 
+		//should we ignore creating a method in the spec from this output event
+		if (shouldIgnore(oe)) {
+			return methods;
+		}
 
 		ArgumentValue[] args = new ArgumentValue[oe.getNumArgs()];
 
