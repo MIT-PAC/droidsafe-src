@@ -29,6 +29,7 @@ import droidsafe.android.system.API;
 import droidsafe.android.system.Permissions;
 import droidsafe.transforms.AddAllocsForAPICalls;
 import droidsafe.transforms.LocalForStringConstantArguments;
+import droidsafe.transforms.ResolveStringConstants;
 import droidsafe.transforms.ScalarAppOptimizations;
 import droidsafe.utils.SootUtils;
 
@@ -52,24 +53,35 @@ public class Main {
 	 */
 	public static void main(String[] args) {
 		logger.info("Starting DroidSafe Run");
-		Config.v().init(args);
+		
+    Config.v().init(args);
 		Project.v().init();
 		SootConfig.init();
 		API.v().init();
 		Permissions.init();
-		logger.info("Creating locals for all string constant arguments.");
+		
+    logger.info("Creating locals for all string constant arguments.");
 		LocalForStringConstantArguments.run();
-		logger.info("Calling scalar optimizations.");
+		
+    logger.info("Calling scalar optimizations.");
 		ScalarAppOptimizations.run();		
-		logger.info("Create tags for the overriden system methods in user code.");
+		
+    logger.info("Create tags for the overriden system methods in user code.");
 		TagImplementedSystemMethods.run();
-		logger.info("Resolving resources and Manifest.");
+		
+    logger.info("Resolving resources and Manifest.");
 		Resources.resolveManifest(Config.v().APP_ROOT_DIR);
-		logger.info("Finding entry points in user code.");
+    
+    logger.info("Resolving String Constants");
+    ResolveStringConstants.run(Config.v().APP_ROOT_DIR);
+
+    logger.info("Finding entry points in user code.");
 		EntryPoints.v().calculate();
-		logger.info("Creating Harness.");
+		
+    logger.info("Creating Harness.");
 		Harness.create();
-		logger.info("Setting Harness Main as entry point.");
+		
+    logger.info("Setting Harness Main as entry point.");
 		setHarnessMainAsEntryPoint();
 			
 		AddAllocsForAPICalls.run();

@@ -28,7 +28,7 @@ public class Layout {
   String name;
 
   /** The top level view specified in the layout file **/
-  View view;
+  public View view;
 
   /** The activity (if any) associated with this layout **/
   Set<Activity> activities = new LinkedHashSet<Activity>();
