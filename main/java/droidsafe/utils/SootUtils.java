@@ -237,7 +237,7 @@ public class SootUtils {
     }
     
     /**
-     * Given the signature of a method that make or may not concretely exist, search 
+     * Given the signature of a method that may or may not concretely exist, search 
      * for the concrete call that will be resolved for the signature.
      * 
      * This search entails a polymorphic search over all the methods of the class
