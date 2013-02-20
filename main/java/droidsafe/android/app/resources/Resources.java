@@ -89,7 +89,6 @@ public class Resources {
 	private boolean resolved = false;
 	
 	static String blanks = "                                               ";
-
 	private static boolean already_read_activity_subclasses = false;
 	private static HashSet activity_subclasses = new HashSet(); // Filled from config-files/activity_subclasses.txt 
 	// Entries look like "android.app.ActivityGroup"
@@ -155,10 +154,21 @@ public class Resources {
 				am.components.add(r.getSootClass());
 			}
 			
+			//check that all source components are in the manifest
+			for (SootClass clazz : droidsafe.android.app.Hierarchy.v().getAllAppComponents()) {
+				if (!am.components.contains(clazz)) {
+					logger.error("Component class not defined in manifest, please to manifest: {}", clazz);
+					System.exit(1);
+				}
+			}
+			
+			
 			v.resolved = true;
 		} catch (Exception e) {
 			logger.error("Error resolving resources and manifest: ", e);
 		}
+		
+	
 	}
 
 	public boolean isResourceClass(SootClass clz) {
@@ -169,7 +179,7 @@ public class Resources {
 	
 	/** Processes the application located in the specified directory **/
 	public Resources (File application_base) throws Exception {
-
+		
 		this.application_base = application_base;
 
 		resource_info = HashBiMap.create();
