@@ -88,11 +88,11 @@ public class EntryPoints {
     		//of classes that inherit from an api class / interface.
     		if (!Hierarchy.v().isAndroidComponentClass(clazz))
     			continue;
-    		
+    		/*
     		if (!Resources.v().getManifest().getComponents().contains(clazz)) {
     			logger.info("Class for component found, but it is not in manifest, so ignoring: {}", clazz.toString());
     			continue;
-    		}
+    		}*/
     		
     		//Messages.log("Checking class for missing modeling: " + clazz.getName());
     			    	

@@ -23,6 +23,7 @@ public class TagImplementedSystemMethods {
 	public static void run() {
 		
     	for (SootClass clazz : Scene.v().getApplicationClasses()) {
+    		
     		Set<SootClass> systemParents = Hierarchy.v().systemParents(clazz);
     		
     		//do nothing if no system parents
@@ -31,6 +32,7 @@ public class TagImplementedSystemMethods {
     		
     		//now check which methods are overrides
     		for (SootMethod method : clazz.getMethods()) {
+    				
     			if (!clazz.declaresMethod(method.getSubSignature()))
     				continue;
     			
