@@ -81,8 +81,8 @@ public class Main {
 		RCFG.generate();
 		logger.info("Ending DroidSafe Run");
 		
-		logger.info("Starting Attribute Modeling...");
-		AttributeModeling.run();
+		//logger.info("Starting Attribute Modeling...");
+		//AttributeModeling.run();
 		
 		writeAllAppClasses();
 		
