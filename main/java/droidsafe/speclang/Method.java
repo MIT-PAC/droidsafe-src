@@ -43,6 +43,7 @@ public class Method implements Comparable<Method> {
 		this.args = args;
 		this.receiver = receiver;
 		lines = new ArrayList<SourceLocationTag>();
+		logger.info("Creating method: {} with receiever {}", method, receiver);
 	}
 	
 	public Method(SootMethod method) {

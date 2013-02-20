@@ -87,6 +87,8 @@ public class RCFG {
 		v = new RCFG();
 		v.createRCFG();
 		
+		//for (RCFGNode node : v.rCFG)
+		//	System.out.println(node.toString());
 		//logger.info("\n" + v.toString());
 	}
 	
@@ -299,35 +301,13 @@ public class RCFG {
 						System.exit(1);
 					}
 					SootClass allocType = ((RefType)t).getSootClass();
-					SootClass staticRecClass = getStaticReceiverClassType(expr);
 					
-					SootClass narrowerClass = SootUtils.narrowerClass(allocType, staticRecClass);
-					
-					//if the two classes are unrelated, then trust the staticrecclass, it should
-					//be more general
-					if (narrowerClass == null) {
-						narrowerClass = staticRecClass;
-					}
-					
-					//get narrower methods since we don't know the exact type of this call...
 					Set<SootMethod> allMethods = 
-							SootUtils.getOverridingMethodsIncluding(narrowerClass, expr.getMethodRef().getSubSignature().getString());
-					
-					//get the method that would be called with the exact type of the receive
-					
-					SootMethod method = null;
-					try {
-						method = SootUtils.
-								resolveConcreteDispatch( narrowerClass, expr.getMethod());
-					} catch (CannotFindMethodException e) {
-						logger.info("Cannot find concrete dispatch for {}", e);
-						continue;
-					}
-					
-					allMethods.add(method);
+							SootUtils.getOverridingMethodsIncluding(allocType, expr.getMethodRef().getSubSignature().getString());
 					
 					for (SootMethod m : allMethods) {
 						Edge newEdge = new Edge(src, stmt, m);
+						//System.out.printf("Creating edge for %s: %s\n", alloc, newEdge);
 						processEdge(rCFGNode, newEdge, edgeInto, null, appEdgesOut, allEdges);
 					}
 				}
@@ -382,6 +362,10 @@ public class RCFG {
 				//virtual call
 				
 				for (AllocNode an : GeoPTA.v().getPTSet(cgEdge.base_var, edgeInto)) {
+					//generated allocation nodes are handled separately in edgesFromAPIAllocs()
+					if (AddAllocsForAPICalls.v().isGeneratedExpr(an.getNewExpr()))
+						continue;
+					
 					Type t = an.getType();
 					if ( t instanceof AnySubType ||
 							 t instanceof ArrayType ) {
@@ -408,11 +392,13 @@ public class RCFG {
 			} else {
 				if (curEdge.srcStmt() == null) //probably a call to cinit
 					processEdge(rCFGNode, curEdge, edgeInto, null, appEdgesOut, allEdges);
-				else { //regular call
+				else { //regular call, but not directly in context sensitive 
 					//not a virtual call, always add
 					InstanceInvokeExpr invoke = SootUtils.getInstanceInvokeExpr(curEdge.srcStmt());
 					if (invoke != null) {
 						for (AllocNode node : GeoPTA.v().getPTSet(invoke.getBase(), edgeInto)) {
+							if (AddAllocsForAPICalls.v().isGeneratedExpr(node.getNewExpr()))
+								continue;
 							processEdge(rCFGNode, curEdge, edgeInto, node, appEdgesOut, allEdges);
 						}
 
