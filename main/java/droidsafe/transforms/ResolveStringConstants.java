@@ -75,15 +75,12 @@ import soot.jimple.StringConstant;
 import soot.toolkits.graph.PseudoTopologicalOrderer;
 import soot.util.Chain;
 
-/**
- * Tranformer called on all application classes that will find all invoke expressions, and
- * if an arg is a string constant, will create a new local for the constant, 
- * and replace the constant in the argument with the local.  Needed for points to analysis.
- * 
- * @author dpetters
- *
- */
 
+/**
+ * Transformation called on all application classes that finds all invocations of "getString(int resId)"
+ * and "getText(int resId)" from android.content.Context and replaces them with the string values that they would have
+ * returned.
+ */
 public class ResolveStringConstants extends BodyTransformer {
 
   private static final boolean DEBUG = true;
@@ -92,10 +89,11 @@ public class ResolveStringConstants extends BodyTransformer {
   private static HashMap<Integer, String> resourceIdToResourceName;
   private static HashMap<String, String> resourceNameToResourceValue;
 	
+
   public static void run(String application_base_path) {
     
+    // create a mapping from string names ot string values
     resourceNameToResourceValue = new HashMap<String, String>();
-    
     File stringXmlFile = new File("res/values/strings.xml");
     Layout layout = null;
     try {
@@ -104,7 +102,6 @@ public class ResolveStringConstants extends BodyTransformer {
         logger.error("Could not parse string.xml: " + e.getMessage());
         return;
     }
-    
     List<Node> children = layout.view.gather_children();
     for(int i = 0; i < children.size(); ++i){
       Node child = children.get(i);
@@ -118,7 +115,7 @@ public class ResolveStringConstants extends BodyTransformer {
       resourceNameToResourceValue.put(resourceName, resourceValue);
     }
   
-		// create a mapping from resource ids to resource Names
+		// create a mapping from string ids to string names
     resourceIdToResourceName = new HashMap<Integer, String>();
 		for (SootClass clz : Scene.v().getClasses()) {
       if (clz.isApplicationClass() & clz.getShortName().startsWith("R$string")) {
@@ -148,10 +145,6 @@ public class ResolveStringConstants extends BodyTransformer {
 	}
 	
 
-	/**
-	 * Finds all invocations of "getString" and "getText" and replaces them with the string values that they would have 
-   * returned.
-	 */
 	protected void internalTransform(Body b, String phaseName, Map options)  {
 		StmtBody stmtBody = (StmtBody)b;
 		Chain units = stmtBody.getUnits();
