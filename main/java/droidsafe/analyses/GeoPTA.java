@@ -161,7 +161,7 @@ public class GeoPTA {
 		
 		return types;
 	}
-
+	
 	/**
 	 * v used only for error reporting
 	 */
@@ -237,6 +237,32 @@ public class GeoPTA {
 		Node sparkNode = ivar.getWrappedNode();
 		
 		return getPTSet(sparkNode, ivar, context, v);
+	}
+	
+	/**
+	 * Given a pointer value, return the context insensitive points to set.
+	 */
+	public Set<AllocNode> getPTSetContextIns(Value v) {
+		Set<AllocNode> allocNodes = new LinkedHashSet<AllocNode>();
+		
+		if (!isPointer(v))
+			return allocNodes;
+		
+		try {
+			IVarAbstraction ivar = getInternalNode(v);
+			Node sparkNode = ivar.getWrappedNode();
+			ivar = ivar.getRepresentative();
+			
+			Set<AllocNode> fromPTA = ivar.get_all_points_to_objects();
+			if (fromPTA != null)
+				allocNodes.addAll(fromPTA);
+				
+		} catch (Exception e) {
+			logger.info("Some sort of error getting context insensitive points to set for {}", v);
+			//e.printStackTrace();
+		}
+		
+		return allocNodes;
 	}
 	
 	/**

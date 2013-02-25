@@ -26,6 +26,7 @@ public class Hierarchy {
 	
 	private static Hierarchy v;
 	private List<SootClass> appComponents;
+	private Set<SootClass> activities;
 	
 	/**
 	 * Return the singleton hierarchy object for this application.
@@ -39,8 +40,28 @@ public class Hierarchy {
 	}
 	
 	protected Hierarchy() {	
-	}
+		activities = new LinkedHashSet<SootClass>();
+		
+		//loop over all code and find calls for with any tracked as received or arg
+		for (SootClass clazz : Scene.v().getApplicationClasses()) {
+			if (clazz.isInterface() || clazz.getName().equals(Harness.HARNESS_CLASS_NAME))
+				continue;
 
+			//don't add entry points into the system classes...
+			if (API.v().isSystemClass(clazz))
+				continue;
+			
+			if (inheritsFromAndroidActivity(clazz))
+				activities.add(clazz);
+		}
+	}
+		
+
+	// Returns true if cn is class android/app/Activity or is a class
+	// that inherits from android/app/Activity
+	public boolean inheritsFromAndroidActivity(final SootClass cn) {
+		return Scene.v().getActiveHierarchy().isClassSubclassOfIncluding(cn, Scene.v().getSootClass(Components.ACTIVITY_CLASS));
+	}
 	
 	/**
 	 * Return true if this class inherits from an android component class.

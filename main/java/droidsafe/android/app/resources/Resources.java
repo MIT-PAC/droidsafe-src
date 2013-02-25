@@ -46,6 +46,7 @@ import droidsafe.android.app.resources.AndroidManifest.Receiver;
 import droidsafe.android.app.resources.AndroidManifest.Service;
 import droidsafe.android.app.resources.Layout.View;
 import droidsafe.android.system.Components;
+import droidsafe.utils.SootUtils;
 
 
 /**
@@ -88,7 +89,6 @@ public class Resources {
 	private boolean resolved = false;
 	
 	static String blanks = "                                               ";
-
 	private static boolean already_read_activity_subclasses = false;
 	private static HashSet activity_subclasses = new HashSet(); // Filled from config-files/activity_subclasses.txt 
 	// Entries look like "android.app.ActivityGroup"
@@ -154,10 +154,21 @@ public class Resources {
 				am.components.add(r.getSootClass());
 			}
 			
+			//check that all source components are in the manifest
+			for (SootClass clazz : droidsafe.android.app.Hierarchy.v().getAllAppComponents()) {
+				if (!am.components.contains(clazz)) {
+					logger.error("Component class not defined in manifest, please to manifest: {}", clazz);
+					System.exit(1);
+				}
+			}
+			
+			
 			v.resolved = true;
 		} catch (Exception e) {
 			logger.error("Error resolving resources and manifest: ", e);
 		}
+		
+	
 	}
 
 	public boolean isResourceClass(SootClass clz) {
@@ -168,7 +179,7 @@ public class Resources {
 	
 	/** Processes the application located in the specified directory **/
 	public Resources (File application_base) throws Exception {
-
+		
 		this.application_base = application_base;
 
 		resource_info = HashBiMap.create();
@@ -303,27 +314,33 @@ public class Resources {
 				//build the method signature in the soot format
 				List<RefType> viewArg = new LinkedList<RefType>();
 				viewArg.add(RefType.v("android.view.View"));
-				SootMethod method = cn.getMethod(view.on_click, viewArg);
-
-				//record the handler in the map for the layout
-				//for the entire application there could be multiple layouts, and multiple
-				//handler per layout
-				if (!handlers.containsKey(layout)) { 
-					handlers.put(layout, new HashMap<View, SootMethod>());
-				}
-
-				logger.info("Putting: {} {} {}\n", layout, view, method);
-				handlers.get(layout).put(view, method);	
-				allHandlers.add(method);
-
-				// Its not entirely clear why we are processing the on_click entry
-				// point itself.  What are we looking for here?
 				try {
+					//
+					String signature = "<" + cn + ": void " + view.on_click + "(android.view.View)>";
+					SootMethod method = SootUtils.resolveMethod(cn, signature);
+					//cn.getMethod(view.on_click, viewArg);
+
+					//record the handler in the map for the layout
+					//for the entire application there could be multiple layouts, and multiple
+					//handler per layout
+					if (!handlers.containsKey(layout)) { 
+						handlers.put(layout, new HashMap<View, SootMethod>());
+					}
+
+					logger.info("Putting: {} {} {}\n", layout, view, method);
+					handlers.get(layout).put(view, method);	
+					allHandlers.add(method);
+
+					// Its not entirely clear why we are processing the on_click entry
+					// point itself.  What are we looking for here?
+
 					process_entry (cn, method.getSubSignature());
 				} catch (MissingElementException mee) {
 					logger.info ("Warning, Error processing on click handler {} in "
 							+ "layout {}: {}", view.on_click, layout.name, 
 							mee.getMessage());
+				} catch (Exception e) {
+					logger.info("Problem resolving onclick handler...");
 				}
 			}
 		}

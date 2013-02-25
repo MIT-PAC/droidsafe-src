@@ -188,8 +188,14 @@ public class SootUtils {
     public static List<SootClass> getChildrenIncluding(SootClass sc) {
     	Hierarchy hier = Scene.v().getActiveHierarchy();
         
-    	if (sc.isInterface())
-            return hier.getSubinterfacesOfIncluding(sc);
+    	if (sc.isInterface()) {
+    		LinkedList<SootClass> classes = new LinkedList<SootClass>();
+    		//want all sub interfaces, and all implementing classes
+            classes.addAll(hier.getSubinterfacesOfIncluding(sc));
+            classes.addAll(hier.getImplementersOf(sc));
+            classes.add(sc);
+            return classes;
+    	}
     	else 
     		return hier.getSubclassesOfIncluding(sc);
     		
@@ -231,7 +237,7 @@ public class SootUtils {
     }
     
     /**
-     * Given the signature of a method that make or may not concretely exist, search 
+     * Given the signature of a method that may or may not concretely exist, search 
      * for the concrete call that will be resolved for the signature.
      * 
      * This search entails a polymorphic search over all the methods of the class
@@ -647,12 +653,15 @@ public class SootUtils {
 		if (clz.isAbstract() && !clz.isInterface()) {
 			imps = h.getDirectSubclassesOf(clz);
 		} else if (clz.isInterface()) {
-			imps = h.getDirectSubinterfacesOf(clz);
+			imps = new LinkedList<SootClass>();
+			imps.addAll(h.getImplementersOf(clz));
+			imps.addAll(h.getSubinterfacesOf(clz));
 		} else {
 			return clazzes;
 		}
 		
 		for (SootClass imp : imps) {
+			
 			if (imp.isConcrete())
 				clazzes.add(imp);
 			else

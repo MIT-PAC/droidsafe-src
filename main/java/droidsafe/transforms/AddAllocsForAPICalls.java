@@ -138,7 +138,7 @@ public class AddAllocsForAPICalls extends BodyTransformer {
 				for (SootClass clz : clzs) {
 					//between the defined return type and the type of anything 
 					SootClass narrower = SootUtils.narrowerClass(clz, lvalClass);
-					
+					//logger.debug("  checking class: {} (to {})", clz, lvalClass);
 					//this class is not related to the defined class of the lval
 					//can't instantiate
 					if (narrower == null) 
@@ -146,7 +146,8 @@ public class AddAllocsForAPICalls extends BodyTransformer {
 					//add an new expr for the more specific class between the defined
 					//type of the lval and this current class that the reference could take on
 					if (!visited.contains(narrower)) {
-						NewExpr newExpr = Jimple.v().newNewExpr(RefType.v(clz));
+						logger.debug("  Adding new expression of: {}", narrower);
+						NewExpr newExpr = Jimple.v().newNewExpr(RefType.v(narrower));
 						generatedExpr.add(newExpr);
 						AssignStmt assignStmt = Jimple.v().newAssignStmt(origAssign.getLeftOp(), newExpr);
 						units.insertAfter(assignStmt, stmt);

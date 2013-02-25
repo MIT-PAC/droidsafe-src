@@ -15,6 +15,7 @@ import soot.Scene;
 import soot.SootClass;
 import soot.SootMethod;
 
+import droidsafe.analyses.AttributeModeling;
 import droidsafe.analyses.CallGraphFromEntryPoints;
 import droidsafe.analyses.GeoPTA;
 import droidsafe.analyses.RCFGToSSL;
@@ -91,6 +92,9 @@ public class Main {
 		
 		RCFG.generate();
 		logger.info("Ending DroidSafe Run");
+		
+		//logger.info("Starting Attribute Modeling...");
+		//AttributeModeling.run();
 		
 		writeAllAppClasses();
 		

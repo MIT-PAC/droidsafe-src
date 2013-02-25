@@ -9,6 +9,9 @@ import java.util.jar.JarFile;
 
 import org.slf4j.Logger;
 
+import soot.jimple.NewExpr;
+import soot.jimple.internal.JNewExpr;
+
 /**
  * Class to store general utility methods.
  * 
@@ -54,4 +57,6 @@ public class Utils {
     	logger.error(str, args);
     	System.exit(1);
     }
+    
+    
 }
