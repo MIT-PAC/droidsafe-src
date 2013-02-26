@@ -2,7 +2,9 @@ package droidsafe.transforms;
 
 import java.io.File;
 import java.util.Iterator;
+import java.util.ArrayList;
 import java.util.Map;
+import java.util.LinkedList;
 import java.util.HashMap;
 import java.util.List;
 
@@ -13,6 +15,7 @@ import org.slf4j.LoggerFactory;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 import org.w3c.dom.Node;
+import org.w3c.dom.NodeList;
 
 import soot.ArrayType;
 import soot.Body;
@@ -83,43 +86,82 @@ import soot.util.Chain;
  */
 public class ResolveStringConstants extends BodyTransformer {
 
-  private static final boolean DEBUG = true;
+  public static final boolean DEBUG = true;
+  public static final boolean STRING_ARRAYS = true;
+
   private static final Logger logger = LoggerFactory.getLogger(ResolveStringConstants.class);	
 
-  private static HashMap<Integer, String> resourceIdToResourceName;
-  private static HashMap<String, String> resourceNameToResourceValue;
-	
+  private static HashMap<Integer, String> stringIdToStringName;
+  private static HashMap<String, String> stringNameToStringValue;
+  private static HashMap<String, List<String>> stringArrayNameToStringArrayValues;	
 
   public static void run(String application_base_path) {
     
-    // create a mapping from string names ot string values
-    resourceNameToResourceValue = new HashMap<String, String>();
-    File stringXmlFile = new File("res/values/strings.xml");
-    Layout layout = null;
-    try {
+    // create a mapping from string names to string values
+    stringNameToStringValue = new HashMap<String, String>();
+    stringArrayNameToStringArrayValues = new HashMap<String, List<String>>();
+    String[] filesToProcess = {"res/values/strings.xml", "res/values/arrays.xml"};
+    for (String fileToProcess : filesToProcess) {
+      File stringXmlFile = new File(fileToProcess);
+    
+      Layout layout = null;
+      try {
         layout = new Layout(stringXmlFile);
-    } catch (Exception e) {
-        logger.error("Could not parse string.xml: " + e.getMessage());
+      } catch (Exception e) {
+        logger.error("Could not parse " + stringXmlFile + ":" + e.getMessage());
         return;
-    }
-    List<Node> children = layout.view.gather_children();
-    for(int i = 0; i < children.size(); ++i){
-      Node child = children.get(i);
-      String resourceName = ((Element)child).getAttribute("name");
-      String resourceValue = child.getFirstChild().getNodeValue();
-      if(DEBUG){
-        System.out.println("\nAdding a resource name to resource value mapping:");
-        System.out.println("Key: " + resourceName);
-        System.out.println("Value: " + resourceValue);
       }
-      resourceNameToResourceValue.put(resourceName, resourceValue);
+      List<Node> children = layout.view.gather_children();
+      for(int i = 0; i < children.size(); ++i){
+        Element element = (Element)children.get(i);
+        String tagName = element.getTagName();
+        if (tagName.equals("string")){
+          String stringName = element.getAttribute("name");
+          String stringValue = element.getFirstChild().getNodeValue();
+          if(DEBUG){
+            System.out.println("\nAdding a string name to string value mapping:");
+            System.out.println("String Name: " + stringName);
+            System.out.println("String Value: " + stringValue);
+          }
+          stringNameToStringValue.put(stringName, stringValue);
+        } else if(tagName.equals("string-array") && STRING_ARRAYS){
+          String stringArrayName = element.getAttribute("name");
+          NodeList stringArrayNodes = element.getChildNodes();
+          List<String> stringArrayValues = new ArrayList<String>();
+          for (int j = 0; j < stringArrayNodes.getLength(); ++j) {
+            Node child = stringArrayNodes.item(j);
+            if(child instanceof Element){
+              Element elementChild = (Element)child;
+              String stringArrayValue = ((Element)child).getFirstChild().getNodeValue();
+              int index = stringArrayValue.indexOf("@string");
+              if(index != -1){
+                String stringName = stringArrayValue.substring("@string".length()+1, stringArrayValue.length());
+                if(stringNameToStringValue.containsKey(stringName)){
+                  stringArrayValue = stringNameToStringValue.get(stringName);
+                }
+              }
+              stringArrayValues.add(stringArrayValue);
+            }
+          }
+          if(DEBUG){
+            System.out.println("\nAdding a string array name to string array value mapping:");
+            System.out.println("String Array Name: " + stringArrayName);
+            System.out.println("String Array Values: ");
+            for(String stringArrayValue : stringArrayValues){
+              System.out.println(stringArrayValue);   
+            }
+          }
+          stringArrayNameToStringArrayValues.put(stringArrayName, stringArrayValues);
+        }
+      }
     }
   
 		// create a mapping from string ids to string names
-    resourceIdToResourceName = new HashMap<Integer, String>();
+    stringIdToStringName = new HashMap<Integer, String>();
 		for (SootClass clz : Scene.v().getClasses()) {
       if (clz.isApplicationClass() & clz.getShortName().startsWith("R$string")) {
-				for (SootField field : clz.getFields()) {
+				System.out.println(clz.getShortName());
+        for (SootField field : clz.getFields()) {
           Tag tag = field.getTag("IntegerConstantValueTag");
           Integer resourceId = ((IntegerConstantValueTag)tag).getIntValue();
           String resourceName = field.getName();
@@ -128,9 +170,23 @@ public class ResolveStringConstants extends BodyTransformer {
             System.out.println("Key: " + resourceId);
             System.out.println("Value: " + resourceName);
           }
-          resourceIdToResourceName.put(resourceId, resourceName);
+          stringIdToStringName.put(resourceId, resourceName);
 				}
-			}
+			} else {
+        if(clz.getShortName().startsWith("R$array")) {
+          for (SootField field : clz.getFields()) {
+            Tag tag = field.getTag("IntegerConstantValueTag");
+            Integer stringId = ((IntegerConstantValueTag)tag).getIntValue();
+            String stringArrayName = field.getName();
+            if(DEBUG){
+              System.out.println("\nAdding a string id to string array name mapping:");
+              System.out.println("String Id: " + stringId);
+              System.out.println("String Array Name: " + stringArrayName);
+            }
+            stringIdToStringName.put(stringId, stringArrayName);
+				  }
+        }
+      }
 		}
       
     ResolveStringConstants transformer = new ResolveStringConstants();
@@ -173,21 +229,52 @@ public class ResolveStringConstants extends BodyTransformer {
       }
       
       // For now we only target "getString" and "getText" in "android.contet.Context"
-      if(target.getDeclaringClass().toString().equals("android.content.Context") &&
-        (target.getName().equals("getString") || target.getName().equals("getText"))) {
+      if(((target.getDeclaringClass().toString().equals("android.content.Context")) ||
+         (target.getDeclaringClass().toString().equals("android.content.res.Resources"))) &&
+         (target.getName().equals("getString") || target.getName().equals("getText"))) {
           if(expr.getArgCount() == 1) {
             Value arg = expr.getArg(0);
             if (arg instanceof IntConstant){
               Integer stringId = new Integer(((IntConstant)arg).value);
-              String strVal = resourceNameToResourceValue.get((resourceIdToResourceName.get(stringId)));
-              if(DEBUG){
-                System.out.println("\nReplacing " + stringId + " with " + strVal);
-                System.out.println("Right Op: " + assignStmt.getRightOp());
-                System.out.println("Left Op: " + assignStmt.getLeftOp());
+              String strVal = stringNameToStringValue.get((stringIdToStringName.get(stringId)));
+              if (strVal != null) {
+                if(DEBUG){
+                  System.out.println("\nReplacing " + stringId + " with " + strVal);
+                  System.out.println("Right Op: " + assignStmt.getRightOp());
+                  System.out.println("Left Op: " + assignStmt.getLeftOp());
+                }
+                assignStmt.setRightOp(StringConstant.v(strVal));
               }
-              assignStmt.setRightOp(StringConstant.v(strVal));
             }
           }
+      } else if(target.getDeclaringClass().toString().equals("android.content.res.Resources") &&
+                target.getName().equals("getStringArray")) {
+        if(expr.getArgCount() == 1) {
+          Value arg = expr.getArg(0);
+          if (arg instanceof IntConstant){
+            Integer stringId = new Integer(((IntConstant)arg).value);
+            String stringArrayName = stringIdToStringName.get(stringId);
+            if (stringArrayName != null) {
+              List<String> stringArrayValues = stringArrayNameToStringArrayValues.get(stringArrayName);
+              if (stringArrayValues != null) {
+                if(DEBUG){
+                  System.out.println("\nReplacing " + stringId + " with: ");
+                  for(String stringArrayValue : stringArrayValues){
+                    System.out.println(stringArrayValue);
+                  }
+                  System.out.println("Right Op: " + assignStmt.getRightOp());
+                  System.out.println("Left Op: " + assignStmt.getLeftOp());
+                }
+                ArrayType type = ArrayType.v(RefType.v("java.lang.String"), 1);
+                List<Value> vals = new LinkedList<Value>();
+				        for(String stringArrayValue : stringArrayValues){
+                  vals.add(StringConstant.v(stringArrayValue));
+                }
+				        assignStmt.setRightOp(Jimple.v().newNewMultiArrayExpr(type, vals));
+              }
+            }
+          }
+        }
       }
 		}
 	}
