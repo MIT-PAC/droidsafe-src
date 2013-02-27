@@ -40,6 +40,7 @@ import com.sun.org.apache.bcel.internal.classfile.ClassParser;
 import com.sun.org.apache.bcel.internal.classfile.JavaClass;
 
 import droidsafe.analyses.CallGraphFromEntryPoints;
+import droidsafe.android.app.resources.XmlFile;
 import droidsafe.android.app.resources.AndroidManifest.Activity;
 import droidsafe.android.app.resources.AndroidManifest.Provider;
 import droidsafe.android.app.resources.AndroidManifest.Receiver;
@@ -47,7 +48,6 @@ import droidsafe.android.app.resources.AndroidManifest.Service;
 import droidsafe.android.app.resources.Layout.View;
 import droidsafe.android.system.Components;
 import droidsafe.utils.SootUtils;
-
 
 /**
  * Representation of the Android Resources and Manifest file.  Also contains
@@ -199,11 +199,26 @@ public class Resources {
 			if (name_ext[1].equals ("xml"))
 				layouts.add (new Layout (layout_source));
 		}
-
+     
+    // Process .xml files in res/values
+		File values_dir = new File (application_base, "res/values");
+		for (File value_source : values_dir.listFiles()) {
+      String[] name_ext = value_source.getName().split ("[.]", 2);
+			if (name_ext[1].equals ("xml")) {
+				process_values(new XmlFile(value_source.getPath()));
+      }
+		}
+    
 		// Read in the resource id to name map
 		read_resources();
 	}
-
+  
+  // Currently builds up only string values (including string arrays)
+  // In the future should also support colors, dimensions, typed arrays and styles.
+  void process_values(XmlFile value_source) {
+     logger.debug("Processing values from {}", value_source);
+     BaseElement baseElement = new BaseElement(value_source.getDocumentElement(), null);
+  }
 
 	/** 
 	 * Reads all of the resources ids defined in R and adds them 
