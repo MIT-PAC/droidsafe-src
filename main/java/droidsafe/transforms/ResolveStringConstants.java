@@ -7,6 +7,7 @@ import java.util.Map;
 import java.util.LinkedList;
 import java.util.HashMap;
 import java.util.List;
+import java.util.Set;
 
 import droidsafe.android.app.Project;
 import droidsafe.transforms.AddAllocsForAPICalls;
@@ -31,6 +32,7 @@ import soot.SootMethod;
 import soot.SootField;
 import soot.Value;
 import soot.Type;
+import soot.jimple.ArrayRef;
 import soot.jimple.AssignStmt;
 import soot.jimple.InstanceInvokeExpr;
 import soot.jimple.IntConstant;
@@ -43,10 +45,12 @@ import soot.jimple.Stmt;
 import soot.jimple.StmtBody;
 import soot.jimple.StringConstant;
 import soot.jimple.internal.JAssignStmt;
+import soot.jimple.NewArrayExpr;
 import soot.util.Chain;
 import droidsafe.android.app.Project;
 import droidsafe.android.system.API;
 import droidsafe.utils.SootUtils;
+import droidsafe.android.app.Harness;
 import droidsafe.android.app.resources.Layout;
 import droidsafe.android.app.resources.BaseElement;
 import soot.tagkit.Tag;
@@ -97,6 +101,24 @@ public class ResolveStringConstants extends BodyTransformer {
 
   public static void run(String application_base_path) {
     
+    for (SootClass clazz : Scene.v().getApplicationClasses()) {
+    	if (clazz.isInterface() || clazz.getName().equals(Harness.HARNESS_CLASS_NAME))
+    	  continue;
+    	
+      //don't add entry points into the system classes...
+      if (API.v().isSystemClass(clazz))
+    	  continue;
+
+      // does the class subclass res
+      Set<SootClass> parents = SootUtils.getParents(clazz);
+      for (SootClass parent : parents) {
+        if(parent.getName().equals("android.content.res.Resources")) {
+          logger.error("Found class that inherits from android.content.res.Resources: {}", clazz);
+          System.exit(1);
+        }
+      }
+		}
+
     // create a mapping from string names to string values
     stringNameToStringValue = new HashMap<String, String>();
     stringArrayNameToStringArrayValues = new HashMap<String, List<String>>();
@@ -109,7 +131,7 @@ public class ResolveStringConstants extends BodyTransformer {
         layout = new Layout(stringXmlFile);
       } catch (Exception e) {
         logger.error("Could not parse " + stringXmlFile + ":" + e.getMessage());
-        return;
+        continue;
       }
       List<Node> children = layout.view.gather_children();
       for(int i = 0; i < children.size(); ++i){
@@ -163,14 +185,14 @@ public class ResolveStringConstants extends BodyTransformer {
 				System.out.println(clz.getShortName());
         for (SootField field : clz.getFields()) {
           Tag tag = field.getTag("IntegerConstantValueTag");
-          Integer resourceId = ((IntegerConstantValueTag)tag).getIntValue();
-          String resourceName = field.getName();
+          Integer stringId = ((IntegerConstantValueTag)tag).getIntValue();
+          String stringName = field.getName();
           if(DEBUG){
-            System.out.println("\nAdding a resource id to resource name mapping:");
-            System.out.println("Key: " + resourceId);
-            System.out.println("Value: " + resourceName);
+            System.out.println("\nAdding a string id to string name mapping:");
+            System.out.println("String Id: " + stringId);
+            System.out.println("String Name: " + stringName);
           }
-          stringIdToStringName.put(resourceId, resourceName);
+          stringIdToStringName.put(stringId, stringName);
 				}
 			} else {
         if(clz.getShortName().startsWith("R$array")) {
@@ -266,11 +288,14 @@ public class ResolveStringConstants extends BodyTransformer {
                   System.out.println("Left Op: " + assignStmt.getLeftOp());
                 }
                 ArrayType type = ArrayType.v(RefType.v("java.lang.String"), 1);
-                List<Value> vals = new LinkedList<Value>();
-				        for(String stringArrayValue : stringArrayValues){
-                  vals.add(StringConstant.v(stringArrayValue));
+                NewArrayExpr arrayExpr = Jimple.v().newNewArrayExpr(type, IntConstant.v(stringArrayValues.size()));
+				        assignStmt.setRightOp(arrayExpr);
+				        for(int k = 0; k < stringArrayValues.size(); ++k) {
+                  String stringArrayValue = stringArrayValues.get(k);
+                  ArrayRef arrayRef = Jimple.v().newArrayRef(assignStmt.getLeftOp(), IntConstant.v(k));
+                  AssignStmt arrayAssignStmt = Jimple.v().newAssignStmt(arrayRef, StringConstant.v(stringArrayValue));
+                  units.insertAfter(arrayAssignStmt, stmt);
                 }
-				        assignStmt.setRightOp(Jimple.v().newNewMultiArrayExpr(type, vals));
               }
             }
           }
