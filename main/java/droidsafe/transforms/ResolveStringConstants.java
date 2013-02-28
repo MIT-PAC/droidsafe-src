@@ -1,86 +1,74 @@
 package droidsafe.transforms;
 
-import java.io.File;
-import java.util.Iterator;
-import java.util.ArrayList;
-import java.util.Map;
-import java.util.LinkedList;
+import droidsafe.android.app.Harness;
+import droidsafe.android.app.Project;
+import droidsafe.android.app.Project;
+import droidsafe.android.app.resources.Resources;
+import droidsafe.android.app.resources.RString;
+import droidsafe.android.app.resources.RStringArray;
+import droidsafe.android.system.API;
+
+import droidsafe.transforms.AddAllocsForAPICalls;
+
+import droidsafe.utils.SootUtils;
+
 import java.util.HashMap;
+import java.util.Iterator;
 import java.util.List;
+import java.util.Map;
 import java.util.Set;
 
-import droidsafe.android.app.Project;
-import droidsafe.transforms.AddAllocsForAPICalls;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.w3c.dom.Document;
-import org.w3c.dom.Element;
-import org.w3c.dom.Node;
-import org.w3c.dom.NodeList;
 
 import soot.ArrayType;
+
 import soot.Body;
+import soot.Body;
+
 import soot.BodyTransformer;
-import soot.Hierarchy;
-import soot.Local;
-import soot.Modifier;
-import soot.RefLikeType;
-import soot.RefType;
-import soot.Scene;
-import soot.SootClass;
-import soot.SootMethod;
-import soot.SootField;
-import soot.Value;
-import soot.Type;
+import soot.BodyTransformer;
+
 import soot.jimple.ArrayRef;
 import soot.jimple.AssignStmt;
-import soot.jimple.InstanceInvokeExpr;
-import soot.jimple.IntConstant;
-import soot.jimple.InvokeExpr;
-import soot.jimple.Jimple;
-import soot.jimple.JimpleBody;
-import soot.jimple.NewExpr;
-import soot.jimple.StaticInvokeExpr;
-import soot.jimple.Stmt;
-import soot.jimple.StmtBody;
-import soot.jimple.StringConstant;
-import soot.jimple.internal.JAssignStmt;
-import soot.jimple.NewArrayExpr;
-import soot.util.Chain;
-import droidsafe.android.app.Project;
-import droidsafe.android.system.API;
-import droidsafe.utils.SootUtils;
-import droidsafe.android.app.Harness;
-import droidsafe.android.app.resources.Layout;
-import droidsafe.android.app.resources.BaseElement;
-import soot.tagkit.Tag;
-import soot.tagkit.IntegerConstantValueTag;
-
-
-import javax.xml.parsers.DocumentBuilderFactory;
-import javax.xml.parsers.DocumentBuilder;
-
-
-
-import soot.Body;
-import soot.BodyTransformer;
-import soot.Local;
-import soot.RefType;
-import soot.Scene;
-import soot.SootClass;
-import soot.SootMethod;
-import soot.Value;
-import soot.VoidType;
 import soot.jimple.AssignStmt;
 import soot.jimple.InstanceInvokeExpr;
+import soot.jimple.InstanceInvokeExpr;
+import soot.jimple.IntConstant;
+import soot.jimple.IntConstant;
+import soot.jimple.InvokeExpr;
 import soot.jimple.InvokeExpr;
 import soot.jimple.Jimple;
+import soot.jimple.Jimple;
+import soot.jimple.NewArrayExpr;
+import soot.jimple.StaticInvokeExpr;
+import soot.jimple.Stmt;
 import soot.jimple.Stmt;
 import soot.jimple.StmtBody;
-import soot.jimple.IntConstant;
+import soot.jimple.StmtBody;
 import soot.jimple.StringConstant;
-import soot.toolkits.graph.PseudoTopologicalOrderer;
+import soot.jimple.StringConstant;
+
+import soot.RefLikeType;
+
+import soot.RefType;
+
+import soot.Scene;
+
+import soot.SootClass;
+
+import soot.SootField;
+
+import soot.SootMethod;
+
+import soot.tagkit.IntegerConstantValueTag;
+import soot.tagkit.Tag;
+
+import soot.Type;
+
 import soot.util.Chain;
+
+import soot.Value;
 
 
 /**
@@ -90,17 +78,19 @@ import soot.util.Chain;
  */
 public class ResolveStringConstants extends BodyTransformer {
 
-  public static final boolean DEBUG = true;
-  public static final boolean STRING_ARRAYS = true;
-
   private static final Logger logger = LoggerFactory.getLogger(ResolveStringConstants.class);	
 
+  // id to name map used for both strings and string-arrays 
   private static HashMap<Integer, String> stringIdToStringName;
-  private static HashMap<String, String> stringNameToStringValue;
-  private static HashMap<String, List<String>> stringArrayNameToStringArrayValues;	
 
+  
   public static void run(String application_base_path) {
     
+      /* Check to see if the application defines any subclasses of android.content.res.Resources. We consider this
+     * malware
+     * TODO: perhaps we should move this somewhere else so that if string constant resolutionn is disabled it's still
+     * run
+     */    
     for (SootClass clazz : Scene.v().getApplicationClasses()) {
     	if (clazz.isInterface() || clazz.getName().equals(Harness.HARNESS_CLASS_NAME))
     	  continue;
@@ -109,7 +99,7 @@ public class ResolveStringConstants extends BodyTransformer {
       if (API.v().isSystemClass(clazz))
     	  continue;
 
-      // does the class subclass res
+      // does the class subclass andorid.content.res.Resources? If so, exit.
       Set<SootClass> parents = SootUtils.getParents(clazz);
       for (SootClass parent : parents) {
         if(parent.getName().equals("android.content.res.Resources")) {
@@ -118,67 +108,8 @@ public class ResolveStringConstants extends BodyTransformer {
         }
       }
 		}
-
-    // create a mapping from string names to string values
-    stringNameToStringValue = new HashMap<String, String>();
-    stringArrayNameToStringArrayValues = new HashMap<String, List<String>>();
-    String[] filesToProcess = {"res/values/strings.xml", "res/values/arrays.xml"};
-    for (String fileToProcess : filesToProcess) {
-      File stringXmlFile = new File(fileToProcess);
-    
-      Layout layout = null;
-      try {
-        layout = new Layout(stringXmlFile);
-      } catch (Exception e) {
-        logger.error("Could not parse " + stringXmlFile + ":" + e.getMessage());
-        continue;
-      }
-      List<Node> children = layout.view.gather_children();
-      for(int i = 0; i < children.size(); ++i){
-        Element element = (Element)children.get(i);
-        String tagName = element.getTagName();
-        if (tagName.equals("string")){
-          String stringName = element.getAttribute("name");
-          String stringValue = element.getFirstChild().getNodeValue();
-          if(DEBUG){
-            System.out.println("\nAdding a string name to string value mapping:");
-            System.out.println("String Name: " + stringName);
-            System.out.println("String Value: " + stringValue);
-          }
-          stringNameToStringValue.put(stringName, stringValue);
-        } else if(tagName.equals("string-array") && STRING_ARRAYS){
-          String stringArrayName = element.getAttribute("name");
-          NodeList stringArrayNodes = element.getChildNodes();
-          List<String> stringArrayValues = new ArrayList<String>();
-          for (int j = 0; j < stringArrayNodes.getLength(); ++j) {
-            Node child = stringArrayNodes.item(j);
-            if(child instanceof Element){
-              Element elementChild = (Element)child;
-              String stringArrayValue = ((Element)child).getFirstChild().getNodeValue();
-              int index = stringArrayValue.indexOf("@string");
-              if(index != -1){
-                String stringName = stringArrayValue.substring("@string".length()+1, stringArrayValue.length());
-                if(stringNameToStringValue.containsKey(stringName)){
-                  stringArrayValue = stringNameToStringValue.get(stringName);
-                }
-              }
-              stringArrayValues.add(stringArrayValue);
-            }
-          }
-          if(DEBUG){
-            System.out.println("\nAdding a string array name to string array value mapping:");
-            System.out.println("String Array Name: " + stringArrayName);
-            System.out.println("String Array Values: ");
-            for(String stringArrayValue : stringArrayValues){
-              System.out.println(stringArrayValue);   
-            }
-          }
-          stringArrayNameToStringArrayValues.put(stringArrayName, stringArrayValues);
-        }
-      }
-    }
-  
-		// create a mapping from string ids to string names
+		
+    // create a mapping from string ids to string names
     stringIdToStringName = new HashMap<Integer, String>();
 		for (SootClass clz : Scene.v().getClasses()) {
       if (clz.isApplicationClass() & clz.getShortName().startsWith("R$string")) {
@@ -187,11 +118,6 @@ public class ResolveStringConstants extends BodyTransformer {
           Tag tag = field.getTag("IntegerConstantValueTag");
           Integer stringId = ((IntegerConstantValueTag)tag).getIntValue();
           String stringName = field.getName();
-          if(DEBUG){
-            System.out.println("\nAdding a string id to string name mapping:");
-            System.out.println("String Id: " + stringId);
-            System.out.println("String Name: " + stringName);
-          }
           stringIdToStringName.put(stringId, stringName);
 				}
 			} else {
@@ -200,17 +126,13 @@ public class ResolveStringConstants extends BodyTransformer {
             Tag tag = field.getTag("IntegerConstantValueTag");
             Integer stringId = ((IntegerConstantValueTag)tag).getIntValue();
             String stringArrayName = field.getName();
-            if(DEBUG){
-              System.out.println("\nAdding a string id to string array name mapping:");
-              System.out.println("String Id: " + stringId);
-              System.out.println("String Array Name: " + stringArrayName);
-            }
             stringIdToStringName.put(stringId, stringArrayName);
 				  }
         }
       }
 		}
-      
+    
+    // call the transformation on each method 
     ResolveStringConstants transformer = new ResolveStringConstants();
 		for (SootClass clz : Scene.v().getClasses()) {
 			if (Project.v().isAppClass(clz.toString())) {
@@ -226,18 +148,27 @@ public class ResolveStringConstants extends BodyTransformer {
 	protected void internalTransform(Body b, String phaseName, Map options)  {
 		StmtBody stmtBody = (StmtBody)b;
 		Chain units = stmtBody.getUnits();
-		// need a snapshot iterator since we want to mutate while iterating
+
+    // need a snapshot iterator since we want to mutate while iterating
 		Iterator stmtIt = units.snapshotIterator();
 
-		while (stmtIt.hasNext()) {
+    // Get the data from parsed resource files
+    Resources resources = Resources.v();
+    HashMap<String, RString> stringNameToRString = resources.getStringNameToRStringHashMap();
+    HashMap<String, RStringArray> stringArrayNameToRStringArray = resources.getStringArrayNameToRStringArrayHashMap();
+
+    while (stmtIt.hasNext()) {
 			Stmt stmt = (Stmt)stmtIt.next();
-			// we only care about invoke expressions
+
+      // we only care about invoke expressions
       if (!stmt.containsInvokeExpr()) {
 				continue;
 			}
-			InvokeExpr expr = (InvokeExpr)stmt.getInvokeExpr();
+
+      InvokeExpr expr = (InvokeExpr)stmt.getInvokeExpr();
       SootMethod target = getTarget(expr);
-      
+
+      // we're at jimple's level so everything should be an AssignStmt      
       AssignStmt assignStmt = null;
       if(stmt instanceof AssignStmt) {
         assignStmt = (AssignStmt)stmt;
@@ -245,56 +176,65 @@ public class ResolveStringConstants extends BodyTransformer {
         continue;
       }
       
-      // there should always be a target
+      // If there is no target, skip the current statement. However, there should always be a target
       if(target == null) {
         continue; 
       }
       
-      // For now we only target "getString" and "getText" in "android.contet.Context"
+      // Replace calls to getString and getText from android.content.Context and android.content.res.Resources with
+      // values
       if(((target.getDeclaringClass().toString().equals("android.content.Context")) ||
          (target.getDeclaringClass().toString().equals("android.content.res.Resources"))) &&
          (target.getName().equals("getString") || target.getName().equals("getText"))) {
-          if(expr.getArgCount() == 1) {
-            Value arg = expr.getArg(0);
-            if (arg instanceof IntConstant){
-              Integer stringId = new Integer(((IntConstant)arg).value);
-              String strVal = stringNameToStringValue.get((stringIdToStringName.get(stringId)));
-              if (strVal != null) {
-                if(DEBUG){
-                  System.out.println("\nReplacing " + stringId + " with " + strVal);
-                  System.out.println("Right Op: " + assignStmt.getRightOp());
-                  System.out.println("Left Op: " + assignStmt.getLeftOp());
-                }
-                assignStmt.setRightOp(StringConstant.v(strVal));
-              }
-            }
-          }
-      } else if(target.getDeclaringClass().toString().equals("android.content.res.Resources") &&
-                target.getName().equals("getStringArray")) {
+        
+        // Only handling calls to getString and getText that take in one IntConstant argument
         if(expr.getArgCount() == 1) {
           Value arg = expr.getArg(0);
           if (arg instanceof IntConstant){
+            // Get the string id and the string value with which we'll replace it
             Integer stringId = new Integer(((IntConstant)arg).value);
-            String stringArrayName = stringIdToStringName.get(stringId);
-            if (stringArrayName != null) {
-              List<String> stringArrayValues = stringArrayNameToStringArrayValues.get(stringArrayName);
-              if (stringArrayValues != null) {
-                if(DEBUG){
-                  System.out.println("\nReplacing " + stringId + " with: ");
-                  for(String stringArrayValue : stringArrayValues){
-                    System.out.println(stringArrayValue);
+            String stringName = stringIdToStringName.get(stringId);
+            // continue only if we have the string name
+            if(stringName != null){
+              String stringValue = stringNameToRString.get((stringIdToStringName.get(stringId))).value;
+              // continue only if we have the string value
+              if (stringValue != null) {
+                // replace the virtual invoke statement with the string value
+                logger.info("Replacing {} with {}", stringId, stringValue);
+                assignStmt.setRightOp(StringConstant.v(stringValue));
+              }
+            }
+          }
+        }
+      } else {
+        // Replace calls to getStringArray from android.content.res.Resources
+        if(target.getDeclaringClass().toString().equals("android.content.res.Resources") &&
+           target.getName().equals("getStringArray")) {
+          
+          // Only handling calls to getStringArray that take in one IntConstant argument  
+          if(expr.getArgCount() == 1) {
+            Value arg = expr.getArg(0);
+            if (arg instanceof IntConstant){
+              // get the string array id and the list of string values
+              Integer stringId = new Integer(((IntConstant)arg).value);
+              String stringArrayName = stringIdToStringName.get(stringId);
+              // continue only if we have the string array name 
+              if (stringArrayName != null) {
+                List<String> stringArrayValues = stringArrayNameToRStringArray.get(stringArrayName).value;
+                // continue only if we have the string array value
+                if (stringArrayValues != null) {
+                  // replace the the virtual invoke statement with an array definition and fill in all the string values
+                  // TODO: make sure the string array values actually shows up in the log
+                  logger.info("Replacing {} with {}", stringId, stringArrayValues);
+                  ArrayType type = ArrayType.v(RefType.v("java.lang.String"), 1);
+                  NewArrayExpr arrayExpr = Jimple.v().newNewArrayExpr(type, IntConstant.v(stringArrayValues.size()));
+				          assignStmt.setRightOp(arrayExpr);
+				          for(int k = 0; k < stringArrayValues.size(); ++k) {
+                    String stringArrayValue = stringArrayValues.get(k);
+                    ArrayRef arrayRef = Jimple.v().newArrayRef(assignStmt.getLeftOp(), IntConstant.v(k));
+                    AssignStmt arrayAssignStmt = Jimple.v().newAssignStmt(arrayRef, StringConstant.v(stringArrayValue));
+                    units.insertAfter(arrayAssignStmt, stmt);
                   }
-                  System.out.println("Right Op: " + assignStmt.getRightOp());
-                  System.out.println("Left Op: " + assignStmt.getLeftOp());
-                }
-                ArrayType type = ArrayType.v(RefType.v("java.lang.String"), 1);
-                NewArrayExpr arrayExpr = Jimple.v().newNewArrayExpr(type, IntConstant.v(stringArrayValues.size()));
-				        assignStmt.setRightOp(arrayExpr);
-				        for(int k = 0; k < stringArrayValues.size(); ++k) {
-                  String stringArrayValue = stringArrayValues.get(k);
-                  ArrayRef arrayRef = Jimple.v().newArrayRef(assignStmt.getLeftOp(), IntConstant.v(k));
-                  AssignStmt arrayAssignStmt = Jimple.v().newAssignStmt(arrayRef, StringConstant.v(stringArrayValue));
-                  units.insertAfter(arrayAssignStmt, stmt);
                 }
               }
             }

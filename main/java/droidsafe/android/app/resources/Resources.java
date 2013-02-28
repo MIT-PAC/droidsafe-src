@@ -1,38 +1,5 @@
 package droidsafe.android.app.resources;
 
-import java.util.*;
-import java.io.*;
-
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-import org.w3c.dom.*;
-
-import soot.RefType;
-import soot.Scene;
-import soot.SootClass;
-import soot.SootField;
-import soot.SootMethod;
-import soot.jimple.AbstractStmtSwitch;
-import soot.jimple.IntConstant;
-import soot.jimple.InvokeExpr;
-import soot.jimple.InvokeStmt;
-import soot.jimple.Jimple;
-import soot.jimple.Stmt;
-import soot.jimple.StmtBody;
-import soot.jimple.VirtualInvokeExpr;
-import soot.jimple.internal.JAssignStmt;
-import soot.tagkit.ConstantValueTag;
-import soot.tagkit.IntegerConstantValueTag;
-import soot.tagkit.Tag;
-import soot.util.Chain;
-
-
-import java.util.jar.JarEntry;
-import java.util.jar.JarFile;
-import java.util.HashSet;
-
-import javax.xml.parsers.DocumentBuilderFactory;
-import javax.xml.parsers.DocumentBuilder;
 import com.google.common.collect.BiMap;
 import com.google.common.collect.HashBiMap;
 
@@ -40,14 +7,58 @@ import com.sun.org.apache.bcel.internal.classfile.ClassParser;
 import com.sun.org.apache.bcel.internal.classfile.JavaClass;
 
 import droidsafe.analyses.CallGraphFromEntryPoints;
-import droidsafe.android.app.resources.XmlFile;
+
 import droidsafe.android.app.resources.AndroidManifest.Activity;
 import droidsafe.android.app.resources.AndroidManifest.Provider;
 import droidsafe.android.app.resources.AndroidManifest.Receiver;
 import droidsafe.android.app.resources.AndroidManifest.Service;
 import droidsafe.android.app.resources.Layout.View;
+import droidsafe.android.app.resources.XmlFile;
 import droidsafe.android.system.Components;
+
 import droidsafe.utils.SootUtils;
+
+import java.io.*;
+
+import java.util.*;
+import java.util.HashSet;
+import java.util.InvalidPropertiesFormatException;
+import java.util.jar.JarEntry;
+import java.util.jar.JarFile;
+
+import javax.xml.parsers.DocumentBuilder;
+import javax.xml.parsers.DocumentBuilderFactory;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
+import org.w3c.dom.*;
+
+import soot.jimple.AbstractStmtSwitch;
+import soot.jimple.IntConstant;
+import soot.jimple.internal.JAssignStmt;
+import soot.jimple.InvokeExpr;
+import soot.jimple.InvokeStmt;
+import soot.jimple.Jimple;
+import soot.jimple.Stmt;
+import soot.jimple.StmtBody;
+import soot.jimple.VirtualInvokeExpr;
+
+import soot.RefType;
+
+import soot.Scene;
+
+import soot.SootClass;
+
+import soot.SootField;
+
+import soot.SootMethod;
+
+import soot.tagkit.ConstantValueTag;
+import soot.tagkit.IntegerConstantValueTag;
+import soot.tagkit.Tag;
+
+import soot.util.Chain;
 
 /**
  * Representation of the Android Resources and Manifest file.  Also contains
@@ -70,6 +81,12 @@ public class Resources {
 
 	/** Layouts in the Application **/
 	List<Layout> layouts = new ArrayList<Layout>();
+  
+  // Stores string name to RString mappings that we create while parsing resource files in res/values
+  HashMap<String, RString> stringNameToRString = new HashMap<String, RString>();
+  
+  // Stores string array name to RStringArray mapping that we create while parsing resource files in res/values
+  HashMap<String, RStringArray> stringArrayNameToRStringArray = new HashMap<String, RStringArray>();
 
 	/** Application base package name **/
 	String package_name;
@@ -102,8 +119,16 @@ public class Resources {
 	public AndroidManifest getManifest() {
 		return manifest;
 	}
+
+  public HashMap<String, RString> getStringNameToRStringHashMap() {
+    return this.stringNameToRString;
+  }
+  
+  public HashMap<String, RStringArray> getStringArrayNameToRStringArrayHashMap() {
+    return this.stringArrayNameToRStringArray;
+  }
 	
-	public static void resolveManifest(String rootDir)  {
+  public static void resolveManifest(String rootDir)  {
 		try {
 			v = new Resources (new File (rootDir));
 
@@ -212,12 +237,84 @@ public class Resources {
 		// Read in the resource id to name map
 		read_resources();
 	}
-  
-  // Currently builds up only string values (including string arrays)
-  // In the future should also support colors, dimensions, typed arrays and styles.
-  void process_values(XmlFile value_source) {
-     logger.debug("Processing values from {}", value_source);
-     BaseElement baseElement = new BaseElement(value_source.getDocumentElement(), null);
+
+  /**
+  * Takes in an xml files and processes the following values from it:
+  *  - string (stores them in HashMap<String, RString> stringNameToRString
+  *  - string-array (stores them in HashMap<String, RString> stringNameToRStringArray
+  * TODO: add support for colors, dimensions, typed arrays and styles.
+  * @param xmlFile an XmlFile instance that we treat as a source of values (e.g. res/values/arrays.xml)
+  */
+  void process_values(XmlFile xmlFile) {
+     logger.info("Processing values from {}", xmlFile);
+     
+     BaseElement baseElement = new BaseElement(xmlFile.getDocumentElement(), null);
+     List<Node> children = baseElement.gather_children();
+     
+     // process strings
+     // IMPORTANT: this must execute fully before we process string-arrays because some string values in a string array
+     // can be string names. We want to substitute the values in instead but don't have them all until this finishes
+     for(int i = 0; i < children.size(); ++i){
+       Element element = (Element)children.get(i);
+       String tagName = element.getTagName();
+       
+       if (tagName.equals("string")){
+         String stringValue = element.getFirstChild().getNodeValue();
+         // create an instance of our internal representation of the android string - RString
+         RString rString = null;
+         try{
+           rString = new RString(element, xmlFile, stringValue);
+         } catch (InvalidPropertiesFormatException e) {
+           logger.error("String {} is not formatted correctly in {} : {}", element, xmlFile, e);
+           continue;
+         }
+         // the name automatically gets assigned during xml parsing
+         String stringName = rString.name;
+         
+         logger.info("\nAdding a string name to string value mapping: ({}:{})", stringName, stringValue);
+         stringNameToRString.put(stringName, rString);
+       }
+     }
+
+    // process string arrays
+    for(int i = 0; i < children.size(); ++i){
+      Element element = (Element)children.get(i);
+      String tagName = element.getTagName();
+      
+      if (tagName.equals("string-array")){
+        // get the value of the string-array, a List<string>
+        NodeList stringArrayNodes = element.getChildNodes();
+        List<String> stringArrayValues = new ArrayList<String>();
+        for (int j = 0; j < stringArrayNodes.getLength(); ++j) {
+          Node child = stringArrayNodes.item(j);
+          if(child instanceof Element){
+            String stringArrayValue = ((Element)child).getFirstChild().getNodeValue();
+            int index = stringArrayValue.indexOf("@string");
+            if(index != -1){
+              String stringName = stringArrayValue.substring("@string".length()+1, stringArrayValue.length());
+              if(stringNameToRString.containsKey(stringName)){
+                stringArrayValue = stringNameToRString.get(stringName).value;
+              }
+            }
+            stringArrayValues.add(stringArrayValue);
+          }
+        }
+        // create an instance of our internal representation of the android string-array - RStringArray
+        RStringArray rStringArray = null;
+        try{
+          rStringArray = new RStringArray(element, xmlFile, stringArrayValues);
+        } catch (InvalidPropertiesFormatException e) {
+          logger.error("string-array {} is not formatted correctly in {} : {}", element, xmlFile, e);
+          continue;
+        }
+        // the name automatically gets assigned during xml parsing
+        String stringArrayName = rStringArray.name;
+
+        stringArrayNameToRStringArray.put(stringArrayName, rStringArray);
+        logger.info("\nAdding a string-array name to string-array value mapping: ({}:{})", stringArrayName, stringArrayValues);
+
+      }
+    }
   }
 
 	/** 
