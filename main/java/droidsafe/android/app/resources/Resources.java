@@ -190,7 +190,7 @@ public class Resources {
 			
 			v.resolved = true;
 		} catch (Exception e) {
-			logger.error("Error resolving resources and manifest: ", e);
+			logger.error("Error resolving resources and manifest: {}", e);
 		}
 		
 	
@@ -259,20 +259,23 @@ public class Resources {
        String tagName = element.getTagName();
        
        if (tagName.equals("string")){
-         String stringValue = element.getFirstChild().getNodeValue();
-         // create an instance of our internal representation of the android string - RString
-         RString rString = null;
-         try{
-           rString = new RString(element, xmlFile, stringValue);
-         } catch (InvalidPropertiesFormatException e) {
-           logger.error("String {} is not formatted correctly in {} : {}", element, xmlFile, e);
-           continue;
-         }
-         // the name automatically gets assigned during xml parsing
-         String stringName = rString.name;
+         Node firstChild = element.getFirstChild();
+         if (firstChild != null) {
+           String stringValue = firstChild.getNodeValue();
+           // create an instance of our internal representation of the android string - RString
+           RString rString = null;
+           try{
+             rString = new RString(element, xmlFile, stringValue);
+           } catch (InvalidPropertiesFormatException e) {
+             logger.error("String {} is not formatted correctly in {} : {}", element, xmlFile, e);
+             continue;
+           }
+           // the name automatically gets assigned during xml parsing
+           String stringName = rString.name;
          
-         logger.info("\nAdding a string name to string value mapping: ({}:{})", stringName, stringValue);
-         stringNameToRString.put(stringName, rString);
+           logger.info("\nAdding a string name to string value mapping: ({}:{})", stringName, stringValue);
+           stringNameToRString.put(stringName, rString);
+         }
        }
      }
 
@@ -288,15 +291,19 @@ public class Resources {
         for (int j = 0; j < stringArrayNodes.getLength(); ++j) {
           Node child = stringArrayNodes.item(j);
           if(child instanceof Element){
-            String stringArrayValue = ((Element)child).getFirstChild().getNodeValue();
-            int index = stringArrayValue.indexOf("@string");
-            if(index != -1){
-              String stringName = stringArrayValue.substring("@string".length()+1, stringArrayValue.length());
-              if(stringNameToRString.containsKey(stringName)){
-                stringArrayValue = stringNameToRString.get(stringName).value;
+            Element childElement = (Element)child;
+            Node firstChild = childElement.getFirstChild();
+            if(firstChild!= null){
+              String stringArrayValue = firstChild.getNodeValue();
+              int index = stringArrayValue.indexOf("@string");
+              if(index != -1){
+                String stringName = stringArrayValue.substring("@string".length()+1, stringArrayValue.length());
+                if(stringNameToRString.containsKey(stringName)){
+                  stringArrayValue = stringNameToRString.get(stringName).value;
+                }
               }
+              stringArrayValues.add(stringArrayValue);
             }
-            stringArrayValues.add(stringArrayValue);
           }
         }
         // create an instance of our internal representation of the android string-array - RStringArray
