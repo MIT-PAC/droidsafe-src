@@ -156,12 +156,10 @@ public class Resources {
 			
 			//check that all source components are in the manifest
 			for (SootClass clazz : droidsafe.android.app.Hierarchy.v().getAllAppComponents()) {
-				if (!am.components.contains(clazz)) {
-					logger.error("Component class not defined in manifest, please to manifest: {}", clazz);
-					System.exit(1);
+				if (!clazz.isAbstract() && !am.components.contains(clazz)) {
+					logger.warn("\nComponent class not defined in manifest, please add to manifest: {}\n", clazz);
 				}
-			}
-			
+			}		
 			
 			v.resolved = true;
 		} catch (Exception e) {
@@ -356,8 +354,15 @@ public class Resources {
 	private void process_method (final Activity activity, final SootClass cn, final SootMethod m) 
 			throws UnsupportedIdiomException {
 		//find all invoke calls in method...
-
-		StmtBody stmtBody = (StmtBody)m.retrieveActiveBody();
+		StmtBody stmtBody = null;
+		
+		try {
+			 stmtBody = (StmtBody)m.retrieveActiveBody();
+		} catch (Exception e) {
+			logger.debug("No active body for {}", m);
+			return;
+		}
+		
 		for( Iterator stmtIt = stmtBody.getUnits().iterator(); stmtIt.hasNext(); ) {
 			final Stmt stmt = (Stmt) stmtIt.next();
 			if (stmt.containsInvokeExpr()) {

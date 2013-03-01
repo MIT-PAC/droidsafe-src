@@ -1,5 +1,8 @@
 package droidsafe.transforms;
 
+import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.Iterator;
 import java.util.LinkedHashSet;
 import java.util.LinkedList;
@@ -21,9 +24,12 @@ import soot.RefType;
 import soot.Scene;
 import soot.SootClass;
 import soot.SootMethod;
+import soot.Unit;
 import soot.Value;
 import soot.Type;
+import soot.ValueBox;
 import soot.jimple.AssignStmt;
+import soot.jimple.CastExpr;
 import soot.jimple.InstanceInvokeExpr;
 import soot.jimple.IntConstant;
 import soot.jimple.InvokeExpr;
@@ -38,6 +44,8 @@ import soot.jimple.internal.JAssignStmt;
 import soot.util.Chain;
 import droidsafe.android.app.Project;
 import droidsafe.android.system.API;
+import droidsafe.main.Config;
+import droidsafe.utils.CannotFindMethodException;
 import droidsafe.utils.SootUtils;
 
 /**
@@ -56,6 +64,9 @@ public class AddAllocsForAPICalls extends BodyTransformer {
 	private Set<NewExpr> generatedExpr;
 	private static AddAllocsForAPICalls v;
 	
+	private static String NEED_TO_MODEL_FILENAME = "required-pta-modeling.txt";
+	
+	private FileWriter needToModelFile;
 	
 	private static int localID = 0;
 	
@@ -63,16 +74,26 @@ public class AddAllocsForAPICalls extends BodyTransformer {
 	 * Call this pass on all application classes in the project.
 	 */
 	public static void run() {
-		
-		
+
 		v = new AddAllocsForAPICalls();
-		for (SootClass clz : Scene.v().getClasses()) {
-			if (Project.v().isAppClass(clz.toString())) {
-				for (SootMethod meth : clz.getMethods()) {
-					if (meth.isConcrete())
-						v.transform(meth.retrieveActiveBody());
+
+		try {
+			v.needToModelFile = new FileWriter(Project.v().getOutputDir() + 
+					File.separator +NEED_TO_MODEL_FILENAME);
+
+			for (SootClass clz : Scene.v().getClasses()) {
+				if (Project.v().isAppClass(clz.toString())) {
+					for (SootMethod meth : clz.getMethods()) {
+						if (meth.isConcrete())
+							v.transform(meth.retrieveActiveBody());
+					}
 				}
 			}
+			v.needToModelFile.close();
+		}
+		catch (IOException e) {
+			logger.error("Cannot create pta need to model file");
+			System.exit(1);
 		}
 	}
 
@@ -120,16 +141,31 @@ public class AddAllocsForAPICalls extends BodyTransformer {
 			if (!API.v().isSystemClassReference(target.getReturnType())) 
 				continue;
 			
+			try {
+				needToModelFile.write(target.getSignature() + "\n");
+			} catch (IOException e) {
+			}
+			
 			if (target.getReturnType() instanceof ArrayType) {
 				logger.debug("Instrumenting call to {} with new alloc node (array)", target);
 				List<Stmt> stmts = getNewArrayAndAlloc(target, stmtBody, origAssign.getLeftOp());
 				units.insertAfter(stmts, stmt);
 			} else {
 				logger.debug("Instrumenting call to {} with new alloc node in {}\n", target, b.getMethod());
+				
+				//as a hack, but a safe hack, check to see if the value assigned to is cast 
+				//immediately, if it is and not control flow, we assume the cast will pass, and we can
+				//use this type to create an object
+				SootClass castedTo = findNextCastOfValue(stmt, stmtBody, origAssign.getLeftOp(), 5);
+				
 				//create a new express for each concrete type that this return type could take on
 				//if it is already a concrete just, then just use this, have to search for concrete
 				//if abstract or interface.
 				SootClass returnClass = ((RefType)target.getReturnType()).getSootClass();
+				
+				if (castedTo != null)
+					returnClass = castedTo;
+				
 				SootClass lvalClass = ((RefType)origAssign.getLeftOp().getType()).getSootClass();
 				
 				List<SootClass> clzs = SootUtils.smallestConcreteSetofImplementors(returnClass);
@@ -241,7 +277,11 @@ public class AddAllocsForAPICalls extends BodyTransformer {
 						return expr.getMethod();
 					} else  {//if concrete, then try to find the exact method, but who really cares, we just need the 
 						//return type
-						return Scene.v().getActiveHierarchy().resolveConcreteDispatch( recRefType.getSootClass(), expr.getMethod());
+						try {
+							return SootUtils.resolveConcreteDispatch( recRefType.getSootClass(), expr.getMethod());
+						} catch (CannotFindMethodException e) {
+							return SootUtils.resolveMethod(recRefType.getSootClass(), expr.getMethod().getSignature());
+						}
 					}
 				}
 			}
@@ -253,58 +293,33 @@ public class AddAllocsForAPICalls extends BodyTransformer {
 		}
 		return null;
 	}
-}
-
-/*
- Some old code I may want again: mgordon
-SootClass vib = Scene.v().getSootClass("android.app.Activity");
-List<Object> subClasses = Scene.v().getActiveHierarchy().getDirectSubclassesOf(vib);
-
-vib.setName("android.app.$Activity$");
-vib.setRefType(RefType.v("android.app.$Activity$"));
-Scene.v().removeClass(vib);
-Scene.v().addClass(vib);
-vib.setLibraryClass();
-
-SootClass newVib = new SootClass("android.app.Activity", Modifier.PUBLIC);
-newVib.setSuperclass(vib);
-
-for (Object obj: subClasses) {
-	SootClass clz = (SootClass)obj;
-	clz.setSuperclass(newVib);
-	System.out.printf("Setting superclass of %s to %s\n", clz, newVib);
-}
-
-
-SootMethod oldMethod = vib.getMethod("java.lang.Object getSystemService(java.lang.String)");
-SootMethod newMethod = new SootMethod(new String(oldMethod.getName()), oldMethod.getParameterTypes(), oldMethod.getReturnType(), 
-		Modifier.PUBLIC, oldMethod.getExceptions());
-
-
-JimpleBody body = Jimple.v().newBody(newMethod);
-newMethod.setActiveBody(body);
-
-Local receiver = Jimple.v().newLocal("l" + localID++, oldMethod.getReturnType());
-body.getLocals().add(receiver);
-
-body.getUnits().add(Jimple.v().newAssignStmt(receiver, Jimple.v().newNewExpr((RefType)oldMethod.getReturnType())));
-
-body.getUnits().add(Jimple.v().newReturnStmt(receiver));
-
-newVib.addMethod(newMethod);
-Scene.v().addClass(newVib);
-newVib.setInScene(true);
-newVib.setApplicationClass();
-
-
-Scene.v().releaseActiveHierarchy();
-Scene.v().releaseCallGraph(); 
-Scene.v().releaseFastHierarchy();
-Scene.v().releasePointsToAnalysis(); 
-Scene.v().releaseReachableMethods(); 		           
-Scene.v().releaseSideEffectAnalysis();
-
-Scene.v().loadNecessaryClasses();
 	
-Scene.v().setActiveHierarchy(new Hierarchy());
-*/
+	private SootClass findNextCastOfValue(Stmt stmt, Body body, Value v, int distance) {
+		Iterator<Unit> fromStmt = body.getUnits().iterator(stmt);
+		
+		int numStmts = 0;
+		
+		while (fromStmt.hasNext()) {
+			//only search for the given distance of statements from the beginning
+			if (numStmts++ > distance)
+				break;
+			
+			Stmt currentStmt = (Stmt)fromStmt.next();
+			
+			//return if we have a branch
+			if (currentStmt.branches())
+				break;
+			
+			for (ValueBox curValue : currentStmt.getUseBoxes()) {
+				if (curValue.getValue() instanceof CastExpr) {
+					CastExpr ce = (CastExpr)curValue.getValue();
+					if (ce.getOp().equals(v) && ce.getType() instanceof RefType) {
+						return ((RefType)ce.getType()).getSootClass();
+					}
+				}
+			}			
+		}
+		return null;
+	}
+}
+

@@ -152,6 +152,7 @@ public class RCFG {
 		//first check on the calls directly in the call graph
 		//and do this in a context sensitive way
 		csEdges(rCFGNode, edgeInto, appEdgesOut, allEdges);
+		
 		//next add calls that can happen in the runtime for any
 		//api objects that are created
 		edgesFromAPIAllocs(rCFGNode, edgeInto, appEdgesOut, allEdges);
@@ -260,7 +261,17 @@ public class RCFG {
 	
 	/***
 	 * We have to be extra careful for calls with the receiver as a generated alloc expression
-	 * from an api call (see droidsafe.transforms.AddAllocsForAPICalls).  We don't know the exact type
+	 * from an api call (see droidsafe.transforms.AddAllocsForAPICalls).  
+	 * 
+	 * Since we often times do not know which specific runtime type is returned from an api method,
+	 * we create allocs of the most general types.  But if the later, the object is cast to something 
+	 * more specific, and then a method is called on it, that is not a method defined in the more general
+	 * class, this method will not appear in the call graph, because soot cannot find it.
+	 * 
+	 * So we look for these calls, and add them manually for now.  This should be fixed when we model api
+	 * call return values.
+	 * 
+	 * We don't know the exact type
 	 * of the expression, so we need to add calls for all overriding methods of the receiver and method
 	 * combination.
 	 */
@@ -269,8 +280,8 @@ public class RCFG {
 		SootMethod src = edgeInto.tgt();
 
 		if (src.isNative()) {
-			logger.warn("Found a native method during analysis: {}. It could do anything!", src);
-			return;
+			logger.error("Found a native method during analysis: {}. It could do anything!\n\n", src);
+			System.exit(1);
 		}
 			
 		if (!src.isConcrete())
@@ -302,13 +313,22 @@ public class RCFG {
 					}
 					SootClass allocType = ((RefType)t).getSootClass();
 					
-					Set<SootMethod> allMethods = 
-							SootUtils.getOverridingMethodsIncluding(allocType, expr.getMethodRef().getSubSignature().getString());
-					
-					for (SootMethod m : allMethods) {
-						Edge newEdge = new Edge(src, stmt, m);
-						//System.out.printf("Creating edge for %s: %s\n", alloc, newEdge);
-						processEdge(rCFGNode, newEdge, edgeInto, null, appEdgesOut, allEdges);
+					//try to find the method in the runtime type of the object
+					//if we cannot, then we were too general with the added allocation, so
+					//then find all methods in implementing classes that this could be
+					try {
+						SootUtils.resolveConcreteDispatch(allocType, expr.getMethod());
+					} catch (CannotFindMethodException e) {
+
+						Set<SootMethod> allMethods = 
+								SootUtils.getOverridingMethodsIncluding(expr.getMethod().getDeclaringClass(), 
+										expr.getMethodRef().getSubSignature().getString());
+
+						for (SootMethod m : allMethods) {
+							Edge newEdge = new Edge(src, stmt, m);
+							//System.out.printf("Creating edge for %s: %s\n", alloc, newEdge);
+							processEdge(rCFGNode, newEdge, edgeInto, alloc, appEdgesOut, allEdges);
+						}
 					}
 				}
 			}
@@ -363,8 +383,8 @@ public class RCFG {
 				
 				for (AllocNode an : GeoPTA.v().getPTSet(cgEdge.base_var, edgeInto)) {
 					//generated allocation nodes are handled separately in edgesFromAPIAllocs()
-					if (AddAllocsForAPICalls.v().isGeneratedExpr(an.getNewExpr()))
-						continue;
+					/*if (AddAllocsForAPICalls.v().isGeneratedExpr(an.getNewExpr()))
+						continue;*/
 					
 					Type t = an.getType();
 					if ( t instanceof AnySubType ||
@@ -397,8 +417,8 @@ public class RCFG {
 					InstanceInvokeExpr invoke = SootUtils.getInstanceInvokeExpr(curEdge.srcStmt());
 					if (invoke != null) {
 						for (AllocNode node : GeoPTA.v().getPTSet(invoke.getBase(), edgeInto)) {
-							if (AddAllocsForAPICalls.v().isGeneratedExpr(node.getNewExpr()))
-								continue;
+							/*if (AddAllocsForAPICalls.v().isGeneratedExpr(node.getNewExpr()))
+								continue;*/
 							processEdge(rCFGNode, curEdge, edgeInto, node, appEdgesOut, allEdges);
 						}
 

@@ -56,6 +56,7 @@ public class SootConfig {
 		 soot.options.Options.v().set_whole_program(true);
 		 soot.options.Options.v().setPhaseOption("cg", "verbose:true");
 		 soot.options.Options.v().setPhaseOption("cg", "trim-clinit:true");
+		 //soot.options.Options.v().setPhaseOption("jb.tr", "ignore-wrong-staticness:true");
 		 
 		 
 		 // don't optimize the program 

@@ -114,6 +114,9 @@ public class Hierarchy {
 		
 		for (String cn : Project.v().getAppClasses()) {
 			SootClass clz = soot.Scene.v().getSootClass(cn);
+			if (clz.isInterface())
+				continue;
+			
 			if (isAndroidComponentClass(clz)) 
 				comps.add(clz);
 		}
