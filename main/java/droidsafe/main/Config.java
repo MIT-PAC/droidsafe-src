@@ -15,6 +15,11 @@ import org.apache.commons.cli.PosixParser;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import ch.qos.logback.classic.LoggerContext;
+import ch.qos.logback.classic.joran.JoranConfigurator;
+import ch.qos.logback.core.joran.spi.JoranException;
+import ch.qos.logback.core.util.StatusPrinter;
+
 /**
  * Class to store and configure options and variables.
  * 
@@ -74,6 +79,9 @@ public class Config {
 		
 		Option noSourceInfo = new Option("nosourceinfo", "Do not print source information in spec");
 		options.addOption(noSourceInfo);
+		
+		Option debugLog = new Option("debuglog", "Print debug log to current directory droidsafe/droidsafe.log");
+		options.addOption(debugLog);
 	}
 	
 	/**
@@ -98,6 +106,27 @@ public class Config {
 		
 		if (cmd.hasOption("nosourceinfo")) {
 			this.noSourceInfo = true;
+		}
+		
+		if (cmd.hasOption("debuglog")) {
+			//we want to create a debug log file, so load the 
+			//logback-debug.xml from the config files directory
+			 // assume SLF4J is bound to logback in the current environment
+			
+		    LoggerContext context = (LoggerContext) LoggerFactory.getILoggerFactory();
+		    
+		    try {
+		      JoranConfigurator configurator = new JoranConfigurator();
+		      configurator.setContext(context);
+		      // Call context.reset() to clear any previous configuration, e.g. default 
+		      // configuration. For multi-step configuration, omit calling context.reset().
+		      context.reset(); 
+		      configurator.doConfigure(APAC_HOME + File.separator + "config-files/logback-debug.xml");
+		    } catch (JoranException je) {
+		      // StatusPrinter will handle this
+		    }
+		    StatusPrinter.printInCaseOfErrorsOrWarnings(context);
+			
 		}
 		
 		APP_ROOT_DIR = getPathFromCWD(cmd.getOptionValue("approot"));
