@@ -12,6 +12,7 @@ import droidsafe.transforms.AddAllocsForAPICalls;
 
 import droidsafe.utils.SootUtils;
 
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
@@ -75,6 +76,7 @@ import soot.Value;
  * Transformation called on all application classes that finds all invocations of "getString(int resId)"
  * and "getText(int resId)" from android.content.Context and replaces them with the string values that they would have
  * returned.
+ * TODO: add support for calls to getString and getText that take in formatArgs
  */
 public class ResolveStringConstants extends BodyTransformer {
 
@@ -86,11 +88,8 @@ public class ResolveStringConstants extends BodyTransformer {
   
   public static void run(String application_base_path) {
     
-      /* Check to see if the application defines any subclasses of android.content.res.Resources. We consider this
-     * malware
-     * TODO: perhaps we should move this somewhere else so that if string constant resolutionn is disabled it's still
-     * run
-     */    
+    // Check to see if the application defines any subclasses of android.content.res.Resources. We consider this
+    // malware   
     for (SootClass clazz : Scene.v().getApplicationClasses()) {
     	if (clazz.isInterface() || clazz.getName().equals(Harness.HARNESS_CLASS_NAME))
     	  continue;
@@ -182,7 +181,8 @@ public class ResolveStringConstants extends BodyTransformer {
       }
       
       // Replace calls to getString and getText from android.content.Context and android.content.res.Resources with
-      // values
+      // values. The android.content.Context calls simply call the same methods in android.content.res.Resources but
+      // are final
       if(((target.getDeclaringClass().toString().equals("android.content.Context")) ||
          (target.getDeclaringClass().toString().equals("android.content.res.Resources"))) &&
          (target.getName().equals("getString") || target.getName().equals("getText"))) {
@@ -200,7 +200,7 @@ public class ResolveStringConstants extends BodyTransformer {
               // continue only if we have the string value
               if (stringValue != null) {
                 // replace the virtual invoke statement with the string value
-                logger.info("Replacing {} with {}", stringId, stringValue);
+                logger.info("ResolveStringConstants: replacing {} with {}", stringId, stringValue);
                 assignStmt.setRightOp(StringConstant.v(stringValue));
               }
             }
@@ -224,8 +224,7 @@ public class ResolveStringConstants extends BodyTransformer {
                 // continue only if we have the string array value
                 if (stringArrayValues != null) {
                   // replace the the virtual invoke statement with an array definition and fill in all the string values
-                  // TODO: make sure the string array values actually shows up in the log
-                  logger.info("Replacing {} with {}", stringId, stringArrayValues);
+                  logger.info("ResolveStringConstants: replacing {} with {}", stringId, Arrays.toString(stringArrayValues.toArray()));
                   ArrayType type = ArrayType.v(RefType.v("java.lang.String"), 1);
                   NewArrayExpr arrayExpr = Jimple.v().newNewArrayExpr(type, IntConstant.v(stringArrayValues.size()));
 				          assignStmt.setRightOp(arrayExpr);
@@ -247,7 +246,7 @@ public class ResolveStringConstants extends BodyTransformer {
 
   /**
    * getTarget is a private method copied from AddAllocsForAPICalls.java
-   * TODO: Perhaps we should move it out SootUtils or something similar
+   * TODO: have Michael decide what to do about this method.
    */
   private SootMethod getTarget(InvokeExpr expr) {
 		if (expr instanceof InstanceInvokeExpr) {
