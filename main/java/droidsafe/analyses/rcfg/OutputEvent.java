@@ -90,20 +90,20 @@ public class OutputEvent {
 			logger.error("Cannot find context invoke expr in context: {}.", context);
 			System.exit(1);
 		}
-		/* TODO: put this check back in when we have correctly implemented calls on generated API allocs
-		if (invokeExpr instanceof SpecialInvokeExpr) {
-			Set<AllocNode> nodes = GeoPTA.v().getPTSet(((SpecialInvokeExpr)invokeExpr).getBase(), contextEdge);
-			if (nodes.size() != 1) {
-				logger.error("Found special invoke expr with an strange PTA set: {} has size {}", invokeExpr, nodes.size());
-				System.exit(1);
-			}
-			receiverNode = nodes.iterator().next();
+		if (invokeExpr instanceof SpecialInvokeExpr && !hasReceiver()) {
+			logger.error("Found special invoke expr without a receiver {}", invokeExpr);
+			System.exit(1);
 		}
 		
 		if (hasReceiver() != (invokeExpr instanceof InstanceInvokeExpr)) {
-			logger.error("Presense of receiver is wrong for invoke expr type: {} and {} receiver (line {}).", invokeExpr, hasReceiver(), linesTag);
+			logger.error("Presence of receiver is wrong for invoke expr type: {} and {} receiver (line {}).", invokeExpr, hasReceiver(), linesTag);
+			try {
+				throw new Exception();
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
 			System.exit(1);
-		}*/
+		}
 		
 		//do some checks for things we might not fully understand yet.
 		if (invokeExpr instanceof DynamicInvokeExpr) {
