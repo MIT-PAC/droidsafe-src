@@ -2966,7 +2966,7 @@ safe        java.lang.Object: void wait(long, int)
 
 # Ok, to get a class (could be used for a variety of purposes).  This
 # does not enable calling via reflection (which we do not support)
-safe        java.lang.Object: java.lang.Class getClass()
+spec        java.lang.Object: java.lang.Class getClass()
 
 safe        java.lang.OutOfMemoryError: void <init>()
 safe        java.lang.OutOfMemoryError: void <init>(java.lang.String)
