@@ -822,4 +822,135 @@ public class SecuritySpecification  {
   }
          
       
+    // Generate JSON representation of the spec.
+  private class MethodCall {
+
+    public MethodCall(Method m, Method caller) {
+      this.method = m;
+      this.caller = caller;
+    }
+
+    private Method method;
+    private Method caller;
+
+    public String toJSON(String indent) {
+
+      StringBuffer str = new StringBuffer();
+      str.append("{\n");
+      str.append(indent + String.format("  'class' : '%s',\n", method.getCname()));
+      str.append(indent + String.format("  'method' : '%s',\n", method.getName()));
+      str.append(indent + String.format("  'return' : '%s',\n", method.getRtype().toString()));
+      // Add arguments
+      List<String> args = new ArrayList<String>();
+      for (ArgumentValue arg : method.getArgs()) {
+        String key;
+        if (arg.isType()) {
+          key = "type";
+        } else {
+          key = "value";
+        }
+        args.add(String.format("{ '%s' : '%s' }", key, arg.toString()));
+      }
+
+      str.append(indent + String.format("  'arguments' : %s,\n", args.toString()));
+
+
+      List<SourceLocationTag> locs = method.get_lines();
+      List<Integer> lines = new ArrayList<Integer>();
+      for (SourceLocationTag loc : locs) {
+        lines.add(loc.getLine());
+      }
+      str.append(indent + String.format("  'lines' : %s,\n", lines.toString()));
+
+      str.append(indent + "}");
+      return indent + str.toString();
+    }
+
+  }
+
+  private class EventBlock {
+
+    public EventBlock(Method m) {
+      this.method = m;
+      this.calls = new ArrayList<MethodCall>();
+    }
+
+    public String toJSON(String indent) {
+      StringBuffer str = new StringBuffer();
+      str.append(indent + "{\n");
+      str.append(indent + String.format("'name' : '%s',\n", method.getName()));
+      str.append(indent + String.format("'line' : %s,\n", method.getDeclSourceLocation().getLine()));
+      str.append(indent + "'calls' : [\n");
+      for (MethodCall call : calls) {
+        str.append(call.toJSON(indent + "  "));
+        str.append(",\n");
+      }
+
+      str.append(indent + "],\n");
+      str.append(indent + "}");
+      return str.toString();
+    }
+
+    public Method method;
+    public List<MethodCall> calls;
+
+
+  }
+
+   /* Generating JSON output */
+   public String toJsonString() {
+    StringBuffer buf = new StringBuffer();
+     buf.append("{\n");
+     buf.append("\t\"whitelist\": [");
+     for (Method m : whitelist) {
+      buf.append(m.toString() + ",");
+    }
+    buf.append("\t],\n");
+
+    buf.append("\t\"events\": [\n");
+    // Sort the methods for consistent output
+    List<Method> entry_points = new ArrayList<Method>(eventBlocks.keySet());
+    Collections.sort (entry_points);
+
+    // Set of all banned methods in the application (sorted, no dups)
+    TreeSet<String> all_banned_methods = new TreeSet<String>();
+
+    Map<String,List<EventBlock>> eventmap = new HashMap<String,List<EventBlock>>();
+    List<EventBlock> lst;
+
+    for (Method ie : entry_points) {
+      EventBlock event = new EventBlock(ie);
+      lst = eventmap.get(ie.getCname());
+      if (lst == null) {
+        lst = new LinkedList<EventBlock>();
+      }
+
+      // Loop through each entry point, gathering the API calls.
+      for (Method call : eventBlocks.get(ie)) {
+        event.calls.add(new MethodCall(call,ie));
+      }
+      lst.add(event);
+      eventmap.put(ie.getCname(), lst);
+    }
+
+
+    for(Map.Entry<String, List<EventBlock>> entry : eventmap.entrySet()) {
+      buf.append("{\n");
+      buf.append(String.format("  'class' : '%s',\n", entry.getKey()));
+      buf.append("  'events' : [\n");
+      for (EventBlock e : entry.getValue()) {
+        buf.append(e.toJSON("     "));
+        buf.append(",\n");
+      }
+
+      buf.append("    ],\n");
+      buf.append("},\n");
+    }
+    buf.append("\n]");
+    buf.append("\n}");
+    return buf.toString();
+  }
+
+
+
 }

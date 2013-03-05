@@ -1,0 +1,164 @@
+<html>
+	<head>
+		<title>Spec Browser</title>
+			<script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+			<script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/handlebars.js/1.0.rc.2/handlebars.min.js"></script>
+      <script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.4.4/underscore-min.js"></script>
+      <script type="text/javascript" src="specviewer.js"></script>
+			<script type="text/javascript" src="spec.json"></script>
+	   <link rel="stylesheet" href="spec.css">
+
+  </head>
+	<body>
+		<div id="main">
+      <div id="lhs">
+        <div class="tablist">
+          <a class="tab" onclick="showtab('#classlist')">Handlers</a>
+          <a class="tab" onclick="showtab('#methodlist')">Methods</a>
+        </div>
+        <div id="classlist">
+        </div>
+        <div id="methodlist">
+        </div>  
+      </div>
+      <div id="rhs">
+        <div id="doc"></div>
+      </div>
+    </div>
+
+
+<script id="classview-template" type="text/x-handlebars-template">
+<div class="tree">
+  <div class="tree-header">
+  <a class="expand-button" style="cursor: pointer;">+</a>
+  <a class="class-name" onclick="showdoc('{{this.class}}')" style="cursor: pointer;">{{this.class}}</a>
+  </div>
+  <div class="tree-body">
+  </div>
+</div>
+</script>
+
+
+<script id="handlerview-template" type="text/x-handlebars-template">
+<div class="tree">
+  <div class="tree-header">
+  <a class="expand-button" style="cursor: pointer;">+</a>
+  <a class="class-name" style="cursor: pointer;">{{this.name}}</a>
+  </div>
+  <div class="tree-body">
+  </div>
+</div>
+</script>
+
+
+
+<script id="callview-template" type="text/x-handlebars-template">
+<div class="apicall">
+<a class="method-return" style="cursor: pointer;" onclick="showdoc('{{this.return}}');">{{this.return}}</a>
+<a class="method-class" style="cursor: pointer;" onclick="showdoc('{{this.class}}');">{{this.class}}</a>:
+<a class="method-name" style="cursor: pointer;" >{{this.method.method}}</a>
+<span class="method-arguments">(
+  {{#each this.method.arguments}}
+  <a class="method-argument" style="cursor: pointer;" onclick="showdoc('{{this.type}}');">{{this.type}}</span>
+  {{/each}}
+)</span>
+<div class="calls">
+<span>Calls:</span>
+{{#each this.lines}}
+<a class="method-call" data-line='{{ this }}'>{{this}}</a>
+{{/each}}
+</div>
+</script>
+
+
+<script id="apiclassview-template" type="text/x-handlebars-template">
+<div class="tree">
+  <div class="tree-header">
+  <a class="expand-button" style="cursor: pointer;">+</a>
+  <a class="class-name" 
+     onclick="showdoc('{{this.class}}')" 
+     style="cursor: pointer;">{{this.class}}</a>
+  </div>
+  <div class="tree-body">
+  </div>
+</div>
+</script>
+
+
+<script id="apimethodview-template" type="text/x-handlebars-template">
+<div class="apimethod">
+<a class="method-return" style="cursor: pointer;" onclick="showdoc('{{this.return}}');">{{this.return}}</a>
+<a class="method-class" style="cursor: pointer;" onclick="showdoc('{{this.class}}');">{{this.class}}</a>:
+<a class="method-name" style="cursor: pointer;" >{{this.method}}</a>
+<span class="method-arguments">(
+  {{#each this.arguments}}
+  <a class="method-argument" style="cursor: pointer;" onclick="showdoc('{{this.type}}');">{{this.type}}</span>
+  {{/each}}
+)</span>
+</div>
+</script>
+
+
+<script>
+
+$(function () {
+
+  // Tab UI Stuff
+  showtab = function(tab) {
+    // This is very clumsy.
+    if (tab === '#classlist') {
+      $('#methodlist').hide();
+      $(tab).show();
+    } else {
+      $('#classlist').hide();
+      $(tab).show();      
+    }
+  }
+  
+
+  // Read in the data, set up the interface.
+  classViews = _.map(data.events, function (cls) { 
+    var c = new ClassView(cls);
+    var container = $('#classlist');
+    c.render(container);
+    return c
+    });
+
+
+  // Set up the methodlist interface
+  apiViews = _.each(methods.getAPIs(), function (cls) { 
+    var c = new APIClassView(cls);
+    // Factor this out.
+    var container = $('#methodlist');
+    c.render(container);
+    return c;
+    });  
+
+});
+</script>
+
+
+	</body>	
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
