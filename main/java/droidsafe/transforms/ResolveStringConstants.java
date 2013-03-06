@@ -196,12 +196,15 @@ public class ResolveStringConstants extends BodyTransformer {
             String stringName = stringIdToStringName.get(stringId);
             // continue only if we have the string name
             if(stringName != null){
-              String stringValue = stringNameToRString.get((stringIdToStringName.get(stringId))).value;
-              // continue only if we have the string value
-              if (stringValue != null) {
-                // replace the virtual invoke statement with the string value
-                logger.info("ResolveStringConstants: replacing {} with {}", stringId, stringValue);
-                assignStmt.setRightOp(StringConstant.v(stringValue));
+              RString rString = stringNameToRString.get(stringName);
+              if (rString != null) {
+                String stringValue = rString.value;
+                // continue only if we have the string value
+                if (stringValue != null) {
+                  // replace the virtual invoke statement with the string value
+                  logger.info("ResolveStringConstants: replacing {} with {}", stringId, stringValue);
+                  assignStmt.setRightOp(StringConstant.v(stringValue));
+                }
               }
             }
           }
@@ -220,19 +223,22 @@ public class ResolveStringConstants extends BodyTransformer {
               String stringArrayName = stringIdToStringName.get(stringId);
               // continue only if we have the string array name 
               if (stringArrayName != null) {
-                List<String> stringArrayValues = stringArrayNameToRStringArray.get(stringArrayName).value;
-                // continue only if we have the string array value
-                if (stringArrayValues != null) {
-                  // replace the the virtual invoke statement with an array definition and fill in all the string values
-                  logger.info("ResolveStringConstants: replacing {} with {}", stringId, Arrays.toString(stringArrayValues.toArray()));
-                  ArrayType type = ArrayType.v(RefType.v("java.lang.String"), 1);
-                  NewArrayExpr arrayExpr = Jimple.v().newNewArrayExpr(type, IntConstant.v(stringArrayValues.size()));
-				          assignStmt.setRightOp(arrayExpr);
-				          for(int k = 0; k < stringArrayValues.size(); ++k) {
-                    String stringArrayValue = stringArrayValues.get(k);
-                    ArrayRef arrayRef = Jimple.v().newArrayRef(assignStmt.getLeftOp(), IntConstant.v(k));
-                    AssignStmt arrayAssignStmt = Jimple.v().newAssignStmt(arrayRef, StringConstant.v(stringArrayValue));
-                    units.insertAfter(arrayAssignStmt, stmt);
+                RStringArray rStringArray = stringArrayNameToRStringArray.get(stringArrayName);
+                if (rStringArray != null) {
+                  List<String> stringArrayValues = rStringArray.value;
+                  // continue only if we have the string array value
+                  if (stringArrayValues != null) {
+                    // replace the the virtual invoke statement with an array definition and fill in all the string values
+                    logger.info("ResolveStringConstants: replacing {} with {}", stringId, Arrays.toString(stringArrayValues.toArray()));
+                    ArrayType type = ArrayType.v(RefType.v("java.lang.String"), 1);
+                    NewArrayExpr arrayExpr = Jimple.v().newNewArrayExpr(type, IntConstant.v(stringArrayValues.size()));
+				            assignStmt.setRightOp(arrayExpr);
+				            for(int k = 0; k < stringArrayValues.size(); ++k) {
+                      String stringArrayValue = stringArrayValues.get(k);
+                      ArrayRef arrayRef = Jimple.v().newArrayRef(assignStmt.getLeftOp(), IntConstant.v(k));
+                      AssignStmt arrayAssignStmt = Jimple.v().newAssignStmt(arrayRef, StringConstant.v(stringArrayValue));
+                      units.insertAfter(arrayAssignStmt, stmt);
+                    }
                   }
                 }
               }

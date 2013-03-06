@@ -212,8 +212,7 @@ public class Resources {
 		manifest = new AndroidManifest (manifest_file);
 		package_name = manifest.manifest.package_name;
 
-		// Get all of the layout files and read them.
-		File layout_dir = new File (application_base, "res/layout");
+    File layout_dir = new File (application_base, "res/layout");
 		for (File layout_source : layout_dir.listFiles()) {
 			// logger.info ("considering layout file {}", layout_source);
 			String name = layout_source.getName();
@@ -222,16 +221,28 @@ public class Resources {
 			if (name_ext[1].equals ("xml"))
 				layouts.add (new Layout (layout_source));
 		}
-     
-    // Process .xml files in res/values
-		File values_dir = new File (application_base, "res/values");
-		for (File value_source : values_dir.listFiles()) {
-      String[] name_ext = value_source.getName().split ("[.]", 2);
-			if (name_ext[1].equals ("xml")) {
-				process_values(new XmlFile(value_source.getPath()));
+   
+    // Check to see how many values directories we have. If more than one, there is localization and we don't want to
+    // store any values
+		File resource_dir = new File(application_base, "res");
+    File[] values_dirs = resource_dir.listFiles(new FilenameFilter() {
+      @Override
+      public boolean accept(File dir, String name) {
+        return name.matches("values.*");
+      } 
+    });
+    logger.info("{} value dirs exist", values_dirs.length);
+    if (values_dirs.length == 1) {
+      for(File values_dir : values_dirs) {
+        // Process .xml files in res/values
+    		for (File value_source : values_dir.listFiles()) {
+          String[] name_ext = value_source.getName().split ("[.]", 2);
+    			if (name_ext[1].equals ("xml")) {
+ 	    			process_values(new XmlFile(value_source.getPath()));
+          }
+    		}
       }
-		}
-    
+    }
 		// Read in the resource id to name map
 		read_resources();
 	}
