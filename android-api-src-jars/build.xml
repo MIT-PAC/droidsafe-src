@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<project name="droidsafe" default="help">
+
+  <target name="create">
+    <zip destfile="android-sources.jar">
+      <zipgroupfileset dir="." includes="*.jar"/>
+    </zip>
+  </target>
+
+</project>

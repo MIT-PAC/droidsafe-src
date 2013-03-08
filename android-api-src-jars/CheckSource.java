@@ -33,6 +33,7 @@ public class CheckSource {
                  JarEntry entry = (JarEntry)e.nextElement();
                  
                  stubClasses.remove(entry.getName());
+                 //                 System.out.println(entry.getName());
              }
         }
         
