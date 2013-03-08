@@ -76,7 +76,12 @@ public class SootConfig {
 		cp.append(Project.v().getAppClassesDir().toString());
 		
 		//add the android.jar
-		File aj = new File(Config.v().ANDROID_LIB_DIR + File.separator + "android.jar");
+		File aj;
+		if (Config.v().API_CLASSES_ARE_APP) {
+			aj = new File(Config.v().ANDROID_LIB_DIR + File.separator + "android-sources.jar");
+		} else {
+			aj = new File(Config.v().ANDROID_LIB_DIR + File.separator + "android.jar");
+		}
 		if (!aj.exists()) {
 			logger.error("android.jar does not exist");
 			System.exit(1);
