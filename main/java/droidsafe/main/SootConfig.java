@@ -36,7 +36,7 @@ public class SootConfig {
 	 */
 	private static void loadClasses() {
 		//load the application classes and set them as app classes
-		for (String clz : Project.v().getAppClasses()) {
+		for (String clz : Project.v().getSrcClasses()) {
 			Scene.v().loadClassAndSupport(clz).setApplicationClass();
 			logger.debug("Loading class as application class: {}", clz);
 		}

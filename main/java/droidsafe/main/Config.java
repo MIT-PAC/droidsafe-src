@@ -37,7 +37,14 @@ public class Config {
 	public String APP_ROOT_DIR;
 	public File ANDROID_LIB_DIR;
 	public String target = "specdump";
+	/** Don't include source location information when outputting spec */
 	public boolean noSourceInfo = false;
+	/** If true, then classes loaded from android.jar will be treated as 
+	 * application classes and analyses may analyze them.
+	 */
+	public boolean API_CLASSES_ARE_APP = false;
+	/** if true, write readable jimple output for all app classes */
+	public boolean WRITE_JIMPLE_APP_CLASSES = false;
 	
 	private static final String ANDROID_LIB_DIR_REL = "android-lib";
 	
@@ -80,8 +87,14 @@ public class Config {
 		Option noSourceInfo = new Option("nosourceinfo", "Do not print source information in spec");
 		options.addOption(noSourceInfo);
 		
-		Option debugLog = new Option("debuglog", "Print debug log to current directory droidsafe/droidsafe.log");
+		Option debugLog = new Option("debuglog", "Print debug log to current ./droidsafe/droidsafe.log");
 		options.addOption(debugLog);
+		
+		Option apiAsApp = new Option("analyzeapi", "Fully analyze API classes from android.jar.");
+		options.addOption(apiAsApp);
+		
+		Option writeJimple = new Option("jimple", "Dump readable jimple files for all app classes in /droidsafe.");
+		options.addOption(writeJimple);
 	}
 	
 	/**
@@ -107,6 +120,12 @@ public class Config {
 		if (cmd.hasOption("nosourceinfo")) {
 			this.noSourceInfo = true;
 		}
+		
+		if (cmd.hasOption("analyzeapi")) 
+			this.API_CLASSES_ARE_APP = true;
+		
+		if (cmd.hasOption("jimple"))
+			this.WRITE_JIMPLE_APP_CLASSES = true;
 		
 		if (cmd.hasOption("debuglog")) {
 			//we want to create a debug log file, so load the 

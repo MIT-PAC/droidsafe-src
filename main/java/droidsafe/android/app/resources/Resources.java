@@ -193,12 +193,6 @@ public class Resources {
 		
 	
 	}
-
-	public boolean isResourceClass(SootClass clz) {
-		return clz.getShortName().equals("R") ||
-				clz.getShortName().startsWith("R$") ||
-				clz.getShortName().equals("BuildConfig");
-	}
 	
 	/** Processes the application located in the specified directory **/
 	public Resources (File application_base) throws Exception {
@@ -213,28 +207,28 @@ public class Resources {
 		package_name = manifest.manifest.package_name;
 
     File layout_dir = new File (application_base, "res/layout");
-		for (File layout_source : layout_dir.listFiles()) {
-			// logger.info ("considering layout file {}", layout_source);
-			String name = layout_source.getName();
-			String[] name_ext = name.split ("[.]", 2);
-			// logger.info ("name/ext = {}/{}", name_ext[0], name_ext[1]);
-			if (name_ext[1].equals ("xml"))
-				layouts.add (new Layout (layout_source));
-		}
-   
+    for (File layout_source : layout_dir.listFiles()) {
+    	// logger.info ("considering layout file {}", layout_source);
+    	String name = layout_source.getName();
+    	String[] name_ext = name.split ("[.]", 2);
+    	// logger.info ("name/ext = {}/{}", name_ext[0], name_ext[1]);
+    	if (name_ext[1].equals ("xml"))
+    		layouts.add (new Layout (layout_source));
+    }
+
     // Check to see how many values directories we have. If more than one, there is localization and we don't want to
     // store any values
-		File resource_dir = new File(application_base, "res");
+    File resource_dir = new File(application_base, "res");
     File[] values_dirs = resource_dir.listFiles(new FilenameFilter() {
-      @Override
-      public boolean accept(File dir, String name) {
-        return name.matches("values.*");
-      } 
+    	@Override
+    	public boolean accept(File dir, String name) {
+    		return name.matches("values.*");
+    	} 
     });
     logger.info("{} value dirs exist", values_dirs.length);
     if (values_dirs.length == 1) {
-      for(File values_dir : values_dirs) {
-        // Process .xml files in res/values
+    	for(File values_dir : values_dirs) {
+    		// Process .xml files in res/values
     		for (File value_source : values_dir.listFiles()) {
           String[] name_ext = value_source.getName().split ("[.]", 2);
     			if (name_ext[1].equals ("xml")) {

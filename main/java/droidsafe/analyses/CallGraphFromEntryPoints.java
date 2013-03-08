@@ -41,7 +41,7 @@ public class CallGraphFromEntryPoints {
 	
 	
 	
-	private static void findReachableMethodsFrom(SootMethod m) {
+	public static void findReachableMethodsFrom(SootMethod m) {
 		
 		Collection<MethodOrMethodContext> list = new LinkedHashSet<MethodOrMethodContext>();
 		list.add(m);

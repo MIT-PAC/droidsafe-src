@@ -112,7 +112,7 @@ public class Hierarchy {
 		
 		List<SootClass> comps = new LinkedList<SootClass>();
 		
-		for (String cn : Project.v().getAppClasses()) {
+		for (String cn : Project.v().getSrcClasses()) {
 			SootClass clz = soot.Scene.v().getSootClass(cn);
 			if (clz.isInterface())
 				continue;

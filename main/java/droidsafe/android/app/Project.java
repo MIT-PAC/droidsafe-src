@@ -33,6 +33,7 @@ public class Project {
 	public static final String CLASSES_DIR = "bin" + File.separator + "classes";
 	public static final String LIBS_DIR = "libs";
 	public static final String RES_DIR = "res";
+	public static final String GEN_DIR = "gen";
 	public static final String LAYOUTS_DIR = RES_DIR + File.separator + "layout";
 	public static final String MANIFEST_FILE = "AndroidManifest.xml";
 	public static final String OUTPUT_DIR = "droidsafe";
@@ -43,8 +44,10 @@ public class Project {
 	private File appClassesDir;
 	private File appLibDir;
 	private File outputDir;
-	private Set<String> appClasses;
+	private File appGenDir;
+	private Set<String> srcClasses;
 	private Set<String> libClasses;
+	private Set<String> genClasses;
 	
 	static {
 		project = new Project();
@@ -66,6 +69,8 @@ public class Project {
 		
 		this.appLibDir = new File(Config.v().APP_ROOT_DIR + File.separator + LIBS_DIR);
 		
+		this.appGenDir = new File(Config.v().APP_ROOT_DIR + File.separator + GEN_DIR);
+		
 		this.outputDir = new File(Config.v().APP_ROOT_DIR + File.separator + OUTPUT_DIR);
 		if (!outputDir.exists()) {
 			try {
@@ -76,8 +81,9 @@ public class Project {
 			}
 		}
 		
-		setAppClasses();
+		setSrcClasses();
 		setLibClasses();
+		setGenClasses();
 		
 		//create the output directory if it does not exist
 		File outputDir = new File(getOutputDir());
@@ -93,13 +99,23 @@ public class Project {
 	/**
 	 * Add all classes from in bin/classes to the appClasses
 	 */
-	private void setAppClasses() {
-		appClasses = new LinkedHashSet<String>();
+	private void setSrcClasses() {
+		srcClasses = new LinkedHashSet<String>();
 		for (File clazz : FileUtils.listFiles(this.appClassesDir, new String[]{"class"}, true)) {
 			
 			String clzName = Utils.fromFileToClass(clazz.toString().substring(this.appClassesDir.toString().length() + 1));
 			logger.info("Application class: {}", clzName);
-			appClasses.add(clzName);
+			srcClasses.add(clzName);
+		}
+	}
+	
+	private void setGenClasses() {
+		genClasses = new LinkedHashSet<String>();
+		for (File clazz : FileUtils.listFiles(this.appGenDir, new String[]{"class"}, true)) {
+			
+			String clzName = Utils.fromFileToClass(clazz.toString().substring(this.appGenDir.toString().length() + 1));
+			logger.info("Generated class: {}", clzName);
+			genClasses.add(clzName);
 		}
 	}
 	
@@ -163,14 +179,27 @@ public class Project {
 		return libClasses.contains(clz);
 	}
 	
-	public boolean isAppClass(String clz) {
-		return appClasses.contains(clz);
+	/**
+	 * Return true if the class was loaded from the application src/ directory.
+	 * 
+	 * @param clz
+	 * @return
+	 */
+	public boolean isSrcClass(String clz) {
+		return srcClasses.contains(clz);
 	}
 	
 	/**
 	 * Return set of all classes defined in bin/classes of app.
 	 */
-	public Set<String> getAppClasses() {
-		return appClasses;
+	public Set<String> getSrcClasses() {
+		return srcClasses;
+	}
+	
+	/**
+	 * Return true if this class is defined in gen/ directory of android application. 
+	 */
+	public boolean isGenClass(String clz) {
+		return genClasses.contains(clz);
 	}
 }

@@ -117,6 +117,13 @@ public class GeoPTA {
 	}
 	
 	/**
+	 * Return list of all reachable methods as calculated by pta.
+	 */
+	public Set<SootMethod> getAllReachableMethods() {
+		return ptsProvider.getAllReachableMethods();
+	}
+	
+	/**
 	 * Return true if this value is a pointer that is represented in the 
 	 * PTA graph.
 	 */

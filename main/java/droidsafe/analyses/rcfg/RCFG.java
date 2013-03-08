@@ -248,8 +248,8 @@ public class RCFG {
 	 */
 	private void checkForUnreachableMethods() {
 		for (SootClass clz : Scene.v().getClasses()) {
-			if (clz.isApplicationClass() && Project.v().isAppClass(clz.toString()) &&
-					!Resources.v().isResourceClass(clz)) {
+			if (clz.isApplicationClass() && Project.v().isSrcClass(clz.toString()) &&
+					!Project.v().isGenClass(clz.toString())) {
 				for (SootMethod method : clz.getMethods()) {
 					if (!visitedMethods.contains(method) && method.isDeclared()) {
 						checkForCompleteness(new LinkedHashSet<Edge>(), method);

@@ -60,6 +60,8 @@ public class API {
 					"edu.mit.csail.droidsafe.DroidSafeCalls"
 					));
 	
+	
+	
 	static {
 		v = new API();
 	}
@@ -77,7 +79,9 @@ public class API {
 			JarFile androidJar = new JarFile(new File(System.getenv ("APAC_HOME"), 
 					"lib/android/android.jar"));
 
-			allSystemClasses = SootUtils.loadClassesFromJar(androidJar, false);
+			if (Config.v().API_CLASSES_ARE_APP)
+				logger.warn("API classes will be loaded and analyzed when available.");
+			allSystemClasses = SootUtils.loadClassesFromJar(androidJar, Config.v().API_CLASSES_ARE_APP);
 
 			all_sys_methods.addAllMethods(androidJar);
 		} catch (Exception e) {

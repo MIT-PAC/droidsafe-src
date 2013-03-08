@@ -77,12 +77,17 @@ public class AddAllocsForAPICalls extends BodyTransformer {
 
 		v = new AddAllocsForAPICalls();
 
+		//dont' do anything for now if we are analzying api calls
+		//TODO: though at some point we should look at natives
+		if (Config.v().API_CLASSES_ARE_APP)
+			return;
+		
 		try {
 			v.needToModelFile = new FileWriter(Project.v().getOutputDir() + 
 					File.separator +NEED_TO_MODEL_FILENAME);
 
 			for (SootClass clz : Scene.v().getClasses()) {
-				if (Project.v().isAppClass(clz.toString())) {
+				if (Project.v().isSrcClass(clz.toString())) {
 					for (SootMethod meth : clz.getMethods()) {
 						if (meth.isConcrete())
 							v.transform(meth.retrieveActiveBody());
