@@ -226,7 +226,7 @@ spec        android.app.Activity: void onActionModeFinished(android.view.ActionM
 spec        android.app.Activity: void <clinit>()
 
 
-spec        android.app.AlarmManager: void <init>()
+#spec        android.app.AlarmManager: void <init>()
 spec        android.app.AlarmManager: void set(int, long, android.app.PendingIntent)
 spec        android.app.AlarmManager: void setRepeating(int, long, long, android.app.PendingIntent)
 spec        android.app.AlarmManager: void setInexactRepeating(int, long, long, android.app.PendingIntent)
@@ -753,7 +753,7 @@ spec        android.database.Cursor: android.os.Bundle respond(android.os.Bundle
 
 # For SQL, probably everthing should be safe other than actual queries and updates.  Maybe only updates...
 safe        android.database.SQLException: void <init>(java.lang.String)
-spec        android.database.sqlite.SQLiteDatabase: void <init>()
+#spec        android.database.sqlite.SQLiteDatabase: void <init>()
 spec        android.database.sqlite.SQLiteDatabase: void onAllReferencesReleased()
 spec        android.database.sqlite.SQLiteDatabase: int releaseMemory()
 spec        android.database.sqlite.SQLiteDatabase: void setLockingEnabled(boolean)
@@ -887,7 +887,7 @@ spec        android.media.MediaRecorder: void finalize()
 
 
 # for now, these are all spec
-spec        android.net.http.AndroidHttpClient: void <init>()
+#spec        android.net.http.AndroidHttpClient: void <init>()
 spec        android.net.http.AndroidHttpClient: android.net.http.AndroidHttpClient newInstance(java.lang.String, android.content.Context)
 spec        android.net.http.AndroidHttpClient: android.net.http.AndroidHttpClient newInstance(java.lang.String)
 spec        android.net.http.AndroidHttpClient: void finalize()
@@ -970,7 +970,7 @@ spec        android.os.Handler: void <init>()
 
 
 # Parcel objects seem related to IPC, so potentially security-critical:
-spec        android.os.Parcel: void <init>()
+#spec        android.os.Parcel: void <init>()
 spec        android.os.Parcel: android.os.Parcel obtain()
 spec        android.os.Parcel: void recycle()
 spec        android.os.Parcel: int dataSize()
@@ -3404,7 +3404,7 @@ spec        java.net.HttpURLConnection: void setChunkedStreamingMode(int)
 # InetAddresses are tricky, since they may access the network to (for
 # example) resolve hostnames. If it hits the network, we make it
 # spec, otherwise it is safe.
-safe        java.net.InetAddress: void <init>()
+#safe        java.net.InetAddress: void <init>()
 safe        java.net.InetAddress: boolean equals(java.lang.Object)
 safe        java.net.InetAddress: byte[] getAddress()
 spec        java.net.InetAddress: java.net.InetAddress[] getAllByName(java.lang.String)
@@ -3839,7 +3839,7 @@ safe        java.util.EnumMap: java.lang.Object clone()
 safe        java.util.EnumMap: java.lang.Object put(java.lang.Object,java.lang.Object)
 
 
-safe        java.util.EnumSet: void <init>()
+#safe        java.util.EnumSet: void <init>()
 safe        java.util.EnumSet: java.util.EnumSet noneOf(java.lang.Class)
 safe        java.util.EnumSet: java.util.EnumSet allOf(java.lang.Class)
 safe        java.util.EnumSet: java.util.EnumSet copyOf(java.util.EnumSet)
@@ -4198,7 +4198,7 @@ safe        java.util.Queue: java.lang.Object poll()
 safe        java.util.Queue: java.lang.Object element()
 safe        java.util.Queue: java.lang.Object peek()
 
-safe        java.util.regex.Matcher: void <init>()
+#safe        java.util.regex.Matcher: void <init>()
 safe        java.util.regex.Matcher: java.util.regex.Matcher appendReplacement(java.lang.StringBuffer,java.lang.String)
 safe        java.util.regex.Matcher: java.util.regex.Matcher reset()
 safe        java.util.regex.Matcher: java.util.regex.Matcher reset(java.lang.CharSequence)
@@ -4235,7 +4235,7 @@ safe        java.util.regex.PatternSyntaxException: java.lang.String getPattern(
 safe        java.util.regex.PatternSyntaxException: java.lang.String getMessage()
 safe        java.util.regex.PatternSyntaxException: java.lang.String getDescription()
 safe        java.util.regex.PatternSyntaxException: int getIndex()
-safe        java.util.regex.Pattern: void <init>()
+#safe        java.util.regex.Pattern: void <init>()
 safe        java.util.regex.Pattern: java.util.regex.Matcher matcher(java.lang.CharSequence)
 safe        java.util.regex.Pattern: java.lang.String[] split(java.lang.CharSequence,int)
 safe        java.util.regex.Pattern: java.lang.String[] split(java.lang.CharSequence)
