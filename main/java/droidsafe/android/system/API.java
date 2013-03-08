@@ -78,26 +78,9 @@ public class API {
 			if (Config.v().API_CLASSES_ARE_APP) {
 				allSystemClasses = new LinkedHashSet<SootClass>();
 				logger.warn("API classes will be loaded and analyzed when available.");
-				JarFile androidJar = new JarFile(new File(Config.v().APAC_HOME(), "android-lib/android-api-src-jars/android-sources.jar"));
+				JarFile androidJar = new JarFile(new File(Config.v().APAC_HOME(), "android-lib/android-sources.jar"));
 				allSystemClasses = SootUtils.loadClassesFromJar(androidJar, true);
 				all_sys_methods.addAllMethods(androidJar);
-				//find all the files in the directory containing the jars that include implementation 
-				//for the api
-				/*
-				File androidAPISrcDir = new File(Config.v().APAC_HOME(), "android-lib/android-api-src-jars/");
-		        File[] SRC_FILES = androidAPISrcDir.listFiles(new FilenameFilter() {
-	                @Override
-	                public boolean accept(File dir, String name) {
-	                    return name.matches(".*\\.jar");
-	                } 
-	            });
-		        
-		        for (File srcFile : SRC_FILES) {
-		           	logger.info("Using jar src file: " + srcFile);
-		            JarFile srcJar = new JarFile(srcFile, true);
-		            allSystemClasses.addAll(SootUtils.loadClassesFromJar(srcJar, true));
-		            all_sys_methods.addAllMethods(srcJar);
-		        }*/
 			} else {
 				//load the classes from the android.jar for the version of android we are using
 				//this jar file does not have implementations only stubs
