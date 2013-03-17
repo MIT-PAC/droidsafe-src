@@ -1,5 +1,18 @@
 package droidsafe.analyses;
 
+import droidsafe.analyses.rcfg.OutputEvent;
+import droidsafe.analyses.rcfg.RCFG;
+import droidsafe.analyses.rcfg.RCFGNode;
+
+import droidsafe.android.app.Harness;
+import droidsafe.android.system.API;
+
+import droidsafe.speclang.Method;
+
+import droidsafe.transforms.AddAllocsForAPICalls;
+
+import droidsafe.utils.SootUtils;
+
 import java.util.Iterator;
 import java.util.LinkedHashMap;
 import java.util.LinkedHashSet;
@@ -11,31 +24,37 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import soot.Body;
-import soot.RefType;
-import soot.Scene;
-import soot.SootClass;
-import soot.SootMethod;
-import soot.Value;
+
 import soot.jimple.InstanceInvokeExpr;
 import soot.jimple.InvokeExpr;
+import soot.jimple.spark.pag.AllocNode;
 import soot.jimple.Stmt;
 import soot.jimple.StmtBody;
-import soot.jimple.spark.pag.AllocNode;
+
+import soot.RefType;
+
+import soot.Scene;
+
+import soot.SootClass;
+
+import soot.SootMethod;
+
 import soot.util.Chain;
 
-import droidsafe.analyses.rcfg.OutputEvent;
-import droidsafe.analyses.rcfg.RCFG;
-import droidsafe.analyses.rcfg.RCFGNode;
-import droidsafe.android.app.Harness;
-import droidsafe.android.system.API;
-import droidsafe.speclang.Method;
-import droidsafe.transforms.AddAllocsForAPICalls;
-import droidsafe.utils.SootUtils;
+import soot.Value;
 
 /**
- * Find 
+ * We want to model certain Android objects such as Intents, Strings, and Uris so that we better understand the way 
+ * they are built up and used.
+ *
+ * We don't want to present the analyst with the built up of each like we do now, but instead each at the time of its
+ * use with as much Context as possible (this might help shorten the spec a little bit). For example, for an Intent i, 
+ * we should tell the analyst which View or Uri will be started when StartActivity(i) is called and let them decide 
+ * whether its malware or not.
+ *
+ * We are assuming that in general, each is used simply and once.
  * 
- * @author mgordon
+ * @author mgordon, dpetters
  *
  */
 public class AttributeModeling {
@@ -62,14 +81,16 @@ public class AttributeModeling {
 		
 		am = new AttributeModeling();
 		
-		//find all values that we want to track, these are either receivers or args in 
-		//output events in rCFG
-		am.findObjects();
+		am.createModels();
 		
-		//single pass over code to find all calls on these objects and incorporate their effects
-		//TODO: We should have a pass that kills deadcode (methods that cannot be reached from main)
-		am.modelObjects();
-		
+		// Find all calls on the objects that we just modeled.
+		am.findCalls();
+
+    // TODO: Add a pass that kills deadcode
+    
+    // Simulate the effects of all the calls we found on the appropirate objects' models' attributes.
+    am.simulateCallEffects()
+
 		am.log();
 	}
 	
@@ -78,8 +99,9 @@ public class AttributeModeling {
 		receiverForMethods = new LinkedHashMap<AllocNode, Set<InstanceInvokeExpr>>();
 		argumentOfMethods = new LinkedHashMap<AllocNode, Set<InvokeExpr>>();
 	}
-	
-	private void modelObjects() {
+
+  // Find all calls on the objects that we just modeled.
+	private void findCalls() {
 		//loop over all code and find calls for with any tracked as received or arg
 		for (SootClass clazz : Scene.v().getApplicationClasses()) {
     		if (clazz.isInterface() || clazz.getName().equals(Harness.HARNESS_CLASS_NAME))
@@ -151,6 +173,10 @@ public class AttributeModeling {
 		}
 	}
 	
+  private void simulateCallEffects() {
+    
+  }
+
 	private void log() {
 		for (AllocNode node : objectsToTrack) {
 			logger.info("Tracking allocNode: {}", node);
@@ -166,7 +192,11 @@ public class AttributeModeling {
 		}
 	}
 	
-	private void findObjects() {
+  /**
+   * Find all objects that we currently model and create the underlying models for them.
+   * These are either receivers or args in output events in rCFG.
+   */
+	private void createModels() {
 		for (RCFGNode node : RCFG.v().getNodes()) {
 			Method ie = new Method(node.getEntryPoint());
 			for (OutputEvent oe : node.getOutputEvents()) {
@@ -177,20 +207,21 @@ public class AttributeModeling {
 				
 				//now check all the arguments
 				for (int i = 0; i < oe.getNumArgs(); i++) {
-					if (oe.isArgPointer(i)) 
+					if (oe.isArgPointer(i)) { 
 						for (AllocNode argNode : oe.getArgPTSet(i)) {
 							if (isSecuritySensitive(argNode))
 								objectsToTrack.add(argNode);
 						}
+          }
 				}
 			}
 		}
 	}
 	
 	/**
-	 * Return true if the dynamic type of the allocnode is a security relevant type.
+	 * Creates (if it does not yet exist) and returns our model of the dynamic type of the AllocNode if it is modeled
 	 */
-	public boolean isSecuritySensitive(AllocNode node) {
+	public boolean getOrCreateModel(AllocNode node) {
 		//don't track values for alloc nodes we create
 		if (AddAllocsForAPICalls.v().isGeneratedExpr(node.getNewExpr()))
 			return false;
@@ -205,8 +236,12 @@ public class AttributeModeling {
 		
 		SootClass clazz = ((RefType)node.getType()).getSootClass();
 		
-		if (clazz.getName().equals("android.content.Intent"))
-			return true;
+    try {
+      Class.forName("droidsafe.model" + clazz.getName())
+      return true
+    } catch(Exception e) {
+      return false;
+    }
 		
 		return false;
 				
