@@ -38,8 +38,8 @@ public class RequiredModeling {
 		try {
 			FileWriter fw = new FileWriter(Project.v().getOutputDir() + File.separator + "analzye-api-required-modeling-pta.txt");
 
-			for (SootMethod meth : findReachableMethodsFrom(Harness.v().getMain())) {
-			//for (SootMethod meth : GeoPTA.v().getAllReachableMethods()) {
+			//for (SootMethod meth : findReachableMethodsFrom(Harness.v().getMain())) {
+			for (SootMethod meth : GeoPTA.v().getAllReachableMethods()) {
 				//if not an api method, then we don't care to model it
 				//should have the source
 				if (!API.v().isSystemMethod(meth)) 
@@ -53,7 +53,7 @@ public class RequiredModeling {
 					reason += "native";
 				if (meth.isPhantom())
 					reason += "phantom";
-				//if (!reason.equals(""))
+				if (!reason.equals(""))
 					fw.write(meth + " (" + reason + ")\n");
 			}
 			fw.close();

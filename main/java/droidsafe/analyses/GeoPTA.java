@@ -1,11 +1,16 @@
 package droidsafe.analyses;
 
+import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.io.PrintStream;
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.Iterator;
 import java.util.LinkedHashSet;
 import java.util.LinkedList;
 import java.util.List;
+import java.util.Map;
 import java.util.Set;
 import java.util.Vector;
 
@@ -14,8 +19,11 @@ import org.slf4j.LoggerFactory;
 
 import ch.qos.logback.classic.pattern.Util;
 
+import droidsafe.analyses.rcfg.RCFGNode;
 import droidsafe.android.app.EntryPoints;
 import droidsafe.android.app.Harness;
+import droidsafe.android.app.Project;
+import droidsafe.main.Config;
 import droidsafe.utils.Utils;
 
 import soot.Local;
@@ -25,6 +33,7 @@ import soot.SootField;
 import soot.SootMethod;
 import soot.Type;
 import soot.Value;
+import soot.jimple.Stmt;
 import soot.jimple.paddle.PaddleTransformer;
 import soot.jimple.spark.SparkTransformer;
 import soot.jimple.spark.geom.geomPA.CallsiteContextVar;
@@ -86,6 +95,7 @@ public class GeoPTA {
 		callGraph = Scene.v().getCallGraph();
 		resolveContext();
 		//dumpPTA();
+		//dumpCallGraph(Project.v().getOutputDir() + File.separator + "callgraph.dot");
 	}
 
 
@@ -472,5 +482,110 @@ public class GeoPTA {
 		logger.info("[paddle] Done!");
 	}
 	
+	public void dumpCallGraph(String fileStr) {
+		FileWriter fw;
+		try {
+			fw = new FileWriter(fileStr);
+
+			fw.write("digraph CallGraph {\n");
+						
+			//get the harness main and all the edges in the call graph
+			//from it, and for each edge to an entry point, create and populate
+			//the rCFG node
+			Set<Edge> edges = getAllCallGraphEdges();
+			Set<SootMethod> visitedMethods = new LinkedHashSet<SootMethod>();
+			Map<SootMethod, Set<SootMethod>> visitedEdges = new HashMap<SootMethod, Set<SootMethod>>();
+			Map<String, Set<SootMethod>> packageSubgraphs = new HashMap<String, Set<SootMethod>>();
+			
+			for (Edge edge : edges) {
+				if (!visitedEdges.containsKey(edge.src()))
+					visitedEdges.put(edge.src(), new HashSet<SootMethod>());
+				
+				if (!visitedEdges.get(edge.src()).contains(edge.tgt())) {				
+					fw.write(edge.src().hashCode() + "->" + edge.tgt().hashCode() + ";\n");
+					visitedEdges.get(edge.src()).add(edge.tgt());
+				}
+				
+				String srcPackage = edge.src().getDeclaringClass().getJavaPackageName();
+				if (srcPackage == null || srcPackage.equals("")) 
+					srcPackage = "No.Package"; 
+				
+				if (!packageSubgraphs.containsKey(srcPackage)) {
+					packageSubgraphs.put(srcPackage, new HashSet<SootMethod>());
+				}
+				packageSubgraphs.get(srcPackage).add(edge.src());
+				
+				String tgtPackage = edge.tgt().getDeclaringClass().getJavaPackageName();
+				if (tgtPackage == null || tgtPackage.equals("")) 
+					tgtPackage = "No.Package"; 
+				if (!packageSubgraphs.containsKey(tgtPackage)) {
+					packageSubgraphs.put(tgtPackage, new HashSet<SootMethod>());
+				}
+				packageSubgraphs.get(tgtPackage).add(edge.tgt());
+				
+				/*
+				if (!visitedMethods.contains(edge.src()))
+					fw.write(getMethodDotLabel(edge.src()));
+				if (!visitedMethods.contains(edge.tgt()))
+					fw.write(getMethodDotLabel(edge.tgt()));
+				
+				visitedMethods.add(edge.src());
+				visitedMethods.add(edge.tgt());
+				*/
+			}
+			
+			for (String pack : packageSubgraphs.keySet()) {
+				
+				fw.write("subgraph " + pack.replace('.', '_') + "{\n");
+				fw.write("label = \"" + pack + "\";\n");
+				fw.write("color=blue;\n");
+				for (SootMethod m : packageSubgraphs.get(pack)) {
+					fw.write(getMethodDotLabel(m));
+				}
+				fw.write("}\n");
+			}
+			
+			fw.write("}");
+			fw.close();
+		} catch (IOException e) {
+			logger.error("Error writing call graph dot file");
+			System.exit(1);
+		}
+	}
 	
+	private String getMethodDotLabel(SootMethod m) {
+		StringBuffer buf = new StringBuffer();
+		buf.append(m.hashCode() + " [label=\"");
+		buf.append(m.getDeclaringClass() + "\\n");
+		buf.append(m.getSubSignature() + "\"");
+		if (m.isNative())
+			buf.append(",color=red,style=filled");
+		buf.append("];\n");
+		return buf.toString();
+	}
+	
+	/**
+	 * Return a set of all SootEdges of the call graph that the context sensitive
+	 * has not obsoleted.  
+	 */
+	public Set<Edge> getAllCallGraphEdges() {
+		Set<Edge> allCSEdges = new LinkedHashSet<Edge>();
+		int n_func = ptsProvider.n_func;
+		
+		for (int i = 0; i < n_func; ++i) {
+			if ( !ptsProvider.isReachableMethod(i) )
+				continue;
+			
+			CgEdge p = ptsProvider.getCallEgesOutFrom(i);
+			while (p != null) {
+				if ( p.sootEdge != null ) {
+					if (p.is_obsoleted == false ) {
+						allCSEdges.add(p.sootEdge);
+					}
+				}
+				p = p.next;
+			}
+		}
+		return allCSEdges;
+	}
 }

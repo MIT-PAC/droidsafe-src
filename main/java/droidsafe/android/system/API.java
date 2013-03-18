@@ -78,7 +78,7 @@ public class API {
 			if (Config.v().API_CLASSES_ARE_APP) {
 				allSystemClasses = new LinkedHashSet<SootClass>();
 				logger.warn("API classes will be loaded and analyzed when available.");
-				JarFile androidJar = new JarFile(new File(Config.v().APAC_HOME(), "android-lib/android-sources.jar"));
+				JarFile androidJar = new JarFile(new File(Config.v().APAC_HOME(), "android-lib/android-impl.jar"));
 				allSystemClasses = SootUtils.loadClassesFromJar(androidJar, true);
 				all_sys_methods.addAllMethods(androidJar);
 			} else {
