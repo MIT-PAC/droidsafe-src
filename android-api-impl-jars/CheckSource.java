@@ -10,6 +10,7 @@ public class CheckSource {
     public static void main(String[] args) throws Exception {
         JarFile stubJar = new JarFile(STUB_FILE, true);
         HashSet<String> stubClasses = new HashSet<String>();
+        HashSet<String> notInStub = new HashSet<String>();
 
         for (Enumeration e = stubJar.entries(); e.hasMoreElements() ;) {
             JarEntry entry = (JarEntry)e.nextElement();
@@ -32,6 +33,9 @@ public class CheckSource {
              for (Enumeration e = srcJar.entries(); e.hasMoreElements() ;) {
                  JarEntry entry = (JarEntry)e.nextElement();
                  
+                 if (entry.getName().endsWith(".class") && !stubClasses.contains(entry.getName()))
+                     notInStub.add(entry.getName());
+
                  stubClasses.remove(entry.getName());
                  //                 System.out.println(entry.getName());
              }
@@ -41,6 +45,12 @@ public class CheckSource {
         for (String missing : stubClasses) {
             if (missing.endsWith(".class"))
                 System.out.println(missing);
+        }
+
+        System.out.println("Have source but not in stub jar");
+        for (String c : notInStub) {
+            
+            System.out.println(c);
         }
     }
 
