@@ -17,6 +17,8 @@ import java.util.Vector;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import com.google.common.collect.HashBiMap;
+
 import ch.qos.logback.classic.pattern.Util;
 
 import droidsafe.analyses.rcfg.RCFGNode;
@@ -54,6 +56,7 @@ import soot.options.PaddleOptions;
 import soot.options.SparkOptions;
 import soot.util.queue.QueueReader;
 import soot.RefLikeType;
+import soot.jimple.NewExpr;
 
 /**
  * Configure and run the Soot Spark PTA.  This class assumes the soot 
@@ -69,8 +72,10 @@ public class GeoPTA {
 	/** list of all objects that are context sensitive for resolution */
 	private ZArrayNumberer<CallsiteContextVar> ct_sens_objs;
 	private CallGraph callGraph;
-	
+	/** bimap of new expressions to their alloc node representation */
+	private HashBiMap<Object, AllocNode> newToAllocNodeMap;
 	private static GeoPTA v;
+	
 	
 	/**
 	 * Return the instance of the PTA.
@@ -94,10 +99,60 @@ public class GeoPTA {
 		ptsProvider = (GeomPointsTo)Scene.v().getPointsToAnalysis();
 		callGraph = Scene.v().getCallGraph();
 		resolveContext();
+		createNewToAllocMap();
 		//dumpPTA();
 		//dumpCallGraph(Project.v().getOutputDir() + File.separator + "callgraph.dot");
 	}
+	
+	/**
+	 * Given a new expression (Jimple NewExpr or String) return the corresponding AllocNode.
+	 */
+	public AllocNode getAllocNode(Object newExpr) {
+		return newToAllocNodeMap.get(newExpr);
+	}
+	
+	/**
+	 * Given a Spark AllocNode return the corresponding new expression (Jimple NewExpr or String) 
+	 */
+	public Object getNewExpr(AllocNode an) {
+		return newToAllocNodeMap.inverse().get(an);
+	}
 
+	/**
+	 * Create the bi map of NewExpr <-> AllocNode
+	 */
+	private void createNewToAllocMap() {
+		newToAllocNodeMap = HashBiMap.create(ptsProvider.consG.keySet().size());
+		
+		//try a few different ways to find all allocnodes
+		
+		for (Node node : ptsProvider.consG.keySet()) {
+			if (node instanceof AllocNode) {
+				AllocNode an = (AllocNode)node;
+				newToAllocNodeMap.put(an.getNewExpr(), an);
+			}
+		}
+		
+		for (IVarAbstraction ivar : ptsProvider.pointers) {
+			if (ivar == null || ivar.get_all_points_to_objects() == null)
+				continue;
+			for (AllocNode an : ivar.get_all_points_to_objects()) {
+				if (!newToAllocNodeMap.containsValue(an)) {
+					newToAllocNodeMap.put(an.getNewExpr(), an);
+				}
+			}
+		}
+		
+		for (IVarAbstraction ivar : ptsProvider.allocations) {
+			if (ivar == null || ivar.get_all_points_to_objects() == null)
+				continue;
+			for (AllocNode an : ivar.get_all_points_to_objects()) {
+				if (!newToAllocNodeMap.containsValue(an)) {
+					newToAllocNodeMap.put(an.getNewExpr(), an);
+				}
+			}
+		}
+	}
 
 	private void resolveContext() {
 		ct_sens_objs = new ZArrayNumberer<CallsiteContextVar>();
