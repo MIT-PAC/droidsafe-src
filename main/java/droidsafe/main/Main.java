@@ -94,9 +94,6 @@ public class Main {
 		logger.info("Setting Harness Main as entry point.");
 		setHarnessMainAsEntryPoint();
 
-		 G.v().out.println(Scene.v().getApplicationClasses());
-
-		
 		AddAllocsForAPICalls.run();
 
 		logger.info("Starting PTA...");
