@@ -25,6 +25,9 @@ import soot.Scene;
 import soot.SootClass;
 import soot.Type;
 import soot.SootMethod;
+import soot.tagkit.AnnotationTag;
+import soot.tagkit.Tag;
+import soot.tagkit.VisibilityAnnotationTag;
 
 import droidsafe.utils.*;
 import droidsafe.main.Config;
@@ -50,6 +53,8 @@ public class API {
 	private final SootMethodList all_sys_methods = new SootMethodList();
 	/** All banned methods as described in config-files */
 	private final SootMethodList banned_methods = new SootMethodList();
+	/** All methods that are modeled in the api modeling */
+	private final SootMethodList api_modeled_methods = new SootMethodList();
 	/** Set of all Android Classes */
 	private Set<SootClass> allSystemClasses;
 	/** the current runtime instance */
@@ -75,38 +80,62 @@ public class API {
 
 	public void init() {
 		try {
-			if (Config.v().API_CLASSES_ARE_APP) {
-				allSystemClasses = new LinkedHashSet<SootClass>();
-				logger.warn("API classes will be loaded and analyzed when available.");
-				JarFile androidJar = new JarFile(new File(Config.v().APAC_HOME(), "android-lib/android-impl.jar"));
-				allSystemClasses = SootUtils.loadClassesFromJar(androidJar, true);
-				all_sys_methods.addAllMethods(androidJar);
-			} else {
-				//load the classes from the android.jar for the version of android we are using
-				//this jar file does not have implementations only stubs
-				JarFile androidJar = new JarFile(new File(System.getenv ("APAC_HOME"), 
-						"lib/android/android.jar"));
-				allSystemClasses = SootUtils.loadClassesFromJar(androidJar, false);
-				all_sys_methods.addAllMethods(androidJar);
-			}
-	
+			allSystemClasses = new LinkedHashSet<SootClass>();
+			
+			//load the configured android jar file
+			JarFile androidJar = new JarFile(new File(Config.v().ANDROID_LIB_DIR, Config.v().ANDROID_JAR));
+			allSystemClasses.addAll(SootUtils.loadClassesFromJar(androidJar, false, false));
+			all_sys_methods.addAllMethods(androidJar);
+			
+			//load any modeled classes from the api model, overwrite the stub classes
+			JarFile apiModeling = new JarFile(new File(Config.v().ANDROID_LIB_DIR, "droidsafe-api-model.jar"));
+			allSystemClasses.addAll(SootUtils.loadClassesFromJar(apiModeling, true, true));
+			all_sys_methods.addAllMethods(apiModeling);
 			
 		} catch (Exception e) {
 			logger.error("Error loading android.jar", e);
 			System.exit(1);
 		}
 
+		loadDroidSafeCalls();
+		loadClassification();
+		findModeledMethods();
+	}
+	
+	/**
+	 * Based on the annotation we are adding to api modeled methods from modeled classes,
+	 * add modeled methods to the soot method list for them.
+	 */
+	private void findModeledMethods() {
+		for (SootMethod method : all_sys_methods) {
+			for (Tag tag : method.getTags()) {
+				if (tag instanceof VisibilityAnnotationTag) {
+					VisibilityAnnotationTag vat = (VisibilityAnnotationTag)tag;
+					for (AnnotationTag at : vat.getAnnotations()) {
+						if (at.getType().contains("droidsafe/annotations/DSModeled")) {
+							logger.info("Found api modeled method: {}\n", method);
+							api_modeled_methods.addMethod(method);
+						}
+					}
+				}
+			}
+		}
+	}
+
+	private void loadDroidSafeCalls() {
 		try {
 			//load the classes from the droidcalls library
 			File dsLib = new File(System.getenv ("APAC_HOME"), 
 					"android-lib/droidcalls.jar");
 			JarFile dsJar = new JarFile(dsLib);
-			SootUtils.loadClassesFromJar(dsJar, true);
+			SootUtils.loadClassesFromJar(dsJar, true, true);
 			all_sys_methods.addAllMethods(dsJar);			
 		} catch (Exception e) {
 			Utils.ERROR_AND_EXIT(logger, "Error loading droidsafe call jar (maybe it does not exist).");
 		}
+	}
 
+	private void loadClassification()	{
 		// Read in the system call descriptors.  The file format has lines
 		// of the form <type>[|flags] <descr>.  More detail is in the
 		// comments at the top of the file.  Descriptors are matched on
@@ -290,5 +319,12 @@ public class API {
     		return isSystemClassReference(((ArrayType)t).getElementType());
     	else 
     		return false;
+    }
+    
+    /**
+     * Return true if the argument is a modeled method from the api.
+     */
+    public boolean isAPIModeledMethod(SootMethod m) {
+    	return api_modeled_methods.contains(m);
     }
  }

@@ -369,10 +369,12 @@ public class SootUtils {
     /**
      * Load classes from the given jar file into Soot's current scene.  
      * Load the classes as application classes if appClass is true.
+     * If overwrite is true, then overwrite any classes that were previously loaded.  If 
+     * overwrite is false, then don't load from this jar any previously loaded classes.
      * 
      * Return a set of all classes loaded from the jar.
      */
-    public static Set<SootClass> loadClassesFromJar(JarFile jarFile, boolean appClass) {
+    public static Set<SootClass> loadClassesFromJar(JarFile jarFile, boolean appClass, boolean overwrite) {
     	LinkedHashSet<SootClass> classSet = new LinkedHashSet<SootClass>();
         Enumeration allEntries = jarFile.entries();
         while (allEntries.hasMoreElements()) {
@@ -383,13 +385,21 @@ public class SootUtils {
             }
 
             String clsName = name.substring(0, name.length() - 6).replace('/', '.');
-            logger.debug("Loading from {}: {}", jarFile.getName(), clsName);
-            SootClass clz = Scene.v().loadClassAndSupport(clsName);
-            classSet.add(clz);
-            if (appClass)
-            	clz.setApplicationClass();
-            else
-            	clz.setLibraryClass();
+            
+            if (overwrite || !Scene.v().containsClass(clsName)) {
+            	if (appClass) {
+            		SootClass clz = Scene.v().loadClassAndSupport(clsName);
+            		classSet.add(clz);
+            		clz.setApplicationClass();
+            		logger.debug("Loading from {}: {} (app)", jarFile.getName(), clsName);
+            	}
+            	else {
+            		SootClass clz = Scene.v().loadClass(clsName, SootClass.SIGNATURES);
+            		classSet.add(clz);
+            		clz.setLibraryClass();
+            		logger.debug("Loading from {}: {} (lib)", jarFile.getName(), clsName);
+            	}
+            }
         }
         return classSet;
     }

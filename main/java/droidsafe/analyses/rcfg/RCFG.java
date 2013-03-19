@@ -66,16 +66,6 @@ public class RCFG {
 	
 	private static RCFG v;
 	
-	/** list of names of methods to ignore when creating the RCFG output events */
-	private static final Set<String> IGNORE_SYS_METHOD_WITH_NAME = new HashSet(Arrays.asList("<clinit>", "finalize"));
-	
-	private static final Set<String> IGNORE_SYS_METHODS_WITH_SUBSIG = 
-			new HashSet(Arrays.asList(
-					"boolean equals(java.lang.Object)",
-					"int hashCode()",
-					"java.lang.String toString()"
-					));
-	
 	private Set<SootMethod> visitedMethods;
 	
 	public static RCFG v() {
@@ -183,21 +173,11 @@ public class RCFG {
 		allEdges.add(edge);
 		//logger.info("Looking at method call for: {}->{} ({}).", edge.src(), edge.tgt(), edge.srcStmt());
 		if (API.v().isSystemMethod(edge.tgt())) {
-			if (!IGNORE_SYS_METHOD_WITH_NAME.contains(edge.tgt().getName()) &&
-					!IGNORE_SYS_METHODS_WITH_SUBSIG.contains(edge.tgt().getSubSignature()) &&
-					API.v().isInterestingMethod(edge.tgt())) {
-				logger.debug("Found output event: {}", edge);
+			logger.debug("Found output event: {}", edge);
 				SourceLocationTag line = SootUtils.getSourceLocation(edge.srcStmt(), edge.src().getDeclaringClass());
 				OutputEvent oe = new OutputEvent(edge, edgeInto, rCFGNode, receiver, line);
 				rCFGNode.addOutputEvent(oe);
-			}
-			//do something to save the method and context (args and this)
 		} else {
-			
-			//TODO: For now ignore library methods from the ignore list
-			if (IGNORE_SYS_METHOD_WITH_NAME.contains(edge.tgt().getName()) &&
-					Project.v().isLibClass(edge.tgt().getDeclaringClass().toString()))
-				return;
 			//it is an app edge, so recurse into later
 			appEdgesOut.add(edge);
 		}

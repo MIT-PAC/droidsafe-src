@@ -62,10 +62,20 @@ public class RCFGToSSL {
 	 * android.something.
 	 */
 	public static final Set<String> IGNORE_OE_FROM_PACKAGES = new HashSet(Arrays.asList(
-			"android.graphics", 
+			/*"android.graphics", 
 			"android.view",
-			"android.widget"
+			"android.widget"*/
 			));
+	
+	/** list of names of methods to ignore when creating the RCFG output events */
+	private static final Set<String> IGNORE_SYS_METHOD_WITH_NAME = new HashSet(Arrays.asList("<clinit>", "finalize"));
+	
+	private static final Set<String> IGNORE_SYS_METHODS_WITH_SUBSIG = 
+			new HashSet(Arrays.asList(
+					"boolean equals(java.lang.Object)",
+					"int hashCode()",
+					"java.lang.String toString()"
+					));
 	
 	public static void run() {
 		RCFGToSSL v = new RCFGToSSL();
@@ -98,18 +108,16 @@ public class RCFGToSSL {
 		}
 	}
 	
-	private boolean shouldIgnore(OutputEvent oe) {
-		if (!IGNORE_OE_FROM_DEFINED_PACKAGES)
-			return false;
-		
-		String[] className = oe.getTarget().getDeclaringClass().getName().split("\\.");
-				
+	private boolean shouldIgnore(OutputEvent oe) {	
+		String[] className = oe.getTarget().getDeclaringClass().getName().split("\\.");				
 		if (className.length < 2)
 			return false;
 		
 		String packageStart = className[0] + "." + className[1];
 		
-		return IGNORE_OE_FROM_PACKAGES.contains(packageStart);
+		return (IGNORE_OE_FROM_PACKAGES.contains(packageStart) ||
+				IGNORE_SYS_METHOD_WITH_NAME.contains(oe.getTarget().getName()) ||
+				IGNORE_SYS_METHODS_WITH_SUBSIG.contains(oe.getTarget().getSubSignature())); 
 	}
 	
 	private List<Method> methodsFromOutputEvent(OutputEvent oe) {

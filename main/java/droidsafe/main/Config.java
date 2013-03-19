@@ -39,17 +39,16 @@ public class Config {
 	public String target = "specdump";
 	/** Don't include source location information when outputting spec */
 	public boolean noSourceInfo = false;
-	/** If true, then classes loaded from android.jar will be treated as 
-	 * application classes and analyses may analyze them.
-	 */
-	public boolean API_CLASSES_ARE_APP = false;
+	
 	/** if true, write readable jimple output for all app classes */
 	public boolean WRITE_JIMPLE_APP_CLASSES = false;
 	
 	private static final String ANDROID_LIB_DIR_REL = "android-lib";
-	
 	/** location of configuration files */
 	public static final String SYSTEM_CLASSES_FILE = "config-files/system_class_files.txt";
+	/** location of api modeling base directory relative to apac_home */
+	public static final String API_MODELING_DIR_REL = "modeling" + File.separator + "api";
+	public static final String ANDROID_JAR = "android.jar";
 	
 	private String APAC_HOME; 
 	
@@ -90,9 +89,6 @@ public class Config {
 		Option debugLog = new Option("debuglog", "Print debug log to current ./droidsafe/droidsafe.log");
 		options.addOption(debugLog);
 		
-		Option apiAsApp = new Option("analyzeapi", "Fully analyze API classes from android.jar.");
-		options.addOption(apiAsApp);
-		
 		Option writeJimple = new Option("jimple", "Dump readable jimple files for all app classes in /droidsafe.");
 		options.addOption(writeJimple);
 	}
@@ -120,9 +116,6 @@ public class Config {
 		if (cmd.hasOption("nosourceinfo")) {
 			this.noSourceInfo = true;
 		}
-		
-		if (cmd.hasOption("analyzeapi")) 
-			this.API_CLASSES_ARE_APP = true;
 		
 		if (cmd.hasOption("jimple"))
 			this.WRITE_JIMPLE_APP_CLASSES = true;

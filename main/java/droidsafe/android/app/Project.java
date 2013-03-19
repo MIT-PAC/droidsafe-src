@@ -17,6 +17,7 @@ import org.slf4j.LoggerFactory;
 
 import droidsafe.main.Config;
 import droidsafe.main.Main;
+import droidsafe.main.SootConfig;
 import droidsafe.utils.Utils;
 
 /** 
@@ -95,7 +96,13 @@ public class Project {
 			outputDir.mkdirs();
 		}
 	}
-	
+
+	public void loadClasses() {
+		//load into soot the src classes and lib jars classes
+		SootConfig.loadAppClasses(getSrcClasses());
+		SootConfig.loadAppClasses(getLibClasses());
+	}
+
 	/**
 	 * Add all classes from in bin/classes to the appClasses
 	 */

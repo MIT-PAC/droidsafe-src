@@ -139,10 +139,10 @@ public class Harness {
 		
 		body.getUnits().add(Jimple.v().newReturnVoidStmt());
 		
+		
 		Scene.v().addClass(harnessClass);
 		Scene.v().loadClass(harnessClass.getName(), SootClass.BODIES);
-		harnessClass.setApplicationClass();
-		
+		harnessClass.setApplicationClass();		
 		
 		SootUtils.writeByteCodeAndJimple(Project.v().getOutputDir() + File.separator + HARNESS_CLASS_NAME, getHarnessClass());
 	}

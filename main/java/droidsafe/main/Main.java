@@ -56,13 +56,20 @@ public class Main {
 	 */
 	public static void main(String[] args) {
 		logger.info("Starting DroidSafe Run");
-
+		//grab command line args and set some globals
 		Config.v().init(args);
+		//initial project directories and lib jar files
 		Project.v().init();
+		//configure soot and soot classpath
 		SootConfig.init();
+		//load the api classes and modeling classes
 		API.v().init();
+		//load the application classes
+		Project.v().loadClasses();
+		//create the permissions map
 		Permissions.init();
 
+				
 		logger.info("Creating locals for all string constant arguments.");
 		LocalForStringConstantArguments.run();
 
@@ -87,6 +94,9 @@ public class Main {
 		logger.info("Setting Harness Main as entry point.");
 		setHarnessMainAsEntryPoint();
 
+		 G.v().out.println(Scene.v().getApplicationClasses());
+
+		
 		AddAllocsForAPICalls.run();
 
 		logger.info("Starting PTA...");
