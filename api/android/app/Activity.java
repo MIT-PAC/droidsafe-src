@@ -1823,19 +1823,9 @@ public class Activity extends ContextThemeWrapper
         
         mActionBar = new ActionBarImpl(this);
     }
-    
-    /**
-     * Set the activity content from a layout resource.  The resource will be
-     * inflated, adding all top-level views to the activity.
-     *
-     * @param layoutResID Resource ID to be inflated.
-     * 
-     * @see #setContentView(android.view.View)
-     * @see #setContentView(android.view.View, android.view.ViewGroup.LayoutParams)
-     */
+
+    @DSModeled
     public void setContentView(int layoutResID) {
-        getWindow().setContentView(layoutResID);
-        initActionBar();
     }
 
     /**
