@@ -84,12 +84,12 @@ public class API {
 			
 			//load the configured android jar file
 			JarFile androidJar = new JarFile(new File(Config.v().ANDROID_LIB_DIR, Config.v().ANDROID_JAR));
-			allSystemClasses.addAll(SootUtils.loadClassesFromJar(androidJar, false, false));
+			allSystemClasses.addAll(SootUtils.loadClassesFromJar(androidJar, false));
 			all_sys_methods.addAllMethods(androidJar);
 			
 			//load any modeled classes from the api model, overwrite the stub classes
 			JarFile apiModeling = new JarFile(new File(Config.v().ANDROID_LIB_DIR, "droidsafe-api-model.jar"));
-			allSystemClasses.addAll(SootUtils.loadClassesFromJar(apiModeling, true, true));
+			allSystemClasses.addAll(SootUtils.loadClassesFromJar(apiModeling, true));
 			all_sys_methods.addAllMethods(apiModeling);
 			
 		} catch (Exception e) {
@@ -128,7 +128,7 @@ public class API {
 			File dsLib = new File(System.getenv ("APAC_HOME"), 
 					"android-lib/droidcalls.jar");
 			JarFile dsJar = new JarFile(dsLib);
-			SootUtils.loadClassesFromJar(dsJar, true, true);
+			SootUtils.loadClassesFromJar(dsJar, true);
 			all_sys_methods.addAllMethods(dsJar);			
 		} catch (Exception e) {
 			Utils.ERROR_AND_EXIT(logger, "Error loading droidsafe call jar (maybe it does not exist).");

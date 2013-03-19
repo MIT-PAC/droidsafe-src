@@ -64,6 +64,9 @@ public class RCFG {
 	
 	private Set<RCFGNode> rCFG;
 	
+	/** list of names of methods to ignore when creating the RCFG output events */
+	private static final Set<String> IGNORE_SYS_METHOD_WITH_NAME = new HashSet(Arrays.asList("<clinit>", "finalize"));
+	
 	private static RCFG v;
 	
 	private Set<SootMethod> visitedMethods;
@@ -173,10 +176,12 @@ public class RCFG {
 		allEdges.add(edge);
 		//logger.info("Looking at method call for: {}->{} ({}).", edge.src(), edge.tgt(), edge.srcStmt());
 		if (API.v().isSystemMethod(edge.tgt())) {
-			logger.debug("Found output event: {}", edge);
+			if (!IGNORE_SYS_METHOD_WITH_NAME.contains(edge.tgt().getName())) {
+				logger.debug("Found output event: {}", edge);
 				SourceLocationTag line = SootUtils.getSourceLocation(edge.srcStmt(), edge.src().getDeclaringClass());
 				OutputEvent oe = new OutputEvent(edge, edgeInto, rCFGNode, receiver, line);
 				rCFGNode.addOutputEvent(oe);
+			}
 		} else {
 			//it is an app edge, so recurse into later
 			appEdgesOut.add(edge);

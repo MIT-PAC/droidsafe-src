@@ -34,15 +34,18 @@ public class RequiredModeling {
 	private final static Logger logger = LoggerFactory.getLogger(AttributeModeling.class);
 		
 	public static void run() {
-		
+		Set<SootMethod> toModel = new LinkedHashSet<SootMethod>();
+
+		for (RCFGNode node : RCFG.v().getNodes()) {
+			for (OutputEvent oe : node.getOutputEvents()) {
+				if (!API.v().isAPIModeledMethod(oe.getTarget()))
+					toModel.add(oe.getTarget());
+			}
+		}
 		try {
 			FileWriter fw = new FileWriter(Project.v().getOutputDir() + File.separator + "api-required-modeling-pta.txt");
-
-			for (RCFGNode node : RCFG.v().getNodes()) {
-				for (OutputEvent oe : node.getOutputEvents()) {
-					if (!API.v().isAPIModeledMethod(oe.getTarget()))
-						fw.write(oe.getTarget() + "\n");
-				}
+			for (SootMethod m : toModel) {
+				fw.write(m + "\n");
 			}
 			fw.close();
 		} catch (Exception e) {

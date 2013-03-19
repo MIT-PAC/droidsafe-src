@@ -67,8 +67,6 @@ public class RCFGToSSL {
 			"android.widget"*/
 			));
 	
-	/** list of names of methods to ignore when creating the RCFG output events */
-	private static final Set<String> IGNORE_SYS_METHOD_WITH_NAME = new HashSet(Arrays.asList("<clinit>", "finalize"));
 	
 	private static final Set<String> IGNORE_SYS_METHODS_WITH_SUBSIG = 
 			new HashSet(Arrays.asList(
@@ -116,7 +114,6 @@ public class RCFGToSSL {
 		String packageStart = className[0] + "." + className[1];
 		
 		return (IGNORE_OE_FROM_PACKAGES.contains(packageStart) ||
-				IGNORE_SYS_METHOD_WITH_NAME.contains(oe.getTarget().getName()) ||
 				IGNORE_SYS_METHODS_WITH_SUBSIG.contains(oe.getTarget().getSubSignature())); 
 	}
 	
