@@ -22,6 +22,7 @@ import droidsafe.analyses.GeoPTA;
 import droidsafe.analyses.RCFGToSSL;
 import droidsafe.analyses.RequiredModeling;
 import droidsafe.analyses.rcfg.RCFG;
+import droidsafe.analyses.strings.JSAStrings;
 import droidsafe.android.app.EntryPoints;
 import droidsafe.android.app.Harness;
 import droidsafe.android.app.TagImplementedSystemMethods;
@@ -78,6 +79,8 @@ public class Main {
 		logger.info("Resolving String Constants");
 		ResolveStringConstants.run(Config.v().APP_ROOT_DIR);
 
+
+
 		logger.info("Finding entry points in user code.");
 		EntryPoints.v().calculate();
 
@@ -89,6 +92,18 @@ public class Main {
 
 		AddAllocsForAPICalls.run();
 
+		if (Config.v().RUN_STRING_ANALYSIS) {
+			logger.info("Setting up JSA");
+   		// Try to do this again.
+   		setHarnessMainAsEntryPoint();
+	  	// This call, copied from 'setHarnessMainAsEntryPoint' below, seems to be necessary for JSA.
+		  Scene.v().setMainClass(Harness.v().getHarnessClass());
+		  // logger.debug("Main Class is set to " + Harness.v().getHarnessClass().toString());
+		  JSAStrings.run(Config.v());
+  		// *re*-set main class???
+		  // setHarnessMainAsEntryPoint();
+		}
+		
 		logger.info("Starting PTA...");
 		GeoPTA.run();
 

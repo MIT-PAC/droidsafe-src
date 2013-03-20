@@ -50,6 +50,9 @@ public class Config {
 	
 	/** location of configuration files */
 	public static final String SYSTEM_CLASSES_FILE = "config-files/system_class_files.txt";
+
+	/** if true, run string analysis on app classes */
+	public boolean RUN_STRING_ANALYSIS = false;
 	
 	private String APAC_HOME; 
 	
@@ -95,6 +98,9 @@ public class Config {
 		
 		Option writeJimple = new Option("jimple", "Dump readable jimple files for all app classes in /droidsafe.");
 		options.addOption(writeJimple);
+
+		Option runStringAnalysis = new Option("analyzestrings", "Run string analysis.");
+		options.addOption(runStringAnalysis);
 	}
 	
 	/**
@@ -146,6 +152,10 @@ public class Config {
 		    }
 		    StatusPrinter.printInCaseOfErrorsOrWarnings(context);
 			
+		}
+
+		if (cmd.hasOption("analyzestrings")) {
+			this.RUN_STRING_ANALYSIS = true;
 		}
 		
 		APP_ROOT_DIR = getPathFromCWD(cmd.getOptionValue("approot"));
