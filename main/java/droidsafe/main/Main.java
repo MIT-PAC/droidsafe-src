@@ -56,6 +56,9 @@ public class Main {
 	 */
 	public static void main(String[] args) {
 		logger.info("Starting DroidSafe Run");
+		
+	
+	
 
 		Config.v().init(args);
 		Project.v().init();
@@ -110,6 +113,8 @@ public class Main {
 		} else if (Config.v().target.equals("confcheck")) {
 			logger.error("Not implemented yet!");
 		}
+		
+		//System.out.print(RCFG.v().toString());
 
 	}
 

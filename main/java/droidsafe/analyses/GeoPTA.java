@@ -1,6 +1,7 @@
 package droidsafe.analyses;
 
 import java.io.File;
+import java.io.FileNotFoundException;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.PrintStream;
@@ -100,8 +101,14 @@ public class GeoPTA {
 		callGraph = Scene.v().getCallGraph();
 		resolveContext();
 		createNewToAllocMap();
-		//dumpPTA();
-		//dumpCallGraph(Project.v().getOutputDir() + File.separator + "callgraph.dot");
+		
+		if (Config.v().DUMP_PTA){
+			dumpPTA("./droidsafe/pta.txt");
+		}
+		
+		if (Config.v().DUMP_CALL_GRAPH) {
+			dumpCallGraph(Project.v().getOutputDir() + File.separator + "callgraph.dot");
+		}
 	}
 	
 	/**
@@ -337,10 +344,26 @@ public class GeoPTA {
 		return allocNodes;
 	}
 	
+	
+	public void dumpPTA() {
+		dumpPTA(System.out);
+	}
+	
+	public void dumpPTA(String fileName) {	
+		try {
+			dumpPTA(new PrintStream(fileName));
+		}
+		catch (FileNotFoundException e) {
+			
+		}
+	}
+	
 	/**
 	 * Print out all points to sets.
 	 */
-	public void dumpPTA() {
+	public void dumpPTA(PrintStream file) {
+		
+		System.out.print("======================= dumpPTA ()=====================================\n");
 		Vector<CallsiteContextVar> outList = new Vector<CallsiteContextVar>();
 		
 		for ( IVarAbstraction pn : ptsProvider.pointers ) {
@@ -357,12 +380,10 @@ public class GeoPTA {
 				continue;
 
 			//System.out.println(pn);
-			System.out.println(v);
+			file.println(v);
 
 			if (v instanceof AllocDotField) 
-				System.out.printf("\tAlloc dot field\n");
-
-			PrintStream file = System.out;
+				file.printf("\tAlloc dot field\n");			
 
 			if ( v instanceof LocalVarNode ) {
 				// We map the local pointer to its 1-cfa versions
@@ -401,8 +422,9 @@ public class GeoPTA {
 				file.println();
 			}
 
-			System.out.println();
+			file.println();
 		}
+		System.out.print("======================= dumpPTA () Done =====================================\n");
 	}
 
 	static void setGeomPointsToAnalysis() {
