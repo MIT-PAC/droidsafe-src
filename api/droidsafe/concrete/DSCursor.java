@@ -45,6 +45,7 @@ public class DSCursor implements Cursor {
 	
 	@DSModeled
 	public DSCursor(Uri uri, String[] projection, String selection, String[] selectionArgs, String sortOrder) {
+		taint = new DSTaintObject();
 		taint.addTaints(uri, projection, selection, selectionArgs, sortOrder);
 	}	
     public int getColumnCount() {
