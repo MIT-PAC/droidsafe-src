@@ -9,6 +9,7 @@ public class DSTaintObject {
 	public DSTaintObject() {
 	}
 	
+	@DSModeled
 	public void addTaints(Object... taints) {
 		for (Object t : taints)
 			addTaint(t);
