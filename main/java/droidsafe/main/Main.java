@@ -94,14 +94,12 @@ public class Main {
 
 		if (Config.v().RUN_STRING_ANALYSIS) {
 			logger.info("Setting up JSA");
-   		// Try to do this again.
-   		setHarnessMainAsEntryPoint();
 	  	// This call, copied from 'setHarnessMainAsEntryPoint' below, seems to be necessary for JSA.
-		  Scene.v().setMainClass(Harness.v().getHarnessClass());
+		  // Scene.v().setMainClass(Harness.v().getHarnessClass());
 		  // logger.debug("Main Class is set to " + Harness.v().getHarnessClass().toString());
 		  JSAStrings.run(Config.v());
   		// *re*-set main class???
-		  // setHarnessMainAsEntryPoint();
+		  /// setHarnessMainAsEntryPoint();
 		}
 		
 		logger.info("Starting PTA...");

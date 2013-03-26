@@ -53,7 +53,7 @@ public class JSAStrings {
 
 
 			/*
-						String APAC_HOME = config.APAC_HOME();
+			String APAC_HOME = config.APAC_HOME();
 			String droidsafeLib = APAC_HOME + "lib"; 
 			logger.debug("Adding libraries from " + droidsafeLib);
 
