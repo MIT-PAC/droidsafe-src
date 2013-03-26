@@ -735,7 +735,15 @@ public class Activity extends ContextThemeWrapper
 
     private Thread mUiThread;
     final Handler mHandler = new Handler();
-
+    
+    /*
+    @DSModeled
+    public Activity(Context context) {
+    	super();
+    	attachBaseContext(context);
+    }
+     */
+    
     /** Return the intent that started this activity. */
     public Intent getIntent() {
         return mIntent;
@@ -1161,12 +1169,13 @@ public class Activity extends ContextThemeWrapper
      * @see #onRestoreInstanceState
      * @see #onPause
      */
+    @DSModeled /* the bundle here is used for a future call to onCreate and 
+    				on restoredInstanceState, so call them directly with the bundle
+    				to record the flow */
     protected void onSaveInstanceState(Bundle outState) {
-        outState.putBundle(WINDOW_HIERARCHY_TAG, mWindow.saveHierarchyState());
-        Parcelable p = mFragments.saveAllState();
-        if (p != null) {
-            outState.putParcelable(FRAGMENTS_TAG, p);
-        }
+        this.onCreate(outState);
+        this.onRestoreInstanceState(outState);
+        //DS: keep this here for future modeling of Application
         getApplication().dispatchActivitySaveInstanceState(this, outState);
     }
 

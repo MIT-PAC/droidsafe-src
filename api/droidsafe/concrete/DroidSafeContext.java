@@ -16,6 +16,9 @@
 
 package droidsafe.concrete;
 
+import droidsafe.runtime.*;
+import droidsafe.annotations.*;
+
 import android.content.ComponentName;
 import android.content.ContentResolver;
 import android.content.Context;
@@ -67,8 +70,9 @@ public class DroidSafeContext extends Context {
     }
 
     @Override
+    @DSModeled
     public ContentResolver getContentResolver() {
-        throw new UnsupportedOperationException();
+        return DroidSafeGlobals.contentResolver;
     }
 
     @Override
