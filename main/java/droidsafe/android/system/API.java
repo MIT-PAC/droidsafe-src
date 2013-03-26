@@ -322,6 +322,19 @@ public class API {
     }
     
     /**
+     * Given a method in a non-system class, return the closest api method that the method 
+     * overrides.  Return null if the method does not override a system method.  Search 
+     * class inheritance for parents before interfaces.
+     */
+    public SootMethod getClosestOverridenAPIMethod(SootMethod method) {
+    	if (this.isSystemClass(method.getDeclaringClass())) {
+    		logger.error("Calling getClosestOverridenAPIMethod() on API method: {}", method);
+    		System.exit(1);
+    	}
+    	return all_sys_methods.getClosestOverriddenMethod(method);
+    }
+    
+    /**
      * Return true if the argument is a modeled method from the api.
      */
     public boolean isAPIModeledMethod(SootMethod m) {

@@ -150,6 +150,44 @@ public class SootUtils {
     }
     
     /**
+     * Return a BF traversal of the super interfaces of a class.
+     */
+    public static List<SootClass> getSuperInterfacesOf(SootClass sc) {
+    	 List<SootClass>   ret = new LinkedList<SootClass>();
+         Queue<SootClass> q   = new LinkedList<SootClass>();
+         //add initial interfaces
+         for (SootClass i : sc.getInterfaces()) {
+        	 q.add(i);
+         }
+
+         while (!q.isEmpty()) {
+             SootClass curr = q.poll();
+                          
+             if (curr == null) {
+            	 continue;
+             }
+             
+             if (curr.toString().equals("java.lang.Object")) {
+                 continue;
+             }
+             
+             if (!curr.isInterface()) {
+            	 logger.error("getSuperInterfacesOf inspecting non interface: {}", curr);
+            	 System.exit(1);
+             }
+                    
+             ret.add(curr);
+             
+             if (!curr.isPhantom() && curr.getSuperclass().isInterface()) {
+             	q.add(curr.getSuperclass());
+             }
+           
+         }
+
+         return ret;
+     }
+         
+    /**
      * Get all superclasses and super interfaces of a soot class.
      */
     public static Set<SootClass> getParents(SootClass sc) {

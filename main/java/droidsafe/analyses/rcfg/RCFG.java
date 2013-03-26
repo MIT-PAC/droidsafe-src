@@ -33,6 +33,7 @@ import soot.jimple.spark.pag.AllocNode;
 import soot.jimple.toolkits.callgraph.CallGraph;
 import soot.jimple.toolkits.callgraph.Edge;
 import soot.util.Chain;
+import soot.util.queue.QueueReader;
 import soot.Type;
 
 import droidsafe.analyses.GeoPTA;
@@ -101,14 +102,29 @@ public class RCFG {
 		//get the harness main and all the edges in the call graph
 		//from it, and for each edge to an entry point, create and populate
 		//the rCFG node
-		
+		/*
 		Iterator<Edge> edgesIt = sparkCG.edgesOutOf(Harness.v().getMain());
 		while (edgesIt.hasNext()) {
 			Edge edge = edgesIt.next();
 			
-			/*if (!EntryPoints.v().isEntryPoint(edge.tgt()))
-				continue;*/
 			startAtEntry(edge);
+		}*/
+		
+		//iterate over all edges to find entry points for rcfg
+		//these entry points are edges from harness to user code
+		//or edges from api call to user code
+		QueueReader<Edge> edges = sparkCG.listener();
+		while (edges.hasNext()) {
+			Edge e = edges.next();
+			SootClass tgtClass = e.tgt().getDeclaringClass();
+			if (!Project.v().isLibClass(tgtClass) && !Project.v().isSrcClass(tgtClass))
+				continue;
+			
+			SootClass srcClass = e.src().getDeclaringClass();
+			//find edges from harness to user code
+			if (srcClass.equals(Harness.v().getHarnessClass()) ||
+				API.v().isSystemClass(srcClass))
+				startAtEntry(e);
 		}
 		
 		checkForUnreachableMethods();
@@ -171,13 +187,14 @@ public class RCFG {
 	 * if an app edge, add edge to the set of app edges to inspect
 	 */
 	private void processEdge(RCFGNode rCFGNode, Edge edge, Edge edgeInto, 
-			AllocNode receiver, Set<Edge> appEdgesOut, Set<Edge> allEdges) {
+			AllocNode receiver, Set<Edge> appEdgesOut, Set<Edge> allEdges, int debug) {
 					
 		allEdges.add(edge);
 		//logger.info("Looking at method call for: {}->{} ({}).", edge.src(), edge.tgt(), edge.srcStmt());
 		if (API.v().isSystemMethod(edge.tgt())) {
 			if (!IGNORE_SYS_METHOD_WITH_NAME.contains(edge.tgt().getName())) {
-				logger.debug("Found output event: {}", edge);
+				logger.debug("Found output event: {} {}", edge.tgt(), receiver );
+				//System.out.printf("OE (%s): %s %s (%s)\n", debug, edge.tgt(), receiver, rCFGNode.getEntryPoint());
 				SourceLocationTag line = SootUtils.getSourceLocation(edge.srcStmt(), edge.src().getDeclaringClass());
 				OutputEvent oe = new OutputEvent(edge, edgeInto, rCFGNode, receiver, line);
 				rCFGNode.addOutputEvent(oe);
@@ -311,8 +328,8 @@ public class RCFG {
 
 						for (SootMethod m : allMethods) {
 							Edge newEdge = new Edge(src, stmt, m);
-							//System.out.printf("Creating edge for %s: %s\n", alloc, newEdge);
-							processEdge(rCFGNode, newEdge, edgeInto, alloc, appEdgesOut, allEdges);
+							System.out.printf("Creating edge for %s: %s\n", alloc, newEdge);
+							processEdge(rCFGNode, newEdge, edgeInto, alloc, appEdgesOut, allEdges, 1);
 						}
 					}
 				}
@@ -348,13 +365,15 @@ public class RCFG {
 		//iterate over all the ci edges from soot, and check to see
 		//if they are valid given the context
 		while (ciEdges.hasNext()) {
+			
 			Edge curEdge = ciEdges.next();
+			//System.out.printf("inspecting edge: %s %s %s\n", curEdge, curEdge.hashCode(), curEdge.srcStmt());
 			SootMethod target = curEdge.tgt();
 			//get the internal edge from the CS analysis
 			CgEdge cgEdge = ptsProvider.getInternalEdgeFromSootEdge(curEdge);
 			if (cgEdge == null) {
 				//hmm, edge is not in the cs call graph at all, process it just in case...
-				processEdge(rCFGNode, curEdge, edgeInto, null, appEdgesOut, allEdges);
+				processEdge(rCFGNode, curEdge, edgeInto, null, appEdgesOut, allEdges, 2);
 				continue;
 			}
 		
@@ -368,13 +387,13 @@ public class RCFG {
 				
 				for (AllocNode an : GeoPTA.v().getPTSet(cgEdge.base_var, edgeInto)) {
 					//generated allocation nodes are handled separately in edgesFromAPIAllocs()
-					/*if (AddAllocsForAPICalls.v().isGeneratedExpr(an.getNewExpr()))
-						continue;*/
+					if (AddAllocsForAPICalls.v().isGeneratedExpr(an.getNewExpr()))
+						continue;
 					
 					Type t = an.getType();
 					if ( t instanceof AnySubType ||
 							 t instanceof ArrayType ) {
-						processEdge(rCFGNode, curEdge, edgeInto, null, appEdgesOut, allEdges);
+						processEdge(rCFGNode, curEdge, edgeInto, null, appEdgesOut, allEdges, 3);
 						break;
 					}
 					
@@ -383,39 +402,48 @@ public class RCFG {
 						resolved = SootUtils.
 							resolveConcreteDispatch( ((RefType)t).getSootClass(), target);
 					} catch (CannotFindMethodException e) {
-						SourceLocationTag tag = SootUtils.getSourceLocation(curEdge.srcStmt(), method.getDeclaringClass());
-						logger.info("Cannot find a method for dispatch at line {}", tag, e);
 						continue;
 					}
 					
 					// Only the virtual calls do the following test
 					if ( resolved == target ) {
-						processEdge(rCFGNode, curEdge, edgeInto, an, appEdgesOut, allEdges);
+						processEdge(rCFGNode, curEdge, edgeInto, an, appEdgesOut, allEdges, 4);
 						break;
 					}					
 				}
 			} else {
 				if (curEdge.srcStmt() == null) //probably a call to cinit
-					processEdge(rCFGNode, curEdge, edgeInto, null, appEdgesOut, allEdges);
+					processEdge(rCFGNode, curEdge, edgeInto, null, appEdgesOut, allEdges, 5);
 				else { //regular call, but not directly in context sensitive 
 					//not a virtual call, always add
 					InstanceInvokeExpr invoke = SootUtils.getInstanceInvokeExpr(curEdge.srcStmt());
 					if (invoke != null) {
 						for (AllocNode node : GeoPTA.v().getPTSet(invoke.getBase(), edgeInto)) {
-							/*if (AddAllocsForAPICalls.v().isGeneratedExpr(node.getNewExpr()))
-								continue;*/
-							processEdge(rCFGNode, curEdge, edgeInto, node, appEdgesOut, allEdges);
+							SootClass allocClz = ((RefType)node.getType()).getSootClass();
+							
+							SootMethod resolved = null; 
+							try {
+								resolved = SootUtils.
+									resolveConcreteDispatch(allocClz, target);
+							
+							} catch (CannotFindMethodException e) {
+								continue;
+							}
+							
+							//System.out.printf("Resolved %s %s to %s\n", allocClz, target, resolved);
+							
+							if (resolved == target)
+								processEdge(rCFGNode, curEdge, edgeInto, node, appEdgesOut, allEdges, 6);
 						}
 
 					} else  //no receiver  
-						processEdge(rCFGNode, curEdge, edgeInto, null, appEdgesOut, allEdges);
+						processEdge(rCFGNode, curEdge, edgeInto, null, appEdgesOut, allEdges, 7);
 				}
 			}
 		}
 
 		return;
 	}
-
 	
 	public String toString() {
 		StringBuilder str = new StringBuilder();

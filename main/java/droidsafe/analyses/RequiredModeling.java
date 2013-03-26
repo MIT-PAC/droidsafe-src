@@ -3,8 +3,12 @@ package droidsafe.analyses;
 import java.io.File;
 import java.io.FileWriter;
 import java.util.Collection;
+import java.util.Collections;
 import java.util.LinkedHashSet;
+import java.util.LinkedList;
+import java.util.List;
 import java.util.Set;
+import java.util.TreeSet;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -34,17 +38,17 @@ public class RequiredModeling {
 	private final static Logger logger = LoggerFactory.getLogger(AttributeModeling.class);
 		
 	public static void run() {
-		Set<SootMethod> toModel = new LinkedHashSet<SootMethod>();
+		Set<String> toModel = new TreeSet<String>();
 
 		for (RCFGNode node : RCFG.v().getNodes()) {
 			for (OutputEvent oe : node.getOutputEvents()) {
 				if (!API.v().isAPIModeledMethod(oe.getTarget()))
-					toModel.add(oe.getTarget());
+					toModel.add(oe.getTarget().getSignature());
 			}
 		}
 		try {
 			FileWriter fw = new FileWriter(Project.v().getOutputDir() + File.separator + "api-required-modeling-pta.txt");
-			for (SootMethod m : toModel) {
+			for (String m : toModel) {
 				fw.write(m + "\n");
 			}
 			fw.close();

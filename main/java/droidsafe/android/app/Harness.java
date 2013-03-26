@@ -131,6 +131,7 @@ public class Harness {
 		harnessMain.setActiveBody(body);
 		
 		Stmt beginCalls = mainMethodHeader(body);
+		createRunTimeObjects(body);
 		addCallsToComponentEntryPoints(body);
 		addCallsToNonComponentEntryPoints(body);
 		
@@ -147,6 +148,11 @@ public class Harness {
 		SootUtils.writeByteCodeAndJimple(Project.v().getOutputDir() + File.separator + HARNESS_CLASS_NAME, getHarnessClass());
 	}
 
+	private void createRunTimeObjects(StmtBody body) {
+		SootClass dsGlobals = Scene.v().getSootClass("droidsafe.runtime.DroidSafeGlobals");
+		
+	}
+	
 	/**
 	 * we have to find all creation sites of objects of application classes.  We want to call
 	 * any method that overrides an api method on the object (allocnode) in the harness class
@@ -222,7 +228,7 @@ public class Harness {
 
 	private void handleAllocOfAPIImplementors(NewExpr expr, AssignStmt stmt, SootClass clz, Chain<Unit> units) {
 		//create field in the harness class
-		SootField field = new SootField(FIELDNAME + fieldID, expr.getType(), Modifier.PUBLIC | Modifier.STATIC);
+		SootField field = new SootField(FIELDNAME + fieldID++, expr.getType(), Modifier.PUBLIC | Modifier.STATIC);
 		harnessClass.addField(field);
 		
 		//remember this field for later so we can create all api overriding calls in it
@@ -240,7 +246,9 @@ public class Harness {
 		//an api method
 		for (SootField field : generatedFields) {
 			SootClass clz = ((RefType)field.getType()).getSootClass();
-			
+			//we need to keep around this field if there are non-modeled calls to it
+			//any method of it
+			boolean needField = false;
 			for (SootMethod method : clz.getMethods()) {
 				//Messages.log("    Checking for method: " + method.getSignature());
     			if (!clz.declaresMethod(method.getSubSignature()) ||
@@ -248,15 +256,22 @@ public class Harness {
     				continue;
  
     			if (Hierarchy.v().isImplementedSystemMethod(method)) {
-    				logger.info("Adding call in harness to non-component entry point: {}", method.toString());
-    				//create a local to point to the field
-    				Local receiver = Jimple.v().newLocal("l" + localID++, field.getType());
-    				body.getLocals().add(receiver);
-    				//assign the local to the field
-    				body.getUnits().add(Jimple.v().newAssignStmt(receiver, 
-    						Jimple.v().newStaticFieldRef(field.makeRef())));
-    				//create a call to this entry point
-    				createCall(method, body, receiver);
+    				//find the closest overriden method from the api
+    				SootMethod closestParent = API.v().getClosestOverridenAPIMethod(method);
+    				//don't add a call for overrides that override a method that is modeled
+    				//if modeled, it means we have modeled all registrations of the method
+    				if (!API.v().isAPIModeledMethod(closestParent)) {
+    					logger.info("Adding call in harness to non-component entry point: {}", method.toString());
+    					//create a local to point to the field
+    					Local receiver = Jimple.v().newLocal("l" + localID++, field.getType());
+    					body.getLocals().add(receiver);
+    					//assign the local to the field
+    					body.getUnits().add(Jimple.v().newAssignStmt(receiver, 
+    							Jimple.v().newStaticFieldRef(field.makeRef())));
+    					//create a call to this entry point
+    					createCall(method, body, receiver);
+    					needField = true;
+    				}
     			} 
 			}
 		}

@@ -64,7 +64,7 @@ public class AddAllocsForAPICalls extends BodyTransformer {
 	private Set<NewExpr> generatedExpr;
 	private static AddAllocsForAPICalls v;
 	
-	private static String NEED_TO_MODEL_FILENAME = "required-pta-modeling.txt";
+	private static String NEED_TO_MODEL_FILENAME = "added-allocations.txt";
 	
 	private FileWriter needToModelFile;
 	
@@ -139,6 +139,8 @@ public class AddAllocsForAPICalls extends BodyTransformer {
 				continue;
 			
 			//TODO: check if a modeled call, if so, don't add alloc
+			if (API.v().isAPIModeledMethod(target))
+				continue;
 			
 			if (!API.v().isSystemClassReference(target.getReturnType())) 
 				continue;
