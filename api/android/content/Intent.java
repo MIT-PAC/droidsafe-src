@@ -3017,6 +3017,7 @@ public class Intent implements Parcelable, Cloneable {
     /**
      * Create an empty intent.
      */
+    @DSModeled
     public Intent() {
     }
 
@@ -4445,9 +4446,9 @@ public class Intent implements Parcelable, Cloneable {
      * @see #setType
      * @see #setDataAndType
      */
+    @DSModeled
     public Intent setData(Uri data) {
         mData = data;
-        mType = null;
         return this;
     }
 

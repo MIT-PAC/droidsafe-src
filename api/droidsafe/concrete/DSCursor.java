@@ -133,8 +133,9 @@ public class DSCursor implements Cursor {
         throw new UnsupportedOperationException("unimplemented mock method");
     }
 
+    @DSModeled
     public boolean moveToFirst() {
-        throw new UnsupportedOperationException("unimplemented mock method");
+        return true;
     }
 
     public boolean moveToLast() {
@@ -161,8 +162,8 @@ public class DSCursor implements Cursor {
         throw new UnsupportedOperationException("unimplemented mock method");
     }
 
+    @DSModeled
     public void close() {
-        throw new UnsupportedOperationException("unimplemented mock method");
     }
 
     public boolean isClosed() {

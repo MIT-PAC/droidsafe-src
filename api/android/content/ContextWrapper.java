@@ -17,6 +17,7 @@
 package android.content;
 
 import droidsafe.annotations.*;
+import droidsafe.concrete.DroidSafeContentResolver;
 import android.content.pm.ApplicationInfo;
 import android.content.pm.PackageManager;
 import android.content.res.AssetManager;
@@ -44,8 +45,8 @@ import java.io.InputStream;
  * the original Context.
  */
 public class ContextWrapper extends Context {
-    Context mBase;
-
+    private Context mBase;
+    
     @DSModeled
     public ContextWrapper(Context base) {
         mBase = base;
@@ -61,6 +62,7 @@ public class ContextWrapper extends Context {
     @DSModeled
     protected void attachBaseContext(Context base) {
         mBase = base;
+        
     }
 
     /**
@@ -91,7 +93,7 @@ public class ContextWrapper extends Context {
     @Override
     @DSModeled
     public ContentResolver getContentResolver() {
-        return mBase.getContentResolver();
+    	return mBase.getContentResolver();
     }
 
     @Override

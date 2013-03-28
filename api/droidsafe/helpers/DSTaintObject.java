@@ -25,6 +25,7 @@ public class DSTaintObject {
 		return taint;
 	}
 	
+	@DSModeled
 	public int getTaintInt() {
 		return taint.hashCode();
 	}
