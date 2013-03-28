@@ -78,6 +78,20 @@ public class Hierarchy {
 	}
 	
 	/**
+	 * Return the closest parent of clz that is an android component
+	 */
+	public SootClass getComponentParent(SootClass clz) {
+		List<SootClass> supers = Scene.v().getActiveHierarchy().getSuperclassesOf(clz);
+		
+		for (SootClass sup : supers) {
+			if (Components.CLASS_NAMES.contains(sup.getName()))
+				return sup;
+		}
+		
+		return null;
+	}
+	
+	/**
 	 * Return set of all interface and classes implemented or inherited by 
 	 * this class.
 	 */

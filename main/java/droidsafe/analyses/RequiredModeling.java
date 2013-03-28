@@ -37,7 +37,7 @@ import soot.util.queue.QueueReader;
 public class RequiredModeling {
 	private final static Logger logger = LoggerFactory.getLogger(AttributeModeling.class);
 		
-	public static void run() {
+	public static void run1() {
 		Set<String> toModel = new TreeSet<String>();
 
 		for (RCFGNode node : RCFG.v().getNodes()) {
@@ -57,5 +57,25 @@ public class RequiredModeling {
 			System.exit(1);
 		}
 
+	}
+	
+	public static void run() {
+		Set<String> toModel = new TreeSet<String>();
+		
+		for (SootMethod method : GeoPTA.v().getAllReachableMethods()) {
+			if (API.v().isSystemMethod(method) && !API.v().isAPIModeledMethod(method))
+				toModel.add(method.getSignature());
+		}
+		
+		try {
+			FileWriter fw = new FileWriter(Project.v().getOutputDir() + File.separator + "api-required-modeling-pta.txt");
+			for (String m : toModel) {
+				fw.write(m + "\n");
+			}
+			fw.close();
+		} catch (Exception e) {
+			logger.error("Cannot write required modeling file");
+			System.exit(1);
+		}
 	}
 }

@@ -25,6 +25,10 @@ import droidsafe.android.app.resources.AndroidManifest.Activity;
  * Calculate the entry points of the android application we are analyzing.
  * Must be called after soot has been configured.
  * 
+ * This finds all entry points in only in components, and does not
+ * take into account if the entry point is modeled or not.  That is for other
+ * classes to decide.
+ * 
  * @author mgordon
  *
  */
@@ -41,6 +45,9 @@ public class EntryPoints {
 		appEntryPoints = new LinkedHashSet<SootMethod>();
 	}
 	
+	/**
+	 * Return all entry points in component classes without respect to if they are modeled.
+	 */
 	public Set<SootMethod> getAppEntryPoints() {
 		return appEntryPoints;
 	}

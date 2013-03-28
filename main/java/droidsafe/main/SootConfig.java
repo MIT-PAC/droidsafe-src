@@ -67,10 +67,10 @@ public class SootConfig {
 		StringBuffer cp = new StringBuffer();
 		
 		//add the api modeling directory first so we can load modeling classes
-		cp.append(Config.v().ANDROID_LIB_DIR + File.separator + "droidsafe-api-model.jar:");
+		cp.append(Config.v().ANDROID_LIB_DIR + File.separator + "droidsafe-api-model.jar");
 		
 		//add the classes directory
-		cp.append(Project.v().getAppClassesDir().toString());
+		cp.append(":" + Project.v().getAppClassesDir().toString());
 		
 		//add the android.jar
 		File aj = new File(Config.v().ANDROID_LIB_DIR + File.separator + Config.v().ANDROID_JAR);
@@ -79,6 +79,7 @@ public class SootConfig {
 			logger.error("android.jar does not exist");
 			System.exit(1);
 		}
+		
 		cp.append(":" + aj.toString());
 
 		//add jars in the libs directory

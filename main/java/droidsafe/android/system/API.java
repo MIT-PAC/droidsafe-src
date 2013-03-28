@@ -82,24 +82,29 @@ public class API {
 		try {
 			allSystemClasses = new LinkedHashSet<SootClass>();
 			
-			//load the configured android jar file
-			JarFile androidJar = new JarFile(new File(Config.v().ANDROID_LIB_DIR, Config.v().ANDROID_JAR));
-			allSystemClasses.addAll(SootUtils.loadClassesFromJar(androidJar, false));
-			all_sys_methods.addAllMethods(androidJar);
-			
 			//load any modeled classes from the api model, overwrite the stub classes
 			JarFile apiModeling = new JarFile(new File(Config.v().ANDROID_LIB_DIR, "droidsafe-api-model.jar"));
-			allSystemClasses.addAll(SootUtils.loadClassesFromJar(apiModeling, true));
+			Set<SootClass> modeledClasses = SootUtils.loadClassesFromJar(apiModeling, true, new LinkedHashSet<String>()); 
+			allSystemClasses.addAll(modeledClasses);
 			all_sys_methods.addAllMethods(apiModeling);
 			
+			Set<String> modeledClassNames = new LinkedHashSet<String>();
+			for (SootClass modeled : modeledClasses) 
+				modeledClassNames.add(modeled.getName());
+			
+			//load the configured android jar file
+			JarFile androidJar = new JarFile(new File(Config.v().ANDROID_LIB_DIR, Config.v().ANDROID_JAR));
+			allSystemClasses.addAll(SootUtils.loadClassesFromJar(androidJar, false, modeledClassNames));
+			all_sys_methods.addAllMethods(androidJar);
+					
 		} catch (Exception e) {
 			logger.error("Error loading android.jar", e);
 			System.exit(1);
 		}
 
 		loadDroidSafeCalls();
-		loadClassification();
 		findModeledMethods();
+		loadClassification();
 	}
 	
 	/**
@@ -114,6 +119,13 @@ public class API {
 					for (AnnotationTag at : vat.getAnnotations()) {
 						if (at.getType().contains("droidsafe/annotations/DSModeled")) {
 							logger.info("Found api modeled method: {}\n", method);
+							if (method.isConcrete()) {
+								method.retrieveActiveBody();
+								if (!method.hasActiveBody()) {
+									logger.error("Modeled api method has no active body: {}", method);
+									System.exit(1);
+								}
+							}
 							api_modeled_methods.addMethod(method);
 						}
 					}
@@ -128,7 +140,7 @@ public class API {
 			File dsLib = new File(System.getenv ("APAC_HOME"), 
 					"android-lib/droidcalls.jar");
 			JarFile dsJar = new JarFile(dsLib);
-			SootUtils.loadClassesFromJar(dsJar, true);
+			SootUtils.loadClassesFromJar(dsJar, true, new LinkedHashSet<String>());
 			all_sys_methods.addAllMethods(dsJar);			
 		} catch (Exception e) {
 			Utils.ERROR_AND_EXIT(logger, "Error loading droidsafe call jar (maybe it does not exist).");

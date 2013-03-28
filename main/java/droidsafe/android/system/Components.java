@@ -3,6 +3,8 @@ package droidsafe.android.system;
 import java.util.LinkedList;
 import java.util.List;
 
+import droidsafe.android.app.Hierarchy;
+
 import soot.SootClass;
 import soot.Scene;
 

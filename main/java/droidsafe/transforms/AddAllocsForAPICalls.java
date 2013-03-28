@@ -82,7 +82,7 @@ public class AddAllocsForAPICalls extends BodyTransformer {
 					File.separator +NEED_TO_MODEL_FILENAME);
 
 			for (SootClass clz : Scene.v().getClasses()) {
-				if (Project.v().isSrcClass(clz.toString())) {
+				if (Project.v().isSrcClass(clz.toString()) || Project.v().isLibClass(clz.toString())) {
 					for (SootMethod meth : clz.getMethods()) {
 						if (meth.isConcrete())
 							v.transform(meth.retrieveActiveBody());

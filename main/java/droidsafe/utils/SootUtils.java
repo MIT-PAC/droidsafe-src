@@ -412,7 +412,7 @@ public class SootUtils {
      * 
      * Return a set of all classes loaded from the jar.
      */
-    public static Set<SootClass> loadClassesFromJar(JarFile jarFile, boolean appClass) {
+    public static Set<SootClass> loadClassesFromJar(JarFile jarFile, boolean appClass, Set<String> doNotLoad) {
     	LinkedHashSet<SootClass> classSet = new LinkedHashSet<SootClass>();
         Enumeration allEntries = jarFile.entries();
         while (allEntries.hasMoreElements()) {
@@ -424,9 +424,13 @@ public class SootUtils {
 
             String clsName = name.substring(0, name.length() - 6).replace('/', '.');
             
-
+            if (doNotLoad.contains(clsName)) {
+            	continue;
+            }
+            
             if (appClass) {
-            	SootClass clz = Scene.v().loadClassAndSupport(clsName);
+            	//SootClass clz = Scene.v().loadClassAndSupport(clsName);
+            	SootClass clz = Scene.v().loadClass(clsName, SootClass.BODIES);
             	classSet.add(clz);
             	clz.setApplicationClass();
             	logger.debug("Loading from {}: {} (app)", jarFile.getName(), clsName);
@@ -550,6 +554,11 @@ public class SootUtils {
 					new FileOutputStream(fileName));
 			PrintWriter writerOut = new PrintWriter(
 					new OutputStreamWriter(streamOut));
+			
+			for (SootMethod method : clz.getMethods()) {
+				if (method.isConcrete())
+					method.retrieveActiveBody();
+			}
 			
 			/*
 			JasminClass jasminClass = new soot.jimple.JasminClass(clz);

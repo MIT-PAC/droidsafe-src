@@ -17,6 +17,8 @@ import java.util.List;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import com.google.common.collect.ImmutableMap;
+
 import droidsafe.android.system.API;
 import droidsafe.android.system.Components;
 import droidsafe.utils.SootUtils;
@@ -62,6 +64,16 @@ import droidsafe.main.Constants;
  */
 public class Harness {
 	private final static Logger logger = LoggerFactory.getLogger(Harness.class);
+	
+	private final static String RUNTIME_MODELING_CLASS = "droidsafe.runtime.DroidSafeAndroidRuntime";
+
+	//map of component class names to the init method that should be called for them...
+	private static Map<String, String> componentInitMethod = ImmutableMap.of(
+			Components.ACTIVITY_CLASS, "<" + RUNTIME_MODELING_CLASS + ": void launchActivity(android.app.Activity)>",
+			Components.SERVICE_CLASS, "<" + RUNTIME_MODELING_CLASS + ": void launchService(android.app.Activity)>",
+			Components.CONTENTPROVIDER_CLASS, "<" + RUNTIME_MODELING_CLASS + ": void launchContentProvider(android.app.Activity)>",
+			Components.BROADCASTRECEIVER_CLASS, "<" + RUNTIME_MODELING_CLASS + ": void launchBroadCastReceiver(android.app.Activity)>"
+			);
 	
 	private SootClass harnessClass;
 	private SootMethod harnessMain;
@@ -131,7 +143,7 @@ public class Harness {
 		harnessMain.setActiveBody(body);
 		
 		Stmt beginCalls = mainMethodHeader(body);
-		createRunTimeObjects(body);
+		addCallToModelingRuntime(body);
 		addCallsToComponentEntryPoints(body);
 		addCallsToNonComponentEntryPoints(body);
 		
@@ -148,9 +160,12 @@ public class Harness {
 		SootUtils.writeByteCodeAndJimple(Project.v().getOutputDir() + File.separator + HARNESS_CLASS_NAME, getHarnessClass());
 	}
 
-	private void createRunTimeObjects(StmtBody body) {
-		SootClass dsGlobals = Scene.v().getSootClass("droidsafe.runtime.DroidSafeGlobals");
-		
+	//add call to the modeling entry point for the modeling of the android runtime
+	private void addCallToModelingRuntime(StmtBody body) {
+		SootClass dsRuntime = Scene.v().getSootClass("droidsafe.runtime.DroidSafeAndroidRuntime");
+		SootMethod entry = dsRuntime.getMethod("void main()");
+		Stmt call = Jimple.v().newInvokeStmt(makeInvokeExpression(entry, null, new LinkedList<Value>()));
+		body.getUnits().add(call);
 	}
 	
 	/**
@@ -269,7 +284,7 @@ public class Harness {
     					body.getUnits().add(Jimple.v().newAssignStmt(receiver, 
     							Jimple.v().newStaticFieldRef(field.makeRef())));
     					//create a call to this entry point
-    					createCall(method, body, receiver);
+    					createCallWithNewArgs(method, body, receiver);
     					needField = true;
     				}
     			} 
@@ -321,19 +336,34 @@ public class Harness {
 				//create a constructor for this call unless the call itself is a constructor
 				if (!entryPoint.isConstructor())
 					addConstructorCall(body, receiver, type);
+				else {
+					//create the call to the entry point method
+					createCallWithNewArgs(entryPoint, body, receiver);
+				}
 				
 				logger.debug("Adding new receiver object to harness main method: {}", clazz.toString());
 				localsMap.put(clazz, receiver);
 				
+				//since this is a component, add a call to the launch (init) method in the 
+				//runtime modeling
+				SootMethod initMethod = Scene.v().getMethod(componentInitMethod.get(Hierarchy.v().getComponentParent(clazz).getName()));
+				LinkedList<Value> args = new LinkedList<Value>();
+				args.add(receiver);
+				Stmt call = Jimple.v().newInvokeStmt(makeInvokeExpression(initMethod, null, args));
+				body.getUnits().add(call);
+
 			}
-			
-			Local receiver = localsMap.get(clazz);
-			//create the call to the entry point method
-			createCall(entryPoint, body, receiver);
+			//if this is not a constructor call then add the call, constructor calls are taken care of
+			// on the first instance of an object above
+			if (!entryPoint.isConstructor()){
+				Local receiver = localsMap.get(clazz);
+				//create the call to the entry point method
+				createCallWithNewArgs(entryPoint, body, receiver);
+			}
 		}
 	}
-	
-	private void createCall(SootMethod method, StmtBody body, Local receiver) {
+
+	private void createCallWithNewArgs(SootMethod method, StmtBody body, Local receiver) {
 		//next create locals for all arguments
 		//List of argument position to locals created...
 		List<Value> args = new LinkedList<Value>();
