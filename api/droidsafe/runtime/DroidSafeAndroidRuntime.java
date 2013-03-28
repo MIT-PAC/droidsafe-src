@@ -2,6 +2,7 @@ package droidsafe.runtime;
 
 import droidsafe.annotations.*;
 import android.app.ContextImpl;
+import android.os.Bundle;
 
 /**
  * This class will simulate the android runtime system by making any calls or creating 
@@ -31,7 +32,10 @@ public class DroidSafeAndroidRuntime {
 	 */
 	public static void launchActivity(android.app.Activity activity) {
 		ContextImpl context = new ContextImpl();
-		activity.attach(context);	
+		activity.attach(context);
+		
+		Bundle b = new Bundle();
+		activity.performCreate(b);
 	}
 	
 	/* at some point these should be created

@@ -2320,7 +2320,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
     private int mBackgroundResource;
     private boolean mBackgroundSizeChanged;
 
-    static class ListenerInfo {
+    static class ListenerInfo {	
         /**
          * Listener used to dispatch focus change events.
          * This field should be made private, so it is hidden from the SDK.
@@ -3353,6 +3353,8 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
         return mVerticalScrollbarPosition;
     }
 
+    @DSModeled(DSC.BAN)
+    //return the internal listern info class, and don't let the user call it
     ListenerInfo getListenerInfo() {
         if (mListenerInfo != null) {
             return mListenerInfo;

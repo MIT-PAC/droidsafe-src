@@ -29,4 +29,9 @@ public class DSTaintObject {
 	public int getTaintInt() {
 		return taint.hashCode();
 	}
+	
+	@DSModeled
+	public float getTaintFloat() {
+		return (float)getTaintInt();
+	}
 }

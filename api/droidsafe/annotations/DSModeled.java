@@ -4,4 +4,6 @@ import java.lang.annotation.*;
 
 @Target({ElementType.METHOD, ElementType.CONSTRUCTOR})
 @Retention(RetentionPolicy.RUNTIME)
-public @interface DSModeled {}
+public @interface DSModeled {
+	DSC value() default DSC.SPEC;
+}

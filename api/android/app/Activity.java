@@ -16,6 +16,7 @@
 
 package android.app;
 
+import droidsafe.annotations.DSC;
 import droidsafe.annotations.DSModeled;
 
 import com.android.internal.app.ActionBarImpl;
@@ -330,7 +331,12 @@ public class Activity extends ContextThemeWrapper
      * @see #onRestoreInstanceState
      * @see #onPostCreate
      */
+    @DSModeled(DSC.SAFE)
     protected void onCreate(Bundle savedInstanceState) {
+    	//DSModel: what is the information flow for bundle??
+    	
+    	
+    	/*  DSModel: for now, do nothing in here
         if (mLastNonConfigurationInstances != null) {
             mAllLoaderManagers = mLastNonConfigurationInstances.loaders;
         }
@@ -342,6 +348,7 @@ public class Activity extends ContextThemeWrapper
         mFragments.dispatchCreate();
         getApplication().dispatchActivityCreated(this, savedInstanceState);
         mCalled = true;
+        */
     }
 
     /**
@@ -3413,21 +3420,7 @@ public class Activity extends ContextThemeWrapper
         mSearchManager = new SearchManager(this, null);
     }
     
-    @Override
-    public Object getSystemService(String name) {
-        if (getBaseContext() == null) {
-            throw new IllegalStateException(
-                    "System services not available to Activities before onCreate()");
-        }
-
-        if (WINDOW_SERVICE.equals(name)) {
-            return mWindowManager;
-        } else if (SEARCH_SERVICE.equals(name)) {
-            ensureSearchManager();
-            return mSearchManager;
-        }
-        return super.getSystemService(name);
-    }
+  
 
     /**
      * Change the title associated with this activity.  If this is a
@@ -3891,11 +3884,15 @@ public class Activity extends ContextThemeWrapper
         return mParent != null ? mParent.getActivityToken() : mToken;
     }
 
-    final void performCreate(Bundle icicle) {
+    @DSModeled(DSC.BAN)
+    //called by dsruntime to perform the onCreate
+    public final void performCreate(Bundle icicle) {
         onCreate(icicle);
+        /* DSModel: for now don't know what this other stuff does
         mVisibleFromClient = !mWindow.getWindowStyle().getBoolean(
                 com.android.internal.R.styleable.Window_windowNoDisplay, false);
         mFragments.dispatchActivityCreated();
+        */
     }
     
     final void performStart() {

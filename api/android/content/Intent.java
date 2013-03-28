@@ -16,6 +16,7 @@
 
 package android.content;
 
+import droidsafe.annotations.DSC;
 import droidsafe.annotations.DSModeled;
 import org.xmlpull.v1.XmlPullParser;
 import org.xmlpull.v1.XmlPullParserException;
@@ -3587,7 +3588,7 @@ public class Intent implements Parcelable, Cloneable {
      * @see #getScheme
      * @see #setData
      */
-    @DSModeled
+    @DSModeled(DSC.SAFE)
     public Uri getData() {
         return mData;
     }

@@ -36,6 +36,8 @@ import android.database.DatabaseErrorHandler;
 import android.database.sqlite.SQLiteDatabase;
 import android.graphics.Bitmap;
 import android.graphics.drawable.Drawable;
+import android.location.Location;
+import android.location.LocationManager;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.Handler;
@@ -61,6 +63,19 @@ public class ContextImpl extends Context {
 		contentResolver = new DroidSafeContentResolver(this);
 	}
 
+
+    @Override
+    @DSModeled
+    public Object getSystemService(String name) {
+    	if (name.equals(Context.SENSOR_SERVICE)) {
+    		return new DroidSafeSensorManager();
+    	} else if (name.equals(Context.LOCATION_SERVICE)) {
+    		return new LocationManager(null);
+    	} else {
+    		return null;
+    	}
+    }
+	
     @Override
     public AssetManager getAssets() {
         throw new UnsupportedOperationException();
@@ -352,12 +367,7 @@ public class ContextImpl extends Context {
     public boolean startInstrumentation(ComponentName className,
             String profileFile, Bundle arguments) {
         throw new UnsupportedOperationException();
-    }
-
-    @Override
-    public Object getSystemService(String name) {
-        throw new UnsupportedOperationException();
-    }
+  }
 
     @Override
     public int checkPermission(String permission, int pid, int uid) {
