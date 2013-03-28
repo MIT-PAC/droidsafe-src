@@ -129,7 +129,7 @@ public class Main {
 
 	private static void writeAllAppClasses() {
 		for (SootClass clz : Scene.v().getClasses()) {
-			if (clz.isApplicationClass() && Project.v().isSrcClass(clz.toString())) {
+			if (clz.isApplicationClass() /* && Project.v().isSrcClass(clz.toString())*/) {
 				SootUtils.writeByteCodeAndJimple(Project.v().getOutputDir() + File.separator + clz.toString(), clz);
 			}
 		}
