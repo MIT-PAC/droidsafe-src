@@ -372,7 +372,7 @@ public class RCFG {
 				processEdge(rCFGNode, curEdge, edgeInto, null, appEdgesOut, allEdges);
 				continue;
 			}
-			
+		
 			//if always obsoleted, then continue
 			if (cgEdge.is_obsoleted)
 				continue;

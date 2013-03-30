@@ -11,6 +11,7 @@ import java.util.Set;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import soot.G;
 import soot.Scene;
 import soot.SootClass;
 import soot.SootMethod;
