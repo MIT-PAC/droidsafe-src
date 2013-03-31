@@ -40,7 +40,7 @@ public class Intent extends ModeledClass {
  
   @Override
   public String toString(){
-    String str = "<modeled Intent> {";
+    String str = "<modeled Intent" + this.getId() + "> {";
     if (this.invalidated) {
       str += "invalidated";
     } else {

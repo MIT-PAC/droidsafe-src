@@ -42,7 +42,7 @@ public class String extends ModeledClass{
 
   @Override
   public java.lang.String toString() {
-    java.lang.String str = "<modeled string> {";
+    java.lang.String str = "<modeled string" + this.getId() + "> {";
     if(this.invalidated) {
       str += "invalidated"; 
     } else {

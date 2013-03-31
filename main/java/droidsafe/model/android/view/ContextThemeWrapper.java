@@ -18,7 +18,7 @@ public class ContextThemeWrapper extends ContextWrapper {
  
   @Override
   public String toString(){
-    String str = "<modeled ContextThemeWrapper> {";
+    String str = "<modeled ContextThemeWrapper" + this.getId() + "> {";
     if (this.invalidated) {
       str += "invalidated";
     } else {

@@ -77,8 +77,18 @@ public class SootUtils {
 	private final static Logger logger = LoggerFactory.getLogger(SootUtils.class);
 	
 	public static final Pattern sigRE = Pattern.compile("<(\\S+): (\\S+) (\\S+)\\((.*)\\)>");
-	
-	/**
+
+  /*
+   * Takes in a Soot Value and if it's a constant, returns a java object with the same value
+   */
+  public static Object constantValueToObject(Value sootValue) {
+    if (sootValue instanceof IntConstant) {
+      return new Integer(((IntConstant)sootValue).value);
+    }
+    return null;
+  }
+
+	/*
 	 * Given a string representing a type in soot, (ex: int, java.lang.Class[]), return 
 	 * the appropriate Soot type for the object. 
 	 */

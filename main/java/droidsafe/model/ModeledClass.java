@@ -1,8 +1,11 @@
 package droidsafe.model;
 
-import soot.jimple.spark.pag.AllocNode;
-import java.util.Set;
 import java.util.HashSet;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+import java.util.Set;
+
+import soot.jimple.spark.pag.AllocNode;
 
 public abstract class ModeledClass {
 
@@ -23,6 +26,18 @@ public abstract class ModeledClass {
    }
    public boolean isInvalid() {
      return this.invalidated;
+   }
+
+   public String getId() {
+     String id = "";
+     if (this.allocNode != null) {
+       Pattern p = Pattern.compile("\\d+");
+       Matcher m = p.matcher(this.allocNode.toString());
+       if(m.find()) {
+         id += " #" + m.group();
+       }
+     }
+     return id;
    }
 
    public AllocNode getAllocNode(){

@@ -17,15 +17,23 @@ public class Activity extends ContextThemeWrapper {
   public Activity(AllocNode allocNode) {
     super(allocNode);
   }
-  
+ 
+  public void _init_(){
+  }
+ 
   // 15
   public void startActivity(droidsafe.model.android.content.Intent intent){
   
   }
  
+  // 15
+  public void startActivityForResult(droidsafe.model.android.content.Intent intent, Integer requestCode){
+  
+  }
+
   @Override
   public String toString(){
-    String str = "<modeled Activity> {";
+    String str = "<modeled Activity" + this.getId() + "> {";
     if (this.invalidated) {
       str += "invalidated";
     } else {
