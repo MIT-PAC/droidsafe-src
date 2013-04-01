@@ -255,18 +255,16 @@ public class AutomataUtil {
 		}
 
 
-		for (int r = 0; r < m; r++ ) {
-		  for (int s = 0; s < m; s++) {
-				logger.debug("A[" + r + "][" + s + "] " + a[r][s].toString());
-			}			
-		}
+		// for (int r = 0; r < m; r++ ) {
+		//   for (int s = 0; s < m; s++) {
+		// 		 logger.debug("A[" + r + "][" + s + "] " + a[r][s].toString());
+		// 	}			
+		// }
 
-		for (int p = 0; p < m; p++)
-			logger.debug("B[" + p + "] " + b[p].toString());
+		// for (int p = 0; p < m; p++)
+		// 	logger.debug("B[" + p + "] " + b[p].toString());
 
-		// logger.debug("Total size is " + m);
 		for (int n = m - 1; n >= 0; n--) {
-			logger.debug("Outer loop: " + n);
 			b[n] = a[n][n].star().concat(b[n]);
 
 			for (int j = 0; j < n; j++) {
@@ -284,14 +282,14 @@ public class AutomataUtil {
 			}
 
 
-			for (int r = 0; r < m; r++ ) {
-				for (int s = 0; s < m; s++) {
-						logger.debug("A[" + r + "][" + s + "] " + a[r][s].toString());
-				}			
-			}
+			// for (int r = 0; r < m; r++ ) {
+			// 	for (int s = 0; s < m; s++) {
+			// 			logger.debug("A[" + r + "][" + s + "] " + a[r][s].toString());
+			// 	}			
+			// }
 
-			for (int p = 0; p < m; p++)
-				logger.debug("B[" + p + "] " + b[p].toString());
+			// for (int p = 0; p < m; p++)
+				// logger.debug("B[" + p + "] " + b[p].toString());
 		}
 
 

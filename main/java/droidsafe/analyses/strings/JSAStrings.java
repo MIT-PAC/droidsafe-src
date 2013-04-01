@@ -49,32 +49,6 @@ public class JSAStrings {
 			StringAnalysis.loadDirectory("bin/classes/");
 			StringAnalysis.addJarsToClassPath("libs/");
 
-
-
-
-			/*
-			String APAC_HOME = config.APAC_HOME();
-			String droidsafeLib = APAC_HOME + "lib"; 
-			logger.debug("Adding libraries from " + droidsafeLib);
-
-
-
-			// Modify the Classpath
-			boolean loaded = StringAnalysis.addJarsToClassPath(droidsafeLib);
-
-			// Load the jars. Is it really necessary to do this, given that the
-			// jars are already added to the classpath?
-			File[] jars = new File(droidsafeLib).listFiles(new FileFilter() {
-				public boolean accept(File pathname) {
-					return pathname.isFile() && pathname.getName().endsWith(".jar");
-				}
-			});
-
-			for (File jar : jars) {
-				SootUtils.loadClassesFromJar(new JarFile(jar), false);
-			}
-
-    	*/
 		} catch (IOException e) {
 			logger.debug("JSA got an exception.");
 			return;
@@ -90,35 +64,12 @@ public class JSAStrings {
 		List<ValueBox> hotspots = new LinkedList<ValueBox>();
 		hotspots.addAll(StringAnalysis.getArgumentExpressions("<android.content.Intent: void <init>(java.lang.String)>", 0));
 		hotspots.addAll(StringAnalysis.getArgumentExpressions("<android.content.Intent: android.content.Intent addCategory(java.lang.String)>", 0));	
-		// hotspots.addAll(StringAnalysis.getArgumentExpressions("<java.lang.String: java.lang.String concat(java.lang.String)>", 0));	
 
 
 		logger.debug("Got " + hotspots.size() + " Expressions");
-		StringAnalysis sa = new StringAnalysis(hotspots); // Run the analysis???
+		StringAnalysis sa = new StringAnalysis(hotspots); // Run the analysis.
 		convertHotspots(sa,hotspots);
 		
-
-		/*
-
-		// Just some testing
-		Automaton uriauto = new RegExp(
-			"(([a-zA-Z][0-9a-zA-Z+\\-\\.]*:)?/{0,2}[0-9a-zA-Z;/?:@&=+$\\.\\"
-				+ "-_!~*'()%]+)?("
-				+ "#[0-9a-zA-Z;/?:@&=+$\\.\\-_!~*'()%]+)?").toAutomaton();
-
-		uriauto = new RegExp("(a*|b)(c|d)*yz").toAutomaton();
-
-		
-		uriauto.determinize();
-		AutomataUtil.RE uri = AutomataUtil.convertAutomata(uriauto);
-		if (uriauto.isEmpty()) {
-			logger.debug("URL Automata is empty!");
-		} else {
-			logger.debug(uriauto.toString());
-			logger.debug("URL Automata: " + uri.toString());
-		}
-	*/
-		// End testing
 
 		return;
 	}

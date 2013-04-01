@@ -73,12 +73,11 @@ public class Main {
 		logger.info("Create tags for the overriden system methods in user code.");
 		TagImplementedSystemMethods.run();
 
-		logger.info("Resolving resources and Manifest.");
+    logger.info("Resolving resources and Manifest.");
 		Resources.resolveManifest(Config.v().APP_ROOT_DIR);
 
 		logger.info("Resolving String Constants");
 		ResolveStringConstants.run(Config.v().APP_ROOT_DIR);
-
 
 
 		logger.info("Finding entry points in user code.");
@@ -90,17 +89,12 @@ public class Main {
 		logger.info("Setting Harness Main as entry point.");
 		setHarnessMainAsEntryPoint();
 
-		AddAllocsForAPICalls.run();
-
+    // The JSA analysis fails if it follows AddAllocsForAPICalls.run()		
 		if (Config.v().RUN_STRING_ANALYSIS) {
-			logger.info("Setting up JSA");
-	  	// This call, copied from 'setHarnessMainAsEntryPoint' below, seems to be necessary for JSA.
-		  // Scene.v().setMainClass(Harness.v().getHarnessClass());
-		  // logger.debug("Main Class is set to " + Harness.v().getHarnessClass().toString());
 		  JSAStrings.run(Config.v());
-  		// *re*-set main class???
-		  /// setHarnessMainAsEntryPoint();
 		}
+
+		AddAllocsForAPICalls.run();
 		
 		logger.info("Starting PTA...");
 		GeoPTA.run();
