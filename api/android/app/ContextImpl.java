@@ -65,17 +65,27 @@ public class ContextImpl extends Context {
 
 
     @Override
-    @DSModeled
-    public Object getSystemService(String name) {
-    	if (name.equals(Context.SENSOR_SERVICE)) {
-    		return new DroidSafeSensorManager();
-    	} else if (name.equals(Context.LOCATION_SERVICE)) {
-    		return new LocationManager(null);
-    	} else {
-    		return null;
+    @DSModeled(value = DSC.SAFE)
+    @DSSpecialize(
+    	{
+    		@DSTemplate(arg = 0, value = Context.SENSOR_SERVICE, method = "getSystemServiceSensor"),
+    		@DSTemplate(arg = 0, value = Context.LOCATION_SERVICE, method = "getSystemServiceLocation")
     	}
+    )
+    public Object getSystemService(String name) {
+    	return new Object();
     }
-	
+    
+    @DSSpecialized(method = "Object getSystemService(String)", arg = 0)
+    public DroidSafeSensorManager getSystemServiceSensor(String x) {
+    	return new DroidSafeSensorManager();
+    }
+    
+    @DSSpecialized(method = "Object getSystemService(String)", arg = 0)
+    public LocationManager getSystemServiceLocation(String x) { 
+    	return new LocationManager(null);
+    }
+    
     @Override
     public AssetManager getAssets() {
         throw new UnsupportedOperationException();
