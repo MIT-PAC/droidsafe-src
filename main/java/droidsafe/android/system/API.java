@@ -352,4 +352,8 @@ public class API {
     public boolean isAPIModeledMethod(SootMethod m) {
     	return api_modeled_methods.contains(m);
     }
+    
+    public SootMethodList getAllSystemMethods() {
+    	return all_sys_methods;
+    }
  }

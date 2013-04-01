@@ -30,6 +30,7 @@ import droidsafe.android.app.Project;
 import droidsafe.android.app.resources.Resources;
 import droidsafe.android.system.API;
 import droidsafe.android.system.Permissions;
+import droidsafe.transforms.APICallSpecialization;
 import droidsafe.transforms.AddAllocsForAPICalls;
 import droidsafe.transforms.LocalForStringConstantArguments;
 import droidsafe.transforms.ResolveStringConstants;
@@ -84,6 +85,9 @@ public class Main {
 
 		logger.info("Resolving String Constants");
 		ResolveStringConstants.run(Config.v().APP_ROOT_DIR);
+		
+		logger.info("Specializing API Calls");
+		APICallSpecialization.run();
 
 		logger.info("Finding entry points in user code.");
 		EntryPoints.v().calculate();
