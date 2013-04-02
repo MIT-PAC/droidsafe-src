@@ -92,6 +92,9 @@ public class Main {
     // The JSA analysis fails if it follows AddAllocsForAPICalls.run()		
 		if (Config.v().RUN_STRING_ANALYSIS) {
 		  JSAStrings.run(Config.v());
+
+		  // Debugging.
+		  JSAStrings.v().log();
 		}
 
 		AddAllocsForAPICalls.run();
@@ -134,4 +137,5 @@ public class Main {
 			}
 		}
 	}
+
 }
