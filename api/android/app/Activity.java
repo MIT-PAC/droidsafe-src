@@ -200,7 +200,7 @@ public class Activity extends ContextThemeWrapper
     
     protected static final int[] FOCUSED_STATE_SET = {com.android.internal.R.attr.state_focused};
 
-    private final Object mInstanceTracker = StrictMode.trackActivity(this);
+    //private final Object mInstanceTracker = StrictMode.trackActivity(this);
 
     private Thread mUiThread;
     final Handler mHandler = new Handler();
