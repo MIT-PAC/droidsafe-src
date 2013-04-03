@@ -85,9 +85,6 @@ public class Main {
 
 		logger.info("Resolving String Constants");
 		ResolveStringConstants.run(Config.v().APP_ROOT_DIR);
-		
-		logger.info("Specializing API Calls");
-		APICallSpecialization.run();
 
 		logger.info("Finding entry points in user code.");
 		EntryPoints.v().calculate();
@@ -100,8 +97,18 @@ public class Main {
 
 		AddAllocsForAPICalls.run();
 
-		logger.info("Starting PTA...");
-		GeoPTA.run();
+		{
+			logger.info("Starting PTA...");
+			GeoPTA.run();
+			
+			logger.info("Specializing API Calls");
+			//APICallSpecialization.run();
+		
+			logger.info("Restarting PTA...");
+			//GeoPTA.release();
+			//GeoPTA.run();
+			
+		}
 
 		RCFG.generate();
 		logger.info("Ending DroidSafe Run");

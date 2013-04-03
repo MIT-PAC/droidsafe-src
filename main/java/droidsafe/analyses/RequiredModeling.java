@@ -63,7 +63,9 @@ public class RequiredModeling {
 		Set<String> toModel = new TreeSet<String>();
 		
 		for (SootMethod method : GeoPTA.v().getAllReachableMethods()) {
-			if (API.v().isSystemMethod(method) && !API.v().isAPIModeledMethod(method))
+			//loop through all reachable methods, and find system methods that are not modeled
+			//or system methods that do not exist (but are called)
+			if (API.v().isSystemClass(method.getDeclaringClass()) && !API.v().isAPIModeledMethod(method))
 				toModel.add(method.getSignature());
 		}
 		

@@ -28,7 +28,9 @@ import droidsafe.android.app.Project;
 import droidsafe.main.Config;
 import droidsafe.utils.Utils;
 
+import soot.G;
 import soot.Local;
+import soot.MethodContext;
 import soot.MethodOrMethodContext;
 import soot.Scene;
 import soot.SootField;
@@ -47,11 +49,13 @@ import soot.jimple.spark.geom.geomPA.ZArrayNumberer;
 import soot.jimple.spark.pag.AllocDotField;
 import soot.jimple.spark.pag.AllocNode;
 import soot.jimple.spark.pag.LocalVarNode;
+import soot.jimple.spark.pag.MethodPAG;
 import soot.jimple.spark.pag.Node;
 import soot.jimple.spark.pag.VarNode;
 import soot.jimple.toolkits.callgraph.CallGraph;
 import soot.jimple.toolkits.callgraph.Edge;
 import soot.jimple.toolkits.callgraph.Targets;
+import soot.jimple.toolkits.typing.ClassHierarchy;
 import soot.options.PaddleOptions;
 import soot.options.SparkOptions;
 import soot.util.queue.QueueReader;
@@ -76,7 +80,25 @@ public class GeoPTA {
 	private HashBiMap<Object, AllocNode> newToAllocNodeMap;
 	private static GeoPTA v;
 	
-	
+
+	public static void release() {
+		v = null;
+		Scene.v().releaseCallGraph();
+		Scene.v().releasePointsToAnalysis();
+		//Scene.v().releaseReachableMethods();
+		//Scene.v().releaseFastHierarchy();
+		//Scene.v().releaseActiveHierarchy();
+		
+		//G.v().MethodPAG_methodToPag = new HashMap<SootMethod, MethodPAG>();
+		//G.v().newSetFactory = null;
+		//G.v().oldSetFactory = null;
+		
+		
+
+		System.gc();
+		System.gc();
+	}
+
 	/**
 	 * Return the instance of the PTA.
 	 */
@@ -88,7 +110,7 @@ public class GeoPTA {
 	 * Runs Soot's geometric PTA and resolve the context.
 	 */
 	public static void run() {
-		Scene.v().loadDynamicClasses();
+		//Scene.v().loadDynamicClasses();
 		
 		setGeomPointsToAnalysis();
 		

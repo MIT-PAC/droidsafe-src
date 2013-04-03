@@ -8,9 +8,11 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import droidsafe.android.system.API;
+import droidsafe.utils.SootUtils;
 
 import soot.Body;
 import soot.BodyTransformer;
+import soot.IntType;
 import soot.Scene;
 import soot.SootMethod;
 import soot.jimple.StmtBody;
@@ -57,8 +59,8 @@ public class APICallSpecialization extends BodyTransformer {
 	}
 
 	/**
-	 * Based on the annotation we are adding to api modeled methods from modeled classes,
-	 * add modeled methods to the soot method list for them.
+	 * Based on the annotations on the modeling, find the methods that were specialized 
+	 * and remember them in the specialized map.
 	 */
 	private void findSpecializedMethods() {
 		for (SootMethod method : API.v().getAllSystemMethods()) {
@@ -84,13 +86,24 @@ public class APICallSpecialization extends BodyTransformer {
 								
 								SootMethod specializedMeth = method.getDeclaringClass().getMethodByName(meth);
 								
-								//TODO: Calculate type variable on CS
+								soot.Type argType = method.getParameterType(arg);
+								CallSpecialization<?> cs;
+								if (argType instanceof IntType) {
+									cs = new CallSpecialization<Integer>(specializedMeth, 
+											arg, Integer.decode(value));
+								} else if (SootUtils.isStringType(argType)) {
+									 cs = new CallSpecialization<String>(specializedMeth, 
+												arg, value);
+								} else {
+									logger.error("Unsupported argument type for specialization {} in method {}.", argType, method);
+									System.exit(1);
+								}
 								
 								//TODO: Check annotation on specialized method
 								
 								//TODO: Check signature of specialized method
 								
-								CallSpecialization<String> cs = new CallSpecialization<String>(specializedMeth, 
+								 cs = new CallSpecialization<String>(specializedMeth, 
 										arg, value);
 								
 								specializations.put(method, cs);

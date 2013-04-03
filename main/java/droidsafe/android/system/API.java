@@ -1,10 +1,3 @@
-/*
- * InterestingMethods.java   2012-06-28
- *
- * Copyright (c) 2012 DroidBlaze (UC Berkeley)
- *
- */
-
 package droidsafe.android.system;
 
 import java.util.Arrays;
@@ -25,6 +18,8 @@ import soot.Scene;
 import soot.SootClass;
 import soot.Type;
 import soot.SootMethod;
+import soot.tagkit.AnnotationElem;
+import soot.tagkit.AnnotationEnumElem;
 import soot.tagkit.AnnotationTag;
 import soot.tagkit.Tag;
 import soot.tagkit.VisibilityAnnotationTag;
@@ -104,12 +99,17 @@ public class API {
 
 		loadDroidSafeCalls();
 		findModeledMethods();
-		loadClassification();
+		
+		//old load classification code from config_files/system_calls.txt
+		//now we classify based on the annotation DSModeled
+		//loadClassification();
 	}
 	
 	/**
 	 * Based on the annotation we are adding to api modeled methods from modeled classes,
 	 * add modeled methods to the soot method list for them.
+	 * 
+	 * Also, read the classification and put methods into appropriate sets (ban, spec, safe)
 	 */
 	private void findModeledMethods() {
 		for (SootMethod method : all_sys_methods) {
@@ -126,6 +126,23 @@ public class API {
 									System.exit(1);
 								}
 							}
+							
+							//if no designation, then spec
+							if (at.getNumElems() == 0)
+								spec_methods.addMethod(method);
+							else {
+								String c = ((AnnotationEnumElem)at.getElemAt(0)).getConstantName();
+								if ("SAFE".equals(c)) {
+									safe_methods.addMethod(method);
+								} else if ("SPEC".equals(c)) {
+									spec_methods.addMethod(method);
+								} else if ("BAN".equals(c)) {
+									banned_methods.addMethod(method);
+								} else {
+									logger.error("Invalid classification annotation {} on {}", c, method);
+								}
+							}
+							
 							api_modeled_methods.addMethod(method);
 						}
 					}
@@ -147,6 +164,8 @@ public class API {
 		}
 	}
 
+	//old load classification code from config_files/system_calls.txt
+	//now we classify based on the annotation DSModeled
 	private void loadClassification()	{
 		// Read in the system call descriptors.  The file format has lines
 		// of the form <type>[|flags] <descr>.  More detail is in the
