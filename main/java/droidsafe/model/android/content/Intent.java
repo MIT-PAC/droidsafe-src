@@ -13,14 +13,16 @@ public class Intent extends ModeledClass {
 
   private final static Logger logger = LoggerFactory.getLogger(Intent.class);
 
-  droidsafe.model.java.lang.String action;
-  droidsafe.model.java.lang.String type;
-  droidsafe.model.android.net.Uri data;
+  droidsafe.model.java.lang.String mAction;
+  droidsafe.model.java.lang.String mType;
+  droidsafe.model.java.lang.String mPackage;
+  droidsafe.model.android.net.Uri mData;
   
   public Intent(AllocNode allocNode) {
     super(allocNode);
-    this.action = new droidsafe.model.java.lang.String();
-    this.type = new droidsafe.model.java.lang.String();
+    this.mAction = new droidsafe.model.java.lang.String();
+    this.mType = new droidsafe.model.java.lang.String();
+    this.mPackage = new droidsafe.model.java.lang.String();
   }
   
   public void _init_(){
@@ -30,23 +32,27 @@ public class Intent extends ModeledClass {
     this.setAction(action);
   } 
   
-  public void setAction(droidsafe.model.java.lang.String action){
-    this.action.incorporateString(action);
+  public void setAction(droidsafe.model.java.lang.String mAction){
+    this.mAction.incorporateString(mAction);
   }
   
-  public void setType(droidsafe.model.java.lang.String type){
-    this.type.incorporateString(type);
+  public void setType(droidsafe.model.java.lang.String mType){
+    this.mType.incorporateString(mType);
   }
- 
+  
+  public void setPackage(droidsafe.model.java.lang.String mPackage){
+    this.mPackage.incorporateString(mPackage);
+  }
   @Override
   public String toString(){
     String str = "<modeled Intent" + this.getId() + "> {";
     if (this.invalidated) {
       str += "invalidated";
     } else {
-      str += "action: " + this.action + ", "
-           + "type: " + this.type + ", "
-           + "data: " + this.data; 
+      str += "action: " + this.mAction + ", "
+           + "type: " + this.mType + ", "
+           + "data: " + this.mData + ", "
+           + "package: " + this.mPackage; 
     }
     return str + "}";
   }

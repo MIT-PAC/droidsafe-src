@@ -229,7 +229,6 @@ public class AttributeModeling {
     
     // Store the parameter object models so that we can later invalidate them if we haven't modeled the method
     ArrayList<ModeledClass> paramObjectModels = new ArrayList<ModeledClass>();
-
     // All this entire for loop does is fill in paramClasses and paramObjectSets. We may quit early if we are unable to
     // model any of the parameters. 
     for (int i = 0; i < paramCount; i++) {
@@ -260,7 +259,9 @@ public class AttributeModeling {
             } else {
               try {
                 String logEntry = "Couldn't model argument '" + node + "' of method '" + invokeExpr + "'\n";
-                logEntry += "> invalidating " + modeledClass + " as a result.";
+                if (invokeExpr instanceof InstanceInvokeExpr) {
+                  logEntry += "> invalidating " + modeledClass + " as a result.";
+                }
                 this.attrModelingTodoLog.write(logEntry + "\n\n");
               } catch (IOException ioe) {}
               // Only invalidate the receiver if there is one
@@ -329,25 +330,15 @@ public class AttributeModeling {
    */
 	private void createModels() {
 		for (RCFGNode node : RCFG.v().getNodes()) {
-			Method ie = new Method(node.getEntryPoint());
 			for (OutputEvent oe : node.getOutputEvents()) {
-				// create the model for the receiver if it hasn't been created yet and we can model the class
 				if (oe.hasReceiver()) {
-          
-          AllocNode receiverAllocNode = oe.getReceiverAlloc();
-          ModeledClass model = this.getOrCreateModel(receiverAllocNode);
-					if (model != null && !this.objectToModelMap.containsKey(receiverAllocNode)) {
-             this.objectToModelMap.put(receiverAllocNode, model);    
-          }
+          createModel(oe.getReceiverAlloc());
         }
 				// create the model for the arguments if it hasn't been created yet and we can model the class
 				for (int i = 0; i < oe.getNumArgs(); i++) {
 					if (oe.isArgPointer(i)) { 
 						for (AllocNode argAllocNode : oe.getArgPTSet(i)) {
-						  ModeledClass model = getOrCreateModel(argAllocNode);
-					    if (model != null && !this.objectToModelMap.containsKey(argAllocNode)) {
-                this.objectToModelMap.put(argAllocNode, model);    
-              }	
+              createModel(argAllocNode);
 						}
           }
 				}
@@ -359,39 +350,35 @@ public class AttributeModeling {
 	 * Creates (if it does not yet exist) and returns our model
    * of the dynamic type of the AllocNode if it is modeled
 	 */
-	private ModeledClass getOrCreateModel(AllocNode allocNode) {
+	private void createModel(AllocNode allocNode) {
     
     //don't track values for alloc nodes we create
 		if (AddAllocsForAPICalls.v().isGeneratedExpr(allocNode.getNewExpr()))
-			return null;
+			return;
 
 		if (!(allocNode.getType() instanceof RefType))
-			return null;
+			return;
     
 		SootClass clazz = ((RefType)allocNode.getType()).getSootClass();
   
     if (allocNode.getMethod() != null && allocNode.getMethod().equals(Harness.v().getMain())) {
       clazz = clazz.getSuperclass();
     }
-    
     String className = clazz.getName();
     try {
       Class<?> modelClazz = Class.forName("droidsafe.model." + className);
-      if (objectToModelMap.containsKey(allocNode)) {
-        return objectToModelMap.get(allocNode);
-      } else {
+      if (!objectToModelMap.containsKey(allocNode)) {
         Constructor<?> ctor = modelClazz.getConstructor(AllocNode.class);
         ModeledClass model = (ModeledClass)ctor.newInstance(allocNode);
         objectToModelMap.put(allocNode, model);
-        return model;
       }
     } catch(Exception e) {
       try {
         String logEntry = "Couldn't model an instance of the " + className + " class: \n" + e.toString();
         this.attrModelingTodoLog.write(logEntry + "\n\n");
       } catch (IOException ioe) {}
-      return null;
     }
+    return;
 	}
  
   private void analyzeBody(Body b) {
