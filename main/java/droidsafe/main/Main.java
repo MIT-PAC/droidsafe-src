@@ -105,8 +105,8 @@ public class Main {
 			//APICallSpecialization.run();
 		
 			logger.info("Restarting PTA...");
-			//GeoPTA.release();
-			//GeoPTA.run();
+			GeoPTA.release();
+			GeoPTA.run();
 			
 		}
 

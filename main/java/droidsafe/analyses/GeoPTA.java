@@ -81,20 +81,16 @@ public class GeoPTA {
 	private static GeoPTA v;
 	
 
+	/**
+	 * Reset the PTA and get it ready for another run.
+	 */
 	public static void release() {
 		v = null;
 		Scene.v().releaseCallGraph();
 		Scene.v().releasePointsToAnalysis();
-		//Scene.v().releaseReachableMethods();
-		//Scene.v().releaseFastHierarchy();
-		//Scene.v().releaseActiveHierarchy();
 		
-		//G.v().MethodPAG_methodToPag = new HashMap<SootMethod, MethodPAG>();
-		//G.v().newSetFactory = null;
-		//G.v().oldSetFactory = null;
+		G.v().MethodPAG_methodToPag = new HashMap<SootMethod, MethodPAG>();
 		
-		
-
 		System.gc();
 		System.gc();
 	}
