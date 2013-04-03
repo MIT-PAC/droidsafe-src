@@ -313,12 +313,7 @@ public class AttributeModeling {
     }
     try {
       java.lang.reflect.Method method = invokeExprClass.getDeclaredMethod(methodName, paramObjectClasses.toArray(new Class[paramObjectClasses.size()]));
-      System.out.println(method);
-      Class [] array;
-      System.out.println(paramObjectCartesianProduct);
       for (ArrayList paramObjectPermutation : paramObjectCartesianProduct){
-        System.out.println(modeledReceiverObject);
-        System.out.println(paramObjectPermutation);  
         method.invoke(modeledReceiverObject, paramObjectPermutation.toArray());
       }
     } catch (Exception e) {
