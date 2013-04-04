@@ -267,7 +267,10 @@ public class AttributeModeling {
             }
           }
         } else {
-          logger.warn("No AllocNodes were found by PTA for arg #{} in instanceInvokeExpr {}", i, invokeExpr);
+          try {
+            String logEntry = "No AllocNodes were found by PTA for arg #" + i + " of instanceInvokeExpr " + invokeExpr;
+            this.attrModelingTodoLog.write(logEntry + "\n\n");
+          } catch(IOException ioe){}
           for(ModeledClass modeledObject : paramObjectModels){
             modeledObject.invalidate();
           }
@@ -275,8 +278,8 @@ public class AttributeModeling {
         }
       } else {
         try {
-          String logEntry = "Don't know enough about argument #" + i + " of method " + invokeExpr + "\n";
-          this.attrModelingTodoLog.write(logEntry);
+          String logEntry = "Arg #" + i + " of method " + invokeExpr + " isn't a constant or a RefType. Not sure what to do - invalidating other params and not simulating the call.";
+          this.attrModelingTodoLog.write(logEntry + "\n\n");
         } catch (IOException ioe) {}
         for(ModeledClass modeledObject : paramObjectModels){
           modeledObject.invalidate();
@@ -297,7 +300,7 @@ public class AttributeModeling {
             ModeledClass modeledObject = (ModeledClass)object;
             modeledObject.invalidate();
             try {
-              String logEntry = "\n" + "> invalidating argument" + modeledObject + " as a result";
+              String logEntry = "\n" + "> invalidating argument " + modeledObject + " as a result";
               this.attrModelingTodoLog.write(logEntry + "\n\n");
             } catch( IOException ioe) {}
           }
@@ -318,7 +321,7 @@ public class AttributeModeling {
       }
     } catch (Exception e) {
       try {
-        String logEntry = "The method " + methodName + " in class " + invokeExprClass + "hasn't been modeled: " + e.toString();
+        String logEntry = "The method " + methodName + " in " + invokeExprClass + " hasn't been modeled: " + e.toString();
 
         // The method isn't modeled, so we must invalidate every argument that we modeled
         this.invalidateParamObjects(paramObjectCartesianProduct);
@@ -363,7 +366,7 @@ public class AttributeModeling {
       }
     } catch(Exception e) {
       try {
-        String logEntry = "Couldn't model an instance of the " + className + " class: \n" + e.toString();
+        String logEntry = "Couldn't model an instance of the " + className + " class: " + e.toString();
         this.attrModelingTodoLog.write(logEntry + "\n\n");
       } catch (IOException ioe) {}
     }
