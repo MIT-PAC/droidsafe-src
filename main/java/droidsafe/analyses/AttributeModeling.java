@@ -58,7 +58,7 @@ import soot.util.Chain;
 import soot.Value;
 
 /**
- * We want to model certain Android objects such as Intents, Strings, and Uris so that we better understand the way 
+ * Models certain Android objects such as Intents, Strings, and Uris so that we better understand the way 
  * they are built up and used.
  *
  * We don't want to present the analyst with the built up of each like we do now, but instead each at the time of its
@@ -136,7 +136,8 @@ public class AttributeModeling {
       logger.error("The RCFG pass has not been run. Attribute modeling requires it.");
       System.exit(1);
     }
-    if (am == null)		
+   
+    if (am == null)
       am = new AttributeModeling();
 
     // loop over all code, creating models and simulating whichever invokeExprs we can as we go
@@ -166,29 +167,34 @@ public class AttributeModeling {
             }
             InvokeExpr invokeExpr = (InvokeExpr)stmt.getInvokeExpr();
 
-            // Compute cartesian product of parameters, creating models as we do so. If we can't model something,
-            // null is returned.
-            //
-            ArrayList<Class> paramClasses = new ArrayList<Class>();
+            // Compute cartesian product of parameters, creating models as we do so. If we can't model something, we
+            // invalidate any parameter models that we created for this method already and return null
             Set<ArrayList<Object>> paramObjectCartesianProduct = am.computeParameterCartesianProduct(invokeExpr);
+            
+            // Store the class of each parameter for later invoke simulation
+            ArrayList<Class> paramClasses = new ArrayList<Class>();
             if(paramObjectCartesianProduct != null){
               for(Object object : paramObjectCartesianProduct.iterator().next()){
                 paramClasses.add(object.getClass());
               }
             }
 
-            // get all the receivers and the models for them
-            // if we can model a receiver and have the cartesian product of parameters, simulate each one
-            // if we can model a receiver but don't have the cartesian product, then invalidate each model
             if (invokeExpr instanceof InstanceInvokeExpr){
               InstanceInvokeExpr iie = (InstanceInvokeExpr)invokeExpr;
+              // get all the receivers and the models for them
+              // if we can model a receiver and have the cartesian product of parameters, simulate the call
+              // if we can model a receiver but don't have the cartesian product, then invalidate the receiver
               for (AllocNode node : GeoPTA.v().getPTSetContextIns(iie.getBase())) {
                 ModeledClass modeledReceiverObject = am.createAndGetModel(node);
                 if(modeledReceiverObject != null) {
                   if(paramObjectCartesianProduct != null){
-                    am.simulateInvokeExprEffects(modeledReceiverObject, modeledReceiverObject.getClass(), invokeExpr, paramObjectCartesianProduct, paramClasses);
+                    // simulateInvokeExprEffects will simulate the call for each parameter permutation in paramObjectCartesianProduct
+                    am.simulateInvokeExprEffects(modeledReceiverObject, modeledReceiverObject.getClass(), invokeExpr, 
+                                                 paramObjectCartesianProduct, paramClasses);
                   } else {
+                    // We couldn't model one of the arguments so we can't simulate the call and have to invalidate the receiver
                     modeledReceiverObject.invalidate();
+                    // log the invalidation
                     try {
                       String logEntry = "\n" + "> invalidating " + modeledReceiverObject + " as a result";
                       am.attrModelingTodoLog.write(logEntry + "\n\n");
@@ -199,11 +205,15 @@ public class AttributeModeling {
             }
             else if (invokeExpr instanceof StaticInvokeExpr){
               try{
+                // simulate the static call
                 am.simulateInvokeExprEffects(null, Class.forName("droidsafe.model." + invokeExpr.getMethod().getDeclaringClass().getName()), invokeExpr, paramObjectCartesianProduct, paramClasses);
               } catch(ClassNotFoundException e) {
+                // if we haven't even modeled the class that contains the static call, then invalidate all parameters and don't execute the simulation
                 am.invalidateParamObjects(paramObjectCartesianProduct);
               }
             } else {
+              // we don't know what to do with methods that aren't static or instance invokes
+              // log the lack of simulation
               try {
                 am.invalidateParamObjects(paramObjectCartesianProduct);
                 String logEntry = "Not simulating expression (isn't an instance invoke or static)" + invokeExpr;
@@ -228,13 +238,19 @@ public class AttributeModeling {
   // Private Methods
   //===================================================================================================================
 
+  /**
+   * Computes all the possible permutations of parameters that the method can be called with.
+   * We are flow insensitive and so have to consider every permutation.
+   */
   private Set<ArrayList<Object>> computeParameterCartesianProduct(InvokeExpr invokeExpr){
     int paramCount = invokeExpr.getArgCount(); 
+    
     // Each index is a set of objects that the parameter at that index can possibly be 
     ArrayList<HashSet<Object>> paramObjectSets = new ArrayList<HashSet<Object>>();
 
     // Store the parameter object models so that we can later invalidate them if we haven't modeled the method
     ArrayList<ModeledClass> paramObjectModels = new ArrayList<ModeledClass>();
+    
     // All this entire for loop does is fill in paramClasses and paramObjectSets. We may quit early if we are unable to
     // model any of the parameters. 
     for (int i = 0; i < paramCount; i++) {
@@ -246,20 +262,24 @@ public class AttributeModeling {
       // If the argument is a RefType, then we use PTA to find all possible AllocNodes and their corresponding models
       // We can't simulate this invokeExpr if the argument doesn't fall in those two cases (yet)
       if(arg instanceof Constant) {
+        
+        // box it up - we don't model primitives
         Object object = SootUtils.constantValueToObject(arg);
         paramObjectSets.get(i).add(SootUtils.constantValueToObject(arg));
-      } else if(arg.getType() instanceof RefType) {
+      
+      } else if(arg.getType() instanceof RefType) {  
+        
+        // use PTA to find all possible AllocNodes and their corresponding models
         Set<AllocNode> allocNodeSet = GeoPTA.v().getPTSetContextIns(arg);
         if (allocNodeSet.size() != 0){
           for (AllocNode node : allocNodeSet) {
             ModeledClass modeledParamObject = createAndGetModel(node);
-
             if(modeledParamObject != null){
               paramObjectSets.get(i).add(modeledParamObject);
-
               // Store the parameter object model so that we can later invalidate it if we haven't modeled the method
               paramObjectModels.add(modeledParamObject);
             } else {
+              // We couldn't model the argument node, so invalidate any parameter models we've already created
               for(ModeledClass modeledObject : paramObjectModels){
                 modeledObject.invalidate();
               }
@@ -267,23 +287,27 @@ public class AttributeModeling {
             }
           }
         } else {
+          // log the problem
           try {
             String logEntry = "No AllocNodes were found by PTA for arg #" + i + " of instanceInvokeExpr " + invokeExpr;
             this.attrModelingTodoLog.write(logEntry + "\n\n");
           } catch(IOException ioe){}
+          // invalidate any parameter models we've already created
           for(ModeledClass modeledObject : paramObjectModels){
             modeledObject.invalidate();
           }
           return null;
         }
       } else {
+        // log the problem
         try {
           String logEntry = "Arg #" + i + " of method " + invokeExpr + " isn't a constant or a RefType. Not sure what to do - invalidating other params and not simulating the call.";
           this.attrModelingTodoLog.write(logEntry + "\n\n");
         } catch (IOException ioe) {}
+        // invalidate any parameter models we've already created
         for(ModeledClass modeledObject : paramObjectModels){
           modeledObject.invalidate();
-        }      
+        }
         return null;
       }
     }
@@ -292,6 +316,9 @@ public class AttributeModeling {
     return cartesianProduct(0, paramObjectSets);
   } 
 
+  /**
+   *  Invalidate any parameter that we modeled and log each invalidation.
+   */
   public void invalidateParamObjects(Set<ArrayList<Object>> paramObjectCartesianProduct){  
     if(paramObjectCartesianProduct != null) {
       for (ArrayList paramObjectPermutation : paramObjectCartesianProduct){
@@ -309,6 +336,9 @@ public class AttributeModeling {
     }
   }
 
+  /**
+   * Calls the invokeExpr for every possible permutation of parameters.
+   */
   public void simulateInvokeExprEffects(ModeledClass modeledReceiverObject, Class invokeExprClass, InvokeExpr invokeExpr, Set<ArrayList<Object>> paramObjectCartesianProduct, ArrayList<Class> paramObjectClasses) { 
     String methodName = invokeExpr.getMethod().getName();
     if(methodName.equals("<init>")){
@@ -336,7 +366,7 @@ public class AttributeModeling {
     }
   }
 
-  /*
+  /**
    * Creates (if it does not yet exist) and returns our model
    * of the dynamic type of the AllocNode if it is modeled
    */
@@ -365,6 +395,7 @@ public class AttributeModeling {
         return objectToModelMap.get(allocNode);
       }
     } catch(Exception e) {
+      // log the failure to model
       try {
         String logEntry = "Couldn't model an instance of the " + className + " class: " + e.toString();
         this.attrModelingTodoLog.write(logEntry + "\n\n");
