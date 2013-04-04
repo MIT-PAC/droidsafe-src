@@ -28,14 +28,26 @@ public class DroidSafeAndroidRuntime {
 	@DSModeled
 	/**
 	 * create any associated state and call init methods on an activity
+	 * 
+	 * call any life cycle events for the activity
+	 * 
 	 * @param activity
 	 */
 	public static void launchActivity(android.app.Activity activity) {
 		ContextImpl context = new ContextImpl();
 		activity.attach(context);
 		
-		Bundle b = new Bundle();
-		activity.performCreate(b);
+		while (true) {
+			Bundle b = new Bundle();
+			//onsavedinstancestate(b)
+			activity.performCreate(b);
+		
+			
+			
+			activity.droidsafeOnStop();
+		}
+		
+		//code
 	}
 	
 	/* at some point these should be created

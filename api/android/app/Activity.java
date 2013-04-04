@@ -813,10 +813,16 @@ public class Activity extends ContextThemeWrapper
      * @see #onSaveInstanceState
      * @see #onDestroy
      */
+    @DSModeled(DSC.SAFE)
     protected void onStop() {
-        if (mActionBar != null) mActionBar.setShowHideAnimationEnabled(false);
+        /*if (mActionBar != null) mActionBar.setShowHideAnimationEnabled(false);
         getApplication().dispatchActivityStopped(this);
-        mCalled = true;
+        mCalled = true;*/
+    }
+    
+    @DSModeled(DSC.BAN)
+    public void droidsafeOnStop() {
+    	this.onStop();
     }
 
     /**
@@ -1705,12 +1711,13 @@ public class Activity extends ContextThemeWrapper
         // Update window manager if: we have a view, that view is
         // attached to its parent (which will be a RootView), and
         // this activity is not embedded.
+    	/*
         if (mParent == null) {
             View decor = mDecor;
             if (decor != null && decor.getParent() != null) {
                 getWindowManager().updateViewLayout(decor, params);
             }
-        }
+        }*/
     }
 
     public void onContentChanged() {
@@ -1775,13 +1782,14 @@ public class Activity extends ContextThemeWrapper
      * @see #onWindowAttributesChanged(android.view.WindowManager.LayoutParams)
      */
     public boolean hasWindowFocus() {
+    	/*
         Window w = getWindow();
         if (w != null) {
             View d = w.getDecorView();
             if (d != null) {
                 return d.hasWindowFocus();
             }
-        }
+        }*/
         return false;
     }
     
@@ -1795,6 +1803,7 @@ public class Activity extends ContextThemeWrapper
      * @return boolean Return true if this event was consumed.
      */
     public boolean dispatchKeyEvent(KeyEvent event) {
+    	/*
         onUserInteraction();
         Window win = getWindow();
         if (win.superDispatchKeyEvent(event)) {
@@ -1804,6 +1813,8 @@ public class Activity extends ContextThemeWrapper
         if (decor == null) decor = win.getDecorView();
         return event.dispatch(this, decor != null
                 ? decor.getKeyDispatcherState() : null, this);
+                */
+    	return true;
     }
 
     /**
@@ -2169,7 +2180,7 @@ public class Activity extends ContextThemeWrapper
      * @param view The view that should show a context menu.
      */
     public void registerForContextMenu(View view) {
-        view.setOnCreateContextMenuListener(this);
+    	//view.setOnCreateContextMenuListener(this);
     }
     
     /**
@@ -3224,6 +3235,7 @@ public class Activity extends ContextThemeWrapper
      * @see #createPendingResult
      * @see #setResult(int)
      */
+    @DSModeled(DSC.SAFE)
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
     }
 

@@ -39,4 +39,9 @@ public class DSTaintObject {
 	public String getTaintString() {
 		return taint.toString();
 	}
+	
+	@DSModeled(DSC.SAFE)
+	public boolean getTaintBoolean() {
+		return taint.equals(null);
+	}
 }
