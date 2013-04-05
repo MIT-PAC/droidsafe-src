@@ -107,7 +107,7 @@ public class Main {
 			logger.info("Restarting PTA...");
 			GeoPTA.release();
 			GeoPTA.run();
-			
+				
 		}
 
 		RCFG.generate();
