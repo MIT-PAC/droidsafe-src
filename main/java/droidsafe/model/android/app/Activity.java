@@ -1,6 +1,6 @@
 package droidsafe.model.android.app;
 
-import droidsafe.model.android.content.ContextThemeWrapper;
+import droidsafe.model.android.view.ContextThemeWrapper;
 
 import java.util.List;
 
