@@ -1,4 +1,4 @@
-package droidsafe.model.android.content;
+package droidsafe.model.android.view;
 
 import droidsafe.model.android.content.ContextWrapper;
 
