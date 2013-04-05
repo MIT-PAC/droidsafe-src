@@ -2,6 +2,7 @@ package droidsafe.runtime;
 
 import droidsafe.annotations.*;
 import android.app.ContextImpl;
+import android.content.BroadcastReceiver;
 import android.os.Bundle;
 
 /**
@@ -33,7 +34,7 @@ public class DroidSafeAndroidRuntime {
 	 * 
 	 * @param activity
 	 */
-	public static void launchActivity(android.app.Activity activity) {
+	public static void modelActivity(android.app.Activity activity) {
 		ContextImpl context = new ContextImpl();
 		activity.attach(context);
 		
@@ -50,9 +51,17 @@ public class DroidSafeAndroidRuntime {
 		//code
 	}
 	
-	/* at some point these should be created
-	void launchService(android.app.Activity)
-	void launchContentProvider(android.app.Activity)
-	void launchBroadCastReceiver(android.app.Activity)
-	*/
+	
+	public void modelService(android.app.Service service) {
+		
+	}
+	
+	public void modelContentProvider(android.content.ContentProvider contentProvider) {
+		
+	}
+	
+	public void modelBroadCastReceiver(BroadcastReceiver receiver) {
+		
+	}
+	
 }
