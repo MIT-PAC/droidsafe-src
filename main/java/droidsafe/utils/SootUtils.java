@@ -14,6 +14,9 @@ import java.io.OutputStream;
 import java.io.OutputStreamWriter;
 import java.io.PrintWriter;
 
+import java.lang.ClassNotFoundException;
+import java.lang.RuntimeException;
+
 import java.util.Enumeration;
 import java.util.HashSet;
 import java.util.Iterator;
@@ -49,6 +52,7 @@ import soot.Hierarchy;
 
 import soot.IntType;
 
+import soot.jimple.ClassConstant;
 import soot.jimple.DoubleConstant;
 import soot.jimple.FloatConstant;
 import soot.jimple.InstanceInvokeExpr;
@@ -111,13 +115,24 @@ public class SootUtils {
   /*
    * Takes in a Soot Value and if it's a constant, returns a java object with the same value
    */
-  public static Object constantValueToObject(Value sootValue) {
-    if (sootValue instanceof IntConstant) {
+  public static Object constantValueToObject(Value sootValue) throws ClassNotFoundException {
+    if(sootValue instanceof NullConstant) {
+      return null;
+    } else if (sootValue instanceof IntConstant) {
       return new Integer(((IntConstant)sootValue).value);
     } else if (sootValue instanceof StringConstant) {
       return new String(((StringConstant)sootValue).value);
+    } else if (sootValue instanceof LongConstant) {
+      return new Long(((LongConstant)sootValue).value);
+    } else if (sootValue instanceof DoubleConstant) {
+      return new Double(((DoubleConstant)sootValue).value);
+    } else if (sootValue instanceof FloatConstant) {
+      return new Float(((FloatConstant)sootValue).value);
+    } else if (sootValue instanceof ClassConstant) {
+      return Class.forName(((ClassConstant)sootValue).value.replace("/", "."));
     }
-    return null;
+    
+    throw new RuntimeException("Unhandled java primitive sootValue: " + sootValue);
   }
 
 	/*
