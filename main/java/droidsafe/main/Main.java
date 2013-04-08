@@ -2,6 +2,7 @@ package droidsafe.main;
 
 import java.io.File;
 import java.io.IOException;
+import java.nio.file.Paths;
 import java.util.Arrays;
 import java.util.LinkedHashSet;
 import java.util.LinkedList;
@@ -21,6 +22,8 @@ import droidsafe.analyses.CallGraphFromEntryPoints;
 import droidsafe.analyses.GeoPTA;
 import droidsafe.analyses.RCFGToSSL;
 import droidsafe.analyses.RequiredModeling;
+import droidsafe.analyses.infoflow.InformationFlowAnalysis;
+import droidsafe.analyses.infoflow.InterproceduralControlFlowGraph;
 import droidsafe.analyses.rcfg.RCFG;
 import droidsafe.android.app.EntryPoints;
 import droidsafe.android.app.Harness;
@@ -104,6 +107,27 @@ public class Main {
 		// write jimple txt files for all classes so we can analzye them
 		if (Config.v().WRITE_JIMPLE_APP_CLASSES)
 			writeAllAppClasses();
+
+		if (Config.v().infoFlow) {
+			logger.info("Starting Information Flow Analysis...");
+			InterproceduralControlFlowGraph.run();
+			InformationFlowAnalysis.run();
+
+			String infoFlowDotPath = Config.v().infoFlowDotPath;
+			if (infoFlowDotPath != null) {
+				try {
+					String infoFlowDotMethod = Config.v().infoFlowDotMethod;
+					if (infoFlowDotMethod != null) {
+						InformationFlowAnalysis.exportDotGraph(Scene.v().getMethod(infoFlowDotMethod), Paths.get(infoFlowDotPath));
+					} else {
+						InformationFlowAnalysis.exportDotGraph(Paths.get(infoFlowDotPath));
+					}
+				} catch (IOException exp) {
+					logger.error(exp.toString());
+				}
+			}
+			logger.info("Finished Information Flow Analysis...");
+		}
 
 		if (Config.v().target.equals("specdump")) {
 			RCFGToSSL.run();
