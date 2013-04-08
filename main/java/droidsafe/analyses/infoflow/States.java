@@ -80,7 +80,20 @@ public class States {
     }
 
     public String toString() {
-        return contextToFrameHeapStatics.toString();
+        StringBuffer str = new StringBuffer();
+        str.append('{');
+        for (Map.Entry<Edge, FrameHeapStatics> edgeFrameHeapStatics : this.contextToFrameHeapStatics.entrySet()) {
+            str.append(edgeFrameHeapStatics.getKey().toString());
+            str.append("=\n");
+            str.append(edgeFrameHeapStatics.getValue().toString());
+            str.append("\n");
+        }
+        int length = str.length();
+        if (length > 1) {
+            str.deleteCharAt(length - 1);
+        }
+        str.append('}');
+        return str.toString();
     }
 }
 
@@ -119,7 +132,7 @@ class FrameHeapStatics {
     }
 
     public String toString() {
-        return "(" + frame + ", " + heap + ", " + statics + ")";
+        return "(" + frame + ",\n " + heap + ",\n " + statics + ")";
     }
 }
 

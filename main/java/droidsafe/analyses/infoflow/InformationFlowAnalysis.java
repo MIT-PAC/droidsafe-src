@@ -1,5 +1,9 @@
 package droidsafe.analyses.infoflow;
 
+import java.io.IOException;
+import java.nio.charset.Charset;
+import java.nio.file.Files;
+import java.nio.file.Path;
 import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.HashMap;
@@ -10,6 +14,13 @@ import java.util.Map;
 import java.util.Set;
 import java.util.TreeSet;
 
+import org.apache.commons.lang3.StringEscapeUtils;
+import org.jgrapht.Graph;
+import org.jgrapht.ext.DOTExporter;
+import org.jgrapht.ext.EdgeNameProvider;
+import org.jgrapht.ext.IntegerNameProvider;
+import org.jgrapht.ext.VertexNameProvider;
+import org.jgrapht.graph.DefaultEdge;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -68,6 +79,14 @@ public class InformationFlowAnalysis {
 
     public States getFlowFromTo(Unit from, Unit to) {
         return fromToStates.get(from).get(to);
+    }
+
+    public static void exportDotGraph(Path path) throws IOException {
+        exportDotGraph(InterproceduralControlFlowGraph.v().toJGraphT(), path);
+    }
+
+    public static void exportDotGraph(SootMethod method, Path path) throws IOException {
+        exportDotGraph(InterproceduralControlFlowGraph.v().toJGraphT(method), path);
     }
 
     private static InformationFlowAnalysis v;
@@ -1092,5 +1111,35 @@ public class InformationFlowAnalysis {
         States tgtStates = new States();
         tgtStates.put(callGraph.findEdge(srcStmt, tgtMethod), new FrameHeapStatics(frame, heap, statics));
         return tgtStates;
+    }
+
+    private static void exportDotGraph(final Graph<Unit, DefaultEdge> jGraphT, Path path) throws IOException {
+        final InterproceduralControlFlowGraph controlFlowGraph = InterproceduralControlFlowGraph.v();
+        final InformationFlowAnalysis infoflow = InformationFlowAnalysis.v();
+        DOTExporter<Unit, DefaultEdge> dotExporter = new DOTExporter<Unit, DefaultEdge>(
+                new IntegerNameProvider<Unit>(),
+                new VertexNameProvider<Unit>() {
+                    @Override
+                    public String getVertexName(Unit vertex) {
+                        StringBuilder str = new StringBuilder(controlFlowGraph.unitToMethod.get(vertex) + "\n" + vertex);
+                        if (vertex instanceof AssignStmt) {
+                            Value rValue = ((AssignStmt)vertex).getRightOp();
+                            if (rValue instanceof NewExpr || rValue instanceof NewArrayExpr) {
+                                AllocNode allocNode = GeoPTA.v().getAllocNode(rValue);
+                                str.append("\n" + "(" + allocNode + ")");
+                            }
+                        }
+                        return StringEscapeUtils.escapeJava(str.toString());
+                    }
+                },
+                new EdgeNameProvider<DefaultEdge>() {
+                    @Override
+                    public String getEdgeName(DefaultEdge edge) {
+                        States states = infoflow.getFlowFromTo(jGraphT.getEdgeSource(edge), jGraphT.getEdgeTarget(edge));
+                        states = states.subtract(new States()); // cut out empty mappings
+                        return StringEscapeUtils.escapeJava(states.toString());
+                    }
+                });
+        dotExporter.export(Files.newBufferedWriter(path, Charset.forName("UTF-8")), jGraphT);
     }
 }

@@ -121,13 +121,29 @@ public class InterproceduralControlFlowGraph implements DirectedGraph<Unit> {
         return graph;
     }
 
-    public Graph<Unit, DefaultEdge> toJGrapthT() {
+    public Graph<Unit, DefaultEdge> toJGraphT() {
         DefaultDirectedGraph<Unit, DefaultEdge> graph = new DefaultDirectedGraph<Unit, DefaultEdge>(DefaultEdge.class);
-        for (Unit src : unitChain) {
-            graph.addVertex(src);
-            for (Unit tgt : unitToSuccs.get(src)) {
-                graph.addVertex(tgt);
-                graph.addEdge(src, tgt);
+        for (Unit unit : unitChain) {
+            graph.addVertex(unit);
+            for (Unit succ : unitToSuccs.get(unit)) {
+                graph.addVertex(succ);
+                graph.addEdge(unit, succ);
+            }
+        }
+        return graph;
+    }
+
+    public Graph<Unit, DefaultEdge> toJGraphT(SootMethod method) {
+        DefaultDirectedGraph<Unit, DefaultEdge> graph = new DefaultDirectedGraph<Unit, DefaultEdge>(DefaultEdge.class);
+        for (Unit unit : method.getActiveBody().getUnits()) {
+            graph.addVertex(unit);
+            for (Unit pred : unitToPreds.get(unit)) {
+                graph.addVertex(pred);
+                graph.addEdge(pred, unit);
+            }
+            for (Unit succ : unitToSuccs.get(unit)) {
+                graph.addVertex(succ);
+                graph.addEdge(unit, succ);
             }
         }
         return graph;
