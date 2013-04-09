@@ -32,6 +32,7 @@ import droidsafe.android.system.API;
 import droidsafe.android.system.Permissions;
 import droidsafe.transforms.APICallSpecialization;
 import droidsafe.transforms.AddAllocsForAPICalls;
+import droidsafe.transforms.IntegrateXMLLayouts;
 import droidsafe.transforms.LocalForStringConstantArguments;
 import droidsafe.transforms.ResolveStringConstants;
 import droidsafe.transforms.ScalarAppOptimizations;
@@ -100,6 +101,9 @@ public class Main {
 		{
 			logger.info("Starting PTA...");
 			GeoPTA.run();
+			
+			logger.info("Incorporating XML layout information");
+			IntegrateXMLLayouts.run();
 			
 			logger.info("Specializing API Calls");
 			//APICallSpecialization.run();
