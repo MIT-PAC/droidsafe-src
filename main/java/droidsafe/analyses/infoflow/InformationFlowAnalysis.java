@@ -600,10 +600,9 @@ public class InformationFlowAnalysis {
     // assign_stmt = variable "=" cast_expr
     private States execute(final AssignStmt stmt, final Value variable, CastExpr castExpr, final States inStates) {
         // cast_expr = "(" type ")" immediate;
-        final States outStates = new States();
         Value immediate = castExpr.getOp();
         // immediate = constant | local;
-        immediate.apply(new MyAbstractImmediateSwitch() {
+        MyAbstractImmediateSwitch immediateSwitch = new MyAbstractImmediateSwitch() {
             // immediate = constant | ...;
             // constant = double_constant | float_constant | int_constant | long_constant | string_constant | null_constant | class_constant;
             public void caseConstant(Constant constant) {
@@ -615,39 +614,11 @@ public class InformationFlowAnalysis {
             public void caseLocal(final Local rLocal) {
                 // local "=" "(" type ")" local
                 // TODO: we may be able to do better by considering "type".
-                for (final Map.Entry<Edge, FrameHeapStatics> contextFrameHeapStatic : inStates.entrySet()) {
-                    // variable = array_ref | instance_field_ref | static_field_ref | local;
-                    variable.apply(new MyAbstractVariableSwitch() {
-                        // variable = array_ref | ...;
-                        public void caseArrayRef(ArrayRef v) {
-                            // TODO
-                            throw new UnsupportedOperationException(stmt.toString());
-                        }
-                        
-                        // variable = ... | instance_field_ref | ...;
-                        public void caseInstanceFieldRef(InstanceFieldRef v) {
-                            // TODO
-                            throw new UnsupportedOperationException(stmt.toString());
-                        }
-
-                        // variable = ... | static_field_ref | ...;
-                        public void caseStaticFieldRef(StaticFieldRef v) {
-                            // TODO
-                            throw new UnsupportedOperationException(stmt.toString());
-                        }
-                        
-                        // variable = ... | local;
-                        public void caseLocal(Local lLocal) {
-                            FrameHeapStatics inFrameHeapStatics = contextFrameHeapStatic.getValue();
-                            Frame frame = new Frame(inFrameHeapStatics.frame, inFrameHeapStatics.frame.params);
-                            frame.put(lLocal, inFrameHeapStatics.frame.get(rLocal));
-                            outStates.put(contextFrameHeapStatic.getKey(), new FrameHeapStatics(frame, inFrameHeapStatics.heap, inFrameHeapStatics.statics));
-                        }
-                    });
-                }
+                setResult(execute(stmt, variable, rLocal, inStates));
             }
-        });
-        return outStates;
+        };
+        immediate.apply(immediateSwitch);
+        return (States)immediateSwitch.getResult();
     }
 
     // assign_stmt = variable "=" invoke_expr
