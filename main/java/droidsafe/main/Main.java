@@ -35,7 +35,7 @@ import droidsafe.transforms.LocalForStringConstantArguments;
 import droidsafe.transforms.ResolveStringConstants;
 import droidsafe.transforms.ScalarAppOptimizations;
 import droidsafe.utils.SootUtils;
-
+import droidsafe.test.regression.RegressionTestUtils;
 
 /**
  * Main entry class for DroidSafe analysis.
@@ -49,13 +49,24 @@ public class Main {
 	public static final String LOG_XML_FILE = "droidsafe.log.xml";
 
 	public static final Set<String> TARGETS = new LinkedHashSet<String>(Arrays.asList(
-			"specdump", "confcheck"
+			"update-regression-values", "specdump", "confcheck"
 			));
 
 	/**
 	 */
 	public static void main(String[] args) {
 		logger.info("Starting DroidSafe Run");
+
+    if (Config.v().target.equals("update-regression-values")){
+      logger.info("Updating regression values");
+      try {
+        RegressionTestUtils.updateRegressionValues();
+      } catch (IOException e) {
+        logger.info("Could not update regression values.");
+        return;
+      }
+      logger.info("Done updating regression values");
+    }
 
 		Config.v().init(args);
 		Project.v().init();
