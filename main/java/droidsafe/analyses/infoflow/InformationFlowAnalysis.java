@@ -81,6 +81,19 @@ public class InformationFlowAnalysis {
         return fromToStates.get(from).get(to);
     }
 
+    public States getFlowBefore(Unit curr) {
+        List<Unit> preds = controlFlowGraph.getPredsOf(curr);
+        int nPreds = preds.size();
+        if (nPreds == 1) {
+            return fromToStates.get(preds.get(0)).get(curr);
+        } else if (nPreds > 1) {
+            return mergeStates.get(curr);
+        } else {        // nPreds == 0
+            assert(nPreds == 0);
+            return fromToStates.get(null).get(curr);
+        }
+    }
+
     public static void exportDotGraph(Path path) throws IOException {
         exportDotGraph(InterproceduralControlFlowGraph.v().toJGraphT(), path);
     }
