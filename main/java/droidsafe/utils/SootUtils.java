@@ -549,6 +549,7 @@ public class SootUtils {
 	 */
 	public static void writeByteCodeAndJimple(String filePrefix, SootClass clz) {
 		String fileName = filePrefix + ".class";
+        String methodThatFailed = "";
 		try {
 			OutputStream streamOut = new JasminOutputStream(
 					new FileOutputStream(fileName));
@@ -556,6 +557,7 @@ public class SootUtils {
 					new OutputStreamWriter(streamOut));
 			
 			for (SootMethod method : clz.getMethods()) {
+                methodThatFailed = method.getName();
 				if (method.isConcrete())
 					method.retrieveActiveBody();
 			}
@@ -575,6 +577,7 @@ public class SootUtils {
 		    streamOut.close();
 			
 		} catch (Exception e) {
+            logger.error("Method that failed = " + methodThatFailed);
 			logger.error("Error writing class to file {}", clz, e);
 		}
 	}
