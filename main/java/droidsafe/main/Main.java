@@ -49,15 +49,18 @@ public class Main {
 	public static final String LOG_XML_FILE = "droidsafe.log.xml";
 
 	public static final Set<String> TARGETS = new LinkedHashSet<String>(Arrays.asList(
-			"update-regression-values", "specdump", "confcheck"
+			"specdump", "confcheck"
 			));
 
 	/**
 	 */
 	public static void main(String[] args) {
 		logger.info("Starting DroidSafe Run");
-
-    if (Config.v().target.equals("update-regression-values")){
+    
+    Config.v().init(args);
+    
+    // Temporary invocation of regression value updating 
+    if (args[0].equals("update-regression-values")){
       logger.info("Updating regression values");
       try {
         RegressionTestUtils.updateRegressionValues();
@@ -66,9 +69,9 @@ public class Main {
         return;
       }
       logger.info("Done updating regression values");
+      return;
     }
 
-		Config.v().init(args);
 		Project.v().init();
 		SootConfig.init();
 		API.v().init();
