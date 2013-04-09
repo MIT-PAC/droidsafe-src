@@ -337,8 +337,7 @@ public class InformationFlowAnalysis {
           // rvalue = ... | expr | ...;
           // expr = ... | new_multi_array_expr | ...;
           public void caseNewMultiArrayExpr(NewMultiArrayExpr newMultiArrayExpr) {
-              // TODO
-              throw new UnsupportedOperationException(stmt.toString());
+              setResult(execute(stmt, variable, newMultiArrayExpr, inStates));
           }
 
           // rvalue = ... | expr | ...;
@@ -827,6 +826,54 @@ public class InformationFlowAnalysis {
                         Frame frame = new Frame(inFrameHeapStatics.frame, inFrameHeapStatics.frame.params);
                         frame.put(local, values);
                         outStates.put(contextFrameHeapStatic.getKey(), new FrameHeapStatics(frame, new Heap(inFrameHeapStatics.heap.instances, inFrameHeapStatics.heap.arrays), inFrameHeapStatics.statics));
+                    }
+                });
+            }
+        } else {
+            assert controlFlowGraph.unitToMethod.get(stmt).getDeclaringClass().equals(Scene.v().getSootClass("edu.mit.csail.droidsafe.DroidSafeCalls"));
+            outStates = inStates;
+        }
+        return outStates;
+    }
+
+    // assign_stmt = variable "=" new_multi_array_expr
+    private States execute(final AssignStmt stmt, Value variable, NewMultiArrayExpr newMultiArrayExpr, States inStates) {
+        final States outStates;
+        AllocNode allocNode = GeoPTA.v().getAllocNode(newMultiArrayExpr);
+        if (allocNode != null) {
+            outStates = new States();
+            final Set<MyValue> values = new HashSet<MyValue>();
+            Address address = new Address(allocNode);
+            values.add(address);
+            for (final Map.Entry<Edge, FrameHeapStatics> contextFrameHeapStatic : inStates.entrySet()) {
+                final FrameHeapStatics inFrameHeapStatics = contextFrameHeapStatic.getValue();
+                // TODO: Do I need to initialize the array with its default value according to its type?
+
+                // variable = array_ref | instance_field_ref | static_field_ref | local;
+                variable.apply(new MyAbstractVariableSwitch() {
+                    // variable = array_ref | ...;
+                    public void caseArrayRef(ArrayRef v) {
+                        // TODO
+                        throw new UnsupportedOperationException(stmt.toString());
+                    }
+
+                    // variable = ... | instance_field_ref | ...;
+                    public void caseInstanceFieldRef(InstanceFieldRef v) {
+                        // TODO
+                        throw new UnsupportedOperationException(stmt.toString());
+                    }
+
+                    // variable = ... | static_field_ref | ...;
+                    public void caseStaticFieldRef(StaticFieldRef v) {
+                        // TODO
+                        throw new UnsupportedOperationException(stmt.toString());
+                    }
+
+                    // variable = ... | local;
+                    public void caseLocal(Local local) {
+                        Frame frame = new Frame(inFrameHeapStatics.frame, inFrameHeapStatics.frame.params);
+                        frame.put(local, values);
+                        outStates.put(contextFrameHeapStatic.getKey(), new FrameHeapStatics(frame, inFrameHeapStatics.heap, inFrameHeapStatics.statics));
                     }
                 });
             }
