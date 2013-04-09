@@ -606,8 +606,9 @@ public class InformationFlowAnalysis {
             // immediate = constant | ...;
             // constant = double_constant | float_constant | int_constant | long_constant | string_constant | null_constant | class_constant;
             public void caseConstant(Constant constant) {
-                // TODO
-                throw new UnsupportedOperationException(stmt.toString());
+                // local "=" "(" type ")" constant
+                // TODO: we may be able to do better by considering "type".
+                setResult(execute(stmt, variable, constant, inStates));
             }
             
             // immediate = ... | local;
