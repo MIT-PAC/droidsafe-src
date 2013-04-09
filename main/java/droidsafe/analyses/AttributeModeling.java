@@ -155,8 +155,10 @@ public class AttributeModeling {
       if (API.v().isSystemClass(clazz))
         continue;
 
+      Set<SootMethod> reachableMethods = GeoPTA.v().getAllReachableMethods();
+
       for (SootMethod meth : clazz.getMethods()) {
-        if (meth.isConcrete()) {
+        if (meth.isConcrete() && reachableMethods.contains(meth)) {
           StmtBody stmtBody = (StmtBody)meth.retrieveActiveBody();
 
           // get body's unit as a chain
@@ -172,7 +174,7 @@ public class AttributeModeling {
               continue;
             }
             InvokeExpr invokeExpr = (InvokeExpr)stmt.getInvokeExpr();
-
+            
             paramAnalyzer = am.new ParamAnalyzer(invokeExpr);
 
             // Compute cartesian product of params, creating models as we do so. If we can't model something, we
