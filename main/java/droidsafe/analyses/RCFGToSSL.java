@@ -78,8 +78,11 @@ public class RCFGToSSL {
         String html_fname = Project.v().getOutputDir() + "/spec.html";
         writeSpecToFile(v.getSpec().toHtmlString(), html_fname);
 
+        /* 
+        // GK: Removing json spec generation, until it is needed.
         String json_fname = Project.v().getOutputDir() + "/spec.json";
         writeSpecToFile("var data = " + v.getSpec().toJsonString(), json_fname);
+        */
 	}
 	
 	protected RCFGToSSL() {

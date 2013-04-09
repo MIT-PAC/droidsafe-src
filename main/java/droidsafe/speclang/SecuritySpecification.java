@@ -879,7 +879,10 @@ public class SecuritySpecification  {
       StringBuffer str = new StringBuffer();
       str.append(indent + "{\n");
       str.append(indent + String.format("'name' : '%s',\n", method.getName()));
-      str.append(indent + String.format("'line' : %s,\n", method.getDeclSourceLocation().getLine()));
+      SourceLocationTag decl = method.getDeclSourceLocation();
+      if (decl != null) {
+        str.append(indent + String.format("'line' : %s,\n", decl.getLine()));
+      }        
       str.append(indent + "'calls' : [\n");
       for (MethodCall call : calls) {
         str.append(call.toJSON(indent + "  "));
