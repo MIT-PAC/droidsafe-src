@@ -86,13 +86,13 @@ public class States {
         str.append('{');
         for (Map.Entry<Edge, FrameHeapStatics> edgeFrameHeapStatics : this.contextToFrameHeapStatics.entrySet()) {
             str.append(edgeFrameHeapStatics.getKey().toString());
-            str.append("=\n");
+            str.append("=\\l");
             str.append(edgeFrameHeapStatics.getValue().toString());
-            str.append("\n");
+            str.append("\\l");
         }
         int length = str.length();
         if (length > 1) {
-            str.deleteCharAt(length - 1);
+            str.setLength(length - 2);
         }
         str.append('}');
         return str.toString();
@@ -134,7 +134,7 @@ class FrameHeapStatics {
     }
 
     public String toString() {
-        return "(" + frame + ",\n " + heap + ",\n " + statics + ")";
+        return "(" + frame + ",\\l " + heap + ",\\l " + statics + ")";
     }
 }
 

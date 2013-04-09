@@ -15,6 +15,8 @@ import java.util.Set;
 import java.util.TreeSet;
 
 import org.apache.commons.lang3.StringEscapeUtils;
+import org.apache.commons.lang3.text.translate.CharSequenceTranslator;
+import org.apache.commons.lang3.text.translate.LookupTranslator;
 import org.jgrapht.Graph;
 import org.jgrapht.ext.DOTExporter;
 import org.jgrapht.ext.EdgeNameProvider;
@@ -1256,7 +1258,8 @@ public class InformationFlowAnalysis {
                     public String getEdgeName(DefaultEdge edge) {
                         States states = infoflow.getFlowFromTo(jGraphT.getEdgeSource(edge), jGraphT.getEdgeTarget(edge));
                         states = states.subtract(new States()); // cut out empty mappings
-                        return StringEscapeUtils.escapeJava(states.toString()).replaceAll("\\\\n", "\\\\l") + "\\l";
+                        CharSequenceTranslator translator = new LookupTranslator(new String[][] {{"\\l", "\\l"}}).with(StringEscapeUtils.ESCAPE_JAVA);
+                        return translator.translate(states.toString()) + "\\l";
                     }
                 });
         dotExporter.export(Files.newBufferedWriter(path, Charset.forName("UTF-8")), jGraphT);
