@@ -1124,9 +1124,9 @@ public class InformationFlowAnalysis {
                         StringBuilder str = new StringBuilder(controlFlowGraph.unitToMethod.get(vertex) + "\n" + vertex);
                         if (vertex instanceof AssignStmt) {
                             Value rValue = ((AssignStmt)vertex).getRightOp();
-                            if (rValue instanceof NewExpr || rValue instanceof NewArrayExpr) {
+                            if (rValue instanceof NewExpr || rValue instanceof NewArrayExpr || rValue instanceof NewMultiArrayExpr) {
                                 AllocNode allocNode = GeoPTA.v().getAllocNode(rValue);
-                                str.append("\n" + "(" + allocNode + ")");
+                                str.append("\n" + "[" + allocNode + "]");
                             }
                         }
                         return StringEscapeUtils.escapeJava(str.toString());
@@ -1137,7 +1137,7 @@ public class InformationFlowAnalysis {
                     public String getEdgeName(DefaultEdge edge) {
                         States states = infoflow.getFlowFromTo(jGraphT.getEdgeSource(edge), jGraphT.getEdgeTarget(edge));
                         states = states.subtract(new States()); // cut out empty mappings
-                        return StringEscapeUtils.escapeJava(states.toString());
+                        return StringEscapeUtils.escapeJava(states.toString()).replaceAll("\\\\n", "\\\\l") + "\\l";
                     }
                 });
         dotExporter.export(Files.newBufferedWriter(path, Charset.forName("UTF-8")), jGraphT);

@@ -41,9 +41,9 @@ public class Config {
 	public boolean noSourceInfo = false;
 	/** If true, analyze information flows. */
 	public boolean infoFlow = false;
-	/** Path where to export information flows in Dot */
+	/** Path where to export information flows in DOT */
 	public String infoFlowDotPath;
-	/** Method on which to export information flows in Dot */
+	/** Method on which to export information flows in DOT */
 	public String infoFlowDotMethod;
 	/** If true, then classes loaded from android.jar will be treated as 
 	 * application classes and analyses may analyze them.

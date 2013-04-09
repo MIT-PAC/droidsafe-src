@@ -1,9 +1,11 @@
 package droidsafe.analyses.infoflow;
 
 import java.util.Collection;
+import java.util.Comparator;
 import java.util.HashSet;
 import java.util.Map;
 import java.util.Set;
+import java.util.TreeMap;
 
 import soot.Local;
 import soot.SootClass;
@@ -299,7 +301,22 @@ class Frame {
     }
 
     public String toString() {
-        return "(" + locals + ", " + params + ")";
+        Comparator<Local> localComparator = new Comparator<Local>() {
+            public int compare(Local local1, Local local2) {
+                return local1.getName().compareTo(local2.getName());
+            }
+            
+        };
+        TreeMap<Local, Set<MyValue>> sortedLocals = new TreeMap<Local, Set<MyValue>>(localComparator);
+        sortedLocals.putAll(locals);
+        Comparator<MyParameterRef> paramComparator = new Comparator<MyParameterRef>() {
+            public int compare(MyParameterRef param1, MyParameterRef param2) {
+                return param1.getIndex() - param2.getIndex();
+            }
+        };
+        TreeMap<MyParameterRef, Set<MyValue>> sortedParams = new TreeMap<MyParameterRef, Set<MyValue>>(paramComparator);
+        sortedParams.putAll(params);
+        return "(" + sortedLocals + ", " + sortedParams + ")";
     }
 }
 
@@ -447,7 +464,7 @@ class Instances {
     }
 
     public String toString() {
-        return addressToFieldToValues.toString();
+        return new TreeMap<Address, DefaultHashMap<SootField, Set<MyValue>>>(addressToFieldToValues).toString();
     }
 }
 
@@ -535,7 +552,7 @@ class Arrays {
     }
 
     public String toString() {
-        return addressToValues.toString();
+        return new TreeMap<Address, Set<MyValue>>(addressToValues).toString();
     }
 }
 
@@ -654,7 +671,14 @@ class Statics {
     }
 
     public String toString() {
-        return classToFieldToValues.toString();
+        Comparator<SootClass> classComparator = new Comparator<SootClass>() {
+            public int compare(SootClass class1, SootClass class2) {
+                return class1.getShortName().compareTo(class2.getShortName());
+            }
+        };
+        TreeMap<SootClass, DefaultHashMap<SootField, Set<MyValue>>> sortedClassToFieldToValues = new TreeMap<SootClass, DefaultHashMap<SootField, Set<MyValue>>>(classComparator);
+        sortedClassToFieldToValues.putAll(classToFieldToValues);
+        return sortedClassToFieldToValues.toString();
     }
 }
 
@@ -685,7 +709,7 @@ class MyConstant extends MyValue {
     }
 }
 
-class Address extends MyValue {
+class Address extends MyValue implements Comparable<Address> {
     private final AllocNode allocNode;
 
     Address(AllocNode node) {
@@ -706,5 +730,9 @@ class Address extends MyValue {
 
     public String toString() {
         return allocNode.toString();
+    }
+
+    public int compareTo(Address that) {
+        return allocNode.toString().compareTo(that.allocNode.toString());
     }
 }

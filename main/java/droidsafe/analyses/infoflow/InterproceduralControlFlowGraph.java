@@ -22,6 +22,7 @@ import soot.jimple.IdentityStmt;
 import soot.jimple.Stmt;
 import soot.jimple.toolkits.callgraph.CallGraph;
 import soot.jimple.toolkits.callgraph.Targets;
+import soot.toolkits.graph.BriefUnitGraph;
 import soot.toolkits.graph.DirectedGraph;
 import soot.toolkits.graph.ExceptionalUnitGraph;
 import soot.toolkits.graph.UnitGraph;
@@ -183,7 +184,7 @@ public class InterproceduralControlFlowGraph implements DirectedGraph<Unit> {
         for (SootClass clz : Scene.v().getApplicationClasses()) {
             for (SootMethod method : clz.getMethods()) {
                 if (method.hasActiveBody()) {
-                    UnitGraph unitGraph = new ExceptionalUnitGraph(method.getActiveBody());
+                    UnitGraph unitGraph = new BriefUnitGraph(method.getActiveBody());
                     if (entryPoints.contains(method)) {
                         heads.addAll(unitGraph.getHeads());
                     }
