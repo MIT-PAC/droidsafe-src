@@ -2,7 +2,6 @@ package droidsafe.main;
 
 import java.io.File;
 import java.io.IOException;
-import java.nio.file.Paths;
 import java.util.Arrays;
 import java.util.LinkedHashSet;
 import java.util.LinkedList;
@@ -127,14 +126,14 @@ public class Main {
 			InterproceduralControlFlowGraph.run();
 			InformationFlowAnalysis.run();
 
-			String infoFlowDotPath = Config.v().infoFlowDotPath;
-			if (infoFlowDotPath != null) {
+			String infoFlowDotFile = Config.v().infoFlowDotFile;
+			if (infoFlowDotFile != null) {
 				try {
 					String infoFlowDotMethod = Config.v().infoFlowDotMethod;
 					if (infoFlowDotMethod != null) {
-						InformationFlowAnalysis.exportDotGraph(Scene.v().getMethod(infoFlowDotMethod), Paths.get(infoFlowDotPath));
+						InformationFlowAnalysis.exportDotGraph(Scene.v().getMethod(infoFlowDotMethod), infoFlowDotFile);
 					} else {
-						InformationFlowAnalysis.exportDotGraph(Paths.get(infoFlowDotPath));
+						InformationFlowAnalysis.exportDotGraph(infoFlowDotFile);
 					}
 				} catch (IOException exp) {
 					logger.error(exp.toString());

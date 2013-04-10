@@ -1,9 +1,8 @@
 package droidsafe.analyses.infoflow;
 
+import java.io.BufferedWriter;
 import java.io.IOException;
-import java.nio.charset.Charset;
-import java.nio.file.Files;
-import java.nio.file.Path;
+import java.io.FileWriter;
 import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.HashMap;
@@ -97,12 +96,12 @@ public class InformationFlowAnalysis {
         }
     }
 
-    public static void exportDotGraph(Path path) throws IOException {
-        exportDotGraph(InterproceduralControlFlowGraph.v().toJGraphT(), path);
+    public static void exportDotGraph(String fileName) throws IOException {
+        exportDotGraph(InterproceduralControlFlowGraph.v().toJGraphT(), fileName);
     }
 
-    public static void exportDotGraph(SootMethod method, Path path) throws IOException {
-        exportDotGraph(InterproceduralControlFlowGraph.v().toJGraphT(method), path);
+    public static void exportDotGraph(SootMethod method, String fileName) throws IOException {
+        exportDotGraph(InterproceduralControlFlowGraph.v().toJGraphT(method), fileName);
     }
 
     private static InformationFlowAnalysis v;
@@ -1234,7 +1233,7 @@ public class InformationFlowAnalysis {
         return tgtStates;
     }
 
-    private static void exportDotGraph(final Graph<Unit, DefaultEdge> jGraphT, Path path) throws IOException {
+    private static void exportDotGraph(final Graph<Unit, DefaultEdge> jGraphT, String fileName) throws IOException {
         final InterproceduralControlFlowGraph controlFlowGraph = InterproceduralControlFlowGraph.v();
         final InformationFlowAnalysis infoflow = InformationFlowAnalysis.v();
         DOTExporter<Unit, DefaultEdge> dotExporter = new DOTExporter<Unit, DefaultEdge>(
@@ -1262,6 +1261,6 @@ public class InformationFlowAnalysis {
                         return translator.translate(states.toString()) + "\\l";
                     }
                 });
-        dotExporter.export(Files.newBufferedWriter(path, Charset.forName("UTF-8")), jGraphT);
+        dotExporter.export(new BufferedWriter(new FileWriter(fileName)), jGraphT);
     }
 }
