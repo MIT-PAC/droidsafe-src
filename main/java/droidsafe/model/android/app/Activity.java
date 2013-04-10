@@ -26,6 +26,9 @@ public class Activity extends ContextThemeWrapper {
   
   }
  
+  public void getApplicationContext(){
+  
+  }
   // 15
   public void startActivityForResult(droidsafe.model.android.content.Intent intent, Integer requestCode){
   

@@ -144,18 +144,25 @@ public class AttributeModeling {
     if (am == null)
       am = new AttributeModeling();
 
+    Set<SootMethod> reachableMethods = GeoPTA.v().getAllReachableMethods();
+
     // loop over all code, creating models and simulating whichever invokeExprs we can as we go
     for (SootClass clazz : Scene.v().getApplicationClasses()) {
 
+      String className = clazz.getName();
+
       // We don't care about the harness or interfaces
-      if (clazz.isInterface() || clazz.getName().equals(Harness.HARNESS_CLASS_NAME))
+      if (clazz.isInterface() || className.equals(Harness.HARNESS_CLASS_NAME))
         continue;
 
       // We don't care about entry points into the system classes
       if (API.v().isSystemClass(clazz))
         continue;
-
-      Set<SootMethod> reachableMethods = GeoPTA.v().getAllReachableMethods();
+      
+      // TODO: why do we need this?
+      if(className.indexOf("android.support") != -1 || className.equals("edu.mit.csail.droidsafe.DroidSafeCalls")){
+        continue;
+      }
 
       for (SootMethod meth : clazz.getMethods()) {
         if (meth.isConcrete() && reachableMethods.contains(meth)) {
@@ -201,7 +208,8 @@ public class AttributeModeling {
                     modeledReceiverObject.invalidate();
                     // log the invalidation
                     try {
-                      String logEntry = "\n" + "> invalidating " + modeledReceiverObject + " as a result";
+                      String logEntry = "Couldn't model every parameter for " + iie;
+                      logEntry += "\n" + "> invalidating " + modeledReceiverObject + " as a result";
                       am.attrModelingTodoLog.write(logEntry + "\n\n");
                     } catch (IOException ioe) {}
                   }
@@ -302,19 +310,46 @@ public class AttributeModeling {
    * of the dynamic type of the AllocNode if it is modeled
    */
   private ModeledClass createAndGetModel(AllocNode allocNode) {
+    try {
+       String logEntry = "hello";
+       this.attrModelingTodoLog.write(logEntry + "\n\n");
+     } catch (IOException ioe) {}
+
     //don't track values for alloc nodes we create
-    if (AddAllocsForAPICalls.v().isGeneratedExpr(allocNode.getNewExpr()))
-      return null;
-
-    if (!(allocNode.getType() instanceof RefType))
-      return null;
-
     /*
-    if (allocNode.getMethod() != null && allocNode.getMethod().equals(Harness.v().getMain())) {
-      System.out.println(clazz);
-      clazz = clazz.getSuperclass();
+    if (AddAllocsForAPICalls.v().isGeneratedExpr(allocNode.getNewExpr())){
+      try {
+        String logEntry = "We created the allocNode and thus don't want to model " + allocNode;
+        this.attrModelingTodoLog.write(logEntry + "\n\n");
+      } catch (IOException ioe) {}
+      return null;
     }
     */
+    
+    if (!(allocNode.getType() instanceof RefType)){
+      try {
+        String logEntry = "Can't give model for allocNode (not a RefType) " + allocNode;
+        this.attrModelingTodoLog.write(logEntry + "\n\n");
+      } catch (IOException ioe) {}
+     return null;
+    }
+
+    // We don't want to model things created in the harness 
+    boolean isActivity = false;
+    SootClass sootClass = ((RefType)allocNode.getType()).getSootClass();
+    if (sootClass.hasSuperclass()){
+      if(sootClass.getSuperclass().getName().equals("android.app.Activity")){
+        isActivity = true;
+      }
+    } 
+    
+    if (!isActivity && allocNode.getMethod() != null && allocNode.getMethod().equals(Harness.v().getMain())) {
+      try {
+        String logEntry = "AllocNode is not an activity but came from the harness. Not modeling: " + allocNode;
+        this.attrModelingTodoLog.write(logEntry + "\n\n");
+      } catch (IOException ioe) {}
+      return null;
+    }
     
     ModeledClass model;
     if (!objectToModelMap.containsKey(allocNode)) {
@@ -338,15 +373,24 @@ public class AttributeModeling {
   }
 
   private Class<?> getDroidsafeClass(RefType refType) throws ClassNotFoundException {
-    return Class.forName("droidsafe.model." + refType.getSootClass().getName());
+    
+    SootClass sootClass = refType.getSootClass();
+    String className = sootClass.getName();
+
+    if(className.indexOf("Activity") != -1){
+      className = "android.app.Activity";
+    }
+    
+    return Class.forName("droidsafe.model." + className);
   }
 
   /*
    * Log the results of the modeling
    */
   private void log() {
-    for (ModeledClass modeledObject : objectToModelMap.values()) {
-      logger.info("Finished Model: {}", modeledObject);
+    for (Map.Entry<AllocNode, ModeledClass> entry : objectToModelMap.entrySet()) {
+      logger.info("Finished Model: {}", entry.getValue());
+      logger.info("Corresponding AllocNode: {}", entry.getKey());
     }
   }
 
@@ -436,6 +480,10 @@ public class AttributeModeling {
                 for(ModeledClass modeledObject : paramObjectModels){
                   modeledObject.invalidate();
                 }
+                try {
+                  String logEntry = "Couldn't model argument AllocNode " + node + " for method" + invokeExpr;
+                  AttributeModeling.this.attrModelingTodoLog.write(logEntry + "\n\n");
+                } catch (IOException ioe) {}
                 return;
               }
             }
