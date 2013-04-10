@@ -50,9 +50,19 @@ public class DroidSafeAndroidRuntime {
 		//code
 	}
 	
+    // DSFIXME
+    // GITI DSModeled
+	public static void launchContentProvider(android.app.Activity activity) {
+		
+	}
+    
+    // DSFIXME
+    // GITI DSModeled
+	public static void launchBroadCastReceiver(android.app.Activity activity) {
+		
+	}
+    
 	/* at some point these should be created
 	void launchService(android.app.Activity)
-	void launchContentProvider(android.app.Activity)
-	void launchBroadCastReceiver(android.app.Activity)
 	*/
 }
