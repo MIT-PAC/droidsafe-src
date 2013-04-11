@@ -120,12 +120,12 @@ public class Activity extends ContextThemeWrapper
     /** Start of user-defined activity results. */
     public static final int RESULT_FIRST_USER   = 1;
 
-    private static final String WINDOW_HIERARCHY_TAG = "android:viewHierarchyState";
-    private static final String FRAGMENTS_TAG = "android:fragments";
-    private static final String SAVED_DIALOG_IDS_KEY = "android:savedDialogIds";
-    private static final String SAVED_DIALOGS_TAG = "android:savedDialogs";
-    private static final String SAVED_DIALOG_KEY_PREFIX = "android:dialog_";
-    private static final String SAVED_DIALOG_ARGS_KEY_PREFIX = "android:dialog_args_";
+    private final String WINDOW_HIERARCHY_TAG = "android:viewHierarchyState";
+    private final String FRAGMENTS_TAG = "android:fragments";
+    private final String SAVED_DIALOG_IDS_KEY = "android:savedDialogIds";
+    private final String SAVED_DIALOGS_TAG = "android:savedDialogs";
+    private final String SAVED_DIALOG_KEY_PREFIX = "android:dialog_";
+    private final String SAVED_DIALOG_ARGS_KEY_PREFIX = "android:dialog_args_";
 
     /* GITI DSModeled
     private static class ManagedDialog {
@@ -3161,7 +3161,9 @@ public class Activity extends ContextThemeWrapper
             wm.addView(mDecor, getWindow().getAttributes());
             mWindowAdded = true;
         }
-        mDecor.setVisibility(View.VISIBLE);
+        // GITI:  Modified this in order to make the View member not need to be static
+        //mDecor.setVisibility(View.VISIBLE);
+        mDecor.setVisibility(0x00000000);
     }
     
     /**

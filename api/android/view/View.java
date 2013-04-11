@@ -214,36 +214,36 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
 	    /**
 	     * Used to mark a View that has no ID.
 	     */
-	    public static final int NO_ID = -1;
+	    public final int NO_ID = -1;
 
 	    /**
 	     * This view does not want keystrokes. Use with TAKES_FOCUS_MASK when
 	     * calling setFlags.
 	     */
-	    private static final int NOT_FOCUSABLE = 0x00000000;
+	    private final int NOT_FOCUSABLE = 0x00000000;
 
 	    /**
 	     * This view wants keystrokes. Use with TAKES_FOCUS_MASK when calling
 	     * setFlags.
 	     */
-	    private static final int FOCUSABLE = 0x00000001;
+	    private final int FOCUSABLE = 0x00000001;
 
 	    /**
 	     * Mask for use with setFlags indicating bits used for focus.
 	     */
-	    private static final int FOCUSABLE_MASK = 0x00000001;
+	    private final int FOCUSABLE_MASK = 0x00000001;
 
 	    /**
 	     * This view will adjust its padding to fit sytem windows (e.g. status bar)
 	     */
-	    private static final int FITS_SYSTEM_WINDOWS = 0x00000002;
+	    private final int FITS_SYSTEM_WINDOWS = 0x00000002;
 
 	    /**
 	     * This view is visible.
 	     * Use with {@link #setVisibility} and <a href="#attr_android:visibility">{@code
 	     * android:visibility}.
 	     */
-	    public static final int VISIBLE = 0x00000000;
+	    public final int VISIBLE = 0x00000000;
 
 	    /**
 	     * This view is invisible, but it still takes up space for layout purposes.
@@ -257,7 +257,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
 	     * purposes. Use with {@link #setVisibility} and <a href="#attr_android:visibility">{@code
 	     * android:visibility}.
 	     */
-	    public static final int GONE = 0x00000008;
+	    public final int GONE = 0x00000008;
 
 	    /**
 	     * Mask for use with setFlags indicating bits used for visibility.
@@ -265,7 +265,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
 	     */
 	    static final int VISIBILITY_MASK = 0x0000000C;
 
-	    private static final int[] VISIBILITY_FLAGS = {VISIBLE, INVISIBLE, GONE};
+	    private final int[] VISIBILITY_FLAGS = {VISIBLE, INVISIBLE, GONE};
 
 	    /**
 	     * This view is enabled. Intrepretation varies by subclass.
@@ -403,19 +403,19 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
 	    /**
 	     * <p>Enables low quality mode for the drawing cache.</p>
 	     */
-	    public static final int DRAWING_CACHE_QUALITY_LOW = 0x00080000;
+	    public final int DRAWING_CACHE_QUALITY_LOW = 0x00080000;
 
 	    /**
 	     * <p>Enables high quality mode for the drawing cache.</p>
 	     */
-	    public static final int DRAWING_CACHE_QUALITY_HIGH = 0x00100000;
+	    public final int DRAWING_CACHE_QUALITY_HIGH = 0x00100000;
 
 	    /**
 	     * <p>Enables automatic quality mode for the drawing cache.</p>
 	     */
-	    public static final int DRAWING_CACHE_QUALITY_AUTO = 0x00000000;
+	    public final int DRAWING_CACHE_QUALITY_AUTO = 0x00000000;
 
-	    private static final int[] DRAWING_CACHE_QUALITY_FLAGS = {
+	    private final int[] DRAWING_CACHE_QUALITY_FLAGS = {
 	            DRAWING_CACHE_QUALITY_AUTO, DRAWING_CACHE_QUALITY_LOW, DRAWING_CACHE_QUALITY_HIGH
 	    };
 
@@ -449,28 +449,28 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
 	     * without increasing the padding. The scrollbars will be overlaid with
 	     * translucency on the view's content.
 	     */
-	    public static final int SCROLLBARS_INSIDE_OVERLAY = 0;
+	    public final int SCROLLBARS_INSIDE_OVERLAY = 0;
 
 	    /**
 	     * The scrollbar style to display the scrollbars inside the padded area,
 	     * increasing the padding of the view. The scrollbars will not overlap the
 	     * content area of the view.
 	     */
-	    public static final int SCROLLBARS_INSIDE_INSET = 0x01000000;
+	    public final int SCROLLBARS_INSIDE_INSET = 0x01000000;
 
 	    /**
 	     * The scrollbar style to display the scrollbars at the edge of the view,
 	     * without increasing the padding. The scrollbars will be overlaid with
 	     * translucency.
 	     */
-	    public static final int SCROLLBARS_OUTSIDE_OVERLAY = 0x02000000;
+	    public final int SCROLLBARS_OUTSIDE_OVERLAY = 0x02000000;
 
 	    /**
 	     * The scrollbar style to display the scrollbars at the edge of the view,
 	     * increasing the padding of the view. The scrollbars will only overlap the
 	     * background, if any.
 	     */
-	    public static final int SCROLLBARS_OUTSIDE_INSET = 0x03000000;
+	    public final int SCROLLBARS_OUTSIDE_INSET = 0x03000000;
 
 	    /**
 	     * Mask to check if the scrollbar style is overlay or inset.
@@ -496,19 +496,19 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
 	     * takes care of automatically setting the WindowManager's
 	     * {@link WindowManager.LayoutParams#FLAG_KEEP_SCREEN_ON}.
 	     */
-	    public static final int KEEP_SCREEN_ON = 0x04000000;
+	    public final int KEEP_SCREEN_ON = 0x04000000;
 
 	    /**
 	     * View flag indicating whether this view should have sound effects enabled
 	     * for events such as clicking and touching.
 	     */
-	    public static final int SOUND_EFFECTS_ENABLED = 0x08000000;
+	    public final int SOUND_EFFECTS_ENABLED = 0x08000000;
 
 	    /**
 	     * View flag indicating whether this view should have haptic feedback
 	     * enabled for events such as long presses.
 	     */
-	    public static final int HAPTIC_FEEDBACK_ENABLED = 0x10000000;
+	    public final int HAPTIC_FEEDBACK_ENABLED = 0x10000000;
 
 	    /**
 	     * <p>Indicates that the view hierarchy should stop saving state when
@@ -529,28 +529,28 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
 	     * Use with {@link #setLayoutDirection}.
 	     * {@hide}
 	     */
-	    public static final int LAYOUT_DIRECTION_LTR = 0x00000000;
+	    public final int LAYOUT_DIRECTION_LTR = 0x00000000;
 
 	    /**
 	     * Horizontal direction of this view is from Right to Left.
 	     * Use with {@link #setLayoutDirection}.
 	     * {@hide}
 	     */
-	    public static final int LAYOUT_DIRECTION_RTL = 0x40000000;
+	    public final int LAYOUT_DIRECTION_RTL = 0x40000000;
 
 	    /**
 	     * Horizontal direction of this view is inherited from its parent.
 	     * Use with {@link #setLayoutDirection}.
 	     * {@hide}
 	     */
-	    public static final int LAYOUT_DIRECTION_INHERIT = 0x80000000;
+	    public final int LAYOUT_DIRECTION_INHERIT = 0x80000000;
 
 	    /**
 	     * Horizontal direction of this view is from deduced from the default language
 	     * script for the locale. Use with {@link #setLayoutDirection}.
 	     * {@hide}
 	     */
-	    public static final int LAYOUT_DIRECTION_LOCALE = 0xC0000000;
+	    public final int LAYOUT_DIRECTION_LOCALE = 0xC0000000;
 
 	    /**
 	     * Mask for use with setFlags indicating bits used for horizontalDirection.
@@ -563,70 +563,70 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
 	     * flag value.
 	     * {@hide}
 	     */
-	    private static final int[] LAYOUT_DIRECTION_FLAGS = {LAYOUT_DIRECTION_LTR,
+	    private final int[] LAYOUT_DIRECTION_FLAGS = {LAYOUT_DIRECTION_LTR,
 	        LAYOUT_DIRECTION_RTL, LAYOUT_DIRECTION_INHERIT, LAYOUT_DIRECTION_LOCALE};
 
 	    /**
 	     * Default horizontalDirection.
 	     * {@hide}
 	     */
-	    private static final int LAYOUT_DIRECTION_DEFAULT = LAYOUT_DIRECTION_INHERIT;
+	    private final int LAYOUT_DIRECTION_DEFAULT = LAYOUT_DIRECTION_INHERIT;
 
 	    /**
 	     * View flag indicating whether {@link #addFocusables(ArrayList, int, int)}
 	     * should add all focusable Views regardless if they are focusable in touch mode.
 	     */
-	    public static final int FOCUSABLES_ALL = 0x00000000;
+	    public final int FOCUSABLES_ALL = 0x00000000;
 
 	    /**
 	     * View flag indicating whether {@link #addFocusables(ArrayList, int, int)}
 	     * should add only Views focusable in touch mode.
 	     */
-	    public static final int FOCUSABLES_TOUCH_MODE = 0x00000001;
+	    public final int FOCUSABLES_TOUCH_MODE = 0x00000001;
 
 	    /**
 	     * Use with {@link #focusSearch(int)}. Move focus to the previous selectable
 	     * item.
 	     */
-	    public static final int FOCUS_BACKWARD = 0x00000001;
+	    public final int FOCUS_BACKWARD = 0x00000001;
 
 	    /**
 	     * Use with {@link #focusSearch(int)}. Move focus to the next selectable
 	     * item.
 	     */
-	    public static final int FOCUS_FORWARD = 0x00000002;
+	    public final int FOCUS_FORWARD = 0x00000002;
 
 	    /**
 	     * Use with {@link #focusSearch(int)}. Move focus to the left.
 	     */
-	    public static final int FOCUS_LEFT = 0x00000011;
+	    public final int FOCUS_LEFT = 0x00000011;
 
 	    /**
 	     * Use with {@link #focusSearch(int)}. Move focus up.
 	     */
-	    public static final int FOCUS_UP = 0x00000021;
+	    public final int FOCUS_UP = 0x00000021;
 
 	    /**
 	     * Use with {@link #focusSearch(int)}. Move focus to the right.
 	     */
-	    public static final int FOCUS_RIGHT = 0x00000042;
+	    public final int FOCUS_RIGHT = 0x00000042;
 
 	    /**
 	     * Use with {@link #focusSearch(int)}. Move focus down.
 	     */
-	    public static final int FOCUS_DOWN = 0x00000082;
+	    public final int FOCUS_DOWN = 0x00000082;
 
 	    /**
 	     * Bits of {@link #getMeasuredWidthAndState()} and
 	     * {@link #getMeasuredWidthAndState()} that provide the actual measured size.
 	     */
-	    public static final int MEASURED_SIZE_MASK = 0x00ffffff;
+	    public final int MEASURED_SIZE_MASK = 0x00ffffff;
 
 	    /**
 	     * Bits of {@link #getMeasuredWidthAndState()} and
 	     * {@link #getMeasuredWidthAndState()} that provide the additional state bits.
 	     */
-	    public static final int MEASURED_STATE_MASK = 0xff000000;
+	    public final int MEASURED_STATE_MASK = 0xff000000;
 
 	    /**
 	     * Bit shift of {@link #MEASURED_STATE_MASK} to get to the height bits
@@ -634,14 +634,14 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
 	     * such as {@link #getMeasuredState()} and the childState argument of
 	     * {@link #resolveSizeAndState(int, int, int)}.
 	     */
-	    public static final int MEASURED_HEIGHT_STATE_SHIFT = 16;
+	    public final int MEASURED_HEIGHT_STATE_SHIFT = 16;
 
 	    /**
 	     * Bit of {@link #getMeasuredWidthAndState()} and
 	     * {@link #getMeasuredWidthAndState()} that indicates the measured size
 	     * is smaller that the space the view would like to have.
 	     */
-	    public static final int MEASURED_STATE_TOO_SMALL = 0x01000000;
+	    public final int MEASURED_STATE_TOO_SMALL = 0x01000000;
 
 	    /**
 	     * Base View state sets
