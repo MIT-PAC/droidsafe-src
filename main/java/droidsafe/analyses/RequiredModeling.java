@@ -59,7 +59,7 @@ public class RequiredModeling {
 			}
 		}
 		try {
-			FileWriter fw = new FileWriter(Project.v().getOutputDir() + File.separator + "api-required-modeling-pta.txt");
+			FileWriter fw = new FileWriter(Project.v().getOutputDir() + File.separator + "api-modeling.txt");
 			for (String m : toModel) {
 				fw.write(m + "\n");
 			}
