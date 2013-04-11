@@ -48,28 +48,6 @@ import soot.util.queue.QueueReader;
  */
 public class RequiredModeling {
 	private final static Logger logger = LoggerFactory.getLogger(AttributeModeling.class);
-		
-	public static void run1() {
-		Set<String> toModel = new TreeSet<String>();
-
-		for (RCFGNode node : RCFG.v().getNodes()) {
-			for (OutputEvent oe : node.getOutputEvents()) {
-				if (!API.v().isAPIModeledMethod(oe.getTarget()))
-					toModel.add(oe.getTarget().getSignature());
-			}
-		}
-		try {
-			FileWriter fw = new FileWriter(Project.v().getOutputDir() + File.separator + "api-modeling.txt");
-			for (String m : toModel) {
-				fw.write(m + "\n");
-			}
-			fw.close();
-		} catch (Exception e) {
-			logger.error("Cannot write required modeling file");
-			System.exit(1);
-		}
-		
-	}
 	
 	public static void run() {
 		Set<String> toModel = new TreeSet<String>();
@@ -82,11 +60,12 @@ public class RequiredModeling {
 		}
 		
 		try {
-			FileWriter fw = new FileWriter(Project.v().getOutputDir() + File.separator + "api-required-modeling-pta.txt");
+			FileWriter fw = new FileWriter(Project.v().getOutputDir() + File.separator + "api-modeling-summary.txt");
+			fw.write("Unmodeled Methods:\n\n");
 			for (String m : toModel) {
 				fw.write(m + "\n");
 			}
-			fw.write("\nErrors in PTA:\n");
+			fw.write("\nErrors in PTA:\n\n");
 			checkAllocations(fw);
 			
 			fw.close();
