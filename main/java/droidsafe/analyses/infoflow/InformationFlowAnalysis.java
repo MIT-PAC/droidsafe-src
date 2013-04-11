@@ -41,6 +41,7 @@ import soot.jimple.AssignStmt;
 import soot.jimple.BinopExpr;
 import soot.jimple.CastExpr;
 import soot.jimple.CaughtExceptionRef;
+import soot.jimple.ClassConstant;
 import soot.jimple.Constant;
 import soot.jimple.IdentityRef;
 import soot.jimple.IdentityStmt;
@@ -310,8 +311,8 @@ public class InformationFlowAnalysis {
           // rvalue = ... | expr | ...;
           // expr = ... | instance_of_expr | ...;
           public void caseInstanceOfExpr(InstanceOfExpr instanceOfExpr) {
-              // TODO
-              throw new UnsupportedOperationException(stmt.toString());
+              // variable "=" instance_of_expr
+              setResult(execute(stmt, variable, instanceOfExpr, inStates));
           }
 
           // rvalue = ... | expr | ...;
@@ -673,6 +674,47 @@ public class InformationFlowAnalysis {
         };
         immediate.apply(immediateSwitch);
         return (States)immediateSwitch.getResult();
+    }
+
+    // assigin_stmt = variable "=" instance_of_expr
+    private States execute(final AssignStmt stmt, final Value variable, InstanceOfExpr instanceOfExpr, final States inStates) {
+        // instance_of_expr = immediate "instanceof" ref_type;
+        final States outStates = new States();
+        MyConstant constant = new MyConstant(ClassConstant.v(instanceOfExpr.getCheckType().toString().replace('.', '/')));
+        Immediate immediate = (Immediate)instanceOfExpr.getOp();
+        for (final Map.Entry<Edge, FrameHeapStatics> contextFrameHeapStatic : inStates.entrySet()) {
+            final FrameHeapStatics inFrameHeapStatics = contextFrameHeapStatic.getValue();
+            final Set<MyValue> values = evaluate(immediate, inFrameHeapStatics.frame);
+            values.add(constant);
+            // variable = array_ref | instance_field_ref | static_field_ref | local;
+            variable.apply(new MyAbstractVariableSwitch() {
+                // variable = array_ref | ...;
+                public void caseArrayRef(ArrayRef v) {
+                    // TODO
+                    throw new UnsupportedOperationException(stmt.toString());
+                }
+
+                // variable = ... | instance_field_ref | ...;
+                public void caseInstanceFieldRef(InstanceFieldRef v) {
+                    // TODO
+                    throw new UnsupportedOperationException(stmt.toString());
+                }
+
+                // variable = ... | static_field_ref | ...;
+                public void caseStaticFieldRef(StaticFieldRef v) {
+                    // TODO
+                    throw new UnsupportedOperationException(stmt.toString());
+                }
+
+                // variable = ... | local;
+                public void caseLocal(Local local) {
+                    Frame frame = new Frame(inFrameHeapStatics.frame, inFrameHeapStatics.frame.params);
+                    frame.put(local, values);
+                    outStates.put(contextFrameHeapStatic.getKey(), new FrameHeapStatics(frame, inFrameHeapStatics.heap, inFrameHeapStatics.statics));
+                }
+            });
+        }
+        return outStates;
     }
 
     // assign_stmt = variable "=" invoke_expr
