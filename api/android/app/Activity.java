@@ -114,18 +114,29 @@ public class Activity extends ContextThemeWrapper
     // GITI DSModeled
     //private static final String TAG = "Activity";
     /** Standard activity result: operation canceled. */
-    public static final int RESULT_CANCELED    = 0;
+    public /* GITI static */ final int RESULT_CANCELED    = 0;
     /** Standard activity result: operation succeeded. */
-    public static final int RESULT_OK           = -1;
+    public /* GITI static */ final int RESULT_OK           = -1;
     /** Start of user-defined activity results. */
-    public static final int RESULT_FIRST_USER   = 1;
+    public /* GITI static */ final int RESULT_FIRST_USER   = 1;
 
+<<<<<<< HEAD
     private final String WINDOW_HIERARCHY_TAG = "android:viewHierarchyState";
     private final String FRAGMENTS_TAG = "android:fragments";
     private final String SAVED_DIALOG_IDS_KEY = "android:savedDialogIds";
     private final String SAVED_DIALOGS_TAG = "android:savedDialogs";
     private final String SAVED_DIALOG_KEY_PREFIX = "android:dialog_";
     private final String SAVED_DIALOG_ARGS_KEY_PREFIX = "android:dialog_args_";
+=======
+    /* GITI DSModeled
+    private static final String WINDOW_HIERARCHY_TAG = "android:viewHierarchyState";
+    private static final String FRAGMENTS_TAG = "android:fragments";
+    private static final String SAVED_DIALOG_IDS_KEY = "android:savedDialogIds";
+    private static final String SAVED_DIALOGS_TAG = "android:savedDialogs";
+    private static final String SAVED_DIALOG_KEY_PREFIX = "android:dialog_";
+    private static final String SAVED_DIALOG_ARGS_KEY_PREFIX = "android:dialog_args_";
+    */
+>>>>>>> d05f5b3dcc91187f51f58364624e0aa1319e0394
 
     /* GITI DSModeled
     private static class ManagedDialog {
@@ -163,12 +174,15 @@ public class Activity extends ContextThemeWrapper
     private MenuInflater mMenuInflater;
 
     static final class NonConfigurationInstances {
+        // GITI DSModeled - Added this default constructor
+        @DSModeled
+        NonConfigurationInstances(){} 
         Object activity;
         HashMap<String, Object> children;
         ArrayList<Fragment> fragments;
         SparseArray<LoaderManagerImpl> loaders;
     }
-    /* package */ NonConfigurationInstances mLastNonConfigurationInstances;
+    NonConfigurationInstances mLastNonConfigurationInstances;
     
     private Window mWindow;
 
@@ -187,6 +201,7 @@ public class Activity extends ContextThemeWrapper
     SparseArray<LoaderManagerImpl> mAllLoaderManagers;
     LoaderManagerImpl mLoaderManager;
     
+    /* GITI DSModeled
     private static final class ManagedCursor {
         ManagedCursor(Cursor cursor) {
             mCursor = cursor;
@@ -200,6 +215,7 @@ public class Activity extends ContextThemeWrapper
     }
     private final ArrayList<ManagedCursor> mManagedCursors =
         new ArrayList<ManagedCursor>();
+    */
 
     // protected by synchronized (this) 
     int mResultCode = RESULT_CANCELED;
@@ -207,10 +223,11 @@ public class Activity extends ContextThemeWrapper
 
     private boolean mTitleReady = false;
 
-    private int mDefaultKeyMode = DEFAULT_KEYS_DISABLE;
+    //private int mDefaultKeyMode = DEFAULT_KEYS_DISABLE;
+    private int mDefaultKeyMode = 0; //DEFAULT_KEYS_DISABLE
     private SpannableStringBuilder mDefaultKeySsb = null;
     
-    protected static final int[] FOCUSED_STATE_SET = {com.android.internal.R.attr.state_focused};
+    protected /* GITI static */ final int[] FOCUSED_STATE_SET = {com.android.internal.R.attr.state_focused};
 
     //private final Object mInstanceTracker = StrictMode.trackActivity(this);
 
@@ -1003,6 +1020,7 @@ public class Activity extends ContextThemeWrapper
      * available on older platforms through the Android compatibility package.
      */
     @Deprecated
+    @DSModeled
     public Object getLastNonConfigurationInstance() {
         return mLastNonConfigurationInstances != null
                 ? mLastNonConfigurationInstances.activity : null;
@@ -1273,9 +1291,13 @@ public class Activity extends ContextThemeWrapper
      */
     @Deprecated
     public void startManagingCursor(Cursor c) {
+        //DSFIXME
+    	/* GITI DSModeled - probably is not needed for analysis since this is all internal to 
+    	 * the API.
         synchronized (mManagedCursors) {
             mManagedCursors.add(new ManagedCursor(c));
         }
+        */
     }
 
     /**
@@ -1297,6 +1319,8 @@ public class Activity extends ContextThemeWrapper
      */
     @Deprecated
     public void stopManagingCursor(Cursor c) {
+        //DSFIXME - need to determine if we need to model this more
+        /* GITI DSModeled
         synchronized (mManagedCursors) {
             final int N = mManagedCursors.size();
             for (int i=0; i<N; i++) {
@@ -1307,6 +1331,7 @@ public class Activity extends ContextThemeWrapper
                 }
             }
         }
+        */
     }
 
     /**
@@ -1436,14 +1461,14 @@ public class Activity extends ContextThemeWrapper
      * 
      * @see #setDefaultKeyMode
      */
-    static public final int DEFAULT_KEYS_DISABLE = 0;
+    /* GITI static */ public final int DEFAULT_KEYS_DISABLE = 0;
     /**
      * Use with {@link #setDefaultKeyMode} to launch the dialer during default
      * key handling.
      * 
      * @see #setDefaultKeyMode
      */
-    static public final int DEFAULT_KEYS_DIALER = 1;
+    /* GITI static */ public final int DEFAULT_KEYS_DIALER = 1;
     /**
      * Use with {@link #setDefaultKeyMode} to execute a menu shortcut in
      * default key handling.
@@ -1452,7 +1477,7 @@ public class Activity extends ContextThemeWrapper
      * 
      * @see #setDefaultKeyMode
      */
-    static public final int DEFAULT_KEYS_SHORTCUT = 2;
+    /* GITI static */ public final int DEFAULT_KEYS_SHORTCUT = 2;
     /**
      * Use with {@link #setDefaultKeyMode} to specify that unhandled keystrokes
      * will start an application-defined search.  (If the application or activity does not
@@ -1462,7 +1487,7 @@ public class Activity extends ContextThemeWrapper
      * 
      * @see #setDefaultKeyMode
      */
-    static public final int DEFAULT_KEYS_SEARCH_LOCAL = 3;
+    /* GITI static */ public final int DEFAULT_KEYS_SEARCH_LOCAL = 3;
 
     /**
      * Use with {@link #setDefaultKeyMode} to specify that unhandled keystrokes
@@ -1473,7 +1498,7 @@ public class Activity extends ContextThemeWrapper
      * 
      * @see #setDefaultKeyMode
      */
-    static public final int DEFAULT_KEYS_SEARCH_GLOBAL = 4;
+    /* GITI static */ public final int DEFAULT_KEYS_SEARCH_GLOBAL = 4;
 
     /**
      * Select the default key handling for this activity.  This controls what
@@ -4024,6 +4049,7 @@ public class Activity extends ContextThemeWrapper
     }
     
     final void performRestart() {
+        /* GITI DSModeled - internal (package private) method
         mFragments.noteStateNotSaved();
 
         if (mStopped) {
@@ -4060,6 +4086,7 @@ public class Activity extends ContextThemeWrapper
             }
             performStart();
         }
+        */
     }
     
     final void performResume() {
@@ -4112,6 +4139,7 @@ public class Activity extends ContextThemeWrapper
     }
     
     final void performStop() {
+        /* GITI DSModeled
         if (mLoadersStarted) {
             mLoadersStarted = false;
             if (mLoaderManager != null) {
@@ -4156,7 +4184,9 @@ public class Activity extends ContextThemeWrapper
             mStopped = true;
         }
         mResumed = false;
+        */
     }
+    
 
     final void performDestroy() {
         mWindow.destroy();
