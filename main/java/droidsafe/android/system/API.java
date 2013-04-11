@@ -1,12 +1,20 @@
 package droidsafe.android.system;
 
 import java.util.Arrays;
+import java.util.Enumeration;
+import java.util.HashMap;
 import java.util.HashSet;
 import java.util.LinkedHashSet;
+import java.util.LinkedList;
 import java.util.List;
+import java.util.Map;
 import java.util.Set;
+import java.util.jar.JarEntry;
 import java.util.jar.JarFile;
 import java.io.*;
+import java.lang.reflect.Modifier;
+import java.net.URL;
+import java.net.URLClassLoader;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -60,6 +68,7 @@ public class API {
 					"edu.mit.csail.droidsafe.DroidSafeCalls"
 					));
 	
+	private Map<String,Class<?>> stubsForModeledClasses;
 	
 	
 	static {
@@ -74,6 +83,9 @@ public class API {
 	}
 
 	public void init() {
+		//uncomment this to create system method files
+		//createAllSystemMethodsFile();
+		
 		try {
 			allSystemClasses = new LinkedHashSet<SootClass>();
 			
@@ -91,7 +103,7 @@ public class API {
 			JarFile androidJar = new JarFile(new File(Config.v().ANDROID_LIB_DIR, Config.v().ANDROID_JAR));
 			allSystemClasses.addAll(SootUtils.loadClassesFromJar(androidJar, false, modeledClassNames));
 			all_sys_methods.addAllMethods(androidJar);
-					
+			
 		} catch (Exception e) {
 			logger.error("Error loading android.jar", e);
 			System.exit(1);
@@ -99,10 +111,77 @@ public class API {
 
 		loadDroidSafeCalls();
 		findModeledMethods();
-		
+		addUnmodeledMissingAPIMethods();
 		//old load classification code from config_files/system_calls.txt
 		//now we classify based on the annotation DSModeled
 		//loadClassification();
+	}
+
+	/**
+	 * Create the system method txt file with the signature and modifiers for all 
+	 * system methods.  Should not be called on a normal run.
+	 */
+	private void createAllSystemMethodsFile() {
+		try {
+			JarFile androidJar = new JarFile(new File(Config.v().ANDROID_LIB_DIR, Config.ANDROID_JAR));
+			Set<SootClass> systemClasses = SootUtils.loadClassesFromJar(androidJar, false, new HashSet<String>());
+			
+			FileWriter fw = new FileWriter(new File(Config.v().APAC_HOME(), Config.SYSTEM_METHODS_FILE));
+
+			for (SootClass clz : systemClasses) {
+				for (SootMethod meth : clz.getMethods()) {
+					fw.write(String.format("%s#%s\n", meth.getModifiers(), meth.getSignature()));
+				}
+			}
+			
+			fw.close();
+		} catch (Exception e) {
+			logger.error("Error creating android api methods file {}", e);
+		}
+		System.exit(1);
+	}
+
+	/** 
+	 * Read in all method from all_system_methods, then create a SootMethod for missing api
+	 * methods from modeled classes.
+	 */
+	private void addUnmodeledMissingAPIMethods() {
+		try {
+			File sys_calls_file= new File(Config.v().ANDROID_LIB_DIR, Config.ANDROID_JAR);
+			LineNumberReader br = new LineNumberReader (new FileReader (sys_calls_file));
+			String line;
+			int lineNum;
+			while ((line = br.readLine()) != null) {
+                lineNum = br.getLineNumber();
+				
+				String[] lineSplit = line.trim().split("#");
+				
+				int modifiers = Integer.parseInt(lineSplit[0]);
+				String methodSig = lineSplit[1];
+				
+				if (!Scene.v().containsMethod(methodSig)) {
+					//System.out.printf("Found unmodeled system method: %s\n", methodSig);
+					SootClass clazz = Scene.v().getSootClass(SootUtils.grabClass(methodSig));
+					
+					List params = new LinkedList();
+					for (String arg : SootUtils.grabArgs(methodSig)) {
+						params.add(SootUtils.toSootType(arg));
+					}
+
+					SootMethod missing = new SootMethod(SootUtils.grabName(methodSig),
+							params,
+							SootUtils.toSootType(SootUtils.grabReturnType(methodSig)),
+							modifiers);
+					
+					missing.setPhantom(true);
+					clazz.addMethod(missing);
+				}
+				
+			}
+			
+		} catch (Exception e) {
+
+		}
 	}
 	
 	/**

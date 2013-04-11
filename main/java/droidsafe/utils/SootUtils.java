@@ -330,6 +330,10 @@ public class SootUtils {
 		
 		//args, create the args string array
 		String args = matcher.group(4);
+		
+		if (args.isEmpty())
+			return new String[0];
+		
 		return args.split(",");		
     }
     

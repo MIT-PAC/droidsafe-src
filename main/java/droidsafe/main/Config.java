@@ -46,6 +46,7 @@ public class Config {
 	private static final String ANDROID_LIB_DIR_REL = "android-lib";
 	/** location of configuration files */
 	public static final String SYSTEM_CLASSES_FILE = "config-files/system_class_files.txt";
+	public static final String SYSTEM_METHODS_FILE = "config-files/android-api-methods.txt";
 	/** location of api modeling base directory relative to apac_home */
 	public static final String API_MODELING_DIR_REL = "modeling" + File.separator + "api";
 	public static final String ANDROID_JAR = "android.jar";

@@ -108,7 +108,7 @@ public class GeoPTA {
 	 * Runs Soot's geometric PTA and resolve the context.
 	 */
 	public static void run() {
-		//Scene.v().loadDynamicClasses();
+		Scene.v().loadDynamicClasses();
 		
 		setGeomPointsToAnalysis();
 		
@@ -306,6 +306,10 @@ public class GeoPTA {
 	public Set<AllocNode> getPTSet(Value v, Edge context) {
 		//logger.info("Querying pt set for: {} in {}", v, context);
 		IVarAbstraction ivar = getInternalNode(v);
+		if (ivar == null) {
+			//nothing known about this pointer:
+			return new HashSet<AllocNode>();
+		}
 		Node sparkNode = ivar.getWrappedNode();
 		
 		return getPTSet(sparkNode, ivar, context, v);
