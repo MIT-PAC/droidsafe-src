@@ -16,6 +16,16 @@
 
 package android.app;
 
+/* DSModel: GITI modeled
+ * <android.app.Activity: android.app.Application getApplication()>
+	<android.app.Activity: android.view.Window getWindow()>
+	<android.app.Activity: boolean isChild()>
+	<android.app.Activity: void <clinit>()>
+	<android.app.Activity: void initActionBar()>
+	<android.app.Activity: void onResume()>
+	<android.app.Activity: void setContentView(android.view.View)>
+ */
+
 import droidsafe.annotations.DSC;
 import droidsafe.annotations.DSModeled;
 
@@ -84,14 +94,14 @@ import java.io.FileDescriptor;
 import java.io.PrintWriter;
 import java.util.ArrayList;
 import java.util.HashMap;
-
 public class Activity extends ContextThemeWrapper
         implements LayoutInflater.Factory2,
         Window.Callback, KeyEvent.Callback,
         OnCreateContextMenuListener, ComponentCallbacks2 {
 	
-	@DSModeled
 	//perform any actions that happen after an activity is created
+    // GITI DSModeled
+	@DSModeled
 	public void attach(Context context) {
 		attachBaseContext(context);
 	}
@@ -101,8 +111,8 @@ public class Activity extends ContextThemeWrapper
 		super();
 	}
 	
-    private static final String TAG = "Activity";
-
+    // GITI DSModeled
+    //private static final String TAG = "Activity";
     /** Standard activity result: operation canceled. */
     public static final int RESULT_CANCELED    = 0;
     /** Standard activity result: operation succeeded. */
@@ -117,11 +127,13 @@ public class Activity extends ContextThemeWrapper
     private static final String SAVED_DIALOG_KEY_PREFIX = "android:dialog_";
     private static final String SAVED_DIALOG_ARGS_KEY_PREFIX = "android:dialog_args_";
 
+    /* GITI DSModeled
     private static class ManagedDialog {
         Dialog mDialog;
         Bundle mArgs;
     }
     private SparseArray<ManagedDialog> mManagedDialogs;
+    */
 
     // set by the thread after the constructor and before onCreate(Bundle savedInstanceState) is called.
     private Instrumentation mInstrumentation;
@@ -233,11 +245,14 @@ public class Activity extends ContextThemeWrapper
     }
 
     /** Return the application that owns this activity. */
+    @DSModeled
     public final Application getApplication() {
         return mApplication;
     }
 
     /** Is this activity embedded inside of another activity? */
+    // DSModel: GITI - Seems innocuous from a modeling point of view.
+    @DSModeled(DSC.SAFE)
     public final boolean isChild() {
         return mParent != null;
     }
@@ -260,6 +275,11 @@ public class Activity extends ContextThemeWrapper
      * @return Window The current window, or null if the activity is not
      *         visual.
      */
+    // DSModel: GITI - Needs to be modeled, based on the Pointer and Object Creation 
+    //       rules.  This object is created from a call to attach().  I declared 
+    //       this method to be safe only because it deals with the window UI, 
+    //       not any external communications.
+    @DSModeled(DSC.SAFE)
     public Window getWindow() {
         return mWindow;
     }
@@ -361,7 +381,11 @@ public class Activity extends ContextThemeWrapper
      */
     final void performRestoreInstanceState(Bundle savedInstanceState) {
         onRestoreInstanceState(savedInstanceState);
+        // DSFIXME
+        // GITI DSModeled, TBD
+        /*
         restoreManagedDialogs(savedInstanceState);
+        */
     }
 
     /**
@@ -385,12 +409,14 @@ public class Activity extends ContextThemeWrapper
      * @see #onSaveInstanceState
      */
     protected void onRestoreInstanceState(Bundle savedInstanceState) {
+        /* GITI DSModeled, called from android.app.Activity.onSaveInstanceState(Bundle) within this class
         if (mWindow != null) {
             Bundle windowState = savedInstanceState.getBundle(WINDOW_HIERARCHY_TAG);
             if (windowState != null) {
                 mWindow.restoreHierarchyState(windowState);
             }
         }
+        */
     }
     
     /**
@@ -398,6 +424,8 @@ public class Activity extends ContextThemeWrapper
      *
      * @param savedInstanceState The bundle to restore from.
      */
+    // GITI DSModeled
+    /*
     private void restoreManagedDialogs(Bundle savedInstanceState) {
         final Bundle b = savedInstanceState.getBundle(SAVED_DIALOGS_TAG);
         if (b == null) {
@@ -424,6 +452,7 @@ public class Activity extends ContextThemeWrapper
             }
         }
     }
+    */
 
     private Dialog createDialog(Integer dialogId, Bundle state, Bundle args) {
         final Dialog dialog = onCreateDialog(dialogId, args);
@@ -434,6 +463,7 @@ public class Activity extends ContextThemeWrapper
         return dialog;
     }
 
+    /* GITI DSModeled
     private static String savedDialogKeyFor(int key) {
         return SAVED_DIALOG_KEY_PREFIX + key;
     }
@@ -441,6 +471,7 @@ public class Activity extends ContextThemeWrapper
     private static String savedDialogArgsKeyFor(int key) {
         return SAVED_DIALOG_ARGS_KEY_PREFIX + key;
     }
+    */
 
     /**
      * Called when activity start-up is complete (after {@link #onStart}
@@ -538,7 +569,10 @@ public class Activity extends ContextThemeWrapper
      * @see #onPostResume
      * @see #onPause
      */
+    // DSModel: GITI 
+    @DSModeled
     protected void onResume() {
+        // DSModeled: DSModel: GITI - For now, no modeling
         getApplication().dispatchActivityResumed(this);
         mCalled = true;
     }
@@ -594,9 +628,12 @@ public class Activity extends ContextThemeWrapper
      *
      * @param outState The bundle to save the state to.
      */
+    // GITI DSModeled - TBD - do not think we care, should just be watching
+    // taint on Bundle
     final void performSaveInstanceState(Bundle outState) {
-        onSaveInstanceState(outState);
-        saveManagedDialogs(outState);
+        // GITI DSModeled
+        //onSaveInstanceState(outState);
+        //saveManagedDialogs(outState);
     }
 
     /**
@@ -659,6 +696,8 @@ public class Activity extends ContextThemeWrapper
      *
      * @param outState place to store the saved state.
      */
+    // GITI DSModeled
+    /*
     private void saveManagedDialogs(Bundle outState) {
         if (mManagedDialogs == null) {
             return;
@@ -687,6 +726,7 @@ public class Activity extends ContextThemeWrapper
         dialogState.putIntArray(SAVED_DIALOG_IDS_KEY, ids);
         outState.putBundle(SAVED_DIALOGS_TAG, dialogState);
     }
+    */
 
 
     /**
@@ -854,6 +894,7 @@ public class Activity extends ContextThemeWrapper
      * @see #isFinishing
      */
     protected void onDestroy() {
+        /* GITI DS Modeled, think this is called from within the Android API.
         mCalled = true;
 
         // dismiss any dialogs we are managing.
@@ -886,6 +927,7 @@ public class Activity extends ContextThemeWrapper
         }
 
         getApplication().dispatchActivityDestroyed(this);
+        */
     }
 
     /**
@@ -1300,17 +1342,26 @@ public class Activity extends ContextThemeWrapper
      * Creates a new ActionBar, locates the inflated ActionBarView,
      * initializes the ActionBar with the view, and sets mActionBar.
      */
+    // DSModel: GITI 
+    @DSModeled
     private void initActionBar() {
+        /*
+        // DSModel: GITI - Not needed for modeling
         Window window = getWindow();
 
         // Initializing the window decor can change window feature flags.
         // Make sure that we have the correct set before performing the test below.
+        
+        // DSModel: GITI - Not needed for modeling
         window.getDecorView();
 
+        // DSModel: GITI - Not needed for modeling
         if (isChild() || !window.hasFeature(Window.FEATURE_ACTION_BAR) || mActionBar != null) {
             return;
         }
+        */
         
+        // DSModel: GITI - As per Object Creation rules
         mActionBar = new ActionBarImpl(this);
     }
 
@@ -1333,8 +1384,13 @@ public class Activity extends ContextThemeWrapper
      * @see #setContentView(int)
      * @see #setContentView(android.view.View, android.view.ViewGroup.LayoutParams)
      */
+    
+    // DSModel: GITI 
+    @DSModeled
     public void setContentView(View view) {
+    	// DSModel: GITI - View class is modeled and provides taint analysis
         getWindow().setContentView(view);
+        
         initActionBar();
     }
 
@@ -1958,13 +2014,16 @@ public class Activity extends ContextThemeWrapper
      * 
      * @return The default implementation returns true.
      */
+    // DSFIXME
+    // GITI DSModeled, TBD, need help with this one
     public boolean onMenuOpened(int featureId, Menu menu) {
         if (featureId == Window.FEATURE_ACTION_BAR) {
             initActionBar();
             if (mActionBar != null) {
                 mActionBar.dispatchMenuVisibilityChanged(true);
             } else {
-                Log.e(TAG, "Tried to open action bar menu with no action bar");
+                // GITI DSModeled
+                //Log.e(TAG, "Tried to open action bar menu with no action bar");
             }
         }
         return true;
@@ -2190,8 +2249,10 @@ public class Activity extends ContextThemeWrapper
      * @see #registerForContextMenu(View)
      * @param view The view that should stop showing a context menu.
      */
+    // DSFIXME
     public void unregisterForContextMenu(View view) {
-        view.setOnCreateContextMenuListener(null);
+        // GITI DSModeling - TBD
+        //view.setOnCreateContextMenuListener(null);
     }
     
     /**
@@ -2378,7 +2439,10 @@ public class Activity extends ContextThemeWrapper
      * available on older platforms through the Android compatibility package.
      */
     @Deprecated
+    // GITI DSModeled - only shows dialogs, setting to SAFE
+    @DSModeled(DSC.SAFE)
     public final boolean showDialog(int id, Bundle args) {
+        /* GITI DSModeled
         if (mManagedDialogs == null) {
             mManagedDialogs = new SparseArray<ManagedDialog>();
         }
@@ -2395,6 +2459,7 @@ public class Activity extends ContextThemeWrapper
         md.mArgs = args;
         onPrepareDialog(id, md.mDialog, args);
         md.mDialog.show();
+        */
         return true;
     }
 
@@ -2416,7 +2481,10 @@ public class Activity extends ContextThemeWrapper
      * available on older platforms through the Android compatibility package.
      */
     @Deprecated
+    // GITI DSModeled, only closing dialogs
+    @DSModeled(DSC.SAFE)
     public final void dismissDialog(int id) {
+        /* GITI DSModeled
         if (mManagedDialogs == null) {
             throw missingDialog(id);
         }
@@ -2426,6 +2494,7 @@ public class Activity extends ContextThemeWrapper
             throw missingDialog(id);
         }
         md.mDialog.dismiss();
+        */
     }
 
     /**
@@ -2460,7 +2529,10 @@ public class Activity extends ContextThemeWrapper
      * available on older platforms through the Android compatibility package.
      */
     @Deprecated
+    // GITI DSModeled only removing a dialog, seems safe
+    @DSModeled(DSC.SAFE)
     public final void removeDialog(int id) {
+        /* GITI DSModeled
         if (mManagedDialogs != null) {
             final ManagedDialog md = mManagedDialogs.get(id);
             if (md != null) {
@@ -2468,6 +2540,7 @@ public class Activity extends ContextThemeWrapper
                 mManagedDialogs.remove(id);
             }
         }
+        */
     }
 
     /**
@@ -2931,8 +3004,11 @@ public class Activity extends ContextThemeWrapper
      * @see Fragment#startActivity 
      * @see Fragment#startActivityForResult 
      */
+    // GITI DSModeled
+    @DSModeled
     public void startActivityFromFragment(Fragment fragment, Intent intent, 
             int requestCode) {
+        /* GITI - not needed
         Instrumentation.ActivityResult ar =
             mInstrumentation.execStartActivity(
                 this, mMainThread.getApplicationThread(), mToken, fragment,
@@ -2942,6 +3018,7 @@ public class Activity extends ContextThemeWrapper
                 mToken, fragment.mWho, requestCode,
                 ar.getResultCode(), ar.getResultData());
         }
+        */
     }
 
     /**
@@ -3136,7 +3213,10 @@ public class Activity extends ContextThemeWrapper
      * ActivityResult is propagated back to whoever launched you via
      * onActivityResult().
      */
+    // GITI DSModeled, seems safe
+    @DSModeled(DSC.SAFE)
     public void finish() {
+        /* GITI DSModeled
         if (mParent == null) {
             int resultCode;
             Intent resultData;
@@ -3159,6 +3239,7 @@ public class Activity extends ContextThemeWrapper
         } else {
             mParent.finishFromChild(this);
         }
+        */
     }
 
     /**
@@ -3617,6 +3698,8 @@ public class Activity extends ContextThemeWrapper
      * @see android.view.LayoutInflater#createView
      * @see android.view.Window#getLayoutInflater
      */
+    // GITI DSModeled
+    @DSModeled
     public View onCreateView(String name, Context context, AttributeSet attrs) {
         return null;
     }
@@ -3631,7 +3714,9 @@ public class Activity extends ContextThemeWrapper
      * @see android.view.LayoutInflater#createView
      * @see android.view.Window#getLayoutInflater
      */
+    // DSFIXME
     public View onCreateView(View parent, String name, Context context, AttributeSet attrs) {
+        /* GITI DSModeling - TBD 
         if (!"fragment".equals(name)) {
             return onCreateView(name, context, attrs);
         }
@@ -3708,6 +3793,9 @@ public class Activity extends ContextThemeWrapper
             fragment.mView.setTag(tag);
         }
         return fragment.mView;
+        */
+        // GITI DSModeling, for now return null.
+    	return null;
     }
 
     /**
@@ -3849,12 +3937,15 @@ public class Activity extends ContextThemeWrapper
             lastNonConfigurationInstances, config);
     }
     
+    // GITI DSModeled
+    @DSModeled
     final void attach(Context context, ActivityThread aThread,
             Instrumentation instr, IBinder token, int ident,
             Application application, Intent intent, ActivityInfo info,
             CharSequence title, Activity parent, String id,
             NonConfigurationInstances lastNonConfigurationInstances,
             Configuration config) {
+        /* GITI Modeling
         attachBaseContext(context);
 
         mFragments.attachActivity(this);
@@ -3871,6 +3962,7 @@ public class Activity extends ContextThemeWrapper
         mUiThread = Thread.currentThread();
         
         mMainThread = aThread;
+        */
         mInstrumentation = instr;
         mToken = token;
         mIdent = ident;
@@ -3883,6 +3975,7 @@ public class Activity extends ContextThemeWrapper
         mEmbeddedID = id;
         mLastNonConfigurationInstances = lastNonConfigurationInstances;
 
+        /* GITI DSModeling
         mWindow.setWindowManager(null, mToken, mComponent.flattenToString(),
                 (info.flags & ActivityInfo.FLAG_HARDWARE_ACCELERATED) != 0);
         if (mParent != null) {
@@ -3890,6 +3983,7 @@ public class Activity extends ContextThemeWrapper
         }
         mWindowManager = mWindow.getWindowManager();
         mCurrentConfig = config;
+        */
     }
 
     final IBinder getActivityToken() {
@@ -4078,8 +4172,10 @@ public class Activity extends ContextThemeWrapper
         return mResumed;
     }
 
+    // GITI DSModeled, typically called from android.app.ActivityThread.performResumeActivity(IBinder, boolean)
     void dispatchActivityResult(String who, int requestCode, 
         int resultCode, Intent data) {
+        /* GITI DSModeled
         if (false) Log.v(
             TAG, "Dispatching result: who=" + who + ", reqCode=" + requestCode
             + ", resCode=" + resultCode + ", data=" + data);
@@ -4092,5 +4188,6 @@ public class Activity extends ContextThemeWrapper
                 frag.onActivityResult(requestCode, resultCode, data);
             }
         }
+        */
     }
 }

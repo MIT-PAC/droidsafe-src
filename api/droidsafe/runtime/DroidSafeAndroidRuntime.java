@@ -51,9 +51,10 @@ public class DroidSafeAndroidRuntime {
 		//code
 	}
 	
+
 	
 	public static void modelService(android.app.Service service) {
-		
+
 	}
 	
 	public static void modelContentProvider(android.content.ContentProvider contentProvider) {
