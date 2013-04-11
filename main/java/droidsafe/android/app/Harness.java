@@ -69,10 +69,10 @@ public class Harness {
 
 	//map of component class names to the init method that should be called for them...
 	private static Map<String, String> componentInitMethod = ImmutableMap.of(
-			Components.ACTIVITY_CLASS, "<" + RUNTIME_MODELING_CLASS + ": void launchActivity(android.app.Activity)>",
-			Components.SERVICE_CLASS, "<" + RUNTIME_MODELING_CLASS + ": void launchService(android.app.Activity)>",
-			Components.CONTENTPROVIDER_CLASS, "<" + RUNTIME_MODELING_CLASS + ": void launchContentProvider(android.app.Activity)>",
-			Components.BROADCASTRECEIVER_CLASS, "<" + RUNTIME_MODELING_CLASS + ": void launchBroadCastReceiver(android.app.Activity)>"
+			Components.ACTIVITY_CLASS, "<" + RUNTIME_MODELING_CLASS + ": void modelActivity(android.app.Activity)>",
+			Components.SERVICE_CLASS, "<" + RUNTIME_MODELING_CLASS + ": void modelService(android.app.Service)>",
+			Components.CONTENTPROVIDER_CLASS, "<" + RUNTIME_MODELING_CLASS + ": void modelContentProvider(android.content.ContentProvider)>",
+			Components.BROADCASTRECEIVER_CLASS, "<" + RUNTIME_MODELING_CLASS + ": void modelBroadCastReceiver(android.content.BroadcastReceiver)>"
 			);
 	
 	private SootClass harnessClass;
