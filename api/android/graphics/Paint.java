@@ -80,6 +80,8 @@ public class Paint {
      */
     public  int         mBidiFlags = BIDI_DEFAULT_LTR;
     
+    // GITI DSModeled
+    /*
     static final Style[] sStyleArray = {
         Style.FILL, Style.STROKE, Style.FILL_AND_STROKE
     };
@@ -92,6 +94,7 @@ public class Paint {
     static final Align[] sAlignArray = {
         Align.LEFT, Align.CENTER, Align.RIGHT
     };
+    */
 
     /** bit mask for the flag enabling antialiasing */
     public static final int ANTI_ALIAS_FLAG     = 0x01;
@@ -257,6 +260,8 @@ public class Paint {
          */
         FILL_AND_STROKE (2);
         
+        // GITI DSModeled
+        @DSModeled
         Style(int nativeInt) {
             this.nativeInt = nativeInt;
         }
@@ -283,6 +288,8 @@ public class Paint {
          */
         SQUARE  (2);
         
+        // GITI DSModeled
+        @DSModeled
         private Cap(int nativeInt) {
             this.nativeInt = nativeInt;
         }
@@ -307,6 +314,8 @@ public class Paint {
          */
         BEVEL   (2);
         
+        // GITI DSModeled
+        @DSModeled
         private Join(int nativeInt) {
             this.nativeInt = nativeInt;
         }
@@ -331,6 +340,8 @@ public class Paint {
          */
         RIGHT   (2);
         
+        // GITI DSModeled
+        @DSModeled
         private Align(int nativeInt) {
             this.nativeInt = nativeInt;
         }
@@ -352,6 +363,8 @@ public class Paint {
      *
      * @param flags initial flag bits, as if they were passed via setFlags().
      */
+    // GITI DSModeled:  Seems to only set flags.
+    @DSModeled(DSC.SAFE)
     public Paint(int flags) {
         mNativePaint = native_init();
         setFlags(flags | DEFAULT_PAINT_FLAGS);
@@ -369,6 +382,8 @@ public class Paint {
      * @param paint Existing paint used to initialized the attributes of the
      *              new paint.
      */
+    // GITI DSModeled:  Seems to only set flags.
+    @DSModeled(DSC.SAFE)
     public Paint(Paint paint) {
         mNativePaint = native_initWithPaint(paint.mNativePaint);
         setClassVariablesFrom(paint);
@@ -653,8 +668,12 @@ public class Paint {
      *
      * @return the paint's style setting (Fill, Stroke, StrokeAndFill)
      */
+    // GITI DSModeled
+    @DSModeled
     public Style getStyle() {
-        return sStyleArray[native_getStyle(mNativePaint)];
+    	// GITI DSModeled
+        //return sStyleArray[native_getStyle(mNativePaint)];
+        return Style.FILL;
     }
 
     /**
@@ -767,8 +786,12 @@ public class Paint {
      * @return the line cap style for the paint, used whenever the paint's
      *         style is Stroke or StrokeAndFill.
      */
+    // GITI DSModeled
+    @DSModeled
     public Cap getStrokeCap() {
-        return sCapArray[native_getStrokeCap(mNativePaint)];
+    	// GITI DSModeled
+        //return sCapArray[native_getStrokeCap(mNativePaint)];
+        return Cap.BUTT;
     }
 
     /**
@@ -786,8 +809,12 @@ public class Paint {
      *
      * @return the paint's Join.
      */
+    // GITI DSModeled
+    @DSModeled
     public Join getStrokeJoin() {
-        return sJoinArray[native_getStrokeJoin(mNativePaint)];
+    	// GITI DSModeled
+        //return sJoinArray[native_getStrokeJoin(mNativePaint)];
+        return Join.BEVEL;
     }
 
     /**
@@ -1044,8 +1071,12 @@ public class Paint {
      *
      * @return the paint's Align value for drawing text.
      */
+    // GITI DSModeled
+    @DSModeled
     public Align getTextAlign() {
-        return sAlignArray[native_getTextAlign(mNativePaint)];
+        // GITI DSModeled
+        //return sAlignArray[native_getTextAlign(mNativePaint)];
+        return Align.CENTER;
     }
 
     /**
