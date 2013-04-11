@@ -52,15 +52,15 @@ public class DroidSafeAndroidRuntime {
 	}
 	
 	
-	public void modelService(android.app.Service service) {
+	public static void modelService(android.app.Service service) {
 		
 	}
 	
-	public void modelContentProvider(android.content.ContentProvider contentProvider) {
+	public static void modelContentProvider(android.content.ContentProvider contentProvider) {
 		
 	}
 	
-	public void modelBroadCastReceiver(BroadcastReceiver receiver) {
+	public static void modelBroadCastReceiver(BroadcastReceiver receiver) {
 		
 	}
 	
