@@ -343,21 +343,27 @@ public class GeoPTA {
 	public void dumpPTA() {
 		
 		for ( IVarAbstraction pn : ptsProvider.pointers ) {
+			IVarAbstraction orig = pn;
 			pn = pn.getRepresentative();
 			Node v = pn.getWrappedNode();
 
-			if ( pn != pn.getRepresentative() )
-				continue;
+			/*if ( pn != pn.getRepresentative() )
+				continue;*/
 
 			int method = ptsProvider.getMappedMethodID(v);
 			SootMethod pointerMethod = ptsProvider.getSootMethodFromID(method);
-
-			if (pointerMethod == null)
+			/*
+				if (pointerMethod == null)
 				continue;
+				*/
 
 			//System.out.println(pn);
+			
 			System.out.println(v);
-
+			
+			if (pn.getWrappedNode() != orig.getWrappedNode())
+				System.out.println("Original: " + orig.getWrappedNode());
+			
 			if (v instanceof AllocDotField) 
 				System.out.printf("\tAlloc dot field\n");
 
@@ -424,7 +430,7 @@ public class GeoPTA {
 		opt.put("geom-runs", "1");
 		opt.put("enabled","true");
 		opt.put("verbose","false");
-		opt.put("ignore-types","true");          
+		opt.put("ignore-types","false");          
 		opt.put("force-gc","false");            
 		opt.put("pre-jimplify","false");          
 		opt.put("vta","false");                   

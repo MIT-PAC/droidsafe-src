@@ -122,6 +122,7 @@ public class Main {
 
 		// print out what modeling is required for this application
 		RequiredModeling.run();
+		
 		// write jimple txt files for all classes so we can analzye them
 		if (Config.v().WRITE_JIMPLE_APP_CLASSES)
 			writeAllAppClasses();
