@@ -568,8 +568,14 @@ public class InformationFlowAnalysis {
             
             // variable = ... | static_field_ref | ...;
             public void caseStaticFieldRef(StaticFieldRef staticFieldRef) {
-                // TODO
-                throw new UnsupportedOperationException(stmt.toString());
+                SootField field = staticFieldRef.getField();
+                SootClass klass = field.getDeclaringClass();
+                for (Map.Entry<Edge, FrameHeapStatics> contextFrameHeapStatic : inStates.entrySet()) {
+                    FrameHeapStatics inFrameHeapStatics = contextFrameHeapStatic.getValue();
+                    Statics statics = new Statics(inFrameHeapStatics.statics);
+                    statics.put(klass, field, inValues);
+                    outStates.put(contextFrameHeapStatic.getKey(), new FrameHeapStatics(inFrameHeapStatics.frame, inFrameHeapStatics.heap, statics));
+                }
             }
 
             // variable = ... | local;
