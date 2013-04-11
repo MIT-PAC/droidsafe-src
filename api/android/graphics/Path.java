@@ -46,7 +46,14 @@ public class Path {
     }
    
     @DSModeled(DSC.SAFE) 
-    public void arcTo(RectF oval, float startAngle, float sweepAngle) {}
+    public void arcTo(RectF oval, float startAngle, float sweepAngle) {
+        dsTaint.addTaints(oval, startAngle, sweepAngle);
+    }
+
+    @DSModeled()
+    final int ni() {
+        return dsTaint.getTaintInt(); 
+    }
 
     @DSModeled(DSC.SAFE)
     protected void finalize() {}
