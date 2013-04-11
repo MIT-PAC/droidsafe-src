@@ -94,7 +94,6 @@ import java.io.FileDescriptor;
 import java.io.PrintWriter;
 import java.util.ArrayList;
 import java.util.HashMap;
-
 public class Activity extends ContextThemeWrapper
         implements LayoutInflater.Factory2,
         Window.Callback, KeyEvent.Callback,
@@ -121,14 +120,12 @@ public class Activity extends ContextThemeWrapper
     /** Start of user-defined activity results. */
     public static final int RESULT_FIRST_USER   = 1;
 
-    /*
     private static final String WINDOW_HIERARCHY_TAG = "android:viewHierarchyState";
     private static final String FRAGMENTS_TAG = "android:fragments";
     private static final String SAVED_DIALOG_IDS_KEY = "android:savedDialogIds";
     private static final String SAVED_DIALOGS_TAG = "android:savedDialogs";
     private static final String SAVED_DIALOG_KEY_PREFIX = "android:dialog_";
     private static final String SAVED_DIALOG_ARGS_KEY_PREFIX = "android:dialog_args_";
-    */
 
     /* GITI DSModeled
     private static class ManagedDialog {
@@ -383,9 +380,10 @@ public class Activity extends ContextThemeWrapper
      * @param savedInstanceState contains the saved state
      */
     final void performRestoreInstanceState(Bundle savedInstanceState) {
+        onRestoreInstanceState(savedInstanceState);
+        // DSFIXME
         // GITI DSModeled, TBD
         /*
-        onRestoreInstanceState(savedInstanceState);
         restoreManagedDialogs(savedInstanceState);
         */
     }
@@ -2016,6 +2014,7 @@ public class Activity extends ContextThemeWrapper
      * 
      * @return The default implementation returns true.
      */
+    // DSFIXME
     // GITI DSModeled, TBD, need help with this one
     public boolean onMenuOpened(int featureId, Menu menu) {
         if (featureId == Window.FEATURE_ACTION_BAR) {
@@ -2250,6 +2249,7 @@ public class Activity extends ContextThemeWrapper
      * @see #registerForContextMenu(View)
      * @param view The view that should stop showing a context menu.
      */
+    // DSFIXME
     public void unregisterForContextMenu(View view) {
         // GITI DSModeling - TBD
         //view.setOnCreateContextMenuListener(null);
@@ -3714,6 +3714,7 @@ public class Activity extends ContextThemeWrapper
      * @see android.view.LayoutInflater#createView
      * @see android.view.Window#getLayoutInflater
      */
+    // DSFIXME
     public View onCreateView(View parent, String name, Context context, AttributeSet attrs) {
         /* GITI DSModeling - TBD 
         if (!"fragment".equals(name)) {
