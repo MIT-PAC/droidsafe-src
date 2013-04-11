@@ -64,18 +64,25 @@ public class ContextImpl extends Context {
 	}
 
 
-    @Override
-    @DSModeled(value = DSC.SAFE)
+   
+    /*
     @DSSpecialize(
     	{
     		@DSTemplate(arg = 0, value = Context.SENSOR_SERVICE, method = "getSystemServiceSensor"),
     		@DSTemplate(arg = 0, value = Context.LOCATION_SERVICE, method = "getSystemServiceLocation")
     	}
-    )
+    )*/
+	@Override
+	@DSModeled(value = DSC.SAFE)
     public Object getSystemService(String name) {
-    	return new Object();
+    	if ("Service".equals("Name")) {
+    		return new DroidSafeSensorManager();
+    	} else if ("Service".equals("Name2")) {
+    		return new LocationManager(null);
+    	} else 
+    		return new Object();
     }
-    
+    /*
     @DSSpecialized(method = "Object getSystemService(String)", arg = 0)
     public DroidSafeSensorManager getSystemServiceSensor(String x) {
     	return new DroidSafeSensorManager();
@@ -85,6 +92,7 @@ public class ContextImpl extends Context {
     public LocationManager getSystemServiceLocation(String x) { 
     	return new LocationManager(null);
     }
+    */
     
     @Override
     public AssetManager getAssets() {
