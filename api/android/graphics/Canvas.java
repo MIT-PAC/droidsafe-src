@@ -40,7 +40,33 @@ import javax.microedition.khronos.opengles.GL;
  * Canvas and Drawables</a> developer guide.</p></div>
  */
 public class Canvas {
+	final int mNativeCanvas = 0;
+	// This field is used to finalize the native Canvas properly
 	private DSTaintObject dsTaint = new DSTaintObject();
+	
+	@DSModeled
+    public Canvas() {
+    	//Do Nothing
+    }
+    
+    /**
+     * Draw a line segment with the specified start and stop x,y coordinates,
+     * using the specified paint. NOTE: since a line is always "framed", the
+     * Style is ignored in the paint.
+     *
+     * @param startX The x-coordinate of the start point of the line
+     * @param startY The y-coordinate of the start point of the line
+     * @param paint  The paint used to draw the line
+     */
+    @DSModeled(value = DSC.SAFE)
+    public void drawLine(float startX, float startY, float stopX, float stopY,
+                         Paint paint) {
+    	dsTaint.addTaints(startX, startY, stopX, stopY, paint);
+    	/*
+        native_drawLine(mNativeCanvas, startX, startY, stopX, stopY,
+                        paint.mNativePaint);
+        */
+    }
 	
 	@DSModeled(DSC.SAFE)
 	public void drawColor(int i) {
