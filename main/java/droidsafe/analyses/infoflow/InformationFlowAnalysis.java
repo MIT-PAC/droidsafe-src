@@ -491,7 +491,6 @@ public class InformationFlowAnalysis {
             Set<MyValue> addresses = evaluate(immediate, inFrameHeapStatics.frame);
             final Set<MyValue> values = new HashSet<MyValue>();
             for (MyValue address : addresses) {
-                assert(address instanceof Address || new MyConstant(NullConstant.v()).equals(address));
                 if (address instanceof Address) {
                     values.addAll(inFrameHeapStatics.heap.arrays.get((Address)address));
                 }
@@ -1001,7 +1000,9 @@ public class InformationFlowAnalysis {
             final FrameHeapStatics inFrameHeapStatics = contextFrameHeapStatic.getValue();
             final Set<MyValue> values = new HashSet<MyValue>();
             for (MyValue instance : inFrameHeapStatics.frame.get(base)) {
-                values.addAll(inFrameHeapStatics.heap.instances.get((Address)instance, field));
+                if (instance instanceof Address) {
+                    values.addAll(inFrameHeapStatics.heap.instances.get((Address)instance, field));
+                }
             }
             // variable = array_ref | instance_field_ref | static_field_ref | local;
             variable.apply(new MyAbstractVariableSwitch() {
@@ -1046,10 +1047,12 @@ public class InformationFlowAnalysis {
                 public void caseArrayRef(ArrayRef arrayRef) {
                     Arrays arrays = new Arrays(inFrameHeapStatics.heap.arrays);
                     for (MyValue addr : inFrameHeapStatics.frame.get((Local)arrayRef.getBase())) {
-                        Address address = (Address)addr;
-                        Set<MyValue> outValues = new HashSet<MyValue>(inFrameHeapStatics.heap.arrays.get(address));
-                        outValues.addAll(inValues);
-                        arrays.put(address, outValues);
+                        if (addr instanceof Address) {
+                            Address address = (Address)addr;
+                            Set<MyValue> outValues = new HashSet<MyValue>(inFrameHeapStatics.heap.arrays.get(address));
+                            outValues.addAll(inValues);
+                            arrays.put(address, outValues);
+                        }
                     }
                     outStates.put(contextFrameHeapStatic.getKey(), new FrameHeapStatics(inFrameHeapStatics.frame, new Heap(inFrameHeapStatics.heap.instances, arrays), inFrameHeapStatics.statics));
                 }
@@ -1060,10 +1063,12 @@ public class InformationFlowAnalysis {
                     SootField field = instanceFieldRef.getField();
                     Instances instances = new Instances(inFrameHeapStatics.heap.instances);
                     for (MyValue addr : inFrameHeapStatics.frame.get((Local)instanceFieldRef.getBase())) {
-                        Address address = (Address)addr;
-                        Set<MyValue> outValues = new HashSet<MyValue>(inFrameHeapStatics.heap.instances.get(address, field));
-                        outValues.addAll(inValues);
-                        instances.put(address, field, outValues);
+                        if (addr instanceof Address) {
+                            Address address = (Address)addr;
+                            Set<MyValue> outValues = new HashSet<MyValue>(inFrameHeapStatics.heap.instances.get(address, field));
+                            outValues.addAll(inValues);
+                            instances.put(address, field, outValues);
+                        }
                     }
                     outStates.put(contextFrameHeapStatic.getKey(), new FrameHeapStatics(inFrameHeapStatics.frame, new Heap(instances, inFrameHeapStatics.heap.arrays), inFrameHeapStatics.statics));
                 }
