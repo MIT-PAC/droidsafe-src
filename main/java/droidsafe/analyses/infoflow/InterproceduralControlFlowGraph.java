@@ -22,8 +22,8 @@ import soot.jimple.IdentityStmt;
 import soot.jimple.Stmt;
 import soot.jimple.toolkits.callgraph.CallGraph;
 import soot.jimple.toolkits.callgraph.Targets;
+import soot.toolkits.graph.BriefUnitGraph;
 import soot.toolkits.graph.DirectedGraph;
-import soot.toolkits.graph.ExceptionalUnitGraph;
 import soot.toolkits.graph.UnitGraph;
 import soot.util.Chain;
 import soot.util.HashChain;
@@ -121,13 +121,29 @@ public class InterproceduralControlFlowGraph implements DirectedGraph<Unit> {
         return graph;
     }
 
-    public Graph<Unit, DefaultEdge> toJGrapthT() {
+    public Graph<Unit, DefaultEdge> toJGraphT() {
         DefaultDirectedGraph<Unit, DefaultEdge> graph = new DefaultDirectedGraph<Unit, DefaultEdge>(DefaultEdge.class);
-        for (Unit src : unitChain) {
-            graph.addVertex(src);
-            for (Unit tgt : unitToSuccs.get(src)) {
-                graph.addVertex(tgt);
-                graph.addEdge(src, tgt);
+        for (Unit unit : unitChain) {
+            graph.addVertex(unit);
+            for (Unit succ : unitToSuccs.get(unit)) {
+                graph.addVertex(succ);
+                graph.addEdge(unit, succ);
+            }
+        }
+        return graph;
+    }
+
+    public Graph<Unit, DefaultEdge> toJGraphT(SootMethod method) {
+        DefaultDirectedGraph<Unit, DefaultEdge> graph = new DefaultDirectedGraph<Unit, DefaultEdge>(DefaultEdge.class);
+        for (Unit unit : method.getActiveBody().getUnits()) {
+            graph.addVertex(unit);
+            for (Unit pred : unitToPreds.get(unit)) {
+                graph.addVertex(pred);
+                graph.addEdge(pred, unit);
+            }
+            for (Unit succ : unitToSuccs.get(unit)) {
+                graph.addVertex(succ);
+                graph.addEdge(unit, succ);
             }
         }
         return graph;
@@ -167,7 +183,7 @@ public class InterproceduralControlFlowGraph implements DirectedGraph<Unit> {
         for (SootClass clz : Scene.v().getApplicationClasses()) {
             for (SootMethod method : clz.getMethods()) {
                 if (method.hasActiveBody()) {
-                    UnitGraph unitGraph = new ExceptionalUnitGraph(method.getActiveBody());
+                    UnitGraph unitGraph = new BriefUnitGraph(method.getActiveBody());
                     if (entryPoints.contains(method)) {
                         heads.addAll(unitGraph.getHeads());
                     }
