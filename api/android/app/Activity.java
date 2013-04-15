@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2006 The Android Open Source Project
+WINDOW_HIERARCHY_TAG * Copyright (C) 2006 The Android Open Source Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -128,6 +128,7 @@ public class Activity extends ContextThemeWrapper
     private static final String SAVED_DIALOG_KEY_PREFIX = "android:dialog_";
     private static final String SAVED_DIALOG_ARGS_KEY_PREFIX = "android:dialog_args_";
     */
+
 
     /* GITI DSModeled
     private static class ManagedDialog {
@@ -3177,7 +3178,9 @@ public class Activity extends ContextThemeWrapper
             wm.addView(mDecor, getWindow().getAttributes());
             mWindowAdded = true;
         }
-        mDecor.setVisibility(View.VISIBLE);
+        // GITI:  Modified this in order to make the View member not need to be static
+        //mDecor.setVisibility(View.VISIBLE);
+        mDecor.setVisibility(0x00000000);
     }
     
     /**
