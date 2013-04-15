@@ -52,11 +52,11 @@ public final class Bundle implements Parcelable, Cloneable {
         EMPTY = new Bundle();
         EMPTY.mMap = Collections.unmodifiableMap(new HashMap<String, Object>());
     }
+    */
 
     // Invariant - exactly one of mMap / mParcelledData will be null
     // (except inside a call to unparcel)
     Map<String, Object> mMap = null;
-    */
 
     // If mParcelledData is non-null, then mMap will be null and the
     // data are stored as a Parcel containing a Bundle.  When the data
@@ -81,7 +81,7 @@ public final class Bundle implements Parcelable, Cloneable {
         //mClassLoader = getClass().getClassLoader();
     }
 
-    @DSModeled()
+    @DSModeled(DSC.SAFE)
     Bundle(Parcel parcelledData) {
         // this version of Bundle calls readFromParcel()
         // readFromParcel calls readFromParcelInner
@@ -89,14 +89,14 @@ public final class Bundle implements Parcelable, Cloneable {
         dsTaint.addTaints(parcelledData);
     }
 
-    @DSModeled()
+    @DSModeled(DSC.SAFE)
     Bundle(Parcel parcelledData, int length) {
         // this version of Bundle calls readFromParcelInner
         // readFromParcelInner taints several propeties of mParcelledData
         dsTaint.addTaints(parcelledData, length);
     }
 
-    @DSModeled()
+    @DSModeled(DSC.SAFE)
     public Bundle(ClassLoader loader) {
         // this versio of Bundle taints this class by setting mClassLoader
         // equal to loader. It initializes mMap to a HashMap, but stores nothing
@@ -118,43 +118,63 @@ public final class Bundle implements Parcelable, Cloneable {
         // mClassLoader = getClass().getClassLoader();
     }
 
-    @DSModeled()
+    @DSModeled(DSC.SAFE)
     public Bundle(Bundle b) {
         // If the bundle b is not null, then the mehtod mParcelledData
         // of this class is tainted.
         // Otherwise, mParcelledData is set to null
-        if (b.mParcelledData != null) {
-            dsTaint.addTaints(b);
-        }
+        dsTaint.addTaints(b.dsTaint);
     }
 
-    @DSModeled()
+    @DSModeled(DSC.SAFE)
     public static Bundle forPair(String key, String value) {
-        // This method requires I return a Bundle, so I cast
-        // dsTaint.getTaint() to a bundle to satisfy this requirement
-        // However, the example in View:getTag modifies the 
-        // method definition to return a generic object.  However,
-        // more specific seems better, so I'm using cast to Bundle.
-        dsTaint.addTaints(key, value);
-        return (Bundle)dsTaint.getTaint();
+        // We know that Bundle(capacity) is banned,
+        // so we make the call to the banned constructor to associate 
+        // this constructor with the banned constructor
+        // We also taint the new bundle b with the key value pair before
+        // we return it.
+        Bundle b = new Bundle(1);
+        b.dsTaint.addTaints(key, value);
+        return b;
     }
 
-    @DSModeled()
+    @DSModeled(DSC.SAFE)
     public void writeToParcel(Parcel parcel, int flags) {
-        // this class makes changes to parcel.  However,
-        // it does not return anything.  How do we model
-        // the fact that writeToParcel provides data outside
-        // this method?
-        dsTaint.addTaints(parcel, flags);
+        // We make all of the calls to the various
+        // parameters and variables so they can be tainted
+        // with data from this method.
+
+        // parcel might be tained with mAllowFds
+        final boolean oldAllowFds = parcel.pushAllowFds(mAllowFds);
+
+        // parcel might be tained with length
+        int length = mParcelledData.dataSize();
+        parcel.writeInt(length);
+
+        // parcel might be tainted with length or mParcelledData
+        parcel.appendFrom(mParcelledData, 0, length);
+
+        // parcel might be tainted with mMap
+        parcel.writeMapInternal(mMap);
+
+        // parcel might be tained with oldPos or newPost
+        int oldPos = parcel.dataPosition();
+        int newPos = parcel.dataPosition();
+        parcel.setDataPosition(oldPos - 8);
+        parcel.setDataPosition(newPos);
+
+        // parcel might be tained with oldAllowFds, which was 
+        // derived through parcel.pushAllowFds
+        parcel.restoreAllowFds(oldAllowFds);
+
     }
 
-    @DSModeled() 
+    @DSModeled(DSC.SAFE) 
     public int describeContents() {
         // this method returns 0, or the constant CONTENTS_FILE_DESCRIPTOR
         // I modeled this by creating a constant which is always 0
         // and returning an Int that looks like the constant
-        //int mask = 0;
-        return dsTaint.getTaintInt();
+        return 0;
     }
 }
 
