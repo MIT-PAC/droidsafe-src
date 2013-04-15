@@ -39,7 +39,13 @@ public final class Bundle implements Parcelable, Cloneable {
     //droidsafe taint object tracks information flow through this class
     private static DSTaintObject dsTaint;
 
-    private static final String LOG_TAG = "Bundle";
+    /*
+     so far, the static properites of this class are not used by any
+     of the methods in Sensor.java, so they do not need to be modeled
+     I've commented them out to remove the <clint> tag in the needs
+     to be modeled file for Sensors.java
+
+    //private static final String LOG_TAG = "Bundle";
     public static final Bundle EMPTY;
 
     static {
@@ -50,12 +56,11 @@ public final class Bundle implements Parcelable, Cloneable {
     // Invariant - exactly one of mMap / mParcelledData will be null
     // (except inside a call to unparcel)
     Map<String, Object> mMap = null;
+    */
 
-    /*
-     * If mParcelledData is non-null, then mMap will be null and the
-     * data are stored as a Parcel containing a Bundle.  When the data
-     * are unparcelled, mParcelledData willbe set to null.
-     */
+    // If mParcelledData is non-null, then mMap will be null and the
+    // data are stored as a Parcel containing a Bundle.  When the data
+    // are unparcelled, mParcelledData will be set to null.
     Parcel mParcelledData = null;
 
     private boolean mHasFds = false;
@@ -93,23 +98,31 @@ public final class Bundle implements Parcelable, Cloneable {
 
     @DSModeled()
     public Bundle(ClassLoader loader) {
+        // this versio of Bundle taints this class by setting mClassLoader
+        // equal to loader. It initializes mMap to a HashMap, but stores nothing
+        // in it.
         dsTaint.addTaints(loader);
     }
 
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.BAN)
     public Bundle(int capacity) {
         // capacity is passed into this version of Bundle, but
         // it is only being used to determine the size of the 
         // hash map, so it does not provide a way for information
         // to flow through this object
         // mMap = new HashMap<String, Object>(capacity);
+
+	// Based on MIT's note for public Bundle()
+        // dynamic class loading is not allowed.  Therefore,
+        // this line of code makes this method "banned".
         // mClassLoader = getClass().getClassLoader();
     }
 
     @DSModeled()
     public Bundle(Bundle b) {
-        // only taints this class, if the bundle b is not null
-        // if the bundle b is null, then mParacelledData is set to null
+        // If the bundle b is not null, then the mehtod mParcelledData
+        // of this class is tainted.
+        // Otherwise, mParcelledData is set to null
         if (b.mParcelledData != null) {
             dsTaint.addTaints(b);
         }
@@ -121,19 +134,27 @@ public final class Bundle implements Parcelable, Cloneable {
         // dsTaint.getTaint() to a bundle to satisfy this requirement
         // However, the example in View:getTag modifies the 
         // method definition to return a generic object.  However,
-        // more specific seems better, so I'm using cast.
+        // more specific seems better, so I'm using cast to Bundle.
         dsTaint.addTaints(key, value);
         return (Bundle)dsTaint.getTaint();
     }
 
     @DSModeled()
     public void writeToParcel(Parcel parcel, int flags) {
+        // this class makes changes to parcel.  However,
+        // it does not return anything.  How do we model
+        // the fact that writeToParcel provides data outside
+        // this method?
         dsTaint.addTaints(parcel, flags);
     }
 
     @DSModeled() 
     public int describeContents() {
-        int mask = 0;
+        // this method returns 0, or the constant CONTENTS_FILE_DESCRIPTOR
+        // I modeled this by creating a constant which is always 0
+        // and returning an Int that looks like the constant
+        //int mask = 0;
         return dsTaint.getTaintInt();
     }
 }
+
