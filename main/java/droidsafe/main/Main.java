@@ -37,7 +37,6 @@ import droidsafe.transforms.LocalForStringConstantArguments;
 import droidsafe.transforms.ResolveStringConstants;
 import droidsafe.transforms.ScalarAppOptimizations;
 import droidsafe.utils.SootUtils;
-import droidsafe.test.regression.RegressionTestUtils;
 
 /**
  * Main entry class for DroidSafe analysis.
@@ -60,20 +59,6 @@ public class Main {
 		logger.info("Starting DroidSafe Run");
     
     Config.v().init(args);
-    
-    // Temporary invocation of regression value updating 
-    if (args[0].equals("update-regression-values")){
-      logger.info("Updating regression values");
-      try {
-        RegressionTestUtils.updateRegressionValues();
-      } catch (IOException e) {
-        logger.info("Could not update regression values.");
-        return;
-      }
-      logger.info("Done updating regression values");
-      return;
-    }
-
 		Project.v().init();
 		SootConfig.init();
 		API.v().init();
