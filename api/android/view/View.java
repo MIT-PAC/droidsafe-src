@@ -74,7 +74,15 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
         AccessibilityEventSource {
 	
 		private DSTaintObject dsTaint = new DSTaintObject();
+		
+		protected Context mContext;
 
+		@DSModeled(value = DSC.SAFE)
+		public View(Context context) {
+			dsTaint.addTaint(context);
+	        mContext = context;
+	    }
+		
 		public interface OnClickListener {
 			void onClick(View v);
 		}

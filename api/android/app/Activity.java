@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2006 The Android Open Source Project
+WINDOW_HIERARCHY_TAG * Copyright (C) 2006 The Android Open Source Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -120,14 +120,6 @@ public class Activity extends ContextThemeWrapper
     /** Start of user-defined activity results. */
     public /* GITI static */ final int RESULT_FIRST_USER   = 1;
 
-<<<<<<< HEAD
-    private final String WINDOW_HIERARCHY_TAG = "android:viewHierarchyState";
-    private final String FRAGMENTS_TAG = "android:fragments";
-    private final String SAVED_DIALOG_IDS_KEY = "android:savedDialogIds";
-    private final String SAVED_DIALOGS_TAG = "android:savedDialogs";
-    private final String SAVED_DIALOG_KEY_PREFIX = "android:dialog_";
-    private final String SAVED_DIALOG_ARGS_KEY_PREFIX = "android:dialog_args_";
-=======
     /* GITI DSModeled
     private static final String WINDOW_HIERARCHY_TAG = "android:viewHierarchyState";
     private static final String FRAGMENTS_TAG = "android:fragments";
@@ -136,7 +128,7 @@ public class Activity extends ContextThemeWrapper
     private static final String SAVED_DIALOG_KEY_PREFIX = "android:dialog_";
     private static final String SAVED_DIALOG_ARGS_KEY_PREFIX = "android:dialog_args_";
     */
->>>>>>> d05f5b3dcc91187f51f58364624e0aa1319e0394
+
 
     /* GITI DSModeled
     private static class ManagedDialog {
