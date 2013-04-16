@@ -56,6 +56,9 @@ public class Config {
 	
 	/** location of configuration files */
 	public static final String SYSTEM_CLASSES_FILE = "config-files/system_class_files.txt";
+
+	/** if true, run string analysis on app classes */
+	public boolean RUN_STRING_ANALYSIS = false;
 	
 	private String APAC_HOME; 
 	
@@ -110,6 +113,9 @@ public class Config {
 
 		Option infoFlowDotMethod = OptionBuilder.withArgName("METHOD").hasArg().withDescription("Export information flows specific to METHOD only: METHOD is specified by its signature (e.g. \"<com.jpgextractor.PicViewerActivity: void sendExif(java.util.ArrayList)>\")").withLongOpt("infoflow-dot-method").create();
 		options.addOption(infoFlowDotMethod);
+		
+    Option runStringAnalysis = new Option("analyzestrings", "Run string analysis.");
+		options.addOption(runStringAnalysis);
 	}
 	
 	/**
@@ -175,6 +181,10 @@ public class Config {
 		    }
 		    StatusPrinter.printInCaseOfErrorsOrWarnings(context);
 			
+		}
+
+		if (cmd.hasOption("analyzestrings")) {
+			this.RUN_STRING_ANALYSIS = true;
 		}
 		
 		APP_ROOT_DIR = getPathFromCWD(cmd.getOptionValue("approot"));

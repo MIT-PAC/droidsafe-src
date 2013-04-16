@@ -24,6 +24,7 @@ import droidsafe.analyses.RequiredModeling;
 import droidsafe.analyses.infoflow.InformationFlowAnalysis;
 import droidsafe.analyses.infoflow.InterproceduralControlFlowGraph;
 import droidsafe.analyses.rcfg.RCFG;
+import droidsafe.analyses.strings.JSAStrings;
 import droidsafe.android.app.EntryPoints;
 import droidsafe.android.app.Harness;
 import droidsafe.android.app.TagImplementedSystemMethods;
@@ -73,11 +74,12 @@ public class Main {
 		logger.info("Create tags for the overriden system methods in user code.");
 		TagImplementedSystemMethods.run();
 
-		logger.info("Resolving resources and Manifest.");
+    logger.info("Resolving resources and Manifest.");
 		Resources.resolveManifest(Config.v().APP_ROOT_DIR);
 
 		logger.info("Resolving String Constants");
 		ResolveStringConstants.run(Config.v().APP_ROOT_DIR);
+
 
 		logger.info("Finding entry points in user code.");
 		EntryPoints.v().calculate();
@@ -88,8 +90,16 @@ public class Main {
 		logger.info("Setting Harness Main as entry point.");
 		setHarnessMainAsEntryPoint();
 
-		AddAllocsForAPICalls.run();
+    // The JSA analysis fails if it follows AddAllocsForAPICalls.run()		
+		if (Config.v().RUN_STRING_ANALYSIS) {
+		  JSAStrings.run(Config.v());
 
+		  // Debugging.
+		  JSAStrings.v().log();
+		}
+
+		AddAllocsForAPICalls.run();
+		
 		logger.info("Starting PTA...");
 		GeoPTA.run();
 
@@ -150,4 +160,5 @@ public class Main {
 			}
 		}
 	}
+
 }
