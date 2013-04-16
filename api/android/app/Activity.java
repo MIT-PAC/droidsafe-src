@@ -1599,8 +1599,8 @@ public class Activity extends ContextThemeWrapper
                     
                     switch (mDefaultKeyMode) {
                     case DEFAULT_KEYS_DIALER:
-                        Intent intent = new Intent(Intent.ACTION_DIAL,  Uri.parse("tel:" + str));
-                        intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                        Intent intent = new Intent("android.intent.action.DIAL",  Uri.parse("tel:" + str));
+                        intent.addFlags(0x10000000);
                         startActivity(intent);    
                         break;
                     case DEFAULT_KEYS_SEARCH_LOCAL:
