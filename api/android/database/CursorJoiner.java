@@ -49,6 +49,7 @@ public final class CursorJoiner
         //implements Iterator<CursorJoiner.Result>, Iterable<CursorJoiner.Result> {
         implements Iterator, Iterable {
     private DSTaintObject taint; 
+    /*
     private Cursor mCursorLeft;
     private Cursor mCursorRight;
     private boolean mCompareResultIsValid;
@@ -56,7 +57,8 @@ public final class CursorJoiner
     private int[] mColumnsLeft;
     private int[] mColumnsRight;
     private String[] mValues;
-
+	*/
+	
     /**
      * The result of a call to next().
      */
@@ -73,7 +75,8 @@ public final class CursorJoiner
 			// TODO Auto-generated constructor stub
 		}
     }
-
+    
+    
     /**
      * Initializes the CursorJoiner and resets the cursors to the first row. The left and right
      * column name arrays must have the same number of columns.
