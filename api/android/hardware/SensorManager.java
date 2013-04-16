@@ -637,7 +637,7 @@ public class SensorManager
             t.timestamp = timestamp[0];
             t.accuracy = accuracy;
             t.sensor = sensor;
-            Message msg = Message.obtain();
+            Message msg = new Message(); //Message.obtain();
             msg.what = 0;
             msg.obj = t;
             mHandler.sendMessage(msg);
