@@ -44,8 +44,10 @@ import java.util.Iterator;
  * }
  * </pre>
  */
+// GITI DSModeled - removing the Generic specification
 public final class CursorJoiner 
-        implements Iterator<CursorJoiner.Result>, Iterable<CursorJoiner.Result> {
+        //implements Iterator<CursorJoiner.Result>, Iterable<CursorJoiner.Result> {
+        implements Iterator, Iterable {
     private DSTaintObject taint; 
     private Cursor mCursorLeft;
     private Cursor mCursorRight;
@@ -59,12 +61,17 @@ public final class CursorJoiner
      * The result of a call to next().
      */
     public enum Result {
-        /** The row currently pointed to by the left cursor is unique */
-        RIGHT,
-        /** The row currently pointed to by the right cursor is unique */
-        LEFT,
-        /** The rows pointed to by both cursors are the same */
-        BOTH
+        // The row currently pointed to by the left cursor is unique
+        RIGHT(0),
+        // The row currently pointed to by the right cursor is unique
+        LEFT(1),
+        // The rows pointed to by both cursors are the same
+        BOTH(2);
+        // GITI DSModeled
+        @DSModeled(DSC.SAFE)
+        Result(int result) {
+			// TODO Auto-generated constructor stub
+		}
     }
 
     /**
@@ -76,7 +83,7 @@ public final class CursorJoiner
      * @param columnNamesRight The column names to compare from the right cursor
      */
     // GITI DSModeled
-    @DSModeled
+    @DSModeled(DSC.SAFE)
     public CursorJoiner(
             Cursor cursorLeft, String[] columnNamesLeft,
             Cursor cursorRight, String[] columnNamesRight) {
@@ -106,7 +113,7 @@ public final class CursorJoiner
 
     // GITI DSModeled - just returns reference to self
     @DSModeled(DSC.SAFE)
-    public Iterator<Result> iterator() {
+    public Iterator iterator() {
         return this;
     }
 
@@ -172,8 +179,9 @@ public final class CursorJoiner
      *   cursors are the same.
      */
     // GITI DSModeled
-    @DSModeled
-    public Result next() {
+    @DSModeled(DSC.SAFE)
+    //public Result next() {
+    public Object next() {
         /* GITI DSModeled:  For modeling purposes, we probably do not care what the result returned
          * is.
         if (!hasNext()) {
