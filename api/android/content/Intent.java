@@ -5,6 +5,7 @@ import android.os.Parcelable;
 import android.net.Uri;
 import java.util.Set;
 import java.util.HashSet;
+import java.io.Serializable;
 
 import droidsafe.annotations.*;
 import droidsafe.helpers.*;
@@ -226,5 +227,23 @@ public class Intent implements Parcelable, Cloneable {
         mCategories.add(category.intern());
         */
         return this;
+    }
+	
+	@DSModeled(value = DSC.SAFE)
+	public Intent putExtra(String name, Serializable value) {
+		dsTaint.addTaints(name, value);
+		/*
+        if (mExtras == null) {
+            mExtras = new Bundle();
+        }
+        mExtras.putSerializable(name, value);
+        */
+        return this;
+    }
+	
+	@DSModeled(value = DSC.SAFE)
+	public String getDataString() {
+		return dsTaint.getTaintString();
+        //return mData != null ? mData.toString() : null;
     }
 }
