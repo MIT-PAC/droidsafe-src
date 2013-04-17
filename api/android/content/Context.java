@@ -54,6 +54,18 @@ public abstract class Context {
 		//Do Nothing
 	}
 	
+	public final TypedArray obtainStyledAttributes(
+            AttributeSet set, int[] attrs) {
+		return new TypedArray();
+		/*
+		 * To fully model the function we'd need to model both the 
+		 * TypedArray class as well as the Resources (and by virtue
+		 * of that the Theme subclass).  This may be a more succinct
+		 * way to model.
+		 */
+        //return getTheme().obtainStyledAttributes(set, attrs, 0, 0);
+    }
+	
 	/* Abstract Methods */
 	public abstract Object getSystemService(String name);
 	public abstract boolean bindService(Intent service, ServiceConnection conn,
