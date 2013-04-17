@@ -121,7 +121,13 @@ public class SootUtils {
     } else if (sootValue instanceof IntConstant) {
       return new Integer(((IntConstant)sootValue).value);
     } else if (sootValue instanceof StringConstant) {
-      return new String(((StringConstant)sootValue).value);
+      System.out.println("Value/Box");
+      System.out.println(sootValue);
+      System.out.println(sootValue.getUseBoxes());
+      String string = new String(((StringConstant)sootValue).value);
+      droidsafe.model.java.lang.String droidsafeString = new droidsafe.model.java.lang.String();
+      droidsafeString.incorporateString(string);
+      return droidsafeString;
     } else if (sootValue instanceof LongConstant) {
       return new Long(((LongConstant)sootValue).value);
     } else if (sootValue instanceof DoubleConstant) {
@@ -129,7 +135,16 @@ public class SootUtils {
     } else if (sootValue instanceof FloatConstant) {
       return new Float(((FloatConstant)sootValue).value);
     } else if (sootValue instanceof ClassConstant) {
-      return Class.forName(((ClassConstant)sootValue).value.replace("/", "."));
+      String className = ((ClassConstant)sootValue).value.replace("/", ".");
+      try {
+        return Class.forName(className);
+      } catch(ClassNotFoundException cnfe) {
+        // TODO: Ficure out how to get iusntances of app-specific classes
+        String string = new String("class" + className);
+        droidsafe.model.java.lang.String droidsafeString = new droidsafe.model.java.lang.String();
+        droidsafeString.incorporateString(string);
+        return droidsafeString;
+      }
     }
     
     throw new RuntimeException("Unhandled java primitive sootValue: " + sootValue);

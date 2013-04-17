@@ -41,6 +41,7 @@ import soot.Body;
 import soot.jimple.Constant;
 import soot.jimple.InstanceInvokeExpr;
 import soot.jimple.NullConstant;
+import soot.jimple.StringConstant;
 import soot.jimple.InvokeExpr;
 import soot.jimple.spark.pag.AllocNode;
 import soot.jimple.StaticInvokeExpr;
@@ -148,7 +149,6 @@ public class AttributeModeling {
 
     // loop over all code, creating models and simulating whichever invokeExprs we can as we go
     for (SootClass clazz : Scene.v().getApplicationClasses()) {
-
       String className = clazz.getName();
 
       // We don't care about the harness or interfaces
@@ -165,6 +165,7 @@ public class AttributeModeling {
       }
 
       for (SootMethod meth : clazz.getMethods()) {
+        am.writeToToDoLog("\n\n");
         if (meth.isConcrete() && reachableMethods.contains(meth)) {
           StmtBody stmtBody = (StmtBody)meth.retrieveActiveBody();
 
@@ -210,7 +211,7 @@ public class AttributeModeling {
                     try {
                       String logEntry = "Couldn't model every parameter for " + iie;
                       logEntry += "\n" + "> invalidating " + modeledReceiverObject + " as a result";
-                      am.attrModelingTodoLog.write(logEntry + "\n\n");
+                      am.attrModelingTodoLog.write(logEntry + "\n");
                     } catch (IOException ioe) {}
                   }
                 }
@@ -223,7 +224,7 @@ public class AttributeModeling {
               } catch(Exception e) {
                 try {
                   String logEntry = "Unable to simulate the static call " + invokeExpr;
-                  am.attrModelingTodoLog.write(logEntry + "\n\n");
+                  am.attrModelingTodoLog.write(logEntry + "\n");
                 } catch( IOException ioe) {}
                 // if we are unable to simulate the static call, then invalidate all params
                 am.invalidateParamObjects(paramObjectCartesianProduct);
@@ -234,7 +235,7 @@ public class AttributeModeling {
               try {
                 am.invalidateParamObjects(paramObjectCartesianProduct);
                 String logEntry = "Not simulating expression (isn't an instance invoke or static)" + invokeExpr;
-                am.attrModelingTodoLog.write(logEntry + "\n\n");
+                am.attrModelingTodoLog.write(logEntry + "\n");
               } catch (IOException ioe) {}
             }
           }
@@ -267,7 +268,7 @@ public class AttributeModeling {
             modeledObject.invalidate();
             try {
               String logEntry = "\n" + "> invalidating argument " + modeledObject + " as a result";
-              this.attrModelingTodoLog.write(logEntry + "\n\n");
+              this.attrModelingTodoLog.write(logEntry + "\n");
             } catch( IOException ioe) {}
           }
         }
@@ -300,7 +301,7 @@ public class AttributeModeling {
           modeledReceiverObject.invalidate();
           logEntry += "\n" + "> invalidating receiver" + modeledReceiverObject + " as a result";
         }
-        this.attrModelingTodoLog.write(logEntry + "\n\n");
+        this.attrModelingTodoLog.write(logEntry + "\n");
       } catch (IOException ioe) {}
     }
   }
@@ -310,43 +311,36 @@ public class AttributeModeling {
    * of the dynamic type of the AllocNode if it is modeled
    */
   private ModeledClass createAndGetModel(AllocNode allocNode) {
-    try {
-       String logEntry = "hello";
-       this.attrModelingTodoLog.write(logEntry + "\n\n");
-     } catch (IOException ioe) {}
 
     //don't track values for alloc nodes we create
-    /*
     if (AddAllocsForAPICalls.v().isGeneratedExpr(allocNode.getNewExpr())){
       try {
         String logEntry = "We created the allocNode and thus don't want to model " + allocNode;
-        this.attrModelingTodoLog.write(logEntry + "\n\n");
+        this.attrModelingTodoLog.write(logEntry + "\n");
       } catch (IOException ioe) {}
       return null;
     }
-    */
     
     if (!(allocNode.getType() instanceof RefType)){
       try {
         String logEntry = "Can't give model for allocNode (not a RefType) " + allocNode;
-        this.attrModelingTodoLog.write(logEntry + "\n\n");
+        this.attrModelingTodoLog.write(logEntry + "\n");
       } catch (IOException ioe) {}
      return null;
     }
-
+    
     // We don't want to model things created in the harness 
-    boolean isActivity = false;
+    boolean exception = false;
     SootClass sootClass = ((RefType)allocNode.getType()).getSootClass();
     if (sootClass.hasSuperclass()){
       if(sootClass.getSuperclass().getName().equals("android.app.Activity")){
-        isActivity = true;
+        exception = true;
       }
     } 
-    
-    if (!isActivity && allocNode.getMethod() != null && allocNode.getMethod().equals(Harness.v().getMain())) {
+    if (!exception && allocNode.getMethod() != null && allocNode.getMethod().equals(Harness.v().getMain())) {
       try {
         String logEntry = "AllocNode is not an activity but came from the harness. Not modeling: " + allocNode;
-        this.attrModelingTodoLog.write(logEntry + "\n\n");
+        this.attrModelingTodoLog.write(logEntry + "\n");
       } catch (IOException ioe) {}
       return null;
     }
@@ -361,12 +355,13 @@ public class AttributeModeling {
       } catch(Exception e) {
         try {
           String logEntry = "Couldn't model an instance of the " + refType.getSootClass().getName() + " class: " + e.toString();
-          this.attrModelingTodoLog.write(logEntry + "\n\n");
+          this.attrModelingTodoLog.write(logEntry + "\n");
         } catch (IOException ioe) {}
         return null;
       }
       objectToModelMap.put(allocNode, model);
     } else {
+
       model = objectToModelMap.get(allocNode);
     }
     return model;
@@ -382,6 +377,11 @@ public class AttributeModeling {
     }
     
     return Class.forName("droidsafe.model." + className);
+  }
+  private void writeToToDoLog(String logEntry) {
+    try {
+      this.attrModelingTodoLog.write(logEntry);
+    } catch (IOException ioe) {}
   }
 
   /*
@@ -415,7 +415,6 @@ public class AttributeModeling {
     //===================================================================================================================
 
     private ParamAnalyzer(InvokeExpr invokeExpr) {
-
       int paramCount = invokeExpr.getArgCount(); 
       
       // Each index is the class of the param at that index
@@ -442,11 +441,15 @@ public class AttributeModeling {
         if(arg instanceof Constant) {
           if(arg instanceof NullConstant){
             try {
-              paramClasses.add(i, AttributeModeling.this.getDroidsafeClass((RefType)paramTypes.get(i)));
+              try {
+                paramClasses.get(i);
+              } catch (IndexOutOfBoundsException e) {
+                paramClasses.add(i, AttributeModeling.this.getDroidsafeClass((RefType)paramTypes.get(i)));
+              }
             } catch(Exception e) {
               try {
                 String logEntry = "Type of parameter #" + i + " of method " + invokeExpr + "isn't modeled yet: " + e.toString();
-                AttributeModeling.this.attrModelingTodoLog.write(logEntry + "\n\n");
+                AttributeModeling.this.attrModelingTodoLog.write(logEntry + "\n");
               } catch (IOException ioe) {}
               return;
             }
@@ -456,12 +459,17 @@ public class AttributeModeling {
             try {
               object = SootUtils.constantValueToObject(arg);
             } catch (ClassNotFoundException cnfe){
+              AttributeModeling.this.writeToToDoLog("Couldn't convert constant value " + arg + " to object: " + cnfe + "\n");
               for(ModeledClass modeledObject : paramObjectModels){
                 modeledObject.invalidate();
               }   
               return;
             }
-            paramClasses.add(i, object.getClass());
+            try {
+              paramClasses.get(i);
+            } catch(IndexOutOfBoundsException e) {
+              paramClasses.add(i, object.getClass());
+            }
             paramObjectSets.get(i).add(object);
           }
         } else if(arg.getType() instanceof RefType) {  
@@ -472,7 +480,11 @@ public class AttributeModeling {
               ModeledClass modeledParamObject = createAndGetModel(node);
               if(modeledParamObject != null){
                 paramObjectSets.get(i).add(modeledParamObject);
-                this.paramClasses.add(i, modeledParamObject.getClass());
+                try {
+                   this.paramClasses.get(i);
+                } catch (IndexOutOfBoundsException e) {
+                   this.paramClasses.add(i, modeledParamObject.getClass());
+                } 
                 // Store the param object model so that we can later invalidate it if we haven't modeled the method
                 paramObjectModels.add(modeledParamObject);
               } else {
@@ -482,7 +494,7 @@ public class AttributeModeling {
                 }
                 try {
                   String logEntry = "Couldn't model argument AllocNode " + node + " for method" + invokeExpr;
-                  AttributeModeling.this.attrModelingTodoLog.write(logEntry + "\n\n");
+                  AttributeModeling.this.attrModelingTodoLog.write(logEntry + "\n");
                 } catch (IOException ioe) {}
                 return;
               }
@@ -491,7 +503,7 @@ public class AttributeModeling {
             // log the problem
             try {
               String logEntry = "No AllocNodes were found by PTA for arg #" + i + " of instanceInvokeExpr " + invokeExpr;
-              AttributeModeling.this.attrModelingTodoLog.write(logEntry + "\n\n");
+              AttributeModeling.this.attrModelingTodoLog.write(logEntry + "\n");
             } catch(IOException ioe){}
             // invalidate any param models we've already created
             for(ModeledClass modeledObject : paramObjectModels){
@@ -503,7 +515,7 @@ public class AttributeModeling {
           // log the problem
           try {
             String logEntry = "Arg #" + i + " of method " + invokeExpr + " isn't a constant or a RefType. Not sure what to do - invalidating other params and not simulating the call.";
-            AttributeModeling.this.attrModelingTodoLog.write(logEntry + "\n\n");
+            AttributeModeling.this.attrModelingTodoLog.write(logEntry + "\n");
           } catch (IOException ioe) {}
           // invalidate any param models we've already created
           for(ModeledClass modeledObject : paramObjectModels){
@@ -514,7 +526,6 @@ public class AttributeModeling {
       }
       
       // What are all the possible ways in which the method can be called now that we know all possible params
-
       this.paramCartesianProduct = cartesianProduct(0, paramObjectSets);
     }
 

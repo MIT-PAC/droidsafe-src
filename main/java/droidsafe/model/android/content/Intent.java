@@ -32,6 +32,11 @@ public class Intent extends ModeledClass {
     this.setAction(action);
   } 
   
+  public void _init_(droidsafe.model.android.test.mock.MockContext mockContext, droidsafe.model.java.lang.String className) {
+    // TODO: check the android source code for this constructor
+    this.setAction(className);
+  }
+  
   public void setAction(droidsafe.model.java.lang.String mAction){
     this.mAction.incorporateString(mAction);
   }
@@ -49,10 +54,14 @@ public class Intent extends ModeledClass {
     if (this.invalidated) {
       str += "invalidated";
     } else {
-      str += "action: " + this.mAction + ", "
-           + "type: " + this.mType + ", "
-           + "data: " + this.mData + ", "
-           + "package: " + this.mPackage; 
+      if(this.mAction != null)
+        str += "action: " + this.mAction;
+      if(this.mType != null)
+        str += ", type: " + this.mType;
+      if(this.mData != null)
+        str += ", data: " + this.mData;
+      if(this.mPackage != null)
+        str += ", package: " + this.mPackage;
     }
     return str + "}";
   }

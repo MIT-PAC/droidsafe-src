@@ -40,6 +40,10 @@ public class String extends ModeledClass{
     this.possibleValues.addAll(string.getPossibleValues());
   }
 
+  public void incorporateString(java.lang.String string){
+    this.possibleValues.add(string);
+  }
+
   @Override
   public java.lang.String toString() {
     java.lang.String str = "<modeled string" + this.getId() + "> {";
@@ -48,6 +52,6 @@ public class String extends ModeledClass{
     } else {
       str += "possible values: " + this.possibleValues.toString() + "}";
     }
-    return str + "} ";
+    return str + "}";
   }
 }
