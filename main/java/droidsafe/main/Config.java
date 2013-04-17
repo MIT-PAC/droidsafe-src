@@ -43,6 +43,11 @@ public class Config {
 	/** if true, write readable jimple output for all app classes */
 	public boolean WRITE_JIMPLE_APP_CLASSES = false;
 	
+	/** if true, dump pta to a file */
+	public boolean DUMP_PTA = false;
+	
+	public boolean DUMP_CALL_GRAPH = false;
+	
 	private static final String ANDROID_LIB_DIR_REL = "android-lib";
 	/** location of configuration files */
 	public static final String SYSTEM_CLASSES_FILE = "config-files/system_class_files.txt";
@@ -92,6 +97,12 @@ public class Config {
 		
 		Option writeJimple = new Option("jimple", "Dump readable jimple files for all app classes in /droidsafe.");
 		options.addOption(writeJimple);
+		
+		Option pta = new Option("ptadump", "Dump pta to ./droidsafe/pta.txt");
+		options.addOption(pta);
+		
+		Option callgraph = new Option("callgraph", "Output .dot callgraph file ");
+		options.addOption(callgraph);
 	}
 	
 	/**
@@ -120,6 +131,13 @@ public class Config {
 		
 		if (cmd.hasOption("jimple"))
 			this.WRITE_JIMPLE_APP_CLASSES = true;
+		
+		if (cmd.hasOption("ptadump"))
+			this.DUMP_PTA = true;
+		
+		if (cmd.hasOption("callgraph"))
+			this.DUMP_CALL_GRAPH = true;
+		
 		
 		if (cmd.hasOption("debuglog")) {
 			//we want to create a debug log file, so load the 

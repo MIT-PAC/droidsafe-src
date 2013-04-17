@@ -133,6 +133,8 @@ public class Main {
 		} else if (Config.v().target.equals("confcheck")) {
 			logger.error("Not implemented yet!");
 		}
+		
+		//System.out.print(RCFG.v().toString());
 
 	}
 

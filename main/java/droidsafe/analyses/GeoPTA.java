@@ -1,6 +1,7 @@
 package droidsafe.analyses;
 
 import java.io.File;
+import java.io.FileNotFoundException;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.PrintStream;
@@ -121,8 +122,14 @@ public class GeoPTA {
 		ContextTranslator.build_1cfa_map(ptsProvider);
 		callGraph = Scene.v().getCallGraph();
 		createNewToAllocMap();
-		//dumpPTA();
-		//dumpCallGraph(Project.v().getOutputDir() + File.separator + "callgraph.dot");
+		
+		if (Config.v().DUMP_PTA){
+			dumpPTA("./droidsafe/pta.txt");
+		}
+		
+		if (Config.v().DUMP_CALL_GRAPH) {
+			dumpCallGraph(Project.v().getOutputDir() + File.separator + "callgraph.dot");
+		}
 	}
 	
 	/**
@@ -341,11 +348,27 @@ public class GeoPTA {
 		return allocNodes;
 	}
 	
+	
+	public void dumpPTA() {
+		dumpPTA(System.out);
+	}
+	
+	public void dumpPTA(String fileName) {	
+		try {
+			dumpPTA(new PrintStream(fileName));
+		}
+		catch (FileNotFoundException e) {
+			
+		}
+	}
+	
 	/**
 	 * Print out all points to sets.
 	 */
-	public void dumpPTA() {
+	public void dumpPTA(PrintStream file) {
 		
+		System.out.print("======================= dumpPTA ()=====================================\n");
+		Vector<CallsiteContextVar> outList = new Vector<CallsiteContextVar>();
 		for ( IVarAbstraction pn : ptsProvider.pointers ) {
 			IVarAbstraction orig = pn;
 			pn = pn.getRepresentative();
@@ -368,10 +391,10 @@ public class GeoPTA {
 			if (pn.getWrappedNode() != orig.getWrappedNode())
 				System.out.println("Original: " + orig.getWrappedNode());
 			
-			if (v instanceof AllocDotField) 
-				System.out.printf("\tAlloc dot field\n");
+			file.println(v);
 
-			PrintStream file = System.out;
+			if (v instanceof AllocDotField) 
+				file.printf("\tAlloc dot field\n");			
 
 			if ( v instanceof LocalVarNode ) {
 				// We map the local pointer to its 1-cfa versions
@@ -416,8 +439,9 @@ public class GeoPTA {
 				file.println();
 			}
 
-			System.out.println();
+			file.println();
 		}
+		System.out.print("======================= dumpPTA () Done =====================================\n");
 	}
 
 	static void setGeomPointsToAnalysis() {
