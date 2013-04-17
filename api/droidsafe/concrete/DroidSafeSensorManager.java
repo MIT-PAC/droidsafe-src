@@ -28,5 +28,10 @@ public class DroidSafeSensorManager extends SensorManager {
 		listener.onSensorChanged(se);
 		return true;
 	}
+	
+	@DSModeled(DSC.SAFE)
+	public void unregisterListener(SensorEventListener sel) {
+		
+	}
 }
 

@@ -386,8 +386,8 @@ public class ContextWrapper extends Context {
         return mBase.startInstrumentation(className, profileFile, arguments);
     }
 
-    @DSModeled(value = DSC.SAFE)
     @Override
+    @DSModeled(DSC.SAFE)
     public Object getSystemService(String name) {
         return mBase.getSystemService(name);
     }
