@@ -13,6 +13,8 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Looper;
+import android.content.res.TypedArray;
+import android.util.AttributeSet;
 
 import java.io.File;
 import java.io.FileInputStream;
@@ -22,8 +24,10 @@ import java.io.IOException;
 import java.io.InputStream;
 
 import droidsafe.annotations.*;
+import droidsafe.helpers.*;
 
 public abstract class Context {
+	private DSTaintObject dsTaint = new DSTaintObject();
 	
 	/* Concrete Methods */
 	public boolean isRestricted() {
@@ -35,7 +39,7 @@ public abstract class Context {
     }
 	
 	public final CharSequence getText(int resId) {
-		return "woot!";
+		return dsTaint.getTaintString();
 		/*
 		 * No need to model the Resources class at this time.  The underlying
 		 * implementation calls down into AssetManager and simply supplies a

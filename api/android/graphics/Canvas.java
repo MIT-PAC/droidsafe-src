@@ -1,8 +1,11 @@
 package android.graphics;
 
 import droidsafe.annotations.*;
+import droidsafe.helpers.*;
 
 public class Canvas {
+	private DSTaintObject dsTaint = new DSTaintObject();
+	
 	@DSModeled(value = DSC.SAFE)
 	public Canvas() {
 		//Do Nothing
@@ -18,7 +21,20 @@ public class Canvas {
 		 * 
 		 * DSFIXME:  Technically the underlying bitmap will be changed 
 		 * (represented by the int mNativeCanvas).  It appears that this
-		 * operation happens in real time, so tracking taint is difficult.
+		 * operation happens in real time, so tracking taint is difficult
+		 * on the upflow.
 		 */
+		dsTaint.addTaints(startX, startY, stopX, stopY, paint);
+	}
+	
+	@DSModeled(DSC.SAFE)
+	public void drawColor(int i) {
+		dsTaint.addTaints(i);
+	}
+	
+	@DSModeled(DSC.SAFE)
+	public int save(int i) {
+		dsTaint.addTaint(i);
+		return dsTaint.getTaintInt();
 	}
 }
