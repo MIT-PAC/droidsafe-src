@@ -23,10 +23,10 @@ public class Automatons implements AutomatonProvider {
 	private static HashMap<String, Automaton> automatonMap = new HashMap<String, Automaton>();;
 	
 	static {
-		intAuto = new RegExp("0|-?[1-9][0-9]*").toAutomaton();
-		uintAuto = new RegExp("0|[1-9][0-9]*").toAutomaton();
-		floatAuto = new RegExp("<int>\".\"(0|[0-9]*[1-9])(E<int>)?|NaN|Infinity|-Infinity").toAutomaton(new Automatons());
-		booleanAuto = new RegExp("true|false").toAutomaton();
+    intAuto = Automaton.makeString("<int>"); // new RegExp("0|-?[1-9][0-9]*").toAutomaton();
+		uintAuto = Automaton.makeString("<uint>"); // new RegExp("0|[1-9][0-9]*").toAutomaton();
+		floatAuto = Automaton.makeString("<float>"); //  new RegExp("<int>\".\"(0|[0-9]*[1-9])(E<int>)?|NaN|Infinity|-Infinity").toAutomaton(new Automatons());
+		booleanAuto = Automaton.makeString("<bool>"); // new RegExp("true|false").toAutomaton();
 		nullAuto = Automaton.makeString("null");
 		charAuto = Automaton.makeAnyChar();
 		

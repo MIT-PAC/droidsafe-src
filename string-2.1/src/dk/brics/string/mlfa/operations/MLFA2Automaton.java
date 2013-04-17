@@ -152,7 +152,7 @@ public class MLFA2Automaton {
                 }
             }
             a.addEpsilons(epsilons);
-            a.minimize();
+            // a.minimize();
         }
         stack.remove(p);
         memo.put(p, a);

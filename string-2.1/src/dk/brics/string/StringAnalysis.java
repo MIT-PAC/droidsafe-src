@@ -95,7 +95,7 @@ public class StringAnalysis {
     private Map<ValueBox, Integer> line_map;
     private int num_exps;
 
-    private Logger log = LoggerFactory.getLogger(StringAnalysis.class);
+    private static Logger log = LoggerFactory.getLogger(StringAnalysis.class);
 
     /* fields used during the analysis, but not afterwards */
     private transient DiagnosticsStrategy diagnostics;
