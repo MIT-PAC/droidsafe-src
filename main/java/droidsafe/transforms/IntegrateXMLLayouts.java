@@ -62,6 +62,22 @@ public class IntegrateXMLLayouts extends BodyTransformer {
 			}
 		}
 
+		protected void dumpStmtBody(StmtBody stmtBody) {
+            System.out.printf("Dumping body %s \n", stmtBody);
+
+            // get body's unit as a chain
+			Chain units = stmtBody.getUnits();
+			Iterator stmtIt = units.snapshotIterator();
+
+            while (stmtIt.hasNext()) {
+				Stmt stmt = (Stmt)stmtIt.next();
+                System.out.printf("%s \n", stmt);
+            }
+		}
+
+		/**
+		* This method is called by the v.transform() as part of soot framework
+		*/
 		protected void internalTransform(Body b, String phaseName, Map options)  {
 			StmtBody stmtBody = (StmtBody)b;
 
@@ -71,6 +87,8 @@ public class IntegrateXMLLayouts extends BodyTransformer {
 			// get a snapshot iterator of the unit since we are going to
 			// mutate the chain when iterating over it.
 			Iterator stmtIt = units.snapshotIterator();
+
+            boolean hasViewById = false;
 
 			while (stmtIt.hasNext()) {
 				Stmt stmt = (Stmt)stmtIt.next();
@@ -97,13 +115,20 @@ public class IntegrateXMLLayouts extends BodyTransformer {
 							continue;
 						}
 						
-						if (findViewById.equals(resolved)) 
+						if (findViewById.equals(resolved))  {
+                            hasViewById = true;
 							System.out.printf("Found findViewById(): %s\n", stmt);
-						
-						//replacement ...
+							System.out.printf("Found findViewById(): method %s\n", resolved);
+							logger.info(String.format("Found findViewById(): %s\n", stmt));
+							//replacement ...
+						}
 					}
 				}
 				
 			}
+
+            if (hasViewById) {
+                dumpStmtBody(stmtBody);
+            }
 		}
 }
