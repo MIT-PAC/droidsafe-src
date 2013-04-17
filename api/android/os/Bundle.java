@@ -39,13 +39,14 @@ public final class Bundle implements Parcelable, Cloneable {
     //droidsafe taint object tracks information flow through this class
     private static DSTaintObject dsTaint;
 
+    private static final String LOG_TAG = "Bundle";
+
     /*
      so far, the static properites of this class are not used by any
      of the methods in Sensor.java, so they do not need to be modeled
      I've commented them out to remove the <clint> tag in the needs
      to be modeled file for Sensors.java
 
-    //private static final String LOG_TAG = "Bundle";
     public static final Bundle EMPTY;
 
     static {
@@ -176,5 +177,134 @@ public final class Bundle implements Parcelable, Cloneable {
         // and returning an Int that looks like the constant
         return 0;
     }
-}
 
+    /**
+     * Returns the value associated with the given key, or null if
+     * no mapping of the desired type exists for the given key or a null
+     * value is explicitly associated with the key.
+     *
+     * @param key a String, or null
+     * @return a String value, or null
+     */
+    public String getString(String key) {
+        unparcel();
+        Object o = mMap.get(key);
+        if (o == null) {
+            return null;
+        }
+        try {
+            return (String) o;
+        } catch (ClassCastException e) {
+            typeWarning(key, o, "String", e);
+            return null;
+        }
+    }
+
+    /**
+     * Removes any entry with the given key from the mapping of this Bundle.
+     *
+     * @param key a String key
+     */
+    public void remove(String key) {
+        unparcel();
+        mMap.remove(key);
+    }
+
+    /**
+     * Returns a Set containing the Strings used as keys in this Bundle.
+     *
+     * @return a Set of String keys
+     */
+    public Set<String> keySet() {
+        unparcel();
+        return mMap.keySet();
+    }
+
+    /**
+     * Returns the entry with the given key as an object.
+     *
+     * @param key a String key
+     * @return an Object, or null
+     */
+    public Object get(String key) {
+        unparcel();
+        return mMap.get(key);
+    }
+
+    /**
+     * Returns the value associated with the given key, or false if
+     * no mapping of the desired type exists for the given key.
+     *
+     * @param key a String
+     * @return a boolean value
+     */
+    public boolean getBoolean(String key) {
+        unparcel();
+        return getBoolean(key, false);
+    }
+
+    /**
+     * Returns the value associated with the given key, or defaultValue if
+     * no mapping of the desired type exists for the given key.
+     *
+     * @param key a String
+     * @return a boolean value
+     */
+    public boolean getBoolean(String key, boolean defaultValue) {
+        unparcel();
+        Object o = mMap.get(key);
+        if (o == null) {
+            return defaultValue;
+        }
+        try {
+            return (Boolean) o;
+        } catch (ClassCastException e) {
+            typeWarning(key, o, "Boolean", defaultValue, e);
+            return defaultValue;
+        }
+    }
+
+    /**
+     * If the underlying data are stored as a Parcel, unparcel them
+     * using the currently assigned class loader.
+     */
+    /* package */ synchronized void unparcel() {
+        if (mParcelledData == null) {
+            return;
+        }
+
+        int N = mParcelledData.readInt();
+        if (N < 0) {
+            return;
+        }
+        if (mMap == null) {
+            mMap = new HashMap<String, Object>();
+        }
+        mParcelledData.readMapInternal(mMap, N, mClassLoader);
+        mParcelledData.recycle();
+        mParcelledData = null;
+    }
+
+    // Log a message if the value was non-null but not of the expected type
+    private void typeWarning(String key, Object value, String className,
+        Object defaultValue, ClassCastException e) {
+        StringBuilder sb = new StringBuilder();
+        sb.append("Key ");
+        sb.append(key);
+        sb.append(" expected ");
+        sb.append(className);
+        sb.append(" but value was a ");
+        sb.append(value.getClass().getName());
+        sb.append(".  The default value ");
+        sb.append(defaultValue);
+        sb.append(" was returned.");
+        Log.w(LOG_TAG, sb.toString());
+        Log.w(LOG_TAG, "Attempt to cast generated internal exception:", e);
+    }
+
+    private void typeWarning(String key, Object value, String className,
+        ClassCastException e) {
+        typeWarning(key, value, className, "<null>", e);
+    }
+
+}
