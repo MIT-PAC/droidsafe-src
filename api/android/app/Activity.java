@@ -28,6 +28,7 @@ package android.app;
 
 import droidsafe.annotations.DSC;
 import droidsafe.annotations.DSModeled;
+import droidsafe.helpers.DSTaintObject;
 
 import com.android.internal.app.ActionBarImpl;
 import com.android.internal.policy.PolicyManager;
@@ -94,10 +95,14 @@ import java.io.FileDescriptor;
 import java.io.PrintWriter;
 import java.util.ArrayList;
 import java.util.HashMap;
+
 public class Activity extends ContextThemeWrapper
         implements LayoutInflater.Factory2,
         Window.Callback, KeyEvent.Callback,
         OnCreateContextMenuListener, ComponentCallbacks2 {
+    
+	private DSTaintObject dsTaint = new DSTaintObject();
+	private final String TAG = "Activity";
 	
 	//perform any actions that happen after an activity is created
     // GITI DSModeled
@@ -223,14 +228,6 @@ public class Activity extends ContextThemeWrapper
     private Thread mUiThread;
     final Handler mHandler = new Handler();
     
-    /*
-    @DSModeled
-    public Activity(Context context) {
-    	super();
-    	attachBaseContext(context);
-    }
-     */
-    
     /** Return the intent that started this activity. */
     public Intent getIntent() {
         return mIntent;
@@ -251,7 +248,7 @@ public class Activity extends ContextThemeWrapper
     }
 
     /** Return the application that owns this activity. */
-    @DSModeled
+    @DSModeled(DSC.BAN)
     public final Application getApplication() {
         return mApplication;
     }
@@ -575,12 +572,13 @@ public class Activity extends ContextThemeWrapper
      * @see #onPostResume
      * @see #onPause
      */
-    // DSModel: GITI 
-    @DSModeled
+    // DSModel: GITI  - This can be handled by other calls, so no implementation
+    // provided for modeling.
+    @DSModeled(DSC.SAFE)
     protected void onResume() {
         // DSModeled: DSModel: GITI - For now, no modeling
-        getApplication().dispatchActivityResumed(this);
-        mCalled = true;
+        //getApplication().dispatchActivityResumed(this);
+        //mCalled = true;
     }
 
     /**
@@ -1402,12 +1400,13 @@ public class Activity extends ContextThemeWrapper
      */
     
     // DSModel: GITI 
-    @DSModeled
+    @DSModeled(DSC.SAFE)
     public void setContentView(View view) {
-    	// DSModel: GITI - View class is modeled and provides taint analysis
-        getWindow().setContentView(view);
+    	// DSModel: GITI 
+    	dsTaint.addTaint(view);
+        //getWindow().setContentView(view);
         
-        initActionBar();
+        //initActionBar();
     }
 
     /**
@@ -1599,8 +1598,8 @@ public class Activity extends ContextThemeWrapper
                     
                     switch (mDefaultKeyMode) {
                     case DEFAULT_KEYS_DIALER:
-                        Intent intent = new Intent(Intent.ACTION_DIAL,  Uri.parse("tel:" + str));
-                        intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                        Intent intent = new Intent("android.intent.action.DIAL",  Uri.parse("tel:" + str));
+                        intent.addFlags(0x10000000);
                         startActivity(intent);    
                         break;
                     case DEFAULT_KEYS_SEARCH_LOCAL:
@@ -3020,11 +3019,8 @@ public class Activity extends ContextThemeWrapper
      * @see Fragment#startActivity 
      * @see Fragment#startActivityForResult 
      */
-    // GITI DSModeled
-    @DSModeled
     public void startActivityFromFragment(Fragment fragment, Intent intent, 
             int requestCode) {
-        /* GITI - not needed
         Instrumentation.ActivityResult ar =
             mInstrumentation.execStartActivity(
                 this, mMainThread.getApplicationThread(), mToken, fragment,
@@ -3034,7 +3030,6 @@ public class Activity extends ContextThemeWrapper
                 mToken, fragment.mWho, requestCode,
                 ar.getResultCode(), ar.getResultData());
         }
-        */
     }
 
     /**
@@ -3258,6 +3253,9 @@ public class Activity extends ContextThemeWrapper
             mParent.finishFromChild(this);
         }
         */
+        // GITI DSModeled - As per the Android process lifecycle, a finish() results in the destruction
+    	// of the Activity.
+        onDestroy();
     }
 
     /**
@@ -3716,8 +3714,6 @@ public class Activity extends ContextThemeWrapper
      * @see android.view.LayoutInflater#createView
      * @see android.view.Window#getLayoutInflater
      */
-    // GITI DSModeled
-    @DSModeled
     public View onCreateView(String name, Context context, AttributeSet attrs) {
         return null;
     }
@@ -3732,9 +3728,8 @@ public class Activity extends ContextThemeWrapper
      * @see android.view.LayoutInflater#createView
      * @see android.view.Window#getLayoutInflater
      */
-    // DSFIXME
     public View onCreateView(View parent, String name, Context context, AttributeSet attrs) {
-        /* GITI DSModeling - TBD 
+        
         if (!"fragment".equals(name)) {
             return onCreateView(name, context, attrs);
         }
@@ -3745,12 +3740,12 @@ public class Activity extends ContextThemeWrapper
         if (fname == null) {
             fname = a.getString(com.android.internal.R.styleable.Fragment_name);
         }
-        int id = a.getResourceId(com.android.internal.R.styleable.Fragment_id, View.NO_ID);
+        int id = a.getResourceId(com.android.internal.R.styleable.Fragment_id, -1);
         String tag = a.getString(com.android.internal.R.styleable.Fragment_tag);
         a.recycle();
         
         int containerId = parent != null ? parent.getId() : 0;
-        if (containerId == View.NO_ID && id == View.NO_ID && tag == null) {
+        if (containerId == -1 && id == -1 && tag == null) {
             throw new IllegalArgumentException(attrs.getPositionDescription()
                     + ": Must specify unique android:id, android:tag, or have a parent with an id for " + fname);
         }
@@ -3758,11 +3753,11 @@ public class Activity extends ContextThemeWrapper
         // If we restored from a previous state, we may already have
         // instantiated this fragment from the state and should use
         // that instance instead of making a new one.
-        Fragment fragment = id != View.NO_ID ? mFragments.findFragmentById(id) : null;
+        Fragment fragment = id != -1 ? mFragments.findFragmentById(id) : null;
         if (fragment == null && tag != null) {
             fragment = mFragments.findFragmentByTag(tag);
         }
-        if (fragment == null && containerId != View.NO_ID) {
+        if (fragment == null && containerId != -1) {
             fragment = mFragments.findFragmentById(containerId);
         }
 
@@ -3811,9 +3806,7 @@ public class Activity extends ContextThemeWrapper
             fragment.mView.setTag(tag);
         }
         return fragment.mView;
-        */
-        // GITI DSModeling, for now return null.
-    	return null;
+        
     }
 
     /**
@@ -3955,15 +3948,12 @@ public class Activity extends ContextThemeWrapper
             lastNonConfigurationInstances, config);
     }
     
-    // GITI DSModeled
-    @DSModeled
     final void attach(Context context, ActivityThread aThread,
             Instrumentation instr, IBinder token, int ident,
             Application application, Intent intent, ActivityInfo info,
             CharSequence title, Activity parent, String id,
             NonConfigurationInstances lastNonConfigurationInstances,
             Configuration config) {
-        /* GITI Modeling
         attachBaseContext(context);
 
         mFragments.attachActivity(this);
@@ -3980,7 +3970,6 @@ public class Activity extends ContextThemeWrapper
         mUiThread = Thread.currentThread();
         
         mMainThread = aThread;
-        */
         mInstrumentation = instr;
         mToken = token;
         mIdent = ident;
@@ -3993,7 +3982,6 @@ public class Activity extends ContextThemeWrapper
         mEmbeddedID = id;
         mLastNonConfigurationInstances = lastNonConfigurationInstances;
 
-        /* GITI DSModeling
         mWindow.setWindowManager(null, mToken, mComponent.flattenToString(),
                 (info.flags & ActivityInfo.FLAG_HARDWARE_ACCELERATED) != 0);
         if (mParent != null) {
@@ -4001,7 +3989,6 @@ public class Activity extends ContextThemeWrapper
         }
         mWindowManager = mWindow.getWindowManager();
         mCurrentConfig = config;
-        */
     }
 
     final IBinder getActivityToken() {

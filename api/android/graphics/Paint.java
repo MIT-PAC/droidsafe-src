@@ -385,8 +385,11 @@ public class Paint {
     // GITI DSModeled:  Seems to only set flags.
     @DSModeled(DSC.SAFE)
     public Paint(Paint paint) {
+        taint.addTaint(paint);
+        /*
         mNativePaint = native_initWithPaint(paint.mNativePaint);
         setClassVariablesFrom(paint);
+        */
     }
 
     /** Restores the paint to its default settings. */
@@ -407,11 +410,16 @@ public class Paint {
      * get() on all of the src fields, and calling the corresponding set()
      * methods on this.
      */
+    // GITI DSModeled
+    @DSModeled
     public void set(Paint src) {
         if (this != src) {
             // copy over the native settings
+            /* GITI DSModeled
             native_set(mNativePaint, src.mNativePaint);
             setClassVariablesFrom(src);
+            */
+            taint.addTaint(src);
         }
     }
 
@@ -419,6 +427,7 @@ public class Paint {
      * Set all class variables using current values from the given
      * {@link Paint}.
      */
+    /* GITI DSModeled - not needed
     private void setClassVariablesFrom(Paint paint) {
         mColorFilter = paint.mColorFilter;
         mMaskFilter = paint.mMaskFilter;
@@ -440,6 +449,7 @@ public class Paint {
 
         mBidiFlags = paint.mBidiFlags;
     }
+    */
 
     /** @hide */
     public void setCompatibilityScaling(float factor) {
@@ -683,8 +693,11 @@ public class Paint {
      *
      * @param style The new style to set in the paint
      */
+    // GITI DSModeled
+    @DSModeled
     public void setStyle(Style style) {
-        native_setStyle(mNativePaint, style.nativeInt);
+        taint.addTaint(style);
+        //native_setStyle(mNativePaint, style.nativeInt);
     }
 
     /**
@@ -800,8 +813,11 @@ public class Paint {
      * @param cap set the paint's line cap style, used whenever the paint's
      *            style is Stroke or StrokeAndFill.
      */
+    // GITI DSModeled
+    @DSModeled
     public void setStrokeCap(Cap cap) {
-        native_setStrokeCap(mNativePaint, cap.nativeInt);
+        taint.addTaint(cap);
+        //native_setStrokeCap(mNativePaint, cap.nativeInt);
     }
 
     /**
@@ -823,8 +839,11 @@ public class Paint {
      * @param join set the paint's Join, used whenever the paint's style is
      *             Stroke or StrokeAndFill.
      */
+    // GITI DSModeled
+    @DSModeled
     public void setStrokeJoin(Join join) {
-        native_setStrokeJoin(mNativePaint, join.nativeInt);
+        taint.addTaint(join);
+        // native_setStrokeJoin(mNativePaint, join.nativeInt);
     }
 
     /**
@@ -860,12 +879,17 @@ public class Paint {
      * @param shader May be null. the new shader to be installed in the paint
      * @return       shader
      */
+    // GITI DSModeled
+    @DSModeled
     public Shader setShader(Shader shader) {
+        /*
         int shaderNative = 0;
         if (shader != null)
             shaderNative = shader.native_instance;
         native_setShader(mNativePaint, shaderNative);
         mShader = shader;
+        */
+    	taint.addTaint(shader);
         return shader;
     }
 
@@ -884,12 +908,17 @@ public class Paint {
      * @param filter May be null. The new filter to be installed in the paint
      * @return       filter
      */
+    // GITI DSModeled
+    @DSModeled
     public ColorFilter setColorFilter(ColorFilter filter) {
+        /*
         int filterNative = 0;
         if (filter != null)
             filterNative = filter.native_instance;
         native_setColorFilter(mNativePaint, filterNative);
         mColorFilter = filter;
+        */
+    	taint.addTaint(filter);
         return filter;
     }
 
@@ -911,12 +940,17 @@ public class Paint {
      * @param xfermode May be null. The xfermode to be installed in the paint
      * @return         xfermode
      */
+    // GITI DSModeled
+    @DSModeled
     public Xfermode setXfermode(Xfermode xfermode) {
+        /*
         int xfermodeNative = 0;
         if (xfermode != null)
             xfermodeNative = xfermode.native_instance;
         native_setXfermode(mNativePaint, xfermodeNative);
         mXfermode = xfermode;
+        */
+    	taint.addTaint(xfermode);
         return xfermode;
     }
 
@@ -938,13 +972,18 @@ public class Paint {
      * @param effect May be null. The patheffect to be installed in the paint
      * @return       effect
      */
+    // GITI DSModeled
+    @DSModeled
     public PathEffect setPathEffect(PathEffect effect) {
+        /* GITI DSModeled
         int effectNative = 0;
         if (effect != null) {
             effectNative = effect.native_instance;
         }
         native_setPathEffect(mNativePaint, effectNative);
         mPathEffect = effect;
+        */
+        taint.addTaint(effect);
         return effect;
     }
 
@@ -967,13 +1006,18 @@ public class Paint {
      *                   paint
      * @return           maskfilter
      */
+    // GITI DSModeled
+    @DSModeled
     public MaskFilter setMaskFilter(MaskFilter maskfilter) {
+        /*
         int maskfilterNative = 0;
         if (maskfilter != null) {
             maskfilterNative = maskfilter.native_instance;
         }
         native_setMaskFilter(mNativePaint, maskfilterNative);
         mMaskFilter = maskfilter;
+        */
+    	taint.addTaint(maskfilter);
         return maskfilter;
     }
 
@@ -998,13 +1042,18 @@ public class Paint {
      * @param typeface May be null. The typeface to be installed in the paint
      * @return         typeface
      */
+    // GITI DSModeled
+    @DSModeled
     public Typeface setTypeface(Typeface typeface) {
+        /*
         int typefaceNative = 0;
         if (typeface != null) {
             typefaceNative = typeface.native_instance;
         }
         native_setTypeface(mNativePaint, typefaceNative);
         mTypeface = typeface;
+        */
+    	taint.addTaint(typeface);
         return typeface;
     }
     
@@ -1029,13 +1078,18 @@ public class Paint {
      *                   the paint.
      * @return           rasterizer
      */
+    // GITI DSModeled
+    @DSModeled
     public Rasterizer setRasterizer(Rasterizer rasterizer) {
+        /* GITI DSModled
         int rasterizerNative = 0;
         if (rasterizer != null) {
             rasterizerNative = rasterizer.native_instance;
         }
         native_setRasterizer(mNativePaint, rasterizerNative);
         mRasterizer = rasterizer;
+        */
+    	taint.addTaint(rasterizer);
         return rasterizer;
     }
     
@@ -1087,8 +1141,11 @@ public class Paint {
      *
      * @param align set the paint's Align value for drawing text.
      */
+    // GITI DSModeled
+    @DSModeled
     public void setTextAlign(Align align) {
-        native_setTextAlign(mNativePaint, align.nativeInt);
+        taint.addTaint(align);
+        //native_setTextAlign(mNativePaint, align.nativeInt);
     }
 
     /**
