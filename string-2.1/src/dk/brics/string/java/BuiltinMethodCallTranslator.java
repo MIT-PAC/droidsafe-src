@@ -58,6 +58,7 @@ import dk.brics.string.stringoperations.Delete;
 import dk.brics.string.stringoperations.DeleteCharAt;
 import dk.brics.string.stringoperations.Insert;
 import dk.brics.string.stringoperations.Postfix;
+import dk.brics.string.stringoperations.Postfix2;
 import dk.brics.string.stringoperations.Prefix;
 import dk.brics.string.stringoperations.Replace1;
 import dk.brics.string.stringoperations.Replace2;
@@ -71,6 +72,7 @@ import dk.brics.string.stringoperations.SetCharAt2;
 import dk.brics.string.stringoperations.SetLength;
 import dk.brics.string.stringoperations.Split;
 import dk.brics.string.stringoperations.Substring;
+import dk.brics.string.stringoperations.Substring2;
 import dk.brics.string.stringoperations.ToLowerCase;
 import dk.brics.string.stringoperations.ToUpperCase;
 import dk.brics.string.stringoperations.Trim;
@@ -214,7 +216,14 @@ public class BuiltinMethodCallTranslator implements MethodCallTranslator {
             
             // String.substring(int)		[this method returns a suffix of the string, starting at the specified index]
             } else if (methodName.equals("substring") && numArgs == 1) {
-                UnaryOperation op = new Postfix();
+                UnaryOperation op;
+                Integer arg1 = trackInteger(expr.getArg(0));
+                if (arg1 != null) {
+                    op = new Postfix2(arg1.intValue());
+                } else {
+                    op = new Postfix();
+                }
+
                 Variable temp = factory.createVariable(VariableType.STRINGBUFFER);
                 Variable result = factory.createVariable(VariableType.STRING);
                 factory.addStatement(new StringBufferInit(temp, callee));
@@ -226,7 +235,10 @@ public class BuiltinMethodCallTranslator implements MethodCallTranslator {
             } else if (methodName.equals("substring") && numArgs == 2) {
                 UnaryOperation op;
                 Integer arg1 = trackInteger(expr.getArg(0));
-                if (arg1 != null && arg1.intValue() == 0) {
+                Integer arg2 = trackInteger(expr.getArg(1));
+                if (arg1 != null && arg2 != null) {
+                    op = new Substring2(arg1.intValue(),arg2.intValue());
+                } else if (arg1 != null && arg1.intValue() == 0) {
                     op = new Prefix();
                 } else {
                     op = new Substring();
