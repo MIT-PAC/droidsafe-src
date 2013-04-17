@@ -16,6 +16,9 @@
 
 package android.hardware;
 
+import droidsafe.annotations.*;
+import droidsafe.helpers.*;
+
 /**
  * <p>
  * This class represents a {@link android.hardware.Sensor Sensor} event and
@@ -451,7 +454,7 @@ public class SensorEvent {
      */
     public long timestamp;
 
-
+    @DSModeled(DSC.SAFE)
     public SensorEvent(int size) {
         values = new float[size];
     }

@@ -68,8 +68,8 @@ public class ContextImpl extends Context {
     /*
     @DSSpecialize(
     	{
-    		@DSTemplate(arg = 0, value = Context.SENSOR_SERVICE, method = "getSystemServiceSensor"),
-    		@DSTemplate(arg = 0, value = Context.LOCATION_SERVICE, method = "getSystemServiceLocation")
+    		@DSTemplate(arg = 0, value = "sensor", method = "getSystemServiceSensor"),
+    		@DSTemplate(arg = 0, value = "location", method = "getSystemServiceLocation")
     	}
     )*/
 	@Override
