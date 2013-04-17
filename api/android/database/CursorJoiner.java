@@ -186,7 +186,7 @@ public final class CursorJoiner
     //public Result next() {
     public Object next() {
         /* GITI DSModeled:  For modeling purposes, we probably do not care what the result returned
-         * is.
+         * is, so return a valid Result.BOTH.
         if (!hasNext()) {
             throw new IllegalStateException("you must only call next() when hasNext() is true");
         }
