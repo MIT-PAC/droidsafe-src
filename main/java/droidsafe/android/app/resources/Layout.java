@@ -77,7 +77,15 @@ public class Layout {
 				if (text.startsWith("@") && index > 0) {
 					RString rString = stringMap.get(text.substring(index + 1));
 					logger.warn("  value=" + rString.value);
+					text = rString.value;
 				}
+			}
+			
+			if (view.name.equals("Button")) {
+				logger.warn("Button object instatiation ");
+			}
+			if (view.name.equals("TextEdit")) {
+				logger.warn("TextEdit object instatiation ");
 			}
 		}
   }

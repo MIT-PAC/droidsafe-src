@@ -250,10 +250,14 @@ public class Resources {
 		// Read in the resource id to name map
 		read_resources();
 
-		//Build UIClasses for all the layouts
-		
 		for (Layout layout: layouts) {
 			layout.buildUIObjects(stringNameToRString);
+		}
+
+		//Build UIClasses for all the layouts
+		SootClass sc = Scene.v().getSootClass("com.example.android.apis.R");
+		if (sc != null) {
+			logger.warn("R class " + sc);
 		}
 	}
 

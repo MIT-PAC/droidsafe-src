@@ -63,7 +63,8 @@ public class IntegrateXMLLayouts extends BodyTransformer {
 		}
 
 		protected void dumpStmtBody(StmtBody stmtBody) {
-            System.out.printf("Dumping body %s \n", stmtBody);
+            //System.out.printf("Dumping body %s \n", stmtBody);
+			System.out.printf("Dumping statement body ");
 
             // get body's unit as a chain
 			Chain units = stmtBody.getUnits();
