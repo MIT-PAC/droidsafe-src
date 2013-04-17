@@ -95,6 +95,7 @@ import java.io.FileDescriptor;
 import java.io.PrintWriter;
 import java.util.ArrayList;
 import java.util.HashMap;
+
 public class Activity extends ContextThemeWrapper
         implements LayoutInflater.Factory2,
         Window.Callback, KeyEvent.Callback,
@@ -226,14 +227,6 @@ public class Activity extends ContextThemeWrapper
 
     private Thread mUiThread;
     final Handler mHandler = new Handler();
-    
-    /*
-    @DSModeled
-    public Activity(Context context) {
-    	super();
-    	attachBaseContext(context);
-    }
-     */
     
     /** Return the intent that started this activity. */
     public Intent getIntent() {
@@ -581,7 +574,7 @@ public class Activity extends ContextThemeWrapper
      */
     // DSModel: GITI  - This can be handled by other calls, so no implementation
     // provided for modeling.
-    @DSModeled
+    @DSModeled(DSC.SAFE)
     protected void onResume() {
         // DSModeled: DSModel: GITI - For now, no modeling
         //getApplication().dispatchActivityResumed(this);
@@ -1407,7 +1400,7 @@ public class Activity extends ContextThemeWrapper
      */
     
     // DSModel: GITI 
-    @DSModeled
+    @DSModeled(DSC.SAFE)
     public void setContentView(View view) {
     	// DSModel: GITI 
     	dsTaint.addTaint(view);
@@ -3260,6 +3253,8 @@ public class Activity extends ContextThemeWrapper
             mParent.finishFromChild(this);
         }
         */
+        // GITI DSModeled - As per the Android process lifecycle, a finish() results in the destruction
+    	// of the Activity.
         onDestroy();
     }
 
@@ -3734,6 +3729,7 @@ public class Activity extends ContextThemeWrapper
      * @see android.view.Window#getLayoutInflater
      */
     public View onCreateView(View parent, String name, Context context, AttributeSet attrs) {
+        
         if (!"fragment".equals(name)) {
             return onCreateView(name, context, attrs);
         }
@@ -3810,6 +3806,7 @@ public class Activity extends ContextThemeWrapper
             fragment.mView.setTag(tag);
         }
         return fragment.mView;
+        
     }
 
     /**
