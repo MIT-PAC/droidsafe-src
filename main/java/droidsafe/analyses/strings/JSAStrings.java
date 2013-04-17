@@ -19,6 +19,7 @@ import org.slf4j.LoggerFactory;
 
 import soot.SootClass;
 import soot.ValueBox;
+import soot.Value;
 
 import droidsafe.android.app.Harness;
 import droidsafe.utils.SootUtils;
@@ -36,14 +37,15 @@ import dk.brics.automaton.RegExp;
 // import droidsafe.analyses.strings.AutomataUtils;
 
 public class JSAStrings {
-
 	private final static Logger logger = LoggerFactory.getLogger(JSAStrings.class);
 
 
 	private List<ValueBox> hotspots;
 
-	private Map<ValueBox,Automaton> automata;
+	private Map<Value,Automaton> automata;
 
+ private StringAnalysis sa;
+    
 	/** Singleton for analysis */
 	private static JSAStrings jsa;
 
@@ -56,9 +58,11 @@ public class JSAStrings {
 		}
 	}
 
+
 	private JSAStrings() {
 		hotspots = new LinkedList<ValueBox>();
-		automata = new HashMap<ValueBox,Automaton>();
+		automata = new HashMap<Value,Automaton>();
+    
 	}
 
 	public List<ValueBox> getHotspots() {
@@ -88,13 +92,10 @@ public class JSAStrings {
 		}
 
 		SootClass clazz = StringAnalysis.loadClass(Harness.HARNESS_CLASS_NAME);
-
-		loadHotspotsFromFile("hotspots.txt");
-
-		StringAnalysis sa = new StringAnalysis(hotspots); // Run the analysis.
+		sa = new StringAnalysis(hotspots); // Run the analysis.
 
 		for (ValueBox h : hotspots) {
-			automata.put(h,sa.getAutomaton(h));
+        automata.put(h.getValue(),sa.getAutomaton(h));
 		}		
 		return;
 	}
@@ -109,19 +110,13 @@ public class JSAStrings {
 	}
 
 	public void addArgumentHotspots(String signature, int arg) {
-      hotspots.addAll(StringAnalysis.getArgumentExpressions(signature,arg));
-
-	}
-
-	public void loadHotspotsFromFile(String fname) {
-		// TODO: Read in the hotspots from the named file, rather than the static methods listed here.
-		  v().addArgumentHotspots("<android.content.Intent: void <init>(java.lang.String)>", 0);
-		  v().addArgumentHotspots("<android.content.Intent: android.content.Intent addCategory(java.lang.String)>", 0);	
-		  v().addArgumentHotspots("<java.net.URI: void <init>(java.lang.String)>", 0);
+      List<ValueBox> sigSpots = StringAnalysis.getArgumentExpressions(signature,arg);
+      logger.debug("For signature " + signature + " got " + sigSpots.size() + "hotspots.");
+      hotspots.addAll(sigSpots);
 	}
 
 
-	public String getRegex(ValueBox v) {
+	public String getRegex(Value v) {
 		Automaton a = automata.get(v);
 		if (a != null) {
 			return AutomataUtil.convertAutomata(a).toString();
@@ -131,11 +126,15 @@ public class JSAStrings {
 
 
 	public void log() {
+		logger.debug("Done with String analysis");
 	  JSAStrings jsa = JSAStrings.v();
+
+	  int i = 0;
 	  for (ValueBox v : jsa.getHotspots()) {
-	  	logger.debug("Hotspot REGEX: " + jsa.getRegex(v));
-	  }
-	}
+        logger.debug("Hotspot: " + sa.getSourceFile(v) + ":::" + sa.getLineNumber(v) + ":::" + jsa.getRegex(v.getValue()));
+        // logger.debug("Hotspot REGEX: " + jsa.getRegex(v.getValue()));
+    }
+  }
 	
 	private void convertHotspots(StringAnalysis sa, List<ValueBox> hotspots) {
 		logger.debug("Converting Automata");
