@@ -206,15 +206,17 @@ public class Resources {
 		manifest = new AndroidManifest (manifest_file);
 		package_name = manifest.manifest.package_name;
 
-    File layout_dir = new File (application_base, "res/layout");
-    for (File layout_source : layout_dir.listFiles()) {
-    	// logger.info ("considering layout file {}", layout_source);
-    	String name = layout_source.getName();
-    	String[] name_ext = name.split ("[.]", 2);
-    	// logger.info ("name/ext = {}/{}", name_ext[0], name_ext[1]);
-    	if (name_ext[1].equals ("xml"))
-    		layouts.add (new Layout (layout_source));
-    }
+		File layout_dir = new File (application_base, "res/layout");
+		if (layout_dir.exists()) {
+			for (File layout_source : layout_dir.listFiles()) {
+				// logger.info ("considering layout file {}", layout_source);
+				String name = layout_source.getName();
+				String[] name_ext = name.split ("[.]", 2);
+				// logger.info ("name/ext = {}/{}", name_ext[0], name_ext[1]);
+				if (name_ext[1].equals ("xml"))
+					layouts.add (new Layout (layout_source));
+			}
+		}
 
     // Check to see how many values directories we have. If more than one, there is localization and we don't want to
     // store any values
