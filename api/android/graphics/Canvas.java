@@ -6,6 +6,8 @@ import droidsafe.helpers.*;
 public class Canvas {
 	private DSTaintObject dsTaint = new DSTaintObject();
 	
+	private Bitmap  mBitmap;
+	
 	@DSModeled(value = DSC.SAFE)
 	public Canvas() {
 		//Do Nothing
@@ -29,7 +31,7 @@ public class Canvas {
 	
 	@DSModeled(DSC.SAFE)
 	public void drawColor(int i) {
-		dsTaint.addTaints(i);
+		dsTaint.addTaint(i);
 	}
 	
 	@DSModeled(DSC.SAFE)
@@ -37,4 +39,46 @@ public class Canvas {
 		dsTaint.addTaint(i);
 		return dsTaint.getTaintInt();
 	}
+	
+	@DSModeled(value = DSC.SAFE)
+	public int getDensity() {
+		return dsTaint.getTaintInt();
+		//return mDensity;
+    }
+	
+	@DSModeled(value = DSC.SAFE)
+	public void setDensity(int density) {
+		dsTaint.addTaint(density);  //Density is saved both here and in the bitmap
+		mBitmap.setDensity(density);  //setDensity will track the taint in the Bitmap object
+		/*
+        if (mBitmap != null) {
+            mBitmap.setDensity(density);
+        }
+        mDensity = density;
+        */
+	}
+	
+	@DSModeled(value = DSC.SAFE)
+	public void setBitmap(Bitmap bitmap) {
+		dsTaint.addTaint(bitmap);
+		dsTaint.addTaint(bitmap.getDensity()); //getDensity will return a tainted value
+		/*
+        if (isHardwareAccelerated()) {
+            throw new RuntimeException("Can't set a bitmap device on a GL canvas");
+        }
+
+        int pointer = 0;
+        if (bitmap != null) {
+            if (!bitmap.isMutable()) {
+                throw new IllegalStateException();
+            }
+            throwIfRecycled(bitmap);
+            mDensity = bitmap.mDensity;
+            pointer = bitmap.ni();
+        }
+
+        native_setBitmap(mNativeCanvas, pointer);
+        mBitmap = bitmap;
+        */
+    }
 }
