@@ -2739,10 +2739,9 @@ public class Activity extends ContextThemeWrapper
           perfectly, but grab as many fields as we can.
          */
         Intent resultIntent = new Intent();
-        resultIntent.setAction(intent.getAction());
-        resultIntent.setType(intent.getType());
-        resultIntent.setData(intent.getData());
-
+        
+        droidsafe.helpers.DSUtils.translateIntent(intent, resultIntent);
+                
         this.onActivityResult(requestCode, /* just make this up */ -1,
                               resultIntent);
     }
