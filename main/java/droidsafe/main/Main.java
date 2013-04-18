@@ -119,8 +119,8 @@ public class Main {
 		logger.info("Ending DroidSafe Run");
 
 		logger.info("Starting Attribute Modeling");
-    AttributeModeling.run();
-    logger.info("Finished Attribute Modeling");
+		AttributeModeling.run();
+		logger.info("Finished Attribute Modeling");
 
 		// print out what modeling is required for this application
 		RequiredModeling.run();
