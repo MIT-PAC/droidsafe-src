@@ -12,6 +12,7 @@ import org.slf4j.LoggerFactory;
 import droidsafe.speclang.ArgumentValue;
 import droidsafe.speclang.Method;
 
+import soot.Hierarchy;
 import soot.Scene;
 import soot.SootClass;
 import soot.SootMethod;
@@ -128,6 +129,31 @@ public class SootMethodList implements Iterable<SootMethod>{
 		return null;
 	}
 
+	/** Given a method, find the method in this sootmethod list that is the closest 
+	 * parent of the method.  Give prefence to class inheritance over interfaces 
+	 * definitions.
+	 */
+	public SootMethod getClosestOverriddenMethod(SootMethod child) {
+		SootClass clz = child.getDeclaringClass();
+		Hierarchy hierarchy = Scene.v().getActiveHierarchy();
+    	    	
+    	List<SootClass> classes = new LinkedList<SootClass>();
+    	
+    	classes.addAll(hierarchy.getSuperclassesOf(clz));
+    	
+    	classes.addAll(SootUtils.getSuperInterfacesOf(clz));
+    	    	
+    	for (SootClass parent : classes) {
+    		for (SootMethod method : parent.getMethods()) {
+    			if (this.contains(method) &&
+    					method.getSubSignature().equals(child.getSubSignature()))
+    				return method;
+    		}
+    	}
+    	
+    	return null;
+	}
+	
 	/**
 	 * Add all methods from the jar file. Note this does not add them to 
 	 * soot's scene

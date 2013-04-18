@@ -17,6 +17,8 @@ import java.util.List;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import com.google.common.collect.ImmutableMap;
+
 import droidsafe.android.system.API;
 import droidsafe.android.system.Components;
 import droidsafe.utils.SootUtils;
@@ -62,6 +64,16 @@ import droidsafe.main.Constants;
  */
 public class Harness {
 	private final static Logger logger = LoggerFactory.getLogger(Harness.class);
+	
+	private final static String RUNTIME_MODELING_CLASS = "droidsafe.runtime.DroidSafeAndroidRuntime";
+
+	//map of component class names to the init method that should be called for them...
+	private static Map<String, String> componentInitMethod = ImmutableMap.of(
+			Components.ACTIVITY_CLASS, "<" + RUNTIME_MODELING_CLASS + ": void modelActivity(android.app.Activity)>",
+			Components.SERVICE_CLASS, "<" + RUNTIME_MODELING_CLASS + ": void modelService(android.app.Service)>",
+			Components.CONTENTPROVIDER_CLASS, "<" + RUNTIME_MODELING_CLASS + ": void modelContentProvider(android.content.ContentProvider)>",
+			Components.BROADCASTRECEIVER_CLASS, "<" + RUNTIME_MODELING_CLASS + ": void modelBroadCastReceiver(android.content.BroadcastReceiver)>"
+			);
 	
 	private SootClass harnessClass;
 	private SootMethod harnessMain;
@@ -131,6 +143,7 @@ public class Harness {
 		harnessMain.setActiveBody(body);
 		
 		Stmt beginCalls = mainMethodHeader(body);
+		addCallToModelingRuntime(body);
 		addCallsToComponentEntryPoints(body);
 		addCallsToNonComponentEntryPoints(body);
 		
@@ -139,14 +152,22 @@ public class Harness {
 		
 		body.getUnits().add(Jimple.v().newReturnVoidStmt());
 		
+		
 		Scene.v().addClass(harnessClass);
 		Scene.v().loadClass(harnessClass.getName(), SootClass.BODIES);
-		harnessClass.setApplicationClass();
-		
+		harnessClass.setApplicationClass();		
 		
 		SootUtils.writeByteCodeAndJimple(Project.v().getOutputDir() + File.separator + HARNESS_CLASS_NAME, getHarnessClass());
 	}
 
+	//add call to the modeling entry point for the modeling of the android runtime
+	private void addCallToModelingRuntime(StmtBody body) {
+		SootClass dsRuntime = Scene.v().getSootClass("droidsafe.runtime.DroidSafeAndroidRuntime");
+		SootMethod entry = dsRuntime.getMethod("void main()");
+		Stmt call = Jimple.v().newInvokeStmt(makeInvokeExpression(entry, null, new LinkedList<Value>()));
+		body.getUnits().add(call);
+	}
+	
 	/**
 	 * we have to find all creation sites of objects of application classes.  We want to call
 	 * any method that overrides an api method on the object (allocnode) in the harness class
@@ -222,7 +243,7 @@ public class Harness {
 
 	private void handleAllocOfAPIImplementors(NewExpr expr, AssignStmt stmt, SootClass clz, Chain<Unit> units) {
 		//create field in the harness class
-		SootField field = new SootField(FIELDNAME + fieldID, expr.getType(), Modifier.PUBLIC | Modifier.STATIC);
+		SootField field = new SootField(FIELDNAME + fieldID++, expr.getType(), Modifier.PUBLIC | Modifier.STATIC);
 		harnessClass.addField(field);
 		
 		//remember this field for later so we can create all api overriding calls in it
@@ -240,7 +261,9 @@ public class Harness {
 		//an api method
 		for (SootField field : generatedFields) {
 			SootClass clz = ((RefType)field.getType()).getSootClass();
-			
+			//we need to keep around this field if there are non-modeled calls to it
+			//any method of it
+			boolean needField = false;
 			for (SootMethod method : clz.getMethods()) {
 				//Messages.log("    Checking for method: " + method.getSignature());
     			if (!clz.declaresMethod(method.getSubSignature()) ||
@@ -248,15 +271,22 @@ public class Harness {
     				continue;
  
     			if (Hierarchy.v().isImplementedSystemMethod(method)) {
-    				logger.info("Adding call in harness to non-component entry point: {}", method.toString());
-    				//create a local to point to the field
-    				Local receiver = Jimple.v().newLocal("l" + localID++, field.getType());
-    				body.getLocals().add(receiver);
-    				//assign the local to the field
-    				body.getUnits().add(Jimple.v().newAssignStmt(receiver, 
-    						Jimple.v().newStaticFieldRef(field.makeRef())));
-    				//create a call to this entry point
-    				createCall(method, body, receiver);
+    				//find the closest overriden method from the api
+    				SootMethod closestParent = API.v().getClosestOverridenAPIMethod(method);
+    				//don't add a call for overrides that override a method that is modeled
+    				//if modeled, it means we have modeled all registrations of the method
+    				if (!API.v().isAPIModeledMethod(closestParent)) {
+    					logger.info("Adding call in harness to non-component entry point: {}", method.toString());
+    					//create a local to point to the field
+    					Local receiver = Jimple.v().newLocal("l" + localID++, field.getType());
+    					body.getLocals().add(receiver);
+    					//assign the local to the field
+    					body.getUnits().add(Jimple.v().newAssignStmt(receiver, 
+    							Jimple.v().newStaticFieldRef(field.makeRef())));
+    					//create a call to this entry point
+    					createCallWithNewArgs(method, body, receiver);
+    					needField = true;
+    				}
     			} 
 			}
 		}
@@ -306,19 +336,34 @@ public class Harness {
 				//create a constructor for this call unless the call itself is a constructor
 				if (!entryPoint.isConstructor())
 					addConstructorCall(body, receiver, type);
+				else {
+					//create the call to the entry point method
+					createCallWithNewArgs(entryPoint, body, receiver);
+				}
 				
 				logger.debug("Adding new receiver object to harness main method: {}", clazz.toString());
 				localsMap.put(clazz, receiver);
 				
+				//since this is a component, add a call to the launch (init) method in the 
+				//runtime modeling
+				SootMethod initMethod = Scene.v().getMethod(componentInitMethod.get(Hierarchy.v().getComponentParent(clazz).getName()));
+				LinkedList<Value> args = new LinkedList<Value>();
+				args.add(receiver);
+				Stmt call = Jimple.v().newInvokeStmt(makeInvokeExpression(initMethod, null, args));
+				body.getUnits().add(call);
+
 			}
-			
-			Local receiver = localsMap.get(clazz);
-			//create the call to the entry point method
-			createCall(entryPoint, body, receiver);
+			//if this is not a constructor call then add the call, constructor calls are taken care of
+			// on the first instance of an object above
+			if (!entryPoint.isConstructor()){
+				Local receiver = localsMap.get(clazz);
+				//create the call to the entry point method
+				createCallWithNewArgs(entryPoint, body, receiver);
+			}
 		}
 	}
-	
-	private void createCall(SootMethod method, StmtBody body, Local receiver) {
+
+	private void createCallWithNewArgs(SootMethod method, StmtBody body, Local receiver) {
 		//next create locals for all arguments
 		//List of argument position to locals created...
 		List<Value> args = new LinkedList<Value>();

@@ -68,13 +68,20 @@ public class Method implements Comparable<Method> {
 	
 	/**
 	 * check to see if these two method objects refer to the same method
-	 * even though they have different concrete param values.
+	 * even though they have different concrete param values, but only if they
+	 * have the same receiver (type or allocnode).
 	 * 
 	 * @param meth2 the method to check against
 	 * @return true if same underlying method that is called.
 	 */
 	public boolean isSameMethod(Method meth2) {
-		return meth2.getSootMethod().equals(sootMethod);
+		if (!meth2.getSootMethod().equals(sootMethod))
+			return false;
+		if (this.hasReceiver() && meth2.hasReceiver() && !meth2.receiver.equals(this.receiver)) 
+			return false;
+		if (!this.hasReceiver() && meth2.hasReceiver())
+			return false;
+		return true;
 	}
 	
 	/**

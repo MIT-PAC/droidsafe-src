@@ -3,21 +3,40 @@ package droidsafe.analyses;
 import java.io.File;
 import java.io.FileWriter;
 import java.util.Collection;
+import java.util.Collections;
+import java.util.Iterator;
 import java.util.LinkedHashSet;
+import java.util.LinkedList;
+import java.util.List;
 import java.util.Set;
+import java.util.TreeSet;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import droidsafe.analyses.rcfg.OutputEvent;
+import droidsafe.analyses.rcfg.RCFG;
+import droidsafe.analyses.rcfg.RCFGNode;
 import droidsafe.android.app.Harness;
 import droidsafe.android.app.Project;
 import droidsafe.android.system.API;
 import droidsafe.main.Config;
+import droidsafe.utils.CannotFindMethodException;
+import droidsafe.utils.SootUtils;
 import droidsafe.utils.Utils;
+import soot.Body;
 import soot.MethodOrMethodContext;
+import soot.RefType;
 import soot.Scene;
+import soot.SootClass;
 import soot.SootMethod;
+import soot.jimple.InstanceInvokeExpr;
+import soot.jimple.InvokeExpr;
+import soot.jimple.Stmt;
+import soot.jimple.StmtBody;
+import soot.jimple.spark.pag.AllocNode;
 import soot.jimple.toolkits.callgraph.ReachableMethods;
+import soot.util.Chain;
 import soot.util.queue.QueueReader;
 
 /**
@@ -29,60 +48,92 @@ import soot.util.queue.QueueReader;
  */
 public class RequiredModeling {
 	private final static Logger logger = LoggerFactory.getLogger(AttributeModeling.class);
-		
+	
 	public static void run() {
-		//this should only run if we are including the api classes as app classes
-		if (!Config.v().API_CLASSES_ARE_APP)
-			return;
+		Set<String> toModel = new TreeSet<String>();
+		
+		for (SootMethod method : GeoPTA.v().getAllReachableMethods()) {
+			//loop through all reachable methods, and find system methods that are not modeled
+			//or system methods that do not exist (but are called)
+			if (API.v().isSystemClass(method.getDeclaringClass()) && !API.v().isAPIModeledMethod(method))
+				toModel.add(method.getSignature());
+		}
 		
 		try {
-			FileWriter fw = new FileWriter(Project.v().getOutputDir() + File.separator + "analzye-api-required-modeling-pta.txt");
-
-			//for (SootMethod meth : findReachableMethodsFrom(Harness.v().getMain())) {
-			for (SootMethod meth : GeoPTA.v().getAllReachableMethods()) {
-				//if not an api method, then we don't care to model it
-				//should have the source
-				if (!API.v().isSystemMethod(meth)) 
-					continue; 
-
-				String reason = "";
-
-				if (meth.isAbstract())
-					reason += "abstract";
-				if (meth.isNative())
-					reason += "native";
-				if (meth.isPhantom())
-					reason += "phantom";
-				if (!reason.equals(""))
-					fw.write(meth + " (" + reason + ")\n");
+			FileWriter fw = new FileWriter(Project.v().getOutputDir() + File.separator + "api-modeling-summary.txt");
+			fw.write("Unmodeled Methods:\n\n");
+			for (String m : toModel) {
+				fw.write(m + "\n");
 			}
+			fw.write("\nErrors in PTA:\n\n");
+			checkAllocations(fw);
+			
 			fw.close();
 		} catch (Exception e) {
 			logger.error("Cannot write required modeling file");
 			System.exit(1);
 		}
+		
 
 	}
+	
+	public static void checkAllocations(FileWriter fw) throws Exception {
+		//loop over all code and find calls for with any tracked as received or arg
+		for (SootClass clazz : Scene.v().getApplicationClasses()) {
+			if (clazz.isInterface() || clazz.getName().equals(Harness.HARNESS_CLASS_NAME) ||
+					clazz.getName().equals("edu.mit.csail.droidsafe.DroidSafeCalls"))
+				continue;
 
-	public static Set<SootMethod> findReachableMethodsFrom(SootMethod m) {
-		LinkedHashSet<SootMethod> methods = new LinkedHashSet<SootMethod>();
-		Collection<MethodOrMethodContext> list = new LinkedHashSet<MethodOrMethodContext>();
-		list.add(m);
-		ReachableMethods reachable = new ReachableMethods(Scene.v().getCallGraph(), (Collection<MethodOrMethodContext>)list);
-		reachable.update();
-		
-		QueueReader<MethodOrMethodContext> reachables = reachable.listener();
-		
-		
-		while (reachables.hasNext()) {
-			MethodOrMethodContext meth = reachables.next();
-			if (meth instanceof SootMethod) {
-				methods.add((SootMethod)meth);
-			} else {
-				Utils.ERROR_AND_EXIT(logger, "Unknown edge in callgraph {}", meth);
+			//don't add entry points into the system classes...
+			if (API.v().isSystemClass(clazz))
+				continue;
+
+			for (SootMethod meth : clazz.getMethods()) {
+				if (meth.isConcrete()) {
+					checkInvokes(meth, meth.retrieveActiveBody(), fw);
+				}
 			}
 		}
-		
-		return methods;
-	}	
+	}
+	
+	private static void checkInvokes(SootMethod m, Body b, FileWriter fw) throws Exception {
+		StmtBody stmtBody = (StmtBody)b;
+
+		// get body's unit as a chain
+		Chain units = stmtBody.getUnits();
+
+		Iterator stmtIt = units.snapshotIterator();
+
+		while (stmtIt.hasNext()) {
+			Stmt stmt = (Stmt)stmtIt.next();
+			
+			if (!stmt.containsInvokeExpr()) {
+				continue;
+			}
+
+			InvokeExpr expr = (InvokeExpr)stmt.getInvokeExpr();
+			
+			
+			//get the receiver, receivers are only present for instance invokes 
+			InstanceInvokeExpr iie = SootUtils.getInstanceInvokeExpr(stmt);
+			if (iie != null) {
+				SootMethod resolved = null;
+				for (AllocNode node : GeoPTA.v().getPTSetContextIns(iie.getBase())) {
+					if ( node.getType() instanceof RefType ) {
+						SootClass sc = ((RefType)node.getType()).getSootClass();
+						try {
+							resolved = SootUtils.resolveConcreteDispatch(sc, iie.getMethod());
+						} catch (CannotFindMethodException e) {
+							resolved = null;
+						}
+					}
+					if (resolved != null)
+						break;
+				}
+				if (resolved == null) 
+					fw.write(String.format("No valid allocations for receiver of %s of type %s in %s (%s).\n\n",
+							iie.getMethod(), iie.getBase().getType(), m, SootUtils.getSourceLocation(stmt, m.getDeclaringClass())));
+			}
+		}
+	}
 }

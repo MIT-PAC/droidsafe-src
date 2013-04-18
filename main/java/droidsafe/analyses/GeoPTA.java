@@ -1,6 +1,7 @@
 package droidsafe.analyses;
 
 import java.io.File;
+import java.io.FileNotFoundException;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.PrintStream;
@@ -28,7 +29,9 @@ import droidsafe.android.app.Project;
 import droidsafe.main.Config;
 import droidsafe.utils.Utils;
 
+import soot.G;
 import soot.Local;
+import soot.MethodContext;
 import soot.MethodOrMethodContext;
 import soot.Scene;
 import soot.SootField;
@@ -38,20 +41,23 @@ import soot.Value;
 import soot.jimple.Stmt;
 import soot.jimple.paddle.PaddleTransformer;
 import soot.jimple.spark.SparkTransformer;
-import soot.jimple.spark.geom.geomPA.CallsiteContextVar;
+import soot.jimple.spark.geom.dataRep.CallsiteContextVar;
 import soot.jimple.spark.geom.geomPA.CgEdge;
-import soot.jimple.spark.geom.geomPA.GeomEvaluator;
 import soot.jimple.spark.geom.geomPA.GeomPointsTo;
 import soot.jimple.spark.geom.geomPA.IVarAbstraction;
 import soot.jimple.spark.geom.geomPA.ZArrayNumberer;
+import soot.jimple.spark.geom.helper.ContextTranslator;
+import soot.jimple.spark.geom.helper.Obj_1cfa_extractor;
 import soot.jimple.spark.pag.AllocDotField;
 import soot.jimple.spark.pag.AllocNode;
 import soot.jimple.spark.pag.LocalVarNode;
+import soot.jimple.spark.pag.MethodPAG;
 import soot.jimple.spark.pag.Node;
 import soot.jimple.spark.pag.VarNode;
 import soot.jimple.toolkits.callgraph.CallGraph;
 import soot.jimple.toolkits.callgraph.Edge;
 import soot.jimple.toolkits.callgraph.Targets;
+import soot.jimple.toolkits.typing.ClassHierarchy;
 import soot.options.PaddleOptions;
 import soot.options.SparkOptions;
 import soot.util.queue.QueueReader;
@@ -69,14 +75,29 @@ import soot.jimple.NewExpr;
 public class GeoPTA {
 	private final static Logger logger = LoggerFactory.getLogger(GeoPTA.class);
 	private GeomPointsTo ptsProvider;
-	/** list of all objects that are context sensitive for resolution */
-	private ZArrayNumberer<CallsiteContextVar> ct_sens_objs;
 	private CallGraph callGraph;
 	/** bimap of new expressions to their alloc node representation */
 	private HashBiMap<Object, AllocNode> newToAllocNodeMap;
 	private static GeoPTA v;
 	
-	
+
+	/**
+	 * Reset the PTA and get it ready for another run.
+	 */
+	public static void release() {
+		v = null;
+		Scene.v().releaseCallGraph();
+		Scene.v().releasePointsToAnalysis();
+		
+		G.v().MethodPAG_methodToPag = new HashMap<SootMethod, MethodPAG>();
+		
+		ContextTranslator.pts_1cfa_map = null;
+		ContextTranslator.objs_1cfa_map = null;
+		
+		System.gc();
+		System.gc();
+	}
+
 	/**
 	 * Return the instance of the PTA.
 	 */
@@ -92,16 +113,23 @@ public class GeoPTA {
 		
 		setGeomPointsToAnalysis();
 		
+		
 		v = new GeoPTA();		
 	}
 	
 	private GeoPTA() {
 		ptsProvider = (GeomPointsTo)Scene.v().getPointsToAnalysis();
+		ContextTranslator.build_1cfa_map(ptsProvider);
 		callGraph = Scene.v().getCallGraph();
-		resolveContext();
 		createNewToAllocMap();
-		//dumpPTA();
-		//dumpCallGraph(Project.v().getOutputDir() + File.separator + "callgraph.dot");
+		
+		if (Config.v().DUMP_PTA){
+			dumpPTA("./droidsafe/pta.txt");
+		}
+		
+		if (Config.v().DUMP_CALL_GRAPH) {
+			dumpCallGraph(Project.v().getOutputDir() + File.separator + "callgraph.dot");
+		}
 	}
 	
 	/**
@@ -132,7 +160,7 @@ public class GeoPTA {
 				newToAllocNodeMap.put(an.getNewExpr(), an);
 			}
 		}
-		
+		/*
 		for (IVarAbstraction ivar : ptsProvider.pointers) {
 			if (ivar == null || ivar.get_all_points_to_objects() == null)
 				continue;
@@ -141,9 +169,14 @@ public class GeoPTA {
 					newToAllocNodeMap.put(an.getNewExpr(), an);
 				}
 			}
-		}
+		}*/
 		
 		for (IVarAbstraction ivar : ptsProvider.allocations) {
+			//allocations in the pta don't have context and are not pointer
+			//they just wrap the underlying allocnode
+			AllocNode obj = (AllocNode)ivar.getWrappedNode();
+			newToAllocNodeMap.put(obj.getNewExpr(), obj);
+			/*
 			if (ivar == null || ivar.get_all_points_to_objects() == null)
 				continue;
 			for (AllocNode an : ivar.get_all_points_to_objects()) {
@@ -151,36 +184,10 @@ public class GeoPTA {
 					newToAllocNodeMap.put(an.getNewExpr(), an);
 				}
 			}
+			*/
 		}
 	}
 
-	private void resolveContext() {
-		ct_sens_objs = new ZArrayNumberer<CallsiteContextVar>();
-		CallsiteContextVar context_obj = null;
-
-		for ( IVarAbstraction pobj : ptsProvider.allocations ) {
-			AllocNode obj = (AllocNode)pobj.getWrappedNode();
-			SootMethod sm = obj.getMethod();
-
-			if ( sm == null ) {
-				context_obj = new CallsiteContextVar(null, obj);
-				ct_sens_objs.add(context_obj);
-			}
-			else {
-				int sm_int = ptsProvider.getIDFromSootMethod(sm);
-				if ( ptsProvider.isReachableMethod(sm_int) ) {
-					// We also temporarily build the 1cfa object
-					List<CgEdge> edges = ptsProvider.getCallEdgesInto(sm_int);
-
-					for ( CgEdge ce : edges ) {
-						context_obj = new CallsiteContextVar(ce, obj);
-						ct_sens_objs.add(context_obj);
-					}
-				}
-			}
-		}
-	}
-	
 	/**
 	 * Return list of all reachable methods as calculated by pta.
 	 */
@@ -210,7 +217,7 @@ public class GeoPTA {
 	public IVarAbstraction getInternalNode(Value v) {
 		if (v instanceof Local) {
 			LocalVarNode node = ptsProvider.findLocalVarNode(v);
-			IVarAbstraction internalNode = ptsProvider.getInternalNode(node);
+			IVarAbstraction internalNode = ptsProvider.findInternalNode(node);
 			return internalNode;
 		} else if (v instanceof SootField) {
 			Utils.ERROR_AND_EXIT(logger, "Unknown type for pointer: {}", v.getClass());
@@ -262,14 +269,14 @@ public class GeoPTA {
 					long l = cgEdge.map_offset;
 					long r = l + ptsProvider.max_context_size_block[cgEdge.s];
 
-					Vector<CallsiteContextVar> outList = new Vector<CallsiteContextVar>();
-					ivar.get_all_context_sensitive_objects(l, r, ct_sens_objs, outList);
+					Obj_1cfa_extractor contextObjsVisitor = new Obj_1cfa_extractor();
+					ivar.get_all_context_sensitive_objects(l, r, contextObjsVisitor);
 
-					for (CallsiteContextVar ccv : outList) {
+					for (CallsiteContextVar ccv : contextObjsVisitor.outList) {
 						//this var assignment here seems to denote if the alloc can be included 
 						//in further searches, so once we grab, make sure to say it is no
 						//longer in another queue.
-						ccv.inQ = false;
+						//ccv.inQ = false;
 						allocNodes.add((AllocNode)ccv.var);
 					}
 				} else if (sparkNode == null) {
@@ -306,6 +313,10 @@ public class GeoPTA {
 	public Set<AllocNode> getPTSet(Value v, Edge context) {
 		//logger.info("Querying pt set for: {} in {}", v, context);
 		IVarAbstraction ivar = getInternalNode(v);
+		if (ivar == null) {
+			//nothing known about this pointer:
+			return new HashSet<AllocNode>();
+		}
 		Node sparkNode = ivar.getWrappedNode();
 		
 		return getPTSet(sparkNode, ivar, context, v);
@@ -337,32 +348,53 @@ public class GeoPTA {
 		return allocNodes;
 	}
 	
+	
+	public void dumpPTA() {
+		dumpPTA(System.out);
+	}
+	
+	public void dumpPTA(String fileName) {	
+		try {
+			dumpPTA(new PrintStream(fileName));
+		}
+		catch (FileNotFoundException e) {
+			
+		}
+	}
+	
 	/**
 	 * Print out all points to sets.
 	 */
-	public void dumpPTA() {
-		Vector<CallsiteContextVar> outList = new Vector<CallsiteContextVar>();
+	public void dumpPTA(PrintStream file) {
 		
+		System.out.print("======================= dumpPTA ()=====================================\n");
+		Vector<CallsiteContextVar> outList = new Vector<CallsiteContextVar>();
 		for ( IVarAbstraction pn : ptsProvider.pointers ) {
+			IVarAbstraction orig = pn;
 			pn = pn.getRepresentative();
 			Node v = pn.getWrappedNode();
 
-			if ( pn != pn.getRepresentative() )
-				continue;
+			/*if ( pn != pn.getRepresentative() )
+				continue;*/
 
 			int method = ptsProvider.getMappedMethodID(v);
 			SootMethod pointerMethod = ptsProvider.getSootMethodFromID(method);
-
-			if (pointerMethod == null)
+			/*
+				if (pointerMethod == null)
 				continue;
+				*/
 
 			//System.out.println(pn);
+			
 			System.out.println(v);
+			
+			if (pn.getWrappedNode() != orig.getWrappedNode())
+				System.out.println("Original: " + orig.getWrappedNode());
+			
+			file.println(v);
 
 			if (v instanceof AllocDotField) 
-				System.out.printf("\tAlloc dot field\n");
-
-			PrintStream file = System.out;
+				file.printf("\tAlloc dot field\n");			
 
 			if ( v instanceof LocalVarNode ) {
 				// We map the local pointer to its 1-cfa versions
@@ -382,27 +414,34 @@ public class GeoPTA {
 					
 					file.printf("%s (%s)->\n %s %s\n", p.sootEdge.getSrc(), p.sootEdge.srcUnit(), p.sootEdge.getTgt(), p.sootEdge.hashCode());
 					
-					pn.get_all_context_sensitive_objects(l, r, ct_sens_objs, outList);
+					Obj_1cfa_extractor contextObjsVisitor = new Obj_1cfa_extractor();
+					pn.get_all_context_sensitive_objects(l, r, contextObjsVisitor);
 
-					for ( CallsiteContextVar cobj : outList ) {
-						cobj.inQ = false;
-						file.printf( "%s: %s\n", cobj.var.getClass(), cobj.var);
+					for ( CallsiteContextVar cobj : contextObjsVisitor.outList ) {
+						//cobj.inQ = false;
+						if (cobj != null && cobj.var != null)
+							file.printf( "%s: %s\n", cobj.var.getClass(), cobj.var);
+						else 
+							file.printf( "%s: %s\n", cobj, "No Var");
 					}
 
 				}
 			}
 			else {
-				file.print( pn.get_all_context_sensitive_objects(1, GeomPointsTo.MAX_CONTEXTS, ct_sens_objs, outList) );
-
-				for ( CallsiteContextVar cobj : outList ) {
-					cobj.inQ = false;
-					file.print( " " + cobj.getNumber() );
+				Obj_1cfa_extractor contextObjsVisitor = new Obj_1cfa_extractor();
+				pn.get_all_context_sensitive_objects(1, soot.jimple.spark.geom.geomPA.Constants.MAX_CONTEXTS, contextObjsVisitor);
+				
+				for ( CallsiteContextVar cobj : contextObjsVisitor.outList ) {
+					//cobj.inQ = false;
+					if (cobj != null)
+						file.print( " " + cobj.getNumber() );
 				}
 				file.println();
 			}
 
-			System.out.println();
+			file.println();
 		}
+		System.out.print("======================= dumpPTA () Done =====================================\n");
 	}
 
 	static void setGeomPointsToAnalysis() {
@@ -419,7 +458,7 @@ public class GeoPTA {
 		opt.put("geom-runs", "1");
 		opt.put("enabled","true");
 		opt.put("verbose","false");
-		opt.put("ignore-types","true");          
+		opt.put("ignore-types","false");          
 		opt.put("force-gc","false");            
 		opt.put("pre-jimplify","false");          
 		opt.put("vta","false");                   
