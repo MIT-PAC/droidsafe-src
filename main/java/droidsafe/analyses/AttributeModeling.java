@@ -158,9 +158,9 @@ public class AttributeModeling {
       // We don't care about entry points into the system classes
       if (API.v().isSystemClass(clazz))
         continue;
-      
-      // TODO: why do we need this?
-      if(className.indexOf("android.support") != -1 || className.equals("edu.mit.csail.droidsafe.DroidSafeCalls")){
+     
+      // DroidSafeCalls will go away eventually and we don't want to look at it for now 
+      if(className.equals("edu.mit.csail.droidsafe.DroidSafeCalls")){
         continue;
       }
 
@@ -389,7 +389,8 @@ public class AttributeModeling {
    */
   private void log() {
     for (Map.Entry<AllocNode, ModeledClass> entry : objectToModelMap.entrySet()) {
-      logger.info("Finished Model: {}", entry.getValue());
+      ModeledClass modeledObject = entry.getValue();
+      logger.info("Finished Model: {}", modeledObject);
       logger.info("Corresponding AllocNode: {}", entry.getKey());
     }
   }
