@@ -10,7 +10,7 @@ import droidsafe.annotations.*;
 import android.hardware.Sensor;
 
 public class DroidSafeSensorManager extends SensorManager {
-
+	@DSModeled(DSC.SAFE)
 	public DroidSafeSensorManager() {
 		super(null);	
 	}

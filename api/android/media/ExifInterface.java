@@ -1,0 +1,60 @@
+package android.media;
+
+import java.io.IOException;
+/*
+import java.text.ParsePosition;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.TimeZone;
+*/
+
+import droidsafe.helpers.*;
+import droidsafe.annotations.*;
+
+public class ExifInterface {
+	private DSTaintObject dsTaint = new DSTaintObject();
+	
+	@DSModeled() //Decided to go with SPEC because in theory be used for covert data storage
+	private void loadAttributes() throws IOException {
+		dsTaint.addTaint("string attribute taint"); //Implicit taint for getAttribute
+		dsTaint.addTaint(-1); //Implicit taint for getAttributeInt
+		//dsTaint.addTaint(-2); //Implicit taint for getAttributeDouble
+	}
+	
+	@DSModeled(value = DSC.SAFE)
+	public ExifInterface(String filename) throws IOException {
+		dsTaint.addTaint(filename);
+        //mFilename = filename;
+		/*
+		 * DSFIXME:  loadAttributes will parse and load values obtained from a
+		 * native call that pulls image attributes from the file itself and stores
+		 * them in the HashMap mAttributes.  Effectively this is causing an implicit
+		 * taint on attributes, since they are being loaded through a native call
+		 * which is returning back a series of properties serialized as a space
+		 * delimited string (ghetto!).  Access to values stored in
+		 * mAttributes is controlled through the getAttribute* series of methods.
+		 * This is a first stab at trying to actually taint the attributes themselves
+		 */
+        loadAttributes();
+    }
+	
+	@DSModeled(value = DSC.SAFE)
+	public String getAttribute(String tag) {
+		return dsTaint.getTaintString();
+        //return mAttributes.get(tag);
+    }
+	
+	public int getAttributeInt(String tag, int defaultValue) {
+		return dsTaint.getTaintInt();
+	}
+	
+	/*
+	 * Not quite sure how to model this, but nothing is calling it (yet) so
+	 * we'll hold off on this.
+	public double getAttributeDouble(String tag, double defaultValue) {
+		return (double)dsTaint.getTaintInt();
+	}
+	*/
+}

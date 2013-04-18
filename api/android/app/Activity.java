@@ -1339,7 +1339,7 @@ public class Activity extends ContextThemeWrapper
     // GITI DSModeled
     @DSModeled(DSC.SAFE)
     public View findViewById(int id) {
-        return getWindow().findViewById(id);
+    	return new View(new ContextImpl());
     }
     
     /**
