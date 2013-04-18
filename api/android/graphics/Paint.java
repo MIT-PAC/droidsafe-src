@@ -1409,6 +1409,9 @@ public class Paint {
      * @param end   1 beyond the index of the last character to measure
      * @return      The width of the text
      */
+    //DSFIXME - GITI commented out to allow for compile, may need to be modeled 
+    // in the future.
+    /*
     public float measureText(CharSequence text, int start, int end) {
         if (text == null) {
             throw new IllegalArgumentException("text cannot be null");
@@ -1437,6 +1440,7 @@ public class Paint {
         TemporaryBuffer.recycle(buf);
         return result;
     }
+    */
     
     /**
      * Measure the text, stopping early if the measured width exceeds maxWidth.
@@ -1497,6 +1501,9 @@ public class Paint {
      * @return The number of chars that were measured. Will always be <=
      *         abs(end - start).
      */
+    //DSFIXME - GITI commented out to allow for compile, may need to be modeled 
+    // in the future.
+    /*
     public int breakText(CharSequence text, int start, int end,
                          boolean measureForwards,
                          float maxWidth, float[] measuredWidth) {
@@ -1529,6 +1536,7 @@ public class Paint {
         TemporaryBuffer.recycle(buf);
         return result;
     }
+    */
 
     /**
      * Measure the text, stopping early if the measured width exceeds maxWidth.
@@ -1618,6 +1626,9 @@ public class Paint {
      *                 Must be at least a large as (end - start).
      * @return         the actual number of widths returned.
      */
+    //DSFIXME - GITI commented out to allow for compile, may need to be modeled 
+    // in the future.
+    /*
     public int getTextWidths(CharSequence text, int start, int end,
                              float[] widths) {
         if (text == null) {
@@ -1651,6 +1662,7 @@ public class Paint {
         TemporaryBuffer.recycle(buf);
         return result;
     }
+    */
 
     /**
      * Return the advance widths for the characters in the string.
@@ -1811,12 +1823,16 @@ public class Paint {
      * @see #getTextRunAdvances(String, int, int, int, int, int, float[], int)
      * @hide
      */
+    //DSFIXME - GITI commented out to allow for compile, may need to be modeled 
+    // in the future.
+    /*
     public float getTextRunAdvances(CharSequence text, int start, int end,
             int contextStart, int contextEnd, int flags, float[] advances,
             int advancesIndex) {
         return getTextRunAdvances(text, start, end, contextStart, contextEnd, flags,
-                advances, advancesIndex, 0 /* use Harfbuzz */);
+                advances, advancesIndex, 0);
     }
+	*/
 
     /**
      * Convenience overload that takes a CharSequence instead of a
@@ -1825,6 +1841,9 @@ public class Paint {
      * @see #getTextRunAdvances(String, int, int, int, int, int, float[], int)
      * @hide
      */
+    //DSFIXME - GITI commented out to allow for compile, may need to be modeled 
+    // in the future.
+    /*
     public float getTextRunAdvances(CharSequence text, int start, int end,
             int contextStart, int contextEnd, int flags, float[] advances,
             int advancesIndex, int reserved) {
@@ -1866,6 +1885,7 @@ public class Paint {
         TemporaryBuffer.recycle(buf);
         return result;
     }
+    */
 
     /**
      * Returns the total advance width for the characters in the run
@@ -2064,6 +2084,9 @@ public class Paint {
      * @return the offset of the next position, or -1
      * @hide
      */
+    //DSFIXME - GITI commented out to allow for compile, may need to be modeled 
+    // in the future.
+    /*
     public int getTextRunCursor(CharSequence text, int contextStart,
            int contextEnd, int flags, int offset, int cursorOpt) {
 
@@ -2084,6 +2107,7 @@ public class Paint {
         TemporaryBuffer.recycle(buf);
         return result;
     }
+    */
 
     /**
      * Returns the next cursor position in the run.  This avoids placing the
