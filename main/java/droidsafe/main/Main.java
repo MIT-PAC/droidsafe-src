@@ -33,7 +33,9 @@ import droidsafe.android.app.Project;
 import droidsafe.android.app.resources.Resources;
 import droidsafe.android.system.API;
 import droidsafe.android.system.Permissions;
+import droidsafe.transforms.APICallSpecialization;
 import droidsafe.transforms.AddAllocsForAPICalls;
+import droidsafe.transforms.IntegrateXMLLayouts;
 import droidsafe.transforms.LocalForStringConstantArguments;
 import droidsafe.transforms.ResolveStringConstants;
 import droidsafe.transforms.ScalarAppOptimizations;
@@ -58,13 +60,20 @@ public class Main {
 	 */
 	public static void main(String[] args) {
 		logger.info("Starting DroidSafe Run");
-    
-    Config.v().init(args);
+		//grab command line args and set some globals
+		Config.v().init(args);
+		//initial project directories and lib jar files
 		Project.v().init();
+		//configure soot and soot classpath
 		SootConfig.init();
+		//load the api classes and modeling classes
 		API.v().init();
+		//load the application classes
+		Project.v().loadClasses();
+		//create the permissions map
 		Permissions.init();
 
+				
 		logger.info("Creating locals for all string constant arguments.");
 		LocalForStringConstantArguments.run();
 
@@ -116,9 +125,22 @@ public class Main {
 		}
 
 		AddAllocsForAPICalls.run();
+      		
+		{
+			logger.info("Starting PTA...");
+			GeoPTA.run();
+			
+			logger.info("Incorporating XML layout information");
+			//IntegrateXMLLayouts.run();
+			
+			logger.info("Specializing API Calls");
+			//APICallSpecialization.run();
 		
-		logger.info("Starting PTA...");
-		GeoPTA.run();
+			logger.info("Restarting PTA...");
+			GeoPTA.release();
+			GeoPTA.run();
+				
+		}
 
 		RCFG.generate();
 		logger.info("Ending DroidSafe Run");
@@ -129,6 +151,7 @@ public class Main {
 
 		// print out what modeling is required for this application
 		RequiredModeling.run();
+		
 		// write jimple txt files for all classes so we can analzye them
 		if (Config.v().WRITE_JIMPLE_APP_CLASSES)
 			writeAllAppClasses();
@@ -160,6 +183,8 @@ public class Main {
 		} else if (Config.v().target.equals("confcheck")) {
 			logger.error("Not implemented yet!");
 		}
+		
+		//System.out.print(RCFG.v().toString());
 
 	}
 
@@ -172,7 +197,7 @@ public class Main {
 
 	private static void writeAllAppClasses() {
 		for (SootClass clz : Scene.v().getClasses()) {
-			if (clz.isApplicationClass() && Project.v().isSrcClass(clz.toString())) {
+			if (clz.isApplicationClass() /* && Project.v().isSrcClass(clz.toString())*/) {
 				SootUtils.writeByteCodeAndJimple(Project.v().getOutputDir() + File.separator + clz.toString(), clz);
 			}
 		}

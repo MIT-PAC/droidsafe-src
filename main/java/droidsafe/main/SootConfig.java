@@ -3,6 +3,7 @@ package droidsafe.main;
 import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Set;
 
 import org.apache.commons.io.FileUtils;
 import org.slf4j.Logger;
@@ -10,6 +11,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import soot.Scene;
+import soot.SootClass;
 
 import droidsafe.android.app.Project;
 
@@ -27,26 +29,18 @@ public class SootConfig {
 		logger.info("Configuring Soot...");
 		setOptions();
 		setSootClassPath();
-		loadClasses();
 	}
 	
-	/**
-	 * Load the necessary classes into soot, assumes the soot classpath has been 
-	 * set appropriately. 
-	 */
-	private static void loadClasses() {
+	public static void loadAppClasses(Set<String> classes) {
 		//load the application classes and set them as app classes
-		for (String clz : Project.v().getSrcClasses()) {
-			Scene.v().loadClassAndSupport(clz).setApplicationClass();
+		for (String clz : classes) {
+			//Scene.v().loadClassAndSupport(clz).setApplicationClass();
+			Scene.v().loadClass(clz, SootClass.BODIES).setApplicationClass();
 			logger.debug("Loading class as application class: {}", clz);
 		}
-		
-		//load all classes from jar file
-		for (String clz : Project.v().getLibClasses()) {
-			Scene.v().loadClassAndSupport(clz).setApplicationClass();
-			logger.debug("Loading class as application class (from libs jar): {}", clz);
-		}
 	}
+	
+	
 	
 	/**
 	 * Set command line options for soot.
@@ -72,20 +66,20 @@ public class SootConfig {
 	private static void setSootClassPath() {
 		StringBuffer cp = new StringBuffer();
 		
+		//add the api modeling directory first so we can load modeling classes
+		cp.append(Config.v().ANDROID_LIB_DIR + File.separator + "droidsafe-api-model.jar");
+		
 		//add the classes directory
-		cp.append(Project.v().getAppClassesDir().toString());
+		cp.append(":" + Project.v().getAppClassesDir().toString());
 		
 		//add the android.jar
-		File aj;
-		if (Config.v().API_CLASSES_ARE_APP) {
-			aj = new File(Config.v().ANDROID_LIB_DIR + File.separator + "android-sources.jar");
-		} else {
-			aj = new File(Config.v().ANDROID_LIB_DIR + File.separator + "android.jar");
-		}
+		File aj = new File(Config.v().ANDROID_LIB_DIR + File.separator + Config.v().ANDROID_JAR);
+	
 		if (!aj.exists()) {
 			logger.error("android.jar does not exist");
 			System.exit(1);
 		}
+		
 		cp.append(":" + aj.toString());
 
 		//add jars in the libs directory

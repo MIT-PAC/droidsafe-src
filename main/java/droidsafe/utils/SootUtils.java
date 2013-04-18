@@ -222,6 +222,44 @@ public class SootUtils {
     }
     
     /**
+     * Return a BF traversal of the super interfaces of a class.
+     */
+    public static List<SootClass> getSuperInterfacesOf(SootClass sc) {
+    	 List<SootClass>   ret = new LinkedList<SootClass>();
+         Queue<SootClass> q   = new LinkedList<SootClass>();
+         //add initial interfaces
+         for (SootClass i : sc.getInterfaces()) {
+        	 q.add(i);
+         }
+
+         while (!q.isEmpty()) {
+             SootClass curr = q.poll();
+                          
+             if (curr == null) {
+            	 continue;
+             }
+             
+             if (curr.toString().equals("java.lang.Object")) {
+                 continue;
+             }
+             
+             if (!curr.isInterface()) {
+            	 logger.error("getSuperInterfacesOf inspecting non interface: {}", curr);
+            	 System.exit(1);
+             }
+                    
+             ret.add(curr);
+             
+             if (!curr.isPhantom() && curr.getSuperclass().isInterface()) {
+             	q.add(curr.getSuperclass());
+             }
+           
+         }
+
+         return ret;
+     }
+         
+    /**
      * Get all superclasses and super interfaces of a soot class.
      */
     public static Set<SootClass> getParents(SootClass sc) {
@@ -364,6 +402,10 @@ public class SootUtils {
 		
 		//args, create the args string array
 		String args = matcher.group(4);
+		
+		if (args.isEmpty())
+			return new String[0];
+		
 		return args.split(",");		
     }
     
@@ -441,10 +483,12 @@ public class SootUtils {
     /**
      * Load classes from the given jar file into Soot's current scene.  
      * Load the classes as application classes if appClass is true.
+     * If overwrite is true, then overwrite any classes that were previously loaded.  If 
+     * overwrite is false, then don't load from this jar any previously loaded classes.
      * 
      * Return a set of all classes loaded from the jar.
      */
-    public static Set<SootClass> loadClassesFromJar(JarFile jarFile, boolean appClass) {
+    public static Set<SootClass> loadClassesFromJar(JarFile jarFile, boolean appClass, Set<String> doNotLoad) {
     	LinkedHashSet<SootClass> classSet = new LinkedHashSet<SootClass>();
         Enumeration allEntries = jarFile.entries();
         while (allEntries.hasMoreElements()) {
@@ -455,13 +499,25 @@ public class SootUtils {
             }
 
             String clsName = name.substring(0, name.length() - 6).replace('/', '.');
-            logger.debug("Loading from {}: {}", jarFile.getName(), clsName);
-            SootClass clz = Scene.v().loadClassAndSupport(clsName);
-            classSet.add(clz);
-            if (appClass)
+            
+            if (doNotLoad.contains(clsName)) {
+            	continue;
+            }
+            
+            if (appClass) {
+            	//SootClass clz = Scene.v().loadClassAndSupport(clsName);
+            	SootClass clz = Scene.v().loadClass(clsName, SootClass.BODIES);
+            	classSet.add(clz);
             	clz.setApplicationClass();
-            else
+            	logger.debug("Loading from {}: {} (app)", jarFile.getName(), clsName);
+            }
+            else {
+            	SootClass clz = Scene.v().loadClass(clsName, SootClass.SIGNATURES);
+            	classSet.add(clz);
             	clz.setLibraryClass();
+            	logger.debug("Loading from {}: {} (lib)", jarFile.getName(), clsName);
+            }
+
         }
         return classSet;
     }
@@ -569,11 +625,18 @@ public class SootUtils {
 	 */
 	public static void writeByteCodeAndJimple(String filePrefix, SootClass clz) {
 		String fileName = filePrefix + ".class";
+        String methodThatFailed = "";
 		try {
 			OutputStream streamOut = new JasminOutputStream(
 					new FileOutputStream(fileName));
 			PrintWriter writerOut = new PrintWriter(
 					new OutputStreamWriter(streamOut));
+			
+			for (SootMethod method : clz.getMethods()) {
+                methodThatFailed = method.getName();
+				if (method.isConcrete())
+					method.retrieveActiveBody();
+			}
 			
 			/*
 			JasminClass jasminClass = new soot.jimple.JasminClass(clz);
@@ -590,7 +653,8 @@ public class SootUtils {
 		    streamOut.close();
 			
 		} catch (Exception e) {
-			logger.error("Error writing class to file {}", clz, e);
+            logger.info("Method that failed = " + methodThatFailed);
+			logger.info("Error writing class to file {}", clz, e);
 		}
 	}
 	

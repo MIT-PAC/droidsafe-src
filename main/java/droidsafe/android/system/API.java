@@ -1,19 +1,20 @@
-/*
- * InterestingMethods.java   2012-06-28
- *
- * Copyright (c) 2012 DroidBlaze (UC Berkeley)
- *
- */
-
 package droidsafe.android.system;
 
 import java.util.Arrays;
+import java.util.Enumeration;
+import java.util.HashMap;
 import java.util.HashSet;
 import java.util.LinkedHashSet;
+import java.util.LinkedList;
 import java.util.List;
+import java.util.Map;
 import java.util.Set;
+import java.util.jar.JarEntry;
 import java.util.jar.JarFile;
 import java.io.*;
+import java.lang.reflect.Modifier;
+import java.net.URL;
+import java.net.URLClassLoader;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -25,6 +26,11 @@ import soot.Scene;
 import soot.SootClass;
 import soot.Type;
 import soot.SootMethod;
+import soot.tagkit.AnnotationElem;
+import soot.tagkit.AnnotationEnumElem;
+import soot.tagkit.AnnotationTag;
+import soot.tagkit.Tag;
+import soot.tagkit.VisibilityAnnotationTag;
 
 import droidsafe.utils.*;
 import droidsafe.main.Config;
@@ -50,6 +56,8 @@ public class API {
 	private final SootMethodList all_sys_methods = new SootMethodList();
 	/** All banned methods as described in config-files */
 	private final SootMethodList banned_methods = new SootMethodList();
+	/** All methods that are modeled in the api modeling */
+	private final SootMethodList api_modeled_methods = new SootMethodList();
 	/** Set of all Android Classes */
 	private Set<SootClass> allSystemClasses;
 	/** the current runtime instance */
@@ -60,6 +68,7 @@ public class API {
 					"edu.mit.csail.droidsafe.DroidSafeCalls"
 					));
 	
+	private Map<String,Class<?>> stubsForModeledClasses;
 	
 	
 	static {
@@ -74,39 +83,169 @@ public class API {
 	}
 
 	public void init() {
+		//uncomment this to create system method files
+		//createAllSystemMethodsFile();
+		
 		try {
-			if (Config.v().API_CLASSES_ARE_APP) {
-				allSystemClasses = new LinkedHashSet<SootClass>();
-				logger.warn("API classes will be loaded and analyzed when available.");
-				JarFile androidJar = new JarFile(new File(Config.v().APAC_HOME(), "android-lib/android-impl.jar"));
-				allSystemClasses = SootUtils.loadClassesFromJar(androidJar, true);
-				all_sys_methods.addAllMethods(androidJar);
-			} else {
-				//load the classes from the android.jar for the version of android we are using
-				//this jar file does not have implementations only stubs
-				JarFile androidJar = new JarFile(new File(System.getenv ("APAC_HOME"), 
-						"lib/android/android.jar"));
-				allSystemClasses = SootUtils.loadClassesFromJar(androidJar, false);
-				all_sys_methods.addAllMethods(androidJar);
-			}
-	
+			allSystemClasses = new LinkedHashSet<SootClass>();
+			
+			//load any modeled classes from the api model, overwrite the stub classes
+			JarFile apiModeling = new JarFile(new File(Config.v().ANDROID_LIB_DIR, "droidsafe-api-model.jar"));
+			Set<SootClass> modeledClasses = SootUtils.loadClassesFromJar(apiModeling, true, new LinkedHashSet<String>()); 
+			allSystemClasses.addAll(modeledClasses);
+			all_sys_methods.addAllMethods(apiModeling);
+			
+			Set<String> modeledClassNames = new LinkedHashSet<String>();
+			for (SootClass modeled : modeledClasses) 
+				modeledClassNames.add(modeled.getName());
+			
+			//load the configured android jar file
+			JarFile androidJar = new JarFile(new File(Config.v().ANDROID_LIB_DIR, Config.v().ANDROID_JAR));
+			allSystemClasses.addAll(SootUtils.loadClassesFromJar(androidJar, false, modeledClassNames));
+			all_sys_methods.addAllMethods(androidJar);
 			
 		} catch (Exception e) {
 			logger.error("Error loading android.jar", e);
 			System.exit(1);
 		}
 
+		loadDroidSafeCalls();
+		findModeledMethods();
+		addUnmodeledMissingAPIMethods();
+		//old load classification code from config_files/system_calls.txt
+		//now we classify based on the annotation DSModeled
+		//loadClassification();
+	}
+
+	/**
+	 * Create the system method txt file with the signature and modifiers for all 
+	 * system methods.  Should not be called on a normal run.
+	 */
+	private void createAllSystemMethodsFile() {
+		try {
+			JarFile androidJar = new JarFile(new File(Config.v().ANDROID_LIB_DIR, Config.ANDROID_JAR));
+			Set<SootClass> systemClasses = SootUtils.loadClassesFromJar(androidJar, false, new HashSet<String>());
+			
+			FileWriter fw = new FileWriter(new File(Config.v().APAC_HOME(), Config.SYSTEM_METHODS_FILE));
+
+			for (SootClass clz : systemClasses) {
+				for (SootMethod meth : clz.getMethods()) {
+					fw.write(String.format("%s#%s\n", meth.getModifiers(), meth.getSignature()));
+				}
+			}
+			
+			fw.close();
+		} catch (Exception e) {
+			logger.error("Error creating android api methods file {}", e);
+		}
+		System.exit(1);
+	}
+
+	/** 
+	 * Read in all method from all_system_methods, then create a SootMethod for missing api
+	 * methods from modeled classes.
+	 */
+	private void addUnmodeledMissingAPIMethods() {
+		try {
+			File sys_calls_file= new File(Config.v().ANDROID_LIB_DIR, Config.ANDROID_JAR);
+			LineNumberReader br = new LineNumberReader (new FileReader (sys_calls_file));
+			String line;
+			int lineNum;
+			while ((line = br.readLine()) != null) {
+                lineNum = br.getLineNumber();
+				
+				String[] lineSplit = line.trim().split("#");
+				
+				int modifiers = Integer.parseInt(lineSplit[0]);
+				String methodSig = lineSplit[1];
+				
+				if (!Scene.v().containsMethod(methodSig)) {
+					//System.out.printf("Found unmodeled system method: %s\n", methodSig);
+					SootClass clazz = Scene.v().getSootClass(SootUtils.grabClass(methodSig));
+					
+					List params = new LinkedList();
+					for (String arg : SootUtils.grabArgs(methodSig)) {
+						params.add(SootUtils.toSootType(arg));
+					}
+
+					SootMethod missing = new SootMethod(SootUtils.grabName(methodSig),
+							params,
+							SootUtils.toSootType(SootUtils.grabReturnType(methodSig)),
+							modifiers);
+					
+					missing.setPhantom(true);
+					clazz.addMethod(missing);
+				}
+				
+			}
+			
+		} catch (Exception e) {
+
+		}
+	}
+	
+	/**
+	 * Based on the annotation we are adding to api modeled methods from modeled classes,
+	 * add modeled methods to the soot method list for them.
+	 * 
+	 * Also, read the classification and put methods into appropriate sets (ban, spec, safe)
+	 */
+	private void findModeledMethods() {
+		for (SootMethod method : all_sys_methods) {
+			for (Tag tag : method.getTags()) {
+				if (tag instanceof VisibilityAnnotationTag) {
+					VisibilityAnnotationTag vat = (VisibilityAnnotationTag)tag;
+					for (AnnotationTag at : vat.getAnnotations()) {
+						if (at.getType().contains("droidsafe/annotations/DSModeled")) {
+							logger.info("Found api modeled method: {}\n", method);
+							if (method.isConcrete()) {
+								method.retrieveActiveBody();
+								if (!method.hasActiveBody()) {
+									logger.error("Modeled api method has no active body: {}", method);
+									System.exit(1);
+								}
+							}
+							
+							//if no designation, then spec
+							if (at.getNumElems() == 0)
+								spec_methods.addMethod(method);
+							else {
+								String c = ((AnnotationEnumElem)at.getElemAt(0)).getConstantName();
+								if ("SAFE".equals(c)) {
+									safe_methods.addMethod(method);
+								} else if ("SPEC".equals(c)) {
+									spec_methods.addMethod(method);
+								} else if ("BAN".equals(c)) {
+									banned_methods.addMethod(method);
+								} else {
+									logger.error("Invalid classification annotation {} on {}", c, method);
+								}
+							}
+							
+							api_modeled_methods.addMethod(method);
+						}
+					}
+				}
+			}
+		}
+	}
+
+	private void loadDroidSafeCalls() {
 		try {
 			//load the classes from the droidcalls library
 			File dsLib = new File(System.getenv ("APAC_HOME"), 
 					"android-lib/droidcalls.jar");
 			JarFile dsJar = new JarFile(dsLib);
-			SootUtils.loadClassesFromJar(dsJar, true);
+			SootUtils.loadClassesFromJar(dsJar, true, new LinkedHashSet<String>());
 			all_sys_methods.addAllMethods(dsJar);			
 		} catch (Exception e) {
 			Utils.ERROR_AND_EXIT(logger, "Error loading droidsafe call jar (maybe it does not exist).");
 		}
+	}
 
+	//old load classification code from config_files/system_calls.txt
+	//now we classify based on the annotation DSModeled
+	private void loadClassification()	{
 		// Read in the system call descriptors.  The file format has lines
 		// of the form <type>[|flags] <descr>.  More detail is in the
 		// comments at the top of the file.  Descriptors are matched on
@@ -290,5 +429,29 @@ public class API {
     		return isSystemClassReference(((ArrayType)t).getElementType());
     	else 
     		return false;
+    }
+    
+    /**
+     * Given a method in a non-system class, return the closest api method that the method 
+     * overrides.  Return null if the method does not override a system method.  Search 
+     * class inheritance for parents before interfaces.
+     */
+    public SootMethod getClosestOverridenAPIMethod(SootMethod method) {
+    	if (this.isSystemClass(method.getDeclaringClass())) {
+    		logger.error("Calling getClosestOverridenAPIMethod() on API method: {}", method);
+    		System.exit(1);
+    	}
+    	return all_sys_methods.getClosestOverriddenMethod(method);
+    }
+    
+    /**
+     * Return true if the argument is a modeled method from the api.
+     */
+    public boolean isAPIModeledMethod(SootMethod m) {
+    	return api_modeled_methods.contains(m);
+    }
+    
+    public SootMethodList getAllSystemMethods() {
+    	return all_sys_methods;
     }
  }

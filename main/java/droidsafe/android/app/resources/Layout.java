@@ -5,6 +5,7 @@ import java.io.*;
 import org.w3c.dom.*;
 
 import droidsafe.android.app.resources.AndroidManifest.Activity;
+import droidsafe.android.app.resources.RString;
 
 
 import javax.xml.parsers.DocumentBuilderFactory;
@@ -51,6 +52,42 @@ public class Layout {
     Element e = doc.getDocumentElement();
  
     view = new View(e);
+
+  }
+
+  public void buildUIObjects(HashMap<String, RString> stringMap) {
+		logger.warn("Dumping Layout.view info ");
+		logger.warn("View " + view);
+
+		for (String key: stringMap.keySet()) {
+			logger.warn("string key: " + key); 
+		}
+
+		for (View cview: view.children) { 
+			logger.warn("cview: " + cview); 
+			String id = cview.get_attr("id");
+			String text = cview.get_attr("text");
+
+			if (id != null)
+				logger.warn("  id -  " + id);
+
+			if (text != null) {
+				logger.warn("  text -  " + text);
+				int index = text.indexOf("/");
+				if (text.startsWith("@") && index > 0) {
+					RString rString = stringMap.get(text.substring(index + 1));
+					logger.warn("  value=" + rString.value);
+					text = rString.value;
+				}
+			}
+			
+			if (view.name.equals("Button")) {
+				logger.warn("Button object instatiation ");
+			}
+			if (view.name.equals("TextEdit")) {
+				logger.warn("TextEdit object instatiation ");
+			}
+		}
   }
 
   public class View extends BaseElement {
@@ -75,8 +112,12 @@ public class Layout {
       for (Node cnode : gather_children()) {
         children.add (new View(cnode));
       }
+
     }
 
+    /**
+     * are we interested in onClick only ???
+     */
     public String toString() {
       String out = name;
       if (id != null)
@@ -101,5 +142,13 @@ public class Layout {
     public String getName() {
     	return name;
     }
+
+	public void dump() {
+		logger.warn("Dumping Layout.view info ");
+		logger.warn("View " + view);
+		for (View cview: children) { 
+			logger.warn("cview: " + cview);
+		}
+	}
   }
 }

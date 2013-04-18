@@ -64,7 +64,7 @@ public class AddAllocsForAPICalls extends BodyTransformer {
 	private Set<NewExpr> generatedExpr;
 	private static AddAllocsForAPICalls v;
 	
-	private static String NEED_TO_MODEL_FILENAME = "required-pta-modeling.txt";
+	private static String NEED_TO_MODEL_FILENAME = "added-allocations.txt";
 	
 	private FileWriter needToModelFile;
 	
@@ -76,18 +76,13 @@ public class AddAllocsForAPICalls extends BodyTransformer {
 	public static void run() {
 
 		v = new AddAllocsForAPICalls();
-
-		//dont' do anything for now if we are analzying api calls
-		//TODO: though at some point we should look at natives
-		if (Config.v().API_CLASSES_ARE_APP)
-			return;
 		
 		try {
 			v.needToModelFile = new FileWriter(Project.v().getOutputDir() + 
 					File.separator +NEED_TO_MODEL_FILENAME);
 
 			for (SootClass clz : Scene.v().getClasses()) {
-				if (Project.v().isSrcClass(clz.toString())) {
+				if (Project.v().isSrcClass(clz.toString()) || Project.v().isLibClass(clz.toString())) {
 					for (SootMethod meth : clz.getMethods()) {
 						if (meth.isConcrete())
 							v.transform(meth.retrieveActiveBody());
@@ -139,8 +134,12 @@ public class AddAllocsForAPICalls extends BodyTransformer {
 				
 			if (target == null)  //for some reason, not what we are looking for
 				continue;
-						
+		
 			if (!API.v().isSystemMethod(target))
+				continue;
+			
+			//TODO: check if a modeled call, if so, don't add alloc
+			if (API.v().isAPIModeledMethod(target))
 				continue;
 			
 			if (!API.v().isSystemClassReference(target.getReturnType())) 

@@ -15,8 +15,11 @@ import org.apache.commons.io.*;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import soot.SootClass;
+
 import droidsafe.main.Config;
 import droidsafe.main.Main;
+import droidsafe.main.SootConfig;
 import droidsafe.utils.Utils;
 
 /** 
@@ -95,7 +98,13 @@ public class Project {
 			outputDir.mkdirs();
 		}
 	}
-	
+
+	public void loadClasses() {
+		//load into soot the src classes and lib jars classes
+		SootConfig.loadAppClasses(getSrcClasses());
+		SootConfig.loadAppClasses(getLibClasses());
+	}
+
 	/**
 	 * Add all classes from in bin/classes to the appClasses
 	 */
@@ -180,6 +189,14 @@ public class Project {
 	}
 	
 	/**
+	 * Return true if arg class name is a class from a jar file located
+	 * in the libs directory of the application. 
+	 */
+	public boolean isLibClass(SootClass clz) {
+		return libClasses.contains(clz.getName());
+	}
+	
+	/**
 	 * Return true if the class was loaded from the application src/ directory.
 	 * 
 	 * @param clz
@@ -187,6 +204,16 @@ public class Project {
 	 */
 	public boolean isSrcClass(String clz) {
 		return srcClasses.contains(clz);
+	}
+	
+	/**
+	 * Return true if the class was loaded from the application src/ directory.
+	 * 
+	 * @param clz
+	 * @return
+	 */
+	public boolean isSrcClass(SootClass clz) {
+		return srcClasses.contains(clz.getName());
 	}
 	
 	/**
