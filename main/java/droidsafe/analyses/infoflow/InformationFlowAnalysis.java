@@ -41,7 +41,6 @@ import soot.jimple.AssignStmt;
 import soot.jimple.BinopExpr;
 import soot.jimple.CastExpr;
 import soot.jimple.CaughtExceptionRef;
-import soot.jimple.ClassConstant;
 import soot.jimple.Constant;
 import soot.jimple.IdentityRef;
 import soot.jimple.IdentityStmt;
@@ -52,7 +51,6 @@ import soot.jimple.InvokeStmt;
 import soot.jimple.NewArrayExpr;
 import soot.jimple.NewExpr;
 import soot.jimple.NewMultiArrayExpr;
-import soot.jimple.NullConstant;
 import soot.jimple.ParameterRef;
 import soot.jimple.ReturnStmt;
 import soot.jimple.ReturnVoidStmt;
@@ -290,7 +288,7 @@ public class InformationFlowAnalysis {
           // constant = double_constant | float_constant | int_constant | long_constant | string_constant | null_constant | class_constant;
           public void caseConstant(Constant constant) {
               // varaible "=" constant
-              setResult(execute(stmt, variable, constant, inStates));
+              setResult(inStates);
           }
 
           // rvalue = ... | expr | ...;
@@ -526,71 +524,6 @@ public class InformationFlowAnalysis {
         return outStates;
     }
 
-    // assign_stmt = variable "=" constant
-    private States execute(final AssignStmt stmt, Value variable, Constant constant, final States inStates) {
-        final States outStates = new States();
-        final Set<MyValue> inValues = new HashSet<MyValue>();
-        inValues.add(new MyConstant(constant));
-        // variable = array_ref | instance_field_ref | static_field_ref | local;
-        variable.apply(new MyAbstractVariableSwitch() {
-            // variable = array_ref | ...;
-            public void caseArrayRef(ArrayRef arrayRef) {
-                Local local = (Local)arrayRef.getBase();
-                for (Map.Entry<Edge, FrameHeapStatics> contextFrameHeapStatic : inStates.entrySet()) {
-                    FrameHeapStatics inFrameHeapStatics = contextFrameHeapStatic.getValue();
-                    Arrays arrays = new Arrays(inFrameHeapStatics.heap.arrays);
-                    for (MyValue addr : inFrameHeapStatics.frame.get(local)) {
-                        Address address = (Address)addr;
-                        Set<MyValue> outValues = new HashSet<MyValue>(inFrameHeapStatics.heap.arrays.get(address));
-                        outValues.addAll(inValues);
-                        arrays.put(address, outValues);
-                    }
-                    outStates.put(contextFrameHeapStatic.getKey(), new FrameHeapStatics(inFrameHeapStatics.frame, new Heap(inFrameHeapStatics.heap.instances, arrays), inFrameHeapStatics.statics));
-                }
-            }
-            
-            // variable = ... | instance_field_ref | ...;
-            public void caseInstanceFieldRef(InstanceFieldRef instanceFieldRef) {
-                Local local = (Local)instanceFieldRef.getBase();
-                SootField field = instanceFieldRef.getField();
-                for (Map.Entry<Edge, FrameHeapStatics> contextFrameHeapStatic : inStates.entrySet()) {
-                    FrameHeapStatics inFrameHeapStatics = contextFrameHeapStatic.getValue();
-                    Instances instances = new Instances(inFrameHeapStatics.heap.instances);
-                    for (MyValue addr : inFrameHeapStatics.frame.get(local)) {
-                        Address address = (Address)addr;
-                        Set<MyValue> outValues = new HashSet<MyValue>(inFrameHeapStatics.heap.instances.get(address, field));
-                        outValues.addAll(inValues);
-                        instances.put(address, field, outValues);
-                    }
-                    outStates.put(contextFrameHeapStatic.getKey(), new FrameHeapStatics(inFrameHeapStatics.frame, new Heap(instances, inFrameHeapStatics.heap.arrays), inFrameHeapStatics.statics));
-                }
-            }
-            
-            // variable = ... | static_field_ref | ...;
-            public void caseStaticFieldRef(StaticFieldRef staticFieldRef) {
-                SootField field = staticFieldRef.getField();
-                SootClass klass = field.getDeclaringClass();
-                for (Map.Entry<Edge, FrameHeapStatics> contextFrameHeapStatic : inStates.entrySet()) {
-                    FrameHeapStatics inFrameHeapStatics = contextFrameHeapStatic.getValue();
-                    Statics statics = new Statics(inFrameHeapStatics.statics);
-                    statics.put(klass, field, inValues);
-                    outStates.put(contextFrameHeapStatic.getKey(), new FrameHeapStatics(inFrameHeapStatics.frame, inFrameHeapStatics.heap, statics));
-                }
-            }
-
-            // variable = ... | local;
-            public void caseLocal(Local local) {
-                for (Map.Entry<Edge, FrameHeapStatics> contextFrameHeapStatic : inStates.entrySet()) {
-                    FrameHeapStatics inFrameHeapStatics = contextFrameHeapStatic.getValue();
-                    Frame frame = new Frame(inFrameHeapStatics.frame, inFrameHeapStatics.frame.params);
-                    frame.put(local, inValues);
-                    outStates.put(contextFrameHeapStatic.getKey(), new FrameHeapStatics(frame, inFrameHeapStatics.heap, inFrameHeapStatics.statics));
-                }
-            }
-        });
-        return outStates;
-    }
-
     // assign_stmt = variable "=" binop_expr
     private States execute(final AssignStmt stmt, Value variable, BinopExpr binopExpr, States inStates) {
         // binop_expr = add_expr | and_expr | cmp_expr | cmpg_expr | cmpl_expr | div_expr | eq_expr | ge_expr | gt_expr | le_expr | lt_expr | mul_expr | ne_expr | or_expr | rem_expr | shl_expr | shr_expr | sub_expr | ushr_expr | xor_expr;
@@ -661,7 +594,7 @@ public class InformationFlowAnalysis {
             public void caseConstant(Constant constant) {
                 // local "=" "(" type ")" constant
                 // TODO: we may be able to do better by considering "type".
-                setResult(execute(stmt, variable, constant, inStates));
+                setResult(inStates);
             }
             
             // immediate = ... | local;
@@ -679,12 +612,10 @@ public class InformationFlowAnalysis {
     private States execute(final AssignStmt stmt, final Value variable, InstanceOfExpr instanceOfExpr, final States inStates) {
         // instance_of_expr = immediate "instanceof" ref_type;
         final States outStates = new States();
-        MyConstant constant = new MyConstant(ClassConstant.v(instanceOfExpr.getCheckType().toString().replace('.', '/')));
         Immediate immediate = (Immediate)instanceOfExpr.getOp();
         for (final Map.Entry<Edge, FrameHeapStatics> contextFrameHeapStatic : inStates.entrySet()) {
             final FrameHeapStatics inFrameHeapStatics = contextFrameHeapStatic.getValue();
             final Set<MyValue> values = evaluate(immediate, inFrameHeapStatics.frame);
-            values.add(constant);
             // variable = array_ref | instance_field_ref | static_field_ref | local;
             variable.apply(new MyAbstractVariableSwitch() {
                 // variable = array_ref | ...;
@@ -1211,7 +1142,7 @@ public class InformationFlowAnalysis {
             // immediate = constant | ...;
             // constant = double_constant | float_constant | int_constant | long_constant | string_constant | null_constant | class_constant;
             public void caseConstant(Constant constant) {
-                values.add(new MyConstant(constant));
+                // do nothing
             }
     
             // immediate = ... | local;
@@ -1230,7 +1161,7 @@ public class InformationFlowAnalysis {
                 // immediate = constant | ...;
                 // constant = double_constant | float_constant | int_constant | long_constant | string_constant | null_constant | class_constant;
                 public void caseConstant(Constant constant) {
-                    values.add(new MyConstant(constant));
+                    // do nothing
                 }
     
                 // immediate = ... | local;
@@ -1250,9 +1181,7 @@ public class InformationFlowAnalysis {
                 // immediate = constant | ...;
                 // constant = double_constant | float_constant | int_constant | long_constant | string_constant | null_constant | class_constant;
                 public void caseConstant(Constant constant) {
-                    Set<MyValue> values = new HashSet<MyValue>();
-                    values.add(new MyConstant(constant));
-                    args.add(values);
+                    args.add(new HashSet<MyValue>());
                 }
                 
                 // immediate = ... | local;
