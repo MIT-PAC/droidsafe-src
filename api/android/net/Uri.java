@@ -48,6 +48,7 @@ import droidsafe.helpers.*;
  * forgiving--in the face of invalid input, it will return garbage
  * rather than throw an exception unless otherwise specified.
  */
+@DSModeled
 public abstract class Uri implements Parcelable, Comparable<Uri> {
 	private DSTaintObject taint = new DSTaintObject();
     /*
@@ -464,11 +465,8 @@ public abstract class Uri implements Parcelable, Comparable<Uri> {
         /** URI string representation. */
         private final String uriString;
 
+        @DSModeled(DSC.BAN)
         private StringUri(String uriString) {
-            if (uriString == null) {
-                throw new NullPointerException("uriString");
-            }
-
             this.uriString = uriString;
         }
 

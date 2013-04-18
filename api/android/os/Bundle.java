@@ -34,6 +34,7 @@ import java.util.Set;
  * A mapping from String values to various Parcelable types.
  *
  */
+@DSModeled
 public final class Bundle implements Parcelable, Cloneable {
 
     //droidsafe taint object tracks information flow through this class
@@ -67,6 +68,10 @@ public final class Bundle implements Parcelable, Cloneable {
     private boolean mHasFds = false;
     private boolean mFdsKnown = true;
     private boolean mAllowFds = true;
+    
+    static {
+    	
+    }
 
     /**
      * The ClassLoader used when unparcelling data from mParcelledData.

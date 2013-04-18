@@ -70,13 +70,18 @@ import java.util.Arrays;
 import java.util.Locale;
 import java.util.concurrent.CopyOnWriteArrayList;
 
+@DSModeled
 public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Callback,
         AccessibilityEventSource {
 	
 		private DSTaintObject dsTaint = new DSTaintObject();
 		
 		protected Context mContext;
-
+		
+		static {
+			
+		}
+		
 		@DSModeled(value = DSC.SAFE)
 		public View(Context context) {
 			dsTaint.addTaint(context);
