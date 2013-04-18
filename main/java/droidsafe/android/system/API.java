@@ -147,7 +147,7 @@ public class API {
 	 */
 	private void addUnmodeledMissingAPIMethods() {
 		try {
-			File sys_calls_file= new File(Config.v().ANDROID_LIB_DIR, Config.ANDROID_JAR);
+			File sys_calls_file= new File(Config.v().APAC_HOME(), Config.SYSTEM_METHODS_FILE);
 			LineNumberReader br = new LineNumberReader (new FileReader (sys_calls_file));
 			String line;
 			int lineNum;
@@ -175,12 +175,15 @@ public class API {
 					
 					missing.setPhantom(true);
 					clazz.addMethod(missing);
+					all_sys_methods.addMethod(missing);
+					banned_methods.addMethod(missing);
 				}
 				
 			}
 			
 		} catch (Exception e) {
-			System.out.println("***Error***");
+			logger.error("Error reading android api methods file: {}", e);
+			System.exit(1);
 		}
 	}
 	
