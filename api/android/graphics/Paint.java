@@ -44,7 +44,54 @@ public class Paint {
 	}
 	
 	@DSModeled(value = DSC.SAFE)
-	public int getColor() {  //Originall a native method, converted over
+	public int getColor() {  //Originally a native method, converted over
 		return dsTaint.getTaintInt();
 	}
+	
+	@DSModeled(value = DSC.SAFE)
+	public float measureText(char[] text, int index, int count) {
+		return 0;  //Is purely a computational function and doesn't appear to change any values/state
+		/*
+        if (text == null) {
+            throw new IllegalArgumentException("text cannot be null");
+        }
+        if ((index | count) < 0 || index + count > text.length) {
+            throw new ArrayIndexOutOfBoundsException();
+        }
+
+        if (text.length == 0 || count == 0) {
+            return 0f;
+        }
+        if (!mHasCompatScaling) {
+            return native_measureText(text, index, count);
+        }
+
+        final float oldSize = getTextSize();
+        setTextSize(oldSize*mCompatScaling);
+        float w = native_measureText(text, index, count);
+        setTextSize(oldSize);
+        return w*mInvCompatScaling;
+        */
+    }
+	
+	@DSModeled(value = DSC.SAFE)
+	public float measureText(String text) {
+		return 0;  //Is purely a computational function and doesn't appear to change any values/state
+		/*
+        if (text == null) {
+            throw new IllegalArgumentException("text cannot be null");
+        }
+
+        if (text.length() == 0) {
+            return 0f;
+        }
+
+        if (!mHasCompatScaling) return native_measureText(text);
+        final float oldSize = getTextSize();
+        setTextSize(oldSize*mCompatScaling);
+        float w = native_measureText(text);
+        setTextSize(oldSize);
+        return w*mInvCompatScaling;
+        */
+    }
 }

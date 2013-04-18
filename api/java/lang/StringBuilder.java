@@ -48,5 +48,17 @@ public class StringBuilder {
 		taint.addTaint(obj);
 		return this;
 	}
+
+	// GITI DSModeled
+	@DSModeled(DSC.SAFE)
+	public String substring(int start, int end) {
+		return new String();
+	}
+
+	// GITI DSModeled
+	@DSModeled(DSC.SAFE)
+	public void append(char[] buf, int i, int left) {
+		taint.addTaints(buf, i, left);
+	}
 	
 }
