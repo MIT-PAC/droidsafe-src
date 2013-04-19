@@ -190,55 +190,75 @@ public class Resources {
 		} catch (Exception e) {
 			logger.error("Error resolving resources and manifest: {}", e);
 		}
-		
-	
 	}
 	
 	/** Processes the application located in the specified directory **/
 	public Resources (File application_base) throws Exception {
-		
+
 		this.application_base = application_base;
 
 		resource_info = HashBiMap.create();
 
+		logger.warn("Resources(): " + application_base.toString());
+
 		// Get the manifest and read it
 		File manifest_file = new File (application_base, "AndroidManifest.xml");
+
 		manifest = new AndroidManifest (manifest_file);
 		package_name = manifest.manifest.package_name;
 
-    File layout_dir = new File (application_base, "res/layout");
-    for (File layout_source : layout_dir.listFiles()) {
-    	// logger.info ("considering layout file {}", layout_source);
-    	String name = layout_source.getName();
-    	String[] name_ext = name.split ("[.]", 2);
-    	// logger.info ("name/ext = {}/{}", name_ext[0], name_ext[1]);
-    	if (name_ext[1].equals ("xml"))
-    		layouts.add (new Layout (layout_source));
-    }
+		File layout_dir = new File (application_base, "res/layout");
+		if (layout_dir.exists()) {
+		  logger.warn("Resources(): res/layout directory existed ");
+			for (File layout_source : layout_dir.listFiles()) {
+				logger.warn("considering layout file {}", layout_source);
+				String name = layout_source.getName();
+				String[] name_ext = name.split ("[.]", 2);
+				logger.warn("name/ext = {}/{}", name_ext[0], name_ext[1]);
+				if (name_ext[1].equals ("xml")) {
+				  	logger.warn("adding layout " + layout_source);
+					layouts.add (new Layout (layout_source));
+				}
+			}
+		}
+		else {
+			logger.warn("No res/layout directory ");
+		}
 
-    // Check to see how many values directories we have. If more than one, there is localization and we don't want to
-    // store any values
-    File resource_dir = new File(application_base, "res");
-    File[] values_dirs = resource_dir.listFiles(new FilenameFilter() {
-    	@Override
-    	public boolean accept(File dir, String name) {
-    		return name.matches("values.*");
-    	} 
-    });
-    logger.info("{} value dirs exist", values_dirs.length);
-    if (values_dirs.length == 1) {
-    	for(File values_dir : values_dirs) {
-    		// Process .xml files in res/values
-    		for (File value_source : values_dir.listFiles()) {
-          String[] name_ext = value_source.getName().split ("[.]", 2);
-    			if (name_ext[1].equals ("xml")) {
- 	    			process_values(new XmlFile(value_source.getPath()));
-          }
-    		}
-      }
-    }
+		// Check to see how many values directories we have. If more than one, there is localization and we don't want to
+		// store any values
+		File resource_dir = new File(application_base, "res");
+		File[] values_dirs = resource_dir.listFiles(new FilenameFilter() {
+				@Override
+				public boolean accept(File dir, String name) {
+				return name.matches("values.*");
+				} 
+				});
+		logger.info("{} value dirs exist", values_dirs.length);
+		if (values_dirs.length == 1) {
+			for(File values_dir : values_dirs) {
+				// Process .xml files in res/values
+				for (File value_source : values_dir.listFiles()) {
+					String[] name_ext = value_source.getName().split ("[.]", 2);
+					if (name_ext[1].equals ("xml")) {
+						process_values(new XmlFile(value_source.getPath()));
+					}
+				}
+			}
+		}
+
 		// Read in the resource id to name map
 		read_resources();
+
+		for (Layout layout: layouts) {
+			layout.buildUIObjects(stringNameToRString);
+		}
+
+		//Build UIClasses for all the layouts
+		SootClass sc = Scene.v().getSootClass("com.example.android.apis.R");
+		if (sc != null) {
+			logger.warn("R class " + sc);
+		}
 	}
 
   /**

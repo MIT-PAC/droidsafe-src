@@ -103,7 +103,7 @@ public class Main {
 			GeoPTA.run();
 			
 			logger.info("Incorporating XML layout information");
-			//IntegrateXMLLayouts.run();
+			IntegrateXMLLayouts.run();
 			
 			logger.info("Specializing API Calls");
 			//APICallSpecialization.run();

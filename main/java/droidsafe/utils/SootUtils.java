@@ -581,8 +581,8 @@ public class SootUtils {
 		    streamOut.close();
 			
 		} catch (Exception e) {
-            logger.info("Method that failed = " + methodThatFailed);
-			logger.info("Error writing class to file {}", clz, e);
+            logger.error("Method that failed = " + methodThatFailed);
+			logger.error("Error writing class to file {}", clz, e);
 		}
 	}
 	
