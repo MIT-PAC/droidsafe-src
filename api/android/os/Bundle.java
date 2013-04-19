@@ -311,5 +311,19 @@ public final class Bundle implements Parcelable, Cloneable {
         ClassCastException e) {
         typeWarning(key, value, className, "<null>", e);
     }
+    
+    public <T extends Parcelable> T getParcelable(String key) {
+        unparcel();
+        Object o = mMap.get(key);
+        if (o == null) {
+            return null;
+        }
+        try {
+            return (T) o;
+        } catch (ClassCastException e) {
+            typeWarning(key, o, "Parcelable", e);
+            return null;
+        }
+    }
 
 }
