@@ -501,6 +501,11 @@ OnCreateContextMenuListener, ComponentCallbacks2 {
         //initActionBar();   //Looking at the code (listed above), I don't think this needs to be modeled
     }
 	
+	@DSModeled(DSC.SAFE)
+	public View findViewById(int id) {
+        return getWindow().findViewById(id);
+    }
+	
 	// ------------- Original MIT Models ------------- 
 	@DSModeled(DSC.BAN)
     public void droidsafeOnStop() {
