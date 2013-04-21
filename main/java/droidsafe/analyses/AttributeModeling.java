@@ -161,7 +161,6 @@ public class AttributeModeling {
       }
 
       for (SootMethod meth : clazz.getMethods()) {
-        am.writeToToDoLog("\n\n");
         if (meth.isConcrete() && reachableMethods.contains(meth)) {
           StmtBody stmtBody = (StmtBody)meth.retrieveActiveBody();
 
