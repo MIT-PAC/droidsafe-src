@@ -154,10 +154,6 @@ public class AttributeModeling {
       // We don't care about the harness or interfaces
       if (clazz.isInterface() || className.equals(Harness.HARNESS_CLASS_NAME))
         continue;
-
-      // We don't care about entry points into the system classes
-      if (API.v().isSystemClass(clazz))
-        continue;
      
       // DroidSafeCalls will go away eventually and we don't want to look at it for now 
       if(className.equals("edu.mit.csail.droidsafe.DroidSafeCalls")){
