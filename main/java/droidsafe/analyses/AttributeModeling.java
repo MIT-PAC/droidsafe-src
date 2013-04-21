@@ -137,11 +137,12 @@ public class AttributeModeling {
       logger.error("The GeoPTA pass has not been run. Attribute modeling requires it.");
       System.exit(1);
     }      
+    /*
     if (RCFG.v() == null) {
       logger.error("The RCFG pass has not been run. Attribute modeling requires it.");
       System.exit(1);
     }
-   
+    */
     if (am == null)
       am = new AttributeModeling();
 
@@ -477,10 +478,15 @@ public class AttributeModeling {
               if(modeledParamObject != null){
                 paramObjectSets.get(i).add(modeledParamObject);
                 try {
-                   this.paramClasses.get(i);
-                } catch (IndexOutOfBoundsException e) {
-                   this.paramClasses.add(i, modeledParamObject.getClass());
-                } 
+                  try {
+                    paramClasses.get(i);
+                  } catch (IndexOutOfBoundsException e) {
+                    paramClasses.add(i, AttributeModeling.this.getDroidsafeClass((RefType)paramTypes.get(i)));
+                  }
+                } catch(ClassNotFoundException cnfe) {
+                   AttributeModeling.this.writeToToDoLog("Couldn't getDroidsafeClass for arg " + arg); 
+                  return;
+                }
                 // Store the param object model so that we can later invalidate it if we haven't modeled the method
                 paramObjectModels.add(modeledParamObject);
               } else {
