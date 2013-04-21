@@ -121,9 +121,6 @@ public class SootUtils {
     } else if (sootValue instanceof IntConstant) {
       return new Integer(((IntConstant)sootValue).value);
     } else if (sootValue instanceof StringConstant) {
-      System.out.println("Value/Box");
-      System.out.println(sootValue);
-      System.out.println(sootValue.getUseBoxes());
       String string = new String(((StringConstant)sootValue).value);
       droidsafe.model.java.lang.String droidsafeString = new droidsafe.model.java.lang.String();
       droidsafeString.incorporateString(string);
