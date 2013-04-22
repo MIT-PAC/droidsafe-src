@@ -17,6 +17,7 @@
 package android.view;
 
 import droidsafe.annotations.*;
+import droidsafe.helpers.*;
 
 import android.content.Context;
 import android.content.ContextWrapper;
@@ -28,6 +29,7 @@ import android.os.Build;
  * wrapped context. 
  */
 public class ContextThemeWrapper extends ContextWrapper {
+	private DSTaintObject dsTaint = new DSTaintObject();
    
     @DSModeled
     public ContextThemeWrapper() {
@@ -36,6 +38,11 @@ public class ContextThemeWrapper extends ContextWrapper {
     
     public ContextThemeWrapper(Context base, int themeres) {
         super(base);
+        dsTaint.addTaints(base, themeres);
+        /*
+        mBase = base;
+        mThemeResource = themeres;
+        */
     }
     
     @Override public void setTheme(int resid) {
