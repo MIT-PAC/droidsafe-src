@@ -81,4 +81,73 @@ public class Canvas {
         mBitmap = bitmap;
         */
     }
+	
+	@DSModeled(DSC.SAFE)
+    public void drawBitmap(Bitmap bitmap, float left, float top, Paint paint) {
+		dsTaint.addTaints(bitmap, left, top, paint);
+		/*
+        throwIfRecycled(bitmap);
+        native_drawBitmap(mNativeCanvas, bitmap.ni(), left, top,
+                paint != null ? paint.mNativePaint : 0, mDensity, mScreenDensity,
+                bitmap.mDensity);
+        */
+    }
+	
+	/**
+     * Draw the specified oval using the specified paint. The oval will be
+     * filled or framed based on the Style in the paint.
+     *
+     * @param oval The rectangle bounds of the oval to be drawn
+     */
+	@DSModeled(DSC.SAFE)
+    public void drawOval(RectF oval, Paint paint) {
+		dsTaint.addTaints(oval, paint);
+    	/* GITI DSModeled
+        if (oval == null) {
+            throw new NullPointerException();
+        }
+        native_drawOval(mNativeCanvas, oval, paint.mNativePaint);
+        */
+    }
+	
+	@DSModeled(DSC.SAFE)
+    public void drawPath(Path path, Paint paint) {
+		dsTaint.addTaints(path, paint);
+        /*
+         native_drawPath(mNativeCanvas, path.ni(), paint.mNativePaint);
+        */
+    }
+	
+	//DSFIXME - Do not think this method needs to have any implementation, but need
+	// 			to verify.
+	@DSModeled(DSC.SAFE)
+    public void restore() {
+		
+	}
+	
+	@DSModeled(DSC.SAFE)
+	public void rotate(float degrees) {
+		dsTaint.addTaint(degrees);
+	}
+	
+	@DSModeled(DSC.SAFE)
+	public void scale(float sx, float sy) {
+		dsTaint.addTaints(sx, sy);
+	}
+	
+	@DSModeled(DSC.SAFE)
+	public void translate(float dx, float dy) {
+		dsTaint.addTaints(dx, dy);
+	}
+	
+	@DSModeled(DSC.SAFE)
+	public void concat(Matrix matrix) {
+		dsTaint.addTaint(matrix);
+    }
+	
+	@DSModeled(DSC.SAFE)
+	public void drawBitmap(Bitmap bitmap, Rect src, RectF dst, Paint paint) {
+		dsTaint.addTaints(bitmap, src, dst, paint);
+    }
+	
 }
