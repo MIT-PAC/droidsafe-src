@@ -94,4 +94,28 @@ public class Paint {
         return w*mInvCompatScaling;
         */
     }
+	
+	@DSModeled(DSC.SAFE)
+	public void setAntiAlias(boolean aa) {
+		//Helper for setFlags(), setting or clearing the ANTI_ALIAS_FLAG bit
+		dsTaint.addTaint(aa);
+	}
+	
+	public void setFilterBitmap(boolean filter) {
+		//Don't think we need to perform any tainting
+		//filter true to set the FILTER_BITMAP_FLAG bit in the paint's flags, false to clear it.
+	}
+	
+	@DSModeled(DSC.SAFE)
+	@Override
+    protected void finalize() throws Throwable {
+		super.finalize();
+		/*
+        try {
+            finalizer(mNativePaint);
+        } finally {
+            super.finalize();
+        }
+        */
+    }
 }
