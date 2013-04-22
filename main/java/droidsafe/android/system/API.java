@@ -147,7 +147,7 @@ public class API {
 	 */
 	private void addUnmodeledMissingAPIMethods() {
 		try {
-			File sys_calls_file= new File(Config.v().ANDROID_LIB_DIR, Config.ANDROID_JAR);
+			File sys_calls_file= new File(Config.v().APAC_HOME(), Config.SYSTEM_METHODS_FILE);
 			LineNumberReader br = new LineNumberReader (new FileReader (sys_calls_file));
 			String line;
 			int lineNum;
@@ -175,14 +175,48 @@ public class API {
 					
 					missing.setPhantom(true);
 					clazz.addMethod(missing);
+					all_sys_methods.addMethod(missing);
+					banned_methods.addMethod(missing);
 				}
 				
 			}
 			
 		} catch (Exception e) {
-
+			logger.error("Error reading android api methods file: {}", e);
+			System.exit(1);
 		}
 	}
+	
+	private Classification getModeledClassification(List<Tag> tags) {
+		for (Tag tag : tags) {
+			if (tag instanceof VisibilityAnnotationTag) {
+				VisibilityAnnotationTag vat = (VisibilityAnnotationTag)tag;
+				for (AnnotationTag at : vat.getAnnotations()) {
+					if (at.getType().contains("droidsafe/annotations/DSModeled")) {
+						
+						//if no designation, then spec
+						if (at.getNumElems() == 0)
+							return Classification.SPEC;
+						else {
+							String c = ((AnnotationEnumElem)at.getElemAt(0)).getConstantName();
+							if ("SAFE".equals(c)) {
+								return Classification.SAFE;
+							} else if ("SPEC".equals(c)) {
+								return Classification.SPEC;
+							} else if ("BAN".equals(c)) {
+								return Classification.BAN;
+							} else {
+								logger.error("Invalid classification annotation {} on {}", c, tag);
+							}
+						}
+					}
+				}
+			}
+		}
+		//could not find a tag and classification
+		return Classification.NONE;
+	}
+
 	
 	/**
 	 * Based on the annotation we are adding to api modeled methods from modeled classes,
@@ -191,40 +225,51 @@ public class API {
 	 * Also, read the classification and put methods into appropriate sets (ban, spec, safe)
 	 */
 	private void findModeledMethods() {
+		findModeledClinits();
 		for (SootMethod method : all_sys_methods) {
-			for (Tag tag : method.getTags()) {
-				if (tag instanceof VisibilityAnnotationTag) {
-					VisibilityAnnotationTag vat = (VisibilityAnnotationTag)tag;
-					for (AnnotationTag at : vat.getAnnotations()) {
-						if (at.getType().contains("droidsafe/annotations/DSModeled")) {
-							logger.info("Found api modeled method: {}\n", method);
-							if (method.isConcrete()) {
-								method.retrieveActiveBody();
-								if (!method.hasActiveBody()) {
-									logger.error("Modeled api method has no active body: {}", method);
-									System.exit(1);
-								}
-							}
-							
-							//if no designation, then spec
-							if (at.getNumElems() == 0)
-								spec_methods.addMethod(method);
-							else {
-								String c = ((AnnotationEnumElem)at.getElemAt(0)).getConstantName();
-								if ("SAFE".equals(c)) {
-									safe_methods.addMethod(method);
-								} else if ("SPEC".equals(c)) {
-									spec_methods.addMethod(method);
-								} else if ("BAN".equals(c)) {
-									banned_methods.addMethod(method);
-								} else {
-									logger.error("Invalid classification annotation {} on {}", c, method);
-								}
-							}
-							
-							api_modeled_methods.addMethod(method);
-						}
+			Classification classification = getModeledClassification(method.getTags());
+			if (classification != Classification.NONE) {
+				//we have a classified and modeled method
+				logger.info("Found api modeled method: {}\n", method);
+				//try to get the active method body for any modeled method and make sure it exists
+				if (method.isConcrete()) {
+					method.retrieveActiveBody();
+					if (!method.hasActiveBody()) {
+						logger.error("Modeled api method has no active body: {}", method);
+						System.exit(1);
 					}
+				}
+
+				if (classification == Classification.SAFE) {
+					safe_methods.addMethod(method);
+				} else if (classification == Classification.SPEC) {
+					spec_methods.addMethod(method);
+				} else if (classification == Classification.BAN) {
+					banned_methods.addMethod(method);
+				}
+				
+				api_modeled_methods.addMethod(method);
+			}
+		}
+	}
+	
+	private void findModeledClinits() {
+		for (SootClass clz : allSystemClasses) {
+			Classification classification = getModeledClassification(clz.getTags());
+			if (classification != Classification.NONE) {
+				//System.out.printf("** Found modeled api class: %s\n", clz);
+				if (clz.declaresMethod("void <clinit>()")) {
+					SootMethod clinit = clz.getMethod("void <clinit>()");
+					//System.out.printf("** Found modeled clinit: %s\n", clinit);
+					api_modeled_methods.addMethod(clinit);
+					
+					if (classification == Classification.SAFE) {
+						safe_methods.addMethod(clinit);
+					} else if (classification == Classification.SPEC) {
+						spec_methods.addMethod(clinit);
+					} else if (classification == Classification.BAN) {
+						banned_methods.addMethod(clinit);
+					}			
 				}
 			}
 		}
@@ -453,5 +498,9 @@ public class API {
     
     public SootMethodList getAllSystemMethods() {
     	return all_sys_methods;
+    }
+    
+    public enum Classification {
+    	SAFE, SPEC, BAN, NONE;
     }
  }

@@ -23,7 +23,7 @@ public class InjectedSourceFlows {
 		
 	}
 	
-	public Set<MyValue> getInjectedFlows(AllocNode node, Edge context) {
+	public Set<MyValue> getInjectedFlows(AllocNode node, Edge context, String field) {
 		if (node.getType() instanceof RefType &&
 				((RefType)node.getType()).getSootClass().getName().equals("java.net.Uri")) {
 			LinkedHashSet<MyValue> flows = new LinkedHashSet<MyValue>();
