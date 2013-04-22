@@ -3,6 +3,8 @@ package droidsafe.android.app;
 
 import java.io.File;
 import java.io.IOException;
+import java.net.URL;
+import java.net.URLClassLoader;
 import java.util.ArrayList;
 import java.util.Enumeration;
 import java.util.LinkedHashSet;
@@ -52,6 +54,8 @@ public class Project {
 	private Set<String> libClasses;
 	private Set<String> genClasses;
 	
+	private ClassLoader javaAppClassLoader;
+	
 	static {
 		project = new Project();
 	}
@@ -97,6 +101,31 @@ public class Project {
 			}
 			outputDir.mkdirs();
 		}
+		createJavaClassLoader();
+	}
+	
+	/** 
+	 * Returns the java.lang.class for an application class, represented by string s.
+	 */
+	public Class<?> getAppJavaClass(String s) throws ClassNotFoundException {
+		return javaAppClassLoader.loadClass(s);
+	}
+	
+	/**
+	 * Initialize the java class loader used to load application classes
+	 */
+	private void createJavaClassLoader() {
+		try {
+			File classesDir = new File(Config.v().APP_ROOT_DIR, CLASSES_DIR);
+			URL classesDirURL = classesDir.toURI().toURL();
+			File androidJar = new File(Config.v().ANDROID_LIB_DIR, Config.v().ANDROID_JAR);
+			URL androidJarURL = androidJar.toURI().toURL();
+			javaAppClassLoader = new URLClassLoader(new URL[]{classesDirURL, androidJarURL});
+		} catch (Exception e) {
+			logger.error("Unable to create java class loader for application: {}  Exiting...", e);
+			System.exit(1);
+		}
+		
 	}
 
 	public void loadClasses() {
