@@ -20,6 +20,8 @@ import droidsafe.utils.SootUtils;
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.io.BufferedWriter;
+import java.io.PrintWriter;
 
 import java.lang.reflect.Constructor;
 
@@ -403,10 +405,64 @@ public class AttributeModeling {
    * Log the results of the modeling
    */
   private void log() {
+    //List<droidsafe.model.android.content.Intent> modeledIntents = new ArrayList<droidsafe.model.android.content.Intent>();
+    //List<droidsafe.model.android.net.Uri> modeledUris = new ArrayList<droidsafe.model.android.net.Uri>();
+    //List<droidsafe.model.java.lang.String> modeledStrings = new ArrayList<droidsafe.model.java.lang.String>();
+
+    int validModeledIntentsNum = 0;
+    int totalModeledIntentsNum = 0;
+    int validModeledUriNum = 0;
+    int totalModeledUriNum = 0;
+    int validModeledStringsNum = 0;
+    int totalModeledStringsNum = 0;
+
     for (Map.Entry<AllocNode, ModeledClass> entry : objectToModelMap.entrySet()) {
       ModeledClass modeledObject = entry.getValue();
+      
+      if (modeledObject instanceof droidsafe.model.android.content.Intent){
+        totalModeledIntentsNum++;
+        if (!((droidsafe.model.android.content.Intent)modeledObject).invalidated()){
+           validModeledIntentsNum++;
+        }
+      }
+      if (modeledObject instanceof droidsafe.model.android.net.Uri){
+        totalModeledUriNum++;
+        if (!((droidsafe.model.android.net.Uri)modeledObject).invalidated()){
+           validModeledUriNum++;
+        }
+      }
+      if (modeledObject instanceof droidsafe.model.java.lang.String){
+        totalModeledStringsNum++;
+        if (!((droidsafe.model.java.lang.String)modeledObject).invalidated()){
+           validModeledStringsNum++;
+        }
+      }
       logger.info("Finished Model: {}", modeledObject);
       logger.info("Corresponding AllocNode: {}", entry.getKey());
+    }
+    File attrModelingStatsFile = new File(System.getenv("APAC_HOME") + "/doc/attr-modeling-stats.txt");
+
+    try {
+      attrModelingStatsFile.createNewFile();
+    } catch(IOException ioe){
+      logger.error("Couldn't write to attr-modeling-stats file:", ioe);
+    }
+    
+    String stats = "";
+    stats += "Intents: " + validModeledIntentsNum + "/" + totalModeledIntentsNum;
+    stats += " Uri: " + validModeledUriNum + "/" + totalModeledUriNum;
+    stats += " Strings: " + validModeledStringsNum + "/" + totalModeledStringsNum;
+
+    logger.info("Attribute Modeling Statistics");
+    logger.info(stats);
+
+    try {
+      stats = Project.v().getAppSrcDir() + "\n" + stats;
+      PrintWriter out = new PrintWriter(new BufferedWriter(new FileWriter(attrModelingStatsFile, true)));
+      out.println(stats);
+      out.close();
+    } catch (IOException ioe) {
+      logger.error("Couldn't write to attr-modeling-stats file:", ioe);
     }
   }
 
