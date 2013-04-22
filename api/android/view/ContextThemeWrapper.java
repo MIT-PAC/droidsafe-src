@@ -64,5 +64,13 @@ public class ContextThemeWrapper extends ContextWrapper {
    
         return null;
     }
+    
+    
+    @DSModeled(DSC.SAFE)
+    @Override protected void attachBaseContext(Context newBase) {
+        super.attachBaseContext(newBase);
+        dsTaint.addTaint(newBase);
+        //mBase = newBase;
+    }
 }
 
