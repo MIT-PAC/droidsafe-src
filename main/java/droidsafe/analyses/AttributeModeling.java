@@ -24,6 +24,7 @@ import java.io.IOException;
 import java.lang.reflect.Constructor;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Iterator;
 import java.util.LinkedHashMap;
@@ -38,6 +39,7 @@ import org.slf4j.LoggerFactory;
 
 import soot.Body;
 
+import soot.jimple.AssignStmt;
 import soot.jimple.Constant;
 import soot.jimple.InstanceInvokeExpr;
 import soot.jimple.NullConstant;
@@ -89,6 +91,9 @@ public class AttributeModeling {
   // The value is the Model object which simulates that object.
   private Map<AllocNode, ModeledClass> objectToModelMap; 
 
+  // Map to store Values to attributes of Models
+  private Map<Value, Object> valueToModelAttrMap;
+
   // FileWriter used to log what we still don't model but perhaps should
   private FileWriter attrModelingTodoLog;
 
@@ -101,6 +106,7 @@ public class AttributeModeling {
 
   private AttributeModeling() {
     this.objectToModelMap = new LinkedHashMap<AllocNode, ModeledClass>();
+    this.valueToModelAttrMap = new HashMap<Value, Object>();
 
     try {
       this.attrModelingTodoLog = new FileWriter(Project.v().getOutputDir() + File.separator + "attribute-modeling-todos.log");
@@ -188,6 +194,8 @@ public class AttributeModeling {
             // Store the class of each param for later invoke simulation
             ArrayList<Class> paramClasses = paramAnalyzer.getParamClasses();
 
+            ArrayList<Object> returnedObjects = new ArrayList<Object>();
+
             if (invokeExpr instanceof InstanceInvokeExpr){
               InstanceInvokeExpr iie = (InstanceInvokeExpr)invokeExpr;
               // get all the receivers and the models for them
@@ -198,7 +206,7 @@ public class AttributeModeling {
                 if(modeledReceiverObject != null) {
                   if(paramObjectCartesianProduct != null){
                     // simulateInvokeExprEffects will simulate the call for each param permutation in paramObjectCartesianProduct
-                    am.simulateInvokeExprEffects(modeledReceiverObject, modeledReceiverObject.getClass(), invokeExpr, 
+                    returnedObjects = am.simulateInvokeExprEffects(modeledReceiverObject, modeledReceiverObject.getClass(), invokeExpr, 
                                                  paramObjectCartesianProduct, paramClasses);
                   } else {
                     // We couldn't model one of the arguments so we can't simulate the call and have to invalidate the receiver
@@ -216,7 +224,7 @@ public class AttributeModeling {
             else if (invokeExpr instanceof StaticInvokeExpr){
               try{
                 // simulate the static call
-                am.simulateInvokeExprEffects(null, Class.forName("droidsafe.model." + invokeExpr.getMethod().getDeclaringClass().getName()), invokeExpr, paramObjectCartesianProduct, paramClasses);
+                returnedObjects = am.simulateInvokeExprEffects(null, Class.forName("droidsafe.model." + invokeExpr.getMethod().getDeclaringClass().getName()), invokeExpr, paramObjectCartesianProduct, paramClasses);
               } catch(Exception e) {
                 try {
                   String logEntry = "Unable to simulate the static call " + invokeExpr;
@@ -233,6 +241,11 @@ public class AttributeModeling {
                 String logEntry = "Not simulating expression (isn't an instance invoke or static)" + invokeExpr;
                 am.attrModelingTodoLog.write(logEntry + "\n");
               } catch (IOException ioe) {}
+            }
+            if (returnedObjects.size() > 0 && stmt instanceof AssignStmt) {
+              for (Object returnedObject : returnedObjects) {
+                am.valueToModelAttrMap.put(((AssignStmt)stmt).getLeftOp(), returnedObject);
+              }
             }
           }
         }
@@ -275,15 +288,20 @@ public class AttributeModeling {
   /**
    * Calls the invokeExpr for every possible permutation of params.
    */
-  public void simulateInvokeExprEffects(ModeledClass modeledReceiverObject, Class invokeExprClass, InvokeExpr invokeExpr, Set<ArrayList<Object>> paramObjectCartesianProduct, ArrayList<Class> paramObjectClasses) { 
+  public ArrayList<Object> simulateInvokeExprEffects(ModeledClass modeledReceiverObject, Class invokeExprClass, InvokeExpr invokeExpr, Set<ArrayList<Object>> paramObjectCartesianProduct, ArrayList<Class> paramObjectClasses) { 
+    ArrayList<Object> objectsToReturn = new ArrayList<Object>();
     String methodName = invokeExpr.getMethod().getName();
     if(methodName.equals("<init>")){
       methodName = "_init_";
     }
     try {
       java.lang.reflect.Method method = invokeExprClass.getDeclaredMethod(methodName, paramObjectClasses.toArray(new Class[paramObjectClasses.size()]));
-      for (ArrayList paramObjectPermutation : paramObjectCartesianProduct){
-        method.invoke(modeledReceiverObject, paramObjectPermutation.toArray());
+      Object objectToReturn;
+      for (ArrayList paramObjectPermutation : paramObjectCartesianProduct) {
+        objectToReturn = method.invoke(modeledReceiverObject, paramObjectPermutation.toArray());
+        if (objectToReturn != null) {
+          objectsToReturn.add(objectToReturn);
+        }
       }
     } catch (Exception e) {
       try {
@@ -300,6 +318,7 @@ public class AttributeModeling {
         this.attrModelingTodoLog.write(logEntry + "\n");
       } catch (IOException ioe) {}
     }
+    return objectsToReturn;
   }
 
   /**
@@ -502,16 +521,26 @@ public class AttributeModeling {
               }
             }
           } else {
-            // log the problem
-            try {
-              String logEntry = "No AllocNodes were found by PTA for arg #" + i + " of instanceInvokeExpr " + invokeExpr;
-              AttributeModeling.this.attrModelingTodoLog.write(logEntry + "\n");
-            } catch(IOException ioe){}
-            // invalidate any param models we've already created
-            for(ModeledClass modeledObject : paramObjectModels){
-              modeledObject.invalidate();
+            if(valueToModelAttrMap.containsKey(arg)){
+              Object modelAttr = valueToModelAttrMap.get(arg);
+              try {
+                paramClasses.get(i);
+              } catch (IndexOutOfBoundsException e) {
+                paramClasses.add(i, modelAttr.getClass());
+              }
+              paramObjectSets.get(i).add(modelAttr); 
+            } else {
+              // log the problem
+              try {
+                String logEntry = "PTA didn't find any AllocNodes and the analysis dind't find any model attributes for arg #" + i + " of instanceInvokeExpr " + invokeExpr;
+                AttributeModeling.this.attrModelingTodoLog.write(logEntry + "\n");
+              } catch(IOException ioe){}
+              // invalidate any param models we've already created
+              for(ModeledClass modeledObject : paramObjectModels){
+                modeledObject.invalidate();
+              }
+              return;
             }
-            return;
           }
         } else {
           // log the problem

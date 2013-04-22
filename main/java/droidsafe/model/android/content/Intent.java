@@ -48,6 +48,23 @@ public class Intent extends ModeledClass {
   public void setPackage(droidsafe.model.java.lang.String mPackage){
     this.mPackage.incorporateString(mPackage);
   }
+
+  public droidsafe.model.java.lang.String getAction() {
+    return this.mAction;
+  }
+
+  public droidsafe.model.java.lang.String getPackage() {
+    return this.mPackage;
+  }
+
+  public droidsafe.model.java.lang.String getType() {
+    return this.mType;
+  }
+
+  public droidsafe.model.android.net.Uri getData() {
+    return this.mData;
+  }
+
   @Override
   public String toString(){
     String str = "<modeled Intent" + this.getId() + "> {";
