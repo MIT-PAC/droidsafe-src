@@ -660,4 +660,60 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
 	     * Base View state sets
 	     */
 	    
+	    @DSModeled(DSC.SAFE)
+	    public void invalidate() {
+	        invalidate(true);
+	    }
+	    
+	    @DSModeled(DSC.SAFE)
+	    void invalidate(boolean invalidateCache) {
+	    	/*
+	    	 * DSFIXME:  This method stubbed out for now, nothing is dealing with mParent
+	    	 * currently.  If mParent is to be modeled, uncomment out the appropriate
+	    	 * portions so that it can be modeled. 
+	    	 */
+	    	/*
+	        if (ViewDebug.TRACE_HIERARCHY) {
+	            ViewDebug.trace(this, ViewDebug.HierarchyTraceType.INVALIDATE);
+	        }
+
+	        if (skipInvalidate()) {
+	            return;
+	        }
+	        if ((mPrivateFlags & (DRAWN | HAS_BOUNDS)) == (DRAWN | HAS_BOUNDS) ||
+	                (invalidateCache && (mPrivateFlags & DRAWING_CACHE_VALID) == DRAWING_CACHE_VALID) ||
+	                (mPrivateFlags & INVALIDATED) != INVALIDATED || isOpaque() != mLastIsOpaque) {
+	            mLastIsOpaque = isOpaque();
+	            mPrivateFlags &= ~DRAWN;
+	            mPrivateFlags |= DIRTY;
+	            if (invalidateCache) {
+	                mPrivateFlags |= INVALIDATED;
+	                mPrivateFlags &= ~DRAWING_CACHE_VALID;
+	            }
+	            final AttachInfo ai = mAttachInfo;
+	            final ViewParent p = mParent;
+	            //noinspection PointlessBooleanExpression,ConstantConditions
+	            if (!HardwareRenderer.RENDER_DIRTY_REGIONS) {
+	                if (p != null && ai != null && ai.mHardwareAccelerated) {
+	                    // fast-track for GL-enabled applications; just invalidate the whole hierarchy
+	                    // with a null dirty rect, which tells the ViewAncestor to redraw everything
+	                    p.invalidateChild(this, null);
+	                    return;
+	                }
+	            }
+
+	            if (p != null && ai != null) {
+	                final Rect r = ai.mTmpInvalRect;
+	                r.set(0, 0, mRight - mLeft, mBottom - mTop);
+	                // Don't call invalidate -- we don't want to internally scroll
+	                // our own bounds
+	                p.invalidateChild(this, r);
+	            }
+	        }
+	        */
+	    }
+	    
+	    @DSModeled(DSC.SAFE)
+	    protected void onSizeChanged(int w, int h, int oldw, int oldh) {
+	    }
 }
