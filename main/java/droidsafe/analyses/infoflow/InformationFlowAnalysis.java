@@ -62,6 +62,7 @@ import soot.jimple.spark.pag.AllocNode;
 import soot.jimple.toolkits.callgraph.CallGraph;
 import soot.jimple.toolkits.callgraph.Edge;
 import soot.toolkits.graph.PseudoTopologicalOrderer;
+import soot.util.Chain;
 
 import droidsafe.analyses.GeoPTA;
 
@@ -789,13 +790,15 @@ public class InformationFlowAnalysis {
     // assign_stmt = variable "=" new_expr
     private States execute(final AssignStmt stmt, Value variable, NewExpr newExpr, States inStates) {
         final States outStates;
-        AllocNode allocNode = GeoPTA.v().getAllocNode(newExpr);
+        final AllocNode allocNode = GeoPTA.v().getAllocNode(newExpr);
         if (allocNode != null) {
             outStates = new States();
             final Set<MyValue> values = new HashSet<MyValue>();
-            Address address = new Address(allocNode);
+            final Address address = new Address(allocNode);
             values.add(address);
+            final Chain<SootField> fields = newExpr.getBaseType().getSootClass().getFields();
             for (final Map.Entry<Edge, FrameHeapStatics> contextFrameHeapStatic : inStates.entrySet()) {
+                final Edge context = contextFrameHeapStatic.getKey();
                 final FrameHeapStatics inFrameHeapStatics = contextFrameHeapStatic.getValue();
                 // TODO: Do I need to initialize the object's fields with their default values according to their types?
                 // variable = array_ref | instance_field_ref | static_field_ref | local;
@@ -822,7 +825,11 @@ public class InformationFlowAnalysis {
                     public void caseLocal(Local local) {
                         Frame frame = new Frame(inFrameHeapStatics.frame, inFrameHeapStatics.frame.params);
                         frame.put(local, values);
-                        outStates.put(contextFrameHeapStatic.getKey(), new FrameHeapStatics(frame, new Heap(inFrameHeapStatics.heap.instances, inFrameHeapStatics.heap.arrays), inFrameHeapStatics.statics));
+                        Heap heap = new Heap(inFrameHeapStatics.heap, inFrameHeapStatics.heap.arrays);
+                        for (SootField field : fields) {
+                            heap.instances.put(address, field, InjectedSourceFlows.v().getInjectedFlows(allocNode, field, context));
+                        }
+                        outStates.put(contextFrameHeapStatic.getKey(), new FrameHeapStatics(frame, heap, inFrameHeapStatics.statics));
                     }
                 });
             }

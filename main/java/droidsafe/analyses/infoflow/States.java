@@ -334,6 +334,11 @@ class Heap {
         this.arrays = arrays;
     }
 
+    Heap(Heap that, Arrays arrays) {
+        this.instances = new Instances(that.instances);
+        this.arrays = arrays;
+    }
+
     Heap merge(Heap that) {
         return new Heap(this.instances.merge(that.instances), this.arrays.merge(that.arrays));
     }
