@@ -22,6 +22,7 @@ import java.util.jar.JarFile;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 import java.util.Arrays;
+import java.util.Collections;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -60,6 +61,11 @@ import soot.Modifier;
 import soot.SootField;
 import soot.Scene;
 import soot.Local;
+import soot.RefType;
+import soot.jimple.NewExpr;
+import soot.jimple.Constant;
+import soot.jimple.StringConstant;
+import soot.jimple.IdentityStmt;
 import soot.jimple.DoubleConstant;
 import soot.jimple.FloatConstant;
 import soot.jimple.InstanceInvokeExpr;
@@ -75,6 +81,7 @@ import soot.jimple.JimpleBody;
 import soot.tagkit.LineNumberTag;
 import soot.util.Chain;
 import soot.util.JasminOutputStream;
+
 
 import droidsafe.utils.SootUtils;
 
@@ -114,6 +121,8 @@ public class ResourcesSoot {
 		 * adding clinit method for the class
 		 */
 		mClinitBody = Jimple.v().newBody(mClinitMethod);
+
+		/* The active body to work on is mClinitBody */
 		mClinitMethod.setActiveBody(mClinitBody);
 	}
 
@@ -121,17 +130,81 @@ public class ResourcesSoot {
 	public void addTextView(String type, int numId, String strId, String text) {
 
 		String   idName    = makeIdName(type, numId); 
+		String   localIdName = "tmp" + idName;
 		String   className = makeClassName(type);
 		RefType  classType = RefType.v(className); 
+
+		Chain units = mClinitBody.getUnits();
+
+		/* Steps to add an class member instantiation:
+			1. Add a field to the class
+			2. Add a local variable (typed) with coresponding name
+			3. Set attributes of created local variable
+			4. Assign local variable to the class member
+		*/
+		
+		// step 1: create sootfield for member variable
 		SootField sf = new SootField(idName, classType, Modifier.PUBLIC | Modifier.STATIC);
 		mSootClass.addField(sf);
 
+		// step 2: create local variable
+		// Button tmpBotton; 
+		Local arg;
+		arg = Jimple.v().newLocal(localIdName, classType);
+		mClinitBody.getLocals().add(arg);
+
+		LinkedList<Constant> list = new LinkedList();
+		list.add(NullConstant.v());
+
+
+		try {
+
+			RefType btnRef = RefType.v("android.widget.Button");
+
+			NewExpr newExpr = Jimple.v().newNewExpr(btnRef);
+
+			units.add(Jimple.v().newAssignStmt(
+					 arg, newExpr));
+
+			if (newExpr == null) {
+				logger.warn("newExpr is NULL ");
+			}
+			// button constructor method
+			SootMethod btnInitMethod = Scene.v().getMethod("<android.widget.Button: void <init>(android.content.Context)>");
+			if (btnInitMethod  == null) {
+				logger.warn("bntInitMethod is NULL ");
+			}
+
+			// For now we are just passing EMPTY as context
+			units.add(Jimple.v().newInvokeStmt(
+						Jimple.v().newVirtualInvokeExpr(arg, btnInitMethod.makeRef(), 
+								list))); 
+								//Collections.EMPTY_LIST ))); 
+
+			SootMethod setTextMethod = Scene.v().getMethod("<android.widget.TextView: void setText(java.lang.CharSequence)>");
+
+			units.add(Jimple.v().newInvokeStmt(
+						Jimple.v().newVirtualInvokeExpr(arg, setTextMethod.makeRef(), 
+								StringConstant.v(text)))); 
+				
+
+		}
+		catch (Exception ex) {
+			logger.warn(ex.toString());
+		}
+
+		// adding a new statement
+		// units.add(Jimple.v().newIdentityStmt(arg, Jimple.v().newStaticFieldRef(sf.makeRef()))); 
+		// step 3: instatiate 
+
+		// step 4: assign statement: Button = tmpButton
+		// units.add(Jimple.v().newAssignStmt(
+
+		
 /*
 		Chain units = mClinitBody.getUnits();
 		Local arg, tmpRef;
 		String localType = "local" + className; 
-		arg = Jimple.v().newLocal(localType, classType);
-		mClinitBody.getLocals().add(arg);
 */
 	}
 

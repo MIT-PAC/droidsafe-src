@@ -37,6 +37,7 @@ import droidsafe.transforms.LocalForStringConstantArguments;
 import droidsafe.transforms.ResolveStringConstants;
 import droidsafe.transforms.ScalarAppOptimizations;
 import droidsafe.utils.SootUtils;
+import droidsafe.android.app.resources.ResourcesSoot;
 
 
 /**
@@ -147,9 +148,22 @@ public class Main {
 
 	private static void writeAllAppClasses() {
 		for (SootClass clz : Scene.v().getClasses()) {
-			if (clz.isApplicationClass() /* && Project.v().isSrcClass(clz.toString())*/) {
+			if (clz.toString().indexOf(".Button") >= 0) {
+				logger.info("Found Button class{} ", clz.toString());
 				SootUtils.writeByteCodeAndJimple(Project.v().getOutputDir() + File.separator + clz.toString(), clz);
 			}
+
+			if (clz.isApplicationClass() /* && Project.v().isSrcClass(clz.toString())*/) {
+				logger.info("writing class {} ", clz.toString());
+				try {
+					SootUtils.writeByteCodeAndJimple(Project.v().getOutputDir() + File.separator + clz.toString(), clz);
+				} catch (Exception ex) {
+					logger.warn(ex.toString());
+				}
+			}
 		}
+
+		logger.info("Writing ResourcesSoot \n");
+		ResourcesSoot.v().writeFile(Project.v().getOutputDir());
 	}
 }

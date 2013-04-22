@@ -239,6 +239,7 @@ public class Resources {
 			for(File values_dir : values_dirs) {
 				// Process .xml files in res/values
 				for (File value_source : values_dir.listFiles()) {
+					logger.info("reading file " + value_source);
 					String[] name_ext = value_source.getName().split ("[.]", 2);
 					if (name_ext[1].equals ("xml")) {
 						process_values(new XmlFile(value_source.getPath()));
@@ -367,9 +368,13 @@ public class Resources {
 					//not documented anywhere...except a mailing list post from years ago
 					if (tag instanceof IntegerConstantValueTag) {
 						value = new Integer(((IntegerConstantValueTag)tag).getIntValue());
-						logger.info ("field {}.{} = {}", component, field, String.format("%08X", value));
-						resource_info.put ((Integer) value, 
-							component + "." + field.getName());
+						logger.info ("field {}.{} = {} {}", component, field, 
+									 String.format("%08X", value));
+						
+						String resource_value = component + "." + field.getName();
+						logger.info("resource_info.put({}, {}) ", value, resource_value); 
+
+						resource_info.put((Integer) value, resource_value);
 					}
 					else {
 						logger.info("Unknown initial value for field of resource class: {} ()", field.getName(), tag);

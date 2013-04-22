@@ -16,6 +16,8 @@ import org.slf4j.LoggerFactory;
 
 import soot.SootClass;
 
+import droidsafe.android.app.resources.ResourcesSoot;
+
 /**
  * Reads layout XML files  and creates a matching java tree.
  */
@@ -63,28 +65,37 @@ public class Layout {
 			logger.warn("string key: " + key); 
 		}
 
+		int numId = 1;
+
 		for (View cview: view.children) { 
 			logger.warn("cview: " + cview); 
+			logger.warn("cview.name <{}>" , cview.name);
 			String id = cview.get_attr("id");
 			String text = cview.get_attr("text");
+			String idName = "null";
 
-			if (id != null)
-				logger.warn("  id -  " + id);
+			if (id != null) {
+				idName = id.substring(id.indexOf("/") + 1);
+				logger.warn("  id {}:{} " + id, idName);
+			}
 
 			if (text != null) {
 				logger.warn("  text -  " + text);
 				int index = text.indexOf("/");
 				if (text.startsWith("@") && index > 0) {
 					RString rString = stringMap.get(text.substring(index + 1));
-					logger.warn("  value=" + rString.value);
-					text = rString.value;
+					if (rString != null) {
+						logger.warn("  value=" + rString.value);
+						text = rString.value;
+					}
 				}
 			}
 			
-			if (view.name.equals("Button")) {
+			if (cview.name.equals("Button")) {
 				logger.warn("Button object instatiation ");
+				ResourcesSoot.v().addTextView(cview.name,  numId++, idName, text);
 			}
-			if (view.name.equals("TextEdit")) {
+			if (cview.name.equals("TextEdit")) {
 				logger.warn("TextEdit object instatiation ");
 			}
 		}
