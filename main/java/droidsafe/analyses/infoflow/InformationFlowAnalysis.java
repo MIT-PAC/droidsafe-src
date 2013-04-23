@@ -752,7 +752,7 @@ public class InformationFlowAnalysis {
         if (allocNode != null) {
             outStates = new States();
             final Set<MyValue> values = new HashSet<MyValue>();
-            Address address = new Address(allocNode);
+            Address address = Address.v(allocNode);
             values.add(address);
             for (final Map.Entry<Edge, FrameRootsHeapStatics> contextFrameRootsHeapStatic : inStates.entrySet()) {
                 final FrameRootsHeapStatics inFrameRootsHeapStatics = contextFrameRootsHeapStatic.getValue();
@@ -800,7 +800,7 @@ public class InformationFlowAnalysis {
         if (allocNode != null) {
             outStates = new States();
             final Set<MyValue> values = new HashSet<MyValue>();
-            final Address address = new Address(allocNode);
+            final Address address = Address.v(allocNode);
             values.add(address);
             final Chain<SootField> fields = newExpr.getBaseType().getSootClass().getFields();
             for (final Map.Entry<Edge, FrameRootsHeapStatics> contextFrameRootsHeapStatic : inStates.entrySet()) {
@@ -853,7 +853,7 @@ public class InformationFlowAnalysis {
         if (allocNode != null) {
             outStates = new States();
             final Set<MyValue> values = new HashSet<MyValue>();
-            Address address = new Address(allocNode);
+            Address address = Address.v(allocNode);
             values.add(address);
             for (final Map.Entry<Edge, FrameRootsHeapStatics> contextFrameRootsHeapStatic : inStates.entrySet()) {
                 final FrameRootsHeapStatics inFrameRootsHeapStatics = contextFrameRootsHeapStatic.getValue();
@@ -1106,7 +1106,7 @@ public class InformationFlowAnalysis {
             Frame frame = new Frame(inFrameRootsHeapStatics.frame, inFrameRootsHeapStatics.frame.params);
             Set<MyValue> values = new HashSet<MyValue>();
             for (AllocNode allocNode : GeoPTA.v().getPTSet(local, context)) {
-                values.add(new Address(allocNode));
+                values.add(Address.v(allocNode));
             }
             frame.put(local, values);
             outStates.put(context, new FrameRootsHeapStatics(frame, inFrameRootsHeapStatics.roots, inFrameRootsHeapStatics.heap, inFrameRootsHeapStatics.statics));

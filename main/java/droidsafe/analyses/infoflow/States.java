@@ -2,6 +2,7 @@ package droidsafe.analyses.infoflow;
 
 import java.util.Collection;
 import java.util.Comparator;
+import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Map;
 import java.util.Map.Entry;
@@ -826,10 +827,21 @@ class MyConstant extends MyValue {
 }
 
 class Address extends MyValue implements Comparable<Address> {
-    private final AllocNode allocNode;
+    private static Map<AllocNode, Address> allocNodeToAddress = new HashMap<AllocNode, Address>();
 
-    Address(AllocNode node) {
-        allocNode = node;
+    private AllocNode allocNode;
+
+    private Address(AllocNode allocNode) {
+        this.allocNode = allocNode;
+    }
+
+    static Address v(AllocNode allocNode) {
+        Address address = allocNodeToAddress.get(allocNode);
+        if (address == null) {
+            address = new Address(allocNode);
+            allocNodeToAddress.put(allocNode, address);
+        }
+        return address;
     }
 
     public boolean equals(Object that) {
