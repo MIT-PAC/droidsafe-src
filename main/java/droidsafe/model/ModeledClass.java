@@ -24,7 +24,8 @@ public abstract class ModeledClass {
    public void invalidate(){
      this.invalidated = true;
    }
-   public boolean isInvalid() {
+
+   public boolean invalidated() {
      return this.invalidated;
    }
 

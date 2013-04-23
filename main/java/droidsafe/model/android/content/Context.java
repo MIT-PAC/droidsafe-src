@@ -7,21 +7,19 @@ import org.slf4j.LoggerFactory;
 
 import soot.jimple.spark.pag.AllocNode;
 
-public class ContextWrapper extends Context {
+public abstract class Context extends ModeledClass {
 
-  private final static Logger logger = LoggerFactory.getLogger(ContextWrapper.class);
+  private final static Logger logger = LoggerFactory.getLogger(Context.class);
 
   
-  public ContextWrapper(AllocNode allocNode) {
+  public Context(AllocNode allocNode) {
     super(allocNode);
   }
  
-  public void _init_(){
-  }
 
   @Override
   public String toString(){
-    String str = "<modeled ContextWrapper" + this.getId() + "> {";
+    String str = "<modeled Context" + this.getId() + "> {";
     if (this.invalidated) {
       str += "invalidated";
     } else {

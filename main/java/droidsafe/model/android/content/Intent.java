@@ -32,11 +32,14 @@ public class Intent extends ModeledClass {
     this.setAction(action);
   } 
   
-  public void _init_(droidsafe.model.android.test.mock.MockContext mockContext, droidsafe.model.java.lang.String className) {
+  public void _init_(droidsafe.model.android.test.mock.MockContext context, droidsafe.model.java.lang.String cls) {
     // TODO: check the android source code for this constructor
-    this.setAction(className);
+    this.setAction(cls);
   }
   
+  public void _init_(droidsafe.model.android.content.Context context, java.lang.Class cls) {
+  }
+
   public void setAction(droidsafe.model.java.lang.String mAction){
     this.mAction.incorporateString(mAction);
   }
@@ -64,6 +67,11 @@ public class Intent extends ModeledClass {
   public droidsafe.model.android.net.Uri getData() {
     return this.mData;
   }
+
+  public void getStringExtra(droidsafe.model.java.lang.String name) {
+
+  }
+
 
   @Override
   public String toString(){
