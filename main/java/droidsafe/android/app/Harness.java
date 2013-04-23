@@ -77,11 +77,9 @@ public class Harness {
 	
 	private SootClass harnessClass;
 	private SootMethod harnessMain;
-	private List<Unit> entryPointInvokes;
 	public static String HARNESS_CLASS_NAME = "DroidSafeMain";
 	
 	private Map<SootClass, Local> localsMap;
-	private Set<SootField> generatedFields;
 		
 	private int localID = 0;
 	private int fieldID = 0;
@@ -120,15 +118,11 @@ public class Harness {
 	}
 	
 	private Harness() {
-		entryPointInvokes = new LinkedList<Unit>();
-		generatedFields = new LinkedHashSet<SootField>();
-		
+			
 		//create the harness class
 		harnessClass = new SootClass(HARNESS_CLASS_NAME, Modifier.PUBLIC | Modifier.FINAL);
 		harnessClass.setSuperclass(Scene.v().getSootClass("java.lang.Object"));
 		
-		searchForAllocsOfAPIImplementors();
-		 
 		//create the harness main method
 		List<Type> args = new LinkedList<Type>();
 		args.add(ArrayType.v(RefType.v("java.lang.String"), 1));
@@ -145,7 +139,6 @@ public class Harness {
 		Stmt beginCalls = mainMethodHeader(body);
 		addCallToModelingRuntime(body);
 		addCallsToComponentEntryPoints(body);
-		addCallsToNonComponentEntryPoints(body);
 		
 		//create the loop back to the beginning of the calls
 		body.getUnits().add(Jimple.v().newGotoStmt(beginCalls));
@@ -168,129 +161,6 @@ public class Harness {
 		body.getUnits().add(call);
 	}
 	
-	/**
-	 * we have to find all creation sites of objects of application classes.  We want to call
-	 * any method that overrides an api method on the object (allocnode) in the harness class
-	 * so that the pta can reason correctly about the calls. 
-	 */
-	private void searchForAllocsOfAPIImplementors() {
-		for (SootClass clz : Scene.v().getClasses()) {
-			//not a class we are interested in
-			if (clz.isLibraryClass() || clz.isInterface() ||
-					clz.equals(harnessClass) || API.v().isSystemClass(clz)) 
-				continue;
-
-			//loop through all methods, and then allocation statements
-			//looking for allocations of objects that have API parents
-			for (SootMethod method : clz.getMethods()) {
-				if (!clz.declaresMethod(method.getSubSignature())
-						|| !method.isConcrete()) 
-					continue;
-				
-				if (method.isNative()) 
-					continue;
-				
-				StmtBody stmtBody = null;
-				
-				try {
-					try {
-						 stmtBody = (StmtBody)method.retrieveActiveBody();
-					} catch (Exception e) {
-						if (e.getMessage().startsWith("Unrecognized bytecode instruction: 168") &&
-								Project.v().isLibClass(clz.toString())) {
-							logger.warn("\nError with underlying Soot translation for method {} {}. It is a method from a jar" +
-									"library.  Ignoring error and continuing...\n", method, clz);
-							clz.removeMethod(method);
-							continue;
-						} if (Project.v().isLibClass(clz.toString())) {
-							logger.warn("\nError with in analyzing library method. Ignoring and continuing...\n", method, clz);
-							clz.removeMethod(method);
-							continue;
-						} else {
-							logger.error("Unknown error in building Harness", e);
-							System.exit(1);
-						}
-					}
-					Chain<Unit> units = stmtBody.getUnits();
-					Iterator<Unit> stmtIt = units.snapshotIterator();
-					while (stmtIt.hasNext()) {
-						Stmt stmt = (Stmt)stmtIt.next();
-						if (!(stmt instanceof AssignStmt))
-							continue;
-						AssignStmt assignStmt = (AssignStmt)stmt;
-						//find all assignments statements with rval as new expr
-						if (assignStmt.getRightOp() instanceof NewExpr) {
-							NewExpr newExpr = (NewExpr)assignStmt.getRightOp();
-
-							//looking for a new expr of a class that is an app class and inherits from api
-							if (newExpr.getType() instanceof RefType &&
-									((RefType)newExpr.getType()).getSootClass().isApplicationClass() &&
-									!API.v().isSystemClass(((RefType)newExpr.getType()).getSootClass()) &&
-									Hierarchy.v().inheritsFromAndroid(((RefType)newExpr.getType()).getSootClass())) {
-
-								//creating a new class in user code that inherits from an api class
-								logger.debug("Found an alloc of a app class that inherits from API {}: in {} ({})", newExpr, method, clz);
-								handleAllocOfAPIImplementors(newExpr, assignStmt, clz, units);
-							}
-						}
-					}
-				} catch (Exception e) {
-					logger.warn("Trying to look for allocations in method {} of {} (probably a native method)", method, clz, e);
-				}
-			}
-		}
-	}
-
-	private void handleAllocOfAPIImplementors(NewExpr expr, AssignStmt stmt, SootClass clz, Chain<Unit> units) {
-		//create field in the harness class
-		SootField field = new SootField(FIELDNAME + fieldID++, expr.getType(), Modifier.PUBLIC | Modifier.STATIC);
-		harnessClass.addField(field);
-		
-		//remember this field for later so we can create all api overriding calls in it
-		generatedFields.add(field);
-		
-		SootFieldRef fieldRef = field.makeRef();
-		
-		//add an assignment of the field right after the new call
-		units.insertAfter(Jimple.v().newAssignStmt(Jimple.v().newStaticFieldRef(fieldRef), stmt.getLeftOp()), 
-				stmt);
-	}
-	
-	private void addCallsToNonComponentEntryPoints(StmtBody body) {
-		//for each field that we generated, add a call to any method that overrides 
-		//an api method
-		for (SootField field : generatedFields) {
-			SootClass clz = ((RefType)field.getType()).getSootClass();
-			//we need to keep around this field if there are non-modeled calls to it
-			//any method of it
-			boolean needField = false;
-			for (SootMethod method : clz.getMethods()) {
-				//Messages.log("    Checking for method: " + method.getSignature());
-    			if (!clz.declaresMethod(method.getSubSignature()) ||
-    					!method.isConcrete())
-    				continue;
- 
-    			if (Hierarchy.v().isImplementedSystemMethod(method)) {
-    				//find the closest overriden method from the api
-    				SootMethod closestParent = API.v().getClosestOverridenAPIMethod(method);
-    				//don't add a call for overrides that override a method that is modeled
-    				//if modeled, it means we have modeled all registrations of the method
-    				if (!API.v().isAPIModeledMethod(closestParent)) {
-    					logger.info("Adding call in harness to non-component entry point: {}", method.toString());
-    					//create a local to point to the field
-    					Local receiver = Jimple.v().newLocal("l" + localID++, field.getType());
-    					body.getLocals().add(receiver);
-    					//assign the local to the field
-    					body.getUnits().add(Jimple.v().newAssignStmt(receiver, 
-    							Jimple.v().newStaticFieldRef(field.makeRef())));
-    					//create a call to this entry point
-    					createCallWithNewArgs(method, body, receiver);
-    					needField = true;
-    				}
-    			} 
-			}
-		}
-	}
 	
 	/**
 	 * create the header for the main method including the saving of args
@@ -299,167 +169,62 @@ public class Harness {
 	private Stmt mainMethodHeader(StmtBody body) {
 		//add access to the arg
 		Local arg = Jimple.v().newLocal("l" + localID++, ArrayType.v(RefType.v("java.lang.String"), 1));
-	    body.getLocals().add(arg);
-	  
-	    body.getUnits().add(Jimple.v().newIdentityStmt(arg, 
-	            Jimple.v().newParameterRef(ArrayType.v
-	              (RefType.v("java.lang.String"), 1), 0)));
-	    
-	    //create a nop as target of goto below, to create loop over all possible events
-	    NopStmt beginCalls = Jimple.v().newNopStmt();
-	    body.getUnits().add(beginCalls);
-	    
-	    return beginCalls;
+		body.getLocals().add(arg);
+
+		body.getUnits().add(Jimple.v().newIdentityStmt(arg, 
+				Jimple.v().newParameterRef(ArrayType.v
+						(RefType.v("java.lang.String"), 1), 0)));
+
+		//create a nop as target of goto below, to create loop over all possible events
+		NopStmt beginCalls = Jimple.v().newNopStmt();
+		body.getUnits().add(beginCalls);
+
+		return beginCalls;
 	}
-	
+
 	private void addCallsToComponentEntryPoints(StmtBody body) {
-	    
-	    localsMap = new LinkedHashMap<SootClass, Local>();
-		
-		for (SootMethod entryPoint : EntryPoints.v().getAppEntryPoints()) {
-			SootClass clazz = entryPoint.getDeclaringClass();
-			
+
+		localsMap = new LinkedHashMap<SootClass, Local>();
+
+		for (SootClass clazz : Scene.v().getClasses()) {
+			//don't add entry points into the system classes...
+			if (API.v().isSystemClass(clazz))
+				continue;
+
+			//only add entry points for android component classes
+			//other entry points will be handled by searching for allocations 
+			//of classes that inherit from an api class / interface.
+			if (!Hierarchy.v().isAndroidComponentClass(clazz))
+				continue;		
+
 			if (clazz.isInterface() || clazz.isAbstract())
 				continue;
-			
+
 			//first create the local for the declaring class if we have not created it before
-			if (!localsMap.containsKey(clazz) && !entryPoint.isStatic()) {
-				RefType type = RefType.v(clazz);
-				
-				//add the local
-				Local receiver = Jimple.v().newLocal("l" + localID++, type);
-				body.getLocals().add(receiver);
-				
-				//add the call to the new object
-				body.getUnits().add(Jimple.v().newAssignStmt(receiver, Jimple.v().newNewExpr(type)));
-				
-				//create a constructor for this call unless the call itself is a constructor
-				if (!entryPoint.isConstructor())
-					addConstructorCall(body, receiver, type);
-				else {
-					//create the call to the entry point method
-					createCallWithNewArgs(entryPoint, body, receiver);
-				}
-				
-				logger.debug("Adding new receiver object to harness main method: {}", clazz.toString());
-				localsMap.put(clazz, receiver);
-				
-				//since this is a component, add a call to the launch (init) method in the 
-				//runtime modeling
-				SootMethod initMethod = Scene.v().getMethod(componentInitMethod.get(Hierarchy.v().getComponentParent(clazz).getName()));
-				LinkedList<Value> args = new LinkedList<Value>();
-				args.add(receiver);
-				Stmt call = Jimple.v().newInvokeStmt(makeInvokeExpression(initMethod, null, args));
-				body.getUnits().add(call);
 
-			}
-			//if this is not a constructor call then add the call, constructor calls are taken care of
-			// on the first instance of an object above
-			if (!entryPoint.isConstructor()){
-				Local receiver = localsMap.get(clazz);
-				//create the call to the entry point method
-				createCallWithNewArgs(entryPoint, body, receiver);
-			}
-		}
-	}
+			RefType type = RefType.v(clazz);
 
-	private void createCallWithNewArgs(SootMethod method, StmtBody body, Local receiver) {
-		//next create locals for all arguments
-		//List of argument position to locals created...
-		List<Value> args = new LinkedList<Value>();
-		for (Object argType : method.getParameterTypes()) {
-			//if a reference, create dummy object
-			if (argType instanceof RefType) {
-				Value v = createNewAndConstructorCall(body, method, ((RefType)argType));
-				args.add(v);
-			} else if (argType instanceof ArrayType) {
-				Value v = createNewArrayAndObject(body, method, (ArrayType)argType);
-				args.add(v);
-			} else {
-				args.add(SootUtils.getNullValue((Type)argType));
-			}
-		}
+			//add the local
+			Local receiver = Jimple.v().newLocal("l" + localID++, type);
+			body.getLocals().add(receiver);
 
-		//now create call to entry point
-		logger.debug("method args {} = size of args list {}", method.getParameterCount(), args.size());
-		Stmt call = Jimple.v().newInvokeStmt(makeInvokeExpression(method, receiver, args));
-		entryPointInvokes.add(call);
-		body.getUnits().add(call);
-	}
-	
-	private Value createNewArrayAndObject(Body body, SootMethod entryPoint, ArrayType type) {
-		Type baseType = type.getArrayElementType();
-		
-		//create new array to local		
-		Local arrayLocal = Jimple.v().newLocal("l" + localID++, type);
-		body.getLocals().add(arrayLocal);
-		
-		if (type.numDimensions > 1) {
-			//multiple dimensions, have to do some crap...
-			List<Value> ones = new LinkedList<Value>();
-			for (int i = 0; i < type.numDimensions; i++)
-				ones.add(IntConstant.v(1));
-			
-			body.getUnits().add(Jimple.v().newAssignStmt(arrayLocal,
-				Jimple.v().newNewMultiArrayExpr(type, ones)));
-		} else {
-			//single dimension, add new expression
-			body.getUnits().add(Jimple.v().newAssignStmt(arrayLocal, 
-				Jimple.v().newNewArrayExpr(baseType, IntConstant.v(1))));
-		}
-		
-		//get down to an element through the dimensions
-		Local elementPtr = arrayLocal;
-		while (((ArrayType)elementPtr.getType()).getElementType() instanceof ArrayType) {
-			Local currentLocal = Jimple.v().newLocal("l" + localID++, ((ArrayType)elementPtr).getElementType());
-			body.getUnits().add(Jimple.v().newAssignStmt(
-					currentLocal, 
-					Jimple.v().newArrayRef(elementPtr, IntConstant.v(0))));
-			elementPtr = currentLocal;
-		}
+			//add the call to the new object
+			body.getUnits().add(Jimple.v().newAssignStmt(receiver, Jimple.v().newNewExpr(type)));
 
-		//if a ref type, then create the new and constructor and assignment to array element
-		if (baseType instanceof RefType) {
-			//create the new expression and constructor call for a new local
-			Value eleLocal = createNewAndConstructorCall(body, entryPoint, (RefType)baseType);
-			//assign the new local to the array access
-			body.getUnits().add(Jimple.v().newAssignStmt(
-					Jimple.v().newArrayRef(elementPtr, IntConstant.v(0)), 
-					eleLocal));	
-		}	
+			addConstructorCall(body, receiver, type);
 
-		return arrayLocal;
-	}
-	
-	/**
-	 * Add to the body code to create a new object and assign it to a local, and then call the constructor
-	 * on the local.  If the type is an interface, then try to find a close implementor
-	 * return the local so it can be used in array assignments
-	 */
-	private Value createNewAndConstructorCall(Body body, SootMethod entryPoint, RefType type) {
-		SootClass clz = type.getSootClass();
-		//if an interface, find a direct implementor of and instantiate that...
-		if (!clz.isConcrete()) {
-			clz = SootUtils.getCloseConcrete(clz);
+			logger.debug("Adding new receiver object to harness main method: {}", clazz.toString());
+			localsMap.put(clazz, receiver);
+
+			//add a call to the launch (init) method in the 
+			//runtime modeling
+			SootMethod initMethod = Scene.v().getMethod(componentInitMethod.get(Hierarchy.v().getComponentParent(clazz).getName()));
+			LinkedList<Value> args = new LinkedList<Value>();
+			args.add(receiver);
+			Stmt call = Jimple.v().newInvokeStmt(makeInvokeExpression(initMethod, null, args));
+			body.getUnits().add(call);
+
 		}
-		
-		if (clz ==  null) {
-			//if clz is null, then we have an interface with no known implementors, 
-			//so just pass null
-			logger.warn("Cannot find any known implementors of {} when building harness for entry {}", 
-					type.getSootClass(), entryPoint);
-			return SootUtils.getNullValue(type);
-		}
-		
-		//if we got here, we found a class to instantiate, either the org or an implementor
-		Local argLocal = Jimple.v().newLocal("l" + localID++, type);
-		body.getLocals().add(argLocal);
-		
-		//add the call to the new object
-		body.getUnits().add(Jimple.v().newAssignStmt(argLocal, Jimple.v().newNewExpr(RefType.v(clz))));
-		
-		addConstructorCall(body, argLocal, RefType.v(clz));
-		return argLocal;
 	}
 	
 	/**
