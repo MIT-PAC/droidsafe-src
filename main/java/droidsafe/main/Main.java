@@ -136,12 +136,18 @@ public class Main {
 			logger.info("Specializing API Calls");
 			//APICallSpecialization.run();
 		
+			//all transforms should be done by here!
 			logger.info("Restarting PTA...");
 			GeoPTA.release();
 			GeoPTA.run();
 				
 		}
 
+		// write jimple txt files for all classes so we can analzye them
+		// all transforms should be done by here.
+		if (Config.v().WRITE_JIMPLE_APP_CLASSES)
+			writeAllAppClasses();
+		
 		RCFG.generate();
 		logger.info("Ending DroidSafe Run");
 
@@ -152,10 +158,7 @@ public class Main {
 		// print out what modeling is required for this application
 		RequiredModeling.run();
 		
-		// write jimple txt files for all classes so we can analzye them
-		if (Config.v().WRITE_JIMPLE_APP_CLASSES)
-			writeAllAppClasses();
-
+		
 		if (Config.v().infoFlow) {
 			logger.info("Starting Information Flow Analysis...");
 			InterproceduralControlFlowGraph.run();
