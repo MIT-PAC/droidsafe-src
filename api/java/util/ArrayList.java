@@ -415,35 +415,7 @@ public class ArrayList<E> extends AbstractList<E> implements Cloneable, Serializ
         return result;
     }
 
-    /**
-     * Returns an array containing all elements contained in this
-     * {@code ArrayList}. If the specified array is large enough to hold the
-     * elements, the specified array is used, otherwise an array of the same
-     * type is created. If the specified array is used and is larger than this
-     * {@code ArrayList}, the array element following the collection elements
-     * is set to null.
-     *
-     * @param contents
-     *            the array.
-     * @return an array of the elements from this {@code ArrayList}.
-     * @throws ArrayStoreException
-     *             when the type of an element in this {@code ArrayList} cannot
-     *             be stored in the type of the specified array.
-     */
-    @Override public <T> T[] toArray(T[] contents) {
-        int s = size;
-        if (contents.length < s) {
-            @SuppressWarnings("unchecked") T[] newArray
-                = (T[]) Array.newInstance(contents.getClass().getComponentType(), s);
-            contents = newArray;
-        }
-        System.arraycopy(this.array, 0, contents, 0, s);
-        if (contents.length > s) {
-            contents[s] = null;
-        }
-        return contents;
-    }
-
+ 
     /**
      * Sets the capacity of this {@code ArrayList} to be the same as the current
      * size.

@@ -29,6 +29,11 @@ public abstract class Uri implements Parcelable, Comparable<Uri> {
      = "This isn't a hierarchical URI.";
 	private static final String DEFAULT_ENCODING = "UTF-8";
 	*/
+	
+	@DSModeled(DSC.SAFE)
+	public int hashCode() {
+        return toString().hashCode();
+    }
 
 	@DSModeled(DSC.SAFE)
 	private Uri() {}  //Prevents external subclassing.
@@ -87,7 +92,7 @@ public abstract class Uri implements Parcelable, Comparable<Uri> {
 		private final String uriString;
 		private DSTaintObject dsTaint = new DSTaintObject();
 		
-		@DSModeled(DSC.BAN)
+		@DSModeled(DSC.BAN)  //From original MIT markup
         private StringUri(String uriString) {
             this.uriString = uriString;
             dsTaint.addTaint(uriString);
