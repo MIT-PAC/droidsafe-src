@@ -139,7 +139,8 @@ public class RectF implements Parcelable {
      */
     @DSModeled(DSC.SAFE)
     public final float width() {
-        return 0;
+    	return taint.getTaintInt();
+        //return 0;
     }
 
     /**
@@ -151,7 +152,8 @@ public class RectF implements Parcelable {
      */
     @DSModeled(DSC.SAFE)
     public final float height() {
-        return 0;
+    	return taint.getTaintInt();
+        //return 0;
     }
 
     /**
@@ -186,7 +188,7 @@ public class RectF implements Parcelable {
      */
     @DSModeled(DSC.SAFE)
     public void setEmpty() {
-    	taint.addTaint(0);        
+    	//taint.addTaint(0);	//No need to track taint, just an initializer type function setting things to 0   
     }
     
     /**
@@ -245,5 +247,15 @@ public class RectF implements Parcelable {
 	public void writeToParcel(Parcel arg0, int arg1) {
 		// TODO Auto-generated method stub
 		
+	}
+	
+	@DSModeled(DSC.SAFE)
+	public final float left() {
+		return taint.getTaintFloat();
+	}
+	
+	@DSModeled(DSC.SAFE)
+	public final float top() {
+		return taint.getTaintFloat();
 	}
 }

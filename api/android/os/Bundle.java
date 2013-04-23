@@ -269,6 +269,7 @@ public final class Bundle implements Parcelable, Cloneable {
         }
     }
 
+    @DSModeled(DSC.SAFE)
     /**
      * If the underlying data are stored as a Parcel, unparcel them
      * using the currently assigned class loader.
@@ -290,9 +291,12 @@ public final class Bundle implements Parcelable, Cloneable {
         mParcelledData = null;
     }
 
+    @DSModeled(DSC.SAFE)
     // Log a message if the value was non-null but not of the expected type
     private void typeWarning(String key, Object value, String className,
         Object defaultValue, ClassCastException e) {
+    	//Private method used for logging, shouldn't really affect modeling
+    	/*
         StringBuilder sb = new StringBuilder();
         sb.append("Key ");
         sb.append(key);
@@ -305,11 +309,32 @@ public final class Bundle implements Parcelable, Cloneable {
         sb.append(" was returned.");
         Log.w(LOG_TAG, sb.toString());
         Log.w(LOG_TAG, "Attempt to cast generated internal exception:", e);
+        */
     }
 
+    @DSModeled(DSC.SAFE)
     private void typeWarning(String key, Object value, String className,
         ClassCastException e) {
         typeWarning(key, value, className, "<null>", e);
+    }
+    
+    @DSModeled //Going to model as SPEC since arbitrary data could be inside the parcelable object that is returned
+    public <T extends Parcelable> T getParcelable(String key) {
+    	unparcel();
+    	return (T)dsTaint.getTaint();
+    	/*
+        unparcel();
+        Object o = mMap.get(key);
+        if (o == null) {
+            return null;
+        }
+        try {
+            return (T) o;
+        } catch (ClassCastException e) {
+            typeWarning(key, o, "Parcelable", e);
+            return null;
+        }
+        */
     }
 
 }
