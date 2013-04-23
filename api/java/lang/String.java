@@ -57,5 +57,22 @@ public class String implements java.io.Serializable, Comparable<String>, CharSeq
 		return 0;
 	}
 	
-
+	public static String valueOf(char[] data) {
+		return new String();
+        //return new String(data, 0, data.length);
+    }
+	
+	public static String valueOf(char value) {
+		return new String();
+		/*
+        String s;
+        if (value < 128) {
+            s = new String(value, 1, ASCII);
+        } else {
+            s = new String(0, 1, new char[] { value });
+        }
+        s.hashCode = value;
+        return s;
+        */
+    }
 }
