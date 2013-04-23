@@ -111,4 +111,8 @@ public final class Integer extends Number implements Comparable<Integer> {
         return dsTaint.getTaintInt();
     }
 
+	@DSModeled(DSC.SAFE)
+	public String toString() {
+        return dsTaint.getTaintString();
+    }
 }
