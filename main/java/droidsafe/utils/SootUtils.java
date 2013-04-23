@@ -133,15 +133,7 @@ public class SootUtils {
       return new Float(((FloatConstant)sootValue).value);
     } else if (sootValue instanceof ClassConstant) {
       String className = ((ClassConstant)sootValue).value.replace("/", ".");
-      try {
-        return Class.forName(className);
-      } catch(ClassNotFoundException cnfe) {
-        // TODO: Ficure out how to get iusntances of app-specific classes
-        String string = new String("class" + className);
-        droidsafe.model.java.lang.String droidsafeString = new droidsafe.model.java.lang.String();
-        droidsafeString.incorporateString(string);
-        return droidsafeString;
-      }
+      return Project.v().getAppJavaClass(className);
     }
     
     throw new RuntimeException("Unhandled java primitive sootValue: " + sootValue);
