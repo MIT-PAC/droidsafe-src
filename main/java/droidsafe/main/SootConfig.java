@@ -48,7 +48,7 @@ public class SootConfig {
 	private static void setOptions() {
 		 soot.options.Options.v().set_keep_line_number(true);
 		 soot.options.Options.v().set_whole_program(true);
-		 soot.options.Options.v().setPhaseOption("cg", "verbose:true");
+		 soot.options.Options.v().setPhaseOption("cg", "verbose:false");
 		 soot.options.Options.v().setPhaseOption("cg", "trim-clinit:true");
 		 //soot.options.Options.v().setPhaseOption("jb.tr", "ignore-wrong-staticness:true");
 		 
