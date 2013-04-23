@@ -86,12 +86,21 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
 		public View(Context context) {
 			dsTaint.addTaint(context);
 	        mContext = context;
+	        //event handlers that are automatically called
+	        onSizeChanged(0,0,0,0);
+	        onDraw(new Canvas());
 	    }
 		
 		public interface OnClickListener {
 			void onClick(View v);
 		}
 	
+		@DSModeled(DSC.SAFE)
+		protected void onDraw(Canvas canvas) 
+		{
+			
+		}
+		
 	    @DSModeled /* to set up the event handler, call the listener, but also
 		  save the listener for use in perform click
 	     */

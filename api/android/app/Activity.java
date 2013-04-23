@@ -395,63 +395,6 @@ OnCreateContextMenuListener, ComponentCallbacks2 {
         */
     }
 	
-	@DSSpecialized(method = "Object getSystemService(String)", arg = 0)
-    public WindowManager getSystemServiceWindow(String x) { 
-    	return mWindowManager;
-    }
-	
-	@DSSpecialized(method = "Object getSystemService(String)", arg = 0)
-    public SearchManager getSystemServiceSearch(String x) { 
-    	return new SearchManager(this, null);
-    }
-	
-	@DSSpecialized(method = "Object getSystemService(String)", arg = 0)
-    public LayoutInflater getSystemServiceInflater(String x) { 
-		return LayoutInflater.from(getBaseContext()).cloneInContext(this); //Get the base context, because we pulled this method up and out of ContextThemeWrapper
-    }
-	
-	@DSModeled(value = DSC.SAFE)
-	    @DSSpecialize(
-	    	{
-	    		@DSTemplate(arg = 0, value = Context.WINDOW_SERVICE, 
-	                           method = "getSystemServiceWindow"),
-	    		@DSTemplate(arg = 0, value = Context.SEARCH_SERVICE, 
-	                            method = "getSystemServiceSearch"),
-	    		@DSTemplate(arg = 0, value = Context.LAYOUT_INFLATER_SERVICE,
-	    					    method = "getSystemServiceInflater")
-	    		//DSFIXME:  Not sure if we need to/can template mBase.getSystemService because it is just a Context (an abstract method)
-	    	}
-	    )
-	@Override
-	public Object getSystemService(String name) {
-	 	//Relevant portions of original implementation (Activity)
-	 	/*
-	    if (WINDOW_SERVICE.equals(name)) {
-	        return mWindowManager;
-	    } else if (SEARCH_SERVICE.equals(name)) {
-	        ensureSearchManager();
-	        return mSearchManager;
-	    }
-	    return super.getSystemService(name);
-	    */
-		
-		//Relevant portions of ContextThemeWrapper
-		/*
-		 * if (LAYOUT_INFLATER_SERVICE.equals(name)) {
-            if (mInflater == null) {
-                mInflater = LayoutInflater.from(mBase).cloneInContext(this);
-            }
-            return mInflater;
-        }
-        return mBase.getSystemService(name);
-		 */
-		
-		//Relevent portions of ContextWrapper
-		/*
-		 * return mBase.getSystemService(name);
-		 */
-		return new Object();
-	}
 	
 	@DSModeled(DSC.SAFE)
 	public Activity() {
@@ -510,7 +453,7 @@ OnCreateContextMenuListener, ComponentCallbacks2 {
 	@DSModeled(DSC.BAN)
     public void droidsafeOnStop() {
 		//This method is called by droidsafe itself, and should NEVER be called by an app
-    	this.onStop();
+    	onStop();
     }
 	
 	@DSModeled(DSC.BAN)
