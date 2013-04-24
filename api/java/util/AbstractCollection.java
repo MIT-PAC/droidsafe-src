@@ -137,6 +137,17 @@ public abstract class AbstractCollection<E> implements Collection<E> {
         }
         return false;
     }
+	
+	public boolean addAll(Collection<? extends E> collection) {
+        boolean result = false;
+        Iterator<? extends E> it = collection.iterator();
+        while (it.hasNext()) {
+            if (add(it.next())) {
+                result = true;
+            }
+        }
+        return result;
+    }
     
 	public abstract Iterator<E> iterator();
 	public abstract int size();
