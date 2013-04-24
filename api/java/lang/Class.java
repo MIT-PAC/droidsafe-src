@@ -26,5 +26,5 @@ class Class<T>
 		return new String();
     }
 	
-
+	public native Class<?> getComponentType(); //Not sure how to actually model this.  Since it is a fundamental Java class, we'll leave this alone (for now)
 }
