@@ -1,45 +1,18 @@
 package android.app;
 
-import com.android.internal.app.ActionBarImpl;
-import com.android.internal.policy.PolicyManager;
+import java.util.ArrayList;
+import java.util.HashMap;
 
 import android.content.ComponentCallbacks2;
-import android.content.ComponentName;
-import android.content.ContentResolver;
 import android.content.Context;
-import android.content.CursorLoader;
-import android.content.IIntentSender;
 import android.content.Intent;
-import android.content.IntentSender;
-import android.content.SharedPreferences;
 import android.content.pm.ActivityInfo;
 import android.content.res.Configuration;
-import android.content.res.Resources;
-import android.content.res.TypedArray;
-import android.content.res.Resources.Theme;
-import android.database.Cursor;
-import android.graphics.Bitmap;
-import android.graphics.Canvas;
-import android.graphics.drawable.Drawable;
-import android.media.AudioManager;
-import android.net.Uri;
-import android.os.Build;
 import android.os.Bundle;
-import android.os.Handler;
 import android.os.IBinder;
-import android.os.Looper;
 import android.os.Parcelable;
-import android.os.RemoteException;
-import android.os.StrictMode;
-import android.text.Selection;
-import android.text.SpannableStringBuilder;
-import android.text.TextUtils;
-import android.text.method.TextKeyListener;
 import android.util.AttributeSet;
-import android.util.EventLog;
-import android.util.Log;
 import android.util.SparseArray;
-import android.util.TypedValue;
 import android.view.ActionMode;
 import android.view.ActionMode.Callback;
 import android.view.ContextMenu;
@@ -48,27 +21,19 @@ import android.view.ContextThemeWrapper;
 import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.Menu;
-import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.MotionEvent;
 import android.view.View;
-import android.view.WindowManagerImpl;
 import android.view.View.OnCreateContextMenuListener;
-import android.view.ViewGroup;
-import android.view.ViewGroup.LayoutParams;
-import android.view.ViewManager;
 import android.view.Window;
 import android.view.WindowManager;
 import android.view.accessibility.AccessibilityEvent;
-import android.widget.AdapterView;
 
-import java.io.FileDescriptor;
-import java.io.PrintWriter;
-import java.util.ArrayList;
-import java.util.HashMap;
+import com.android.internal.policy.PolicyManager;
 
-import droidsafe.annotations.*;
-import droidsafe.helpers.*;
+import droidsafe.annotations.DSC;
+import droidsafe.annotations.DSModeled;
+import droidsafe.helpers.DSTaintObject;
 
 public class Activity extends ContextThemeWrapper
 implements LayoutInflater.Factory2,
@@ -447,6 +412,12 @@ OnCreateContextMenuListener, ComponentCallbacks2 {
 	@DSModeled(DSC.SAFE)
 	public View findViewById(int id) {
         return getWindow().findViewById(id);
+    }
+	
+	@DSModeled(DSC.BAN)
+    public void droidsafeOnResume() {
+		//This method is called by droidsafe itself, and should NEVER be called by an app
+    	onResume();
     }
 	
 	// ------------- Original MIT Models ------------- 

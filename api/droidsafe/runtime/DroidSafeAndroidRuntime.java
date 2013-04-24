@@ -44,7 +44,7 @@ public class DroidSafeAndroidRuntime {
 			activity.performCreate(b);
 		
 			
-			
+			activity.droidsafeOnResume();
 			activity.droidsafeOnStop();
 		}
 		

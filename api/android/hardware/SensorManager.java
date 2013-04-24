@@ -221,4 +221,13 @@ public class SensorManager {
 		SensorThread() {
         }
 	}
+	
+	@DSModeled(DSC.SAFE)
+	public boolean registerListener(SensorEventListener listener, Sensor sensor, int rate) {
+		SensorEvent se = new SensorEvent(0);
+		se.sensor = sensor;
+		
+		listener.onSensorChanged(se);
+		return true;
+    }
 }
