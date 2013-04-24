@@ -22,6 +22,7 @@ import droidsafe.analyses.GeoPTA;
 import droidsafe.analyses.RCFGToSSL;
 import droidsafe.analyses.RequiredModeling;
 import droidsafe.analyses.infoflow.InformationFlowAnalysis;
+import droidsafe.analyses.infoflow.InjectedSourceFlows;
 import droidsafe.analyses.infoflow.InterproceduralControlFlowGraph;
 import droidsafe.analyses.rcfg.RCFG;
 import droidsafe.android.app.EntryPoints;
@@ -134,6 +135,7 @@ public class Main {
 		
 		if (Config.v().infoFlow) {
 			logger.info("Starting Information Flow Analysis...");
+			InjectedSourceFlows.run();
 			InterproceduralControlFlowGraph.run();
 			InformationFlowAnalysis.run();
 

@@ -4,6 +4,7 @@ import java.util.LinkedHashSet;
 import java.util.Set;
 
 import soot.RefType;
+import soot.SootField;
 import soot.jimple.StringConstant;
 import soot.jimple.spark.pag.AllocNode;
 import soot.jimple.toolkits.callgraph.Edge;
@@ -23,7 +24,7 @@ public class InjectedSourceFlows {
 		
 	}
 	
-	public Set<MyValue> getInjectedFlows(AllocNode node, Edge context, String field) {
+	public Set<MyValue> getInjectedFlows(AllocNode node, SootField field, Edge context) {
 		if (node.getType() instanceof RefType &&
 				((RefType)node.getType()).getSootClass().getName().equals("java.net.Uri")) {
 			LinkedHashSet<MyValue> flows = new LinkedHashSet<MyValue>();

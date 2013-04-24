@@ -2,8 +2,10 @@ package droidsafe.analyses.infoflow;
 
 import java.util.Collection;
 import java.util.Comparator;
+import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Map;
+import java.util.Map.Entry;
 import java.util.Set;
 import java.util.TreeMap;
 
@@ -16,56 +18,56 @@ import soot.jimple.spark.pag.AllocNode;
 import soot.jimple.toolkits.callgraph.Edge;
 
 public class States {
-    private DefaultHashMap<Edge, FrameHeapStatics> contextToFrameHeapStatics;
+    private DefaultHashMap<Edge, FrameRootsHeapStatics> contextToFrameRootsHeapStatics;
 
-    private static final FrameHeapStatics emptyFrameHeapStatics = new FrameHeapStatics();
+    private static final FrameRootsHeapStatics emptyFrameRootsHeapStatics = new FrameRootsHeapStatics();
 
     States() {
-        contextToFrameHeapStatics = new DefaultHashMap<Edge, FrameHeapStatics>(emptyFrameHeapStatics);
+        contextToFrameRootsHeapStatics = new DefaultHashMap<Edge, FrameRootsHeapStatics>(emptyFrameRootsHeapStatics);
     }
 
     States merge(States that) {
         States states = new States();
-        for (Map.Entry<Edge, FrameHeapStatics> contextFrameHeapStatics : this.contextToFrameHeapStatics.entrySet()) {
-            Edge context = contextFrameHeapStatics.getKey();
-            if (that.contextToFrameHeapStatics.containsKey(context)) {
-                states.contextToFrameHeapStatics.put(context, contextFrameHeapStatics.getValue().merge(that.contextToFrameHeapStatics.get(context)));
+        for (Map.Entry<Edge, FrameRootsHeapStatics> contextFrameRootsHeapStatics : this.contextToFrameRootsHeapStatics.entrySet()) {
+            Edge context = contextFrameRootsHeapStatics.getKey();
+            if (that.contextToFrameRootsHeapStatics.containsKey(context)) {
+                states.contextToFrameRootsHeapStatics.put(context, contextFrameRootsHeapStatics.getValue().merge(that.contextToFrameRootsHeapStatics.get(context)));
             } else {
-                states.contextToFrameHeapStatics.put(context, contextFrameHeapStatics.getValue());
+                states.contextToFrameRootsHeapStatics.put(context, contextFrameRootsHeapStatics.getValue());
             }
         }
-        for (Map.Entry<Edge, FrameHeapStatics> contextFrameHeapStatics : that.contextToFrameHeapStatics.entrySet()) {
-            Edge context = contextFrameHeapStatics.getKey();
-            if (!contextToFrameHeapStatics.containsKey(context)) {
-                states.contextToFrameHeapStatics.put(context, contextFrameHeapStatics.getValue());
+        for (Map.Entry<Edge, FrameRootsHeapStatics> contextFrameRootsHeapStatics : that.contextToFrameRootsHeapStatics.entrySet()) {
+            Edge context = contextFrameRootsHeapStatics.getKey();
+            if (!contextToFrameRootsHeapStatics.containsKey(context)) {
+                states.contextToFrameRootsHeapStatics.put(context, contextFrameRootsHeapStatics.getValue());
             }
         }
         return states;
     }
 
-    FrameHeapStatics put(Edge context, FrameHeapStatics frameHeapStatics) {
-        return contextToFrameHeapStatics.put(context, frameHeapStatics);
+    FrameRootsHeapStatics put(Edge context, FrameRootsHeapStatics frameRootsHeapStatics) {
+        return contextToFrameRootsHeapStatics.put(context, frameRootsHeapStatics);
     }
 
-    FrameHeapStatics get(Edge context) {
-        return contextToFrameHeapStatics.get(context);
+    FrameRootsHeapStatics get(Edge context) {
+        return contextToFrameRootsHeapStatics.get(context);
     }
 
-    Set<Map.Entry<Edge, FrameHeapStatics>> entrySet() {
-        return contextToFrameHeapStatics.entrySet();
+    Set<Map.Entry<Edge, FrameRootsHeapStatics>> entrySet() {
+        return contextToFrameRootsHeapStatics.entrySet();
     }
 
     Set<Edge> keySet() {
-        return contextToFrameHeapStatics.keySet();
+        return contextToFrameRootsHeapStatics.keySet();
     }
 
-    Collection<FrameHeapStatics> values() {
-        return contextToFrameHeapStatics.values();
+    Collection<FrameRootsHeapStatics> values() {
+        return contextToFrameRootsHeapStatics.values();
     }
 
     public boolean equals(Object that) {
         if (that instanceof States) {
-            return contextToFrameHeapStatics.equals(((States)that).contextToFrameHeapStatics);
+            return contextToFrameRootsHeapStatics.equals(((States)that).contextToFrameRootsHeapStatics);
         } else {
             return false;
         }
@@ -73,10 +75,10 @@ public class States {
 
     States subtract(States that) {
         States states = new States();
-        for (Map.Entry<Edge, FrameHeapStatics> edgeFrameHeapStatics : this.contextToFrameHeapStatics.entrySet()) {
-            Edge edge = edgeFrameHeapStatics.getKey();
-            FrameHeapStatics frameHeapStatics = edgeFrameHeapStatics.getValue();
-            states.contextToFrameHeapStatics.put(edge, frameHeapStatics.subtract(that.get(edge)));
+        for (Map.Entry<Edge, FrameRootsHeapStatics> edgeFrameRootsHeapStatics : this.contextToFrameRootsHeapStatics.entrySet()) {
+            Edge edge = edgeFrameRootsHeapStatics.getKey();
+            FrameRootsHeapStatics frameRootsHeapStatics = edgeFrameRootsHeapStatics.getValue();
+            states.contextToFrameRootsHeapStatics.put(edge, frameRootsHeapStatics.subtract(that.get(edge)));
         }
         return states;
     }
@@ -84,10 +86,10 @@ public class States {
     public String toString() {
         StringBuffer str = new StringBuffer();
         str.append('{');
-        for (Map.Entry<Edge, FrameHeapStatics> edgeFrameHeapStatics : this.contextToFrameHeapStatics.entrySet()) {
-            str.append(edgeFrameHeapStatics.getKey().toString());
+        for (Map.Entry<Edge, FrameRootsHeapStatics> edgeFrameRootsHeapStatics : this.contextToFrameRootsHeapStatics.entrySet()) {
+            str.append(edgeFrameRootsHeapStatics.getKey().toString());
             str.append("=\\l");
-            str.append(edgeFrameHeapStatics.getValue().toString());
+            str.append(edgeFrameRootsHeapStatics.getValue().toString());
             str.append("\\l");
         }
         int length = str.length();
@@ -99,42 +101,49 @@ public class States {
     }
 }
 
-class FrameHeapStatics {
+class FrameRootsHeapStatics {
     Frame frame;
+    Set<Address> roots;
     Heap heap;
     Statics statics;
 
-    FrameHeapStatics() {
+    FrameRootsHeapStatics() {
         this.frame = new Frame();
+        this.roots = new HashSet<Address>();
         this.heap = new Heap();
         this.statics = new Statics();
     }
 
-    FrameHeapStatics(Frame frame, Heap heap, Statics statics) {
+    FrameRootsHeapStatics(Frame frame, Set<Address> roots, Heap heap, Statics statics) {
         this.frame = frame;
+        this.roots = roots;
         this.heap = heap;
         this.statics = statics;
     }
 
-    FrameHeapStatics merge(FrameHeapStatics that) {
-        return new FrameHeapStatics(this.frame.merge(that.frame), this.heap.merge(that.heap), this.statics.merge(that.statics));
+    FrameRootsHeapStatics merge(FrameRootsHeapStatics that) {
+        Set<Address> roots = new HashSet<Address>(this.roots);
+        roots.addAll(that.roots);
+        return new FrameRootsHeapStatics(this.frame.merge(that.frame), roots, this.heap.merge(that.heap), this.statics.merge(that.statics));
     }
 
     public boolean equals(Object that) {
-        if (that instanceof FrameHeapStatics) {
-            FrameHeapStatics frameHeapStatics = (FrameHeapStatics)that;
-            return this.frame.equals(frameHeapStatics.frame) && this.heap.equals(frameHeapStatics.heap) && this.statics.equals(frameHeapStatics.statics);
+        if (that instanceof FrameRootsHeapStatics) {
+            FrameRootsHeapStatics frameRootsHeapStatics = (FrameRootsHeapStatics)that;
+            return this.frame.equals(frameRootsHeapStatics.frame) && this.roots.equals(frameRootsHeapStatics.roots) && this.heap.equals(frameRootsHeapStatics.heap) && this.statics.equals(frameRootsHeapStatics.statics);
         } else {
             return false;
         }
     }
 
-    FrameHeapStatics subtract(FrameHeapStatics that) {
-        return new FrameHeapStatics(this.frame.subtract(that.frame), this.heap.subtract(that.heap), this.statics.subtract(that.statics));
+    FrameRootsHeapStatics subtract(FrameRootsHeapStatics that) {
+        Set<Address> roots = new HashSet<Address>(this.roots);
+        roots.removeAll(that.roots);
+        return new FrameRootsHeapStatics(this.frame.subtract(that.frame), roots, this.heap.subtract(that.heap), this.statics.subtract(that.statics));
     }
 
     public String toString() {
-        return "(" + frame + ",\\l " + heap + ",\\l " + statics + ")";
+        return "(" + frame + ",\\l " + roots + ",\\l " + heap + ",\\l " + statics + ")";
     }
 }
 
@@ -246,6 +255,25 @@ class Frame {
         return params.get(new MyParameterRef(parameterRef));
     }
 
+    Set<Address> roots() {
+        Set<Address> roots = new HashSet<Address>();
+        for (Set<MyValue> values : locals.values()) {
+            for (MyValue value : values) {
+                if (value instanceof Address) {
+                    roots.add((Address)value);
+                }
+            }
+        }
+        for (Set<MyValue> values : params.values()) {
+            for (MyValue value : values) {
+                if (value instanceof Address) {
+                    roots.add((Address)value);
+                }
+            }
+        }
+        return roots;
+    }
+
     public boolean equals(Object that) {
         if (that instanceof Frame) {
             Frame frame = (Frame)that;
@@ -334,8 +362,31 @@ class Heap {
         this.arrays = arrays;
     }
 
+    Heap(Heap that, Arrays arrays) {
+        this.instances = new Instances(that.instances);
+        this.arrays = arrays;
+    }
+
     Heap merge(Heap that) {
         return new Heap(this.instances.merge(that.instances), this.arrays.merge(that.arrays));
+    }
+
+    Heap gc(Set<Address> roots) {
+        Set<Address> reachable = reachable(roots);
+        Heap heap = new Heap();
+        for (Map.Entry<Address, DefaultHashMap<SootField, Set<MyValue>>> addressSootFieldToValues : instances.entrySet()) {
+            Address address = addressSootFieldToValues.getKey();
+            if (reachable.contains(address)) {
+                heap.instances.put(address, addressSootFieldToValues.getValue());
+            }
+        }
+        for (Map.Entry<Address, Set<MyValue>> addressValues : arrays.entrySet()) {
+            Address address = addressValues.getKey();
+            if (reachable.contains(address)) {
+                heap.arrays.put(address, addressValues.getValue());
+            }
+        }
+        return heap;
     }
 
     public boolean equals(Object that) {
@@ -353,6 +404,40 @@ class Heap {
 
     public String toString() {
         return "(" + instances + ", " + arrays + ")";
+    }
+
+    private Set<Address> reachable(Set<Address> roots) {
+        Set<Address> addressesReachable = new HashSet<Address>(roots);
+        Set<Address> addressesToVisit = new HashSet<Address>(roots);
+        Set<Address> addressesVisited = new HashSet<Address>();
+        while (!addressesToVisit.isEmpty()) {
+            Set<Address> newAddressesToVisit = new HashSet<Address>();
+            for (Address address : addressesToVisit) {
+                addressesVisited.add(address);
+                for (Set<MyValue> values : instances.get(address).values()) {
+                    for (MyValue value : values) {
+                        if (value instanceof Address) {
+                            Address addr = (Address)value;
+                            addressesReachable.add(addr);
+                            if (!addressesVisited.contains(addr)) {
+                                newAddressesToVisit.add(addr);
+                            }
+                        }
+                    }
+                }
+                for (MyValue value : arrays.get(address)) {
+                    if (value instanceof Address) {
+                        Address addr = (Address)value;
+                        addressesReachable.add(addr);
+                        if (!addressesVisited.contains(addr)) {
+                            newAddressesToVisit.add(addr);
+                        }
+                    }
+                }
+            }
+            addressesToVisit = newAddressesToVisit;
+        }
+        return addressesReachable;
     }
 }
 
@@ -399,6 +484,12 @@ class Instances {
         return instances;
     }
 
+    // strongly update
+    DefaultHashMap<SootField, Set<MyValue>> put(Address address, DefaultHashMap<SootField, Set<MyValue>> fieldToValues) {
+        return addressToFieldToValues.put(address, fieldToValues);
+    }
+
+    // weakly update
     Set<MyValue> put(Address address, SootField field, Set<MyValue> values) {
         DefaultHashMap<SootField, Set<MyValue>> fieldToValuesOld = addressToFieldToValues.get(address);
         Set<MyValue> valuesOld = fieldToValuesOld.get(field);
@@ -410,8 +501,16 @@ class Instances {
         return valuesOld;
     }
 
+    DefaultHashMap<SootField, Set<MyValue>> get(Address address) {
+        return addressToFieldToValues.get(address);
+    }
+
     Set<MyValue> get(Address address, SootField field) {
         return addressToFieldToValues.get(address).get(field);
+    }
+
+    Set<Entry<Address, DefaultHashMap<SootField, Set<MyValue>>>> entrySet() {
+        return addressToFieldToValues.entrySet();
     }
 
     public boolean equals(Object that) {
@@ -518,6 +617,10 @@ class Arrays {
         return addressToValues.get(address);
     }
 
+    Set<Entry<Address, Set<MyValue>>> entrySet() {
+        return addressToValues.entrySet();
+    }
+
     public boolean equals(Object that) {
         if (that instanceof Arrays) {
             return this.addressToValues.equals(((Arrays)that).addressToValues);
@@ -621,6 +724,20 @@ class Statics {
         return valuesOld;
     }
 
+    Set<Address> roots() {
+        Set<Address> roots = new HashSet<Address>();
+        for (DefaultHashMap<SootField, Set<MyValue>> fieldToValues : classToFieldToValues.values()) {
+            for (Set<MyValue> values : fieldToValues.values()) {
+                for (MyValue value : values) {
+                    if (value instanceof Address) {
+                        roots.add((Address)value);
+                    }
+                }
+            }
+        }
+        return roots;
+    }
+
     public boolean equals(Object that) {
         if (that instanceof Statics) {
             return this.classToFieldToValues.equals(((Statics)that).classToFieldToValues);
@@ -710,10 +827,21 @@ class MyConstant extends MyValue {
 }
 
 class Address extends MyValue implements Comparable<Address> {
-    private final AllocNode allocNode;
+    private static Map<AllocNode, Address> allocNodeToAddress = new HashMap<AllocNode, Address>();
 
-    Address(AllocNode node) {
-        allocNode = node;
+    private AllocNode allocNode;
+
+    private Address(AllocNode allocNode) {
+        this.allocNode = allocNode;
+    }
+
+    static Address v(AllocNode allocNode) {
+        Address address = allocNodeToAddress.get(allocNode);
+        if (address == null) {
+            address = new Address(allocNode);
+            allocNodeToAddress.put(allocNode, address);
+        }
+        return address;
     }
 
     public boolean equals(Object that) {
