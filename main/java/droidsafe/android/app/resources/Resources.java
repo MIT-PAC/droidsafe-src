@@ -235,6 +235,8 @@ public class Resources {
 				} 
 				});
 		logger.info("{} value dirs exist", values_dirs.length);
+
+		//TODO: check for -v version specific
 		if (values_dirs.length == 1) {
 			for(File values_dir : values_dirs) {
 				// Process .xml files in res/values
@@ -251,15 +253,13 @@ public class Resources {
 		// Read in the resource id to name map
 		read_resources();
 
+		// Add This point, all resrouces will have been parsed and loaded
+		ResourcesSoot.v().setNumberToStringMap(resource_info);
+
 		for (Layout layout: layouts) {
 			layout.buildUIObjects(stringNameToRString);
 		}
 
-		//Build UIClasses for all the layouts
-		SootClass sc = Scene.v().getSootClass("com.example.android.apis.R");
-		if (sc != null) {
-			logger.warn("R class " + sc);
-		}
 	}
 
   /**

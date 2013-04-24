@@ -3,6 +3,8 @@
  */
 package droidsafe.android.app.resources;
 
+import com.google.common.collect.HashBiMap;
+
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.OutputStream;
@@ -23,6 +25,7 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 import java.util.Arrays;
 import java.util.Collections;
+import java.util.HashMap;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -90,12 +93,22 @@ public class ResourcesSoot {
 	public class UISootObject {
 		public int       numericId;
 		public String    stringId;
+		public String 	 type;
 		public String    text;
 		public SootField sootField;
-		public UISootObject(int numId, String strId, String text, SootField sf) {
+		public UISootObject() {
+			numericId = 0;
+			stringId   = "unknown";
+			type = "unkownType";
+			text = "";
+			sootField = null;
+		}
+
+		public UISootObject(int numId, String type, String strId, String text, SootField sf) {
 			numericId = numId;
 			stringId  = strId;
 			this.text = text;
+			this.type = type;
 			sootField = sf;
 		}
 	}
@@ -110,28 +123,71 @@ public class ResourcesSoot {
 	private SootMethod mClinitMethod;
 	private JimpleBody mClinitBody;
 
+	private HashMap<Integer, UISootObject> uiObjectTable; 
+
+	private HashBiMap<Integer, String> numericToStringIDMap;
+
 	private ResourcesSoot() {
-		mSootClass = new SootClass("ResourcesSoot", Modifier.PUBLIC);
+
+		uiObjectTable = new HashMap<Integer, UISootObject>();
+
+		mSootClass = new SootClass("droidsafe.android.ResourcesSoot", Modifier.PUBLIC);
 		mSootClass.setSuperclass(Scene.v().getSootClass("java.lang.Object"));
 		Scene.v().addClass(mSootClass);
-		mClinitMethod = new SootMethod("<clinit>", new LinkedList(), VoidType.v(), Modifier.STATIC);
-		mSootClass.addMethod(mClinitMethod);
 
-		/*
-		 * adding clinit method for the class
-		 */
-		mClinitBody = Jimple.v().newBody(mClinitMethod);
+	}
 
-		/* The active body to work on is mClinitBody */
-		mClinitMethod.setActiveBody(mClinitBody);
+	public void setNumberToStringMap(HashBiMap<Integer, String> map) {
+		numericToStringIDMap = map;
 	}
 
 	/* Add a view (create new object associated with these properties) " */
-	public void addTextView(String type, int numId, String strId, String text) {
+	public void addTextView(String type, String strId, String text) {
+		// adding ui object (partial information, no numeric ID, no soot method)  
+		// to the list of UI objects 
 
-		String   idName    = makeIdName(type, numId); 
+		Integer id = numericToStringIDMap.inverse().get(strId);
+		logger.warn("lookup id {} => {} ", strId, id);
+		UISootObject obj = new UISootObject(id.intValue(), type, strId, text, null);
+		uiObjectTable.put(id, obj);
+	}
+
+	public SootField getField(Integer intId) {
+		UISootObject obj = uiObjectTable.get(intId);	
+		logger.warn("calling getField({}) ", intId.toString());
+
+		if (obj == null) {
+			logger.warn("Object for id {} does not exist ", intId);
+			return null;
+		}
+
+		// First time initializing 
+		if (uiObjectTable.isEmpty()) {
+			mClinitMethod = new SootMethod("<clinit>", new LinkedList(), VoidType.v(), Modifier.STATIC);
+			mSootClass.addMethod(mClinitMethod);
+
+			/*
+			 * adding clinit method for the class
+			 */
+			mClinitBody = Jimple.v().newBody(mClinitMethod);
+
+			/* The active body to work on is mClinitBody */
+			mClinitMethod.setActiveBody(mClinitBody);
+
+		}
+
+		if (obj.sootField == null) {
+			buildTextView(obj);
+		}
+
+		return obj.sootField;
+	}
+
+	public void buildTextView(UISootObject obj) {
+
+		String   idName    = makeIdName(obj.type, obj.numericId); 
 		String   localIdName = "tmp" + idName;
-		String   className = makeClassName(type);
+		String   className = makeClassName(obj.type);
 		RefType  classType = RefType.v(className); 
 
 		Chain units = mClinitBody.getUnits();
@@ -146,6 +202,8 @@ public class ResourcesSoot {
 		// step 1: create sootfield for member variable
 		SootField sf = new SootField(idName, classType, Modifier.PUBLIC | Modifier.STATIC);
 		mSootClass.addField(sf);
+
+		obj.sootField = sf;
 
 		// step 2: create local variable
 		// Button tmpBotton; 
@@ -185,27 +243,13 @@ public class ResourcesSoot {
 
 			units.add(Jimple.v().newInvokeStmt(
 						Jimple.v().newVirtualInvokeExpr(arg, setTextMethod.makeRef(), 
-								StringConstant.v(text)))); 
+								StringConstant.v(obj.text)))); 
 				
 
 		}
 		catch (Exception ex) {
 			logger.warn(ex.toString());
 		}
-
-		// adding a new statement
-		// units.add(Jimple.v().newIdentityStmt(arg, Jimple.v().newStaticFieldRef(sf.makeRef()))); 
-		// step 3: instatiate 
-
-		// step 4: assign statement: Button = tmpButton
-		// units.add(Jimple.v().newAssignStmt(
-
-		
-/*
-		Chain units = mClinitBody.getUnits();
-		Local arg, tmpRef;
-		String localType = "local" + className; 
-*/
 	}
 
 	public String makeIdName(String type, int numId) {

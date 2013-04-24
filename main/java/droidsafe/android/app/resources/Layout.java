@@ -75,8 +75,9 @@ public class Layout {
 			String idName = "null";
 
 			if (id != null) {
-				idName = id.substring(id.indexOf("/") + 1);
-				logger.warn("  id {}:{} " + id, idName);
+				idName = id.substring(id.indexOf("+") + 1);
+				idName = idName.replace('/', '.');
+				logger.warn("  id {}:{} " ,id, idName);
 			}
 
 			if (text != null) {
@@ -92,9 +93,10 @@ public class Layout {
 			}
 			
 			if (cview.name.equals("Button")) {
-				logger.warn("Button object instatiation ");
-				ResourcesSoot.v().addTextView(cview.name,  numId++, idName, text);
+				logger.warn("Button object instatiation ({}, {}, {})", cview.name, idName, text);
+				ResourcesSoot.v().addTextView(cview.name,  idName, text);
 			}
+
 			if (cview.name.equals("TextEdit")) {
 				logger.warn("TextEdit object instatiation ");
 			}
