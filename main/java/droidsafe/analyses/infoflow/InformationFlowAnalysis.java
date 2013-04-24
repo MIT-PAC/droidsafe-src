@@ -61,6 +61,7 @@ import soot.jimple.UnopExpr;
 import soot.jimple.spark.pag.AllocNode;
 import soot.jimple.toolkits.callgraph.CallGraph;
 import soot.jimple.toolkits.callgraph.Edge;
+import soot.toolkits.graph.Block;
 import soot.toolkits.graph.PseudoTopologicalOrderer;
 import soot.util.Chain;
 
@@ -79,21 +80,34 @@ public class InformationFlowAnalysis {
         v = new InformationFlowAnalysis(InterproceduralControlFlowGraph.v());
     }
 
-    public States getFlowFromTo(Unit from, Unit to) {
+    public States getFlowFromTo(Block from, Block to) {
         return fromToStates.get(from).get(to);
     }
 
-    public States getFlowBefore(Unit curr) {
-        List<Unit> preds = controlFlowGraph.getPredsOf(curr);
+    public States getFlowBefore(Unit unit) {
+        Block block = controlFlowGraph.unitToBlock.get(unit);
+        States inStates = getFlowBefore(block);
+        Unit pred = block.getHead();
+        while (!pred.equals(unit)) {
+            inStates = execute(pred, inStates);
+            pred = block.getSuccOf(pred);
+        }
+        return inStates;
+    }
+
+    private States getFlowBefore(Block block) {
+        States inStates;
+        List<Block> preds = controlFlowGraph.getPredsOf(block);
         int nPreds = preds.size();
         if (nPreds == 1) {
-            return fromToStates.get(preds.get(0)).get(curr);
+            inStates = fromToStates.get(preds.get(0)).get(block);
         } else if (nPreds > 1) {
-            return mergeStates.get(curr);
+            inStates = mergeStates.get(block);
         } else {        // nPreds == 0
             assert(nPreds == 0);
-            return fromToStates.get(null).get(curr);
+            inStates = fromToStates.get(null).get(block);
         }
+        return inStates;
     }
 
     public static void exportDotGraph(String fileName) throws IOException {
@@ -109,36 +123,36 @@ public class InformationFlowAnalysis {
     private InterproceduralControlFlowGraph controlFlowGraph;
     private CallGraph callGraph;
 
-    private Map<Unit, Map<Unit, States>> fromToStates;
-    private Map<Unit, States> mergeStates;
+    private Map<Block, Map<Block, States>> fromToStates;
+    private Map<Block, States> mergeStates;
 
     class Worklist {
-        TreeSet<Unit> worklist;
+        TreeSet<Block> worklist;
 
         Worklist() {
-            final Map<Unit, Integer> unitToRank = new HashMap<Unit, Integer>();
+            final Map<Block, Integer> blockToRank = new HashMap<Block, Integer>();
             int i = 1;
-            Iterator<Unit> it = new PseudoTopologicalOrderer<Unit>().newList(controlFlowGraph, false).iterator();
+            Iterator<Block> it = new PseudoTopologicalOrderer<Block>().newList(controlFlowGraph, false).iterator();
             while (it.hasNext()) {
-                unitToRank.put(it.next(), i);
+                blockToRank.put(it.next(), i);
                 i++;
             }
-            worklist = new TreeSet<Unit>(new Comparator<Unit>() {
-                public int compare(Unit unit1, Unit unit2) {
-                    return unitToRank.get(unit1) - unitToRank.get(unit2);
+            worklist = new TreeSet<Block>(new Comparator<Block>() {
+                public int compare(Block block1, Block block2) {
+                    return blockToRank.get(block1) - blockToRank.get(block2);
                 }
             });
         }
 
-        boolean add(Unit unit) {
-            return worklist.add(unit);
+        boolean add(Block block) {
+            return worklist.add(block);
         }
 
         boolean isEmpty() {
             return worklist.isEmpty();
         }
 
-        Unit poll() {
+        Block poll() {
             return worklist.pollFirst();
         }
     }
@@ -151,20 +165,20 @@ public class InformationFlowAnalysis {
         this.controlFlowGraph = controlFlowGraph;
         callGraph = Scene.v().getCallGraph();
 
-        fromToStates = new HashMap<Unit, Map<Unit, States>>();
-        mergeStates = new HashMap<Unit, States>();
-        fromToStates.put(null, new HashMap<Unit, States>());
-        for (Unit curr : controlFlowGraph) {
-            List<Unit> preds = controlFlowGraph.getPredsOf(curr);
+        fromToStates = new HashMap<Block, Map<Block, States>>();
+        mergeStates = new HashMap<Block, States>();
+        fromToStates.put(null, new HashMap<Block, States>());
+        for (Block curr : controlFlowGraph) {
+            List<Block> preds = controlFlowGraph.getPredsOf(curr);
             if (preds.size() > 1) {
                 mergeStates.put(curr, new States());
             } else if (preds.size() == 0) {
                 fromToStates.get(null).put(curr, new States());
             }
-            fromToStates.put(curr, new HashMap<Unit, States>());
-            List<Unit> succs = controlFlowGraph.getSuccsOf(curr);
+            fromToStates.put(curr, new HashMap<Block, States>());
+            List<Block> succs = controlFlowGraph.getSuccsOf(curr);
             if (succs.size() > 0) {
-                for (Unit succ : succs) {
+                for (Block succ : succs) {
                     fromToStates.get(curr).put(succ, new States());
                 }
             } else {
@@ -178,15 +192,15 @@ public class InformationFlowAnalysis {
     private void doAnalysis() {
         initialize();
         while (!worklist.isEmpty()) {
-            Unit curr = worklist.poll();
+            Block curr = worklist.poll();
             States inStates = collectFlowBefore(curr);
             if (inStates != null) {
                 States outStates = execute(curr, inStates);
                 // fromToStates and worklist have been already updated if outStates == null.
                 if (outStates != null) {
-                    for (Unit succ : controlFlowGraph.getSuccsOf(curr)) {
+                    for (Block succ : controlFlowGraph.getSuccsOf(curr)) {
                         // XXX: skip "$r0 := @caughtexception"
-                        if (!InterproceduralControlFlowGraph.containsCaughtExceptionRef(succ)) {
+                        if (!InterproceduralControlFlowGraph.containsCaughtExceptionRef(succ.getHead())) {
                             if (!outStates.equals(fromToStates.get(curr).get(succ))) {
                                 fromToStates.get(curr).put(succ, outStates);
                                 worklist.add(succ);
@@ -200,17 +214,17 @@ public class InformationFlowAnalysis {
 
     private void initialize() {
         worklist = new Worklist();
-        for (Unit head : controlFlowGraph.getHeads()) {
-            SootMethod tgt = controlFlowGraph.unitToMethod.get(head);
-            List<Unit> preds = controlFlowGraph.getPredsOf(head);
+        for (Block head : controlFlowGraph.getHeads()) {
+            SootMethod tgt = head.getBody().getMethod();
+            List<Block> preds = controlFlowGraph.getPredsOf(head);
             if (preds.size() == 0) {
                 States states = new States();
                 states.put(new Edge(null, null, tgt, Kind.INVALID), new FrameRootsHeapStatics());
                 fromToStates.get(null).put(head,  states);
             } else {
-                for (Unit pred : preds) {
+                for (Block pred : preds) {
                     States states = new States();
-                    states.put(new Edge(controlFlowGraph.unitToMethod.get(pred), pred, tgt, Kind.INVALID), new FrameRootsHeapStatics());
+                    states.put(new Edge(pred.getBody().getMethod(), pred.getTail(), tgt, Kind.INVALID), new FrameRootsHeapStatics());
                     fromToStates.get(pred).put(head, states);
                 }
             }
@@ -218,13 +232,13 @@ public class InformationFlowAnalysis {
         }
     }
 
-    private States collectFlowBefore(Unit curr) {
+    private States collectFlowBefore(Block curr) {
         States states;
-        List<Unit> preds = controlFlowGraph.getPredsOf(curr);
+        List<Block> preds = controlFlowGraph.getPredsOf(curr);
         if (preds.size() == 1) {
             states = fromToStates.get(preds.get(0)).get(curr);
         } else if (preds.size() > 1) {
-            Iterator<Unit> it = preds.iterator();
+            Iterator<Block> it = preds.iterator();
             states = fromToStates.get(it.next()).get(curr);
             while (it.hasNext()) {
                 states = states.merge(fromToStates.get(it.next()).get(curr));
@@ -239,6 +253,15 @@ public class InformationFlowAnalysis {
             states = fromToStates.get(null).get(curr);
         }
         return states;
+    }
+
+    private States execute(Block block, States inStates) {
+        States outStates = inStates;
+        Iterator<Unit> it = block.iterator();
+        while (it.hasNext()) {
+            outStates = execute(it.next(), outStates);
+        }
+        return outStates;
     }
 
     private States execute(final Unit curr, final States inStates) {
@@ -401,12 +424,14 @@ public class InformationFlowAnalysis {
     // stmt = ... | return_stmt | ...;
     private void execute(final ReturnStmt stmt, final States inStates) {
         // return_stmt = "return" immediate;
-        final SootMethod callee = controlFlowGraph.unitToMethod.get(stmt);
-        for (Unit fallThrough : controlFlowGraph.getSuccsOf(stmt)) {
+        Block block = controlFlowGraph.unitToBlock.get(stmt);
+        final SootMethod callee = block.getBody().getMethod();
+        for (Block fallThrough : controlFlowGraph.getSuccsOf(block)) {
             // XXX: skip "$r0 := @caughtexception"
-            if (!InterproceduralControlFlowGraph.containsCaughtExceptionRef(fallThrough)) {
-                final SootMethod caller = controlFlowGraph.unitToMethod.get(fallThrough);
-                Unit callStmt = controlFlowGraph.getPrecedingCallStmt(fallThrough, caller);
+            if (!InterproceduralControlFlowGraph.containsCaughtExceptionRef(fallThrough.getHead())) {
+                final SootMethod caller = fallThrough.getBody().getMethod();
+                Block callBlock = controlFlowGraph.getPrecedingCallBlock(fallThrough, caller);
+                Unit callStmt = callBlock.getTail();
                 final FrameRootsHeapStatics inFrameRootsHeapStatics = inStates.get(callGraph.findEdge(callStmt, callee));
                 FrameRootsHeapStatics outFrameRootsHeapStatics;
                 if (callStmt instanceof AssignStmt) {
@@ -450,11 +475,11 @@ public class InformationFlowAnalysis {
                     outFrameRootsHeapStatics = new FrameRootsHeapStatics(new Frame(), new HashSet<Address>(), inFrameRootsHeapStatics.heap.gc(roots), inFrameRootsHeapStatics.statics);
                 }
                 States outStates = new States();
-                for (Edge context : fromToStates.get(callStmt).get(fallThrough).keySet()) {
+                for (Edge context : fromToStates.get(callBlock).get(fallThrough).keySet()) {
                     outStates.put(context, outFrameRootsHeapStatics);
                 }
-                if (!outStates.equals(fromToStates.get(stmt).get(fallThrough))) {
-                    fromToStates.get(stmt).put(fallThrough, outStates);
+                if (!outStates.equals(fromToStates.get(block).get(fallThrough))) {
+                    fromToStates.get(block).put(fallThrough, outStates);
                     worklist.add(fallThrough);
                 }
             }
@@ -464,22 +489,24 @@ public class InformationFlowAnalysis {
     // stmt = ... | return_void_stmt | ...;
     private void execute(final ReturnVoidStmt stmt, final States inStates) {
         // return_void_stmt = "return";
-        SootMethod callee = controlFlowGraph.unitToMethod.get(stmt);
-        for (Unit fallThrough : controlFlowGraph.getSuccsOf(stmt)) {
+        Block block = controlFlowGraph.unitToBlock.get(stmt);
+        SootMethod callee = block.getBody().getMethod();
+        for (Block fallThrough : controlFlowGraph.getSuccsOf(block)) {
             // XXX: skip "$r0 := @caughtexception"
-            if (!InterproceduralControlFlowGraph.containsCaughtExceptionRef(fallThrough)) {
-                SootMethod caller = controlFlowGraph.unitToMethod.get(fallThrough);
-                Unit callStmt = controlFlowGraph.getPrecedingCallStmt(fallThrough, caller);
+            if (!InterproceduralControlFlowGraph.containsCaughtExceptionRef(fallThrough.getHead())) {
+                SootMethod caller = fallThrough.getBody().getMethod();
+                Block callBlock = controlFlowGraph.getPrecedingCallBlock(fallThrough, caller);
+                Unit callStmt = callBlock.getTail();
                 FrameRootsHeapStatics inFrameRootsHeapStatics = inStates.get(callGraph.findEdge(callStmt, callee));
                 Set<Address> roots = new HashSet<Address>(inFrameRootsHeapStatics.roots);
                 roots.addAll(inFrameRootsHeapStatics.statics.roots());
                 FrameRootsHeapStatics outFrameRootsHeapStatics = new FrameRootsHeapStatics(new Frame(), new HashSet<Address>(), inFrameRootsHeapStatics.heap.gc(roots), inFrameRootsHeapStatics.statics);
                 States outStates = new States();
-                for (Edge context : fromToStates.get(callStmt).get(fallThrough).keySet()) {
+                for (Edge context : fromToStates.get(callBlock).get(fallThrough).keySet()) {
                     outStates.put(context, outFrameRootsHeapStatics);
                 }
-                if (!outStates.equals(fromToStates.get(stmt).get(fallThrough))) {
-                    fromToStates.get(stmt).put(fallThrough, outStates);
+                if (!outStates.equals(fromToStates.get(block).get(fallThrough))) {
+                    fromToStates.get(block).put(fallThrough, outStates);
                     worklist.add(fallThrough);
                 }
             }
@@ -681,11 +708,12 @@ public class InformationFlowAnalysis {
                 final List<Set<MyValue>> args = evaluateArgs(invokeExpr.getArgs(), inStates);
                 SootField field = staticFieldRef.getField();
                 SootClass klass = field.getDeclaringClass();
-                SootMethod caller = controlFlowGraph.unitToMethod.get(stmt);
-                for (Unit succ : controlFlowGraph.getSuccsOf(stmt)) {
+                Block block = controlFlowGraph.unitToBlock.get(stmt);
+                SootMethod caller = block.getBody().getMethod();
+                for (Block succ : controlFlowGraph.getSuccsOf(block)) {
                     // XXX: skip "$r0 := @caughtexception"
-                    if (!InterproceduralControlFlowGraph.containsCaughtExceptionRef(succ)) {
-                        SootMethod callee = controlFlowGraph.unitToMethod.get(succ);
+                    if (!InterproceduralControlFlowGraph.containsCaughtExceptionRef(succ.getHead())) {
+                        SootMethod callee = succ.getBody().getMethod();
                         States outStates;
                         if (!caller.equals(callee)) {
                             outStates = makeCalleeStates(stmt, callee, args, inStates);
@@ -702,8 +730,8 @@ public class InformationFlowAnalysis {
                                 outStates = inStates;
                             }
                         }
-                        if (!outStates.equals(fromToStates.get(stmt).get(succ))) {
-                            fromToStates.get(stmt).put(succ, outStates);
+                        if (!outStates.equals(fromToStates.get(block).get(succ))) {
+                            fromToStates.get(block).put(succ, outStates);
                             worklist.add(succ);
                         }
                     }
@@ -714,11 +742,12 @@ public class InformationFlowAnalysis {
             public void caseLocal(Local local) {
                 // local "=" invoke_expr
                 final List<Set<MyValue>> args = evaluateArgs(invokeExpr.getArgs(), inStates);
-                SootMethod caller = controlFlowGraph.unitToMethod.get(stmt);
-                for (Unit succ : controlFlowGraph.getSuccsOf(stmt)) {
+                Block block = controlFlowGraph.unitToBlock.get(stmt);
+                SootMethod caller = block.getBody().getMethod();
+                for (Block succ : controlFlowGraph.getSuccsOf(block)) {
                     // XXX: skip "$r0 := @caughtexception"
-                    if (!InterproceduralControlFlowGraph.containsCaughtExceptionRef(succ)) {
-                        SootMethod callee = controlFlowGraph.unitToMethod.get(succ);
+                    if (!InterproceduralControlFlowGraph.containsCaughtExceptionRef(succ.getHead())) {
+                        SootMethod callee = succ.getBody().getMethod();
                         States outStates;
                         if (!caller.equals(callee)) {
                             outStates = makeCalleeStates(stmt, callee, args, inStates);
@@ -735,8 +764,8 @@ public class InformationFlowAnalysis {
                                 outStates = inStates;
                             }
                         }
-                        if (!outStates.equals(fromToStates.get(stmt).get(succ))) {
-                            fromToStates.get(stmt).put(succ, outStates);
+                        if (!outStates.equals(fromToStates.get(block).get(succ))) {
+                            fromToStates.get(block).put(succ, outStates);
                             worklist.add(succ);
                         }
                     }
@@ -787,7 +816,7 @@ public class InformationFlowAnalysis {
                 });
             }
         } else {
-            assert controlFlowGraph.unitToMethod.get(stmt).getDeclaringClass().equals(Scene.v().getSootClass("edu.mit.csail.droidsafe.DroidSafeCalls"));
+            assert controlFlowGraph.unitToBlock.get(stmt).getBody().getMethod().getDeclaringClass().equals(Scene.v().getSootClass("edu.mit.csail.droidsafe.DroidSafeCalls"));
             outStates = inStates;
         }
         return outStates;
@@ -840,7 +869,7 @@ public class InformationFlowAnalysis {
                 });
             }
         } else {
-            assert controlFlowGraph.unitToMethod.get(stmt).getDeclaringClass().equals(Scene.v().getSootClass("edu.mit.csail.droidsafe.DroidSafeCalls"));
+            assert controlFlowGraph.unitToBlock.get(stmt).getBody().getMethod().getDeclaringClass().equals(Scene.v().getSootClass("edu.mit.csail.droidsafe.DroidSafeCalls"));
             outStates = inStates;
         }
         return outStates;
@@ -888,7 +917,7 @@ public class InformationFlowAnalysis {
                 });
             }
         } else {
-            assert controlFlowGraph.unitToMethod.get(stmt).getDeclaringClass().equals(Scene.v().getSootClass("edu.mit.csail.droidsafe.DroidSafeCalls"));
+            assert controlFlowGraph.unitToBlock.get(stmt).getBody().getMethod().getDeclaringClass().equals(Scene.v().getSootClass("edu.mit.csail.droidsafe.DroidSafeCalls"));
             outStates = inStates;
         }
         return outStates;
@@ -1130,19 +1159,20 @@ public class InformationFlowAnalysis {
         // static_invoke_expr = "staticinvoke" "[" method_signature "]" "(" immediate_list ")";
         // virtual_invoke_expr = "virtualinvoke" immediate ".[" method_signamter "]" "(" immediate_list ")";
         final List<Set<MyValue>> args = evaluateArgs(invokeExpr.getArgs(), inStates);
-        SootMethod caller = controlFlowGraph.unitToMethod.get(stmt);
-        for (Unit succ : controlFlowGraph.getSuccsOf(stmt)) {
+        Block block = controlFlowGraph.unitToBlock.get(stmt);
+        SootMethod caller = block.getBody().getMethod();
+        for (Block succ : controlFlowGraph.getSuccsOf(block)) {
             // XXX: skip "$r0 := @caughtexception"
-            if (!InterproceduralControlFlowGraph.containsCaughtExceptionRef(succ)) {
-                SootMethod callee = controlFlowGraph.unitToMethod.get(succ);
+            if (!InterproceduralControlFlowGraph.containsCaughtExceptionRef(succ.getHead())) {
+                SootMethod callee = succ.getBody().getMethod();
                 States outStates;
                 if (!caller.equals(callee)) {
                     outStates = makeCalleeStates(stmt, callee, args, inStates);
                 } else {
                     outStates = inStates;
                 }
-                if (!outStates.equals(fromToStates.get(stmt).get(succ))) {
-                    fromToStates.get(stmt).put(succ, outStates);
+                if (!outStates.equals(fromToStates.get(block).get(succ))) {
+                    fromToStates.get(block).put(succ, outStates);
                     worklist.add(succ);
                 }
             }
@@ -1232,22 +1262,14 @@ public class InformationFlowAnalysis {
         return tgtStates;
     }
 
-    private static void exportDotGraph(final Graph<Unit, DefaultEdge> jGraphT, String fileName) throws IOException {
-        final InterproceduralControlFlowGraph controlFlowGraph = InterproceduralControlFlowGraph.v();
+    private static void exportDotGraph(final Graph<Block, DefaultEdge> jGraphT, String fileName) throws IOException {
         final InformationFlowAnalysis infoflow = InformationFlowAnalysis.v();
-        DOTExporter<Unit, DefaultEdge> dotExporter = new DOTExporter<Unit, DefaultEdge>(
-                new IntegerNameProvider<Unit>(),
-                new VertexNameProvider<Unit>() {
+        DOTExporter<Block, DefaultEdge> dotExporter = new DOTExporter<Block, DefaultEdge>(
+                new IntegerNameProvider<Block>(),
+                new VertexNameProvider<Block>() {
                     @Override
-                    public String getVertexName(Unit vertex) {
-                        StringBuilder str = new StringBuilder(controlFlowGraph.unitToMethod.get(vertex) + "\n" + vertex);
-                        if (vertex instanceof AssignStmt) {
-                            Value rValue = ((AssignStmt)vertex).getRightOp();
-                            if (rValue instanceof NewExpr || rValue instanceof NewArrayExpr || rValue instanceof NewMultiArrayExpr) {
-                                AllocNode allocNode = GeoPTA.v().getAllocNode(rValue);
-                                str.append("\n" + "[" + allocNode + "]");
-                            }
-                        }
+                    public String getVertexName(Block vertex) {
+                        StringBuilder str = new StringBuilder(vertex.getBody().getMethod() + "\n" + vertex);
                         return StringEscapeUtils.escapeJava(str.toString());
                     }
                 },
