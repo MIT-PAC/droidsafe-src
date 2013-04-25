@@ -67,9 +67,9 @@ public class ArrayList<E> extends AbstractList<E> implements Cloneable, Serializ
         return new ArrayListIterator();
     }
 
-    private class ArrayListIterator implements Iterator<E> {
+    private class ArrayListIterator implements Iterator {
     	@DSModeled(DSC.SAFE)
-    	private ArrayListIterator() { }
+    	public ArrayListIterator() { }
     	
     	@DSModeled(DSC.SAFE)
     	private ArrayListIterator(ArrayList l) {
@@ -85,7 +85,7 @@ public class ArrayList<E> extends AbstractList<E> implements Cloneable, Serializ
         }
 
         @DSModeled(DSC.SAFE)
-        @SuppressWarnings("unchecked") public E next() {
+        @SuppressWarnings("unchecked") public Object next() {
         	/*
             ArrayList<E> ourList = ArrayList.this;
             int rem = remaining;

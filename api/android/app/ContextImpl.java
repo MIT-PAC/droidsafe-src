@@ -16,15 +16,19 @@
 
 package android.app;
 
-import droidsafe.annotations.*;
-import droidsafe.concrete.*;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.InputStream;
 
+import android.content.BroadcastReceiver;
 import android.content.ComponentName;
 import android.content.ContentResolver;
 import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
-import android.content.BroadcastReceiver;
 import android.content.IntentSender;
 import android.content.ServiceConnection;
 import android.content.SharedPreferences;
@@ -36,19 +40,15 @@ import android.database.DatabaseErrorHandler;
 import android.database.sqlite.SQLiteDatabase;
 import android.graphics.Bitmap;
 import android.graphics.drawable.Drawable;
-import android.location.Location;
+import android.hardware.SensorManager;
 import android.location.LocationManager;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Looper;
-
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
-import java.io.FileOutputStream;
-import java.io.IOException;
-import java.io.InputStream;
+import droidsafe.annotations.DSC;
+import droidsafe.annotations.DSModeled;
+import droidsafe.concrete.DroidSafeContentResolver;
 
 /**
  * A mock {@link android.content.Context} class.  All methods are non-functional and throw 
@@ -68,7 +68,7 @@ public class ContextImpl extends Context {
 	@DSModeled(value = DSC.SAFE)
     public Object getSystemService(String name) {
     	if ("Service".equals(name)) {
-    		return new DroidSafeSensorManager();
+    		return new SensorManager();
     	} else if ("Service".equals(name)) {
     		return new LocationManager(null);
     	} else 

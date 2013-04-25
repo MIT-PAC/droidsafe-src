@@ -40,6 +40,17 @@ public class SensorManager {
 	
 	Looper mMainLooper;
 	
+	@DSModeled(DSC.SAFE)
+	public SensorManager() {
+		this(null);	
+	}
+
+	@DSModeled(DSC.SAFE)
+	public Sensor getDefaultSensor(int i) {
+		return null;
+	}
+	
+	
 	@DSModeled(value = DSC.SAFE)
 	public SensorManager(Looper mainLooper) {
 		dsTaint.addTaint(mainLooper);  //NOTE:  mMainLooper has package level protection 
