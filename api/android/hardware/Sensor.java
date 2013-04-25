@@ -1,130 +1,26 @@
-/*
- * Copyright (C) 2008 The Android Open Source Project
- *
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- *      http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
- */
-
-
 package android.hardware;
 import droidsafe.annotations.*;
 import droidsafe.helpers.*;
 
-/**
- * Class representing a sensor. Use {@link SensorManager#getSensorList} to get
- * the list of available Sensors.
- *
- * @see SensorManager
- * @see SensorEventListener
- * @see SensorEvent
- *
- */
 public class Sensor {
-    //private DSTaintObject taint; 
-
-    /**
-     * A constant describing an accelerometer sensor type. See
-     * {@link android.hardware.SensorEvent#values SensorEvent.values} for more
-     * details.
-     */
     public static final int TYPE_ACCELEROMETER = 1;
-
-    /**
-     * A constant describing a magnetic field sensor type. See
-     * {@link android.hardware.SensorEvent#values SensorEvent.values} for more
-     * details.
-     */
     public static final int TYPE_MAGNETIC_FIELD = 2;
-
-    /**
-     * A constant describing an orientation sensor type. See
-     * {@link android.hardware.SensorEvent#values SensorEvent.values} for more
-     * details.
-     *
-     * @deprecated use {@link android.hardware.SensorManager#getOrientation
-     *             SensorManager.getOrientation()} instead.
-     */
+    public static final int TYPE_GYROSCOPE = 4;
+    public static final int TYPE_LIGHT = 5;
+    public static final int TYPE_PRESSURE = 6;
+    public static final int TYPE_PROXIMITY = 8;
+    public static final int TYPE_GRAVITY = 9;
+    public static final int TYPE_LINEAR_ACCELERATION = 10;
+    public static final int TYPE_ROTATION_VECTOR = 11;
+    public static final int TYPE_RELATIVE_HUMIDITY = 12;
+    public static final int TYPE_AMBIENT_TEMPERATURE = 13;
+    public static final int TYPE_ALL = -1;
+    
+    @Deprecated
+    public static final int TYPE_TEMPERATURE = 7;
     @Deprecated
     public static final int TYPE_ORIENTATION = 3;
 
-    /** A constant describing a gyroscope sensor type */
-    public static final int TYPE_GYROSCOPE = 4;
-
-    /**
-     * A constant describing an light sensor type. See
-     * {@link android.hardware.SensorEvent#values SensorEvent.values} for more
-     * details.
-     */
-    public static final int TYPE_LIGHT = 5;
-
-    /** A constant describing a pressure sensor type */
-    public static final int TYPE_PRESSURE = 6;
-
-    /**
-     * A constant describing a temperature sensor type
-     *
-     * @deprecated use
-     *             {@link android.hardware.Sensor#TYPE_AMBIENT_TEMPERATURE
-     *             Sensor.TYPE_AMBIENT_TEMPERATURE} instead.
-     */
-    @Deprecated
-    public static final int TYPE_TEMPERATURE = 7;
-
-    /**
-     * A constant describing an proximity sensor type. See
-     * {@link android.hardware.SensorEvent#values SensorEvent.values} for more
-     * details.
-     */
-    public static final int TYPE_PROXIMITY = 8;
-
-    /**
-     * A constant describing a gravity sensor type.
-     * See {@link android.hardware.SensorEvent SensorEvent}
-     * for more details.
-     */
-    public static final int TYPE_GRAVITY = 9;
-
-    /**
-     * A constant describing a linear acceleration sensor type.
-     * See {@link android.hardware.SensorEvent SensorEvent}
-     * for more details.
-     */
-    public static final int TYPE_LINEAR_ACCELERATION = 10;
-
-    /**
-     * A constant describing a rotation vector sensor type.
-     * See {@link android.hardware.SensorEvent SensorEvent}
-     * for more details.
-     */
-    public static final int TYPE_ROTATION_VECTOR = 11;
-
-    /**
-     * A constant describing a relative humidity sensor type.
-     * See {@link android.hardware.SensorEvent SensorEvent}
-     * for more details.
-     */
-    public static final int TYPE_RELATIVE_HUMIDITY = 12;
-
-    /** A constant describing an ambient temperature sensor type */
-    public static final int TYPE_AMBIENT_TEMPERATURE = 13;
-
-    /** 
-     * A constant describing all sensor types.
-     */
-    public static final int TYPE_ALL = -1;
-
-    /* Some of these fields are set only by the native bindings in
-     * SensorManager.
-     */
     private String  mName;
     private String  mVendor;
     private int     mVersion;
@@ -135,101 +31,88 @@ public class Sensor {
     private float   mPower;
     private int     mMinDelay;
     private int     mLegacyType;
-
+    
+    private DSTaintObject dsTaint = new DSTaintObject();
 
     // GITI DSModeled
     @DSModeled(DSC.SAFE)
     Sensor() {
     }
 
-    /**
-     * @return name string of the sensor.
-     */
     // GITI DSModeled - just returning a string
     @DSModeled(DSC.SAFE)
     public String getName() {
-        return mName;
+    	return "name";
+        //return mName;
     }
 
-    /**
-     * @return vendor string of this sensor.
-     */
     // GITI DSModeled - just returning a string 
     @DSModeled(DSC.SAFE)
     public String getVendor() {
-        return mVendor;
+    	return "vendor";
+        //return mVendor;
     }
 
-    /**
-     * @return generic type of this sensor.
-     */
     // GITI DSModeled - just returning an int
     @DSModeled(DSC.SAFE)
     public int getType() {
-        return mType;
+    	return 0;
+        //return mType;
     }
 
-    /**
-     * @return version of the sensor's module.
-     */
     // GITI DSModeled - just returning an int
     @DSModeled(DSC.SAFE)
     public int getVersion() {
-        return mVersion;
+    	return 0;
+        //return mVersion;
     }
 
-    /**
-     * @return maximum range of the sensor in the sensor's unit.
-     */
     // GITI DSModeled - just returning a float
     @DSModeled(DSC.SAFE)
     public float getMaximumRange() {
-        return mMaxRange;
+    	return dsTaint.getTaintFloat();
+        //return mMaxRange;
     }
 
-    /**
-     * @return resolution of the sensor in the sensor's unit.
-     */
     // GITI DSModeled - just returning a float
     @DSModeled(DSC.SAFE)
     public float getResolution() {
-        return mResolution;
+    	return dsTaint.getTaintInt();
+        //return mResolution;
     }
 
-    /**
-     * @return the power in mA used by this sensor while in use
-     */
     // GITI DSModeled - just returning a float
     @DSModeled(DSC.SAFE)
     public float getPower() {
-        return mPower;
+    	return 0;
+        //return mPower;
     }
 
-    /**
-     * @return the minimum delay allowed between two events in microsecond
-     * or zero if this sensor only returns a value when the data it's measuring
-     * changes.
-     */
     // GITI DSModeled - just returning an int
     @DSModeled(DSC.SAFE)
     public int getMinDelay() {
-        return mMinDelay;
+    	return 0;
+        //return mMinDelay;
     }
 
     int getHandle() {
-        return mHandle;
+    	return 0;
+        //return mHandle;
     }
 
     void setRange(float max, float res) {
+    	dsTaint.addTaints(max, res);
         mMaxRange = max;
         mResolution = res;
     }
 
     void setLegacyType(int legacyType) {
+    	dsTaint.addTaint(legacyType);
         mLegacyType = legacyType;
     }
 
     int getLegacyType() {
-        return mLegacyType;
+    	return 0;
+        //return mLegacyType;
     }
 }
