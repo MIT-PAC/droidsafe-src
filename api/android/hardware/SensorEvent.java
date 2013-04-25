@@ -22,7 +22,7 @@ import droidsafe.helpers.*;
 public class SensorEvent {
     public final float[] values;
    
-    public Sensor sensor;
+    public Sensor sensor = new Sensor();
 
     public int accuracy;
 
