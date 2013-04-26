@@ -725,4 +725,21 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
 	    @DSModeled(DSC.SAFE)
 	    protected void onSizeChanged(int w, int h, int oldw, int oldh) {
 	    }
+	    
+	    public final View findViewById(int id) {
+	        if (id < 0) {
+	            return null;
+	        }
+	        return findViewTraversal(id);
+	    }
+	    
+	    protected View findViewTraversal(int id) {
+	    	return this;
+	    	/*
+	        if (id == mID) {
+	            return this;
+	        }
+	        return null;
+	        */
+	    }
 }
