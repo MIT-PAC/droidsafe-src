@@ -22,8 +22,12 @@ import soot.SootClass;
 import soot.SootMethod;
 import soot.Local;
 import soot.UnitBox;
+import soot.Unit;
 import soot.ValueBox;
 import soot.SootField;
+import soot.Value;
+import soot.NullType;
+import soot.jimple.NullConstant;
 
 import soot.jimple.InstanceInvokeExpr;
 import soot.jimple.InvokeExpr;
@@ -33,11 +37,17 @@ import soot.jimple.ArrayRef;
 import soot.jimple.InvokeExpr;
 import soot.jimple.FieldRef;
 import soot.jimple.spark.pag.AllocNode;
+import soot.jimple.Jimple;
+import soot.jimple.NewExpr;
+import soot.jimple.StringConstant;
 
 import soot.jimple.internal.JimpleLocalBox;
 import soot.jimple.internal.ImmediateBox;
+import soot.jimple.internal.VariableBox;
 
 import soot.util.Chain;
+import soot.util.HashChain;
+import soot.PatchingChain;
 
 import droidsafe.analyses.GeoPTA;
 import droidsafe.android.app.Project;
@@ -84,6 +94,7 @@ public class IntegrateXMLLayouts extends BodyTransformer {
 			}
 		}
 
+		// debug function
 		protected void dumpActivities() {
 			String[] androidActivityNames = new String[] {
 					"android.app.Activity", 
@@ -124,6 +135,7 @@ public class IntegrateXMLLayouts extends BodyTransformer {
 
 		}
 
+		// debug function
 		protected void dumpStmtBody(StmtBody stmtBody) {
             //System.out.printf("Dumping body %s \n", stmtBody);
 			System.out.printf("Dumping statement body ");
@@ -132,6 +144,7 @@ public class IntegrateXMLLayouts extends BodyTransformer {
 			Chain units = stmtBody.getUnits();
 
 			Chain locals = stmtBody.getLocals();
+
 			Iterator localIt = locals.snapshotIterator();
 			while (localIt.hasNext()) {
 				Local local = (Local)localIt.next();
@@ -147,72 +160,83 @@ public class IntegrateXMLLayouts extends BodyTransformer {
             }
 		}
 
-		void dumpStatement(Stmt stmt) {
+		void replaceFindViewById(StmtBody stmtBody, Stmt stmt) {
 
+			// get body's unit as a chain
+			Chain units = stmtBody.getUnits();
 
-			System.out.println("Dumping statement ");
-			System.out.println(stmt.toString());
-
-			if (stmt.containsInvokeExpr()) {
-				InvokeExpr invokeExpr = stmt.getInvokeExpr();
-				System.out.printf("invokeExpr %s \n", invokeExpr.toString());
-
-				ValueBox invokeExprBox = stmt.getInvokeExprBox();
-				System.out.printf("invokeExprBox %s \n", invokeExprBox.toString());
-
-			}
-
-			if (stmt.containsFieldRef()) {
-				FieldRef fieldRef = stmt.getFieldRef();
-				System.out.printf("fieldRef %s \n", fieldRef.toString());
-
-				ValueBox fieldRefBox = stmt.getFieldRefBox();
-				System.out.printf("fieldRefBox %s \n", fieldRefBox.toString());
-			}
-
-			if (stmt.containsArrayRef()) {
-				ArrayRef arrayRef = stmt.getArrayRef();
-				System.out.printf("arrayRef %s \n", arrayRef.toString());
-
-				ValueBox arrayRefBox = stmt.getArrayRefBox();
-				System.out.printf("arrayRefBox %s \n", arrayRefBox.toString());
-
-			}
-
-			List<ValueBox> boxList = stmt.getUseBoxes();
+			List<ValueBox> boxList = stmt.getUseAndDefBoxes();
 			Iterator<ValueBox> it = boxList.iterator();
 
 			ValueBox localBox = null;
 			ValueBox immediateBox = null;
+			ValueBox variableBox = null;
 
 			while(it.hasNext()) {
 				ValueBox curBox = it.next();
 				/* using internal type is not ideal, but seems easiest */
 				if (curBox instanceof JimpleLocalBox) {
 					localBox = curBox; 
+					logger.debug("localBox {} {}",
+							curBox.getValue().toString(),
+							curBox.getValue().getType().toString()
+							);
+
 				}
 
 				if (curBox instanceof ImmediateBox) {
 					immediateBox = curBox;
-					System.out.printf("immediateBox %s %s number = %x \n", 
-							immediateBox.getValue().toString(),
-							immediateBox.getValue().getType().toString(),
-							immediateBox.getValue().getType().getNumber()
+					logger.debug("immediateBox {} {}",
+							curBox.getValue().toString(),
+							curBox.getValue().toString(),
+							curBox.getValue().getType().toString()
 							);
-
 				}
-				System.out.printf("use box %s:%s:%s \n", 
+
+				if (curBox instanceof VariableBox) {
+					variableBox = curBox;
+					logger.debug("variableBox {} {}",
+							curBox.getValue().toString(),
+							curBox.getValue().getType().toString());
+				}
+
+				logger.debug("variableBox {}:{}:{}",
 						curBox.getValue().getType().toString(),
 						curBox.toString(),
 						curBox.getValue().toString());
 
 			}
 
-			if (localBox != null && immediateBox != null) {
-				System.out.printf("New Soot Unit val = %s\n", immediateBox.getValue().toString());
-				Integer intId = new Integer(immediateBox.getValue().toString());
-				SootField sf = ResourcesSoot.v().getField(intId);
+			if (localBox == null || immediateBox == null || variableBox == null) {
+				logger.warn("Couldnot get boxes for replacement "); 
+				return;
 			}
+
+			// if the object is not in ResourcesSoot, added code to create one,
+			// else just use the lookup
+			Integer intId = new Integer(immediateBox.getValue().toString());
+			SootField sf = ResourcesSoot.v().getView(intId);
+			if (sf == null) {
+				String localIdName = "textView_" + intId;
+				Local arg = Jimple.v().newLocal(localIdName, RefType.v("android.widget.TextView"));
+				stmtBody.getLocals().add(arg);
+
+				Chain<Unit> newUnits =  ResourcesSoot.v().createView(
+						intId, localBox.getValue(), arg); 
+
+				units.insertBefore(newUnits, stmt);
+
+				sf = ResourcesSoot.v().getView(intId);
+			}
+
+			//creating rx = getView(intId) to replace rx=findViewById()
+			FieldRef  fieldRef = Jimple.v().newStaticFieldRef(sf.makeRef());
+			Stmt lookupStmt = Jimple.v().newAssignStmt(variableBox.getValue(), fieldRef); 
+
+			units.swapWith(stmt, lookupStmt);
+
+			logger.info("replacing {} ", stmt);
+			logger.info("with {} ", lookupStmt);
 		}
 
 		/**
@@ -227,10 +251,6 @@ public class IntegrateXMLLayouts extends BodyTransformer {
 			// get a snapshot iterator of the unit since we are going to
 			// mutate the chain when iterating over it.
 			Iterator stmtIt = units.snapshotIterator();
-
-            boolean hasViewById = false;
-
-			LinkedList<Stmt> idStmtList = new LinkedList();
 
 			while (stmtIt.hasNext()) {
 				Stmt stmt = (Stmt)stmtIt.next();
@@ -258,21 +278,13 @@ public class IntegrateXMLLayouts extends BodyTransformer {
 						}
 						
 						if (findViewById.equals(resolved))  {
-							idStmtList.add(stmt);
-                            hasViewById = true;
-							logger.warn("Found findViewById(): {}", stmt);
-							logger.warn("Found findViewById(): method {}", resolved);
 							logger.info(String.format("Found findViewById(): %s\n", stmt));
 							//replacement ...
-							dumpStatement(stmt);
+							replaceFindViewById(stmtBody, stmt);
 						}
 					}
 				}
 				
 			}
-
-            if (hasViewById) {
-                dumpStmtBody(stmtBody);
-            }
 		}
 }

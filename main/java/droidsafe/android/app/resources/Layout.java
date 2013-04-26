@@ -58,48 +58,38 @@ public class Layout {
   }
 
   public void buildUIObjects(HashMap<String, RString> stringMap) {
-		logger.warn("Dumping Layout.view info ");
-		logger.warn("View " + view);
-
-		for (String key: stringMap.keySet()) {
-			logger.warn("string key: " + key); 
-		}
+		logger.debug("Dumping Layout.view info ");
+		logger.debug("View " + view);
 
 		int numId = 1;
 
 		for (View cview: view.children) { 
-			logger.warn("cview: " + cview); 
-			logger.warn("cview.name <{}>" , cview.name);
+			logger.debug("cview: " + cview); 
+			logger.debug("cview.name <{}>" , cview.name);
 			String id = cview.get_attr("id");
 			String text = cview.get_attr("text");
-			String idName = "null";
+			String idName = null;
 
 			if (id != null) {
 				idName = id.substring(id.indexOf("+") + 1);
 				idName = idName.replace('/', '.');
-				logger.warn("  id {}:{} " ,id, idName);
+				logger.debug("  id {}:{} " ,id, idName);
 			}
 
 			if (text != null) {
-				logger.warn("  text -  " + text);
+				logger.debug("  text -  " + text);
 				int index = text.indexOf("/");
 				if (text.startsWith("@") && index > 0) {
 					RString rString = stringMap.get(text.substring(index + 1));
 					if (rString != null) {
-						logger.warn("  value=" + rString.value);
+						logger.debug("  value=" + rString.value);
 						text = rString.value;
 					}
 				}
 			}
 			
-			if (cview.name.equals("Button")) {
-				logger.warn("Button object instatiation ({}, {}, {})", cview.name, idName, text);
+			if (idName != null)
 				ResourcesSoot.v().addTextView(cview.name,  idName, text);
-			}
-
-			if (cview.name.equals("TextEdit")) {
-				logger.warn("TextEdit object instatiation ");
-			}
 		}
   }
 

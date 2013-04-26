@@ -65,6 +65,10 @@ import soot.SootField;
 import soot.Scene;
 import soot.Local;
 import soot.RefType;
+
+import soot.util.HashChain;
+import soot.PatchingChain;
+import soot.jimple.FieldRef;  
 import soot.jimple.NewExpr;
 import soot.jimple.Constant;
 import soot.jimple.StringConstant;
@@ -90,6 +94,9 @@ import droidsafe.utils.SootUtils;
 
 public class ResourcesSoot {
 
+	/**
+	* Inner class holding UISoot object used for lookup
+	*/
 	public class UISootObject {
 		public int       numericId;
 		public String    stringId;
@@ -121,7 +128,9 @@ public class ResourcesSoot {
 
 	private SootClass  mSootClass;
 	private SootMethod mClinitMethod;
+	private SootMethod mSetActivityMethod; 
 	private JimpleBody mClinitBody;
+	private SootField  mActivityField;
 
 	private HashMap<Integer, UISootObject> uiObjectTable; 
 
@@ -135,56 +144,171 @@ public class ResourcesSoot {
 		mSootClass.setSuperclass(Scene.v().getSootClass("java.lang.Object"));
 		Scene.v().addClass(mSootClass);
 
+		mActivityField = new SootField("currentActivity", RefType.v("android.app.Activity"), Modifier.PUBLIC | Modifier.STATIC);
+		mSootClass.addField(mActivityField);
+
+/*
+		addSetActivityMethod();
+*/
 	}
 
+	// setup 
 	public void setNumberToStringMap(HashBiMap<Integer, String> map) {
 		numericToStringIDMap = map;
 	}
 
-	/* Add a view (create new object associated with these properties) " */
+
 	public void addTextView(String type, String strId, String text) {
 		// adding ui object (partial information, no numeric ID, no soot method)  
 		// to the list of UI objects 
 
+		// First time initializing, we will add the clinit method.  <clinit> method
+		// CANNOT be empty, so we only add it when there is at least a static member
+		// if (uiObjectTable.isEmpty()) {
+		// 	addClinitMethod();
+		// }
+
 		Integer id = numericToStringIDMap.inverse().get(strId);
-		logger.warn("lookup id {} => {} ", strId, id);
+		logger.info("lookup id {} => {} ", strId, id);
 		UISootObject obj = new UISootObject(id.intValue(), type, strId, text, null);
 		uiObjectTable.put(id, obj);
 	}
 
-	public SootField getField(Integer intId) {
+
+	public Chain<Unit> createView(Integer intId, Value activity, Local arg) {
+		createView(intId);	
+		return genNewTextViewStatements(intId, activity, arg);
+	}
+
+
+	public SootMethod getSetActivty() {
+		return mSetActivityMethod;
+	}
+
+
+	/**
+	* getView:
+	*	returned the SootField that contains the corresponding View 
+	*/
+	public SootField getView(Integer intId) {
 		UISootObject obj = uiObjectTable.get(intId);	
-		logger.warn("calling getField({}) ", intId.toString());
+		logger.info("calling getField({}) ", intId.toString());
 
 		if (obj == null) {
 			logger.warn("Object for id {} does not exist ", intId);
 			return null;
 		}
 
-		// First time initializing 
-		if (uiObjectTable.isEmpty()) {
-			mClinitMethod = new SootMethod("<clinit>", new LinkedList(), VoidType.v(), Modifier.STATIC);
-			mSootClass.addMethod(mClinitMethod);
-
-			/*
-			 * adding clinit method for the class
-			 */
-			mClinitBody = Jimple.v().newBody(mClinitMethod);
-
-			/* The active body to work on is mClinitBody */
-			mClinitMethod.setActiveBody(mClinitBody);
-
-		}
-
 		if (obj.sootField == null) {
-			buildTextView(obj);
+			return null;
 		}
 
 		return obj.sootField;
 	}
 
-	public void buildTextView(UISootObject obj) {
+	/* 
+	 * generate a bunch of statements associated with creating a new textView object
+	 */
+	public Chain<Unit> genNewTextViewStatements(Integer intId, Value activity, Local arg) {
+		PatchingChain<Unit> newUnits = new PatchingChain<Unit>(new HashChain<Unit>());
 
+		UISootObject obj = uiObjectTable.get(intId);	
+		if (obj == null) {
+			logger.warn("Object for id {} info does is not available", intId);
+			return null; 
+		}
+
+		String   idName    = makeIdName(obj.type, obj.numericId); 
+		String   localIdName = "tmp" + idName;
+		String   className = makeClassName(obj.type);
+		RefType  classType = RefType.v(className); 
+
+
+		RefType textViewRef = RefType.v(className);
+		NewExpr newExpr = Jimple.v().newNewExpr(textViewRef);
+		newUnits.add(Jimple.v().newAssignStmt(arg, newExpr));
+
+		SootMethod textViewInitMethod = 
+					Scene.v().getMethod(
+							String.format("<%s: void <init>(android.content.Context)>", className));
+
+		newUnits.add(Jimple.v().newInvokeStmt(
+					Jimple.v().newVirtualInvokeExpr(arg, textViewInitMethod.makeRef(), activity))); 
+
+		SootMethod setTextMethod = Scene.v().getMethod("<android.widget.TextView: void setText(java.lang.CharSequence)>");
+
+		newUnits.add(Jimple.v().newInvokeStmt(
+					Jimple.v().newVirtualInvokeExpr(arg, setTextMethod.makeRef(), 
+						StringConstant.v(obj.text)))); 
+
+		return newUnits;
+	}
+
+	public void createView(Integer intId) {
+		logger.info("calling createView {}) ", intId.toString());
+		UISootObject obj = uiObjectTable.get(intId);	
+		if (obj == null) {
+			logger.warn("Object for id {} info does is not available", intId);
+			return; 
+		}
+
+		String   idName    = makeIdName(obj.type, obj.numericId); 
+		String   className = makeClassName(obj.type);
+		RefType  classType = RefType.v(className); 
+
+		// step 1: create sootfield for member variable
+		SootField sf = new SootField(idName, classType, Modifier.PUBLIC | Modifier.STATIC);
+		mSootClass.addField(sf);
+		obj.sootField = sf;
+	}
+
+
+	private String makeIdName(String type, int numId) {
+		String[] tokens = type.split("[.]", 8);
+		
+		String shortType = type;
+		if (tokens.length > 1)
+			shortType = tokens[tokens.length - 1];
+
+		StringBuilder builder = new StringBuilder(shortType);
+		builder.append("_").append(numId);
+		return builder.toString();
+	}
+
+	/*
+	 * 
+	 */
+	private String makeClassName(String className) {
+		String[] tokens = className.split("[.]", 8);
+		/* if the name already contains full qualified path, keep it */
+
+		if (tokens.length > 1)
+			return className;
+
+		String name = className;
+
+		StringBuilder builder = new StringBuilder("android.widget");
+		return builder.append(".").append(name).toString();
+	}
+
+	
+	/****************************************************************************
+	*							To delete
+	****************************************************************************/
+
+	/**
+	* Write to the file
+	*/
+	public void writeFile(String dir)  {
+		String filePath = dir + File.separator + mSootClass.toString();
+		SootUtils.writeByteCodeAndJimple(filePath, mSootClass);
+	}
+
+	/*
+	* createTextView:
+	*	method to actually add static variable to the class, and call setText
+	*/
+	private void createTextView(UISootObject obj) {
 		String   idName    = makeIdName(obj.type, obj.numericId); 
 		String   localIdName = "tmp" + idName;
 		String   className = makeClassName(obj.type);
@@ -211,9 +335,9 @@ public class ResourcesSoot {
 		arg = Jimple.v().newLocal(localIdName, classType);
 		mClinitBody.getLocals().add(arg);
 
-		LinkedList<Constant> list = new LinkedList();
+		List list = new LinkedList();
+		//list.add(Jimple.v().newStaticFieldRef(mActivityField.makeRef()));
 		list.add(NullConstant.v());
-
 
 		try {
 
@@ -235,9 +359,11 @@ public class ResourcesSoot {
 
 			// For now we are just passing EMPTY as context
 			units.add(Jimple.v().newInvokeStmt(
-						Jimple.v().newVirtualInvokeExpr(arg, btnInitMethod.makeRef(), 
-								list))); 
-								//Collections.EMPTY_LIST ))); 
+						Jimple.v().newVirtualInvokeExpr(arg, btnInitMethod.makeRef(), list))); 
+
+			// units.add(Jimple.v().newInvokeStmt(
+			// 			Jimple.v().newVirtualInvokeExpr(arg, btnInitMethod.makeRef(),
+			// 				Jimple.v().newStaticFieldRef(mActivityField.makeRef()))));
 
 			SootMethod setTextMethod = Scene.v().getMethod("<android.widget.TextView: void setText(java.lang.CharSequence)>");
 
@@ -252,23 +378,64 @@ public class ResourcesSoot {
 		}
 	}
 
-	public String makeIdName(String type, int numId) {
-		StringBuilder builder = new StringBuilder(type);
-		builder.append("_").append(numId);
-		return builder.toString();
+
+	/*
+	* addSetActivityMethod:
+	*	code to add function public static void setActivity(Activity)
+	*/ 
+	private void addSetActivityMethod() {
+		List params = new LinkedList<Type>();
+		params.add(RefType.v("android.app.Activity"));
+
+		Type returnType = VoidType.v();
+
+		//instantiate a method
+		mSetActivityMethod = new SootMethod("setActivity", params, returnType, 
+										Modifier.PUBLIC | Modifier.STATIC);
+
+		// add the method to the class
+		mSootClass.addMethod(mSetActivityMethod);
+
+		// create active body, and set the body active
+		JimpleBody body = Jimple.v().newBody(mSetActivityMethod);
+		mSetActivityMethod.setActiveBody(body);
+
+		Chain units = body.getUnits();
+
+		// Now we are adding the code for getting paramer, and assigning it to currentActivity
+
+		Local arg = Jimple.v().newLocal("paramActivity",  RefType.v("android.app.Activity"));
+
+		// android.app.Activity paramActivity;
+		body.getLocals().add(arg);
+
+		// paramActivity = @paramter0
+		units.add(Jimple.v().newIdentityStmt(arg,
+						 Jimple.v().newParameterRef(RefType.v("android.app.Activity"), 0)));
+
+		//Convert to staticfield 
+		FieldRef  fieldRef = Jimple.v().newStaticFieldRef(mActivityField.makeRef());
+
+		//currentActivity = paramActivity
+		units.add(Jimple.v().newAssignStmt(fieldRef, arg));
+
 	}
 
-	public String makeClassName(String clsName) {
-		StringBuilder builder = new StringBuilder("android.widget");
-		return builder.append(".").append(clsName).toString();
+	/**
+	* addClinitMethod:
+	*	add the static constructor (class constructor)
+	*/
+	private void addClinitMethod() {
+		mClinitMethod = new SootMethod("<clinit>", new LinkedList(), VoidType.v(), Modifier.STATIC);
+		mSootClass.addMethod(mClinitMethod);
+
+		/*
+		 * adding clinit method for the class
+		 */
+		mClinitBody = Jimple.v().newBody(mClinitMethod);
+
+		/* The active body to work on is mClinitBody */
+		mClinitMethod.setActiveBody(mClinitBody);
 	}
 
-	public SootField getFieldByNumericId(int numId) {
-		return null;
-	}
-
-	public void writeFile(String dir)  {
-		String filePath = dir + File.separator + mSootClass.toString();
-		SootUtils.writeByteCodeAndJimple(filePath, mSootClass);
-	}
 }
