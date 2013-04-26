@@ -141,7 +141,7 @@ public class ResourcesSoot {
 		uiObjectTable = new HashMap<Integer, UISootObject>();
 
 		mSootClass = new SootClass("droidsafe.android.ResourcesSoot", Modifier.PUBLIC);
-		mSootClass.setSuperclass(Scene.v().getSootClass("java.lang.Object"));
+	//	mSootClass.setSuperclass(Scene.v().getSootClass("java.lang.Object"));
 		Scene.v().addClass(mSootClass);
 
 		mActivityField = new SootField("currentActivity", RefType.v("android.app.Activity"), Modifier.PUBLIC | Modifier.STATIC);

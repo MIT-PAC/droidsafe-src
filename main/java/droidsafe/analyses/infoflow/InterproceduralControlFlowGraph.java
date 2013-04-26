@@ -6,11 +6,19 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 
+import org.jgrapht.Graph;
+import org.jgrapht.graph.DefaultDirectedGraph;
+import org.jgrapht.graph.DefaultEdge;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import soot.PatchingChain;
 import soot.Scene;
 import soot.SootClass;
 import soot.SootMethod;
 import soot.Unit;
+import soot.jimple.CaughtExceptionRef;
+import soot.jimple.IdentityStmt;
 import soot.jimple.Stmt;
 import soot.jimple.toolkits.callgraph.CallGraph;
 import soot.jimple.toolkits.callgraph.Targets;
@@ -26,6 +34,8 @@ import soot.util.dot.DotGraph;
  */
 
 public class InterproceduralControlFlowGraph implements DirectedGraph<Unit> {
+    public final Map<Unit, SootMethod> unitToMethod;
+
     private final List<Unit> heads;
 
     private final Map<Unit, List<Unit>> unitToSuccs;
@@ -35,9 +45,9 @@ public class InterproceduralControlFlowGraph implements DirectedGraph<Unit> {
     private final Map<SootMethod, List<Unit>> methodToHeads;
     private final Map<SootMethod, List<Unit>> methodToTails;
 
-    private final Map<Unit, SootMethod> unitToMethod;
-
     private static InterproceduralControlFlowGraph v;
+
+    private final static Logger logger = LoggerFactory.getLogger(InterproceduralControlFlowGraph.class);
 
     public static InterproceduralControlFlowGraph v() {
         return v;
@@ -45,6 +55,111 @@ public class InterproceduralControlFlowGraph implements DirectedGraph<Unit> {
 
     public static void run() {
         v = new InterproceduralControlFlowGraph();
+    }
+
+    @Override
+    public List<Unit> getHeads() {
+        return heads;
+    }
+
+    @Override
+    public List<Unit> getTails() {
+        throw new UnsupportedOperationException("InterproceduralControlFlowGraph::getTails()");
+    }
+
+    @Override
+    public List<Unit> getPredsOf(Unit unit) {
+        return unitToPreds.get(unit);
+    }
+
+    @Override
+    public List<Unit> getSuccsOf(Unit unit) {
+        return unitToSuccs.get(unit);
+    }
+
+    @Override
+    public int size() {
+        return unitChain.size();
+    }
+
+    @Override
+    public Iterator<Unit> iterator() {
+        return unitChain.iterator();
+    }
+
+    @Override
+    public String toString() {
+        StringBuffer buf = new StringBuffer();
+        buf.append("({");
+        for (Unit unit : unitChain) {
+            buf.append(unitToMethod.get(unit) + ": " + unit + ", ");
+        }
+        buf.append("}, {");
+        for (Unit curr : unitChain) {
+            for (Unit succ : unitToSuccs.get(curr)) {
+                buf.append("(" + unitToMethod.get(curr) + ": " + curr + ", " + unitToMethod.get(succ) + ": " + succ + "), ");
+            }
+        }
+        buf.append("})");
+        return buf.toString();
+    }
+
+    /**
+     * Returns the {@link soot.util.dot.DotGraph DotGraph} representation of the graph.
+     *
+     * @return the {@link soot.util.dot.DotGraph DotGraph} representation of the graph
+     */
+    public DotGraph toDotGraph() {
+        DotGraph graph = new DotGraph("Interprocedural Control Flow Graph");
+        for (Unit src : unitChain) {
+            String s = unitToString(src);
+            graph.drawNode(s);
+            for (Unit tgt : unitToSuccs.get(src)) {
+                graph.drawEdge(s, unitToString(tgt));
+            }
+        }
+        return graph;
+    }
+
+    public Graph<Unit, DefaultEdge> toJGraphT() {
+        DefaultDirectedGraph<Unit, DefaultEdge> graph = new DefaultDirectedGraph<Unit, DefaultEdge>(DefaultEdge.class);
+        for (Unit unit : unitChain) {
+            graph.addVertex(unit);
+            for (Unit succ : unitToSuccs.get(unit)) {
+                graph.addVertex(succ);
+                graph.addEdge(unit, succ);
+            }
+        }
+        return graph;
+    }
+
+    public Graph<Unit, DefaultEdge> toJGraphT(SootMethod method) {
+        DefaultDirectedGraph<Unit, DefaultEdge> graph = new DefaultDirectedGraph<Unit, DefaultEdge>(DefaultEdge.class);
+        for (Unit unit : method.getActiveBody().getUnits()) {
+            graph.addVertex(unit);
+            for (Unit pred : unitToPreds.get(unit)) {
+                graph.addVertex(pred);
+                graph.addEdge(pred, unit);
+            }
+            for (Unit succ : unitToSuccs.get(unit)) {
+                graph.addVertex(succ);
+                graph.addEdge(unit, succ);
+            }
+        }
+        return graph;
+    }
+
+    Unit getPrecedingCallStmt(Unit fallThroughStmt, SootMethod method) {
+        for (Unit pred : unitToPreds.get(fallThroughStmt)) {
+            if (((Stmt)pred).containsInvokeExpr() && unitToMethod.get(pred).equals(method)) {
+                return pred;
+            }
+        }
+        return null;
+    }
+
+    static boolean containsCaughtExceptionRef(Unit unit) {
+        return (unit instanceof IdentityStmt) && (((IdentityStmt)unit).getRightOp() instanceof CaughtExceptionRef);
     }
 
     private InterproceduralControlFlowGraph() {
@@ -80,6 +195,8 @@ public class InterproceduralControlFlowGraph implements DirectedGraph<Unit> {
                     }
                     methodToHeads.put(method, unitGraph.getHeads());
                     methodToTails.put(method, unitGraph.getTails());
+                } else {
+                    logger.warn(method + ": no active body");
                 }
             }
         }
@@ -87,17 +204,29 @@ public class InterproceduralControlFlowGraph implements DirectedGraph<Unit> {
 
     private void connectIntraproceduralControlFlowGraphs() {
         CallGraph cg = Scene.v().getCallGraph();
-        for (Unit unit : unitChain) {
-            if (((Stmt)unit).containsInvokeExpr()) {
-                Unit succ = unitToSuccs.get(unit).get(0);
-                Targets tgts = new Targets(cg.edgesOutOf(unit));
+        for (Unit curr : unitChain) {
+            if (((Stmt)curr).containsInvokeExpr()) {
+                Unit succ = null;
+                // XXX: assuming that there is only one fall-through and that the others are "$r0 := @caughtexception"
+                for (Unit s : unitToSuccs.get(curr)) {
+                    if (!containsCaughtExceptionRef(s)) {
+                        succ = s;
+                        break;
+                    }
+                }
+                assert(succ != null);
+                Targets tgts = new Targets(cg.edgesOutOf(curr));
                 while (tgts.hasNext()) {
                     SootMethod method = tgts.next().method();
                     if (methodToHeads.containsKey(method)) {
-                        for (Unit head : methodToHeads.get(method)) {
-                            unitToSuccs.get(unit).add(head);
-                            unitToPreds.get(head).add(unit);
+                        List<Unit> heads = methodToHeads.get(method);
+                        for (Unit head : heads) {
+                            if (!containsCaughtExceptionRef(head)) {
+                                unitToSuccs.get(curr).add(head);
+                                unitToPreds.get(head).add(curr);
+                            }
                         }
+                        this.heads.removeAll(heads);
                         for (Unit tail : methodToTails.get(method)) {
                             unitToSuccs.get(tail).add(succ);
                             unitToPreds.get(succ).add(tail);
@@ -108,70 +237,8 @@ public class InterproceduralControlFlowGraph implements DirectedGraph<Unit> {
         }
     }
 
-    @Override
-    public List<Unit> getHeads() {
-        return heads;
-    }
-
-    @Override
-    public List<Unit> getTails() {
-        throw new UnsupportedOperationException();
-    }
-
-    @Override
-    public List<Unit> getPredsOf(Unit unit) {
-        return unitToPreds.get(unit);
-    }
-
-    @Override
-    public List<Unit> getSuccsOf(Unit unit) {
-        return unitToSuccs.get(unit);
-    }
-
-    @Override
-    public int size() {
-        return unitChain.size();
-    }
-
-    @Override
-    public Iterator<Unit> iterator() {
-        return unitChain.iterator();
-    }
-
-    @Override
-    public String toString() {
-        StringBuffer buf = new StringBuffer();
-        buf.append("({");
-        for (Unit unit : unitChain) {
-            buf.append(unitToMethod.get(unit) + ": " + unit + ", ");
-        }
-        buf.append("}, {");
-        for (Unit unit : unitChain) {
-            for (Unit succ : unitToSuccs.get(unit)) {
-                buf.append("(" + unitToMethod.get(unit) + ": " + unit + ", " + unitToMethod.get(succ) + ": " + succ + "), ");
-            }
-        }
-        buf.append("})");
-        return buf.toString();
-    }
-
-    /**
-     * Returns the {@link soot.util.dot.DotGraph DotGraph} representation of the graph.
-     *
-     * @return the {@link soot.util.dot.DotGraph DotGraph} representation of the graph
-     */
-    public DotGraph toDotGraph() {
-        DotGraph graph = new DotGraph("Interprocedural Control Flow Graph");
-        for (Unit src : unitChain) {
-            // HACK: If we are very unlucky, two different statements may be mapped to the same node under the following naming scheme.
-            String s = unitToMethod.get(src) + "\\n" + src + "\\n[" + System.identityHashCode(src) + "]";
-            graph.drawNode(s);
-            for (Unit tgt : unitToSuccs.get(src)) {
-                // HACK: If we are very unlucky, two different statements may be mapped to the same node under the following naming scheme.
-                String t = unitToMethod.get(tgt) + "\\n" + tgt + "\\n[" + System.identityHashCode(tgt) + "]";
-                graph.drawEdge(s, t);
-            }
-        }
-        return graph;
+    private String unitToString(Unit unit) {
+        // XXX: If we are very unlucky, two different statements may be mapped to the same string under the following naming scheme.
+        return unitToMethod.get(unit) + "\\n" + unit + "\\n[" + System.identityHashCode(unit) + "]";
     }
 }

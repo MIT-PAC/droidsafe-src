@@ -21,6 +21,8 @@ import droidsafe.analyses.CallGraphFromEntryPoints;
 import droidsafe.analyses.GeoPTA;
 import droidsafe.analyses.RCFGToSSL;
 import droidsafe.analyses.RequiredModeling;
+import droidsafe.analyses.infoflow.InformationFlowAnalysis;
+import droidsafe.analyses.infoflow.InterproceduralControlFlowGraph;
 import droidsafe.analyses.rcfg.RCFG;
 import droidsafe.android.app.EntryPoints;
 import droidsafe.android.app.Harness;
@@ -38,7 +40,6 @@ import droidsafe.transforms.ResolveStringConstants;
 import droidsafe.transforms.ScalarAppOptimizations;
 import droidsafe.utils.SootUtils;
 import droidsafe.android.app.resources.ResourcesSoot;
-
 
 /**
  * Main entry class for DroidSafe analysis.
@@ -109,24 +110,49 @@ public class Main {
 			logger.info("Specializing API Calls");
 			//APICallSpecialization.run();
 		
+			//all transforms should be done by here!
 			logger.info("Restarting PTA...");
 			GeoPTA.release();
 			GeoPTA.run();
 				
 		}
 
+		// write jimple txt files for all classes so we can analzye them
+		// all transforms should be done by here.
+		if (Config.v().WRITE_JIMPLE_APP_CLASSES)
+			writeAllAppClasses();
+		
 		RCFG.generate();
 		logger.info("Ending DroidSafe Run");
 
-		//logger.info("Starting Attribute Modeling...");
-		//AttributeModeling.run();
+		logger.info("Starting Attribute Modeling");
+		AttributeModeling.run();
+		logger.info("Finished Attribute Modeling");
 
 		// print out what modeling is required for this application
 		RequiredModeling.run();
 		
-		// write jimple txt files for all classes so we can analzye them
-		if (Config.v().WRITE_JIMPLE_APP_CLASSES)
-			writeAllAppClasses();
+		
+		if (Config.v().infoFlow) {
+			logger.info("Starting Information Flow Analysis...");
+			InterproceduralControlFlowGraph.run();
+			InformationFlowAnalysis.run();
+
+			String infoFlowDotFile = Config.v().infoFlowDotFile;
+			if (infoFlowDotFile != null) {
+				try {
+					String infoFlowDotMethod = Config.v().infoFlowDotMethod;
+					if (infoFlowDotMethod != null) {
+						InformationFlowAnalysis.exportDotGraph(Scene.v().getMethod(infoFlowDotMethod), infoFlowDotFile);
+					} else {
+						InformationFlowAnalysis.exportDotGraph(infoFlowDotFile);
+					}
+				} catch (IOException exp) {
+					logger.error(exp.toString());
+				}
+			}
+			logger.info("Finished Information Flow Analysis...");
+		}
 
 		if (Config.v().target.equals("specdump")) {
 			RCFGToSSL.run();

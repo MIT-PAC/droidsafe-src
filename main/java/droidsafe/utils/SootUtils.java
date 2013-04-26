@@ -1,57 +1,58 @@
 package droidsafe.utils;
 
+import droidsafe.android.app.Project;
+
+import droidsafe.main.Config;
+
+import droidsafe.speclang.ArgumentValue;
+import droidsafe.speclang.Method;
+import droidsafe.speclang.TypeValue;
+
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.OutputStream;
 import java.io.OutputStreamWriter;
 import java.io.PrintWriter;
+
+import java.lang.ClassNotFoundException;
+import java.lang.RuntimeException;
+
 import java.util.Enumeration;
 import java.util.HashSet;
 import java.util.Iterator;
+import java.util.jar.JarEntry;
+import java.util.jar.JarFile;
 import java.util.LinkedHashSet;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Queue;
-import java.util.Set;
-import java.util.StringTokenizer;
-import java.util.jar.JarEntry;
-import java.util.jar.JarFile;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
+import java.util.Set;
+import java.util.StringTokenizer;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import droidsafe.android.app.Project;
-import droidsafe.main.Config;
-import droidsafe.speclang.ArgumentValue;
-import droidsafe.speclang.Method;
-import droidsafe.speclang.TypeValue;
-
 import soot.AnySubType;
+
 import soot.ArrayType;
+
 import soot.BooleanType;
+
 import soot.ByteType;
+
 import soot.CharType;
+
 import soot.DoubleType;
+
 import soot.FloatType;
+
 import soot.Hierarchy;
+
 import soot.IntType;
-import soot.LongType;
-import soot.NullType;
-import soot.PrimType;
-import soot.Printer;
-import soot.RefLikeType;
-import soot.RefType;
-import soot.Scene;
-import soot.ShortType;
-import soot.SootClass;
-import soot.SootMethod;
-import soot.SootMethodRef;
-import soot.Type;
-import soot.Unit;
-import soot.Value;
-import soot.VoidType;
+
+import soot.jimple.ClassConstant;
 import soot.jimple.DoubleConstant;
 import soot.jimple.FloatConstant;
 import soot.jimple.InstanceInvokeExpr;
@@ -63,9 +64,42 @@ import soot.jimple.LongConstant;
 import soot.jimple.NullConstant;
 import soot.jimple.Stmt;
 import soot.jimple.StmtBody;
+import soot.jimple.StringConstant;
+
+import soot.LongType;
+
+import soot.NullType;
+
+import soot.PrimType;
+
+import soot.Printer;
+
+import soot.RefLikeType;
+
+import soot.RefType;
+
+import soot.Scene;
+
+import soot.ShortType;
+
+import soot.SootClass;
+
+import soot.SootMethod;
+
+import soot.SootMethodRef;
+
 import soot.tagkit.LineNumberTag;
+
+import soot.Type;
+
+import soot.Unit;
+
 import soot.util.Chain;
 import soot.util.JasminOutputStream;
+
+import soot.Value;
+
+import soot.VoidType;
 
 /**
  * Class to hold general utility methods that are helpful for Soot.
@@ -77,8 +111,31 @@ public class SootUtils {
 	private final static Logger logger = LoggerFactory.getLogger(SootUtils.class);
 	
 	public static final Pattern sigRE = Pattern.compile("<(\\S+): (\\S+) (\\S+)\\((.*)\\)>");
-	
-	/**
+
+  /*
+   * Takes in a Soot Value and if it's a constant, returns a java object with the same value
+   */
+  public static Object constantValueToObject(Value sootValue) throws ClassNotFoundException {
+    if(sootValue instanceof NullConstant) {
+      return null;
+    } else if (sootValue instanceof IntConstant) {
+      return new Integer(((IntConstant)sootValue).value);
+    } else if (sootValue instanceof StringConstant) {
+      return new String(((StringConstant)sootValue).value);
+    } else if (sootValue instanceof LongConstant) {
+      return new Long(((LongConstant)sootValue).value);
+    } else if (sootValue instanceof DoubleConstant) {
+      return new Double(((DoubleConstant)sootValue).value);
+    } else if (sootValue instanceof FloatConstant) {
+      return new Float(((FloatConstant)sootValue).value);
+    } else if (sootValue instanceof ClassConstant) {
+      return Class.forName(((ClassConstant)sootValue).value.replace("/", "."));
+    }
+    
+    throw new RuntimeException("Unhandled java primitive sootValue: " + sootValue);
+  }
+
+	/*
 	 * Given a string representing a type in soot, (ex: int, java.lang.Class[]), return 
 	 * the appropriate Soot type for the object. 
 	 */

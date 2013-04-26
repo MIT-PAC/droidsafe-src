@@ -39,7 +39,16 @@ public class Config {
 	public String target = "specdump";
 	/** Don't include source location information when outputting spec */
 	public boolean noSourceInfo = false;
-	
+	/** If true, analyze information flows. */
+	public boolean infoFlow = false;
+	/** Path where to export information flows in DOT */
+	public String infoFlowDotFile;
+	/** Method on which to export information flows in DOT */
+	public String infoFlowDotMethod;
+	/** If true, then classes loaded from android.jar will be treated as 
+	 * application classes and analyses may analyze them.
+	 */
+	public boolean API_CLASSES_ARE_APP = false;
 	/** if true, write readable jimple output for all app classes */
 	public boolean WRITE_JIMPLE_APP_CLASSES = false;
 	
@@ -97,6 +106,16 @@ public class Config {
 		
 		Option writeJimple = new Option("jimple", "Dump readable jimple files for all app classes in /droidsafe.");
 		options.addOption(writeJimple);
+
+
+		Option infoFlow = new Option(null, "infoflow", false, "Analyze information flows");
+		options.addOption(infoFlow);
+
+		Option infoFlowDotFile = OptionBuilder.withArgName("FILE").hasArg().withDescription("Export information flows to FILE in DOT").withLongOpt("infoflow-dot-file").create();
+		options.addOption(infoFlowDotFile);
+
+		Option infoFlowDotMethod = OptionBuilder.withArgName("METHOD").hasArg().withDescription("Export information flows specific to METHOD only: METHOD is specified by its signature (e.g. \"<com.jpgextractor.PicViewerActivity: void sendExif(java.util.ArrayList)>\")").withLongOpt("infoflow-dot-method").create();
+		options.addOption(infoFlowDotMethod);
 		
 		Option pta = new Option("ptadump", "Dump pta to ./droidsafe/pta.txt");
 		options.addOption(pta);
@@ -132,6 +151,21 @@ public class Config {
 		if (cmd.hasOption("jimple"))
 			this.WRITE_JIMPLE_APP_CLASSES = true;
 		
+
+		if (cmd.hasOption("infoflow")) {
+			this.infoFlow = true;
+		}
+
+		if (cmd.hasOption("infoflow-dot-file")) {
+			assert this.infoFlow == true;
+			this.infoFlowDotFile = cmd.getOptionValue("infoflow-dot-file");
+		}
+
+		if (cmd.hasOption("infoflow-dot-method")) {
+			assert this.infoFlowDotFile != null;
+			this.infoFlowDotMethod = cmd.getOptionValue("infoflow-dot-method");
+		}
+
 		if (cmd.hasOption("ptadump"))
 			this.DUMP_PTA = true;
 		

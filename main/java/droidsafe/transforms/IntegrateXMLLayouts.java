@@ -69,7 +69,7 @@ public class IntegrateXMLLayouts extends BodyTransformer {
 		public IntegrateXMLLayouts() {
 			findViewById = Scene.v().getMethod("<android.app.Activity: android.view.View findViewById(int)>");
 			// setContentView = Scene.v().getMethod("<android.app.Activity: void setContentView(int)>");
-			dumpActivities();
+			//dumpActivities();
 		}
 		
 		/**

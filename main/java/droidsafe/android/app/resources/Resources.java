@@ -209,44 +209,13 @@ public class Resources {
 
 		File layout_dir = new File (application_base, "res/layout");
 		if (layout_dir.exists()) {
-		  logger.warn("Resources(): res/layout directory existed ");
 			for (File layout_source : layout_dir.listFiles()) {
-				logger.warn("considering layout file {}", layout_source);
+				// logger.info ("considering layout file {}", layout_source);
 				String name = layout_source.getName();
 				String[] name_ext = name.split ("[.]", 2);
-				logger.warn("name/ext = {}/{}", name_ext[0], name_ext[1]);
-				if (name_ext[1].equals ("xml")) {
-				  	logger.warn("adding layout " + layout_source);
+				// logger.info ("name/ext = {}/{}", name_ext[0], name_ext[1]);
+				if (name_ext[1].equals ("xml"))
 					layouts.add (new Layout (layout_source));
-				}
-			}
-		}
-		else {
-			logger.warn("No res/layout directory ");
-		}
-
-		// Check to see how many values directories we have. If more than one, there is localization and we don't want to
-		// store any values
-		File resource_dir = new File(application_base, "res");
-		File[] values_dirs = resource_dir.listFiles(new FilenameFilter() {
-				@Override
-				public boolean accept(File dir, String name) {
-				return name.matches("values.*");
-				} 
-				});
-		logger.info("{} value dirs exist", values_dirs.length);
-
-		//TODO: check for -v version specific
-		if (values_dirs.length == 1) {
-			for(File values_dir : values_dirs) {
-				// Process .xml files in res/values
-				for (File value_source : values_dir.listFiles()) {
-					logger.info("reading file " + value_source);
-					String[] name_ext = value_source.getName().split ("[.]", 2);
-					if (name_ext[1].equals ("xml")) {
-						process_values(new XmlFile(value_source.getPath()));
-					}
-				}
 			}
 		}
 
@@ -372,9 +341,13 @@ public class Resources {
 									 String.format("%08X", value));
 						
 						String resource_value = component + "." + field.getName();
-						logger.info("resource_info.put({}, {}) ", value, resource_value); 
-
-						resource_info.put((Integer) value, resource_value);
+						if (resource_info.get(value) != null) {
+							logger.warn("resource_info.put({}, {}) ALREADY existed ", value, resource_value); 
+						}
+						else {
+							logger.warn("ADDING resource_info.put({}, {}) ", value, resource_value); 
+							resource_info.put(value, resource_value);
+						}
 					}
 					else {
 						logger.info("Unknown initial value for field of resource class: {} ()", field.getName(), tag);
