@@ -193,7 +193,7 @@ public class Config {
 		    StatusPrinter.printInCaseOfErrorsOrWarnings(context);
 			
 		}
-		
+	 
 		APP_ROOT_DIR = getPathFromCWD(cmd.getOptionValue("approot"));
 		logger.info("approot: {}", APP_ROOT_DIR);
 	}
