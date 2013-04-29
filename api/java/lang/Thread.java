@@ -7,6 +7,11 @@ public class Thread implements Runnable {
 	@DSModeled(DSC.SAFE)
 	public Thread() {
 	}
+	
+	@DSModeled(DSC.SAFE)
+	public Thread(Runnable runnable, String threadName) { 
+		
+	}
 
 	@DSModeled(DSC.SAFE)
 	public synchronized void start() {
