@@ -146,10 +146,6 @@ public class ResourcesSoot {
 
 		mActivityField = new SootField("currentActivity", RefType.v("android.app.Activity"), Modifier.PUBLIC | Modifier.STATIC);
 		mSootClass.addField(mActivityField);
-
-/*
-		addSetActivityMethod();
-*/
 	}
 
 	// setup 
