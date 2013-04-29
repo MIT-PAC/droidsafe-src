@@ -131,6 +131,7 @@ public class Resources {
   public static void resolveManifest(String rootDir)  {
 		try {
 			v = new Resources (new File (rootDir));
+			v.buildSootObjects();
 
 			// Dump manifest information
 			AndroidManifest am = v.manifest;
@@ -224,11 +225,16 @@ public class Resources {
 
 		// Add This point, all resrouces will have been parsed and loaded
 		ResourcesSoot.v().setNumberToStringMap(resource_info);
-
+	}
+	
+	/**
+	 * buildSootObjects():
+	 * 		This method builds internal UI Objects for use in soot analysis
+	 */
+	public void buildSootObjects() {
 		for (Layout layout: layouts) {
 			layout.buildUIObjects(stringNameToRString);
 		}
-
 	}
 
   /**
