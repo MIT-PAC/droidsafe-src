@@ -29,7 +29,7 @@ public class InjectedSourceFlows {
 				((RefType)node.getType()).getSootClass().getName().equals("java.net.Uri")) {
 			LinkedHashSet<MyValue> flows = new LinkedHashSet<MyValue>();
 			
-			flows.add(new MyConstant(StringConstant.v("CONTACTS")));
+			flows.add(Kind.CONTACTS);
 			
 			return flows;
 		}

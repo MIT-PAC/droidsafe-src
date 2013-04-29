@@ -799,34 +799,10 @@ class Statics {
     }
 }
 
-abstract class MyValue {
+interface MyValue {
 }
 
-class MyConstant extends MyValue {
-    private Constant constant;
-
-    MyConstant(Constant constant) {
-        this.constant = constant;
-    }
-
-    public boolean equals(Object that) {
-        if (that instanceof MyConstant) {
-            return constant.equivTo(((MyConstant)that).constant);
-        } else {
-            return false;
-        }
-    }
-
-    public int hashCode() {
-        return constant.equivHashCode();
-    }
-
-    public String toString() {
-        return constant.toString();
-    }
-}
-
-class Address extends MyValue implements Comparable<Address> {
+class Address implements MyValue, Comparable<Address> {
     private static Map<AllocNode, Address> allocNodeToAddress = new HashMap<AllocNode, Address>();
 
     private AllocNode allocNode;
@@ -863,4 +839,8 @@ class Address extends MyValue implements Comparable<Address> {
     public int compareTo(Address that) {
         return allocNode.toString().compareTo(that.allocNode.toString());
     }
+}
+
+enum Kind implements MyValue {
+    CONTACTS
 }
