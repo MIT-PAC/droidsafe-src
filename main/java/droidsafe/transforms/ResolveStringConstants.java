@@ -77,6 +77,8 @@ import soot.Value;
  * and "getText(int resId)" from android.content.Context and replaces them with the string values that they would have
  * returned.
  * TODO: add support for calls to getString and getText that take in formatArgs
+ * TODO: add support for localization
+ * TODO: replicate getText & getString behaviour better
  */
 public class ResolveStringConstants extends BodyTransformer {
 
