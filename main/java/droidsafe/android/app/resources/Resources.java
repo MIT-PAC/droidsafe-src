@@ -131,8 +131,6 @@ public class Resources {
   public static void resolveManifest(String rootDir)  {
 		try {
 			v = new Resources (new File (rootDir));
-			v.buildSootObjects();
-
 			// Dump manifest information
 			AndroidManifest am = v.manifest;
 			logger.info ("Manifest = {}\n", am.manifest);
@@ -186,6 +184,8 @@ public class Resources {
 					logger.warn("\nComponent class not defined in manifest, please add to manifest: {}\n", clazz);
 				}
 			}		
+
+			v.buildSootObjects();
 			
 			v.resolved = true;
 		} catch (Exception e) {

@@ -470,27 +470,13 @@ public class ResourcesSoot {
 		units.add(afterIf);
 
 		// condition expression and statement
-		ConditionExpr condExpr = Jimple.v().newEqExpr(IntConstant.v(1), IntConstant.v(0));
-		logger.warn("COND {} ", condExpr);
+		ConditionExpr condExpr = Jimple.v().newEqExpr(localView, NullConstant.v());
 
 		// condition statement
 		Stmt condStmt =  Jimple.v().newIfStmt(condExpr, afterIf);
 
-		logger.warn("condStmt {} ", condStmt);
+		logger.debug("condStmt {} ", condStmt);
 		units.insertAfter(condStmt, beforeIf);
-
-
-		/*
-		List list = new LinkedList();
-		Stmt bodyStart = (Stmt) bodyList.get(0);
-		Stmt conditionalStmt = Jimple.v().newIfStmt(conditionalExpr, bodyStart);
-		body.getUnits().insertBefore(initializerList, insertPoint);
-		body.getUnits().insertBefore(Jimple.v().newGotoStmt(conditionalStmt),
-				insertPoint);
-		body.getUnits().insertBefore(bodyList, insertPoint);
-		body.getUnits().insertBefore(conditionalStmt, insertPoint);
-		*/
-
 	}
 
 	/*
