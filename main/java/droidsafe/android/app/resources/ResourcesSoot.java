@@ -69,7 +69,8 @@ import soot.RefType;
 import soot.util.HashChain;
 import soot.PatchingChain;
 import soot.jimple.FieldRef;  
-import soot.jimple.NewExpr;
+import soot.jimple.Expr;
+import soot.jimple.ConditionExpr;
 import soot.jimple.Constant;
 import soot.jimple.StringConstant;
 import soot.jimple.IdentityStmt;
@@ -146,6 +147,9 @@ public class ResourcesSoot {
 
 		mActivityField = new SootField("currentActivity", RefType.v("android.app.Activity"), Modifier.PUBLIC | Modifier.STATIC);
 		mSootClass.addField(mActivityField);
+
+		//addGetView(new Integer(30));
+
 	}
 
 	// setup 
@@ -166,13 +170,17 @@ public class ResourcesSoot {
 
 		Integer id = numericToStringIDMap.inverse().get(strId);
 		logger.info("lookup id {} => {} ", strId, id);
-		UISootObject obj = new UISootObject(id.intValue(), type, strId, text, null);
-		uiObjectTable.put(id, obj);
+		if (uiObjectTable.get(id) == null) {
+			UISootObject obj = new UISootObject(id.intValue(), type, strId, text, null);
+			uiObjectTable.put(id, obj);
+			createViewMember(id);
+			addGetView_ID(id);
+		}
 	}
 
 
 	public Chain<Unit> createView(Integer intId, Value activity, Local arg) {
-		createView(intId);	
+		createViewMember(intId);	
 		return genNewTextViewStatements(intId, activity, arg);
 	}
 
@@ -221,7 +229,7 @@ public class ResourcesSoot {
 
 
 		RefType textViewRef = RefType.v(className);
-		NewExpr newExpr = Jimple.v().newNewExpr(textViewRef);
+		Expr newExpr = Jimple.v().newNewExpr(textViewRef);
 		newUnits.add(Jimple.v().newAssignStmt(arg, newExpr));
 
 		SootMethod textViewInitMethod = 
@@ -240,8 +248,12 @@ public class ResourcesSoot {
 		return newUnits;
 	}
 
-	public void createView(Integer intId) {
-		logger.info("calling createView {}) ", intId.toString());
+	/**
+	* createViewMember:
+	*	method to add static Button button_xxyyyy to the ResourcesSoot class
+	*/
+	private void createViewMember(Integer intId) {
+		logger.info("calling createViewMember {}) ", intId.toString());
 		UISootObject obj = uiObjectTable.get(intId);	
 		if (obj == null) {
 			logger.warn("Object for id {} info does is not available", intId);
@@ -339,7 +351,7 @@ public class ResourcesSoot {
 
 			RefType btnRef = RefType.v("android.widget.Button");
 
-			NewExpr newExpr = Jimple.v().newNewExpr(btnRef);
+			Expr newExpr = Jimple.v().newNewExpr(btnRef);
 
 			units.add(Jimple.v().newAssignStmt(
 					 arg, newExpr));
@@ -374,6 +386,112 @@ public class ResourcesSoot {
 		}
 	}
 
+
+	/**
+	* addGetView:
+	*		- method to add a 
+	*/
+	private void addGetView_ID(Integer intId) {
+		// units.add(Jimple.v().newAssignStmt(fieldRef, arg));
+
+		UISootObject obj = uiObjectTable.get(intId);	
+		logger.info("calling getField({}) ", intId.toString());
+
+		if (obj == null) {
+			logger.warn("Object for id {} does not exist ", intId);
+			return;
+		}
+		List params = new LinkedList<Type>();
+		params.add(RefType.v("android.app.Activity"));
+
+		RefType returnType = (RefType) obj.sootField.getType(); //RefType.v("android.widget.view"); 
+
+		String funcName = "getView_" + intId;
+		//instantiate a method
+		SootMethod method = new SootMethod(funcName, params, returnType, 
+										Modifier.PUBLIC | Modifier.STATIC);
+
+		// add the method to the class
+		mSootClass.addMethod(method);
+
+		// create active body, and set the body active
+		JimpleBody body = Jimple.v().newBody(method);
+		method.setActiveBody(body);
+
+		Chain units = body.getUnits();
+
+		// Now we are adding the code for getting paramer, and assigning it to currentActivity
+
+		Local argActivity = Jimple.v().newLocal("paramActivity",  RefType.v("android.app.Activity"));
+
+		// android.app.Activity paramActivity;
+		body.getLocals().add(argActivity);
+
+		// local Argument for view
+		Local localView = Jimple.v().newLocal("localView",  returnType);
+		body.getLocals().add(localView);
+
+		// paramActivity = @paramter0
+		units.add(Jimple.v().newIdentityStmt(argActivity,
+						 Jimple.v().newParameterRef(RefType.v("android.app.Activity"), 0)));
+
+		FieldRef  fieldRef = Jimple.v().newStaticFieldRef(obj.sootField.makeRef());
+
+		// localView =  fieldRef
+		units.add(Jimple.v().newAssignStmt(localView, fieldRef));
+
+		// beforeIF block
+		Stmt beforeIf = (Stmt) units.getLast();
+
+		// IF block: adding more code for if block
+		Expr newExpr = Jimple.v().newNewExpr((RefType)returnType);
+
+		units.add(Jimple.v().newAssignStmt(localView, newExpr));
+
+		SootMethod textViewInitMethod = 
+					Scene.v().getMethod(
+						String.format("<%s: void <init>(android.content.Context)>", 
+							returnType.toString()));
+
+		units.add(Jimple.v().newInvokeStmt(
+					Jimple.v().newVirtualInvokeExpr(localView, textViewInitMethod.makeRef(), 
+								argActivity))); 
+
+		SootMethod setTextMethod = Scene.v().getMethod("<android.widget.TextView: void setText(java.lang.CharSequence)>");
+
+		units.add(Jimple.v().newInvokeStmt(
+					Jimple.v().newVirtualInvokeExpr(localView, setTextMethod.makeRef(), 
+						StringConstant.v(obj.text)))); 
+
+		units.add(Jimple.v().newAssignStmt(fieldRef, localView));
+		 
+		// afterIF: return localView
+		Stmt afterIf = Jimple.v().newReturnStmt(localView);
+		units.add(afterIf);
+
+		// condition expression and statement
+		ConditionExpr condExpr = Jimple.v().newEqExpr(IntConstant.v(1), IntConstant.v(0));
+		logger.warn("COND {} ", condExpr);
+
+		// condition statement
+		Stmt condStmt =  Jimple.v().newIfStmt(condExpr, afterIf);
+
+		logger.warn("condStmt {} ", condStmt);
+		units.insertAfter(condStmt, beforeIf);
+
+
+		/*
+		List list = new LinkedList();
+		Stmt bodyStart = (Stmt) bodyList.get(0);
+		Stmt conditionalStmt = Jimple.v().newIfStmt(conditionalExpr, bodyStart);
+		body.getUnits().insertBefore(initializerList, insertPoint);
+		body.getUnits().insertBefore(Jimple.v().newGotoStmt(conditionalStmt),
+				insertPoint);
+		body.getUnits().insertBefore(bodyList, insertPoint);
+		body.getUnits().insertBefore(conditionalStmt, insertPoint);
+		*/
+
+	}
 
 	/*
 	* addSetActivityMethod:

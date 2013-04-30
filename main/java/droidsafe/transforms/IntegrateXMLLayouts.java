@@ -65,9 +65,13 @@ public class IntegrateXMLLayouts extends BodyTransformer {
 		
 		private SootMethod findViewById;
 		private SootMethod setContentView;
+		private SootClass  activityClass;
+		private SootClass  javaObjClass;
 		
 		public IntegrateXMLLayouts() {
-			findViewById = Scene.v().getMethod("<android.app.Activity: android.view.View findViewById(int)>");
+			findViewById  =  Scene.v().getMethod("<android.app.Activity: android.view.View findViewById(int)>");
+			activityClass =  Scene.v().getSootClass("android.app.Activity");
+			javaObjClass  =  Scene.v().getSootClass("java.lang.Object");
 			// setContentView = Scene.v().getMethod("<android.app.Activity: void setContentView(int)>");
 			//dumpActivities();
 		}
@@ -86,12 +90,32 @@ public class IntegrateXMLLayouts extends BodyTransformer {
 
 			for (SootClass clz : Scene.v().getClasses()) {
 				if (Project.v().isSrcClass(clz.toString()) || Project.v().isLibClass(clz.toString())) {
+					// WE ONLY perform xml replacement on Activity's subclass as find
+					// if (!v.isActivitySubclass(clz)) {
+					// 	continue;
+					// }
+					logger.warn("{} is an ACTIVTY class ", clz.toString());
 					for (SootMethod meth : clz.getMethods()) {
 						if (meth.isConcrete())
 							v.transform(meth.retrieveActiveBody());
 					}
 				}
 			}
+		}
+
+		/**
+		*
+		*/
+		protected boolean isActivitySubclass(SootClass sootClass) {
+			SootClass parentClass = sootClass.getSuperclass();
+
+			while (parentClass != javaObjClass) {
+				if (parentClass == activityClass)
+					return true;
+
+				parentClass = parentClass.getSuperclass();
+			}
+			return false;
 		}
 
 		// debug function
@@ -280,7 +304,7 @@ public class IntegrateXMLLayouts extends BodyTransformer {
 						if (findViewById.equals(resolved))  {
 							logger.info(String.format("Found findViewById(): %s\n", stmt));
 							//replacement ...
-							replaceFindViewById(stmtBody, stmt);
+							//replaceFindViewById(stmtBody, stmt);
 						}
 					}
 				}
