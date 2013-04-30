@@ -32,8 +32,7 @@ def run_droidsafe(args):
         command.append(arg)
 
     #print(command)
-    subprocess.call(command)
-    return
+    return subprocess.call(command)
 
 
 
@@ -49,10 +48,10 @@ def check_env_vars():
 # Gather our code in a main() function
 def main():
     check_env_vars()
-    run_droidsafe(sys.argv)
+    return run_droidsafe(sys.argv)
 
 
 # Standard boilerplate to call the main() function to begin
 # the program.
 if __name__ == '__main__':
-    main()
+    sys.exit(main())
