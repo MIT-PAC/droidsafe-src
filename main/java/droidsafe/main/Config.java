@@ -57,7 +57,10 @@ public class Config {
 	
 	public boolean DUMP_CALL_GRAPH = false;
 	
-	private static final String ANDROID_LIB_DIR_REL = "android-lib";
+  /** location of all android apps */
+  public static final String ANDROID_APP_DIR_REL = "android-apps";
+
+  private static final String ANDROID_LIB_DIR_REL = "android-lib";
 	/** location of configuration files */
 	public static final String SYSTEM_CLASSES_FILE = "config-files/system_class_files.txt";
 
