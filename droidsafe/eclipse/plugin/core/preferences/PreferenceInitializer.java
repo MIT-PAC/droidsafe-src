@@ -28,6 +28,8 @@ public class PreferenceInitializer extends AbstractPreferenceInitializer {
 		store.setDefault(PreferenceConstants.P_JIMPLE, false);
 		store.setDefault(PreferenceConstants.P_ANALYZEAPI, false);
 		store.setDefault(PreferenceConstants.P_DEBUGLOG, false);
+		store.setDefault(PreferenceConstants.P_DUMP_PTA, false);
+		store.setDefault(PreferenceConstants.P_DUMP_CALL_GRAPH, false);
 	}
 
 }

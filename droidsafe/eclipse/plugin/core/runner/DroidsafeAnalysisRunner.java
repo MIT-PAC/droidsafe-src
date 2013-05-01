@@ -17,6 +17,7 @@ import org.eclipse.core.runtime.IPath;
 import org.eclipse.core.runtime.Platform;
 import org.eclipse.core.runtime.preferences.ConfigurationScope;
 import org.eclipse.e4.core.di.extensions.Preference;
+import org.eclipse.jface.preference.IPreferenceStore;
 import org.osgi.framework.Bundle;
 import org.osgi.service.prefs.Preferences;
 import org.slf4j.Logger;
@@ -89,38 +90,41 @@ public class DroidsafeAnalysisRunner {
     logger.info("\nFrom injecton \nJIMPLE Prefence = " + writeJimpleClasses + "\nInfoFlow = "
         + infoFlow + "\nPass = " + passTarget);
 
-    Preferences preferences = ConfigurationScope.INSTANCE.getNode("droidsafe.eclipse.plugin.core");
-    writeJimpleClasses = preferences.getBoolean(PreferenceConstants.P_JIMPLE, false);
-    infoFlow = preferences.getBoolean(PreferenceConstants.P_INFOFLOW, false);
-    passTarget = preferences.get(PreferenceConstants.P_TARGET_PASS, "specdump");
-    logger.info("From ConfigurationScope.INSTANCE\nPreferences = " + preferences
-        + "\nJIMPLE Prefence = " + writeJimpleClasses + "\nInfoFlow = " + infoFlow + "\nPass = "
-        + passTarget);
+    // Preferences preferences =
+    // ConfigurationScope.INSTANCE.getNode("droidsafe.eclipse.plugin.core");
+    // writeJimpleClasses = preferences.getBoolean(PreferenceConstants.P_JIMPLE, false);
+    // infoFlow = preferences.getBoolean(PreferenceConstants.P_INFOFLOW, false);
+    // passTarget = preferences.get(PreferenceConstants.P_TARGET_PASS, "specdump");
+    // logger.info("From ConfigurationScope.INSTANCE\nPreferences = " + preferences
+    // + "\nJIMPLE Prefence = " + writeJimpleClasses + "\nInfoFlow = " + infoFlow + "\nPass = "
+    // + passTarget);
 
-    writeJimpleClasses =
-        Activator.getDefault().getPreferenceStore().getBoolean(PreferenceConstants.P_JIMPLE);
-    infoFlow =
-        Activator.getDefault().getPreferenceStore().getBoolean(PreferenceConstants.P_INFOFLOW);
+    IPreferenceStore preferenceStore = Activator.getDefault().getPreferenceStore();
+    writeJimpleClasses = preferenceStore.getBoolean(PreferenceConstants.P_JIMPLE);
+    Config.v().WRITE_JIMPLE_APP_CLASSES = this.writeJimpleClasses;
+    infoFlow = preferenceStore.getBoolean(PreferenceConstants.P_INFOFLOW);
+    Config.v().infoFlow = this.infoFlow; 
     if (infoFlow) {
-      this.infoFlowDotFile =
-          Activator.getDefault().getPreferenceStore()
-              .getString(PreferenceConstants.P_INFOFLOWDOTFILE);
-      this.infoFlowDotMethod =
-          Activator.getDefault().getPreferenceStore()
-              .getString(PreferenceConstants.P_INFOFLOWMETHOD);
+      this.infoFlowDotFile = preferenceStore.getString(PreferenceConstants.P_INFOFLOWDOTFILE);
+      Config.v().infoFlowDotFile = this.infoFlowDotFile;
+      this.infoFlowDotMethod = preferenceStore.getString(PreferenceConstants.P_INFOFLOWMETHOD);
+      Config.v().infoFlowDotMethod = this.infoFlowDotMethod;
     }
-    passTarget =
-        Activator.getDefault().getPreferenceStore().getString(PreferenceConstants.P_TARGET_PASS);
-    logger.info("From Activator.getPreferenceStore\nPreferences = " + preferences
-        + "\nJIMPLE Prefence = " + writeJimpleClasses + "\nInfoFlow = " + infoFlow + "\nPass = "
-        + passTarget);
+    passTarget = preferenceStore.getString(PreferenceConstants.P_TARGET_PASS);
+    Config.v().target = this.passTarget;
+    Config.v().DUMP_PTA = preferenceStore.getBoolean(PreferenceConstants.P_DUMP_PTA);
+    Config.v().DUMP_CALL_GRAPH = preferenceStore.getBoolean(PreferenceConstants.P_DUMP_CALL_GRAPH);
+    
+    logger.info("From Activator.getPreferenceStore" + "\nJIMPLE Prefence = " + writeJimpleClasses
+        + "\nInfoFlow = " + infoFlow + "\nPass = " + passTarget);
 
-    // String [] args = new String[]{};
-    // Config.v().init(args);
+
     IPath path = project.getLocation();
     Config.v().APP_ROOT_DIR = path.toOSString();
 
-    Bundle bundle = Platform.getBundle("droidsafe.eclipse.plugin.core");
+    Activator.getDefault();
+    String pluginId = Activator.PLUGIN_ID;    
+    Bundle bundle = Platform.getBundle(pluginId);
     try {
       File file = FileLocator.getBundleFile(bundle);
       Config.v().setApacHome(file.getAbsolutePath());
