@@ -12,7 +12,6 @@ import java.util.TreeMap;
 import soot.Local;
 import soot.SootClass;
 import soot.SootField;
-import soot.jimple.Constant;
 import soot.jimple.ParameterRef;
 import soot.jimple.spark.pag.AllocNode;
 import soot.jimple.toolkits.callgraph.Edge;

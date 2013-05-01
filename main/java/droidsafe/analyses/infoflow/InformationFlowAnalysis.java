@@ -1,8 +1,8 @@
 package droidsafe.analyses.infoflow;
 
 import java.io.BufferedWriter;
-import java.io.IOException;
 import java.io.FileWriter;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.HashMap;
@@ -42,10 +42,12 @@ import soot.jimple.BinopExpr;
 import soot.jimple.CastExpr;
 import soot.jimple.CaughtExceptionRef;
 import soot.jimple.Constant;
+import soot.jimple.DynamicInvokeExpr;
 import soot.jimple.IdentityRef;
 import soot.jimple.IdentityStmt;
 import soot.jimple.InstanceFieldRef;
 import soot.jimple.InstanceOfExpr;
+import soot.jimple.InterfaceInvokeExpr;
 import soot.jimple.InvokeExpr;
 import soot.jimple.InvokeStmt;
 import soot.jimple.NewArrayExpr;
@@ -54,10 +56,13 @@ import soot.jimple.NewMultiArrayExpr;
 import soot.jimple.ParameterRef;
 import soot.jimple.ReturnStmt;
 import soot.jimple.ReturnVoidStmt;
+import soot.jimple.SpecialInvokeExpr;
 import soot.jimple.StaticFieldRef;
+import soot.jimple.StaticInvokeExpr;
 import soot.jimple.Stmt;
 import soot.jimple.ThisRef;
 import soot.jimple.UnopExpr;
+import soot.jimple.VirtualInvokeExpr;
 import soot.jimple.spark.pag.AllocNode;
 import soot.jimple.toolkits.callgraph.CallGraph;
 import soot.jimple.toolkits.callgraph.Edge;
@@ -120,11 +125,11 @@ public class InformationFlowAnalysis {
 
     private static InformationFlowAnalysis v;
 
-    private InterproceduralControlFlowGraph controlFlowGraph;
-    private CallGraph callGraph;
+    private final InterproceduralControlFlowGraph controlFlowGraph;
+    private final CallGraph callGraph;
 
-    private Map<Block, Map<Block, States>> fromToStates;
-    private Map<Block, States> mergeStates;
+    private final Map<Block, Map<Block, States>> fromToStates;
+    private final Map<Block, States> mergeStates;
 
     class Worklist {
         TreeSet<Block> worklist;
@@ -138,6 +143,7 @@ public class InformationFlowAnalysis {
                 i++;
             }
             worklist = new TreeSet<Block>(new Comparator<Block>() {
+                @Override
                 public int compare(Block block1, Block block2) {
                     return blockToRank.get(block1) - blockToRank.get(block2);
                 }
@@ -266,27 +272,33 @@ public class InformationFlowAnalysis {
 
     private States execute(final Unit curr, final States inStates) {
         AbstractStmtSwitch stmtSwitch = new AbstractStmtSwitch() {
+            @Override
             public void caseAssignStmt(final AssignStmt stmt) {
                 setResult(execute(stmt, inStates));
             }
 
+            @Override
             public void caseIdentityStmt(IdentityStmt stmt) {
                 setResult(execute(stmt, inStates));
             }
 
+            @Override
             public void caseInvokeStmt(InvokeStmt stmt) {
                 // invoke_stmt = invoke_expr;
                 execute(stmt, stmt.getInvokeExpr(), inStates);
             }
 
+            @Override
             public void caseReturnStmt(ReturnStmt stmt) {
                 execute(stmt, inStates);
             }
 
+            @Override
             public void caseReturnVoidStmt(ReturnVoidStmt stmt) {
                 execute(stmt, inStates);
             }
 
+            @Override
             public void defaultCase(Object stmt) {
                 setResult(inStates);
             }
@@ -295,104 +307,117 @@ public class InformationFlowAnalysis {
         return (States)stmtSwitch.getResult();
     }
 
-  // stmt = ... | assign_stmt | ...;
-  private States execute(final AssignStmt stmt, final States inStates) {
-      // assign_stmt = variable "=" rvalue;
-      final Value variable = stmt.getLeftOp();
-      Value rValue = stmt.getRightOp();
-      // rvalue = array_ref | constant | expr | instance_field_ref | local | next_next_stmt_address | static_field_ref;
-      MyAbstractRValueSwitch rValueSwitch = new MyAbstractRValueSwitch() {
-          // rvalue = array_ref | ...;
-          public void caseArrayRef(ArrayRef arrayRef) {
-              // variable "=" array_ref
-              setResult(execute(stmt, variable, arrayRef, inStates));
-          }
+    // stmt = ... | assign_stmt | ...;
+    private States execute(final AssignStmt stmt, final States inStates) {
+        // assign_stmt = variable "=" rvalue;
+        final Value variable = stmt.getLeftOp();
+        Value rValue = stmt.getRightOp();
+        // rvalue = array_ref | constant | expr | instance_field_ref | local | next_next_stmt_address | static_field_ref;
+        MyAbstractRValueSwitch rValueSwitch = new MyAbstractRValueSwitch() {
+            // rvalue = array_ref | ...;
+            @Override
+            public void caseArrayRef(ArrayRef arrayRef) {
+                // variable "=" array_ref
+                setResult(execute(stmt, variable, arrayRef, inStates));
+            }
 
-          // rvalue = ... | constant | ...
-          // constant = double_constant | float_constant | int_constant | long_constant | string_constant | null_constant | class_constant;
-          public void caseConstant(Constant constant) {
-              // varaible "=" constant
-              setResult(inStates);
-          }
+            // rvalue = ... | constant | ...
+            // constant = double_constant | float_constant | int_constant | long_constant | string_constant | null_constant | class_constant;
+            @Override
+            public void caseConstant(Constant constant) {
+                // varaible "=" constant
+                setResult(inStates);
+            }
 
-          // rvalue = ... | expr | ...;
-          // expr = binop_expr | ...;
-          // binop_expr = add_expr | and_expr | cmp_expr | cmpg_expr | cmpl_expr | div_expr | eq_expr | ge_expr | gt_expr | le_expr | lt_expr | mul_expr | ne_expr | or_expr | rem_expr | shl_expr | shr_expr | sub_expr | ushr_expr | xor_expr;
-          public void caseBinopExpr(BinopExpr binopExpr) {
-              // variable "=" binop_expr
-              setResult(execute(stmt, variable, binopExpr, inStates));
-          }
+            // rvalue = ... | expr | ...;
+            // expr = binop_expr | ...;
+            // binop_expr = add_expr | and_expr | cmp_expr | cmpg_expr | cmpl_expr | div_expr | eq_expr | ge_expr | gt_expr | le_expr | lt_expr | mul_expr | ne_expr | or_expr | rem_expr | shl_expr | shr_expr | sub_expr | ushr_expr | xor_expr;
+            @Override
+            public void caseBinopExpr(BinopExpr binopExpr) {
+                // variable "=" binop_expr
+                setResult(execute(stmt, variable, binopExpr, inStates));
+            }
 
-          // rvalue = ... | expr | ...;
-          // expr = ... | cast_expr | ...;
-          public void caseCastExpr(CastExpr castExpr) {
-              // variable "=" cast_expr
-              setResult(execute(stmt, variable, castExpr, inStates));
-          }
+            // rvalue = ... | expr | ...;
+            // expr = ... | cast_expr | ...;
+            @Override
+            public void caseCastExpr(CastExpr castExpr) {
+                // variable "=" cast_expr
+                setResult(execute(stmt, variable, castExpr, inStates));
+            }
 
-          // rvalue = ... | expr | ...;
-          // expr = ... | instance_of_expr | ...;
-          public void caseInstanceOfExpr(InstanceOfExpr instanceOfExpr) {
-              // variable "=" instance_of_expr
-              setResult(execute(stmt, variable, instanceOfExpr, inStates));
-          }
+            // rvalue = ... | expr | ...;
+            // expr = ... | instance_of_expr | ...;
+            @Override
+            public void caseInstanceOfExpr(InstanceOfExpr instanceOfExpr) {
+                // variable "=" instance_of_expr
+                setResult(execute(stmt, variable, instanceOfExpr, inStates));
+            }
 
-          // rvalue = ... | expr | ...;
-          // expr = ... | invoke_expr | ...;
-          // invoke_expr = interface_invoke_expr | special_invoke_expr | static_invoke_expr | virtual_invoke_expr;
-          public void caseInvokeExpr(InvokeExpr invokeExpr) {
-              // variable "=" invoke_expr
-              execute(stmt, variable, invokeExpr, inStates);
-          }
+            // rvalue = ... | expr | ...;
+            // expr = ... | invoke_expr | ...;
+            // invoke_expr = interface_invoke_expr | special_invoke_expr | static_invoke_expr | virtual_invoke_expr;
+            @Override
+            public void caseInvokeExpr(InvokeExpr invokeExpr) {
+                // variable "=" invoke_expr
+                execute(stmt, variable, invokeExpr, inStates);
+            }
 
-          // rvalue = ... | expr | ...;
-          // expr = ... | new_array_expr | ...;
-          public void caseNewArrayExpr(NewArrayExpr newArrayExpr) {
-              // variable "=" new_array_expr
-              setResult(execute(stmt, variable, newArrayExpr, inStates));
-          }
+            // rvalue = ... | expr | ...;
+            // expr = ... | new_array_expr | ...;
+            @Override
+            public void caseNewArrayExpr(NewArrayExpr newArrayExpr) {
+                // variable "=" new_array_expr
+                setResult(execute(stmt, variable, newArrayExpr, inStates));
+            }
 
-          // rvalue = ... | expr | ...;
-          // expr = ... | new_expr | ...;
-          public void caseNewExpr(NewExpr newExpr) {
-              // variable "=" new_expr
-              setResult(execute(stmt, variable, newExpr, inStates));
-          }
+            // rvalue = ... | expr | ...;
+            // expr = ... | new_expr | ...;
+            @Override
+            public void caseNewExpr(NewExpr newExpr) {
+                // variable "=" new_expr
+                setResult(execute(stmt, variable, newExpr, inStates));
+            }
 
-          // rvalue = ... | expr | ...;
-          // expr = ... | new_multi_array_expr | ...;
-          public void caseNewMultiArrayExpr(NewMultiArrayExpr newMultiArrayExpr) {
-              setResult(execute(stmt, variable, newMultiArrayExpr, inStates));
-          }
+            // rvalue = ... | expr | ...;
+            // expr = ... | new_multi_array_expr | ...;
+            @Override
+            public void caseNewMultiArrayExpr(NewMultiArrayExpr newMultiArrayExpr) {
+                setResult(execute(stmt, variable, newMultiArrayExpr, inStates));
+            }
 
-          // rvalue = ... | expr | ...;
-          // expr = ... | unop_expr;
-          // unop_expr = length_expr | neg_expr;
-          public void caseUnopExpr(UnopExpr unopExpr) {
-              setResult(execute(stmt, variable, unopExpr, inStates));
-          }
+            // rvalue = ... | expr | ...;
+            // expr = ... | unop_expr;
+            // unop_expr = length_expr | neg_expr;
+            @Override
+            public void caseUnopExpr(UnopExpr unopExpr) {
+                setResult(execute(stmt, variable, unopExpr, inStates));
+            }
 
-          // rvalue = ... | instance_field_ref | ...;
-          public void caseInstanceFieldRef(InstanceFieldRef instanceFieldRef) {
-              // variable "=" instance_field_ref
-              setResult(execute(stmt, variable, instanceFieldRef, inStates));
-          }
+            // rvalue = ... | instance_field_ref | ...;
+            @Override
+            public void caseInstanceFieldRef(InstanceFieldRef instanceFieldRef) {
+                // variable "=" instance_field_ref
+                setResult(execute(stmt, variable, instanceFieldRef, inStates));
+            }
 
-          // rvalue = ... | local | ...;
-          public void caseLocal(Local local) {
-              // variable "=" local
-              setResult(execute(stmt, variable, local, inStates));
-          }
+            // rvalue = ... | local | ...;
+            @Override
+            public void caseLocal(Local local) {
+                // variable "=" local
+                setResult(execute(stmt, variable, local, inStates));
+            }
 
-          // rvalue = ... | static_field_ref;
-          public void caseStaticFieldRef (StaticFieldRef staticFieldRef) {
-              // variable "=" static_field_ref
-              setResult(execute(stmt, variable, staticFieldRef, inStates));
-          }
-      };
-      rValue.apply(rValueSwitch);
-      return (States)rValueSwitch.getResult();
-  }
+            // rvalue = ... | static_field_ref;
+            @Override
+            public void caseStaticFieldRef (StaticFieldRef staticFieldRef) {
+                // variable "=" static_field_ref
+                setResult(execute(stmt, variable, staticFieldRef, inStates));
+            }
+        };
+        rValue.apply(rValueSwitch);
+        return (States)rValueSwitch.getResult();
+    }
 
     // identity_stmt
     private States execute(final IdentityStmt stmt, final States inStates) {
@@ -402,17 +427,20 @@ public class InformationFlowAnalysis {
         // identity_value = caught_exception_ref | parameter_ref | this_ref;
         MyAbstractIdentityValueSwitch identityValueSwitch = new MyAbstractIdentityValueSwitch() {
             // identity_value = caught_exception_ref | ...;
+            @Override
             public void caseCaughtExceptionRef(CaughtExceptionRef caughtExceptionRef) {
                 // XXX
                 /* do nothing */
             }
 
             // identity_value = ... | parameter_ref | ...;
+            @Override
             public void caseParameterRef(ParameterRef parameterRef) {
                 setResult(execute(stmt, local, parameterRef, inStates));
             }
 
             // identity_value = ... | this_ref;
+            @Override
             public void caseThisRef(ThisRef thisRef) {
                 setResult(execute(stmt, local, thisRef, inStates));
             }
@@ -441,24 +469,28 @@ public class InformationFlowAnalysis {
                     Value variable = assignStmt.getLeftOp();
                     MyAbstractVariableSwitch variableSwitch = new MyAbstractVariableSwitch() {
                         // variable = array_ref | ...;
+                        @Override
                         public void caseArrayRef(ArrayRef arrayRef) {
                             // TODO
                             throw new UnsupportedOperationException(stmt.toString());
                         }
 
                         // variable = ... | instance_field_ref | ...;
+                        @Override
                         public void caseInstanceFieldRef(InstanceFieldRef lInstanceFieldRef) {
                             // TODO
                             throw new UnsupportedOperationException(stmt.toString());
                         }
 
                         // variable = ... | static_field_ref | ...;
+                        @Override
                         public void caseStaticFieldRef(StaticFieldRef lStaticFieldRef) {
                             // TODO
                             throw new UnsupportedOperationException(stmt.toString());
                         }
 
                         // variable = ... | local;
+                        @Override
                         public void caseLocal(final Local local) {
                             Frame frame = new Frame();
                             frame.put(local, values);
@@ -530,24 +562,28 @@ public class InformationFlowAnalysis {
             // variable = array_ref | instance_field_ref | static_field_ref | local;
             variable.apply(new MyAbstractVariableSwitch() {
                 // variable = array_ref | ...;
+                @Override
                 public void caseArrayRef(ArrayRef v) {
                     // TODO
                     throw new UnsupportedOperationException(stmt.toString());
                 }
 
                 // variable = ... | instance_field_ref | ...;
+                @Override
                 public void caseInstanceFieldRef(InstanceFieldRef v) {
                     // TODO
                     throw new UnsupportedOperationException(stmt.toString());
                 }
 
                 // variable = ... | static_field_ref | ...;
+                @Override
                 public void caseStaticFieldRef(StaticFieldRef v) {
                     // TODO
                     throw new UnsupportedOperationException(stmt.toString());
                 }
 
                 // variable = ... | local;
+                @Override
                 public void caseLocal(Local local) {
                     Frame frame = new Frame(inFrameRootsHeapStatics.frame, inFrameRootsHeapStatics.frame.params);
                     frame.put(local, values);
@@ -589,24 +625,28 @@ public class InformationFlowAnalysis {
             // variable = array_ref | instance_field_ref | static_field_ref | local;
             variable.apply(new MyAbstractVariableSwitch() {
                 // variable = array_ref | ...;
+                @Override
                 public void caseArrayRef(ArrayRef v) {
                     // TODO
                     throw new UnsupportedOperationException(stmt.toString());
                 }
-                
+
                 // variable = ... | instance_field_ref | ...;
+                @Override
                 public void caseInstanceFieldRef(InstanceFieldRef v) {
                     // TODO
                     throw new UnsupportedOperationException(stmt.toString());
                 }
 
                 // variable = ... | static_field_ref | ...;
+                @Override
                 public void caseStaticFieldRef(StaticFieldRef v) {
                     // TODO
                     throw new UnsupportedOperationException(stmt.toString());
                 }
-                
+
                 // variable = ... | local;
+                @Override
                 public void caseLocal(Local local) {
                     Frame frame = new Frame(inFrameRootsHeapStatics.frame, inFrameRootsHeapStatics.frame.params);
                     frame.put(local, values);
@@ -625,13 +665,15 @@ public class InformationFlowAnalysis {
         MyAbstractImmediateSwitch immediateSwitch = new MyAbstractImmediateSwitch() {
             // immediate = constant | ...;
             // constant = double_constant | float_constant | int_constant | long_constant | string_constant | null_constant | class_constant;
+            @Override
             public void caseConstant(Constant constant) {
                 // local "=" "(" type ")" constant
                 // TODO: we may be able to do better by considering "type".
                 setResult(inStates);
             }
-            
+
             // immediate = ... | local;
+            @Override
             public void caseLocal(final Local rLocal) {
                 // local "=" "(" type ")" local
                 // TODO: we may be able to do better by considering "type".
@@ -653,24 +695,28 @@ public class InformationFlowAnalysis {
             // variable = array_ref | instance_field_ref | static_field_ref | local;
             variable.apply(new MyAbstractVariableSwitch() {
                 // variable = array_ref | ...;
+                @Override
                 public void caseArrayRef(ArrayRef v) {
                     // TODO
                     throw new UnsupportedOperationException(stmt.toString());
                 }
 
                 // variable = ... | instance_field_ref | ...;
+                @Override
                 public void caseInstanceFieldRef(InstanceFieldRef v) {
                     // TODO
                     throw new UnsupportedOperationException(stmt.toString());
                 }
 
                 // variable = ... | static_field_ref | ...;
+                @Override
                 public void caseStaticFieldRef(StaticFieldRef v) {
                     // TODO
                     throw new UnsupportedOperationException(stmt.toString());
                 }
 
                 // variable = ... | local;
+                @Override
                 public void caseLocal(Local local) {
                     Frame frame = new Frame(inFrameRootsHeapStatics.frame, inFrameRootsHeapStatics.frame.params);
                     frame.put(local, values);
@@ -693,16 +739,19 @@ public class InformationFlowAnalysis {
         // variable = array_ref | instance_field_ref | static_field_ref | local;
         variable.apply(new MyAbstractVariableSwitch() {
             // variable = array_ref | ...;
+            @Override
             public void caseArrayRef(ArrayRef v) {
                 execute(stmt, invokeExpr, inStates);
             }
-            
+
             // variable = ... | instance_field_ref | ...;
+            @Override
             public void caseInstanceFieldRef(InstanceFieldRef v) {
                 execute(stmt, invokeExpr, inStates);
             }
-            
+
             // variable = ... | static_field_ref | ...;
+            @Override
             public void caseStaticFieldRef(StaticFieldRef staticFieldRef) {
                 // static_field_ref "=" invoke_expr
                 final List<Set<MyValue>> args = evaluateArgs(invokeExpr.getArgs(), inStates);
@@ -737,8 +786,9 @@ public class InformationFlowAnalysis {
                     }
                 }
             }
-            
+
             // variable = ... | local;
+            @Override
             public void caseLocal(Local local) {
                 // local "=" invoke_expr
                 final List<Set<MyValue>> args = evaluateArgs(invokeExpr.getArgs(), inStates);
@@ -790,24 +840,28 @@ public class InformationFlowAnalysis {
                 // variable = array_ref | instance_field_ref | static_field_ref | local;
                 variable.apply(new MyAbstractVariableSwitch() {
                     // variable = array_ref | ...;
+                    @Override
                     public void caseArrayRef(ArrayRef v) {
                         // TODO
                         throw new UnsupportedOperationException(stmt.toString());
                     }
-                    
+
                     // variable = ... | instance_field_ref | ...;
+                    @Override
                     public void caseInstanceFieldRef(InstanceFieldRef v) {
                         // TODO
                         throw new UnsupportedOperationException(stmt.toString());
                     }
 
                     // variable = ... | static_field_ref | ...;
+                    @Override
                     public void caseStaticFieldRef(StaticFieldRef v) {
                         // TODO
                         throw new UnsupportedOperationException(stmt.toString());
                     }
-                    
+
                     // variable = ... | local;
+                    @Override
                     public void caseLocal(Local local) {
                         Frame frame = new Frame(inFrameRootsHeapStatics.frame, inFrameRootsHeapStatics.frame.params);
                         frame.put(local, values);
@@ -839,24 +893,28 @@ public class InformationFlowAnalysis {
                 // variable = array_ref | instance_field_ref | static_field_ref | local;
                 variable.apply(new MyAbstractVariableSwitch() {
                     // variable = array_ref | ...;
+                    @Override
                     public void caseArrayRef(ArrayRef v) {
                         // TODO
                         throw new UnsupportedOperationException(stmt.toString());
                     }
-                    
+
                     // variable = ... | instance_field_ref | ...;
+                    @Override
                     public void caseInstanceFieldRef(InstanceFieldRef v) {
                         // TODO
                         throw new UnsupportedOperationException(stmt.toString());
                     }
 
                     // variable = ... | static_field_ref | ...;
+                    @Override
                     public void caseStaticFieldRef(StaticFieldRef v) {
                         // TODO
                         throw new UnsupportedOperationException(stmt.toString());
                     }
-                    
+
                     // variable = ... | local;
+                    @Override
                     public void caseLocal(Local local) {
                         Frame frame = new Frame(inFrameRootsHeapStatics.frame, inFrameRootsHeapStatics.frame.params);
                         frame.put(local, values);
@@ -891,24 +949,28 @@ public class InformationFlowAnalysis {
                 // variable = array_ref | instance_field_ref | static_field_ref | local;
                 variable.apply(new MyAbstractVariableSwitch() {
                     // variable = array_ref | ...;
+                    @Override
                     public void caseArrayRef(ArrayRef v) {
                         // TODO
                         throw new UnsupportedOperationException(stmt.toString());
                     }
 
                     // variable = ... | instance_field_ref | ...;
+                    @Override
                     public void caseInstanceFieldRef(InstanceFieldRef v) {
                         // TODO
                         throw new UnsupportedOperationException(stmt.toString());
                     }
 
                     // variable = ... | static_field_ref | ...;
+                    @Override
                     public void caseStaticFieldRef(StaticFieldRef v) {
                         // TODO
                         throw new UnsupportedOperationException(stmt.toString());
                     }
 
                     // variable = ... | local;
+                    @Override
                     public void caseLocal(Local local) {
                         Frame frame = new Frame(inFrameRootsHeapStatics.frame, inFrameRootsHeapStatics.frame.params);
                         frame.put(local, values);
@@ -936,24 +998,28 @@ public class InformationFlowAnalysis {
             // variable = array_ref | instance_field_ref | static_field_ref | local;
             variable.apply(new MyAbstractVariableSwitch() {
                 // variable = array_ref | ...;
+                @Override
                 public void caseArrayRef(ArrayRef v) {
                     // TODO
                     throw new UnsupportedOperationException(stmt.toString());
                 }
 
                 // variable = ... | instance_field_ref | ...;
+                @Override
                 public void caseInstanceFieldRef(InstanceFieldRef v) {
                     // TODO
                     throw new UnsupportedOperationException(stmt.toString());
                 }
 
                 // variable = ... | static_field_ref | ...;
+                @Override
                 public void caseStaticFieldRef(StaticFieldRef v) {
                     // TODO
                     throw new UnsupportedOperationException(stmt.toString());
                 }
 
                 // variable = ... | local;
+                @Override
                 public void caseLocal(Local local) {
                     Frame frame = new Frame(inFrameRootsHeapStatics.frame, inFrameRootsHeapStatics.frame.params);
                     frame.put(local, values);
@@ -980,24 +1046,28 @@ public class InformationFlowAnalysis {
             // variable = array_ref | instance_field_ref | static_field_ref | local;
             variable.apply(new MyAbstractVariableSwitch() {
                 // variable = array_ref | ...;
+                @Override
                 public void caseArrayRef(ArrayRef v) {
                     // TODO
                     throw new UnsupportedOperationException(stmt.toString());
                 }
-                
+
                 // variable = ... | instance_field_ref | ...;
+                @Override
                 public void caseInstanceFieldRef(InstanceFieldRef v) {
                     // TODO
                     throw new UnsupportedOperationException(stmt.toString());
                 }
 
                 // variable = ... | static_field_ref | ...;
+                @Override
                 public void caseStaticFieldRef(StaticFieldRef v) {
                     // TODO
                     throw new UnsupportedOperationException(stmt.toString());
                 }
-                
+
                 // variable = ... | local;
+                @Override
                 public void caseLocal(Local local) {
                     Frame frame = new Frame(inFrameRootsHeapStatics.frame, inFrameRootsHeapStatics.frame.params);
                     frame.put(local, values);
@@ -1017,6 +1087,7 @@ public class InformationFlowAnalysis {
             // variable = array_ref | instance_field_ref | static_field_ref | local;
             variable.apply(new MyAbstractVariableSwitch() {
                 // variable = array_ref | ...;
+                @Override
                 public void caseArrayRef(ArrayRef arrayRef) {
                     Arrays arrays = new Arrays(inFrameRootsHeapStatics.heap.arrays);
                     for (MyValue addr : inFrameRootsHeapStatics.frame.get((Local)arrayRef.getBase())) {
@@ -1031,6 +1102,7 @@ public class InformationFlowAnalysis {
                 }
 
                 // variable = ... | instance_field_ref | ...;
+                @Override
                 public void caseInstanceFieldRef(InstanceFieldRef instanceFieldRef) {
                     // instance_field_ref "=" local
                     SootField field = instanceFieldRef.getField();
@@ -1047,6 +1119,7 @@ public class InformationFlowAnalysis {
                 }
 
                 // variable = ... | static_field_ref | ...;
+                @Override
                 public void caseStaticFieldRef(StaticFieldRef staticFieldRef) {
                     SootField field = staticFieldRef.getField();
                     SootClass klass = field.getDeclaringClass();
@@ -1057,8 +1130,9 @@ public class InformationFlowAnalysis {
                         outStates.put(contextFrameRootsHeapStatic.getKey(), new FrameRootsHeapStatics(inFrameRootsHeapStatics.frame, inFrameRootsHeapStatics.roots, inFrameRootsHeapStatics.heap, statics));
                     }
                 }
-                
+
                 // variable = ... | local;
+                @Override
                 public void caseLocal(Local local) {
                     // local "=" local
                     for (Map.Entry<Edge, FrameRootsHeapStatics> contextFrameRootsHeapStatic : inStates.entrySet()) {
@@ -1086,24 +1160,28 @@ public class InformationFlowAnalysis {
             // variable = array_ref | instance_field_ref | static_field_ref | local;
             variable.apply(new MyAbstractVariableSwitch() {
                 // variable = array_ref | ...;
+                @Override
                 public void caseArrayRef(ArrayRef v) {
                     // TODO
                     throw new UnsupportedOperationException(stmt.toString());
                 }
-                
+
                 // variable = ... | instance_field_ref | ...;
+                @Override
                 public void caseInstanceFieldRef(InstanceFieldRef v) {
                     // TODO
                     throw new UnsupportedOperationException(stmt.toString());
                 }
 
                 // variable = ... | static_field_ref | ...;
+                @Override
                 public void caseStaticFieldRef(StaticFieldRef v) {
                     // TODO
                     throw new UnsupportedOperationException(stmt.toString());
                 }
-                
+
                 // variable = ... | local;
+                @Override
                 public void caseLocal(Local local) {
                     Frame frame = new Frame(inFrameRootsHeapStatics.frame, inFrameRootsHeapStatics.frame.params);
                     frame.put(local, values);
@@ -1185,11 +1263,13 @@ public class InformationFlowAnalysis {
         immediate.apply(new MyAbstractImmediateSwitch() {
             // immediate = constant | ...;
             // constant = double_constant | float_constant | int_constant | long_constant | string_constant | null_constant | class_constant;
+            @Override
             public void caseConstant(Constant constant) {
                 // do nothing
             }
-    
+
             // immediate = ... | local;
+            @Override
             public void caseLocal(Local rLocal) {
                 values.addAll(frame.get(rLocal));
             }
@@ -1204,11 +1284,13 @@ public class InformationFlowAnalysis {
             immediate.apply(new MyAbstractImmediateSwitch() {
                 // immediate = constant | ...;
                 // constant = double_constant | float_constant | int_constant | long_constant | string_constant | null_constant | class_constant;
+                @Override
                 public void caseConstant(Constant constant) {
                     // do nothing
                 }
-    
+
                 // immediate = ... | local;
+                @Override
                 public void caseLocal(Local rLocal) {
                     values.addAll(frame.get(rLocal));
                 }
@@ -1224,11 +1306,13 @@ public class InformationFlowAnalysis {
             immediate.apply(new MyAbstractImmediateSwitch() {
                 // immediate = constant | ...;
                 // constant = double_constant | float_constant | int_constant | long_constant | string_constant | null_constant | class_constant;
+                @Override
                 public void caseConstant(Constant constant) {
                     args.add(new HashSet<MyValue>());
                 }
-                
+
                 // immediate = ... | local;
+                @Override
                 public void caseLocal(Local local) {
                     Set<MyValue> values = new HashSet<MyValue>();
                     for (FrameRootsHeapStatics frameRootsHeapStatics : states.values()) {
@@ -1240,8 +1324,8 @@ public class InformationFlowAnalysis {
         }
         return args;
     }
-    
-    private States makeCalleeStates(Unit srcStmt, SootMethod tgtMethod, List<Set<MyValue>> args, States srcStates) {
+
+    private States makeCalleeStates(final Unit srcStmt, SootMethod tgtMethod, List<Set<MyValue>> args, final States srcStates) {
         Frame frame = new Frame();
         int i = 0;
         for (Object type : tgtMethod.getParameterTypes()) {
@@ -1257,8 +1341,69 @@ public class InformationFlowAnalysis {
             heap = heap.merge(frameRootsHeapStatics.heap);
             statics = statics.merge(frameRootsHeapStatics.statics);
         }
+        final Set<Address> r = new HashSet<Address>();
+        ((Stmt)srcStmt).getInvokeExpr().apply(new MyAbstractInvokeExprSwitch() {
+            @Override
+            public void caseInterfaceInvokeExpr(InterfaceInvokeExpr e) {
+                // interface_invoke_expr = "interfaceinvoke" immediate ".[" + method_signature "]" "(" immediate_list ")"
+                Immediate immediate = (Immediate)e.getBase();
+                for (FrameRootsHeapStatics frameRootsHeapStatics : srcStates.values()) {
+                    for (MyValue value : evaluate(immediate, frameRootsHeapStatics.frame)) {
+                        if (value instanceof Address) {
+                            r.add((Address)value);
+                        }
+                    }
+                }
+            }
+
+            @Override
+            public void caseSpecialInvokeExpr(SpecialInvokeExpr e) {
+                // special_invoke_expr = "specialinvoke" immediate ".[" method_signature "]" "(" immediate_list ")";
+                Immediate immediate = (Immediate)e.getBase();
+                for (FrameRootsHeapStatics frameRootsHeapStatics : srcStates.values()) {
+                    for (MyValue value : evaluate(immediate, frameRootsHeapStatics.frame)) {
+                        if (value instanceof Address) {
+                            r.add((Address)value);
+                        }
+                    }
+                }
+            }
+
+            @Override
+            public void caseStaticInvokeExpr(StaticInvokeExpr e) {
+                // static_invoke_expr = "staticinvoke" "[" method_signature "]" "(" immediate_list ")";
+                // do nothing
+            }
+
+            @Override
+            public void caseVirtualInvokeExpr(VirtualInvokeExpr e) {
+                // virtual_invoke_expr = "virtualinvoke" immediate ".[" method_signamter "]" "(" immediate_list ")";
+                Immediate immediate = (Immediate)e.getBase();
+                for (FrameRootsHeapStatics frameRootsHeapStatics : srcStates.values()) {
+                    for (MyValue value : evaluate(immediate, frameRootsHeapStatics.frame)) {
+                        if (value instanceof Address) {
+                            r.add((Address)value);
+                        }
+                    }
+                }
+            }
+
+            @Override
+            public void caseDynamicInvokeExpr(DynamicInvokeExpr e) {
+                // TODO
+                throw new UnsupportedOperationException(srcStmt.toString());
+            }
+        });
+        for (Set<MyValue> values : args) {
+            for (MyValue value : values) {
+                if (values instanceof Address) {
+                    r.add((Address)value);
+                }
+            }
+        }
+        r.addAll(statics.roots());
         States tgtStates = new States();
-        tgtStates.put(callGraph.findEdge(srcStmt, tgtMethod), new FrameRootsHeapStatics(frame, roots, heap, statics));
+        tgtStates.put(callGraph.findEdge(srcStmt, tgtMethod), new FrameRootsHeapStatics(frame, roots, heap.gc(r), statics));
         return tgtStates;
     }
 
