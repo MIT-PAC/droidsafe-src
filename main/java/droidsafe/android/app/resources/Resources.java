@@ -200,7 +200,7 @@ public class Resources {
 
 		resource_info = HashBiMap.create();
 
-		logger.warn("Resources(): " + application_base.toString());
+		logger.info("Resources(): " + application_base.toString());
 
 		// Get the manifest and read it
 		File manifest_file = new File (application_base, "AndroidManifest.xml");
@@ -361,7 +361,7 @@ public class Resources {
 		for (SootClass clz : Scene.v().getClasses()) {
 			if (clz.isApplicationClass() & clz.getShortName().startsWith("R$")) {
 				String component = clz.getShortName().substring(2);
-				logger.debug("R component {} ", component);
+				logger.info("R component {} ", component);
 				for (SootField field : clz.getFields()) {
 					Integer value = new Integer(0);
 					
@@ -378,7 +378,7 @@ public class Resources {
 							logger.warn("resource_info.put({}, {}) ALREADY existed ", value, resource_value); 
 						}
 						else {
-							logger.debug("ADDING resource_info.put({}, {}) ", value, resource_value); 
+							logger.info("ADDING resource_info.put({}, {}) ", value, resource_value); 
 							resource_info.put(value, resource_value);
 						}
 					}
