@@ -208,6 +208,9 @@ public class Resources {
 		manifest = new AndroidManifest (manifest_file);
 		package_name = manifest.manifest.package_name;
 
+		//Take care of "res/layout" folder
+		//TODO: dealing with different layout flavors???
+		logger.info("processing res/layout");
 		File layout_dir = new File (application_base, "res/layout");
 		if (layout_dir.exists()) {
 			for (File layout_source : layout_dir.listFiles()) {
@@ -217,6 +220,28 @@ public class Resources {
 				// logger.info ("name/ext = {}/{}", name_ext[0], name_ext[1]);
 				if (name_ext[1].equals ("xml"))
 					layouts.add (new Layout (layout_source));
+			}
+		}
+
+		// Dealing with res/values, and res/values-v15*******
+		File resource_dir = new File(application_base, "res");
+		File[] values_dirs = resource_dir.listFiles(new FilenameFilter() {
+					@Override
+					public boolean accept(File dir, String name) {
+						logger.debug("file {}, string {} ", dir, name);
+						return name.equals("values") || name.equals("values-v15");
+					} 
+				});
+
+		logger.info("{} value dirs exist", values_dirs.length);
+
+		for(File values_dir : values_dirs) {
+			// Process .xml files in res/values
+			for (File value_source : values_dir.listFiles()) {
+				String[] name_ext = value_source.getName().split ("[.]", 2);
+				if (name_ext[1].equals ("xml")) {
+					process_values(new XmlFile(value_source.getPath()));
+				}
 			}
 		}
 
@@ -272,7 +297,8 @@ public class Resources {
            // the name automatically gets assigned during xml parsing
            String stringName = rString.name;
          
-           logger.info("\nAdding a string name to string value mapping: ({}:{})", stringName, stringValue);
+           logger.debug("Adding a string name to string value mapping: ({}:{})", 
+		   				stringName, stringValue);
            stringNameToRString.put(stringName, rString);
          }
        }
@@ -335,6 +361,7 @@ public class Resources {
 		for (SootClass clz : Scene.v().getClasses()) {
 			if (clz.isApplicationClass() & clz.getShortName().startsWith("R$")) {
 				String component = clz.getShortName().substring(2);
+				logger.debug("R component {} ", component);
 				for (SootField field : clz.getFields()) {
 					Integer value = new Integer(0);
 					
@@ -351,7 +378,7 @@ public class Resources {
 							logger.warn("resource_info.put({}, {}) ALREADY existed ", value, resource_value); 
 						}
 						else {
-							logger.info("ADDING resource_info.put({}, {}) ", value, resource_value); 
+							logger.debug("ADDING resource_info.put({}, {}) ", value, resource_value); 
 							resource_info.put(value, resource_value);
 						}
 					}

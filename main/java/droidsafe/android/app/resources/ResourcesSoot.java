@@ -469,8 +469,8 @@ public class ResourcesSoot {
 		Stmt afterIf = Jimple.v().newReturnStmt(localView);
 		units.add(afterIf);
 
-		// condition expression and statement
-		ConditionExpr condExpr = Jimple.v().newEqExpr(localView, NullConstant.v());
+		// condition expression and statement (not equal expr)
+		ConditionExpr condExpr = Jimple.v().newNeExpr(localView, NullConstant.v());
 
 		// condition statement
 		Stmt condStmt =  Jimple.v().newIfStmt(condExpr, afterIf);

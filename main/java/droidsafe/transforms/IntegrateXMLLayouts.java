@@ -91,11 +91,6 @@ public class IntegrateXMLLayouts extends BodyTransformer {
 
 			for (SootClass clz : Scene.v().getClasses()) {
 				if (Project.v().isSrcClass(clz.toString()) || Project.v().isLibClass(clz.toString())) {
-					// WE ONLY perform xml replacement on Activity's subclass as find
-					// if (!v.isActivitySubclass(clz)) {
-					// 	continue;
-					// }
-					logger.warn("{} is an ACTIVTY class ", clz.toString());
 					for (SootMethod meth : clz.getMethods()) {
 						if (meth.isConcrete())
 							v.transform(meth.retrieveActiveBody());
@@ -305,7 +300,7 @@ public class IntegrateXMLLayouts extends BodyTransformer {
 						if (findViewById.equals(resolved))  {
 							logger.info(String.format("Found findViewById(): %s\n", stmt));
 							//replacement ...
-							//replaceFindViewById(stmtBody, stmt);
+							replaceFindViewById(stmtBody, stmt);
 						}
 					}
 				}
