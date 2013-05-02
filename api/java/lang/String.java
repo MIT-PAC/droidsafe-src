@@ -75,4 +75,9 @@ public class String implements java.io.Serializable, Comparable<String>, CharSeq
         return s;
         */
     }
+	
+	@DSModeled(DSC.SAFE)
+	public static String valueOf(Object value) {
+		return value.toString();
+	}
 }
