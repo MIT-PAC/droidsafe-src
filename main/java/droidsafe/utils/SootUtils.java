@@ -791,7 +791,20 @@ public class SootUtils {
 		
 		return clazzes;
 	}
-	
+
+	/**
+	* removeNonstaticMethods:
+	*	remve all nonstatic methods.   
+	*/
+	public static void removeNonstaticMethods(SootClass clz) {
+		Iterator<SootMethod> methodIter = clz.getMethods().iterator();
+		while(methodIter.hasNext()) {
+			SootMethod method = methodIter.next();
+			if (!method.isStatic()) { 
+				clz.removeMethod(method);
+			}
+		}
+	}
 }
 
 
