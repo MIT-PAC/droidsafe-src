@@ -57,7 +57,10 @@ public class Config {
 	
 	public boolean DUMP_CALL_GRAPH = false;
 	
-	private static final String ANDROID_LIB_DIR_REL = "android-lib";
+  /** location of all android apps */
+  public static final String ANDROID_APP_DIR_REL = "android-apps";
+
+  private static final String ANDROID_LIB_DIR_REL = "android-lib";
 	/** location of configuration files */
 	public static final String SYSTEM_CLASSES_FILE = "config-files/system_class_files.txt";
 	public static final String SYSTEM_METHODS_FILE = "config-files/android-api-methods.txt";
@@ -193,7 +196,7 @@ public class Config {
 		    StatusPrinter.printInCaseOfErrorsOrWarnings(context);
 			
 		}
-		
+	 
 		APP_ROOT_DIR = getPathFromCWD(cmd.getOptionValue("approot"));
 		logger.info("approot: {}", APP_ROOT_DIR);
 	}

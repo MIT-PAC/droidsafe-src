@@ -1,0 +1,60 @@
+package droidsafe.test.attrModeling;
+
+import droidsafe.test.AppTestCase;
+
+import java.io.BufferedReader;
+import java.io.DataInputStream;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.InputStreamReader;
+import java.io.IOException;
+
+import java.util.ArrayList;
+
+import org.junit.Assert;
+import org.junit.Test;
+
+public class AttrModelingTestCase extends AppTestCase {
+
+//    super(System.getenv("APAC_HOME") + "/android-apps/tests/attr-modeling/IntentBasic1TestCase");
+//    this.wantedStrings.add("<modeled Intent #87> {action: <modeled string> {possible values: [android.intent.action.GET_CONTENT, some action]}} , type: <modeled string> {possible values: [some mimetype]}} , data: null, package: <modeled string> {possible values: [some package]}} }");
+
+//    super(System.getenv("APAC_HOME") + "/android-apps/tests/attr-modeling/IntentInvalidation1TestCase");
+//    this.wantedStrings.add("<modeled Intent #87> {invalidated}");
+
+
+  // Override this 
+  protected ArrayList<String> wantedStrings;
+
+	public AttrModelingTestCase(String appRoot) {
+    super(appRoot);
+    this.wantedStrings = new ArrayList<String>();
+  }
+  
+  @Test
+  public void testAttrModeling() throws Exception {
+    String log = this.appRoot + "/droidsafe/droidsafe.log";
+    try {
+      FileInputStream fstream = new FileInputStream(log);
+      DataInputStream in = new DataInputStream(fstream);
+      BufferedReader br = new BufferedReader(new InputStreamReader(in));
+
+      String strLine;
+      int count = 0;
+      while((strLine = br.readLine()) != null && count < wantedStrings.size()) {
+        for (String wantedString : this.wantedStrings) {
+          int startIndex = strLine.indexOf(wantedString);
+          if (startIndex != -1) {
+            count++;
+          }
+        }
+      }
+      Assert.assertTrue(wantedStrings.size() == count);
+
+    } catch(FileNotFoundException e) {
+      System.out.println("Could not find the log file at " + log);
+    } catch(IOException e) {
+      System.out.println("Had trouble reading the log file");
+    }
+  }
+}

@@ -5,6 +5,7 @@ import java.io.FileNotFoundException;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.PrintStream;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Iterator;
@@ -137,6 +138,13 @@ public class GeoPTA {
 	 */
 	public AllocNode getAllocNode(Object newExpr) {
 		return newToAllocNodeMap.get(newExpr);
+	}
+	
+	/**
+	 * Return a set of all allocnodes in the program.
+	 */
+	public Set<AllocNode> getAllAllocNodes() {
+		return Collections.unmodifiableSet(newToAllocNodeMap.values());
 	}
 	
 	/**
