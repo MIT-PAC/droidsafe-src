@@ -45,14 +45,11 @@ import soot.jimple.StmtBody;
 import soot.jimple.VirtualInvokeExpr;
 
 import soot.RefType;
-
 import soot.Scene;
-
 import soot.SootClass;
-
 import soot.SootField;
-
 import soot.SootMethod;
+import soot.Modifier;
 
 import soot.tagkit.ConstantValueTag;
 import soot.tagkit.IntegerConstantValueTag;
@@ -131,8 +128,6 @@ public class Resources {
   public static void resolveManifest(String rootDir)  {
 		try {
 			v = new Resources (new File (rootDir));
-			v.buildSootObjects();
-
 			// Dump manifest information
 			AndroidManifest am = v.manifest;
 			logger.info ("Manifest = {}\n", am.manifest);
@@ -186,6 +181,8 @@ public class Resources {
 					logger.warn("\nComponent class not defined in manifest, please add to manifest: {}\n", clazz);
 				}
 			}		
+
+			v.buildSootObjects();
 			
 			v.resolved = true;
 		} catch (Exception e) {
@@ -200,7 +197,7 @@ public class Resources {
 
 		resource_info = HashBiMap.create();
 
-		logger.warn("Resources(): " + application_base.toString());
+		logger.info("Resources(): " + application_base.toString());
 
 		// Get the manifest and read it
 		File manifest_file = new File (application_base, "AndroidManifest.xml");
@@ -208,6 +205,9 @@ public class Resources {
 		manifest = new AndroidManifest (manifest_file);
 		package_name = manifest.manifest.package_name;
 
+		//Take care of "res/layout" folder
+		//TODO: dealing with different layout flavors???
+		logger.info("processing res/layout");
 		File layout_dir = new File (application_base, "res/layout");
 		if (layout_dir.exists()) {
 			for (File layout_source : layout_dir.listFiles()) {
@@ -217,6 +217,28 @@ public class Resources {
 				// logger.info ("name/ext = {}/{}", name_ext[0], name_ext[1]);
 				if (name_ext[1].equals ("xml"))
 					layouts.add (new Layout (layout_source));
+			}
+		}
+
+		// Dealing with res/values, and res/values-v15*******
+		File resource_dir = new File(application_base, "res");
+		File[] values_dirs = resource_dir.listFiles(new FilenameFilter() {
+					@Override
+					public boolean accept(File dir, String name) {
+						logger.debug("file {}, string {} ", dir, name);
+						return name.equals("values") || name.equals("values-v15");
+					} 
+				});
+
+		logger.info("{} value dirs exist", values_dirs.length);
+
+		for(File values_dir : values_dirs) {
+			// Process .xml files in res/values
+			for (File value_source : values_dir.listFiles()) {
+				String[] name_ext = value_source.getName().split ("[.]", 2);
+				if (name_ext[1].equals ("xml")) {
+					process_values(new XmlFile(value_source.getPath()));
+				}
 			}
 		}
 
@@ -272,7 +294,8 @@ public class Resources {
            // the name automatically gets assigned during xml parsing
            String stringName = rString.name;
          
-           logger.info("\nAdding a string name to string value mapping: ({}:{})", stringName, stringValue);
+           logger.debug("Adding a string name to string value mapping: ({}:{})", 
+		   				stringName, stringValue);
            stringNameToRString.put(stringName, rString);
          }
        }
@@ -335,7 +358,30 @@ public class Resources {
 		for (SootClass clz : Scene.v().getClasses()) {
 			if (clz.isApplicationClass() & clz.getShortName().startsWith("R$")) {
 				String component = clz.getShortName().substring(2);
+				logger.info("R component {} ", component);
+
+				//Remove nonstatic method inside a static class
+				//Resources R$xyz is a static class and it SHOULD NOT have any non static method
+
+				Iterator<SootMethod> methodIter = clz.getMethods().iterator();
+				while(methodIter.hasNext()) {
+					SootMethod method = methodIter.next();
+					//if (!method.isStatic() && Modifier.isStatic(clz.getModifiers())) {
+					if (!method.isStatic()) { 
+						logger.info("Removing nonstatic method: {} ", method);
+						clz.removeMethod(method);
+					}
+				}
+
+				// SootMethod initMethod = clz.getMethod("void <init>()");
+				// if (initMethod != null) {
+				// 	logger.warn("Emptying <init> for {} ", component);
+				// 	StmtBody body = (StmtBody) initMethod.getActiveBody();
+				// 	body.getUnits().clear();
+				// }
+
 				for (SootField field : clz.getFields()) {
+					logger.info("field : {} ", field);
 					Integer value = new Integer(0);
 					
 					Tag tag = field.getTag("IntegerConstantValueTag");

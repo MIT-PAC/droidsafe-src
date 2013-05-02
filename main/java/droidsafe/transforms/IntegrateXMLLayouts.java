@@ -28,6 +28,7 @@ import soot.SootField;
 import soot.Value;
 import soot.NullType;
 import soot.jimple.NullConstant;
+import soot.SootMethodRef; 
 
 import soot.jimple.InstanceInvokeExpr;
 import soot.jimple.InvokeExpr;
@@ -39,6 +40,7 @@ import soot.jimple.FieldRef;
 import soot.jimple.spark.pag.AllocNode;
 import soot.jimple.Jimple;
 import soot.jimple.NewExpr;
+import soot.jimple.Expr;
 import soot.jimple.StringConstant;
 
 import soot.jimple.internal.JimpleLocalBox;
@@ -65,9 +67,14 @@ public class IntegrateXMLLayouts extends BodyTransformer {
 		
 		private SootMethod findViewById;
 		private SootMethod setContentView;
+		private SootClass  activityClass;
+		private SootClass  javaObjClass;
 		
 		public IntegrateXMLLayouts() {
-			findViewById = Scene.v().getMethod("<android.app.Activity: android.view.View findViewById(int)>");
+			findViewById  =  Scene.v().getMethod("<android.app.Activity: android.view.View findViewById(int)>");
+			activityClass =  Scene.v().getSootClass("android.app.Activity");
+			javaObjClass  =  Scene.v().getSootClass("java.lang.Object");
+
 			// setContentView = Scene.v().getMethod("<android.app.Activity: void setContentView(int)>");
 			//dumpActivities();
 		}
@@ -92,6 +99,21 @@ public class IntegrateXMLLayouts extends BodyTransformer {
 					}
 				}
 			}
+		}
+
+		/**
+		*
+		*/
+		protected boolean isActivitySubclass(SootClass sootClass) {
+			SootClass parentClass = sootClass.getSuperclass();
+
+			while (parentClass != javaObjClass) {
+				if (parentClass == activityClass)
+					return true;
+
+				parentClass = parentClass.getSuperclass();
+			}
+			return false;
 		}
 
 		// debug function
@@ -212,28 +234,45 @@ public class IntegrateXMLLayouts extends BodyTransformer {
 				return;
 			}
 
+			Integer intId = new Integer(immediateBox.getValue().toString());
+
 			// if the object is not in ResourcesSoot, added code to create one,
 			// else just use the lookup
-			Integer intId = new Integer(immediateBox.getValue().toString());
-			SootField sf = ResourcesSoot.v().getView(intId);
-			if (sf == null) {
-				String localIdName = "textView_" + intId;
-				Local arg = Jimple.v().newLocal(localIdName, RefType.v("android.widget.TextView"));
-				stmtBody.getLocals().add(arg);
+			// 
+			// SootField sf = ResourcesSoot.v().getView(intId);
+			// if (sf == null) {
+			// 	String localIdName = "textView_" + intId;
+			// 	Local arg = Jimple.v().newLocal(localIdName, RefType.v("android.widget.TextView"));
+			// 	stmtBody.getLocals().add(arg);
 
-				Chain<Unit> newUnits =  ResourcesSoot.v().createView(
-						intId, localBox.getValue(), arg); 
+			// 	Chain<Unit> newUnits =  ResourcesSoot.v().createView(
+			// 			intId, localBox.getValue(), arg); 
 
-				units.insertBefore(newUnits, stmt);
+			// 	units.insertBefore(newUnits, stmt);
 
-				sf = ResourcesSoot.v().getView(intId);
+			// 	sf = ResourcesSoot.v().getView(intId);
+			// }
+
+			// //creating rx = getView(intId) to replace rx=findViewById()
+			// FieldRef  fieldRef = Jimple.v().newStaticFieldRef(sf.makeRef());
+			// Stmt lookupStmt = Jimple.v().newAssignStmt(variableBox.getValue(), fieldRef); 
+
+			SootMethod getViewMethod = ResourcesSoot.v().lookupGetView_ID(intId);
+
+			if (getViewMethod == null) {
+				logger.warn("No replacing code available for {} ", stmt);
+				return;
 			}
 
-			//creating rx = getView(intId) to replace rx=findViewById()
-			FieldRef  fieldRef = Jimple.v().newStaticFieldRef(sf.makeRef());
-			Stmt lookupStmt = Jimple.v().newAssignStmt(variableBox.getValue(), fieldRef); 
+			SootMethodRef methodRef = getViewMethod.makeRef();
+
+			Expr invokeExpr = Jimple.v().newStaticInvokeExpr(getViewMethod.makeRef(), localBox.getValue()); 
+			Stmt lookupStmt = Jimple.v().newAssignStmt(variableBox.getValue(), invokeExpr);
 
 			units.swapWith(stmt, lookupStmt);
+
+			// units.insertAfter(
+			// 	Jimple.v().newAssignStmt(variableBox.getValue(), tmpView), lookupStmt); 
 
 			logger.info("replacing {} ", stmt);
 			logger.info("with {} ", lookupStmt);
