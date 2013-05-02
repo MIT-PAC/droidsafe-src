@@ -359,7 +359,8 @@ public class Resources {
 		// for (SootClass clz : Scene.v().getClasses()) {
 		for (SootClass clz : Scene.v().getApplicationClasses()) {
 
-			if (clz.getShortName().equals("BuildConfig")) {
+			String shortName = clz.getShortName();
+			if (shortName.equals("BuildConfig") || shortName.equals("R")) {
 				SootUtils.removeNonstaticMethods(clz);
 				continue;
 			}
