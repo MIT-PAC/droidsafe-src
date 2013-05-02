@@ -91,6 +91,16 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
 	        onDraw(new Canvas());
 	    }
 		
+		public View(Context context, AttributeSet attrs) {
+	        this(context, attrs, 0);
+	    }
+		
+		@DSModeled(DSC.SAFE)
+		public View(Context context, AttributeSet attrs, int defStyle) {
+	        this(context); //Taint tracked in secondary constructor
+	        /* Function largely just performs initialization */
+		}
+		
 		public interface OnClickListener {
 			void onClick(View v);
 		}
