@@ -45,14 +45,11 @@ import soot.jimple.StmtBody;
 import soot.jimple.VirtualInvokeExpr;
 
 import soot.RefType;
-
 import soot.Scene;
-
 import soot.SootClass;
-
 import soot.SootField;
-
 import soot.SootMethod;
+import soot.Modifier;
 
 import soot.tagkit.ConstantValueTag;
 import soot.tagkit.IntegerConstantValueTag;
@@ -362,7 +359,29 @@ public class Resources {
 			if (clz.isApplicationClass() & clz.getShortName().startsWith("R$")) {
 				String component = clz.getShortName().substring(2);
 				logger.info("R component {} ", component);
+
+				//Remove nonstatic method inside a static class
+				//Resources R$xyz is a static class and it SHOULD NOT have any non static method
+
+				Iterator<SootMethod> methodIter = clz.getMethods().iterator();
+				while(methodIter.hasNext()) {
+					SootMethod method = methodIter.next();
+					//if (!method.isStatic() && Modifier.isStatic(clz.getModifiers())) {
+					if (!method.isStatic()) { 
+						logger.info("Removing nonstatic method: {} ", method);
+						clz.removeMethod(method);
+					}
+				}
+
+				// SootMethod initMethod = clz.getMethod("void <init>()");
+				// if (initMethod != null) {
+				// 	logger.warn("Emptying <init> for {} ", component);
+				// 	StmtBody body = (StmtBody) initMethod.getActiveBody();
+				// 	body.getUnits().clear();
+				// }
+
 				for (SootField field : clz.getFields()) {
+					logger.info("field : {} ", field);
 					Integer value = new Integer(0);
 					
 					Tag tag = field.getTag("IntegerConstantValueTag");
