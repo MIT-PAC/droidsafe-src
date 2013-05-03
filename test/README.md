@@ -1,12 +1,14 @@
 Testing Droidsafe
 ================
 
-Everyone should run the **run-regression-tests** target on their code and make sure it passes before merging back into master.
-It takes about 20 minutes for it to finish. If you would like it to run faster, then focus in on a specific subset of *android-apps*
+Basics
+------
+Run *ant run-regression-tests* from the project root and make sure it passes before merging your changes into master.  
+It will take about 20 minutes. If you would like it to run faster, then focus in on a specific subset of *android-apps*
 by specifying the *-Ddir.to.search* property.
 
-Ant Commands
-------------
+All Ant Commands
+----------------
 
 Each target can be run from the root of the repository using **ant** *target*
 
@@ -20,3 +22,10 @@ Each target can be run from the root of the repository using **ant** *target*
 * **run-regression-tests** - runs all JUnit tests under tests/java/droidsafe/test/regression
     - *-Ddir.to.search* - directory inside */android-apps/* to which to limit the app search to when running SpecdumpTest
 * **update-specdump-regression-values** - updates the regression values using the results from the latest run of 'run-specdump-tests'
+
+Regression Test Details
+-----------------------
+
+Currently the only regression test that there is is SpecdumpRegressionTestCase. This is the only test that gets run when you run *ant run-regression-tests*. Here is how it works -  
+The test starts by looking at looking at the latest SpecdumpTestCase report in */test-reports/*.
+If a test-case (specdump for a single app) fails, then the test makes sure it was supposed to fail by looking at the value in the app's Makefile.
