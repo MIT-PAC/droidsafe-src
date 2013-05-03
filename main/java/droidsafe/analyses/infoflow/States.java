@@ -12,13 +12,12 @@ import java.util.TreeMap;
 import soot.Local;
 import soot.SootClass;
 import soot.SootField;
-import soot.jimple.Constant;
 import soot.jimple.ParameterRef;
 import soot.jimple.spark.pag.AllocNode;
 import soot.jimple.toolkits.callgraph.Edge;
 
 public class States {
-    private DefaultHashMap<Edge, FrameRootsHeapStatics> contextToFrameRootsHeapStatics;
+    private final DefaultHashMap<Edge, FrameRootsHeapStatics> contextToFrameRootsHeapStatics;
 
     private static final FrameRootsHeapStatics emptyFrameRootsHeapStatics = new FrameRootsHeapStatics();
 
@@ -65,6 +64,7 @@ public class States {
         return contextToFrameRootsHeapStatics.values();
     }
 
+    @Override
     public boolean equals(Object that) {
         if (that instanceof States) {
             return contextToFrameRootsHeapStatics.equals(((States)that).contextToFrameRootsHeapStatics);
@@ -83,6 +83,7 @@ public class States {
         return states;
     }
 
+    @Override
     public String toString() {
         StringBuffer str = new StringBuffer();
         str.append('{');
@@ -127,6 +128,7 @@ class FrameRootsHeapStatics {
         return new FrameRootsHeapStatics(this.frame.merge(that.frame), roots, this.heap.merge(that.heap), this.statics.merge(that.statics));
     }
 
+    @Override
     public boolean equals(Object that) {
         if (that instanceof FrameRootsHeapStatics) {
             FrameRootsHeapStatics frameRootsHeapStatics = (FrameRootsHeapStatics)that;
@@ -142,6 +144,7 @@ class FrameRootsHeapStatics {
         return new FrameRootsHeapStatics(this.frame.subtract(that.frame), roots, this.heap.subtract(that.heap), this.statics.subtract(that.statics));
     }
 
+    @Override
     public String toString() {
         return "(" + frame + ",\\l " + roots + ",\\l " + heap + ",\\l " + statics + ")";
     }
@@ -154,10 +157,12 @@ class Frame {
             super(param.getType(), param.getIndex());
         }
 
+        @Override
         public boolean equals(Object that) {
             return equivTo(that);
         }
 
+        @Override
         public int hashCode() {
             return equivHashCode();
         }
@@ -274,6 +279,7 @@ class Frame {
         return roots;
     }
 
+    @Override
     public boolean equals(Object that) {
         if (that instanceof Frame) {
             Frame frame = (Frame)that;
@@ -328,16 +334,19 @@ class Frame {
         return frame;
     }
 
+    @Override
     public String toString() {
         Comparator<Local> localComparator = new Comparator<Local>() {
+            @Override
             public int compare(Local local1, Local local2) {
                 return local1.getName().compareTo(local2.getName());
             }
-            
+
         };
         TreeMap<Local, Set<MyValue>> sortedLocals = new TreeMap<Local, Set<MyValue>>(localComparator);
         sortedLocals.putAll(locals);
         Comparator<MyParameterRef> paramComparator = new Comparator<MyParameterRef>() {
+            @Override
             public int compare(MyParameterRef param1, MyParameterRef param2) {
                 return param1.getIndex() - param2.getIndex();
             }
@@ -389,6 +398,7 @@ class Heap {
         return heap;
     }
 
+    @Override
     public boolean equals(Object that) {
         if (that instanceof Heap) {
             Heap heap = (Heap)that;
@@ -402,6 +412,7 @@ class Heap {
         return new Heap(this.instances.subtract(that.instances), this.arrays.subtract(that.arrays));
     }
 
+    @Override
     public String toString() {
         return "(" + instances + ", " + arrays + ")";
     }
@@ -442,7 +453,7 @@ class Heap {
 }
 
 class Instances {
-    private DefaultHashMap<Address, DefaultHashMap<SootField, Set<MyValue>>> addressToFieldToValues;
+    private final DefaultHashMap<Address, DefaultHashMap<SootField, Set<MyValue>>> addressToFieldToValues;
 
     private static final Set<MyValue> emptyValues = new HashSet<MyValue>();
     private static final DefaultHashMap<SootField, Set<MyValue>> emptyFieldToValues = new DefaultHashMap<SootField, Set<MyValue>>(emptyValues);
@@ -513,6 +524,7 @@ class Instances {
         return addressToFieldToValues.entrySet();
     }
 
+    @Override
     public boolean equals(Object that) {
         if (that instanceof Instances) {
             return this.addressToFieldToValues.equals(((Instances)that).addressToFieldToValues);
@@ -562,13 +574,14 @@ class Instances {
         return instances;
     }
 
+    @Override
     public String toString() {
         return new TreeMap<Address, DefaultHashMap<SootField, Set<MyValue>>>(addressToFieldToValues).toString();
     }
 }
 
 class Arrays {
-    private DefaultHashMap<Address, Set<MyValue>> addressToValues;
+    private final DefaultHashMap<Address, Set<MyValue>> addressToValues;
 
     private static final Set<MyValue> emptyValues = new HashSet<MyValue>();
 
@@ -621,6 +634,7 @@ class Arrays {
         return addressToValues.entrySet();
     }
 
+    @Override
     public boolean equals(Object that) {
         if (that instanceof Arrays) {
             return this.addressToValues.equals(((Arrays)that).addressToValues);
@@ -654,13 +668,14 @@ class Arrays {
         return arrays;
     }
 
+    @Override
     public String toString() {
         return new TreeMap<Address, Set<MyValue>>(addressToValues).toString();
     }
 }
 
 class Statics {
-    private DefaultHashMap<SootClass, DefaultHashMap<SootField, Set<MyValue>>> classToFieldToValues;
+    private final DefaultHashMap<SootClass, DefaultHashMap<SootField, Set<MyValue>>> classToFieldToValues;
 
     private static final Set<MyValue> emptyValues = new HashSet<MyValue>();
     private static final DefaultHashMap<SootField, Set<MyValue>> emptyFieldToValues = new DefaultHashMap<SootField, Set<MyValue>>(emptyValues);
@@ -738,6 +753,7 @@ class Statics {
         return roots;
     }
 
+    @Override
     public boolean equals(Object that) {
         if (that instanceof Statics) {
             return this.classToFieldToValues.equals(((Statics)that).classToFieldToValues);
@@ -787,8 +803,10 @@ class Statics {
         return statics;
     }
 
+    @Override
     public String toString() {
         Comparator<SootClass> classComparator = new Comparator<SootClass>() {
+            @Override
             public int compare(SootClass class1, SootClass class2) {
                 return class1.getShortName().compareTo(class2.getShortName());
             }
@@ -799,37 +817,13 @@ class Statics {
     }
 }
 
-abstract class MyValue {
+interface MyValue {
 }
 
-class MyConstant extends MyValue {
-    private Constant constant;
-
-    MyConstant(Constant constant) {
-        this.constant = constant;
-    }
-
-    public boolean equals(Object that) {
-        if (that instanceof MyConstant) {
-            return constant.equivTo(((MyConstant)that).constant);
-        } else {
-            return false;
-        }
-    }
-
-    public int hashCode() {
-        return constant.equivHashCode();
-    }
-
-    public String toString() {
-        return constant.toString();
-    }
-}
-
-class Address extends MyValue implements Comparable<Address> {
+class Address implements MyValue, Comparable<Address> {
     private static Map<AllocNode, Address> allocNodeToAddress = new HashMap<AllocNode, Address>();
 
-    private AllocNode allocNode;
+    private final AllocNode allocNode;
 
     private Address(AllocNode allocNode) {
         this.allocNode = allocNode;
@@ -844,6 +838,7 @@ class Address extends MyValue implements Comparable<Address> {
         return address;
     }
 
+    @Override
     public boolean equals(Object that) {
         if (that instanceof Address) {
             return allocNode.equals(((Address)that).allocNode);
@@ -852,14 +847,17 @@ class Address extends MyValue implements Comparable<Address> {
         }
     }
 
+    @Override
     public int hashCode() {
         return allocNode.hashCode();
     }
 
+    @Override
     public String toString() {
         return allocNode.toString();
     }
 
+    @Override
     public int compareTo(Address that) {
         return allocNode.toString().compareTo(that.allocNode.toString());
     }

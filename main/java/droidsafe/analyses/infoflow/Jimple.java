@@ -1,6 +1,7 @@
 package droidsafe.analyses.infoflow;
 
 import soot.Local;
+import soot.jimple.AbstractExprSwitch;
 import soot.jimple.AbstractJimpleValueSwitch;
 import soot.jimple.AddExpr;
 import soot.jimple.AndExpr;
@@ -15,6 +16,7 @@ import soot.jimple.CmplExpr;
 import soot.jimple.Constant;
 import soot.jimple.DivExpr;
 import soot.jimple.DoubleConstant;
+import soot.jimple.DynamicInvokeExpr;
 import soot.jimple.EqExpr;
 import soot.jimple.FloatConstant;
 import soot.jimple.GeExpr;
@@ -54,15 +56,19 @@ import soot.jimple.XorExpr;
 // variable = array_ref | instance_field_ref | static_field_ref | local;
 abstract class MyAbstractVariableSwitch extends AbstractJimpleValueSwitch {
     // variable = array_ref | ...;
+    @Override
     abstract public void caseArrayRef(ArrayRef v);
 
     // variable = ... | instance_field_ref | ...;
+    @Override
     abstract public void caseInstanceFieldRef(InstanceFieldRef v);
 
     // variable = ... | static_field_ref | ...;
+    @Override
     abstract public void caseStaticFieldRef(StaticFieldRef v);
 
     // variable = ... | local;
+    @Override
     abstract public void caseLocal(Local v);
 
     @Override
@@ -75,6 +81,7 @@ abstract class MyAbstractVariableSwitch extends AbstractJimpleValueSwitch {
 // rvalue = array_ref | constant | expr | instance_field_ref | local | next_next_stmt_address | static_field_ref;
 abstract class MyAbstractRValueSwitch extends AbstractJimpleValueSwitch {
     // rvalue = array_ref | ...;
+    @Override
     abstract public void caseArrayRef(ArrayRef v);
 
     // rvalue = ... | constant | double_constant | float_constant | int_constant | long_constant | string_constant | null_constant;
@@ -87,10 +94,12 @@ abstract class MyAbstractRValueSwitch extends AbstractJimpleValueSwitch {
 
     // rvalue = ... | expr | ...;
     // expr = ... | cast_expr | ...;
+    @Override
     abstract public void caseCastExpr(CastExpr v);
 
     // rvalue = ... | expr | ...;
     // expr = ... | instance_of_expr | ...;
+    @Override
     abstract public void caseInstanceOfExpr(InstanceOfExpr v);
 
     // rvalue = ... | expr | ...;
@@ -101,14 +110,17 @@ abstract class MyAbstractRValueSwitch extends AbstractJimpleValueSwitch {
 
     // rvalue = ... | expr | ...;
     // expr = ... | new_array_expr | ...;
+    @Override
     abstract public void caseNewArrayExpr(NewArrayExpr v);
 
     // rvalue = ... | expr | ...;
     // expr = ... | new_expr | ...;
+    @Override
     abstract public void caseNewExpr(NewExpr newExpr);
 
     // rvalue = ... | expr | ...;
     // expr = ... | new_multi_array_expr | ...;
+    @Override
     abstract public void caseNewMultiArrayExpr(NewMultiArrayExpr v);
 
     // rvalue = ... | expr | ...;
@@ -117,12 +129,15 @@ abstract class MyAbstractRValueSwitch extends AbstractJimpleValueSwitch {
     abstract public void caseUnopExpr(UnopExpr unopExpr);
 
     // rvalue = ... | instance_field_ref | ...;
+    @Override
     abstract public void caseInstanceFieldRef(InstanceFieldRef v);
 
     // rvalue = ... | local | ...;
+    @Override
     abstract public void caseLocal(Local v);
 
     // rvalue = ... | static_field_ref;
+    @Override
     abstract public void caseStaticFieldRef(StaticFieldRef v);
 
     @Override
@@ -304,6 +319,7 @@ abstract class MyAbstractImmediateSwitch extends AbstractJimpleValueSwitch {
     abstract public void caseConstant(Constant v);
 
     // immediate = ... | local;
+    @Override
     abstract public void caseLocal(Local v);
 
     @Override
@@ -351,16 +367,49 @@ abstract class MyAbstractImmediateSwitch extends AbstractJimpleValueSwitch {
 // identity_value = caught_exception_ref | parameter_ref | this_ref;
 abstract class MyAbstractIdentityValueSwitch extends AbstractJimpleValueSwitch {
     // identity_value = caught_exception_ref | ...;
+    @Override
     abstract public void caseCaughtExceptionRef(CaughtExceptionRef v);
 
     // identity_value = ... | parameter_ref | ...;
+    @Override
     abstract public void caseParameterRef(ParameterRef v);
 
     // identity_value = ... | this_ref;
+    @Override
     abstract public void caseThisRef(ThisRef v);
 
+    @Override
     final public void defaultCase(Object v) {
         // This should not happen
         throw new RuntimeException(v.toString());
+    }
+}
+
+// invoke_exrp = interface_invoke_expr | special_invoke_expr | static_invoke_expr | virtual_invoke_expr | dynamic_invoke_expr;
+abstract class MyAbstractInvokeExprSwitch extends AbstractExprSwitch {
+    // invoke_expr = interface_invoke_expr | ...
+    @Override
+    abstract public void caseInterfaceInvokeExpr(InterfaceInvokeExpr e);
+
+    // invoke_expr = ... | special_invoke_expr | ...
+    @Override
+    abstract public void caseSpecialInvokeExpr(SpecialInvokeExpr e);
+
+    // invoke_expr = ... | static_invoke_expr | ...
+    @Override
+    abstract public void caseStaticInvokeExpr(StaticInvokeExpr e);
+
+    // invoke_expr = ... | virtual_invoke_expr
+    @Override
+    abstract public void caseVirtualInvokeExpr(VirtualInvokeExpr e);
+
+    // invoke_expr = ... | dynamic_invoke_expr;
+    @Override
+    abstract public void caseDynamicInvokeExpr(DynamicInvokeExpr e);
+
+    @Override
+    final public void defaultCase(Object e) {
+        // This should not happen
+        throw new RuntimeException(e.toString());
     }
 }
