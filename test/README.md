@@ -7,6 +7,8 @@ Run *ant run-regression-tests* from the project root and make sure it passes bef
 It will take about 20 minutes. If you would like it to run faster, then focus in on a specific subset of *android-apps*
 by specifying the *-Ddir.to.search* property.
 
+If the test fails, then look at the generated test report in *$APAC_HOME/test-reports/regression/* and see which app failed to debug it further. If the failure is not because of a timeout, then try running *make specdump* from the project root and see if your changes cause whatever exception is thrown.
+
 All Ant Commands
 ----------------
 
