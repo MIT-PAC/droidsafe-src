@@ -6,7 +6,7 @@ import droidsafe.helpers.DSTaintObject;
 
 public class String implements java.io.Serializable, Comparable<String>, CharSequence {
 	
-	private DSTaintObject taint = new DSTaintObject();
+	private static DSTaintObject taint = new DSTaintObject();
 	
 	@DSModeled(DSC.SAFE)
 	public String() {
@@ -40,6 +40,7 @@ public class String implements java.io.Serializable, Comparable<String>, CharSeq
     }
 
 	@Override
+	@DSModeled(DSC.SAFE)
 	public char charAt(int index) {
 		// TODO Auto-generated method stub
 		return 0;
@@ -62,7 +63,9 @@ public class String implements java.io.Serializable, Comparable<String>, CharSeq
         //return new String(data, 0, data.length);
     }
 	
+	@DSModeled(DSC.SAFE)
 	public static String valueOf(char value) {
+		taint.addTaint(value);
 		return new String();
 		/*
         String s;
@@ -78,6 +81,7 @@ public class String implements java.io.Serializable, Comparable<String>, CharSeq
 	
 	@DSModeled(DSC.SAFE)
 	public static String valueOf(Object value) {
-		return value.toString();
+		taint.addTaint(value);
+		return new String();
 	}
 }
