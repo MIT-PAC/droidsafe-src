@@ -19,6 +19,7 @@ package android.view;
 import droidsafe.annotations.*;
 import droidsafe.helpers.*;
 
+import android.app.ContextImpl;
 import android.content.Context;
 import android.content.ContextWrapper;
 import android.content.res.Resources;
@@ -33,7 +34,7 @@ public class ContextThemeWrapper extends ContextWrapper {
    
     @DSModeled
     public ContextThemeWrapper() {
-        super(null);
+        super(new ContextImpl());
     }
     
     public ContextThemeWrapper(Context base, int themeres) {
