@@ -135,6 +135,8 @@ public class ResourcesSoot {
     private SootMethod mSetActivityMethod; 
     private JimpleBody mClinitBody;
     private SootField  mActivityField;
+	private SootClass  mViewClass;
+	private SootClass  mTextViewClass;
 
     private HashMap<Integer, UISootObject> uiObjectTable; 
 
@@ -150,6 +152,9 @@ public class ResourcesSoot {
 
         mActivityField = new SootField("currentActivity", RefType.v("android.app.Activity"), Modifier.PUBLIC | Modifier.STATIC);
         mSootClass.addField(mActivityField);
+
+		mViewClass     = Scene.v().getSootClass("android.view.View");
+		mTextViewClass = Scene.v().getSootClass("android.widget.TextView");
     }
 
     // setup 
@@ -173,6 +178,9 @@ public class ResourcesSoot {
         //  addClinitMethod();
         // }
 
+		if(strId == null || type == null || text == null) {
+			logger.warn("type:{}, id:{}, text:{}", type, strId, text);
+		}
         Integer id = numericToStringIDMap.inverse().get(strId);
         logger.info("lookup id {} => {} ", strId, id);
         if (uiObjectTable.get(id) == null) {
@@ -192,12 +200,18 @@ public class ResourcesSoot {
         logger.info("calling createViewMember {}) ", intId.toString());
         UISootObject obj = uiObjectTable.get(intId);    
         if (obj == null) {
-            logger.warn("Object for id {} info does is not available", intId);
+            logger.warn("Object for id {} info is not available", intId);
             return; 
         }
 
         String   idName    = makeIdName(obj.type, obj.numericId); 
         String   className = makeClassName(obj.type);
+
+		if (className == null) {
+            logger.warn("Cannot resolve class {} ", obj.type);
+			return;
+		}
+
         RefType  classType = RefType.v(className); 
 
         // step 1: create sootfield for member variable
@@ -234,6 +248,11 @@ public class ResourcesSoot {
             logger.warn("Object for id {} does not exist ", intId);
             return;
         }
+		if (obj.sootField == null)  {
+            logger.warn("No sootfield previously created ");;
+			return;
+		}
+
         List params = new LinkedList<Type>();
         params.add(RefType.v("android.app.Activity"));
 
@@ -283,20 +302,22 @@ public class ResourcesSoot {
 
         units.add(Jimple.v().newAssignStmt(localView, newExpr));
 
-        SootMethod textViewInitMethod = 
+        SootMethod viewInitMethod = 
                     Scene.v().getMethod(
                         String.format("<%s: void <init>(android.content.Context)>", 
                             returnType.toString()));
 
         units.add(Jimple.v().newInvokeStmt(
-                    Jimple.v().newVirtualInvokeExpr(localView, textViewInitMethod.makeRef(), 
+                    Jimple.v().newVirtualInvokeExpr(localView, viewInitMethod.makeRef(), 
                                 argActivity))); 
 
-        SootMethod setTextMethod = Scene.v().getMethod("<android.widget.TextView: void setText(java.lang.CharSequence)>");
+		if (SootUtils.checkAncestor(returnType.getSootClass(), mTextViewClass)) {
+			SootMethod setTextMethod = Scene.v().getMethod("<android.widget.TextView: void setText(java.lang.CharSequence)>");
 
-        units.add(Jimple.v().newInvokeStmt(
-                    Jimple.v().newVirtualInvokeExpr(localView, setTextMethod.makeRef(), 
-                        StringConstant.v(obj.text)))); 
+			units.add(Jimple.v().newInvokeStmt(
+						Jimple.v().newVirtualInvokeExpr(localView, setTextMethod.makeRef(), 
+							StringConstant.v(obj.text)))); 
+		}
 
         units.add(Jimple.v().newAssignStmt(fieldRef, localView));
          
@@ -344,7 +365,29 @@ public class ResourcesSoot {
         String name = className;
 
         StringBuilder builder = new StringBuilder("android.widget");
-        return builder.append(".").append(name).toString();
+        String fullName = builder.append(".").append(name).toString();
+
+		logger.info("Trying to locatate {} class ", fullName);
+		if (Scene.v().containsClass(fullName))
+		{
+			logger.info("Found class {} ", fullName);
+			return fullName;
+		}
+
+		logger.info("class {} NOT Found ", fullName);
+		logger.info("Trying to match class {} NOT Found ", className);
+
+		// Now we are trying to match
+		List<SootClass> classes = SootUtils.matchShortName(name);
+
+		for (SootClass sootClass: classes) {
+			logger.info("matching {} ", sootClass);
+			if (SootUtils.checkAncestor(sootClass, mViewClass)) {
+				logger.info("soot class {} is a view ", sootClass);
+				return sootClass.toString();
+			}
+		}
+		return null;
     }
 
     /**
@@ -444,6 +487,12 @@ public class ResourcesSoot {
         String   idName    = makeIdName(obj.type, obj.numericId); 
         String   localIdName = "tmp" + idName;
         String   className = makeClassName(obj.type);
+
+		if (className == null) {
+			logger.warn("Cannot resolve type {} ", obj.type);
+			return;
+		}
+
         RefType  classType = RefType.v(className); 
 
         Chain units = mClinitBody.getUnits();
@@ -538,7 +587,7 @@ public class ResourcesSoot {
 
         UISootObject obj = uiObjectTable.get(intId);    
         if (obj == null) {
-            logger.warn("Object for id {} info does is not available", intId);
+            logger.warn("Object for id {} info is not available", intId);
             return null; 
         }
 

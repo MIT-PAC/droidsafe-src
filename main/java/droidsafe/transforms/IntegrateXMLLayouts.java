@@ -101,9 +101,133 @@ public class IntegrateXMLLayouts extends BodyTransformer {
 			}
 		}
 
+		void replaceFindViewById(StmtBody stmtBody, Stmt stmt) {
+
+			// get body's unit as a chain
+			Chain units = stmtBody.getUnits();
+
+			List<ValueBox> boxList = stmt.getUseAndDefBoxes();
+			Iterator<ValueBox> it = boxList.iterator();
+
+			ValueBox localBox = null;
+			ValueBox immediateBox = null;
+			ValueBox variableBox = null;
+
+			while(it.hasNext()) {
+				ValueBox curBox = it.next();
+				/* using internal type is not ideal, but seems easiest */
+				if (curBox instanceof JimpleLocalBox) {
+					localBox = curBox; 
+					logger.debug("localBox {} {}",
+							curBox.getValue().toString(),
+							curBox.getValue().getType().toString()
+							);
+
+				}
+
+				if (curBox instanceof ImmediateBox) {
+					immediateBox = curBox;
+					logger.debug("immediateBox {} {}",
+							curBox.getValue().toString(),
+							curBox.getValue().toString(),
+							curBox.getValue().getType().toString()
+							);
+				}
+
+				if (curBox instanceof VariableBox) {
+					variableBox = curBox;
+					logger.debug("variableBox {} {}",
+							curBox.getValue().toString(),
+							curBox.getValue().getType().toString());
+				}
+
+				logger.debug("variableBox {}:{}:{}",
+						curBox.getValue().getType().toString(),
+						curBox.toString(),
+						curBox.getValue().toString());
+
+			}
+
+			if (localBox == null || immediateBox == null || variableBox == null) {
+				logger.warn("Couldnot get boxes for replacement "); 
+				return;
+			}
+
+			Integer intId = new Integer(immediateBox.getValue().toString());
+
+			SootMethod getViewMethod = ResourcesSoot.v().lookupGetView_ID(intId);
+
+			if (getViewMethod == null) {
+				logger.warn("No replacing code available for {} ", stmt);
+				return;
+			}
+
+			SootMethodRef methodRef = getViewMethod.makeRef();
+
+			Expr invokeExpr = Jimple.v().newStaticInvokeExpr(getViewMethod.makeRef(), localBox.getValue()); 
+			Stmt lookupStmt = Jimple.v().newAssignStmt(variableBox.getValue(), invokeExpr);
+
+			units.swapWith(stmt, lookupStmt);
+
+			// units.insertAfter(
+			// 	Jimple.v().newAssignStmt(variableBox.getValue(), tmpView), lookupStmt); 
+
+			logger.info("replacing {} ", stmt);
+			logger.info("with {} ", lookupStmt);
+		}
+
 		/**
-		*
+		* This method is called by the v.transform() as part of soot framework
 		*/
+		protected void internalTransform(Body b, String phaseName, Map options)  {
+			StmtBody stmtBody = (StmtBody)b;
+
+			// get body's unit as a chain
+			Chain units = stmtBody.getUnits();
+
+			// get a snapshot iterator of the unit since we are going to
+			// mutate the chain when iterating over it.
+			Iterator stmtIt = units.snapshotIterator();
+
+			while (stmtIt.hasNext()) {
+				Stmt stmt = (Stmt)stmtIt.next();
+
+				if (!stmt.containsInvokeExpr()) {
+					continue;
+				}
+
+				InvokeExpr expr = (InvokeExpr)stmt.getInvokeExpr();
+				
+				
+				//get the receiver, receivers are only present for instance invokes 
+				InstanceInvokeExpr iie = SootUtils.getInstanceInvokeExpr(stmt);
+				if (iie != null) {
+					for (AllocNode node : GeoPTA.v().getPTSetContextIns(iie.getBase())) {
+						SootClass allocClz = ((RefType)node.getType()).getSootClass();
+						
+						SootMethod resolved = null; 
+						try {
+							resolved = SootUtils.
+								resolveConcreteDispatch(allocClz, iie.getMethod());
+						
+						} catch (CannotFindMethodException e) {
+							continue;
+						}
+						
+						if (findViewById.equals(resolved))  {
+							logger.info(String.format("Found findViewById(): %s\n", stmt));
+							//replacement ...
+							replaceFindViewById(stmtBody, stmt);
+						}
+					}
+				}
+				
+			}
+		}
+
+		/************************************************************
+		* Helper methods
+		*************************************************************/
 		protected boolean isActivitySubclass(SootClass sootClass) {
 			SootClass parentClass = sootClass.getSuperclass();
 
@@ -182,148 +306,5 @@ public class IntegrateXMLLayouts extends BodyTransformer {
             }
 		}
 
-		void replaceFindViewById(StmtBody stmtBody, Stmt stmt) {
 
-			// get body's unit as a chain
-			Chain units = stmtBody.getUnits();
-
-			List<ValueBox> boxList = stmt.getUseAndDefBoxes();
-			Iterator<ValueBox> it = boxList.iterator();
-
-			ValueBox localBox = null;
-			ValueBox immediateBox = null;
-			ValueBox variableBox = null;
-
-			while(it.hasNext()) {
-				ValueBox curBox = it.next();
-				/* using internal type is not ideal, but seems easiest */
-				if (curBox instanceof JimpleLocalBox) {
-					localBox = curBox; 
-					logger.debug("localBox {} {}",
-							curBox.getValue().toString(),
-							curBox.getValue().getType().toString()
-							);
-
-				}
-
-				if (curBox instanceof ImmediateBox) {
-					immediateBox = curBox;
-					logger.debug("immediateBox {} {}",
-							curBox.getValue().toString(),
-							curBox.getValue().toString(),
-							curBox.getValue().getType().toString()
-							);
-				}
-
-				if (curBox instanceof VariableBox) {
-					variableBox = curBox;
-					logger.debug("variableBox {} {}",
-							curBox.getValue().toString(),
-							curBox.getValue().getType().toString());
-				}
-
-				logger.debug("variableBox {}:{}:{}",
-						curBox.getValue().getType().toString(),
-						curBox.toString(),
-						curBox.getValue().toString());
-
-			}
-
-			if (localBox == null || immediateBox == null || variableBox == null) {
-				logger.warn("Couldnot get boxes for replacement "); 
-				return;
-			}
-
-			Integer intId = new Integer(immediateBox.getValue().toString());
-
-			// if the object is not in ResourcesSoot, added code to create one,
-			// else just use the lookup
-			// 
-			// SootField sf = ResourcesSoot.v().getView(intId);
-			// if (sf == null) {
-			// 	String localIdName = "textView_" + intId;
-			// 	Local arg = Jimple.v().newLocal(localIdName, RefType.v("android.widget.TextView"));
-			// 	stmtBody.getLocals().add(arg);
-
-			// 	Chain<Unit> newUnits =  ResourcesSoot.v().createView(
-			// 			intId, localBox.getValue(), arg); 
-
-			// 	units.insertBefore(newUnits, stmt);
-
-			// 	sf = ResourcesSoot.v().getView(intId);
-			// }
-
-			// //creating rx = getView(intId) to replace rx=findViewById()
-			// FieldRef  fieldRef = Jimple.v().newStaticFieldRef(sf.makeRef());
-			// Stmt lookupStmt = Jimple.v().newAssignStmt(variableBox.getValue(), fieldRef); 
-
-			SootMethod getViewMethod = ResourcesSoot.v().lookupGetView_ID(intId);
-
-			if (getViewMethod == null) {
-				logger.warn("No replacing code available for {} ", stmt);
-				return;
-			}
-
-			SootMethodRef methodRef = getViewMethod.makeRef();
-
-			Expr invokeExpr = Jimple.v().newStaticInvokeExpr(getViewMethod.makeRef(), localBox.getValue()); 
-			Stmt lookupStmt = Jimple.v().newAssignStmt(variableBox.getValue(), invokeExpr);
-
-			units.swapWith(stmt, lookupStmt);
-
-			// units.insertAfter(
-			// 	Jimple.v().newAssignStmt(variableBox.getValue(), tmpView), lookupStmt); 
-
-			logger.info("replacing {} ", stmt);
-			logger.info("with {} ", lookupStmt);
-		}
-
-		/**
-		* This method is called by the v.transform() as part of soot framework
-		*/
-		protected void internalTransform(Body b, String phaseName, Map options)  {
-			StmtBody stmtBody = (StmtBody)b;
-
-			// get body's unit as a chain
-			Chain units = stmtBody.getUnits();
-
-			// get a snapshot iterator of the unit since we are going to
-			// mutate the chain when iterating over it.
-			Iterator stmtIt = units.snapshotIterator();
-
-			while (stmtIt.hasNext()) {
-				Stmt stmt = (Stmt)stmtIt.next();
-
-				if (!stmt.containsInvokeExpr()) {
-					continue;
-				}
-
-				InvokeExpr expr = (InvokeExpr)stmt.getInvokeExpr();
-				
-				
-				//get the receiver, receivers are only present for instance invokes 
-				InstanceInvokeExpr iie = SootUtils.getInstanceInvokeExpr(stmt);
-				if (iie != null) {
-					for (AllocNode node : GeoPTA.v().getPTSetContextIns(iie.getBase())) {
-						SootClass allocClz = ((RefType)node.getType()).getSootClass();
-						
-						SootMethod resolved = null; 
-						try {
-							resolved = SootUtils.
-								resolveConcreteDispatch(allocClz, iie.getMethod());
-						
-						} catch (CannotFindMethodException e) {
-							continue;
-						}
-						
-						if (findViewById.equals(resolved))  {
-							logger.info(String.format("Found findViewById(): %s\n", stmt));
-							//replacement ...
-							replaceFindViewById(stmtBody, stmt);
-						}
-					}
-				}
-				
-			}
-		}
 }

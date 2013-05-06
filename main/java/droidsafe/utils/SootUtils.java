@@ -805,6 +805,41 @@ public class SootUtils {
 			}
 		}
 	}
+
+	/**
+	* check if a class is a decendent of posAncestor class
+	*/
+	public static boolean checkAncestor(SootClass me, SootClass posAncestor) {
+		SootClass parent = me.getSuperclass();
+		SootClass objClass = Scene.v().getSootClass("java.lang.Object");
+
+		//System.out.println("checking accestor for = " + me.toString());
+		while (parent != null) {
+			//System.out.println("parent = " + parent.toString());
+			if (parent.equals(posAncestor))
+				return true;
+
+			if (parent.equals(objClass))
+				return false;
+			parent = parent.getSuperclass();
+		}
+		return false;
+	}
+	
+	/**
+	* get a list of classes that have the same short name
+	*/
+	public static List<SootClass> matchShortName(String shortName) {
+    	Chain<SootClass> classes = Scene.v().getClasses();
+
+		List<SootClass> list = new LinkedList();
+
+		for (SootClass sootClass: classes) {
+			if (sootClass.getShortName().equals(shortName))
+				list.add(sootClass);
+		}
+		return list;
+	}
 }
 
 
