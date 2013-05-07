@@ -114,7 +114,6 @@ public class ResolveStringConstants extends BodyTransformer {
     stringIdToStringName = new HashMap<Integer, String>();
 		for (SootClass clz : Scene.v().getClasses()) {
       if (clz.isApplicationClass() & clz.getShortName().startsWith("R$string")) {
-				System.out.println(clz.getShortName());
         for (SootField field : clz.getFields()) {
           Tag tag = field.getTag("IntegerConstantValueTag");
           Integer stringId = ((IntegerConstantValueTag)tag).getIntValue();

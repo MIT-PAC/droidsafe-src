@@ -179,7 +179,7 @@ public class ResourcesSoot {
         // }
 
 		if(strId == null || type == null || text == null) {
-			logger.warn("type:{}, id:{}, text:{}", type, strId, text);
+			logger.info("type:{}, id:{}, text:{}", type, strId, text);
 		}
         Integer id = numericToStringIDMap.inverse().get(strId);
         logger.info("lookup id {} => {} ", strId, id);
@@ -302,11 +302,20 @@ public class ResourcesSoot {
 
         units.add(Jimple.v().newAssignStmt(localView, newExpr));
 
+		/*
         SootMethod viewInitMethod = 
                     Scene.v().getMethod(
                         String.format("<%s: void <init>(android.content.Context)>", 
                             returnType.toString()));
+		*/
+		//SootMethod viewInitMethod = SootUtils.resolveMethod(returnType.getSootClass(), "void <init>(android.content.Context)");
+		SootMethod viewInitMethod = SootUtils.findClosetMatch(returnType.getSootClass(), "void <init>(android.content.Context)");
 
+		if (viewInitMethod == null) {
+			logger.warn("Cannot locate proper constructor for {})", returnType);
+			return;
+		}
+	
         units.add(Jimple.v().newInvokeStmt(
                     Jimple.v().newVirtualInvokeExpr(localView, viewInitMethod.makeRef(), 
                                 argActivity))); 

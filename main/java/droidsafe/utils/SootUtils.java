@@ -807,6 +807,43 @@ public class SootUtils {
 	}
 
 	/**
+	* get a list of ancestor of a given class, in order from immediate to oldest
+	*/
+	public static List<SootClass> getAncestorList(SootClass me) {
+		SootClass parent = me.getSuperclass();
+		SootClass objClass = Scene.v().getSootClass("java.lang.Object");
+		List<SootClass> list = new LinkedList();
+
+		//System.out.println("checking accestor for = " + me.toString());
+		while (!parent.equals(objClass)) {
+			//System.out.println("parent = " + parent.toString());
+			list.add(parent);
+			parent = parent.getSuperclass();
+		}
+		return list;
+	}
+
+	/*
+	* find the closest method in the inheritance chain (including itself) that matches
+	* the signature
+	*/
+	public static SootMethod findClosetMatch(SootClass sootClass, String signature) {
+		List<SootClass> ancestorList = getAncestorList(sootClass);
+
+		ancestorList.add(0, sootClass);
+
+		for (SootClass sc: ancestorList) {
+			try {
+				SootMethod method = 
+						Scene.v().getMethod(String.format("<%s: %s>", sc.toString(), signature));
+				return method;
+			} catch (Exception ex) {
+			}
+		}
+		return null;
+	}
+
+	/**
 	* check if a class is a decendent of posAncestor class
 	*/
 	public static boolean checkAncestor(SootClass me, SootClass posAncestor) {
