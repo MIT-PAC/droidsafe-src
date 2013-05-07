@@ -13,36 +13,43 @@ import org.eclipse.ui.PlatformUI;
 import org.osgi.framework.Bundle;
 import org.osgi.framework.FrameworkUtil;
 
-import droidsafe.speclang.Method;
+import droidsafe.eclipse.plugin.core.specmodel.DroidsafeMethodModel;
 import droidsafe.utils.SourceLocationTag;
 
-public class SecuritySpecLabelProvider extends LabelProvider {
+/**
+ * Label provider that uses the simplified Security Spec model instead of the original
+ * droidsafe.speclang.SecuritySpecification.
+ * 
+ * @author becker
+ * 
+ */
+
+public class DroidsafeSecSpecLabelProvider extends LabelProvider {
 
 
   private static final Image INPUT_METHOD_IMAGE = getImage("android.png");
-  // PlatformUI.getWorkbench().getSharedImages()
-  // .getImage(ISharedImages.IMG_OBJ_ELEMENT);
+
   private static final Image DEFAULT_IMAGE = PlatformUI.getWorkbench().getSharedImages()
       .getImage(ISharedImages.IMG_OBJ_FOLDER);
 
   private static final Image SOURCE_LOCATION_IMAGE = PlatformUI.getWorkbench().getSharedImages()
       .getImage(org.eclipse.ui.ide.IDE.SharedImages.IMG_OBJS_TASK_TSK);
- 
-  
+
+
   @Override
   public String getText(Object element) {
     if (element instanceof Set) {
       int size = ((Set<?>) element).size();
       return "Whitelist (" + size + ")";
-    } else if (element instanceof Method) {
-      return ((Method) element).toSignatureString();
+    } else if (element instanceof DroidsafeMethodModel) {
+      return ((DroidsafeMethodModel) element).getSignature();
     }
     return element.toString();
   }
 
   @Override
   public Image getImage(Object element) {
-    if (element instanceof Method) {
+    if (element instanceof DroidsafeMethodModel) {
       return INPUT_METHOD_IMAGE;
     } else if (element instanceof SourceLocationTag) {
       return SOURCE_LOCATION_IMAGE;
@@ -52,7 +59,7 @@ public class SecuritySpecLabelProvider extends LabelProvider {
 
   // Helper Method to load the images
   private static Image getImage(String file) {
-    Bundle bundle = FrameworkUtil.getBundle(SecuritySpecLabelProvider.class);
+    Bundle bundle = FrameworkUtil.getBundle(DroidsafeSecSpecLabelProvider.class);
     URL url = FileLocator.find(bundle, new Path("icons/" + file), null);
     ImageDescriptor image = ImageDescriptor.createFromURL(url);
     return image.createImage();

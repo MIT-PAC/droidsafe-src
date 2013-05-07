@@ -5,14 +5,6 @@ package droidsafe.eclipse.plugin.core.preferences;
  */
 public class PreferenceConstants {
 
-  // public static final String P_PATH = "pathPreference";
-
-  // public static final String P_BOOLEAN = "booleanPreference";
-
-  // public static final String P_CHOICE = "choicePreference";
-
-  // public static final String P_STRING = "stringPreference";
-
   // Target pass to run
   public static final String P_TARGET_PASS = "targetPassPreference";
 
@@ -46,5 +38,6 @@ public class PreferenceConstants {
   public static final String P_DUMP_PTA = "dumpPTA";
 
   public static final String P_DUMP_CALL_GRAPH = "dumpCallGraph";
+  
 
 }

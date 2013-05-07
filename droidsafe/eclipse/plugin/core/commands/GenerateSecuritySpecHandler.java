@@ -46,13 +46,19 @@ public class GenerateSecuritySpecHandler extends AbstractHandler {
         @Override
         protected IStatus run(IProgressMonitor monitor) {
           logger.info("Project = " + project + " path = " + path);
-          new DroidsafeAnalysisRunner(project).run();
-          monitor.done();
+          try {
+            monitor.beginTask("Droidsafe spec dump", 16);            
+            DroidsafeAnalysisRunner droidsafeAnalysisRunner = new DroidsafeAnalysisRunner(project);
+            monitor.worked(1);
+            droidsafeAnalysisRunner.run(monitor);
+          } finally {
+            monitor.done();
+          }
           return Status.OK_STATUS;
         }
       };
       job.setUser(true);
-      job.schedule();     
+      job.schedule();
     }
     return null;
   }

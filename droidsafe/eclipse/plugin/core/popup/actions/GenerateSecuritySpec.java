@@ -22,7 +22,7 @@ public class GenerateSecuritySpec implements IObjectActionDelegate {
   private final static Logger logger = LoggerFactory.getLogger(GenerateSecuritySpec.class);
 
   private IWorkbenchPart targetPart;
-  private Shell shell;
+  //private Shell shell;
 
   /**
    * Constructor for Action1.
@@ -36,15 +36,13 @@ public class GenerateSecuritySpec implements IObjectActionDelegate {
    */
   public void setActivePart(IAction action, IWorkbenchPart targetPart) {
     this.targetPart = targetPart;
-    this.shell = targetPart.getSite().getShell();
+    //this.shell = targetPart.getSite().getShell();
   }
 
   /**
    * @see IActionDelegate#run(IAction)
    */
   public void run(IAction action) {
-    // MessageDialog.openInformation(shell, "Core",
-    // "Generate Security Spec was executed.");
     IStructuredSelection selection =
         (IStructuredSelection) targetPart.getSite().getSelectionProvider().getSelection();
     final IProject project = (IProject) selection.getFirstElement();
@@ -55,8 +53,14 @@ public class GenerateSecuritySpec implements IObjectActionDelegate {
       @Override
       protected IStatus run(IProgressMonitor monitor) {
         logger.info("Project = " + project + " path = " + path);
-        new DroidsafeAnalysisRunner(project).run();
-        monitor.done();
+        try {
+          monitor.beginTask("Droidsafe spec dump", 16);            
+          DroidsafeAnalysisRunner droidsafeAnalysisRunner = new DroidsafeAnalysisRunner(project);
+          monitor.worked(1);
+          droidsafeAnalysisRunner.run(monitor);
+        } finally {
+          monitor.done();
+        }
         return Status.OK_STATUS;
       }
     };

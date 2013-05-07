@@ -1,8 +1,11 @@
 package droidsafe.eclipse.plugin.core.preferences;
 
-import org.eclipse.jface.preference.*;
-import org.eclipse.ui.IWorkbenchPreferencePage;
+import org.eclipse.jface.preference.BooleanFieldEditor;
+import org.eclipse.jface.preference.FieldEditorPreferencePage;
+import org.eclipse.jface.preference.RadioGroupFieldEditor;
 import org.eclipse.ui.IWorkbench;
+import org.eclipse.ui.IWorkbenchPreferencePage;
+
 import droidsafe.eclipse.plugin.core.Activator;
 
 /**
@@ -22,7 +25,7 @@ public class DroidsafePreferencePage extends FieldEditorPreferencePage
   public DroidsafePreferencePage() {
     super(GRID);
     setPreferenceStore(Activator.getDefault().getPreferenceStore());
-    setDescription("Droidsafe preference page implementation");
+    setDescription("Droidsafe preferences");
   }
 
   /**
@@ -31,17 +34,6 @@ public class DroidsafePreferencePage extends FieldEditorPreferencePage
    * itself.
    */
   public void createFieldEditors() {
-    // addField(new DirectoryFieldEditor(PreferenceConstants.P_PATH,
-    // "&Directory preference:", getFieldEditorParent()));
-    // addField(new BooleanFieldEditor(PreferenceConstants.P_BOOLEAN,
-    // "&An example of a boolean preference", getFieldEditorParent()));
-    //
-    // addField(new RadioGroupFieldEditor(PreferenceConstants.P_CHOICE,
-    // "An example of a multiple-choice preference", 1,
-    // new String[][] { { "&Choice 1", "choice1" },
-    // { "C&hoice 2", "choice2" } }, getFieldEditorParent()));
-    // addField(new StringFieldEditor(PreferenceConstants.P_STRING,
-    // "A &text preference:", getFieldEditorParent()));
 
     addField(new RadioGroupFieldEditor(PreferenceConstants.P_TARGET_PASS, "Target Pass", 1,
         new String[][] { {"Generate &Spec", "specdump"}, {"Conformance Check", "confcheck"}},
@@ -64,10 +56,9 @@ public class DroidsafePreferencePage extends FieldEditorPreferencePage
 
     addField(new BooleanFieldEditor(PreferenceConstants.P_DUMP_PTA,
         "Dump PTA Analysis Results to File", getFieldEditorParent()));
-  
+
     addField(new BooleanFieldEditor(PreferenceConstants.P_DUMP_CALL_GRAPH,
-      "Create dot file for call graph",
-      getFieldEditorParent()));
+        "Create dot file for call graph", getFieldEditorParent()));
   }
 
   /*

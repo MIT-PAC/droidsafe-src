@@ -10,6 +10,7 @@ import org.eclipse.core.resources.IProject;
 import org.eclipse.core.resources.IResource;
 import org.eclipse.core.runtime.CoreException;
 import org.eclipse.core.runtime.IAdaptable;
+import org.eclipse.jface.action.MenuManager;
 import org.eclipse.jface.text.Document;
 import org.eclipse.jface.text.IDocument;
 import org.eclipse.jface.text.TextViewer;
@@ -21,7 +22,9 @@ import org.eclipse.jface.viewers.ITreeContentProvider;
 import org.eclipse.jface.viewers.LabelProvider;
 import org.eclipse.jface.viewers.TreeViewer;
 import org.eclipse.swt.SWT;
+import org.eclipse.swt.events.SelectionListener;
 import org.eclipse.swt.widgets.Composite;
+import org.eclipse.swt.widgets.Menu;
 import org.eclipse.ui.IEditorDescriptor;
 import org.eclipse.ui.IEditorPart;
 import org.eclipse.ui.ISelectionService;
@@ -35,6 +38,8 @@ import org.slf4j.LoggerFactory;
 
 import droidsafe.analyses.RCFGToSSL;
 import droidsafe.eclipse.plugin.core.Activator;
+import droidsafe.eclipse.plugin.core.specmodel.DroidsafeMethodModel;
+import droidsafe.eclipse.plugin.core.specmodel.DroidsafeSecuritySpecModel;
 import droidsafe.eclipse.plugin.core.util.DroidsafePluginUtilities;
 import droidsafe.speclang.Method;
 import droidsafe.speclang.SecuritySpecification;
@@ -52,7 +57,7 @@ public class SecuritySpecOutlineViewPart extends ViewPart {
   private TextViewer textViewer;
   private ITreeContentProvider contentProvider;
   private LabelProvider labelProvider;
-
+  private SelectionListener selectionProvider;
 
   public SecuritySpecOutlineViewPart() {
     // TODO Auto-generated constructor stub
@@ -67,7 +72,8 @@ public class SecuritySpecOutlineViewPart extends ViewPart {
       this.textViewer = new TextViewer(parent, SWT.MULTI | SWT.H_SCROLL | SWT.V_SCROLL);
       IDocument document = new Document();
       document
-          .set("No resource selected or Droidsafe security spec has not yet been genenerated for selected project "
+          .set("No Android Project selected or "
+              + "Droidsafe security spec has not yet been genenerated for selected project "
               + "\nSelect an Android project, and run the Droidsafe spec generation command from project context menu.");
       this.textViewer.setDocument(document);
 
@@ -78,11 +84,31 @@ public class SecuritySpecOutlineViewPart extends ViewPart {
       this.labelProvider = new SecuritySpecLabelProvider();
       // Expand the tree
       viewer.setAutoExpandLevel(1);
-      viewer.setContentProvider(this.contentProvider);
-      viewer.setLabelProvider(this.labelProvider);
+      // viewer.setContentProvider(this.contentProvider);
+      // viewer.setLabelProvider(this.labelProvider);
       // Get the content for the viewer, setInput will call getElements in the contentProvider
-      viewer.setInput(RCFGToSSL.v().getSpec());
+      // viewer.setInput(spec);
 
+
+      DroidsafeSecuritySpecModel secSpecModel = new DroidsafeSecuritySpecModel(spec);
+      DroidsafeSecuritySpecModel.serializeSpecToFile(secSpecModel);
+      DroidsafeSecuritySpecModel newSecSpecModel =
+          DroidsafeSecuritySpecModel.deserializeSpecFromFile();
+
+
+      viewer.setContentProvider(new DroidsafeSecSpecViewContentProvider());
+      viewer.setLabelProvider(new DroidsafeSecSpecLabelProvider());
+      viewer.setInput(secSpecModel);
+
+
+      
+      MenuManager menuManager = new MenuManager();
+      Menu menu = menuManager.createContextMenu(viewer.getTree());
+      // Set the MenuManager
+      viewer.getTree().setMenu(menu);
+      getSite().registerContextMenu(menuManager, viewer);
+      
+      
       // viewer.setInput(computeInputForViewer());
 
       // Make the selection available to other views
@@ -99,16 +125,24 @@ public class SecuritySpecOutlineViewPart extends ViewPart {
           Object selectedNode = thisSelection.getFirstElement();
           viewer.setExpandedState(selectedNode, !viewer.getExpandedState(selectedNode));
           SourceLocationTag line = null;
+
           if (selectedNode instanceof Method) {
             Method method = (Method) selectedNode;
             if (method.getLines().isEmpty()) {
               line = method.getDeclSourceLocation();
             }
-          }
-
-          if (selectedNode instanceof SourceLocationTag) {
+          } else if (selectedNode instanceof DroidsafeMethodModel) {
+            DroidsafeMethodModel method = (DroidsafeMethodModel) selectedNode;
+            if (method.getLines().isEmpty()) {
+              line = method.getDeclSourceLocation();
+            } else {
+              line = method.getLines().get(0);
+              // viewer.setSelection(new StructuredSelection(line));
+            }
+          } else if (selectedNode instanceof SourceLocationTag) {
             line = (SourceLocationTag) selectedNode;
           }
+
           if (line != null) {
             int lineNumber = line.getLine();
             String className = line.getClz();
@@ -131,7 +165,7 @@ public class SecuritySpecOutlineViewPart extends ViewPart {
                       document.getLineLength(lineNumber - 1));
                 }
               } catch (Exception ex) {
-                logger.debug("Exception while creating editor for line " + line);
+                logger.debug("Exception while creating editor for line {}", line);
                 ex.printStackTrace();
               }
             }
@@ -155,11 +189,10 @@ public class SecuritySpecOutlineViewPart extends ViewPart {
   }
 
   private List<IMarker> computeInputForViewer() {
-
     List<IMarker> result = new ArrayList<IMarker>();
     IProject project = getSelectedProject();
     if (project != null) {
-      String markerId = Activator.getDefault().PLUGIN_ID + ".droidsafemarker";
+      String markerId = Activator.PLUGIN_ID + ".droidsafemarker";
       IMarker markers[];
       try {
         markers = project.findMarkers(markerId, true, IResource.DEPTH_INFINITE);
