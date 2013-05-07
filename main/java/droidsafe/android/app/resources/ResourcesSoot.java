@@ -373,6 +373,10 @@ public class ResourcesSoot {
 
         String name = className;
 
+		if (name.equals("View")) {
+			return "android.view.View";
+		}
+
         StringBuilder builder = new StringBuilder("android.widget");
         String fullName = builder.append(".").append(name).toString();
 
