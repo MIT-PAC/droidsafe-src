@@ -8,6 +8,10 @@
     </encoder>
   </appender>
   
+  <logger name="droidsafe.eclipse.plugin.core">
+		<level value="DEBUG" />
+	</logger>
+  
   <root level="WARN">
     <appender-ref ref="STDOUT" />
   </root>
