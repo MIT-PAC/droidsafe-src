@@ -290,6 +290,6 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
 	
 	@DSModeled(DSC.SAFE)
 	public CharSequence getText() {
-        return new String();
+		return dsTaint.getTaintString();
     }
 }
