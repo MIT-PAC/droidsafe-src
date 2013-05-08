@@ -58,6 +58,7 @@ public class String implements java.io.Serializable, Comparable<String>, CharSeq
 		return 0;
 	}
 	
+	@DSModeled(DSC.SAFE)
 	public static String valueOf(char[] data) {
 		return new String();
         //return new String(data, 0, data.length);
@@ -65,7 +66,6 @@ public class String implements java.io.Serializable, Comparable<String>, CharSeq
 	
 	@DSModeled(DSC.SAFE)
 	public static String valueOf(char value) {
-		taint.addTaint(value);
 		return new String();
 		/*
         String s;
@@ -81,7 +81,11 @@ public class String implements java.io.Serializable, Comparable<String>, CharSeq
 	
 	@DSModeled(DSC.SAFE)
 	public static String valueOf(Object value) {
-		taint.addTaint(value);
-		return new String();
+		return value.toString(); 
 	}
+	
+	@DSModeled(DSC.SAFE)
+	public static String valueOf(int i) {
+        return new String();
+    }
 }
