@@ -34,7 +34,10 @@ import com.android.internal.util.FastMath;
  */
 public class RectF implements Parcelable {
     private DSTaintObject taint; 
-    
+    private float left;
+    private float right;
+    private float top;
+    private float bottom;
     /**
      * Create a new empty RectF. All coordinates are initialized to 0.
      */
