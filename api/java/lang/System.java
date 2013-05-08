@@ -20,5 +20,10 @@ public final class System {
 		return new String();
 		
 	}
+	
+	@DSModeled(DSC.SAFE)
+	public static long currentTimeMillis() {
+		return 0;
+	}
 }
 
