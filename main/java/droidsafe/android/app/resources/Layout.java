@@ -57,6 +57,39 @@ public class Layout {
 
   }
 
+  private void buildOneUIObject(View cview,  HashMap<String, RString> stringMap) {
+	  logger.debug("cview: " + cview); 
+	  String id = cview.get_attr("id");
+	  logger.debug("cview.name <{}>, id={}" , cview.name, id);
+
+	  String text = cview.get_attr("text");
+	  String idName = null;
+
+	  if (id != null) {
+		  id = id.replace("@android:", "");
+		  idName = id.substring(id.indexOf("+") + 1);
+		  idName = idName.replace('/', '.');
+		  logger.debug("  id {}:{} " ,id, idName);
+	  }
+
+	  if (text != null) {
+		  logger.debug("  text -  " + text);
+		  int index = text.indexOf("/");
+		  if (text.startsWith("@") && index > 0) {
+			  RString rString = stringMap.get(text.substring(index + 1));
+			  if (rString != null) {
+				  logger.debug("  value=" + rString.value);
+				  text = rString.value;
+			  }
+		  }
+	  }
+
+	  if (idName != null && cview.name != null) {
+		  logger.debug("addTextView({}, {}, {})", cview.name, idName, text);
+		  ResourcesSoot.v().addTextView(cview.name,  idName, text);
+	  }
+  }
+
 
   /*
   * Internal version to build UIobjects of all views recursively
@@ -69,39 +102,9 @@ public class Layout {
 	  logger.debug("");
 
 	  for (View cview: myView.children) { 
-		  logger.debug("cview: " + cview); 
-		  String id = cview.get_attr("id");
-		  logger.debug("cview.name <{}>, id={}" , cview.name, id);
-
-		  String text = cview.get_attr("text");
-		  String idName = null;
-
-		  if (id != null) {
-			  id = id.replace("@android:", "");
-			  idName = id.substring(id.indexOf("+") + 1);
-			  idName = idName.replace('/', '.');
-			  logger.debug("  id {}:{} " ,id, idName);
-		  }
-
-		  if (text != null) {
-			  logger.debug("  text -  " + text);
-			  int index = text.indexOf("/");
-			  if (text.startsWith("@") && index > 0) {
-				  RString rString = stringMap.get(text.substring(index + 1));
-				  if (rString != null) {
-					  logger.debug("  value=" + rString.value);
-					  text = rString.value;
-				  }
-			  }
-		  }
-
-		  if (idName != null && cview.name != null) {
-			  logger.debug("addTextView({}, {}, {})", cview.name, idName, text);
-			  ResourcesSoot.v().addTextView(cview.name,  idName, text);
-		  }
-
 		  buildUIObjects(cview, stringMap);
 	  }
+	  buildOneUIObject(myView, stringMap);
   }
 
   /**
