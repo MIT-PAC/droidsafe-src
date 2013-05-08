@@ -14,6 +14,8 @@ import soot.SootClass;
 import soot.SootMethod;
 import soot.SootMethodRef;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * Class to house all helpers and queries on the class hierarchy of the application.
@@ -28,6 +30,8 @@ public class Hierarchy {
 	private List<SootClass> appComponents;
 	private Set<SootClass> activities;
 	
+    private final static Logger logger = LoggerFactory.getLogger(Hierarchy.class);  
+
 	/**
 	 * Return the singleton hierarchy object for this application.
 	 */
@@ -67,8 +71,17 @@ public class Hierarchy {
 	 * Return true if this class inherits from an android component class.
 	 */
 	public boolean isAndroidComponentClass(SootClass clz) {
-		List<SootClass> supers = Scene.v().getActiveHierarchy().getSuperclassesOf(clz);
-		
+		List<SootClass> supers = null; 
+		try {
+			supers = Scene.v().getActiveHierarchy().getSuperclassesOf(clz);
+		}
+		catch (Exception ex) {
+			StackTraceElement[] elems =  Thread.currentThread().getStackTrace();
+			logger.warn("Exception trying to get superclases of " + clz.toString());
+			logger.warn("At {} ", elems[1]); 
+			return false;
+		}
+
 		for (SootClass sup : supers) {
 			if (Components.CLASS_NAMES.contains(sup.getName()))
 				return true;

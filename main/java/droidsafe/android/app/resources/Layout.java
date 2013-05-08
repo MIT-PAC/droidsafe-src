@@ -58,19 +58,24 @@ public class Layout {
   }
 
   public void buildUIObjects(HashMap<String, RString> stringMap) {
-		logger.debug("Dumping Layout.view info ");
+		logger.debug("====================");
+		logger.debug("buidUIObjects for Layout ");
 		logger.debug("View " + view);
+		logger.debug("====================");
+		logger.debug("");
 
 		int numId = 1;
 
 		for (View cview: view.children) { 
 			logger.debug("cview: " + cview); 
-			logger.debug("cview.name <{}>" , cview.name);
 			String id = cview.get_attr("id");
+			logger.debug("cview.name <{}>, id={}" , cview.name, id);
+
 			String text = cview.get_attr("text");
 			String idName = null;
 
 			if (id != null) {
+				id = id.replace("@android:", "");
 				idName = id.substring(id.indexOf("+") + 1);
 				idName = idName.replace('/', '.');
 				logger.debug("  id {}:{} " ,id, idName);
@@ -88,8 +93,10 @@ public class Layout {
 				}
 			}
 			
-			if (idName != null)
+			if (idName != null && cview.name != null) {
+				logger.debug("addTextView({}, {}, {})", cview.name, idName, text);
 				ResourcesSoot.v().addTextView(cview.name,  idName, text);
+			}
 		}
   }
 

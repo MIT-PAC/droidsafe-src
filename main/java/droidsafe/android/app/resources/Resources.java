@@ -211,7 +211,7 @@ public class Resources {
 		File layout_dir = new File (application_base, "res/layout");
 		if (layout_dir.exists()) {
 			for (File layout_source : layout_dir.listFiles()) {
-				// logger.info ("considering layout file {}", layout_source);
+				logger.info("***considering layout file {}", layout_source);
 				String name = layout_source.getName();
 				String[] name_ext = name.split ("[.]", 2);
 				// logger.info ("name/ext = {}/{}", name_ext[0], name_ext[1]);
@@ -235,6 +235,7 @@ public class Resources {
 		for(File values_dir : values_dirs) {
 			// Process .xml files in res/values
 			for (File value_source : values_dir.listFiles()) {
+				logger.info("processing {} ", value_source.getName());
 				String[] name_ext = value_source.getName().split ("[.]", 2);
 				if (name_ext[1].equals ("xml")) {
 					process_values(new XmlFile(value_source.getPath()));
@@ -368,13 +369,13 @@ public class Resources {
 			if (clz.getShortName().startsWith("R$")) {
 				String component = clz.getShortName().substring(2);
 
-				logger.info("R component {} ", component);
+				logger.debug("R component {} ", component);
 				//Remove nonstatic method inside a static class
 				//Resources R$xyz is a static class and it SHOULD NOT have any non static method
 				SootUtils.removeNonstaticMethods(clz);
 
 				for (SootField field : clz.getFields()) {
-					logger.info("field : {} ", field);
+					logger.debug("field : {} ", field);
 					Integer value = new Integer(0);
 					
 					Tag tag = field.getTag("IntegerConstantValueTag");
@@ -382,7 +383,7 @@ public class Resources {
 					//not documented anywhere...except a mailing list post from years ago
 					if (tag instanceof IntegerConstantValueTag) {
 						value = new Integer(((IntegerConstantValueTag)tag).getIntValue());
-						logger.info ("field {}.{} = {} {}", component, field, 
+						logger.debug("field {}.{} = {}", component, field, 
 									 String.format("%08X", value));
 						
 						String resource_value = component + "." + field.getName();
@@ -395,7 +396,7 @@ public class Resources {
 						}
 					}
 					else {
-						logger.info("Unknown initial value for field of resource class: {} ()", field.getName(), tag);
+						logger.info("Unknown initial value for field of resource class: {} {}", field.getName(), tag);
 						//hopefully we will not need this resource value in analysis, if so we will die
 						//when we try to search for this...
 					}

@@ -127,8 +127,7 @@ public class IntegrateXMLLayouts extends BodyTransformer {
 
 				if (curBox instanceof ImmediateBox) {
 					immediateBox = curBox;
-					logger.debug("immediateBox {} {}",
-							curBox.getValue().toString(),
+					logger.info("immediateBox {} {}",
 							curBox.getValue().toString(),
 							curBox.getValue().getType().toString()
 							);
@@ -153,7 +152,16 @@ public class IntegrateXMLLayouts extends BodyTransformer {
 				return;
 			}
 
-			Integer intId = new Integer(immediateBox.getValue().toString());
+			Integer intId;
+			
+			try {
+				intId = new Integer(immediateBox.getValue().toString());
+			}
+			catch (Exception ex) {
+				logger.warn("stmt {} ", stmt);
+				logger.warn("Couldn't replace findViewById() NOT an integer constant");
+				return;
+			}
 
 			SootMethod getViewMethod = ResourcesSoot.v().lookupGetView_ID(intId);
 
