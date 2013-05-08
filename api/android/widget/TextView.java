@@ -98,7 +98,7 @@ import android.view.View;
 import android.view.ViewConfiguration;
 import android.view.ViewDebug;
 import android.view.ViewGroup;
-import android.view.ViewGroup.LayoutParams;
+//import android.view.ViewGroup.LayoutParams;
 import android.view.ViewParent;
 import android.view.ViewRootImpl;
 import android.view.ViewTreeObserver;
@@ -165,10 +165,12 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
         p.measureText("H");
     }
     
+    @DSModeled(DSC.SAFE)
     public TextView(Context context) {
         this(context, null);
     }
 
+    @DSModeled(DSC.SAFE)
     public TextView(Context context,
                     AttributeSet attrs) {
         this(context, attrs, com.android.internal.R.attr.textViewStyle);
@@ -285,4 +287,9 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
 		//DSFIXME:  Stubbed out method for now.  Underlying function is very large.
 		super.onDraw(canvas);
 	}
+	
+	@DSModeled(DSC.SAFE)
+	public CharSequence getText() {
+        return new String();
+    }
 }

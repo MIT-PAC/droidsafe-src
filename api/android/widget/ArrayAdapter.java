@@ -1,20 +1,16 @@
 package android.widget;
 
+import java.util.Arrays;
+import java.util.List;
+
 import android.content.Context;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collection;
-import java.util.Collections;
-import java.util.Comparator;
-import java.util.List;
-
-import droidsafe.annotations.*;
-import droidsafe.helpers.*;
+import droidsafe.annotations.DSC;
+import droidsafe.annotations.DSModeled;
+import droidsafe.helpers.DSTaintObject;
 
 public class ArrayAdapter<T> extends BaseAdapter implements Filterable {
 	private int mResource;
@@ -188,5 +184,19 @@ public class ArrayAdapter<T> extends BaseAdapter implements Filterable {
         }
 
 	}
+	
+	@DSModeled(DSC.SAFE)
+	public void add(T object) {
+		dsTaint.addTaint(object);
+        mObjects.add(object);
+        notifyDataSetChanged();
+    }
+	
+	@Override
+	@DSModeled(DSC.SAFE)
+    public void notifyDataSetChanged() {
+        super.notifyDataSetChanged();
+        mNotifyOnChange = true;
+    }
 
 }
