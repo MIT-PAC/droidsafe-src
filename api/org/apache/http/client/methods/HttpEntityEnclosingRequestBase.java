@@ -30,10 +30,10 @@ public class HttpEntityEnclosingRequestBase extends HttpRequestBase implements
 		return false;
 	}
 
+	@DSModeled(DSC.SPEC)
 	@Override
 	public HttpEntity getEntity() {
-		// TODO Auto-generated method stub
-		return null;
+		return (HttpEntity) taint.getTaint();
 	}
 
 	@DSModeled(DSC.SPEC)

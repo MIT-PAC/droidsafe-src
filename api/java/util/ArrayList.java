@@ -30,6 +30,7 @@ public class ArrayList<E> extends AbstractList<E> implements Cloneable, Serializ
     @DSModeled(DSC.SAFE)
     public boolean add(E object) {
     	array[0] = object;
+    	taint.addTaint(object);
     	return true;
     }
 
@@ -47,7 +48,7 @@ public class ArrayList<E> extends AbstractList<E> implements Cloneable, Serializ
     @Override
     @DSModeled(DSC.SAFE)
     public E get(int index) {
-    	return (E) array[0];
+    	return (E) taint.getTaint();
     }
 
     @Override
@@ -140,5 +141,10 @@ public class ArrayList<E> extends AbstractList<E> implements Cloneable, Serializ
     	return this.get(0);
     }
 
+    @DSModeled(DSC.SAFE)
+    public void clear() { 
+    	
+    }
+    
     private static final long serialVersionUID = 8683452581122892189L;
  }

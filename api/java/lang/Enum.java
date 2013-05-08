@@ -80,4 +80,11 @@ public abstract class Enum<E extends Enum<E>> implements Serializable, Comparabl
     @SuppressWarnings("FinalizeDoesntCallSuperFinalize")
     protected final void finalize() {
     }
+	
+	@DSModeled(DSC.SAFE)
+	@Override
+	public String toString() {
+		return dsTaint.getTaintString();
+	}
+	
 }
