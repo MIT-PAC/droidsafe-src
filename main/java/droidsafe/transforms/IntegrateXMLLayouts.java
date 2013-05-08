@@ -166,7 +166,7 @@ public class IntegrateXMLLayouts extends BodyTransformer {
 			SootMethod getViewMethod = ResourcesSoot.v().lookupGetView_ID(intId);
 
 			if (getViewMethod == null) {
-				logger.warn("No replacing code available for {} ", stmt);
+				logger.warn("NOT replacing {}, id={} ", stmt, String.format("0x%x", intId));
 				return;
 			}
 

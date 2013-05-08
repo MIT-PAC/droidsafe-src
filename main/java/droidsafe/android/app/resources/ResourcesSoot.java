@@ -182,10 +182,11 @@ public class ResourcesSoot {
         //  addClinitMethod();
         // }
 
-		if(strId == null || type == null || text == null) {
+		if(strId == null || type == null) {
 			logger.warn("type:{}, id:{}, text:{}", type, strId, text);
+		} else {
+			logger.info("type:{}, id:{}, text:{}", type, strId, text);
 		}
-		logger.warn("strId {} ", strId);
 
 		strId = strId.replace("@android:", "");
 
@@ -238,10 +239,11 @@ public class ResourcesSoot {
     *   Method to look up the getView_2222()
     */
     public SootMethod lookupGetView_ID(Integer intId) {
-        logger.info("calling lookupgGetView_ID {}) ", intId.toString());
+        logger.info("calling lookupGetView_ID {}) ", intId.toString());
         UISootObject obj = uiObjectTable.get(intId);    
         if (obj == null) {
-            logger.warn("Object for id {} info is not available", intId);
+            logger.warn("Object for id 0x{} info is not available", 
+						String.format("%x", intId));
             return null; 
         }
         return obj.lookupMethod; 
@@ -278,7 +280,7 @@ public class ResourcesSoot {
 			return;
 		}
 
-        String funcName = "getView_" + intId;
+        String funcName = "getView_" + String.format("%x", intId);
         //instantiate a method
         SootMethod method = new SootMethod(funcName, params, returnType, 
                                         Modifier.PUBLIC | Modifier.STATIC);
@@ -393,7 +395,13 @@ public class ResourcesSoot {
 		}
 
         StringBuilder builder = new StringBuilder("android.widget");
-        String fullName = builder.append(".").append(name).toString();
+
+		builder.append(name.charAt(0));
+
+		if (name.length() > 1)
+			builder.append(name.substring(1));
+
+        String fullName = builder.toString();
 
 		logger.info("Trying to locatate {} class ", fullName);
 		if (Scene.v().containsClass(fullName))
