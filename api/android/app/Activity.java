@@ -475,4 +475,16 @@ OnCreateContextMenuListener, ComponentCallbacks2 {
     Intent data) {
            //no modeling required
     }
+	
+	@DSModeled(DSC.SAFE)
+	public final void runOnUiThread(Runnable action) {
+		action.run();
+    }
+	
+	@Override
+	@DSModeled(DSC.SAFE)
+    public Object getSystemService(String name) {
+		// Just call the ContextImpl.getSystemService version
+        return super.getSystemService(name);
+    }
 }

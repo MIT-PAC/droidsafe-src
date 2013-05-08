@@ -73,5 +73,11 @@ public class ContextThemeWrapper extends ContextWrapper {
         dsTaint.addTaint(newBase);
         //mBase = newBase;
     }
+    
+    @Override 
+    @DSModeled(DSC.SAFE)
+    public Object getSystemService(String name) {
+        return super.getSystemService(name);
+    }
 }
 
