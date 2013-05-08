@@ -36,6 +36,7 @@ import droidsafe.speclang.ArgumentValue;
 import droidsafe.speclang.Method;
 import droidsafe.speclang.TypeValue;
 
+import soot.Body;
 import soot.AnySubType;
 import soot.ArrayType;
 import soot.BooleanType;
@@ -211,7 +212,9 @@ public class ResourcesSoot {
     *   method to add static Button button_xxyyyy to the ResourcesSoot class
     */
     private void createViewMember(Integer intId) {
-        logger.info("calling createViewMember {}) ", intId.toString());
+        logger.info("calling createViewMember {}:{}) ", 
+					intId.toString(), String.format("%x", intId));
+
         UISootObject obj = uiObjectTable.get(intId);    
         if (obj == null) {
             logger.warn("Object for id {} info is not available", intId);
@@ -257,7 +260,7 @@ public class ResourcesSoot {
         // units.add(Jimple.v().newAssignStmt(fieldRef, arg));
 
         UISootObject obj = uiObjectTable.get(intId);    
-        logger.info("calling getField({}) ", intId.toString());
+        logger.info("calling addGetView_ID({}:{}) ", intId.toString(),	String.format("%s", intId));
 
         if (obj == null) {
             logger.warn("Object for id {} does not exist ", intId);
@@ -324,13 +327,6 @@ public class ResourcesSoot {
 
         units.add(Jimple.v().newAssignStmt(localView, newExpr));
 
-		/*
-        SootMethod viewInitMethod = 
-                    Scene.v().getMethod(
-                        String.format("<%s: void <init>(android.content.Context)>", 
-                            returnType.toString()));
-		*/
-		//SootMethod viewInitMethod = SootUtils.resolveMethod(returnType.getSootClass(), "void <init>(android.content.Context)");
 		mHasMethod = true;
 
         units.add(Jimple.v().newInvokeStmt(
@@ -338,11 +334,17 @@ public class ResourcesSoot {
                                 argActivity))); 
 
 		if (SootUtils.checkAncestor(returnType.getSootClass(), mTextViewClass)) {
-			SootMethod setTextMethod = Scene.v().getMethod("<android.widget.TextView: void setText(java.lang.CharSequence)>");
+			SootMethod setTextMethod = SootUtils.findClosetMatch(returnType.getSootClass(), "void setText(java.lang.CharSequence)");
 
-			units.add(Jimple.v().newInvokeStmt(
-						Jimple.v().newVirtualInvokeExpr(localView, setTextMethod.makeRef(), 
-							StringConstant.v(obj.text)))); 
+			if (obj.text != null) {
+				logger.info("setTextMethod: {}({}) ", setTextMethod, obj.text);
+				Expr setTextExpr = Jimple.v().newVirtualInvokeExpr(localView, setTextMethod.makeRef(),
+						StringConstant.v(obj.text)); 
+				Stmt setTextStmt = Jimple.v().newInvokeStmt(setTextExpr);
+				logger.info("setText expr {} ", setTextExpr);
+				logger.info("setText stmt {} ", setTextStmt);
+				units.add(setTextStmt); 
+			}
 		}
 
         units.add(Jimple.v().newAssignStmt(fieldRef, localView));
@@ -374,7 +376,7 @@ public class ResourcesSoot {
             shortType = tokens[tokens.length - 1];
 
         StringBuilder builder = new StringBuilder(shortType);
-        builder.append("_").append(numId);
+        builder.append("_").append(String.format("%x", numId));
         return builder.toString();
     }
 
@@ -394,7 +396,7 @@ public class ResourcesSoot {
 			return "android.view.View";
 		}
 
-        StringBuilder builder = new StringBuilder("android.widget");
+        StringBuilder builder = new StringBuilder("android.widget.");
 
 		builder.append(name.charAt(0));
 
@@ -431,9 +433,57 @@ public class ResourcesSoot {
     */
     public void writeFile(String dir)  {
         String filePath = dir + File.separator + mSootClass.toString();
+		PrintWriter writer;
+	
+		try {
+			writer = new PrintWriter(filePath + ".jimple");
+		}
+		catch (Exception ex) {
+			logger.warn("Cannot open file {} ", filePath);
+			return;
+		}
 
-		if (mHasMethod)
-			SootUtils.writeByteCodeAndJimple(filePath, mSootClass);
+		writer.printf("class %s { \n", mSootClass.toString());
+		writer.println("");
+		 
+		logger.info("fields ");
+		for (SootField field : mSootClass.getFields()) {
+			logger.info("field {} ", field);	
+			writer.printf("\t%s %s \n", Modifier.toString(field.getModifiers()), field);
+		}
+
+		logger.info("methods ");
+		writer.println("");
+		for (SootMethod method: mSootClass.getMethods()) {
+			Body body = method.getActiveBody();
+
+			logger.info("====== method {} ======== ", method);	
+			writer.printf("\t%s %s { \n", 
+					Modifier.toString(method.getModifiers()), method);
+
+			for (Local local: body.getLocals()) {
+				logger.info("{}", local);
+				writer.printf("\t\t%s %s \n", local.getType(), local);
+			}
+
+			writer.println("");
+			Chain<Unit> units = body.getUnits();
+			for (Unit unit: units) {
+				String unitString;
+				try {
+					unitString = unit.toString();
+				} catch(Exception ex) {
+					unitString = "***Invalid Statement ";
+				}
+				writer.printf("\t\t%s \n", unitString);
+				logger.info("{} ", unitString);
+			}
+
+			writer.printf("\t} \n");
+			logger.info("");
+		}
+		writer.printf("} \n");
+		writer.flush();
     }
 
     /****************************************************************************

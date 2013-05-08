@@ -17,6 +17,7 @@ import org.slf4j.LoggerFactory;
 import soot.Body;
 import soot.BodyTransformer;
 import soot.RefType;
+import soot.Type;
 import soot.Scene;
 import soot.SootClass;
 import soot.SootMethod;
@@ -211,14 +212,22 @@ public class IntegrateXMLLayouts extends BodyTransformer {
 				InstanceInvokeExpr iie = SootUtils.getInstanceInvokeExpr(stmt);
 				if (iie != null) {
 					for (AllocNode node : GeoPTA.v().getPTSetContextIns(iie.getBase())) {
+
+						Type nodeType = node.getType();
+
+						if (!(nodeType instanceof RefType)) {
+							logger.info("Skipping type {} ", nodeType);
+							continue;
+						}
+
 						SootClass allocClz = ((RefType)node.getType()).getSootClass();
-						
 						SootMethod resolved = null; 
 						try {
 							resolved = SootUtils.
 								resolveConcreteDispatch(allocClz, iie.getMethod());
 						
 						} catch (CannotFindMethodException e) {
+							
 							continue;
 						}
 						
