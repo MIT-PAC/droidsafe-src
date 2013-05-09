@@ -5,7 +5,8 @@ import droidsafe.helpers.*;
 
 public final class Integer extends Number implements Comparable<Integer> {
 	private DSTaintObject dsTaint = new DSTaintObject();
-
+	public static final Class<Integer> TYPE = new Class<Integer>();
+	
 	@Override
 	public int compareTo(Integer arg0) {
 		// TODO Auto-generated method stub

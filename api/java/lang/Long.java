@@ -7,6 +7,7 @@ import droidsafe.helpers.DSTaintObject;
 public class Long extends Number implements Comparable<Long> {
 
 	private DSTaintObject taint = new DSTaintObject();
+	public static final Class<Long> TYPE = new Class<Long>();
 	
 	@DSModeled(DSC.SAFE)
 	public Long(String s) throws NumberFormatException {

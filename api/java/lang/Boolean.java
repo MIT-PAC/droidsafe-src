@@ -11,7 +11,8 @@ public final class Boolean implements Serializable, Comparable<Boolean> {
 	private static final long serialVersionUID = -3665804199014368530L;
 	
 	private DSTaintObject dsTaint = new DSTaintObject();
-	
+	public static final Class<Boolean> TYPE = new Class<Boolean>();
+
 	private final boolean value;
 	
 	@DSModeled(DSC.SAFE)

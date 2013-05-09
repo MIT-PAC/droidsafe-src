@@ -5,6 +5,8 @@ import droidsafe.helpers.*;
 
 public final class Float extends Number implements Comparable<Float> {
 	private DSTaintObject dsTaint = new DSTaintObject();
+	
+	public static final Class<Float> TYPE = new Class<Float>();
 
 	@Override
 	public int compareTo(Float arg0) {

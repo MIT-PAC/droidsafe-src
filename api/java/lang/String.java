@@ -7,6 +7,7 @@ import droidsafe.helpers.DSTaintObject;
 public class String implements java.io.Serializable, Comparable<String>, CharSequence {
 	
 	private static DSTaintObject taint = new DSTaintObject();
+	public static final Class<String> TYPE = new Class<String>();
 	
 	@DSModeled(DSC.SAFE)
 	public String() {

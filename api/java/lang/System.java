@@ -1,5 +1,6 @@
 package java.lang;
 
+import java.io.InputStream;
 import java.io.PrintStream;
 
 import droidsafe.annotations.DSC;
@@ -12,6 +13,7 @@ public final class System {
 	
 	public static final PrintStream err = null;
 	public static final PrintStream out = null;
+	public static final InputStream in = null;
 	
 	@DSModeled(DSC.SAFE)
 	public static String getProperty(String key) {
