@@ -326,9 +326,11 @@ public class ContextImpl extends Context {
         throw new UnsupportedOperationException();
     }
 
+    @DSModeled(DSC.SPEC)
     @Override
     public Intent registerReceiver(BroadcastReceiver receiver, IntentFilter filter) {
-        throw new UnsupportedOperationException();
+    	receiver.onReceive(this, new Intent());
+    	return null; // no 'sticky' intents need to be modeled for coverage
     }
 
     @Override
