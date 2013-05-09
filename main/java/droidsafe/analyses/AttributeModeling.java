@@ -154,24 +154,24 @@ public class AttributeModeling {
   }
 
   public static void run() {
-    // Run analysis until fixed point is reached
-    //Map<AllocNode, ModeledClass> objectToModelMap;
-    //do {
-    //  objectToModelMap = am.objectToModelMap.clone();
-    runOnce(false);
+    // Run the analysis once to figure out which methods we are able to simulate, discarding results afterwards.
+    runOnce();
     am.objectToModelMap = new LinkedHashMap<AllocNode, ModeledClass>();
-    runOnce(false);
-    runOnce(true);
-   //} while(modelsChanged(oldObjectToModelMap, am.objectToModelMap));
-    
+    am.valueToModelAttrMap = new HashMap<Value, Object>();
+    // Now run the analysis to fixed point, not stepping through the methods that we simulate.
+    int oldValueToModelAttrMapSize;
+    do {
+      oldValueToModelAttrMapSize = am.valueToModelAttrMap.size();
+      runOnce();
+    } while(oldValueToModelAttrMapSize != am.valueToModelAttrMap.size());
+    // Run one more time so that modeled methods get to use the right values
+    runOnce();
+
+    // log the results and statistics    
     am.log();
   }
-
-  public boolean modelsChanged(Map<AllocNode, ModeledClass> oldObjectToModelMap, Map<AllocNode, ModeledClass> newObjectToModelMap) {
-    return (oldObjectToModelMap.size() != newObjectToModelMap.size() || !oldObjectToModelMap.equals(newObjectToModelMap));
-  }
   
-  public static void runOnce(Boolean print) {
+  public static void runOnce() {
     if (GeoPTA.v() == null) {
       logger.error("The GeoPTA pass has not been run. Attribute modeling requires it.");
       System.exit(1);
@@ -344,6 +344,13 @@ public class AttributeModeling {
       for (ArrayList paramObjectPermutation : paramObjectCartesianProduct) {
         objectToReturn = method.invoke(modeledReceiverObject, paramObjectPermutation.toArray());
         if (objectToReturn != null) {
+          if(objectToReturn instanceof droidsafe.model.java.lang.String){
+            if(((droidsafe.model.java.lang.String)objectToReturn).getPossibleValues().size()==0)
+              continue;
+          } else if (objectToReturn instanceof droidsafe.model.android.net.Uri.StringUri){
+            if(((droidsafe.model.android.net.Uri.StringUri)objectToReturn).getUriString().getPossibleValues().size()==0)
+              continue;
+          }
           objectsToReturn.add(objectToReturn);
         }
       }
