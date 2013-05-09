@@ -1,8 +1,10 @@
 package droidsafe.eclipse.plugin.core.specmodel;
 
 import java.io.Serializable;
-import java.util.ArrayList;
 import java.util.List;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import droidsafe.speclang.Method;
 import droidsafe.utils.SourceLocationTag;
@@ -12,6 +14,7 @@ import droidsafe.utils.SourceLocationTag;
  * maintaining only the information relevant to display the method in the Eclipse interface.
  */
 public class DroidsafeMethodModel implements Comparable<DroidsafeMethodModel>, Serializable {
+  private static final Logger logger = LoggerFactory.getLogger(DroidsafeMethodModel.class);
   private static final long serialVersionUID = -2110312802230745309L;
   private String methodName;
   private String className;
@@ -29,6 +32,8 @@ public class DroidsafeMethodModel implements Comparable<DroidsafeMethodModel>, S
     this.className = originalMethod.getCname();
     this.returnType = originalMethod.getRtype();
     this.declarationLocation = originalMethod.getDeclSourceLocation();
+    logger.warn("\n Method Signature {} \n Soot Signature {} \n Soot Sub Signature {}",
+        new Object[] {methodSignature, sootMethodSignature, originalMethod.getSubSignature()});
   }
 
   public String getMethodName() {
