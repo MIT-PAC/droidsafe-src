@@ -359,6 +359,9 @@ public class Resources {
 		//generated resource classes
 		// for (SootClass clz : Scene.v().getClasses()) {
 		for (SootClass clz : Scene.v().getApplicationClasses()) {
+			/* We skip internal android stuff */
+			if (clz.getName().startsWith("android.R$"))
+				continue;
 
 			String shortName = clz.getShortName();
 			if (shortName.equals("BuildConfig") || shortName.equals("R")) {
