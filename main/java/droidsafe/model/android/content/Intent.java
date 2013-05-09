@@ -2,7 +2,10 @@ package droidsafe.model.android.content;
 
 import droidsafe.model.ModeledClass;
 
+import java.util.ArrayList;
 import java.util.List;
+
+import org.apache.commons.lang3.StringUtils;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -83,14 +86,16 @@ public class Intent extends ModeledClass {
     if (this.invalidated) {
       str += "invalidated";
     } else {
-      if(this.mAction != null)
-        str += "action: " + this.mAction;
-      if(this.mType != null)
-        str += ", type: " + this.mType;
+      ArrayList<String> attrs = new ArrayList();
+      if(this.mAction.getPossibleValues().size() > 0)
+        attrs.add("action: " + this.mAction);
+      if(this.mType.getPossibleValues().size() > 0)
+        attrs.add("type: " + this.mType);
       if(this.mData != null)
-        str += ", data: " + this.mData;
-      if(this.mPackage != null)
-        str += ", package: " + this.mPackage;
+        attrs.add("data: " + this.mData);
+      if(this.mPackage.getPossibleValues().size() > 0)
+        attrs.add("package: " + this.mPackage);
+      str = str + StringUtils.join(attrs.toArray(), ", ");
     }
     return str + "}";
   }
