@@ -49,7 +49,7 @@ import droidsafe.helpers.*;
  * rather than throw an exception unless otherwise specified.
  */
 @DSModeled
-public abstract class Uri implements Parcelable, Comparable<Uri> {
+public abstract class Uri implements Comparable<Uri> {
 	private DSTaintObject taint = new DSTaintObject();
     /*
 
@@ -109,7 +109,7 @@ public abstract class Uri implements Parcelable, Comparable<Uri> {
     */
 
     /** Log tag. */
-    private static final String LOG = Uri.class.getSimpleName();
+    //private static final String LOG = Uri.class.getSimpleName();
 
     /**
      * NOTE: EMPTY accesses this field during its own initialization, so this
@@ -132,7 +132,7 @@ public abstract class Uri implements Parcelable, Comparable<Uri> {
     /**
      * Prevents external subclassing.
      */
-    private Uri() {}
+    //private Uri() {}
 
     /**
      * Returns true if this URI is hierarchical like "http://google.com".
@@ -1121,7 +1121,7 @@ public abstract class Uri implements Parcelable, Comparable<Uri> {
             try {
                 return Integer.parseInt(portString);
             } catch (NumberFormatException e) {
-                Log.w(LOG, "Error parsing port string.", e);
+                //Log.w(LOG, "Error parsing port string.", e);
                 return -1;
             }
         }
@@ -1676,10 +1676,11 @@ public abstract class Uri implements Parcelable, Comparable<Uri> {
 
     /** Identifies a null parcelled Uri. */
     private static final int NULL_TYPE_ID = 0;
-
+    
     /**
      * Reads Uris from Parcels.
      */
+   /*  
     public static final Parcelable.Creator<Uri> CREATOR
             = new Parcelable.Creator<Uri>() {
         public Uri createFromParcel(Parcel in) {
@@ -1699,13 +1700,14 @@ public abstract class Uri implements Parcelable, Comparable<Uri> {
             return new Uri[size];
         }
     };
-
+    */
     /**
      * Writes a Uri to a Parcel.
      *
      * @param out parcel to write to
      * @param uri to write, can be null
      */
+    /*
     public static void writeToParcel(Parcel out, Uri uri) {
         if (uri == null) {
             out.writeInt(NULL_TYPE_ID);
@@ -1713,6 +1715,7 @@ public abstract class Uri implements Parcelable, Comparable<Uri> {
             uri.writeToParcel(out, 0);
         }
     }
+    */
 
     private static final char[] HEX_DIGITS = "0123456789ABCDEF".toCharArray();
 
