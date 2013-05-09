@@ -130,7 +130,7 @@ public class Main {
 		{
 			logger.info("Starting PTA...");
 			GeoPTA.run();
-			
+		 	
 			logger.info("Incorporating XML layout information");
 			//IntegrateXMLLayouts.run();
 			
@@ -139,8 +139,8 @@ public class Main {
 		
 			//all transforms should be done by here!
 			logger.info("Restarting PTA...");
-			GeoPTA.release();
-			GeoPTA.run();
+			//GeoPTA.release();
+			//GeoPTA.run();
 				
 		}
 
@@ -154,7 +154,7 @@ public class Main {
 
 		logger.info("Starting Attribute Modeling");
 		AttributeModeling.run();
-		logger.info("Finished Attribute Modeling");
+	  logger.info("Finished Attribute Modeling");
 
 		// print out what modeling is required for this application
 		RequiredModeling.run();

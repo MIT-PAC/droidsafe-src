@@ -52,6 +52,9 @@ import soot.jimple.Stmt;
 import soot.jimple.StmtBody;
 import soot.jimple.StringConstant;
 
+import soot.tagkit.LineNumberTag;
+import soot.tagkit.SourceFileTag;
+
 import soot.RefType;
 
 import soot.Scene;
@@ -61,6 +64,8 @@ import soot.SootClass;
 import soot.SootMethod;
 
 import soot.Type;
+
+import soot.Unit;
 
 import soot.util.Chain;
 
@@ -96,8 +101,14 @@ public class AttributeModeling {
   // Map to store Values to attributes of Models
   private Map<Value, Object> valueToModelAttrMap;
 
+  // Set of methods we simulated and thus don't want to step through
+  private Set<SootMethod> simulatedMethods;
+
   // FileWriter used to log what we still don't model but perhaps should
   private FileWriter attrModelingTodoLog;
+
+  // Source location of current statement
+  private String sourceLocation;
 
   // Generic logger
   private final static Logger logger  = LoggerFactory.getLogger(AttributeModeling.class);
@@ -109,7 +120,8 @@ public class AttributeModeling {
   private AttributeModeling() {
     this.objectToModelMap = new LinkedHashMap<AllocNode, ModeledClass>();
     this.valueToModelAttrMap = new HashMap<Value, Object>();
-
+    this.simulatedMethods = new HashSet<SootMethod>();
+    
     try {
       this.attrModelingTodoLog = new FileWriter(Project.v().getOutputDir() + File.separator 
                                                 + "attribute-modeling-todos.log");
@@ -142,6 +154,24 @@ public class AttributeModeling {
   }
 
   public static void run() {
+    // Run analysis until fixed point is reached
+    //Map<AllocNode, ModeledClass> objectToModelMap;
+    //do {
+    //  objectToModelMap = am.objectToModelMap.clone();
+    runOnce(false);
+    am.objectToModelMap = new LinkedHashMap<AllocNode, ModeledClass>();
+    runOnce(false);
+    runOnce(true);
+   //} while(modelsChanged(oldObjectToModelMap, am.objectToModelMap));
+    
+    am.log();
+  }
+
+  public boolean modelsChanged(Map<AllocNode, ModeledClass> oldObjectToModelMap, Map<AllocNode, ModeledClass> newObjectToModelMap) {
+    return (oldObjectToModelMap.size() != newObjectToModelMap.size() || !oldObjectToModelMap.equals(newObjectToModelMap));
+  }
+  
+  public static void runOnce(Boolean print) {
     if (GeoPTA.v() == null) {
       logger.error("The GeoPTA pass has not been run. Attribute modeling requires it.");
       System.exit(1);
@@ -154,7 +184,6 @@ public class AttributeModeling {
     // loop over all code, creating models and simulating whichever invokeExprs we can as we go
     for (SootClass clazz : Scene.v().getApplicationClasses()) {
       String className = clazz.getName();
-
       // We don't care about the harness or interfaces
       if (clazz.isInterface() || className.equals(Harness.HARNESS_CLASS_NAME))
         continue;
@@ -163,9 +192,12 @@ public class AttributeModeling {
       if(className.equals("edu.mit.csail.droidsafe.DroidSafeCalls")){
         continue;
       }
+     
+      // Get source filename that contains the class 
+      SourceFileTag sourceFileTag = (SourceFileTag)clazz.getTag("SourceFileTag");
 
       for (SootMethod meth : clazz.getMethods()) {
-        if (meth.isConcrete() && reachableMethods.contains(meth)) {
+        if (meth.isConcrete() && reachableMethods.contains(meth) && !am.simulatedMethods.contains(meth)) {
           StmtBody stmtBody = (StmtBody)meth.retrieveActiveBody();
 
           // get body's unit as a chain
@@ -177,11 +209,22 @@ public class AttributeModeling {
 
           while (stmtIt.hasNext()) {
             Stmt stmt = (Stmt)stmtIt.next();
+            Unit unit = (Unit)stmt;
+            
+            // Get source line number of statement
+            LineNumberTag lineNumTag = (LineNumberTag)unit.getTag("LineNumberTag");
+           
+            // Combine the source filename and line number
+            if (sourceFileTag != null && lineNumTag != null) {
+              am.sourceLocation = " called at " + sourceFileTag + ":" + lineNumTag;
+            } else {
+              am.sourceLocation = "";
+            }
+
             if (!stmt.containsInvokeExpr()) {
               continue;
             }
             InvokeExpr invokeExpr = (InvokeExpr)stmt.getInvokeExpr();
-            
             paramAnalyzer = am.new ParamAnalyzer(invokeExpr);
 
             // Compute cartesian product of params, creating models as we do so. If we can't model something, we
@@ -211,7 +254,7 @@ public class AttributeModeling {
                     // We couldn't model one of the arguments so we 
                     // can't simulate the call and have to invalidate the receiver
                     modeledReceiverObject.invalidate();
-                    am.logError("Couldn't model every parameter for " + iie + "\n" 
+                    am.logError("Couldn't model every parameter for " + iie + am.sourceLocation + "\n" 
                                 + "> invalidating " + modeledReceiverObject + " as a result");
                   }
                 }
@@ -222,7 +265,7 @@ public class AttributeModeling {
               try {
                 cls = am.getDroidsafeClass(invokeExpr.getMethod().getDeclaringClass().getName());
               } catch(ClassNotFoundException e) {
-                am.logError("Couldn't get corresponding droidsafe model class for static method class: " 
+                am.logError("Couldn't get corresponding droidsafe model class for static method class for " + invokeExpr + ": " 
                             + e.toString());
                 continue;
               }
@@ -230,7 +273,7 @@ public class AttributeModeling {
                                                              paramClasses);
             } else {
               // we don't know what to do with methods that aren't static or instance invokes
-              am.logError("Not simulation expression (isn't an instance invoke or static): " + invokeExpr);
+              am.logError("Not simulation expression (isn't an instance invoke or static): " + invokeExpr + am.sourceLocation + "\n");
               // invalidate all parameter models
               am.invalidateParamObjects(paramObjectCartesianProduct);
             }
@@ -250,13 +293,19 @@ public class AttributeModeling {
     } catch (IOException ioe){
       logger.warn("Unable to close the attribute modeling error log file.", ioe);
     }
-
-    am.log();
   }
 
   //===================================================================================================================
   // Private Methods
   //===================================================================================================================
+
+  /**
+   * Getter for analysis result
+   */
+  public Map<AllocNode, ModeledClass> getResults() {
+    return this.objectToModelMap;
+  }
+
 
   /**
    *  Invalidate any param that we modeled and log each invalidation.
@@ -299,7 +348,7 @@ public class AttributeModeling {
         }
       }
     } catch (Exception e) {
-      String logEntry = "The method " + methodName + " in " + invokeExprClass + " hasnt been modeled: " + e.toString();
+      String logEntry = "The InvokeExpr " + invokeExpr + this.sourceLocation + " hasn't been modeled: " + e.toString() + " " + e.getStackTrace()[0].toString();
 
       // The method isn't modeled, so we must invalidate every argument that we modeled
       this.invalidateParamObjects(paramObjectCartesianProduct);
@@ -307,10 +356,11 @@ public class AttributeModeling {
       // If this is an InstanceInvoke, also invalidate the receiver object
       if (modeledReceiverObject != null){
         modeledReceiverObject.invalidate();
-        logEntry += "\n" + "> invalidating receiver" + modeledReceiverObject + " as a result";
+        logEntry += "\n" + "> invalidating receiver " + modeledReceiverObject + " as a result";
       }
       this.logError(logEntry);
     }
+    this.simulatedMethods.add(invokeExpr.getMethod());
     return objectsToReturn;
   }
 
@@ -344,7 +394,7 @@ public class AttributeModeling {
     ModeledClass model = null;
     if (!objectToModelMap.containsKey(allocNode)) {
       Constructor<?> ctor;
-      String logEntry = "Couldn't model an instance of the " + sootClass.getName() + "\n";
+      String logEntry = "Couldn't model an instance of the " + sootClass.getName() + " ";
       Class<?> cls;
       try {
          cls = getDroidsafeClass(refType);
@@ -356,7 +406,7 @@ public class AttributeModeling {
       try {
         ctor = cls.getConstructor(AllocNode.class);
       } catch(NoSuchMethodException e) {
-        logEntry += "Available constructors are:";
+        logEntry += "Available constructors are:\n";
         for (Constructor<?> constructor : cls.getConstructors()){
           logEntry += constructor + "\n";
         }
@@ -518,6 +568,11 @@ public class AttributeModeling {
         // If the argument is a constant, we box it up. We don't model primitives.
         // If the argument is a RefType, then we use PTA to find all possible AllocNodes and their corresponding models
         // We can't simulate this invokeExpr if the argument doesn't fall in those two cases (yet)
+        if (paramTypes.get(i) instanceof RefType) {
+         if(((RefType)paramTypes.get(i)).getSootClass().getName().equals("android.net.Uri$1"))
+           continue;
+        }
+        
         if(arg instanceof Constant) {
           if(arg instanceof NullConstant){
             try {
@@ -528,7 +583,7 @@ public class AttributeModeling {
               }
             } catch(Exception e) {
               AttributeModeling.this.logError("Type of parameter #" + i + " of method " 
-                                              + invokeExpr + "isn't modeled yet: " + e.toString());
+                                              + invokeExpr + " isn't modeled yet: " + e.toString());
               return;
             }
             paramObjectSets.get(i).add(null);
@@ -550,45 +605,45 @@ public class AttributeModeling {
             }
             paramObjectSets.get(i).add(object);
           }
-        } else if(arg.getType() instanceof RefType) {  
+        } else if(arg.getType() instanceof RefType) {
           // use PTA to find all possible AllocNodes and their corresponding models
           Set<AllocNode> allocNodeSet = GeoPTA.v().getPTSetContextIns(arg);
-          if (allocNodeSet.size() != 0){
-            for (AllocNode node : allocNodeSet) {
-              ModeledClass modeledParamObject = createAndGetModel(node);
-              if(modeledParamObject != null){
-                paramObjectSets.get(i).add(modeledParamObject);
-                try {
+          if(valueToModelAttrMap.containsKey(arg)){
+            Object modelAttr = valueToModelAttrMap.get(arg);
+            try {
+              paramClasses.get(i);
+            } catch (IndexOutOfBoundsException e) {
+              paramClasses.add(i, modelAttr.getClass());
+            }
+            paramObjectSets.get(i).add(modelAttr); 
+          } else {
+            if (allocNodeSet.size() != 0){
+              for (AllocNode node : allocNodeSet) {
+                ModeledClass modeledParamObject = createAndGetModel(node);
+                if(modeledParamObject != null){
+                  paramObjectSets.get(i).add(modeledParamObject);
                   try {
-                    paramClasses.get(i);
-                  } catch (IndexOutOfBoundsException e) {
-                    paramClasses.add(i, AttributeModeling.this.getDroidsafeClass((RefType)paramTypes.get(i)));
+                    try {
+                      paramClasses.get(i);
+                    } catch (IndexOutOfBoundsException e) {
+                      paramClasses.add(i, AttributeModeling.this.getDroidsafeClass((RefType)paramTypes.get(i)));
+                    }
+                  } catch(ClassNotFoundException cnfe) {
+                    AttributeModeling.this.logError("Couldn't getDroidsafeClass for arg " + arg + "\n"); 
+                    return;
                   }
-                } catch(ClassNotFoundException cnfe) {
-                  AttributeModeling.this.logError("Couldn't getDroidsafeClass for arg " + arg + "\n"); 
+                  // Store the param object model so that we can later invalidate it if we haven't modeled the method
+                  paramObjectModels.add(modeledParamObject);
+                } else {
+                  // We couldn't model the argument node, so invalidate any param models we've already created
+                  for(ModeledClass modeledObject : paramObjectModels){
+                    modeledObject.invalidate();
+                  }
+                  AttributeModeling.this.logError("Couldn't model argument " + i + " " 
+                                                  + node + " for method" + invokeExpr + AttributeModeling.this.sourceLocation);
                   return;
                 }
-                // Store the param object model so that we can later invalidate it if we haven't modeled the method
-                paramObjectModels.add(modeledParamObject);
-              } else {
-                // We couldn't model the argument node, so invalidate any param models we've already created
-                for(ModeledClass modeledObject : paramObjectModels){
-                  modeledObject.invalidate();
-                }
-                AttributeModeling.this.logError("Couldn't model argument " + i + " " 
-                                                + node + " for method" + invokeExpr);
-                return;
-              }
-            }
-          } else {
-            if(valueToModelAttrMap.containsKey(arg)){
-              Object modelAttr = valueToModelAttrMap.get(arg);
-              try {
-                paramClasses.get(i);
-              } catch (IndexOutOfBoundsException e) {
-                paramClasses.add(i, modelAttr.getClass());
-              }
-              paramObjectSets.get(i).add(modelAttr); 
+              } 
             } else {
               AttributeModeling.this.logError("PTA didn't find any AllocNodes and the analysis dind't find any model" +
                                               " attributes for arg #" + i + " of instanceInvokeExpr " + invokeExpr);
@@ -625,5 +680,5 @@ public class AttributeModeling {
     public ArrayList<Class> getParamClasses(){
       return this.paramClasses;
     }
-  }  
+  } 
 }

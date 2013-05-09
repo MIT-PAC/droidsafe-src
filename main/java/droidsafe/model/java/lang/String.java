@@ -11,7 +11,7 @@ import java.util.HashSet;
 
 public class String extends ModeledClass{
 
-  Set<java.lang.String> possibleValues;
+  private Set<java.lang.String> possibleValues;
 
   public String(){
     this.possibleValues = new HashSet<java.lang.String>();

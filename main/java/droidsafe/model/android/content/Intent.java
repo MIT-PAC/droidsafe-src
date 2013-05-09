@@ -43,7 +43,11 @@ public class Intent extends ModeledClass {
   public void setAction(droidsafe.model.java.lang.String mAction){
     this.mAction.incorporateString(mAction);
   }
-  
+
+  public void setData(droidsafe.model.android.net.Uri mUri) {
+    this.mData = mUri;
+  }
+
   public void setType(droidsafe.model.java.lang.String mType){
     this.mType.incorporateString(mType);
   }
