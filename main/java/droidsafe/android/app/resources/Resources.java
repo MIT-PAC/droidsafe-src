@@ -79,8 +79,8 @@ public class Resources {
 	/** Layouts in the Application **/
 	List<Layout> layouts = new ArrayList<Layout>();
   
-  // Stores string name to RString mappings that we create while parsing resource files in res/values
-  HashMap<String, RString> stringNameToRString = new HashMap<String, RString>();
+  // string name to RString List mappings: created while parsing.  Store multiple values in the list
+  HashMap<String, List<RString>> stringNameToRStringList = new HashMap<String, List<RString>>();
   
   // Stores string array name to RStringArray mapping that we create while parsing resource files in res/values
   HashMap<String, RStringArray> stringArrayNameToRStringArray = new HashMap<String, RStringArray>();
@@ -117,15 +117,28 @@ public class Resources {
 		return manifest;
 	}
 
-  public HashMap<String, RString> getStringNameToRStringHashMap() {
-    return this.stringNameToRString;
-  }
-  
-  public HashMap<String, RStringArray> getStringArrayNameToRStringArrayHashMap() {
-    return this.stringArrayNameToRStringArray;
-  }
-	
-  public static void resolveManifest(String rootDir)  {
+	HashMap<String, RString> stringNameToRString;
+
+	public HashMap<String, RString> getStringNameToRStringHashMap() {
+		if (stringNameToRString == null) {
+			stringNameToRString = new HashMap<String, RString>();
+			for (String key: stringNameToRStringList.keySet()) {
+				stringNameToRString.put(key, stringNameToRStringList.get(key).get(0)); 
+			}
+		}
+		return this.stringNameToRString;
+	}
+
+	public HashMap<String, List<RString>> getStringNameToRStringListHashMap() {
+
+		return this.stringNameToRStringList;
+	}
+
+	public HashMap<String, RStringArray> getStringArrayNameToRStringArrayHashMap() {
+		return this.stringArrayNameToRStringArray;
+	}
+
+	public static void resolveManifest(String rootDir)  {
 		try {
 			v = new Resources (new File (rootDir));
 			// Dump manifest information
@@ -157,24 +170,24 @@ public class Resources {
 				logger.info ("  Processing layout {}\n", l.name);
 				v.process_view (l, l.view);
 			}
-		
+
 			//set all the underlying soot classes for the components 
 			//other than activity
 			for (Service s : v.manifest.services) {
 				s.setSootClass(s.name);
 				am.components.add(s.getSootClass());
 			}
-			
+
 			for (Provider p : v.manifest.providers) {
 				p.setSootClass(p.name);
 				am.components.add(p.getSootClass());
 			}
-			
+
 			for (Receiver r : v.manifest.receivers) {
 				r.setSootClass(r.name);
 				am.components.add(r.getSootClass());
 			}
-			
+
 			//check that all source components are in the manifest
 			for (SootClass clazz : droidsafe.android.app.Hierarchy.v().getAllAppComponents()) {
 				if (!clazz.isAbstract() && !am.components.contains(clazz)) {
@@ -183,13 +196,13 @@ public class Resources {
 			}		
 
 			v.buildSootObjects();
-			
+
 			v.resolved = true;
 		} catch (Exception e) {
 			logger.error("Error resolving resources and manifest: {}", e);
 		}
 	}
-	
+
 	/** Processes the application located in the specified directory **/
 	public Resources (File application_base) throws Exception {
 
@@ -223,11 +236,17 @@ public class Resources {
 		// Dealing with res/values, and res/values-v15*******
 		File resource_dir = new File(application_base, "res");
 		File[] values_dirs = resource_dir.listFiles(new FilenameFilter() {
-					@Override
-					public boolean accept(File dir, String name) {
-						logger.debug("file {}, string {} ", dir, name);
-						return name.equals("values") || name.equals("values-v15");
-					} 
+				@Override
+				public boolean accept(File dir, String name) {
+				boolean matched = name.startsWith("values") ||
+								  name.startsWith("Values") ;
+
+				
+				logger.debug("file {}, string {}, matched {} ", 
+					dir, name, matched);
+				//return name.equals("values*") || name.equals("values-v15");
+				return matched;
+				} 
 				});
 
 		logger.info("{} value dirs exist", values_dirs.length);
@@ -249,103 +268,117 @@ public class Resources {
 		// Add This point, all resrouces will have been parsed and loaded
 		ResourcesSoot.v().setNumberToStringMap(resource_info);
 	}
-	
+
 	/**
 	 * buildSootObjects():
 	 * 		This method builds internal UI Objects for use in soot analysis
 	 */
 	public void buildSootObjects() {
 		for (Layout layout: layouts) {
-			layout.buildUIObjects(stringNameToRString);
+			layout.buildUIObjects(stringNameToRStringList);
 		}
 	}
 
-  /**
-  * Takes in an xml files and processes the following values from it:
-  *  - string (stores them in HashMap<String, RString> stringNameToRString
-  *  - string-array (stores them in HashMap<String, RString> stringNameToRStringArray
-  * TODO: add support for colors, dimensions, typed arrays and styles.
-  * @param xmlFile an XmlFile instance that we treat as a source of values (e.g. res/values/arrays.xml)
-  */
-  void process_values(XmlFile xmlFile) {
-     logger.info("Processing values from {}", xmlFile);
-     
-     BaseElement baseElement = new BaseElement(xmlFile.getDocumentElement(), null);
-     List<Node> children = baseElement.gather_children();
-     
-     // process strings
-     // IMPORTANT: this must execute fully before we process string-arrays because some string values in a string array
-     // can be string names. We want to substitute the values in instead but don't have them all until this finishes
-     for(int i = 0; i < children.size(); ++i){
-       Element element = (Element)children.get(i);
-       String tagName = element.getTagName();
-       
-       if (tagName.equals("string")){
-         Node firstChild = element.getFirstChild();
-         if (firstChild != null) {
-           String stringValue = firstChild.getNodeValue();
-           // create an instance of our internal representation of the android string - RString
-           RString rString = null;
-           try{
-             rString = new RString(element, xmlFile, stringValue);
-           } catch (InvalidPropertiesFormatException e) {
-             logger.error("String {} is not formatted correctly in {} : {}", element, xmlFile, e);
-             continue;
-           }
-           // the name automatically gets assigned during xml parsing
-           String stringName = rString.name;
-         
-           logger.debug("Adding a string name to string value mapping: ({}:{})", 
-		   				stringName, stringValue);
-           stringNameToRString.put(stringName, rString);
-         }
-       }
-     }
+	/**
+	 * Takes in an xml files and processes the following values from it:
+	 *  - string (stores them in HashMap<String, RString> stringNameToRStringList
+	 *  - string-array (stores them in HashMap<String, RString> stringNameToRStringListArray
+	 * TODO: add support for colors, dimensions, typed arrays and styles.
+	 * @param xmlFile an XmlFile instance that we treat as a source of values (e.g. res/values/arrays.xml)
+	 */
+	void process_values(XmlFile xmlFile) {
+		logger.info("Processing values from {}", xmlFile);
 
-    // process string arrays
-    for(int i = 0; i < children.size(); ++i){
-      Element element = (Element)children.get(i);
-      String tagName = element.getTagName();
-      
-      if (tagName.equals("string-array")){
-        // get the value of the string-array, a List<string>
-        NodeList stringArrayNodes = element.getChildNodes();
-        List<String> stringArrayValues = new ArrayList<String>();
-        for (int j = 0; j < stringArrayNodes.getLength(); ++j) {
-          Node child = stringArrayNodes.item(j);
-          if(child instanceof Element){
-            Element childElement = (Element)child;
-            Node firstChild = childElement.getFirstChild();
-            if(firstChild!= null){
-              String stringArrayValue = firstChild.getNodeValue();
-              int index = stringArrayValue.indexOf("@string");
-              if(index != -1){
-                String stringName = stringArrayValue.substring("@string".length()+1, stringArrayValue.length());
-                if(stringNameToRString.containsKey(stringName)){
-                  stringArrayValue = stringNameToRString.get(stringName).value;
-                }
-              }
-              stringArrayValues.add(stringArrayValue);
-            }
-          }
-        }
-        // create an instance of our internal representation of the android string-array - RStringArray
-        RStringArray rStringArray = null;
-        try{
-          rStringArray = new RStringArray(element, xmlFile, stringArrayValues);
-        } catch (InvalidPropertiesFormatException e) {
-          logger.error("string-array {} is not formatted correctly in {} : {}", element, xmlFile, e);
-          continue;
-        }
-        // the name automatically gets assigned during xml parsing
-        String stringArrayName = rStringArray.name;
+		BaseElement baseElement = new BaseElement(xmlFile.getDocumentElement(), null);
+		List<Node> children = baseElement.gather_children();
 
-        stringArrayNameToRStringArray.put(stringArrayName, rStringArray);
-        logger.info("\nAdding a string-array name to string-array value mapping: ({}:{})", stringArrayName, stringArrayValues);
+		// process strings
+		// IMPORTANT: this must execute fully before we process string-arrays because some string values in a string array
+		// can be string names. We want to substitute the values in instead but don't have them all until this finishes
+		for(int i = 0; i < children.size(); ++i){
+			Element element = (Element)children.get(i);
+			String tagName = element.getTagName();
 
-      }
-    }
-  }
+			if (tagName.equals("string")){
+				Node firstChild = element.getFirstChild();
+				if (firstChild != null) {
+					String stringValue = firstChild.getNodeValue();
+					// create an instance of our internal representation of the android string - RString
+					RString rString = null;
+					try{
+						rString = new RString(element, xmlFile, stringValue);
+					} catch (InvalidPropertiesFormatException e) {
+						logger.error("String {} is not formatted correctly in {} : {}", element, xmlFile, e);
+						continue;
+					}
+					// the name automatically gets assigned during xml parsing
+					String stringName = rString.name;
+
+					logger.debug("Adding a string name to string value mapping: ({}:{})", 
+							stringName, stringValue);
+
+					List<RString> valueList = stringNameToRStringList.get(stringName);
+					if (valueList == null) {
+						valueList = new LinkedList<RString>();
+						stringNameToRStringList.put(stringName, valueList);
+					}
+					valueList.add(rString);
+				}
+			}
+		}
+
+		// process string arrays
+		for(int i = 0; i < children.size(); ++i){
+			Element element = (Element)children.get(i);
+			String tagName = element.getTagName();
+
+			if (tagName.equals("string-array")){
+				// get the value of the string-array, a List<string>
+				NodeList stringArrayNodes = element.getChildNodes();
+				List<String> stringArrayValues = new ArrayList<String>();
+
+				for (int j = 0; j < stringArrayNodes.getLength(); ++j) {
+					Node child = stringArrayNodes.item(j);
+					if(child instanceof Element){
+						Element childElement = (Element)child;
+						Node firstChild = childElement.getFirstChild();
+						if(firstChild!= null){
+							String stringArrayValue = firstChild.getNodeValue();
+							int index = stringArrayValue.indexOf("@string");
+
+							String stringName = null;
+							if (index >= 0 )
+								stringName = stringArrayValue.substring("@string".length()+1, stringArrayValue.length());
+							if((index >= 0) && stringNameToRStringList.containsKey(stringName)){
+								logger.debug("Expanding string {} to put in string array ", stringName);
+								// Expand the stringlist and put them to string array 
+								for (RString rString: stringNameToRStringList.get(stringName)) {
+									stringArrayValues.add(rString.value);
+								}
+							}
+							else {
+								stringArrayValues.add(stringArrayValue);
+							}
+						}
+					}
+				}
+				// create an instance of our internal representation of the android string-array - RStringArray
+				RStringArray rStringArray = null;
+				try{
+					rStringArray = new RStringArray(element, xmlFile, stringArrayValues);
+				} catch (InvalidPropertiesFormatException e) {
+					logger.error("string-array {} is not formatted correctly in {} : {}", element, xmlFile, e);
+					continue;
+				}
+				// the name automatically gets assigned during xml parsing
+				String stringArrayName = rStringArray.name;
+
+				stringArrayNameToRStringArray.put(stringArrayName, rStringArray);
+				logger.info("\nAdding a string-array name to string-array value mapping: ({}:{})", stringArrayName, stringArrayValues);
+
+			}
+		}
+	}
 
 	/** 
 	 * Reads all of the resources ids defined in R and adds them 
@@ -380,15 +413,15 @@ public class Resources {
 				for (SootField field : clz.getFields()) {
 					logger.debug("field : {} ", field);
 					Integer value = new Integer(0);
-					
+
 					Tag tag = field.getTag("IntegerConstantValueTag");
 					//ug, the initializer value is stored in a tag
 					//not documented anywhere...except a mailing list post from years ago
 					if (tag instanceof IntegerConstantValueTag) {
 						value = new Integer(((IntegerConstantValueTag)tag).getIntValue());
 						logger.debug("field {}.{} = {}", component, field, 
-									 String.format("%08X", value));
-						
+								String.format("%08X", value));
+
 						String resource_value = component + "." + field.getName();
 						if (resource_info.get(value) != null) {
 							logger.warn("resource_info.put({}, {}) ALREADY existed ", value, resource_value); 
@@ -423,17 +456,17 @@ public class Resources {
 			className = package_name + activity.name;
 		else 
 			className = activity.name;
-		
+
 		final SootClass cn = Scene.v().getSootClass(className);
-		
+
 		if (!Scene.v().containsClass(className) || cn == null) {
 			logger.error ("No class file found for manifest activity '{}' "
 					+ "(package {})", activity.name, package_name);
 			System.exit(1);
 		}
-		
-		
-		
+
+
+
 		logger.info ("read in class file " + cn.getName());
 
 		// Process methods of cn only if cn is an "Activity" or inherits Activity
@@ -451,15 +484,15 @@ public class Resources {
 	/** Processes an entry point **/
 	// full_classname looks like: "com.example.helladroid.HelloAndroid"
 	private void process_entry (SootClass cn, String methSubSig) 
-			throws UnsupportedIdiomException, MissingElementException {
-		SootMethod m = cn.getMethod(methSubSig);
-		
-		if (!cn.declaresMethod(methSubSig) || m == null) 
-			throw new MissingElementException ("Method " + methSubSig 
-					+ " not found in class " + cn);
-		logger.info ("process entry {}.{}()", cn, m);
-		process_method (null, cn, m);
-	}
+		throws UnsupportedIdiomException, MissingElementException {
+			SootMethod m = cn.getMethod(methSubSig);
+
+			if (!cn.declaresMethod(methSubSig) || m == null) 
+				throw new MissingElementException ("Method " + methSubSig 
+						+ " not found in class " + cn);
+			logger.info ("process entry {}.{}()", cn, m);
+			process_method (null, cn, m);
+		}
 
 	/**
 	 * Processes any entry points (onClick attributes) specified in this
@@ -523,26 +556,26 @@ public class Resources {
 	 * reference that activity.
 	 */
 	private void process_method (final Activity activity, final SootClass cn, final SootMethod m) 
-			throws UnsupportedIdiomException {
-		//find all invoke calls in method...
-		StmtBody stmtBody = null;
-		
-		try {
-			 stmtBody = (StmtBody)m.retrieveActiveBody();
-		} catch (Exception e) {
-			logger.debug("No active body for {}", m);
-			return;
-		}
-		
-		for( Iterator stmtIt = stmtBody.getUnits().iterator(); stmtIt.hasNext(); ) {
-			final Stmt stmt = (Stmt) stmtIt.next();
-			if (stmt.containsInvokeExpr()) {
-				InvokeExpr expr = stmt.getInvokeExpr();
-				if (expr instanceof VirtualInvokeExpr)
-					v.process_invoke(cn, m, (VirtualInvokeExpr)expr, activity);
+		throws UnsupportedIdiomException {
+			//find all invoke calls in method...
+			StmtBody stmtBody = null;
+
+			try {
+				stmtBody = (StmtBody)m.retrieveActiveBody();
+			} catch (Exception e) {
+				logger.debug("No active body for {}", m);
+				return;
+			}
+
+			for( Iterator stmtIt = stmtBody.getUnits().iterator(); stmtIt.hasNext(); ) {
+				final Stmt stmt = (Stmt) stmtIt.next();
+				if (stmt.containsInvokeExpr()) {
+					InvokeExpr expr = stmt.getInvokeExpr();
+					if (expr instanceof VirtualInvokeExpr)
+						v.process_invoke(cn, m, (VirtualInvokeExpr)expr, activity);
+				}
 			}
 		}
-	}
 
 
 	// Returns true if cn is class android/app/Activity or is a class
@@ -560,31 +593,31 @@ public class Resources {
 			Activity activity) throws UnsupportedIdiomException {
 		//logger.info ("process_invoke [{}] {}.{} calling {}", cn.getSuperclass(),
 		//		cn, m, expr);
-		
+
 		//if we don't have a reference, return
 		if (!(expr.getBase().getType() instanceof RefType))
 			return;
-		
+
 		//cannot possibly be a call to setContentView with another name...
 		if (!expr.getMethod().getName().equals("setContentView"))
 			return;
-		
+
 		SootMethod calling = 
-				Scene.v().getActiveHierarchy().resolveConcreteDispatch(((RefType)expr.getBase().getType()).getSootClass(), expr.getMethod());
-		
+			Scene.v().getActiveHierarchy().resolveConcreteDispatch(((RefType)expr.getBase().getType()).getSootClass(), expr.getMethod());
+
 		SootMethod setContentView = Scene.v().getMethod("<android.app.Activity: void setContentView(int)>");
-		
+
 		if (calling.equals(setContentView)) {
 			//now check if the single argument is a constant
-						
+
 			if (!(expr.getArgs().get(0) instanceof IntConstant)) {
 				logger.error("Found call to setContentView(int) with non-constant argument: {}", expr.getArgs().get(0));
 				System.exit(1);
 				return;
 			}
-			
+
 			int resource_id = ((IntConstant)expr.getArgs().get(0)).value;
-				
+
 			logger.info ("Multiple setContentView calls in one Activity: {} {}", cn, m);
 
 			activity.content_views.add(new Integer(resource_id));
@@ -613,23 +646,23 @@ public class Resources {
 	private static void bad_idiom (SootClass class_node,
 			SootMethod method_node,
 			String format,  Object... args) 
-					throws UnsupportedIdiomException {
+		throws UnsupportedIdiomException {
 
-		String msg = String.format (format, args);
-		throw new UnsupportedIdiomException (class_node, method_node,
-				msg);
-	}
+			String msg = String.format (format, args);
+			throw new UnsupportedIdiomException (class_node, method_node,
+					msg);
+		}
 
 
 	/**
 	 * Throws an UnsupportedIdiomException for the current class/method/line
 	 */
 	private static void bad_idiom (String format,  Object... args) 
-			throws UnsupportedIdiomException {
+		throws UnsupportedIdiomException {
 
-		String msg = String.format (format, args);
-		throw new UnsupportedIdiomException (msg);
-	}
+			String msg = String.format (format, args);
+			throw new UnsupportedIdiomException (msg);
+		}
 
 
 	/**
@@ -646,7 +679,7 @@ public class Resources {
 		return null;
 	}
 
-	
+
 	/**
 	 * Given the integer id of a view or layout in the resource class,
 	 * return the String identifier from the source xml file.
@@ -662,7 +695,7 @@ public class Resources {
 		else 
 			return "";
 	}
-	
+
 	/**
 	 * Find the ID of a layout.
 	 * 
@@ -675,19 +708,19 @@ public class Resources {
 		} else
 			return null;
 	}
-	
+
 	public boolean isResolved() {
 		return resolved;
 	}
-	
+
 	public Set<SootMethod> getAllHandlers() {
 		return allHandlers;
 	}
-	
+
 	public boolean isHandler(SootMethod m) {
 		return allHandlers.contains(m);
 	}
-	
+
 	/**
 	 * Given the id of a layout called by setContentView(int), return 
 	 * the handlers in a map of button (view) -> methog signature.
@@ -698,28 +731,28 @@ public class Resources {
 		if (resolved) {
 			//find the layout
 			String fullname = findLayoutName(i);
-			
+
 			//in the resource_info of application, entries are stored by component.name
 			//we just want the name when searching for a layout
 			String[] name_ext = fullname.split ("[.]", 2);
-		    String name = name_ext[1];
-		    
+			String name = name_ext[1];
+
 			if (name == null || name.equals("")) {
 				logger.info("Warning: name of layout null when analyzing setContentView()");
 				return null;
 			}
-				
+
 			Layout layout = find_layout_by_name(name);
 			if (layout == null) {
 				logger.info("Warning: cannot find layout when analyzing setContentView()");
 				return null;
 			}
-			
+
 			HashMap<Layout.View, SootMethod> ret = handlers.get(layout);
 			if (ret == null) 
 				return new HashMap<Layout.View, SootMethod>();
 			return ret;
-			
+
 		} else  {
 			//Messages.print("Unresolved!");
 			return null;
@@ -765,14 +798,14 @@ public class Resources {
 	static String node_type (Node n) {
 
 		switch (n.getNodeType()) {
-		case Node.DOCUMENT_NODE: return ("Document");
-		case Node.DOCUMENT_TYPE_NODE: return ("Document type");
-		case Node.ELEMENT_NODE: return ("Element");
-		case Node.ENTITY_NODE: return ("Entity");
-		case Node.TEXT_NODE: return ("Text");
-		default: return String.format ("node type %d", n.getNodeType());
+			case Node.DOCUMENT_NODE: return ("Document");
+			case Node.DOCUMENT_TYPE_NODE: return ("Document type");
+			case Node.ELEMENT_NODE: return ("Element");
+			case Node.ENTITY_NODE: return ("Entity");
+			case Node.TEXT_NODE: return ("Text");
+			default: return String.format ("node type %d", n.getNodeType());
 		}
 	}
-	
-	
-}
+
+
+	}

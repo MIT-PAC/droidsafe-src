@@ -1,6 +1,7 @@
 package droidsafe.android.app.resources;
 
 import java.util.*;
+import java.util.LinkedList;
 import java.io.*;
 import org.w3c.dom.*;
 
@@ -57,7 +58,7 @@ public class Layout {
 
   }
 
-  private void buildOneUIObject(View cview,  HashMap<String, RString> stringMap) {
+  private void buildOneUIObject(View cview,  HashMap<String, List<RString>> stringListMap) {
 	  logger.debug("cview: " + cview); 
 	  String id = cview.get_attr("id");
 	  logger.debug("cview.name <{}>, id={}" , cview.name, id);
@@ -72,21 +73,28 @@ public class Layout {
 		  logger.debug("  id {}:{} " ,id, idName);
 	  }
 
+	  List<String> textValueList = new LinkedList<String>();
+
 	  if (text != null) {
 		  logger.debug("  text -  " + text);
 		  int index = text.indexOf("/");
 		  if (text.startsWith("@") && index > 0) {
-			  RString rString = stringMap.get(text.substring(index + 1));
-			  if (rString != null) {
-				  logger.debug("  value=" + rString.value);
-				  text = rString.value;
-			  }
+			  List<RString> rStringList = stringListMap.get(text.substring(index + 1));
+			  if (rStringList != null) {
+				  for (RString rString: rStringList) {
+					  logger.debug("adding value=" + rString.value);
+					  textValueList.add(rString.value);
+				  }
+			  } 
+		  }
+		  else  {
+			  textValueList.add(text);
 		  }
 	  }
 
 	  if (idName != null && cview.name != null) {
-		  logger.debug("addTextView({}, {}, {})", cview.name, idName, text);
-		  ResourcesSoot.v().addTextView(cview.name,  idName, text);
+		  logger.debug("addView({}, {}, {})", cview.name, idName, text);
+		  ResourcesSoot.v().addView(cview.name,  idName, textValueList);
 	  }
   }
 
@@ -94,7 +102,7 @@ public class Layout {
   /*
   * Internal version to build UIobjects of all views recursively
   */
-  private void buildUIObjects(View myView, HashMap<String, RString> stringMap) {
+  private void buildUIObjects(View myView, HashMap<String, List<RString>> stringListMap) {
 	  logger.debug("====================");
 	  logger.debug("buidUIObjects for Layout ");
 	  logger.debug("View " + view);
@@ -102,17 +110,17 @@ public class Layout {
 	  logger.debug("");
 
 	  for (View cview: myView.children) { 
-		  buildUIObjects(cview, stringMap);
+		  buildUIObjects(cview, stringListMap);
 	  }
-	  buildOneUIObject(myView, stringMap);
+	  buildOneUIObject(myView, stringListMap);
   }
 
   /**
   * buildUIObjects:
   *		
   */
-  public void buildUIObjects(HashMap<String, RString> stringMap) {
-	  buildUIObjects(view, stringMap);
+  public void buildUIObjects(HashMap<String, List<RString>> stringListMap) {
+	  buildUIObjects(view, stringListMap);
   }
 
   public class View extends BaseElement {

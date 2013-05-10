@@ -97,13 +97,15 @@ import droidsafe.utils.SootUtils;
 public class ResourcesSoot {
 
     /**
-    * Inner class holding UISoot object used for lookup
+    * Inner class holding UISoot object used for lookup.  We will have a table of id->UISootObject
+	* mapping that will allow us to do cross reference between ID and (methods, object, text)
     */
     public class UISootObject {
-        public int         numericId;
-        public String      stringId;
-        public String      type;
-        public String      text;
+        public int          numericId;
+        public String       stringId;
+        public String       type;
+        public String       text;
+		public List<String> textList;
         public SootField   sootField;
         public SootMethod  lookupMethod;
         public UISootObject() {
@@ -115,10 +117,10 @@ public class ResourcesSoot {
             lookupMethod = null;
         }
 
-        public UISootObject(int numId, String type, String strId, String text, SootField sf) {
+        public UISootObject(int numId, String type, String strId, List<String> textValues, SootField sf) {
             numericId = numId;
             stringId  = strId;
-            this.text = text;
+            this.textList = textValues;
             this.type = type;
             sootField = sf;
             lookupMethod = null;
@@ -169,11 +171,11 @@ public class ResourcesSoot {
 
 
     /**
-    * addTextView:
+    * addView:
     *   function to add a text view info into uiObjectTable but do not instantiate the object
     *   on first call of findViewById() is when the object is instantiated
     */
-    public void addTextView(String type, String strId, String text) {
+    public void addView(String type, String strId, List<String> textList) {
         // adding ui object (partial information, no numeric ID, no soot method)  
         // to the list of UI objects 
 
@@ -184,9 +186,9 @@ public class ResourcesSoot {
         // }
 
 		if(strId == null || type == null) {
-			logger.warn("type:{}, id:{}, text:{}", type, strId, text);
+			logger.warn("addView type:{}, id:{}", type, strId);
 		} else {
-			logger.info("type:{}, id:{}, text:{}", type, strId, text);
+			logger.info("addView type:{}, id:{}", type, strId);
 		}
 
 		strId = strId.replace("@android:", "");
@@ -199,7 +201,7 @@ public class ResourcesSoot {
 		}
 
         if (uiObjectTable.get(id) == null) {
-            UISootObject obj = new UISootObject(id.intValue(), type, strId, text, null);
+            UISootObject obj = new UISootObject(id.intValue(), type, strId, textList, null);
             uiObjectTable.put(id, obj);
             createViewMember(id);
             addGetView_ID(id);
@@ -335,13 +337,13 @@ public class ResourcesSoot {
 
 		if (SootUtils.checkAncestor(returnType.getSootClass(), mTextViewClass)) {
 			SootMethod setTextMethod = SootUtils.findClosetMatch(returnType.getSootClass(), "void setText(java.lang.CharSequence)");
-
-			if (obj.text != null) {
-				logger.info("setTextMethod: {}({}) ", setTextMethod, obj.text);
+			int setId = 1;
+			for (String text: obj.textList) {
+				logger.info("setTextMethod {}: {}({}) ", setId++, setTextMethod, text);
 				Expr setTextExpr = Jimple.v().newVirtualInvokeExpr(localView, setTextMethod.makeRef(),
-						StringConstant.v(obj.text)); 
+						StringConstant.v(text)); 
 				Stmt setTextStmt = Jimple.v().newInvokeStmt(setTextExpr);
-				logger.info("setText expr {} ", setTextExpr);
+				//logger.info("setText expr {} ", setTextExpr);
 				logger.info("setText stmt {} ", setTextStmt);
 				units.add(setTextStmt); 
 			}
