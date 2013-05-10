@@ -25,6 +25,7 @@ import droidsafe.analyses.infoflow.InformationFlowAnalysis;
 import droidsafe.analyses.infoflow.InjectedSourceFlows;
 import droidsafe.analyses.infoflow.InterproceduralControlFlowGraph;
 import droidsafe.analyses.rcfg.RCFG;
+import droidsafe.analyses.strings.JSAUtils;
 import droidsafe.analyses.strings.JSAStrings;
 import droidsafe.android.app.EntryPoints;
 import droidsafe.android.app.Harness;
@@ -102,27 +103,29 @@ public class Main {
 
     // The JSA analysis fails if it follows AddAllocsForAPICalls.run()		
 		if (Config.v().RUN_STRING_ANALYSIS) {
+      JSAUtils.setUpHotspots();
+      /*
+      //	Predefined hotspots. Should be removed.
+      JSAStrings.v().addArgumentHotspots("<android.content.Intent: void <init>(java.lang.String)>", 0);
+      JSAStrings.v().addArgumentHotspots("<android.content.Intent: android.content.Intent addCategory(java.lang.String)>", 0);	
 
-     //	Predefined hotspots. Should be removed.
-        JSAStrings.v().addArgumentHotspots("<android.content.Intent: void <init>(java.lang.String)>", 0);
-        JSAStrings.v().addArgumentHotspots("<android.content.Intent: android.content.Intent addCategory(java.lang.String)>", 0);	
+      JSAStrings.v().addArgumentHotspots("<android.content.Intent: android.content.Intent setAction(java.lang.String)>", 0);	
 
-        JSAStrings.v().addArgumentHotspots("<android.content.Intent: android.content.Intent setAction(java.lang.String)>", 0);	
+      JSAStrings.v().addArgumentHotspots("<java.net.URI: void <init>(java.lang.String)>", 0);
+      JSAStrings.v().addArgumentHotspots("<android.content.Intent: android.content.Intent setType(java.lang.String)>", 0);	
 
-        JSAStrings.v().addArgumentHotspots("<java.net.URI: void <init>(java.lang.String)>", 0);
-        JSAStrings.v().addArgumentHotspots("<android.content.Intent: android.content.Intent setType(java.lang.String)>", 0);	
+      JSAStrings.v().addArgumentHotspots("<android.widget.Toast: android.widget.Toast makeText(android.content.Context,java.lang.CharSequence,int)>", 1);	
 
-        JSAStrings.v().addArgumentHotspots("<android.widget.Toast: android.widget.Toast makeText(android.content.Context,java.lang.CharSequence,int)>", 1);	
+      JSAStrings.v().addArgumentHotspots("<com.example.android.apis.content.PickContact$ResultDisplayer: void <init>(com.example.android.apis.content.PickContact,java.lang.String,java.lang.String)>",1);
+      JSAStrings.v().addArgumentHotspots("<com.example.android.apis.content.PickContact$ResultDisplayer: void <init>(com.example.android.apis.content.PickContact,java.lang.String,java.lang.String)>",2);
 
-        JSAStrings.v().addArgumentHotspots("<com.example.android.apis.content.PickContact$ResultDisplayer: void <init>(com.example.android.apis.content.PickContact,java.lang.String,java.lang.String)>",1);
-        JSAStrings.v().addArgumentHotspots("<com.example.android.apis.content.PickContact$ResultDisplayer: void <init>(com.example.android.apis.content.PickContact,java.lang.String,java.lang.String)>",2);
-
-        JSAStrings.v().addArgumentHotspots("<android.app.Activity: void setTitle(java.lang.CharSequence)>",0);
-		  JSAStrings.run(Config.v());
+      JSAStrings.v().addArgumentHotspots("<android.app.Activity: void setTitle(java.lang.CharSequence)>",0);
+		 */
+     JSAStrings.run(Config.v());
 
 
-		  // Debugging.
-		  JSAStrings.v().log();
+		 // Debugging.
+		 JSAStrings.v().log();
 		}
 
 		AddAllocsForAPICalls.run();
