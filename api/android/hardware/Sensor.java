@@ -34,6 +34,13 @@ public class Sensor {
     
     private DSTaintObject dsTaint = new DSTaintObject();
 
+    // GITI DSModeled - not original to Sensor.java, added to track the type of sensor
+    // requested by the application (via SensorManager.java)
+    @DSModeled(DSC.BAN)
+    public Sensor(int type) {
+    	mType = type;
+    }
+
     // GITI DSModeled
     @DSModeled(DSC.SAFE)
     Sensor() {

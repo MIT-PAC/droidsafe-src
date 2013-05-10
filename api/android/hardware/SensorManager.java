@@ -40,14 +40,14 @@ public class SensorManager {
 	
 	Looper mMainLooper;
 	
-	@DSModeled(DSC.SAFE)
+	// Made public by DS Modeling, should not be called by application
+	@DSModeled(DSC.BAN)
 	public SensorManager() {
-		this(null);	
 	}
 
 	@DSModeled(DSC.SAFE)
 	public Sensor getDefaultSensor(int i) {
-		return null;
+		return new Sensor(i);
 	}
 	
 	
