@@ -22,26 +22,27 @@ public class DSTaintObject {
 	
 	@DSModeled(DSC.SAFE)
 	public Object getTaint() {
-		return taint;
+		return null;
 	}
 	
 	@DSModeled(DSC.SAFE)
 	public int getTaintInt() {
-		return taint.hashCode();
+		return 0;
 	}
 	
 	@DSModeled(DSC.SAFE)
 	public float getTaintFloat() {
-		return (float)getTaintInt();
+		return 0f;
 	}
 	
 	@DSModeled(DSC.SAFE)
 	public String getTaintString() {
-		return taint.toString();
+		return "";
 	}
 	
 	@DSModeled(DSC.SAFE)
 	public boolean getTaintBoolean() {
-		return taint.equals(null);
-	}
+		return false;
+	}	
 }
+
