@@ -1,14 +1,9 @@
 package droidsafe.eclipse.plugin.core.view;
 
 
-import java.util.ArrayList;
-import java.util.List;
-
 import org.eclipse.core.resources.IFile;
-import org.eclipse.core.resources.IMarker;
 import org.eclipse.core.resources.IProject;
 import org.eclipse.core.resources.IResource;
-import org.eclipse.core.runtime.CoreException;
 import org.eclipse.core.runtime.IAdaptable;
 import org.eclipse.jface.action.MenuManager;
 import org.eclipse.jface.text.Document;
@@ -43,7 +38,6 @@ import droidsafe.eclipse.plugin.core.specmodel.TreeElement;
 import droidsafe.eclipse.plugin.core.util.DroidsafePluginUtilities;
 import droidsafe.eclipse.plugin.core.view.TreeElementContentProvider.TopLevelParentEntity;
 import droidsafe.main.Config;
-import droidsafe.speclang.Method;
 import droidsafe.speclang.SecuritySpecification;
 import droidsafe.utils.SourceLocationTag;
 
@@ -66,8 +60,8 @@ public class SecuritySpecOutlineViewPart extends ViewPart {
     // TODO Auto-generated constructor stub
   }
 
-  @Override
-  public void createPartControl(Composite parent) {
+
+  private void initializeSecuritySpec(Composite parent) {
     this.selectedProject = getSelectedProject();
     if (this.selectedProject == null) {
       this.textViewer = new TextViewer(parent, SWT.MULTI | SWT.H_SCROLL | SWT.V_SCROLL);
@@ -89,8 +83,7 @@ public class SecuritySpecOutlineViewPart extends ViewPart {
       }
       if (this.securitySpecModel == null) {
         // Droidsafe may not have been run yet. Let's check if there is already a serialized version
-        // of the
-        // spec in the droidsafe directory at the root of the android app project.
+        // of the spec in the droidsafe directory at the root of the android app project.
         this.securitySpecModel =
             DroidsafeSecuritySpecModel.deserializeSpecFromFile(projectRootPath);
       }
@@ -98,119 +91,126 @@ public class SecuritySpecOutlineViewPart extends ViewPart {
       if (this.securitySpecModel == null) {
         this.textViewer = new TextViewer(parent, SWT.MULTI | SWT.H_SCROLL | SWT.V_SCROLL);
         IDocument document = new Document();
-        document.set("Droidsafe spec for this selected project has now been computed yet. "
+        document.set("Droidsafe spec for selected project has not been computed yet. "
             + "\nSelect the project on the Project Explorer "
             + "\nand run the Droidsafe spec generation command from the project context menu.");
         this.textViewer.setDocument(document);
-      } else {
 
-        this.viewer = new TreeViewer(parent, SWT.MULTI | SWT.H_SCROLL | SWT.V_SCROLL);
-        // this.contentProvider = new SecuritySpecViewContentProvider();
-        // this.labelProvider = new SecuritySpecLabelProvider();
-        // Expand the tree
-
-        // viewer.setContentProvider(this.contentProvider);
-        // viewer.setLabelProvider(this.labelProvider);
-        // Get the content for the viewer, setInput will call getElements in the contentProvider
-        // viewer.setInput(spec);
-
-
-        // viewer.setContentProvider(new DroidsafeSecSpecViewContentProvider());
-        // viewer.setLabelProvider(new DroidsafeSecSpecLabelProvider());
-
-        // Test with new Content Providers
-        this.contentProvider = new TreeElementContentProvider();
-        this.labelProvider = new TreeElementLabelProvider();
-
-        viewer.setContentProvider(this.contentProvider);
-        viewer.setLabelProvider(this.labelProvider);
-        viewer.setAutoExpandLevel(1);
-        viewer.setInput(securitySpecModel);
-
-        MenuManager menuManager = new MenuManager();
-        Menu menu = menuManager.createContextMenu(viewer.getTree());
-        // Set the MenuManager
-        viewer.getTree().setMenu(menu);
-        getSite().registerContextMenu(menuManager, viewer);
-
-        // Make the selection available to other views
-        getSite().setSelectionProvider(viewer);
-
-        // Add a doubleclicklistener
-        viewer.addDoubleClickListener(new IDoubleClickListener() {
-
-          @Override
-          public void doubleClick(DoubleClickEvent event) {
-            TreeViewer viewer = (TreeViewer) event.getViewer();
-            IStructuredSelection thisSelection = (IStructuredSelection) event.getSelection();
-            Object selectedNode = thisSelection.getFirstElement();
-            viewer.setExpandedState(selectedNode, !viewer.getExpandedState(selectedNode));
-            SourceLocationTag line = null;
-
-            if (selectedNode instanceof Method) {
-              Method method = (Method) selectedNode;
-              if (method.getLines().isEmpty()) {
-                line = method.getDeclSourceLocation();
-              }
-            } else if (selectedNode instanceof DroidsafeMethodModel) {
-              DroidsafeMethodModel method = (DroidsafeMethodModel) selectedNode;
-              if (method.getLines().isEmpty()) {
-                line = method.getDeclSourceLocation();
-              } else {
-                line = method.getLines().get(0);
-                // viewer.setSelection(new StructuredSelection(line));
-              }
-            } else if (selectedNode instanceof SourceLocationTag) {
-              line = (SourceLocationTag) selectedNode;
-            } else if (selectedNode instanceof TreeElement<?, ?>) {
-              TreeElement<?, ?> treeElement = (TreeElement<?, ?>) selectedNode;
-              Object data = treeElement.getData();
-              if (data instanceof SourceLocationTag) {
-                line = (SourceLocationTag) data;
-              } else if (data instanceof DroidsafeMethodModel
-                  && ((DroidsafeMethodModel) data).getLines().isEmpty()) {
-                line = ((DroidsafeMethodModel) data).getDeclSourceLocation();
-              } else if (treeElement.getParent().getData() instanceof SourceLocationTag) {
-                line = (SourceLocationTag) treeElement.getParent().getData();
-              } else if (treeElement.hasChildren()
-                  && treeElement.getChildren().get(0).getData() instanceof SourceLocationTag) {
-                line = (SourceLocationTag) treeElement.getChildren().get(0).getData();
-              }
-            }
-
-            if (line != null) {
-              int lineNumber = line.getLine();
-              String className = line.getClz();
-              String classPath = DroidsafePluginUtilities.classNamePath(className);
-              IFile file = getSelectedProject().getFile(classPath);
-              if (file != null) {
-                try {
-                  IWorkbenchPage page =
-                      PlatformUI.getWorkbench().getActiveWorkbenchWindow().getActivePage();
-                  IEditorDescriptor desc =
-                      PlatformUI.getWorkbench().getEditorRegistry()
-                          .getDefaultEditor(file.getName());
-                  // IEditorPart openEditor = IDE.openEditor(page, file);
-                  IEditorPart openEditor = page.openEditor(new FileEditorInput(file), desc.getId());
-
-                  if (openEditor instanceof ITextEditor) {
-                    ITextEditor textEditor = (ITextEditor) openEditor;
-                    IDocument document =
-                        textEditor.getDocumentProvider().getDocument(textEditor.getEditorInput());
-                    textEditor.selectAndReveal(document.getLineOffset(lineNumber - 1),
-                        document.getLineLength(lineNumber - 1));
-                  }
-                } catch (Exception ex) {
-                  logger.debug("Exception while creating editor for line {}", line);
-                  ex.printStackTrace();
-                }
-              }
-            }
-          }
-        });
       }
     }
   }
+
+  @Override
+  public void createPartControl(Composite parent) {
+    initializeSecuritySpec(parent);
+    if (this.securitySpecModel != null) {
+
+      this.viewer = new TreeViewer(parent, SWT.MULTI | SWT.H_SCROLL | SWT.V_SCROLL);
+      // this.contentProvider = new SecuritySpecViewContentProvider();
+      // this.labelProvider = new SecuritySpecLabelProvider();
+      // Expand the tree
+
+      // viewer.setContentProvider(this.contentProvider);
+      // viewer.setLabelProvider(this.labelProvider);
+      // Get the content for the viewer, setInput will call getElements in the contentProvider
+      // viewer.setInput(spec);
+
+      // viewer.setContentProvider(new DroidsafeSecSpecViewContentProvider());
+      // viewer.setLabelProvider(new DroidsafeSecSpecLabelProvider());
+
+      // Test with new Content Providers
+      this.contentProvider = new TreeElementContentProvider();
+      this.labelProvider = new TreeElementLabelProvider();
+
+      viewer.setContentProvider(this.contentProvider);
+      viewer.setLabelProvider(this.labelProvider);
+      viewer.setAutoExpandLevel(1);
+      viewer.setInput(securitySpecModel);
+
+      MenuManager menuManager = new MenuManager();
+      Menu menu = menuManager.createContextMenu(viewer.getTree());
+      // Set the MenuManager
+      viewer.getTree().setMenu(menu);
+      getSite().registerContextMenu(menuManager, viewer);
+
+      // Make the selection available to other views
+      getSite().setSelectionProvider(viewer);
+
+      // Add a doubleclicklistener
+      viewer.addDoubleClickListener(new IDoubleClickListener() {
+
+        @Override
+        public void doubleClick(DoubleClickEvent event) {
+          TreeViewer viewer = (TreeViewer) event.getViewer();
+          IStructuredSelection thisSelection = (IStructuredSelection) event.getSelection();
+          Object selectedNode = thisSelection.getFirstElement();
+          viewer.setExpandedState(selectedNode, !viewer.getExpandedState(selectedNode));
+          SourceLocationTag line = null;
+
+          // if (selectedNode instanceof Method) {
+          // Method method = (Method) selectedNode;
+          // if (method.getLines().isEmpty()) {
+          // line = method.getDeclSourceLocation();
+          // }
+          // } else if (selectedNode instanceof DroidsafeMethodModel) {
+          // DroidsafeMethodModel method = (DroidsafeMethodModel) selectedNode;
+          // if (method.getLines().isEmpty()) {
+          // line = method.getDeclSourceLocation();
+          // } else {
+          // line = method.getLines().get(0);
+          // }
+          // } else if (selectedNode instanceof SourceLocationTag) {
+          // line = (SourceLocationTag) selectedNode;
+          // } else
+
+          if (selectedNode instanceof TreeElement<?, ?>) {
+            TreeElement<?, ?> treeElement = (TreeElement<?, ?>) selectedNode;
+            Object data = treeElement.getData();
+            if (data instanceof SourceLocationTag) {
+              line = (SourceLocationTag) data;
+            } else if (data instanceof DroidsafeMethodModel
+                && ((DroidsafeMethodModel) data).getLines().isEmpty()) {
+              line = ((DroidsafeMethodModel) data).getDeclSourceLocation();
+            } else if (treeElement.getParent().getData() instanceof SourceLocationTag) {
+              line = (SourceLocationTag) treeElement.getParent().getData();
+            } else if (treeElement.hasChildren()
+                && treeElement.getChildren().get(0).getData() instanceof SourceLocationTag) {
+              line = (SourceLocationTag) treeElement.getChildren().get(0).getData();
+            }
+          }
+
+          if (line != null) {
+            int lineNumber = line.getLine();
+            String className = line.getClz();
+            String classPath = DroidsafePluginUtilities.classNamePath(className);
+            IFile file = getSelectedProject().getFile(classPath);
+            if (file != null) {
+              try {
+                IWorkbenchPage page =
+                    PlatformUI.getWorkbench().getActiveWorkbenchWindow().getActivePage();
+                IEditorDescriptor desc =
+                    PlatformUI.getWorkbench().getEditorRegistry().getDefaultEditor(file.getName());
+                // IEditorPart openEditor = IDE.openEditor(page, file);
+                IEditorPart openEditor = page.openEditor(new FileEditorInput(file), desc.getId());
+
+                if (openEditor instanceof ITextEditor) {
+                  ITextEditor textEditor = (ITextEditor) openEditor;
+                  IDocument document =
+                      textEditor.getDocumentProvider().getDocument(textEditor.getEditorInput());
+                  textEditor.selectAndReveal(document.getLineOffset(lineNumber - 1),
+                      document.getLineLength(lineNumber - 1));
+                }
+              } catch (Exception ex) {
+                logger.debug("Exception while creating editor for line {}", line);
+                ex.printStackTrace();
+              }
+            }
+          }
+        }
+      });
+    }
+  }
+
 
   @Override
   public void setFocus() {
@@ -223,24 +223,6 @@ public class SecuritySpecOutlineViewPart extends ViewPart {
 
   public TreeViewer getViewer() {
     return this.viewer;
-  }
-
-  private List<IMarker> computeInputForViewer() {
-    List<IMarker> result = new ArrayList<IMarker>();
-    IProject project = getSelectedProject();
-    if (project != null) {
-      String markerId = Activator.PLUGIN_ID + ".droidsafemarker";
-      IMarker markers[];
-      try {
-        markers = project.findMarkers(markerId, true, IResource.DEPTH_INFINITE);
-        for (IMarker marker : markers) {
-          result.add(marker);
-        }
-      } catch (CoreException ex) {
-        ex.printStackTrace();
-      }
-    }
-    return result;
   }
 
   public void setApiCallsAsViewTopLevelParents() {

@@ -213,12 +213,17 @@ public class DroidsafeAnalysisRunner {
     // logger.info("Specializing API Calls");
     // APICallSpecialization.run();
 
-    logger.info("Restarting PTA...");
-    monitor.subTask("PTA Second Pass");
-    GeoPTA.release();
-    GeoPTA.run();
-    monitor.worked(1);
+    //logger.info("Restarting PTA...");
+    //monitor.subTask("PTA Second Pass");
+    //GeoPTA.release();
+    //GeoPTA.run();
+    //monitor.worked(1);
 
+    // write jimple txt files for all classes so we can analzye them
+    if (this.writeJimpleClasses) {
+      writeAllAppClasses();
+    }
+    
     monitor.subTask("Generating Spec");
     RCFG.generate();
     logger.info("Ending DroidSafe Run");
@@ -234,10 +239,6 @@ public class DroidsafeAnalysisRunner {
     RequiredModeling.run();
     monitor.worked(1);
 
-    // write jimple txt files for all classes so we can analzye them
-    if (this.writeJimpleClasses) {
-      writeAllAppClasses();
-    }
 
     if (this.infoFlow) {
       logger.info("Starting Information Flow Analysis...");
