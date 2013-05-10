@@ -218,35 +218,43 @@ public class Resources {
 		manifest = new AndroidManifest (manifest_file);
 		package_name = manifest.manifest.package_name;
 
+		File resource_dir = new File(application_base, "res");
+
 		//Take care of "res/layout" folder
 		//TODO: dealing with different layout flavors???
-		logger.info("processing res/layout");
-		File layout_dir = new File (application_base, "res/layout");
-		if (layout_dir.exists()) {
-			for (File layout_source : layout_dir.listFiles()) {
-				logger.info("***considering layout file {}", layout_source);
-				String name = layout_source.getName();
-				String[] name_ext = name.split ("[.]", 2);
-				// logger.info ("name/ext = {}/{}", name_ext[0], name_ext[1]);
-				if (name_ext[1].equals ("xml"))
-					layouts.add (new Layout (layout_source));
+		File[] layout_dirs = resource_dir.listFiles(new FilenameFilter() {
+				@Override
+				public boolean accept(File dir, String name) {
+					boolean matched = name.startsWith("layout") ||
+									  name.startsWith("Layout") ;
+						logger.debug("file {}, string {}, matched {} ", dir, name, matched);
+						return matched;
+					} 
+
+		});
+		for (File layout_dir: layout_dirs) {
+			logger.info("processing layout {}", layout_dir);
+			if (layout_dir.exists()) {
+				for (File layout_source : layout_dir.listFiles()) {
+					logger.info("***considering layout file {}", layout_source);
+					String name = layout_source.getName();
+					String[] name_ext = name.split ("[.]", 2);
+					// logger.info ("name/ext = {}/{}", name_ext[0], name_ext[1]);
+					if (name_ext[1].equals ("xml"))
+						layouts.add (new Layout (layout_source));
+				}
 			}
 		}
 
 		// Dealing with res/values, and res/values-v15*******
-		File resource_dir = new File(application_base, "res");
 		File[] values_dirs = resource_dir.listFiles(new FilenameFilter() {
 				@Override
 				public boolean accept(File dir, String name) {
-				boolean matched = name.startsWith("values") ||
-								  name.startsWith("Values") ;
-
-				
-				logger.debug("file {}, string {}, matched {} ", 
-					dir, name, matched);
-				//return name.equals("values*") || name.equals("values-v15");
-				return matched;
-				} 
+					boolean matched = name.startsWith("values") ||
+									  name.startsWith("Values") ;
+						logger.debug("file {}, string {}, matched {} ", dir, name, matched);
+						return matched;
+					} 
 				});
 
 		logger.info("{} value dirs exist", values_dirs.length);
