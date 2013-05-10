@@ -57,18 +57,20 @@ import droidsafe.concrete.DroidSafeContentResolver;
  */
 public class ContextImpl extends Context {
 	private DroidSafeContentResolver contentResolver;
+	private SensorManager sensorManager;
 	
 	@DSModeled
 	public ContextImpl() {
 		contentResolver = new DroidSafeContentResolver(this);
+		sensorManager = new SensorManager();
 	}
 
 
 	@Override
 	@DSModeled(value = DSC.SAFE)
     public Object getSystemService(String name) {
-    	if ("Service".equals(name)) {
-    		return new SensorManager();
+    	if (Context.SENSOR_SERVICE.equals(name)) {
+    		return sensorManager;
     	} else if ("Service".equals(name)) {
     		return new LocationManager(null);
     	} else 
