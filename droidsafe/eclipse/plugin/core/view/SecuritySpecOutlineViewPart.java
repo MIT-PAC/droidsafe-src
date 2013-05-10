@@ -168,9 +168,12 @@ public class SecuritySpecOutlineViewPart extends ViewPart {
             Object data = treeElement.getData();
             if (data instanceof SourceLocationTag) {
               line = (SourceLocationTag) data;
-            } else if (data instanceof DroidsafeMethodModel
-                && ((DroidsafeMethodModel) data).getLines().isEmpty()) {
-              line = ((DroidsafeMethodModel) data).getDeclSourceLocation();
+            } else if (data instanceof DroidsafeMethodModel) {
+              if (((DroidsafeMethodModel) data).getLines().isEmpty()) {
+                line = ((DroidsafeMethodModel) data).getDeclSourceLocation();
+              } else {
+                line = ((DroidsafeMethodModel) data).getLines().get(0);
+              }
             } else if (treeElement.getParent().getData() instanceof SourceLocationTag) {
               line = (SourceLocationTag) treeElement.getParent().getData();
             } else if (treeElement.hasChildren()
@@ -210,7 +213,6 @@ public class SecuritySpecOutlineViewPart extends ViewPart {
       });
     }
   }
-
 
   @Override
   public void setFocus() {

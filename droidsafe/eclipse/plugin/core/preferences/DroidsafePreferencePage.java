@@ -43,22 +43,25 @@ public class DroidsafePreferencePage extends FieldEditorPreferencePage
         "Print &source information in spec", getFieldEditorParent()));
 
     addField(new BooleanFieldEditor(PreferenceConstants.P_JIMPLE,
-        "Dump readable &jimple files for all app classes in /droidsafe", getFieldEditorParent()));
+        "Dump &jimple files for app classes in project's /droidsafe", getFieldEditorParent()));
 
     addField(new BooleanFieldEditor(PreferenceConstants.P_ANALYZEAPI,
         "Fully analyze &API classes from android.jar", getFieldEditorParent()));
 
-    addField(new BooleanFieldEditor(PreferenceConstants.P_INFOFLOW, "Analyze information &flows",
-        getFieldEditorParent()));
+    addField(new BooleanFieldEditor(PreferenceConstants.P_INFOFLOW, 
+      "Analyze information &flows", getFieldEditorParent()));
 
     addField(new BooleanFieldEditor(PreferenceConstants.P_DEBUGLOG,
-        "Print &debug log to current ./droidsafe/droidsafe.log", getFieldEditorParent()));
+        "Print &debug log to project's /droidsafe/droidsafe.log", getFieldEditorParent()));
 
     addField(new BooleanFieldEditor(PreferenceConstants.P_DUMP_PTA,
-        "Dump PTA Analysis Results to File", getFieldEditorParent()));
+        "Dump PTA Analysis results to file in project's /droidsafe", getFieldEditorParent()));
 
     addField(new BooleanFieldEditor(PreferenceConstants.P_DUMP_CALL_GRAPH,
-        "Create dot file for call graph", getFieldEditorParent()));
+        "Create dot file for call graph in project's /droidsafe", getFieldEditorParent()));
+    
+    addField(new BooleanFieldEditor(PreferenceConstants.P_RUN_STRING_ANALYSIS,
+      "Run String Analysis", getFieldEditorParent()));
   }
 
   /*

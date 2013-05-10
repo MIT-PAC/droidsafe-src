@@ -34,7 +34,8 @@ public class PreferenceInitializer extends AbstractPreferenceInitializer {
     store.setDefault(PreferenceConstants.P_DEBUGLOG, false);
     store.setDefault(PreferenceConstants.P_DUMP_PTA, false);
     store.setDefault(PreferenceConstants.P_DUMP_CALL_GRAPH, false);
-
+    store.setDefault(PreferenceConstants.P_RUN_STRING_ANALYSIS, false);
+    
     // prefs = ConfigurationScope.INSTANCE.getNode(Activator.PLUGIN_ID);
     // prefs.put(PreferenceConstants.P_TARGET_PASS, "specdump");
     // prefs.putBoolean(PreferenceConstants.P_NOSOURCE_INFO, true);
