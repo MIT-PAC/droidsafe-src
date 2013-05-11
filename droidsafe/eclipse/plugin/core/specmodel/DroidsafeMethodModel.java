@@ -26,8 +26,9 @@ public class DroidsafeMethodModel implements Comparable<DroidsafeMethodModel>, S
 
   public DroidsafeMethodModel(Method originalMethod) {
     this.methodName = originalMethod.getName();
-    this.methodSignature = originalMethod.toSignatureString();
+    // this.methodSignature = originalMethod.toSignatureString();
     this.sootMethodSignature = originalMethod.getSignature();
+    this.methodSignature = sootMethodSignature.substring(1, sootMethodSignature.length() - 1);
     this.lines = originalMethod.getLines();
     this.className = originalMethod.getCname();
     this.returnType = originalMethod.getRtype();

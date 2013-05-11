@@ -114,7 +114,7 @@ public class DroidsafeAnalysisRunner {
     //lc = (LoggerContext) LoggerFactory.getILoggerFactory();   
     //StatusPrinter.print(lc);
 
-    logger.info("\nAPAC_HOME = " + Config.v().APAC_HOME() + "\nAPP_ROOT_DIR for project = "
+    logger.info("\nAPAC_HOME = " + Config.v().getApacHome() + "\nAPP_ROOT_DIR for project = "
         + Config.v().APP_ROOT_DIR + "\nANDROID_LIB_DIR = " + Config.v().ANDROID_LIB_DIR);
     logger.info("Starting DroidSafe Run Init");
 
@@ -302,7 +302,7 @@ public class DroidsafeAnalysisRunner {
       context.reset();
       String configLogFile =
           debugLog ? "config-files/logback-debug.xml" : "config-files/logback.xml";
-      configurator.doConfigure(Config.v().APAC_HOME() + File.separator + configLogFile);
+      configurator.doConfigure(Config.v().getApacHome() + File.separator + configLogFile);
     } catch (JoranException je) {
       // StatusPrinter will handle this
     }
