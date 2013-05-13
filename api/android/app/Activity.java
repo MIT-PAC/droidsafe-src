@@ -487,4 +487,15 @@ OnCreateContextMenuListener, ComponentCallbacks2 {
 		// Just call the ContextImpl.getSystemService version
         return super.getSystemService(name);
     }
+
+	
+	@DSModeled(DSC.SAFE)
+	protected void onDestroy() {
+		// no-op
+	}
+	
+	@DSModeled(DSC.BAN)
+	public void droidsafeOnDestroy() {
+		onDestroy();
+	}
 }

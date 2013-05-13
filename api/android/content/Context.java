@@ -32,6 +32,7 @@ public abstract class Context {
 	public static final String WINDOW_SERVICE = "window";
 	public static final String SEARCH_SERVICE = "search";
 	public static final String LAYOUT_INFLATER_SERVICE = "layout_inflater";
+	public static final String SENSOR_SERVICE = "sensor";
 	
 	/* Concrete Methods */
 	public boolean isRestricted() {
