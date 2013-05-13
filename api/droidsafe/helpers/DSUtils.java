@@ -6,7 +6,8 @@ import android.net.Uri;
 import droidsafe.annotations.*;
 
 public class DSUtils {
-
+	public final static String UNKNOWN_STRING = "";
+	
 	/**
 	 * Use this method to translate one intent to another in a way that is
 	 * dependent on the values resolved by attribute modeling.  This call is modeled 

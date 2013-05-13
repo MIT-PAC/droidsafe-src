@@ -16,6 +16,7 @@ import java.util.LinkedHashSet;
 import java.util.List;
 import java.util.RandomAccess;
 import java.util.Set;
+import java.util.LinkedList;
 
 import droidsafe.annotations.*;
 import droidsafe.helpers.*;
@@ -369,7 +370,7 @@ public class Uri {
 	@DSModeled(DSC.SAFE)
 	public String getUserInfo() {
 		// TODO Auto-generated method stub
-		return null;
+		return DSUtils.UNKNOWN_STRING;
 	}
 
 	@DSModeled(DSC.SAFE)
@@ -429,7 +430,9 @@ public class Uri {
 	@DSModeled(DSC.SAFE)
 	public List<String> getPathSegments() {
 		// TODO Auto-generated method stub
-		return null;
+		LinkedList<String> list = new LinkedList<String>();
+		list.add(DSUtils.UNKNOWN_STRING);
+		return list;
 	}
 
 	@DSModeled(DSC.SAFE)
