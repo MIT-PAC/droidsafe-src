@@ -31,6 +31,7 @@ import android.os.Build;
  */
 public class ContextThemeWrapper extends ContextWrapper {
 	private DSTaintObject dsTaint = new DSTaintObject();
+	private Context mBase;
    
     @DSModeled
     public ContextThemeWrapper() {
@@ -71,7 +72,7 @@ public class ContextThemeWrapper extends ContextWrapper {
     @Override protected void attachBaseContext(Context newBase) {
         super.attachBaseContext(newBase);
         dsTaint.addTaint(newBase);
-        //mBase = newBase;
+        mBase = newBase;
     }
     
     @Override 

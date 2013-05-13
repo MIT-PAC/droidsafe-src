@@ -340,12 +340,13 @@ public class ContextWrapper extends Context {
         mBase.removeStickyBroadcast(intent);
     }
 
+    @DSModeled(DSC.SPEC)
     @Override
-    public Intent registerReceiver(
-        BroadcastReceiver receiver, IntentFilter filter) {
-        return mBase.registerReceiver(receiver, filter);
+    public Intent registerReceiver(BroadcastReceiver receiver, IntentFilter filter) {
+    	receiver.onReceive(this, new Intent());
+    	return null; // no 'sticky' intents need to be modeled for coverage
     }
-
+    
     @Override
     public Intent registerReceiver(
         BroadcastReceiver receiver, IntentFilter filter,
