@@ -7628,7 +7628,8 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
 		*/
 		//Return nothing
 	}
-	/*
+	
+	
 	public static Property<View, Float> ALPHA = new FloatProperty<View>("alpha") {
         @Override
         public void setValue(View object, float value) {
@@ -7640,6 +7641,8 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
             return object.getAlpha();
         }
     };
+    
+    /*
 	public static Property<View, Float> TRANSLATION_X = new FloatProperty<View>("translationX") {
         @Override
         public void setValue(View object, float value) {

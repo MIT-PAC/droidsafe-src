@@ -23,6 +23,8 @@ import droidsafe.helpers.*;
 public class Intent implements Parcelable, Cloneable {
 	private DSTaintObject dsTaint = new DSTaintObject();
 	
+	
+	
 	@Override
 	public int describeContents() {
 		// TODO Auto-generated method stub
@@ -87,7 +89,7 @@ public class Intent implements Parcelable, Cloneable {
         return new Intent(this, false);
     }
 	
-	@DSModeled() // Marked as SPEC per the original implementation from MIT
+	@DSModeled(DSC.SAFE) // Marked as SPEC per the original implementation from MIT
 	public String getAction() {
 		return dsTaint.getTaintString();
         //return mAction;
@@ -106,7 +108,7 @@ public class Intent implements Parcelable, Cloneable {
         return this;
     }
 	
-	@DSModeled() // Marked as SPEC per the original implementation from MIT
+	@DSModeled(DSC.SAFE) // Marked as SPEC per the original implementation from MIT
 	public String getType() {
 		return dsTaint.getTaintString();
         //return mType;
@@ -176,7 +178,7 @@ public class Intent implements Parcelable, Cloneable {
         if (mType != null) {
             return mType;
         }
-        if (mData != null) {
+        if (mData != null) { 
             if ("content".equals(mData.getScheme())) {
                 return resolver.getType(mData);
             }

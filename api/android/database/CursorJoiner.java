@@ -48,10 +48,12 @@ import java.util.Iterator;
 public final class CursorJoiner 
         //implements Iterator<CursorJoiner.Result>, Iterable<CursorJoiner.Result> {
         implements Iterator, Iterable {
-    private DSTaintObject taint; 
-    /*
+    private DSTaintObject taint = new DSTaintObject();
+    
+   
     private Cursor mCursorLeft;
     private Cursor mCursorRight;
+    /*
     private boolean mCompareResultIsValid;
     private Result mCompareResult;
     private int[] mColumnsLeft;
@@ -90,7 +92,10 @@ public final class CursorJoiner
     public CursorJoiner(
             Cursor cursorLeft, String[] columnNamesLeft,
             Cursor cursorRight, String[] columnNamesRight) {
-        taint.addTaints(cursorLeft, columnNamesLeft, cursorRight, columnNamesRight);
+    	 mCursorLeft = cursorLeft;
+         mCursorRight = cursorRight;
+         
+        taint.addTaints(columnNamesLeft, columnNamesRight);
         
         if (columnNamesLeft.length != columnNamesRight.length) {
             throw new IllegalArgumentException(
@@ -163,7 +168,9 @@ public final class CursorJoiner
             return !mCursorLeft.isAfterLast() || !mCursorRight.isAfterLast();
         }
         */
-    	return true;
+    	
+    	return mCursorLeft.isLast() || !mCursorRight.isLast() || 
+    			!mCursorLeft.isAfterLast() || !mCursorRight.isAfterLast();
     }
 
     /**
@@ -187,6 +194,7 @@ public final class CursorJoiner
     public Object next() {
         /* GITI DSModeled:  For modeling purposes, we probably do not care what the result returned
          * is, so return a valid Result.BOTH.
+         */
         if (!hasNext()) {
             throw new IllegalStateException("you must only call next() when hasNext() is true");
         }
@@ -218,8 +226,6 @@ public final class CursorJoiner
         }
         mCompareResultIsValid = true;
         return mCompareResult;
-         */
-        return Result.BOTH;
     }
 
     @DSModeled(DSC.SAFE)
