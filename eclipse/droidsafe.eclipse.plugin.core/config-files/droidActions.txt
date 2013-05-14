@@ -1,0 +1,551 @@
+//remember do not include "static" "abstract" "final" 
+
+// A simple action, mainly for testing purposes.
+StorageState () {
+	APIcalls:
+	android.os.Environment: java.lang.String getExternalStorageState();
+	Preconditions:
+
+	Postconditions:
+}
+
+//Section: SQLiteDatabase
+// Path is the name of the database
+SQLiteDatabase (String path) {
+	APIcalls:
+	android.database.sqlite.SQLiteDatabase: void	 beginTransaction();	//Begins a transaction in EXCLUSIVE mode.
+	android.database.sqlite.SQLiteDatabase: void	 beginTransactionNonExclusive();	//Begins a transaction in IMMEDIATE mode.
+	android.database.sqlite.SQLiteDatabase: void	 beginTransactionWithListener(android.database.sqlite.SQLiteTransactionListener);	//Begins a transaction in EXCLUSIVE mode.
+	android.database.sqlite.SQLiteDatabase: void	 beginTransactionWithListenerNonExclusive(android.database.sqlite.SQLiteTransactionListener);	//Begins a transaction in IMMEDIATE mode.
+	android.database.sqlite.SQLiteDatabase: android.database.sqlite.SQLiteStatement	 compileStatement(java.lang.String);	//Compiles an SQL statement into a reusable pre-compiled statement object.
+	android.database.sqlite.SQLiteDatabase: android.database.sqlite.SQLiteDatabase	 create(android.database.sqlite.SQLiteDatabase$CursorFactory);	//Create a memory backed SQLite database.
+	android.database.sqlite.SQLiteDatabase: int	 delete(java.lang.String, java.lang.String, java.lang.String[]);	//Convenience method for deleting rows in the database.
+	// android.database.sqlite.SQLiteDatabase: boolean	 deleteDatabase(java.io.File);	//Deletes a database including its journal file and other auxiliary files that may have been created by the database engine. (version 16)
+	// android.database.sqlite.SQLiteDatabase: void	 disableWriteAheadLogging();	//This method disables the features enabled by enableWriteAheadLogging().
+	android.database.sqlite.SQLiteDatabase: boolean	 enableWriteAheadLogging();	//This method enables parallel execution of queries from multiple threads on the same database.
+	android.database.sqlite.SQLiteDatabase: void	 endTransaction();	//End a transaction.
+	android.database.sqlite.SQLiteDatabase: void	 execSQL(java.lang.String);	//Execute a single SQL statement that is NOT a SELECT or any other SQL statement that returns data.
+	android.database.sqlite.SQLiteDatabase: void	 execSQL(java.lang.String, java.lang.Object[]);	//Execute a single SQL statement that is NOT a SELECT/INSERT/UPDATE/DELETE.
+	android.database.sqlite.SQLiteDatabase: java.lang.String	 findEditTable(java.lang.String);	//Finds the name of the first table, which is editable.
+	android.database.sqlite.SQLiteDatabase: java.util.List getAttachedDbs();	//Returns list of full pathnames of all attached databases including the main database by executing 'pragma database_list' on the database.
+	android.database.sqlite.SQLiteDatabase: long	 getMaximumSize();	//Returns the maximum size the database may grow to.
+	android.database.sqlite.SQLiteDatabase: long	 getPageSize();	//Returns the current database page size, in bytes.
+	android.database.sqlite.SQLiteDatabase: java.lang.String	 getPath();	//Gets the path to the database file.
+	android.database.sqlite.SQLiteDatabase: java.util.Map getSyncedTables();	//This method is deprecated. This method no longer serves any useful purpose and has been deprecated.
+	android.database.sqlite.SQLiteDatabase: int	 getVersion();	//Gets the database version.
+	android.database.sqlite.SQLiteDatabase: boolean	 inTransaction();	//Returns true if the current thread has a transaction pending.
+	android.database.sqlite.SQLiteDatabase: long	 insert(java.lang.String, java.lang.String, android.content.ContentValues);	//Convenience method for inserting a row into the database.
+	android.database.sqlite.SQLiteDatabase: long	 insertOrThrow(java.lang.String, java.lang.String, android.content.ContentValues);	//Convenience method for inserting a row into the database.
+	android.database.sqlite.SQLiteDatabase: long	 insertWithOnConflict(java.lang.String, java.lang.String, android.content.ContentValues, int);	//General method for inserting a row into the database.
+	android.database.sqlite.SQLiteDatabase: boolean	 isDatabaseIntegrityOk();	//Runs 'pragma integrity_check' on the given database (and all the attached databases) and returns true if the given database (and all its attached databases) pass integrity_check, false otherwise.
+	android.database.sqlite.SQLiteDatabase: boolean	 isDbLockedByCurrentThread();	//Returns true if the current thread is holding an active connection to the database.
+	android.database.sqlite.SQLiteDatabase: boolean	 isDbLockedByOtherThreads();	//This method is deprecated. Always returns false. Do not use this method.
+	android.database.sqlite.SQLiteDatabase: boolean	 isOpen();	//Returns true if the database is currently open.
+	android.database.sqlite.SQLiteDatabase: boolean	 isReadOnly();	//Returns true if the database is opened as read only.
+    // version 16 only
+	// android.database.sqlite.SQLiteDatabase: boolean	 isWriteAheadLoggingEnabled();	//Returns true if write-ahead logging has been enabled for this database.
+	android.database.sqlite.SQLiteDatabase: void	 markTableSyncable(java.lang.String, java.lang.String, java.lang.String);	//This method is deprecated. This method no longer serves any useful purpose and has been deprecated.
+	android.database.sqlite.SQLiteDatabase: void	 markTableSyncable(java.lang.String, java.lang.String);	//This method is deprecated. This method no longer serves any useful purpose and has been deprecated.
+	android.database.sqlite.SQLiteDatabase: boolean	 needUpgrade(int);	//Returns true if the new version code is greater than the current database version.
+	android.database.sqlite.SQLiteDatabase: android.database.sqlite.SQLiteDatabase	 openDatabase(path, android.database.sqlite.SQLiteDatabase$CursorFactory, int, 
+android.database.DatabaseErrorHandler);	//Open the database according to the flags OPEN_READWRITE OPEN_READONLY CREATE_IF_NECESSARY and/or NO_LOCALIZED_COLLATORS.
+	android.database.sqlite.SQLiteDatabase: android.database.sqlite.SQLiteDatabase	 openDatabase(path, android.database.sqlite.SQLiteDatabase$CursorFactory, int);	//Open the database according to the flags OPEN_READWRITE OPEN_READONLY CREATE_IF_NECESSARY and/or NO_LOCALIZED_COLLATORS.
+	android.database.sqlite.SQLiteDatabase: android.database.sqlite.SQLiteDatabase	 openOrCreateDatabase(path, android.database.sqlite.SQLiteDatabase$CursorFactory, android.database.DatabaseErrorHandler);	//Equivalent to openDatabase(path, factory, CREATE_IF_NECESSARY, errorHandler).
+	android.database.sqlite.SQLiteDatabase: android.database.sqlite.SQLiteDatabase	 openOrCreateDatabase(path, android.database.sqlite.SQLiteDatabase$CursorFactory);	//Equivalent to openDatabase(path, factory, CREATE_IF_NECESSARY).
+	android.database.sqlite.SQLiteDatabase: android.database.sqlite.SQLiteDatabase	 openOrCreateDatabase(java.io.File, android.database.sqlite.SQLiteDatabase$CursorFactory);	//Equivalent to openDatabase(file.getPath(), factory, CREATE_IF_NECESSARY).
+	android.database.sqlite.SQLiteDatabase: android.database.Cursor	 query(java.lang.String, java.lang.String[], java.lang.String, java.lang.String[], java.lang.String, java.lang.String, java.lang.String, java.lang.String);	//Query the given table, returning a Cursor over the result set.
+    // version 16
+	// android.database.sqlite.SQLiteDatabase: android.database.Cursor	 query(boolean, java.lang.String, java.lang.String[], java.lang.String, java.lang.String[], java.lang.String, java.lang.String, java.lang.String, java.lang.String, android.os.CancellationSignal);	//Query the given URL, returning a Cursor over the result set.
+	android.database.sqlite.SQLiteDatabase: android.database.Cursor	 query(java.lang.String, java.lang.String[], java.lang.String, java.lang.String[], java.lang.String, java.lang.String, java.lang.String);	//Query the given table, returning a Cursor over the result set.
+	android.database.sqlite.SQLiteDatabase: android.database.Cursor	 query(boolean, java.lang.String, java.lang.String[], java.lang.String, java.lang.String[], java.lang.String, java.lang.String, java.lang.String, java.lang.String);	//Query the given URL, returning a Cursor over the result set.
+    // version 16
+	// android.database.sqlite.SQLiteDatabase: android.database.Cursor	 queryWithFactory(android.database.sqlite.SQLiteDatabase$CursorFactory, boolean, java.lang.String, java.lang.String[], java.lang.String, java.lang.String[], java.lang.String, java.lang.String, java.lang.String, java.lang.String, android.os.CancellationSignal);	//Query the given URL, returning a Cursor over the result set.
+	android.database.sqlite.SQLiteDatabase: android.database.Cursor	 queryWithFactory(android.database.sqlite.SQLiteDatabase$CursorFactory, boolean, java.lang.String, java.lang.String[], java.lang.String, java.lang.String[], java.lang.String, java.lang.String, java.lang.String, java.lang.String);	//Query the given URL, returning a Cursor over the result set.
+    // version 16
+	// android.database.sqlite.SQLiteDatabase: android.database.Cursor	 rawQuery(java.lang.String, java.lang.String[], android.os.CancellationSignal);	//Runs the provided SQL and returns a Cursor over the result set.
+	android.database.sqlite.SQLiteDatabase: android.database.Cursor	 rawQuery(java.lang.String, java.lang.String[]);	//Runs the provided SQL and returns a Cursor over the result set.
+	android.database.sqlite.SQLiteDatabase: android.database.Cursor	 rawQueryWithFactory(android.database.sqlite.SQLiteDatabase$CursorFactory, java.lang.String, java.lang.String[], java.lang.String);	//Runs the provided SQL and returns a cursor over the result set.
+    // version 16
+	// android.database.sqlite.SQLiteDatabase: android.database.Cursor	 rawQueryWithFactory(android.database.sqlite.SQLiteDatabase$CursorFactory, java.lang.String, java.lang.String[], java.lang.String, android.os.CancellationSignal);	//Runs the provided SQL and returns a cursor over the result set.
+	android.database.sqlite.SQLiteDatabase: int	 releaseMemory();	//Attempts to release memory that SQLite holds but does not require to operate properly.
+	android.database.sqlite.SQLiteDatabase: long	 replace(java.lang.String, java.lang.String, android.content.ContentValues);	//Convenience method for replacing a row in the database.
+	android.database.sqlite.SQLiteDatabase: long	 replaceOrThrow(java.lang.String, java.lang.String, android.content.ContentValues);	//Convenience method for replacing a row in the database.
+    // version 16
+	// android.database.sqlite.SQLiteDatabase: void	 setForeignKeyConstraintsEnabled(boolean);	//Sets whether foreign key constraints are enabled for the database.
+    // version 16
+	// android.database.sqlite.SQLiteDatabase: void	 setLocale(Locale);	//Sets the locale for this database.
+	android.database.sqlite.SQLiteDatabase: void	 setLockingEnabled(boolean);	//This method is deprecated. This method now does nothing. Do not use.
+	android.database.sqlite.SQLiteDatabase: void	 setMaxSqlCacheSize(int);	//Sets the maximum size of the prepared-statement cache for this database.
+	android.database.sqlite.SQLiteDatabase: long	 setMaximumSize(long);	//Sets the maximum size the database will grow to.
+	android.database.sqlite.SQLiteDatabase: void	 setPageSize(long);	//Sets the database page size.
+	android.database.sqlite.SQLiteDatabase: void	 setTransactionSuccessful();	//Marks the current transaction as successful.
+	android.database.sqlite.SQLiteDatabase: void	 setVersion(int);	//Sets the database version.
+    // version 16
+	// android.database.sqlite.SQLiteDatabase: java.lang.String	 toString();	//Returns a string containing a concise, human-readable description of this object.
+	android.database.sqlite.SQLiteDatabase: int	 update(java.lang.String, android.content.ContentValues, java.lang.String, java.lang.String[]);	//Convenience method for updating rows in the database.
+	android.database.sqlite.SQLiteDatabase: int	 updateWithOnConflict(java.lang.String, android.content.ContentValues, java.lang.String, java.lang.String[], int);	//Convenience method for updating rows in the database.
+	android.database.sqlite.SQLiteDatabase: boolean	 yieldIfContended();	//This method is deprecated. if the db is locked more than once (becuase of nested transactions) then the lock will not be yielded. Use yieldIfContendedSafely instead.
+	android.database.sqlite.SQLiteDatabase: boolean	 yieldIfContendedSafely(long);	//Temporarily end the transaction to let other threads run.
+	android.database.sqlite.SQLiteDatabase: boolean	 yieldIfContendedSafely();	//Temporarily end the transaction to let other threads run.
+    // Gets a read/write database
+    android.database.sqlite.SQLiteOpenHelper: android.database.sqlite.SQLiteDatabase getWritableDatabase();
+    // gets a readable database
+    // android.database.sqlite.SQLiteOpenHelper: android.database.sqlite.SQLiteDatabase getReadableDatabase();
+    android.database.sqlite.SQLiteOpenHelper: void <init>(android.content.Context, path, android.database.sqlite.SQLiteDatabase$CursorFactory, int);
+//    android.database.sqlite.SQLiteQueryBuilder: android.database.Cursor query(android.database.sqlite.SQLiteDatabase, java.lang.String[], java.lang.String, java.lang.String[], java.lang.String, java.lang.String, java.lang.String);
+    android.app.Activity: android.database.Cursor managedQuery(android.net.Uri, java.lang.String[], java.lang.String, java.lang.String[], java.lang.String);
+    android.database.sqlite.SQLiteOpenHelper: android.database.sqlite.SQLiteDatabase getReadableDatabase();
+	Preconditions:
+
+	Postconditions:
+
+}
+
+//Section: NFC
+//NfcAdapter getDefaultAdapter
+PrepareNfcAdapter (){
+	APIcalls:
+	android.nfc.NfcAdapter: android.nfc.NfcAdapter getDefaultAdapter(android.content.Context);	//Helper to get the default NFC Adapter.
+	android.nfc.NfcAdapter: boolean isEnabled();	//Return true if this NFC Adapter has any features enabled.
+	android.nfc.NfcAdapter: void setOnNdefPushCompleteCallback(android.nfc.NfcAdapter$OnNdefPushCompleteCallback, android.app.Activity, android.app.Activity[]);	//Set a callback on successful Android Beam (TM).
+	android.nfc.NfcAdapter: void setNdefPushMessageCallback(android.nfc.NfcAdapter$CreateNdefMessageCallback, android.app.Activity, android.app.Activity[]);
+
+	Preconditions:
+
+	Postconditions:
+
+}
+
+//NfcAdapter enableForegroundDispatch
+PutNfcToFront (){
+	APIcalls:
+	android.nfc.NfcAdapter: void enableForegroundDispatch(android.app.Activity,android.app.PendingIntent,android.content.IntentFilter[],java.lang.String[][]);
+
+
+	Preconditions:
+
+	Postconditions:
+
+}
+
+//NfcAdapter disableForegroundDispatch
+PutNfcBack (){
+	APIcalls:
+	android.nfc.NfcAdapter: void disableForegroundDispatch(android.app.Activity);	//Disable foreground dispatch to the given activity.
+
+	Preconditions:
+
+	Postconditions:
+
+}
+
+//Ndef
+NfcWrite (){
+	APIcalls:
+	android.nfc.tech.Ndef: void connect();	//Enable I/O operations to the tag from this TagTechnology object.
+	android.nfc.tech.Ndef: android.nfc.tech.Ndef get(android.nfc.Tag);	//Get an instance of Ndef for the given tag.
+	android.nfc.tech.Ndef: int getMaxSize();	//Get the maximum NDEF message size in bytes.
+	android.nfc.tech.Ndef: android.nfc.Tag getTag();	//Get the Tag object backing this TagTechnology object.
+	android.nfc.tech.Ndef: java.lang.String getType();	//Get the NDEF tag type.
+	android.nfc.tech.Ndef: boolean isConnected();	//Helper to indicate if I/O operations should be possible.
+	android.nfc.tech.Ndef: boolean isWritable();	//Determine if the tag is writable.
+	android.nfc.tech.Ndef: void writeNdefMessage(android.nfc.NdefMessage);	//Overwrite the NdefMessage on this tag.
+	android.nfc.tech.NdefFormatable: boolean isConnected();	//Helper to indicate if I/O operations should be possible.
+
+	Preconditions:
+
+	Postconditions:
+
+}
+
+CheckNfcFormatted (){
+	APIcalls:
+	android.nfc.tech.NdefFormatable: void close();	//Disable I/O operations to the tag from this TagTechnology object, and release resources.
+	android.nfc.tech.NdefFormatable: void connect();	//Enable I/O operations to the tag from this TagTechnology object.
+	android.nfc.tech.Ndef: boolean isWritable();	//Determine if the tag is writable.
+	android.nfc.tech.NdefFormatable: boolean isConnected();	//Helper to indicate if I/O operations should be possible.
+
+	Preconditions:
+
+	Postconditions:
+	
+}
+
+//NdefFormatable
+NfcFormat (){
+	APIcalls:
+	android.nfc.tech.NdefFormatable: void connect();	//Enable I/O operations to the tag from this TagTechnology object.
+	android.nfc.tech.NdefFormatable: void format(android.nfc.NdefMessage);	//Format a tag as NDEF, and write a NdefMessage.
+	android.nfc.tech.NdefFormatable: void formatReadOnly(android.nfc.NdefMessage);	//Formats a tag as NDEF, write a NdefMessage, and make read-only.
+	android.nfc.tech.NdefFormatable: android.nfc.tech.NdefFormatable get(android.nfc.Tag);	//Get an instance of NdefFormatable for the given tag.
+	android.nfc.tech.NdefFormatable: android.nfc.Tag getTag();	//Get the Tag object backing this TagTechnology object.
+
+	Preconditions:
+
+	Postconditions:
+
+}
+
+//NdefMessage getRecords
+NfcRead (){
+	APIcalls:
+	android.nfc.NdefMessage: int describeContents();	//Describe the kinds of special objects contained in this Parcelable's marshalled representation.
+	android.nfc.NdefMessage: boolean equals(java.lang.Object);	//Returns true if the specified NDEF Message contains identical NDEF Records.
+	android.nfc.NdefMessage: int getByteArrayLength();	//Return the length of this NDEF Message if it is written to a byte array with toByteArray().
+	android.nfc.NdefMessage: android.nfc.NdefRecord[] getRecords();	//Get the NDEF Records inside this NDEF Message.
+	android.nfc.NdefMessage: int hashCode();	//Returns an integer hash code for this object.
+	android.nfc.NdefMessage: byte[] toByteArray();	//Return this NDEF Message as raw bytes.
+	android.nfc.NdefMessage: java.lang.String toString();	//Returns a string containing a concise, human-readable description of this object.
+	android.nfc.NdefMessage: void writeToParcel(android.os.Parcel);	//Flatten this object in to a Parcel.
+
+	Preconditions:
+
+	Postconditions:
+
+}
+
+//Section: GPS
+StartGPSTracking (int sensorType){
+	APIcalls:
+	android.hardware.SensorManager: android.hardware.Sensor getDefaultSensor(sensorType);	//Use this method to get the default sensor for a given type.
+	android.hardware.SensorManager: boolean registerListener(android.hardware$SensorEventListener,android.hardware.Sensor,int);
+	android.location.LocationManager: boolean addGpsStatusListener(android.location.GpsStatus$Listener);	//Adds a GPS status listener.
+	android.location.LocationManager: boolean addNmeaListener(android.location.GpsStatus$NmeaListener);	//Adds an NMEA listener.
+	android.location.LocationManager: void addProximityAlert(double);	//Sets a proximity alert for the location given by the position (latitude, longitude) and the given radius.
+	android.location.LocationManager: java.util.List getAllProviders();	//Returns a list of the names of all known location providers.
+	android.location.LocationManager: java.lang.String getBestProvider(android.location.Criteria,boolean);	//Returns the name of the provider that best meets the given criteria.
+	android.location.LocationManager: android.location.GpsStatus getGpsStatus(android.location.GpsStatus);	//Retrieves information about the current status of the GPS engine.
+	android.location.LocationManager: android.location.LocationProvider getProvider(java.lang.String);	//Returns the information associated with the location provider of the given name, or null if no provider exists by that name.
+	android.location.LocationManager: java.util.List getProviders(boolean);	//Returns a list of the names of location providers.
+	android.location.LocationManager: java.util.List getProviders(android.location.Criteria, boolean);	//Returns a list of the names of LocationProviders that satisfy the given criteria, or null if none do.
+	android.location.LocationManager: boolean isProviderEnabled(java.lang.String);	//Returns the current enabled/disabled status of the given provider.
+	android.location.LocationManager: void requestLocationUpdates(long,float,android.location.Criteria,android.app.PendingIntent);
+	android.location.LocationManager: void requestLocationUpdates(long,float,android.location.Criteria,android.location$LocationListener,android.os.Looper);
+	android.location.LocationManager: void requestLocationUpdates(java.lang.String,long,float,android.location$LocationListener);
+	android.location.LocationManager: void requestLocationUpdates(java.lang.String,long,float,android.location$LocationListener,android.os.Looper);
+	android.location.LocationManager: void requestSingleUpdate(java.lang.String,android.location$LocationListener,android.os.Looper);
+	android.location.LocationManager: void requestSingleUpdate(android.location.Criteria,android.location$LocationListener,android.os.Looper);
+	android.location.LocationManager: void requestSingleUpdate(java.lang.String,android.app.PendingIntent);
+	android.location.LocationManager: void requestSingleUpdate(android.location.Criteria,android.app.PendingIntent);
+
+	Preconditions:
+
+	Postconditions:
+
+}
+
+ResumeGPSTracking (int SensorType){
+	APIcalls:
+	android.hardware.SensorManager: android.hardware.Sensor getDefaultSensor(sensorType);	//Use this method to get the default sensor for a given type.
+	android.hardware.SensorManager: boolean registerListener(android.hardware$SensorEventListener,android.hardware.Sensor,int);
+	android.location.LocationManager: boolean addGpsStatusListener(android.location.GpsStatus$Listener);	//Adds a GPS status listener.
+	android.location.LocationManager: boolean addNmeaListener(android.location.GpsStatus$NmeaListener);	//Adds an NMEA listener.
+	android.location.LocationManager: void addProximityAlert(double);	//Sets a proximity alert for the location given by the position (latitude, longitude) and the given radius.
+	android.location.LocationManager: java.util.List getAllProviders();	//Returns a list of the names of all known location providers.
+	android.location.LocationManager: java.lang.String getBestProvider(android.location.Criteria,boolean);	//Returns the name of the provider that best meets the given criteria.
+	android.location.LocationManager: android.location.GpsStatus getGpsStatus(android.location.GpsStatus);	//Retrieves information about the current status of the GPS engine.
+	android.location.LocationManager: android.location.LocationProvider getProvider(java.lang.String);	//Returns the information associated with the location provider of the given name, or null if no provider exists by that name.
+	android.location.LocationManager: java.util.List getProviders(boolean);	//Returns a list of the names of location providers.
+	android.location.LocationManager: java.util.List getProviders(android.location.Criteria, boolean);	//Returns a list of the names of LocationProviders that satisfy the given criteria, or null if none do.
+	android.location.LocationManager: boolean isProviderEnabled(java.lang.String);	//Returns the current enabled/disabled status of the given provider.
+	android.location.LocationManager: void requestLocationUpdates(long,float,android.location.Criteria,android.app.PendingIntent);
+	android.location.LocationManager: void requestLocationUpdates(long,float,android.location.Criteria,android.location$LocationListener,android.os.Looper);
+	android.location.LocationManager: void requestLocationUpdates(java.lang.String,long,float,android.location$LocationListener);
+	android.location.LocationManager: void requestLocationUpdates(java.lang.String,long,float,android.location$LocationListener,android.os.Looper);
+	android.location.LocationManager: void requestSingleUpdate(java.lang.String,android.location$LocationListener,android.os.Looper);
+	android.location.LocationManager: void requestSingleUpdate(android.location.Criteria,android.location$LocationListener,android.os.Looper);
+	android.location.LocationManager: void requestSingleUpdate(java.lang.String,android.app.PendingIntent);
+	android.location.LocationManager: void requestSingleUpdate(android.location.Criteria,android.app.PendingIntent);
+
+	Preconditions:
+
+	Postconditions:
+
+}
+
+StopGPSTracking (){
+	APIcalls:
+	android.hardware.SensorManager: void unregisterListener(android.hardware$SensorEventListener,android.hardware.Sensor);	//Unregisters a listener for the sensors with which it is registered.
+	android.hardware.SensorManager: void unregisterListener(android.hardware$SensorEventListener);	//Unregisters a listener for all sensors.
+	android.location.LocationManager: void removeGpsStatusListener(android.location.GpsStatus$Listener);	//Removes a GPS status listener.
+	android.location.LocationManager: void removeNmeaListener(android.location.GpsStatus$NmeaListener);	//Removes an NMEA listener.
+	android.location.LocationManager: void removeProximityAlert(android.app.PendingIntent);	//Removes the proximity alert with the given PendingIntent.
+	android.location.LocationManager: void removeUpdates(android.app.PendingIntent);	//Removes any current registration for location updates of the current activity with the given PendingIntent.
+	android.location.LocationManager: void removeUpdates(android.location$LocationListener);	//Removes any current registration for location updates of the current activity with the given LocationListener.
+
+	Preconditions:
+
+	Postconditions:
+
+}
+
+PauseGPSTracking (){
+	APIcalls:
+	android.hardware.SensorManager: void unregisterListener(android.hardware$SensorEventListener,android.hardware.Sensor);	//Unregisters a listener for the sensors with which it is registered.
+	android.hardware.SensorManager: void unregisterListener(android.hardware$SensorEventListener);	//Unregisters a listener for all sensors.
+	android.location.LocationManager: void removeGpsStatusListener(android.location.GpsStatus$Listener);	//Removes a GPS status listener.
+	android.location.LocationManager: void removeNmeaListener(android.location.GpsStatus$NmeaListener);	//Removes an NMEA listener.
+	android.location.LocationManager: void removeProximityAlert(android.app.PendingIntent);	//Removes the proximity alert with the given PendingIntent.
+	android.location.LocationManager: void removeUpdates(android.app.PendingIntent);	//Removes any current registration for location updates of the current activity with the given PendingIntent.
+	android.location.LocationManager: void removeUpdates(android.location$LocationListener);	//Removes any current registration for location updates of the current activity with the given LocationListener.
+
+	Preconditions:
+
+	Postconditions:
+
+}
+
+//Section: AudioRecorder
+StartRecordAudio (int audio_source){
+	APIcalls:
+	android.media.MediaRecorder: int getAudioSourceMax();	//Gets the maximum value for audio sources.
+	android.media.MediaRecorder: int getMaxAmplitude();	//Returns the maximum absolute amplitude that was sampled since the last call to this method.
+	android.media.MediaRecorder: void prepare();	//Prepares the recorder to begin capturing and encoding data.
+	android.media.MediaRecorder: void setAudioChannels(int);	//Sets the number of audio channels for recording.
+	android.media.MediaRecorder: void setAudioEncoder(int);	//Sets the audio encoder to be used for recording.
+	android.media.MediaRecorder: void setAudioEncodingBitRate(int);	//Sets the audio encoding bit rate for recording.
+	android.media.MediaRecorder: void setAudioSamplingRate(int);	//Sets the audio sampling rate for recording.
+	android.media.MediaRecorder: void setAudioSource(audio_source);	//Sets the audio source to be used for recording.
+	android.media.MediaRecorder: void setMaxDuration(int);	//Sets the maximum duration (in ms) of the recording session.
+	android.media.MediaRecorder: void setMaxFileSize(long);	//Sets the maximum filesize (in bytes) of the recording session.
+	android.media.MediaRecorder: void setOnErrorListener(android.media.MediaRecorder$OnErrorListener);	//Register a callback to be invoked when an error occurs while recording.
+	android.media.MediaRecorder: void setOnInfoListener(android.media.MediaRecorder$OnInfoListener);	//Register a callback to be invoked when an informational event occurs while recording.
+	android.media.MediaRecorder: void setOutputFile(java.io.FileDescriptor);	//Pass in the file descriptor of the file to be written.
+	android.media.MediaRecorder: void setOutputFile(java.lang.String);	//Sets the path of the output file to be produced.
+	android.media.MediaRecorder: void setOutputFormat(int);	//Sets the format of the output file produced during recording.
+	android.media.MediaRecorder: void start();	//Begins capturing and encoding data to the file specified with setOutputFile().
+	android.media.MediaRecorder: void <init>();    //create a media recorder
+
+	Preconditions:
+
+	Postconditions:
+
+}
+
+StopRecordAudio (){
+	APIcalls:
+	android.media.MediaRecorder: void release();	//Releases resources associated with this MediaRecorder object.
+	android.media.MediaRecorder: void reset();	//Restarts the MediaRecorder to its idle state.
+	android.media.MediaRecorder: void stop();	//Stops recording.
+
+	Preconditions:
+
+	Postconditions:
+
+}
+
+
+//Section: VideoRecorder
+StartRecordVideo (){
+	APIcalls:
+	android.media.MediaRecorder: void prepare();	//Prepares the recorder to begin capturing and encoding data.
+	android.media.MediaRecorder: void setCamera(android.graphics.Camera);	//Sets a Camera to use for recording.
+	android.media.MediaRecorder: void setCaptureRate(double);	//Set video frame capture rate.
+	android.media.MediaRecorder: void setMaxDuration(int);	//Sets the maximum duration (in ms) of the recording session.
+	android.media.MediaRecorder: void setMaxFileSize(long);	//Sets the maximum filesize (in bytes) of the recording session.
+	android.media.MediaRecorder: void setOnErrorListener(android.media.MediaRecorder$OnErrorListener);	//Register a callback to be invoked when an error occurs while recording.
+	android.media.MediaRecorder: void setOnInfoListener(android.media.MediaRecorder$OnInfoListener);	//Register a callback to be invoked when an informational event occurs while recording.
+	android.media.MediaRecorder: void setOutputFile(java.io.FileDescriptor);	//Pass in the file descriptor of the file to be written.
+	android.media.MediaRecorder: void setOutputFile(java.lang.String);	//Sets the path of the output file to be produced.
+	android.media.MediaRecorder: void setOutputFormat(int);	//Sets the format of the output file produced during recording.
+	android.media.MediaRecorder: void setPreviewDisplay(android.view.Surface);	//Sets a Surface to show a preview of recorded media (video).
+	android.media.MediaRecorder: void setProfile(android.media.CamcorderProfile);	//Uses the settings from a CamcorderProfile object for recording.
+	android.media.MediaRecorder: void setVideoEncoder(int);	//Sets the video encoder to be used for recording.
+	android.media.MediaRecorder: void setVideoEncodingBitRate(int);	//Sets the video encoding bit rate for recording.
+	android.media.MediaRecorder: void setVideoFrameRate(int);	//Sets the frame rate of the video to be captured.
+	android.media.MediaRecorder: void setVideoSize(int);	//Sets the width and height of the video to be captured.
+	android.media.MediaRecorder: void setVideoSource(int);	//Sets the video source to be used for recording.
+	android.media.MediaRecorder: void start();	//Begins capturing and encoding data to the file specified with setOutputFile().
+
+	Preconditions:
+
+	Postconditions:
+
+}
+
+
+StopRecordVideo (){
+	APIcalls:
+	android.media.MediaRecorder: void release();	//Releases resources associated with this MediaRecorder object.
+	android.media.MediaRecorder: void reset();	//Restarts the MediaRecorder to its idle state.
+	android.media.MediaRecorder: void stop();	//Stops recording.
+
+	Preconditions:
+
+	Postconditions:
+
+}
+
+
+//Section: HTTP
+HttpClient() {
+             // To request a resource using HTTP methods, first.
+             // 1. Create an instance of a class implementing HttpClient.
+             // 2. Create an instance of a class implementing HttpUriRequest.
+             // 3. Call 'execute' on the client, passing the HttpUriRequest. This 
+             //    will return an HttpResponse. Alternative signatures for execute 
+             //    allow the caller to pass a ResponseHandler callback object, which 
+             //    has a 'handleResponse' method. Other ways to invoke 'execute' allow 
+             //    the programmer to pass URI elements directly, rather than building 
+             //    an HttpUriRequest. We disallow this.
+             // 4. Do something with the response.
+
+
+           APIcalls:
+           // construct a HttpClient. Could also be a subclass of
+           // HttpClient, like android.net.http.AndroidHttpClient. To 
+           // construct an AndroidHttpClient, you call the static
+           // method AndroidHttpClient:newInstance(String), with the
+           // user agent as a string. 
+
+           // Create a new Default HTTP Client
+	   org.apache.http.impl.client.DefaultHttpClient: void <init>(org.apache.http.conn.ClientConnectionManager, org.apache.http.params.HttpParams);
+	   org.apache.http.impl.client.DefaultHttpClient: void <init>(org.apache.http.params.HttpParams);
+	   org.apache.http.impl.client.DefaultHttpClient: void <init>();
+
+           // Create a new Android HTTP
+           android.net.http.AndroidHttpClient: android.net.http.AndroidHttpClient newInstance(java.lang.String, android.content.Context);
+           android.net.http.AndroidHttpClient: android.net.http.AndroidHttpClient newInstance(java.lang.String);
+
+           // HttpUriRequest is an interface. It should be fine to query it.
+           org.apache.http.client.methods.HttpUriRequest: java.lang.String getMethod();
+           org.apache.http.client.methods.HttpUriRequest: java.net.URI getURI();
+           org.apache.http.client.methods.HttpUriRequest: boolean isAborted();
+
+           // We may call 'setEntity'
+           org.apache.http.HttpEntityEnclosingRequest: void setEntity(org.apache.http.HttpEntity);
+           org.apache.http.client.methods.HttpEntityEnclosingRequestBase: void setEntity(org.apache.http.HttpEntity);
+           org.apache.http.impl.client.EntityEnclosingRequestWrapper: void setEntity(org.apache.http.HttpEntity);
+           
+           // HttpUriRequest is an interface. 
+
+           // DELETE request
+           org.apache.http.client.methods.HttpDelete: void <init>();
+           org.apache.http.client.methods.HttpDelete: void <init>(java.net.URI);
+           org.apache.http.client.methods.HttpDelete: void <init>(java.lang.String);
+
+           // GET request
+           org.apache.http.client.methods.HttpGet:  void <init>();
+           org.apache.http.client.methods.HttpGet: void <init>(java.net.URI);
+           org.apache.http.client.methods.HttpGet: void <init>(java.lang.String);
+
+           // HEAD request
+           org.apache.http.client.methods.HttpHead:  void <init>();
+           org.apache.http.client.methods.HttpHead: void <init>(java.net.URI);
+           org.apache.http.client.methods.HttpHead: void <init>(java.lang.String);
+
+           // POST request
+           org.apache.http.client.methods.HttpPost:  void <init>();
+           org.apache.http.client.methods.HttpPost: void <init>(java.net.URI);
+           org.apache.http.client.methods.HttpPost: void <init>(java.lang.String);
+
+           // OPTIONS request
+           org.apache.http.client.methods.HttpOptions:  void <init>();
+           org.apache.http.client.methods.HttpOptions: void <init>(java.net.URI);
+           org.apache.http.client.methods.HttpOptions: void <init>(java.lang.String);
+
+           // PUT request
+           org.apache.http.client.methods.HttpPut:  void <init>();
+           org.apache.http.client.methods.HttpPut: void <init>(java.net.URI);
+           org.apache.http.client.methods.HttpPut: void <init>(java.lang.String);
+
+           // TRACE request
+           org.apache.http.client.methods.HttpTrace:  void <init>();
+           org.apache.http.client.methods.HttpTrace: void <init>(java.net.URI);
+           org.apache.http.client.methods.HttpTrace: void <init>(java.lang.String);
+
+
+           // Execute! 
+
+           // Android Execute
+           android.net.http.AndroidHttpClient: org.apache.http.HttpResponse execute(org.apache.http.client.methods.HttpUriRequest);
+           android.net.http.AndroidHttpClient: org.apache.http.HttpResponse execute(org.apache.http.client.methods.HttpUriRequest, org.apache.http.protocol.HttpContext);
+           android.net.http.AndroidHttpClient: org.apache.http.HttpResponse execute(org.apache.http.HttpHost, org.apache.http.HttpRequest);
+           android.net.http.AndroidHttpClient: org.apache.http.HttpResponse execute(org.apache.http.HttpHost, org.apache.http.HttpRequest, org.apache.http.protocol.HttpContext);
+           android.net.http.AndroidHttpClient: java.lang.Object execute(org.apache.http.client.methods.HttpUriRequest, org.apache.http.client.ResponseHandler);
+           android.net.http.AndroidHttpClient: java.lang.Object execute(org.apache.http.client.methods.HttpUriRequest, org.apache.http.client.ResponseHandler, org.apache.http.protocol.HttpContext);
+           android.net.http.AndroidHttpClient: java.lang.Object execute(org.apache.http.HttpHost, org.apache.http.HttpRequest, org.apache.http.client.ResponseHandler);
+           android.net.http.AndroidHttpClient: java.lang.Object execute(org.apache.http.HttpHost, org.apache.http.HttpRequest, org.apache.http.client.ResponseHandler, org.apache.http.protocol.HttpContext);
+
+	   org.apache.http.impl.client.AbstractHttpClient: org.apache.http.HttpResponse execute(org.apache.http.client.methods.HttpUriRequest);
+	   org.apache.http.impl.client.AbstractHttpClient: org.apache.http.HttpResponse execute(org.apache.http.client.methods.HttpUriRequest, org.apache.http.protocol.HttpContext);
+	   org.apache.http.impl.client.AbstractHttpClient: org.apache.http.HttpResponse execute(org.apache.http.HttpHost, org.apache.http.HttpRequest);
+	   org.apache.http.impl.client.AbstractHttpClient: org.apache.http.HttpResponse execute(org.apache.http.HttpHost, org.apache.http.HttpRequest, org.apache.http.protocol.HttpContext);
+
+           // ResponseHandler interface. Single method, handleResponse, parametric in return type.
+           org.apache.http.client.ResponseHandler: java.lang.Object handleResponse(org.apache.http.HttpResponse);
+           org.apache.http.impl.client.BasicResponseHandler: java.lang.String handleResponse(org.apache.http.HttpResponse);
+//           org.apache.http.impl.client.BasicResponseHandler: java.lang.Object handleResponse(org.apache.http.HttpResponse);
+
+           // HttpResponse interface. Should be able to invoke all methods.
+           //org.apache.http.HttpResponse: * // This is an interface.
+	   org.apache.http.HttpResponse: org.apache.http.StatusLine getStatusLine();
+	   org.apache.http.HttpResponse: void setStatusLine(org.apache.http.StatusLine);
+	   org.apache.http.HttpResponse: void setStatusLine(org.apache.http.ProtocolVersion, int);
+	   org.apache.http.HttpResponse: void setStatusLine(org.apache.http.ProtocolVersion, int, java.lang.String);
+	   org.apache.http.HttpResponse: void setStatusCode(int);
+	   org.apache.http.HttpResponse: void setReasonPhrase(java.lang.String);
+	   org.apache.http.HttpResponse: org.apache.http.HttpEntity getEntity();
+	   org.apache.http.HttpResponse: void setEntity(org.apache.http.HttpEntity);
+	   org.apache.http.HttpResponse: java.util.Locale getLocale();
+	   org.apache.http.HttpResponse: void setLocale(java.util.Locale);
+           
+           // HttpResponse has a 'getEntity' method. This returns an instance of HttpEntity. Should be able
+           // to call all methods on this. This gives a mechanism for getting an InputStream, from 
+           // which you can read data.
+           //org.apache.http.HttpEntity: * // This is an interface.
+	   org.apache.http.HttpEntity: boolean isRepeatable();
+	   org.apache.http.HttpEntity: boolean isChunked();
+	   org.apache.http.HttpEntity: long getContentLength();
+	   org.apache.http.HttpEntity: org.apache.http.Header getContentType();
+	   org.apache.http.HttpEntity: org.apache.http.Header getContentEncoding();
+	   org.apache.http.HttpEntity: java.io.InputStream getContent();
+	   // org.apache.http.HttpEntity: void writeTo(java.io.OutputStream);
+	   org.apache.http.HttpEntity: boolean isStreaming();
+	   org.apache.http.HttpEntity: void consumeContent();
+
+	Preconditions:
+
+	Postconditions:
+}
+
+// See: http://android-developers.blogspot.com/2011/09/androids-http-clients.html
+// for info on using HttpURLConnection.  
+HttpURLConnection() { // HttpURLConnection interface.
+
+           APIcalls:
+             // Create a URL 
+             java.net.URL: void <init>(java.lang.String); // This is the simplest one, you just pass the URL.
+
+             java.net.URL: void <init>(java.net.URL, java.lang.String);
+             java.net.URL: void <init>(java.net.URL, java.lang.String, java.net.URLStreamHandler);
+             java.net.URL: void <init>(java.lang.String, java.lang.String, java.lang.String);
+             java.net.URL: void <init>(java.lang.String, java.lang.String, int, java.lang.String);
+             java.net.URL: void <init>(java.lang.String, java.lang.String, int, java.lang.String, java.net.URLStreamHandler);
+
+
+             // Open a connection
+             java.net.URL: java.net.URLConnection openConnection();
+             java.net.URL: java.net.URLConnection openConnection(java.net.Proxy);
+
+
+             // Optionally set a body to the request.
+
+             java.net.URLConnection: void setDoOutput(boolean);
+
+             java.net.HttpURLConnection: void setChunkedStreamingMode(int);
+
+             java.net.URLConnection: java.io.OutputStream getOutputStream();
+
+
+             // Get the response info as a stream
+             java.net.URLConnection: java.io.InputStream getInputStream();
+
+             // Disconnect the connection
+             java.net.HttpURLConnection: void disconnect();
+
+
+	Preconditions:
+
+	Postconditions:
+}
