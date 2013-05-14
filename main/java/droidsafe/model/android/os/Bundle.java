@@ -42,6 +42,105 @@ public class Bundle extends ModeledClass {
   public void _init_(){
   }
 
+    
+    /**
+     * Inserts a Boolean value into the mapping of this Bundle, replacing
+     * any existing value for the given key.  Either key or value may be null.
+     *
+     * @param key a String, or null
+     * @param value a Boolean, or null
+     */
+    public void putBoolean(droidsafe.model.java.lang.String key, boolean value) {
+        mMap.put(key, value);
+    }
+
+    /**
+     * Inserts a byte value into the mapping of this Bundle, replacing
+     * any existing value for the given key.
+     *
+     * @param key a String, or null
+     * @param value a byte
+     */
+    public void putByte(droidsafe.model.java.lang.String key, byte value) {
+        mMap.put(key, value);
+    }
+
+    /**
+     * Inserts a char value into the mapping of this Bundle, replacing
+     * any existing value for the given key.
+     *
+     * @param key a String, or null
+     * @param value a char, or null
+     */
+    public void putChar(droidsafe.model.java.lang.String key, char value) {
+        mMap.put(key, value);
+    }
+
+    /**
+     * Inserts a short value into the mapping of this Bundle, replacing
+     * any existing value for the given key.
+     *
+     * @param key a String, or null
+     * @param value a short
+     */
+    public void putShort(droidsafe.model.java.lang.String key, short value) {
+      mMap.put(key, value);
+    }
+
+    /**
+     * Inserts an int value into the mapping of this Bundle, replacing
+     * any existing value for the given key.
+     *
+     * @param key a String, or null
+     * @param value an int, or null
+     */
+    public void putInt(droidsafe.model.java.lang.String key, int value) {
+      mMap.put(key, value);
+    }
+
+    /**
+     * Inserts a long value into the mapping of this Bundle, replacing
+     * any existing value for the given key.
+     *
+     * @param key a String, or null
+     * @param value a long
+     */
+    public void putLong(droidsafe.model.java.lang.String key, long value) {
+      mMap.put(key, value);
+    }
+
+    /**
+     * Inserts a float value into the mapping of this Bundle, replacing
+     * any existing value for the given key.
+     *
+     * @param key a String, or null
+     * @param value a float
+     */
+    public void putFloat(droidsafe.model.java.lang.String key, float value) {
+      mMap.put(key, value);
+    }
+
+    /**
+     * Inserts a double value into the mapping of this Bundle, replacing
+     * any existing value for the given key.
+     *
+     * @param key a String, or null
+     * @param value a double
+     */
+    public void putDouble(droidsafe.model.java.lang.String key, double value) {
+      mMap.put(key, value);
+    }
+
+    /**
+     * Inserts a String value into the mapping of this Bundle, replacing
+     * any existing value for the given key.  Either key or value may be null.
+     *
+     * @param key a String, or null
+     * @param value a String, or null
+     */
+    public void putString(droidsafe.model.java.lang.String key, droidsafe.model.java.lang.String value) {
+      mMap.put(key, value);
+    }
 
   public void putAll(droidsafe.model.android.os.Bundle b) {
     mMap.putAll(b.mMap);

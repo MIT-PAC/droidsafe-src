@@ -266,7 +266,7 @@ public class AttributeModeling {
             else if (invokeExpr instanceof StaticInvokeExpr){
               Class<?> cls;
               try {
-                cls = am.getDroidsafeClass(invokeExpr.getMethod().getDeclaringClass().getName());
+                cls = am.getDroidsafeClass(invokeExpr.getMethod().getDeclaringClass());
               } catch(ClassNotFoundException e) {
                 am.logError("Couldn't get corresponding droidsafe model class for static method class for " + invokeExpr + ": " 
                             + e.toString());
@@ -405,7 +405,7 @@ public class AttributeModeling {
     ModeledClass model = null;
     if (!objectToModelMap.containsKey(allocNode)) {
       Constructor<?> ctor;
-      String logEntry = "Couldn't model an instance of the " + sootClass.getName() + " ";
+      String logEntry = "Couldn't model an instance of the " + sootClass.getName() + this.sourceLocation + " ";
       Class<?> cls;
       try {
          cls = getDroidsafeClass(refType);
@@ -450,16 +450,24 @@ public class AttributeModeling {
    */
   private Class<?> getDroidsafeClass(RefType refType) throws ClassNotFoundException {
     SootClass sootClass = refType.getSootClass();
-    String className = sootClass.getName();
-    return this.getDroidsafeClass(className);
+    return this.getDroidsafeClass(sootClass);
   }
 
-  private Class<?> getDroidsafeClass(String className) throws ClassNotFoundException {
-    if(className.indexOf("Activity") != -1){
+  private Class<?> getDroidsafeClass(SootClass sootClass) throws ClassNotFoundException {
+    String className = sootClass.getName();
+    if(isActivity(sootClass)){
       className = "android.app.Activity";
     }
    
     return Class.forName("droidsafe.model." + className);
+  }
+ 
+  private static boolean isActivity(SootClass sootClass){
+    // is the allocNode an Activity? 
+    if(sootClass.hasSuperclass() && sootClass.getSuperclass().getName().equals("android.app.Activity")){
+      return true;
+    }
+    return false;
   }
 
   /**

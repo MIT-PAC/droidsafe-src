@@ -17,6 +17,11 @@ public class String extends ModeledClass{
     this.possibleValues = new HashSet<java.lang.String>();
   }
 
+  public String(java.lang.String possibleValue){
+    this();
+    this.incorporateString(possibleValue);
+  }
+
   public String(AllocNode allocNode){
     super(allocNode);
     this.possibleValues = new HashSet<java.lang.String>();
@@ -42,6 +47,12 @@ public class String extends ModeledClass{
 
   public void incorporateString(java.lang.String string){
     this.possibleValues.add(string);
+  }
+
+  public int compareTo(String that) {
+    if(possibleValues.equals(that.possibleValues))
+      return 0;
+    return -1;
   }
 
   @Override

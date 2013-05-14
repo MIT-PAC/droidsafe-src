@@ -15,7 +15,8 @@ public abstract class Context extends ModeledClass {
   public Context(AllocNode allocNode) {
     super(allocNode);
   }
- 
+
+  public abstract droidsafe.model.java.lang.String getPackageName(); 
 
   @Override
   public String toString(){

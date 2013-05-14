@@ -9,11 +9,12 @@ import soot.jimple.spark.pag.AllocNode;
 
 public abstract class Uri extends ModeledClass {
 
-  /*
+  public Uri(){}
+
   public Uri(AllocNode allocNode) {
     super(allocNode);
   }
-  */
+  
   public void incorporateUri(Uri dUri) {}
 
   // parse doesn't modify 
@@ -31,28 +32,22 @@ public abstract class Uri extends ModeledClass {
   }
 
   public abstract static class AbstractHierarchicalUri extends Uri {
-    /* 
-    public AbstractHierarchicalUri(){
-    
-    }
+   
+    public AbstractHierarchicalUri() {}
 
     public AbstractHierarchicalUri(AllocNode allocNode){
        super(allocNode);
     }
-    */
   }
  
  
   public static class HierarchicalUri extends AbstractHierarchicalUri {
     
-    public void _init_(){
-    }
-
-    /*
     public HierarchicalUri(AllocNode allocNode) {
       super(allocNode);
     }
-    */
+
+    public void _init_(){}
     
     public void _init_(droidsafe.model.java.lang.String uriString){
     }
@@ -71,11 +66,11 @@ public abstract class Uri extends ModeledClass {
   public static class StringUri extends AbstractHierarchicalUri {
     
     private droidsafe.model.java.lang.String uriString;
-    /*
+    
     public StringUri(AllocNode allocNode) {
       super(allocNode);
     }
-    */
+    
     public StringUri(droidsafe.model.java.lang.String uriString) {
       this.uriString = uriString;
     }
