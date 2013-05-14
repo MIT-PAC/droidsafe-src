@@ -2001,7 +2001,6 @@ public abstract class ViewGroup extends View implements ViewParent, ViewManager 
     }
 	
 	public void setOnHierarchyChangeListener(OnHierarchyChangeListener listener){
-		dsTaint.addTaint(listener);
 		mOnHierarchyChangeListener = listener;  //Preserved
 		
 		// Original method
@@ -2272,7 +2271,6 @@ public abstract class ViewGroup extends View implements ViewParent, ViewManager 
 	}
 	
 	public void setLayoutTransition(LayoutTransition transition){
-		dsTaint.addTaint(transition);
 		mTransition = transition;  //Preserved
 		
 		// Original method
@@ -2560,7 +2558,6 @@ public abstract class ViewGroup extends View implements ViewParent, ViewManager 
 	}
 	
 	public void setLayoutAnimation(LayoutAnimationController controller){
-		dsTaint.addTaint(controller);
 		mLayoutAnimationController = controller;  //Preserved
 		
 		// Original method
@@ -3207,9 +3204,7 @@ public abstract class ViewGroup extends View implements ViewParent, ViewManager 
 	}
 	
 	public void setLayoutAnimationListener(Animation.AnimationListener animationListener){
-		dsTaint.addTaint(animationListener);
 		mAnimationListener = animationListener;  //Preserved
-		
 		// Original method
 		/*
 		{

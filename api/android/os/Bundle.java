@@ -58,7 +58,7 @@ public final class Bundle implements Parcelable, Cloneable {
 
     // Invariant - exactly one of mMap / mParcelledData will be null
     // (except inside a call to unparcel)
-    Map<String, Object> mMap = null;
+    private Map<String, Object> mMap = null;
 
     // If mParcelledData is non-null, then mMap will be null and the
     // data are stored as a Parcel containing a Bundle.  When the data
@@ -92,14 +92,15 @@ public final class Bundle implements Parcelable, Cloneable {
         // this version of Bundle calls readFromParcel()
         // readFromParcel calls readFromParcelInner
         // readFromParcelInner taints several propeties of mParcelledData
-        dsTaint.addTaints(parcelledData);
+    	mParcelledData = parcelledData;
     }
 
     @DSModeled(DSC.SAFE)
     Bundle(Parcel parcelledData, int length) {
         // this version of Bundle calls readFromParcelInner
         // readFromParcelInner taints several propeties of mParcelledData
-        dsTaint.addTaints(parcelledData, length);
+    	mParcelledData = parcelledData;
+        dsTaint.addTaint(length);
     }
 
     @DSModeled(DSC.SAFE)
@@ -107,7 +108,8 @@ public final class Bundle implements Parcelable, Cloneable {
         // this versio of Bundle taints this class by setting mClassLoader
         // equal to loader. It initializes mMap to a HashMap, but stores nothing
         // in it.
-        dsTaint.addTaints(loader);
+    	//mMap = new HashMap<String, Object>();
+        mClassLoader = loader;
     }
 
     @DSModeled(DSC.BAN)
@@ -129,7 +131,7 @@ public final class Bundle implements Parcelable, Cloneable {
         // If the bundle b is not null, then the mehtod mParcelledData
         // of this class is tainted.
         // Otherwise, mParcelledData is set to null
-        dsTaint.addTaints(b.dsTaint);
+        dsTaint.addTaint(b.dsTaint);
     }
 
     @DSModeled(DSC.SAFE)
@@ -140,7 +142,8 @@ public final class Bundle implements Parcelable, Cloneable {
         // We also taint the new bundle b with the key value pair before
         // we return it.
         Bundle b = new Bundle(1);
-        b.dsTaint.addTaints(key, value);
+        b.dsTaint.addTaint(key);
+        b.dsTaint.addTaint(value);
         return b;
     }
 
@@ -161,7 +164,8 @@ public final class Bundle implements Parcelable, Cloneable {
         parcel.appendFrom(mParcelledData, 0, length);
 
         // parcel might be tainted with mMap
-        parcel.writeMapInternal(mMap);
+        //parcel.writeMapInternal(mMap);
+        parcel.writeMapInternal(new HashMap());
 
         // parcel might be tained with oldPos or newPost
         int oldPos = parcel.dataPosition();
@@ -193,16 +197,9 @@ public final class Bundle implements Parcelable, Cloneable {
      */
     public String getString(String key) {
         unparcel();
+        dsTaint.addTaint(key);
         Object o = mMap.get(key);
-        if (o == null) {
-            return null;
-        }
-        try {
-            return (String) o;
-        } catch (ClassCastException e) {
-            typeWarning(key, o, "String", e);
-            return null;
-        }
+        return (String) o;
     }
 
     /**
@@ -335,6 +332,18 @@ public final class Bundle implements Parcelable, Cloneable {
             return null;
         }
         */
+    }
+    
+    @DSModeled //Going to model as SPEC since arbitrary data could be inside the parcelable object that is returned
+    public void putSerializable(String key, Serializable value) {
+        unparcel();
+        mMap.put(key, value);
+    }
+    
+    @DSModeled
+    public void putString(String key, String value) {
+        unparcel();
+        mMap.put(key, value);
     }
 
 }

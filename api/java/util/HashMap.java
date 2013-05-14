@@ -6,6 +6,9 @@ import java.io.Serializable;
 
 public class HashMap<K, V> extends AbstractMap<K, V> implements Cloneable, Serializable {
 	private DSTaintObject dsTaint = new DSTaintObject();
+	// DSModeled:  Add key and value for tracking values
+	K key;
+	V value;
 	
 	@Override
 	public void clear() {
@@ -34,7 +37,7 @@ public class HashMap<K, V> extends AbstractMap<K, V> implements Cloneable, Seria
 	@DSModeled(DSC.SAFE)
 	@Override
 	public V get(Object arg0) {
-		return (V)dsTaint.getTaint();
+		return value;
 		/*
 		if (key == null) {
             HashMapEntry<K, V> e = entryForNullKey;
@@ -71,9 +74,11 @@ public class HashMap<K, V> extends AbstractMap<K, V> implements Cloneable, Seria
 	}
 
 	@Override
+	@DSModeled(DSC.SAFE)
 	public V put(K arg0, V arg1) {
-		// TODO Auto-generated method stub
-		return null;
+		key = arg0;
+		value = arg1;
+		return arg1;
 	}
 
 	@Override
