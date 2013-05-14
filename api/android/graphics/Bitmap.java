@@ -15,7 +15,7 @@ import droidsafe.annotations.*;
 import droidsafe.helpers.*;
 
 public final class Bitmap implements Parcelable {
-	private DSTaintObject dsTaint = new DSTaintObject();
+	DSTaintObject dsTaint = new DSTaintObject();
 	
 	@DSModeled(DSC.SAFE)
 	public Bitmap() {

@@ -11,7 +11,8 @@ import droidsafe.helpers.*;
  */
 
 public class Paint {
-	private DSTaintObject dsTaint = new DSTaintObject();
+	DSTaintObject dsTaint = new DSTaintObject();
+	
 	
 	@DSModeled(DSC.SAFE)
     public void setFlags(int flags) {  //Originally a native method, converted over
