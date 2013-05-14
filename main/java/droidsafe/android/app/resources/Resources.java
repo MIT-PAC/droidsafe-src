@@ -195,7 +195,8 @@ public class Resources {
 				}
 			}		
 
-			v.buildSootObjects();
+			//build soot xml object
+			v.buildXMLSootObjects();
 
 			v.resolved = true;
 		} catch (Exception e) {
@@ -278,10 +279,10 @@ public class Resources {
 	}
 
 	/**
-	 * buildSootObjects():
+	 * buildXMLSootObjects():
 	 * 		This method builds internal UI Objects for use in soot analysis
 	 */
-	public void buildSootObjects() {
+	public void buildXMLSootObjects() {
 		for (Layout layout: layouts) {
 			layout.buildUIObjects(stringNameToRStringList);
 		}

@@ -191,7 +191,7 @@ public class Main {
 			}
 		}
 
-		logger.info("Writing ResourcesSoot \n");
-		ResourcesSoot.v().writeFile(Project.v().getOutputDir());
+		//logger.info("Writing ResourcesSoot \n");
+		//ResourcesSoot.v().writeFile(Project.v().getOutputDir());
 	}
 }

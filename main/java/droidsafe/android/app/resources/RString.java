@@ -14,7 +14,7 @@ import org.w3c.dom.Node;
 
 public class RString extends BaseElement {
 	
-  private final static Logger logger = LoggerFactory.getLogger(Layout.class);	
+  private final static Logger logger = LoggerFactory.getLogger(RString.class);	
  
   @Attribute public String name;
 

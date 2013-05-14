@@ -139,9 +139,10 @@ public class ResourcesSoot {
     private SootMethod mSetActivityMethod; 
 
     private SootField  mActivityField;
-	private SootClass  mViewClass;
-	private SootClass  mTextViewClass;
-	private boolean    mHasMethod;
+	private SootClass  mViewClass;   
+	private SootClass  mTextViewClass;  //TextViewClass can call setText
+	private SootMethod mSetTextMethod;
+	private SootMethod mViewInitMethod;
 
     private HashMap<Integer, UISootObject> uiObjectTable; 
 
@@ -157,11 +158,12 @@ public class ResourcesSoot {
 
         mActivityField = new SootField("currentActivity", RefType.v("android.app.Activity"), Modifier.PUBLIC | Modifier.STATIC);
         mSootClass.addField(mActivityField);
+        mSootClass.setApplicationClass();
 
 		mViewClass     = Scene.v().getSootClass("android.view.View");
 		mTextViewClass = Scene.v().getSootClass("android.widget.TextView");
-		
-		mHasMethod = false;
+		mSetTextMethod = Scene.v().getMethod("<android.widget.TextView: void setText(java.lang.CharSequence)>");
+		mViewInitMethod = Scene.v().getMethod("<android.view.View: void <init>(android.content.Context)>");
     }
 
     // setup 
@@ -172,8 +174,8 @@ public class ResourcesSoot {
 
     /**
     * addView:
-    *   function to add a text view info into uiObjectTable but do not instantiate the object
-    *   on first call of findViewById() is when the object is instantiated
+    *   function to add a view info into uiObjectTable and create a static for use by the
+    *   IntegrateXMLLayout transformation.
     */
     public void addView(String type, String strId, List<String> textList) {
         // adding ui object (partial information, no numeric ID, no soot method)  
@@ -203,7 +205,11 @@ public class ResourcesSoot {
         if (uiObjectTable.get(id) == null) {
             UISootObject obj = new UISootObject(id.intValue(), type, strId, textList, null);
             uiObjectTable.put(id, obj);
+
+			//create a static field 
             createViewMember(id);
+
+			// create method getView_XYX()
             addGetView_ID(id);
         }
     }
@@ -256,7 +262,7 @@ public class ResourcesSoot {
 
     /**
     * addGetView:
-    *       - method to add a 
+    *       - method to add getView_XYX(content) to the droidsafe.android.ResourcesSoot 
     */
     private void addGetView_ID(Integer intId) {
         // units.add(Jimple.v().newAssignStmt(fieldRef, arg));
@@ -276,9 +282,9 @@ public class ResourcesSoot {
         List params = new LinkedList<Type>();
         params.add(RefType.v("android.app.Activity"));
 
-        RefType returnType = (RefType) obj.sootField.getType(); //RefType.v("android.widget.view"); 
+        RefType returnType = (RefType) obj.sootField.getType(); 
 
-		SootMethod viewInitMethod = SootUtils.findClosetMatch(returnType.getSootClass(), "void <init>(android.content.Context)");
+		SootMethod viewInitMethod = Scene.v().getActiveHierarchy().resolveConcreteDispatch(returnType.getSootClass(), mViewInitMethod);
 
 		if (viewInitMethod == null) {
 			logger.warn("Cannot locate proper constructor for {})", returnType);
@@ -301,8 +307,7 @@ public class ResourcesSoot {
 
         Chain units = body.getUnits();
 
-        // Now we are adding the code for getting paramer, and assigning it to currentActivity
-
+        // extract parameter
         Local argActivity = Jimple.v().newLocal("paramActivity",  RefType.v("android.app.Activity"));
 
         // android.app.Activity paramActivity;
@@ -329,14 +334,16 @@ public class ResourcesSoot {
 
         units.add(Jimple.v().newAssignStmt(localView, newExpr));
 
-		mHasMethod = true;
-
         units.add(Jimple.v().newInvokeStmt(
                     Jimple.v().newVirtualInvokeExpr(localView, viewInitMethod.makeRef(), 
                                 argActivity))); 
 
-		if (SootUtils.checkAncestor(returnType.getSootClass(), mTextViewClass)) {
-			SootMethod setTextMethod = SootUtils.findClosetMatch(returnType.getSootClass(), "void setText(java.lang.CharSequence)");
+        // Put things to track inside a data structure
+        if (Scene.v().getActiveHierarchy().isClassSubclassOfIncluding(
+											returnType.getSootClass(), mTextViewClass)) {
+			SootMethod setTextMethod = 
+						Scene.v().getActiveHierarchy().resolveConcreteDispatch(
+														returnType.getSootClass(), mSetTextMethod);
 			int setId = 1;
 			for (String text: obj.textList) {
 				logger.info("setTextMethod {}: {}({}) ", setId++, setTextMethod, text);
@@ -434,6 +441,7 @@ public class ResourcesSoot {
     * Write to the file
     */
     public void writeFile(String dir)  {
+    	
         String filePath = dir + File.separator + mSootClass.toString();
 		PrintWriter writer;
 	
