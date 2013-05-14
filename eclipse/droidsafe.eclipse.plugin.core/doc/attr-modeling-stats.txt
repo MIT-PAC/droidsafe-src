@@ -566,3 +566,13 @@ Intents: 0/2 Uri: 0/0 Strings: 4/14
 Intents: 0/2 Uri: 0/0 Strings: 4/14
 /home/becker/src/droidsafe-git/android-apps/engagements/1b/apps/PicViewer/src
 Intents: 0/2 Uri: 0/0 Strings: 4/14
+/home/becker/src/droidsafe-git/android-apps/engagements/1b/apps/PicViewer/src
+Intents: 0/2 Uri: 0/0 Strings: 4/14
+/home/becker/runtime-EclipseApplication/com.darshancomputing.BatteryIndicatorPro.BatteryIndicator/src
+Intents: 0/2 Uri: 0/0 Strings: 7/18
+/home/becker/runtime-EclipseApplication/com.darshancomputing.BatteryIndicatorPro.BatteryIndicator/src
+Intents: 0/2 Uri: 0/0 Strings: 7/18
+/home/becker/runtime-EclipseApplication/com.darshancomputing.BatteryIndicatorPro.BatteryIndicator/src
+Intents: 4/26 Uri: 0/0 Strings: 150/216
+/home/becker/runtime-EclipseApplication/com.darshancomputing.BatteryIndicatorPro.BatteryIndicator/src
+Intents: 5/31 Uri: 0/0 Strings: 146/327
