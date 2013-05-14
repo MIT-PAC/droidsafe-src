@@ -5,43 +5,67 @@ import droidsafe.annotations.*;
 public class DSTaintObject {
 	private Object taint;
 	
-	@DSModeled(DSC.SAFE)
+	@DSModeled(DSC.BAN)
 	public DSTaintObject() {
 	}
 	
-	@DSModeled(DSC.SAFE)
+	/* Do not use this anymore because we associate taint with fields
+	 * and primitives, and this generic call can confuse.
+	@DSModeled(DSC.BAN)
 	public void addTaints(Object... taints) {
 		for (Object t : taints)
 			addTaint(t);
 	}
+	*/
 	
-	@DSModeled(DSC.SAFE)
-	public void addTaint(Object obj) {
+	@DSModeled(DSC.BAN)
+	public void addTaint(float i) {
+		this.taint = new Float(i);
+	}
+	
+	@DSModeled(DSC.BAN)
+	public void addTaint(boolean i) {
+		this.taint = new Boolean(i);
+	}
+	
+	@DSModeled(DSC.BAN)
+	public void addTaint(String s) {
+		this.taint = new String(s);
+	}
+	
+	@DSModeled(DSC.BAN)
+	public void addTaint(int i) {
+		this.taint = new Integer(i);
+	}
+	
+	@DSModeled(DSC.BAN)
+	public void addTaint(DSTaintObject obj) {
 		this.taint = obj;
 	}
 	
-	@DSModeled(DSC.SAFE)
+	@DSModeled(DSC.BAN)
 	public Object getTaint() {
-		return taint;
+		return null;
 	}
 	
-	@DSModeled(DSC.SAFE)
+	@DSModeled(DSC.BAN)
 	public int getTaintInt() {
-		return taint.hashCode();
+		return 0;
 	}
 	
-	@DSModeled(DSC.SAFE)
+	@DSModeled(DSC.BAN)
 	public float getTaintFloat() {
-		return (float)getTaintInt();
+		return 0f;
 	}
 	
-	@DSModeled(DSC.SAFE)
+	@DSModeled(DSC.BAN)
 	public String getTaintString() {
-		return taint.toString();
+		return "";
 	}
 	
-	@DSModeled(DSC.SAFE)
+	@DSModeled(DSC.BAN)
 	public boolean getTaintBoolean() {
-		return taint.equals(null);
-	}
+		return false;
+	}	
 }
+
