@@ -395,7 +395,6 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
 	private int mOverScrollMode;
 	protected ViewParent mParent;
 	AttachInfo mAttachInfo;
-	/*
 	@ViewDebug.ExportedProperty(flagMapping = {
         @ViewDebug.FlagToString(mask = FORCE_LAYOUT, equals = FORCE_LAYOUT,
                 name = "FORCE_LAYOUT"),
@@ -408,10 +407,8 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
         @ViewDebug.FlagToString(mask = DIRTY_MASK, equals = DIRTY_OPAQUE, name = "DIRTY_OPAQUE"),
         @ViewDebug.FlagToString(mask = DIRTY_MASK, equals = DIRTY, name = "DIRTY")
     })
-    */
     int mPrivateFlags;
 	int mPrivateFlags2;
-	/*
 	@ViewDebug.ExportedProperty(flagMapping = {
         @ViewDebug.FlagToString(mask = SYSTEM_UI_FLAG_LOW_PROFILE,
                                 equals = SYSTEM_UI_FLAG_LOW_PROFILE,
@@ -423,7 +420,6 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
                                 equals = SYSTEM_UI_FLAG_VISIBLE,
                                 name = "SYSTEM_UI_FLAG_VISIBLE", outputIf = true)
     })
-    */
     int mSystemUiVisibility;
 	int mWindowAttachCount;
 	protected ViewGroup.LayoutParams mLayoutParams;
@@ -562,13 +558,11 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
 	public static final int LAYER_TYPE_NONE = 0;
 	public static final int LAYER_TYPE_SOFTWARE = 1;
 	public static final int LAYER_TYPE_HARDWARE = 2;
-	/*
 	@ViewDebug.ExportedProperty(category = "drawing", mapping = {
             @ViewDebug.IntToString(from = LAYER_TYPE_NONE, to = "NONE"),
             @ViewDebug.IntToString(from = LAYER_TYPE_SOFTWARE, to = "SOFTWARE"),
             @ViewDebug.IntToString(from = LAYER_TYPE_HARDWARE, to = "HARDWARE")
     })
-    */
     int mLayerType = LAYER_TYPE_NONE;
 	Paint mLayerPaint;
 	Rect mLocalDirtyRect;
@@ -580,7 +574,6 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
 	public static final int TEXT_DIRECTION_LTR = 3;
 	public static final int TEXT_DIRECTION_RTL = 4;
 	protected static int DEFAULT_TEXT_DIRECTION = TEXT_DIRECTION_INHERIT;
-	/*
 	@ViewDebug.ExportedProperty(category = "text", mapping = {
             @ViewDebug.IntToString(from = TEXT_DIRECTION_INHERIT, to = "INHERIT"),
             @ViewDebug.IntToString(from = TEXT_DIRECTION_FIRST_STRONG, to = "FIRST_STRONG"),
@@ -596,7 +589,6 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
             @ViewDebug.IntToString(from = TEXT_DIRECTION_LTR, to = "LTR"),
             @ViewDebug.IntToString(from = TEXT_DIRECTION_RTL, to = "RTL")
     })
-    */
     private int mResolvedTextDirection = TEXT_DIRECTION_INHERIT;
 	protected final InputEventConsistencyVerifier mInputEventConsistencyVerifier =
             InputEventConsistencyVerifier.isInstrumentationEnabled() ?
@@ -604,11 +596,11 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
 	
     @DSModeled(value = DSC.SAFE)
 	public View(Context context){
-		dsTaint.addTaint(context);
 		mContext = context;
 		onSizeChanged(0,0,0,0);
         onDraw(new Canvas());
         mResources = context.getResources();
+        mKeyedTags = new SparseArray<Object>();
 		/*
 		mContext = context;
 		mResources = context != null ? context.getResources() : null;
@@ -1457,7 +1449,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
 	}
 	
 	public void setAccessibilityDelegate(AccessibilityDelegate delegate){
-		dsTaint.addTaint(delegate);
+		mAccessibilityDelegate = delegate;
 		
 		// Original method
 		/*
@@ -1505,7 +1497,9 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
 	}
 	
 	@RemotableViewMethod public void setContentDescription(CharSequence contentDescription){
-		dsTaint.addTaint(contentDescription);
+		mContentDescription = contentDescription;
+		
+		//dsTaint.addTaint(contentDescription.toString());
 		
 		// Original method
 		/*
@@ -3395,7 +3389,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
 	}
 	
 	public void setTouchDelegate(TouchDelegate delegate){
-		dsTaint.addTaint(delegate);
+		mTouchDelegate = delegate;
 		
 		// Original method
 		/*
@@ -4456,7 +4450,8 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
 	}
 	
 	public void setLayoutParams(ViewGroup.LayoutParams params){
-		dsTaint.addTaint(params);
+		mLayoutParams = params;
+		requestLayout();
 		
 		// Original method
 		/*
@@ -5415,8 +5410,20 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
 	}
 	
 	void dispatchAttachedToWindow(AttachInfo info, int visibility){
-		dsTaint.addTaint(info);
-		
+		mAttachInfo = info;
+		info.mTreeObserver.merge(mFloatingTreeObserver);
+		mAttachInfo.mScrollContainers.add(this);
+		performCollectViewAttributes(visibility);
+        onAttachedToWindow();
+        ListenerInfo li = mListenerInfo;
+        final CopyOnWriteArrayList<OnAttachStateChangeListener> listeners =
+                li != null ? li.mOnAttachStateChangeListeners : null;
+        for (OnAttachStateChangeListener listener : listeners) {
+            listener.onViewAttachedToWindow(this);
+        }
+        int vis = info.mWindowVisibility;
+        onWindowVisibilityChanged(vis);
+        refreshDrawableState();
 		// Original method
 		/* Original Method Too Long, Refer to Original Implementation */
 		//Return nothing
@@ -6732,7 +6739,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
 	
 	@DSModeled(DSC.SAFE)
 	public void setTag(final Object tag){
-		dsTaint.addTaint(tag);
+		mTag = tag;
 		
 		// Original method
 		/*
@@ -6745,7 +6752,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
 	
 	@DSModeled(DSC.SAFE)
 	public Object getTag(int key){
-		return dsTaint.getTaint();
+		return mKeyedTags.get(key);
 		// Original method
 		/*
 		{
@@ -6757,7 +6764,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
 	
 	@DSModeled(DSC.SAFE)
 	public void setTag(int key, final Object tag){
-		dsTaint.addTaint(tag);
+		setKeyedTag(key, tag);
 		// Original method
 		/*
 		{
@@ -6775,7 +6782,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
 	}
 	
 	public void setTagInternal(int key, Object tag){
-		
+		setKeyedTag(key, tag);
 		// Original method
 		/*
 		{
@@ -6791,7 +6798,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
 	}
 	
 	private void setKeyedTag(int key, Object tag){
-		
+		mKeyedTags.put(key, tag);
 		// Original method
 		/*
 		{
@@ -7122,8 +7129,8 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
 	}
 	
 	public void setAnimation(Animation animation){
-		dsTaint.addTaint(animation);
-		
+		mCurrentAnimation = animation;
+		animation.reset();
 		// Original method
 		/*
 		{
@@ -8043,7 +8050,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
 			int bottom;
 			
 			public void setNextPoolable(InvalidateInfo element){
-				dsTaint.addTaint(element);
+				mNext = element;
 				
 				// Original method
 				/*
@@ -8055,7 +8062,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
 			}
 			
 			public InvalidateInfo getNextPoolable(){
-				return (InvalidateInfo)dsTaint.getTaint();
+				return mNext;
 				
 				// Original method
 				/*
@@ -8163,14 +8170,10 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
 		
 		AttachInfo(IWindowSession session, IWindow window,
                 Handler handler, Callbacks effectPlayer){
-			dsTaint.addTaint(session);
 			mSession = session;  //Preserved
-			dsTaint.addTaint(window);
 			mWindow = window;  //Preserved
-			mWindowToken = window.asBinder();  //Preserved
-			dsTaint.addTaint(handler);
+			mWindowToken = window.asBinder();  //Preserved DSFIXME:  Track the taint!
 			mHandler = handler;  //Preserved
-			dsTaint.addTaint(effectPlayer);
 			mRootCallbacks = effectPlayer;  //Preserved
 			/*
 			mSession = session;
