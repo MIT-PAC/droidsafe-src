@@ -40,7 +40,7 @@ public class ContextThemeWrapper extends ContextWrapper {
     
     public ContextThemeWrapper(Context base, int themeres) {
         super(base);
-        dsTaint.addTaints(base, themeres);
+        dsTaint.addTaint(themeres);
         /*
         mBase = base;
         mThemeResource = themeres;
@@ -71,7 +71,6 @@ public class ContextThemeWrapper extends ContextWrapper {
     @DSModeled(DSC.SAFE)
     @Override protected void attachBaseContext(Context newBase) {
         super.attachBaseContext(newBase);
-        dsTaint.addTaint(newBase);
         mBase = newBase;
     }
     

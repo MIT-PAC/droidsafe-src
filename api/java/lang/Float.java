@@ -31,7 +31,7 @@ public final class Float extends Number implements Comparable<Float> {
 	public static final int SIZE = 32;
 	
 	@DSModeled(DSC.SAFE)
-	Float(float value){
+	public Float(float value){
 		dsTaint.addTaint(value);
 		this.value = value;
 		
@@ -40,8 +40,8 @@ public final class Float extends Number implements Comparable<Float> {
 		*/
 	}
 	
-	Float(double value){
-		dsTaint.addTaint(value);
+	public Float(double value){
+		dsTaint.addTaint((float)value);
 		this.value = (float)value;
 		/*
 		this.value = (float) value;

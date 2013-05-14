@@ -24,7 +24,7 @@ import droidsafe.annotations.*;
             = (Class<Integer>) int[].class.getComponentType();
 	
 	@DSModeled(DSC.SAFE)
-	Integer(int value){
+	public Integer(int value){
 		dsTaint.addTaint(value);
 		this.value = value;
 		/*
