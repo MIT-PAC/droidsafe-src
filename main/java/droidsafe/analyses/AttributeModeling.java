@@ -17,6 +17,8 @@ import droidsafe.transforms.AddAllocsForAPICalls;
 
 import droidsafe.utils.SootUtils;
 
+import com.google.common.base.Throwables;
+
 import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileWriter;
@@ -166,7 +168,8 @@ public class AttributeModeling {
     } while(oldValueToModelAttrMapSize != am.valueToModelAttrMap.size());
     // Run one more time so that modeled methods get to use the right values
     runOnce();
-
+    runOnce();
+    runOnce();
     // log the results and statistics    
     am.log();
   }
@@ -355,7 +358,8 @@ public class AttributeModeling {
         }
       }
     } catch (Exception e) {
-      String logEntry = "The InvokeExpr " + invokeExpr + this.sourceLocation + " hasn't been modeled: " + e.toString() + " " + e.getStackTrace()[0].toString();
+      String logEntry = "The InvokeExpr " + invokeExpr + this.sourceLocation + " hasn't been modeled: " + e.toString() + "\n";
+      logEntry += Throwables.getStackTraceAsString(e);
 
       // The method isn't modeled, so we must invalidate every argument that we modeled
       this.invalidateParamObjects(paramObjectCartesianProduct);

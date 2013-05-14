@@ -20,7 +20,8 @@ public class Intent extends ModeledClass {
   droidsafe.model.java.lang.String mType;
   droidsafe.model.java.lang.String mPackage;
   droidsafe.model.android.net.Uri mData;
-  
+  droidsafe.model.android.os.Bundle mExtras;
+
   public Intent(AllocNode allocNode) {
     super(allocNode);
     this.mAction = new droidsafe.model.java.lang.String();
@@ -43,20 +44,24 @@ public class Intent extends ModeledClass {
   public void _init_(droidsafe.model.android.content.Context context, java.lang.Class cls) {
   }
 
-  public void setAction(droidsafe.model.java.lang.String mAction){
+  public droidsafe.model.android.content.Intent setAction(droidsafe.model.java.lang.String mAction){
     this.mAction.incorporateString(mAction);
+    return this;
   }
 
-  public void setData(droidsafe.model.android.net.Uri mUri) {
+  public droidsafe.model.android.content.Intent setData(droidsafe.model.android.net.Uri mUri) {
     this.mData = mUri;
+    return this;
   }
 
-  public void setType(droidsafe.model.java.lang.String mType){
+  public droidsafe.model.android.content.Intent setType(droidsafe.model.java.lang.String mType){
     this.mType.incorporateString(mType);
+    return this;
   }
   
-  public void setPackage(droidsafe.model.java.lang.String mPackage){
+  public droidsafe.model.android.content.Intent setPackage(droidsafe.model.java.lang.String mPackage){
     this.mPackage.incorporateString(mPackage);
+    return this;
   }
 
   public droidsafe.model.java.lang.String getAction() {
@@ -76,9 +81,19 @@ public class Intent extends ModeledClass {
   }
 
   public void getStringExtra(droidsafe.model.java.lang.String name) {
-
   }
 
+  public droidsafe.model.android.content.Intent putExtras(droidsafe.model.android.os.Bundle extras) {
+    if(this.mExtras == null){
+      this.mExtras = new droidsafe.model.android.os.Bundle();
+    }
+    this.mExtras.putAll(extras);
+    return this;
+  }
+
+  public droidsafe.model.android.os.Bundle getExtras() {
+    return (mExtras != null) ? new droidsafe.model.android.os.Bundle(mExtras) : null;
+  }
 
   @Override
   public String toString(){
