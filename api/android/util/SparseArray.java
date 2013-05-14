@@ -22,9 +22,9 @@ public class SparseArray<E> implements Cloneable {
 	
 	@DSModeled(DSC.SAFE)
 	public SparseArray(int initialCapacity){
-		initialCapacity = ArrayUtils.idealIntArraySize(initialCapacity);
-		mKeys = new int[initialCapacity];
-		mValues = new Object[initialCapacity];
+		ArrayUtils.idealIntArraySize(initialCapacity);
+		mKeys = new int[0];
+		mValues = new Object[0];
 		/*
 		initialCapacity = ArrayUtils.idealIntArraySize(initialCapacity);
 		mKeys = new int[initialCapacity];
@@ -179,6 +179,7 @@ public class SparseArray<E> implements Cloneable {
 	}
 	
 	public int keyAt(int index){
+		return dsTaint.getTaintInt();
 		// Original method
 		/*
 		{
@@ -189,11 +190,10 @@ public class SparseArray<E> implements Cloneable {
         return mKeys[index];
     }
 		*/
-		return dsTaint.getTaintInt();
 	}
 	
 	@SuppressWarnings("unchecked") public E valueAt(int index){
-		return (E) mValues[0]; //DSFIXME:  Validate taint
+		return (E) mValues[0];
 		// Original method
 		/*
 		{
@@ -222,7 +222,7 @@ public class SparseArray<E> implements Cloneable {
 	}
 	
 	public int indexOfKey(int key){
-		return binarySearch(mKeys, 0, mSize, key);
+		return dsTaint.getTaintInt();
 		// Original method
 		/*
 		{
@@ -273,13 +273,7 @@ public class SparseArray<E> implements Cloneable {
 	
 	public void append(int key, E value){
 		put(key, value);
-		int n = ArrayUtils.idealIntArraySize(mSize + 1);
-		int[] nkeys = new int[n];
-        Object[] nvalues = new Object[n];
-		//System.arraycopy(mKeys, 0, nkeys, 0, mKeys.length); //DSFIXME:  Need to model System.arraycopy
-        //System.arraycopy(mValues, 0, nvalues, 0, mValues.length); //DSFIXME:  Need to model System.arraycopy
-        mKeys = nkeys;
-        mValues = nvalues;
+		ArrayUtils.idealIntArraySize(0);
 		// Original method
 		/*
 		{
