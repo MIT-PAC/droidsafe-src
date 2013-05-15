@@ -92,9 +92,20 @@ public class Layout {
 		  }
 	  }
 
-	  if (idName != null && cview.name != null) {
-		  logger.debug("addView({}, {}, {})", cview.name, idName, text);
-		  ResourcesSoot.v().addView(cview.name,  idName, textValueList);
+	  logger.warn("dumping attributes ");
+	  Map<String, String> attrs = cview.getAttributes();
+
+	  /*
+	  TODO:
+	  	We need to go through all the attributes and see which one we will need to 
+		perform replacement
+	  */
+
+
+	  if (idName != null && cview.name != null && attrs != null) {
+		  logger.debug("addView({}, {} ", cview.name, idName);
+		  //ResourcesSoot.v().addView(cview.name,  idName, textValueList);
+		  ResourcesSoot.v().addView(cview.name,  idName, attrs);
 	  }
   }
 

@@ -1,6 +1,15 @@
 package droidsafe.android.app.resources;
 
 import java.util.HashMap;
+import java.util.Map;
+import java.util.List;
+import java.util.LinkedList;
+import soot.Hierarchy;
+import soot.Scene;
+import soot.SootMethod;
+import soot.SootClass;
+
+
 
 /**
  * @author nnguyen
@@ -16,7 +25,10 @@ public class AttributeSetterMap {
 	private static AttributeSetterMap singleton = new AttributeSetterMap();	
 	public static AttributeSetterMap v() { return singleton; }
 	
-	public class SetterEntry {
+	/**
+	* Inner class to hold properties of a setter
+	*/
+	private class SetterEntry {
 		public String attr;
 		public String className;
 		public String setterMethod;
@@ -26,81 +38,103 @@ public class AttributeSetterMap {
 			this.className = setterClass;
 			this.setterMethod = String.format("<%s: %s>", setterClass, setterMethod);
 		}
-		
 	}
 	
 	// Member fields
-	private HashMap<String, SetterEntry> map = new HashMap<>(); 
+	private List<SetterEntry> setterList = new LinkedList();
+
 	private AttributeSetterMap() {
 		
 		// from View class
 		addEntry(
-			new SetterEntry("contentDescription", "android.view.View","void setContentDescription(CharSequence)"));
+			new SetterEntry("contentDescription", "android.view.View","void setContentDescription(java.lang.CharSequence)"));
 		
 		// from TextView class
 		addEntry(
-				new SetterEntry("text", "android.widget.TextView","void setText(CharSequence)"));
+				new SetterEntry("text", "android.widget.TextView","void setText(java.lang.CharSequence)"));
+		// addEntry(
+		// 		new SetterEntry("textAllCaps", "android.widget.TextView","void setAllCaps(boolean)"));		
 		addEntry(
-				new SetterEntry("textAllCaps", "android.widget.TextView","void setAllCaps(boolean)"));		
-		addEntry(
-				new SetterEntry("hint", "android.widget.TextView","void setHint(CharSequence)"));	
+				new SetterEntry("hint", "android.widget.TextView","void setHint(java.lang.CharSequence)"));	
 		
 		// from Switch class
 		addEntry(
-			new SetterEntry("textOff", "android.widget.Switch", "void setTextOff(CharSequence)"));
+			new SetterEntry("textOff", "android.widget.Switch", "void setTextOff(java.lang.CharSequence)"));
 		addEntry(
-			new SetterEntry("textOn", "android.widget.Switch","void setTextOn(CharSequence)"));
+			new SetterEntry("textOn", "android.widget.Switch","void setTextOn(java.lang.CharSequence)"));
 		
 		// from ToggleButton class
 		addEntry(
-				new SetterEntry("textOff", "android.widget.ToggleButton", "void setTextOff(CharSequence)"));
+				new SetterEntry("textOff", "android.widget.ToggleButton", "void setTextOff(java.lang.CharSequence)"));
 		addEntry(
-				new SetterEntry("textOn", "android.widget.ToggleButton","void setTextOn(CharSequence)"));
+				new SetterEntry("textOn", "android.widget.ToggleButton","void setTextOn(java.lang.CharSequence)"));
 		
 		//from AutoCompleteTextView
 		addEntry(
-				new SetterEntry("completionHint", "android.widget.AutoCompleteTextView","void setCompletionHint(CharSequence)"));
+				new SetterEntry("completionHint", "android.widget.AutoCompleteTextView","void setCompletionHint(java.lang.CharSequence)"));
 		
 		//android.widget.Spinner class
 		addEntry(
-				new SetterEntry("prompt", "android.widget.Spinner","void setPrompt(CharSequence)"));
+				new SetterEntry("prompt", "android.widget.Spinner","void setPrompt(java.lang.CharSequence)"));
 		
 		//TextClock
 		/*
 		addEntry(
-				new SetterEntry("format12Hour", "android.widget.TextClock","void setFormat12Hour(CharSequence)"));		
+				new SetterEntry("format12Hour", "android.widget.TextClock","void setFormat12Hour(java.lang.CharSequence)"));		
 		addEntry(
-				new SetterEntry("format24Hour", "android.widget.TextClock","void setFormat24Hour(CharSequence)"));		
+				new SetterEntry("format24Hour", "android.widget.TextClock","void setFormat24Hour(java.lang.CharSequence)"));		
 		addEntry(
 				new SetterEntry("setTimeZone", "android.widget.TextClock","void setTimeZone(String)"));
 		*/
 		
 		//android.preference.Preference
 		addEntry(
-				new SetterEntry("summary", "android.preference.Preference","void setSummary(CharSequence)"));
+				new SetterEntry("summary", "android.preference.Preference","void setSummary(java.lang.CharSequence)"));
 		addEntry(
-				new SetterEntry("title", "android.preference.Preference","void setTitle(CharSequence)"));
+				new SetterEntry("title", "android.preference.Preference","void setTitle(java.lang.CharSequence)"));
 		
 		//android.preference.DialogPreference
 		addEntry(
-				new SetterEntry("dialogTitle", "android.preference.DialogPreference","void setDialogTitle(CharSequence)"));
+				new SetterEntry("dialogTitle", "android.preference.DialogPreference","void setDialogTitle(java.lang.CharSequence)"));
 		
 		//android.preference.TwoStatePreference.
 		addEntry(
-				new SetterEntry("summaryOn", "android.preference.TwoStatePreference","void setSummaryOn(CharSequence)"));
+				new SetterEntry("summaryOn", "android.preference.TwoStatePreference","void setSummaryOn(java.lang.CharSequence)"));
 		addEntry(
-				new SetterEntry("summaryOff", "android.preference.TwoStatePreference","void setSummaryOff(CharSequence)"));
+				new SetterEntry("summaryOff", "android.preference.TwoStatePreference","void setSummaryOff(java.lang.CharSequence)"));
 		
 		//content.pm.PackageInfo
 		//addEntry(
-		//		new SetterEntry("versionName", "android.android.pm.PackageInfo","void setVersionName(CharSequence)"));
+		//		new SetterEntry("versionName", "android.android.pm.PackageInfo","void setVersionName(java.lang.CharSequence)"));
 	}
 	
 	
 	private void addEntry(SetterEntry entry) {
-		map.put(entry.setterMethod, entry);
+		setterList.add(entry);
 	}
 	
-	
+	/**
+	* resolveSetter: lookup appropriate setter method for a given attribute
+	* that is associate with myClass
+	*/
+	public SootMethod resolveSetter(String attrName, SootClass myClass) {
+		for (SetterEntry entry: setterList) {
+			//attribute name does not match
+			if (!entry.attr.equals(attrName)) {
+				continue;
+			}
 
+			SootClass parentClass = Scene.v().getSootClass(entry.className);
+			// not a subclass
+			if (!Scene.v().getActiveHierarchy().isClassSubclassOfIncluding(
+											myClass, parentClass)) {
+				continue;
+			}
+			SootMethod parentSetter = Scene.v().getMethod(entry.setterMethod);
+			SootMethod setter = Scene.v().getActiveHierarchy().resolveConcreteDispatch(myClass, parentSetter);
+
+			return setter;
+		}
+		return null;
+	}	
 }

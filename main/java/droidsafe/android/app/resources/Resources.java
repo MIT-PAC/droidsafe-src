@@ -80,10 +80,10 @@ public class Resources {
 	List<Layout> layouts = new ArrayList<Layout>();
   
   // string name to RString List mappings: created while parsing.  Store multiple values in the list
-  HashMap<String, List<RString>> stringNameToRStringList = new HashMap<String, List<RString>>();
+	HashMap<String, List<RString>> stringNameToRStringList = new HashMap<String, List<RString>>();
   
   // Stores string array name to RStringArray mapping that we create while parsing resource files in res/values
-  HashMap<String, RStringArray> stringArrayNameToRStringArray = new HashMap<String, RStringArray>();
+	HashMap<String, RStringArray> stringArrayNameToRStringArray = new HashMap<String, RStringArray>();
 
 	/** Application base package name **/
 	String package_name;
@@ -276,6 +276,7 @@ public class Resources {
 
 		// Add This point, all resrouces will have been parsed and loaded
 		ResourcesSoot.v().setNumberToStringMap(resource_info);
+		ResourcesSoot.v().setStringToValueListMap(stringNameToRStringList); 
 	}
 
 	/**
@@ -311,6 +312,7 @@ public class Resources {
 			if (tagName.equals("string")){
 				Node firstChild = element.getFirstChild();
 				if (firstChild != null) {
+					logger.debug("firstChild {} ", firstChild);
 					String stringValue = firstChild.getNodeValue();
 					// create an instance of our internal representation of the android string - RString
 					RString rString = null;
@@ -322,6 +324,21 @@ public class Resources {
 					}
 					// the name automatically gets assigned during xml parsing
 					String stringName = rString.name;
+					logger.debug("name: {} ", stringName);
+
+					//normalize stringname
+					if (stringName.startsWith("android:")) {
+						stringName = stringName.substring("android:".length());
+					}
+					if (stringName.startsWith("@+")) {
+						stringName = stringName.substring(2);
+					}
+
+					if (stringName.startsWith("@")) {
+						stringName = stringName.substring(1);
+					}
+
+					stringName = "string." + stringName;
 
 					logger.debug("Adding a string name to string value mapping: ({}:{})", 
 							stringName, stringValue);

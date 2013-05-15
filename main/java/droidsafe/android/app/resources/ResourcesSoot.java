@@ -25,6 +25,7 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 import java.util.Arrays;
 import java.util.Collections;
+import java.util.Map;
 import java.util.HashMap;
 
 import org.slf4j.Logger;
@@ -106,8 +107,10 @@ public class ResourcesSoot {
         public String       type;
         public String       text;
 		public List<String> textList;
-        public SootField   sootField;
-        public SootMethod  lookupMethod;
+		public Map<String, String> attributes;
+        public SootField    sootField;
+        public SootMethod   lookupMethod;
+
         public UISootObject() {
             numericId = 0;
             stringId   = "unknown";
@@ -115,6 +118,7 @@ public class ResourcesSoot {
             text = "";
             sootField    = null;
             lookupMethod = null;
+			attributes = null;
         }
 
         public UISootObject(int numId, String type, String strId, List<String> textValues, SootField sf) {
@@ -123,8 +127,15 @@ public class ResourcesSoot {
             this.textList = textValues;
             this.type = type;
             sootField = sf;
-            lookupMethod = null;
         }
+
+		public UISootObject(int numId, String type, String strId, Map<String, String> attrs) {
+            this.numericId = numId;
+            this.stringId  = strId;
+            this.type = type;
+			this.attributes = attrs;
+        }
+
     }
 
     private final static Logger logger = LoggerFactory.getLogger(ResourcesSoot.class);  
@@ -147,6 +158,7 @@ public class ResourcesSoot {
     private HashMap<Integer, UISootObject> uiObjectTable; 
 
     private HashBiMap<Integer, String> numericToStringIDMap;
+	private Map<String, List<RString>> stringToValueList;
 
     private ResourcesSoot() {
 
@@ -166,10 +178,57 @@ public class ResourcesSoot {
 		mViewInitMethod = Scene.v().getMethod("<android.view.View: void <init>(android.content.Context)>");
     }
 
-    // setup 
+    // get numericID -> string ID mapping
     public void setNumberToStringMap(HashBiMap<Integer, String> map) {
         numericToStringIDMap = map;
     }
+
+	// get stringID => list of possible values
+	public void setStringToValueListMap(Map<String, List<RString>> map) {
+		stringToValueList = map;	
+	}
+
+	/**
+    * addView:
+    *   function to add a view info into uiObjectTable and create a static for use by the
+    *   IntegrateXMLLayout transformation.
+    */
+    public void addView(String type, String strId, Map<String, String> attrMap) {
+        // adding ui object (partial information, no numeric ID, no soot method)  
+        // to the list of UI objects 
+
+        // First time initializing, we will add the clinit method.  <clinit> method
+        // CANNOT be empty, so we only add it when there is at least a static member
+        // if (uiObjectTable.isEmpty()) {
+        //  addClinitMethod();
+        // }
+
+		if(strId == null || type == null) {
+			logger.warn("addView type:{}, id:{}", type, strId);
+		} else {
+			logger.info("addView type:{}, id:{}", type, strId);
+		}
+
+		strId = strId.replace("@android:", "");
+        Integer id = numericToStringIDMap.inverse().get(strId);
+
+		if (id == null) {
+			logger.warn("lookup id {} => {} ", strId, id);
+			return;
+		}
+
+        if (uiObjectTable.get(id) == null) {
+            UISootObject obj = new UISootObject(id.intValue(), type, strId, attrMap);
+            uiObjectTable.put(id, obj);
+
+			//create a static field 
+            createViewMember(id);
+
+			// create method getView_XYX()
+            addGetView_ID(id);
+        }
+    }
+
 
 
     /**
@@ -177,6 +236,7 @@ public class ResourcesSoot {
     *   function to add a view info into uiObjectTable and create a static for use by the
     *   IntegrateXMLLayout transformation.
     */
+	/*
     public void addView(String type, String strId, List<String> textList) {
         // adding ui object (partial information, no numeric ID, no soot method)  
         // to the list of UI objects 
@@ -213,6 +273,7 @@ public class ResourcesSoot {
             addGetView_ID(id);
         }
     }
+	*/
 
 
     /**
@@ -268,7 +329,7 @@ public class ResourcesSoot {
         // units.add(Jimple.v().newAssignStmt(fieldRef, arg));
 
         UISootObject obj = uiObjectTable.get(intId);    
-        logger.info("calling addGetView_ID({}:{}) ", intId.toString(),	String.format("%s", intId));
+        logger.info("calling addGetView_ID({}:{}) ", intId.toString(),	String.format("%x", intId));
 
         if (obj == null) {
             logger.warn("Object for id {} does not exist ", intId);
@@ -339,6 +400,7 @@ public class ResourcesSoot {
                                 argActivity))); 
 
         // Put things to track inside a data structure
+		/*
         if (Scene.v().getActiveHierarchy().isClassSubclassOfIncluding(
 											returnType.getSootClass(), mTextViewClass)) {
 			SootMethod setTextMethod = 
@@ -353,6 +415,49 @@ public class ResourcesSoot {
 				//logger.info("setText expr {} ", setTextExpr);
 				logger.info("setText stmt {} ", setTextStmt);
 				units.add(setTextStmt); 
+			}
+		}
+		*/
+
+		for (String attrName: obj.attributes.keySet()) {
+			SootMethod setter = AttributeSetterMap.v().resolveSetter(
+									attrName, returnType.getSootClass());
+
+			// if there is no setter match, skip the attribute
+			if (setter == null) {
+				logger.debug("attr {}, class {} CANNOT resolve ", 
+							attrName, returnType.getSootClass());
+				continue;
+			} 
+
+			// at this point, we have a setter, need to call the setter with values
+			logger.debug("attr {} => setter {} ", attrName, setter);
+
+			String attrValue = obj.attributes.get(attrName);
+
+			//TODO: need to normalize the name/params
+			if (attrValue.contains("@")) {
+				int ind = attrValue.indexOf("@");
+				String stringName = attrValue.substring(ind+1);
+				stringName = stringName.replace("/", ".");
+
+				logger.debug("Need to expand {} ", stringName);
+
+				if (stringToValueList.containsKey(stringName)) {
+					logger.warn("{} can be expanded ", stringName);	
+					List<RString> rstringList = stringToValueList.get(stringName);
+					for (RString rstring: rstringList) {
+
+						Expr settingExpr = Jimple.v().newVirtualInvokeExpr(localView, setter.makeRef(),
+								StringConstant.v(rstring.value)); 
+						Stmt settingStmt = Jimple.v().newInvokeStmt(settingExpr);
+						//logger.info("settingText expr {} ", settingTextExpr);
+						logger.info("settingStmt stmt {} ", settingStmt);
+						units.add(settingStmt); 
+
+
+					}
+				}
 			}
 		}
 
