@@ -12,17 +12,16 @@ import droidsafe.helpers.*;
 public abstract class Enum<E extends Enum<E>> implements Serializable, Comparable<E> {
 	private static final long serialVersionUID = -4300926546619394005L;
 	
-	private final String name;
+	//private final String name;
 
-    private final int ordinal;
+    //private final int ordinal;
     
     private DSTaintObject dsTaint = new DSTaintObject();
 	
     @DSModeled(DSC.SAFE)
 	protected Enum(String name, int ordinal) {
-		dsTaint.addTaints(name, ordinal);
-        this.name = name;
-        this.ordinal = ordinal;
+		dsTaint.addTaint(name);
+		dsTaint.addTaint(ordinal);
     }
 	
 	public final int compareTo(E o) {

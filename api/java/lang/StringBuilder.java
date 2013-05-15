@@ -39,7 +39,7 @@ public class StringBuilder {
 	
 	@DSModeled(DSC.SAFE)
 	public StringBuilder append(Object obj) {
-		taint.addTaint(obj);
+		taint.addTaint(obj.toString());
 		return this;
 	}
 	
@@ -58,7 +58,9 @@ public class StringBuilder {
 	// GITI DSModeled
 	@DSModeled(DSC.SAFE)
 	public void append(char[] buf, int i, int left) {
-		taint.addTaints(buf, i, left);
+		taint.addTaint(new String(buf));
+		taint.addTaint(i);
+		taint.addTaint(left);
 	}
 	
 }

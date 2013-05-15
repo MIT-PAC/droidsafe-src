@@ -3,6 +3,7 @@ package org.apache.http.entity;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
+import java.nio.charset.Charset;
 
 import org.apache.http.Header;
 
@@ -13,11 +14,23 @@ import droidsafe.helpers.DSTaintObject;
 public class StringEntity extends AbstractHttpEntity {
 	private DSTaintObject taint = new DSTaintObject();
 	
+	// DSModeled - changed type from char[] to String.
+	protected final String content;
+	
 	@DSModeled(DSC.SPEC)
 	public StringEntity(final String string) {
-		taint.addTaint(string);
+		this.content = string;
     }
 
+	public StringEntity(final String string, final Charset charset) {
+        this(string, ContentType.create(ContentType.TEXT_PLAIN.getMimeType(), charset));
+    }
+
+	public StringEntity(final String string, final ContentType contentType) {
+        this.content = string;
+        setContentType(contentType.toString());
+    }
+	
 	@Override
 	public InputStream getContent() throws IOException, IllegalStateException {
 		// TODO Auto-generated method stub

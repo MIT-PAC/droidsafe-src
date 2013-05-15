@@ -11,7 +11,7 @@ public class DefaultHttpClient extends AbstractHttpClient {
 
 	private DSTaintObject taint = new DSTaintObject();
 	
-	@DSModeled(DSC.SPEC)
+	@DSModeled(DSC.SAFE)
 	public DefaultHttpClient() {
         super(null, null);
     }

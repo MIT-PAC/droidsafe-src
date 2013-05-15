@@ -32,7 +32,8 @@ public class File implements Serializable, Comparable<File> {
 	
 	@DSModeled(DSC.SAFE)
 	public File(String dirPath, String name) {
-		dsTaint.addTaints(dirPath, name);  //DSFIXME:  Value is conditional based on nulls, but model probably doesn't care
+		dsTaint.addTaint(dirPath);  
+		dsTaint.addTaint(name); 
 		/*
         if (name == null) {
             throw new NullPointerException();

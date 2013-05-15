@@ -23,7 +23,8 @@ public final class System {
 	
 	@DSModeled(DSC.SAFE)
 	public static String getProperty(String key, String def) {
-		taint.addTaints(key, def);
+		taint.addTaint(key);
+		taint.addTaint(def);
 		return new String();
 		
 	}

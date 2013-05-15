@@ -1,5 +1,7 @@
 package java.lang;
 
+import java.util.Arrays;
+
 import droidsafe.annotations.DSC;
 import droidsafe.annotations.DSModeled;
 import droidsafe.helpers.DSTaintObject;
@@ -9,13 +11,16 @@ public class String implements java.io.Serializable, Comparable<String>, CharSeq
 	private static DSTaintObject taint = new DSTaintObject();
 	public static final Class<String> TYPE = new Class<String>();
 	
+    private final char value[];
+	
 	@DSModeled(DSC.SAFE)
 	public String() {
-        taint.addTaint(new char[0]);
+		value = new char[0];
     }
 	
 	@DSModeled(DSC.SAFE)
 	public String(String s) {
+		value = new char[0];
         taint.addTaint(s);
     }
 	
@@ -89,4 +94,10 @@ public class String implements java.io.Serializable, Comparable<String>, CharSeq
 	public static String valueOf(int i) {
         return new String();
     }
+	
+	@DSModeled(DSC.SAFE)
+	public String(char value[]) {
+        this.value = Arrays.copyOf(value, value.length);
+    }
+
 }

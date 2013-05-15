@@ -30,7 +30,6 @@ public class ArrayList<E> extends AbstractList<E> implements Cloneable, Serializ
     @DSModeled(DSC.SAFE)
     public boolean add(E object) {
     	array[0] = object;
-    	taint.addTaint(object);
     	return true;
     }
 
@@ -69,12 +68,13 @@ public class ArrayList<E> extends AbstractList<E> implements Cloneable, Serializ
     }
 
     private class ArrayListIterator implements Iterator {
+    	ArrayList list;
     	@DSModeled(DSC.SAFE)
     	public ArrayListIterator() { }
     	
     	@DSModeled(DSC.SAFE)
     	private ArrayListIterator(ArrayList l) {
-    		ArrayList.this.taint.addTaint(l);
+    		list = l;
     	}
     	
         @DSModeled(DSC.SAFE)

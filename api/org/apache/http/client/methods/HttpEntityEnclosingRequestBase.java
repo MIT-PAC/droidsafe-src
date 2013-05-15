@@ -17,6 +17,7 @@ import droidsafe.helpers.DSTaintObject;
 public class HttpEntityEnclosingRequestBase extends HttpRequestBase implements
 		HttpEntityEnclosingRequest {
 
+	private HttpEntity entity;
 	private DSTaintObject taint = new DSTaintObject();
 	
 	@DSModeled(DSC.SPEC)
@@ -32,16 +33,16 @@ public class HttpEntityEnclosingRequestBase extends HttpRequestBase implements
 
 	@DSModeled(DSC.SPEC)
 	@Override
-	public HttpEntity getEntity() {
-		return (HttpEntity) taint.getTaint();
-	}
+	   public HttpEntity getEntity() {
+        return this.entity;
+    }
 
 	@DSModeled(DSC.SPEC)
 	@Override
-	public void setEntity(HttpEntity arg0) {
-		taint.addTaint(arg0);
-	}
-
+    public void setEntity(final HttpEntity entity) {
+        this.entity = entity;
+    }
+	
 	@Override
 	public String getMethod() {
 		// TODO Auto-generated method stub
