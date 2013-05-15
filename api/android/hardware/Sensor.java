@@ -38,7 +38,7 @@ public class Sensor {
     // requested by the application (via SensorManager.java)
     @DSModeled(DSC.BAN)
     public Sensor(int type) {
-    	mType = type;
+    	dsTaint.addTaint(type);
     }
 
     // GITI DSModeled
@@ -49,28 +49,28 @@ public class Sensor {
     // GITI DSModeled - just returning a string
     @DSModeled(DSC.SAFE)
     public String getName() {
-    	return "name";
+    	return dsTaint.getTaintString();
         //return mName;
     }
 
     // GITI DSModeled - just returning a string 
     @DSModeled(DSC.SAFE)
     public String getVendor() {
-    	return "vendor";
+    	return dsTaint.getTaintString();
         //return mVendor;
     }
 
     // GITI DSModeled - just returning an int
     @DSModeled(DSC.SAFE)
     public int getType() {
-    	return 0;
+    	return dsTaint.getTaintInt();
         //return mType;
     }
 
     // GITI DSModeled - just returning an int
     @DSModeled(DSC.SAFE)
     public int getVersion() {
-    	return 0;
+    	return dsTaint.getTaintInt();
         //return mVersion;
     }
 
@@ -91,35 +91,33 @@ public class Sensor {
     // GITI DSModeled - just returning a float
     @DSModeled(DSC.SAFE)
     public float getPower() {
-    	return 0;
+    	return dsTaint.getTaintFloat();
         //return mPower;
     }
 
     // GITI DSModeled - just returning an int
     @DSModeled(DSC.SAFE)
     public int getMinDelay() {
-    	return 0;
+    	return dsTaint.getTaintInt();
         //return mMinDelay;
     }
 
     int getHandle() {
-    	return 0;
+    	return dsTaint.getTaintInt();
         //return mHandle;
     }
 
     void setRange(float max, float res) {
-    	dsTaint.addTaints(max, res);
-        mMaxRange = max;
-        mResolution = res;
+    	dsTaint.addTaint(max);
+    	dsTaint.addTaint(res);
     }
 
     void setLegacyType(int legacyType) {
     	dsTaint.addTaint(legacyType);
-        mLegacyType = legacyType;
     }
 
     int getLegacyType() {
-    	return 0;
+    	return dsTaint.getTaintInt();
         //return mLegacyType;
     }
 }

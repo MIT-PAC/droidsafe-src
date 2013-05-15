@@ -42,9 +42,9 @@ public class Environment {
      * using it such as with {@link File#mkdirs File.mkdirs()}.
      */
 	// GITI DSModeled - using taint object to track access to the sdcard
-	@DSModeled(DSC.SAFE)
+	@DSModeled(DSC.SPEC)
     public static File getExternalStoragePublicDirectory(String type) {
-    	taint.addTaint(new File("/mnt/sdcard", type));
-        return (File)taint.getTaint();
+    	taint.addTaint(type);
+        return new File("mnt/sdcard");
     }
 }

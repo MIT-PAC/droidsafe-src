@@ -14,9 +14,10 @@ import droidsafe.helpers.*;
 public class LocationManager {
 	private DSTaintObject dsTaint = new DSTaintObject();
 	
+	private ILocationManager mService;
+	
 	@DSModeled //Going to mark as SPEC since this is related to location (which is sensitive)
 	public LocationManager(ILocationManager service) {
-		dsTaint.addTaint(service);
-        //mService = service;
+        mService = service;
     }
 }

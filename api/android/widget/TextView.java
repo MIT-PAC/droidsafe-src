@@ -267,9 +267,8 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
 	@DSModeled(DSC.SAFE)
 	private void setText(CharSequence text, BufferType type,
             boolean notifyBefore, int oldlen) {
-		dsTaint.addTaints(text, type);
-		mBufferType = type;
-        mText = text;
+		dsTaint.addTaint(text.toString());
+		dsTaint.addTaint(type.toString());
 	}
 	
 	public enum BufferType {

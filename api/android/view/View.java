@@ -7903,7 +7903,8 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
 	}
 	
 	public ViewPropertyAnimator animate(){
-		return (ViewPropertyAnimator)dsTaint.getTaint();
+        mAnimator = new ViewPropertyAnimator(this);
+        return mAnimator;
 		
 		// Original method
 		/*

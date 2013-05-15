@@ -83,7 +83,7 @@ import droidsafe.annotations.*;
 	}
 	
 	@Override public double doubleValue(){
-		return (double)dsTaint.getTaint();
+		return (double)dsTaint.getTaintFloat();
 		
 		// Original method
 		/*
@@ -105,7 +105,7 @@ import droidsafe.annotations.*;
 	}
 	
 	@Override public float floatValue(){
-		return (float)dsTaint.getTaint();
+		return dsTaint.getTaintFloat();
 		
 		// Original method
 		/*

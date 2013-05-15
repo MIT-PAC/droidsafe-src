@@ -53,7 +53,6 @@ public class SensorManager {
 	
 	@DSModeled(value = DSC.SAFE)
 	public SensorManager(Looper mainLooper) {
-		dsTaint.addTaint(mainLooper);  //NOTE:  mMainLooper has package level protection 
 		/*
 		 * The rest of the original implementation is simply setting
 		 * up some internal state managed in private variables.  This   
