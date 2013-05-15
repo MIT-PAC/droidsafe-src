@@ -889,7 +889,7 @@ public final class Bundle implements Parcelable, Cloneable {
 	}
 	
 	public char getChar(String key){
-		return (char)dsTaint.getTaint();
+		return (char)dsTaint.getTaintInt();
 		// Original method
 		/*
 		{
@@ -900,7 +900,7 @@ public final class Bundle implements Parcelable, Cloneable {
 	}
 	
 	public char getChar(String key, char defaultValue){
-		return (char)dsTaint.getTaint();
+		return (char)dsTaint.getTaintInt();
 		// Original method
 		/*
 		{
