@@ -9,8 +9,12 @@ import java.io.IOException;
 import java.net.URL;
 import java.net.URLClassLoader;
 
+import java.util.Arrays;
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.Collections;
+import java.util.Comparator;
+import java.util.List;
 
 import org.junit.After;
 import org.junit.Assert;
@@ -34,7 +38,9 @@ public class SpecdumpTestCase {
 	private volatile boolean hasTimedout;
 	private int timeout;
 
-  private static Collection<Object[]> appDirs = new ArrayList<Object[]>();
+  private static Collection<Object[]> listOfParameterLists = new ArrayList<Object[]>();
+
+  private static List<String> appDirPaths = new ArrayList<String>();
 
   /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
   // Constructors
@@ -72,7 +78,11 @@ public class SpecdumpTestCase {
       System.exit(1);
     }
     findApps(appSearchDir);
-    return appDirs;
+    Collections.sort(appDirPaths);
+    for(String appDirPath : appDirPaths){
+      listOfParameterLists.add(new Object[]{appDirPath});
+    }
+    return listOfParameterLists;
   }
 	
 	@Before
@@ -163,7 +173,7 @@ public class SpecdumpTestCase {
         foundMakefile = true;
       }
       if(foundManifest && foundMakefile) {
-        appDirs.add( new Object[]{file.getParent()});
+        appDirPaths.add(file.getParentFile().getPath());
         break;
       }
     }
