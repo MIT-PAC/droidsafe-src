@@ -10,13 +10,21 @@ import soot.jimple.spark.pag.AllocNode;
 public class ContextWrapper extends Context {
 
   private final static Logger logger = LoggerFactory.getLogger(ContextWrapper.class);
-
+  
+  droidsafe.model.android.content.Context mBase;
   
   public ContextWrapper(AllocNode allocNode) {
     super(allocNode);
   }
  
   public void _init_(){
+  }
+
+  @Override
+  public droidsafe.model.java.lang.String getPackageName() {
+    if(mBase != null)
+      return mBase.getPackageName();
+    return null;
   }
 
   @Override

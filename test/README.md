@@ -1,13 +1,15 @@
 Testing Droidsafe
 ================
 
-Basics
+The gist of it
 ------
-Run *ant run-regression-tests* from the project root and make sure it passes before merging your changes into master.  
-It will take about 20 minutes. If you would like it to run faster, then focus in on a specific subset of *android-apps*
-by specifying the *-Ddir.to.search* property.
+Run *ant run-regression-tests* from the project root and make sure that the LAST TEST (SpecdumpRegressionTestCase) passes 
+before merging your changes into master. It will take ~ 20 minutes. If you would like it to run faster, then focus in on
+a specific subset of the apps in */android-apps* by specifying the *-Ddir.to.search* property.
 
-If the test fails, then look at the generated test report in *$APAC_HOME/test-reports/regression/* and see which app failed to debug it further. If the failure is not because of a timeout, then try running *make specdump* from the project root and see if your changes cause whatever exception is thrown.
+If the test fails, then look at the generated test report in *$APAC_HOME/test-reports/regression/* and see which app's
+SpecdumpTestCase failed that wasn't supposed to. If the failure is not because of a timeout, then try running 
+*make specdump* from the project root and see if your changes cause whatever exception is thrown.
 
 All Ant Commands
 ----------------
@@ -28,6 +30,14 @@ Each target can be run from the root of the repository using **ant** *target*
 Regression Test Details
 -----------------------
 
-Currently the only regression test that there is is SpecdumpRegressionTestCase. This is the only test that gets run when you run *ant run-regression-tests*. Here is how it works -  
-The test starts by looking at looking at the latest SpecdumpTestCase report in */test-reports/*.
-If a test-case (specdump for a single app) fails, then the test makes sure it was supposed to fail by looking at the value in the app's Makefile.
+
+Currently there is only one regression test that gets run when you run *ant run-regression-tests* from the project root.
+It is SpecdumpRegressionTestCase. 
+
+We know that specdump fails for some apps at the moment and are ok with it. SpecdumpRegressionTestCase just checks that
+a spec is successfully produced for all other apps.
+
+The test starts by running the *run-specdump-test* target and looking at the resulting SpecdumpTestCase report in 
+*/test-reports/*.  If a SpecdumpTestCase test-case (specdump for a single app) fails, then the test makes sure that we
+expected it to fail by looking at the SHOULD PASS value in the app's Makefile.
+
