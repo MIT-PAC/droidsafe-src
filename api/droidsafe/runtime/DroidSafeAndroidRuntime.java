@@ -37,12 +37,11 @@ public class DroidSafeAndroidRuntime {
 	 */
 	public static void modelActivity(android.app.Activity activity) {
 		ContextImpl context = new ContextImpl();
-		activity.attach(context);
 		
 		while (true) {
 			Bundle b = new Bundle();
 			//onsavedinstancestate(b)
-			activity.performCreate(b);
+			activity.performCreate(b, context);
 		
 			
 			activity.droidsafeOnResume();

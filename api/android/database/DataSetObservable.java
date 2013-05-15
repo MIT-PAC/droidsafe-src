@@ -25,4 +25,11 @@ public class DataSetObservable extends Observable<DataSetObserver> {
             }
         }
     }
+	
+	@Override
+	public void registerObserver(DataSetObserver observer) {
+		observer.onChanged();
+		observer.onInvalidated();
+        mObservers.add(0, observer);
+    }
 }

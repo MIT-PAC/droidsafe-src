@@ -204,7 +204,7 @@ public class ActivityInfo extends ComponentInfo
 
     @DSModeled(DSC.SAFE)
     public ActivityInfo(ActivityInfo orig) {
-        dsTaint.addTaint(orig.dsTaint.getTaint());
+        dsTaint.addTaint(orig.dsTaint);
     }
     
     /**
@@ -252,6 +252,16 @@ public class ActivityInfo extends ComponentInfo
     };
 
     private ActivityInfo(Parcel source) {
-    	dsTaint.addTaint(source);
+    	super(source);
+        dsTaint.addTaint(source.readInt());
+        dsTaint.addTaint(source.readInt());
+        dsTaint.addTaint(source.readString());
+        dsTaint.addTaint(source.readString());
+        dsTaint.addTaint(source.readString());
+        dsTaint.addTaint(source.readInt());
+        dsTaint.addTaint(source.readInt());
+        dsTaint.addTaint(source.readInt());
+        dsTaint.addTaint(source.readInt());
+        dsTaint.addTaint(source.readInt());
     }
 }
