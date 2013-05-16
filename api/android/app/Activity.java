@@ -2956,7 +2956,8 @@ public class Activity extends ContextThemeWrapper implements LayoutInflater.Fact
 	}
 	
 	@DSModeled(DSC.BAN) //called by dsruntime to perform the onCreate
-	final void performCreate(Bundle icicle){
+	public final void performCreate(Bundle icicle, Context context){
+		this.attachBaseContext(context);
 		onCreate(icicle);
 		mVisibleFromClient = !mWindow.getWindowStyle().getBoolean(
                 com.android.internal.R.styleable.Window_windowNoDisplay, false);

@@ -602,9 +602,9 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
 	}
 	
 	public void setOnScrollListener(OnScrollListener l){
-		dsTaint.addTaint(l);
 		mOnScrollListener = l;  //Preserved
-		
+		mOnScrollListener.onScroll(this, 1, 10, 10);
+		mOnScrollListener.onScrollStateChanged(this, 1);
 		// Original method
 		/*
 		{
@@ -1424,7 +1424,6 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
 	}
 	
 	public void setSelector(Drawable sel){
-		dsTaint.addTaint(sel);
 		mSelector = sel;  //Preserved
 		
 		// Original method
@@ -1467,9 +1466,7 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
 	}
 	
 	public void setScrollIndicators(View up, View down){
-		dsTaint.addTaint(up);
 		mScrollUp = up;  //Preserved
-		dsTaint.addTaint(down);
 		mScrollDown = down;  //Preserved
 		
 		// Original method
@@ -3180,7 +3177,6 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
 		private MultiChoiceModeListener mWrapped;
 		
 		public void setWrapped(MultiChoiceModeListener wrapped){
-			dsTaint.addTaint(wrapped);
 			mWrapped = wrapped;  //Preserved
 			
 			// Original method

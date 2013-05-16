@@ -201,7 +201,6 @@ public final class CursorJoiner
             throw new IllegalStateException("you must only call next() when hasNext() is true");
         }
         incrementCursors();
-        assert hasNext();
 
         boolean hasLeft = !mCursorLeft.isAfterLast();
         boolean hasRight = !mCursorRight.isAfterLast();

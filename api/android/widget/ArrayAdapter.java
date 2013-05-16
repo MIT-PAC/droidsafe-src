@@ -35,7 +35,6 @@ public class ArrayAdapter<T> extends BaseAdapter implements Filterable {
 	
 	@DSModeled(DSC.SAFE)
 	private void init(Context context, int resource, int textViewResourceId, List<T> objects) {
-		dsTaint.addTaints(context, resource, textViewResourceId, objects);
         mContext = context;
         mInflater = (LayoutInflater)context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         mResource = mDropDownResource = resource;
@@ -187,7 +186,6 @@ public class ArrayAdapter<T> extends BaseAdapter implements Filterable {
 	
 	@DSModeled(DSC.SAFE)
 	public void add(T object) {
-		dsTaint.addTaint(object);
         mObjects.add(object);
         notifyDataSetChanged();
     }

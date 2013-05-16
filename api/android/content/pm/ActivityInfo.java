@@ -127,15 +127,10 @@ public class ActivityInfo extends ComponentInfo implements Parcelable {
 		*/
 	}
 	
-	public final int getThemeResource(){
-		return dsTaint.getTaintInt();
-		// Original method
-		/*
-		{
-        return theme != 0 ? theme : applicationInfo.theme;
+    @DSModeled
+    public final int getThemeResource() {
+        return dsTaint.getTaintInt();
     }
-		*/
-	}
 	
 	public void dump(Printer pw, String prefix){
 		
@@ -208,30 +203,21 @@ public class ActivityInfo extends ComponentInfo implements Parcelable {
         }
     };
 	
-	private ActivityInfo(Parcel source){
-		super(source);
-		theme = source.readInt();
-		launchMode = source.readInt();
-		permission = source.readString();
-		taskAffinity = source.readString();
-		targetActivity = source.readString();
-		flags = source.readInt();
-		screenOrientation = source.readInt();
-		configChanges = source.readInt();
-		softInputMode = source.readInt();
-		uiOptions = source.readInt();
-		/*
-		theme = source.readInt();
-		launchMode = source.readInt();
-		permission = source.readString();
-		taskAffinity = source.readString();
-		targetActivity = source.readString();
-		flags = source.readInt();
-		screenOrientation = source.readInt();
-		configChanges = source.readInt();
-		softInputMode = source.readInt();
-		uiOptions = source.readInt();
-		*/
-	}
+    private ActivityInfo(Parcel source) {
+    	super(source);
+        dsTaint.addTaint(source.readInt()); //theme
+        dsTaint.addTaint(source.readInt()); //launchMode
+        permission = source.readString();
+        //dsTaint.addTaint(source.readString()); //permission
+        taskAffinity = source.readString();
+        //dsTaint.addTaint(source.readString()); //taskAffinity
+        targetActivity = source.readString();
+        //dsTaint.addTaint(source.readString()); //targetActivity
+        dsTaint.addTaint(source.readInt()); //flags
+        dsTaint.addTaint(source.readInt()); //screenOrientation
+        dsTaint.addTaint(source.readInt()); //configChanges
+        dsTaint.addTaint(source.readInt()); //softInputMode
+        dsTaint.addTaint(source.readInt()); //uiOptions
+    }
 }
 
