@@ -15,9 +15,6 @@ import org.slf4j.LoggerFactory;
 import soot.BooleanType;
 import soot.CharType;
 import soot.IntType;
-import soot.RefType;
-import soot.Scene;
-import soot.SootMethod;
 import soot.Type;
 import soot.Value;
 import soot.jimple.ClassConstant;
@@ -27,7 +24,6 @@ import soot.jimple.StringConstant;
 import soot.jimple.spark.pag.AllocNode;
 import soot.jimple.spark.pag.ClassConstantNode;
 import soot.jimple.spark.pag.StringConstantNode;
-
 import droidsafe.analyses.rcfg.OutputEvent;
 import droidsafe.analyses.rcfg.RCFG;
 import droidsafe.analyses.rcfg.RCFGNode;
@@ -41,13 +37,14 @@ import droidsafe.speclang.ConcreteListArgumentValue;
 import droidsafe.speclang.IntValue;
 import droidsafe.speclang.Method;
 import droidsafe.speclang.SecuritySpecification;
-import droidsafe.speclang.TypeValue;
-import droidsafe.utils.SootUtils;
 import droidsafe.speclang.StringValue;
+import droidsafe.speclang.TypeValue;
 
 
 public class RCFGToSSL {
 	private final static Logger logger = LoggerFactory.getLogger(RCFGToSSL.class);
+	
+	private static RCFGToSSL v;
 	
 	private SecuritySpecification spec;
 	
@@ -61,22 +58,24 @@ public class RCFGToSSL {
 	/** List of packages to ignore from the android API, use only second level package name: 
 	 * android.something.
 	 */
-	public static final Set<String> IGNORE_OE_FROM_PACKAGES = new HashSet(Arrays.asList(
-			/*"android.graphics", 
-			"android.view",
-			"android.widget"*/
+	public static final Set<String> IGNORE_OE_FROM_PACKAGES = new HashSet<String>(Arrays.asList(""
+			/*"android.graphics", "android.view","android.widget"*/
 			));
 	
 	
 	private static final Set<String> IGNORE_SYS_METHODS_WITH_SUBSIG = 
-			new HashSet(Arrays.asList(
+			new HashSet<String>(Arrays.asList(
 					"boolean equals(java.lang.Object)",
 					"int hashCode()",
 					"java.lang.String toString()"
 					));
 	
+	public static RCFGToSSL v() { 
+		return v;
+	}
+	
 	public static void run() {
-		RCFGToSSL v = new RCFGToSSL();
+		v = new RCFGToSSL();
 		
 		v.createSSL(RCFG.v());
 		

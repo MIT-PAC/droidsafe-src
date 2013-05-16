@@ -89,7 +89,7 @@ public class RequiredModeling {
      */
     private static void checkConcreteVSAbstractSemantics(FileWriter fw) throws Exception {
         Set<String> absClasses = new HashSet<String>();
-        File absBaseDir = new File(Config.v().APAC_HOME(), AttributeModeling.MODEL_CLASS_BASE_DIR);
+        File absBaseDir = new File(Config.v().getApacHome(), AttributeModeling.MODEL_CLASS_BASE_DIR);
 
         for (File f : FileUtils.listFiles(absBaseDir, new String[]{"class"}, true)) {
             absClasses.add(Utils.fromFileToClass(f.toString().substring(absBaseDir.toString().length() + 1)));

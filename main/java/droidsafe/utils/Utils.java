@@ -9,9 +9,6 @@ import java.util.jar.JarFile;
 
 import org.slf4j.Logger;
 
-import soot.jimple.NewExpr;
-import soot.jimple.internal.JNewExpr;
-
 /**
  * Class to store general utility methods.
  * 
@@ -34,7 +31,7 @@ public class Utils {
      */
     public static List<String> getClassesFromJar(JarFile jarFile) {
     	LinkedList<String> classes = new LinkedList<String>();
-    	Enumeration allEntries = jarFile.entries();
+    	Enumeration<JarEntry> allEntries = jarFile.entries();
     	
         while (allEntries.hasMoreElements()) {
             JarEntry entry = (JarEntry) allEntries.nextElement();
@@ -53,7 +50,7 @@ public class Utils {
     /**
      * Log an error with the given logger and exit the application with status 1.
      */
-    public static void ERROR_AND_EXIT(Logger logger, String str, Object... args) {
+    public static void logErrorAndExit(Logger logger, String str, Object... args) {
     	logger.error(str, args);
     	System.exit(1);
     }
