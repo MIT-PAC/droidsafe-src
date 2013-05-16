@@ -8,13 +8,10 @@ import org.eclipse.core.runtime.CoreException;
 
 public class DroidsafeFileMarker {
 	private List<IMarker> markers = new ArrayList<IMarker>();  
-	
-	
-	public DroidsafeFileMarker() { 
 		
+	public DroidsafeFileMarker() { 		
 	}
-	
-	
+		
 	public void deleteMarkers() { 
 		for (IMarker marker : this.markers){
 			try { 

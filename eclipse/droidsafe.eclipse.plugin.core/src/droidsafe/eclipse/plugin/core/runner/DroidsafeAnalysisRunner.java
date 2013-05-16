@@ -66,24 +66,6 @@ import droidsafe.utils.SourceLocationTag;
 public class DroidsafeAnalysisRunner {
   private static final Logger logger = LoggerFactory.getLogger(DroidsafeAnalysisRunner.class);
 
-  // @Preference(nodePath = "droidsafe.eclipse.plugin.core", value = PreferenceConstants.P_JIMPLE)
-  //boolean writeJimpleClasses;
-
-  // @Preference(nodePath = "droidsafe.eclipse.plugin.core", value = PreferenceConstants.P_INFOFLOW)
-  //boolean infoFlow;
-
-  // @Preference(nodePath = "droidsafe.eclipse.plugin.core", value =
-  // PreferenceConstants.P_INFOFLOWDOTFILE)
-  //String infoFlowDotFile;
-
-  // @Preference(nodePath = "droidsafe.eclipse.plugin.core", value =
-  // PreferenceConstants.P_INFOFLOWMETHOD)
-  //String infoFlowDotMethod;
-
-  // @Preference(nodePath = "droidsafe.eclipse.plugin.core", value =
-  // PreferenceConstants.P_TARGET_PASS)
-  //String passTarget;
-
   IProject project;
 
   public DroidsafeAnalysisRunner(IProject project) {
@@ -119,19 +101,6 @@ public class DroidsafeAnalysisRunner {
     logger.info("\nAPAC_HOME = " + Config.v().getApacHome() + "\nAPP_ROOT_DIR for project = "
         + Config.v().APP_ROOT_DIR + "\nANDROID_LIB_DIR = " + Config.v().ANDROID_LIB_DIR);
     logger.info("Starting DroidSafe Run Init");
-
-
-
-    // logger.info("\nFrom injecton \nJIMPLE Prefence = " + writeJimpleClasses + "\nInfoFlow = "
-    // + infoFlow + "\nPass = " + passTarget);
-    // Preferences preferences = ConfigurationScope.INSTANCE.getNode(Activator.PLUGIN_ID);
-    // writeJimpleClasses = preferences.getBoolean(PreferenceConstants.P_JIMPLE, false);
-    // infoFlow = preferences.getBoolean(PreferenceConstants.P_INFOFLOW, false);
-    // passTarget = preferences.get(PreferenceConstants.P_TARGET_PASS, "specdump");
-    // logger.info("From ConfigurationScope.INSTANCE\nPreferences = " + preferences
-    // + "\nJIMPLE Prefence = " + writeJimpleClasses + "\nInfoFlow = " + infoFlow + "\nPass = "
-    // + passTarget);
-
 
 
     boolean writeJimpleClasses = preferenceStore.getBoolean(PreferenceConstants.P_JIMPLE);

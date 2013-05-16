@@ -48,8 +48,8 @@ public class DroidsafePreferencePage extends FieldEditorPreferencePage
     addField(new BooleanFieldEditor(PreferenceConstants.P_ANALYZEAPI,
         "Fully analyze &API classes from android.jar", getFieldEditorParent()));
 
-    addField(new BooleanFieldEditor(PreferenceConstants.P_INFOFLOW, 
-      "Analyze information &flows", getFieldEditorParent()));
+    addField(new BooleanFieldEditor(PreferenceConstants.P_INFOFLOW, "Analyze information &flows",
+        getFieldEditorParent()));
 
     addField(new BooleanFieldEditor(PreferenceConstants.P_DEBUGLOG,
         "Print &debug log to project's /droidsafe/droidsafe.log", getFieldEditorParent()));
@@ -59,9 +59,9 @@ public class DroidsafePreferencePage extends FieldEditorPreferencePage
 
     addField(new BooleanFieldEditor(PreferenceConstants.P_DUMP_CALL_GRAPH,
         "Create dot file for call graph in project's /droidsafe", getFieldEditorParent()));
-    
+
     addField(new BooleanFieldEditor(PreferenceConstants.P_RUN_STRING_ANALYSIS,
-      "Run String Analysis", getFieldEditorParent()));
+        "Run String Analysis", getFieldEditorParent()));
   }
 
   /*

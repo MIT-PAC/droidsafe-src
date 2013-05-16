@@ -33,18 +33,16 @@ public class DroidsafeMarkerResolutionGenerator implements IMarkerResolutionGene
           sb.append("\nAttribute = " + key + " Value = " + marker.getAttribute(key));
         }
       } catch (CoreException e) {
-        // TODO Auto-generated catch block
         e.printStackTrace();
-
       }
       logger.debug(sb.toString());
     }
 
     List<IMarkerResolution2> resolutions = new ArrayList<IMarkerResolution2>();
-    
-    //IMarkerResolution2 resolution = new DroidsafeMarkerResolution(marker);
-    //resolutions.add(resolution);
-    
+
+    // IMarkerResolution2 resolution = new DroidsafeMarkerResolution(marker);
+    // resolutions.add(resolution);
+
     IMarkerResolution2 resolution = new SingleMethodResolution(marker);
     resolutions.add(resolution);
     resolution = new AllMethodsResolution(marker);
@@ -53,7 +51,7 @@ public class DroidsafeMarkerResolutionGenerator implements IMarkerResolutionGene
     resolutions.add(resolution);
     resolution = new FileResolution(marker);
     resolutions.add(resolution);
-    
+
     return resolutions.toArray(new IMarkerResolution[resolutions.size()]);
   }
 
@@ -218,7 +216,6 @@ public class DroidsafeMarkerResolutionGenerator implements IMarkerResolutionGene
 
     @Override
     public IMarker[] findOtherMarkers(IMarker[] markers) {
-      // TODO Auto-generated method stub
       return null;
     }
 
@@ -268,8 +265,7 @@ public class DroidsafeMarkerResolutionGenerator implements IMarkerResolutionGene
     }
 
     @Override
-    public IMarker[] findOtherMarkers(IMarker[] markers) {
-      // TODO Auto-generated method stub
+    public IMarker[] findOtherMarkers(IMarker[] markers) {     
       return null;
     }
 
