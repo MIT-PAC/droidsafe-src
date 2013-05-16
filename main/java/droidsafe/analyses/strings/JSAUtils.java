@@ -22,7 +22,7 @@ public class JSAUtils {
 
         String signature = "<";
         signature += modeledClass.getName().replace("droidsafe.model.", "") + ": ";
-        signature += modeledMethod.getReturnType() + " ";
+        signature += modeledMethod.getReturnType().getName().replace("droidsafe.model.", "") + " ";
         signature += modeledMethod.getName().replace("_init_", "<init>");
 
         signature += "(";
@@ -41,6 +41,7 @@ public class JSAUtils {
         }
         signature += ")>";
         if(paramOfInterestIndexes.size() > 0){
+          System.out.println(signature);
           for(Integer index : paramOfInterestIndexes){
             JSAStrings.v().addArgumentHotspots(signature, index);
           }
