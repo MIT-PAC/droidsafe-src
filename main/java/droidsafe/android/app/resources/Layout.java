@@ -58,7 +58,7 @@ public class Layout {
 
   }
 
-  private void buildOneUIObject(View cview,  HashMap<String, List<RString>> stringListMap) {
+  private void buildOneUIObject(View cview) {
 	  logger.debug("cview: " + cview); 
 	  String id = cview.get_attr("id");
 	  logger.debug("cview.name <{}>, id={}" , cview.name, id);
@@ -73,6 +73,7 @@ public class Layout {
 		  logger.debug("  id {}:{} " ,id, idName);
 	  }
 
+/*
 	  List<String> textValueList = new LinkedList<String>();
 
 	  if (text != null) {
@@ -93,6 +94,8 @@ public class Layout {
 	  }
 
 	  logger.warn("dumping attributes ");
+  */
+
 	  Map<String, String> attrs = cview.getAttributes();
 
 	  /*
@@ -113,7 +116,7 @@ public class Layout {
   /*
   * Internal version to build UIobjects of all views recursively
   */
-  private void buildUIObjects(View myView, HashMap<String, List<RString>> stringListMap) {
+  private void buildUIObjects(View myView, HashMap<String, Set<RString>> stringListMap) {
 	  logger.debug("====================");
 	  logger.debug("buidUIObjects for Layout ");
 	  logger.debug("View " + view);
@@ -123,14 +126,14 @@ public class Layout {
 	  for (View cview: myView.children) { 
 		  buildUIObjects(cview, stringListMap);
 	  }
-	  buildOneUIObject(myView, stringListMap);
+	  buildOneUIObject(myView);
   }
 
   /**
   * buildUIObjects:
   *		
   */
-  public void buildUIObjects(HashMap<String, List<RString>> stringListMap) {
+  public void buildUIObjects(HashMap<String, Set<RString>> stringListMap) {
 	  buildUIObjects(view, stringListMap);
   }
 

@@ -80,7 +80,7 @@ public class Resources {
 	List<Layout> layouts = new ArrayList<Layout>();
   
   // string name to RString List mappings: created while parsing.  Store multiple values in the list
-	HashMap<String, List<RString>> stringNameToRStringList = new HashMap<String, List<RString>>();
+	HashMap<String, Set<RString>> stringNameToRStringSet = new HashMap<String, Set<RString>>();
   
   // Stores string array name to RStringArray mapping that we create while parsing resource files in res/values
 	HashMap<String, RStringArray> stringArrayNameToRStringArray = new HashMap<String, RStringArray>();
@@ -122,16 +122,19 @@ public class Resources {
 	public HashMap<String, RString> getStringNameToRStringHashMap() {
 		if (stringNameToRString == null) {
 			stringNameToRString = new HashMap<String, RString>();
-			for (String key: stringNameToRStringList.keySet()) {
-				stringNameToRString.put(key, stringNameToRStringList.get(key).get(0)); 
+			for (String key: stringNameToRStringSet.keySet()) {
+
+				Iterator<RString> iter = stringNameToRStringSet.get(key).iterator();	
+				if (iter.hasNext())
+					stringNameToRString.put(key, iter.next()); 
 			}
 		}
 		return this.stringNameToRString;
 	}
 
-	public HashMap<String, List<RString>> getStringNameToRStringListHashMap() {
+	public HashMap<String, Set<RString>> getStringNameToRStringListHashMap() {
 
-		return this.stringNameToRStringList;
+		return this.stringNameToRStringSet;
 	}
 
 	public HashMap<String, RStringArray> getStringArrayNameToRStringArrayHashMap() {
@@ -276,7 +279,7 @@ public class Resources {
 
 		// Add This point, all resrouces will have been parsed and loaded
 		ResourcesSoot.v().setNumberToStringMap(resource_info);
-		ResourcesSoot.v().setStringToValueListMap(stringNameToRStringList); 
+		ResourcesSoot.v().setStringToValueSetMap(stringNameToRStringSet); 
 	}
 
 	/**
@@ -285,14 +288,14 @@ public class Resources {
 	 */
 	public void buildXMLSootObjects() {
 		for (Layout layout: layouts) {
-			layout.buildUIObjects(stringNameToRStringList);
+			layout.buildUIObjects(stringNameToRStringSet);
 		}
 	}
 
 	/**
 	 * Takes in an xml files and processes the following values from it:
-	 *  - string (stores them in HashMap<String, RString> stringNameToRStringList
-	 *  - string-array (stores them in HashMap<String, RString> stringNameToRStringListArray
+	 *  - string (stores them in HashMap<String, RString> stringNameToRStringSet
+	 *  - string-array (stores them in HashMap<String, RString> stringNameToRStringSetArray
 	 * TODO: add support for colors, dimensions, typed arrays and styles.
 	 * @param xmlFile an XmlFile instance that we treat as a source of values (e.g. res/values/arrays.xml)
 	 */
@@ -343,12 +346,12 @@ public class Resources {
 					logger.debug("Adding a string name to string value mapping: ({}:{})", 
 							stringName, stringValue);
 
-					List<RString> valueList = stringNameToRStringList.get(stringName);
-					if (valueList == null) {
-						valueList = new LinkedList<RString>();
-						stringNameToRStringList.put(stringName, valueList);
+					Set<RString> valueSet = stringNameToRStringSet.get(stringName);
+					if (valueSet == null) {
+						valueSet = new HashSet<RString>();
+						stringNameToRStringSet.put(stringName, valueSet);
 					}
-					valueList.add(rString);
+					valueSet.add(rString);
 				}
 			}
 		}
@@ -375,10 +378,10 @@ public class Resources {
 							String stringName = null;
 							if (index >= 0 )
 								stringName = stringArrayValue.substring("@string".length()+1, stringArrayValue.length());
-							if((index >= 0) && stringNameToRStringList.containsKey(stringName)){
+							if((index >= 0) && stringNameToRStringSet.containsKey(stringName)){
 								logger.debug("Expanding string {} to put in string array ", stringName);
 								// Expand the stringlist and put them to string array 
-								for (RString rString: stringNameToRStringList.get(stringName)) {
+								for (RString rString: stringNameToRStringSet.get(stringName)) {
 									stringArrayValues.add(rString.value);
 								}
 							}

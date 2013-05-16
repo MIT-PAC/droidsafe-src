@@ -158,7 +158,7 @@ public class ResourcesSoot {
     private HashMap<Integer, UISootObject> uiObjectTable; 
 
     private HashBiMap<Integer, String> numericToStringIDMap;
-	private Map<String, List<RString>> stringToValueList;
+	private Map<String, Set<RString>> stringToValueSet;
 
     private ResourcesSoot() {
 
@@ -184,8 +184,8 @@ public class ResourcesSoot {
     }
 
 	// get stringID => list of possible values
-	public void setStringToValueListMap(Map<String, List<RString>> map) {
-		stringToValueList = map;	
+	public void setStringToValueSetMap(Map<String, Set<RString>> map) {
+		stringToValueSet = map;	
 	}
 
 	/**
@@ -399,34 +399,14 @@ public class ResourcesSoot {
                     Jimple.v().newVirtualInvokeExpr(localView, viewInitMethod.makeRef(), 
                                 argActivity))); 
 
-        // Put things to track inside a data structure
-		/*
-        if (Scene.v().getActiveHierarchy().isClassSubclassOfIncluding(
-											returnType.getSootClass(), mTextViewClass)) {
-			SootMethod setTextMethod = 
-						Scene.v().getActiveHierarchy().resolveConcreteDispatch(
-														returnType.getSootClass(), mSetTextMethod);
-			int setId = 1;
-			for (String text: obj.textList) {
-				logger.info("setTextMethod {}: {}({}) ", setId++, setTextMethod, text);
-				Expr setTextExpr = Jimple.v().newVirtualInvokeExpr(localView, setTextMethod.makeRef(),
-						StringConstant.v(text)); 
-				Stmt setTextStmt = Jimple.v().newInvokeStmt(setTextExpr);
-				//logger.info("setText expr {} ", setTextExpr);
-				logger.info("setText stmt {} ", setTextStmt);
-				units.add(setTextStmt); 
-			}
-		}
-		*/
-
 		for (String attrName: obj.attributes.keySet()) {
 			SootMethod setter = AttributeSetterMap.v().resolveSetter(
 									attrName, returnType.getSootClass());
 
 			// if there is no setter match, skip the attribute
 			if (setter == null) {
-				logger.debug("attr {}, class {} CANNOT resolve ", 
-							attrName, returnType.getSootClass());
+				// logger.debug("attr {}, class {} CANNOT resolve ", 
+				// 			attrName, returnType.getSootClass());
 				continue;
 			} 
 
@@ -443,15 +423,18 @@ public class ResourcesSoot {
 
 				logger.debug("Need to expand {} ", stringName);
 
-				if (stringToValueList.containsKey(stringName)) {
+				if (stringToValueSet.containsKey(stringName)) {
 					logger.warn("{} can be expanded ", stringName);	
-					List<RString> rstringList = stringToValueList.get(stringName);
+					Set<RString> rstringList = stringToValueSet.get(stringName);
 					for (RString rstring: rstringList) {
+						if (rstring == null || rstring.value == null)
+							continue;
 
 						Expr settingExpr = Jimple.v().newVirtualInvokeExpr(localView, setter.makeRef(),
 								StringConstant.v(rstring.value)); 
 						Stmt settingStmt = Jimple.v().newInvokeStmt(settingExpr);
-						//logger.info("settingText expr {} ", settingTextExpr);
+						logger.info("rstring <{}> ", rstring.value);
+						logger.info("settingText expr {} ", settingExpr);
 						logger.info("settingStmt stmt {} ", settingStmt);
 						units.add(settingStmt); 
 
@@ -551,7 +534,7 @@ public class ResourcesSoot {
 		PrintWriter writer;
 	
 		try {
-			writer = new PrintWriter(filePath + ".jimple");
+			writer = new PrintWriter(filePath + "_steps.jimple");
 		}
 		catch (Exception ex) {
 			logger.warn("Cannot open file {} ", filePath);
