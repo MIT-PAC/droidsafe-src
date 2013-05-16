@@ -93,6 +93,7 @@ public class AttributeModeling {
   // Private Attributes
   //===================================================================================================================
 
+   
   // Singleton for analysis
   private static AttributeModeling am;
 
@@ -114,7 +115,18 @@ public class AttributeModeling {
 
   // Generic logger
   private final static Logger logger  = LoggerFactory.getLogger(AttributeModeling.class);
-
+  
+  /** The prefix that is prepended to fully qualified types in the src of the model */
+  public static final String PACKAGE_PREFIX = "droidsafe.model";
+  
+  /** The directory relative from APAC_HOME that is the base of the modeling
+   * source code for this abstract semantics */
+  public static final String MODEL_SRC_BASE_DIR = "src/main/java/droidsafe/model";
+  
+  /** The directory relative from APAC_HOME that is the base of the modeling
+   * class files for this abstract semantics */
+  public static final String MODEL_CLASS_BASE_DIR = "classes/main/droidsafe/model";
+  
   //===================================================================================================================
   // Constructors
   //===================================================================================================================
