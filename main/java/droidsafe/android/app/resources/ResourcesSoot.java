@@ -421,10 +421,8 @@ public class ResourcesSoot {
 				String stringName = attrValue.substring(ind+1);
 				stringName = stringName.replace("/", ".");
 
-				logger.debug("Need to expand {} ", stringName);
-
 				if (stringToValueSet.containsKey(stringName)) {
-					logger.warn("{} can be expanded ", stringName);	
+					logger.debug("{} can be expanded ", stringName);	
 					Set<RString> rstringList = stringToValueSet.get(stringName);
 					Set<String> textSet = new HashSet<String>();
 
@@ -439,9 +437,9 @@ public class ResourcesSoot {
 						Expr settingExpr = Jimple.v().newVirtualInvokeExpr(localView, setter.makeRef(),
 								StringConstant.v(text)); 
 						Stmt settingStmt = Jimple.v().newInvokeStmt(settingExpr);
-						logger.info("text <{}> ", text);
-						logger.info("settingText expr {} ", settingExpr);
-						logger.info("settingStmt stmt {} ", settingStmt);
+						logger.debug("text <{}> ", text);
+						logger.debug("settingText expr {} ", settingExpr);
+						logger.debug("settingStmt stmt {} ", settingStmt);
 						units.add(settingStmt); 
 
 
