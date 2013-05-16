@@ -165,6 +165,11 @@ public class Activity extends ContextThemeWrapper implements LayoutInflater.Fact
 	private Thread mUiThread;
 	final Handler mHandler = new Handler();
 	
+	@DSModeled(DSC.SAFE)
+	public Activity() {
+		super();
+	}
+	
 	public Intent getIntent(){
 		return mIntent;
 		
@@ -849,6 +854,7 @@ public class Activity extends ContextThemeWrapper implements LayoutInflater.Fact
 		*/
 	}
 	
+	@DSModeled(DSC.SAFE)
 	private void initActionBar(){
 		Window window = getWindow();
 		window.getDecorView();
@@ -2540,6 +2546,7 @@ public class Activity extends ContextThemeWrapper implements LayoutInflater.Fact
 		*/
 	}
 	
+	@DSModeled(DSC.SAFE)
 	private void ensureSearchManager(){
 		mSearchManager = new SearchManager(this, null);
 		// Original method
