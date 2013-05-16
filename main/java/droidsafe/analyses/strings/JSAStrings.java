@@ -1,6 +1,8 @@
 package droidsafe.analyses.strings;
 
 
+import java.util.ArrayList;
+import java.util.Collection;
 import java.util.LinkedList;
 import java.util.Vector;
 import java.util.HashMap;
@@ -17,11 +19,13 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 
+import soot.Scene;
 import soot.SootClass;
 import soot.ValueBox;
 import soot.Value;
 
 import droidsafe.android.app.Harness;
+import droidsafe.android.app.Project;
 import droidsafe.utils.SootUtils;
 import droidsafe.main.Config;
 
@@ -70,21 +74,14 @@ public class JSAStrings {
 		return hotspots;
 	}
 
-	public static void run(Config config) {
-		// Well this seems a little dumb to simply wrap analyze...
-		v().analyze(config);
-	}
-
-	private void analyze(Config config) {
-		// Logger.getRootLogger().setLevel(Level.OFF);		
-
+	public static void init(Config config) {
 		// Initialize the 
 		soot.options.Options.v().set_allow_phantom_refs(true);
 
 		try {
 
-			StringAnalysis.loadDirectory("bin/classes/");
-			StringAnalysis.addJarsToClassPath("libs/");
+			StringAnalysis.loadDirectory(config.APP_ROOT_DIR+"/bin/classes/");
+			StringAnalysis.addJarsToClassPath(config.APP_ROOT_DIR+"/libs/");
 
 		} catch (IOException e) {
 			logger.debug("JSA got an exception.");
@@ -92,6 +89,15 @@ public class JSAStrings {
 		}
 
 		SootClass clazz = StringAnalysis.loadClass(Harness.HARNESS_CLASS_NAME);
+		setApplicationClasses(config);
+	}
+
+	public static void run() {
+		// Well this seems a little dumb to simply wrap analyze...
+		v().analyze();
+	}
+
+	private void analyze() {
 		sa = new StringAnalysis(hotspots); // Run the analysis.
 
 		for (ValueBox h : hotspots) {
@@ -145,6 +151,20 @@ public class JSAStrings {
 			logger.debug("REGEX: " + res.toString());
 			logger.debug("----------------------------");
 
+		}
+	}
+
+	// LWG: Allow application classes to be filtered from soot.Scene
+	private static void setApplicationClasses(Config config) {
+		Collection<SootClass> appClasses = Scene.v().getApplicationClasses();
+		if (config.unfilteredStringAnalysis) {
+			StringAnalysis.setApplicationClasses(appClasses);
+		} else {
+			Collection<SootClass> srcClasses = new ArrayList<SootClass>();
+			for (SootClass cls: appClasses)
+				if (Project.v().isSrcClass(cls))
+					srcClasses.add(cls);
+			StringAnalysis.setApplicationClasses(srcClasses);
 		}
 	}
 
