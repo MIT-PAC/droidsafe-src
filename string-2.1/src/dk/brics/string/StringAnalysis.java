@@ -105,6 +105,9 @@ public class StringAnalysis {
     
     private StaticStringTypes staticStringTypes;
 
+    // LWG: New. Allow application classes to be filtered from soot.Scene
+    private static Collection<SootClass> applicationClasses = null;
+
     static {
         initializeSoot();
     }
@@ -127,6 +130,18 @@ public class StringAnalysis {
         clearResolvers();
     }
     */
+
+    // LWG: New. Allow application classes to be filtered from soot.Scene
+    public static void setApplicationClasses(Collection<SootClass> appClasses) {
+    	applicationClasses = appClasses;
+    }
+    
+    // LWG: New. Allow application classes to be filtered from soot.Scene
+    public static Collection<SootClass> getApplicationClasses() {
+    	if (applicationClasses == null)
+    		applicationClasses = Scene.v().getApplicationClasses();
+    	return applicationClasses;
+    }
 
     /**
      * Adds the given resolver to the list of active resolvers used
@@ -732,7 +747,8 @@ public class StringAnalysis {
      */
     public static List<ValueBox> getArgumentExpressions(String sig, int argnum) {
         ArrayList<ValueBox> list = new ArrayList<ValueBox>();
-        Iterator aci = Scene.v().getApplicationClasses().iterator();
+        // LWG: Allow application classes to be filtered from soot.Scene
+        Iterator aci = getApplicationClasses().iterator(); // Scene.v().getApplicationClasses()
         while (aci.hasNext()) {
             SootClass ac = (SootClass) aci.next();
             Iterator mi = ac.getMethods().iterator();

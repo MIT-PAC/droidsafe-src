@@ -215,6 +215,8 @@ public class Jimple2Intermediate implements TranslationContext {
     }
 
     public Jimple2Intermediate(Jimple2IntermediateFactory af) {
+    	// LWG: allow application classes to be filtered from soot.Scene
+    	this.applicationClasses = StringAnalysis.getApplicationClasses();
         this.taintAnalysisStrategy = af.getTaintAnalysisStrategy();
         this.ext = af.getExternallyVisible();
         this.methodTranslator = af.getMethodTranslator();
@@ -234,12 +236,15 @@ public class Jimple2Intermediate implements TranslationContext {
      * hotspots.
      */
     public Application translateApplicationClasses(Collection<ValueBox> hotspots) {
+        // LWG: commented out
+    	/*
         applicationClasses = new ArrayList<SootClass>();
         for (SootClass clazz : Scene.v().getApplicationClasses()) {
             if (!clazz.isPhantom() && !clazz.isPhantomClass()) {// no idea what the difference between these two are
                 applicationClasses.add(clazz);
             }
         }
+        */
         
         this.application = new Application();
         this.variableManager = new VariableManager(application, this);
