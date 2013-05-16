@@ -1,0 +1,62 @@
+#!/usr/bin/env perl
+#
+# Pre-commit hook for running checkstyle on changed Java sources
+# 1. To configure git:
+#   * git config --add java.command <path to java executale> [optional
+#     defaults to assuming it's in your path]
+# 2. Put this in your .git/hooks directory as pre-commit
+#
+# Now, when you commit, you will be disallowed from doing so
+# until you pass your checkstyle checks.
+
+if (! $ENV{'APAC_HOME'}) {
+    die "You must define APAC_HOME to use the pre-commit checkstyle script";
+}
+ 
+$APAC_HOME = $ENV{'APAC_HOME'};
+
+$checkstyle_jar = "$APAC_HOME/tools/checkstyle/checkstyle-5.6-all.jar";
+$check_file = "$APAC_HOME/tools/checkstyle/droidsafe_checks.xml";
+
+$command = "git-diff-index --name-only --cached HEAD 2>&1 | uniq";
+open (FILES,$command . "|") || die "Cannot run '$command': $!\n";
+ 
+$CONFIG_JAVA = "java.command";
+ 
+$java_command = `git config --get $CONFIG_JAVA`;
+  
+$java_command = "java" if (!$java_command);
+ 
+chomp $check_file;
+chomp $checkstyle_jar;
+chomp $java_command;
+ 
+$command = "$java_command -jar $checkstyle_jar -c $check_file";
+ 
+@java_files = ();
+ 
+foreach (<FILES>)
+{
+   chomp;
+   next if (!(/\.java$/));
+   push @java_files,$_;
+   $command .= " ";
+   $command .= $_;
+}
+if ($#java_files >= 0)
+{
+   if (&run_and_log_system ($command))
+   {
+       print STDERR "Commit aborted.\n";
+       exit -1;
+   }
+}
+ 
+exit 0;
+ 
+sub run_and_log_system
+{
+   ($cmd) = @_;
+ 
+   system $cmd;
+}
