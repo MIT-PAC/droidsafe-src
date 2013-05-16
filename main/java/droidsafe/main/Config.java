@@ -84,7 +84,9 @@ public class Config {
   /** if true, run string analysis on app classes */
   public boolean runStringAnalysis = false;
 
-
+  /** if true, string analysis is done for all soot application classes.  Otherwise, it is
+   only done for the source classes of the project. */
+  public boolean unfilteredStringAnalysis = false;
 
   public static Config v() {
     return config;
@@ -119,6 +121,11 @@ public class Config {
 
     Option runStringAnalysis = new Option("analyzestrings", "Run string analysis.");
     options.addOption(runStringAnalysis);
+
+    Option runStringAnalysisUnfiltered =
+        new Option("analyzestrings_unfiltered",
+                   "Run string analysis with no application class filtering.");
+    options.addOption(runStringAnalysisUnfiltered);
 
     Option pta = new Option("ptadump", "Dump pta to ./droidsafe/pta.txt");
     options.addOption(pta);
@@ -218,6 +225,11 @@ public class Config {
 
     if (cmd.hasOption("analyzestrings")) {
       this.runStringAnalysis = true;
+    }
+
+    if (cmd.hasOption("analyzestrings_unfiltered")) {
+      this.runStringAnalysis = true;
+      this.unfilteredStringAnalysis = true;
     }
 
     APP_ROOT_DIR = getPathFromCWD(cmd.getOptionValue("approot"));

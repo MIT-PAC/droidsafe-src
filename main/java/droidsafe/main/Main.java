@@ -92,6 +92,8 @@ public class Main {
     // The JSA analysis fails if it follows AddAllocsForAPICalls.run()
     if (Config.v().runStringAnalysis) {
 
+      JSAStrings.init(Config.v());
+
       // Predefined hotspots. Should be removed.
       JSAStrings.v().addArgumentHotspots("<android.content.Intent: void <init>(java.lang.String)>",
           0);
@@ -124,7 +126,7 @@ public class Main {
 
       JSAStrings.v().addArgumentHotspots(
           "<android.app.Activity: void setTitle(java.lang.CharSequence)>", 0);
-      JSAStrings.run(Config.v());
+      JSAStrings.run();
 
 
       // Debugging.
