@@ -426,14 +426,20 @@ public class ResourcesSoot {
 				if (stringToValueSet.containsKey(stringName)) {
 					logger.warn("{} can be expanded ", stringName);	
 					Set<RString> rstringList = stringToValueSet.get(stringName);
+					Set<String> textSet = new HashSet<String>();
+
+					/* set will keep it unique, remove duplicate entries */
 					for (RString rstring: rstringList) {
 						if (rstring == null || rstring.value == null)
 							continue;
+						textSet.add(rstring.value);
+					}
 
+					for (String text: textSet) {
 						Expr settingExpr = Jimple.v().newVirtualInvokeExpr(localView, setter.makeRef(),
-								StringConstant.v(rstring.value)); 
+								StringConstant.v(text)); 
 						Stmt settingStmt = Jimple.v().newInvokeStmt(settingExpr);
-						logger.info("rstring <{}> ", rstring.value);
+						logger.info("text <{}> ", text);
 						logger.info("settingText expr {} ", settingExpr);
 						logger.info("settingStmt stmt {} ", settingStmt);
 						units.add(settingStmt); 
