@@ -531,7 +531,7 @@ public class AttributeModeling {
 
     logger.info("Attribute Modeling Statistics");
     logger.info(stats);
-
+    /*
     try {
       stats = Project.v().getAppSrcDir() + "\n" + stats;
       PrintWriter out = new PrintWriter(new BufferedWriter(new FileWriter(attrModelingStatsFile, true)));
@@ -540,6 +540,7 @@ public class AttributeModeling {
     } catch (IOException ioe) {
       logger.error("Couldn't write to attr-modeling-stats file:", ioe);
     }
+    */
   }
 
   //===================================================================================================================
