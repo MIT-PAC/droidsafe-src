@@ -35,13 +35,29 @@ import droidsafe.utils.SourceLocationTag;
  * @author becker
  * 
  */
+/**
+ * @author marcelbecker
+ * 
+ */
 public class DroidsafeSecuritySpecModel implements Serializable {
-  public static final String SECURITY_SPEC_SERIAL_FILE_NAME = "security_spec.ser";
   /**
-   * 
+   * The generated serial version ID.
    */
   private static final long serialVersionUID = -2836030244594131144L;
+
+  /**
+   * The logger object for this class.
+   */
   private static final Logger logger = LoggerFactory.getLogger(DroidsafeSecuritySpecModel.class);
+
+  /**
+   * The name of the file to use to save the serialized version of the spec.
+   */
+  public static final String SECURITY_SPEC_SERIAL_FILE_NAME = "security_spec.ser";
+
+  /**
+   * Set of methods that are considered safe.
+   */
   private Set<DroidsafeMethodModel> whitelist = new LinkedHashSet<DroidsafeMethodModel>();
 
   /**
@@ -54,27 +70,33 @@ public class DroidsafeSecuritySpecModel implements Serializable {
       new LinkedHashMap<DroidsafeMethodModel, List<DroidsafeMethodModel>>();
 
 
-  /*
+  /**
    * This map contains the same information as the eventBlocks above but in a different
    * organization. This map maps outputEvents to input events, and each intput event to the list of
    * lines in which the parent outputEvent is present. This map is used to display a hierarchical
    * view of the spec rooted at the API nodes.
    */
-  transient private Map<DroidsafeMethodModel, Map<DroidsafeMethodModel, List<SourceLocationTag>>> outputEventBlocks =
+  private transient Map<DroidsafeMethodModel, Map<DroidsafeMethodModel, List<SourceLocationTag>>> outputEventBlocks =
       new LinkedHashMap<DroidsafeMethodModel, Map<DroidsafeMethodModel, List<SourceLocationTag>>>();
 
 
-  /*
+  /**
    * This map contains the same information as the eventBlocks above but in a different
    * organization. This map maps code locations to lists of input events, and each input event to
    * the list of output events in which the parent code location is present. This map is used to
    * display a hierarchical view of the spec rooted at the code location nodes.
    */
-  transient private Map<SourceLocationTag, Map<DroidsafeMethodModel, List<DroidsafeMethodModel>>> codeLocationEventBlocks =
+  private transient Map<SourceLocationTag, Map<DroidsafeMethodModel, List<DroidsafeMethodModel>>> codeLocationEventBlocks =
       new LinkedHashMap<SourceLocationTag, Map<DroidsafeMethodModel, List<DroidsafeMethodModel>>>();
 
 
 
+  /**
+   * Main constructor for the spec model. Translate the original droidsafe spec into a simpler
+   * representation that can be used by the eclipse plugin.
+   * 
+   * @param originalSpec The droidsafe security spec we want to represent in this model.
+   */
   public DroidsafeSecuritySpecModel(SecuritySpecification originalSpec) {
     translateModel(originalSpec);
     // computeOutputEventBlocks();
