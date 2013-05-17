@@ -53,18 +53,24 @@ import soot.util.queue.QueueReader;
 public class RequiredModeling {
     private final static Logger logger = LoggerFactory.getLogger(RequiredModeling.class);
 
+    /**
+     * Run various checks the API modeling (concrete semantics).  Dump the results to 
+     * a file in the app droidsafe directory. 
+     */
     public static void run() {
         Set<String> toModel = new TreeSet<String>();
 
         for (SootMethod method : GeoPTA.v().getAllReachableMethods()) {
             //loop through all reachable methods, and find system methods that are not modeled
             //or system methods that do not exist (but are called)
-            if (API.v().isSystemClass(method.getDeclaringClass()) && !API.v().isAPIModeledMethod(method))
+            if (API.v().isSystemClass(method.getDeclaringClass()) && 
+                    !API.v().isAPIModeledMethod(method))
                 toModel.add(method.getSignature());
         }
 
         try {
-            FileWriter fw = new FileWriter(Project.v().getOutputDir() + File.separator + "api-modeling-summary.txt");
+            FileWriter fw = new FileWriter(Project.v().getOutputDir() + File.separator + 
+                    "api-modeling-summary.txt");
             fw.write("Unmodeled Methods:\n\n");
             for (String m : toModel) {
                 fw.write(m + "\n");
@@ -72,7 +78,8 @@ public class RequiredModeling {
             fw.write("\nErrors in PTA:\n\n");
             checkAllocations(fw);
 
-            fw.write("\nFields Missing from API Modeling (versus abstract semantics of Value Analysis):\n\n");
+            fw.write("\nFields Missing from API Modeling " +
+                    "(versus abstract semantics of Value Analysis):\n\n");
             checkConcreteVSAbstractSemantics(fw);
 
             fw.close();
@@ -88,46 +95,58 @@ public class RequiredModeling {
      * model of the API.
      */
     private static void checkConcreteVSAbstractSemantics(FileWriter fw) throws Exception {
-        Set<String> absClasses = new HashSet<String>();
-        File absBaseDir = new File(Config.v().getApacHome(), AttributeModeling.MODEL_CLASS_BASE_DIR);
+        //for all sootlclasses, see if we have a corresponding modeling class
+        for (SootClass concreteClz: Scene.v().getClasses()) {
+            if (!API.v().isSystemClass(concreteClz)) 
+                continue;
 
-        for (File f : FileUtils.listFiles(absBaseDir, new String[]{"class"}, true)) {
-            absClasses.add(Utils.fromFileToClass(f.toString().substring(absBaseDir.toString().length() + 1)));
-        }
+            Class<?> absClz = null;
+            try {
+                absClz = Class.forName(AttributeModeling.PACKAGE_PREFIX + "." + 
+                        concreteClz.getName());
+            } catch (ClassNotFoundException e) {
+                //could not find class, so ignore
+            }
 
-        for (String absClzStr : absClasses) {
-            //use reflection to load classes and then find all the fields
-            Class<?> absClz = Class.forName(AttributeModeling.PACKAGE_PREFIX + "." + absClzStr);
-            SootClass concreteClz = Scene.v().getSootClass(absClzStr);
-            for (Field absField : absClz.getDeclaredFields()) {
-                //did we find a match in the concrete semantics?
-                boolean matched = false;
-                //get a string representation of the type of the field from the abstract semantics
-                String typeStr = absField.getType().getName();
-                //remove the modeling package name from the type if it exists
-                if (typeStr.startsWith(AttributeModeling.PACKAGE_PREFIX))
-                    typeStr = typeStr.substring(AttributeModeling.PACKAGE_PREFIX.length() + 1);
+            if (absClz != null) {
+                for (Field absField : absClz.getDeclaredFields()) {
+                    //did we find a match in the concrete semantics?
+                    boolean matched = false;
+                    //get a string representation of the type of the field 
+                    //from the abstract semantics
+                    String typeStr = absField.getType().getName();
+                    //remove the modeling package name from the type if it exists
+                    if (typeStr.startsWith(AttributeModeling.PACKAGE_PREFIX))
+                        typeStr = typeStr.substring(AttributeModeling.PACKAGE_PREFIX.length() + 1);
 
-                //ignore logger fields
-                if ("org.slf4j.Logger".equals(typeStr)) {
-                    continue;
-                }
+                    //ignore logger fields
+                    if ("org.slf4j.Logger".equals(typeStr)) {
+                        continue;
+                    }
 
-                //now see if we find a matching field in the concrete semantics with the same name
-                //and type string
-                if (concreteClz.declaresFieldByName(absField.getName())) {
-                    SootField concreteField = concreteClz.getFieldByName(absField.getName());
-                    if (concreteField.getType().toString().equals(typeStr))
-                        matched = true;
-                }             
+                    //see if we find a matching field in the concrete semantics with the same name
+                    //and type string
+                    if (concreteClz.declaresFieldByName(absField.getName())) {
+                        SootField concreteField = concreteClz.getFieldByName(absField.getName());
+                        if (concreteField.getType().toString().equals(typeStr))
+                            matched = true;
+                    }             
 
-                if (!matched) {
-                    fw.write(String.format("Field name: %s, type = %s, class = %s\n", absField.getName(), typeStr, absClzStr));
+                    if (!matched) {
+                        fw.write(String.format("Field name: %s, type = %s, class = %s\n", 
+                            absField.getName(), typeStr, concreteClz.getName()));
+                    }
                 }
             }
+
         }
     }
 
+    /**
+     * For each virtual invoke statement check that the reference receiver of the invoke can
+     * point to an actual alloc node.  If not, and the pta set is empty, it is good indication
+     * that we are missing something in modeling.  Do this only for calls on api objects.  
+     */
     public static void checkAllocations(FileWriter fw) throws Exception {
         //loop over all code and find calls for with any tracked as received or arg
         for (SootClass clazz : Scene.v().getApplicationClasses()) {
@@ -147,6 +166,11 @@ public class RequiredModeling {
         }
     }
 
+    /**
+     * Called by checkAllocations() above to check all invoke statements of a method.  Checks 
+     * virtual invokes on api objects to make sure that the receiver reference has something 
+     * in its pta set.
+     */
     private static void checkInvokes(SootMethod m, Body b, FileWriter fw) throws Exception {
         StmtBody stmtBody = (StmtBody)b;
 
@@ -182,8 +206,10 @@ public class RequiredModeling {
                         break;
                 }
                 if (resolved == null) 
-                    fw.write(String.format("No valid allocations for receiver of %s of type %s in %s (%s).\n\n",
-                            iie.getMethod(), iie.getBase().getType(), m, SootUtils.getSourceLocation(stmt, m.getDeclaringClass())));
+                    fw.write(String.format
+                        ("No valid allocations for receiver of %s of type %s in %s (%s).\n\n",
+                            iie.getMethod(), iie.getBase().getType(), m, 
+                            SootUtils.getSourceLocation(stmt, m.getDeclaringClass())));
             }
         }
     }
