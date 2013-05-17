@@ -9,6 +9,7 @@ import droidsafe.android.app.Harness;
 import droidsafe.android.app.Project;
 import droidsafe.android.system.API;
 
+import droidsafe.main.Config;
 import droidsafe.model.ModeledClass;
 
 import droidsafe.speclang.Method;
@@ -528,7 +529,7 @@ public class AttributeModeling {
       logger.info("Finished Model: {}", modeledObject);
       logger.info("Corresponding AllocNode: {}", entry.getKey());
     }
-    File attrModelingStatsFile = new File(System.getenv("APAC_HOME") + "/doc/attr-modeling-stats.txt");
+    File attrModelingStatsFile = new File(Config.v().getApacHome() + "/doc/attr-modeling-stats.txt");
 
     try {
       attrModelingStatsFile.createNewFile();
