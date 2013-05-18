@@ -43,6 +43,16 @@ import droidsafe.main.Config;
 import droidsafe.speclang.SecuritySpecification;
 import droidsafe.utils.SourceLocationTag;
 
+
+/**
+ * View for displaying the droidsafe security spec outline. The view looks for a selected project,
+ * and checks if the selected project has a security spec either in serialized form, inside the
+ * droidsafe directory or the app, or if a spec has just been computed by the droidsafe analysis. If
+ * not project is selected, or no spec is found, a message is displayed to the user.
+ * 
+ * @author Marcel Becker (becker@kestrel.edu)
+ * 
+ */
 public class SecuritySpecOutlineViewPart extends ViewPart {
   private static final Logger logger = LoggerFactory.getLogger(SecuritySpecOutlineViewPart.class);
   /**
@@ -55,7 +65,6 @@ public class SecuritySpecOutlineViewPart extends ViewPart {
   private TreeViewer viewer;
   private TextViewer textViewer;
   private ITreeContentProvider contentProvider;
-  //private LabelProvider labelProvider;
   private IBaseLabelProvider labelProvider;
   private ISelectionListener selectionListener;
   private Composite parentComposite;
@@ -65,7 +74,7 @@ public class SecuritySpecOutlineViewPart extends ViewPart {
 
   private void initializeSecuritySpec(Composite parent) {
     this.selectedProject = getSelectedProject();
-    if (this.selectedProject == null) {      
+    if (this.selectedProject == null) {
       this.textViewer = new TextViewer(parent, SWT.MULTI | SWT.H_SCROLL | SWT.V_SCROLL);
       IDocument document = new Document();
       document.set("No Android Project selected. "
@@ -149,14 +158,14 @@ public class SecuritySpecOutlineViewPart extends ViewPart {
    * Initialize the tree viewer with content provider, label provider, and inuput model.
    */
   private void initializeTreeViewer() {
-    if (this.securitySpecModel != null && this.parentComposite != null) {      
+    if (this.securitySpecModel != null && this.parentComposite != null) {
       this.viewer = new TreeViewer(parentComposite, SWT.MULTI | SWT.H_SCROLL | SWT.V_SCROLL);
       viewer.setContentProvider(this.contentProvider);
       viewer.setLabelProvider(this.labelProvider);
       viewer.setAutoExpandLevel(1);
       viewer.setInput(securitySpecModel);
-      disposeTextViewer(); 
-      
+      disposeTextViewer();
+
       MenuManager menuManager = new MenuManager();
       Menu menu = menuManager.createContextMenu(viewer.getTree());
       // Set the MenuManager
@@ -237,15 +246,15 @@ public class SecuritySpecOutlineViewPart extends ViewPart {
     }
   }
 
-  
+
   /** Removes any text viewer from the outline panel */
-  private void disposeTextViewer() { 
-    if (this.textViewer != null){
+  private void disposeTextViewer() {
+    if (this.textViewer != null) {
       textViewer.getTextWidget().dispose();
       textViewer = null;
     }
   }
-  
+
   @Override
   public void setFocus() {
     if (viewer != null) {
@@ -286,6 +295,11 @@ public class SecuritySpecOutlineViewPart extends ViewPart {
   }
 
 
+  /**
+   * Looks for a selected project in the Eclipse Project Explorer that may have a security spec.
+   * 
+   * @return the selected project or project enclosing a selected resource.
+   */
   protected IProject getSelectedProject() {
     ISelectionService ss =
         Activator.getDefault().getWorkbench().getActiveWorkbenchWindow().getSelectionService();
