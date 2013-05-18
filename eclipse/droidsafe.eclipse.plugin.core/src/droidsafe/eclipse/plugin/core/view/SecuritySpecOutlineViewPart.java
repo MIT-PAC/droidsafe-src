@@ -57,7 +57,6 @@ public class SecuritySpecOutlineViewPart extends ViewPart {
 
 
   public SecuritySpecOutlineViewPart() {
-    // TODO Auto-generated constructor stub
   }
 
 

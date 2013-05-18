@@ -19,76 +19,48 @@ import org.slf4j.LoggerFactory;
 import droidsafe.eclipse.plugin.core.runner.DroidsafeAnalysisRunner;
 
 public class GenerateSecuritySpecHandler extends AbstractHandler {
-	private final static Logger logger = LoggerFactory
-			.getLogger(GenerateSecuritySpecHandler.class);
+  private final static Logger logger = LoggerFactory.getLogger(GenerateSecuritySpecHandler.class);
 
-	// @Override
-	// public void addHandlerListener(IHandlerListener handlerListener) {
-	// TODO Auto-generated method stub
-	// }
 
-	// @Override
-	// public void dispose() {
-	// TODO Auto-generated method stub
-	// }
+  @Override
+  public Object execute(ExecutionEvent event) throws ExecutionException {
+    ISelection selection =
+        HandlerUtil.getActiveWorkbenchWindow(event).getActivePage().getSelection();
+    if (selection != null & selection instanceof IStructuredSelection) {
+      IStructuredSelection structuredSelection = (IStructuredSelection) selection;
+      Object firstSelection = structuredSelection.getFirstElement();
+      IProject projectAux = null;
+      if (firstSelection instanceof IJavaProject) {
+        projectAux = ((IJavaProject) firstSelection).getProject();
+      } else if (firstSelection instanceof IProject) {
+        projectAux = (IProject) firstSelection;
+      }
+      if (projectAux != null) {
+        final IProject project = projectAux;
+        final IPath path = project.getLocation();
+        logger.info("Project = " + project + " path = " + path);
 
-	@Override
-	public Object execute(ExecutionEvent event) throws ExecutionException {
-		ISelection selection = HandlerUtil.getActiveWorkbenchWindow(event)
-				.getActivePage().getSelection();
-		if (selection != null & selection instanceof IStructuredSelection) {
-			IStructuredSelection structuredSelection = (IStructuredSelection) selection;
-			Object firstSelection = structuredSelection.getFirstElement();
-			IProject projectAux = null;
-			if (firstSelection instanceof IJavaProject) {
-				projectAux = ((IJavaProject) firstSelection).getProject();
-			} else if (firstSelection instanceof IProject) {
-				projectAux = (IProject) firstSelection;
-			}
-			if (projectAux != null) {
-				final IProject project = projectAux;
-				final IPath path = project.getLocation();
-				logger.info("Project = " + project + " path = " + path);
-
-				Job job = new Job("Droidsafe") {
-					@Override
-					protected IStatus run(IProgressMonitor monitor) {
-						logger.info("Project = " + project + " path = " + path);
-						try {
-							monitor.beginTask("Droidsafe spec dump", 16);
-							DroidsafeAnalysisRunner droidsafeAnalysisRunner = new DroidsafeAnalysisRunner(
-									project);
-							monitor.worked(1);
-							droidsafeAnalysisRunner.run(monitor);
-						} finally {
-							monitor.done();
-						}
-						return Status.OK_STATUS;
-					}
-				};
-				job.setUser(true);
-				job.schedule();
-			}
-		}
-		return null;
-	}
-
-	// @Override
-	// public boolean isEnabled() {
-	// TODO Auto-generated method stub
-	// return true;
-	// }
-
-	// @Override
-	// public boolean isHandled() {
-	// TODO Auto-generated method stub
-	// return true;
-	// }
-
-	// @Override
-	// public void removeHandlerListener(IHandlerListener handlerListener) {
-	// TODO Auto-generated method stub
-
-	// }
+        Job job = new Job("Droidsafe") {
+          @Override
+          protected IStatus run(IProgressMonitor monitor) {
+            logger.info("Project = " + project + " path = " + path);
+            try {
+              monitor.beginTask("Droidsafe spec dump", 16);
+              DroidsafeAnalysisRunner droidsafeAnalysisRunner =
+                  new DroidsafeAnalysisRunner(project);
+              monitor.worked(1);
+              droidsafeAnalysisRunner.run(monitor);
+            } finally {
+              monitor.done();
+            }
+            return Status.OK_STATUS;
+          }
+        };
+        job.setUser(true);
+        job.schedule();
+      }
+    }
+    return null;
+  }
 
 }

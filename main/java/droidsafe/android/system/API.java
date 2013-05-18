@@ -1,40 +1,36 @@
 package droidsafe.android.system;
 
+import java.io.BufferedWriter;
+import java.io.File;
+import java.io.FileReader;
+import java.io.FileWriter;
+import java.io.LineNumberReader;
 import java.util.Arrays;
-import java.util.Enumeration;
-import java.util.HashMap;
 import java.util.HashSet;
 import java.util.LinkedHashSet;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
-import java.util.jar.JarEntry;
 import java.util.jar.JarFile;
-import java.io.*;
-import java.lang.reflect.Modifier;
-import java.net.URL;
-import java.net.URLClassLoader;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import soot.ArrayType;
-import soot.MethodOrMethodContext;
 import soot.RefType;
 import soot.Scene;
 import soot.SootClass;
-import soot.Type;
 import soot.SootMethod;
-import soot.tagkit.AnnotationElem;
+import soot.Type;
 import soot.tagkit.AnnotationEnumElem;
 import soot.tagkit.AnnotationTag;
 import soot.tagkit.Tag;
 import soot.tagkit.VisibilityAnnotationTag;
-
-import droidsafe.utils.*;
 import droidsafe.main.Config;
-import droidsafe.speclang.*;
+import droidsafe.utils.SootMethodList;
+import droidsafe.utils.SootUtils;
+import droidsafe.utils.Utils;
 
 
 /**
@@ -126,7 +122,7 @@ public class API {
 			JarFile androidJar = new JarFile(new File(Config.v().ANDROID_LIB_DIR, Config.ANDROID_JAR));
 			Set<SootClass> systemClasses = SootUtils.loadClassesFromJar(androidJar, false, new HashSet<String>());
 			
-			FileWriter fw = new FileWriter(new File(Config.v().APAC_HOME(), Config.SYSTEM_METHODS_FILE));
+			FileWriter fw = new FileWriter(new File(Config.v().getApacHome(), Config.SYSTEM_METHODS_FILE));
 
 			for (SootClass clz : systemClasses) {
 				for (SootMethod meth : clz.getMethods()) {
@@ -147,7 +143,7 @@ public class API {
 	 */
 	private void addUnmodeledMissingAPIMethods() {
 		try {
-			File sys_calls_file= new File(Config.v().APAC_HOME(), Config.SYSTEM_METHODS_FILE);
+			File sys_calls_file= new File(Config.v().getApacHome(), Config.SYSTEM_METHODS_FILE);
 			LineNumberReader br = new LineNumberReader (new FileReader (sys_calls_file));
 			String line;
 			int lineNum;
@@ -278,13 +274,13 @@ public class API {
 	private void loadDroidSafeCalls() {
 		try {
 			//load the classes from the droidcalls library
-			File dsLib = new File(System.getenv ("APAC_HOME"), 
+			File dsLib = new File(Config.v().getApacHome(), 
 					"android-lib/droidcalls.jar");
 			JarFile dsJar = new JarFile(dsLib);
 			SootUtils.loadClassesFromJar(dsJar, true, new LinkedHashSet<String>());
 			all_sys_methods.addAllMethods(dsJar);			
 		} catch (Exception e) {
-			Utils.ERROR_AND_EXIT(logger, "Error loading droidsafe call jar (maybe it does not exist).");
+			Utils.logErrorAndExit(logger, "Error loading droidsafe call jar (maybe it does not exist).");
 		}
 	}
 
@@ -302,7 +298,7 @@ public class API {
 		String errors = "";
         int line_num = 0;
 		try {
-			sys_calls_file= new File(System.getenv ("APAC_HOME"), 
+			sys_calls_file= new File(Config.v().getApacHome(), 
 					"config-files/system_calls.txt");
 			LineNumberReader br 
 			= new LineNumberReader (new FileReader (sys_calls_file));
@@ -384,7 +380,7 @@ public class API {
 
     public void dumpUnclassifiedMethodsToFile() {
     	try {
-    		File unclassified = new File(System.getenv ("APAC_HOME"), 
+    		File unclassified = new File(Config.v().getApacHome(), 
     				"config-files/sys_methods_to_classify.txt");
     		FileWriter fstream = new FileWriter(unclassified);
     		BufferedWriter out = new BufferedWriter(fstream);

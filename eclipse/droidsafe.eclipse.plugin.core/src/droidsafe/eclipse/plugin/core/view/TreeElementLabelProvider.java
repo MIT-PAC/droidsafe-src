@@ -18,9 +18,10 @@ import droidsafe.utils.SourceLocationTag;
 
 public class TreeElementLabelProvider extends LabelProvider {
 
-
+  /** The image for the method node in the outline view */
   private static final Image INPUT_METHOD_IMAGE = getImage("android.png");
 
+  /** The image for the code location entry in the outline view */
   private static final Image DEFAULT_IMAGE = PlatformUI.getWorkbench().getSharedImages()
       .getImage(ISharedImages.IMG_OBJ_FOLDER);
 

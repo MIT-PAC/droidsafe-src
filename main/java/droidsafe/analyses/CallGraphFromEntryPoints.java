@@ -59,7 +59,7 @@ public class CallGraphFromEntryPoints {
 				if (API.v().isInterestingMethod(sm))
 					System.out.printf("  %s\n",meth);
 			} else {
-				Utils.ERROR_AND_EXIT(logger, "Unknown edge in callgraph {}", meth);
+				Utils.logErrorAndExit(logger, "Unknown edge in callgraph {}", meth);
 			}
 		}
 	}

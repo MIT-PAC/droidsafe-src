@@ -14,13 +14,11 @@ public class SecuritySpecViewContentProvider implements ITreeContentProvider {
 
   private SecuritySpecification model;
 
-  // Constant to return when there are no children for an object
+  /** Constant to return when there are no children for an object */
   private static final Object[] NO_CHILDREN = new Object[0];
 
   @Override
   public void dispose() {
-    // TODO Auto-generated method stub
-
   }
 
   @Override
@@ -55,8 +53,7 @@ public class SecuritySpecViewContentProvider implements ITreeContentProvider {
   }
 
   @Override
-  public Object getParent(Object element) {
-    // TODO Auto-generated method stub
+  public Object getParent(Object element) {   
     return null;
   }
 

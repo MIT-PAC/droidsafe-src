@@ -20,9 +20,7 @@ public class DroidsafeSecSpecViewContentProvider implements ITreeContentProvider
   private static final Object[] NO_CHILDREN = new Object[0];
 
   @Override
-  public void dispose() {
-    // TODO Auto-generated method stub
-
+  public void dispose() {    
   }
 
   @Override
@@ -64,7 +62,6 @@ public class DroidsafeSecSpecViewContentProvider implements ITreeContentProvider
 
   @Override
   public Object getParent(Object element) {
-    // TODO Auto-generated method stub
     return null;
   }
 

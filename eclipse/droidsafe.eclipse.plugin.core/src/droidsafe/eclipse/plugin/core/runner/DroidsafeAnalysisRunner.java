@@ -66,24 +66,6 @@ import droidsafe.utils.SourceLocationTag;
 public class DroidsafeAnalysisRunner {
   private static final Logger logger = LoggerFactory.getLogger(DroidsafeAnalysisRunner.class);
 
-  // @Preference(nodePath = "droidsafe.eclipse.plugin.core", value = PreferenceConstants.P_JIMPLE)
-  //boolean writeJimpleClasses;
-
-  // @Preference(nodePath = "droidsafe.eclipse.plugin.core", value = PreferenceConstants.P_INFOFLOW)
-  //boolean infoFlow;
-
-  // @Preference(nodePath = "droidsafe.eclipse.plugin.core", value =
-  // PreferenceConstants.P_INFOFLOWDOTFILE)
-  //String infoFlowDotFile;
-
-  // @Preference(nodePath = "droidsafe.eclipse.plugin.core", value =
-  // PreferenceConstants.P_INFOFLOWMETHOD)
-  //String infoFlowDotMethod;
-
-  // @Preference(nodePath = "droidsafe.eclipse.plugin.core", value =
-  // PreferenceConstants.P_TARGET_PASS)
-  //String passTarget;
-
   IProject project;
 
   public DroidsafeAnalysisRunner(IProject project) {
@@ -121,26 +103,14 @@ public class DroidsafeAnalysisRunner {
     logger.info("Starting DroidSafe Run Init");
 
 
-
-    // logger.info("\nFrom injecton \nJIMPLE Prefence = " + writeJimpleClasses + "\nInfoFlow = "
-    // + infoFlow + "\nPass = " + passTarget);
-    // Preferences preferences = ConfigurationScope.INSTANCE.getNode(Activator.PLUGIN_ID);
-    // writeJimpleClasses = preferences.getBoolean(PreferenceConstants.P_JIMPLE, false);
-    // infoFlow = preferences.getBoolean(PreferenceConstants.P_INFOFLOW, false);
-    // passTarget = preferences.get(PreferenceConstants.P_TARGET_PASS, "specdump");
-    // logger.info("From ConfigurationScope.INSTANCE\nPreferences = " + preferences
-    // + "\nJIMPLE Prefence = " + writeJimpleClasses + "\nInfoFlow = " + infoFlow + "\nPass = "
-    // + passTarget);
-
-
-
     boolean writeJimpleClasses = preferenceStore.getBoolean(PreferenceConstants.P_JIMPLE);
     Config.v().writeJimpleAppClasses = writeJimpleClasses;
     boolean infoFlow = preferenceStore.getBoolean(PreferenceConstants.P_INFOFLOW);
     Config.v().infoFlow = infoFlow;
-    if (infoFlow) {       
-      Config.v().infoFlowDotFile = preferenceStore.getString(PreferenceConstants.P_INFOFLOWDOTFILE);      
-      Config.v().infoFlowDotMethod = preferenceStore.getString(PreferenceConstants.P_INFOFLOWMETHOD);
+    if (infoFlow) {
+      Config.v().infoFlowDotFile = preferenceStore.getString(PreferenceConstants.P_INFOFLOWDOTFILE);
+      Config.v().infoFlowDotMethod =
+          preferenceStore.getString(PreferenceConstants.P_INFOFLOWMETHOD);
     }
     String passTarget = preferenceStore.getString(PreferenceConstants.P_TARGET_PASS);
     Config.v().target = passTarget;
@@ -232,13 +202,12 @@ public class DroidsafeAnalysisRunner {
 
       JSAStrings.v().addArgumentHotspots(
           "<android.app.Activity: void setTitle(java.lang.CharSequence)>", 0);
-      JSAStrings.run(Config.v());
-
+      JSAStrings.run();
 
       // Debugging.
       JSAStrings.v().log();
     }
-    
+
     AddAllocsForAPICalls.run();
     monitor.worked(1);
 
@@ -305,13 +274,13 @@ public class DroidsafeAnalysisRunner {
     if (Config.v().target.equals("specdump")) {
       RCFGToSSL.run();
       SecuritySpecification spec = RCFGToSSL.v().getSpec();
-      
+
       if (spec != null) {
         generateMarkersForSecuritySpecification(spec);
         DroidsafeSecuritySpecModel securitySpecModel = new DroidsafeSecuritySpecModel(spec);
         DroidsafeSecuritySpecModel.serializeSpecToFile(securitySpecModel, Config.v().APP_ROOT_DIR);
       }
-      
+
     } else if (Config.v().target.equals("confcheck")) {
       logger.error("Not implemented yet!");
     }

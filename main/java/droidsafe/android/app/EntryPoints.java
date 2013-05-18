@@ -81,7 +81,7 @@ public class EntryPoints {
      */
     public void calculate() {
     	calculated = true;
-    
+    	this.appEntryPoints = new LinkedHashSet<SootMethod>();
     	for (SootClass clazz : Scene.v().getApplicationClasses()) {
     		if (clazz.isInterface() || clazz.getName().equals(Harness.HARNESS_CLASS_NAME))
     			continue;

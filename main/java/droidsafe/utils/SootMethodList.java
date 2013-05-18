@@ -9,15 +9,10 @@ import java.util.jar.JarFile;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import droidsafe.speclang.ArgumentValue;
-import droidsafe.speclang.Method;
-
 import soot.Hierarchy;
 import soot.Scene;
 import soot.SootClass;
 import soot.SootMethod;
-import soot.SootMethodRef;
-import soot.Type;
 
 /**
  * This class encapsulates a list of soot methods for checking containment.  It
@@ -103,7 +98,7 @@ public class SootMethodList implements Iterable<SootMethod>{
 		SootClass clazz = method.getDeclaringClass();
 		
 		if (clazz == null) {
-			Utils.ERROR_AND_EXIT(logger,"Cannot get declaring class for method {}", method);
+			Utils.logErrorAndExit(logger,"Cannot get declaring class for method {}", method);
 		}
 
 		List<SootMethod> possibleMethods = SootUtils.findPossibleInheritedMethods(clazz, method.getName(), 

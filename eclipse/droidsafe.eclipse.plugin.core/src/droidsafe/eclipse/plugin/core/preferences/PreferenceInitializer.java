@@ -24,7 +24,7 @@ public class PreferenceInitializer extends AbstractPreferenceInitializer {
    * initializeDefaultPreferences()
    */
   public void initializeDefaultPreferences() {
-    IPreferenceStore store = Activator.getDefault().getPreferenceStore(); 
+    IPreferenceStore store = Activator.getDefault().getPreferenceStore();
 
     store.setDefault(PreferenceConstants.P_TARGET_PASS, "specdump");
     store.setDefault(PreferenceConstants.P_NOSOURCE_INFO, false);
@@ -35,7 +35,7 @@ public class PreferenceInitializer extends AbstractPreferenceInitializer {
     store.setDefault(PreferenceConstants.P_DUMP_PTA, false);
     store.setDefault(PreferenceConstants.P_DUMP_CALL_GRAPH, false);
     store.setDefault(PreferenceConstants.P_RUN_STRING_ANALYSIS, false);
-    
+
     // prefs = ConfigurationScope.INSTANCE.getNode(Activator.PLUGIN_ID);
     // prefs.put(PreferenceConstants.P_TARGET_PASS, "specdump");
     // prefs.putBoolean(PreferenceConstants.P_NOSOURCE_INFO, true);

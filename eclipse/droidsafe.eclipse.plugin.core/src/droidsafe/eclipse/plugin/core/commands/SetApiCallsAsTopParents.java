@@ -16,7 +16,7 @@ public class SetApiCallsAsTopParents extends AbstractHandler {
     if (part instanceof SecuritySpecOutlineViewPart) {
       SecuritySpecOutlineViewPart droidsafeView = (SecuritySpecOutlineViewPart) part;
       droidsafeView.setApiCallsAsViewTopLevelParents();
-    }          
+    }
     return null;
   }
 

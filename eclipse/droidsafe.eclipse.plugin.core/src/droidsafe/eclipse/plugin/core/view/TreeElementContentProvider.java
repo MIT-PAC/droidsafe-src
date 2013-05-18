@@ -8,7 +8,6 @@ import org.eclipse.jface.viewers.Viewer;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import droidsafe.eclipse.plugin.core.commands.SortViewByClassName;
 import droidsafe.eclipse.plugin.core.specmodel.DroidsafeMethodModel;
 import droidsafe.eclipse.plugin.core.specmodel.DroidsafeSecuritySpecModel;
 import droidsafe.eclipse.plugin.core.specmodel.TreeElement;
@@ -24,13 +23,13 @@ public class TreeElementContentProvider implements ITreeContentProvider {
   };
 
 
-  // Constant to return when there are no children for an object
+  /** Constant to return when there are no children for an object */
   private static final Object[] NO_CHILDREN = new Object[0];
 
-
+  /** The model for the spec to be displayed in the outline view */
   private DroidsafeSecuritySpecModel model;
 
-  // Variable to control the structure of spec outline tree view.
+  /** Variable to control the structure of spec outline tree view. */
   public TopLevelParentEntity selectedTopLevelParentEntity =
       TopLevelParentEntity.ENTRY_POINT_AS_TOP_PARENT;
 
@@ -45,10 +44,7 @@ public class TreeElementContentProvider implements ITreeContentProvider {
   }
 
   @Override
-  public void dispose() {
-    // TODO Auto-generated method stub
-
-  }
+  public void dispose() {}
 
   @Override
   public void inputChanged(Viewer viewer, Object oldInput, Object newInput) {
@@ -57,7 +53,6 @@ public class TreeElementContentProvider implements ITreeContentProvider {
     } else if (newInput instanceof DroidsafeSecuritySpecModel) {
       this.model = (DroidsafeSecuritySpecModel) newInput;
     }
-
   }
 
   @Override
@@ -69,7 +64,6 @@ public class TreeElementContentProvider implements ITreeContentProvider {
           logger.debug(" Child of root = " + child.getName());
         }
       }
-
       return getChildren(invisibleRoot);
     }
     return NO_CHILDREN;
@@ -211,53 +205,5 @@ public class TreeElementContentProvider implements ITreeContentProvider {
     }
     return root;
   }
-
-  // public Object[] getElements(Object inputElement) {
-  // List<Object> elements = new ArrayList<Object>();
-  // elements.add(model.getWhitelist());
-  // elements.addAll(model.getEntryPoints());
-  // return elements.toArray();
-  // }
-  //
-  // @Override
-  // public Object[] getChildren(Object parentElement) {
-  // if (parentElement instanceof Set<?>) {
-  // return model.getWhitelist().toArray();
-  // } else if (parentElement instanceof DroidsafeMethodModel) {
-  // DroidsafeMethodModel parentMethod = (DroidsafeMethodModel) parentElement;
-  // List<DroidsafeMethodModel> methods = model.getOutputEvents(parentMethod);
-  // if (methods != null && !methods.isEmpty()) {
-  // return methods.toArray();
-  // } else {
-  // List<SourceLocationTag> lines = parentMethod.getLines();
-  // if (!lines.isEmpty()) {
-  // return lines.toArray();
-  // }
-  // }
-  // }
-  // return NO_CHILDREN;
-  // }
-  //
-  // @Override
-  // public Object getParent(Object element) {
-  // // TODO Auto-generated method stub
-  // return null;
-  // }
-  //
-  // @Override
-  // public boolean hasChildren(Object element) {
-  // if (element instanceof Set && ((Set<?>) element).size() > 0) {
-  // return true;
-  // } else if (element instanceof DroidsafeMethodModel) {
-  // DroidsafeMethodModel elementMethod = (DroidsafeMethodModel) element;
-  // List<DroidsafeMethodModel> methods = model.getOutputEvents(elementMethod);
-  // if (methods != null && !methods.isEmpty()) {
-  // return true;
-  // } else if (!elementMethod.getLines().isEmpty()) {
-  // return true;
-  // }
-  // }
-  // return false;
-  // }
 
 }

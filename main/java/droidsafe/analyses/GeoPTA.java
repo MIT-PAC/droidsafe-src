@@ -11,42 +11,26 @@ import java.util.HashSet;
 import java.util.Iterator;
 import java.util.LinkedHashSet;
 import java.util.LinkedList;
-import java.util.List;
 import java.util.Map;
 import java.util.Set;
-import java.util.Vector;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import com.google.common.collect.HashBiMap;
-
-import ch.qos.logback.classic.pattern.Util;
-
-import droidsafe.analyses.rcfg.RCFGNode;
-import droidsafe.android.app.EntryPoints;
-import droidsafe.android.app.Harness;
-import droidsafe.android.app.Project;
-import droidsafe.main.Config;
-import droidsafe.utils.Utils;
-
 import soot.G;
 import soot.Local;
-import soot.MethodContext;
-import soot.MethodOrMethodContext;
+import soot.RefLikeType;
 import soot.Scene;
 import soot.SootField;
 import soot.SootMethod;
 import soot.Type;
 import soot.Value;
-import soot.jimple.Stmt;
 import soot.jimple.paddle.PaddleTransformer;
 import soot.jimple.spark.SparkTransformer;
 import soot.jimple.spark.geom.dataRep.CallsiteContextVar;
 import soot.jimple.spark.geom.geomPA.CgEdge;
 import soot.jimple.spark.geom.geomPA.GeomPointsTo;
 import soot.jimple.spark.geom.geomPA.IVarAbstraction;
-import soot.jimple.spark.geom.geomPA.ZArrayNumberer;
 import soot.jimple.spark.geom.helper.ContextTranslator;
 import soot.jimple.spark.geom.helper.Obj_1cfa_extractor;
 import soot.jimple.spark.pag.AllocDotField;
@@ -54,16 +38,15 @@ import soot.jimple.spark.pag.AllocNode;
 import soot.jimple.spark.pag.LocalVarNode;
 import soot.jimple.spark.pag.MethodPAG;
 import soot.jimple.spark.pag.Node;
-import soot.jimple.spark.pag.VarNode;
 import soot.jimple.toolkits.callgraph.CallGraph;
 import soot.jimple.toolkits.callgraph.Edge;
-import soot.jimple.toolkits.callgraph.Targets;
-import soot.jimple.toolkits.typing.ClassHierarchy;
 import soot.options.PaddleOptions;
-import soot.options.SparkOptions;
-import soot.util.queue.QueueReader;
-import soot.RefLikeType;
-import soot.jimple.NewExpr;
+
+import com.google.common.collect.HashBiMap;
+
+import droidsafe.android.app.Project;
+import droidsafe.main.Config;
+import droidsafe.utils.Utils;
 
 /**
  * Configure and run the Soot Spark PTA.  This class assumes the soot 
@@ -124,11 +107,11 @@ public class GeoPTA {
 		callGraph = Scene.v().getCallGraph();
 		createNewToAllocMap();
 		
-		if (Config.v().DUMP_PTA){
-			dumpPTA("./droidsafe/pta.txt");
+		if (Config.v().dumpPta){
+			dumpPTA(Project.v().getOutputDir() + File.separator +"pta.txt");
 		}
 		
-		if (Config.v().DUMP_CALL_GRAPH) {
+		if (Config.v().dumpCallGraph) {
 			dumpCallGraph(Project.v().getOutputDir() + File.separator + "callgraph.dot");
 		}
 	}
@@ -228,10 +211,10 @@ public class GeoPTA {
 			IVarAbstraction internalNode = ptsProvider.findInternalNode(node);
 			return internalNode;
 		} else if (v instanceof SootField) {
-			Utils.ERROR_AND_EXIT(logger, "Unknown type for pointer: {}", v.getClass());
+			Utils.logErrorAndExit(logger, "Unknown type for pointer: {}", v.getClass());
 		}
 		
-		Utils.ERROR_AND_EXIT(logger, "Unknown type for pointer: {}", v.getClass());
+		Utils.logErrorAndExit(logger, "Unknown type for pointer: {}", v.getClass());
 		return null;
 	}
 	
@@ -257,11 +240,11 @@ public class GeoPTA {
 
 		try {
 			if (context == null) 
-				Utils.ERROR_AND_EXIT(logger, "Null context edge for pta query.");
+				Utils.logErrorAndExit(logger, "Null context edge for pta query.");
 
 
 			if (ivar == null) 
-				Utils.ERROR_AND_EXIT(logger, "Error getting internal PTA node for {} of {}.", ivar, ivar.getClass());
+				Utils.logErrorAndExit(logger, "Error getting internal PTA node for {} of {}.", ivar);
 
 
 			//don't really know why this is needed, sometimes maybe the internal analysis
@@ -290,7 +273,7 @@ public class GeoPTA {
 				} else if (sparkNode == null) {
 					logger.info("Null sparkNode for ivar query: {} in {}", ivar, context);
 				} else {
-					Utils.ERROR_AND_EXIT(logger, "Unknown type of spark node for points to query for value v {}, ivar {} spark node {}.", 
+					Utils.logErrorAndExit(logger, "Unknown type of spark node for points to query for value v {}, ivar {} spark node {}.", 
 							v, ivar, sparkNode);
 				}
 
@@ -376,7 +359,7 @@ public class GeoPTA {
 	public void dumpPTA(PrintStream file) {
 		
 		System.out.print("======================= dumpPTA ()=====================================\n");
-		Vector<CallsiteContextVar> outList = new Vector<CallsiteContextVar>();
+		//Vector<CallsiteContextVar> outList = new Vector<CallsiteContextVar>();
 		for ( IVarAbstraction pn : ptsProvider.pointers ) {
 			IVarAbstraction orig = pn;
 			pn = pn.getRepresentative();
@@ -455,7 +438,7 @@ public class GeoPTA {
 	static void setGeomPointsToAnalysis() {
 		logger.info("[GeomPTA] Starting analysis ...");
 		
-		HashMap opt = new HashMap();
+		HashMap<String, String> opt = new HashMap<String, String>();
 		opt.put("geom-pta","true");
 		opt.put("geom-encoding", "geom");
 		opt.put("geom-worklist", "PQ");
@@ -503,7 +486,7 @@ public class GeoPTA {
 	static void setSparkPointsToAnalysis() {
 		logger.info("[spark] Starting analysis ...");
 				
-		HashMap opt = new HashMap();
+		HashMap<String, String> opt = new HashMap<String, String>();
 		opt.put("enabled","true");
 		opt.put("verbose","false");
 		opt.put("ignore-types","false");          
@@ -551,7 +534,7 @@ public class GeoPTA {
 		
 		//System.out.println(System.getProperty("java.library.path"));
 		
-		HashMap opt = new HashMap();
+		HashMap<String, String> opt = new HashMap<String, String>();
 		opt.put("enabled","true");
 		opt.put("verbose","false");
 		opt.put("bdd","true");
@@ -595,7 +578,7 @@ public class GeoPTA {
 			//from it, and for each edge to an entry point, create and populate
 			//the rCFG node
 			Set<Edge> edges = getAllCallGraphEdges();
-			Set<SootMethod> visitedMethods = new LinkedHashSet<SootMethod>();
+			//Set<SootMethod> visitedMethods = new LinkedHashSet<SootMethod>();
 			Map<SootMethod, Set<SootMethod>> visitedEdges = new HashMap<SootMethod, Set<SootMethod>>();
 			Map<String, Set<SootMethod>> packageSubgraphs = new HashMap<String, Set<SootMethod>>();
 			
