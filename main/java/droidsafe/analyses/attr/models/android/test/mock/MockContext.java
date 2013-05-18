@@ -1,6 +1,6 @@
-package droidsafe.model.android.test.mock;
+package droidsafe.analyses.attr.models.android.test.mock;
 
-import droidsafe.model.ModeledClass;
+import droidsafe.analyses.attr.ModeledClass;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

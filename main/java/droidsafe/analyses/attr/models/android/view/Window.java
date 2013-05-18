@@ -1,6 +1,6 @@
-package droidsafe.model.android.view;
+package droidsafe.analyses.attr.models.android.view;
 
-import droidsafe.model.ModeledClass;
+import droidsafe.analyses.attr.ModeledClass;
 
 import soot.jimple.spark.pag.AllocNode;
 

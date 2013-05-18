@@ -1,4 +1,4 @@
-package droidsafe.model;
+package droidsafe.analyses.attr;
 
 import java.util.HashSet;
 import java.util.regex.Matcher;

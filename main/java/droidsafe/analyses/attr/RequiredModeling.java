@@ -1,4 +1,4 @@
-package droidsafe.analyses;
+package droidsafe.analyses.attr;
 
 import java.io.File;
 import java.io.FileWriter;
@@ -17,6 +17,7 @@ import org.apache.commons.io.FileUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import droidsafe.analyses.GeoPTA;
 import droidsafe.analyses.rcfg.OutputEvent;
 import droidsafe.analyses.rcfg.RCFG;
 import droidsafe.analyses.rcfg.RCFGNode;

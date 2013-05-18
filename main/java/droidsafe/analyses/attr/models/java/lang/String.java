@@ -1,10 +1,10 @@
-package droidsafe.model.java.lang;
+package droidsafe.analyses.attr.models.java.lang;
 
 import soot.jimple.spark.pag.AllocNode;
 
 import soot.jimple.spark.pag.StringConstantNode;
 
-import droidsafe.model.ModeledClass;
+import droidsafe.analyses.attr.ModeledClass;
 
 import java.util.Set;
 import java.util.HashSet;

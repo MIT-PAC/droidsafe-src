@@ -1,19 +1,20 @@
 package droidsafe.analyses.infoflow;
 
-import droidsafe.analyses.AttributeModeling;
+import droidsafe.analyses.attr.AttributeModeling;
+import droidsafe.analyses.attr.ModeledClass;
 
-import droidsafe.model.ModeledClass;
+import droidsafe.analyses.attr.models.android.net.Uri.StringUri;
+
+import java.lang.reflect.Field;
 
 import java.util.ArrayList;
-import java.util.List;
 import java.util.LinkedHashSet;
-import java.util.Set;
+import java.util.List;
 import java.util.Map;
+import java.util.Set;
 
 import soot.jimple.spark.pag.AllocNode;
 import soot.jimple.toolkits.callgraph.Edge;
-
-import java.lang.reflect.Field;
 
 import soot.RefType;
 
@@ -47,8 +48,8 @@ public class InjectedSourceFlows {
         Field fld = c.getDeclaredField(field.getName());
         Object object = fld.get(modeledClass);
 
-        if (object instanceof droidsafe.model.android.net.Uri.StringUri){
-          droidsafe.model.android.net.Uri.StringUri stringUri = (droidsafe.model.android.net.Uri.StringUri)object;
+        if (object instanceof StringUri){
+          StringUri stringUri = (StringUri)object;
           stringsToInspect.addAll(stringUri.getUriString().getPossibleValues());
         }
       } catch (Exception e){

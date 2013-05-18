@@ -1,4 +1,4 @@
-package droidsafe.analyses;
+package droidsafe.analyses.attr;
 
 import droidsafe.analyses.GeoPTA;
 import droidsafe.analyses.rcfg.OutputEvent;
@@ -10,7 +10,7 @@ import droidsafe.android.app.Project;
 import droidsafe.android.system.API;
 
 import droidsafe.main.Config;
-import droidsafe.model.ModeledClass;
+import droidsafe.analyses.attr.ModeledClass;
 
 import droidsafe.speclang.Method;
 
@@ -118,15 +118,15 @@ public class AttributeModeling {
   private final static Logger logger  = LoggerFactory.getLogger(AttributeModeling.class);
   
   /** The prefix that is prepended to fully qualified types in the src of the model */
-  public static final String PACKAGE_PREFIX = "droidsafe.model";
+  public static final String PACKAGE_PREFIX = "droidsafe.analyses.attr.models.";
   
   /** The directory relative from APAC_HOME that is the base of the modeling
    * source code for this abstract semantics */
-  public static final String MODEL_SRC_BASE_DIR = "src/main/java/droidsafe/model";
+  public static final String MODEL_SRC_BASE_DIR = "src/main/java/droidsafe.analyses.attr.models.";
   
   /** The directory relative from APAC_HOME that is the base of the modeling
    * class files for this abstract semantics */
-  public static final String MODEL_CLASS_BASE_DIR = "classes/main/droidsafe/model";
+  public static final String MODEL_CLASS_BASE_DIR = "classes/main/droidsafe.analyses.attr.models.";
   
   //===================================================================================================================
   // Constructors
@@ -281,7 +281,7 @@ public class AttributeModeling {
               try {
                 cls = am.getDroidsafeClass(invokeExpr.getMethod().getDeclaringClass());
               } catch(ClassNotFoundException e) {
-                am.logError("Couldn't get corresponding droidsafe model class for static method class for " + invokeExpr + ": " 
+                am.logError("Couldn't get corresponding droidsafe.analyses.attr.models.class for static method class for " + invokeExpr + ": " 
                             + e.toString());
                 continue;
               }
@@ -360,11 +360,11 @@ public class AttributeModeling {
       for (ArrayList paramObjectPermutation : paramObjectCartesianProduct) {
         objectToReturn = method.invoke(modeledReceiverObject, paramObjectPermutation.toArray());
         if (objectToReturn != null) {
-          if(objectToReturn instanceof droidsafe.model.java.lang.String){
-            if(((droidsafe.model.java.lang.String)objectToReturn).getPossibleValues().size()==0)
+          if(objectToReturn instanceof droidsafe.analyses.attr.models.java.lang.String){
+            if(((droidsafe.analyses.attr.models.java.lang.String)objectToReturn).getPossibleValues().size()==0)
               continue;
-          } else if (objectToReturn instanceof droidsafe.model.android.net.Uri.StringUri){
-            if(((droidsafe.model.android.net.Uri.StringUri)objectToReturn).getUriString().getPossibleValues().size()==0)
+          } else if (objectToReturn instanceof droidsafe.analyses.attr.models.android.net.Uri.StringUri){
+            if(((droidsafe.analyses.attr.models.android.net.Uri.StringUri)objectToReturn).getUriString().getPossibleValues().size()==0)
               continue;
           }
           objectsToReturn.add(objectToReturn);
@@ -457,7 +457,7 @@ public class AttributeModeling {
   }
 
   /**
-   * Helper method that convers a refType into the appropriate droidsafe.model class
+   * Helper method that convers a refType into the appropriate droidsafe.analyses.attr.models.class
    *
    * @throws ClassNotFoundException if the correct class isn't modeled 
    */
@@ -472,7 +472,7 @@ public class AttributeModeling {
       className = "android.app.Activity";
     }
    
-    return Class.forName("droidsafe.model." + className);
+    return Class.forName("droidsafe.analyses.attr.models." + className);
   }
  
   private static boolean isActivity(SootClass sootClass){
@@ -508,21 +508,21 @@ public class AttributeModeling {
     for (Map.Entry<AllocNode, ModeledClass> entry : objectToModelMap.entrySet()) {
       ModeledClass modeledObject = entry.getValue();
       
-      if (modeledObject instanceof droidsafe.model.android.content.Intent){
+      if (modeledObject instanceof droidsafe.analyses.attr.models.android.content.Intent){
         totalModeledIntentsNum++;
-        if (!((droidsafe.model.android.content.Intent)modeledObject).invalidated()){
+        if (!((droidsafe.analyses.attr.models.android.content.Intent)modeledObject).invalidated()){
            validModeledIntentsNum++;
         }
       }
-      if (modeledObject instanceof droidsafe.model.android.net.Uri){
+      if (modeledObject instanceof droidsafe.analyses.attr.models.android.net.Uri){
         totalModeledUriNum++;
-        if (!((droidsafe.model.android.net.Uri)modeledObject).invalidated()){
+        if (!((droidsafe.analyses.attr.models.android.net.Uri)modeledObject).invalidated()){
            validModeledUriNum++;
         }
       }
-      if (modeledObject instanceof droidsafe.model.java.lang.String){
+      if (modeledObject instanceof droidsafe.analyses.attr.models.java.lang.String){
         totalModeledStringsNum++;
-        if (!((droidsafe.model.java.lang.String)modeledObject).invalidated()){
+        if (!((droidsafe.analyses.attr.models.java.lang.String)modeledObject).invalidated()){
            validModeledStringsNum++;
         }
       }

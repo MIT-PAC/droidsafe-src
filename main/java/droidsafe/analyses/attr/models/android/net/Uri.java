@@ -1,6 +1,6 @@
-package droidsafe.model.android.net;
+package droidsafe.analyses.attr.models.android.net;
 
-import droidsafe.model.ModeledClass;
+import droidsafe.analyses.attr.ModeledClass;
 
 import java.util.HashSet;
 import java.util.Set;
@@ -18,7 +18,7 @@ public abstract class Uri extends ModeledClass {
   public void incorporateUri(Uri dUri) {}
 
   // parse doesn't modify 
-  public static void parse(droidsafe.model.java.lang.String uriString) {}
+  public static void parse(droidsafe.analyses.attr.models.java.lang.String uriString) {}
 
   @Override
   public String toString(){
@@ -49,7 +49,7 @@ public abstract class Uri extends ModeledClass {
 
     public void _init_(){}
     
-    public void _init_(droidsafe.model.java.lang.String uriString){
+    public void _init_(droidsafe.analyses.attr.models.java.lang.String uriString){
     }
   
     @Override
@@ -65,24 +65,24 @@ public abstract class Uri extends ModeledClass {
 
   public static class StringUri extends AbstractHierarchicalUri {
     
-    private droidsafe.model.java.lang.String uriString;
+    private droidsafe.analyses.attr.models.java.lang.String uriString;
     
     public StringUri(AllocNode allocNode) {
       super(allocNode);
     }
     
-    public StringUri(droidsafe.model.java.lang.String uriString) {
+    public StringUri(droidsafe.analyses.attr.models.java.lang.String uriString) {
       this.uriString = uriString;
     }
     
     public void _init_(){
     }
     
-    public void _init_(droidsafe.model.java.lang.String uriString){
+    public void _init_(droidsafe.analyses.attr.models.java.lang.String uriString){
       this.uriString = uriString;
     }
  
-    public droidsafe.model.java.lang.String getUriString(){
+    public droidsafe.analyses.attr.models.java.lang.String getUriString(){
       return this.uriString;
     }
 

@@ -1,7 +1,7 @@
-package droidsafe.model.android.app;
+package droidsafe.analyses.attr.models.android.app;
 
-import droidsafe.model.android.view.ContextThemeWrapper;
-import droidsafe.model.android.view.Window;
+import droidsafe.analyses.attr.models.android.view.ContextThemeWrapper;
+import droidsafe.analyses.attr.models.android.view.Window;
 
 import java.util.List;
 
@@ -27,7 +27,7 @@ public class Activity extends ContextThemeWrapper {
   }
  
   // 15
-  public void startActivity(droidsafe.model.android.content.Intent intent){
+  public void startActivity(droidsafe.analyses.attr.models.android.content.Intent intent){
   
   }
  
@@ -35,7 +35,7 @@ public class Activity extends ContextThemeWrapper {
   
   }
   // 15
-  public void startActivityForResult(droidsafe.model.android.content.Intent intent, Integer requestCode){
+  public void startActivityForResult(droidsafe.analyses.attr.models.android.content.Intent intent, Integer requestCode){
   
   }
   

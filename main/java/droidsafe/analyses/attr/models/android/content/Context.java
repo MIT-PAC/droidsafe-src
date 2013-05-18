@@ -1,6 +1,6 @@
-package droidsafe.model.android.content;
+package droidsafe.analyses.attr.models.android.content;
 
-import droidsafe.model.ModeledClass;
+import droidsafe.analyses.attr.ModeledClass;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -16,7 +16,7 @@ public abstract class Context extends ModeledClass {
     super(allocNode);
   }
 
-  public abstract droidsafe.model.java.lang.String getPackageName(); 
+  public abstract droidsafe.analyses.attr.models.java.lang.String getPackageName(); 
 
   @Override
   public String toString(){

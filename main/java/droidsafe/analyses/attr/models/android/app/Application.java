@@ -1,6 +1,6 @@
-package droidsafe.model.android.app;
+package droidsafe.analyses.attr.models.android.app;
 
-import droidsafe.model.android.content.ContextWrapper;
+import droidsafe.analyses.attr.models.android.content.ContextWrapper;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

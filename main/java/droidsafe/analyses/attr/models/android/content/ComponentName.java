@@ -14,10 +14,10 @@
  * limitations under the License.
  */
 
-package droidsafe.model.android.content;
+package droidsafe.analyses.attr.models.android.content;
 
-import droidsafe.model.java.lang.String;
-import droidsafe.model.ModeledClass;
+import droidsafe.analyses.attr.models.java.lang.String;
+import droidsafe.analyses.attr.ModeledClass;
 
 import java.lang.Comparable;
 
@@ -40,8 +40,8 @@ public final class ComponentName extends ModeledClass implements Comparable<Comp
 
   private final static Logger logger = LoggerFactory.getLogger(ComponentName.class);
 
-  private final droidsafe.model.java.lang.String mPackage;
-  private final droidsafe.model.java.lang.String mClass;
+  private final droidsafe.analyses.attr.models.java.lang.String mPackage;
+  private final droidsafe.analyses.attr.models.java.lang.String mClass;
 
   public ComponentName(AllocNode allocNode) {
     super(allocNode);
@@ -57,7 +57,7 @@ public final class ComponentName extends ModeledClass implements Comparable<Comp
    * @param cls The name of the class inside of <var>pkg</var> that
    * implements the component.  Can not be null.
    */
-  public ComponentName(droidsafe.model.java.lang.String pkg, droidsafe.model.java.lang.String cls) {
+  public ComponentName(droidsafe.analyses.attr.models.java.lang.String pkg, droidsafe.analyses.attr.models.java.lang.String cls) {
       if (pkg == null) throw new NullPointerException("package name is null");
       if (cls == null) throw new NullPointerException("class name is null");
       mPackage = pkg;
@@ -72,7 +72,7 @@ public final class ComponentName extends ModeledClass implements Comparable<Comp
    * @param cls The name of the class inside of <var>pkg</var> that
    * implements the component.
    */
-  public ComponentName(droidsafe.model.android.content.Context pkg, droidsafe.model.java.lang.String cls) {
+  public ComponentName(droidsafe.analyses.attr.models.android.content.Context pkg, droidsafe.analyses.attr.models.java.lang.String cls) {
       if (cls == null) throw new NullPointerException("class name is null");
       mPackage = pkg.getPackageName();
       mClass = cls;
@@ -86,9 +86,9 @@ public final class ComponentName extends ModeledClass implements Comparable<Comp
    * @param cls The Class object of the desired component, from which the
    * actual class name will be retrieved.
    */
-  public ComponentName(droidsafe.model.android.content.Context pkg, Class<?> cls) {
+  public ComponentName(droidsafe.analyses.attr.models.android.content.Context pkg, Class<?> cls) {
       mPackage = pkg.getPackageName();
-      mClass = new droidsafe.model.java.lang.String(cls.getName());
+      mClass = new droidsafe.analyses.attr.models.java.lang.String(cls.getName());
   }
 
   public ComponentName clone() {
@@ -98,14 +98,14 @@ public final class ComponentName extends ModeledClass implements Comparable<Comp
   /**
    * Return the package name of this component.
    */
-  public droidsafe.model.java.lang.String getPackageName() {
+  public droidsafe.analyses.attr.models.java.lang.String getPackageName() {
       return mPackage;
   }
   
   /**
    * Return the class name of this component.
    */
-  public droidsafe.model.java.lang.String getClassName() {
+  public droidsafe.analyses.attr.models.java.lang.String getClassName() {
       return mClass;
   }
   

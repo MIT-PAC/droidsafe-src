@@ -1,6 +1,6 @@
-package droidsafe.model.android.content;
+package droidsafe.analyses.attr.models.android.content;
 
-import droidsafe.model.ModeledClass;
+import droidsafe.analyses.attr.ModeledClass;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -11,7 +11,7 @@ public class ContextWrapper extends Context {
 
   private final static Logger logger = LoggerFactory.getLogger(ContextWrapper.class);
   
-  droidsafe.model.android.content.Context mBase;
+  droidsafe.analyses.attr.models.android.content.Context mBase;
   
   public ContextWrapper(AllocNode allocNode) {
     super(allocNode);
@@ -21,7 +21,7 @@ public class ContextWrapper extends Context {
   }
 
   @Override
-  public droidsafe.model.java.lang.String getPackageName() {
+  public droidsafe.analyses.attr.models.java.lang.String getPackageName() {
     if(mBase != null)
       return mBase.getPackageName();
     return null;

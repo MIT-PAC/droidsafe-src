@@ -1,6 +1,6 @@
-package droidsafe.model.android.os;
+package droidsafe.analyses.attr.models.android.os;
 
-import droidsafe.model.ModeledClass;
+import droidsafe.analyses.attr.ModeledClass;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -18,14 +18,14 @@ public class Bundle extends ModeledClass {
 
   private final static Logger logger = LoggerFactory.getLogger(Bundle.class);
 
-  Map<droidsafe.model.java.lang.String, Object> mMap;
+  Map<droidsafe.analyses.attr.models.java.lang.String, Object> mMap;
 
   private boolean mHasFds = false;
   private boolean mFdsKnown = true;
   private boolean mAllowFds = true;
 
   public Bundle() {
-    mMap = new HashMap<droidsafe.model.java.lang.String, Object>();
+    mMap = new HashMap<droidsafe.analyses.attr.models.java.lang.String, Object>();
   }
 
   public Bundle(Bundle b) {
@@ -36,7 +36,7 @@ public class Bundle extends ModeledClass {
 
   public Bundle(AllocNode allocNode) {
     super(allocNode);
-    this.mMap = new HashMap<droidsafe.model.java.lang.String, Object>();
+    this.mMap = new HashMap<droidsafe.analyses.attr.models.java.lang.String, Object>();
   }
 
   public void _init_(){
@@ -50,7 +50,7 @@ public class Bundle extends ModeledClass {
      * @param key a String, or null
      * @param value a Boolean, or null
      */
-    public void putBoolean(droidsafe.model.java.lang.String key, boolean value) {
+    public void putBoolean(droidsafe.analyses.attr.models.java.lang.String key, boolean value) {
         mMap.put(key, value);
     }
 
@@ -61,7 +61,7 @@ public class Bundle extends ModeledClass {
      * @param key a String, or null
      * @param value a byte
      */
-    public void putByte(droidsafe.model.java.lang.String key, byte value) {
+    public void putByte(droidsafe.analyses.attr.models.java.lang.String key, byte value) {
         mMap.put(key, value);
     }
 
@@ -72,7 +72,7 @@ public class Bundle extends ModeledClass {
      * @param key a String, or null
      * @param value a char, or null
      */
-    public void putChar(droidsafe.model.java.lang.String key, char value) {
+    public void putChar(droidsafe.analyses.attr.models.java.lang.String key, char value) {
         mMap.put(key, value);
     }
 
@@ -83,7 +83,7 @@ public class Bundle extends ModeledClass {
      * @param key a String, or null
      * @param value a short
      */
-    public void putShort(droidsafe.model.java.lang.String key, short value) {
+    public void putShort(droidsafe.analyses.attr.models.java.lang.String key, short value) {
       mMap.put(key, value);
     }
 
@@ -94,7 +94,7 @@ public class Bundle extends ModeledClass {
      * @param key a String, or null
      * @param value an int, or null
      */
-    public void putInt(droidsafe.model.java.lang.String key, int value) {
+    public void putInt(droidsafe.analyses.attr.models.java.lang.String key, int value) {
       mMap.put(key, value);
     }
 
@@ -105,7 +105,7 @@ public class Bundle extends ModeledClass {
      * @param key a String, or null
      * @param value a long
      */
-    public void putLong(droidsafe.model.java.lang.String key, long value) {
+    public void putLong(droidsafe.analyses.attr.models.java.lang.String key, long value) {
       mMap.put(key, value);
     }
 
@@ -116,7 +116,7 @@ public class Bundle extends ModeledClass {
      * @param key a String, or null
      * @param value a float
      */
-    public void putFloat(droidsafe.model.java.lang.String key, float value) {
+    public void putFloat(droidsafe.analyses.attr.models.java.lang.String key, float value) {
       mMap.put(key, value);
     }
 
@@ -127,7 +127,7 @@ public class Bundle extends ModeledClass {
      * @param key a String, or null
      * @param value a double
      */
-    public void putDouble(droidsafe.model.java.lang.String key, double value) {
+    public void putDouble(droidsafe.analyses.attr.models.java.lang.String key, double value) {
       mMap.put(key, value);
     }
 
@@ -138,11 +138,11 @@ public class Bundle extends ModeledClass {
      * @param key a String, or null
      * @param value a String, or null
      */
-    public void putString(droidsafe.model.java.lang.String key, droidsafe.model.java.lang.String value) {
+    public void putString(droidsafe.analyses.attr.models.java.lang.String key, droidsafe.analyses.attr.models.java.lang.String value) {
       mMap.put(key, value);
     }
 
-  public void putAll(droidsafe.model.android.os.Bundle b) {
+  public void putAll(droidsafe.analyses.attr.models.android.os.Bundle b) {
     mMap.putAll(b.mMap);
 
     // fd state is now known if and only if both bundles already knew
