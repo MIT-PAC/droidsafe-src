@@ -69,6 +69,12 @@
             id="droidsafe.eclipse.plugin.core.commands.MarkMethodAsUnsafe"
             name="Mark method as Unsafe">
       </command>
+      <command
+            defaultHandler="droidsafe.eclipse.plugin.core.commands.MarkMethodAsUnresolved"
+            description="Mark node and all its children as Unresolved"
+            id="droidsafe.eclipse.plugin.core.commands.MarkMethodAsUnresolved"
+            name="Reset Method Status">
+      </command>
    </extension>
    <extension
          point="org.eclipse.ui.menus">
@@ -129,6 +135,11 @@
             <command
                   commandId="droidsafe.eclipse.plugin.core.commands.MarkMethodAsUnsafe"
                   label="Mark as NOT Safe"
+                  style="push">
+            </command>
+            <command
+                  commandId="droidsafe.eclipse.plugin.core.commands.MarkMethodAsUnresolved"
+                  label="Reset Node Status"
                   style="push">
             </command>
          </menu>

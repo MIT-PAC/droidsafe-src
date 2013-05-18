@@ -11,7 +11,7 @@ import org.eclipse.ui.handlers.HandlerUtil;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import droidsafe.eclipse.plugin.core.specmodel.DroidsafeMethodModel;
+import droidsafe.eclipse.plugin.core.specmodel.MethodModel;
 import droidsafe.eclipse.plugin.core.specmodel.TreeElement;
 import droidsafe.eclipse.plugin.core.view.SecuritySpecOutlineViewPart;
 import droidsafe.utils.SourceLocationTag;
@@ -37,9 +37,9 @@ public class SortViewByClassName extends AbstractHandler {
                   ((TreeElement<?, ?>) o1).getName(), ((TreeElement<?, ?>) o2).getName()});
               return compare(view, oo1, oo2);
 
-            } else if (o1 instanceof DroidsafeMethodModel && o2 instanceof DroidsafeMethodModel) {
-              DroidsafeMethodModel m1 = (DroidsafeMethodModel) o1;
-              DroidsafeMethodModel m2 = (DroidsafeMethodModel) o2;
+            } else if (o1 instanceof MethodModel && o2 instanceof MethodModel) {
+              MethodModel m1 = (MethodModel) o1;
+              MethodModel m2 = (MethodModel) o2;
               result = m1.getClassName().compareTo(m2.getClassName());
               logger.debug("Class Names m1 {} m2 {} result {}",
                   new Object[] {m1.getClassName(), m2.getClassName(), Integer.toString(result)});
