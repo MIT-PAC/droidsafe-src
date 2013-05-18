@@ -13,7 +13,7 @@ import org.eclipse.ui.PlatformUI;
 import org.osgi.framework.Bundle;
 import org.osgi.framework.FrameworkUtil;
 
-import droidsafe.eclipse.plugin.core.specmodel.DroidsafeMethodModel;
+import droidsafe.eclipse.plugin.core.specmodel.MethodModel;
 import droidsafe.utils.SourceLocationTag;
 
 /**
@@ -41,15 +41,15 @@ public class DroidsafeSecSpecLabelProvider extends LabelProvider {
     if (element instanceof Set) {
       int size = ((Set<?>) element).size();
       return "Whitelist (" + size + ")";
-    } else if (element instanceof DroidsafeMethodModel) {
-      return ((DroidsafeMethodModel) element).getSignature();
+    } else if (element instanceof MethodModel) {
+      return ((MethodModel) element).getSignature();
     }
     return element.toString();
   }
 
   @Override
   public Image getImage(Object element) {
-    if (element instanceof DroidsafeMethodModel) {
+    if (element instanceof MethodModel) {
       return INPUT_METHOD_IMAGE;
     } else if (element instanceof SourceLocationTag) {
       return SOURCE_LOCATION_IMAGE;

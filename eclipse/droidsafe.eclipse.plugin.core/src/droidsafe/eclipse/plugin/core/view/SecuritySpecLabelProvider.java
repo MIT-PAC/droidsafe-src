@@ -27,8 +27,8 @@ public class SecuritySpecLabelProvider extends LabelProvider {
 
   private static final Image SOURCE_LOCATION_IMAGE = PlatformUI.getWorkbench().getSharedImages()
       .getImage(org.eclipse.ui.ide.IDE.SharedImages.IMG_OBJS_TASK_TSK);
- 
-  
+
+
   @Override
   public String getText(Object element) {
     if (element instanceof Set) {

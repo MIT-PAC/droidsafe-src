@@ -37,7 +37,7 @@ public class TreeElement<P, C> {
     this.childrenType = childrenType;
     this.name = name == null ? "?" : name;
     this.data = data;
-    children = new CopyOnWriteArrayList<TreeElement<C, ?>>();
+    this.children = new CopyOnWriteArrayList<TreeElement<C, ?>>();
   }
 
   public String getName() {
@@ -49,7 +49,7 @@ public class TreeElement<P, C> {
   }
 
   public TreeElement<?, P> getParent() {
-    return parent;
+    return this.parent;
   }
 
   @Override

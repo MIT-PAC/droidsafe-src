@@ -8,11 +8,11 @@ import org.eclipse.jface.viewers.Viewer;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import droidsafe.eclipse.plugin.core.specmodel.DroidsafeMethodModel;
-import droidsafe.eclipse.plugin.core.specmodel.DroidsafeSecuritySpecModel;
+import droidsafe.eclipse.plugin.core.specmodel.CodeLocationModel;
+import droidsafe.eclipse.plugin.core.specmodel.MethodModel;
+import droidsafe.eclipse.plugin.core.specmodel.SecuritySpecModel;
 import droidsafe.eclipse.plugin.core.specmodel.TreeElement;
 import droidsafe.speclang.SecuritySpecification;
-import droidsafe.utils.SourceLocationTag;
 
 public class TreeElementContentProvider implements ITreeContentProvider {
 
@@ -27,7 +27,7 @@ public class TreeElementContentProvider implements ITreeContentProvider {
   private static final Object[] NO_CHILDREN = new Object[0];
 
   /** The model for the spec to be displayed in the outline view */
-  private DroidsafeSecuritySpecModel model;
+  private SecuritySpecModel model;
 
   /** Variable to control the structure of spec outline tree view. */
   public TopLevelParentEntity selectedTopLevelParentEntity =
@@ -49,15 +49,15 @@ public class TreeElementContentProvider implements ITreeContentProvider {
   @Override
   public void inputChanged(Viewer viewer, Object oldInput, Object newInput) {
     if (newInput instanceof SecuritySpecification) {
-      this.model = new DroidsafeSecuritySpecModel((SecuritySpecification) newInput);
-    } else if (newInput instanceof DroidsafeSecuritySpecModel) {
-      this.model = (DroidsafeSecuritySpecModel) newInput;
+      this.model = new SecuritySpecModel((SecuritySpecification) newInput);
+    } else if (newInput instanceof SecuritySpecModel) {
+      this.model = (SecuritySpecModel) newInput;
     }
   }
 
   @Override
   public Object[] getElements(Object parent) {
-    if (parent instanceof DroidsafeSecuritySpecModel) {
+    if (parent instanceof SecuritySpecModel) {
       TreeElement<?, ?> invisibleRoot = initializeRoot();
       if (logger.isDebugEnabled()) {
         for (TreeElement<?, ?> child : invisibleRoot.getChildren()) {
@@ -95,25 +95,25 @@ public class TreeElementContentProvider implements ITreeContentProvider {
     return false;
   }
 
-  private void createModelWithApiAsTopParent(TreeElement<DroidsafeSecuritySpecModel, Object> root) {
-    Map<DroidsafeMethodModel, Map<DroidsafeMethodModel, List<SourceLocationTag>>> outputEventBlocks =
+  private void createModelWithApiAsTopParent(TreeElement<SecuritySpecModel, Object> root) {
+    Map<MethodModel, Map<MethodModel, List<CodeLocationModel>>> outputEventBlocks =
         this.model.getOutputEventBlocks();
     if (outputEventBlocks != null) {
-      for (DroidsafeMethodModel apiMethod : outputEventBlocks.keySet()) {
-        TreeElement<Object, DroidsafeMethodModel> apiElement =
-            new TreeElement<Object, DroidsafeMethodModel>(apiMethod.getSignature(), apiMethod,
-                DroidsafeMethodModel.class);
+      for (MethodModel apiMethod : outputEventBlocks.keySet()) {
+        TreeElement<Object, MethodModel> apiElement =
+            new TreeElement<Object, MethodModel>(apiMethod.getSignature(), apiMethod,
+                MethodModel.class);
         root.addChild(apiElement);
-        for (DroidsafeMethodModel inputMethod : outputEventBlocks.get(apiMethod).keySet()) {
-          TreeElement<DroidsafeMethodModel, SourceLocationTag> inputElement =
-              new TreeElement<DroidsafeMethodModel, SourceLocationTag>(inputMethod.getSignature(),
-                  inputMethod, SourceLocationTag.class);
+        for (MethodModel inputMethod : outputEventBlocks.get(apiMethod).keySet()) {
+          TreeElement<MethodModel, CodeLocationModel> inputElement =
+              new TreeElement<MethodModel, CodeLocationModel>(inputMethod.getSignature(),
+                  inputMethod, CodeLocationModel.class);
           apiElement.addChild(inputElement);
-          List<SourceLocationTag> locations = outputEventBlocks.get(apiMethod).get(inputMethod);
+          List<CodeLocationModel> locations = outputEventBlocks.get(apiMethod).get(inputMethod);
           if (locations != null) {
-            for (SourceLocationTag location : locations) {
-              TreeElement<SourceLocationTag, Object> locationElement =
-                  new TreeElement<SourceLocationTag, Object>(location.toString(), location,
+            for (CodeLocationModel location : locations) {
+              TreeElement<CodeLocationModel, Object> locationElement =
+                  new TreeElement<CodeLocationModel, Object>(location.toString(), location,
                       Object.class);
               inputElement.addChild(locationElement);
             }
@@ -124,26 +124,26 @@ public class TreeElementContentProvider implements ITreeContentProvider {
   }
 
   private void createModelWithCodeLocationAsTopParent(
-      TreeElement<DroidsafeSecuritySpecModel, Object> root) {
-    Map<SourceLocationTag, Map<DroidsafeMethodModel, List<DroidsafeMethodModel>>> codeLocationEventBlocks =
+      TreeElement<SecuritySpecModel, Object> root) {
+    Map<CodeLocationModel, Map<MethodModel, List<MethodModel>>> codeLocationEventBlocks =
         this.model.getCodeLocationEventBlocks();
     if (codeLocationEventBlocks != null) {
-      for (SourceLocationTag location : codeLocationEventBlocks.keySet()) {
-        TreeElement<Object, DroidsafeMethodModel> locationElement =
-            new TreeElement<Object, DroidsafeMethodModel>(location.toString(), location,
-                DroidsafeMethodModel.class);
+      for (CodeLocationModel location : codeLocationEventBlocks.keySet()) {
+        TreeElement<Object, MethodModel> locationElement =
+            new TreeElement<Object, MethodModel>(location.toString(), location,
+                MethodModel.class);
         root.addChild(locationElement);
-        for (DroidsafeMethodModel inputMethod : codeLocationEventBlocks.get(location).keySet()) {
-          TreeElement<DroidsafeMethodModel, DroidsafeMethodModel> inputElement =
-              new TreeElement<DroidsafeMethodModel, DroidsafeMethodModel>(
-                  inputMethod.getSignature(), inputMethod, DroidsafeMethodModel.class);
+        for (MethodModel inputMethod : codeLocationEventBlocks.get(location).keySet()) {
+          TreeElement<MethodModel, MethodModel> inputElement =
+              new TreeElement<MethodModel, MethodModel>(
+                  inputMethod.getSignature(), inputMethod, MethodModel.class);
           locationElement.addChild(inputElement);
-          List<DroidsafeMethodModel> outputMethods =
+          List<MethodModel> outputMethods =
               codeLocationEventBlocks.get(location).get(inputMethod);
           if (outputMethods != null) {
-            for (DroidsafeMethodModel outputMethod : outputMethods) {
-              TreeElement<DroidsafeMethodModel, Object> outputElement =
-                  new TreeElement<DroidsafeMethodModel, Object>(outputMethod.getSignature(),
+            for (MethodModel outputMethod : outputMethods) {
+              TreeElement<MethodModel, Object> outputElement =
+                  new TreeElement<MethodModel, Object>(outputMethod.getSignature(),
                       outputMethod, Object.class);
               inputElement.addChild(outputElement);
             }
@@ -154,25 +154,25 @@ public class TreeElementContentProvider implements ITreeContentProvider {
   }
 
   private void createModelWithEntryPointAsTopParent(
-      TreeElement<DroidsafeSecuritySpecModel, Object> root) {
-    Map<DroidsafeMethodModel, List<DroidsafeMethodModel>> inputEventBlocks =
+      TreeElement<SecuritySpecModel, Object> root) {
+    Map<MethodModel, List<MethodModel>> inputEventBlocks =
         this.model.getInputEventBlocks();
     if (inputEventBlocks != null) {
-      for (DroidsafeMethodModel inputMethod : inputEventBlocks.keySet()) {
-        TreeElement<Object, DroidsafeMethodModel> inputElement =
-            new TreeElement<Object, DroidsafeMethodModel>(inputMethod.getSignature(), inputMethod,
-                DroidsafeMethodModel.class);
+      for (MethodModel inputMethod : inputEventBlocks.keySet()) {
+        TreeElement<Object, MethodModel> inputElement =
+            new TreeElement<Object, MethodModel>(inputMethod.getSignature(), inputMethod,
+                MethodModel.class);
         root.addChild(inputElement);
-        for (DroidsafeMethodModel outputMethod : inputEventBlocks.get(inputMethod)) {
-          TreeElement<DroidsafeMethodModel, SourceLocationTag> outputElement =
-              new TreeElement<DroidsafeMethodModel, SourceLocationTag>(outputMethod.getSignature(),
-                  outputMethod, SourceLocationTag.class);
+        for (MethodModel outputMethod : inputEventBlocks.get(inputMethod)) {
+          TreeElement<MethodModel, CodeLocationModel> outputElement =
+              new TreeElement<MethodModel, CodeLocationModel>(outputMethod.getSignature(),
+                  outputMethod, CodeLocationModel.class);
           inputElement.addChild(outputElement);
-          List<SourceLocationTag> locations = outputMethod.getLines();
+          List<CodeLocationModel> locations = outputMethod.getLines();
           if (locations != null) {
-            for (SourceLocationTag location : locations) {
-              TreeElement<SourceLocationTag, Object> locationElement =
-                  new TreeElement<SourceLocationTag, Object>(location.toString(), location,
+            for (CodeLocationModel location : locations) {
+              TreeElement<CodeLocationModel, Object> locationElement =
+                  new TreeElement<CodeLocationModel, Object>(location.toString(), location,
                       Object.class);
               outputElement.addChild(locationElement);
             }
@@ -183,16 +183,16 @@ public class TreeElementContentProvider implements ITreeContentProvider {
   }
 
   public TreeElement<?, ?> initializeRoot() {
-    TreeElement<DroidsafeSecuritySpecModel, Object> root =
-        new TreeElement<DroidsafeSecuritySpecModel, Object>("SecuritySpec", this.model,
+    TreeElement<SecuritySpecModel, Object> root =
+        new TreeElement<SecuritySpecModel, Object>("SecuritySpec", this.model,
             Object.class);
-    TreeElement<Object, DroidsafeMethodModel> whitelist =
-        new TreeElement<Object, DroidsafeMethodModel>("Whitelist", this.model.getWhitelist(),
-            DroidsafeMethodModel.class);
+    TreeElement<Object, MethodModel> whitelist =
+        new TreeElement<Object, MethodModel>("Whitelist", this.model.getWhitelist(),
+            MethodModel.class);
     root.addChild(whitelist);
-    for (DroidsafeMethodModel m : this.model.getWhitelist()) {
-      TreeElement<DroidsafeMethodModel, Object> mTreeElement =
-          new TreeElement<DroidsafeMethodModel, Object>(m.getSignature(), m, Object.class);
+    for (MethodModel m : this.model.getWhitelist()) {
+      TreeElement<MethodModel, Object> mTreeElement =
+          new TreeElement<MethodModel, Object>(m.getSignature(), m, Object.class);
       whitelist.addChild(mTreeElement);
     }
 

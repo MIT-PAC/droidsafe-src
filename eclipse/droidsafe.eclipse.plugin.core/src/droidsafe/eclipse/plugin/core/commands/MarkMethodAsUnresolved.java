@@ -15,12 +15,12 @@ import droidsafe.eclipse.plugin.core.specmodel.TreeElement;
 import droidsafe.eclipse.plugin.core.view.SecuritySpecOutlineViewPart;
 
 /**
- * Command to mark the selected element in the droidsafe outline view as safe.
- * 
- * @author Marcel Becker (becker@kestrel.edu)
- * 
- */
-public class MarkMethodAsSafe extends AbstractHandler {
+* Command to mark the selected element in the droidsafe outline view as not safe.
+* 
+* @author Marcel Becker (becker@kestrel.edu)
+* 
+*/
+public class MarkMethodAsUnresolved extends AbstractHandler {
 
   @Override
   public Object execute(ExecutionEvent event) throws ExecutionException {
@@ -33,31 +33,30 @@ public class MarkMethodAsSafe extends AbstractHandler {
       for (Object selection : structuredSelection.toList()) {
         if (selection instanceof TreeElement<?, ?>) {
           TreeElement<?, ?> element = (TreeElement<?, ?>) selection;
-          setElementAsSafe(element, view);
+          setElementAsUnresolved(element, view);
         }
       }
     }
     return null;
   }
 
-  private void setElementAsSafe(TreeElement<?, ?> element, IViewPart viewPart) {
+  private void setElementAsUnresolved(TreeElement<?, ?> element, IViewPart viewPart) {
     boolean viewNeedsRefresh = false;    
     Object data = element.getData();
-    if (data instanceof CodeLocationModel && !((CodeLocationModel) data).isSafe()) {
-      ((CodeLocationModel) data).setSafe();
+    if (data instanceof CodeLocationModel && !((CodeLocationModel) data).isUnresolved()) {
+      ((CodeLocationModel) data).setUnresolved();
       viewNeedsRefresh = true;
-    } else if (data instanceof MethodModel && !((MethodModel) data).isSafe()) {
-      ((MethodModel) data).setSafe();
+    } else if (data instanceof MethodModel && !((MethodModel) data).isUnresolved()) {
+      ((MethodModel) data).setUnresolved();
       viewNeedsRefresh = true;
     }
     // TODO: remove the view refresh from the command.
     if (viewNeedsRefresh) {
       if (element.hasChildren()) {
         for (TreeElement<?, ?> child : element.getChildren()) {
-          setElementAsSafe(child, viewPart);
+          setElementAsUnresolved(child, viewPart);
         }
       }
-
       if (viewPart instanceof SecuritySpecOutlineViewPart) {
         ((SecuritySpecOutlineViewPart) viewPart).getViewer().update(element, null);
       }

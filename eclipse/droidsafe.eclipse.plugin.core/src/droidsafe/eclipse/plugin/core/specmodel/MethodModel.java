@@ -1,6 +1,7 @@
 package droidsafe.eclipse.plugin.core.specmodel;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.List;
 
 import org.slf4j.Logger;
@@ -12,9 +13,12 @@ import droidsafe.utils.SourceLocationTag;
 /**
  * Class to model the droidsafe.speclang.Method class. It simplifies the method representation by
  * maintaining only the information relevant to display the method in the Eclipse interface.
+ * 
+ * @author Marcel Becker (becker@kestrel.edu)
+ * 
  */
-public class DroidsafeMethodModel implements Comparable<DroidsafeMethodModel>, Serializable {
-  private static final Logger logger = LoggerFactory.getLogger(DroidsafeMethodModel.class);
+public class MethodModel implements Comparable<MethodModel>, Serializable {
+  private static final Logger logger = LoggerFactory.getLogger(MethodModel.class);
   private static final long serialVersionUID = -2110312802230745309L;
   private String methodName;
   private String className;
@@ -22,18 +26,26 @@ public class DroidsafeMethodModel implements Comparable<DroidsafeMethodModel>, S
   private String methodSignature;
   private String sootMethodSignature;
   private SourceLocationTag declarationLocation;
-  private List<SourceLocationTag> lines;
+  private List<CodeLocationModel> lines = new ArrayList<CodeLocationModel>();
 
-  public DroidsafeMethodModel(Method originalMethod) {
+  /**
+   * Current status of the code location.
+   */
+  private DroidsafeIssueResolutionStatus status = DroidsafeIssueResolutionStatus.UNRESOLVED;
+
+  
+  public MethodModel(Method originalMethod) {
     this.methodName = originalMethod.getName();
-    // this.methodSignature = originalMethod.toSignatureString();
     this.sootMethodSignature = originalMethod.getSignature();
-    this.methodSignature = sootMethodSignature.substring(1, sootMethodSignature.length() - 1);
-    this.lines = originalMethod.getLines();
+    this.methodSignature = sootMethodSignature.substring(1, sootMethodSignature.length() - 1);          
     this.className = originalMethod.getCname();
     this.returnType = originalMethod.getRtype();
     this.declarationLocation = originalMethod.getDeclSourceLocation();
-    logger.warn("\n Method Signature {} \n Soot Signature {} \n Soot Sub Signature {}",
+    
+    for (SourceLocationTag line : originalMethod.getLines()){
+      this.lines.add(new CodeLocationModel(line));
+    }     
+    logger.debug("\n Method Signature {} \n Soot Signature {} \n Soot Sub Signature {}",
         new Object[] {methodSignature, sootMethodSignature, originalMethod.getSubSignature()});
   }
 
@@ -64,7 +76,7 @@ public class DroidsafeMethodModel implements Comparable<DroidsafeMethodModel>, S
   /**
    * Returns the lines that contain calls to this method
    */
-  public List<SourceLocationTag> getLines() {
+  public List<CodeLocationModel> getLines() {
     return this.lines;
   }
 
@@ -72,6 +84,61 @@ public class DroidsafeMethodModel implements Comparable<DroidsafeMethodModel>, S
     return this.declarationLocation;
   }
 
+  
+  /**
+   * Set the status of this code location to SAFE.
+   */
+  public void setSafe() {
+    this.status = DroidsafeIssueResolutionStatus.SAFE;
+  }
+
+  /**
+   * Set the status of this code location to UNSAFE.
+   */
+  public void setUnsafe() {
+    this.status = DroidsafeIssueResolutionStatus.UNSAFE;
+  }
+
+  /**
+   * Set the status of this code location to PENDING further decision on safety of issue.
+   */
+  public void setPending() {
+    this.status = DroidsafeIssueResolutionStatus.PENDING;
+  }
+
+  /**
+   * Set the status of this code location to UNRESOLVED, meaning that the issue has not yet been
+   * considered.
+   */
+  public void setUnresolved() {
+    this.status = DroidsafeIssueResolutionStatus.UNRESOLVED;
+  }
+
+  public DroidsafeIssueResolutionStatus getStatus() {
+    return this.status;
+  }
+
+  /**
+   * Returns true if the status of the location is safe.
+   */
+  public boolean isSafe() {
+    return (this.status == DroidsafeIssueResolutionStatus.SAFE);
+  }
+
+  /**
+   * Returns true if the status of the location is unsafe, false otherwise.
+   */
+  public boolean isUnsafe() {
+    return (this.status == DroidsafeIssueResolutionStatus.UNSAFE);
+  }
+
+  /**
+   * Returns true if the status of the location is unresolved, false otherwise.
+   */
+  public boolean isUnresolved() {
+    return (this.status == DroidsafeIssueResolutionStatus.UNRESOLVED);
+  }
+  
   @Override
   public int hashCode() {
     final int prime = 31;
@@ -87,7 +154,7 @@ public class DroidsafeMethodModel implements Comparable<DroidsafeMethodModel>, S
     if (this == obj) return true;
     if (obj == null) return false;
     if (getClass() != obj.getClass()) return false;
-    DroidsafeMethodModel other = (DroidsafeMethodModel) obj;
+    MethodModel other = (MethodModel) obj;
 
     if (lines == null) {
       if (other.lines != null) return false;
@@ -102,7 +169,7 @@ public class DroidsafeMethodModel implements Comparable<DroidsafeMethodModel>, S
   }
 
   /** Sort by class and method name **/
-  public int compareTo(DroidsafeMethodModel m) {
+  public int compareTo(MethodModel m) {
     // if both method have lines, then compare them on lines
     if (!this.lines.isEmpty() && !m.lines.isEmpty()) {
       return this.lines.get(0).compareTo(m.lines.get(0));

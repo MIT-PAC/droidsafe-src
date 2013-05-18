@@ -25,21 +25,16 @@ import org.slf4j.LoggerFactory;
 import droidsafe.android.app.Project;
 import droidsafe.speclang.Method;
 import droidsafe.speclang.SecuritySpecification;
-import droidsafe.utils.SourceLocationTag;
 
 /**
  * This is a wrapper class around the droidsafe.speclang.SecuritySpecification class. This class
  * provides a model of the spec that can be used by the Eclipse outline view, and simplifies the
  * serialization of the spec representation to be used by this view.
  * 
- * @author becker
+ * @author Marcel Becker (becker@kestrel.edu)
  * 
  */
-/**
- * @author marcelbecker
- * 
- */
-public class DroidsafeSecuritySpecModel implements Serializable {
+public class SecuritySpecModel implements Serializable {
   /**
    * The generated serial version ID.
    */
@@ -48,7 +43,7 @@ public class DroidsafeSecuritySpecModel implements Serializable {
   /**
    * The logger object for this class.
    */
-  private static final Logger logger = LoggerFactory.getLogger(DroidsafeSecuritySpecModel.class);
+  private static final Logger logger = LoggerFactory.getLogger(SecuritySpecModel.class);
 
   /**
    * The name of the file to use to save the serialized version of the spec.
@@ -58,7 +53,7 @@ public class DroidsafeSecuritySpecModel implements Serializable {
   /**
    * Set of methods that are considered safe.
    */
-  private Set<DroidsafeMethodModel> whitelist = new LinkedHashSet<DroidsafeMethodModel>();
+  private Set<MethodModel> whitelist = new LinkedHashSet<MethodModel>();
 
   /**
    * eventBlocks contains the default security spec hierarchy -- output events map to a list of
@@ -66,8 +61,8 @@ public class DroidsafeSecuritySpecModel implements Serializable {
    * map, the top most parents are the input events. The code locations for each output event are in
    * an internal field of class DroidsafeMethodModel
    */
-  private Map<DroidsafeMethodModel, List<DroidsafeMethodModel>> inputEventBlocks =
-      new LinkedHashMap<DroidsafeMethodModel, List<DroidsafeMethodModel>>();
+  private Map<MethodModel, List<MethodModel>> inputEventBlocks =
+      new LinkedHashMap<MethodModel, List<MethodModel>>();
 
 
   /**
@@ -76,9 +71,8 @@ public class DroidsafeSecuritySpecModel implements Serializable {
    * lines in which the parent outputEvent is present. This map is used to display a hierarchical
    * view of the spec rooted at the API nodes.
    */
-  private transient Map<DroidsafeMethodModel, Map<DroidsafeMethodModel, List<SourceLocationTag>>> outputEventBlocks =
-      new LinkedHashMap<DroidsafeMethodModel, Map<DroidsafeMethodModel, List<SourceLocationTag>>>();
-
+  private transient Map<MethodModel, Map<MethodModel, List<CodeLocationModel>>> outputEventBlocks =
+      new LinkedHashMap<MethodModel, Map<MethodModel, List<CodeLocationModel>>>();
 
   /**
    * This map contains the same information as the eventBlocks above but in a different
@@ -86,10 +80,8 @@ public class DroidsafeSecuritySpecModel implements Serializable {
    * the list of output events in which the parent code location is present. This map is used to
    * display a hierarchical view of the spec rooted at the code location nodes.
    */
-  private transient Map<SourceLocationTag, Map<DroidsafeMethodModel, List<DroidsafeMethodModel>>> codeLocationEventBlocks =
-      new LinkedHashMap<SourceLocationTag, Map<DroidsafeMethodModel, List<DroidsafeMethodModel>>>();
-
-
+  private transient Map<CodeLocationModel, Map<MethodModel, List<MethodModel>>> codeLocationEventBlocks =
+      new LinkedHashMap<CodeLocationModel, Map<MethodModel, List<MethodModel>>>();
 
   /**
    * Main constructor for the spec model. Translate the original droidsafe spec into a simpler
@@ -97,36 +89,34 @@ public class DroidsafeSecuritySpecModel implements Serializable {
    * 
    * @param originalSpec The droidsafe security spec we want to represent in this model.
    */
-  public DroidsafeSecuritySpecModel(SecuritySpecification originalSpec) {
+  public SecuritySpecModel(SecuritySpecification originalSpec) {
     translateModel(originalSpec);
-    // computeOutputEventBlocks();
-    // computeCodeLocationEventBlocks();
   }
 
-  public Set<DroidsafeMethodModel> getWhitelist() {
+  public Set<MethodModel> getWhitelist() {
     return this.whitelist;
   }
 
-  public Set<DroidsafeMethodModel> getEntryPoints() {
+  public Set<MethodModel> getEntryPoints() {
     return this.inputEventBlocks.keySet();
   }
 
-  public List<DroidsafeMethodModel> getOutputEvents(DroidsafeMethodModel method) {
+  public List<MethodModel> getOutputEvents(MethodModel method) {
     return this.inputEventBlocks.get(method);
   }
 
   private void translateModel(SecuritySpecification originalSpec) {
     for (Method m : originalSpec.getWhitelist()) {
-      this.whitelist.add(new DroidsafeMethodModel(m));
+      this.whitelist.add(new MethodModel(m));
     }
     for (Map.Entry<Method, List<Method>> entry : originalSpec.getEventBlocks().entrySet()) {
       Method inputEvent = entry.getKey();
       List<Method> outputEvents = entry.getValue();
-      ArrayList<DroidsafeMethodModel> modelOutputEvents = new ArrayList<DroidsafeMethodModel>();
-      this.inputEventBlocks.put(new DroidsafeMethodModel(inputEvent), modelOutputEvents);
+      ArrayList<MethodModel> modelOutputEvents = new ArrayList<MethodModel>();
+      this.inputEventBlocks.put(new MethodModel(inputEvent), modelOutputEvents);
 
       for (Method outputEvent : outputEvents) {
-        modelOutputEvents.add(new DroidsafeMethodModel(outputEvent));
+        modelOutputEvents.add(new MethodModel(outputEvent));
       }
       Collections.sort(modelOutputEvents);
       logger.debug("Input Method {}", inputEvent);
@@ -141,12 +131,12 @@ public class DroidsafeSecuritySpecModel implements Serializable {
   public String printSpecModel() {
     StringBuffer sb = new StringBuffer("Droidsafe Spec Model");
     sb.append("\nWhitelist\n");
-    for (DroidsafeMethodModel m : this.whitelist) {
+    for (MethodModel m : this.whitelist) {
       sb.append(m.printMethod()).append("\n");
     }
-    for (DroidsafeMethodModel im : inputEventBlocks.keySet()) {
+    for (MethodModel im : inputEventBlocks.keySet()) {
       sb.append("InputMethod ").append(im.toString()).append("\n");
-      for (DroidsafeMethodModel om : inputEventBlocks.get(im)) {
+      for (MethodModel om : inputEventBlocks.get(im)) {
         sb.append("    OutputMethod ").append(om.printMethod()).append("\n");
       }
     }
@@ -160,15 +150,15 @@ public class DroidsafeSecuritySpecModel implements Serializable {
   private void computeOutputEventBlocks() {
     if (this.outputEventBlocks == null) {
       this.outputEventBlocks =
-          new LinkedHashMap<DroidsafeMethodModel, Map<DroidsafeMethodModel, List<SourceLocationTag>>>();
+          new LinkedHashMap<MethodModel, Map<MethodModel, List<CodeLocationModel>>>();
     }
-    for (DroidsafeMethodModel inputEvent : inputEventBlocks.keySet()) {
+    for (MethodModel inputEvent : inputEventBlocks.keySet()) {
       if (inputEventBlocks.get(inputEvent) != null) {
-        for (DroidsafeMethodModel outputEvent : inputEventBlocks.get(inputEvent)) {
-          Map<DroidsafeMethodModel, List<SourceLocationTag>> outputEventMap =
+        for (MethodModel outputEvent : inputEventBlocks.get(inputEvent)) {
+          Map<MethodModel, List<CodeLocationModel>> outputEventMap =
               this.outputEventBlocks.get(outputEvent);
           if (outputEventMap == null) {
-            outputEventMap = new LinkedHashMap<DroidsafeMethodModel, List<SourceLocationTag>>();
+            outputEventMap = new LinkedHashMap<MethodModel, List<CodeLocationModel>>();
             this.outputEventBlocks.put(outputEvent, outputEventMap);
           }
           outputEventMap.put(inputEvent, outputEvent.getLines());
@@ -180,24 +170,23 @@ public class DroidsafeSecuritySpecModel implements Serializable {
   private void computeCodeLocationEventBlocks() {
     if (this.codeLocationEventBlocks == null) {
       this.codeLocationEventBlocks =
-          new LinkedHashMap<SourceLocationTag, Map<DroidsafeMethodModel, List<DroidsafeMethodModel>>>();
+          new LinkedHashMap<CodeLocationModel, Map<MethodModel, List<MethodModel>>>();
     }
-    for (DroidsafeMethodModel inputEvent : inputEventBlocks.keySet()) {
+    for (MethodModel inputEvent : inputEventBlocks.keySet()) {
       if (inputEventBlocks.get(inputEvent) != null) {
-        for (DroidsafeMethodModel outputEvent : inputEventBlocks.get(inputEvent)) {
-          List<SourceLocationTag> lines = outputEvent.getLines();
+        for (MethodModel outputEvent : inputEventBlocks.get(inputEvent)) {
+          List<CodeLocationModel> lines = outputEvent.getLines();
           if (lines != null) {
-            for (SourceLocationTag line : lines) {
-              Map<DroidsafeMethodModel, List<DroidsafeMethodModel>> lineEventMap =
+            for (CodeLocationModel line : lines) {
+              Map<MethodModel, List<MethodModel>> lineEventMap =
                   this.codeLocationEventBlocks.get(line);
               if (lineEventMap == null) {
-                lineEventMap =
-                    new LinkedHashMap<DroidsafeMethodModel, List<DroidsafeMethodModel>>();
+                lineEventMap = new LinkedHashMap<MethodModel, List<MethodModel>>();
                 this.codeLocationEventBlocks.put(line, lineEventMap);
               }
-              List<DroidsafeMethodModel> outputMethods = lineEventMap.get(inputEvent);
+              List<MethodModel> outputMethods = lineEventMap.get(inputEvent);
               if (outputMethods == null) {
-                outputMethods = new ArrayList<DroidsafeMethodModel>();
+                outputMethods = new ArrayList<MethodModel>();
                 lineEventMap.put(inputEvent, outputMethods);
               }
               outputMethods.add(outputEvent);
@@ -208,18 +197,18 @@ public class DroidsafeSecuritySpecModel implements Serializable {
     }
   }
 
-  public Map<DroidsafeMethodModel, List<DroidsafeMethodModel>> getInputEventBlocks() {
+  public Map<MethodModel, List<MethodModel>> getInputEventBlocks() {
     return this.inputEventBlocks;
   }
 
-  public Map<DroidsafeMethodModel, Map<DroidsafeMethodModel, List<SourceLocationTag>>> getOutputEventBlocks() {
+  public Map<MethodModel, Map<MethodModel, List<CodeLocationModel>>> getOutputEventBlocks() {
     if (this.outputEventBlocks == null || this.outputEventBlocks.isEmpty()) {
       computeOutputEventBlocks();
     }
     return this.outputEventBlocks;
   }
 
-  public Map<SourceLocationTag, Map<DroidsafeMethodModel, List<DroidsafeMethodModel>>> getCodeLocationEventBlocks() {
+  public Map<CodeLocationModel, Map<MethodModel, List<MethodModel>>> getCodeLocationEventBlocks() {
     if (this.codeLocationEventBlocks == null || this.codeLocationEventBlocks.isEmpty()) {
       computeCodeLocationEventBlocks();
     }
@@ -227,8 +216,7 @@ public class DroidsafeSecuritySpecModel implements Serializable {
   }
 
 
-  public static boolean serializeSpecToFile(DroidsafeSecuritySpecModel spec,
-      String androidProjectRootPath) {
+  public static boolean serializeSpecToFile(SecuritySpecModel spec, String androidProjectRootPath) {
     boolean saved = false;
     String fileName =
         androidProjectRootPath + File.separator + Project.OUTPUT_DIR + File.separator
@@ -249,8 +237,8 @@ public class DroidsafeSecuritySpecModel implements Serializable {
   }
 
 
-  public static DroidsafeSecuritySpecModel deserializeSpecFromFile(String androidProjectRootPath) {
-    DroidsafeSecuritySpecModel spec = null;
+  public static SecuritySpecModel deserializeSpecFromFile(String androidProjectRootPath) {
+    SecuritySpecModel spec = null;
     String fileName =
         androidProjectRootPath + File.separator + Project.OUTPUT_DIR + File.separator
             + SECURITY_SPEC_SERIAL_FILE_NAME;
@@ -259,8 +247,8 @@ public class DroidsafeSecuritySpecModel implements Serializable {
           new ObjectInputStream(new BufferedInputStream(new FileInputStream(fileName)));
       try {
         Object obj = ois.readObject();
-        if (obj instanceof DroidsafeSecuritySpecModel) {
-          spec = (DroidsafeSecuritySpecModel) obj;
+        if (obj instanceof SecuritySpecModel) {
+          spec = (SecuritySpecModel) obj;
         }
       } finally {
         ois.close();
@@ -273,4 +261,5 @@ public class DroidsafeSecuritySpecModel implements Serializable {
     }
     return spec;
   }
+  
 }
