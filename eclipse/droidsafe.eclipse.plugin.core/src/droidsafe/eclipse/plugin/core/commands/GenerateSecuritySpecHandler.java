@@ -26,7 +26,7 @@ public class GenerateSecuritySpecHandler extends AbstractHandler {
   public Object execute(ExecutionEvent event) throws ExecutionException {
     ISelection selection =
         HandlerUtil.getActiveWorkbenchWindow(event).getActivePage().getSelection();
-    if (selection != null & selection instanceof IStructuredSelection) {
+    if (selection != null && selection instanceof IStructuredSelection) {
       IStructuredSelection structuredSelection = (IStructuredSelection) selection;
       Object firstSelection = structuredSelection.getFirstElement();
       IProject projectAux = null;

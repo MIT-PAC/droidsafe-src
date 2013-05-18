@@ -9,7 +9,7 @@ import org.eclipse.jface.viewers.ViewerSorter;
 import org.eclipse.ui.IWorkbenchPart;
 import org.eclipse.ui.handlers.HandlerUtil;
 
-import droidsafe.eclipse.plugin.core.specmodel.DroidsafeMethodModel;
+import droidsafe.eclipse.plugin.core.specmodel.MethodModel;
 import droidsafe.eclipse.plugin.core.specmodel.TreeElement;
 import droidsafe.eclipse.plugin.core.view.SecuritySpecOutlineViewPart;
 import droidsafe.utils.SourceLocationTag;
@@ -32,9 +32,9 @@ public class SortViewByMethodName extends AbstractHandler {
               Object oo2 = ((TreeElement<?, ?>) o2).getData();
               return compare(view, oo1, oo2);
 
-            } else if (o1 instanceof DroidsafeMethodModel && o2 instanceof DroidsafeMethodModel) {
-              DroidsafeMethodModel m1 = (DroidsafeMethodModel) o1;
-              DroidsafeMethodModel m2 = (DroidsafeMethodModel) o2;
+            } else if (o1 instanceof MethodModel && o2 instanceof MethodModel) {
+              MethodModel m1 = (MethodModel) o1;
+              MethodModel m2 = (MethodModel) o2;
               result = m1.getMethodName().compareTo(m2.getMethodName());
               if (result == 0) {
                 result = m1.getClassName().compareTo(m2.getClassName());

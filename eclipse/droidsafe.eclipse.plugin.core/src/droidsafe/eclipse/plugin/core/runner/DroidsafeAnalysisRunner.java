@@ -45,7 +45,7 @@ import droidsafe.android.system.API;
 import droidsafe.android.system.Permissions;
 import droidsafe.eclipse.plugin.core.Activator;
 import droidsafe.eclipse.plugin.core.preferences.PreferenceConstants;
-import droidsafe.eclipse.plugin.core.specmodel.DroidsafeSecuritySpecModel;
+import droidsafe.eclipse.plugin.core.specmodel.SecuritySpecModel;
 import droidsafe.eclipse.plugin.core.util.DroidsafePluginUtilities;
 import droidsafe.main.Config;
 import droidsafe.main.SootConfig;
@@ -277,8 +277,8 @@ public class DroidsafeAnalysisRunner {
 
       if (spec != null) {
         generateMarkersForSecuritySpecification(spec);
-        DroidsafeSecuritySpecModel securitySpecModel = new DroidsafeSecuritySpecModel(spec);
-        DroidsafeSecuritySpecModel.serializeSpecToFile(securitySpecModel, Config.v().APP_ROOT_DIR);
+        SecuritySpecModel securitySpecModel = new SecuritySpecModel(spec);
+        SecuritySpecModel.serializeSpecToFile(securitySpecModel, Config.v().APP_ROOT_DIR);
       }
 
     } else if (Config.v().target.equals("confcheck")) {
