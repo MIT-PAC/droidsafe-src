@@ -79,7 +79,7 @@ public class SootUtils {
       return new Integer(((IntConstant)sootValue).value);
     } else if (sootValue instanceof StringConstant) {
       String string = new String(((StringConstant)sootValue).value);
-      droidsafe.model.java.lang.String droidsafeString = new droidsafe.model.java.lang.String();
+      droidsafe.analyses.attr.models.java.lang.String droidsafeString = new droidsafe.analyses.attr.models.java.lang.String();
       droidsafeString.incorporateString(string);
       return droidsafeString;
     } else if (sootValue instanceof LongConstant) {
