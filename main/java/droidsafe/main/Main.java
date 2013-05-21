@@ -14,7 +14,7 @@ import soot.SootMethod;
 import droidsafe.analyses.attr.AttributeModeling;
 import droidsafe.analyses.GeoPTA;
 import droidsafe.analyses.RCFGToSSL;
-import droidsafe.analyses.attr.RequiredModeling;
+import droidsafe.analyses.RequiredModeling;
 import droidsafe.analyses.infoflow.InformationFlowAnalysis;
 import droidsafe.analyses.infoflow.InjectedSourceFlows;
 import droidsafe.analyses.infoflow.InterproceduralControlFlowGraph;

@@ -1,4 +1,4 @@
-package droidsafe.analyses.attr;
+package droidsafe.analyses;
 
 import java.io.File;
 import java.io.FileWriter;
@@ -18,6 +18,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import droidsafe.analyses.GeoPTA;
+import droidsafe.analyses.attr.AttributeModeling;
 import droidsafe.analyses.rcfg.OutputEvent;
 import droidsafe.analyses.rcfg.RCFG;
 import droidsafe.analyses.rcfg.RCFGNode;
@@ -52,7 +53,8 @@ import soot.util.queue.QueueReader;
  *
  */
 public class RequiredModeling {
-    private final static Logger logger = LoggerFactory.getLogger(RequiredModeling.class);
+    /** logger field */
+    private static final Logger logger = LoggerFactory.getLogger(RequiredModeling.class);
 
     /**
      * Run various checks the API modeling (concrete semantics).  Dump the results to 
