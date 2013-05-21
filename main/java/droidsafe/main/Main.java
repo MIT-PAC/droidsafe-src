@@ -75,10 +75,6 @@ public class Main {
 
         Resources.resolveManifest(Config.v().APP_ROOT_DIR);
 
-        logger.info("Resolving String Constants");
-        ResolveStringConstants.run(Config.v().APP_ROOT_DIR);
-
-
         logger.info("Finding entry points in user code.");
         EntryPoints.v().calculate();
 
@@ -146,14 +142,14 @@ public class Main {
 
         //logger.info("Incorporating XML layout information");
         // IntegrateXMLLayouts.run();
-
-        //logger.info("Specializing API Calls");
-        // APICallSpecialization.run();
+        
+        logger.info("Resolving String Constants");
+        ResolveStringConstants.run(Config.v().APP_ROOT_DIR);
 
         // all transforms should be done by here!
-        // logger.info("Restarting PTA...");
-        // GeoPTA.release();
-        // GeoPTA.run();
+        logger.info("Restarting PTA...");
+        GeoPTA.release();
+        GeoPTA.run();
 
         // write jimple txt files for all classes so we can analzye them
         // all transforms should be done by here.
@@ -162,8 +158,7 @@ public class Main {
         }
 
         RCFG.generate();
-        logger.info("Ending DroidSafe Run");
-
+       
         logger.info("Starting Attribute Modeling");
         AttributeModeling.run();
         logger.info("Finished Attribute Modeling");
