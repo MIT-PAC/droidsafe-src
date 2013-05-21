@@ -276,10 +276,6 @@ public class Resources {
 
 		// Read in the resource id to name map
 		read_resources();
-
-		// Add This point, all resrouces will have been parsed and loaded
-		ResourcesSoot.v().setNumberToStringMap(resource_info);
-		ResourcesSoot.v().setStringToValueSetMap(stringNameToRStringSet); 
 	}
 
 	/**
@@ -287,9 +283,20 @@ public class Resources {
 	 * 		This method builds internal UI Objects for use in soot analysis
 	 */
 	public void buildXMLSootObjects() {
+	    // Add This point, all resrouces will have been parsed and loaded
+		ResourcesSoot.v().setNumberToStringMap(resource_info);
+		ResourcesSoot.v().setStringToValueSetMap(stringNameToRStringSet); 
 		for (Layout layout: layouts) {
-			layout.buildUIObjects(stringNameToRStringSet);
+		    // build all getView_ID for all possible values of IDs
+			layout.buildViews(stringNameToRStringSet);
+			
+			// build the method that instantiates view objects
+			Integer layoutNumericId = resource_info.inverse().get(layout.view.id);
+			if (layoutNumericId != null)
+			    layout.buildLayoutInit();
 		}
+        // Anything other than view need to be built and injected???
+
 	}
 
 	/**
@@ -453,10 +460,12 @@ public class Resources {
 
 						String resource_value = component + "." + field.getName();
 						if (resource_info.get(value) != null) {
-							logger.warn("resource_info.put({}, {}) ALREADY existed ", value, resource_value); 
+							logger.warn("resource_info.put({}, {}) ALREADY existed ", 
+							            String.format("%08x", value), resource_value); 
 						}
 						else {
-							logger.info("ADDING resource_info.put({}, {}) ", value, resource_value); 
+							logger.info("ADDING resource_info.put({}, {}) ", 
+							           String.format("%08x", value), resource_value); 
 							resource_info.put(value, resource_value);
 						}
 					}
@@ -530,6 +539,12 @@ public class Resources {
 	void process_view (Layout layout, View view) throws Exception {
 
 		logger.info ("  processing view {}.{}", layout.name, view.name);
+		String id = view.get_attr("id");
+		
+		if (id == null) {
+		    logger.info("No id for view {} ", view.name);
+		}
+		
 		if ((view.on_click != null) && (layout.activities.isEmpty())) {
 			// It seems reasonable that apps may have unused layout files
 			logger.info ("Warning: on click handler {} in layout {} ignored, "
@@ -548,6 +563,9 @@ public class Resources {
 				try {
 					//
 					String signature = "<" + cn + ": void " + view.on_click + "(android.view.View)>";
+					view.on_click = signature;
+					logger.debug("Replace onclick signature {} ", view.on_click);
+					
 					SootMethod method = SootUtils.resolveMethod(cn, signature);
 					//cn.getMethod(view.on_click, viewArg);
 
@@ -561,17 +579,17 @@ public class Resources {
 					logger.info("Putting: {} {} {}\n", layout, view, method);
 					handlers.get(layout).put(view, method);	
 					allHandlers.add(method);
-
+					
 					// Its not entirely clear why we are processing the on_click entry
 					// point itself.  What are we looking for here?
 
 					process_entry (cn, method.getSubSignature());
 				} catch (MissingElementException mee) {
-					logger.info ("Warning, Error processing on click handler {} in "
+					logger.warn("Warning, Error processing on click handler {} in "
 							+ "layout {}: {}", view.on_click, layout.name, 
 							mee.getMessage());
 				} catch (Exception e) {
-					logger.info("Problem resolving onclick handler...");
+					logger.warn("Problem resolving onclick handler...");
 				}
 			}
 		}
@@ -652,13 +670,16 @@ public class Resources {
 			activity.content_views.add(new Integer(resource_id));
 			logger.info ("  setContentView ({} -> {})", resource_id, 
 					resource_info.get(resource_id));
+
 			String resource_name = resource_info.get(resource_id);
 			if (resource_name == null) 
 				bad_idiom (cn, m, "Resource id %08X not found", resource_id);
+
 			String layout_name = resource_name.replace ("layout.", "");
 			Layout layout = find_layout_by_name (layout_name);
 			if (layout == null) 
 				bad_idiom (cn, m, "No layout named %s", layout);
+
 			layout.activities.add(activity);
 
 			// Remember the class that instantiated this view/layout
@@ -698,7 +719,6 @@ public class Resources {
 	 * Returns the layout named layout_name.  Returns null if there is none
 	 */
 	Layout find_layout_by_name (String layout_name) {
-
 		for (Layout l : layouts) {
 			//System.out.println(l.name);
 			if (layout_name.equals (l.name))

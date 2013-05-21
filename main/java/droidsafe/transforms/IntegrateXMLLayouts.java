@@ -76,7 +76,7 @@ public class IntegrateXMLLayouts extends BodyTransformer {
 			activityClass =  Scene.v().getSootClass("android.app.Activity");
 			javaObjClass  =  Scene.v().getSootClass("java.lang.Object");
 
-			// setContentView = Scene.v().getMethod("<android.app.Activity: void setContentView(int)>");
+			setContentView = Scene.v().getMethod("<android.app.Activity: void setContentView(int)>");
 			//dumpActivities();
 		}
 		
@@ -102,6 +102,19 @@ public class IntegrateXMLLayouts extends BodyTransformer {
 			}
 		}
 
+
+        /**
+         * relaceSetContentView:
+         *  replacing setContentView with calls to method that do allocation of UI objects
+         */
+		void replaceSetContentView(StmtBody stmtBody, Stmt stmt) {
+            
+        }
+
+        /**
+         * replaceFindViewById:
+         *    replace findViewById invocation statement with replacement code that call getView_<id>
+         */
 		void replaceFindViewById(StmtBody stmtBody, Stmt stmt) {
 
 			// get body's unit as a chain
@@ -128,7 +141,7 @@ public class IntegrateXMLLayouts extends BodyTransformer {
 
 				if (curBox instanceof ImmediateBox) {
 					immediateBox = curBox;
-					logger.info("immediateBox {} {}",
+					logger.debug("immediateBox {} {}",
 							curBox.getValue().toString(),
 							curBox.getValue().getType().toString()
 							);
@@ -177,7 +190,7 @@ public class IntegrateXMLLayouts extends BodyTransformer {
 			Stmt lookupStmt = Jimple.v().newAssignStmt(variableBox.getValue(), invokeExpr);
 
 			units.swapWith(stmt, lookupStmt);
-
+			
 			// units.insertAfter(
 			// 	Jimple.v().newAssignStmt(variableBox.getValue(), tmpView), lookupStmt); 
 
@@ -236,6 +249,10 @@ public class IntegrateXMLLayouts extends BodyTransformer {
 							//replacement ...
 							replaceFindViewById(stmtBody, stmt);
 						}
+
+                        if (setContentView.equals(resolved)) {
+							logger.warn(String.format("Found setContentView(): %s\n", stmt));
+                        }
 					}
 				}
 				
