@@ -6,7 +6,10 @@ import java.io.IOException;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.LinkedHashSet;
+import java.util.List;
+import java.util.LinkedList;
 import java.util.Map;
+import java.lang.*;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -14,20 +17,49 @@ import org.slf4j.LoggerFactory;
 import soot.Body;
 import soot.BodyTransformer;
 import soot.RefType;
+import soot.Type;
 import soot.Scene;
 import soot.SootClass;
 import soot.SootMethod;
+import soot.Local;
+import soot.UnitBox;
+import soot.Unit;
+import soot.ValueBox;
+import soot.SootField;
+import soot.Value;
+import soot.NullType;
+import soot.jimple.NullConstant;
+import soot.SootMethodRef; 
+
 import soot.jimple.InstanceInvokeExpr;
 import soot.jimple.InvokeExpr;
 import soot.jimple.Stmt;
 import soot.jimple.StmtBody;
+import soot.jimple.ArrayRef;
+import soot.jimple.InvokeExpr;
+import soot.jimple.FieldRef;
 import soot.jimple.spark.pag.AllocNode;
+import soot.jimple.Jimple;
+import soot.jimple.NewExpr;
+import soot.jimple.Expr;
+import soot.jimple.StringConstant;
+
+import soot.jimple.internal.JimpleLocalBox;
+import soot.jimple.internal.ImmediateBox;
+import soot.jimple.internal.VariableBox;
+
 import soot.util.Chain;
+import soot.util.HashChain;
+import soot.PatchingChain;
+
 import droidsafe.analyses.GeoPTA;
 import droidsafe.android.app.Project;
 import droidsafe.transforms.APICallSpecialization.CallSpecialization;
 import droidsafe.utils.CannotFindMethodException;
 import droidsafe.utils.SootUtils;
+import droidsafe.android.app.resources.ResourcesSoot;
+
+import com.google.common.collect.HashBiMap;
 
 public class IntegrateXMLLayouts extends BodyTransformer {
 		private final static Logger logger = LoggerFactory.getLogger(IntegrateXMLLayouts.class);
@@ -35,9 +67,17 @@ public class IntegrateXMLLayouts extends BodyTransformer {
 		private static IntegrateXMLLayouts v;
 		
 		private SootMethod findViewById;
+		private SootMethod setContentView;
+		private SootClass  activityClass;
+		private SootClass  javaObjClass;
 		
 		public IntegrateXMLLayouts() {
-			findViewById = Scene.v().getMethod("<android.app.Activity: android.view.View findViewById(int)>");
+			findViewById  =  Scene.v().getMethod("<android.app.Activity: android.view.View findViewById(int)>");
+			activityClass =  Scene.v().getSootClass("android.app.Activity");
+			javaObjClass  =  Scene.v().getSootClass("java.lang.Object");
+
+			setContentView = Scene.v().getMethod("<android.app.Activity: void setContentView(int)>");
+			//dumpActivities();
 		}
 		
 		/**
@@ -62,18 +102,168 @@ public class IntegrateXMLLayouts extends BodyTransformer {
 			}
 		}
 
-		protected void dumpStmtBody(StmtBody stmtBody) {
-            //System.out.printf("Dumping body %s \n", stmtBody);
-			System.out.printf("Dumping statement body ");
 
+        /**
+         * relaceSetContentView:
+         *  replacing setContentView with calls to method that do allocation of UI objects
+         */
+		void replaceSetContentView(StmtBody stmtBody, Stmt stmt) {
             // get body's unit as a chain
-			Chain units = stmtBody.getUnits();
-			Iterator stmtIt = units.snapshotIterator();
+			Chain<Unit> units = stmtBody.getUnits();
 
-            while (stmtIt.hasNext()) {
-				Stmt stmt = (Stmt)stmtIt.next();
-                System.out.printf("%s \n", stmt);
-            }
+			List<ValueBox> boxList = stmt.getUseAndDefBoxes();
+			Iterator<ValueBox> it = boxList.iterator();
+
+			ValueBox localBox = null;
+			ValueBox immediateBox = null;
+			ValueBox variableBox = null;
+
+			while(it.hasNext()) {
+				ValueBox curBox = it.next();
+				/* using internal type is not ideal, but seems easiest */
+				if (curBox instanceof JimpleLocalBox) {
+					localBox = curBox; 
+					logger.debug("localBox {} {}",
+							curBox.getValue().toString(),
+							curBox.getValue().getType().toString()
+							);
+
+				}
+
+				if (curBox instanceof ImmediateBox) {
+					immediateBox = curBox;
+					logger.debug("immediateBox {} {}",
+							curBox.getValue().toString(),
+							curBox.getValue().getType().toString()
+							);
+				}
+
+				logger.debug("variableBox {}:{}:{}",
+						curBox.getValue().getType().toString(),
+						curBox.toString(),
+						curBox.getValue().toString());
+
+			}
+
+			if (localBox == null || immediateBox == null) {
+				logger.warn("Couldnot get boxes for replacement {}, {}, {}",
+				            localBox, immediateBox, variableBox); 
+				return;
+			}
+
+			Integer intId;
+			
+			try {
+				intId = new Integer(immediateBox.getValue().toString());
+			}
+			catch (Exception ex) {
+				logger.warn("stmt {} ", stmt);
+				logger.warn("Couldn't replace findViewById() NOT an integer constant");
+				return;
+			}
+
+			SootMethod method = ResourcesSoot.v().lookupInitLayout_ID(intId);
+
+			if (method == null) {
+				logger.warn("NOT replacing {}, id={} ", stmt, String.format("0x%x", intId));
+				return;
+			}
+
+			Expr invokeExpr = Jimple.v().newStaticInvokeExpr(method.makeRef(), localBox.getValue()); 
+			Stmt invokeStmt = Jimple.v().newInvokeStmt(invokeExpr);
+
+			units.swapWith(stmt, invokeStmt);
+			
+			// units.insertAfter(
+			// 	Jimple.v().newAssignStmt(variableBox.getValue(), tmpView), lookupStmt); 
+
+			logger.info("replacing {} ", stmt);
+			logger.info("with {} ", invokeStmt);
+        }
+
+        /**
+         * replaceFindViewById:
+         *    replace findViewById invocation statement with replacement code that call getView_<id>
+         */
+		void replaceFindViewById(StmtBody stmtBody, Stmt stmt) {
+
+			// get body's unit as a chain
+			Chain<Unit> units = stmtBody.getUnits();
+
+			List<ValueBox> boxList = stmt.getUseAndDefBoxes();
+			Iterator<ValueBox> it = boxList.iterator();
+
+			ValueBox localBox = null;
+			ValueBox immediateBox = null;
+			ValueBox variableBox = null;
+
+			while(it.hasNext()) {
+				ValueBox curBox = it.next();
+				/* using internal type is not ideal, but seems easiest */
+				if (curBox instanceof JimpleLocalBox) {
+					localBox = curBox; 
+					logger.debug("localBox {} {}",
+							curBox.getValue().toString(),
+							curBox.getValue().getType().toString()
+							);
+
+				}
+
+				if (curBox instanceof ImmediateBox) {
+					immediateBox = curBox;
+					logger.debug("immediateBox {} {}",
+							curBox.getValue().toString(),
+							curBox.getValue().getType().toString()
+							);
+				}
+
+				if (curBox instanceof VariableBox) {
+					variableBox = curBox;
+					logger.debug("variableBox {} {}",
+							curBox.getValue().toString(),
+							curBox.getValue().getType().toString());
+				}
+
+				logger.debug("variableBox {}:{}:{}",
+						curBox.getValue().getType().toString(),
+						curBox.toString(),
+						curBox.getValue().toString());
+
+			}
+
+			if (localBox == null || immediateBox == null || variableBox == null) {
+				logger.warn("Couldnot get boxes for replacement "); 
+				return;
+			}
+
+			Integer intId;
+			
+			try {
+				intId = new Integer(immediateBox.getValue().toString());
+			}
+			catch (Exception ex) {
+				logger.warn("stmt {} ", stmt);
+				logger.warn("Couldn't replace findViewById() NOT an integer constant");
+				return;
+			}
+
+			SootMethod getViewMethod = ResourcesSoot.v().lookupGetView_ID(intId);
+
+			if (getViewMethod == null) {
+				logger.warn("NOT replacing {}, id={} ", stmt, String.format("0x%x", intId));
+				return;
+			}
+
+			Expr invokeExpr = Jimple.v().newStaticInvokeExpr(getViewMethod.makeRef(), localBox.getValue()); 
+			Stmt lookupStmt = Jimple.v().newAssignStmt(variableBox.getValue(), invokeExpr);
+
+			units.swapWith(stmt, lookupStmt);
+			
+			// units.insertAfter(
+			// 	Jimple.v().newAssignStmt(variableBox.getValue(), tmpView), lookupStmt); 
+
+			logger.info("replacing {} ", stmt);
+			logger.info("with {} ", lookupStmt);
 		}
 
 		/**
@@ -89,8 +279,6 @@ public class IntegrateXMLLayouts extends BodyTransformer {
 			// mutate the chain when iterating over it.
 			Iterator stmtIt = units.snapshotIterator();
 
-            boolean hasViewById = false;
-
 			while (stmtIt.hasNext()) {
 				Stmt stmt = (Stmt)stmtIt.next();
 
@@ -105,31 +293,121 @@ public class IntegrateXMLLayouts extends BodyTransformer {
 				InstanceInvokeExpr iie = SootUtils.getInstanceInvokeExpr(stmt);
 				if (iie != null) {
 					for (AllocNode node : GeoPTA.v().getPTSetContextIns(iie.getBase())) {
+
+						Type nodeType = node.getType();
+
+						if (!(nodeType instanceof RefType)) {
+							logger.info("Skipping type {} ", nodeType);
+							continue;
+						}
+
 						SootClass allocClz = ((RefType)node.getType()).getSootClass();
-						
 						SootMethod resolved = null; 
 						try {
 							resolved = SootUtils.
 								resolveConcreteDispatch(allocClz, iie.getMethod());
 						
 						} catch (CannotFindMethodException e) {
+							
 							continue;
 						}
 						
 						if (findViewById.equals(resolved))  {
-                            hasViewById = true;
-							System.out.printf("Found findViewById(): %s\n", stmt);
-							System.out.printf("Found findViewById(): method %s\n", resolved);
 							logger.info(String.format("Found findViewById(): %s\n", stmt));
 							//replacement ...
+							replaceFindViewById(stmtBody, stmt);
 						}
+
+                        if (setContentView.equals(resolved)) {
+							logger.info(String.format("Found setContentView(): %s\n", stmt));
+							replaceSetContentView(stmtBody, stmt);
+                        }
 					}
 				}
 				
 			}
+		}
 
-            if (hasViewById) {
-                dumpStmtBody(stmtBody);
+		/************************************************************
+		* Helper methods
+		*************************************************************/
+		protected boolean isActivitySubclass(SootClass sootClass) {
+			SootClass parentClass = sootClass.getSuperclass();
+
+			while (parentClass != javaObjClass) {
+				if (parentClass == activityClass)
+					return true;
+
+				parentClass = parentClass.getSuperclass();
+			}
+			return false;
+		}
+
+		// debug function
+		protected void dumpActivities() {
+			String[] androidActivityNames = new String[] {
+					"android.app.Activity", 
+					"android.app.ActivityGroup", 
+					"android.app.NativeActivity", 
+					"android.app.AliasActivity", 
+					"android.app.ExpandableListActivity",
+					"android.app.TabActivity",
+					"android.app.ListActivity",
+					"android.app.LauncherActivity",
+					"android.preference.PreferenceActivity",
+					"android.accounts.AccountAuthenticatorActivity"
+					 }; 
+
+			HashMap<SootClass, SootClass> androidActivityMap = new HashMap<SootClass, SootClass>();
+
+			for (int i = 0; i < androidActivityNames.length; i++) {
+				String className = androidActivityNames[i];
+				SootClass sc = Scene.v().getSootClass(className);
+				androidActivityMap.put(sc, sc);
+			}
+				 
+			for (SootClass clz : Scene.v().getClasses()) {
+				try {
+					if (androidActivityMap.get(clz) != null)
+						continue;
+
+					SootClass superClz = clz.getSuperclass();
+
+					if (androidActivityMap.get(superClz) != null) {
+						logger.warn("Found {} a child class of {} ", 
+									clz.toString(), superClz.toString());
+					}
+				} catch (Exception ex) {
+					continue;
+				}
+			}
+
+		}
+
+		// debug function
+		protected void dumpStmtBody(StmtBody stmtBody) {
+            //System.out.printf("Dumping body %s \n", stmtBody);
+			System.out.printf("Dumping statement body ");
+
+            // get body's unit as a chain
+			Chain units = stmtBody.getUnits();
+
+			Chain locals = stmtBody.getLocals();
+
+			Iterator localIt = locals.snapshotIterator();
+			while (localIt.hasNext()) {
+				Local local = (Local)localIt.next();
+				System.out.printf("%s %s\n", local.getType(), local.getName());
+			}
+
+			Iterator stmtIt = units.snapshotIterator();
+
+				
+            while (stmtIt.hasNext()) {
+				Stmt stmt = (Stmt)stmtIt.next();
+                System.out.printf("%s \n", stmt);
             }
 		}
+
+
 }

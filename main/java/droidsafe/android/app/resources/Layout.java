@@ -1,6 +1,7 @@
 package droidsafe.android.app.resources;
 
 import java.util.*;
+import java.util.LinkedList;
 import java.io.*;
 import org.w3c.dom.*;
 
@@ -15,6 +16,8 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import soot.SootClass;
+
+import droidsafe.android.app.resources.ResourcesSoot;
 
 /**
  * Reads layout XML files  and creates a matching java tree.
@@ -36,6 +39,11 @@ public class Layout {
 
   /** The classes (if any) that instantiates this view (with setContentView) **/
   Set<SootClass> classes = new LinkedHashSet<SootClass>();
+  
+  /** map to keep frequency of ID usage within the layout */
+  Map<String, Integer> idFreqMap = new HashMap<String, Integer>();
+  
+  private final String NONAME = "NoName";
 
   public Layout (File layout_source) throws Exception {
 
@@ -55,39 +63,105 @@ public class Layout {
 
   }
 
-  public void buildUIObjects(HashMap<String, RString> stringMap) {
-		logger.warn("Dumping Layout.view info ");
-		logger.warn("View " + view);
+  /** get full Id that matches with resource parsing of R.java */
+  private String getFullName() {
+      return "layout." + name;
+  }
+  
+  private void buildOneView(View cview) {
+      logger.debug("====================");
+	  logger.debug("buidOneView ");
+	  logger.debug("View " + cview);
+	  logger.debug("====================");
+	  logger.debug("");
 
-		for (String key: stringMap.keySet()) {
-			logger.warn("string key: " + key); 
-		}
+	  if (cview.id != null) {
+	     logger.info("Normalizing cview.id {}", cview.id);
+	     cview.id = cview.id.replace("@android:", "");
+	     cview.id = cview.id.replace("@+id/", "");
+	     if (!cview.id.startsWith("id."))
+	         cview.id = String.format("id.%s", cview.id);
+	     
+	     logger.info("cview id {} ", cview.id);
+	     
+	     
+	  }
 
-		for (View cview: view.children) { 
-			logger.warn("cview: " + cview); 
-			String id = cview.get_attr("id");
-			String text = cview.get_attr("text");
+	  Integer count = 0;
+	  if (cview.id == null) {
+	      count = idFreqMap.get(NONAME);
+	      count++;
+	      idFreqMap.put(NONAME,  count);
+	      String newId = String.format("id.%s_%s%03d", name, NONAME, count);
+	      cview.id = newId;
+	      logger.info("cview {} is no ID, create a new One {} ", cview.name, cview.id);
+	      ResourcesSoot.v().addNewNumberToStringEntry(newId);
+	  } 
+	  else if (idFreqMap.containsKey(cview.id)) {
+	      count = idFreqMap.get(cview.id);
+	      count++;
+	      idFreqMap.put(cview.id,  count);
+	      
+	      String newId = String.format("%s_%s_Dup%03d", name, cview.id, count);
+	      
+	      logger.info("cview id {} is a duplicate create a new One {} ", cview.name, newId);
+	      cview.id = newId;
+	      // add entry to allow id lookup later
+	      ResourcesSoot.v().addNewNumberToStringEntry(newId);
+	  }
+	  
+	  if (!idFreqMap.containsKey(cview.id))
+	         idFreqMap.put(cview.id, Integer.valueOf(0));
+	      
+	  Map<String, String> attrs = cview.getAttributes();
 
-			if (id != null)
-				logger.warn("  id -  " + id);
+	  if (cview.id != null && cview.name != null && attrs != null) {
+		  logger.debug("addView({}, {} ", cview.name, cview.id);
+		  ResourcesSoot.v().addView(cview.name,  cview.id, attrs);
+	  }
+  }
 
-			if (text != null) {
-				logger.warn("  text -  " + text);
-				int index = text.indexOf("/");
-				if (text.startsWith("@") && index > 0) {
-					RString rString = stringMap.get(text.substring(index + 1));
-					logger.warn("  value=" + rString.value);
-					text = rString.value;
-				}
-			}
-			
-			if (view.name.equals("Button")) {
-				logger.warn("Button object instatiation ");
-			}
-			if (view.name.equals("TextEdit")) {
-				logger.warn("TextEdit object instatiation ");
-			}
-		}
+
+  /*
+  * Internal version to build UIobjects of all views recursively
+  */
+  private void buildViews(View myView, HashMap<String, Set<RString>> stringListMap) {
+	  
+	  for (View cview: myView.children) { 
+		  buildViews(cview, stringListMap);
+	  }
+	 buildOneView(myView);
+  }
+
+  /**
+  * build UI views
+  *		
+  */
+  public void buildViews(HashMap<String, Set<RString>> stringListMap) {
+      idFreqMap.put(NONAME, Integer.valueOf(0));
+	  buildViews(view, stringListMap);
+  }
+  
+  
+  /**
+   * buildLayoutInit
+   */
+  public void buildInitLayout() {
+      ResourcesSoot.v().createInitLayout_ID(getFullName());
+      buildInitLayout(view);
+  }
+  
+  /**
+   * recursively LayoutInit
+   * @param myView
+   */
+  private void buildInitLayout(View myView) {
+       for (View cview: myView.children) { 
+		  buildInitLayout(cview);
+	  } 
+      logger.info("Trying to add view {} ", myView.id);
+      logger.debug("myView: {}", myView);
+      ResourcesSoot.v().addViewAllocToInitLayout_ID(myView.id);
   }
 
   public class View extends BaseElement {
@@ -127,9 +201,15 @@ public class Layout {
       return out + " " + children;
     }
     
+    /** get Id of the view */
     public String getID() {
     	return id;
     } 
+    
+    /** set new Id */
+    public void setID(String newId) {
+        id = newId;
+    }
 
     /** Return the resource name that corresponds to the ID **/
     public String get_resource_name() {
