@@ -337,6 +337,9 @@ public class ResourcesSoot {
             return false;
         }
         
+        //logger.warn("method {} ", method);
+        //logger.warn("mArgContext {}", mArgContext);
+        
         Expr invokeExpr = Jimple.v().newStaticInvokeExpr(method.makeRef(), mArgContext); 
         Stmt stmt = Jimple.v().newInvokeStmt(invokeExpr);
         
@@ -380,7 +383,8 @@ public class ResourcesSoot {
     *   Method to look up the getView_2222()
     */
     public SootMethod lookupGetView_ID(Integer intId) {
-        logger.info("calling lookupGetView_ID {}) ", intId.toString());
+        logger.info("calling lookupGetView_ID {}) ", 
+                    String.format("%08x", intId));
         UISootObject obj = uiObjectTable.get(intId);    
         if (obj == null) {
             logger.warn("Object for id 0x{} info is not available", 

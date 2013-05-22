@@ -39,6 +39,11 @@ public class Layout {
 
   /** The classes (if any) that instantiates this view (with setContentView) **/
   Set<SootClass> classes = new LinkedHashSet<SootClass>();
+  
+  /** map to keep frequency of ID usage within the layout */
+  Map<String, Integer> idFreqMap = new HashMap<String, Integer>();
+  
+  private final String NONAME = "NoName";
 
   public Layout (File layout_source) throws Exception {
 
@@ -58,26 +63,61 @@ public class Layout {
 
   }
 
-  private void buildOneUIObject(View cview) {
-	  logger.debug("cview: " + cview); 
-	  String id = cview.get_attr("id");
-	  logger.debug("cview.name <{}>, id={}" , cview.name, id);
+  /** get full Id that matches with resource parsing of R.java */
+  private String getFullName() {
+      return "layout." + name;
+  }
+  
+  private void buildOneView(View cview) {
+      logger.debug("====================");
+	  logger.debug("buidOneView ");
+	  logger.debug("View " + cview);
+	  logger.debug("====================");
+	  logger.debug("");
 
-	  String text = cview.get_attr("text");
-	  String idName = null;
-
-	  if (id != null) {
-		  id = id.replace("@android:", "");
-		  idName = id.substring(id.indexOf("+") + 1);
-		  idName = idName.replace('/', '.');
-		  logger.debug("  id {}:{} " ,id, idName);
+	  if (cview.id != null) {
+	     logger.info("Normalizing cview.id {}", cview.id);
+	     cview.id = cview.id.replace("@android:", "");
+	     cview.id = cview.id.replace("@+id/", "");
+	     if (!cview.id.startsWith("id."))
+	         cview.id = String.format("id.%s", cview.id);
+	     
+	     logger.info("cview id {} ", cview.id);
+	     
+	     
 	  }
 
+	  Integer count = 0;
+	  if (cview.id == null) {
+	      count = idFreqMap.get(NONAME);
+	      count++;
+	      idFreqMap.put(NONAME,  count);
+	      String newId = String.format("id.%s_%s%03d", name, NONAME, count);
+	      cview.id = newId;
+	      logger.info("cview {} is no ID, create a new One {} ", cview.name, cview.id);
+	      ResourcesSoot.v().addNewNumberToStringEntry(newId);
+	  } 
+	  else if (idFreqMap.containsKey(cview.id)) {
+	      count = idFreqMap.get(cview.id);
+	      count++;
+	      idFreqMap.put(cview.id,  count);
+	      
+	      String newId = String.format("%s_%s_Dup%03d", name, cview.id, count);
+	      
+	      logger.info("cview id {} is a duplicate create a new One {} ", cview.name, newId);
+	      cview.id = newId;
+	      // add entry to allow id lookup later
+	      ResourcesSoot.v().addNewNumberToStringEntry(newId);
+	  }
+	  
+	  if (!idFreqMap.containsKey(cview.id))
+	         idFreqMap.put(cview.id, Integer.valueOf(0));
+	      
 	  Map<String, String> attrs = cview.getAttributes();
 
-	  if (idName != null && cview.name != null && attrs != null) {
-		  logger.debug("addView({}, {} ", cview.name, idName);
-		  ResourcesSoot.v().addView(cview.name,  idName, attrs);
+	  if (cview.id != null && cview.name != null && attrs != null) {
+		  logger.debug("addView({}, {} ", cview.name, cview.id);
+		  ResourcesSoot.v().addView(cview.name,  cview.id, attrs);
 	  }
   }
 
@@ -85,25 +125,43 @@ public class Layout {
   /*
   * Internal version to build UIobjects of all views recursively
   */
-  private void buildUIObjects(View myView, HashMap<String, Set<RString>> stringListMap) {
-	  logger.debug("====================");
-	  logger.debug("buidUIObjects for Layout ");
-	  logger.debug("View " + view);
-	  logger.debug("====================");
-	  logger.debug("");
-
+  private void buildViews(View myView, HashMap<String, Set<RString>> stringListMap) {
+	  
 	  for (View cview: myView.children) { 
-		  buildUIObjects(cview, stringListMap);
+		  buildViews(cview, stringListMap);
 	  }
-	  buildOneUIObject(myView);
+	 buildOneView(myView);
   }
 
   /**
-  * buildUIObjects:
+  * build UI views
   *		
   */
-  public void buildUIObjects(HashMap<String, Set<RString>> stringListMap) {
-	  buildUIObjects(view, stringListMap);
+  public void buildViews(HashMap<String, Set<RString>> stringListMap) {
+      idFreqMap.put(NONAME, Integer.valueOf(0));
+	  buildViews(view, stringListMap);
+  }
+  
+  
+  /**
+   * buildLayoutInit
+   */
+  public void buildInitLayout() {
+      ResourcesSoot.v().createInitLayout_ID(getFullName());
+      buildInitLayout(view);
+  }
+  
+  /**
+   * recursively LayoutInit
+   * @param myView
+   */
+  private void buildInitLayout(View myView) {
+       for (View cview: myView.children) { 
+		  buildInitLayout(cview);
+	  } 
+      logger.info("Trying to add view {} ", myView.id);
+      logger.debug("myView: {}", myView);
+      ResourcesSoot.v().addViewAllocToInitLayout_ID(myView.id);
   }
 
   public class View extends BaseElement {
@@ -143,9 +201,15 @@ public class Layout {
       return out + " " + children;
     }
     
+    /** get Id of the view */
     public String getID() {
     	return id;
     } 
+    
+    /** set new Id */
+    public void setID(String newId) {
+        id = newId;
+    }
 
     /** Return the resource name that corresponds to the ID **/
     public String get_resource_name() {

@@ -293,7 +293,7 @@ public class Resources {
 			// build the method that instantiates view objects
 			Integer layoutNumericId = resource_info.inverse().get(layout.view.id);
 			if (layoutNumericId != null)
-			    layout.buildLayoutInit();
+			    layout.buildInitLayout();
 		}
         // Anything other than view need to be built and injected???
 

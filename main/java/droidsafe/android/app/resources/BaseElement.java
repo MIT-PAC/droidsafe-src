@@ -83,7 +83,7 @@ public class BaseElement {
 			  nodeName = nodeName.substring("android:".length());
 		  }
 		  attributeMap.put(nodeName, node.getNodeValue());
-		  logger.warn("node {}: {}=>{}", ind, nodeName, node.getNodeValue());
+		  logger.debug("node {}: {}=>{}", ind, nodeName, node.getNodeValue());
 	  }
 	  return attributeMap;
   }
