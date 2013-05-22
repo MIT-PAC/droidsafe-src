@@ -108,7 +108,77 @@ public class IntegrateXMLLayouts extends BodyTransformer {
          *  replacing setContentView with calls to method that do allocation of UI objects
          */
 		void replaceSetContentView(StmtBody stmtBody, Stmt stmt) {
-            
+            // get body's unit as a chain
+			Chain<Unit> units = stmtBody.getUnits();
+
+			List<ValueBox> boxList = stmt.getUseAndDefBoxes();
+			Iterator<ValueBox> it = boxList.iterator();
+
+			ValueBox localBox = null;
+			ValueBox immediateBox = null;
+			ValueBox variableBox = null;
+
+			while(it.hasNext()) {
+				ValueBox curBox = it.next();
+				/* using internal type is not ideal, but seems easiest */
+				if (curBox instanceof JimpleLocalBox) {
+					localBox = curBox; 
+					logger.debug("localBox {} {}",
+							curBox.getValue().toString(),
+							curBox.getValue().getType().toString()
+							);
+
+				}
+
+				if (curBox instanceof ImmediateBox) {
+					immediateBox = curBox;
+					logger.debug("immediateBox {} {}",
+							curBox.getValue().toString(),
+							curBox.getValue().getType().toString()
+							);
+				}
+
+				logger.debug("variableBox {}:{}:{}",
+						curBox.getValue().getType().toString(),
+						curBox.toString(),
+						curBox.getValue().toString());
+
+			}
+
+			if (localBox == null || immediateBox == null) {
+				logger.warn("Couldnot get boxes for replacement {}, {}, {}",
+				            localBox, immediateBox, variableBox); 
+				return;
+			}
+
+			Integer intId;
+			
+			try {
+				intId = new Integer(immediateBox.getValue().toString());
+			}
+			catch (Exception ex) {
+				logger.warn("stmt {} ", stmt);
+				logger.warn("Couldn't replace findViewById() NOT an integer constant");
+				return;
+			}
+
+			SootMethod method = ResourcesSoot.v().lookupInitLayout_ID(intId);
+
+			if (method == null) {
+				logger.warn("NOT replacing {}, id={} ", stmt, String.format("0x%x", intId));
+				return;
+			}
+
+			Expr invokeExpr = Jimple.v().newStaticInvokeExpr(method.makeRef(), localBox.getValue()); 
+			Stmt invokeStmt = Jimple.v().newInvokeStmt(invokeExpr);
+
+			units.swapWith(stmt, invokeStmt);
+			
+			// units.insertAfter(
+			// 	Jimple.v().newAssignStmt(variableBox.getValue(), tmpView), lookupStmt); 
+
+			logger.info("replacing {} ", stmt);
+			logger.info("with {} ", invokeStmt);
         }
 
         /**
@@ -118,7 +188,7 @@ public class IntegrateXMLLayouts extends BodyTransformer {
 		void replaceFindViewById(StmtBody stmtBody, Stmt stmt) {
 
 			// get body's unit as a chain
-			Chain units = stmtBody.getUnits();
+			Chain<Unit> units = stmtBody.getUnits();
 
 			List<ValueBox> boxList = stmt.getUseAndDefBoxes();
 			Iterator<ValueBox> it = boxList.iterator();
@@ -183,8 +253,6 @@ public class IntegrateXMLLayouts extends BodyTransformer {
 				logger.warn("NOT replacing {}, id={} ", stmt, String.format("0x%x", intId));
 				return;
 			}
-
-			SootMethodRef methodRef = getViewMethod.makeRef();
 
 			Expr invokeExpr = Jimple.v().newStaticInvokeExpr(getViewMethod.makeRef(), localBox.getValue()); 
 			Stmt lookupStmt = Jimple.v().newAssignStmt(variableBox.getValue(), invokeExpr);
@@ -251,7 +319,8 @@ public class IntegrateXMLLayouts extends BodyTransformer {
 						}
 
                         if (setContentView.equals(resolved)) {
-							logger.warn(String.format("Found setContentView(): %s\n", stmt));
+							logger.info(String.format("Found setContentView(): %s\n", stmt));
+							replaceSetContentView(stmtBody, stmt);
                         }
 					}
 				}

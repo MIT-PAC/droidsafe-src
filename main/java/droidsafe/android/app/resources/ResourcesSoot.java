@@ -143,6 +143,9 @@ public class ResourcesSoot {
     
     /** map that holds xml stringId -> set of string values */
     private Map<String, Set<RString>> stringToValueSet;
+    
+    /** map that maps layout ID -> layout init method */
+    private Map<Integer, SootMethod> layoutInitMap; 
 
     /**
      * private constructor
@@ -150,6 +153,7 @@ public class ResourcesSoot {
     private ResourcesSoot() {
 
         uiObjectTable = new HashMap<Integer, UISootObject>();
+        layoutInitMap = new HashMap<Integer, SootMethod>();
 
         mSootClass = new SootClass("droidsafe.android.ResourcesSoot", Modifier.PUBLIC);
     //  mSootClass.setSuperclass(Scene.v().getSootClass("java.lang.Object"));
@@ -292,7 +296,7 @@ public class ResourcesSoot {
             }
             return;
         }
-        String methodName = String.format("void initLayout_%08x", numericId);
+        String methodName = String.format("initLayout_%08x", numericId);
         List<Type> params = new LinkedList<Type>();
         params.add(RefType.v("android.content.Context"));
 
@@ -315,6 +319,8 @@ public class ResourcesSoot {
         Chain<Unit> units = mInitLayoutBody.getUnits();
         units.add(Jimple.v().newIdentityStmt(mArgContext,
                          Jimple.v().newParameterRef(RefType.v("android.content.Context"), 0)));
+        
+        layoutInitMap.put(numericId, mInitLayoutMethod);
     }
     
     /**
@@ -346,6 +352,12 @@ public class ResourcesSoot {
         Chain<Unit> units = mInitLayoutBody.getUnits();
         units.add(stmt);
         return true;
+    }
+    
+    public SootMethod lookupInitLayout_ID(Integer intId) {
+        logger.info("calling lookupInitLayout_ID{}) ", 
+                    String.format("%08x", intId));
+        return layoutInitMap.get(intId); 
     }
 
     /**
