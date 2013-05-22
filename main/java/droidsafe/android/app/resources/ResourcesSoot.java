@@ -136,24 +136,24 @@ public class ResourcesSoot {
     private SootMethod mViewInitMethod;
 
     /** table to hold ID -> object */
-    private HashMap<Integer, UISootObject> uiObjectTable; 
+    private HashMap<Integer, UISootObject> mUiObjectTable; 
 
     /** map that holds numeric (generated) -> string (xml) */
-    private HashBiMap<Integer, String> numericToStringIDMap;
+    private HashBiMap<Integer, String> mNumberToIDMap;
     
     /** map that holds xml stringId -> set of string values */
-    private Map<String, Set<RString>> stringToValueSet;
+    private Map<String, Set<RString>> mStringToValueSet;
     
     /** map that maps layout ID -> layout init method */
-    private Map<Integer, SootMethod> layoutInitMap; 
+    private Map<Integer, SootMethod> mLayoutInitMap; 
 
     /**
      * private constructor
      */
     private ResourcesSoot() {
 
-        uiObjectTable = new HashMap<Integer, UISootObject>();
-        layoutInitMap = new HashMap<Integer, SootMethod>();
+        mUiObjectTable = new HashMap<Integer, UISootObject>();
+        mLayoutInitMap = new HashMap<Integer, SootMethod>();
 
         mSootClass = new SootClass("droidsafe.android.ResourcesSoot", Modifier.PUBLIC);
     //  mSootClass.setSuperclass(Scene.v().getSootClass("java.lang.Object"));
@@ -173,7 +173,7 @@ public class ResourcesSoot {
      * get numericID -> string ID mapping 
      */
     public void setNumberToStringMap(HashBiMap<Integer, String> map) {
-        numericToStringIDMap = map;
+        mNumberToIDMap = map;
     }
 
     /**
@@ -181,7 +181,7 @@ public class ResourcesSoot {
      * @param map
      */
     public void setStringToValueSetMap(Map<String, Set<RString>> map) {
-        stringToValueSet = map;    
+        mStringToValueSet = map;    
     }
     
     /**
@@ -190,7 +190,7 @@ public class ResourcesSoot {
      * @param strId
      */
     public void addNewNumberToStringEntry(String strId) {
-        if (numericToStringIDMap == null)
+        if (mNumberToIDMap == null)
             return;
         
         int baseId = 0x10000000;
@@ -204,12 +204,12 @@ public class ResourcesSoot {
         
         Integer intId = Integer.valueOf(id);
         
-        while (numericToStringIDMap.containsKey(intId)) {
+        while (mNumberToIDMap.containsKey(intId)) {
             id = baseId  | random.nextInt(0x1000);
             intId = Integer.valueOf(id);
         }
         
-        numericToStringIDMap.put(intId, strId);
+        mNumberToIDMap.put(intId, strId);
     }
     
     
@@ -222,13 +222,13 @@ public class ResourcesSoot {
      *  
      */
     public boolean renameStringIdEntry(String fromStrId, String toStrId) {
-        if (numericToStringIDMap == null)
+        if (mNumberToIDMap == null)
             return false;
         
-        Integer key = numericToStringIDMap.inverse().get(fromStrId);
+        Integer key = mNumberToIDMap.inverse().get(fromStrId);
         if (key != null ) {
-            numericToStringIDMap.remove(key);
-            numericToStringIDMap.put(key, toStrId);
+            mNumberToIDMap.remove(key);
+            mNumberToIDMap.put(key, toStrId);
             return true;
         }
         return false;
@@ -255,22 +255,22 @@ public class ResourcesSoot {
         }
 
         strId = strId.replace("@android:", "");
-        Integer id = numericToStringIDMap.inverse().get(strId);
+        Integer id = mNumberToIDMap.inverse().get(strId);
 
         if (id == null) {
             logger.warn("lookup id {} => {} ", strId, id);
-            for (String myStrId: numericToStringIDMap.inverse().keySet()) {
+            for (String myStrId: mNumberToIDMap.inverse().keySet()) {
                 logger.warn("checking key {} <=> {} ", strId, myStrId);
             }
             return;
         }
 
-        if (uiObjectTable.get(id) == null) {
+        if (mUiObjectTable.get(id) == null) {
             
             String fullTypeName = makeClassName(type); 
             
             UISootObject obj = new UISootObject(id.intValue(), fullTypeName, strId, attrMap);
-            uiObjectTable.put(id, obj);
+            mUiObjectTable.put(id, obj);
 
             //create a static field 
             createViewMember(id);
@@ -288,10 +288,10 @@ public class ResourcesSoot {
         
         logger.info("createInitLayout for {} ", layoutName);
         
-        Integer numericId = numericToStringIDMap.inverse().get(layoutName);
+        Integer numericId = mNumberToIDMap.inverse().get(layoutName);
         if (numericId == null) {
             logger.warn("layout {} has no Unique ID", layoutName);
-            for (String myStrId: numericToStringIDMap.inverse().keySet()) {
+            for (String myStrId: mNumberToIDMap.inverse().keySet()) {
                 logger.warn("checking key {} <=> {} ", layoutName, myStrId);
             }
             return;
@@ -320,7 +320,7 @@ public class ResourcesSoot {
         units.add(Jimple.v().newIdentityStmt(mArgContext,
                          Jimple.v().newParameterRef(RefType.v("android.content.Context"), 0)));
         
-        layoutInitMap.put(numericId, mInitLayoutMethod);
+        mLayoutInitMap.put(numericId, mInitLayoutMethod);
     }
     
     /**
@@ -330,7 +330,7 @@ public class ResourcesSoot {
      */
     public boolean addViewAllocToInitLayout_ID(String strId) {
         logger.info("addViewAllocForInitLayout view ID {} ", strId);
-        Integer intId = numericToStringIDMap.inverse().get(strId);
+        Integer intId = mNumberToIDMap.inverse().get(strId);
         if (intId == null) {
             logger.warn("No matching numeric Id for {} ", strId);
             return false;
@@ -357,7 +357,7 @@ public class ResourcesSoot {
     public SootMethod lookupInitLayout_ID(Integer intId) {
         logger.info("calling lookupInitLayout_ID{}) ", 
                     String.format("%08x", intId));
-        return layoutInitMap.get(intId); 
+        return mLayoutInitMap.get(intId); 
     }
 
     /**
@@ -368,7 +368,7 @@ public class ResourcesSoot {
         logger.info("calling createViewMember {}:{}) ", 
                     intId.toString(), String.format("%x", intId));
 
-        UISootObject obj = uiObjectTable.get(intId);    
+        UISootObject obj = mUiObjectTable.get(intId);    
         if (obj == null) {
             logger.warn("Object for id {} info is not available", intId);
             return; 
@@ -397,7 +397,7 @@ public class ResourcesSoot {
     public SootMethod lookupGetView_ID(Integer intId) {
         logger.info("calling lookupGetView_ID {}) ", 
                     String.format("%08x", intId));
-        UISootObject obj = uiObjectTable.get(intId);    
+        UISootObject obj = mUiObjectTable.get(intId);    
         if (obj == null) {
             logger.warn("Object for id 0x{} info is not available", 
                         String.format("%x", intId));
@@ -413,7 +413,7 @@ public class ResourcesSoot {
     private void addGetView_ID(Integer intId) {
         // units.add(Jimple.v().newAssignStmt(fieldRef, arg));
 
-        UISootObject obj = uiObjectTable.get(intId);    
+        UISootObject obj = mUiObjectTable.get(intId);    
         logger.info("addGetView_ID({}:{}) ", intId.toString(), String.format("%x", intId));
 
         if (obj == null) {
@@ -453,7 +453,7 @@ public class ResourcesSoot {
         JimpleBody body = Jimple.v().newBody(method);
         method.setActiveBody(body);
 
-        Chain units = body.getUnits();
+        Chain<Unit> units = body.getUnits();
 
         // extract parameter
         Local argContext = 
@@ -509,9 +509,9 @@ public class ResourcesSoot {
                 String stringName = attrValue.substring(ind+1);
                 stringName = stringName.replace("/", ".");
 
-                if (stringToValueSet.containsKey(stringName)) {
+                if (mStringToValueSet.containsKey(stringName)) {
                     logger.debug("{} can be expanded ", stringName);    
-                    Set<RString> rstringList = stringToValueSet.get(stringName);
+                    Set<RString> rstringList = mStringToValueSet.get(stringName);
                     Set<String> textSet = new HashSet<String>();
 
                     /* set will keep it unique, remove duplicate entries */
