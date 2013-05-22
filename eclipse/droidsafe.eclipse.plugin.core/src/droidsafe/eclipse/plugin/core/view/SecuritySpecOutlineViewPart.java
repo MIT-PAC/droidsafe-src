@@ -125,9 +125,10 @@ public class SecuritySpecOutlineViewPart extends ViewPart {
         if (selectedObject instanceof IAdaptable) {
           IResource res = (IResource) ((IAdaptable) selectedObject).getAdapter(IResource.class);
           IProject project = res.getProject();
-          if (project != null && project != selectedProject) {
-            initializeSecuritySpec(parentComposite);
-            if (securitySpecModel != null) {
+          if (project != null && project != SecuritySpecOutlineViewPart.this.selectedProject) {
+            SecuritySpecOutlineViewPart.this.securitySpecModel = null;
+            initializeSecuritySpec(SecuritySpecOutlineViewPart.this.parentComposite);
+            if (SecuritySpecOutlineViewPart.this.securitySpecModel != null) {
               if (getViewer() == null) {
                 initializeTreeViewer();
               } else {

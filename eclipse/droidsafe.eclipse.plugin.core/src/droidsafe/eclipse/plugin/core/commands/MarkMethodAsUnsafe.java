@@ -15,11 +15,11 @@ import droidsafe.eclipse.plugin.core.specmodel.TreeElement;
 import droidsafe.eclipse.plugin.core.view.SecuritySpecOutlineViewPart;
 
 /**
-* Command to mark the selected element in the droidsafe outline view as not safe.
-* 
-* @author Marcel Becker (becker@kestrel.edu)
-* 
-*/
+ * Command to mark the selected element in the droidsafe outline view as not safe.
+ * 
+ * @author Marcel Becker (becker@kestrel.edu)
+ * 
+ */
 public class MarkMethodAsUnsafe extends AbstractHandler {
 
   @Override
@@ -41,7 +41,7 @@ public class MarkMethodAsUnsafe extends AbstractHandler {
   }
 
   private void setElementAsNotSafe(TreeElement<?, ?> element, IViewPart viewPart) {
-    boolean viewNeedsRefresh = false;    
+    boolean viewNeedsRefresh = false;
     Object data = element.getData();
     if (data instanceof CodeLocationModel && !((CodeLocationModel) data).isUnsafe()) {
       ((CodeLocationModel) data).setUnsafe();

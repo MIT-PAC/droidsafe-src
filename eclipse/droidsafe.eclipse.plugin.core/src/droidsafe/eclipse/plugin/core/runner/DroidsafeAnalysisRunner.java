@@ -170,6 +170,7 @@ public class DroidsafeAnalysisRunner {
 
     if (Config.v().runStringAnalysis) {
 
+      JSAStrings.init(Config.v());
       // Predefined hotspots. Should be removed.
       JSAStrings.v().addArgumentHotspots("<android.content.Intent: void <init>(java.lang.String)>",
           0);
@@ -315,7 +316,8 @@ public class DroidsafeAnalysisRunner {
       // configuration. For multi-step configuration, omit calling context.reset().
       context.reset();
       String configLogFile =
-          debugLog ? "config-files/logback-debug.xml" : "config-files/logback.xml";
+      // debugLog ? "config-files/logback-debug.xml" : "config-files/logback.xml";
+          "config-files/logback-eclipse.xml";
       configurator.doConfigure(Config.v().getApacHome() + File.separator + configLogFile);
     } catch (JoranException je) {
       // StatusPrinter will handle this

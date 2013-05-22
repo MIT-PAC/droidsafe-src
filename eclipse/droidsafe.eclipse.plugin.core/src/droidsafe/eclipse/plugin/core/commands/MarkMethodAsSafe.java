@@ -41,7 +41,7 @@ public class MarkMethodAsSafe extends AbstractHandler {
   }
 
   private void setElementAsSafe(TreeElement<?, ?> element, IViewPart viewPart) {
-    boolean viewNeedsRefresh = false;    
+    boolean viewNeedsRefresh = false;
     Object data = element.getData();
     if (data instanceof CodeLocationModel && !((CodeLocationModel) data).isSafe()) {
       ((CodeLocationModel) data).setSafe();

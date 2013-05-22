@@ -39,7 +39,7 @@ public class PreferenceConstants {
 
   public static final String P_DUMP_CALL_GRAPH = "dumpCallGraph";
 
-  // Run the JSA string analysis 
+  // Run the JSA string analysis
   public static final String P_RUN_STRING_ANALYSIS = "runStringAnalysis";
 
 }
