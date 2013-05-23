@@ -17,7 +17,8 @@ public class DSUtils {
 	public static void translateIntent(Intent orig, Intent result) {
 		result.setAction(orig.getAction());
 		result.setType(orig.getType());
-		
+    result.setPackage(orig.getPackage());
+
 		if (orig.getData() == null)
 			result.setData(Uri.parse("UNKNOWN"));
 		else 
