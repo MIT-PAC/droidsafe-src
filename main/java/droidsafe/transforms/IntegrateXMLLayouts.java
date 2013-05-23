@@ -93,17 +93,15 @@ public class IntegrateXMLLayouts extends BodyTransformer {
 		 * Constructor
 		 */
 		public IntegrateXMLLayouts() {
-			findViewById  =  Scene.v().getMethod("<android.app.Activity: android.view.View findViewById(int)>");
 			activityClass =  Scene.v().getSootClass("android.app.Activity");
 			javaObjClass  =  Scene.v().getSootClass("java.lang.Object");
-			
-			setContentView = Scene.v().getMethod("<android.app.Activity: void setContentView(int)>");
 			
 			//build findViewByIDList
 			for (String className: findViewByIdClasses){
 			    String methodName = String.format("<%s: android.view.View findViewById(int)>",
 			                               className);
 			    SootMethod method = Scene.v().getMethod(methodName); 
+			    logger.debug("findViewById method {} ", method);
 			    findViewByIdList.add(method);
 			}
 			
@@ -113,6 +111,8 @@ public class IntegrateXMLLayouts extends BodyTransformer {
 			                               className);
 			    SootMethod method = Scene.v().getMethod(methodName); 
 			    setContentViewList.add(method);
+			    
+			    logger.debug("setContentView method {} ", method);
 			}
 		}
 		
@@ -267,7 +267,6 @@ public class IntegrateXMLLayouts extends BodyTransformer {
 
 				InvokeExpr expr = (InvokeExpr)stmt.getInvokeExpr();
 				
-				
 				//get the receiver, receivers are only present for instance invokes 
 				InstanceInvokeExpr iie = SootUtils.getInstanceInvokeExpr(stmt);
 				if (iie != null) {
@@ -291,16 +290,17 @@ public class IntegrateXMLLayouts extends BodyTransformer {
 							continue;
 						}
 						
-						for (SootMethod findViewById: findViewByIdList) {
-						    if (findViewById.equals(resolved))  {
+						// replacing findViewById
+						for (SootMethod method: findViewByIdList) {
+						    if (method.equals(resolved))  {
 						        logger.info(String.format("Found findViewById(): %s\n", stmt));
-						        //replacement ...
 						        replaceFindViewById(stmtBody, stmt);
 						    }
 						}
-
-						for (SootMethod setContentView: setContentViewList) {
-						    if (setContentView.equals(resolved)) {
+						
+						// replacing 
+						for (SootMethod method: setContentViewList) {
+						    if (method.equals(resolved)) {
 						        logger.info(String.format("Found setContentView(): %s\n", stmt));
 						        replaceSetContentView(stmtBody, stmt);
 						    }
