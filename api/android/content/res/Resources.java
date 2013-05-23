@@ -14,6 +14,8 @@ import android.util.DisplayMetrics;
 import android.util.LongSparseArray;
 import android.util.SparseArray;
 import android.util.TypedValue;
+import droidsafe.annotations.DSC;
+import droidsafe.annotations.DSModeled;
 import droidsafe.helpers.DSTaintObject;
 
 public class Resources {
@@ -54,6 +56,12 @@ public class Resources {
 	final DisplayMetrics mMetrics = new DisplayMetrics();
 	private NativePluralRules mPluralRule;
 	private CompatibilityInfo mCompatibilityInfo;
+	
+    @DSModeled(DSC.SAFE)
+	public Resources() {
+	    mAssets = null;
+	}
+	
 	private static final LongSparseArray<Object> EMPTY_ARRAY = new LongSparseArray<Object>(0) {
         @Override
         public void put(long k, Object o) {
@@ -108,8 +116,6 @@ public class Resources {
 			super(detailMessage);
 			// TODO Auto-generated constructor stub
 		}
-
-		
 	}
 	
 	
@@ -133,23 +139,11 @@ public class Resources {
 		*/
 	}
 	
+    @DSModeled(DSC.SAFE)
 	public static Resources getSystem(){
-		
-		// Original method
-		/*
-		{
-        synchronized (mSync) {
-            Resources ret = mSystem;
-            if (ret == null) {
-                ret = new Resources();
-                mSystem = ret;
-            }
-
-            return ret;
-        }
-    }
-		*/
-		return null;
+	    if (mSystem == null)
+	        mSystem = new Resources();
+	    return mSystem;
 	}
 	
 	public CharSequence getText(int id){

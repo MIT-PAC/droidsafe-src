@@ -83,8 +83,9 @@ public class ContextImpl extends Context {
     }
 
     @Override
+    @DSModeled()
     public Resources getResources() {
-        throw new UnsupportedOperationException();
+        return Resources.getSystem();
     }
 
     @Override

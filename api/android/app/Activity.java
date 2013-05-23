@@ -2051,6 +2051,7 @@ public class Activity extends ContextThemeWrapper implements LayoutInflater.Fact
 	
 	public void startActivityFromFragment(Fragment fragment, Intent intent, 
             int requestCode){
+	    /*
 		Instrumentation.ActivityResult ar =
 	            mInstrumentation.execStartActivity(
 	                this, mMainThread.getApplicationThread(), mToken, fragment,
@@ -2058,6 +2059,7 @@ public class Activity extends ContextThemeWrapper implements LayoutInflater.Fact
 		mMainThread.sendActivityResult(
                 mToken, fragment.mWho, requestCode,
                 ar.getResultCode(), ar.getResultData());
+        */        
 		// Original method
 		/*
 		{
