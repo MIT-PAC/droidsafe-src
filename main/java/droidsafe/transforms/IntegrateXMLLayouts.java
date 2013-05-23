@@ -68,16 +68,53 @@ public class IntegrateXMLLayouts extends BodyTransformer {
 		
 		private SootMethod findViewById;
 		private SootMethod setContentView;
+		
+		/** debug */
 		private SootClass  activityClass;
 		private SootClass  javaObjClass;
 		
+		/** list of possible findViewById methods */
+		private List<SootMethod>  findViewByIdList    = new LinkedList<SootMethod>();
+		
+		/** list of possible setContentViewList */
+		private List<SootMethod>  setContentViewList = new LinkedList<SootMethod>();
+		
+		/** all classes that have findViewById */
+		private final String[] findViewByIdClasses = new String[] {
+		       "android.app.Activity", "android.app.Dialog", 
+		       "android.view.Window" , "android.view.View"
+    		};
+		
+		private final String[] setContentViewClasses = new String[] {
+		        "android.app.Activity", "android.app.Dialog",
+		        "android.view.Window",  "android.widget.PopupWindow"
+		    };
+		
+		/**
+		 * Constructor
+		 */
 		public IntegrateXMLLayouts() {
 			findViewById  =  Scene.v().getMethod("<android.app.Activity: android.view.View findViewById(int)>");
 			activityClass =  Scene.v().getSootClass("android.app.Activity");
 			javaObjClass  =  Scene.v().getSootClass("java.lang.Object");
-
+			
 			setContentView = Scene.v().getMethod("<android.app.Activity: void setContentView(int)>");
-			//dumpActivities();
+			
+			//build findViewByIDList
+			for (String className: findViewByIdClasses){
+			    String methodName = String.format("<%s: android.view.View findViewById(int)>",
+			                               className);
+			    SootMethod method = Scene.v().getMethod(methodName); 
+			    findViewByIdList.add(method);
+			}
+			
+			// setcontentview list
+			for (String className: setContentViewClasses){
+			    String methodName = String.format("<%s: void setContentView(int)>",
+			                               className);
+			    SootMethod method = Scene.v().getMethod(methodName); 
+			    setContentViewList.add(method);
+			}
 		}
 		
 		/**
@@ -255,16 +292,20 @@ public class IntegrateXMLLayouts extends BodyTransformer {
 							continue;
 						}
 						
-						if (findViewById.equals(resolved))  {
-							logger.info(String.format("Found findViewById(): %s\n", stmt));
-							//replacement ...
-							replaceFindViewById(stmtBody, stmt);
+						for (SootMethod findViewById: findViewByIdList) {
+						    if (findViewById.equals(resolved))  {
+						        logger.info(String.format("Found findViewById(): %s\n", stmt));
+						        //replacement ...
+						        replaceFindViewById(stmtBody, stmt);
+						    }
 						}
 
-                        if (setContentView.equals(resolved)) {
-							logger.info(String.format("Found setContentView(): %s\n", stmt));
-							replaceSetContentView(stmtBody, stmt);
-                        }
+						for (SootMethod setContentView: setContentViewList) {
+						    if (setContentView.equals(resolved)) {
+						        logger.info(String.format("Found setContentView(): %s\n", stmt));
+						        replaceSetContentView(stmtBody, stmt);
+						    }
+						}
 					}
 				}
 				
