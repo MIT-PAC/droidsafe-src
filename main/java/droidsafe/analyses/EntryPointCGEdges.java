@@ -36,7 +36,10 @@ public class EntryPointCGEdges {
         
         return v;
     }
-    
+
+    /**
+     * Create the set and generate the set of entry point edges.
+     */
     private EntryPointCGEdges() {
         entryPointEdges = new LinkedHashSet<Edge>();
         init();
