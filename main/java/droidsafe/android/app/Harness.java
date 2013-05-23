@@ -1,21 +1,40 @@
 package droidsafe.android.app;
 
 import java.io.File;
-import java.io.FileOutputStream;
-import java.io.OutputStream;
-import java.io.OutputStreamWriter;
-import java.io.PrintWriter;
 import java.util.Iterator;
 import java.util.LinkedHashMap;
 import java.util.LinkedHashSet;
 import java.util.LinkedList;
+import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
-import java.util.List;
-
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+
+import soot.ArrayType;
+import soot.Body;
+import soot.Local;
+import soot.Modifier;
+import soot.RefType;
+import soot.Scene;
+import soot.SootClass;
+import soot.SootField;
+import soot.SootFieldRef;
+import soot.SootMethod;
+import soot.Type;
+import soot.Unit;
+import soot.Value;
+import soot.VoidType;
+import soot.jimple.AssignStmt;
+import soot.jimple.IntConstant;
+import soot.jimple.InvokeExpr;
+import soot.jimple.Jimple;
+import soot.jimple.NewExpr;
+import soot.jimple.NopStmt;
+import soot.jimple.Stmt;
+import soot.jimple.StmtBody;
+import soot.util.Chain;
 
 import com.google.common.collect.ImmutableMap;
 
@@ -23,37 +42,6 @@ import droidsafe.android.system.API;
 import droidsafe.android.system.Components;
 import droidsafe.utils.SootUtils;
 import droidsafe.utils.Utils;
-
-import soot.Body;
-import soot.Local;
-import soot.Printer;
-import soot.RefLikeType;
-import soot.Scene;
-import soot.SootField;
-import soot.SootFieldRef;
-import soot.SootMethodRef;
-import soot.SourceLocator;
-import soot.Type;
-import soot.ArrayType;
-import soot.Modifier;
-import soot.RefType;
-import soot.SootClass;
-import soot.SootMethod;
-import soot.Unit;
-import soot.VoidType;
-import soot.jimple.AssignStmt;
-import soot.jimple.IntConstant;
-import soot.jimple.InvokeExpr;
-import soot.jimple.JasminClass;
-import soot.jimple.Jimple;
-import soot.jimple.NewExpr;
-import soot.jimple.NopStmt;
-import soot.jimple.Stmt;
-import soot.jimple.StmtBody;
-import soot.util.Chain;
-import soot.util.JasminOutputStream;
-import soot.Value;
-import droidsafe.main.Constants;
 
 /**
  * Create a harness class that will call the entry points of the android application
@@ -94,14 +82,14 @@ public class Harness {
 	 */
 	public static void create() {
 		if (!EntryPoints.v().isCalculated())
-			Utils.ERROR_AND_EXIT(logger, "Entrypoints need to be calculated before harness created");		
+			Utils.logErrorAndExit(logger, "Entrypoints need to be calculated before harness created");		
 		
 		v = new Harness();
 	}
 	
 	public static Harness v() {
 		if (v == null)
-			Utils.ERROR_AND_EXIT(logger, "Harness not created!");
+			Utils.logErrorAndExit(logger, "Harness not created!");
 		return v;
 	}
 

@@ -1,105 +1,62 @@
 package droidsafe.utils;
 
-import droidsafe.android.app.Project;
-
-import droidsafe.main.Config;
-
-import droidsafe.speclang.ArgumentValue;
-import droidsafe.speclang.Method;
-import droidsafe.speclang.TypeValue;
-
-import java.io.File;
 import java.io.FileOutputStream;
 import java.io.OutputStream;
 import java.io.OutputStreamWriter;
 import java.io.PrintWriter;
-
-import java.lang.ClassNotFoundException;
-import java.lang.RuntimeException;
-
 import java.util.Enumeration;
-import java.util.HashSet;
 import java.util.Iterator;
-import java.util.jar.JarEntry;
-import java.util.jar.JarFile;
 import java.util.LinkedHashSet;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Queue;
+import java.util.Set;
+import java.util.jar.JarEntry;
+import java.util.jar.JarFile;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
-import java.util.Set;
-import java.util.StringTokenizer;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import soot.AnySubType;
-
 import soot.ArrayType;
-
 import soot.BooleanType;
-
 import soot.ByteType;
-
 import soot.CharType;
-
 import soot.DoubleType;
-
 import soot.FloatType;
-
 import soot.Hierarchy;
-
 import soot.IntType;
-
+import soot.LongType;
+import soot.NullType;
+import soot.PrimType;
+import soot.Printer;
+import soot.RefLikeType;
+import soot.RefType;
+import soot.Scene;
+import soot.ShortType;
+import soot.SootClass;
+import soot.SootMethod;
+import soot.Type;
+import soot.Unit;
+import soot.Value;
+import soot.VoidType;
 import soot.jimple.ClassConstant;
 import soot.jimple.DoubleConstant;
 import soot.jimple.FloatConstant;
 import soot.jimple.InstanceInvokeExpr;
 import soot.jimple.IntConstant;
 import soot.jimple.InvokeExpr;
-import soot.jimple.JasminClass;
-import soot.jimple.Jimple;
 import soot.jimple.LongConstant;
 import soot.jimple.NullConstant;
 import soot.jimple.Stmt;
 import soot.jimple.StmtBody;
 import soot.jimple.StringConstant;
-
-import soot.LongType;
-
-import soot.NullType;
-
-import soot.PrimType;
-
-import soot.Printer;
-
-import soot.RefLikeType;
-
-import soot.RefType;
-
-import soot.Scene;
-
-import soot.ShortType;
-
-import soot.SootClass;
-
-import soot.SootMethod;
-
-import soot.SootMethodRef;
-
 import soot.tagkit.LineNumberTag;
-
-import soot.Type;
-
-import soot.Unit;
-
 import soot.util.Chain;
 import soot.util.JasminOutputStream;
-
-import soot.Value;
-
-import soot.VoidType;
+import droidsafe.android.app.Project;
 
 /**
  * Class to hold general utility methods that are helpful for Soot.
@@ -121,7 +78,10 @@ public class SootUtils {
     } else if (sootValue instanceof IntConstant) {
       return new Integer(((IntConstant)sootValue).value);
     } else if (sootValue instanceof StringConstant) {
-      return new String(((StringConstant)sootValue).value);
+      String string = new String(((StringConstant)sootValue).value);
+      droidsafe.analyses.attr.models.java.lang.String droidsafeString = new droidsafe.analyses.attr.models.java.lang.String();
+      droidsafeString.incorporateString(string);
+      return droidsafeString;
     } else if (sootValue instanceof LongConstant) {
       return new Long(((LongConstant)sootValue).value);
     } else if (sootValue instanceof DoubleConstant) {
@@ -129,7 +89,8 @@ public class SootUtils {
     } else if (sootValue instanceof FloatConstant) {
       return new Float(((FloatConstant)sootValue).value);
     } else if (sootValue instanceof ClassConstant) {
-      return Class.forName(((ClassConstant)sootValue).value.replace("/", "."));
+      String className = ((ClassConstant)sootValue).value.replace("/", ".");
+      return Project.v().getAppJavaClass(className);
     }
     
     throw new RuntimeException("Unhandled java primitive sootValue: " + sootValue);
@@ -166,7 +127,7 @@ public class SootUtils {
 			Matcher matcher = typeSig.matcher(str);
 			boolean b = matcher.matches();
 			if (!b || matcher.groupCount() != 2) {
-				Utils.ERROR_AND_EXIT(logger, "Something very wrong with parsing type: {}", str);
+				Utils.logErrorAndExit(logger, "Something very wrong with parsing type: {}", str);
 			}
 			
 			String baseType = matcher.group(1);
@@ -181,7 +142,7 @@ public class SootUtils {
 				//class type
 				return RefType.v(baseType);
 			} else {
-				Utils.ERROR_AND_EXIT(logger, "Cannot parse type: {}", str);
+				Utils.logErrorAndExit(logger, "Cannot parse type: {}", str);
 				return null;
 			}
 		}
@@ -428,7 +389,7 @@ public class SootUtils {
 		boolean b = matcher.matches();
 		
 		if (!b && matcher.groupCount() != 4)
-			Utils.ERROR_AND_EXIT(logger,"Cannot create Method from DroidBlaze Signature");
+			Utils.logErrorAndExit(logger,"Cannot create Method from DroidBlaze Signature");
 		
 		return matcher.group(2);
 		
@@ -453,7 +414,7 @@ public class SootUtils {
     	
     	for (SootClass parent : classes) {
     		for (SootMethod method : parent.getMethods()) {
-    			logger.debug("Looking at {} in {}", method, parent);
+    			//logger.debug("Looking at {} in {}", method, parent);
     			if (method.getName().equals(name) &&
     					method.getParameterCount() == numArgs &&
     					method.getReturnType().toString().equals(returnType))
@@ -475,9 +436,9 @@ public class SootUtils {
      */
     public static Set<SootClass> loadClassesFromJar(JarFile jarFile, boolean appClass, Set<String> doNotLoad) {
     	LinkedHashSet<SootClass> classSet = new LinkedHashSet<SootClass>();
-        Enumeration allEntries = jarFile.entries();
+        Enumeration<JarEntry> allEntries = jarFile.entries();
         while (allEntries.hasMoreElements()) {
-            JarEntry entry = (JarEntry) allEntries.nextElement();
+            JarEntry entry = allEntries.nextElement();
             String   name  = entry.getName();
             if (!name.endsWith(".class")) {
                 continue;
@@ -563,12 +524,11 @@ public class SootUtils {
      */
     public static SootClass getCloseSubclass(SootClass clz) {
     	if (!clz.isAbstract() && !clz.isInterface())
-    		Utils.ERROR_AND_EXIT(logger, "Trying to get close subclass of a non abstract class: {}", clz);
+    		Utils.logErrorAndExit(logger, "Trying to get close subclass of a non abstract class: {}", clz);
     	
     	logger.debug("Trying to get direct subclasses for: {}", clz);
     	//try to get direct implementors by adding them first
-    	List<SootClass> implementors = 
-    			new LinkedList<SootClass>();
+    	List<SootClass> implementors = new LinkedList<SootClass>();
     	
     	implementors.addAll((List<SootClass>)Scene.v().getActiveHierarchy().getDirectSubclassesOf(clz));  
     	
@@ -587,7 +547,7 @@ public class SootUtils {
      */
     public static SootClass getCloseImplementor(SootClass clz) {
     	if (!clz.isInterface())
-    		Utils.ERROR_AND_EXIT(logger, "Trying to get implementor of a non interface: {}", clz);
+    		Utils.logErrorAndExit(logger, "Trying to get implementor of a non interface: {}", clz);
     	
     	//try to get direct implementors by adding them first
     	List<SootClass> implementors = new LinkedList<SootClass>();
@@ -610,7 +570,7 @@ public class SootUtils {
 	 */
 	public static void writeByteCodeAndJimple(String filePrefix, SootClass clz) {
 		String fileName = filePrefix + ".class";
-        String methodThatFailed = "";
+        String methodThatFailed = "";        
 		try {
 			OutputStream streamOut = new JasminOutputStream(
 					new FileOutputStream(fileName));
@@ -631,8 +591,7 @@ public class SootUtils {
 		    */
 		    fileName = filePrefix + ".jimple";
 		    streamOut = new FileOutputStream(fileName);
-		    writerOut = new PrintWriter(
-		                                new OutputStreamWriter(streamOut));
+		    writerOut = new PrintWriter(new OutputStreamWriter(streamOut));
 		    Printer.v().printTo(clz, writerOut);
 		    writerOut.flush();
 		    streamOut.close();
@@ -649,7 +608,7 @@ public class SootUtils {
 	public static SourceLocationTag getMethodLocation(SootMethod method) {
 		if (method.isConcrete()) {
 			Chain<Unit> stmts = ((StmtBody)method.retrieveActiveBody()).getUnits();
-			Iterator stmtIt = stmts.snapshotIterator();
+			Iterator<Unit> stmtIt = stmts.snapshotIterator();
 			
 			if (stmtIt.hasNext()) {
 				return getSourceLocation((Stmt)stmtIt.next(), method.getDeclaringClass());

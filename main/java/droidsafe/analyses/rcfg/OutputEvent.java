@@ -1,19 +1,12 @@
 package droidsafe.analyses.rcfg;
 
 import java.util.Formatter;
-import java.util.LinkedHashSet;
 import java.util.Locale;
 import java.util.Set;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import droidsafe.analyses.GeoPTA;
-import droidsafe.android.app.Harness;
-import droidsafe.android.app.Hierarchy;
-import droidsafe.utils.SootUtils;
-import droidsafe.utils.SourceLocationTag;
-import droidsafe.utils.Utils;
 import soot.SootMethod;
 import soot.Type;
 import soot.Unit;
@@ -22,14 +15,13 @@ import soot.ValueBox;
 import soot.jimple.DynamicInvokeExpr;
 import soot.jimple.InstanceInvokeExpr;
 import soot.jimple.InvokeExpr;
-import soot.jimple.InvokeStmt;
 import soot.jimple.SpecialInvokeExpr;
-import soot.jimple.Stmt;
-import soot.jimple.StringConstant;
 import soot.jimple.spark.pag.AllocNode;
-import soot.jimple.spark.pag.Node;
 import soot.jimple.spark.pag.StringConstantNode;
 import soot.jimple.toolkits.callgraph.Edge;
+import droidsafe.analyses.GeoPTA;
+import droidsafe.utils.SourceLocationTag;
+import droidsafe.utils.Utils;
 
 /**
  * 
@@ -81,7 +73,7 @@ public class OutputEvent {
 				//old check that does not work for threads since start calls run...
 				//if (Hierarchy.v().canResolveTo(ie.getMethodRef(), this.getTarget())) 
 				if (invokeExpr != null)
-					Utils.ERROR_AND_EXIT(logger, "Found multiple matches for calling context in context statement {}.", context);
+					Utils.logErrorAndExit(logger, "Found multiple matches for calling context in context statement {}.", context);
 				invokeExpr = ie;
 			}
 		}
@@ -107,7 +99,7 @@ public class OutputEvent {
 		
 		//do some checks for things we might not fully understand yet.
 		if (invokeExpr instanceof DynamicInvokeExpr) {
-			Utils.ERROR_AND_EXIT(logger, "Do not understand type of invoke expr: {}", invokeExpr.getClass());
+			Utils.logErrorAndExit(logger, "Do not understand type of invoke expr: {}", invokeExpr.getClass());
 		}
 	}
 	
@@ -197,7 +189,7 @@ public class OutputEvent {
 	 */
 	public Value getArgValue(int i) {
 		if (i > getNumArgs()) 
-			Utils.ERROR_AND_EXIT(logger, "Trying to invalid argument {} for output event {}.", i, getTarget());
+			Utils.logErrorAndExit(logger, "Trying to invalid argument {} for output event {}.", i, getTarget());
 		
 		return invokeExpr.getArg(i);
 	}

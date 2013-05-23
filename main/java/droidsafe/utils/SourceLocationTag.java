@@ -2,8 +2,6 @@ package droidsafe.utils;
 
 import java.io.Serializable;
 
-import soot.SootClass;
-
 /**
  * A location in source code with Class and line.
  * 
@@ -11,7 +9,9 @@ import soot.SootClass;
  *
  */
 public class SourceLocationTag implements Comparable<SourceLocationTag>, Serializable {
-	private String clz;
+
+  private static final long serialVersionUID = 5400084150916043785L;
+  private String clz;
 	private int line;
 	
 	public SourceLocationTag(String clz, int line) {

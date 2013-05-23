@@ -1,8 +1,9 @@
 package droidsafe.main;
 
 import java.io.File;
-import java.lang.reflect.Field;
-import java.util.LinkedHashMap;
+import java.util.Arrays;
+import java.util.LinkedHashSet;
+import java.util.Set;
 
 import org.apache.commons.cli.CommandLine;
 import org.apache.commons.cli.CommandLineParser;
@@ -11,7 +12,6 @@ import org.apache.commons.cli.HelpFormatter;
 import org.apache.commons.cli.Option;
 import org.apache.commons.cli.OptionBuilder;
 import org.apache.commons.cli.Options;
-import org.apache.commons.cli.PosixParser;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -23,254 +23,304 @@ import ch.qos.logback.core.util.StatusPrinter;
 /**
  * Class to store and configure options and variables.
  * 
- * To add cmd line variables, add a string field, then add to option to setOptions,
- * then assign in setVars.
+ * To add cmd line variables, add a string field, then add to option to setOptions, then assign in
+ * setVars.
  * 
  * @author mgordon
- *
+ * 
  */
 public class Config {
-	private final static Logger logger = LoggerFactory.getLogger(Config.class);
-	
-	private final static Config config = new Config();
-	
-	public String APP_ROOT_DIR;
-	public File ANDROID_LIB_DIR;
-	public String target = "specdump";
-	/** Don't include source location information when outputting spec */
-	public boolean noSourceInfo = false;
-	/** If true, analyze information flows. */
-	public boolean infoFlow = false;
-	/** Path where to export information flows in DOT */
-	public String infoFlowDotFile;
-	/** Method on which to export information flows in DOT */
-	public String infoFlowDotMethod;
-	/** If true, then classes loaded from android.jar will be treated as 
-	 * application classes and analyses may analyze them.
-	 */
-	public boolean API_CLASSES_ARE_APP = false;
-	/** if true, write readable jimple output for all app classes */
-	public boolean WRITE_JIMPLE_APP_CLASSES = false;
-	
-	/** if true, dump pta to a file */
-	public boolean DUMP_PTA = false;
-	
-	public boolean DUMP_CALL_GRAPH = false;
-	
+  private final static Logger logger = LoggerFactory.getLogger(Config.class);
+
+  private final static Config config = new Config();
+
+  public static final Set<String> TARGETS = new LinkedHashSet<String>(Arrays.asList("specdump",
+      "confcheck"));
+
   /** location of all android apps */
   public static final String ANDROID_APP_DIR_REL = "android-apps";
 
-  private static final String ANDROID_LIB_DIR_REL = "android-lib";
-	/** location of configuration files */
-	public static final String SYSTEM_CLASSES_FILE = "config-files/system_class_files.txt";
-	public static final String SYSTEM_METHODS_FILE = "config-files/android-api-methods.txt";
-	/** location of api modeling base directory relative to apac_home */
-	public static final String API_MODELING_DIR_REL = "modeling" + File.separator + "api";
-	public static final String ANDROID_JAR = "android.jar";
-	
-	private String APAC_HOME; 
-	
-	public static Config v() {
-		return config;
-	}
-	
-	public String APAC_HOME() {
-		return APAC_HOME;
-	}
-	
-	private static void setOptions(Options options) {
-		//application root directory
-		Option approot   = OptionBuilder.withArgName("dir")
-                .hasArg()
-                .withDescription("The Android application root directory")
-                .create("approot");
-		options.addOption(approot);
-		
-		Option target  = OptionBuilder.withArgName( "target" )
-                .hasArg()
-                .withDescription( "Target pass to run" )
-                .create( "t"); 
-		options.addOption(target);
-		
-		Option spec = OptionBuilder.withArgName("ssl_file")
-				.hasArg()
-				.withDescription("Security Specification for application (used with confcheck)")
-				.create("s");
-		options.addOption(spec);
-		
-		Option help = new Option( "help", "print this message" );
-		options.addOption(help);
-		
-		Option noSourceInfo = new Option("nosourceinfo", "Do not print source information in spec");
-		options.addOption(noSourceInfo);
-		
-		Option debugLog = new Option("debuglog", "Print debug log to current ./droidsafe/droidsafe.log");
-		options.addOption(debugLog);
-		
-		Option writeJimple = new Option("jimple", "Dump readable jimple files for all app classes in /droidsafe.");
-		options.addOption(writeJimple);
+  public static final String ANDROID_LIB_DIR_REL = "android-lib";
+
+  /** location of configuration files */
+  public static final String SYSTEM_CLASSES_FILE = "config-files/system_class_files.txt";
+
+  public static final String SYSTEM_METHODS_FILE = "config-files/android-api-methods.txt";
+  /** location of api modeling base directory relative to apac_home */
+
+  public static final String API_MODELING_DIR_REL = "modeling" + File.separator + "api";
+
+  public static final String ANDROID_JAR = "android.jar";
+
+  /** Path for the root folder for the Android application under analysis. */
+  public String APP_ROOT_DIR;
+
+  /** Path for the root folder for droidsafe code */
+  private String apacHome;
+
+  public File ANDROID_LIB_DIR;
+  public String target = "specdump";
+  /** Don't include source location information when outputting spec */
+  public boolean noSourceInfo = false;
+  /** If true, analyze information flows. */
+  public boolean infoFlow = false;
+  /** Path where to export information flows in DOT */
+  public String infoFlowDotFile;
+  /** Method on which to export information flows in DOT */
+  public String infoFlowDotMethod;
+  /**
+   * If true, classes loaded from android.jar will be treated as application classes and analysis
+   * may analyze them.
+   */
+  public boolean apiClassesAreApp = false;
+  /** if true, write readable jimple output for all app classes */
+  public boolean writeJimpleAppClasses = false;
+
+  /** if true, dump pta to a file */
+  public boolean dumpPta = false;
+
+  public boolean dumpCallGraph = false;
+
+  /** if true, run string analysis on app classes */
+  public boolean runStringAnalysis = false;
+
+  /** if true, string analysis is done for all soot application classes.  Otherwise, it is
+   only done for the source classes of the project. */
+  public boolean unfilteredStringAnalysis = false;
+
+  public static Config v() {
+    return config;
+  }
+
+  public String getApacHome() {
+    return this.apacHome;
+  }
+
+  public void setApacHome(String apacHome) {
+    this.apacHome = apacHome;
+  }
 
 
-		Option infoFlow = new Option(null, "infoflow", false, "Analyze information flows");
-		options.addOption(infoFlow);
+  private static Options setOptions() {
+    Options options = new Options();
+    // application root directory
 
-		Option infoFlowDotFile = OptionBuilder.withArgName("FILE").hasArg().withDescription("Export information flows to FILE in DOT").withLongOpt("infoflow-dot-file").create();
-		options.addOption(infoFlowDotFile);
+    Option help = new Option("help", "print this message");
+    options.addOption(help);
 
-		Option infoFlowDotMethod = OptionBuilder.withArgName("METHOD").hasArg().withDescription("Export information flows specific to METHOD only: METHOD is specified by its signature (e.g. \"<com.jpgextractor.PicViewerActivity: void sendExif(java.util.ArrayList)>\")").withLongOpt("infoflow-dot-method").create();
-		options.addOption(infoFlowDotMethod);
-		
-		Option pta = new Option("ptadump", "Dump pta to ./droidsafe/pta.txt");
-		options.addOption(pta);
-		
-		Option callgraph = new Option("callgraph", "Output .dot callgraph file ");
-		options.addOption(callgraph);
-	}
-	
-	/**
-	 * Set all variables from the command line arguments.
-	 * 
-	 * @param cmd
-	 */
-	private void setVars(Options options, CommandLine cmd) {
-		if (cmd.hasOption("help")) {
-			printOptions(options);
-			System.exit(0);
-		}
-		
-		if (cmd.hasOption("target")) {
-			this.target = cmd.getOptionValue("target");
-		}
-		
-		if (!Main.TARGETS.contains(target)) {
-			logger.error("Unsupported Target: {}.", target);
-			System.exit(1);
-		}
-		
-		if (cmd.hasOption("nosourceinfo")) {
-			this.noSourceInfo = true;
-		}
-		
-		if (cmd.hasOption("jimple"))
-			this.WRITE_JIMPLE_APP_CLASSES = true;
-		
+    Option noSourceInfo = new Option("nosourceinfo", "Do not print source information in spec");
+    options.addOption(noSourceInfo);
 
-		if (cmd.hasOption("infoflow")) {
-			this.infoFlow = true;
-		}
+    Option debugLog =
+        new Option("debuglog", "Print debug log to current ./droidsafe/droidsafe.log");
+    options.addOption(debugLog);
 
-		if (cmd.hasOption("infoflow-dot-file")) {
-			assert this.infoFlow == true;
-			this.infoFlowDotFile = cmd.getOptionValue("infoflow-dot-file");
-		}
+    Option writeJimple =
+        new Option("jimple", "Dump readable jimple files for all app classes in /droidsafe.");
+    options.addOption(writeJimple);
 
-		if (cmd.hasOption("infoflow-dot-method")) {
-			assert this.infoFlowDotFile != null;
-			this.infoFlowDotMethod = cmd.getOptionValue("infoflow-dot-method");
-		}
+    Option runStringAnalysis = new Option("analyzestrings", "Run string analysis.");
+    options.addOption(runStringAnalysis);
 
-		if (cmd.hasOption("ptadump"))
-			this.DUMP_PTA = true;
-		
-		if (cmd.hasOption("callgraph"))
-			this.DUMP_CALL_GRAPH = true;
-		
-		
-		if (cmd.hasOption("debuglog")) {
-			//we want to create a debug log file, so load the 
-			//logback-debug.xml from the config files directory
-			 // assume SLF4J is bound to logback in the current environment
-			
-		    LoggerContext context = (LoggerContext) LoggerFactory.getILoggerFactory();
-		    
-		    try {
-		      JoranConfigurator configurator = new JoranConfigurator();
-		      configurator.setContext(context);
-		      // Call context.reset() to clear any previous configuration, e.g. default 
-		      // configuration. For multi-step configuration, omit calling context.reset().
-		      context.reset(); 
-		      configurator.doConfigure(APAC_HOME + File.separator + "config-files/logback-debug.xml");
-		    } catch (JoranException je) {
-		      // StatusPrinter will handle this
-		    }
-		    StatusPrinter.printInCaseOfErrorsOrWarnings(context);
-			
-		}
-	 
-		APP_ROOT_DIR = getPathFromCWD(cmd.getOptionValue("approot"));
-		logger.info("approot: {}", APP_ROOT_DIR);
-	}
-	
-	/**
-	 * Construct an absolute path from the string argument.  If the argument is a 
-	 * relative path, then append to the CWD.  If the empty string is given, then 
-	 * return the cwd.
-	 */
-	private static String getPathFromCWD(String path) {
-		if (path == null || path.equals(""))
-			path = ".";
-		String ret = "";
-		File fpath = new File(path);
-		if (fpath.isAbsolute()) 
-			ret = path;
-		else { 
-			ret = System.getProperty("user.dir") + File.separator + path;
-			fpath = new File(ret);
-		}
-		
-		try {
-			fpath = new File(fpath.getCanonicalPath());
-		} catch (Exception e) {
-			logger.error("Error getting canonical path for app root", e);
-			System.exit(1);
-		}
-		
-		if (!fpath.exists()) {
-			logger.error("App root directory does not exist: {}", ret);
-			System.exit(1);
-		}
-		
-		return fpath.toString();
-	}
-	
-	public void printOptions(String error, Options options) {
-		System.out.println("Error: " + error + "\n");
-		printOptions(options);
-	}
-	
-	public  void printOptions(Options options) {
-		HelpFormatter formatter = new HelpFormatter();
-		formatter.printHelp( "droidsafe", options );
-	}
-	
-	public void init(String[] args) {
-	
-		APAC_HOME = System.getenv("APAC_HOME");
-		logger.info("APAC_HOME = {}", APAC_HOME);
-		if (APAC_HOME == null) {
-			logger.error("$APAC_HOME not set!");
-			System.exit(1);
-		}
-		
-		Options options = new Options();
-		setOptions(options);
-		
-		CommandLineParser parser = new GnuParser();
-		
-		try {
-			CommandLine cmd = parser.parse( options, args);
-			setVars(options, cmd);
-		} catch (Exception e) {
-			logger.error("Error parsing command line options", e);
-			printOptions(e.getMessage(), options);
-			System.exit(1);
-		}
-		
-		ANDROID_LIB_DIR = new File(System.getenv ("APAC_HOME") + File.separator + ANDROID_LIB_DIR_REL);
-		if (!ANDROID_LIB_DIR.exists()) {
-			logger.error("Android library directory for DroidSafe does not exist.");
-			System.exit(1);
-		}
-	}
+    Option runStringAnalysisUnfiltered =
+        new Option("analyzestrings_unfiltered",
+                   "Run string analysis with no application class filtering.");
+    options.addOption(runStringAnalysisUnfiltered);
+
+    Option pta = new Option("ptadump", "Dump pta to ./droidsafe/pta.txt");
+    options.addOption(pta);
+
+    Option callgraph = new Option("callgraph", "Output .dot callgraph file ");
+    options.addOption(callgraph);
+
+
+    Option infoFlow = new Option(null, "infoflow", false, "Analyze information flows");
+    options.addOption(infoFlow);
+
+    Option infoFlowDotFile =
+        OptionBuilder.withArgName("FILE").hasArg()
+            .withDescription("Export information flows to FILE in DOT")
+            .withLongOpt("infoflow-dot-file").create();
+    options.addOption(infoFlowDotFile);
+
+    Option infoFlowDotMethod =
+        OptionBuilder
+            .withArgName("METHOD")
+            .hasArg()
+            .withDescription(
+                "Export information flows specific to METHOD only: METHOD is specified by its signature"
+                    + " (e.g. \"<com.jpgextractor.PicViewerActivity: void sendExif(java.util.ArrayList)>\")")
+            .withLongOpt("infoflow-dot-method").create();
+    options.addOption(infoFlowDotMethod);
+
+    Option approot =
+        OptionBuilder.withArgName("dir").hasArg()
+            .withDescription("The Android application root directory").create("approot");
+    options.addOption(approot);
+
+    Option target =
+        OptionBuilder.withArgName("target").hasArg().withDescription("Target pass to run")
+            .create("t");
+    options.addOption(target);
+
+    Option spec =
+        OptionBuilder.withArgName("ssl_file").hasArg()
+            .withDescription("Security Specification for application (used with confcheck)")
+            .create("s");
+    options.addOption(spec);
+
+
+    return options;
+  }
+
+  /**
+   * Set all variables from the command line arguments.
+   * 
+   * @param cmd
+   */
+  private void setVars(Options options, CommandLine cmd) {
+    if (cmd.hasOption("help")) {
+      printOptions(options);
+      System.exit(0);
+    }
+
+    if (cmd.hasOption("target")) {
+      this.target = cmd.getOptionValue("target");
+    }
+
+    if (!Config.TARGETS.contains(target)) {
+      logger.error("Unsupported Target: {}.", target);
+      System.exit(1);
+    }
+
+    if (cmd.hasOption("nosourceinfo")) {
+      this.noSourceInfo = true;
+    }
+
+    if (cmd.hasOption("jimple")) this.writeJimpleAppClasses = true;
+
+
+    if (cmd.hasOption("infoflow")) {
+      this.infoFlow = true;
+    }
+
+    if (cmd.hasOption("infoflow-dot-file")) {
+      assert this.infoFlow == true;
+      this.infoFlowDotFile = cmd.getOptionValue("infoflow-dot-file");
+    }
+
+    if (cmd.hasOption("infoflow-dot-method")) {
+      assert this.infoFlowDotFile != null;
+      this.infoFlowDotMethod = cmd.getOptionValue("infoflow-dot-method");
+    }
+
+    if (cmd.hasOption("ptadump")) this.dumpPta = true;
+
+    if (cmd.hasOption("callgraph")) this.dumpCallGraph = true;
+
+
+    if (cmd.hasOption("debuglog")) {
+      configureDebugLog();
+    }
+
+    if (cmd.hasOption("analyzestrings")) {
+      this.runStringAnalysis = true;
+    }
+
+    if (cmd.hasOption("analyzestrings_unfiltered")) {
+      this.runStringAnalysis = true;
+      this.unfilteredStringAnalysis = true;
+    }
+
+    APP_ROOT_DIR = getPathFromCWD(cmd.getOptionValue("approot"));
+    logger.info("approot: {}", APP_ROOT_DIR);
+  }
+
+  /**
+   * Method to configure the logging infrastructure to use the debug logging configuration file.
+   */
+  public void configureDebugLog() {
+    // we want to create a debug log file, so load the
+    // logback-debug.xml from the config files directory
+    // assume SLF4J is bound to logback in the current environment
+    LoggerContext context = (LoggerContext) LoggerFactory.getILoggerFactory();
+    try {
+      JoranConfigurator configurator = new JoranConfigurator();
+      configurator.setContext(context);
+      // Call context.reset() to clear any previous configuration, e.g. default
+      // configuration. For multi-step configuration, omit calling context.reset().
+      context.reset();
+      configurator.doConfigure(apacHome + File.separator + "config-files/logback-debug.xml");
+    } catch (JoranException je) {
+      // StatusPrinter will handle this
+    }
+    StatusPrinter.printInCaseOfErrorsOrWarnings(context);
+  }
+
+  /**
+   * Construct an absolute path from the string argument. If the argument is a relative path, then
+   * append to the CWD. If the empty string is given, then return the cwd.
+   */
+  private static String getPathFromCWD(String path) {
+    if (path == null || path.equals("")) path = ".";
+    String ret = "";
+    File fpath = new File(path);
+    if (fpath.isAbsolute())
+      ret = path;
+    else {
+      ret = System.getProperty("user.dir") + File.separator + path;
+      fpath = new File(ret);
+    }
+
+    try {
+      fpath = new File(fpath.getCanonicalPath());
+    } catch (Exception e) {
+      logger.error("Error getting canonical path for app root", e);
+      System.exit(1);
+    }
+
+    if (!fpath.exists()) {
+      logger.error("App root directory does not exist: {}", ret);
+      System.exit(1);
+    }
+
+    return fpath.toString();
+  }
+
+  public void printOptions(String error, Options options) {
+    System.out.println("Error: " + error + "\n");
+    printOptions(options);
+  }
+
+  public void printOptions(Options options) {
+    HelpFormatter formatter = new HelpFormatter();
+    formatter.printHelp("droidsafe", options);
+  }
+
+  public void init(String[] args) {
+    this.apacHome = System.getenv("APAC_HOME");
+    logger.info("APAC_HOME = {}", apacHome);
+    if (this.apacHome == null) {
+      logger.error("Environment variable $APAC_HOME not set!");
+      System.exit(1);
+    }
+
+    this.ANDROID_LIB_DIR = new File(this.apacHome + File.separator + ANDROID_LIB_DIR_REL);
+    if (!this.ANDROID_LIB_DIR.exists()) {
+      logger.error("Android library directory for DroidSafe {} does not exist.", ANDROID_LIB_DIR);
+      System.exit(1);
+    }
+
+    Options options = setOptions();
+    CommandLineParser parser = new GnuParser();
+    try {
+      CommandLine cmd = parser.parse(options, args);
+      setVars(options, cmd);
+    } catch (Exception e) {
+      logger.error("Error parsing command line options", e);
+      printOptions(e.getMessage(), options);
+      System.exit(1);
+    }
+  }
+
 }
-

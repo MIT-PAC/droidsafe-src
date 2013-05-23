@@ -5,26 +5,20 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
-import java.util.StringTokenizer;
-import java.util.regex.Pattern;
-import java.util.regex.Matcher;
 import java.util.Set;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import soot.Scene;
-import soot.SootClass;
 import soot.SootMethod;
-import soot.options.Options;
-import soot.tagkit.LineNumberTag;
 import soot.Type;
-
+import soot.tagkit.LineNumberTag;
+import droidsafe.android.system.API;
+import droidsafe.android.system.Permissions;
 import droidsafe.main.Config;
 import droidsafe.utils.SourceLocationTag;
 import droidsafe.utils.Utils;
-import droidsafe.android.system.API;
-import droidsafe.android.system.Permissions;
 
 public class Method implements Comparable<Method> {
 	private static final Logger logger = LoggerFactory.getLogger(Method.class);
@@ -138,7 +132,7 @@ public class Method implements Comparable<Method> {
 	 */
 	public void incorporateMethod(Method meth2) {
 		if (!isSameMethod(meth2))
-			Utils.ERROR_AND_EXIT(logger,"Error: Trying to combine concrete value restrictions on different methods!");
+			Utils.logErrorAndExit(logger,"Error: Trying to combine concrete value restrictions on different methods!");
 		
 		//logger.info("Calling incorporate method on: {}", meth2);
 		
@@ -231,7 +225,7 @@ public class Method implements Comparable<Method> {
     /**
      * Returns the lines that contain calls to this method
      */
-    public List<SourceLocationTag> get_lines() {
+    public List<SourceLocationTag> getLines() {
       return lines;
     }
 
@@ -364,11 +358,11 @@ public class Method implements Comparable<Method> {
 		//otherwise, compare them on class name then arg
 		String str1 = getCname() + " " + getName();
 		for (ArgumentValue arg : args)
-			str1 += " " + args.toString();
+			str1 += " " + arg.toString();
 		
 		String str2 = m.getCname() + " " + m.getName();
 		for (ArgumentValue arg : m.args)
-			str2 += " " + args.toString();
+			str2 += " " + arg.toString();
 		return str1.compareTo(str2);
 	}
 }
