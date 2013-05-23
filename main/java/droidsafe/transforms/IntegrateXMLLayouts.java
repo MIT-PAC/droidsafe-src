@@ -86,8 +86,7 @@ public class IntegrateXMLLayouts extends BodyTransformer {
     		};
 		
 		private final String[] setContentViewClasses = new String[] {
-		        "android.app.Activity", "android.app.Dialog",
-		        "android.view.Window",  "android.widget.PopupWindow"
+		        "android.app.Activity", "android.app.Dialog", "android.view.Window" 
 		    };
 		
 		/**
