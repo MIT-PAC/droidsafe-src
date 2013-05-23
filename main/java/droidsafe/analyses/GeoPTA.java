@@ -409,7 +409,7 @@ public class GeoPTA {
      */
     public void dumpPTA(PrintStream file) {
 
-        System.out.print("======================= dumpPTA ()=====================================\n");
+        file.print("======================= dumpPTA ()=====================================\n");
         //Vector<CallsiteContextVar> outList = new Vector<CallsiteContextVar>();
         for ( IVarAbstraction pn : ptsProvider.pointers ) {
             IVarAbstraction orig = pn;
@@ -428,10 +428,10 @@ public class GeoPTA {
 
             //System.out.println(pn);
 
-            System.out.println(v);
+            file.println(v);
 
             if (pn.getWrappedNode() != orig.getWrappedNode())
-                System.out.println("Original: " + orig.getWrappedNode());
+                file.println("Original: " + orig.getWrappedNode());
 
             file.println(v);
 
@@ -483,7 +483,7 @@ public class GeoPTA {
 
             file.println();
         }
-        System.out.print("======================= dumpPTA () Done =====================================\n");
+        file.print("======================= dumpPTA () Done =====================================\n");
     }
 
     static void setGeomPointsToAnalysis() {
