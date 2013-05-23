@@ -1,5 +1,6 @@
 package droidsafe.analyses;
 
+import java.util.Collections;
 import java.util.LinkedHashSet;
 import java.util.Set;
 
@@ -37,6 +38,20 @@ public class EntryPointCGEdges {
         return v;
     }
 
+    /**
+     * Return the set of entry point edges as defined by this analysis.
+     */
+    public Set<Edge> getEntryPoints() {
+        return Collections.unmodifiableSet(entryPointEdges);
+    }
+    
+    /**
+     * Return true if the given edge is an entry point as defined by this analysis.
+     */
+    public boolean isEntryPoint(Edge e) {
+        return entryPointEdges.contains(e);
+    }
+    
     /**
      * Create the set and generate the set of entry point edges.
      */
