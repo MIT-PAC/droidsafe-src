@@ -1,7 +1,7 @@
 package java.lang;
 
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSModeled;
+import droidsafe.annotations.*;
+import droidsafe.helpers.*;
 
 public final
 class Class<T> 
@@ -10,21 +10,28 @@ class Class<T>
     //           java.lang.reflect.Type,
     //           java.lang.reflect.AnnotatedElement 
 {
+	public DSTaintObject dsTaint = new DSTaintObject();
 
-	/**
-	 * 
-	 */
 	private static final long serialVersionUID = 1L;
+	
+	@DSModeled(DSC.BAN)
+	public Class() { //Was private
+        // Prevent this class to be instantiated, instance
+        // should be created by JVM only
+    }
 
 	@DSModeled(DSC.SAFE)
 	public String getSimpleName() {
-		return new String();
+		return dsTaint.getTaintString();
 	}
 	
 	@DSModeled(DSC.SAFE)
 	public String getName() {
-		return new String();
+		return dsTaint.getTaintString();
     }
 	
-	public native Class<?> getComponentType(); //Not sure how to actually model this.  Since it is a fundamental Java class, we'll leave this alone (for now)
+	@DSModeled(DSC.SAFE)
+	public Class<?> getComponentType() {
+		return (Class<?>)dsTaint.getTaint();
+	}
 }
