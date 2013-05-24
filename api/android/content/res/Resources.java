@@ -63,13 +63,18 @@ public class Resources {
 	}
 	
 	private static final LongSparseArray<Object> EMPTY_ARRAY = new LongSparseArray<Object>(0) {
+	    
         @Override
+        @DSModeled
         public void put(long k, Object o) {
-            throw new UnsupportedOperationException();
+            //throw new UnsupportedOperationException();
+            
         }
+        
+        @DSModeled
         @Override
         public void append(long k, Object o) {
-            throw new UnsupportedOperationException();
+            //throw new UnsupportedOperationException();
         }
     };
 	

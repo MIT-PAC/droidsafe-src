@@ -33,6 +33,7 @@ public class SparseArray<E> implements Cloneable {
 		*/
 	}
 	
+	@DSModeled(DSC.SAFE)
 	@Override @SuppressWarnings("unchecked") public SparseArray<E> clone(){
 		SparseArray<E> clone = new SparseArray<E>(0);
 		clone.dsTaint.addTaint(this.dsTaint);
@@ -156,13 +157,17 @@ public class SparseArray<E> implements Cloneable {
 		//Return nothing
 	}
 	
+	@DSModeled(DSC.SAFE)
 	public void put(int key, E value){
 		mValues[0] = value;
+		// How do we check if a type has field dsTaint 
+		
 		// Original method
 		/* Original Method Too Long, Refer to Original Implementation */
 		//Return nothing
 	}
 	
+	@DSModeled(DSC.SAFE)
 	public int size(){
 		return dsTaint.getTaintInt();
 		
