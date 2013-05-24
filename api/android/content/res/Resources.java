@@ -62,7 +62,12 @@ public class Resources {
 	    mAssets = null;
 	}
 	
-	private static final LongSparseArray<Object> EMPTY_ARRAY = new LongSparseArray<Object>(0) {
+    
+	private static class MyEmptyArray extends LongSparseArray<Object> {
+	    @DSModeled(DSC.SAFE)
+	    public MyEmptyArray(int size) {
+	        //super(size);
+	    }
 	    
         @Override
         @DSModeled
@@ -76,8 +81,9 @@ public class Resources {
         public void append(long k, Object o) {
             //throw new UnsupportedOperationException();
         }
-    };
+    }
 	
+	private static final LongSparseArray<Object> EMPTY_ARRAY = new MyEmptyArray(0);
 	
 	public static int selectDefaultTheme(int curTheme, int targetSdkVersion){
 		

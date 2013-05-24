@@ -1576,17 +1576,26 @@ public final class Bundle implements Parcelable, Cloneable {
     }
 		*/
 	}
-	public static final Parcelable.Creator<Bundle> CREATOR =
-        new Parcelable.Creator<Bundle>() {
+	
+	/** this is added to swapout the annonymous class */
+	private static class MyCreator implements Parcelable.Creator<Bundle> {
+	    @DSModeled(DSC.SAFE)
+	    public MyCreator() {
+	    }
+	    
+	    @DSModeled(DSC.SAFE)
         public Bundle createFromParcel(Parcel in) {
             return in.readBundle();
         }
 
+	    @DSModeled(DSC.SAFE)
         public Bundle[] newArray(int size) {
             return new Bundle[size];
-        }
-    };
+        }	    
+	}
 	
+	public static final Parcelable.Creator<Bundle> CREATOR = new MyCreator();
+        
 	public int describeContents(){
 		return dsTaint.getTaintInt();
 		// Original method

@@ -80,6 +80,7 @@ public class ContextWrapper extends Context {
     }
 
     @Override
+    @DSModeled
     public Resources getResources()
     {
         return mBase.getResources();
