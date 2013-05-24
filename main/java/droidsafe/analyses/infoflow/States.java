@@ -158,36 +158,36 @@ class FrameRootsHeapStaticsIF {
 }
 
 class FrameIF {
-    DefaultHashMap<Local, ImmutableList<MyValue>> locals;
-    DefaultHashMap<MyParameterRef, ImmutableList<MyValue>> params;
+    DefaultHashMap<MethodLocal, ImmutableList<MyValue>> locals;
+    DefaultHashMap<MethodMyParameterRef, ImmutableList<MyValue>> params;
 
     FrameIF() {
-        locals = new DefaultHashMap<Local, ImmutableList<MyValue>>(ImmutableList.<MyValue>of());
-        params = new DefaultHashMap<MyParameterRef, ImmutableList<MyValue>>(ImmutableList.<MyValue>of());
+        locals = new DefaultHashMap<MethodLocal, ImmutableList<MyValue>>(ImmutableList.<MyValue>of());
+        params = new DefaultHashMap<MethodMyParameterRef, ImmutableList<MyValue>>(ImmutableList.<MyValue>of());
     }
 
-    FrameIF(FrameIF that, DefaultHashMap<MyParameterRef, ImmutableList<MyValue>> params) {
+    FrameIF(FrameIF that, DefaultHashMap<MethodMyParameterRef, ImmutableList<MyValue>> params) {
         assert params != null;
-        this.locals = new DefaultHashMap<Local, ImmutableList<MyValue>>(that.locals);
+        this.locals = new DefaultHashMap<MethodLocal, ImmutableList<MyValue>>(that.locals);
         this.params = params;
     }
 
-    FrameIF(DefaultHashMap<Local, ImmutableList<MyValue>> locals, DefaultHashMap<MyParameterRef, ImmutableList<MyValue>> params) {
+    FrameIF(DefaultHashMap<MethodLocal, ImmutableList<MyValue>> locals, DefaultHashMap<MethodMyParameterRef, ImmutableList<MyValue>> params) {
         assert locals != null && params != null;
         this.locals = locals;
         this.params = params;
     }
 
     FrameIF(FrameIF that) {
-        this.locals = new DefaultHashMap<Local, ImmutableList<MyValue>>(that.locals);
-        this.params = new DefaultHashMap<MyParameterRef, ImmutableList<MyValue>>(that.params);
+        this.locals = new DefaultHashMap<MethodLocal, ImmutableList<MyValue>>(that.locals);
+        this.params = new DefaultHashMap<MethodMyParameterRef, ImmutableList<MyValue>>(that.params);
     }
 
     FrameIF merge(FrameIF that) {
         FrameIF frame = new FrameIF();
 
-        for (Map.Entry<Local, ImmutableList<MyValue>> localValues : this.locals.entrySet()) {
-            Local local = localValues.getKey();
+        for (Map.Entry<MethodLocal, ImmutableList<MyValue>> localValues : this.locals.entrySet()) {
+            MethodLocal local = localValues.getKey();
             ImmutableList<MyValue> values = localValues.getValue();
             if (that.locals.containsKey(local)) {
                 Set<MyValue> vals = new HashSet<MyValue>(values);
@@ -197,16 +197,16 @@ class FrameIF {
                 frame.locals.put(local, values);
             }
         }
-        for (Map.Entry<Local, ImmutableList<MyValue>> localValues : that.locals.entrySet()) {
-            Local local = localValues.getKey();
+        for (Map.Entry<MethodLocal, ImmutableList<MyValue>> localValues : that.locals.entrySet()) {
+            MethodLocal local = localValues.getKey();
             if (!this.locals.containsKey(local)) {
                 frame.locals.put(local, localValues.getValue());
             }
         }
 
-        for (Map.Entry<MyParameterRef, ImmutableList<MyValue>> parameterRefValues : this.params.entrySet()) {
+        for (Map.Entry<MethodMyParameterRef, ImmutableList<MyValue>> parameterRefValues : this.params.entrySet()) {
             ImmutableList<MyValue> values = parameterRefValues.getValue();
-            MyParameterRef parameterRef = parameterRefValues.getKey();
+            MethodMyParameterRef parameterRef = parameterRefValues.getKey();
             if (that.params.containsKey(parameterRef)) {
                 Set<MyValue> vals = new HashSet<MyValue>(values);
                 vals.addAll(that.params.get(parameterRef));
@@ -215,8 +215,8 @@ class FrameIF {
                 frame.params.put(parameterRef, values);
             }
         }
-        for (Map.Entry<MyParameterRef, ImmutableList<MyValue>> parameterRefValues : that.params.entrySet()) {
-            MyParameterRef parameterRef = parameterRefValues.getKey();
+        for (Map.Entry<MethodMyParameterRef, ImmutableList<MyValue>> parameterRefValues : that.params.entrySet()) {
+            MethodMyParameterRef parameterRef = parameterRefValues.getKey();
             if (!this.params.containsKey(parameterRef)) {
                 frame.params.put(parameterRef, parameterRefValues.getValue());
             }
@@ -225,11 +225,11 @@ class FrameIF {
         return frame;
     }
 
-    ImmutableList<MyValue> putS(Local local, Set<MyValue> values) {
+    ImmutableList<MyValue> putS(MethodLocal local, Set<MyValue> values) {
         return putS(local, ImmutableList.copyOf(values));
     }
 
-    ImmutableList<MyValue> putS(Local local, ImmutableList<MyValue> values) {
+    ImmutableList<MyValue> putS(MethodLocal local, ImmutableList<MyValue> values) {
         if (values != null && !values.isEmpty()) {
             return locals.put(local, values);
         } else {
@@ -237,7 +237,23 @@ class FrameIF {
         }
     }
 
-    ImmutableList<MyValue> get(Local local) {
+    ImmutableList<MyValue> putW(MethodLocal local, Set<MyValue> values) {
+        return putW(local, ImmutableList.<MyValue>copyOf(values));
+    }
+
+    // weakly update
+    ImmutableList<MyValue> putW(MethodLocal local, List<MyValue> values) {
+        ImmutableList<MyValue> valuesOld = locals.get(local);
+        if (values != null && !values.isEmpty()) {
+            Set<MyValue> valuesNew = new HashSet<MyValue>(valuesOld);
+            valuesNew.addAll(values);
+            return locals.put(local, ImmutableList.copyOf(valuesNew));
+        } else {
+            return valuesOld;
+        }
+    }
+
+    ImmutableList<MyValue> get(MethodLocal local) {
         return locals.get(local);
     }
 
@@ -245,21 +261,32 @@ class FrameIF {
         return locals.remove(local);
     }
 
-    ImmutableList<MyValue> putS(ParameterRef parameterRef, Set<MyValue> values) {
+    ImmutableList<MyValue> putS(MethodMyParameterRef parameterRef, Set<MyValue> values) {
         return putS(parameterRef, ImmutableList.copyOf(values));
     }
 
-    private ImmutableList<MyValue> putS(ParameterRef parameterRef, ImmutableList<MyValue> values) {
-        MyParameterRef param = new MyParameterRef(parameterRef);
+    private ImmutableList<MyValue> putS(MethodMyParameterRef parameterRef, ImmutableList<MyValue> values) {
         if (values != null && !values.isEmpty()) {
-            return params.put(param, values);
+            return params.put(parameterRef, values);
         } else {
-            return params.get(param);
+            return params.get(parameterRef);
         }
     }
 
-    ImmutableList<MyValue> get(ParameterRef parameterRef) {
-        return params.get(new MyParameterRef(parameterRef));
+    // weakly update
+    ImmutableList<MyValue> putW(MethodMyParameterRef parameterRef, List<MyValue> values) {
+        ImmutableList<MyValue> valuesOld = params.get(parameterRef);
+        if (values != null && !values.isEmpty()) {
+            Set<MyValue> valuesNew = new HashSet<MyValue>(valuesOld);
+            valuesNew.addAll(values);
+            return params.put(parameterRef, ImmutableList.copyOf(valuesNew));
+        } else {
+            return valuesOld;
+        }
+    }
+
+    ImmutableList<MyValue> get(MethodMyParameterRef parameterRef) {
+        return params.get(parameterRef);
     }
 
     Set<Address> roots() {
@@ -298,12 +325,12 @@ class FrameIF {
             return false;
         }
         try {
-            for (Map.Entry<Local, ImmutableList<MyValue>> localValues : this.locals.entrySet()) {
+            for (Map.Entry<MethodLocal, ImmutableList<MyValue>> localValues : this.locals.entrySet()) {
                 if (!(ImmutableSet.copyOf(localValues.getValue()).equals(ImmutableSet.copyOf(frame.locals.get(localValues.getKey()))))) {
                     return false;
                 }
             }
-            for (Map.Entry<MyParameterRef, ImmutableList<MyValue>> paramValues : this.params.entrySet()) {
+            for (Map.Entry<MethodMyParameterRef, ImmutableList<MyValue>> paramValues : this.params.entrySet()) {
                 if (!(ImmutableSet.copyOf(paramValues.getValue()).equals(ImmutableSet.copyOf(frame.params.get(paramValues.getKey()))))) {
                     return false;
                 }
@@ -319,21 +346,31 @@ class FrameIF {
 
     @Override
     public String toString() {
-        Comparator<Local> localComparator = new Comparator<Local>() {
+        Comparator<MethodLocal> localComparator = new Comparator<MethodLocal>() {
             @Override
-            public int compare(Local local1, Local local2) {
-                return local1.getName().compareTo(local2.getName());
+            public int compare(MethodLocal local1, MethodLocal local2) {
+                int method = local1.method.getSignature().compareTo(local2.method.getSignature());
+                if (method != 0) {
+                    return method;
+                } else {
+                    return local1.local.getName().compareTo(local2.local.getName());
+                }
             }
         };
-        TreeMap<Local, ImmutableList<MyValue>> sortedLocals = new TreeMap<Local, ImmutableList<MyValue>>(localComparator);
+        TreeMap<MethodLocal, ImmutableList<MyValue>> sortedLocals = new TreeMap<MethodLocal, ImmutableList<MyValue>>(localComparator);
         sortedLocals.putAll(locals);
-        Comparator<MyParameterRef> paramComparator = new Comparator<MyParameterRef>() {
+        Comparator<MethodMyParameterRef> paramComparator = new Comparator<MethodMyParameterRef>() {
             @Override
-            public int compare(MyParameterRef param1, MyParameterRef param2) {
-                return param1.getIndex() - param2.getIndex();
+            public int compare(MethodMyParameterRef param1, MethodMyParameterRef param2) {
+                int method = param1.method.getSignature().compareTo(param2.method.getSignature());
+                if (method != 0) {
+                    return method;
+                } else {
+                    return param1.param.getIndex() - param2.param.getIndex();
+                }
             }
         };
-        TreeMap<MyParameterRef, ImmutableList<MyValue>> sortedParams = new TreeMap<MyParameterRef, ImmutableList<MyValue>>(paramComparator);
+        TreeMap<MethodMyParameterRef, ImmutableList<MyValue>> sortedParams = new TreeMap<MethodMyParameterRef, ImmutableList<MyValue>>(paramComparator);
         sortedParams.putAll(params);
         return "(" + sortedLocals + ", " + sortedParams + ")";
     }
@@ -1071,7 +1108,6 @@ class FrameMA {
                     return local1.local.getName().compareTo(local2.local.getName());
                 }
             }
-
         };
         TreeMap<MethodLocal, ImmutableList<MyValue>> sortedLocals = new TreeMap<MethodLocal, ImmutableList<MyValue>>(localComparator);
         sortedLocals.putAll(locals);
@@ -1135,7 +1171,7 @@ class MethodLocal {
 
     @Override
     public String toString() {
-        return "(" + method + ", " + local + ")";
+        return local.toString();
     }
 }
 
@@ -1183,6 +1219,6 @@ class MethodMyParameterRef {
 
     @Override
     public String toString() {
-        return "(" + method + ", " + param + ")";
+        return param.toString();
     }
 }
