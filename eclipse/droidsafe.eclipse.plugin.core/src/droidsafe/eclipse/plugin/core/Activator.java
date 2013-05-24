@@ -24,7 +24,7 @@ public class Activator extends AbstractUIPlugin {
   public Activator() {}
 
   /**
-   * Default plugin start method. 
+   * Default plugin start method.
    * 
    * @see org.eclipse.ui.plugin.AbstractUIPlugin#start(org.osgi.framework.BundleContext )
    */

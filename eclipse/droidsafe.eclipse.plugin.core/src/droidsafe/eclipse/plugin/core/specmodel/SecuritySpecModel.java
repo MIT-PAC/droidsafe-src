@@ -261,5 +261,5 @@ public class SecuritySpecModel implements Serializable {
     }
     return spec;
   }
-  
+
 }

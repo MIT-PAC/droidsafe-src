@@ -18,8 +18,7 @@ public class SecuritySpecViewContentProvider implements ITreeContentProvider {
   private static final Object[] NO_CHILDREN = new Object[0];
 
   @Override
-  public void dispose() {
-  }
+  public void dispose() {}
 
   @Override
   public void inputChanged(Viewer viewer, Object oldInput, Object newInput) {
@@ -53,7 +52,7 @@ public class SecuritySpecViewContentProvider implements ITreeContentProvider {
   }
 
   @Override
-  public Object getParent(Object element) {   
+  public Object getParent(Object element) {
     return null;
   }
 

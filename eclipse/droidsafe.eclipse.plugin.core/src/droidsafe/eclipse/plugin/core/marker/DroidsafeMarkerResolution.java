@@ -17,7 +17,7 @@ import droidsafe.eclipse.plugin.core.Activator;
 
 public class DroidsafeMarkerResolution extends WorkbenchMarkerResolution {
   @SuppressWarnings("unused")
-private final static Logger logger = LoggerFactory.getLogger(DroidsafeMarkerResolution.class);
+  private final static Logger logger = LoggerFactory.getLogger(DroidsafeMarkerResolution.class);
   private final String MARKERTYPE = "droidsafe.eclipse.plugin.core.droidsafemarker";
 
   private final IMarker originalMarker;
@@ -52,7 +52,7 @@ private final static Logger logger = LoggerFactory.getLogger(DroidsafeMarkerReso
   @Override
   public void run(IMarker marker) {
     try {
-      //marker.delete();
+      // marker.delete();
       marker.setAttribute(IMarker.DONE, true);
     } catch (CoreException ex) {
       ex.printStackTrace();
