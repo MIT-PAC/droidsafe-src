@@ -83,8 +83,6 @@ public class Layout {
 	         cview.id = String.format("id.%s", cview.id);
 	     
 	     logger.info("cview id {} ", cview.id);
-	     
-	     
 	  }
 
 	  Integer count = 0;

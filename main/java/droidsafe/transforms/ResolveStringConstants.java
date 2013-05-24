@@ -116,7 +116,6 @@ public class ResolveStringConstants extends BodyTransformer {
                 }
             }
         }
-
         // create a mapping from string ids to string names
         stringIdToStringName = new HashMap<Integer, String>();
         for (SootClass clz : Scene.v().getClasses()) {
