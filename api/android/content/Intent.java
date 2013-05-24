@@ -1,7 +1,9 @@
 package android.content;
 
+import android.os.Bundle;
 import android.os.Parcel;
 import android.os.Parcelable;
+import android.graphics.Rect;
 import android.net.Uri;
 import java.util.Set;
 import java.util.HashSet;
@@ -23,6 +25,18 @@ import droidsafe.helpers.*;
 public class Intent implements Parcelable, Cloneable {
 	private DSTaintObject dsTaint = new DSTaintObject();
 	
+	private String mAction;
+    private Uri mData;
+    private String mType;
+    private String mPackage;
+    private ComponentName mComponent;
+    private int mFlags;
+    private HashSet<String> mCategories;
+    private Bundle mExtras;
+    private Rect mSourceBounds;
+    private Intent mSelector;
+	
+	
 	@Override
 	public int describeContents() {
 		// TODO Auto-generated method stub
@@ -38,7 +52,7 @@ public class Intent implements Parcelable, Cloneable {
 	@DSModeled() // Marked as SPEC per the original implementation from MIT
 	public Intent(String action, Uri uri) {
         setAction(action);
-        dsTaint.addTaint(uri);
+        mData = uri;
     }
 	
 	@DSModeled() // Marked as SPEC per the original implementation from MIT
@@ -87,7 +101,7 @@ public class Intent implements Parcelable, Cloneable {
         return new Intent(this, false);
     }
 	
-	@DSModeled() // Marked as SPEC per the original implementation from MIT
+	@DSModeled(DSC.SAFE) // Marked as SPEC per the original implementation from MIT
 	public String getAction() {
 		return dsTaint.getTaintString();
         //return mAction;
@@ -106,7 +120,7 @@ public class Intent implements Parcelable, Cloneable {
         return this;
     }
 	
-	@DSModeled() // Marked as SPEC per the original implementation from MIT
+	@DSModeled(DSC.SAFE) // Marked as SPEC per the original implementation from MIT
 	public String getType() {
 		return dsTaint.getTaintString();
         //return mType;
@@ -128,9 +142,8 @@ public class Intent implements Parcelable, Cloneable {
 	
 	@DSModeled(value = DSC.SAFE)
 	public Intent setData(Uri data) {
-		dsTaint.addTaint(data);
-		/*
         mData = data;
+		/*
         mType = null;
         */
         return this;
@@ -143,8 +156,7 @@ public class Intent implements Parcelable, Cloneable {
 	
 	@DSModeled(value = DSC.SAFE)
 	public Intent setComponent(ComponentName component) {
-		dsTaint.addTaint(component);
-        //mComponent = component;
+        mComponent = component;
         return this;
     }
 	
@@ -176,7 +188,7 @@ public class Intent implements Parcelable, Cloneable {
         if (mType != null) {
             return mType;
         }
-        if (mData != null) {
+        if (mData != null) { 
             if ("content".equals(mData.getScheme())) {
                 return resolver.getType(mData);
             }
@@ -231,13 +243,8 @@ public class Intent implements Parcelable, Cloneable {
 	
 	@DSModeled(value = DSC.SAFE)
 	public Intent putExtra(String name, Serializable value) {
-		dsTaint.addTaints(name, value);
-		/*
-        if (mExtras == null) {
-            mExtras = new Bundle();
-        }
+        mExtras = new Bundle();
         mExtras.putSerializable(name, value);
-        */
         return this;
     }
 	

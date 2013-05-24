@@ -3,6 +3,7 @@ package droidsafe.runtime;
 import droidsafe.annotations.*;
 import android.app.ContextImpl;
 import android.content.BroadcastReceiver;
+import android.content.Intent;
 import android.os.Bundle;
 
 /**
@@ -36,16 +37,16 @@ public class DroidSafeAndroidRuntime {
 	 */
 	public static void modelActivity(android.app.Activity activity) {
 		ContextImpl context = new ContextImpl();
-		activity.attach(context);
 		
 		while (true) {
 			Bundle b = new Bundle();
 			//onsavedinstancestate(b)
-			activity.performCreate(b);
+			activity.performCreate(b, context);
 		
 			
-			
+			activity.droidsafeOnResume();
 			activity.droidsafeOnStop();
+			activity.droidsafeOnDestroy();
 		}
 		
 		//code
@@ -61,8 +62,9 @@ public class DroidSafeAndroidRuntime {
 		
 	}
 	
+	@DSModeled
 	public static void modelBroadCastReceiver(BroadcastReceiver receiver) {
-		
+		receiver.onReceive(new ContextImpl(), new Intent());
 	}
 	
 }

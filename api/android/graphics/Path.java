@@ -31,7 +31,7 @@ import android.view.HardwareRenderer;
  */
 public class Path {
 
-    private DSTaintObject dsTaint = new DSTaintObject();
+    DSTaintObject dsTaint = new DSTaintObject();
 
     @DSModeled(DSC.SAFE)
     public Path() {}
@@ -42,12 +42,14 @@ public class Path {
         // within this object's mNativePath.  init2 is a native call,
         // so I conseratively assume this object's mNativePath is tainted 
         // with src.mNativePath 
-        dsTaint.addTaints(src);
+        dsTaint.addTaint(src.dsTaint);
     }
    
     @DSModeled(DSC.SAFE) 
     public void arcTo(RectF oval, float startAngle, float sweepAngle) {
-        dsTaint.addTaints(oval, startAngle, sweepAngle);
+        dsTaint.addTaint(oval.taint);
+        dsTaint.addTaint(startAngle);
+        dsTaint.addTaint(sweepAngle);
     }
 
     @DSModeled()

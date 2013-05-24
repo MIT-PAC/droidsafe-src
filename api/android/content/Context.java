@@ -27,7 +27,12 @@ import droidsafe.annotations.*;
 import droidsafe.helpers.*;
 
 public abstract class Context {
-	private DSTaintObject dsTaint = new DSTaintObject();
+	public DSTaintObject dsTaint = new DSTaintObject();
+	
+	public static final String WINDOW_SERVICE = "window";
+	public static final String SEARCH_SERVICE = "search";
+	public static final String LAYOUT_INFLATER_SERVICE = "layout_inflater";
+	public static final String SENSOR_SERVICE = "sensor";
 	
 	/* Concrete Methods */
 	public boolean isRestricted() {
@@ -56,14 +61,7 @@ public abstract class Context {
 	
 	public final TypedArray obtainStyledAttributes(
             AttributeSet set, int[] attrs) {
-		return new TypedArray();
-		/*
-		 * To fully model the function we'd need to model both the 
-		 * TypedArray class as well as the Resources (and by virtue
-		 * of that the Theme subclass).  This may be a more succinct
-		 * way to model.
-		 */
-        //return getTheme().obtainStyledAttributes(set, attrs, 0, 0);
+        return getTheme().obtainStyledAttributes(set, attrs, 0, 0);
     }
 	
 	/* Abstract Methods */

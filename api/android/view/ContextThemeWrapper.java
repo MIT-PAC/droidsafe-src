@@ -17,7 +17,9 @@
 package android.view;
 
 import droidsafe.annotations.*;
+import droidsafe.helpers.*;
 
+import android.app.ContextImpl;
 import android.content.Context;
 import android.content.ContextWrapper;
 import android.content.res.Resources;
@@ -28,14 +30,21 @@ import android.os.Build;
  * wrapped context. 
  */
 public class ContextThemeWrapper extends ContextWrapper {
+	private DSTaintObject dsTaint = new DSTaintObject();
+	private Context mBase;
    
     @DSModeled
     public ContextThemeWrapper() {
-        super(null);
+        super(new ContextImpl());
     }
     
     public ContextThemeWrapper(Context base, int themeres) {
         super(base);
+        dsTaint.addTaint(themeres);
+        /*
+        mBase = base;
+        mThemeResource = themeres;
+        */
     }
     
     @Override public void setTheme(int resid) {
@@ -56,6 +65,19 @@ public class ContextThemeWrapper extends ContextWrapper {
     @Override public Resources.Theme getTheme() {
    
         return null;
+    }
+    
+    
+    @DSModeled(DSC.SAFE)
+    @Override protected void attachBaseContext(Context newBase) {
+        super.attachBaseContext(newBase);
+        mBase = newBase;
+    }
+    
+    @Override 
+    @DSModeled(DSC.SAFE)
+    public Object getSystemService(String name) {
+        return super.getSystemService(name);
     }
 }
 

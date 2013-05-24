@@ -48,10 +48,13 @@ import java.util.Iterator;
 public final class CursorJoiner 
         //implements Iterator<CursorJoiner.Result>, Iterable<CursorJoiner.Result> {
         implements Iterator, Iterable {
-    private DSTaintObject taint; 
-    /*
+    private DSTaintObject taint = new DSTaintObject();
+    
+   
     private Cursor mCursorLeft;
     private Cursor mCursorRight;
+    private String[] mValues;
+    /*
     private boolean mCompareResultIsValid;
     private Result mCompareResult;
     private int[] mColumnsLeft;
@@ -90,7 +93,11 @@ public final class CursorJoiner
     public CursorJoiner(
             Cursor cursorLeft, String[] columnNamesLeft,
             Cursor cursorRight, String[] columnNamesRight) {
-        taint.addTaints(cursorLeft, columnNamesLeft, cursorRight, columnNamesRight);
+    	 mCursorLeft = cursorLeft;
+         mCursorRight = cursorRight;
+         
+        taint.addTaint(columnNamesRight[0]);
+        taint.addTaint(columnNamesLeft[0]);
         
         if (columnNamesLeft.length != columnNamesRight.length) {
             throw new IllegalArgumentException(
@@ -163,7 +170,9 @@ public final class CursorJoiner
             return !mCursorLeft.isAfterLast() || !mCursorRight.isAfterLast();
         }
         */
-    	return true;
+    	
+    	return mCursorLeft.isLast() || !mCursorRight.isLast() || 
+    			!mCursorLeft.isAfterLast() || !mCursorRight.isAfterLast();
     }
 
     /**
@@ -187,39 +196,17 @@ public final class CursorJoiner
     public Object next() {
         /* GITI DSModeled:  For modeling purposes, we probably do not care what the result returned
          * is, so return a valid Result.BOTH.
+         */
         if (!hasNext()) {
             throw new IllegalStateException("you must only call next() when hasNext() is true");
         }
         incrementCursors();
-        assert hasNext();
 
         boolean hasLeft = !mCursorLeft.isAfterLast();
         boolean hasRight = !mCursorRight.isAfterLast();
-
-        if (hasLeft && hasRight) {
-            populateValues(mValues, mCursorLeft, mColumnsLeft, 0 );
-            populateValues(mValues, mCursorRight, mColumnsRight, 1 );
-            switch (compareStrings(mValues)) {
-                case -1:
-                    mCompareResult = Result.LEFT;
-                    break;
-                case 0:
-                    mCompareResult = Result.BOTH;
-                    break;
-                case 1:
-                    mCompareResult = Result.RIGHT;
-                    break;
-            }
-        } else if (hasLeft) {
-            mCompareResult = Result.LEFT;
-        } else  {
-            assert hasRight;
-            mCompareResult = Result.RIGHT;
-        }
-        mCompareResultIsValid = true;
-        return mCompareResult;
-         */
-        return Result.BOTH;
+        mValues[0] = mCursorLeft.getString(0);
+        mValues[0] = mCursorRight.getString(0);
+        return Result.RIGHT;
     }
 
     @DSModeled(DSC.SAFE)
@@ -251,25 +238,11 @@ public final class CursorJoiner
      * Increment the cursors past the rows indicated in the most recent call to next().
      * This will only have an affect once per call to next().
      */
-    /* GITI DSModeled
+    @DSModeled(DSC.SAFE)
     private void incrementCursors() {
-        if (mCompareResultIsValid) {
-            switch (mCompareResult) {
-                case LEFT:
-                    mCursorLeft.moveToNext();
-                    break;
-                case RIGHT:
-                    mCursorRight.moveToNext();
-                    break;
-                case BOTH:
-                    mCursorLeft.moveToNext();
-                    mCursorRight.moveToNext();
-                    break;
-            }
-            mCompareResultIsValid = false;
-        }
+       mCursorLeft.moveToNext();
+       mCursorRight.moveToNext();
     }
-    */
 
     /**
      * Compare the values. Values contains n pairs of strings. If all the pairs of strings match
