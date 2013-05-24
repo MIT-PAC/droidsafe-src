@@ -2,7 +2,7 @@ package android.util;
 import droidsafe.annotations.*;
 import droidsafe.helpers.*;
 public abstract class Property<T, V> {
-    private DSTaintObject dsTaint; 
+    public DSTaintObject dsTaint; 
     private final String mName;
     private final Class<V> mType;
     public static <T, V> Property<T, V> of(Class<T> hostType, Class<V> valueType, String name) {

@@ -7637,7 +7637,31 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
 	}
 	
 	
+	static class MyFloatPropertyView extends FloatProperty<View> {
+	    
+	    @DSModeled(DSC.SAFE)
+	    public MyFloatPropertyView(String str) {
+	        super(str);
+	    }
+	    
+	    public Float get(View v) {
+	        return Float.valueOf(dsTaint.getTaintFloat());
+	    }
+	}
+	
+	public static Property<View, Float> ALPHA = new MyFloatPropertyView("alpha");
+	    
+/*	  
 	public static Property<View, Float> ALPHA = new FloatProperty<View>("alpha") {
+	    
+	    @DSModeled
+	    {
+	    }
+	    
+	    @DSModeled(DSC.SAFE)
+	    public FloatProperty<View>(String str) {
+	    }
+	    
         @Override
         public void setValue(View object, float value) {
             object.setAlpha(value);
@@ -7648,7 +7672,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
             return object.getAlpha();
         }
     };
-    
+ */   
     /*
 	public static Property<View, Float> TRANSLATION_X = new FloatProperty<View>("translationX") {
         @Override
