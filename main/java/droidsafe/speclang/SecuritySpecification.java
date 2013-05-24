@@ -2,8 +2,8 @@ package droidsafe.speclang;
 
 import java.io.PrintWriter;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.HashMap;
-import java.util.HashSet;
 import java.util.LinkedHashMap;
 import java.util.LinkedHashSet;
 import java.util.LinkedList;
@@ -11,7 +11,6 @@ import java.util.List;
 import java.util.Map;
 import java.util.Set;
 import java.util.TreeSet;
-import java.util.Collections;
 
 import org.antlr.runtime.ANTLRStringStream;
 import org.antlr.runtime.CharStream;
@@ -25,24 +24,41 @@ import droidsafe.android.system.API;
 import droidsafe.utils.SourceLocationTag;
 import droidsafe.utils.Utils;
 
-import soot.Scene;
-
 
 public class SecuritySpecification  {
 	private static final Logger logger = LoggerFactory.getLogger(SecuritySpecification.class);
 	
 	private Set<Method> whitelist;
 	private Map<Method, List<Method>> eventBlocks;
-    private static int popup_id = 0;
+    private static int popupId = 0;
     private boolean jquery = true;
-    private boolean jquery_mobile = false;
-    String ANDROID_API_BASE = "http://developer.android.com/reference";
-    String JAVA_API_BASE = "http://docs.oracle.com/javase/6/docs/api";
-    String TARGET = "iframe_content";
+    private boolean jqueryMobile = false;
+    private final String ANDROID_API_BASE = "http://developer.android.com/reference";
+    private final String JAVA_API_BASE = "http://docs.oracle.com/javase/6/docs/api";
+    private final String TARGET = "iframe_content";
 	
 	public SecuritySpecification() {
 		whitelist = new LinkedHashSet<Method>();
 		eventBlocks = new LinkedHashMap<Method, List<Method>>();
+	}
+	
+	
+	/*
+	 * Method to allow other classes to process the spec elements.
+	 * 
+	 * Returns the set of white listed methods in the application. 
+	 */
+	public Set<Method> getWhitelist() { 
+		return this.whitelist;
+	}
+	
+	/*
+	 * Method to allow other classes to process the spec elements.
+	 * 
+	 * Returns the map from methods to list of methods in the spec.  
+	 */
+	public Map<Method, List<Method>> getEventBlocks() { 
+		return this.eventBlocks;
 	}
 	
 	public void addOutputEventToWhitelist(Method m) {
@@ -63,9 +79,11 @@ public class SecuritySpecification  {
 	 * with the stored output event by widening. 
 	 */
 	public void addToInputEventCombine(Method inputEvent, List<Method> oes) {
-		for (Method oe : oes) {
-			addToInputEventCombine(inputEvent, oe);
-		}
+	  if (inputEvent != null && oes != null) {
+	    for (Method oe : oes) {
+	      addToInputEventCombine(inputEvent, oe);
+	    } 
+	  }    
 	}
 	
 	/**
@@ -87,7 +105,7 @@ public class SecuritySpecification  {
 		for (Method m : eventBlocks.get(inputEvent)) {
 			if (m.isSameMethod(outputEvent)) {
 				if (sameMethod != null)
-					Utils.ERROR_AND_EXIT(logger, "More than one appearance of a method (output event) in event block: {}", inputEvent);
+					Utils.logErrorAndExit(logger, "More than one appearance of a method (output event) in event block: {}", inputEvent);
 				sameMethod = m;
 			}
 		}
@@ -111,10 +129,10 @@ public class SecuritySpecification  {
 		if (!eventBlocks.containsKey(inputEvent))
 			eventBlocks.put(inputEvent, new ArrayList<Method>());
 		
-		//should not see multipe output events in same input event in the spec
+		//should not see multiple output events in same input event in the spec
 		for (Method m : eventBlocks.get(inputEvent)) {
 			if (m.isSameMethod(outputEvent)) {
-				Utils.ERROR_AND_EXIT(logger, "More than one appearance of a method (output event) in event block: {}", inputEvent);
+				Utils.logErrorAndExit(logger, "More than one appearance of a method (output event) in event block: {}", inputEvent);
 			}
 		}
 
@@ -122,14 +140,11 @@ public class SecuritySpecification  {
 	}
 	
 	public void addToInputEvent(Method inputEvent, List<Method> outputEvents) {
-		if (inputEvent == null || outputEvents == null)
-			return;
-		
-		if (!eventBlocks.containsKey(inputEvent))
-			eventBlocks.put(inputEvent, new ArrayList<Method>());
-		
-		for (Method m : outputEvents)
-			addToInputEvent(inputEvent, m);
+		if (inputEvent != null && outputEvents != null){								
+		  for (Method m : outputEvents){
+		    addToInputEvent(inputEvent, m);
+		  }
+		}
 	}
 	
 	/**
@@ -147,8 +162,7 @@ public class SecuritySpecification  {
 			if (m.isMethodCallEnabled(outputEvent)) {
 				return true;
 			}
-		}
-		
+		}		
 		return false;
 	}
 	/*
@@ -239,7 +253,7 @@ public class SecuritySpecification  {
                 
                 String calls 
                   = String.format("<span title='%s'>[%d calls]</span>",
-                         source_locations_to_title(oe), oe.get_lines().size());
+                         source_locations_to_title(oe), oe.getLines().size());
                 methods.add (msig + calls);
         	} 
             for (String m : methods) {
@@ -296,7 +310,7 @@ public class SecuritySpecification  {
             List<Method> outm = new ArrayList<Method>(eventBlocks.get(ie));
             Collections.sort (outm);
 
-            List<String> methods = new ArrayList<String>();
+            //List<String> methods = new ArrayList<String>();
             List<String> banned_methods = new ArrayList<String>();
 
             // Determine the set of descriptors for all of the methods
@@ -337,17 +351,17 @@ public class SecuritySpecification  {
               buf.append ("</div>\n");
             }
             Collections.sort (banned_methods);
-            if (false) {
-              if (banned_methods.size() > 0) 
-                buf.append ("<br>");
-              for (String m : banned_methods) {
-                m = m.replaceFirst ("^<", "");
-                m = m.replaceFirst (">$", "");
-                m = m.replaceAll ("<", "&lt;");
-                all_banned_methods.add (m);
-                buf.append (m + "<br>\n");
-              }
-            }
+//            if (false) {
+//              if (banned_methods.size() > 0) 
+//                buf.append ("<br>");
+//              for (String m : banned_methods) {
+//                m = m.replaceFirst ("^<", "");
+//                m = m.replaceFirst (">$", "");
+//                m = m.replaceAll ("<", "&lt;");
+//                all_banned_methods.add (m);
+//                buf.append (m + "<br>\n");
+//              }
+//            }
             buf.append ("\n</div>\n");
         } 
         buf.append ("\n<p>"+ all_banned_methods.size() +" banned methods<p>\n");
@@ -410,7 +424,7 @@ public class SecuritySpecification  {
     Map<String,String> classmap = new LinkedHashMap<String,String>();
 
     // Create a map from each class to all of the lines in that class
-    List<SourceLocationTag> locs = m.get_lines();
+    List<SourceLocationTag> locs = m.getLines();
     for (SourceLocationTag loc : locs) {
       String l = classmap.get (loc.getClz());
       if (l == null)
@@ -429,7 +443,7 @@ public class SecuritySpecification  {
   }
 
   /** 
-   * Returns the relative path from the android diretory to the source html
+   * Returns the relative path from the android directory to the source html
    * created by java2html
    */
   public String app_source_path (String app_class) {
@@ -454,7 +468,7 @@ public class SecuritySpecification  {
 
     String out = "";
 
-    List<SourceLocationTag> locs = m.get_lines();
+    List<SourceLocationTag> locs = m.getLines();
     for (SourceLocationTag loc : locs) {
       String cname = loc.getClz();
       int line = loc.getLine();
@@ -495,10 +509,10 @@ public class SecuritySpecification  {
 
     String popup = String.format 
       ("<div class='hide' id=popup%d title='%s'>%s</div>\n",
-       popup_id, popup_title, popup_txt);
+       popupId, popup_title, popup_txt);
 
     String txt = String.format ("<a class=popup href=popup id=uppop%d>%s</a>",
-                                popup_id++, short_txt);
+                                popupId++, short_txt);
 
     return txt + "\n" + popup;
   }
@@ -509,14 +523,14 @@ public class SecuritySpecification  {
     String out = "";
     if (jquery) {
       out = String.format ("<div title='%s'>%s</div>", popup_txt, short_txt);
-    } else if (jquery_mobile) {
+    } else if (jqueryMobile) {
       String popup = String.format ("<div data-role=popup id=popup%d>\n"
                                     + "  <p>%s</p>\n"
                                     + "</div>\n",
-                                    popup_id, popup_txt);
+                                    popupId, popup_txt);
 
       String txt = String.format ("<a href=#popup%d data-rel=popup>%s</a>",
-                                  popup_id++, short_txt);
+                                  popupId++, short_txt);
       out = popup + txt;
     }
 
@@ -583,11 +597,11 @@ public class SecuritySpecification  {
     out += "<div style='padding-left:15px' class=calls>";
     out += source_locations_xref(m);
     out += "</div>";
-    if (false) {
-      String call_txt = String.format ("[%d call%s]", m.get_lines().size(),
-                                       (m.get_lines().size() == 1) ? "" : "s");
-      String calls = html_popup (call_txt, source_locations_xref(m), "calls");
-    }
+//    if (false) {
+//      String call_txt = String.format ("[%d call%s]", m.get_lines().size(),
+//                                       (m.get_lines().size() == 1) ? "" : "s");
+//      String calls = html_popup (call_txt, source_locations_xref(m), "calls");
+//    }
     return (out + "\n");
   }
 
@@ -596,7 +610,7 @@ public class SecuritySpecification  {
     sig = sig.replace (">", "");
     String[] sa = sig.split (":* ");
     String class_name = sa[0].replace (".", "/");
-    String ret_type = sa[1];
+    //String ret_type = sa[1];
     String method = sa[2].replaceAll (", *", ", ");
     String base = ANDROID_API_BASE;
     if (class_name.startsWith ("java"))
@@ -633,11 +647,11 @@ public class SecuritySpecification  {
       out += m.getName().replaceAll("<", "&lt;") + " ";
 
       out += "()";
-      ArgumentValue[] args = m.getArgs();
+      //ArgumentValue[] args = m.getArgs();
       out += "</h3>\n";
 
     // jquerymobile version
-    } else if (jquery_mobile) {
+    } else if (jqueryMobile) {
       out = "<div data-role=collapsible data-collapsed=false><h3>";
       String full_cname = m.getCname();
       out += html_tooltip (extract_classname (full_cname), full_cname) + ": ";
@@ -645,7 +659,7 @@ public class SecuritySpecification  {
       out += m.getName().replaceAll("<", "&lt;") + " ";
 
       out += "()";
-      ArgumentValue[] args = m.getArgs();
+      //ArgumentValue[] args = m.getArgs();
       out += "</h3>\n</div>\n";
     }
 
@@ -767,8 +781,8 @@ public class SecuritySpecification  {
   public int api_danger (Method m) {
     
     int danger = 0;
-    String cname = m.getCname();
-    String sig = m.getSignature();
+    //String cname = m.getCname();
+    //String sig = m.getSignature();
     String perms = api_descriptors(m).toString();
 
     if (perms.contains ("intent"))
@@ -855,7 +869,7 @@ public class SecuritySpecification  {
       str.append(indent + String.format("  'arguments' : %s,\n", args.toString()));
 
 
-      List<SourceLocationTag> locs = method.get_lines();
+      List<SourceLocationTag> locs = method.getLines();
       List<Integer> lines = new ArrayList<Integer>();
       for (SourceLocationTag loc : locs) {
         lines.add(loc.getLine());
@@ -916,7 +930,7 @@ public class SecuritySpecification  {
     Collections.sort (entry_points);
 
     // Set of all banned methods in the application (sorted, no dups)
-    TreeSet<String> all_banned_methods = new TreeSet<String>();
+    //TreeSet<String> all_banned_methods = new TreeSet<String>();
 
     Map<String,List<EventBlock>> eventmap = new HashMap<String,List<EventBlock>>();
     List<EventBlock> lst;

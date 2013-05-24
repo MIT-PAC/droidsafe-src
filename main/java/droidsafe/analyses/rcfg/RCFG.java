@@ -304,10 +304,12 @@ public class RCFG {
 			if (expr == null) 
 				continue;
 			
+			/*
 			if (!GeoPTA.v().isPointer(expr.getBase())) {
 				System.out.printf("Not a pointer %s for call %s %s\n", expr.getBase(), expr, 
 						SootUtils.getSourceLocation(stmt, src.getDeclaringClass()));
 			}
+			*/
 			
 			for (AllocNode alloc : GeoPTA.v().getPTSet(expr.getBase(), edgeInto)) {
 				if (AddAllocsForAPICalls.v().isGeneratedExpr(alloc.getNewExpr())) {

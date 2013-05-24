@@ -14,11 +14,11 @@ import java.util.regex.Pattern;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import droidsafe.utils.SootUtils;
-
 import soot.Hierarchy;
 import soot.Scene;
 import soot.SootMethod;
+import droidsafe.main.Config;
+import droidsafe.utils.SootUtils;
 
 /**
  * This class stores information and queries regarding permissions in the Android API 
@@ -69,7 +69,7 @@ public class Permissions {
 	}
 
 	private void readMethodPerms(Hierarchy h) {
-		File file= new File(System.getenv ("APAC_HOME") + File.separator + PERM_DIR + 
+		File file= new File(Config.v().getApacHome() + File.separator + PERM_DIR + 
 				File.separator + METHOD_PERMS_FILE);
 		try {
 			LineNumberReader br = new LineNumberReader (new FileReader (file));
