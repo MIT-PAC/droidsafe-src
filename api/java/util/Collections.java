@@ -14,17 +14,18 @@ import java.lang.reflect.Array;
 public class Collections {
     public DSTaintObject dsTaint = new DSTaintObject();
     
+    /*
     private static final Iterator<?> EMPTY_ITERATOR = new Iterator<Object>() {
         @Override public boolean hasNext() {
             return false;
         }
 
         @Override public Object next() {
-            throw new NoSuchElementException();
+            //throw new NoSuchElementException();
         }
 
         @Override public void remove() {
-            throw new IllegalStateException();
+            //throw new IllegalStateException();
         }
     };
     private static final Enumeration<?> EMPTY_ENUMERATION = new Enumeration<Object>() {
@@ -33,9 +34,10 @@ public class Collections {
         }
 
         @Override public Object nextElement() {
-            throw new NoSuchElementException();
+            //throw new NoSuchElementException();
         }
     };
+    */
     
     private static final class CopiesList<E> extends AbstractList<E> implements Serializable {
         public DSTaintObject dsTaint = new DSTaintObject();
@@ -357,11 +359,8 @@ public class Collections {
                 }
 
                 @Override public E next() {
-                    if (hasNext) {
-                        hasNext = false;
-                        return element;
-                    }
-                    throw new NoSuchElementException();
+                    return element;
+                    //throw new NoSuchElementException();
                 }
 
                 @Override public void remove() {
@@ -540,7 +539,7 @@ public class Collections {
 
                         @Override public Map.Entry<K, V> next() {
                             if (!hasNext) {
-                                throw new NoSuchElementException();
+                                //throw new NoSuchElementException();
                             }
 
                             hasNext = false;
@@ -2651,8 +2650,8 @@ public class Collections {
     
     public static <T> void copy(List<? super T> destination, List<? extends T> source) {
         if (destination.size() < source.size()) {
-            throw new IndexOutOfBoundsException("destination.size() < source.size(): " +
-                    destination.size() + " < " + source.size());
+            //throw new IndexOutOfBoundsException("destination.size() < source.size(): " +
+              //      destination.size() + " < " + source.size());
         }
         Iterator<? extends T> srcIt = source.iterator();
         ListIterator<? super T> destIt = destination.listIterator();
@@ -2661,8 +2660,8 @@ public class Collections {
                 destIt.next();
             } catch (NoSuchElementException e) {
                 
-                throw new IndexOutOfBoundsException("Source size " + source.size() +
-                        " does not fit into destination");
+                //throw new IndexOutOfBoundsException("Source size " + source.size() +
+                 //       " does not fit into destination");
             }
             destIt.set(srcIt.next());
         }
@@ -2853,11 +2852,11 @@ public class Collections {
     
     @SuppressWarnings("unchecked") public static void swap(List<?> list, int index1, int index2) {
         if (list == null) {
-            throw new NullPointerException();
+            //throw new NullPointerException();
         }
         final int size = list.size();
         if (index1 < 0 || index1 >= size || index2 < 0 || index2 >= size) {
-            throw new IndexOutOfBoundsException();
+            //throw new IndexOutOfBoundsException();
         }
         if (index1 == index2) {
             return;
@@ -3037,14 +3036,14 @@ public class Collections {
     public static <T> Collection<T> synchronizedCollection(
             Collection<T> collection) {
         if (collection == null) {
-            throw new NullPointerException();
+            //throw new NullPointerException();
         }
         return new SynchronizedCollection<T>(collection);
     }
     
     public static <T> List<T> synchronizedList(List<T> list) {
         if (list == null) {
-            throw new NullPointerException();
+            //throw new NullPointerException();
         }
         if (list instanceof RandomAccess) {
             return new SynchronizedRandomAccessList<T>(list);
@@ -3054,14 +3053,14 @@ public class Collections {
     
     public static <K, V> Map<K, V> synchronizedMap(Map<K, V> map) {
         if (map == null) {
-            throw new NullPointerException();
+            //throw new NullPointerException();
         }
         return new SynchronizedMap<K, V>(map);
     }
     
     public static <E> Set<E> synchronizedSet(Set<E> set) {
         if (set == null) {
-            throw new NullPointerException();
+            //throw new NullPointerException();
         }
         return new SynchronizedSet<E>(set);
     }
@@ -3069,14 +3068,14 @@ public class Collections {
     public static <K, V> SortedMap<K, V> synchronizedSortedMap(
             SortedMap<K, V> map) {
         if (map == null) {
-            throw new NullPointerException();
+            //throw new NullPointerException();
         }
         return new SynchronizedSortedMap<K, V>(map);
     }
     
     public static <E> SortedSet<E> synchronizedSortedSet(SortedSet<E> set) {
         if (set == null) {
-            throw new NullPointerException();
+            //throw new NullPointerException();
         }
         return new SynchronizedSortedSet<E>(set);
     }
@@ -3084,14 +3083,14 @@ public class Collections {
     @SuppressWarnings("unchecked") public static <E> Collection<E> unmodifiableCollection(
             Collection<? extends E> collection) {
         if (collection == null) {
-            throw new NullPointerException();
+            //throw new NullPointerException();
         }
         return new UnmodifiableCollection<E>((Collection<E>) collection);
     }
     
     @SuppressWarnings("unchecked") public static <E> List<E> unmodifiableList(List<? extends E> list) {
         if (list == null) {
-            throw new NullPointerException();
+            //throw new NullPointerException();
         }
         if (list instanceof RandomAccess) {
             return new UnmodifiableRandomAccessList<E>((List<E>) list);
@@ -3107,7 +3106,7 @@ public class Collections {
     
     @SuppressWarnings("unchecked") public static <E> Set<E> unmodifiableSet(Set<? extends E> set) {
         if (set == null) {
-            throw new NullPointerException();
+            //throw new NullPointerException();
         }
         return new UnmodifiableSet<E>((Set<E>) set);
     }
@@ -3115,21 +3114,21 @@ public class Collections {
     @SuppressWarnings("unchecked") public static <K, V> SortedMap<K, V> unmodifiableSortedMap(
             SortedMap<K, ? extends V> map) {
         if (map == null) {
-            throw new NullPointerException();
+            //throw new NullPointerException();
         }
         return new UnmodifiableSortedMap<K, V>((SortedMap<K, V>) map);
     }
     
     public static <E> SortedSet<E> unmodifiableSortedSet(SortedSet<E> set) {
         if (set == null) {
-            throw new NullPointerException();
+            //throw new NullPointerException();
         }
         return new UnmodifiableSortedSet<E>(set);
     }
     
     public static int frequency(Collection<?> c, Object o) {
         if (c == null) {
-            throw new NullPointerException();
+            //throw new NullPointerException();
         }
         if (c.isEmpty()) {
             return 0;
@@ -3159,6 +3158,7 @@ public class Collections {
     }
     */
     
+    /* 
     @SuppressWarnings("unchecked") public static <T> Enumeration<T> emptyEnumeration() {
         return (Enumeration<T>) EMPTY_ENUMERATION;
     }
@@ -3167,7 +3167,6 @@ public class Collections {
         return (Iterator<T>) EMPTY_ITERATOR;
     }
     
-    /* 
     public static <T> ListIterator<T> emptyListIterator() {
         return Collections.<T>emptyList().listIterator();
     }
@@ -3243,10 +3242,8 @@ public class Collections {
     }
     
     public static <E> Set<E> newSetFromMap(Map<E, Boolean> map) {
-        if (map.isEmpty()) {
-            return new SetFromMap<E>(map);
-        }
-        throw new IllegalArgumentException();
+        return new SetFromMap<E>(map);
+        //throw new IllegalArgumentException();
     }
     
     public static <T> Queue<T> asLifoQueue(Deque<T> deque) {
