@@ -4,10 +4,16 @@ import java.lang.reflect.Method;
 import java.util.ArrayList;
 import java.util.Set;
 import org.reflections.*;
-import droidsafe.model.ModeledClass;
+import droidsafe.analyses.attr.ModeledClass;
 
+/**
+ * Class containing utility methods for JSA
+ * @author Dmitrij Petters (dpetters@mit.edu)
+ */
 public class JSAUtils {
-  // TODO: fix this so methods like incorporateString aren't marked as hotspots
+  /**
+   * Set JSA hotspots to be every method signature in attr modeling that has a string as a parameter
+   */
   public static void setUpHotspots(){
     Reflections reflections = new Reflections("droidsafe.model");
 
@@ -41,7 +47,6 @@ public class JSAUtils {
         }
         signature += ")>";
         if(paramOfInterestIndexes.size() > 0){
-          System.out.println(signature);
           for(Integer index : paramOfInterestIndexes){
             JSAStrings.v().addArgumentHotspots(signature, index);
           }
