@@ -2980,8 +2980,14 @@ public abstract class ViewGroup extends View implements ViewParent, ViewManager 
 		/* Original Method Too Long, Refer to Original Implementation */
 		//Return nothing
 	}
-	private LayoutTransition.TransitionListener mLayoutTransitionListener =
-            new LayoutTransition.TransitionListener() {
+	
+	private class MyTransitionListener implements LayoutTransition.TransitionListener {
+	    
+	    @DSModeled
+	    public MyTransitionListener(ViewGroup viewGroup) {
+	        
+	    }
+	    
         @Override
         public void startTransition(LayoutTransition transition, ViewGroup container,
                 View view, int transitionType) {
@@ -3003,7 +3009,10 @@ public abstract class ViewGroup extends View implements ViewParent, ViewManager 
                 endViewTransition(view);
             }
         }
-    };
+    }
+	
+	
+	private LayoutTransition.TransitionListener mLayoutTransitionListener = new MyTransitionListener(this);
 	
 	@Override public boolean gatherTransparentRegion(Region region){
 		
