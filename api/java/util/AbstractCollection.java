@@ -149,6 +149,18 @@ public abstract class AbstractCollection<E> implements Collection<E> {
         return result;
     }
     
+	public void clear() {
+        Iterator<E> it = iterator();
+        while (it.hasNext()) {
+            it.next();
+            it.remove();
+        }
+    }
+	
+	public boolean add(E object) {
+        throw new UnsupportedOperationException();
+    }
+	
 	public abstract Iterator<E> iterator();
 	public abstract int size();
 }
