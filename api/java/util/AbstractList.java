@@ -6,6 +6,7 @@ import droidsafe.helpers.*;
 public abstract class AbstractList<E> extends AbstractCollection<E> implements List<E> {
 	protected transient int modCount;
 	
+	public DSTaintObject dsTaint = new DSTaintObject();
 	private int pos = -1; // Was package
 	private int expectedModCount;   // Was package
 	private int lastPosition = -1;   // Was package
@@ -88,6 +89,26 @@ public abstract class AbstractList<E> extends AbstractCollection<E> implements L
         return !collection.isEmpty();
     }
 	
+	@DSModeled(DSC.SAFE)
+	public boolean add(E object) {
+		dsTaint.addTaint((DSTaintObject)(((DSTaintObject)object).getTaint()));
+        return dsTaint.getTaintBoolean();
+    }
+	
+	@DSModeled(DSC.SAFE)
+	public void add(int location, E object) {
+        throw new UnsupportedOperationException();
+    }
+
+	@DSModeled(DSC.SAFE)
+	public Iterator<E> iterator() {
+        return (Iterator<E>) dsTaint;
+    }
+	
+	@DSModeled(DSC.SAFE)
+	public E remove(int location) {
+        throw new UnsupportedOperationException();
+    }
 	// ---------------- Inner Classes --------------------
 
 }
