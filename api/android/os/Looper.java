@@ -19,11 +19,16 @@ public class Looper {
     private Printer mLogging = null;
     private static Looper mMainLooper = null;
     
+    // DSModeled adding LocalLooper member to short circuit
+    private static Looper mLocalLooper = new Looper();
+    
     public static void prepare() {
+    	/*
         if (sThreadLocal.get() != null) {
             throw new RuntimeException("Only one Looper may be created per thread");
-        }
+        static }
         sThreadLocal.set(new Looper());
+        */
     }
     
     public static void prepareMainLooper() {
@@ -59,7 +64,7 @@ public class Looper {
     
     @DSModeled(DSC.SAFE)
     public static Looper myLooper() {
-        return sThreadLocal.get();
+        return mLocalLooper;
     }
     
     public void setMessageLogging(Printer printer){
