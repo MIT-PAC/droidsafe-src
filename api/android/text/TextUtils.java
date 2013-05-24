@@ -18,11 +18,34 @@ package android.text;
 
 import java.util.Iterator;
 
+import android.os.Parcelable;
+import android.os.Parcel;
+
 import droidsafe.annotations.DSC;
 import droidsafe.annotations.DSModeled;
 
 public class TextUtils {
 
+    static class MyCreator implements Parcelable.Creator<CharSequence> {
+        
+        @DSModeled
+        public MyCreator() {}
+        
+        @DSModeled
+        public CharSequence createFromParcel(Parcel p) {
+            return new String();
+        }
+        
+        @DSModeled
+        public CharSequence[] newArray(int size)
+        {
+            return new CharSequence[size];
+        }
+
+    }
+    
+    static Parcelable.Creator<CharSequence> CHAR_SEQUENCE_CREATOR  = new MyCreator();
+    
     private TextUtils() { /* cannot be instantiated */ }
 
     /**
