@@ -23,7 +23,15 @@ public class DefaultHashMap<K,V> extends HashMap<K,V> {
 
     @Override
     public V remove(Object key) {
-        V value = super.remove(key);
-        return ((value == null) && !this.containsKey(key)) ? this.defaultValue : value;
+        V value = get(key);
+        super.remove(key);
+        return value;
+    }
+
+    @Override
+    public V put(K key, V value) {
+        V val = get(key);
+        super.put(key, value);
+        return val;
     }
 }
