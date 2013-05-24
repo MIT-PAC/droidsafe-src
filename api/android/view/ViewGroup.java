@@ -34,7 +34,6 @@ import java.util.ArrayList;
 import java.util.HashSet;
 
 public abstract class ViewGroup extends View implements ViewParent, ViewManager {
-	private DSTaintObject dsTaint = new DSTaintObject();
 	
 	private static final boolean DBG = false;
 	protected ArrayList<View> mDisappearingChildren;
@@ -112,17 +111,17 @@ public abstract class ViewGroup extends View implements ViewParent, ViewManager 
 	@ViewDebug.ExportedProperty(category = "drawing")
     private boolean mDrawLayers = true;
 	
+	@DSModeled(DSC.SAFE)
 	public ViewGroup(Context context){
 		super(context);
-		/*
 		initViewGroup();
-		*/
 	}
 	
+	@DSModeled(DSC.SAFE)
 	public ViewGroup(Context context, AttributeSet attrs){
 		super(context, attrs);
-		/*
 		initViewGroup();
+		/*
 		initFromAttributes(context, attrs);
 		*/
 	}
@@ -130,12 +129,13 @@ public abstract class ViewGroup extends View implements ViewParent, ViewManager 
 	@DSModeled(DSC.SAFE)
 	public ViewGroup(Context context, AttributeSet attrs, int defStyle){
 		super(context, attrs, defStyle);// Taint tracked in super class, View.
-		/*
 		initViewGroup();
+		/*
 		initFromAttributes(context, attrs);
 		*/
 	}
 	
+	@DSModeled(DSC.SAFE)
 	private void initViewGroup(){
 		
 		// Original method
@@ -162,6 +162,7 @@ public abstract class ViewGroup extends View implements ViewParent, ViewManager 
     }
 		*/
 		//Return nothing
+	    mChildren = new View[ARRAY_INITIAL_CAPACITY];
 	}
 	
 	private void initFromAttributes(Context context, AttributeSet attrs){
@@ -2819,29 +2820,14 @@ public abstract class ViewGroup extends View implements ViewParent, ViewManager 
 		return 0;
 	}
 	
+	@DSModeled(DSC.SAFE)
 	public int getChildCount(){
 		return dsTaint.getTaintInt();
-		
-		// Original method
-		/*
-		{
-        return mChildrenCount;
-    }
-		*/
 	}
 	
+	@DSModeled
 	public View getChildAt(int index){
-		
-		// Original method
-		/*
-		{
-        if (index < 0 || index >= mChildrenCount) {
-            return null;
-        }
-        return mChildren[index];
-    }
-		*/
-		return null;
+		return mChildren[0];
 	}
 	
 	protected void measureChildren(int widthMeasureSpec, int heightMeasureSpec){

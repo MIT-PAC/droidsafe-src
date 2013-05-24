@@ -69,7 +69,7 @@ import java.util.Locale;
 import java.util.concurrent.CopyOnWriteArrayList;
 
 public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Callback, AccessibilityEventSource {
-	private DSTaintObject dsTaint = new DSTaintObject();
+	public DSTaintObject dsTaint = new DSTaintObject();
 	
 	private static final boolean DBG = false;
 	protected static final String VIEW_LOG_TAG = "View";
@@ -3489,8 +3489,9 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
 		*/
 	}
 	
+	@DSModeled(DSC.SAFE)
 	public void setScrollX(int value){
-		
+	    dsTaint.addTaint(value);
 		// Original method
 		/*
 		{
@@ -3500,6 +3501,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
 		//Return nothing
 	}
 	
+	@DSModeled(DSC.SAFE)
 	public void setScrollY(int value){
 		
 		// Original method
@@ -3511,6 +3513,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
 		//Return nothing
 	}
 	
+	@DSModeled(DSC.SAFE)
 	public final int getScrollX(){
 		return dsTaint.getTaintInt();
 		
@@ -3522,6 +3525,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
 		*/
 	}
 	
+	@DSModeled(DSC.SAFE)
 	public final int getScrollY(){
 		return dsTaint.getTaintInt();
 		
@@ -3533,6 +3537,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
 		*/
 	}
 	
+	@DSModeled(DSC.SAFE)
 	@ViewDebug.ExportedProperty(category="layout") 
 	public final int getWidth(){
 		
@@ -3545,6 +3550,8 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
 		return 0;
 	}
 	
+	
+	@DSModeled(DSC.SAFE)
 	@ViewDebug.ExportedProperty(category="layout") 
 	public final int getHeight(){
 		
@@ -3554,7 +3561,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
         return mBottom - mTop;
     }
 		*/
-		return 0;
+		return dsTaint.getTaintInt();
 	}
 	
 	public void getDrawingRect(Rect outRect){
@@ -3571,15 +3578,9 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
 		//Return nothing
 	}
 	
+	@DSModeled(DSC.SAFE)
 	public final int getMeasuredWidth(){
-		
-		// Original method
-		/*
-		{
-        return mMeasuredWidth & MEASURED_SIZE_MASK;
-    }
-		*/
-		return 0;
+		return dsTaint.getTaintInt();
 	}
 	
 	public final int getMeasuredWidthAndState(){
@@ -6321,6 +6322,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
 		//Return nothing
 	}
 	
+	@DSModeled(DSC.SAFE)
 	public int getPaddingTop(){
 		return dsTaint.getTaintInt();
 		
@@ -6332,6 +6334,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
 		*/
 	}
 	
+	@DSModeled(DSC.SAFE)
 	public int getPaddingBottom(){
 		return dsTaint.getTaintInt();
 		
@@ -6343,6 +6346,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
 		*/
 	}
 	
+	@DSModeled(DSC.SAFE)
 	public int getPaddingLeft(){
 		return dsTaint.getTaintInt();
 		
@@ -6354,6 +6358,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
 		*/
 	}
 	
+	@DSModeled(DSC.SAFE)
 	public int getPaddingStart(){
 		
 		// Original method
@@ -6366,6 +6371,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
 		return 0;
 	}
 	
+	@DSModeled(DSC.SAFE)
 	public int getPaddingRight(){
 		return dsTaint.getTaintInt();
 		
@@ -6377,6 +6383,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
 		*/
 	}
 	
+	@DSModeled(DSC.SAFE)
 	public int getPaddingEnd(){
 		
 		// Original method
@@ -6389,6 +6396,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
 		return 0;
 	}
 	
+	@DSModeled(DSC.SAFE)
 	public boolean isPaddingRelative(){
 		return dsTaint.getTaintBoolean();
 		
@@ -6400,7 +6408,9 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
 		*/
 	}
 	
+	@DSModeled(DSC.SAFE)
 	public void setSelected(boolean selected){
+	    dsTaint.addTaint(selected); 
 		
 		// Original method
 		/*
@@ -6417,6 +6427,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
 		//Return nothing
 	}
 	
+	@DSModeled(DSC.SAFE)
 	protected void dispatchSetSelected(boolean selected){
 		
 		// Original method
@@ -6438,22 +6449,12 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
 		return false;
 	}
 	
+	@DSModeled(DSC.SAFE)
 	public void setActivated(boolean activated){
-		
-		// Original method
-		/*
-		{
-        if (((mPrivateFlags & ACTIVATED) != 0) != activated) {
-            mPrivateFlags = (mPrivateFlags & ~ACTIVATED) | (activated ? ACTIVATED : 0);
-            invalidate(true);
-            refreshDrawableState();
-            dispatchSetActivated(activated);
-        }
-    }
-		*/
-		//Return nothing
+	    dsTaint.addTaint(activated);
 	}
 	
+	@DSModeled(DSC.SAFE)
 	protected void dispatchSetActivated(boolean activated){
 		
 		// Original method
@@ -6465,6 +6466,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
 	}
 	
 	@ViewDebug.ExportedProperty 
+	@DSModeled(DSC.SAFE)
 	public boolean isActivated(){
 		
 		// Original method
@@ -6473,7 +6475,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
         return (mPrivateFlags & ACTIVATED) != 0;
     }
 		*/
-		return false;
+		return dsTaint.getTaintBoolean();
 	}
 	
 	public ViewTreeObserver getViewTreeObserver(){
