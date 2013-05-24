@@ -12,6 +12,7 @@ import soot.Scene;
 import soot.SootClass;
 import soot.SootMethod;
 import droidsafe.analyses.attr.AttributeModeling;
+import droidsafe.analyses.EntryPointCGEdges;
 import droidsafe.analyses.GeoPTA;
 import droidsafe.analyses.RCFGToSSL;
 import droidsafe.analyses.RequiredModeling;

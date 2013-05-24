@@ -404,12 +404,64 @@ public class GeoPTA {
         }
     }
 
+    /** 
+     * Given a specific context, a soot edge, dump the pta analysis results only for that context (but
+     * considering all references in the program).
+     */
+    public void dumpPTAForContext(PrintStream file, Edge sootContext) {
+        file.printf("== dumpPTA for %s ==\n", sootContext);
+
+        CgEdge context = ptsProvider.getInternalEdgeFromSootEdge(sootContext);
+
+        for ( IVarAbstraction pn : ptsProvider.pointers ) {
+            IVarAbstraction orig = pn;
+            pn = pn.getRepresentative();
+            Node v = pn.getWrappedNode();
+
+            if ( v instanceof LocalVarNode ) {
+                // We map the local pointer to its 1-cfa versions
+                LocalVarNode lvn = (LocalVarNode)v;
+                SootMethod sm = lvn.getMethod();
+                
+                long l = context.map_offset;
+                long r = l + ptsProvider.max_context_size_block[context.s];
+
+
+                file.printf("%s: %s \n", sm, v);
+
+                Obj_1cfa_extractor contextObjsVisitor = new Obj_1cfa_extractor();
+                pn.get_all_context_sensitive_objects(l, r, contextObjsVisitor);
+
+                for ( CallsiteContextVar cobj : contextObjsVisitor.outList ) {
+                    //cobj.inQ = false;
+                    if (cobj != null && cobj.var != null)
+                        file.printf( "%s: %s\n", cobj.var.getClass(), cobj.var);
+                    else 
+                        file.printf( "%s: %s\n", cobj, "No Var");
+                }
+            }  else {
+                Obj_1cfa_extractor contextObjsVisitor = new Obj_1cfa_extractor();
+                pn.get_all_context_sensitive_objects(1, soot.jimple.spark.geom.geomPA.Constants.MAX_CONTEXTS, 
+                    contextObjsVisitor);
+
+                for ( CallsiteContextVar cobj : contextObjsVisitor.outList ) {
+                    //cobj.inQ = false;
+                    if (cobj != null)
+                        file.print( " " + cobj.getNumber() );
+                }
+                file.println();
+            }
+            file.println();
+        }
+        file.print("======================= dumpPTA () Done =====================================\n");
+    }
+
     /**
      * Print out all points to sets.
      */
     public void dumpPTA(PrintStream file) {
 
-        System.out.print("======================= dumpPTA ()=====================================\n");
+        file.print("======================= dumpPTA ()=====================================\n");
         //Vector<CallsiteContextVar> outList = new Vector<CallsiteContextVar>();
         for ( IVarAbstraction pn : ptsProvider.pointers ) {
             IVarAbstraction orig = pn;
@@ -428,10 +480,10 @@ public class GeoPTA {
 
             //System.out.println(pn);
 
-            System.out.println(v);
+            file.println(v);
 
             if (pn.getWrappedNode() != orig.getWrappedNode())
-                System.out.println("Original: " + orig.getWrappedNode());
+                file.println("Original: " + orig.getWrappedNode());
 
             file.println(v);
 
@@ -483,7 +535,7 @@ public class GeoPTA {
 
             file.println();
         }
-        System.out.print("======================= dumpPTA () Done =====================================\n");
+        file.print("======================= dumpPTA () Done =====================================\n");
     }
 
     static void setGeomPointsToAnalysis() {
