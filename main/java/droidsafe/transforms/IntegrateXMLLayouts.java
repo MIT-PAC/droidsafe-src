@@ -68,16 +68,52 @@ public class IntegrateXMLLayouts extends BodyTransformer {
 		
 		private SootMethod findViewById;
 		private SootMethod setContentView;
+		
+		/** debug */
 		private SootClass  activityClass;
 		private SootClass  javaObjClass;
 		
+		/** list of possible findViewById methods */
+		private List<SootMethod>  findViewByIdList    = new LinkedList<SootMethod>();
+		
+		/** list of possible setContentViewList */
+		private List<SootMethod>  setContentViewList = new LinkedList<SootMethod>();
+		
+		/** all classes that have findViewById */
+		private final String[] findViewByIdClasses = new String[] {
+		       "android.app.Activity", "android.app.Dialog", 
+		       "android.view.Window" , "android.view.View"
+    		};
+		
+		private final String[] setContentViewClasses = new String[] {
+		        "android.app.Activity", "android.app.Dialog", "android.view.Window" 
+		    };
+		
+		/**
+		 * Constructor
+		 */
 		public IntegrateXMLLayouts() {
-			findViewById  =  Scene.v().getMethod("<android.app.Activity: android.view.View findViewById(int)>");
 			activityClass =  Scene.v().getSootClass("android.app.Activity");
 			javaObjClass  =  Scene.v().getSootClass("java.lang.Object");
-
-			setContentView = Scene.v().getMethod("<android.app.Activity: void setContentView(int)>");
-			//dumpActivities();
+			
+			//build findViewByIDList
+			for (String className: findViewByIdClasses){
+			    String methodName = String.format("<%s: android.view.View findViewById(int)>",
+			                               className);
+			    SootMethod method = Scene.v().getMethod(methodName); 
+			    logger.debug("findViewById method {} ", method);
+			    findViewByIdList.add(method);
+			}
+			
+			// setcontentview list
+			for (String className: setContentViewClasses){
+			    String methodName = String.format("<%s: void setContentView(int)>",
+			                               className);
+			    SootMethod method = Scene.v().getMethod(methodName); 
+			    setContentViewList.add(method);
+			    
+			    logger.debug("setContentView method {} ", method);
+			}
 		}
 		
 		/**
@@ -111,50 +147,22 @@ public class IntegrateXMLLayouts extends BodyTransformer {
             // get body's unit as a chain
 			Chain<Unit> units = stmtBody.getUnits();
 
-			List<ValueBox> boxList = stmt.getUseAndDefBoxes();
-			Iterator<ValueBox> it = boxList.iterator();
+			//List<ValueBox> boxList = stmt.getUseAndDefBoxes();
+			List<ValueBox> boxList = stmt.getUseBoxes();
 
-			ValueBox localBox = null;
-			ValueBox immediateBox = null;
-			ValueBox variableBox = null;
-
-			while(it.hasNext()) {
-				ValueBox curBox = it.next();
-				/* using internal type is not ideal, but seems easiest */
-				if (curBox instanceof JimpleLocalBox) {
-					localBox = curBox; 
-					logger.debug("localBox {} {}",
-							curBox.getValue().toString(),
-							curBox.getValue().getType().toString()
-							);
-
-				}
-
-				if (curBox instanceof ImmediateBox) {
-					immediateBox = curBox;
-					logger.debug("immediateBox {} {}",
-							curBox.getValue().toString(),
-							curBox.getValue().getType().toString()
-							);
-				}
-
-				logger.debug("variableBox {}:{}:{}",
-						curBox.getValue().getType().toString(),
-						curBox.toString(),
-						curBox.getValue().toString());
-
-			}
-
-			if (localBox == null || immediateBox == null) {
-				logger.warn("Couldnot get boxes for replacement {}, {}, {}",
-				            localBox, immediateBox, variableBox); 
-				return;
-			}
+			//stmt will have format below
+			//virtualinvoke r0.<org.tomdroid.ui.ShortcutActivity: void setContentView(int)>(2130903050);
+			//box0 JimpleLocalBox(r0), box1 ImmediateBox(2130903050), box2 InvokeExprBox
+			logger.debug("Box Count {} ", boxList.size());
+			logger.debug("box0 {} box1 {}, box2 {} ", boxList.get(0), boxList.get(1), boxList.get(2));
 
 			Integer intId;
 			
+			ValueBox objectBox = boxList.get(0);
+			ValueBox idBox = boxList.get(1);
+			
 			try {
-				intId = new Integer(immediateBox.getValue().toString());
+				intId = new Integer(idBox.getValue().toString());
 			}
 			catch (Exception ex) {
 				logger.warn("stmt {} ", stmt);
@@ -169,14 +177,11 @@ public class IntegrateXMLLayouts extends BodyTransformer {
 				return;
 			}
 
-			Expr invokeExpr = Jimple.v().newStaticInvokeExpr(method.makeRef(), localBox.getValue()); 
+			Expr invokeExpr = Jimple.v().newStaticInvokeExpr(method.makeRef(), objectBox.getValue()); 
 			Stmt invokeStmt = Jimple.v().newInvokeStmt(invokeExpr);
 
 			units.swapWith(stmt, invokeStmt);
 			
-			// units.insertAfter(
-			// 	Jimple.v().newAssignStmt(variableBox.getValue(), tmpView), lookupStmt); 
-
 			logger.info("replacing {} ", stmt);
 			logger.info("with {} ", invokeStmt);
         }
@@ -190,48 +195,20 @@ public class IntegrateXMLLayouts extends BodyTransformer {
 			// get body's unit as a chain
 			Chain<Unit> units = stmtBody.getUnits();
 
-			List<ValueBox> boxList = stmt.getUseAndDefBoxes();
-			Iterator<ValueBox> it = boxList.iterator();
+			List<ValueBox> useBoxList = stmt.getUseBoxes();
+			List<ValueBox> defBoxList = stmt.getDefBoxes();
 
-			ValueBox localBox = null;
-			ValueBox immediateBox = null;
-			ValueBox variableBox = null;
+			ValueBox callerObjectBox = useBoxList.get(0);
+			ValueBox idValueBox      = useBoxList.get(1);
+			ValueBox assignToBox = null;
+			
+			if (defBoxList != null && defBoxList.size() > 0)
+			    assignToBox = defBoxList.get(0);
+			
+			logger.debug("UseBoxes: {} ", stmt.getUseBoxes());
+			logger.debug("DefBoxes: {} ", stmt.getDefBoxes());
 
-			while(it.hasNext()) {
-				ValueBox curBox = it.next();
-				/* using internal type is not ideal, but seems easiest */
-				if (curBox instanceof JimpleLocalBox) {
-					localBox = curBox; 
-					logger.debug("localBox {} {}",
-							curBox.getValue().toString(),
-							curBox.getValue().getType().toString()
-							);
-
-				}
-
-				if (curBox instanceof ImmediateBox) {
-					immediateBox = curBox;
-					logger.debug("immediateBox {} {}",
-							curBox.getValue().toString(),
-							curBox.getValue().getType().toString()
-							);
-				}
-
-				if (curBox instanceof VariableBox) {
-					variableBox = curBox;
-					logger.debug("variableBox {} {}",
-							curBox.getValue().toString(),
-							curBox.getValue().getType().toString());
-				}
-
-				logger.debug("variableBox {}:{}:{}",
-						curBox.getValue().getType().toString(),
-						curBox.toString(),
-						curBox.getValue().toString());
-
-			}
-
-			if (localBox == null || immediateBox == null || variableBox == null) {
+			if (callerObjectBox == null || idValueBox == null) {
 				logger.warn("Couldnot get boxes for replacement "); 
 				return;
 			}
@@ -239,7 +216,7 @@ public class IntegrateXMLLayouts extends BodyTransformer {
 			Integer intId;
 			
 			try {
-				intId = new Integer(immediateBox.getValue().toString());
+				intId = new Integer(idValueBox.getValue().toString());
 			}
 			catch (Exception ex) {
 				logger.warn("stmt {} ", stmt);
@@ -254,14 +231,16 @@ public class IntegrateXMLLayouts extends BodyTransformer {
 				return;
 			}
 
-			Expr invokeExpr = Jimple.v().newStaticInvokeExpr(getViewMethod.makeRef(), localBox.getValue()); 
-			Stmt lookupStmt = Jimple.v().newAssignStmt(variableBox.getValue(), invokeExpr);
+			Expr invokeExpr = Jimple.v().newStaticInvokeExpr(getViewMethod.makeRef(), callerObjectBox.getValue()); 
+			
+			Stmt lookupStmt; 
+			if (assignToBox != null)
+			    lookupStmt = Jimple.v().newAssignStmt(assignToBox.getValue(), invokeExpr);
+			else
+			    lookupStmt = Jimple.v().newInvokeStmt(invokeExpr);
 
 			units.swapWith(stmt, lookupStmt);
 			
-			// units.insertAfter(
-			// 	Jimple.v().newAssignStmt(variableBox.getValue(), tmpView), lookupStmt); 
-
 			logger.info("replacing {} ", stmt);
 			logger.info("with {} ", lookupStmt);
 		}
@@ -288,7 +267,6 @@ public class IntegrateXMLLayouts extends BodyTransformer {
 
 				InvokeExpr expr = (InvokeExpr)stmt.getInvokeExpr();
 				
-				
 				//get the receiver, receivers are only present for instance invokes 
 				InstanceInvokeExpr iie = SootUtils.getInstanceInvokeExpr(stmt);
 				if (iie != null) {
@@ -312,16 +290,21 @@ public class IntegrateXMLLayouts extends BodyTransformer {
 							continue;
 						}
 						
-						if (findViewById.equals(resolved))  {
-							logger.info(String.format("Found findViewById(): %s\n", stmt));
-							//replacement ...
-							replaceFindViewById(stmtBody, stmt);
+						// replacing findViewById
+						for (SootMethod method: findViewByIdList) {
+						    if (method.equals(resolved))  {
+						        logger.info(String.format("Found findViewById(): %s\n", stmt));
+						        replaceFindViewById(stmtBody, stmt);
+						    }
 						}
-
-                        if (setContentView.equals(resolved)) {
-							logger.info(String.format("Found setContentView(): %s\n", stmt));
-							replaceSetContentView(stmtBody, stmt);
-                        }
+						
+						// replacing 
+						for (SootMethod method: setContentViewList) {
+						    if (method.equals(resolved)) {
+						        logger.info(String.format("Found setContentView(): %s\n", stmt));
+						        replaceSetContentView(stmtBody, stmt);
+						    }
+						}
 					}
 				}
 				

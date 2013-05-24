@@ -238,7 +238,7 @@ public class ResourcesSoot {
     *   function to add a view info into uiObjectTable and create a static for use by the
     *   IntegrateXMLLayout transformation.
     */
-    public void addView(String type, String strId, Map<String, String> attrMap) {
+    public boolean addView(String type, String strId, Map<String, String> attrMap) {
         // adding ui object (partial information, no numeric ID, no soot method)  
         // to the list of UI objects 
 
@@ -262,7 +262,7 @@ public class ResourcesSoot {
             for (String myStrId: mNumberToIDMap.inverse().keySet()) {
                 logger.warn("checking key {} <=> {} ", strId, myStrId);
             }
-            return;
+            return false;
         }
 
         if (mUiObjectTable.get(id) == null) {
@@ -271,13 +271,18 @@ public class ResourcesSoot {
             
             UISootObject obj = new UISootObject(id.intValue(), fullTypeName, strId, attrMap);
             mUiObjectTable.put(id, obj);
-
+            
             //create a static field 
-            createViewMember(id);
-
+            if (createViewMember(id) == false) {
+                //undo adding if failed
+                mUiObjectTable.remove(id);
+                return false;
+            }
+            
             // create method getView_XYX()
-            addGetView_ID(id);
+            return addGetView_ID(id);
         }
+        return true;
     }
 
     /**
@@ -364,14 +369,15 @@ public class ResourcesSoot {
     * createViewMember:
     *   method to add static Button button_xxyyyy to the ResourcesSoot class
     */
-    private void createViewMember(Integer intId) {
+    private boolean createViewMember(Integer intId) {
         logger.info("calling createViewMember {}:{}) ", 
                     intId.toString(), String.format("%x", intId));
 
         UISootObject obj = mUiObjectTable.get(intId);    
-        if (obj == null) {
-            logger.warn("Object for id {} info is not available", intId);
-            return; 
+        if (obj == null || obj.type == null) {
+            logger.warn("Object for id {} info is not available", 
+                        String.format("%08x", intId));
+            return false; 
         }
 
         String   idName    = makeIdName(obj.type, obj.numericId); 
@@ -379,7 +385,7 @@ public class ResourcesSoot {
 
         if (className == null) {
             logger.warn("Cannot resolve class {} ", obj.type);
-            return;
+            return false;
         }
 
         RefType  classType = RefType.v(className); 
@@ -388,6 +394,7 @@ public class ResourcesSoot {
         SootField sf = new SootField(idName, classType, Modifier.PUBLIC | Modifier.STATIC);
         mSootClass.addField(sf);
         obj.sootField = sf;
+        return true;
     }
 
     /**
@@ -410,7 +417,7 @@ public class ResourcesSoot {
      * Method to add getView_XYX(content) to the droidsafe.android.ResourcesSoot 
      * @param intId : numeric Id seen in gen/R file
      */
-    private void addGetView_ID(Integer intId) {
+    private boolean addGetView_ID(Integer intId) {
         // units.add(Jimple.v().newAssignStmt(fieldRef, arg));
 
         UISootObject obj = mUiObjectTable.get(intId);    
@@ -418,11 +425,11 @@ public class ResourcesSoot {
 
         if (obj == null) {
             logger.warn("Object for id {} does not exist ", intId);
-            return;
+            return false;
         }
         if (obj.sootField == null)  {
             logger.warn("No sootfield previously created ");
-            return;
+            return false;
         }
 
         List<Type> params = new LinkedList<Type>();
@@ -436,7 +443,7 @@ public class ResourcesSoot {
 
         if (viewInitMethod == null) {
             logger.warn("Cannot locate proper constructor for {})", returnType);
-            return;
+            return false;
         }
 
         String funcName = "getView_" + String.format("%x", intId);
@@ -550,6 +557,8 @@ public class ResourcesSoot {
 
         logger.debug("condStmt {} ", condStmt);
         units.insertAfter(condStmt, beforeIf);
+        
+        return true;
     }
     
 
