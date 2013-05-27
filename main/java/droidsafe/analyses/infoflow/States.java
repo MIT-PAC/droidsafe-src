@@ -24,26 +24,26 @@ import soot.jimple.spark.pag.AllocNode;
 import soot.jimple.toolkits.callgraph.Edge;
 
 public class States {
-    private final DefaultHashMap<Edge, FrameRootsHeapStaticsIF> contextToFrameRootsHeapStatics;
+    private final DefaultHashMap<Edge, FrameRootsHeapStatics> contextToFrameRootsHeapStatics;
 
-    private static final FrameRootsHeapStaticsIF emptyFrameRootsHeapStatics = new FrameRootsHeapStaticsIF();
+    private static final FrameRootsHeapStatics emptyFrameRootsHeapStatics = new FrameRootsHeapStatics();
 
     States() {
-        contextToFrameRootsHeapStatics = new DefaultHashMap<Edge, FrameRootsHeapStaticsIF>(emptyFrameRootsHeapStatics);
+        contextToFrameRootsHeapStatics = new DefaultHashMap<Edge, FrameRootsHeapStatics>(emptyFrameRootsHeapStatics);
     }
 
     States merge(States that) {
         States states = new States();
-        for (Map.Entry<Edge, FrameRootsHeapStaticsIF> contextFrameRootsHeapStatics : this.contextToFrameRootsHeapStatics.entrySet()) {
+        for (Map.Entry<Edge, FrameRootsHeapStatics> contextFrameRootsHeapStatics : this.contextToFrameRootsHeapStatics.entrySet()) {
             Edge context = contextFrameRootsHeapStatics.getKey();
-            FrameRootsHeapStaticsIF frameRootsHeapStatics = contextFrameRootsHeapStatics.getValue();
+            FrameRootsHeapStatics frameRootsHeapStatics = contextFrameRootsHeapStatics.getValue();
             if (that.contextToFrameRootsHeapStatics.containsKey(context)) {
                 states.contextToFrameRootsHeapStatics.put(context, frameRootsHeapStatics.merge(that.contextToFrameRootsHeapStatics.get(context)));
             } else {
                 states.contextToFrameRootsHeapStatics.put(context, frameRootsHeapStatics);
             }
         }
-        for (Map.Entry<Edge, FrameRootsHeapStaticsIF> contextFrameRootsHeapStatics : that.contextToFrameRootsHeapStatics.entrySet()) {
+        for (Map.Entry<Edge, FrameRootsHeapStatics> contextFrameRootsHeapStatics : that.contextToFrameRootsHeapStatics.entrySet()) {
             Edge context = contextFrameRootsHeapStatics.getKey();
             if (!this.contextToFrameRootsHeapStatics.containsKey(context)) {
                 states.contextToFrameRootsHeapStatics.put(context, contextFrameRootsHeapStatics.getValue());
@@ -52,15 +52,15 @@ public class States {
         return states;
     }
 
-    FrameRootsHeapStaticsIF put(Edge context, FrameRootsHeapStaticsIF frameRootsHeapStatics) {
+    FrameRootsHeapStatics put(Edge context, FrameRootsHeapStatics frameRootsHeapStatics) {
         return contextToFrameRootsHeapStatics.put(context, frameRootsHeapStatics);
     }
 
-    FrameRootsHeapStaticsIF get(Edge context) {
+    FrameRootsHeapStatics get(Edge context) {
         return contextToFrameRootsHeapStatics.get(context);
     }
 
-    Set<Map.Entry<Edge, FrameRootsHeapStaticsIF>> entrySet() {
+    Set<Map.Entry<Edge, FrameRootsHeapStatics>> entrySet() {
         return contextToFrameRootsHeapStatics.entrySet();
     }
 
@@ -68,7 +68,7 @@ public class States {
         return contextToFrameRootsHeapStatics.keySet();
     }
 
-    Collection<FrameRootsHeapStaticsIF> values() {
+    Collection<FrameRootsHeapStatics> values() {
         return contextToFrameRootsHeapStatics.values();
     }
 
@@ -89,7 +89,7 @@ public class States {
     public String toString() {
         StringBuffer str = new StringBuffer();
         str.append('{');
-        for (Map.Entry<Edge, FrameRootsHeapStaticsIF> contextFrameRootsHeapStatics : this.contextToFrameRootsHeapStatics.entrySet()) {
+        for (Map.Entry<Edge, FrameRootsHeapStatics> contextFrameRootsHeapStatics : this.contextToFrameRootsHeapStatics.entrySet()) {
             str.append(contextFrameRootsHeapStatics.getKey().toString());
             str.append("=\\l");
             str.append(contextFrameRootsHeapStatics.getValue().toString());
@@ -104,20 +104,20 @@ public class States {
     }
 }
 
-class FrameRootsHeapStaticsIF {
-    FrameIF frame;
+class FrameRootsHeapStatics {
+    Frame frame;
     Set<Address> roots;
     Heap heap;
     Statics statics;
 
-    FrameRootsHeapStaticsIF() {
-        this.frame = new FrameIF();
+    FrameRootsHeapStatics() {
+        this.frame = new Frame();
         this.roots = new HashSet<Address>();
         this.heap = new Heap();
         this.statics = new Statics();
     }
 
-    FrameRootsHeapStaticsIF(FrameIF frame, Set<Address> roots, Heap heap, Statics statics) {
+    FrameRootsHeapStatics(Frame frame, Set<Address> roots, Heap heap, Statics statics) {
         assert frame != null && roots != null && heap != null && statics != null;
         this.frame = frame;
         this.roots = roots;
@@ -125,17 +125,17 @@ class FrameRootsHeapStaticsIF {
         this.statics = statics;
     }
 
-    FrameRootsHeapStaticsIF(FrameRootsHeapStaticsIF that) {
-        this.frame = new FrameIF(that.frame);
+    FrameRootsHeapStatics(FrameRootsHeapStatics that) {
+        this.frame = new Frame(that.frame);
         this.roots = new HashSet<Address>(that.roots);
         this.heap = new Heap(that.heap);
         this.statics = new Statics(that.statics);
     }
 
-    FrameRootsHeapStaticsIF merge(FrameRootsHeapStaticsIF that) {
+    FrameRootsHeapStatics merge(FrameRootsHeapStatics that) {
         Set<Address> roots = new HashSet<Address>(this.roots);
         roots.addAll(that.roots);
-        return new FrameRootsHeapStaticsIF(this.frame.merge(that.frame), roots, this.heap.merge(that.heap), this.statics.merge(that.statics));
+        return new FrameRootsHeapStatics(this.frame.merge(that.frame), roots, this.heap.merge(that.heap), this.statics.merge(that.statics));
     }
 
     @Override
@@ -143,10 +143,10 @@ class FrameRootsHeapStaticsIF {
         if (this == that) {
             return true;
         }
-        if (!(that instanceof FrameRootsHeapStaticsIF)) {
+        if (!(that instanceof FrameRootsHeapStatics)) {
             return false;
         }
-        FrameRootsHeapStaticsIF frameRootsHeapStatics = (FrameRootsHeapStaticsIF)that;
+        FrameRootsHeapStatics frameRootsHeapStatics = (FrameRootsHeapStatics)that;
 
         return this.frame.equals(frameRootsHeapStatics.frame) && this.roots.equals(frameRootsHeapStatics.roots) && this.heap.equals(frameRootsHeapStatics.heap) && this.statics.equals(frameRootsHeapStatics.statics);
     }
@@ -157,34 +157,77 @@ class FrameRootsHeapStaticsIF {
     }
 }
 
-class FrameIF {
+class FrameHeapStatics {
+    Frame frame;
+    Heap heap;
+    Statics statics;
+
+    FrameHeapStatics() {
+        this.frame = new Frame();
+        this.heap = new Heap();
+        this.statics = new Statics();
+    }
+
+    FrameHeapStatics(Frame frame, Heap heap, Statics statics) {
+        assert frame != null && heap != null && statics != null;
+        this.frame = frame;
+        this.heap = heap;
+        this.statics = statics;
+    }
+
+    FrameHeapStatics(FrameHeapStatics that) {
+        this.frame = new Frame(that.frame);
+        this.heap = new Heap(that.heap);
+        this.statics = new Statics(that.statics);
+    }
+
+    @Override
+    public boolean equals(Object that) {
+        if (this == that) {
+            return true;
+        }
+        if (!(that instanceof FrameHeapStatics)) {
+            return false;
+        }
+        FrameHeapStatics frameHeapStatics = (FrameHeapStatics)that;
+
+        return this.frame.equals(frameHeapStatics.frame) && this.heap.equals(frameHeapStatics.heap) && this.statics.equals(frameHeapStatics.statics);
+    }
+
+    @Override
+    public String toString() {
+        return "(" + frame + ",\\l " + heap + ",\\l " + statics + ")";
+    }
+}
+
+class Frame {
     DefaultHashMap<MethodLocal, ImmutableList<MyValue>> locals;
     DefaultHashMap<MethodMyParameterRef, ImmutableList<MyValue>> params;
 
-    FrameIF() {
+    Frame() {
         locals = new DefaultHashMap<MethodLocal, ImmutableList<MyValue>>(ImmutableList.<MyValue>of());
         params = new DefaultHashMap<MethodMyParameterRef, ImmutableList<MyValue>>(ImmutableList.<MyValue>of());
     }
 
-    FrameIF(FrameIF that, DefaultHashMap<MethodMyParameterRef, ImmutableList<MyValue>> params) {
+    Frame(Frame that, DefaultHashMap<MethodMyParameterRef, ImmutableList<MyValue>> params) {
         assert params != null;
         this.locals = new DefaultHashMap<MethodLocal, ImmutableList<MyValue>>(that.locals);
         this.params = params;
     }
 
-    FrameIF(DefaultHashMap<MethodLocal, ImmutableList<MyValue>> locals, DefaultHashMap<MethodMyParameterRef, ImmutableList<MyValue>> params) {
+    Frame(DefaultHashMap<MethodLocal, ImmutableList<MyValue>> locals, DefaultHashMap<MethodMyParameterRef, ImmutableList<MyValue>> params) {
         assert locals != null && params != null;
         this.locals = locals;
         this.params = params;
     }
 
-    FrameIF(FrameIF that) {
+    Frame(Frame that) {
         this.locals = new DefaultHashMap<MethodLocal, ImmutableList<MyValue>>(that.locals);
         this.params = new DefaultHashMap<MethodMyParameterRef, ImmutableList<MyValue>>(that.params);
     }
 
-    FrameIF merge(FrameIF that) {
-        FrameIF frame = new FrameIF();
+    Frame merge(Frame that) {
+        Frame frame = new Frame();
 
         for (Map.Entry<MethodLocal, ImmutableList<MyValue>> localValues : this.locals.entrySet()) {
             MethodLocal local = localValues.getKey();
@@ -313,10 +356,10 @@ class FrameIF {
         if (this == that) {
             return true;
         }
-        if (!(that instanceof FrameIF)) {
+        if (!(that instanceof Frame)) {
             return false;
         }
-        FrameIF frame = (FrameIF)that;
+        Frame frame = (Frame)that;
 
         if (this.locals.size() != frame.locals.size()) {
             return false;
@@ -373,6 +416,101 @@ class FrameIF {
         TreeMap<MethodMyParameterRef, ImmutableList<MyValue>> sortedParams = new TreeMap<MethodMyParameterRef, ImmutableList<MyValue>>(paramComparator);
         sortedParams.putAll(params);
         return "(" + sortedLocals + ", " + sortedParams + ")";
+    }
+}
+
+class MethodLocal {
+    private static final HashMap<ImmutablePair<SootMethod, Local>, MethodLocal> cache = new HashMap<ImmutablePair<SootMethod, Local>, MethodLocal>();
+
+    SootMethod method;
+    Local local;
+
+    private MethodLocal(SootMethod method, Local local) {
+        assert method != null && local != null;
+        this.method = method;
+        this.local = local;
+    }
+
+    static MethodLocal v(SootMethod method, Local local) {
+        assert method != null && local != null;
+        ImmutablePair<SootMethod, Local> key = ImmutablePair.of(method, local);
+        MethodLocal methodLocal = cache.get(key);
+        if (methodLocal == null) {
+            methodLocal = new MethodLocal(method, local);
+            cache.put(key, methodLocal);
+        }
+        return methodLocal;
+    }
+
+    @Override
+    public boolean equals(Object that) {
+        if (this == that) {
+            return true;
+        }
+        if (!(that instanceof MethodLocal)) {
+            return false;
+        }
+        MethodLocal methodLocal = (MethodLocal)that;
+
+        return this.method.equals(methodLocal.method) && this.local.equivTo(methodLocal.local);
+    }
+
+    @Override
+    public int hashCode() {
+        return method.equivHashCode();
+    }
+
+    @Override
+    public String toString() {
+        return local.toString();
+    }
+}
+
+class MethodMyParameterRef {
+    private static final HashMap<ImmutablePair<SootMethod, MyParameterRef>, MethodMyParameterRef> cache = new HashMap<ImmutablePair<SootMethod, MyParameterRef>, MethodMyParameterRef>();
+
+    SootMethod method;
+    MyParameterRef param;
+
+    private MethodMyParameterRef(SootMethod method, MyParameterRef param) {
+        assert method != null && param != null;
+        this.method = method;
+        this.param = param;
+    }
+
+    static MethodMyParameterRef v(SootMethod method, ParameterRef param) {
+        assert method != null && param != null;
+        MyParameterRef p = new MyParameterRef(param);
+        ImmutablePair<SootMethod, MyParameterRef> key = ImmutablePair.of(method, p);
+        MethodMyParameterRef methodParam = cache.get(key);
+        if (methodParam == null) {
+            methodParam = new MethodMyParameterRef(method, p);
+            cache.put(key, methodParam);
+        }
+        return methodParam;
+    }
+
+    @Override
+    public boolean equals(Object that) {
+        if (this == that) {
+            return true;
+        }
+        if (!(that instanceof MethodMyParameterRef)) {
+            return false;
+        }
+        MethodMyParameterRef methodParam = (MethodMyParameterRef)that;
+
+        return this.method.equals(methodParam.method) && this.param.equivTo(methodParam.param);
+    }
+
+    @Override
+    public int hashCode() {
+        return method.equivHashCode();
+    }
+
+    @Override
+    public String toString() {
+        return param.toString();
     }
 }
 
@@ -953,272 +1091,4 @@ class Statics {
 
 interface MyValue {
     // empty
-}
-
-class FrameHeapStaticsMA {
-    FrameMA frame;
-    Heap heap;
-    Statics statics;
-
-    FrameHeapStaticsMA() {
-        this.frame = new FrameMA();
-        this.heap = new Heap();
-        this.statics = new Statics();
-    }
-
-    FrameHeapStaticsMA(FrameMA frame, Heap heap, Statics statics) {
-        assert frame != null && heap != null && statics != null;
-        this.frame = frame;
-        this.heap = heap;
-        this.statics = statics;
-    }
-
-    FrameHeapStaticsMA(FrameHeapStaticsMA that) {
-        this.frame = new FrameMA(that.frame);
-        this.heap = new Heap(that.heap);
-        this.statics = new Statics(that.statics);
-    }
-
-    @Override
-    public boolean equals(Object that) {
-        if (this == that) {
-            return true;
-        }
-        if (!(that instanceof FrameHeapStaticsMA)) {
-            return false;
-        }
-        FrameHeapStaticsMA frameHeapStatics = (FrameHeapStaticsMA)that;
-
-        return this.frame.equals(frameHeapStatics.frame) && this.heap.equals(frameHeapStatics.heap) && this.statics.equals(frameHeapStatics.statics);
-    }
-
-    @Override
-    public String toString() {
-        return "(" + frame + ",\\l " + heap + ",\\l " + statics + ")";
-    }
-}
-
-class FrameMA {
-    DefaultHashMap<MethodLocal, ImmutableList<MyValue>> locals;
-    DefaultHashMap<MethodMyParameterRef, ImmutableList<MyValue>> params;
-
-    FrameMA() {
-        locals = new DefaultHashMap<MethodLocal, ImmutableList<MyValue>>(ImmutableList.<MyValue>of());
-        params = new DefaultHashMap<MethodMyParameterRef, ImmutableList<MyValue>>(ImmutableList.<MyValue>of());
-    }
-
-    FrameMA(FrameMA that, DefaultHashMap<MethodMyParameterRef, ImmutableList<MyValue>> params) {
-        assert params != null;
-        this.locals = new DefaultHashMap<MethodLocal, ImmutableList<MyValue>>(that.locals);
-        this.params = params;
-    }
-
-    FrameMA(DefaultHashMap<MethodLocal, ImmutableList<MyValue>> locals, DefaultHashMap<MethodMyParameterRef, ImmutableList<MyValue>> params) {
-        assert locals != null && params != null;
-        this.locals = locals;
-        this.params = params;
-    }
-
-    FrameMA(FrameMA that) {
-        this.locals = new DefaultHashMap<MethodLocal, ImmutableList<MyValue>>(that.locals);
-        this.params = new DefaultHashMap<MethodMyParameterRef, ImmutableList<MyValue>>(that.params);
-    }
-
-    ImmutableList<MyValue> putW(MethodLocal local, Set<MyValue> values) {
-        return putW(local, ImmutableList.<MyValue>copyOf(values));
-    }
-
-    // weakly update
-    ImmutableList<MyValue> putW(MethodLocal local, List<MyValue> values) {
-        ImmutableList<MyValue> valuesOld = locals.get(local);
-        if (values != null && !values.isEmpty()) {
-            Set<MyValue> valuesNew = new HashSet<MyValue>(valuesOld);
-            valuesNew.addAll(values);
-            return locals.put(local, ImmutableList.copyOf(valuesNew));
-        } else {
-            return valuesOld;
-        }
-    }
-
-    ImmutableList<MyValue> get(MethodLocal local) {
-        return locals.get(local);
-    }
-
-    // weakly update
-    ImmutableList<MyValue> putW(MethodMyParameterRef parameterRef, List<MyValue> values) {
-        ImmutableList<MyValue> valuesOld = params.get(parameterRef);
-        if (values != null && !values.isEmpty()) {
-            Set<MyValue> valuesNew = new HashSet<MyValue>(valuesOld);
-            valuesNew.addAll(values);
-            return params.put(parameterRef, ImmutableList.copyOf(valuesNew));
-        } else {
-            return valuesOld;
-        }
-    }
-
-    ImmutableList<MyValue> get(MethodMyParameterRef parameterRef) {
-        return params.get(parameterRef);
-    }
-
-    @Override
-    public boolean equals(Object that) {
-        if (this == that) {
-            return true;
-        }
-        if (!(that instanceof FrameMA)) {
-            return false;
-        }
-        FrameMA frame = (FrameMA)that;
-
-        if (this.locals.size() != frame.locals.size()) {
-            return false;
-        }
-        if (this.params.size() != frame.params.size()) {
-            return false;
-        }
-        try {
-            for (Map.Entry<MethodLocal, ImmutableList<MyValue>> localValues : this.locals.entrySet()) {
-                if (!(ImmutableSet.copyOf(localValues.getValue()).equals(ImmutableSet.copyOf(frame.locals.get(localValues.getKey()))))) {
-                    return false;
-                }
-            }
-            for (Map.Entry<MethodMyParameterRef, ImmutableList<MyValue>> paramValues : this.params.entrySet()) {
-                if (!(ImmutableSet.copyOf(paramValues.getValue()).equals(ImmutableSet.copyOf(frame.params.get(paramValues.getKey()))))) {
-                    return false;
-                }
-            }
-        } catch (ClassCastException unused) {
-            return false;
-        } catch (NullPointerException unused) {
-            return false;
-        }
-
-        return true;
-    }
-
-    @Override
-    public String toString() {
-        Comparator<MethodLocal> localComparator = new Comparator<MethodLocal>() {
-            @Override
-            public int compare(MethodLocal local1, MethodLocal local2) {
-                int method = local1.method.getSignature().compareTo(local2.method.getSignature());
-                if (method != 0) {
-                    return method;
-                } else {
-                    return local1.local.getName().compareTo(local2.local.getName());
-                }
-            }
-        };
-        TreeMap<MethodLocal, ImmutableList<MyValue>> sortedLocals = new TreeMap<MethodLocal, ImmutableList<MyValue>>(localComparator);
-        sortedLocals.putAll(locals);
-        Comparator<MethodMyParameterRef> paramComparator = new Comparator<MethodMyParameterRef>() {
-            @Override
-            public int compare(MethodMyParameterRef param1, MethodMyParameterRef param2) {
-                int method = param1.method.getSignature().compareTo(param2.method.getSignature());
-                if (method != 0) {
-                    return method;
-                } else {
-                    return param1.param.getIndex() - param2.param.getIndex();
-                }
-            }
-        };
-        TreeMap<MethodMyParameterRef, ImmutableList<MyValue>> sortedParams = new TreeMap<MethodMyParameterRef, ImmutableList<MyValue>>(paramComparator);
-        sortedParams.putAll(params);
-        return "(" + sortedLocals + ", " + sortedParams + ")";
-    }
-}
-
-class MethodLocal {
-    private static final HashMap<ImmutablePair<SootMethod, Local>, MethodLocal> cache = new HashMap<ImmutablePair<SootMethod, Local>, MethodLocal>();
-
-    SootMethod method;
-    Local local;
-
-    private MethodLocal(SootMethod method, Local local) {
-        assert method != null && local != null;
-        this.method = method;
-        this.local = local;
-    }
-
-    static MethodLocal v(SootMethod method, Local local) {
-        assert method != null && local != null;
-        ImmutablePair<SootMethod, Local> key = ImmutablePair.of(method, local);
-        MethodLocal methodLocal = cache.get(key);
-        if (methodLocal == null) {
-            methodLocal = new MethodLocal(method, local);
-            cache.put(key, methodLocal);
-        }
-        return methodLocal;
-    }
-
-    @Override
-    public boolean equals(Object that) {
-        if (this == that) {
-            return true;
-        }
-        if (!(that instanceof MethodLocal)) {
-            return false;
-        }
-        MethodLocal methodLocal = (MethodLocal)that;
-
-        return this.method.equals(methodLocal.method) && this.local.equivTo(methodLocal.local);
-    }
-
-    @Override
-    public int hashCode() {
-        return method.equivHashCode();
-    }
-
-    @Override
-    public String toString() {
-        return local.toString();
-    }
-}
-
-class MethodMyParameterRef {
-    private static final HashMap<ImmutablePair<SootMethod, MyParameterRef>, MethodMyParameterRef> cache = new HashMap<ImmutablePair<SootMethod, MyParameterRef>, MethodMyParameterRef>();
-
-    SootMethod method;
-    MyParameterRef param;
-
-    private MethodMyParameterRef(SootMethod method, MyParameterRef param) {
-        assert method != null && param != null;
-        this.method = method;
-        this.param = param;
-    }
-
-    static MethodMyParameterRef v(SootMethod method, ParameterRef param) {
-        assert method != null && param != null;
-        MyParameterRef p = new MyParameterRef(param);
-        ImmutablePair<SootMethod, MyParameterRef> key = ImmutablePair.of(method, p);
-        MethodMyParameterRef methodParam = cache.get(key);
-        if (methodParam == null) {
-            methodParam = new MethodMyParameterRef(method, p);
-            cache.put(key, methodParam);
-        }
-        return methodParam;
-    }
-
-    @Override
-    public boolean equals(Object that) {
-        if (this == that) {
-            return true;
-        }
-        if (!(that instanceof MethodMyParameterRef)) {
-            return false;
-        }
-        MethodMyParameterRef methodParam = (MethodMyParameterRef)that;
-
-        return this.method.equals(methodParam.method) && this.param.equivTo(methodParam.param);
-    }
-
-    @Override
-    public int hashCode() {
-        return method.equivHashCode();
-    }
-
-    @Override
-    public String toString() {
-        return param.toString();
-    }
 }
