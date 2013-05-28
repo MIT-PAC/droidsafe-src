@@ -8,6 +8,10 @@ import java.lang.annotation.Target;
 @Target({ElementType.METHOD})
 @Retention(RetentionPolicy.RUNTIME)
 public @interface DSGenerator {
-	String key();
-	String value();
+	String tool_name();
+	String tool_version();
+	String generated_on();
+	String hash_original_method();
+	String hash_generated_method();
+
 }
