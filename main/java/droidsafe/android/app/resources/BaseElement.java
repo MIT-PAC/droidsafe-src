@@ -55,15 +55,37 @@ public class BaseElement {
     Node n = attributes.getNamedItem (name);
     if (n == null)
       n = attributes.getNamedItem ("android:" + name);
+
     if (n == null)
       return null;
-    else
-      return n.getNodeValue();
+
+	return n.getNodeValue();
   }
 
+  /**
+  * Check if an attribute exists
+  */
   public boolean attr_exists (String name) {
 
     return (get_attr (name) != null);
+  }
+
+
+  /**
+  * get a map of attribute => string value
+  */
+  public Map<String, String> getAttributes() {
+	  Map<String, String> attributeMap = new HashMap<String, String>();
+	  for (int ind = 0; ind < attributes.getLength(); ind++) {
+		  Node node = attributes.item(ind);
+		  String nodeName = node.getNodeName();
+		  if (nodeName.startsWith("android:")) {
+			  nodeName = nodeName.substring("android:".length());
+		  }
+		  attributeMap.put(nodeName, node.getNodeValue());
+		  logger.debug("node {}: {}=>{}", ind, nodeName, node.getNodeValue());
+	  }
+	  return attributeMap;
   }
 
   /**
