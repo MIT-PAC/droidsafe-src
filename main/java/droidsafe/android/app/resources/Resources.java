@@ -507,10 +507,8 @@ public class Resources {
 					+ "(package {})", activity.name, package_name);
 			System.exit(1);
 		}
-
-
-
-		logger.info ("read in class file " + cn.getName());
+		
+		//NOTE: do we want to read in all methods????????
 
 		// Process methods of cn only if cn is an "Activity" or inherits Activity
 		if (classNodeIsAnAndroidActivity(cn)) {
@@ -571,41 +569,6 @@ public class Resources {
 				String signature = "<" + cn + ": void " + view.on_click + "(android.view.View)>";
 				view.on_click = signature;
 				logger.debug("Replace onclick signature {} ", view.on_click);
-					
-				/*	
-				try {
-					//
-				    List<RefType> viewArg = new LinkedList<RefType>();
-				    viewArg.add(RefType.v("android.view.View"));
-					String signature = "<" + cn + ": void " + view.on_click + "(android.view.View)>";
-					view.on_click = signature;
-					logger.debug("Replace onclick signature {} ", view.on_click);
-					SootMethod method = SootUtils.resolveMethod(cn, signature);
-					//cn.getMethod(view.on_click, viewArg);
-
-					//record the handler in the map for the layout
-					//for the entire application there could be multiple layouts, and multiple
-					//handler per layout
-					if (!handlers.containsKey(layout)) { 
-						handlers.put(layout, new HashMap<View, SootMethod>());
-					}
-
-					logger.info("Putting: layout {}, view {}, method {}\n", layout, view, method);
-					handlers.get(layout).put(view, method);	
-					allHandlers.add(method);
-					
-					// Its not entirely clear why we are processing the on_click entry
-					// point itself.  What are we looking for here?
-
-					process_entry (cn, method.getSubSignature());
-				} catch (MissingElementException mee) {
-					logger.warn("Warning, Error processing on click handler {} in "
-							+ "layout {}: {}", view.on_click, layout.name, 
-							mee.getMessage());
-				} catch (Exception e) {
-					logger.warn("Problem resolving onclick handler...");
-				}
-				*/
 			}
 		}
 		for (View child : view.children)
@@ -792,6 +755,7 @@ public class Resources {
 	 * @param i The view ID that is the arg to setContentView
 	 */
 	public Map<Layout.View, SootMethod> getOnClickHandlers(Integer i) {
+	    /*
 		if (resolved) {
 			//find the layout
 			String fullname = findLayoutName(i);
@@ -821,6 +785,8 @@ public class Resources {
 			//Messages.print("Unresolved!");
 			return null;
 		}
+		*/
+	    return null;
 	}
 
 

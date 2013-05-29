@@ -400,7 +400,7 @@ public class ResourcesSoot {
         // 1. owning object of the callback (activity) => mArgContext
         // 2. 
                 
-        logger.warn("method {} OK for onclick", method);
+        logger.info("method {} OK for onclick", method);
         
         Chain<Unit> units = mInitLayoutBody.getUnits();
         
