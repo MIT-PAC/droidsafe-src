@@ -21,6 +21,7 @@ import org.osgi.framework.Bundle;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import soot.G;
 import soot.Scene;
 import soot.SootClass;
 import soot.SootMethod;
@@ -87,7 +88,6 @@ public class DroidsafeAnalysisRunner {
     IPath path = project.getLocation();
     Config.v().APP_ROOT_DIR = path.toOSString();
 
-
     // LoggerContext lc = (LoggerContext) LoggerFactory.getILoggerFactory();
     // StatusPrinter.print(lc);
 
@@ -120,6 +120,7 @@ public class DroidsafeAnalysisRunner {
     logger.info("From Activator.getPreferenceStore" + "\nJIMPLE Prefence = " + writeJimpleClasses
         + "\nInfoFlow = " + infoFlow + "\nPass = " + passTarget);
 
+    G.reset();
     Project.v().init();
     SootConfig.init();
     API.v().init();
@@ -128,7 +129,6 @@ public class DroidsafeAnalysisRunner {
   }
 
   public void run(IProgressMonitor monitor) {
-
     logger.info("Creating locals for all string constant arguments.");
     LocalForStringConstantArguments.run();
     monitor.worked(1);
@@ -148,10 +148,7 @@ public class DroidsafeAnalysisRunner {
     Resources.resolveManifest(Config.v().APP_ROOT_DIR);
     monitor.worked(1);
 
-    logger.info("Resolving String Constants");
-    monitor.subTask("Resolving String Constants");
-    ResolveStringConstants.run(Config.v().APP_ROOT_DIR);
-    monitor.worked(1);
+
 
     logger.info("Finding entry points in user code.");
     monitor.subTask("Finding entry points in user code.");
@@ -170,6 +167,7 @@ public class DroidsafeAnalysisRunner {
 
     if (Config.v().runStringAnalysis) {
 
+      JSAStrings.init(Config.v());
       // Predefined hotspots. Should be removed.
       JSAStrings.v().addArgumentHotspots("<android.content.Intent: void <init>(java.lang.String)>",
           0);
@@ -217,17 +215,16 @@ public class DroidsafeAnalysisRunner {
     GeoPTA.run();
     monitor.worked(1);
 
-    // logger.info("Incorporating XML layout information");
-    // IntegrateXMLLayouts.run();
+    logger.info("Resolving String Constants");
+    monitor.subTask("Resolving String Constants");
+    ResolveStringConstants.run(Config.v().APP_ROOT_DIR);
+    monitor.worked(1);
 
-    // logger.info("Specializing API Calls");
-    // APICallSpecialization.run();
-
-    // logger.info("Restarting PTA...");
-    // monitor.subTask("PTA Second Pass");
-    // GeoPTA.release();
-    // GeoPTA.run();
-    // monitor.worked(1);
+    logger.info("Restarting PTA...");
+    monitor.subTask("PTA Second Pass");
+    GeoPTA.release();
+    GeoPTA.run();
+    monitor.worked(1);
 
     // write jimple txt files for all classes so we can analzye them
     if (Config.v().writeJimpleAppClasses) {

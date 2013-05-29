@@ -55,23 +55,49 @@ import droidsafe.utils.SourceLocationTag;
  */
 public class SecuritySpecOutlineViewPart extends ViewPart {
   private static final Logger logger = LoggerFactory.getLogger(SecuritySpecOutlineViewPart.class);
-  /**
-   * The ID of the view as specified by the extension.
-   */
+
+  /** The ID of the view as specified by the extension. */
   public static final String VIEW_ID = "droidsafe.eclipse.plugin.core.view.DroidsafeSpecView";
 
+  /** The project selected on the Project Explorer View. */
   private IProject selectedProject;
+
+  /* The model for the security spec we are displaying on the outline view. */
   private SecuritySpecModel securitySpecModel;
+
+  /** The main tree viewer used to display the outline of the security spec */
   private TreeViewer viewer;
+
+  /** A Text viewer we use to display a message to the user if no project is selected. */
   private TextViewer textViewer;
+
+  /** Standard Eclipse content provider to populate the tree viewer. */
   private ITreeContentProvider contentProvider;
+
+  /** Standard Eclipse label provider to provide images and labels to the different tree nodes. */
   private IBaseLabelProvider labelProvider;
+
+  /** A listener to keep track if the current selected project in the Explorer View */
   private ISelectionListener selectionListener;
+
+  /** The container for the text or tree view used in the class. */
   private Composite parentComposite;
 
-  public SecuritySpecOutlineViewPart() {}
+  /** Default empty constructor method. */
+  // public SecuritySpecOutlineViewPart() {}
 
-
+  /**
+   * Tries to find a security spec model for the currently selected project. If there is no selected
+   * project, it creates a text viewer telling the user to select a project in the Project Explorer.
+   * If there is a selected project in the Explorer View, the method looks for a serialized version
+   * of the spec in the droidsafe directory in the root folder of the application project. If a spec
+   * is available, the class field securitySpecModel is set. If a spec cannot be found, because
+   * droidsafe has not yet been executed for this application, then a message is displayed to the
+   * user instructing how to run the droidsafe analysis.
+   * 
+   * @param parent The composite container for the viewer. Used to create a text viewer in case a
+   *        security spec for the currently selected project cannot be found.
+   */
   private void initializeSecuritySpec(Composite parent) {
     this.selectedProject = getSelectedProject();
     if (this.selectedProject == null) {
@@ -113,10 +139,12 @@ public class SecuritySpecOutlineViewPart extends ViewPart {
   /**
    * Auxiliary function to setup a selection listener that would replace the contents of the outline
    * view once a different project is selected.
+   * 
+   * Every time the user changes the selected project in the Project Explorer, the contents of the
+   * Droidsafe outline view are updated with the spec of the selected project, if a spec for that
+   * app is already available.
    */
   private void setSelectionListener() {
-    // final IProject localProject = this.selectedProject;
-    // final Composite localComposite = this.parentComposite;
     this.selectionListener = new ISelectionListener() {
       public void selectionChanged(IWorkbenchPart part, ISelection sel) {
         if (!(sel instanceof IStructuredSelection)) return;
@@ -125,14 +153,14 @@ public class SecuritySpecOutlineViewPart extends ViewPart {
         if (selectedObject instanceof IAdaptable) {
           IResource res = (IResource) ((IAdaptable) selectedObject).getAdapter(IResource.class);
           IProject project = res.getProject();
-          if (project != null && project != selectedProject) {
-            initializeSecuritySpec(parentComposite);
-            if (securitySpecModel != null) {
+          if (project != null && project != SecuritySpecOutlineViewPart.this.selectedProject) {
+            SecuritySpecOutlineViewPart.this.securitySpecModel = null;
+            initializeSecuritySpec(SecuritySpecOutlineViewPart.this.parentComposite);
+            if (SecuritySpecOutlineViewPart.this.securitySpecModel != null) {
               if (getViewer() == null) {
                 initializeTreeViewer();
               } else {
                 getViewer().setInput(securitySpecModel);
-                // getViewer().refresh();
               }
             }
           }
@@ -142,6 +170,11 @@ public class SecuritySpecOutlineViewPart extends ViewPart {
     getSite().getPage().addSelectionListener(this.selectionListener);
   }
 
+  /**
+   * Standard Eclipse method to create a view. Initializes the security spec if a project is
+   * selected in the Explorer View, and creates the outline view using a TreeViewer. Set the content
+   * and label providers for the viewer.
+   */
   @Override
   public void createPartControl(Composite parent) {
     this.parentComposite = parent;
@@ -264,6 +297,10 @@ public class SecuritySpecOutlineViewPart extends ViewPart {
     }
   }
 
+  /**
+   * 
+   * @return the current TreeViewer. 
+   */
   public TreeViewer getViewer() {
     return this.viewer;
   }

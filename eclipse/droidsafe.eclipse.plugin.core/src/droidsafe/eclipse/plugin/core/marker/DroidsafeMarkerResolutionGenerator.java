@@ -265,7 +265,7 @@ public class DroidsafeMarkerResolutionGenerator implements IMarkerResolutionGene
     }
 
     @Override
-    public IMarker[] findOtherMarkers(IMarker[] markers) {     
+    public IMarker[] findOtherMarkers(IMarker[] markers) {
       return null;
     }
 

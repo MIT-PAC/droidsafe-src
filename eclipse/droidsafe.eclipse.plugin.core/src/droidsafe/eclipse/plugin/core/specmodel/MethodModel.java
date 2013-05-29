@@ -33,18 +33,18 @@ public class MethodModel implements Comparable<MethodModel>, Serializable {
    */
   private DroidsafeIssueResolutionStatus status = DroidsafeIssueResolutionStatus.UNRESOLVED;
 
-  
+
   public MethodModel(Method originalMethod) {
     this.methodName = originalMethod.getName();
     this.sootMethodSignature = originalMethod.getSignature();
-    this.methodSignature = sootMethodSignature.substring(1, sootMethodSignature.length() - 1);          
+    this.methodSignature = sootMethodSignature.substring(1, sootMethodSignature.length() - 1);
     this.className = originalMethod.getCname();
     this.returnType = originalMethod.getRtype();
     this.declarationLocation = originalMethod.getDeclSourceLocation();
-    
-    for (SourceLocationTag line : originalMethod.getLines()){
+
+    for (SourceLocationTag line : originalMethod.getLines()) {
       this.lines.add(new CodeLocationModel(line));
-    }     
+    }
     logger.debug("\n Method Signature {} \n Soot Signature {} \n Soot Sub Signature {}",
         new Object[] {methodSignature, sootMethodSignature, originalMethod.getSubSignature()});
   }
@@ -84,7 +84,7 @@ public class MethodModel implements Comparable<MethodModel>, Serializable {
     return this.declarationLocation;
   }
 
-  
+
   /**
    * Set the status of this code location to SAFE.
    */
@@ -138,7 +138,7 @@ public class MethodModel implements Comparable<MethodModel>, Serializable {
   public boolean isUnresolved() {
     return (this.status == DroidsafeIssueResolutionStatus.UNRESOLVED);
   }
-  
+
   @Override
   public int hashCode() {
     final int prime = 31;

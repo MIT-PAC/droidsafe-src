@@ -84,5 +84,5 @@ public class CodeLocationModel extends SourceLocationTag {
   public boolean isUnresolved() {
     return (this.status == DroidsafeIssueResolutionStatus.UNRESOLVED);
   }
-  
+
 }

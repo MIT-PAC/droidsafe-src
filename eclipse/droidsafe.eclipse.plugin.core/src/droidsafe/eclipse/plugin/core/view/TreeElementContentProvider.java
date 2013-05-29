@@ -123,28 +123,25 @@ public class TreeElementContentProvider implements ITreeContentProvider {
     }
   }
 
-  private void createModelWithCodeLocationAsTopParent(
-      TreeElement<SecuritySpecModel, Object> root) {
+  private void createModelWithCodeLocationAsTopParent(TreeElement<SecuritySpecModel, Object> root) {
     Map<CodeLocationModel, Map<MethodModel, List<MethodModel>>> codeLocationEventBlocks =
         this.model.getCodeLocationEventBlocks();
     if (codeLocationEventBlocks != null) {
       for (CodeLocationModel location : codeLocationEventBlocks.keySet()) {
         TreeElement<Object, MethodModel> locationElement =
-            new TreeElement<Object, MethodModel>(location.toString(), location,
-                MethodModel.class);
+            new TreeElement<Object, MethodModel>(location.toString(), location, MethodModel.class);
         root.addChild(locationElement);
         for (MethodModel inputMethod : codeLocationEventBlocks.get(location).keySet()) {
           TreeElement<MethodModel, MethodModel> inputElement =
-              new TreeElement<MethodModel, MethodModel>(
-                  inputMethod.getSignature(), inputMethod, MethodModel.class);
+              new TreeElement<MethodModel, MethodModel>(inputMethod.getSignature(), inputMethod,
+                  MethodModel.class);
           locationElement.addChild(inputElement);
-          List<MethodModel> outputMethods =
-              codeLocationEventBlocks.get(location).get(inputMethod);
+          List<MethodModel> outputMethods = codeLocationEventBlocks.get(location).get(inputMethod);
           if (outputMethods != null) {
             for (MethodModel outputMethod : outputMethods) {
               TreeElement<MethodModel, Object> outputElement =
-                  new TreeElement<MethodModel, Object>(outputMethod.getSignature(),
-                      outputMethod, Object.class);
+                  new TreeElement<MethodModel, Object>(outputMethod.getSignature(), outputMethod,
+                      Object.class);
               inputElement.addChild(outputElement);
             }
           }
@@ -153,10 +150,8 @@ public class TreeElementContentProvider implements ITreeContentProvider {
     }
   }
 
-  private void createModelWithEntryPointAsTopParent(
-      TreeElement<SecuritySpecModel, Object> root) {
-    Map<MethodModel, List<MethodModel>> inputEventBlocks =
-        this.model.getInputEventBlocks();
+  private void createModelWithEntryPointAsTopParent(TreeElement<SecuritySpecModel, Object> root) {
+    Map<MethodModel, List<MethodModel>> inputEventBlocks = this.model.getInputEventBlocks();
     if (inputEventBlocks != null) {
       for (MethodModel inputMethod : inputEventBlocks.keySet()) {
         TreeElement<Object, MethodModel> inputElement =
@@ -184,8 +179,7 @@ public class TreeElementContentProvider implements ITreeContentProvider {
 
   public TreeElement<?, ?> initializeRoot() {
     TreeElement<SecuritySpecModel, Object> root =
-        new TreeElement<SecuritySpecModel, Object>("SecuritySpec", this.model,
-            Object.class);
+        new TreeElement<SecuritySpecModel, Object>("SecuritySpec", this.model, Object.class);
     TreeElement<Object, MethodModel> whitelist =
         new TreeElement<Object, MethodModel>("Whitelist", this.model.getWhitelist(),
             MethodModel.class);

@@ -597,8 +597,8 @@ public class SootUtils {
 		    streamOut.close();
 			
 		} catch (Exception e) {
-            logger.info("Method that failed = " + methodThatFailed);
-			logger.info("Error writing class to file {}", clz, e);
+            logger.error("Method that failed = " + methodThatFailed);
+			logger.error("Error writing class to file {}", clz, e);
 		}
 	}
 	
@@ -750,7 +750,92 @@ public class SootUtils {
 		
 		return clazzes;
 	}
+
+	/**
+	* removeNonstaticMethods:
+	*	remve all nonstatic methods.   
+	*/
+	public static void removeNonstaticMethods(SootClass clz) {
+		Iterator<SootMethod> methodIter = clz.getMethods().iterator();
+		while(methodIter.hasNext()) {
+			SootMethod method = methodIter.next();
+			if (!method.isStatic()) { 
+				clz.removeMethod(method);
+			}
+		}
+	}
+
+	/**
+	* get a list of ancestor of a given class, in order from immediate to oldest
+	*/
+	public static List<SootClass> getAncestorList(SootClass me) {
+		SootClass parent = me.getSuperclass();
+		SootClass objClass = Scene.v().getSootClass("java.lang.Object");
+		List<SootClass> list = new LinkedList();
+
+		//System.out.println("checking accestor for = " + me.toString());
+		while (!parent.equals(objClass)) {
+			//System.out.println("parent = " + parent.toString());
+			list.add(parent);
+			parent = parent.getSuperclass();
+		}
+		return list;
+	}
+
+	/*
+	* find the closest method in the inheritance chain (including itself) that matches
+	* the signature
+	*/
+	public static SootMethod findClosetMatch(SootClass sootClass, String signature) {
+		List<SootClass> ancestorList = getAncestorList(sootClass);
+
+		ancestorList.add(0, sootClass);
+
+		for (SootClass sc: ancestorList) {
+			try {
+				SootMethod method = 
+						Scene.v().getMethod(String.format("<%s: %s>", sc.toString(), signature));
+				return method;
+			} catch (Exception ex) {
+			}
+		}
+		return null;
+	}
+
+	/**
+	* check if a class is a decendent of posAncestor class
+	*/
+	public static boolean checkAncestor(SootClass me, SootClass posAncestor) {
+		SootClass parent = me.getSuperclass();
+		SootClass objClass = Scene.v().getSootClass("java.lang.Object");
+
+		//System.out.println("checking accestor for = " + me.toString());
+		while (parent != null) {
+			//System.out.println("parent = " + parent.toString());
+			if (parent.equals(posAncestor))
+				return true;
+
+			if (parent.equals(objClass))
+				return false;
+			parent = parent.getSuperclass();
+		}
+		return false;
+	}
 	
+	/**
+	* get a list of classes that have the same short name
+	*/
+	public static List<SootClass> matchShortName(String shortName) {
+    	Chain<SootClass> classes = Scene.v().getClasses();
+
+		List<SootClass> list = new LinkedList();
+
+		for (SootClass sootClass: classes) {
+			if (sootClass.getShortName().equals(shortName))
+				list.add(sootClass);
+		}
+		return list;
+	}
 }
 
 

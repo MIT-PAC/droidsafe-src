@@ -12,6 +12,7 @@ import soot.Scene;
 import soot.SootClass;
 import soot.SootMethod;
 import droidsafe.analyses.attr.AttributeModeling;
+import droidsafe.analyses.EntryPointCGEdges;
 import droidsafe.analyses.GeoPTA;
 import droidsafe.analyses.RCFGToSSL;
 import droidsafe.analyses.RequiredModeling;
@@ -28,6 +29,7 @@ import droidsafe.android.app.resources.Resources;
 import droidsafe.android.system.API;
 import droidsafe.android.system.Permissions;
 import droidsafe.transforms.AddAllocsForAPICalls;
+import droidsafe.transforms.IntegrateXMLLayouts;
 import droidsafe.transforms.LocalForStringConstantArguments;
 import droidsafe.transforms.ResolveStringConstants;
 import droidsafe.transforms.ScalarAppOptimizations;
@@ -74,10 +76,6 @@ public class Main {
         logger.info("Resolving resources and Manifest.");
 
         Resources.resolveManifest(Config.v().APP_ROOT_DIR);
-
-        logger.info("Resolving String Constants");
-        ResolveStringConstants.run(Config.v().APP_ROOT_DIR);
-
 
         logger.info("Finding entry points in user code.");
         EntryPoints.v().calculate();
@@ -144,16 +142,16 @@ public class Main {
         logger.info("Starting PTA...");
         GeoPTA.run();
 
-        //logger.info("Incorporating XML layout information");
-        // IntegrateXMLLayouts.run();
-
-        //logger.info("Specializing API Calls");
-        // APICallSpecialization.run();
+        logger.info("Incorporating XML layout information");
+        IntegrateXMLLayouts.run();
+        
+        logger.info("Resolving String Constants");
+        ResolveStringConstants.run(Config.v().APP_ROOT_DIR);
 
         // all transforms should be done by here!
-        // logger.info("Restarting PTA...");
-        // GeoPTA.release();
-        // GeoPTA.run();
+        logger.info("Restarting PTA...");
+        GeoPTA.release();
+        GeoPTA.run();
 
         // write jimple txt files for all classes so we can analzye them
         // all transforms should be done by here.
@@ -162,8 +160,7 @@ public class Main {
         }
 
         RCFG.generate();
-        logger.info("Ending DroidSafe Run");
-
+       
         logger.info("Starting Attribute Modeling");
         AttributeModeling.run();
         logger.info("Finished Attribute Modeling");
