@@ -134,4 +134,12 @@ public class Substring2 extends UnaryOperation {
     public boolean equals(Object obj) {
         return obj instanceof Substring;
     }
+
+    public int getStart() {
+        return start;
+    }
+
+    public int getEnd() {
+        return end;
+    }
 }

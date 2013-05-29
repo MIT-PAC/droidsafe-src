@@ -89,11 +89,15 @@ public class StringAnalysis {
     private MLFA2Automaton mlfa2aut;
     private Map<ValueBox, MLFAStatePair> map;
     private Map<SootClass, MLFAStatePair> tostring_map;
+
     private Map<ValueBox, String> sourcefile_map;
     private Map<ValueBox, String> class_map;
     private Map<ValueBox, String> method_map;
     private Map<ValueBox, Integer> line_map;
     private int num_exps;
+
+    private Map<ValueBox, Nonterminal> hs_nt_map;
+    private Grammar hs_grammar;
 
     private static Logger log = LoggerFactory.getLogger(StringAnalysis.class);
 
@@ -395,6 +399,19 @@ public class StringAnalysis {
                 map.put(box, sp);
             }
         }
+
+        // Save the nonterminal map.
+        hs_nt_map = new HashMap<ValueBox, Nonterminal>();
+        hs_grammar = r;
+        for (ValueBox box : hotspots) {
+            Node n = m3.get(m2.get(m1.get(box)));
+            if (n != null) {
+                Nonterminal nt = f2g.getNonterminal(n);
+                hs_nt_map.put(box, nt);
+            }
+        }
+
+
         tostring_map = new HashMap<SootClass, MLFAStatePair>();
         Map<SootClass, StringStatement> tostring_hotspot_map = jt.getToStringHotspotMap();
         for (Map.Entry<SootClass, StringStatement> tse : tostring_hotspot_map.entrySet()) {
@@ -536,6 +553,20 @@ public class StringAnalysis {
         MLFAStatePair sp = map.get(box);
         return mlfa2aut.extract(sp);
     }
+
+
+    public final Nonterminal getNonterminal(ValueBox box) {
+        if (!hs_nt_map.containsKey(box)) {
+            throw new IllegalArgumentException("Expression is not a marked hotspot");
+        }
+        Nonterminal nt = hs_nt_map.get(box);
+        return nt;
+    }
+
+    public final Grammar getGrammar() {
+        return hs_grammar;
+    }
+
 
     /**
      * Returns whether the strings that this valuebox contains can be taint.

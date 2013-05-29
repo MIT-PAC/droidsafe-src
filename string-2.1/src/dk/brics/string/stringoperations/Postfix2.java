@@ -26,6 +26,10 @@ public class Postfix2 extends UnaryOperation {
         this.start = start;
     }
 
+    public int getStart() {
+        return start;
+    }
+
      @Override
      public Automaton op(Automaton a) {
         Automaton b = a.clone();
@@ -73,7 +77,7 @@ public class Postfix2 extends UnaryOperation {
 
     @Override
     public String toString() {
-        return "postfix";
+        return "postfix2(" + start + ")";
     }
 
     @Override

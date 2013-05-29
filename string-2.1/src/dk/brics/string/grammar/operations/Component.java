@@ -76,7 +76,7 @@ public class Component implements GraphComponent<Nonterminal> {
     /**
      * Checks whether the given nonterminal is in this component.
      */
-    boolean contains(Nonterminal x) {
+    public boolean contains(Nonterminal x) {
         return nonterminals.contains(x);
     }
 
