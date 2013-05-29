@@ -2,8 +2,8 @@ package java.lang;
 
 import java.io.Serializable;
 
-import droidsafe.annotations.*;
-import droidsafe.helpers.*;
+import droidsafe.annotations.DSC;
+import droidsafe.annotations.DSModeled;
 
 public final class Boolean implements Serializable, Comparable<Boolean> {
 	public static final Boolean TRUE = new Boolean(true);

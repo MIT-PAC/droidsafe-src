@@ -1,13 +1,11 @@
 package droidsafe.concrete;
 
+import android.hardware.Sensor;
 import android.hardware.SensorEvent;
 import android.hardware.SensorEventListener;
 import android.hardware.SensorManager;
-import android.os.Looper;
-
-import droidsafe.annotations.*;
-
-import android.hardware.Sensor;
+import droidsafe.annotations.DSC;
+import droidsafe.annotations.DSModeled;
 
 public class DroidSafeSensorManager extends SensorManager {
 

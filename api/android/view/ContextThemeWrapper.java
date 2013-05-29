@@ -16,14 +16,12 @@
 
 package android.view;
 
-import droidsafe.annotations.*;
-import droidsafe.helpers.*;
-
 import android.app.ContextImpl;
 import android.content.Context;
 import android.content.ContextWrapper;
 import android.content.res.Resources;
-import android.os.Build;
+import droidsafe.annotations.DSC;
+import droidsafe.annotations.DSModeled;
 
 /**
  * A ContextWrapper that allows you to modify the theme from what is in the 

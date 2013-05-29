@@ -1,8 +1,8 @@
 package java.lang;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
+import droidsafe.annotations.DSC;
+import droidsafe.annotations.DSModeled;
 
 
 @FindBugsSuppressWarnings("DM_NUMBER_CTOR") public final class Integer extends Number implements Comparable<Integer> {

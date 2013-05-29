@@ -16,22 +16,20 @@
 
 package android.content;
 
-import droidsafe.annotations.*;
-import droidsafe.concrete.DSCursor;
-
-import dalvik.system.CloseGuard;
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Random;
 
 import android.accounts.Account;
 import android.app.ActivityManagerNative;
-import android.app.ActivityThread;
 import android.app.AppGlobals;
-import android.content.pm.PackageManager.NameNotFoundException;
 import android.content.res.AssetFileDescriptor;
 import android.content.res.Resources;
 import android.database.ContentObserver;
 import android.database.CrossProcessCursorWrapper;
 import android.database.Cursor;
-import android.database.CursorWrapper;
 import android.database.IContentObserver;
 import android.net.Uri;
 import android.os.Bundle;
@@ -39,21 +37,12 @@ import android.os.IBinder;
 import android.os.ParcelFileDescriptor;
 import android.os.RemoteException;
 import android.os.ServiceManager;
-import android.os.StrictMode;
 import android.os.SystemClock;
-import android.text.TextUtils;
 import android.util.EventLog;
 import android.util.Log;
-
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.OutputStream;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Random;
+import dalvik.system.CloseGuard;
+import droidsafe.annotations.DSModeled;
+import droidsafe.concrete.DSCursor;
 
 
 /**

@@ -1,7 +1,6 @@
 package android.location;
 
-import droidsafe.annotations.*;
-import droidsafe.helpers.*;
+import droidsafe.annotations.DSModeled;
 
 /*
  * With the latest push of PTA code, this began to get flagged as

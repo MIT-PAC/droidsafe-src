@@ -1,10 +1,10 @@
 package droidsafe.runtime;
 
-import droidsafe.annotations.*;
 import android.app.ContextImpl;
 import android.content.BroadcastReceiver;
 import android.content.Intent;
 import android.os.Bundle;
+import droidsafe.annotations.DSModeled;
 
 /**
  * This class will simulate the android runtime system by making any calls or creating 

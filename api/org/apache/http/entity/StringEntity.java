@@ -9,7 +9,6 @@ import org.apache.http.Header;
 
 import droidsafe.annotations.DSC;
 import droidsafe.annotations.DSModeled;
-import droidsafe.helpers.DSTaintObject;
 
 public class StringEntity extends AbstractHttpEntity {
 	

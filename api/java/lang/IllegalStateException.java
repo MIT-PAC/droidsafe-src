@@ -1,6 +1,6 @@
 package java.lang;
-import droidsafe.annotations.*;
-import droidsafe.helpers.*;
+import droidsafe.annotations.DSC;
+import droidsafe.annotations.DSModeled;
 public class IllegalStateException extends RuntimeException {
     private static final long serialVersionUID = -1848914673093119416L;
     

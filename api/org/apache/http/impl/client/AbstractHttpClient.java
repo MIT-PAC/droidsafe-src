@@ -17,7 +17,6 @@ import org.apache.http.protocol.HttpContext;
 
 import droidsafe.annotations.DSC;
 import droidsafe.annotations.DSModeled;
-import droidsafe.helpers.DSTaintObject;
 
 public class AbstractHttpClient implements HttpClient {
 	

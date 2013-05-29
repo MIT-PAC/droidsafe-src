@@ -16,14 +16,11 @@
 
 package android.graphics;
 
-import droidsafe.annotations.*;
-import droidsafe.helpers.*;
-
-import android.view.HardwareRenderer;
+import droidsafe.annotations.DSC;
+import droidsafe.annotations.DSModeled;
 
 /**
  * The Path class encapsulates compound (multiple contour) geometric paths
-    private DSTaintObject taint; 
  * consisting of straight line segments, quadratic curves, and cubic curves.
  * It can be drawn with canvas.drawPath(path, paint), either filled or stroked
  * (based on the paint's Style), or it can be used for clipping or to draw

@@ -16,23 +16,11 @@
 
 package android.widget;
 
-import droidsafe.annotations.*;
-import droidsafe.helpers.*;
-
 import android.content.Context;
 import android.content.res.Resources;
-import android.graphics.PixelFormat;
-import android.os.Handler;
-import android.os.RemoteException;
-import android.os.ServiceManager;
-import android.util.Log;
-import android.view.Gravity;
-import android.view.LayoutInflater;
 import android.view.View;
-import android.view.WindowManager;
-import android.view.WindowManagerImpl;
-import android.view.accessibility.AccessibilityEvent;
-import android.view.accessibility.AccessibilityManager;
+import droidsafe.annotations.DSC;
+import droidsafe.annotations.DSModeled;
 
 /**
  * A toast is a view containing a quick little message for the user.  The toast class

@@ -1,8 +1,9 @@
 package java.util;
 
 import java.io.Serializable;
-import droidsafe.annotations.*;
-import droidsafe.helpers.*;
+
+import droidsafe.annotations.DSC;
+import droidsafe.annotations.DSModeled;
 
 public class Random implements Serializable {
 	@DSModeled(DSC.SAFE)

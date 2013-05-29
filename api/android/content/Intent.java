@@ -1,16 +1,16 @@
 package android.content;
 
+import java.io.Serializable;
+import java.util.HashSet;
+import java.util.Set;
+
+import android.graphics.Rect;
+import android.net.Uri;
 import android.os.Bundle;
 import android.os.Parcel;
 import android.os.Parcelable;
-import android.graphics.Rect;
-import android.net.Uri;
-import java.util.Set;
-import java.util.HashSet;
-import java.io.Serializable;
-
-import droidsafe.annotations.*;
-import droidsafe.helpers.*;
+import droidsafe.annotations.DSC;
+import droidsafe.annotations.DSModeled;
 
 /*
  * New model generated on 4/16/13 by GITI.  The original model had 

@@ -1,16 +1,10 @@
 package android.content.res;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-
 import android.graphics.drawable.Drawable;
-import android.util.AttributeSet;
-import android.util.DisplayMetrics;
-import android.util.Log;
 import android.util.TypedValue;
-import com.android.internal.util.XmlUtils;
-import java.util.Arrays;
+import droidsafe.annotations.DSC;
+import droidsafe.annotations.DSModeled;
 
 public class TypedArray {
 	

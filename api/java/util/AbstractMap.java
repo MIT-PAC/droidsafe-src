@@ -1,10 +1,10 @@
 package java.util;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-
 import java.io.Serializable;
+
+import droidsafe.annotations.DSC;
+import droidsafe.annotations.DSModeled;
 
 public abstract class AbstractMap<K, V> implements Map<K,V> {
     
@@ -159,7 +159,6 @@ public abstract class AbstractMap<K, V> implements Map<K,V> {
         
         public V setValue(V object){
             //DSFIXME:  CODE0004: Local variable requires review, uncomment if needed
-        	//dsTaint.addTaint((DSTaintObject)((DSTaintObject)object).getTaint());
             V result = value;
             value = object;  //DSFIXME:  CODE0003: Field assignment should be reviewed
             return result;  //DSFIXME:  CODE0001: Unresolved return type/value combination

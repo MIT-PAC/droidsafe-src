@@ -5,7 +5,6 @@ import org.apache.http.params.HttpParams;
 
 import droidsafe.annotations.DSC;
 import droidsafe.annotations.DSModeled;
-import droidsafe.helpers.DSTaintObject;
 
 public class DefaultHttpClient extends AbstractHttpClient {
 

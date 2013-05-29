@@ -1,6 +1,9 @@
 package android.media;
 
 import java.io.IOException;
+
+import droidsafe.annotations.DSC;
+import droidsafe.annotations.DSModeled;
 /*
 import java.text.ParsePosition;
 import java.text.SimpleDateFormat;
@@ -10,11 +13,7 @@ import java.util.Map;
 import java.util.TimeZone;
 */
 
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-
 public class ExifInterface {
-	private DSTaintObject dsTaint = new DSTaintObject();
 	
 	@DSModeled() //Decided to go with SPEC because in theory be used for covert data storage
 	private void loadAttributes() throws IOException {

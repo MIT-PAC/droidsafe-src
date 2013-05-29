@@ -1,8 +1,9 @@
 package android.view.animation;
-import droidsafe.annotations.*;
-import droidsafe.helpers.*;
-import android.graphics.Matrix;
 import java.io.PrintWriter;
+
+import android.graphics.Matrix;
+import droidsafe.annotations.DSC;
+import droidsafe.annotations.DSModeled;
 public class Transformation {
     public static int TYPE_IDENTITY = 0x0;
     public static int TYPE_ALPHA = 0x1;

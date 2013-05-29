@@ -16,7 +16,6 @@ import android.util.SparseArray;
 import android.util.TypedValue;
 import droidsafe.annotations.DSC;
 import droidsafe.annotations.DSModeled;
-import droidsafe.helpers.DSTaintObject;
 
 public class Resources {
 	

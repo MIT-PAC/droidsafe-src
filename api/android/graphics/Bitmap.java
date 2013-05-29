@@ -2,6 +2,8 @@ package android.graphics;
 
 import android.os.Parcel;
 import android.os.Parcelable;
+import droidsafe.annotations.DSC;
+import droidsafe.annotations.DSModeled;
 /*
 import android.util.DisplayMetrics;
 import java.io.OutputStream;
@@ -10,9 +12,6 @@ import java.nio.ByteBuffer;
 import java.nio.IntBuffer;
 import java.nio.ShortBuffer;
 */
-
-import droidsafe.annotations.*;
-import droidsafe.helpers.*;
 
 public final class Bitmap implements Parcelable {
 	

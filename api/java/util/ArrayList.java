@@ -4,7 +4,6 @@ import java.io.Serializable;
 
 import droidsafe.annotations.DSC;
 import droidsafe.annotations.DSModeled;
-import droidsafe.helpers.DSTaintObject;
 
 
 public class ArrayList<E> extends AbstractList<E> implements Cloneable, Serializable, RandomAccess {

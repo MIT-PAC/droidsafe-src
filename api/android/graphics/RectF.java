@@ -15,15 +15,12 @@
  */
 
 package android.graphics;
-import droidsafe.annotations.*;
-import droidsafe.helpers.*;
-
 import java.io.PrintWriter;
 
 import android.os.Parcel;
 import android.os.Parcelable;
-import android.util.FloatMath;
-import com.android.internal.util.FastMath;
+import droidsafe.annotations.DSC;
+import droidsafe.annotations.DSModeled;
 
 /**
  * RectF holds four float coordinates for a rectangle. The rectangle is
@@ -33,7 +30,6 @@ import com.android.internal.util.FastMath;
  * the coordinates are sorted correctly (i.e. left <= right and top <= bottom).
  */
 public class RectF implements Parcelable {
-    DSTaintObject dsTaint; 
     private float left;
     private float right;
     private float top;

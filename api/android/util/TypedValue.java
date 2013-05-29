@@ -1,6 +1,6 @@
 package android.util;
-import droidsafe.annotations.*;
-import droidsafe.helpers.*;
+import droidsafe.annotations.DSC;
+import droidsafe.annotations.DSModeled;
 public class TypedValue {
     public static final int TYPE_NULL = 0x00;
     public static final int TYPE_REFERENCE = 0x01;

@@ -1,13 +1,9 @@
 package java.lang;
 
 import java.io.Serializable;
-import java.lang.reflect.InvocationTargetException;
-import java.lang.reflect.Method;
-import libcore.util.BasicLruCache;
-import libcore.util.EmptyArray;
 
-import droidsafe.annotations.*;
-import droidsafe.helpers.*;
+import droidsafe.annotations.DSC;
+import droidsafe.annotations.DSModeled;
 
 public abstract class Enum<E extends Enum<E>> implements Serializable, Comparable<E> {
 	private static final long serialVersionUID = -4300926546619394005L;

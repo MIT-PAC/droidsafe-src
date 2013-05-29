@@ -1,7 +1,7 @@
 package android.graphics;
 
-import droidsafe.annotations.*;
-import droidsafe.helpers.*;
+import droidsafe.annotations.DSC;
+import droidsafe.annotations.DSModeled;
 
 /*
  * Refactored the original Paint model to be more streamlined.  Also cut over the native

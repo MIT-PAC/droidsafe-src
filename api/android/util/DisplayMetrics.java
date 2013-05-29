@@ -1,7 +1,6 @@
 package android.util;
-import droidsafe.annotations.*;
-import droidsafe.helpers.*;
-import android.os.SystemProperties;
+import droidsafe.annotations.DSC;
+import droidsafe.annotations.DSModeled;
 public class DisplayMetrics {
     public static final int DENSITY_LOW = 120;
     public static final int DENSITY_MEDIUM = 160;

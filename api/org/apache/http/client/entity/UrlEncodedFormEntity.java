@@ -8,7 +8,6 @@ import org.apache.http.entity.StringEntity;
 
 import droidsafe.annotations.DSC;
 import droidsafe.annotations.DSModeled;
-import droidsafe.helpers.DSTaintObject;
 
 public class UrlEncodedFormEntity extends StringEntity {
 

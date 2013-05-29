@@ -1,12 +1,9 @@
 package android.os;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-
-import android.util.Log;
 import android.util.Printer;
-import java.lang.reflect.Modifier;
+import droidsafe.annotations.DSC;
+import droidsafe.annotations.DSModeled;
 
 public class Handler {
 	
@@ -490,7 +487,6 @@ public class Handler {
 	
 	/*
 	private final class MessengerImpl extends IMessenger.Stub {
-		private DSTaintObject dsTaint = new DSTaintObject();
 		
 		
 		public void send(Message msg){

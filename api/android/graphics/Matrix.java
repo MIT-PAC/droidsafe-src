@@ -1,10 +1,10 @@
 package android.graphics;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-
 import java.io.PrintWriter;
+
+import droidsafe.annotations.DSC;
+import droidsafe.annotations.DSModeled;
 
 public class Matrix {
 	public static final int MSCALE_X = 0;

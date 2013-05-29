@@ -4,7 +4,6 @@ import java.util.Arrays;
 
 import droidsafe.annotations.DSC;
 import droidsafe.annotations.DSModeled;
-import droidsafe.helpers.DSTaintObject;
 
 public class String implements java.io.Serializable, Comparable<String>, CharSequence {
 	

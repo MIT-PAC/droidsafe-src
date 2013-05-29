@@ -1,7 +1,4 @@
 package android.widget;
-import droidsafe.annotations.*;
-import droidsafe.helpers.*;
-import com.android.internal.R;
 import android.content.Context;
 import android.content.res.TypedArray;
 import android.graphics.Canvas;
@@ -12,6 +9,8 @@ import android.view.View;
 import android.view.ViewDebug;
 import android.view.ViewGroup;
 import android.widget.RemoteViews.RemoteView;
+import droidsafe.annotations.DSC;
+import droidsafe.annotations.DSModeled;
 @RemoteView
 public class LinearLayout extends ViewGroup {
     public static final int HORIZONTAL = 0;

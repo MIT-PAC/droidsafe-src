@@ -1,7 +1,7 @@
 package java.util;
 
-import droidsafe.annotations.*;
-import droidsafe.helpers.*;
+import droidsafe.annotations.DSC;
+import droidsafe.annotations.DSModeled;
 
 public abstract class AbstractList<E> extends AbstractCollection<E> implements List<E> {
 	protected transient int modCount;
@@ -90,7 +90,7 @@ public abstract class AbstractList<E> extends AbstractCollection<E> implements L
 	
 	@DSModeled(DSC.SAFE)
 	public boolean add(E object) {
-		dsTaint.addTaint((DSTaintObject)(((DSTaintObject)object).getTaint()));
+		dsTaint.addTaint(object.dsTaint);
         return dsTaint.getTaintBoolean();
     }
 	

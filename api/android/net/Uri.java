@@ -1,11 +1,12 @@
 package android.net;
 
-import android.os.Parcel;
-import java.util.List;
 import java.util.LinkedList;
+import java.util.List;
 
-import droidsafe.annotations.*;
-import droidsafe.helpers.*;
+import android.os.Parcel;
+import droidsafe.annotations.DSC;
+import droidsafe.annotations.DSModeled;
+import droidsafe.helpers.DSUtils;
 
 //public abstract class Uri implements Parcelable, Comparable<Uri> {
 public class Uri {

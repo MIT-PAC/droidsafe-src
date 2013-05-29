@@ -1,26 +1,18 @@
 package android.hardware;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import android.os.Looper;
-import android.os.Process;
 import android.os.RemoteException;
-import android.os.Handler;
-import android.os.Message;
 import android.os.ServiceManager;
-import android.util.Log;
 import android.util.SparseArray;
 import android.util.SparseBooleanArray;
-import android.util.SparseIntArray;
 import android.view.IRotationWatcher;
 import android.view.IWindowManager;
 import android.view.Surface;
-
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.HashMap;
-import java.util.List;
-
-import droidsafe.annotations.*;
-import droidsafe.helpers.*;
+import droidsafe.annotations.DSC;
+import droidsafe.annotations.DSModeled;
 
 public class SensorManager {
 	private static final int SENSOR_DISABLE = -1;

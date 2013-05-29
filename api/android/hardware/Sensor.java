@@ -1,6 +1,6 @@
 package android.hardware;
-import droidsafe.annotations.*;
-import droidsafe.helpers.*;
+import droidsafe.annotations.DSC;
+import droidsafe.annotations.DSModeled;
 
 public class Sensor {
     public static final int TYPE_ACCELEROMETER = 1;

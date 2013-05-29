@@ -1,7 +1,6 @@
 package android.util;
-import droidsafe.annotations.*;
-import droidsafe.helpers.*;
-import android.util.Property;
+import droidsafe.annotations.DSC;
+import droidsafe.annotations.DSModeled;
 
 public abstract class FloatProperty<T> extends Property<T, Float> {
     

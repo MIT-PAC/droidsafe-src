@@ -1,9 +1,9 @@
 package droidsafe.helpers;
 
-import droidsafe.annotations.DSC;
 import android.content.Intent;
 import android.net.Uri;
-import droidsafe.annotations.*;
+import droidsafe.annotations.DSC;
+import droidsafe.annotations.DSModeled;
 
 public class DSUtils {
 	public final static String UNKNOWN_STRING = "";

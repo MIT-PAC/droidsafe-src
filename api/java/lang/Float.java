@@ -1,8 +1,8 @@
 package java.lang;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
+import droidsafe.annotations.DSC;
+import droidsafe.annotations.DSModeled;
 
 
 public final class Float extends Number implements Comparable<Float> {

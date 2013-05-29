@@ -12,7 +12,6 @@ import org.apache.http.conn.ConnectionReleaseTrigger;
 
 import droidsafe.annotations.DSC;
 import droidsafe.annotations.DSModeled;
-import droidsafe.helpers.DSTaintObject;
 
 public class HttpEntityEnclosingRequestBase extends HttpRequestBase implements
 		HttpEntityEnclosingRequest {

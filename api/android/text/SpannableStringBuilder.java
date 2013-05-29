@@ -1,9 +1,9 @@
 package android.text;
 
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSModeled;
 import android.graphics.Canvas;
 import android.graphics.Paint;
+import droidsafe.annotations.DSC;
+import droidsafe.annotations.DSModeled;
 
 public class SpannableStringBuilder implements CharSequence, GetChars, Spannable, Editable,
 Appendable, GraphicsOperations {

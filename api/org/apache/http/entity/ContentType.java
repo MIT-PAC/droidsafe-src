@@ -9,7 +9,6 @@ import org.apache.http.HttpEntity;
 
 import droidsafe.annotations.DSC;
 import droidsafe.annotations.DSModeled;
-import droidsafe.helpers.DSTaintObject;
 
 public final class ContentType implements Serializable {
 	

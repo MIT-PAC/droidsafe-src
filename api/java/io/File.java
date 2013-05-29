@@ -1,7 +1,7 @@
 package java.io;
 
-import droidsafe.annotations.*;
-import droidsafe.helpers.*;
+import droidsafe.annotations.DSC;
+import droidsafe.annotations.DSModeled;
 
 public class File implements Serializable, Comparable<File> {
 	private static final long serialVersionUID = 301077366599181567L;

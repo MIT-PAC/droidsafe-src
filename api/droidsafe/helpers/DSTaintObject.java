@@ -1,6 +1,7 @@
 package droidsafe.helpers;
 
-import droidsafe.annotations.*;
+import droidsafe.annotations.DSC;
+import droidsafe.annotations.DSModeled;
 
 public class DSTaintObject {
 	private Object taint;

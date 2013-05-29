@@ -18,9 +18,8 @@ package android.text;
 
 import java.util.Iterator;
 
-import android.os.Parcelable;
 import android.os.Parcel;
-
+import android.os.Parcelable;
 import droidsafe.annotations.DSC;
 import droidsafe.annotations.DSModeled;
 

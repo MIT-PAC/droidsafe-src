@@ -4,7 +4,6 @@ import org.apache.http.HeaderElement;
 import org.apache.http.HeaderElementIterator;
 
 import droidsafe.annotations.DSC;
-
 import droidsafe.annotations.DSModeled;
 
 public class BasicHeaderElementIterator implements HeaderElementIterator {

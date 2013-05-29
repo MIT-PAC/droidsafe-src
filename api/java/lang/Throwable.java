@@ -1,16 +1,7 @@
 package java.lang;
 
-import java.io.IOException;
-import java.io.ObjectInputStream;
-import java.io.ObjectOutputStream;
-import java.io.PrintStream;
-import java.io.PrintWriter;
-import java.util.ArrayList;
-import java.util.List;
-
-import droidsafe.annotations.*;
-import droidsafe.helpers.*;
-import libcore.util.EmptyArray;
+import droidsafe.annotations.DSC;
+import droidsafe.annotations.DSModeled;
 
 public class Throwable implements java.io.Serializable {
 	

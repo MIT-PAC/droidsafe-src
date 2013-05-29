@@ -1,8 +1,9 @@
 package java.util;
 
-import droidsafe.annotations.*;
-import droidsafe.helpers.*;
 import java.io.Serializable;
+
+import droidsafe.annotations.DSC;
+import droidsafe.annotations.DSModeled;
 
 public class HashMap<K, V> extends AbstractMap<K, V> implements Cloneable, Serializable {
 	// DSModeled:  Add key and value for tracking values

@@ -1,7 +1,7 @@
 package android.database;
 
-import droidsafe.annotations.*;
-import droidsafe.helpers.*;
+import droidsafe.annotations.DSC;
+import droidsafe.annotations.DSModeled;
 
 public class DataSetObservable extends Observable<DataSetObserver> {
 	@DSModeled(DSC.SAFE)

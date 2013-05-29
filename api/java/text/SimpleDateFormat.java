@@ -4,7 +4,6 @@ import java.util.Date;
 
 import droidsafe.annotations.DSC;
 import droidsafe.annotations.DSModeled;
-import droidsafe.helpers.DSTaintObject;
 
 public class SimpleDateFormat extends DateFormat {
 	

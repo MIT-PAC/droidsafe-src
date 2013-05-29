@@ -1,12 +1,10 @@
 package android.content.pm;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-
 import android.os.Parcel;
 import android.os.Parcelable;
 import android.util.Printer;
+import droidsafe.annotations.DSModeled;
 
 public class ActivityInfo extends ComponentInfo implements Parcelable {
 	

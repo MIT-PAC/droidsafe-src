@@ -15,10 +15,10 @@
  */
 
 package android.database;
-import droidsafe.annotations.*;
-import droidsafe.helpers.*;
-
 import java.util.Iterator;
+
+import droidsafe.annotations.DSC;
+import droidsafe.annotations.DSModeled;
 
 /**
  * Does a join on two cursors using the specified columns. The cursors must already

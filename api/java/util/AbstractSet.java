@@ -1,8 +1,6 @@
 package java.util;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
 
 
 public abstract class AbstractSet <E> extends AbstractCollection<E> implements Set<E> {

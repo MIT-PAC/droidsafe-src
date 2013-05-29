@@ -5,7 +5,6 @@ import java.io.PrintStream;
 
 import droidsafe.annotations.DSC;
 import droidsafe.annotations.DSModeled;
-import droidsafe.helpers.DSTaintObject;
 
 public final class System {
 	

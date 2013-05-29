@@ -1,11 +1,11 @@
 package android.content.res;
-import droidsafe.annotations.*;
-import droidsafe.helpers.*;
+import java.util.Locale;
+
 import android.content.pm.ActivityInfo;
 import android.os.Parcel;
 import android.os.Parcelable;
-import android.util.LocaleUtil;
-import java.util.Locale;
+import droidsafe.annotations.DSC;
+import droidsafe.annotations.DSModeled;
 public final class Configuration implements Parcelable, Comparable<Configuration> {
     public float fontScale;
     public int mcc;

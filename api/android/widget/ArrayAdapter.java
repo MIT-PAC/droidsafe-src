@@ -10,7 +10,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import droidsafe.annotations.DSC;
 import droidsafe.annotations.DSModeled;
-import droidsafe.helpers.DSTaintObject;
 
 public class ArrayAdapter<T> extends BaseAdapter implements Filterable {
 	private int mResource;

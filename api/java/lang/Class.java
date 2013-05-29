@@ -1,7 +1,7 @@
 package java.lang;
 
-import droidsafe.annotations.*;
-import droidsafe.helpers.*;
+import droidsafe.annotations.DSC;
+import droidsafe.annotations.DSModeled;
 
 public final
 class Class<T> 

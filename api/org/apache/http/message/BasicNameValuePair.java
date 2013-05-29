@@ -4,7 +4,6 @@ import org.apache.http.NameValuePair;
 
 import droidsafe.annotations.DSC;
 import droidsafe.annotations.DSModeled;
-import droidsafe.helpers.DSTaintObject;
 
 public class BasicNameValuePair implements NameValuePair, Cloneable {
 
