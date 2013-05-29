@@ -9,7 +9,6 @@ import android.util.Printer;
 import java.lang.reflect.Modifier;
 
 public class Handler {
-	private DSTaintObject dsTaint = new DSTaintObject();
 	
 	private static final boolean FIND_POTENTIAL_LEAKS = false;
 	private static final String TAG = "Handler";

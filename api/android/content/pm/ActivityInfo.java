@@ -9,7 +9,6 @@ import android.os.Parcelable;
 import android.util.Printer;
 
 public class ActivityInfo extends ComponentInfo implements Parcelable {
-	public DSTaintObject dsTaint = new DSTaintObject();
 	
 	public int theme;
 	public static final int LAUNCH_MULTIPLE = 0;

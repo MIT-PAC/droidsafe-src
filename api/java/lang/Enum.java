@@ -16,7 +16,6 @@ public abstract class Enum<E extends Enum<E>> implements Serializable, Comparabl
 
     //private final int ordinal;
     
-    private DSTaintObject dsTaint = new DSTaintObject();
 	
     @DSModeled(DSC.SAFE)
 	protected Enum(String name, int ordinal) {

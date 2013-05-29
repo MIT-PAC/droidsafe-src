@@ -11,7 +11,6 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public final class Rect implements Parcelable {
-	DSTaintObject dsTaint = new DSTaintObject();
 	
 	public int left;
 	public int top;

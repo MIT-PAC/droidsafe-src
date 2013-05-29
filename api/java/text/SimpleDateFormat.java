@@ -8,25 +8,24 @@ import droidsafe.helpers.DSTaintObject;
 
 public class SimpleDateFormat extends DateFormat {
 	
-	public DSTaintObject taint = new DSTaintObject();
 	@DSModeled(DSC.SAFE)
 	public SimpleDateFormat(String pattern) {
-		taint.addTaint(pattern);
+		dsTaint.addTaint(pattern);
 	}
 
 	@Override
 	@DSModeled(DSC.SAFE)
 	public StringBuffer format(Date date, StringBuffer toAppendTo,
 			FieldPosition fieldPosition) {
-		taint.addTaint(date.toString());
-		taint.addTaint(toAppendTo.toString());
+		dsTaint.addTaint(date.toString());
+		dsTaint.addTaint(toAppendTo.toString());
 		return new StringBuffer();
 	}
 
 	@Override
 	@DSModeled(DSC.SAFE)
 	public Date parse(String source, ParsePosition pos) {
-		taint.addTaint(source);
+		dsTaint.addTaint(source);
 		return new Date();
 	}
 

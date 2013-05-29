@@ -4,7 +4,6 @@ import droidsafe.helpers.*;
 import android.graphics.Matrix;
 import java.io.PrintWriter;
 public class Transformation {
-    public DSTaintObject dsTaint; 
     public static int TYPE_IDENTITY = 0x0;
     public static int TYPE_ALPHA = 0x1;
     public static int TYPE_MATRIX = 0x2;
@@ -15,7 +14,6 @@ public class Transformation {
     
     @DSModeled(DSC.SAFE)
     public Transformation() {
-        dsTaint = new DSTaintObject();
         mMatrix = new Matrix();
     }
     

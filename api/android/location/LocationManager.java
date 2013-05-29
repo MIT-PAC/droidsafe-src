@@ -12,7 +12,6 @@ import droidsafe.helpers.*;
  * @author sgraf
  */
 public class LocationManager {
-	private DSTaintObject dsTaint = new DSTaintObject();
 	
 	private ILocationManager mService;
 	

@@ -54,7 +54,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 public abstract class AbsListView extends AdapterView<ListAdapter> implements TextWatcher, ViewTreeObserver.OnGlobalLayoutListener, Filter.FilterListener, ViewTreeObserver.OnTouchModeChangeListener, RemoteViewsAdapter.RemoteAdapterConnectionCallback {
-	private DSTaintObject dsTaint = new DSTaintObject();
 	
 	public static final int TRANSCRIPT_MODE_DISABLED = 0;
 	public static final int TRANSCRIPT_MODE_NORMAL = 1;
@@ -781,7 +780,6 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
 	}
 	
 	static class SavedState extends BaseSavedState {
-		private DSTaintObject dsTaint = new DSTaintObject();
 		
 		long selectedId;
 		long firstId;
@@ -1625,7 +1623,6 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
 	}
 	
 	private class WindowRunnnable {
-		private DSTaintObject dsTaint = new DSTaintObject();
 		
 		private int mOriginalAttachCount;
 		
@@ -1654,7 +1651,6 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
 	
 	
 	private class PerformClick extends WindowRunnnable implements Runnable {
-		private DSTaintObject dsTaint = new DSTaintObject();
 		
 		int mClickMotionPosition;
 		
@@ -1687,7 +1683,6 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
 	
 	
 	private class CheckForLongPress extends WindowRunnnable implements Runnable {
-		private DSTaintObject dsTaint = new DSTaintObject();
 		
 		
 		public void run(){
@@ -1721,7 +1716,6 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
 	
 	
 	private class CheckForKeyLongPress extends WindowRunnnable implements Runnable {
-		private DSTaintObject dsTaint = new DSTaintObject();
 		
 		
 		public void run(){
@@ -1897,7 +1891,6 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
 	}
 	
 	final class CheckForTap implements Runnable {
-		private DSTaintObject dsTaint = new DSTaintObject();
 		
 		
 		public void run(){
@@ -2131,7 +2124,6 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
 	}
 	
 	private class FlingRunnable implements Runnable {
-		private DSTaintObject dsTaint = new DSTaintObject();
 		
 		private final OverScroller mScroller;
 		private int mLastFlingY;
@@ -2293,7 +2285,6 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
 	
 	
 	class PositionScroller implements Runnable {
-		private DSTaintObject dsTaint = new DSTaintObject();
 		
 		private static final int SCROLL_DURATION = 400;
 		private static final int MOVE_DOWN_POS = 1;
@@ -3132,7 +3123,6 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
 	}
 	
 	class AdapterDataSetObserver extends AdapterView<ListAdapter>.AdapterDataSetObserver {
-		private DSTaintObject dsTaint = new DSTaintObject();
 		
 		
 		@Override public void onChanged(){
@@ -3172,7 +3162,6 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
     }
 	
 	class MultiChoiceModeWrapper implements MultiChoiceModeListener {
-		private DSTaintObject dsTaint = new DSTaintObject();
 		
 		private MultiChoiceModeListener mWrapped;
 		
@@ -3267,7 +3256,6 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
 	
 	
 	public static class LayoutParams extends ViewGroup.LayoutParams {
-		private DSTaintObject dsTaint = new DSTaintObject();
 		
 		@ViewDebug.ExportedProperty(category = "list", mapping = {
             @ViewDebug.IntToString(from = ITEM_VIEW_TYPE_IGNORE, to = "ITEM_VIEW_TYPE_IGNORE"),
@@ -3307,7 +3295,6 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
     }
 	
 	class RecycleBin {
-		private DSTaintObject dsTaint = new DSTaintObject();
 		
 		private RecyclerListener mRecyclerListener;
 		private int mFirstActivePosition;

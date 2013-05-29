@@ -9,7 +9,6 @@ import droidsafe.helpers.*;
 
 //public abstract class Uri implements Parcelable, Comparable<Uri> {
 public class Uri {
-	private DSTaintObject dsTaint = new DSTaintObject();
 	private String uriString;
 	
 	@DSModeled(DSC.SAFE)

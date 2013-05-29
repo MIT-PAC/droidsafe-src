@@ -31,7 +31,6 @@ import android.view.HardwareRenderer;
  */
 public class Path {
 
-    DSTaintObject dsTaint = new DSTaintObject();
 
     @DSModeled(DSC.SAFE)
     public Path() {}
@@ -47,7 +46,7 @@ public class Path {
    
     @DSModeled(DSC.SAFE) 
     public void arcTo(RectF oval, float startAngle, float sweepAngle) {
-        dsTaint.addTaint(oval.taint);
+        dsTaint.addTaint(oval.dsTaint);
         dsTaint.addTaint(startAngle);
         dsTaint.addTaint(sweepAngle);
     }

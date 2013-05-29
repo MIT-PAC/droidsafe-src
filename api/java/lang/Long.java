@@ -6,7 +6,6 @@ import droidsafe.annotations.*;
 
 
 @FindBugsSuppressWarnings("DM_NUMBER_CTOR") public final class Long extends Number implements Comparable<Long> {
-	private DSTaintObject dsTaint = new DSTaintObject();
 	
 	private static final long serialVersionUID = 4290774380558885855L;
 	private final long value;

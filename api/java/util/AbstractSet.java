@@ -6,7 +6,6 @@ import droidsafe.annotations.*;
 
 
 public abstract class AbstractSet <E> extends AbstractCollection<E> implements Set<E> {
-    public DSTaintObject dsTaint = new DSTaintObject();
     
     
     protected AbstractSet(){

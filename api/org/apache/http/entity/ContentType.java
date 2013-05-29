@@ -12,7 +12,6 @@ import droidsafe.annotations.DSModeled;
 import droidsafe.helpers.DSTaintObject;
 
 public final class ContentType implements Serializable {
-	private DSTaintObject dsTaint = new DSTaintObject();
 	
 	private static final long serialVersionUID = -7768694718232371896L;
 	public static final ContentType APPLICATION_ATOM_XML = create(

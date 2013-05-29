@@ -262,7 +262,6 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
 	
 	private CharSequence mText;
 	private BufferType mBufferType;
-	private DSTaintObject dsTaint = new DSTaintObject();
 	
 	@DSModeled(DSC.SAFE)
 	private void setText(CharSequence text, BufferType type,

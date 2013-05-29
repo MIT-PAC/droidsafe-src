@@ -27,7 +27,6 @@ import droidsafe.annotations.*;
 import droidsafe.helpers.*;
 
 public abstract class Context {
-	public DSTaintObject dsTaint = new DSTaintObject();
 	
 	public static final String WINDOW_SERVICE = "window";
 	public static final String SEARCH_SERVICE = "search";

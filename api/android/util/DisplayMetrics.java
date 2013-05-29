@@ -3,7 +3,6 @@ import droidsafe.annotations.*;
 import droidsafe.helpers.*;
 import android.os.SystemProperties;
 public class DisplayMetrics {
-    private DSTaintObject dsTaint = new DSTaintObject(); 
     public static final int DENSITY_LOW = 120;
     public static final int DENSITY_MEDIUM = 160;
     public static final int DENSITY_TV = 213;

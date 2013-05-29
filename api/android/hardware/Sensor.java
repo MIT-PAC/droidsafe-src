@@ -32,8 +32,6 @@ public class Sensor {
     private int     mMinDelay;
     private int     mLegacyType;
     
-    private DSTaintObject dsTaint = new DSTaintObject();
-
     // GITI DSModeled - not original to Sensor.java, added to track the type of sensor
     // requested by the application (via SensorManager.java)
     @DSModeled(DSC.BAN)

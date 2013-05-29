@@ -10,8 +10,6 @@ import android.os.Parcelable;
 import android.util.TimeUtils;
 
 public final class Message implements Parcelable {
-	private DSTaintObject dsTaint = new DSTaintObject();
-	
 	public int what;
 	public int arg1;
 	public int arg2;

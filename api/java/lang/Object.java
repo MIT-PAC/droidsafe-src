@@ -1,9 +1,12 @@
 package java.lang;
 
-import droidsafe.annotations.*;
-import droidsafe.helpers.*;
+import droidsafe.annotations.DSC;
+import droidsafe.annotations.DSModeled;
+import droidsafe.helpers.DSTaintObject;
 
 public class Object {
+	public DSTaintObject dsTaint = new DSTaintObject();
+	
 	@DSModeled(DSC.SAFE)
 	public Object() {
     }

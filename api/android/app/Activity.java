@@ -69,7 +69,6 @@ import java.util.ArrayList;
 import java.util.HashMap;
 
 public class Activity extends ContextThemeWrapper implements LayoutInflater.Factory2, Window.Callback, KeyEvent.Callback, OnCreateContextMenuListener, ComponentCallbacks2 {
-	private DSTaintObject dsTaint = new DSTaintObject();
 	
 	private static final String TAG = "Activity";
 	public static final int RESULT_CANCELED    = 0;
@@ -83,7 +82,6 @@ public class Activity extends ContextThemeWrapper implements LayoutInflater.Fact
 	private static final String SAVED_DIALOG_ARGS_KEY_PREFIX = "android:dialog_args_";
 	
 	private static class ManagedDialog {
-		private DSTaintObject dsTaint = new DSTaintObject();
 		
 		Dialog mDialog;
 		Bundle mArgs;
@@ -115,7 +113,6 @@ public class Activity extends ContextThemeWrapper implements LayoutInflater.Fact
 	private MenuInflater mMenuInflater;
 	
 	static final class NonConfigurationInstances {
-		private DSTaintObject dsTaint = new DSTaintObject();
 		
 		Object activity;
 		HashMap<String, Object> children;
@@ -138,7 +135,6 @@ public class Activity extends ContextThemeWrapper implements LayoutInflater.Fact
 	LoaderManagerImpl mLoaderManager;
 	
 	private static final class ManagedCursor {
-		private DSTaintObject dsTaint = new DSTaintObject();
 		
 		ManagedCursor(Cursor cursor){
 			mCursor = cursor;

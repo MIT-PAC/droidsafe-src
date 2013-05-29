@@ -23,7 +23,6 @@ import droidsafe.helpers.*;
  */
 
 public class Intent implements Parcelable, Cloneable {
-	private DSTaintObject dsTaint = new DSTaintObject();
 	
 	private String mAction;
     private Uri mData;

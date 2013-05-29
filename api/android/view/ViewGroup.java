@@ -3275,7 +3275,6 @@ public abstract class ViewGroup extends View implements ViewParent, ViewManager 
 	}
 	
 	public static class LayoutParams {
-		private DSTaintObject dsTaint = new DSTaintObject();
 		
 		@SuppressWarnings({"UnusedDeclaration"})
         @Deprecated
@@ -3375,7 +3374,6 @@ public abstract class ViewGroup extends View implements ViewParent, ViewManager 
 	
 	
 	public static class MarginLayoutParams extends ViewGroup.LayoutParams {
-		private DSTaintObject dsTaint = new DSTaintObject();
 		
 		@ViewDebug.ExportedProperty(category = "layout")
         public int leftMargin;
@@ -3518,7 +3516,6 @@ public abstract class ViewGroup extends View implements ViewParent, ViewManager 
 	
 	
 	private static final class TouchTarget {
-		private DSTaintObject dsTaint = new DSTaintObject();
 		
 		private static final int MAX_RECYCLED = 32;
 		private static final Object sRecycleLock = new Object();
@@ -3579,7 +3576,6 @@ public abstract class ViewGroup extends View implements ViewParent, ViewManager 
 	
 	
 	private static final class HoverTarget {
-		private DSTaintObject dsTaint = new DSTaintObject();
 		
 		private static final int MAX_RECYCLED = 32;
 		private static final Object sRecycleLock = new Object();

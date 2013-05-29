@@ -8,7 +8,6 @@ import droidsafe.helpers.DSTaintObject;
 
 
 public class ArrayList<E> extends AbstractList<E> implements Cloneable, Serializable, RandomAccess {
-	DSTaintObject taint = new DSTaintObject();
 	
     /**
      * The elements in this list, followed by nulls.
@@ -17,7 +16,7 @@ public class ArrayList<E> extends AbstractList<E> implements Cloneable, Serializ
 
     @DSModeled(DSC.SAFE)
     public ArrayList(int capacity) {
-    	taint.addTaint(capacity);
+    	dsTaint.addTaint(capacity);
         array = new Object[1];
     }
 
@@ -47,13 +46,13 @@ public class ArrayList<E> extends AbstractList<E> implements Cloneable, Serializ
     @Override
     @DSModeled(DSC.SAFE)
     public E get(int index) {
-    	return (E) taint.getTaint();
+    	return (E) dsTaint.getTaint();
     }
 
     @Override
     @DSModeled(DSC.SAFE)
     public int size() {
-        return taint.getTaintInt();
+        return dsTaint.getTaintInt();
     }
 
     @DSModeled(DSC.SAFE)
@@ -123,7 +122,7 @@ public class ArrayList<E> extends AbstractList<E> implements Cloneable, Serializ
     
     @DSModeled(DSC.SAFE)
     public E remove(int index) {
-    	taint.addTaint(index);
+    	dsTaint.addTaint(index);
     	/*
         rangeCheck(index);
 

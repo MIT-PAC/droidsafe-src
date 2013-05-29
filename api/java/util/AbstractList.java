@@ -6,7 +6,6 @@ import droidsafe.helpers.*;
 public abstract class AbstractList<E> extends AbstractCollection<E> implements List<E> {
 	protected transient int modCount;
 	
-	public DSTaintObject dsTaint = new DSTaintObject();
 	private int pos = -1; // Was package
 	private int expectedModCount;   // Was package
 	private int lastPosition = -1;   // Was package

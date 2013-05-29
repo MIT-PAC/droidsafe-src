@@ -7,7 +7,6 @@ import droidsafe.annotations.*;
 import com.android.internal.util.ArrayUtils;
 
 public class SparseArray<E> implements Cloneable {
-	private DSTaintObject dsTaint = new DSTaintObject();
 	
 	private static final Object DELETED = new Object();
 	private boolean mGarbage = false;

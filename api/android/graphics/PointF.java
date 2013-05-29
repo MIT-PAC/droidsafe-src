@@ -9,7 +9,6 @@ import android.os.Parcelable;
 import android.util.FloatMath;
 
 public class PointF implements Parcelable {
-    public DSTaintObject dsTaint = new DSTaintObject();
     
     public float x;
     public float y;

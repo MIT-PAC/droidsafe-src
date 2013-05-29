@@ -11,7 +11,6 @@ import droidsafe.helpers.*;
  */
 
 public class Paint {
-	DSTaintObject dsTaint = new DSTaintObject();
 	
 	
 	@DSModeled(DSC.SAFE)

@@ -7,13 +7,11 @@ import droidsafe.annotations.*;
 import java.io.Serializable;
 
 public abstract class AbstractMap<K, V> implements Map<K,V> {
-    public DSTaintObject dsTaint = new DSTaintObject();
     
     Set<K> keySet;
     Collection<V> valuesCollection;
     
     public static class SimpleImmutableEntry<K, V> implements Map.Entry<K,V>, Serializable {
-        public DSTaintObject dsTaint = new DSTaintObject();
         
         private static final long serialVersionUID = 7138329143949025153L;
         private /*final*/ K key;
@@ -116,7 +114,6 @@ public abstract class AbstractMap<K, V> implements Map<K,V> {
     
     
     public static class SimpleEntry<K, V> implements Map.Entry<K,V>, Serializable {
-        public DSTaintObject dsTaint = new DSTaintObject();
         
         private static final long serialVersionUID = -8499721149061103585L;
         private /*final*/ K key;

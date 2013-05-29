@@ -10,7 +10,6 @@ class Class<T>
     //           java.lang.reflect.Type,
     //           java.lang.reflect.AnnotatedElement 
 {
-	public DSTaintObject dsTaint = new DSTaintObject();
 
 	private static final long serialVersionUID = 1L;
 	

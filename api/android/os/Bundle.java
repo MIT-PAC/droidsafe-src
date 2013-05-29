@@ -16,7 +16,6 @@ import java.util.Set;
 import java.util.HashSet;
 
 public final class Bundle implements Parcelable, Cloneable {
-	public DSTaintObject dsTaint = new DSTaintObject();
 	
 	private static final String LOG_TAG = "Bundle";
 	public static final Bundle EMPTY;

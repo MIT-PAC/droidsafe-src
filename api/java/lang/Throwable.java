@@ -13,7 +13,6 @@ import droidsafe.helpers.*;
 import libcore.util.EmptyArray;
 
 public class Throwable implements java.io.Serializable {
-	private DSTaintObject dsTaint = new DSTaintObject();
 	
 	public String getMessage() {
         return dsTaint.getTaintString();

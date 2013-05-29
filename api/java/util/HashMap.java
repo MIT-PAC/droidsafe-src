@@ -5,7 +5,6 @@ import droidsafe.helpers.*;
 import java.io.Serializable;
 
 public class HashMap<K, V> extends AbstractMap<K, V> implements Cloneable, Serializable {
-	private DSTaintObject dsTaint = new DSTaintObject();
 	// DSModeled:  Add key and value for tracking values
 	K key;
 	V value;

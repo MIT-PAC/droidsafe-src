@@ -25,7 +25,6 @@ import java.util.Map;
 import java.util.Set;
 
 public final class Parcel {
-	public DSTaintObject dsTaint = new DSTaintObject();
 	
 	private static final boolean DEBUG_RECYCLE = false;
 	private static final String TAG = "Parcel";

@@ -41,16 +41,14 @@ import java.util.Map;
  */
 public class DSCursor implements Cursor {
 	/**/
-	private DSTaintObject taint;
 	
 	@DSModeled
 	public DSCursor(Uri uri, String[] projection, String selection, String[] selectionArgs, String sortOrder) {
-		taint = new DSTaintObject();
-		taint.addTaint(uri.toString());
-		taint.addTaint(projection.toString());
-		taint.addTaint(selection);
-		taint.addTaint(selectionArgs.toString());
-		taint.addTaint(sortOrder);
+		dsTaint.addTaint(uri.toString());
+		dsTaint.addTaint(projection.toString());
+		dsTaint.addTaint(selection);
+		dsTaint.addTaint(selectionArgs.toString());
+		dsTaint.addTaint(sortOrder);
 	}	
     public int getColumnCount() {
         throw new UnsupportedOperationException("unimplemented mock method");
@@ -82,7 +80,7 @@ public class DSCursor implements Cursor {
 
     @DSModeled
     public int getInt(int columnIndex) {
-        return taint.getTaintInt();
+        return dsTaint.getTaintInt();
     }
 
     public long getLong(int columnIndex) {

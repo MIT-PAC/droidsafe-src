@@ -12,12 +12,11 @@ import droidsafe.helpers.DSTaintObject;
 
 public class UrlEncodedFormEntity extends StringEntity {
 
-	private DSTaintObject taint = new DSTaintObject();
 	
 	@DSModeled(DSC.SAFE)
 	public UrlEncodedFormEntity(String string) {
 		super(string);
-		taint.addTaint(string);
+		dsTaint.addTaint(string);
 	}
 	
 	@DSModeled(DSC.SAFE)

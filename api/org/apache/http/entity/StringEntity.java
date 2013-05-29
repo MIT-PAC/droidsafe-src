@@ -12,7 +12,6 @@ import droidsafe.annotations.DSModeled;
 import droidsafe.helpers.DSTaintObject;
 
 public class StringEntity extends AbstractHttpEntity {
-	private DSTaintObject taint = new DSTaintObject();
 	
 	// DSModeled - changed type from char[] to String.
 	protected final String content;

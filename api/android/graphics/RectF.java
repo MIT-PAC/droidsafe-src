@@ -33,7 +33,7 @@ import com.android.internal.util.FastMath;
  * the coordinates are sorted correctly (i.e. left <= right and top <= bottom).
  */
 public class RectF implements Parcelable {
-    DSTaintObject taint; 
+    DSTaintObject dsTaint; 
     private float left;
     private float right;
     private float top;
@@ -46,7 +46,6 @@ public class RectF implements Parcelable {
      */
     @DSModeled(DSC.SAFE)
     public RectF() {
-    	taint = new DSTaintObject();
     }
 
     /**
@@ -65,10 +64,10 @@ public class RectF implements Parcelable {
     @DSModeled(DSC.SAFE)
     public RectF(float left, float top, float right, float bottom) {    
     	this();
-    	taint.addTaint(left);
-    	taint.addTaint(top);
-    	taint.addTaint(right);
-    	taint.addTaint(bottom);
+    	dsTaint.addTaint(left);
+    	dsTaint.addTaint(top);
+    	dsTaint.addTaint(right);
+    	dsTaint.addTaint(bottom);
     }
 
     /**
@@ -81,16 +80,16 @@ public class RectF implements Parcelable {
     @DSModeled(DSC.SAFE)
     public RectF(RectF r) { 
     	this();
-    	taint.addTaint(r.taint);
+    	dsTaint.addTaint(r.dsTaint);
     }
     
     @DSModeled(DSC.SAFE)
     public RectF(Rect r) {
     	this();
-    	taint.addTaint(r.left);
-    	taint.addTaint(r.right);
-    	taint.addTaint(r.top);
-    	taint.addTaint(r.bottom);
+    	dsTaint.addTaint(r.left);
+    	dsTaint.addTaint(r.right);
+    	dsTaint.addTaint(r.top);
+    	dsTaint.addTaint(r.bottom);
     }
 
     @DSModeled(DSC.SAFE)
@@ -148,7 +147,7 @@ public class RectF implements Parcelable {
      */
     @DSModeled(DSC.SAFE)
     public final float width() {
-    	return taint.getTaintInt();
+    	return dsTaint.getTaintInt();
         //return 0;
     }
 
@@ -161,7 +160,7 @@ public class RectF implements Parcelable {
      */
     @DSModeled(DSC.SAFE)
     public final float height() {
-    	return taint.getTaintInt();
+    	return dsTaint.getTaintInt();
         //return 0;
     }
 
@@ -197,7 +196,7 @@ public class RectF implements Parcelable {
      */
     @DSModeled(DSC.SAFE)
     public void setEmpty() {
-    	//taint.addTaint(0);	//No need to track taint, just an initializer type function setting things to 0   
+    	//dsTaint.addTaint(0);	//No need to track dsTaint, just an initializer type function setting things to 0   
     }
     
     /**
@@ -215,10 +214,10 @@ public class RectF implements Parcelable {
      */
     @DSModeled(DSC.SAFE)
     public void set(float left, float top, float right, float bottom) {
-    	taint.addTaint(left);
-    	taint.addTaint(top);
-    	taint.addTaint(right);
-    	taint.addTaint(bottom);  
+    	dsTaint.addTaint(left);
+    	dsTaint.addTaint(top);
+    	dsTaint.addTaint(right);
+    	dsTaint.addTaint(bottom);  
     }
 
     /**
@@ -232,7 +231,7 @@ public class RectF implements Parcelable {
      */
     @DSModeled(DSC.SAFE)
     public void set(RectF src) {
-    	taint.addTaint(src.taint);
+    	dsTaint.addTaint(src.dsTaint);
     }
     
     /**
@@ -246,10 +245,10 @@ public class RectF implements Parcelable {
      */
     @DSModeled(DSC.SAFE)
     public void set(Rect src) {
-    	taint.addTaint(src.left);
-    	taint.addTaint(src.top);
-    	taint.addTaint(src.right);
-    	taint.addTaint(src.bottom);
+    	dsTaint.addTaint(src.left);
+    	dsTaint.addTaint(src.top);
+    	dsTaint.addTaint(src.right);
+    	dsTaint.addTaint(src.bottom);
     }
 
 	@Override
@@ -266,11 +265,11 @@ public class RectF implements Parcelable {
 	
 	@DSModeled(DSC.SAFE)
 	public final float left() {
-		return taint.getTaintFloat();
+		return dsTaint.getTaintFloat();
 	}
 	
 	@DSModeled(DSC.SAFE)
 	public final float top() {
-		return taint.getTaintFloat();
+		return dsTaint.getTaintFloat();
 	}
 }

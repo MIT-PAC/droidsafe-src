@@ -6,7 +6,6 @@ import droidsafe.annotations.*;
 
 
 public abstract class Number implements java.io.Serializable {
-	private DSTaintObject dsTaint = new DSTaintObject();
 	
 	private static final long serialVersionUID = -8742448824652078965L;
 	

@@ -9,7 +9,6 @@ import android.util.Log;
 import java.util.ArrayList;
 
 public class MessageQueue {
-    public DSTaintObject dsTaint = new DSTaintObject();
     
     Message mMessages;
     private final ArrayList<IdleHandler> mIdleHandlers = new ArrayList<IdleHandler>();

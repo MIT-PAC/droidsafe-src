@@ -2,7 +2,6 @@ package android.util;
 import droidsafe.annotations.*;
 import droidsafe.helpers.*;
 public class TypedValue {
-    private DSTaintObject dsTaint = new DSTaintObject(); 
     public static final int TYPE_NULL = 0x00;
     public static final int TYPE_REFERENCE = 0x01;
     public static final int TYPE_ATTRIBUTE = 0x02;

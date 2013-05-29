@@ -12,7 +12,6 @@ import java.io.Serializable;
 import java.lang.reflect.Array;
 
 public class Collections {
-    public DSTaintObject dsTaint = new DSTaintObject();
     
     /*
     private static final Iterator<?> EMPTY_ITERATOR = new Iterator<Object>() {
@@ -40,7 +39,6 @@ public class Collections {
     */
     
     private static final class CopiesList<E> extends AbstractList<E> implements Serializable {
-        public DSTaintObject dsTaint = new DSTaintObject();
         
         private static final long serialVersionUID = 2739099268398711800L;
         private /*final*/ int n;
@@ -100,7 +98,6 @@ public class Collections {
     
     /*
     @SuppressWarnings("unchecked") private static final class EmptyList extends AbstractList implements RandomAccess, Serializable {
-        public DSTaintObject dsTaint = new DSTaintObject();
         
         private static final long serialVersionUID = 8842843931221139166L;
         
@@ -134,7 +131,6 @@ public class Collections {
     
     
     @SuppressWarnings("unchecked") private static final class EmptySet extends AbstractSet implements Serializable {
-        public DSTaintObject dsTaint = new DSTaintObject();
         
         private static final long serialVersionUID = 1582296315990362920L;
         
@@ -171,7 +167,6 @@ public class Collections {
     
     
     @SuppressWarnings("unchecked") private static final class EmptyMap extends AbstractMap implements Serializable {
-        public DSTaintObject dsTaint = new DSTaintObject();
         
         private static final long serialVersionUID = 6428348081105594320L;
         
@@ -234,7 +229,6 @@ public class Collections {
     */
     
     private static final class ReverseComparator <T> implements Comparator<T>, Serializable {
-        public DSTaintObject dsTaint = new DSTaintObject();
         
         private static final ReverseComparator<Object> INSTANCE = new ReverseComparator<Object>();
         private static final long serialVersionUID = 7207038068494060240L;
@@ -267,7 +261,6 @@ public class Collections {
     
     
     private static final class ReverseComparator2 <T> implements Comparator<T>, Serializable {
-        public DSTaintObject dsTaint = new DSTaintObject();
         
         private static final long serialVersionUID = 4374092139857L;
         private final Comparator<T> cmp;
@@ -316,7 +309,6 @@ public class Collections {
     
     
     private static final class SingletonSet<E> extends AbstractSet<E> implements Serializable {
-        public DSTaintObject dsTaint = new DSTaintObject();
         
         private static final long serialVersionUID = 3193687207550431679L;
         final E element;
@@ -397,7 +389,6 @@ public class Collections {
     
     
     private static final class SingletonList<E> extends AbstractList<E> implements Serializable {
-        public DSTaintObject dsTaint = new DSTaintObject();
         
         private static final long serialVersionUID = 3093736618740652951L;
         final E element;
@@ -449,7 +440,6 @@ public class Collections {
     
     
     private static final class SingletonMap<K, V> extends AbstractMap<K,V> implements Serializable {
-        public DSTaintObject dsTaint = new DSTaintObject();
         
         private static final long serialVersionUID = -6979724477215052911L;
         final K k;
@@ -564,7 +554,6 @@ public class Collections {
     
     
     static class SynchronizedCollection<E> implements Collection<E>, Serializable {
-        public DSTaintObject dsTaint = new DSTaintObject();
         
         private static final long serialVersionUID = 3053995032091335093L;
         final Collection<E> c;
@@ -783,7 +772,6 @@ public class Collections {
     
     
     static class SynchronizedRandomAccessList<E> extends SynchronizedList<E> implements RandomAccess {
-        public DSTaintObject dsTaint = new DSTaintObject();
         
         private static final long serialVersionUID = 1530674583602358482L;
         
@@ -822,7 +810,6 @@ public class Collections {
     
     
     static class SynchronizedList<E> extends SynchronizedCollection<E> implements List<E> {
-        public DSTaintObject dsTaint = new DSTaintObject();
         
         private static final long serialVersionUID = -7754090372962971524L;
         final List<E> list;
@@ -1075,7 +1062,6 @@ public class Collections {
     
     
     static class SynchronizedMap<K, V> implements Map<K,V>, Serializable {
-        public DSTaintObject dsTaint = new DSTaintObject();
         
         private static final long serialVersionUID = 1978198479659022715L;
         private final Map<K, V> m;
@@ -1306,7 +1292,6 @@ public class Collections {
     
     
     static class SynchronizedSet<E> extends SynchronizedCollection<E> implements Set<E> {
-        public DSTaintObject dsTaint = new DSTaintObject();
         
         private static final long serialVersionUID = 487447009682186044L;
         
@@ -1359,7 +1344,6 @@ public class Collections {
     
     
     static class SynchronizedSortedMap<K, V> extends SynchronizedMap<K,V> implements SortedMap<K,V> {
-        public DSTaintObject dsTaint = new DSTaintObject();
         
         private static final long serialVersionUID = -8798146769416483793L;
         private final SortedMap<K, V> sm;
@@ -1479,7 +1463,6 @@ public class Collections {
     
     
     static class SynchronizedSortedSet<E> extends SynchronizedSet<E> implements SortedSet<E> {
-        public DSTaintObject dsTaint = new DSTaintObject();
         
         private static final long serialVersionUID = 8695801310862127406L;
         private final SortedSet<E> ss;
@@ -1595,7 +1578,6 @@ public class Collections {
     
     
     private static class UnmodifiableCollection<E> implements Collection<E>, Serializable {
-        public DSTaintObject dsTaint = new DSTaintObject();
         
         private static final long serialVersionUID = 1820017752578914078L;
         final Collection<E> c;
@@ -1786,7 +1768,6 @@ public class Collections {
     
     
     private static class UnmodifiableRandomAccessList<E> extends UnmodifiableList<E> implements RandomAccess {
-        public DSTaintObject dsTaint = new DSTaintObject();
         
         private static final long serialVersionUID = -2542308836966382001L;
         
@@ -1819,7 +1800,6 @@ public class Collections {
     
     
     private static class UnmodifiableList<E> extends UnmodifiableCollection<E> implements List<E> {
-        public DSTaintObject dsTaint = new DSTaintObject();
         
         private static final long serialVersionUID = -283967356065247728L;
         final List<E> list;
@@ -2014,18 +1994,15 @@ public class Collections {
     
     
     private static class UnmodifiableMap<K, V> implements Map<K,V>, Serializable {
-        public DSTaintObject dsTaint = new DSTaintObject();
         
         private static final long serialVersionUID = -1034234728574286014L;
         private final Map<K, V> m;
         
         private static class UnmodifiableEntrySet<K, V> extends UnmodifiableSet<Map.Entry<K,V>> {
-            public DSTaintObject dsTaint = new DSTaintObject();
             
             private static final long serialVersionUID = 7854390611657943733L;
             
             private static class UnmodifiableMapEntry<K, V> implements Map.Entry<K,V> {
-                public DSTaintObject dsTaint = new DSTaintObject();
                 
                 Map.Entry<K, V> mapEntry;
                 
@@ -2374,7 +2351,6 @@ public class Collections {
     
     
     private static class UnmodifiableSet<E> extends UnmodifiableCollection<E> implements Set<E> {
-        public DSTaintObject dsTaint = new DSTaintObject();
         
         private static final long serialVersionUID = -9215047833775013803L;
         
@@ -2407,7 +2383,6 @@ public class Collections {
     
     
     private static class UnmodifiableSortedMap<K, V> extends UnmodifiableMap<K,V> implements SortedMap<K,V> {
-        public DSTaintObject dsTaint = new DSTaintObject();
         
         private static final long serialVersionUID = -8806743815996713206L;
         private final SortedMap<K, V> sm;
@@ -2489,7 +2464,6 @@ public class Collections {
     
     
     private static class UnmodifiableSortedSet<E> extends UnmodifiableSet<E> implements SortedSet<E> {
-        public DSTaintObject dsTaint = new DSTaintObject();
         
         private static final long serialVersionUID = -4929149591599911165L;
         private final SortedSet<E> ss;
@@ -3251,7 +3225,6 @@ public class Collections {
     }
     
     private static class SetFromMap <E> extends AbstractSet<E> implements Serializable {
-        public DSTaintObject dsTaint = new DSTaintObject();
         
         private static final long serialVersionUID = 2454657854757543876L;
         private Map<E, Boolean> m;
@@ -3432,7 +3405,6 @@ public class Collections {
     
     
     private static class AsLIFOQueue <E> extends AbstractQueue<E> implements Serializable {
-        public DSTaintObject dsTaint = new DSTaintObject();
         
         private static final long serialVersionUID = 1802017725587941708L;
         private final Deque<E> q;
@@ -3646,7 +3618,6 @@ public class Collections {
     
     
     private static class CheckedCollection <E> implements Collection<E>, Serializable {
-        public DSTaintObject dsTaint = new DSTaintObject();
         
         private static final long serialVersionUID = 1578914078182001775L;
         Collection<E> c;
@@ -3834,7 +3805,6 @@ public class Collections {
     
     
     private static class CheckedListIterator <E> implements ListIterator<E> {
-        public DSTaintObject dsTaint = new DSTaintObject();
         
         private ListIterator<E> i;
         private Class<E> type;
@@ -3947,7 +3917,6 @@ public class Collections {
     
     
     private static class CheckedList <E> extends CheckedCollection<E> implements List<E> {
-        public DSTaintObject dsTaint = new DSTaintObject();
         
         private static final long serialVersionUID = 65247728283967356L;
         List<E> l;
@@ -4101,7 +4070,6 @@ public class Collections {
     
     
     private static class CheckedRandomAccessList <E> extends CheckedList<E> implements RandomAccess {
-        public DSTaintObject dsTaint = new DSTaintObject();
         
         private static final long serialVersionUID = 1638200125423088369L;
         
@@ -4112,7 +4080,6 @@ public class Collections {
     
     
     private static class CheckedSet <E> extends CheckedCollection<E> implements Set<E> {
-        public DSTaintObject dsTaint = new DSTaintObject();
         
         private static final long serialVersionUID = 4694047833775013803L;
         
@@ -4146,7 +4113,6 @@ public class Collections {
     
     /* DSFIXME
     private static class CheckedMap <K, V> implements Map<K,V>, Serializable {
-        public DSTaintObject dsTaint = new DSTaintObject();
         
         private static final long serialVersionUID = 5742860141034234728L;
         Map<K, V> m;

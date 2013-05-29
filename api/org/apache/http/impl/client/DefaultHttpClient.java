@@ -9,7 +9,6 @@ import droidsafe.helpers.DSTaintObject;
 
 public class DefaultHttpClient extends AbstractHttpClient {
 
-	private DSTaintObject taint = new DSTaintObject();
 	
 	@DSModeled(DSC.SAFE)
 	public DefaultHttpClient() {

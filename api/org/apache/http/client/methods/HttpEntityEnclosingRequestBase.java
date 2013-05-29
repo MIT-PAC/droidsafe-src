@@ -18,7 +18,6 @@ public class HttpEntityEnclosingRequestBase extends HttpRequestBase implements
 		HttpEntityEnclosingRequest {
 
 	private HttpEntity entity;
-	private DSTaintObject taint = new DSTaintObject();
 	
 	@DSModeled(DSC.SPEC)
 	public HttpEntityEnclosingRequestBase() {

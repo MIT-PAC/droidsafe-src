@@ -6,7 +6,6 @@ import droidsafe.annotations.*;
 
 
 public final class Float extends Number implements Comparable<Float> {
-	private DSTaintObject dsTaint = new DSTaintObject();
 	
 	static final int EXPONENT_BIAS = 127;
 	static final int EXPONENT_BITS = 9;

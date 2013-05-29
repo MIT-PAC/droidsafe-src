@@ -48,7 +48,6 @@ import java.util.Iterator;
 public final class CursorJoiner 
         //implements Iterator<CursorJoiner.Result>, Iterable<CursorJoiner.Result> {
         implements Iterator, Iterable {
-    private DSTaintObject taint = new DSTaintObject();
     
    
     private Cursor mCursorLeft;
@@ -96,8 +95,8 @@ public final class CursorJoiner
     	 mCursorLeft = cursorLeft;
          mCursorRight = cursorRight;
          
-        taint.addTaint(columnNamesRight[0]);
-        taint.addTaint(columnNamesLeft[0]);
+        dsTaint.addTaint(columnNamesRight[0]);
+        dsTaint.addTaint(columnNamesLeft[0]);
         
         if (columnNamesLeft.length != columnNamesRight.length) {
             throw new IllegalArgumentException(

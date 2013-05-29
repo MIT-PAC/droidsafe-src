@@ -7,7 +7,6 @@ import droidsafe.annotations.DSModeled;
 import droidsafe.helpers.DSTaintObject;
 
 public class Environment {
-	 private static DSTaintObject taint = new DSTaintObject();
 	 
 	 /**
 	     * Standard directory in which to place pictures that are available to
@@ -41,10 +40,8 @@ public class Environment {
      * directory may not yet exist, so you must make sure it exists before
      * using it such as with {@link File#mkdirs File.mkdirs()}.
      */
-	// GITI DSModeled - using taint object to track access to the sdcard
 	@DSModeled(DSC.SPEC)
     public static File getExternalStoragePublicDirectory(String type) {
-    	taint.addTaint(type);
         return new File("mnt/sdcard");
     }
 }

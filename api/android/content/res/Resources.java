@@ -19,7 +19,6 @@ import droidsafe.annotations.DSModeled;
 import droidsafe.helpers.DSTaintObject;
 
 public class Resources {
-	private DSTaintObject dsTaint = new DSTaintObject();
 	
 	static final String TAG = "Resources";
 	private static final boolean DEBUG_LOAD = false;
@@ -121,7 +120,6 @@ public class Resources {
 	}
 	
 	public static class NotFoundException extends RuntimeException {
-		private DSTaintObject dsTaint = new DSTaintObject();
 		
 		public NotFoundException(String detailMessage) {
 			super(detailMessage);
@@ -744,7 +742,6 @@ public class Resources {
 	}
 	
 	public final class Theme {
-		private DSTaintObject dsTaint = new DSTaintObject();
 		
 		
 		public void applyStyle(int resid, boolean force){

@@ -17,7 +17,6 @@ public class File implements Serializable, Comparable<File> {
         pathSeparator = String.valueOf(pathSeparatorChar);
     }
 	
-	private DSTaintObject dsTaint = new DSTaintObject();
 	
 	@DSModeled(DSC.SAFE)
 	public File(String path) {

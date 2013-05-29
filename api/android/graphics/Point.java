@@ -8,7 +8,6 @@ import android.os.Parcel;
 import android.os.Parcelable;
 
 public class Point implements Parcelable {
-    public DSTaintObject dsTaint = new DSTaintObject();
     
     public int x;
     public int y;

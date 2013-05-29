@@ -24,7 +24,6 @@ public class AbstractHttpClient implements HttpClient {
     private HttpParams defaultParams;
     private ClientConnectionManager connManager;
     
-	private DSTaintObject taint = new DSTaintObject();
 	// DSModeled - This field is added to help short circuit the static analysis
 	//             of the http comms.
 	private HttpHost target;

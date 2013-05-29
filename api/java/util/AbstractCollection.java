@@ -6,7 +6,6 @@ import droidsafe.annotations.*;
 import droidsafe.helpers.*;
 
 public abstract class AbstractCollection<E> implements Collection<E> {
-	private DSTaintObject dsTaint = new DSTaintObject();
 	
 	@DSModeled(DSC.SAFE)
 	protected AbstractCollection() {

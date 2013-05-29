@@ -21,7 +21,6 @@ public class ArrayAdapter<T> extends BaseAdapter implements Filterable {
     private List<T> mObjects;
     private int mDropDownResource;
 	
-	private DSTaintObject dsTaint = new DSTaintObject();
 	
 	@DSModeled(DSC.SAFE)
 	public ArrayAdapter(Context context, int textViewResourceId, T[] objects) {

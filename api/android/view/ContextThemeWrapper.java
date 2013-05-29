@@ -30,7 +30,6 @@ import android.os.Build;
  * wrapped context. 
  */
 public class ContextThemeWrapper extends ContextWrapper {
-	private DSTaintObject dsTaint = new DSTaintObject();
 	private Context mBase;
    
     @DSModeled

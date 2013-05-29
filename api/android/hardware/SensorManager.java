@@ -36,7 +36,6 @@ public class SensorManager {
 	static final ArrayList<ListenerDelegate> sListeners =
 			new ArrayList<ListenerDelegate>();
 	
-	private DSTaintObject dsTaint = new DSTaintObject();
 	
 	Looper mMainLooper;
 	
@@ -216,7 +215,6 @@ public class SensorManager {
         private final SensorEvent mPool[];
         private int mNumItemsInPool;
         
-        private DSTaintObject dsTaint = new DSTaintObject();
         
 		SensorEventPool(int poolSize) {
 			dsTaint.addTaint(poolSize);

@@ -7,8 +7,6 @@ import droidsafe.annotations.*;
 import java.io.PrintWriter;
 
 public class Matrix {
-	private DSTaintObject dsTaint = new DSTaintObject();
-	
 	public static final int MSCALE_X = 0;
 	public static final int MSKEW_X  = 1;
 	public static final int MTRANS_X = 2;

@@ -7,7 +7,6 @@ import android.os.Parcelable;
 import android.util.LocaleUtil;
 import java.util.Locale;
 public final class Configuration implements Parcelable, Comparable<Configuration> {
-    public DSTaintObject dsTaint = new DSTaintObject(); 
     public float fontScale;
     public int mcc;
     public int mnc;

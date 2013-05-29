@@ -4,7 +4,6 @@ import droidsafe.annotations.*;
 import droidsafe.helpers.*;
 
 public class Canvas {
-	private DSTaintObject dsTaint = new DSTaintObject();
 	
 	private Bitmap  mBitmap;
 	
@@ -109,7 +108,7 @@ public class Canvas {
      */
 	@DSModeled(DSC.SAFE)
     public void drawOval(RectF oval, Paint paint) {
-		dsTaint.addTaint(oval.taint);
+		dsTaint.addTaint(oval.dsTaint);
 		dsTaint.addTaint(paint.dsTaint);
     	/* GITI DSModeled
         if (oval == null) {
@@ -161,7 +160,7 @@ public class Canvas {
 	public void drawBitmap(Bitmap bitmap, Rect src, RectF dst, Paint paint) {
 		dsTaint.addTaint(bitmap.dsTaint);
 		dsTaint.addTaint(src.dsTaint);
-		dsTaint.addTaint(dst.taint);
+		dsTaint.addTaint(dst.dsTaint);
 		dsTaint.addTaint(paint.dsTaint);
     }
 	

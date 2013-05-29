@@ -8,12 +8,11 @@ import droidsafe.helpers.DSTaintObject;
 
 public class BasicNameValuePair implements NameValuePair, Cloneable {
 
-	private DSTaintObject taint = new DSTaintObject();
 	
 	@DSModeled(DSC.SAFE)
 	public BasicNameValuePair(final String name, final String value) {
-		taint.addTaint(name);
-		taint.addTaint(value);
+		dsTaint.addTaint(name);
+		dsTaint.addTaint(value);
 	}
 	
 	@Override

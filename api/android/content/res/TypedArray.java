@@ -13,7 +13,6 @@ import com.android.internal.util.XmlUtils;
 import java.util.Arrays;
 
 public class TypedArray {
-	private DSTaintObject dsTaint = new DSTaintObject();
 	
 	private final Resources mResources;
 	XmlBlock.Parser mXml;

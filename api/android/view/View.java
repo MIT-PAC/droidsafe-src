@@ -69,7 +69,6 @@ import java.util.Locale;
 import java.util.concurrent.CopyOnWriteArrayList;
 
 public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Callback, AccessibilityEventSource {
-	public DSTaintObject dsTaint = new DSTaintObject();
 	
 	private static final boolean DBG = false;
 	protected static final String VIEW_LOG_TAG = "View";
@@ -427,7 +426,6 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
     int mViewFlags;
 	
 	static class TransformationInfo {
-		private DSTaintObject dsTaint = new DSTaintObject();
 		
 		private final Matrix mMatrix = new Matrix();
 		private Matrix mInverseMatrix;
@@ -503,7 +501,6 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
 	private boolean mBackgroundSizeChanged;
 	
 	static class ListenerInfo {
-		private DSTaintObject dsTaint = new DSTaintObject();
 		
 		protected OnFocusChangeListener mOnFocusChangeListener;
 		private ArrayList<OnLayoutChangeListener> mOnLayoutChangeListeners;
@@ -7322,7 +7319,6 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
 	}
 	
 	public static class DragShadowBuilder {
-		private DSTaintObject dsTaint = new DSTaintObject();
 		
 		private final WeakReference<View> mView;
 		
@@ -7777,7 +7773,6 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
     };
 	*/
 	public static class MeasureSpec {
-		private DSTaintObject dsTaint = new DSTaintObject();
 		
 		private static final int MODE_SHIFT = 30;
 		private static final int MODE_MASK  = 0x3 << MODE_SHIFT;
@@ -7847,7 +7842,6 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
 	
 	
 	class CheckForLongPress implements Runnable {
-		private DSTaintObject dsTaint = new DSTaintObject();
 		
 		private int mOriginalWindowAttachCount;
 		
@@ -7881,7 +7875,6 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
 	
 	
 	private final class CheckForTap implements Runnable {
-		private DSTaintObject dsTaint = new DSTaintObject();
 		
 		
 		public void run(){
@@ -7901,7 +7894,6 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
 	
 	
 	private final class PerformClick implements Runnable {
-		private DSTaintObject dsTaint = new DSTaintObject();
 		
 		
 		public void run(){
@@ -8001,7 +7993,6 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
     }
 	
 	private final class UnsetPressedState implements Runnable {
-		private DSTaintObject dsTaint = new DSTaintObject();
 		
 		
 		public void run(){
@@ -8018,7 +8009,6 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
 	
 	
 	public static class BaseSavedState extends AbsSavedState {
-		private DSTaintObject dsTaint = new DSTaintObject();
 		
 		
 		public BaseSavedState(Parcel source){
@@ -8042,7 +8032,6 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
 	
 	
 	static class AttachInfo {
-		private DSTaintObject dsTaint = new DSTaintObject();
 		
 		
 		interface Callbacks {
@@ -8051,7 +8040,6 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
         }
 		
 		static class InvalidateInfo implements Poolable<InvalidateInfo> {
-			private DSTaintObject dsTaint = new DSTaintObject();
 			
 			private static final int POOL_LIMIT = 10;
 			private static final Pool<InvalidateInfo> sPool = Pools.synchronizedPool(
@@ -8214,7 +8202,6 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
 	
 	
 	private static class ScrollabilityCache implements Runnable {
-		private DSTaintObject dsTaint = new DSTaintObject();
 		
 		public static final int OFF = 0;
 		public static final int ON = 1;
@@ -8311,7 +8298,6 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
 	
 	
 	private class SendViewScrolledAccessibilityEvent implements Runnable {
-		private DSTaintObject dsTaint = new DSTaintObject();
 		
 		public volatile boolean mIsPending;
 		
@@ -8330,7 +8316,6 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
 	
 	
 	public static class AccessibilityDelegate {
-		private DSTaintObject dsTaint = new DSTaintObject();
 		
 		
 		public void sendAccessibilityEvent(View host, int eventType){

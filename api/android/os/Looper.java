@@ -9,7 +9,6 @@ import android.util.Printer;
 import android.util.PrefixPrinter;
 
 public class Looper {
-    public DSTaintObject dsTaint = new DSTaintObject();
     
     private static final String TAG = "Looper";
     static final ThreadLocal<Looper> sThreadLocal = new ThreadLocal<Looper>();
