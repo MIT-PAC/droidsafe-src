@@ -24,6 +24,7 @@ import soot.SootClass;
 import soot.SootMethod;
 import soot.Type;
 import soot.Unit;
+import soot.Value;
 import soot.VoidType;
 import soot.Modifier;
 import soot.SootField;
@@ -122,6 +123,8 @@ public class ResourcesSoot {
     private SootMethod mInitLayoutMethod;
     
     private Local mArgContext;
+    
+    private Local mViewLocal;
     
     /** body of initLayout_ID */
     private JimpleBody mInitLayoutBody;
@@ -315,10 +318,14 @@ public class ResourcesSoot {
 
         // extract parameter
         mArgContext = 
-                Jimple.v().newLocal("paramContext",  RefType.v("android.content.Context"));
-
+                Jimple.v().newLocal("paramContext",  RefType.v("android.app.Activity"));
+                //Jimple.v().newLocal("paramContext",  RefType.v("android.content.Context"));
+        
+        mViewLocal = Jimple.v().newLocal("view", RefType.v("android.view.View"));
+        
         // android.content.Context paramActivity;
         mInitLayoutBody.getLocals().add(mArgContext);
+        mInitLayoutBody.getLocals().add(mViewLocal);
         
         // argContext = @paramter0
         Chain<Unit> units = mInitLayoutBody.getUnits();
@@ -359,10 +366,86 @@ public class ResourcesSoot {
         return true;
     }
     
+    /**
+     * invoking the callback if there is any inside this class
+     * @param intId
+     * @param onClickSignature
+     * @return
+     */
+    public boolean addCallOnClickToInitLayout_ID(String strId, String onClickSignature) {
+        logger.info("addCallOnClickToInitLayout_ID {} ", strId);
+        Integer intId = mNumberToIDMap.inverse().get(strId);
+        if (intId == null) {
+            logger.warn("No matching numeric Id for {} ", strId);
+            return false;
+        }
+        
+        UISootObject uiObj = mUiObjectTable.get(intId);
+        if (uiObj == null || uiObj.sootField == null) {
+            logger.warn("findViewByID_{} is NULL ", String.format("%08x", intId));
+            return false;
+        }
+        
+        SootMethod method = null;
+        
+        try {
+            method = Scene.v().getMethod(onClickSignature); 
+        }
+        catch (Exception ex) {
+            logger.warn("Cannot locate method {} ", onClickSignature);
+            return false;
+        }
+        
+        // Two things we need when performing the callback:
+        // 1. owning object of the callback (activity) => mArgContext
+        // 2. 
+                
+        logger.warn("method {} OK for onclick", method);
+        
+        Chain<Unit> units = mInitLayoutBody.getUnits();
+        
+        //logger.warn("mArgContext {}", mArgContext);
+        FieldRef  fieldRef = Jimple.v().newStaticFieldRef(uiObj.sootField.makeRef());
+        Stmt stmt = Jimple.v().newAssignStmt(mViewLocal, fieldRef);
+        
+        // localView =  fieldRef
+        units.add(stmt);
+        
+        Expr invokeExpr = Jimple.v().newVirtualInvokeExpr(mArgContext, method.makeRef(), mViewLocal);
+        stmt = Jimple.v().newInvokeStmt(invokeExpr);
+        
+        units.add(stmt);
+        return true;
+    }
+    
+    /**
+     * get a mthod that initalizes the Layout
+     * @param intId
+     * @return
+     */
     public SootMethod lookupInitLayout_ID(Integer intId) {
         logger.info("calling lookupInitLayout_ID{}) ", 
                     String.format("%08x", intId));
         return mLayoutInitMap.get(intId); 
+    }
+    
+    
+    /**
+     * 
+     * @param layoutName
+     * @return
+     */
+    public boolean createCallLayoutOnClicks_ID(String layoutName) {
+        return true;
+    }
+    
+    /**
+     * @param intId
+     * @param methodName
+     * @return
+     */
+    public boolean addToCallLayoutOnClicks_ID(String intId, String methodName) {
+        return true;
     }
 
     /**

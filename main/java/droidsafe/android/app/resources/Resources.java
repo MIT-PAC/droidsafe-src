@@ -292,8 +292,13 @@ public class Resources {
 			
 			// build the method that instantiates view objects
 			Integer layoutNumericId = resource_info.inverse().get(layout.view.id);
-			if (layoutNumericId != null)
-			    layout.buildInitLayout();
+			if (layoutNumericId == null) {
+			    logger.warn("Layout has no viewID, skipped");
+			    continue;
+			}
+			
+			layout.buildInitLayout();
+			
 		}
         // Anything other than view need to be built and injected???
 
@@ -521,7 +526,9 @@ public class Resources {
 
 	/** Processes an entry point **/
 	// full_classname looks like: "com.example.helladroid.HelloAndroid"
+	/*
 	private void process_entry (SootClass cn, String methSubSig) 
+
 		throws UnsupportedIdiomException, MissingElementException {
 			SootMethod m = cn.getMethod(methSubSig);
 
@@ -531,6 +538,7 @@ public class Resources {
 			logger.info ("process entry {}.{}()", cn, m);
 			process_method (null, cn, m);
 		}
+	*/
 
 	/**
 	 * Processes any entry points (onClick attributes) specified in this
@@ -558,14 +566,20 @@ public class Resources {
 						cn, view.on_click,
 						view.name, layout.name, view.get_resource_name());
 				//build the method signature in the soot format
-				List<RefType> viewArg = new LinkedList<RefType>();
-				viewArg.add(RefType.v("android.view.View"));
+				
+				//String signature = "<" + cn + ": void " + view.on_click + "(android.view.View)>";
+				String signature = "<" + cn + ": void " + view.on_click + "(android.view.View)>";
+				view.on_click = signature;
+				logger.debug("Replace onclick signature {} ", view.on_click);
+					
+				/*	
 				try {
 					//
+				    List<RefType> viewArg = new LinkedList<RefType>();
+				    viewArg.add(RefType.v("android.view.View"));
 					String signature = "<" + cn + ": void " + view.on_click + "(android.view.View)>";
 					view.on_click = signature;
 					logger.debug("Replace onclick signature {} ", view.on_click);
-					
 					SootMethod method = SootUtils.resolveMethod(cn, signature);
 					//cn.getMethod(view.on_click, viewArg);
 
@@ -576,7 +590,7 @@ public class Resources {
 						handlers.put(layout, new HashMap<View, SootMethod>());
 					}
 
-					logger.info("Putting: {} {} {}\n", layout, view, method);
+					logger.info("Putting: layout {}, view {}, method {}\n", layout, view, method);
 					handlers.get(layout).put(view, method);	
 					allHandlers.add(method);
 					
@@ -591,6 +605,7 @@ public class Resources {
 				} catch (Exception e) {
 					logger.warn("Problem resolving onclick handler...");
 				}
+				*/
 			}
 		}
 		for (View child : view.children)
