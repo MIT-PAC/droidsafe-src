@@ -419,6 +419,21 @@ public class ResourcesSoot {
     }
     
     /**
+     * add return statement to initLayout_XYZ
+     * @param strId
+     * @return
+     */
+    public void addReturnToInitLayout_ID() {
+        Chain<Unit> units = mInitLayoutBody.getUnits();
+        
+        //logger.warn("mArgContext {}", mArgContext);
+        Stmt stmt = Jimple.v().newReturnVoidStmt();
+        
+        // localView =  fieldRef
+        units.add(stmt);
+    }
+    
+    /**
      * get a mthod that initalizes the Layout
      * @param intId
      * @return
@@ -429,25 +444,6 @@ public class ResourcesSoot {
         return mLayoutInitMap.get(intId); 
     }
     
-    
-    /**
-     * 
-     * @param layoutName
-     * @return
-     */
-    public boolean createCallLayoutOnClicks_ID(String layoutName) {
-        return true;
-    }
-    
-    /**
-     * @param intId
-     * @param methodName
-     * @return
-     */
-    public boolean addToCallLayoutOnClicks_ID(String intId, String methodName) {
-        return true;
-    }
-
     /**
     * createViewMember:
     *   method to add static Button button_xxyyyy to the ResourcesSoot class

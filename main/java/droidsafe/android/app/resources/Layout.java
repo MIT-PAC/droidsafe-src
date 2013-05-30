@@ -149,6 +149,7 @@ public class Layout {
       ResourcesSoot.v().createInitLayout_ID(getFullName());
       buildInitLayout(view);
       addCallOnClickToInitLayout_ID(view);
+      ResourcesSoot.v().addReturnToInitLayout_ID();
   }
   
   /**
