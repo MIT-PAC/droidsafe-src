@@ -180,10 +180,16 @@ public class IntegrateXMLLayouts extends BodyTransformer {
 			Expr invokeExpr = Jimple.v().newStaticInvokeExpr(method.makeRef(), objectBox.getValue()); 
 			Stmt invokeStmt = Jimple.v().newInvokeStmt(invokeExpr);
 
-			units.swapWith(stmt, invokeStmt);
+			try {
+			    units.swapWith(stmt, invokeStmt);
+			    logger.info("replacing {} ", stmt);
+			    logger.info("with {} => OK", invokeStmt);
+			}
+			catch (Exception ex) {
+			    logger.warn("replacing {} ", stmt);
+			    logger.warn("with {} => NOT OK", invokeStmt);
+			}
 			
-			logger.info("replacing {} ", stmt);
-			logger.info("with {} ", invokeStmt);
         }
 
         /**
@@ -239,10 +245,15 @@ public class IntegrateXMLLayouts extends BodyTransformer {
 			else
 			    lookupStmt = Jimple.v().newInvokeStmt(invokeExpr);
 
-			units.swapWith(stmt, lookupStmt);
-			
-			logger.info("replacing {} ", stmt);
-			logger.info("with {} ", lookupStmt);
+			try {
+			    units.swapWith(stmt, lookupStmt);
+			    logger.info("replacing {} ", stmt);
+			    logger.info("with {}, OK ", lookupStmt);
+			}
+			catch (Exception ex) {
+			    logger.warn("replacing {} ", stmt);
+			    logger.warn("with {} => NOT OK", lookupStmt);
+			}
 		}
 
 		/**
@@ -250,13 +261,13 @@ public class IntegrateXMLLayouts extends BodyTransformer {
 		*/
 		protected void internalTransform(Body b, String phaseName, Map options)  {
 			StmtBody stmtBody = (StmtBody)b;
-
+			
 			// get body's unit as a chain
-			Chain units = stmtBody.getUnits();
+			Chain<Unit> units = stmtBody.getUnits();
 
 			// get a snapshot iterator of the unit since we are going to
 			// mutate the chain when iterating over it.
-			Iterator stmtIt = units.snapshotIterator();
+			Iterator<Unit> stmtIt = units.snapshotIterator();
 
 			while (stmtIt.hasNext()) {
 				Stmt stmt = (Stmt)stmtIt.next();
@@ -264,8 +275,7 @@ public class IntegrateXMLLayouts extends BodyTransformer {
 				if (!stmt.containsInvokeExpr()) {
 					continue;
 				}
-
-				InvokeExpr expr = (InvokeExpr)stmt.getInvokeExpr();
+				
 				
 				//get the receiver, receivers are only present for instance invokes 
 				InstanceInvokeExpr iie = SootUtils.getInstanceInvokeExpr(stmt);
@@ -278,6 +288,10 @@ public class IntegrateXMLLayouts extends BodyTransformer {
 							logger.info("Skipping type {} ", nodeType);
 							continue;
 						}
+						
+						//if replaced, done.  Not sure why YARR showed up 2 times
+						if (!units.contains(stmt))
+						    break;
 
 						SootClass allocClz = ((RefType)node.getType()).getSootClass();
 						SootMethod resolved = null; 
@@ -286,14 +300,14 @@ public class IntegrateXMLLayouts extends BodyTransformer {
 								resolveConcreteDispatch(allocClz, iie.getMethod());
 						
 						} catch (CannotFindMethodException e) {
-							
 							continue;
 						}
 						
 						// replacing findViewById
 						for (SootMethod method: findViewByIdList) {
 						    if (method.equals(resolved))  {
-						        logger.info(String.format("Found findViewById(): %s\n", stmt));
+						        logger.info(String.format("Found findViewById(): %s - %s\n", 
+						                    stmt, b.getMethod()));
 						        replaceFindViewById(stmtBody, stmt);
 						    }
 						}
@@ -301,8 +315,10 @@ public class IntegrateXMLLayouts extends BodyTransformer {
 						// replacing 
 						for (SootMethod method: setContentViewList) {
 						    if (method.equals(resolved)) {
-						        logger.info(String.format("Found setContentView(): %s\n", stmt));
+						        logger.info(String.format("Found setContentView(): %s - %s\n", 
+						                    stmt, b.getMethod()));
 						        replaceSetContentView(stmtBody, stmt);
+						        break;
 						    }
 						}
 					}
