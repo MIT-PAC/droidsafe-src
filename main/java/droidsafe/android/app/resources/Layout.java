@@ -78,8 +78,16 @@ public class Layout {
 
 	  if (cview.id != null) {
 	     logger.info("Normalizing cview.id {}", cview.id);
+	     
+	     cview.id = cview.id.replace("@+android:", "");
 	     cview.id = cview.id.replace("@android:", "");
-	     cview.id = cview.id.replace("@+id/", "");
+	     cview.id = cview.id.replace("@+id:", "");
+	     cview.id = cview.id.replace("@id:", "");
+	     
+	     if (cview.id.contains("/")) {
+	    	 cview.id = cview.id.substring(cview.id.indexOf("/") + 1);
+	     }
+	     
 	     if (!cview.id.startsWith("id."))
 	         cview.id = String.format("id.%s", cview.id);
 	     
