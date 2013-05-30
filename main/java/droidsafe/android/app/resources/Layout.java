@@ -16,6 +16,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import soot.SootClass;
+import soot.SootMethod;
 
 import droidsafe.android.app.resources.ResourcesSoot;
 
@@ -147,6 +148,8 @@ public class Layout {
   public void buildInitLayout() {
       ResourcesSoot.v().createInitLayout_ID(getFullName());
       buildInitLayout(view);
+      addCallOnClickToInitLayout_ID(view);
+      ResourcesSoot.v().addReturnToInitLayout_ID();
   }
   
   /**
@@ -160,6 +163,25 @@ public class Layout {
       logger.info("Trying to add view {} ", myView.id);
       logger.debug("myView: {}", myView);
       ResourcesSoot.v().addViewAllocToInitLayout_ID(myView.id);
+  }
+  
+  
+  /**
+   * add the onclick callback to callLayoutOnClicks
+   * @param myView
+   */
+  private void addCallOnClickToInitLayout_ID(View myView) {
+      for (View cview: myView.children) { 
+     	  addCallOnClickToInitLayout_ID(cview);
+	  } 
+      
+      if (myView.on_click != null) {
+          logger.info("Trying to add onClic {} ", myView.id);
+          logger.debug("-------");
+          logger.debug("myView: {}", myView);
+          logger.debug("-------");
+          ResourcesSoot.v().addCallOnClickToInitLayout_ID(myView.id, myView.on_click);
+      }
   }
 
   public class View extends BaseElement {
