@@ -256,8 +256,22 @@ public class ResourcesSoot {
         } else {
             logger.info("addView type:{}, id:{}", type, strId);
         }
+        
+        if (strId.startsWith("@+")) {
+        	strId = strId.substring(2);
+        }
+
+        if (strId.startsWith("@")) {
+        	strId = strId.substring(1);
+        }
 
         strId = strId.replace("@android:", "");
+        
+        //normalize stringname
+        if (strId.startsWith("android:")) {
+        	strId = strId.substring("android:".length());
+        }
+        
         Integer id = mNumberToIDMap.inverse().get(strId);
 
         if (id == null) {
