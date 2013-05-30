@@ -276,10 +276,7 @@ public class IntegrateXMLLayouts extends BodyTransformer {
 					continue;
 				}
 				
-				//statement that might have been removed
-				if (!units.contains(stmt))
-				    continue;
-
+				
 				//get the receiver, receivers are only present for instance invokes 
 				InstanceInvokeExpr iie = SootUtils.getInstanceInvokeExpr(stmt);
 				if (iie != null) {
@@ -291,6 +288,10 @@ public class IntegrateXMLLayouts extends BodyTransformer {
 							logger.info("Skipping type {} ", nodeType);
 							continue;
 						}
+						
+						//if replaced, done.  Not sure why YARR showed up 2 times
+						if (!units.contains(stmt))
+						    break;
 
 						SootClass allocClz = ((RefType)node.getType()).getSootClass();
 						SootMethod resolved = null; 
@@ -302,20 +303,14 @@ public class IntegrateXMLLayouts extends BodyTransformer {
 							continue;
 						}
 						
-						boolean replaced = false;
 						// replacing findViewById
 						for (SootMethod method: findViewByIdList) {
 						    if (method.equals(resolved))  {
 						        logger.info(String.format("Found findViewById(): %s - %s\n", 
 						                    stmt, b.getMethod()));
 						        replaceFindViewById(stmtBody, stmt);
-						        replaced = true;
-						        break;
 						    }
 						}
-						
-						if (replaced)
-						    continue;
 						
 						// replacing 
 						for (SootMethod method: setContentViewList) {
