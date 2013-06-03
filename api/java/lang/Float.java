@@ -109,7 +109,7 @@ public final class Float extends Number implements Comparable<Float> {
 	}
 	
 	@Override public float floatValue(){
-		return (float)dsTaint.getTaintFloat();
+		return dsTaint.getTaintFloat();
 		
 		// Original method
 		/*

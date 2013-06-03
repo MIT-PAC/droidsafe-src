@@ -25,6 +25,11 @@ public class DSTaintObject {
 	}
 	
 	@DSModeled(DSC.BAN)
+	public void addTaint(double i) {
+		this.taint = new Double(i);
+	}
+	
+	@DSModeled(DSC.BAN)
 	public void addTaint(boolean i) {
 		this.taint = new Boolean(i);
 	}
@@ -50,13 +55,33 @@ public class DSTaintObject {
 	}
 	
 	@DSModeled(DSC.BAN)
+	public char getTaintChar() {
+		return (char)0;
+	}
+	
+	@DSModeled(DSC.BAN)
+	public short getTaintShort() {
+		return (short)0;
+	}
+	
+	@DSModeled(DSC.BAN)
 	public int getTaintInt() {
 		return 0;
 	}
 	
 	@DSModeled(DSC.BAN)
+	public long getTaintLong() {
+		return 0L;
+	}
+	
+	@DSModeled(DSC.BAN)
 	public float getTaintFloat() {
 		return 0f;
+	}
+	
+	@DSModeled(DSC.BAN)
+	public double getTaintDouble() {
+		return 0.0D;
 	}
 	
 	@DSModeled(DSC.BAN)
@@ -67,6 +92,11 @@ public class DSTaintObject {
 	@DSModeled(DSC.BAN)
 	public boolean getTaintBoolean() {
 		return false;
+	}	
+	
+	@DSModeled(DSC.BAN)
+	public byte getTaintByte() {
+		return 0;
 	}	
 }
 

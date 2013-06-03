@@ -82,7 +82,7 @@ import droidsafe.annotations.DSModeled;
 	}
 	
 	@Override public double doubleValue(){
-		return (double)dsTaint.getTaintFloat();
+		return dsTaint.getTaintDouble();
 		
 		// Original method
 		/*
@@ -203,7 +203,7 @@ import droidsafe.annotations.DSModeled;
 	}
 	
 	@Override public long longValue(){
-		return (long)dsTaint.getTaintInt();
+		return dsTaint.getTaintLong();
 		
 		// Original method
 		/*
