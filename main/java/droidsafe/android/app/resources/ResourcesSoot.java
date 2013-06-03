@@ -24,6 +24,7 @@ import soot.SootClass;
 import soot.SootMethod;
 import soot.Type;
 import soot.Unit;
+import soot.Value;
 import soot.VoidType;
 import soot.Modifier;
 import soot.SootField;
@@ -122,6 +123,8 @@ public class ResourcesSoot {
     private SootMethod mInitLayoutMethod;
     
     private Local mArgContext;
+    
+    private Local mViewLocal;
     
     /** body of initLayout_ID */
     private JimpleBody mInitLayoutBody;
@@ -238,7 +241,7 @@ public class ResourcesSoot {
     *   function to add a view info into uiObjectTable and create a static for use by the
     *   IntegrateXMLLayout transformation.
     */
-    public void addView(String type, String strId, Map<String, String> attrMap) {
+    public boolean addView(String type, String strId, Map<String, String> attrMap) {
         // adding ui object (partial information, no numeric ID, no soot method)  
         // to the list of UI objects 
 
@@ -253,8 +256,22 @@ public class ResourcesSoot {
         } else {
             logger.info("addView type:{}, id:{}", type, strId);
         }
+        
+        if (strId.startsWith("@+")) {
+        	strId = strId.substring(2);
+        }
+
+        if (strId.startsWith("@")) {
+        	strId = strId.substring(1);
+        }
 
         strId = strId.replace("@android:", "");
+        
+        //normalize stringname
+        if (strId.startsWith("android:")) {
+        	strId = strId.substring("android:".length());
+        }
+        
         Integer id = mNumberToIDMap.inverse().get(strId);
 
         if (id == null) {
@@ -262,7 +279,7 @@ public class ResourcesSoot {
             for (String myStrId: mNumberToIDMap.inverse().keySet()) {
                 logger.warn("checking key {} <=> {} ", strId, myStrId);
             }
-            return;
+            return false;
         }
 
         if (mUiObjectTable.get(id) == null) {
@@ -271,13 +288,18 @@ public class ResourcesSoot {
             
             UISootObject obj = new UISootObject(id.intValue(), fullTypeName, strId, attrMap);
             mUiObjectTable.put(id, obj);
-
+            
             //create a static field 
-            createViewMember(id);
-
+            if (createViewMember(id) == false) {
+                //undo adding if failed
+                mUiObjectTable.remove(id);
+                return false;
+            }
+            
             // create method getView_XYX()
-            addGetView_ID(id);
+            return addGetView_ID(id);
         }
+        return true;
     }
 
     /**
@@ -310,10 +332,14 @@ public class ResourcesSoot {
 
         // extract parameter
         mArgContext = 
-                Jimple.v().newLocal("paramContext",  RefType.v("android.content.Context"));
-
+                Jimple.v().newLocal("paramContext",  RefType.v("android.app.Activity"));
+                //Jimple.v().newLocal("paramContext",  RefType.v("android.content.Context"));
+        
+        mViewLocal = Jimple.v().newLocal("view", RefType.v("android.view.View"));
+        
         // android.content.Context paramActivity;
         mInitLayoutBody.getLocals().add(mArgContext);
+        mInitLayoutBody.getLocals().add(mViewLocal);
         
         // argContext = @paramter0
         Chain<Unit> units = mInitLayoutBody.getUnits();
@@ -354,24 +380,97 @@ public class ResourcesSoot {
         return true;
     }
     
+    /**
+     * invoking the callback if there is any inside this class
+     * @param intId
+     * @param onClickSignature
+     * @return
+     */
+    public boolean addCallOnClickToInitLayout_ID(String strId, String onClickSignature) {
+        logger.info("addCallOnClickToInitLayout_ID {} ", strId);
+        Integer intId = mNumberToIDMap.inverse().get(strId);
+        if (intId == null) {
+            logger.warn("No matching numeric Id for {} ", strId);
+            return false;
+        }
+        
+        UISootObject uiObj = mUiObjectTable.get(intId);
+        if (uiObj == null || uiObj.sootField == null) {
+            logger.warn("findViewByID_{} is NULL ", String.format("%08x", intId));
+            return false;
+        }
+        
+        SootMethod method = null;
+        
+        try {
+            method = Scene.v().getMethod(onClickSignature); 
+        }
+        catch (Exception ex) {
+            logger.warn("Cannot locate method {} ", onClickSignature);
+            return false;
+        }
+        
+        // Two things we need when performing the callback:
+        // 1. owning object of the callback (activity) => mArgContext
+        // 2. 
+                
+        logger.info("method {} OK for onclick", method);
+        
+        Chain<Unit> units = mInitLayoutBody.getUnits();
+        
+        //logger.warn("mArgContext {}", mArgContext);
+        FieldRef  fieldRef = Jimple.v().newStaticFieldRef(uiObj.sootField.makeRef());
+        Stmt stmt = Jimple.v().newAssignStmt(mViewLocal, fieldRef);
+        
+        // localView =  fieldRef
+        units.add(stmt);
+        
+        Expr invokeExpr = Jimple.v().newVirtualInvokeExpr(mArgContext, method.makeRef(), mViewLocal);
+        stmt = Jimple.v().newInvokeStmt(invokeExpr);
+        
+        units.add(stmt);
+        return true;
+    }
+    
+    /**
+     * add return statement to initLayout_XYZ
+     * @param strId
+     * @return
+     */
+    public void addReturnToInitLayout_ID() {
+        Chain<Unit> units = mInitLayoutBody.getUnits();
+        
+        //logger.warn("mArgContext {}", mArgContext);
+        Stmt stmt = Jimple.v().newReturnVoidStmt();
+        
+        // localView =  fieldRef
+        units.add(stmt);
+    }
+    
+    /**
+     * get a mthod that initalizes the Layout
+     * @param intId
+     * @return
+     */
     public SootMethod lookupInitLayout_ID(Integer intId) {
         logger.info("calling lookupInitLayout_ID{}) ", 
                     String.format("%08x", intId));
         return mLayoutInitMap.get(intId); 
     }
-
+    
     /**
     * createViewMember:
     *   method to add static Button button_xxyyyy to the ResourcesSoot class
     */
-    private void createViewMember(Integer intId) {
+    private boolean createViewMember(Integer intId) {
         logger.info("calling createViewMember {}:{}) ", 
                     intId.toString(), String.format("%x", intId));
 
         UISootObject obj = mUiObjectTable.get(intId);    
-        if (obj == null) {
-            logger.warn("Object for id {} info is not available", intId);
-            return; 
+        if (obj == null || obj.type == null) {
+            logger.warn("Object for id {} info is not available", 
+                        String.format("%08x", intId));
+            return false; 
         }
 
         String   idName    = makeIdName(obj.type, obj.numericId); 
@@ -379,7 +478,7 @@ public class ResourcesSoot {
 
         if (className == null) {
             logger.warn("Cannot resolve class {} ", obj.type);
-            return;
+            return false;
         }
 
         RefType  classType = RefType.v(className); 
@@ -388,6 +487,7 @@ public class ResourcesSoot {
         SootField sf = new SootField(idName, classType, Modifier.PUBLIC | Modifier.STATIC);
         mSootClass.addField(sf);
         obj.sootField = sf;
+        return true;
     }
 
     /**
@@ -410,7 +510,7 @@ public class ResourcesSoot {
      * Method to add getView_XYX(content) to the droidsafe.android.ResourcesSoot 
      * @param intId : numeric Id seen in gen/R file
      */
-    private void addGetView_ID(Integer intId) {
+    private boolean addGetView_ID(Integer intId) {
         // units.add(Jimple.v().newAssignStmt(fieldRef, arg));
 
         UISootObject obj = mUiObjectTable.get(intId);    
@@ -418,11 +518,11 @@ public class ResourcesSoot {
 
         if (obj == null) {
             logger.warn("Object for id {} does not exist ", intId);
-            return;
+            return false;
         }
         if (obj.sootField == null)  {
             logger.warn("No sootfield previously created ");
-            return;
+            return false;
         }
 
         List<Type> params = new LinkedList<Type>();
@@ -436,7 +536,7 @@ public class ResourcesSoot {
 
         if (viewInitMethod == null) {
             logger.warn("Cannot locate proper constructor for {})", returnType);
-            return;
+            return false;
         }
 
         String funcName = "getView_" + String.format("%x", intId);
@@ -550,6 +650,8 @@ public class ResourcesSoot {
 
         logger.debug("condStmt {} ", condStmt);
         units.insertAfter(condStmt, beforeIf);
+        
+        return true;
     }
     
 

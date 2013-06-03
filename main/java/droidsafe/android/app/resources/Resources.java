@@ -292,8 +292,13 @@ public class Resources {
 			
 			// build the method that instantiates view objects
 			Integer layoutNumericId = resource_info.inverse().get(layout.view.id);
-			if (layoutNumericId != null)
-			    layout.buildInitLayout();
+			if (layoutNumericId == null) {
+			    logger.warn("Layout has no viewID, skipped");
+			    continue;
+			}
+			
+			layout.buildInitLayout();
+			
 		}
         // Anything other than view need to be built and injected???
 
@@ -502,10 +507,8 @@ public class Resources {
 					+ "(package {})", activity.name, package_name);
 			System.exit(1);
 		}
-
-
-
-		logger.info ("read in class file " + cn.getName());
+		
+		//NOTE: do we want to read in all methods????????
 
 		// Process methods of cn only if cn is an "Activity" or inherits Activity
 		if (classNodeIsAnAndroidActivity(cn)) {
@@ -521,7 +524,9 @@ public class Resources {
 
 	/** Processes an entry point **/
 	// full_classname looks like: "com.example.helladroid.HelloAndroid"
+	/*
 	private void process_entry (SootClass cn, String methSubSig) 
+
 		throws UnsupportedIdiomException, MissingElementException {
 			SootMethod m = cn.getMethod(methSubSig);
 
@@ -531,6 +536,7 @@ public class Resources {
 			logger.info ("process entry {}.{}()", cn, m);
 			process_method (null, cn, m);
 		}
+	*/
 
 	/**
 	 * Processes any entry points (onClick attributes) specified in this
@@ -558,39 +564,11 @@ public class Resources {
 						cn, view.on_click,
 						view.name, layout.name, view.get_resource_name());
 				//build the method signature in the soot format
-				List<RefType> viewArg = new LinkedList<RefType>();
-				viewArg.add(RefType.v("android.view.View"));
-				try {
-					//
-					String signature = "<" + cn + ": void " + view.on_click + "(android.view.View)>";
-					view.on_click = signature;
-					logger.debug("Replace onclick signature {} ", view.on_click);
-					
-					SootMethod method = SootUtils.resolveMethod(cn, signature);
-					//cn.getMethod(view.on_click, viewArg);
-
-					//record the handler in the map for the layout
-					//for the entire application there could be multiple layouts, and multiple
-					//handler per layout
-					if (!handlers.containsKey(layout)) { 
-						handlers.put(layout, new HashMap<View, SootMethod>());
-					}
-
-					logger.info("Putting: {} {} {}\n", layout, view, method);
-					handlers.get(layout).put(view, method);	
-					allHandlers.add(method);
-					
-					// Its not entirely clear why we are processing the on_click entry
-					// point itself.  What are we looking for here?
-
-					process_entry (cn, method.getSubSignature());
-				} catch (MissingElementException mee) {
-					logger.warn("Warning, Error processing on click handler {} in "
-							+ "layout {}: {}", view.on_click, layout.name, 
-							mee.getMessage());
-				} catch (Exception e) {
-					logger.warn("Problem resolving onclick handler...");
-				}
+				
+				//String signature = "<" + cn + ": void " + view.on_click + "(android.view.View)>";
+				String signature = "<" + cn + ": void " + view.on_click + "(android.view.View)>";
+				view.on_click = signature;
+				logger.debug("Replace onclick signature {} ", view.on_click);
 			}
 		}
 		for (View child : view.children)
@@ -777,6 +755,7 @@ public class Resources {
 	 * @param i The view ID that is the arg to setContentView
 	 */
 	public Map<Layout.View, SootMethod> getOnClickHandlers(Integer i) {
+	    /*
 		if (resolved) {
 			//find the layout
 			String fullname = findLayoutName(i);
@@ -806,6 +785,8 @@ public class Resources {
 			//Messages.print("Unresolved!");
 			return null;
 		}
+		*/
+	    return null;
 	}
 
 
