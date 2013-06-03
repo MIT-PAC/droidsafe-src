@@ -7536,7 +7536,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
 	}
 	
 	protected float getVerticalScrollFactor(){
-		return (float)dsTaint.getTaint();
+		return dsTaint.getTaintFloat();
 		
 		// Original method
 		/*
