@@ -8,41 +8,45 @@ import java.util.Set;
 import soot.jimple.spark.pag.AllocNode;
 
 /**
- * Base class for every Attribute Modeling model class.
+ * Base class for Attribute Modeling model classes
  *
  * @author dpetters
  */
-public abstract class ModeledClass {
+public abstract class AttrModeledClass {
 
     ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     // Attributes
     ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-    
+
     /**
-     * Some models have an associated AllocNode.
+     * We create a model for every allocNode of the Android classes we model. 
+     * These models have a one-to-one correspondence with the allocNodes.
+     * Some models may not have an allocNode.
      */
     protected AllocNode allocNode;
-    
+
     /**
-     * Determines whether the model object is invalidated or not.
+     * Attribute that determines whether we know the values of the attributes of a partucular object of a modeled
+     * Android class. Whenever we are unable to simulate a method that may modify an object, the corresponding model
+     * is invalidated.
      */
     protected boolean invalidated;
 
     ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     // Constructors
     ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
+    
     /**
-     * Basic constructor. Model objects are not invalidated by default.
-     */
-    public ModeledClass(){
+     * All models are not invalidated by default.
+     */  
+    public AttrModeledClass(){
         this.invalidated = false;
     }
 
     /**
-     * Constructor for model objects that have an associated allocNode
+     * Constructor for models that correspond to an allocNode. 
      */
-    public ModeledClass(AllocNode allocNodeParam){
+    public AttrModeledClass(AllocNode allocNodeParam){
         this();
         this.allocNode = allocNodeParam;
     }
@@ -50,24 +54,26 @@ public abstract class ModeledClass {
     ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     // Methods
     ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
+    
     /**
-     * Invalidates the model object by setting the "invalidated" attribute to true.
+     * Invalidates the model by setting this.invalidated to true.
      */
-    public void invalidate() {
+    public void invalidate(){
         this.invalidated = true;
     }
 
     /**
-     * Checks whether a model object is invalidated, as determined by the "invalidated" attribute.
-     * @returns value of the "invalidated" attribute
+     * Method to check whether the model has been invalidated.
+     * Determined by the value of the "invalidated" attribute.
+     * @returns whether the model is invalidated or not as a boolean
      */
     public boolean invalidated() {
         return this.invalidated;
     }
 
     /**
-     * @returns String of the id of the associated AllocNode, if the model object has one
+     * Returns the id of the AllocNode if the model has one.
+     * @returns id as String
      */
     public String getId() {
         String id = "";
@@ -82,14 +88,16 @@ public abstract class ModeledClass {
     }
 
     /**
-     * @returns AllocNode associated with this model object or null if there isn't one
+     * Getter for the allocNode attribute.
+     * @returns AllocNode that corresponds to this model
      */
     public AllocNode getAllocNode(){
         return this.allocNode;
     }
 
     /**
-     * @returns user-friendly representation of the model object as a String
+     * Display method for the model that says whether the model is invalidated.
+     * @returns model description as a String
      */
     public abstract String dsDisplay();
 }

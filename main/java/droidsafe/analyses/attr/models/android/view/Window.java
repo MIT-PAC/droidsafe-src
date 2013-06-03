@@ -1,26 +1,17 @@
 package droidsafe.analyses.attr.models.android.view;
 
-import droidsafe.analyses.attr.ModeledClass;
+import droidsafe.analyses.attr.AttrModeledClass;
 
 import soot.jimple.spark.pag.AllocNode;
 
-public abstract class Window extends ModeledClass {
+/**
+ * @author dpetters
+ */
+public abstract class Window extends AttrModeledClass {
 
-  public Window(){}
+    public Window(){}
 
-  public Window(AllocNode allocNode) {
-    super(allocNode);
-  }
-
-
-  @Override
-  public String toString(){
-    String str = "<modeled Window" + this.getId() + "> {";
-    if (this.invalidated) {
-      str += "invalidated";
-    } else {
-   
+    public Window(AllocNode allocNode) {
+        super(allocNode);
     }
-    return str + "}";
-  }
 }

@@ -7,23 +7,12 @@ import org.slf4j.LoggerFactory;
 
 import soot.jimple.spark.pag.AllocNode;
 
+/**
+ * @author dpetters
+ */
 public class ContextThemeWrapper extends ContextWrapper {
 
-  private final static Logger logger = LoggerFactory.getLogger(ContextThemeWrapper.class);
-
-  
-  public ContextThemeWrapper(AllocNode allocNode) {
-    super(allocNode);
-  }
- 
-  @Override
-  public String toString(){
-    String str = "<modeled ContextThemeWrapper" + this.getId() + "> {";
-    if (this.invalidated) {
-      str += "invalidated";
-    } else {
-   
+    public ContextThemeWrapper(AllocNode allocNode) {
+        super(allocNode);
     }
-    return str + "}";
-  }
 }
