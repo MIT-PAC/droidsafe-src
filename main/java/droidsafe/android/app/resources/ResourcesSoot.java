@@ -354,7 +354,18 @@ public class ResourcesSoot {
      * @param strId
      * @return
      */
+    
     public boolean addViewAllocToInitLayout_ID(String strId) {
+        return addViewAllocToInitLayout_ID(strId, false);
+    }
+    
+    /**
+     * add a view allocation to initLayout_XYX
+     * @param strId
+     * @param requestFocus: true to call requestFocus
+     * @return
+     */
+    public boolean addViewAllocToInitLayout_ID(String strId, boolean requestFocus) {
         logger.info("addViewAllocForInitLayout view ID {} ", strId);
         Integer intId = mNumberToIDMap.inverse().get(strId);
         if (intId == null) {
@@ -377,6 +388,11 @@ public class ResourcesSoot {
         
         Chain<Unit> units = mInitLayoutBody.getUnits();
         units.add(stmt);
+        
+        if (requestFocus) {
+            logger.info("We may want to add requestFocus here");
+        }
+        
         return true;
     }
     

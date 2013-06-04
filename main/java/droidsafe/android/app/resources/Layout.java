@@ -137,7 +137,9 @@ public class Layout {
 	  for (View cview: myView.children) { 
 		  buildViews(cview, stringListMap);
 	  }
-	 buildOneView(myView);
+	  
+	  if (myView.getAttributes().size() > 0)
+	      buildOneView(myView);
   }
 
   /**
@@ -168,9 +170,12 @@ public class Layout {
        for (View cview: myView.children) { 
 		  buildInitLayout(cview);
 	  } 
-      logger.info("Trying to add view {} ", myView.id);
-      logger.debug("myView: {}", myView);
-      ResourcesSoot.v().addViewAllocToInitLayout_ID(myView.id);
+       
+	  if (myView.getAttributes().size() > 0) {
+	      logger.info("Trying to add view {} ", myView.id);
+	      logger.debug("myView: {}", myView);
+	      ResourcesSoot.v().addViewAllocToInitLayout_ID(myView.id);
+	  }
   }
   
   

@@ -157,6 +157,23 @@ public class JSAStrings {
         return res.toString();
     }
 
+    /**
+     * Get the source file associated with the parameter hotspot.
+     * @param v The hotspot.
+     * @return
+     */
+    public String getSourceFile(ValueBox v) {
+        return v().getSourceFile(v);
+    }
+    
+    /**
+     * Get the source line associated with the parameter hotspot.
+     * @param v The hotspot.
+     * @return
+     */
+    public String getSourceLine(ValueBox v) {
+        return v().getSourceLine(v);
+    }
 
 //    public void logGrammar() {
 //        logger.debug("Done with String analysis");
@@ -202,6 +219,22 @@ public class JSAStrings {
             StringAnalysis.setApplicationClasses(srcClasses);
         }
     }
+    
+       
+    /* 
+     * Example of getting the results of JSA.
+    */
+    /*
+    private void example() {
+        List<ValueBox> hs = getHotspots();
+        for(ValueBox vb : hs) {
+            getSourceFile(vb);
+            getSourceLine(vb);
+            getRegex(vb.getValue());
+        }
+    }   
+    */
+    
 
 
 }

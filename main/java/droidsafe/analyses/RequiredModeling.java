@@ -23,6 +23,7 @@ import droidsafe.analyses.rcfg.OutputEvent;
 import droidsafe.analyses.rcfg.RCFG;
 import droidsafe.analyses.rcfg.RCFGNode;
 import droidsafe.android.app.Harness;
+import droidsafe.android.app.Hierarchy;
 import droidsafe.android.app.Project;
 import droidsafe.android.system.API;
 import droidsafe.main.Config;
@@ -41,6 +42,8 @@ import soot.jimple.InvokeExpr;
 import soot.jimple.Stmt;
 import soot.jimple.StmtBody;
 import soot.jimple.spark.pag.AllocNode;
+import soot.jimple.toolkits.callgraph.CallGraph;
+import soot.jimple.toolkits.callgraph.Edge;
 import soot.jimple.toolkits.callgraph.ReachableMethods;
 import soot.util.Chain;
 import soot.util.queue.QueueReader;
@@ -85,11 +88,61 @@ public class RequiredModeling {
                     "(versus abstract semantics of Value Analysis):\n\n");
             checkConcreteVSAbstractSemantics(fw);
 
+            checkHandlers(fw);
+            
             fw.close();
         } catch (Exception e) {
             logger.error("Cannot write required modeling file", e);
             System.exit(1);
         }
+    }
+
+    /**
+     * Check that an app method that overrides a system method is called from the modeling.  This will be a 
+     * conservative check that callbacks in the application are modeled correctly.  It has the potential for 
+     * false positives if there are callbacks defined by never registered. 
+     */
+    private static void checkHandlers(FileWriter fw) throws Exception {
+        //for all user classes, check for implemented api method, and then check
+        //to see if there is a call from the api (not the harness)
+        
+        CallGraph sparkCG = Scene.v().getCallGraph();
+        
+        fw.write("Methods overriding a system method that are not called from model: \n\n");
+        
+        for (SootClass clz : Scene.v().getClasses()) {
+            if (!(Project.v().isLibClass(clz) || Project.v().isSrcClass(clz)))
+                continue;
+            //only check classes of application
+            for (SootMethod method : clz.getMethods()) {
+                if (method.isConcrete() && 
+                        Hierarchy.v().isImplementedSystemMethod(method)) {
+                    
+                    //if an init of a component, then ignore, because this is done in the harness
+                    if (Hierarchy.v().isAndroidComponentClass(clz) && 
+                            (method.isConstructor() || "void <clinit>()".equals(method.getSubSignature())))
+                        continue;
+                    
+                    //find a call to it that is not from the harness
+                    boolean found = false;
+                    Iterator<Edge> edges = sparkCG.edgesInto(method); 
+                    while (edges.hasNext()) {
+                        Edge edge = edges.next();
+                        SootMethod srcMeth = edge.src(); 
+                        
+                        if (API.v().isSystemMethod(srcMeth)) {
+                            found = true;
+                            break;
+                        }
+                    }
+                    
+                    if (!found)
+                        fw.write(method + " overrides " + API.v().getClosestOverridenAPIMethod(method) + "\n");
+                }
+            }
+        }
+        
+        fw.write("\n");
     }
 
     /**
