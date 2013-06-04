@@ -24,9 +24,6 @@ import droidsafe.android.app.Harness;
 import droidsafe.android.app.Project;
 import droidsafe.main.Config;
 
-
-// import droidsafe.analyses.strings.AutomataUtils;
-
 /**
  * Wrapper for the Java String Analyzer.
  * 
@@ -54,6 +51,9 @@ public class JSAStrings {
 
     /** Singleton for analysis */
     private static JSAStrings jsa;
+    
+    /** boolean that determines whether the analysis has run */
+    private boolean hasRun = false;
 
     /**
      * Singleton accessor.
@@ -76,7 +76,13 @@ public class JSAStrings {
         hotspots = new LinkedList<ValueBox>();
         nonterminals = new HashMap<Value, Nonterminal>();
         gv = null;
+    }
 
+    /**
+     * @return boolean of whether the JSA has run or not 
+     */
+    public boolean hasRun(){
+      return this.hasRun;
     }
 
     /**
@@ -109,12 +115,12 @@ public class JSAStrings {
         setApplicationClasses(config);
     }
 
-    
     /**
      * Run the analysis, after init. 
      */
     public static void run() {
         // Well this seems a little dumb to simply wrap analyze...
+        v().hasRun = true;
         v().analyze();
     }
 
@@ -152,9 +158,13 @@ public class JSAStrings {
      * @return
      */
     public String getRegex(Value v) {
-        RE res = gv.getRE(nonterminals.get(v));
-        res = res.simplifyOps();
-        return res.toString();
+        try {
+          RE res = gv.getRE(nonterminals.get(v));
+          res = res.simplifyOps();
+          return res.toString();
+        } catch (NullPointerException e){
+          return "";
+        }
     }
 
     /**

@@ -81,8 +81,11 @@ public class Config {
 
   public boolean dumpCallGraph = false;
 
-  /** if true, run string analysis on app classes */
-  public boolean runStringAnalysis = false;
+  /** 
+   * If true, run string analysis on app classes.
+   * true by default 
+   */
+  public boolean runStringAnalysis = true;
 
   /** if true, string analysis is done for all soot application classes.  Otherwise, it is
    only done for the source classes of the project. */
@@ -118,9 +121,6 @@ public class Config {
     Option writeJimple =
         new Option("jimple", "Dump readable jimple files for all app classes in /droidsafe.");
     options.addOption(writeJimple);
-
-    Option runStringAnalysis = new Option("analyzestrings", "Run string analysis.");
-    options.addOption(runStringAnalysis);
 
     Option runStringAnalysisUnfiltered =
         new Option("analyzestrings_unfiltered",
@@ -223,12 +223,7 @@ public class Config {
       configureDebugLog();
     }
 
-    if (cmd.hasOption("analyzestrings")) {
-      this.runStringAnalysis = true;
-    }
-
     if (cmd.hasOption("analyzestrings_unfiltered")) {
-      this.runStringAnalysis = true;
       this.unfilteredStringAnalysis = true;
     }
 

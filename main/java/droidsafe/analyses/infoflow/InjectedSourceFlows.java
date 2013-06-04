@@ -1,8 +1,7 @@
 package droidsafe.analyses.infoflow;
 
 import droidsafe.analyses.attr.AttributeModeling;
-import droidsafe.analyses.attr.ModeledClass;
-
+import droidsafe.analyses.attr.AttrModeledClass;
 import droidsafe.analyses.attr.models.android.net.Uri.StringUri;
 
 import java.lang.reflect.Field;
@@ -20,51 +19,72 @@ import soot.RefType;
 
 import soot.SootField;
 
+/**
+ * @author dpetters
+ */ 
 public class InjectedSourceFlows {
-	private static InjectedSourceFlows v;
 
-  private Map<AllocNode, ModeledClass> attrModelingResults;
+    /** singleton instance */
+    private static InjectedSourceFlows v;
 
+    /** local to store the attribute modeling results in */ 
+    private Map<AllocNode, AttrModeledClass> attrModelingResults;
 
-	public static void run() {
-		v = new InjectedSourceFlows();
-	}
+    /**
+     * runs the analysis
+     */
+    public static void run() {
+        v = new InjectedSourceFlows();
+    }
 
-	public static InjectedSourceFlows v() {
-		return v;
-	}
+    /**
+     * @return the singleton instance
+     */
+    public static InjectedSourceFlows v() {
+        return v;
+    }
 
-	private InjectedSourceFlows() {
-     this.attrModelingResults = AttributeModeling.v().getResults();
-	}
+    /**
+     * Private (to enforce singleton pattern) class constructor that runs the analysis
+     */
+    private InjectedSourceFlows() {
+        this.attrModelingResults = AttributeModeling.v().getResults();
+    }
 
-	public Set<MyValue> getInjectedFlows(AllocNode node, SootField field, Edge context) {
-    LinkedHashSet<MyValue> flows = new LinkedHashSet<MyValue>();
-    List<String> stringsToInspect = new ArrayList<String>();
-    if(this.attrModelingResults.containsKey(node)){
-     ModeledClass modeledClass = this.attrModelingResults.get(node);
-      try {
-        Class<?> c = modeledClass.getClass();
-        Field fld = c.getDeclaredField(field.getName());
-        Object object = fld.get(modeledClass);
+    /**
+     * returns a set of information kinds that may be stored in the passed-in AllocNode's field
+     *
+     * @parameter node   AllocNode that we want to check for info kind
+     * @parameter field   The field of the AllocNode that we want to check for info kind
+     * @parameter context   The context in which we want to check for info kind
+     *
+     * @return a set of info kinds 
+     */ 
+    public Set<MyValue> getInjectedFlows(AllocNode node, SootField field, Edge context) {
+        LinkedHashSet<MyValue> flows = new LinkedHashSet<MyValue>();
+        List<String> stringsToInspect = new ArrayList<String>();
+        if(this.attrModelingResults.containsKey(node)){
+            AttrModeledClass modeledClass = this.attrModelingResults.get(node);
+            try {
+                Class<?> c = modeledClass.getClass();
+                Field fld = c.getDeclaredField(field.getName());
+                Object object = fld.get(modeledClass);
 
-        if (object instanceof StringUri){
-          StringUri stringUri = (StringUri)object;
-          stringsToInspect.addAll(stringUri.getUriString().getPossibleValues());
+                if (object instanceof StringUri){
+                    StringUri stringUri = (StringUri)object;
+                    stringsToInspect.addAll(stringUri.dsToString());
+                }
+            } catch (Exception e){
+
+            } 
         }
-      } catch (Exception e){
 
-      } 
+        for(String str : stringsToInspect) {
+            if(str.indexOf("person") != -1){
+                flows.add(Kind.CONTACTS);
+            }
+        }
+
+        return new LinkedHashSet<MyValue>();
     }
-
-    for(String str : stringsToInspect) {
-      if(str.indexOf("person") != -1){
-        System.out.println("ADDING CONTACT INFO KIND");
-        flows.add(Kind.CONTACTS);
-      }
-    }
-
-		return new LinkedHashSet<MyValue>();
-	}
-
 }

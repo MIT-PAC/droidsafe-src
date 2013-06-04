@@ -61,6 +61,15 @@ loops are present.
 If all goes well then at the end of the analysis each allocNode has a corresponding valid model whose attributes are 
 all the possible values that that allocnode's attribute could have taken on.
 
+Modeling Rules
+--------------
+
+* Constructors are called _init_
+* Every primitive type is boxed up
+* Every String argument or return type should be changed to  Set<String>
+* We do not track allocations. Clone methods and such should not be modeled. That is the job of GITI's modeling.
+* toString -> dsToString
+
 Dependencies
 ------------
 

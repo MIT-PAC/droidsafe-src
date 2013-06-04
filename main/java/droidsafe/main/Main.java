@@ -39,6 +39,7 @@ import droidsafe.utils.SootUtils;
  * Main entry class for DroidSafe analysis.
  * 
  * @author mgordon
+ * @author dpetters
  * 
  */
 public class Main {
