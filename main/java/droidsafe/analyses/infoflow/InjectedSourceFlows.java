@@ -7,6 +7,7 @@ import droidsafe.analyses.attr.models.android.net.Uri.StringUri;
 import java.lang.reflect.Field;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.LinkedHashSet;
 import java.util.List;
 import java.util.Map;
@@ -21,14 +22,14 @@ import soot.SootField;
 
 /**
  * @author dpetters
- */ 
+ */
 public class InjectedSourceFlows {
 
     /** singleton instance */
     private static InjectedSourceFlows v;
 
-    /** local to store the attribute modeling results in */ 
-    private Map<AllocNode, AttrModeledClass> attrModelingResults;
+    /** local to store the attribute modeling results in */
+    private final Map<AllocNode, AttrModeledClass> attrModelingResults;
 
     /**
      * runs the analysis
@@ -52,14 +53,27 @@ public class InjectedSourceFlows {
     }
 
     /**
+     * returns a mapping from AllocNode's field to a set of information kinds
+     *
+     * @param node AllocNode that we want to check for information kind
+     * @param context The context in which we want to check for information kind
+     *
+     * @return a mapping from each field to a set of information kinds
+     */
+    public Map<SootField, Set<MyKind>> getInjectedFlows(AllocNode node, Edge context) {
+        return Collections.emptyMap();
+    }
+
+    /**
      * returns a set of information kinds that may be stored in the passed-in AllocNode's field
      *
      * @parameter node   AllocNode that we want to check for info kind
      * @parameter field   The field of the AllocNode that we want to check for info kind
      * @parameter context   The context in which we want to check for info kind
      *
-     * @return a set of info kinds 
-     */ 
+     * @return a set of info kinds
+     */
+    @Deprecated
     public Set<MyValue> getInjectedFlows(AllocNode node, SootField field, Edge context) {
         LinkedHashSet<MyValue> flows = new LinkedHashSet<MyValue>();
         List<String> stringsToInspect = new ArrayList<String>();
@@ -76,12 +90,12 @@ public class InjectedSourceFlows {
                 }
             } catch (Exception e){
 
-            } 
+            }
         }
 
         for(String str : stringsToInspect) {
             if(str.indexOf("person") != -1){
-                flows.add(Kind.CONTACTS);
+                flows.add(MyKind.CONTACTS);
             }
         }
 
