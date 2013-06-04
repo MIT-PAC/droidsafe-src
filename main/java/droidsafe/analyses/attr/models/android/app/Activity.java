@@ -27,7 +27,11 @@ public class Activity extends ContextThemeWrapper {
     public void _init_(){
     
     }
-    
+
+    // stub so that we walk through the method
+    public void startActivityForResult(Intent intent, Integer requestCode) {
+    }
+
     /**
      * Retrieve the current {@link android.view.Window} for the activity.
      * This can be used to directly access parts of the Window API that
