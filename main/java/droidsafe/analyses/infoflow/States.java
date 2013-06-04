@@ -24,52 +24,52 @@ import soot.jimple.spark.pag.AllocNode;
 import soot.jimple.toolkits.callgraph.Edge;
 
 public class States {
-    private final DefaultHashMap<Edge, FrameRootsHeapStatics> contextToFrameRootsHeapStatics;
+    private final DefaultHashMap<Edge, FrameHeapStatics> contextToFrameHeapStatics;
 
-    private static final FrameRootsHeapStatics emptyFrameRootsHeapStatics = new FrameRootsHeapStatics();
+    private static final FrameHeapStatics emptyFrameHeapStatics = new FrameHeapStatics();
 
     States() {
-        contextToFrameRootsHeapStatics = new DefaultHashMap<Edge, FrameRootsHeapStatics>(emptyFrameRootsHeapStatics);
+        contextToFrameHeapStatics = new DefaultHashMap<Edge, FrameHeapStatics>(emptyFrameHeapStatics);
     }
 
     States merge(States that) {
         States states = new States();
-        for (Map.Entry<Edge, FrameRootsHeapStatics> contextFrameRootsHeapStatics : this.contextToFrameRootsHeapStatics.entrySet()) {
-            Edge context = contextFrameRootsHeapStatics.getKey();
-            FrameRootsHeapStatics frameRootsHeapStatics = contextFrameRootsHeapStatics.getValue();
-            if (that.contextToFrameRootsHeapStatics.containsKey(context)) {
-                states.contextToFrameRootsHeapStatics.put(context, frameRootsHeapStatics.merge(that.contextToFrameRootsHeapStatics.get(context)));
+        for (Map.Entry<Edge, FrameHeapStatics> contextFrameHeapStatics : this.contextToFrameHeapStatics.entrySet()) {
+            Edge context = contextFrameHeapStatics.getKey();
+            FrameHeapStatics frameHeapStatics = contextFrameHeapStatics.getValue();
+            if (that.contextToFrameHeapStatics.containsKey(context)) {
+                states.contextToFrameHeapStatics.put(context, frameHeapStatics.merge(that.contextToFrameHeapStatics.get(context)));
             } else {
-                states.contextToFrameRootsHeapStatics.put(context, frameRootsHeapStatics);
+                states.contextToFrameHeapStatics.put(context, frameHeapStatics);
             }
         }
-        for (Map.Entry<Edge, FrameRootsHeapStatics> contextFrameRootsHeapStatics : that.contextToFrameRootsHeapStatics.entrySet()) {
-            Edge context = contextFrameRootsHeapStatics.getKey();
-            if (!this.contextToFrameRootsHeapStatics.containsKey(context)) {
-                states.contextToFrameRootsHeapStatics.put(context, contextFrameRootsHeapStatics.getValue());
+        for (Map.Entry<Edge, FrameHeapStatics> contextFrameHeapStatics : that.contextToFrameHeapStatics.entrySet()) {
+            Edge context = contextFrameHeapStatics.getKey();
+            if (!this.contextToFrameHeapStatics.containsKey(context)) {
+                states.contextToFrameHeapStatics.put(context, contextFrameHeapStatics.getValue());
             }
         }
         return states;
     }
 
-    FrameRootsHeapStatics put(Edge context, FrameRootsHeapStatics frameRootsHeapStatics) {
-        return contextToFrameRootsHeapStatics.put(context, frameRootsHeapStatics);
+    FrameHeapStatics put(Edge context, FrameHeapStatics frameHeapStatics) {
+        return contextToFrameHeapStatics.put(context, frameHeapStatics);
     }
 
-    FrameRootsHeapStatics get(Edge context) {
-        return contextToFrameRootsHeapStatics.get(context);
+    FrameHeapStatics get(Edge context) {
+        return contextToFrameHeapStatics.get(context);
     }
 
-    Set<Map.Entry<Edge, FrameRootsHeapStatics>> entrySet() {
-        return contextToFrameRootsHeapStatics.entrySet();
+    Set<Map.Entry<Edge, FrameHeapStatics>> entrySet() {
+        return contextToFrameHeapStatics.entrySet();
     }
 
     Set<Edge> keySet() {
-        return contextToFrameRootsHeapStatics.keySet();
+        return contextToFrameHeapStatics.keySet();
     }
 
-    Collection<FrameRootsHeapStatics> values() {
-        return contextToFrameRootsHeapStatics.values();
+    Collection<FrameHeapStatics> values() {
+        return contextToFrameHeapStatics.values();
     }
 
     @Override
@@ -82,17 +82,17 @@ public class States {
         }
         States states = (States)that;
 
-        return this.contextToFrameRootsHeapStatics.equals(states.contextToFrameRootsHeapStatics);
+        return this.contextToFrameHeapStatics.equals(states.contextToFrameHeapStatics);
     }
 
     @Override
     public String toString() {
         StringBuffer str = new StringBuffer();
         str.append('{');
-        for (Map.Entry<Edge, FrameRootsHeapStatics> contextFrameRootsHeapStatics : this.contextToFrameRootsHeapStatics.entrySet()) {
-            str.append(contextFrameRootsHeapStatics.getKey().toString());
+        for (Map.Entry<Edge, FrameHeapStatics> contextFrameHeapStatics : this.contextToFrameHeapStatics.entrySet()) {
+            str.append(contextFrameHeapStatics.getKey().toString());
             str.append("=\\l");
-            str.append(contextFrameRootsHeapStatics.getValue().toString());
+            str.append(contextFrameHeapStatics.getValue().toString());
             str.append("\\l");
         }
         int length = str.length();
@@ -101,59 +101,6 @@ public class States {
         }
         str.append('}');
         return str.toString();
-    }
-}
-
-class FrameRootsHeapStatics {
-    Frame frame;
-    Set<Address> roots;
-    Heap heap;
-    Statics statics;
-
-    FrameRootsHeapStatics() {
-        this.frame = new Frame();
-        this.roots = new HashSet<Address>();
-        this.heap = new Heap();
-        this.statics = new Statics();
-    }
-
-    FrameRootsHeapStatics(Frame frame, Set<Address> roots, Heap heap, Statics statics) {
-        assert frame != null && roots != null && heap != null && statics != null;
-        this.frame = frame;
-        this.roots = roots;
-        this.heap = heap;
-        this.statics = statics;
-    }
-
-    FrameRootsHeapStatics(FrameRootsHeapStatics that) {
-        this.frame = new Frame(that.frame);
-        this.roots = new HashSet<Address>(that.roots);
-        this.heap = new Heap(that.heap);
-        this.statics = new Statics(that.statics);
-    }
-
-    FrameRootsHeapStatics merge(FrameRootsHeapStatics that) {
-        Set<Address> roots = new HashSet<Address>(this.roots);
-        roots.addAll(that.roots);
-        return new FrameRootsHeapStatics(this.frame.merge(that.frame), roots, this.heap.merge(that.heap), this.statics.merge(that.statics));
-    }
-
-    @Override
-    public boolean equals(Object that) {
-        if (this == that) {
-            return true;
-        }
-        if (!(that instanceof FrameRootsHeapStatics)) {
-            return false;
-        }
-        FrameRootsHeapStatics frameRootsHeapStatics = (FrameRootsHeapStatics)that;
-
-        return this.frame.equals(frameRootsHeapStatics.frame) && this.roots.equals(frameRootsHeapStatics.roots) && this.heap.equals(frameRootsHeapStatics.heap) && this.statics.equals(frameRootsHeapStatics.statics);
-    }
-
-    @Override
-    public String toString() {
-        return "(" + frame + ",\\l " + roots + ",\\l " + heap + ",\\l " + statics + ")";
     }
 }
 
@@ -181,6 +128,10 @@ class FrameHeapStatics {
         this.statics = new Statics(that.statics);
     }
 
+    FrameHeapStatics merge(FrameHeapStatics that) {
+        return new FrameHeapStatics(this.frame.merge(that.frame), this.heap.merge(that.heap), this.statics.merge(that.statics));
+    }
+
     @Override
     public boolean equals(Object that) {
         if (this == that) {
@@ -201,28 +152,35 @@ class FrameHeapStatics {
 }
 
 class Frame {
+    static final Frame EMPTY = new Frame();
+
     DefaultHashMap<MethodLocal, ImmutableList<MyValue>> locals;
+    DefaultHashMap<SootMethod, ImmutableList<MyValue>> thiz;
     DefaultHashMap<MethodMyParameterRef, ImmutableList<MyValue>> params;
 
     Frame() {
         locals = new DefaultHashMap<MethodLocal, ImmutableList<MyValue>>(ImmutableList.<MyValue>of());
+        thiz = new DefaultHashMap<SootMethod, ImmutableList<MyValue>>(ImmutableList.<MyValue>of());
         params = new DefaultHashMap<MethodMyParameterRef, ImmutableList<MyValue>>(ImmutableList.<MyValue>of());
     }
 
-    Frame(Frame that, DefaultHashMap<MethodMyParameterRef, ImmutableList<MyValue>> params) {
+    Frame(Frame that, DefaultHashMap<SootMethod, ImmutableList<MyValue>> thiz, DefaultHashMap<MethodMyParameterRef, ImmutableList<MyValue>> params) {
         assert params != null;
         this.locals = new DefaultHashMap<MethodLocal, ImmutableList<MyValue>>(that.locals);
+        this.thiz = thiz;
         this.params = params;
     }
 
-    Frame(DefaultHashMap<MethodLocal, ImmutableList<MyValue>> locals, DefaultHashMap<MethodMyParameterRef, ImmutableList<MyValue>> params) {
+    Frame(DefaultHashMap<MethodLocal, ImmutableList<MyValue>> locals, DefaultHashMap<SootMethod, ImmutableList<MyValue>> thiz, DefaultHashMap<MethodMyParameterRef, ImmutableList<MyValue>> params) {
         assert locals != null && params != null;
         this.locals = locals;
+        this.thiz = thiz;
         this.params = params;
     }
 
     Frame(Frame that) {
         this.locals = new DefaultHashMap<MethodLocal, ImmutableList<MyValue>>(that.locals);
+        this.thiz = new DefaultHashMap<SootMethod, ImmutableList<MyValue>>(that.thiz);
         this.params = new DefaultHashMap<MethodMyParameterRef, ImmutableList<MyValue>>(that.params);
     }
 
@@ -244,6 +202,24 @@ class Frame {
             MethodLocal local = localValues.getKey();
             if (!this.locals.containsKey(local)) {
                 frame.locals.put(local, localValues.getValue());
+            }
+        }
+
+        for (Map.Entry<SootMethod, ImmutableList<MyValue>> methodValues : this.thiz.entrySet()) {
+            SootMethod method = methodValues.getKey();
+            ImmutableList<MyValue> values = methodValues.getValue();
+            if (that.thiz.containsKey(method)) {
+                Set<MyValue> vals = new HashSet<MyValue>(values);
+                vals.addAll(that.thiz.get(method));
+                frame.thiz.put(method, ImmutableList.copyOf(vals));
+            } else {
+                frame.thiz.put(method, values);
+            }
+        }
+        for (Map.Entry<SootMethod, ImmutableList<MyValue>> methodValues : that.thiz.entrySet()) {
+            SootMethod method = methodValues.getKey();
+            if (!this.thiz.containsKey(method)) {
+                frame.thiz.put(method, methodValues.getValue());
             }
         }
 
@@ -276,12 +252,12 @@ class Frame {
         if (values != null && !values.isEmpty()) {
             return locals.put(local, values);
         } else {
-            return locals.get(local);
+            return locals.remove(local);
         }
     }
 
     ImmutableList<MyValue> putW(MethodLocal local, Set<MyValue> values) {
-        return putW(local, ImmutableList.<MyValue>copyOf(values));
+        return putW(local, ImmutableList.copyOf(values));
     }
 
     // weakly update
@@ -300,19 +276,43 @@ class Frame {
         return locals.get(local);
     }
 
-    ImmutableList<MyValue> remove(Local local) {
+    ImmutableList<MyValue> remove(MethodLocal local) {
         return locals.remove(local);
+    }
+
+    ImmutableList<MyValue> putS(SootMethod method, ImmutableList<MyValue> values) {
+        if (values != null && !values.isEmpty()) {
+            return thiz.put(method, values);
+        } else {
+            return thiz.remove(method);
+        }
     }
 
     ImmutableList<MyValue> putS(MethodMyParameterRef parameterRef, Set<MyValue> values) {
         return putS(parameterRef, ImmutableList.copyOf(values));
     }
 
-    private ImmutableList<MyValue> putS(MethodMyParameterRef parameterRef, ImmutableList<MyValue> values) {
+    // weakly update
+    ImmutableList<MyValue> putW(SootMethod method, List<MyValue> values) {
+        ImmutableList<MyValue> valuesOld = thiz.get(method);
+        if (values != null && !values.isEmpty()) {
+            Set<MyValue> valuesNew = new HashSet<MyValue>(valuesOld);
+            valuesNew.addAll(values);
+            return thiz.put(method, ImmutableList.copyOf(valuesNew));
+        } else {
+            return valuesOld;
+        }
+    }
+
+    ImmutableList<MyValue> get(SootMethod method) {
+        return thiz.get(method);
+    }
+
+    ImmutableList<MyValue> putS(MethodMyParameterRef parameterRef, ImmutableList<MyValue> values) {
         if (values != null && !values.isEmpty()) {
             return params.put(parameterRef, values);
         } else {
-            return params.get(parameterRef);
+            return params.remove(parameterRef);
         }
     }
 
@@ -335,6 +335,13 @@ class Frame {
     Set<Address> roots() {
         Set<Address> roots = new HashSet<Address>();
         for (ImmutableList<MyValue> values : locals.values()) {
+            for (MyValue value : values) {
+                if (value instanceof Address) {
+                    roots.add((Address)value);
+                }
+            }
+        }
+        for (ImmutableList<MyValue> values : thiz.values()) {
             for (MyValue value : values) {
                 if (value instanceof Address) {
                     roots.add((Address)value);
@@ -364,12 +371,20 @@ class Frame {
         if (this.locals.size() != frame.locals.size()) {
             return false;
         }
+        if (this.thiz.size() != frame.thiz.size()) {
+            return false;
+        }
         if (this.params.size() != frame.params.size()) {
             return false;
         }
         try {
             for (Map.Entry<MethodLocal, ImmutableList<MyValue>> localValues : this.locals.entrySet()) {
                 if (!(ImmutableSet.copyOf(localValues.getValue()).equals(ImmutableSet.copyOf(frame.locals.get(localValues.getKey()))))) {
+                    return false;
+                }
+            }
+            for (Map.Entry<SootMethod, ImmutableList<MyValue>> methodValues : this.thiz.entrySet()) {
+                if (!(ImmutableSet.copyOf(methodValues.getValue()).equals(ImmutableSet.copyOf(frame.thiz.get(methodValues.getKey()))))) {
                     return false;
                 }
             }
@@ -402,6 +417,14 @@ class Frame {
         };
         TreeMap<MethodLocal, ImmutableList<MyValue>> sortedLocals = new TreeMap<MethodLocal, ImmutableList<MyValue>>(localComparator);
         sortedLocals.putAll(locals);
+        Comparator<SootMethod> thisComparator = new Comparator<SootMethod>() {
+            @Override
+            public int compare(SootMethod method1, SootMethod method2) {
+                return method1.getSignature().compareTo(method2.getSignature());
+            }
+        };
+        TreeMap<SootMethod, ImmutableList<MyValue>> sortedThese = new TreeMap<SootMethod, ImmutableList<MyValue>>(thisComparator);
+        sortedThese.putAll(thiz);
         Comparator<MethodMyParameterRef> paramComparator = new Comparator<MethodMyParameterRef>() {
             @Override
             public int compare(MethodMyParameterRef param1, MethodMyParameterRef param2) {
@@ -415,7 +438,7 @@ class Frame {
         };
         TreeMap<MethodMyParameterRef, ImmutableList<MyValue>> sortedParams = new TreeMap<MethodMyParameterRef, ImmutableList<MyValue>>(paramComparator);
         sortedParams.putAll(params);
-        return "(" + sortedLocals + ", " + sortedParams + ")";
+        return "(" + sortedLocals + ", " + sortedThese + ", " + sortedParams + ")";
     }
 }
 
@@ -744,7 +767,7 @@ class Instances {
             for (Map.Entry<AddressField, ImmutableList<MyValue>> addressFieldValues : this.addressFieldToValues.entrySet()) {
                 AddressField addressField = addressFieldValues.getKey();
                 ImmutableList<MyValue> values = addressFieldValues.getValue();
-                if (!(ImmutableSet.<MyValue>copyOf(values).equals(ImmutableSet.<MyValue>copyOf(instances.addressFieldToValues.get(addressField))))) {
+                if (!(ImmutableSet.copyOf(values).equals(ImmutableSet.copyOf(instances.addressFieldToValues.get(addressField))))) {
                     return false;
                 }
             }
@@ -944,7 +967,7 @@ class Arrays {
             for (Map.Entry<Address, ImmutableList<MyValue>> addressValues : this.addressToValues.entrySet()) {
                 Address address = addressValues.getKey();
                 ImmutableList<MyValue> values = addressValues.getValue();
-                if (!(ImmutableSet.<MyValue>copyOf(values).equals(ImmutableSet.<MyValue>copyOf(arrays.addressToValues.get(address))))) {
+                if (!(ImmutableSet.copyOf(values).equals(ImmutableSet.copyOf(arrays.addressToValues.get(address))))) {
                     return false;
                 }
             }
@@ -1063,7 +1086,7 @@ class Statics {
             for (Map.Entry<SootField, ImmutableList<MyValue>> fieldValues : this.fieldToValues.entrySet()) {
                 SootField field = fieldValues.getKey();
                 ImmutableList<MyValue> values = fieldValues.getValue();
-                if (!(ImmutableSet.<MyValue>copyOf(values).equals(ImmutableSet.<MyValue>copyOf(statics.fieldToValues.get(field))))) {
+                if (!(ImmutableSet.copyOf(values).equals(ImmutableSet.copyOf(statics.fieldToValues.get(field))))) {
                     return false;
                 }
             }
