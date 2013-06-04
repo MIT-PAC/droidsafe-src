@@ -1,5 +1,5 @@
 package droidsafe.analyses.infoflow;
 
-public enum Kind implements MyValue {
+public enum MyKind implements MyValue {
     CONTACTS
 }

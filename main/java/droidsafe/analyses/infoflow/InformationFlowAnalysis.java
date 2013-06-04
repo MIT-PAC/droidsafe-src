@@ -934,7 +934,7 @@ public class InformationFlowAnalysis {
                 if (instance instanceof Address) {
                     values.addAll(inFrameHeapStatics.heap.instances.get((Address)instance, field));
                 } else {
-                    assert instance instanceof droidsafe.analyses.infoflow.Kind;
+                    assert instance instanceof droidsafe.analyses.infoflow.MyKind;
                     values.add(instance);
                 }
             }
