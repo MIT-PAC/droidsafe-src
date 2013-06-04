@@ -1,171 +1,240 @@
 package droidsafe.analyses.strings;
 
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Collection;
-import java.util.LinkedList;
-import java.util.Vector;
 import java.util.HashMap;
-import java.util.Map;
-
+import java.util.LinkedList;
 import java.util.List;
-import java.io.IOException;
-import java.io.File;
-import java.io.FileFilter;
-import java.util.jar.JarFile;
-
+import java.util.Map;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-
 import soot.Scene;
 import soot.SootClass;
-import soot.ValueBox;
 import soot.Value;
-
+import soot.ValueBox;
+import dk.brics.automaton.Automaton;
+import dk.brics.string.StringAnalysis;
+import dk.brics.string.grammar.Nonterminal;
+import droidsafe.analyses.strings.AutomataUtil.RE;
 import droidsafe.android.app.Harness;
 import droidsafe.android.app.Project;
-import droidsafe.utils.SootUtils;
 import droidsafe.main.Config;
-
-
-
-import dk.brics.string.StringAnalysis;
-import dk.brics.automaton.Automaton;
-import dk.brics.automaton.State;
-import dk.brics.automaton.Transition;
-import dk.brics.automaton.RegExp;
 
 
 // import droidsafe.analyses.strings.AutomataUtils;
 
+/**
+ * Wrapper for the Java String Analyzer.
+ * 
+ * Allows hotspots to be identified, and (after executing analysis) to be queried to get a regular
+ * expression representation.
+ * 
+ * @author garrinkimmell
+ * 
+ */
 public class JSAStrings {
-	private final static Logger logger = LoggerFactory.getLogger(JSAStrings.class);
+    /** Standard Logging output **/
+    private static final Logger logger = LoggerFactory.getLogger(JSAStrings.class);
 
+    /** The set of hotspots **/
+    private List<ValueBox> hotspots;
 
-	private List<ValueBox> hotspots;
+    /** The main JSA object. **/
+    private StringAnalysis sa;
 
-	private Map<Value,Automaton> automata;
+    /** A converter from Grammar to regular expressions **/
+    private GrammarVisitor gv;
 
- private StringAnalysis sa;
-    
-	/** Singleton for analysis */
-	private static JSAStrings jsa;
+    /** A mapping from Value (associated with a hotspot) to nonterminal. **/
+    private HashMap<Value, Nonterminal> nonterminals;
 
-	public static JSAStrings v() {
-		if (jsa != null) {
-			return jsa;
-		} else {
-			jsa = new JSAStrings();
-			return jsa;
-		}
-	}
+    /** Singleton for analysis */
+    private static JSAStrings jsa;
 
-
-	private JSAStrings() {
-		hotspots = new LinkedList<ValueBox>();
-		automata = new HashMap<Value,Automaton>();
-    
-	}
-
-	public List<ValueBox> getHotspots() {
-		// FIXME: Should this return a clone?
-		return hotspots;
-	}
-
-	public static void init(Config config) {
-		// Initialize the 
-		soot.options.Options.v().set_allow_phantom_refs(true);
-
-		try {
-
-			StringAnalysis.loadDirectory(config.APP_ROOT_DIR+"/bin/classes/");
-			StringAnalysis.addJarsToClassPath(config.APP_ROOT_DIR+"/libs/");
-
-		} catch (IOException e) {
-			logger.debug("JSA got an exception.");
-			return;
-		}
-
-		SootClass clazz = StringAnalysis.loadClass(Harness.HARNESS_CLASS_NAME);
-		setApplicationClasses(config);
-	}
-
-	public static void run() {
-		// Well this seems a little dumb to simply wrap analyze...
-		v().analyze();
-	}
-
-	private void analyze() {
-		sa = new StringAnalysis(hotspots); // Run the analysis.
-
-		for (ValueBox h : hotspots) {
-        automata.put(h.getValue(),sa.getAutomaton(h));
-		}		
-		return;
-	}
-
-	public void addHotspots(String signature) {
-		// TODO: Iterate through the argument types, adding the argument if 
-		// it is a string.
-		for (int i = 0; i < 0; i++) {
-			hotspots.addAll(StringAnalysis.getArgumentExpressions(signature,i));
-		}
-		// TODO: Add the return type if it is a string.
-	}
-
-	public void addArgumentHotspots(String signature, int arg) {
-      List<ValueBox> sigSpots = StringAnalysis.getArgumentExpressions(signature,arg);
-      logger.debug("For signature " + signature + " got " + sigSpots.size() + "hotspots.");
-      hotspots.addAll(sigSpots);
-	}
-
-
-	public String getRegex(Value v) {
-		Automaton a = automata.get(v);
-		if (a != null) {
-			return AutomataUtil.convertAutomata(a).toString();
-		}
-		return null;
-	}
-
-
-	public void log() {
-		logger.debug("Done with String analysis");
-	  JSAStrings jsa = JSAStrings.v();
-
-	  int i = 0;
-	  for (ValueBox v : jsa.getHotspots()) {
-        logger.debug("Hotspot: " + sa.getSourceFile(v) + ":::" + sa.getLineNumber(v) + ":::" + jsa.getRegex(v.getValue()));
-        // logger.debug("Hotspot REGEX: " + jsa.getRegex(v.getValue()));
+    /**
+     * Singleton accessor.
+     * @return The singleton JSAStrings object.
+     */
+    public static JSAStrings v() {
+        if (jsa != null) {
+            return jsa;
+        } else {
+            jsa = new JSAStrings();
+            return jsa;
+        }
     }
-  }
-	
-	private void convertHotspots(StringAnalysis sa, List<ValueBox> hotspots) {
-		logger.debug("Converting Automata");
-		for (ValueBox h : hotspots) {
-			logger.debug("----------------------------");
-			logger.debug(sa.getSourceFile(h) + ":" + sa.getLineNumber(h));
-			AutomataUtil.RE res = AutomataUtil.convertAutomata(sa.getAutomaton(h));
-			logger.debug("REGEX: " + res.toString());
-			logger.debug("----------------------------");
 
-		}
-	}
 
-	// LWG: Allow application classes to be filtered from soot.Scene
-	private static void setApplicationClasses(Config config) {
-		Collection<SootClass> appClasses = Scene.v().getApplicationClasses();
-		if (config.unfilteredStringAnalysis) {
-			StringAnalysis.setApplicationClasses(appClasses);
-		} else {
-			Collection<SootClass> srcClasses = new ArrayList<SootClass>();
-			for (SootClass cls: appClasses)
-				if (Project.v().isSrcClass(cls))
-					srcClasses.add(cls);
-			StringAnalysis.setApplicationClasses(srcClasses);
-		}
-	}
+    /**
+     * Constructor.
+     */
+    private JSAStrings() {
+        hotspots = new LinkedList<ValueBox>();
+        nonterminals = new HashMap<Value, Nonterminal>();
+        gv = null;
+
+    }
+
+    /**
+     * Get the hotspots that have been added.
+     * @return
+     */
+    public List<ValueBox> getHotspots() {
+        return hotspots;
+    }
+
+    /**
+     * Initialize and configure.
+     * @param config
+     */
+    public static void init(Config config) {
+        // Initialize the
+        soot.options.Options.v().set_allow_phantom_refs(true);
+
+        try {
+
+            StringAnalysis.loadDirectory(config.APP_ROOT_DIR + "/bin/classes/");
+            StringAnalysis.addJarsToClassPath(config.APP_ROOT_DIR + "/libs/");
+
+        } catch (IOException e) {
+            logger.debug("JSA got an exception.");
+            return;
+        }
+
+        // SootClass clazz = StringAnalysis.loadClass(Harness.HARNESS_CLASS_NAME);
+        setApplicationClasses(config);
+    }
+
+    
+    /**
+     * Run the analysis, after init. 
+     */
+    public static void run() {
+        // Well this seems a little dumb to simply wrap analyze...
+        v().analyze();
+    }
+
+    /**
+     * Run the analysis.
+     */
+    private void analyze() {
+        sa = new StringAnalysis(hotspots); // Run the analysis.
+
+        for (ValueBox h : hotspots) {
+            // automata.put(h.getValue(),sa.getAutomaton(h));
+            nonterminals.put(h.getValue(), sa.getNonterminal(h));
+        }
+
+        gv = new GrammarVisitor(sa.getGrammar());
+        return;
+    }
+
+
+    /**
+     * Add a hotspot for matching calls.
+     * @param signature The signature of the method.
+     * @param arg The argument index of the hotspot.
+     */
+    public void addArgumentHotspots(String signature, int arg) {
+        List<ValueBox> sigSpots = StringAnalysis.getArgumentExpressions(signature, arg);
+        logger.debug("For signature " + signature + " got " + sigSpots.size() + "hotspots.");
+        hotspots.addAll(sigSpots);
+    }
+
+
+    /**
+     * Get the regular expression inferred for the given Value.
+     * @param v The Soot Value assocatied with the hotspot.
+     * @return
+     */
+    public String getRegex(Value v) {
+        RE res = gv.getRE(nonterminals.get(v));
+        res = res.simplifyOps();
+        return res.toString();
+    }
+
+    /**
+     * Get the source file associated with the parameter hotspot.
+     * @param v The hotspot.
+     * @return
+     */
+    public String getSourceFile(ValueBox v) {
+        return v().getSourceFile(v);
+    }
+    
+    /**
+     * Get the source line associated with the parameter hotspot.
+     * @param v The hotspot.
+     * @return
+     */
+    public String getSourceLine(ValueBox v) {
+        return v().getSourceLine(v);
+    }
+
+//    public void logGrammar() {
+//        logger.debug("Done with String analysis");
+//        JSAStrings jsa = JSAStrings.v();
+//        GrammarVisitor visitor = new GrammarVisitor(sa.getGrammar());
+//
+//        for (ValueBox v : jsa.getHotspots()) {
+//            System.out.println("Hotspot: " + sa.getSourceFile(v) + ":::" + sa.getLineNumber(v)
+//                    + ":::");
+//            AutomataUtil.RE res = visitor.getRE(sa.getNonterminal(v));
+//            res = res.simplifyOps();
+//            System.out.println(res.toString(true));
+//        }
+//    }
+
+    /**
+     * Dump a summary of analysis.
+     */
+    public void log() {
+        logger.debug("Done with String analysis");
+        JSAStrings singleton = JSAStrings.v();
+
+        for (ValueBox v : singleton.getHotspots()) {
+            // exploreRegex(automata.get(v.getValue()));
+            logger.debug("Hotspot: " + sa.getSourceFile(v) + ":::" + sa.getLineNumber(v) + ":::"
+                    + singleton.getRegex(v.getValue()));
+        }
+    }
+
+
+    /**
+     * LWG: Allow application classes to be filtered from soot.Scene
+     * @param config
+     */
+    private static void setApplicationClasses(Config config) {
+        Collection<SootClass> appClasses = Scene.v().getApplicationClasses();
+        if (config.unfilteredStringAnalysis) {
+            StringAnalysis.setApplicationClasses(appClasses);
+        } else {
+            Collection<SootClass> srcClasses = new ArrayList<SootClass>();
+            for (SootClass cls : appClasses)
+                if (Project.v().isSrcClass(cls)) srcClasses.add(cls);
+            StringAnalysis.setApplicationClasses(srcClasses);
+        }
+    }
+    
+       
+    /* 
+     * Example of getting the results of JSA.
+    */
+    /*
+    private void example() {
+        List<ValueBox> hs = getHotspots();
+        for(ValueBox vb : hs) {
+            getSourceFile(vb);
+            getSourceLine(vb);
+            getRegex(vb.getValue());
+        }
+    }   
+    */
+    
+
 
 }
