@@ -1867,14 +1867,20 @@ public class Activity extends ContextThemeWrapper implements LayoutInflater.Fact
 	
 	@DSModeled(DSC.SAFE)
 	public void startActivityForResult(Intent intent, int requestCode){
-		Instrumentation.ActivityResult ar =
-                mInstrumentation.execStartActivity(
-                    this, mMainThread.getApplicationThread(), mToken, this,
-                    intent, requestCode);
-		mMainThread.sendActivityResult(
-                mToken, mEmbeddedID, requestCode, ar.getResultCode(),
-                ar.getResultData());
-		mParent.startActivityFromChild(this, intent, requestCode);
+		/*
+        The modeling required here will create the call to onActivityResult that 
+        could be called as an effect of this call.  onActivityResult will have
+        a new Intent.  We are modeling this Intent as a copy of the intent 
+        passed to this method.  Of course, we cannot model the response intent
+        perfectly, but grab as many fields as we can.
+		*/
+		Intent resultIntent = new Intent();
+
+		droidsafe.helpers.DSUtils.translateIntent(intent, resultIntent);
+
+		this.onActivityResult(requestCode, /* just make this up */ -1,
+				resultIntent);
+		
 		// Original method
 		/*
 		{

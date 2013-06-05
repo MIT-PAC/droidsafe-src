@@ -855,7 +855,7 @@ public final class Bundle implements Parcelable, Cloneable {
 	}
 	
 	public byte getByte(String key){
-		return (byte)dsTaint.getTaintInt();
+		return dsTaint.getTaintByte();
 		// Original method
 		/*
 		{
@@ -866,7 +866,7 @@ public final class Bundle implements Parcelable, Cloneable {
 	}
 	
 	public Byte getByte(String key, byte defaultValue){
-		return (byte)dsTaint.getTaintInt();
+		return dsTaint.getTaintByte();
 		// Original method
 		/*
 		{
@@ -886,7 +886,7 @@ public final class Bundle implements Parcelable, Cloneable {
 	}
 	
 	public char getChar(String key){
-		return (char)dsTaint.getTaintInt();
+		return dsTaint.getTaintChar();
 		// Original method
 		/*
 		{
@@ -897,7 +897,7 @@ public final class Bundle implements Parcelable, Cloneable {
 	}
 	
 	public char getChar(String key, char defaultValue){
-		return (char)dsTaint.getTaintInt();
+		return dsTaint.getTaintChar();
 		// Original method
 		/*
 		{
@@ -917,7 +917,7 @@ public final class Bundle implements Parcelable, Cloneable {
 	}
 	
 	public short getShort(String key){
-		return (short)dsTaint.getTaintInt();
+		return dsTaint.getTaintShort();
 		// Original method
 		/*
 		{
@@ -928,7 +928,7 @@ public final class Bundle implements Parcelable, Cloneable {
 	}
 	
 	public short getShort(String key, short defaultValue){
-		return (short)dsTaint.getTaintInt();
+		return dsTaint.getTaintShort();
 		// Original method
 		/*
 		{
