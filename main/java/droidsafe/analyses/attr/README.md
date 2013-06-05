@@ -54,14 +54,14 @@ How It's Results Are Used
   stores the set of values (or invalidated) calculated for each field.
 
 * The analysis result, the values calculated for the fields of objects
-of modeled classes, is used by the information flow to determine the
-taint kind for information flow sources that are dynamic in nature.
-For example, the information delivered by a database query is
-dependent on the database queried.  So we resolve the address of the
-database (a string), and use this to calculate the taint on any
-queries to the database.
+  of modeled classes, is used by the information flow to determine the
+  taint kind for information flow sources that are dynamic in nature.
+  For example, the information delivered by a database query is
+  dependent on the database queried.  So we resolve the address of the
+  database (a string), and use this to calculate the taint on any
+  queries to the database.
 
-When Deokhwan Kim's <dkim@csail.mit.edu> info-flow analysis comes
+  When Deokhwan Kim's <dkim@csail.mit.edu> info-flow analysis comes
   across a "new" expression, it asks the InjectedSourceFlows class
   what information kind, if any, is attached to each field to the
   newly-constructed object.  This class in turn queries the attribute
