@@ -9,6 +9,8 @@ package droidsafe.eclipse.plugin.core.specmodel;
  * Andrei Loskutov - initial API and implementation
  *******************************************************************************/
 
+import java.beans.PropertyChangeEvent;
+import java.beans.PropertyChangeListener;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
@@ -26,14 +28,14 @@ import org.eclipse.core.runtime.Assert;
  * @param <P> this element type (parent)
  * @param <C> child element type
  */
-public class TreeElement<P, C> {
+public class TreeElement<P, C> extends ModelChangeSupport implements PropertyChangeListener {
   private final List<TreeElement<C, ?>> children;
   private final P data;
   private final String name;
   private TreeElement<?, P> parent;
   private final Class<C> childrenType;
 
-  public TreeElement(String name, P data, Class<C> childrenType) {
+  public TreeElement(String name, P data, Class<C> childrenType) {    
     this.childrenType = childrenType;
     this.name = name == null ? "?" : name;
     this.data = data;
@@ -148,5 +150,11 @@ public class TreeElement<P, C> {
 
   public P getData() {
     return data;
+  }
+
+  @Override
+  public void propertyChange(PropertyChangeEvent evt) {
+    PropertyChangeEvent newEvent = new PropertyChangeEvent(this, evt.getPropertyName(), evt.getOldValue(), evt.getNewValue());
+    firePropertyChange(newEvent);    
   }
 }

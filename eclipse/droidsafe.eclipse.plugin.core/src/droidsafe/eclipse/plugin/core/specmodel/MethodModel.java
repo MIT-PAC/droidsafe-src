@@ -17,7 +17,10 @@ import droidsafe.utils.SourceLocationTag;
  * @author Marcel Becker (becker@kestrel.edu)
  * 
  */
-public class MethodModel implements Comparable<MethodModel>, Serializable {
+public class MethodModel extends ModelChangeSupport
+    implements
+      Comparable<MethodModel>,
+      Serializable {
   private static final Logger logger = LoggerFactory.getLogger(MethodModel.class);
   private static final long serialVersionUID = -2110312802230745309L;
   private String methodName;
@@ -84,26 +87,37 @@ public class MethodModel implements Comparable<MethodModel>, Serializable {
     return this.declarationLocation;
   }
 
+  /**
+   * Sets the value of the status field, and fires a property change event to notify the view. If
+   * the current status is the same as the new status, no property change event is triggered.
+   * 
+   * @param newStatus the new value for the status of the entity.
+   */
+  public void setStatus(DroidsafeIssueResolutionStatus newStatus) {
+    if (newStatus != getStatus()) {
+      firePropertyChange("status", this.status, this.status = newStatus);
+    }
+  }
 
   /**
    * Set the status of this code location to SAFE.
    */
   public void setSafe() {
-    this.status = DroidsafeIssueResolutionStatus.SAFE;
+    setStatus(DroidsafeIssueResolutionStatus.SAFE);
   }
 
   /**
    * Set the status of this code location to UNSAFE.
    */
   public void setUnsafe() {
-    this.status = DroidsafeIssueResolutionStatus.UNSAFE;
+    setStatus(DroidsafeIssueResolutionStatus.UNSAFE);
   }
 
   /**
    * Set the status of this code location to PENDING further decision on safety of issue.
    */
   public void setPending() {
-    this.status = DroidsafeIssueResolutionStatus.PENDING;
+    setStatus(DroidsafeIssueResolutionStatus.PENDING);
   }
 
   /**
@@ -111,7 +125,7 @@ public class MethodModel implements Comparable<MethodModel>, Serializable {
    * considered.
    */
   public void setUnresolved() {
-    this.status = DroidsafeIssueResolutionStatus.UNRESOLVED;
+    setStatus(DroidsafeIssueResolutionStatus.UNRESOLVED);
   }
 
   public DroidsafeIssueResolutionStatus getStatus() {

@@ -29,6 +29,8 @@ import droidsafe.eclipse.plugin.core.specmodel.TreeElement;
  */
 public class TreeElementLabelProvider extends StyledCellLabelProvider {// LabelProvider {
 
+  /** Logger for class */
+  @SuppressWarnings("unused")
   private static final Logger logger = LoggerFactory.getLogger(TreeElementLabelProvider.class);
 
   /** The image for the method node in the outline view */
@@ -53,7 +55,12 @@ public class TreeElementLabelProvider extends StyledCellLabelProvider {// LabelP
   private static final Image UNSAFE_SOURCE_LOCATION_IMAGE = PlatformUI.getWorkbench()
       .getSharedImages().getImage(ISharedImages.IMG_OBJS_ERROR_TSK);
 
-
+  /**
+   * Returns the label for the tree node to display in the tree outline view.
+   * 
+   * @param element The element to display in the tree node.
+   * @return The text for the node label.
+   */
   // @Override
   public String getText(Object element) {
     if (element instanceof TreeElement<?, ?>) {
@@ -62,12 +69,18 @@ public class TreeElementLabelProvider extends StyledCellLabelProvider {// LabelP
     return element.toString();
   }
 
+  /**
+   * Returns the icon image for the tree node.
+   * 
+   * @param element The tree node element to display.
+   * @return The icon image to display together with the label in the outline view.
+   */
   // @Override
   public Image getImage(Object element) {
     if (element instanceof TreeElement<?, ?>) {
       TreeElement<?, ?> treeElement = (TreeElement<?, ?>) element;
       Object data = treeElement.getData();
-      logger.debug("Data = {}", data);
+      // logger.info("Data = {}", data);
       if (data instanceof MethodModel) {
         MethodModel method = (MethodModel) data;
         if (method.isUnsafe()) {
@@ -89,7 +102,9 @@ public class TreeElementLabelProvider extends StyledCellLabelProvider {// LabelP
     return DEFAULT_IMAGE;
   }
 
-  /** A styler to allow the label of the node to be strikeout. */
+  /**
+   * A styler to allow the label of the node to be strikeout.
+   */
   private static StyledString.Styler STRIKEOUT = new StyledString.Styler() {
     @Override
     public void applyStyles(TextStyle textStyle) {
@@ -97,6 +112,11 @@ public class TreeElementLabelProvider extends StyledCellLabelProvider {// LabelP
     }
   };
 
+  /**
+   * The method that provides the desired style for the Tree node label.
+   * 
+   * @see org.eclipse.jface.viewers.StyledCellLabelProvider#update(org.eclipse.jface.viewers.ViewerCell)
+   */
   @Override
   public void update(ViewerCell cell) {
     Object obj = cell.getElement();
@@ -118,7 +138,14 @@ public class TreeElementLabelProvider extends StyledCellLabelProvider {// LabelP
     super.update(cell);
   }
 
-  // Helper Method to load the images
+  /**
+   * Helper Method to load the images
+   * 
+   * @param file The string with the path to the image file.
+   * 
+   * @return An Image object corresponding to the file name.
+   * 
+   */
   private static Image getImage(String file) {
     Bundle bundle = FrameworkUtil.getBundle(DroidsafeSecSpecLabelProvider.class);
     URL url = FileLocator.find(bundle, new Path("icons/" + file), null);

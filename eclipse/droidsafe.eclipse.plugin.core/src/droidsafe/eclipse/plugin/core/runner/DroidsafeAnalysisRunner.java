@@ -274,7 +274,7 @@ public class DroidsafeAnalysisRunner {
 
       if (spec != null) {
         generateMarkersForSecuritySpecification(spec);
-        SecuritySpecModel securitySpecModel = new SecuritySpecModel(spec);
+        SecuritySpecModel securitySpecModel = new SecuritySpecModel(spec, Config.v().APP_ROOT_DIR);
         SecuritySpecModel.serializeSpecToFile(securitySpecModel, Config.v().APP_ROOT_DIR);
       }
 

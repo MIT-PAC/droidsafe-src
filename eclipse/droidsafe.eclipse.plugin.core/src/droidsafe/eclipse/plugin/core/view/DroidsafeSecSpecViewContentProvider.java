@@ -24,12 +24,9 @@ public class DroidsafeSecSpecViewContentProvider implements ITreeContentProvider
 
   @Override
   public void inputChanged(Viewer viewer, Object oldInput, Object newInput) {
-    if (newInput instanceof SecuritySpecification) {
-      this.model = new SecuritySpecModel((SecuritySpecification) newInput);
-    } else if (newInput instanceof SecuritySpecModel) {
+    if (newInput instanceof SecuritySpecModel) {
       this.model = (SecuritySpecModel) newInput;
     }
-
   }
 
   @Override
