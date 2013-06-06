@@ -768,7 +768,6 @@ public class InformationFlowAnalysis {
             outStates = new States();
             final Address address = Address.v(allocNode);
             final ImmutableList<MyValue> values = ImmutableList.<MyValue>of(address);
-            final Chain<SootField> fields = newExpr.getBaseType().getSootClass().getFields();
             for (final Map.Entry<Edge, FrameHeapStatics> contextFrameHeapStatic : inStates.entrySet()) {
                 final Edge context = contextFrameHeapStatic.getKey();
                 final FrameHeapStatics inFrameHeapStatics = contextFrameHeapStatic.getValue();
