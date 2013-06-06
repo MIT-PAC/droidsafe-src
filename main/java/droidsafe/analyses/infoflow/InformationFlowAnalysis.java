@@ -803,8 +803,8 @@ public class InformationFlowAnalysis {
                         Frame frame = new Frame(inFrameHeapStatics.frame, inFrameHeapStatics.frame.thiz, inFrameHeapStatics.frame.params);
                         frame.putS(MethodLocal.v(method, local), values);
                         Heap heap = new Heap(inFrameHeapStatics.heap, inFrameHeapStatics.heap.arrays);
-                        for (SootField field : fields) {
-                            heap.instances.putW(address, field, InjectedSourceFlows.v().getInjectedFlows(allocNode, field, context));
+                        for (Map.Entry<SootField, Set<MyKind>> fieldKinds : InjectedSourceFlows.v().getInjectedFlows(allocNode, context).entrySet()) {
+                            heap.instances.putW(address, fieldKinds.getKey(), ImmutableList.<MyValue>copyOf(fieldKinds.getValue()));
                         }
                         outStates.put(context, new FrameHeapStatics(frame, heap, inFrameHeapStatics.statics));
                     }
