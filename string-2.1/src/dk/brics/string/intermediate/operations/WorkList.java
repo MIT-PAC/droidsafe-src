@@ -1,7 +1,7 @@
 package dk.brics.string.intermediate.operations;
 
-import java.util.LinkedList;
 import java.util.List;
+import java.util.TreeSet;
 
 import dk.brics.string.intermediate.Method;
 import dk.brics.string.intermediate.Statement;
@@ -14,7 +14,11 @@ public class WorkList {
 	
 	// XXX: Avoid duplicate entries in the queue? Or will the overhead from a set be higher than the benefit?
 	// Using a bitvector as set should be fast enough to gain some speed.
-    private LinkedList<Statement> list;
+    // LWG: use TreeSet to avoid duplicate entries. The ordering in which the statements are processed affects the
+    // performance. Currently the ordering used is the creation ordering of the statements.
+    // private LinkedList<Statement> list;
+    private TreeSet<Statement> list;
+
     private FlowAnalysis fa;
 
     /**
@@ -23,7 +27,9 @@ public class WorkList {
      * @param fa the flow analysis.
      */
     public WorkList(FlowAnalysis fa) {
-        list = new LinkedList<Statement>();
+        // LWG: Changed the data structure for efficiency reason. See comments on the field 'list'.
+        // list = new LinkedList<Statement>();
+        list = new TreeSet<Statement>();
         this.fa = fa;
     }
 
@@ -64,7 +70,9 @@ public class WorkList {
     public void iterate() {
         // TODO: better worklist strategy
         while (!list.isEmpty()) {
-            Statement s = list.removeFirst();
+            // LWG: Changed the data structure for efficiency reason. See comments on the field 'list'.
+            // Statement s = list.removeFirst();
+            Statement s = list.pollFirst();
             fa.transfer(s);
         }
     }

@@ -38,9 +38,10 @@ public class AliasInfo {
      * @param pair a pair of live variables
      * @return an {@link AliasStatus}, never <tt>null</tt>.
      */
-    public AliasStatus getAliasStatus(UnorderedPair<Variable> pair) {
-		return aliasing.getAliasStatus(pair);
-	}
+    // LWG: no longer use UnorderedPair<Variable> for efficiency reason
+    // public AliasStatus getAliasStatus(UnorderedPair<Variable> pair) {
+	// 	return aliasing.getAliasStatus(pair);
+	// }
     
     /**
      * Returns the aliasing relation between two variables at this
@@ -81,9 +82,10 @@ public class AliasInfo {
     	return changed;
     }
     
-    private UnorderedPair<Variable> pair(Variable var1, Variable var2) {
-    	return new UnorderedPair<Variable>(var1, var2);
-    }
+    // LWG: no longer use UnorderedPair<Variable> for efficiency reason
+    // private UnorderedPair<Variable> pair(Variable var1, Variable var2) {
+    // 	return new UnorderedPair<Variable>(var1, var2);
+    // }
     
     /**
      * Merge this element with the given, except for
@@ -106,10 +108,13 @@ public class AliasInfo {
         			continue;
         		if (var2 == a)
         			continue;
-        		
-        		UnorderedPair<Variable> pair = pair(var1, var2);
-        		AliasStatus status = aliasing.getAliasStatus(pair).leastUpperBound(other.aliasing.getAliasStatus(pair));
-        		changed |= aliasing.setAliasStatus(pair, status);
+
+                // LWG: no longer use UnorderedPair<Variable> for efficiency reason
+        		// UnorderedPair<Variable> pair = pair(var1, var2);
+        		// AliasStatus status = aliasing.getAliasStatus(pair).leastUpperBound(other.aliasing.getAliasStatus(pair));
+        		// changed |= aliasing.setAliasStatus(pair, status);
+        		AliasStatus status = aliasing.getAliasStatus(var1, var2).leastUpperBound(other.aliasing.getAliasStatus(var1, var2));
+        		changed |= aliasing.setAliasStatus(var1, var2, status);
         	}
         }
         

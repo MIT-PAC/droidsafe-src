@@ -5,7 +5,8 @@ import java.util.Map;
 import java.util.Set;
 
 import dk.brics.string.intermediate.Variable;
-import dk.brics.string.util.UnorderedPair;
+// LWG: No longer uses UnorderedPair<Variable> for efficiency reason
+// import dk.brics.string.util.UnorderedPair;
 
 /**
  * Represents the aliasing status between a set of variables.
@@ -32,11 +33,18 @@ public class AliasTable {
 	private static final AliasStatus DEFAULT_ELEMENT = AliasStatus.BOTTOM;
 	// TODO: It might be more efficient to set DEFAULT_ELEMENT to NOT, since it will use less memory after the analysis is complete.
 	
-	private Map<UnorderedPair<Variable>, AliasStatus> map = new HashMap<UnorderedPair<Variable>, AliasStatus>();
+    // LWG: changed the data structure for space/time efficiency reason
+	// private Map<UnorderedPair<Variable>, AliasStatus> map = new HashMap<UnorderedPair<Variable>, AliasStatus>();
+	private Map<Integer, Map<Integer, AliasStatus>> map = new HashMap<Integer, Map<Integer, AliasStatus>>();
+
 	private Set<Variable> variables;
 	
-	private boolean hasVariables(UnorderedPair<Variable> pair) {
-	    return variables.contains(pair.getFirst()) && variables.contains(pair.getSecond());
+    // LWG: No longer uses UnorderedPair<Variable> for efficiency reason
+	// private boolean hasVariables(UnorderedPair<Variable> pair) {
+	//     return variables.contains(pair.getFirst()) && variables.contains(pair.getSecond());
+	// }
+	private boolean hasVariables(Variable a, Variable b) {
+	    return variables.contains(a) && variables.contains(b);
 	}
 	
 	/**
@@ -56,7 +64,9 @@ public class AliasTable {
 					continue;
 				if (var1.getType().cannotBeUsefulAliasOf(var2.getType()))
 					continue;
-				map.put(new UnorderedPair<Variable>(var1, var2), initial);
+                // LWG: No longer uses UnorderedPair<Variable> for efficiency reason
+				// map.put(new UnorderedPair<Variable>(var1, var2), initial);
+                setAliasStatus(var1, var2, initial);
 			}
 		}
 	}
@@ -68,30 +78,60 @@ public class AliasTable {
 	 * @return an aliasing status. <tt>null</tt> is never returned.
 	 */
 	public AliasStatus getAliasStatus(Variable a, Variable b) {
-		return getAliasStatus(new UnorderedPair<Variable>(a, b));
+        // LWG: No longer uses UnorderedPair<Variable> for efficiency reason
+		// return getAliasStatus(new UnorderedPair<Variable>(a, b));
+		if (a == b)
+			return AliasStatus.DEFINITELY;
+		if (a.getType().cannotBeUsefulAliasOf(b.getType()))
+			return AliasStatus.NOT;
+		assert hasVariables(a, b);
+		return getAliasStatus(a.getKey(), b.getKey());
 	}
 	
+    // LWG: No longer uses UnorderedPair<Variable> for efficiency reason
+	// /**
+	//  * Returns the current aliasing status between two variables.
+	//  * @param pair a pair of variables from the set passed to {@link AliasTable}'s constructor.
+	//  * @return an aliasing status. <tt>null</tt> is never returned.
+	//  */
+	// public AliasStatus getAliasStatus(UnorderedPair<Variable> pair) {
+	// 	if (pair.getFirst() == pair.getSecond()) {
+	// 		return AliasStatus.DEFINITELY;
+	// 	}
+	// 	if (pair.getFirst().getType().cannotBeUsefulAliasOf(pair.getSecond().getType()))
+	// 		return AliasStatus.NOT;
+		
+	// 	assert hasVariables(pair);
+		
+	// 	AliasStatus status = map.get(pair);
+	// 	if (status == null) {
+	// 		return DEFAULT_ELEMENT;
+	// 	}
+	// 	return status;
+	// }
+
+    // LWG: New.
 	/**
-	 * Returns the current aliasing status between two variables.
-	 * @param pair a pair of variables from the set passed to {@link AliasTable}'s constructor.
+	 * Given the keys of two variables, returns the current aliasing status between these two variables.
+	 * @param key1 key of a variable from the set passed to {@link AliasTable}'s constructor.
+	 * @param key2 key of a variable from the set passed to {@link AliasTable}'s constructor.
 	 * @return an aliasing status. <tt>null</tt> is never returned.
 	 */
-	public AliasStatus getAliasStatus(UnorderedPair<Variable> pair) {
-		if (pair.getFirst() == pair.getSecond()) {
-			return AliasStatus.DEFINITELY;
-		}
-		if (pair.getFirst().getType().cannotBeUsefulAliasOf(pair.getSecond().getType()))
-			return AliasStatus.NOT;
-		
-		assert hasVariables(pair);
-		
-		AliasStatus status = map.get(pair);
+	public AliasStatus getAliasStatus(int key1, int key2) {
+		if (key1 > key2)
+			return getAliasStatus(key2, key1);
+		Integer i1 = Integer.valueOf(key1);
+		Integer i2 = Integer.valueOf(key2);
+		Map<Integer, AliasStatus> map2 = map.get(i1);
+		if (map2 == null)
+			return DEFAULT_ELEMENT;
+		AliasStatus status = map2.get(i2);
 		if (status == null) {
 			return DEFAULT_ELEMENT;
 		}
 		return status;
 	}
-	
+
 	/**
 	 * Sets the current aliasing status between two variables. The order of the arguments is irrelevant.
 	 * <p/>
@@ -99,43 +139,91 @@ public class AliasTable {
 	 * @return <tt>true</tt> if something changed
 	 */
 	public boolean setAliasStatus(Variable a, Variable b, AliasStatus status) {
-		return setAliasStatus(new UnorderedPair<Variable>(a, b), status);
-	}
-	
-	/**
-	 * Sets the current aliasing status between two variables. If the two variables
-	 * are the same, only {@link AliasStatus#DEFINITELY DEFINITELY} is accepted.
-	 * @param pair a pair of variables from the set passed to {@link AliasTable}'s constructor.
-	 * @return <tt>true</tt> if something changed
-	 */
-	public boolean setAliasStatus(UnorderedPair<Variable> pair, AliasStatus status) {
-		if (pair.getFirst() == pair.getSecond()) {
+        // LWG: No longer uses UnorderedPair<Variable> for efficiency reason
+		// return setAliasStatus(new UnorderedPair<Variable>(a, b), status);
+		if (a == b) {
 			if (status == AliasStatus.NOT)
 				throw new IllegalArgumentException("A variable can only be a definite alias of itself");
 			return false;
 		}
-		if (pair.getFirst().getType().cannotBeUsefulAliasOf(pair.getSecond().getType())) {
+		if (a.getType().cannotBeUsefulAliasOf(b.getType())) {
 			if (status == AliasStatus.DEFINITELY)
 				throw new IllegalArgumentException("Two variables of incompatible types can only NOT be aliases.");
 			return false;
 		}
+        assert hasVariables(a, b);
+		return setAliasStatus(a.getKey(), b.getKey(), status);
+	}
+
+    // LWG: New.
+	/**
+	 * Given the keys of two variables, sets the current aliasing status between two variables. If the two variables
+	 * are the same, only {@link AliasStatus#DEFINITELY DEFINITELY} is accepted.
+	 * @param key1 key of a variable from the set passed to {@link AliasTable}'s constructor.
+	 * @param key2 key of a variable from the set passed to {@link AliasTable}'s constructor.
+	 * @param status an aliasing status to be set to.
+	 * @return <tt>true</tt> if something changed
+	 */
+	public boolean setAliasStatus(int key1, int key2, AliasStatus status) {
+		if (key1 > key2)
+			return setAliasStatus(key2, key1, status);
         
-        assert hasVariables(pair);
-        
-		AliasStatus currentStatus = map.get(pair);
+		AliasStatus currentStatus = getAliasStatus(key1, key2);
 		if (status == currentStatus)
 			return false;
 		
+		Integer i1 = Integer.valueOf(key1);
+		Integer i2 = Integer.valueOf(key2);
+		Map<Integer, AliasStatus> map2 = map.get(i1);
+		if (map2 == null)
+			map2 = new HashMap<Integer, AliasStatus>();
 		if (status == DEFAULT_ELEMENT) {
 			if (currentStatus == null)
 				return false;
-			map.remove(pair);
+			map2.remove(i2);
 			return true;
 		}
 		
-		map.put(pair, status);
+		map2.put(i2, status);
+		
 		return true;
 	}
+
+    // LWG: No longer uses UnorderedPair<Variable> for efficiency reason
+	// /**
+	//  * Sets the current aliasing status between two variables. If the two variables
+	//  * are the same, only {@link AliasStatus#DEFINITELY DEFINITELY} is accepted.
+	//  * @param pair a pair of variables from the set passed to {@link AliasTable}'s constructor.
+	//  * @return <tt>true</tt> if something changed
+	//  */
+	// public boolean setAliasStatus(UnorderedPair<Variable> pair, AliasStatus status) {
+	// 	if (pair.getFirst() == pair.getSecond()) {
+	// 		if (status == AliasStatus.NOT)
+	// 			throw new IllegalArgumentException("A variable can only be a definite alias of itself");
+	// 		return false;
+	// 	}
+	// 	if (pair.getFirst().getType().cannotBeUsefulAliasOf(pair.getSecond().getType())) {
+	// 		if (status == AliasStatus.DEFINITELY)
+	// 			throw new IllegalArgumentException("Two variables of incompatible types can only NOT be aliases.");
+	// 		return false;
+	// 	}
+        
+    //     assert hasVariables(pair);
+        
+	// 	AliasStatus currentStatus = map.get(pair);
+	// 	if (status == currentStatus)
+	// 		return false;
+		
+	// 	if (status == DEFAULT_ELEMENT) {
+	// 		if (currentStatus == null)
+	// 			return false;
+	// 		map.remove(pair);
+	// 		return true;
+	// 	}
+		
+	// 	map.put(pair, status);
+	// 	return true;
+	// }
 	
 	/**
 	 * Returns the result of <tt>toString</tt> on the underlying map. Mostly

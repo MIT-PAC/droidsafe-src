@@ -258,7 +258,12 @@ public class Jimple2Intermediate implements TranslationContext {
         this.abstractDispatchStrategy = new AbstractDispatchClassHierarchy(class_hierarchy);
         skipped = 0;
         makeMethods();
-        makeWrapperMethod();
+        // LWG: Split the wrapper method into three methods for efficiency reason.
+        // makeWrapperMethod();
+        makeWrapperMethodForExternallyVisibleFields();
+        makeWrapperMethodForStringFields();
+        makeWrapperMethodForMethods();
+
         makeToStringMethods();
         translate();
         removeNops();
@@ -491,12 +496,151 @@ public class Jimple2Intermediate implements TranslationContext {
         }
     }
 
+    // LWG: Split the wrapper method into three methods for efficiency reason.
+    // /**
+    //  * Makes wrapper method that calls all externally visible methods in
+    //  * application classes, using arbitrary arguments.
+    //  */
+    // void makeWrapperMethod() {
+    //     Method wrapper = new Method(application, "<wrapper>", new Variable[0]);
+    //     methods.add(wrapper);
+        
+    //     // build the wrapper's body
+    //     ControlFlowBuilder cfg = new ControlFlowBuilder(wrapper);
+    //     cfg.moveToStatement(wrapper.getEntry());
+        
+    //     // create a variable holding any string
+    //     Variable anyVar = application.createVariable(VariableType.STRING);
+    //     Statement assignAny = new StringInit(anyVar, Basic.makeAnyString());
+    //     cfg.addStatement(assignAny);
+
+    //     // create a variable holding the null string
+    //     Variable nullVar = application.createVariable(VariableType.STRING);
+    //     Statement assignNull = new StringInit(nullVar, Automatons.getNull());
+    //     cfg.addStatement(assignNull);
+        
+    //     // initialize externally visible field variables to anything
+    //     // and set string fields to "null"
+    //     for (SootClass ac : getApplicationClasses()) {
+    //         for (SootField field : ac.getFields()) {
+    //             // String fields should be assigned to "null" because they are
+    //             // exempt from the
+    //             // null-pointer analysis we use for other objects
+    //             if (field.getType().equals(RefType.v("java.lang.String"))) {
+    //                 FieldAssignment assignment = new FieldAssignment(
+    //                         variableManager.getField(field), nullVar);
+    //                 cfg.addStatement(assignment);
+    //             }
+
+    //             // corrupt externally visible fields
+    //             if (ext.isExternallyVisibleField(field)) {
+    //                 VariableType type = fromSootType(field
+    //                         .getType());
+
+    //                 if (type == VariableType.NONE)
+    //                     continue;
+
+    //                 Variable fieldInit;
+
+    //                 switch (type) {
+    //                 case OBJECT:
+    //                 case STRING:
+    //                 case PRIMITIVE:
+    //                     fieldInit = anyVar;
+    //                     break;
+
+    //                 case STRINGBUFFER: {
+    //                     fieldInit = application.createVariable(VariableType.STRINGBUFFER);
+    //                     Statement s = new StringBufferCorrupt(fieldInit);
+    //                     cfg.addStatement(s);
+    //                     break;
+    //                 }
+
+    //                 case ARRAY: {
+    //                     fieldInit = application.createVariable(VariableType.ARRAY);
+    //                     Statement s = new ArrayCorrupt(fieldInit);
+    //                     cfg.addStatement(s);
+    //                     break;
+    //                 }
+    //                 default:
+    //                     throw new RuntimeException("Unknown field type " + type);
+    //                 }// switch
+
+    //                 FieldAssignment assignment = new FieldAssignment(variableManager.getField(field), fieldInit);
+    //                 cfg.addStatement(assignment);
+    //             }
+    //         }
+    //     }
+        
+    //     // split control here, and call a random externally visible method
+    //     cfg.startBranch();
+        
+    //     // call externally visible methods
+    //     for (SootClass ac : getApplicationClasses()) {
+    //         for (SootMethod sm : ac.getMethods()) {
+    //             if (ext.isExternallyVisibleMethod(sm)) {
+    //                 Method m = sms_m.get(sm.getSignature());
+    //                 Variable[] params = m.getEntry().params;
+    //                 Variable[] args = new Variable[params.length];
+    //                 for (int i = 0; i < params.length; i++) {
+    //                     Variable arg = application.createVariable(params[i].getType());
+    //                     args[i] = arg;
+    //                     Statement s;
+    //                     switch (arg.getType()) {
+    //                     case STRING:
+    //                         s = new StringInit(arg, Basic.makeAnyString());
+    //                         break;
+    //                     case STRINGBUFFER:
+    //                         s = new StringBufferCorrupt(arg);
+    //                         break;
+    //                     case ARRAY:
+    //                         s = new ArrayCorrupt(arg);
+    //                         break;
+    //                     case PRIMITIVE:
+    //                         // TODO: Integers can contain two characters, right? look deeper into which primitive type
+    //                         s = new PrimitiveInit(arg, Automaton.makeAnyChar());
+    //                         break;
+    //                     default:
+    //                         s = new ObjectCorrupt(arg);
+    //                         // (case NONE or NULL cannot occur because such
+    //                         // parameters do not get created for intermediate
+    //                         // methods)
+    //                     }
+    //                     cfg.addStatement(s);
+    //                 }
+    //                 Variable retvar = makeVariable(sm.getReturnType());
+    //                 Call c = new Call(retvar, m, args);
+    //                 cfg.addStatement(c);
+    //                 // If this is toString, remember the return value
+    //                 if (sm.getName().equals("toString")
+    //                         && sm.getParameterCount() == 0
+    //                         && sm.getReturnType().toString().equals("java.lang.String")) {
+    //                     tostring_targets.put(ac, m);
+    //                 }
+                    
+    //                 cfg.useBranch();
+    //             }
+    //         }
+    //     }
+        
+    //     // also add the possibility of no method being called.
+    //     // in case the application has no externally visible methods, we still want
+    //     // the return statement to be reachable so we don't create a malformed program.
+    //     cfg.useBranch();
+        
+    //     cfg.endBranch();
+        
+    //     // add a return statement
+    //     Return ret = new Return(application.createVariable(VariableType.NONE));
+    //     cfg.addStatement(ret);
+    // }
+
+    // LWG: New. Factored from makeWrapperMethod().
     /**
-     * Makes wrapper method that calls all externally visible methods in
-     * application classes, using arbitrary arguments.
+     * Makes wrapper method that initializes externally visible field variables to anything
      */
-    void makeWrapperMethod() {
-        Method wrapper = new Method(application, "<wrapper>", new Variable[0]);
+    void makeWrapperMethodForExternallyVisibleFields() {
+        Method wrapper = new Method(application, "<wrapper>_f_ev", new Variable[0]);
         methods.add(wrapper);
         
         // build the wrapper's body
@@ -508,24 +652,9 @@ public class Jimple2Intermediate implements TranslationContext {
         Statement assignAny = new StringInit(anyVar, Basic.makeAnyString());
         cfg.addStatement(assignAny);
 
-        // create a variable holding the null string
-        Variable nullVar = application.createVariable(VariableType.STRING);
-        Statement assignNull = new StringInit(nullVar, Automatons.getNull());
-        cfg.addStatement(assignNull);
-        
         // initialize externally visible field variables to anything
-        // and set string fields to "null"
         for (SootClass ac : getApplicationClasses()) {
             for (SootField field : ac.getFields()) {
-                // String fields should be assigned to "null" because they are
-                // exempt from the
-                // null-pointer analysis we use for other objects
-                if (field.getType().equals(RefType.v("java.lang.String"))) {
-                    FieldAssignment assignment = new FieldAssignment(
-                            variableManager.getField(field), nullVar);
-                    cfg.addStatement(assignment);
-                }
-
                 // corrupt externally visible fields
                 if (ext.isExternallyVisibleField(field)) {
                     VariableType type = fromSootType(field
@@ -565,6 +694,65 @@ public class Jimple2Intermediate implements TranslationContext {
                 }
             }
         }
+        
+        // add a return statement
+        Return ret = new Return(application.createVariable(VariableType.NONE));
+        cfg.addStatement(ret);
+    }
+
+    // LWG: New. Factored from makeWrapperMethod().
+    /**
+     * Makes wrapper method that initializes string field variables to "null".
+     */
+    void makeWrapperMethodForStringFields() {
+        Method wrapper = new Method(application, "<wrapper>_f_str", new Variable[0]);
+        methods.add(wrapper);
+        
+        // build the wrapper's body
+        ControlFlowBuilder cfg = new ControlFlowBuilder(wrapper);
+        cfg.moveToStatement(wrapper.getEntry());
+        
+        // create a variable holding any string
+        Variable anyVar = application.createVariable(VariableType.STRING);
+        Statement assignAny = new StringInit(anyVar, Basic.makeAnyString());
+        cfg.addStatement(assignAny);
+
+        // create a variable holding the null string
+        Variable nullVar = application.createVariable(VariableType.STRING);
+        Statement assignNull = new StringInit(nullVar, Automatons.getNull());
+        cfg.addStatement(assignNull);
+        
+        // set string fields to "null"
+        for (SootClass ac : getApplicationClasses()) {
+            for (SootField field : ac.getFields()) {
+                // String fields should be assigned to "null" because they are
+                // exempt from the
+                // null-pointer analysis we use for other objects
+                if (field.getType().equals(RefType.v("java.lang.String"))) {
+                    FieldAssignment assignment = new FieldAssignment(
+                            variableManager.getField(field), nullVar);
+                    cfg.addStatement(assignment);
+                }
+            }
+        }
+        
+        // add a return statement
+        Return ret = new Return(application.createVariable(VariableType.NONE));
+        cfg.addStatement(ret);
+    }
+
+    // LWG: New. Factored from makeWrapperMethod().
+    /**
+     * Makes wrapper method that calls all externally visible methods in
+     * application classes, using arbitrary arguments.
+     */
+    void makeWrapperMethodForMethods() {
+        Method wrapper = new Method(application, "<wrapper>_m", new Variable[0]);
+        methods.add(wrapper);
+        
+        // build the wrapper's body
+        ControlFlowBuilder cfg = new ControlFlowBuilder(wrapper);
+        cfg.moveToStatement(wrapper.getEntry());
         
         // split control here, and call a random externally visible method
         cfg.startBranch();

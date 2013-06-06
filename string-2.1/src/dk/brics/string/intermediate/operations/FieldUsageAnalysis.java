@@ -26,13 +26,19 @@ public class FieldUsageAnalysis {
 	public FieldUsageAnalysis(Collection<? extends Method> methods) {
 		// find non-transitive usage
 		for (Method method : methods) {
-			for (Statement statement : method.getStatements()) {
-				if (statement instanceof FieldStatement) {
-				    FieldStatement stm = (FieldStatement)statement;
-					Field field = stm.getField();
-					uses.add(method, field);
-				}
-			}
+            // LWG: Exclude fields set in wrapper methods for efficiency reason. This is based on the assumption that
+            // the field usage analysis is only used by the alias analysis and because of the nature of the wrapper
+            // methods there is no need to include the fields set in them.
+            // TODO: Make sure that this does not cause incorrect aliasing results.
+            if (!method.getName().startsWith("<wrapper>")) {
+                for (Statement statement : method.getStatements()) {
+                    if (statement instanceof FieldStatement) {
+                        FieldStatement stm = (FieldStatement)statement;
+                        Field field = stm.getField();
+                        uses.add(method, field);
+                    }
+                }
+            }
 		}
 		
 		// apply transitive closure
