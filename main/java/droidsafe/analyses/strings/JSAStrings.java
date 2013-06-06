@@ -98,6 +98,7 @@ public class JSAStrings {
      * @param config
      */
     public static void init(Config config) {
+      jsa = new JSAStrings();
         // Initialize the
         soot.options.Options.v().set_allow_phantom_refs(true);
 
