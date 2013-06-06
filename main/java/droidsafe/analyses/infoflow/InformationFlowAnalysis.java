@@ -35,6 +35,7 @@ import soot.Kind;
 import soot.Local;
 import soot.MethodOrMethodContext;
 import soot.Scene;
+import soot.SootClass;
 import soot.SootField;
 import soot.SootMethod;
 import soot.Type;
@@ -89,6 +90,7 @@ public class InformationFlowAnalysis {
     }
 
     public static void run() {
+        DSTaintObjectUtil.run();
         MemoryAccessAnalysis.run();
         v = new InformationFlowAnalysis(InterproceduralControlFlowGraph.v());
     }
@@ -651,9 +653,58 @@ public class InformationFlowAnalysis {
             @Override
             public void caseLocal(Local local) {
                 // local "=" invoke_expr
-                Block block = controlFlowGraph.unitToBlock.get(stmt);
-                final SootMethod caller = block.getBody().getMethod();
+                Block curr = controlFlowGraph.unitToBlock.get(stmt);
+                List<Block> succs = controlFlowGraph.getSuccsOf(curr);
+                assert succs.size() > 0;
 
+                if (succs.size() == 1) {
+                    Block succ = succs.get(0);
+                    assert !InterproceduralControlFlowGraph.containsCaughtExceptionRef(succ.getHead());
+                    States outStates = inStates;
+                    if (!outStates.equals(fromToStates.get(curr).get(succ))) {
+                        fromToStates.get(curr).put(succ, outStates);
+                        worklist.add(succ);
+                    }
+                    return;
+                }
+
+                boolean isGetTaint = false;
+                for (Block succ : succs) {
+                    if (DSTaintObjectUtil.v().isGetTaint(succ.getBody().getMethod())) {
+                        isGetTaint = true;
+                        break;
+                    }
+                }
+                if (isGetTaint) {
+                    assert succs.size() == 2;
+                    States outStates = new States();
+                    SootMethod caller = curr.getBody().getMethod();
+                    for (Map.Entry<Edge, FrameHeapStatics> contextFrameHeapStatics : inStates.entrySet()) {
+                        Edge context = contextFrameHeapStatics.getKey();
+                        FrameHeapStatics inFrameHeapStatics = contextFrameHeapStatics.getValue();
+                        ImmutableList<MyValue> receiver = receiver(caller, stmt, invokeExpr, inFrameHeapStatics.frame);
+                        Set<MyValue> values = new HashSet<MyValue>();
+                        for (MyValue value : receiver) {
+                            if (value instanceof Address) {
+                                Address address = (Address)value;
+                                values.addAll(inFrameHeapStatics.heap.instances.get(address, DSTaintObjectUtil.v().taint));
+                            } else {
+                                values.add(value);
+                            }
+                        }
+                        Frame frame = new Frame(inFrameHeapStatics.frame, inFrameHeapStatics.frame.thiz, inFrameHeapStatics.frame.params);
+                        frame.putS(MethodLocal.v(caller, local), values);
+                        outStates.put(context, new FrameHeapStatics(frame, inFrameHeapStatics.heap, inFrameHeapStatics.statics));
+                    }
+                    Block fallThrough = controlFlowGraph.getFallThrough(curr);
+                    if (!outStates.equals(fromToStates.get(curr).get(fallThrough))) {
+                        fromToStates.get(curr).put(fallThrough, outStates);
+                        worklist.add(fallThrough);
+                    }
+                    return;
+                }
+
+                final SootMethod caller = curr.getBody().getMethod();
                 FrameHeapStatics frameHeapStatics = new FrameHeapStatics();
                 Set<Address> rootsFromFramesNew = new HashSet<Address>();
                 for (Map.Entry<Edge, FrameHeapStatics> contextFrameHeapStatics : inStates.entrySet()) {
@@ -664,53 +715,44 @@ public class InformationFlowAnalysis {
                 if (!rootsFromFramesNew.isEmpty()) {
                     rootsFromFrames.put(stmt, ImmutableList.copyOf(rootsFromFramesNew));
                 }
-
                 ImmutableList<MyValue> thiz = receiver(caller, stmt, invokeExpr, frameHeapStatics.frame);
-
                 List<ImmutableList<MyValue>> args = evaluate(caller, invokeExpr.getArgs(), frameHeapStatics.frame);
-
                 final Set<Address> rootsFromThisArgsStatics = new HashSet<Address>();
                 rootsFromThisArgsStatics.addAll(rootsFromThis(caller, stmt, invokeExpr, frameHeapStatics.frame));
                 rootsFromThisArgsStatics.addAll(rootsFromArgs(args));
                 rootsFromThisArgsStatics.addAll(frameHeapStatics.statics.roots());
-
-                for (Block succ : controlFlowGraph.getSuccsOf(block)) {
+                for (Block succ : succs) {
                     // XXX: skip "$r0 := @caughtexception"
-                    if (!InterproceduralControlFlowGraph.containsCaughtExceptionRef(succ.getHead())) {
-                        SootMethod callee = succ.getBody().getMethod();
-                        States outStates;
-                        if (!caller.equals(callee)) {
-                            outStates = new States();
-                            Edge context = callGraph.findEdge(stmt, callee);
-                            Frame frame = new Frame();
-                            frame.putS(callee, thiz);
-                            int i = 0;
-                            for (Object type : callee.getParameterTypes()) {
-                                frame.putS(MethodMyParameterRef.v(callee, new ParameterRef((Type)type, i)), args.get(i));
-                                i++;
-                            }
-                            Heap heap = frameHeapStatics.heap.localize(rootsFromThisArgsStatics, MemoryAccessAnalysis.v().instances.get(callee), MemoryAccessAnalysis.v().arrays.get(callee));
-                            Statics statics = frameHeapStatics.statics.localize(MemoryAccessAnalysis.v().statics.get(callee));
-                            assert context != null;
-                            outStates.put(context, new FrameHeapStatics(frame, heap, statics));
-                        } else {
-                            if (controlFlowGraph.getPredsOf(succ).size() > 1) {
-                                outStates = new States();
-                                for (Map.Entry<Edge, FrameHeapStatics> contextFrameHeapStatic : inStates.entrySet()) {
-                                    Edge context = contextFrameHeapStatic.getKey();
-                                    FrameHeapStatics inFrameHeapStatics = contextFrameHeapStatic.getValue();
-                                    Frame frame = new Frame(inFrameHeapStatics.frame, inFrameHeapStatics.frame.thiz, inFrameHeapStatics.frame.params);
-                                    frame.remove(MethodLocal.v(caller, local));
-                                    outStates.put(context, new FrameHeapStatics(frame, inFrameHeapStatics.heap, inFrameHeapStatics.statics));
-                                }
-                            } else {
-                                outStates = inStates;
-                            }
+                    if (InterproceduralControlFlowGraph.containsCaughtExceptionRef(succ.getHead())) {
+                        continue;
+                    }
+                    States outStates = new States();
+                    SootMethod callee = succ.getBody().getMethod();
+                    if (!caller.equals(callee)) {
+                        Edge context = callGraph.findEdge(stmt, callee);
+                        assert context != null;
+                        Frame frame = new Frame();
+                        frame.putS(callee, thiz);
+                        int i = 0;
+                        for (Object type : callee.getParameterTypes()) {
+                            frame.putS(MethodMyParameterRef.v(callee, new ParameterRef((Type)type, i)), args.get(i));
+                            i++;
                         }
-                        if (!outStates.equals(fromToStates.get(block).get(succ))) {
-                            fromToStates.get(block).put(succ, outStates);
-                            worklist.add(succ);
+                        Heap heap = frameHeapStatics.heap.localize(rootsFromThisArgsStatics, MemoryAccessAnalysis.v().instances.get(callee), MemoryAccessAnalysis.v().arrays.get(callee));
+                        Statics statics = frameHeapStatics.statics.localize(MemoryAccessAnalysis.v().statics.get(callee));
+                        outStates.put(context, new FrameHeapStatics(frame, heap, statics));
+                    } else {
+                        for (Map.Entry<Edge, FrameHeapStatics> contextFrameHeapStatics : inStates.entrySet()) {
+                            Edge context = contextFrameHeapStatics.getKey();
+                            FrameHeapStatics inFrameHeapStatics = contextFrameHeapStatics.getValue();
+                            Frame frame = new Frame(inFrameHeapStatics.frame, inFrameHeapStatics.frame.thiz, inFrameHeapStatics.frame.params);
+                            frame.remove(MethodLocal.v(caller, local));
+                            outStates.put(context, new FrameHeapStatics(frame, inFrameHeapStatics.heap, inFrameHeapStatics.statics));
                         }
+                    }
+                    if (!outStates.equals(fromToStates.get(curr).get(succ))) {
+                        fromToStates.get(curr).put(succ, outStates);
+                        worklist.add(succ);
                     }
                 }
             }
@@ -1250,9 +1292,40 @@ public class InformationFlowAnalysis {
     // virtual_invoke_expr = "virtualinvoke" immediate ".[" method_signamter "]" "(" immediate_list ")";
     private void execute(Stmt stmt, InvokeExpr invokeExpr, final States inStates) {
         assert(stmt.containsInvokeExpr());
-        Block block = controlFlowGraph.unitToBlock.get(stmt);
-        final SootMethod caller = block.getBody().getMethod();
+        Block curr = controlFlowGraph.unitToBlock.get(stmt);
+        List<Block> succs = controlFlowGraph.getSuccsOf(curr);
+        assert succs.size() > 0;
 
+        if (succs.size() == 1) {
+            Block succ = succs.get(0);
+            assert !InterproceduralControlFlowGraph.containsCaughtExceptionRef(succ.getHead());
+            States outStates = inStates;
+            if (!outStates.equals(fromToStates.get(curr).get(succ))) {
+                fromToStates.get(curr).put(succ, outStates);
+                worklist.add(succ);
+            }
+            return;
+        }
+
+        boolean isGetTaint = false;
+        for (Block succ : succs) {
+            if (DSTaintObjectUtil.v().isGetTaint(succ.getBody().getMethod())) {
+                isGetTaint = true;
+                break;
+            }
+        }
+        if (isGetTaint) {
+            assert succs.size() == 2;
+            States outStates = inStates;
+            Block fallThrough = controlFlowGraph.getFallThrough(curr);
+            if (!outStates.equals(fromToStates.get(curr).get(fallThrough))) {
+                fromToStates.get(curr).put(fallThrough, outStates);
+                worklist.add(fallThrough);
+            }
+            return;
+        }
+
+        final SootMethod caller = curr.getBody().getMethod();
         FrameHeapStatics frameHeapStatics = new FrameHeapStatics();
         Set<Address> rootsFromFramesNew = new HashSet<Address>();
         for (Map.Entry<Edge, FrameHeapStatics> contextFrameHeapStatics : inStates.entrySet()) {
@@ -1263,44 +1336,38 @@ public class InformationFlowAnalysis {
         if (!rootsFromFramesNew.isEmpty()) {
             rootsFromFrames.put(stmt, ImmutableList.copyOf(rootsFromFramesNew));
         }
-
         ImmutableList<MyValue> thiz = receiver(caller, stmt, invokeExpr, frameHeapStatics.frame);
-
         List<ImmutableList<MyValue>> args = evaluate(caller, invokeExpr.getArgs(), frameHeapStatics.frame);
-
         final Set<Address> rootsFromThisArgsStatics = new HashSet<Address>();
         rootsFromThisArgsStatics.addAll(rootsFromThis(caller, stmt, invokeExpr, frameHeapStatics.frame));
         rootsFromThisArgsStatics.addAll(rootsFromArgs(args));
         rootsFromThisArgsStatics.addAll(frameHeapStatics.statics.roots());
-
-        for (Block succ : controlFlowGraph.getSuccsOf(block)) {
+        for (Block succ : controlFlowGraph.getSuccsOf(curr)) {
             // XXX: skip "$r0 := @caughtexception"
-            if (!InterproceduralControlFlowGraph.containsCaughtExceptionRef(succ.getHead())) {
-                SootMethod callee = succ.getBody().getMethod();
-                States outStates;
-                if (!caller.equals(callee)) {
-                    outStates = new States();
-                    Edge context = callGraph.findEdge(stmt, callee);
-                    Frame frame = new Frame();
-
-                    frame.putS(callee, thiz);
-
-                    int i = 0;
-                    for (Object type : callee.getParameterTypes()) {
-                        frame.putS(MethodMyParameterRef.v(callee, new ParameterRef((Type)type, i)), args.get(i));
-                        i++;
-                    }
-                    Heap heap = frameHeapStatics.heap.localize(rootsFromThisArgsStatics, MemoryAccessAnalysis.v().instances.get(callee), MemoryAccessAnalysis.v().arrays.get(callee));
-                    Statics statics = frameHeapStatics.statics.localize(MemoryAccessAnalysis.v().statics.get(callee));
-                    assert context != null;
-                    outStates.put(context, new FrameHeapStatics(frame, heap, statics));
-                } else {
-                        outStates = inStates;
+            if (InterproceduralControlFlowGraph.containsCaughtExceptionRef(succ.getHead())) {
+                continue;
+            }
+            States outStates = new States();
+            SootMethod callee = succ.getBody().getMethod();
+            if (!caller.equals(callee)) {
+                Edge context = callGraph.findEdge(stmt, callee);
+                assert context != null;
+                Frame frame = new Frame();
+                frame.putS(callee, thiz);
+                int i = 0;
+                for (Object type : callee.getParameterTypes()) {
+                    frame.putS(MethodMyParameterRef.v(callee, new ParameterRef((Type)type, i)), args.get(i));
+                    i++;
                 }
-                if (!outStates.equals(fromToStates.get(block).get(succ))) {
-                    fromToStates.get(block).put(succ, outStates);
-                    worklist.add(succ);
-                }
+                Heap heap = frameHeapStatics.heap.localize(rootsFromThisArgsStatics, MemoryAccessAnalysis.v().instances.get(callee), MemoryAccessAnalysis.v().arrays.get(callee));
+                Statics statics = frameHeapStatics.statics.localize(MemoryAccessAnalysis.v().statics.get(callee));
+                outStates.put(context, new FrameHeapStatics(frame, heap, statics));
+            } else {
+                outStates = inStates;
+            }
+            if (!outStates.equals(fromToStates.get(curr).get(succ))) {
+                fromToStates.get(curr).put(succ, outStates);
+                worklist.add(succ);
             }
         }
     }
@@ -1472,6 +1539,38 @@ public class InformationFlowAnalysis {
                 });
         dotExporter.export(new BufferedWriter(new FileWriter(fileName)), jGraphT);
     }
+
+}
+
+class DSTaintObjectUtil {
+    private static DSTaintObjectUtil v;
+
+    public static void run() {
+        v = new DSTaintObjectUtil();
+    }
+
+    public static DSTaintObjectUtil v() {
+        return v;
+    }
+
+    SootField taint;
+    Set<SootMethod> getTaints;
+
+    private DSTaintObjectUtil() {
+        SootClass klass = Scene.v().getSootClass("droidsafe.helpers.DSTaintObject");
+        assert klass != null;
+        taint = klass.getFieldByName("taint");
+        getTaints = new HashSet<SootMethod>();
+        for (SootMethod method : klass.getMethods()) {
+            if (method.getName().startsWith("getTaint")) {
+                getTaints.add(method);
+            }
+        }
+    }
+
+    boolean isGetTaint(SootMethod method) {
+        return getTaints.contains(method);
+    }
 }
 
 /**
@@ -1516,7 +1615,9 @@ class MemoryAccessAnalysis {
         do {
             oldFrameHeapStatics = new FrameHeapStatics(frameHeapStatics);
             for (Block block : topologicalOrder) {
-                frameHeapStatics = execute(block, frameHeapStatics);
+                if (!DSTaintObjectUtil.v().isGetTaint(block.getBody().getMethod())) {
+                    frameHeapStatics = execute(block, frameHeapStatics);
+                }
             }
         } while (!frameHeapStatics.equals(oldFrameHeapStatics));
 
@@ -1777,7 +1878,7 @@ class MemoryAccessAnalysis {
             @Override
             public void caseInvokeExpr(InvokeExpr invokeExpr) {
                 // variable "=" invoke_expr
-                setResult(execute(stmt, invokeExpr, inFrameHeapStatics));
+                setResult(execute(stmt, variable, invokeExpr, inFrameHeapStatics));
             }
 
             // rvalue = ... | expr | ...;
@@ -1945,6 +2046,61 @@ class MemoryAccessAnalysis {
         };
         variable.apply(variableSwitch);
         return (FrameHeapStatics)variableSwitch.getResult();
+    }
+
+    // assign_stmt = variable "=" invoke_expr
+    private FrameHeapStatics execute (final AssignStmt stmt, Value variable, InvokeExpr invokeExpr, final FrameHeapStatics inFrameHeapStatics) {
+        Block curr = controlFlowGraph.unitToBlock.get(stmt);
+        List<Block> succs = controlFlowGraph.getSuccsOf(curr);
+        assert succs.size() > 0;
+
+        if (succs.size() == 1) {
+            assert !InterproceduralControlFlowGraph.containsCaughtExceptionRef(succs.get(0).getHead());
+            return inFrameHeapStatics;
+        }
+
+        boolean isGetTaint = false;
+        for (Block succ : succs) {
+            if (DSTaintObjectUtil.v().isGetTaint(succ.getBody().getMethod())) {
+                isGetTaint = true;
+                break;
+            }
+        }
+        if (isGetTaint) {
+            assert succs.size() == 2;
+            SootMethod caller = curr.getBody().getMethod();
+            ImmutableList<MyValue> receiver = receiver(stmt, invokeExpr, inFrameHeapStatics.frame);
+            Set<MyValue> values = new HashSet<MyValue>();
+            for (MyValue value : receiver) {
+                Address address = (Address)value;
+                values.addAll(inFrameHeapStatics.heap.instances.get(address,  DSTaintObjectUtil.v().taint));
+            }
+            Frame frame = new Frame(inFrameHeapStatics.frame, inFrameHeapStatics.frame.thiz, inFrameHeapStatics.frame.params);
+            frame.putS(MethodLocal.v(caller, (Local)variable), values);
+            return new FrameHeapStatics(frame, inFrameHeapStatics.heap, inFrameHeapStatics.statics);
+        }
+
+        ImmutableList<MyValue> thiz = receiver(stmt, invokeExpr, inFrameHeapStatics.frame);
+        List<ImmutableList<MyValue>> args = evaluate(stmt, invokeExpr.getArgs(), inFrameHeapStatics.frame);
+        FrameHeapStatics outFrameHeapStatics = new FrameHeapStatics(inFrameHeapStatics);
+        SootMethod caller = curr.getBody().getMethod();
+        for (Block succ : controlFlowGraph.getSuccsOf(curr)) {
+            // XXX: skip "$r0 := @caughtexception"
+            if (InterproceduralControlFlowGraph.containsCaughtExceptionRef(succ.getHead())) {
+                continue;
+            }
+            SootMethod callee = succ.getBody().getMethod();
+            if (!caller.equals(callee)) {
+                outFrameHeapStatics.frame.putW(callee, thiz);
+
+                int i = 0;
+                for (Object type : callee.getParameterTypes()) {
+                    outFrameHeapStatics.frame.putW(MethodMyParameterRef.v(callee, new ParameterRef((Type)type, i)), args.get(i));
+                    i++;
+                }
+            }
+        }
+        return outFrameHeapStatics;
     }
 
     // assign_stmt = variable "=" new_array_expr
@@ -2185,48 +2341,49 @@ class MemoryAccessAnalysis {
         FrameHeapStatics outFrameHeapStatics = inFrameHeapStatics;
         for (Block fallThrough : controlFlowGraph.getSuccsOf(controlFlowGraph.unitToBlock.get(stmt))) {
             // XXX: skip "$r0 := @caughtexception"
-            if (!InterproceduralControlFlowGraph.containsCaughtExceptionRef(fallThrough.getHead())) {
-                final SootMethod caller = fallThrough.getBody().getMethod();
-                Unit callStmt = controlFlowGraph.getPrecedingCallBlock(fallThrough, caller).getTail();
-                if (callStmt instanceof AssignStmt) {
-                    final AssignStmt assignStmt = (AssignStmt)callStmt;
-                    final ImmutableList<MyValue> values = evaluate(stmt, (Immediate)stmt.getOp(), outFrameHeapStatics.frame);
-                    // variable = array_ref | instance_field_ref | static_field_ref | local;
-                    Value variable = assignStmt.getLeftOp();
-                    final FrameHeapStatics tmpFrameHeapStatics = outFrameHeapStatics;
-                    MyAbstractVariableSwitch variableSwitch = new MyAbstractVariableSwitch() {
-                        // variable = array_ref | ...;
-                        @Override
-                        public void caseArrayRef(ArrayRef arrayRef) {
-                            // TODO
-                            throw new UnsupportedOperationException(stmt.toString());
-                        }
+            if (InterproceduralControlFlowGraph.containsCaughtExceptionRef(fallThrough.getHead())) {
+                continue;
+            }
+            final SootMethod caller = fallThrough.getBody().getMethod();
+            Unit callStmt = controlFlowGraph.getPrecedingCallBlock(fallThrough, caller).getTail();
+            if (callStmt instanceof AssignStmt) {
+                final AssignStmt assignStmt = (AssignStmt)callStmt;
+                final ImmutableList<MyValue> values = evaluate(stmt, (Immediate)stmt.getOp(), outFrameHeapStatics.frame);
+                // variable = array_ref | instance_field_ref | static_field_ref | local;
+                Value variable = assignStmt.getLeftOp();
+                final FrameHeapStatics tmpFrameHeapStatics = outFrameHeapStatics;
+                MyAbstractVariableSwitch variableSwitch = new MyAbstractVariableSwitch() {
+                    // variable = array_ref | ...;
+                    @Override
+                    public void caseArrayRef(ArrayRef arrayRef) {
+                        // TODO
+                        throw new UnsupportedOperationException(stmt.toString());
+                    }
 
-                        // variable = ... | instance_field_ref | ...;
-                        @Override
-                        public void caseInstanceFieldRef(InstanceFieldRef lInstanceFieldRef) {
-                            // TODO
-                            throw new UnsupportedOperationException(stmt.toString());
-                        }
+                    // variable = ... | instance_field_ref | ...;
+                    @Override
+                    public void caseInstanceFieldRef(InstanceFieldRef lInstanceFieldRef) {
+                        // TODO
+                        throw new UnsupportedOperationException(stmt.toString());
+                    }
 
-                        // variable = ... | static_field_ref | ...;
-                        @Override
-                        public void caseStaticFieldRef(StaticFieldRef lStaticFieldRef) {
-                            // TODO
-                            throw new UnsupportedOperationException(stmt.toString());
-                        }
+                    // variable = ... | static_field_ref | ...;
+                    @Override
+                    public void caseStaticFieldRef(StaticFieldRef lStaticFieldRef) {
+                        // TODO
+                        throw new UnsupportedOperationException(stmt.toString());
+                    }
 
-                        // variable = ... | local;
-                        @Override
-                        public void caseLocal(final Local local) {
-                            Frame frame = new Frame(tmpFrameHeapStatics.frame, tmpFrameHeapStatics.frame.thiz, tmpFrameHeapStatics.frame.params);
-                            frame.putW(MethodLocal.v(caller, local), values);
-                            setResult(new FrameHeapStatics(frame, tmpFrameHeapStatics.heap, tmpFrameHeapStatics.statics));
-                        }
-                    };
-                    variable.apply(variableSwitch);
-                    outFrameHeapStatics = (FrameHeapStatics)variableSwitch.getResult();
-                }
+                    // variable = ... | local;
+                    @Override
+                    public void caseLocal(final Local local) {
+                        Frame frame = new Frame(tmpFrameHeapStatics.frame, tmpFrameHeapStatics.frame.thiz, tmpFrameHeapStatics.frame.params);
+                        frame.putW(MethodLocal.v(caller, local), values);
+                        setResult(new FrameHeapStatics(frame, tmpFrameHeapStatics.heap, tmpFrameHeapStatics.statics));
+                    }
+                };
+                variable.apply(variableSwitch);
+                outFrameHeapStatics = (FrameHeapStatics)variableSwitch.getResult();
             }
         }
         return outFrameHeapStatics;
@@ -2234,7 +2391,7 @@ class MemoryAccessAnalysis {
 
     // stmt = ... | assign_stmt | ... ;
     // assign_stmt = variable "=" rvalue;
-    // variable = array_ref | instance_field_ref | static_field_ref | local;
+    // variable = array_ref | instance_field_ref | static_field_ref;
     // rvalue = ... | expr | ...;
     // expr = ... | invoke_expr | ...;
 
@@ -2248,30 +2405,48 @@ class MemoryAccessAnalysis {
     // virtual_invoke_expr = "virtualinvoke" immediate ".[" method_signamter "]" "(" immediate_list ")";
     private FrameHeapStatics execute(Stmt stmt, InvokeExpr invokeExpr, final FrameHeapStatics inFrameHeapStatics) {
         assert(stmt.containsInvokeExpr());
-        Block block = controlFlowGraph.unitToBlock.get(stmt);
-        SootMethod caller = block.getBody().getMethod();
+
+        Block curr = controlFlowGraph.unitToBlock.get(stmt);
+        List<Block> succs = controlFlowGraph.getSuccsOf(curr);
+        assert succs.size() > 0;
+
+        if (succs.size() == 1) {
+            assert !InterproceduralControlFlowGraph.containsCaughtExceptionRef(succs.get(0).getHead());
+            return inFrameHeapStatics;
+        }
+
+        boolean isGetTaint = false;
+        for (Block succ : succs) {
+            if (DSTaintObjectUtil.v().isGetTaint(succ.getBody().getMethod())) {
+                isGetTaint = true;
+                break;
+            }
+        }
+        if (isGetTaint) {
+            assert succs.size() == 2;
+            return inFrameHeapStatics;
+        }
 
         ImmutableList<MyValue> thiz = receiver(stmt, invokeExpr, inFrameHeapStatics.frame);
-
         List<ImmutableList<MyValue>> args = evaluate(stmt, invokeExpr.getArgs(), inFrameHeapStatics.frame);
-
         FrameHeapStatics outFrameHeapStatics = new FrameHeapStatics(inFrameHeapStatics);
-        for (Block succ : controlFlowGraph.getSuccsOf(block)) {
+        SootMethod caller = curr.getBody().getMethod();
+        for (Block succ : controlFlowGraph.getSuccsOf(curr)) {
             // XXX: skip "$r0 := @caughtexception"
-            if (!InterproceduralControlFlowGraph.containsCaughtExceptionRef(succ.getHead())) {
-                SootMethod callee = succ.getBody().getMethod();
-                if (!caller.equals(callee)) {
-                    outFrameHeapStatics.frame.putW(callee, thiz);
-
-                    int i = 0;
-                    for (Object type : callee.getParameterTypes()) {
-                        outFrameHeapStatics.frame.putW(MethodMyParameterRef.v(callee, new ParameterRef((Type)type, i)), args.get(i));
-                        i++;
-                    }
+            if (InterproceduralControlFlowGraph.containsCaughtExceptionRef(succ.getHead())) {
+                continue;
+            }
+            SootMethod callee = succ.getBody().getMethod();
+            if (!caller.equals(callee)) {
+                outFrameHeapStatics.frame.putW(callee, thiz);
+                int i = 0;
+                for (Object type : callee.getParameterTypes()) {
+                    outFrameHeapStatics.frame.putW(MethodMyParameterRef.v(callee, new ParameterRef((Type)type, i)), args.get(i));
+                    i++;
                 }
             }
         }
-       return outFrameHeapStatics;
+        return outFrameHeapStatics;
     }
 
     private ImmutableList<MyValue> evaluate(final Stmt stmt, Immediate immediate, final Frame frame) {
