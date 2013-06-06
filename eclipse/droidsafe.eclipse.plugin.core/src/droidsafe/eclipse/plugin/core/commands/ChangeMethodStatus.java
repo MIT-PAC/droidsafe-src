@@ -25,6 +25,7 @@ import droidsafe.eclipse.plugin.core.specmodel.TreeElement;
  */
 public class ChangeMethodStatus extends AbstractHandler {
 
+  @SuppressWarnings("unused")
   private final static Logger logger = LoggerFactory.getLogger(ChangeMethodStatus.class);
   
   /**

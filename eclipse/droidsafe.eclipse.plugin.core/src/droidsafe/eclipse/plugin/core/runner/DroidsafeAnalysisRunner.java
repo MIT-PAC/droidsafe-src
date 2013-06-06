@@ -15,7 +15,9 @@ import org.eclipse.core.runtime.CoreException;
 import org.eclipse.core.runtime.FileLocator;
 import org.eclipse.core.runtime.IPath;
 import org.eclipse.core.runtime.IProgressMonitor;
+import org.eclipse.core.runtime.IStatus;
 import org.eclipse.core.runtime.Platform;
+import org.eclipse.core.runtime.Status;
 import org.eclipse.jface.preference.IPreferenceStore;
 import org.osgi.framework.Bundle;
 import org.slf4j.Logger;
@@ -116,8 +118,9 @@ public class DroidsafeAnalysisRunner {
     Config.v().target = passTarget;
     Config.v().dumpPta = preferenceStore.getBoolean(PreferenceConstants.P_DUMP_PTA);
     Config.v().dumpCallGraph = preferenceStore.getBoolean(PreferenceConstants.P_DUMP_CALL_GRAPH);
-    Config.v().runStringAnalysis = preferenceStore.getBoolean(PreferenceConstants.P_RUN_STRING_ANALYSIS);
-    
+    Config.v().runStringAnalysis =
+        preferenceStore.getBoolean(PreferenceConstants.P_RUN_STRING_ANALYSIS);
+
     logger.info("From Activator.getPreferenceStore" + "\nJIMPLE Prefence = " + writeJimpleClasses
         + "\nInfoFlow = " + infoFlow + "\nPass = " + passTarget);
 
@@ -129,42 +132,70 @@ public class DroidsafeAnalysisRunner {
     Permissions.init();
   }
 
-  public void run(IProgressMonitor monitor) {
+  public IStatus run(IProgressMonitor monitor) {
     logger.info("Creating locals for all string constant arguments.");
     LocalForStringConstantArguments.run();
     monitor.worked(1);
+    if (monitor.isCanceled()) {
+      return Status.CANCEL_STATUS;
+    }
+
+    // IJobManager mgr = Job.getJobManager();
+    // Job currentJob = mgr.currentJob();
+    // currentJob.cancel();
+    // monitor.setCanceled(true);
+    // if (monitor.isCanceled()){
+    // return Status.CANCEL_STATUS;
+    // }
 
     monitor.subTask("Scalar Optimization");
     logger.info("Calling scalar optimizations.");
     ScalarAppOptimizations.run();
     monitor.worked(1);
+    if (monitor.isCanceled()) {
+      return Status.CANCEL_STATUS;
+    }
 
     logger.info("Create tags for the overriden system methods in user code.");
     monitor.subTask("Create tags for overriden system methods");
     TagImplementedSystemMethods.run();
     monitor.worked(1);
+    if (monitor.isCanceled()) {
+      return Status.CANCEL_STATUS;
+    }
 
     logger.info("Resolving resources and Manifest.");
     monitor.subTask("Resolving Manifest");
     Resources.resolveManifest(Config.v().APP_ROOT_DIR);
     monitor.worked(1);
-
+    if (monitor.isCanceled()) {
+      return Status.CANCEL_STATUS;
+    }
 
 
     logger.info("Finding entry points in user code.");
     monitor.subTask("Finding entry points in user code.");
     EntryPoints.v().calculate();
     monitor.worked(1);
+    if (monitor.isCanceled()) {
+      return Status.CANCEL_STATUS;
+    }
 
     logger.info("Creating Harness.");
     monitor.subTask("Creating Harness");
     Harness.create();
     monitor.worked(1);
+    if (monitor.isCanceled()) {
+      return Status.CANCEL_STATUS;
+    }
 
     logger.info("Setting Harness Main as entry point.");
     monitor.subTask("Setting Harness Main as entry point");
     setHarnessMainAsEntryPoint();
     monitor.worked(1);
+    if (monitor.isCanceled()) {
+      return Status.CANCEL_STATUS;
+    }
 
     if (Config.v().runStringAnalysis) {
 
@@ -202,30 +233,46 @@ public class DroidsafeAnalysisRunner {
       JSAStrings.v().addArgumentHotspots(
           "<android.app.Activity: void setTitle(java.lang.CharSequence)>", 0);
       JSAStrings.run();
-
+      monitor.worked(1);
+      if (monitor.isCanceled()) {
+        return Status.CANCEL_STATUS;
+      }
       // Debugging.
       JSAStrings.v().log();
     }
 
     AddAllocsForAPICalls.run();
     monitor.worked(1);
+    if (monitor.isCanceled()) {
+      return Status.CANCEL_STATUS;
+    }
 
     logger.info("Starting PTA...");
     monitor.subTask("PTA First Pass");
     GeoPTA.release();
     GeoPTA.run();
     monitor.worked(1);
+    if (monitor.isCanceled()) {
+      return Status.CANCEL_STATUS;
+    }
+
 
     logger.info("Resolving String Constants");
     monitor.subTask("Resolving String Constants");
     ResolveStringConstants.run(Config.v().APP_ROOT_DIR);
     monitor.worked(1);
+    if (monitor.isCanceled()) {
+      return Status.CANCEL_STATUS;
+    }
 
     logger.info("Restarting PTA...");
     monitor.subTask("PTA Second Pass");
     GeoPTA.release();
     GeoPTA.run();
     monitor.worked(1);
+    if (monitor.isCanceled()) {
+      return Status.CANCEL_STATUS;
+    }
 
     // write jimple txt files for all classes so we can analzye them
     if (Config.v().writeJimpleAppClasses) {
@@ -236,16 +283,25 @@ public class DroidsafeAnalysisRunner {
     RCFG.generate();
     logger.info("Ending DroidSafe Run");
     monitor.worked(1);
+    if (monitor.isCanceled()) {
+      return Status.CANCEL_STATUS;
+    }
 
     logger.info("Starting Attribute Modeling");
     monitor.subTask("Attribute Modeling");
     AttributeModeling.run();
     monitor.worked(1);
     logger.info("Finished Attribute Modeling");
+    if (monitor.isCanceled()) {
+      return Status.CANCEL_STATUS;
+    }
 
     // print out what modeling is required for this application
     RequiredModeling.run();
     monitor.worked(1);
+    if (monitor.isCanceled()) {
+      return Status.CANCEL_STATUS;
+    }
 
     if (Config.v().infoFlow) {
       logger.info("Starting Information Flow Analysis...");
@@ -283,6 +339,7 @@ public class DroidsafeAnalysisRunner {
       logger.error("Not implemented yet!");
     }
     monitor.worked(1);
+    return Status.OK_STATUS;
   }
 
   private void setHarnessMainAsEntryPoint() {

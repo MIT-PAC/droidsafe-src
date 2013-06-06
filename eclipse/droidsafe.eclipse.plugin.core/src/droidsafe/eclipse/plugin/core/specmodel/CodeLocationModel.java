@@ -27,6 +27,7 @@ public class CodeLocationModel extends SourceLocationTag implements IModelChange
   /**
    * Logger.
    */
+  @SuppressWarnings("unused")
   private static final Logger logger = LoggerFactory.getLogger(CodeLocationModel.class);
   
   /**

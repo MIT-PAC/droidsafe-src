@@ -277,7 +277,7 @@ public class SecuritySpecModel extends ModelChangeSupport
    * model.
    * 
    * @param androidProjectRootPath The root location of the Android Eclipse project.
-   * @return The security specification for the Androind application.
+   * @return The security specification for the Android application.
    */
   public static SecuritySpecModel deserializeSpecFromFile(String androidProjectRootPath) {
     SecuritySpecModel spec = null;
