@@ -151,6 +151,17 @@ public class InterproceduralControlFlowGraph implements DirectedGraph<Block> {
         return null;
     }
 
+    public Block getFallThrough(Block callBlock) {
+        assert ((Stmt)callBlock.getTail()).containsInvokeExpr();
+        SootMethod method = callBlock.getBody().getMethod();
+        for (Block succ : blockToSuccs.get(callBlock)) {
+            if (succ.getBody().getMethod().equals(method)) {
+                return succ;
+            }
+        }
+        return null;
+    }
+
     public static boolean containsCaughtExceptionRef(Unit unit) {
         return (unit instanceof IdentityStmt) && (((IdentityStmt)unit).getRightOp() instanceof CaughtExceptionRef);
     }
