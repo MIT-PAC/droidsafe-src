@@ -95,6 +95,7 @@ public class MethodModel extends ModelChangeSupport
    */
   public void setStatus(DroidsafeIssueResolutionStatus newStatus) {
     if (newStatus != getStatus()) {
+      //logger.debug("Firing propertyChange event for "+this);
       firePropertyChange("status", this.status, this.status = newStatus);
     }
   }

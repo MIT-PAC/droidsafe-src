@@ -182,8 +182,9 @@ public class SecuritySpecOutlineViewPart extends ViewPart {
       viewer.setContentProvider(this.contentProvider);
       viewer.setLabelProvider(this.labelProvider);
       viewer.setAutoExpandLevel(1);
+      viewer.setUseHashlookup(true);
       sortViewByMethodName();
-      
+
       // Make sure there is no text viewer in the container otherwise we get a split screen.
       disposeTextViewer();
       viewer.setInput(securitySpecModel);
@@ -215,7 +216,7 @@ public class SecuritySpecOutlineViewPart extends ViewPart {
 
         @Override
         public void doubleClick(DoubleClickEvent event) {
-          //TreeViewer viewer = (TreeViewer) event.getViewer();
+          // TreeViewer viewer = (TreeViewer) event.getViewer();
           IStructuredSelection thisSelection = (IStructuredSelection) event.getSelection();
           Object selectedNode = thisSelection.getFirstElement();
           // viewer.setExpandedState(selectedNode, !viewer.getExpandedState(selectedNode));
@@ -347,14 +348,14 @@ public class SecuritySpecOutlineViewPart extends ViewPart {
       IResource res = (IResource) ((IAdaptable) selectedObject).getAdapter(IResource.class);
       IProject project = res.getProject();
       if (project != null) {
-        logger.debug("Project found: " + project.getName());
+        //logger.debug("Project found: " + project.getName());
         return project;
       }
     }
     return null;
   }
 
-  
+
   public void sortViewByMethodName() {
     this.viewer.setSorter(new ViewerSorter() {
 
@@ -396,16 +397,16 @@ public class SecuritySpecOutlineViewPart extends ViewPart {
         if (o1 instanceof TreeElement<?, ?> && o2 instanceof TreeElement<?, ?>) {
           Object oo1 = ((TreeElement<?, ?>) o1).getData();
           Object oo2 = ((TreeElement<?, ?>) o2).getData();
-          logger.debug("Elements tested o1 {} o2 {} result {}", new Object[] {
-              ((TreeElement<?, ?>) o1).getName(), ((TreeElement<?, ?>) o2).getName()});
+          // logger.debug("Elements tested o1 {} o2 {} result {}", new Object[] {
+          // ((TreeElement<?, ?>) o1).getName(), ((TreeElement<?, ?>) o2).getName()});
           return compare(view, oo1, oo2);
 
         } else if (o1 instanceof MethodModel && o2 instanceof MethodModel) {
           MethodModel m1 = (MethodModel) o1;
           MethodModel m2 = (MethodModel) o2;
           result = m1.getClassName().compareTo(m2.getClassName());
-          logger.debug("Class Names m1 {} m2 {} result {}",
-              new Object[] {m1.getClassName(), m2.getClassName(), Integer.toString(result)});
+          // logger.debug("Class Names m1 {} m2 {} result {}",
+          // new Object[] {m1.getClassName(), m2.getClassName(), Integer.toString(result)});
           if (result == 0) {
             result = m1.getMethodName().compareTo(m2.getMethodName());
           }
@@ -415,8 +416,8 @@ public class SecuritySpecOutlineViewPart extends ViewPart {
           if (result == 0) {
             result = m1.getSignature().compareTo(m2.getSignature());
           }
-          logger.debug("Class Names m1 {} m2 {} result {}",
-              new Object[] {m1.getClassName(), m2.getClassName(), Integer.toString(result)});
+          // logger.debug("Class Names m1 {} m2 {} result {}",
+          // new Object[] {m1.getClassName(), m2.getClassName(), Integer.toString(result)});
         } else if (o1 instanceof SourceLocationTag && o2 instanceof SourceLocationTag) {
           SourceLocationTag l1 = (SourceLocationTag) o1;
           SourceLocationTag l2 = (SourceLocationTag) o2;
@@ -429,7 +430,5 @@ public class SecuritySpecOutlineViewPart extends ViewPart {
       }
     });
   }
-  
-  
-  
-}
+
+  }

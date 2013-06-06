@@ -147,7 +147,7 @@ public class TreeElementLabelProvider extends StyledCellLabelProvider {// LabelP
    * 
    */
   private static Image getImage(String file) {
-    Bundle bundle = FrameworkUtil.getBundle(DroidsafeSecSpecLabelProvider.class);
+    Bundle bundle = FrameworkUtil.getBundle(TreeElementLabelProvider.class);
     URL url = FileLocator.find(bundle, new Path("icons/" + file), null);
     ImageDescriptor image = ImageDescriptor.createFromURL(url);
     return image.createImage();

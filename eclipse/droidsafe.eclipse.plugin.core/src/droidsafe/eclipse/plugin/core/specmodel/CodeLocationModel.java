@@ -6,6 +6,9 @@ package droidsafe.eclipse.plugin.core.specmodel;
 import java.beans.PropertyChangeListener;
 import java.beans.PropertyChangeSupport;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import droidsafe.utils.SourceLocationTag;
 
 /**
@@ -21,6 +24,11 @@ public class CodeLocationModel extends SourceLocationTag implements IModelChange
    */
   private static final long serialVersionUID = -8049573443676341282L;
 
+  /**
+   * Logger.
+   */
+  private static final Logger logger = LoggerFactory.getLogger(CodeLocationModel.class);
+  
   /**
    * Current status of the code location.
    */
@@ -47,6 +55,7 @@ public class CodeLocationModel extends SourceLocationTag implements IModelChange
    */
   public void setStatus(DroidsafeIssueResolutionStatus newStatus) {
     if (newStatus != getStatus()) {
+      //logger.debug("Firing propertyChange event for "+this);
       firePropertyChange("status", this.status, this.status = newStatus);
     }
   }

@@ -35,6 +35,10 @@ public class ModelChangeSupport implements IModelChangeSupport {
   public void addPropertyChangeListener(String propertyName, PropertyChangeListener listener) {
     changeSupport.addPropertyChangeListener(propertyName, listener);
   }
+  
+  public PropertyChangeListener[] getPropertyChangeListeners() { 
+    return changeSupport.getPropertyChangeListeners();
+  }
 
   /* (non-Javadoc)
    * @see droidsafe.eclipse.plugin.core.specmodel.IModelChangeSupport#removePropertyChangeListener(java.lang.String, java.beans.PropertyChangeListener)

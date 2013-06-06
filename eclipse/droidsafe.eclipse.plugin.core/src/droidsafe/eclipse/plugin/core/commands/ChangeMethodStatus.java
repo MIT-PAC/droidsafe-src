@@ -5,28 +5,35 @@ import org.eclipse.core.commands.ExecutionEvent;
 import org.eclipse.core.commands.ExecutionException;
 import org.eclipse.jface.viewers.ISelection;
 import org.eclipse.jface.viewers.IStructuredSelection;
-import org.eclipse.ui.IViewPart;
 import org.eclipse.ui.IWorkbenchPage;
 import org.eclipse.ui.handlers.HandlerUtil;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import droidsafe.eclipse.plugin.core.specmodel.CodeLocationModel;
 import droidsafe.eclipse.plugin.core.specmodel.DroidsafeIssueResolutionStatus;
 import droidsafe.eclipse.plugin.core.specmodel.MethodModel;
 import droidsafe.eclipse.plugin.core.specmodel.TreeElement;
-import droidsafe.eclipse.plugin.core.view.SecuritySpecOutlineViewPart;
 
 /**
- * Command to mark the selected element in the droidsafe outline view as safe.
+ * Command to mark the selected element in the droidsafe outline view as safe, unsafe, pending, or
+ * unresolved. All the children elements to the selected elements will also have their status
+ * changed.
  * 
  * @author Marcel Becker (becker@kestrel.edu)
  * 
  */
 public class ChangeMethodStatus extends AbstractHandler {
 
+  private final static Logger logger = LoggerFactory.getLogger(ChangeMethodStatus.class);
+  
+  /**
+   * Command implementation. The command has a parameter that identifies the new status of the node.
+   */
   @Override
   public Object execute(ExecutionEvent event) throws ExecutionException {
     IWorkbenchPage activePage = HandlerUtil.getActiveWorkbenchWindow(event).getActivePage();
-    IViewPart view = activePage.findView(SecuritySpecOutlineViewPart.VIEW_ID);
+    //IViewPart view = activePage.findView(SecuritySpecOutlineViewPart.VIEW_ID);
     ISelection topSelection = activePage.getSelection();
     if (topSelection != null && topSelection instanceof IStructuredSelection) {
 
@@ -48,16 +55,22 @@ public class ChangeMethodStatus extends AbstractHandler {
       for (Object selection : structuredSelection.toList()) {
         if (selection instanceof TreeElement<?, ?>) {
           TreeElement<?, ?> element = (TreeElement<?, ?>) selection;
-          setElementStatus(element, status, view);
+          setElementStatus(element, status);
         }
       }
     }
     return null;
   }
 
-  private void setElementStatus(TreeElement<?, ?> element, DroidsafeIssueResolutionStatus status,
-      IViewPart view) {
+  /**
+   * Helper method to set the node status and recursively set the status of the children.
+   * 
+   * @param element The tree node element we want to set the status.    * 
+   * @param status The new status value (SAFE, UNSAFE, PENDING, UNRESOLVED). 
+   */
+  private void setElementStatus(TreeElement<?, ?> element, DroidsafeIssueResolutionStatus status) {
     Object data = element.getData();
+    //logger.debug("Setting status for node {}", data);
     if (data instanceof CodeLocationModel) {
       ((CodeLocationModel) data).setStatus(status);
     } else if (data instanceof MethodModel) {
@@ -65,7 +78,7 @@ public class ChangeMethodStatus extends AbstractHandler {
     }
     if (element.hasChildren()) {
       for (TreeElement<?, ?> child : element.getChildren()) {
-        setElementStatus(child, status, view);
+        setElementStatus(child, status);
       }
     }
   }

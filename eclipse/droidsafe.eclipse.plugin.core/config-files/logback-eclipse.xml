@@ -7,7 +7,7 @@
       <level>WARN</level>
     </filter>
     <encoder>
-      <pattern>%level: %msg%n</pattern>
+      <pattern>%d{HH:mm:ss} [%thread] %-5level %-36logger{36} [%-4line] - %msg%n</pattern>
     </encoder>
   </appender>
   

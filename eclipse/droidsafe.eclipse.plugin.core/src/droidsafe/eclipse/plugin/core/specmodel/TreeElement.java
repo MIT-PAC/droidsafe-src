@@ -35,7 +35,7 @@ public class TreeElement<P, C> extends ModelChangeSupport implements PropertyCha
   private TreeElement<?, P> parent;
   private final Class<C> childrenType;
 
-  public TreeElement(String name, P data, Class<C> childrenType) {    
+  public TreeElement(String name, P data, Class<C> childrenType) {
     this.childrenType = childrenType;
     this.name = name == null ? "?" : name;
     this.data = data;
@@ -64,10 +64,10 @@ public class TreeElement<P, C> extends ModelChangeSupport implements PropertyCha
     return obj == this;
   }
 
-  @Override
-  public int hashCode() {
-    return data == null ? super.hashCode() : data.hashCode();
-  }
+   @Override
+   public int hashCode() {
+   return data == null ? super.hashCode() : super.hashCode() * data.hashCode();
+   }
 
   public boolean addChild(TreeElement<C, ?> child) {
     if (!childrenType.isAssignableFrom(child.data.getClass())) {
@@ -154,7 +154,8 @@ public class TreeElement<P, C> extends ModelChangeSupport implements PropertyCha
 
   @Override
   public void propertyChange(PropertyChangeEvent evt) {
-    PropertyChangeEvent newEvent = new PropertyChangeEvent(this, evt.getPropertyName(), evt.getOldValue(), evt.getNewValue());
-    firePropertyChange(newEvent);    
+    PropertyChangeEvent newEvent =
+        new PropertyChangeEvent(this, evt.getPropertyName(), evt.getOldValue(), evt.getNewValue());
+    firePropertyChange(newEvent);
   }
 }

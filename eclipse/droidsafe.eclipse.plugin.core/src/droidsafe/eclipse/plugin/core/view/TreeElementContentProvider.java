@@ -2,6 +2,7 @@ package droidsafe.eclipse.plugin.core.view;
 
 import java.beans.PropertyChangeEvent;
 import java.beans.PropertyChangeListener;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -31,6 +32,9 @@ public class TreeElementContentProvider implements ITreeContentProvider, Propert
    */
   private Map<IModelChangeSupport, TreeElement<?, ?>> treeElementMap =
       new HashMap<IModelChangeSupport, TreeElement<?, ?>>();
+
+
+  private List<TreeElement<?, ?>> treeElementList = new ArrayList<TreeElement<?, ?>>();
 
   public enum TopLevelParentEntity {
     API_AS_TOP_PARENT, CODE_LOCATION_AS_TOP_PARENT, ENTRY_POINT_AS_TOP_PARENT
@@ -73,11 +77,11 @@ public class TreeElementContentProvider implements ITreeContentProvider, Propert
   public Object[] getElements(Object parent) {
     if (parent instanceof SecuritySpecModel) {
       TreeElement<?, ?> invisibleRoot = initializeRoot();
-      if (logger.isDebugEnabled()) {
-        for (TreeElement<?, ?> child : invisibleRoot.getChildren()) {
-          logger.debug(" Child of root = " + child.getName());
-        }
-      }
+      // if (logger.isDebugEnabled()) {
+      // for (TreeElement<?, ?> child : invisibleRoot.getChildren()) {
+      // logger.debug(" Child of root = " + child.getName());
+      // }
+      // }
       return getChildren(invisibleRoot);
     }
     return NO_CHILDREN;
@@ -126,17 +130,61 @@ public class TreeElementContentProvider implements ITreeContentProvider, Propert
    */
   private void updatePropertyChangeListener(IModelChangeSupport modelObject,
       TreeElement<?, ?> newTreeElement) {
-    TreeElement<?, ?> oldTreeElement = this.treeElementMap.get(modelObject);
-    if (oldTreeElement != null) {
-      modelObject.removePropertyChangeListener(oldTreeElement);
-    }
+    // TreeElement<?, ?> oldTreeElement = this.treeElementMap.get(modelObject);
+    // if (oldTreeElement != null) {
+    // Object data = oldTreeElement.getData();
+    // if (data != modelObject) {
+    // logger.debug(
+    // "OLD TreeElement {} has Data {} but current model is {}",
+    // new String[] {oldTreeElement.toString(), Integer.toString(data.hashCode()),
+    // Integer.toString(modelObject.hashCode())});
+    // }
+    // }
+    // this.treeElementMap.put(modelObject, newTreeElement);
+
     modelObject.addPropertyChangeListener(newTreeElement);
-    this.treeElementMap.put(modelObject, newTreeElement);
-    if (oldTreeElement != null) {
-      oldTreeElement.removePropertyChangeListener(this);
-    }
     newTreeElement.addPropertyChangeListener(this);
+    treeElementList.add(newTreeElement);
   }
+
+  /**
+   * Helper function to make sure all property change listeners are removed when we change the
+   * structure of the model.
+   */
+  private void clearPropertyChangeListeners() {
+    for (TreeElement<?, ?> element : this.treeElementList) {
+      element.removePropertyChangeListener(this);
+      Object data = element.getData();
+      if (data instanceof IModelChangeSupport) {
+        IModelChangeSupport modelObject = (IModelChangeSupport) data;
+        modelObject.removePropertyChangeListener(element);
+      }
+    }
+    this.treeElementList.clear();
+    this.treeElementMap.clear();
+  }
+
+
+  @SuppressWarnings("unused")
+  private void printPropertyChangeListenersForTreeElements() {
+    // for (TreeElement<?, ?> element : this.treeElementMap.values()) {
+    // PropertyChangeListener[] listeners = element.getPropertyChangeListeners();
+    // if (listeners == null || listeners.length == 0) {
+    // logger.debug("No listeners defined for node " + element);
+    // }
+    // logger.debug("Listeners for " + element + " == " + listeners);
+    // }
+
+    for (TreeElement<?, ?> element : this.treeElementList) {
+      PropertyChangeListener[] listeners = element.getPropertyChangeListeners();
+      if (listeners == null || listeners.length == 0) {
+        logger.debug("No listeners defined for node " + element);
+      }
+      logger.debug("Listeners for " + element + " == " + listeners.length);
+    }
+  }
+
+
 
   /**
    * Creates the tree hierarchy for the security specification model using the output method, or API
@@ -179,7 +227,10 @@ public class TreeElementContentProvider implements ITreeContentProvider, Propert
         }
       }
     }
+    // printPropertyChangeListenersForTreeElements();
   }
+
+
 
   /**
    * Creates the tree hierarchy for the security specification model using the code locationsas top
@@ -191,8 +242,8 @@ public class TreeElementContentProvider implements ITreeContentProvider, Propert
    * 
    * @param root The TreeElement corresponding to security spec model.
    */
-
   private void createModelWithCodeLocationAsTopParent(TreeElement<SecuritySpecModel, Object> root) {
+    clearPropertyChangeListeners();
     Map<CodeLocationModel, Map<MethodModel, List<MethodModel>>> codeLocationEventBlocks =
         this.model.getCodeLocationEventBlocks();
     if (codeLocationEventBlocks != null) {
@@ -222,6 +273,7 @@ public class TreeElementContentProvider implements ITreeContentProvider, Propert
         }
       }
     }
+    // printPropertyChangeListenersForTreeElements();
   }
 
   /**
@@ -263,7 +315,9 @@ public class TreeElementContentProvider implements ITreeContentProvider, Propert
         }
       }
     }
+    // printPropertyChangeListenersForTreeElements();
   }
+
 
   /**
    * Initializes the entire hierarchy of the model tree. It creates TreeElements for each element in
@@ -273,6 +327,7 @@ public class TreeElementContentProvider implements ITreeContentProvider, Propert
    * @return
    */
   public TreeElement<?, ?> initializeRoot() {
+    clearPropertyChangeListeners();
     TreeElement<SecuritySpecModel, Object> root =
         new TreeElement<SecuritySpecModel, Object>("SecuritySpec", this.model, Object.class);
     TreeElement<Object, MethodModel> whitelist =
@@ -303,6 +358,7 @@ public class TreeElementContentProvider implements ITreeContentProvider, Propert
   @Override
   public void propertyChange(PropertyChangeEvent evt) {
     Object source = evt.getSource();
+    //logger.debug("Updating node {}", source);
     if (this.viewer != null) {
       this.viewer.update(source, null);
     }

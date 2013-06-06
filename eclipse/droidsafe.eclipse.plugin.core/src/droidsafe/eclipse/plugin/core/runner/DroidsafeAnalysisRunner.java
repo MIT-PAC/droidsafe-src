@@ -116,7 +116,8 @@ public class DroidsafeAnalysisRunner {
     Config.v().target = passTarget;
     Config.v().dumpPta = preferenceStore.getBoolean(PreferenceConstants.P_DUMP_PTA);
     Config.v().dumpCallGraph = preferenceStore.getBoolean(PreferenceConstants.P_DUMP_CALL_GRAPH);
-
+    Config.v().runStringAnalysis = preferenceStore.getBoolean(PreferenceConstants.P_RUN_STRING_ANALYSIS);
+    
     logger.info("From Activator.getPreferenceStore" + "\nJIMPLE Prefence = " + writeJimpleClasses
         + "\nInfoFlow = " + infoFlow + "\nPass = " + passTarget);
 
