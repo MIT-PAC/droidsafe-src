@@ -174,6 +174,8 @@ public class Resources {
 				logger.info ("  Processing layout {}\n", l.name);
 				v.process_view (l, l.view);
 			}
+			
+			v.consolidateLayouts();
 
 			//set all the underlying soot classes for the components 
 			//other than activity
@@ -234,6 +236,65 @@ public class Resources {
 	}
 	
 	/**
+	 * consolidate layouts:  Will go through differnt versions of layouts 
+	 */
+	private void consolidateLayouts() {
+	    logger.info("consolidate layouts ");
+	    List<Layout> origList = new LinkedList<Layout>();
+	    
+	    // building the original layout list which is meant to be read only
+	    for(Layout layout: layouts) {
+	        origList.add(layout);
+	    }
+	    
+	    Map<String, Layout> layoutMap = new HashMap<String, Layout>();
+	    
+	    for (Layout layout: origList) {
+	        // if layout first appeared, added to the hash
+	        if (!layoutMap.containsKey(layout.name)) {
+	            layoutMap.put(layout.name, layout);
+	            continue;
+	        }
+	        
+	        Layout keptLayout = layoutMap.get(layout.name);
+	        logger.info("will merge layout {} to {} ", layout, keptLayout);
+	        logger.info("{} <=> {} ", layout.view, keptLayout.view);
+	        
+	        
+	        // going through
+	        for (View childView: layout.view.children) {
+	            
+	            if (childView.name == null) {
+	                logger.info("childView.name is NULL {}", childView);
+	                continue;
+	            }
+	            // check if the kept layout already has childredn
+	            boolean alreadyInList = false;
+	            for (View currentView: keptLayout.view.children) {
+	                if (currentView.name == null) {
+	                    continue;
+	                }
+	                
+	                if (currentView.name.equals(childView.name) &&
+	                    ((currentView.id == childView.id) || (currentView.id.equals(childView.id)))) {
+	                    alreadyInList = true;
+	                    break;
+	                }
+	            }
+	            
+	            if (alreadyInList == false) {
+	                logger.info("*** view {} will be part of layout {} ", childView.name, layout.name);
+	                keptLayout.view.children.add(childView);
+	            }
+	        }
+	        
+	        
+	        logger.info("Layout {} has been MERGED ", layout.name);
+	        layouts.remove(layout);
+	    }
+	}
+	
+	/**
 	 * recursively resolve layout associated 
 	 * @param view
 	 */
@@ -247,7 +308,6 @@ public class Resources {
 		this.application_base = application_base;
 
 		resource_info = HashBiMap.create();
-
 		logger.info("Resources(): " + application_base.toString());
 
 		// Get the manifest and read it
