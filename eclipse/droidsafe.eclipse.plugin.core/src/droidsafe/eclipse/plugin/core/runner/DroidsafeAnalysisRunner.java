@@ -27,6 +27,7 @@ import soot.G;
 import soot.Scene;
 import soot.SootClass;
 import soot.SootMethod;
+import soot.ValueBox;
 import ch.qos.logback.classic.LoggerContext;
 import ch.qos.logback.classic.joran.JoranConfigurator;
 import ch.qos.logback.core.joran.spi.JoranException;
@@ -338,6 +339,18 @@ public class DroidsafeAnalysisRunner {
     } else if (Config.v().target.equals("confcheck")) {
       logger.error("Not implemented yet!");
     }
+    
+    
+    List<ValueBox> hs = JSAStrings.v().getHotspots();
+    for(ValueBox vb : hs) {
+      logger.debug("String analysis Source {} Source Line {} \nRegex {}", new String[]{
+        JSAStrings.v().getSourceFile(vb),
+        JSAStrings.v().getSourceLine(vb),
+        JSAStrings.v().getRegex(vb.getValue())});
+    }
+    
+    
+    
     monitor.worked(1);
     return Status.OK_STATUS;
   }

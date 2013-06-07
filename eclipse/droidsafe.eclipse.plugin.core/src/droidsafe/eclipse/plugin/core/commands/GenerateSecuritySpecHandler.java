@@ -51,6 +51,9 @@ public class GenerateSecuritySpecHandler extends AbstractHandler {
                   new DroidsafeAnalysisRunner(project);
               monitor.worked(1);
               status = droidsafeAnalysisRunner.run(monitor);
+            } catch (Exception ex){
+              logger.error("Exception during analysis {}", ex);
+              ex.printStackTrace();
             } finally {
               monitor.done();
             }
