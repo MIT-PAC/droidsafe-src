@@ -221,9 +221,19 @@ public class Layout {
     String id;
     /** OnClick method (if any) **/
     String on_click;
-    /** Children of this view **/
+    /** Children of this view.  When a view has children, it is a ViewGroup/LinearLayout**/
     List<View> children = new ArrayList<View>();
 
+    /**
+     * private constructor
+     */
+    private View() {
+        super();
+    }
+    /**
+     * constructor
+     * @param n
+     */
     public View (Node n) {
 
       super (n, null);
@@ -278,6 +288,19 @@ public class Layout {
 		for (View cview: children) { 
 			logger.warn("cview: " + cview);
 		}
+	}
+	
+	@Override
+	/**
+	 * overide cloneable
+	 */
+	public Object clone() {
+	    View copy = new View(); 
+	    cloneTo(copy);
+	    copy.id   = this.id;
+	    copy.name = this.name;
+	    copy.on_click = this.on_click;
+	    return copy;
 	}
   }
 }
