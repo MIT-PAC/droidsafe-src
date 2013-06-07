@@ -1,11 +1,15 @@
 package droidsafe.analyses.attr.models.android.os;
 
-import droidsafe.analyses.attr.ModeledClass;
+import droidsafe.analyses.attr.AttrModeledClass;
+import droidsafe.analyses.attr.AttrModelingSet;
 
+import java.util.Arrays;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.Map;
+import java.util.Set;
 
 import org.apache.commons.lang3.StringUtils;
 
@@ -14,35 +18,30 @@ import org.slf4j.LoggerFactory;
 
 import soot.jimple.spark.pag.AllocNode;
 
-public class Bundle extends ModeledClass {
+/**
+ * @author dpetters
+ */
+public class Bundle extends AttrModeledClass {
 
-  private final static Logger logger = LoggerFactory.getLogger(Bundle.class);
+    Map<String, AttrModelingSet<Object>> mMap = null;
 
-  Map<droidsafe.analyses.attr.models.java.lang.String, Object> mMap;
+    public Bundle() {
+        mMap = new HashMap<String, AttrModelingSet<Object>>();
+    }
 
-  private boolean mHasFds = false;
-  private boolean mFdsKnown = true;
-  private boolean mAllowFds = true;
+    public Bundle(AllocNode allocNode) {
+        super(allocNode);
+        mMap = new HashMap<String, AttrModelingSet<Object>>();
+    }
 
-  public Bundle() {
-    mMap = new HashMap<droidsafe.analyses.attr.models.java.lang.String, Object>();
-  }
+    /**
+     * Constructs a new, empty Bundle.
+     */
+    public void _init_(){
+        // TODO: decide if we need the classLoader and uncomment/delete the line below
+        // mClassLoader = getClass().getClassLoader();
+    }
 
-  public Bundle(Bundle b) {
-    putAll(b);
-    mHasFds = b.mHasFds;
-    mFdsKnown = b.mFdsKnown;
-  } 
-
-  public Bundle(AllocNode allocNode) {
-    super(allocNode);
-    this.mMap = new HashMap<droidsafe.analyses.attr.models.java.lang.String, Object>();
-  }
-
-  public void _init_(){
-  }
-
-    
     /**
      * Inserts a Boolean value into the mapping of this Bundle, replacing
      * any existing value for the given key.  Either key or value may be null.
@@ -50,8 +49,16 @@ public class Bundle extends ModeledClass {
      * @param key a String, or null
      * @param value a Boolean, or null
      */
-    public void putBoolean(droidsafe.analyses.attr.models.java.lang.String key, boolean value) {
-        mMap.put(key, value);
+    public void putBoolean(Set<String> keys, Set<Boolean> values) {
+        for(String key : keys) {
+            for(Boolean value : values){
+                if(mMap.containsKey(key)){
+                    mMap.get(key).add(value);
+                } else {
+                    mMap.put(key, new AttrModelingSet(new HashSet<Boolean>(Arrays.asList(new Boolean[]{value}))));
+                }
+            }
+        }
     }
 
     /**
@@ -61,8 +68,16 @@ public class Bundle extends ModeledClass {
      * @param key a String, or null
      * @param value a byte
      */
-    public void putByte(droidsafe.analyses.attr.models.java.lang.String key, byte value) {
-        mMap.put(key, value);
+    public void putByte(Set<String> keys, Set<Byte> values) {
+        for(String key : keys) {
+            for(Byte value : values){
+                if(mMap.containsKey(key)){
+                    mMap.get(key).add(value);
+                } else {
+                    mMap.put(key, new AttrModelingSet(new HashSet<Byte>(Arrays.asList(new Byte[]{value}))));
+                }
+            }
+        }
     }
 
     /**
@@ -72,8 +87,16 @@ public class Bundle extends ModeledClass {
      * @param key a String, or null
      * @param value a char, or null
      */
-    public void putChar(droidsafe.analyses.attr.models.java.lang.String key, char value) {
-        mMap.put(key, value);
+    public void putChar(Set<String> keys, Set<Character> values) {
+        for(String key : keys) {
+            for(Character value : values){
+                if(mMap.containsKey(key)){
+                    mMap.get(key).add(value);
+                } else {
+                    mMap.put(key, new AttrModelingSet(new HashSet<Character>(Arrays.asList(new Character[]{value}))));
+                }
+            }
+        }
     }
 
     /**
@@ -83,10 +106,17 @@ public class Bundle extends ModeledClass {
      * @param key a String, or null
      * @param value a short
      */
-    public void putShort(droidsafe.analyses.attr.models.java.lang.String key, short value) {
-      mMap.put(key, value);
+    public void putShort(Set<String> keys, Set<Short> values) {
+        for(String key : keys) {
+            for(Short value : values){
+                if(mMap.containsKey(key)){
+                    mMap.get(key).add(value);
+                } else {
+                    mMap.put(key, new AttrModelingSet(new HashSet<Short>(Arrays.asList(new Short[]{value}))));
+                }
+            }
+        }
     }
-
     /**
      * Inserts an int value into the mapping of this Bundle, replacing
      * any existing value for the given key.
@@ -94,8 +124,16 @@ public class Bundle extends ModeledClass {
      * @param key a String, or null
      * @param value an int, or null
      */
-    public void putInt(droidsafe.analyses.attr.models.java.lang.String key, int value) {
-      mMap.put(key, value);
+    public void putInt(Set<String> keys, Set<Integer> values) {
+        for(String key : keys) {
+            for(Integer value : values){
+                if(mMap.containsKey(key)){
+                    mMap.get(key).add(value);
+                } else {
+                    mMap.put(key, new AttrModelingSet(new HashSet<Integer>(Arrays.asList(new Integer[]{value}))));
+                }
+            }
+        }
     }
 
     /**
@@ -105,8 +143,16 @@ public class Bundle extends ModeledClass {
      * @param key a String, or null
      * @param value a long
      */
-    public void putLong(droidsafe.analyses.attr.models.java.lang.String key, long value) {
-      mMap.put(key, value);
+    public void putLong(Set<String> keys, Set<Long> values) {
+        for(String key : keys) {
+            for(Long value : values){
+                if(mMap.containsKey(key)){
+                    mMap.get(key).add(value);
+                } else {
+                    mMap.put(key, new AttrModelingSet(new HashSet<Long>(Arrays.asList(new Long[]{value}))));
+                }
+            }
+        }
     }
 
     /**
@@ -116,8 +162,16 @@ public class Bundle extends ModeledClass {
      * @param key a String, or null
      * @param value a float
      */
-    public void putFloat(droidsafe.analyses.attr.models.java.lang.String key, float value) {
-      mMap.put(key, value);
+    public void putFloat(Set<String> keys, Set<Float> values) {
+        for(String key : keys) {
+            for(Float value : values){
+                if(mMap.containsKey(key)){
+                    mMap.get(key).add(value);
+                } else {
+                    mMap.put(key, new AttrModelingSet(new HashSet<Float>(Arrays.asList(new Float[]{value}))));
+                }
+            }
+        }
     }
 
     /**
@@ -127,8 +181,16 @@ public class Bundle extends ModeledClass {
      * @param key a String, or null
      * @param value a double
      */
-    public void putDouble(droidsafe.analyses.attr.models.java.lang.String key, double value) {
-      mMap.put(key, value);
+    public void putDouble(Set<String> keys, Set<Double> values) {
+        for(String key : keys) {
+            for(Double value : values){
+                if(mMap.containsKey(key)){
+                    mMap.get(key).add(value);
+                } else {
+                    mMap.put(key, new AttrModelingSet(new HashSet<Double>(Arrays.asList(new Double[]{value}))));
+                }
+            }
+        }
     }
 
     /**
@@ -138,32 +200,74 @@ public class Bundle extends ModeledClass {
      * @param key a String, or null
      * @param value a String, or null
      */
-    public void putString(droidsafe.analyses.attr.models.java.lang.String key, droidsafe.analyses.attr.models.java.lang.String value) {
-      mMap.put(key, value);
+    public void putString(Set<String> keys, Set<String> values) {
+        for(String key : keys) {
+            for(String value : values){
+                if(mMap.containsKey(key)){
+                    mMap.get(key).add(value);
+                } else {
+                    mMap.put(key, new AttrModelingSet(new HashSet<String>(Arrays.asList(new String[]{value}))));
+                }
+            }
+        }  
     }
 
-  public void putAll(droidsafe.analyses.attr.models.android.os.Bundle b) {
-    mMap.putAll(b.mMap);
+    /**
+     * Inserts all mappings from the given Bundle into this Bundle.
+     *
+     * @param map a Bundle
+     */
+    public void putAll(Bundle b) {
+        for(Map.Entry<String, AttrModelingSet<Object>> entry : b.mMap.entrySet()) {
+            String key = entry.getKey();
+            AttrModelingSet<Object> value = entry.getValue();
+            if(mMap.containsKey(key)){
+                mMap.get(key).addAll(value);
+            } else {
+                mMap.put(key, value);
+            }
+        }
 
-    // fd state is now known if and only if both bundles already knew
-    mHasFds |= b.mHasFds;
-    mFdsKnown = mFdsKnown && b.mFdsKnown;
-  }
-
-  @Override
-  public String toString(){
-    String str = "<modeled Bundle" + this.getId() + "> {";
-    if (invalidated) {
-      str += "invalidated";
-    } else {
-      ArrayList<String> attrs = new ArrayList();
-      if(mMap.size() > 0)
-        attrs.add("mMap: " + this.mMap);
-      attrs.add("mHasFds: " + this.mHasFds);
-      attrs.add("mFdsKnown: " + this.mFdsKnown);
-      attrs.add("mAllowFds: " + this.mAllowFds);
-      str += StringUtils.join(attrs.toArray(), ", ");
+        // fd state is now known if and only if both bundles already knew
+        // TODO: figure out if we need the two variables below and uncomment or delete the two lines below
+        // mHasFds |= b.mHasFds;
+        // mFdsKnown = mFdsKnown && b.mFdsKnown;
     }
-    return str + "}";
-  }
+
+    /**
+     * Returns the value associated with the given key, or null if
+     * no mapping of the desired type exists for the given key or a null
+     * value is explicitly associated with the key.
+     *
+     * @param key a String, or null
+     * @return a String value, or null
+     */
+    public Set<String> getString(String key) {
+        HashSet<String> results = new HashSet<String>();
+        if(mMap.containsKey(key)) {
+            AttrModelingSet attrModelingSet = mMap.get(key);
+            for(Object o : attrModelingSet){
+                try {
+                    results.add((String)o);
+                } catch(ClassCastException e){
+                    return null;
+                }
+            }
+            return results;
+        }
+        return null;
+    }
+
+    public String dsDisplay(){
+        String str = "<modeled Bundle" + this.getId() + "> {";
+        if (invalidated) {
+            str += "invalidated";
+        } else {
+            ArrayList<String> attrs = new ArrayList();
+            if(mMap.size() > 0)
+                attrs.add("mMap: " + this.mMap);
+            str += StringUtils.join(attrs.toArray(), ", ");
+        }
+        return str + "}";
+    }
 }

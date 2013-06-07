@@ -16,6 +16,8 @@ import org.eclipse.jface.viewers.ISelection;
 import org.eclipse.jface.viewers.IStructuredSelection;
 import org.eclipse.jface.viewers.ITreeContentProvider;
 import org.eclipse.jface.viewers.TreeViewer;
+import org.eclipse.jface.viewers.Viewer;
+import org.eclipse.jface.viewers.ViewerSorter;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.widgets.Composite;
 import org.eclipse.swt.widgets.Menu;
@@ -32,15 +34,12 @@ import org.eclipse.ui.texteditor.ITextEditor;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import droidsafe.analyses.RCFGToSSL;
 import droidsafe.eclipse.plugin.core.Activator;
 import droidsafe.eclipse.plugin.core.specmodel.MethodModel;
 import droidsafe.eclipse.plugin.core.specmodel.SecuritySpecModel;
 import droidsafe.eclipse.plugin.core.specmodel.TreeElement;
 import droidsafe.eclipse.plugin.core.util.DroidsafePluginUtilities;
 import droidsafe.eclipse.plugin.core.view.TreeElementContentProvider.TopLevelParentEntity;
-import droidsafe.main.Config;
-import droidsafe.speclang.SecuritySpecification;
 import droidsafe.utils.SourceLocationTag;
 
 
@@ -83,9 +82,6 @@ public class SecuritySpecOutlineViewPart extends ViewPart {
   /** The container for the text or tree view used in the class. */
   private Composite parentComposite;
 
-  /** Default empty constructor method. */
-  // public SecuritySpecOutlineViewPart() {}
-
   /**
    * Tries to find a security spec model for the currently selected project. If there is no selected
    * project, it creates a text viewer telling the user to select a project in the Project Explorer.
@@ -110,19 +106,7 @@ public class SecuritySpecOutlineViewPart extends ViewPart {
       this.textViewer.setDocument(document);
     } else {
       String projectRootPath = this.selectedProject.getLocation().toOSString();
-      String securitySpecAndroidAppRootPath = Config.v().APP_ROOT_DIR;
-      if (projectRootPath.equals(securitySpecAndroidAppRootPath)) {
-        SecuritySpecification spec = (RCFGToSSL.v() == null) ? null : RCFGToSSL.v().getSpec();
-        if (spec != null) {
-          this.securitySpecModel = new SecuritySpecModel(spec);
-          SecuritySpecModel.serializeSpecToFile(this.securitySpecModel, projectRootPath);
-        }
-      }
-      if (this.securitySpecModel == null) {
-        // Droidsafe may not have been run yet. Let's check if there is already a serialized version
-        // of the spec in the droidsafe directory at the root of the android app project.
-        this.securitySpecModel = SecuritySpecModel.deserializeSpecFromFile(projectRootPath);
-      }
+      this.securitySpecModel = SecuritySpecModel.deserializeSpecFromFile(projectRootPath);
 
       if (this.securitySpecModel == null) {
         this.textViewer = new TextViewer(parent, SWT.MULTI | SWT.H_SCROLL | SWT.V_SCROLL);
@@ -135,6 +119,7 @@ public class SecuritySpecOutlineViewPart extends ViewPart {
       }
     }
   }
+
 
   /**
    * Auxiliary function to setup a selection listener that would replace the contents of the outline
@@ -152,7 +137,7 @@ public class SecuritySpecOutlineViewPart extends ViewPart {
         Object selectedObject = ss.getFirstElement();
         if (selectedObject instanceof IAdaptable) {
           IResource res = (IResource) ((IAdaptable) selectedObject).getAdapter(IResource.class);
-          IProject project = res.getProject();
+          IProject project = (res != null) ? res.getProject() : null;
           if (project != null && project != SecuritySpecOutlineViewPart.this.selectedProject) {
             SecuritySpecOutlineViewPart.this.securitySpecModel = null;
             initializeSecuritySpec(SecuritySpecOutlineViewPart.this.parentComposite);
@@ -169,6 +154,7 @@ public class SecuritySpecOutlineViewPart extends ViewPart {
     };
     getSite().getPage().addSelectionListener(this.selectionListener);
   }
+
 
   /**
    * Standard Eclipse method to create a view. Initializes the security spec if a project is
@@ -196,8 +182,12 @@ public class SecuritySpecOutlineViewPart extends ViewPart {
       viewer.setContentProvider(this.contentProvider);
       viewer.setLabelProvider(this.labelProvider);
       viewer.setAutoExpandLevel(1);
-      viewer.setInput(securitySpecModel);
+      viewer.setUseHashlookup(true);
+      sortViewByMethodName();
+
+      // Make sure there is no text viewer in the container otherwise we get a split screen.
       disposeTextViewer();
+      viewer.setInput(securitySpecModel);
 
       MenuManager menuManager = new MenuManager();
       Menu menu = menuManager.createContextMenu(viewer.getTree());
@@ -210,6 +200,8 @@ public class SecuritySpecOutlineViewPart extends ViewPart {
       addDoubleClickListener();
     }
   }
+
+
 
   /**
    * Add a double click listener to the TreeViewr. Double clicking on a tree node will expand the
@@ -224,10 +216,10 @@ public class SecuritySpecOutlineViewPart extends ViewPart {
 
         @Override
         public void doubleClick(DoubleClickEvent event) {
-          TreeViewer viewer = (TreeViewer) event.getViewer();
+          // TreeViewer viewer = (TreeViewer) event.getViewer();
           IStructuredSelection thisSelection = (IStructuredSelection) event.getSelection();
           Object selectedNode = thisSelection.getFirstElement();
-          viewer.setExpandedState(selectedNode, !viewer.getExpandedState(selectedNode));
+          // viewer.setExpandedState(selectedNode, !viewer.getExpandedState(selectedNode));
           SourceLocationTag line = null;
           if (selectedNode instanceof TreeElement<?, ?>) {
             TreeElement<?, ?> treeElement = (TreeElement<?, ?>) selectedNode;
@@ -258,7 +250,6 @@ public class SecuritySpecOutlineViewPart extends ViewPart {
                     PlatformUI.getWorkbench().getActiveWorkbenchWindow().getActivePage();
                 IEditorDescriptor desc =
                     PlatformUI.getWorkbench().getEditorRegistry().getDefaultEditor(file.getName());
-                // IEditorPart openEditor = IDE.openEditor(page, file);
                 IEditorPart openEditor = page.openEditor(new FileEditorInput(file), desc.getId());
 
                 if (openEditor instanceof ITextEditor) {
@@ -280,7 +271,10 @@ public class SecuritySpecOutlineViewPart extends ViewPart {
   }
 
 
-  /** Removes any text viewer from the outline panel */
+  /**
+   * Removes any text viewer from the outline panel
+   * 
+   */
   private void disposeTextViewer() {
     if (this.textViewer != null) {
       textViewer.getTextWidget().dispose();
@@ -299,7 +293,7 @@ public class SecuritySpecOutlineViewPart extends ViewPart {
 
   /**
    * 
-   * @return the current TreeViewer. 
+   * @return the current TreeViewer.
    */
   public TreeViewer getViewer() {
     return this.viewer;
@@ -326,7 +320,6 @@ public class SecuritySpecOutlineViewPart extends ViewPart {
         && ((TreeElementContentProvider) this.contentProvider).getContentProviderTopLevelParent() != parentEntityType) {
       ((TreeElementContentProvider) this.contentProvider)
           .setContentProviderTopLevelParent(parentEntityType);
-      // this.viewer.setInput(this.securitySpecModel);
       this.viewer.refresh();
     }
   }
@@ -342,6 +335,11 @@ public class SecuritySpecOutlineViewPart extends ViewPart {
         Activator.getDefault().getWorkbench().getActiveWorkbenchWindow().getSelectionService();
     String projExpID = "org.eclipse.ui.navigator.ProjectExplorer";
     ISelection sel = ss.getSelection(projExpID);
+    if (sel == null) {
+      projExpID = "org.eclipse.jdt.ui.PackageExplorer";
+      sel = ss.getSelection(projExpID);
+    }
+
     Object selectedObject = sel;
     if (sel instanceof IStructuredSelection) {
       selectedObject = ((IStructuredSelection) sel).getFirstElement();
@@ -350,11 +348,87 @@ public class SecuritySpecOutlineViewPart extends ViewPart {
       IResource res = (IResource) ((IAdaptable) selectedObject).getAdapter(IResource.class);
       IProject project = res.getProject();
       if (project != null) {
-        logger.debug("Project found: " + project.getName());
+        //logger.debug("Project found: " + project.getName());
         return project;
       }
     }
     return null;
   }
 
-}
+
+  public void sortViewByMethodName() {
+    this.viewer.setSorter(new ViewerSorter() {
+
+      public int compare(Viewer view, Object o1, Object o2) {
+        int result = 0;
+        if (o1 instanceof TreeElement<?, ?> && o2 instanceof TreeElement<?, ?>) {
+          Object oo1 = ((TreeElement<?, ?>) o1).getData();
+          Object oo2 = ((TreeElement<?, ?>) o2).getData();
+          return compare(view, oo1, oo2);
+
+        } else if (o1 instanceof MethodModel && o2 instanceof MethodModel) {
+          MethodModel m1 = (MethodModel) o1;
+          MethodModel m2 = (MethodModel) o2;
+          result = m1.getMethodName().compareTo(m2.getMethodName());
+          if (result == 0) {
+            result = m1.getClassName().compareTo(m2.getClassName());
+          }
+          if (result == 0) {
+            result = m1.getReturnType().compareTo(m2.getReturnType());
+          }
+        } else if (o1 instanceof SourceLocationTag && o2 instanceof SourceLocationTag) {
+          SourceLocationTag l1 = (SourceLocationTag) o1;
+          SourceLocationTag l2 = (SourceLocationTag) o2;
+          result = l1.getClz().compareTo(l2.getClz());
+          if (result == 0) {
+            result = Integer.valueOf(l1.getLine()).compareTo(Integer.valueOf(l2.getLine()));
+          }
+        }
+        return result;
+      }
+    });
+  }
+
+
+  public void sortViewByClassName() {
+    this.viewer.setSorter(new ViewerSorter() {
+      public int compare(Viewer view, Object o1, Object o2) {
+        int result = 0;
+        if (o1 instanceof TreeElement<?, ?> && o2 instanceof TreeElement<?, ?>) {
+          Object oo1 = ((TreeElement<?, ?>) o1).getData();
+          Object oo2 = ((TreeElement<?, ?>) o2).getData();
+          // logger.debug("Elements tested o1 {} o2 {} result {}", new Object[] {
+          // ((TreeElement<?, ?>) o1).getName(), ((TreeElement<?, ?>) o2).getName()});
+          return compare(view, oo1, oo2);
+
+        } else if (o1 instanceof MethodModel && o2 instanceof MethodModel) {
+          MethodModel m1 = (MethodModel) o1;
+          MethodModel m2 = (MethodModel) o2;
+          result = m1.getClassName().compareTo(m2.getClassName());
+          // logger.debug("Class Names m1 {} m2 {} result {}",
+          // new Object[] {m1.getClassName(), m2.getClassName(), Integer.toString(result)});
+          if (result == 0) {
+            result = m1.getMethodName().compareTo(m2.getMethodName());
+          }
+          if (result == 0) {
+            result = m1.getReturnType().compareTo(m2.getReturnType());
+          }
+          if (result == 0) {
+            result = m1.getSignature().compareTo(m2.getSignature());
+          }
+          // logger.debug("Class Names m1 {} m2 {} result {}",
+          // new Object[] {m1.getClassName(), m2.getClassName(), Integer.toString(result)});
+        } else if (o1 instanceof SourceLocationTag && o2 instanceof SourceLocationTag) {
+          SourceLocationTag l1 = (SourceLocationTag) o1;
+          SourceLocationTag l2 = (SourceLocationTag) o2;
+          result = l1.getClz().compareTo(l2.getClz());
+          if (result == 0) {
+            result = Integer.valueOf(l1.getLine()).compareTo(Integer.valueOf(l2.getLine()));
+          }
+        }
+        return result;
+      }
+    });
+  }
+
+  }

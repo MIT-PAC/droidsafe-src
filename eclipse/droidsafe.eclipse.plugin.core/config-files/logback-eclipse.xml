@@ -1,0 +1,23 @@
+<configuration debug="true">
+  <!-- sends logs to logback-beagle -->
+  <consolePlugin />
+  
+   <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+    <filter class="ch.qos.logback.classic.filter.ThresholdFilter">
+      <level>WARN</level>
+    </filter>
+    <encoder>
+      <pattern>%d{HH:mm:ss} [%thread] %-5level %-36logger{36} [%-4line] - %msg%n</pattern>
+    </encoder>
+  </appender>
+  
+   <logger name="droidsafe.eclipse.plugin.core">
+        <level value="DEBUG" />
+    </logger>
+  
+  <root level="WARN">
+    <appender-ref ref="STDOUT" />
+  </root>
+  
+</configuration> 
+

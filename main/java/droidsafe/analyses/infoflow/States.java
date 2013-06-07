@@ -1,96 +1,98 @@
 package droidsafe.analyses.infoflow;
 
+import java.util.ArrayList;
 import java.util.Collection;
+import java.util.Collections;
 import java.util.Comparator;
 import java.util.HashMap;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Map;
-import java.util.Map.Entry;
 import java.util.Set;
 import java.util.TreeMap;
 
+import org.apache.commons.lang3.tuple.ImmutablePair;
+
+import com.google.common.collect.ImmutableList;
+import com.google.common.collect.ImmutableSet;
+
 import soot.Local;
-import soot.SootClass;
 import soot.SootField;
+import soot.SootMethod;
 import soot.jimple.ParameterRef;
 import soot.jimple.spark.pag.AllocNode;
 import soot.jimple.toolkits.callgraph.Edge;
 
 public class States {
-    private final DefaultHashMap<Edge, FrameRootsHeapStatics> contextToFrameRootsHeapStatics;
+    private final DefaultHashMap<Edge, FrameHeapStatics> contextToFrameHeapStatics;
 
-    private static final FrameRootsHeapStatics emptyFrameRootsHeapStatics = new FrameRootsHeapStatics();
+    private static final FrameHeapStatics emptyFrameHeapStatics = new FrameHeapStatics();
 
     States() {
-        contextToFrameRootsHeapStatics = new DefaultHashMap<Edge, FrameRootsHeapStatics>(emptyFrameRootsHeapStatics);
+        contextToFrameHeapStatics = new DefaultHashMap<Edge, FrameHeapStatics>(emptyFrameHeapStatics);
     }
 
     States merge(States that) {
         States states = new States();
-        for (Map.Entry<Edge, FrameRootsHeapStatics> contextFrameRootsHeapStatics : this.contextToFrameRootsHeapStatics.entrySet()) {
-            Edge context = contextFrameRootsHeapStatics.getKey();
-            if (that.contextToFrameRootsHeapStatics.containsKey(context)) {
-                states.contextToFrameRootsHeapStatics.put(context, contextFrameRootsHeapStatics.getValue().merge(that.contextToFrameRootsHeapStatics.get(context)));
+        for (Map.Entry<Edge, FrameHeapStatics> contextFrameHeapStatics : this.contextToFrameHeapStatics.entrySet()) {
+            Edge context = contextFrameHeapStatics.getKey();
+            FrameHeapStatics frameHeapStatics = contextFrameHeapStatics.getValue();
+            if (that.contextToFrameHeapStatics.containsKey(context)) {
+                states.contextToFrameHeapStatics.put(context, frameHeapStatics.merge(that.contextToFrameHeapStatics.get(context)));
             } else {
-                states.contextToFrameRootsHeapStatics.put(context, contextFrameRootsHeapStatics.getValue());
+                states.contextToFrameHeapStatics.put(context, frameHeapStatics);
             }
         }
-        for (Map.Entry<Edge, FrameRootsHeapStatics> contextFrameRootsHeapStatics : that.contextToFrameRootsHeapStatics.entrySet()) {
-            Edge context = contextFrameRootsHeapStatics.getKey();
-            if (!contextToFrameRootsHeapStatics.containsKey(context)) {
-                states.contextToFrameRootsHeapStatics.put(context, contextFrameRootsHeapStatics.getValue());
+        for (Map.Entry<Edge, FrameHeapStatics> contextFrameHeapStatics : that.contextToFrameHeapStatics.entrySet()) {
+            Edge context = contextFrameHeapStatics.getKey();
+            if (!this.contextToFrameHeapStatics.containsKey(context)) {
+                states.contextToFrameHeapStatics.put(context, contextFrameHeapStatics.getValue());
             }
         }
         return states;
     }
 
-    FrameRootsHeapStatics put(Edge context, FrameRootsHeapStatics frameRootsHeapStatics) {
-        return contextToFrameRootsHeapStatics.put(context, frameRootsHeapStatics);
+    FrameHeapStatics put(Edge context, FrameHeapStatics frameHeapStatics) {
+        return contextToFrameHeapStatics.put(context, frameHeapStatics);
     }
 
-    FrameRootsHeapStatics get(Edge context) {
-        return contextToFrameRootsHeapStatics.get(context);
+    FrameHeapStatics get(Edge context) {
+        return contextToFrameHeapStatics.get(context);
     }
 
-    Set<Map.Entry<Edge, FrameRootsHeapStatics>> entrySet() {
-        return contextToFrameRootsHeapStatics.entrySet();
+    Set<Map.Entry<Edge, FrameHeapStatics>> entrySet() {
+        return contextToFrameHeapStatics.entrySet();
     }
 
     Set<Edge> keySet() {
-        return contextToFrameRootsHeapStatics.keySet();
+        return contextToFrameHeapStatics.keySet();
     }
 
-    Collection<FrameRootsHeapStatics> values() {
-        return contextToFrameRootsHeapStatics.values();
+    Collection<FrameHeapStatics> values() {
+        return contextToFrameHeapStatics.values();
     }
 
     @Override
     public boolean equals(Object that) {
-        if (that instanceof States) {
-            return contextToFrameRootsHeapStatics.equals(((States)that).contextToFrameRootsHeapStatics);
-        } else {
+        if (this == that) {
+            return true;
+        }
+        if (!(that instanceof States)) {
             return false;
         }
-    }
+        States states = (States)that;
 
-    States subtract(States that) {
-        States states = new States();
-        for (Map.Entry<Edge, FrameRootsHeapStatics> edgeFrameRootsHeapStatics : this.contextToFrameRootsHeapStatics.entrySet()) {
-            Edge edge = edgeFrameRootsHeapStatics.getKey();
-            FrameRootsHeapStatics frameRootsHeapStatics = edgeFrameRootsHeapStatics.getValue();
-            states.contextToFrameRootsHeapStatics.put(edge, frameRootsHeapStatics.subtract(that.get(edge)));
-        }
-        return states;
+        return this.contextToFrameHeapStatics.equals(states.contextToFrameHeapStatics);
     }
 
     @Override
     public String toString() {
         StringBuffer str = new StringBuffer();
         str.append('{');
-        for (Map.Entry<Edge, FrameRootsHeapStatics> edgeFrameRootsHeapStatics : this.contextToFrameRootsHeapStatics.entrySet()) {
-            str.append(edgeFrameRootsHeapStatics.getKey().toString());
+        for (Map.Entry<Edge, FrameHeapStatics> contextFrameHeapStatics : this.contextToFrameHeapStatics.entrySet()) {
+            str.append(contextFrameHeapStatics.getKey().toString());
             str.append("=\\l");
-            str.append(edgeFrameRootsHeapStatics.getValue().toString());
+            str.append(contextFrameHeapStatics.getValue().toString());
             str.append("\\l");
         }
         int length = str.length();
@@ -102,174 +104,251 @@ public class States {
     }
 }
 
-class FrameRootsHeapStatics {
+class FrameHeapStatics {
     Frame frame;
-    Set<Address> roots;
     Heap heap;
     Statics statics;
 
-    FrameRootsHeapStatics() {
+    FrameHeapStatics() {
         this.frame = new Frame();
-        this.roots = new HashSet<Address>();
         this.heap = new Heap();
         this.statics = new Statics();
     }
 
-    FrameRootsHeapStatics(Frame frame, Set<Address> roots, Heap heap, Statics statics) {
+    FrameHeapStatics(Frame frame, Heap heap, Statics statics) {
+        assert frame != null && heap != null && statics != null;
         this.frame = frame;
-        this.roots = roots;
         this.heap = heap;
         this.statics = statics;
     }
 
-    FrameRootsHeapStatics merge(FrameRootsHeapStatics that) {
-        Set<Address> roots = new HashSet<Address>(this.roots);
-        roots.addAll(that.roots);
-        return new FrameRootsHeapStatics(this.frame.merge(that.frame), roots, this.heap.merge(that.heap), this.statics.merge(that.statics));
+    FrameHeapStatics(FrameHeapStatics that) {
+        this.frame = new Frame(that.frame);
+        this.heap = new Heap(that.heap);
+        this.statics = new Statics(that.statics);
+    }
+
+    FrameHeapStatics merge(FrameHeapStatics that) {
+        return new FrameHeapStatics(this.frame.merge(that.frame), this.heap.merge(that.heap), this.statics.merge(that.statics));
     }
 
     @Override
     public boolean equals(Object that) {
-        if (that instanceof FrameRootsHeapStatics) {
-            FrameRootsHeapStatics frameRootsHeapStatics = (FrameRootsHeapStatics)that;
-            return this.frame.equals(frameRootsHeapStatics.frame) && this.roots.equals(frameRootsHeapStatics.roots) && this.heap.equals(frameRootsHeapStatics.heap) && this.statics.equals(frameRootsHeapStatics.statics);
-        } else {
+        if (this == that) {
+            return true;
+        }
+        if (!(that instanceof FrameHeapStatics)) {
             return false;
         }
-    }
+        FrameHeapStatics frameHeapStatics = (FrameHeapStatics)that;
 
-    FrameRootsHeapStatics subtract(FrameRootsHeapStatics that) {
-        Set<Address> roots = new HashSet<Address>(this.roots);
-        roots.removeAll(that.roots);
-        return new FrameRootsHeapStatics(this.frame.subtract(that.frame), roots, this.heap.subtract(that.heap), this.statics.subtract(that.statics));
+        return this.frame.equals(frameHeapStatics.frame) && this.heap.equals(frameHeapStatics.heap) && this.statics.equals(frameHeapStatics.statics);
     }
 
     @Override
     public String toString() {
-        return "(" + frame + ",\\l " + roots + ",\\l " + heap + ",\\l " + statics + ")";
+        return "(" + frame + ",\\l " + heap + ",\\l " + statics + ")";
     }
 }
 
 class Frame {
-    @SuppressWarnings("serial")
-    private class MyParameterRef extends ParameterRef {
-        MyParameterRef(ParameterRef param) {
-            super(param.getType(), param.getIndex());
-        }
+    static final Frame EMPTY = new Frame();
 
-        @Override
-        public boolean equals(Object that) {
-            return equivTo(that);
-        }
-
-        @Override
-        public int hashCode() {
-            return equivHashCode();
-        }
-    }
-
-    DefaultHashMap<Local, Set<MyValue>> locals;
-    DefaultHashMap<MyParameterRef, Set<MyValue>> params;
-
-    private static final Set<MyValue> emptyValues = new HashSet<MyValue>();
+    DefaultHashMap<MethodLocal, ImmutableList<MyValue>> locals;
+    DefaultHashMap<SootMethod, ImmutableList<MyValue>> thiz;
+    DefaultHashMap<MethodMyParameterRef, ImmutableList<MyValue>> params;
 
     Frame() {
-        locals = new DefaultHashMap<Local, Set<MyValue>>(emptyValues);
-        params = new DefaultHashMap<MyParameterRef, Set<MyValue>>(emptyValues);
+        locals = new DefaultHashMap<MethodLocal, ImmutableList<MyValue>>(ImmutableList.<MyValue>of());
+        thiz = new DefaultHashMap<SootMethod, ImmutableList<MyValue>>(ImmutableList.<MyValue>of());
+        params = new DefaultHashMap<MethodMyParameterRef, ImmutableList<MyValue>>(ImmutableList.<MyValue>of());
     }
 
-    Frame(Frame that, DefaultHashMap<MyParameterRef, Set<MyValue>> params) {
-        this.locals = new DefaultHashMap<Local, Set<MyValue>>(that.locals);
+    Frame(Frame that, DefaultHashMap<SootMethod, ImmutableList<MyValue>> thiz, DefaultHashMap<MethodMyParameterRef, ImmutableList<MyValue>> params) {
+        assert params != null;
+        this.locals = new DefaultHashMap<MethodLocal, ImmutableList<MyValue>>(that.locals);
+        this.thiz = thiz;
         this.params = params;
     }
 
-    Frame(DefaultHashMap<Local, Set<MyValue>> locals, DefaultHashMap<MyParameterRef, Set<MyValue>> params) {
+    Frame(DefaultHashMap<MethodLocal, ImmutableList<MyValue>> locals, DefaultHashMap<SootMethod, ImmutableList<MyValue>> thiz, DefaultHashMap<MethodMyParameterRef, ImmutableList<MyValue>> params) {
+        assert locals != null && params != null;
         this.locals = locals;
+        this.thiz = thiz;
         this.params = params;
+    }
+
+    Frame(Frame that) {
+        this.locals = new DefaultHashMap<MethodLocal, ImmutableList<MyValue>>(that.locals);
+        this.thiz = new DefaultHashMap<SootMethod, ImmutableList<MyValue>>(that.thiz);
+        this.params = new DefaultHashMap<MethodMyParameterRef, ImmutableList<MyValue>>(that.params);
     }
 
     Frame merge(Frame that) {
         Frame frame = new Frame();
 
-        for (Map.Entry<Local, Set<MyValue>> localValues : this.locals.entrySet()) {
-            Set<MyValue> values = localValues.getValue();
-            if (values != null) {       // TODO: is this legal?
-                Local local = localValues.getKey();
-                if (that.locals.containsKey(local)) {
-                    Set<MyValue> vals = new HashSet<MyValue>(values);
-                    vals.addAll(that.locals.get(local));
-                    frame.locals.put(local, vals);
-                } else {
-                    frame.locals.put(local, values);
-                }
+        for (Map.Entry<MethodLocal, ImmutableList<MyValue>> localValues : this.locals.entrySet()) {
+            MethodLocal local = localValues.getKey();
+            ImmutableList<MyValue> values = localValues.getValue();
+            if (that.locals.containsKey(local)) {
+                Set<MyValue> vals = new HashSet<MyValue>(values);
+                vals.addAll(that.locals.get(local));
+                frame.locals.put(local, ImmutableList.copyOf(vals));
+            } else {
+                frame.locals.put(local, values);
             }
         }
-        for (Map.Entry<Local, Set<MyValue>> localValues : that.locals.entrySet()) {
-            Set<MyValue> values = localValues.getValue();
-            if (values != null) {       // TODO: is this legal?
-                Local local = localValues.getKey();
-                if (!frame.locals.containsKey(local)) {
-                    frame.locals.put(local, values);
-                }
+        for (Map.Entry<MethodLocal, ImmutableList<MyValue>> localValues : that.locals.entrySet()) {
+            MethodLocal local = localValues.getKey();
+            if (!this.locals.containsKey(local)) {
+                frame.locals.put(local, localValues.getValue());
             }
         }
 
-        for (Map.Entry<MyParameterRef, Set<MyValue>> parameterRefValues : this.params.entrySet()) {
-            Set<MyValue> values = parameterRefValues.getValue();
-            if (parameterRefValues.getValue() != null) {        // TODO: is this legal?
-                MyParameterRef parameterRef = parameterRefValues.getKey();
-                if (that.params.containsKey(parameterRef)) {
-                    Set<MyValue> vals = new HashSet<MyValue>(values);
-                    vals.addAll(that.params.get(parameterRef));
-                    frame.params.put(parameterRef, vals);
-                } else {
-                    frame.params.put(parameterRef, values);
-                }
+        for (Map.Entry<SootMethod, ImmutableList<MyValue>> methodValues : this.thiz.entrySet()) {
+            SootMethod method = methodValues.getKey();
+            ImmutableList<MyValue> values = methodValues.getValue();
+            if (that.thiz.containsKey(method)) {
+                Set<MyValue> vals = new HashSet<MyValue>(values);
+                vals.addAll(that.thiz.get(method));
+                frame.thiz.put(method, ImmutableList.copyOf(vals));
+            } else {
+                frame.thiz.put(method, values);
             }
         }
-        for (Map.Entry<MyParameterRef, Set<MyValue>> parameterRefValues : that.params.entrySet()) {
-            Set<MyValue> values = parameterRefValues.getValue();
-            if (values != null) {       // TODO: is this legal?
-                MyParameterRef parameterRef = parameterRefValues.getKey();
-                if (!frame.params.containsKey(parameterRef)) {
-                    frame.params.put(parameterRef, values);
-                }
+        for (Map.Entry<SootMethod, ImmutableList<MyValue>> methodValues : that.thiz.entrySet()) {
+            SootMethod method = methodValues.getKey();
+            if (!this.thiz.containsKey(method)) {
+                frame.thiz.put(method, methodValues.getValue());
+            }
+        }
+
+        for (Map.Entry<MethodMyParameterRef, ImmutableList<MyValue>> parameterRefValues : this.params.entrySet()) {
+            ImmutableList<MyValue> values = parameterRefValues.getValue();
+            MethodMyParameterRef parameterRef = parameterRefValues.getKey();
+            if (that.params.containsKey(parameterRef)) {
+                Set<MyValue> vals = new HashSet<MyValue>(values);
+                vals.addAll(that.params.get(parameterRef));
+                frame.params.put(parameterRef, ImmutableList.copyOf(vals));
+            } else {
+                frame.params.put(parameterRef, values);
+            }
+        }
+        for (Map.Entry<MethodMyParameterRef, ImmutableList<MyValue>> parameterRefValues : that.params.entrySet()) {
+            MethodMyParameterRef parameterRef = parameterRefValues.getKey();
+            if (!this.params.containsKey(parameterRef)) {
+                frame.params.put(parameterRef, parameterRefValues.getValue());
             }
         }
 
         return frame;
     }
 
-    Set<MyValue> put(Local local, Set<MyValue> values) {
-        return locals.put(local, values);
+    ImmutableList<MyValue> putS(MethodLocal local, Set<MyValue> values) {
+        return putS(local, ImmutableList.copyOf(values));
     }
 
-    Set<MyValue> get(Local local) {
+    ImmutableList<MyValue> putS(MethodLocal local, ImmutableList<MyValue> values) {
+        if (values != null && !values.isEmpty()) {
+            return locals.put(local, values);
+        } else {
+            return locals.remove(local);
+        }
+    }
+
+    ImmutableList<MyValue> putW(MethodLocal local, Set<MyValue> values) {
+        return putW(local, ImmutableList.copyOf(values));
+    }
+
+    // weakly update
+    ImmutableList<MyValue> putW(MethodLocal local, List<MyValue> values) {
+        ImmutableList<MyValue> valuesOld = locals.get(local);
+        if (values != null && !values.isEmpty()) {
+            Set<MyValue> valuesNew = new HashSet<MyValue>(valuesOld);
+            valuesNew.addAll(values);
+            return locals.put(local, ImmutableList.copyOf(valuesNew));
+        } else {
+            return valuesOld;
+        }
+    }
+
+    ImmutableList<MyValue> get(MethodLocal local) {
         return locals.get(local);
     }
 
-    Set<MyValue> remove(Local local) {
+    ImmutableList<MyValue> remove(MethodLocal local) {
         return locals.remove(local);
     }
 
-    Set<MyValue> put(ParameterRef parameterRef, Set<MyValue> values) {
-        return params.put(new MyParameterRef(parameterRef), values);
+    ImmutableList<MyValue> putS(SootMethod method, ImmutableList<MyValue> values) {
+        if (values != null && !values.isEmpty()) {
+            return thiz.put(method, values);
+        } else {
+            return thiz.remove(method);
+        }
     }
 
-    Set<MyValue> get(ParameterRef parameterRef) {
-        return params.get(new MyParameterRef(parameterRef));
+    ImmutableList<MyValue> putS(MethodMyParameterRef parameterRef, Set<MyValue> values) {
+        return putS(parameterRef, ImmutableList.copyOf(values));
+    }
+
+    // weakly update
+    ImmutableList<MyValue> putW(SootMethod method, List<MyValue> values) {
+        ImmutableList<MyValue> valuesOld = thiz.get(method);
+        if (values != null && !values.isEmpty()) {
+            Set<MyValue> valuesNew = new HashSet<MyValue>(valuesOld);
+            valuesNew.addAll(values);
+            return thiz.put(method, ImmutableList.copyOf(valuesNew));
+        } else {
+            return valuesOld;
+        }
+    }
+
+    ImmutableList<MyValue> get(SootMethod method) {
+        return thiz.get(method);
+    }
+
+    ImmutableList<MyValue> putS(MethodMyParameterRef parameterRef, ImmutableList<MyValue> values) {
+        if (values != null && !values.isEmpty()) {
+            return params.put(parameterRef, values);
+        } else {
+            return params.remove(parameterRef);
+        }
+    }
+
+    // weakly update
+    ImmutableList<MyValue> putW(MethodMyParameterRef parameterRef, List<MyValue> values) {
+        ImmutableList<MyValue> valuesOld = params.get(parameterRef);
+        if (values != null && !values.isEmpty()) {
+            Set<MyValue> valuesNew = new HashSet<MyValue>(valuesOld);
+            valuesNew.addAll(values);
+            return params.put(parameterRef, ImmutableList.copyOf(valuesNew));
+        } else {
+            return valuesOld;
+        }
+    }
+
+    ImmutableList<MyValue> get(MethodMyParameterRef parameterRef) {
+        return params.get(parameterRef);
     }
 
     Set<Address> roots() {
         Set<Address> roots = new HashSet<Address>();
-        for (Set<MyValue> values : locals.values()) {
+        for (ImmutableList<MyValue> values : locals.values()) {
             for (MyValue value : values) {
                 if (value instanceof Address) {
                     roots.add((Address)value);
                 }
             }
         }
-        for (Set<MyValue> values : params.values()) {
+        for (ImmutableList<MyValue> values : thiz.values()) {
+            for (MyValue value : values) {
+                if (value instanceof Address) {
+                    roots.add((Address)value);
+                }
+            }
+        }
+        for (ImmutableList<MyValue> values : params.values()) {
             for (MyValue value : values) {
                 if (value instanceof Address) {
                     roots.add((Address)value);
@@ -281,79 +360,197 @@ class Frame {
 
     @Override
     public boolean equals(Object that) {
-        if (that instanceof Frame) {
-            Frame frame = (Frame)that;
-            return locals.equals(frame.locals) && params.equals(frame.params);
-        } else {
+        if (this == that) {
+            return true;
+        }
+        if (!(that instanceof Frame)) {
             return false;
         }
-    }
+        Frame frame = (Frame)that;
 
-    Frame subtract(Frame that) {
-        Frame frame = new Frame();
-        for (Map.Entry<Local, Set<MyValue>> localValues : this.locals.entrySet()) {
-            Local local = localValues.getKey();
-            Set<MyValue> values = localValues.getValue();
-            if (that.locals.containsKey(local)) {
-                Set<MyValue> vals = new HashSet<MyValue>();
-                if (values != null) {
-                    vals.addAll(values);
-                }
-                if (that.locals.get(local) != null) {
-                    vals.removeAll(that.locals.get(local));
-                }
-                if (!vals.isEmpty()) {
-                    frame.locals.put(local, vals);
-                }
-            } else {
-                if (values != null && !values.isEmpty()) {
-                    frame.locals.put(local, values);
+        if (this.locals.size() != frame.locals.size()) {
+            return false;
+        }
+        if (this.thiz.size() != frame.thiz.size()) {
+            return false;
+        }
+        if (this.params.size() != frame.params.size()) {
+            return false;
+        }
+        try {
+            for (Map.Entry<MethodLocal, ImmutableList<MyValue>> localValues : this.locals.entrySet()) {
+                if (!(ImmutableSet.copyOf(localValues.getValue()).equals(ImmutableSet.copyOf(frame.locals.get(localValues.getKey()))))) {
+                    return false;
                 }
             }
-        }
-        for (Map.Entry<MyParameterRef, Set<MyValue>> parameterRefValues : this.params.entrySet()) {
-            MyParameterRef parameterRef = parameterRefValues.getKey();
-            Set<MyValue> values = parameterRefValues.getValue();
-            if (that.params.containsKey(parameterRef)) {
-                Set<MyValue> vals = new HashSet<MyValue>();
-                if (values != null) {
-                    vals.addAll(values);
-                }
-                if (that.params.get(parameterRef) != null) {
-                    vals.removeAll(that.params.get(parameterRef));
-                }
-                if (!vals.isEmpty()) {
-                    frame.params.put(parameterRef, vals);
-                }
-            } else {
-                if (values != null && !values.isEmpty()) {
-                    frame.params.put(parameterRef, values);
+            for (Map.Entry<SootMethod, ImmutableList<MyValue>> methodValues : this.thiz.entrySet()) {
+                if (!(ImmutableSet.copyOf(methodValues.getValue()).equals(ImmutableSet.copyOf(frame.thiz.get(methodValues.getKey()))))) {
+                    return false;
                 }
             }
+            for (Map.Entry<MethodMyParameterRef, ImmutableList<MyValue>> paramValues : this.params.entrySet()) {
+                if (!(ImmutableSet.copyOf(paramValues.getValue()).equals(ImmutableSet.copyOf(frame.params.get(paramValues.getKey()))))) {
+                    return false;
+                }
+            }
+        } catch (ClassCastException unused) {
+            return false;
+        } catch (NullPointerException unused) {
+            return false;
         }
-        return frame;
+
+        return true;
     }
 
     @Override
     public String toString() {
-        Comparator<Local> localComparator = new Comparator<Local>() {
+        Comparator<MethodLocal> localComparator = new Comparator<MethodLocal>() {
             @Override
-            public int compare(Local local1, Local local2) {
-                return local1.getName().compareTo(local2.getName());
+            public int compare(MethodLocal local1, MethodLocal local2) {
+                int method = local1.method.getSignature().compareTo(local2.method.getSignature());
+                if (method != 0) {
+                    return method;
+                } else {
+                    return local1.local.getName().compareTo(local2.local.getName());
+                }
             }
-
         };
-        TreeMap<Local, Set<MyValue>> sortedLocals = new TreeMap<Local, Set<MyValue>>(localComparator);
+        TreeMap<MethodLocal, ImmutableList<MyValue>> sortedLocals = new TreeMap<MethodLocal, ImmutableList<MyValue>>(localComparator);
         sortedLocals.putAll(locals);
-        Comparator<MyParameterRef> paramComparator = new Comparator<MyParameterRef>() {
+        Comparator<SootMethod> thisComparator = new Comparator<SootMethod>() {
             @Override
-            public int compare(MyParameterRef param1, MyParameterRef param2) {
-                return param1.getIndex() - param2.getIndex();
+            public int compare(SootMethod method1, SootMethod method2) {
+                return method1.getSignature().compareTo(method2.getSignature());
             }
         };
-        TreeMap<MyParameterRef, Set<MyValue>> sortedParams = new TreeMap<MyParameterRef, Set<MyValue>>(paramComparator);
+        TreeMap<SootMethod, ImmutableList<MyValue>> sortedThese = new TreeMap<SootMethod, ImmutableList<MyValue>>(thisComparator);
+        sortedThese.putAll(thiz);
+        Comparator<MethodMyParameterRef> paramComparator = new Comparator<MethodMyParameterRef>() {
+            @Override
+            public int compare(MethodMyParameterRef param1, MethodMyParameterRef param2) {
+                int method = param1.method.getSignature().compareTo(param2.method.getSignature());
+                if (method != 0) {
+                    return method;
+                } else {
+                    return param1.param.getIndex() - param2.param.getIndex();
+                }
+            }
+        };
+        TreeMap<MethodMyParameterRef, ImmutableList<MyValue>> sortedParams = new TreeMap<MethodMyParameterRef, ImmutableList<MyValue>>(paramComparator);
         sortedParams.putAll(params);
-        return "(" + sortedLocals + ", " + sortedParams + ")";
+        return "(" + sortedLocals + ", " + sortedThese + ", " + sortedParams + ")";
+    }
+}
+
+class MethodLocal {
+    private static final HashMap<ImmutablePair<SootMethod, Local>, MethodLocal> cache = new HashMap<ImmutablePair<SootMethod, Local>, MethodLocal>();
+
+    SootMethod method;
+    Local local;
+
+    private MethodLocal(SootMethod method, Local local) {
+        assert method != null && local != null;
+        this.method = method;
+        this.local = local;
+    }
+
+    static MethodLocal v(SootMethod method, Local local) {
+        assert method != null && local != null;
+        ImmutablePair<SootMethod, Local> key = ImmutablePair.of(method, local);
+        MethodLocal methodLocal = cache.get(key);
+        if (methodLocal == null) {
+            methodLocal = new MethodLocal(method, local);
+            cache.put(key, methodLocal);
+        }
+        return methodLocal;
+    }
+
+    @Override
+    public boolean equals(Object that) {
+        if (this == that) {
+            return true;
+        }
+        if (!(that instanceof MethodLocal)) {
+            return false;
+        }
+        MethodLocal methodLocal = (MethodLocal)that;
+
+        return this.method.equals(methodLocal.method) && this.local.equivTo(methodLocal.local);
+    }
+
+    @Override
+    public int hashCode() {
+        return method.equivHashCode();
+    }
+
+    @Override
+    public String toString() {
+        return local.toString();
+    }
+}
+
+class MethodMyParameterRef {
+    private static final HashMap<ImmutablePair<SootMethod, MyParameterRef>, MethodMyParameterRef> cache = new HashMap<ImmutablePair<SootMethod, MyParameterRef>, MethodMyParameterRef>();
+
+    SootMethod method;
+    MyParameterRef param;
+
+    private MethodMyParameterRef(SootMethod method, MyParameterRef param) {
+        assert method != null && param != null;
+        this.method = method;
+        this.param = param;
+    }
+
+    static MethodMyParameterRef v(SootMethod method, ParameterRef param) {
+        assert method != null && param != null;
+        MyParameterRef p = new MyParameterRef(param);
+        ImmutablePair<SootMethod, MyParameterRef> key = ImmutablePair.of(method, p);
+        MethodMyParameterRef methodParam = cache.get(key);
+        if (methodParam == null) {
+            methodParam = new MethodMyParameterRef(method, p);
+            cache.put(key, methodParam);
+        }
+        return methodParam;
+    }
+
+    @Override
+    public boolean equals(Object that) {
+        if (this == that) {
+            return true;
+        }
+        if (!(that instanceof MethodMyParameterRef)) {
+            return false;
+        }
+        MethodMyParameterRef methodParam = (MethodMyParameterRef)that;
+
+        return this.method.equals(methodParam.method) && this.param.equivTo(methodParam.param);
+    }
+
+    @Override
+    public int hashCode() {
+        return method.equivHashCode();
+    }
+
+    @Override
+    public String toString() {
+        return param.toString();
+    }
+}
+
+@SuppressWarnings("serial")
+class MyParameterRef extends ParameterRef {
+    public MyParameterRef(ParameterRef param) {
+        super(param.getType(), param.getIndex());
+    }
+
+    @Override
+    public boolean equals(Object that) {
+        return equivTo(that);
+    }
+
+    @Override
+    public int hashCode() {
+        return equivHashCode();
     }
 }
 
@@ -367,13 +564,20 @@ class Heap {
     }
 
     Heap(Instances instances, Arrays arrays) {
+        assert instances != null && arrays != null;
         this.instances = instances;
         this.arrays = arrays;
     }
 
     Heap(Heap that, Arrays arrays) {
+        assert arrays != null;
         this.instances = new Instances(that.instances);
         this.arrays = arrays;
+    }
+
+    Heap(Heap that) {
+        this.instances = new Instances(that.instances);
+        this.arrays = new Arrays(that.arrays);
     }
 
     Heap merge(Heap that) {
@@ -383,16 +587,34 @@ class Heap {
     Heap gc(Set<Address> roots) {
         Set<Address> reachable = reachable(roots);
         Heap heap = new Heap();
-        for (Map.Entry<Address, DefaultHashMap<SootField, Set<MyValue>>> addressSootFieldToValues : instances.entrySet()) {
-            Address address = addressSootFieldToValues.getKey();
-            if (reachable.contains(address)) {
-                heap.instances.put(address, addressSootFieldToValues.getValue());
+        for (Map.Entry<AddressField, ImmutableList<MyValue>> addressFieldValues : instances.entrySet()) {
+            AddressField addressField = addressFieldValues.getKey();
+            if (reachable.contains(addressField.address)) {
+                heap.instances.putS(addressField.address, addressField.field, addressFieldValues.getValue());
             }
         }
-        for (Map.Entry<Address, Set<MyValue>> addressValues : arrays.entrySet()) {
+        for (Map.Entry<Address, ImmutableList<MyValue>> addressValues : arrays.entrySet()) {
             Address address = addressValues.getKey();
             if (reachable.contains(address)) {
-                heap.arrays.put(address, addressValues.getValue());
+                heap.arrays.putS(address, addressValues.getValue());
+            }
+        }
+        return heap;
+    }
+
+    Heap localize(Set<Address> roots, List<AddressField> addressFields, List<Address> addresses) {
+        Set<Address> reachable = reachable(roots);
+        Heap heap = new Heap();
+        for (Map.Entry<AddressField, ImmutableList<MyValue>> addressFieldValues : instances.entrySet()) {
+            AddressField addressField = addressFieldValues.getKey();
+            if (reachable.contains(addressField.address) && addressFields.contains(addressField)) {
+                heap.instances.putS(addressField.address, addressField.field, addressFieldValues.getValue());
+            }
+        }
+        for (Map.Entry<Address, ImmutableList<MyValue>> addressValues : arrays.entrySet()) {
+            Address address = addressValues.getKey();
+            if (reachable.contains(address) && addresses.contains(address)) {
+                heap.arrays.putS(address, addressValues.getValue());
             }
         }
         return heap;
@@ -400,16 +622,15 @@ class Heap {
 
     @Override
     public boolean equals(Object that) {
-        if (that instanceof Heap) {
-            Heap heap = (Heap)that;
-            return this.instances.equals(heap.instances) && this.arrays.equals(heap.arrays);
-        } else {
+        if (this == that) {
+            return true;
+        }
+        if (!(that instanceof Heap)) {
             return false;
         }
-    }
+        Heap heap = (Heap)that;
 
-    Heap subtract(Heap that) {
-        return new Heap(this.instances.subtract(that.instances), this.arrays.subtract(that.arrays));
+        return this.instances.equals(heap.instances) && this.arrays.equals(heap.arrays);
     }
 
     @Override
@@ -421,19 +642,28 @@ class Heap {
         Set<Address> addressesReachable = new HashSet<Address>(roots);
         Set<Address> addressesToVisit = new HashSet<Address>(roots);
         Set<Address> addressesVisited = new HashSet<Address>();
+        DefaultHashMap<Address, List<Address>> reachableDirectly = new DefaultHashMap<Address, List<Address>>(Collections.<Address>emptyList());
+        for (Map.Entry<AddressField, ImmutableList<MyValue>> addressFieldValues : instances.entrySet()) {
+            AddressField addressField = addressFieldValues.getKey();
+            ArrayList<Address> addresses = new ArrayList<Address>();
+            for (MyValue value : addressFieldValues.getValue()) {
+                if (value instanceof Address) {
+                    addresses.add((Address)value);
+                }
+            }
+            if (!addresses.isEmpty()) {
+                reachableDirectly.put(addressField.address, addresses);
+            }
+        }
         while (!addressesToVisit.isEmpty()) {
             Set<Address> newAddressesToVisit = new HashSet<Address>();
             for (Address address : addressesToVisit) {
                 addressesVisited.add(address);
-                for (Set<MyValue> values : instances.get(address).values()) {
-                    for (MyValue value : values) {
-                        if (value instanceof Address) {
-                            Address addr = (Address)value;
-                            addressesReachable.add(addr);
-                            if (!addressesVisited.contains(addr)) {
-                                newAddressesToVisit.add(addr);
-                            }
-                        }
+                List<Address> addresses = reachableDirectly.get(address);
+                addressesReachable.addAll(addresses);
+                for (Address addr : addresses) {
+                    if (!addressesVisited.contains(addr)) {
+                        newAddressesToVisit.add(addr);
                     }
                 }
                 for (MyValue value : arrays.get(address)) {
@@ -453,371 +683,162 @@ class Heap {
 }
 
 class Instances {
-    private final DefaultHashMap<Address, DefaultHashMap<SootField, Set<MyValue>>> addressToFieldToValues;
-
-    private static final Set<MyValue> emptyValues = new HashSet<MyValue>();
-    private static final DefaultHashMap<SootField, Set<MyValue>> emptyFieldToValues = new DefaultHashMap<SootField, Set<MyValue>>(emptyValues);
+    private final DefaultHashMap<AddressField, ImmutableList<MyValue>> addressFieldToValues;
 
     Instances() {
-        addressToFieldToValues = new DefaultHashMap<Address, DefaultHashMap<SootField, Set<MyValue>>>(emptyFieldToValues);
+        addressFieldToValues = new DefaultHashMap<AddressField, ImmutableList<MyValue>>(ImmutableList.<MyValue>of());
     }
 
     Instances(Instances that) {
-        this.addressToFieldToValues = new DefaultHashMap<Address, DefaultHashMap<SootField, Set<MyValue>>>(that.addressToFieldToValues);
+        this.addressFieldToValues = new DefaultHashMap<AddressField, ImmutableList<MyValue>>(that.addressFieldToValues);
     }
 
     Instances merge(Instances that) {
         Instances instances = new Instances();
-        for (Map.Entry<Address, DefaultHashMap<SootField, Set<MyValue>>> addressFieldToValues : addressToFieldToValues.entrySet()) {
-            Address address = addressFieldToValues.getKey();
-            instances.addressToFieldToValues.put(address, new DefaultHashMap<SootField, Set<MyValue>>(emptyValues));
-            DefaultHashMap<SootField, Set<MyValue>> fieldToValues = instances.addressToFieldToValues.get(address);
-            for (Map.Entry<SootField, Set<MyValue>> fieldValues : addressFieldToValues.getValue().entrySet()) {
-                fieldToValues.put(fieldValues.getKey(), new HashSet<MyValue>(fieldValues.getValue()));
+        for (Map.Entry<AddressField, ImmutableList<MyValue>> addressFieldValues1 : this.addressFieldToValues.entrySet()) {
+            AddressField addressField = addressFieldValues1.getKey();
+            ImmutableList<MyValue> values1 = addressFieldValues1.getValue();
+            if (that.addressFieldToValues.containsKey(addressField)) {
+                Set<MyValue> values = new HashSet<MyValue>(values1);
+                values.addAll(that.addressFieldToValues.get(addressField));
+                instances.addressFieldToValues.put(addressField, ImmutableList.copyOf(values));
+            } else {
+                instances.addressFieldToValues.put(addressField, values1);
             }
         }
-        for (Map.Entry<Address, DefaultHashMap<SootField, Set<MyValue>>> addressFieldToValues : that.addressToFieldToValues.entrySet()) {
-            Address address = addressFieldToValues.getKey();
-            if (instances.addressToFieldToValues.containsKey(address)) {
-                DefaultHashMap<SootField, Set<MyValue>> fieldToValues = instances.addressToFieldToValues.get(address);
-                for (Map.Entry<SootField, Set<MyValue>> fieldValues : addressFieldToValues.getValue().entrySet()) {
-                    SootField field = fieldValues.getKey();
-                    if (fieldToValues.containsKey(field)) {
-                        fieldToValues.get(field).addAll(fieldValues.getValue());
-                    } else {
-                        fieldToValues.put(field, fieldValues.getValue());
-                    }
-                }
-            } else {
-                instances.addressToFieldToValues.put(address, addressFieldToValues.getValue());
+        for (Map.Entry<AddressField, ImmutableList<MyValue>> addressFieldValues2 : that.addressFieldToValues.entrySet()) {
+            AddressField addressField = addressFieldValues2.getKey();
+            if (!this.addressFieldToValues.containsKey(addressField)) {
+                instances.addressFieldToValues.put(addressField, addressFieldValues2.getValue());
             }
         }
         return instances;
-    }
-
-    // strongly update
-    DefaultHashMap<SootField, Set<MyValue>> put(Address address, DefaultHashMap<SootField, Set<MyValue>> fieldToValues) {
-        return addressToFieldToValues.put(address, fieldToValues);
     }
 
     // weakly update
-    Set<MyValue> put(Address address, SootField field, Set<MyValue> values) {
-        DefaultHashMap<SootField, Set<MyValue>> fieldToValuesOld = addressToFieldToValues.get(address);
-        Set<MyValue> valuesOld = fieldToValuesOld.get(field);
-        Set<MyValue> valuesNew = new HashSet<MyValue>(valuesOld);
-        valuesNew.addAll(values);
-        DefaultHashMap<SootField, Set<MyValue>> fieldToValuesNew = new DefaultHashMap<SootField, Set<MyValue>>(fieldToValuesOld);
-        fieldToValuesNew.put(field, valuesNew);
-        addressToFieldToValues.put(address, fieldToValuesNew);
-        return valuesOld;
+    ImmutableList<MyValue> putW(Address address, SootField field, Set<MyValue> values) {
+        return putW(address, field, ImmutableList.copyOf(values));
     }
 
-    DefaultHashMap<SootField, Set<MyValue>> get(Address address) {
-        return addressToFieldToValues.get(address);
+    ImmutableList<MyValue> putW(Address address, SootField field, List<MyValue> values) {
+        AddressField addressField = AddressField.v(address, field);
+        ImmutableList<MyValue> valuesOld = addressFieldToValues.get(addressField);
+        if (values != null && !values.isEmpty()) {
+            Set<MyValue> valuesNew = new HashSet<MyValue>(valuesOld);
+            valuesNew.addAll(values);
+            return addressFieldToValues.put(addressField, ImmutableList.copyOf(valuesNew));
+        } else {
+            return valuesOld;
+        }
     }
 
-    Set<MyValue> get(Address address, SootField field) {
-        return addressToFieldToValues.get(address).get(field);
+    // strongly update
+    ImmutableList<MyValue> putS(Address address, SootField field, ImmutableList<MyValue> values) {
+        AddressField addressField = AddressField.v(address, field);
+        if (values != null && !values.isEmpty()) {
+            return addressFieldToValues.put(addressField, values);
+        } else {
+            return addressFieldToValues.remove(addressField);
+        }
     }
 
-    Set<Entry<Address, DefaultHashMap<SootField, Set<MyValue>>>> entrySet() {
-        return addressToFieldToValues.entrySet();
+    ImmutableList<MyValue> get(Address address, SootField field) {
+        return addressFieldToValues.get(AddressField.v(address, field));
+    }
+
+    Set<Map.Entry<AddressField, ImmutableList<MyValue>>> entrySet() {
+        return addressFieldToValues.entrySet();
     }
 
     @Override
     public boolean equals(Object that) {
-        if (that instanceof Instances) {
-            return this.addressToFieldToValues.equals(((Instances)that).addressToFieldToValues);
-        } else {
+        if (this == that) {
+            return true;
+        }
+        if (!(that instanceof Instances)) {
             return false;
         }
-    }
+        Instances instances = (Instances)that;
 
-    Instances subtract(Instances that) {
-        Instances instances = new Instances();
-        for (Map.Entry<Address, DefaultHashMap<SootField, Set<MyValue>>> addressFieldToValues : this.addressToFieldToValues.entrySet()) {
-            Address address = addressFieldToValues.getKey();
-            if (that.addressToFieldToValues.containsKey(address)) {
-                DefaultHashMap<SootField, Set<MyValue>> fieldToValues = new DefaultHashMap<SootField, Set<MyValue>>(emptyValues);
-                for (Map.Entry<SootField, Set<MyValue>> fieldValues : addressFieldToValues.getValue().entrySet()) {
-                    SootField field = fieldValues.getKey();
-                    Set<MyValue> values = fieldValues.getValue();
-                    if (that.addressToFieldToValues.get(address).containsKey(field)) {
-                        Set<MyValue> vals = new HashSet<MyValue>(values);
-                        vals.removeAll(that.addressToFieldToValues.get(address).get(field));
-                        if (!vals.isEmpty()) {
-                            fieldToValues.put(field, vals);
-                        }
-                    } else {
-                        if (!values.isEmpty()) {
-                            fieldToValues.put(field, values);
-                        }
-                    }
-                }
-                if (!fieldToValues.isEmpty()) {
-                    instances.addressToFieldToValues.put(address, fieldToValues);
-                }
-            } else {
-                DefaultHashMap<SootField, Set<MyValue>> fieldToValues = new DefaultHashMap<SootField, Set<MyValue>>(emptyValues);
-                for (Map.Entry<SootField, Set<MyValue>> fieldValues : addressFieldToValues.getValue().entrySet()) {
-                    SootField field = fieldValues.getKey();
-                    Set<MyValue> values = fieldValues.getValue();
-                    if (!values.isEmpty()) {
-                        fieldToValues.put(field, values);
-                    }
-                }
-                if (!fieldToValues.isEmpty()) {
-                    instances.addressToFieldToValues.put(address, fieldToValues);
+        if (this.addressFieldToValues.size() != instances.addressFieldToValues.size()) {
+            return false;
+        }
+        try {
+            for (Map.Entry<AddressField, ImmutableList<MyValue>> addressFieldValues : this.addressFieldToValues.entrySet()) {
+                AddressField addressField = addressFieldValues.getKey();
+                ImmutableList<MyValue> values = addressFieldValues.getValue();
+                if (!(ImmutableSet.copyOf(values).equals(ImmutableSet.copyOf(instances.addressFieldToValues.get(addressField))))) {
+                    return false;
                 }
             }
+        } catch (ClassCastException unused) {
+            return false;
+        } catch (NullPointerException unused) {
+            return false;
         }
-        return instances;
+        return true;
     }
 
     @Override
     public String toString() {
-        return new TreeMap<Address, DefaultHashMap<SootField, Set<MyValue>>>(addressToFieldToValues).toString();
+        return new TreeMap<AddressField, ImmutableList<MyValue>>(addressFieldToValues).toString();
     }
 }
 
-class Arrays {
-    private final DefaultHashMap<Address, Set<MyValue>> addressToValues;
+class AddressField implements Comparable<AddressField> {
+    private static final HashMap<ImmutablePair<Address, SootField>, AddressField> cache = new HashMap<ImmutablePair<Address, SootField>, AddressField>();
 
-    private static final Set<MyValue> emptyValues = new HashSet<MyValue>();
+    Address address;
+    SootField field;
 
-    Arrays() {
-        addressToValues = new DefaultHashMap<Address, Set<MyValue>>(emptyValues);
+    private AddressField(Address address, SootField field) {
+        assert address != null && field != null;
+        this.address = address;
+        this.field = field;
     }
 
-    Arrays(Arrays that) {
-        this.addressToValues = new DefaultHashMap<Address, Set<MyValue>>(that.addressToValues);
-    }
-
-    Arrays merge(Arrays that) {
-        Arrays arrays = new Arrays();
-
-        for (Map.Entry<Address, Set<MyValue>> addressValues : this.addressToValues.entrySet()) {
-            Set<MyValue> values = addressValues.getValue();
-            if (values != null) {       // TODO: is this legal?
-                Address address = addressValues.getKey();
-                if (that.addressToValues.containsKey(address)) {
-                    Set<MyValue> vals = new HashSet<MyValue>(values);
-                    vals.addAll(that.addressToValues.get(address));
-                    arrays.addressToValues.put(address, vals);
-                } else {
-                    arrays.addressToValues.put(address, values);
-                }
-            }
+    static AddressField v(Address address, SootField field) {
+        ImmutablePair<Address, SootField> key = ImmutablePair.of(address, field);
+        AddressField addressField = cache.get(key);
+        if (addressField == null) {
+            addressField = new AddressField(address, field);
+            cache.put(key, addressField);
         }
-        for (Map.Entry<Address, Set<MyValue>> addressValues : that.addressToValues.entrySet()) {
-            Set<MyValue> values = addressValues.getValue();
-            if (values != null) {       // TODO: is this legal?
-                Address address = addressValues.getKey();
-                if (!arrays.addressToValues.containsKey(address)) {
-                    arrays.addressToValues.put(address, values);
-                }
-            }
-        }
-
-        return arrays;
-    }
-
-    Set<MyValue> put(Address address, Set<MyValue> values) {
-        return addressToValues.put(address, values);
-    }
-
-    Set<MyValue> get(Address address) {
-        return addressToValues.get(address);
-    }
-
-    Set<Entry<Address, Set<MyValue>>> entrySet() {
-        return addressToValues.entrySet();
+        return addressField;
     }
 
     @Override
     public boolean equals(Object that) {
-        if (that instanceof Arrays) {
-            return this.addressToValues.equals(((Arrays)that).addressToValues);
-        } else {
+        if (this == that) {
+            return true;
+        }
+        if (!(that instanceof AddressField)) {
             return false;
         }
+        AddressField addressField = (AddressField)that;
+
+        return this.address.equals(addressField.address) && this.field.equals(addressField.field);
     }
 
-    Arrays subtract(Arrays that) {
-        Arrays arrays = new Arrays();
-        for (Map.Entry<Address, Set<MyValue>> addressValues : this.addressToValues.entrySet()) {
-            Address address = addressValues.getKey();
-            Set<MyValue> values = addressValues.getValue();
-            if (that.addressToValues.containsKey(address)) {
-                Set<MyValue> vals = new HashSet<MyValue>();
-                if (values != null) {
-                    vals.addAll(values);
-                }
-                if (that.addressToValues.get(address) != null) {
-                    vals.removeAll(that.addressToValues.get(address));
-                }
-                if (!vals.isEmpty()) {
-                    arrays.addressToValues.put(address, vals);
-                }
-            } else {
-                if (values != null && !values.isEmpty()) {
-                    arrays.addressToValues.put(address, values);
-                }
-            }
-        }
-        return arrays;
+    @Override
+    public int hashCode() {
+        return address.hashCode();
     }
 
     @Override
     public String toString() {
-        return new TreeMap<Address, Set<MyValue>>(addressToValues).toString();
-    }
-}
-
-class Statics {
-    private final DefaultHashMap<SootClass, DefaultHashMap<SootField, Set<MyValue>>> classToFieldToValues;
-
-    private static final Set<MyValue> emptyValues = new HashSet<MyValue>();
-    private static final DefaultHashMap<SootField, Set<MyValue>> emptyFieldToValues = new DefaultHashMap<SootField, Set<MyValue>>(emptyValues);
-
-    Statics() {
-        classToFieldToValues = new DefaultHashMap<SootClass, DefaultHashMap<SootField, Set<MyValue>>>(emptyFieldToValues);
-    }
-
-    Statics(Statics that) {
-        classToFieldToValues = new DefaultHashMap<SootClass, DefaultHashMap<SootField, Set<MyValue>>>(that.classToFieldToValues);
-    }
-
-    Statics merge(Statics that) {
-        Statics statics = new Statics();
-        for (Map.Entry<SootClass, DefaultHashMap<SootField, Set<MyValue>>> classFieldToValues : this.classToFieldToValues.entrySet()) {
-            SootClass klass = classFieldToValues.getKey();
-            statics.classToFieldToValues.put(klass, new DefaultHashMap<SootField, Set<MyValue>>(emptyValues));
-            Map<SootField, Set<MyValue>> fieldToValues = statics.classToFieldToValues.get(klass);
-            for (Map.Entry<SootField, Set<MyValue>> fieldValues : classFieldToValues.getValue().entrySet()) {
-                fieldToValues.put(fieldValues.getKey(), new HashSet<MyValue>(fieldValues.getValue()));
-            }
-        }
-        for (Map.Entry<SootClass, DefaultHashMap<SootField, Set<MyValue>>> classFieldToValues : that.classToFieldToValues.entrySet()) {
-            SootClass klass = classFieldToValues.getKey();
-            if (statics.classToFieldToValues.containsKey(klass)) {
-                DefaultHashMap<SootField, Set<MyValue>> fieldToValues = statics.classToFieldToValues.get(klass);
-                for (Map.Entry<SootField, Set<MyValue>> fieldValues : classFieldToValues.getValue().entrySet()) {
-                    SootField field = fieldValues.getKey();
-                    if (fieldToValues.containsKey(field)) {
-                        fieldToValues.get(field).addAll(fieldValues.getValue());
-                    } else {
-                        fieldToValues.put(field, fieldValues.getValue());
-                    }
-                }
-            } else {
-                statics.classToFieldToValues.put(klass, classFieldToValues.getValue());
-            }
-        }
-        return statics;
-    }
-
-    Set<MyValue> put(SootClass klass, SootField field, Set<MyValue> values) {
-        DefaultHashMap<SootField, Set<MyValue>> fieldToValuesOld = classToFieldToValues.get(klass);
-        Set<MyValue> valuesOld = fieldToValuesOld.get(field);
-        DefaultHashMap<SootField, Set<MyValue>> fieldToValuesNew = new DefaultHashMap<SootField, Set<MyValue>>(fieldToValuesOld);
-        fieldToValuesNew.put(field, values);
-        classToFieldToValues.put(klass, fieldToValuesNew);
-        return valuesOld;
-    }
-
-    Set<MyValue> get(SootClass klass, SootField field) {
-        return classToFieldToValues.get(klass).get(field);
-    }
-
-    Set<MyValue> remove(SootClass klass, SootField field) {
-        DefaultHashMap<SootField, Set<MyValue>> fieldToValuesOld = classToFieldToValues.get(klass);
-        Set<MyValue> valuesOld = fieldToValuesOld.get(field);
-        DefaultHashMap<SootField, Set<MyValue>> fieldToValuesNew = new DefaultHashMap<SootField, Set<MyValue>>(fieldToValuesOld);
-        fieldToValuesNew.remove(field);
-        classToFieldToValues.put(klass, fieldToValuesNew);
-        return valuesOld;
-    }
-
-    Set<Address> roots() {
-        Set<Address> roots = new HashSet<Address>();
-        for (DefaultHashMap<SootField, Set<MyValue>> fieldToValues : classToFieldToValues.values()) {
-            for (Set<MyValue> values : fieldToValues.values()) {
-                for (MyValue value : values) {
-                    if (value instanceof Address) {
-                        roots.add((Address)value);
-                    }
-                }
-            }
-        }
-        return roots;
+        return "(" + address + ", " + field.getSignature() + ")";
     }
 
     @Override
-    public boolean equals(Object that) {
-        if (that instanceof Statics) {
-            return this.classToFieldToValues.equals(((Statics)that).classToFieldToValues);
+    public int compareTo(AddressField that) {
+        int address = this.address.compareTo(that.address);
+        if (address != 0) {
+            return address;
         } else {
-            return false;
+            return this.field.getSignature().compareTo(that.field.getSignature());
         }
     }
-
-    Statics subtract(Statics that) {
-        Statics statics = new Statics();
-        for (Map.Entry<SootClass, DefaultHashMap<SootField, Set<MyValue>>> classFieldToValues : this.classToFieldToValues.entrySet()) {
-            SootClass klass = classFieldToValues.getKey();
-            if (that.classToFieldToValues.containsKey(klass)) {
-                DefaultHashMap<SootField, Set<MyValue>> fieldToValues = new DefaultHashMap<SootField, Set<MyValue>>(emptyValues);
-                for (Map.Entry<SootField, Set<MyValue>> fieldValues : classFieldToValues.getValue().entrySet()) {
-                    SootField field = fieldValues.getKey();
-                    Set<MyValue> values = fieldValues.getValue();
-                    if (that.classToFieldToValues.get(klass).containsKey(field)) {
-                        Set<MyValue> vals = new HashSet<MyValue>(values);
-                        vals.removeAll(that.classToFieldToValues.get(klass).get(field));
-                        if (!vals.isEmpty()) {
-                            fieldToValues.put(field, vals);
-                        }
-                    } else {
-                        if (!values.isEmpty()) {
-                            fieldToValues.put(field, values);
-                        }
-                    }
-                }
-                if (!fieldToValues.isEmpty()) {
-                    statics.classToFieldToValues.put(klass, fieldToValues);
-                }
-            } else {
-                DefaultHashMap<SootField, Set<MyValue>> fieldToValues = new DefaultHashMap<SootField, Set<MyValue>>(emptyValues);
-                for (Map.Entry<SootField, Set<MyValue>> fieldValues : classFieldToValues.getValue().entrySet()) {
-                    SootField field = fieldValues.getKey();
-                    Set<MyValue> values = fieldValues.getValue();
-                    if (!values.isEmpty()) {
-                        fieldToValues.put(field, values);
-                    }
-                }
-                if (!fieldToValues.isEmpty()) {
-                    statics.classToFieldToValues.put(klass, fieldToValues);
-                }
-            }
-        }
-        return statics;
-    }
-
-    @Override
-    public String toString() {
-        Comparator<SootClass> classComparator = new Comparator<SootClass>() {
-            @Override
-            public int compare(SootClass class1, SootClass class2) {
-                return class1.getShortName().compareTo(class2.getShortName());
-            }
-        };
-        TreeMap<SootClass, DefaultHashMap<SootField, Set<MyValue>>> sortedClassToFieldToValues = new TreeMap<SootClass, DefaultHashMap<SootField, Set<MyValue>>>(classComparator);
-        sortedClassToFieldToValues.putAll(classToFieldToValues);
-        return sortedClassToFieldToValues.toString();
-    }
-}
-
-interface MyValue {
 }
 
 class Address implements MyValue, Comparable<Address> {
@@ -826,10 +847,12 @@ class Address implements MyValue, Comparable<Address> {
     private final AllocNode allocNode;
 
     private Address(AllocNode allocNode) {
+        assert allocNode != null;
         this.allocNode = allocNode;
     }
 
-    static Address v(AllocNode allocNode) {
+    public static Address v(AllocNode allocNode) {
+        assert allocNode != null;
         Address address = allocNodeToAddress.get(allocNode);
         if (address == null) {
             address = new Address(allocNode);
@@ -840,11 +863,15 @@ class Address implements MyValue, Comparable<Address> {
 
     @Override
     public boolean equals(Object that) {
-        if (that instanceof Address) {
-            return allocNode.equals(((Address)that).allocNode);
-        } else {
+        if (this == that) {
+            return true;
+        }
+        if (!(that instanceof Address)) {
             return false;
         }
+        Address address = (Address)that;
+
+        return this.allocNode.equals(address.allocNode);
     }
 
     @Override
@@ -861,4 +888,230 @@ class Address implements MyValue, Comparable<Address> {
     public int compareTo(Address that) {
         return allocNode.toString().compareTo(that.allocNode.toString());
     }
+}
+
+class Arrays {
+    private final DefaultHashMap<Address, ImmutableList<MyValue>> addressToValues;
+
+    Arrays() {
+        addressToValues = new DefaultHashMap<Address, ImmutableList<MyValue>>(ImmutableList.<MyValue>of());
+    }
+
+    Arrays(Arrays that) {
+        this.addressToValues = new DefaultHashMap<Address, ImmutableList<MyValue>>(that.addressToValues);
+    }
+
+    Arrays merge(Arrays that) {
+        Arrays arrays = new Arrays();
+        for (Map.Entry<Address, ImmutableList<MyValue>> addressValues1 : this.addressToValues.entrySet()) {
+            Address address = addressValues1.getKey();
+            ImmutableList<MyValue> values1 = addressValues1.getValue();
+            if (that.addressToValues.containsKey(address)) {
+                Set<MyValue> values = new HashSet<MyValue>(values1);
+                values.addAll(that.addressToValues.get(address));
+                arrays.addressToValues.put(address, ImmutableList.copyOf(values));
+            } else {
+                arrays.addressToValues.put(address, values1);
+            }
+        }
+        for (Map.Entry<Address, ImmutableList<MyValue>> addressValues2 : that.addressToValues.entrySet()) {
+            Address address = addressValues2.getKey();
+            if (!this.addressToValues.containsKey(address)) {
+                arrays.addressToValues.put(address, addressValues2.getValue());
+            }
+        }
+        return arrays;
+    }
+
+    ImmutableList<MyValue> putS(Address address, ImmutableList<MyValue> values) {
+        if (values != null && !values.isEmpty()) {
+            return addressToValues.put(address, values);
+        } else {
+            return addressToValues.remove(address);
+        }
+    }
+
+    ImmutableList<MyValue> putW(Address address, List<MyValue> values) {
+        ImmutableList<MyValue> valuesOld = addressToValues.get(address);
+        if (values != null && !values.isEmpty()) {
+            Set<MyValue> valuesNew = new HashSet<MyValue>(valuesOld);
+            valuesNew.addAll(values);
+            return addressToValues.put(address, ImmutableList.copyOf(valuesNew));
+        } else {
+            return valuesOld;
+        }
+    }
+
+    ImmutableList<MyValue> get(Address address) {
+        return addressToValues.get(address);
+    }
+
+    Set<Map.Entry<Address, ImmutableList<MyValue>>> entrySet() {
+        return addressToValues.entrySet();
+    }
+
+    @Override
+    public boolean equals(Object that) {
+        if (this == that) {
+            return true;
+        }
+        if (!(that instanceof Arrays)) {
+            return false;
+        }
+        Arrays arrays = (Arrays)that;
+
+        if (this.addressToValues.size() != arrays.addressToValues.size()) {
+            return false;
+        }
+        try {
+            for (Map.Entry<Address, ImmutableList<MyValue>> addressValues : this.addressToValues.entrySet()) {
+                Address address = addressValues.getKey();
+                ImmutableList<MyValue> values = addressValues.getValue();
+                if (!(ImmutableSet.copyOf(values).equals(ImmutableSet.copyOf(arrays.addressToValues.get(address))))) {
+                    return false;
+                }
+            }
+        } catch (ClassCastException unused) {
+            return false;
+        } catch (NullPointerException unused) {
+            return false;
+        }
+        return true;
+    }
+
+    @Override
+    public String toString() {
+        return new TreeMap<Address, ImmutableList<MyValue>>(addressToValues).toString();
+    }
+}
+
+class Statics {
+    private final DefaultHashMap<SootField, ImmutableList<MyValue>> fieldToValues;
+
+    Statics() {
+        fieldToValues = new DefaultHashMap<SootField, ImmutableList<MyValue>>(ImmutableList.<MyValue>of());
+    }
+
+    Statics(Statics that) {
+        fieldToValues = new DefaultHashMap<SootField, ImmutableList<MyValue>>(that.fieldToValues);
+    }
+
+    Statics merge(Statics that) {
+        Statics statics = new Statics();
+        for (Map.Entry<SootField, ImmutableList<MyValue>> fieldValues1 : this.fieldToValues.entrySet()) {
+            SootField field = fieldValues1.getKey();
+            ImmutableList<MyValue> values1 = fieldValues1.getValue();
+            if (that.fieldToValues.containsKey(field)) {
+                Set<MyValue> values = new HashSet<MyValue>(values1);
+                values.addAll(that.fieldToValues.get(field));
+                statics.fieldToValues.put(field, ImmutableList.copyOf(values));
+            } else {
+                statics.fieldToValues.put(field, values1);
+            }
+        }
+        for (Map.Entry<SootField, ImmutableList<MyValue>> fieldValues2 : that.fieldToValues.entrySet()) {
+            SootField field = fieldValues2.getKey();
+            if (!this.fieldToValues.containsKey(field)) {
+                statics.fieldToValues.put(field, fieldValues2.getValue());
+            }
+        }
+        return statics;
+    }
+
+    // weakly update
+    ImmutableList<MyValue> putW(SootField field, List<MyValue> values) {
+        ImmutableList<MyValue> valuesOld = fieldToValues.get(field);
+        if (values != null && !values.isEmpty()) {
+            Set<MyValue> valuesNew = new HashSet<MyValue>(valuesOld);
+            valuesNew.addAll(values);
+            return fieldToValues.put(field, ImmutableList.copyOf(valuesNew));
+        } else {
+            return valuesOld;
+        }
+    }
+
+    // strongly update
+    ImmutableList<MyValue> putS(SootField field, ImmutableList<MyValue> values) {
+        if (values != null && !values.isEmpty()) {
+            return fieldToValues.put(field, values);
+        } else {
+            return fieldToValues.remove(field);
+        }
+    }
+
+    ImmutableList<MyValue> remove(SootField field) {
+        return fieldToValues.remove(field);
+    }
+
+    ImmutableList<MyValue> get(SootField field) {
+        return fieldToValues.get(field);
+    }
+
+    Set<Address> roots() {
+        Set<Address> roots = new HashSet<Address>();
+        for (ImmutableList<MyValue> values : fieldToValues.values()) {
+            for (MyValue value : values) {
+                if (value instanceof Address) {
+                    roots.add((Address)value);
+                }
+            }
+        }
+        return roots;
+    }
+
+    Statics localize(List<SootField> fields) {
+        Statics statics = new Statics();
+        for (SootField field : fieldToValues.keySet()) {
+            if (fields.contains(field)) {
+                statics.putS(field, fieldToValues.get(field));
+            }
+        }
+        return statics;
+    }
+
+    @Override
+    public boolean equals(Object that) {
+        if (this == that) {
+            return true;
+        }
+        if (!(that instanceof Statics)) {
+            return false;
+        }
+        Statics statics = (Statics)that;
+
+        if (this.fieldToValues.size() != statics.fieldToValues.size()) {
+            return false;
+        }
+        try {
+            for (Map.Entry<SootField, ImmutableList<MyValue>> fieldValues : this.fieldToValues.entrySet()) {
+                SootField field = fieldValues.getKey();
+                ImmutableList<MyValue> values = fieldValues.getValue();
+                if (!(ImmutableSet.copyOf(values).equals(ImmutableSet.copyOf(statics.fieldToValues.get(field))))) {
+                    return false;
+                }
+            }
+        } catch (ClassCastException unused) {
+            return false;
+        } catch (NullPointerException unused) {
+            return false;
+        }
+        return true;
+    }
+
+    @Override
+    public String toString() {
+        Comparator<SootField> fieldComparator = new Comparator<SootField>() {
+            @Override
+            public int compare(SootField field1, SootField field2) {
+                return field1.getSignature().compareTo(field2.getSignature());
+            }
+        };
+        TreeMap<SootField, ImmutableList<MyValue>> sortedFieldToValues = new TreeMap<SootField, ImmutableList<MyValue>>(fieldComparator);
+        sortedFieldToValues.putAll(fieldToValues);
+        return sortedFieldToValues.toString();
+    }
+}
+
+interface MyValue {
+    // empty
 }

@@ -1,8 +1,21 @@
 package droidsafe.eclipse.plugin.core;
 
+import java.io.File;
+import java.io.IOException;
+
+import org.eclipse.core.runtime.FileLocator;
+import org.eclipse.core.runtime.Platform;
 import org.eclipse.jface.resource.ImageDescriptor;
 import org.eclipse.ui.plugin.AbstractUIPlugin;
+import org.osgi.framework.Bundle;
 import org.osgi.framework.BundleContext;
+import org.slf4j.LoggerFactory;
+
+import ch.qos.logback.classic.LoggerContext;
+import ch.qos.logback.classic.joran.JoranConfigurator;
+import ch.qos.logback.core.joran.spi.JoranException;
+import ch.qos.logback.core.util.StatusPrinter;
+import droidsafe.main.Config;
 
 /**
  * The activator class controls the plug-in life cycle.
@@ -31,7 +44,59 @@ public class Activator extends AbstractUIPlugin {
   public void start(BundleContext context) throws Exception {
     super.start(context);
     plugin = this;
+    //LoggerContext lc = (LoggerContext) LoggerFactory.getILoggerFactory();
+    //StatusPrinter.print(lc);
+    configureDebugLog();
+    //lc = (LoggerContext) LoggerFactory.getILoggerFactory();
+    //StatusPrinter.print(lc);
+
+    // UIJob job = new UIJob("InitCommandsWorkaround") {    
+    // public IStatus runInUIThread(@SuppressWarnings("unused") IProgressMonitor monitor) {    
+    // ICommandService commandService =
+    // (ICommandService) PlatformUI.getWorkbench().getActiveWorkbenchWindow()
+    // .getService(ICommandService.class);
+    // Command command =
+    // commandService.getCommand("droidsafe.eclipse.plugin.core.commands.SortView");
+    // command.isEnabled();
+    // return new Status(IStatus.OK, PLUGIN_ID, "Init commands workaround performed succesfully");
+    // }
+    //
+    // };
+    // job.schedule();
+
+
+
   }
+
+
+  private void configureDebugLog() {
+    String pluginId = Activator.PLUGIN_ID;
+    Bundle bundle = Platform.getBundle(pluginId);
+    try {
+      File file = FileLocator.getBundleFile(bundle);
+      Config.v().setApacHome(file.getAbsolutePath());
+    } catch (IOException ex) {
+      ex.printStackTrace();
+    }
+    // we want to create a debug log file, so load the
+    // logback-debug.xml from the config files directory
+    // assume SLF4J is bound to logback in the current environment
+    LoggerContext context = (LoggerContext) LoggerFactory.getILoggerFactory();
+    try {
+      JoranConfigurator configurator = new JoranConfigurator();
+      configurator.setContext(context);
+      // Call context.reset() to clear any previous configuration, e.g. default
+      // configuration. For multi-step configuration, omit calling context.reset().
+      context.reset();
+      String configLogFile = "config-files/logback.xml";
+      configurator.doConfigure(Config.v().getApacHome() + File.separator + configLogFile);
+    } catch (JoranException je) {
+      // StatusPrinter will handle this
+    }
+    StatusPrinter.printInCaseOfErrorsOrWarnings(context);
+  }
+
+
 
   /**
    * Default plugin stop method.

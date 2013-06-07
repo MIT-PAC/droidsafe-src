@@ -3,6 +3,8 @@
  */
 package droidsafe.eclipse.plugin.core.specmodel;
 
+import java.beans.PropertyChangeEvent;
+import java.beans.PropertyChangeListener;
 import java.io.BufferedInputStream;
 import java.io.BufferedOutputStream;
 import java.io.File;
@@ -34,7 +36,10 @@ import droidsafe.speclang.SecuritySpecification;
  * @author Marcel Becker (becker@kestrel.edu)
  * 
  */
-public class SecuritySpecModel implements Serializable {
+public class SecuritySpecModel extends ModelChangeSupport
+    implements
+      Serializable,
+      PropertyChangeListener {
   /**
    * The generated serial version ID.
    */
@@ -43,12 +48,19 @@ public class SecuritySpecModel implements Serializable {
   /**
    * The logger object for this class.
    */
+  @SuppressWarnings("unused")
   private static final Logger logger = LoggerFactory.getLogger(SecuritySpecModel.class);
 
   /**
    * The name of the file to use to save the serialized version of the spec.
    */
   public static final String SECURITY_SPEC_SERIAL_FILE_NAME = "security_spec.ser";
+
+  /**
+   * The path to location of the Android project root folder. We need this information to serialize
+   * the spec.
+   */
+  private String projectRootPath;
 
   /**
    * Set of methods that are considered safe.
@@ -58,8 +70,8 @@ public class SecuritySpecModel implements Serializable {
   /**
    * eventBlocks contains the default security spec hierarchy -- output events map to a list of
    * input events, or APIs, and each API entry maps to a number of source code locations. In this
-   * map, the top most parents are the input events. The code locations for each output event are in
-   * an internal field of class DroidsafeMethodModel
+   * map, the top most parents are the input events.
+   * 
    */
   private Map<MethodModel, List<MethodModel>> inputEventBlocks =
       new LinkedHashMap<MethodModel, List<MethodModel>>();
@@ -73,6 +85,8 @@ public class SecuritySpecModel implements Serializable {
    */
   private transient Map<MethodModel, Map<MethodModel, List<CodeLocationModel>>> outputEventBlocks =
       new LinkedHashMap<MethodModel, Map<MethodModel, List<CodeLocationModel>>>();
+
+
 
   /**
    * This map contains the same information as the eventBlocks above but in a different
@@ -89,7 +103,8 @@ public class SecuritySpecModel implements Serializable {
    * 
    * @param originalSpec The droidsafe security spec we want to represent in this model.
    */
-  public SecuritySpecModel(SecuritySpecification originalSpec) {
+  public SecuritySpecModel(SecuritySpecification originalSpec, String projectPath) {
+    this.projectRootPath = projectPath;
     translateModel(originalSpec);
   }
 
@@ -107,25 +122,35 @@ public class SecuritySpecModel implements Serializable {
 
   private void translateModel(SecuritySpecification originalSpec) {
     for (Method m : originalSpec.getWhitelist()) {
-      this.whitelist.add(new MethodModel(m));
+      MethodModel model = new MethodModel(m);
+      this.whitelist.add(model);
+      model.addPropertyChangeListener(this);
     }
     for (Map.Entry<Method, List<Method>> entry : originalSpec.getEventBlocks().entrySet()) {
       Method inputEvent = entry.getKey();
       List<Method> outputEvents = entry.getValue();
       ArrayList<MethodModel> modelOutputEvents = new ArrayList<MethodModel>();
-      this.inputEventBlocks.put(new MethodModel(inputEvent), modelOutputEvents);
+      MethodModel model = new MethodModel(inputEvent);
+      this.inputEventBlocks.put(model, modelOutputEvents);
+      model.addPropertyChangeListener(this);
 
       for (Method outputEvent : outputEvents) {
-        modelOutputEvents.add(new MethodModel(outputEvent));
+        MethodModel methodModel = new MethodModel(outputEvent);
+        modelOutputEvents.add(methodModel);
+        methodModel.addPropertyChangeListener(this);
+        for (CodeLocationModel line : methodModel.getLines()) {
+          line.addPropertyChangeListener(this);
+        }
+
       }
       Collections.sort(modelOutputEvents);
-      logger.debug("Input Method {}", inputEvent);
-      logger.debug(" \n Number of Output Events in original method {}",
-          Integer.toString(outputEvents.size()));
-      logger.debug("\n Number of Events in modelEvents {}",
-          Integer.toString(modelOutputEvents.size()));
+      // logger.debug("Input Method {}", inputEvent);
+      // logger.debug(" \n Number of Output Events in original method {}",
+      // Integer.toString(outputEvents.size()));
+      // logger.debug("\n Number of Events in modelEvents {}",
+      // Integer.toString(modelOutputEvents.size()));
     }
-    logger.debug("{}", printSpecModel());
+    // logger.debug("{}", printSpecModel());
   }
 
   public String printSpecModel() {
@@ -167,6 +192,10 @@ public class SecuritySpecModel implements Serializable {
     }
   }
 
+  /**
+   * Creates a map from code location to entry points (input events) to to output events (API
+   * calls).
+   */
   private void computeCodeLocationEventBlocks() {
     if (this.codeLocationEventBlocks == null) {
       this.codeLocationEventBlocks =
@@ -215,7 +244,14 @@ public class SecuritySpecModel implements Serializable {
     return this.codeLocationEventBlocks;
   }
 
-
+  /**
+   * Serializes the current version of the spec to a file in the droidsafe folder of the current
+   * selected Android app.
+   * 
+   * @param spec The security specification model.
+   * @param androidProjectRootPath The root of the Android App Eclipse project.
+   * @return
+   */
   public static boolean serializeSpecToFile(SecuritySpecModel spec, String androidProjectRootPath) {
     boolean saved = false;
     String fileName =
@@ -236,30 +272,47 @@ public class SecuritySpecModel implements Serializable {
     return saved;
   }
 
-
+  /**
+   * Reads the serialized version of the security specification from a file and creates a spec
+   * model.
+   * 
+   * @param androidProjectRootPath The root location of the Android Eclipse project.
+   * @return The security specification for the Android application.
+   */
   public static SecuritySpecModel deserializeSpecFromFile(String androidProjectRootPath) {
     SecuritySpecModel spec = null;
     String fileName =
         androidProjectRootPath + File.separator + Project.OUTPUT_DIR + File.separator
             + SECURITY_SPEC_SERIAL_FILE_NAME;
-    try {
-      ObjectInputStream ois =
-          new ObjectInputStream(new BufferedInputStream(new FileInputStream(fileName)));
+    File file = new File(fileName);
+    if (file.exists()) {
       try {
-        Object obj = ois.readObject();
-        if (obj instanceof SecuritySpecModel) {
-          spec = (SecuritySpecModel) obj;
+        ObjectInputStream ois =
+            new ObjectInputStream(new BufferedInputStream(new FileInputStream(file)));
+        try {
+          Object obj = ois.readObject();
+          if (obj instanceof SecuritySpecModel) {
+            spec = (SecuritySpecModel) obj;
+          }
+        } finally {
+          ois.close();
         }
-      } finally {
-        ois.close();
+      } catch (Exception ex) {
+        ex.printStackTrace();
       }
-    } catch (Exception ex) {
-      ex.printStackTrace();
-    }
-    if (spec != null) {
-      logger.debug("{}", spec.printSpecModel());
+      // if (spec != null) {
+      // logger.debug("{}", spec.printSpecModel());
+      // }
     }
     return spec;
+  }
+
+  /**
+   * Saves the state of the specification model every time something changes in the model.
+   */
+  @Override
+  public void propertyChange(PropertyChangeEvent event) {
+    serializeSpecToFile(this, this.projectRootPath);
   }
 
 }
