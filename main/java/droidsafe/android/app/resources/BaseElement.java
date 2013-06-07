@@ -51,7 +51,7 @@ public class BaseElement {
     if (attributes == null)
       return null;
 
-    logger.info("getting attribute '{}'", name);
+    //logger.debug("getting attribute '{}'", name);
     Node n = attributes.getNamedItem (name);
     if (n == null)
       n = attributes.getNamedItem ("android:" + name);

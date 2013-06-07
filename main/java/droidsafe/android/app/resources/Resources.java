@@ -154,9 +154,10 @@ public class Resources {
 			}
 
 			// Dump layout information
-			logger.info ("\nLayouts:\n");
+			logger.info ("\n{} Layouts:\n", v.layouts.size());
 			for (Layout l : v.layouts) {
 				logger.info ("  layout {}: {}\n", l.name, l.view);
+				v.resolveLayoutInclude(l);
 			}
 
 			String package_name = am.manifest.package_name;
@@ -206,6 +207,39 @@ public class Resources {
 			logger.error("Error resolving resources and manifest: {}", e);
 		}
 	}
+	
+	/**
+	 * resolve all includes within a layout.  We will copy all the include stuff over
+	 * @param myLayout
+	 */
+	private void resolveLayoutInclude(Layout layout) {
+	    List<View> includeList = new LinkedList<View>();
+	    
+	    // walk through all children view, resolve any include
+	    logger.warn("dumping layout {}, childrend list {} ", layout.name, layout.view.children);
+	    
+	    for (View view: layout.view.children) {
+	        logger.warn("layout/view {}:{}: ", layout.name, view.name);
+	        
+	        if (!view.name.equals("include")) {
+	            continue;
+	        }
+	        
+	        logger.warn("Found include view {} in layout {} ", view, layout.name);
+	        if (view.attr_exists("layout")) {
+	            String layoutName = view.get_attr("layout");
+	            logger.warn("include layout {} ", layoutName);
+	        }
+	    }
+	}
+	
+	/**
+	 * recursively resolve layout associated 
+	 * @param view
+	 */
+	private void resolveLayout(View view) {
+	    
+	}
 
 	/** Processes the application located in the specified directory **/
 	public Resources (File application_base) throws Exception {
@@ -244,8 +278,15 @@ public class Resources {
 					String name = layout_source.getName();
 					String[] name_ext = name.split ("[.]", 2);
 					// logger.info ("name/ext = {}/{}", name_ext[0], name_ext[1]);
-					if (name_ext[1].equals ("xml"))
-						layouts.add (new Layout (layout_source));
+					if (name_ext[1].equals ("xml")) {
+					    Layout layout = new Layout(layout_source);
+						layouts.add (layout);
+						
+					    logger.info("layout {} => has {} views ", layout.name, layout.view.children.size());
+						logger.info("layouts length {} ", layouts.size());
+						logger.info("Dumping layout ");
+						logger.info("{} view", layout.view);
+					}
 				}
 			}
 		}
@@ -296,6 +337,8 @@ public class Resources {
 			    logger.warn("Layout has no viewID, skipped");
 			    continue;
 			}
+			
+			// Challenge: there maybe different flavors of layouts 
 			
 			layout.buildInitLayout();
 			
@@ -564,8 +607,6 @@ public class Resources {
 						cn, view.on_click,
 						view.name, layout.name, view.get_resource_name());
 				//build the method signature in the soot format
-				
-				//String signature = "<" + cn + ": void " + view.on_click + "(android.view.View)>";
 				String signature = "<" + cn + ": void " + view.on_click + "(android.view.View)>";
 				view.on_click = signature;
 				logger.debug("Replace onclick signature {} ", view.on_click);
@@ -578,12 +619,40 @@ public class Resources {
 		    view.children.clear();
 		}
 		
+		if (view.name.equals("include")) {
+		    logger.info("Detected include {}", view);
+		    if (view.attr_exists("layout")) {
+		        
+		    }
+		    else {
+		        logger.warn("include with non layout attribute ");
+		    }
+		}
+		
+		//
+		List<View> originalList = new LinkedList<View>();
+		for (View child: view.children) {
+		    originalList.add(child);
+		}
+		
 		// Recursively process views
-		for (View child : view.children) {
+		for (View child : originalList) {
 		    if (child.getAttributes().size() == 0) {
 		        logger.warn("View {} has no attribute ", child.name);
 		        continue;
 		    }
+		    
+		    if (child.name.equals("include") && child.attr_exists("layout")) {
+		        String includeName = child.get_attr("layout");
+		        logger.info("**include layout {} in {} ", includeName, layout.name); 
+		        includeName = includeName.replace("layout/","");
+		        Layout includedLayout = find_layout_by_name(includeName);
+		        if (includedLayout != null) {
+		            logger.info("included layout is found ");
+		            logger.info("{}", includedLayout.view);
+		        }
+		    }
+		    
 			process_view (layout, child);
 		}
 	}
