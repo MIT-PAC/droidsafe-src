@@ -4,7 +4,7 @@
     <filter class="ch.qos.logback.classic.filter.ThresholdFilter">
       <level>DEBUG</level>
     </filter>
-    <file>droidsafe/droidsafe.log</file>
+    <file>droidsafe-gen/droidsafe.log</file>
     <append>false</append>
     <encoder>
       <pattern>%level [%thread] %logger{10} [%file:%line] %msg%n</pattern>
