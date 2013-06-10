@@ -149,6 +149,8 @@ public class Main {
         logger.info("Resolving String Constants");
         ResolveStringConstants.run(Config.v().APP_ROOT_DIR);
 
+        System.exit(-1);
+        
         // all transforms should be done by here!
         logger.info("Restarting PTA...");
         GeoPTA.release();

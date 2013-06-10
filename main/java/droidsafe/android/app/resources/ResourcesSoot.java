@@ -275,10 +275,12 @@ public class ResourcesSoot {
         Integer id = mNumberToIDMap.inverse().get(strId);
 
         if (id == null) {
-            logger.warn("lookup id {} => {} ", strId, id);
+            logger.warn("numeric ID is NULL for {} => {} ", strId, id);
+            /*
             for (String myStrId: mNumberToIDMap.inverse().keySet()) {
                 logger.warn("checking key {} <=> {} ", strId, myStrId);
             }
+            */
             return false;
         }
 

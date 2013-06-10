@@ -42,7 +42,7 @@ public class Layout {
   Set<SootClass> classes = new LinkedHashSet<SootClass>();
   
   /** map to keep frequency of ID usage within the layout */
-  Map<String, Integer> idFreqMap = new HashMap<String, Integer>();
+  static Map<String, Integer> idFreqMap = new HashMap<String, Integer>();
   
   private final String NONAME = "NoName";
 
@@ -75,6 +75,11 @@ public class Layout {
 	  logger.debug("View " + cview);
 	  logger.debug("====================");
 	  logger.debug("");
+	  
+	  if (name == null || cview.name == null) {
+	      logger.info("buildOneView: layout/cviewname is NULL {}/{} !!! ", name, cview.name);
+	      return;
+	  }
 
 	  if (cview.id != null) {
 	     logger.info("Normalizing cview.id {}", cview.id);
@@ -96,12 +101,22 @@ public class Layout {
 
 	  Integer count = 0;
 	  if (cview.id == null) {
-	      count = idFreqMap.get(NONAME);
+	      
+	      String nonameKey =  String.format("%s_%s", name, NONAME);
+	      //setting frequency key
+	      if (!idFreqMap.containsKey(nonameKey)) {
+	          idFreqMap.put(nonameKey, Integer.valueOf(0));;
+	      }
+	      count = idFreqMap.get(nonameKey);
 	      count++;
-	      idFreqMap.put(NONAME,  count);
-	      String newId = String.format("id.%s_%s%03d", name, NONAME, count);
+	      
+	      idFreqMap.put(nonameKey,  count);
+	      
+	      String newId = String.format("%s_%03d", nonameKey, count);
 	      cview.id = newId;
+	      
 	      logger.info("cview {} is no ID, create a new One {} ", cview.name, cview.id);
+	      
 	      ResourcesSoot.v().addNewNumberToStringEntry(newId);
 	  } 
 	  else if (idFreqMap.containsKey(cview.id)) {
@@ -118,7 +133,7 @@ public class Layout {
 	  }
 	  
 	  if (!idFreqMap.containsKey(cview.id))
-	         idFreqMap.put(cview.id, Integer.valueOf(0));
+	      idFreqMap.put(cview.id, Integer.valueOf(0));
 	      
 	  Map<String, String> attrs = cview.getAttributes();
 
@@ -138,8 +153,9 @@ public class Layout {
 		  buildViews(cview, stringListMap);
 	  }
 	  
-	  if (myView.getAttributes().size() > 0)
+	  if (myView.getAttributes().size() > 0) {
 	      buildOneView(myView);
+	  }
   }
 
   /**
@@ -205,9 +221,19 @@ public class Layout {
     String id;
     /** OnClick method (if any) **/
     String on_click;
-    /** Children of this view **/
+    /** Children of this view.  When a view has children, it is a ViewGroup/LinearLayout**/
     List<View> children = new ArrayList<View>();
 
+    /**
+     * private constructor
+     */
+    private View() {
+        super();
+    }
+    /**
+     * constructor
+     * @param n
+     */
     public View (Node n) {
 
       super (n, null);
@@ -262,6 +288,19 @@ public class Layout {
 		for (View cview: children) { 
 			logger.warn("cview: " + cview);
 		}
+	}
+	
+	@Override
+	/**
+	 * overide cloneable
+	 */
+	public Object clone() {
+	    View copy = new View(); 
+	    cloneTo(copy);
+	    copy.id   = this.id;
+	    copy.name = this.name;
+	    copy.on_click = this.on_click;
+	    return copy;
 	}
   }
 }

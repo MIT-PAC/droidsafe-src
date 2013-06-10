@@ -78,13 +78,16 @@ public class Resources {
 
 	/** Layouts in the Application **/
 	List<Layout> layouts = new ArrayList<Layout>();
+	
+	/** keep a map of viewgroup/layout name => "viewGroup" (view with children) */ 
+	Map<String, View> viewgroupTable = new HashMap<String, View>();
   
   // string name to RString List mappings: created while parsing.  Store multiple values in the list
 	HashMap<String, Set<RString>> stringNameToRStringSet = new HashMap<String, Set<RString>>();
   
   // Stores string array name to RStringArray mapping that we create while parsing resource files in res/values
 	HashMap<String, RStringArray> stringArrayNameToRStringArray = new HashMap<String, RStringArray>();
-
+	
 	/** Application base package name **/
 	String package_name;
 
@@ -153,12 +156,6 @@ public class Resources {
 				logger.info ("  {}\n", a);
 			}
 
-			// Dump layout information
-			logger.info ("\nLayouts:\n");
-			for (Layout l : v.layouts) {
-				logger.info ("  layout {}: {}\n", l.name, l.view);
-			}
-
 			String package_name = am.manifest.package_name;
 
 			// Process the activities of the application
@@ -168,12 +165,15 @@ public class Resources {
 				am.components.add(a.getSootClass());
 			}
 
+			// combine and remove unneeded layout
+			v.consolidateLayouts();
+
 			// Process all of the layouts
 			for (Layout l : v.layouts) {
 				logger.info ("  Processing layout {}\n", l.name);
 				v.process_view (l, l.view);
 			}
-
+			
 			//set all the underlying soot classes for the components 
 			//other than activity
 			for (Service s : v.manifest.services) {
@@ -206,14 +206,114 @@ public class Resources {
 			logger.error("Error resolving resources and manifest: {}", e);
 		}
 	}
-
+	
+	/**
+	 * resolve all includes within a layout.  We will copy all the include stuff over
+	 * @param myLayout
+	 */
+	private void resolveLayoutInclude(Layout layout) {
+	    List<View> includeList = new LinkedList<View>();
+	    
+	    // walk through all children view, resolve any include
+	    logger.warn("dumping layout {}, childrend list {} ", layout.name, layout.view.children);
+	    
+	    for (View view: layout.view.children) {
+	        logger.warn("layout/view {}:{}: ", layout.name, view.name);
+	        
+	        if (!view.name.equals("include")) {
+	            continue;
+	        }
+	        
+	        logger.warn("Found include view {} in layout {} ", view, layout.name);
+	        if (view.attr_exists("layout")) {
+	            String layoutName = view.get_attr("layout");
+	            logger.warn("include layout {} ", layoutName);
+	        }
+	    }
+	}
+	
+	/**
+	 * consolidate layouts:  Will go through differnt versions of layouts 
+	 */
+	private void consolidateLayouts() {
+	    logger.info("consolidate layouts ");
+	    List<Layout> origList = new LinkedList<Layout>();
+	    
+	    // building the original layout list which is meant to be read only
+	    for(Layout layout: layouts) {
+	        origList.add(layout);
+	    }
+	    
+	    // use the map to keeps 
+	    Map<String, Layout> layoutMap = new HashMap<String, Layout>();
+	    
+	    for (Layout layout: origList) {
+	        // if layout first appeared, added to the hash
+	        if (!layoutMap.containsKey(layout.name)) {
+	            layoutMap.put(layout.name, layout);
+	            continue;
+	        }
+	        
+	        Layout keptLayout = layoutMap.get(layout.name);
+	        logger.info("will merge layout {} to {} ", layout, keptLayout);
+	        logger.info("{} <=> {} ", layout.view, keptLayout.view);
+	        
+	        // going through
+	        for (View childView: layout.view.children) {
+	            
+	            if (childView.name == null) {
+	                logger.info("childView.name is NULL {}", childView);
+	                continue;
+	            }
+	            // check if the kept layout already has childredn
+	            boolean alreadyInList = false;
+	            for (View currentView: keptLayout.view.children) {
+	                if (currentView.name == null) {
+	                    continue;
+	                }
+	                
+	                // compare name, and id of view between 2 layouts
+	                if (currentView.name.equals(childView.name) &&
+	                        ((currentView.id == childView.id) || 
+	                                (currentView.id != null && childView.id != null && 
+	                                 currentView.id.equals(childView.id)))) {
+	                    alreadyInList = true;
+	                    break;
+	                }
+	            }
+	            
+	            // if not in the keptlayout, add the child view in
+	            if (alreadyInList == false) {
+	                logger.info("*** view {} will be part of layout {} ", childView.name, layout.name);
+	                keptLayout.view.children.add(childView);
+	            }
+	        }
+	        
+	        
+	        logger.info("Layout {} has been MERGED ", layout.name);
+	        layouts.remove(layout);
+	    }
+	    
+	    for (Layout layout: layouts) {
+	        logger.info("layout.name {}, layout.view.id {} ", layout.name, layout.view.id);
+	        
+	        if (layout.view.children.size() > 0) {
+	            if (layout.name != null) {
+	                String key = layout.name;
+	                viewgroupTable.put(key, layout.view);
+	                logger.info("adding viewgroup {}, key {} ", layout.view.name, key);
+	            }
+	        }
+	    }
+	}
+	
+	
 	/** Processes the application located in the specified directory **/
 	public Resources (File application_base) throws Exception {
 
 		this.application_base = application_base;
 
 		resource_info = HashBiMap.create();
-
 		logger.info("Resources(): " + application_base.toString());
 
 		// Get the manifest and read it
@@ -244,8 +344,15 @@ public class Resources {
 					String name = layout_source.getName();
 					String[] name_ext = name.split ("[.]", 2);
 					// logger.info ("name/ext = {}/{}", name_ext[0], name_ext[1]);
-					if (name_ext[1].equals ("xml"))
-						layouts.add (new Layout (layout_source));
+					if (name_ext[1].equals ("xml")) {
+					    Layout layout = new Layout(layout_source);
+						layouts.add (layout);
+						
+					    logger.info("layout {} => has {} views ", layout.name, layout.view.children.size());
+						logger.info("layouts length {} ", layouts.size());
+						logger.info("Dumping layout ");
+						logger.info("{} view", layout.view);
+					}
 				}
 			}
 		}
@@ -296,6 +403,8 @@ public class Resources {
 			    logger.warn("Layout has no viewID, skipped");
 			    continue;
 			}
+			
+			// Challenge: there maybe different flavors of layouts 
 			
 			layout.buildInitLayout();
 			
@@ -551,6 +660,7 @@ public class Resources {
 		    logger.info("No id for view {} ", view.name);
 		}
 		
+		// Block to extract on_click signature 
 		if ((view.on_click != null) && (layout.activities.isEmpty())) {
 			// It seems reasonable that apps may have unused layout files
 			logger.info ("Warning: on click handler {} in layout {} ignored, "
@@ -564,26 +674,62 @@ public class Resources {
 						cn, view.on_click,
 						view.name, layout.name, view.get_resource_name());
 				//build the method signature in the soot format
-				
-				//String signature = "<" + cn + ": void " + view.on_click + "(android.view.View)>";
 				String signature = "<" + cn + ": void " + view.on_click + "(android.view.View)>";
 				view.on_click = signature;
 				logger.debug("Replace onclick signature {} ", view.on_click);
 			}
 		}
 		
+		//block to skip requestFocus tag => delete it
 		//requestFocus tag can be inside a view, if so, we remove the subview
 		if (view.children.size() == 1 &&  view.children.get(0).name.equals("requestFocus")) {
 		    logger.info("Detected requestFocus for view {} ", view.name);
 		    view.children.clear();
 		}
 		
-		// Recursively process views
-		for (View child : view.children) {
+		
+		//block to handle include tag.  If there is, we will do replacement of include with 
+		//clones of individual views
+		
+		// use the original list so that we can iterate over
+		List<View> originalList = new LinkedList<View>();
+		for (View child: view.children) {
+		    originalList.add(child);
+		}
+		
+		// iterate over original list and perform include replace ment
+		for (View child : originalList) {
+		    //we filter out childview with no attributes
 		    if (child.getAttributes().size() == 0) {
 		        logger.warn("View {} has no attribute ", child.name);
 		        continue;
 		    }
+		    
+		    // skip view that was filtered in earlier phase
+		    if (!view.children.contains(child))
+		        continue;
+		    
+		    if (child.name.equals("include") && child.attr_exists("layout")) {
+		        String includeName = child.get_attr("layout");
+		        
+		        includeName = includeName.replace("@layout/","");
+		        logger.info("**include layout {} in {} ", includeName, layout.name); 
+		        
+		        if (viewgroupTable.containsKey(includeName)) {
+		            View viewgroup = viewgroupTable.get(includeName);
+		            logger.info("**** included layout is found ");
+		            logger.info("{}", viewgroup);
+		            
+		            // swapout included element with its children list
+		            view.children.remove(child);
+		            
+		            // add all members inside the include view to the current group
+		            for (View newMember: viewgroup.children) {
+		                view.children.add((View)newMember.clone());
+		            }
+		        }
+		    }
+		    
 			process_view (layout, child);
 		}
 	}
