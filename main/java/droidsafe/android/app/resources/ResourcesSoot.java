@@ -302,7 +302,7 @@ public class ResourcesSoot {
             mUiObjectTable.put(id, obj);
             
             //create a static field 
-            if (createViewMember(id) == false) {
+            if (createUiMember(id) == false) {
                 //undo adding if failed
                 mUiObjectTable.remove(id);
                 return false;
@@ -310,7 +310,7 @@ public class ResourcesSoot {
             
             // depending on type: fragment or view, create appropriate addGetView / addGetFragment
             if (obj.childOf == UiType.FRAGMENT) {
-                logger.warn("Fragment id {} is added ", String.format("%08x", id));
+                logger.info("Fragment id {} is added ", String.format("%08x", id));
                 addGetFragment_ID(id);
                 return false;
             }
@@ -375,7 +375,28 @@ public class ResourcesSoot {
      * @param strId
      * @return
      */
+    public boolean addUiAllocToInitLayout_ID(String strId) {
+        Integer intId = mNumberToIDMap.inverse().get(strId);
+        UISootObject uiObj = mUiObjectTable.get(intId);
+        
+        if (uiObj == null)
+            return false;
+        
+        if (uiObj.childOf == UiType.FRAGMENT)
+            return addFragmentAllocToInitLayout_ID(strId);
+       
+        if (uiObj.childOf == UiType.VIEW)
+            return addViewAllocToInitLayout_ID(strId);
+        
+        return false;
+    }
     
+    
+    /**
+     * add allocation of a view or its child to initLayout, no requestFocus
+     * @param strId
+     * @return
+     */
     public boolean addViewAllocToInitLayout_ID(String strId) {
         return addViewAllocToInitLayout_ID(strId, false);
     }
@@ -528,21 +549,11 @@ public class ResourcesSoot {
         return mLayoutInitMap.get(intId); 
     }
     
-    
-    /**
-     * create a Fragment Member
-     * @param intId
-     * @return
-     */
-    private boolean createFragmentMember(Integer intId) {
-        return true;
-    }
-    
     /**
     * createViewMember:
     *   method to add static Button button_xxyyyy to the ResourcesSoot class
     */
-    private boolean createViewMember(Integer intId) {
+    private boolean createUiMember(Integer intId) {
         logger.info("calling createViewMember {}:{}) ", 
                     intId.toString(), String.format("%x", intId));
 
