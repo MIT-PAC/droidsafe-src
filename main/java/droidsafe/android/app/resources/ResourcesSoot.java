@@ -354,7 +354,18 @@ public class ResourcesSoot {
      * @param strId
      * @return
      */
+    
     public boolean addViewAllocToInitLayout_ID(String strId) {
+        return addViewAllocToInitLayout_ID(strId, false);
+    }
+    
+    /**
+     * add a view allocation to initLayout_XYX
+     * @param strId
+     * @param requestFocus: true to call requestFocus
+     * @return
+     */
+    public boolean addViewAllocToInitLayout_ID(String strId, boolean requestFocus) {
         logger.info("addViewAllocForInitLayout view ID {} ", strId);
         Integer intId = mNumberToIDMap.inverse().get(strId);
         if (intId == null) {
@@ -377,6 +388,11 @@ public class ResourcesSoot {
         
         Chain<Unit> units = mInitLayoutBody.getUnits();
         units.add(stmt);
+        
+        if (requestFocus) {
+            logger.info("We may want to add requestFocus here");
+        }
+        
         return true;
     }
     
@@ -601,8 +617,10 @@ public class ResourcesSoot {
             // at this point, we have a setter, need to call the setter with values
             logger.debug("attr {} => setter {} ", attrName, setter);
 
-            String attrValue = obj.attributes.get(attrName);
 
+            Set<String> textSet = new HashSet<String>();
+            String attrValue = obj.attributes.get(attrName);
+            
             //TODO: need to normalize the name/params
             if (attrValue.contains("@")) {
                 int ind = attrValue.indexOf("@");
@@ -612,7 +630,6 @@ public class ResourcesSoot {
                 if (mStringToValueSet.containsKey(stringName)) {
                     logger.debug("{} can be expanded ", stringName);    
                     Set<RString> rstringList = mStringToValueSet.get(stringName);
-                    Set<String> textSet = new HashSet<String>();
 
                     /* set will keep it unique, remove duplicate entries */
                     for (RString rstring: rstringList) {
@@ -620,19 +637,22 @@ public class ResourcesSoot {
                             continue;
                         textSet.add(rstring.value);
                     }
-
-                    for (String text: textSet) {
-                        Expr settingExpr = Jimple.v().newVirtualInvokeExpr(
-                                                        localView, 
-                                                        setter.makeRef(), 
-                                                        StringConstant.v(text)); 
-                        
-                        Stmt settingStmt = Jimple.v().newInvokeStmt(settingExpr);
-                        logger.debug("text <{}> ", text);
-                        logger.debug("settingText expr {} ", settingExpr);
-                        units.add(settingStmt); 
-                    }
                 }
+            } 
+            else {
+                textSet.add(attrValue);
+            }
+            
+            for (String text: textSet) {
+                Expr settingExpr = Jimple.v().newVirtualInvokeExpr(
+                        localView, 
+                        setter.makeRef(), 
+                        StringConstant.v(text)); 
+                
+                Stmt settingStmt = Jimple.v().newInvokeStmt(settingExpr);
+                logger.debug("text <{}> ", text);
+                logger.debug("settingText expr {} ", settingExpr);
+                units.add(settingStmt); 
             }
         }
 

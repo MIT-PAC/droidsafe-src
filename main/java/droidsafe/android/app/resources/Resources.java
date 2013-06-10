@@ -571,8 +571,21 @@ public class Resources {
 				logger.debug("Replace onclick signature {} ", view.on_click);
 			}
 		}
-		for (View child : view.children)
+		
+		//requestFocus tag can be inside a view, if so, we remove the subview
+		if (view.children.size() == 1 &&  view.children.get(0).name.equals("requestFocus")) {
+		    logger.info("Detected requestFocus for view {} ", view.name);
+		    view.children.clear();
+		}
+		
+		// Recursively process views
+		for (View child : view.children) {
+		    if (child.getAttributes().size() == 0) {
+		        logger.warn("View {} has no attribute ", child.name);
+		        continue;
+		    }
 			process_view (layout, child);
+		}
 	}
 
 

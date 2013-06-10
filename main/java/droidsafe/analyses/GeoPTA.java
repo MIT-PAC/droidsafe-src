@@ -63,11 +63,15 @@ import droidsafe.utils.Utils;
  *
  */
 public class GeoPTA {
-    private final static Logger logger = LoggerFactory.getLogger(GeoPTA.class);
+    /** Logger field */
+    private static final Logger logger = LoggerFactory.getLogger(GeoPTA.class);
+    /** internal soot geometric points to analysis object */
     private GeomPointsTo ptsProvider;
+    /** internal soot call graph */
     private CallGraph callGraph;
     /** bimap of new expressions to their alloc node representation */
     private HashBiMap<Object, AllocNode> newToAllocNodeMap;
+    /** singleton of this analysis */
     private static GeoPTA v;
 
 
@@ -104,9 +108,12 @@ public class GeoPTA {
         setGeomPointsToAnalysis();
 
 
-        v = new GeoPTA();		
+        v = new GeoPTA();
     }
 
+    /**
+     * Private constructor.
+     */
     private GeoPTA() {
         ptsProvider = (GeomPointsTo)Scene.v().getPointsToAnalysis();
         ContextTranslator.build_1cfa_map(ptsProvider);
@@ -157,31 +164,12 @@ public class GeoPTA {
                 newToAllocNodeMap.put(an.getNewExpr(), an);
             }
         }
-        /*
-    		for (IVarAbstraction ivar : ptsProvider.pointers) {
-    			if (ivar == null || ivar.get_all_points_to_objects() == null)
-    				continue;
-    			for (AllocNode an : ivar.get_all_points_to_objects()) {
-    				if (!newToAllocNodeMap.containsValue(an)) {
-    					newToAllocNodeMap.put(an.getNewExpr(), an);
-    				}
-    			}
-    		}*/
 
         for (IVarAbstraction ivar : ptsProvider.allocations) {
             //allocations in the pta don't have context and are not pointer
             //they just wrap the underlying allocnode
             AllocNode obj = (AllocNode)ivar.getWrappedNode();
             newToAllocNodeMap.put(obj.getNewExpr(), obj);
-            /*
-    			if (ivar == null || ivar.get_all_points_to_objects() == null)
-    				continue;
-    			for (AllocNode an : ivar.get_all_points_to_objects()) {
-    				if (!newToAllocNodeMap.containsValue(an)) {
-    					newToAllocNodeMap.put(an.getNewExpr(), an);
-    				}
-    			}
-             */
         }
     }
 
@@ -196,11 +184,11 @@ public class GeoPTA {
      * Return true if this value is a pointer that is represented in the 
      * PTA graph.
      */
-    public boolean isPointer(Value v) {
-        if (!(v.getType() instanceof RefLikeType)) 
+    public boolean isPointer(Value val) {
+        if (!(val.getType() instanceof RefLikeType)) 
             return false;
 
-        if (v instanceof Local && getInternalNode(v) != null)
+        if (val instanceof Local && getInternalNode(val) != null)
             return true;
 
         //might need more stuff here.
@@ -211,16 +199,16 @@ public class GeoPTA {
     /**
      * Return true if the value is a pointer in the pointer assignment graph.
      */
-    public IVarAbstraction getInternalNode(Value v) {
-        if (v instanceof Local) {
-            LocalVarNode node = ptsProvider.findLocalVarNode(v);
+    public IVarAbstraction getInternalNode(Value val) {
+        if (val instanceof Local) {
+            LocalVarNode node = ptsProvider.findLocalVarNode(val);
             IVarAbstraction internalNode = ptsProvider.findInternalNode(node);
             return internalNode;
-        } else if (v instanceof SootField) {
-            Utils.logErrorAndExit(logger, "Unknown type for pointer: {}", v.getClass());
+        } else if (val instanceof SootField) {
+            Utils.logErrorAndExit(logger, "Unknown type for pointer: {}", val.getClass());
         }
 
-        Utils.logErrorAndExit(logger, "Unknown type for pointer: {}", v.getClass());
+        Utils.logErrorAndExit(logger, "Unknown type for pointer: {}", val.getClass());
         return null;
     }
 
@@ -228,10 +216,10 @@ public class GeoPTA {
      * For a given pointer in the context, return all the types that the objects pointed to 
      * by the pointer can realize.
      */
-    public Set<Type> getTypes(Value v, Edge context) {
+    public Set<Type> getTypes(Value val, Edge context) {
         Set<Type> types = new LinkedHashSet<Type>();
 
-        for (AllocNode node : getPTSet(v, context)) {
+        for (AllocNode node : getPTSet(val, context)) {
             types.add(node.getType());
         }
 
@@ -241,7 +229,7 @@ public class GeoPTA {
     /**
      * v used only for error reporting
      */
-    private Set<AllocNode> getPTSet(Node sparkNode, IVarAbstraction ivar, Edge context, Value v) {
+    private Set<AllocNode> getPTSet(Node sparkNode, IVarAbstraction ivar, Edge context, Value val) {
         Set<AllocNode> allocNodes = new LinkedHashSet<AllocNode>();
 
         try {
@@ -270,33 +258,38 @@ public class GeoPTA {
                     ivar.get_all_context_sensitive_objects(l, r, contextObjsVisitor);
 
                     for (CallsiteContextVar ccv : contextObjsVisitor.outList) {
-                        //this var assignment here seems to denote if the alloc can be included 
-                        //in further searches, so once we grab, make sure to say it is no
-                        //longer in another queue.
-                        //ccv.inQ = false;
-                        allocNodes.add((AllocNode)ccv.var);
+                        //check here is the CCV is null because in the underlying analysis, it 
+                        //sometimes adds nulls to the context search, don't know why but 
+                        //only seems to happen in rare circumstances, might need to investigate more.
+                        if (ccv != null) {    
+                            allocNodes.add((AllocNode)ccv.var);
+                        } else {
+                            logger.info("Null callsite context var found during PTA search (continuing): {} in {}", 
+                                val, context);
+                        }
                     }
                 } else if (sparkNode == null) {
                     logger.info("Null sparkNode for ivar query: {} in {}", ivar, context);
                 } else {
-                    Utils.logErrorAndExit(logger, "Unknown type of spark node for points to query for value v {}, ivar {} spark node {}.", 
-                        v, ivar, sparkNode);
+                    Utils.logErrorAndExit(logger, "Unknown type of spark node for points to query for value v {}, " +
+                            "ivar {} spark node {}.", 
+                            val, ivar, sparkNode);
                 }
 
                 if (allocNodes.isEmpty()) {
-                    logger.debug("empty getPTSet query: v {} (ivar {}) with context {}.", v, ivar, context);
-                    /*Set<AllocNode> noContext = ivar.get_all_points_to_objects();
-    		for (AllocNode node : noContext) {
-    			allocNodes.add(node);
-    		}*/
+                    logger.debug("empty getPTSet query: v {} (ivar {}) with context {}.", val, ivar, context);
                 }
             }
         } catch (Exception e) {
-            logger.info("Some sort of error getting points to set for {} in {}", v, context.tgt(), e);
+            logger.info("Some sort of error getting points to set for {} in {}", val, context, e);
         }
         return allocNodes;
     }
 
+    /**
+     * Given a pointer node in the SPARK generated points to graph and a given context, 
+     * find the set of allocations that it could point to in the context.
+     */
     public Set<AllocNode> getPTSet(Node sparkNode, Edge context) {
         IVarAbstraction ivar = ptsProvider.consG.get(sparkNode);
         return getPTSet(sparkNode, ivar, context, null);
@@ -307,29 +300,29 @@ public class GeoPTA {
      * return the points to set of allocation nodes that can be pointed to in the
      * context.
      */
-    public Set<AllocNode> getPTSet(Value v, Edge context) {
+    public Set<AllocNode> getPTSet(Value val, Edge context) {
         //logger.info("Querying pt set for: {} in {}", v, context);
-        IVarAbstraction ivar = getInternalNode(v);
+        IVarAbstraction ivar = getInternalNode(val);
         if (ivar == null) {
             //nothing known about this pointer:
             return new HashSet<AllocNode>();
         }
         Node sparkNode = ivar.getWrappedNode();
 
-        return getPTSet(sparkNode, ivar, context, v);
+        return getPTSet(sparkNode, ivar, context, val);
     }
 
     /**
      * Given a pointer value, return the context insensitive points to set.
      */
-    public Set<AllocNode> getPTSetContextIns(Value v) {
+    public Set<AllocNode> getPTSetContextIns(Value val) {
         Set<AllocNode> allocNodes = new LinkedHashSet<AllocNode>();
 
-        if (!isPointer(v))
+        if (!isPointer(val))
             return allocNodes;
 
         try {
-            IVarAbstraction ivar = getInternalNode(v);
+            IVarAbstraction ivar = getInternalNode(val);
             Node sparkNode = ivar.getWrappedNode();
             ivar = ivar.getRepresentative();
 
@@ -338,7 +331,7 @@ public class GeoPTA {
                 allocNodes.addAll(fromPTA);
 
         } catch (Exception e) {
-            logger.info("Some sort of error getting context insensitive points to set for {}", v);
+            logger.info("Some sort of error getting context insensitive points to set for {}", val);
             //e.printStackTrace();
         }
 
@@ -391,11 +384,17 @@ public class GeoPTA {
         return methods;
     }
 
+    /**
+     * Dump the PTA to system.out.
+     */
     public void dumpPTA() {
         dumpPTA(System.out);
     }
 
-    public void dumpPTA(String fileName) {	
+    /**
+     * Dump the pta to a give file name.
+     */
+    public void dumpPTA(String fileName) {
         try {
             dumpPTA(new PrintStream(fileName));
         }
@@ -416,18 +415,18 @@ public class GeoPTA {
         for ( IVarAbstraction pn : ptsProvider.pointers ) {
             IVarAbstraction orig = pn;
             pn = pn.getRepresentative();
-            Node v = pn.getWrappedNode();
+            Node val = pn.getWrappedNode();
 
-            if ( v instanceof LocalVarNode ) {
+            if ( val instanceof LocalVarNode ) {
                 // We map the local pointer to its 1-cfa versions
-                LocalVarNode lvn = (LocalVarNode)v;
+                LocalVarNode lvn = (LocalVarNode)val;
                 SootMethod sm = lvn.getMethod();
-                
+
                 long l = context.map_offset;
                 long r = l + ptsProvider.max_context_size_block[context.s];
 
 
-                file.printf("%s: %s \n", sm, v);
+                file.printf("%s: %s \n", sm, val);
 
                 Obj_1cfa_extractor contextObjsVisitor = new Obj_1cfa_extractor();
                 pn.get_all_context_sensitive_objects(l, r, contextObjsVisitor);
@@ -466,33 +465,27 @@ public class GeoPTA {
         for ( IVarAbstraction pn : ptsProvider.pointers ) {
             IVarAbstraction orig = pn;
             pn = pn.getRepresentative();
-            Node v = pn.getWrappedNode();
+            Node val = pn.getWrappedNode();
 
-            /*if ( pn != pn.getRepresentative() )
-    				continue;*/
 
-            int method = ptsProvider.getMappedMethodID(v);
+            int method = ptsProvider.getMappedMethodID(val);
             SootMethod pointerMethod = ptsProvider.getSootMethodFromID(method);
-            /*
-    				if (pointerMethod == null)
-    				continue;
-             */
 
             //System.out.println(pn);
 
-            file.println(v);
+            file.println(val);
 
             if (pn.getWrappedNode() != orig.getWrappedNode())
                 file.println("Original: " + orig.getWrappedNode());
 
-            file.println(v);
+            file.println(val);
 
-            if (v instanceof AllocDotField) 
-                file.printf("\tAlloc dot field\n");			
+            if (val instanceof AllocDotField) 
+                file.printf("\tAlloc dot field\n");
 
-            if ( v instanceof LocalVarNode ) {
+            if ( val instanceof LocalVarNode ) {
                 // We map the local pointer to its 1-cfa versions
-                LocalVarNode lvn = (LocalVarNode)v;
+                LocalVarNode lvn = (LocalVarNode)val;
                 SootMethod sm = lvn.getMethod();
                 int sm_int = ptsProvider.getIDFromSootMethod(sm);
                 LinkedList<CgEdge> edges = ptsProvider.getCallEdgesInto(sm_int);
@@ -506,7 +499,8 @@ public class GeoPTA {
                     long r = l + ptsProvider.max_context_size_block[p.s];
 
 
-                    file.printf("%s (%s)->\n %s %s\n", p.sootEdge.getSrc(), p.sootEdge.srcUnit(), p.sootEdge.getTgt(), p.sootEdge.hashCode());
+                    file.printf("%s (%s)->\n %s %s\n", p.sootEdge.getSrc(), p.sootEdge.srcUnit(), 
+                        p.sootEdge.getTgt(), p.sootEdge.hashCode());
 
                     Obj_1cfa_extractor contextObjsVisitor = new Obj_1cfa_extractor();
                     pn.get_all_context_sensitive_objects(l, r, contextObjsVisitor);
@@ -523,7 +517,8 @@ public class GeoPTA {
             }
             else {
                 Obj_1cfa_extractor contextObjsVisitor = new Obj_1cfa_extractor();
-                pn.get_all_context_sensitive_objects(1, soot.jimple.spark.geom.geomPA.Constants.MAX_CONTEXTS, contextObjsVisitor);
+                pn.get_all_context_sensitive_objects(1, 
+                    soot.jimple.spark.geom.geomPA.Constants.MAX_CONTEXTS, contextObjsVisitor);
 
                 for ( CallsiteContextVar cobj : contextObjsVisitor.outList ) {
                     //cobj.inQ = false;
@@ -538,6 +533,9 @@ public class GeoPTA {
         file.print("======================= dumpPTA () Done =====================================\n");
     }
 
+    /**
+     * Run the geometric context sensitive PTA.
+     */
     static void setGeomPointsToAnalysis() {
         logger.info("[GeomPTA] Starting analysis ...");
 
@@ -586,6 +584,9 @@ public class GeoPTA {
         logger.info("[GeomPTA] Done!");
     }
 
+    /**
+     * Run context insensitive spark analysis.
+     */
     static void setSparkPointsToAnalysis() {
         logger.info("[spark] Starting analysis ...");
 
@@ -632,6 +633,9 @@ public class GeoPTA {
         logger.info("[spark] Done!");
     }
 
+    /**
+     * Not used: once used to test paddle as underlying pta.
+     */
     private static void setPaddlePointsToAnalysis() {
         logger.info("[paddle] Starting analysis ...");
 
@@ -670,6 +674,9 @@ public class GeoPTA {
         logger.info("[paddle] Done!");
     }
 
+    /**
+     * Dump a dot representation of the call graph to the given file.  
+     */
     public void dumpCallGraph(String fileStr) {
         FileWriter fw;
         try {
@@ -689,7 +696,7 @@ public class GeoPTA {
                 if (!visitedEdges.containsKey(edge.src()))
                     visitedEdges.put(edge.src(), new HashSet<SootMethod>());
 
-                if (!visitedEdges.get(edge.src()).contains(edge.tgt())) {				
+                if (!visitedEdges.get(edge.src()).contains(edge.tgt())) {
                     fw.write(edge.src().hashCode() + "->" + edge.tgt().hashCode() + ";\n");
                     visitedEdges.get(edge.src()).add(edge.tgt());
                 }
@@ -711,15 +718,6 @@ public class GeoPTA {
                 }
                 packageSubgraphs.get(tgtPackage).add(edge.tgt());
 
-                /*
-    				if (!visitedMethods.contains(edge.src()))
-    					fw.write(getMethodDotLabel(edge.src()));
-    				if (!visitedMethods.contains(edge.tgt()))
-    					fw.write(getMethodDotLabel(edge.tgt()));
-
-    				visitedMethods.add(edge.src());
-    				visitedMethods.add(edge.tgt());
-                 */
             }
 
             for (String pack : packageSubgraphs.keySet()) {
@@ -741,6 +739,9 @@ public class GeoPTA {
         }
     }
 
+    /**
+     * Return dot label for methods for dot call graph generation.
+     */
     private String getMethodDotLabel(SootMethod m) {
         StringBuffer buf = new StringBuffer();
         buf.append(m.hashCode() + " [label=\"");
