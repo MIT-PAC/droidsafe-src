@@ -49,6 +49,12 @@ import droidsafe.utils.SootUtils;
  * Soot scene when parsing the XML resources.
  */
 public class ResourcesSoot {
+    
+    public enum UiType {
+        UNKNOWN,
+        VIEW,
+        FRAGMENT
+    }
 
     /**
     * Inner class holding UISoot object used for lookup.  We will have a table of 
@@ -72,7 +78,9 @@ public class ResourcesSoot {
         public SootField    sootField;          
         
         /** exposed lookup method used by findViewBy_Id replacement */
-        public SootMethod   lookupMethod;      
+        public SootMethod   lookupMethod;
+        
+        public UiType       childOf;
 
         /**
          * Default Constructor
@@ -84,6 +92,7 @@ public class ResourcesSoot {
             sootField    = null;
             lookupMethod = null;
             attributes = null;
+            childOf    = UiType.UNKNOWN;
         }
 
         /**
@@ -98,6 +107,7 @@ public class ResourcesSoot {
             this.stringId  = strId;
             this.type      = itsType;
             this.attributes = attrs;
+            childOf    = UiType.UNKNOWN;
         }
 
     }
@@ -298,8 +308,17 @@ public class ResourcesSoot {
                 return false;
             }
             
-            // create method getView_XYX()
-            return addGetView_ID(id);
+            // depending on type: fragment or view, create appropriate addGetView / addGetFragment
+            if (obj.childOf == UiType.FRAGMENT) {
+                logger.warn("Fragment id {} is added ", String.format("%08x", id));
+                addGetFragment_ID(id);
+                return false;
+            }
+         
+            if (obj.childOf == UiType.VIEW) {
+                // create method getView_XYX()
+                return addGetView_ID(id);
+            }
         }
         return true;
     }
@@ -375,7 +394,7 @@ public class ResourcesSoot {
             return false;
         }
         
-        SootMethod method = lookupGetView_ID(intId);
+        SootMethod method = lookupGetUi_ID(intId);
         
         if (method == null) {
             logger.warn("findViewByID_{} is NULL ", String.format("%08x", intId));
@@ -394,6 +413,39 @@ public class ResourcesSoot {
         if (requestFocus) {
             logger.info("We may want to add requestFocus here");
         }
+        
+        return true;
+    }
+    
+    /**
+     * add a fragment allocation to initLayout_ID
+     * @param strId
+     * @return
+     */
+    public boolean addFragmentAllocToInitLayout_ID(String strId) {
+        logger.info("addFragmentAllocForInitLayout view ID {} ", strId);
+        Integer intId = mNumberToIDMap.inverse().get(strId);
+        if (intId == null) {
+            logger.warn("No matching numeric Id for {} ", strId);
+            return false;
+        }
+        
+        SootMethod method = lookupGetUi_ID(intId);
+        
+        if (method == null) {
+            logger.warn("findFragmentByID_{} is NULL ", String.format("%08x", intId));
+            return false;
+        }
+        
+        //logger.warn("method {} ", method);
+        //logger.warn("mArgContext {}", mArgContext);
+        
+        Expr invokeExpr = Jimple.v().newStaticInvokeExpr(method.makeRef()); 
+        Stmt stmt = Jimple.v().newInvokeStmt(invokeExpr);
+        
+        Chain<Unit> units = mInitLayoutBody.getUnits();
+        units.add(stmt);
+        
         
         return true;
     }
@@ -476,6 +528,16 @@ public class ResourcesSoot {
         return mLayoutInitMap.get(intId); 
     }
     
+    
+    /**
+     * create a Fragment Member
+     * @param intId
+     * @return
+     */
+    private boolean createFragmentMember(Integer intId) {
+        return true;
+    }
+    
     /**
     * createViewMember:
     *   method to add static Button button_xxyyyy to the ResourcesSoot class
@@ -499,8 +561,21 @@ public class ResourcesSoot {
             return false;
         }
 
-        RefType  classType = RefType.v(className); 
-
+        RefType  classType = RefType.v(className);
+        RefType  fragmentType = RefType.v("android.app.Fragment");
+        
+        if (SootUtils.isSubTypeOfIncluding(classType, fragmentType)) {
+            obj.childOf = UiType.FRAGMENT;
+            logger.info("soot class {} is a Fragment ", classType);
+        }
+        
+        //if (SootUtils.checkAncestor(sootClass, mViewClass)) {
+        RefType viewType = RefType.v("android.view.View");
+        if (SootUtils.isSubTypeOfIncluding(classType, viewType)) {
+            obj.childOf = UiType.VIEW;
+            logger.info("soot class {} is a view ", classType);
+        }
+        
         // step 1: create sootfield for member variable
         SootField sf = new SootField(idName, classType, Modifier.PUBLIC | Modifier.STATIC);
         mSootClass.addField(sf);
@@ -512,7 +587,7 @@ public class ResourcesSoot {
     * lookupGetView_ID:
     *   Method to look up the getView_2222()
     */
-    public SootMethod lookupGetView_ID(Integer intId) {
+    public SootMethod lookupGetUi_ID(Integer intId) {
         logger.info("calling lookupGetView_ID {}) ", 
                     String.format("%08x", intId));
         UISootObject obj = mUiObjectTable.get(intId);    
@@ -676,7 +751,95 @@ public class ResourcesSoot {
         return true;
     }
     
+    /**
+     * add getFragment_ID function to ResourcesSoot
+     * @param intId
+     * @return
+     */
+    private boolean addGetFragment_ID(Integer intId) {
+        // units.add(Jimple.v().newAssignStmt(fieldRef, arg));
 
+        UISootObject obj = mUiObjectTable.get(intId);    
+        logger.info("addGetFragment_ID({}:{}) ", intId.toString(), String.format("%x", intId));
+
+        if (obj == null) {
+            logger.warn("Object for id {} does not exist ", intId);
+            return false;
+        }
+        if (obj.sootField == null)  {
+            logger.warn("No sootfield previously created ");
+            return false;
+        }
+
+        List<Type> params = new LinkedList<Type>();
+        params.add(RefType.v("android.content.Context"));
+
+        RefType returnType = (RefType) obj.sootField.getType(); 
+        SootMethod fragmentInit = Scene.v().getMethod("<android.app.Fragment: void <init>()>");
+        
+        SootMethod fragmentInitMethod = 
+                Scene.v().getActiveHierarchy().resolveConcreteDispatch(
+                                                     returnType.getSootClass(), fragmentInit);
+
+        if (fragmentInitMethod == null) {
+            logger.warn("Cannot locate proper constructor for {})", returnType);
+            return false;
+        }
+
+        String funcName = "getFragment_" + String.format("%x", intId);
+        //instantiate a method
+        SootMethod method = new SootMethod(funcName, params, returnType, 
+                                        Modifier.PUBLIC | Modifier.STATIC);
+
+        obj.lookupMethod = method;
+
+        // add the method to the class
+        mSootClass.addMethod(method);
+
+        // create active body, and set the body active
+        JimpleBody body = Jimple.v().newBody(method);
+        method.setActiveBody(body);
+
+        Chain<Unit> units = body.getUnits();
+
+        // local Argument for view
+        Local localFragment = Jimple.v().newLocal("localFragment",  returnType);
+        body.getLocals().add(localFragment);
+
+        FieldRef  fieldRef = Jimple.v().newStaticFieldRef(obj.sootField.makeRef());
+
+        // localFragment =  fieldRef
+        units.add(Jimple.v().newAssignStmt(localFragment, fieldRef));
+
+        // beforeIF block
+        Stmt beforeIf = (Stmt) units.getLast();
+
+        // IF block: adding more code for if block
+        Expr newExpr = Jimple.v().newNewExpr((RefType)returnType);
+
+        units.add(Jimple.v().newAssignStmt(localFragment, newExpr));
+
+        
+        units.add(Jimple.v().newInvokeStmt(
+                    Jimple.v().newVirtualInvokeExpr(localFragment, fragmentInitMethod.makeRef()))); 
+
+        units.add(Jimple.v().newAssignStmt(fieldRef, localFragment));
+         
+        // afterIF: return localFragment
+        Stmt afterIf = Jimple.v().newReturnStmt(localFragment);
+        units.add(afterIf);
+
+        // condition expression and statement (not equal expr)
+        ConditionExpr condExpr = Jimple.v().newNeExpr(localFragment, NullConstant.v());
+
+        // condition statement
+        Stmt condStmt =  Jimple.v().newIfStmt(condExpr, afterIf);
+
+        logger.debug("condStmt {} ", condStmt);
+        units.insertAfter(condStmt, beforeIf);
+        
+        return true;
+    }
 
     /*****************************************************************************
     *                               Utility/helper Functions 
@@ -711,39 +874,60 @@ public class ResourcesSoot {
         if (tokens.length > 1)
             return className;
 
-        String name = className;
+        String name = className.substring(0, 1).toUpperCase() + className.substring(1) ;
 
         if (name.equals("View")) {
             return "android.view.View";
         }
-
-        StringBuilder builder = new StringBuilder("android.widget.");
-
-        builder.append(name.charAt(0));
-
-        if (name.length() > 1)
-            builder.append(name.substring(1));
-
-        String fullName = builder.toString();
-
-        logger.info("Trying to locatate {} class ", fullName);
-        if (Scene.v().containsClass(fullName))
-        {
-            logger.info("Found class {} ", fullName);
-            return fullName;
+        
+        if (name.equals("Fragment")) {
+            return "android.app.Fragment";
         }
-
-        logger.info("class {} NOT Found ", fullName);
-        logger.info("Trying to match class {} NOT Found ", className);
-
-        // Now we are trying to match
-        List<SootClass> classes = SootUtils.matchShortName(name);
-
-        for (SootClass sootClass: classes) {
-            logger.info("matching {} ", sootClass);
-            if (SootUtils.checkAncestor(sootClass, mViewClass)) {
-                logger.info("soot class {} is a view ", sootClass);
-                return sootClass.toString();
+        
+        
+        String[] packages = new String[] {
+                "android.widget",
+                "android.app",
+                "android.view"
+        };
+        
+        
+        for (String packageName: packages) {
+            
+            StringBuilder builder = new StringBuilder(packageName);
+            builder.append(".");
+            
+            builder.append(name.charAt(0));
+            
+            if (name.length() > 1)
+                builder.append(name.substring(1));
+            
+            String fullName = builder.toString();
+            
+            if (Scene.v().containsClass(fullName))
+            {
+                logger.info("Found class {} ", fullName);
+                return fullName;
+            }
+            
+            logger.info("class {} NOT Found ", fullName);
+            logger.info("Trying to match class {} NOT Found ", className);
+            
+            // Now we are trying to match
+            List<SootClass> classes = SootUtils.matchShortName(name);
+            SootClass fragmentClass = Scene.v().getSootClass("android.app.Fragment");
+            
+            for (SootClass sootClass: classes) {
+                logger.info("matching {} ", sootClass);
+                if (SootUtils.checkAncestor(sootClass, mViewClass)) {
+                    logger.info("soot class {} is a view ", sootClass);
+                    return sootClass.toString();
+                }
+                
+                if (SootUtils.checkAncestor(sootClass, fragmentClass)) {
+                    logger.info("soot class {} is a Fragment", sootClass);
+                    return sootClass.toString();
+                }
             }
         }
         return null;
