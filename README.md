@@ -1,7 +1,7 @@
 To Run DroidSafe:
 
 0. Software Dependencies
-* Java 1.6+
+* Java 1.7
 * Python 3.2
 * Ant
 * Graphviz (dot)
