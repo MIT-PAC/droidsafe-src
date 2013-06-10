@@ -1,40 +1,37 @@
 package droidsafe.analyses.attr.models.android.content;
 
-import droidsafe.analyses.attr.ModeledClass;
+import droidsafe.analyses.attr.AttrModeledClass;
+import droidsafe.analyses.attr.models.android.content.Context;
+
+import java.util.Set;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import soot.jimple.spark.pag.AllocNode;
 
+/**
+ * @author dpetters
+ */
 public class ContextWrapper extends Context {
 
-  private final static Logger logger = LoggerFactory.getLogger(ContextWrapper.class);
-  
-  droidsafe.analyses.attr.models.android.content.Context mBase;
-  
-  public ContextWrapper(AllocNode allocNode) {
-    super(allocNode);
-  }
- 
-  public void _init_(){
-  }
+    Context mBase;
 
-  @Override
-  public droidsafe.analyses.attr.models.java.lang.String getPackageName() {
-    if(mBase != null)
-      return mBase.getPackageName();
-    return null;
-  }
-
-  @Override
-  public String toString(){
-    String str = "<modeled ContextWrapper" + this.getId() + "> {";
-    if (this.invalidated) {
-      str += "invalidated";
-    } else {
-   
+    public ContextWrapper(AllocNode allocNode) {
+        super(allocNode);
     }
-    return str + "}";
-  }
+
+    @Override
+    public Set<String> getPackageName() {
+        return mBase.getPackageName();
+    }
+
+    @Override
+    public String dsDisplay(){
+        String str = "<modeled ContextWrapper" + this.getId() + "> {";
+        if (this.invalidated) {
+            str += "invalidated";
+        }
+        return str + "}";
+    }
 }

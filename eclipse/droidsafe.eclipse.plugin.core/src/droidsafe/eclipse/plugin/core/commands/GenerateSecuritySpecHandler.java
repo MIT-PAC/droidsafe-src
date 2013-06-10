@@ -44,16 +44,20 @@ public class GenerateSecuritySpecHandler extends AbstractHandler {
           @Override
           protected IStatus run(IProgressMonitor monitor) {
             logger.info("Project = " + project + " path = " + path);
+            IStatus status = Status.OK_STATUS;
             try {
               monitor.beginTask("Droidsafe spec dump", 16);
               DroidsafeAnalysisRunner droidsafeAnalysisRunner =
                   new DroidsafeAnalysisRunner(project);
               monitor.worked(1);
-              droidsafeAnalysisRunner.run(monitor);
+              status = droidsafeAnalysisRunner.run(monitor);
+            } catch (Exception ex){
+              logger.error("Exception during analysis {}", ex);
+              ex.printStackTrace();
             } finally {
               monitor.done();
             }
-            return Status.OK_STATUS;
+            return status;
           }
         };
         job.setUser(true);

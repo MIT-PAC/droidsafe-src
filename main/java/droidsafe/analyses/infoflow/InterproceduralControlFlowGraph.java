@@ -39,9 +39,9 @@ public class InterproceduralControlFlowGraph implements DirectedGraph<Block> {
 
     private final Map<SootMethod, List<Block>> methodToHeads;
     private final Map<SootMethod, List<Block>> methodToTails;
-    private final Map<SootMethod, List<Block>> methodToBlocks;
+    public final Map<SootMethod, List<Block>> methodToBlocks;
 
-    final Map<Unit, Block> unitToBlock;
+    public final Map<Unit, Block> unitToBlock;
 
     private static InterproceduralControlFlowGraph v;
 
@@ -55,30 +55,37 @@ public class InterproceduralControlFlowGraph implements DirectedGraph<Block> {
         v = new InterproceduralControlFlowGraph();
     }
 
+    @Override
     public List<Block> getHeads() {
         return heads;
     }
 
+    @Override
     public List<Block> getTails() {
         throw new UnsupportedOperationException("InterproceduralControlFlowGraph::getTails()");
     }
 
+    @Override
     public List<Block> getPredsOf(Block block) {
         return blockToPreds.get(block);
     }
 
+    @Override
     public List<Block> getSuccsOf(Block block) {
         return blockToSuccs.get(block);
     }
 
+    @Override
     public int size() {
         return blocks.size();
     }
 
+    @Override
     public Iterator<Block> iterator() {
         return blocks.iterator();
     }
 
+    @Override
     public String toString() {
         StringBuffer buf = new StringBuffer();
         buf.append("({");
@@ -135,7 +142,7 @@ public class InterproceduralControlFlowGraph implements DirectedGraph<Block> {
         return graph;
     }
 
-    Block getPrecedingCallBlock(Block fallThroughBlock, SootMethod method) {
+    public Block getPrecedingCallBlock(Block fallThroughBlock, SootMethod method) {
         for (Block pred : blockToPreds.get(fallThroughBlock)) {
             if (((Stmt)pred.getTail()).containsInvokeExpr() && pred.getBody().getMethod().equals(method)) {
                 return pred;
@@ -144,7 +151,18 @@ public class InterproceduralControlFlowGraph implements DirectedGraph<Block> {
         return null;
     }
 
-    static boolean containsCaughtExceptionRef(Unit unit) {
+    public Block getFallThrough(Block callBlock) {
+        assert ((Stmt)callBlock.getTail()).containsInvokeExpr();
+        SootMethod method = callBlock.getBody().getMethod();
+        for (Block succ : blockToSuccs.get(callBlock)) {
+            if (succ.getBody().getMethod().equals(method)) {
+                return succ;
+            }
+        }
+        return null;
+    }
+
+    public static boolean containsCaughtExceptionRef(Unit unit) {
         return (unit instanceof IdentityStmt) && (((IdentityStmt)unit).getRightOp() instanceof CaughtExceptionRef);
     }
 
