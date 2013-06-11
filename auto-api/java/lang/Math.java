@@ -22,121 +22,161 @@ public final class Math {
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:11.793 -0400", hash_original_method = "B72838F5E17206050A6CAE357E34091C", hash_generated_method = "A7288F3FA0F8FD8AED0C9CE8BFEA1066")
+    @DSModeled(DSC.SAFE)
     public static double abs(double d) {
         //DSFIXME:  CODE0010: Native static method requires manual modeling
+    	return d;
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:11.793 -0400", hash_original_method = "5D22FE78C1EE5EE240D13ACC7783B959", hash_generated_method = "590CB2C45B89C25AF55559BEFC7BD72E")
+    @DSModeled(DSC.SAFE)
     public static float abs(float f) {
         //DSFIXME:  CODE0010: Native static method requires manual modeling
+    	return f;
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:11.793 -0400", hash_original_method = "72CE5ACD710E65CC7F27ADD67603141D", hash_generated_method = "BE2C0834230B198373E30D7587D0EBD1")
+    @DSModeled(DSC.SAFE)
     public static int abs(int i) {
         //DSFIXME:  CODE0010: Native static method requires manual modeling
+    	return i;
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:11.793 -0400", hash_original_method = "6D4C81A96D7488E6F69868D1C176BFEA", hash_generated_method = "03C40B8320220CF1EFE537B8ED934063")
+    @DSModeled(DSC.SAFE)
     public static long abs(long l) {
         //DSFIXME:  CODE0010: Native static method requires manual modeling
+    	return l;
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:11.793 -0400", hash_original_method = "FDBE1F4F24EACC4239C8D5F7DA1B01F3", hash_generated_method = "6437B12896EEFCCBA0701F70AA1308CF")
+    @DSModeled(DSC.SAFE)
     public static double acos(double d) {
         //DSFIXME:  CODE0010: Native static method requires manual modeling
+    	return d;
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:11.793 -0400", hash_original_method = "82F6AD39F010D29B0C4E9C65E4DEC5A6", hash_generated_method = "EEA7124C5B45F86FD22EE33346E632A7")
+    @DSModeled(DSC.SAFE)
     public static double asin(double d) {
         //DSFIXME:  CODE0010: Native static method requires manual modeling
+    	return d;
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:11.793 -0400", hash_original_method = "CC98A0C58823162015FDC5BA1C40596B", hash_generated_method = "74EBDFCA3BD5530B443F8089E5F6A05E")
+    @DSModeled(DSC.SAFE)
     public static double atan(double d) {
         //DSFIXME:  CODE0010: Native static method requires manual modeling
+    	return d;
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:11.794 -0400", hash_original_method = "3C5FABDC659656E089FA446C04BF75BA", hash_generated_method = "D606CC7AEC08E1A7AB7A62D8AFB29F5D")
+    @DSModeled(DSC.SAFE)
     public static double atan2(double y, double x) {
         //DSFIXME:  CODE0010: Native static method requires manual modeling
+    	return (y + x);
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:11.794 -0400", hash_original_method = "2303BF77BCB733553D1EF1006AD3D8D7", hash_generated_method = "EAB07CE823CF2522CA46DEAAB3A20AC8")
+    @DSModeled(DSC.SAFE)
     public static double cbrt(double d) {
         //DSFIXME:  CODE0010: Native static method requires manual modeling
+    	return d;
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:11.794 -0400", hash_original_method = "93474D2C77990B2DBD2774777EEB7153", hash_generated_method = "2B72FB7871CD15E64760F78919E4B0C9")
+    @DSModeled(DSC.SAFE)
     public static double ceil(double d) {
         //DSFIXME:  CODE0010: Native static method requires manual modeling
+    	return d;
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:11.794 -0400", hash_original_method = "CB4DD889C20EC042F6588E67BA914349", hash_generated_method = "4CFC695FEA7EEE53DD5E8DB52A4B5B2B")
+    @DSModeled(DSC.SAFE)
     public static double cos(double d) {
         //DSFIXME:  CODE0010: Native static method requires manual modeling
+    	return d;
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:11.794 -0400", hash_original_method = "4121186610E972601D5C00781578D112", hash_generated_method = "74801CD344A88113BEACA90C9211FD21")
+    @DSModeled(DSC.SAFE)
     public static double cosh(double d) {
         //DSFIXME:  CODE0010: Native static method requires manual modeling
+    	return d;
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:11.794 -0400", hash_original_method = "F9F6A51C3193EA6674BC45699CD26EC3", hash_generated_method = "0F7FBD214EDDC6CEA43DE5767D59CD1F")
+    @DSModeled(DSC.SAFE)
     public static double exp(double d) {
         //DSFIXME:  CODE0010: Native static method requires manual modeling
+    	return d;
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:11.794 -0400", hash_original_method = "A60926B51F778E2890B50E5521DA9BE1", hash_generated_method = "874EB524D683F0C5B2F941E487EC8E43")
+    @DSModeled(DSC.SAFE)
     public static double expm1(double d) {
         //DSFIXME:  CODE0010: Native static method requires manual modeling
+    	return d;
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:11.794 -0400", hash_original_method = "0ACE6C4F839FB4F79B7AA908D0C73F66", hash_generated_method = "52E260437DA38154B01F8B7889E4251C")
+    @DSModeled(DSC.SAFE)
     public static double floor(double d) {
         //DSFIXME:  CODE0010: Native static method requires manual modeling
+    	return d;
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:11.794 -0400", hash_original_method = "F081426BD2A2C67D9EA17F2F33C0419F", hash_generated_method = "BCFF70E857B22D9F13D40CFFF943114C")
+    @DSModeled(DSC.SAFE)
     public static double hypot(double x, double y) {
         //DSFIXME:  CODE0010: Native static method requires manual modeling
+    	return (x + y);
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:11.794 -0400", hash_original_method = "D3D6E06E49FDB61D8B513D04A098D113", hash_generated_method = "8E2F7E22D042FF3BE05E9A08550128B9")
+    @DSModeled(DSC.SAFE)
     public static double IEEEremainder(double x, double y) {
         //DSFIXME:  CODE0010: Native static method requires manual modeling
+    	return (x + y);
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:11.794 -0400", hash_original_method = "838052BC5F632BB518977EEA53ABE6A4", hash_generated_method = "E1D4DD3BDD349584E232B533BFC4138D")
+    @DSModeled(DSC.SAFE)
     public static double log(double d) {
         //DSFIXME:  CODE0010: Native static method requires manual modeling
+    	return d;
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:11.794 -0400", hash_original_method = "A0FB2B81767F49BB17969D1673531EA4", hash_generated_method = "BACF55CF0FE079F583269556A070F6EB")
+    @DSModeled(DSC.SAFE)
     public static double log10(double d) {
         //DSFIXME:  CODE0010: Native static method requires manual modeling
+    	return d;
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:11.794 -0400", hash_original_method = "3BD872E6FD42A881A798C3B4FFD6C565", hash_generated_method = "D5E9BE37B8E05C447319120E9E17CBA2")
+    @DSModeled(DSC.SAFE)
     public static double log1p(double d) {
+    	return d;
         //DSFIXME:  CODE0010: Native static method requires manual modeling
     }
 
@@ -178,18 +218,22 @@ public final class Math {
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:11.794 -0400", hash_original_method = "696046060C2F7D4519CE6A5E5D078E9B", hash_generated_method = "0586CD44E4BDD3217A0EF59950F24F18")
+    @DSModeled(DSC.SAFE)
     public static int max(int i1, int i2) {
         //DSFIXME:  CODE0010: Native static method requires manual modeling
+    	return (i1 + i2);
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:11.794 -0400", hash_original_method = "233BD25D9E931F9CFFEABFD8C1F7AD8D", hash_generated_method = "89BE60C16A0FDC38DA060BFBC44C081F")
+    @DSModeled(DSC.SAFE)
     public static long max(long l1, long l2) {
         return l1 > l2 ? l1 : l2;
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:11.794 -0400", hash_original_method = "8BB4E1970CF2E6F84A22C0B200AB3D65", hash_generated_method = "72A777693F6AE3FA842B65D169ADDF7C")
+    @DSModeled(DSC.SAFE)
     public static double min(double d1, double d2) {
         if (d1 > d2) {
             return d2;
@@ -208,6 +252,7 @@ public final class Math {
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:11.794 -0400", hash_original_method = "2C0167268EE64CB5B5506FBA30CD6B47", hash_generated_method = "5B024B6E96EA30CB21D3CC293E60C371")
+    @DSModeled(DSC.SAFE)
     public static float min(float f1, float f2) {
         if (f1 > f2) {
             return f2;
@@ -226,30 +271,38 @@ public final class Math {
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:11.794 -0400", hash_original_method = "2FC6C515EC29C97BECD2D5F80787BEF9", hash_generated_method = "A31EC70BFD8565B8B2AF0CF55C327668")
+    @DSModeled(DSC.SAFE)
     public static int min(int i1, int i2) {
         //DSFIXME:  CODE0010: Native static method requires manual modeling
+    	return (i1 + i2);
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:11.794 -0400", hash_original_method = "5570DD5E3DA486C8E4D5DC9CDBA5E092", hash_generated_method = "B73400D0D4481274464946AB0B36C034")
+    @DSModeled(DSC.SAFE)
     public static long min(long l1, long l2) {
         return l1 < l2 ? l1 : l2;
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:11.794 -0400", hash_original_method = "960295F3D388ED7DBC2978E89E8BE46C", hash_generated_method = "E6D7B52515FDD1C15E7F8FA04CADC10B")
+    @DSModeled(DSC.SAFE)
     public static double pow(double x, double y) {
         //DSFIXME:  CODE0010: Native static method requires manual modeling
+    	return x + y;
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:11.794 -0400", hash_original_method = "3A637518A19ED1ECE6D11EE1D1CAB17C", hash_generated_method = "0844D731E638671F3B7A30B2BC24A528")
+    @DSModeled(DSC.SAFE)
     public static double rint(double d) {
         //DSFIXME:  CODE0010: Native static method requires manual modeling
+    	return d;
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:11.794 -0400", hash_original_method = "F31023BEAA17C26F61A8FAFF1293674E", hash_generated_method = "3E5F5F0D8D6B91C1E3E20EF937D1D243")
+    @DSModeled(DSC.SAFE)
     public static long round(double d) {
         if (d != d) {
             return 0L;
@@ -259,6 +312,7 @@ public final class Math {
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:11.794 -0400", hash_original_method = "E7A3BD9CEF3664A05F97B7EE40F06764", hash_generated_method = "2C065A32882A78ECD4A073F7EECEB732")
+    @DSModeled(DSC.SAFE)
     public static int round(float f) {
         if (f != f) {
             return 0;
@@ -268,6 +322,7 @@ public final class Math {
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:11.794 -0400", hash_original_method = "D0C7BA71432AEC4F38A3BB94348D4F09", hash_generated_method = "0EE2C3EEAB3C8DF5C363E5A7D4532DE5")
+    @DSModeled(DSC.SAFE)
     public static double signum(double d) {
         if (Double.isNaN(d)) {
             return Double.NaN;
@@ -283,6 +338,7 @@ public final class Math {
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:11.794 -0400", hash_original_method = "51588EB5370FA34884D982F539C5410D", hash_generated_method = "A023E61233CE7EB3C06C7F6C1C7BB8A3")
+    @DSModeled(DSC.SAFE)
     public static float signum(float f) {
         if (Float.isNaN(f)) {
             return Float.NaN;
@@ -298,32 +354,40 @@ public final class Math {
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:11.794 -0400", hash_original_method = "9AA3BEF6D2182B4DBF156FEEC5500CF6", hash_generated_method = "8CE15C03BF3F2496C5E7C8A4DD8C6CC6")
+    @DSModeled(DSC.SAFE)
     public static double sin(double d) {
         //DSFIXME:  CODE0010: Native static method requires manual modeling
+    	return d;
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:11.794 -0400", hash_original_method = "0CF56F7E3355B18CA18FDA4AD96DD5E7", hash_generated_method = "31EC148D9F44FCB31E5A939A7B61C3BB")
+    @DSModeled(DSC.SAFE)
     public static double sinh(double d) {
         //DSFIXME:  CODE0010: Native static method requires manual modeling
+    	return d;
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:11.794 -0400", hash_original_method = "448BFB09737BA361516749769B4DDDEE", hash_generated_method = "694CC633C94DA3510A0055C48D8A5FD3")
+    @DSModeled(DSC.SAFE)
     public static double sqrt(double d) {
         //DSFIXME:  CODE0010: Native static method requires manual modeling
+    	return d;
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:11.794 -0400", hash_original_method = "FB9AF02AEC2E190500CF95295CEC3F0F", hash_generated_method = "03512654A9E3E9370F7DA402424FCDF8")
     public static double tan(double d) {
         //DSFIXME:  CODE0010: Native static method requires manual modeling
+    	return d;
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:11.794 -0400", hash_original_method = "59B01B7990E77B90161AA42BA1146CB0", hash_generated_method = "A1B6461B40BD6B3F56244E8A26CF7036")
     public static double tanh(double d) {
         //DSFIXME:  CODE0010: Native static method requires manual modeling
+    	return d;
     }
 
     
@@ -363,6 +427,7 @@ public final class Math {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:11.795 -0400", hash_original_method = "5301044EBD12EF16714665EE9C07F359", hash_generated_method = "E312D906B2C755014D477E80E4EE78B3")
     private static double nextafter(double x, double y) {
         //DSFIXME:  CODE0010: Native static method requires manual modeling
+    	return (x + y);
     }
 
     
@@ -394,7 +459,6 @@ public final class Math {
     public static double copySign(double magnitude, double sign) {
         long magnitudeBits = Double.doubleToRawLongBits(magnitude);
         long signBits = Double.doubleToRawLongBits(sign);
-        magnitudeBits = (magnitudeBits & ~Double.SIGN_MASK) | (signBits & Double.SIGN_MASK);
         return Double.longBitsToDouble(magnitudeBits);
     }
 
@@ -403,24 +467,19 @@ public final class Math {
     public static float copySign(float magnitude, float sign) {
         int magnitudeBits = Float.floatToRawIntBits(magnitude);
         int signBits = Float.floatToRawIntBits(sign);
-        magnitudeBits = (magnitudeBits & ~Float.SIGN_MASK) | (signBits & Float.SIGN_MASK);
         return Float.intBitsToFloat(magnitudeBits);
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:11.795 -0400", hash_original_method = "97012FE7C9870A29CEA8A2EDD34265B2", hash_generated_method = "985C9E866BA90774D180385CF000AF5B")
     public static int getExponent(float f) {
-        int bits = Float.floatToRawIntBits(f);
-        bits = (bits & Float.EXPONENT_MASK) >> Float.MANTISSA_BITS;
-        return bits - Float.EXPONENT_BIAS;
+    	return (int)f;
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:11.795 -0400", hash_original_method = "19989C21DEF6CFA455C891A862B03E8C", hash_generated_method = "5D6AE80AF25A6EA9088CF469827CA904")
     public static int getExponent(double d) {
-        long bits = Double.doubleToRawLongBits(d);
-        bits = (bits & Double.EXPONENT_MASK) >> Double.MANTISSA_BITS;
-        return (int) bits - Double.EXPONENT_BIAS;
+    	return (int)d;
     }
 
     
@@ -513,81 +572,13 @@ public final class Math {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:11.795 -0400", hash_original_method = "CE7FEED34E827FAEBA93BA76C027047F", hash_generated_method = "8CD1BBF6E73C921913D6DA7A1FD9E395")
     public static double scalb(double d, int scaleFactor) {
-        if (Double.isNaN(d) || Double.isInfinite(d) || d == 0) {
-            return d;
-        }
-        long bits = Double.doubleToLongBits(d);
-        long sign = bits & Double.SIGN_MASK;
-        long factor = ((bits & Double.EXPONENT_MASK) >> Double.MANTISSA_BITS)
-                - Double.EXPONENT_BIAS + scaleFactor;
-        int subNormalFactor = Long.numberOfLeadingZeros(bits & ~Double.SIGN_MASK)
-                - Double.NON_MANTISSA_BITS;
-        if (subNormalFactor < 0) {
-            subNormalFactor = 0;
-        } else {
-            factor = factor - subNormalFactor;
-        }
-        if (factor > Double.MAX_EXPONENT) {
-            return (d > 0 ? Double.POSITIVE_INFINITY : Double.NEGATIVE_INFINITY);
-        }
-        long result;
-        if (factor <= -Double.EXPONENT_BIAS) {
-            long digits = factor + Double.EXPONENT_BIAS + subNormalFactor;
-            if (Math.abs(d) < Double.MIN_NORMAL) {
-                result = shiftLongBits(bits & Double.MANTISSA_MASK, digits);
-            } else {
-                result = shiftLongBits(bits & Double.MANTISSA_MASK | 0x0010000000000000L, digits - 1);
-            }
-        } else {
-            if (Math.abs(d) >= Double.MIN_NORMAL) {
-                result = ((factor + Double.EXPONENT_BIAS) << Double.MANTISSA_BITS)
-                        | (bits & Double.MANTISSA_MASK);
-            } else {
-                result = ((factor + Double.EXPONENT_BIAS) << Double.MANTISSA_BITS)
-                        | ((bits << (subNormalFactor + 1)) & Double.MANTISSA_MASK);
-            }
-        }
-        return Double.longBitsToDouble(result | sign);
+    	return d + scaleFactor;
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:11.796 -0400", hash_original_method = "8B2B282A6266695E06D45999219304F1", hash_generated_method = "053DACD897A2F31C4658707401C53F27")
     public static float scalb(float d, int scaleFactor) {
-        if (Float.isNaN(d) || Float.isInfinite(d) || d == 0) {
-            return d;
-        }
-        int bits = Float.floatToIntBits(d);
-        int sign = bits & Float.SIGN_MASK;
-        int factor = ((bits & Float.EXPONENT_MASK) >> Float.MANTISSA_BITS)
-                - Float.EXPONENT_BIAS + scaleFactor;
-        int subNormalFactor = Integer.numberOfLeadingZeros(bits & ~Float.SIGN_MASK)
-                - Float.NON_MANTISSA_BITS;
-        if (subNormalFactor < 0) {
-            subNormalFactor = 0;
-        } else {
-            factor = factor - subNormalFactor;
-        }
-        if (factor > Float.MAX_EXPONENT) {
-            return (d > 0 ? Float.POSITIVE_INFINITY : Float.NEGATIVE_INFINITY);
-        }
-        int result;
-        if (factor <= -Float.EXPONENT_BIAS) {
-            int digits = factor + Float.EXPONENT_BIAS + subNormalFactor;
-            if (Math.abs(d) < Float.MIN_NORMAL) {
-                result = shiftIntBits(bits & Float.MANTISSA_MASK, digits);
-            } else {
-                result = shiftIntBits(bits & Float.MANTISSA_MASK | 0x00800000, digits - 1);
-            }
-        } else {
-            if (Math.abs(d) >= Float.MIN_NORMAL) {
-                result = ((factor + Float.EXPONENT_BIAS) << Float.MANTISSA_BITS)
-                        | (bits & Float.MANTISSA_MASK);
-            } else {
-                result = ((factor + Float.EXPONENT_BIAS) << Float.MANTISSA_BITS)
-                        | ((bits << (subNormalFactor + 1)) & Float.MANTISSA_MASK);
-            }
-        }
-        return Float.intBitsToFloat(result | sign);
+    	return d + scaleFactor;
     }
 
     
