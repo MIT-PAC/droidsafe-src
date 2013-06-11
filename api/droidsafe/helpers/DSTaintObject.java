@@ -125,6 +125,11 @@ public class DSTaintObject {
 	}
 	
 	@DSModeled(DSC.BAN)
+	public void addTaint(Object[] array) {
+	    this.taint = array[0];
+	}
+	
+	@DSModeled(DSC.BAN)
 	public Object getTaint() {
 		return null;
 	}
@@ -172,6 +177,11 @@ public class DSTaintObject {
 	@DSModeled(DSC.BAN)
 	public byte getTaintByte() {
 		return 0;
-	}	
+	}
+	
+	@DSModeled(DSC.BAN)
+    public Object[] getTaintArray() {
+        return (Object[])taint;
+    }
 }
 
