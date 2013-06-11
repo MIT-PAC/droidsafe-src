@@ -140,13 +140,14 @@ public final class Extension {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:17.917 -0400", hash_original_method = "772675EFC6AAA2D937AD864985824958", hash_generated_method = "8F4A081F34BAC62E720E0C23EC0783A2")
     //DSFIXME:  CODE0002: Requires DSC value to be set
-    public Extension(String extnID, boolean critical, ExtensionValue extnValueObject) {Extension
+    public Extension(String extnID, boolean critical, ExtensionValue extnValueObject) {
         dsTaint.addTaint(extnID);
         dsTaint.addTaint(critical);
         dsTaint.addTaint(extnValueObject.dsTaint);
         this.extnID = ObjectIdentifier.toIntArray(extnID);
         this.valueDecoded = true;
         this.extnValue = extnValueObject.getEncoded();
+        this.critical = critical;
         // ---------- Original Method ----------
         //this.extnID_str = extnID;
         //this.extnID = ObjectIdentifier.toIntArray(extnID);
