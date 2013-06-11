@@ -330,7 +330,7 @@ public class LayoutTransition {
         baseAnimator = mChangingAppearingAnim;
         baseAnimator = mChangingDisappearingAnim;
         staggerDelay = 0;
-        final long duration;
+        long duration;
         duration = mChangingAppearingDuration;
         duration = mChangingDisappearingDuration;
         final ViewTreeObserver observer;

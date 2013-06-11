@@ -2,6 +2,7 @@ package android.accounts;
 
 // Droidsafe Imports
 import droidsafe.helpers.*;
+import droidsafe.runtime.DroidSafeAndroidRuntime;
 import droidsafe.annotations.*;
 
 // import Iterator to deal with enhanced for loop translation
@@ -45,13 +46,13 @@ public class Account implements Parcelable {
         {
             boolean var20958AB9F43FCE73F57B67FEC400CD27_1500858032 = (TextUtils.isEmpty(name));
             {
-                throw new IllegalArgumentException("the name must not be empty: " + name);
+            	if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("the name must not be empty: " + name);
             } //End block
         } //End collapsed parenthetic
         {
             boolean varB05F7C75ECFE46FC60698365AAC00CA6_954121592 = (TextUtils.isEmpty(type));
             {
-                throw new IllegalArgumentException("the type must not be empty: " + type);
+            	throw new IllegalArgumentException("the type must not be empty: " + type);
             } //End block
         } //End collapsed parenthetic
         // ---------- Original Method ----------

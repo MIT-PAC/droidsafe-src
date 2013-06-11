@@ -243,7 +243,7 @@ public final class ObjectAnimator extends ValueAnimator {
     //DSFIXME:  CODE0002: Requires DSC value to be set
     @Override
     public void setObjectValues(Object... values) {
-        dsTaint.addTaint(values.dsTaint);
+        dsTaint.addTaint(values[0].dsTaint);
         {
             {
                 setValues(PropertyValuesHolder.ofObject(mProperty, (TypeEvaluator)null, values));
