@@ -31,12 +31,12 @@ public class DSTaintObject {
 
 	@DSModeled(DSC.BAN)
 	public void addTaint(char i) {
-		this.taint = new Character(i);
+		this.taint = Character.valueOf(i);
 	}
 
 	@DSModeled(DSC.BAN)
 	public void addTaint(CharSequence i) {
-		this.taint = new CharSequence(i);
+		this.taint = i.toString();
 	}
 	
 	@DSModeled(DSC.BAN)
@@ -56,7 +56,7 @@ public class DSTaintObject {
 
 	@DSModeled(DSC.BAN)
 	public void addTaint(long i) {
-		this.taint = new Long(i);
+		this.taint = Long.valueOf(i);
 	}
 
 	@DSModeled(DSC.BAN)
