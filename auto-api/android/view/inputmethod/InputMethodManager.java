@@ -51,10 +51,10 @@ public final class InputMethodManager {
     public static final int CONTROL_WINDOW_IS_TEXT_EDITOR = 1<<1;
     public static final int CONTROL_WINDOW_FIRST = 1<<2;
     public static final int CONTROL_START_INITIAL = 1<<8;
-    final IInputMethodManager mService;
-    final Looper mMainLooper;
-    final H mH;
-    final IInputContext mIInputContext;
+    /* final */ IInputMethodManager mService;
+    /* final */ Looper mMainLooper;
+    /* final */ H mH;
+    /* final */ IInputContext mIInputContext;
     boolean mActive = false;
     boolean mHasBeenInactive = true;
     boolean mFullscreenMode;
@@ -391,7 +391,7 @@ public final class InputMethodManager {
     public void registerSuggestionSpansForNotification(SuggestionSpan[] spans) {
         //DSFIXME:  CODE0009: Possible callback target function detected
         //DSFIXME: CODE0010: Possible callback registration function detected
-        dsTaint.addTaint(spans.dsTaint);
+        dsTaint.addTaint(spans[0].dsTaint);
         try 
         {
             mService.registerSuggestionSpansForNotification(spans);
@@ -564,7 +564,7 @@ public final class InputMethodManager {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:05.121 -0400", hash_original_method = "2ABAAA397EA24F350376BE11BDE21CC8", hash_generated_method = "93C6503A098AB23B6A4A74C67C776876")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public void displayCompletions(View view, CompletionInfo[] completions) {
-        dsTaint.addTaint(completions.dsTaint);
+        dsTaint.addTaint(completions[0].dsTaint);
         dsTaint.addTaint(view.dsTaint);
         checkFocus();
         {
@@ -1649,7 +1649,7 @@ public final class InputMethodManager {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:05.127 -0400", hash_original_method = "E3938A1614AA74CBD638A5A0682603ED", hash_generated_method = "214B4351C88090868FF9BF92E89DAC2D")
     @DSModeled(DSC.SAFE)
     public void setAdditionalInputMethodSubtypes(String imiId, InputMethodSubtype[] subtypes) {
-        dsTaint.addTaint(subtypes.dsTaint);
+        dsTaint.addTaint(subtypes[0].dsTaint);
         dsTaint.addTaint(imiId);
         {
             try 
@@ -1844,7 +1844,7 @@ public final class InputMethodManager {
 
     
     private static class ControlledInputConnectionWrapper extends IInputConnectionWrapper {
-        private final InputMethodManager mParentInputMethodManager;
+        private /*final*/ InputMethodManager mParentInputMethodManager;
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:05.128 -0400", hash_original_method = "778EAAA875B5E9B35A79C47358BD4D78", hash_generated_method = "1992629771F662079804F17E50A074FA")
         //DSFIXME:  CODE0002: Requires DSC value to be set
