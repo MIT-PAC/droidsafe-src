@@ -17,7 +17,7 @@ import droidsafe.annotations.DSModeled;
  *
  */
 public class DroidSafeAndroidRuntime {
-	public boolean control = new Random().nextBoolean();
+	public static boolean control = new Random().nextBoolean();
 
 	@DSModeled
 	/**
