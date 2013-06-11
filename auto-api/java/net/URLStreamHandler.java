@@ -1,15 +1,15 @@
 package java.net;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-
-// import Iterator to deal with enhanced for loop translation
-import java.util.Iterator;
-
 import java.io.IOException;
+
 import libcore.net.url.UrlUtils;
 import libcore.util.Objects;
+import droidsafe.annotations.DSC;
+import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.DSModeled;
+// import Iterator to deal with enhanced for loop translation
+import droidsafe.runtime.DroidSafeAndroidRuntime;
 
 public abstract class URLStreamHandler {
     
@@ -21,7 +21,7 @@ public abstract class URLStreamHandler {
     protected URLConnection openConnection(URL u, Proxy proxy) throws IOException {
         dsTaint.addTaint(u.dsTaint);
         dsTaint.addTaint(proxy.dsTaint);
-        throw new UnsupportedOperationException();
+        if (DroidSafeAndroidRuntime.control) throw new UnsupportedOperationException();
         return (URLConnection)dsTaint.getTaint();
         // ---------- Original Method ----------
         //throw new UnsupportedOperationException();
@@ -36,10 +36,10 @@ public abstract class URLStreamHandler {
         dsTaint.addTaint(url.dsTaint);
         dsTaint.addTaint(end);
         {
-            throw new SecurityException("Only a URL's stream handler is permitted to mutate it");
+        	if (DroidSafeAndroidRuntime.control) throw new SecurityException("Only a URL's stream handler is permitted to mutate it");
         } //End block
         {
-            throw new StringIndexOutOfBoundsException(spec, start, end - start);
+        	if (DroidSafeAndroidRuntime.control) throw new StringIndexOutOfBoundsException(spec, start, end - start);
         } //End block
         int fileStart;
         String authority;
@@ -76,7 +76,7 @@ public abstract class URLStreamHandler {
                     {
                         boolean var94751DC0C0DBFE32ADF3E9F980ED4A0D_1543698637 = (UrlUtils.findFirstOf(spec, ":", hostStart, ipv6End) == ipv6End);
                         {
-                            throw new IllegalArgumentException("Expected an IPv6 address: "
+                        	if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("Expected an IPv6 address: "
                             + spec.substring(hostStart, ipv6End + 1));
                         } //End block
                     } //End collapsed parenthetic
@@ -90,7 +90,7 @@ public abstract class URLStreamHandler {
                 {
                     port = Integer.parseInt(spec.substring(portStart, fileStart));
                     {
-                        throw new IllegalArgumentException("port < 0: " + port);
+                    	if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("port < 0: " + port);
                     } //End block
                 } //End block
                 path = null;
@@ -182,7 +182,7 @@ public abstract class URLStreamHandler {
         dsTaint.addTaint(host);
         dsTaint.addTaint(file);
         {
-            throw new SecurityException();
+        	if (DroidSafeAndroidRuntime.control) throw new SecurityException();
         } //End block
         u.set(protocol, host, port, file, ref);
         // ---------- Original Method ----------
@@ -208,7 +208,7 @@ public abstract class URLStreamHandler {
         dsTaint.addTaint(path);
         dsTaint.addTaint(userInfo);
         {
-            throw new SecurityException();
+        	if (DroidSafeAndroidRuntime.control) throw new SecurityException();
         } //End block
         u.set(protocol, host, port, authority, userInfo, path, query, ref);
         // ---------- Original Method ----------

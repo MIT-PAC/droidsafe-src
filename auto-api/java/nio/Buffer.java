@@ -1,11 +1,11 @@
 package java.nio;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-
+import droidsafe.annotations.DSC;
+import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.DSModeled;
+import droidsafe.runtime.DroidSafeAndroidRuntime;
 // import Iterator to deal with enhanced for loop translation
-import java.util.Iterator;
 
 
 public abstract class Buffer {
@@ -25,9 +25,11 @@ public abstract class Buffer {
         dsTaint.addTaint(block.dsTaint);
         dsTaint.addTaint(elementSizeShift);
         {
-            throw new IllegalArgumentException("capacity < 0: " + capacity);
+        	if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("capacity < 0: " + capacity);
         } //End block
         this.capacity = this.limit = capacity;
+        this.block = block;
+        this._elementSizeShift = elementSizeShift;
         // ---------- Original Method ----------
         //this._elementSizeShift = elementSizeShift;
         //if (capacity < 0) {
@@ -94,13 +96,13 @@ public abstract class Buffer {
         int byteCount;
         byteCount = bytesPerElement * count;
         {
-            throw new IndexOutOfBoundsException("offset=" + offset +
+        	if (DroidSafeAndroidRuntime.control) throw new IndexOutOfBoundsException("offset=" + offset +
                     ", count=" + count + ", length=" + length);
         } //End block
         {
             boolean varB9787195162C3B0FEC3FB85BC4A74CE2_1981531211 = (byteCount > remaining());
             {
-                throw new BufferUnderflowException();
+            	if (DroidSafeAndroidRuntime.control)throw new BufferUnderflowException();
             } //End block
         } //End collapsed parenthetic
         return dsTaint.getTaintInt();
@@ -127,19 +129,19 @@ public abstract class Buffer {
         int byteCount;
         byteCount = bytesPerElement * count;
         {
-            throw new IndexOutOfBoundsException("offset=" + offset +
+        	if (DroidSafeAndroidRuntime.control) throw new IndexOutOfBoundsException("offset=" + offset +
                     ", count=" + count + ", length=" + length);
         } //End block
         {
             boolean varB9787195162C3B0FEC3FB85BC4A74CE2_465751335 = (byteCount > remaining());
             {
-                throw new BufferOverflowException();
+            	if (DroidSafeAndroidRuntime.control)throw new BufferOverflowException();
             } //End block
         } //End collapsed parenthetic
         {
             boolean varAC4B8D6BC6438967D655421106AB549D_1007345744 = (isReadOnly());
             {
-                throw new ReadOnlyBufferException();
+            	if (DroidSafeAndroidRuntime.control)throw new ReadOnlyBufferException();
             } //End block
         } //End collapsed parenthetic
         return dsTaint.getTaintInt();
@@ -269,7 +271,7 @@ public abstract class Buffer {
      void limitImpl(int newLimit) {
         dsTaint.addTaint(newLimit);
         {
-            throw new IllegalArgumentException("Bad limit (capacity " + capacity + "): " + newLimit);
+        	if (DroidSafeAndroidRuntime.control)throw new IllegalArgumentException("Bad limit (capacity " + capacity + "): " + newLimit);
         } //End block
         {
             mark = UNSET_MARK;
@@ -326,7 +328,7 @@ public abstract class Buffer {
         //DSFIXME:  CODE0009: Possible callback target function detected
         dsTaint.addTaint(newPosition);
         {
-            throw new IllegalArgumentException("Bad position (limit " + limit + "): " + newPosition);
+        	if (DroidSafeAndroidRuntime.control)throw new IllegalArgumentException("Bad position (limit " + limit + "): " + newPosition);
         } //End block
         {
             mark = UNSET_MARK;
@@ -355,7 +357,7 @@ public abstract class Buffer {
     @DSModeled(DSC.SAFE)
     public final Buffer reset() {
         {
-            throw new InvalidMarkException("Mark not set");
+        	if (DroidSafeAndroidRuntime.control)throw new InvalidMarkException("Mark not set");
         } //End block
         position = mark;
         return (Buffer)dsTaint.getTaint();
