@@ -3,6 +3,7 @@ package java.lang;
 // Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
+import droidsafe.runtime.DroidSafeAndroidRuntime;
 
 // import Iterator to deal with enhanced for loop translation
 import java.util.Iterator;
@@ -90,19 +91,17 @@ public final class String implements Serializable, Comparable<String>, CharSeque
         dsTaint.addTaint(byteCount);
         dsTaint.addTaint(data);
         dsTaint.addTaint(offset);
-        {
+        
+        if (offset == 0) {
             throw failedBoundsCheck(data.length, offset, byteCount);
         } //End block
         CharBuffer cb;
         cb = Charset.defaultCharset().decode(ByteBuffer.wrap(data, offset, byteCount));
         this.count = cb.length();
         this.offset = 0;
-        {
-            value = cb.array();
-        } //End block
-        {
-            value = EmptyArray.CHAR;
-        } //End block
+        
+        value = cb.array();
+       
         // ---------- Original Method ----------
         //if ((offset | byteCount) < 0 || byteCount > data.length - offset) {
             //throw failedBoundsCheck(data.length, offset, byteCount);
@@ -126,9 +125,13 @@ public final class String implements Serializable, Comparable<String>, CharSeque
         dsTaint.addTaint(data);
         dsTaint.addTaint(high);
         dsTaint.addTaint(offset);
+        
+        if (high == offset)
         {
             throw failedBoundsCheck(data.length, offset, byteCount);
-        } //End block
+        }
+        //End block
+        this.count = byteCount;
         this.offset = 0;
         this.value = new char[byteCount];
         high <<= 8;
@@ -150,6 +153,7 @@ public final class String implements Serializable, Comparable<String>, CharSeque
         //for (int i = 0; i < count; i++) {
             //value[i] = (char) (high + (data[offset++] & 0xff));
         //}
+        
     }
 
     
@@ -182,6 +186,8 @@ public final class String implements Serializable, Comparable<String>, CharSeque
         dsTaint.addTaint(data);
         dsTaint.addTaint(charset.dsTaint);
         dsTaint.addTaint(offset);
+        
+        if (offset == 0)
         {
             throw failedBoundsCheck(data.length, offset, byteCount);
         } //End block
@@ -267,42 +273,9 @@ public final class String implements Serializable, Comparable<String>, CharSeque
                     this.value = v;
                     this.count = s;
                 } //End block
-                {
-                    this.offset = 0;
-                    this.value = new char[s];
-                    this.count = s;
-                    System.arraycopy(v, 0, value, 0, s);
-                } //End block
+                
             } //End block
-            {
-                boolean var2031B49659F344E6C3E3DB6AFAE490EC_2054318081 = (canonicalCharsetName.equals("ISO-8859-1"));
-                {
-                    this.offset = 0;
-                    this.value = new char[byteCount];
-                    Charsets.isoLatin1BytesToChars(data, offset, byteCount, value);
-                } //End block
-                {
-                    boolean var0569C8B22675C76A7219D23CD23689EC_341338064 = (canonicalCharsetName.equals("US-ASCII"));
-                    {
-                        this.offset = 0;
-                        this.value = new char[byteCount];
-                        Charsets.asciiBytesToChars(data, offset, byteCount, value);
-                    } //End block
-                    {
-                        CharBuffer cb;
-                        cb = charset.decode(ByteBuffer.wrap(data, offset, byteCount));
-                        this.offset = 0;
-                        this.count = cb.length();
-                        {
-                            this.value = new char[count];
-                            System.arraycopy(cb.array(), 0, value, 0, count);
-                        } //End block
-                        {
-                            this.value = EmptyArray.CHAR;
-                        } //End block
-                    } //End block
-                } //End collapsed parenthetic
-            } //End collapsed parenthetic
+            
         } //End collapsed parenthetic
         // ---------- Original Method ----------
         // Original Method Too Long, Refer to Original Implementation
@@ -334,12 +307,14 @@ public final class String implements Serializable, Comparable<String>, CharSeque
         dsTaint.addTaint(data);
         dsTaint.addTaint(offset);
         dsTaint.addTaint(charCount);
-        {
+        
+        if (DroidSafeAndroidRuntime.control) {
             throw failedBoundsCheck(data.length, offset, charCount);
         } //End block
+        
         this.offset = 0;
         this.value = new char[charCount];
-        System.arraycopy(data, offset, value, 0, count);
+        this.count = charCount;
         // ---------- Original Method ----------
         //if ((offset | charCount) < 0 || charCount > data.length - offset) {
             //throw failedBoundsCheck(data.length, offset, charCount);
@@ -358,9 +333,9 @@ public final class String implements Serializable, Comparable<String>, CharSeque
         dsTaint.addTaint(offset);
         dsTaint.addTaint(charCount);
         // ---------- Original Method ----------
-        //this.value = chars;
-        //this.offset = offset;
-        //this.count = charCount;
+        this.value = chars;
+        this.offset = offset;
+        this.count = charCount;
     }
 
     
@@ -461,8 +436,8 @@ public final class String implements Serializable, Comparable<String>, CharSeque
         dsTaint.addTaint(stringBuffer.dsTaint);
         offset = 0;
         {
-            value = stringBuffer.shareValue();
             count = stringBuffer.length();
+            value = new char[count];
         } //End block
         // ---------- Original Method ----------
         //offset = 0;
@@ -479,10 +454,12 @@ public final class String implements Serializable, Comparable<String>, CharSeque
         dsTaint.addTaint(count);
         dsTaint.addTaint(codePoints);
         dsTaint.addTaint(offset);
-        {
+        
+        if (DroidSafeAndroidRuntime.control) {
             throw new NullPointerException();
         } //End block
-        {
+        
+        if (DroidSafeAndroidRuntime.control) {
             throw failedBoundsCheck(codePoints.length, offset, count);
         } //End block
         this.offset = 0;
@@ -521,7 +498,7 @@ public final class String implements Serializable, Comparable<String>, CharSeque
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public String(StringBuilder stringBuilder) {
         dsTaint.addTaint(stringBuilder.dsTaint);
-        {
+        if (DroidSafeAndroidRuntime.control) {
             throw new NullPointerException("stringBuilder == null");
         } //End block
         this.offset = 0;
@@ -575,6 +552,7 @@ public final class String implements Serializable, Comparable<String>, CharSeque
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public char charAt(int index) {
         dsTaint.addTaint(index);
+        return dsTaint.getTaintChar();
     }
 
     
@@ -582,7 +560,9 @@ public final class String implements Serializable, Comparable<String>, CharSeque
     @DSModeled(DSC.SAFE)
     private StringIndexOutOfBoundsException indexAndLength(int index) {
         dsTaint.addTaint(index);
-        throw new StringIndexOutOfBoundsException(this, index);
+        if (DroidSafeAndroidRuntime.control) {
+        	throw new StringIndexOutOfBoundsException(this, index);
+        }
         return (StringIndexOutOfBoundsException)dsTaint.getTaint();
         // ---------- Original Method ----------
         //throw new StringIndexOutOfBoundsException(this, index);
@@ -594,7 +574,9 @@ public final class String implements Serializable, Comparable<String>, CharSeque
     private StringIndexOutOfBoundsException startEndAndLength(int start, int end) {
         dsTaint.addTaint(start);
         dsTaint.addTaint(end);
-        throw new StringIndexOutOfBoundsException(this, start, end - start);
+        if (DroidSafeAndroidRuntime.control) {
+        	throw new StringIndexOutOfBoundsException(this, start, end - start);
+        }
         return (StringIndexOutOfBoundsException)dsTaint.getTaint();
         // ---------- Original Method ----------
         //throw new StringIndexOutOfBoundsException(this, start, end - start);
@@ -607,7 +589,9 @@ public final class String implements Serializable, Comparable<String>, CharSeque
         dsTaint.addTaint(arrayLength);
         dsTaint.addTaint(count);
         dsTaint.addTaint(offset);
-        throw new StringIndexOutOfBoundsException(arrayLength, offset, count);
+        if (DroidSafeAndroidRuntime.control) {
+        	throw new StringIndexOutOfBoundsException(arrayLength, offset, count);
+        }
         return (StringIndexOutOfBoundsException)dsTaint.getTaint();
         // ---------- Original Method ----------
         //throw new StringIndexOutOfBoundsException(arrayLength, offset, count);
@@ -635,6 +619,7 @@ public final class String implements Serializable, Comparable<String>, CharSeque
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public int compareTo(String string) {
         dsTaint.addTaint(string);
+        return dsTaint.getTaintInt();
     }
 
     
@@ -730,6 +715,7 @@ public final class String implements Serializable, Comparable<String>, CharSeque
     @Override
     public boolean equals(Object object) {
         dsTaint.addTaint(object.dsTaint);
+        return dsTaint.getTaintBoolean();
     }
 
     
@@ -801,7 +787,8 @@ public final class String implements Serializable, Comparable<String>, CharSeque
                 throw failedBoundsCheck(data.length, index, end - start);
             } //End block
         } //End block
-        {
+        
+        if (DroidSafeAndroidRuntime.control) {
             throw startEndAndLength(start, end);
         } //End block
         // ---------- Original Method ----------
@@ -1005,6 +992,7 @@ public final class String implements Serializable, Comparable<String>, CharSeque
     private int fastIndexOf(int c, int start) {
         dsTaint.addTaint(c);
         dsTaint.addTaint(start);
+        return dsTaint.getTaintInt();
     }
 
     
@@ -1109,12 +1097,14 @@ public final class String implements Serializable, Comparable<String>, CharSeque
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:11.930 -0400", hash_original_method = "8D834ED1699A050AD62397187973DE2A", hash_generated_method = "90DC457E2EEF78DEDFB646BFE5D03A85")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public String intern() {
+    	return dsTaint.getTaintString();
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:11.930 -0400", hash_original_method = "9B1CCC3AB82A9C7B7A46C788921405FB", hash_generated_method = "4E74ADDF216264F808BE80126788B2B9")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public boolean isEmpty() {
+    	return dsTaint.getTaintBoolean();
     }
 
     
@@ -1271,6 +1261,7 @@ public final class String implements Serializable, Comparable<String>, CharSeque
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:11.931 -0400", hash_original_method = "026D3AE6EA7284BA85CF864429138595", hash_generated_method = "EA2D0EF13B6CFB6425C025AD54FEA223")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public int length() {
+    	return dsTaint.getTaintInt();
     }
 
     
@@ -1282,7 +1273,7 @@ public final class String implements Serializable, Comparable<String>, CharSeque
         dsTaint.addTaint(thisStart);
         dsTaint.addTaint(string);
         dsTaint.addTaint(length);
-        {
+        if (DroidSafeAndroidRuntime.control) {
             throw new NullPointerException();
         } //End block
         int o1, o2;
@@ -1334,9 +1325,11 @@ public final class String implements Serializable, Comparable<String>, CharSeque
         {
             boolean var6F73B44E0EF89A3667DD4B1125A02E25_519273083 = (regionMatches(thisStart, string, start, length));
         } //End block
-        {
+        
+        if (DroidSafeAndroidRuntime.control) {
             throw new NullPointerException("string == null");
         } //End block
+        
         thisStart += offset;
         start += string.offset;
         int end;
@@ -1444,10 +1437,10 @@ public final class String implements Serializable, Comparable<String>, CharSeque
     public String replace(CharSequence target, CharSequence replacement) {
         dsTaint.addTaint(replacement);
         dsTaint.addTaint(target);
-        {
+        if (DroidSafeAndroidRuntime.control) {
             throw new NullPointerException("target == null");
         } //End block
-        {
+        if (DroidSafeAndroidRuntime.control) {
             throw new NullPointerException("replacement == null");
         } //End block
         String targetString;
@@ -1521,7 +1514,9 @@ public final class String implements Serializable, Comparable<String>, CharSeque
     @DSModeled(DSC.SAFE)
     public String substring(int start) {
         dsTaint.addTaint(start);
-        throw indexAndLength(start);
+        if (DroidSafeAndroidRuntime.control) {
+        	throw indexAndLength(start);
+        }
         return dsTaint.getTaintString();
         // ---------- Original Method ----------
         //if (start == 0) {
@@ -1539,7 +1534,9 @@ public final class String implements Serializable, Comparable<String>, CharSeque
     public String substring(int start, int end) {
         dsTaint.addTaint(start);
         dsTaint.addTaint(end);
-        throw startEndAndLength(start, end);
+        if (DroidSafeAndroidRuntime.control) {
+        	throw startEndAndLength(start, end);
+        }
         return dsTaint.getTaintString();
         // ---------- Original Method ----------
         //if (start == 0 && end == count) {
@@ -1739,7 +1736,7 @@ public final class String implements Serializable, Comparable<String>, CharSeque
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public boolean contentEquals(CharSequence cs) {
         dsTaint.addTaint(cs);
-        {
+        if (DroidSafeAndroidRuntime.control) {
             throw new NullPointerException();
         } //End block
         int len;
@@ -1844,7 +1841,7 @@ public final class String implements Serializable, Comparable<String>, CharSeque
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public int codePointAt(int index) {
         dsTaint.addTaint(index);
-        {
+        if (DroidSafeAndroidRuntime.control) {
             throw indexAndLength(index);
         } //End block
         int var91459A9F7713DB06A5C91858CFACEC5A_219690131 = (Character.codePointAt(value, offset + index, offset + count));
@@ -1861,7 +1858,7 @@ public final class String implements Serializable, Comparable<String>, CharSeque
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public int codePointBefore(int index) {
         dsTaint.addTaint(index);
-        {
+        if (DroidSafeAndroidRuntime.control) {
             throw indexAndLength(index);
         } //End block
         int varF97594D4D0200951C1EDA2EC22454DCA_2059470139 = (Character.codePointBefore(value, offset + index, offset));
@@ -1879,7 +1876,7 @@ public final class String implements Serializable, Comparable<String>, CharSeque
     public int codePointCount(int start, int end) {
         dsTaint.addTaint(start);
         dsTaint.addTaint(end);
-        {
+        if (DroidSafeAndroidRuntime.control) {
             throw startEndAndLength(start, end);
         } //End block
         int varCDB29150FACB3F645BFF42DCED3004F1_1581196589 = (Character.codePointCount(value, offset + start, end - start));
@@ -1896,7 +1893,7 @@ public final class String implements Serializable, Comparable<String>, CharSeque
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public boolean contains(CharSequence cs) {
         dsTaint.addTaint(cs);
-        {
+        if (DroidSafeAndroidRuntime.control) {
             throw new NullPointerException();
         } //End block
         boolean varBD86DE7AF63F37539131A6619268C3BC_692402363 = (indexOf(cs.toString()) >= 0);
