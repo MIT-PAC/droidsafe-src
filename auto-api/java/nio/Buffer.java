@@ -357,7 +357,9 @@ public abstract class Buffer {
     @DSModeled(DSC.SAFE)
     public final Buffer reset() {
         {
-        	if (DroidSafeAndroidRuntime.control)throw new InvalidMarkException("Mark not set");
+        	if (DroidSafeAndroidRuntime.control) {
+        		throw new InvalidMarkException("Mark not set");
+        	}
         } //End block
         position = mark;
         return (Buffer)dsTaint.getTaint();
