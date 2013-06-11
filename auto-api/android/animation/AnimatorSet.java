@@ -28,7 +28,7 @@ public final class AnimatorSet extends Animator {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:14:56.983 -0400", hash_original_method = "D3DC50F4C11146F18EBEE861B5ED6567", hash_generated_method = "B11B272EF6341CC8F2B20D47F98B5746")
     @DSModeled(DSC.SAFE)
     public void playTogether(Animator... items) {
-        dsTaint.addTaint(items.dsTaint);
+    	dsTaint.addTaint(items[0].dsTaint);
         {
             mNeedsSort = true;
             Builder builder;
@@ -95,7 +95,7 @@ public final class AnimatorSet extends Animator {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:14:56.986 -0400", hash_original_method = "6DD5048753632FED7CFB0FE5E71CCF54", hash_generated_method = "BC273572FD6E3CCDF75A398FB10E7548")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public void playSequentially(Animator... items) {
-        dsTaint.addTaint(items.dsTaint);
+    	dsTaint.addTaint(items[0].dsTaint);
         {
             mNeedsSort = true;
             {
@@ -448,9 +448,6 @@ public final class AnimatorSet extends Animator {
     public AnimatorSet setDuration(long duration) {
         dsTaint.addTaint(duration);
         {
-            throw new IllegalArgumentException("duration must be a value of zero or greater");
-        } //End block
-        {
             Iterator<Node> seatecAstronomy42 = mNodes.iterator();
             seatecAstronomy42.hasNext();
             Node node = seatecAstronomy42.next();
@@ -458,7 +455,11 @@ public final class AnimatorSet extends Animator {
                 node.animation.setDuration(duration);
             } //End block
         } //End collapsed parenthetic
-        return (AnimatorSet)dsTaint.getTaint();
+        {
+            throw new IllegalArgumentException("duration must be a value of zero or greater");
+        } //End block
+        
+        //return (AnimatorSet)dsTaint.getTaint();
         // ---------- Original Method ----------
         //if (duration < 0) {
             //throw new IllegalArgumentException("duration must be a value of zero or greater");
@@ -686,9 +687,9 @@ public final class AnimatorSet extends Animator {
                     ArrayList<AnimatorListener> listenersToRemove;
                     listenersToRemove = null;
                     {
-                        Iterator<AnimatorListener> seatecAstronomy42 = cloneListeners.iterator();
-                        seatecAstronomy42.hasNext();
-                        AnimatorListener listener = seatecAstronomy42.next();
+                        Iterator<AnimatorListener> seatecAstronomy43 = cloneListeners.iterator();
+                        seatecAstronomy43.hasNext();
+                        AnimatorListener listener = seatecAstronomy43.next();
                         {
                             {
                                 {
@@ -700,9 +701,9 @@ public final class AnimatorSet extends Animator {
                     } //End collapsed parenthetic
                     {
                         {
-                            Iterator<AnimatorListener> seatecAstronomy42 = listenersToRemove.iterator();
-                            seatecAstronomy42.hasNext();
-                            AnimatorListener listener = seatecAstronomy42.next();
+                            Iterator<AnimatorListener> seatecAstronomy44 = listenersToRemove.iterator();
+                            seatecAstronomy44.hasNext();
+                            AnimatorListener listener = seatecAstronomy44.next();
                             {
                                 cloneListeners.remove(listener);
                             } //End block
@@ -720,9 +721,9 @@ public final class AnimatorSet extends Animator {
                 nodeClone = nodeCloneMap.get(node);
                 {
                     {
-                        Iterator<Dependency> seatecAstronomy42 = node.dependencies.iterator();
-                        seatecAstronomy42.hasNext();
-                        Dependency dependency = seatecAstronomy42.next();
+                        Iterator<Dependency> seatecAstronomy45 = node.dependencies.iterator();
+                        seatecAstronomy45.hasNext();
+                        Dependency dependency = seatecAstronomy45.next();
                         {
                             Node clonedDependencyNode;
                             clonedDependencyNode = nodeCloneMap.get(dependency.node);
@@ -750,6 +751,7 @@ public final class AnimatorSet extends Animator {
             roots = new ArrayList<Node>();
             int numNodes;
             numNodes = mNodes.size();
+            
             {
                 int i;
                 i = 0;
@@ -806,6 +808,43 @@ public final class AnimatorSet extends Animator {
             } //End collapsed parenthetic
             mNeedsSort = false;
             {
+                int numNodes2;
+                numNodes2 = mNodes.size();
+                {
+                    int i;
+                    i = 0;
+                    {
+                        Node node;
+                        node = mNodes.get(i);
+                        {
+                            boolean var60187AACFF822DE3E56322B4A4D489FB_1911988424 = (node.dependencies != null && node.dependencies.size() > 0);
+                            {
+                                int numDependencies;
+                                numDependencies = node.dependencies.size();
+                                {
+                                    int j;
+                                    j = 0;
+                                    {
+                                        Dependency dependency;
+                                        dependency = node.dependencies.get(j);
+                                        {
+                                            node.nodeDependencies = new ArrayList<Node>();
+                                        } //End block
+                                        {
+                                            boolean varF4A971F3E1E7ED2E8AD23CBB7EC95189_662555720 = (!node.nodeDependencies.contains(dependency.node));
+                                            {
+                                                node.nodeDependencies.add(dependency.node);
+                                            } //End block
+                                        } //End collapsed parenthetic
+                                    } //End block
+                                } //End collapsed parenthetic
+                            } //End block
+                        } //End collapsed parenthetic
+                        node.done = false;
+                    } //End block
+                } //End collapsed parenthetic
+            } //End block
+            {
                 boolean varDD5278C4A821B04466EA81991E002294_104196258 = (mSortedNodes.size() != mNodes.size());
                 {
                     throw new IllegalStateException("Circular dependencies cannot exist"
@@ -813,43 +852,7 @@ public final class AnimatorSet extends Animator {
                 } //End block
             } //End collapsed parenthetic
         } //End block
-        {
-            int numNodes;
-            numNodes = mNodes.size();
-            {
-                int i;
-                i = 0;
-                {
-                    Node node;
-                    node = mNodes.get(i);
-                    {
-                        boolean var60187AACFF822DE3E56322B4A4D489FB_1911988424 = (node.dependencies != null && node.dependencies.size() > 0);
-                        {
-                            int numDependencies;
-                            numDependencies = node.dependencies.size();
-                            {
-                                int j;
-                                j = 0;
-                                {
-                                    Dependency dependency;
-                                    dependency = node.dependencies.get(j);
-                                    {
-                                        node.nodeDependencies = new ArrayList<Node>();
-                                    } //End block
-                                    {
-                                        boolean varF4A971F3E1E7ED2E8AD23CBB7EC95189_662555720 = (!node.nodeDependencies.contains(dependency.node));
-                                        {
-                                            node.nodeDependencies.add(dependency.node);
-                                        } //End block
-                                    } //End collapsed parenthetic
-                                } //End block
-                            } //End collapsed parenthetic
-                        } //End block
-                    } //End collapsed parenthetic
-                    node.done = false;
-                } //End block
-            } //End collapsed parenthetic
-        } //End block
+        
         // ---------- Original Method ----------
         // Original Method Too Long, Refer to Original Implementation
     }

@@ -44,19 +44,19 @@ public abstract class SQLiteProgram extends SQLiteClosable {
             boolean compileFlag) {
         dsTaint.addTaint(db.dsTaint);
         dsTaint.addTaint(sql);
-        dsTaint.addTaint(bindArgs.dsTaint);
+        dsTaint.addTaint(bindArgs[0].dsTaint);
         dsTaint.addTaint(compileFlag);
         mSql = sql.trim();
         int n;
         n = DatabaseUtils.getSqlStatementType(mSql);
         //Begin case DatabaseUtils.STATEMENT_UPDATE 
-        mStatementType = n | STATEMENT_CACHEABLE;
+        //mStatementType = n | STATEMENT_CACHEABLE;
         //End case DatabaseUtils.STATEMENT_UPDATE 
         //Begin case DatabaseUtils.STATEMENT_SELECT 
-        mStatementType = n | STATEMENT_CACHEABLE | STATEMENT_USE_POOLED_CONN;
+        //mStatementType = n | STATEMENT_CACHEABLE | STATEMENT_USE_POOLED_CONN;
         //End case DatabaseUtils.STATEMENT_SELECT 
         //Begin case DatabaseUtils.STATEMENT_BEGIN DatabaseUtils.STATEMENT_COMMIT DatabaseUtils.STATEMENT_ABORT 
-        mStatementType = n | STATEMENT_DONT_PREPARE;
+        //mStatementType = n | STATEMENT_DONT_PREPARE;
         //End case DatabaseUtils.STATEMENT_BEGIN DatabaseUtils.STATEMENT_COMMIT DatabaseUtils.STATEMENT_ABORT 
         //Begin case default 
         mStatementType = n;
@@ -271,10 +271,11 @@ public abstract class SQLiteProgram extends SQLiteClosable {
     public void bindString(int index, String value) {
         dsTaint.addTaint(index);
         dsTaint.addTaint(value);
+        bind(Cursor.FIELD_TYPE_STRING, index, value);
         {
             throw new IllegalArgumentException("the bind value at index " + index + " is null");
         } //End block
-        bind(Cursor.FIELD_TYPE_STRING, index, value);
+        
         // ---------- Original Method ----------
         //if (value == null) {
             //throw new IllegalArgumentException("the bind value at index " + index + " is null");
@@ -288,10 +289,10 @@ public abstract class SQLiteProgram extends SQLiteClosable {
     public void bindBlob(int index, byte[] value) {
         dsTaint.addTaint(index);
         dsTaint.addTaint(value);
+        bind(Cursor.FIELD_TYPE_BLOB, index, value);
         {
             throw new IllegalArgumentException("the bind value at index " + index + " is null");
         } //End block
-        bind(Cursor.FIELD_TYPE_BLOB, index, value);
         // ---------- Original Method ----------
         //if (value == null) {
             //throw new IllegalArgumentException("the bind value at index " + index + " is null");
@@ -366,16 +367,11 @@ public abstract class SQLiteProgram extends SQLiteClosable {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:00.833 -0400", hash_original_method = "3FC7B6EE26A3C940A3FAD2B270073635", hash_generated_method = "1F9C4487B48B467D61DA0C462B11B5E9")
     //DSFIXME:  CODE0002: Requires DSC value to be set
      void compileAndbindAllArgs() {
-        {
-            {
-                throw new IllegalArgumentException("Can't pass bindargs for this sql :" + mSql);
-            } //End block
-        } //End block
-        {
+    	{
             compileSql();
         } //End block
         {
-            Iterator<int> seatecAstronomy42 = mBindArgs.keySet().iterator();
+            Iterator<Integer> seatecAstronomy42 = mBindArgs.keySet().iterator();
             seatecAstronomy42.hasNext();
             int index = seatecAstronomy42.next();
             {
@@ -409,6 +405,12 @@ public abstract class SQLiteProgram extends SQLiteClosable {
                 } //End block
             } //End block
         } //End collapsed parenthetic
+        {
+            {
+                throw new IllegalArgumentException("Can't pass bindargs for this sql :" + mSql);
+            } //End block
+        } //End block
+        
         // ---------- Original Method ----------
         // Original Method Too Long, Refer to Original Implementation
     }

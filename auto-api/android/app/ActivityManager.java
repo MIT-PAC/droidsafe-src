@@ -59,6 +59,8 @@ public class ActivityManager {
      ActivityManager(Context context, Handler handler) {
         dsTaint.addTaint(context.dsTaint);
         dsTaint.addTaint(handler.dsTaint);
+        mContext = context;
+        mHandler = handler;
         // ---------- Original Method ----------
         //mContext = context;
         //mHandler = handler;
@@ -696,9 +698,7 @@ public class ActivityManager {
             Map<String, Integer> launchCounts;
             launchCounts = new HashMap<String, Integer>();
             {
-                Iterator<PkgUsageStats> seatecAstronomy42 = allPkgUsageStats.iterator();
-                seatecAstronomy42.hasNext();
-                PkgUsageStats pkgUsageStats = seatecAstronomy42.next();
+                PkgUsageStats pkgUsageStats = allPkgUsageStats[0];
                 {
                     launchCounts.put(pkgUsageStats.packageName, pkgUsageStats.launchCount);
                 } //End block

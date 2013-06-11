@@ -458,7 +458,7 @@ public class AudioService extends IAudioService.Stub {
             {
                 try 
                 {
-                    wait();
+                    wait(); 
                 } //End block
                 catch (InterruptedException e)
                 { }
@@ -633,7 +633,7 @@ public class AudioService extends IAudioService.Stub {
         streamTypeAlias = STREAM_VOLUME_ALIAS[streamType];
         VolumeStreamState streamState;
         streamState = mStreamStates[streamTypeAlias];
-        final int oldIndex;
+        int oldIndex;
         boolean var4340C4FA9354C586C76453C24B5F0773_1595507238 = ((streamState.muteCount() != 0));
         oldIndex = streamState.mLastAudibleIndex;
         oldIndex = streamState.mIndex;
@@ -694,7 +694,7 @@ public class AudioService extends IAudioService.Stub {
         ensureValidStreamType(streamType);
         VolumeStreamState streamState;
         streamState = mStreamStates[STREAM_VOLUME_ALIAS[streamType]];
-        final int oldIndex;
+        int oldIndex;
         boolean var4340C4FA9354C586C76453C24B5F0773_1841933975 = ((streamState.muteCount() != 0));
         oldIndex = streamState.mLastAudibleIndex;
         oldIndex = streamState.mIndex;
@@ -3664,6 +3664,7 @@ public class AudioService extends IAudioService.Stub {
         private VolumeStreamState(String settingName, int streamType) {
             dsTaint.addTaint(settingName);
             dsTaint.addTaint(streamType);
+            mStreamType = streamType;
             setVolumeIndexSettingName(settingName);
             final ContentResolver cr;
             cr = mContentResolver;

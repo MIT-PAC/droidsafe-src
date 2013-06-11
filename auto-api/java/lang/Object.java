@@ -48,4 +48,20 @@ public class Object {
 		return "woot!";
         //return getClass().getName() + '@' + Integer.toHexString(hashCode());
     }
+	
+	public final void wait() throws InterruptedException {
+        wait(0 ,0);
+    }
+	
+	public final void wait(long millis) throws InterruptedException {
+        wait(millis, 0);
+    }
+	
+	public final void wait(long millis, int nanos) throws InterruptedException {
+		dsTaint.addTaint(millis);
+		dsTaint.addTaint(nanos);
+	}
+	
+	public final void notify() {
+	}
 }
