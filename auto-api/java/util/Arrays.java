@@ -1531,9 +1531,7 @@ public class Arrays {
             dsTaint.addTaint(object.dsTaint);
             {
                 {
-                    Iterator<E> seatecAstronomy42 = a.iterator();
-                    seatecAstronomy42.hasNext();
-                    E element = seatecAstronomy42.next();
+                    E element = a[0];
                     {
                         {
                             boolean var97B4224D5E3FF3963F495EAD32377EDA_1023440789 = (object.equals(element));
@@ -1543,9 +1541,7 @@ public class Arrays {
             } //End block
             {
                 {
-                    Iterator<E> seatecAstronomy42 = a.iterator();
-                    seatecAstronomy42.hasNext();
-                    E element = seatecAstronomy42.next();
+                    E element = a[0];
                 } //End collapsed parenthetic
             } //End block
             return dsTaint.getTaintBoolean();

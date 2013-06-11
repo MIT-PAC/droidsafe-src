@@ -1314,9 +1314,7 @@ public class SimpleDateFormat extends DateFormat {
         String[][] zones;
         zones = formatData.internalZoneStrings();
         {
-            Iterator<String[]> seatecAstronomy42 = zones.iterator();
-            seatecAstronomy42.hasNext();
-            String[] element = seatecAstronomy42.next();
+            String[] element = zones[0];
             {
                 {
                     int j;

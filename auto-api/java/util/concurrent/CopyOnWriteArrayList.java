@@ -328,9 +328,7 @@ public class CopyOnWriteArrayList<E> implements List<E>, RandomAccess, Cloneable
             Iterator<?> i;
             i = ((List<?>) other).iterator();
             {
-                Iterator<Object> seatecAstronomy42 = snapshot.iterator();
-                seatecAstronomy42.hasNext();
-                Object o = seatecAstronomy42.next();
+                Object o = snapshot[0];
                 {
                     {
                         boolean var6D2C6F2C90F31B26BD0BC8B4289F0FA4_74877303 = (!i.hasNext() || !Objects.equal(o, i.next()));
@@ -470,9 +468,7 @@ public class CopyOnWriteArrayList<E> implements List<E>, RandomAccess, Cloneable
         int addedCount;
         addedCount = 0;
         {
-            Iterator<Object> seatecAstronomy42 = toAdd.iterator();
-            seatecAstronomy42.hasNext();
-            Object o = seatecAstronomy42.next();
+            Object o = toAdd[0];
             {
                 {
                     boolean var4BB4DD0650713F3AD6499B5BB3CF0F9C_269765384 = (indexOf(o, newElements, 0, elements.length + addedCount) == -1);
@@ -734,9 +730,7 @@ public class CopyOnWriteArrayList<E> implements List<E>, RandomAccess, Cloneable
         out.defaultWriteObject();
         out.writeInt(snapshot.length);
         {
-            Iterator<Object> seatecAstronomy42 = snapshot.iterator();
-            seatecAstronomy42.hasNext();
-            Object o = seatecAstronomy42.next();
+            Object o = snapshot[0];
             {
                 out.writeObject(o);
             } //End block

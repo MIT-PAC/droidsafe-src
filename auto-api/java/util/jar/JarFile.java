@@ -104,24 +104,22 @@ public class JarFile extends ZipFile {
     @Override
     public Enumeration<JarEntry> entries() {
         //DSFIXME:  CODE0005: Class or interface declaration encountered but not expected
-        /*
         class JarFileEnumerator implements Enumeration<JarEntry> {
             Enumeration<? extends ZipEntry> ze;
             JarFile jf;
             JarFileEnumerator(Enumeration<? extends ZipEntry> zenum, JarFile jf) {
-                ze = zenum;
-                this.jf = jf;
+				dsTaint.addTaint(zenum.dsTaint);
+				dsTaint.addTaint(jf.dsTaint);
             }
             public boolean hasMoreElements() {
-                return ze.hasMoreElements();
+                return dsTaint.getTaintBoolean();
             }
             public JarEntry nextElement() {
                 JarEntry je = new JarEntry(ze.nextElement());
                 je.parentJar = jf;
-                return je;
+                return (JarEntry)dsTaint.getTaint();
             }
         }
-        */
         Enumeration<JarEntry> var4B5F19EA680694127ABE844E7C973602_341170376 = (new JarFileEnumerator(super.entries(), this));
         return (Enumeration<JarEntry>)dsTaint.getTaint();
         // ---------- Original Method ----------
@@ -222,9 +220,7 @@ public class JarFile extends ZipFile {
         boolean signed;
         signed = false;
         {
-            Iterator<ZipEntry> seatecAstronomy42 = metaEntries.iterator();
-            seatecAstronomy42.hasNext();
-            ZipEntry entry = seatecAstronomy42.next();
+            ZipEntry entry = metaEntries[0];
             {
                 String entryName;
                 entryName = entry.getName();

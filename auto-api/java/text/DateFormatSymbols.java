@@ -344,57 +344,43 @@ public class DateFormatSymbols implements Serializable, Cloneable {
         int hashCode;
         hashCode = localPatternChars.hashCode();
         {
-            Iterator<String> seatecAstronomy42 = ampms.iterator();
-            seatecAstronomy42.hasNext();
-            String element = seatecAstronomy42.next();
+            String element = ampms[0];
             {
                 hashCode += element.hashCode();
             } //End block
         } //End collapsed parenthetic
         {
-            Iterator<String> seatecAstronomy42 = eras.iterator();
-            seatecAstronomy42.hasNext();
-            String element = seatecAstronomy42.next();
+            String element = eras[0];
             {
                 hashCode += element.hashCode();
             } //End block
         } //End collapsed parenthetic
         {
-            Iterator<String> seatecAstronomy42 = months.iterator();
-            seatecAstronomy42.hasNext();
-            String element = seatecAstronomy42.next();
+            String element = months[0];
             {
                 hashCode += element.hashCode();
             } //End block
         } //End collapsed parenthetic
         {
-            Iterator<String> seatecAstronomy42 = shortMonths.iterator();
-            seatecAstronomy42.hasNext();
-            String element = seatecAstronomy42.next();
+            String element = shortMonths[0];
             {
                 hashCode += element.hashCode();
             } //End block
         } //End collapsed parenthetic
         {
-            Iterator<String> seatecAstronomy42 = shortWeekdays.iterator();
-            seatecAstronomy42.hasNext();
-            String element = seatecAstronomy42.next();
+            String element = shortWeekdays[0];
             {
                 hashCode += element.hashCode();
             } //End block
         } //End collapsed parenthetic
         {
-            Iterator<String> seatecAstronomy42 = weekdays.iterator();
-            seatecAstronomy42.hasNext();
-            String element = seatecAstronomy42.next();
+            String element = weekdays[0];
             {
                 hashCode += element.hashCode();
             } //End block
         } //End collapsed parenthetic
         {
-            Iterator<String[]> seatecAstronomy42 = zoneStrings.iterator();
-            seatecAstronomy42.hasNext();
-            String[] element = seatecAstronomy42.next();
+            String[] element = zoneStrings[0];
             {
                 {
                     int j;

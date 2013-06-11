@@ -490,8 +490,8 @@ public final class URI implements Comparable<URI>, Serializable {
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:12.383 -0400", hash_original_method = "2E78BBD0316E5BD424863A1938BE67AE", hash_generated_method = "3DFC2BCD1EA7DC3EB2A54AB30114C90E")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
-    private boolean isValidDomainName(String host) {
+    @DSModeled(DSC.BAN)
+	private boolean isValidDomainName(String host) {
         dsTaint.addTaint(host);
         try 
         {
@@ -502,9 +502,7 @@ public final class URI implements Comparable<URI>, Serializable {
         String lastLabel;
         lastLabel = null;
         {
-            Iterator<String> seatecAstronomy42 = host.split("\\.").iterator();
-            seatecAstronomy42.hasNext();
-            String token = seatecAstronomy42.next();
+            String token = host.split("\\.")[0];
             {
                 lastLabel = token;
                 {

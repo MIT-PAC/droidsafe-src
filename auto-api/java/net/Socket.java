@@ -48,7 +48,8 @@ public class Socket {
                 throw new IllegalArgumentException("Invalid proxy: " + proxy);
             } //End block
         } //End collapsed parenthetic
-        this.impl = factory != null ? factory.createSocketImpl() : new PlainSocketImpl(proxy);
+        this.impl = factory.createSocketImpl();
+		this.impl = new PlainSocketImpl(proxy);
         // ---------- Original Method ----------
         //if (proxy == null || proxy.type() == Proxy.Type.HTTP) {
             //throw new IllegalArgumentException("Invalid proxy: " + proxy);

@@ -4194,9 +4194,7 @@ public class Collections {
             Object[] array;
             array = c1.toArray();
             {
-                Iterator<Object> seatecAstronomy42 = array.iterator();
-                seatecAstronomy42.hasNext();
-                Object o = seatecAstronomy42.next();
+                Object o = array[0];
                 {
                     checkType(o, type);
                 } //End block
@@ -4403,9 +4401,7 @@ public class Collections {
             Object[] array;
             array = c1.toArray();
             {
-                Iterator<Object> seatecAstronomy42 = array.iterator();
-                seatecAstronomy42.hasNext();
-                Object o = seatecAstronomy42.next();
+                Object o = array[0];
                 {
                     checkType(o, type);
                 } //End block

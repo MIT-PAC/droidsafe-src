@@ -310,12 +310,11 @@ public abstract class AbstractMap<K, V> implements Map<K, V> {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:13.296 -0400", hash_original_method = "1BF9761154AA89A664F00EA3C1B1A227", hash_generated_method = "A0CD77E178FC31917279DFE3744F87DD")
     //DSFIXME:  CODE0002: Requires DSC value to be set
-    public void putAll(Map<? extends K, ? extends V> map) {
+    public void putAll(Map <? extends K, ? extends V> map) {
         dsTaint.addTaint(map.dsTaint);
         {
-            Iterator<Map.Entry<? extends K, ? extends V>> seatecAstronomy42 = map.entrySet().iterator();
-            seatecAstronomy42.hasNext();
-            Map.Entry<? extends K, ? extends V> entry = seatecAstronomy42.next();
+            map.entrySet().iterator().hasNext();
+            Map.Entry<? extends K, ? extends V> entry = map.entrySet().iterator().next();
             {
                 put(entry.getKey(), entry.getValue());
             } //End block
