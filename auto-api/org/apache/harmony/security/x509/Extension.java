@@ -1,14 +1,9 @@
 package org.apache.harmony.security.x509;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-
-// import Iterator to deal with enhanced for loop translation
-import java.util.Iterator;
-
 import java.io.IOException;
 import java.util.Arrays;
+
 import org.apache.harmony.security.asn1.ASN1Boolean;
 import org.apache.harmony.security.asn1.ASN1OctetString;
 import org.apache.harmony.security.asn1.ASN1Oid;
@@ -17,6 +12,11 @@ import org.apache.harmony.security.asn1.ASN1Type;
 import org.apache.harmony.security.asn1.BerInputStream;
 import org.apache.harmony.security.asn1.ObjectIdentifier;
 import org.apache.harmony.security.utils.Array;
+
+import droidsafe.annotations.DSC;
+import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.DSModeled;
+// import Iterator to deal with enhanced for loop translation
 
 public final class Extension {
     public static final boolean CRITICAL = true;
@@ -117,7 +117,7 @@ public final class Extension {
         @DSModeled(DSC.SAFE)
         @Override
         protected void getValues(Object object, Object[] values) {
-            dsTaint.addTaint(values.dsTaint);
+            dsTaint.addTaint(values[0].dsTaint);
             dsTaint.addTaint(object.dsTaint);
             Extension ext;
             ext = (Extension) object;
@@ -132,7 +132,7 @@ public final class Extension {
         }
 
         
-        static {
+         {
             setDefault(Boolean.FALSE, 1);
         }
         
@@ -140,14 +140,14 @@ public final class Extension {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:17.917 -0400", hash_original_method = "772675EFC6AAA2D937AD864985824958", hash_generated_method = "8F4A081F34BAC62E720E0C23EC0783A2")
     //DSFIXME:  CODE0002: Requires DSC value to be set
-    public Extension(String extnID, boolean critical,
-            ExtensionValue extnValueObject) {
+    public Extension(String extnID, boolean critical, ExtensionValue extnValueObject) {
         dsTaint.addTaint(extnID);
         dsTaint.addTaint(critical);
         dsTaint.addTaint(extnValueObject.dsTaint);
         this.extnID = ObjectIdentifier.toIntArray(extnID);
         this.valueDecoded = true;
         this.extnValue = extnValueObject.getEncoded();
+        this.critical = critical;
         // ---------- Original Method ----------
         //this.extnID_str = extnID;
         //this.extnID = ObjectIdentifier.toIntArray(extnID);
@@ -165,6 +165,8 @@ public final class Extension {
         dsTaint.addTaint(critical);
         dsTaint.addTaint(extnValue);
         this.extnID = ObjectIdentifier.toIntArray(extnID);
+        this.extnValue = extnValue;
+        this.critical = critical;
         // ---------- Original Method ----------
         //this.extnID_str = extnID;
         //this.extnID = ObjectIdentifier.toIntArray(extnID);
@@ -179,6 +181,10 @@ public final class Extension {
         dsTaint.addTaint(extnID);
         dsTaint.addTaint(critical);
         dsTaint.addTaint(extnValue);
+        this.critical = critical;
+        this.extnValue = extnValue;
+        this.extnID = extnID;
+        
         // ---------- Original Method ----------
         //this.extnID = extnID;
         //this.critical = critical;

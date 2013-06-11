@@ -1,14 +1,16 @@
 package org.apache.http.conn.routing;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-
+import java.net.InetAddress;
 // import Iterator to deal with enhanced for loop translation
 import java.util.Iterator;
 
-import java.net.InetAddress;
 import org.apache.http.HttpHost;
+
+import droidsafe.annotations.DSC;
+import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.DSModeled;
+import droidsafe.runtime.DroidSafeAndroidRuntime;
 
 public final class HttpRoute implements RouteInfo, Cloneable {
     private final HttpHost targetHost;
@@ -29,17 +31,27 @@ public final class HttpRoute implements RouteInfo, Cloneable {
         dsTaint.addTaint(target.dsTaint);
         dsTaint.addTaint(secure);
         dsTaint.addTaint(local.dsTaint);
-        dsTaint.addTaint(proxies.dsTaint);
+        dsTaint.addTaint(proxies[0].dsTaint);
+        
+      this.targetHost   = target;
+        this.localAddress = local;
+        this.proxyChain   = proxies;
+        this.secure       = secure;
+        this.tunnelled    = tunnelled;
+        this.layered      = layered;
+        
         {
-            throw new IllegalArgumentException
+        	if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException
                 ("Target host may not be null.");
         } //End block
         {
-            throw new IllegalArgumentException
+        	if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException
                 ("Proxy required if tunnelled.");
         } //End block
         tunnelled = TunnelType.PLAIN;
         layered = LayerType.PLAIN;
+        
+        
         // ---------- Original Method ----------
         //if (target == null) {
             //throw new IllegalArgumentException
@@ -72,7 +84,7 @@ public final class HttpRoute implements RouteInfo, Cloneable {
         dsTaint.addTaint(target.dsTaint);
         dsTaint.addTaint(secure);
         dsTaint.addTaint(local.dsTaint);
-        dsTaint.addTaint(proxies.dsTaint);
+        dsTaint.addTaint(proxies[0].dsTaint);
         // ---------- Original Method ----------
     }
 
@@ -189,15 +201,14 @@ public final class HttpRoute implements RouteInfo, Cloneable {
     @DSModeled(DSC.SAFE)
     public final HttpHost getHopTarget(int hop) {
         dsTaint.addTaint(hop);
-        throw new IllegalArgumentException
+        if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException
                 ("Hop index must not be negative: " + hop);
-        final int hopcount;
+        int hopcount;
         hopcount = getHopCount();
-        throw new IllegalArgumentException
+        if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException
                 ("Hop index " + hop +
                  " exceeds route length " + hopcount);
         HttpHost result;
-        result = null;
         result = this.proxyChain[hop];
         result = this.targetHost;
         return (HttpHost)dsTaint.getTaint();
@@ -318,9 +329,7 @@ public final class HttpRoute implements RouteInfo, Cloneable {
         {
             hc ^= proxyChain.length;
             {
-                Iterator<HttpHost> seatecAstronomy42 = proxyChain.iterator();
-                seatecAstronomy42.hasNext();
-                HttpHost aProxyChain = seatecAstronomy42.next();
+                HttpHost aProxyChain = proxyChain[0];
                 hc ^= aProxyChain.hashCode();
             } //End collapsed parenthetic
         } //End block
@@ -362,9 +371,7 @@ public final class HttpRoute implements RouteInfo, Cloneable {
         cab.append("}->");
         {
             {
-                Iterator<HttpHost> seatecAstronomy42 = this.proxyChain.iterator();
-                seatecAstronomy42.hasNext();
-                HttpHost aProxyChain = seatecAstronomy42.next();
+                HttpHost aProxyChain = this.proxyChain[0];
                 {
                     cab.append(aProxyChain);
                     cab.append("->");

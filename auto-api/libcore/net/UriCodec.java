@@ -1,16 +1,16 @@
 package libcore.net;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-
-// import Iterator to deal with enhanced for loop translation
-import java.util.Iterator;
-
 import java.io.ByteArrayOutputStream;
 import java.net.URISyntaxException;
 import java.nio.charset.Charset;
 import java.nio.charset.Charsets;
+
+import droidsafe.annotations.DSC;
+import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.DSModeled;
+// import Iterator to deal with enhanced for loop translation
+import droidsafe.runtime.DroidSafeAndroidRuntime;
 
 public abstract class UriCodec {
     
@@ -40,20 +40,20 @@ public abstract class UriCodec {
                     } //End block
                     {
                         {
-                            throw new URISyntaxException(uri, "Incomplete % sequence in " + name, i);
+                        	if (DroidSafeAndroidRuntime.control) throw new URISyntaxException(uri, "Incomplete % sequence in " + name, i);
                         } //End block
                         int d1;
                         d1 = hexToInt(uri.charAt(i + 1));
                         int d2;
                         d2 = hexToInt(uri.charAt(i + 2));
                         {
-                            throw new URISyntaxException(uri, "Invalid % sequence: "
+                        	if (DroidSafeAndroidRuntime.control) throw new URISyntaxException(uri, "Invalid % sequence: "
                             + uri.substring(i, i + 3) + " in " + name, i);
                         } //End block
                         i += 3;
                     } //End block
                     {
-                        throw new URISyntaxException(uri, "Illegal character in " + name, i);
+                    	if (DroidSafeAndroidRuntime.control) throw new URISyntaxException(uri, "Illegal character in " + name, i);
                     } //End block
                 } //End collapsed parenthetic
             } //End block
@@ -88,7 +88,7 @@ public abstract class UriCodec {
         dsTaint.addTaint(builder.dsTaint);
         dsTaint.addTaint(charset.dsTaint);
         {
-            throw new NullPointerException();
+        	if (DroidSafeAndroidRuntime.control) throw new NullPointerException();
         } //End block
         int escapeStart;
         escapeStart = -1;
