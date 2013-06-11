@@ -2,6 +2,7 @@ package java.util;
 
 // Droidsafe Imports
 import droidsafe.helpers.*;
+import droidsafe.runtime.DroidSafeAndroidRuntime;
 import droidsafe.annotations.*;
 
 // import Iterator to deal with enhanced for loop translation
@@ -20,7 +21,7 @@ public class Timer {
         dsTaint.addTaint(name);
         dsTaint.addTaint(isDaemon);
         {
-            throw new NullPointerException("name is null");
+        	if (DroidSafeAndroidRuntime.control) throw new NullPointerException("name is null");
         } //End block
         this.impl = new TimerImpl(name, isDaemon);
         this.finalizer = new FinalizerHelper(impl);
@@ -96,7 +97,7 @@ public class Timer {
         {
             boolean var28AAFB18FEC364CA37F6AC4ACB25179C_409943417 = (when.getTime() < 0);
             {
-                throw new IllegalArgumentException();
+            	if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException();
             } //End block
         } //End collapsed parenthetic
         long delay;
@@ -117,7 +118,7 @@ public class Timer {
         dsTaint.addTaint(task.dsTaint);
         dsTaint.addTaint(delay);
         {
-            throw new IllegalArgumentException();
+        	if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException();
         } //End block
         scheduleImpl(task, delay, -1, false);
         // ---------- Original Method ----------
@@ -135,7 +136,7 @@ public class Timer {
         dsTaint.addTaint(delay);
         dsTaint.addTaint(period);
         {
-            throw new IllegalArgumentException();
+        	if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException();
         } //End block
         scheduleImpl(task, delay, period, false);
         // ---------- Original Method ----------
@@ -155,7 +156,7 @@ public class Timer {
         {
             boolean var98E3B2ACDC7E58F10263C88A8AF5A4DE_575755943 = (period <= 0 || when.getTime() < 0);
             {
-                throw new IllegalArgumentException();
+            	if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException();
             } //End block
         } //End collapsed parenthetic
         long delay;
@@ -177,7 +178,7 @@ public class Timer {
         dsTaint.addTaint(delay);
         dsTaint.addTaint(period);
         {
-            throw new IllegalArgumentException();
+        	if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException();
         } //End block
         scheduleImpl(task, delay, period, true);
         // ---------- Original Method ----------
@@ -197,7 +198,7 @@ public class Timer {
         {
             boolean var98E3B2ACDC7E58F10263C88A8AF5A4DE_266712566 = (period <= 0 || when.getTime() < 0);
             {
-                throw new IllegalArgumentException();
+            	if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException();
             } //End block
         } //End collapsed parenthetic
         long delay;
@@ -221,22 +222,22 @@ public class Timer {
         dsTaint.addTaint(fixed);
         {
             {
-                throw new IllegalStateException("Timer was canceled");
+            	if (DroidSafeAndroidRuntime.control) throw new IllegalStateException("Timer was canceled");
             } //End block
             long when;
             when = delay + System.currentTimeMillis();
             {
-                throw new IllegalArgumentException("Illegal delay to start the TimerTask: " + when);
+            	if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("Illegal delay to start the TimerTask: " + when);
             } //End block
             {
                 {
                     boolean var6907B24DBA5C82DAA6F3CA1916D2DC39_878528116 = (task.isScheduled());
                     {
-                        throw new IllegalStateException("TimerTask is scheduled already");
+                    	if (DroidSafeAndroidRuntime.control) throw new IllegalStateException("TimerTask is scheduled already");
                     } //End block
                 } //End collapsed parenthetic
                 {
-                    throw new IllegalStateException("TimerTask is canceled");
+                	if (DroidSafeAndroidRuntime.control) throw new IllegalStateException("TimerTask is canceled");
                 } //End block
                 task.when = when;
                 task.period = period;
@@ -610,6 +611,7 @@ public class Timer {
         @DSModeled(DSC.SAFE)
          FinalizerHelper(TimerImpl impl) {
             dsTaint.addTaint(impl.dsTaint);
+            this.impl = impl;
             // ---------- Original Method ----------
             //this.impl = impl;
         }

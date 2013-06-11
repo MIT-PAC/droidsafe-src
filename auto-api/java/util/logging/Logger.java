@@ -2,6 +2,7 @@ package java.util.logging;
 
 // Droidsafe Imports
 import droidsafe.helpers.*;
+import droidsafe.runtime.DroidSafeAndroidRuntime;
 import droidsafe.annotations.*;
 
 // import Iterator to deal with enhanced for loop translation
@@ -168,7 +169,7 @@ public class Logger {
             {
                 boolean var216EDF683781EB220AA7EF22E244048D_874131085 = (current.equals(resourceBundleName));
                 {
-                    throw new IllegalArgumentException("Resource bundle name '" + resourceBundleName + "' is inconsistent with the existing '" + current + "'");
+                    if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("Resource bundle name '" + resourceBundleName + "' is inconsistent with the existing '" + current + "'");
                 } //End block
             } //End collapsed parenthetic
         } //End block
@@ -217,7 +218,7 @@ public class Logger {
     public void addHandler(Handler handler) {
         dsTaint.addTaint(handler.dsTaint);
         {
-            throw new NullPointerException("handler == null");
+            if (DroidSafeAndroidRuntime.control) throw new NullPointerException("handler == null");
         } //End block
         {
             LogManager.getLogManager().checkAccess();
@@ -260,14 +261,12 @@ public class Logger {
         handlersProperty = manager.getProperty(handlersPropertyName);
         {
             {
-                Iterator<String> seatecAstronomy42 = handlersProperty.split(",|\\s").iterator();
-                seatecAstronomy42.hasNext();
-                String handlerName = seatecAstronomy42.next();
+                String handlerName = handlersProperty.split(",|\\s")[0];
                 {
                     {
                         boolean var75740153E91B33587E112AFB85404C96_121322717 = (handlerName.isEmpty());
                     } //End collapsed parenthetic
-                    final Handler handler;
+                    Handler handler = null;
                     try 
                     {
                         handler = (Handler) LogManager.getInstanceByClass(handlerName);
@@ -421,7 +420,7 @@ public class Logger {
     public void setParent(Logger parent) {
         dsTaint.addTaint(parent.dsTaint);
         {
-            throw new NullPointerException("parent == null");
+        	if (DroidSafeAndroidRuntime.control) throw new NullPointerException("parent == null");
         } //End block
         LogManager logManager;
         logManager = LogManager.getLogManager();
@@ -589,7 +588,7 @@ public class Logger {
             Object[] params) {
         dsTaint.addTaint(sourceClass);
         dsTaint.addTaint(sourceMethod);
-        dsTaint.addTaint(params.dsTaint);
+        dsTaint.addTaint(params[0].dsTaint);
         {
             boolean var0C803763CEE485D1F9F8913EE26EDCA8_211996335 = (!internalIsLoggable(Level.FINER));
         } //End collapsed parenthetic
@@ -846,7 +845,7 @@ public class Logger {
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public void log(Level logLevel, String msg, Object[] params) {
         dsTaint.addTaint(logLevel.dsTaint);
-        dsTaint.addTaint(params.dsTaint);
+        dsTaint.addTaint(params[0].dsTaint);
         dsTaint.addTaint(msg);
         {
             boolean varA3B4B40B24BEAEBBCE610018F7D9BCAC_675907173 = (!internalIsLoggable(logLevel));
@@ -911,9 +910,7 @@ public class Logger {
         Handler[] allHandlers;
         allHandlers = getHandlers();
         {
-            Iterator<Handler> seatecAstronomy42 = allHandlers.iterator();
-            seatecAstronomy42.hasNext();
-            Handler element = seatecAstronomy42.next();
+            Handler element = allHandlers[0];
             {
                 element.publish(record);
             } //End block
@@ -928,9 +925,7 @@ public class Logger {
                 Handler[] ha;
                 ha = theParent.getHandlers();
                 {
-                    Iterator<Handler> seatecAstronomy42 = ha.iterator();
-                    seatecAstronomy42.hasNext();
-                    Handler element = seatecAstronomy42.next();
+                    Handler element = ha[0];
                     {
                         element.publish(record);
                     } //End block
@@ -1036,7 +1031,7 @@ public class Logger {
         dsTaint.addTaint(sourceClass);
         dsTaint.addTaint(sourceMethod);
         dsTaint.addTaint(logLevel.dsTaint);
-        dsTaint.addTaint(params.dsTaint);
+        dsTaint.addTaint(params[0].dsTaint);
         dsTaint.addTaint(msg);
         {
             boolean varA3B4B40B24BEAEBBCE610018F7D9BCAC_490548365 = (!internalIsLoggable(logLevel));
@@ -1199,7 +1194,7 @@ public class Logger {
         dsTaint.addTaint(sourceClass);
         dsTaint.addTaint(sourceMethod);
         dsTaint.addTaint(logLevel.dsTaint);
-        dsTaint.addTaint(params.dsTaint);
+        dsTaint.addTaint(params[0].dsTaint);
         dsTaint.addTaint(bundleName);
         dsTaint.addTaint(msg);
         {
