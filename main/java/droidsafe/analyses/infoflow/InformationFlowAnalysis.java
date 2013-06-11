@@ -687,7 +687,9 @@ public class InformationFlowAnalysis {
                         for (MyValue value : receiver) {
                             if (value instanceof Address) {
                                 Address address = (Address)value;
-                                values.addAll(inFrameHeapStatics.heap.instances.get(address, DSTaintObjectUtil.v().taint));
+                                for (SootField taint : DSTaintObjectUtil.v().taints) {
+                                    values.addAll(inFrameHeapStatics.heap.instances.get(address, taint));
+                                }
                             } else {
                                 values.add(value);
                             }
@@ -1552,13 +1554,16 @@ class DSTaintObjectUtil {
         return v;
     }
 
-    SootField taint;
+    Set<SootField> taints;
     Set<SootMethod> getTaints;
 
     private DSTaintObjectUtil() {
         SootClass klass = Scene.v().getSootClass("droidsafe.helpers.DSTaintObject");
         assert klass != null;
-        taint = klass.getFieldByName("taint");
+        taints = new HashSet<SootField>();
+        taints.add(klass.getFieldByName("taintDouble"));
+        taints.add(klass.getFieldByName("taintBoolean"));
+        taints.add(klass.getFieldByName("taintObject"));
         getTaints = new HashSet<SootMethod>();
         for (SootMethod method : klass.getMethods()) {
             if (method.getName().startsWith("getTaint")) {
@@ -2072,7 +2077,9 @@ class MemoryAccessAnalysis {
             Set<MyValue> values = new HashSet<MyValue>();
             for (MyValue value : receiver) {
                 Address address = (Address)value;
-                values.addAll(inFrameHeapStatics.heap.instances.get(address,  DSTaintObjectUtil.v().taint));
+                for (SootField taint : DSTaintObjectUtil.v().taints) {
+                    values.addAll(inFrameHeapStatics.heap.instances.get(address, taint));
+                }
             }
             Frame frame = new Frame(inFrameHeapStatics.frame, inFrameHeapStatics.frame.thiz, inFrameHeapStatics.frame.params);
             frame.putS(MethodLocal.v(caller, (Local)variable), values);
