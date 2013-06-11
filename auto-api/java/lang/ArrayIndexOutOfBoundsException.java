@@ -4,6 +4,8 @@ package java.lang;
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 
+// import Iterator to deal with enhanced for loop translation
+import java.util.Iterator;
 
 public class ArrayIndexOutOfBoundsException extends IndexOutOfBoundsException {
     private static final long serialVersionUID = -5116101128118950844L;

@@ -2,6 +2,7 @@ package java.lang.ref;
 
 // Droidsafe Imports
 import droidsafe.helpers.*;
+import droidsafe.runtime.DroidSafeAndroidRuntime;
 import droidsafe.annotations.*;
 
 // import Iterator to deal with enhanced for loop translation
@@ -65,7 +66,7 @@ public class ReferenceQueue<T> {
     public synchronized Reference<? extends T> remove(long timeoutMillis) throws InterruptedException {
         dsTaint.addTaint(timeoutMillis);
         {
-            throw new IllegalArgumentException("timeout < 0: " + timeoutMillis);
+        	if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("timeout < 0: " + timeoutMillis);
         } //End block
         {
             Reference<? extends T> var2F0A11953DF6A22DE51C1F54E46EB922_1369771222 = (poll());

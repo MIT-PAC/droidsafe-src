@@ -60,7 +60,7 @@ public class LinkedBlockingQueue<E> extends AbstractQueue<E> implements Blocking
             int n;
             n = 0;
             {
-                Iterator<E> seatecAstronomy42 = c.iterator();
+                Iterator<? extends E> seatecAstronomy42 = c.iterator();
                 seatecAstronomy42.hasNext();
                 E e = seatecAstronomy42.next();
                 {

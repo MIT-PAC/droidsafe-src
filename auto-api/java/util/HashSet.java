@@ -50,7 +50,7 @@ public class HashSet<E> extends AbstractSet<E> implements Set<E>, Cloneable, Ser
                 .size() * 2));
         dsTaint.addTaint(collection.dsTaint);
         {
-            Iterator<E> seatecAstronomy42 = collection.iterator();
+            Iterator<? extends E> seatecAstronomy42 = collection.iterator();
             seatecAstronomy42.hasNext();
             E e = seatecAstronomy42.next();
             {

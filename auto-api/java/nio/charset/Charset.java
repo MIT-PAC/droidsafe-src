@@ -36,10 +36,8 @@ public abstract class Charset implements Comparable<Charset> {
         checkCharsetName(canonicalName);
         this.aliasesSet = new HashSet<String>();
         {
-            {
-                Iterator<String> seatecAstronomy42 = aliases.iterator();
-                seatecAstronomy42.hasNext();
-                String alias = seatecAstronomy42.next();
+			{
+                String alias = aliases[0];
                 {
                     checkCharsetName(alias);
                     this.aliasesSet.add(alias);

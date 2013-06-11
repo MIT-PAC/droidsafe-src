@@ -2,6 +2,7 @@ package java.nio;
 
 // Droidsafe Imports
 import droidsafe.helpers.*;
+import droidsafe.runtime.DroidSafeAndroidRuntime;
 import droidsafe.annotations.*;
 
 // import Iterator to deal with enhanced for loop translation
@@ -209,7 +210,7 @@ public abstract class ByteBuffer extends Buffer implements Comparable<ByteBuffer
         Arrays.checkOffsetAndCount(dst.length, dstOffset, byteCount);
         {
             boolean varB9787195162C3B0FEC3FB85BC4A74CE2_1401606057 = (byteCount > remaining());
-            {
+        if (DroidSafeAndroidRuntime.control) {
                 throw new BufferUnderflowException();
             } //End block
         } //End collapsed parenthetic
@@ -375,7 +376,7 @@ public abstract class ByteBuffer extends Buffer implements Comparable<ByteBuffer
         Arrays.checkOffsetAndCount(src.length, srcOffset, byteCount);
         {
             boolean varB9787195162C3B0FEC3FB85BC4A74CE2_188303003 = (byteCount > remaining());
-            {
+            if (DroidSafeAndroidRuntime.control) {
                 throw new BufferOverflowException();
             } //End block
         } //End collapsed parenthetic
@@ -403,14 +404,14 @@ public abstract class ByteBuffer extends Buffer implements Comparable<ByteBuffer
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public ByteBuffer put(ByteBuffer src) {
         dsTaint.addTaint(src.dsTaint);
-        {
+        if (DroidSafeAndroidRuntime.control) {
             throw new IllegalArgumentException("src == this");
         } //End block
         int srcByteCount;
         srcByteCount = src.remaining();
         {
             boolean varCE4A021E07A97089C6014AA3511B8F36_899819015 = (srcByteCount > remaining());
-            {
+            if (DroidSafeAndroidRuntime.control) {
                 throw new BufferOverflowException();
             } //End block
         } //End collapsed parenthetic

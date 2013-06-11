@@ -88,7 +88,7 @@ public abstract class AbstractQueue<E> extends AbstractCollection<E> implements 
         boolean modified;
         modified = false;
         {
-            Iterator<E> seatecAstronomy42 = c.iterator();
+            Iterator<? extends E> seatecAstronomy42 = c.iterator();
             seatecAstronomy42.hasNext();
             E e = seatecAstronomy42.next();
             {

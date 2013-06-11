@@ -2,6 +2,7 @@ package java.io;
 
 // Droidsafe Imports
 import droidsafe.helpers.*;
+import droidsafe.runtime.DroidSafeAndroidRuntime;
 import droidsafe.annotations.*;
 
 // import Iterator to deal with enhanced for loop translation
@@ -92,7 +93,7 @@ public abstract class Writer implements Appendable, Closeable, Flushable {
         {
             boolean var692490DEFA1D61E18F718478B787B00C_2136198034 = ((offset | count) < 0 || offset > str.length() - count);
             {
-                throw new StringIndexOutOfBoundsException(str, offset, count);
+            	if (DroidSafeAndroidRuntime.control) throw new StringIndexOutOfBoundsException(str, offset, count);
             } //End block
         } //End collapsed parenthetic
         char[] buf;

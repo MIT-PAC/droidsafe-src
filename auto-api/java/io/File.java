@@ -1,25 +1,48 @@
 package java.io;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-
-// import Iterator to deal with enhanced for loop translation
-import java.util.Iterator;
+import static libcore.io.OsConstants.F_OK;
+import static libcore.io.OsConstants.O_CREAT;
+import static libcore.io.OsConstants.O_EXCL;
+import static libcore.io.OsConstants.O_RDWR;
+import static libcore.io.OsConstants.R_OK;
+import static libcore.io.OsConstants.S_IRGRP;
+import static libcore.io.OsConstants.S_IROTH;
+import static libcore.io.OsConstants.S_IRUSR;
+import static libcore.io.OsConstants.S_IRWXU;
+import static libcore.io.OsConstants.S_ISDIR;
+import static libcore.io.OsConstants.S_ISREG;
+import static libcore.io.OsConstants.S_IWGRP;
+import static libcore.io.OsConstants.S_IWOTH;
+import static libcore.io.OsConstants.S_IWUSR;
+import static libcore.io.OsConstants.S_IXGRP;
+import static libcore.io.OsConstants.S_IXOTH;
+import static libcore.io.OsConstants.S_IXUSR;
+import static libcore.io.OsConstants.W_OK;
+import static libcore.io.OsConstants.X_OK;
 
 import java.net.URI;
 import java.net.URISyntaxException;
 import java.net.URL;
 import java.util.ArrayList;
+// import Iterator to deal with enhanced for loop translation
+import java.util.Iterator;
 import java.util.List;
 import java.util.Random;
+
 import libcore.io.ErrnoException;
 import libcore.io.IoUtils;
 import libcore.io.Libcore;
 import libcore.io.StructStat;
 import libcore.io.StructStatFs;
+
 import org.apache.harmony.luni.util.DeleteOnExit;
-import static libcore.io.OsConstants.*;
+
+import droidsafe.annotations.DSC;
+import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.DSModeled;
+import droidsafe.helpers.DSUtils;
+import droidsafe.runtime.DroidSafeAndroidRuntime;
 
 public class File implements Serializable, Comparable<File> {
     private static final long serialVersionUID = 301077366599181567L;
@@ -56,7 +79,7 @@ public class File implements Serializable, Comparable<File> {
         dsTaint.addTaint(dirPath);
         dsTaint.addTaint(name);
         {
-            throw new NullPointerException();
+        	if (DroidSafeAndroidRuntime.control) throw new NullPointerException();
         } //End block
         {
             boolean var522AFCE5CC8B40A2A75402BE5D6A8AB4_671275694 = (dirPath == null || dirPath.isEmpty());
@@ -326,13 +349,13 @@ public class File implements Serializable, Comparable<File> {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:11.444 -0400", hash_original_method = "46BEDE9A577C8371952DE0374BD98323", hash_generated_method = "61CE12A462943C45A00D6142E4F89789")
     private static String realpath(String path) {
-        //DSFIXME:  CODE0010: Native static method requires manual modeling
+    	return DSUtils.UNKNOWN_STRING;
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:11.444 -0400", hash_original_method = "497A174E70F7C86705EB0CD57A444934", hash_generated_method = "69FF61E9FC04E3BAD3A2707E337C00FC")
     private static String readlink(String path) {
-        //DSFIXME:  CODE0010: Native static method requires manual modeling
+    	return DSUtils.UNKNOWN_STRING;
     }
 
     
@@ -533,7 +556,7 @@ public class File implements Serializable, Comparable<File> {
     public boolean setLastModified(long time) {
         dsTaint.addTaint(time);
         {
-            throw new IllegalArgumentException("time < 0");
+        	if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("time < 0");
         } //End block
         boolean varC4720CBC7FAA490EA21CC63802D3E053_1382396727 = (setLastModifiedImpl(path, time));
         return dsTaint.getTaintBoolean();
@@ -547,7 +570,7 @@ public class File implements Serializable, Comparable<File> {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:11.445 -0400", hash_original_method = "570E605E6B82F4BA53E369D5C65196C5", hash_generated_method = "950DE424684D89A5A33871114C791681")
     private static boolean setLastModifiedImpl(String path, long time) {
-        //DSFIXME:  CODE0010: Native static method requires manual modeling
+    	return DSUtils.UNKNOWN_BOOLEAN;
     }
 
     
@@ -692,7 +715,7 @@ public class File implements Serializable, Comparable<File> {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:11.446 -0400", hash_original_method = "2878623B07645019283057565E59E975", hash_generated_method = "B7C11F20333397C0B0830B9BF70D88CA")
     private static String[] listImpl(String path) {
-        //DSFIXME:  CODE0010: Native static method requires manual modeling
+    	return new String[] {DSUtils.UNKNOWN_STRING};
     }
 
     
@@ -705,9 +728,7 @@ public class File implements Serializable, Comparable<File> {
         List<String> result;
         result = new ArrayList<String>(filenames.length);
         {
-            Iterator<String> seatecAstronomy42 = filenames.iterator();
-            seatecAstronomy42.hasNext();
-            String filename = seatecAstronomy42.next();
+            String filename = filenames[0];
             {
                 {
                     boolean var81601EE8E283E32D6B2251267018272D_378537447 = (filter.accept(this, filename));
@@ -766,9 +787,7 @@ public class File implements Serializable, Comparable<File> {
         List<File> result;
         result = new ArrayList<File>(files.length);
         {
-            Iterator<File> seatecAstronomy42 = files.iterator();
-            seatecAstronomy42.hasNext();
-            File file = seatecAstronomy42.next();
+            File file = files[0];
             {
                 {
                     boolean var03D1D21AA056B6A17B9A8B3C581BEF3E_1949294856 = (filter.accept(file));
@@ -972,6 +991,7 @@ public class File implements Serializable, Comparable<File> {
         try 
         {
             {
+            	URI uri = new URI("file", "", name, null);
                 boolean var7CF5F60EBC5E2C901F827EF7830FC621_1195051356 = (!name.startsWith("/"));
                 {
                     boolean varE9B43904F9CC6A4F5AC7EEBE42EBAED2_488196754 = (name.startsWith("//"));

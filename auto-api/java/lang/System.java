@@ -71,12 +71,14 @@ public final class System {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:11.944 -0400", hash_original_method = "160BB51793A80C253C811987AF1EB598", hash_generated_method = "61E2F2A8C3CC26139490BA547E85EB60")
     public static long currentTimeMillis() {
         //DSFIXME:  CODE0010: Native static method requires manual modeling
+    	return DSUtils.UNKNOWN_LONG;
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:11.944 -0400", hash_original_method = "BC71756E7CB4F8DBA545A78B86F8B7C4", hash_generated_method = "786C33D4CA7FE4F5842FE64509FFFABE")
     public static long nanoTime() {
         //DSFIXME:  CODE0010: Native static method requires manual modeling
+    	return DSUtils.UNKNOWN_LONG;
     }
 
     
@@ -195,6 +197,10 @@ public final class System {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:11.945 -0400", hash_original_method = "F310EFA1596100CF0802801ED18060AD", hash_generated_method = "6D6E45FC92007F03117B3EEC6D7EE62C")
     private static String[] specialProperties() {
         //DSFIXME:  CODE0010: Native static method requires manual modeling
+    	String [] properties = new String[] {
+    			DSUtils.UNKNOWN_STRING
+    	};
+    	return properties;
     }
 
     
@@ -246,12 +252,14 @@ public final class System {
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:11.945 -0400", hash_original_method = "510D3BD16A31CDD4C841B4E91270C2B4", hash_generated_method = "9552F3FF7A270239399C7A3019A2BE94")
+    @DSModeled(DSC.BAN)
     public static Console console() {
         return Console.getConsole();
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:11.945 -0400", hash_original_method = "C8F7CB4F1804392B0063D92E89423E1A", hash_generated_method = "4FDF597B2D74E6DD9D48FFB24DE4E3C9")
+    @DSModeled(DSC.BAN)
     public static SecurityManager getSecurityManager() {
         return null;
     }
@@ -271,14 +279,14 @@ public final class System {
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:11.945 -0400", hash_original_method = "0A5482C5BE01BBAB439F3387C549F83E", hash_generated_method = "02556AE73AEC2E1D7F54E204C98326F3")
+    @DSModeled(DSC.BAN)
     public static void load(String pathName) {
-        Runtime.getRuntime().load(pathName, VMStack.getCallingClassLoader());
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:11.945 -0400", hash_original_method = "0A3470DEBF4C375636532E38AAF3C5D7", hash_generated_method = "88D9169C5FC0C884DFF6AA876D761784")
+    @DSModeled(DSC.BAN)
     public static void loadLibrary(String libName) {
-        Runtime.getRuntime().loadLibrary(libName, VMStack.getCallingClassLoader());
     }
 
     

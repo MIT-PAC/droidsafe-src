@@ -482,9 +482,7 @@ public class ThreadPoolExecutor extends AbstractExecutorService {
             boolean var24D3CA3473EF320EA6AF15C01960EBAE_2042205745 = (!q.isEmpty());
             {
                 {
-                    Iterator<Runnable> seatecAstronomy42 = q.toArray(new Runnable[0]).iterator();
-                    seatecAstronomy42.hasNext();
-                    Runnable r = seatecAstronomy42.next();
+                    Runnable r= q.toArray(new Runnable[0])[0];
                     {
                         {
                             boolean var8576918424BDAE7AC11C88E260CF968E_1643417017 = (q.remove(r));
@@ -1226,9 +1224,7 @@ public class ThreadPoolExecutor extends AbstractExecutorService {
         catch (ConcurrentModificationException fallThrough)
         {
             {
-                Iterator<Object> seatecAstronomy42 = q.toArray().iterator();
-                seatecAstronomy42.hasNext();
-                Object r = seatecAstronomy42.next();
+                Object r = q.toArray()[0];
                 {
                     boolean var4E8BBA7479E6059D39986F5769B4F8FA_1458685636 = (r instanceof Future<?> && ((Future<?>)r).isCancelled());
                     q.remove(r);

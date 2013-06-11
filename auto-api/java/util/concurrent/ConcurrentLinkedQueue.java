@@ -41,7 +41,7 @@ public class ConcurrentLinkedQueue<E> extends AbstractQueue<E> implements Queue<
         h = null;
         t = null;
         {
-            Iterator<E> seatecAstronomy42 = c.iterator();
+            Iterator<? extends E> seatecAstronomy42 = c.iterator();
             seatecAstronomy42.hasNext();
             E e = seatecAstronomy42.next();
             {
@@ -408,7 +408,7 @@ public class ConcurrentLinkedQueue<E> extends AbstractQueue<E> implements Queue<
         beginningOfTheEnd = null;
         last = null;
         {
-            Iterator<E> seatecAstronomy42 = c.iterator();
+            Iterator<? extends E> seatecAstronomy42 = c.iterator();
             seatecAstronomy42.hasNext();
             E e = seatecAstronomy42.next();
             {

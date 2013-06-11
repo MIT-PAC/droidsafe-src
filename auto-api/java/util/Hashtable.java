@@ -126,9 +126,8 @@ public class Hashtable<K, V> extends Dictionary<K, V> implements Map<K, V>, Clon
     private void constructorPutAll(Map<? extends K, ? extends V> map) {
         dsTaint.addTaint(map.dsTaint);
         {
-            Iterator<Entry<? extends K, ? extends V>> seatecAstronomy42 = map.entrySet().iterator();
-            seatecAstronomy42.hasNext();
-            Entry<? extends K, ? extends V> e = seatecAstronomy42.next();
+            map.entrySet().iterator().hasNext();
+            Entry<? extends K, ? extends V> e = map.entrySet().iterator().next();
             {
                 constructorPut(e.getKey(), e.getValue());
             } //End block
@@ -460,9 +459,8 @@ public class Hashtable<K, V> extends Dictionary<K, V> implements Map<K, V>, Clon
         dsTaint.addTaint(map.dsTaint);
         ensureCapacity(map.size());
         {
-            Iterator<Entry<? extends K, ? extends V>> seatecAstronomy42 = map.entrySet().iterator();
-            seatecAstronomy42.hasNext();
-            Entry<? extends K, ? extends V> e = seatecAstronomy42.next();
+             map.entrySet().iterator().hasNext();
+            Entry<? extends K, ? extends V> e = map.entrySet().iterator().next();
             {
                 put(e.getKey(), e.getValue());
             } //End block
