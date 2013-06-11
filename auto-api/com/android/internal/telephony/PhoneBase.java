@@ -123,7 +123,8 @@ public abstract class PhoneBase extends Handler implements Phone {
             boolean unitTestMode) {
         dsTaint.addTaint(unitTestMode);
         dsTaint.addTaint(notifier.dsTaint);
-        dsTaint.addTaint(context.dsTaint);
+        //dsTaint.addTaint(context.dsTaint);
+        mContext = context;
         dsTaint.addTaint(ci.dsTaint);
         mLooper = Looper.myLooper();
         setPropertiesByCarrier();
@@ -1168,9 +1169,7 @@ public abstract class PhoneBase extends Handler implements Phone {
         String types[];
         types = getActiveApnTypes();
         {
-            Iterator<String> seatecAstronomy42 = types.iterator();
-            seatecAstronomy42.hasNext();
-            String apnType = seatecAstronomy42.next();
+            String apnType = types[0];
             {
                 mNotifier.notifyDataConnection(this, reason, apnType, getDataConnectionState(apnType));
             } //End block

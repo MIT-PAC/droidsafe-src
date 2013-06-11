@@ -2,6 +2,7 @@ package com.android.internal.telephony.sip;
 
 // Droidsafe Imports
 import droidsafe.helpers.*;
+import droidsafe.runtime.DroidSafeAndroidRuntime;
 import droidsafe.annotations.*;
 
 // import Iterator to deal with enhanced for loop translation
@@ -241,6 +242,7 @@ public class SipPhone extends SipPhoneBase {
         clearDisconnected();
         {
             boolean var37336DD64F87D8D8C5FEC219FB8725E9_663041995 = (!canDial());
+            if (DroidSafeAndroidRuntime.control)
             {
                 throw new CallStateException("cannot dial in current state");
             } //End block
@@ -253,6 +255,7 @@ public class SipPhone extends SipPhoneBase {
         } //End collapsed parenthetic
         {
             boolean varAA5B136BDA3FB7DD22D11F146CB8E62A_1719543902 = (foregroundCall.getState() != SipCall.State.IDLE);
+            if (DroidSafeAndroidRuntime.control)
             {
                 throw new CallStateException("cannot dial in current state");
             } //End block
@@ -331,6 +334,7 @@ public class SipPhone extends SipPhoneBase {
             {
                 boolean varA1285B741C70BDCFD1DA6690E8723FC5_401781630 = ((foregroundCall.getState() != SipCall.State.ACTIVE)
                     || (foregroundCall.getState() != SipCall.State.ACTIVE));
+                if (DroidSafeAndroidRuntime.control)
                 {
                     throw new CallStateException("wrong state to merge calls: fg="
                         + foregroundCall.getState() + ", bg="
@@ -357,6 +361,7 @@ public class SipPhone extends SipPhoneBase {
     public void conference(Call that) throws CallStateException {
         dsTaint.addTaint(that.dsTaint);
         {
+            if (DroidSafeAndroidRuntime.control)
             {
                 throw new CallStateException("expect " + SipCall.class
                         + ", cannot merge with " + that.getClass());
@@ -816,7 +821,7 @@ public class SipPhone extends SipPhoneBase {
                                 } //End block
                             } //End block
                         } //End collapsed parenthetic
-                        throw excp;
+                        if (DroidSafeAndroidRuntime.control) throw excp;
                     } //End block
                     {
                         Log.d(LOG_TAG, "hang up dead call: " + getState()
@@ -868,11 +873,13 @@ public class SipPhone extends SipPhoneBase {
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:10.459 -0400", hash_original_method = "B2C3B5FE3154049893EC854E60F79D8F", hash_generated_method = "884BAB15AEA2BD144C350D85BC6BA68F")
         //DSFIXME:  CODE0002: Requires DSC value to be set
          void acceptCall() throws CallStateException {
+            if (DroidSafeAndroidRuntime.control)
             {
                 throw new CallStateException("acceptCall() in a non-ringing call");
             } //End block
             {
                 boolean var9C09519F85FF3FA6D687EF8338B33839_1563056835 = (connections.size() != 1);
+                if (DroidSafeAndroidRuntime.control)
                 {
                     throw new CallStateException("acceptCall() in a conf call");
                 } //End block
@@ -1035,9 +1042,7 @@ public class SipPhone extends SipPhoneBase {
             cc = that.connections.toArray(
                     new Connection[that.connections.size()]);
             {
-                Iterator<Connection> seatecAstronomy42 = cc.iterator();
-                seatecAstronomy42.hasNext();
-                Connection c = seatecAstronomy42.next();
+                Connection c = cc[0];
                 {
                     SipConnection conn;
                     conn = (SipConnection) c;
@@ -1104,6 +1109,7 @@ public class SipPhone extends SipPhoneBase {
             dsTaint.addTaint(c);
             int code;
             code = c - '0';
+            if (DroidSafeAndroidRuntime.control)
             {
                 //Begin case default 
                 throw new IllegalArgumentException(
@@ -1682,6 +1688,7 @@ public class SipPhone extends SipPhoneBase {
                 call = (SipCall) SipPhone.this.getForegroundCall();
                 {
                     boolean var06B2F1D0FB9C9B434F76B9D96A375019_1262870848 = (call.getState() != Call.State.IDLE);
+                    if (DroidSafeAndroidRuntime.control)
                     {
                         throw new CallStateException(
                             "cannot put conn back to a call in non-idle state: "

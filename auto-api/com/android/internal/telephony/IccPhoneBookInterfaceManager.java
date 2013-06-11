@@ -2,6 +2,7 @@ package com.android.internal.telephony;
 
 // Droidsafe Imports
 import droidsafe.helpers.*;
+import droidsafe.runtime.DroidSafeAndroidRuntime;
 import droidsafe.annotations.*;
 
 // import Iterator to deal with enhanced for loop translation
@@ -146,6 +147,7 @@ public abstract class IccPhoneBookInterfaceManager extends IIccPhoneBook.Stub {
             boolean var9B9745B744DE229D86237C6E47057CAE_549072617 = (phone.getContext().checkCallingOrSelfPermission(
                 android.Manifest.permission.WRITE_CONTACTS)
             != PackageManager.PERMISSION_GRANTED);
+            if (DroidSafeAndroidRuntime.control)
             {
                 throw new SecurityException(
                     "Requires android.permission.WRITE_CONTACTS permission");
@@ -188,6 +190,7 @@ public abstract class IccPhoneBookInterfaceManager extends IIccPhoneBook.Stub {
             boolean var7C20BC9080702E0128DD71ABE9A4ADDC_2074984182 = (phone.getContext().checkCallingOrSelfPermission(
                 android.Manifest.permission.WRITE_CONTACTS)
                 != PackageManager.PERMISSION_GRANTED);
+            if (DroidSafeAndroidRuntime.control)
             {
                 throw new SecurityException(
                     "Requires android.permission.WRITE_CONTACTS permission");
@@ -225,6 +228,7 @@ public abstract class IccPhoneBookInterfaceManager extends IIccPhoneBook.Stub {
             boolean var539E4FD5A70571EEC200A34F44B8BBBA_1427273152 = (phone.getContext().checkCallingOrSelfPermission(
                 android.Manifest.permission.READ_CONTACTS)
                 != PackageManager.PERMISSION_GRANTED);
+            if (DroidSafeAndroidRuntime.control)
             {
                 throw new SecurityException(
                     "Requires android.permission.READ_CONTACTS permission");
