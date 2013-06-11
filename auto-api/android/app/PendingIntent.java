@@ -56,6 +56,7 @@ public final class PendingIntent implements Parcelable {
     @DSModeled(DSC.SAFE)
      PendingIntent(IIntentSender target) {
         dsTaint.addTaint(target.dsTaint);
+        mTarget = target;
         // ---------- Original Method ----------
         //mTarget = target;
     }
@@ -470,6 +471,9 @@ public final class PendingIntent implements Parcelable {
             dsTaint.addTaint(pi.dsTaint);
             dsTaint.addTaint(who.dsTaint);
             dsTaint.addTaint(handler.dsTaint);
+            mWho = who;
+            mPendingIntent = pi;
+            mHandler = handler;
             // ---------- Original Method ----------
             //mPendingIntent = pi;
             //mWho = who;

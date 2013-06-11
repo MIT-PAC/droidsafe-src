@@ -3,6 +3,7 @@ package android.app;
 // Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
+import droidsafe.runtime.DroidSafeAndroidRuntime;
 
 // import Iterator to deal with enhanced for loop translation
 import java.util.Iterator;
@@ -1325,7 +1326,7 @@ public class Dialog implements DialogInterface, Window.Callback, KeyEvent.Callba
     public void setOnCancelListener(final OnCancelListener listener) {
         dsTaint.addTaint(listener.dsTaint);
         {
-            throw new IllegalStateException(
+        	if (DroidSafeAndroidRuntime.control) throw new IllegalStateException(
                     "OnCancelListener is already taken by "
                     + mCancelAndDismissTaken + " and can not be replaced.");
         } //End block
@@ -1363,7 +1364,7 @@ public class Dialog implements DialogInterface, Window.Callback, KeyEvent.Callba
     public void setOnDismissListener(final OnDismissListener listener) {
         dsTaint.addTaint(listener.dsTaint);
         {
-            throw new IllegalStateException(
+        	if (DroidSafeAndroidRuntime.control) throw new IllegalStateException(
                     "OnDismissListener is already taken by "
                     + mCancelAndDismissTaken + " and can not be replaced.");
         } //End block
