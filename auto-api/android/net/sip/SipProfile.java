@@ -319,7 +319,7 @@ public class SipProfile implements Parcelable, Serializable, Cloneable {
         //DSFIXME:  CODE0002: Requires DSC value to be set
         public Builder(SipProfile profile) {
             dsTaint.addTaint(profile.dsTaint);
-            throw new NullPointerException();
+            //throw new NullPointerException();
             try 
             {
                 mProfile = (SipProfile) profile.clone();
@@ -355,17 +355,18 @@ public class SipProfile implements Parcelable, Serializable, Cloneable {
         public Builder(String uriString) throws ParseException {
             dsTaint.addTaint(uriString);
             {
-                throw new NullPointerException("uriString cannot be null");
+                //throw new NullPointerException("uriString cannot be null");
             } //End block
             URI uri;
             uri = mAddressFactory.createURI(fix(uriString));
             {
                 mUri = (SipURI) uri;
             } //End block
+            mProfile.mDomain = mUri.getHost();
             {
                 throw new ParseException(uriString + " is not a SIP URI", 0);
             } //End block
-            mProfile.mDomain = mUri.getHost();
+            
             // ---------- Original Method ----------
             //if (uriString == null) {
                 //throw new NullPointerException("uriString cannot be null");
@@ -385,12 +386,12 @@ public class SipProfile implements Parcelable, Serializable, Cloneable {
         public Builder(String username, String serverDomain) throws ParseException {
             dsTaint.addTaint(username);
             dsTaint.addTaint(serverDomain);
+            mUri = mAddressFactory.createSipURI(username, serverDomain);
+            mProfile.mDomain = serverDomain;
             {
                 throw new NullPointerException(
                         "username and serverDomain cannot be null");
             } //End block
-            mUri = mAddressFactory.createSipURI(username, serverDomain);
-            mProfile.mDomain = serverDomain;
             // ---------- Original Method ----------
             //if ((username == null) || (serverDomain == null)) {
                 //throw new NullPointerException(
@@ -457,7 +458,8 @@ public class SipProfile implements Parcelable, Serializable, Cloneable {
         public Builder setPort(int port) throws IllegalArgumentException {
             dsTaint.addTaint(port);
             {
-                throw new IllegalArgumentException("incorrect port arugment: " + port);
+            	//DSFIXME:  Exception handling
+                //throw new IllegalArgumentException("incorrect port arugment: " + port);
             } //End block
             mProfile.mPort = port;
             return (Builder)dsTaint.getTaint();
@@ -475,14 +477,15 @@ public class SipProfile implements Parcelable, Serializable, Cloneable {
         public Builder setProtocol(String protocol) throws IllegalArgumentException {
             dsTaint.addTaint(protocol);
             {
-                throw new NullPointerException("protocol cannot be null");
+            	//DSFIXME:  Exception handling
+                //throw new NullPointerException("protocol cannot be null");
             } //End block
             protocol = protocol.toUpperCase();
             {
                 boolean var8ABDBE23B05570927D7C85EC139C7CA5_2028611681 = (!protocol.equals(UDP) && !protocol.equals(TCP));
                 {
-                    throw new IllegalArgumentException(
-                        "unsupported protocol: " + protocol);
+                    //throw new IllegalArgumentException(
+                        //"unsupported protocol: " + protocol);
                 } //End block
             } //End collapsed parenthetic
             mProfile.mProtocol = protocol;
@@ -591,7 +594,7 @@ public class SipProfile implements Parcelable, Serializable, Cloneable {
         }
 
         
-        static {
+        {
             try {
                 mAddressFactory =
                         SipFactory.getInstance().createAddressFactory();

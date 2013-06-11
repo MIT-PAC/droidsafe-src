@@ -335,7 +335,8 @@ public class SipAudioCall {
         {
             boolean var7C2B3BAF12F2B803CD1155B57592C3F4_786130934 = (!SipManager.isVoipSupported(mContext));
             {
-                throw new SipException("VOIP API is not supported");
+            	//DSFIXME:  Multiple exception issue...
+                //throw new SipException("VOIP API is not supported");
             } //End block
         } //End collapsed parenthetic
         {
@@ -376,7 +377,8 @@ public class SipAudioCall {
         {
             boolean var7C2B3BAF12F2B803CD1155B57592C3F4_56689602 = (!SipManager.isVoipSupported(mContext));
             {
-                throw new SipException("VOIP API is not supported");
+            	//DSFIXME:  Multiple exception issue
+                //throw new SipException("VOIP API is not supported");
             } //End block
         } //End collapsed parenthetic
         {
@@ -434,12 +436,12 @@ public class SipAudioCall {
     public void holdCall(int timeout) throws SipException {
         dsTaint.addTaint(timeout);
         {
+        	 mSipSession.changeCall(createHoldOffer().encode(), timeout);
+             mHold = true;
+             setAudioGroupMode();
             {
                 throw new SipException("Not in a call to hold call");
             } //End block
-            mSipSession.changeCall(createHoldOffer().encode(), timeout);
-            mHold = true;
-            setAudioGroupMode();
         } //End block
         // ---------- Original Method ----------
         //synchronized (this) {
@@ -460,7 +462,8 @@ public class SipAudioCall {
         dsTaint.addTaint(timeout);
         {
             {
-                throw new SipException("No call to answer");
+            	//DSFIXME:  Multiple exception issue
+                //throw new SipException("No call to answer");
             } //End block
             try 
             {
@@ -519,9 +522,7 @@ public class SipAudioCall {
         media = offer.newMedia(
                 "audio", mAudioStream.getLocalPort(), 1, "RTP/AVP");
         {
-            Iterator<AudioCodec> seatecAstronomy42 = AudioCodec.getCodecs().iterator();
-            seatecAstronomy42.hasNext();
-            AudioCodec codec = seatecAstronomy42.next();
+            AudioCodec codec = AudioCodec.getCodecs()[0];
             {
                 media.setRtpPayload(codec.type, codec.rtpmap, codec.fmtp);
             } //End block
@@ -557,9 +558,7 @@ public class SipAudioCall {
         AudioCodec codec;
         codec = null;
         {
-            Iterator<Media> seatecAstronomy42 = offer.getMedia().iterator();
-            seatecAstronomy42.hasNext();
-            Media media = seatecAstronomy42.next();
+            Media media = offer.getMedia()[0];
             {
                 {
                     boolean var2DE1D53623224D4AB7ECC9712B740291_1763570943 = ((codec == null) && (media.getPort() > 0)
@@ -567,9 +566,8 @@ public class SipAudioCall {
                     && "RTP/AVP".equals(media.getProtocol()));
                     {
                         {
-                            Iterator<int> seatecAstronomy42 = media.getRtpPayloadTypes().iterator();
-                            seatecAstronomy42.hasNext();
-                            int type = seatecAstronomy42.next();
+                        	
+                            int type = media.getRtpPayloadTypes()[0];
                             {
                                 codec = AudioCodec.getCodec(type, media.getRtpmap(type),
                             media.getFmtp(type));
@@ -581,9 +579,7 @@ public class SipAudioCall {
                             "audio", mAudioStream.getLocalPort(), 1, "RTP/AVP");
                             reply.setRtpPayload(codec.type, codec.rtpmap, codec.fmtp);
                             {
-                                Iterator<int> seatecAstronomy42 = media.getRtpPayloadTypes().iterator();
-                                seatecAstronomy42.hasNext();
-                                int type = seatecAstronomy42.next();
+                                int type = media.getRtpPayloadTypes()[0];
                                 {
                                     String rtpmap;
                                     rtpmap = media.getRtpmap(type);
@@ -628,9 +624,7 @@ public class SipAudioCall {
                 reply = answer.newMedia(
                     media.getType(), 0, 1, media.getProtocol());
                 {
-                    Iterator<String> seatecAstronomy42 = media.getFormats().iterator();
-                    seatecAstronomy42.hasNext();
-                    String format = seatecAstronomy42.next();
+                    String format = media.getFormats()[0];
                     {
                         reply.setFormat(format, null);
                     } //End block
@@ -638,7 +632,8 @@ public class SipAudioCall {
             } //End block
         } //End collapsed parenthetic
         {
-            throw new IllegalStateException("Reject SDP: no suitable codecs");
+        	//DSFIXME:  Exception handling
+            //throw new IllegalStateException("Reject SDP: no suitable codecs");
         } //End block
         return (SimpleSessionDescription)dsTaint.getTaint();
         // ---------- Original Method ----------
@@ -914,7 +909,8 @@ public class SipAudioCall {
     //DSFIXME:  CODE0002: Requires DSC value to be set
     private synchronized void startAudioInternal() throws UnknownHostException {
         {
-            throw new IllegalStateException("mPeerSd = null");
+        	//DSFIXME:  Excpetion handling
+            //throw new IllegalStateException("mPeerSd = null");
         } //End block
         stopCall(DONT_RELEASE_SOCKET);
         mInCall = true;
@@ -925,9 +921,7 @@ public class SipAudioCall {
         AudioCodec codec;
         codec = null;
         {
-            Iterator<Media> seatecAstronomy42 = offer.getMedia().iterator();
-            seatecAstronomy42.hasNext();
-            Media media = seatecAstronomy42.next();
+            Media media = offer.getMedia()[0];
             {
                 {
                     boolean var2DE1D53623224D4AB7ECC9712B740291_967505107 = ((codec == null) && (media.getPort() > 0)
@@ -935,9 +929,7 @@ public class SipAudioCall {
                     && "RTP/AVP".equals(media.getProtocol()));
                     {
                         {
-                            Iterator<int> seatecAstronomy42 = media.getRtpPayloadTypes().iterator();
-                            seatecAstronomy42.hasNext();
-                            int type = seatecAstronomy42.next();
+                            int type = media.getRtpPayloadTypes()[0];
                             {
                                 codec = AudioCodec.getCodec(
                             type, media.getRtpmap(type), media.getFmtp(type));
@@ -954,9 +946,7 @@ public class SipAudioCall {
                             stream.setDtmfType(-1);
                             stream.setCodec(codec);
                             {
-                                Iterator<int> seatecAstronomy42 = media.getRtpPayloadTypes().iterator();
-                                seatecAstronomy42.hasNext();
-                                int type = seatecAstronomy42.next();
+                                int type = media.getRtpPayloadTypes()[0];
                                 {
                                     String rtpmap;
                                     rtpmap = media.getRtpmap(type);
@@ -1005,9 +995,6 @@ public class SipAudioCall {
             } //End block
         } //End collapsed parenthetic
         {
-            throw new IllegalStateException("Reject SDP: no suitable codecs");
-        } //End block
-        {
             boolean var79EFADA71B0A2CB2BF111DF46116166C_219312072 = (isWifiOn());
             grabWifiHighPerfLock();
         } //End collapsed parenthetic
@@ -1018,6 +1005,9 @@ public class SipAudioCall {
             stream.join(audioGroup);
         } //End block
         setAudioGroupMode();
+        {
+            throw new IllegalStateException("Reject SDP: no suitable codecs");
+        } //End block
         // ---------- Original Method ----------
         // Original Method Too Long, Refer to Original Implementation
     }
@@ -1102,7 +1092,8 @@ public class SipAudioCall {
     private void throwSipException(Throwable throwable) throws SipException {
         dsTaint.addTaint(throwable.dsTaint);
         {
-            throw (SipException) throwable;
+        	//DSFIXME:  Exception handlinge
+            //throw (SipException) throwable;
         } //End block
         {
             throw new SipException("", throwable);

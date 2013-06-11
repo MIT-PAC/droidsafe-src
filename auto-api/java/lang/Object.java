@@ -64,4 +64,7 @@ public class Object {
 	
 	public final void notify() {
 	}
+	
+	public final void notifyAll() {
+	}
 }

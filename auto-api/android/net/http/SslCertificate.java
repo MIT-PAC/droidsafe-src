@@ -26,7 +26,7 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Vector;
-import com.android.org.bouncycastle.asn1.x509.X509Name;
+//import com.android.org.bouncycastle.asn1.x509.X509Name;
 
 public class SslCertificate {
     private static String ISO_8601_DATE_FORMAT = "yyyy-MM-dd HH:mm:ssZ";
@@ -93,6 +93,7 @@ public class SslCertificate {
         dsTaint.addTaint(validNotAfter.dsTaint);
         dsTaint.addTaint(issuedBy);
         dsTaint.addTaint(validNotBefore.dsTaint);
+        mX509Certificate = x509Certificate;
         mIssuedTo = new DName(issuedTo);
         mIssuedBy = new DName(issuedBy);
         mValidNotBefore = cloneDate(validNotBefore);
@@ -365,6 +366,7 @@ public class SslCertificate {
     }
 
     
+   
     public class DName {
         private String mDName;
         private String mCName;
@@ -378,31 +380,31 @@ public class SslCertificate {
             {
                 try 
                 {
-                    X509Name x509Name;
-                    x509Name = new X509Name(dName);
-                    Vector val;
-                    val = x509Name.getValues();
-                    Vector oid;
-                    oid = x509Name.getOIDs();
+                    //X509Name x509Name;
+                    //x509Name = new X509Name(dName);
+                    Vector val = new Vector();
+                    //val = x509Name.getValues();
+                    Vector oid = new Vector();
+                    //oid = x509Name.getOIDs();
                     {
                         int i;
                         i = 0;
                         boolean var81398A3258B14BF4B3BCED5C96BDA2E4_1943292897 = (i < oid.size());
                         {
                             {
-                                boolean var0C6F0BE758D98D60EBB9B16537698F57_1100893589 = (oid.elementAt(i).equals(X509Name.CN));
+                                //boolean var0C6F0BE758D98D60EBB9B16537698F57_1100893589 = (oid.elementAt(i).equals(X509Name.CN));
                                 {
                                     mCName = (String) val.elementAt(i);
                                 } //End block
                             } //End collapsed parenthetic
                             {
-                                boolean var06E8299BDF4B0086B47388185FF81940_195814401 = (oid.elementAt(i).equals(X509Name.O));
+                                //boolean var06E8299BDF4B0086B47388185FF81940_195814401 = (oid.elementAt(i).equals(X509Name.O));
                                 {
                                     mOName = (String) val.elementAt(i);
                                 } //End block
                             } //End collapsed parenthetic
                             {
-                                boolean var66A9551431E1DEC1988477609E15738C_195981043 = (oid.elementAt(i).equals(X509Name.OU));
+                                //boolean var66A9551431E1DEC1988477609E15738C_195981043 = (oid.elementAt(i).equals(ee.OU));
                                 {
                                     mUName = (String) val.elementAt(i);
                                 } //End block

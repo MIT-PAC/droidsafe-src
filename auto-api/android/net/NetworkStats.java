@@ -65,6 +65,7 @@ public class NetworkStats implements Parcelable {
     public NetworkStats(long elapsedRealtime, int initialSize) {
         dsTaint.addTaint(elapsedRealtime);
         dsTaint.addTaint(initialSize);
+        this.elapsedRealtime = elapsedRealtime;
         this.size = 0;
         this.iface = new String[initialSize];
         this.uid = new int[initialSize];
@@ -257,7 +258,7 @@ public class NetworkStats implements Parcelable {
     public Entry getValues(int i, Entry recycle) {
         dsTaint.addTaint(recycle.dsTaint);
         dsTaint.addTaint(i);
-        final Entry entry;
+        Entry entry;
         entry = recycle;
         entry = new Entry();
         entry.iface = iface[i];
@@ -464,7 +465,7 @@ public class NetworkStats implements Parcelable {
             {
                 final int halfOffset;
                 halfOffset = offset / 2;
-                final int i;
+                int i;
                 {
                     i = (hintIndex + halfOffset) % size;
                 } //End block
@@ -532,9 +533,7 @@ public class NetworkStats implements Parcelable {
         final HashSet<String> ifaces;
         ifaces = new HashSet<String>();
         {
-            Iterator<String> seatecAstronomy42 = this.iface.iterator();
-            seatecAstronomy42.hasNext();
-            String iface = seatecAstronomy42.next();
+            String iface = this.iface[0];
             {
                 {
                     ifaces.add(iface);
@@ -562,9 +561,7 @@ public class NetworkStats implements Parcelable {
         final SparseBooleanArray uids;
         uids = new SparseBooleanArray();
         {
-            Iterator<int> seatecAstronomy42 = this.uid.iterator();
-            seatecAstronomy42.hasNext();
-            int uid = seatecAstronomy42.next();
+            int uid = this.uid[0];
             {
                 uids.put(uid, true);
             } //End block
@@ -650,7 +647,7 @@ public class NetworkStats implements Parcelable {
         dsTaint.addTaint(recycle.dsTaint);
         dsTaint.addTaint(limitIface.dsTaint);
         dsTaint.addTaint(limitUid);
-        final Entry entry;
+        Entry entry;
         entry = recycle;
         entry = new Entry();
         entry.iface = IFACE_ALL;
@@ -704,7 +701,8 @@ public class NetworkStats implements Parcelable {
         final long deltaRealtime;
         deltaRealtime = this.elapsedRealtime - value.elapsedRealtime;
         {
-            throw new NonMonotonicException(this, value);
+        	//DSFIXME:  Get guidance on how to handle exceptions and returns
+            //throw new NonMonotonicException(this, value);
         } //End block
         final Entry entry;
         entry = new Entry();
@@ -742,7 +740,8 @@ public class NetworkStats implements Parcelable {
                             entry.operations = Math.max(entry.operations, 0);
                         } //End block
                         {
-                            throw new NonMonotonicException(this, i, value, j);
+                        	//DSFIXME:  Get guidance on how to handle exceptions and returns
+                            //throw new NonMonotonicException(this, i, value, j);
                         } //End block
                     } //End block
                 } //End block
@@ -1096,6 +1095,8 @@ public class NetworkStats implements Parcelable {
             dsTaint.addTaint(left.dsTaint);
             dsTaint.addTaint(rightIndex);
             dsTaint.addTaint(right.dsTaint);
+            this.rightIndex = rightIndex;
+            this.leftIndex = leftIndex;
             this.left = checkNotNull(left, "missing left");
             this.right = checkNotNull(right, "missing right");
             // ---------- Original Method ----------
