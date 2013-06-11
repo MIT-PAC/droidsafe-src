@@ -20,8 +20,23 @@ public class DSTaintObject {
 	*/
 	
 	@DSModeled(DSC.BAN)
-	public void addTaint(float i) {
-		this.taint = new Float(i);
+	public void addTaint(boolean i) {
+		this.taint = new Boolean(i);
+	}
+
+	@DSModeled(DSC.BAN)
+	public void addTaint(byte i) {
+		this.taint = new Byte(i);
+	}
+
+	@DSModeled(DSC.BAN)
+	public void addTaint(char i) {
+		this.taint = new Character(i);
+	}
+
+	@DSModeled(DSC.BAN)
+	public void addTaint(CharSequence i) {
+		this.taint = new CharSequence(i);
 	}
 	
 	@DSModeled(DSC.BAN)
@@ -30,8 +45,23 @@ public class DSTaintObject {
 	}
 	
 	@DSModeled(DSC.BAN)
-	public void addTaint(boolean i) {
-		this.taint = new Boolean(i);
+	public void addTaint(float i) {
+		this.taint = new Float(i);
+	}
+	
+	@DSModeled(DSC.BAN)
+	public void addTaint(int i) {
+		this.taint = new Integer(i);
+	}
+
+	@DSModeled(DSC.BAN)
+	public void addTaint(long i) {
+		this.taint = new Long(i);
+	}
+
+	@DSModeled(DSC.BAN)
+	public void addTaint(short i) {
+		this.taint = new Short(i);
 	}
 	
 	@DSModeled(DSC.BAN)
@@ -40,10 +70,55 @@ public class DSTaintObject {
 	}
 	
 	@DSModeled(DSC.BAN)
-	public void addTaint(int i) {
-		this.taint = new Integer(i);
+	public void addTaint(boolean[] i) {
+		this.taint = new boolean[0];
+	}
+
+	@DSModeled(DSC.BAN)
+	public void addTaint(byte[] i) {
+		this.taint = new byte[0];
+	}
+
+	@DSModeled(DSC.BAN)
+	public void addTaint(char[] i) {
+		this.taint = new char[0];
 	}
 	
+	@DSModeled(DSC.BAN)
+	public void addTaint(CharSequence[] s) {
+		this.taint = new CharSequence[0];
+	}
+	
+	@DSModeled(DSC.BAN)
+	public void addTaint(double[] i) {
+		this.taint = new double[0];
+	}
+	
+	@DSModeled(DSC.BAN)
+	public void addTaint(float[] i) {
+		this.taint = new float[0];
+	}
+	
+	@DSModeled(DSC.BAN)
+	public void addTaint(int[] i) {
+		this.taint = new int[0];
+	}
+
+	@DSModeled(DSC.BAN)
+	public void addTaint(long[] i) {
+		this.taint = new long[0];
+	}
+
+	@DSModeled(DSC.BAN)
+	public void addTaint(short[] i) {
+		this.taint = new short[0];
+	}
+	
+	@DSModeled(DSC.BAN)
+	public void addTaint(String[] s) {
+		this.taint = new String[0];
+	}
+
 	@DSModeled(DSC.BAN)
 	public void addTaint(DSTaintObject obj) {
 		this.taint = obj;
