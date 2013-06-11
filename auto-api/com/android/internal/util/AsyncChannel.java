@@ -166,11 +166,11 @@ public class AsyncChannel {
                 replyHalfConnected(result);
             }
         }
-        */
         ConnectAsync ca;
         ca = new ConnectAsync(srcContext, srcHandler, dstPackageName, dstClassName);
         new Thread(ca).start();
         log("connect srcHandler to dst Package & class X");
+        */
         // ---------- Original Method ----------
         // Original Method Too Long, Refer to Original Implementation
     }

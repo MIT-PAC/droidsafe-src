@@ -2,6 +2,7 @@ package com.android.internal.telephony.cat;
 
 // Droidsafe Imports
 import droidsafe.helpers.*;
+import droidsafe.runtime.DroidSafeAndroidRuntime;
 import droidsafe.annotations.*;
 
 // import Iterator to deal with enhanced for loop translation
@@ -93,6 +94,7 @@ public class CatService extends Handler implements AppInterface {
         dsTaint.addTaint(fh.dsTaint);
         dsTaint.addTaint(ci.dsTaint);
         dsTaint.addTaint(context.dsTaint);
+        if (DroidSafeAndroidRuntime.control)
         {
             throw new NullPointerException(
                     "Service: Input parameters must not be null");
@@ -284,8 +286,11 @@ public class CatService extends Handler implements AppInterface {
             } //End collapsed parenthetic
             //End case SET_UP_CALL 
             //Begin case OPEN_CHANNEL CLOSE_CHANNEL RECEIVE_DATA SEND_DATA 
-            BIPClientParams cmd;
-            cmd = (BIPClientParams) cmdParams;
+            
+            // DSFIXME: cannot find class type, BIPClientParams
+            //BIPClientParams cmd;
+            //cmd = (BIPClientParams) cmdParams;
+            
             //End case OPEN_CHANNEL CLOSE_CHANNEL RECEIVE_DATA SEND_DATA 
             //Begin case OPEN_CHANNEL CLOSE_CHANNEL RECEIVE_DATA SEND_DATA 
             {
