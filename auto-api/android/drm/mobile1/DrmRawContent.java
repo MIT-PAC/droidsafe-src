@@ -2,6 +2,7 @@ package android.drm.mobile1;
 
 // Droidsafe Imports
 import droidsafe.helpers.*;
+import droidsafe.runtime.DroidSafeAndroidRuntime;
 import droidsafe.annotations.*;
 
 // import Iterator to deal with enhanced for loop translation
@@ -45,17 +46,17 @@ public class DrmRawContent {
             {
                 boolean var7621B0F1DFB4A1AC4044FC1343037B20_1167377192 = (DRM_MIMETYPE_CONTENT_STRING.equals(mimeTypeStr));
                 mimeType = DRM_MIMETYPE_CONTENT;
-                throw new IllegalArgumentException("mimeType must be DRM_MIMETYPE_MESSAGE or DRM_MIMETYPE_CONTENT");
+                if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("mimeType must be DRM_MIMETYPE_MESSAGE or DRM_MIMETYPE_CONTENT");
             } //End collapsed parenthetic
         } //End collapsed parenthetic
-        throw new IllegalArgumentException("len must be > 0");
+        if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("len must be > 0");
         id = nativeConstructDrmContent(inData, inDataLen, mimeType);
-        throw new DrmException("nativeConstructDrmContent() returned JNI_DRM_FAILURE");
+        if (DroidSafeAndroidRuntime.control) throw new DrmException("nativeConstructDrmContent() returned JNI_DRM_FAILURE");
         rightsIssuer = nativeGetRightsAddress();
         rawType = nativeGetDeliveryMethod();
-        throw new DrmException("nativeGetDeliveryMethod() returned JNI_DRM_FAILURE");
+        if (DroidSafeAndroidRuntime.control) throw new DrmException("nativeGetDeliveryMethod() returned JNI_DRM_FAILURE");
         mediaType = nativeGetContentType();
-        throw new DrmException("nativeGetContentType() returned null");
+        if (DroidSafeAndroidRuntime.control) throw new DrmException("nativeGetContentType() returned null");
         // ---------- Original Method ----------
         // Original Method Too Long, Refer to Original Implementation
     }
@@ -83,7 +84,7 @@ public class DrmRawContent {
     @DSModeled(DSC.SAFE)
     public InputStream getContentInputStream(DrmRights rights) {
         dsTaint.addTaint(rights.dsTaint);
-        throw new NullPointerException();
+        if (DroidSafeAndroidRuntime.control) throw new NullPointerException();
         return (InputStream)dsTaint.getTaint();
         // ---------- Original Method ----------
         //if (null == rights)
@@ -105,10 +106,10 @@ public class DrmRawContent {
     @DSModeled(DSC.SAFE)
     public int getContentLength(DrmRights rights) throws DrmException {
         dsTaint.addTaint(rights.dsTaint);
-        throw new NullPointerException();
+        if (DroidSafeAndroidRuntime.control) throw new NullPointerException();
         int mediaLen;
         mediaLen = nativeGetContentLength();
-        throw new DrmException("nativeGetContentLength() returned JNI_DRM_FAILURE");
+        if (DroidSafeAndroidRuntime.control) throw new DrmException("nativeGetContentLength() returned JNI_DRM_FAILURE");
         return dsTaint.getTaintInt();
         // ---------- Original Method ----------
         //if (null == rights)
@@ -128,18 +129,21 @@ public class DrmRawContent {
         dsTaint.addTaint(data.dsTaint);
         dsTaint.addTaint(len);
         dsTaint.addTaint(mimeType);
+        return dsTaint.getTaintInt();
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:00.854 -0400", hash_original_method = "F8C7C9754DABA7F76C3A7CE0927D169C", hash_generated_method = "1CDB7616066ED0ABBEAF41BDAA3F99B3")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     private String nativeGetRightsAddress() {
+    	return dsTaint.getTaintString();
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:00.854 -0400", hash_original_method = "DEB2FF4C98D7FB31135AB87CA522046D", hash_generated_method = "F9FD7CDA8127A1D3A7B86BD1EBAE5E7B")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     private int nativeGetDeliveryMethod() {
+    	return dsTaint.getTaintInt();
     }
 
     
@@ -150,18 +154,21 @@ public class DrmRawContent {
         dsTaint.addTaint(len);
         dsTaint.addTaint(buf);
         dsTaint.addTaint(bufOff);
+        return dsTaint.getTaintInt();
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:00.855 -0400", hash_original_method = "9C49D7586D5C53FF58306596D0BFC464", hash_generated_method = "60805D94E84C435FE4BF7C18398B071A")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     private String nativeGetContentType() {
+    	return dsTaint.getTaintString();
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:00.855 -0400", hash_original_method = "B76F89F97A3E0D25504A6F7E11289FEA", hash_generated_method = "B10CF3C5EF333EADAB7E962A9D8E1D8D")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     private int nativeGetContentLength() {
+    	return dsTaint.getTaintInt();
     }
 
     
@@ -195,10 +202,10 @@ public class DrmRawContent {
         public int available() throws IOException {
             int len;
             len = nativeGetContentLength();
-            throw new IOException();
+            if (DroidSafeAndroidRuntime.control) throw new IOException();
             int availableLen;
             availableLen = len - offset;
-            throw new IOException();
+            if (DroidSafeAndroidRuntime.control) throw new IOException();
             return dsTaint.getTaintInt();
             // ---------- Original Method ----------
             //int len = nativeGetContentLength();
@@ -245,11 +252,11 @@ public class DrmRawContent {
             dsTaint.addTaint(b);
             dsTaint.addTaint(off);
             dsTaint.addTaint(len);
-            throw new NullPointerException();
-            throw new IndexOutOfBoundsException();
-            throw new IOException();
+            if (DroidSafeAndroidRuntime.control) throw new NullPointerException();
+            if (DroidSafeAndroidRuntime.control) throw new IndexOutOfBoundsException();
+            if (DroidSafeAndroidRuntime.control) throw new IOException();
             len = nativeReadContent(b, off, len, offset);
-            throw new IOException();
+            if (DroidSafeAndroidRuntime.control) throw new IOException();
             return dsTaint.getTaintInt();
             // ---------- Original Method ----------
             //if (null == b)
