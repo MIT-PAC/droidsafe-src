@@ -2,6 +2,7 @@ package java.util;
 
 // Droidsafe Imports
 import droidsafe.helpers.*;
+import droidsafe.runtime.DroidSafeAndroidRuntime;
 import droidsafe.annotations.*;
 
 // import Iterator to deal with enhanced for loop translation
@@ -89,7 +90,7 @@ public final class Locale implements Cloneable, Serializable {
         dsTaint.addTaint(language);
         dsTaint.addTaint(variant);
         dsTaint.addTaint(country);
-        {
+        if (DroidSafeAndroidRuntime.control) {
             throw new NullPointerException();
         } //End block
         {

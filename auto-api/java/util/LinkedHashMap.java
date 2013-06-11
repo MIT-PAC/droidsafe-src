@@ -2,6 +2,7 @@ package java.util;
 
 // Droidsafe Imports
 import droidsafe.helpers.*;
+import droidsafe.runtime.DroidSafeAndroidRuntime;
 import droidsafe.annotations.*;
 
 // import Iterator to deal with enhanced for loop translation
@@ -54,7 +55,7 @@ public class LinkedHashMap<K, V> extends HashMap<K, V> {
         init();
         // ---------- Original Method ----------
         //init();
-        //this.accessOrder = accessOrder;
+        this.accessOrder = accessOrder;
     }
 
     
@@ -471,40 +472,49 @@ public class LinkedHashMap<K, V> extends HashMap<K, V> {
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:14.531 -0400", hash_original_method = "6E1581FE9AE48441E5CB627F97604374", hash_generated_method = "EAEBB5FE4B22D72785560A512FFFDA31")
         @DSModeled(DSC.SAFE)
         final LinkedEntry<K, V> nextEntry() {
-            throw new ConcurrentModificationException();
-            LinkedEntry<K, V> e;
-            e = next;
-            throw new NoSuchElementException();
-            next = e.nxt;
-            LinkedEntry<K, V> varC2F0A5D29D373DC0C15F389179ABD547_1141934542 = (lastReturned = e);
-            return (LinkedEntry<K, V>)dsTaint.getTaint();
-            // ---------- Original Method ----------
-            //if (modCount != expectedModCount)
-                //throw new ConcurrentModificationException();
-            //LinkedEntry<K, V> e = next;
-            //if (e == header)
-                //throw new NoSuchElementException();
-            //next = e.nxt;
-            //return lastReturned = e;
+        	if (DroidSafeAndroidRuntime.control) {
+        		throw new ConcurrentModificationException();
+        	}
+        	LinkedEntry<K, V> e;
+        	e = next;
+        	if (DroidSafeAndroidRuntime.control) {
+        		throw new NoSuchElementException();
+        	}
+        	next = e.nxt;
+        	LinkedEntry<K, V> varC2F0A5D29D373DC0C15F389179ABD547_1141934542 = (lastReturned = e);
+        	return (LinkedEntry<K, V>)dsTaint.getTaint();
+        	// ---------- Original Method ----------
+        	//if (modCount != expectedModCount)
+        	//throw new ConcurrentModificationException();
+        	//LinkedEntry<K, V> e = next;
+        	//if (e == header)
+        	//throw new NoSuchElementException();
+        	//next = e.nxt;
+        	//return lastReturned = e;
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:14.531 -0400", hash_original_method = "9A49FB7CCFBAA785998B91529061BD5F", hash_generated_method = "E1CDC9AE4A631AB9CC4AF87E6CC32408")
         @DSModeled(DSC.SAFE)
         public final void remove() {
-            throw new ConcurrentModificationException();
-            throw new IllegalStateException();
-            LinkedHashMap.this.remove(lastReturned.key);
-            lastReturned = null;
-            expectedModCount = modCount;
-            // ---------- Original Method ----------
-            //if (modCount != expectedModCount)
-                //throw new ConcurrentModificationException();
-            //if (lastReturned == null)
-                //throw new IllegalStateException();
-            //LinkedHashMap.this.remove(lastReturned.key);
-            //lastReturned = null;
-            //expectedModCount = modCount;
+        	if (DroidSafeAndroidRuntime.control) {
+        		throw new ConcurrentModificationException();
+        	}
+
+        	if (DroidSafeAndroidRuntime.control) {
+        		throw new IllegalStateException();
+        	}
+        	LinkedHashMap.this.remove(lastReturned.key);
+        	lastReturned = null;
+        	expectedModCount = modCount;
+        	// ---------- Original Method ----------
+        	//if (modCount != expectedModCount)
+        	//throw new ConcurrentModificationException();
+        	//if (lastReturned == null)
+        	//throw new IllegalStateException();
+        	//LinkedHashMap.this.remove(lastReturned.key);
+        	//lastReturned = null;
+        	//expectedModCount = modCount;
         }
 
         

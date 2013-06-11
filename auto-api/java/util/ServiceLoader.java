@@ -2,6 +2,7 @@ package java.util;
 
 // Droidsafe Imports
 import droidsafe.helpers.*;
+import droidsafe.runtime.DroidSafeAndroidRuntime;
 import droidsafe.annotations.*;
 
 // import Iterator to deal with enhanced for loop translation
@@ -23,7 +24,7 @@ public final class ServiceLoader<S> implements Iterable<S> {
     private ServiceLoader(Class<S> service, ClassLoader classLoader) {
         dsTaint.addTaint(service.dsTaint);
         dsTaint.addTaint(classLoader.dsTaint);
-        {
+        if (DroidSafeAndroidRuntime.control) {
             throw new NullPointerException();
         } //End block
         this.services = new HashSet<URL>();
@@ -32,10 +33,8 @@ public final class ServiceLoader<S> implements Iterable<S> {
         //if (service == null) {
             //throw new NullPointerException();
         //}
-        //this.service = service;
-        //this.classLoader = classLoader;
-        //this.services = new HashSet<URL>();
-        //reload();
+        this.service = service;
+        this.classLoader = classLoader;
     }
 
     
@@ -176,7 +175,7 @@ public final class ServiceLoader<S> implements Iterable<S> {
         public S next() {
             {
                 boolean var61E0EA93C8F2038A69462393E2D5DF33_1090499920 = (!hasNext());
-                {
+                if (DroidSafeAndroidRuntime.control) {
                     throw new NoSuchElementException();
                 } //End block
             } //End collapsed parenthetic
