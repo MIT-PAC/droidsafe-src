@@ -3,6 +3,7 @@ package android.webkit;
 // Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
+import droidsafe.runtime.*;
 
 // import Iterator to deal with enhanced for loop translation
 import java.util.Iterator;
@@ -526,11 +527,10 @@ public class WebView extends AbsoluteLayout implements ViewTreeObserver.OnGlobal
         dsTaint.addTaint(context.dsTaint);
         dsTaint.addTaint(privateBrowsing);
         checkThread();
-        /*
+        if (DroidSafeAndroidRuntime.control)
         {
             throw new IllegalArgumentException("Invalid context argument");
         } //End block
-        */
         JniUtil.setContext(context);
         mCallbackProxy = new CallbackProxy(context, this);
         mViewManager = new ViewManager(this);
@@ -4676,9 +4676,11 @@ public class WebView extends AbsoluteLayout implements ViewTreeObserver.OnGlobal
         onScreen = true;
         //End case ANYWHERE 
         //Begin case default 
-        //throw new AssertionError(
-                        //"invalid parameter passed to didUpdateWebTextViewDimensions");
+        if (DroidSafeAndroidRuntime.control) {
+        	throw new AssertionError(
+                        "invalid parameter passed to didUpdateWebTextViewDimensions");
         //End case default 
+        }
         {
             mWebTextView.setRect(vBox.left, vBox.top, vBox.width(),
                     vBox.height());
@@ -7791,11 +7793,11 @@ public class WebView extends AbsoluteLayout implements ViewTreeObserver.OnGlobal
     @DSModeled(DSC.SAFE)
     private int keyCodeToSoundsEffect(int keyCode) {
         dsTaint.addTaint(keyCode);
-        /*
-        throw new IllegalArgumentException("keyCode must be one of " +
-                "{KEYCODE_DPAD_UP, KEYCODE_DPAD_RIGHT, KEYCODE_DPAD_DOWN, " +
-                "KEYCODE_DPAD_LEFT}.");
-        */
+        if (DroidSafeAndroidRuntime.control) {
+	        throw new IllegalArgumentException("keyCode must be one of " +
+	                "{KEYCODE_DPAD_UP, KEYCODE_DPAD_RIGHT, KEYCODE_DPAD_DOWN, " +
+	                "KEYCODE_DPAD_LEFT}.");
+        }
         return dsTaint.getTaintInt();
         // ---------- Original Method ----------
         //switch(keyCode) {
@@ -8906,14 +8908,13 @@ public class WebView extends AbsoluteLayout implements ViewTreeObserver.OnGlobal
      void setNewPicture(final WebViewCore.DrawData draw, boolean updateBaseLayer) {
         dsTaint.addTaint(draw.dsTaint);
         dsTaint.addTaint(updateBaseLayer);
-        /*
         {
+        	if (DroidSafeAndroidRuntime.control) 
             {
                 throw new IllegalStateException("Tried to setNewPicture with"
                         + " a delay picture already set! (memory leak)");
             } //End block
         } //End block
-        */
         WebViewCore.ViewState viewState;
         viewState = draw.mViewState;
         boolean isPictureAfterFirstLayout;

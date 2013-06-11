@@ -3,6 +3,7 @@ package android.view;
 // Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
+import droidsafe.runtime.*;
 
 // import Iterator to deal with enhanced for loop translation
 import java.util.Iterator;
@@ -572,39 +573,64 @@ public final class ViewRootImpl extends Handler implements ViewParent, View.Atta
                     mFallbackEventHandler.setView(null);
                     unscheduleTraversals();
                     //Begin case WindowManagerImpl.ADD_BAD_APP_TOKEN WindowManagerImpl.ADD_BAD_SUBWINDOW_TOKEN 
-                    /*
-                    throw new WindowManagerImpl.BadTokenException(
-                                "Unable to add window -- token " + attrs.token
-                                + " is not valid; is your activity running?");
-                    //End case WindowManagerImpl.ADD_BAD_APP_TOKEN WindowManagerImpl.ADD_BAD_SUBWINDOW_TOKEN 
-                    //Begin case WindowManagerImpl.ADD_NOT_APP_TOKEN 
-                    throw new WindowManagerImpl.BadTokenException(
-                                "Unable to add window -- token " + attrs.token
-                                + " is not for an application");
-                    //End case WindowManagerImpl.ADD_NOT_APP_TOKEN 
-                    //Begin case WindowManagerImpl.ADD_APP_EXITING 
-                    throw new WindowManagerImpl.BadTokenException(
-                                "Unable to add window -- app for token " + attrs.token
-                                + " is exiting");
-                    //End case WindowManagerImpl.ADD_APP_EXITING 
-                    //Begin case WindowManagerImpl.ADD_DUPLICATE_ADD 
-                    throw new WindowManagerImpl.BadTokenException(
-                                "Unable to add window -- window " + mWindow
-                                + " has already been added");
-                    //End case WindowManagerImpl.ADD_DUPLICATE_ADD 
-                    //Begin case WindowManagerImpl.ADD_MULTIPLE_SINGLETON 
-                    throw new WindowManagerImpl.BadTokenException(
-                                "Unable to add window " + mWindow +
-                                " -- another window of this type already exists");
-                    //End case WindowManagerImpl.ADD_MULTIPLE_SINGLETON 
-                    //Begin case WindowManagerImpl.ADD_PERMISSION_DENIED 
-                    throw new WindowManagerImpl.BadTokenException(
-                                "Unable to add window " + mWindow +
-                                " -- permission denied for this window type");
-                    //End case WindowManagerImpl.ADD_PERMISSION_DENIED 
-                    throw new RuntimeException(
-                        "Unable to add window -- unknown error code " + res);
-                    */
+                    if (DroidSafeAndroidRuntime.control)
+                    {
+	                    throw new WindowManagerImpl.BadTokenException(
+	                                "Unable to add window -- token " + attrs.token
+	                                + " is not valid; is your activity running?");
+	                    //End case WindowManagerImpl.ADD_BAD_APP_TOKEN WindowManagerImpl.ADD_BAD_SUBWINDOW_TOKEN 
+	                    //Begin case WindowManagerImpl.ADD_NOT_APP_TOKEN 
+                    }
+                    
+                    if (DroidSafeAndroidRuntime.control)
+                    {
+	                    throw new WindowManagerImpl.BadTokenException(
+	                                "Unable to add window -- token " + attrs.token
+	                                + " is not for an application");
+	                    //End case WindowManagerImpl.ADD_NOT_APP_TOKEN 
+	                    //Begin case WindowManagerImpl.ADD_APP_EXITING 
+                    }
+                    
+                    if (DroidSafeAndroidRuntime.control)
+                    {
+	                    throw new WindowManagerImpl.BadTokenException(
+	                                "Unable to add window -- app for token " + attrs.token
+	                                + " is exiting");
+	                    //End case WindowManagerImpl.ADD_APP_EXITING 
+	                    //Begin case WindowManagerImpl.ADD_DUPLICATE_ADD 
+                    }
+                    
+                    if (DroidSafeAndroidRuntime.control)
+                    {
+	                    throw new WindowManagerImpl.BadTokenException(
+	                                "Unable to add window -- window " + mWindow
+	                                + " has already been added");
+	                    //End case WindowManagerImpl.ADD_DUPLICATE_ADD 
+	                    //Begin case WindowManagerImpl.ADD_MULTIPLE_SINGLETON 
+                    }
+                    
+                    if (DroidSafeAndroidRuntime.control)
+                    {
+	                    throw new WindowManagerImpl.BadTokenException(
+	                                "Unable to add window " + mWindow +
+	                                " -- another window of this type already exists");
+	                    //End case WindowManagerImpl.ADD_MULTIPLE_SINGLETON 
+	                    //Begin case WindowManagerImpl.ADD_PERMISSION_DENIED 
+                    }
+                    
+                    if (DroidSafeAndroidRuntime.control)
+                    {
+	                    throw new WindowManagerImpl.BadTokenException(
+	                                "Unable to add window " + mWindow +
+	                                " -- permission denied for this window type");
+	                    //End case WindowManagerImpl.ADD_PERMISSION_DENIED 
+	                }
+                    
+                    if (DroidSafeAndroidRuntime.control)
+                    {
+	                    throw new RuntimeException(
+	                        "Unable to add window -- unknown error code " + res);
+                    }
                 } //End block
                 {
                     mInputQueueCallback =
@@ -951,11 +977,10 @@ public final class ViewRootImpl extends Handler implements ViewParent, View.Atta
         dsTaint.addTaint(child.dsTaint);
         dsTaint.addTaint(r.dsTaint);
         dsTaint.addTaint(offset.dsTaint);
-        /*
+        if (DroidSafeAndroidRuntime.control)
         {
             throw new RuntimeException("child is not mine, honest!");
         } //End block
-        */
         boolean var3C447C15080EDED58EBDD084A72DF38D_2101910600 = (r.intersect(0, 0, mWidth, mHeight));
         return dsTaint.getTaintBoolean();
         // ---------- Original Method ----------
@@ -1716,12 +1741,11 @@ public final class ViewRootImpl extends Handler implements ViewParent, View.Atta
             {
                 {
                     boolean var31831045BDEFED9943FC4835790CC5A9_595442659 = (!host.dispatchConsistencyCheck(ViewDebug.CONSISTENCY_LAYOUT));
+                    if (DroidSafeAndroidRuntime.control)
                     {
-                    	/*
                         throw new IllegalStateException("The view hierarchy is an inconsistent state,"
                             + "please refer to the logs with the tag "
                             + ViewDebug.CONSISTENCY_LOG_TAG + " for more infomation.");
-                        */
                     } //End block
                 } //End collapsed parenthetic
             } //End block
@@ -3998,11 +4022,10 @@ public final class ViewRootImpl extends Handler implements ViewParent, View.Atta
     @DSModeled(DSC.SAFE)
     public AccessibilityInteractionController getAccessibilityInteractionController() {
         //DSFIXME:  CODE0009: Possible callback target function detected
+    	if (DroidSafeAndroidRuntime.control)
         {
-        	/*
             throw new IllegalStateException("getAccessibilityInteractionController"
                     + " called when there is no mView");
-             */
         } //End block
         {
             mAccessibilityInteractionController = new AccessibilityInteractionController();
@@ -5134,12 +5157,11 @@ public final class ViewRootImpl extends Handler implements ViewParent, View.Atta
                     {
                         boolean varD985B2C74752F819AC5BC1C5B2498154_163974553 = (checkCallingPermission(Manifest.permission.DUMP) !=
                             PackageManager.PERMISSION_GRANTED);
+                        if (DroidSafeAndroidRuntime.control)
                         {
-                        	/*
                             throw new SecurityException("Insufficient permissions to invoke"
                                 + " executeCommand() from pid=" + Binder.getCallingPid()
                                 + ", uid=" + Binder.getCallingUid());
-                             */
                         } //End block
                     } //End collapsed parenthetic
                     OutputStream clientStream;
