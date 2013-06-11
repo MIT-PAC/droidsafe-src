@@ -2,6 +2,7 @@ package java.io;
 
 // Droidsafe Imports
 import droidsafe.helpers.*;
+import droidsafe.runtime.DroidSafeAndroidRuntime;
 import droidsafe.annotations.*;
 
 // import Iterator to deal with enhanced for loop translation
@@ -209,7 +210,7 @@ public class ObjectStreamClass implements Serializable {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:11.620 -0400", hash_original_method = "3492CF41320405C3965233DAB60A3EF1", hash_generated_method = "BD4CA9E755C0EB367F42F05658195BDA")
     //DSFIXME:  CODE0002: Requires DSC value to be set
      void buildFieldDescriptors(Field[] declaredFields) {
-        dsTaint.addTaint(declaredFields.dsTaint);
+        dsTaint.addTaint(declaredFields[0].dsTaint);
         final Field f;
         f = ObjectStreamClass.fieldSerialPersistentFields(this.forClass());
         boolean useReflectFields;
@@ -231,9 +232,7 @@ public class ObjectStreamClass implements Serializable {
             List<ObjectStreamField> serializableFields;
             serializableFields = new ArrayList<ObjectStreamField>(declaredFields.length);
             {
-                Iterator<Field> seatecAstronomy42 = declaredFields.iterator();
-                seatecAstronomy42.hasNext();
-                Field declaredField = seatecAstronomy42.next();
+                Field declaredField = declaredFields[0];
                 {
                     int modifiers;
                     modifiers = declaredField.getModifiers();
@@ -472,7 +471,7 @@ public class ObjectStreamClass implements Serializable {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:11.621 -0400", hash_original_method = "9DB5F04D2345DC121956725FD4475E83", hash_generated_method = "1D4DEDB1038117766248B0460C42AE40")
     private static Object newInstance(Class<?> instantiationClass, int methodId) {
-        //DSFIXME:  CODE0010: Native static method requires manual modeling
+        return new Object();
     }
 
     
@@ -506,7 +505,7 @@ public class ObjectStreamClass implements Serializable {
             String className;
             className = constructorClass.getName();
             className = null;
-            throw new InvalidClassException(className, "IllegalAccessException");
+            if (DroidSafeAndroidRuntime.control) throw new InvalidClassException(className, "IllegalAccessException");
         } //End block
         int constructorModifiers;
         constructorModifiers = constructor.getModifiers();
@@ -519,13 +518,13 @@ public class ObjectStreamClass implements Serializable {
         boolean wasExternalizable;
         wasExternalizable = (flags & ObjectStreamConstants.SC_EXTERNALIZABLE) != 0;
         {
-            throw new InvalidClassException(constructorClass.getName(), "IllegalAccessException");
+        	if (DroidSafeAndroidRuntime.control) throw new InvalidClassException(constructorClass.getName(), "IllegalAccessException");
         } //End block
         {
             {
                 boolean var01C93A2AE05D9878C907DF6E9F64ECCC_219800935 = (!inSamePackage(constructorClass, objectClass));
                 {
-                    throw new InvalidClassException(constructorClass.getName(), "IllegalAccessException");
+                	if (DroidSafeAndroidRuntime.control) throw new InvalidClassException(constructorClass.getName(), "IllegalAccessException");
                 } //End block
             } //End collapsed parenthetic
         } //End block
@@ -539,7 +538,7 @@ public class ObjectStreamClass implements Serializable {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:11.621 -0400", hash_original_method = "47FFFC8DB7B413C50329191F7D22936C", hash_generated_method = "49FA9FF50A6B1279530D73CA44BDD33E")
     private static int getConstructorId(Class<?> c) {
-        //DSFIXME:  CODE0010: Native static method requires manual modeling
+        return DSUtils.UNKNOWN_INT;
     }
 
     
@@ -575,7 +574,7 @@ public class ObjectStreamClass implements Serializable {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:11.622 -0400", hash_original_method = "492915BBB1E6EFE96AEDB3519982807A", hash_generated_method = "379FFF0E54A1E682A5FAA0C6DE30BB6E")
     static String getConstructorSignature(Constructor<?> c) {
-        //DSFIXME:  CODE0010: Native static method requires manual modeling
+    	return DSUtils.UNKNOWN_STRING;
     }
 
     
@@ -753,7 +752,7 @@ public class ObjectStreamClass implements Serializable {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:11.622 -0400", hash_original_method = "DE3AAEC04A2A3C5E11B0CAE1796F4FE4", hash_generated_method = "6AA3A0DC26AB32BA1A82183F5F074A3B")
     private static String getFieldSignature(Field f) {
-        //DSFIXME:  CODE0010: Native static method requires manual modeling
+    	return DSUtils.UNKNOWN_STRING;
     }
 
     
@@ -768,7 +767,7 @@ public class ObjectStreamClass implements Serializable {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:11.622 -0400", hash_original_method = "CBD407D4198617146BC229416539B1A9", hash_generated_method = "162D2E2FD1E02EB99F1855C171200DDC")
     static String getMethodSignature(Method m) {
-        //DSFIXME:  CODE0010: Native static method requires manual modeling
+    	return DSUtils.UNKNOWN_STRING;
     }
 
     
@@ -802,7 +801,7 @@ public class ObjectStreamClass implements Serializable {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:11.623 -0400", hash_original_method = "5FABFFE4976E203C5A9763AC936D8AB6", hash_generated_method = "4CCD2B56BB6690CED4391323335E2351")
     private static boolean hasClinit(Class<?> cl) {
-        //DSFIXME:  CODE0010: Native static method requires manual modeling
+    	return DSUtils.UNKNOWN_BOOLEAN;
     }
 
     
@@ -1086,7 +1085,7 @@ public class ObjectStreamClass implements Serializable {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:11.628 -0400", hash_original_method = "95CB44F7E664D85BD475B63456D19F48", hash_generated_method = "8425EB96B921B5A97380F706DEA3787D")
     @DSModeled(DSC.SAFE)
      void setFields(ObjectStreamField[] f) {
-        dsTaint.addTaint(f.dsTaint);
+        dsTaint.addTaint(f[0].dsTaint);
         // ---------- Original Method ----------
         //fields = f;
     }
@@ -1095,7 +1094,7 @@ public class ObjectStreamClass implements Serializable {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:11.628 -0400", hash_original_method = "BCDE99C62E7E698332D80A91E945CB98", hash_generated_method = "7861B2E746ECBE51D22F76D89753772C")
     @DSModeled(DSC.SAFE)
      void setLoadFields(ObjectStreamField[] f) {
-        dsTaint.addTaint(f.dsTaint);
+        dsTaint.addTaint(f[0].dsTaint);
         // ---------- Original Method ----------
         //loadFields = f;
     }
@@ -1142,7 +1141,7 @@ public class ObjectStreamClass implements Serializable {
     @DSModeled(DSC.SAFE)
     private int primitiveSize(Class<?> type) {
         dsTaint.addTaint(type.dsTaint);
-        throw new AssertionError();
+        if (DroidSafeAndroidRuntime.control) throw new AssertionError();
         return dsTaint.getTaintInt();
         // ---------- Original Method ----------
         //if (type == byte.class || type == boolean.class) {

@@ -2,6 +2,7 @@ package java.io;
 
 // Droidsafe Imports
 import droidsafe.helpers.*;
+import droidsafe.runtime.DroidSafeAndroidRuntime;
 import droidsafe.annotations.*;
 
 // import Iterator to deal with enhanced for loop translation
@@ -35,8 +36,9 @@ public class OutputStreamWriter extends Writer {
         super(out);
         dsTaint.addTaint(out.dsTaint);
         dsTaint.addTaint(enc);
+        this.out = out;
         {
-            throw new NullPointerException();
+        	if (DroidSafeAndroidRuntime.control) throw new NullPointerException();
         } //End block
         try 
         {
@@ -69,6 +71,7 @@ public class OutputStreamWriter extends Writer {
         super(out);
         dsTaint.addTaint(out.dsTaint);
         dsTaint.addTaint(cs.dsTaint);
+        this.out = out;
         encoder = cs.newEncoder();
         encoder.onMalformedInput(CodingErrorAction.REPLACE);
         encoder.onUnmappableCharacter(CodingErrorAction.REPLACE);
@@ -86,6 +89,7 @@ public class OutputStreamWriter extends Writer {
         super(out);
         dsTaint.addTaint(out.dsTaint);
         dsTaint.addTaint(enc.dsTaint);
+        this.out = out;
         enc.charset();
         // ---------- Original Method ----------
         //enc.charset();
@@ -338,15 +342,15 @@ public class OutputStreamWriter extends Writer {
         dsTaint.addTaint(offset);
         {
             {
-                throw new StringIndexOutOfBoundsException(str, offset, count);
+            	if (DroidSafeAndroidRuntime.control) throw new StringIndexOutOfBoundsException(str, offset, count);
             } //End block
             {
-                throw new NullPointerException("str == null");
+            	if (DroidSafeAndroidRuntime.control) throw new NullPointerException("str == null");
             } //End block
             {
                 boolean varE39C66E187123901EC1A51437E6D0861_586871488 = ((offset | count) < 0 || offset > str.length() - count);
                 {
-                    throw new StringIndexOutOfBoundsException(str, offset, count);
+                	if (DroidSafeAndroidRuntime.control) throw new StringIndexOutOfBoundsException(str, offset, count);
                 } //End block
             } //End collapsed parenthetic
             checkStatus();
