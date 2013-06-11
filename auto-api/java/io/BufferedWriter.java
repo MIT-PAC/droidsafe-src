@@ -2,6 +2,7 @@ package java.io;
 
 // Droidsafe Imports
 import droidsafe.helpers.*;
+import droidsafe.runtime.DroidSafeAndroidRuntime;
 import droidsafe.annotations.*;
 
 // import Iterator to deal with enhanced for loop translation
@@ -30,6 +31,7 @@ public class BufferedWriter extends Writer {
         super(out);
         dsTaint.addTaint(out.dsTaint);
         dsTaint.addTaint(size);
+        if (DroidSafeAndroidRuntime.control)
         {
             throw new IllegalArgumentException("size <= 0");
         } //End block
@@ -180,6 +182,7 @@ public class BufferedWriter extends Writer {
         dsTaint.addTaint(offset);
         {
             checkNotClosed();
+            if (DroidSafeAndroidRuntime.control)
             {
                 throw new NullPointerException("buffer == null");
             } //End block
@@ -251,6 +254,7 @@ public class BufferedWriter extends Writer {
             checkNotClosed();
             {
                 boolean var2D623A9FEC72D9FC3DAAD61AA5D26F0E_760764726 = (offset < 0 || offset > str.length() - count);
+                if (DroidSafeAndroidRuntime.control)
                 {
                     throw new StringIndexOutOfBoundsException(str, offset, count);
                 } //End block
