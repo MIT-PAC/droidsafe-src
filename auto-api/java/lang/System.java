@@ -2,6 +2,7 @@ package java.lang;
 
 // Droidsafe Imports
 import droidsafe.helpers.*;
+import droidsafe.runtime.DroidSafeAndroidRuntime;
 import droidsafe.annotations.*;
 
 // import Iterator to deal with enhanced for loop translation
@@ -110,6 +111,7 @@ public final class System {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:11.944 -0400", hash_original_method = "9FC22770968F10FA1E4DB07494582396", hash_generated_method = "3519C04F788D2A9CC0396167B083677F")
     private static String getEnvByName(String name) {
         //DSFIXME:  CODE0010: Native static method requires manual modeling
+    	return name;
     }
 
     
@@ -258,6 +260,7 @@ public final class System {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:11.945 -0400", hash_original_method = "4A805BC9C12F17575A8FEA25AC623CBF", hash_generated_method = "E4870F7607B55F990E2734A0D2B9FE71")
     public static int identityHashCode(Object anObject) {
         //DSFIXME:  CODE0010: Native static method requires manual modeling
+    	return anObject.dsTaint.getTaintInt();
     }
 
     
@@ -352,6 +355,7 @@ public final class System {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:11.945 -0400", hash_original_method = "14CC410355E66D71FA51E787DF393C3D", hash_generated_method = "02C2E73C5157D0525C6B73A22A73DF50")
     public static String mapLibraryName(String userLibName) {
         //DSFIXME:  CODE0010: Native static method requires manual modeling
+    	return userLibName;
     }
 
     
@@ -425,7 +429,7 @@ public final class System {
         @DSModeled(DSC.SAFE)
         private String toNonNullString(Object o) {
             dsTaint.addTaint(o.dsTaint);
-            {
+            if (DroidSafeAndroidRuntime.control) {
                 throw new NullPointerException();
             } //End block
             return dsTaint.getTaintString();
