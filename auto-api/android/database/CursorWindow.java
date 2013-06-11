@@ -1,22 +1,21 @@
 package android.database;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-
-// import Iterator to deal with enhanced for loop translation
-import java.util.Iterator;
-
-import dalvik.system.CloseGuard;
 import android.content.res.Resources;
 import android.database.sqlite.SQLiteClosable;
-import android.database.sqlite.SQLiteException;
 import android.os.Binder;
 import android.os.Parcel;
 import android.os.Parcelable;
 import android.os.Process;
 import android.util.Log;
 import android.util.SparseIntArray;
+import dalvik.system.CloseGuard;
+import droidsafe.annotations.DSC;
+import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.DSModeled;
+import droidsafe.helpers.DSUtils;
+import droidsafe.runtime.DroidSafeAndroidRuntime;
+// import Iterator to deal with enhanced for loop translation
 
 public class CursorWindow extends SQLiteClosable implements Parcelable {
     private static final String STATS_TAG = "CursorWindowStats";
@@ -25,7 +24,7 @@ public class CursorWindow extends SQLiteClosable implements Parcelable {
                 com.android.internal.R.integer.config_cursorWindowSize) * 1024;
     public int mWindowPtr;
     private int mStartPos;
-    private final String mName;
+    private /* final */ String mName = "";
     private final CloseGuard mCloseGuard = CloseGuard.get();
     public static final Parcelable.Creator<CursorWindow> CREATOR = new Parcelable.Creator<CursorWindow>() {        
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:00.604 -0400", hash_original_method = "102321E705544E214630A229EBF0AAEA", hash_generated_method = "9AF79E9E553C446EDD303A01C77D131E")
@@ -57,6 +56,7 @@ public class CursorWindow extends SQLiteClosable implements Parcelable {
         dsTaint.addTaint(name);
         mStartPos = 0;
         mWindowPtr = nativeCreate(name, sCursorWindowSize);
+        if (DroidSafeAndroidRuntime.control)
         {
             throw new CursorWindowAllocationException("Cursor window allocation of " +
                     (sCursorWindowSize / 1024) + " kb failed. " + printStats());
@@ -92,6 +92,7 @@ public class CursorWindow extends SQLiteClosable implements Parcelable {
         dsTaint.addTaint(source.dsTaint);
         mStartPos = source.readInt();
         mWindowPtr = nativeCreateFromParcel(source);
+        if (DroidSafeAndroidRuntime.control)
         {
             throw new CursorWindowAllocationException("Cursor window could not be "
                     + "created from binder.");
@@ -113,12 +114,14 @@ public class CursorWindow extends SQLiteClosable implements Parcelable {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:00.605 -0400", hash_original_method = "501523168FFB51969E73F0E7A0AF122B", hash_generated_method = "05115DC15C3ED72E37E8ACE32D376963")
     private static int nativeCreate(String name, int cursorWindowSize) {
         //DSFIXME:  CODE0010: Native static method requires manual modeling
+    	return DSUtils.UNKNOWN_INT;
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:00.605 -0400", hash_original_method = "CFF7D5B1CFA90D647435737F51BF0270", hash_generated_method = "BEF1D7DDB4C5CE5F313BF844DF2DF161")
     private static int nativeCreateFromParcel(Parcel parcel) {
         //DSFIXME:  CODE0010: Native static method requires manual modeling
+    	return DSUtils.UNKNOWN_INT;
     }
 
     
@@ -143,18 +146,21 @@ public class CursorWindow extends SQLiteClosable implements Parcelable {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:00.605 -0400", hash_original_method = "0A1D0C97C7EA147FDD9374E2D759E523", hash_generated_method = "9D4289CE42879AF70E6A892F18A09D09")
     private static int nativeGetNumRows(int windowPtr) {
         //DSFIXME:  CODE0010: Native static method requires manual modeling
+    	return DSUtils.UNKNOWN_INT;
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:00.605 -0400", hash_original_method = "D868B9E1F9DEE546280D91140A2C0B9C", hash_generated_method = "E84EB4DB33DF919528E8B17A0B60133F")
     private static boolean nativeSetNumColumns(int windowPtr, int columnNum) {
         //DSFIXME:  CODE0010: Native static method requires manual modeling
+    	return DSUtils.UNKNOWN_BOOLEAN;
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:00.606 -0400", hash_original_method = "39120F02867F174AC41350F95C7E4299", hash_generated_method = "A937B5CEF98876649824D9AC0B336EA0")
     private static boolean nativeAllocRow(int windowPtr) {
         //DSFIXME:  CODE0010: Native static method requires manual modeling
+    	return DSUtils.UNKNOWN_BOOLEAN;
     }
 
     
@@ -167,30 +173,35 @@ public class CursorWindow extends SQLiteClosable implements Parcelable {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:00.606 -0400", hash_original_method = "1E45E1595F369B3ABAE8398712F88EE2", hash_generated_method = "7020AB2FB5BDDD14A17697493545800F")
     private static int nativeGetType(int windowPtr, int row, int column) {
         //DSFIXME:  CODE0010: Native static method requires manual modeling
+    	return DSUtils.UNKNOWN_INT;
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:00.606 -0400", hash_original_method = "B7A033EB62A00FE2231D5B2D7F12DED3", hash_generated_method = "D676F3E86E068EA64C8770589DF6D7E2")
     private static byte[] nativeGetBlob(int windowPtr, int row, int column) {
         //DSFIXME:  CODE0010: Native static method requires manual modeling
+    	return new byte[]{DSUtils.UNKNOWN_BYTE};
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:00.606 -0400", hash_original_method = "F83986BEDA50A2A960C874D9B0D876E8", hash_generated_method = "86369C792BFDC2295CC6C893F8FA9ACF")
     private static String nativeGetString(int windowPtr, int row, int column) {
         //DSFIXME:  CODE0010: Native static method requires manual modeling
+    	return DSUtils.UNKNOWN_STRING;
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:00.606 -0400", hash_original_method = "3D70BB7172270E8733C983DE6345ED7F", hash_generated_method = "BFDE556664FBF26AEFD88F53C949FEB4")
     private static long nativeGetLong(int windowPtr, int row, int column) {
         //DSFIXME:  CODE0010: Native static method requires manual modeling
+    	return DSUtils.UNKNOWN_LONG;
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:00.606 -0400", hash_original_method = "FA7C6040C00675B65C5405274D41A0C8", hash_generated_method = "59742A93E69A342D8DC129CC1151E1AC")
     private static double nativeGetDouble(int windowPtr, int row, int column) {
         //DSFIXME:  CODE0010: Native static method requires manual modeling
+    	return DSUtils.UNKNOWN_DOUBLE;
     }
 
     
@@ -204,36 +215,42 @@ public class CursorWindow extends SQLiteClosable implements Parcelable {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:00.607 -0400", hash_original_method = "BE1869E5B0823DE63098CC0562DBC76E", hash_generated_method = "2A36C8A5CE26AF3013AADE19646398E6")
     private static boolean nativePutBlob(int windowPtr, byte[] value, int row, int column) {
         //DSFIXME:  CODE0010: Native static method requires manual modeling
+    	return DSUtils.UNKNOWN_BOOLEAN;
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:00.607 -0400", hash_original_method = "321790605EF896E5024DD3A46D54BF99", hash_generated_method = "3E527D8FC25FEDFE886B723977AEB2F0")
     private static boolean nativePutString(int windowPtr, String value, int row, int column) {
         //DSFIXME:  CODE0010: Native static method requires manual modeling
+    	return DSUtils.UNKNOWN_BOOLEAN;
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:00.607 -0400", hash_original_method = "C6693C3E04413D578E2160003FA3F945", hash_generated_method = "F73A783AA2B25AB5EFE3A5553CE2BE94")
     private static boolean nativePutLong(int windowPtr, long value, int row, int column) {
         //DSFIXME:  CODE0010: Native static method requires manual modeling
+    	return DSUtils.UNKNOWN_BOOLEAN;
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:00.607 -0400", hash_original_method = "68A21BD41C5F661D84F45A330A11F1C1", hash_generated_method = "539594543DD5F34EC8C338C8B67EC401")
     private static boolean nativePutDouble(int windowPtr, double value, int row, int column) {
         //DSFIXME:  CODE0010: Native static method requires manual modeling
+    	return DSUtils.UNKNOWN_BOOLEAN;
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:00.607 -0400", hash_original_method = "10F2A3DB7868688C26145A753D34435F", hash_generated_method = "54BF46EEAE61D67881C3685B780CD3B3")
     private static boolean nativePutNull(int windowPtr, int row, int column) {
         //DSFIXME:  CODE0010: Native static method requires manual modeling
+    	return DSUtils.UNKNOWN_BOOLEAN;
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:00.607 -0400", hash_original_method = "E12DB547300BD77B2F54DC927EA6FF66", hash_generated_method = "9A67FE6523CF099E0E5D5D1999622B4A")
     private static String nativeGetName(int windowPtr) {
         //DSFIXME:  CODE0010: Native static method requires manual modeling
+    	return DSUtils.UNKNOWN_STRING;
     }
 
     
@@ -591,6 +608,7 @@ public class CursorWindow extends SQLiteClosable implements Parcelable {
         dsTaint.addTaint(buffer.dsTaint);
         dsTaint.addTaint(column);
         dsTaint.addTaint(row);
+        if (DroidSafeAndroidRuntime.control)
         {
             throw new IllegalArgumentException("CharArrayBuffer should not be null");
         } //End block
