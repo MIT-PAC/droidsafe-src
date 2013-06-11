@@ -1224,7 +1224,7 @@ public class ThreadPoolExecutor extends AbstractExecutorService {
         catch (ConcurrentModificationException fallThrough)
         {
             {
-                Object r = q.toArray().iterator();
+                Object r = q.toArray()[0];
                 {
                     boolean var4E8BBA7479E6059D39986F5769B4F8FA_1458685636 = (r instanceof Future<?> && ((Future<?>)r).isCancelled());
                     q.remove(r);
