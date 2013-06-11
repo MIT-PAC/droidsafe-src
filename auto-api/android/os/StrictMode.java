@@ -2,6 +2,7 @@ package android.os;
 
 // Droidsafe Imports
 import droidsafe.helpers.*;
+import droidsafe.runtime.DroidSafeAndroidRuntime;
 import droidsafe.annotations.*;
 
 // import Iterator to deal with enhanced for loop translation
@@ -713,6 +714,7 @@ public final class StrictMode {
         @DSModeled(DSC.SAFE)
         private ThreadPolicy(int mask) {
             dsTaint.addTaint(mask);
+            this.mask = mask;
             // ---------- Original Method ----------
             //this.mask = mask;
         }
@@ -1024,7 +1026,7 @@ public final class StrictMode {
                 dsTaint.addTaint(instanceLimit);
                 dsTaint.addTaint(klass.dsTaint);
                 {
-                    throw new NullPointerException("klass == null");
+                	if (DroidSafeAndroidRuntime.control) throw new NullPointerException("klass == null");
                 } //End block
                 {
                     {
@@ -1342,15 +1344,15 @@ public final class StrictMode {
         public void onNetwork() {
             //DSFIXME:  CODE0009: Possible callback target function detected
             {
-                throw new NetworkOnMainThreadException();
-            } //End block
-            {
                 boolean varC1086D74C3264873DADAFE03ADA68117_1137969315 = (tooManyViolationsThisLoop());
             } //End collapsed parenthetic
             BlockGuard.BlockGuardPolicyException e;
             e = new StrictModeNetworkViolation(mPolicyMask);
             e.fillInStackTrace();
             startHandlingViolationException(e);
+            {
+                throw new NetworkOnMainThreadException();
+            } //End block
             // ---------- Original Method ----------
             //if ((mPolicyMask & DETECT_NETWORK) == 0) {
                 //return;
@@ -1414,7 +1416,6 @@ public final class StrictMode {
             } //End collapsed parenthetic
             final IWindowManager windowManager;
             windowManager = sWindowManager.get();
-            windowManager = null;
             {
                 try 
                 {
@@ -1582,6 +1583,7 @@ public final class StrictMode {
         @DSModeled(DSC.SAFE)
          Span(ThreadSpanState threadState) {
             dsTaint.addTaint(threadState.dsTaint);
+            mContainerState = threadState;
             // ---------- Original Method ----------
             //mContainerState = threadState;
         }
@@ -1644,7 +1646,7 @@ public final class StrictMode {
     
     public static class ViolationInfo {
         public final ApplicationErrorReport.CrashInfo crashInfo;
-        public final int policy;
+        public int policy;
         public int durationMillis = -1;
         public int numAnimationsRunning = 0;
         public String[] tags;
@@ -1669,6 +1671,7 @@ public final class StrictMode {
         public ViolationInfo(Throwable tr, int policy) {
             dsTaint.addTaint(tr.dsTaint);
             dsTaint.addTaint(policy);
+            this.policy = policy;
             crashInfo = new ApplicationErrorReport.CrashInfo(tr);
             violationUptimeMillis = SystemClock.uptimeMillis();
             this.numAnimationsRunning = ValueAnimator.getCurrentAnimationsCount();
@@ -1769,9 +1772,7 @@ public final class StrictMode {
             } //End block
             {
                 {
-                    Iterator<String> seatecAstronomy42 = tags.iterator();
-                    seatecAstronomy42.hasNext();
-                    String tag = seatecAstronomy42.next();
+                    String tag = tags[0];
                     {
                         result = 37 * result + tag.hashCode();
                     } //End block
@@ -1850,9 +1851,7 @@ public final class StrictMode {
                 int index;
                 index = 0;
                 {
-                    Iterator<String> seatecAstronomy42 = tags.iterator();
-                    seatecAstronomy42.hasNext();
-                    String tag = seatecAstronomy42.next();
+                    String tag = tags[0];
                     {
                         pw.println(prefix + "tag[" + (index++) + "]: " + tag);
                     } //End block
@@ -1883,6 +1882,9 @@ public final class StrictMode {
             dsTaint.addTaint(limit);
             dsTaint.addTaint(klass.dsTaint);
             dsTaint.addTaint(instances);
+            mLimit = limit;
+            mInstances = instances;
+            mClass = klass;
             setStackTrace(FAKE_STACK);
             // ---------- Original Method ----------
             //setStackTrace(FAKE_STACK);
@@ -1909,7 +1911,7 @@ public final class StrictMode {
             {
                 final Integer value;
                 value = sInstanceCounts.get(mKlass);
-                final int newValue;
+                int newValue;
                 newValue = value + 1;
                 newValue = 1;
                 sInstanceCounts.put(mKlass, newValue);

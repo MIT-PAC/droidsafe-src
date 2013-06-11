@@ -322,7 +322,7 @@ public final class AccessibilityInteractionClient extends IAccessibilityInteract
         {
             final boolean success;
             success = waitForResultTimedLocked(interactionId);
-            final boolean result;
+            boolean result;
             result = mPerformAccessibilityActionResult;
             result = false;
             clearResultLocked();

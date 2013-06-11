@@ -2,6 +2,7 @@ package android.view;
 
 // Droidsafe Imports
 import droidsafe.helpers.*;
+import droidsafe.runtime.DroidSafeAndroidRuntime;
 import droidsafe.annotations.*;
 
 // import Iterator to deal with enhanced for loop translation
@@ -241,6 +242,8 @@ public abstract class HardwareRenderer {
          GlRenderer(int glVersion, boolean translucent) {
             dsTaint.addTaint(glVersion);
             dsTaint.addTaint(translucent);
+            mTranslucent = translucent;
+            mGlVersion = glVersion;
             final String vsyncProperty;
             vsyncProperty = SystemProperties.get(DISABLE_VSYNC_PROPERTY, "false");
             mVsyncDisabled = "true".equalsIgnoreCase(vsyncProperty);
@@ -376,7 +379,7 @@ public abstract class HardwareRenderer {
                     sEgl = (EGL10) EGLContext.getEGL();
                     sEglDisplay = sEgl.eglGetDisplay(EGL_DEFAULT_DISPLAY);
                     {
-                        throw new RuntimeException("eglGetDisplay failed "
+                        if (DroidSafeAndroidRuntime.control) throw new RuntimeException("eglGetDisplay failed "
                                 + GLUtils.getEGLErrorString(sEgl.eglGetError()));
                     } //End block
                     int[] version;
@@ -384,7 +387,7 @@ public abstract class HardwareRenderer {
                     {
                         boolean varD6156887E7BE0E650F0700155892DF35_1976287408 = (!sEgl.eglInitialize(sEglDisplay, version));
                         {
-                            throw new RuntimeException("eglInitialize failed " +
+                        	if (DroidSafeAndroidRuntime.control) throw new RuntimeException("eglInitialize failed " +
                                 GLUtils.getEGLErrorString(sEgl.eglGetError()));
                         } //End block
                     } //End collapsed parenthetic
@@ -394,11 +397,11 @@ public abstract class HardwareRenderer {
                             sDirtyRegions = false;
                             sEglConfig = chooseEglConfig();
                             {
-                                throw new RuntimeException("eglConfig not initialized");
+                            	if (DroidSafeAndroidRuntime.control) throw new RuntimeException("eglConfig not initialized");
                             } //End block
                         } //End block
                         {
-                            throw new RuntimeException("eglConfig not initialized");
+                        	if (DroidSafeAndroidRuntime.control) throw new RuntimeException("eglConfig not initialized");
                         } //End block
                     } //End block
                 } //End block
@@ -436,9 +439,7 @@ public abstract class HardwareRenderer {
                     sEgl.eglChooseConfig(sEglDisplay, configSpec, debugConfigs,
                         configsCount[0], configsCount);
                     {
-                        Iterator<EGLConfig> seatecAstronomy42 = debugConfigs.iterator();
-                        seatecAstronomy42.hasNext();
-                        EGLConfig config = seatecAstronomy42.next();
+                        EGLConfig config = debugConfigs[0];
                         {
                             printConfig(config);
                         } //End block
@@ -448,7 +449,7 @@ public abstract class HardwareRenderer {
             {
                 boolean var291CF98780E894F321CE39735F052BBA_111213981 = (!sEgl.eglChooseConfig(sEglDisplay, configSpec, configs, 1, configsCount));
                 {
-                    throw new IllegalArgumentException("eglChooseConfig failed " +
+                    if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("eglChooseConfig failed " +
                         GLUtils.getEGLErrorString(sEgl.eglGetError()));
                 } //End block
                 {
@@ -497,18 +498,18 @@ public abstract class HardwareRenderer {
          GL createEglSurface(SurfaceHolder holder) throws Surface.OutOfResourcesException {
             dsTaint.addTaint(holder.dsTaint);
             {
-                throw new RuntimeException("egl not initialized");
+            	if (DroidSafeAndroidRuntime.control) throw new RuntimeException("egl not initialized");
             } //End block
             {
-                throw new RuntimeException("eglDisplay not initialized");
+            	if (DroidSafeAndroidRuntime.control) throw new RuntimeException("eglDisplay not initialized");
             } //End block
             {
-                throw new RuntimeException("eglConfig not initialized");
+            	if (DroidSafeAndroidRuntime.control) throw new RuntimeException("eglConfig not initialized");
             } //End block
             {
                 boolean varE1A0062923CC8D105E1D641BD84ED7EC_575770295 = (Thread.currentThread() != mEglThread);
                 {
-                    throw new IllegalStateException("HardwareRenderer cannot be used " 
+                	if (DroidSafeAndroidRuntime.control) throw new IllegalStateException("HardwareRenderer cannot be used " 
                         + "from multiple threads");
                 } //End block
             } //End collapsed parenthetic
@@ -519,7 +520,7 @@ public abstract class HardwareRenderer {
             {
                 boolean var3C1887F134AFD0772B92DDFACA365517_1464405433 = (!sEgl.eglMakeCurrent(sEglDisplay, mEglSurface, mEglSurface, mEglContext));
                 {
-                    throw new Surface.OutOfResourcesException("eglMakeCurrent failed "
+                	if (DroidSafeAndroidRuntime.control) throw new Surface.OutOfResourcesException("eglMakeCurrent failed "
                         + GLUtils.getEGLErrorString(sEgl.eglGetError()));
                 } //End block
             } //End collapsed parenthetic
@@ -548,7 +549,7 @@ public abstract class HardwareRenderer {
             dsTaint.addTaint(egl.dsTaint);
             dsTaint.addTaint(eglDisplay.dsTaint);
             dsTaint.addTaint(eglConfig.dsTaint);
-            int[] attribs;
+            int[] attribs = { EGL_CONTEXT_CLIENT_VERSION, mGlVersion, EGL_NONE };
             EGLContext var4DEF2E5618C652038EDD892C62DCB0A3_1451664991 = (egl.eglCreateContext(eglDisplay, eglConfig, EGL_NO_CONTEXT,
                     mGlVersion != 0 ? attribs : null)); //DSFIXME:  CODE0008: Nested ternary operator in expression
             return (EGLContext)dsTaint.getTaint();
@@ -657,7 +658,7 @@ public abstract class HardwareRenderer {
             {
                 int error;
                 error = sEgl.eglGetError();
-                throw new RuntimeException("createWindowSurface failed "
+                if (DroidSafeAndroidRuntime.control) throw new RuntimeException("createWindowSurface failed "
                         + GLUtils.getEGLErrorString(error));
             } //End block
             return dsTaint.getTaintBoolean();
@@ -864,7 +865,7 @@ public abstract class HardwareRenderer {
             {
                 boolean var2BE000E074BA4ADE1630B6A389B9A4D8_1215275536 = (mEglThread != Thread.currentThread());
                 {
-                    throw new IllegalStateException("Hardware acceleration can only be used with a " +
+                	if (DroidSafeAndroidRuntime.control) throw new IllegalStateException("Hardware acceleration can only be used with a " +
                         "single UI thread.\nOriginal thread: " + mEglThread + "\n" +
                         "Current thread: " + Thread.currentThread());
                 } //End block

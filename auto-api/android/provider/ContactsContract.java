@@ -2,6 +2,7 @@ package android.provider;
 
 // Droidsafe Imports
 import droidsafe.helpers.*;
+import droidsafe.runtime.DroidSafeAndroidRuntime;
 import droidsafe.annotations.*;
 
 // import Iterator to deal with enhanced for loop translation
@@ -807,9 +808,7 @@ public final class ContactsContract {
                     DatabaseUtils.cursorStringToContentValuesIfPresent(cursor, cv,
                             Data.DATA_VERSION);
                     {
-                        Iterator<String> seatecAstronomy42 = DATA_KEYS.iterator();
-                        seatecAstronomy42.hasNext();
-                        String key = seatecAstronomy42.next();
+                        String key = DATA_KEYS[0];
                         {
                             final int columnIndex;
                             columnIndex = cursor.getColumnIndexOrThrow(key);
@@ -821,8 +820,8 @@ public final class ContactsContract {
                                 //Begin case Cursor.FIELD_TYPE_BLOB 
                                 cv.put(key, cursor.getBlob(columnIndex));
                                 //End case Cursor.FIELD_TYPE_BLOB 
-                                //Begin case default 
-                                throw new IllegalStateException("Invalid or unhandled data type");
+                                //Begin case default
+                                if (DroidSafeAndroidRuntime.control) throw new IllegalStateException("Invalid or unhandled data type");
                                 //End case default 
                             } //End collapsed parenthetic
                         } //End block

@@ -3,6 +3,7 @@ package android.text;
 // Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
+import droidsafe.runtime.*;
 
 // import Iterator to deal with enhanced for loop translation
 import java.util.Iterator;
@@ -84,7 +85,7 @@ public abstract class Layout {
         dsTaint.addTaint(align.dsTaint);
         dsTaint.addTaint(spacingMult);
         dsTaint.addTaint(paint.dsTaint);
-        throw new IllegalArgumentException("Layout: " + width + " < 0");
+        if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("Layout: " + width + " < 0");
         {
             paint.bgColor = 0;
             paint.baselineShift = 0;
@@ -149,7 +150,7 @@ public abstract class Layout {
         dsTaint.addTaint(spacingadd);
         dsTaint.addTaint(spacingmult);
         {
-            throw new IllegalArgumentException("Layout: " + width + " < 0");
+            if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("Layout: " + width + " < 0");
         } //End block
         mSpannedText = text instanceof Spanned;
         // ---------- Original Method ----------
@@ -1914,7 +1915,7 @@ public abstract class Layout {
         @DSModeled(DSC.SAFE)
          TabStops(int increment, Object[] spans) {
             dsTaint.addTaint(increment);
-            dsTaint.addTaint(spans.dsTaint);
+            dsTaint.addTaint(spans[0].dsTaint);
             reset(increment, spans);
             // ---------- Original Method ----------
             //reset(increment, spans);
@@ -1925,16 +1926,14 @@ public abstract class Layout {
         //DSFIXME:  CODE0002: Requires DSC value to be set
          void reset(int increment, Object[] spans) {
             dsTaint.addTaint(increment);
-            dsTaint.addTaint(spans.dsTaint);
+            dsTaint.addTaint(spans[0].dsTaint);
             int ns;
             ns = 0;
             {
                 int[] stops;
                 stops = this.mStops;
                 {
-                    Iterator<Object> seatecAstronomy42 = spans.iterator();
-                    seatecAstronomy42.hasNext();
-                    Object o = seatecAstronomy42.next();
+                    Object o = spans[0];
                     {
                         {
                             {
