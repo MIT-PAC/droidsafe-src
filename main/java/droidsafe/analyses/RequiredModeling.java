@@ -69,8 +69,10 @@ public class RequiredModeling {
         for (SootMethod method : GeoPTA.v().getAllReachableMethods()) {
             //loop through all reachable methods, and find system methods that are not modeled
             //or system methods that do not exist (but are called)
+            //ignore clinits
             if (API.v().isSystemClass(method.getDeclaringClass()) && 
-                    !API.v().isAPIModeledMethod(method))
+                    !API.v().isAPIModeledMethod(method) &&
+                    !SootMethod.staticInitializerName.equals(method.getName()))
                 toModel.add(method.getSignature());
         }
 
