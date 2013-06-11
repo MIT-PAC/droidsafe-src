@@ -2,6 +2,7 @@ package java.util;
 
 // Droidsafe Imports
 import droidsafe.helpers.*;
+import droidsafe.runtime.DroidSafeAndroidRuntime;
 import droidsafe.annotations.*;
 
 // import Iterator to deal with enhanced for loop translation
@@ -170,7 +171,9 @@ public class Random implements Serializable {
                 val = bits % n;
             } //End block
         } //End block
-        throw new IllegalArgumentException();
+        if (DroidSafeAndroidRuntime.control) {
+        	throw new IllegalArgumentException();
+        }
         return dsTaint.getTaintInt();
         // ---------- Original Method ----------
         //if (n > 0) {
