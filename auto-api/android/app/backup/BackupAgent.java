@@ -120,13 +120,13 @@ public abstract class BackupAgent extends ContextWrapper {
     public final void fullBackupFile(File file, FullBackupDataOutput output) {
         dsTaint.addTaint(file.dsTaint);
         dsTaint.addTaint(output.dsTaint);
-        String mainDir;
-        String filesDir;
-        String dbDir;
-        String spDir;
-        String cacheDir;
-        String libDir;
-        String filePath;
+        String mainDir = "";
+        String filesDir = "";
+        String dbDir = "";
+        String spDir = "";
+        String cacheDir = "";
+        String libDir = "";
+        String filePath= "";
         ApplicationInfo appInfo;
         appInfo = getApplicationInfo();
         try 
@@ -146,7 +146,7 @@ public abstract class BackupAgent extends ContextWrapper {
         {
             boolean varBD6F6DE747F803B57B68982209430261_274415258 = (filePath.startsWith(cacheDir) || filePath.startsWith(libDir));
         } //End collapsed parenthetic
-        final String domain;
+        String domain;
         String rootpath;
         rootpath = null;
         {
@@ -206,7 +206,7 @@ public abstract class BackupAgent extends ContextWrapper {
                     {
                         File file;
                         file = scanQueue.remove(0);
-                        String filePath;
+                        String filePath = "";
                         try 
                         {
                             filePath = file.getCanonicalPath();
@@ -224,9 +224,7 @@ public abstract class BackupAgent extends ContextWrapper {
                                         contents = file.listFiles();
                                         {
                                             {
-                                                Iterator<File> seatecAstronomy42 = contents.iterator();
-                                                seatecAstronomy42.hasNext();
-                                                File entry = seatecAstronomy42.next();
+                                                File entry = contents[0];
                                                 {
                                                     scanQueue.add(0, entry);
                                                 } //End block

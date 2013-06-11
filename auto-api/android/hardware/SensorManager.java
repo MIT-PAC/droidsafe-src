@@ -1090,43 +1090,53 @@ public class SensorManager {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:01.597 -0400", hash_original_method = "368BCBBAD3F68FEF8C07AE5DC4D2077C", hash_generated_method = "66CFEED3BA0F1B2AF18C8805660BFF70")
     private static void nativeClassInit() {
-        //DSFIXME:  CODE0010: Native static method requires manual modeling
     }
 
+    private static final DSTaintObject staticTaint = new DSTaintObject();
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:01.597 -0400", hash_original_method = "6365E13BB087A838DD54B258D6E856F5", hash_generated_method = "9BD65DDBB3CA118801006316859722CC")
     private static int sensors_module_init() {
-        //DSFIXME:  CODE0010: Native static method requires manual modeling
+    	return staticTaint.getTaintInt();
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:01.597 -0400", hash_original_method = "46EA0F084B7F191DA6C3F86709BF6135", hash_generated_method = "D94A0FF57EA9FFAB193920F43223B49C")
     private static int sensors_module_get_next_sensor(Sensor sensor, int next) {
-        //DSFIXME:  CODE0010: Native static method requires manual modeling
+    	staticTaint.addTaint(sensor.dsTaint);
+    	staticTaint.addTaint(next);
+    	return staticTaint.getTaintInt();
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:01.597 -0400", hash_original_method = "31DCE2209DC68F9077EEC42B395ED913", hash_generated_method = "D32231EC8B3F90BCB1EC1DE000D8B4A7")
     static int sensors_create_queue() {
-        //DSFIXME:  CODE0010: Native static method requires manual modeling
+    	return staticTaint.getTaintInt();
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:01.597 -0400", hash_original_method = "E019B082870518BD19ED3F85992F5CB7", hash_generated_method = "7EDE2441CCDB6594185D9811BCB7955F")
     static void sensors_destroy_queue(int queue) {
-        //DSFIXME:  CODE0010: Native static method requires manual modeling
+    	staticTaint.addTaint(queue);
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:01.597 -0400", hash_original_method = "117E19DFC6184FA649725FA403FAE58B", hash_generated_method = "575B0FC4A84BB8BF4E47FC7AAB673626")
     static boolean sensors_enable_sensor(int queue, String name, int sensor, int enable) {
-        //DSFIXME:  CODE0010: Native static method requires manual modeling
+    	staticTaint.addTaint(queue);
+    	staticTaint.addTaint(name);
+    	staticTaint.addTaint(sensor);
+    	staticTaint.addTaint(enable);
+    	return staticTaint.getTaintBoolean();
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:01.597 -0400", hash_original_method = "AA2AC4B95365F4C2C82E555A36AD9CDF", hash_generated_method = "8FF42117C095835441F766569922931D")
     static int sensors_data_poll(int queue, float[] values, int[] status, long[] timestamp) {
-        //DSFIXME:  CODE0010: Native static method requires manual modeling
+    	staticTaint.addTaint(queue);
+    	staticTaint.addTaint(values);
+    	staticTaint.addTaint(status);
+    	staticTaint.addTaint(timestamp);
+    	return staticTaint.getTaintInt();
     }
 
     
@@ -1139,6 +1149,7 @@ public class SensorManager {
         @DSModeled(DSC.SAFE)
          SensorEventPool(int poolSize) {
             dsTaint.addTaint(poolSize);
+            mPoolSize = poolSize;
             mPool = new SensorEvent[poolSize];
             // ---------- Original Method ----------
             //mPoolSize = poolSize;
@@ -1384,6 +1395,7 @@ public class SensorManager {
             dsTaint.addTaint(sensor.dsTaint);
             dsTaint.addTaint(listener.dsTaint);
             dsTaint.addTaint(handler.dsTaint);
+            mSensorEventListener = listener;
             Looper looper;
             looper = handler.getLooper();
             looper = mMainLooper;

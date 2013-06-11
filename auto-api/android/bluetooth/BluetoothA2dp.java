@@ -422,9 +422,7 @@ public final class BluetoothA2dp implements BluetoothProfile {
                 ParcelUuid[] uuids;
                 uuids = device.getUuids();
                 {
-                    Iterator<ParcelUuid> seatecAstronomy42 = uuids.iterator();
-                    seatecAstronomy42.hasNext();
-                    ParcelUuid uuid = seatecAstronomy42.next();
+                    ParcelUuid uuid = uuids[0];
                     {
                         {
                             boolean var9B037CD7A2FF4EFAAE8122439AA2F725_1241546030 = (BluetoothUuid.isAvrcpTarget(uuid));
