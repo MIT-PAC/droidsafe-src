@@ -78,7 +78,7 @@ public final class InputMethodManager {
     static final int MSG_BIND = 2;
     static final int MSG_UNBIND = 3;
     static final int MSG_SET_ACTIVE = 4;
-    final IInputMethodClient.Stub mClient = new IInputMethodClient.Stub() {        
+    final IInputMethodClient mClient = new IInputMethodClient.Stub() {        
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:05.118 -0400", hash_original_method = "F6EA3706319B79FC567D288B23EBD7C8", hash_generated_method = "2B9EE50D8F2C4679641F407F8C8B5160")
         //DSFIXME:  CODE0002: Requires DSC value to be set
         @Override

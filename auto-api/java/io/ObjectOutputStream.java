@@ -2,6 +2,7 @@ package java.io;
 
 // Droidsafe Imports
 import droidsafe.helpers.*;
+import droidsafe.runtime.DroidSafeAndroidRuntime;
 import droidsafe.annotations.*;
 
 // import Iterator to deal with enhanced for loop translation
@@ -128,7 +129,7 @@ public class ObjectOutputStream extends OutputStream implements ObjectOutput, Ob
     @DSModeled(DSC.SAFE)
     public void defaultWriteObject() throws IOException {
         {
-            throw new NotActiveException();
+        	if (DroidSafeAndroidRuntime.control) throw new NotActiveException();
         } //End block
         writeFieldValues(currentObject, currentClass);
         // ---------- Original Method ----------
@@ -235,7 +236,7 @@ public class ObjectOutputStream extends OutputStream implements ObjectOutput, Ob
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:11.562 -0400", hash_original_method = "63EAAB97CFDD856D65D1CFD6010F5BA7", hash_generated_method = "AADE721D96F0CA7D31A8F670F52E327C")
     private static Object getFieldL(Object instance, Class<?> declaringClass, String fieldName, String fieldTypeName) {
-        //DSFIXME:  CODE0010: Native static method requires manual modeling
+    	return new Object();
     }
 
     
@@ -252,7 +253,7 @@ public class ObjectOutputStream extends OutputStream implements ObjectOutput, Ob
     @DSModeled(DSC.SAFE)
     public PutField putFields() throws IOException {
         {
-            throw new NotActiveException();
+        	if (DroidSafeAndroidRuntime.control) throw new NotActiveException();
         } //End block
         {
             computePutField();
@@ -356,7 +357,7 @@ public class ObjectOutputStream extends OutputStream implements ObjectOutput, Ob
         {
             boolean varECECE5172FBA187AE03F784B354A8EDD_1021797053 = (!objectsWritten.isEmpty());
             {
-                throw new IllegalStateException("Cannot set protocol version when stream in use");
+            	if (DroidSafeAndroidRuntime.control) throw new IllegalStateException("Cannot set protocol version when stream in use");
             } //End block
         } //End collapsed parenthetic
         {
@@ -605,7 +606,7 @@ public class ObjectOutputStream extends OutputStream implements ObjectOutput, Ob
     @DSModeled(DSC.SAFE)
     public void writeFields() throws IOException {
         {
-            throw new NotActiveException();
+        	if (DroidSafeAndroidRuntime.control) throw new NotActiveException();
         } //End block
         writeFieldValues(currentPutField);
         // ---------- Original Method ----------
@@ -623,9 +624,7 @@ public class ObjectOutputStream extends OutputStream implements ObjectOutput, Ob
         EmulatedFields accessibleSimulatedFields;
         accessibleSimulatedFields = emulatedFields.emulatedFields();
         {
-            Iterator<EmulatedFields.ObjectSlot> seatecAstronomy42 = accessibleSimulatedFields.slots().iterator();
-            seatecAstronomy42.hasNext();
-            EmulatedFields.ObjectSlot slot = seatecAstronomy42.next();
+            EmulatedFields.ObjectSlot slot = accessibleSimulatedFields.slots()[0];
             {
                 Object fieldValue;
                 fieldValue = slot.getFieldValue();
@@ -671,9 +670,7 @@ public class ObjectOutputStream extends OutputStream implements ObjectOutput, Ob
         dsTaint.addTaint(obj.dsTaint);
         dsTaint.addTaint(classDesc.dsTaint);
         {
-            Iterator<ObjectStreamField> seatecAstronomy42 = classDesc.fields().iterator();
-            seatecAstronomy42.hasNext();
-            ObjectStreamField fieldDesc = seatecAstronomy42.next();
+            ObjectStreamField fieldDesc = classDesc.fields()[0];
             {
                 try 
                 {
@@ -682,7 +679,7 @@ public class ObjectOutputStream extends OutputStream implements ObjectOutput, Ob
                     Field field;
                     field = classDesc.getReflectionField(fieldDesc);
                     {
-                        throw new InvalidClassException(classDesc.getName() + " doesn't have a field " + fieldDesc.getName() + " of type " + type);
+                    	if (DroidSafeAndroidRuntime.control) throw new InvalidClassException(classDesc.getName() + " doesn't have a field " + fieldDesc.getName() + " of type " + type);
                     } //End block
                     {
                         output.writeByte(field.getByte(obj));
@@ -755,7 +752,7 @@ public class ObjectOutputStream extends OutputStream implements ObjectOutput, Ob
         dsTaint.addTaint(object.dsTaint);
         dsTaint.addTaint(classDesc.dsTaint);
         {
-            throw new NotActiveException();
+        	if (DroidSafeAndroidRuntime.control) throw new NotActiveException();
         } //End block
         List<ObjectStreamClass> hierarchy;
         hierarchy = classDesc.getHierarchy();
@@ -786,10 +783,10 @@ public class ObjectOutputStream extends OutputStream implements ObjectOutput, Ob
                                 Throwable ex;
                                 ex = e.getTargetException();
                                 {
-                                    throw (RuntimeException) ex;
+                                	if (DroidSafeAndroidRuntime.control) throw (RuntimeException) ex;
                                 } //End block
                                 {
-                                    throw (Error) ex;
+                                	if (DroidSafeAndroidRuntime.control) throw (Error) ex;
                                 } //End block
                                 throw (IOException) ex;
                             } //End block
@@ -954,7 +951,7 @@ public class ObjectOutputStream extends OutputStream implements ObjectOutput, Ob
                     } //End collapsed parenthetic
                 } //End block
                 {
-                    throw new InvalidClassException("Wrong base type in " + arrayClass.getName());
+                	if (DroidSafeAndroidRuntime.control) throw new InvalidClassException("Wrong base type in " + arrayClass.getName());
                 } //End block
             } //End block
             {
@@ -1106,7 +1103,7 @@ public class ObjectOutputStream extends OutputStream implements ObjectOutput, Ob
         boolean serializable;
         serializable = clDesc.isSerializable();
         {
-            throw new NotSerializableException(theClass.getName());
+        	if (DroidSafeAndroidRuntime.control) throw new NotSerializableException(theClass.getName());
         } //End block
         output.writeByte(TC_OBJECT);
         writeClassDesc(clDesc, false);
@@ -1313,10 +1310,10 @@ public class ObjectOutputStream extends OutputStream implements ObjectOutput, Ob
                                 Throwable target;
                                 target = ite.getTargetException();
                                 {
-                                    throw (ObjectStreamException) target;
+                                	if (DroidSafeAndroidRuntime.control) throw (ObjectStreamException) target;
                                 } //End block
                                 {
-                                    throw (Error) target;
+                                	if (DroidSafeAndroidRuntime.control) throw (Error) target;
                                 } //End block
                                 {
                                     throw (RuntimeException) target;
@@ -1461,7 +1458,7 @@ public class ObjectOutputStream extends OutputStream implements ObjectOutput, Ob
             Field field;
             field = classDesc.getSuperclass().getReflectionField(fields[1]);
             {
-                throw new NoSuchFieldError();
+            	if (DroidSafeAndroidRuntime.control) throw new NoSuchFieldError();
             } //End block
             try 
             {

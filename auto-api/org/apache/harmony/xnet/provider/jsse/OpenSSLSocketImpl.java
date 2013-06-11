@@ -1,14 +1,6 @@
 package org.apache.harmony.xnet.provider.jsse;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-
-// import Iterator to deal with enhanced for loop translation
-import java.util.Iterator;
-
-import dalvik.system.BlockGuard;
-import dalvik.system.CloseGuard;
 import java.io.FileDescriptor;
 import java.io.IOException;
 import java.io.InputStream;
@@ -24,7 +16,10 @@ import java.security.cert.X509Certificate;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashSet;
+// import Iterator to deal with enhanced for loop translation
+import java.util.Iterator;
 import java.util.Set;
+
 import javax.net.ssl.HandshakeCompletedEvent;
 import javax.net.ssl.HandshakeCompletedListener;
 import javax.net.ssl.SSLException;
@@ -33,8 +28,17 @@ import javax.net.ssl.SSLProtocolException;
 import javax.net.ssl.SSLSession;
 import javax.net.ssl.X509TrustManager;
 import javax.security.auth.x500.X500Principal;
+
 import libcore.io.Streams;
+
 import org.apache.harmony.security.provider.cert.X509CertImpl;
+
+import dalvik.system.BlockGuard;
+import dalvik.system.CloseGuard;
+import droidsafe.annotations.DSC;
+import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.DSModeled;
+import droidsafe.runtime.DroidSafeAndroidRuntime;
 
 public class OpenSSLSocketImpl extends javax.net.ssl.SSLSocket implements NativeCrypto.SSLHandshakeCallbacks {
     private int sslNativePointer;
@@ -169,6 +173,8 @@ public class OpenSSLSocketImpl extends javax.net.ssl.SSLSocket implements Native
         dsTaint.addTaint(autoClose);
         dsTaint.addTaint(sslParameters.dsTaint);
         init(sslParameters);
+        
+        this.socket = socket;
         // ---------- Original Method ----------
         //this.socket = socket;
         //this.wrappedHost = host;
@@ -230,9 +236,7 @@ public class OpenSSLSocketImpl extends javax.net.ssl.SSLSocket implements Native
         boolean protocolFound;
         protocolFound = false;
         {
-            Iterator<String> seatecAstronomy42 = enabledProtocols.iterator();
-            seatecAstronomy42.hasNext();
-            String enabledProtocol = seatecAstronomy42.next();
+            String enabledProtocol = enabledProtocols[0];
             {
                 {
                     boolean varB7CDD2851C57BCE06B93A6CED39A5E38_1210876257 = (protocol.equals(enabledProtocol));
@@ -247,9 +251,7 @@ public class OpenSSLSocketImpl extends javax.net.ssl.SSLSocket implements Native
         boolean cipherSuiteFound;
         cipherSuiteFound = false;
         {
-            Iterator<String> seatecAstronomy42 = enabledCipherSuites.iterator();
-            seatecAstronomy42.hasNext();
-            String enabledCipherSuite = seatecAstronomy42.next();
+            String enabledCipherSuite = enabledCipherSuites[0];
             {
                 {
                     boolean var0A90D4178EA81E08B8356065F33DB016_682360631 = (cipherSuite.equals(enabledCipherSuite));
@@ -264,9 +266,7 @@ public class OpenSSLSocketImpl extends javax.net.ssl.SSLSocket implements Native
         boolean compressionMethodFound;
         compressionMethodFound = false;
         {
-            Iterator<String> seatecAstronomy42 = enabledCompressionMethods.iterator();
-            seatecAstronomy42.hasNext();
-            String enabledCompressionMethod = seatecAstronomy42.next();
+            String enabledCompressionMethod = enabledCompressionMethods[0];
             {
                 {
                     boolean varDF0B1461F4631C44245857F1697AFCF1_89061938 = (compressionMethod.equals(enabledCompressionMethod));
@@ -332,7 +332,7 @@ public class OpenSSLSocketImpl extends javax.net.ssl.SSLSocket implements Native
         client = sslParameters.getUseClientMode();
         final int sslCtxNativePointer;
         sslCtxNativePointer = sslParameters.getClientSessionContext().sslCtxNativePointer;
-        sslCtxNativePointer = sslParameters.getServerSessionContext().sslCtxNativePointer;
+        
         this.sslNativePointer = 0;
         boolean exception;
         exception = true;
@@ -344,9 +344,7 @@ public class OpenSSLSocketImpl extends javax.net.ssl.SSLSocket implements Native
                 Set<String> keyTypes;
                 keyTypes = new HashSet<String>();
                 {
-                    Iterator<String> seatecAstronomy42 = enabledCipherSuites.iterator();
-                    seatecAstronomy42.hasNext();
-                    String enabledCipherSuite = seatecAstronomy42.next();
+                    String enabledCipherSuite = enabledCipherSuites[0];
                     {
                         {
                             boolean varB970A4D1689EFCBF0C591729604E2F5C_1174243165 = (enabledCipherSuite.equals(NativeCrypto.TLS_EMPTY_RENEGOTIATION_INFO_SCSV));
@@ -481,7 +479,7 @@ public class OpenSSLSocketImpl extends javax.net.ssl.SSLSocket implements Native
             } //End block
             {
                 {
-                    throw new IllegalStateException("SSL Session may not be created");
+                	if (DroidSafeAndroidRuntime.control) throw new IllegalStateException("SSL Session may not be created");
                 } //End block
                 X509Certificate[] localCertificates;
                 localCertificates = createCertChain(NativeCrypto.SSL_get_certificate(sslNativePointer));
@@ -583,7 +581,7 @@ public class OpenSSLSocketImpl extends javax.net.ssl.SSLSocket implements Native
     @SuppressWarnings("unused")
     public void clientCertificateRequested(byte[] keyTypeBytes, byte[][] asn1DerEncodedPrincipals) throws CertificateEncodingException, SSLException {
         dsTaint.addTaint(keyTypeBytes);
-        dsTaint.addTaint(asn1DerEncodedPrincipals.dsTaint);
+        dsTaint.addTaint(asn1DerEncodedPrincipals[0][0]);
         String[] keyTypes;
         keyTypes = new String[keyTypeBytes.length];
         {
@@ -701,12 +699,12 @@ public class OpenSSLSocketImpl extends javax.net.ssl.SSLSocket implements Native
     @SuppressWarnings("unused")
     @Override
     public void verifyCertificateChain(byte[][] bytes, String authMethod) throws CertificateException {
-        dsTaint.addTaint(bytes.dsTaint);
+        dsTaint.addTaint(bytes[0][0]);
         dsTaint.addTaint(authMethod);
         try 
         {
             {
-                throw new SSLException("Peer sent no certificate");
+            	if (DroidSafeAndroidRuntime.control) throw new SSLException("Peer sent no certificate");
             } //End block
             X509Certificate[] peerCertificateChain;
             peerCertificateChain = new X509Certificate[bytes.length];
@@ -823,7 +821,7 @@ public class OpenSSLSocketImpl extends javax.net.ssl.SSLSocket implements Native
             HandshakeCompletedListener listener) {
         dsTaint.addTaint(listener.dsTaint);
         {
-            throw new IllegalArgumentException("Provided listener is null");
+        	if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("Provided listener is null");
         } //End block
         {
             listeners = new ArrayList<HandshakeCompletedListener>();
@@ -847,10 +845,10 @@ public class OpenSSLSocketImpl extends javax.net.ssl.SSLSocket implements Native
             HandshakeCompletedListener listener) {
         dsTaint.addTaint(listener.dsTaint);
         {
-            throw new IllegalArgumentException("Provided listener is null");
+        	if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("Provided listener is null");
         } //End block
         {
-            throw new IllegalArgumentException(
+        	if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException(
                     "Provided listener is not registered");
         } //End block
         {
@@ -1046,7 +1044,7 @@ public class OpenSSLSocketImpl extends javax.net.ssl.SSLSocket implements Native
     public void setUseClientMode(boolean mode) {
         dsTaint.addTaint(mode);
         {
-            throw new IllegalArgumentException(
+        	if (DroidSafeAndroidRuntime.control)     throw new IllegalArgumentException(
                     "Could not change the mode after the initial handshake has begun.");
         } //End block
         sslParameters.setUseClientMode(mode);

@@ -407,9 +407,7 @@ public class PropertyChangeSupport implements Serializable {
                 Map.Entry<String, PropertyChangeSupport> entry = seatecAstronomy42.next();
                 {
                     {
-                        Iterator<PropertyChangeListener> seatecAstronomy42 = entry.getValue().listeners.iterator();
-                        seatecAstronomy42.hasNext();
-                        PropertyChangeListener p = seatecAstronomy42.next();
+                        PropertyChangeListener p = entry.getValue().listeners.get(0);
                         {
                             listeners.add(new PropertyChangeListenerProxy(entry.getKey(), p));
                         } //End block

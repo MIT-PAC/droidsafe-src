@@ -1,16 +1,16 @@
 package java.util;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-
-// import Iterator to deal with enhanced for loop translation
-import java.util.Iterator;
-
 import java.io.IOException;
 import java.io.ObjectOutputStream;
 import java.io.Serializable;
 import java.lang.reflect.Array;
+
+import droidsafe.annotations.DSC;
+import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.DSModeled;
+import droidsafe.runtime.DroidSafeAndroidRuntime;
+// import Iterator to deal with enhanced for loop translation
 
 public class Vector<E> extends AbstractList<E> implements List<E>, RandomAccess, Cloneable, Serializable {
     private static final long serialVersionUID = -2767605614048989439L;
@@ -42,8 +42,9 @@ public class Vector<E> extends AbstractList<E> implements List<E>, RandomAccess,
         dsTaint.addTaint(capacityIncrement);
         dsTaint.addTaint(capacity);
         {
-            throw new IllegalArgumentException();
+        	if (DroidSafeAndroidRuntime.control)  throw new IllegalArgumentException();
         } //End block
+        
         elementData = newElementArray(capacity);
         elementCount = 0;
         // ---------- Original Method ----------
@@ -152,7 +153,9 @@ public class Vector<E> extends AbstractList<E> implements List<E>, RandomAccess,
             elementCount += size;
             modCount++;
         } //End block
-        throw arrayIndexOutOfBoundsException(location, elementCount);
+        
+        if (DroidSafeAndroidRuntime.control) throw arrayIndexOutOfBoundsException(location, elementCount);
+        
         return dsTaint.getTaintBoolean();
         // ---------- Original Method ----------
         // Original Method Too Long, Refer to Original Implementation
@@ -262,7 +265,7 @@ public class Vector<E> extends AbstractList<E> implements List<E>, RandomAccess,
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:15.358 -0400", hash_original_method = "9FCD2BB7391A67913F5DC5B0A38C9668", hash_generated_method = "983DF9FF0EC47A1F3B14EF07E1E8724B")
     @DSModeled(DSC.SAFE)
     public synchronized void copyInto(Object[] elements) {
-        dsTaint.addTaint(elements.dsTaint);
+        dsTaint.addTaint(elements[0].dsTaint);
         System.arraycopy(elementData, 0, elements, 0, elementCount);
         // ---------- Original Method ----------
         //System.arraycopy(elementData, 0, elements, 0, elementCount);
@@ -274,7 +277,7 @@ public class Vector<E> extends AbstractList<E> implements List<E>, RandomAccess,
     @SuppressWarnings("unchecked")
     public synchronized E elementAt(int location) {
         dsTaint.addTaint(location);
-        throw arrayIndexOutOfBoundsException(location, elementCount);
+        if (DroidSafeAndroidRuntime.control) throw arrayIndexOutOfBoundsException(location, elementCount);
         return (E)dsTaint.getTaint();
         // ---------- Original Method ----------
         //if (location < elementCount) {
@@ -383,7 +386,7 @@ public class Vector<E> extends AbstractList<E> implements List<E>, RandomAccess,
     @DSModeled(DSC.SAFE)
     @SuppressWarnings("unchecked")
     public synchronized E firstElement() {
-        throw new NoSuchElementException();
+    	if (DroidSafeAndroidRuntime.control) throw new NoSuchElementException();
         return (E)dsTaint.getTaint();
         // ---------- Original Method ----------
         //if (elementCount > 0) {
@@ -683,7 +686,7 @@ public class Vector<E> extends AbstractList<E> implements List<E>, RandomAccess,
                 } //End collapsed parenthetic
             } //End block
         } //End block
-        throw arrayIndexOutOfBoundsException(location, elementCount);
+        if (DroidSafeAndroidRuntime.control) throw arrayIndexOutOfBoundsException(location, elementCount);
         return dsTaint.getTaintInt();
         // ---------- Original Method ----------
         //if (location < elementCount) {
@@ -725,7 +728,7 @@ public class Vector<E> extends AbstractList<E> implements List<E>, RandomAccess,
             elementData[elementCount] = null;
             modCount++;
         } //End block
-        throw arrayIndexOutOfBoundsException(location, elementCount);
+        if (DroidSafeAndroidRuntime.control) throw arrayIndexOutOfBoundsException(location, elementCount);
         return (E)dsTaint.getTaint();
         // ---------- Original Method ----------
         //if (location < elementCount) {
@@ -912,7 +915,7 @@ public class Vector<E> extends AbstractList<E> implements List<E>, RandomAccess,
             result = (E) elementData[location];
             elementData[location] = object;
         } //End block
-        throw arrayIndexOutOfBoundsException(location, elementCount);
+        if (DroidSafeAndroidRuntime.control) throw arrayIndexOutOfBoundsException(location, elementCount);
         return (E)dsTaint.getTaint();
         // ---------- Original Method ----------
         //if (location < elementCount) {
@@ -1017,7 +1020,7 @@ public class Vector<E> extends AbstractList<E> implements List<E>, RandomAccess,
     @Override
     @SuppressWarnings("unchecked")
     public synchronized <T> T[] toArray(T[] contents) {
-        dsTaint.addTaint(contents.dsTaint);
+        dsTaint.addTaint(contents[0].dsTaint);
         {
             Class<?> ct;
             ct = contents.getClass().getComponentType();

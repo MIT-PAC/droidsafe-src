@@ -2,6 +2,7 @@ package java.io;
 
 // Droidsafe Imports
 import droidsafe.helpers.*;
+import droidsafe.runtime.DroidSafeAndroidRuntime;
 import droidsafe.annotations.*;
 
 // import Iterator to deal with enhanced for loop translation
@@ -367,7 +368,7 @@ public class ObjectInputStream extends InputStream implements ObjectInput, Objec
         ObjectStreamClass var41AE2590E5AE43F9C604C548CB534E0B_633847085 = ((ObjectStreamClass) readCyclicReference());
         //End case TC_REFERENCE 
         //Begin case default 
-        throw corruptStream(tc);
+        if (DroidSafeAndroidRuntime.control) throw corruptStream(tc);
         //End case default 
         return (ObjectStreamClass)dsTaint.getTaint();
         // ---------- Original Method ----------
@@ -396,7 +397,7 @@ public class ObjectInputStream extends InputStream implements ObjectInput, Objec
     @DSModeled(DSC.SAFE)
     private StreamCorruptedException corruptStream(byte tc) throws StreamCorruptedException {
         dsTaint.addTaint(tc);
-        throw new StreamCorruptedException("Wrong format: " + Integer.toHexString(tc & 0xff));
+        if (DroidSafeAndroidRuntime.control) throw new StreamCorruptedException("Wrong format: " + Integer.toHexString(tc & 0xff));
         return (StreamCorruptedException)dsTaint.getTaint();
         // ---------- Original Method ----------
         //throw new StreamCorruptedException("Wrong format: " + Integer.toHexString(tc & 0xff));
@@ -440,13 +441,13 @@ public class ObjectInputStream extends InputStream implements ObjectInput, Objec
         exc = readException();
         //End case TC_EXCEPTION 
         //Begin case TC_EXCEPTION 
-        throw new WriteAbortedException("Read an exception", exc);
+        if (DroidSafeAndroidRuntime.control) throw new WriteAbortedException("Read an exception", exc);
         //End case TC_EXCEPTION 
         //Begin case TC_RESET 
         resetState();
         //End case TC_RESET 
         //Begin case default 
-        throw corruptStream(tc);
+        if (DroidSafeAndroidRuntime.control) throw corruptStream(tc);
         //End case default 
         return (Object)dsTaint.getTaint();
         // ---------- Original Method ----------
@@ -465,7 +466,7 @@ public class ObjectInputStream extends InputStream implements ObjectInput, Objec
                 OptionalDataException e;
                 e = new OptionalDataException();
                 e.length = primitiveData.available();
-                throw e;
+                if (DroidSafeAndroidRuntime.control) throw e;
             } //End block
         } //End collapsed parenthetic
         {
@@ -495,7 +496,7 @@ public class ObjectInputStream extends InputStream implements ObjectInput, Objec
             //Begin case TC_REFERENCE 
             {
                 readNewHandle();
-                throw new InvalidObjectException("Unshared read of back reference");
+                if (DroidSafeAndroidRuntime.control) throw new InvalidObjectException("Unshared read of back reference");
             } //End block
             //End case TC_REFERENCE 
             //Begin case TC_REFERENCE 
@@ -506,7 +507,7 @@ public class ObjectInputStream extends InputStream implements ObjectInput, Objec
             exc = readException();
             //End case TC_EXCEPTION 
             //Begin case TC_EXCEPTION 
-            throw new WriteAbortedException("Read an exception", exc);
+            if (DroidSafeAndroidRuntime.control) throw new WriteAbortedException("Read an exception", exc);
             //End case TC_EXCEPTION 
             //Begin case TC_RESET 
             resetState();
@@ -522,10 +523,10 @@ public class ObjectInputStream extends InputStream implements ObjectInput, Objec
             e.eof = true;
             //End case TC_ENDBLOCKDATA 
             //Begin case TC_ENDBLOCKDATA 
-            throw e;
+            if (DroidSafeAndroidRuntime.control) throw e;
             //End case TC_ENDBLOCKDATA 
             //Begin case default 
-            throw corruptStream(tc);
+            if (DroidSafeAndroidRuntime.control) throw corruptStream(tc);
             //End case default 
         } //End block
         return (Object)dsTaint.getTaint();
@@ -643,7 +644,7 @@ public class ObjectInputStream extends InputStream implements ObjectInput, Objec
     @DSModeled(DSC.SAFE)
     public GetField readFields() throws IOException, ClassNotFoundException, NotActiveException {
         {
-            throw new NotActiveException();
+        	if (DroidSafeAndroidRuntime.control) throw new NotActiveException();
         } //End block
         EmulatedFieldsForLoading result;
         result = new EmulatedFieldsForLoading(currentClass);
@@ -666,9 +667,7 @@ public class ObjectInputStream extends InputStream implements ObjectInput, Objec
         EmulatedFields.ObjectSlot[] slots;
         slots = emulatedFields.emulatedFields().slots();
         {
-            Iterator<ObjectSlot> seatecAstronomy42 = slots.iterator();
-            seatecAstronomy42.hasNext();
-            ObjectSlot element = seatecAstronomy42.next();
+            ObjectSlot element = slots[0];
             {
                 element.defaulted = false;
                 Class<?> type;
@@ -725,12 +724,10 @@ public class ObjectInputStream extends InputStream implements ObjectInput, Objec
         Class<?> declaringClass;
         declaringClass = classDesc.forClass();
         {
-            throw new ClassNotFoundException(classDesc.getName());
+        	if (DroidSafeAndroidRuntime.control) throw new ClassNotFoundException(classDesc.getName());
         } //End block
         {
-            Iterator<ObjectStreamField> seatecAstronomy42 = fields.iterator();
-            seatecAstronomy42.hasNext();
-            ObjectStreamField fieldDesc = seatecAstronomy42.next();
+            ObjectStreamField fieldDesc = fields[0];
             {
                 Field field;
                 field = classDesc.getReflectionField(fieldDesc);
@@ -811,7 +808,7 @@ public class ObjectInputStream extends InputStream implements ObjectInput, Objec
                             {
                                 boolean var74C1BEDB7218CB2DF56B6BCB99B9FB95_1394351796 = (!fieldType.isAssignableFrom(valueType));
                                 {
-                                    throw new ClassCastException(classDesc.getName() + "." + fieldName + " - " + fieldType + " not compatible with " + valueType);
+                                	if (DroidSafeAndroidRuntime.control) throw new ClassCastException(classDesc.getName() + "." + fieldName + " - " + fieldType + " not compatible with " + valueType);
                                 } //End block
                             } //End collapsed parenthetic
                             {
@@ -871,7 +868,7 @@ public class ObjectInputStream extends InputStream implements ObjectInput, Objec
         dsTaint.addTaint(object.dsTaint);
         dsTaint.addTaint(classDesc.dsTaint);
         {
-            throw new NotActiveException();
+        	if (DroidSafeAndroidRuntime.control) throw new NotActiveException();
         } //End block
         List<ObjectStreamClass> streamClassList;
         streamClassList = classDesc.getHierarchy();
@@ -1029,12 +1026,12 @@ public class ObjectInputStream extends InputStream implements ObjectInput, Objec
                     Throwable ex;
                     ex = e.getTargetException();
                     {
-                        throw (RuntimeException) ex;
+                    	if (DroidSafeAndroidRuntime.control) throw (RuntimeException) ex;
                     } //End block
                     {
-                        throw (Error) ex;
+                    	if (DroidSafeAndroidRuntime.control) throw (Error) ex;
                     } //End block
-                    throw (ObjectStreamException) ex;
+                    if (DroidSafeAndroidRuntime.control) throw (ObjectStreamException) ex;
                 } //End block
                 catch (IllegalAccessException e)
                 {
@@ -1076,9 +1073,6 @@ public class ObjectInputStream extends InputStream implements ObjectInput, Objec
         targetClass = classDesc.forClass();
         final Method readMethod;
         {
-            readMethod = null;
-        } //End block
-        {
             readMethod = classDesc.getMethodReadObject();
         } //End block
         try 
@@ -1094,15 +1088,15 @@ public class ObjectInputStream extends InputStream implements ObjectInput, Objec
                     Throwable ex;
                     ex = e.getTargetException();
                     {
-                        throw (ClassNotFoundException) ex;
+                    	if (DroidSafeAndroidRuntime.control) throw (ClassNotFoundException) ex;
                     } //End block
                     {
-                        throw (RuntimeException) ex;
+                    	if (DroidSafeAndroidRuntime.control) throw (RuntimeException) ex;
                     } //End block
                     {
-                        throw (Error) ex;
+                    	if (DroidSafeAndroidRuntime.control) throw (Error) ex;
                     } //End block
-                    throw (IOException) ex;
+                    if (DroidSafeAndroidRuntime.control) throw (IOException) ex;
                 } //End block
                 catch (IllegalAccessException e)
                 {
@@ -1165,7 +1159,7 @@ public class ObjectInputStream extends InputStream implements ObjectInput, Objec
         ObjectStreamClass classDesc;
         classDesc = readClassDesc();
         {
-            throw missingClassDescriptor();
+        	if (DroidSafeAndroidRuntime.control) throw missingClassDescriptor();
         } //End block
         int newHandle;
         newHandle = nextHandle();
@@ -1264,7 +1258,7 @@ public class ObjectInputStream extends InputStream implements ObjectInput, Objec
                     } //End collapsed parenthetic
                 } //End block
                 {
-                    throw new ClassNotFoundException("Wrong base type in " + classDesc.getName());
+                	if (DroidSafeAndroidRuntime.control) throw new ClassNotFoundException("Wrong base type in " + classDesc.getName());
                 } //End block
             } //End block
             {
@@ -1296,7 +1290,7 @@ public class ObjectInputStream extends InputStream implements ObjectInput, Objec
         ObjectStreamClass classDesc;
         classDesc = readClassDesc();
         {
-            throw missingClassDescriptor();
+        	if (DroidSafeAndroidRuntime.control) throw missingClassDescriptor();
         } //End block
         Class<?> localClass;
         localClass = classDesc.forClass();
@@ -1330,7 +1324,7 @@ public class ObjectInputStream extends InputStream implements ObjectInput, Objec
         ObjectStreamClass var41AE2590E5AE43F9C604C548CB534E0B_942217908 = ((ObjectStreamClass) readCyclicReference());
         //End case TC_REFERENCE 
         //Begin case default 
-        throw corruptStream(tc);
+        if (DroidSafeAndroidRuntime.control) throw corruptStream(tc);
         //End case default 
         return (ObjectStreamClass)dsTaint.getTaint();
         // ---------- Original Method ----------
@@ -1368,7 +1362,7 @@ public class ObjectInputStream extends InputStream implements ObjectInput, Objec
         {
             boolean varDEA6609B69DA5649FF02F7EEB3B9D4F7_1280373270 = (0L != classDesc.getSerialVersionUID() || 0L != superClass.getSerialVersionUID());
             {
-                throw new InvalidClassException(superClass.getName(),
+            	if (DroidSafeAndroidRuntime.control) throw new InvalidClassException(superClass.getName(),
                     "Incompatible class (SUID): " + superClass + " but expected " + superClass);
             } //End block
         } //End collapsed parenthetic
@@ -1402,7 +1396,7 @@ public class ObjectInputStream extends InputStream implements ObjectInput, Objec
         //Begin case TC_REFERENCE 
         {
             readNewHandle();
-            throw new InvalidObjectException("Unshared read of back reference");
+            if (DroidSafeAndroidRuntime.control) throw new InvalidObjectException("Unshared read of back reference");
         } //End block
         //End case TC_REFERENCE 
         //Begin case TC_REFERENCE 
@@ -1412,7 +1406,7 @@ public class ObjectInputStream extends InputStream implements ObjectInput, Objec
         name = (String) readNewString(unshared);
         //End case TC_STRING 
         //Begin case default 
-        throw corruptStream(tc);
+        if (DroidSafeAndroidRuntime.control) throw corruptStream(tc);
         //End case default 
         Enum<?> result;
         result = Enum.valueOf((Class) classDesc.forClass(), name);
@@ -1475,9 +1469,7 @@ public class ObjectInputStream extends InputStream implements ObjectInput, Objec
         loader = callerClassLoader;
         loader = newClassDesc.forClass().getClassLoader();
         {
-            Iterator<ObjectStreamField> seatecAstronomy42 = fields.iterator();
-            seatecAstronomy42.hasNext();
-            ObjectStreamField element = seatecAstronomy42.next();
+            ObjectStreamField element = fields[0];
             {
                 element.resolve(loader);
             } //End block
@@ -1531,7 +1523,7 @@ public class ObjectInputStream extends InputStream implements ObjectInput, Objec
         {
             boolean var162A1A174B912EA806BA20275BF238E6_2070245887 = (name.length() == 0);
             {
-                throw new IOException("The stream is corrupted");
+            	if (DroidSafeAndroidRuntime.control) throw new IOException("The stream is corrupted");
             } //End block
         } //End collapsed parenthetic
         newClassDesc.setName(name);
@@ -1616,7 +1608,7 @@ public class ObjectInputStream extends InputStream implements ObjectInput, Objec
         ObjectStreamClass classDesc;
         classDesc = readClassDesc();
         {
-            throw missingClassDescriptor();
+        	if (DroidSafeAndroidRuntime.control) throw missingClassDescriptor();
         } //End block
         int newHandle;
         newHandle = nextHandle();
@@ -1684,10 +1676,10 @@ public class ObjectInputStream extends InputStream implements ObjectInput, Objec
                         Throwable target;
                         target = ite.getTargetException();
                         {
-                            throw (ObjectStreamException) target;
+                        	if (DroidSafeAndroidRuntime.control) throw (ObjectStreamException) target;
                         } //End block
                         {
-                            throw (Error) target;
+                        	if (DroidSafeAndroidRuntime.control) throw (Error) target;
                         } //End block
                         {
                             throw (RuntimeException) target;
@@ -1711,7 +1703,7 @@ public class ObjectInputStream extends InputStream implements ObjectInput, Objec
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:11.535 -0400", hash_original_method = "C5243F456C3574095BC1BB7FC2411373", hash_generated_method = "A01258B38BE2AC8CA972C4F773C1315B")
     @DSModeled(DSC.SAFE)
     private InvalidClassException missingClassDescriptor() throws InvalidClassException {
-        throw new InvalidClassException("Read null attempting to read class descriptor for object");
+    	if (DroidSafeAndroidRuntime.control) throw new InvalidClassException("Read null attempting to read class descriptor for object");
         return (InvalidClassException)dsTaint.getTaint();
         // ---------- Original Method ----------
         //throw new InvalidClassException("Read null attempting to read class descriptor for object");
@@ -1818,9 +1810,7 @@ public class ObjectInputStream extends InputStream implements ObjectInput, Objec
             try 
             {
                 {
-                    Iterator<InputValidationDesc> seatecAstronomy42 = validations.iterator();
-                    seatecAstronomy42.hasNext();
-                    InputValidationDesc element = seatecAstronomy42.next();
+                    InputValidationDesc element = validations[0];
                     {
                         element.validator.validateObject();
                     } //End block
@@ -1855,7 +1845,7 @@ public class ObjectInputStream extends InputStream implements ObjectInput, Objec
     @DSModeled(DSC.SAFE)
     protected Object readObjectOverride() throws OptionalDataException,
             ClassNotFoundException, IOException {
-        throw new IOException();
+    	if (DroidSafeAndroidRuntime.control) throw new IOException();
         return (Object)dsTaint.getTaint();
         // ---------- Original Method ----------
         //if (input == null) {
@@ -1930,7 +1920,7 @@ public class ObjectInputStream extends InputStream implements ObjectInput, Objec
         Object res;
         res = objectsRead.get(handle - ObjectStreamConstants.baseWireHandle);
         {
-            throw new InvalidObjectException("Cannot read back reference to unshared object");
+        	if (DroidSafeAndroidRuntime.control) throw new InvalidObjectException("Cannot read back reference to unshared object");
         } //End block
         return (Object)dsTaint.getTaint();
         // ---------- Original Method ----------
@@ -1993,10 +1983,10 @@ public class ObjectInputStream extends InputStream implements ObjectInput, Objec
         Object instanceBeingRead;
         instanceBeingRead = this.currentObject;
         {
-            throw new NotActiveException();
+        	if (DroidSafeAndroidRuntime.control) throw new NotActiveException();
         } //End block
         {
-            throw new InvalidObjectException("Callback object cannot be null");
+        	if (DroidSafeAndroidRuntime.control) throw new InvalidObjectException("Callback object cannot be null");
         } //End block
         InputValidationDesc desc;
         desc = new InputValidationDesc();
@@ -2097,7 +2087,7 @@ public class ObjectInputStream extends InputStream implements ObjectInput, Objec
     public int skipBytes(int length) throws IOException {
         dsTaint.addTaint(length);
         {
-            throw new NullPointerException();
+        	if (DroidSafeAndroidRuntime.control) throw new NullPointerException();
         } //End block
         int offset;
         offset = 0;
@@ -2138,7 +2128,7 @@ public class ObjectInputStream extends InputStream implements ObjectInput, Objec
             boolean var9693CD9966488232124376137EBA8914_1357287650 = (loadedStreamClass.getSerialVersionUID() != localStreamClass
                 .getSerialVersionUID());
             {
-                throw new InvalidClassException(loadedStreamClass.getName(),
+            	if (DroidSafeAndroidRuntime.control) throw new InvalidClassException(loadedStreamClass.getName(),
                     "Incompatible class (SUID): " + loadedStreamClass +
                             " but expected " + localStreamClass);
             } //End block
@@ -2150,7 +2140,7 @@ public class ObjectInputStream extends InputStream implements ObjectInput, Objec
         {
             boolean varB90E1FD3EA27827ECD4177A803C71953_300321877 = (!loadedClassBaseName.equals(localClassBaseName));
             {
-                throw new InvalidClassException(loadedStreamClass.getName(),
+            	if (DroidSafeAndroidRuntime.control) throw new InvalidClassException(loadedStreamClass.getName(),
                     String.format("Incompatible class (base name): %s but expected %s",
                             loadedClassBaseName, localClassBaseName));
             } //End block
