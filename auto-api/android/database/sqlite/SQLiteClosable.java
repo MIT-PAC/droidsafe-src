@@ -1,13 +1,12 @@
 package android.database.sqlite;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-
-// import Iterator to deal with enhanced for loop translation
-import java.util.Iterator;
-
 import android.database.CursorWindow;
+import droidsafe.annotations.DSC;
+import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.DSModeled;
+import droidsafe.runtime.DroidSafeAndroidRuntime;
+// import Iterator to deal with enhanced for loop translation
 
 public abstract class SQLiteClosable {
     private int mReferenceCount = 1;
@@ -27,6 +26,7 @@ public abstract class SQLiteClosable {
     @DSModeled(DSC.SAFE)
     public void acquireReference() {
         {
+            if (DroidSafeAndroidRuntime.control)
             {
                 throw new IllegalStateException(
                         "attempt to re-open an already-closed object: " + getObjInfo());

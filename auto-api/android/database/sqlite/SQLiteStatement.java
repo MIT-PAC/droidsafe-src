@@ -29,7 +29,7 @@ public class SQLiteStatement extends SQLiteProgram {
         super(db, sql, bindArgs, false );
         dsTaint.addTaint(db.dsTaint);
         dsTaint.addTaint(sql);
-        dsTaint.addTaint(bindArgs.dsTaint);
+        dsTaint.addTaint(bindArgs[0].dsTaint);
         // ---------- Original Method ----------
     }
 
@@ -345,30 +345,35 @@ public class SQLiteStatement extends SQLiteProgram {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:00.844 -0400", hash_original_method = "DA760EA6BB282F82E2B89FD24EBEEAD3", hash_generated_method = "06D248149525BF39B3F010370BC1F179")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     private final int native_execute() {
+    	return DSUtils.UNKNOWN_INT;
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:00.844 -0400", hash_original_method = "8482A8304EDF98FD537E7B2A3BC31388", hash_generated_method = "0F7E49B9B72642D74481D506A2362EE4")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     private final long native_executeInsert() {
+    	return DSUtils.UNKNOWN_LONG;
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:00.844 -0400", hash_original_method = "FE0D02F573B183DE07F8BDF82793A3EA", hash_generated_method = "5CEC13B525B37FF6C06A2411CC7D98C2")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     private final long native_1x1_long() {
+    	return DSUtils.UNKNOWN_LONG;
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:00.844 -0400", hash_original_method = "07DFC0F07DCBF43769548BE4FBA916EE", hash_generated_method = "25FE27787799634AF47985BD3C7E0A29")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     private final String native_1x1_string() {
+    	return DSUtils.UNKNOWN_STRING;
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:00.844 -0400", hash_original_method = "D5A94C086543C65F36827FC2C8B73314", hash_generated_method = "BB7EDC55B6BAB2FB10970B4F7F65DF56")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     private final ParcelFileDescriptor native_1x1_blob_ashmem() throws IOException {
+    	return new ParcelFileDescriptor();
     }
 
     

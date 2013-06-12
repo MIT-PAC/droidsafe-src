@@ -2041,7 +2041,7 @@ class ActivityManagerProxy implements IActivityManager {
         dsTaint.addTaint(resultWho);
         dsTaint.addTaint(grantedMode);
         dsTaint.addTaint(intent.dsTaint);
-        dsTaint.addTaint(grantedUriPermissions.dsTaint);
+        dsTaint.addTaint(grantedUriPermissions[0].dsTaint);
         dsTaint.addTaint(resultTo.dsTaint);
         dsTaint.addTaint(profileFd.dsTaint);
         dsTaint.addTaint(resolvedType);
@@ -2098,7 +2098,7 @@ class ActivityManagerProxy implements IActivityManager {
         dsTaint.addTaint(resultWho);
         dsTaint.addTaint(grantedMode);
         dsTaint.addTaint(intent.dsTaint);
-        dsTaint.addTaint(grantedUriPermissions.dsTaint);
+        dsTaint.addTaint(grantedUriPermissions[0].dsTaint);
         dsTaint.addTaint(resultTo.dsTaint);
         dsTaint.addTaint(profileFd.dsTaint);
         dsTaint.addTaint(resolvedType);
@@ -2146,7 +2146,7 @@ class ActivityManagerProxy implements IActivityManager {
             int requestCode, boolean onlyIfNeeded,
             boolean debug, Configuration config) throws RemoteException {
         dsTaint.addTaint(caller.dsTaint);
-        dsTaint.addTaint(grantedUriPermissions.dsTaint);
+        dsTaint.addTaint(grantedUriPermissions[0].dsTaint);
         dsTaint.addTaint(requestCode);
         dsTaint.addTaint(onlyIfNeeded);
         dsTaint.addTaint(resultTo.dsTaint);
@@ -4202,7 +4202,7 @@ class ActivityManagerProxy implements IActivityManager {
     public IIntentSender getIntentSender(int type,
             String packageName, IBinder token, String resultWho,
             int requestCode, Intent[] intents, String[] resolvedTypes, int flags) throws RemoteException {
-        dsTaint.addTaint(intents.dsTaint);
+        dsTaint.addTaint(intents[0].dsTaint);
         dsTaint.addTaint(flags);
         dsTaint.addTaint(packageName);
         dsTaint.addTaint(token.dsTaint);
@@ -5998,7 +5998,7 @@ class ActivityManagerProxy implements IActivityManager {
     public int startActivities(IApplicationThread caller,
             Intent[] intents, String[] resolvedTypes, IBinder resultTo) throws RemoteException {
         dsTaint.addTaint(caller.dsTaint);
-        dsTaint.addTaint(intents.dsTaint);
+        dsTaint.addTaint(intents[0].dsTaint);
         dsTaint.addTaint(resultTo.dsTaint);
         dsTaint.addTaint(resolvedTypes);
         Parcel data;
@@ -6039,7 +6039,7 @@ class ActivityManagerProxy implements IActivityManager {
     public int startActivitiesInPackage(int uid,
             Intent[] intents, String[] resolvedTypes, IBinder resultTo) throws RemoteException {
         dsTaint.addTaint(uid);
-        dsTaint.addTaint(intents.dsTaint);
+        dsTaint.addTaint(intents[0].dsTaint);
         dsTaint.addTaint(resultTo.dsTaint);
         dsTaint.addTaint(resolvedTypes);
         Parcel data;

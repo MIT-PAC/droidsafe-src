@@ -12,7 +12,7 @@ import android.net.Uri;
 import android.os.Bundle;
 
 public class CursorWrapper implements Cursor {
-    protected final Cursor mCursor;
+    protected /* final */ Cursor mCursor;
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:00.619 -0400", hash_original_method = "978CECAE21C2C2AADE050CB638E188D1", hash_generated_method = "E5E2B855372F1B0BE79DB757C03C7DED")
     @DSModeled(DSC.SAFE)
