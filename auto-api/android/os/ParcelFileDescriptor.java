@@ -28,6 +28,12 @@ public class ParcelFileDescriptor implements Parcelable {
     public static int MODE_CREATE = 0x08000000;
     public static int MODE_TRUNCATE = 0x04000000;
     public static int MODE_APPEND = 0x02000000;
+    
+    @DSModeled(DSC.BAN) // created to accomodate return from native calls
+    public ParcelFileDescriptor() {
+		// TODO Auto-generated constructor stub
+	}
+    
     public static final Parcelable.Creator<ParcelFileDescriptor> CREATOR = new Parcelable.Creator<ParcelFileDescriptor>() {        
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 12:02:00.585 -0400", hash_original_method = "621772CCC7C69481AB7D1DD9C7D31515", hash_generated_method = "A06E8552C8411F73659B49C51C74EE29")
         //DSFIXME:  CODE0002: Requires DSC value to be set

@@ -3,10 +3,10 @@ package com.android.internal.view;
 // Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
+import droidsafe.runtime.*;
 
-// import Iterator to deal with enhanced for loop translation
+// needed for enhanced for control translations
 import java.util.Iterator;
-
 import android.graphics.Canvas;
 import android.graphics.PixelFormat;
 import android.graphics.Rect;
@@ -18,13 +18,13 @@ import java.util.ArrayList;
 import java.util.concurrent.locks.ReentrantLock;
 
 public abstract class BaseSurfaceHolder implements SurfaceHolder {
-    private static final String TAG = "BaseSurfaceHolder";
-    static final boolean DEBUG = false;
-    public final ArrayList<SurfaceHolder.Callback> mCallbacks
+    private static String TAG = "BaseSurfaceHolder";
+    static boolean DEBUG = false;
+    public ArrayList<SurfaceHolder.Callback> mCallbacks
             = new ArrayList<SurfaceHolder.Callback>();
     SurfaceHolder.Callback[] mGottenCallbacks;
     boolean mHaveGottenCallbacks;
-    public final ReentrantLock mSurfaceLock = new ReentrantLock();
+    public ReentrantLock mSurfaceLock = new ReentrantLock();
     public Surface mSurface = new Surface();
     int mRequestedWidth = -1;
     int mRequestedHeight = -1;
@@ -32,7 +32,7 @@ public abstract class BaseSurfaceHolder implements SurfaceHolder {
     int mRequestedType = -1;
     long mLastLockTime = 0;
     int mType = -1;
-    final Rect mSurfaceFrame = new Rect();
+    Rect mSurfaceFrame = new Rect();
     Rect mTmpDirty;
     
     public abstract void onUpdateSurface();
@@ -44,7 +44,7 @@ public abstract class BaseSurfaceHolder implements SurfaceHolder {
     public abstract boolean onAllowLockCanvas();
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:10.746 -0400", hash_original_method = "3AF431EE7D6883EB1B4141BFAE213C2E", hash_generated_method = "827BDA8BAAE9FCFB7F85B32A5BC1C168")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 12:28:48.790 -0400", hash_original_method = "3AF431EE7D6883EB1B4141BFAE213C2E", hash_generated_method = "827BDA8BAAE9FCFB7F85B32A5BC1C168")
     @DSModeled(DSC.SAFE)
     public int getRequestedWidth() {
         return dsTaint.getTaintInt();
@@ -53,7 +53,7 @@ public abstract class BaseSurfaceHolder implements SurfaceHolder {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:10.746 -0400", hash_original_method = "2ED2833D03220673A510D00698E2D0FF", hash_generated_method = "91D6250E90879B190F6546B73CBCC577")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 12:28:48.819 -0400", hash_original_method = "2ED2833D03220673A510D00698E2D0FF", hash_generated_method = "91D6250E90879B190F6546B73CBCC577")
     @DSModeled(DSC.SAFE)
     public int getRequestedHeight() {
         return dsTaint.getTaintInt();
@@ -62,7 +62,7 @@ public abstract class BaseSurfaceHolder implements SurfaceHolder {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:10.746 -0400", hash_original_method = "E655118A2C284546E2D290C1F5BE4CAA", hash_generated_method = "97797142448066BCC287C9F64A2F4836")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 12:28:48.832 -0400", hash_original_method = "E655118A2C284546E2D290C1F5BE4CAA", hash_generated_method = "97797142448066BCC287C9F64A2F4836")
     @DSModeled(DSC.SAFE)
     public int getRequestedFormat() {
         return dsTaint.getTaintInt();
@@ -71,7 +71,7 @@ public abstract class BaseSurfaceHolder implements SurfaceHolder {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:10.746 -0400", hash_original_method = "1ADEF52CA934B4124985C64931FCC871", hash_generated_method = "43B8EC007384CA595D6F7983050C9343")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 12:28:48.849 -0400", hash_original_method = "1ADEF52CA934B4124985C64931FCC871", hash_generated_method = "43B8EC007384CA595D6F7983050C9343")
     @DSModeled(DSC.SAFE)
     public int getRequestedType() {
         return dsTaint.getTaintInt();
@@ -80,13 +80,13 @@ public abstract class BaseSurfaceHolder implements SurfaceHolder {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:10.746 -0400", hash_original_method = "A6B53DAA62C6D5AB170B791AD6D4E39D", hash_generated_method = "F12992E0E147FFF8EECB61C59EA6C7A6")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 12:28:48.869 -0400", hash_original_method = "A6B53DAA62C6D5AB170B791AD6D4E39D", hash_generated_method = "CFF82E736F74A038CA3E83F67FEE329E")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public void addCallback(Callback callback) {
         dsTaint.addTaint(callback.dsTaint);
         {
             {
-                boolean var79298CC453B6F7A4BA249985464ED319_899062470 = (mCallbacks.contains(callback) == false);
+                boolean var79298CC453B6F7A4BA249985464ED319_782691299 = (mCallbacks.contains(callback) == false);
                 {
                     mCallbacks.add(callback);
                 } //End block
@@ -101,7 +101,7 @@ public abstract class BaseSurfaceHolder implements SurfaceHolder {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:10.746 -0400", hash_original_method = "C2F2686F3B633A931E5A1A7B954047E4", hash_generated_method = "76281467CAA4559B07B8C21C20C09EDD")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 12:28:48.920 -0400", hash_original_method = "C2F2686F3B633A931E5A1A7B954047E4", hash_generated_method = "76281467CAA4559B07B8C21C20C09EDD")
     @DSModeled(DSC.SAFE)
     public void removeCallback(Callback callback) {
         dsTaint.addTaint(callback.dsTaint);
@@ -115,11 +115,11 @@ public abstract class BaseSurfaceHolder implements SurfaceHolder {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:10.746 -0400", hash_original_method = "2E153784742E80414EA6460F2018158D", hash_generated_method = "3DD5F22A8FBF13AF34057A9FE267C8FB")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 12:28:48.949 -0400", hash_original_method = "2E153784742E80414EA6460F2018158D", hash_generated_method = "602133F373112F3A81B3449AB37F5ACB")
     @DSModeled(DSC.SAFE)
     public SurfaceHolder.Callback[] getCallbacks() {
         {
-            final int N;
+            int N;
             N = mCallbacks.size();
             {
                 {
@@ -153,7 +153,7 @@ public abstract class BaseSurfaceHolder implements SurfaceHolder {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:10.747 -0400", hash_original_method = "B038D0F820D93ACBDF8182E2BE5C1116", hash_generated_method = "C591FEA46BA62808D5311FF61A73ED45")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 12:28:48.977 -0400", hash_original_method = "B038D0F820D93ACBDF8182E2BE5C1116", hash_generated_method = "C591FEA46BA62808D5311FF61A73ED45")
     @DSModeled(DSC.SAFE)
     public void ungetCallbacks() {
         mHaveGottenCallbacks = false;
@@ -162,7 +162,7 @@ public abstract class BaseSurfaceHolder implements SurfaceHolder {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:10.747 -0400", hash_original_method = "00011C38E6EC925AC8838B7EF1A5974E", hash_generated_method = "627A2CF34C78AA038990BC5F62E82EA8")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 12:28:49.005 -0400", hash_original_method = "00011C38E6EC925AC8838B7EF1A5974E", hash_generated_method = "627A2CF34C78AA038990BC5F62E82EA8")
     @DSModeled(DSC.SAFE)
     public void setFixedSize(int width, int height) {
         dsTaint.addTaint(height);
@@ -179,7 +179,7 @@ public abstract class BaseSurfaceHolder implements SurfaceHolder {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:10.747 -0400", hash_original_method = "3FBBAABB359B15ECFE32A5B65108D82E", hash_generated_method = "9E56F1F2A9C2B82BE3D8A051F81FA2AF")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 12:28:49.021 -0400", hash_original_method = "3FBBAABB359B15ECFE32A5B65108D82E", hash_generated_method = "9E56F1F2A9C2B82BE3D8A051F81FA2AF")
     @DSModeled(DSC.SAFE)
     public void setSizeFromLayout() {
         {
@@ -194,7 +194,7 @@ public abstract class BaseSurfaceHolder implements SurfaceHolder {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:10.747 -0400", hash_original_method = "FD1656C90E0BF9DD59BF1C1951F6D90A", hash_generated_method = "3BFA7F7E65B4FEB933E37F73E185823A")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 12:28:49.027 -0400", hash_original_method = "FD1656C90E0BF9DD59BF1C1951F6D90A", hash_generated_method = "3BFA7F7E65B4FEB933E37F73E185823A")
     @DSModeled(DSC.SAFE)
     public void setFormat(int format) {
         dsTaint.addTaint(format);
@@ -209,7 +209,7 @@ public abstract class BaseSurfaceHolder implements SurfaceHolder {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:10.747 -0400", hash_original_method = "EAFF612A3F1F2919ED355687F3DB192A", hash_generated_method = "398E2117A2207C9876E3AE69DF8390B7")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 12:28:49.068 -0400", hash_original_method = "EAFF612A3F1F2919ED355687F3DB192A", hash_generated_method = "398E2117A2207C9876E3AE69DF8390B7")
     @DSModeled(DSC.SAFE)
     public void setType(int type) {
         dsTaint.addTaint(type);
@@ -240,40 +240,40 @@ public abstract class BaseSurfaceHolder implements SurfaceHolder {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:10.747 -0400", hash_original_method = "62E11A68BFE49B76328D9C868319D907", hash_generated_method = "334E159D0E2F23EF78D47FD95BCF628B")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 12:28:49.109 -0400", hash_original_method = "62E11A68BFE49B76328D9C868319D907", hash_generated_method = "194A02660A651EC22881208FFDD6071F")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public Canvas lockCanvas() {
-        Canvas varDCD444076620679FEBFD5654E04995DA_1594485638 = (internalLockCanvas(null));
+        Canvas varDCD444076620679FEBFD5654E04995DA_742372938 = (internalLockCanvas(null));
         return (Canvas)dsTaint.getTaint();
         // ---------- Original Method ----------
         //return internalLockCanvas(null);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:10.747 -0400", hash_original_method = "680C567FEFB26BF9B08DD2E5AA0C3FA9", hash_generated_method = "1552ED22659452E95EDD3B6E15DA7123")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 12:28:49.130 -0400", hash_original_method = "680C567FEFB26BF9B08DD2E5AA0C3FA9", hash_generated_method = "F2CD78013E2489895BECC1472563389A")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public Canvas lockCanvas(Rect dirty) {
         dsTaint.addTaint(dirty.dsTaint);
-        Canvas varAE30442AF157E58DE00BC863D96B2D4A_486148564 = (internalLockCanvas(dirty));
+        Canvas varAE30442AF157E58DE00BC863D96B2D4A_1280117013 = (internalLockCanvas(dirty));
         return (Canvas)dsTaint.getTaint();
         // ---------- Original Method ----------
         //return internalLockCanvas(dirty);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:10.747 -0400", hash_original_method = "ACAAC9086C35A7B567CF149ED3F96213", hash_generated_method = "7B9793E546BC9880E25EFC1AA9634F29")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 12:28:49.192 -0400", hash_original_method = "ACAAC9086C35A7B567CF149ED3F96213", hash_generated_method = "A1822B6A7095407942F41F03A12D81EA")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     private final Canvas internalLockCanvas(Rect dirty) {
         dsTaint.addTaint(dirty.dsTaint);
         {
-            throw new BadSurfaceTypeException(
+            if (DroidSafeAndroidRuntime.control) throw new BadSurfaceTypeException(
                     "Surface type is SURFACE_TYPE_PUSH_BUFFERS");
         } //End block
         mSurfaceLock.lock();
         Canvas c;
         c = null;
         {
-            boolean var43C0ADBD79E0A1490425EC9B0C1E3110_1621956995 = (onAllowLockCanvas());
+            boolean var43C0ADBD79E0A1490425EC9B0C1E3110_1892300419 = (onAllowLockCanvas());
             {
                 {
                     {
@@ -314,7 +314,7 @@ public abstract class BaseSurfaceHolder implements SurfaceHolder {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:10.747 -0400", hash_original_method = "94198D6DEEC3932A7E8E0C313FB26861", hash_generated_method = "9ACFE5B580BE043B7235595332F94CB9")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 12:28:49.222 -0400", hash_original_method = "94198D6DEEC3932A7E8E0C313FB26861", hash_generated_method = "9ACFE5B580BE043B7235595332F94CB9")
     @DSModeled(DSC.SAFE)
     public void unlockCanvasAndPost(Canvas canvas) {
         dsTaint.addTaint(canvas.dsTaint);
@@ -326,7 +326,7 @@ public abstract class BaseSurfaceHolder implements SurfaceHolder {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:10.747 -0400", hash_original_method = "FB03EEF08A419E6F5E4B7D4C32AA13C8", hash_generated_method = "C6283542455A71726493ABA0EB18310B")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 12:28:49.243 -0400", hash_original_method = "FB03EEF08A419E6F5E4B7D4C32AA13C8", hash_generated_method = "C6283542455A71726493ABA0EB18310B")
     @DSModeled(DSC.SAFE)
     public Surface getSurface() {
         return (Surface)dsTaint.getTaint();
@@ -335,7 +335,7 @@ public abstract class BaseSurfaceHolder implements SurfaceHolder {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:10.747 -0400", hash_original_method = "BE643F9C45A14CE663214357E2B511D8", hash_generated_method = "85CFB6277076C7B3AE3561A9083FAF91")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 12:28:49.249 -0400", hash_original_method = "BE643F9C45A14CE663214357E2B511D8", hash_generated_method = "85CFB6277076C7B3AE3561A9083FAF91")
     @DSModeled(DSC.SAFE)
     public Rect getSurfaceFrame() {
         return (Rect)dsTaint.getTaint();
@@ -344,7 +344,7 @@ public abstract class BaseSurfaceHolder implements SurfaceHolder {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:10.748 -0400", hash_original_method = "B2173B72636D8AF8E14456C4D20DEB0F", hash_generated_method = "B4FA526266AAFED55E07500772461F9C")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 12:28:49.271 -0400", hash_original_method = "B2173B72636D8AF8E14456C4D20DEB0F", hash_generated_method = "B4FA526266AAFED55E07500772461F9C")
     @DSModeled(DSC.SAFE)
     public void setSurfaceFrameSize(int width, int height) {
         dsTaint.addTaint(height);

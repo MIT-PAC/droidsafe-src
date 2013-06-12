@@ -3,10 +3,10 @@ package com.android.internal.view.menu;
 // Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
+import droidsafe.runtime.*;
 
-// import Iterator to deal with enhanced for loop translation
+// needed for enhanced for control translations
 import java.util.Iterator;
-
 import com.android.internal.view.menu.ActionMenuView.ActionMenuChildView;
 import android.content.Context;
 import android.content.res.Configuration;
@@ -25,7 +25,7 @@ import android.widget.ImageButton;
 import java.util.ArrayList;
 
 public class ActionMenuPresenter extends BaseMenuPresenter implements ActionProvider.SubUiVisibilityListener {
-    private static final String TAG = "ActionMenuPresenter";
+    private static String TAG = "ActionMenuPresenter";
     private View mOverflowButton;
     private boolean mReserveOverflow;
     private boolean mReserveOverflowSet;
@@ -37,15 +37,15 @@ public class ActionMenuPresenter extends BaseMenuPresenter implements ActionProv
     private boolean mWidthLimitSet;
     private boolean mExpandedActionViewsExclusive;
     private int mMinCellSize;
-    private final SparseBooleanArray mActionButtonGroups = new SparseBooleanArray();
+    private SparseBooleanArray mActionButtonGroups = new SparseBooleanArray();
     private View mScrapActionButtonView;
     private OverflowPopup mOverflowPopup;
     private ActionButtonSubmenu mActionButtonPopup;
     private OpenOverflowRunnable mPostedOpenRunnable;
-    final PopupPresenterCallback mPopupPresenterCallback = new PopupPresenterCallback();
+    PopupPresenterCallback mPopupPresenterCallback = new PopupPresenterCallback();
     int mOpenSubMenuId;
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:10.971 -0400", hash_original_method = "D92A82193E3FCDED5C9710083B861A1F", hash_generated_method = "07C90367946830BE3805D43BCEFA5EFC")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 12:28:49.821 -0400", hash_original_method = "D92A82193E3FCDED5C9710083B861A1F", hash_generated_method = "07C90367946830BE3805D43BCEFA5EFC")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public ActionMenuPresenter(Context context) {
         super(context, com.android.internal.R.layout.action_menu_layout,
@@ -55,14 +55,14 @@ public class ActionMenuPresenter extends BaseMenuPresenter implements ActionProv
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:10.971 -0400", hash_original_method = "BC9545155A7D6BD0732B2C48FEAAA115", hash_generated_method = "50A0D1312CABB15D1AA9E0051BD7B592")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 12:28:49.850 -0400", hash_original_method = "BC9545155A7D6BD0732B2C48FEAAA115", hash_generated_method = "E11AAEE07E47CEE8C81E1A373976109E")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     @Override
     public void initForMenu(Context context, MenuBuilder menu) {
         dsTaint.addTaint(menu.dsTaint);
         dsTaint.addTaint(context.dsTaint);
         super.initForMenu(context, menu);
-        final Resources res;
+        Resources res;
         res = context.getResources();
         {
             mReserveOverflow = !ViewConfiguration.get(context).hasPermanentMenuKey();
@@ -78,7 +78,7 @@ public class ActionMenuPresenter extends BaseMenuPresenter implements ActionProv
         {
             {
                 mOverflowButton = new OverflowMenuButton(mSystemContext);
-                final int spec;
+                int spec;
                 spec = MeasureSpec.makeMeasureSpec(0, MeasureSpec.UNSPECIFIED);
                 mOverflowButton.measure(spec, spec);
             } //End block
@@ -95,7 +95,7 @@ public class ActionMenuPresenter extends BaseMenuPresenter implements ActionProv
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:10.971 -0400", hash_original_method = "A17C8C9C29C5D048821A272E4E211244", hash_generated_method = "E29176474F3D87799DAA2158BEDC5A41")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 12:28:49.917 -0400", hash_original_method = "A17C8C9C29C5D048821A272E4E211244", hash_generated_method = "E29176474F3D87799DAA2158BEDC5A41")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public void onConfigurationChanged(Configuration newConfig) {
         //DSFIXME:  CODE0009: Possible callback target function detected
@@ -118,7 +118,7 @@ public class ActionMenuPresenter extends BaseMenuPresenter implements ActionProv
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:10.971 -0400", hash_original_method = "EDE1166C9C5D6E2371538FA8BF1D31B5", hash_generated_method = "4F7C8B529B88B945B20E350D6211E7F3")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 12:28:49.953 -0400", hash_original_method = "EDE1166C9C5D6E2371538FA8BF1D31B5", hash_generated_method = "4F7C8B529B88B945B20E350D6211E7F3")
     @DSModeled(DSC.SAFE)
     public void setWidthLimit(int width, boolean strict) {
         dsTaint.addTaint(width);
@@ -131,7 +131,7 @@ public class ActionMenuPresenter extends BaseMenuPresenter implements ActionProv
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:10.971 -0400", hash_original_method = "9F648716EF61D229ED05FF998E104A97", hash_generated_method = "D1632A233D799C0982B964ACCEB2B717")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 12:28:49.956 -0400", hash_original_method = "9F648716EF61D229ED05FF998E104A97", hash_generated_method = "D1632A233D799C0982B964ACCEB2B717")
     @DSModeled(DSC.SAFE)
     public void setReserveOverflow(boolean reserveOverflow) {
         dsTaint.addTaint(reserveOverflow);
@@ -142,7 +142,7 @@ public class ActionMenuPresenter extends BaseMenuPresenter implements ActionProv
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:10.971 -0400", hash_original_method = "481A608E0CFB48388247866BAE1C540A", hash_generated_method = "7712232C7B82D74766853F6306A3E865")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 12:28:49.959 -0400", hash_original_method = "481A608E0CFB48388247866BAE1C540A", hash_generated_method = "7712232C7B82D74766853F6306A3E865")
     @DSModeled(DSC.SAFE)
     public void setItemLimit(int itemCount) {
         dsTaint.addTaint(itemCount);
@@ -153,7 +153,7 @@ public class ActionMenuPresenter extends BaseMenuPresenter implements ActionProv
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:10.971 -0400", hash_original_method = "28685D1CD5555D455AA1245A08028303", hash_generated_method = "CA4E76BAC345BD02C00A003147154CE8")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 12:28:50.014 -0400", hash_original_method = "28685D1CD5555D455AA1245A08028303", hash_generated_method = "CA4E76BAC345BD02C00A003147154CE8")
     @DSModeled(DSC.SAFE)
     public void setExpandedActionViewsExclusive(boolean isExclusive) {
         //DSFIXME:  CODE0009: Possible callback target function detected
@@ -163,7 +163,7 @@ public class ActionMenuPresenter extends BaseMenuPresenter implements ActionProv
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:10.971 -0400", hash_original_method = "AD0B74E3B833D08F8481D15CB97EDB86", hash_generated_method = "C5D15B7FB142679FA1D55B5BA6FCB131")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 12:28:50.036 -0400", hash_original_method = "AD0B74E3B833D08F8481D15CB97EDB86", hash_generated_method = "C5D15B7FB142679FA1D55B5BA6FCB131")
     @DSModeled(DSC.SAFE)
     @Override
     public MenuView getMenuView(ViewGroup root) {
@@ -179,7 +179,7 @@ public class ActionMenuPresenter extends BaseMenuPresenter implements ActionProv
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:10.972 -0400", hash_original_method = "59BA3C56A8058A32CF9B2FCB0A0B5507", hash_generated_method = "5741846B4951F11E6C6409162C803B49")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 12:28:50.099 -0400", hash_original_method = "59BA3C56A8058A32CF9B2FCB0A0B5507", hash_generated_method = "F9D9EAD74FDCAC3363573DBB0775EC65")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     @Override
     public View getItemView(MenuItemImpl item, View convertView, ViewGroup parent) {
@@ -189,7 +189,7 @@ public class ActionMenuPresenter extends BaseMenuPresenter implements ActionProv
         View actionView;
         actionView = item.getActionView();
         {
-            boolean var042A2602C5874EB8C3227D44BE9ADF6F_1827850720 = (actionView == null || item.hasCollapsibleActionView());
+            boolean var042A2602C5874EB8C3227D44BE9ADF6F_255404393 = (actionView == null || item.hasCollapsibleActionView());
             {
                 {
                     convertView = null;
@@ -198,12 +198,12 @@ public class ActionMenuPresenter extends BaseMenuPresenter implements ActionProv
             } //End block
         } //End collapsed parenthetic
         actionView.setVisibility(item.isActionViewExpanded() ? View.GONE : View.VISIBLE);
-        final ActionMenuView menuParent;
+        ActionMenuView menuParent;
         menuParent = (ActionMenuView) parent;
-        final ViewGroup.LayoutParams lp;
+        ViewGroup.LayoutParams lp;
         lp = actionView.getLayoutParams();
         {
-            boolean var3F4E8E87992AC39D78E62AD5C121760F_145442507 = (!menuParent.checkLayoutParams(lp));
+            boolean var3F4E8E87992AC39D78E62AD5C121760F_1565085864 = (!menuParent.checkLayoutParams(lp));
             {
                 actionView.setLayoutParams(menuParent.generateLayoutParams(lp));
             } //End block
@@ -227,14 +227,14 @@ public class ActionMenuPresenter extends BaseMenuPresenter implements ActionProv
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:10.972 -0400", hash_original_method = "2F59AFEB76404A397084655FE3C87387", hash_generated_method = "5CE27D5CF6401950162BD34A83C3A980")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 12:28:50.129 -0400", hash_original_method = "2F59AFEB76404A397084655FE3C87387", hash_generated_method = "FF7D492D1BD858AF711956DB05B0A3D3")
     @DSModeled(DSC.SAFE)
     @Override
     public void bindItemView(MenuItemImpl item, MenuView.ItemView itemView) {
         dsTaint.addTaint(itemView.dsTaint);
         dsTaint.addTaint(item.dsTaint);
         itemView.initialize(item, 0);
-        final ActionMenuView menuView;
+        ActionMenuView menuView;
         menuView = (ActionMenuView) mMenuView;
         ActionMenuItemView actionItemView;
         actionItemView = (ActionMenuItemView) itemView;
@@ -247,35 +247,35 @@ public class ActionMenuPresenter extends BaseMenuPresenter implements ActionProv
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:10.972 -0400", hash_original_method = "CF6FF79E1183E432FB7F279F6A955298", hash_generated_method = "A43832C991068973FCE578360F86312C")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 12:28:50.152 -0400", hash_original_method = "CF6FF79E1183E432FB7F279F6A955298", hash_generated_method = "1A1986DFFB6DF4EB5470854ACF9D2264")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     @Override
     public boolean shouldIncludeItem(int childIndex, MenuItemImpl item) {
         dsTaint.addTaint(item.dsTaint);
         dsTaint.addTaint(childIndex);
-        boolean var63CDEDD9ADF2A3E4CD65B5345E84754D_1118345512 = (item.isActionButton());
+        boolean var63CDEDD9ADF2A3E4CD65B5345E84754D_1058043163 = (item.isActionButton());
         return dsTaint.getTaintBoolean();
         // ---------- Original Method ----------
         //return item.isActionButton();
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:10.972 -0400", hash_original_method = "675BFE60E67D99082131CDB4BA0667CE", hash_generated_method = "C09F46A78B50BD47760D084A492E6A4E")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 12:28:50.221 -0400", hash_original_method = "675BFE60E67D99082131CDB4BA0667CE", hash_generated_method = "C18DC7E6917E4F220736A940C25F5E61")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     @Override
     public void updateMenuView(boolean cleared) {
         dsTaint.addTaint(cleared);
         super.updateMenuView(cleared);
         {
-            final ArrayList<MenuItemImpl> actionItems;
+            ArrayList<MenuItemImpl> actionItems;
             actionItems = mMenu.getActionItems();
-            final int count;
+            int count;
             count = actionItems.size();
             {
                 int i;
                 i = 0;
                 {
-                    final ActionProvider provider;
+                    ActionProvider provider;
                     provider = actionItems.get(i).getActionProvider();
                     {
                         provider.setSubUiVisibilityListener(this);
@@ -283,13 +283,13 @@ public class ActionMenuPresenter extends BaseMenuPresenter implements ActionProv
                 } //End block
             } //End collapsed parenthetic
         } //End block
-        final ArrayList<MenuItemImpl> nonActionItems;
+        ArrayList<MenuItemImpl> nonActionItems;
         nonActionItems = mMenu.getNonActionItems();
         nonActionItems = null;
         boolean hasOverflow;
         hasOverflow = false;
         {
-            final int count;
+            int count;
             count = nonActionItems.size();
             {
                 hasOverflow = !nonActionItems.get(0).isActionViewExpanded();
@@ -314,7 +314,7 @@ public class ActionMenuPresenter extends BaseMenuPresenter implements ActionProv
             } //End block
         } //End block
         {
-            boolean var636A254D04624E67B4E275AE8C012F60_1368265299 = (mOverflowButton != null && mOverflowButton.getParent() == mMenuView);
+            boolean var636A254D04624E67B4E275AE8C012F60_1314193156 = (mOverflowButton != null && mOverflowButton.getParent() == mMenuView);
             {
                 ((ViewGroup) mMenuView).removeView(mOverflowButton);
             } //End block
@@ -325,16 +325,16 @@ public class ActionMenuPresenter extends BaseMenuPresenter implements ActionProv
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:10.972 -0400", hash_original_method = "9D8FC445B750A9A2E8805EF185920422", hash_generated_method = "E36FB56C3059C58F079084B585BB0AD9")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 12:28:50.251 -0400", hash_original_method = "9D8FC445B750A9A2E8805EF185920422", hash_generated_method = "77444443F1C402429B50C8F83A46EF9B")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     @Override
     public boolean filterLeftoverView(ViewGroup parent, int childIndex) {
         dsTaint.addTaint(parent.dsTaint);
         dsTaint.addTaint(childIndex);
         {
-            boolean var2C5D3A435D4B7C5FC7DF763D994EC999_370005982 = (parent.getChildAt(childIndex) == mOverflowButton);
+            boolean var2C5D3A435D4B7C5FC7DF763D994EC999_692698556 = (parent.getChildAt(childIndex) == mOverflowButton);
         } //End collapsed parenthetic
-        boolean var7C223E5B8CEAE7D7BF100F1F8A9FA1B9_147228012 = (super.filterLeftoverView(parent, childIndex));
+        boolean var7C223E5B8CEAE7D7BF100F1F8A9FA1B9_1454614570 = (super.filterLeftoverView(parent, childIndex));
         return dsTaint.getTaintBoolean();
         // ---------- Original Method ----------
         //if (parent.getChildAt(childIndex) == mOverflowButton) return false;
@@ -342,18 +342,18 @@ public class ActionMenuPresenter extends BaseMenuPresenter implements ActionProv
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:10.972 -0400", hash_original_method = "37299DBD51D21A28CE7BE5283912D693", hash_generated_method = "44E71CBD35933D45CB8B52DB5FBF6E78")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 12:28:50.273 -0400", hash_original_method = "37299DBD51D21A28CE7BE5283912D693", hash_generated_method = "844B77A26F5090B912B68246D66FD5C9")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public boolean onSubMenuSelected(SubMenuBuilder subMenu) {
         //DSFIXME:  CODE0009: Possible callback target function detected
         dsTaint.addTaint(subMenu.dsTaint);
         {
-            boolean var89D6F494337AE8363DF4B82D8D3CD4B2_168754746 = (!subMenu.hasVisibleItems());
+            boolean var89D6F494337AE8363DF4B82D8D3CD4B2_1098829135 = (!subMenu.hasVisibleItems());
         } //End collapsed parenthetic
         SubMenuBuilder topSubMenu;
         topSubMenu = subMenu;
         {
-            boolean var3070E3EF1FB105EFCC31C47F14EB2042_1735010379 = (topSubMenu.getParentMenu() != mMenu);
+            boolean var3070E3EF1FB105EFCC31C47F14EB2042_2011961831 = (topSubMenu.getParentMenu() != mMenu);
             {
                 topSubMenu = (SubMenuBuilder) topSubMenu.getParentMenu();
             } //End block
@@ -389,22 +389,22 @@ public class ActionMenuPresenter extends BaseMenuPresenter implements ActionProv
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:10.973 -0400", hash_original_method = "D21215C119A8C9273D02F36683639F77", hash_generated_method = "FAFEBA9C1EDBDD63772BF16ECFA6A16E")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 12:28:50.303 -0400", hash_original_method = "D21215C119A8C9273D02F36683639F77", hash_generated_method = "7DAF56AA19EAD4BADCBB7E236FF6255D")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     private View findViewForItem(MenuItem item) {
         dsTaint.addTaint(item.dsTaint);
-        final ViewGroup parent;
+        ViewGroup parent;
         parent = (ViewGroup) mMenuView;
-        final int count;
+        int count;
         count = parent.getChildCount();
         {
             int i;
             i = 0;
             {
-                final View child;
+                View child;
                 child = parent.getChildAt(i);
                 {
-                    boolean var6A79BB2D965C162A835EA9549023D9A8_881816669 = (child instanceof MenuView.ItemView &&
+                    boolean var6A79BB2D965C162A835EA9549023D9A8_2042325310 = (child instanceof MenuView.ItemView &&
                     ((MenuView.ItemView) child).getItemData() == item);
                 } //End collapsed parenthetic
             } //End block
@@ -425,11 +425,11 @@ public class ActionMenuPresenter extends BaseMenuPresenter implements ActionProv
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:10.973 -0400", hash_original_method = "51D4B09F0769DB498C88D93C1DD1D610", hash_generated_method = "66A1D3A5F9BDC8A8622824A6AFABA49B")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 12:28:50.343 -0400", hash_original_method = "51D4B09F0769DB498C88D93C1DD1D610", hash_generated_method = "B769CE8ACC1F6EA86F83EB715C444873")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public boolean showOverflowMenu() {
         {
-            boolean varA5B27DD56A8D2501A2BC1F22BE54417E_295105165 = (mReserveOverflow && !isOverflowMenuShowing() && mMenu != null && mMenuView != null &&
+            boolean varA5B27DD56A8D2501A2BC1F22BE54417E_246442705 = (mReserveOverflow && !isOverflowMenuShowing() && mMenu != null && mMenuView != null &&
                 mPostedOpenRunnable == null);
             {
                 OverflowPopup popup;
@@ -453,7 +453,7 @@ public class ActionMenuPresenter extends BaseMenuPresenter implements ActionProv
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:10.973 -0400", hash_original_method = "F07D2B002CE8D32774BDF7E27A216F8A", hash_generated_method = "255078108E2750C91D82475C07F3A285")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 12:28:50.407 -0400", hash_original_method = "F07D2B002CE8D32774BDF7E27A216F8A", hash_generated_method = "255078108E2750C91D82475C07F3A285")
     @DSModeled(DSC.SAFE)
     public boolean hideOverflowMenu() {
         {
@@ -481,7 +481,7 @@ public class ActionMenuPresenter extends BaseMenuPresenter implements ActionProv
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:10.973 -0400", hash_original_method = "048650AFF94B01A571A17F813CE8142B", hash_generated_method = "688E8AB9218FCE3822256A3077FD4B39")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 12:28:50.447 -0400", hash_original_method = "048650AFF94B01A571A17F813CE8142B", hash_generated_method = "688E8AB9218FCE3822256A3077FD4B39")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public boolean dismissPopupMenus() {
         boolean result;
@@ -495,7 +495,7 @@ public class ActionMenuPresenter extends BaseMenuPresenter implements ActionProv
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:10.973 -0400", hash_original_method = "86830002AFDFBC8C0790A0C80E395F68", hash_generated_method = "9A056E4F8A37AC979BBB29ABB31C043E")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 12:28:50.468 -0400", hash_original_method = "86830002AFDFBC8C0790A0C80E395F68", hash_generated_method = "9A056E4F8A37AC979BBB29ABB31C043E")
     @DSModeled(DSC.SAFE)
     public boolean hideSubMenus() {
         {
@@ -511,17 +511,17 @@ public class ActionMenuPresenter extends BaseMenuPresenter implements ActionProv
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:10.973 -0400", hash_original_method = "EDFA99D71A654F51EBF8F88159FF0AE5", hash_generated_method = "5FCCF28BAF8229683A4268A29A31F74A")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 12:28:50.496 -0400", hash_original_method = "EDFA99D71A654F51EBF8F88159FF0AE5", hash_generated_method = "A715A1A54694F4C84527CFA0AACDF690")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public boolean isOverflowMenuShowing() {
-        boolean varDDE92196405694CCE3B775C2D317192F_1125968247 = (mOverflowPopup != null && mOverflowPopup.isShowing());
+        boolean varDDE92196405694CCE3B775C2D317192F_1444979415 = (mOverflowPopup != null && mOverflowPopup.isShowing());
         return dsTaint.getTaintBoolean();
         // ---------- Original Method ----------
         //return mOverflowPopup != null && mOverflowPopup.isShowing();
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:10.973 -0400", hash_original_method = "9F44211E52A7149BFED02520B6DEF800", hash_generated_method = "4D6C1E8FDA41830356B62B44C4D2BBD0")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 12:28:50.513 -0400", hash_original_method = "9F44211E52A7149BFED02520B6DEF800", hash_generated_method = "4D6C1E8FDA41830356B62B44C4D2BBD0")
     @DSModeled(DSC.SAFE)
     public boolean isOverflowReserved() {
         return dsTaint.getTaintBoolean();
@@ -530,21 +530,21 @@ public class ActionMenuPresenter extends BaseMenuPresenter implements ActionProv
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:10.974 -0400", hash_original_method = "3161CCF567C7C41004F1DD2E1141CBA5", hash_generated_method = "DA505DDB71E61D322AF67CF1508A32BF")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 12:28:50.673 -0400", hash_original_method = "3161CCF567C7C41004F1DD2E1141CBA5", hash_generated_method = "B583650C34C1DF21CA1820F7F264C138")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public boolean flagActionItems() {
         //DSFIXME:  CODE0009: Possible callback target function detected
-        final ArrayList<MenuItemImpl> visibleItems;
+        ArrayList<MenuItemImpl> visibleItems;
         visibleItems = mMenu.getVisibleItems();
-        final int itemsSize;
+        int itemsSize;
         itemsSize = visibleItems.size();
         int maxActions;
         maxActions = mMaxItems;
         int widthLimit;
         widthLimit = mActionItemWidthLimit;
-        final int querySpec;
+        int querySpec;
         querySpec = MeasureSpec.makeMeasureSpec(0, MeasureSpec.UNSPECIFIED);
-        final ViewGroup parent;
+        ViewGroup parent;
         parent = (ViewGroup) mMenuView;
         int requiredItems;
         requiredItems = 0;
@@ -561,12 +561,12 @@ public class ActionMenuPresenter extends BaseMenuPresenter implements ActionProv
                 MenuItemImpl item;
                 item = visibleItems.get(i);
                 {
-                    boolean varD0608EF2260E1F8B9264901745B3863A_451897043 = (item.requiresActionButton());
+                    boolean varD0608EF2260E1F8B9264901745B3863A_1244871366 = (item.requiresActionButton());
                     {
                         requiredItems++;
                     } //End block
                     {
-                        boolean varD8421CC750216F5C60B46CDFDEBDEB05_1533658475 = (item.requestsActionButton());
+                        boolean varD8421CC750216F5C60B46CDFDEBDEB05_662716254 = (item.requestsActionButton());
                         {
                             requestedItems++;
                         } //End block
@@ -576,7 +576,7 @@ public class ActionMenuPresenter extends BaseMenuPresenter implements ActionProv
                     } //End collapsed parenthetic
                 } //End collapsed parenthetic
                 {
-                    boolean varBBBF1208950B60080E53B87439022606_1588460541 = (mExpandedActionViewsExclusive && item.isActionViewExpanded());
+                    boolean varBBBF1208950B60080E53B87439022606_1195821930 = (mExpandedActionViewsExclusive && item.isActionViewExpanded());
                     {
                         maxActions = 0;
                     } //End block
@@ -587,7 +587,7 @@ public class ActionMenuPresenter extends BaseMenuPresenter implements ActionProv
             maxActions--;
         } //End block
         maxActions -= requiredItems;
-        final SparseBooleanArray seenGroups;
+        SparseBooleanArray seenGroups;
         seenGroups = mActionButtonGroups;
         seenGroups.clear();
         int cellSize;
@@ -596,7 +596,7 @@ public class ActionMenuPresenter extends BaseMenuPresenter implements ActionProv
         cellsRemaining = 0;
         {
             cellsRemaining = widthLimit / mMinCellSize;
-            final int cellSizeRemaining;
+            int cellSizeRemaining;
             cellSizeRemaining = widthLimit % mMinCellSize;
             cellSize = mMinCellSize + cellSizeRemaining / cellsRemaining;
         } //End block
@@ -607,7 +607,7 @@ public class ActionMenuPresenter extends BaseMenuPresenter implements ActionProv
                 MenuItemImpl item;
                 item = visibleItems.get(i);
                 {
-                    boolean varD0608EF2260E1F8B9264901745B3863A_383979337 = (item.requiresActionButton());
+                    boolean varD0608EF2260E1F8B9264901745B3863A_336573069 = (item.requiresActionButton());
                     {
                         View v;
                         v = getItemView(item, mScrapActionButtonView, parent);
@@ -621,13 +621,13 @@ public class ActionMenuPresenter extends BaseMenuPresenter implements ActionProv
                         {
                             v.measure(querySpec, querySpec);
                         } //End block
-                        final int measuredWidth;
+                        int measuredWidth;
                         measuredWidth = v.getMeasuredWidth();
                         widthLimit -= measuredWidth;
                         {
                             firstActionWidth = measuredWidth;
                         } //End block
-                        final int groupId;
+                        int groupId;
                         groupId = item.getGroupId();
                         {
                             seenGroups.put(groupId, true);
@@ -635,11 +635,11 @@ public class ActionMenuPresenter extends BaseMenuPresenter implements ActionProv
                         item.setIsActionButton(true);
                     } //End block
                     {
-                        boolean varD8421CC750216F5C60B46CDFDEBDEB05_1963390340 = (item.requestsActionButton());
+                        boolean varD8421CC750216F5C60B46CDFDEBDEB05_628418374 = (item.requestsActionButton());
                         {
-                            final int groupId;
+                            int groupId;
                             groupId = item.getGroupId();
-                            final boolean inGroup;
+                            boolean inGroup;
                             inGroup = seenGroups.get(groupId);
                             boolean isAction;
                             isAction = (maxActions > 0 || inGroup) && widthLimit > 0 &&
@@ -651,7 +651,7 @@ public class ActionMenuPresenter extends BaseMenuPresenter implements ActionProv
                                     mScrapActionButtonView = v;
                                 } //End block
                                 {
-                                    final int cells;
+                                    int cells;
                                     cells = ActionMenuView.measureChildForCells(v,
                                 cellSize, cellsRemaining, querySpec, 0);
                                     cellsRemaining -= cells;
@@ -662,7 +662,7 @@ public class ActionMenuPresenter extends BaseMenuPresenter implements ActionProv
                                 {
                                     v.measure(querySpec, querySpec);
                                 } //End block
-                                final int measuredWidth;
+                                int measuredWidth;
                                 measuredWidth = v.getMeasuredWidth();
                                 widthLimit -= measuredWidth;
                                 {
@@ -687,10 +687,10 @@ public class ActionMenuPresenter extends BaseMenuPresenter implements ActionProv
                                         MenuItemImpl areYouMyGroupie;
                                         areYouMyGroupie = visibleItems.get(j);
                                         {
-                                            boolean var58D13C27DFD727DA00E5820FA84F8A98_1415392623 = (areYouMyGroupie.getGroupId() == groupId);
+                                            boolean var58D13C27DFD727DA00E5820FA84F8A98_872308905 = (areYouMyGroupie.getGroupId() == groupId);
                                             {
                                                 {
-                                                    boolean var3845F6435C6D2EFBC5673BCA3826363D_1516932628 = (areYouMyGroupie.isActionButton());
+                                                    boolean var3845F6435C6D2EFBC5673BCA3826363D_772637252 = (areYouMyGroupie.isActionButton());
                                                     maxActions++;
                                                 } //End collapsed parenthetic
                                                 areYouMyGroupie.setIsActionButton(false);
@@ -712,7 +712,7 @@ public class ActionMenuPresenter extends BaseMenuPresenter implements ActionProv
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:10.974 -0400", hash_original_method = "C8ECD6F76386581509465FBD82905343", hash_generated_method = "EE5F0BB6C71A341A4F499D835D7F64C8")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 12:28:50.752 -0400", hash_original_method = "C8ECD6F76386581509465FBD82905343", hash_generated_method = "EE5F0BB6C71A341A4F499D835D7F64C8")
     @DSModeled(DSC.SAFE)
     @Override
     public void onCloseMenu(MenuBuilder menu, boolean allMenusAreClosing) {
@@ -727,7 +727,7 @@ public class ActionMenuPresenter extends BaseMenuPresenter implements ActionProv
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:10.974 -0400", hash_original_method = "06AD8BBBF679989CAE04F426A0FFC61D", hash_generated_method = "C087B19011D90201ECA1BE888EBE66EF")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 12:28:50.765 -0400", hash_original_method = "06AD8BBBF679989CAE04F426A0FFC61D", hash_generated_method = "C087B19011D90201ECA1BE888EBE66EF")
     @DSModeled(DSC.SAFE)
     @Override
     public Parcelable onSaveInstanceState() {
@@ -743,7 +743,7 @@ public class ActionMenuPresenter extends BaseMenuPresenter implements ActionProv
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:10.974 -0400", hash_original_method = "56321A468C9EBB2A9C3695363B6A634B", hash_generated_method = "CCCFA0D6586C138095EA5B0BDFEFE728")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 12:28:50.780 -0400", hash_original_method = "56321A468C9EBB2A9C3695363B6A634B", hash_generated_method = "CCCFA0D6586C138095EA5B0BDFEFE728")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     @Override
     public void onRestoreInstanceState(Parcelable state) {
@@ -772,7 +772,7 @@ public class ActionMenuPresenter extends BaseMenuPresenter implements ActionProv
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:10.974 -0400", hash_original_method = "E6B8634A947A629174EE0649ED3769CC", hash_generated_method = "864D2F45C1B1B0E4EED622F834821D29")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 12:28:50.809 -0400", hash_original_method = "E6B8634A947A629174EE0649ED3769CC", hash_generated_method = "864D2F45C1B1B0E4EED622F834821D29")
     @DSModeled(DSC.SAFE)
     @Override
     public void onSubUiVisibilityChanged(boolean isVisible) {
@@ -796,7 +796,7 @@ public class ActionMenuPresenter extends BaseMenuPresenter implements ActionProv
     private static class SavedState implements Parcelable {
         public int openSubMenuId;
         public static final Parcelable.Creator<SavedState> CREATOR = new Parcelable.Creator<SavedState>() {            
-            @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:10.974 -0400", hash_original_method = "E26812089C072DDE1A14AECAA6CD6686", hash_generated_method = "6C6B0A873BD52E2752F88E9968D483CA")
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 12:28:50.830 -0400", hash_original_method = "E26812089C072DDE1A14AECAA6CD6686", hash_generated_method = "6C6B0A873BD52E2752F88E9968D483CA")
             @DSModeled(DSC.SAFE)
             public SavedState createFromParcel(Parcel in) {
                 dsTaint.addTaint(in.dsTaint);
@@ -806,7 +806,7 @@ public class ActionMenuPresenter extends BaseMenuPresenter implements ActionProv
             }
 
             
-            @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:10.974 -0400", hash_original_method = "2D31E9CBAAAE05B696D738324F87FF78", hash_generated_method = "1325778BB443F872513E70F9A19C5918")
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 12:28:50.835 -0400", hash_original_method = "2D31E9CBAAAE05B696D738324F87FF78", hash_generated_method = "1325778BB443F872513E70F9A19C5918")
             @DSModeled(DSC.SAFE)
             public SavedState[] newArray(int size) {
                 dsTaint.addTaint(size);
@@ -818,14 +818,14 @@ public class ActionMenuPresenter extends BaseMenuPresenter implements ActionProv
             
 }; //Transformed anonymous class
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:10.975 -0400", hash_original_method = "5B86CE655F475C08F177FDB52AD9ECFE", hash_generated_method = "C090FABA26FDDCA8EDE202C484C72F19")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 12:28:50.848 -0400", hash_original_method = "5B86CE655F475C08F177FDB52AD9ECFE", hash_generated_method = "C090FABA26FDDCA8EDE202C484C72F19")
         @DSModeled(DSC.SAFE)
          SavedState() {
             // ---------- Original Method ----------
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:10.975 -0400", hash_original_method = "10B6E86FE11BCC070EDA2136A91ED86D", hash_generated_method = "CBF6EEFEE60151DBD123B817844599C6")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 12:28:50.870 -0400", hash_original_method = "10B6E86FE11BCC070EDA2136A91ED86D", hash_generated_method = "CBF6EEFEE60151DBD123B817844599C6")
         //DSFIXME:  CODE0002: Requires DSC value to be set
          SavedState(Parcel in) {
             dsTaint.addTaint(in.dsTaint);
@@ -835,7 +835,7 @@ public class ActionMenuPresenter extends BaseMenuPresenter implements ActionProv
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:10.975 -0400", hash_original_method = "00F8174F9E89D0C972FA6D3F19742382", hash_generated_method = "826038BB7EBD5D3C24D01F025676D20A")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 12:28:50.874 -0400", hash_original_method = "00F8174F9E89D0C972FA6D3F19742382", hash_generated_method = "826038BB7EBD5D3C24D01F025676D20A")
         @DSModeled(DSC.SAFE)
         @Override
         public int describeContents() {
@@ -845,7 +845,7 @@ public class ActionMenuPresenter extends BaseMenuPresenter implements ActionProv
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:10.975 -0400", hash_original_method = "4E7F3A208B8DADACA56997D8D1B3C90C", hash_generated_method = "F619B06C48E6EBD793509CC6BCD3DB61")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 12:28:50.985 -0400", hash_original_method = "4E7F3A208B8DADACA56997D8D1B3C90C", hash_generated_method = "F619B06C48E6EBD793509CC6BCD3DB61")
         @DSModeled(DSC.SAFE)
         @Override
         public void writeToParcel(Parcel dest, int flags) {
@@ -863,7 +863,7 @@ public class ActionMenuPresenter extends BaseMenuPresenter implements ActionProv
     
     private class OverflowMenuButton extends ImageButton implements ActionMenuChildView {
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:10.975 -0400", hash_original_method = "1337D4EFD3D7C8CDCFFFFAE2F6FA113A", hash_generated_method = "AFC0951423AF589C19942F83315A4B9C")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 12:28:51.041 -0400", hash_original_method = "1337D4EFD3D7C8CDCFFFFAE2F6FA113A", hash_generated_method = "AFC0951423AF589C19942F83315A4B9C")
         //DSFIXME:  CODE0002: Requires DSC value to be set
         public OverflowMenuButton(Context context) {
             super(context, null, com.android.internal.R.attr.actionOverflowButtonStyle);
@@ -880,12 +880,12 @@ public class ActionMenuPresenter extends BaseMenuPresenter implements ActionProv
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:10.975 -0400", hash_original_method = "133A6BF2CD1B819427A8C49FA8B8E865", hash_generated_method = "7DEDE994385AC65B1509E8F19D743DD6")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 12:28:51.075 -0400", hash_original_method = "133A6BF2CD1B819427A8C49FA8B8E865", hash_generated_method = "B2B0CA103D7AE08AAB094640C956DD81")
         //DSFIXME:  CODE0002: Requires DSC value to be set
         @Override
         public boolean performClick() {
             {
-                boolean var6267028C3644B44519A636F6B5EF90B1_703247558 = (super.performClick());
+                boolean var6267028C3644B44519A636F6B5EF90B1_2053660231 = (super.performClick());
             } //End collapsed parenthetic
             playSoundEffect(SoundEffectConstants.CLICK);
             showOverflowMenu();
@@ -900,7 +900,7 @@ public class ActionMenuPresenter extends BaseMenuPresenter implements ActionProv
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:10.975 -0400", hash_original_method = "6BA15F1E8189A4801AF337396791DD31", hash_generated_method = "8737F815DFB5BA0F77D8125E994C5087")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 12:28:51.108 -0400", hash_original_method = "6BA15F1E8189A4801AF337396791DD31", hash_generated_method = "8737F815DFB5BA0F77D8125E994C5087")
         @DSModeled(DSC.SAFE)
         public boolean needsDividerBefore() {
             return dsTaint.getTaintBoolean();
@@ -909,7 +909,7 @@ public class ActionMenuPresenter extends BaseMenuPresenter implements ActionProv
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:10.975 -0400", hash_original_method = "CA065FAE0BB06CECFBFA2C36E268A066", hash_generated_method = "46D4C978960B79C1590D35276264801D")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 12:28:51.120 -0400", hash_original_method = "CA065FAE0BB06CECFBFA2C36E268A066", hash_generated_method = "46D4C978960B79C1590D35276264801D")
         @DSModeled(DSC.SAFE)
         public boolean needsDividerAfter() {
             return dsTaint.getTaintBoolean();
@@ -924,7 +924,7 @@ public class ActionMenuPresenter extends BaseMenuPresenter implements ActionProv
     
     private class OverflowPopup extends MenuPopupHelper {
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:10.975 -0400", hash_original_method = "FA0F7CD1552EAFA7C13929825A8B2112", hash_generated_method = "885659E676261E0B7FADF677DDE25222")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 12:28:51.121 -0400", hash_original_method = "FA0F7CD1552EAFA7C13929825A8B2112", hash_generated_method = "885659E676261E0B7FADF677DDE25222")
         //DSFIXME:  CODE0002: Requires DSC value to be set
         public OverflowPopup(Context context, MenuBuilder menu, View anchorView,
                 boolean overflowOnly) {
@@ -939,7 +939,7 @@ public class ActionMenuPresenter extends BaseMenuPresenter implements ActionProv
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:10.975 -0400", hash_original_method = "F12BAE7D751DC96E6D1F67F68EBC9919", hash_generated_method = "D961AEDFC90511B272F9442CDB781C2F")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 12:28:51.125 -0400", hash_original_method = "F12BAE7D751DC96E6D1F67F68EBC9919", hash_generated_method = "D961AEDFC90511B272F9442CDB781C2F")
         @DSModeled(DSC.SAFE)
         @Override
         public void onDismiss() {
@@ -961,7 +961,7 @@ public class ActionMenuPresenter extends BaseMenuPresenter implements ActionProv
     private class ActionButtonSubmenu extends MenuPopupHelper {
         private SubMenuBuilder mSubMenu;
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:10.975 -0400", hash_original_method = "E276DF3AF8ED38FB9CAF2E195F32B2B4", hash_generated_method = "B3F71C83441C4C7D163D51F901AF43C2")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 12:28:51.144 -0400", hash_original_method = "E276DF3AF8ED38FB9CAF2E195F32B2B4", hash_generated_method = "C9170DA6550F1AC99AA5E52C22E51441")
         //DSFIXME:  CODE0002: Requires DSC value to be set
         public ActionButtonSubmenu(Context context, SubMenuBuilder subMenu) {
             super(context, subMenu);
@@ -970,7 +970,7 @@ public class ActionMenuPresenter extends BaseMenuPresenter implements ActionProv
             MenuItemImpl item;
             item = (MenuItemImpl) subMenu.getItem();
             {
-                boolean var578FB4F95786C0DE176C492E48EDBCE4_1869016446 = (!item.isActionButton());
+                boolean var578FB4F95786C0DE176C492E48EDBCE4_1449717935 = (!item.isActionButton());
                 {
                     setAnchorView(mOverflowButton == null ? (View) mMenuView : mOverflowButton);
                 } //End block
@@ -978,7 +978,7 @@ public class ActionMenuPresenter extends BaseMenuPresenter implements ActionProv
             setCallback(mPopupPresenterCallback);
             boolean preserveIconSpacing;
             preserveIconSpacing = false;
-            final int count;
+            int count;
             count = subMenu.size();
             {
                 int i;
@@ -987,7 +987,7 @@ public class ActionMenuPresenter extends BaseMenuPresenter implements ActionProv
                     MenuItem childItem;
                     childItem = subMenu.getItem(i);
                     {
-                        boolean var85A149AB5F872C1FDE25CE93041B2D49_350699351 = (childItem.isVisible() && childItem.getIcon() != null);
+                        boolean var85A149AB5F872C1FDE25CE93041B2D49_540604720 = (childItem.isVisible() && childItem.getIcon() != null);
                         {
                             preserveIconSpacing = true;
                         } //End block
@@ -1015,7 +1015,7 @@ public class ActionMenuPresenter extends BaseMenuPresenter implements ActionProv
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:10.975 -0400", hash_original_method = "69C0D5A7A155D8F50134B9E617767128", hash_generated_method = "B37D5B9E984C9CB5FADA5EC691279C1B")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 12:28:51.174 -0400", hash_original_method = "69C0D5A7A155D8F50134B9E617767128", hash_generated_method = "B37D5B9E984C9CB5FADA5EC691279C1B")
         @DSModeled(DSC.SAFE)
         @Override
         public void onDismiss() {
@@ -1036,7 +1036,7 @@ public class ActionMenuPresenter extends BaseMenuPresenter implements ActionProv
     
     private class PopupPresenterCallback implements MenuPresenter.Callback {
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:10.975 -0400", hash_original_method = "29547EA8801B28CE842E58C3B2A91712", hash_generated_method = "AD8D26DA2AC1D0B652F0A3218C65CDAD")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 12:28:51.198 -0400", hash_original_method = "29547EA8801B28CE842E58C3B2A91712", hash_generated_method = "AD8D26DA2AC1D0B652F0A3218C65CDAD")
         //DSFIXME:  CODE0002: Requires DSC value to be set
         @Override
         public boolean onOpenSubMenu(MenuBuilder subMenu) {
@@ -1051,7 +1051,7 @@ public class ActionMenuPresenter extends BaseMenuPresenter implements ActionProv
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:10.976 -0400", hash_original_method = "847A197D3775740590913F0AAA0D3207", hash_generated_method = "5F1D6D04BA337D6BFCBAB2EF3BDDA3E3")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 12:28:51.243 -0400", hash_original_method = "847A197D3775740590913F0AAA0D3207", hash_generated_method = "5F1D6D04BA337D6BFCBAB2EF3BDDA3E3")
         //DSFIXME:  CODE0002: Requires DSC value to be set
         @Override
         public void onCloseMenu(MenuBuilder menu, boolean allMenusAreClosing) {
@@ -1075,7 +1075,7 @@ public class ActionMenuPresenter extends BaseMenuPresenter implements ActionProv
     private class OpenOverflowRunnable implements Runnable {
         private OverflowPopup mPopup;
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:10.976 -0400", hash_original_method = "599E88E0D73270F72B5C8D6A6C7D2ACA", hash_generated_method = "A90C7A5E5A72FA8D9487992CDCF2E3C8")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 12:28:51.248 -0400", hash_original_method = "599E88E0D73270F72B5C8D6A6C7D2ACA", hash_generated_method = "A90C7A5E5A72FA8D9487992CDCF2E3C8")
         @DSModeled(DSC.SAFE)
         public OpenOverflowRunnable(OverflowPopup popup) {
             dsTaint.addTaint(popup.dsTaint);
@@ -1084,14 +1084,14 @@ public class ActionMenuPresenter extends BaseMenuPresenter implements ActionProv
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:10.976 -0400", hash_original_method = "A205A4B8116FA6A00F9203B1BEAEE8C7", hash_generated_method = "4AE7600B94B4BCDE896F6CC81A30FD70")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 12:28:51.282 -0400", hash_original_method = "A205A4B8116FA6A00F9203B1BEAEE8C7", hash_generated_method = "2B03D5715D3073642C756AAE6B8D9E1A")
         //DSFIXME:  CODE0002: Requires DSC value to be set
         public void run() {
             mMenu.changeMenuMode();
-            final View menuView;
+            View menuView;
             menuView = (View) mMenuView;
             {
-                boolean var3552093DD787185B5C9D0DFE6D6F1BD0_1600953604 = (menuView != null && menuView.getWindowToken() != null && mPopup.tryShow());
+                boolean var3552093DD787185B5C9D0DFE6D6F1BD0_1713251372 = (menuView != null && menuView.getWindowToken() != null && mPopup.tryShow());
                 {
                     mOverflowPopup = mPopup;
                 } //End block

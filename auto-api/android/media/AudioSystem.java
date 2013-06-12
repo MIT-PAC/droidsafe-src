@@ -7,7 +7,6 @@ import droidsafe.annotations.*;
 // import Iterator to deal with enhanced for loop translation
 import java.util.Iterator;
 
-import com.sun.org.apache.bcel.internal.generic.DSUB;
 
 
 public class AudioSystem {
