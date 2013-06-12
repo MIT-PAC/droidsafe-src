@@ -2,6 +2,7 @@ package java.net;
 
 // Droidsafe Imports
 import droidsafe.helpers.*;
+import droidsafe.runtime.DroidSafeAndroidRuntime;
 import droidsafe.annotations.*;
 
 // import Iterator to deal with enhanced for loop translation
@@ -12,9 +13,9 @@ import java.io.ObjectInputStream;
 
 public class InetSocketAddress extends SocketAddress {
     private static final long serialVersionUID = 5076001401234631237L;
-    private final InetAddress addr;
-    private final String hostname;
-    private final int port;
+    private InetAddress addr;
+    private String hostname;
+    private int port;
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:12.241 -0400", hash_original_method = "E61EEABC5DF9527410338B11302226FE", hash_generated_method = "BE78D5122142812F375C65B274F89AAD")
     @DSModeled(DSC.SAFE)
@@ -44,7 +45,7 @@ public class InetSocketAddress extends SocketAddress {
         dsTaint.addTaint(port);
         dsTaint.addTaint(address.dsTaint);
         {
-            throw new IllegalArgumentException("port=" + port);
+            if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("port=" + port);
         } //End block
         this.addr = (address == null) ? Inet4Address.ANY : address;
         this.hostname = null;
@@ -75,7 +76,7 @@ public class InetSocketAddress extends SocketAddress {
         dsTaint.addTaint(needResolved);
         dsTaint.addTaint(hostname);
         {
-            throw new IllegalArgumentException("host=" + hostname + ", port=" + port);
+            if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("host=" + hostname + ", port=" + port);
         } //End block
         InetAddress addr;
         addr = null;

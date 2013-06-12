@@ -2,6 +2,7 @@ package java.net;
 
 // Droidsafe Imports
 import droidsafe.helpers.*;
+import droidsafe.runtime.DroidSafeAndroidRuntime;
 import droidsafe.annotations.*;
 
 // import Iterator to deal with enhanced for loop translation
@@ -435,7 +436,7 @@ public class InetAddress implements Serializable {
         dsTaint.addTaint(ttl);
         dsTaint.addTaint(timeout);
         {
-            throw new IllegalArgumentException("ttl < 0 || timeout < 0");
+            if (DroidSafeAndroidRuntime.control)throw new IllegalArgumentException("ttl < 0 || timeout < 0");
         } //End block
         {
             boolean varE90BF27773AA71DDBE5F32BAE585508C_655677548 = (isReachable(this, null, timeout));

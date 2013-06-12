@@ -25,10 +25,10 @@ import libcore.io.Libcore;
 import static libcore.io.OsConstants.*;
 
 public final class NetworkInterface extends Object {
-    private final String name;
-    private final int interfaceIndex;
-    private final List<InterfaceAddress> interfaceAddresses;
-    private final List<InetAddress> addresses;
+    private String name;
+    private int interfaceIndex;
+    private List<InterfaceAddress> interfaceAddresses;
+    private List<InetAddress> addresses;
     private final List<NetworkInterface> children = new LinkedList<NetworkInterface>();
     private NetworkInterface parent = null;
     
