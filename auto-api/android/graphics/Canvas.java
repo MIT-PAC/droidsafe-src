@@ -2,6 +2,7 @@ package android.graphics;
 
 // Droidsafe Imports
 import droidsafe.helpers.*;
+import droidsafe.runtime.DroidSafeAndroidRuntime;
 import droidsafe.annotations.*;
 
 // import Iterator to deal with enhanced for loop translation
@@ -14,7 +15,7 @@ import android.text.TextUtils;
 import javax.microedition.khronos.opengles.GL;
 
 public class Canvas {
-    final int mNativeCanvas;
+    /* final */ int mNativeCanvas;
     private Bitmap  mBitmap;
     private DrawFilter mDrawFilter;
     protected int mDensity = Bitmap.DENSITY_NONE;
@@ -50,6 +51,7 @@ public class Canvas {
         dsTaint.addTaint(bitmap.dsTaint);
         {
             boolean var6BA398A25C0007F3F9E60F39C57A8340_1922029799 = (!bitmap.isMutable());
+            if (DroidSafeAndroidRuntime.control)
             {
                 throw new IllegalStateException(
                             "Immutable bitmap passed to Canvas constructor");
@@ -76,6 +78,7 @@ public class Canvas {
     //DSFIXME:  CODE0002: Requires DSC value to be set
      Canvas(int nativeCanvas) {
         dsTaint.addTaint(nativeCanvas);
+        if (DroidSafeAndroidRuntime.control)
         {
             throw new IllegalStateException();
         } //End block
@@ -116,6 +119,7 @@ public class Canvas {
         dsTaint.addTaint(bitmap.dsTaint);
         {
             boolean varBDA84146B1D9E3F7F12351B38C986FB8_1583410965 = (isHardwareAccelerated());
+            if (DroidSafeAndroidRuntime.control)
             {
                 throw new RuntimeException("Can't set a bitmap device on a GL canvas");
             } //End block
@@ -125,6 +129,7 @@ public class Canvas {
         {
             {
                 boolean varF12BF886E543DD07B8FC1D7A55B10614_711587668 = (!bitmap.isMutable());
+            if (DroidSafeAndroidRuntime.control)
                 {
                     throw new IllegalStateException();
                 } //End block
@@ -164,18 +169,21 @@ public class Canvas {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:00.988 -0400", hash_original_method = "9A759A0D04375324D8F6D99375FF174F", hash_generated_method = "B5E14EAC8468AB1C1A41FC932088673B")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public boolean isOpaque() {
+    	return dsTaint.getTaintBoolean();
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:00.989 -0400", hash_original_method = "D4E7715F32876041521BE16EC8E1C0AC", hash_generated_method = "8202ACDF7C5D29ED74BE3232863D1E31")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public int getWidth() {
+    	return dsTaint.getTaintInt();
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:00.989 -0400", hash_original_method = "E09BF3A531DEFF54888EDA3B98EB9CFF", hash_generated_method = "CFD12F7A9648C1DBAD827DBA35D4B80A")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public int getHeight() {
+    	return dsTaint.getTaintInt();
     }
 
     
@@ -233,6 +241,7 @@ public class Canvas {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:00.989 -0400", hash_original_method = "F3B8683979D1D489E213BCC22FA3BBF8", hash_generated_method = "13A27F48261C03D96F0EAE5AAC855FCF")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public int save() {
+        return dsTaint.getTaintInt();
     }
 
     
@@ -240,6 +249,7 @@ public class Canvas {
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public int save(int saveFlags) {
         dsTaint.addTaint(saveFlags);
+        return dsTaint.getTaintInt();
     }
 
     
@@ -324,6 +334,7 @@ public class Canvas {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:00.990 -0400", hash_original_method = "C157B89F0FBAFE11C45EBC10DA0B6D3E", hash_generated_method = "5B1F4BC4D592CE89717BC8FE42AB0129")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public int getSaveCount() {
+        return dsTaint.getTaintInt();
     }
 
     
@@ -480,6 +491,7 @@ public class Canvas {
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public boolean clipRect(RectF rect) {
         dsTaint.addTaint(rect.dsTaint);
+        return dsTaint.getTaintBoolean();
     }
 
     
@@ -487,6 +499,7 @@ public class Canvas {
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public boolean clipRect(Rect rect) {
         dsTaint.addTaint(rect.dsTaint);
+        return dsTaint.getTaintBoolean();
     }
 
     
@@ -516,6 +529,7 @@ public class Canvas {
         dsTaint.addTaint(left);
         dsTaint.addTaint(right);
         dsTaint.addTaint(top);
+        return dsTaint.getTaintBoolean();
     }
 
     
@@ -527,6 +541,7 @@ public class Canvas {
         dsTaint.addTaint(left);
         dsTaint.addTaint(right);
         dsTaint.addTaint(top);
+        return dsTaint.getTaintBoolean();
     }
 
     
@@ -842,6 +857,7 @@ public class Canvas {
     public void drawOval(RectF oval, Paint paint) {
         dsTaint.addTaint(paint.dsTaint);
         dsTaint.addTaint(oval.dsTaint);
+        if (DroidSafeAndroidRuntime.control)
         {
             throw new NullPointerException();
         } //End block
@@ -878,6 +894,7 @@ public class Canvas {
         dsTaint.addTaint(sweepAngle);
         dsTaint.addTaint(paint.dsTaint);
         dsTaint.addTaint(oval.dsTaint);
+        if (DroidSafeAndroidRuntime.control)
         {
             throw new NullPointerException();
         } //End block
@@ -899,6 +916,7 @@ public class Canvas {
         dsTaint.addTaint(rect.dsTaint);
         dsTaint.addTaint(rx);
         dsTaint.addTaint(ry);
+        if (DroidSafeAndroidRuntime.control)
         {
             throw new NullPointerException();
         } //End block
@@ -927,6 +945,7 @@ public class Canvas {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:00.996 -0400", hash_original_method = "4E72B045BA38CFE64C69AC73618E6E81", hash_generated_method = "334FC681567308ECFC605C40827E1CC3")
     private static void throwIfRecycled(Bitmap bitmap) {
         if (bitmap.isRecycled()) {
+            if (DroidSafeAndroidRuntime.control)
             throw new RuntimeException(
                         "Canvas: trying to use a recycled bitmap " + bitmap);
         }
@@ -970,6 +989,7 @@ public class Canvas {
         dsTaint.addTaint(paint.dsTaint);
         dsTaint.addTaint(src.dsTaint);
         dsTaint.addTaint(dst.dsTaint);
+        if (DroidSafeAndroidRuntime.control)
         {
             throw new NullPointerException();
         } //End block
@@ -995,6 +1015,7 @@ public class Canvas {
         dsTaint.addTaint(paint.dsTaint);
         dsTaint.addTaint(src.dsTaint);
         dsTaint.addTaint(dst.dsTaint);
+        if (DroidSafeAndroidRuntime.control)
         {
             throw new NullPointerException();
         } //End block
@@ -1027,14 +1048,17 @@ public class Canvas {
         dsTaint.addTaint(stride);
         dsTaint.addTaint(y);
         dsTaint.addTaint(x);
+        if (DroidSafeAndroidRuntime.control)
         {
             throw new IllegalArgumentException("width must be >= 0");
         } //End block
+        if (DroidSafeAndroidRuntime.control)
         {
             throw new IllegalArgumentException("height must be >= 0");
         } //End block
         {
             boolean varE73A6561371F12118506FC78AF1B9D6D_699196699 = (Math.abs(stride) < width);
+            if (DroidSafeAndroidRuntime.control)
             {
                 throw new IllegalArgumentException("abs(stride) must be >= width");
             } //End block
@@ -1043,6 +1067,7 @@ public class Canvas {
         lastScanline = offset + (height - 1) * stride;
         int length;
         length = colors.length;
+        if (DroidSafeAndroidRuntime.control)
         {
             throw new ArrayIndexOutOfBoundsException();
         } //End block
@@ -1092,6 +1117,7 @@ public class Canvas {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:00.998 -0400", hash_original_method = "8881482C31CD6EB42F6A156D24B79CEC", hash_generated_method = "BFA33F863C09EC7778ECB3B0762595FC")
     protected static void checkRange(int length, int offset, int count) {
         if ((offset | count) < 0 || offset + count > length) {
+            if (DroidSafeAndroidRuntime.control)
             throw new ArrayIndexOutOfBoundsException();
         }
     }
@@ -1110,6 +1136,7 @@ public class Canvas {
         dsTaint.addTaint(colors);
         dsTaint.addTaint(paint.dsTaint);
         dsTaint.addTaint(vertOffset);
+        if (DroidSafeAndroidRuntime.control)
         {
             throw new ArrayIndexOutOfBoundsException();
         } //End block
@@ -1200,6 +1227,7 @@ public class Canvas {
         dsTaint.addTaint(paint.dsTaint);
         dsTaint.addTaint(y);
         dsTaint.addTaint(x);
+        if (DroidSafeAndroidRuntime.control)
         {
             throw new IndexOutOfBoundsException();
         } //End block
@@ -1242,6 +1270,7 @@ public class Canvas {
         dsTaint.addTaint(x);
         {
             boolean var9527A5CDD965760192A60A252272F336_545910875 = ((start | end | (end - start) | (text.length() - end)) < 0);
+            if (DroidSafeAndroidRuntime.control)
             {
                 throw new IndexOutOfBoundsException();
             } //End block
@@ -1315,15 +1344,19 @@ public class Canvas {
         dsTaint.addTaint(contextIndex);
         dsTaint.addTaint(y);
         dsTaint.addTaint(x);
+        if (DroidSafeAndroidRuntime.control)
         {
             throw new NullPointerException("text is null");
         } //End block
+        if (DroidSafeAndroidRuntime.control)
         {
             throw new NullPointerException("paint is null");
         } //End block
+        if (DroidSafeAndroidRuntime.control)
         {
             throw new IndexOutOfBoundsException();
         } //End block
+        if (DroidSafeAndroidRuntime.control)
         {
             throw new IllegalArgumentException("unknown dir: " + dir);
         } //End block
@@ -1361,14 +1394,17 @@ public class Canvas {
         dsTaint.addTaint(y);
         dsTaint.addTaint(contextEnd);
         dsTaint.addTaint(x);
+        if (DroidSafeAndroidRuntime.control)
         {
             throw new NullPointerException("text is null");
         } //End block
+        if (DroidSafeAndroidRuntime.control)
         {
             throw new NullPointerException("paint is null");
         } //End block
         {
             boolean var5121ADA1DFFE288F77E0A77339FFD85F_411562892 = ((start | end | end - start | text.length() - end) < 0);
+            if (DroidSafeAndroidRuntime.control)
             {
                 throw new IndexOutOfBoundsException();
             } //End block
@@ -1410,6 +1446,7 @@ public class Canvas {
         dsTaint.addTaint(count);
         dsTaint.addTaint(paint.dsTaint);
         dsTaint.addTaint(pos);
+        if (DroidSafeAndroidRuntime.control)
         {
             throw new IndexOutOfBoundsException();
         } //End block
@@ -1432,6 +1469,7 @@ public class Canvas {
         dsTaint.addTaint(pos);
         {
             boolean var8252BA30A9512CA9A5F07EEE6666D9DD_1886525473 = (text.length()*2 > pos.length);
+            if (DroidSafeAndroidRuntime.control)
             {
                 throw new ArrayIndexOutOfBoundsException();
             } //End block
@@ -1456,6 +1494,7 @@ public class Canvas {
         dsTaint.addTaint(path.dsTaint);
         dsTaint.addTaint(paint.dsTaint);
         dsTaint.addTaint(vOffset);
+        if (DroidSafeAndroidRuntime.control)
         {
             throw new ArrayIndexOutOfBoundsException();
         } //End block
@@ -1575,6 +1614,7 @@ public class Canvas {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:01.002 -0400", hash_original_method = "3EBBBBC26F5E16FFB2B6D786FA479F7E", hash_generated_method = "41B6D9FFFD03A4B90E4E3EEAE273550D")
     private static int initRaster(int nativeBitmapOrZero) {
         //DSFIXME:  CODE0010: Native static method requires manual modeling
+    	return DSUtils.UNKNOWN_INT;
     }
 
     
@@ -1588,6 +1628,7 @@ public class Canvas {
     private static int native_saveLayer(int nativeCanvas, RectF bounds,
                                                int paint, int layerFlags) {
         //DSFIXME:  CODE0010: Native static method requires manual modeling
+    	return DSUtils.UNKNOWN_INT;
     }
 
     
@@ -1596,6 +1637,7 @@ public class Canvas {
                                                float t, float r, float b,
                                                int paint, int layerFlags) {
         //DSFIXME:  CODE0010: Native static method requires manual modeling
+    	return DSUtils.UNKNOWN_INT;
     }
 
     
@@ -1604,6 +1646,7 @@ public class Canvas {
                                                     RectF bounds, int alpha,
                                                     int layerFlags) {
         //DSFIXME:  CODE0010: Native static method requires manual modeling
+    	return DSUtils.UNKNOWN_INT;
     }
 
     
@@ -1612,6 +1655,7 @@ public class Canvas {
                                                     float t, float r, float b,
                                                     int alpha, int layerFlags) {
         //DSFIXME:  CODE0010: Native static method requires manual modeling
+    	return DSUtils.UNKNOWN_INT;
     }
 
     
@@ -1633,6 +1677,7 @@ public class Canvas {
                                                   float right, float bottom,
                                                   int regionOp) {
         //DSFIXME:  CODE0010: Native static method requires manual modeling
+    	return DSUtils.UNKNOWN_BOOLEAN;
     }
 
     
@@ -1641,6 +1686,7 @@ public class Canvas {
                                                   int nativePath,
                                                   int regionOp) {
         //DSFIXME:  CODE0010: Native static method requires manual modeling
+    	return DSUtils.UNKNOWN_BOOLEAN;
     }
 
     
@@ -1649,6 +1695,7 @@ public class Canvas {
                                                     int nativeRegion,
                                                     int regionOp) {
         //DSFIXME:  CODE0010: Native static method requires manual modeling
+    	return DSUtils.UNKNOWN_BOOLEAN;
     }
 
     
@@ -1663,6 +1710,7 @@ public class Canvas {
     private static boolean native_getClipBounds(int nativeCanvas,
                                                        Rect bounds) {
         //DSFIXME:  CODE0010: Native static method requires manual modeling
+    	return DSUtils.UNKNOWN_BOOLEAN;
     }
 
     
@@ -1677,6 +1725,7 @@ public class Canvas {
                                                      RectF rect,
                                                      int native_edgeType) {
         //DSFIXME:  CODE0010: Native static method requires manual modeling
+    	return DSUtils.UNKNOWN_BOOLEAN;
     }
 
     
@@ -1685,6 +1734,7 @@ public class Canvas {
                                                      int path,
                                                      int native_edgeType) {
         //DSFIXME:  CODE0010: Native static method requires manual modeling
+    	return DSUtils.UNKNOWN_BOOLEAN;
     }
 
     
@@ -1694,6 +1744,7 @@ public class Canvas {
                                                      float right, float bottom,
                                                      int native_edgeType) {
         //DSFIXME:  CODE0010: Native static method requires manual modeling
+    	return DSUtils.UNKNOWN_BOOLEAN;
     }
 
     
@@ -1956,7 +2007,7 @@ public class Canvas {
 
     
     private static class CanvasFinalizer {
-        private final int mNativeCanvas;
+        private /* final */ int mNativeCanvas;
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:01.006 -0400", hash_original_method = "C87133F6F9E7B261DCFE48B3CCDE3AF4", hash_generated_method = "52F4B82574AD344FC7F2CAD2D9F5C1DC")
         @DSModeled(DSC.SAFE)

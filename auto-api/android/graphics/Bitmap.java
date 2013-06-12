@@ -2,6 +2,7 @@ package android.graphics;
 
 // Droidsafe Imports
 import droidsafe.helpers.*;
+import droidsafe.runtime.DroidSafeAndroidRuntime;
 import droidsafe.annotations.*;
 
 // import Iterator to deal with enhanced for loop translation
@@ -18,11 +19,11 @@ import java.nio.ShortBuffer;
 
 public final class Bitmap implements Parcelable {
     public static final int DENSITY_NONE = 0;
-    public final int mNativeBitmap;
+    public /* final */ int mNativeBitmap;
     public byte[] mBuffer;
     @SuppressWarnings({"FieldCanBeLocal", "UnusedDeclaration"}) 
-    private final BitmapFinalizer mFinalizer;
-    private final boolean mIsMutable;
+    private /* final */ BitmapFinalizer mFinalizer;
+    private /* final */ boolean mIsMutable;
     private byte[] mNinePatchChunk;
     private int mWidth = -1;
     private int mHeight = -1;
@@ -31,6 +32,12 @@ public final class Bitmap implements Parcelable {
     private static volatile Matrix sScaleMatrix;
     private static volatile int sDefaultDensity = -1;
     private final static int WORKING_COMPRESS_STORAGE = 4096;
+    
+    @DSModeled(DSC.BAN) // Created to support native methods that return Bitmap
+    public Bitmap() {
+		// TODO Auto-generated constructor stub
+	}
+    
     public static final Parcelable.Creator<Bitmap> CREATOR = new Parcelable.Creator<Bitmap>() {        
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:00.931 -0400", hash_original_method = "A576610C1F5A8AE8D31C4E9A14C2AA39", hash_generated_method = "18083567215B21F412D30C29339E5AA6")
         @DSModeled(DSC.SAFE)
@@ -38,6 +45,7 @@ public final class Bitmap implements Parcelable {
             dsTaint.addTaint(p.dsTaint);
             Bitmap bm;
             bm = nativeCreateFromParcel(p);
+            if (DroidSafeAndroidRuntime.control)
             {
                 throw new RuntimeException("Failed to unparcel Bitmap");
             } //End block
@@ -72,6 +80,7 @@ public final class Bitmap implements Parcelable {
         dsTaint.addTaint(density);
         dsTaint.addTaint(nativeBitmap);
         dsTaint.addTaint(ninePatchChunk);
+        if (DroidSafeAndroidRuntime.control)
         {
             throw new RuntimeException("internal error: native bitmap is 0");
         } //End block
@@ -225,6 +234,7 @@ public final class Bitmap implements Parcelable {
         {
             shift = 2;
         } //End block
+        if (DroidSafeAndroidRuntime.control)
         {
             throw new RuntimeException("unsupported Buffer subclass");
         } //End block
@@ -232,6 +242,7 @@ public final class Bitmap implements Parcelable {
         bufferSize = (long)elements << shift;
         long pixelSize;
         pixelSize = getByteCount();
+        if (DroidSafeAndroidRuntime.control)
         {
             throw new RuntimeException("Buffer not large enough for pixels");
         } //End block
@@ -281,6 +292,7 @@ public final class Bitmap implements Parcelable {
         {
             shift = 2;
         } //End block
+        if (DroidSafeAndroidRuntime.control)
         {
             throw new RuntimeException("unsupported Buffer subclass");
         } //End block
@@ -288,6 +300,7 @@ public final class Bitmap implements Parcelable {
         bufferBytes = (long)elements << shift;
         long bitmapBytes;
         bitmapBytes = getByteCount();
+        if (DroidSafeAndroidRuntime.control)
         {
             throw new RuntimeException("Buffer not large enough for pixels");
         } //End block
@@ -506,9 +519,11 @@ public final class Bitmap implements Parcelable {
         dsTaint.addTaint(quality);
         dsTaint.addTaint(format.dsTaint);
         checkRecycled("Can't compress a recycled bitmap");
+        if (DroidSafeAndroidRuntime.control)
         {
             throw new NullPointerException();
         } //End block
+        if (DroidSafeAndroidRuntime.control)
         {
             throw new IllegalArgumentException("quality must be 0..100");
         } //End block
@@ -693,6 +708,7 @@ public final class Bitmap implements Parcelable {
         checkRecycled("Can't erase a recycled bitmap");
         {
             boolean var2D2A74E00B0F4ADB63FC14E0244B334F_487526057 = (!isMutable());
+	        if (DroidSafeAndroidRuntime.control)
             {
                 throw new IllegalStateException("cannot erase immutable bitmaps");
             } //End block
@@ -757,12 +773,14 @@ public final class Bitmap implements Parcelable {
         checkXYSign(x, y);
         {
             boolean var30490CFCBE0CDDF5A434370B1DCE4F74_1231980976 = (x >= getWidth());
+	        if (DroidSafeAndroidRuntime.control)
             {
                 throw new IllegalArgumentException("x must be < bitmap.width()");
             } //End block
         } //End collapsed parenthetic
         {
             boolean var176BE51140078B0967F59852B69E3131_730407417 = (y >= getHeight());
+	        if (DroidSafeAndroidRuntime.control)
             {
                 throw new IllegalArgumentException("y must be < bitmap.height()");
             } //End block
@@ -790,14 +808,17 @@ public final class Bitmap implements Parcelable {
         dsTaint.addTaint(y);
         dsTaint.addTaint(x);
         checkXYSign(x, y);
+        if (DroidSafeAndroidRuntime.control)
         {
             throw new IllegalArgumentException("width must be >= 0");
         } //End block
+        if (DroidSafeAndroidRuntime.control)
         {
             throw new IllegalArgumentException("height must be >= 0");
         } //End block
         {
             boolean varD810B239D6120F6BE5AD1443109E34E9_737957134 = (x + width > getWidth());
+	        if (DroidSafeAndroidRuntime.control)
             {
                 throw new IllegalArgumentException(
                     "x + width must be <= bitmap.width()");
@@ -805,6 +826,7 @@ public final class Bitmap implements Parcelable {
         } //End collapsed parenthetic
         {
             boolean var81DF503DAA371D07CDBF07C44BC00011_1951079885 = (y + height > getHeight());
+	        if (DroidSafeAndroidRuntime.control)
             {
                 throw new IllegalArgumentException(
                     "y + height must be <= bitmap.height()");
@@ -812,6 +834,7 @@ public final class Bitmap implements Parcelable {
         } //End collapsed parenthetic
         {
             boolean varE73A6561371F12118506FC78AF1B9D6D_413014370 = (Math.abs(stride) < width);
+	        if (DroidSafeAndroidRuntime.control)
             {
                 throw new IllegalArgumentException("abs(stride) must be >= width");
             } //End block
@@ -837,6 +860,7 @@ public final class Bitmap implements Parcelable {
         checkRecycled("Can't call setPixel() on a recycled bitmap");
         {
             boolean var2D2A74E00B0F4ADB63FC14E0244B334F_1136360059 = (!isMutable());
+	        if (DroidSafeAndroidRuntime.control)
             {
                 throw new IllegalStateException();
             } //End block
@@ -867,6 +891,7 @@ public final class Bitmap implements Parcelable {
         checkRecycled("Can't call setPixels() on a recycled bitmap");
         {
             boolean var2D2A74E00B0F4ADB63FC14E0244B334F_355873281 = (!isMutable());
+	        if (DroidSafeAndroidRuntime.control)
             {
                 throw new IllegalStateException();
             } //End block
@@ -905,6 +930,7 @@ public final class Bitmap implements Parcelable {
         checkRecycled("Can't parcel a recycled bitmap");
         {
             boolean var5DF242B1AD49EA84F890A63696D1516F_310990640 = (!nativeWriteToParcel(mNativeBitmap, mIsMutable, mDensity, p));
+	        if (DroidSafeAndroidRuntime.control)
             {
                 throw new RuntimeException("native writeToParcel failed");
             } //End block
@@ -938,6 +964,7 @@ public final class Bitmap implements Parcelable {
         nativePaint = 0;
         Bitmap bm;
         bm = nativeExtractAlpha(mNativeBitmap, nativePaint, offsetXY);
+        if (DroidSafeAndroidRuntime.control)
         {
             throw new RuntimeException("Failed to extractAlpha on Bitmap");
         } //End block
@@ -980,6 +1007,7 @@ public final class Bitmap implements Parcelable {
                                               int stride, int width, int height,
                                             int nativeConfig, boolean mutable) {
         //DSFIXME:  CODE0010: Native static method requires manual modeling
+    	return new Bitmap();
     }
 
     
@@ -987,6 +1015,7 @@ public final class Bitmap implements Parcelable {
     private static Bitmap nativeCopy(int srcBitmap, int nativeConfig,
                                             boolean isMutable) {
         //DSFIXME:  CODE0010: Native static method requires manual modeling
+    	return new Bitmap();
     }
 
     
@@ -1007,6 +1036,7 @@ public final class Bitmap implements Parcelable {
                                             int quality, OutputStream stream,
                                             byte[] tempStorage) {
         //DSFIXME:  CODE0010: Native static method requires manual modeling
+    	return DSUtils.UNKNOWN_BOOLEAN;
     }
 
     
@@ -1019,36 +1049,42 @@ public final class Bitmap implements Parcelable {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:00.940 -0400", hash_original_method = "904945A5B141851798E063E1803A5F04", hash_generated_method = "7D5571C65C276F5B4BB2F63DA60BF5BA")
     private static int nativeWidth(int nativeBitmap) {
         //DSFIXME:  CODE0010: Native static method requires manual modeling
+    	return DSUtils.UNKNOWN_INT;
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:00.940 -0400", hash_original_method = "97B2ABABD688843FB18A94CF0447DEFD", hash_generated_method = "86690DDED79189EDB69FA6D16D0639C2")
     private static int nativeHeight(int nativeBitmap) {
         //DSFIXME:  CODE0010: Native static method requires manual modeling
+    	return DSUtils.UNKNOWN_INT;
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:00.940 -0400", hash_original_method = "1C20704BA122DB6BDC5DC60359E85F4F", hash_generated_method = "5FFE99272D7A94FB701D17F94D378E62")
     private static int nativeRowBytes(int nativeBitmap) {
         //DSFIXME:  CODE0010: Native static method requires manual modeling
+    	return DSUtils.UNKNOWN_INT;
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:00.940 -0400", hash_original_method = "F834D3C6FDF94C2FD5997EC80647C823", hash_generated_method = "B486DF67F3B633BA5237FAC517D09960")
     private static int nativeConfig(int nativeBitmap) {
         //DSFIXME:  CODE0010: Native static method requires manual modeling
+    	return DSUtils.UNKNOWN_INT;
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:00.940 -0400", hash_original_method = "F46C7650077695308A7525A296A3C7D3", hash_generated_method = "8ED49DB63B06521B81762E07D2A705D0")
     private static boolean nativeHasAlpha(int nativeBitmap) {
         //DSFIXME:  CODE0010: Native static method requires manual modeling
+    	return DSUtils.UNKNOWN_BOOLEAN;
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:00.941 -0400", hash_original_method = "9E1F2375582A6D02B837E73A5143D79A", hash_generated_method = "29B9240FD6C10A09EAF9540B53B4A979")
     private static int nativeGetPixel(int nativeBitmap, int x, int y) {
         //DSFIXME:  CODE0010: Native static method requires manual modeling
+    	return DSUtils.UNKNOWN_INT;
     }
 
     
@@ -1091,12 +1127,14 @@ public final class Bitmap implements Parcelable {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:00.941 -0400", hash_original_method = "6885BAD84A1A4E36D99C3D1DCC7CCDA2", hash_generated_method = "36109B6199DDEE3F66E954D8DD5C6F26")
     private static int nativeGenerationId(int nativeBitmap) {
         //DSFIXME:  CODE0010: Native static method requires manual modeling
+    	return DSUtils.UNKNOWN_INT;
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:00.941 -0400", hash_original_method = "BE5F630346E963472055577C84A85AC5", hash_generated_method = "D1698E3393DA9AAFF4E69831D50E755D")
     private static Bitmap nativeCreateFromParcel(Parcel p) {
         //DSFIXME:  CODE0010: Native static method requires manual modeling
+    	return new Bitmap();
     }
 
     
@@ -1106,6 +1144,7 @@ public final class Bitmap implements Parcelable {
                                                       int density,
                                                       Parcel p) {
         //DSFIXME:  CODE0010: Native static method requires manual modeling
+    	return DSUtils.UNKNOWN_BOOLEAN;
     }
 
     
@@ -1114,6 +1153,7 @@ public final class Bitmap implements Parcelable {
                                                     int nativePaint,
                                                     int[] offsetXY) {
         //DSFIXME:  CODE0010: Native static method requires manual modeling
+    	return new Bitmap();
     }
 
     
@@ -1132,6 +1172,7 @@ public final class Bitmap implements Parcelable {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:00.942 -0400", hash_original_method = "5A9B1A09E3C5251A309F2D65A5E034CD", hash_generated_method = "13C51ADC3CAF263AB61488F4E61C76FD")
     private static boolean nativeSameAs(int nb0, int nb1) {
         //DSFIXME:  CODE0010: Native static method requires manual modeling
+    	return DSUtils.UNKNOWN_BOOLEAN;
     }
 
     
@@ -1176,7 +1217,7 @@ public final class Bitmap implements Parcelable {
 
     
     private static class BitmapFinalizer {
-        private final int mNativeBitmap;
+        private /* final */ int mNativeBitmap;
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:00.942 -0400", hash_original_method = "0DDF139B38AD50F56D0AF26AB944EC3E", hash_generated_method = "19D31848F1BFF1E88B4F60B8B865ADEB")
         @DSModeled(DSC.SAFE)

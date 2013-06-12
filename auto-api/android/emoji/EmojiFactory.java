@@ -1,22 +1,26 @@
 package android.emoji;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-
-// import Iterator to deal with enhanced for loop translation
-import java.util.Iterator;
-
-import android.graphics.Bitmap;
 import java.lang.ref.WeakReference;
 import java.util.LinkedHashMap;
 import java.util.Map;
+
+import android.graphics.Bitmap;
+import droidsafe.annotations.DSC;
+import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.DSModeled;
+// import Iterator to deal with enhanced for loop translation
 
 public final class EmojiFactory {
     private int sCacheSize = 100;
     private int mNativeEmojiFactory;
     private String mName;
     private Map<Integer, WeakReference<Bitmap>> mCache;
+    
+    @DSModeled(DSC.BAN) // Added to support native method calls that return an EmojiFactory
+    private EmojiFactory() {
+    	
+    }
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:00.877 -0400", hash_original_method = "3CFB061344A54165CC98223BF316C16E", hash_generated_method = "10D340B315458066E4CAA6C8D5571368")
     @DSModeled(DSC.SAFE)
@@ -246,14 +250,17 @@ public final class EmojiFactory {
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:00.881 -0400", hash_original_method = "423346FA0C16BA32B457763E80C8224E", hash_generated_method = "9B237D4C55695E1384CB5D3FE3CAAB3F")
+    @DSModeled(DSC.BAN)
     public static EmojiFactory newInstance(String class_name) {
         //DSFIXME:  CODE0010: Native static method requires manual modeling
+    	return new EmojiFactory();
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:00.881 -0400", hash_original_method = "75D3977F7B3982A73421732EA4218450", hash_generated_method = "9096D1C587991621D42EA7B734675E17")
     public static EmojiFactory newAvailableInstance() {
         //DSFIXME:  CODE0010: Native static method requires manual modeling
+    	return new EmojiFactory();
     }
 
     
@@ -289,6 +296,7 @@ public final class EmojiFactory {
     private Bitmap nativeGetBitmapFromAndroidPua(int nativeEmojiFactory, int AndroidPua) {
         dsTaint.addTaint(AndroidPua);
         dsTaint.addTaint(nativeEmojiFactory);
+        return new Bitmap();
     }
 
     
@@ -298,6 +306,7 @@ public final class EmojiFactory {
             char sjis) {
         dsTaint.addTaint(sjis);
         dsTaint.addTaint(nativeEmojiFactory);
+        return dsTaint.getTaintInt();
     }
 
     
@@ -307,6 +316,7 @@ public final class EmojiFactory {
             int pua) {
         dsTaint.addTaint(nativeEmojiFactory);
         dsTaint.addTaint(pua);
+        return dsTaint.getTaintInt();
     }
 
     
@@ -316,6 +326,7 @@ public final class EmojiFactory {
             int vsp) {
         dsTaint.addTaint(nativeEmojiFactory);
         dsTaint.addTaint(vsp);
+        return dsTaint.getTaintInt();
     }
 
     
@@ -325,6 +336,7 @@ public final class EmojiFactory {
             int pua) {
         dsTaint.addTaint(nativeEmojiFactory);
         dsTaint.addTaint(pua);
+        return dsTaint.getTaintInt();
     }
 
     
@@ -332,6 +344,7 @@ public final class EmojiFactory {
     //DSFIXME:  CODE0002: Requires DSC value to be set
     private int nativeGetMaximumVendorSpecificPua(int nativeEmojiFactory) {
         dsTaint.addTaint(nativeEmojiFactory);
+        return dsTaint.getTaintInt();
     }
 
     
@@ -339,6 +352,7 @@ public final class EmojiFactory {
     //DSFIXME:  CODE0002: Requires DSC value to be set
     private int nativeGetMinimumVendorSpecificPua(int nativeEmojiFactory) {
         dsTaint.addTaint(nativeEmojiFactory);
+        return dsTaint.getTaintInt();
     }
 
     
@@ -346,6 +360,7 @@ public final class EmojiFactory {
     //DSFIXME:  CODE0002: Requires DSC value to be set
     private int nativeGetMaximumAndroidPua(int nativeEmojiFactory) {
         dsTaint.addTaint(nativeEmojiFactory);
+        return dsTaint.getTaintInt();
     }
 
     
@@ -353,6 +368,7 @@ public final class EmojiFactory {
     //DSFIXME:  CODE0002: Requires DSC value to be set
     private int nativeGetMinimumAndroidPua(int nativeEmojiFactory) {
         dsTaint.addTaint(nativeEmojiFactory);
+        return dsTaint.getTaintInt();
     }
 
     

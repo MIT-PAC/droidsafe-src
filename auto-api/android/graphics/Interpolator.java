@@ -2,6 +2,7 @@ package android.graphics;
 
 // Droidsafe Imports
 import droidsafe.helpers.*;
+import droidsafe.runtime.DroidSafeAndroidRuntime;
 import droidsafe.annotations.*;
 
 // import Iterator to deal with enhanced for loop translation
@@ -100,12 +101,15 @@ public class Interpolator {
         dsTaint.addTaint(values);
         dsTaint.addTaint(blend);
         dsTaint.addTaint(msec);
+        if (DroidSafeAndroidRuntime.control)
         {
             throw new IndexOutOfBoundsException();
         } //End block
+        if (DroidSafeAndroidRuntime.control)
         {
             throw new ArrayStoreException();
         } //End block
+        if (DroidSafeAndroidRuntime.control)
         {
             throw new ArrayStoreException();
         } //End block
@@ -155,6 +159,7 @@ public class Interpolator {
     public Result timeToValues(int msec, float[] values) {
         dsTaint.addTaint(values);
         dsTaint.addTaint(msec);
+        if (DroidSafeAndroidRuntime.control)
         {
             throw new ArrayStoreException();
         } //End block
@@ -187,6 +192,7 @@ public class Interpolator {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:01.191 -0400", hash_original_method = "7CDA6FD84ADEB317B6530F3CCCE8BED8", hash_generated_method = "792E3F0159A9DD460ACA64943C9B406D")
     private static int nativeConstructor(int valueCount, int frameCount) {
         //DSFIXME:  CODE0010: Native static method requires manual modeling
+    	return DSUtils.UNKNOWN_INT;
     }
 
     
@@ -217,6 +223,7 @@ public class Interpolator {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:01.192 -0400", hash_original_method = "D7645B233D78E4E965B97FC9AD4CD61A", hash_generated_method = "45632BBC5F21D3D2C4E79796E827C967")
     private static int nativeTimeToValues(int native_instance, int msec, float[] values) {
         //DSFIXME:  CODE0010: Native static method requires manual modeling
+    	return DSUtils.UNKNOWN_INT;
     }
 
     
