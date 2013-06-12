@@ -12,8 +12,8 @@ public final class ByteOrder {
     private static final ByteOrder NATIVE_ORDER;
     public static final ByteOrder BIG_ENDIAN;
     public static final ByteOrder LITTLE_ENDIAN;
-    private final String name;
-    public final boolean needsSwap;
+    private String name;
+    public boolean needsSwap;
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:12.479 -0400", hash_original_method = "B317EBC8D5650E5C34B265838B9D3EC5", hash_generated_method = "84B2E7CC8878AF345C01E32217DC7536")
     @DSModeled(DSC.SAFE)
@@ -29,6 +29,7 @@ public final class ByteOrder {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:12.479 -0400", hash_original_method = "625760F1157C2F408F981CEA403AD7B4", hash_generated_method = "0F9CBCE24B45AED168E194ADA97C65A0")
     private static boolean isLittleEndian() {
         //DSFIXME:  CODE0010: Native static method requires manual modeling
+    	return DSUtils.UNKNOWN_BOOLEAN;
     }
 
     

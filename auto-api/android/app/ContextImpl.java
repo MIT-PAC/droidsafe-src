@@ -27,6 +27,7 @@ import android.content.BroadcastReceiver;
 import android.content.ComponentName;
 import android.content.ContentResolver;
 import android.content.Context;
+import android.content.ContextWrapper;
 import android.content.Intent;
 import android.content.IntentFilter;
 import android.content.IntentSender;
@@ -58,14 +59,23 @@ import droidsafe.concrete.DroidSafeContentResolver;
 public class ContextImpl extends Context {
 	private DroidSafeContentResolver contentResolver;
 	private SensorManager sensorManager;
+	LoadedApk mPackageInfo;
 	
 	@DSModeled
 	public ContextImpl() {
 		contentResolver = new DroidSafeContentResolver(this);
 		sensorManager = new SensorManager();
 	}
-
-
+	
+	static ContextImpl getImpl(Context context) {
+        Context nextContext;
+        while ((context instanceof ContextWrapper) &&
+                (nextContext=((ContextWrapper)context).getBaseContext()) != null) {
+            context = nextContext;
+        }
+        return (ContextImpl)context;
+    }
+	
 	@Override
 	@DSModeled(value = DSC.SAFE)
     public Object getSystemService(String name) {

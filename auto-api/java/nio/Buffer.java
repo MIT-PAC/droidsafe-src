@@ -39,8 +39,8 @@ public abstract class Buffer {
         //this.block = block;
     }
 
-    
-    public abstract Object array();
+
+	public abstract Object array();
 
     
     public abstract int arrayOffset();

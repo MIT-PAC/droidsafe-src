@@ -11,14 +11,14 @@ import android.os.Parcel;
 import android.os.Parcelable;
 
 public class StorageVolume implements Parcelable {
-    private final String mPath;
-    private final String mDescription;
-    private final boolean mRemovable;
-    private final boolean mEmulated;
-    private final int mMtpReserveSpace;
-    private final boolean mAllowMassStorage;
+    private  String mPath;
+    private  String mDescription;
+    private  boolean mRemovable;
+    private  boolean mEmulated;
+    private  int mMtpReserveSpace;
+    private  boolean mAllowMassStorage;
     private int mStorageId;
-    private final long mMaxFileSize;
+    private  long mMaxFileSize;
     public static final String EXTRA_STORAGE_VOLUME = "storage_volume";
     public static final Parcelable.Creator<StorageVolume> CREATOR = new Parcelable.Creator<StorageVolume>() {        
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:02.964 -0400", hash_original_method = "A58EACE4A3F53740E5D628758A64E4CC", hash_generated_method = "434D8965FB38D7889DE92198B9674F35")
