@@ -2,6 +2,7 @@ package sun.misc;
 
 // Droidsafe Imports
 import droidsafe.helpers.*;
+import droidsafe.runtime.DroidSafeAndroidRuntime;
 import droidsafe.annotations.*;
 
 // import Iterator to deal with enhanced for loop translation
@@ -38,7 +39,7 @@ public final class Unsafe {
         {
             boolean var6D6410B32A8AF2AF719495B13A816AFF_2047787966 = (Modifier.isStatic(field.getModifiers()));
             {
-                throw new IllegalArgumentException(
+            	if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException(
                     "valid for instance fields only");
             } //End block
         } //End collapsed parenthetic
@@ -55,7 +56,7 @@ public final class Unsafe {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:18.170 -0400", hash_original_method = "0B0EC3B0C998BC003C9368B59FE24631", hash_generated_method = "0D57A05E1FF56862A7FD2B75516174C1")
     private static long objectFieldOffset0(Field field) {
-        //DSFIXME:  CODE0010: Native static method requires manual modeling
+    	return DSUtils.UNKNOWN_LONG;
     }
 
     
@@ -66,7 +67,7 @@ public final class Unsafe {
         {
             boolean var3D1789193661122A2444349AE4A18255_1106508762 = (! clazz.isArray());
             {
-                throw new IllegalArgumentException(
+            	if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException(
                     "valid for array classes only");
             } //End block
         } //End collapsed parenthetic
@@ -83,7 +84,7 @@ public final class Unsafe {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:18.170 -0400", hash_original_method = "55B49997B1676D657B6C8E6518D73AA0", hash_generated_method = "4327CC9876F3EE19568663EAA7A4AD5D")
     private static int arrayBaseOffset0(Class clazz) {
-        //DSFIXME:  CODE0010: Native static method requires manual modeling
+    	return DSUtils.UNKNOWN_INT;
     }
 
     
@@ -94,7 +95,7 @@ public final class Unsafe {
         {
             boolean var3D1789193661122A2444349AE4A18255_457809424 = (! clazz.isArray());
             {
-                throw new IllegalArgumentException(
+            	if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException(
                     "valid for array classes only");
             } //End block
         } //End collapsed parenthetic
@@ -111,7 +112,7 @@ public final class Unsafe {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:18.170 -0400", hash_original_method = "0837396E34F6D189794014013C105951", hash_generated_method = "E0F258589BA8DCC80056ECA469DDF8F5")
     private static int arrayIndexScale0(Class clazz) {
-        //DSFIXME:  CODE0010: Native static method requires manual modeling
+    	return DSUtils.UNKNOWN_INT;
     }
 
     
@@ -123,6 +124,8 @@ public final class Unsafe {
         dsTaint.addTaint(newValue);
         dsTaint.addTaint(obj.dsTaint);
         dsTaint.addTaint(offset);
+        char[] retVal = {DSUtils.UNKNOWN_CHAR};
+        return dsTaint.getTaintBoolean();
     }
 
     
@@ -134,6 +137,7 @@ public final class Unsafe {
         dsTaint.addTaint(newValue);
         dsTaint.addTaint(obj.dsTaint);
         dsTaint.addTaint(offset);
+        return dsTaint.getTaintBoolean();
     }
 
     
@@ -145,6 +149,7 @@ public final class Unsafe {
         dsTaint.addTaint(newValue.dsTaint);
         dsTaint.addTaint(obj.dsTaint);
         dsTaint.addTaint(offset);
+        return dsTaint.getTaintBoolean();
     }
 
     
@@ -153,6 +158,7 @@ public final class Unsafe {
     public int getIntVolatile(Object obj, long offset) {
         dsTaint.addTaint(obj.dsTaint);
         dsTaint.addTaint(offset);
+        return dsTaint.getTaintInt();
     }
 
     
@@ -170,6 +176,7 @@ public final class Unsafe {
     public long getLongVolatile(Object obj, long offset) {
         dsTaint.addTaint(obj.dsTaint);
         dsTaint.addTaint(offset);
+        return dsTaint.getTaintLong();
     }
 
     
@@ -187,6 +194,7 @@ public final class Unsafe {
     public Object getObjectVolatile(Object obj, long offset) {
         dsTaint.addTaint(obj.dsTaint);
         dsTaint.addTaint(offset);
+        return dsTaint.getTaint();
     }
 
     
@@ -205,6 +213,7 @@ public final class Unsafe {
     public int getInt(Object obj, long offset) {
         dsTaint.addTaint(obj.dsTaint);
         dsTaint.addTaint(offset);
+        return dsTaint.getTaintInt();
     }
 
     
@@ -231,6 +240,7 @@ public final class Unsafe {
     public long getLong(Object obj, long offset) {
         dsTaint.addTaint(obj.dsTaint);
         dsTaint.addTaint(offset);
+        return dsTaint.getTaintLong();
     }
 
     
@@ -257,6 +267,7 @@ public final class Unsafe {
     public Object getObject(Object obj, long offset) {
         dsTaint.addTaint(obj.dsTaint);
         dsTaint.addTaint(offset);
+        return dsTaint.getTaint();
     }
 
     

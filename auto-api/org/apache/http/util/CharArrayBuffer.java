@@ -2,6 +2,7 @@ package org.apache.http.util;
 
 // Droidsafe Imports
 import droidsafe.helpers.*;
+import droidsafe.runtime.DroidSafeAndroidRuntime;
 import droidsafe.annotations.*;
 
 // import Iterator to deal with enhanced for loop translation
@@ -19,7 +20,7 @@ public final class CharArrayBuffer {
         super();
         dsTaint.addTaint(capacity);
         {
-            throw new IllegalArgumentException("Buffer capacity may not be negative");
+        	if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("Buffer capacity may not be negative");
         } //End block
         this.buffer = new char[capacity];
         // ---------- Original Method ----------
@@ -52,7 +53,7 @@ public final class CharArrayBuffer {
         dsTaint.addTaint(off);
         dsTaint.addTaint(len);
         {
-            throw new IndexOutOfBoundsException();
+        	if (DroidSafeAndroidRuntime.control) throw new IndexOutOfBoundsException();
         } //End block
         int newlen;
         newlen = this.len + len;
@@ -167,7 +168,7 @@ public final class CharArrayBuffer {
         dsTaint.addTaint(off);
         dsTaint.addTaint(len);
         {
-            throw new IndexOutOfBoundsException();
+        	if (DroidSafeAndroidRuntime.control) throw new IndexOutOfBoundsException();
         } //End block
         int oldlen;
         oldlen = this.len;
@@ -413,13 +414,13 @@ public final class CharArrayBuffer {
         dsTaint.addTaint(beginIndex);
         dsTaint.addTaint(endIndex);
         {
-            throw new IndexOutOfBoundsException();
+        	if (DroidSafeAndroidRuntime.control) throw new IndexOutOfBoundsException();
         } //End block
         {
-            throw new IndexOutOfBoundsException();
+        	if (DroidSafeAndroidRuntime.control) throw new IndexOutOfBoundsException();
         } //End block
         {
-            throw new IndexOutOfBoundsException();
+        	if (DroidSafeAndroidRuntime.control) throw new IndexOutOfBoundsException();
         } //End block
         return dsTaint.getTaintString();
         // ---------- Original Method ----------
@@ -442,13 +443,13 @@ public final class CharArrayBuffer {
         dsTaint.addTaint(beginIndex);
         dsTaint.addTaint(endIndex);
         {
-            throw new IndexOutOfBoundsException();
+        	if (DroidSafeAndroidRuntime.control) throw new IndexOutOfBoundsException();
         } //End block
         {
-            throw new IndexOutOfBoundsException();
+        	if (DroidSafeAndroidRuntime.control) throw new IndexOutOfBoundsException();
         } //End block
         {
-            throw new IndexOutOfBoundsException();
+        	if (DroidSafeAndroidRuntime.control) throw new IndexOutOfBoundsException();
         } //End block
         {
             boolean var61922099945D4AFC92E67DC8172246E3_1305667858 = (beginIndex < endIndex && HTTP.isWhitespace(this.buffer[beginIndex]));
