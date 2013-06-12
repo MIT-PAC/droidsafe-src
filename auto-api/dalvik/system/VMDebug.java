@@ -81,24 +81,28 @@ public final class VMDebug {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:11.344 -0400", hash_original_method = "A0A636875F8F9C14B7532C1AE4265EC8", hash_generated_method = "A640E78E5311BAAC7BE8C67A586CD7CB")
     public static long lastDebuggerActivity() {
         //DSFIXME:  CODE0010: Native static method requires manual modeling
+    	return DSUtils.UNKNOWN_LONG;
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:11.344 -0400", hash_original_method = "8F030E70A7ED81854F5A92537743C0FE", hash_generated_method = "052E98CFE4E73B5C491BD2BA5C2E7956")
     public static boolean isDebuggingEnabled() {
         //DSFIXME:  CODE0010: Native static method requires manual modeling
+    	return DSUtils.UNKNOWN_BOOLEAN;
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:11.344 -0400", hash_original_method = "DD92145E8BCB4FBBCA7FB334C79A41A1", hash_generated_method = "0D0E20CD411EBC29B144714AB2BF8370")
     public static boolean isDebuggerConnected() {
         //DSFIXME:  CODE0010: Native static method requires manual modeling
+    	return DSUtils.UNKNOWN_BOOLEAN;
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:11.344 -0400", hash_original_method = "F980312347BD785B72D418DC3AF234F8", hash_generated_method = "303FB201ED824B114ED2C60ABEDE3EFD")
     public static String[] getVmFeatureList() {
         //DSFIXME:  CODE0010: Native static method requires manual modeling
+    	return new String[] { DSUtils.UNKNOWN_STRING };
     }
 
     
@@ -139,12 +143,14 @@ public final class VMDebug {
     private static void startMethodTracingNative(String traceFileName,
         FileDescriptor fd, int bufferSize, int flags) {
         //DSFIXME:  CODE0010: Native static method requires manual modeling
+    	
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:11.344 -0400", hash_original_method = "F9AB6ED3E984CE3E5A14DA52E250B0ED", hash_generated_method = "7FD4E26B238188C3A8A2452DB888A8DE")
     public static boolean isMethodTracingActive() {
         //DSFIXME:  CODE0010: Native static method requires manual modeling
+    	return DSUtils.UNKNOWN_BOOLEAN;
     }
 
     
@@ -169,6 +175,7 @@ public final class VMDebug {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:11.344 -0400", hash_original_method = "F13732F854623BCCC6C92D5990E58B39", hash_generated_method = "C9CF9857EAB5773AD600A523BD3EFC43")
     public static long threadCpuTimeNanos() {
         //DSFIXME:  CODE0010: Native static method requires manual modeling
+    	return DSUtils.UNKNOWN_LONG;
     }
 
     
@@ -187,6 +194,7 @@ public final class VMDebug {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:11.344 -0400", hash_original_method = "FE33D49612E987E1080D32A47A59FF29", hash_generated_method = "CE587EE2CAEBCC1B2DE5A527205D5425")
     public static int getAllocCount(int kind) {
         //DSFIXME:  CODE0010: Native static method requires manual modeling
+    	return DSUtils.UNKNOWN_INT;
     }
 
     
@@ -249,6 +257,7 @@ public final class VMDebug {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:11.345 -0400", hash_original_method = "601BF9E9C45E53313091ADD24DE1F2A8", hash_generated_method = "075A45AFF329CB6CE289DDAC0823A189")
     public static int getLoadedClassCount() {
         //DSFIXME:  CODE0010: Native static method requires manual modeling
+    	return DSUtils.UNKNOWN_INT;
     }
 
     
@@ -275,12 +284,14 @@ public final class VMDebug {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:11.345 -0400", hash_original_method = "CC6AE43258DA62A9352F384259F65A85", hash_generated_method = "3C78F46F7D66E12382F0BB2497346726")
     public static boolean cacheRegisterMap(String classAndMethodDesc) {
         //DSFIXME:  CODE0010: Native static method requires manual modeling
+    	return DSUtils.UNKNOWN_BOOLEAN;
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:11.345 -0400", hash_original_method = "8E3D99852584622A004990FFC9F481F7", hash_generated_method = "191920EA181AD72EC7F02588D3BDD49F")
     public static void dumpReferenceTables() {
         //DSFIXME:  CODE0010: Native static method requires manual modeling
+    	
     }
 
     
@@ -309,6 +320,7 @@ public final class VMDebug {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:11.345 -0400", hash_original_method = "B87EE2421E4C5667B9EB94DE362B6C4E", hash_generated_method = "7FCB6C96B544035286B6DE7236468B5C")
     public static long countInstancesOfClass(Class klass, boolean assignable) {
         //DSFIXME:  CODE0010: Native static method requires manual modeling
+    	return DSUtils.UNKNOWN_LONG;
     }
 
     
