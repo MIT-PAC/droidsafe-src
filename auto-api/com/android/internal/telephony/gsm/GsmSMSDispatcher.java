@@ -497,6 +497,10 @@ public final class GsmSMSDispatcher extends SMSDispatcher {
             dsTaint.addTaint(cid);
             dsTaint.addTaint(header.dsTaint);
             dsTaint.addTaint(lac);
+            mHeader = header;
+            mPlmn = plmn;
+            mLac = lac;
+            mCid = cid;
             // ---------- Original Method ----------
             //mHeader = header;
             //mPlmn = plmn;

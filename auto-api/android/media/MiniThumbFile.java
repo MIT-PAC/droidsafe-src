@@ -274,7 +274,7 @@ public class MiniThumbFile {
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public synchronized byte [] getMiniThumbFromFile(long id, byte [] data) {
         dsTaint.addTaint(id);
-        dsTaint.addTaint(data.dsTaint);
+        dsTaint.addTaint(data[0]);
         RandomAccessFile r;
         r = miniThumbDataFile();
         long pos;

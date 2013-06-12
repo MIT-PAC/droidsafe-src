@@ -46,6 +46,8 @@ public class PathPermission extends PatternMatcher {
         dsTaint.addTaint(pattern);
         dsTaint.addTaint(readPermission);
         dsTaint.addTaint(type);
+        mReadPermission = readPermission;
+        mWritePermission = writePermission;
         // ---------- Original Method ----------
         //mReadPermission = readPermission;
         //mWritePermission = writePermission;

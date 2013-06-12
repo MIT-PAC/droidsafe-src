@@ -1,16 +1,18 @@
 package android.text;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-
-// import Iterator to deal with enhanced for loop translation
-import java.util.Iterator;
+import java.lang.reflect.Array;
 
 import android.graphics.Canvas;
 import android.graphics.Paint;
+
 import com.android.internal.util.ArrayUtils;
-import java.lang.reflect.Array;
+
+import droidsafe.annotations.DSC;
+import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.DSModeled;
+import droidsafe.runtime.DroidSafeAndroidRuntime;
+// import Iterator to deal with enhanced for loop translation
 
 public class SpannableStringBuilder implements CharSequence, GetChars, Spannable, Editable, Appendable, GraphicsOperations {
     private static final InputFilter[] NO_FILTERS = new InputFilter[0];
@@ -112,10 +114,10 @@ public class SpannableStringBuilder implements CharSequence, GetChars, Spannable
         int len;
         len = length();
         {
-            throw new IndexOutOfBoundsException("charAt: " + where + " < 0");
+            if (DroidSafeAndroidRuntime.control) throw new IndexOutOfBoundsException("charAt: " + where + " < 0");
         } //End block
         {
-            throw new IndexOutOfBoundsException("charAt: " + where + " >= length " + len);
+            if (DroidSafeAndroidRuntime.control)  throw new IndexOutOfBoundsException("charAt: " + where + " >= length " + len);
         } //End block
         return dsTaint.getTaintChar();
         // ---------- Original Method ----------
@@ -680,7 +682,7 @@ public class SpannableStringBuilder implements CharSequence, GetChars, Spannable
                 {
                     char c;
                     c = charAt(start - 1);
-                    throw new RuntimeException("PARAGRAPH span must start at paragraph boundary");
+                    if (DroidSafeAndroidRuntime.control) throw new RuntimeException("PARAGRAPH span must start at paragraph boundary");
                 } //End block
             } //End collapsed parenthetic
         } //End block
@@ -690,7 +692,7 @@ public class SpannableStringBuilder implements CharSequence, GetChars, Spannable
                 {
                     char c;
                     c = charAt(end - 1);
-                    throw new RuntimeException("PARAGRAPH span must end at paragraph boundary");
+                    if (DroidSafeAndroidRuntime.control) throw new RuntimeException("PARAGRAPH span must end at paragraph boundary");
                 } //End block
             } //End collapsed parenthetic
         } //End block
@@ -1162,7 +1164,7 @@ public class SpannableStringBuilder implements CharSequence, GetChars, Spannable
         dsTaint.addTaint(after);
         dsTaint.addTaint(start);
         dsTaint.addTaint(before);
-        dsTaint.addTaint(recip.dsTaint);
+        dsTaint.addTaint(recip[0].dsTaint);
         int n;
         n = recip.length;
         {
@@ -1183,7 +1185,7 @@ public class SpannableStringBuilder implements CharSequence, GetChars, Spannable
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:04.212 -0400", hash_original_method = "B7AEF4E180417D3A92FE965B8D29719A", hash_generated_method = "18AAFD3BBC5AA41DBF49F9903AC014F0")
     @DSModeled(DSC.SAFE)
     private void sendTextHasChanged(TextWatcher[] recip) {
-        dsTaint.addTaint(recip.dsTaint);
+        dsTaint.addTaint(recip[0].dsTaint);
         int n;
         n = recip.length;
         {
@@ -1294,19 +1296,19 @@ public class SpannableStringBuilder implements CharSequence, GetChars, Spannable
         dsTaint.addTaint(start);
         dsTaint.addTaint(end);
         {
-            throw new IndexOutOfBoundsException(operation + " " +
+            if (DroidSafeAndroidRuntime.control) throw new IndexOutOfBoundsException(operation + " " +
                                                 region(start, end) +
                                                 " has end before start");
         } //End block
         int len;
         len = length();
         {
-            throw new IndexOutOfBoundsException(operation + " " +
+            if (DroidSafeAndroidRuntime.control)  throw new IndexOutOfBoundsException(operation + " " +
                                                 region(start, end) +
                                                 " ends beyond length " + len);
         } //End block
         {
-            throw new IndexOutOfBoundsException(operation + " " +
+            if (DroidSafeAndroidRuntime.control) throw new IndexOutOfBoundsException(operation + " " +
                                                 region(start, end) +
                                                 " starts before 0");
         } //End block
@@ -1650,7 +1652,7 @@ public class SpannableStringBuilder implements CharSequence, GetChars, Spannable
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:04.214 -0400", hash_original_method = "43280B91F5BF9A1999DA6A7ED3115D4A", hash_generated_method = "2AF48A17DDAEE97DB016DC8B561086C7")
     @DSModeled(DSC.SAFE)
     public void setFilters(InputFilter[] filters) {
-        dsTaint.addTaint(filters.dsTaint);
+        dsTaint.addTaint(filters[0].dsTaint);
         {
             throw new IllegalArgumentException();
         } //End block

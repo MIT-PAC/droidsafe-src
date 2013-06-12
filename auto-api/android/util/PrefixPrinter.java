@@ -17,6 +17,8 @@ public class PrefixPrinter implements Printer {
     private PrefixPrinter(Printer printer, String prefix) {
         dsTaint.addTaint(prefix);
         dsTaint.addTaint(printer.dsTaint);
+        mPrinter = printer;
+        mPrefix = prefix;
         // ---------- Original Method ----------
         //mPrinter = printer;
         //mPrefix = prefix;

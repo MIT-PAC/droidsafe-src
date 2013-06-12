@@ -1,25 +1,26 @@
 package android.view;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
+import java.io.IOException;
+import java.lang.reflect.Constructor;
+import java.lang.reflect.Method;
 
-// import Iterator to deal with enhanced for loop translation
-import java.util.Iterator;
-
-import com.android.internal.view.menu.MenuItemImpl;
 import org.xmlpull.v1.XmlPullParser;
 import org.xmlpull.v1.XmlPullParserException;
-import android.app.Activity;
+
 import android.content.Context;
 import android.content.res.TypedArray;
 import android.content.res.XmlResourceParser;
 import android.util.AttributeSet;
-import android.util.Log;
 import android.util.Xml;
-import java.io.IOException;
-import java.lang.reflect.Constructor;
-import java.lang.reflect.Method;
+
+import com.android.internal.view.menu.MenuItemImpl;
+
+import droidsafe.annotations.DSC;
+import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.DSModeled;
+import droidsafe.runtime.DroidSafeAndroidRuntime;
+// import Iterator to deal with enhanced for loop translation
 
 public class MenuInflater {
     private static final String LOG_TAG = "MenuInflater";
@@ -112,7 +113,7 @@ public class MenuInflater {
                         eventType = parser.next();
                     } //End block
                 } //End collapsed parenthetic
-                throw new RuntimeException("Expecting menu, got " + tagName);
+                if (DroidSafeAndroidRuntime.control) throw new RuntimeException("Expecting menu, got " + tagName);
             } //End block
             eventType = parser.next();
         } //End block
@@ -193,7 +194,7 @@ public class MenuInflater {
             } //End collapsed parenthetic
             //End case XmlPullParser.END_TAG 
             //Begin case XmlPullParser.END_DOCUMENT 
-            throw new RuntimeException("Unexpected end of document");
+            if (DroidSafeAndroidRuntime.control) throw new RuntimeException("Unexpected end of document");
             //End case XmlPullParser.END_DOCUMENT 
             eventType = parser.next();
         } //End block
@@ -456,7 +457,7 @@ public class MenuInflater {
                 {
                     boolean varEB9F229BDF825669A5F4C4A08D921F80_1963011502 = (mContext.isRestricted());
                     {
-                        throw new IllegalStateException("The android:onClick attribute cannot "
+                        if (DroidSafeAndroidRuntime.control) throw new IllegalStateException("The android:onClick attribute cannot "
                             + "be used within a restricted context");
                     } //End block
                 } //End collapsed parenthetic
@@ -534,8 +535,8 @@ public class MenuInflater {
         @SuppressWarnings("unchecked")
         private <T> T newInstance(String className, Class<?>[] constructorSignature,
                 Object[] arguments) {
-            dsTaint.addTaint(constructorSignature.dsTaint);
-            dsTaint.addTaint(arguments.dsTaint);
+            dsTaint.addTaint(constructorSignature[0].dsTaint);
+            dsTaint.addTaint(arguments[0].dsTaint);
             dsTaint.addTaint(className);
             try 
             {

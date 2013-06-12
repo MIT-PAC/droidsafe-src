@@ -153,6 +153,10 @@ public abstract class SMSDispatcher extends Handler {
         dsTaint.addTaint(phone.dsTaint);
         dsTaint.addTaint(usageMonitor.dsTaint);
         dsTaint.addTaint(storageMonitor.dsTaint);
+        mUsageMonitor = usageMonitor;
+        mStorageMonitor = storageMonitor;
+        mPhone = phone;
+        
         mWapPush = new WapPushOverSms(phone, this);
         mContext = phone.getContext();
         mResolver = mContext.getContentResolver();
@@ -631,7 +635,7 @@ public abstract class SMSDispatcher extends Handler {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:10.552 -0400", hash_original_method = "FFA598D36A59A89B4BA165B55017EEB5", hash_generated_method = "310531F7D8E98936DC729A6CBB5920A7")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     protected void dispatchPdus(byte[][] pdus) {
-        dsTaint.addTaint(pdus.dsTaint);
+        dsTaint.addTaint(pdus[0][0]);
         Intent intent;
         intent = new Intent(Intents.SMS_RECEIVED_ACTION);
         intent.putExtra("pdus", pdus);
@@ -649,7 +653,7 @@ public abstract class SMSDispatcher extends Handler {
     //DSFIXME:  CODE0002: Requires DSC value to be set
     protected void dispatchPortAddressedPdus(byte[][] pdus, int port) {
         dsTaint.addTaint(port);
-        dsTaint.addTaint(pdus.dsTaint);
+        dsTaint.addTaint(pdus[0][0]);
         Uri uri;
         uri = Uri.parse("sms://localhost:" + port);
         Intent intent;
@@ -937,7 +941,7 @@ public abstract class SMSDispatcher extends Handler {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:10.554 -0400", hash_original_method = "978DCF88E3506C5AEC52023DC36FB472", hash_generated_method = "6DDEE3BD3F6811D740544F185CF18390")
     @DSModeled(DSC.SAFE)
     protected void dispatchBroadcastPdus(byte[][] pdus, boolean isEmergencyMessage) {
-        dsTaint.addTaint(pdus.dsTaint);
+        dsTaint.addTaint(pdus[0][0]);
         dsTaint.addTaint(isEmergencyMessage);
         {
             Intent intent;
@@ -982,7 +986,10 @@ public abstract class SMSDispatcher extends Handler {
             dsTaint.addTaint(data.dsTaint);
             dsTaint.addTaint(sentIntent.dsTaint);
             dsTaint.addTaint(deliveryIntent.dsTaint);
+            mData = data;
             mRetryCount = 0;
+            mSentIntent = sentIntent;
+            mDeliveryIntent = deliveryIntent;
             // ---------- Original Method ----------
             //mData = data;
             //mSentIntent = sentIntent;

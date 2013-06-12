@@ -2,6 +2,7 @@ package android.app;
 
 // Droidsafe Imports
 import droidsafe.helpers.*;
+import droidsafe.runtime.DroidSafeAndroidRuntime;
 import droidsafe.annotations.*;
 
 // import Iterator to deal with enhanced for loop translation
@@ -392,7 +393,7 @@ public final class ActivityThread {
                         boolean var0E943DBF535AA6AD6A4FBE9A1D1356B5_1204855071 = (packageInfo.isSecurityViolation()
                         && (flags&Context.CONTEXT_IGNORE_SECURITY) == 0);
                         {
-                            throw new SecurityException(
+                        	if (DroidSafeAndroidRuntime.control) throw new SecurityException(
                             "Requesting code from " + packageName
                             + " to be run in process "
                             + mBoundApplication.processName
@@ -443,7 +444,7 @@ public final class ActivityThread {
                         + mBoundApplication.processName + " (with uid "
                         + mBoundApplication.appInfo.uid + ")";
                 } //End block
-                throw new SecurityException(msg);
+                if (DroidSafeAndroidRuntime.control) throw new SecurityException(msg);
             } //End block
         } //End block
         LoadedApk var578F54B83987DE85C954C04ABE16BBBF_2052022666 = (getPackageInfo(ai, compatInfo, null, securityViolation, includeCode));
@@ -1045,7 +1046,7 @@ public final class ActivityThread {
                 activity.mCalled = false;
                 mInstrumentation.callActivityOnCreate(activity, r.state);
                 {
-                    throw new SuperNotCalledException(
+                	if (DroidSafeAndroidRuntime.control) throw new SuperNotCalledException(
                         "Activity " + r.intent.getComponent().toShortString() +
                         " did not call through to super.onCreate()");
                 } //End block
@@ -1064,7 +1065,7 @@ public final class ActivityThread {
                     activity.mCalled = false;
                     mInstrumentation.callActivityOnPostCreate(activity, r.state);
                     {
-                        throw new SuperNotCalledException(
+                    	if (DroidSafeAndroidRuntime.control) throw new SuperNotCalledException(
                             "Activity " + r.intent.getComponent().toShortString() +
                             " did not call through to super.onPostCreate()");
                     } //End block
@@ -1082,7 +1083,7 @@ public final class ActivityThread {
             {
                 boolean var8E41159D9268684301886771AE50E678_500500414 = (!mInstrumentation.onException(activity, e));
                 {
-                    throw new RuntimeException(
+                	if (DroidSafeAndroidRuntime.control) throw new RuntimeException(
                     "Unable to start activity " + component
                     + ": " + e.toString(), e);
                 } //End block
@@ -1134,7 +1135,7 @@ public final class ActivityThread {
                     {
                         boolean varEA1D939B58A63BB32FD749EB4AA2F837_1761013267 = (!mInstrumentation.onException(r.activity, e));
                         {
-                            throw new RuntimeException(
+                        	if (DroidSafeAndroidRuntime.control) throw new RuntimeException(
                                 "Unable to pause activity "
                                 + r.intent.getComponent().toShortString()
                                 + ": " + e.toString(), e);
@@ -1809,7 +1810,6 @@ public final class ActivityThread {
             a = r.activity;
             final int forwardBit;
             forwardBit = WindowManager.LayoutParams.SOFT_INPUT_IS_FORWARD_NAVIGATION;
-            forwardBit = 0;
             boolean willBeVisible;
             willBeVisible = !a.mStartedActivity;
             {
@@ -1938,7 +1938,7 @@ public final class ActivityThread {
             {
                 boolean varB0EB73057242B22D5F7630AAE18BE0D8_1146856282 = (!mInstrumentation.onException(r.activity, e));
                 {
-                    throw new RuntimeException(
+                	if (DroidSafeAndroidRuntime.control) throw new RuntimeException(
                         "Unable to create thumbnail of "
                         + r.intent.getComponent().toShortString()
                         + ": " + e.toString(), e);
@@ -2073,7 +2073,7 @@ public final class ActivityThread {
             {
                 boolean varB0EB73057242B22D5F7630AAE18BE0D8_888811873 = (!mInstrumentation.onException(r.activity, e));
                 {
-                    throw new RuntimeException(
+                	if (DroidSafeAndroidRuntime.control) throw new RuntimeException(
                         "Unable to pause activity "
                         + r.intent.getComponent().toShortString()
                         + ": " + e.toString(), e);
@@ -2492,7 +2492,7 @@ public final class ActivityThread {
                     {
                         boolean varEA1D939B58A63BB32FD749EB4AA2F837_500157833 = (!mInstrumentation.onException(r.activity, e));
                         {
-                            throw new RuntimeException(
+                        	if (DroidSafeAndroidRuntime.control) throw new RuntimeException(
                                 "Unable to pause activity "
                                 + r.intent.getComponent().toShortString()
                                 + ": " + e.toString(), e);
@@ -2563,7 +2563,7 @@ public final class ActivityThread {
                     {
                         boolean varEA1D939B58A63BB32FD749EB4AA2F837_419797289 = (!mInstrumentation.onException(r.activity, e));
                         {
-                            throw new RuntimeException(
+                        	if (DroidSafeAndroidRuntime.control) throw new RuntimeException(
                                 "Unable to pause activity "
                                 + safeToComponentShortString(r.intent)
                                 + ": " + e.toString(), e);
@@ -2619,7 +2619,7 @@ public final class ActivityThread {
                 r.activity.mCalled = false;
                 mInstrumentation.callActivityOnDestroy(r.activity);
                 {
-                    throw new SuperNotCalledException(
+                	if (DroidSafeAndroidRuntime.control) throw new SuperNotCalledException(
                         "Activity " + safeToComponentShortString(r.intent) +
                         " did not call through to super.onDestroy()");
                 } //End block
@@ -3060,7 +3060,7 @@ public final class ActivityThread {
             cb.onConfigurationChanged(config);
             {
                 {
-                    throw new SuperNotCalledException(
+                	if (DroidSafeAndroidRuntime.control) throw new SuperNotCalledException(
                             "Activity " + activity.getLocalClassName() +
                         " did not call through to super.onConfigurationChanged()");
                 } //End block
@@ -3572,7 +3572,7 @@ public final class ActivityThread {
             catch (PackageManager.NameNotFoundException e)
             { }
             {
-                throw new RuntimeException(
+            	if (DroidSafeAndroidRuntime.control) throw new RuntimeException(
                     "Unable to find instrumentation info for: "
                     + data.instrumentationName);
             } //End block
@@ -4273,6 +4273,9 @@ public final class ActivityThread {
             dsTaint.addTaint(name);
             dsTaint.addTaint(provider.dsTaint);
             dsTaint.addTaint(localProvider.dsTaint);
+            mProvider = provider;
+            mName = name;
+            mLocalProvider = localProvider;
             // ---------- Original Method ----------
             //mName = name;
             //mProvider = provider;
@@ -5668,7 +5671,7 @@ public final class ActivityThread {
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:14:58.660 -0400", hash_original_method = "E9FD23CC6BA5457F811332501D367E07", hash_generated_method = "5F1852B2ED259196D688E61FCE3ACB5C")
         //DSFIXME:  CODE0002: Requires DSC value to be set
         private void printRow(PrintWriter pw, String format, Object...objs) {
-            dsTaint.addTaint(objs.dsTaint);
+            dsTaint.addTaint(objs[0].dsTaint);
             dsTaint.addTaint(pw.dsTaint);
             dsTaint.addTaint(format);
             pw.println(String.format(format, objs));
@@ -5913,7 +5916,7 @@ public final class ActivityThread {
             handleDispatchPackageBroadcast(msg.arg1, (String[])msg.obj);
             //End case DISPATCH_PACKAGE_BROADCAST 
             //Begin case SCHEDULE_CRASH 
-            throw new RemoteServiceException((String)msg.obj);
+            if (DroidSafeAndroidRuntime.control) throw new RemoteServiceException((String)msg.obj);
             //End case SCHEDULE_CRASH 
             //Begin case DUMP_HEAP 
             handleDumpHeap(msg.arg1 != 0, (DumpHeapData)msg.obj);
@@ -6044,6 +6047,8 @@ public final class ActivityThread {
          ResourcesKey(String resDir, float scale) {
             dsTaint.addTaint(scale);
             dsTaint.addTaint(resDir);
+            mScale = scale;
+            mResDir = resDir;
             mHash = mResDir.hashCode() << 2 + (int) (mScale * 2);
             // ---------- Original Method ----------
             //mResDir = resDir;

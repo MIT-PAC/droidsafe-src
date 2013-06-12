@@ -1,19 +1,10 @@
 package android.net;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-
-// import Iterator to deal with enhanced for loop translation
-import java.util.Iterator;
-
-import android.os.Parcel;
-import android.os.Parcelable;
-import android.util.Log;
+import java.io.ByteArrayOutputStream;
 import java.io.File;
 import java.io.IOException;
 import java.io.UnsupportedEncodingException;
-import java.io.ByteArrayOutputStream;
 import java.net.URLEncoder;
 import java.util.AbstractList;
 import java.util.ArrayList;
@@ -22,6 +13,14 @@ import java.util.LinkedHashSet;
 import java.util.List;
 import java.util.RandomAccess;
 import java.util.Set;
+
+import android.os.Parcel;
+import android.os.Parcelable;
+import droidsafe.annotations.DSC;
+import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.DSModeled;
+import droidsafe.runtime.DroidSafeAndroidRuntime;
+// import Iterator to deal with enhanced for loop translation
 
 public abstract class Uri implements Parcelable, Comparable<Uri> {
     private static final String LOG = Uri.class.getSimpleName();
@@ -51,7 +50,7 @@ public abstract class Uri implements Parcelable, Comparable<Uri> {
             //Begin case HierarchicalUri.TYPE_ID 
             Uri varD89508D27841F514DC289F56EB993C58_851300036 = (HierarchicalUri.readFrom(in));
             //End case HierarchicalUri.TYPE_ID 
-            throw new IllegalArgumentException("Unknown URI type: " + type);
+            if (DroidSafeAndroidRuntime.control)throw new IllegalArgumentException("Unknown URI type: " + type);
             return (Uri)dsTaint.getTaint();
             // ---------- Original Method ----------
             //int type = in.readInt();
@@ -299,7 +298,7 @@ public abstract class Uri implements Parcelable, Comparable<Uri> {
         {
             boolean var6FB98654367C4545BFB1C7222C5CD904_207441060 = (isOpaque());
             {
-                throw new UnsupportedOperationException(NOT_HIERARCHICAL);
+            	if (DroidSafeAndroidRuntime.control)throw new UnsupportedOperationException(NOT_HIERARCHICAL);
             } //End block
         } //End collapsed parenthetic
         String query;
@@ -344,11 +343,11 @@ public abstract class Uri implements Parcelable, Comparable<Uri> {
         {
             boolean var6FB98654367C4545BFB1C7222C5CD904_674457525 = (isOpaque());
             {
-                throw new UnsupportedOperationException(NOT_HIERARCHICAL);
+            	if (DroidSafeAndroidRuntime.control) throw new UnsupportedOperationException(NOT_HIERARCHICAL);
             } //End block
         } //End collapsed parenthetic
         {
-            throw new NullPointerException("key");
+        	if (DroidSafeAndroidRuntime.control)throw new NullPointerException("key");
         } //End block
         String query;
         query = getEncodedQuery();
@@ -409,11 +408,11 @@ public abstract class Uri implements Parcelable, Comparable<Uri> {
         {
             boolean var6FB98654367C4545BFB1C7222C5CD904_595306297 = (isOpaque());
             {
-                throw new UnsupportedOperationException(NOT_HIERARCHICAL);
+            	if (DroidSafeAndroidRuntime.control)throw new UnsupportedOperationException(NOT_HIERARCHICAL);
             } //End block
         } //End collapsed parenthetic
         {
-            throw new NullPointerException("key");
+        	if (DroidSafeAndroidRuntime.control) throw new NullPointerException("key");
         } //End block
         final String query;
         query = getEncodedQuery();
@@ -1162,6 +1161,8 @@ public abstract class Uri implements Parcelable, Comparable<Uri> {
             dsTaint.addTaint(ssp.dsTaint);
             dsTaint.addTaint(fragment.dsTaint);
             this.fragment = fragment == null ? Part.NULL : fragment;
+            this.scheme = scheme;
+            this.ssp = ssp;
             // ---------- Original Method ----------
             //this.scheme = scheme;
             //this.ssp = ssp;
@@ -1444,6 +1445,8 @@ public abstract class Uri implements Parcelable, Comparable<Uri> {
          PathSegments(String[] segments, int size) {
             dsTaint.addTaint(segments);
             dsTaint.addTaint(size);
+            this.segments = segments;
+            this.size = size;
             // ---------- Original Method ----------
             //this.segments = segments;
             //this.size = size;
@@ -1455,7 +1458,7 @@ public abstract class Uri implements Parcelable, Comparable<Uri> {
         public String get(int index) {
             dsTaint.addTaint(index);
             {
-                throw new IndexOutOfBoundsException();
+            	if (DroidSafeAndroidRuntime.control)throw new IndexOutOfBoundsException();
             } //End block
             return dsTaint.getTaintString();
             // ---------- Original Method ----------
@@ -1731,6 +1734,8 @@ public abstract class Uri implements Parcelable, Comparable<Uri> {
             this.path = path == null ? PathPart.NULL : path;
             this.query = Part.nonNull(query);
             this.fragment = Part.nonNull(fragment);
+            this.scheme = scheme;
+
             // ---------- Original Method ----------
             //this.scheme = scheme;
             //this.authority = Part.nonNull(authority);
@@ -2330,7 +2335,7 @@ public abstract class Uri implements Parcelable, Comparable<Uri> {
         public Uri build() {
             {
                 {
-                    throw new UnsupportedOperationException(
+                    if (DroidSafeAndroidRuntime.control)  throw new UnsupportedOperationException(
                             "An opaque URI must have a scheme.");
                 } //End block
             } //End block

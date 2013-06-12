@@ -22,6 +22,7 @@ public final class Entity {
     public Entity(ContentValues values) {
         dsTaint.addTaint(values.dsTaint);
         mSubValues = new ArrayList<NamedContentValues>();
+        mValues = values;
         // ---------- Original Method ----------
         //mValues = values;
         //mSubValues = new ArrayList<NamedContentValues>();
@@ -94,6 +95,8 @@ public final class Entity {
         public NamedContentValues(Uri uri, ContentValues values) {
             dsTaint.addTaint(values.dsTaint);
             dsTaint.addTaint(uri.dsTaint);
+            this.uri = uri;
+            this.values = values;
             // ---------- Original Method ----------
             //this.uri = uri;
             //this.values = values;

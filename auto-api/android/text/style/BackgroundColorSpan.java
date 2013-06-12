@@ -19,6 +19,7 @@ public class BackgroundColorSpan extends CharacterStyle implements UpdateAppeara
     @DSModeled(DSC.SAFE)
     public BackgroundColorSpan(int color) {
         dsTaint.addTaint(color);
+        mColor = color;
         // ---------- Original Method ----------
         //mColor = color;
     }

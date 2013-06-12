@@ -52,6 +52,7 @@ public class IntentSender implements Parcelable {
     @DSModeled(DSC.SAFE)
     public IntentSender(IIntentSender target) {
         dsTaint.addTaint(target.dsTaint);
+        mTarget = target;
         // ---------- Original Method ----------
         //mTarget = target;
     }
@@ -295,6 +296,9 @@ public class IntentSender implements Parcelable {
             dsTaint.addTaint(pi.dsTaint);
             dsTaint.addTaint(who.dsTaint);
             dsTaint.addTaint(handler.dsTaint);
+            mIntentSender = pi;
+            mWho = who;
+            mHandler = handler;
             // ---------- Original Method ----------
             //mIntentSender = pi;
             //mWho = who;

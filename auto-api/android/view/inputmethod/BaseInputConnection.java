@@ -49,6 +49,7 @@ public class BaseInputConnection implements InputConnection {
         dsTaint.addTaint(mgr.dsTaint);
         mTargetView = null;
         mDummyMode = !fullEditor;
+        mIMM = mgr;
         // ---------- Original Method ----------
         //mIMM = mgr;
         //mTargetView = null;
@@ -64,6 +65,7 @@ public class BaseInputConnection implements InputConnection {
         mIMM = (InputMethodManager)targetView.getContext().getSystemService(
                 Context.INPUT_METHOD_SERVICE);
         mDummyMode = !fullEditor;
+        mTargetView = targetView;
         // ---------- Original Method ----------
         //mIMM = (InputMethodManager)targetView.getContext().getSystemService(
                 //Context.INPUT_METHOD_SERVICE);

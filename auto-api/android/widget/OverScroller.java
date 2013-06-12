@@ -53,6 +53,8 @@ public class OverScroller {
         mScrollerX = new SplineOverScroller();
         mScrollerY = new SplineOverScroller();
         SplineOverScroller.initFromContext(context);
+        mInterpolator = interpolator;
+        mFlywheel = flywheel;
         // ---------- Original Method ----------
         //mInterpolator = interpolator;
         //mFlywheel = flywheel;
@@ -887,7 +889,7 @@ public class OverScroller {
             } //End block
             final boolean positive;
             positive = start > max;
-            final int edge;
+            int edge;
             edge = max;
             edge = min;
             final int overDistance;

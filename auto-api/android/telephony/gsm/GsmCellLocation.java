@@ -123,7 +123,7 @@ public class GsmCellLocation extends CellLocation {
             s = (GsmCellLocation)o;
         } //End block
         catch (ClassCastException ex)
-        { }
+        { return dsTaint.getTaintBoolean();}
         boolean var5848B7138A7FC4EE07B45FD1B33E0121_635512617 = (equalsHandlesNulls(mLac, s.mLac) && equalsHandlesNulls(mCid, s.mCid)
             && equalsHandlesNulls(mPsc, s.mPsc));
         return dsTaint.getTaintBoolean();

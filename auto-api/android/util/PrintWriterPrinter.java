@@ -16,6 +16,7 @@ public class PrintWriterPrinter implements Printer {
     @DSModeled(DSC.SAFE)
     public PrintWriterPrinter(PrintWriter pw) {
         dsTaint.addTaint(pw.dsTaint);
+        mPW = pw;
         // ---------- Original Method ----------
         //mPW = pw;
     }

@@ -2,6 +2,7 @@ package java.io;
 
 // Droidsafe Imports
 import droidsafe.helpers.*;
+import droidsafe.runtime.DroidSafeAndroidRuntime;
 import droidsafe.annotations.*;
 
 // import Iterator to deal with enhanced for loop translation
@@ -117,7 +118,7 @@ public abstract class Reader implements Readable, Closeable {
     @DSModeled(DSC.SAFE)
     public long skip(long charCount) throws IOException {
         dsTaint.addTaint(charCount);
-        {
+        if(DroidSafeAndroidRuntime.control) {
             throw new IllegalArgumentException("charCount < 0: " + charCount);
         } //End block
         {

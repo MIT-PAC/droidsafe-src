@@ -1,18 +1,20 @@
 package android.telephony;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-
-// import Iterator to deal with enhanced for loop translation
-import java.util.Iterator;
+import java.io.UnsupportedEncodingException;
 
 import android.text.format.Time;
 import android.util.Log;
+
 import com.android.internal.telephony.GsmAlphabet;
 import com.android.internal.telephony.IccUtils;
 import com.android.internal.telephony.gsm.SmsCbHeader;
-import java.io.UnsupportedEncodingException;
+
+import droidsafe.annotations.DSC;
+import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.DSModeled;
+import droidsafe.runtime.DroidSafeAndroidRuntime;
+// import Iterator to deal with enhanced for loop translation
 
 public class SmsCbMessage {
     public static final int GEOGRAPHICAL_SCOPE_CELL_WIDE_IMMEDIATE = 0;
@@ -251,7 +253,7 @@ public class SmsCbMessage {
             int nrPages;
             nrPages = pdu[SmsCbHeader.PDU_HEADER_LENGTH];
             {
-                throw new IllegalArgumentException("Pdu length " + pdu.length + " does not match "
+                if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("Pdu length " + pdu.length + " does not match "
                         + nrPages + " pages");
             } //End block
             StringBuilder sb;
@@ -265,7 +267,7 @@ public class SmsCbMessage {
                     int length;
                     length = pdu[offset + PDU_BODY_PAGE_LENGTH];
                     {
-                        throw new IllegalArgumentException("Page length " + length
+                        if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("Page length " + length
                             + " exceeds maximum value " + PDU_BODY_PAGE_LENGTH);
                     } //End block
                     sb.append(unpackBody(pdu, encoding, offset, length, hasLanguageIndicator));

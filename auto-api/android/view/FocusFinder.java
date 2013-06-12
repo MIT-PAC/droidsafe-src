@@ -1,16 +1,16 @@
 package android.view;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-
-// import Iterator to deal with enhanced for loop translation
-import java.util.Iterator;
-
-import android.graphics.Rect;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
+
+import android.graphics.Rect;
+import droidsafe.annotations.DSC;
+import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.DSModeled;
+import droidsafe.runtime.DroidSafeAndroidRuntime;
+// import Iterator to deal with enhanced for loop translation
 
 public class FocusFinder {
     private static ThreadLocal<FocusFinder> tlFocusFinder = new ThreadLocal<FocusFinder>() {        
@@ -300,7 +300,7 @@ public class FocusFinder {
         dsTaint.addTaint(destRect.dsTaint);
         dsTaint.addTaint(direction);
         dsTaint.addTaint(srcRect.dsTaint);
-        throw new IllegalArgumentException("direction must be one of "
+        if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("direction must be one of "
                 + "{FOCUS_UP, FOCUS_DOWN, FOCUS_LEFT, FOCUS_RIGHT}.");
         return dsTaint.getTaintBoolean();
         // ---------- Original Method ----------
@@ -314,7 +314,7 @@ public class FocusFinder {
         dsTaint.addTaint(rect1.dsTaint);
         dsTaint.addTaint(rect2.dsTaint);
         dsTaint.addTaint(direction);
-        throw new IllegalArgumentException("direction must be one of "
+        if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("direction must be one of "
                 + "{FOCUS_UP, FOCUS_DOWN, FOCUS_LEFT, FOCUS_RIGHT}.");
         return dsTaint.getTaintBoolean();
         // ---------- Original Method ----------
@@ -338,7 +338,7 @@ public class FocusFinder {
         dsTaint.addTaint(dest.dsTaint);
         dsTaint.addTaint(direction);
         dsTaint.addTaint(src.dsTaint);
-        throw new IllegalArgumentException("direction must be one of "
+        if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("direction must be one of "
                 + "{FOCUS_UP, FOCUS_DOWN, FOCUS_LEFT, FOCUS_RIGHT}.");
         return dsTaint.getTaintBoolean();
         // ---------- Original Method ----------
@@ -508,7 +508,7 @@ public class FocusFinder {
         dsTaint.addTaint(direction);
         dsTaint.addTaint(y);
         dsTaint.addTaint(x);
-        throw new IllegalArgumentException("direction must be one of "
+        if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("direction must be one of "
                 + "{FOCUS_UP, FOCUS_DOWN, FOCUS_LEFT, FOCUS_RIGHT}.");
         return dsTaint.getTaintBoolean();
         // ---------- Original Method ----------

@@ -25,6 +25,8 @@ public class ContentProviderClient {
      ContentProviderClient(ContentResolver contentResolver, IContentProvider contentProvider) {
         dsTaint.addTaint(contentResolver.dsTaint);
         dsTaint.addTaint(contentProvider.dsTaint);
+        mContentProvider = contentProvider;
+        mContentResolver = contentResolver;
         // ---------- Original Method ----------
         //mContentProvider = contentProvider;
         //mContentResolver = contentResolver;
@@ -87,7 +89,7 @@ public class ContentProviderClient {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:14:59.322 -0400", hash_original_method = "610F9CD05A6F00083AB860F680EDE10F", hash_generated_method = "087C4CCDBE3AD727347EE9093A57DC83")
     @DSModeled(DSC.SPEC)
     public int bulkInsert(Uri url, ContentValues[] initialValues) throws RemoteException {
-        dsTaint.addTaint(initialValues.dsTaint);
+        dsTaint.addTaint(initialValues[0].dsTaint);
         dsTaint.addTaint(url.dsTaint);
         int varB9AA1288A8ADB06CF2F2BD082A565998_1031380337 = (mContentProvider.bulkInsert(url, initialValues));
         return dsTaint.getTaintInt();

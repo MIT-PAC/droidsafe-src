@@ -1,17 +1,12 @@
 package com.android.internal.telephony;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-
+import java.util.ArrayList;
+import java.util.HashMap;
 // import Iterator to deal with enhanced for loop translation
 import java.util.Iterator;
+import java.util.List;
 
-import com.android.internal.telephony.DataCallState.SetupResult;
-import com.android.internal.util.AsyncChannel;
-import com.android.internal.util.Protocol;
-import com.android.internal.util.State;
-import com.android.internal.util.StateMachine;
 import android.app.PendingIntent;
 import android.net.LinkCapabilities;
 import android.net.LinkProperties;
@@ -20,9 +15,16 @@ import android.os.AsyncResult;
 import android.os.Message;
 import android.os.SystemProperties;
 import android.text.TextUtils;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
+
+import com.android.internal.util.AsyncChannel;
+import com.android.internal.util.Protocol;
+import com.android.internal.util.State;
+import com.android.internal.util.StateMachine;
+
+import droidsafe.annotations.DSC;
+import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.DSModeled;
+import droidsafe.runtime.DroidSafeAndroidRuntime;
 
 public abstract class DataConnection extends StateMachine {
     protected static final boolean DBG = true;
@@ -1175,7 +1177,7 @@ public abstract String toString();
             transitionTo(mInactiveState);
             //End case ERR_RilError 
             //Begin case default 
-            throw new RuntimeException("Unknown SetupResult, should not happen");
+            if (DroidSafeAndroidRuntime.control) throw new RuntimeException("Unknown SetupResult, should not happen");
             //End case default 
             //End case EVENT_SETUP_DATA_CONNECTION_DONE 
             //Begin case EVENT_SETUP_DATA_CONNECTION_DONE 

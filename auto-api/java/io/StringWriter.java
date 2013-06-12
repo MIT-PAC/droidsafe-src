@@ -2,6 +2,7 @@ package java.io;
 
 // Droidsafe Imports
 import droidsafe.helpers.*;
+import droidsafe.runtime.DroidSafeAndroidRuntime;
 import droidsafe.annotations.*;
 
 // import Iterator to deal with enhanced for loop translation
@@ -27,7 +28,7 @@ public class StringWriter extends Writer {
     @DSModeled(DSC.SAFE)
     public StringWriter(int initialSize) {
         dsTaint.addTaint(initialSize);
-        {
+        if(DroidSafeAndroidRuntime.control) {
             throw new IllegalArgumentException();
         } //End block
         buf = new StringBuffer(initialSize);

@@ -2,6 +2,7 @@ package java.net;
 
 // Droidsafe Imports
 import droidsafe.helpers.*;
+import droidsafe.runtime.DroidSafeAndroidRuntime;
 import droidsafe.annotations.*;
 
 // import Iterator to deal with enhanced for loop translation
@@ -252,7 +253,7 @@ public final class DatagramPacket {
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public synchronized void setSocketAddress(SocketAddress sockAddr) {
         dsTaint.addTaint(sockAddr.dsTaint);
-        {
+        if(DroidSafeAndroidRuntime.control) {
             throw new IllegalArgumentException("Socket address not an InetSocketAddress: " +
                     (sockAddr == null ? null : sockAddr.getClass()));
         } //End block
@@ -260,7 +261,7 @@ public final class DatagramPacket {
         inetAddr = (InetSocketAddress) sockAddr;
         {
             boolean varA3B9EEB1EB48BA97910D459B57127264_2108477297 = (inetAddr.isUnresolved());
-            {
+            if(DroidSafeAndroidRuntime.control) {
                 throw new IllegalArgumentException("Socket address unresolved: " + sockAddr);
             } //End block
         } //End collapsed parenthetic

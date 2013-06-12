@@ -2,6 +2,7 @@ package android.database;
 
 // Droidsafe Imports
 import droidsafe.helpers.*;
+import droidsafe.runtime.DroidSafeAndroidRuntime;
 import droidsafe.annotations.*;
 
 // import Iterator to deal with enhanced for loop translation
@@ -88,7 +89,9 @@ public abstract class AbstractCursor implements CrossProcessCursor {
     @DSModeled(DSC.SAFE)
     public byte[] getBlob(int column) {
         dsTaint.addTaint(column);
-        throw new UnsupportedOperationException("getBlob is not supported");
+        if (DroidSafeAndroidRuntime.control) {
+        	throw new UnsupportedOperationException("getBlob is not supported");
+        }
         byte[] retVal = new byte[1];
         retVal[0] = (byte)dsTaint.getTaintInt();
         return retVal;
@@ -469,6 +472,7 @@ public abstract class AbstractCursor implements CrossProcessCursor {
         dsTaint.addTaint(columnName);
         final int index;
         index = getColumnIndex(columnName);
+        if (DroidSafeAndroidRuntime.control) 
         {
             throw new IllegalArgumentException("column '" + columnName + "' does not exist");
         } //End block

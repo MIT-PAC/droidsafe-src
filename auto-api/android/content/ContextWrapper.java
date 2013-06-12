@@ -533,7 +533,7 @@ public class ContextWrapper extends Context {
     @DSModeled(DSC.SAFE)
     @Override
     public void startActivities(Intent[] intents) {
-        dsTaint.addTaint(intents.dsTaint);
+        dsTaint.addTaint(intents[0].dsTaint);
         mBase.startActivities(intents);
         // ---------- Original Method ----------
         //mBase.startActivities(intents);

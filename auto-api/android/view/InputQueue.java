@@ -1,14 +1,13 @@
 package android.view;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-
-// import Iterator to deal with enhanced for loop translation
-import java.util.Iterator;
-
 import android.os.MessageQueue;
 import android.util.Slog;
+import droidsafe.annotations.DSC;
+import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.DSModeled;
+import droidsafe.runtime.DroidSafeAndroidRuntime;
+// import Iterator to deal with enhanced for loop translation
 
 public final class InputQueue {
     private static final String TAG = "InputQueue";
@@ -20,6 +19,7 @@ public final class InputQueue {
     @DSModeled(DSC.SAFE)
     public InputQueue(InputChannel channel) {
         dsTaint.addTaint(channel.dsTaint);
+        mChannel = channel;
         // ---------- Original Method ----------
         //mChannel = channel;
     }
@@ -146,7 +146,7 @@ public final class InputQueue {
             dsTaint.addTaint(handled);
             {
                 {
-                    throw new IllegalStateException("Event finished callback already invoked.");
+                    if (DroidSafeAndroidRuntime.control)  throw new IllegalStateException("Event finished callback already invoked.");
                 } //End block
                 nativeFinished(mFinishedToken, handled);
                 mFinishedToken = -1;

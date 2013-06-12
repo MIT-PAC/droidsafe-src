@@ -60,6 +60,7 @@ public class OperationApplicationException extends Exception {
     public OperationApplicationException(int numSuccessfulYieldPoints) {
         super();
         dsTaint.addTaint(numSuccessfulYieldPoints);
+        mNumSuccessfulYieldPoints = numSuccessfulYieldPoints;
         // ---------- Original Method ----------
         //mNumSuccessfulYieldPoints = numSuccessfulYieldPoints;
     }
@@ -71,6 +72,7 @@ public class OperationApplicationException extends Exception {
         super(message);
         dsTaint.addTaint(message);
         dsTaint.addTaint(numSuccessfulYieldPoints);
+        mNumSuccessfulYieldPoints = numSuccessfulYieldPoints;
         // ---------- Original Method ----------
         //mNumSuccessfulYieldPoints = numSuccessfulYieldPoints;
     }

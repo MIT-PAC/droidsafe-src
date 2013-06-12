@@ -1,14 +1,15 @@
 package java.security;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-
-// import Iterator to deal with enhanced for loop translation
-import java.util.Iterator;
-
 import java.nio.ByteBuffer;
+
 import org.apache.harmony.security.fortress.Engine;
+
+import droidsafe.annotations.DSC;
+import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.DSModeled;
+import droidsafe.runtime.DroidSafeAndroidRuntime;
+// import Iterator to deal with enhanced for loop translation
 
 public abstract class MessageDigest extends MessageDigestSpi {
     private static final Engine ENGINE = new Engine("MessageDigest");
@@ -100,7 +101,7 @@ public abstract class MessageDigest extends MessageDigestSpi {
         dsTaint.addTaint(len);
         dsTaint.addTaint(offset);
         {
-            throw new IllegalArgumentException();
+            if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException();
         } //End block
         engineUpdate(input, offset, len);
         // ---------- Original Method ----------
@@ -117,7 +118,7 @@ public abstract class MessageDigest extends MessageDigestSpi {
     public void update(byte[] input) {
         dsTaint.addTaint(input);
         {
-            throw new NullPointerException();
+            if (DroidSafeAndroidRuntime.control)  throw new NullPointerException();
         } //End block
         engineUpdate(input, 0, input.length);
         // ---------- Original Method ----------
@@ -147,7 +148,7 @@ public abstract class MessageDigest extends MessageDigestSpi {
         dsTaint.addTaint(offset);
         dsTaint.addTaint(buf);
         {
-            throw new IllegalArgumentException();
+            if (DroidSafeAndroidRuntime.control)  throw new IllegalArgumentException();
         } //End block
         int var2CAEA613A9CD0DCE46D4A8F510BE3822_326166221 = (engineDigest(buf, offset, len));
         return dsTaint.getTaintInt();
@@ -255,7 +256,7 @@ public abstract class MessageDigest extends MessageDigestSpi {
         {
             Object varDEB570B566DA7549E2F197D0AFA5A2B6_1775111893 = (super.clone());
         } //End block
-        throw new CloneNotSupportedException();
+        if (DroidSafeAndroidRuntime.control) throw new CloneNotSupportedException();
         return (Object)dsTaint.getTaint();
         // ---------- Original Method ----------
         //if (this instanceof Cloneable) {
@@ -360,7 +361,7 @@ public abstract class MessageDigest extends MessageDigestSpi {
                 spi = (MessageDigestSpi) spiImpl.clone();
                 Object varCAE1575D4CACB58BC0AA8C6BC6F6B288_1892674179 = (new MessageDigestImpl(spi, getProvider(), getAlgorithm()));
             } //End block
-            throw new CloneNotSupportedException();
+            if (DroidSafeAndroidRuntime.control) throw new CloneNotSupportedException();
             return (Object)dsTaint.getTaint();
             // ---------- Original Method ----------
             //if (spiImpl instanceof Cloneable) {

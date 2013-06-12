@@ -1,17 +1,19 @@
 package android.view;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-
-// import Iterator to deal with enhanced for loop translation
-import java.util.Iterator;
-
 import android.content.res.CompatibilityInfo.Translator;
-import android.graphics.*;
-import android.os.Parcelable;
+import android.graphics.Bitmap;
+import android.graphics.Canvas;
+import android.graphics.Matrix;
+import android.graphics.Rect;
+import android.graphics.Region;
+import android.graphics.SurfaceTexture;
 import android.os.Parcel;
-import android.util.Log;
+import android.os.Parcelable;
+import droidsafe.annotations.DSC;
+import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.DSModeled;
+// import Iterator to deal with enhanced for loop translation
 
 public class Surface implements Parcelable {
     private static final String LOG_TAG = "Surface";
@@ -169,6 +171,7 @@ public class Surface implements Parcelable {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:05.534 -0400", hash_original_method = "F1240C06AF1BA9E648B2E780B8155F1C", hash_generated_method = "4650533557ECD9C18114FDC684C3823B")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public boolean isValid() {
+    	return dsTaint.getTaintBoolean();
     }
 
     
@@ -297,6 +300,7 @@ public class Surface implements Parcelable {
     //DSFIXME:  CODE0002: Requires DSC value to be set
     private Canvas lockCanvasNative(Rect dirty) {
         dsTaint.addTaint(dirty.dsTaint);
+        return (Canvas)dsTaint.getTaint();
     }
 
     
@@ -326,13 +330,13 @@ public class Surface implements Parcelable {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:05.535 -0400", hash_original_method = "DB9546994189396D4F5B70BB6C426E41", hash_generated_method = "2D381E7D870ADB5D09FDA4313287C9E5")
     public static Bitmap screenshot(int width, int height) {
-        //DSFIXME:  CODE0010: Native static method requires manual modeling
+        return new Bitmap();
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:05.535 -0400", hash_original_method = "23F62978A6FF5B001F5553334F9692CB", hash_generated_method = "B71282F6B17A0909E4160752A8E25801")
     public static Bitmap screenshot(int width, int height, int minLayer, int maxLayer) {
-        //DSFIXME:  CODE0010: Native static method requires manual modeling
+    	return new Bitmap();
     }
 
     
@@ -508,6 +512,7 @@ public class Surface implements Parcelable {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:05.537 -0400", hash_original_method = "A65BCA62207C2D99277C23D442CBFDBD", hash_generated_method = "BC5E7D4FB2B0E1B96B290DC88C9637AB")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     private int getIdentity() {
+    	return dsTaint.getTaintInt();
     }
 
     

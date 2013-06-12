@@ -1,36 +1,6 @@
 package android.content;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-
-// import Iterator to deal with enhanced for loop translation
-import java.util.Iterator;
-
-import dalvik.system.CloseGuard;
-import android.accounts.Account;
-import android.app.ActivityManagerNative;
-import android.app.ActivityThread;
-import android.app.AppGlobals;
-import android.content.pm.PackageManager.NameNotFoundException;
-import android.content.res.AssetFileDescriptor;
-import android.content.res.Resources;
-import android.database.ContentObserver;
-import android.database.CrossProcessCursorWrapper;
-import android.database.Cursor;
-import android.database.CursorWrapper;
-import android.database.IContentObserver;
-import android.net.Uri;
-import android.os.Bundle;
-import android.os.IBinder;
-import android.os.ParcelFileDescriptor;
-import android.os.RemoteException;
-import android.os.ServiceManager;
-import android.os.StrictMode;
-import android.os.SystemClock;
-import android.text.TextUtils;
-import android.util.EventLog;
-import android.util.Log;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
@@ -40,6 +10,33 @@ import java.io.OutputStream;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
+
+import android.accounts.Account;
+import android.app.ActivityManagerNative;
+import android.app.AppGlobals;
+import android.content.pm.PackageManager.NameNotFoundException;
+import android.content.res.AssetFileDescriptor;
+import android.content.res.Resources;
+import android.database.ContentObserver;
+import android.database.CrossProcessCursorWrapper;
+import android.database.Cursor;
+import android.database.IContentObserver;
+import android.net.Uri;
+import android.os.Bundle;
+import android.os.IBinder;
+import android.os.ParcelFileDescriptor;
+import android.os.RemoteException;
+import android.os.ServiceManager;
+import android.os.SystemClock;
+import android.text.TextUtils;
+import android.util.EventLog;
+import android.util.Log;
+import dalvik.system.CloseGuard;
+import droidsafe.annotations.DSC;
+import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.DSModeled;
+import droidsafe.runtime.DroidSafeAndroidRuntime;
+// import Iterator to deal with enhanced for loop translation
 
 public abstract class ContentResolver {
     @Deprecated
@@ -84,6 +81,7 @@ public abstract class ContentResolver {
     @DSModeled(DSC.SAFE)
     public ContentResolver(Context context) {
         dsTaint.addTaint(context.dsTaint);
+        mContext = context;
         // ---------- Original Method ----------
         //mContext = context;
     }
@@ -238,7 +236,7 @@ public abstract class ContentResolver {
                 } //End block
                 catch (Resources.NotFoundException ex)
                 {
-                    throw new FileNotFoundException("Resource does not exist: " + uri);
+                    if (DroidSafeAndroidRuntime.control) throw new FileNotFoundException("Resource does not exist: " + uri);
                 } //End block
             } //End block
             {
@@ -257,7 +255,7 @@ public abstract class ContentResolver {
                     } //End block
                     catch (IOException e)
                     {
-                        throw new FileNotFoundException("Unable to create stream");
+                        if (DroidSafeAndroidRuntime.control) throw new FileNotFoundException("Unable to create stream");
                     } //End block
                 } //End block
             } //End collapsed parenthetic
@@ -294,7 +292,7 @@ public abstract class ContentResolver {
         } //End block
         catch (IOException e)
         {
-            throw new FileNotFoundException("Unable to create stream");
+            if (DroidSafeAndroidRuntime.control) throw new FileNotFoundException("Unable to create stream");
         } //End block
         return (OutputStream)dsTaint.getTaint();
         // ---------- Original Method ----------
@@ -327,7 +325,7 @@ public abstract class ContentResolver {
         } //End block
         catch (IOException e)
         { }
-        throw new FileNotFoundException("Not a whole file");
+        if (DroidSafeAndroidRuntime.control) throw new FileNotFoundException("Not a whole file");
         return (ParcelFileDescriptor)dsTaint.getTaint();
         // ---------- Original Method ----------
         //AssetFileDescriptor afd = openAssetFileDescriptor(uri, mode);
@@ -359,7 +357,7 @@ public abstract class ContentResolver {
                 {
                     boolean varC16FAE09F0519703CBD513EC3052DFFD_1964338442 = (!"r".equals(mode));
                     {
-                        throw new FileNotFoundException("Can't write resources: " + uri);
+                        if (DroidSafeAndroidRuntime.control) throw new FileNotFoundException("Can't write resources: " + uri);
                     } //End block
                 } //End collapsed parenthetic
                 OpenResourceIdResult r;
@@ -370,7 +368,7 @@ public abstract class ContentResolver {
                 } //End block
                 catch (Resources.NotFoundException ex)
                 {
-                    throw new FileNotFoundException("Resource does not exist: " + uri);
+                    if (DroidSafeAndroidRuntime.control) throw new FileNotFoundException("Resource does not exist: " + uri);
                 } //End block
             } //End block
             {
@@ -390,7 +388,7 @@ public abstract class ContentResolver {
                             IContentProvider provider;
                             provider = acquireProvider(uri);
                             {
-                                throw new FileNotFoundException("No content provider: " + uri);
+                                if (DroidSafeAndroidRuntime.control) throw new FileNotFoundException("No content provider: " + uri);
                             } //End block
                             try 
                             {
@@ -405,7 +403,7 @@ public abstract class ContentResolver {
                             } //End block
                             catch (RemoteException e)
                             {
-                                throw new FileNotFoundException("Dead content provider: " + uri);
+                                if (DroidSafeAndroidRuntime.control) throw new FileNotFoundException("Dead content provider: " + uri);
                             } //End block
                             catch (FileNotFoundException e)
                             {
@@ -438,7 +436,7 @@ public abstract class ContentResolver {
         IContentProvider provider;
         provider = acquireProvider(uri);
         {
-            throw new FileNotFoundException("No content provider: " + uri);
+            if (DroidSafeAndroidRuntime.control) throw new FileNotFoundException("No content provider: " + uri);
         } //End block
         try 
         {
@@ -453,7 +451,7 @@ public abstract class ContentResolver {
         } //End block
         catch (RemoteException e)
         {
-            throw new FileNotFoundException("Dead content provider: " + uri);
+            if (DroidSafeAndroidRuntime.control) throw new FileNotFoundException("Dead content provider: " + uri);
         } //End block
         catch (FileNotFoundException e)
         {
@@ -481,7 +479,7 @@ public abstract class ContentResolver {
         {
             boolean var9779973367485DB1CCDF8689D3EBF254_951404273 = (TextUtils.isEmpty(authority));
             {
-                throw new FileNotFoundException("No authority: " + uri);
+                if (DroidSafeAndroidRuntime.control) throw new FileNotFoundException("No authority: " + uri);
             } //End block
             {
                 try 
@@ -497,7 +495,7 @@ public abstract class ContentResolver {
         List<String> path;
         path = uri.getPathSegments();
         {
-            throw new FileNotFoundException("No path: " + uri);
+            if (DroidSafeAndroidRuntime.control) throw new FileNotFoundException("No path: " + uri);
         } //End block
         int len;
         len = path.size();
@@ -516,10 +514,10 @@ public abstract class ContentResolver {
             id = r.getIdentifier(path.get(1), path.get(0), authority);
         } //End block
         {
-            throw new FileNotFoundException("More than two path segments: " + uri);
+            if (DroidSafeAndroidRuntime.control) throw new FileNotFoundException("More than two path segments: " + uri);
         } //End block
         {
-            throw new FileNotFoundException("No resource found for: " + uri);
+            if (DroidSafeAndroidRuntime.control) throw new FileNotFoundException("No resource found for: " + uri);
         } //End block
         OpenResourceIdResult res;
         res = new OpenResourceIdResult();
@@ -567,7 +565,7 @@ public abstract class ContentResolver {
         IContentProvider provider;
         provider = acquireProvider(url);
         {
-            throw new IllegalArgumentException("Unknown URL " + url);
+            if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("Unknown URL " + url);
         } //End block
         try 
         {
@@ -614,7 +612,7 @@ public abstract class ContentResolver {
         ContentProviderClient provider;
         provider = acquireContentProviderClient(authority);
         {
-            throw new IllegalArgumentException("Unknown authority " + authority);
+            if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("Unknown authority " + authority);
         } //End block
         try 
         {
@@ -641,12 +639,12 @@ public abstract class ContentResolver {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:14:59.435 -0400", hash_original_method = "B00B6610FA17409048836C33B1F1B82B", hash_generated_method = "2BB7370C941C3CD180AF0CB2C56ECF41")
     @DSModeled(DSC.SPEC)
     public final int bulkInsert(Uri url, ContentValues[] values) {
-        dsTaint.addTaint(values.dsTaint);
+        dsTaint.addTaint(values[0].dsTaint);
         dsTaint.addTaint(url.dsTaint);
         IContentProvider provider;
         provider = acquireProvider(url);
         {
-            throw new IllegalArgumentException("Unknown URL " + url);
+            if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("Unknown URL " + url);
         } //End block
         try 
         {
@@ -693,7 +691,7 @@ public abstract class ContentResolver {
         IContentProvider provider;
         provider = acquireProvider(url);
         {
-            throw new IllegalArgumentException("Unknown URL " + url);
+            if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("Unknown URL " + url);
         } //End block
         try 
         {
@@ -742,7 +740,7 @@ public abstract class ContentResolver {
         IContentProvider provider;
         provider = acquireProvider(uri);
         {
-            throw new IllegalArgumentException("Unknown URI " + uri);
+            if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("Unknown URI " + uri);
         } //End block
         try 
         {
@@ -788,15 +786,15 @@ public abstract class ContentResolver {
         dsTaint.addTaint(uri.dsTaint);
         dsTaint.addTaint(extras.dsTaint);
         {
-            throw new NullPointerException("uri == null");
+            if (DroidSafeAndroidRuntime.control) throw new NullPointerException("uri == null");
         } //End block
         {
-            throw new NullPointerException("method == null");
+            if (DroidSafeAndroidRuntime.control) throw new NullPointerException("method == null");
         } //End block
         IContentProvider provider;
         provider = acquireProvider(uri);
         {
-            throw new IllegalArgumentException("Unknown URI " + uri);
+            if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("Unknown URI " + uri);
         } //End block
         try 
         {
@@ -1069,13 +1067,13 @@ public abstract class ContentResolver {
                 if (value instanceof Double) continue;
                 if (value instanceof String) continue;
                 if (value instanceof Account) continue;
-                throw new IllegalArgumentException("unexpected value type: "
+                if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("unexpected value type: "
                         + value.getClass().getName());
             }
         } catch (IllegalArgumentException e) {
             throw e;
         } catch (RuntimeException exc) {
-            throw new IllegalArgumentException("error unparceling Bundle", exc);
+            if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("error unparceling Bundle", exc);
         }
     }
 
@@ -1115,7 +1113,7 @@ public abstract class ContentResolver {
         try {
             return getContentService().getSyncAutomatically(account, authority);
         } catch (RemoteException e) {
-            throw new RuntimeException("the ContentService should always be reachable", e);
+           throw new RuntimeException("the ContentService should always be reachable", e);
         }
     }
 
@@ -1134,10 +1132,10 @@ public abstract class ContentResolver {
             long pollFrequency) {
         validateSyncExtrasBundle(extras);
         if (account == null) {
-            throw new IllegalArgumentException("account must not be null");
+            if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("account must not be null");
         }
         if (authority == null) {
-            throw new IllegalArgumentException("authority must not be null");
+            if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("authority must not be null");
         }
         if (extras.getBoolean(SYNC_EXTRAS_MANUAL, false)
                 || extras.getBoolean(SYNC_EXTRAS_DO_NOT_RETRY, false)
@@ -1454,6 +1452,7 @@ public abstract class ContentResolver {
             dsTaint.addTaint(cursor.dsTaint);
             dsTaint.addTaint(icp.dsTaint);
             mCloseGuard.open("close");
+            mContentProvider = icp;
             // ---------- Original Method ----------
             //mContentProvider = icp;
             //mCloseGuard.open("close");
@@ -1527,6 +1526,7 @@ public abstract class ContentResolver {
             super(pfd);
             dsTaint.addTaint(pfd.dsTaint);
             dsTaint.addTaint(icp.dsTaint);
+            mContentProvider = icp;
             // ---------- Original Method ----------
             //mContentProvider = icp;
         }

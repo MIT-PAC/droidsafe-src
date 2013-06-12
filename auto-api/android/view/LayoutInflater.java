@@ -1,26 +1,27 @@
 package android.view;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-
-// import Iterator to deal with enhanced for loop translation
-import java.util.Iterator;
-
-import android.graphics.Canvas;
-import android.os.Handler;
-import android.os.Message;
-import android.widget.FrameLayout;
-import org.xmlpull.v1.XmlPullParser;
-import org.xmlpull.v1.XmlPullParserException;
-import android.content.Context;
-import android.content.res.TypedArray;
-import android.content.res.XmlResourceParser;
-import android.util.AttributeSet;
-import android.util.Xml;
 import java.io.IOException;
 import java.lang.reflect.Constructor;
 import java.util.HashMap;
+
+import org.xmlpull.v1.XmlPullParser;
+import org.xmlpull.v1.XmlPullParserException;
+
+import android.content.Context;
+import android.content.res.TypedArray;
+import android.content.res.XmlResourceParser;
+import android.graphics.Canvas;
+import android.os.Handler;
+import android.os.Message;
+import android.util.AttributeSet;
+import android.util.Xml;
+import android.widget.FrameLayout;
+import droidsafe.annotations.DSC;
+import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.DSModeled;
+import droidsafe.runtime.DroidSafeAndroidRuntime;
+// import Iterator to deal with enhanced for loop translation
 
 public abstract class LayoutInflater {
     private final boolean DEBUG = false;
@@ -45,6 +46,7 @@ public abstract class LayoutInflater {
     @DSModeled(DSC.SAFE)
     protected LayoutInflater(Context context) {
         dsTaint.addTaint(context.dsTaint);
+        mContext = context;
         // ---------- Original Method ----------
         //mContext = context;
     }
@@ -59,6 +61,7 @@ public abstract class LayoutInflater {
         mFactory2 = original.mFactory2;
         mPrivateFactory = original.mPrivateFactory;
         mFilter = original.mFilter;
+        mContext = newContext;
         // ---------- Original Method ----------
         //mContext = newContext;
         //mFactory = original.mFactory;
@@ -114,10 +117,10 @@ public abstract class LayoutInflater {
     public void setFactory(Factory factory) {
         dsTaint.addTaint(factory.dsTaint);
         {
-            throw new IllegalStateException("A factory has already been set on this LayoutInflater");
+            if (DroidSafeAndroidRuntime.control) throw new IllegalStateException("A factory has already been set on this LayoutInflater");
         } //End block
         {
-            throw new NullPointerException("Given factory can not be null");
+            if (DroidSafeAndroidRuntime.control)  throw new NullPointerException("Given factory can not be null");
         } //End block
         mFactorySet = true;
         {
@@ -144,10 +147,10 @@ public abstract class LayoutInflater {
     public void setFactory2(Factory2 factory) {
         dsTaint.addTaint(factory.dsTaint);
         {
-            throw new IllegalStateException("A factory has already been set on this LayoutInflater");
+            if (DroidSafeAndroidRuntime.control)  throw new IllegalStateException("A factory has already been set on this LayoutInflater");
         } //End block
         {
-            throw new NullPointerException("Given factory can not be null");
+            if (DroidSafeAndroidRuntime.control)  throw new NullPointerException("Given factory can not be null");
         } //End block
         mFactorySet = true;
         {
@@ -280,7 +283,7 @@ public abstract class LayoutInflater {
                         type != XmlPullParser.END_DOCUMENT);
                 } //End collapsed parenthetic
                 {
-                    throw new InflateException(parser.getPositionDescription()
+                    if (DroidSafeAndroidRuntime.control) throw new InflateException(parser.getPositionDescription()
                             + ": No start tag found!");
                 } //End block
                 final String name;
@@ -295,7 +298,7 @@ public abstract class LayoutInflater {
                     boolean varFDE52F8163E69EE326159C2642CAEC68_534663846 = (TAG_MERGE.equals(name));
                     {
                         {
-                            throw new InflateException("<merge /> can be used only with a valid "
+                            if (DroidSafeAndroidRuntime.control) throw new InflateException("<merge /> can be used only with a valid "
                                 + "ViewGroup root and attachToRoot=true");
                         } //End block
                         rInflate(parser, root, attrs, false);
@@ -588,7 +591,7 @@ public abstract class LayoutInflater {
                             {
                                 boolean varF9E7792F5EE78FD8E2EF7727515E4EC9_565668925 = (parser.getDepth() == 0);
                                 {
-                                    throw new InflateException("<include /> cannot be the root element");
+                                    if (DroidSafeAndroidRuntime.control) throw new InflateException("<include /> cannot be the root element");
                                 } //End block
                             } //End collapsed parenthetic
                             parseInclude(parser, parent, attrs);
@@ -596,7 +599,7 @@ public abstract class LayoutInflater {
                         {
                             boolean var6E0AFF7B2B3D2BD63E19797766EAC38B_1971970557 = (TAG_MERGE.equals(name));
                             {
-                                throw new InflateException("<merge /> must be the root element");
+                                if (DroidSafeAndroidRuntime.control) throw new InflateException("<merge /> must be the root element");
                             } //End block
                             {
                                 boolean varA10A7F5947ED2B40D379831A43F34249_449222638 = (TAG_1995.equals(name));
@@ -669,11 +672,11 @@ public abstract class LayoutInflater {
                 final String value;
                 value = attrs.getAttributeValue(null, "layout");
                 {
-                    throw new InflateException("You must specifiy a layout in the"
+                    if (DroidSafeAndroidRuntime.control) throw new InflateException("You must specifiy a layout in the"
                             + " include tag: <include layout=\"@layout/layoutID\" />");
                 } //End block
                 {
-                    throw new InflateException("You must specifiy a valid layout "
+                    if (DroidSafeAndroidRuntime.control) throw new InflateException("You must specifiy a valid layout "
                             + "reference. The layout ID " + value + " is not valid.");
                 } //End block
             } //End block
@@ -689,7 +692,7 @@ public abstract class LayoutInflater {
                             type != XmlPullParser.END_DOCUMENT);
                     } //End collapsed parenthetic
                     {
-                        throw new InflateException(childParser.getPositionDescription() +
+                        if (DroidSafeAndroidRuntime.control) throw new InflateException(childParser.getPositionDescription() +
                                 ": No start tag found!");
                     } //End block
                     final String childName;
@@ -752,7 +755,7 @@ public abstract class LayoutInflater {
             } //End block
         } //End block
         {
-            throw new InflateException("<include /> can only be used inside of a ViewGroup");
+            if (DroidSafeAndroidRuntime.control)  throw new InflateException("<include /> can only be used inside of a ViewGroup");
         } //End block
         final int currentDepth;
         currentDepth = parser.getDepth();
@@ -776,6 +779,10 @@ public abstract class LayoutInflater {
             dsTaint.addTaint(f22.dsTaint);
             dsTaint.addTaint(f1.dsTaint);
             dsTaint.addTaint(f2.dsTaint);
+            mF1 = f1;
+            mF2 = f2;
+            mF12 = f12;
+            mF22 = f22;
             // ---------- Original Method ----------
             //mF1 = f1;
             //mF2 = f2;

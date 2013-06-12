@@ -1,12 +1,6 @@
 package android.content;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-
-// import Iterator to deal with enhanced for loop translation
-import java.util.Iterator;
-
 import android.app.ActivityManagerNative;
 import android.app.ActivityThread;
 import android.app.IActivityManager;
@@ -14,8 +8,12 @@ import android.app.QueuedWork;
 import android.os.Bundle;
 import android.os.IBinder;
 import android.os.RemoteException;
-import android.util.Log;
 import android.util.Slog;
+import droidsafe.annotations.DSC;
+import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.DSModeled;
+import droidsafe.runtime.DroidSafeAndroidRuntime;
+// import Iterator to deal with enhanced for loop translation
 
 public abstract class BroadcastReceiver {
     private PendingResult mPendingResult;
@@ -266,7 +264,7 @@ public abstract class BroadcastReceiver {
     //DSFIXME:  CODE0002: Requires DSC value to be set
      void checkSynchronousHint() {
         {
-            throw new IllegalStateException("Call while result is not pending");
+        	if (DroidSafeAndroidRuntime.control) throw new IllegalStateException("Call while result is not pending");
         } //End block
         RuntimeException e;
         e = new RuntimeException(
@@ -311,6 +309,10 @@ public abstract class BroadcastReceiver {
             dsTaint.addTaint(ordered);
             dsTaint.addTaint(resultCode);
             dsTaint.addTaint(type);
+            mType = type;
+            mOrderedHint = ordered;
+            mInitialStickyHint = sticky;
+            mToken = token;
             // ---------- Original Method ----------
             //mResultCode = resultCode;
             //mResultData = resultData;
@@ -485,7 +487,7 @@ public abstract class BroadcastReceiver {
             dsTaint.addTaint(am.dsTaint);
             {
                 {
-                    throw new IllegalStateException("Broadcast already finished");
+                	if (DroidSafeAndroidRuntime.control)  throw new IllegalStateException("Broadcast already finished");
                 } //End block
                 mFinished = true;
                 try 
