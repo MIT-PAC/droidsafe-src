@@ -140,7 +140,7 @@ public class InformationFlowAnalysis {
 
     private final Map<Block, Map<Block, States>> fromToStates;
     private final Map<Block, States> mergeStates;
-    private final DefaultHashMap<Unit, ImmutableList<Address>> rootsFromFrames;
+    private final DefaultHashMap<Edge, ImmutableList<Address>> rootsFromFrames;
 
     class Worklist {
         TreeSet<Block> worklist;
@@ -184,7 +184,7 @@ public class InformationFlowAnalysis {
 
         fromToStates = new HashMap<Block, Map<Block, States>>();
         mergeStates = new HashMap<Block, States>();
-        rootsFromFrames = new DefaultHashMap<Unit, ImmutableList<Address>>(ImmutableList.<Address>of());
+        rootsFromFrames = new DefaultHashMap<Edge, ImmutableList<Address>>(ImmutableList.<Address>of());
         fromToStates.put(null, new HashMap<Block, States>());
         for (Block curr : controlFlowGraph) {
             List<Block> preds = controlFlowGraph.getPredsOf(curr);
@@ -711,12 +711,9 @@ public class InformationFlowAnalysis {
                 Set<Address> rootsFromFramesNew = new HashSet<Address>();
                 for (Map.Entry<Edge, FrameHeapStatics> contextFrameHeapStatics : inStates.entrySet()) {
                     frameHeapStatics = frameHeapStatics.merge(contextFrameHeapStatics.getValue());
-                    rootsFromFramesNew.addAll(rootsFromFrames.get(contextFrameHeapStatics.getKey().srcUnit()));
+                    rootsFromFramesNew.addAll(rootsFromFrames.get(contextFrameHeapStatics.getKey()));
                 }
                 rootsFromFramesNew.addAll(frameHeapStatics.frame.roots());
-                if (!rootsFromFramesNew.isEmpty()) {
-                    rootsFromFrames.put(stmt, ImmutableList.copyOf(rootsFromFramesNew));
-                }
                 ImmutableList<MyValue> thiz = receiver(caller, stmt, invokeExpr, frameHeapStatics.frame);
                 List<ImmutableList<MyValue>> args = evaluate(caller, invokeExpr.getArgs(), frameHeapStatics.frame);
                 final Set<Address> rootsFromThisArgsStatics = new HashSet<Address>();
@@ -733,6 +730,9 @@ public class InformationFlowAnalysis {
                     if (!caller.equals(callee)) {
                         Edge context = callGraph.findEdge(stmt, callee);
                         assert context != null;
+                        if (!rootsFromFramesNew.isEmpty()) {
+                            rootsFromFrames.put(context, ImmutableList.copyOf(rootsFromFramesNew));
+                        }
                         Frame frame = new Frame();
                         frame.putS(callee, thiz);
                         int i = 0;
@@ -1190,7 +1190,8 @@ public class InformationFlowAnalysis {
                 final SootMethod caller = fallThrough.getBody().getMethod();
                 Block callBlock = controlFlowGraph.getPrecedingCallBlock(fallThrough, caller);
                 final Unit callStmt = callBlock.getTail();
-                final FrameHeapStatics inFrameHeapStatics = inStates.get(callGraph.findEdge(callStmt, callee));
+                final Edge context = callGraph.findEdge(callStmt, callee);
+                final FrameHeapStatics inFrameHeapStatics = inStates.get(context);
                 FrameHeapStatics outFrameHeapStatics;
                 if (callStmt instanceof AssignStmt) {
                     final AssignStmt assignStmt = (AssignStmt)callStmt;
@@ -1224,7 +1225,7 @@ public class InformationFlowAnalysis {
                         public void caseLocal(final Local local) {
                             Frame frame = new Frame();
                             frame.putS(MethodLocal.v(caller, local), values);
-                            Set<Address> roots = new HashSet<Address>(rootsFromFrames.get(callStmt));
+                            Set<Address> roots = new HashSet<Address>(rootsFromFrames.get(context));
                             roots.addAll(inFrameHeapStatics.statics.roots());
                             setResult(new FrameHeapStatics(frame, inFrameHeapStatics.heap.gc(roots), inFrameHeapStatics.statics));
                         }
@@ -1232,14 +1233,14 @@ public class InformationFlowAnalysis {
                     variable.apply(variableSwitch);
                     outFrameHeapStatics = (FrameHeapStatics)variableSwitch.getResult();
                 } else {
-                    Set<Address> roots = new HashSet<Address>(rootsFromFrames.get(callStmt));
+                    Set<Address> roots = new HashSet<Address>(rootsFromFrames.get(context));
                     roots.addAll(inFrameHeapStatics.statics.roots());
                     outFrameHeapStatics = new FrameHeapStatics(Frame.EMPTY, inFrameHeapStatics.heap.gc(roots), inFrameHeapStatics.statics);
                 }
                 States outStates = new States();
-                for (Edge context : fromToStates.get(callBlock).get(fallThrough).keySet()) {
-                    assert context != null;
-                    outStates.put(context, outFrameHeapStatics);
+                for (Edge ctx : fromToStates.get(callBlock).get(fallThrough).keySet()) {
+                    assert ctx != null;
+                    outStates.put(ctx, outFrameHeapStatics);
                 }
                 if (!outStates.equals(fromToStates.get(block).get(fallThrough))) {
                     fromToStates.get(block).put(fallThrough, outStates);
@@ -1260,14 +1261,15 @@ public class InformationFlowAnalysis {
                 SootMethod caller = fallThrough.getBody().getMethod();
                 Block callBlock = controlFlowGraph.getPrecedingCallBlock(fallThrough, caller);
                 Unit callStmt = callBlock.getTail();
-                FrameHeapStatics inFrameHeapStatics = inStates.get(callGraph.findEdge(callStmt, callee));
-                Set<Address> roots = new HashSet<Address>(rootsFromFrames.get(callStmt));
+                Edge context = callGraph.findEdge(callStmt, callee);
+                FrameHeapStatics inFrameHeapStatics = inStates.get(context);
+                Set<Address> roots = new HashSet<Address>(rootsFromFrames.get(context));
                 roots.addAll(inFrameHeapStatics.statics.roots());
                 FrameHeapStatics outFrameHeapStatics = new FrameHeapStatics(Frame.EMPTY, inFrameHeapStatics.heap.gc(roots), inFrameHeapStatics.statics);
                 States outStates = new States();
-                for (Edge context : fromToStates.get(callBlock).get(fallThrough).keySet()) {
-                    assert context != null;
-                    outStates.put(context, outFrameHeapStatics);
+                for (Edge ctx : fromToStates.get(callBlock).get(fallThrough).keySet()) {
+                    assert ctx != null;
+                    outStates.put(ctx, outFrameHeapStatics);
                 }
                 if (!outStates.equals(fromToStates.get(block).get(fallThrough))) {
                     fromToStates.get(block).put(fallThrough, outStates);
@@ -1326,20 +1328,17 @@ public class InformationFlowAnalysis {
             return;
         }
 
-        final SootMethod caller = curr.getBody().getMethod();
+        SootMethod caller = curr.getBody().getMethod();
         FrameHeapStatics frameHeapStatics = new FrameHeapStatics();
         Set<Address> rootsFromFramesNew = new HashSet<Address>();
         for (Map.Entry<Edge, FrameHeapStatics> contextFrameHeapStatics : inStates.entrySet()) {
             frameHeapStatics = frameHeapStatics.merge(contextFrameHeapStatics.getValue());
-            rootsFromFramesNew.addAll(rootsFromFrames.get(contextFrameHeapStatics.getKey().srcUnit()));
+            rootsFromFramesNew.addAll(rootsFromFrames.get(contextFrameHeapStatics.getKey()));
         }
         rootsFromFramesNew.addAll(frameHeapStatics.frame.roots());
-        if (!rootsFromFramesNew.isEmpty()) {
-            rootsFromFrames.put(stmt, ImmutableList.copyOf(rootsFromFramesNew));
-        }
         ImmutableList<MyValue> thiz = receiver(caller, stmt, invokeExpr, frameHeapStatics.frame);
         List<ImmutableList<MyValue>> args = evaluate(caller, invokeExpr.getArgs(), frameHeapStatics.frame);
-        final Set<Address> rootsFromThisArgsStatics = new HashSet<Address>();
+        Set<Address> rootsFromThisArgsStatics = new HashSet<Address>();
         rootsFromThisArgsStatics.addAll(rootsFromThis(caller, stmt, invokeExpr, frameHeapStatics.frame));
         rootsFromThisArgsStatics.addAll(rootsFromArgs(args));
         rootsFromThisArgsStatics.addAll(frameHeapStatics.statics.roots());
@@ -1348,11 +1347,14 @@ public class InformationFlowAnalysis {
             if (InterproceduralControlFlowGraph.containsCaughtExceptionRef(succ.getHead())) {
                 continue;
             }
-            States outStates = new States();
+            States outStates;
             SootMethod callee = succ.getBody().getMethod();
             if (!caller.equals(callee)) {
                 Edge context = callGraph.findEdge(stmt, callee);
                 assert context != null;
+                if (!rootsFromFramesNew.isEmpty()) {
+                    rootsFromFrames.put(context, ImmutableList.copyOf(rootsFromFramesNew));
+                }
                 Frame frame = new Frame();
                 frame.putS(callee, thiz);
                 int i = 0;
@@ -1362,6 +1364,7 @@ public class InformationFlowAnalysis {
                 }
                 Heap heap = frameHeapStatics.heap.localize(rootsFromThisArgsStatics, MemoryAccessAnalysis.v().instances.get(callee), MemoryAccessAnalysis.v().arrays.get(callee));
                 Statics statics = frameHeapStatics.statics.localize(MemoryAccessAnalysis.v().statics.get(callee));
+                outStates = new States();
                 outStates.put(context, new FrameHeapStatics(frame, heap, statics));
             } else {
                 outStates = inStates;
