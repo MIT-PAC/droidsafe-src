@@ -462,7 +462,7 @@ public final class AssetManager {
 	// DSFIXME: CODE0002: Requires DSC value to be set
 	public final String[] list(String path) throws IOException {
 		dsTaint.addTaint(path);
-		return (String[])dsTaint.getTaintArray();
+		return (String[])dsTaint.getTaintStringArray();
 	}
 
 	@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:00.210 -0400", hash_original_method = "B416CA2D934FFC444AFFEA95F80C0673", hash_generated_method = "021DFD397E2CE6C6000A4C017D2725C9")
@@ -804,7 +804,7 @@ public final class AssetManager {
 	@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:00.214 -0400", hash_original_method = "3CB696CCF0EE1BB70EEADB93E6432982", hash_generated_method = "D8FFE6127A936470619AD432F56A91B6")
 	// DSFIXME: CODE0002: Requires DSC value to be set
 	public final String[] getLocales() {
-		return (String[])dsTaint.getTaintArray();
+		return (String[])dsTaint.getTaintStringArray();
 	}
 
 	@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:00.214 -0400", hash_original_method = "0D7945B64E12882B3ACBA2198421753F", hash_generated_method = "9DA48C15BD6DCC2E15897915215B6D15")
@@ -1094,7 +1094,7 @@ public final class AssetManager {
 	// DSFIXME: CODE0002: Requires DSC value to be set
 	private final String[] getArrayStringResource(int arrayRes) {
 		dsTaint.addTaint(arrayRes);
-		return (String[])dsTaint.getTaintArray();
+		return (String[])dsTaint.getTaintStringArray();
 	}
 
 	@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:00.220 -0400", hash_original_method = "341A9383D92FC9E302B0B298621A3766", hash_generated_method = "316C57AA567AAD2F9EC7293F0B065E45")
