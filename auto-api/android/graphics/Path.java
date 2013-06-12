@@ -1,13 +1,13 @@
 package android.graphics;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-
-// import Iterator to deal with enhanced for loop translation
-import java.util.Iterator;
-
 import android.view.HardwareRenderer;
+import droidsafe.annotations.DSC;
+import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.DSModeled;
+import droidsafe.helpers.DSUtils;
+import droidsafe.runtime.DroidSafeAndroidRuntime;
+// import Iterator to deal with enhanced for loop translation
 
 public class Path {
     public final int mNativePath;
@@ -389,6 +389,7 @@ public class Path {
     public void addRect(RectF rect, Direction dir) {
         dsTaint.addTaint(dir.dsTaint);
         dsTaint.addTaint(rect.dsTaint);
+        if (DroidSafeAndroidRuntime.control)
         {
             throw new NullPointerException("need rect parameter");
         } //End block
@@ -424,6 +425,7 @@ public class Path {
     public void addOval(RectF oval, Direction dir) {
         dsTaint.addTaint(dir.dsTaint);
         dsTaint.addTaint(oval.dsTaint);
+        if (DroidSafeAndroidRuntime.control)
         {
             throw new NullPointerException("need oval parameter");
         } //End block
@@ -459,6 +461,7 @@ public class Path {
         dsTaint.addTaint(startAngle);
         dsTaint.addTaint(sweepAngle);
         dsTaint.addTaint(oval.dsTaint);
+        if (DroidSafeAndroidRuntime.control)
         {
             throw new NullPointerException("need oval parameter");
         } //End block
@@ -480,6 +483,7 @@ public class Path {
         dsTaint.addTaint(rect.dsTaint);
         dsTaint.addTaint(rx);
         dsTaint.addTaint(ry);
+        if (DroidSafeAndroidRuntime.control)
         {
             throw new NullPointerException("need rect parameter");
         } //End block
@@ -500,9 +504,11 @@ public class Path {
         dsTaint.addTaint(dir.dsTaint);
         dsTaint.addTaint(radii);
         dsTaint.addTaint(rect.dsTaint);
+        if (DroidSafeAndroidRuntime.control)
         {
             throw new NullPointerException("need rect parameter");
         } //End block
+        if (DroidSafeAndroidRuntime.control)
         {
             throw new ArrayIndexOutOfBoundsException("radii[] needs 8 values");
         } //End block
@@ -666,12 +672,14 @@ public class Path {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:01.290 -0400", hash_original_method = "232F114BC5F74E323FCD79BC10CA3A70", hash_generated_method = "28A807FDD4AA4FCAFEF1759B69FA2261")
     private static int init1() {
         //DSFIXME:  CODE0010: Native static method requires manual modeling
+    	return DSUtils.UNKNOWN_INT;
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:01.290 -0400", hash_original_method = "CA05AF3D5A4F491DA5E63E08B85C0E02", hash_generated_method = "03219D8F47F1490AA8120A375997CBBD")
     private static int init2(int nPath) {
         //DSFIXME:  CODE0010: Native static method requires manual modeling
+    	return DSUtils.UNKNOWN_INT;
     }
 
     
@@ -696,6 +704,7 @@ public class Path {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:01.291 -0400", hash_original_method = "625F84282E71964B255F4DA618060BEA", hash_generated_method = "B148D02A1C0A42010250DA7113D4022C")
     private static int native_getFillType(int nPath) {
         //DSFIXME:  CODE0010: Native static method requires manual modeling
+    	return DSUtils.UNKNOWN_INT;
     }
 
     
@@ -708,12 +717,14 @@ public class Path {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:01.291 -0400", hash_original_method = "9D341A6CA16069AE434C8E7F0D9728DA", hash_generated_method = "7A626C77C1AA456177B5D6AA44B8A0B5")
     private static boolean native_isEmpty(int nPath) {
         //DSFIXME:  CODE0010: Native static method requires manual modeling
+    	return DSUtils.UNKNOWN_BOOLEAN;
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:01.291 -0400", hash_original_method = "34DF884C683B3D939B872BC2EC431580", hash_generated_method = "AD10CE655CF22AD0DAF3AA374447A91C")
     private static boolean native_isRect(int nPath, RectF rect) {
         //DSFIXME:  CODE0010: Native static method requires manual modeling
+    	return DSUtils.UNKNOWN_BOOLEAN;
     }
 
     

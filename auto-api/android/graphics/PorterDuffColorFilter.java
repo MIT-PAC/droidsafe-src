@@ -26,6 +26,7 @@ public class PorterDuffColorFilter extends ColorFilter {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:01.313 -0400", hash_original_method = "69ED4D7D831B610E20A4B25C237B2902", hash_generated_method = "5E4E23D6A5351D9355EB92C3EF01FA08")
     private static int native_CreatePorterDuffFilter(int srcColor, int porterDuffMode) {
         //DSFIXME:  CODE0010: Native static method requires manual modeling
+    	return DSUtils.UNKNOWN_INT;
     }
 
     
@@ -33,6 +34,7 @@ public class PorterDuffColorFilter extends ColorFilter {
     private static int nCreatePorterDuffFilter(int nativeFilter, int srcColor,
             int porterDuffMode) {
         //DSFIXME:  CODE0010: Native static method requires manual modeling
+    	return DSUtils.UNKNOWN_INT;
     }
 
     
