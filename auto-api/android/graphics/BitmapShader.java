@@ -10,7 +10,7 @@ import java.util.Iterator;
 
 public class BitmapShader extends Shader {
     @SuppressWarnings({"FieldCanBeLocal", "UnusedDeclaration"})
-    public final Bitmap mBitmap;
+    public /* final */ Bitmap mBitmap;
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:00.961 -0400", hash_original_method = "4EB08FDCAC2586A4FA6B09EB3F8E173D", hash_generated_method = "586A839AE4B1B57AA3554E25C840B12A")
     //DSFIXME:  CODE0002: Requires DSC value to be set
@@ -34,6 +34,7 @@ public class BitmapShader extends Shader {
     private static int nativeCreate(int native_bitmap, int shaderTileModeX,
             int shaderTileModeY) {
         //DSFIXME:  CODE0010: Native static method requires manual modeling
+    	return DSUtils.UNKNOWN_INT;
     }
 
     
@@ -41,6 +42,7 @@ public class BitmapShader extends Shader {
     private static int nativePostCreate(int native_shader, int native_bitmap,
             int shaderTileModeX, int shaderTileModeY) {
         //DSFIXME:  CODE0010: Native static method requires manual modeling
+    	return DSUtils.UNKNOWN_INT;
     }
 
     

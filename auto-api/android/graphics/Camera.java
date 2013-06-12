@@ -106,6 +106,7 @@ public class Camera {
         dsTaint.addTaint(dx);
         dsTaint.addTaint(dy);
         dsTaint.addTaint(dz);
+        return DSUtils.UNKNOWN_FLOAT;
     }
 
     

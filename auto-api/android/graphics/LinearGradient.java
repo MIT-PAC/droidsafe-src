@@ -2,6 +2,7 @@ package android.graphics;
 
 // Droidsafe Imports
 import droidsafe.helpers.*;
+import droidsafe.runtime.DroidSafeAndroidRuntime;
 import droidsafe.annotations.*;
 
 // import Iterator to deal with enhanced for loop translation
@@ -21,9 +22,11 @@ public class LinearGradient extends Shader {
         dsTaint.addTaint(y1);
         dsTaint.addTaint(x0);
         dsTaint.addTaint(x1);
+        if (DroidSafeAndroidRuntime.control)
         {
             throw new IllegalArgumentException("needs >= 2 number of colors");
         } //End block
+        if (DroidSafeAndroidRuntime.control)
         {
             throw new IllegalArgumentException("color and position arrays must be of equal length");
         } //End block
@@ -75,6 +78,7 @@ public class LinearGradient extends Shader {
         dsTaint.addTaint(y1);
         dsTaint.addTaint(x0);
         dsTaint.addTaint(x1);
+        return dsTaint.getTaintInt();
     }
 
     
@@ -89,6 +93,7 @@ public class LinearGradient extends Shader {
         dsTaint.addTaint(x0);
         dsTaint.addTaint(color0);
         dsTaint.addTaint(x1);
+        return dsTaint.getTaintInt();
     }
 
     
@@ -104,6 +109,7 @@ public class LinearGradient extends Shader {
         dsTaint.addTaint(x0);
         dsTaint.addTaint(native_shader);
         dsTaint.addTaint(x1);
+        return dsTaint.getTaintInt();
     }
 
     
@@ -119,6 +125,7 @@ public class LinearGradient extends Shader {
         dsTaint.addTaint(color0);
         dsTaint.addTaint(native_shader);
         dsTaint.addTaint(x1);
+        return dsTaint.getTaintInt();
     }
 
     

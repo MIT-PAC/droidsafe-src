@@ -2,6 +2,7 @@ package android.graphics.drawable;
 
 // Droidsafe Imports
 import droidsafe.helpers.*;
+import droidsafe.runtime.DroidSafeAndroidRuntime;
 import droidsafe.annotations.*;
 
 // import Iterator to deal with enhanced for loop translation
@@ -33,7 +34,7 @@ public class LayerDrawable extends Drawable implements Drawable.Callback {
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public LayerDrawable(Drawable[] layers) {
         this(layers, null);
-        dsTaint.addTaint(layers.dsTaint);
+        dsTaint.addTaint(layers[0].dsTaint);
         // ---------- Original Method ----------
     }
 
@@ -42,7 +43,7 @@ public class LayerDrawable extends Drawable implements Drawable.Callback {
     //DSFIXME:  CODE0002: Requires DSC value to be set
      LayerDrawable(Drawable[] layers, LayerState state) {
         this(state, null);
-        dsTaint.addTaint(layers.dsTaint);
+        dsTaint.addTaint(layers[0].dsTaint);
         dsTaint.addTaint(state.dsTaint);
         int length;
         length = layers.length;
@@ -131,7 +132,7 @@ public class LayerDrawable extends Drawable implements Drawable.Callback {
         a.recycle();
         final int innerDepth;
         innerDepth = parser.getDepth() + 1;
-        int depth;
+        int depth = 0;
         {
             boolean var29882DFEED643D3ED9626B373247FA72_1882867045 = ((type = parser.next()) != XmlPullParser.END_DOCUMENT
                 && ((depth = parser.getDepth()) >= innerDepth || type != XmlPullParser.END_TAG));
@@ -168,6 +169,7 @@ public class LayerDrawable extends Drawable implements Drawable.Callback {
                     {
                         boolean var16E7483EB4C069010E58346DA2B7701B_1320303602 = ((type = parser.next()) == XmlPullParser.TEXT);
                     } //End collapsed parenthetic
+                    if (DroidSafeAndroidRuntime.control)
                     {
                         throw new XmlPullParserException(parser.getPositionDescription()
                             + ": <item> tag requires a 'drawable' attribute or "
