@@ -73,8 +73,7 @@ public class Display {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:04.890 -0400", hash_original_method = "C7738F3BA7E3CBC02FD1519F5186496C", hash_generated_method = "8EE14134526D7DCD00E8241A0330267B")
     static int getDisplayCount() {
-    	DSTaintObject taint = new DSTaintObject();
-    	return taint.getTaintInt();
+    	return DSUtils.UNKNOWN_INT;
     }
 
     

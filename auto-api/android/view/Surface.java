@@ -1,17 +1,19 @@
 package android.view;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-
-// import Iterator to deal with enhanced for loop translation
-import java.util.Iterator;
-
 import android.content.res.CompatibilityInfo.Translator;
-import android.graphics.*;
-import android.os.Parcelable;
+import android.graphics.Bitmap;
+import android.graphics.Canvas;
+import android.graphics.Matrix;
+import android.graphics.Rect;
+import android.graphics.Region;
+import android.graphics.SurfaceTexture;
 import android.os.Parcel;
-import android.util.Log;
+import android.os.Parcelable;
+import droidsafe.annotations.DSC;
+import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.DSModeled;
+// import Iterator to deal with enhanced for loop translation
 
 public class Surface implements Parcelable {
     private static final String LOG_TAG = "Surface";
@@ -328,21 +330,13 @@ public class Surface implements Parcelable {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:05.535 -0400", hash_original_method = "DB9546994189396D4F5B70BB6C426E41", hash_generated_method = "2D381E7D870ADB5D09FDA4313287C9E5")
     public static Bitmap screenshot(int width, int height) {
-        DSTaintObject taint = new DSTaintObject();
-        taint.addTaint(width);
-        taint.addTaint(height);
-        return (Bitmap)taint.getTaint();
+        return new Bitmap();
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:05.535 -0400", hash_original_method = "23F62978A6FF5B001F5553334F9692CB", hash_generated_method = "B71282F6B17A0909E4160752A8E25801")
     public static Bitmap screenshot(int width, int height, int minLayer, int maxLayer) {
-    	DSTaintObject taint = new DSTaintObject();
-        taint.addTaint(width);
-        taint.addTaint(height);
-        taint.addTaint(minLayer);
-        taint.addTaint(maxLayer);
-        return (Bitmap)taint.getTaint();
+    	return new Bitmap();
     }
 
     

@@ -883,18 +883,18 @@ public final class InputMethodManager {
             {
                 servedContext = null;
             } //End block
-            try 
-            {
-                InputBindResult res;
-                {
-                    res = mService.windowGainedFocus(mClient, windowGainingFocus,
-                            controlFlags, softInputMode, windowFlags,
-                            tba, servedContext);
-                } //End block
-                {
-                    res = mService.startInput(mClient,
-                            servedContext, tba, controlFlags);
-                } //End block
+//            try 
+//            {
+                InputBindResult res = null;
+//                {
+//                    res = mService.windowGainedFocus(mClient, windowGainingFocus,
+//                            controlFlags, softInputMode, windowFlags,
+//                            tba, servedContext);
+//                } //End block
+//                {
+//                    res = mService.startInput(mClient,
+//                            servedContext, tba, controlFlags);
+//                } //End block
                 {
                     {
                         mBindSequence = res.sequence;
@@ -909,9 +909,9 @@ public final class InputMethodManager {
                     catch (RemoteException e)
                     { }
                 } //End block
-            } //End block
-            catch (RemoteException e)
-            { }
+//            } //End block
+//            catch (RemoteException e)
+//            { }
         } //End block
         return dsTaint.getTaintBoolean();
         // ---------- Original Method ----------
@@ -1129,13 +1129,13 @@ public final class InputMethodManager {
             } //End block
         } //End collapsed parenthetic
         {
-            try 
-            {
-                mService.windowGainedFocus(mClient, rootView.getWindowToken(),
-                        controlFlags, softInputMode, windowFlags, null, null);
-            } //End block
-            catch (RemoteException e)
-            { }
+//            try 
+//            {
+//                mService.windowGainedFocus(mClient, rootView.getWindowToken(),
+//                        controlFlags, softInputMode, windowFlags, null, null);
+//            } //End block
+//            catch (RemoteException e)
+//            { }
         } //End block
         // ---------- Original Method ----------
         // Original Method Too Long, Refer to Original Implementation

@@ -8,7 +8,7 @@ import android.content.res.Resources;
 import droidsafe.annotations.DSC;
 import droidsafe.annotations.DSGenerator;
 import droidsafe.annotations.DSModeled;
-import droidsafe.helpers.DSTaintObject;
+import droidsafe.helpers.DSUtils;
 import droidsafe.runtime.DroidSafeAndroidRuntime;
 // import Iterator to deal with enhanced for loop translation
 
@@ -199,10 +199,7 @@ public class Time {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:03.945 -0400", hash_original_method = "AD3C654DD774BE43CE2348A4E99D8406", hash_generated_method = "0F9282A96B9ED7660131B85C76E6C7F4")
     private static int nativeCompare(Time a, Time b) {
-    	DSTaintObject taint = new DSTaintObject();
-    	taint.addTaint(a.dsTaint);
-    	taint.addTaint(b.dsTaint);
-    	return taint.getTaintInt();
+    	return DSUtils.UNKNOWN_INT;
     }
 
     
