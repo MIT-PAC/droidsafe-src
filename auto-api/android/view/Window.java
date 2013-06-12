@@ -72,6 +72,7 @@ public abstract class Window {
     @DSModeled(DSC.SAFE)
     public Window(Context context) {
         dsTaint.addTaint(context.dsTaint);
+        mContext = context;
         // ---------- Original Method ----------
         //mContext = context;
     }

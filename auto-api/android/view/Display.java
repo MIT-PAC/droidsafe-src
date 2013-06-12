@@ -39,6 +39,8 @@ public class Display {
      Display(int display, CompatibilityInfoHolder compatInfo) {
         dsTaint.addTaint(compatInfo.dsTaint);
         dsTaint.addTaint(display);
+        
+        mDisplay = display;
         {
             {
                 nativeClassInit();
@@ -71,7 +73,8 @@ public class Display {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:04.890 -0400", hash_original_method = "C7738F3BA7E3CBC02FD1519F5186496C", hash_generated_method = "8EE14134526D7DCD00E8241A0330267B")
     static int getDisplayCount() {
-        //DSFIXME:  CODE0010: Native static method requires manual modeling
+    	DSTaintObject taint = new DSTaintObject();
+    	return taint.getTaintInt();
     }
 
     
@@ -96,7 +99,7 @@ public class Display {
             wm = getWindowManager();
             {
                 wm.getDisplaySize(outSize);
-                CompatibilityInfo ci;
+                CompatibilityInfo ci = null;
                 {
                     boolean var6BC58437C431C9232DA2904BF16DEF2E_1272002993 = (doCompat && (ci=mCompatibilityInfo.getIfNeeded()) != null);
                     {
@@ -269,6 +272,7 @@ public class Display {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:04.891 -0400", hash_original_method = "F4A84F8F2FFCAD78922F38438709A2E6", hash_generated_method = "ADB67C599E3187D24D102B86EDCAA339")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     private int getRawWidthNative() {
+    	return dsTaint.getTaintInt();
     }
 
     
@@ -289,6 +293,7 @@ public class Display {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:04.891 -0400", hash_original_method = "0BBCECD524BDD54CA608342D94B23905", hash_generated_method = "6D4C8CE3249D5AAA4278E4E7CF4CC7A8")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     private int getRawHeightNative() {
+    	return dsTaint.getTaintInt();
     }
 
     
@@ -306,6 +311,7 @@ public class Display {
     //DSFIXME:  CODE0002: Requires DSC value to be set
     @Deprecated
     public int getOrientation() {
+    	return dsTaint.getTaintInt();
     }
 
     

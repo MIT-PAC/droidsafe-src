@@ -121,9 +121,7 @@ public class ViewConfiguration {
             {
                 sizeAndDensity = density * 1.5f;
             } //End block
-            {
-                sizeAndDensity = density;
-            } //End block
+            
         } //End collapsed parenthetic
         mEdgeSlop = (int) (sizeAndDensity * EDGE_SLOP + 0.5f);
         mFadingEdgeLength = (int) (sizeAndDensity * FADING_EDGE_LENGTH + 0.5f);

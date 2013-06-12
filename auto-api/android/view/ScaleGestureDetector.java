@@ -52,6 +52,8 @@ public class ScaleGestureDetector {
         ViewConfiguration config;
         config = ViewConfiguration.get(context);
         mEdgeSlop = config.getScaledEdgeSlop();
+        mListener = listener;
+        mContext = context;
         // ---------- Original Method ----------
         //ViewConfiguration config = ViewConfiguration.get(context);
         //mContext = context;
@@ -330,7 +332,7 @@ public class ScaleGestureDetector {
                     setContext(event);
                     final int activeId;
                     activeId = mActiveId1;
-                    activeId = mActiveId0;
+
                     final int index;
                     index = event.findPointerIndex(activeId);
                     mFocusX = event.getX(index);

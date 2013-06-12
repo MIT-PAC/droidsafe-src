@@ -1,11 +1,16 @@
 package android.view;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
+import static android.os.Build.VERSION_CODES.ICE_CREAM_SANDWICH;
 
+import java.lang.ref.WeakReference;
+import java.lang.reflect.InvocationTargetException;
+import java.lang.reflect.Method;
+import java.util.ArrayList;
 // import Iterator to deal with enhanced for loop translation
 import java.util.Iterator;
+import java.util.Locale;
+import java.util.concurrent.CopyOnWriteArrayList;
 
 import android.content.ClipData;
 import android.content.Context;
@@ -59,17 +64,15 @@ import android.view.inputmethod.EditorInfo;
 import android.view.inputmethod.InputConnection;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.ScrollBarDrawable;
-import static android.os.Build.VERSION_CODES.*;
+
 import com.android.internal.R;
 import com.android.internal.util.Predicate;
 import com.android.internal.view.menu.MenuBuilder;
-import java.lang.ref.WeakReference;
-import java.lang.reflect.InvocationTargetException;
-import java.lang.reflect.Method;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Locale;
-import java.util.concurrent.CopyOnWriteArrayList;
+
+import droidsafe.annotations.DSC;
+import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.DSModeled;
+import droidsafe.runtime.DroidSafeAndroidRuntime;
 
 public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Callback, AccessibilityEventSource {
     private static final boolean DBG = false;
@@ -1092,7 +1095,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
                 {
                     boolean var493A86E51AC82FCCEFBD5D9BA92432B0_1065480633 = (context.isRestricted());
                     {
-                        throw new IllegalStateException("The android:onClick attribute cannot "
+                        if (DroidSafeAndroidRuntime.control) throw new IllegalStateException("The android:onClick attribute cannot "
                                 + "be used within a restricted context");
                     } //End block
                 } //End collapsed parenthetic
@@ -6179,7 +6182,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
     public void setLayoutParams(ViewGroup.LayoutParams params) {
         dsTaint.addTaint(params.dsTaint);
         {
-            throw new NullPointerException("Layout parameters cannot be null");
+            if (DroidSafeAndroidRuntime.control) throw new NullPointerException("Layout parameters cannot be null");
         } //End block
         requestLayout();
         // ---------- Original Method ----------
@@ -7196,7 +7199,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
                 scrollY = mScrollY;
                 final int inside;
                 inside = ~0;
-                inside = 0;
+
                 int left, top, right, bottom;
                 {
                     int size;
@@ -7209,7 +7212,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
                                             computeHorizontalScrollExtent(), false);
                     final int verticalScrollBarGap;
                     verticalScrollBarGap = getVerticalScrollbarWidth();
-                    verticalScrollBarGap = 0;
+
                     top = scrollY + height - size - (mUserPaddingBottom & inside);
                     left = scrollX + (mPaddingLeft & inside);
                     right = scrollX + width - (mUserPaddingRight & inside) - verticalScrollBarGap;
@@ -7604,7 +7607,6 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
         li = mListenerInfo;
         final CopyOnWriteArrayList<OnAttachStateChangeListener> listeners;
         listeners = li.mOnAttachStateChangeListeners;
-        listeners = null;
         {
             boolean varB49AD54BBDCF0D9B63D70B14581FDB17_1050308845 = (listeners != null && listeners.size() > 0);
             {
@@ -7648,7 +7650,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
         li = mListenerInfo;
         final CopyOnWriteArrayList<OnAttachStateChangeListener> listeners;
         listeners = li.mOnAttachStateChangeListeners;
-        listeners = null;
+
         {
             boolean varB49AD54BBDCF0D9B63D70B14581FDB17_919897144 = (listeners != null && listeners.size() > 0);
             {
@@ -7691,7 +7693,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
             Parcelable state;
             state = onSaveInstanceState();
             {
-                throw new IllegalStateException(
+                if (DroidSafeAndroidRuntime.control) throw new IllegalStateException(
                         "Derived class did not call super.onSaveInstanceState()");
             } //End block
             {
@@ -7825,7 +7827,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
         dsTaint.addTaint(layerType);
         dsTaint.addTaint(paint.dsTaint);
         {
-            throw new IllegalArgumentException("Layer type can only be one of: LAYER_TYPE_NONE, "
+            if (DroidSafeAndroidRuntime.control)  throw new IllegalArgumentException("Layer type can only be one of: LAYER_TYPE_NONE, "
                     + "LAYER_TYPE_SOFTWARE or LAYER_TYPE_HARDWARE");
         } //End block
         {
@@ -7874,7 +7876,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public void buildLayer() {
         {
-            throw new IllegalStateException("This view must be attached to a window first");
+            if (DroidSafeAndroidRuntime.control) throw new IllegalStateException("This view must be attached to a window first");
         } //End block
         //Begin case LAYER_TYPE_HARDWARE 
         {
@@ -8393,13 +8395,13 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
         attachInfo = mAttachInfo;
         final float scale;
         scale = attachInfo.mApplicationScale;
-        scale = 1.0f;
+        
         width = (int) ((width * scale) + 0.5f);
         height = (int) ((height * scale) + 0.5f);
         Bitmap bitmap;
         bitmap = Bitmap.createBitmap(width > 0 ? width : 1, height > 0 ? height : 1, quality);//DSFIXME:  CODE0008: Nested ternary operator in expression
         {
-            throw new OutOfMemoryError();
+            if (DroidSafeAndroidRuntime.control) throw new OutOfMemoryError();
         } //End block
         Resources resources;
         resources = getResources();
@@ -9153,9 +9155,6 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
             fullState = new int[drawableState.length + extraSpace];
             System.arraycopy(drawableState, 0, fullState, 0, drawableState.length);
         } //End block
-        {
-            fullState = new int[extraSpace];
-        } //End block
         int[] retVal = new int[1];
         retVal[0] = dsTaint.getTaintInt();
         return retVal;
@@ -9329,7 +9328,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
         {
             {
                 final int offset;
-                offset = 0;
+      
                 offset = getVerticalScrollbarWidth();
                 //Begin case SCROLLBAR_POSITION_DEFAULT 
                 {
@@ -9629,7 +9628,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
         //DSFIXME:  CODE0009: Possible callback target function detected
         dsTaint.addTaint(location);
         {
-            throw new IllegalArgumentException("location must be an array of two integers");
+            if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("location must be an array of two integers");
         } //End block
         float[] position;
         position = mAttachInfo.mTmpTransformLocation;
@@ -9903,7 +9902,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
         dsTaint.addTaint(tag.dsTaint);
         dsTaint.addTaint(key);
         {
-            throw new IllegalArgumentException("The key must be an application-specific "
+            if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("The key must be an application-specific "
                     + "resource id.");
         } //End block
         setKeyedTag(key, tag);
@@ -9922,7 +9921,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
         dsTaint.addTaint(tag.dsTaint);
         dsTaint.addTaint(key);
         {
-            throw new IllegalArgumentException("The key must be a framework-specific "
+            if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("The key must be a framework-specific "
                     + "resource id.");
         } //End block
         setKeyedTag(key, tag);
@@ -10150,7 +10149,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
             } //End block
             onMeasure(widthMeasureSpec, heightMeasureSpec);
             {
-                throw new IllegalStateException("onMeasure() did not set the"
+                if (DroidSafeAndroidRuntime.control) throw new IllegalStateException("onMeasure() did not set the"
                         + " measured dimension by calling"
                         + " setMeasuredDimension()");
             } //End block
@@ -10588,7 +10587,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
         shadowTouchPoint = new Point();
         shadowBuilder.onProvideShadowMetrics(shadowSize, shadowTouchPoint);
         {
-            throw new IllegalStateException("Drag shadow dimensions must not be negative");
+            if (DroidSafeAndroidRuntime.control) throw new IllegalStateException("Drag shadow dimensions must not be negative");
         } //End block
         {
             Log.d(VIEW_LOG_TAG, "drag shadow: width=" + shadowSize.x + " height=" + shadowSize.y
@@ -10885,7 +10884,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
                 boolean var0AC7698B51F94BDA888C18D716FEABFB_1966914178 = (!mContext.getTheme().resolveAttribute(
                     com.android.internal.R.attr.listPreferredItemHeight, outValue, true));
                 {
-                    throw new IllegalStateException(
+                    if (DroidSafeAndroidRuntime.control) throw new IllegalStateException(
                         "Expected theme to define listPreferredItemHeight.");
                 } //End block
             } //End collapsed parenthetic
@@ -11394,6 +11393,10 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
             dsTaint.addTaint(session.dsTaint);
             dsTaint.addTaint(handler.dsTaint);
             mWindowToken = window.asBinder();
+            mRootCallbacks = effectPlayer;
+            mWindow = window;
+            mSession = session;
+            mHandler = handler;
             // ---------- Original Method ----------
             //mSession = session;
             //mWindow = window;

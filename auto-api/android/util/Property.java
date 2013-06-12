@@ -17,6 +17,8 @@ public abstract class Property<T, V> {
     public Property(Class<V> type, String name) {
         dsTaint.addTaint(name);
         dsTaint.addTaint(type.dsTaint);
+        mName = name;
+        mType = type;
         // ---------- Original Method ----------
         //mName = name;
         //mType = type;

@@ -57,6 +57,7 @@ public final class SpellCheckerSubtype implements Parcelable {
         mSubtypeLocale = locale != null ? locale : "";
         mSubtypeExtraValue = extraValue != null ? extraValue : "";
         mSubtypeHashCode = hashCodeInternal(mSubtypeLocale, mSubtypeExtraValue);
+        mSubtypeNameResId = nameId;
         // ---------- Original Method ----------
         //mSubtypeNameResId = nameId;
         //mSubtypeLocale = locale != null ? locale : "";
@@ -177,7 +178,6 @@ public final class SpellCheckerSubtype implements Parcelable {
         locale = constructLocaleFromString(mSubtypeLocale);
         final String localeStr;
         localeStr = locale.getDisplayName();
-        localeStr = mSubtypeLocale;
         final CharSequence subtypeName;
         subtypeName = context.getPackageManager().getText(
                 packageName, mSubtypeNameResId, appInfo);

@@ -46,6 +46,9 @@ public final class CompletionInfo implements Parcelable {
         dsTaint.addTaint(index);
         dsTaint.addTaint(text);
         mLabel = null;
+        mId = id;
+        mPosition = index;
+        mText = text;
         // ---------- Original Method ----------
         //mId = id;
         //mPosition = index;
@@ -61,6 +64,10 @@ public final class CompletionInfo implements Parcelable {
         dsTaint.addTaint(index);
         dsTaint.addTaint(text);
         dsTaint.addTaint(label);
+        mId = id;
+        mPosition = index;
+        mText = text;
+        mLabel = label;
         // ---------- Original Method ----------
         //mId = id;
         //mPosition = index;

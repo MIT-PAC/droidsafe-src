@@ -95,7 +95,10 @@ public final class Log {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:04.613 -0400", hash_original_method = "873107C82EDD6211442BDDC38602BB04", hash_generated_method = "5D338F4B13F848F038341FD416A4C73B")
     public static boolean isLoggable(String tag, int level) {
-        //DSFIXME:  CODE0010: Native static method requires manual modeling
+       DSTaintObject taint = new DSTaintObject();
+       taint.addTaint(tag);
+       taint.addTaint(level);
+       return taint.getTaintBoolean();
     }
 
     
@@ -177,7 +180,12 @@ public final class Log {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:04.614 -0400", hash_original_method = "7DFDDA5AD50B686185205D310279ADBE", hash_generated_method = "953AA5B9198D9E68F1460CA78BEB6169")
     public static int println_native(int bufID,
             int priority, String tag, String msg) {
-        //DSFIXME:  CODE0010: Native static method requires manual modeling
+    	DSTaintObject taint = new DSTaintObject();
+    	taint.addTaint(bufID);
+    	taint.addTaint(priority);
+    	taint.addTaint(tag);
+    	taint.addTaint(msg);
+    	return taint.getTaintInt();
     }
 
     

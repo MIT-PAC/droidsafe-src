@@ -1,12 +1,6 @@
 package android.util;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-
-// import Iterator to deal with enhanced for loop translation
-import java.util.Iterator;
-
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
@@ -18,6 +12,13 @@ import java.util.Collection;
 import java.util.HashMap;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
+
+import droidsafe.annotations.DSC;
+import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.DSModeled;
+import droidsafe.helpers.DSTaintObject;
+// import Iterator to deal with enhanced for loop translation
+import droidsafe.runtime.DroidSafeAndroidRuntime;
 
 public class EventLog {
     private static final String TAG = "EventLog";
@@ -36,25 +37,38 @@ public class EventLog {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:04.604 -0400", hash_original_method = "5F6A2310CBF2D6994F937F25B432B847", hash_generated_method = "04689FE206C8BE3B2C38283EA52974A6")
     public static int writeEvent(int tag, int value) {
-        //DSFIXME:  CODE0010: Native static method requires manual modeling
+        DSTaintObject taint = new DSTaintObject();
+        taint.addTaint(tag);
+        taint.addTaint(value);
+        return taint.getTaintInt();
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:04.604 -0400", hash_original_method = "7ED9CDD6AF8DD7F54C1DDAB3342D7417", hash_generated_method = "727D1AF88EF2B0B1BABEE210264F18DA")
     public static int writeEvent(int tag, long value) {
-        //DSFIXME:  CODE0010: Native static method requires manual modeling
+        DSTaintObject taint = new DSTaintObject();
+        taint.addTaint(tag);
+        taint.addTaint(value);
+        return taint.getTaintInt();
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:04.604 -0400", hash_original_method = "2A2EEFCE77942E21DB981FA6E5628F8C", hash_generated_method = "028DA9E7E932718254CD27C134ECE019")
     public static int writeEvent(int tag, String str) {
-        //DSFIXME:  CODE0010: Native static method requires manual modeling
+        DSTaintObject taint = new DSTaintObject();
+        taint.addTaint(tag);
+        taint.addTaint(str);
+        return taint.getTaintInt();
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:04.604 -0400", hash_original_method = "C0A88C027337FCE481F2EB6028E68083", hash_generated_method = "9710AF8BD2D8CE7688C6D0FDAB5E4302")
     public static int writeEvent(int tag, Object... list) {
-        //DSFIXME:  CODE0010: Native static method requires manual modeling
+        DSTaintObject taint = new DSTaintObject();
+        taint.addTaint(tag);
+        taint.addTaint(list);
+        return taint.getTaintInt();
+
     }
 
     
@@ -261,7 +275,7 @@ public class EventLog {
             } //End collapsed parenthetic
             //End case LIST_TYPE 
             //Begin case default 
-            throw new IllegalArgumentException("Unknown entry type: " + type);
+            if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("Unknown entry type: " + type);
             //End case default 
             return (Object)dsTaint.getTaint();
             // ---------- Original Method ----------

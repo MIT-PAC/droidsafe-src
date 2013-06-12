@@ -1,18 +1,15 @@
 package android.view;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-
-// import Iterator to deal with enhanced for loop translation
-import java.util.Iterator;
-
-import android.text.method.MetaKeyKeyListener;
-import android.util.AndroidRuntimeException;
-import android.util.SparseIntArray;
 import android.os.RemoteException;
+import android.util.AndroidRuntimeException;
 import android.util.SparseArray;
-import java.lang.Character;
+import android.util.SparseIntArray;
+import droidsafe.annotations.DSC;
+import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.DSModeled;
+import droidsafe.runtime.DroidSafeAndroidRuntime;
+// import Iterator to deal with enhanced for loop translation
 
 public class KeyCharacterMap {
     @Deprecated
@@ -45,6 +42,8 @@ public class KeyCharacterMap {
     private KeyCharacterMap(int deviceId, int ptr) {
         dsTaint.addTaint(deviceId);
         dsTaint.addTaint(ptr);
+        mDeviceId = deviceId;
+
         // ---------- Original Method ----------
         //mDeviceId = deviceId;
         //mPtr = ptr;
@@ -177,7 +176,7 @@ public class KeyCharacterMap {
         dsTaint.addTaint(metaState);
         dsTaint.addTaint(outFallbackAction.dsTaint);
         {
-            throw new IllegalArgumentException("fallbackAction must not be null");
+            if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("fallbackAction must not be null");
         } //End block
         metaState = KeyEvent.normalizeMetaState(metaState);
         boolean varCE3900304199253D1A24A3B82C990EE8_22488787 = (nativeGetFallbackAction(mPtr, keyCode, metaState, outFallbackAction));
@@ -221,7 +220,7 @@ public class KeyCharacterMap {
         dsTaint.addTaint(metaState);
         dsTaint.addTaint(chars);
         {
-            throw new IllegalArgumentException("chars must not be null.");
+            if (DroidSafeAndroidRuntime.control)  throw new IllegalArgumentException("chars must not be null.");
         } //End block
         metaState = KeyEvent.normalizeMetaState(metaState);
         char var1E3A75249CA35C8B1285237F1D55E97D_277087647 = (nativeGetMatch(mPtr, keyCode, chars, metaState));
@@ -259,7 +258,7 @@ public class KeyCharacterMap {
         dsTaint.addTaint(keyCode);
         dsTaint.addTaint(results.dsTaint);
         {
-            throw new IndexOutOfBoundsException(
+            if (DroidSafeAndroidRuntime.control) throw new IndexOutOfBoundsException(
                     "results.meta.length must be >= " + KeyData.META_LENGTH);
         } //End block
         char displayLabel;
@@ -297,7 +296,7 @@ public class KeyCharacterMap {
     public KeyEvent[] getEvents(char[] chars) {
         dsTaint.addTaint(chars);
         {
-            throw new IllegalArgumentException("chars must not be null.");
+            if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("chars must not be null.");
         } //End block
         KeyEvent[] var79B16E446F0C956CCED11EF9AD5A052D_1802417361 = (nativeGetEvents(mPtr, mDeviceId, chars));
         return (KeyEvent[])dsTaint.getTaint();

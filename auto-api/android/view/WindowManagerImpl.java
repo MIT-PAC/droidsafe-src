@@ -1,11 +1,10 @@
 package android.view;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-
-// import Iterator to deal with enhanced for loop translation
-import java.util.Iterator;
+import java.io.FileDescriptor;
+import java.io.FileOutputStream;
+import java.io.PrintWriter;
+import java.util.HashMap;
 
 import android.app.ActivityManager;
 import android.content.ComponentCallbacks2;
@@ -15,12 +14,12 @@ import android.graphics.PixelFormat;
 import android.opengl.ManagedEGLContext;
 import android.os.IBinder;
 import android.util.AndroidRuntimeException;
-import android.util.Log;
 import android.view.inputmethod.InputMethodManager;
-import java.io.FileDescriptor;
-import java.io.FileOutputStream;
-import java.io.PrintWriter;
-import java.util.HashMap;
+import droidsafe.annotations.DSC;
+import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.DSModeled;
+import droidsafe.runtime.DroidSafeAndroidRuntime;
+// import Iterator to deal with enhanced for loop translation
 
 final class WindowLeaked extends AndroidRuntimeException {
     
@@ -143,7 +142,7 @@ public class WindowManagerImpl implements WindowManager {
         dsTaint.addTaint(view.dsTaint);
         dsTaint.addTaint(params.dsTaint);
         {
-            throw new IllegalArgumentException(
+            if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException(
                     "Params must be WindowManager.LayoutParams");
         } //End block
         final WindowManager.LayoutParams wparams;
@@ -156,7 +155,7 @@ public class WindowManagerImpl implements WindowManager {
             index = findViewLocked(view, false);
             {
                 {
-                    throw new IllegalStateException("View " + view
+                    if (DroidSafeAndroidRuntime.control) throw new IllegalStateException("View " + view
                             + " has already been added to the window manager.");
                 } //End block
                 root = mRoots[index];
@@ -167,7 +166,7 @@ public class WindowManagerImpl implements WindowManager {
             {
                 final int count;
                 count = mViews.length;
-                count = 0;
+
                 {
                     int i;
                     i = 0;
@@ -226,7 +225,7 @@ public class WindowManagerImpl implements WindowManager {
         dsTaint.addTaint(view.dsTaint);
         dsTaint.addTaint(params.dsTaint);
         {
-            throw new IllegalArgumentException("Params must be WindowManager.LayoutParams");
+            if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("Params must be WindowManager.LayoutParams");
         } //End block
         final WindowManager.LayoutParams wparams;
         wparams = (WindowManager.LayoutParams)params;
@@ -681,13 +680,12 @@ public class WindowManagerImpl implements WindowManager {
         {
             final int count;
             count = mViews.length;
-            count = 0;
             {
                 int i;
                 i = 0;
             } //End collapsed parenthetic
             {
-                throw new IllegalArgumentException(
+                if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException(
                         "View not attached to window manager");
             } //End block
         } //End block
@@ -719,15 +717,13 @@ public class WindowManagerImpl implements WindowManager {
          CompatModeWrapper(WindowManager wm, CompatibilityInfoHolder ci) {
             dsTaint.addTaint(wm.dsTaint);
             dsTaint.addTaint(ci.dsTaint);
+            mCompatibilityInfo = ci;
             mWindowManager = wm instanceof CompatModeWrapper
                     ? ((CompatModeWrapper)wm).mWindowManager : (WindowManagerImpl)wm;
             {
                 mDefaultDisplay = mWindowManager.getDefaultDisplay();
             } //End block
-            {
-                mDefaultDisplay = Display.createCompatibleDisplay(
-                        mWindowManager.getDefaultDisplay().getDisplayId(), ci);
-            } //End block
+            
             // ---------- Original Method ----------
             //mWindowManager = wm instanceof CompatModeWrapper
                     //? ((CompatModeWrapper)wm).mWindowManager : (WindowManagerImpl)wm;
