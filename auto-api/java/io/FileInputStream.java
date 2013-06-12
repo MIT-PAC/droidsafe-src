@@ -2,6 +2,7 @@ package java.io;
 
 // Droidsafe Imports
 import droidsafe.helpers.*;
+import droidsafe.runtime.DroidSafeAndroidRuntime;
 import droidsafe.annotations.*;
 
 // import Iterator to deal with enhanced for loop translation
@@ -28,7 +29,7 @@ public class FileInputStream extends InputStream implements Closeable {
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public FileInputStream(File file) throws FileNotFoundException {
         dsTaint.addTaint(file.dsTaint);
-        {
+        if(DroidSafeAndroidRuntime.control) {
             throw new NullPointerException("file == null");
         } //End block
         this.fd = IoBridge.open(file.getAbsolutePath(), O_RDONLY);
@@ -48,7 +49,7 @@ public class FileInputStream extends InputStream implements Closeable {
     @DSModeled(DSC.SAFE)
     public FileInputStream(FileDescriptor fd) {
         dsTaint.addTaint(fd.dsTaint);
-        {
+        if(DroidSafeAndroidRuntime.control) {
             throw new NullPointerException("fd == null");
         } //End block
         this.shouldClose = false;
@@ -208,7 +209,7 @@ public class FileInputStream extends InputStream implements Closeable {
     @Override
     public long skip(long byteCount) throws IOException {
         dsTaint.addTaint(byteCount);
-        {
+        if(DroidSafeAndroidRuntime.control) {
             throw new IOException("byteCount < 0: " + byteCount);
         } //End block
         try 

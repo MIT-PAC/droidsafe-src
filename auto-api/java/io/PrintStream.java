@@ -2,6 +2,7 @@ package java.io;
 
 // Droidsafe Imports
 import droidsafe.helpers.*;
+import droidsafe.runtime.DroidSafeAndroidRuntime;
 import droidsafe.annotations.*;
 
 // import Iterator to deal with enhanced for loop translation
@@ -58,14 +59,14 @@ public class PrintStream extends FilterOutputStream implements Appendable, Close
         dsTaint.addTaint(autoFlush);
         dsTaint.addTaint(out.dsTaint);
         dsTaint.addTaint(enc);
-        {
+        if(DroidSafeAndroidRuntime.control) {
             throw new NullPointerException();
         } //End block
         try 
         {
             {
                 boolean var1619D1065190E523D5CEB80A273EC718_1735836820 = (!Charset.isSupported(enc));
-                {
+                if(DroidSafeAndroidRuntime.control) {
                     throw new UnsupportedEncodingException(enc);
                 } //End block
             } //End collapsed parenthetic
@@ -106,12 +107,12 @@ public class PrintStream extends FilterOutputStream implements Appendable, Close
         super(new FileOutputStream(file));
         dsTaint.addTaint(file.dsTaint);
         dsTaint.addTaint(csn);
-        {
+        if(DroidSafeAndroidRuntime.control) {
             throw new NullPointerException();
         } //End block
         {
             boolean var74A236C162A967F1ECD5EFC7D6467A04_1873561063 = (!Charset.isSupported(csn));
-            {
+            if(DroidSafeAndroidRuntime.control) {
                 throw new UnsupportedEncodingException(csn);
             } //End block
         } //End collapsed parenthetic
@@ -229,7 +230,7 @@ public class PrintStream extends FilterOutputStream implements Appendable, Close
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:11.655 -0400", hash_original_method = "05D45546979F5891D35AE44E50FD3553", hash_generated_method = "4C0E41AEFAEDE5A1DE01BFE6F3035A4C")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public PrintStream format(String format, Object... args) {
-        dsTaint.addTaint(args.dsTaint);
+        dsTaint.addTaint(args);
         dsTaint.addTaint(format);
         PrintStream varD8F2A1654CF3ACCC2BDB72B521CFFC4B_1653345004 = (format(Locale.getDefault(), format, args));
         return (PrintStream)dsTaint.getTaint();
@@ -241,10 +242,10 @@ public class PrintStream extends FilterOutputStream implements Appendable, Close
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:11.655 -0400", hash_original_method = "A0786364FBC116E551740BAAD4532E24", hash_generated_method = "28CB37B1E97B086834A5BC5F996C4054")
     @DSModeled(DSC.SAFE)
     public PrintStream format(Locale l, String format, Object... args) {
-        dsTaint.addTaint(args.dsTaint);
+        dsTaint.addTaint(args);
         dsTaint.addTaint(l.dsTaint);
         dsTaint.addTaint(format);
-        {
+        if(DroidSafeAndroidRuntime.control) {
             throw new NullPointerException("format == null");
         } //End block
         new Formatter(this, l).format(format, args);
@@ -261,7 +262,7 @@ public class PrintStream extends FilterOutputStream implements Appendable, Close
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:11.656 -0400", hash_original_method = "AF1C3DC823982E73CFCD03CCF036C65E", hash_generated_method = "DBE300366D9A509D47712B4B771DD88B")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public PrintStream printf(String format, Object... args) {
-        dsTaint.addTaint(args.dsTaint);
+        dsTaint.addTaint(args);
         dsTaint.addTaint(format);
         PrintStream var332B80BC927C6FFEEC76D8998999F86B_593620557 = (format(format, args));
         return (PrintStream)dsTaint.getTaint();
@@ -273,7 +274,7 @@ public class PrintStream extends FilterOutputStream implements Appendable, Close
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:11.656 -0400", hash_original_method = "F50C21D98ADC94B4526029B9C256D54E", hash_generated_method = "D1007D2B1FB89999B7A20982FC00B5A4")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public PrintStream printf(Locale l, String format, Object... args) {
-        dsTaint.addTaint(args.dsTaint);
+        dsTaint.addTaint(args);
         dsTaint.addTaint(l.dsTaint);
         dsTaint.addTaint(format);
         PrintStream var2451FE83B7001C97A9C60A0560E8EC1F_1171272312 = (format(l, format, args));

@@ -2,6 +2,7 @@ package java.io;
 
 // Droidsafe Imports
 import droidsafe.helpers.*;
+import droidsafe.runtime.DroidSafeAndroidRuntime;
 import droidsafe.annotations.*;
 
 // import Iterator to deal with enhanced for loop translation
@@ -28,7 +29,7 @@ public class CharArrayWriter extends Writer {
     @DSModeled(DSC.SAFE)
     public CharArrayWriter(int initialSize) {
         dsTaint.addTaint(initialSize);
-        {
+        if(DroidSafeAndroidRuntime.control) {
             throw new IllegalArgumentException("size < 0");
         } //End block
         buf = new char[initialSize];
@@ -181,12 +182,12 @@ public class CharArrayWriter extends Writer {
         dsTaint.addTaint(str);
         dsTaint.addTaint(count);
         dsTaint.addTaint(offset);
-        {
+        if(DroidSafeAndroidRuntime.control) {
             throw new NullPointerException("str == null");
         } //End block
         {
             boolean var692490DEFA1D61E18F718478B787B00C_504887394 = ((offset | count) < 0 || offset > str.length() - count);
-            {
+            if(DroidSafeAndroidRuntime.control) {
                 throw new StringIndexOutOfBoundsException(str, offset, count);
             } //End block
         } //End collapsed parenthetic

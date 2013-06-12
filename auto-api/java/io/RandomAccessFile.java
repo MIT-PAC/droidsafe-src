@@ -2,6 +2,7 @@ package java.io;
 
 // Droidsafe Imports
 import droidsafe.helpers.*;
+import droidsafe.runtime.DroidSafeAndroidRuntime;
 import droidsafe.annotations.*;
 
 // import Iterator to deal with enhanced for loop translation
@@ -57,7 +58,7 @@ public class RandomAccessFile implements DataInput, DataOutput, Closeable {
                         } //End collapsed parenthetic
                     } //End collapsed parenthetic
                 } //End block
-                {
+                if(DroidSafeAndroidRuntime.control) {
                     throw new IllegalArgumentException("Invalid mode: " + mode);
                 } //End block
             } //End collapsed parenthetic
@@ -269,7 +270,7 @@ public class RandomAccessFile implements DataInput, DataOutput, Closeable {
     public final boolean readBoolean() throws IOException {
         int temp;
         temp = this.read();
-        {
+        if(DroidSafeAndroidRuntime.control) {
             throw new EOFException();
         } //End block
         return dsTaint.getTaintBoolean();
@@ -287,7 +288,7 @@ public class RandomAccessFile implements DataInput, DataOutput, Closeable {
     public final byte readByte() throws IOException {
         int temp;
         temp = this.read();
-        {
+        if(DroidSafeAndroidRuntime.control) {
             throw new EOFException();
         } //End block
         return dsTaint.getTaintByte();
@@ -350,7 +351,7 @@ public class RandomAccessFile implements DataInput, DataOutput, Closeable {
         {
             int result;
             result = read(dst, offset, byteCount);
-            {
+            if(DroidSafeAndroidRuntime.control) {
                 throw new EOFException();
             } //End block
             offset += result;
@@ -459,7 +460,7 @@ public class RandomAccessFile implements DataInput, DataOutput, Closeable {
     public final int readUnsignedByte() throws IOException {
         int temp;
         temp = this.read();
-        {
+        if(DroidSafeAndroidRuntime.control) {
             throw new EOFException();
         } //End block
         return dsTaint.getTaintInt();
@@ -491,7 +492,7 @@ public class RandomAccessFile implements DataInput, DataOutput, Closeable {
         buf = new byte[utfSize];
         {
             boolean varCC708F7E031AEDABCA9DFF40A76762B8_582700568 = (read(buf, 0, buf.length) != buf.length);
-            {
+            if(DroidSafeAndroidRuntime.control) {
                 throw new EOFException();
             } //End block
         } //End collapsed parenthetic
@@ -514,7 +515,7 @@ public class RandomAccessFile implements DataInput, DataOutput, Closeable {
     @DSModeled(DSC.SAFE)
     public void seek(long offset) throws IOException {
         dsTaint.addTaint(offset);
-        {
+        if(DroidSafeAndroidRuntime.control) {
             throw new IOException("offset < 0: " + offset);
         } //End block
         try 
@@ -541,7 +542,7 @@ public class RandomAccessFile implements DataInput, DataOutput, Closeable {
     @DSModeled(DSC.SAFE)
     public void setLength(long newLength) throws IOException {
         dsTaint.addTaint(newLength);
-        {
+        if(DroidSafeAndroidRuntime.control) {
             throw new IllegalArgumentException("newLength < 0");
         } //End block
         try 

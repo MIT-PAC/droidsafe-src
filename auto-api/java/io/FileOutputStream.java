@@ -2,6 +2,7 @@ package java.io;
 
 // Droidsafe Imports
 import droidsafe.helpers.*;
+import droidsafe.runtime.DroidSafeAndroidRuntime;
 import droidsafe.annotations.*;
 
 // import Iterator to deal with enhanced for loop translation
@@ -36,7 +37,7 @@ public class FileOutputStream extends OutputStream implements Closeable {
     public FileOutputStream(File file, boolean append) throws FileNotFoundException {
         dsTaint.addTaint(append);
         dsTaint.addTaint(file.dsTaint);
-        {
+        if(DroidSafeAndroidRuntime.control) {
             throw new NullPointerException("file == null");
         } //End block
         this.mode = O_WRONLY | O_CREAT | (append ? O_APPEND : O_TRUNC);
@@ -58,7 +59,7 @@ public class FileOutputStream extends OutputStream implements Closeable {
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public FileOutputStream(FileDescriptor fd) {
         dsTaint.addTaint(fd.dsTaint);
-        {
+        if(DroidSafeAndroidRuntime.control) {
             throw new NullPointerException("fd == null");
         } //End block
         this.shouldClose = false;
