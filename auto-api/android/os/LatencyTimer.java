@@ -3,20 +3,20 @@ package android.os;
 // Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
+import droidsafe.runtime.*;
 
-// import Iterator to deal with enhanced for loop translation
+// needed for enhanced for control translations
 import java.util.Iterator;
-
 import android.util.Log;
 import java.util.HashMap;
 
 public final class LatencyTimer {
-    final String TAG = "LatencyTimer";
-    final int mSampleSize;
-    final int mScaleFactor;
+    String TAG = "LatencyTimer";
+    int mSampleSize;
+    int mScaleFactor;
     volatile HashMap<String, long[]> store = new HashMap<String, long[]>();
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:02.641 -0400", hash_original_method = "835FE1F7A54E064837749981F903873B", hash_generated_method = "B138705B2FA4A607DFD8FA8CF0DF5963")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 12:01:59.996 -0400", hash_original_method = "835FE1F7A54E064837749981F903873B", hash_generated_method = "B138705B2FA4A607DFD8FA8CF0DF5963")
     @DSModeled(DSC.SAFE)
     public LatencyTimer(int sampleSize, int scaleFactor) {
         dsTaint.addTaint(sampleSize);
@@ -33,14 +33,14 @@ public final class LatencyTimer {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:02.641 -0400", hash_original_method = "D9E098017BDD3A062F96DACECBFE33D0", hash_generated_method = "53E91EF8E40CE1162A685D6A3C760748")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 12:01:59.997 -0400", hash_original_method = "D9E098017BDD3A062F96DACECBFE33D0", hash_generated_method = "CBD535BDDA6F16C7193412BA49581261")
     @DSModeled(DSC.SAFE)
     public void sample(String tag, long delta) {
         dsTaint.addTaint(tag);
         dsTaint.addTaint(delta);
         long[] array;
         array = getArray(tag);
-        final int index;
+        int index;
         index = (int) array[mSampleSize]++;
         array[index] = delta;
         {
@@ -69,7 +69,7 @@ public final class LatencyTimer {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:02.641 -0400", hash_original_method = "CB4383AB457909CC128F04335BC91797", hash_generated_method = "E69FA8F059D7889B0940DF210E69CF92")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 12:01:59.998 -0400", hash_original_method = "CB4383AB457909CC128F04335BC91797", hash_generated_method = "E69FA8F059D7889B0940DF210E69CF92")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     private long[] getArray(String tag) {
         dsTaint.addTaint(tag);
