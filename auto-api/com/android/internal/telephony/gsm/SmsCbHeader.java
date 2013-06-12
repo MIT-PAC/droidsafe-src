@@ -1,13 +1,12 @@
 package com.android.internal.telephony.gsm;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-
-// import Iterator to deal with enhanced for loop translation
-import java.util.Iterator;
-
 import android.telephony.SmsCbConstants;
+import droidsafe.annotations.DSC;
+import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.DSModeled;
+import droidsafe.runtime.DroidSafeAndroidRuntime;
+// import Iterator to deal with enhanced for loop translation
 
 public class SmsCbHeader implements SmsCbConstants {
     public static final int PDU_HEADER_LENGTH = 6;
@@ -34,7 +33,7 @@ public class SmsCbHeader implements SmsCbConstants {
     public SmsCbHeader(byte[] pdu) throws IllegalArgumentException {
         dsTaint.addTaint(pdu);
         {
-            throw new IllegalArgumentException("Illegal PDU");
+            if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("Illegal PDU");
         } //End block
         {
             format = FORMAT_ETWS_PRIMARY;
@@ -50,12 +49,6 @@ public class SmsCbHeader implements SmsCbConstants {
             etwsWarningType = (pdu[4] & 0xfe) >> 1;
         } //End block
         {
-            format = FORMAT_GSM;
-            geographicalScope = (pdu[0] & 0xc0) >> 6;
-            messageCode = ((pdu[0] & 0x3f) << 4) | ((pdu[1] & 0xf0) >> 4);
-            updateNumber = pdu[1] & 0x0f;
-            messageIdentifier = ((pdu[2] & 0xff) << 8) | (pdu[3] & 0xff);
-            dataCodingScheme = pdu[4] & 0xff;
             int pageIndex;
             pageIndex = (pdu[5] & 0xf0) >> 4;
             int nrOfPages;
@@ -64,29 +57,15 @@ public class SmsCbHeader implements SmsCbConstants {
                 pageIndex = 1;
                 nrOfPages = 1;
             } //End block
-            this.pageIndex = pageIndex;
-            this.nrOfPages = nrOfPages;
-            etwsEmergencyUserAlert = false;
-            etwsPopup = false;
-            etwsWarningType = -1;
         } //End block
         {
-            format = FORMAT_UMTS;
+
             int messageType;
             messageType = pdu[0];
             {
-                throw new IllegalArgumentException("Unsupported message type " + messageType);
+                if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("Unsupported message type " + messageType);
             } //End block
-            messageIdentifier = ((pdu[1] & 0xff) << 8) | pdu[2] & 0xff;
-            geographicalScope = (pdu[3] & 0xc0) >> 6;
-            messageCode = ((pdu[3] & 0x3f) << 4) | ((pdu[4] & 0xf0) >> 4);
-            updateNumber = pdu[4] & 0x0f;
-            dataCodingScheme = pdu[5] & 0xff;
-            pageIndex = 1;
-            nrOfPages = 1;
-            etwsEmergencyUserAlert = false;
-            etwsPopup = false;
-            etwsWarningType = -1;
+            
         } //End block
         // ---------- Original Method ----------
         // Original Method Too Long, Refer to Original Implementation

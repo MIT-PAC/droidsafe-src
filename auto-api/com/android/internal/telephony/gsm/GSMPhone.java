@@ -2085,7 +2085,7 @@ public class GSMPhone extends PhoneBase {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.874 -0400", hash_original_method = "5FFF1291CED37081608080EEE820D6BC", hash_generated_method = "4C25FACD87248D517628BF9D120B690B")
     @DSModeled(DSC.SAFE)
     private void handleCfuQueryResult(CallForwardInfo[] infos) {
-        dsTaint.addTaint(infos.dsTaint);
+        dsTaint.addTaint(infos[0].dsTaint);
         {
             mIccRecords.setVoiceCallForwardingFlag(1, false);
         } //End block

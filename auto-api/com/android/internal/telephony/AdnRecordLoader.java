@@ -1,17 +1,15 @@
 package com.android.internal.telephony;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-
-// import Iterator to deal with enhanced for loop translation
-import java.util.Iterator;
-
 import java.util.ArrayList;
+
 import android.os.AsyncResult;
 import android.os.Handler;
 import android.os.Message;
 import android.util.Log;
+import droidsafe.annotations.DSGenerator;
+import droidsafe.runtime.DroidSafeAndroidRuntime;
+// import Iterator to deal with enhanced for loop translation
 
 public class AdnRecordLoader extends Handler {
     static String LOG_TAG;
@@ -124,7 +122,7 @@ public class AdnRecordLoader extends Handler {
             //End case EVENT_EF_LINEAR_RECORD_SIZE_DONE 
             //Begin case EVENT_EF_LINEAR_RECORD_SIZE_DONE 
             {
-                throw new RuntimeException("get EF record size failed",
+                if (DroidSafeAndroidRuntime.control) throw new RuntimeException("get EF record size failed",
                                 ar.exception);
             } //End block
             //End case EVENT_EF_LINEAR_RECORD_SIZE_DONE 
@@ -134,7 +132,7 @@ public class AdnRecordLoader extends Handler {
             //End case EVENT_EF_LINEAR_RECORD_SIZE_DONE 
             //Begin case EVENT_EF_LINEAR_RECORD_SIZE_DONE 
             {
-                throw new RuntimeException("get wrong EF record size format",
+                if (DroidSafeAndroidRuntime.control) throw new RuntimeException("get wrong EF record size format",
                                 ar.exception);
             } //End block
             //End case EVENT_EF_LINEAR_RECORD_SIZE_DONE 
@@ -143,7 +141,7 @@ public class AdnRecordLoader extends Handler {
             //End case EVENT_EF_LINEAR_RECORD_SIZE_DONE 
             //Begin case EVENT_EF_LINEAR_RECORD_SIZE_DONE 
             {
-                throw new RuntimeException("wrong ADN format",
+                if (DroidSafeAndroidRuntime.control) throw new RuntimeException("wrong ADN format",
                                 ar.exception);
             } //End block
             //End case EVENT_EF_LINEAR_RECORD_SIZE_DONE 
@@ -159,7 +157,7 @@ public class AdnRecordLoader extends Handler {
             //End case EVENT_UPDATE_RECORD_DONE 
             //Begin case EVENT_UPDATE_RECORD_DONE 
             {
-                throw new RuntimeException("update EF adn record failed",
+                if (DroidSafeAndroidRuntime.control) throw new RuntimeException("update EF adn record failed",
                                 ar.exception);
             } //End block
             //End case EVENT_UPDATE_RECORD_DONE 
@@ -177,7 +175,7 @@ public class AdnRecordLoader extends Handler {
             //End case EVENT_ADN_LOAD_DONE 
             //Begin case EVENT_ADN_LOAD_DONE 
             {
-                throw new RuntimeException("load failed", ar.exception);
+                if (DroidSafeAndroidRuntime.control) throw new RuntimeException("load failed", ar.exception);
             } //End block
             //End case EVENT_ADN_LOAD_DONE 
             //Begin case EVENT_ADN_LOAD_DONE 
@@ -216,7 +214,7 @@ public class AdnRecordLoader extends Handler {
             //End case EVENT_EXT_RECORD_LOAD_DONE 
             //Begin case EVENT_EXT_RECORD_LOAD_DONE 
             {
-                throw new RuntimeException("load failed", ar.exception);
+                if (DroidSafeAndroidRuntime.control) throw new RuntimeException("load failed", ar.exception);
             } //End block
             //End case EVENT_EXT_RECORD_LOAD_DONE 
             //Begin case EVENT_EXT_RECORD_LOAD_DONE 
@@ -240,7 +238,7 @@ public class AdnRecordLoader extends Handler {
             //End case EVENT_ADN_LOAD_ALL_DONE 
             //Begin case EVENT_ADN_LOAD_ALL_DONE 
             {
-                throw new RuntimeException("load failed", ar.exception);
+                if (DroidSafeAndroidRuntime.control)  throw new RuntimeException("load failed", ar.exception);
             } //End block
             //End case EVENT_ADN_LOAD_ALL_DONE 
             //Begin case EVENT_ADN_LOAD_ALL_DONE 
