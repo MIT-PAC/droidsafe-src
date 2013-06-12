@@ -10,9 +10,12 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.LinkedHashSet;
 import java.util.List;
+import java.util.HashMap;
+import java.util.HashSet;
 import java.util.Map;
 import java.util.Set;
 
+import soot.jimple.internal.AbstractNewExpr;
 import soot.jimple.spark.pag.AllocNode;
 import soot.jimple.toolkits.callgraph.Edge;
 
@@ -20,6 +23,7 @@ import soot.RefType;
 
 import soot.SootField;
 
+import soot.util.Chain;
 /**
  * @author dpetters
  */
@@ -60,23 +64,33 @@ public class InjectedSourceFlows {
      *
      * @return a mapping from each field to a set of information kinds
      */
-    public Map<SootField, Set<MyKind>> getInjectedFlows(AllocNode node, Edge context) {
-        return Collections.emptyMap();
+    public Map<SootField, Set<MyKind>> getInjectedFlows(AllocNode allocNode, Edge context) {
+        
+        Map<SootField, Set<MyKind>> fieldToInfoKindSetMap = new HashMap<SootField, Set<MyKind>>();
+
+        AbstractNewExpr abstractNewExpr = (AbstractNewExpr)allocNode.getNewExpr();
+        Chain<SootField> sootFieldChain = abstractNewExpr.getBaseType().getSootClass().getFields();
+
+        for(SootField sootField : sootFieldChain) {
+            fieldToInfoKindSetMap.put(sootField, getInjectedFlows(allocNode, sootField, context));
+        }
+ 
+        return fieldToInfoKindSetMap;
     }
 
     /**
-     * returns a set of information kinds that may be stored in the passed-in AllocNode's field
+     * Returns a set of information kinds represented by the passed-in AllocNode's SootField
      *
-     * @parameter node   AllocNode that we want to check for info kind
-     * @parameter field   The field of the AllocNode that we want to check for info kind
-     * @parameter context   The context in which we want to check for info kind
+     * @param node   AllocNode that we want to look at
+     * @param field   The field of the AllocNode that we want to look at
+     * @param context   The context we want to consider
      *
-     * @return a set of info kinds
+     * @return Set<MyKind>, the set of info kinds represented by the passed-in AllocNode's SootField
      */
-    @Deprecated
-    public Set<MyValue> getInjectedFlows(AllocNode node, SootField field, Edge context) {
-        LinkedHashSet<MyValue> flows = new LinkedHashSet<MyValue>();
-        List<String> stringsToInspect = new ArrayList<String>();
+    private Set<MyKind> getInjectedFlows(AllocNode node, SootField field, Edge context) {
+        
+        Set<String> stringsToInspect = new HashSet<String>();
+        
         if(this.attrModelingResults.containsKey(node)){
             AttrModeledClass modeledClass = this.attrModelingResults.get(node);
             try {
@@ -88,17 +102,28 @@ public class InjectedSourceFlows {
                     StringUri stringUri = (StringUri)object;
                     stringsToInspect.addAll(stringUri.dsToString());
                 }
-            } catch (Exception e){
-
+            } catch (NoSuchFieldException | IllegalAccessException e) {
+                // do nothing
             }
         }
 
+        return inspectStringsForInfoKinds(stringsToInspect);
+    }
+
+    /**
+     * Returns the set of information kinds represented by the passed-in strings
+     *
+     * @param stringsToInspect   set of strings to inspect
+     *
+     * @return Set<MyKind>, the set of information kinds representated by the passed-in set of strings
+     */
+    private static Set<MyKind> inspectStringsForInfoKinds(Set<String> stringsToInspect) {
+        Set<MyKind> infoKinds = new HashSet<MyKind>();
         for(String str : stringsToInspect) {
-            if(str.indexOf("person") != -1){
-                flows.add(MyKind.CONTACTS);
+            if(str.indexOf("person") != -1) {
+                infoKinds.add(MyKind.CONTACTS);
             }
         }
-
-        return new LinkedHashSet<MyValue>();
+        return infoKinds;
     }
 }
