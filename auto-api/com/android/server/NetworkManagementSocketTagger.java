@@ -162,25 +162,29 @@ public final class NetworkManagementSocketTagger extends SocketTagger {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 13:17:49.984 -0400", hash_original_method = "081EC21A5C31E063CD56E646088D6467", hash_generated_method = "2D20C7D1D99EF1CC1F2899B95319787C")
     private static int native_tagSocketFd(FileDescriptor fd, int tag, int uid) {
-        return DSUtils.UNKNOWN_INT;
+        //DSFIXME:  CODE0010: Native static method requires manual modeling
+    	return DSUtils.UNKNOWN_INT;
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 13:17:49.985 -0400", hash_original_method = "5BC89F749770F7F386FC81C963596BF9", hash_generated_method = "7CDCA14126919441D5E3DA76FD1C71D0")
     private static int native_untagSocketFd(FileDescriptor fd) {
-        return DSUtils.UNKNOWN_INT;
+        //DSFIXME:  CODE0010: Native static method requires manual modeling
+    	return DSUtils.UNKNOWN_INT;
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 13:17:49.986 -0400", hash_original_method = "38289C81A6B0B9E0BF52B02CDEBB18A1", hash_generated_method = "AFB8DC42A84288B4075B1EE0A4B4FC4D")
     private static int native_setCounterSet(int uid, int counterSetNum) {
-        return DSUtils.UNKNOWN_INT;
+        //DSFIXME:  CODE0010: Native static method requires manual modeling
+    	return DSUtils.UNKNOWN_INT;
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 13:17:49.987 -0400", hash_original_method = "1C1FDE365B068FC5A45F49C053096C6C", hash_generated_method = "E03D9E40B24C1022FC79ACB65B26ED06")
     private static int native_deleteTagData(int tag, int uid) {
-        return DSUtils.UNKNOWN_INT;
+        //DSFIXME:  CODE0010: Native static method requires manual modeling
+    	return DSUtils.UNKNOWN_INT;
     }
 
     
