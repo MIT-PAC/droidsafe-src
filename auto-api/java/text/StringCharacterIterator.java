@@ -2,6 +2,7 @@ package java.text;
 
 // Droidsafe Imports
 import droidsafe.helpers.*;
+import droidsafe.runtime.DroidSafeAndroidRuntime;
 import droidsafe.annotations.*;
 
 // import Iterator to deal with enhanced for loop translation
@@ -230,7 +231,7 @@ public final class StringCharacterIterator implements CharacterIterator {
     public char setIndex(int location) {
         dsTaint.addTaint(location);
         {
-            throw new IllegalArgumentException();
+        	if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException();
         } //End block
         char var21B7B547718317726EE4A22CD454BA01_1757406657 = (string.charAt(offset));
         return dsTaint.getTaintChar();

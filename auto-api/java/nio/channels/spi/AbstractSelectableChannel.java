@@ -3,10 +3,10 @@ package java.nio.channels.spi;
 // Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
+import droidsafe.runtime.*;
 
-// import Iterator to deal with enhanced for loop translation
+// needed for enhanced for control translations
 import java.util.Iterator;
-
 import java.io.IOException;
 import java.nio.channels.CancelledKeyException;
 import java.nio.channels.ClosedChannelException;
@@ -19,12 +19,12 @@ import java.util.ArrayList;
 import java.util.List;
 
 public abstract class AbstractSelectableChannel extends SelectableChannel {
-    private final SelectorProvider provider;
+    private SelectorProvider provider;
     private List<SelectionKey> keyList = new ArrayList<SelectionKey>();
-    private final Object blockingLock = new Object();
+    private Object blockingLock = new Object();
     boolean isBlocking = true;
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:12.496 -0400", hash_original_method = "C1ED2F1D0A9F053BD27B8788D8E263F6", hash_generated_method = "2356522CF413755BE88D4FDB75566EAA")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 11:53:58.642 -0400", hash_original_method = "C1ED2F1D0A9F053BD27B8788D8E263F6", hash_generated_method = "2356522CF413755BE88D4FDB75566EAA")
     @DSModeled(DSC.SAFE)
     protected AbstractSelectableChannel(SelectorProvider selectorProvider) {
         dsTaint.addTaint(selectorProvider.dsTaint);
@@ -33,7 +33,7 @@ public abstract class AbstractSelectableChannel extends SelectableChannel {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:12.496 -0400", hash_original_method = "B098D2E33834ACCBC46AD074E583FD9B", hash_generated_method = "9A37A83850234ADAE67E7E6919973380")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 11:53:58.648 -0400", hash_original_method = "B098D2E33834ACCBC46AD074E583FD9B", hash_generated_method = "9A37A83850234ADAE67E7E6919973380")
     @DSModeled(DSC.SAFE)
     @Override
     public final SelectorProvider provider() {
@@ -43,18 +43,18 @@ public abstract class AbstractSelectableChannel extends SelectableChannel {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:12.497 -0400", hash_original_method = "455A665D6CB2D7E9E28AF0A0296346A0", hash_generated_method = "FCC4F34BC932766E55319E3B464D1F1C")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 11:53:58.655 -0400", hash_original_method = "455A665D6CB2D7E9E28AF0A0296346A0", hash_generated_method = "0BF280F804FB05A7D774DCA854CE0212")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     @Override
     synchronized public final boolean isRegistered() {
-        boolean var2A0AA4A5AD5C173363E5A71D1D62507A_1727257767 = (!keyList.isEmpty());
+        boolean var2A0AA4A5AD5C173363E5A71D1D62507A_1640351334 = (!keyList.isEmpty());
         return dsTaint.getTaintBoolean();
         // ---------- Original Method ----------
         //return !keyList.isEmpty();
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:12.497 -0400", hash_original_method = "4195F78E36942EF5DA6AFD3959F769A2", hash_generated_method = "7DA69964970F9ECF69FA10BC8642A43A")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 11:53:58.664 -0400", hash_original_method = "4195F78E36942EF5DA6AFD3959F769A2", hash_generated_method = "F76A5D07673CC45B82E5005F840720EC")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     @Override
     synchronized public final SelectionKey keyFor(Selector selector) {
@@ -65,7 +65,7 @@ public abstract class AbstractSelectableChannel extends SelectableChannel {
             SelectionKey key = seatecAstronomy42.next();
             {
                 {
-                    boolean var90AC5A9C726BE7F47DCD01E5BC19F7E7_558814379 = (key != null && key.selector() == selector);
+                    boolean var90AC5A9C726BE7F47DCD01E5BC19F7E7_695115836 = (key != null && key.selector() == selector);
                 } //End collapsed parenthetic
             } //End block
         } //End collapsed parenthetic
@@ -80,7 +80,7 @@ public abstract class AbstractSelectableChannel extends SelectableChannel {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:12.497 -0400", hash_original_method = "CA2D38B16FDF21D8F80456FE85BBCC03", hash_generated_method = "3201A364B4BEDE0CC1E2C939F4A90758")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 11:53:58.692 -0400", hash_original_method = "CA2D38B16FDF21D8F80456FE85BBCC03", hash_generated_method = "FCCDEE6C155374B9FD47833886AF2303")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     @Override
     public final SelectionKey register(Selector selector, int interestSet,
@@ -89,28 +89,28 @@ public abstract class AbstractSelectableChannel extends SelectableChannel {
         dsTaint.addTaint(interestSet);
         dsTaint.addTaint(attachment.dsTaint);
         {
-            boolean var3A7D61B68AE823F6A30349D498C59A5C_2079546925 = (!isOpen());
+            boolean var3A7D61B68AE823F6A30349D498C59A5C_1738413062 = (!isOpen());
             {
-                throw new ClosedChannelException();
+                if (DroidSafeAndroidRuntime.control) throw new ClosedChannelException();
             } //End block
         } //End collapsed parenthetic
         {
-            boolean varC6747048DC9A6C29F5E2D03CB8DD17AC_942494782 = (!((interestSet & ~validOps()) == 0));
+            boolean varC6747048DC9A6C29F5E2D03CB8DD17AC_50614190 = (!((interestSet & ~validOps()) == 0));
             {
-                throw new IllegalArgumentException();
+                if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException();
             } //End block
         } //End collapsed parenthetic
         {
             {
-                throw new IllegalBlockingModeException();
+                if (DroidSafeAndroidRuntime.control) throw new IllegalBlockingModeException();
             } //End block
             {
-                boolean varB6073B4D1239886C11DC4DA3FD749175_169177937 = (!selector.isOpen());
+                boolean varB6073B4D1239886C11DC4DA3FD749175_2102496711 = (!selector.isOpen());
                 {
                     {
-                        throw new IllegalSelectorException();
+                        if (DroidSafeAndroidRuntime.control) throw new IllegalSelectorException();
                     } //End block
-                    throw new NullPointerException();
+                    if (DroidSafeAndroidRuntime.control) throw new NullPointerException();
                 } //End block
             } //End collapsed parenthetic
             SelectionKey key;
@@ -121,9 +121,9 @@ public abstract class AbstractSelectableChannel extends SelectableChannel {
             } //End block
             {
                 {
-                    boolean var9F04A2B363242ECBF1ED998B2E98DDB8_3714007 = (!key.isValid());
+                    boolean var9F04A2B363242ECBF1ED998B2E98DDB8_1627975921 = (!key.isValid());
                     {
-                        throw new CancelledKeyException();
+                        if (DroidSafeAndroidRuntime.control) throw new CancelledKeyException();
                     } //End block
                 } //End collapsed parenthetic
                 key.interestOps(interestSet);
@@ -136,7 +136,7 @@ public abstract class AbstractSelectableChannel extends SelectableChannel {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:12.497 -0400", hash_original_method = "924900C80DDDFF3B15A21AACED0AEBE3", hash_generated_method = "539C51BF5B02A8DD2A7715FA8DF7C621")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 11:53:58.716 -0400", hash_original_method = "924900C80DDDFF3B15A21AACED0AEBE3", hash_generated_method = "539C51BF5B02A8DD2A7715FA8DF7C621")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     @Override
     synchronized protected final void implCloseChannel() throws IOException {
@@ -164,7 +164,7 @@ public abstract class AbstractSelectableChannel extends SelectableChannel {
     protected abstract void implCloseSelectableChannel() throws IOException;
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:12.497 -0400", hash_original_method = "7EB3EC6F0C2C581F383895C93FAEB7C8", hash_generated_method = "6253280D84D9113A468093FD51AC62D2")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 11:53:58.724 -0400", hash_original_method = "7EB3EC6F0C2C581F383895C93FAEB7C8", hash_generated_method = "6253280D84D9113A468093FD51AC62D2")
     @DSModeled(DSC.SAFE)
     @Override
     public final boolean isBlocking() {
@@ -176,7 +176,7 @@ public abstract class AbstractSelectableChannel extends SelectableChannel {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:12.497 -0400", hash_original_method = "CF2B6308C435D16AFC21EE86C3F92787", hash_generated_method = "FBEE4E5FAF5EA1B15586247F05033545")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 11:53:58.729 -0400", hash_original_method = "CF2B6308C435D16AFC21EE86C3F92787", hash_generated_method = "FBEE4E5FAF5EA1B15586247F05033545")
     @DSModeled(DSC.SAFE)
     @Override
     public final Object blockingLock() {
@@ -186,22 +186,22 @@ public abstract class AbstractSelectableChannel extends SelectableChannel {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:12.497 -0400", hash_original_method = "C1D21D3B957CE63BA941CEBC7A89647F", hash_generated_method = "37AEEDE8A79BA721695461988C31E57D")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 11:53:58.739 -0400", hash_original_method = "C1D21D3B957CE63BA941CEBC7A89647F", hash_generated_method = "701276091CA23597E7CD45E2687115D8")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     @Override
     public final SelectableChannel configureBlocking(boolean blockingMode) throws IOException {
         dsTaint.addTaint(blockingMode);
         {
-            boolean var3A7D61B68AE823F6A30349D498C59A5C_1494377854 = (!isOpen());
+            boolean var3A7D61B68AE823F6A30349D498C59A5C_1112575997 = (!isOpen());
             {
-                throw new ClosedChannelException();
+                if (DroidSafeAndroidRuntime.control) throw new ClosedChannelException();
             } //End block
         } //End collapsed parenthetic
         {
             {
-                boolean varA1EE497A2C565C716AFB7F027C302B60_1276946599 = (blockingMode && containsValidKeys());
+                boolean varA1EE497A2C565C716AFB7F027C302B60_496218504 = (blockingMode && containsValidKeys());
                 {
-                    throw new IllegalBlockingModeException();
+                    if (DroidSafeAndroidRuntime.control) throw new IllegalBlockingModeException();
                 } //End block
             } //End collapsed parenthetic
             implConfigureBlocking(blockingMode);
@@ -228,7 +228,7 @@ public abstract class AbstractSelectableChannel extends SelectableChannel {
     protected abstract void implConfigureBlocking(boolean blocking) throws IOException;
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:12.497 -0400", hash_original_method = "5E0A774ABE1807BF9448EF86554C6BF7", hash_generated_method = "F2997F7BF18F06DD9A623E493281257D")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 11:53:58.754 -0400", hash_original_method = "5E0A774ABE1807BF9448EF86554C6BF7", hash_generated_method = "F2997F7BF18F06DD9A623E493281257D")
     @DSModeled(DSC.SAFE)
     synchronized void deregister(SelectionKey k) {
         dsTaint.addTaint(k.dsTaint);
@@ -242,7 +242,7 @@ public abstract class AbstractSelectableChannel extends SelectableChannel {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:12.497 -0400", hash_original_method = "57F0CA9634BB6BE72AE1A3DBAB2B8264", hash_generated_method = "12D97B975E14134E103FA29FDF830859")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 11:53:58.765 -0400", hash_original_method = "57F0CA9634BB6BE72AE1A3DBAB2B8264", hash_generated_method = "95EE8462B3E02112267EC08872280973")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     private synchronized boolean containsValidKeys() {
         {
@@ -251,7 +251,7 @@ public abstract class AbstractSelectableChannel extends SelectableChannel {
             SelectionKey key = seatecAstronomy42.next();
             {
                 {
-                    boolean var38DC38D0794E14EE99B4E06A070E5D5F_237629152 = (key != null && key.isValid());
+                    boolean var38DC38D0794E14EE99B4E06A070E5D5F_453698846 = (key != null && key.isValid());
                 } //End collapsed parenthetic
             } //End block
         } //End collapsed parenthetic

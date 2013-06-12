@@ -70,7 +70,7 @@ public abstract class DatagramChannel extends AbstractSelectableChannel implemen
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:12.482 -0400", hash_original_method = "27A2349B12D0C34616F4A42E88CDB7C6", hash_generated_method = "DAF0B6501917C146B1C648E791000AAC")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public synchronized final long read(ByteBuffer[] targets) throws IOException {
-        dsTaint.addTaint(targets.dsTaint);
+        dsTaint.addTaint(targets);
         long var8C8D63ACDBC3A6604609CB688A50835B_1896116486 = (read(targets, 0, targets.length));
         return dsTaint.getTaintLong();
         // ---------- Original Method ----------
@@ -88,7 +88,7 @@ public abstract class DatagramChannel extends AbstractSelectableChannel implemen
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:12.482 -0400", hash_original_method = "3D11D927406C5CFD8B6F27A884F1DAA7", hash_generated_method = "3E24476E30BFD4D0B0A180C92B520C79")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public synchronized final long write(ByteBuffer[] sources) throws IOException {
-        dsTaint.addTaint(sources.dsTaint);
+        dsTaint.addTaint(sources);
         long var284611C5A2FA51DEC3760F3DD09B2EC8_1954603681 = (write(sources, 0, sources.length));
         return dsTaint.getTaintLong();
         // ---------- Original Method ----------
