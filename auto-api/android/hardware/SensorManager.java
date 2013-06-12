@@ -120,6 +120,10 @@ public class SensorManager {
         new ArrayList<ListenerDelegate>();
     private static SensorEventPool sPool;
     
+    @DSModeled(DSC.BAN)
+    public SensorManager() {
+    	
+    }
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:01.590 -0400", hash_original_method = "D89BA857D2DFC071EE5A857E0568AFCF", hash_generated_method = "E5525391F705ADCBA73222D5BE88CD5C")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public SensorManager(Looper mainLooper) {

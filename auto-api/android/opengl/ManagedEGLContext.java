@@ -19,8 +19,8 @@ import com.google.android.gles_jni.EGLImpl;
 
 public abstract class ManagedEGLContext {
     static final String TAG = "ManagedEGLContext";
-    static final ArrayList<ManagedEGLContext> sActive = new ArrayList<ManagedEGLContext>();
-    final EGLContext mContext;
+    static  final ArrayList<ManagedEGLContext> sActive = new ArrayList<ManagedEGLContext>();
+     EGLContext mContext;
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:02.508 -0400", hash_original_method = "9D266735F37ADE970716DE5C813A7490", hash_generated_method = "AE71F2325D6682519AFF9C65F4505BF1")
     @DSModeled(DSC.SAFE)

@@ -136,7 +136,7 @@ public class PreferenceManager {
                     boolean varC3FF154FA48BC17A0ABB9C1087AA7414_2056907977 = (!inflatedRes.contains(uniqueResId));
                     {
                         inflatedRes.add(uniqueResId);
-                        final Context context;
+                        Context context = null;
                         try 
                         {
                             context = mContext.createPackageContext(activityInfo.packageName, 0);
