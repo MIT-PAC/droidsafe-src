@@ -3,10 +3,10 @@ package android.os;
 // Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
+import droidsafe.runtime.*;
 
-// import Iterator to deal with enhanced for loop translation
+// needed for enhanced for control translations
 import java.util.Iterator;
-
 import android.util.Log;
 import java.io.FileDescriptor;
 import java.io.FileOutputStream;
@@ -16,21 +16,21 @@ import java.lang.ref.WeakReference;
 import java.lang.reflect.Modifier;
 
 public class Binder implements IBinder {
-    private static final boolean FIND_POTENTIAL_LEAKS = false;
-    private static final String TAG = "Binder";
+    private static boolean FIND_POTENTIAL_LEAKS = false;
+    private static String TAG = "Binder";
     private int mObject;
     private IInterface mOwner;
     private String mDescriptor;
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:02.530 -0400", hash_original_method = "E9C0CAF28240B0B259339EF455808C3F", hash_generated_method = "8AE550F267F8367378D7C17269C2C29A")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 12:01:59.262 -0400", hash_original_method = "E9C0CAF28240B0B259339EF455808C3F", hash_generated_method = "0881C4CAC6ACD6C81510A508CD068E03")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public Binder() {
         init();
         {
-            final Class<? extends Binder> klass;
+            Class<? extends Binder> klass;
             klass = getClass();
             {
-                boolean var21C0A6071D67597815EE38AB22BE22C0_1558882852 = ((klass.isAnonymousClass() || klass.isMemberClass() || klass.isLocalClass()) &&
+                boolean var21C0A6071D67597815EE38AB22BE22C0_218162998 = ((klass.isAnonymousClass() || klass.isMemberClass() || klass.isLocalClass()) &&
                     (klass.getModifiers() & Modifier.STATIC) == 0);
             } //End collapsed parenthetic
         } //End block
@@ -47,55 +47,51 @@ public class Binder implements IBinder {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:02.530 -0400", hash_original_method = "71A0E2F872338404194717981CE64A2B", hash_generated_method = "9F4DAFB6A3D04CA2B877B511EE92E489")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 12:01:59.262 -0400", hash_original_method = "71A0E2F872338404194717981CE64A2B", hash_generated_method = "0F0495D6F458CA45DFC7B69BB2EC3ED4")
     public static final int getCallingPid() {
-        //DSFIXME:  CODE0010: Native static method requires manual modeling
+        return DSUtils.UNKNOWN_INT;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:02.530 -0400", hash_original_method = "7614E6A02CF93B5C0C58345F6C636207", hash_generated_method = "F3251076ECF4E4F9E909EE7A3F8D8A72")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 12:01:59.262 -0400", hash_original_method = "7614E6A02CF93B5C0C58345F6C636207", hash_generated_method = "3E98F4B4FFCB1C14258C0EF1E47752FE")
     public static final int getCallingUid() {
-        //DSFIXME:  CODE0010: Native static method requires manual modeling
+        return DSUtils.UNKNOWN_INT;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:02.530 -0400", hash_original_method = "510ADEDD6430B9BE0A41F7F7C7CF9194", hash_generated_method = "74FC09E72CCF057B7881813A90D3EF40")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 12:01:59.262 -0400", hash_original_method = "510ADEDD6430B9BE0A41F7F7C7CF9194", hash_generated_method = "0647D5CEA0C4053E89234F302C553FCC")
     public static final long clearCallingIdentity() {
-        //DSFIXME:  CODE0010: Native static method requires manual modeling
+        return DSUtils.UNKNOWN_LONG;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:02.530 -0400", hash_original_method = "5BD87FC104F6ED551725ABFA0C2ABECF", hash_generated_method = "ADA9B763ABB4B40401D0C8BFE75E72F5")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 12:01:59.262 -0400", hash_original_method = "5BD87FC104F6ED551725ABFA0C2ABECF", hash_generated_method = "3437FA38A6725C84962744D47045C247")
     public static final void restoreCallingIdentity(long token) {
-        //DSFIXME:  CODE0010: Native static method requires manual modeling
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:02.530 -0400", hash_original_method = "673031E01009A648DBA64FAD555384A1", hash_generated_method = "FEA953A765F4CA72287FAB36728BA8CF")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 12:01:59.262 -0400", hash_original_method = "673031E01009A648DBA64FAD555384A1", hash_generated_method = "FB5E2A401D70ADB4F786CCC35CF350A4")
     public static final void setThreadStrictModePolicy(int policyMask) {
-        //DSFIXME:  CODE0010: Native static method requires manual modeling
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:02.530 -0400", hash_original_method = "0627301764F03D9B90C1A0B10D5AEC3C", hash_generated_method = "21B0079FB70499EF9AC84AE2904219EC")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 12:01:59.262 -0400", hash_original_method = "0627301764F03D9B90C1A0B10D5AEC3C", hash_generated_method = "D83B8E1E23C4DB4DD90DC7E782CFD3CA")
     public static final int getThreadStrictModePolicy() {
-        //DSFIXME:  CODE0010: Native static method requires manual modeling
+        return DSUtils.UNKNOWN_INT;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:02.530 -0400", hash_original_method = "E934A6F85889769D1A0D3661C32D4F39", hash_generated_method = "985797BC9ADD31EF3993642FF1BE13B5")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 12:01:59.262 -0400", hash_original_method = "E934A6F85889769D1A0D3661C32D4F39", hash_generated_method = "1BFBB8582750E467EEF9A5311DFB7FAA")
     public static final void flushPendingCommands() {
-        //DSFIXME:  CODE0010: Native static method requires manual modeling
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:02.530 -0400", hash_original_method = "EFAEF866E392CFE9D06D530B612DCBC0", hash_generated_method = "00D2F864834569F64735BEABC1AFC69A")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 12:01:59.263 -0400", hash_original_method = "EFAEF866E392CFE9D06D530B612DCBC0", hash_generated_method = "B4D6367FE6BE146AC59005C56DA84EF4")
     public static final void joinThreadPool() {
-        //DSFIXME:  CODE0010: Native static method requires manual modeling
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:02.530 -0400", hash_original_method = "FF7CD905415FB665DAB37EF33B177901", hash_generated_method = "93EFAA29AA2B3CA5D806FE08D513346C")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 12:01:59.263 -0400", hash_original_method = "FF7CD905415FB665DAB37EF33B177901", hash_generated_method = "93EFAA29AA2B3CA5D806FE08D513346C")
     @DSModeled(DSC.SAFE)
     public void attachInterface(IInterface owner, String descriptor) {
         dsTaint.addTaint(descriptor);
@@ -106,7 +102,7 @@ public class Binder implements IBinder {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:02.531 -0400", hash_original_method = "D3E904DAC6E3F35A0A15305E093649D7", hash_generated_method = "7C30F799E866F3F8FF91A71C2F89E6CF")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 12:01:59.263 -0400", hash_original_method = "D3E904DAC6E3F35A0A15305E093649D7", hash_generated_method = "7C30F799E866F3F8FF91A71C2F89E6CF")
     @DSModeled(DSC.SAFE)
     public String getInterfaceDescriptor() {
         return dsTaint.getTaintString();
@@ -115,7 +111,7 @@ public class Binder implements IBinder {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:02.531 -0400", hash_original_method = "A88E99F5157D576DA956A58D2E3E5765", hash_generated_method = "C76EEBA91717B4DB05F6EFD83A359B76")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 12:01:59.263 -0400", hash_original_method = "A88E99F5157D576DA956A58D2E3E5765", hash_generated_method = "C76EEBA91717B4DB05F6EFD83A359B76")
     @DSModeled(DSC.SAFE)
     public boolean pingBinder() {
         return dsTaint.getTaintBoolean();
@@ -124,7 +120,7 @@ public class Binder implements IBinder {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:02.531 -0400", hash_original_method = "7D2EC13EC2CD5238366DCA3903BB993E", hash_generated_method = "B34431E306F991DAEBD658826C3B583C")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 12:01:59.263 -0400", hash_original_method = "7D2EC13EC2CD5238366DCA3903BB993E", hash_generated_method = "B34431E306F991DAEBD658826C3B583C")
     @DSModeled(DSC.SAFE)
     public boolean isBinderAlive() {
         return dsTaint.getTaintBoolean();
@@ -133,12 +129,12 @@ public class Binder implements IBinder {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:02.531 -0400", hash_original_method = "5F53634C89FC8CF0041CE9B2B1E024B8", hash_generated_method = "7DDA25CD9A089FF8400D8C1CA587E63C")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 12:01:59.263 -0400", hash_original_method = "5F53634C89FC8CF0041CE9B2B1E024B8", hash_generated_method = "90E5671973CC7A72973B92A40FF96AD8")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public IInterface queryLocalInterface(String descriptor) {
         dsTaint.addTaint(descriptor);
         {
-            boolean varAC889952CAA6B5EA32D96EF8D1FD3668_15430630 = (mDescriptor.equals(descriptor));
+            boolean varAC889952CAA6B5EA32D96EF8D1FD3668_734370595 = (mDescriptor.equals(descriptor));
         } //End collapsed parenthetic
         return (IInterface)dsTaint.getTaint();
         // ---------- Original Method ----------
@@ -149,7 +145,7 @@ public class Binder implements IBinder {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:02.531 -0400", hash_original_method = "0CF6D9F1E08225F80F6CBB6DE559E3A9", hash_generated_method = "E6729CDFFEB8454968AE57FBE54170FB")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 12:01:59.264 -0400", hash_original_method = "0CF6D9F1E08225F80F6CBB6DE559E3A9", hash_generated_method = "E6729CDFFEB8454968AE57FBE54170FB")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     protected boolean onTransact(int code, Parcel data, Parcel reply,
             int flags) throws RemoteException {
@@ -194,14 +190,14 @@ public class Binder implements IBinder {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:02.531 -0400", hash_original_method = "062423BD3F619586ADD6FBBF398B1A78", hash_generated_method = "127FF807E318840AFAE972A6C5E8C284")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 12:01:59.264 -0400", hash_original_method = "062423BD3F619586ADD6FBBF398B1A78", hash_generated_method = "9BAB853FCD6F88165B2B51413C73682A")
     @DSModeled(DSC.SAFE)
     public void dump(FileDescriptor fd, String[] args) {
-        dsTaint.addTaint(args);
+        dsTaint.addTaint(args[0]);
         dsTaint.addTaint(fd.dsTaint);
         FileOutputStream fout;
         fout = new FileOutputStream(fd);
-        PrintWriter pw;
+        final PrintWriter pw;
         pw = new PrintWriter(fout);
         try 
         {
@@ -222,12 +218,12 @@ public class Binder implements IBinder {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:02.532 -0400", hash_original_method = "43E702619EA899B9933A99C2C1DACCB9", hash_generated_method = "CA03DFD46ED72E1DD3663C3AE144C009")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 12:01:59.264 -0400", hash_original_method = "43E702619EA899B9933A99C2C1DACCB9", hash_generated_method = "A75065B9928415911E462E6F2189A6D9")
     @DSModeled(DSC.SAFE)
     public void dumpAsync(final FileDescriptor fd, final String[] args) {
-        dsTaint.addTaint(args);
+        dsTaint.addTaint(args[0]);
         dsTaint.addTaint(fd.dsTaint);
-        final FileOutputStream fout;
+        FileOutputStream fout;
         fout = new FileOutputStream(fd);
         final PrintWriter pw;
         pw = new PrintWriter(fout);
@@ -258,17 +254,17 @@ public class Binder implements IBinder {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:02.532 -0400", hash_original_method = "8E1D6FEDF1AFEDBCDCF9E63EFF23CA00", hash_generated_method = "A9C201DE0F3FDDCBBE6BCD1CD980D7B6")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 12:01:59.264 -0400", hash_original_method = "8E1D6FEDF1AFEDBCDCF9E63EFF23CA00", hash_generated_method = "A63E3EA8C7EAA11391DBCEB550C98A65")
     @DSModeled(DSC.SAFE)
     protected void dump(FileDescriptor fd, PrintWriter fout, String[] args) {
         dsTaint.addTaint(fout.dsTaint);
-        dsTaint.addTaint(args);
+        dsTaint.addTaint(args[0]);
         dsTaint.addTaint(fd.dsTaint);
         // ---------- Original Method ----------
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:02.532 -0400", hash_original_method = "45A6F1E38538846BA699CFB220CE3AE3", hash_generated_method = "ACD5489546427BDC0876A9FBF1B0DB91")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 12:01:59.265 -0400", hash_original_method = "45A6F1E38538846BA699CFB220CE3AE3", hash_generated_method = "ACD5489546427BDC0876A9FBF1B0DB91")
     @DSModeled(DSC.SAFE)
     public final boolean transact(int code, Parcel data, Parcel reply,
             int flags) throws RemoteException {
@@ -298,7 +294,7 @@ public class Binder implements IBinder {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:02.532 -0400", hash_original_method = "5287A3990077935C24A2BD79FED1C6A1", hash_generated_method = "7FE04B3D335415E34029EBC7AFC0B9D4")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 12:01:59.265 -0400", hash_original_method = "5287A3990077935C24A2BD79FED1C6A1", hash_generated_method = "7FE04B3D335415E34029EBC7AFC0B9D4")
     @DSModeled(DSC.SAFE)
     public void linkToDeath(DeathRecipient recipient, int flags) {
         dsTaint.addTaint(flags);
@@ -307,7 +303,7 @@ public class Binder implements IBinder {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:02.532 -0400", hash_original_method = "1A3BA6E0CCE3FB8650C7F390300799F7", hash_generated_method = "F954FE028805C9D91669DD21AAE6027F")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 12:01:59.265 -0400", hash_original_method = "1A3BA6E0CCE3FB8650C7F390300799F7", hash_generated_method = "F954FE028805C9D91669DD21AAE6027F")
     @DSModeled(DSC.SAFE)
     public boolean unlinkToDeath(DeathRecipient recipient, int flags) {
         dsTaint.addTaint(flags);
@@ -318,7 +314,7 @@ public class Binder implements IBinder {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:02.532 -0400", hash_original_method = "E45E17FA4DD489F5F777D118010D5B05", hash_generated_method = "345DF44A6204CC8424F6BC56F3883604")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 12:01:59.265 -0400", hash_original_method = "E45E17FA4DD489F5F777D118010D5B05", hash_generated_method = "345DF44A6204CC8424F6BC56F3883604")
     @DSModeled(DSC.SAFE)
     protected void finalize() throws Throwable {
         try 
@@ -338,19 +334,19 @@ public class Binder implements IBinder {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:02.532 -0400", hash_original_method = "0DE93EF32C53D091768788DCA0E281FD", hash_generated_method = "4B1E98977D3F64984DAB4C3850F81BB6")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 12:01:59.265 -0400", hash_original_method = "0DE93EF32C53D091768788DCA0E281FD", hash_generated_method = "4B1E98977D3F64984DAB4C3850F81BB6")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     private final void init() {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:02.532 -0400", hash_original_method = "73111F72F4AB0474EB2CFBD7E4AF4E1A", hash_generated_method = "69B84BC3B1EA0628B8FAFB6B271248C1")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 12:01:59.265 -0400", hash_original_method = "73111F72F4AB0474EB2CFBD7E4AF4E1A", hash_generated_method = "69B84BC3B1EA0628B8FAFB6B271248C1")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     private final void destroy() {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:02.533 -0400", hash_original_method = "F07199776E11DA2675C840AC9A2F2A30", hash_generated_method = "B89597E50F43CCB26FF3D8B8E0413B2D")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 12:01:59.291 -0400", hash_original_method = "F07199776E11DA2675C840AC9A2F2A30", hash_generated_method = "B89597E50F43CCB26FF3D8B8E0413B2D")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     private boolean execTransact(int code, int dataObj, int replyObj,
             int flags) {
@@ -413,11 +409,11 @@ public class Binder implements IBinder {
 }
 
 final class BinderProxy implements IBinder {
-    final private WeakReference mSelf;
+    private WeakReference mSelf;
     private int mObject;
     private int mOrgue;
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:02.533 -0400", hash_original_method = "6F2DE2B0944C9F00778B80C418D11418", hash_generated_method = "D5E8BE923EC4EC4CFDE548BF90C009E0")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 12:01:59.291 -0400", hash_original_method = "6F2DE2B0944C9F00778B80C418D11418", hash_generated_method = "D5E8BE923EC4EC4CFDE548BF90C009E0")
     @DSModeled(DSC.SAFE)
      BinderProxy() {
         mSelf = new WeakReference(this);
@@ -426,19 +422,21 @@ final class BinderProxy implements IBinder {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:02.533 -0400", hash_original_method = "3AAC7144F281FBB542DFC7EF6106B5C9", hash_generated_method = "0A0AE5B14A516A45AF7E3DCC3F3F5283")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 12:01:59.292 -0400", hash_original_method = "3AAC7144F281FBB542DFC7EF6106B5C9", hash_generated_method = "2A2C6CF2160DF7C8E9D21A8D15F98CBC")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public boolean pingBinder() {
+        return dsTaint.getTaintBoolean();
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:02.533 -0400", hash_original_method = "ACDA4E684B1D0EE78316DF741FE72AF5", hash_generated_method = "1C825D36B5D0828924966D04B97F355B")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 12:01:59.302 -0400", hash_original_method = "ACDA4E684B1D0EE78316DF741FE72AF5", hash_generated_method = "38D3E5E91F741DA8A1762CDE46AACE69")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public boolean isBinderAlive() {
+        return dsTaint.getTaintBoolean();
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:02.534 -0400", hash_original_method = "B707B72714522D5F23CBE8D4C77B554B", hash_generated_method = "2E363393258D6DA276B70A60436511C9")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 12:01:59.302 -0400", hash_original_method = "B707B72714522D5F23CBE8D4C77B554B", hash_generated_method = "2E363393258D6DA276B70A60436511C9")
     @DSModeled(DSC.SAFE)
     public IInterface queryLocalInterface(String descriptor) {
         dsTaint.addTaint(descriptor);
@@ -448,13 +446,14 @@ final class BinderProxy implements IBinder {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:02.534 -0400", hash_original_method = "6A74CDB8273CEC1C9569965EF003EFCB", hash_generated_method = "B8F5FB4C2693DB98FE19BAB0C788D4E4")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 12:01:59.302 -0400", hash_original_method = "6A74CDB8273CEC1C9569965EF003EFCB", hash_generated_method = "D97AA7FBC02270E7402F09CA2E354C6A")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public String getInterfaceDescriptor() throws RemoteException {
+        return dsTaint.getTaintString();
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:02.534 -0400", hash_original_method = "2DB55944420A41A5CEDC8BE2777F8B50", hash_generated_method = "A2098743E14E096CFF165CF523511255")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 12:01:59.302 -0400", hash_original_method = "2DB55944420A41A5CEDC8BE2777F8B50", hash_generated_method = "3F602C609AE64D7E1C02F9BFC336AFEA")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public boolean transact(int code, Parcel data, Parcel reply,
             int flags) throws RemoteException {
@@ -462,10 +461,11 @@ final class BinderProxy implements IBinder {
         dsTaint.addTaint(data.dsTaint);
         dsTaint.addTaint(reply.dsTaint);
         dsTaint.addTaint(code);
+        return dsTaint.getTaintBoolean();
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:02.534 -0400", hash_original_method = "9A12D44BC0A4F3509826AD7E16FA0EA1", hash_generated_method = "90B2DCB9585141BF3B68914DD9837DE3")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 12:01:59.302 -0400", hash_original_method = "9A12D44BC0A4F3509826AD7E16FA0EA1", hash_generated_method = "90B2DCB9585141BF3B68914DD9837DE3")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public void linkToDeath(DeathRecipient recipient, int flags) throws RemoteException {
         dsTaint.addTaint(flags);
@@ -473,18 +473,19 @@ final class BinderProxy implements IBinder {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:02.534 -0400", hash_original_method = "C682342F842ADE74AC6BCB96B6CECF17", hash_generated_method = "ED0DC86797B8E07A5A3FFF570DE17CD6")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 12:01:59.303 -0400", hash_original_method = "C682342F842ADE74AC6BCB96B6CECF17", hash_generated_method = "8EB4BCDAF3C96D4C68C3832153A515BF")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public boolean unlinkToDeath(DeathRecipient recipient, int flags) {
         dsTaint.addTaint(flags);
         dsTaint.addTaint(recipient.dsTaint);
+        return dsTaint.getTaintBoolean();
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:02.535 -0400", hash_original_method = "C4F8E51C715A0CBA59E063E00B1AFC6F", hash_generated_method = "092CCD873131ADE0B86A37C2A5742D14")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 12:01:59.303 -0400", hash_original_method = "C4F8E51C715A0CBA59E063E00B1AFC6F", hash_generated_method = "38CCBBB7CA5F20869B197899587AE15C")
     @DSModeled(DSC.SAFE)
     public void dump(FileDescriptor fd, String[] args) throws RemoteException {
-        dsTaint.addTaint(args);
+        dsTaint.addTaint(args[0]);
         dsTaint.addTaint(fd.dsTaint);
         Parcel data;
         data = Parcel.obtain();
@@ -517,10 +518,10 @@ final class BinderProxy implements IBinder {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:02.535 -0400", hash_original_method = "07563DCFF6B89513E8E1D1CEF9639FFA", hash_generated_method = "A2ED3117D510B5C600118A113115EB28")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 12:01:59.303 -0400", hash_original_method = "07563DCFF6B89513E8E1D1CEF9639FFA", hash_generated_method = "05DEF28B0939F3F6089092359381E301")
     @DSModeled(DSC.SAFE)
     public void dumpAsync(FileDescriptor fd, String[] args) throws RemoteException {
-        dsTaint.addTaint(args);
+        dsTaint.addTaint(args[0]);
         dsTaint.addTaint(fd.dsTaint);
         Parcel data;
         data = Parcel.obtain();
@@ -553,7 +554,7 @@ final class BinderProxy implements IBinder {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:02.535 -0400", hash_original_method = "E45E17FA4DD489F5F777D118010D5B05", hash_generated_method = "ED012FF96D8C5CAEB4ECE50C9AE22182")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 12:01:59.303 -0400", hash_original_method = "E45E17FA4DD489F5F777D118010D5B05", hash_generated_method = "ED012FF96D8C5CAEB4ECE50C9AE22182")
     @DSModeled(DSC.SAFE)
     @Override
     protected void finalize() throws Throwable {
@@ -574,13 +575,13 @@ final class BinderProxy implements IBinder {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:02.535 -0400", hash_original_method = "73111F72F4AB0474EB2CFBD7E4AF4E1A", hash_generated_method = "69B84BC3B1EA0628B8FAFB6B271248C1")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 12:01:59.303 -0400", hash_original_method = "73111F72F4AB0474EB2CFBD7E4AF4E1A", hash_generated_method = "69B84BC3B1EA0628B8FAFB6B271248C1")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     private final void destroy() {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:02.536 -0400", hash_original_method = "ED38B913C167A37A15CA15D403C1E80F", hash_generated_method = "986878FE3AE8FB0C51B7FDEE5BB0C195")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 12:01:59.305 -0400", hash_original_method = "ED38B913C167A37A15CA15D403C1E80F", hash_generated_method = "986878FE3AE8FB0C51B7FDEE5BB0C195")
     private static final void sendDeathNotice(DeathRecipient recipient) {
         if (false) Log.v("JavaBinder", "sendDeathNotice to " + recipient);
         try {
