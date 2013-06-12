@@ -2,6 +2,7 @@ package java.io;
 
 // Droidsafe Imports
 import droidsafe.helpers.*;
+import droidsafe.runtime.DroidSafeAndroidRuntime;
 import droidsafe.annotations.*;
 
 // import Iterator to deal with enhanced for loop translation
@@ -50,7 +51,7 @@ public class StringReader extends Reader {
     @Override
     public void mark(int readLimit) throws IOException {
         dsTaint.addTaint(readLimit);
-        {
+        if(DroidSafeAndroidRuntime.control) {
             throw new IllegalArgumentException();
         } //End block
         {

@@ -2,6 +2,7 @@ package java.io;
 
 // Droidsafe Imports
 import droidsafe.helpers.*;
+import droidsafe.runtime.DroidSafeAndroidRuntime;
 import droidsafe.annotations.*;
 
 // import Iterator to deal with enhanced for loop translation
@@ -32,7 +33,7 @@ public class BufferedReader extends Reader {
         super(in);
         dsTaint.addTaint(in.dsTaint);
         dsTaint.addTaint(size);
-        {
+        if(DroidSafeAndroidRuntime.control) {
             throw new IllegalArgumentException("size <= 0");
         } //End block
         buf = new char[size];
@@ -122,7 +123,7 @@ public class BufferedReader extends Reader {
     @Override
     public void mark(int markLimit) throws IOException {
         dsTaint.addTaint(markLimit);
-        {
+        if(DroidSafeAndroidRuntime.control) {
             throw new IllegalArgumentException();
         } //End block
         {
@@ -371,7 +372,7 @@ public class BufferedReader extends Reader {
     public void reset() throws IOException {
         {
             checkNotClosed();
-            {
+            if(DroidSafeAndroidRuntime.control) {
                 throw new IOException("Invalid mark");
             } //End block
             pos = mark;
@@ -392,7 +393,7 @@ public class BufferedReader extends Reader {
     @Override
     public long skip(long byteCount) throws IOException {
         dsTaint.addTaint(byteCount);
-        {
+        if(DroidSafeAndroidRuntime.control) {
             throw new IllegalArgumentException("byteCount < 0: " + byteCount);
         } //End block
         {
