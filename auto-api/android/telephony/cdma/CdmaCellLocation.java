@@ -174,7 +174,7 @@ public class CdmaCellLocation extends CellLocation {
             s = (CdmaCellLocation)o;
         } //End block
         catch (ClassCastException ex)
-        { }
+        { return dsTaint.getTaintBoolean();}
         boolean varF7FAA7223520EA38037273760A9832FA_708524856 = ((equalsHandlesNulls(this.mBaseStationId, s.mBaseStationId) &&
                 equalsHandlesNulls(this.mBaseStationLatitude, s.mBaseStationLatitude) &&
                 equalsHandlesNulls(this.mBaseStationLongitude, s.mBaseStationLongitude) &&

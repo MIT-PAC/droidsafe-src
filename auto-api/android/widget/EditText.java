@@ -1,20 +1,18 @@
 package android.widget;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-
-// import Iterator to deal with enhanced for loop translation
-import java.util.Iterator;
-
 import android.content.Context;
 import android.text.Editable;
 import android.text.Selection;
-import android.text.Spannable;
 import android.text.TextUtils;
 import android.text.method.ArrowKeyMovementMethod;
 import android.text.method.MovementMethod;
 import android.util.AttributeSet;
+import droidsafe.annotations.DSC;
+import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.DSModeled;
+import droidsafe.runtime.DroidSafeAndroidRuntime;
+// import Iterator to deal with enhanced for loop translation
 
 public class EditText extends TextView {
     
@@ -138,7 +136,7 @@ public class EditText extends TextView {
     public void setEllipsize(TextUtils.TruncateAt ellipsis) {
         dsTaint.addTaint(ellipsis.dsTaint);
         {
-            throw new IllegalArgumentException("EditText cannot use the ellipsize mode "
+            if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("EditText cannot use the ellipsize mode "
                     + "TextUtils.TruncateAt.MARQUEE");
         } //End block
         super.setEllipsize(ellipsis);

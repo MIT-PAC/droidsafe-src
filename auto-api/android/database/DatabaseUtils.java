@@ -2,6 +2,7 @@ package android.database;
 
 // Droidsafe Imports
 import droidsafe.helpers.*;
+import droidsafe.runtime.DroidSafeAndroidRuntime;
 import droidsafe.annotations.*;
 
 // import Iterator to deal with enhanced for loop translation
@@ -737,8 +738,8 @@ public class DatabaseUtils {
 
     
     public static class InsertHelper {
-        private final SQLiteDatabase mDb;
-        private final String mTableName;
+        private /* final */ SQLiteDatabase mDb;
+        private /* final */ String mTableName;
         private HashMap<String, Integer> mColumns;
         private String mInsertSQL = null;
         private SQLiteStatement mInsertStatement = null;
@@ -889,6 +890,7 @@ public class DatabaseUtils {
             getStatement(false);
             final Integer index;
             index = mColumns.get(key);
+            if (DroidSafeAndroidRuntime.control)
             {
                 throw new IllegalArgumentException("column '" + key + "' is invalid");
             } //End block
@@ -1022,6 +1024,7 @@ public class DatabaseUtils {
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:00.677 -0400", hash_original_method = "C80CA050416DA84901D4F7B0B2F41300", hash_generated_method = "7ED8497879C6F3A9E42A98D034B28EAC")
         //DSFIXME:  CODE0002: Requires DSC value to be set
         public long execute() {
+            if (DroidSafeAndroidRuntime.control)
             {
                 throw new IllegalStateException("you must prepare this inserter before calling "
                         + "execute");

@@ -1,19 +1,18 @@
 package android.content.res;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-
-// import Iterator to deal with enhanced for loop translation
-import java.util.Iterator;
+import java.util.Arrays;
 
 import android.graphics.drawable.Drawable;
-import android.util.AttributeSet;
-import android.util.DisplayMetrics;
-import android.util.Log;
 import android.util.TypedValue;
+
 import com.android.internal.util.XmlUtils;
-import java.util.Arrays;
+
+import droidsafe.annotations.DSC;
+import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.DSModeled;
+import droidsafe.runtime.DroidSafeAndroidRuntime;
+// import Iterator to deal with enhanced for loop translation
 
 public class TypedArray {
     private final Resources mResources;
@@ -31,6 +30,7 @@ public class TypedArray {
         dsTaint.addTaint(data);
         dsTaint.addTaint(indices);
         dsTaint.addTaint(len);
+        mResources = resources;
         // ---------- Original Method ----------
         //mResources = resources;
         //mData = data;
@@ -367,7 +367,7 @@ public class TypedArray {
                 } //End block
             } //End collapsed parenthetic
         } //End block
-        throw new UnsupportedOperationException("Can't convert to color: type=0x"
+        if (DroidSafeAndroidRuntime.control)throw new UnsupportedOperationException("Can't convert to color: type=0x"
                 + Integer.toHexString(type));
         return dsTaint.getTaintInt();
         // ---------- Original Method ----------
@@ -407,7 +407,7 @@ public class TypedArray {
         data = mData;
         final int type;
         type = data[index+AssetManager.STYLE_TYPE];
-        throw new UnsupportedOperationException("Can't convert to integer: type=0x"
+        if (DroidSafeAndroidRuntime.control)throw new UnsupportedOperationException("Can't convert to integer: type=0x"
                 + Integer.toHexString(type));
         return dsTaint.getTaintInt();
         // ---------- Original Method ----------
@@ -439,7 +439,7 @@ public class TypedArray {
             float varA1522486184585892ADD51886D88796F_496136861 = (TypedValue.complexToDimension(
                 data[index+AssetManager.STYLE_DATA], mResources.mMetrics));
         } //End block
-        throw new UnsupportedOperationException("Can't convert to dimension: type=0x"
+        if (DroidSafeAndroidRuntime.control)throw new UnsupportedOperationException("Can't convert to dimension: type=0x"
                 + Integer.toHexString(type));
         return dsTaint.getTaintFloat();
         // ---------- Original Method ----------
@@ -472,7 +472,7 @@ public class TypedArray {
             int var4A5F9DBCA23B6EA0EA6FDF95426DA4CC_577345954 = (TypedValue.complexToDimensionPixelOffset(
                 data[index+AssetManager.STYLE_DATA], mResources.mMetrics));
         } //End block
-        throw new UnsupportedOperationException("Can't convert to dimension: type=0x"
+        if (DroidSafeAndroidRuntime.control)throw new UnsupportedOperationException("Can't convert to dimension: type=0x"
                 + Integer.toHexString(type));
         return dsTaint.getTaintInt();
         // ---------- Original Method ----------
@@ -505,7 +505,7 @@ public class TypedArray {
             int var922D68BAEC7F02CD7AA1064E49243482_1354299144 = (TypedValue.complexToDimensionPixelSize(
                 data[index+AssetManager.STYLE_DATA], mResources.mMetrics));
         } //End block
-        throw new UnsupportedOperationException("Can't convert to dimension: type=0x"
+        if (DroidSafeAndroidRuntime.control) throw new UnsupportedOperationException("Can't convert to dimension: type=0x"
                 + Integer.toHexString(type));
         return dsTaint.getTaintInt();
         // ---------- Original Method ----------
@@ -537,7 +537,7 @@ public class TypedArray {
             int var922D68BAEC7F02CD7AA1064E49243482_208917126 = (TypedValue.complexToDimensionPixelSize(
                 data[index+AssetManager.STYLE_DATA], mResources.mMetrics));
         } //End block
-        throw new RuntimeException(getPositionDescription()
+        if (DroidSafeAndroidRuntime.control)throw new RuntimeException(getPositionDescription()
                 + ": You must supply a " + name + " attribute.");
         return dsTaint.getTaintInt();
         // ---------- Original Method ----------
@@ -602,7 +602,7 @@ public class TypedArray {
             float var783B7664A89710D9D988B33835D0AC9D_1113450453 = (TypedValue.complexToFraction(
                 data[index+AssetManager.STYLE_DATA], base, pbase));
         } //End block
-        throw new UnsupportedOperationException("Can't convert to fraction: type=0x"
+        if (DroidSafeAndroidRuntime.control)throw new UnsupportedOperationException("Can't convert to fraction: type=0x"
                 + Integer.toHexString(type));
         return dsTaint.getTaintFloat();
         // ---------- Original Method ----------

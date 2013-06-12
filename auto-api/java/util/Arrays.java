@@ -2,6 +2,7 @@ package java.util;
 
 // Droidsafe Imports
 import droidsafe.helpers.*;
+import droidsafe.runtime.DroidSafeAndroidRuntime;
 import droidsafe.annotations.*;
 
 // import Iterator to deal with enhanced for loop translation
@@ -1512,15 +1513,15 @@ public class Arrays {
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:13.398 -0400", hash_original_method = "28401D48F15218543E5E002CE4B26D15", hash_generated_method = "52361163B9EA006D94A470CF0C4DF91A")
         @DSModeled(DSC.SAFE)
          ArrayList(E[] storage) {
-            dsTaint.addTaint(storage.dsTaint);
-            {
+            dsTaint.addTaint(storage[0].dsTaint);
+            if (DroidSafeAndroidRuntime.control) {
                 throw new NullPointerException();
             } //End block
             // ---------- Original Method ----------
             //if (storage == null) {
                 //throw new NullPointerException();
             //}
-            //a = storage;
+            a = storage;
         }
 
         
@@ -1703,7 +1704,7 @@ public class Arrays {
         @Override
         @SuppressWarnings({"unchecked", "SuspiciousSystemArraycopy"})
         public <T> T[] toArray(T[] contents) {
-            dsTaint.addTaint(contents.dsTaint);
+            dsTaint.addTaint(contents[0].dsTaint);
             int size;
             size = size();
             {

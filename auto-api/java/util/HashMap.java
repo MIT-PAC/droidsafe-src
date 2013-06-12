@@ -2,6 +2,7 @@ package java.util;
 
 // Droidsafe Imports
 import droidsafe.helpers.*;
+import droidsafe.runtime.DroidSafeAndroidRuntime;
 import droidsafe.annotations.*;
 
 // import Iterator to deal with enhanced for loop translation
@@ -50,7 +51,7 @@ public class HashMap<K, V> extends AbstractMap<K, V> implements Cloneable, Seria
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public HashMap(int capacity) {
         dsTaint.addTaint(capacity);
-        {
+        if (DroidSafeAndroidRuntime.control) {
             throw new IllegalArgumentException("Capacity: " + capacity);
         } //End block
         {
@@ -1038,7 +1039,7 @@ public class HashMap<K, V> extends AbstractMap<K, V> implements Cloneable, Seria
         stream.defaultReadObject();
         int capacity;
         capacity = stream.readInt();
-        {
+        if (DroidSafeAndroidRuntime.control) {
             throw new InvalidObjectException("Capacity: " + capacity);
         } //End block
         {
@@ -1053,7 +1054,7 @@ public class HashMap<K, V> extends AbstractMap<K, V> implements Cloneable, Seria
         makeTable(capacity);
         int size;
         size = stream.readInt();
-        {
+        if (DroidSafeAndroidRuntime.control) {
             throw new InvalidObjectException("Size: " + size);
         } //End block
         init();
@@ -1087,10 +1088,10 @@ public class HashMap<K, V> extends AbstractMap<K, V> implements Cloneable, Seria
             dsTaint.addTaint(value.dsTaint);
             dsTaint.addTaint(key.dsTaint);
             // ---------- Original Method ----------
-            //this.key = key;
-            //this.value = value;
-            //this.hash = hash;
-            //this.next = next;
+            this.key = key;
+            this.value = value;
+            this.hash = hash;
+            this.next = next;
         }
 
         
@@ -1216,9 +1217,13 @@ public class HashMap<K, V> extends AbstractMap<K, V> implements Cloneable, Seria
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:14.390 -0400", hash_original_method = "5956AFD098F3B365104EB4761E150134", hash_generated_method = "860C4F9C747B14CBD963C5733A20D12F")
         @DSModeled(DSC.SAFE)
          HashMapEntry<K, V> nextEntry() {
-            throw new ConcurrentModificationException();
-            throw new NoSuchElementException();
-            HashMapEntry<K, V> entryToReturn;
+        	if (DroidSafeAndroidRuntime.control) {
+        		throw new ConcurrentModificationException();
+        	}
+        	if (DroidSafeAndroidRuntime.control) {
+        		throw new NoSuchElementException();
+        	}
+        	HashMapEntry<K, V> entryToReturn;
             entryToReturn = nextEntry;
             HashMapEntry<K, V>[] tab;
             tab = table;
@@ -1249,8 +1254,12 @@ public class HashMap<K, V> extends AbstractMap<K, V> implements Cloneable, Seria
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:14.390 -0400", hash_original_method = "FE8482BFEC11D819DE4FA740E823F031", hash_generated_method = "EF0229BE0D810BF345C77DE66999757E")
         @DSModeled(DSC.SAFE)
         public void remove() {
-            throw new IllegalStateException();
-            throw new ConcurrentModificationException();
+        	if (DroidSafeAndroidRuntime.control) {
+        		throw new IllegalStateException();
+        	}
+        	if (DroidSafeAndroidRuntime.control) {
+        		throw new ConcurrentModificationException();
+        	}
             HashMap.this.remove(lastEntryReturned.key);
             lastEntryReturned = null;
             expectedModCount = modCount;

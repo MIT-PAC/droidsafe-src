@@ -17,9 +17,9 @@ import java.net.DatagramSocket;
 import java.net.Socket;
 
 public class ParcelFileDescriptor implements Parcelable {
-    private final FileDescriptor mFileDescriptor;
+    private /* final */ FileDescriptor mFileDescriptor;
     private boolean mClosed;
-    private final ParcelFileDescriptor mParcelDescriptor;
+    private /* final */ ParcelFileDescriptor mParcelDescriptor;
     public static final int MODE_WORLD_READABLE = 0x00000001;
     public static final int MODE_WORLD_WRITEABLE = 0x00000002;
     public static final int MODE_READ_ONLY = 0x10000000;
@@ -28,6 +28,12 @@ public class ParcelFileDescriptor implements Parcelable {
     public static final int MODE_CREATE = 0x08000000;
     public static final int MODE_TRUNCATE = 0x04000000;
     public static final int MODE_APPEND = 0x02000000;
+    
+    @DSModeled(DSC.BAN) // created to accomodate return from native calls
+    public ParcelFileDescriptor() {
+		// TODO Auto-generated constructor stub
+	}
+    
     public static final Parcelable.Creator<ParcelFileDescriptor> CREATOR = new Parcelable.Creator<ParcelFileDescriptor>() {        
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:02.812 -0400", hash_original_method = "621772CCC7C69481AB7D1DD9C7D31515", hash_generated_method = "F1BC810BF9B6B3F6A4E419C20FA1028B")
         //DSFIXME:  CODE0002: Requires DSC value to be set

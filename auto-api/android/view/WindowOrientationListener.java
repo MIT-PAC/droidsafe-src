@@ -187,6 +187,7 @@ public abstract class WindowOrientationListener {
         @DSModeled(DSC.SAFE)
         public SensorEventListenerImpl(WindowOrientationListener orientationListener) {
             dsTaint.addTaint(orientationListener.dsTaint);
+            mOrientationListener = orientationListener;
             // ---------- Original Method ----------
             //mOrientationListener = orientationListener;
         }

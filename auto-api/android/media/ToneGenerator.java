@@ -140,6 +140,7 @@ public class ToneGenerator {
     public boolean startTone(int toneType, int durationMs) {
         dsTaint.addTaint(durationMs);
         dsTaint.addTaint(toneType);
+        return dsTaint.getTaintBoolean();
     }
 
     

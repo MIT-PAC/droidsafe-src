@@ -17,6 +17,8 @@ public class Pair<F, S> {
     public Pair(F first, S second) {
         dsTaint.addTaint(second.dsTaint);
         dsTaint.addTaint(first.dsTaint);
+        this.first = first;
+        this.second = second;
         // ---------- Original Method ----------
         //this.first = first;
         //this.second = second;
@@ -33,7 +35,7 @@ public class Pair<F, S> {
             other = (Pair<F, S>) o;
         } //End block
         catch (ClassCastException e)
-        { }
+        { return dsTaint.getTaintBoolean(); }
         boolean varDF09936121BF85C1B6748C3B6E7F9A70_1478943056 = (first.equals(other.first) && second.equals(other.second));
         return dsTaint.getTaintBoolean();
         // ---------- Original Method ----------

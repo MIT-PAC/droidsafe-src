@@ -1,11 +1,10 @@
 package android.view.accessibility;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-
-// import Iterator to deal with enhanced for loop translation
-import java.util.Iterator;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
+import java.util.concurrent.CopyOnWriteArrayList;
 
 import android.accessibilityservice.AccessibilityServiceInfo;
 import android.content.Context;
@@ -18,13 +17,12 @@ import android.os.Message;
 import android.os.RemoteException;
 import android.os.ServiceManager;
 import android.os.SystemClock;
-import android.util.Log;
 import android.view.IWindow;
-import android.view.View;
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
-import java.util.concurrent.CopyOnWriteArrayList;
+import droidsafe.annotations.DSC;
+import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.DSModeled;
+import droidsafe.runtime.DroidSafeAndroidRuntime;
+// import Iterator to deal with enhanced for loop translation
 
 public final class AccessibilityManager {
     private static final boolean DEBUG = false;
@@ -59,6 +57,7 @@ public final class AccessibilityManager {
         dsTaint.addTaint(context.dsTaint);
         dsTaint.addTaint(service.dsTaint);
         mHandler = new MyHandler(context.getMainLooper());
+        mService = service;
         try 
         {
             final int stateFlags;
@@ -130,7 +129,7 @@ public final class AccessibilityManager {
     public void sendAccessibilityEvent(AccessibilityEvent event) {
         dsTaint.addTaint(event.dsTaint);
         {
-            throw new IllegalStateException("Accessibility off. Did you forget to check that?");
+            if (DroidSafeAndroidRuntime.control) throw new IllegalStateException("Accessibility off. Did you forget to check that?");
         } //End block
         boolean doRecycle;
         doRecycle = false;
@@ -177,7 +176,7 @@ public final class AccessibilityManager {
     @DSModeled(DSC.SAFE)
     public void interrupt() {
         {
-            throw new IllegalStateException("Accessibility off. Did you forget to check that?");
+            if (DroidSafeAndroidRuntime.control) throw new IllegalStateException("Accessibility off. Did you forget to check that?");
         } //End block
         try 
         {

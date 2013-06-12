@@ -2,6 +2,7 @@ package java.util;
 
 // Droidsafe Imports
 import droidsafe.helpers.*;
+import droidsafe.runtime.DroidSafeAndroidRuntime;
 import droidsafe.annotations.*;
 
 // import Iterator to deal with enhanced for loop translation
@@ -94,7 +95,7 @@ public class SimpleTimeZone extends TimeZone {
         dsTaint.addTaint(endTime);
         dsTaint.addTaint(daylightSavings);
         dsTaint.addTaint(endMonth);
-        {
+        if (DroidSafeAndroidRuntime.control) {
             throw new IllegalArgumentException("Invalid daylightSavings: " + daylightSavings);
         } //End block
         setStartRule(startMonth, startDay, startDayOfWeek, startTime);
@@ -196,9 +197,10 @@ public class SimpleTimeZone extends TimeZone {
         dsTaint.addTaint(year);
         dsTaint.addTaint(day);
         dsTaint.addTaint(dayOfWeek);
-        {
+        if (DroidSafeAndroidRuntime.control) {
             throw new IllegalArgumentException("Invalid era: " + era);
         } //End block
+        
         checkRange(month, dayOfWeek, time);
         {
             boolean varDDE26ED6F6F2D378E54C9D0FD807F9B0_784688023 = (month != Calendar.FEBRUARY || day != 29 || !isLeapYear(year));
@@ -468,13 +470,13 @@ public class SimpleTimeZone extends TimeZone {
         dsTaint.addTaint(time);
         dsTaint.addTaint(month);
         dsTaint.addTaint(dayOfWeek);
-        {
+        if (DroidSafeAndroidRuntime.control) {
             throw new IllegalArgumentException("Invalid month: " + month);
         } //End block
-        {
+        if (DroidSafeAndroidRuntime.control) {
             throw new IllegalArgumentException("Invalid day of week: " + dayOfWeek);
         } //End block
-        {
+        if (DroidSafeAndroidRuntime.control) {
             throw new IllegalArgumentException("Invalid time: " + time);
         } //End block
         // ---------- Original Method ----------
@@ -531,10 +533,8 @@ public class SimpleTimeZone extends TimeZone {
             {
                 checkDay(endMonth, endDay);
             } //End block
-            {
-                {
+            if (DroidSafeAndroidRuntime.control) {
                     throw new IllegalArgumentException("Day of week in month: " + endDay);
-                } //End block
             } //End block
         } //End block
         {
@@ -636,7 +636,7 @@ public class SimpleTimeZone extends TimeZone {
                 checkDay(startMonth, startDay);
             } //End block
             {
-                {
+            	if (DroidSafeAndroidRuntime.control) {
                     throw new IllegalArgumentException("Day of week in month: " + startDay);
                 } //End block
             } //End block

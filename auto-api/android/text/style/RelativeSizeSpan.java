@@ -19,6 +19,7 @@ public class RelativeSizeSpan extends MetricAffectingSpan implements ParcelableS
     @DSModeled(DSC.SAFE)
     public RelativeSizeSpan(float proportion) {
         dsTaint.addTaint(proportion);
+        mProportion = proportion;
         // ---------- Original Method ----------
         //mProportion = proportion;
     }

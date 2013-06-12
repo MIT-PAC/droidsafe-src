@@ -1,13 +1,14 @@
 package android.graphics;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-
-// import Iterator to deal with enhanced for loop translation
-import java.util.Iterator;
-
 import java.io.PrintWriter;
+
+import droidsafe.annotations.DSC;
+import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.DSModeled;
+import droidsafe.helpers.DSUtils;
+import droidsafe.runtime.DroidSafeAndroidRuntime;
+// import Iterator to deal with enhanced for loop translation
 
 public class Matrix {
     public static final int MSCALE_X = 0;
@@ -23,6 +24,7 @@ public class Matrix {
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:01.205 -0400", hash_original_method = "D86A271A87ADAB5FF76372ECECE2FE9E", hash_generated_method = "8342849EDF58A7A4E0585052A17EC1D5")
         @DSModeled(DSC.SAFE)
          void oops() {
+        	if (DroidSafeAndroidRuntime.control)
             throw new IllegalStateException("Matrix can not be modified");
             // ---------- Original Method ----------
             //throw new IllegalStateException("Matrix can not be modified");
@@ -860,6 +862,7 @@ public class Matrix {
         dsTaint.addTaint(stf.dsTaint);
         dsTaint.addTaint(src.dsTaint);
         dsTaint.addTaint(dst.dsTaint);
+        if (DroidSafeAndroidRuntime.control)
         {
             throw new NullPointerException();
         } //End block
@@ -881,6 +884,7 @@ public class Matrix {
         int dstStop = dstIndex + (pointCount << 1);
         if ((pointCount | srcIndex | dstIndex | srcStop | dstStop) < 0 ||
                 srcStop > src.length || dstStop > dst.length) {
+        	if (DroidSafeAndroidRuntime.control)
             throw new ArrayIndexOutOfBoundsException();
         }
     }
@@ -896,6 +900,7 @@ public class Matrix {
         dsTaint.addTaint(srcIndex);
         dsTaint.addTaint(dst);
         dsTaint.addTaint(pointCount);
+    	if (DroidSafeAndroidRuntime.control)
         {
             throw new IllegalArgumentException();
         } //End block
@@ -967,6 +972,7 @@ public class Matrix {
     public void mapPoints(float[] dst, float[] src) {
         dsTaint.addTaint(dst);
         dsTaint.addTaint(src);
+    	if (DroidSafeAndroidRuntime.control)
         {
             throw new ArrayIndexOutOfBoundsException();
         } //End block
@@ -984,6 +990,7 @@ public class Matrix {
     public void mapVectors(float[] dst, float[] src) {
         dsTaint.addTaint(dst);
         dsTaint.addTaint(src);
+    	if (DroidSafeAndroidRuntime.control)
         {
             throw new ArrayIndexOutOfBoundsException();
         } //End block
@@ -1021,6 +1028,7 @@ public class Matrix {
     public boolean mapRect(RectF dst, RectF src) {
         dsTaint.addTaint(dst.dsTaint);
         dsTaint.addTaint(src.dsTaint);
+        if (DroidSafeAndroidRuntime.control)
         {
             throw new NullPointerException();
         } //End block
@@ -1060,6 +1068,7 @@ public class Matrix {
     @DSModeled(DSC.SAFE)
     public void getValues(float[] values) {
         dsTaint.addTaint(values);
+        if (DroidSafeAndroidRuntime.control)
         {
             throw new ArrayIndexOutOfBoundsException();
         } //End block
@@ -1076,6 +1085,7 @@ public class Matrix {
     @DSModeled(DSC.SAFE)
     public void setValues(float[] values) {
         dsTaint.addTaint(values);
+        if (DroidSafeAndroidRuntime.control)
         {
             throw new ArrayIndexOutOfBoundsException();
         } //End block
@@ -1245,18 +1255,21 @@ public class Matrix {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:01.216 -0400", hash_original_method = "2E569DF6212FFB96C566D938F0C6BA9E", hash_generated_method = "D97FB6FDF8B0ACA506544CDAF687B4CF")
     private static int native_create(int native_src_or_zero) {
         //DSFIXME:  CODE0010: Native static method requires manual modeling
+    	return DSUtils.UNKNOWN_INT;
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:01.216 -0400", hash_original_method = "638CDF32930D5E21B4A69E02B1C867F7", hash_generated_method = "05E4481827599B476FA67207D85489F4")
     private static boolean native_isIdentity(int native_object) {
         //DSFIXME:  CODE0010: Native static method requires manual modeling
+    	return DSUtils.UNKNOWN_BOOLEAN;
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:01.216 -0400", hash_original_method = "15C048D7828FD8ED0507A5C7188CFD3F", hash_generated_method = "38004EC8D7BD65FBC80F633322952A6E")
     private static boolean native_rectStaysRect(int native_object) {
         //DSFIXME:  CODE0010: Native static method requires manual modeling
+    	return DSUtils.UNKNOWN_BOOLEAN;
     }
 
     
@@ -1339,6 +1352,7 @@ public class Matrix {
     private static boolean native_setConcat(int native_object,
                                                    int a, int b) {
         //DSFIXME:  CODE0010: Native static method requires manual modeling
+    	return DSUtils.UNKNOWN_BOOLEAN;
     }
 
     
@@ -1346,6 +1360,7 @@ public class Matrix {
     private static boolean native_preTranslate(int native_object,
                                                       float dx, float dy) {
         //DSFIXME:  CODE0010: Native static method requires manual modeling
+    	return DSUtils.UNKNOWN_BOOLEAN;
     }
 
     
@@ -1353,6 +1368,7 @@ public class Matrix {
     private static boolean native_preScale(int native_object,
                                         float sx, float sy, float px, float py) {
         //DSFIXME:  CODE0010: Native static method requires manual modeling
+    	return DSUtils.UNKNOWN_BOOLEAN;
     }
 
     
@@ -1360,6 +1376,7 @@ public class Matrix {
     private static boolean native_preScale(int native_object,
                                                   float sx, float sy) {
         //DSFIXME:  CODE0010: Native static method requires manual modeling
+    	return DSUtils.UNKNOWN_BOOLEAN;
     }
 
     
@@ -1367,6 +1384,7 @@ public class Matrix {
     private static boolean native_preRotate(int native_object,
                                             float degrees, float px, float py) {
         //DSFIXME:  CODE0010: Native static method requires manual modeling
+    	return DSUtils.UNKNOWN_BOOLEAN;
     }
 
     
@@ -1374,6 +1392,7 @@ public class Matrix {
     private static boolean native_preRotate(int native_object,
                                                    float degrees) {
         //DSFIXME:  CODE0010: Native static method requires manual modeling
+    	return DSUtils.UNKNOWN_BOOLEAN;
     }
 
     
@@ -1381,6 +1400,7 @@ public class Matrix {
     private static boolean native_preSkew(int native_object,
                                         float kx, float ky, float px, float py) {
         //DSFIXME:  CODE0010: Native static method requires manual modeling
+    	return DSUtils.UNKNOWN_BOOLEAN;
     }
 
     
@@ -1388,6 +1408,7 @@ public class Matrix {
     private static boolean native_preSkew(int native_object,
                                                  float kx, float ky) {
         //DSFIXME:  CODE0010: Native static method requires manual modeling
+    	return DSUtils.UNKNOWN_BOOLEAN;
     }
 
     
@@ -1395,6 +1416,7 @@ public class Matrix {
     private static boolean native_preConcat(int native_object,
                                                    int other_matrix) {
         //DSFIXME:  CODE0010: Native static method requires manual modeling
+    	return DSUtils.UNKNOWN_BOOLEAN;
     }
 
     
@@ -1402,6 +1424,7 @@ public class Matrix {
     private static boolean native_postTranslate(int native_object,
                                                        float dx, float dy) {
         //DSFIXME:  CODE0010: Native static method requires manual modeling
+    	return DSUtils.UNKNOWN_BOOLEAN;
     }
 
     
@@ -1409,6 +1432,7 @@ public class Matrix {
     private static boolean native_postScale(int native_object,
                                         float sx, float sy, float px, float py) {
         //DSFIXME:  CODE0010: Native static method requires manual modeling
+    	return DSUtils.UNKNOWN_BOOLEAN;
     }
 
     
@@ -1416,6 +1440,7 @@ public class Matrix {
     private static boolean native_postScale(int native_object,
                                                    float sx, float sy) {
         //DSFIXME:  CODE0010: Native static method requires manual modeling
+    	return DSUtils.UNKNOWN_BOOLEAN;
     }
 
     
@@ -1423,6 +1448,7 @@ public class Matrix {
     private static boolean native_postRotate(int native_object,
                                             float degrees, float px, float py) {
         //DSFIXME:  CODE0010: Native static method requires manual modeling
+    	return DSUtils.UNKNOWN_BOOLEAN;
     }
 
     
@@ -1430,6 +1456,7 @@ public class Matrix {
     private static boolean native_postRotate(int native_object,
                                                     float degrees) {
         //DSFIXME:  CODE0010: Native static method requires manual modeling
+    	return DSUtils.UNKNOWN_BOOLEAN;
     }
 
     
@@ -1437,6 +1464,7 @@ public class Matrix {
     private static boolean native_postSkew(int native_object,
                                         float kx, float ky, float px, float py) {
         //DSFIXME:  CODE0010: Native static method requires manual modeling
+    	return DSUtils.UNKNOWN_BOOLEAN;
     }
 
     
@@ -1444,6 +1472,7 @@ public class Matrix {
     private static boolean native_postSkew(int native_object,
                                                   float kx, float ky) {
         //DSFIXME:  CODE0010: Native static method requires manual modeling
+    	return DSUtils.UNKNOWN_BOOLEAN;
     }
 
     
@@ -1451,6 +1480,7 @@ public class Matrix {
     private static boolean native_postConcat(int native_object,
                                                     int other_matrix) {
         //DSFIXME:  CODE0010: Native static method requires manual modeling
+    	return DSUtils.UNKNOWN_BOOLEAN;
     }
 
     
@@ -1458,6 +1488,7 @@ public class Matrix {
     private static boolean native_setRectToRect(int native_object,
                                                 RectF src, RectF dst, int stf) {
         //DSFIXME:  CODE0010: Native static method requires manual modeling
+    	return DSUtils.UNKNOWN_BOOLEAN;
     }
 
     
@@ -1465,12 +1496,14 @@ public class Matrix {
     private static boolean native_setPolyToPoly(int native_object,
         float[] src, int srcIndex, float[] dst, int dstIndex, int pointCount) {
         //DSFIXME:  CODE0010: Native static method requires manual modeling
+    	return DSUtils.UNKNOWN_BOOLEAN;
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:01.221 -0400", hash_original_method = "EE6005D3A8076E9D9E9B83CE8ACC5965", hash_generated_method = "DDB0E3F2BE660059575107F7F3A41B1A")
     private static boolean native_invert(int native_object, int inverse) {
         //DSFIXME:  CODE0010: Native static method requires manual modeling
+    	return DSUtils.UNKNOWN_BOOLEAN;
     }
 
     
@@ -1486,6 +1519,7 @@ public class Matrix {
     private static boolean native_mapRect(int native_object,
                                                  RectF dst, RectF src) {
         //DSFIXME:  CODE0010: Native static method requires manual modeling
+    	return DSUtils.UNKNOWN_BOOLEAN;
     }
 
     
@@ -1493,6 +1527,7 @@ public class Matrix {
     private static float native_mapRadius(int native_object,
                                                  float radius) {
         //DSFIXME:  CODE0010: Native static method requires manual modeling
+    	return DSUtils.UNKNOWN_FLOAT;
     }
 
     
@@ -1513,6 +1548,7 @@ public class Matrix {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:01.221 -0400", hash_original_method = "061EC29489F0C7FEEFE2A3D6DC5F1B84", hash_generated_method = "26CBFA57E0EC3F00AB3334E8C03CDA92")
     private static boolean native_equals(int native_a, int native_b) {
         //DSFIXME:  CODE0010: Native static method requires manual modeling
+    	return DSUtils.UNKNOWN_BOOLEAN;
     }
 
     

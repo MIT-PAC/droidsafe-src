@@ -1,18 +1,19 @@
 package dalvik.system.profiler;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-
-// import Iterator to deal with enhanced for loop translation
-import java.util.Iterator;
-
 import java.io.DataOutputStream;
 import java.io.IOException;
 import java.io.OutputStream;
 import java.util.HashMap;
+// import Iterator to deal with enhanced for loop translation
+import java.util.Iterator;
 import java.util.Map;
 import java.util.Set;
+
+import droidsafe.annotations.DSC;
+import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.DSModeled;
+import droidsafe.runtime.DroidSafeAndroidRuntime;
 
 public final class BinaryHprofWriter {
     private int nextStringId = 1;
@@ -22,7 +23,7 @@ public final class BinaryHprofWriter {
     private final Map<String, Integer> classNameToId = new HashMap<String, Integer>();
     private final Map<StackTraceElement, Integer> stackFrameToId
             = new HashMap<StackTraceElement, Integer>();
-    private final HprofData data;
+    private HprofData data;
     private final DataOutputStream out;
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:11.329 -0400", hash_original_method = "732DAB84FABC53991CAEE3EC9AA68C95", hash_generated_method = "8439D380D278275BA969E5A7731B8AB3")
@@ -119,7 +120,7 @@ public final class BinaryHprofWriter {
         dsTaint.addTaint(flags);
         dsTaint.addTaint(depth);
         {
-            throw new IllegalArgumentException("depth too large for binary hprof: "
+            if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("depth too large for binary hprof: "
                                                + depth + " > " + Short.MAX_VALUE);
         } //End block
         writeRecordHeader(BinaryHprof.Tag.CONTROL_SETTINGS,
@@ -226,7 +227,7 @@ public final class BinaryHprofWriter {
         String error;
         error = hprofTag.checkSize(recordLength);
         {
-            throw new AssertionError(error);
+            if (DroidSafeAndroidRuntime.control) throw new AssertionError(error);
         } //End block
         out.writeByte(hprofTag.tag);
         out.writeInt(timeDeltaInMicroseconds);

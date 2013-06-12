@@ -1,19 +1,19 @@
 package android.content.res;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-
-// import Iterator to deal with enhanced for loop translation
-import java.util.Iterator;
-
-import android.os.Parcel;
-import android.os.ParcelFileDescriptor;
-import android.os.Parcelable;
 import java.io.FileDescriptor;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
+
+import android.os.Parcel;
+import android.os.ParcelFileDescriptor;
+import android.os.Parcelable;
+import droidsafe.annotations.DSC;
+import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.DSModeled;
+import droidsafe.runtime.DroidSafeAndroidRuntime;
+// import Iterator to deal with enhanced for loop translation
 
 public class AssetFileDescriptor implements Parcelable {
     public static final long UNKNOWN_LENGTH = -1;
@@ -368,7 +368,7 @@ public class AssetFileDescriptor implements Parcelable {
             {
                 boolean varFC3E12886C3AF3F36795BDDCB288EB5D_519738423 = (fd.getParcelFileDescriptor().seekTo(fd.getStartOffset()) < 0);
                 {
-                    throw new IOException("Unable to seek");
+                	if (DroidSafeAndroidRuntime.control)throw new IOException("Unable to seek");
                 } //End block
             } //End collapsed parenthetic
             mRemaining = (int)fd.getLength();

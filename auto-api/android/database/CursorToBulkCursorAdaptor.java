@@ -2,6 +2,7 @@ package android.database;
 
 // Droidsafe Imports
 import droidsafe.helpers.*;
+import droidsafe.runtime.DroidSafeAndroidRuntime;
 import droidsafe.annotations.*;
 
 // import Iterator to deal with enhanced for loop translation
@@ -14,8 +15,8 @@ import android.util.Log;
 
 public final class CursorToBulkCursorAdaptor extends BulkCursorNative implements IBinder.DeathRecipient {
     private static final String TAG = "Cursor";
-    private final Object mLock = new Object();
-    private final String mProviderName;
+    private /* final */ Object mLock = new Object();
+    private /* final */ String mProviderName;
     private ContentObserverProxy mObserver;
     private CrossProcessCursor mCursor;
     private CursorWindow mFilledWindow;
@@ -313,6 +314,7 @@ public final class CursorToBulkCursorAdaptor extends BulkCursorNative implements
     @DSModeled(DSC.SAFE)
     private void createAndRegisterObserverProxyLocked(IContentObserver observer) {
         dsTaint.addTaint(observer.dsTaint);
+        if (DroidSafeAndroidRuntime.control)
         {
             throw new IllegalStateException("an observer is already registered");
         } //End block

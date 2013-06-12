@@ -1,15 +1,16 @@
 package com.android.internal.telephony;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-
-// import Iterator to deal with enhanced for loop translation
-import java.util.Iterator;
-
-import android.os.*;
-import android.util.Log;
 import java.util.ArrayList;
+
+import android.os.AsyncResult;
+import android.os.Handler;
+import android.os.Message;
+import droidsafe.annotations.DSC;
+import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.DSModeled;
+import droidsafe.runtime.DroidSafeAndroidRuntime;
+// import Iterator to deal with enhanced for loop translation
 
 public abstract class IccFileHandler extends Handler implements IccConstants {
     static protected final int COMMAND_READ_BINARY = 0xb0;
@@ -325,7 +326,7 @@ public abstract class IccFileHandler extends Handler implements IccConstants {
             //End case EVENT_GET_EF_LINEAR_RECORD_SIZE_DONE 
             //Begin case EVENT_GET_EF_LINEAR_RECORD_SIZE_DONE 
             {
-                throw new IccFileTypeMismatch();
+                if (DroidSafeAndroidRuntime.control) throw new IccFileTypeMismatch();
             } //End block
             //End case EVENT_GET_EF_LINEAR_RECORD_SIZE_DONE 
             //Begin case EVENT_GET_EF_LINEAR_RECORD_SIZE_DONE 
@@ -380,12 +381,12 @@ public abstract class IccFileHandler extends Handler implements IccConstants {
             //End case EVENT_GET_RECORD_SIZE_DONE 
             //Begin case EVENT_GET_RECORD_SIZE_DONE 
             {
-                throw new IccFileTypeMismatch();
+                if (DroidSafeAndroidRuntime.control) throw new IccFileTypeMismatch();
             } //End block
             //End case EVENT_GET_RECORD_SIZE_DONE 
             //Begin case EVENT_GET_RECORD_SIZE_DONE 
             {
-                throw new IccFileTypeMismatch();
+                if (DroidSafeAndroidRuntime.control) throw new IccFileTypeMismatch();
             } //End block
             //End case EVENT_GET_RECORD_SIZE_DONE 
             //Begin case EVENT_GET_RECORD_SIZE_DONE 
@@ -440,12 +441,12 @@ public abstract class IccFileHandler extends Handler implements IccConstants {
             //End case EVENT_GET_BINARY_SIZE_DONE 
             //Begin case EVENT_GET_BINARY_SIZE_DONE 
             {
-                throw new IccFileTypeMismatch();
+                if (DroidSafeAndroidRuntime.control) throw new IccFileTypeMismatch();
             } //End block
             //End case EVENT_GET_BINARY_SIZE_DONE 
             //Begin case EVENT_GET_BINARY_SIZE_DONE 
             {
-                throw new IccFileTypeMismatch();
+                if (DroidSafeAndroidRuntime.control) throw new IccFileTypeMismatch();
             } //End block
             //End case EVENT_GET_BINARY_SIZE_DONE 
             //Begin case EVENT_GET_BINARY_SIZE_DONE 

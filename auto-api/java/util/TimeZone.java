@@ -2,6 +2,7 @@ package java.util;
 
 // Droidsafe Imports
 import droidsafe.helpers.*;
+import droidsafe.runtime.DroidSafeAndroidRuntime;
 import droidsafe.annotations.*;
 
 // import Iterator to deal with enhanced for loop translation
@@ -108,7 +109,7 @@ public abstract class TimeZone implements Serializable, Cloneable {
         dsTaint.addTaint(daylightTime);
         dsTaint.addTaint(style);
         dsTaint.addTaint(locale.dsTaint);
-        {
+        if (DroidSafeAndroidRuntime.control) {
             throw new IllegalArgumentException();
         } //End block
         boolean useDaylight;

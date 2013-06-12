@@ -1,9 +1,10 @@
 package android.content;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.util.ArrayList;
 // import Iterator to deal with enhanced for loop translation
 import java.util.Iterator;
 
@@ -13,7 +14,6 @@ import android.content.pm.ProviderInfo;
 import android.content.res.AssetFileDescriptor;
 import android.content.res.Configuration;
 import android.database.Cursor;
-import android.database.SQLException;
 import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Binder;
@@ -21,10 +21,10 @@ import android.os.Bundle;
 import android.os.ParcelFileDescriptor;
 import android.os.Process;
 import android.util.Log;
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.IOException;
-import java.util.ArrayList;
+import droidsafe.annotations.DSC;
+import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.DSModeled;
+import droidsafe.runtime.DroidSafeAndroidRuntime;
 
 public abstract class ContentProvider implements ComponentCallbacks2 {
     private static final String TAG = "ContentProvider";
@@ -51,7 +51,7 @@ public abstract class ContentProvider implements ComponentCallbacks2 {
             String writePermission,
             PathPermission[] pathPermissions) {
         dsTaint.addTaint(writePermission);
-        dsTaint.addTaint(pathPermissions.dsTaint);
+        dsTaint.addTaint(pathPermissions[0].dsTaint);
         dsTaint.addTaint(context.dsTaint);
         dsTaint.addTaint(readPermission);
         // ---------- Original Method ----------
@@ -120,7 +120,7 @@ public abstract class ContentProvider implements ComponentCallbacks2 {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:14:59.305 -0400", hash_original_method = "16570AF799E31BB65FFA9254DA0AB517", hash_generated_method = "42219B283AB858EF2A53438BFAF6DD49")
     @DSModeled(DSC.SAFE)
     protected final void setPathPermissions(PathPermission[] permissions) {
-        dsTaint.addTaint(permissions.dsTaint);
+        dsTaint.addTaint(permissions[0].dsTaint);
         // ---------- Original Method ----------
         //mPathPermissions = permissions;
     }
@@ -177,7 +177,7 @@ public abstract class ContentProvider implements ComponentCallbacks2 {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:14:59.307 -0400", hash_original_method = "C678349FF8875CB9D22305FF9A5474DD", hash_generated_method = "A7DF7C8490197BB836E7CDB16C3684EA")
     @DSModeled(DSC.SPEC)
     public int bulkInsert(Uri uri, ContentValues[] values) {
-        dsTaint.addTaint(values.dsTaint);
+        dsTaint.addTaint(values[0].dsTaint);
         dsTaint.addTaint(uri.dsTaint);
         int numValues;
         numValues = values.length;
@@ -210,7 +210,7 @@ public abstract class ContentProvider implements ComponentCallbacks2 {
     public ParcelFileDescriptor openFile(Uri uri, String mode) throws FileNotFoundException {
         dsTaint.addTaint(uri.dsTaint);
         dsTaint.addTaint(mode);
-        throw new FileNotFoundException("No files supported by provider at "
+        if (DroidSafeAndroidRuntime.control) throw new FileNotFoundException("No files supported by provider at "
                 + uri);
         return (ParcelFileDescriptor)dsTaint.getTaint();
         // ---------- Original Method ----------
@@ -249,9 +249,9 @@ public abstract class ContentProvider implements ComponentCallbacks2 {
                 c.close();
             } //End block
             {
-                throw new FileNotFoundException("No entry for " + uri);
+            	if (DroidSafeAndroidRuntime.control) throw new FileNotFoundException("No entry for " + uri);
             } //End block
-            throw new FileNotFoundException("Multiple items at " + uri);
+            if (DroidSafeAndroidRuntime.control) throw new FileNotFoundException("Multiple items at " + uri);
         } //End block
         c.moveToFirst();
         int i;
@@ -260,7 +260,7 @@ public abstract class ContentProvider implements ComponentCallbacks2 {
         path = (i >= 0 ? c.getString(i) : null);//DSFIXME:  CODE0008: Nested ternary operator in expression
         c.close();
         {
-            throw new FileNotFoundException("Column _data not found.");
+        	if (DroidSafeAndroidRuntime.control) throw new FileNotFoundException("Column _data not found.");
         } //End block
         int modeBits;
         modeBits = ContentResolver.modeToMode(uri, mode);
@@ -304,7 +304,7 @@ public abstract class ContentProvider implements ComponentCallbacks2 {
                 AssetFileDescriptor var3299E6D6C5525EC6ED7614AA40265F97_1080159044 = (openAssetFile(uri, "r"));
             } //End block
         } //End collapsed parenthetic
-        throw new FileNotFoundException("Can't open " + uri + " as type " + mimeTypeFilter);
+        if (DroidSafeAndroidRuntime.control) throw new FileNotFoundException("Can't open " + uri + " as type " + mimeTypeFilter);
         return (AssetFileDescriptor)dsTaint.getTaint();
         // ---------- Original Method ----------
         //if ("*/*".equals(mimeTypeFilter)) {
@@ -523,7 +523,7 @@ public abstract class ContentProvider implements ComponentCallbacks2 {
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:14:59.312 -0400", hash_original_method = "9C9FBE82EEDFD6251BF8F9B258727CC2", hash_generated_method = "15DA282841460BF2ACDE453189599335")
         @DSModeled(DSC.SPEC)
         public int bulkInsert(Uri uri, ContentValues[] initialValues) {
-            dsTaint.addTaint(initialValues.dsTaint);
+            dsTaint.addTaint(initialValues[0].dsTaint);
             dsTaint.addTaint(uri.dsTaint);
             enforceWritePermission(uri);
             int var356BE9FE6F30A259688B8E3862579DF5_1102218416 = (ContentProvider.this.bulkInsert(uri, initialValues));

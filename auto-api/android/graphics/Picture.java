@@ -1,14 +1,15 @@
 package android.graphics;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-
-// import Iterator to deal with enhanced for loop translation
-import java.util.Iterator;
-
 import java.io.InputStream;
 import java.io.OutputStream;
+
+import droidsafe.annotations.DSC;
+import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.DSModeled;
+import droidsafe.helpers.DSUtils;
+import droidsafe.runtime.DroidSafeAndroidRuntime;
+// import Iterator to deal with enhanced for loop translation
 
 public class Picture {
     private Canvas mRecordingCanvas;
@@ -81,12 +82,14 @@ public class Picture {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:01.298 -0400", hash_original_method = "D4E7715F32876041521BE16EC8E1C0AC", hash_generated_method = "8202ACDF7C5D29ED74BE3232863D1E31")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public int getWidth() {
+    	return dsTaint.getTaintInt();
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:01.298 -0400", hash_original_method = "E09BF3A531DEFF54888EDA3B98EB9CFF", hash_generated_method = "CFD12F7A9648C1DBAD827DBA35D4B80A")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public int getHeight() {
+    	return dsTaint.getTaintInt();
     }
 
     
@@ -117,12 +120,14 @@ public class Picture {
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public void writeToStream(OutputStream stream) {
         dsTaint.addTaint(stream.dsTaint);
+        if (DroidSafeAndroidRuntime.control)
         {
             throw new NullPointerException();
         } //End block
         {
             boolean varAD32F998F4C478CC17387CBF60C9B455_1857910847 = (!nativeWriteToStream(mNativePicture, stream,
                              new byte[WORKING_STREAM_STORAGE]));
+            if (DroidSafeAndroidRuntime.control)
             {
                 throw new RuntimeException();
             } //End block
@@ -159,6 +164,7 @@ public class Picture {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:01.299 -0400", hash_original_method = "3636BAC8732FF96378A1BE315B0516F2", hash_generated_method = "0DBD6CCDD8D44C1574CE75EF98ACAA2D")
     private static int nativeConstructor(int nativeSrcOr0) {
         //DSFIXME:  CODE0010: Native static method requires manual modeling
+    	return DSUtils.UNKNOWN_INT;
     }
 
     
@@ -166,6 +172,7 @@ public class Picture {
     private static int nativeCreateFromStream(InputStream stream,
                                                 byte[] storage) {
         //DSFIXME:  CODE0010: Native static method requires manual modeling
+    	return DSUtils.UNKNOWN_INT;
     }
 
     
@@ -173,6 +180,7 @@ public class Picture {
     private static int nativeBeginRecording(int nativeCanvas,
                                                     int w, int h) {
         //DSFIXME:  CODE0010: Native static method requires manual modeling
+    	return DSUtils.UNKNOWN_INT;
     }
 
     
@@ -192,6 +200,7 @@ public class Picture {
     private static boolean nativeWriteToStream(int nativePicture,
                                            OutputStream stream, byte[] storage) {
         //DSFIXME:  CODE0010: Native static method requires manual modeling
+    	return DSUtils.UNKNOWN_BOOLEAN;
     }
 
     
@@ -202,7 +211,7 @@ public class Picture {
 
     
     private static class RecordingCanvas extends Canvas {
-        private final Picture mPicture;
+        private /* final */ Picture mPicture;
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:01.299 -0400", hash_original_method = "2A456EE78DB6B79255D736BC2BE0949A", hash_generated_method = "399CF781AAD2DDC93482CDABA502A7A8")
         //DSFIXME:  CODE0002: Requires DSC value to be set
@@ -233,6 +242,7 @@ public class Picture {
         @Override
         public void drawPicture(Picture picture) {
             dsTaint.addTaint(picture.dsTaint);
+            if (DroidSafeAndroidRuntime.control)
             {
                 throw new RuntimeException(
                             "Cannot draw a picture into its recording canvas");

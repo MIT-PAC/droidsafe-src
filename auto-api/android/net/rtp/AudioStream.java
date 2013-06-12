@@ -1,14 +1,14 @@
 package android.net.rtp;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-
-// import Iterator to deal with enhanced for loop translation
-import java.util.Iterator;
-
 import java.net.InetAddress;
 import java.net.SocketException;
+
+import droidsafe.annotations.DSC;
+import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.DSModeled;
+import droidsafe.runtime.DroidSafeAndroidRuntime;
+// import Iterator to deal with enhanced for loop translation
 
 public class AudioStream extends RtpStream {
     private AudioCodec mCodec;
@@ -89,7 +89,7 @@ public class AudioStream extends RtpStream {
         {
             boolean var6331CCDC5360782724F2E909851BBC53_506944475 = (isBusy());
             {
-                throw new IllegalStateException("Busy");
+                if (DroidSafeAndroidRuntime.control) throw new IllegalStateException("Busy");
             } //End block
         } //End collapsed parenthetic
         {
@@ -122,12 +122,12 @@ public class AudioStream extends RtpStream {
         {
             boolean var6331CCDC5360782724F2E909851BBC53_980498546 = (isBusy());
             {
-                throw new IllegalStateException("Busy");
+                if (DroidSafeAndroidRuntime.control) throw new IllegalStateException("Busy");
             } //End block
         } //End collapsed parenthetic
         {
             {
-                throw new IllegalArgumentException("Invalid type");
+                if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("Invalid type");
             } //End block
             {
                 throw new IllegalArgumentException("The type is used by codec");

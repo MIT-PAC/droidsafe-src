@@ -102,15 +102,10 @@ public class SuggestionSpan extends CharacterStyle implements ParcelableSpan {
         {
             mLocaleString = context.getResources().getConfiguration().locale.toString();
         } //End block
-        {
-            mLocaleString = locale.toString();
-        } //End block
-        {
+                {
             mNotificationTargetClassName = notificationTargetClass.getCanonicalName();
         } //End block
-        {
-            mNotificationTargetClassName = "";
-        } //End block
+        
         mHashCode = hashCodeInternal(mSuggestions, mLocaleString, mNotificationTargetClassName);
         initStyle(context);
         // ---------- Original Method ----------

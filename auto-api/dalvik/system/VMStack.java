@@ -38,6 +38,7 @@ public final class VMStack {
     public static int fillStackTraceElements(Thread t,
         StackTraceElement[] stackTraceElements) {
         //DSFIXME:  CODE0010: Native static method requires manual modeling
+    	return DSUtils.UNKNOWN_INT;
     }
 
     

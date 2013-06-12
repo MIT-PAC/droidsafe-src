@@ -1,15 +1,14 @@
 package android.net.rtp;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-
-// import Iterator to deal with enhanced for loop translation
-import java.util.Iterator;
-
-import android.media.AudioManager;
 import java.util.HashMap;
 import java.util.Map;
+
+import droidsafe.annotations.DSC;
+import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.DSModeled;
+import droidsafe.runtime.DroidSafeAndroidRuntime;
+// import Iterator to deal with enhanced for loop translation
 
 public class AudioGroup {
     public static final int MODE_ON_HOLD = 0;
@@ -58,7 +57,7 @@ public class AudioGroup {
     public void setMode(int mode) {
         dsTaint.addTaint(mode);
         {
-            throw new IllegalArgumentException("Invalid mode");
+            if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("Invalid mode");
         } //End block
         {
             nativeSetMode(mode);
@@ -167,7 +166,7 @@ public class AudioGroup {
     public void sendDtmf(int event) {
         dsTaint.addTaint(event);
         {
-            throw new IllegalArgumentException("Invalid event");
+            if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("Invalid event");
         } //End block
         {
             nativeSendDtmf(event);

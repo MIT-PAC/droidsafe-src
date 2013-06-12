@@ -58,6 +58,7 @@ public class ClipboardManager extends android.text.ClipboardManager {
     public ClipboardManager(Context context, Handler handler) {
         dsTaint.addTaint(context.dsTaint);
         dsTaint.addTaint(handler.dsTaint);
+        mContext = context;
         // ---------- Original Method ----------
         //mContext = context;
     }

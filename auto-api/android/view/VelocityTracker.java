@@ -1,16 +1,16 @@
 package android.view;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-
-// import Iterator to deal with enhanced for loop translation
-import java.util.Iterator;
-
-import android.util.Poolable;
 import android.util.Pool;
-import android.util.Pools;
+import android.util.Poolable;
 import android.util.PoolableManager;
+import android.util.Pools;
+import droidsafe.annotations.DSC;
+import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.DSModeled;
+import droidsafe.helpers.DSUtils;
+import droidsafe.runtime.DroidSafeAndroidRuntime;
+// import Iterator to deal with enhanced for loop translation
 
 public final class VelocityTracker implements Poolable<VelocityTracker> {
     private static final Pool<VelocityTracker> sPool = Pools.synchronizedPool(
@@ -42,7 +42,7 @@ public final class VelocityTracker implements Poolable<VelocityTracker> {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:05.568 -0400", hash_original_method = "ADE3BC3A58A2BA0E28131F1DF78B0709", hash_generated_method = "DD03A5E1C7452D141CF4B283B6DFF744")
     private static int nativeInitialize() {
-        //DSFIXME:  CODE0010: Native static method requires manual modeling
+        return DSUtils.UNKNOWN_INT;
     }
 
     
@@ -73,12 +73,14 @@ public final class VelocityTracker implements Poolable<VelocityTracker> {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:05.568 -0400", hash_original_method = "C28A31A87FD521C5F1F20C45E8FA5EC3", hash_generated_method = "B16EF2F0A07120389144B35D5A0E5276")
     private static float nativeGetXVelocity(int ptr, int id) {
         //DSFIXME:  CODE0010: Native static method requires manual modeling
+    	return DSUtils.UNKNOWN_FLOAT;
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:05.568 -0400", hash_original_method = "83D9B0299A440B2A67E48FE9259E951F", hash_generated_method = "2682626BC019914F07CDA8FDB02AF21B")
     private static float nativeGetYVelocity(int ptr, int id) {
         //DSFIXME:  CODE0010: Native static method requires manual modeling
+    	return DSUtils.UNKNOWN_FLOAT;
     }
 
     
@@ -86,6 +88,7 @@ public final class VelocityTracker implements Poolable<VelocityTracker> {
     private static boolean nativeGetEstimator(int ptr, int id,
             int degree, int horizonMillis, Estimator outEstimator) {
         //DSFIXME:  CODE0010: Native static method requires manual modeling
+    	return DSUtils.UNKNOWN_BOOLEAN;
     }
 
     
@@ -181,7 +184,7 @@ public final class VelocityTracker implements Poolable<VelocityTracker> {
     public void addMovement(MotionEvent event) {
         dsTaint.addTaint(event.dsTaint);
         {
-            throw new IllegalArgumentException("event must not be null");
+            if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("event must not be null");
         } //End block
         nativeAddMovement(mPtr, event);
         // ---------- Original Method ----------
@@ -263,7 +266,7 @@ public final class VelocityTracker implements Poolable<VelocityTracker> {
         dsTaint.addTaint(outEstimator.dsTaint);
         dsTaint.addTaint(horizonMillis);
         {
-            throw new IllegalArgumentException("outEstimator must not be null");
+            if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("outEstimator must not be null");
         } //End block
         boolean varB9B431FEE5CF127FE496DD1277AA2E23_1135224017 = (nativeGetEstimator(mPtr, id, degree, horizonMillis, outEstimator));
         return dsTaint.getTaintBoolean();

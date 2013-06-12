@@ -2,6 +2,7 @@ package java.math;
 
 // Droidsafe Imports
 import droidsafe.helpers.*;
+import droidsafe.runtime.DroidSafeAndroidRuntime;
 import droidsafe.annotations.*;
 
 // import Iterator to deal with enhanced for loop translation
@@ -112,10 +113,10 @@ public class BigDecimal extends Number implements Comparable<BigDecimal>, Serial
         String scaleString;
         StringBuilder unscaledBuffer;
         long newScale;
-        {
+        if(DroidSafeAndroidRuntime.control) {
             throw new NullPointerException();
         } //End block
-        {
+        if(DroidSafeAndroidRuntime.control) {
             throw new NumberFormatException("Bad offset/length: offset=" + offset +
                     " len=" + len + " in.length=" + in.length);
         } //End block
@@ -174,7 +175,7 @@ public class BigDecimal extends Number implements Comparable<BigDecimal>, Serial
             scaleString = String.valueOf(in, begin, last + 1 - begin);
             newScale = (long)scale - Integer.parseInt(scaleString);
             scale = (int)newScale;
-            {
+            if(DroidSafeAndroidRuntime.control) {
                 throw new NumberFormatException("Scale out of range");
             } //End block
         } //End block
@@ -259,7 +260,7 @@ public class BigDecimal extends Number implements Comparable<BigDecimal>, Serial
         dsTaint.addTaint(val);
         {
             boolean var07ED44AABC248720567522E1772FEBCB_1853613766 = (Double.isInfinite(val) || Double.isNaN(val));
-            {
+            if(DroidSafeAndroidRuntime.control) {
                 throw new NumberFormatException("Infinity or NaN: " + val);
             } //End block
         } //End collapsed parenthetic
@@ -354,7 +355,7 @@ public class BigDecimal extends Number implements Comparable<BigDecimal>, Serial
     public BigDecimal(BigInteger unscaledVal, int scale) {
         dsTaint.addTaint(unscaledVal.dsTaint);
         dsTaint.addTaint(scale);
-        {
+        if(DroidSafeAndroidRuntime.control) {
             throw new NullPointerException();
         } //End block
         setUnscaledValue(unscaledVal);
@@ -740,12 +741,12 @@ public class BigDecimal extends Number implements Comparable<BigDecimal>, Serial
         dsTaint.addTaint(scale);
         dsTaint.addTaint(roundingMode.dsTaint);
         dsTaint.addTaint(divisor.dsTaint);
-        {
+        if(DroidSafeAndroidRuntime.control) {
             throw new NullPointerException();
         } //End block
         {
             boolean var16B71EEA539968D0D6443F65DF69A37A_1470275740 = (divisor.isZero());
-            {
+            if(DroidSafeAndroidRuntime.control) {
                 throw new ArithmeticException("Division by zero");
             } //End block
         } //End collapsed parenthetic
@@ -886,7 +887,7 @@ public class BigDecimal extends Number implements Comparable<BigDecimal>, Serial
         lastPow = FIVE_POW.length - 1;
         {
             boolean var16B71EEA539968D0D6443F65DF69A37A_1919789927 = (divisor.isZero());
-            {
+            if(DroidSafeAndroidRuntime.control) {
                 throw new ArithmeticException("Division by zero");
             } //End block
         } //End collapsed parenthetic
@@ -919,7 +920,7 @@ public class BigDecimal extends Number implements Comparable<BigDecimal>, Serial
         } //End block
         {
             boolean var1CE2A649CF548A0B382B8CA8D0531C0B_38349635 = (!q.abs().equals(BigInteger.ONE));
-            {
+            if(DroidSafeAndroidRuntime.control) {
                 throw new ArithmeticException("Non-terminating decimal expansion; no exact representable decimal result");
             } //End block
         } //End collapsed parenthetic
@@ -957,7 +958,7 @@ public class BigDecimal extends Number implements Comparable<BigDecimal>, Serial
         int lastPow;
         lastPow = TEN_POW.length - 1;
         BigInteger integerQuot;
-        BigInteger quotAndRem[];
+        BigInteger quotAndRem[] = {getUnscaledValue()};
         {
             boolean var1683CA06D9CD829DE790F5F76B24F12F_1566877169 = ((mc.getPrecision() == 0) || (this.isZero())
         || (divisor.isZero()));
@@ -1026,7 +1027,7 @@ public class BigDecimal extends Number implements Comparable<BigDecimal>, Serial
         lastPow = TEN_POW.length - 1;
         {
             boolean var16B71EEA539968D0D6443F65DF69A37A_1942352517 = (divisor.isZero());
-            {
+            if(DroidSafeAndroidRuntime.control) {
                 throw new ArithmeticException("Division by zero");
             } //End block
         } //End collapsed parenthetic
@@ -1134,7 +1135,7 @@ public class BigDecimal extends Number implements Comparable<BigDecimal>, Serial
                             divide(divisor.getUnscaledValue());
                         compRemDiv = Math.abs(quotAndRem[1].signum());
                     } //End block
-                    {
+                    if(DroidSafeAndroidRuntime.control) {
                         throw new ArithmeticException("Division impossible");
                     } //End block
                 } //End block
@@ -1176,7 +1177,7 @@ public class BigDecimal extends Number implements Comparable<BigDecimal>, Serial
                 } //End collapsed parenthetic
             } //End block
         } //End collapsed parenthetic
-        {
+        if(DroidSafeAndroidRuntime.control) {
             throw new ArithmeticException("Division impossible");
         } //End block
         integralValue.scale = safeLongToInt(newScale);
@@ -1249,7 +1250,7 @@ public class BigDecimal extends Number implements Comparable<BigDecimal>, Serial
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public BigDecimal pow(int n) {
         dsTaint.addTaint(n);
-        {
+        if(DroidSafeAndroidRuntime.control) {
             throw new ArithmeticException("Invalid operation");
         } //End block
         long newScale;
@@ -1294,7 +1295,7 @@ public class BigDecimal extends Number implements Comparable<BigDecimal>, Serial
                 BigDecimal varAEF84AD3584DFB9FF8209E3223752570_463670215 = (pow(n));
             } //End block
         } //End collapsed parenthetic
-        {
+        if(DroidSafeAndroidRuntime.control) {
             throw new ArithmeticException("Invalid operation");
         } //End block
         {
@@ -1522,7 +1523,7 @@ public class BigDecimal extends Number implements Comparable<BigDecimal>, Serial
     public BigDecimal setScale(int newScale, RoundingMode roundingMode) {
         dsTaint.addTaint(roundingMode.dsTaint);
         dsTaint.addTaint(newScale);
-        {
+        if(DroidSafeAndroidRuntime.control) {
             throw new NullPointerException();
         } //End block
         long diffScale;
@@ -2020,14 +2021,14 @@ public class BigDecimal extends Number implements Comparable<BigDecimal>, Serial
                 BigInteger[] integerAndFraction;
                 {
                     boolean varDA526623548FC456E3243F91470F7749_276152787 = ((scale > approxPrecision()) || (scale > getUnscaledValue().getLowestSetBit()));
-                    {
+                    if(DroidSafeAndroidRuntime.control) {
                         throw new ArithmeticException("Rounding necessary");
                     } //End block
                 } //End collapsed parenthetic
                 integerAndFraction = getUnscaledValue().divideAndRemainder(Multiplication.powerOf10(scale));
                 {
                     boolean var295E569F979C75DF93112C8D385DE9FD_248864213 = (integerAndFraction[1].signum() != 0);
-                    {
+                    if(DroidSafeAndroidRuntime.control) {
                         throw new ArithmeticException("Rounding necessary");
                     } //End block
                 } //End collapsed parenthetic
@@ -2389,7 +2390,9 @@ public class BigDecimal extends Number implements Comparable<BigDecimal>, Serial
                 long var9D31F6DC18FE28EB42FCCA0D0D616FEB_441579990 = (bigInteger.longValue());
             } //End block
         } //End collapsed parenthetic
-        throw new ArithmeticException("Rounding necessary");
+        if(DroidSafeAndroidRuntime.control) {
+        	throw new ArithmeticException("Rounding necessary");
+        }
         return dsTaint.getTaintLong();
         // ---------- Original Method ----------
         //BigInteger bigInteger = toBigIntegerExact();

@@ -44,6 +44,7 @@ public class BulletSpan implements LeadingMarginSpan, ParcelableSpan {
         dsTaint.addTaint(gapWidth);
         mWantColor = false;
         mColor = 0;
+        mGapWidth = gapWidth;
         // ---------- Original Method ----------
         //mGapWidth = gapWidth;
         //mWantColor = false;
@@ -57,6 +58,8 @@ public class BulletSpan implements LeadingMarginSpan, ParcelableSpan {
         dsTaint.addTaint(color);
         dsTaint.addTaint(gapWidth);
         mWantColor = true;
+        mGapWidth = gapWidth;
+        mColor = color;
         // ---------- Original Method ----------
         //mGapWidth = gapWidth;
         //mWantColor = true;

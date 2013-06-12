@@ -1,24 +1,27 @@
 package android.content.res;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
+import java.io.IOException;
+import java.lang.ref.WeakReference;
+import java.util.Arrays;
 
-// import Iterator to deal with enhanced for loop translation
-import java.util.Iterator;
-
-import com.android.internal.util.ArrayUtils;
 import org.xmlpull.v1.XmlPullParser;
 import org.xmlpull.v1.XmlPullParserException;
+
+import android.os.Parcel;
+import android.os.Parcelable;
 import android.util.AttributeSet;
 import android.util.SparseArray;
 import android.util.StateSet;
 import android.util.Xml;
-import android.os.Parcel;
-import android.os.Parcelable;
-import java.io.IOException;
-import java.lang.ref.WeakReference;
-import java.util.Arrays;
+
+import com.android.internal.util.ArrayUtils;
+
+import droidsafe.annotations.DSC;
+import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.DSModeled;
+import droidsafe.runtime.DroidSafeAndroidRuntime;
+// import Iterator to deal with enhanced for loop translation
 
 public class ColorStateList implements Parcelable {
     private int[][] mStateSpecs;
@@ -80,7 +83,7 @@ public class ColorStateList implements Parcelable {
     @DSModeled(DSC.SAFE)
     public ColorStateList(int[][] states, int[] colors) {
         dsTaint.addTaint(colors);
-        dsTaint.addTaint(states.dsTaint);
+        dsTaint.addTaint(states[0][0]);
         {
             mDefaultColor = colors[0];
             {
@@ -188,6 +191,7 @@ public class ColorStateList implements Parcelable {
         final int innerDepth;
         innerDepth = parser.getDepth()+1;
         int depth;
+        depth = 0;
         int listAllocated;
         listAllocated = 20;
         int listSize;
@@ -241,7 +245,7 @@ public class ColorStateList implements Parcelable {
                     color = r.getColor(colorRes);
                 } //End block
                 {
-                    throw new XmlPullParserException(
+                	if (DroidSafeAndroidRuntime.control) throw new XmlPullParserException(
                         parser.getPositionDescription()
                         + ": <item> tag requires a 'android:color' attribute.");
                 } //End block
