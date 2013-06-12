@@ -176,12 +176,14 @@ public final class GLUtils {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:02.504 -0400", hash_original_method = "D7A6F441E801CC1928318AEDAA360C85", hash_generated_method = "DC26CA34987AA03D680F128BB06D48D9")
     private static int native_getInternalFormat(Bitmap bitmap) {
         //DSFIXME:  CODE0010: Native static method requires manual modeling
+    	return DSUtils.UNKNOWN_INT;
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:02.504 -0400", hash_original_method = "70508A4AA495E8E72B724137B94EF162", hash_generated_method = "FEA8F6C9CDAAD987DA9C3C522A6F0BE3")
     private static int native_getType(Bitmap bitmap) {
         //DSFIXME:  CODE0010: Native static method requires manual modeling
+    	return DSUtils.UNKNOWN_INT;
     }
 
     
@@ -189,6 +191,7 @@ public final class GLUtils {
     private static int native_texImage2D(int target, int level, int internalformat,
             Bitmap bitmap, int type, int border) {
         //DSFIXME:  CODE0010: Native static method requires manual modeling
+    	return DSUtils.UNKNOWN_INT;
     }
 
     
@@ -196,6 +199,7 @@ public final class GLUtils {
     private static int native_texSubImage2D(int target, int level, int xoffset, int yoffset,
             Bitmap bitmap, int format, int type) {
         //DSFIXME:  CODE0010: Native static method requires manual modeling
+    	return DSUtils.UNKNOWN_INT;
     }
 
     

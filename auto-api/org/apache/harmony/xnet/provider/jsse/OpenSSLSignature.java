@@ -2,6 +2,7 @@ package org.apache.harmony.xnet.provider.jsse;
 
 // Droidsafe Imports
 import droidsafe.helpers.*;
+import droidsafe.runtime.DroidSafeAndroidRuntime;
 import droidsafe.annotations.*;
 
 // import Iterator to deal with enhanced for loop translation
@@ -98,7 +99,7 @@ public class OpenSSLSignature extends Signature {
         dsTaint.addTaint(len);
         dsTaint.addTaint(offset);
         {
-            throw new UnsupportedOperationException();
+        	if (DroidSafeAndroidRuntime.control) throw new UnsupportedOperationException();
         } //End block
         {
             NativeCrypto.EVP_VerifyUpdate(ctx, input, offset, len);
@@ -165,11 +166,11 @@ public class OpenSSLSignature extends Signature {
             } //End block
             catch (Exception e)
             {
-                throw new InvalidKeyException(e);
+            	if (DroidSafeAndroidRuntime.control) throw new InvalidKeyException(e);
             } //End block
         } //End block
         {
-            throw new InvalidKeyException("Need DSA or RSA public key");
+        	if (DroidSafeAndroidRuntime.control) throw new InvalidKeyException("Need DSA or RSA public key");
         } //End block
         try 
         {
@@ -198,7 +199,7 @@ public class OpenSSLSignature extends Signature {
     @DSModeled(DSC.SAFE)
     @Override
     protected byte[] engineSign() throws SignatureException {
-        throw new UnsupportedOperationException();
+    	if (DroidSafeAndroidRuntime.control) throw new UnsupportedOperationException();
         byte[] retVal = new byte[1];
         retVal[0] = (byte)dsTaint.getTaintInt();
         return retVal;
@@ -216,7 +217,7 @@ public class OpenSSLSignature extends Signature {
         handle = rsa;
         handle = dsa;
         {
-            throw new SignatureException("Need DSA or RSA public key");
+        	if (DroidSafeAndroidRuntime.control) throw new SignatureException("Need DSA or RSA public key");
         } //End block
         try 
         {

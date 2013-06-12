@@ -207,15 +207,15 @@ public final class Settings {
 
     
     private static class NameValueCache {
-        private final String mVersionSystemProperty;
-        private final Uri mUri;
+        private  String mVersionSystemProperty;
+        private Uri mUri;
         private static final String[] SELECT_VALUE =
             new String[] { Settings.NameValueTable.VALUE };
         private static final String NAME_EQ_PLACEHOLDER = "name=?";
         private final HashMap<String, String> mValues = new HashMap<String, String>();
         private long mValuesVersion = 0;
         private IContentProvider mContentProvider = null;
-        private final String mCallCommand;
+        private  String mCallCommand;
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:03.268 -0400", hash_original_method = "AA2EC60B6F4EA71E8A16119EB161E070", hash_generated_method = "43D1A66A873AAC1B33AC6E30E14D361A")
         @DSModeled(DSC.SPEC)

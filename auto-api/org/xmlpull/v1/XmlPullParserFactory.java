@@ -2,6 +2,7 @@ package org.xmlpull.v1;
 
 // Droidsafe Imports
 import droidsafe.helpers.*;
+import droidsafe.runtime.DroidSafeAndroidRuntime;
 import droidsafe.annotations.*;
 
 // import Iterator to deal with enhanced for loop translation
@@ -100,11 +101,11 @@ public class XmlPullParserFactory {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:18.159 -0400", hash_original_method = "0194E8A94417A2CEABB2D1EB1F726482", hash_generated_method = "25EECCFEC8D3CBCD99A6C1565CB0785A")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public XmlPullParser newPullParser() throws XmlPullParserException {
-        throw new XmlPullParserException
+    	if (DroidSafeAndroidRuntime.control) throw new XmlPullParserException
                 ("Factory initialization was incomplete - has not tried "+classNamesLocation);
         {
             boolean var3D82E95C11EF86747BE6ED44EE020845_105966100 = (parserClasses.size() == 0);
-            throw new XmlPullParserException
+            if (DroidSafeAndroidRuntime.control) throw new XmlPullParserException
                 ("No valid parser classes found in "+classNamesLocation);
         } //End collapsed parenthetic
         final StringBuilder issues;
@@ -144,7 +145,7 @@ public class XmlPullParserFactory {
                 } //End block
             } //End block
         } //End collapsed parenthetic
-        throw new XmlPullParserException ("could not create parser: "+issues);
+        if (DroidSafeAndroidRuntime.control) throw new XmlPullParserException ("could not create parser: "+issues);
         return (XmlPullParser)dsTaint.getTaint();
         // ---------- Original Method ----------
         // Original Method Too Long, Refer to Original Implementation
@@ -155,13 +156,13 @@ public class XmlPullParserFactory {
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public XmlSerializer newSerializer() throws XmlPullParserException {
         {
-            throw new XmlPullParserException
+        	if (DroidSafeAndroidRuntime.control) throw new XmlPullParserException
                 ("Factory initialization incomplete - has not tried "+classNamesLocation);
         } //End block
         {
             boolean var93BB30BF15516BDCA5F9575DF78ED5C3_493464343 = (serializerClasses.size() == 0);
             {
-                throw new XmlPullParserException
+            	if (DroidSafeAndroidRuntime.control) throw new XmlPullParserException
                 ("No valid serializer classes found in "+classNamesLocation);
             } //End block
         } //End collapsed parenthetic
@@ -185,7 +186,7 @@ public class XmlPullParserFactory {
                 } //End block
             } //End block
         } //End collapsed parenthetic
-        throw new XmlPullParserException ("could not create serializer: "+issues);
+        if (DroidSafeAndroidRuntime.control) throw new XmlPullParserException ("could not create serializer: "+issues);
         return (XmlSerializer)dsTaint.getTaint();
         // ---------- Original Method ----------
         // Original Method Too Long, Refer to Original Implementation

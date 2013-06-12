@@ -2,6 +2,7 @@ package org.apache.harmony.security.x509;
 
 // Droidsafe Imports
 import droidsafe.helpers.*;
+import droidsafe.runtime.DroidSafeAndroidRuntime;
 import droidsafe.annotations.*;
 
 // import Iterator to deal with enhanced for loop translation
@@ -38,12 +39,12 @@ public final class DNParser {
         beg = pos;
         pos++;
         {
-            throw new IOException("Invalid distinguished name string");
+        	if (DroidSafeAndroidRuntime.control) throw new IOException("Invalid distinguished name string");
         } //End block
         end = pos;
         {
             {
-                throw new IOException("Invalid distinguished name string");
+            	if (DroidSafeAndroidRuntime.control) throw new IOException("Invalid distinguished name string");
             } //End block
         } //End block
         pos++;
@@ -64,7 +65,7 @@ public final class DNParser {
         end = beg;
         {
             {
-                throw new IOException("Invalid distinguished name string");
+            	if (DroidSafeAndroidRuntime.control) throw new IOException("Invalid distinguished name string");
             } //End block
             {
                 pos++;
@@ -108,7 +109,7 @@ public final class DNParser {
     //DSFIXME:  CODE0002: Requires DSC value to be set
     private String hexAV() throws IOException {
         {
-            throw new IOException("Invalid distinguished name string");
+        	if (DroidSafeAndroidRuntime.control) throw new IOException("Invalid distinguished name string");
         } //End block
         beg = pos;
         pos++;
@@ -128,7 +129,7 @@ public final class DNParser {
         int hexLen;
         hexLen = end - beg;
         {
-            throw new IOException("Invalid distinguished name string");
+        	if (DroidSafeAndroidRuntime.control) throw new IOException("Invalid distinguished name string");
         } //End block
         encoded = new byte[hexLen / 2];
         {
@@ -191,7 +192,7 @@ public final class DNParser {
     private char getEscaped() throws IOException {
         pos++;
         {
-            throw new IOException("Invalid distinguished name string");
+        	if (DroidSafeAndroidRuntime.control) throw new IOException("Invalid distinguished name string");
         } //End block
         char ch;
         ch = chars[pos];
@@ -275,7 +276,7 @@ public final class DNParser {
     private int getByte(int position) throws IOException {
         dsTaint.addTaint(position);
         {
-            throw new IOException("Invalid distinguished name string");
+        	if (DroidSafeAndroidRuntime.control) throw new IOException("Invalid distinguished name string");
         } //End block
         int b1;
         b1 = chars[position];
@@ -289,7 +290,7 @@ public final class DNParser {
             b1 = b1 - 55;
         } //End block
         {
-            throw new IOException("Invalid distinguished name string");
+        	if (DroidSafeAndroidRuntime.control) throw new IOException("Invalid distinguished name string");
         } //End block
         int b2;
         b2 = chars[position + 1];
@@ -303,7 +304,7 @@ public final class DNParser {
             b2 = b2 - 55;
         } //End block
         {
-            throw new IOException("Invalid distinguished name string");
+        	if (DroidSafeAndroidRuntime.control) throw new IOException("Invalid distinguished name string");
         } //End block
         return dsTaint.getTaintInt();
         // ---------- Original Method ----------
@@ -346,12 +347,12 @@ public final class DNParser {
                 atav = new ArrayList<AttributeTypeAndValue>();
             } //End block
             {
-                throw new IOException("Invalid distinguished name string");
+            	if (DroidSafeAndroidRuntime.control) throw new IOException("Invalid distinguished name string");
             } //End block
             pos++;
             attType = nextAT();
             {
-                throw new IOException("Invalid distinguished name string");
+            	if (DroidSafeAndroidRuntime.control) throw new IOException("Invalid distinguished name string");
             } //End block
         } //End block
         return (List<List<AttributeTypeAndValue>>)dsTaint.getTaint();

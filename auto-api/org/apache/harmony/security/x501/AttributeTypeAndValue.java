@@ -2,6 +2,7 @@ package org.apache.harmony.security.x501;
 
 // Droidsafe Imports
 import droidsafe.helpers.*;
+import droidsafe.runtime.DroidSafeAndroidRuntime;
 import droidsafe.annotations.*;
 
 // import Iterator to deal with enhanced for loop translation
@@ -70,7 +71,7 @@ public final class AttributeTypeAndValue {
     private static final int CAPACITY = 10;
     private static final int SIZE = 10;
     private static final ObjectIdentifier[][] KNOWN_OIDS = new ObjectIdentifier[SIZE][CAPACITY];
-    private final ObjectIdentifier oid;
+    private ObjectIdentifier oid;
     private final AttributeValue value;
     public static final ASN1Type attributeValue = new ASN1Type(ASN1Constants.TAG_PRINTABLESTRING) {        
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:17.812 -0400", hash_original_method = "0E705085A9B1D73F25D30FC4A7DB73D9", hash_generated_method = "91FAE9694A4EC5A3926B3D147461CB22")
@@ -122,7 +123,7 @@ public final class AttributeTypeAndValue {
         @Override
         public Object getDecodedObject(BerInputStream in) throws IOException {
             dsTaint.addTaint(in.dsTaint);
-            throw new RuntimeException("AttributeValue getDecodedObject MUST NOT be invoked");
+            if (DroidSafeAndroidRuntime.control) throw new RuntimeException("AttributeValue getDecodedObject MUST NOT be invoked");
             return (Object)dsTaint.getTaint();
             // ---------- Original Method ----------
             //throw new RuntimeException("AttributeValue getDecodedObject MUST NOT be invoked");
@@ -251,7 +252,7 @@ public final class AttributeTypeAndValue {
         //DSFIXME:  CODE0002: Requires DSC value to be set
         @Override
         protected void getValues(Object object, Object[] values) {
-            dsTaint.addTaint(values.dsTaint);
+            dsTaint.addTaint(values[0].dsTaint);
             dsTaint.addTaint(object.dsTaint);
             AttributeTypeAndValue atav;
             atav = (AttributeTypeAndValue) object;
@@ -271,6 +272,7 @@ public final class AttributeTypeAndValue {
     private AttributeTypeAndValue(int[] oid, AttributeValue value) throws IOException {
         dsTaint.addTaint(oid);
         dsTaint.addTaint(value.dsTaint);
+        this.value = value;
         ObjectIdentifier thisOid;
         thisOid = getOID(oid);
         {

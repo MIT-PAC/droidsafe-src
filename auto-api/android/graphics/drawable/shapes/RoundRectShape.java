@@ -3,10 +3,10 @@ package android.graphics.drawable.shapes;
 // Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
+import droidsafe.runtime.*;
 
-// import Iterator to deal with enhanced for loop translation
+// needed for enhanced for control translations
 import java.util.Iterator;
-
 import android.graphics.Canvas;
 import android.graphics.Paint;
 import android.graphics.Path;
@@ -19,7 +19,7 @@ public class RoundRectShape extends RectShape {
     private RectF mInnerRect;
     private Path  mPath;
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:01.168 -0400", hash_original_method = "BFB37C497FF277AFDA0C7FF1B797A20B", hash_generated_method = "4F24ABE36750A9B6879585B4B99D07E4")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 11:47:17.843 -0400", hash_original_method = "BFB37C497FF277AFDA0C7FF1B797A20B", hash_generated_method = "F8208E316999C406496B813FD2AA4C33")
     @DSModeled(DSC.SAFE)
     public RoundRectShape(float[] outerRadii, RectF inset,
                           float[] innerRadii) {
@@ -27,10 +27,10 @@ public class RoundRectShape extends RectShape {
         dsTaint.addTaint(innerRadii);
         dsTaint.addTaint(inset.dsTaint);
         {
-            throw new ArrayIndexOutOfBoundsException("outer radii must have >= 8 values");
+            if (DroidSafeAndroidRuntime.control) throw new ArrayIndexOutOfBoundsException("outer radii must have >= 8 values");
         } //End block
         {
-            throw new ArrayIndexOutOfBoundsException("inner radii must have >= 8 values");
+            if (DroidSafeAndroidRuntime.control) throw new ArrayIndexOutOfBoundsException("inner radii must have >= 8 values");
         } //End block
         {
             mInnerRect = new RectF();
@@ -53,7 +53,7 @@ public class RoundRectShape extends RectShape {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:01.168 -0400", hash_original_method = "2040FB3810CEA26BCA97DD1BCDDED3AB", hash_generated_method = "CE80D9993DBEDCCF58272E27CEE9A1B3")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 11:47:17.852 -0400", hash_original_method = "2040FB3810CEA26BCA97DD1BCDDED3AB", hash_generated_method = "CE80D9993DBEDCCF58272E27CEE9A1B3")
     @DSModeled(DSC.SAFE)
     @Override
     public void draw(Canvas canvas, Paint paint) {
@@ -65,7 +65,7 @@ public class RoundRectShape extends RectShape {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:01.168 -0400", hash_original_method = "76E13F34AD3978846D0DA3AA18C0FAE1", hash_generated_method = "F4CF2F98692D581B353658BD9D220C4C")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 11:47:17.866 -0400", hash_original_method = "76E13F34AD3978846D0DA3AA18C0FAE1", hash_generated_method = "3AAE5BD9468E59B15A993246D2F8FDE7")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     @Override
     protected void onResize(float w, float h) {
@@ -86,7 +86,7 @@ public class RoundRectShape extends RectShape {
             mInnerRect.set(r.left + mInset.left, r.top + mInset.top,
                            r.right - mInset.right, r.bottom - mInset.bottom);
             {
-                boolean varFA69053F663231AFFAF816545E5D72F2_875314572 = (mInnerRect.width() < w && mInnerRect.height() < h);
+                boolean varFA69053F663231AFFAF816545E5D72F2_1874676645 = (mInnerRect.width() < w && mInnerRect.height() < h);
                 {
                     {
                         mPath.addRoundRect(mInnerRect, mInnerRadii, Path.Direction.CCW);
@@ -120,9 +120,8 @@ public class RoundRectShape extends RectShape {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:01.168 -0400", hash_original_method = "C8F54F0C5741E48CA334E7AB381892D2", hash_generated_method = "4940FA84ACC0E27BE9E0A8A450C20BA2")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
-    @Override
+    @DSGenerator(tool_name="Doppelganger",tool_version="0.4",generated_on="2013-06-11 11:15:01.168 -0400",hash_original_method="C8F54F0C5741E48CA334E7AB381892D2",hash_generated_method="4940FA84ACC0E27BE9E0A8A450C20BA2")
+@Override
     public RoundRectShape clone() throws CloneNotSupportedException {
         RoundRectShape shape;
         shape = (RoundRectShape) super.clone();

@@ -2,6 +2,7 @@ package org.apache.http.conn.scheme;
 
 // Droidsafe Imports
 import droidsafe.helpers.*;
+import droidsafe.runtime.DroidSafeAndroidRuntime;
 import droidsafe.annotations.*;
 
 // import Iterator to deal with enhanced for loop translation
@@ -25,16 +26,18 @@ public final class Scheme {
         dsTaint.addTaint(port);
         dsTaint.addTaint(name);
         dsTaint.addTaint(factory.dsTaint);
+        this.socketFactory = factory;
+        this.defaultPort = port;
         {
-            throw new IllegalArgumentException
+        	if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException
                 ("Scheme name may not be null");
         } //End block
         {
-            throw new IllegalArgumentException
+        	if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException
                 ("Socket factory may not be null");
         } //End block
         {
-            throw new IllegalArgumentException
+        	if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException
                 ("Port is invalid: " + port);
         } //End block
         this.name = name.toLowerCase(Locale.ENGLISH);

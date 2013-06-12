@@ -2,6 +2,7 @@ package org.apache.harmony.xml;
 
 // Droidsafe Imports
 import droidsafe.helpers.*;
+import droidsafe.runtime.DroidSafeAndroidRuntime;
 import droidsafe.annotations.*;
 
 // import Iterator to deal with enhanced for loop translation
@@ -38,7 +39,7 @@ public class ExpatReader implements XMLReader {
     public boolean getFeature(String name) throws SAXNotRecognizedException, SAXNotSupportedException {
         dsTaint.addTaint(name);
         {
-            throw new NullPointerException("name == null");
+        	if (DroidSafeAndroidRuntime.control) throw new NullPointerException("name == null");
         } //End block
         {
             boolean var095945B358BCA21A047D05C123414089_1039974698 = (name.equals(Feature.VALIDATION)
@@ -54,7 +55,7 @@ public class ExpatReader implements XMLReader {
         {
             boolean varEB31DD0A36316277BB0E215BA2D99F4D_510596547 = (name.equals(Feature.STRING_INTERNING));
         } //End collapsed parenthetic
-        throw new SAXNotRecognizedException(name);
+        if (DroidSafeAndroidRuntime.control) throw new SAXNotRecognizedException(name);
         return dsTaint.getTaintBoolean();
         // ---------- Original Method ----------
         //if (name == null) {
@@ -84,7 +85,7 @@ public class ExpatReader implements XMLReader {
         dsTaint.addTaint(name);
         dsTaint.addTaint(value);
         {
-            throw new NullPointerException("name == null");
+        	if (DroidSafeAndroidRuntime.control) throw new NullPointerException("name == null");
         } //End block
         {
             boolean var095945B358BCA21A047D05C123414089_1739722393 = (name.equals(Feature.VALIDATION)
@@ -92,7 +93,7 @@ public class ExpatReader implements XMLReader {
                 || name.equals(Feature.EXTERNAL_PARAMETER_ENTITIES));
             {
                 {
-                    throw new SAXNotSupportedException("Cannot enable " + name);
+                	if (DroidSafeAndroidRuntime.control) throw new SAXNotSupportedException("Cannot enable " + name);
                 } //End block
             } //End block
         } //End collapsed parenthetic
@@ -106,7 +107,7 @@ public class ExpatReader implements XMLReader {
             boolean varEB31DD0A36316277BB0E215BA2D99F4D_1420801524 = (name.equals(Feature.STRING_INTERNING));
             {
                 {
-                    throw new SAXNotSupportedException("Cannot disable " + name);
+                	if (DroidSafeAndroidRuntime.control) throw new SAXNotSupportedException("Cannot disable " + name);
                 } //End block
             } //End block
         } //End collapsed parenthetic
@@ -121,12 +122,12 @@ public class ExpatReader implements XMLReader {
     public Object getProperty(String name) throws SAXNotRecognizedException, SAXNotSupportedException {
         dsTaint.addTaint(name);
         {
-            throw new NullPointerException("name == null");
+        	if (DroidSafeAndroidRuntime.control) throw new NullPointerException("name == null");
         } //End block
         {
             boolean var58879761E7B6DA99822BBCF1FE4B3C68_1132698145 = (name.equals(LEXICAL_HANDLER_PROPERTY));
         } //End collapsed parenthetic
-        throw new SAXNotRecognizedException(name);
+        if (DroidSafeAndroidRuntime.control) throw new SAXNotRecognizedException(name);
         return (Object)dsTaint.getTaint();
         // ---------- Original Method ----------
         //if (name == null) {
@@ -145,7 +146,7 @@ public class ExpatReader implements XMLReader {
         dsTaint.addTaint(name);
         dsTaint.addTaint(value.dsTaint);
         {
-            throw new NullPointerException("name == null");
+        	if (DroidSafeAndroidRuntime.control) throw new NullPointerException("name == null");
         } //End block
         {
             boolean var58879761E7B6DA99822BBCF1FE4B3C68_1966271043 = (name.equals(LEXICAL_HANDLER_PROPERTY));
@@ -153,7 +154,7 @@ public class ExpatReader implements XMLReader {
                 {
                     this.lexicalHandler = (LexicalHandler) value;
                 } //End block
-                throw new SAXNotSupportedException("value doesn't implement " +
+                if (DroidSafeAndroidRuntime.control) throw new SAXNotSupportedException("value doesn't implement " +
                     "org.xml.sax.ext.LexicalHandler");
             } //End block
         } //End collapsed parenthetic
@@ -287,7 +288,7 @@ public class ExpatReader implements XMLReader {
     public void parse(InputSource input) throws IOException, SAXException {
         dsTaint.addTaint(input.dsTaint);
         {
-            throw new SAXNotSupportedException("The 'namespace-prefix' " +
+        	if (DroidSafeAndroidRuntime.control) throw new SAXNotSupportedException("The 'namespace-prefix' " +
                     "feature is not supported while the 'namespaces' " +
                     "feature is enabled.");
         } //End block
@@ -320,7 +321,7 @@ public class ExpatReader implements XMLReader {
         String systemId;
         systemId = input.getSystemId();
         {
-            throw new SAXException("No input specified.");
+        	if (DroidSafeAndroidRuntime.control) throw new SAXException("No input specified.");
         } //End block
         in = ExpatParser.openUrl(systemId);
         try 

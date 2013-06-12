@@ -1,11 +1,11 @@
 package dalvik.system;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-
+import droidsafe.annotations.DSC;
+import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.DSModeled;
+import droidsafe.runtime.DroidSafeAndroidRuntime;
 // import Iterator to deal with enhanced for loop translation
-import java.util.Iterator;
 
 
 public final class VMRuntime {
@@ -27,30 +27,35 @@ public final class VMRuntime {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:11.346 -0400", hash_original_method = "2960BD7EBD269C359C23EB7E2C183AE6", hash_generated_method = "E609EA176DEC6ADBBC1583B20CD36352")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public String[] properties() {
+    	return new String[] { dsTaint.getTaintString() };
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:11.346 -0400", hash_original_method = "ACD1BDE0C9D7AA5A704C76C5A226A571", hash_generated_method = "EF926ABE32EED166AD27A3431128A3FE")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public String bootClassPath() {
+    	return dsTaint.getTaintString();
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:11.346 -0400", hash_original_method = "F880EBCB28C92D3EB2F8227CAD3AB51E", hash_generated_method = "8A31D21F95906F8ADC4E3FCD942EA314")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public String classPath() {
+    	return dsTaint.getTaintString();
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:11.346 -0400", hash_original_method = "91B638A4E83CB522FD5F0DBC3B106E1F", hash_generated_method = "A3ECDD09DAA704219477E8B957B7B9F0")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public String vmVersion() {
+    	return dsTaint.getTaintString();
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:11.346 -0400", hash_original_method = "A53C7C5E8A86B0A14FF3A91D5B112A95", hash_generated_method = "5C1DD0F16ECEF6D40F424B03E3812BD0")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public float getTargetHeapUtilization() {
+    	return dsTaint.getTaintFloat();
     }
 
     
@@ -59,7 +64,7 @@ public final class VMRuntime {
     public float setTargetHeapUtilization(float newTarget) {
         dsTaint.addTaint(newTarget);
         {
-            throw new IllegalArgumentException(newTarget +
+            if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException(newTarget +
                     " out of range (0,1)");
         } //End block
         {
@@ -183,6 +188,7 @@ public final class VMRuntime {
         //DSFIXME:  CODE0009: Possible callback target function detected
         dsTaint.addTaint(length);
         dsTaint.addTaint(componentType.dsTaint);
+        return dsTaint.getTaint();
     }
 
     
@@ -190,6 +196,7 @@ public final class VMRuntime {
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public long addressOf(Object array) {
         dsTaint.addTaint(array.dsTaint);
+        return dsTaint.getTaintLong();
     }
 
     
@@ -202,6 +209,7 @@ public final class VMRuntime {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:11.347 -0400", hash_original_method = "FD10061FB9DFD564FAB6BA17DFE98F77", hash_generated_method = "3CBA895E1C58E9A072084AEAAF64B515")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public boolean isDebuggerActive() {
+    	return dsTaint.getTaintBoolean();
     }
 
     

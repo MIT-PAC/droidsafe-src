@@ -21,7 +21,7 @@ public final class OpcodeInfo {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:11.317 -0400", hash_original_method = "CC27A78086A4454B067DC102AC631D4B", hash_generated_method = "62B4EA631E8F600149CD08173508D62B")
     public static boolean isInvoke(int packedOpcode) {
-        //DSFIXME:  CODE0010: Native static method requires manual modeling
+        return DSUtils.UNKNOWN_BOOLEAN;
     }
 
     

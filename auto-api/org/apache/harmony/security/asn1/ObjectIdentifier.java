@@ -17,6 +17,7 @@ public final class ObjectIdentifier {
     @DSModeled(DSC.SAFE)
     public ObjectIdentifier(int[] oid) {
         dsTaint.addTaint(oid);
+        this.oid = oid;
         validate(oid);
         // ---------- Original Method ----------
         //validate(oid);

@@ -2,6 +2,7 @@ package org.apache.harmony.security.asn1;
 
 // Droidsafe Imports
 import droidsafe.helpers.*;
+import droidsafe.runtime.DroidSafeAndroidRuntime;
 import droidsafe.annotations.*;
 
 // import Iterator to deal with enhanced for loop translation
@@ -95,6 +96,7 @@ public class ASN1BitString extends ASN1StringType {
         @DSModeled(DSC.SAFE)
         public ASN1NamedBitList(int minBits) {
             dsTaint.addTaint(minBits);
+            this.minBits = minBits;
             this.maxBits = INDEFINITE_SIZE;
             // ---------- Original Method ----------
             //this.minBits = minBits;
@@ -127,7 +129,7 @@ public class ASN1BitString extends ASN1StringType {
             } //End block
             {
                 {
-                    throw new ASN1Exception("ASN.1 Named Bitstring: size constraints");
+                	if (DroidSafeAndroidRuntime.control) throw new ASN1Exception("ASN.1 Named Bitstring: size constraints");
                 } //End block
                 value = new boolean[maxBits];
             } //End block

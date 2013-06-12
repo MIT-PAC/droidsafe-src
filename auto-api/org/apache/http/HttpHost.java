@@ -2,6 +2,7 @@ package org.apache.http;
 
 // Droidsafe Imports
 import droidsafe.helpers.*;
+import droidsafe.runtime.DroidSafeAndroidRuntime;
 import droidsafe.annotations.*;
 
 // import Iterator to deal with enhanced for loop translation
@@ -16,7 +17,7 @@ public final class HttpHost implements Cloneable {
     protected final String hostname;
     protected final String lcHostname;
     protected final int port;
-    protected final String schemeName;
+    protected String schemeName;
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:18.025 -0400", hash_original_method = "3BB513ACF90DB4E8549AF0CC3A6C9663", hash_generated_method = "D8D73746F7696D012F271AD562BD1ACD")
     //DSFIXME:  CODE0002: Requires DSC value to be set
@@ -25,8 +26,10 @@ public final class HttpHost implements Cloneable {
         dsTaint.addTaint(port);
         dsTaint.addTaint(scheme);
         dsTaint.addTaint(hostname);
+        this.port = port;
+        this.hostname   = hostname;
         {
-            throw new IllegalArgumentException("Host name may not be null");
+        	if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("Host name may not be null");
         } //End block
         this.lcHostname = hostname.toLowerCase(Locale.ENGLISH);
         {
