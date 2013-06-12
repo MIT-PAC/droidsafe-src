@@ -2,6 +2,7 @@ package java.util;
 
 // Droidsafe Imports
 import droidsafe.helpers.*;
+import droidsafe.runtime.DroidSafeAndroidRuntime;
 import droidsafe.annotations.*;
 
 // import Iterator to deal with enhanced for loop translation
@@ -150,7 +151,7 @@ public class GregorianCalendar extends Calendar {
     public void add(int field, int value) {
         dsTaint.addTaint(field);
         dsTaint.addTaint(value);
-        {
+        if (DroidSafeAndroidRuntime.control) {
             throw new IllegalArgumentException();
         } //End block
         isCached = false;
@@ -531,226 +532,222 @@ public class GregorianCalendar extends Calendar {
     //DSFIXME:  CODE0002: Requires DSC value to be set
     @Override
     protected void computeTime() {
-        {
-            boolean varFACDFEC6F69DADFC305CEE68F7E56304_658280687 = (!isLenient());
-            {
-                {
-                    {
-                        throw new IllegalArgumentException();
-                    } //End block
-                } //End block
-                {
-                    throw new IllegalArgumentException();
-                } //End block
-                {
-                    throw new IllegalArgumentException();
-                } //End block
-                {
-                    throw new IllegalArgumentException();
-                } //End block
-                {
-                    throw new IllegalArgumentException();
-                } //End block
-                {
-                    throw new IllegalArgumentException();
-                } //End block
-                {
-                    throw new IllegalArgumentException();
-                } //End block
-                {
-                    throw new IllegalArgumentException();
-                } //End block
-                {
-                    throw new IllegalArgumentException();
-                } //End block
-                {
-                    throw new IllegalArgumentException();
-                } //End block
-                {
-                    throw new IllegalArgumentException();
-                } //End block
-                {
-                    {
-                        throw new IllegalArgumentException();
-                    } //End block
-                    {
-                        throw new IllegalArgumentException();
-                    } //End block
-                } //End block
-                {
-                    throw new IllegalArgumentException();
-                } //End block
-            } //End block
-        } //End collapsed parenthetic
-        long timeVal;
-        long hour;
-        hour = 0;
-        {
-            hour = fields[HOUR_OF_DAY];
-        } //End block
-        {
-            hour = (fields[AM_PM] * 12) + fields[HOUR];
-        } //End block
-        timeVal = hour * 3600000;
-        {
-            timeVal += ((long) fields[MINUTE]) * 60000;
-        } //End block
-        {
-            timeVal += ((long) fields[SECOND]) * 1000;
-        } //End block
-        {
-            timeVal += fields[MILLISECOND];
-        } //End block
-        long days;
-        int year;
-        year = fields[YEAR];
-        year = 1970;
-        {
-            {
-                throw new IllegalArgumentException();
-            } //End block
-            {
-                year = 1 - year;
-            } //End block
-        } //End block
-        boolean weekMonthSet;
-        weekMonthSet = isSet[WEEK_OF_MONTH]
-                || isSet[DAY_OF_WEEK_IN_MONTH];
-        boolean useMonth;
-        useMonth = (isSet[DATE] || isSet[MONTH] || weekMonthSet)
-                && lastDateFieldSet != DAY_OF_YEAR;
-        {
-            {
-                useMonth = lastDateFieldSet != WEEK_OF_YEAR && weekMonthSet
-                        && isSet[DAY_OF_WEEK];
-            } //End block
-            {
-                useMonth = isSet[DATE] && isSet[MONTH];
-            } //End block
-        } //End block
-        {
-            int month;
-            month = fields[MONTH];
-            year += month / 12;
-            month %= 12;
-            {
-                year--;
-                month += 12;
-            } //End block
-            boolean leapYear;
-            leapYear = isLeapYear(year);
-            days = daysFromBaseYear(year) + daysInYear(leapYear, month);
-            boolean useDate;
-            useDate = isSet[DATE];
-            {
-                useDate = !(isSet[DAY_OF_WEEK] && weekMonthSet);
-            } //End block
-            {
-                {
-                    boolean varAD72E57B80110245423B5A8B5FE79293_2039705735 = (!isLenient()
-                        && (fields[DATE] < 1 || fields[DATE] > daysInMonth(
-                                leapYear, month)));
-                    {
-                        throw new IllegalArgumentException();
-                    } //End block
-                } //End collapsed parenthetic
-                days += fields[DATE] - 1;
-            } //End block
-            {
-                int dayOfWeek;
-                {
-                    dayOfWeek = fields[DAY_OF_WEEK] - 1;
-                } //End block
-                {
-                    dayOfWeek = getFirstDayOfWeek() - 1;
-                } //End block
-                {
-                    int skew;
-                    skew = mod7(days - 3 - (getFirstDayOfWeek() - 1));
-                    days += (fields[WEEK_OF_MONTH] - 1) * 7
-                            + mod7(skew + dayOfWeek - (days - 3)) - skew;
-                } //End block
-                {
-                    {
-                        days += mod7(dayOfWeek - (days - 3))
-                                + (fields[DAY_OF_WEEK_IN_MONTH] - 1) * 7;
-                    } //End block
-                    {
-                        days += daysInMonth(leapYear, month)
-                                + mod7(dayOfWeek
-                                        - (days + daysInMonth(leapYear, month) - 3))
-                                + fields[DAY_OF_WEEK_IN_MONTH] * 7;
-                    } //End block
-                } //End block
-                {
-                    int skew;
-                    skew = mod7(days - 3 - (getFirstDayOfWeek() - 1));
-                    days += mod7(mod7(skew + dayOfWeek - (days - 3)) - skew);
-                } //End block
-            } //End block
-        } //End block
-        {
-            boolean useWeekYear;
-            useWeekYear = isSet[WEEK_OF_YEAR]
-                    && lastDateFieldSet != DAY_OF_YEAR;
-            {
-                useWeekYear = isSet[DAY_OF_WEEK];
-            } //End block
-            days = daysFromBaseYear(year);
-            {
-                int dayOfWeek;
-                {
-                    dayOfWeek = fields[DAY_OF_WEEK] - 1;
-                } //End block
-                {
-                    dayOfWeek = getFirstDayOfWeek() - 1;
-                } //End block
-                int skew;
-                skew = mod7(days - 3 - (getFirstDayOfWeek() - 1));
-                days += (fields[WEEK_OF_YEAR] - 1) * 7
-                        + mod7(skew + dayOfWeek - (days - 3)) - skew;
-                {
-                    boolean varE26E43FD9372BC0247AD2F35115E53C0_27160895 = (7 - skew < getMinimalDaysInFirstWeek());
-                    {
-                        days += 7;
-                    } //End block
-                } //End collapsed parenthetic
-            } //End block
-            {
-                {
-                    boolean var5E54B386391C54C1445EC2DD47905BC4_458291964 = (!isLenient()
-                        && (fields[DAY_OF_YEAR] < 1 || fields[DAY_OF_YEAR] > (365 + (isLeapYear(year) ? 1
-                                : 0)))); //DSFIXME:  CODE0008: Nested ternary operator in expression
-                    {
-                        throw new IllegalArgumentException();
-                    } //End block
-                } //End collapsed parenthetic
-                days += fields[DAY_OF_YEAR] - 1;
-            } //End block
-            {
-                days += mod7(fields[DAY_OF_WEEK] - 1 - (days - 3));
-            } //End block
-        } //End block
-        lastDateFieldSet = 0;
-        timeVal += days * 86400000;
-        {
-            boolean var4521363AC2DA99125953BA39F1463F28_888899476 = (year == changeYear
-                && timeVal >= gregorianCutover + julianError() * 86400000L);
-            {
-                timeVal -= julianError() * 86400000L;
-            } //End block
-        } //End collapsed parenthetic
-        long timeValWithoutDST;
-        timeValWithoutDST = timeVal - getOffset(timeVal)
-                + getTimeZone().getRawOffset();
-        timeVal -= getOffset(timeValWithoutDST);
-        this.time = timeVal;
-        {
-            computeFields();
-            areFieldsSet = true;
-        } //End block
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+    	{
+    		boolean varFACDFEC6F69DADFC305CEE68F7E56304_658280687 = (!isLenient());
+    		if (DroidSafeAndroidRuntime.control) {
+    			throw new IllegalArgumentException();
+    		} //End block
+    		if (DroidSafeAndroidRuntime.control) {
+    			throw new IllegalArgumentException();
+    		} //End block
+    		if (DroidSafeAndroidRuntime.control) {
+    			throw new IllegalArgumentException();
+    		} //End block
+    		if (DroidSafeAndroidRuntime.control) {
+    			throw new IllegalArgumentException();
+    		} //End block
+    		if (DroidSafeAndroidRuntime.control) {
+    			throw new IllegalArgumentException();
+    		} //End block
+    		if (DroidSafeAndroidRuntime.control) {
+    			throw new IllegalArgumentException();
+    		} //End block
+    		if (DroidSafeAndroidRuntime.control) {
+    			throw new IllegalArgumentException();
+    		} //End block
+    		if (DroidSafeAndroidRuntime.control) {
+    			throw new IllegalArgumentException();
+    		} //End block
+    		if (DroidSafeAndroidRuntime.control) {
+    			throw new IllegalArgumentException();
+    		} //End block
+    		if (DroidSafeAndroidRuntime.control) {
+    			throw new IllegalArgumentException();
+    		} //End block
+    		if (DroidSafeAndroidRuntime.control) {
+    			throw new IllegalArgumentException();
+    		} //End block
+    		if (DroidSafeAndroidRuntime.control) {
+    			throw new IllegalArgumentException();
+    		} //End block
+    		if (DroidSafeAndroidRuntime.control) {
+    			throw new IllegalArgumentException();
+    		} //End block
+    		if (DroidSafeAndroidRuntime.control) {
+    			throw new IllegalArgumentException();
+    		} //End block
+    		long timeVal;
+    		long hour;
+    		hour = 0;
+    		{
+    			hour = fields[HOUR_OF_DAY];
+    		} //End block
+    		{
+    			hour = (fields[AM_PM] * 12) + fields[HOUR];
+    		} //End block
+    		timeVal = hour * 3600000;
+    		{
+    			timeVal += ((long) fields[MINUTE]) * 60000;
+    		} //End block
+    		{
+    			timeVal += ((long) fields[SECOND]) * 1000;
+    		} //End block
+    		{
+    			timeVal += fields[MILLISECOND];
+    		} //End block
+    		long days;
+    		int year;
+    		year = fields[YEAR];
+    		year = 1970;
+    		{
+    			if (DroidSafeAndroidRuntime.control) {
+    				throw new IllegalArgumentException();
+    			} //End block
+    			{
+    				year = 1 - year;
+    			} //End block
+    		} //End block
+    		boolean weekMonthSet;
+    		weekMonthSet = isSet[WEEK_OF_MONTH]
+    				|| isSet[DAY_OF_WEEK_IN_MONTH];
+    		boolean useMonth;
+    		useMonth = (isSet[DATE] || isSet[MONTH] || weekMonthSet)
+    				&& lastDateFieldSet != DAY_OF_YEAR;
+    		{
+    			{
+    				useMonth = lastDateFieldSet != WEEK_OF_YEAR && weekMonthSet
+    						&& isSet[DAY_OF_WEEK];
+    			} //End block
+    			{
+    				useMonth = isSet[DATE] && isSet[MONTH];
+    			} //End block
+    		} //End block
+    		{
+    			int month;
+    			month = fields[MONTH];
+    			year += month / 12;
+    			month %= 12;
+    			{
+    				year--;
+    				month += 12;
+    			} //End block
+    			boolean leapYear;
+    			leapYear = isLeapYear(year);
+    			days = daysFromBaseYear(year) + daysInYear(leapYear, month);
+    			boolean useDate;
+    			useDate = isSet[DATE];
+    			{
+    				useDate = !(isSet[DAY_OF_WEEK] && weekMonthSet);
+    			} //End block
+    			{
+    				{
+    					boolean varAD72E57B80110245423B5A8B5FE79293_2039705735 = (!isLenient()
+    							&& (fields[DATE] < 1 || fields[DATE] > daysInMonth(
+    									leapYear, month)));
+    					if (DroidSafeAndroidRuntime.control) {
+    						throw new IllegalArgumentException();
+    					} //End block
+    				} //End collapsed parenthetic
+    				days += fields[DATE] - 1;
+    			} //End block
+    			{
+    				int dayOfWeek;
+    				{
+    					dayOfWeek = fields[DAY_OF_WEEK] - 1;
+    				} //End block
+    				{
+    					dayOfWeek = getFirstDayOfWeek() - 1;
+    				} //End block
+    				{
+    					int skew;
+    					skew = mod7(days - 3 - (getFirstDayOfWeek() - 1));
+    					days += (fields[WEEK_OF_MONTH] - 1) * 7
+    							+ mod7(skew + dayOfWeek - (days - 3)) - skew;
+    				} //End block
+    				{
+    					{
+    						days += mod7(dayOfWeek - (days - 3))
+    								+ (fields[DAY_OF_WEEK_IN_MONTH] - 1) * 7;
+    					} //End block
+    					{
+    						days += daysInMonth(leapYear, month)
+    								+ mod7(dayOfWeek
+    										- (days + daysInMonth(leapYear, month) - 3))
+    										+ fields[DAY_OF_WEEK_IN_MONTH] * 7;
+    					} //End block
+    				} //End block
+    				{
+    					int skew;
+    					skew = mod7(days - 3 - (getFirstDayOfWeek() - 1));
+    					days += mod7(mod7(skew + dayOfWeek - (days - 3)) - skew);
+    				} //End block
+    			} //End block
+    		} //End block
+    		{
+    			boolean useWeekYear;
+    			useWeekYear = isSet[WEEK_OF_YEAR]
+    					&& lastDateFieldSet != DAY_OF_YEAR;
+    			{
+    				useWeekYear = isSet[DAY_OF_WEEK];
+    			} //End block
+    			days = daysFromBaseYear(year);
+    			{
+    				int dayOfWeek;
+    				{
+    					dayOfWeek = fields[DAY_OF_WEEK] - 1;
+    				} //End block
+    				{
+    					dayOfWeek = getFirstDayOfWeek() - 1;
+    				} //End block
+    				int skew;
+    				skew = mod7(days - 3 - (getFirstDayOfWeek() - 1));
+    				days += (fields[WEEK_OF_YEAR] - 1) * 7
+    						+ mod7(skew + dayOfWeek - (days - 3)) - skew;
+    				{
+    					boolean varE26E43FD9372BC0247AD2F35115E53C0_27160895 = (7 - skew < getMinimalDaysInFirstWeek());
+    					{
+    						days += 7;
+    					} //End block
+    				} //End collapsed parenthetic
+    			} //End block
+    			{
+    				{
+    					boolean var5E54B386391C54C1445EC2DD47905BC4_458291964 = (!isLenient()
+    							&& (fields[DAY_OF_YEAR] < 1 || fields[DAY_OF_YEAR] > (365 + (isLeapYear(year) ? 1
+    									: 0)))); //DSFIXME:  CODE0008: Nested ternary operator in expression
+    					{
+    						if (DroidSafeAndroidRuntime.control) {
+    							throw new IllegalArgumentException();
+    						}
+    					} //End block
+    				} //End collapsed parenthetic
+    				days += fields[DAY_OF_YEAR] - 1;
+    			} //End block
+    			{
+    				days += mod7(fields[DAY_OF_WEEK] - 1 - (days - 3));
+    			} //End block
+    		} //End block
+    		lastDateFieldSet = 0;
+    		timeVal += days * 86400000;
+    		{
+    			boolean var4521363AC2DA99125953BA39F1463F28_888899476 = (year == changeYear
+    					&& timeVal >= gregorianCutover + julianError() * 86400000L);
+    			{
+    				timeVal -= julianError() * 86400000L;
+    			} //End block
+    		} //End collapsed parenthetic
+    		long timeValWithoutDST;
+    		timeValWithoutDST = timeVal - getOffset(timeVal)
+    				+ getTimeZone().getRawOffset();
+    		timeVal -= getOffset(timeValWithoutDST);
+    		this.time = timeVal;
+    		{
+    			computeFields();
+    			areFieldsSet = true;
+    		} //End block
+    		// ---------- Original Method ----------
+    		// Original Method Too Long, Refer to Original Implementation
+    	}
     }
 
     
@@ -1247,7 +1244,7 @@ public class GregorianCalendar extends Calendar {
     public void roll(int field, int value) {
         dsTaint.addTaint(field);
         dsTaint.addTaint(value);
-        {
+        if (DroidSafeAndroidRuntime.control) {
             throw new IllegalArgumentException();
         } //End block
         isCached = false;

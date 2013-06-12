@@ -2,6 +2,7 @@ package java.util;
 
 // Droidsafe Imports
 import droidsafe.helpers.*;
+import droidsafe.runtime.DroidSafeAndroidRuntime;
 import droidsafe.annotations.*;
 
 // import Iterator to deal with enhanced for loop translation
@@ -235,7 +236,9 @@ public abstract class ResourceBundle {
             last = theParent;
             theParent = theParent.parent;
         } //End block
-        throw missingResourceException(last.getClass().getName(), key);
+        if (DroidSafeAndroidRuntime.control) {
+        	throw missingResourceException(last.getClass().getName(), key);
+        }
         return (Object)dsTaint.getTaint();
         // ---------- Original Method ----------
         //ResourceBundle last, theParent = this;
@@ -420,7 +423,7 @@ public abstract class ResourceBundle {
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public boolean containsKey(String key) {
         dsTaint.addTaint(key);
-        {
+        if (DroidSafeAndroidRuntime.control) {
             throw new NullPointerException();
         } //End block
         boolean varC1F1394BBE1C1666EB466B1C1659D67F_1610830822 = (keySet().contains(key));
@@ -555,7 +558,7 @@ public abstract class ResourceBundle {
         public Locale getFallbackLocale(String baseName, Locale locale) {
             dsTaint.addTaint(locale.dsTaint);
             dsTaint.addTaint(baseName);
-            {
+            if (DroidSafeAndroidRuntime.control) {
                 throw new NullPointerException();
             } //End block
             return (Locale)dsTaint.getTaint();
@@ -674,7 +677,7 @@ public abstract class ResourceBundle {
         public List<Locale> getCandidateLocales(String baseName, Locale locale) {
             dsTaint.addTaint(locale.dsTaint);
             dsTaint.addTaint(baseName);
-            {
+            if (DroidSafeAndroidRuntime.control) {
                 throw new NullPointerException();
             } //End block
             List<Locale> retList;
@@ -731,7 +734,7 @@ public abstract class ResourceBundle {
         @DSModeled(DSC.SAFE)
         public List<String> getFormats(String baseName) {
             dsTaint.addTaint(baseName);
-            {
+            if (DroidSafeAndroidRuntime.control) {
                 throw new NullPointerException();
             } //End block
             return (List<String>)dsTaint.getTaint();
@@ -748,7 +751,7 @@ public abstract class ResourceBundle {
         public Locale getFallbackLocale(String baseName, Locale locale) {
             dsTaint.addTaint(locale.dsTaint);
             dsTaint.addTaint(baseName);
-            {
+            if (DroidSafeAndroidRuntime.control) {
                 throw new NullPointerException();
             } //End block
             {
@@ -779,7 +782,7 @@ public abstract class ResourceBundle {
             dsTaint.addTaint(baseName);
             dsTaint.addTaint(format);
             dsTaint.addTaint(reload);
-            {
+            if (DroidSafeAndroidRuntime.control) {
                 throw new NullPointerException();
             } //End block
             final String bundleName;
@@ -853,7 +856,9 @@ public abstract class ResourceBundle {
                     } //End block
                 } //End block
             } //End collapsed parenthetic
-            throw new IllegalArgumentException();
+            if (DroidSafeAndroidRuntime.control) {
+            	throw new IllegalArgumentException();
+            }
             return (ResourceBundle)dsTaint.getTaint();
             // ---------- Original Method ----------
             // Original Method Too Long, Refer to Original Implementation
@@ -865,7 +870,7 @@ public abstract class ResourceBundle {
         public long getTimeToLive(String baseName, Locale locale) {
             dsTaint.addTaint(locale.dsTaint);
             dsTaint.addTaint(baseName);
-            {
+            if (DroidSafeAndroidRuntime.control) {
                 throw new NullPointerException();
             } //End block
             return dsTaint.getTaintLong();
@@ -888,7 +893,7 @@ public abstract class ResourceBundle {
             dsTaint.addTaint(baseName);
             dsTaint.addTaint(bundle.dsTaint);
             dsTaint.addTaint(format);
-            {
+            if (DroidSafeAndroidRuntime.control) {
                 throw new NullPointerException();
             } //End block
             String bundleName;
@@ -954,7 +959,7 @@ public abstract class ResourceBundle {
             preString = UNDER_SCORE;
             final String underline;
             underline = UNDER_SCORE;
-            {
+            if (DroidSafeAndroidRuntime.control) {
                 throw new NullPointerException();
             } //End block
             StringBuilder ret;
@@ -1004,7 +1009,7 @@ public abstract class ResourceBundle {
         public final String toResourceName(String bundleName, String suffix) {
             dsTaint.addTaint(bundleName);
             dsTaint.addTaint(suffix);
-            {
+            if (DroidSafeAndroidRuntime.control) {
                 throw new NullPointerException();
             } //End block
             StringBuilder ret;

@@ -2,6 +2,7 @@ package java.util;
 
 // Droidsafe Imports
 import droidsafe.helpers.*;
+import droidsafe.runtime.DroidSafeAndroidRuntime;
 import droidsafe.annotations.*;
 
 // import Iterator to deal with enhanced for loop translation
@@ -179,7 +180,7 @@ public final class UUID implements Serializable, Comparable<UUID> {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:15.343 -0400", hash_original_method = "BC9161978762C6E74741C357EC2A66B7", hash_generated_method = "34E2114800AE5EF67B153C5D72D7C0D8")
     @DSModeled(DSC.SAFE)
     public long timestamp() {
-        {
+        if (DroidSafeAndroidRuntime.control) {
             throw new UnsupportedOperationException();
         } //End block
         return dsTaint.getTaintLong();
@@ -194,7 +195,7 @@ public final class UUID implements Serializable, Comparable<UUID> {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:15.343 -0400", hash_original_method = "22D2FA35D30B9562E8F9B8FBAC9604FC", hash_generated_method = "1419012C62C6467976E28459F3A02BD5")
     @DSModeled(DSC.SAFE)
     public int clockSequence() {
-        {
+        if (DroidSafeAndroidRuntime.control) {
             throw new UnsupportedOperationException();
         } //End block
         return dsTaint.getTaintInt();
@@ -209,7 +210,7 @@ public final class UUID implements Serializable, Comparable<UUID> {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:15.343 -0400", hash_original_method = "F570F6113919571E2190BC663D44A8A0", hash_generated_method = "E10B516DF3010F6EC8623209B1A3705B")
     @DSModeled(DSC.SAFE)
     public long node() {
-        {
+        if (DroidSafeAndroidRuntime.control) {
             throw new UnsupportedOperationException();
         } //End block
         return dsTaint.getTaintLong();

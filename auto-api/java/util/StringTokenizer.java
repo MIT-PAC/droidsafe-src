@@ -2,6 +2,7 @@ package java.util;
 
 // Droidsafe Imports
 import droidsafe.helpers.*;
+import droidsafe.runtime.DroidSafeAndroidRuntime;
 import droidsafe.annotations.*;
 
 // import Iterator to deal with enhanced for loop translation
@@ -118,7 +119,7 @@ public class StringTokenizer implements Enumeration<Object> {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:15.177 -0400", hash_original_method = "15C5B981D98A46AC76B0A556FC01F2CE", hash_generated_method = "D84EF6AFB4C69BE7371E4ACF0D92187A")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public boolean hasMoreTokens() {
-        {
+        if (DroidSafeAndroidRuntime.control) {
             throw new NullPointerException();
         } //End block
         int length;
@@ -162,7 +163,7 @@ public class StringTokenizer implements Enumeration<Object> {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:15.178 -0400", hash_original_method = "195590523F66664753FCC18930183C87", hash_generated_method = "00A97865477ED21F549E184AE6C55547")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public String nextToken() {
-        {
+        if (DroidSafeAndroidRuntime.control) {
             throw new NullPointerException();
         } //End block
         int i;
@@ -194,7 +195,9 @@ public class StringTokenizer implements Enumeration<Object> {
                 String var03FD55E535DFE72AF51AF1F459B1C0A7_801191075 = (string.substring(i));
             } //End block
         } //End block
-        throw new NoSuchElementException();
+        if (DroidSafeAndroidRuntime.control) {
+        	throw new NoSuchElementException();
+        }
         return dsTaint.getTaintString();
         // ---------- Original Method ----------
         // Original Method Too Long, Refer to Original Implementation

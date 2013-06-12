@@ -2,6 +2,7 @@ package java.util;
 
 // Droidsafe Imports
 import droidsafe.helpers.*;
+import droidsafe.runtime.DroidSafeAndroidRuntime;
 import droidsafe.annotations.*;
 
 // import Iterator to deal with enhanced for loop translation
@@ -221,7 +222,7 @@ public final class Formatter implements Closeable, Flushable {
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public Formatter(PrintStream ps) {
         dsTaint.addTaint(ps.dsTaint);
-        {
+        if (DroidSafeAndroidRuntime.control) {
             throw new NullPointerException();
         } //End block
         locale = Locale.getDefault();
@@ -361,7 +362,7 @@ public final class Formatter implements Closeable, Flushable {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:14.210 -0400", hash_original_method = "EE9FCF62B0D200225753D8BA586AA3F5", hash_generated_method = "0892EB456A7D769EF04FD067A4A14615")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public Formatter format(String format, Object... args) {
-        dsTaint.addTaint(args.dsTaint);
+        dsTaint.addTaint(args[0].dsTaint);
         dsTaint.addTaint(format);
         Formatter var5B9D05694FA5D917B581106730AA8E29_2117286438 = (format(this.locale, format, args));
         return (Formatter)dsTaint.getTaint();
@@ -373,7 +374,7 @@ public final class Formatter implements Closeable, Flushable {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:14.210 -0400", hash_original_method = "F45273151F6DD69ACB6CCC03C59753A4", hash_generated_method = "CE9634A36FB07454AA31DC335975C836")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public Formatter format(Locale l, String format, Object... args) {
-        dsTaint.addTaint(args.dsTaint);
+        dsTaint.addTaint(args[0].dsTaint);
         dsTaint.addTaint(l.dsTaint);
         dsTaint.addTaint(format);
         Locale originalLocale;
@@ -405,7 +406,7 @@ public final class Formatter implements Closeable, Flushable {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:14.210 -0400", hash_original_method = "960E24FB807777DEBBE8328729AF6A3F", hash_generated_method = "A57BFE28F2BE9465A4C122D4699D65D0")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     private void doFormat(String format, Object... args) {
-        dsTaint.addTaint(args.dsTaint);
+        dsTaint.addTaint(args[0].dsTaint);
         dsTaint.addTaint(format);
         checkNotClosed();
         FormatSpecifierParser fsp;
@@ -491,13 +492,13 @@ public final class Formatter implements Closeable, Flushable {
             Object lastArgument, boolean hasLastArgumentSet) {
         dsTaint.addTaint(index);
         dsTaint.addTaint(fsp.dsTaint);
-        dsTaint.addTaint(args.dsTaint);
+        dsTaint.addTaint(args[0].dsTaint);
         dsTaint.addTaint(hasLastArgumentSet);
         dsTaint.addTaint(lastArgument.dsTaint);
-        {
+        if (DroidSafeAndroidRuntime.control){
             throw new MissingFormatArgumentException("<");
         } //End block
-        {
+        if (DroidSafeAndroidRuntime.control){
             throw new MissingFormatArgumentException(fsp.getFormatSpecifierText());
         } //End block
         return (Object)dsTaint.getTaint();
@@ -596,7 +597,9 @@ public final class Formatter implements Closeable, Flushable {
             result = transformFromDateTime();
             //End case 't' 'T' 
             //Begin case default 
-            throw token.unknownFormatConversionException();
+            if (DroidSafeAndroidRuntime.control) {
+            	throw token.unknownFormatConversionException();
+            }
             //End case default 
         } //End collapsed parenthetic
         {
@@ -616,7 +619,9 @@ public final class Formatter implements Closeable, Flushable {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:14.211 -0400", hash_original_method = "D44F27ADB431306CEB9F9E1F25036901", hash_generated_method = "0F25791C21BC6BB10333CAF052888EB3")
     @DSModeled(DSC.SAFE)
     private IllegalFormatConversionException badArgumentType() {
-        throw new IllegalFormatConversionException(formatToken.getConversionType(), arg.getClass());
+        if (DroidSafeAndroidRuntime.control) {
+        	throw new IllegalFormatConversionException(formatToken.getConversionType(), arg.getClass());
+        }
         return (IllegalFormatConversionException)dsTaint.getTaint();
         // ---------- Original Method ----------
         //throw new IllegalFormatConversionException(formatToken.getConversionType(), arg.getClass());
@@ -830,7 +835,7 @@ public final class Formatter implements Closeable, Flushable {
             codePoint = ((Number) arg).intValue();
             {
                 boolean var6F543C204E9C4F46177946447429AAE1_780567521 = (!Character.isValidCodePoint(codePoint));
-                {
+                if (DroidSafeAndroidRuntime.control){
                     throw new IllegalFormatCodePointException(codePoint);
                 } //End block
             } //End collapsed parenthetic
@@ -839,7 +844,7 @@ public final class Formatter implements Closeable, Flushable {
             result = String.valueOf(Character.toChars(codePoint));
             CharSequence varD52663FB252B32832B0DD96BE06E99D2_102327229 = (padding(result, 0));
         } //End block
-        {
+        if (DroidSafeAndroidRuntime.control){
             throw badArgumentType();
         } //End block
         return dsTaint.getTaintString();
@@ -995,7 +1000,7 @@ public final class Formatter implements Closeable, Flushable {
         {
             value = ((Byte) arg).longValue();
         } //End block
-        {
+        if (DroidSafeAndroidRuntime.control){
             throw badArgumentType();
         } //End block
         {
@@ -1156,7 +1161,7 @@ public final class Formatter implements Closeable, Flushable {
             {
                 date = (Date) arg;
             } //End block
-            {
+            if (DroidSafeAndroidRuntime.control){
                 throw badArgumentType();
             } //End block
             calendar = Calendar.getInstance(locale);
@@ -1166,7 +1171,7 @@ public final class Formatter implements Closeable, Flushable {
         result = new StringBuilder();
         {
             boolean varCAB943A58957944F491BEB3F9C12AAC8_1807323917 = (!appendT(result, formatToken.getDateSuffix(), calendar));
-            {
+            if (DroidSafeAndroidRuntime.control){
                 throw formatToken.unknownFormatConversionException();
             } //End block
         } //End collapsed parenthetic
@@ -1555,7 +1560,7 @@ public final class Formatter implements Closeable, Flushable {
                 CharSequence var10F0CDC0673B0075AE7109E074D3F683_2145869433 = (transformFromSpecialNumber(d));
             } //End block
         } //End block
-        {
+        if (DroidSafeAndroidRuntime.control){
             throw badArgumentType();
         } //End block
         char conversionType;
@@ -1581,7 +1586,9 @@ public final class Formatter implements Closeable, Flushable {
         transformG(result);
         //End case 'g' 'G' 
         //Begin case default 
-        throw formatToken.unknownFormatConversionException();
+        if (DroidSafeAndroidRuntime.control) {
+        	throw formatToken.unknownFormatConversionException();
+        }
         //End case default 
         formatToken.setPrecision(FormatToken.UNSET);
         int startIndex;
@@ -1818,7 +1825,7 @@ public final class Formatter implements Closeable, Flushable {
         {
             result.append(Double.toHexString(((Double) arg).doubleValue()));
         } //End block
-        {
+        if (DroidSafeAndroidRuntime.control) {
             throw badArgumentType();
         } //End block
         {
@@ -1906,369 +1913,373 @@ public final class Formatter implements Closeable, Flushable {
 
     
     private static class FormatToken {
-        static final int LAST_ARGUMENT_INDEX = -2;
-        static final int UNSET = -1;
-        static final int FLAGS_UNSET = 0;
-        static final int DEFAULT_PRECISION = 6;
-        static final int FLAG_ZERO = 1 << 4;
-        private int argIndex = UNSET;
-        boolean flagComma;
-        boolean flagMinus;
-        boolean flagParenthesis;
-        boolean flagPlus;
-        boolean flagSharp;
-        boolean flagSpace;
-        boolean flagZero;
-        private char conversionType = (char) UNSET;
-        private char dateSuffix;
-        private int precision = UNSET;
-        private int width = UNSET;
-        private StringBuilder strFlags;
-        
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:14.217 -0400", hash_original_method = "A7B957B3122A1E0264F586D374F2E6B7", hash_generated_method = "4CDEB35F8023A23A776068ADDDF71EBB")
-        @DSModeled(DSC.SAFE)
-         boolean isDefault() {
-            return dsTaint.getTaintBoolean();
-            // ---------- Original Method ----------
-            //return !flagComma && !flagMinus && !flagParenthesis && !flagPlus && !flagSharp &&
-                    //!flagSpace && !flagZero && width == UNSET && precision == UNSET;
-        }
+    	static final int LAST_ARGUMENT_INDEX = -2;
+    	static final int UNSET = -1;
+    	static final int FLAGS_UNSET = 0;
+    	static final int DEFAULT_PRECISION = 6;
+    	static final int FLAG_ZERO = 1 << 4;
+    	private int argIndex = UNSET;
+    	boolean flagComma;
+    	boolean flagMinus;
+    	boolean flagParenthesis;
+    	boolean flagPlus;
+    	boolean flagSharp;
+    	boolean flagSpace;
+    	boolean flagZero;
+    	private char conversionType = (char) UNSET;
+    	private char dateSuffix;
+    	private int precision = UNSET;
+    	private int width = UNSET;
+    	private StringBuilder strFlags;
 
-        
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:14.217 -0400", hash_original_method = "A13969ECEC9F8D1C94EA6A52CDFB6E17", hash_generated_method = "7039F5D11A28646BF7EFDDA34540E2C9")
-        @DSModeled(DSC.SAFE)
-         boolean isPrecisionSet() {
-            //DSFIXME:  CODE0009: Possible callback target function detected
-            return dsTaint.getTaintBoolean();
-            // ---------- Original Method ----------
-            //return precision != UNSET;
-        }
+    	@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:14.217 -0400", hash_original_method = "A7B957B3122A1E0264F586D374F2E6B7", hash_generated_method = "4CDEB35F8023A23A776068ADDDF71EBB")
+    	@DSModeled(DSC.SAFE)
+    	boolean isDefault() {
+    		return dsTaint.getTaintBoolean();
+    		// ---------- Original Method ----------
+    		//return !flagComma && !flagMinus && !flagParenthesis && !flagPlus && !flagSharp &&
+    		//!flagSpace && !flagZero && width == UNSET && precision == UNSET;
+    	}
 
-        
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:14.217 -0400", hash_original_method = "3A74106121887CCA509F985D60DB5637", hash_generated_method = "1B908DD110F170735455C56AA5EA6DAE")
-        @DSModeled(DSC.SAFE)
-         int getArgIndex() {
-            return dsTaint.getTaintInt();
-            // ---------- Original Method ----------
-            //return argIndex;
-        }
 
-        
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:14.217 -0400", hash_original_method = "27CE41687BF54420F4C00D2CFB6A73FA", hash_generated_method = "AA389E7480E2C05236BE02E53CA95B55")
-        @DSModeled(DSC.SAFE)
-         void setArgIndex(int index) {
-            dsTaint.addTaint(index);
-            // ---------- Original Method ----------
-            //argIndex = index;
-        }
+    	@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:14.217 -0400", hash_original_method = "A13969ECEC9F8D1C94EA6A52CDFB6E17", hash_generated_method = "7039F5D11A28646BF7EFDDA34540E2C9")
+    	@DSModeled(DSC.SAFE)
+    	boolean isPrecisionSet() {
+    		//DSFIXME:  CODE0009: Possible callback target function detected
+    		return dsTaint.getTaintBoolean();
+    		// ---------- Original Method ----------
+    		//return precision != UNSET;
+    	}
 
-        
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:14.217 -0400", hash_original_method = "40140C97EC91863535630C305615FEC1", hash_generated_method = "E6D1BC267AFE1C67940172986DD38627")
-        @DSModeled(DSC.SAFE)
-         int getWidth() {
-            return dsTaint.getTaintInt();
-            // ---------- Original Method ----------
-            //return width;
-        }
 
-        
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:14.218 -0400", hash_original_method = "5C954D9C93DF99E2E990960A3CC1749D", hash_generated_method = "103F73E3A4FAA171F9D02BE22BBE2FF6")
-        @DSModeled(DSC.SAFE)
-         void setWidth(int width) {
-            dsTaint.addTaint(width);
-            // ---------- Original Method ----------
-            //this.width = width;
-        }
+    	@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:14.217 -0400", hash_original_method = "3A74106121887CCA509F985D60DB5637", hash_generated_method = "1B908DD110F170735455C56AA5EA6DAE")
+    	@DSModeled(DSC.SAFE)
+    	int getArgIndex() {
+    		return dsTaint.getTaintInt();
+    		// ---------- Original Method ----------
+    		//return argIndex;
+    	}
 
-        
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:14.218 -0400", hash_original_method = "71BCDCF9E73C85D95AB18BEF6635FA18", hash_generated_method = "88B0946477EC80125F5C2950B9A78448")
-        @DSModeled(DSC.SAFE)
-         int getPrecision() {
-            return dsTaint.getTaintInt();
-            // ---------- Original Method ----------
-            //return precision;
-        }
 
-        
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:14.218 -0400", hash_original_method = "7515FB19ACE3C47DEBBD3E8357F6915C", hash_generated_method = "5C8F8A124155E0144E9736D3C97CF303")
-        @DSModeled(DSC.SAFE)
-         void setPrecision(int precise) {
-            dsTaint.addTaint(precise);
-            // ---------- Original Method ----------
-            //this.precision = precise;
-        }
+    	@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:14.217 -0400", hash_original_method = "27CE41687BF54420F4C00D2CFB6A73FA", hash_generated_method = "AA389E7480E2C05236BE02E53CA95B55")
+    	@DSModeled(DSC.SAFE)
+    	void setArgIndex(int index) {
+    		dsTaint.addTaint(index);
+    		// ---------- Original Method ----------
+    		//argIndex = index;
+    	}
 
-        
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:14.218 -0400", hash_original_method = "837A02C50E03265F058B23775F6F6197", hash_generated_method = "71890F022D3F2CEFB98EC9541081A9B3")
-        //DSFIXME:  CODE0002: Requires DSC value to be set
-         String getStrFlags() {
-            {
-                Object var338878CEE6E0CE344C967D45DDB8CEDC_934209378 = (strFlags.toString());
-            } //End flattened ternary
-            return dsTaint.getTaintString();
-            // ---------- Original Method ----------
-            //return (strFlags != null) ? strFlags.toString() : "";
-        }
 
-        
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:14.218 -0400", hash_original_method = "E6ACD7E32E6ABC5AE16C357DB8116DB3", hash_generated_method = "76DDD153823966FEBA9786D5FB2C869E")
-        @DSModeled(DSC.SAFE)
-         boolean setFlag(int ch) {
-            dsTaint.addTaint(ch);
-            boolean dupe;
-            dupe = false;
-            //Begin case ',' 
-            dupe = flagComma;
-            //End case ',' 
-            //Begin case ',' 
-            flagComma = true;
-            //End case ',' 
-            //Begin case '-' 
-            dupe = flagMinus;
-            //End case '-' 
-            //Begin case '-' 
-            flagMinus = true;
-            //End case '-' 
-            //Begin case '(' 
-            dupe = flagParenthesis;
-            //End case '(' 
-            //Begin case '(' 
-            flagParenthesis = true;
-            //End case '(' 
-            //Begin case '+' 
-            dupe = flagPlus;
-            //End case '+' 
-            //Begin case '+' 
-            flagPlus = true;
-            //End case '+' 
-            //Begin case '#' 
-            dupe = flagSharp;
-            //End case '#' 
-            //Begin case '#' 
-            flagSharp = true;
-            //End case '#' 
-            //Begin case ' ' 
-            dupe = flagSpace;
-            //End case ' ' 
-            //Begin case ' ' 
-            flagSpace = true;
-            //End case ' ' 
-            //Begin case '0' 
-            dupe = flagZero;
-            //End case '0' 
-            //Begin case '0' 
-            flagZero = true;
-            //End case '0' 
-            {
-                throw new DuplicateFormatFlagsException(String.valueOf(ch));
-            } //End block
-            {
-                strFlags = new StringBuilder(7);
-            } //End block
-            strFlags.append((char) ch);
-            return dsTaint.getTaintBoolean();
-            // ---------- Original Method ----------
-            // Original Method Too Long, Refer to Original Implementation
-        }
+    	@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:14.217 -0400", hash_original_method = "40140C97EC91863535630C305615FEC1", hash_generated_method = "E6D1BC267AFE1C67940172986DD38627")
+    	@DSModeled(DSC.SAFE)
+    	int getWidth() {
+    		return dsTaint.getTaintInt();
+    		// ---------- Original Method ----------
+    		//return width;
+    	}
 
-        
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:14.218 -0400", hash_original_method = "563B5213711441DEFA9BB3355CD61032", hash_generated_method = "BC796BAADE8386ED4AEC0351AEC8613B")
-        @DSModeled(DSC.SAFE)
-         char getConversionType() {
-            //DSFIXME:  CODE0009: Possible callback target function detected
-            return dsTaint.getTaintChar();
-            // ---------- Original Method ----------
-            //return conversionType;
-        }
 
-        
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:14.218 -0400", hash_original_method = "6C3279116A999B7A879305F448E4C7E6", hash_generated_method = "6D1281F217DD6D271F441AB4433E0AB6")
-        @DSModeled(DSC.SAFE)
-         void setConversionType(char c) {
-            //DSFIXME:  CODE0009: Possible callback target function detected
-            dsTaint.addTaint(c);
-            // ---------- Original Method ----------
-            //conversionType = c;
-        }
+    	@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:14.218 -0400", hash_original_method = "5C954D9C93DF99E2E990960A3CC1749D", hash_generated_method = "103F73E3A4FAA171F9D02BE22BBE2FF6")
+    	@DSModeled(DSC.SAFE)
+    	void setWidth(int width) {
+    		dsTaint.addTaint(width);
+    		// ---------- Original Method ----------
+    		//this.width = width;
+    	}
 
-        
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:14.218 -0400", hash_original_method = "EE45DA1AFAF958B13872135C146745E9", hash_generated_method = "9FDD5F47D8C9FC7962FC6D41E7E6AFCF")
-        @DSModeled(DSC.SAFE)
-         char getDateSuffix() {
-            return dsTaint.getTaintChar();
-            // ---------- Original Method ----------
-            //return dateSuffix;
-        }
 
-        
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:14.218 -0400", hash_original_method = "6F4F20E9A23952874C5B1A6A80E321B4", hash_generated_method = "D06D24537AC4691270FBFF6B1BB57D7A")
-        @DSModeled(DSC.SAFE)
-         void setDateSuffix(char c) {
-            dsTaint.addTaint(c);
-            // ---------- Original Method ----------
-            //dateSuffix = c;
-        }
+    	@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:14.218 -0400", hash_original_method = "71BCDCF9E73C85D95AB18BEF6635FA18", hash_generated_method = "88B0946477EC80125F5C2950B9A78448")
+    	@DSModeled(DSC.SAFE)
+    	int getPrecision() {
+    		return dsTaint.getTaintInt();
+    		// ---------- Original Method ----------
+    		//return precision;
+    	}
 
-        
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:14.218 -0400", hash_original_method = "67F4DE623207C5AE23B919ACAD45AA0B", hash_generated_method = "3E5885A97F34D30BBF40D769408E755A")
-        @DSModeled(DSC.SAFE)
-         boolean requireArgument() {
-            return dsTaint.getTaintBoolean();
-            // ---------- Original Method ----------
-            //return conversionType != '%' && conversionType != 'n';
-        }
 
-        
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:14.219 -0400", hash_original_method = "34D9D8688BA6BF211700F1E1A866C731", hash_generated_method = "B793AA36BB0325790CF47510AE98AE7B")
-        @DSModeled(DSC.SAFE)
-         void checkFlags(Object arg) {
-            dsTaint.addTaint(arg.dsTaint);
-            boolean allowComma;
-            allowComma = false;
-            boolean allowMinus;
-            allowMinus = true;
-            boolean allowParenthesis;
-            allowParenthesis = false;
-            boolean allowPlus;
-            allowPlus = false;
-            boolean allowSharp;
-            allowSharp = false;
-            boolean allowSpace;
-            allowSpace = false;
-            boolean allowZero;
-            allowZero = false;
-            boolean allowPrecision;
-            allowPrecision = true;
-            boolean allowWidth;
-            allowWidth = true;
-            boolean allowArgument;
-            allowArgument = true;
-            //Begin case 'c' 'C' 't' 'T' 
-            allowPrecision = false;
-            //End case 'c' 'C' 't' 'T' 
-            //Begin case 's' 'S' 
-            {
-                allowSharp = true;
-            } //End block
-            //End case 's' 'S' 
-            //Begin case 'g' 'G' 
-            allowComma = allowParenthesis = allowPlus = allowSpace = allowZero = true;
-            //End case 'g' 'G' 
-            //Begin case 'f' 
-            allowComma = allowParenthesis = allowPlus = allowSharp = allowSpace = allowZero = true;
-            //End case 'f' 
-            //Begin case 'e' 'E' 
-            allowParenthesis = allowPlus = allowSharp = allowSpace = allowZero = true;
-            //End case 'e' 'E' 
-            //Begin case 'a' 'A' 
-            allowPlus = allowSharp = allowSpace = allowZero = true;
-            //End case 'a' 'A' 
-            //Begin case 'd' 
-            allowComma = allowParenthesis = allowPlus = allowSpace = allowZero = true;
-            //End case 'd' 
-            //Begin case 'd' 
-            allowPrecision = false;
-            //End case 'd' 
-            //Begin case 'o' 'x' 'X' 
-            allowSharp = allowZero = true;
-            //End case 'o' 'x' 'X' 
-            //Begin case 'o' 'x' 'X' 
-            {
-                allowParenthesis = allowPlus = allowSpace = true;
-            } //End block
-            //End case 'o' 'x' 'X' 
-            //Begin case 'o' 'x' 'X' 
-            allowPrecision = false;
-            //End case 'o' 'x' 'X' 
-            //Begin case 'n' 
-            allowMinus = false;
-            //End case 'n' 
-            //Begin case 'n' 
-            allowArgument = allowPrecision = allowWidth = false;
-            //End case 'n' 
-            //Begin case '%' 
-            allowArgument = false;
-            //End case '%' 
-            //Begin case '%' 
-            allowPrecision = false;
-            //End case '%' 
-            //Begin case default 
-            throw unknownFormatConversionException();
-            //End case default 
-            String mismatch;
-            mismatch = null;
-            {
-                mismatch = ",";
-            } //End block
-            {
-                mismatch = "-";
-            } //End block
-            {
-                mismatch = "(";
-            } //End block
-            {
-                mismatch = "+";
-            } //End block
-            {
-                mismatch = "#";
-            } //End block
-            {
-                mismatch = " ";
-            } //End block
-            {
-                mismatch = "0";
-            } //End block
-            {
-                {
-                    throw new IllegalFormatFlagsException(mismatch);
-                } //End block
-                {
-                    throw new FormatFlagsConversionMismatchException(mismatch, conversionType);
-                } //End block
-            } //End block
-            {
-                throw new MissingFormatWidthException("-" + conversionType);
-            } //End block
-            {
-                throw new IllegalFormatFlagsException("%" + conversionType +
-                        " doesn't take an argument");
-            } //End block
-            {
-                throw new IllegalFormatPrecisionException(precision);
-            } //End block
-            {
-                throw new IllegalFormatWidthException(width);
-            } //End block
-            {
-                throw new IllegalFormatFlagsException("the '+' and ' ' flags are incompatible");
-            } //End block
-            {
-                throw new IllegalFormatFlagsException("the '-' and '0' flags are incompatible");
-            } //End block
-            // ---------- Original Method ----------
-            // Original Method Too Long, Refer to Original Implementation
-        }
+    	@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:14.218 -0400", hash_original_method = "7515FB19ACE3C47DEBBD3E8357F6915C", hash_generated_method = "5C8F8A124155E0144E9736D3C97CF303")
+    	@DSModeled(DSC.SAFE)
+    	void setPrecision(int precise) {
+    		dsTaint.addTaint(precise);
+    		// ---------- Original Method ----------
+    		//this.precision = precise;
+    	}
 
-        
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:14.219 -0400", hash_original_method = "ECFEC3AA46FEEC6BDD34290E5303C5C1", hash_generated_method = "241C1A6B1C2DDB79D2EC34F5E2A7D95E")
-        @DSModeled(DSC.SAFE)
-        public UnknownFormatConversionException unknownFormatConversionException() {
-            //DSFIXME:  CODE0009: Possible callback target function detected
-            {
-                throw new UnknownFormatConversionException(String.format("%c%c",
-                        conversionType, dateSuffix));
-            } //End block
-            throw new UnknownFormatConversionException(String.valueOf(conversionType));
-            return (UnknownFormatConversionException)dsTaint.getTaint();
-            // ---------- Original Method ----------
-            //if (conversionType == 't' || conversionType == 'T') {
-                //throw new UnknownFormatConversionException(String.format("%c%c",
-                        //conversionType, dateSuffix));
-            //}
-            //throw new UnknownFormatConversionException(String.valueOf(conversionType));
-        }
 
-        
+    	@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:14.218 -0400", hash_original_method = "837A02C50E03265F058B23775F6F6197", hash_generated_method = "71890F022D3F2CEFB98EC9541081A9B3")
+    	//DSFIXME:  CODE0002: Requires DSC value to be set
+    	String getStrFlags() {
+    		{
+    			Object var338878CEE6E0CE344C967D45DDB8CEDC_934209378 = (strFlags.toString());
+    		} //End flattened ternary
+    		return dsTaint.getTaintString();
+    		// ---------- Original Method ----------
+    		//return (strFlags != null) ? strFlags.toString() : "";
+    	}
+
+
+    	@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:14.218 -0400", hash_original_method = "E6ACD7E32E6ABC5AE16C357DB8116DB3", hash_generated_method = "76DDD153823966FEBA9786D5FB2C869E")
+    	@DSModeled(DSC.SAFE)
+    	boolean setFlag(int ch) {
+    		dsTaint.addTaint(ch);
+    		boolean dupe;
+    		dupe = false;
+    		//Begin case ',' 
+    		dupe = flagComma;
+    		//End case ',' 
+    		//Begin case ',' 
+    		flagComma = true;
+    		//End case ',' 
+    		//Begin case '-' 
+    		dupe = flagMinus;
+    		//End case '-' 
+    		//Begin case '-' 
+    		flagMinus = true;
+    		//End case '-' 
+    		//Begin case '(' 
+    		dupe = flagParenthesis;
+    		//End case '(' 
+    		//Begin case '(' 
+    		flagParenthesis = true;
+    		//End case '(' 
+    		//Begin case '+' 
+    		dupe = flagPlus;
+    		//End case '+' 
+    		//Begin case '+' 
+    		flagPlus = true;
+    		//End case '+' 
+    		//Begin case '#' 
+    		dupe = flagSharp;
+    		//End case '#' 
+    		//Begin case '#' 
+    		flagSharp = true;
+    		//End case '#' 
+    		//Begin case ' ' 
+    		dupe = flagSpace;
+    		//End case ' ' 
+    		//Begin case ' ' 
+    		flagSpace = true;
+    		//End case ' ' 
+    		//Begin case '0' 
+    		dupe = flagZero;
+    		//End case '0' 
+    		//Begin case '0' 
+    		flagZero = true;
+    		//End case '0' 
+    		if (DroidSafeAndroidRuntime.control) {
+    			throw new DuplicateFormatFlagsException(String.valueOf(ch));
+    		} //End block
+    		{
+    			strFlags = new StringBuilder(7);
+    		} //End block
+    		strFlags.append((char) ch);
+    		return dsTaint.getTaintBoolean();
+    		// ---------- Original Method ----------
+    		// Original Method Too Long, Refer to Original Implementation
+    	}
+
+
+    	@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:14.218 -0400", hash_original_method = "563B5213711441DEFA9BB3355CD61032", hash_generated_method = "BC796BAADE8386ED4AEC0351AEC8613B")
+    	@DSModeled(DSC.SAFE)
+    	char getConversionType() {
+    		//DSFIXME:  CODE0009: Possible callback target function detected
+    		return dsTaint.getTaintChar();
+    		// ---------- Original Method ----------
+    		//return conversionType;
+    	}
+
+
+    	@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:14.218 -0400", hash_original_method = "6C3279116A999B7A879305F448E4C7E6", hash_generated_method = "6D1281F217DD6D271F441AB4433E0AB6")
+    	@DSModeled(DSC.SAFE)
+    	void setConversionType(char c) {
+    		//DSFIXME:  CODE0009: Possible callback target function detected
+    		dsTaint.addTaint(c);
+    		// ---------- Original Method ----------
+    		//conversionType = c;
+    	}
+
+
+    	@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:14.218 -0400", hash_original_method = "EE45DA1AFAF958B13872135C146745E9", hash_generated_method = "9FDD5F47D8C9FC7962FC6D41E7E6AFCF")
+    	@DSModeled(DSC.SAFE)
+    	char getDateSuffix() {
+    		return dsTaint.getTaintChar();
+    		// ---------- Original Method ----------
+    		//return dateSuffix;
+    	}
+
+
+    	@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:14.218 -0400", hash_original_method = "6F4F20E9A23952874C5B1A6A80E321B4", hash_generated_method = "D06D24537AC4691270FBFF6B1BB57D7A")
+    	@DSModeled(DSC.SAFE)
+    	void setDateSuffix(char c) {
+    		dsTaint.addTaint(c);
+    		// ---------- Original Method ----------
+    		//dateSuffix = c;
+    	}
+
+
+    	@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:14.218 -0400", hash_original_method = "67F4DE623207C5AE23B919ACAD45AA0B", hash_generated_method = "3E5885A97F34D30BBF40D769408E755A")
+    	@DSModeled(DSC.SAFE)
+    	boolean requireArgument() {
+    		return dsTaint.getTaintBoolean();
+    		// ---------- Original Method ----------
+    		//return conversionType != '%' && conversionType != 'n';
+    	}
+
+
+    	@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:14.219 -0400", hash_original_method = "34D9D8688BA6BF211700F1E1A866C731", hash_generated_method = "B793AA36BB0325790CF47510AE98AE7B")
+    	@DSModeled(DSC.SAFE)
+    	void checkFlags(Object arg) {
+    		dsTaint.addTaint(arg.dsTaint);
+    		boolean allowComma;
+    		allowComma = false;
+    		boolean allowMinus;
+    		allowMinus = true;
+    		boolean allowParenthesis;
+    		allowParenthesis = false;
+    		boolean allowPlus;
+    		allowPlus = false;
+    		boolean allowSharp;
+    		allowSharp = false;
+    		boolean allowSpace;
+    		allowSpace = false;
+    		boolean allowZero;
+    		allowZero = false;
+    		boolean allowPrecision;
+    		allowPrecision = true;
+    		boolean allowWidth;
+    		allowWidth = true;
+    		boolean allowArgument;
+    		allowArgument = true;
+    		//Begin case 'c' 'C' 't' 'T' 
+    		allowPrecision = false;
+    		//End case 'c' 'C' 't' 'T' 
+    		//Begin case 's' 'S' 
+    		{
+    			allowSharp = true;
+    		} //End block
+    		//End case 's' 'S' 
+    		//Begin case 'g' 'G' 
+    		allowComma = allowParenthesis = allowPlus = allowSpace = allowZero = true;
+    		//End case 'g' 'G' 
+    		//Begin case 'f' 
+    		allowComma = allowParenthesis = allowPlus = allowSharp = allowSpace = allowZero = true;
+    		//End case 'f' 
+    		//Begin case 'e' 'E' 
+    		allowParenthesis = allowPlus = allowSharp = allowSpace = allowZero = true;
+    		//End case 'e' 'E' 
+    		//Begin case 'a' 'A' 
+    		allowPlus = allowSharp = allowSpace = allowZero = true;
+    		//End case 'a' 'A' 
+    		//Begin case 'd' 
+    		allowComma = allowParenthesis = allowPlus = allowSpace = allowZero = true;
+    		//End case 'd' 
+    		//Begin case 'd' 
+    		allowPrecision = false;
+    		//End case 'd' 
+    		//Begin case 'o' 'x' 'X' 
+    		allowSharp = allowZero = true;
+    		//End case 'o' 'x' 'X' 
+    		//Begin case 'o' 'x' 'X' 
+    		{
+    			allowParenthesis = allowPlus = allowSpace = true;
+    		} //End block
+    		//End case 'o' 'x' 'X' 
+    		//Begin case 'o' 'x' 'X' 
+    		allowPrecision = false;
+    		//End case 'o' 'x' 'X' 
+    		//Begin case 'n' 
+    		allowMinus = false;
+    		//End case 'n' 
+    		//Begin case 'n' 
+    		allowArgument = allowPrecision = allowWidth = false;
+    		//End case 'n' 
+    		//Begin case '%' 
+    		allowArgument = false;
+    		//End case '%' 
+    		//Begin case '%' 
+    		allowPrecision = false;
+    		//End case '%' 
+    		//Begin case default 
+    		if (DroidSafeAndroidRuntime.control) {
+    			throw unknownFormatConversionException();
+    		}
+    		//End case default 
+    		String mismatch;
+    		mismatch = null;
+    		{
+    			mismatch = ",";
+    		} //End block
+    		{
+    			mismatch = "-";
+    		} //End block
+    		{
+    			mismatch = "(";
+    		} //End block
+    		{
+    			mismatch = "+";
+    		} //End block
+    		{
+    			mismatch = "#";
+    		} //End block
+    		{
+    			mismatch = " ";
+    		} //End block
+    		{
+    			mismatch = "0";
+    		} //End block
+    		{
+    			if (DroidSafeAndroidRuntime.control) {
+    				throw new IllegalFormatFlagsException(mismatch);
+    			} //End block
+    			if (DroidSafeAndroidRuntime.control) {
+    				throw new FormatFlagsConversionMismatchException(mismatch, conversionType);
+    			} //End block
+    		} //End block
+    		if (DroidSafeAndroidRuntime.control) {
+    			throw new MissingFormatWidthException("-" + conversionType);
+    		} //End block
+    		if (DroidSafeAndroidRuntime.control) {
+    			throw new IllegalFormatFlagsException("%" + conversionType +
+    					" doesn't take an argument");
+    		} //End block
+    		if (DroidSafeAndroidRuntime.control) {
+    			throw new IllegalFormatPrecisionException(precision);
+    		} //End block
+    		if (DroidSafeAndroidRuntime.control) {
+    			throw new IllegalFormatWidthException(width);
+    		} //End block
+    		if (DroidSafeAndroidRuntime.control) {
+    			throw new IllegalFormatFlagsException("the '+' and ' ' flags are incompatible");
+    		} //End block
+    		if (DroidSafeAndroidRuntime.control) {
+    			throw new IllegalFormatFlagsException("the '-' and '0' flags are incompatible");
+    		} //End block
+    		// ---------- Original Method ----------
+    		// Original Method Too Long, Refer to Original Implementation
+    	}
+
+
+    	@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:14.219 -0400", hash_original_method = "ECFEC3AA46FEEC6BDD34290E5303C5C1", hash_generated_method = "241C1A6B1C2DDB79D2EC34F5E2A7D95E")
+    	@DSModeled(DSC.SAFE)
+    	public UnknownFormatConversionException unknownFormatConversionException() {
+    		//DSFIXME:  CODE0009: Possible callback target function detected
+    		if (DroidSafeAndroidRuntime.control) {
+    			throw new UnknownFormatConversionException(String.format("%c%c",
+    					conversionType, dateSuffix));
+    		} //End block
+    		if (DroidSafeAndroidRuntime.control) {
+    			throw new UnknownFormatConversionException(String.valueOf(conversionType));
+    		}
+    		return (UnknownFormatConversionException)dsTaint.getTaint();
+    		// ---------- Original Method ----------
+    		//if (conversionType == 't' || conversionType == 'T') {
+    		//throw new UnknownFormatConversionException(String.format("%c%c",
+    		//conversionType, dateSuffix));
+    		//}
+    		//throw new UnknownFormatConversionException(String.valueOf(conversionType));
+    	}
+
+
     }
 
 
@@ -2328,7 +2339,7 @@ public final class Formatter implements Closeable, Flushable {
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:14.219 -0400", hash_original_method = "F520742ED92EBACDB47FBF0D0B1F08F4", hash_generated_method = "F2E24942632BF81F316E14222F7A49B0")
         //DSFIXME:  CODE0002: Requires DSC value to be set
         private char advance() {
-            {
+        	if (DroidSafeAndroidRuntime.control) {
                 throw unknownFormatConversionException();
             } //End block
             char var7701A7CCE85ED6AA9880F4BA6BB09ECE_1037182361 = (format.charAt(i++));
@@ -2344,7 +2355,9 @@ public final class Formatter implements Closeable, Flushable {
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:14.219 -0400", hash_original_method = "DFAEBB829CC6A7AFE465DA1B9A0C1D5A", hash_generated_method = "36170992EEDD3C766BCD86E2F4D9F340")
         @DSModeled(DSC.SAFE)
         private UnknownFormatConversionException unknownFormatConversionException() {
-            throw new UnknownFormatConversionException(getFormatSpecifierText());
+        	if (DroidSafeAndroidRuntime.control) {
+        		throw new UnknownFormatConversionException(getFormatSpecifierText());
+        	}
             return (UnknownFormatConversionException)dsTaint.getTaint();
             // ---------- Original Method ----------
             //throw new UnknownFormatConversionException(getFormatSpecifierText());
@@ -2368,7 +2381,7 @@ public final class Formatter implements Closeable, Flushable {
                         boolean varAF443300A994E05CBD4A93B1F0A6046B_1972169351 = (peek() == '$');
                         {
                             advance();
-                            {
+                            if (DroidSafeAndroidRuntime.control) {
                                 throw new MissingFormatArgumentException(getFormatSpecifierText());
                             } //End block
                             token.setArgIndex(Math.max(0, number - 1));
@@ -2452,7 +2465,7 @@ public final class Formatter implements Closeable, Flushable {
                     token.setPrecision(nextInt());
                     FormatToken var8B11D054AAC67E20E5AD77C09C6D9280_527860197 = (parseConversionType(token));
                 } //End block
-                {
+                if (DroidSafeAndroidRuntime.control) {
                     throw unknownFormatConversionException();
                 } //End block
             } //End collapsed parenthetic
