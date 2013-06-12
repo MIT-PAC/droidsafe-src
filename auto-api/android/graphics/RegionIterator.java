@@ -1,11 +1,12 @@
 package android.graphics;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-
+import droidsafe.annotations.DSC;
+import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.DSModeled;
+import droidsafe.helpers.DSUtils;
+import droidsafe.runtime.DroidSafeAndroidRuntime;
 // import Iterator to deal with enhanced for loop translation
-import java.util.Iterator;
 
 
 public class RegionIterator {
@@ -25,6 +26,7 @@ public class RegionIterator {
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public final boolean next(Rect r) {
         dsTaint.addTaint(r.dsTaint);
+        if (DroidSafeAndroidRuntime.control)
         {
             throw new NullPointerException("The Rect must be provided");
         } //End block
@@ -50,6 +52,7 @@ public class RegionIterator {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:01.466 -0400", hash_original_method = "374F0FDA6E44206EA6BEC38C6D5993CD", hash_generated_method = "4C03CFC3661CF9D305F0CF1DAB1671CD")
     private static int nativeConstructor(int native_region) {
         //DSFIXME:  CODE0010: Native static method requires manual modeling
+    	return DSUtils.UNKNOWN_INT;
     }
 
     
@@ -62,6 +65,7 @@ public class RegionIterator {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:01.466 -0400", hash_original_method = "D5EE9EFAB7181DFECE80A89AC7AC9705", hash_generated_method = "65638F52B687C2C1D1D4781F720C480A")
     private static boolean nativeNext(int native_iter, Rect r) {
         //DSFIXME:  CODE0010: Native static method requires manual modeling
+    	return DSUtils.UNKNOWN_BOOLEAN;
     }
 
     
