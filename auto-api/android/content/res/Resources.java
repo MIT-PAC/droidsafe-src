@@ -1,34 +1,37 @@
 package android.content.res;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
+import java.io.IOException;
+import java.io.InputStream;
+import java.lang.ref.WeakReference;
+import java.util.Locale;
 
-// import Iterator to deal with enhanced for loop translation
-import java.util.Iterator;
+import libcore.icu.NativePluralRules;
 
-import com.android.internal.util.XmlUtils;
 import org.xmlpull.v1.XmlPullParser;
 import org.xmlpull.v1.XmlPullParserException;
+
 import android.content.pm.ActivityInfo;
 import android.graphics.Movie;
-import android.graphics.drawable.Drawable;
 import android.graphics.drawable.ColorDrawable;
+import android.graphics.drawable.Drawable;
 import android.graphics.drawable.Drawable.ConstantState;
 import android.os.Build;
 import android.os.Bundle;
 import android.util.AttributeSet;
 import android.util.DisplayMetrics;
 import android.util.Log;
-import android.util.Slog;
+import android.util.LongSparseArray;
 import android.util.SparseArray;
 import android.util.TypedValue;
-import android.util.LongSparseArray;
-import java.io.IOException;
-import java.io.InputStream;
-import java.lang.ref.WeakReference;
-import java.util.Locale;
-import libcore.icu.NativePluralRules;
+
+import com.android.internal.util.XmlUtils;
+
+import droidsafe.annotations.DSC;
+import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.DSModeled;
+import droidsafe.runtime.DroidSafeAndroidRuntime;
+// import Iterator to deal with enhanced for loop translation
 
 public class Resources {
     static final String TAG = "Resources";
@@ -116,6 +119,8 @@ public class Resources {
         mMetrics.setToDefaults();
         updateConfiguration(config, metrics);
         assets.ensureStringBlocks();
+        
+        mAssets = assets;
         // ---------- Original Method ----------
         //mAssets = assets;
         //mMetrics.setToDefaults();
@@ -195,7 +200,7 @@ public class Resources {
         dsTaint.addTaint(id);
         CharSequence res;
         res = mAssets.getResourceText(id);
-        throw new NotFoundException("String resource ID #0x"
+        if (DroidSafeAndroidRuntime.control)throw new NotFoundException("String resource ID #0x"
                                     + Integer.toHexString(id));
         return dsTaint.getTaintString();
         // ---------- Original Method ----------
@@ -219,7 +224,7 @@ public class Resources {
         res = mAssets.getResourceBagText(id,
                 attrForQuantityCode(rule.quantityForInt(quantity)));
         res = mAssets.getResourceBagText(id, ID_OTHER);
-        throw new NotFoundException("Plural resource ID #0x" + Integer.toHexString(id)
+        if (DroidSafeAndroidRuntime.control)throw new NotFoundException("Plural resource ID #0x" + Integer.toHexString(id)
                 + " quantity=" + quantity
                 + " item=" + stringForQuantityCode(rule.quantityForInt(quantity)));
         return dsTaint.getTaintString();
@@ -294,7 +299,7 @@ public class Resources {
         {
             String varC80A1DDFE3E52DD547813302DB81FF7B_349082954 = (res.toString());
         } //End block
-        throw new NotFoundException("String resource ID #0x"
+        if (DroidSafeAndroidRuntime.control)throw new NotFoundException("String resource ID #0x"
                                     + Integer.toHexString(id));
         return dsTaint.getTaintString();
         // ---------- Original Method ----------
@@ -311,7 +316,7 @@ public class Resources {
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public String getString(int id, Object... formatArgs) throws NotFoundException {
         dsTaint.addTaint(id);
-        dsTaint.addTaint(formatArgs.dsTaint);
+        dsTaint.addTaint(formatArgs[0].dsTaint);
         String raw;
         raw = getString(id);
         String var86E36E1F578ADCC1CCCFE04E2F22FF68_1436858325 = (String.format(mConfiguration.locale, raw, formatArgs));
@@ -327,7 +332,7 @@ public class Resources {
     public String getQuantityString(int id, int quantity, Object... formatArgs) throws NotFoundException {
         dsTaint.addTaint(id);
         dsTaint.addTaint(quantity);
-        dsTaint.addTaint(formatArgs.dsTaint);
+        dsTaint.addTaint(formatArgs[0].dsTaint);
         String raw;
         raw = getQuantityText(id, quantity).toString();
         String var86E36E1F578ADCC1CCCFE04E2F22FF68_1108620769 = (String.format(mConfiguration.locale, raw, formatArgs));
@@ -371,7 +376,7 @@ public class Resources {
         dsTaint.addTaint(id);
         CharSequence[] res;
         res = mAssets.getResourceTextArray(id);
-        throw new NotFoundException("Text array resource ID #0x"
+        if (DroidSafeAndroidRuntime.control)throw new NotFoundException("Text array resource ID #0x"
                                     + Integer.toHexString(id));
         CharSequence[] retVal = new CharSequence[1];
         retVal[0] = dsTaint.getTaintString();
@@ -392,7 +397,7 @@ public class Resources {
         dsTaint.addTaint(id);
         String[] res;
         res = mAssets.getResourceStringArray(id);
-        throw new NotFoundException("String array resource ID #0x"
+        if (DroidSafeAndroidRuntime.control)throw new NotFoundException("String array resource ID #0x"
                                     + Integer.toHexString(id));
         String[] retVal = new String[1];
         retVal[0] = dsTaint.getTaintString();
@@ -413,7 +418,7 @@ public class Resources {
         dsTaint.addTaint(id);
         int[] res;
         res = mAssets.getArrayIntResource(id);
-        throw new NotFoundException("Int array resource ID #0x"
+        if (DroidSafeAndroidRuntime.control)throw new NotFoundException("Int array resource ID #0x"
                                     + Integer.toHexString(id));
         int[] retVal = new int[1];
         retVal[0] = dsTaint.getTaintInt();
@@ -435,7 +440,7 @@ public class Resources {
         int len;
         len = mAssets.getArraySize(id);
         {
-            throw new NotFoundException("Array resource ID #0x"
+        	if (DroidSafeAndroidRuntime.control)throw new NotFoundException("Array resource ID #0x"
                                         + Integer.toHexString(id));
         } //End block
         TypedArray array;
@@ -467,7 +472,7 @@ public class Resources {
             {
                 float var3D1EF52544C26367510F308FBFEC9AF2_305092230 = (TypedValue.complexToDimension(value.data, mMetrics));
             } //End block
-            throw new NotFoundException(
+            if (DroidSafeAndroidRuntime.control)throw new NotFoundException(
                     "Resource ID #0x" + Integer.toHexString(id) + " type #0x"
                     + Integer.toHexString(value.type) + " is not valid");
         } //End block
@@ -499,7 +504,7 @@ public class Resources {
                 int varC10E6C7CE4C18B2E8240388CE0B9D4D5_2050150612 = (TypedValue.complexToDimensionPixelOffset(
                         value.data, mMetrics));
             } //End block
-            throw new NotFoundException(
+            if (DroidSafeAndroidRuntime.control)throw new NotFoundException(
                     "Resource ID #0x" + Integer.toHexString(id) + " type #0x"
                     + Integer.toHexString(value.type) + " is not valid");
         } //End block
@@ -532,7 +537,7 @@ public class Resources {
                 int var618929EFC759B1CAECEF2B8755B3C586_2035364585 = (TypedValue.complexToDimensionPixelSize(
                         value.data, mMetrics));
             } //End block
-            throw new NotFoundException(
+            if (DroidSafeAndroidRuntime.control)throw new NotFoundException(
                     "Resource ID #0x" + Integer.toHexString(id) + " type #0x"
                     + Integer.toHexString(value.type) + " is not valid");
         } //End block
@@ -565,7 +570,7 @@ public class Resources {
             {
                 float var32E1DB9737EBC4A230505D9C45C6217C_680733571 = (TypedValue.complexToFraction(value.data, base, pbase));
             } //End block
-            throw new NotFoundException(
+            if (DroidSafeAndroidRuntime.control)throw new NotFoundException(
                     "Resource ID #0x" + Integer.toHexString(id) + " type #0x"
                     + Integer.toHexString(value.type) + " is not valid");
         } //End block
@@ -680,7 +685,7 @@ public class Resources {
                 csl = loadColorStateList(mTmpValue, id);
                 int var0BE21B049075D2C5C0B5387A1C4FC3D4_1564529013 = (csl.getDefaultColor());
             } //End block
-            throw new NotFoundException(
+            if (DroidSafeAndroidRuntime.control)throw new NotFoundException(
                 "Resource ID #0x" + Integer.toHexString(id) + " type #0x"
                 + Integer.toHexString(value.type) + " is not valid");
         } //End block
@@ -731,7 +736,7 @@ public class Resources {
             TypedValue value;
             value = mTmpValue;
             getValue(id, value, true);
-            throw new NotFoundException(
+            if (DroidSafeAndroidRuntime.control)throw new NotFoundException(
                 "Resource ID #0x" + Integer.toHexString(id) + " type #0x"
                 + Integer.toHexString(value.type) + " is not valid");
         } //End block
@@ -759,7 +764,7 @@ public class Resources {
             TypedValue value;
             value = mTmpValue;
             getValue(id, value, true);
-            throw new NotFoundException(
+            if (DroidSafeAndroidRuntime.control)throw new NotFoundException(
                 "Resource ID #0x" + Integer.toHexString(id) + " type #0x"
                 + Integer.toHexString(value.type) + " is not valid");
         } //End block
@@ -1232,7 +1237,7 @@ public class Resources {
         dsTaint.addTaint(resid);
         String str;
         str = mAssets.getResourceName(resid);
-        throw new NotFoundException("Unable to find resource ID #0x"
+        if (DroidSafeAndroidRuntime.control)throw new NotFoundException("Unable to find resource ID #0x"
                 + Integer.toHexString(resid));
         return dsTaint.getTaintString();
         // ---------- Original Method ----------
@@ -1249,7 +1254,7 @@ public class Resources {
         dsTaint.addTaint(resid);
         String str;
         str = mAssets.getResourcePackageName(resid);
-        throw new NotFoundException("Unable to find resource ID #0x"
+        if (DroidSafeAndroidRuntime.control)throw new NotFoundException("Unable to find resource ID #0x"
                 + Integer.toHexString(resid));
         return dsTaint.getTaintString();
         // ---------- Original Method ----------
@@ -1266,7 +1271,7 @@ public class Resources {
         dsTaint.addTaint(resid);
         String str;
         str = mAssets.getResourceTypeName(resid);
-        throw new NotFoundException("Unable to find resource ID #0x"
+        if (DroidSafeAndroidRuntime.control)throw new NotFoundException("Unable to find resource ID #0x"
                 + Integer.toHexString(resid));
         return dsTaint.getTaintString();
         // ---------- Original Method ----------
@@ -1283,7 +1288,7 @@ public class Resources {
         dsTaint.addTaint(resid);
         String str;
         str = mAssets.getResourceEntryName(resid);
-        throw new NotFoundException("Unable to find resource ID #0x"
+        if (DroidSafeAndroidRuntime.control)throw new NotFoundException("Unable to find resource ID #0x"
                 + Integer.toHexString(resid));
         return dsTaint.getTaintString();
         // ---------- Original Method ----------
@@ -1354,7 +1359,7 @@ public class Resources {
                 com.android.internal.R.styleable.Extra_name);
         {
             sa.recycle();
-            throw new XmlPullParserException("<" + tagName
+            if (DroidSafeAndroidRuntime.control)throw new XmlPullParserException("<" + tagName
                     + "> requires an android:name attribute at "
                     + attrs.getPositionDescription());
         } //End block
@@ -1378,14 +1383,14 @@ public class Resources {
             } //End block
             {
                 sa.recycle();
-                throw new XmlPullParserException("<" + tagName
+                if (DroidSafeAndroidRuntime.control)throw new XmlPullParserException("<" + tagName
                         + "> only supports string, integer, float, color, and boolean at "
                         + attrs.getPositionDescription());
             } //End block
         } //End block
         {
             sa.recycle();
-            throw new XmlPullParserException("<" + tagName
+            if (DroidSafeAndroidRuntime.control)throw new XmlPullParserException("<" + tagName
                     + "> requires an android:value or android:resource attribute at "
                     + attrs.getPositionDescription());
         } //End block
@@ -1444,7 +1449,7 @@ public class Resources {
     public final void startPreloading() {
         {
             {
-                throw new IllegalStateException("Resources already preloaded");
+            	if (DroidSafeAndroidRuntime.control)throw new IllegalStateException("Resources already preloaded");
             } //End block
             mPreloaded = true;
             mPreloading = true;
@@ -1508,7 +1513,7 @@ public class Resources {
             } //End block
             {
                 {
-                    throw new NotFoundException(
+                	if (DroidSafeAndroidRuntime.control)throw new NotFoundException(
                             "Resource is not a Drawable (color or path): " + value);
                 } //End block
                 String file;
@@ -1660,7 +1665,7 @@ public class Resources {
         csl = getCachedColorStateList(key);
         csl = mPreloadedColorStateLists.get(key);
         {
-            throw new NotFoundException(
+        	if (DroidSafeAndroidRuntime.control)throw new NotFoundException(
                     "Resource is not a ColorStateList (color or path): " + value);
         } //End block
         String file;
@@ -1687,7 +1692,7 @@ public class Resources {
                 } //End block
             } //End block
             {
-                throw new NotFoundException(
+            	if (DroidSafeAndroidRuntime.control)throw new NotFoundException(
                     "File " + file + " from drawable resource ID #0x"
                     + Integer.toHexString(id) + ": .xml extension required");
             } //End block
@@ -1755,7 +1760,7 @@ public class Resources {
                 XmlResourceParser var8F6806D1C41B0FA6861A827062543D89_1757617520 = (loadXmlResourceParser(value.string.toString(), id,
                         value.assetCookie, type));
             } //End block
-            throw new NotFoundException(
+            if (DroidSafeAndroidRuntime.control)throw new NotFoundException(
                     "Resource ID #0x" + Integer.toHexString(id) + " type #0x"
                     + Integer.toHexString(value.type) + " is not valid");
         } //End block
@@ -1827,7 +1832,7 @@ public class Resources {
                 throw rnf;
             } //End block
         } //End block
-        throw new NotFoundException(
+        if (DroidSafeAndroidRuntime.control)throw new NotFoundException(
                 "File " + file + " from xml type " + type + " resource ID #0x"
                 + Integer.toHexString(id));
         return (XmlResourceParser)dsTaint.getTaint();
