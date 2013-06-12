@@ -2,6 +2,7 @@ package java.text;
 
 // Droidsafe Imports
 import droidsafe.helpers.*;
+import droidsafe.runtime.DroidSafeAndroidRuntime;
 import droidsafe.annotations.*;
 
 // import Iterator to deal with enhanced for loop translation
@@ -217,7 +218,7 @@ public class DecimalFormat extends NumberFormat {
     public AttributedCharacterIterator formatToCharacterIterator(Object object) {
         dsTaint.addTaint(object.dsTaint);
         {
-            throw new NullPointerException();
+        	if (DroidSafeAndroidRuntime.control) throw new NullPointerException();
         } //End block
         AttributedCharacterIterator var409EFD5E94FC498742FA43A0FE748860_801939405 = (dform.formatToCharacterIterator(object));
         return (AttributedCharacterIterator)dsTaint.getTaint();
@@ -235,10 +236,10 @@ public class DecimalFormat extends NumberFormat {
         dsTaint.addTaint(buffer.dsTaint);
         dsTaint.addTaint(position.dsTaint);
         {
-            throw new NullPointerException("buffer == null");
+        	if (DroidSafeAndroidRuntime.control) throw new NullPointerException("buffer == null");
         } //End block
         {
-            throw new NullPointerException("position == null");
+        	if (DroidSafeAndroidRuntime.control) throw new NullPointerException("position == null");
         } //End block
         // ---------- Original Method ----------
         //if (buffer == null) {
@@ -270,7 +271,7 @@ public class DecimalFormat extends NumberFormat {
                 {
                     boolean var2F746E5BABC839274FF6C5CAE9A27612_1688508989 = (!upResult.equals(downResult));
                     {
-                        throw new ArithmeticException("rounding mode UNNECESSARY but rounding required");
+                    	if (DroidSafeAndroidRuntime.control) throw new ArithmeticException("rounding mode UNNECESSARY but rounding required");
                     } //End block
                 } //End collapsed parenthetic
             } //End block
@@ -831,7 +832,7 @@ public class DecimalFormat extends NumberFormat {
 public void setRoundingMode(RoundingMode roundingMode) {
         dsTaint.addTaint(roundingMode.dsTaint);
         {
-            throw new NullPointerException();
+        	if (DroidSafeAndroidRuntime.control) throw new NullPointerException();
         } //End block
         {
             double roundingIncrement;

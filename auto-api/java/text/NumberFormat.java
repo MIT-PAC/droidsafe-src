@@ -2,6 +2,7 @@ package java.text;
 
 // Droidsafe Imports
 import droidsafe.helpers.*;
+import droidsafe.runtime.DroidSafeAndroidRuntime;
 import droidsafe.annotations.*;
 
 // import Iterator to deal with enhanced for loop translation
@@ -137,7 +138,7 @@ public abstract class NumberFormat extends Format {
                 StringBuffer var36381DC4D90EA3D1A5775DE4B0B61A01_1238319569 = (format(dv, buffer, field));
             } //End block
         } //End collapsed parenthetic
-        throw new IllegalArgumentException();
+        if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException();
         return (StringBuffer)dsTaint.getTaint();
         // ---------- Original Method ----------
         //if (object instanceof Byte || object instanceof Short || object instanceof Integer ||
@@ -162,7 +163,7 @@ public abstract class NumberFormat extends Format {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:13.135 -0400", hash_original_method = "B4D372C49661A5E03C88F7CDA081E3AF", hash_generated_method = "8D9708F24702A4AA7DDF5BD73DE445FE")
     @DSModeled(DSC.SAFE)
     public Currency getCurrency() {
-        throw new UnsupportedOperationException();
+    	if (DroidSafeAndroidRuntime.control) throw new UnsupportedOperationException();
         return (Currency)dsTaint.getTaint();
         // ---------- Original Method ----------
         //throw new UnsupportedOperationException();
@@ -316,7 +317,7 @@ public abstract class NumberFormat extends Format {
         {
             boolean varD85785EE01F666E79EC762AC1E448E10_1142453211 = (pos.getIndex() == 0);
             {
-                throw new ParseException("Unparseable number: \"" + string + "\"", pos.getErrorIndex());
+            	if (DroidSafeAndroidRuntime.control) throw new ParseException("Unparseable number: \"" + string + "\"", pos.getErrorIndex());
             } //End block
         } //End collapsed parenthetic
         return (Number)dsTaint.getTaint();
@@ -340,7 +341,7 @@ public abstract class NumberFormat extends Format {
         dsTaint.addTaint(position.dsTaint);
         dsTaint.addTaint(string);
         {
-            throw new NullPointerException("position is null");
+        	if (DroidSafeAndroidRuntime.control) throw new NullPointerException("position is null");
         } //End block
         try 
         {
@@ -510,10 +511,10 @@ public abstract class NumberFormat extends Format {
             } //End block
         } //End collapsed parenthetic
         {
-            throw new InvalidObjectException("min digits greater than max digits");
+        	if (DroidSafeAndroidRuntime.control) throw new InvalidObjectException("min digits greater than max digits");
         } //End block
         {
-            throw new InvalidObjectException("min or max digits negative");
+        	if (DroidSafeAndroidRuntime.control) throw new InvalidObjectException("min or max digits negative");
         } //End block
         // ---------- Original Method ----------
         // Original Method Too Long, Refer to Original Implementation
@@ -523,7 +524,7 @@ public abstract class NumberFormat extends Format {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:13.137 -0400", hash_original_method = "E6FF1C57537669874BDF42CE722EB942", hash_generated_method = "A5EDD215FD273B9144E82E8E1C501F2F")
     @DSModeled(DSC.SAFE)
     public RoundingMode getRoundingMode() {
-        throw new UnsupportedOperationException();
+    	if (DroidSafeAndroidRuntime.control) throw new UnsupportedOperationException();
         return (RoundingMode)dsTaint.getTaint();
         // ---------- Original Method ----------
         //throw new UnsupportedOperationException();
@@ -534,7 +535,7 @@ public abstract class NumberFormat extends Format {
     @DSModeled(DSC.SAFE)
     public void setRoundingMode(RoundingMode roundingMode) {
         dsTaint.addTaint(roundingMode.dsTaint);
-        throw new UnsupportedOperationException();
+        if (DroidSafeAndroidRuntime.control) throw new UnsupportedOperationException();
         // ---------- Original Method ----------
         //throw new UnsupportedOperationException();
     }

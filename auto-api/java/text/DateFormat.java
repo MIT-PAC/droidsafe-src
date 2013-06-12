@@ -2,6 +2,7 @@ package java.text;
 
 // Droidsafe Imports
 import droidsafe.helpers.*;
+import droidsafe.runtime.DroidSafeAndroidRuntime;
 import droidsafe.annotations.*;
 
 // import Iterator to deal with enhanced for loop translation
@@ -118,7 +119,7 @@ public abstract class DateFormat extends Format {
             StringBuffer var64C927786F472344128653963E19764D_906361581 = (format(new Date(((Number) object).longValue()), buffer,
                     field));
         } //End block
-        throw new IllegalArgumentException();
+        if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException();
         return (StringBuffer)dsTaint.getTaint();
         // ---------- Original Method ----------
         //if (object instanceof Date) {
@@ -293,7 +294,7 @@ public abstract class DateFormat extends Format {
         {
             boolean varA01BF4F3DE22A214F5C7EB004E28484E_265360612 = (position.getIndex() == 0);
             {
-                throw new ParseException("Unparseable date: \"" + string + "\"",
+            	if (DroidSafeAndroidRuntime.control) throw new ParseException("Unparseable date: \"" + string + "\"",
                     position.getErrorIndex());
             } //End block
         } //End collapsed parenthetic

@@ -2,6 +2,7 @@ package java.text;
 
 // Droidsafe Imports
 import droidsafe.helpers.*;
+import droidsafe.runtime.DroidSafeAndroidRuntime;
 import droidsafe.annotations.*;
 
 // import Iterator to deal with enhanced for loop translation
@@ -80,7 +81,7 @@ public abstract class Format implements Serializable, Cloneable {
         {
             boolean varA01BF4F3DE22A214F5C7EB004E28484E_409031979 = (position.getIndex() == 0);
             {
-                throw new ParseException("Parse failure", position.getErrorIndex());
+            	if (DroidSafeAndroidRuntime.control) throw new ParseException("Parse failure", position.getErrorIndex());
             } //End block
         } //End collapsed parenthetic
         return (Object)dsTaint.getTaint();
