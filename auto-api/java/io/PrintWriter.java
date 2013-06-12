@@ -2,6 +2,7 @@ package java.io;
 
 // Droidsafe Imports
 import droidsafe.helpers.*;
+import droidsafe.runtime.DroidSafeAndroidRuntime;
 import droidsafe.annotations.*;
 
 // import Iterator to deal with enhanced for loop translation
@@ -197,7 +198,7 @@ public class PrintWriter extends Writer {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:11.665 -0400", hash_original_method = "68BF859C2EE72E22FD2B6E3C884D672F", hash_generated_method = "769E17CF67E5EFBFF3106DE3DD51824E")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public PrintWriter format(String format, Object... args) {
-        dsTaint.addTaint(args.dsTaint);
+        dsTaint.addTaint(args);
         dsTaint.addTaint(format);
         PrintWriter varD8F2A1654CF3ACCC2BDB72B521CFFC4B_1462060405 = (format(Locale.getDefault(), format, args));
         return (PrintWriter)dsTaint.getTaint();
@@ -209,10 +210,10 @@ public class PrintWriter extends Writer {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:11.665 -0400", hash_original_method = "D5634586266B3A8B702A8EF418739481", hash_generated_method = "9A82BAB481C4835AE3E3D613B962B72E")
     @DSModeled(DSC.SAFE)
     public PrintWriter format(Locale l, String format, Object... args) {
-        dsTaint.addTaint(args.dsTaint);
+        dsTaint.addTaint(args);
         dsTaint.addTaint(l.dsTaint);
         dsTaint.addTaint(format);
-        {
+        if(DroidSafeAndroidRuntime.control) {
             throw new NullPointerException("format == null");
         } //End block
         new Formatter(this, l).format(format, args);
@@ -235,7 +236,7 @@ public class PrintWriter extends Writer {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:11.665 -0400", hash_original_method = "D4B734B1529E4ABCC31A727EC1C73F87", hash_generated_method = "876F09DD54F88BC3C440DDEAB9BC2D0A")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public PrintWriter printf(String format, Object... args) {
-        dsTaint.addTaint(args.dsTaint);
+        dsTaint.addTaint(args);
         dsTaint.addTaint(format);
         PrintWriter var332B80BC927C6FFEEC76D8998999F86B_67909479 = (format(format, args));
         return (PrintWriter)dsTaint.getTaint();
@@ -247,7 +248,7 @@ public class PrintWriter extends Writer {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:11.666 -0400", hash_original_method = "31E00ED7FA07EDC8A599E35C64000277", hash_generated_method = "46A4CD43389CB4FA4F787DBA71C4FA1A")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public PrintWriter printf(Locale l, String format, Object... args) {
-        dsTaint.addTaint(args.dsTaint);
+        dsTaint.addTaint(args);
         dsTaint.addTaint(l.dsTaint);
         dsTaint.addTaint(format);
         PrintWriter var2451FE83B7001C97A9C60A0560E8EC1F_490766077 = (format(l, format, args));

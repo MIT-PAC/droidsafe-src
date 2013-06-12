@@ -2,6 +2,7 @@ package java.io;
 
 // Droidsafe Imports
 import droidsafe.helpers.*;
+import droidsafe.runtime.DroidSafeAndroidRuntime;
 import droidsafe.annotations.*;
 
 // import Iterator to deal with enhanced for loop translation
@@ -56,7 +57,7 @@ public class DataInputStream extends FilterInputStream implements DataInput {
     public final boolean readBoolean() throws IOException {
         int temp;
         temp = in.read();
-        {
+        if(DroidSafeAndroidRuntime.control) {
             throw new EOFException();
         } //End block
         return dsTaint.getTaintBoolean();
@@ -74,7 +75,7 @@ public class DataInputStream extends FilterInputStream implements DataInput {
     public final byte readByte() throws IOException {
         int temp;
         temp = in.read();
-        {
+        if(DroidSafeAndroidRuntime.control) {
             throw new EOFException();
         } //End block
         return dsTaint.getTaintByte();
@@ -235,7 +236,7 @@ public class DataInputStream extends FilterInputStream implements DataInput {
     public final int readUnsignedByte() throws IOException {
         int temp;
         temp = in.read();
-        {
+        if(DroidSafeAndroidRuntime.control) {
             throw new EOFException();
         } //End block
         return dsTaint.getTaintInt();
@@ -301,7 +302,7 @@ public class DataInputStream extends FilterInputStream implements DataInput {
         skipped = 0;
         long skip;
         {
-            boolean var2A4115B73034251059ADD8819B331806_841212263 = (skipped < count && (skip = in.skip(count - skipped)) != 0);
+            skip = in.skip(count - skipped);
             {
                 skipped += skip;
             } //End block

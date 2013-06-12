@@ -13,6 +13,7 @@ import android.util.TypedValue;
 import droidsafe.annotations.DSC;
 import droidsafe.annotations.DSGenerator;
 import droidsafe.annotations.DSModeled;
+import droidsafe.helpers.DSUtils;
 import droidsafe.runtime.DroidSafeAndroidRuntime;
 
 public final class AssetManager {
@@ -979,7 +980,7 @@ public final class AssetManager {
 	static final boolean applyStyle(int theme, int defStyleAttr,
 			int defStyleRes, int xmlParser, int[] inAttrs, int[] outValues,
 			int[] outIndices) {
-		// DSFIXME: CODE0010: Native static method requires manual modeling
+		return DSUtils.UNKNOWN_BOOLEAN;
 	}
 
 	@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:00.217 -0400", hash_original_method = "12B5557C9EEBFED6DAC54E4D9FC20DDD", hash_generated_method = "E0511320CA5AE84F99C16DCCC8A7FB61")
@@ -1031,16 +1032,19 @@ public final class AssetManager {
 	@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:00.218 -0400", hash_original_method = "4370EC96871443F23670974D847AE56F", hash_generated_method = "C2EE1B036C415D9F3588AF483F8C99D2")
 	public static final int getGlobalAssetCount() {
 		// DSFIXME: CODE0010: Native static method requires manual modeling
+		return DSUtils.UNKNOWN_INT;
 	}
 
 	@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:00.218 -0400", hash_original_method = "8EC963245880F3B82084024EE6EBB66E", hash_generated_method = "799477ED008F458B0BE10AF5B6757053")
 	public static final String getAssetAllocations() {
 		// DSFIXME: CODE0010: Native static method requires manual modeling
+		return DSUtils.UNKNOWN_STRING;
 	}
 
 	@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:00.218 -0400", hash_original_method = "96D21C1C6F19D08B5E8ECFE50806F964", hash_generated_method = "FD05191E2D1179F762DED88E9AF77C8F")
 	public static final int getGlobalAssetManagerCount() {
 		// DSFIXME: CODE0010: Native static method requires manual modeling
+		return DSUtils.UNKNOWN_INT;
 	}
 
 	@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:00.218 -0400", hash_original_method = "4A1BDBE10C6D7479DE706205ED3F0C83", hash_generated_method = "B3EB492D5F5E484D97CD001832D9F72E")
@@ -1069,6 +1073,7 @@ public final class AssetManager {
 	static final int loadThemeAttributeValue(int theme, int ident,
 			TypedValue outValue, boolean resolve) {
 		// DSFIXME: CODE0010: Native static method requires manual modeling
+		return DSUtils.UNKNOWN_INT;
 	}
 
 	@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:00.219 -0400", hash_original_method = "1B2023275471B112E1A505915EFCF1D8", hash_generated_method = "C503CD2402C390FC57CF45D8CAC56B80")
@@ -1096,12 +1101,14 @@ public final class AssetManager {
 	// DSFIXME: CODE0002: Requires DSC value to be set
 	private final int[] getArrayStringInfo(int arrayRes) {
 		dsTaint.addTaint(arrayRes);
+		return new int[] {dsTaint.getTaintInt() };
 	}
 
 	@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:00.220 -0400", hash_original_method = "BCA05693B8244B417FF82C9EDF7FB611", hash_generated_method = "8D82FEFF05D426EAE37AFB768C8A3549")
 	// DSFIXME: CODE0002: Requires DSC value to be set
 	final int[] getArrayIntResource(int arrayRes) {
 		dsTaint.addTaint(arrayRes);
+		return new int[] {dsTaint.getTaintInt() };
 	}
 
 	@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:00.220 -0400", hash_original_method = "0DE93EF32C53D091768788DCA0E281FD", hash_generated_method = "4B1E98977D3F64984DAB4C3850F81BB6")

@@ -344,8 +344,8 @@ public class KeyEvent extends InputEvent implements Parcelable {
 	}; // Transformed anonymous class
 
 	@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:05.345 -0400", hash_original_method = "E1777BC70B96D5008D693732650D9927", hash_generated_method = "C2E967B01AA84F0005BE1C10B50478C5")
-	@DSModeled(DSC.SAFE)
-	private KeyEvent() {
+	@DSModeled(DSC.SAFE) 
+	KeyEvent() {
 		// ---------- Original Method ----------
 	}
 

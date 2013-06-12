@@ -2,6 +2,7 @@ package java.io;
 
 // Droidsafe Imports
 import droidsafe.helpers.*;
+import droidsafe.runtime.DroidSafeAndroidRuntime;
 import droidsafe.annotations.*;
 
 // import Iterator to deal with enhanced for loop translation
@@ -38,7 +39,7 @@ public class InputStreamReader extends Reader {
         super(in);
         dsTaint.addTaint(in.dsTaint);
         dsTaint.addTaint(enc);
-        {
+        if(DroidSafeAndroidRuntime.control) {
             throw new NullPointerException();
         } //End block
         try 
@@ -156,7 +157,7 @@ public class InputStreamReader extends Reader {
         {
             {
                 boolean varC984E2D68DED4A73C5D827F4E91A6961_1398855196 = (!isOpen());
-                {
+                if(DroidSafeAndroidRuntime.control) {
                     throw new IOException("InputStreamReader is closed");
                 } //End block
             } //End collapsed parenthetic
@@ -188,7 +189,7 @@ public class InputStreamReader extends Reader {
         {
             {
                 boolean varC984E2D68DED4A73C5D827F4E91A6961_1787658052 = (!isOpen());
-                {
+                if(DroidSafeAndroidRuntime.control) {
                     throw new IOException("InputStreamReader is closed");
                 } //End block
             } //End collapsed parenthetic
@@ -276,7 +277,7 @@ public class InputStreamReader extends Reader {
     @Override
     public boolean ready() throws IOException {
         {
-            {
+        	if(DroidSafeAndroidRuntime.control) {
                 throw new IOException("InputStreamReader is closed");
             } //End block
             try 

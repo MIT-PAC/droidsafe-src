@@ -16,7 +16,7 @@ import java.util.regex.Pattern;
 import droidsafe.annotations.DSC;
 import droidsafe.annotations.DSGenerator;
 import droidsafe.annotations.DSModeled;
-import droidsafe.helpers.DSTaintObject;
+import droidsafe.helpers.DSUtils;
 // import Iterator to deal with enhanced for loop translation
 import droidsafe.runtime.DroidSafeAndroidRuntime;
 
@@ -37,37 +37,25 @@ public class EventLog {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:04.604 -0400", hash_original_method = "5F6A2310CBF2D6994F937F25B432B847", hash_generated_method = "04689FE206C8BE3B2C38283EA52974A6")
     public static int writeEvent(int tag, int value) {
-        DSTaintObject taint = new DSTaintObject();
-        taint.addTaint(tag);
-        taint.addTaint(value);
-        return taint.getTaintInt();
+        return DSUtils.UNKNOWN_INT;
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:04.604 -0400", hash_original_method = "7ED9CDD6AF8DD7F54C1DDAB3342D7417", hash_generated_method = "727D1AF88EF2B0B1BABEE210264F18DA")
     public static int writeEvent(int tag, long value) {
-        DSTaintObject taint = new DSTaintObject();
-        taint.addTaint(tag);
-        taint.addTaint(value);
-        return taint.getTaintInt();
+        return DSUtils.UNKNOWN_INT;
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:04.604 -0400", hash_original_method = "2A2EEFCE77942E21DB981FA6E5628F8C", hash_generated_method = "028DA9E7E932718254CD27C134ECE019")
     public static int writeEvent(int tag, String str) {
-        DSTaintObject taint = new DSTaintObject();
-        taint.addTaint(tag);
-        taint.addTaint(str);
-        return taint.getTaintInt();
+        return DSUtils.UNKNOWN_INT;
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:04.604 -0400", hash_original_method = "C0A88C027337FCE481F2EB6028E68083", hash_generated_method = "9710AF8BD2D8CE7688C6D0FDAB5E4302")
     public static int writeEvent(int tag, Object... list) {
-        DSTaintObject taint = new DSTaintObject();
-        taint.addTaint(tag);
-        taint.addTaint(list);
-        return taint.getTaintInt();
+        return DSUtils.UNKNOWN_INT;
 
     }
 
