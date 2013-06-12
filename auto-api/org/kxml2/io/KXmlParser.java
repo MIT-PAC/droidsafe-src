@@ -2,6 +2,7 @@ package org.kxml2.io;
 
 // Droidsafe Imports
 import droidsafe.helpers.*;
+import droidsafe.runtime.DroidSafeAndroidRuntime;
 import droidsafe.annotations.*;
 
 // import Iterator to deal with enhanced for loop translation
@@ -175,7 +176,7 @@ public class KXmlParser implements XmlPullParser, Closeable {
                     int cut;
                     cut = attrName.indexOf(':');
                     {
-                        throw new RuntimeException(
+                    	if (DroidSafeAndroidRuntime.control) throw new RuntimeException(
                             "illegal attribute name: " + attrName + " at " + this);
                     } //End block
                     {
@@ -185,7 +186,7 @@ public class KXmlParser implements XmlPullParser, Closeable {
                         String attrNs;
                         attrNs = getNamespace(attrPrefix);
                         {
-                            throw new RuntimeException(
+                        	if (DroidSafeAndroidRuntime.control) throw new RuntimeException(
                                 "Undefined Prefix: " + attrPrefix + " in " + this);
                         } //End block
                         attributes[i] = attrNs;
@@ -243,7 +244,7 @@ public class KXmlParser implements XmlPullParser, Closeable {
     private void checkRelaxed(String errorMessage) throws XmlPullParserException {
         dsTaint.addTaint(errorMessage);
         {
-            throw new XmlPullParserException(errorMessage, this, null);
+        	if (DroidSafeAndroidRuntime.control) throw new XmlPullParserException(errorMessage, this, null);
         } //End block
         {
             error = "Error: " + errorMessage;
@@ -283,7 +284,7 @@ public class KXmlParser implements XmlPullParser, Closeable {
     private int next(boolean justOneToken) throws IOException, XmlPullParserException {
         dsTaint.addTaint(justOneToken);
         {
-            throw new XmlPullParserException("setInput() must be called first.", this, null);
+        	if (DroidSafeAndroidRuntime.control) throw new XmlPullParserException("setInput() must be called first.", this, null);
         } //End block
         {
             depth--;
@@ -369,10 +370,10 @@ public class KXmlParser implements XmlPullParser, Closeable {
             readDoctype(justOneToken);
             //End case DOCDECL 
             //Begin case default 
-            throw new XmlPullParserException("Unexpected token", this, null);
+            if (DroidSafeAndroidRuntime.control) throw new XmlPullParserException("Unexpected token", this, null);
             //End case default 
             {
-                throw new XmlPullParserException("Unexpected token", this, null);
+            	if (DroidSafeAndroidRuntime.control) throw new XmlPullParserException("Unexpected token", this, null);
             } //End block
             {
                 text = null;
@@ -519,7 +520,7 @@ public class KXmlParser implements XmlPullParser, Closeable {
         {
             boolean varDEDEA312818AD0583FC7EE9661E09825_957875370 = (peekCharacter() != '>');
             {
-                throw new XmlPullParserException("Comments may not contain --", this, null);
+            	if (DroidSafeAndroidRuntime.control) throw new XmlPullParserException("Comments may not contain --", this, null);
             } //End block
         } //End collapsed parenthetic
         position++;
@@ -680,7 +681,7 @@ public class KXmlParser implements XmlPullParser, Closeable {
             delimiter = SINGLE_QUOTE;
         } //End block
         {
-            throw new XmlPullParserException("Expected a quoted string", this, null);
+        	if (DroidSafeAndroidRuntime.control) throw new XmlPullParserException("Expected a quoted string", this, null);
         } //End block
         position++;
         String varBFE6449E52EE8F8EA816321563FBB5AE_710724427 = (readUntil(delimiter, returnText));
@@ -736,7 +737,7 @@ public class KXmlParser implements XmlPullParser, Closeable {
             readComment(false);
             //End case COMMENT 
             //Begin case PARAMETER_ENTITY_REF 
-            throw new XmlPullParserException(
+            if (DroidSafeAndroidRuntime.control) throw new XmlPullParserException(
                         "Parameter entity references are not supported", this, null);
             //End case PARAMETER_ENTITY_REF 
             //Begin case default 
@@ -846,7 +847,7 @@ public class KXmlParser implements XmlPullParser, Closeable {
             {
                 boolean var3C74D199C82A09DCA88FADF6B9606194_1888250905 = (position + 1 >= limit && !fillBuffer(2));
                 {
-                    throw new XmlPullParserException("Malformed attribute list", this, null);
+                	if (DroidSafeAndroidRuntime.control) throw new XmlPullParserException("Malformed attribute list", this, null);
                 } //End block
             } //End collapsed parenthetic
             {
@@ -868,7 +869,7 @@ public class KXmlParser implements XmlPullParser, Closeable {
                         position++;
                     } //End block
                     {
-                        throw new XmlPullParserException("Malformed attribute type", this, null);
+                    	if (DroidSafeAndroidRuntime.control) throw new XmlPullParserException("Malformed attribute type", this, null);
                     } //End block
                 } //End block
             } //End block
@@ -890,7 +891,7 @@ public class KXmlParser implements XmlPullParser, Closeable {
                     read(FIXED);
                 } //End block
                 {
-                    throw new XmlPullParserException("Malformed attribute type", this, null);
+                	if (DroidSafeAndroidRuntime.control) throw new XmlPullParserException("Malformed attribute type", this, null);
                 } //End block
                 skip();
                 c = peekCharacter();
@@ -978,7 +979,7 @@ public class KXmlParser implements XmlPullParser, Closeable {
                 } //End collapsed parenthetic
             } //End block
             {
-                throw new XmlPullParserException("Expected entity value or external ID", this, null);
+            	if (DroidSafeAndroidRuntime.control) throw new XmlPullParserException("Expected entity value or external ID", this, null);
             } //End block
         } //End collapsed parenthetic
         {
@@ -1003,7 +1004,7 @@ public class KXmlParser implements XmlPullParser, Closeable {
         {
             boolean var54889F641C80FD666AF09F21AFB2466E_605669708 = (!readExternalId(false, false));
             {
-                throw new XmlPullParserException(
+            	if (DroidSafeAndroidRuntime.control) throw new XmlPullParserException(
                     "Expected external ID or public ID for notation", this, null);
             } //End block
         } //End collapsed parenthetic
@@ -1082,7 +1083,7 @@ public class KXmlParser implements XmlPullParser, Closeable {
         {
             boolean var30933827E7DDA57720354AD908DB062A_411210532 = (position + 3 >= limit && !fillBuffer(4));
             {
-                throw new XmlPullParserException("Dangling <", this, null);
+            	if (DroidSafeAndroidRuntime.control) throw new XmlPullParserException("Dangling <", this, null);
             } //End block
         } //End collapsed parenthetic
         //End case '<' 
@@ -1097,7 +1098,7 @@ public class KXmlParser implements XmlPullParser, Closeable {
         } //End collapsed parenthetic
         //End case '?' 
         //Begin case '!' 
-        throw new XmlPullParserException("Unexpected <!", this, null);
+        if (DroidSafeAndroidRuntime.control) throw new XmlPullParserException("Unexpected <!", this, null);
         //End case '!' 
         //End case '<' 
         return dsTaint.getTaintInt();
@@ -1176,7 +1177,7 @@ public class KXmlParser implements XmlPullParser, Closeable {
                     delimiter = ' ';
                 } //End block
                 {
-                    throw new XmlPullParserException("attr value delimiter missing!", this, null);
+                	if (DroidSafeAndroidRuntime.control) throw new XmlPullParserException("attr value delimiter missing!", this, null);
                 } //End block
                 attributes[i + 3] = readValue(delimiter, true, throwOnResolveFailure,
                         ValueContext.ATTRIBUTE);
@@ -1251,7 +1252,7 @@ public class KXmlParser implements XmlPullParser, Closeable {
         int start;
         start = out.length();
         {
-            throw new AssertionError();
+        	if (DroidSafeAndroidRuntime.control) throw new AssertionError();
         } //End block
         out.append('&');
         {
@@ -1266,7 +1267,7 @@ public class KXmlParser implements XmlPullParser, Closeable {
                 out.append((char) c);
             } //End block
             {
-                throw new XmlPullParserException("unterminated entity ref", this, null);
+            	if (DroidSafeAndroidRuntime.control) throw new XmlPullParserException("unterminated entity ref", this, null);
             } //End block
         } //End block
         String code;
@@ -1304,7 +1305,7 @@ public class KXmlParser implements XmlPullParser, Closeable {
             unresolved = false;
             out.append(defaultEntity);
         } //End block
-        char[] resolved;
+        char[] resolved = {'a'};
         {
             boolean var29EC81D908DBE184458A11C03BDBC90E_1839724764 = (documentEntities != null && (resolved = documentEntities.get(code)) != null);
             {
@@ -1408,11 +1409,11 @@ public class KXmlParser implements XmlPullParser, Closeable {
                 isWhitespace = false;
             } //End block
             {
-                throw new XmlPullParserException("This parser doesn't support parameter entities",
+            	if (DroidSafeAndroidRuntime.control) throw new XmlPullParserException("This parser doesn't support parameter entities",
                         this, null);
             } //End block
             {
-                throw new AssertionError();
+            	if (DroidSafeAndroidRuntime.control) throw new AssertionError();
             } //End block
             position++;
             result.append(c);
@@ -1507,7 +1508,7 @@ public class KXmlParser implements XmlPullParser, Closeable {
         dsTaint.addTaint(minimum);
         {
             {
-                throw new XmlPullParserException("Unbalanced entity!", this, null);
+            	if (DroidSafeAndroidRuntime.control) throw new XmlPullParserException("Unbalanced entity!", this, null);
             } //End block
             popContentSource();
         } //End block
@@ -1673,7 +1674,7 @@ public class KXmlParser implements XmlPullParser, Closeable {
         boolean detectCharset;
         detectCharset = (charset == null);
         {
-            throw new IllegalArgumentException();
+        	if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException();
         } //End block
         try 
         {
@@ -1865,11 +1866,11 @@ public class KXmlParser implements XmlPullParser, Closeable {
         dsTaint.addTaint(entity);
         dsTaint.addTaint(value);
         {
-            throw new IllegalStateException(
+        	if (DroidSafeAndroidRuntime.control) throw new IllegalStateException(
                     "Entity replacement text may not be defined with DOCTYPE processing enabled.");
         } //End block
         {
-            throw new IllegalStateException(
+        	if (DroidSafeAndroidRuntime.control) throw new IllegalStateException(
                     "Entity replacement text must be defined after setInput()");
         } //End block
         {
@@ -1956,7 +1957,7 @@ public class KXmlParser implements XmlPullParser, Closeable {
     public int getNamespaceCount(int depth) {
         dsTaint.addTaint(depth);
         {
-            throw new IndexOutOfBoundsException();
+        	if (DroidSafeAndroidRuntime.control) throw new IndexOutOfBoundsException();
         } //End block
         return dsTaint.getTaintInt();
         // ---------- Original Method ----------
@@ -2169,7 +2170,7 @@ public class KXmlParser implements XmlPullParser, Closeable {
     @DSModeled(DSC.SAFE)
     public boolean isWhitespace() throws XmlPullParserException {
         {
-            throw new XmlPullParserException(ILLEGAL_TYPE, this, null);
+        	if (DroidSafeAndroidRuntime.control) throw new XmlPullParserException(ILLEGAL_TYPE, this, null);
         } //End block
         return dsTaint.getTaintBoolean();
         // ---------- Original Method ----------
@@ -2257,7 +2258,7 @@ public class KXmlParser implements XmlPullParser, Closeable {
     @DSModeled(DSC.SAFE)
     public boolean isEmptyElementTag() throws XmlPullParserException {
         {
-            throw new XmlPullParserException(ILLEGAL_TYPE, this, null);
+        	if (DroidSafeAndroidRuntime.control) throw new XmlPullParserException(ILLEGAL_TYPE, this, null);
         } //End block
         return dsTaint.getTaintBoolean();
         // ---------- Original Method ----------
@@ -2302,7 +2303,7 @@ public class KXmlParser implements XmlPullParser, Closeable {
     public String getAttributeNamespace(int index) {
         dsTaint.addTaint(index);
         {
-            throw new IndexOutOfBoundsException();
+        	if (DroidSafeAndroidRuntime.control) throw new IndexOutOfBoundsException();
         } //End block
         return dsTaint.getTaintString();
         // ---------- Original Method ----------
@@ -2318,7 +2319,7 @@ public class KXmlParser implements XmlPullParser, Closeable {
     public String getAttributeName(int index) {
         dsTaint.addTaint(index);
         {
-            throw new IndexOutOfBoundsException();
+        	if (DroidSafeAndroidRuntime.control) throw new IndexOutOfBoundsException();
         } //End block
         return dsTaint.getTaintString();
         // ---------- Original Method ----------
@@ -2334,7 +2335,7 @@ public class KXmlParser implements XmlPullParser, Closeable {
     public String getAttributePrefix(int index) {
         dsTaint.addTaint(index);
         {
-            throw new IndexOutOfBoundsException();
+        	if (DroidSafeAndroidRuntime.control) throw new IndexOutOfBoundsException();
         } //End block
         return dsTaint.getTaintString();
         // ---------- Original Method ----------
@@ -2350,7 +2351,7 @@ public class KXmlParser implements XmlPullParser, Closeable {
     public String getAttributeValue(int index) {
         dsTaint.addTaint(index);
         {
-            throw new IndexOutOfBoundsException();
+        	if (DroidSafeAndroidRuntime.control) throw new IndexOutOfBoundsException();
         } //End block
         return dsTaint.getTaintString();
         // ---------- Original Method ----------
@@ -2406,7 +2407,7 @@ public class KXmlParser implements XmlPullParser, Closeable {
             next();
         } //End block
         {
-            throw new XmlPullParserException("unexpected type", this, null);
+        	if (DroidSafeAndroidRuntime.control) throw new XmlPullParserException("unexpected type", this, null);
         } //End block
         return dsTaint.getTaintInt();
         // ---------- Original Method ----------
@@ -2450,7 +2451,7 @@ public class KXmlParser implements XmlPullParser, Closeable {
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public String nextText() throws XmlPullParserException, IOException {
         {
-            throw new XmlPullParserException("precondition: START_TAG", this, null);
+        	if (DroidSafeAndroidRuntime.control) throw new XmlPullParserException("precondition: START_TAG", this, null);
         } //End block
         next();
         String result;
@@ -2462,7 +2463,7 @@ public class KXmlParser implements XmlPullParser, Closeable {
             result = "";
         } //End block
         {
-            throw new XmlPullParserException("END_TAG expected", this, null);
+        	if (DroidSafeAndroidRuntime.control) throw new XmlPullParserException("END_TAG expected", this, null);
         } //End block
         return dsTaint.getTaintString();
         // ---------- Original Method ----------
@@ -2587,6 +2588,10 @@ public class KXmlParser implements XmlPullParser, Closeable {
             dsTaint.addTaint(position);
             dsTaint.addTaint(limit);
             dsTaint.addTaint(next.dsTaint);
+            this.limit = limit;
+            this.position = position;
+            this.next = next;
+            this.buffer = buffer;
             // ---------- Original Method ----------
             //this.next = next;
             //this.buffer = buffer;

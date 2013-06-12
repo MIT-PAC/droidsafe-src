@@ -2,6 +2,7 @@ package org.apache.harmony.security.asn1;
 
 // Droidsafe Imports
 import droidsafe.helpers.*;
+import droidsafe.runtime.DroidSafeAndroidRuntime;
 import droidsafe.annotations.*;
 
 // import Iterator to deal with enhanced for loop translation
@@ -128,7 +129,7 @@ public class BerInputStream {
                 int numOctets;
                 numOctets = length & 0x7F;
                 {
-                    throw new ASN1Exception("Too long encoding at [" + tagOffset + "]");
+                	if (DroidSafeAndroidRuntime.control) throw new ASN1Exception("Too long encoding at [" + tagOffset + "]");
                 } //End block
                 length = read();
                 {
@@ -141,7 +142,7 @@ public class BerInputStream {
                     } //End block
                 } //End collapsed parenthetic
                 {
-                    throw new ASN1Exception("Too long encoding at [" + tagOffset + "]");
+                	if (DroidSafeAndroidRuntime.control) throw new ASN1Exception("Too long encoding at [" + tagOffset + "]");
                 } //End block
             } //End block
         } //End block
@@ -175,20 +176,20 @@ public class BerInputStream {
     public void readBitString() throws IOException {
         {
             {
-                throw new ASN1Exception("ASN.1 Bitstring: wrong length. Tag at [" + tagOffset + "]");
+            	if (DroidSafeAndroidRuntime.control) throw new ASN1Exception("ASN.1 Bitstring: wrong length. Tag at [" + tagOffset + "]");
             } //End block
             readContent();
             {
-                throw new ASN1Exception("ASN.1 Bitstring: wrong content at [" + contentOffset
+            	if (DroidSafeAndroidRuntime.control) throw new ASN1Exception("ASN.1 Bitstring: wrong content at [" + contentOffset
                         + "]. A number of unused bits MUST be in range 0 to 7");
             } //End block
             {
-                throw new ASN1Exception("ASN.1 Bitstring: wrong content at [" + contentOffset
+            	if (DroidSafeAndroidRuntime.control) throw new ASN1Exception("ASN.1 Bitstring: wrong content at [" + contentOffset
                         + "]. For empty string unused bits MUST be 0");
             } //End block
         } //End block
         {
-            throw new ASN1Exception("Decoding constructed ASN.1 bitstring  type is not provided");
+        	if (DroidSafeAndroidRuntime.control) throw new ASN1Exception("Decoding constructed ASN.1 bitstring  type is not provided");
         } //End block
         {
             throw expected("bitstring");
@@ -202,10 +203,10 @@ public class BerInputStream {
     @DSModeled(DSC.SAFE)
     public void readEnumerated() throws IOException {
         {
-            throw expected("enumerated");
+        	if (DroidSafeAndroidRuntime.control) throw expected("enumerated");
         } //End block
         {
-            throw new ASN1Exception("ASN.1 enumerated: wrong length for identifier at ["
+        	if (DroidSafeAndroidRuntime.control) throw new ASN1Exception("ASN.1 enumerated: wrong length for identifier at ["
                     + tagOffset + "]");
         } //End block
         readContent();
@@ -246,10 +247,10 @@ public class BerInputStream {
     @DSModeled(DSC.SAFE)
     public void readBoolean() throws IOException {
         {
-            throw expected("boolean");
+        	if (DroidSafeAndroidRuntime.control) throw expected("boolean");
         } //End block
         {
-            throw new ASN1Exception("Wrong length for ASN.1 boolean at [" + tagOffset + "]");
+        	if (DroidSafeAndroidRuntime.control) throw new ASN1Exception("Wrong length for ASN.1 boolean at [" + tagOffset + "]");
         } //End block
         readContent();
         // ---------- Original Method ----------
@@ -269,17 +270,17 @@ public class BerInputStream {
         {
             readContent();
             {
-                throw new ASN1Exception("ASN.1 GeneralizedTime: encoded format is not implemented");
+            	if (DroidSafeAndroidRuntime.control) throw new ASN1Exception("ASN.1 GeneralizedTime: encoded format is not implemented");
             } //End block
             {
-                throw new ASN1Exception("ASN.1 GeneralizedTime wrongly encoded at ["
+            	if (DroidSafeAndroidRuntime.control) throw new ASN1Exception("ASN.1 GeneralizedTime wrongly encoded at ["
                         + contentOffset + "]");
             } //End block
             {
                 byte char14;
                 char14 = buffer[contentOffset + 14];
                 {
-                    throw new ASN1Exception("ASN.1 GeneralizedTime wrongly encoded at ["
+                	if (DroidSafeAndroidRuntime.control) throw new ASN1Exception("ASN.1 GeneralizedTime wrongly encoded at ["
                             + contentOffset + "]");
                 } //End block
             } //End block
@@ -303,7 +304,7 @@ public class BerInputStream {
             } //End block
         } //End block
         {
-            throw new ASN1Exception("Decoding constructed ASN.1 GeneralizedTime type is not supported");
+        	if (DroidSafeAndroidRuntime.control) throw new ASN1Exception("Decoding constructed ASN.1 GeneralizedTime type is not supported");
         } //End block
         {
             throw expected("GeneralizedTime");
@@ -318,14 +319,14 @@ public class BerInputStream {
     public void readUTCTime() throws IOException {
         {
             //Begin case ASN1UTCTime.UTC_LOCAL_HM ASN1UTCTime.UTC_LOCAL_HMS 
-            throw new ASN1Exception("ASN.1 UTCTime: local time format is not supported");
+        	if (DroidSafeAndroidRuntime.control) throw new ASN1Exception("ASN.1 UTCTime: local time format is not supported");
             //End case ASN1UTCTime.UTC_LOCAL_HM ASN1UTCTime.UTC_LOCAL_HMS 
             //Begin case default 
-            throw new ASN1Exception("ASN.1 UTCTime: wrong length, identifier at " + tagOffset);
+        	if (DroidSafeAndroidRuntime.control) throw new ASN1Exception("ASN.1 UTCTime: wrong length, identifier at " + tagOffset);
             //End case default 
             readContent();
             {
-                throw new ASN1Exception("ASN.1 UTCTime wrongly encoded at ["
+            	if (DroidSafeAndroidRuntime.control) throw new ASN1Exception("ASN.1 UTCTime wrongly encoded at ["
                         + contentOffset + ']');
             } //End block
             {
@@ -347,7 +348,7 @@ public class BerInputStream {
             } //End block
         } //End block
         {
-            throw new ASN1Exception("Decoding constructed ASN.1 UTCTime type is not supported");
+        	if (DroidSafeAndroidRuntime.control) throw new ASN1Exception("Decoding constructed ASN.1 UTCTime type is not supported");
         } //End block
         {
             throw expected("UTCTime");
@@ -372,7 +373,7 @@ public class BerInputStream {
                 int c;
                 c = buffer[i] - 48;
                 {
-                    throw new ASN1Exception("Time encoding has invalid char");
+                	if (DroidSafeAndroidRuntime.control) throw new ASN1Exception("Time encoding has invalid char");
                 } //End block
                 result = result * 10 + c;
             } //End block
@@ -395,10 +396,10 @@ public class BerInputStream {
     @DSModeled(DSC.SAFE)
     public void readInteger() throws IOException {
         {
-            throw expected("integer");
+        	if (DroidSafeAndroidRuntime.control) throw expected("integer");
         } //End block
         {
-            throw new ASN1Exception("Wrong length for ASN.1 integer at [" + tagOffset + "]");
+        	if (DroidSafeAndroidRuntime.control) throw new ASN1Exception("Wrong length for ASN.1 integer at [" + tagOffset + "]");
         } //End block
         readContent();
         {
@@ -436,7 +437,7 @@ public class BerInputStream {
             readContent();
         } //End block
         {
-            throw new ASN1Exception("Decoding constructed ASN.1 octet string type is not supported");
+        	if (DroidSafeAndroidRuntime.control) throw new ASN1Exception("Decoding constructed ASN.1 octet string type is not supported");
         } //End block
         {
             throw expected("octetstring");
@@ -456,7 +457,7 @@ public class BerInputStream {
     @DSModeled(DSC.SAFE)
     private ASN1Exception expected(String what) throws ASN1Exception {
         dsTaint.addTaint(what);
-        throw new ASN1Exception("ASN.1 " + what + " identifier expected at [" + tagOffset + "], got " + Integer.toHexString(tag));
+        if (DroidSafeAndroidRuntime.control) throw new ASN1Exception("ASN.1 " + what + " identifier expected at [" + tagOffset + "], got " + Integer.toHexString(tag));
         return (ASN1Exception)dsTaint.getTaint();
         // ---------- Original Method ----------
         //throw new ASN1Exception("ASN.1 " + what + " identifier expected at [" + tagOffset + "], got " + Integer.toHexString(tag));
@@ -467,14 +468,14 @@ public class BerInputStream {
     @DSModeled(DSC.SAFE)
     public void readOID() throws IOException {
         {
-            throw expected("OID");
+        	if (DroidSafeAndroidRuntime.control) throw expected("OID");
         } //End block
         {
-            throw new ASN1Exception("Wrong length for ASN.1 object identifier at [" + tagOffset + "]");
+        	if (DroidSafeAndroidRuntime.control) throw new ASN1Exception("Wrong length for ASN.1 object identifier at [" + tagOffset + "]");
         } //End block
         readContent();
         {
-            throw new ASN1Exception("Wrong encoding at [" + (offset - 1) + "]");
+        	if (DroidSafeAndroidRuntime.control) throw new ASN1Exception("Wrong encoding at [" + (offset - 1) + "]");
         } //End block
         oidElement = 1;
         {
@@ -511,7 +512,7 @@ public class BerInputStream {
     public void readSequence(ASN1Sequence sequence) throws IOException {
         dsTaint.addTaint(sequence.dsTaint);
         {
-            throw expected("sequence");
+        	if (DroidSafeAndroidRuntime.control) throw expected("sequence");
         } //End block
         int begOffset;
         begOffset = offset;
@@ -528,7 +529,7 @@ public class BerInputStream {
                     boolean var2E238A45E4200E5E112737C7305019BA_1992570584 = (!type[i].checkTag(tag));
                     {
                         {
-                            throw new ASN1Exception("ASN.1 Sequence: mandatory value is missing at [" + tagOffset + "]");
+                        	if (DroidSafeAndroidRuntime.control) throw new ASN1Exception("ASN.1 Sequence: mandatory value is missing at [" + tagOffset + "]");
                         } //End block
                         i++;
                     } //End block
@@ -537,7 +538,7 @@ public class BerInputStream {
             } //End block
             {
                 {
-                    throw new ASN1Exception("ASN.1 Sequence: mandatory value is missing at [" + tagOffset + "]");
+                	if (DroidSafeAndroidRuntime.control) throw new ASN1Exception("ASN.1 Sequence: mandatory value is missing at [" + tagOffset + "]");
                 } //End block
             } //End block
         } //End block
@@ -552,7 +553,7 @@ public class BerInputStream {
                     boolean var2E238A45E4200E5E112737C7305019BA_2078475741 = (!type[i].checkTag(tag));
                     {
                         {
-                            throw new ASN1Exception("ASN.1 Sequence: mandatory value is missing at [" + tagOffset + "]");
+                        	if (DroidSafeAndroidRuntime.control) throw new ASN1Exception("ASN.1 Sequence: mandatory value is missing at [" + tagOffset + "]");
                         } //End block
                         {
                             values[i] = sequence.DEFAULT[i];
@@ -564,7 +565,7 @@ public class BerInputStream {
             } //End block
             {
                 {
-                    throw new ASN1Exception("ASN.1 Sequence: mandatory value is missing at [" + tagOffset + "]");
+                	if (DroidSafeAndroidRuntime.control) throw new ASN1Exception("ASN.1 Sequence: mandatory value is missing at [" + tagOffset + "]");
                 } //End block
                 {
                     values[i] = sequence.DEFAULT[i];
@@ -586,7 +587,7 @@ public class BerInputStream {
     public void readSequenceOf(ASN1SequenceOf sequenceOf) throws IOException {
         dsTaint.addTaint(sequenceOf.dsTaint);
         {
-            throw expected("sequenceOf");
+        	if (DroidSafeAndroidRuntime.control) throw expected("sequenceOf");
         } //End block
         decodeValueCollection(sequenceOf);
         // ---------- Original Method ----------
@@ -602,7 +603,7 @@ public class BerInputStream {
     public void readSet(ASN1Set set) throws IOException {
         dsTaint.addTaint(set.dsTaint);
         {
-            throw expected("set");
+        	if (DroidSafeAndroidRuntime.control) throw expected("set");
         } //End block
         throw new ASN1Exception("Decoding ASN.1 Set type is not supported");
         // ---------- Original Method ----------
@@ -618,7 +619,7 @@ public class BerInputStream {
     public void readSetOf(ASN1SetOf setOf) throws IOException {
         dsTaint.addTaint(setOf.dsTaint);
         {
-            throw expected("setOf");
+        	if (DroidSafeAndroidRuntime.control) throw expected("setOf");
         } //End block
         decodeValueCollection(setOf);
         // ---------- Original Method ----------
@@ -695,7 +696,7 @@ public class BerInputStream {
             readContent();
         } //End block
         {
-            throw new ASN1Exception("Decoding constructed ASN.1 string type is not provided");
+        	if (DroidSafeAndroidRuntime.control) throw new ASN1Exception("Decoding constructed ASN.1 string type is not provided");
         } //End block
         {
             throw expected("string");
@@ -787,13 +788,13 @@ public class BerInputStream {
     @DSModeled(DSC.SAFE)
     protected int read() throws IOException {
         {
-            throw new ASN1Exception("Unexpected end of encoding");
+        	if (DroidSafeAndroidRuntime.control) throw new ASN1Exception("Unexpected end of encoding");
         } //End block
         {
             int octet;
             octet = in.read();
             {
-                throw new ASN1Exception("Unexpected end of encoding");
+            	if (DroidSafeAndroidRuntime.control) throw new ASN1Exception("Unexpected end of encoding");
             } //End block
             buffer[offset++] = (byte) octet;
         } //End block
@@ -819,7 +820,7 @@ public class BerInputStream {
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public void readContent() throws IOException {
         {
-            throw new ASN1Exception("Unexpected end of encoding");
+        	if (DroidSafeAndroidRuntime.control) throw new ASN1Exception("Unexpected end of encoding");
         } //End block
         {
             offset += length;
@@ -832,7 +833,7 @@ public class BerInputStream {
                 c = bytesRead;
                 {
                     {
-                        throw new ASN1Exception("Failed to read encoded content");
+                    	if (DroidSafeAndroidRuntime.control) throw new ASN1Exception("Failed to read encoded content");
                     } //End block
                     c = in.read(buffer, offset + bytesRead, length - bytesRead);
                     bytesRead += c;

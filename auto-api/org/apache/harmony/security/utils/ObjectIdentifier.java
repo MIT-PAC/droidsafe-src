@@ -2,6 +2,7 @@ package org.apache.harmony.security.utils;
 
 // Droidsafe Imports
 import droidsafe.helpers.*;
+import droidsafe.runtime.DroidSafeAndroidRuntime;
 import droidsafe.annotations.*;
 
 // import Iterator to deal with enhanced for loop translation
@@ -21,6 +22,7 @@ public final class ObjectIdentifier {
     @DSModeled(DSC.SAFE)
     public ObjectIdentifier(int[] oid) {
         dsTaint.addTaint(oid);
+        this.oid = oid;
         validateOid(oid);
         // ---------- Original Method ----------
         //validateOid(oid);
@@ -36,7 +38,7 @@ public final class ObjectIdentifier {
         dsTaint.addTaint(oid);
         dsTaint.addTaint(name);
         {
-            throw new NullPointerException("oidGroup == null");
+        	if (DroidSafeAndroidRuntime.control) throw new NullPointerException("oidGroup == null");
         } //End block
         toOIDString();
         // ---------- Original Method ----------

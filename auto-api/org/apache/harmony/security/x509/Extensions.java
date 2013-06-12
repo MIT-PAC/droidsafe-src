@@ -221,7 +221,7 @@ public final class Extensions {
     public boolean[] valueOfKeyUsage() {
         Extension extension;
         extension = getExtensionByOID("2.5.29.15");
-        KeyUsage kUsage;
+        KeyUsage kUsage = null;
         {
             boolean varF3595B2B157720F192ED02C0BBBDFB37_692976171 = ((extension == null) || ((kUsage = extension.getKeyUsageValue()) == null));
         } //End collapsed parenthetic
@@ -260,7 +260,7 @@ public final class Extensions {
     public int valueOfBasicConstrains() {
         Extension extension;
         extension = getExtensionByOID("2.5.29.19");
-        BasicConstraints bc;
+        BasicConstraints bc = null;
         {
             boolean varD6D8B93AD6192498EF11D9085C76974A_202596419 = ((extension == null) || ((bc = extension.getBasicConstraintsValue()) == null));
         } //End collapsed parenthetic

@@ -2,6 +2,7 @@ package org.apache.harmony.security.provider.crypto;
 
 // Droidsafe Imports
 import droidsafe.helpers.*;
+import droidsafe.runtime.DroidSafeAndroidRuntime;
 import droidsafe.annotations.*;
 
 // import Iterator to deal with enhanced for loop translation
@@ -91,7 +92,7 @@ public class SHA1PRNG_SecureRandomImpl extends SecureRandomSpi implements Serial
     protected synchronized void engineSetSeed(byte[] seed) {
         dsTaint.addTaint(seed);
         {
-            throw new NullPointerException("seed == null");
+        	if (DroidSafeAndroidRuntime.control) throw new NullPointerException("seed == null");
         } //End block
         {
             System.arraycopy(copies, HASHCOPY_OFFSET, this.seed, HASH_OFFSET,
@@ -122,7 +123,7 @@ public class SHA1PRNG_SecureRandomImpl extends SecureRandomSpi implements Serial
         dsTaint.addTaint(numBytes);
         byte[] myBytes;
         {
-            throw new NegativeArraySizeException(Integer.toString(numBytes));
+        	if (DroidSafeAndroidRuntime.control) throw new NegativeArraySizeException(Integer.toString(numBytes));
         } //End block
         {
             myRandom = new SHA1PRNG_SecureRandomImpl();
@@ -162,7 +163,7 @@ public class SHA1PRNG_SecureRandomImpl extends SecureRandomSpi implements Serial
         final int extrabytes;
         extrabytes = 7;
         {
-            throw new NullPointerException("bytes == null");
+        	if (DroidSafeAndroidRuntime.control) throw new NullPointerException("bytes == null");
         } //End block
         lastWord = seed[BYTES_OFFSET] == 0 ? 0
                 : (seed[BYTES_OFFSET] + extrabytes) >> 3 - 1;

@@ -2,6 +2,7 @@ package org.apache.harmony.security.asn1;
 
 // Droidsafe Imports
 import droidsafe.helpers.*;
+import droidsafe.runtime.DroidSafeAndroidRuntime;
 import droidsafe.annotations.*;
 
 // import Iterator to deal with enhanced for loop translation
@@ -29,16 +30,16 @@ public abstract class ASN1Type implements ASN1Constants {
         dsTaint.addTaint(tagNumber);
         dsTaint.addTaint(tagClass);
         {
-            throw new IllegalArgumentException("tagNumber < 0");
+        	if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("tagNumber < 0");
         } //End block
         {
-            throw new IllegalArgumentException("invalid tagClass");
+        	if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("invalid tagClass");
         } //End block
         {
             this.id = tagClass + tagNumber;
         } //End block
         {
-            throw new IllegalArgumentException("tag long form not implemented");
+        	if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("tag long form not implemented");
         } //End block
         this.constrId = this.id + PC_CONSTRUCTED;
         // ---------- Original Method ----------

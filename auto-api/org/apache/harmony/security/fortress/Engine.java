@@ -2,6 +2,7 @@ package org.apache.harmony.security.fortress;
 
 // Droidsafe Imports
 import droidsafe.helpers.*;
+import droidsafe.runtime.DroidSafeAndroidRuntime;
 import droidsafe.annotations.*;
 
 // import Iterator to deal with enhanced for loop translation
@@ -20,6 +21,7 @@ public class Engine {
     @DSModeled(DSC.SAFE)
     public Engine(String service) {
         dsTaint.addTaint(service);
+        this.serviceName = service;
         // ---------- Original Method ----------
         //this.serviceName = service;
     }
@@ -31,7 +33,7 @@ public class Engine {
         dsTaint.addTaint(param.dsTaint);
         dsTaint.addTaint(algorithm);
         {
-            throw new NoSuchAlgorithmException("Null algorithm name");
+        	if (DroidSafeAndroidRuntime.control) throw new NoSuchAlgorithmException("Null algorithm name");
         } //End block
         Services.refresh();
         Provider.Service service;
@@ -48,14 +50,14 @@ public class Engine {
                 {
                     boolean var389040427F16F8BE8ECA38F38187B5F5_1244821210 = (Services.isEmpty());
                     {
-                        throw notFound(serviceName, algorithm);
+                    	if (DroidSafeAndroidRuntime.control) throw notFound(serviceName, algorithm);
                     } //End block
                 } //End collapsed parenthetic
                 String name;
                 name = this.serviceName + "." + algorithm.toUpperCase(Locale.US);
                 service = Services.getService(name);
                 {
-                    throw notFound(serviceName, algorithm);
+                	if (DroidSafeAndroidRuntime.control) throw notFound(serviceName, algorithm);
                 } //End block
                 this.serviceCache = new ServiceCacheEntry(algorithm, Services.refreshNumber, service);
             } //End block
@@ -74,12 +76,12 @@ public class Engine {
         dsTaint.addTaint(provider.dsTaint);
         dsTaint.addTaint(algorithm);
         {
-            throw new NoSuchAlgorithmException("algorithm == null");
+        	if (DroidSafeAndroidRuntime.control) throw new NoSuchAlgorithmException("algorithm == null");
         } //End block
         Provider.Service service;
         service = provider.getService(serviceName, algorithm);
         {
-            throw notFound(serviceName, algorithm);
+        	if (DroidSafeAndroidRuntime.control) throw notFound(serviceName, algorithm);
         } //End block
         Object var6243DD2A90C89292CC28F00D2FB799DF_1718387086 = (service.newInstance(param));
         return (Object)dsTaint.getTaint();
@@ -100,7 +102,7 @@ public class Engine {
     private NoSuchAlgorithmException notFound(String serviceName, String algorithm) throws NoSuchAlgorithmException {
         dsTaint.addTaint(serviceName);
         dsTaint.addTaint(algorithm);
-        throw new NoSuchAlgorithmException(serviceName + " " + algorithm
+        if (DroidSafeAndroidRuntime.control) throw new NoSuchAlgorithmException(serviceName + " " + algorithm
                                            + " implementation not found");
         return (NoSuchAlgorithmException)dsTaint.getTaint();
         // ---------- Original Method ----------
@@ -122,6 +124,9 @@ public class Engine {
             dsTaint.addTaint(refreshNumber);
             dsTaint.addTaint(service.dsTaint);
             dsTaint.addTaint(algorithm);
+            this.service = service;
+            this.refreshNumber = refreshNumber;
+            this.algorithm = algorithm;
             // ---------- Original Method ----------
             //this.algorithm = algorithm;
             //this.refreshNumber = refreshNumber;
@@ -142,6 +147,8 @@ public class Engine {
         private SpiAndProvider(Object spi, Provider provider) {
             dsTaint.addTaint(spi.dsTaint);
             dsTaint.addTaint(provider.dsTaint);
+            this.spi = spi;
+            this.provider = provider;
             // ---------- Original Method ----------
             //this.spi = spi;
             //this.provider = provider;
