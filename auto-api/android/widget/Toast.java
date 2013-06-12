@@ -1,12 +1,6 @@
 package android.widget;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-
-// import Iterator to deal with enhanced for loop translation
-import java.util.Iterator;
-
 import android.app.INotificationManager;
 import android.app.ITransientNotification;
 import android.content.Context;
@@ -15,7 +9,6 @@ import android.graphics.PixelFormat;
 import android.os.Handler;
 import android.os.RemoteException;
 import android.os.ServiceManager;
-import android.util.Log;
 import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -23,6 +16,11 @@ import android.view.WindowManager;
 import android.view.WindowManagerImpl;
 import android.view.accessibility.AccessibilityEvent;
 import android.view.accessibility.AccessibilityManager;
+import droidsafe.annotations.DSC;
+import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.DSModeled;
+import droidsafe.runtime.DroidSafeAndroidRuntime;
+// import Iterator to deal with enhanced for loop translation
 
 public class Toast {
     static final String TAG = "Toast";
@@ -42,6 +40,7 @@ public class Toast {
         mTN = new TN();
         mTN.mY = context.getResources().getDimensionPixelSize(
                 com.android.internal.R.dimen.toast_y_offset);
+        mContext = context;
         // ---------- Original Method ----------
         //mContext = context;
         //mTN = new TN();
@@ -54,7 +53,7 @@ public class Toast {
     @DSModeled(DSC.SAFE)
     public void show() {
         {
-            throw new RuntimeException("setView must have been called");
+            if (DroidSafeAndroidRuntime.control) throw new RuntimeException("setView must have been called");
         } //End block
         INotificationManager service;
         service = getService();
@@ -238,12 +237,12 @@ public class Toast {
     public void setText(CharSequence s) {
         dsTaint.addTaint(s);
         {
-            throw new RuntimeException("This Toast was not created with Toast.makeText()");
+            if (DroidSafeAndroidRuntime.control) throw new RuntimeException("This Toast was not created with Toast.makeText()");
         } //End block
         TextView tv;
         tv = (TextView) mNextView.findViewById(com.android.internal.R.id.message);
         {
-            throw new RuntimeException("This Toast was not created with Toast.makeText()");
+            if (DroidSafeAndroidRuntime.control)  throw new RuntimeException("This Toast was not created with Toast.makeText()");
         } //End block
         tv.setText(s);
         // ---------- Original Method ----------

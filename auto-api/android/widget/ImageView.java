@@ -1,12 +1,6 @@
 package android.widget;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-
-// import Iterator to deal with enhanced for loop translation
-import java.util.Iterator;
-
 import android.content.ContentResolver;
 import android.content.Context;
 import android.content.res.Resources;
@@ -23,12 +17,15 @@ import android.graphics.drawable.Drawable;
 import android.net.Uri;
 import android.text.TextUtils;
 import android.util.AttributeSet;
-import android.util.Log;
 import android.view.RemotableViewMethod;
 import android.view.View;
 import android.view.ViewDebug;
 import android.view.accessibility.AccessibilityEvent;
-import android.widget.RemoteViews.RemoteView;
+import droidsafe.annotations.DSC;
+import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.DSModeled;
+import droidsafe.runtime.DroidSafeAndroidRuntime;
+// import Iterator to deal with enhanced for loop translation
 
 public class ImageView extends View {
     private Uri mUri;
@@ -469,7 +466,7 @@ public class ImageView extends View {
     public void setScaleType(ScaleType scaleType) {
         dsTaint.addTaint(scaleType.dsTaint);
         {
-            throw new NullPointerException();
+            if (DroidSafeAndroidRuntime.control) throw new NullPointerException();
         } //End block
         {
             setWillNotCacheDrawing(mScaleType == ScaleType.CENTER);

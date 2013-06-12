@@ -1,20 +1,18 @@
 package android.widget;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-
-// import Iterator to deal with enhanced for loop translation
-import java.util.Iterator;
-
 import android.content.Context;
 import android.database.ContentObserver;
 import android.database.Cursor;
 import android.database.DataSetObserver;
 import android.os.Handler;
-import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
+import droidsafe.annotations.DSC;
+import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.DSModeled;
+import droidsafe.runtime.DroidSafeAndroidRuntime;
+// import Iterator to deal with enhanced for loop translation
 
 public abstract class CursorAdapter extends BaseAdapter implements Filterable, CursorFilter.CursorFilterClient {
     protected boolean mDataValid;
@@ -75,7 +73,7 @@ public abstract class CursorAdapter extends BaseAdapter implements Filterable, C
         dsTaint.addTaint(autoRequery);
         init(context, c, autoRequery ? FLAG_AUTO_REQUERY : FLAG_REGISTER_CONTENT_OBSERVER);
         // ---------- Original Method ----------
-        //init(context, c, autoRequery ? FLAG_AUTO_REQUERY : FLAG_REGISTER_CONTENT_OBSERVER);
+        //init(context, c, autoRequery ? FLAG_AU  mContext = context;TO_REQUERY : FLAG_REGISTER_CONTENT_OBSERVER);
     }
 
     
@@ -199,12 +197,12 @@ public abstract class CursorAdapter extends BaseAdapter implements Filterable, C
         dsTaint.addTaint(parent.dsTaint);
         dsTaint.addTaint(convertView.dsTaint);
         {
-            throw new IllegalStateException("this should only be called when the cursor is valid");
+            if (DroidSafeAndroidRuntime.control)  throw new IllegalStateException("this should only be called when the cursor is valid");
         } //End block
         {
             boolean var1091E50B8E5D746C74AE8CDCECCDC654_1268203118 = (!mCursor.moveToPosition(position));
             {
-                throw new IllegalStateException("couldn't move cursor to position " + position);
+                if (DroidSafeAndroidRuntime.control) throw new IllegalStateException("couldn't move cursor to position " + position);
             } //End block
         } //End collapsed parenthetic
         View v;

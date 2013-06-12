@@ -1,13 +1,8 @@
 package android.widget;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
+import java.lang.ref.WeakReference;
 
-// import Iterator to deal with enhanced for loop translation
-import java.util.Iterator;
-
-import com.android.internal.R;
 import android.content.Context;
 import android.content.res.Resources;
 import android.content.res.TypedArray;
@@ -27,7 +22,14 @@ import android.view.ViewGroup;
 import android.view.ViewTreeObserver;
 import android.view.ViewTreeObserver.OnScrollChangedListener;
 import android.view.WindowManager;
-import java.lang.ref.WeakReference;
+
+import com.android.internal.R;
+
+import droidsafe.annotations.DSC;
+import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.DSModeled;
+import droidsafe.runtime.DroidSafeAndroidRuntime;
+// import Iterator to deal with enhanced for loop translation
 
 public class PopupWindow {
     public static final int INPUT_METHOD_FROM_FOCUSABLE = 0;
@@ -763,7 +765,7 @@ public class PopupWindow {
     private void preparePopup(WindowManager.LayoutParams p) {
         dsTaint.addTaint(p.dsTaint);
         {
-            throw new IllegalStateException("You must specify a valid content view by "
+            if (DroidSafeAndroidRuntime.control) throw new IllegalStateException("You must specify a valid content view by "
                     + "calling setContentView() before attempting to show the popup.");
         } //End block
         {
@@ -1215,14 +1217,14 @@ public class PopupWindow {
         p = (WindowManager.LayoutParams) mPopupView.getLayoutParams();
         boolean update;
         update = force;
-        final int finalWidth;
+        int finalWidth;
         finalWidth = mWidthMode;
         finalWidth = mLastWidth;
         {
             p.width = mLastWidth = finalWidth;
             update = true;
         } //End block
-        final int finalHeight;
+        int finalHeight;
         finalHeight = mHeightMode;
         finalHeight = mLastHeight;
         {
