@@ -199,6 +199,7 @@ public class AudioManager {
     public AudioManager(Context context) {
         dsTaint.addTaint(context.dsTaint);
         mHandler = new Handler(context.getMainLooper());
+        mContext = context;
         // ---------- Original Method ----------
         //mContext = context;
         //mHandler = new Handler(context.getMainLooper());
@@ -1634,9 +1635,7 @@ public class AudioManager {
                     }
                 };
             } //End block
-            {
-                mHandler = null;
-            } //End block
+           
             // ---------- Original Method ----------
             //Looper looper;
             //if ((looper = Looper.myLooper()) == null) {
