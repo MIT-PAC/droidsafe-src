@@ -47,6 +47,7 @@ public final class BluetoothClass implements Parcelable {
     @DSModeled(DSC.SAFE)
     public BluetoothClass(int classInt) {
         dsTaint.addTaint(classInt);
+        mClass = classInt;
         // ---------- Original Method ----------
         //mClass = classInt;
     }
