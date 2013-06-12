@@ -1,17 +1,17 @@
 package android.net;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-
-// import Iterator to deal with enhanced for loop translation
-import java.util.Iterator;
-
 import java.io.FileDescriptor;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
 import java.net.SocketOptions;
+
+import droidsafe.annotations.DSC;
+import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.DSModeled;
+import droidsafe.runtime.DroidSafeAndroidRuntime;
+// import Iterator to deal with enhanced for loop translation
 
 public class LocalSocket {
     private LocalSocketImpl impl;
@@ -94,7 +94,7 @@ public class LocalSocket {
         dsTaint.addTaint(endpoint.dsTaint);
         {
             {
-                throw new IOException("already connected");
+            	if (DroidSafeAndroidRuntime.control)throw new IOException("already connected");
             } //End block
             implCreateIfNeeded();
             impl.connect(endpoint, 0);
@@ -121,7 +121,7 @@ public class LocalSocket {
         implCreateIfNeeded();
         {
             {
-                throw new IOException("already bound");
+            	if (DroidSafeAndroidRuntime.control)throw new IOException("already bound");
             } //End block
             impl.bind(localAddress);
             isBound = true;
@@ -268,7 +268,7 @@ public class LocalSocket {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:02.174 -0400", hash_original_method = "F9B2122C93F2E3BBD4E1C8511037E48C", hash_generated_method = "4C1FD565C8EBB52C9EF77DC19F5D811B")
     @DSModeled(DSC.SAFE)
     public LocalSocketAddress getRemoteSocketAddress() {
-        throw new UnsupportedOperationException();
+    	if (DroidSafeAndroidRuntime.control)throw new UnsupportedOperationException();
         return (LocalSocketAddress)dsTaint.getTaint();
         // ---------- Original Method ----------
         //throw new UnsupportedOperationException();
@@ -287,7 +287,7 @@ public class LocalSocket {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:02.175 -0400", hash_original_method = "5FD66514528CC1615B69519702A1D1B0", hash_generated_method = "ACCF9D855AC79BE5C404BBE95901E4E7")
     @DSModeled(DSC.SAFE)
     public boolean isClosed() {
-        throw new UnsupportedOperationException();
+    	if (DroidSafeAndroidRuntime.control)throw new UnsupportedOperationException();
         return dsTaint.getTaintBoolean();
         // ---------- Original Method ----------
         //throw new UnsupportedOperationException();
@@ -306,7 +306,7 @@ public class LocalSocket {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:02.175 -0400", hash_original_method = "569A2E85196AE41DB2C0A92E12B60282", hash_generated_method = "34FFCAE604B5DBE5AFEAFC607AF5583F")
     @DSModeled(DSC.SAFE)
     public boolean isOutputShutdown() {
-        throw new UnsupportedOperationException();
+    	if (DroidSafeAndroidRuntime.control)throw new UnsupportedOperationException();
         return dsTaint.getTaintBoolean();
         // ---------- Original Method ----------
         //throw new UnsupportedOperationException();
@@ -316,7 +316,7 @@ public class LocalSocket {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:02.175 -0400", hash_original_method = "0B31CF3D7E3CD09D712DD70672C78FD7", hash_generated_method = "F664714EB662DAFD3B4BDC6FC4A7DC04")
     @DSModeled(DSC.SAFE)
     public boolean isInputShutdown() {
-        throw new UnsupportedOperationException();
+    	if (DroidSafeAndroidRuntime.control)throw new UnsupportedOperationException();
         return dsTaint.getTaintBoolean();
         // ---------- Original Method ----------
         //throw new UnsupportedOperationException();
@@ -337,7 +337,7 @@ public class LocalSocket {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:02.175 -0400", hash_original_method = "27C53C8DB31C3FA2B713C3C2CC55D90F", hash_generated_method = "569746194E10732F3A002DC9BACACA2D")
     @DSModeled(DSC.SAFE)
     public void setFileDescriptorsForSend(FileDescriptor[] fds) {
-        dsTaint.addTaint(fds.dsTaint);
+        dsTaint.addTaint(fds[0].dsTaint);
         impl.setFileDescriptorsForSend(fds);
         // ---------- Original Method ----------
         //impl.setFileDescriptorsForSend(fds);

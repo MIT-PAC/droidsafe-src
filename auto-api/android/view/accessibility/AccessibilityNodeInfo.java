@@ -1,11 +1,8 @@
 package android.view.accessibility;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-
-// import Iterator to deal with enhanced for loop translation
-import java.util.Iterator;
+import java.util.Collections;
+import java.util.List;
 
 import android.graphics.Rect;
 import android.os.Parcel;
@@ -13,8 +10,11 @@ import android.os.Parcelable;
 import android.text.TextUtils;
 import android.util.SparseIntArray;
 import android.view.View;
-import java.util.Collections;
-import java.util.List;
+import droidsafe.annotations.DSC;
+import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.DSModeled;
+import droidsafe.runtime.DroidSafeAndroidRuntime;
+// import Iterator to deal with enhanced for loop translation
 
 public class AccessibilityNodeInfo implements Parcelable {
     private static final boolean DEBUG = false;
@@ -742,7 +742,7 @@ public class AccessibilityNodeInfo implements Parcelable {
     @DSModeled(DSC.SAFE)
     public void recycle() {
         {
-            throw new IllegalStateException("Info already recycled!");
+            if (DroidSafeAndroidRuntime.control) throw new IllegalStateException("Info already recycled!");
         } //End block
         clear();
         {

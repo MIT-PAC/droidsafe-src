@@ -26,6 +26,9 @@ public class AudioCodec {
         dsTaint.addTaint(rtpmap);
         dsTaint.addTaint(fmtp);
         dsTaint.addTaint(type);
+        this.type = type;
+        this.rtpmap = rtpmap;
+        this.fmtp = fmtp;
         // ---------- Original Method ----------
         //this.type = type;
         //this.rtpmap = rtpmap;

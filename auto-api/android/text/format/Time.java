@@ -1,15 +1,16 @@
 package android.text.format;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-
-// import Iterator to deal with enhanced for loop translation
-import java.util.Iterator;
-
-import android.content.res.Resources;
 import java.util.Locale;
 import java.util.TimeZone;
+
+import android.content.res.Resources;
+import droidsafe.annotations.DSC;
+import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.DSModeled;
+import droidsafe.helpers.DSTaintObject;
+import droidsafe.runtime.DroidSafeAndroidRuntime;
+// import Iterator to deal with enhanced for loop translation
 
 public class Time {
     private static final String Y_M_D_T_H_M_S_000 = "%Y-%m-%dT%H:%M:%S.000";
@@ -67,7 +68,7 @@ public class Time {
     public Time(String timezone) {
         dsTaint.addTaint(timezone);
         {
-            throw new NullPointerException("timezone is null!");
+            if (DroidSafeAndroidRuntime.control) throw new NullPointerException("timezone is null!");
         } //End block
         this.year = 1970;
         this.monthDay = 1;
@@ -105,6 +106,7 @@ public class Time {
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public long normalize(boolean ignoreDst) {
         dsTaint.addTaint(ignoreDst);
+        return dsTaint.getTaintLong();
     }
 
     
@@ -136,10 +138,10 @@ public class Time {
         } //End block
         //End case YEAR_DAY 
         //Begin case WEEK_NUM 
-        throw new RuntimeException("WEEK_NUM not implemented");
+        if (DroidSafeAndroidRuntime.control) throw new RuntimeException("WEEK_NUM not implemented");
         //End case WEEK_NUM 
         //Begin case default 
-        throw new RuntimeException("bad field=" + field);
+        if (DroidSafeAndroidRuntime.control) throw new RuntimeException("bad field=" + field);
         //End case default 
         return dsTaint.getTaintInt();
         // ---------- Original Method ----------
@@ -152,7 +154,7 @@ public class Time {
     public void clear(String timezone) {
         dsTaint.addTaint(timezone);
         {
-            throw new NullPointerException("timezone is null!");
+            if (DroidSafeAndroidRuntime.control) throw new NullPointerException("timezone is null!");
         } //End block
         this.allDay = false;
         this.second = 0;
@@ -197,7 +199,10 @@ public class Time {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:03.945 -0400", hash_original_method = "AD3C654DD774BE43CE2348A4E99D8406", hash_generated_method = "0F9282A96B9ED7660131B85C76E6C7F4")
     private static int nativeCompare(Time a, Time b) {
-        //DSFIXME:  CODE0010: Native static method requires manual modeling
+    	DSTaintObject taint = new DSTaintObject();
+    	taint.addTaint(a.dsTaint);
+    	taint.addTaint(b.dsTaint);
+    	return taint.getTaintInt();
     }
 
     
@@ -293,6 +298,7 @@ public class Time {
     //DSFIXME:  CODE0002: Requires DSC value to be set
     private String format1(String format) {
         dsTaint.addTaint(format);
+        return dsTaint.getTaintString();
     }
 
     
@@ -300,6 +306,7 @@ public class Time {
     //DSFIXME:  CODE0002: Requires DSC value to be set
     @Override
     public String toString() {
+    	return dsTaint.getTaintString();
     }
 
     
@@ -327,6 +334,7 @@ public class Time {
     //DSFIXME:  CODE0002: Requires DSC value to be set
     private boolean nativeParse(String s) {
         dsTaint.addTaint(s);
+        return dsTaint.getTaintBoolean();
     }
 
     
@@ -354,6 +362,7 @@ public class Time {
     //DSFIXME:  CODE0002: Requires DSC value to be set
     private boolean nativeParse3339(String s) {
         dsTaint.addTaint(s);
+        return dsTaint.getTaintBoolean();
     }
 
     
@@ -372,7 +381,8 @@ public class Time {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:03.946 -0400", hash_original_method = "C1956449864825DE1FCC969EAC519409", hash_generated_method = "4E4518F8DCB1EAFBE1D2F332AE01F227")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public long toMillis(boolean ignoreDst) {
-        dsTaint.addTaint(ignoreDst);
+       dsTaint.addTaint(ignoreDst);
+       return dsTaint.getTaintLong();
     }
 
     
@@ -386,6 +396,7 @@ public class Time {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:03.946 -0400", hash_original_method = "41A869EF339B8E1FD69184435BC2AFF4", hash_generated_method = "88E5AB0CFD7798C57932009718BF577D")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public String format2445() {
+    	return dsTaint.getTaintString();
     }
 
     

@@ -31,24 +31,28 @@ public class Movie {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:01.225 -0400", hash_original_method = "84910C7B35CA680EF9DD8AE9E26E21F9", hash_generated_method = "768F3541DC59F715B33374F8861B3ED0")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public int width() {
+    	return dsTaint.getTaintInt();
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:01.225 -0400", hash_original_method = "C25EEDFD8D4C31BF8873912BD17554C7", hash_generated_method = "4C69BEEB27C663212B753607CEF6BD76")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public int height() {
+    	return dsTaint.getTaintInt();
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:01.225 -0400", hash_original_method = "9A759A0D04375324D8F6D99375FF174F", hash_generated_method = "B5E14EAC8468AB1C1A41FC932088673B")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public boolean isOpaque() {
+    	return dsTaint.getTaintBoolean();
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:01.225 -0400", hash_original_method = "6FBC32EA70076DE70D25629F42C7072B", hash_generated_method = "B94DF9F368000C94F9C02BB595DE9019")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public int duration() {
+    	return dsTaint.getTaintInt();
     }
 
     
@@ -56,6 +60,7 @@ public class Movie {
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public boolean setTime(int relativeMilliseconds) {
         dsTaint.addTaint(relativeMilliseconds);
+    	return dsTaint.getTaintBoolean();
     }
 
     
@@ -84,6 +89,7 @@ public class Movie {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:01.225 -0400", hash_original_method = "9F4D6D7AE88092AD8FB39A0D19320567", hash_generated_method = "A6D9156EFA3804A54FE57BD9ACB615AA")
     public static Movie decodeStream(InputStream is) {
         //DSFIXME:  CODE0010: Native static method requires manual modeling
+    	return new Movie(0);
     }
 
     
@@ -91,6 +97,7 @@ public class Movie {
     public static Movie decodeByteArray(byte[] data, int offset,
                                                int length) {
         //DSFIXME:  CODE0010: Native static method requires manual modeling
+    	return new Movie(0);
     }
 
     

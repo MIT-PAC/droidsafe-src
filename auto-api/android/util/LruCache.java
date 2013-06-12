@@ -1,14 +1,14 @@
 package android.util;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-
-// import Iterator to deal with enhanced for loop translation
-import java.util.Iterator;
-
 import java.util.LinkedHashMap;
 import java.util.Map;
+
+import droidsafe.annotations.DSC;
+import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.DSModeled;
+import droidsafe.runtime.DroidSafeAndroidRuntime;
+// import Iterator to deal with enhanced for loop translation
 
 public class LruCache<K, V> {
     private final LinkedHashMap<K, V> map;
@@ -25,7 +25,7 @@ public class LruCache<K, V> {
     public LruCache(int maxSize) {
         dsTaint.addTaint(maxSize);
         {
-            throw new IllegalArgumentException("maxSize <= 0");
+            if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("maxSize <= 0");
         } //End block
         this.map = new LinkedHashMap<K, V>(0, 0.75f, true);
         // ---------- Original Method ----------
@@ -42,7 +42,7 @@ public class LruCache<K, V> {
     public final V get(K key) {
         dsTaint.addTaint(key.dsTaint);
         {
-            throw new NullPointerException("key == null");
+            if (DroidSafeAndroidRuntime.control) throw new NullPointerException("key == null");
         } //End block
         V mapValue;
         {
@@ -82,7 +82,7 @@ public class LruCache<K, V> {
         dsTaint.addTaint(value.dsTaint);
         dsTaint.addTaint(key.dsTaint);
         {
-            throw new NullPointerException("key == null || value == null");
+            if (DroidSafeAndroidRuntime.control) throw new NullPointerException("key == null || value == null");
         } //End block
         V previous;
         {
@@ -130,7 +130,7 @@ public class LruCache<K, V> {
                 {
                     boolean var78F01EF42D3F5C8B47D2FC6491891300_1608405922 = (size < 0 || (map.isEmpty() && size != 0));
                     {
-                        throw new IllegalStateException(getClass().getName()
+                        if (DroidSafeAndroidRuntime.control) throw new IllegalStateException(getClass().getName()
                             + ".sizeOf() is reporting inconsistent results!");
                     } //End block
                 } //End collapsed parenthetic
@@ -154,7 +154,7 @@ public class LruCache<K, V> {
     public final V remove(K key) {
         dsTaint.addTaint(key.dsTaint);
         {
-            throw new NullPointerException("key == null");
+            if (DroidSafeAndroidRuntime.control) throw new NullPointerException("key == null");
         } //End block
         V previous;
         {
@@ -214,7 +214,7 @@ public class LruCache<K, V> {
         int result;
         result = sizeOf(key, value);
         {
-            throw new IllegalStateException("Negative size: " + key + "=" + value);
+            if (DroidSafeAndroidRuntime.control) throw new IllegalStateException("Negative size: " + key + "=" + value);
         } //End block
         return dsTaint.getTaintInt();
         // ---------- Original Method ----------

@@ -55,14 +55,15 @@ public class TextAppearanceSpan extends MetricAffectingSpan implements Parcelabl
         //Begin case 1 
         mTypeface = "sans";
         //End case 1 
+        
         //Begin case 2 
-        mTypeface = "serif";
+        //mTypeface = "serif";
         //End case 2 
         //Begin case 3 
-        mTypeface = "monospace";
+        //mTypeface = "monospace";
         //End case 3 
         //Begin case default 
-        mTypeface = null;
+        //mTypeface = null;
         //End case default 
         a.recycle();
         {
@@ -86,6 +87,11 @@ public class TextAppearanceSpan extends MetricAffectingSpan implements Parcelabl
         dsTaint.addTaint(color.dsTaint);
         dsTaint.addTaint(family);
         dsTaint.addTaint(size);
+        mTypeface = family;
+        mStyle = style;
+        mTextSize = size;
+        mTextColor = color;
+        mTextColorLink = linkColor;
         // ---------- Original Method ----------
         //mTypeface = family;
         //mStyle = style;
@@ -107,18 +113,14 @@ public class TextAppearanceSpan extends MetricAffectingSpan implements Parcelabl
             {
                 mTextColor = ColorStateList.CREATOR.createFromParcel(src);
             } //End block
-            {
-                mTextColor = null;
-            } //End block
+            
         } //End collapsed parenthetic
         {
             boolean varFD1B2B02E9DB19B4AD5578330E4A9BB4_162586162 = (src.readInt() != 0);
             {
                 mTextColorLink = ColorStateList.CREATOR.createFromParcel(src);
             } //End block
-            {
-                mTextColorLink = null;
-            } //End block
+           
         } //End collapsed parenthetic
         // ---------- Original Method ----------
         //mTypeface = src.readString();

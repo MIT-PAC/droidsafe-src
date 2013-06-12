@@ -21,6 +21,7 @@ public class TypefaceSpan extends MetricAffectingSpan implements ParcelableSpan 
     @DSModeled(DSC.SAFE)
     public TypefaceSpan(String family) {
         dsTaint.addTaint(family);
+        mFamily = family;
         // ---------- Original Method ----------
         //mFamily = family;
     }

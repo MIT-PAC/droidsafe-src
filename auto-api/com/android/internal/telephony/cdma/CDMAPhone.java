@@ -1,11 +1,14 @@
 package com.android.internal.telephony.cdma;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
+import static com.android.internal.telephony.TelephonyProperties.PROPERTY_ICC_OPERATOR_ALPHA;
+import static com.android.internal.telephony.TelephonyProperties.PROPERTY_ICC_OPERATOR_ISO_COUNTRY;
+import static com.android.internal.telephony.TelephonyProperties.PROPERTY_ICC_OPERATOR_NUMERIC;
 
-// import Iterator to deal with enhanced for loop translation
-import java.util.Iterator;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 import android.app.ActivityManagerNative;
 import android.content.ContentValues;
@@ -30,7 +33,7 @@ import android.telephony.ServiceState;
 import android.telephony.SignalStrength;
 import android.text.TextUtils;
 import android.util.Log;
-import com.android.internal.telephony.Call;
+
 import com.android.internal.telephony.CallStateException;
 import com.android.internal.telephony.CallTracker;
 import com.android.internal.telephony.CommandException;
@@ -46,20 +49,18 @@ import com.android.internal.telephony.OperatorInfo;
 import com.android.internal.telephony.Phone;
 import com.android.internal.telephony.PhoneBase;
 import com.android.internal.telephony.PhoneNotifier;
-import com.android.internal.telephony.PhoneProxy;
 import com.android.internal.telephony.PhoneSubInfo;
 import com.android.internal.telephony.ServiceStateTracker;
 import com.android.internal.telephony.TelephonyIntents;
 import com.android.internal.telephony.TelephonyProperties;
 import com.android.internal.telephony.UUSInfo;
 import com.android.internal.telephony.cat.CatService;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
-import static com.android.internal.telephony.TelephonyProperties.PROPERTY_ICC_OPERATOR_ALPHA;
-import static com.android.internal.telephony.TelephonyProperties.PROPERTY_ICC_OPERATOR_ISO_COUNTRY;
-import static com.android.internal.telephony.TelephonyProperties.PROPERTY_ICC_OPERATOR_NUMERIC;
+
+import droidsafe.annotations.DSC;
+import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.DSModeled;
+import droidsafe.runtime.DroidSafeAndroidRuntime;
+// import Iterator to deal with enhanced for loop translation
 
 public class CDMAPhone extends PhoneBase {
     static final String LOG_TAG = "CDMA";
@@ -514,7 +515,7 @@ public class CDMAPhone extends PhoneBase {
     public Connection dial(String dialString, UUSInfo uusInfo) throws CallStateException {
         dsTaint.addTaint(uusInfo.dsTaint);
         dsTaint.addTaint(dialString);
-        throw new CallStateException("Sending UUS information NOT supported in CDMA!");
+        if (DroidSafeAndroidRuntime.control) throw new CallStateException("Sending UUS information NOT supported in CDMA!");
         return (Connection)dsTaint.getTaint();
         // ---------- Original Method ----------
         //throw new CallStateException("Sending UUS information NOT supported in CDMA!");

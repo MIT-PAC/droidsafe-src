@@ -46,6 +46,7 @@ public class ManifestDigest implements Parcelable {
     @DSModeled(DSC.SAFE)
      ManifestDigest(byte[] digest) {
         dsTaint.addTaint(digest);
+        mDigest = digest;
         // ---------- Original Method ----------
         //mDigest = digest;
     }

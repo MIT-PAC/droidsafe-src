@@ -1,29 +1,29 @@
 package android.media;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
+import java.util.ArrayList;
+import java.util.List;
 
-// import Iterator to deal with enhanced for loop translation
-import java.util.Iterator;
-
-import com.android.internal.database.SortCursor;
 import android.annotation.SdkConstant;
 import android.annotation.SdkConstant.SdkConstantType;
 import android.app.Activity;
 import android.content.ContentUris;
 import android.content.Context;
-import android.content.res.AssetFileDescriptor;
 import android.database.Cursor;
 import android.net.Uri;
 import android.os.Environment;
 import android.provider.DrmStore;
 import android.provider.MediaStore;
 import android.provider.Settings;
-import android.provider.Settings.System;
 import android.util.Log;
-import java.util.ArrayList;
-import java.util.List;
+
+import com.android.internal.database.SortCursor;
+
+import droidsafe.annotations.DSC;
+import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.DSModeled;
+import droidsafe.runtime.DroidSafeAndroidRuntime;
+// import Iterator to deal with enhanced for loop translation
 
 public class RingtoneManager {
     private static final String TAG = "RingtoneManager";
@@ -102,7 +102,7 @@ public class RingtoneManager {
     public void setType(int type) {
         dsTaint.addTaint(type);
         {
-            throw new IllegalStateException(
+        	if (DroidSafeAndroidRuntime.control)throw new IllegalStateException(
                     "Setting filter columns should be done before querying for ringtones.");
         } //End block
         setFilterColumnsList(type);
@@ -191,7 +191,7 @@ public class RingtoneManager {
         internalCursor = getInternalRingtones();
         final Cursor drmCursor;
         drmCursor = getDrmRingtones();
-        drmCursor = null;
+       
         final Cursor mediaCursor;
         mediaCursor = getMediaRingtones();
         Cursor var724F8A75704A5D6E2945FF4DCE809969_1677735320 = (mCursor = new SortCursor(new Cursor[] { internalCursor, drmCursor, mediaCursor },

@@ -19,6 +19,8 @@ public class LogPrinter implements Printer {
         dsTaint.addTaint(priority);
         dsTaint.addTaint(tag);
         mBuffer = Log.LOG_ID_MAIN;
+        mPriority = priority;
+        mTag = tag;
         // ---------- Original Method ----------
         //mPriority = priority;
         //mTag = tag;
@@ -32,6 +34,9 @@ public class LogPrinter implements Printer {
         dsTaint.addTaint(buffer);
         dsTaint.addTaint(priority);
         dsTaint.addTaint(tag);
+        mPriority = priority;
+        mTag = tag;
+        mBuffer = buffer;
         // ---------- Original Method ----------
         //mPriority = priority;
         //mTag = tag;

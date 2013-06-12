@@ -19,6 +19,7 @@ public class ScaleXSpan extends MetricAffectingSpan implements ParcelableSpan {
     @DSModeled(DSC.SAFE)
     public ScaleXSpan(float proportion) {
         dsTaint.addTaint(proportion);
+        mProportion = proportion;
         // ---------- Original Method ----------
         //mProportion = proportion;
     }

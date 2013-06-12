@@ -21,6 +21,7 @@ public class StyleSpan extends MetricAffectingSpan implements ParcelableSpan {
     @DSModeled(DSC.SAFE)
     public StyleSpan(int style) {
         dsTaint.addTaint(style);
+        mStyle = style;
         // ---------- Original Method ----------
         //mStyle = style;
     }

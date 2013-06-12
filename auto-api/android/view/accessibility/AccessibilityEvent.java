@@ -1,17 +1,17 @@
 package android.view.accessibility;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-
-// import Iterator to deal with enhanced for loop translation
-import java.util.Iterator;
+import java.util.ArrayList;
+import java.util.List;
 
 import android.os.Parcel;
 import android.os.Parcelable;
 import android.text.TextUtils;
-import java.util.ArrayList;
-import java.util.List;
+import droidsafe.annotations.DSC;
+import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.DSModeled;
+import droidsafe.runtime.DroidSafeAndroidRuntime;
+// import Iterator to deal with enhanced for loop translation
 
 public final class AccessibilityEvent extends AccessibilityRecord implements Parcelable {
     private static final boolean DEBUG = false;
@@ -260,7 +260,7 @@ public final class AccessibilityEvent extends AccessibilityRecord implements Par
     @Override
     public void recycle() {
         {
-            throw new IllegalStateException("Event already recycled!");
+           if (DroidSafeAndroidRuntime.control)  throw new IllegalStateException("Event already recycled!");
         } //End block
         clear();
         {

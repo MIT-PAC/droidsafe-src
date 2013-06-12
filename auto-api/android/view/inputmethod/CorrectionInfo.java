@@ -44,6 +44,9 @@ public final class CorrectionInfo implements Parcelable {
         dsTaint.addTaint(newText);
         dsTaint.addTaint(oldText);
         dsTaint.addTaint(offset);
+        mOffset = offset;
+        mOldText = oldText;
+        mNewText = newText;
         // ---------- Original Method ----------
         //mOffset = offset;
         //mOldText = oldText;

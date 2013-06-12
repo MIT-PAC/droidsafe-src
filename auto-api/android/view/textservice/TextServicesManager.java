@@ -1,13 +1,8 @@
 package android.view.textservice;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
+import java.util.Locale;
 
-// import Iterator to deal with enhanced for loop translation
-import java.util.Iterator;
-
-import com.android.internal.textservice.ITextServicesManager;
 import android.content.Context;
 import android.os.Bundle;
 import android.os.IBinder;
@@ -15,7 +10,14 @@ import android.os.RemoteException;
 import android.os.ServiceManager;
 import android.util.Log;
 import android.view.textservice.SpellCheckerSession.SpellCheckerSessionListener;
-import java.util.Locale;
+
+import com.android.internal.textservice.ITextServicesManager;
+
+import droidsafe.annotations.DSC;
+import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.DSModeled;
+import droidsafe.runtime.DroidSafeAndroidRuntime;
+// import Iterator to deal with enhanced for loop translation
 
 public final class TextServicesManager {
     private static final String TAG = TextServicesManager.class.getSimpleName();
@@ -60,16 +62,16 @@ public final class TextServicesManager {
         dsTaint.addTaint(listener.dsTaint);
         dsTaint.addTaint(bundle.dsTaint);
         {
-            throw new NullPointerException();
+            if (DroidSafeAndroidRuntime.control) throw new NullPointerException();
         } //End block
         {
-            throw new IllegalArgumentException("Locale should not be null if you don't refer"
+            if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("Locale should not be null if you don't refer"
                     + " settings.");
         } //End block
         {
             boolean varAE153CACF515DD15F9D7ED949C537F7C_1472645330 = (referToSpellCheckerLanguageSettings && !isSpellCheckerEnabled());
         } //End collapsed parenthetic
-        final SpellCheckerInfo sci;
+        SpellCheckerInfo sci = null;
         try 
         {
             sci = sService.getCurrentSpellChecker(null);
@@ -189,7 +191,7 @@ public final class TextServicesManager {
         try 
         {
             {
-                throw new NullPointerException("SpellCheckerInfo is null.");
+                if (DroidSafeAndroidRuntime.control) throw new NullPointerException("SpellCheckerInfo is null.");
             } //End block
             sService.setCurrentSpellChecker(null, sci.getId());
         } //End block
@@ -236,9 +238,7 @@ public final class TextServicesManager {
         try 
         {
             final int hashCode;
-            {
-                hashCode = 0;
-            } //End block
+  
             {
                 hashCode = subtype.hashCode();
             } //End block

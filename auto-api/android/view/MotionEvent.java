@@ -1,17 +1,15 @@
 package android.view;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-
-// import Iterator to deal with enhanced for loop translation
-import java.util.Iterator;
-
 import android.graphics.Matrix;
 import android.os.Parcel;
 import android.os.Parcelable;
-import android.os.SystemClock;
 import android.util.SparseArray;
+import droidsafe.annotations.DSC;
+import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.DSModeled;
+import droidsafe.runtime.DroidSafeAndroidRuntime;
+// import Iterator to deal with enhanced for loop translation
 
 public final class MotionEvent extends InputEvent implements Parcelable {
     private static final long NS_PER_MS = 1000000;
@@ -598,13 +596,13 @@ public final class MotionEvent extends InputEvent implements Parcelable {
     public final void recycle() {
         {
             {
-                throw new RuntimeException(toString() + " recycled twice!", mRecycledLocation);
+                if (DroidSafeAndroidRuntime.control) throw new RuntimeException(toString() + " recycled twice!", mRecycledLocation);
             } //End block
             mRecycledLocation = new RuntimeException("Last recycled here");
         } //End block
         {
             {
-                throw new RuntimeException(toString() + " recycled twice!");
+                if (DroidSafeAndroidRuntime.control) throw new RuntimeException(toString() + " recycled twice!");
             } //End block
             mRecycled = true;
         } //End block
@@ -1469,7 +1467,7 @@ public final class MotionEvent extends InputEvent implements Parcelable {
     public final void transform(Matrix matrix) {
         dsTaint.addTaint(matrix.dsTaint);
         {
-            throw new IllegalArgumentException("matrix must not be null");
+            if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("matrix must not be null");
         } //End block
         nativeTransform(mNativePtr, matrix);
         // ---------- Original Method ----------
@@ -1519,7 +1517,7 @@ public final class MotionEvent extends InputEvent implements Parcelable {
     @DSModeled(DSC.SAFE)
     public final void addBatch(long eventTime, PointerCoords[] pointerCoords, int metaState) {
         dsTaint.addTaint(metaState);
-        dsTaint.addTaint(pointerCoords.dsTaint);
+        dsTaint.addTaint(pointerCoords[0].dsTaint);
         dsTaint.addTaint(eventTime);
         nativeAddBatch(mNativePtr, eventTime * NS_PER_MS, pointerCoords, metaState);
         // ---------- Original Method ----------
@@ -1688,25 +1686,16 @@ public final class MotionEvent extends InputEvent implements Parcelable {
                 } //End block
             } //End collapsed parenthetic
             {
-                throw new IllegalArgumentException("idBits did not match any ids in the event");
+                if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("idBits did not match any ids in the event");
             } //End block
             final int newAction;
             {
                 {
                     newAction = ACTION_MOVE;
                 } //End block
-                {
-                    newAction = oldActionMasked == ACTION_POINTER_DOWN
-                            ? ACTION_DOWN : ACTION_UP;
-                } //End block
-                {
-                    newAction = oldActionMasked
-                            | (newActionPointerIndex << ACTION_POINTER_INDEX_SHIFT);
-                } //End block
+                
             } //End block
-            {
-                newAction = oldAction;
-            } //End block
+            
             final int historySize;
             historySize = nativeGetHistorySize(mNativePtr);
             {
@@ -1715,7 +1704,7 @@ public final class MotionEvent extends InputEvent implements Parcelable {
                 {
                     final int historyPos;
                     historyPos = HISTORY_CURRENT;
-                    historyPos = h;
+
                     {
                         int i;
                         i = 0;
@@ -2013,7 +2002,7 @@ public final class MotionEvent extends InputEvent implements Parcelable {
             //Begin case default 
             {
                 {
-                    throw new IllegalArgumentException("Axis out of range.");
+                    if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("Axis out of range.");
                 } //End block
                 final long bits;
                 bits = mPackedAxisBits;
@@ -2037,7 +2026,7 @@ public final class MotionEvent extends InputEvent implements Parcelable {
             //Begin case default 
             {
                 {
-                    throw new IllegalArgumentException("Axis out of range.");
+                    if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("Axis out of range.");
                 } //End block
                 final long bits;
                 bits = mPackedAxisBits;

@@ -20,6 +20,7 @@ public class AbsoluteSizeSpan extends MetricAffectingSpan implements ParcelableS
     @DSModeled(DSC.SAFE)
     public AbsoluteSizeSpan(int size) {
         dsTaint.addTaint(size);
+        mSize = size;
         // ---------- Original Method ----------
         //mSize = size;
     }
@@ -30,6 +31,7 @@ public class AbsoluteSizeSpan extends MetricAffectingSpan implements ParcelableS
     public AbsoluteSizeSpan(int size, boolean dip) {
         dsTaint.addTaint(dip);
         dsTaint.addTaint(size);
+        mSize = size;
         // ---------- Original Method ----------
         //mSize = size;
         //mDip = dip;

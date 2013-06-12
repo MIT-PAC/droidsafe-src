@@ -1,11 +1,10 @@
 package android.text;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-
+import java.lang.reflect.Array;
 // import Iterator to deal with enhanced for loop translation
 import java.util.Iterator;
+import java.util.regex.Pattern;
 
 import android.content.res.Resources;
 import android.os.Parcel;
@@ -35,11 +34,14 @@ import android.text.style.TypefaceSpan;
 import android.text.style.URLSpan;
 import android.text.style.UnderlineSpan;
 import android.util.Printer;
+
 import com.android.internal.R;
 import com.android.internal.util.ArrayUtils;
-import java.lang.reflect.Array;
-import java.util.Iterator;
-import java.util.regex.Pattern;
+
+import droidsafe.annotations.DSC;
+import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.DSModeled;
+import droidsafe.runtime.DroidSafeAndroidRuntime;
 
 public class TextUtils {
     public static final int ALIGNMENT_SPAN = 1;
@@ -144,7 +146,7 @@ public class TextUtils {
                 readSpan(p, sp, new EasyEditSpan());
                 //End case EASY_EDIT_SPAN 
                 //Begin case default 
-                throw new RuntimeException("bogus span encoding " + kind);
+                if (DroidSafeAndroidRuntime.control) throw new RuntimeException("bogus span encoding " + kind);
                 //End case default 
             } //End block
             return dsTaint.getTaintString();

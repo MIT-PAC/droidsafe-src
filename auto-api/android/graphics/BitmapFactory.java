@@ -223,6 +223,7 @@ public class BitmapFactory {
     private static Bitmap nativeDecodeStream(InputStream is, byte[] storage,
             Rect padding, Options opts) {
         //DSFIXME:  CODE0010: Native static method requires manual modeling
+    	return new Bitmap();
     }
 
     
@@ -230,12 +231,14 @@ public class BitmapFactory {
     private static Bitmap nativeDecodeFileDescriptor(FileDescriptor fd,
             Rect padding, Options opts) {
         //DSFIXME:  CODE0010: Native static method requires manual modeling
+    	return new Bitmap();
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:00.959 -0400", hash_original_method = "DB394781167C2B599D675A270034AE32", hash_generated_method = "9ACDEFF0753C1BB5F0ACD21DDEF1B3DC")
     private static Bitmap nativeDecodeAsset(int asset, Rect padding, Options opts) {
         //DSFIXME:  CODE0010: Native static method requires manual modeling
+    	return new Bitmap();
     }
 
     
@@ -243,18 +246,21 @@ public class BitmapFactory {
     private static Bitmap nativeDecodeByteArray(byte[] data, int offset,
             int length, Options opts) {
         //DSFIXME:  CODE0010: Native static method requires manual modeling
+    	return new Bitmap();
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:00.959 -0400", hash_original_method = "A6FE2B76604145B92A6BE6EE1F7C5140", hash_generated_method = "7996BE876BF60728076F982BFC4D0157")
     private static byte[] nativeScaleNinePatch(byte[] chunk, float scale, Rect pad) {
         //DSFIXME:  CODE0010: Native static method requires manual modeling
+    	return new byte[]{DSUtils.UNKNOWN_BYTE};
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:00.959 -0400", hash_original_method = "D13F1D1D5B69278DEEFEB3B7F79AFBD2", hash_generated_method = "D5334238F99B86B9623C4FC46F15D842")
     private static boolean nativeIsSeekable(FileDescriptor fd) {
         //DSFIXME:  CODE0010: Native static method requires manual modeling
+    	return DSUtils.UNKNOWN_BOOLEAN;
     }
 
     

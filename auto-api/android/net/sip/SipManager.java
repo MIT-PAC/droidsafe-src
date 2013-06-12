@@ -1,22 +1,20 @@
 package android.net.sip;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-
-// import Iterator to deal with enhanced for loop translation
-import java.util.Iterator;
+import java.text.ParseException;
 
 import android.app.PendingIntent;
 import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.os.IBinder;
-import android.os.Looper;
 import android.os.RemoteException;
 import android.os.ServiceManager;
-import android.util.Log;
-import java.text.ParseException;
+import droidsafe.annotations.DSC;
+import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.DSModeled;
+import droidsafe.runtime.DroidSafeAndroidRuntime;
+// import Iterator to deal with enhanced for loop translation
 
 public class SipManager {
     public static final int INCOMING_CALL_RESULT_CODE = 101;
@@ -115,7 +113,7 @@ public class SipManager {
         dsTaint.addTaint(localProfile.dsTaint);
         dsTaint.addTaint(listener.dsTaint);
         {
-            throw new NullPointerException(
+           if (DroidSafeAndroidRuntime.control)  throw new NullPointerException(
                     "incomingCallPendingIntent cannot be null");
         } //End block
         try 
@@ -243,7 +241,7 @@ public class SipManager {
         {
             boolean var71F47E4046802A9F78B8CD8F59926173_966384662 = (!isVoipSupported(mContext));
             {
-                throw new SipException("VOIP API is not supported");
+                if (DroidSafeAndroidRuntime.control) throw new SipException("VOIP API is not supported");
             } //End block
         } //End collapsed parenthetic
         SipAudioCall call;
@@ -276,7 +274,7 @@ public class SipManager {
         {
             boolean var71F47E4046802A9F78B8CD8F59926173_1128271583 = (!isVoipSupported(mContext));
             {
-                throw new SipException("VOIP API is not supported");
+                if (DroidSafeAndroidRuntime.control) throw new SipException("VOIP API is not supported");
             } //End block
         } //End collapsed parenthetic
         try 
@@ -313,17 +311,17 @@ public class SipManager {
         dsTaint.addTaint(incomingCallIntent.dsTaint);
         dsTaint.addTaint(listener.dsTaint);
         {
-            throw new SipException("Cannot retrieve session with null intent");
+            if (DroidSafeAndroidRuntime.control) throw new SipException("Cannot retrieve session with null intent");
         } //End block
         String callId;
         callId = getCallId(incomingCallIntent);
         {
-            throw new SipException("Call ID missing in incoming call intent");
+            if (DroidSafeAndroidRuntime.control) throw new SipException("Call ID missing in incoming call intent");
         } //End block
         String offerSd;
         offerSd = getOfferSessionDescription(incomingCallIntent);
         {
-            throw new SipException("Session description missing in incoming "
+            if (DroidSafeAndroidRuntime.control)  throw new SipException("Session description missing in incoming "
                     + "call intent");
         } //End block
         try 
@@ -331,7 +329,7 @@ public class SipManager {
             ISipSession session;
             session = mSipService.getPendingSession(callId);
             {
-                throw new SipException("No pending session for the call");
+                if (DroidSafeAndroidRuntime.control) throw new SipException("No pending session for the call");
             } //End block
             SipAudioCall call;
             call = new SipAudioCall(
@@ -394,7 +392,7 @@ public class SipManager {
             session = mSipService.createSession(localProfile,
                     createRelay(listener, localProfile.getUriString()));
             {
-                throw new SipException(
+               if (DroidSafeAndroidRuntime.control)  throw new SipException(
                         "SipService.createSession() returns null");
             } //End block
             session.register(expiryTime);
@@ -430,7 +428,7 @@ public class SipManager {
             session = mSipService.createSession(localProfile,
                     createRelay(listener, localProfile.getUriString()));
             {
-                throw new SipException(
+                if (DroidSafeAndroidRuntime.control) throw new SipException(
                         "SipService.createSession() returns null");
             } //End block
             session.unregister();
@@ -506,7 +504,7 @@ public class SipManager {
         } //End block
         catch (RemoteException e)
         {
-            throw new SipException("createSipSession()", e);
+            if (DroidSafeAndroidRuntime.control) throw new SipException("createSipSession()", e);
         } //End block
         return (SipSession)dsTaint.getTaint();
         // ---------- Original Method ----------

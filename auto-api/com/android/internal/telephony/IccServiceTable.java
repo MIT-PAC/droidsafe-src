@@ -16,6 +16,7 @@ public abstract class IccServiceTable {
     @DSModeled(DSC.SAFE)
     protected IccServiceTable(byte[] table) {
         dsTaint.addTaint(table);
+        mServiceTable = table;
         // ---------- Original Method ----------
         //mServiceTable = table;
     }

@@ -153,7 +153,7 @@ public abstract class Context {
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public final String getString(int resId, Object... formatArgs) {
         dsTaint.addTaint(resId);
-        dsTaint.addTaint(formatArgs.dsTaint);
+        dsTaint.addTaint(formatArgs[0].dsTaint);
         String var3D9BFC044EEC4D309825E04863344990_1853339836 = (getResources().getString(resId, formatArgs));
         return dsTaint.getTaintString();
         // ---------- Original Method ----------

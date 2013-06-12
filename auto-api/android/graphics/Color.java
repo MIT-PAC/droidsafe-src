@@ -236,6 +236,7 @@ public class Color {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:01.019 -0400", hash_original_method = "DB38BA81D20D8D6ED161666F4B33032A", hash_generated_method = "EDFAD2753CEBE130047FB95BC66E1D89")
     private static int nativeHSVToColor(int alpha, float hsv[]) {
         //DSFIXME:  CODE0010: Native static method requires manual modeling
+    	return DSUtils.UNKNOWN_INT;
     }
 
     

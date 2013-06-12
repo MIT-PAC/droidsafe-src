@@ -19,6 +19,7 @@ public class ForegroundColorSpan extends CharacterStyle implements UpdateAppeara
     @DSModeled(DSC.SAFE)
     public ForegroundColorSpan(int color) {
         dsTaint.addTaint(color);
+        mColor = color;
         // ---------- Original Method ----------
         //mColor = color;
     }
