@@ -25,6 +25,8 @@ public final class NativeBreakIterator implements Cloneable {
     private NativeBreakIterator(int address, int type) {
         dsTaint.addTaint(address);
         dsTaint.addTaint(type);
+        this.type = type;
+        this.address = address;
         this.charIter = new StringCharacterIterator("");
         // ---------- Original Method ----------
         //this.address = address;
@@ -283,31 +285,30 @@ public final class NativeBreakIterator implements Cloneable {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:17.091 -0400", hash_original_method = "E766469118F90506F4C9971F2F3D4750", hash_generated_method = "B3CB0B65D60401EAF2B8D8905E40469E")
     private static int getCharacterInstanceImpl(String locale) {
-        //DSFIXME:  CODE0010: Native static method requires manual modeling
+    	return DSUtils.UNKNOWN_INT;
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:17.091 -0400", hash_original_method = "35B9912B68AEF76CDC9E5DA290FBE19F", hash_generated_method = "B7880BF6341232F79A6367F8BD7CDE96")
     private static int getWordInstanceImpl(String locale) {
-        //DSFIXME:  CODE0010: Native static method requires manual modeling
+    	return DSUtils.UNKNOWN_INT;
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:17.091 -0400", hash_original_method = "10BD6805657369CE3FE13179C9A4A9A0", hash_generated_method = "5292C72EB2CD49C2F7573EDB9514AB60")
     private static int getLineInstanceImpl(String locale) {
-        //DSFIXME:  CODE0010: Native static method requires manual modeling
+    	return DSUtils.UNKNOWN_INT;
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:17.091 -0400", hash_original_method = "F5E3D605EB2ED0902B913AD7DDE3776C", hash_generated_method = "24EEE2F7734707FCD3182235B0843004")
     private static int getSentenceInstanceImpl(String locale) {
-        //DSFIXME:  CODE0010: Native static method requires manual modeling
+    	return DSUtils.UNKNOWN_INT;
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:17.091 -0400", hash_original_method = "4A7DB1B9F3F48320253BFC66BEF09393", hash_generated_method = "9751E53BF3110E4192B1F736D833160D")
     private static void closeBreakIteratorImpl(int address) {
-        //DSFIXME:  CODE0010: Native static method requires manual modeling
     }
 
     
@@ -319,55 +320,55 @@ public final class NativeBreakIterator implements Cloneable {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:17.091 -0400", hash_original_method = "C9B3B2F43D45BD33A36364AB99B01F0A", hash_generated_method = "88D19D4E85EF6AD226DC23C7DCB3106D")
     private static int cloneImpl(int address) {
-        //DSFIXME:  CODE0010: Native static method requires manual modeling
+    	return DSUtils.UNKNOWN_INT;
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:17.091 -0400", hash_original_method = "409317681ACB84DC5FE75E73562B12EF", hash_generated_method = "EA907C1CE4F1C20C9FC7FC242E49EE42")
     private static int precedingImpl(int address, int offset) {
-        //DSFIXME:  CODE0010: Native static method requires manual modeling
+    	return DSUtils.UNKNOWN_INT;
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:17.091 -0400", hash_original_method = "5F86A93EFF1868F91A88BDF127ABFD08", hash_generated_method = "61587A94B7E0B049CADA45BD7440460E")
     private static boolean isBoundaryImpl(int address, int offset) {
-        //DSFIXME:  CODE0010: Native static method requires manual modeling
+    	return DSUtils.UNKNOWN_BOOLEAN;
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:17.091 -0400", hash_original_method = "BAC69EC7980335B2A29F42F4F4C386CF", hash_generated_method = "080D85B312EE89277212BBBFE1046A9D")
     private static int nextImpl(int address, int n) {
-        //DSFIXME:  CODE0010: Native static method requires manual modeling
+    	return DSUtils.UNKNOWN_INT;
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:17.091 -0400", hash_original_method = "D76F011F9F290901CF2468633CB0387C", hash_generated_method = "A1400EFD009316B5F1C41D3535C31485")
     private static int previousImpl(int address) {
-        //DSFIXME:  CODE0010: Native static method requires manual modeling
+    	return DSUtils.UNKNOWN_INT;
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:17.091 -0400", hash_original_method = "7874B679284AF0368DA954A72841812B", hash_generated_method = "3542EE7C5EBE3FE5390D45C9AFB452D6")
     private static int currentImpl(int address) {
-        //DSFIXME:  CODE0010: Native static method requires manual modeling
+    	return DSUtils.UNKNOWN_INT;
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:17.091 -0400", hash_original_method = "B49B6440E0A2979B13782B7B31F7DC9D", hash_generated_method = "235C1C0B8D349A23B4D3C97E96D8B450")
     private static int firstImpl(int address) {
-        //DSFIXME:  CODE0010: Native static method requires manual modeling
+    	return DSUtils.UNKNOWN_INT;
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:17.091 -0400", hash_original_method = "942F150E9EA258E857D29D0B1227C19B", hash_generated_method = "8BF964D61CFBFAF8C95345CC4136636F")
     private static int followingImpl(int address, int offset) {
-        //DSFIXME:  CODE0010: Native static method requires manual modeling
+    	return DSUtils.UNKNOWN_INT;
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:17.091 -0400", hash_original_method = "4A10CEDE915BA75F7F2D7018A9C12E7F", hash_generated_method = "61F6268EE6ABF36B2D3AE0959684F2EC")
     private static int lastImpl(int address) {
-        //DSFIXME:  CODE0010: Native static method requires manual modeling
+    	return DSUtils.UNKNOWN_INT;
     }
 
     

@@ -151,25 +151,25 @@ public final class Memory {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:17.479 -0400", hash_original_method = "153A400D82219B55CEEC5CB515033E2B", hash_generated_method = "3F2FBC0585D0455FCA3FDC9AE53B2C21")
     public static byte peekByte(int address) {
-        //DSFIXME:  CODE0010: Native static method requires manual modeling
+    	return DSUtils.UNKNOWN_BYTE;
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:17.479 -0400", hash_original_method = "0B9E9C9191403A3800E7272D993B1A29", hash_generated_method = "A43C6CD924DFC76D1E2C12EF77DB5324")
     public static int peekInt(int address, boolean swap) {
-        //DSFIXME:  CODE0010: Native static method requires manual modeling
+    	return DSUtils.UNKNOWN_INT;
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:17.479 -0400", hash_original_method = "C65857A6559B5563A7F34C07527432FD", hash_generated_method = "4DE98E4938C5D4590C9782129A7175FB")
     public static long peekLong(int address, boolean swap) {
-        //DSFIXME:  CODE0010: Native static method requires manual modeling
+    	return DSUtils.UNKNOWN_LONG;
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:17.479 -0400", hash_original_method = "2EB104BC83E162F49238BC8FAE579C06", hash_generated_method = "A50E7B50291FB9B7256B66852BFA7FEE")
     public static short peekShort(int address, boolean swap) {
-        //DSFIXME:  CODE0010: Native static method requires manual modeling
+    	return DSUtils.UNKNOWN_SHORT;
     }
 
     

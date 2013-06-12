@@ -2,6 +2,7 @@ package libcore.io;
 
 // Droidsafe Imports
 import droidsafe.helpers.*;
+import droidsafe.runtime.DroidSafeAndroidRuntime;
 import droidsafe.annotations.*;
 
 // import Iterator to deal with enhanced for loop translation
@@ -19,6 +20,8 @@ public final class GaiException extends RuntimeException {
     public GaiException(String functionName, int error) {
         dsTaint.addTaint(error);
         dsTaint.addTaint(functionName);
+        this.functionName = functionName;
+        this.error = error;
         // ---------- Original Method ----------
         //this.functionName = functionName;
         //this.error = error;
@@ -32,6 +35,8 @@ public final class GaiException extends RuntimeException {
         dsTaint.addTaint(cause.dsTaint);
         dsTaint.addTaint(error);
         dsTaint.addTaint(functionName);
+        this.functionName = functionName;
+        this.error = error;
         // ---------- Original Method ----------
         //this.functionName = functionName;
         //this.error = error;
@@ -67,7 +72,7 @@ public final class GaiException extends RuntimeException {
         UnknownHostException newException;
         newException = new UnknownHostException(detailMessage);
         newException.initCause(this);
-        throw newException;
+        if (DroidSafeAndroidRuntime.control) throw newException;
         return (UnknownHostException)dsTaint.getTaint();
         // ---------- Original Method ----------
         //UnknownHostException newException = new UnknownHostException(detailMessage);
@@ -79,7 +84,7 @@ public final class GaiException extends RuntimeException {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:17.433 -0400", hash_original_method = "81B83C8D72DB912D679B4B84F9977C22", hash_generated_method = "3FD36E1132B94743087BD7512E8854E1")
     @DSModeled(DSC.SAFE)
     public UnknownHostException rethrowAsUnknownHostException() throws UnknownHostException {
-        throw rethrowAsUnknownHostException(getMessage());
+    	if (DroidSafeAndroidRuntime.control) throw rethrowAsUnknownHostException(getMessage());
         return (UnknownHostException)dsTaint.getTaint();
         // ---------- Original Method ----------
         //throw rethrowAsUnknownHostException(getMessage());

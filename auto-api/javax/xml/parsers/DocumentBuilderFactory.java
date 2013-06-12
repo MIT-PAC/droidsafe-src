@@ -2,6 +2,7 @@ package javax.xml.parsers;
 
 // Droidsafe Imports
 import droidsafe.helpers.*;
+import droidsafe.runtime.DroidSafeAndroidRuntime;
 import droidsafe.annotations.*;
 
 // import Iterator to deal with enhanced for loop translation
@@ -186,7 +187,7 @@ public abstract class DocumentBuilderFactory {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:15.594 -0400", hash_original_method = "0EC7A1CF3FE0EA75043A7D33C5A41123", hash_generated_method = "175DAC667A6680F762C43DB44CC1F188")
     @DSModeled(DSC.SAFE)
     public Schema getSchema() {
-        throw new UnsupportedOperationException(
+    	if (DroidSafeAndroidRuntime.control) throw new UnsupportedOperationException(
             "This parser does not support specification \""
             + this.getClass().getPackage().getSpecificationTitle()
             + "\" version \""
@@ -252,7 +253,7 @@ public abstract class DocumentBuilderFactory {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:15.595 -0400", hash_original_method = "2D701854F0A16C5A4E7C38BB02DF4544", hash_generated_method = "309012FE5A9A0E5B29F1F0BC8392628A")
     @DSModeled(DSC.SAFE)
     public boolean isXIncludeAware() {
-        throw new UnsupportedOperationException(
+    	if (DroidSafeAndroidRuntime.control) throw new UnsupportedOperationException(
             "This parser does not support specification \""
             + this.getClass().getPackage().getSpecificationTitle()
             + "\" version \""
