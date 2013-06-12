@@ -2,6 +2,7 @@ package org.apache.harmony.luni.util;
 
 // Droidsafe Imports
 import droidsafe.helpers.*;
+import droidsafe.runtime.DroidSafeAndroidRuntime;
 import droidsafe.annotations.*;
 
 // import Iterator to deal with enhanced for loop translation
@@ -54,10 +55,10 @@ public class TwoKeyHashMap<E, K, V> extends AbstractMap<String, V> {
         dsTaint.addTaint(initialCapacity);
         dsTaint.addTaint(initialLoadFactor);
         {
-            throw new IllegalArgumentException("initialCapacity should be >= 0");
+        	if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("initialCapacity should be >= 0");
         } //End block
         {
-            throw new IllegalArgumentException(
+        	if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException(
                     "initialLoadFactor should be > 0");
         } //End block
         {
@@ -692,12 +693,12 @@ public class TwoKeyHashMap<E, K, V> extends AbstractMap<String, V> {
         //DSFIXME:  CODE0002: Requires DSC value to be set
         public Map.Entry<String, V> next() {
             {
-                throw new ConcurrentModificationException();
+            	if (DroidSafeAndroidRuntime.control) throw new ConcurrentModificationException();
             } //End block
             {
                 boolean var61E0EA93C8F2038A69462393E2D5DF33_1480685755 = (!hasNext());
                 {
-                    throw new NoSuchElementException();
+                	if (DroidSafeAndroidRuntime.control) throw new NoSuchElementException();
                 } //End block
             } //End collapsed parenthetic
             found = false;
@@ -722,10 +723,10 @@ public class TwoKeyHashMap<E, K, V> extends AbstractMap<String, V> {
         @DSModeled(DSC.SAFE)
         public void remove() {
             {
-                throw new IllegalStateException();
+            	if (DroidSafeAndroidRuntime.control) throw new IllegalStateException();
             } //End block
             {
-                throw new ConcurrentModificationException();
+            	if (DroidSafeAndroidRuntime.control) throw new ConcurrentModificationException();
             } //End block
             Entry<E, K, V> p;
             p = null;

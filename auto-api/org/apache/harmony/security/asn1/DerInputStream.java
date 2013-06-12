@@ -2,6 +2,7 @@ package org.apache.harmony.security.asn1;
 
 // Droidsafe Imports
 import droidsafe.helpers.*;
+import droidsafe.runtime.DroidSafeAndroidRuntime;
 import droidsafe.annotations.*;
 
 // import Iterator to deal with enhanced for loop translation
@@ -49,7 +50,7 @@ public final class DerInputStream extends BerInputStream {
         int tag;
         tag = super.next();
         {
-            throw new ASN1Exception("DER: only definite length encoding MUST be used");
+        	if (DroidSafeAndroidRuntime.control) throw new ASN1Exception("DER: only definite length encoding MUST be used");
         } //End block
         return dsTaint.getTaintInt();
         // ---------- Original Method ----------
@@ -65,7 +66,7 @@ public final class DerInputStream extends BerInputStream {
     @DSModeled(DSC.SAFE)
     public void readBitString() throws IOException {
         {
-            throw new ASN1Exception("ASN.1 bitstring: constructed identifier at [" + tagOffset
+        	if (DroidSafeAndroidRuntime.control) throw new ASN1Exception("ASN.1 bitstring: constructed identifier at [" + tagOffset
                     + "]. Not valid for DER.");
         } //End block
         super.readBitString();
@@ -109,7 +110,7 @@ public final class DerInputStream extends BerInputStream {
     @DSModeled(DSC.SAFE)
     public void readOctetString() throws IOException {
         {
-            throw new ASN1Exception("ASN.1 octetstring: constructed identifier at [" + tagOffset
+        	if (DroidSafeAndroidRuntime.control) throw new ASN1Exception("ASN.1 octetstring: constructed identifier at [" + tagOffset
                     + "]. Not valid for DER.");
         } //End block
         super.readOctetString();
@@ -147,7 +148,7 @@ public final class DerInputStream extends BerInputStream {
     public void readString(ASN1StringType type) throws IOException {
         dsTaint.addTaint(type.dsTaint);
         {
-            throw new ASN1Exception("ASN.1 string: constructed identifier at [" + tagOffset
+        	if (DroidSafeAndroidRuntime.control) throw new ASN1Exception("ASN.1 string: constructed identifier at [" + tagOffset
                     + "]. Not valid for DER.");
         } //End block
         super.readString(type);
@@ -164,11 +165,11 @@ public final class DerInputStream extends BerInputStream {
     @DSModeled(DSC.SAFE)
     public void readUTCTime() throws IOException {
         {
-            throw new ASN1Exception("ASN.1 UTCTime: constructed identifier at [" + tagOffset
+        	if (DroidSafeAndroidRuntime.control) throw new ASN1Exception("ASN.1 UTCTime: constructed identifier at [" + tagOffset
                     + "]. Not valid for DER.");
         } //End block
         {
-            throw new ASN1Exception("ASN.1 UTCTime: wrong format for DER, identifier at ["
+        	if (DroidSafeAndroidRuntime.control) throw new ASN1Exception("ASN.1 UTCTime: wrong format for DER, identifier at ["
                     + tagOffset + "]");
         } //End block
         super.readUTCTime();
@@ -189,7 +190,7 @@ public final class DerInputStream extends BerInputStream {
     @DSModeled(DSC.SAFE)
     public void readGeneralizedTime() throws IOException {
         {
-            throw new ASN1Exception("ASN.1 GeneralizedTime: constructed identifier at ["
+        	if (DroidSafeAndroidRuntime.control) throw new ASN1Exception("ASN.1 GeneralizedTime: constructed identifier at ["
                     + tagOffset + "]. Not valid for DER.");
         } //End block
         super.readGeneralizedTime();
