@@ -3,9 +3,7 @@ package java.util;
 // Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
-
-// import Iterator to deal with enhanced for loop translation
-import java.util.Iterator;
+import droidsafe.runtime.*;
 
 import java.io.IOException;
 import java.io.InvalidObjectException;
@@ -21,12 +19,12 @@ public class ArrayList<E> extends AbstractList<E> implements Cloneable, Serializ
     transient Object[] array;
     private static final long serialVersionUID = 8683452581122892189L;
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:13.341 -0400", hash_original_method = "3E3801877D646C78E965A019C35437FB", hash_generated_method = "8DBC3725C25D1FB390F47552EBC29DDD")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 10:27:39.284 -0400", hash_original_method = "3E3801877D646C78E965A019C35437FB", hash_generated_method = "7A2995C6301F827DEA567B8ABE83D22B")
     @DSModeled(DSC.SAFE)
     public ArrayList(int capacity) {
         dsTaint.addTaint(capacity);
         {
-            throw new IllegalArgumentException();
+            if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException();
         } //End block
         array = (capacity == 0 ? EmptyArray.OBJECT : new Object[capacity]);
         // ---------- Original Method ----------
@@ -37,7 +35,7 @@ public class ArrayList<E> extends AbstractList<E> implements Cloneable, Serializ
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:13.341 -0400", hash_original_method = "A7503C07B95C656689F43518416554F0", hash_generated_method = "AD90B9E15CF17407A56198DED73AF45B")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 10:27:39.287 -0400", hash_original_method = "A7503C07B95C656689F43518416554F0", hash_generated_method = "AD90B9E15CF17407A56198DED73AF45B")
     @DSModeled(DSC.SAFE)
     public ArrayList() {
         array = EmptyArray.OBJECT;
@@ -46,14 +44,14 @@ public class ArrayList<E> extends AbstractList<E> implements Cloneable, Serializ
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:13.341 -0400", hash_original_method = "AE7C60C91D4192AC5637CB5677158233", hash_generated_method = "D6C6A7D6FDB1F053F97E8380CCEAE252")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 10:27:39.295 -0400", hash_original_method = "AE7C60C91D4192AC5637CB5677158233", hash_generated_method = "F7E9834C0A6BCBC9AD631BB5F2114A1C")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public ArrayList(Collection<? extends E> collection) {
         dsTaint.addTaint(collection.dsTaint);
         Object[] a;
         a = collection.toArray();
         {
-            boolean var16F77EF61B9474A82FE398A385F0E9B1_71080698 = (a.getClass() != Object[].class);
+            boolean var16F77EF61B9474A82FE398A385F0E9B1_214520878 = (a.getClass() != Object[].class);
             {
                 Object[] newArray;
                 newArray = new Object[a.length];
@@ -75,7 +73,7 @@ public class ArrayList<E> extends AbstractList<E> implements Cloneable, Serializ
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:13.341 -0400", hash_original_method = "2E95EC775538EB90DD9A0EBE35FC856F", hash_generated_method = "A1EB8C6F9F90682A05B8DD040A4A7600")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 10:27:39.308 -0400", hash_original_method = "2E95EC775538EB90DD9A0EBE35FC856F", hash_generated_method = "A1EB8C6F9F90682A05B8DD040A4A7600")
     @DSModeled(DSC.SAFE)
     @Override
     public boolean add(E object) {
@@ -113,7 +111,7 @@ public class ArrayList<E> extends AbstractList<E> implements Cloneable, Serializ
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:13.342 -0400", hash_original_method = "C5A93B072C15A6072F87F254E0F87786", hash_generated_method = "D009381A66B49FF90571454A354B6A65")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 10:27:39.323 -0400", hash_original_method = "C5A93B072C15A6072F87F254E0F87786", hash_generated_method = "D009381A66B49FF90571454A354B6A65")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     @Override
     public void add(int index, E object) {
@@ -159,7 +157,7 @@ public class ArrayList<E> extends AbstractList<E> implements Cloneable, Serializ
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:13.342 -0400", hash_original_method = "61CF61C733A8B4DAC5325EEC5949E789", hash_generated_method = "C8308802B3A1E21392326BA991E90412")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 10:27:39.333 -0400", hash_original_method = "61CF61C733A8B4DAC5325EEC5949E789", hash_generated_method = "C8308802B3A1E21392326BA991E90412")
     private static int newCapacity(int currentCapacity) {
         int increment = (currentCapacity < (MIN_CAPACITY_INCREMENT / 2) ?
                 MIN_CAPACITY_INCREMENT : currentCapacity >> 1);
@@ -167,7 +165,7 @@ public class ArrayList<E> extends AbstractList<E> implements Cloneable, Serializ
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:13.342 -0400", hash_original_method = "C337453C40DBE6A93E9B9333DA2BDDBD", hash_generated_method = "1896D12F21318287106E55A45B781C0C")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 10:27:39.339 -0400", hash_original_method = "C337453C40DBE6A93E9B9333DA2BDDBD", hash_generated_method = "1896D12F21318287106E55A45B781C0C")
     @DSModeled(DSC.SAFE)
     @Override
     public boolean addAll(Collection<? extends E> collection) {
@@ -216,7 +214,7 @@ public class ArrayList<E> extends AbstractList<E> implements Cloneable, Serializ
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:13.342 -0400", hash_original_method = "878D1F0A34AD7389A9EB37A1AF5C813D", hash_generated_method = "B14401B233AC9496D8A6F0FDEE052365")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 10:27:39.360 -0400", hash_original_method = "878D1F0A34AD7389A9EB37A1AF5C813D", hash_generated_method = "B14401B233AC9496D8A6F0FDEE052365")
     @DSModeled(DSC.SAFE)
     @Override
     public boolean addAll(int index, Collection<? extends E> collection) {
@@ -256,13 +254,13 @@ public class ArrayList<E> extends AbstractList<E> implements Cloneable, Serializ
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:13.342 -0400", hash_original_method = "4D1AAFD088944D073F1D6AEA9907E5AD", hash_generated_method = "7B46C8F09C7254045F5048910CD6EB03")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 10:27:39.391 -0400", hash_original_method = "4D1AAFD088944D073F1D6AEA9907E5AD", hash_generated_method = "7B46C8F09C7254045F5048910CD6EB03")
     static IndexOutOfBoundsException throwIndexOutOfBoundsException(int index, int size) {
         throw new IndexOutOfBoundsException("Invalid index " + index + ", size is " + size);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:13.342 -0400", hash_original_method = "C8A90352D37E56C32915D97A4B0A7D28", hash_generated_method = "D5A68F52AA75340A3F5C68CFBE0401A1")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 10:27:39.394 -0400", hash_original_method = "C8A90352D37E56C32915D97A4B0A7D28", hash_generated_method = "D5A68F52AA75340A3F5C68CFBE0401A1")
     @DSModeled(DSC.SAFE)
     @Override
     public void clear() {
@@ -280,7 +278,7 @@ public class ArrayList<E> extends AbstractList<E> implements Cloneable, Serializ
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:13.342 -0400", hash_original_method = "B3DA051C4891B8092C007B9652169D27", hash_generated_method = "1C293E7D488DB94903D151D08639C551")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 10:27:39.397 -0400", hash_original_method = "B3DA051C4891B8092C007B9652169D27", hash_generated_method = "66B84275CE04589DC9FDA1A58A75A5DB")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     @Override
     public Object clone() {
@@ -292,7 +290,7 @@ public class ArrayList<E> extends AbstractList<E> implements Cloneable, Serializ
         } //End block
         catch (CloneNotSupportedException e)
         {
-            throw new AssertionError();
+            if (DroidSafeAndroidRuntime.control) throw new AssertionError();
         } //End block
         return (Object)dsTaint.getTaint();
         // ---------- Original Method ----------
@@ -306,7 +304,7 @@ public class ArrayList<E> extends AbstractList<E> implements Cloneable, Serializ
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:13.342 -0400", hash_original_method = "0AF2E3B013DB3C28C26CEAAD130BA61A", hash_generated_method = "C1EAED49034F3C287782D84588C3F13D")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 10:27:39.407 -0400", hash_original_method = "0AF2E3B013DB3C28C26CEAAD130BA61A", hash_generated_method = "C1EAED49034F3C287782D84588C3F13D")
     @DSModeled(DSC.SAFE)
     public void ensureCapacity(int minimumCapacity) {
         dsTaint.addTaint(minimumCapacity);
@@ -330,7 +328,7 @@ public class ArrayList<E> extends AbstractList<E> implements Cloneable, Serializ
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:13.342 -0400", hash_original_method = "BE11B967A1A0587EBAE1CDD4CD567558", hash_generated_method = "7EC4169F21325C2842549A6883C23F9F")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 10:27:39.412 -0400", hash_original_method = "BE11B967A1A0587EBAE1CDD4CD567558", hash_generated_method = "7EC4169F21325C2842549A6883C23F9F")
     @DSModeled(DSC.SAFE)
     @SuppressWarnings("unchecked")
     @Override
@@ -348,7 +346,7 @@ public class ArrayList<E> extends AbstractList<E> implements Cloneable, Serializ
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:13.342 -0400", hash_original_method = "3CA361324F026F8C9B0AA94A864ACDD9", hash_generated_method = "D93308C9204B4F7B72696D16CFAD067E")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 10:27:39.421 -0400", hash_original_method = "3CA361324F026F8C9B0AA94A864ACDD9", hash_generated_method = "D93308C9204B4F7B72696D16CFAD067E")
     @DSModeled(DSC.SAFE)
     @Override
     public int size() {
@@ -358,7 +356,7 @@ public class ArrayList<E> extends AbstractList<E> implements Cloneable, Serializ
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:13.342 -0400", hash_original_method = "186376BCBF1440029A4A8EF9D3327AB7", hash_generated_method = "F6C7B08EFA5C7EF5C4F8802990711F9E")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 10:27:39.428 -0400", hash_original_method = "186376BCBF1440029A4A8EF9D3327AB7", hash_generated_method = "F6C7B08EFA5C7EF5C4F8802990711F9E")
     @DSModeled(DSC.SAFE)
     @Override
     public boolean isEmpty() {
@@ -368,7 +366,7 @@ public class ArrayList<E> extends AbstractList<E> implements Cloneable, Serializ
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:13.343 -0400", hash_original_method = "64966ED2F2DBD125FF02B9B2F4262D7F", hash_generated_method = "07246314549058785C4DADFA3E95E20A")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 10:27:39.433 -0400", hash_original_method = "64966ED2F2DBD125FF02B9B2F4262D7F", hash_generated_method = "55EC06368CA0AF040976C06EBFC72F9F")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     @Override
     public boolean contains(Object object) {
@@ -383,7 +381,7 @@ public class ArrayList<E> extends AbstractList<E> implements Cloneable, Serializ
                 i = 0;
                 {
                     {
-                        boolean varA6976E8F17BE504D77EDD08C90B63DC8_192577136 = (object.equals(a[i]));
+                        boolean varA6976E8F17BE504D77EDD08C90B63DC8_691243546 = (object.equals(a[i]));
                     } //End collapsed parenthetic
                 } //End block
             } //End collapsed parenthetic
@@ -415,7 +413,7 @@ public class ArrayList<E> extends AbstractList<E> implements Cloneable, Serializ
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:13.343 -0400", hash_original_method = "0D1C6275419222204CF4CD7DEABF4627", hash_generated_method = "A92535ACDC80A0AA79517571416792A0")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 10:27:39.451 -0400", hash_original_method = "0D1C6275419222204CF4CD7DEABF4627", hash_generated_method = "333DFF4E55B981B275BF0E415FA47101")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     @Override
     public int indexOf(Object object) {
@@ -430,7 +428,7 @@ public class ArrayList<E> extends AbstractList<E> implements Cloneable, Serializ
                 i = 0;
                 {
                     {
-                        boolean varA6976E8F17BE504D77EDD08C90B63DC8_117433424 = (object.equals(a[i]));
+                        boolean varA6976E8F17BE504D77EDD08C90B63DC8_863797638 = (object.equals(a[i]));
                     } //End collapsed parenthetic
                 } //End block
             } //End collapsed parenthetic
@@ -462,7 +460,7 @@ public class ArrayList<E> extends AbstractList<E> implements Cloneable, Serializ
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:13.343 -0400", hash_original_method = "A33DDE97246530740ADA37CC6A9CC384", hash_generated_method = "947F4170671AC0E03FB2892C9B03D53B")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 10:27:39.456 -0400", hash_original_method = "A33DDE97246530740ADA37CC6A9CC384", hash_generated_method = "D019C1066CB634FAFB04A4394BD417B9")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     @Override
     public int lastIndexOf(Object object) {
@@ -475,7 +473,7 @@ public class ArrayList<E> extends AbstractList<E> implements Cloneable, Serializ
                 i = size - 1;
                 {
                     {
-                        boolean varA6976E8F17BE504D77EDD08C90B63DC8_1214073933 = (object.equals(a[i]));
+                        boolean varA6976E8F17BE504D77EDD08C90B63DC8_3654200 = (object.equals(a[i]));
                     } //End collapsed parenthetic
                 } //End block
             } //End collapsed parenthetic
@@ -506,7 +504,7 @@ public class ArrayList<E> extends AbstractList<E> implements Cloneable, Serializ
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:13.343 -0400", hash_original_method = "A1787B19405DA1FA0654C3278265A2A8", hash_generated_method = "5621BB04E1020E259AA59610F77BB48F")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 10:27:39.470 -0400", hash_original_method = "A1787B19405DA1FA0654C3278265A2A8", hash_generated_method = "5621BB04E1020E259AA59610F77BB48F")
     @DSModeled(DSC.SAFE)
     @Override
     public E remove(int index) {
@@ -540,7 +538,7 @@ public class ArrayList<E> extends AbstractList<E> implements Cloneable, Serializ
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:13.343 -0400", hash_original_method = "C2B3C3C4D1766953FF0E432D86502585", hash_generated_method = "376B8BACDA13A9F19B521C06F4A86C9E")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 10:27:39.483 -0400", hash_original_method = "C2B3C3C4D1766953FF0E432D86502585", hash_generated_method = "B20462040DD1537CB83706F7A9C0B873")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     @Override
     public boolean remove(Object object) {
@@ -555,7 +553,7 @@ public class ArrayList<E> extends AbstractList<E> implements Cloneable, Serializ
                 i = 0;
                 {
                     {
-                        boolean varA6976E8F17BE504D77EDD08C90B63DC8_300446716 = (object.equals(a[i]));
+                        boolean varA6976E8F17BE504D77EDD08C90B63DC8_65152182 = (object.equals(a[i]));
                         {
                             System.arraycopy(a, i + 1, a, i, --s - i);
                             a[s] = null;
@@ -609,7 +607,7 @@ public class ArrayList<E> extends AbstractList<E> implements Cloneable, Serializ
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:13.343 -0400", hash_original_method = "D866DECE8E8344A6C98BF327EDBE1AFF", hash_generated_method = "24556576D06231617010372E83DF80F0")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 10:27:39.498 -0400", hash_original_method = "D866DECE8E8344A6C98BF327EDBE1AFF", hash_generated_method = "3C716C63C0732C5276139A79C2564B06")
     @DSModeled(DSC.SAFE)
     @Override
     protected void removeRange(int fromIndex, int toIndex) {
@@ -620,15 +618,15 @@ public class ArrayList<E> extends AbstractList<E> implements Cloneable, Serializ
         int s;
         s = size;
         {
-            throw new IndexOutOfBoundsException("fromIndex " + fromIndex
+            if (DroidSafeAndroidRuntime.control) throw new IndexOutOfBoundsException("fromIndex " + fromIndex
                     + " >= size " + size);
         } //End block
         {
-            throw new IndexOutOfBoundsException("toIndex " + toIndex
+            if (DroidSafeAndroidRuntime.control) throw new IndexOutOfBoundsException("toIndex " + toIndex
                     + " > size " + size);
         } //End block
         {
-            throw new IndexOutOfBoundsException("fromIndex " + fromIndex
+            if (DroidSafeAndroidRuntime.control) throw new IndexOutOfBoundsException("fromIndex " + fromIndex
                     + " > toIndex " + toIndex);
         } //End block
         System.arraycopy(a, toIndex, a, fromIndex, s - toIndex);
@@ -663,7 +661,7 @@ public class ArrayList<E> extends AbstractList<E> implements Cloneable, Serializ
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:13.343 -0400", hash_original_method = "F03306481ED210492B573188BD80D78C", hash_generated_method = "6447C1F79510835CCF161B1EFAC3DB60")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 10:27:39.506 -0400", hash_original_method = "F03306481ED210492B573188BD80D78C", hash_generated_method = "6447C1F79510835CCF161B1EFAC3DB60")
     @DSModeled(DSC.SAFE)
     @Override
     public E set(int index, E object) {
@@ -689,7 +687,7 @@ public class ArrayList<E> extends AbstractList<E> implements Cloneable, Serializ
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:13.344 -0400", hash_original_method = "52977A01663ACB51F489F59A603BA7D4", hash_generated_method = "43E505F427D20248EA4417A6705CAA71")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 10:27:39.517 -0400", hash_original_method = "52977A01663ACB51F489F59A603BA7D4", hash_generated_method = "43E505F427D20248EA4417A6705CAA71")
     @DSModeled(DSC.SAFE)
     @Override
     public Object[] toArray() {
@@ -707,11 +705,11 @@ public class ArrayList<E> extends AbstractList<E> implements Cloneable, Serializ
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:13.344 -0400", hash_original_method = "C3B471E5DAFB04B40866B17E5BAEF530", hash_generated_method = "7D8A3AE2B3E73DF3F9F98BF02F22C86C")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 10:27:39.522 -0400", hash_original_method = "C3B471E5DAFB04B40866B17E5BAEF530", hash_generated_method = "7D8A3AE2B3E73DF3F9F98BF02F22C86C")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     @Override
     public <T> T[] toArray(T[] contents) {
-        dsTaint.addTaint(contents.dsTaint);
+        dsTaint.addTaint(contents[0].dsTaint);
         int s;
         s = size;
         {
@@ -739,7 +737,7 @@ public class ArrayList<E> extends AbstractList<E> implements Cloneable, Serializ
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:13.344 -0400", hash_original_method = "7330C01325C25FBEA000A4F3E32D26DF", hash_generated_method = "4844CD14BF612319B995CB783AD3E2A2")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 10:27:39.529 -0400", hash_original_method = "7330C01325C25FBEA000A4F3E32D26DF", hash_generated_method = "4844CD14BF612319B995CB783AD3E2A2")
     @DSModeled(DSC.SAFE)
     public void trimToSize() {
         int s;
@@ -770,7 +768,7 @@ public class ArrayList<E> extends AbstractList<E> implements Cloneable, Serializ
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:13.344 -0400", hash_original_method = "CE193891A7B397E3A9A2EF577B10DC50", hash_generated_method = "2B04EF50079F8A3828905567599FA4AE")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 10:27:39.537 -0400", hash_original_method = "CE193891A7B397E3A9A2EF577B10DC50", hash_generated_method = "2B04EF50079F8A3828905567599FA4AE")
     @DSModeled(DSC.SAFE)
     @Override
     public Iterator<E> iterator() {
@@ -780,7 +778,7 @@ public class ArrayList<E> extends AbstractList<E> implements Cloneable, Serializ
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:13.344 -0400", hash_original_method = "5DBD6A40EED7E4F643FF32288E994D2A", hash_generated_method = "653BE8E8A8C4E24F246244C15CBA86A4")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 10:27:39.541 -0400", hash_original_method = "5DBD6A40EED7E4F643FF32288E994D2A", hash_generated_method = "653BE8E8A8C4E24F246244C15CBA86A4")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     @Override
     public int hashCode() {
@@ -810,7 +808,7 @@ public class ArrayList<E> extends AbstractList<E> implements Cloneable, Serializ
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:13.344 -0400", hash_original_method = "B6BBD42460E139DEDE8E165726366EA3", hash_generated_method = "52EAFA9DD174FE5EDD8E3B26A44180D8")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 10:27:39.553 -0400", hash_original_method = "B6BBD42460E139DEDE8E165726366EA3", hash_generated_method = "73ABC1E82ACC3D5CD4987FE7A57AF560")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     @Override
     public boolean equals(Object o) {
@@ -820,7 +818,7 @@ public class ArrayList<E> extends AbstractList<E> implements Cloneable, Serializ
         int s;
         s = size;
         {
-            boolean var6DDD04FB5A8F18C16A04CEB45843304E_1433499593 = (that.size() != s);
+            boolean var6DDD04FB5A8F18C16A04CEB45843304E_99095951 = (that.size() != s);
         } //End collapsed parenthetic
         Object[] a;
         a = array;
@@ -835,7 +833,7 @@ public class ArrayList<E> extends AbstractList<E> implements Cloneable, Serializ
                     ethat = that.get(i);
                     {
                         {
-                            boolean varEBC000A495141DDD1C176F0EB6DDFA1C_190688346 = (!eThis.equals(ethat));
+                            boolean varEBC000A495141DDD1C176F0EB6DDFA1C_20524999 = (!eThis.equals(ethat));
                         } //End flattened ternary
                     } //End collapsed parenthetic
                 } //End block
@@ -854,7 +852,7 @@ public class ArrayList<E> extends AbstractList<E> implements Cloneable, Serializ
                     eThat = it.next();
                     {
                         {
-                            boolean var76B138E21032A28626298252682756E4_771355847 = (!eThis.equals(eThat));
+                            boolean var76B138E21032A28626298252682756E4_1707146815 = (!eThis.equals(eThat));
                         } //End flattened ternary
                     } //End collapsed parenthetic
                 } //End block
@@ -866,7 +864,7 @@ public class ArrayList<E> extends AbstractList<E> implements Cloneable, Serializ
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:13.344 -0400", hash_original_method = "291F806CA114E9A8DDD079DF7CDB05EA", hash_generated_method = "5C46A683A0C3DA3A7E5099E117368BC4")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 10:27:39.555 -0400", hash_original_method = "291F806CA114E9A8DDD079DF7CDB05EA", hash_generated_method = "5C46A683A0C3DA3A7E5099E117368BC4")
     @DSModeled(DSC.SAFE)
     private void writeObject(ObjectOutputStream stream) throws IOException {
         dsTaint.addTaint(stream.dsTaint);
@@ -888,7 +886,7 @@ public class ArrayList<E> extends AbstractList<E> implements Cloneable, Serializ
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:13.344 -0400", hash_original_method = "07E10AF7F234C75E84F0879D60F4FA74", hash_generated_method = "F479B4CCD5F9F65BF1D429EE5065F483")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 10:27:39.560 -0400", hash_original_method = "07E10AF7F234C75E84F0879D60F4FA74", hash_generated_method = "B83CB510599BB758A4AF4C081A21DD10")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     private void readObject(ObjectInputStream stream) throws IOException, ClassNotFoundException {
         dsTaint.addTaint(stream.dsTaint);
@@ -896,7 +894,7 @@ public class ArrayList<E> extends AbstractList<E> implements Cloneable, Serializ
         int cap;
         cap = stream.readInt();
         {
-            throw new InvalidObjectException(
+            if (DroidSafeAndroidRuntime.control) throw new InvalidObjectException(
                     "Capacity: " + cap + " < size: " + size);
         } //End block
         array = (cap == 0 ? EmptyArray.OBJECT : new Object[cap]);
@@ -926,7 +924,7 @@ public class ArrayList<E> extends AbstractList<E> implements Cloneable, Serializ
         private int removalIndex = -1;
         private int expectedModCount = modCount;
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:13.344 -0400", hash_original_method = "44DFBDD5F60969C85FF7C62CEFF63BE1", hash_generated_method = "3002D0D86CAEEC2D9746910659824C16")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 10:27:39.562 -0400", hash_original_method = "44DFBDD5F60969C85FF7C62CEFF63BE1", hash_generated_method = "3002D0D86CAEEC2D9746910659824C16")
         @DSModeled(DSC.SAFE)
         public boolean hasNext() {
             return dsTaint.getTaintBoolean();
@@ -935,7 +933,7 @@ public class ArrayList<E> extends AbstractList<E> implements Cloneable, Serializ
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:13.345 -0400", hash_original_method = "4E01EE32653D357535C28CF692990943", hash_generated_method = "11B0F9479E74BEDACE9B27FA8A49FA95")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 10:27:39.567 -0400", hash_original_method = "4E01EE32653D357535C28CF692990943", hash_generated_method = "167D2ABFEA4FBF8D74852F065BDDF4D9")
         @DSModeled(DSC.SAFE)
         @SuppressWarnings("unchecked")
         public E next() {
@@ -944,13 +942,13 @@ public class ArrayList<E> extends AbstractList<E> implements Cloneable, Serializ
             int rem;
             rem = remaining;
             {
-                throw new ConcurrentModificationException();
+                if (DroidSafeAndroidRuntime.control) throw new ConcurrentModificationException();
             } //End block
             {
-                throw new NoSuchElementException();
+                if (DroidSafeAndroidRuntime.control) throw new NoSuchElementException();
             } //End block
             remaining = rem - 1;
-            E varCE6FD74F76F723ACF6682AB3440C6406_27254863 = ((E) ourList.array[removalIndex = ourList.size - rem]);
+            E varCE6FD74F76F723ACF6682AB3440C6406_850977820 = ((E) ourList.array[removalIndex = ourList.size - rem]);
             return (E)dsTaint.getTaint();
             // ---------- Original Method ----------
             //ArrayList<E> ourList = ArrayList.this;
@@ -966,7 +964,7 @@ public class ArrayList<E> extends AbstractList<E> implements Cloneable, Serializ
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:13.345 -0400", hash_original_method = "2CA6472AB4D5ED4AA6A79E4E390FB476", hash_generated_method = "032E776E05149167A20CEC931B15D9C2")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 10:27:39.571 -0400", hash_original_method = "2CA6472AB4D5ED4AA6A79E4E390FB476", hash_generated_method = "5AD16A5D71F291A31AFC5616C92C387D")
         @DSModeled(DSC.SAFE)
         public void remove() {
             Object[] a;
@@ -974,10 +972,10 @@ public class ArrayList<E> extends AbstractList<E> implements Cloneable, Serializ
             int removalIdx;
             removalIdx = removalIndex;
             {
-                throw new ConcurrentModificationException();
+                if (DroidSafeAndroidRuntime.control) throw new ConcurrentModificationException();
             } //End block
             {
-                throw new IllegalStateException();
+                if (DroidSafeAndroidRuntime.control) throw new IllegalStateException();
             } //End block
             System.arraycopy(a, removalIdx + 1, a, removalIdx, remaining);
             a[--size] = null;
