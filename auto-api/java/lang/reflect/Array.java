@@ -170,7 +170,7 @@ public final class Array {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:11.812 -0400", hash_original_method = "F5A480269EE51318EAD4A19F4CFD1D17", hash_generated_method = "90374BDAE32E5AD0A05C8D6964A0D7E0")
     private static Object createMultiArray(Class<?> componentType,
         int[] dimensions) throws NegativeArraySizeException {
-        //DSFIXME:  CODE0010: Native static method requires manual modeling
+        //DSFIXME:  CODE0012: Native static method requires manual modeling
     }
 
     
@@ -213,7 +213,7 @@ public final class Array {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:11.812 -0400", hash_original_method = "F9B18D748F0CF6AA8F5B33198B6083B6", hash_generated_method = "FDB3C9878CD95EBA5D67FA948CB34DE4")
     private static Object createObjectArray(Class<?> componentType,
         int length) throws NegativeArraySizeException {
-        //DSFIXME:  CODE0010: Native static method requires manual modeling
+        //DSFIXME:  CODE0012: Native static method requires manual modeling
     }
 
     

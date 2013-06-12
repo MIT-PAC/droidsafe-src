@@ -191,38 +191,38 @@ public class Interpolator {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:01.191 -0400", hash_original_method = "7CDA6FD84ADEB317B6530F3CCCE8BED8", hash_generated_method = "792E3F0159A9DD460ACA64943C9B406D")
     private static int nativeConstructor(int valueCount, int frameCount) {
-        //DSFIXME:  CODE0010: Native static method requires manual modeling
+        //DSFIXME:  CODE0012: Native static method requires manual modeling
     	return DSUtils.UNKNOWN_INT;
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:01.191 -0400", hash_original_method = "78511D3304E1B85C7734E8F36B99BAA5", hash_generated_method = "BEA0AE0F624D343F2D1280C68A16B7C7")
     private static void nativeDestructor(int native_instance) {
-        //DSFIXME:  CODE0010: Native static method requires manual modeling
+        //DSFIXME:  CODE0012: Native static method requires manual modeling
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:01.191 -0400", hash_original_method = "C005F39B0904104523423AD0D7832C20", hash_generated_method = "1B770DC959B5FCD4B08FE3EF4D4B70E3")
     private static void nativeReset(int native_instance, int valueCount, int frameCount) {
-        //DSFIXME:  CODE0010: Native static method requires manual modeling
+        //DSFIXME:  CODE0012: Native static method requires manual modeling
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:01.191 -0400", hash_original_method = "B02F5FF4C3A80DE68ED7D8D71ED91441", hash_generated_method = "F20571199C404240A21E4A26079024FD")
     private static void nativeSetKeyFrame(int native_instance, int index, int msec, float[] values, float[] blend) {
-        //DSFIXME:  CODE0010: Native static method requires manual modeling
+        //DSFIXME:  CODE0012: Native static method requires manual modeling
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:01.192 -0400", hash_original_method = "8EAEBC453C0D15654C45F393481C33C4", hash_generated_method = "104E56A69ED70E007B4599BBEB45A00C")
     private static void nativeSetRepeatMirror(int native_instance, float repeatCount, boolean mirror) {
-        //DSFIXME:  CODE0010: Native static method requires manual modeling
+        //DSFIXME:  CODE0012: Native static method requires manual modeling
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:01.192 -0400", hash_original_method = "D7645B233D78E4E965B97FC9AD4CD61A", hash_generated_method = "45632BBC5F21D3D2C4E79796E827C967")
     private static int nativeTimeToValues(int native_instance, int msec, float[] values) {
-        //DSFIXME:  CODE0010: Native static method requires manual modeling
+        //DSFIXME:  CODE0012: Native static method requires manual modeling
     	return DSUtils.UNKNOWN_INT;
     }
 

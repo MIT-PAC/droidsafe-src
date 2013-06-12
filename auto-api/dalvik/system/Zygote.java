@@ -60,7 +60,7 @@ public class Zygote {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:11.349 -0400", hash_original_method = "C7DF03CFFDB10FE267BE25279988DC30", hash_generated_method = "3A3A1A4B5F5A8C766CA3A71CD7C94F90")
     public static int nativeFork() {
-        //DSFIXME:  CODE0010: Native static method requires manual modeling
+        //DSFIXME:  CODE0012: Native static method requires manual modeling
     	return DSUtils.UNKNOWN_INT;
     }
 
@@ -78,7 +78,7 @@ public class Zygote {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:11.349 -0400", hash_original_method = "AE4F218B4B5314E01514A2DB6533F016", hash_generated_method = "91CD60096429DF919218F615B42CA076")
     public static int nativeForkAndSpecialize(int uid, int gid,
             int[] gids, int debugFlags, int[][] rlimits) {
-        //DSFIXME:  CODE0010: Native static method requires manual modeling
+        //DSFIXME:  CODE0012: Native static method requires manual modeling
     	return DSUtils.UNKNOWN_INT;
     }
 
@@ -118,7 +118,7 @@ public class Zygote {
     public static int nativeForkSystemServer(int uid, int gid,
             int[] gids, int debugFlags, int[][] rlimits,
             long permittedCapabilities, long effectiveCapabilities) {
-        //DSFIXME:  CODE0010: Native static method requires manual modeling
+        //DSFIXME:  CODE0012: Native static method requires manual modeling
     	return DSUtils.UNKNOWN_INT;
     }
 
@@ -139,7 +139,7 @@ public class Zygote {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:11.349 -0400", hash_original_method = "24E536CD0DFFDACA2D523CDBD82C6A30", hash_generated_method = "23A4D6B8CFD7CB16950984A989D01379")
     private static void nativeExecShell(String command) {
-        //DSFIXME:  CODE0010: Native static method requires manual modeling
+        //DSFIXME:  CODE0012: Native static method requires manual modeling
     }
 
     

@@ -87,7 +87,7 @@ public final class TimeZones {
     private static String[][] getZoneStringsImpl(String locale, String[] timeZoneIds) {
     	String[][] retVal = {{DSUtils.UNKNOWN_STRING}};
     	return retVal;
-        //DSFIXME:  CODE0010: Native static method requires manual modeling
+        //DSFIXME:  CODE0012: Native static method requires manual modeling
     }
 
     

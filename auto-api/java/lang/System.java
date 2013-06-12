@@ -64,20 +64,20 @@ public final class System {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:11.944 -0400", hash_original_method = "D7434757D4CAD81883F76DFD391AF5E8", hash_generated_method = "E7A91E1282487DCA86FA9B5B6099CD49")
     public static void arraycopy(Object src, int srcPos, Object dst, int dstPos, int length) {
-        //DSFIXME:  CODE0010: Native static method requires manual modeling
+        //DSFIXME:  CODE0012: Native static method requires manual modeling
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:11.944 -0400", hash_original_method = "160BB51793A80C253C811987AF1EB598", hash_generated_method = "61E2F2A8C3CC26139490BA547E85EB60")
     public static long currentTimeMillis() {
-        //DSFIXME:  CODE0010: Native static method requires manual modeling
+        //DSFIXME:  CODE0012: Native static method requires manual modeling
     	return DSUtils.UNKNOWN_LONG;
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:11.944 -0400", hash_original_method = "BC71756E7CB4F8DBA545A78B86F8B7C4", hash_generated_method = "786C33D4CA7FE4F5842FE64509FFFABE")
     public static long nanoTime() {
-        //DSFIXME:  CODE0010: Native static method requires manual modeling
+        //DSFIXME:  CODE0012: Native static method requires manual modeling
     	return DSUtils.UNKNOWN_LONG;
     }
 
@@ -112,7 +112,7 @@ public final class System {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:11.944 -0400", hash_original_method = "9FC22770968F10FA1E4DB07494582396", hash_generated_method = "3519C04F788D2A9CC0396167B083677F")
     private static String getEnvByName(String name) {
-        //DSFIXME:  CODE0010: Native static method requires manual modeling
+        //DSFIXME:  CODE0012: Native static method requires manual modeling
     	return name;
     }
 
@@ -196,7 +196,7 @@ public final class System {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:11.945 -0400", hash_original_method = "F310EFA1596100CF0802801ED18060AD", hash_generated_method = "6D6E45FC92007F03117B3EEC6D7EE62C")
     private static String[] specialProperties() {
-        //DSFIXME:  CODE0010: Native static method requires manual modeling
+        //DSFIXME:  CODE0012: Native static method requires manual modeling
     	String [] properties = new String[] {
     			DSUtils.UNKNOWN_STRING
     	};
@@ -267,7 +267,7 @@ public final class System {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:11.945 -0400", hash_original_method = "4A805BC9C12F17575A8FEA25AC623CBF", hash_generated_method = "E4870F7607B55F990E2734A0D2B9FE71")
     public static int identityHashCode(Object anObject) {
-        //DSFIXME:  CODE0010: Native static method requires manual modeling
+        //DSFIXME:  CODE0012: Native static method requires manual modeling
     	return anObject.dsTaint.getTaintInt();
     }
 
@@ -328,7 +328,7 @@ public final class System {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:11.945 -0400", hash_original_method = "A72EF95309B469D5BD3A689CD4D5F687", hash_generated_method = "AF0BE89E9039F81EDEED88F44E9F57E7")
     private static void log(char type, String message, Throwable th) {
-        //DSFIXME:  CODE0010: Native static method requires manual modeling
+        //DSFIXME:  CODE0012: Native static method requires manual modeling
     }
 
     
@@ -362,14 +362,14 @@ public final class System {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:11.945 -0400", hash_original_method = "14CC410355E66D71FA51E787DF393C3D", hash_generated_method = "02C2E73C5157D0525C6B73A22A73DF50")
     public static String mapLibraryName(String userLibName) {
-        //DSFIXME:  CODE0010: Native static method requires manual modeling
+        //DSFIXME:  CODE0012: Native static method requires manual modeling
     	return userLibName;
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:11.945 -0400", hash_original_method = "8BA6D019B1CB8478E5833D6C205AD273", hash_generated_method = "BE04BB3384E18092650C615DE35CFA0B")
     private static void setFieldImpl(String fieldName, String signature, Object stream) {
-        //DSFIXME:  CODE0010: Native static method requires manual modeling
+        //DSFIXME:  CODE0012: Native static method requires manual modeling
     }
 
     

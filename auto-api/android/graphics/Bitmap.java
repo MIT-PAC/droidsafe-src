@@ -1006,7 +1006,7 @@ public final class Bitmap implements Parcelable {
     private static Bitmap nativeCreate(int[] colors, int offset,
                                               int stride, int width, int height,
                                             int nativeConfig, boolean mutable) {
-        //DSFIXME:  CODE0010: Native static method requires manual modeling
+        //DSFIXME:  CODE0012: Native static method requires manual modeling
     	return new Bitmap();
     }
 
@@ -1014,20 +1014,20 @@ public final class Bitmap implements Parcelable {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:00.940 -0400", hash_original_method = "45D4381D1EA2485216945540030C26AB", hash_generated_method = "0DB934118DD62A8C71A2979C480717AB")
     private static Bitmap nativeCopy(int srcBitmap, int nativeConfig,
                                             boolean isMutable) {
-        //DSFIXME:  CODE0010: Native static method requires manual modeling
+        //DSFIXME:  CODE0012: Native static method requires manual modeling
     	return new Bitmap();
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:00.940 -0400", hash_original_method = "E3ED43568C09C79C93191CC5C62576E8", hash_generated_method = "E7DA128ADD85C3F53AA1CE4D807C24CB")
     private static void nativeDestructor(int nativeBitmap) {
-        //DSFIXME:  CODE0010: Native static method requires manual modeling
+        //DSFIXME:  CODE0012: Native static method requires manual modeling
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:00.940 -0400", hash_original_method = "EAC2C74B0DDAACA564B4FEDC50474303", hash_generated_method = "B314B89DC61434B5874CBEAD7BAB781F")
     private static void nativeRecycle(int nativeBitmap) {
-        //DSFIXME:  CODE0010: Native static method requires manual modeling
+        //DSFIXME:  CODE0012: Native static method requires manual modeling
     }
 
     
@@ -1035,55 +1035,55 @@ public final class Bitmap implements Parcelable {
     private static boolean nativeCompress(int nativeBitmap, int format,
                                             int quality, OutputStream stream,
                                             byte[] tempStorage) {
-        //DSFIXME:  CODE0010: Native static method requires manual modeling
+        //DSFIXME:  CODE0012: Native static method requires manual modeling
     	return DSUtils.UNKNOWN_BOOLEAN;
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:00.940 -0400", hash_original_method = "D8A777FF80145B93D573CA5FBFBFF540", hash_generated_method = "9607714F26A3600E62D21D08E9D52434")
     private static void nativeErase(int nativeBitmap, int color) {
-        //DSFIXME:  CODE0010: Native static method requires manual modeling
+        //DSFIXME:  CODE0012: Native static method requires manual modeling
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:00.940 -0400", hash_original_method = "904945A5B141851798E063E1803A5F04", hash_generated_method = "7D5571C65C276F5B4BB2F63DA60BF5BA")
     private static int nativeWidth(int nativeBitmap) {
-        //DSFIXME:  CODE0010: Native static method requires manual modeling
+        //DSFIXME:  CODE0012: Native static method requires manual modeling
     	return DSUtils.UNKNOWN_INT;
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:00.940 -0400", hash_original_method = "97B2ABABD688843FB18A94CF0447DEFD", hash_generated_method = "86690DDED79189EDB69FA6D16D0639C2")
     private static int nativeHeight(int nativeBitmap) {
-        //DSFIXME:  CODE0010: Native static method requires manual modeling
+        //DSFIXME:  CODE0012: Native static method requires manual modeling
     	return DSUtils.UNKNOWN_INT;
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:00.940 -0400", hash_original_method = "1C20704BA122DB6BDC5DC60359E85F4F", hash_generated_method = "5FFE99272D7A94FB701D17F94D378E62")
     private static int nativeRowBytes(int nativeBitmap) {
-        //DSFIXME:  CODE0010: Native static method requires manual modeling
+        //DSFIXME:  CODE0012: Native static method requires manual modeling
     	return DSUtils.UNKNOWN_INT;
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:00.940 -0400", hash_original_method = "F834D3C6FDF94C2FD5997EC80647C823", hash_generated_method = "B486DF67F3B633BA5237FAC517D09960")
     private static int nativeConfig(int nativeBitmap) {
-        //DSFIXME:  CODE0010: Native static method requires manual modeling
+        //DSFIXME:  CODE0012: Native static method requires manual modeling
     	return DSUtils.UNKNOWN_INT;
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:00.940 -0400", hash_original_method = "F46C7650077695308A7525A296A3C7D3", hash_generated_method = "8ED49DB63B06521B81762E07D2A705D0")
     private static boolean nativeHasAlpha(int nativeBitmap) {
-        //DSFIXME:  CODE0010: Native static method requires manual modeling
+        //DSFIXME:  CODE0012: Native static method requires manual modeling
     	return DSUtils.UNKNOWN_BOOLEAN;
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:00.941 -0400", hash_original_method = "9E1F2375582A6D02B837E73A5143D79A", hash_generated_method = "29B9240FD6C10A09EAF9540B53B4A979")
     private static int nativeGetPixel(int nativeBitmap, int x, int y) {
-        //DSFIXME:  CODE0010: Native static method requires manual modeling
+        //DSFIXME:  CODE0012: Native static method requires manual modeling
     	return DSUtils.UNKNOWN_INT;
     }
 
@@ -1092,14 +1092,14 @@ public final class Bitmap implements Parcelable {
     private static void nativeGetPixels(int nativeBitmap, int[] pixels,
                                                int offset, int stride, int x,
                                                int y, int width, int height) {
-        //DSFIXME:  CODE0010: Native static method requires manual modeling
+        //DSFIXME:  CODE0012: Native static method requires manual modeling
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:00.941 -0400", hash_original_method = "E903262E60E5ED485DFB9CCCDD1DDFDF", hash_generated_method = "969380D8D99253C15CF68BD9CAF14C4A")
     private static void nativeSetPixel(int nativeBitmap, int x, int y,
                                               int color) {
-        //DSFIXME:  CODE0010: Native static method requires manual modeling
+        //DSFIXME:  CODE0012: Native static method requires manual modeling
     }
 
     
@@ -1107,33 +1107,33 @@ public final class Bitmap implements Parcelable {
     private static void nativeSetPixels(int nativeBitmap, int[] colors,
                                                int offset, int stride, int x,
                                                int y, int width, int height) {
-        //DSFIXME:  CODE0010: Native static method requires manual modeling
+        //DSFIXME:  CODE0012: Native static method requires manual modeling
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:00.941 -0400", hash_original_method = "F2E8FEC281E44E430CB30E6CE486A5BB", hash_generated_method = "52E4DFAF7E590CAF6B19890BCCCA3798")
     private static void nativeCopyPixelsToBuffer(int nativeBitmap,
                                                         Buffer dst) {
-        //DSFIXME:  CODE0010: Native static method requires manual modeling
+        //DSFIXME:  CODE0012: Native static method requires manual modeling
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:00.941 -0400", hash_original_method = "BB56E9E6DCC632CBF97F66C7AD0A547E", hash_generated_method = "FFA138498DC80F2F0B27B05566753550")
     private static void nativeCopyPixelsFromBuffer(int nb, Buffer src) {
-        //DSFIXME:  CODE0010: Native static method requires manual modeling
+        //DSFIXME:  CODE0012: Native static method requires manual modeling
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:00.941 -0400", hash_original_method = "6885BAD84A1A4E36D99C3D1DCC7CCDA2", hash_generated_method = "36109B6199DDEE3F66E954D8DD5C6F26")
     private static int nativeGenerationId(int nativeBitmap) {
-        //DSFIXME:  CODE0010: Native static method requires manual modeling
+        //DSFIXME:  CODE0012: Native static method requires manual modeling
     	return DSUtils.UNKNOWN_INT;
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:00.941 -0400", hash_original_method = "BE5F630346E963472055577C84A85AC5", hash_generated_method = "D1698E3393DA9AAFF4E69831D50E755D")
     private static Bitmap nativeCreateFromParcel(Parcel p) {
-        //DSFIXME:  CODE0010: Native static method requires manual modeling
+        //DSFIXME:  CODE0012: Native static method requires manual modeling
     	return new Bitmap();
     }
 
@@ -1143,7 +1143,7 @@ public final class Bitmap implements Parcelable {
                                                       boolean isMutable,
                                                       int density,
                                                       Parcel p) {
-        //DSFIXME:  CODE0010: Native static method requires manual modeling
+        //DSFIXME:  CODE0012: Native static method requires manual modeling
     	return DSUtils.UNKNOWN_BOOLEAN;
     }
 
@@ -1152,26 +1152,26 @@ public final class Bitmap implements Parcelable {
     private static Bitmap nativeExtractAlpha(int nativeBitmap,
                                                     int nativePaint,
                                                     int[] offsetXY) {
-        //DSFIXME:  CODE0010: Native static method requires manual modeling
+        //DSFIXME:  CODE0012: Native static method requires manual modeling
     	return new Bitmap();
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:00.941 -0400", hash_original_method = "0710BAA887D760924BA893BBEC19C688", hash_generated_method = "2EF89524AF8727B7C2A431B4B0B1E4F2")
     private static void nativePrepareToDraw(int nativeBitmap) {
-        //DSFIXME:  CODE0010: Native static method requires manual modeling
+        //DSFIXME:  CODE0012: Native static method requires manual modeling
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:00.942 -0400", hash_original_method = "937AADB8A3EFC644F590336B7B94DB27", hash_generated_method = "5054B7A70F62A8448CE7ABD682E2E065")
     private static void nativeSetHasAlpha(int nBitmap, boolean hasAlpha) {
-        //DSFIXME:  CODE0010: Native static method requires manual modeling
+        //DSFIXME:  CODE0012: Native static method requires manual modeling
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:00.942 -0400", hash_original_method = "5A9B1A09E3C5251A309F2D65A5E034CD", hash_generated_method = "13C51ADC3CAF263AB61488F4E61C76FD")
     private static boolean nativeSameAs(int nb0, int nb1) {
-        //DSFIXME:  CODE0010: Native static method requires manual modeling
+        //DSFIXME:  CODE0012: Native static method requires manual modeling
     	return DSUtils.UNKNOWN_BOOLEAN;
     }
 

@@ -215,14 +215,14 @@ public class BitmapFactory {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:00.958 -0400", hash_original_method = "80959A804B6A008DDD8B1C468AF0DA97", hash_generated_method = "FBAEB9ABCB6FE4C576A5AE83B65D3BE6")
     private static void nativeSetDefaultConfig(int nativeConfig) {
-        //DSFIXME:  CODE0010: Native static method requires manual modeling
+        //DSFIXME:  CODE0012: Native static method requires manual modeling
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:00.959 -0400", hash_original_method = "92EA38C762B28DCCEF98F05587CB3FCD", hash_generated_method = "FB7968101AC251F1C2D835DD097D9AC5")
     private static Bitmap nativeDecodeStream(InputStream is, byte[] storage,
             Rect padding, Options opts) {
-        //DSFIXME:  CODE0010: Native static method requires manual modeling
+        //DSFIXME:  CODE0012: Native static method requires manual modeling
     	return new Bitmap();
     }
 
@@ -230,14 +230,14 @@ public class BitmapFactory {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:00.959 -0400", hash_original_method = "CE110EAB9438DABA549FE68ED4953373", hash_generated_method = "A55AE19A6EC067FF06ABDC0826A9612C")
     private static Bitmap nativeDecodeFileDescriptor(FileDescriptor fd,
             Rect padding, Options opts) {
-        //DSFIXME:  CODE0010: Native static method requires manual modeling
+        //DSFIXME:  CODE0012: Native static method requires manual modeling
     	return new Bitmap();
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:00.959 -0400", hash_original_method = "DB394781167C2B599D675A270034AE32", hash_generated_method = "9ACDEFF0753C1BB5F0ACD21DDEF1B3DC")
     private static Bitmap nativeDecodeAsset(int asset, Rect padding, Options opts) {
-        //DSFIXME:  CODE0010: Native static method requires manual modeling
+        //DSFIXME:  CODE0012: Native static method requires manual modeling
     	return new Bitmap();
     }
 
@@ -245,21 +245,21 @@ public class BitmapFactory {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:00.959 -0400", hash_original_method = "6A48A833220AB4E59D8197F45A7F9BE9", hash_generated_method = "7C6CDD61BBB76D717D4464DDE5FEBB85")
     private static Bitmap nativeDecodeByteArray(byte[] data, int offset,
             int length, Options opts) {
-        //DSFIXME:  CODE0010: Native static method requires manual modeling
+        //DSFIXME:  CODE0012: Native static method requires manual modeling
     	return new Bitmap();
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:00.959 -0400", hash_original_method = "A6FE2B76604145B92A6BE6EE1F7C5140", hash_generated_method = "7996BE876BF60728076F982BFC4D0157")
     private static byte[] nativeScaleNinePatch(byte[] chunk, float scale, Rect pad) {
-        //DSFIXME:  CODE0010: Native static method requires manual modeling
+        //DSFIXME:  CODE0012: Native static method requires manual modeling
     	return new byte[]{DSUtils.UNKNOWN_BYTE};
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:00.959 -0400", hash_original_method = "D13F1D1D5B69278DEEFEB3B7F79AFBD2", hash_generated_method = "D5334238F99B86B9623C4FC46F15D842")
     private static boolean nativeIsSeekable(FileDescriptor fd) {
-        //DSFIXME:  CODE0010: Native static method requires manual modeling
+        //DSFIXME:  CODE0012: Native static method requires manual modeling
     	return DSUtils.UNKNOWN_BOOLEAN;
     }
 

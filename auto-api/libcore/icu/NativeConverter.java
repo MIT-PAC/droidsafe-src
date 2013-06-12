@@ -31,25 +31,25 @@ public final class NativeConverter {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:17.093 -0400", hash_original_method = "181B24141CB07B58C2EE78F837DF2F87", hash_generated_method = "5E3D429BDAF7FEBE3E43D1FD719C34B8")
     public static long openConverter(String encoding) {
     	return DSUtils.UNKNOWN_LONG;
-        //DSFIXME:  CODE0010: Native static method requires manual modeling
+        //DSFIXME:  CODE0012: Native static method requires manual modeling
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:17.093 -0400", hash_original_method = "A6654D1637D1A31122ADD77AC15CDF6E", hash_generated_method = "74ABCE9A1D438E92678DC0DE47FC693D")
     public static void closeConverter(long converterHandle) {
-        //DSFIXME:  CODE0010: Native static method requires manual modeling
+        //DSFIXME:  CODE0012: Native static method requires manual modeling
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:17.093 -0400", hash_original_method = "0B9FDB9B30DD4A341265A6A87B27D589", hash_generated_method = "915F0B0F65D31914B4495A3D1F2D36C3")
     public static void resetByteToChar(long converterHandle) {
-        //DSFIXME:  CODE0010: Native static method requires manual modeling
+        //DSFIXME:  CODE0012: Native static method requires manual modeling
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:17.093 -0400", hash_original_method = "AC7B4147F9B07A135192AF9518B2E033", hash_generated_method = "9BD5F7ACEB3C09A4AB3A4AD46682B014")
     public static void resetCharToByte(long converterHandle) {
-        //DSFIXME:  CODE0010: Native static method requires manual modeling
+        //DSFIXME:  CODE0012: Native static method requires manual modeling
     }
 
     
@@ -81,21 +81,21 @@ public final class NativeConverter {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:17.093 -0400", hash_original_method = "5304A2EB7484111B04C75D96DFFE591D", hash_generated_method = "0B3D783209286CCB679ECE967F272E43")
     public static float getAveCharsPerByte(long converterHandle) {
     	return DSUtils.UNKNOWN_FLOAT;
-        //DSFIXME:  CODE0010: Native static method requires manual modeling
+        //DSFIXME:  CODE0012: Native static method requires manual modeling
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:17.093 -0400", hash_original_method = "A517A50D3C0A9B1E11CD37C66754F7F8", hash_generated_method = "7FF39BA79EB685593EDD4E8B5B8CC886")
     public static boolean contains(String converterName1, String converterName2) {
     	return DSUtils.UNKNOWN_BOOLEAN;
-        //DSFIXME:  CODE0010: Native static method requires manual modeling
+        //DSFIXME:  CODE0012: Native static method requires manual modeling
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:17.093 -0400", hash_original_method = "9C078EDAE1E209A512E593DD57643AA1", hash_generated_method = "88BB8832CC47BB1923A2FD18D155D484")
     public static boolean canEncode(long converterHandle, int codeUnit) {
     	return DSUtils.UNKNOWN_BOOLEAN;
-        //DSFIXME:  CODE0010: Native static method requires manual modeling
+        //DSFIXME:  CODE0012: Native static method requires manual modeling
     }
 
     

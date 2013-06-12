@@ -314,7 +314,7 @@ public final class NativeBreakIterator implements Cloneable {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:17.091 -0400", hash_original_method = "523AC9BA37BF4E05037C110BBD5C538B", hash_generated_method = "204E766663DE629EE0F417D8FB845AB6")
     private static void setTextImpl(int address, String text) {
-        //DSFIXME:  CODE0010: Native static method requires manual modeling
+        //DSFIXME:  CODE0012: Native static method requires manual modeling
     }
 
     

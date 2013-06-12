@@ -69,14 +69,14 @@ public final class Double extends Number implements Comparable<Double> {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 15:21:38.693 -0400", hash_original_method = "102738B39C00AB089FDFEBF3A4B0137D", hash_generated_method = "8A9D7D48930E153880C3242400A8D282")
     public static long doubleToLongBits(double value) {
-        //DSFIXME:  CODE0010: Native static method requires manual modeling
+        //DSFIXME:  CODE0012: Native static method requires manual modeling
     	return (long)value;
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 15:21:38.695 -0400", hash_original_method = "898239C8A5E784158B0FF1206336E849", hash_generated_method = "7EFD44BDB8E575F5ED3E2ADB6FCA5508")
     public static long doubleToRawLongBits(double value) {
-        //DSFIXME:  CODE0010: Native static method requires manual modeling
+        //DSFIXME:  CODE0012: Native static method requires manual modeling
     	return (long)value;
     }
 
@@ -172,7 +172,7 @@ public final class Double extends Number implements Comparable<Double> {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 15:21:38.741 -0400", hash_original_method = "720D7AE52B1B3E208CB48CB90BEACECA", hash_generated_method = "1418B956C0A9A3447501CAAF87869D84")
     public static double longBitsToDouble(long bits) {
-        //DSFIXME:  CODE0010: Native static method requires manual modeling
+        //DSFIXME:  CODE0012: Native static method requires manual modeling
     	return (double)bits;
     }
 

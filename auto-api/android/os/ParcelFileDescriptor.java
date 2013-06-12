@@ -133,7 +133,7 @@ public class ParcelFileDescriptor implements Parcelable {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 12:02:00.587 -0400", hash_original_method = "5B9BEBD53DA88F119BA69D9BCF36F79E", hash_generated_method = "020F81E31D834959583B4373751BB8EA")
     private static FileDescriptor getFileDescriptorFromFd(int fd) throws IOException {
-        //DSFIXME:  CODE0010: Native static method requires manual modeling
+        //DSFIXME:  CODE0012: Native static method requires manual modeling
     	return new FileDescriptor();
     }
 
@@ -147,7 +147,7 @@ public class ParcelFileDescriptor implements Parcelable {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 12:02:00.587 -0400", hash_original_method = "ECC2BD071DF2F5E1C33B5CE43A549DDA", hash_generated_method = "8DE208DB4E7C2C787550B8C34CC70791")
     private static FileDescriptor getFileDescriptorFromFdNoDup(int fd) {
-        //DSFIXME:  CODE0010: Native static method requires manual modeling
+        //DSFIXME:  CODE0012: Native static method requires manual modeling
     	return new FileDescriptor();
     }
 

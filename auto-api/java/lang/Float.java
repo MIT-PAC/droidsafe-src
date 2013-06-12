@@ -103,14 +103,14 @@ public final class Float extends Number implements Comparable<Float> {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 15:21:38.404 -0400", hash_original_method = "1BE13123F187CA3BCB858B3165731809", hash_generated_method = "1074DC43FC95CC923F59D85737BAE4E1")
     public static int floatToIntBits(float value) {
-        //DSFIXME:  CODE0010: Native static method requires manual modeling
+        //DSFIXME:  CODE0012: Native static method requires manual modeling
     	return (int)value;
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 15:21:38.406 -0400", hash_original_method = "EB451C75DEB4DC141340548D13E4DED5", hash_generated_method = "C028B7531654B9C17DF31DF077D6127B")
     public static int floatToRawIntBits(float value) {
-        //DSFIXME:  CODE0010: Native static method requires manual modeling
+        //DSFIXME:  CODE0012: Native static method requires manual modeling
     	return (int)value;
     }
 
@@ -138,7 +138,7 @@ public final class Float extends Number implements Comparable<Float> {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 15:21:38.418 -0400", hash_original_method = "7A9B6232B794E3EC95C6AF3043D79891", hash_generated_method = "B45EA0CD3AA3496424530352B16675DE")
     public static float intBitsToFloat(int bits) {
-        //DSFIXME:  CODE0010: Native static method requires manual modeling
+        //DSFIXME:  CODE0012: Native static method requires manual modeling
     	return (float)bits;
     }
 

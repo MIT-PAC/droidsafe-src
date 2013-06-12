@@ -48,38 +48,38 @@ public final class VelocityTracker implements Poolable<VelocityTracker> {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:05.568 -0400", hash_original_method = "62D22E54D2287BCFB12AF53C33B4CDAE", hash_generated_method = "E31DEE0DEB4DDCFCF415ECA9533B7C2A")
     private static void nativeDispose(int ptr) {
-        //DSFIXME:  CODE0010: Native static method requires manual modeling
+        //DSFIXME:  CODE0012: Native static method requires manual modeling
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:05.568 -0400", hash_original_method = "42B933D9B745DD4BDDF439D522DC985D", hash_generated_method = "9CE92F66C16CC61AB92B881A43201C00")
     private static void nativeClear(int ptr) {
-        //DSFIXME:  CODE0010: Native static method requires manual modeling
+        //DSFIXME:  CODE0012: Native static method requires manual modeling
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:05.568 -0400", hash_original_method = "0A75E0D3B99035BB25B4E9EE0EB72813", hash_generated_method = "EF3BA9927A5A35752BA2065D19C2112D")
     private static void nativeAddMovement(int ptr, MotionEvent event) {
-        //DSFIXME:  CODE0010: Native static method requires manual modeling
+        //DSFIXME:  CODE0012: Native static method requires manual modeling
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:05.568 -0400", hash_original_method = "8A30CDF630FEB9311143F288B2C77687", hash_generated_method = "6984249A9DC5EB434211853D9E72314F")
     private static void nativeComputeCurrentVelocity(int ptr, int units, float maxVelocity) {
-        //DSFIXME:  CODE0010: Native static method requires manual modeling
+        //DSFIXME:  CODE0012: Native static method requires manual modeling
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:05.568 -0400", hash_original_method = "C28A31A87FD521C5F1F20C45E8FA5EC3", hash_generated_method = "B16EF2F0A07120389144B35D5A0E5276")
     private static float nativeGetXVelocity(int ptr, int id) {
-        //DSFIXME:  CODE0010: Native static method requires manual modeling
+        //DSFIXME:  CODE0012: Native static method requires manual modeling
     	return DSUtils.UNKNOWN_FLOAT;
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:05.568 -0400", hash_original_method = "83D9B0299A440B2A67E48FE9259E951F", hash_generated_method = "2682626BC019914F07CDA8FDB02AF21B")
     private static float nativeGetYVelocity(int ptr, int id) {
-        //DSFIXME:  CODE0010: Native static method requires manual modeling
+        //DSFIXME:  CODE0012: Native static method requires manual modeling
     	return DSUtils.UNKNOWN_FLOAT;
     }
 
@@ -87,7 +87,7 @@ public final class VelocityTracker implements Poolable<VelocityTracker> {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:05.568 -0400", hash_original_method = "997E64B62563B4D849EDC16E3B80D56E", hash_generated_method = "F7FC397D6ADCA79297DC96DC6886979D")
     private static boolean nativeGetEstimator(int ptr, int id,
             int degree, int horizonMillis, Estimator outEstimator) {
-        //DSFIXME:  CODE0010: Native static method requires manual modeling
+        //DSFIXME:  CODE0012: Native static method requires manual modeling
     	return DSUtils.UNKNOWN_BOOLEAN;
     }
 

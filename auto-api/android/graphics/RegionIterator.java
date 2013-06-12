@@ -51,20 +51,20 @@ public class RegionIterator {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:01.466 -0400", hash_original_method = "374F0FDA6E44206EA6BEC38C6D5993CD", hash_generated_method = "4C03CFC3661CF9D305F0CF1DAB1671CD")
     private static int nativeConstructor(int native_region) {
-        //DSFIXME:  CODE0010: Native static method requires manual modeling
+        //DSFIXME:  CODE0012: Native static method requires manual modeling
     	return DSUtils.UNKNOWN_INT;
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:01.466 -0400", hash_original_method = "3A8EBC44CA812E88AF7F8D162E2E9942", hash_generated_method = "9E5497174D4F1A79D030EF9DEB363104")
     private static void nativeDestructor(int native_iter) {
-        //DSFIXME:  CODE0010: Native static method requires manual modeling
+        //DSFIXME:  CODE0012: Native static method requires manual modeling
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:01.466 -0400", hash_original_method = "D5EE9EFAB7181DFECE80A89AC7AC9705", hash_generated_method = "65638F52B687C2C1D1D4781F720C480A")
     private static boolean nativeNext(int native_iter, Rect r) {
-        //DSFIXME:  CODE0010: Native static method requires manual modeling
+        //DSFIXME:  CODE0012: Native static method requires manual modeling
     	return DSUtils.UNKNOWN_BOOLEAN;
     }
 

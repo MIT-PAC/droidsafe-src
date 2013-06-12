@@ -62,7 +62,7 @@ public class EventLog {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:04.604 -0400", hash_original_method = "83359F8BE5A95C876DE0A2EAAB7DF3E6", hash_generated_method = "DCD61B74D60802C09EB83230063BF481")
     public static void readEvents(int[] tags, Collection<Event> output) throws IOException {
-        //DSFIXME:  CODE0010: Native static method requires manual modeling
+        //DSFIXME:  CODE0012: Native static method requires manual modeling
     }
 
     
