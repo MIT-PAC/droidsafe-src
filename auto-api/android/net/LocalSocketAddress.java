@@ -17,6 +17,8 @@ public class LocalSocketAddress {
     public LocalSocketAddress(String name, Namespace namespace) {
         dsTaint.addTaint(name);
         dsTaint.addTaint(namespace.dsTaint);
+        this.name = name;
+        this.namespace = namespace;
         // ---------- Original Method ----------
         //this.name = name;
         //this.namespace = namespace;
