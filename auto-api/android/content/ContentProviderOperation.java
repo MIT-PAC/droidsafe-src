@@ -1,21 +1,21 @@
 package android.content;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-
+import java.util.ArrayList;
+import java.util.HashMap;
 // import Iterator to deal with enhanced for loop translation
 import java.util.Iterator;
+import java.util.Map;
 
 import android.database.Cursor;
 import android.net.Uri;
 import android.os.Parcel;
 import android.os.Parcelable;
 import android.text.TextUtils;
-import android.util.Log;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.Map;
+import droidsafe.annotations.DSC;
+import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.DSModeled;
+import droidsafe.runtime.DroidSafeAndroidRuntime;
 
 public class ContentProviderOperation implements Parcelable {
     public final static int TYPE_INSERT = 1;
@@ -251,7 +251,7 @@ public class ContentProviderOperation implements Parcelable {
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public ContentProviderResult apply(ContentProvider provider, ContentProviderResult[] backRefs,
             int numBackRefs) throws OperationApplicationException {
-        dsTaint.addTaint(backRefs.dsTaint);
+        dsTaint.addTaint(backRefs[0].dsTaint);
         dsTaint.addTaint(numBackRefs);
         dsTaint.addTaint(provider.dsTaint);
         ContentValues values;
@@ -262,7 +262,7 @@ public class ContentProviderOperation implements Parcelable {
             Uri newUri;
             newUri = provider.insert(mUri, values);
             {
-                throw new OperationApplicationException("insert failed");
+            	if (DroidSafeAndroidRuntime.control) throw new OperationApplicationException("insert failed");
             } //End block
         } //End block
         int numRows;
@@ -308,7 +308,7 @@ public class ContentProviderOperation implements Parcelable {
                                     {
                                         boolean var315C9A13C4CF5F1A59783370621A4A5F_1263709643 = (!TextUtils.equals(cursorValue, expectedValue));
                                         {
-                                            throw new OperationApplicationException("Found value " + cursorValue
+                                        	if (DroidSafeAndroidRuntime.control) throw new OperationApplicationException("Found value " + cursorValue
                                         + " when expected " + expectedValue + " for column "
                                         + projection[i]);
                                         } //End block
@@ -325,10 +325,10 @@ public class ContentProviderOperation implements Parcelable {
             } //End block
         } //End block
         {
-            throw new IllegalStateException("bad type, " + mType);
+        	if (DroidSafeAndroidRuntime.control)throw new IllegalStateException("bad type, " + mType);
         } //End block
         {
-            throw new OperationApplicationException("wrong number of rows: " + numRows);
+        	if (DroidSafeAndroidRuntime.control)throw new OperationApplicationException("wrong number of rows: " + numRows);
         } //End block
         return (ContentProviderResult)dsTaint.getTaint();
         // ---------- Original Method ----------
@@ -340,15 +340,13 @@ public class ContentProviderOperation implements Parcelable {
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public ContentValues resolveValueBackReferences(
             ContentProviderResult[] backRefs, int numBackRefs) {
-        dsTaint.addTaint(backRefs.dsTaint);
+        dsTaint.addTaint(backRefs[0].dsTaint);
         dsTaint.addTaint(numBackRefs);
         final ContentValues values;
         {
             values = new ContentValues();
         } //End block
-        {
-            values = new ContentValues(mValues);
-        } //End block
+       
         {
             Iterator<Map.Entry<String, Object>> seatecAstronomy42 = mValuesBackReferences.valueSet().iterator();
             seatecAstronomy42.hasNext();
@@ -359,7 +357,7 @@ public class ContentProviderOperation implements Parcelable {
                 Integer backRefIndex;
                 backRefIndex = mValuesBackReferences.getAsInteger(key);
                 {
-                    throw new IllegalArgumentException("values backref " + key + " is not an integer");
+                	if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("values backref " + key + " is not an integer");
                 } //End block
                 values.put(key, backRefToValue(backRefs, numBackRefs, backRefIndex));
             } //End block
@@ -393,7 +391,7 @@ public class ContentProviderOperation implements Parcelable {
     public String[] resolveSelectionArgsBackReferences(
             ContentProviderResult[] backRefs, int numBackRefs) {
         //DSFIXME:  CODE0009: Possible callback target function detected
-        dsTaint.addTaint(backRefs.dsTaint);
+        dsTaint.addTaint(backRefs[0].dsTaint);
         dsTaint.addTaint(numBackRefs);
         String[] newArgs;
         newArgs = new String[mSelectionArgs.length];
@@ -451,11 +449,11 @@ public class ContentProviderOperation implements Parcelable {
     //DSFIXME:  CODE0002: Requires DSC value to be set
     private long backRefToValue(ContentProviderResult[] backRefs, int numBackRefs,
             Integer backRefIndex) {
-        dsTaint.addTaint(backRefs.dsTaint);
+        dsTaint.addTaint(backRefs[0].dsTaint);
         dsTaint.addTaint(numBackRefs);
         dsTaint.addTaint(backRefIndex.dsTaint);
         {
-            throw new ArrayIndexOutOfBoundsException("asked for back ref " + backRefIndex
+        	if (DroidSafeAndroidRuntime.control) throw new ArrayIndexOutOfBoundsException("asked for back ref " + backRefIndex
                     + " but there are only " + numBackRefs + " back refs");
         } //End block
         ContentProviderResult backRef;
@@ -530,7 +528,7 @@ public class ContentProviderOperation implements Parcelable {
                     boolean varE217E6379D20B25A0EC064610B0EEA97_173084012 = ((mValues == null || mValues.size() == 0)
                         && (mValuesBackReferences == null || mValuesBackReferences.size() == 0));
                     {
-                        throw new IllegalArgumentException("Empty values");
+                    	if (DroidSafeAndroidRuntime.control)throw new IllegalArgumentException("Empty values");
                     } //End block
                 } //End collapsed parenthetic
             } //End block
@@ -540,7 +538,7 @@ public class ContentProviderOperation implements Parcelable {
                         && (mValuesBackReferences == null || mValuesBackReferences.size() == 0)
                         && (mExpectedCount == null));
                     {
-                        throw new IllegalArgumentException("Empty values");
+                    	if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("Empty values");
                     } //End block
                 } //End collapsed parenthetic
             } //End block
@@ -568,7 +566,7 @@ public class ContentProviderOperation implements Parcelable {
         public Builder withValueBackReferences(ContentValues backReferences) {
             dsTaint.addTaint(backReferences.dsTaint);
             {
-                throw new IllegalArgumentException(
+            	if (DroidSafeAndroidRuntime.control)throw new IllegalArgumentException(
                         "only inserts, updates, and asserts can have value back-references");
             } //End block
             return (Builder)dsTaint.getTaint();
@@ -588,7 +586,7 @@ public class ContentProviderOperation implements Parcelable {
             dsTaint.addTaint(previousResult);
             dsTaint.addTaint(key);
             {
-                throw new IllegalArgumentException(
+            	if (DroidSafeAndroidRuntime.control)throw new IllegalArgumentException(
                         "only inserts, updates, and asserts can have value back-references");
             } //End block
             {
@@ -616,7 +614,7 @@ public class ContentProviderOperation implements Parcelable {
             dsTaint.addTaint(previousResult);
             dsTaint.addTaint(selectionArgIndex);
             {
-                throw new IllegalArgumentException("only updates, deletes, and asserts "
+            	if (DroidSafeAndroidRuntime.control)throw new IllegalArgumentException("only updates, deletes, and asserts "
                         + "can have selection back-references");
             } //End block
             {
@@ -642,7 +640,7 @@ public class ContentProviderOperation implements Parcelable {
         public Builder withValues(ContentValues values) {
             dsTaint.addTaint(values.dsTaint);
             {
-                throw new IllegalArgumentException(
+            	if (DroidSafeAndroidRuntime.control)throw new IllegalArgumentException(
                         "only inserts, updates, and asserts can have values");
             } //End block
             {
@@ -669,7 +667,7 @@ public class ContentProviderOperation implements Parcelable {
             dsTaint.addTaint(value.dsTaint);
             dsTaint.addTaint(key);
             {
-                throw new IllegalArgumentException("only inserts and updates can have values");
+            	if (DroidSafeAndroidRuntime.control)throw new IllegalArgumentException("only inserts and updates can have values");
             } //End block
             {
                 mValues = new ContentValues();
@@ -705,7 +703,7 @@ public class ContentProviderOperation implements Parcelable {
                 mValues.put(key, (byte[]) value);
             } //End block
             {
-                throw new IllegalArgumentException("bad value type: " + value.getClass().getName());
+            	if (DroidSafeAndroidRuntime.control)throw new IllegalArgumentException("bad value type: " + value.getClass().getName());
             } //End block
             return (Builder)dsTaint.getTaint();
             // ---------- Original Method ----------
@@ -719,7 +717,7 @@ public class ContentProviderOperation implements Parcelable {
             dsTaint.addTaint(selectionArgs);
             dsTaint.addTaint(selection);
             {
-                throw new IllegalArgumentException(
+            	if (DroidSafeAndroidRuntime.control)throw new IllegalArgumentException(
                         "only updates, deletes, and asserts can have selections");
             } //End block
             {
@@ -751,7 +749,7 @@ public class ContentProviderOperation implements Parcelable {
         public Builder withExpectedCount(int count) {
             dsTaint.addTaint(count);
             {
-                throw new IllegalArgumentException(
+            	if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException(
                         "only updates, deletes, and asserts can have expected counts");
             } //End block
             return (Builder)dsTaint.getTaint();

@@ -1,14 +1,13 @@
 package android.content;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-
-// import Iterator to deal with enhanced for loop translation
-import java.util.Iterator;
-
 import android.database.Cursor;
 import android.os.RemoteException;
+import droidsafe.annotations.DSC;
+import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.DSModeled;
+import droidsafe.runtime.DroidSafeAndroidRuntime;
+// import Iterator to deal with enhanced for loop translation
 
 public abstract class CursorEntityIterator implements EntityIterator {
     private final Cursor mCursor;
@@ -19,6 +18,7 @@ public abstract class CursorEntityIterator implements EntityIterator {
     public CursorEntityIterator(Cursor cursor) {
         dsTaint.addTaint(cursor.dsTaint);
         mIsClosed = false;
+        mCursor = cursor;
         mCursor.moveToFirst();
         // ---------- Original Method ----------
         //mIsClosed = false;
@@ -34,7 +34,7 @@ public abstract class CursorEntityIterator implements EntityIterator {
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public final boolean hasNext() {
         {
-            throw new IllegalStateException("calling hasNext() when the iterator is closed");
+        	if (DroidSafeAndroidRuntime.control)throw new IllegalStateException("calling hasNext() when the iterator is closed");
         } //End block
         boolean var1223B7E5B0B9252AE7BAD96C7FEE91F6_1165292258 = (!mCursor.isAfterLast());
         return dsTaint.getTaintBoolean();
@@ -50,12 +50,12 @@ public abstract class CursorEntityIterator implements EntityIterator {
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public Entity next() {
         {
-            throw new IllegalStateException("calling next() when the iterator is closed");
+        	if (DroidSafeAndroidRuntime.control)throw new IllegalStateException("calling next() when the iterator is closed");
         } //End block
         {
             boolean var2CC10AB3C52DD03176ADB3A939341751_993337022 = (!hasNext());
             {
-                throw new IllegalStateException("you may only call next() if hasNext() is true");
+            	if (DroidSafeAndroidRuntime.control)throw new IllegalStateException("you may only call next() if hasNext() is true");
             } //End block
         } //End collapsed parenthetic
         try 
@@ -95,7 +95,7 @@ public abstract class CursorEntityIterator implements EntityIterator {
     @DSModeled(DSC.SAFE)
     public final void reset() {
         {
-            throw new IllegalStateException("calling reset() when the iterator is closed");
+        	if (DroidSafeAndroidRuntime.control)throw new IllegalStateException("calling reset() when the iterator is closed");
         } //End block
         mCursor.moveToFirst();
         // ---------- Original Method ----------
@@ -110,7 +110,7 @@ public abstract class CursorEntityIterator implements EntityIterator {
     @DSModeled(DSC.SAFE)
     public final void close() {
         {
-            throw new IllegalStateException("closing when already closed");
+        	if (DroidSafeAndroidRuntime.control)throw new IllegalStateException("closing when already closed");
         } //End block
         mIsClosed = true;
         mCursor.close();
