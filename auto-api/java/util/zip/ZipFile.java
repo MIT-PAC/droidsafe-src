@@ -3,10 +3,10 @@ package java.util.zip;
 // Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
+import droidsafe.runtime.*;
 
-// import Iterator to deal with enhanced for loop translation
+// needed for enhanced for control translations
 import java.util.Iterator;
-
 import dalvik.system.CloseGuard;
 import java.io.BufferedInputStream;
 import java.io.EOFException;
@@ -24,17 +24,17 @@ import libcore.io.HeapBufferIterator;
 import libcore.io.Streams;
 
 public class ZipFile implements ZipConstants {
-    static final int GPBF_DATA_DESCRIPTOR_FLAG = 1 << 3;
-    static final int GPBF_UTF8_FLAG = 1 << 11;
-    public static final int OPEN_READ = 1;
-    public static final int OPEN_DELETE = 4;
-    private final String fileName;
+    static int GPBF_DATA_DESCRIPTOR_FLAG = 1 << 3;
+    static int GPBF_UTF8_FLAG = 1 << 11;
+    public static int OPEN_READ = 1;
+    public static int OPEN_DELETE = 4;
+    private String fileName;
     private File fileToDeleteOnClose;
     private RandomAccessFile mRaf;
-    private final LinkedHashMap<String, ZipEntry> mEntries = new LinkedHashMap<String, ZipEntry>();
-    private final CloseGuard guard = CloseGuard.get();
+    private LinkedHashMap<String, ZipEntry> mEntries = new LinkedHashMap<String, ZipEntry>();
+    private CloseGuard guard = CloseGuard.get();
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:15.441 -0400", hash_original_method = "E5AF570B733F2A8A2A3B06248A7E8835", hash_generated_method = "909E8745D51490F40F0C766D228AB36B")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 12:37:19.009 -0400", hash_original_method = "E5AF570B733F2A8A2A3B06248A7E8835", hash_generated_method = "909E8745D51490F40F0C766D228AB36B")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public ZipFile(File file) throws ZipException, IOException {
         this(file, OPEN_READ);
@@ -43,14 +43,14 @@ public class ZipFile implements ZipConstants {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:15.441 -0400", hash_original_method = "695CBEBB4A56BF57E24064CBD947BCB2", hash_generated_method = "1A4CF4B57E52FDEED090630842073001")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 12:37:19.012 -0400", hash_original_method = "695CBEBB4A56BF57E24064CBD947BCB2", hash_generated_method = "43CEACCCE2566204C869DEB0CB412E84")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public ZipFile(File file, int mode) throws IOException {
         dsTaint.addTaint(file.dsTaint);
         dsTaint.addTaint(mode);
         fileName = file.getPath();
         {
-            throw new IllegalArgumentException();
+            if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException();
         } //End block
         {
             fileToDeleteOnClose = null;
@@ -74,7 +74,7 @@ public class ZipFile implements ZipConstants {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:15.441 -0400", hash_original_method = "B52E22744B2B372E6DB0945A3673793A", hash_generated_method = "77B94B8160DBEA28F42063931B5F223B")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 12:37:19.014 -0400", hash_original_method = "B52E22744B2B372E6DB0945A3673793A", hash_generated_method = "77B94B8160DBEA28F42063931B5F223B")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public ZipFile(String name) throws IOException {
         this(new File(name), OPEN_READ);
@@ -83,7 +83,7 @@ public class ZipFile implements ZipConstants {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:15.442 -0400", hash_original_method = "A7163D550D593B0FEEAE03A5B45C66A6", hash_generated_method = "6625AF5B16CAEA2BE0545ED814DED18D")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 12:37:19.016 -0400", hash_original_method = "A7163D550D593B0FEEAE03A5B45C66A6", hash_generated_method = "2665581E18922190BAE145ED8B515C5E")
     @DSModeled(DSC.SAFE)
     @Override
     protected void finalize() throws IOException {
@@ -101,7 +101,7 @@ public class ZipFile implements ZipConstants {
             } //End block
             catch (Throwable t)
             {
-                throw new AssertionError(t);
+                if (DroidSafeAndroidRuntime.control) throw new AssertionError(t);
             } //End block
         } //End block
         // ---------- Original Method ----------
@@ -119,7 +119,7 @@ public class ZipFile implements ZipConstants {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:15.442 -0400", hash_original_method = "B3BE4D570FA623471DB2047631197E6D", hash_generated_method = "7DB3C0B324F3AB220F9A636D44076A3E")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 12:37:19.030 -0400", hash_original_method = "B3BE4D570FA623471DB2047631197E6D", hash_generated_method = "7DB3C0B324F3AB220F9A636D44076A3E")
     @DSModeled(DSC.SAFE)
     public void close() throws IOException {
         guard.close();
@@ -151,11 +151,11 @@ public class ZipFile implements ZipConstants {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:15.442 -0400", hash_original_method = "65CE3BC8A7A8514DBA7266C40E446CDF", hash_generated_method = "EBBCF13C8988AA884CFBD4941CB19F81")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 12:37:19.034 -0400", hash_original_method = "65CE3BC8A7A8514DBA7266C40E446CDF", hash_generated_method = "66A74AA20B312C41EBF5D0042DA40D79")
     @DSModeled(DSC.SAFE)
     private void checkNotClosed() {
         {
-            throw new IllegalStateException("Zip file closed");
+            if (DroidSafeAndroidRuntime.control) throw new IllegalStateException("Zip file closed");
         } //End block
         // ---------- Original Method ----------
         //if (mRaf == null) {
@@ -164,11 +164,11 @@ public class ZipFile implements ZipConstants {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:15.442 -0400", hash_original_method = "C7A9A4F6B932FEDB0ECC5AECA323DFC1", hash_generated_method = "956C8E6068CB7C7A1D0191CB874E5AD2")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 12:37:19.040 -0400", hash_original_method = "C7A9A4F6B932FEDB0ECC5AECA323DFC1", hash_generated_method = "7F5D95F408EFD7141ED29416AB01374E")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public Enumeration<? extends ZipEntry> entries() {
         checkNotClosed();
-        final Iterator<ZipEntry> iterator;
+        Iterator<ZipEntry> iterator;
         iterator = mEntries.values().iterator();
         return (Enumeration<? extends ZipEntry>)dsTaint.getTaint();
         // ---------- Original Method ----------
@@ -187,13 +187,13 @@ public class ZipFile implements ZipConstants {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:15.442 -0400", hash_original_method = "D382D29E599C910662BB0F89A97F218A", hash_generated_method = "130AC7079910061717F010D5639710EC")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 12:37:19.044 -0400", hash_original_method = "D382D29E599C910662BB0F89A97F218A", hash_generated_method = "89B2487373899DF9BAD1C0C5698E5E82")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public ZipEntry getEntry(String entryName) {
         dsTaint.addTaint(entryName);
         checkNotClosed();
         {
-            throw new NullPointerException();
+            if (DroidSafeAndroidRuntime.control) throw new NullPointerException();
         } //End block
         ZipEntry ze;
         ze = mEntries.get(entryName);
@@ -214,7 +214,7 @@ public class ZipFile implements ZipConstants {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:15.442 -0400", hash_original_method = "B69421FB9318C1ABE9ECEEB1DD311069", hash_generated_method = "D09F3FC9513F47CEDBE7C1472DB3C122")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 12:37:19.049 -0400", hash_original_method = "B69421FB9318C1ABE9ECEEB1DD311069", hash_generated_method = "D09F3FC9513F47CEDBE7C1472DB3C122")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public InputStream getInputStream(ZipEntry entry) throws IOException {
         dsTaint.addTaint(entry.dsTaint);
@@ -242,7 +242,7 @@ public class ZipFile implements ZipConstants {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:15.442 -0400", hash_original_method = "16A0E81CED7078E4D61B7DA2166E122D", hash_generated_method = "BF6CD224084C2641505C7E96A108E4CA")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 12:37:19.051 -0400", hash_original_method = "16A0E81CED7078E4D61B7DA2166E122D", hash_generated_method = "BF6CD224084C2641505C7E96A108E4CA")
     @DSModeled(DSC.SAFE)
     public String getName() {
         return dsTaint.getTaintString();
@@ -251,11 +251,11 @@ public class ZipFile implements ZipConstants {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:15.442 -0400", hash_original_method = "E69009FC6775A108297426EEDE85C8D2", hash_generated_method = "49BFD0A9110C19CCC36B02D9A02BF957")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 12:37:19.053 -0400", hash_original_method = "E69009FC6775A108297426EEDE85C8D2", hash_generated_method = "DF7283CF8EB0C6C17D255D87993FBA88")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public int size() {
         checkNotClosed();
-        int var85B557D4654E88618B8057DD0AFCFFDA_1181004495 = (mEntries.size());
+        int var85B557D4654E88618B8057DD0AFCFFDA_700595402 = (mEntries.size());
         return dsTaint.getTaintInt();
         // ---------- Original Method ----------
         //checkNotClosed();
@@ -263,29 +263,29 @@ public class ZipFile implements ZipConstants {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:15.442 -0400", hash_original_method = "C4C5F4E81B860F4CAE8325550F47061B", hash_generated_method = "B2360852D90C7DAB48229825E1DC5B75")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 12:37:19.072 -0400", hash_original_method = "C4C5F4E81B860F4CAE8325550F47061B", hash_generated_method = "A480AB8591A77EFB2898652F27F588B3")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     private void readCentralDir() throws IOException {
         long scanOffset;
         scanOffset = mRaf.length() - ENDHDR;
         {
-            throw new ZipException("too short to be Zip");
+            if (DroidSafeAndroidRuntime.control) throw new ZipException("too short to be Zip");
         } //End block
         long stopOffset;
         stopOffset = scanOffset - 65536;
         {
             stopOffset = 0;
         } //End block
-        final int ENDHEADERMAGIC;
+        int ENDHEADERMAGIC;
         ENDHEADERMAGIC = 0x06054b50;
         {
             mRaf.seek(scanOffset);
             {
-                boolean var4ED9CF7268BDF0C528752A1A4EA7FC4F_1918171108 = (Integer.reverseBytes(mRaf.readInt()) == ENDHEADERMAGIC);
+                boolean var4ED9CF7268BDF0C528752A1A4EA7FC4F_227109912 = (Integer.reverseBytes(mRaf.readInt()) == ENDHEADERMAGIC);
             } //End collapsed parenthetic
             scanOffset--;
             {
-                throw new ZipException("EOCD not found; not a Zip archive?");
+                if (DroidSafeAndroidRuntime.control) throw new ZipException("EOCD not found; not a Zip archive?");
             } //End block
         } //End block
         byte[] eocd;
@@ -305,7 +305,7 @@ public class ZipFile implements ZipConstants {
         int centralDirOffset;
         centralDirOffset = it.readInt();
         {
-            throw new ZipException("spanned archives not supported");
+            if (DroidSafeAndroidRuntime.control) throw new ZipException("spanned archives not supported");
         } //End block
         RAFStream rafs;
         rafs = new RAFStream(mRaf, centralDirOffset);
@@ -332,7 +332,7 @@ public class ZipFile implements ZipConstants {
         long mOffset;
         long mLength;
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:15.443 -0400", hash_original_method = "7566C7D40BAC719393DA5AE2730758DD", hash_generated_method = "46C49533F7F1C3E1ADC05E3D63A902B0")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 12:37:19.080 -0400", hash_original_method = "7566C7D40BAC719393DA5AE2730758DD", hash_generated_method = "46C49533F7F1C3E1ADC05E3D63A902B0")
         //DSFIXME:  CODE0002: Requires DSC value to be set
         public RAFStream(RandomAccessFile raf, long pos) throws IOException {
             dsTaint.addTaint(raf.dsTaint);
@@ -345,7 +345,7 @@ public class ZipFile implements ZipConstants {
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:15.443 -0400", hash_original_method = "EBB90581A10714B3978F18E12312CB3A", hash_generated_method = "EBA86B979B53C7FD3AD90F5105AC296E")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 12:37:19.085 -0400", hash_original_method = "EBB90581A10714B3978F18E12312CB3A", hash_generated_method = "EBA86B979B53C7FD3AD90F5105AC296E")
         @DSModeled(DSC.SAFE)
         @Override
         public int available() throws IOException {
@@ -355,18 +355,18 @@ public class ZipFile implements ZipConstants {
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:15.443 -0400", hash_original_method = "DEBABCFB0D5C81DCE0E37961227F43C9", hash_generated_method = "6DC6731B1EBF23A6ACDF5BEED448D3D7")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 12:37:19.088 -0400", hash_original_method = "DEBABCFB0D5C81DCE0E37961227F43C9", hash_generated_method = "2FE5ED9FA9930711DEC7A5E179389BF3")
         //DSFIXME:  CODE0002: Requires DSC value to be set
         @Override
         public int read() throws IOException {
-            int var27157AD7296922C5499EDCD13E8A2ED8_1887897601 = (Streams.readSingleByte(this));
+            int var27157AD7296922C5499EDCD13E8A2ED8_706555497 = (Streams.readSingleByte(this));
             return dsTaint.getTaintInt();
             // ---------- Original Method ----------
             //return Streams.readSingleByte(this);
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:15.443 -0400", hash_original_method = "EF568FF768F81FE11A38286E6FDCB2E1", hash_generated_method = "DBBD83324BB35D16D76894763BAC829E")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 12:37:19.101 -0400", hash_original_method = "EF568FF768F81FE11A38286E6FDCB2E1", hash_generated_method = "DBBD83324BB35D16D76894763BAC829E")
         @DSModeled(DSC.SAFE)
         @Override
         public int read(byte[] b, int off, int len) throws IOException {
@@ -402,7 +402,7 @@ public class ZipFile implements ZipConstants {
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:15.443 -0400", hash_original_method = "62A626F8A4A0AABE786C23986D3622F2", hash_generated_method = "4B8405EDAEDC43740E5FEAA47E548F84")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 12:37:19.105 -0400", hash_original_method = "62A626F8A4A0AABE786C23986D3622F2", hash_generated_method = "4B8405EDAEDC43740E5FEAA47E548F84")
         @DSModeled(DSC.SAFE)
         @Override
         public long skip(long byteCount) throws IOException {
@@ -428,7 +428,7 @@ public class ZipFile implements ZipConstants {
         ZipEntry entry;
         long bytesRead = 0;
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:15.443 -0400", hash_original_method = "7042D9D65A5773117A52B7582FC64EEF", hash_generated_method = "6F75298E182DDF3C08F18584CFED6FB7")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 12:37:19.109 -0400", hash_original_method = "7042D9D65A5773117A52B7582FC64EEF", hash_generated_method = "6F75298E182DDF3C08F18584CFED6FB7")
         //DSFIXME:  CODE0002: Requires DSC value to be set
         public ZipInflaterInputStream(InputStream is, Inflater inf, int bsize, ZipEntry entry) {
             super(is, inf, bsize);
@@ -441,7 +441,7 @@ public class ZipFile implements ZipConstants {
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:15.443 -0400", hash_original_method = "8B6BFDD773126A0A7B62B959FA690E20", hash_generated_method = "02EF2E4CF9BD9663AACFF14A6968E3EF")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 12:37:19.111 -0400", hash_original_method = "8B6BFDD773126A0A7B62B959FA690E20", hash_generated_method = "02EF2E4CF9BD9663AACFF14A6968E3EF")
         @DSModeled(DSC.SAFE)
         @Override
         public int read(byte[] buffer, int off, int nbytes) throws IOException {
@@ -463,13 +463,13 @@ public class ZipFile implements ZipConstants {
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:15.443 -0400", hash_original_method = "67EB7FFE4182D11E188F79FFA477AD5D", hash_generated_method = "09A483FF19D395C38C6C6608B0D6EC4C")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 12:37:19.121 -0400", hash_original_method = "67EB7FFE4182D11E188F79FFA477AD5D", hash_generated_method = "597F31ADF73311B6F21D650CB4F3F1EC")
         //DSFIXME:  CODE0002: Requires DSC value to be set
         @Override
         public int available() throws IOException {
             {
-                boolean varB468C57145781459693BA514A4AED697_703438438 = (super.available() == 0);
-                Object var4F59783E13CE810BB8A4B691B940F808_1701564218 = ((int) (entry.getSize() - bytesRead));
+                boolean varB468C57145781459693BA514A4AED697_26369449 = (super.available() == 0);
+                Object var4F59783E13CE810BB8A4B691B940F808_272406425 = ((int) (entry.getSize() - bytesRead));
             } //End flattened ternary
             return dsTaint.getTaintInt();
             // ---------- Original Method ----------

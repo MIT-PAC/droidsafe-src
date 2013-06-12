@@ -2,6 +2,7 @@ package android.accessibilityservice;
 
 // Droidsafe Imports
 import droidsafe.helpers.*;
+import droidsafe.runtime.DroidSafeAndroidRuntime;
 import droidsafe.annotations.*;
 
 // import Iterator to deal with enhanced for loop translation
@@ -105,7 +106,7 @@ public class AccessibilityServiceInfo implements Parcelable {
             {
                 boolean varEA4A996B829F560398797296F3090D5F_416758697 = (!TAG_ACCESSIBILITY_SERVICE.equals(nodeName));
                 {
-                    throw new XmlPullParserException( "Meta-data does not start with"
+                	if (DroidSafeAndroidRuntime.control) throw new XmlPullParserException( "Meta-data does not start with"
                         + TAG_ACCESSIBILITY_SERVICE + " tag");
                 } //End block
             } //End collapsed parenthetic

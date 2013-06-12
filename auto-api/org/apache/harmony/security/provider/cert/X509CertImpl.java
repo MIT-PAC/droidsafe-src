@@ -2,6 +2,7 @@ package org.apache.harmony.security.provider.cert;
 
 // Droidsafe Imports
 import droidsafe.helpers.*;
+import droidsafe.runtime.DroidSafeAndroidRuntime;
 import droidsafe.annotations.*;
 
 // import Iterator to deal with enhanced for loop translation
@@ -84,6 +85,7 @@ public final class X509CertImpl extends X509Certificate {
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public X509CertImpl(Certificate certificate) {
         dsTaint.addTaint(certificate.dsTaint);
+        this.certificate = certificate;
         this.tbsCert = certificate.getTbsCertificate();
         this.extensions = tbsCert.getExtensions();
         // ---------- Original Method ----------
@@ -128,7 +130,7 @@ public final class X509CertImpl extends X509Certificate {
         {
             boolean var264F16FDDA2F76F2C6FA01CF75941728_204913042 = (time < getNotBeforeInternal());
             {
-                throw new CertificateNotYetValidException("current time: " + new Date(time)
+            	if (DroidSafeAndroidRuntime.control) throw new CertificateNotYetValidException("current time: " + new Date(time)
                 + ", validation time: " + new Date(getNotBeforeInternal()));
             } //End block
         } //End collapsed parenthetic

@@ -2,6 +2,7 @@ package android.app;
 
 // Droidsafe Imports
 import droidsafe.helpers.*;
+import droidsafe.runtime.DroidSafeAndroidRuntime;
 import droidsafe.annotations.*;
 
 // import Iterator to deal with enhanced for loop translation
@@ -95,6 +96,8 @@ public class SearchManager implements DialogInterface.OnDismissListener, DialogI
      SearchManager(Context context, Handler handler) {
         dsTaint.addTaint(context.dsTaint);
         dsTaint.addTaint(handler.dsTaint);
+        mHandler = handler;
+        mContext = context;
         mService = ISearchManager.Stub.asInterface(
                 ServiceManager.getService(Context.SEARCH_SERVICE));
         // ---------- Original Method ----------
@@ -291,7 +294,7 @@ public class SearchManager implements DialogInterface.OnDismissListener, DialogI
         {
             boolean var7466BBCFAEAAA91B3F06D691B172825F_2125802999 = (!mAssociatedPackage.equals(launchActivity.getPackageName()));
             {
-                throw new IllegalArgumentException("invoking app search on a different package " +
+            	if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("invoking app search on a different package " +
                     "not associated with this search manager");
             } //End block
         } //End collapsed parenthetic

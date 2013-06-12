@@ -2,6 +2,7 @@ package java.lang;
 
 // Droidsafe Imports
 import droidsafe.helpers.*;
+import droidsafe.runtime.DroidSafeAndroidRuntime;
 import droidsafe.annotations.*;
 
 // import Iterator to deal with enhanced for loop translation
@@ -28,8 +29,8 @@ public class Thread implements Runnable {
     Runnable target;
     private static int count = 0;
     private long id;
-    ThreadLocal.Values localValues;
-    ThreadLocal.Values inheritableValues;
+    //ThreadLocal.Values localValues;
+    //ThreadLocal.Values inheritableValues;
     private final List<Runnable> interruptActions = new ArrayList<Runnable>();
     private ClassLoader contextClassLoader;
     private UncaughtExceptionHandler uncaughtHandler;
@@ -62,7 +63,7 @@ public class Thread implements Runnable {
     public Thread(Runnable runnable, String threadName) {
         dsTaint.addTaint(runnable.dsTaint);
         dsTaint.addTaint(threadName);
-        {
+        if (DroidSafeAndroidRuntime.control) {
             throw new NullPointerException();
         } //End block
         create(null, runnable, threadName, 0);
@@ -78,7 +79,7 @@ public class Thread implements Runnable {
     @DSModeled(DSC.SAFE)
     public Thread(String threadName) {
         dsTaint.addTaint(threadName);
-        {
+        if (DroidSafeAndroidRuntime.control) {
             throw new NullPointerException();
         } //End block
         create(null, null, threadName, 0);
@@ -107,7 +108,7 @@ public class Thread implements Runnable {
         dsTaint.addTaint(runnable.dsTaint);
         dsTaint.addTaint(threadName);
         dsTaint.addTaint(group.dsTaint);
-        {
+        if (DroidSafeAndroidRuntime.control) {
             throw new NullPointerException();
         } //End block
         create(group, runnable, threadName, 0);
@@ -124,7 +125,7 @@ public class Thread implements Runnable {
     public Thread(ThreadGroup group, String threadName) {
         dsTaint.addTaint(threadName);
         dsTaint.addTaint(group.dsTaint);
-        {
+        if (DroidSafeAndroidRuntime.control) {
             throw new NullPointerException();
         } //End block
         create(group, null, threadName, 0);
@@ -143,7 +144,7 @@ public class Thread implements Runnable {
         dsTaint.addTaint(threadName);
         dsTaint.addTaint(stackSize);
         dsTaint.addTaint(group.dsTaint);
-        {
+        if (DroidSafeAndroidRuntime.control) {
             throw new NullPointerException();
         } //End block
         create(group, runnable, threadName, stackSize);
@@ -168,12 +169,12 @@ public class Thread implements Runnable {
         {
             this.name = "Thread-" + id;
         } //End block
-        {
+        if (DroidSafeAndroidRuntime.control) {
             throw new InternalError("group not specified");
         } //End block
         this.target = null;
         this.stackSize = 0;
-        this.group.addThread(this);
+        //this.group.addThread(this);
         // ---------- Original Method ----------
         //synchronized (Thread.class) {
             //id = ++Thread.count;
@@ -197,6 +198,7 @@ public class Thread implements Runnable {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:11.960 -0400", hash_original_method = "B7E7B76C5A1CA256325AA2280577DF6E", hash_generated_method = "E4C4A972F50F482C836F2637871B7B13")
     //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSModeled(DSC.BAN)
     private void create(ThreadGroup group, Runnable runnable, String threadName, long stackSize) {
         dsTaint.addTaint(runnable.dsTaint);
         dsTaint.addTaint(threadName);
@@ -209,7 +211,7 @@ public class Thread implements Runnable {
         } //End block
         {
             boolean var1C58EACCC96861E06E4F3C98EDF34DE2_465622954 = (group.isDestroyed());
-            {
+            if (DroidSafeAndroidRuntime.control) {
                 throw new IllegalThreadStateException("Group already destroyed");
             } //End block
         } //End collapsed parenthetic
@@ -220,11 +222,13 @@ public class Thread implements Runnable {
             this.name = "Thread-" + id;
         } //End block
         this.priority = currentThread.getPriority();
+        /*
         this.contextClassLoader = currentThread.contextClassLoader;
         {
             inheritableValues = new ThreadLocal.Values(currentThread.inheritableValues);
         } //End block
         this.group.addThread(this);
+        */
         // ---------- Original Method ----------
         // Original Method Too Long, Refer to Original Implementation
     }
@@ -284,6 +288,7 @@ public class Thread implements Runnable {
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:11.960 -0400", hash_original_method = "D98109DB19C89E6A58A3F60993E1DFAD", hash_generated_method = "EF5362780C4AFA901B2E58705BD5AC3D")
+    @DSModeled(DSC.BAN)
     public static Map<Thread, StackTraceElement[]> getAllStackTraces() {
         Map<Thread, StackTraceElement[]> map = new HashMap<Thread, StackTraceElement[]>();
         int count = ThreadGroup.mSystem.activeCount();
@@ -518,7 +523,7 @@ public class Thread implements Runnable {
     public final void join(long millis, int nanos) throws InterruptedException {
         dsTaint.addTaint(nanos);
         dsTaint.addTaint(millis);
-        {
+        if (DroidSafeAndroidRuntime.control) {
             throw new IllegalArgumentException();
         } //End block
         boolean overflow;
@@ -662,7 +667,7 @@ public class Thread implements Runnable {
     @DSModeled(DSC.SAFE)
     public final void setName(String threadName) {
         dsTaint.addTaint(threadName);
-        {
+        if (DroidSafeAndroidRuntime.control) {
             throw new NullPointerException();
         } //End block
         VMThread vmt;
@@ -686,7 +691,7 @@ public class Thread implements Runnable {
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public final void setPriority(int priority) {
         dsTaint.addTaint(priority);
-        {
+        if (DroidSafeAndroidRuntime.control) {
             throw new IllegalArgumentException("Priority out of range");
         } //End block
         {
@@ -740,7 +745,7 @@ public class Thread implements Runnable {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:11.962 -0400", hash_original_method = "389CF6E0D3A08F228CF4E4A156CC86D9", hash_generated_method = "69D6095A4846731D95288C9CEA71688B")
     @DSModeled(DSC.SAFE)
     public synchronized void start() {
-        {
+        if (DroidSafeAndroidRuntime.control) {
             throw new IllegalThreadStateException("Thread already started.");
         } //End block
         hasBeenStarted = true;
@@ -860,7 +865,7 @@ public class Thread implements Runnable {
         dsTaint.addTaint(nanos);
         VMThread vmt;
         vmt = vmThread;
-        {
+        if (DroidSafeAndroidRuntime.control) {
             throw new AssertionError();
         } //End block
         {
@@ -909,9 +914,10 @@ public class Thread implements Runnable {
         dsTaint.addTaint(time);
         VMThread vmt;
         vmt = vmThread;
-        {
+        if (DroidSafeAndroidRuntime.control) {
             throw new AssertionError();
         } //End block
+        
         {
             long delayMillis;
             delayMillis = time - System.currentTimeMillis();

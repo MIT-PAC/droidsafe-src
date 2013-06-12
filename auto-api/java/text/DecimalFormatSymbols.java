@@ -2,6 +2,7 @@ package java.text;
 
 // Droidsafe Imports
 import droidsafe.helpers.*;
+import droidsafe.runtime.DroidSafeAndroidRuntime;
 import droidsafe.annotations.*;
 
 // import Iterator to deal with enhanced for loop translation
@@ -390,7 +391,7 @@ public class DecimalFormatSymbols implements Cloneable, Serializable {
     public void setCurrency(Currency currency) {
         dsTaint.addTaint(currency.dsTaint);
         {
-            throw new NullPointerException();
+        	if (DroidSafeAndroidRuntime.control) throw new NullPointerException();
         } //End block
         intlCurrencySymbol = currency.getCurrencyCode();
         currencySymbol = currency.getSymbol(locale);

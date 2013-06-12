@@ -1,13 +1,14 @@
 package android.graphics;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-
-// import Iterator to deal with enhanced for loop translation
-import java.util.Iterator;
-
 import java.io.PrintWriter;
+
+import droidsafe.annotations.DSC;
+import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.DSModeled;
+import droidsafe.helpers.DSUtils;
+import droidsafe.runtime.DroidSafeAndroidRuntime;
+// import Iterator to deal with enhanced for loop translation
 
 public class Matrix {
     public static final int MSCALE_X = 0;
@@ -23,6 +24,7 @@ public class Matrix {
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:01.205 -0400", hash_original_method = "D86A271A87ADAB5FF76372ECECE2FE9E", hash_generated_method = "8342849EDF58A7A4E0585052A17EC1D5")
         @DSModeled(DSC.SAFE)
          void oops() {
+        	if (DroidSafeAndroidRuntime.control)
             throw new IllegalStateException("Matrix can not be modified");
             // ---------- Original Method ----------
             //throw new IllegalStateException("Matrix can not be modified");
@@ -860,6 +862,7 @@ public class Matrix {
         dsTaint.addTaint(stf.dsTaint);
         dsTaint.addTaint(src.dsTaint);
         dsTaint.addTaint(dst.dsTaint);
+        if (DroidSafeAndroidRuntime.control)
         {
             throw new NullPointerException();
         } //End block
@@ -881,6 +884,7 @@ public class Matrix {
         int dstStop = dstIndex + (pointCount << 1);
         if ((pointCount | srcIndex | dstIndex | srcStop | dstStop) < 0 ||
                 srcStop > src.length || dstStop > dst.length) {
+        	if (DroidSafeAndroidRuntime.control)
             throw new ArrayIndexOutOfBoundsException();
         }
     }
@@ -896,6 +900,7 @@ public class Matrix {
         dsTaint.addTaint(srcIndex);
         dsTaint.addTaint(dst);
         dsTaint.addTaint(pointCount);
+    	if (DroidSafeAndroidRuntime.control)
         {
             throw new IllegalArgumentException();
         } //End block
@@ -967,6 +972,7 @@ public class Matrix {
     public void mapPoints(float[] dst, float[] src) {
         dsTaint.addTaint(dst);
         dsTaint.addTaint(src);
+    	if (DroidSafeAndroidRuntime.control)
         {
             throw new ArrayIndexOutOfBoundsException();
         } //End block
@@ -984,6 +990,7 @@ public class Matrix {
     public void mapVectors(float[] dst, float[] src) {
         dsTaint.addTaint(dst);
         dsTaint.addTaint(src);
+    	if (DroidSafeAndroidRuntime.control)
         {
             throw new ArrayIndexOutOfBoundsException();
         } //End block
@@ -1021,6 +1028,7 @@ public class Matrix {
     public boolean mapRect(RectF dst, RectF src) {
         dsTaint.addTaint(dst.dsTaint);
         dsTaint.addTaint(src.dsTaint);
+        if (DroidSafeAndroidRuntime.control)
         {
             throw new NullPointerException();
         } //End block
@@ -1060,6 +1068,7 @@ public class Matrix {
     @DSModeled(DSC.SAFE)
     public void getValues(float[] values) {
         dsTaint.addTaint(values);
+        if (DroidSafeAndroidRuntime.control)
         {
             throw new ArrayIndexOutOfBoundsException();
         } //End block
@@ -1076,6 +1085,7 @@ public class Matrix {
     @DSModeled(DSC.SAFE)
     public void setValues(float[] values) {
         dsTaint.addTaint(values);
+        if (DroidSafeAndroidRuntime.control)
         {
             throw new ArrayIndexOutOfBoundsException();
         } //End block
@@ -1244,233 +1254,256 @@ public class Matrix {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:01.216 -0400", hash_original_method = "2E569DF6212FFB96C566D938F0C6BA9E", hash_generated_method = "D97FB6FDF8B0ACA506544CDAF687B4CF")
     private static int native_create(int native_src_or_zero) {
-        //DSFIXME:  CODE0010: Native static method requires manual modeling
+        //DSFIXME:  CODE0012: Native static method requires manual modeling
+    	return DSUtils.UNKNOWN_INT;
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:01.216 -0400", hash_original_method = "638CDF32930D5E21B4A69E02B1C867F7", hash_generated_method = "05E4481827599B476FA67207D85489F4")
     private static boolean native_isIdentity(int native_object) {
-        //DSFIXME:  CODE0010: Native static method requires manual modeling
+        //DSFIXME:  CODE0012: Native static method requires manual modeling
+    	return DSUtils.UNKNOWN_BOOLEAN;
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:01.216 -0400", hash_original_method = "15C048D7828FD8ED0507A5C7188CFD3F", hash_generated_method = "38004EC8D7BD65FBC80F633322952A6E")
     private static boolean native_rectStaysRect(int native_object) {
-        //DSFIXME:  CODE0010: Native static method requires manual modeling
+        //DSFIXME:  CODE0012: Native static method requires manual modeling
+    	return DSUtils.UNKNOWN_BOOLEAN;
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:01.216 -0400", hash_original_method = "548CCA10F3D2A7665E05666D064EBB52", hash_generated_method = "7EDB534CCC42C323E3EFF1F89E411801")
     private static void native_reset(int native_object) {
-        //DSFIXME:  CODE0010: Native static method requires manual modeling
+        //DSFIXME:  CODE0012: Native static method requires manual modeling
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:01.216 -0400", hash_original_method = "84C387F0490DFC4EAABFB80776BA2BD2", hash_generated_method = "A061D2F83FE60F79E08BDD31A4CE24C5")
     private static void native_set(int native_object, int other) {
-        //DSFIXME:  CODE0010: Native static method requires manual modeling
+        //DSFIXME:  CODE0012: Native static method requires manual modeling
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:01.216 -0400", hash_original_method = "77B961D47C85CFB4D1042B1C8EF1ACE9", hash_generated_method = "3766158C63797B632CA733A493CB897D")
     private static void native_setTranslate(int native_object,
                                                    float dx, float dy) {
-        //DSFIXME:  CODE0010: Native static method requires manual modeling
+        //DSFIXME:  CODE0012: Native static method requires manual modeling
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:01.216 -0400", hash_original_method = "1B93E1B1F926FF809F8131A7FD3BB4A2", hash_generated_method = "30572938955B56C92D4BE1697AAB86FE")
     private static void native_setScale(int native_object,
                                         float sx, float sy, float px, float py) {
-        //DSFIXME:  CODE0010: Native static method requires manual modeling
+        //DSFIXME:  CODE0012: Native static method requires manual modeling
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:01.216 -0400", hash_original_method = "7F19894A25F65B73FBC5CE9D718DED16", hash_generated_method = "23E34E990D8ADABFB956CE28A8D18877")
     private static void native_setScale(int native_object,
                                                float sx, float sy) {
-        //DSFIXME:  CODE0010: Native static method requires manual modeling
+        //DSFIXME:  CODE0012: Native static method requires manual modeling
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:01.216 -0400", hash_original_method = "33E7C1CBC9BCCE5EA45EC3BFC1FF7A83", hash_generated_method = "9AF7FB34FC9FD785A9E6EB6163D2A515")
     private static void native_setRotate(int native_object,
                                             float degrees, float px, float py) {
-        //DSFIXME:  CODE0010: Native static method requires manual modeling
+        //DSFIXME:  CODE0012: Native static method requires manual modeling
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:01.216 -0400", hash_original_method = "6CF9713A77534838EC901921A88E81B4", hash_generated_method = "DC17315AB66DE4D8AEAA83B8D3A6A541")
     private static void native_setRotate(int native_object,
                                                 float degrees) {
-        //DSFIXME:  CODE0010: Native static method requires manual modeling
+        //DSFIXME:  CODE0012: Native static method requires manual modeling
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:01.216 -0400", hash_original_method = "766CCAF6495A07AE3DAD6FFBF8D2C007", hash_generated_method = "86C1E8AAC21741673370831B85970488")
     private static void native_setSinCos(int native_object,
                             float sinValue, float cosValue, float px, float py) {
-        //DSFIXME:  CODE0010: Native static method requires manual modeling
+        //DSFIXME:  CODE0012: Native static method requires manual modeling
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:01.216 -0400", hash_original_method = "745B4ADD99207C68A839BA8A29FB8BD1", hash_generated_method = "5444568406780980A769FBC1427DB6A6")
     private static void native_setSinCos(int native_object,
                                                 float sinValue, float cosValue) {
-        //DSFIXME:  CODE0010: Native static method requires manual modeling
+        //DSFIXME:  CODE0012: Native static method requires manual modeling
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:01.217 -0400", hash_original_method = "2F3F222837DCFB258AA638165004883C", hash_generated_method = "DDB37FAE3127C5E1DBC67E2593BD7087")
     private static void native_setSkew(int native_object,
                                         float kx, float ky, float px, float py) {
-        //DSFIXME:  CODE0010: Native static method requires manual modeling
+        //DSFIXME:  CODE0012: Native static method requires manual modeling
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:01.217 -0400", hash_original_method = "FA98C1D462FFEEE78434086CABDFA080", hash_generated_method = "4DAF3A7877471BB89CB3028588B3A963")
     private static void native_setSkew(int native_object,
                                               float kx, float ky) {
-        //DSFIXME:  CODE0010: Native static method requires manual modeling
+        //DSFIXME:  CODE0012: Native static method requires manual modeling
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:01.217 -0400", hash_original_method = "59753537F113267A29C730B7F294C5AC", hash_generated_method = "36F7975B19D24EA6FCF17B7B43415465")
     private static boolean native_setConcat(int native_object,
                                                    int a, int b) {
-        //DSFIXME:  CODE0010: Native static method requires manual modeling
+        //DSFIXME:  CODE0012: Native static method requires manual modeling
+    	return DSUtils.UNKNOWN_BOOLEAN;
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:01.217 -0400", hash_original_method = "A2DC31C39EB105AF0C37051991F9641B", hash_generated_method = "D3A988350DBEFD87E5E6497D8A282500")
     private static boolean native_preTranslate(int native_object,
                                                       float dx, float dy) {
-        //DSFIXME:  CODE0010: Native static method requires manual modeling
+        //DSFIXME:  CODE0012: Native static method requires manual modeling
+    	return DSUtils.UNKNOWN_BOOLEAN;
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:01.217 -0400", hash_original_method = "B072627AF5334E6164E7100669BD01DC", hash_generated_method = "FDCF1F77D58CB2768043F45DF8CB4103")
     private static boolean native_preScale(int native_object,
                                         float sx, float sy, float px, float py) {
-        //DSFIXME:  CODE0010: Native static method requires manual modeling
+        //DSFIXME:  CODE0012: Native static method requires manual modeling
+    	return DSUtils.UNKNOWN_BOOLEAN;
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:01.217 -0400", hash_original_method = "346E002D68517C85997D96159E0D8DF0", hash_generated_method = "7800E3A2B8BDE1F9A76F552B3453345A")
     private static boolean native_preScale(int native_object,
                                                   float sx, float sy) {
-        //DSFIXME:  CODE0010: Native static method requires manual modeling
+        //DSFIXME:  CODE0012: Native static method requires manual modeling
+    	return DSUtils.UNKNOWN_BOOLEAN;
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:01.217 -0400", hash_original_method = "E8395384F02B1B1A51A1C8404E4BD825", hash_generated_method = "14CB40AE7EDA1F3A7214D0055C37FC83")
     private static boolean native_preRotate(int native_object,
                                             float degrees, float px, float py) {
-        //DSFIXME:  CODE0010: Native static method requires manual modeling
+        //DSFIXME:  CODE0012: Native static method requires manual modeling
+    	return DSUtils.UNKNOWN_BOOLEAN;
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:01.217 -0400", hash_original_method = "8D5B156168BF70DD9CFF0BA75EA5CF01", hash_generated_method = "F04707A877317E15BE0F34D8ED8813F0")
     private static boolean native_preRotate(int native_object,
                                                    float degrees) {
-        //DSFIXME:  CODE0010: Native static method requires manual modeling
+        //DSFIXME:  CODE0012: Native static method requires manual modeling
+    	return DSUtils.UNKNOWN_BOOLEAN;
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:01.220 -0400", hash_original_method = "EF5C6675036AA0F01B3CE96889FF4EB9", hash_generated_method = "08FD54214747C5A7A7D515EA242BE614")
     private static boolean native_preSkew(int native_object,
                                         float kx, float ky, float px, float py) {
-        //DSFIXME:  CODE0010: Native static method requires manual modeling
+        //DSFIXME:  CODE0012: Native static method requires manual modeling
+    	return DSUtils.UNKNOWN_BOOLEAN;
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:01.220 -0400", hash_original_method = "8F5CA6A6F5F1E818D913627B1BC58905", hash_generated_method = "CF935931FB6278190AF498120E2399B5")
     private static boolean native_preSkew(int native_object,
                                                  float kx, float ky) {
-        //DSFIXME:  CODE0010: Native static method requires manual modeling
+        //DSFIXME:  CODE0012: Native static method requires manual modeling
+    	return DSUtils.UNKNOWN_BOOLEAN;
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:01.220 -0400", hash_original_method = "BBDCE10B95B1C03721C7EA688D3AC4EF", hash_generated_method = "39ED8229452251D13569DBE57A156B38")
     private static boolean native_preConcat(int native_object,
                                                    int other_matrix) {
-        //DSFIXME:  CODE0010: Native static method requires manual modeling
+        //DSFIXME:  CODE0012: Native static method requires manual modeling
+    	return DSUtils.UNKNOWN_BOOLEAN;
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:01.220 -0400", hash_original_method = "A36B2BD181828874B555ED87B01CC5CD", hash_generated_method = "A7516F9D6490BBB3C78176D6B9E58E35")
     private static boolean native_postTranslate(int native_object,
                                                        float dx, float dy) {
-        //DSFIXME:  CODE0010: Native static method requires manual modeling
+        //DSFIXME:  CODE0012: Native static method requires manual modeling
+    	return DSUtils.UNKNOWN_BOOLEAN;
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:01.220 -0400", hash_original_method = "1C29CED6D9D0B83D79C84911859C7C5D", hash_generated_method = "6C788699A1A6F56309E5737282809D9C")
     private static boolean native_postScale(int native_object,
                                         float sx, float sy, float px, float py) {
-        //DSFIXME:  CODE0010: Native static method requires manual modeling
+        //DSFIXME:  CODE0012: Native static method requires manual modeling
+    	return DSUtils.UNKNOWN_BOOLEAN;
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:01.220 -0400", hash_original_method = "6AA0F6CC1BDC33D8A53FC691CE5BEEF6", hash_generated_method = "8B12CAFF3195725A863D74FC60AD9307")
     private static boolean native_postScale(int native_object,
                                                    float sx, float sy) {
-        //DSFIXME:  CODE0010: Native static method requires manual modeling
+        //DSFIXME:  CODE0012: Native static method requires manual modeling
+    	return DSUtils.UNKNOWN_BOOLEAN;
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:01.220 -0400", hash_original_method = "1BADEE2EEC198A1CD24195BD453F5940", hash_generated_method = "4B7E2F6EBAF767B714D0CBA9424E0533")
     private static boolean native_postRotate(int native_object,
                                             float degrees, float px, float py) {
-        //DSFIXME:  CODE0010: Native static method requires manual modeling
+        //DSFIXME:  CODE0012: Native static method requires manual modeling
+    	return DSUtils.UNKNOWN_BOOLEAN;
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:01.220 -0400", hash_original_method = "8A93D24AD8C8E10A211C4CD634DB8A8C", hash_generated_method = "D5FDC60A0A9A4D4F8A56373218CF6A22")
     private static boolean native_postRotate(int native_object,
                                                     float degrees) {
-        //DSFIXME:  CODE0010: Native static method requires manual modeling
+        //DSFIXME:  CODE0012: Native static method requires manual modeling
+    	return DSUtils.UNKNOWN_BOOLEAN;
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:01.221 -0400", hash_original_method = "A3077167E092256E078410C9D7431BEE", hash_generated_method = "95F8CEE0D678171EC3267BC4377DFADB")
     private static boolean native_postSkew(int native_object,
                                         float kx, float ky, float px, float py) {
-        //DSFIXME:  CODE0010: Native static method requires manual modeling
+        //DSFIXME:  CODE0012: Native static method requires manual modeling
+    	return DSUtils.UNKNOWN_BOOLEAN;
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:01.221 -0400", hash_original_method = "5DB345158601C8F9A292AC9567577F74", hash_generated_method = "6381FB8C5F1D86983C880FA7325BC769")
     private static boolean native_postSkew(int native_object,
                                                   float kx, float ky) {
-        //DSFIXME:  CODE0010: Native static method requires manual modeling
+        //DSFIXME:  CODE0012: Native static method requires manual modeling
+    	return DSUtils.UNKNOWN_BOOLEAN;
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:01.221 -0400", hash_original_method = "A7F971010B85694F54D25E6810AF9F6C", hash_generated_method = "F6694E3A04542E3779EE07A9E5FCC77C")
     private static boolean native_postConcat(int native_object,
                                                     int other_matrix) {
-        //DSFIXME:  CODE0010: Native static method requires manual modeling
+        //DSFIXME:  CODE0012: Native static method requires manual modeling
+    	return DSUtils.UNKNOWN_BOOLEAN;
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:01.221 -0400", hash_original_method = "997F0D86746DF60B46CF1C3F2CE0674F", hash_generated_method = "FDF0E1C25D4590427FC495E3AF347207")
     private static boolean native_setRectToRect(int native_object,
                                                 RectF src, RectF dst, int stf) {
-        //DSFIXME:  CODE0010: Native static method requires manual modeling
+        //DSFIXME:  CODE0012: Native static method requires manual modeling
+    	return DSUtils.UNKNOWN_BOOLEAN;
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:01.221 -0400", hash_original_method = "E0F20C593DF79C9CCCA4DB55E891FB64", hash_generated_method = "634B7F103128E589D4DBC64E2DC73646")
     private static boolean native_setPolyToPoly(int native_object,
         float[] src, int srcIndex, float[] dst, int dstIndex, int pointCount) {
-        //DSFIXME:  CODE0010: Native static method requires manual modeling
+        //DSFIXME:  CODE0012: Native static method requires manual modeling
+    	return DSUtils.UNKNOWN_BOOLEAN;
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:01.221 -0400", hash_original_method = "EE6005D3A8076E9D9E9B83CE8ACC5965", hash_generated_method = "DDB0E3F2BE660059575107F7F3A41B1A")
     private static boolean native_invert(int native_object, int inverse) {
-        //DSFIXME:  CODE0010: Native static method requires manual modeling
+        //DSFIXME:  CODE0012: Native static method requires manual modeling
+    	return DSUtils.UNKNOWN_BOOLEAN;
     }
 
     
@@ -1478,47 +1511,50 @@ public class Matrix {
     private static void native_mapPoints(int native_object,
                         float[] dst, int dstIndex, float[] src, int srcIndex,
                         int ptCount, boolean isPts) {
-        //DSFIXME:  CODE0010: Native static method requires manual modeling
+        //DSFIXME:  CODE0012: Native static method requires manual modeling
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:01.221 -0400", hash_original_method = "110B62B2717E6E6A45CDBC1ABD7D582B", hash_generated_method = "10E7599D3666529E63D20929EB239318")
     private static boolean native_mapRect(int native_object,
                                                  RectF dst, RectF src) {
-        //DSFIXME:  CODE0010: Native static method requires manual modeling
+        //DSFIXME:  CODE0012: Native static method requires manual modeling
+    	return DSUtils.UNKNOWN_BOOLEAN;
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:01.221 -0400", hash_original_method = "25D448CFE343232FBEAD62FB0DE1949E", hash_generated_method = "1020258727C9165B4C7AC6673EDE8854")
     private static float native_mapRadius(int native_object,
                                                  float radius) {
-        //DSFIXME:  CODE0010: Native static method requires manual modeling
+        //DSFIXME:  CODE0012: Native static method requires manual modeling
+    	return DSUtils.UNKNOWN_FLOAT;
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:01.221 -0400", hash_original_method = "6D9A980453C770560C440D42192FF14E", hash_generated_method = "B1E23D0A380CA60271A0EE1BD9B14079")
     private static void native_getValues(int native_object,
                                                 float[] values) {
-        //DSFIXME:  CODE0010: Native static method requires manual modeling
+        //DSFIXME:  CODE0012: Native static method requires manual modeling
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:01.221 -0400", hash_original_method = "AAA085A6D40304BE48BD5E89D081C552", hash_generated_method = "401EAE8C8D802EDB4D99B6A0EB5A0410")
     private static void native_setValues(int native_object,
                                                 float[] values) {
-        //DSFIXME:  CODE0010: Native static method requires manual modeling
+        //DSFIXME:  CODE0012: Native static method requires manual modeling
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:01.221 -0400", hash_original_method = "061EC29489F0C7FEEFE2A3D6DC5F1B84", hash_generated_method = "26CBFA57E0EC3F00AB3334E8C03CDA92")
     private static boolean native_equals(int native_a, int native_b) {
-        //DSFIXME:  CODE0010: Native static method requires manual modeling
+        //DSFIXME:  CODE0012: Native static method requires manual modeling
+    	return DSUtils.UNKNOWN_BOOLEAN;
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:01.222 -0400", hash_original_method = "3EB71327F1F1A6E32641122E7B4DA111", hash_generated_method = "A31B20E2CB1844494F28FD492786E830")
     private static void finalizer(int native_instance) {
-        //DSFIXME:  CODE0010: Native static method requires manual modeling
+        //DSFIXME:  CODE0012: Native static method requires manual modeling
     }
 
     

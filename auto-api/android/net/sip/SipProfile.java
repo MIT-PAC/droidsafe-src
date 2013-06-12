@@ -2,6 +2,7 @@ package android.net.sip;
 
 // Droidsafe Imports
 import droidsafe.helpers.*;
+import droidsafe.runtime.DroidSafeAndroidRuntime;
 import droidsafe.annotations.*;
 
 // import Iterator to deal with enhanced for loop translation
@@ -319,7 +320,7 @@ public class SipProfile implements Parcelable, Serializable, Cloneable {
         //DSFIXME:  CODE0002: Requires DSC value to be set
         public Builder(SipProfile profile) {
             dsTaint.addTaint(profile.dsTaint);
-            //throw new NullPointerException();
+            if (DroidSafeAndroidRuntime.control) throw new NullPointerException();
             try 
             {
                 mProfile = (SipProfile) profile.clone();
@@ -355,7 +356,7 @@ public class SipProfile implements Parcelable, Serializable, Cloneable {
         public Builder(String uriString) throws ParseException {
             dsTaint.addTaint(uriString);
             {
-                //throw new NullPointerException("uriString cannot be null");
+            	if (DroidSafeAndroidRuntime.control) throw new NullPointerException("uriString cannot be null");
             } //End block
             URI uri;
             uri = mAddressFactory.createURI(fix(uriString));
@@ -458,8 +459,7 @@ public class SipProfile implements Parcelable, Serializable, Cloneable {
         public Builder setPort(int port) throws IllegalArgumentException {
             dsTaint.addTaint(port);
             {
-            	//DSFIXME:  Exception handling
-                //throw new IllegalArgumentException("incorrect port arugment: " + port);
+            	if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("incorrect port arugment: " + port);
             } //End block
             mProfile.mPort = port;
             return (Builder)dsTaint.getTaint();
@@ -477,15 +477,14 @@ public class SipProfile implements Parcelable, Serializable, Cloneable {
         public Builder setProtocol(String protocol) throws IllegalArgumentException {
             dsTaint.addTaint(protocol);
             {
-            	//DSFIXME:  Exception handling
-                //throw new NullPointerException("protocol cannot be null");
+            	if (DroidSafeAndroidRuntime.control) throw new NullPointerException("protocol cannot be null");
             } //End block
             protocol = protocol.toUpperCase();
             {
                 boolean var8ABDBE23B05570927D7C85EC139C7CA5_2028611681 = (!protocol.equals(UDP) && !protocol.equals(TCP));
                 {
-                    //throw new IllegalArgumentException(
-                        //"unsupported protocol: " + protocol);
+                	if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException(
+                        "unsupported protocol: " + protocol);
                 } //End block
             } //End collapsed parenthetic
             mProfile.mProtocol = protocol;

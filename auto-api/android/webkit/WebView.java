@@ -3,6 +3,7 @@ package android.webkit;
 // Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
+import droidsafe.runtime.*;
 
 // import Iterator to deal with enhanced for loop translation
 import java.util.Iterator;
@@ -526,6 +527,7 @@ public class WebView extends AbsoluteLayout implements ViewTreeObserver.OnGlobal
         dsTaint.addTaint(context.dsTaint);
         dsTaint.addTaint(privateBrowsing);
         checkThread();
+        if (DroidSafeAndroidRuntime.control)
         {
             throw new IllegalArgumentException("Invalid context argument");
         } //End block
@@ -4674,9 +4676,11 @@ public class WebView extends AbsoluteLayout implements ViewTreeObserver.OnGlobal
         onScreen = true;
         //End case ANYWHERE 
         //Begin case default 
-        throw new AssertionError(
+        if (DroidSafeAndroidRuntime.control) {
+        	throw new AssertionError(
                         "invalid parameter passed to didUpdateWebTextViewDimensions");
         //End case default 
+        }
         {
             mWebTextView.setRect(vBox.left, vBox.top, vBox.width(),
                     vBox.height());
@@ -7553,8 +7557,8 @@ public class WebView extends AbsoluteLayout implements ViewTreeObserver.OnGlobal
                     Object varC2BF00F96F1D1B1ABEF4B0E3FC4FE9EC_1128413668 = (event.getAction());
                     //Begin case MotionEvent.ACTION_SCROLL 
                     {
-                        final float vscroll;
-                        final float hscroll;
+                        /*final*/ float vscroll;
+                        /*final*/ float hscroll;
                         {
                             boolean varB4D6A432BD6856FDF71FC12482F4DB92_264633471 = ((event.getMetaState() & KeyEvent.META_SHIFT_ON) != 0);
                             {
@@ -7789,9 +7793,11 @@ public class WebView extends AbsoluteLayout implements ViewTreeObserver.OnGlobal
     @DSModeled(DSC.SAFE)
     private int keyCodeToSoundsEffect(int keyCode) {
         dsTaint.addTaint(keyCode);
-        throw new IllegalArgumentException("keyCode must be one of " +
-                "{KEYCODE_DPAD_UP, KEYCODE_DPAD_RIGHT, KEYCODE_DPAD_DOWN, " +
-                "KEYCODE_DPAD_LEFT}.");
+        if (DroidSafeAndroidRuntime.control) {
+	        throw new IllegalArgumentException("keyCode must be one of " +
+	                "{KEYCODE_DPAD_UP, KEYCODE_DPAD_RIGHT, KEYCODE_DPAD_DOWN, " +
+	                "KEYCODE_DPAD_LEFT}.");
+        }
         return dsTaint.getTaintInt();
         // ---------- Original Method ----------
         //switch(keyCode) {
@@ -8903,6 +8909,7 @@ public class WebView extends AbsoluteLayout implements ViewTreeObserver.OnGlobal
         dsTaint.addTaint(draw.dsTaint);
         dsTaint.addTaint(updateBaseLayer);
         {
+        	if (DroidSafeAndroidRuntime.control) 
             {
                 throw new IllegalStateException("Tried to setNewPicture with"
                         + " a delay picture already set! (memory leak)");
@@ -9477,24 +9484,28 @@ public class WebView extends AbsoluteLayout implements ViewTreeObserver.OnGlobal
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:07.377 -0400", hash_original_method = "AD2D640C3667F77EA8D9A6F6AFA42937", hash_generated_method = "6457E9D3FAA72AA01C0F08D3E1124377")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     private int nativeCacheHitFramePointer() {
+    	return dsTaint.getTaintInt();
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:07.377 -0400", hash_original_method = "C5535D5868AF8EFE71BDF7284C12F351", hash_generated_method = "A53CB2BEB3773D6764CBB2BD84025CF5")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     private boolean nativeCacheHitIsPlugin() {
+    	return dsTaint.getTaintBoolean();
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:07.377 -0400", hash_original_method = "C7D338FF64B881B2FAA82154B2896288", hash_generated_method = "838C95571F45B1878EE484641EBA955E")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     private Rect nativeCacheHitNodeBounds() {
+    	return new Rect();
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:07.377 -0400", hash_original_method = "E7CF5B837B37AF1FB0FFA94B1E5A9C49", hash_generated_method = "FC0903DBF8027FE6C0C58977967E6F72")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     private int nativeCacheHitNodePointer() {
+    	return dsTaint.getTaintInt();
     }
 
     
@@ -9516,18 +9527,21 @@ public class WebView extends AbsoluteLayout implements ViewTreeObserver.OnGlobal
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:07.378 -0400", hash_original_method = "12D518518F45FEF02F029B364840A9CD", hash_generated_method = "9C6ADB755EDFF84D942D6EC0E92F4E81")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     private int nativeCursorFramePointer() {
+    	return dsTaint.getTaintInt();
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:07.378 -0400", hash_original_method = "843882909A38B2FC0D8F4867EE2AC0A0", hash_generated_method = "130B5EEAE6687F8C79AF99A1C7813E3E")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     private Rect nativeCursorNodeBounds() {
+    	return new Rect();
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:07.378 -0400", hash_original_method = "F74724E9A0C85C98C40FDE06FDCC4B7E", hash_generated_method = "2E449C113BCBBF33A5E21DC28DDFCE32")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     private int nativeCursorNodePointer() {
+    	return dsTaint.getTaintInt();
     }
 
     
@@ -9535,36 +9549,42 @@ public class WebView extends AbsoluteLayout implements ViewTreeObserver.OnGlobal
     //DSFIXME:  CODE0002: Requires DSC value to be set
     private boolean nativeCursorIntersects(Rect visibleRect) {
         dsTaint.addTaint(visibleRect.dsTaint);
+    	return dsTaint.getTaintBoolean();
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:07.378 -0400", hash_original_method = "8A09EF437BF7C2698409EA0A7A76891D", hash_generated_method = "7B93E0BDF70896C409E9E22BE8783445")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     private boolean nativeCursorIsAnchor() {
+    	return dsTaint.getTaintBoolean();
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:07.378 -0400", hash_original_method = "EE630232B25B714D7F7B153A20D259D0", hash_generated_method = "066268104D9322ACA5A3A15CB9B1FDBA")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     private boolean nativeCursorIsTextInput() {
+    	return dsTaint.getTaintBoolean();
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:07.378 -0400", hash_original_method = "CB263EC43145C659054742CE0640D198", hash_generated_method = "662DC61DEB6426FAA8B33399CB08C992")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     private Point nativeCursorPosition() {
+    	return new Point();
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:07.378 -0400", hash_original_method = "05985317D344F6F01EE48FCED9442B85", hash_generated_method = "2C78EAE30422A0D08AAA4233AF983886")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     private String nativeCursorText() {
+    	return dsTaint.getTaintString();
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:07.378 -0400", hash_original_method = "883A2B6BC8DFA6DE2AE51F0C99D32AC6", hash_generated_method = "10FF5800FB71AC44246CD15DD541C7DA")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     private boolean nativeCursorWantsKeyEvents() {
+    	return dsTaint.getTaintBoolean();
     }
 
     
@@ -9589,6 +9609,7 @@ public class WebView extends AbsoluteLayout implements ViewTreeObserver.OnGlobal
         dsTaint.addTaint(extra);
         dsTaint.addTaint(canvas.dsTaint);
         dsTaint.addTaint(visibleRect.dsTaint);
+        return dsTaint.getTaintInt();
     }
 
     
@@ -9603,6 +9624,7 @@ public class WebView extends AbsoluteLayout implements ViewTreeObserver.OnGlobal
     //DSFIXME:  CODE0002: Requires DSC value to be set
     private boolean nativeEvaluateLayersAnimations(int nativeInstance) {
         dsTaint.addTaint(nativeInstance);
+        return dsTaint.getTaintBoolean();
     }
 
     
@@ -9616,6 +9638,7 @@ public class WebView extends AbsoluteLayout implements ViewTreeObserver.OnGlobal
         dsTaint.addTaint(rect.dsTaint);
         dsTaint.addTaint(visibleRect.dsTaint);
         dsTaint.addTaint(extras);
+        return dsTaint.getTaintInt();
     }
 
     
@@ -9644,6 +9667,7 @@ public class WebView extends AbsoluteLayout implements ViewTreeObserver.OnGlobal
         dsTaint.addTaint(sameAsLastSearch);
         dsTaint.addTaint(findLower);
         dsTaint.addTaint(findUpper);
+        return dsTaint.getTaintInt();
     }
 
     
@@ -9657,144 +9681,169 @@ public class WebView extends AbsoluteLayout implements ViewTreeObserver.OnGlobal
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:07.378 -0400", hash_original_method = "EABE56EC33C0D8AE2F7016F541E31965", hash_generated_method = "4A1C845C88E369C549BA87181285437C")
     //DSFIXME:  CODE0002: Requires DSC value to be set
      int nativeFocusCandidateFramePointer() {
+        return dsTaint.getTaintInt();
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:07.378 -0400", hash_original_method = "7C3995367E82B6D7312732D654157F4F", hash_generated_method = "3C0AC60963498B1B56D44E88918C1B7F")
     //DSFIXME:  CODE0002: Requires DSC value to be set
      boolean nativeFocusCandidateHasNextTextfield() {
+        return dsTaint.getTaintBoolean();
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:07.378 -0400", hash_original_method = "24F608E9C25D3CEA18DC40F168470BAE", hash_generated_method = "6934086B1486E748E10D22DF06700CDF")
     //DSFIXME:  CODE0002: Requires DSC value to be set
      boolean nativeFocusCandidateIsPassword() {
+        return dsTaint.getTaintBoolean();
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:07.378 -0400", hash_original_method = "CA3BBE06DE230A233DBE6462F7BDC345", hash_generated_method = "0A8F68F23512FA148747F337436255F4")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     private boolean nativeFocusCandidateIsRtlText() {
+        return dsTaint.getTaintBoolean();
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:07.378 -0400", hash_original_method = "FC5F0AF7060BA9D9D74BB55FE6CCEE91", hash_generated_method = "8902AFAB7FBF33F4876B120E7E3A03AA")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     private boolean nativeFocusCandidateIsTextInput() {
+        return dsTaint.getTaintBoolean();
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:07.378 -0400", hash_original_method = "64EE2979CD9E511D4C9D292EB40853CA", hash_generated_method = "47D4E963ABA84A52F53C4612477907F0")
     //DSFIXME:  CODE0002: Requires DSC value to be set
      int nativeFocusCandidateMaxLength() {
+        return dsTaint.getTaintInt();
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:07.378 -0400", hash_original_method = "94ADCAD0C90E2D8B1D617C0CE4175108", hash_generated_method = "F69D559FEB2CCEFED0986E2543F14C4B")
     //DSFIXME:  CODE0002: Requires DSC value to be set
      boolean nativeFocusCandidateIsAutoComplete() {
+        return dsTaint.getTaintBoolean();
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:07.378 -0400", hash_original_method = "AC7BA3D73ADA11038E3573CC7BEA31D0", hash_generated_method = "609373E619DFC1561AF944DA81AC90D1")
     //DSFIXME:  CODE0002: Requires DSC value to be set
      boolean nativeFocusCandidateIsSpellcheck() {
+        return dsTaint.getTaintBoolean();
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:07.378 -0400", hash_original_method = "86B0A32819E6798AA0F2F34418D25901", hash_generated_method = "4FFE3F68CCE0C1A90EADECEFD93738B6")
     //DSFIXME:  CODE0002: Requires DSC value to be set
      String nativeFocusCandidateName() {
+    	return dsTaint.getTaintString();
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:07.378 -0400", hash_original_method = "784E4422EBCAC3915206737F2EF978E9", hash_generated_method = "BAEE29210DDBAEE8E99D149762D0548F")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     private Rect nativeFocusCandidateNodeBounds() {
+    	return new Rect();
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:07.378 -0400", hash_original_method = "D493BA74B0D04E6E35C47B87F2973345", hash_generated_method = "183FAE6CFFE3BB6D35430147FAB76F88")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     private Rect nativeFocusCandidatePaddingRect() {
+    	return new Rect();
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:07.378 -0400", hash_original_method = "6C37516810160216239ECA2C27DBBDE1", hash_generated_method = "D3FDC1B3B7DBED5E7887540FC8379E2A")
     //DSFIXME:  CODE0002: Requires DSC value to be set
      int nativeFocusCandidatePointer() {
+        return dsTaint.getTaintInt();
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:07.378 -0400", hash_original_method = "AA9102676E28CA1EE920093EBAB8030A", hash_generated_method = "419CE5896BC227A8E9B7F2FB830E96F3")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     private String nativeFocusCandidateText() {
+        return dsTaint.getTaintString();
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:07.378 -0400", hash_original_method = "4B89B6EF718BD6147261DEC98F6C6A16", hash_generated_method = "275EC37860CE340EE1D80F6BE76EE05B")
     //DSFIXME:  CODE0002: Requires DSC value to be set
      float nativeFocusCandidateTextSize() {
+        return dsTaint.getTaintFloat();
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:07.379 -0400", hash_original_method = "082CC9662FD544AEC67B8D4963511576", hash_generated_method = "5BE6CAF508D1ED006376CB1095515570")
     //DSFIXME:  CODE0002: Requires DSC value to be set
      int nativeFocusCandidateLineHeight() {
+        return dsTaint.getTaintInt();
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:07.379 -0400", hash_original_method = "C99437A2BF0BA310505C74B618275504", hash_generated_method = "AFDFDCC1731E169F6052530736DF86E2")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     private int nativeFocusCandidateType() {
+        return dsTaint.getTaintInt();
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:07.379 -0400", hash_original_method = "6657822939CE46802B84DA6445C72EDE", hash_generated_method = "236D1B01D0EFB8FEE5FE608C534EEE1D")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     private int nativeFocusCandidateLayerId() {
+        return dsTaint.getTaintInt();
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:07.379 -0400", hash_original_method = "38CCA0E50FE8BE9EE5C40886CF34F6A3", hash_generated_method = "D145CCB02C5F94E18C2BC50FA4BC7942")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     private boolean nativeFocusIsPlugin() {
+        return dsTaint.getTaintBoolean();
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:07.379 -0400", hash_original_method = "899095159EA7E211C628ECE871CC9E5E", hash_generated_method = "9268633570ABB230C2DA4C5A2AD8049E")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     private Rect nativeFocusNodeBounds() {
+    	return new Rect();
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:07.379 -0400", hash_original_method = "2168CEA1D043FC34995E51661BDC9CBF", hash_generated_method = "5418EA47421E25FFADE0D5674094ED04")
     //DSFIXME:  CODE0002: Requires DSC value to be set
      int nativeFocusNodePointer() {
+        return dsTaint.getTaintInt();
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:07.379 -0400", hash_original_method = "6FF91C20F7461FC76B80187F5F0D17F4", hash_generated_method = "D04E227BFE752D2AD81DBBA1BC8C0C1D")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     private Rect nativeGetCursorRingBounds() {
+    	return new Rect();
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:07.379 -0400", hash_original_method = "B8443DF7AEBDC7EB5C8A06305D57CB4B", hash_generated_method = "DAB2EBE7A464F426B24DD4DECCB33D07")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     private String nativeGetSelection() {
+        return dsTaint.getTaintString();
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:07.379 -0400", hash_original_method = "FA5B299A908E966DB0A85AB880BBEA98", hash_generated_method = "BE457DA334E8CB86EB690C8EB4786B83")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     private boolean nativeHasCursorNode() {
+        return dsTaint.getTaintBoolean();
+    	
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:07.379 -0400", hash_original_method = "1230EC94ADDF74636FD1B9B93024FF53", hash_generated_method = "45917A51A73690C644467A42A83A39E1")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     private boolean nativeHasFocusNode() {
+        return dsTaint.getTaintBoolean();
     }
 
     
@@ -9809,6 +9858,7 @@ public class WebView extends AbsoluteLayout implements ViewTreeObserver.OnGlobal
     private boolean nativeHitSelection(int x, int y) {
         dsTaint.addTaint(y);
         dsTaint.addTaint(x);
+        return dsTaint.getTaintBoolean();
     }
 
     
@@ -9817,6 +9867,7 @@ public class WebView extends AbsoluteLayout implements ViewTreeObserver.OnGlobal
     private String nativeImageURI(int x, int y) {
         dsTaint.addTaint(y);
         dsTaint.addTaint(x);
+        return dsTaint.getTaintString();
     }
 
     
@@ -9830,12 +9881,14 @@ public class WebView extends AbsoluteLayout implements ViewTreeObserver.OnGlobal
     //DSFIXME:  CODE0002: Requires DSC value to be set
     private Rect nativeLayerBounds(int layer) {
         dsTaint.addTaint(layer);
+    	return new Rect();
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:07.379 -0400", hash_original_method = "23983C5AE9F3B90E3D90CC6935289B58", hash_generated_method = "6585E217139DB928B972AE953CF88C27")
     //DSFIXME:  CODE0002: Requires DSC value to be set
      boolean nativeMoveCursorToNextTextInput() {
+        return dsTaint.getTaintBoolean();
     }
 
     
@@ -9845,6 +9898,7 @@ public class WebView extends AbsoluteLayout implements ViewTreeObserver.OnGlobal
         dsTaint.addTaint(slop);
         dsTaint.addTaint(y);
         dsTaint.addTaint(x);
+        return dsTaint.getTaintBoolean();
     }
 
     
@@ -9855,12 +9909,14 @@ public class WebView extends AbsoluteLayout implements ViewTreeObserver.OnGlobal
         dsTaint.addTaint(keyCode);
         dsTaint.addTaint(noScroll);
         dsTaint.addTaint(count);
+        return dsTaint.getTaintBoolean();
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:07.379 -0400", hash_original_method = "748DDF93C93929F1CD9BE00B19B3BA55", hash_generated_method = "5FBB30E6736055C97BF9B8F66768DB5B")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     private int nativeMoveGeneration() {
+        return dsTaint.getTaintInt();
     }
 
     
@@ -9875,6 +9931,7 @@ public class WebView extends AbsoluteLayout implements ViewTreeObserver.OnGlobal
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:07.379 -0400", hash_original_method = "05DCCA381B09C4BC3817018280EDAE42", hash_generated_method = "006E6AE9116A40F285FC3C8D0FC209A0")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     private boolean nativePageShouldHandleShiftAndArrows() {
+        return dsTaint.getTaintBoolean();
     }
 
     
@@ -9884,6 +9941,7 @@ public class WebView extends AbsoluteLayout implements ViewTreeObserver.OnGlobal
         dsTaint.addTaint(slop);
         dsTaint.addTaint(y);
         dsTaint.addTaint(x);
+        return dsTaint.getTaintBoolean();
     }
 
     
@@ -9896,6 +9954,7 @@ public class WebView extends AbsoluteLayout implements ViewTreeObserver.OnGlobal
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:07.379 -0400", hash_original_method = "F89A02659B72CC4FB73CF3CB2176116A", hash_generated_method = "336415877E033E79094AFA16F0936DA3")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     private Point nativeSelectableText() {
+    	return new Point();
     }
 
     
@@ -9923,18 +9982,21 @@ public class WebView extends AbsoluteLayout implements ViewTreeObserver.OnGlobal
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:07.379 -0400", hash_original_method = "76F5F718978066DCC4CD2ED10AE577B5", hash_generated_method = "938A95D25873B7A9A566FE622A86D6DD")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     private int nativeSelectionX() {
+        return dsTaint.getTaintInt();
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:07.379 -0400", hash_original_method = "E124736544D40704ACD3DCD907FAABD1", hash_generated_method = "53517374AF117E596CE44B7675FE3B02")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     private int nativeSelectionY() {
+        return dsTaint.getTaintInt();
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:07.379 -0400", hash_original_method = "08AE00555578B509AEAB57063B9D57A8", hash_generated_method = "0BCA085AEB0D28A00A7E0429DE300072")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     private int nativeFindIndex() {
+        return dsTaint.getTaintInt();
     }
 
     
@@ -9980,6 +10042,7 @@ public class WebView extends AbsoluteLayout implements ViewTreeObserver.OnGlobal
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:07.380 -0400", hash_original_method = "8D8AA88701C38C5931114ED0C0161C5D", hash_generated_method = "76BA6B93FD2D52A61A3933FAFCFFCAF4")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     private int nativeGetBaseLayer() {
+        return dsTaint.getTaintInt();
     }
 
     
@@ -10006,6 +10069,7 @@ public class WebView extends AbsoluteLayout implements ViewTreeObserver.OnGlobal
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:07.380 -0400", hash_original_method = "93FAC0611A3E6EEE3FD4009FA5AD9BAF", hash_generated_method = "EBDADF454F6EF1688E6D476894DB3F48")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     private boolean nativeHasContent() {
+        return dsTaint.getTaintBoolean();
     }
 
     
@@ -10026,6 +10090,7 @@ public class WebView extends AbsoluteLayout implements ViewTreeObserver.OnGlobal
     private boolean nativeStartSelection(int x, int y) {
         dsTaint.addTaint(y);
         dsTaint.addTaint(x);
+        return dsTaint.getTaintBoolean();
     }
 
     
@@ -10039,12 +10104,15 @@ public class WebView extends AbsoluteLayout implements ViewTreeObserver.OnGlobal
     //DSFIXME:  CODE0002: Requires DSC value to be set
     private Rect nativeSubtractLayers(Rect content) {
         dsTaint.addTaint(content.dsTaint);
+    	Rect ret = new Rect();
+    	return ret;
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:07.380 -0400", hash_original_method = "25A60C73C1815A9FF162B041F21F90EA", hash_generated_method = "1D26C81D307C8A8EC2B0F3435959B469")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     private int nativeTextGeneration() {
+        return dsTaint.getTaintInt();
     }
 
     
@@ -10063,6 +10131,7 @@ public class WebView extends AbsoluteLayout implements ViewTreeObserver.OnGlobal
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:07.380 -0400", hash_original_method = "519320FD6756673905506146600ACF0A", hash_generated_method = "C983B7B5F0B7731C3D66DF4FF67E3ECC")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     private float nativeTileProfilingStop() {
+        return dsTaint.getTaintFloat();
     }
 
     
@@ -10075,6 +10144,7 @@ public class WebView extends AbsoluteLayout implements ViewTreeObserver.OnGlobal
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:07.380 -0400", hash_original_method = "86701842D3863B80BD61F786E7AD5328", hash_generated_method = "3DD1D6B08BB10FDE9BA785E44CC957AF")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     private int nativeTileProfilingNumFrames() {
+        return dsTaint.getTaintInt();
     }
 
     
@@ -10082,6 +10152,7 @@ public class WebView extends AbsoluteLayout implements ViewTreeObserver.OnGlobal
     //DSFIXME:  CODE0002: Requires DSC value to be set
     private int nativeTileProfilingNumTilesInFrame(int frame) {
         dsTaint.addTaint(frame);
+        return dsTaint.getTaintInt();
     }
 
     
@@ -10091,6 +10162,7 @@ public class WebView extends AbsoluteLayout implements ViewTreeObserver.OnGlobal
         dsTaint.addTaint(frame);
         dsTaint.addTaint(tile);
         dsTaint.addTaint(key);
+        return dsTaint.getTaintInt();
     }
 
     
@@ -10100,6 +10172,7 @@ public class WebView extends AbsoluteLayout implements ViewTreeObserver.OnGlobal
         dsTaint.addTaint(frame);
         dsTaint.addTaint(tile);
         dsTaint.addTaint(key);
+        return dsTaint.getTaintFloat();
     }
 
     
@@ -10117,6 +10190,7 @@ public class WebView extends AbsoluteLayout implements ViewTreeObserver.OnGlobal
     private boolean nativeWordSelection(int x, int y) {
         dsTaint.addTaint(y);
         dsTaint.addTaint(x);
+        return dsTaint.getTaintBoolean();
     }
 
     
@@ -10126,6 +10200,7 @@ public class WebView extends AbsoluteLayout implements ViewTreeObserver.OnGlobal
         dsTaint.addTaint(scale);
         dsTaint.addTaint(y);
         dsTaint.addTaint(x);
+        return dsTaint.getTaintInt();
     }
 
     
@@ -10144,6 +10219,7 @@ public class WebView extends AbsoluteLayout implements ViewTreeObserver.OnGlobal
         dsTaint.addTaint(scrollBounds.dsTaint);
         dsTaint.addTaint(y);
         dsTaint.addTaint(x);
+        return dsTaint.getTaintInt();
     }
 
     
@@ -10153,6 +10229,7 @@ public class WebView extends AbsoluteLayout implements ViewTreeObserver.OnGlobal
         dsTaint.addTaint(layer);
         dsTaint.addTaint(newX);
         dsTaint.addTaint(newY);
+        return dsTaint.getTaintBoolean();
     }
 
     
@@ -10166,6 +10243,7 @@ public class WebView extends AbsoluteLayout implements ViewTreeObserver.OnGlobal
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:07.380 -0400", hash_original_method = "17D1DE14A7938D6C86D5133FB1C7A6A4", hash_generated_method = "65891674C01C763976D29ADC26FD3F96")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     private int nativeGetBackgroundColor() {
+        return dsTaint.getTaintInt();
     }
 
     
@@ -10174,6 +10252,7 @@ public class WebView extends AbsoluteLayout implements ViewTreeObserver.OnGlobal
      boolean nativeSetProperty(String key, String value) {
         dsTaint.addTaint(value);
         dsTaint.addTaint(key);
+        return dsTaint.getTaintBoolean();
     }
 
     
@@ -10181,6 +10260,7 @@ public class WebView extends AbsoluteLayout implements ViewTreeObserver.OnGlobal
     //DSFIXME:  CODE0002: Requires DSC value to be set
      String nativeGetProperty(String key) {
         dsTaint.addTaint(key);
+        return dsTaint.getTaintString();
     }
 
     
@@ -10202,13 +10282,13 @@ public class WebView extends AbsoluteLayout implements ViewTreeObserver.OnGlobal
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:07.380 -0400", hash_original_method = "3914688BC2C608012BB2A11771B543D9", hash_generated_method = "CB5EB2C337461A5AC8919AC12E2D43B7")
     private static void nativeOnTrimMemory(int level) {
-        //DSFIXME:  CODE0010: Native static method requires manual modeling
+        //DSFIXME:  CODE0012: Native static method requires manual modeling
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:07.381 -0400", hash_original_method = "40CAAA20A745B5C9918EDBEB33AE6FA6", hash_generated_method = "EC57F2253188ECA0A3B2B7003085B4F4")
     private static void nativeSetPauseDrawing(int instance, boolean pause) {
-        //DSFIXME:  CODE0010: Native static method requires manual modeling
+        //DSFIXME:  CODE0012: Native static method requires manual modeling
     }
 
     
@@ -10486,9 +10566,9 @@ public class WebView extends AbsoluteLayout implements ViewTreeObserver.OnGlobal
 
     
     static class SaveWebArchiveMessage {
-        final String mBasename;
-        final boolean mAutoname;
-        final ValueCallback<String> mCallback;
+        /*final*/ String mBasename;
+        /*final*/ boolean mAutoname;
+        /*final*/ ValueCallback<String> mCallback;
         String mResultFile;
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:07.382 -0400", hash_original_method = "D64671432E0583E419B88EDB6B668A93", hash_generated_method = "09CEB4687F0432150E16BEE10A2ED104")

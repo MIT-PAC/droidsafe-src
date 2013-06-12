@@ -1,14 +1,10 @@
 package org.apache.harmony.security.x509;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-
-// import Iterator to deal with enhanced for loop translation
-import java.util.Iterator;
-
 import java.math.BigInteger;
+
 import javax.security.auth.x500.X500Principal;
+
 import org.apache.harmony.security.asn1.ASN1BitString;
 import org.apache.harmony.security.asn1.ASN1Explicit;
 import org.apache.harmony.security.asn1.ASN1Implicit;
@@ -18,6 +14,11 @@ import org.apache.harmony.security.asn1.ASN1Type;
 import org.apache.harmony.security.asn1.BerInputStream;
 import org.apache.harmony.security.asn1.BitString;
 import org.apache.harmony.security.x501.Name;
+
+import droidsafe.annotations.DSC;
+import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.DSModeled;
+// import Iterator to deal with enhanced for loop translation
 
 public final class TBSCertificate {
     private final int version;
@@ -74,7 +75,7 @@ public final class TBSCertificate {
         //DSFIXME:  CODE0002: Requires DSC value to be set
         @Override
         protected void getValues(Object object, Object[] values) {
-            dsTaint.addTaint(values.dsTaint);
+            dsTaint.addTaint(values[0].dsTaint);
             dsTaint.addTaint(object.dsTaint);
             TBSCertificate tbs;
             tbs = (TBSCertificate) object;
@@ -110,14 +111,14 @@ public final class TBSCertificate {
             //values[9] = tbs.extensions;
         }
 
-        
-        static {
+/*        
+        {
             setDefault(new byte[] {0}, 0);
             setOptional(7);
             setOptional(8);
             setOptional(9);
         }
-        
+  */      
 }; //Transformed anonymous class
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:17.937 -0400", hash_original_method = "65C275BF923474477DF3B94B95744E3C", hash_generated_method = "6B95933688D6DF5FF7CFD6EA6FAE87BE")
@@ -138,6 +139,17 @@ public final class TBSCertificate {
         dsTaint.addTaint(extensions.dsTaint);
         dsTaint.addTaint(signature.dsTaint);
         dsTaint.addTaint(version);
+        
+        this.version = version;
+        this.serialNumber = serialNumber;
+        this.signature = signature;
+        this.issuer = issuer;
+        this.validity = validity;
+        this.subject = subject;
+        this.subjectPublicKeyInfo = subjectPublicKeyInfo;
+        this.issuerUniqueID = issuerUniqueID;
+        this.subjectUniqueID = subjectUniqueID;
+        this.extensions = extensions;
         // ---------- Original Method ----------
         //this.version = version;
         //this.serialNumber = serialNumber;

@@ -1,11 +1,18 @@
 package android.database.sqlite;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-
-// import Iterator to deal with enhanced for loop translation
+import java.io.File;
+import java.lang.ref.WeakReference;
+import java.util.ArrayList;
 import java.util.Iterator;
+import java.util.List;
+import java.util.Locale;
+import java.util.Map;
+import java.util.Random;
+import java.util.WeakHashMap;
+import java.util.concurrent.TimeUnit;
+import java.util.concurrent.locks.ReentrantLock;
+import java.util.regex.Pattern;
 
 import android.app.AppGlobals;
 import android.content.ContentValues;
@@ -26,19 +33,12 @@ import android.util.Log;
 import android.util.LruCache;
 import android.util.Pair;
 import dalvik.system.BlockGuard;
-import java.io.File;
-import java.lang.ref.WeakReference;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.Iterator;
-import java.util.List;
-import java.util.Locale;
-import java.util.Map;
-import java.util.Random;
-import java.util.WeakHashMap;
-import java.util.concurrent.TimeUnit;
-import java.util.concurrent.locks.ReentrantLock;
-import java.util.regex.Pattern;
+import droidsafe.annotations.DSC;
+import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.DSModeled;
+import droidsafe.helpers.DSUtils;
+import droidsafe.runtime.DroidSafeAndroidRuntime;
+// import Iterator to deal with enhanced for loop translation
 
 public class SQLiteDatabase extends SQLiteClosable {
     private static final String TAG = "SQLiteDatabase";
@@ -83,20 +83,20 @@ public class SQLiteDatabase extends SQLiteClosable {
     static final String GET_LOCK_LOG_PREFIX = "GETLOCK:";
     volatile int mNativeHandle = 0;
     private static int sBlockSize = 0;
-    private final String mPath;
+    private /* final */ String mPath;
     private String mPathForLogs = null;
-    private final int mFlags;
-    private final CursorFactory mFactory;
-    private final WeakHashMap<SQLiteClosable, Object> mPrograms;
+    private /* final  */int mFlags;
+    private /* final  */CursorFactory mFactory;
+    private /* final  */WeakHashMap<SQLiteClosable, Object> mPrograms;
     private static final int DEFAULT_SQL_CACHE_SIZE = 25;
     private LruCache<String, SQLiteCompiledSql> mCompiledQueries;
     public static final int MAX_SQL_CACHE_SIZE = 100;
     private boolean mCacheFullWarning;
-    private final Throwable mStackTrace;
-    private final ArrayList<Integer> mClosedStatementIds = new ArrayList<Integer>();
-    private final DatabaseErrorHandler mErrorHandler;
+    private /* final */ Throwable mStackTrace;
+    private /* final  */ArrayList<Integer> mClosedStatementIds = new ArrayList<Integer>();
+    private /* final  */DatabaseErrorHandler mErrorHandler;
     volatile DatabaseConnectionPool mConnectionPool = null;
-    final short mConnectionNum;
+    /* final  */short mConnectionNum;
     SQLiteDatabase mParentConnObj = null;
     private static final String MEMORY_DB_PATH = ":memory:";
     private volatile boolean mHasAttachedDbs = false;
@@ -116,6 +116,7 @@ public class SQLiteDatabase extends SQLiteClosable {
         dsTaint.addTaint(connectionNum);
         dsTaint.addTaint(errorHandler.dsTaint);
         dsTaint.addTaint(factory.dsTaint);
+        if (DroidSafeAndroidRuntime.control)
         {
             throw new IllegalArgumentException("path should not be null");
         } //End block
@@ -203,7 +204,8 @@ public class SQLiteDatabase extends SQLiteClosable {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:00.780 -0400", hash_original_method = "392852D60CF1BF42580AE337B7836254", hash_generated_method = "161DB10C14B7F867E6934D31E3CBCF66")
     static public int releaseMemory() {
-        //DSFIXME:  CODE0010: Native static method requires manual modeling
+        //DSFIXME:  CODE0012: Native static method requires manual modeling
+    	return DSUtils.UNKNOWN_INT;
     }
 
     
@@ -442,6 +444,7 @@ public class SQLiteDatabase extends SQLiteClosable {
             {
                 boolean varAF914129F00129CFDB57A245D2027B2F_1975542235 = (mLock.getHoldCount() > 1);
                 {
+                	if (DroidSafeAndroidRuntime.control)
                     {
                         String msg;
                         msg = "Cannot call beginTransaction between "
@@ -562,10 +565,12 @@ public class SQLiteDatabase extends SQLiteClosable {
         verifyDbIsOpen();
         {
             boolean varA9768C0684D8D9C3694FCFB8FF7505EA_1716786350 = (!mLock.isHeldByCurrentThread());
+	        if (DroidSafeAndroidRuntime.control)
             {
                 throw new IllegalStateException("no transaction pending");
             } //End block
         } //End collapsed parenthetic
+        if (DroidSafeAndroidRuntime.control)
         {
             throw new IllegalStateException(
                     "setTransactionSuccessful may only be called once per call to beginTransaction");
@@ -727,6 +732,7 @@ public class SQLiteDatabase extends SQLiteClosable {
         {
             {
                 boolean var42788A8E0393F9B1C6C2ADCA7B153774_915665770 = (this.isDbLockedByCurrentThread());
+		        if (DroidSafeAndroidRuntime.control)
                 {
                     throw new IllegalStateException(
                         "Db locked more than once. yielfIfContended cannot yield");
@@ -1085,6 +1091,7 @@ public class SQLiteDatabase extends SQLiteClosable {
         dsTaint.addTaint(name);
         dsTaint.addTaint(numArgs);
         dsTaint.addTaint(function.dsTaint);
+        return dsTaint.getTaintInt();
     }
 
     
@@ -1588,6 +1595,7 @@ public class SQLiteDatabase extends SQLiteClosable {
         dsTaint.addTaint(table);
         {
             boolean var7F872E5B929E1733A7225AB743560CA0_58522392 = (values == null || values.size() == 0);
+	        if (DroidSafeAndroidRuntime.control)
             {
                 throw new IllegalArgumentException("Empty values");
             } //End block
@@ -1668,7 +1676,8 @@ public class SQLiteDatabase extends SQLiteClosable {
     @DSModeled(DSC.SAFE)
     public void execSQL(String sql, Object[] bindArgs) throws SQLException {
         dsTaint.addTaint(sql);
-        dsTaint.addTaint(bindArgs.dsTaint);
+        dsTaint.addTaint(bindArgs[0].dsTaint);
+        if (DroidSafeAndroidRuntime.control)
         {
             throw new IllegalArgumentException("Empty bindArgs");
         } //End block
@@ -1685,7 +1694,7 @@ public class SQLiteDatabase extends SQLiteClosable {
     //DSFIXME:  CODE0002: Requires DSC value to be set
     private int executeSql(String sql, Object[] bindArgs) throws SQLException {
         dsTaint.addTaint(sql);
-        dsTaint.addTaint(bindArgs.dsTaint);
+        dsTaint.addTaint(bindArgs[0].dsTaint);
         {
             boolean varE0925AF52400942DD3DAF202DD99E6E6_442214635 = (DatabaseUtils.getSqlStatementType(sql) == DatabaseUtils.STATEMENT_ATTACH);
             {
@@ -2018,12 +2027,14 @@ public class SQLiteDatabase extends SQLiteClosable {
         {
             LruCache<String, SQLiteCompiledSql> oldCompiledQueries;
             oldCompiledQueries = mCompiledQueries;
+	        if (DroidSafeAndroidRuntime.control)
             {
                 throw new IllegalStateException(
                         "expected value between 0 and " + MAX_SQL_CACHE_SIZE);
             } //End block
             {
                 boolean var551279D6CBA810FBA7717E31CAA6F559_1616418018 = (oldCompiledQueries != null && cacheSize < oldCompiledQueries.maxSize());
+		        if (DroidSafeAndroidRuntime.control)
                 {
                     throw new IllegalStateException("cannot set cacheSize to a value less than the "
                         + "value set with previous setMaxSqlCacheSize() call.");
@@ -2585,6 +2596,7 @@ public class SQLiteDatabase extends SQLiteClosable {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:00.806 -0400", hash_original_method = "94C6AE32C9A996CB80A0C1FADFD7D1F2", hash_generated_method = "DD511AC2E7C8E767FF8CE10815FC686A")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     private int native_getDbLookaside() {
+    	return DSUtils.UNKNOWN_INT; 
     }
 
     

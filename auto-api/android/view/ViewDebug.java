@@ -1227,6 +1227,7 @@ public class ViewDebug {
          LooperProfiler(String path, FileDescriptor fileDescriptor) {
             dsTaint.addTaint(path);
             dsTaint.addTaint(fileDescriptor.dsTaint);
+            mPath = path;
             try 
             {
                 mFileDescriptor = ParcelFileDescriptor.dup(fileDescriptor);

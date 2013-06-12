@@ -59,7 +59,7 @@ public class ArrayAdapter<T> extends BaseAdapter implements Filterable {
     public ArrayAdapter(Context context, int textViewResourceId, T[] objects) {
         dsTaint.addTaint(textViewResourceId);
         dsTaint.addTaint(context.dsTaint);
-        dsTaint.addTaint(objects.dsTaint);
+        dsTaint.addTaint(objects[0].dsTaint);
         init(context, textViewResourceId, 0, Arrays.asList(objects));
         // ---------- Original Method ----------
         //init(context, textViewResourceId, 0, Arrays.asList(objects));
@@ -72,7 +72,7 @@ public class ArrayAdapter<T> extends BaseAdapter implements Filterable {
         dsTaint.addTaint(textViewResourceId);
         dsTaint.addTaint(context.dsTaint);
         dsTaint.addTaint(resource);
-        dsTaint.addTaint(objects.dsTaint);
+        dsTaint.addTaint(objects[0].dsTaint);
         init(context, resource, textViewResourceId, Arrays.asList(objects));
         // ---------- Original Method ----------
         //init(context, resource, textViewResourceId, Arrays.asList(objects));
@@ -157,7 +157,7 @@ public class ArrayAdapter<T> extends BaseAdapter implements Filterable {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:07.468 -0400", hash_original_method = "0FB4566239B43452682D3C6768E6D3AE", hash_generated_method = "FEFD62BF0324053D0A2D9DE277322F27")
     @DSModeled(DSC.SAFE)
     public void addAll(T ... items) {
-        dsTaint.addTaint(items.dsTaint);
+        dsTaint.addTaint(items[0].dsTaint);
         {
             {
                 Collections.addAll(mOriginalValues, items);

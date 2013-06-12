@@ -3,10 +3,10 @@ package java.net;
 // Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
+import droidsafe.runtime.*;
 
-// import Iterator to deal with enhanced for loop translation
+// needed for enhanced for control translations
 import java.util.Iterator;
-
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
@@ -25,7 +25,7 @@ public final class URI implements Comparable<URI>, Serializable {
     static final UriCodec FILE_AND_QUERY_ENCODER = new PartEncoder("/@?");
     static final UriCodec ALL_LEGAL_ENCODER = new PartEncoder("?/[]@");
     private static final UriCodec ASCII_ONLY = new UriCodec() {        
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:12.380 -0400", hash_original_method = "02ABED517C80D26C77E9E33853271AB3", hash_generated_method = "4BEF00439CC6FE2E44C2B1669DD5C2DD")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 10:54:21.379 -0400", hash_original_method = "02ABED517C80D26C77E9E33853271AB3", hash_generated_method = "4BEF00439CC6FE2E44C2B1669DD5C2DD")
         @DSModeled(DSC.SAFE)
         @Override
         protected boolean isRetained(char c) {
@@ -52,14 +52,14 @@ public final class URI implements Comparable<URI>, Serializable {
     private transient boolean serverAuthority = false;
     private transient int hash = -1;
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:12.380 -0400", hash_original_method = "73A80A2F92FBB785BC19E418E6230F90", hash_generated_method = "E7D7E9FA73D900BE29E4463AA3AD503F")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 10:54:21.382 -0400", hash_original_method = "73A80A2F92FBB785BC19E418E6230F90", hash_generated_method = "E7D7E9FA73D900BE29E4463AA3AD503F")
     @DSModeled(DSC.SAFE)
     private URI() {
         // ---------- Original Method ----------
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:12.380 -0400", hash_original_method = "81BA8F3B1394F61F87D69C567F9782CA", hash_generated_method = "F0684554A5DB5FAD20CF13188E17D94C")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 10:54:21.383 -0400", hash_original_method = "81BA8F3B1394F61F87D69C567F9782CA", hash_generated_method = "F0684554A5DB5FAD20CF13188E17D94C")
     @DSModeled(DSC.SAFE)
     public URI(String spec) throws URISyntaxException {
         dsTaint.addTaint(spec);
@@ -69,7 +69,7 @@ public final class URI implements Comparable<URI>, Serializable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:12.381 -0400", hash_original_method = "F4D6A57E88E582E23AEC47906A7180EC", hash_generated_method = "D276B361301A739FEEB206BFFB45E2D1")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 10:54:21.387 -0400", hash_original_method = "F4D6A57E88E582E23AEC47906A7180EC", hash_generated_method = "D276B361301A739FEEB206BFFB45E2D1")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public URI(String scheme, String schemeSpecificPart, String fragment) throws URISyntaxException {
         dsTaint.addTaint(scheme);
@@ -106,7 +106,7 @@ public final class URI implements Comparable<URI>, Serializable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:12.381 -0400", hash_original_method = "449C250DB61724F5848BC66D065240CA", hash_generated_method = "937344EEE737766999E9B1BD69EBCD12")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 10:54:21.398 -0400", hash_original_method = "449C250DB61724F5848BC66D065240CA", hash_generated_method = "2684B7A24FE92C2402058C24F7E811B2")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public URI(String scheme, String userInfo, String host, int port, String path, String query,
             String fragment) throws URISyntaxException {
@@ -121,9 +121,9 @@ public final class URI implements Comparable<URI>, Serializable {
             this.path = "";
         } //End block
         {
-            boolean var6F10BFA78E13D64EEB10B899B0516A7F_1546142136 = (scheme != null && path != null && !path.isEmpty() && path.charAt(0) != '/');
+            boolean var6F10BFA78E13D64EEB10B899B0516A7F_131883587 = (scheme != null && path != null && !path.isEmpty() && path.charAt(0) != '/');
             {
-                throw new URISyntaxException(path, "Relative path");
+                if (DroidSafeAndroidRuntime.control) throw new URISyntaxException(path, "Relative path");
             } //End block
         } //End collapsed parenthetic
         StringBuilder uri;
@@ -141,7 +141,7 @@ public final class URI implements Comparable<URI>, Serializable {
         } //End block
         {
             {
-                boolean var550E64C193B5291AD437B9B1D9496F50_1225509100 = (host.indexOf(':') != -1 && host.indexOf(']') == -1 && host.indexOf('[') == -1);
+                boolean var550E64C193B5291AD437B9B1D9496F50_1797295335 = (host.indexOf(':') != -1 && host.indexOf(']') == -1 && host.indexOf('[') == -1);
                 {
                     host = "[" + host + "]";
                 } //End block
@@ -169,7 +169,7 @@ public final class URI implements Comparable<URI>, Serializable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:12.381 -0400", hash_original_method = "3ADDFDCD3FB84301D1E5780B2C0B6096", hash_generated_method = "DE8FDD6779C40788AD50B9896F281F85")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 10:54:21.406 -0400", hash_original_method = "3ADDFDCD3FB84301D1E5780B2C0B6096", hash_generated_method = "DE8FDD6779C40788AD50B9896F281F85")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public URI(String scheme, String host, String path, String fragment) throws URISyntaxException {
         this(scheme, null, host, -1, path, null, fragment);
@@ -181,7 +181,7 @@ public final class URI implements Comparable<URI>, Serializable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:12.381 -0400", hash_original_method = "71F6E3E8DB1B58D64CBF907E96A43001", hash_generated_method = "4FC3FC3292934C7E75582A6A2D440564")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 10:54:21.411 -0400", hash_original_method = "71F6E3E8DB1B58D64CBF907E96A43001", hash_generated_method = "EC91A03633A120E2CEFFADE2D0FB6054")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public URI(String scheme, String authority, String path, String query,
             String fragment) throws URISyntaxException {
@@ -191,9 +191,9 @@ public final class URI implements Comparable<URI>, Serializable {
         dsTaint.addTaint(path);
         dsTaint.addTaint(fragment);
         {
-            boolean var6F10BFA78E13D64EEB10B899B0516A7F_1572311458 = (scheme != null && path != null && !path.isEmpty() && path.charAt(0) != '/');
+            boolean var6F10BFA78E13D64EEB10B899B0516A7F_1105589975 = (scheme != null && path != null && !path.isEmpty() && path.charAt(0) != '/');
             {
-                throw new URISyntaxException(path, "Relative path");
+                if (DroidSafeAndroidRuntime.control) throw new URISyntaxException(path, "Relative path");
             } //End block
         } //End collapsed parenthetic
         StringBuilder uri;
@@ -223,7 +223,7 @@ public final class URI implements Comparable<URI>, Serializable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:12.382 -0400", hash_original_method = "A6104B5B1EE0EDAB23A12CFEC06EAA04", hash_generated_method = "01B4565D5412E063CE2C638E3F0F06EC")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 10:54:21.421 -0400", hash_original_method = "A6104B5B1EE0EDAB23A12CFEC06EAA04", hash_generated_method = "CB7CA2FA2E57B4ED3BC9F00B7A9936E1")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     private void parseURI(String uri, boolean forceServer) throws URISyntaxException {
         dsTaint.addTaint(forceServer);
@@ -231,7 +231,7 @@ public final class URI implements Comparable<URI>, Serializable {
         int fragmentStart;
         fragmentStart = UrlUtils.findFirstOf(uri, "#", 0, uri.length());
         {
-            boolean var14906E87F75C4EB9DB697B7FC771BD9F_251263634 = (fragmentStart < uri.length());
+            boolean var14906E87F75C4EB9DB697B7FC771BD9F_1313774049 = (fragmentStart < uri.length());
             {
                 fragment = ALL_LEGAL_ENCODER.validate(uri, fragmentStart + 1, uri.length(), "fragment");
             } //End block
@@ -240,16 +240,16 @@ public final class URI implements Comparable<URI>, Serializable {
         int colon;
         colon = UrlUtils.findFirstOf(uri, ":", 0, fragmentStart);
         {
-            boolean varA7FDD5A6BBA9720FEB70A13E43618B16_1724875494 = (colon < UrlUtils.findFirstOf(uri, "/?#", 0, fragmentStart));
+            boolean varA7FDD5A6BBA9720FEB70A13E43618B16_1607196226 = (colon < UrlUtils.findFirstOf(uri, "/?#", 0, fragmentStart));
             {
                 absolute = true;
                 scheme = validateScheme(uri, colon);
                 start = colon + 1;
                 {
-                    throw new URISyntaxException(uri, "Scheme-specific part expected", start);
+                    if (DroidSafeAndroidRuntime.control) throw new URISyntaxException(uri, "Scheme-specific part expected", start);
                 } //End block
                 {
-                    boolean varEBC930CB1CD455F7868E4252B2B7D45B_1764395228 = (!uri.regionMatches(start, "/", 0, 1));
+                    boolean varEBC930CB1CD455F7868E4252B2B7D45B_431972336 = (!uri.regionMatches(start, "/", 0, 1));
                     {
                         opaque = true;
                         schemeSpecificPart = ALL_LEGAL_ENCODER.validate(
@@ -266,15 +266,15 @@ public final class URI implements Comparable<URI>, Serializable {
         schemeSpecificPart = uri.substring(start, fragmentStart);
         int fileStart;
         {
-            boolean var5757BFA7159BA6600285D2DC55CA28A4_864512589 = (uri.regionMatches(start, "//", 0, 2));
+            boolean var5757BFA7159BA6600285D2DC55CA28A4_1468862934 = (uri.regionMatches(start, "//", 0, 2));
             {
                 int authorityStart;
                 authorityStart = start + 2;
                 fileStart = UrlUtils.findFirstOf(uri, "/?", authorityStart, fragmentStart);
                 {
-                    boolean var1B2B73CCD1123E5D8F07A549A84A962C_756789075 = (authorityStart == uri.length());
+                    boolean var1B2B73CCD1123E5D8F07A549A84A962C_1424258037 = (authorityStart == uri.length());
                     {
-                        throw new URISyntaxException(uri, "Authority expected", uri.length());
+                        if (DroidSafeAndroidRuntime.control) throw new URISyntaxException(uri, "Authority expected", uri.length());
                     } //End block
                 } //End collapsed parenthetic
                 {
@@ -297,27 +297,27 @@ public final class URI implements Comparable<URI>, Serializable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:12.382 -0400", hash_original_method = "7C3EE07FDCFF0269213047D1214B9B32", hash_generated_method = "8ABAE4F571F544676B74A0B8EDB9257C")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 10:54:21.425 -0400", hash_original_method = "7C3EE07FDCFF0269213047D1214B9B32", hash_generated_method = "C802EA8971B97B11EEDBA500F887F273")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     private String validateScheme(String uri, int end) throws URISyntaxException {
         dsTaint.addTaint(uri);
         dsTaint.addTaint(end);
         {
-            throw new URISyntaxException(uri, "Scheme expected", 0);
+            if (DroidSafeAndroidRuntime.control) throw new URISyntaxException(uri, "Scheme expected", 0);
         } //End block
         {
             int i;
             i = 0;
             {
                 {
-                    boolean varF659B01EBB7D3C509A86E3BFA39CC1B5_1924118845 = (!UrlUtils.isValidSchemeChar(i, uri.charAt(i)));
+                    boolean varF659B01EBB7D3C509A86E3BFA39CC1B5_585054768 = (!UrlUtils.isValidSchemeChar(i, uri.charAt(i)));
                     {
-                        throw new URISyntaxException(uri, "Illegal character in scheme", 0);
+                        if (DroidSafeAndroidRuntime.control) throw new URISyntaxException(uri, "Illegal character in scheme", 0);
                     } //End block
                 } //End collapsed parenthetic
             } //End block
         } //End collapsed parenthetic
-        String varE30E35E4F02CF3489E82DF39B786C8EE_540760783 = (uri.substring(0, end));
+        String varE30E35E4F02CF3489E82DF39B786C8EE_676487356 = (uri.substring(0, end));
         return dsTaint.getTaintString();
         // ---------- Original Method ----------
         //if (end == 0) {
@@ -332,7 +332,7 @@ public final class URI implements Comparable<URI>, Serializable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:12.382 -0400", hash_original_method = "C0C315FFD2F67C196D4E9EC4D3711FBC", hash_generated_method = "35121C2F63754D8F97F8287F09541C90")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 10:54:21.439 -0400", hash_original_method = "C0C315FFD2F67C196D4E9EC4D3711FBC", hash_generated_method = "6B29E8480B505AB84E953E08044E2A5F")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     private void parseAuthority(boolean forceServer) throws URISyntaxException {
         dsTaint.addTaint(forceServer);
@@ -359,14 +359,14 @@ public final class URI implements Comparable<URI>, Serializable {
         {
             tempHost = temp.substring(0, index);
             {
-                boolean var471C201E222440759958E44C5A2F8C2C_381142327 = (index < (temp.length() - 1));
+                boolean var471C201E222440759958E44C5A2F8C2C_1187012467 = (index < (temp.length() - 1));
                 {
                     try 
                     {
                         tempPort = Integer.parseInt(temp.substring(index + 1));
                         {
                             {
-                                throw new URISyntaxException(authority,
+                                if (DroidSafeAndroidRuntime.control) throw new URISyntaxException(authority,
                                     "Invalid port number", hostIndex + index + 1);
                             } //End block
                         } //End block
@@ -374,7 +374,7 @@ public final class URI implements Comparable<URI>, Serializable {
                     catch (NumberFormatException e)
                     {
                         {
-                            throw new URISyntaxException(authority,
+                            if (DroidSafeAndroidRuntime.control) throw new URISyntaxException(authority,
                                 "Invalid port number", hostIndex + index + 1);
                         } //End block
                     } //End block
@@ -385,15 +385,15 @@ public final class URI implements Comparable<URI>, Serializable {
             tempHost = temp;
         } //End block
         {
-            boolean var07D9E4585E11834C381219EB624A85F7_1269524339 = (tempHost.isEmpty());
+            boolean var07D9E4585E11834C381219EB624A85F7_1371816120 = (tempHost.isEmpty());
             {
                 {
-                    throw new URISyntaxException(authority, "Expected host", hostIndex);
+                    if (DroidSafeAndroidRuntime.control) throw new URISyntaxException(authority, "Expected host", hostIndex);
                 } //End block
             } //End block
         } //End collapsed parenthetic
         {
-            boolean var158075BD2E1D16639FB8BCBA31A90016_1614137438 = (!isValidHost(forceServer, tempHost));
+            boolean var158075BD2E1D16639FB8BCBA31A90016_515481457 = (!isValidHost(forceServer, tempHost));
         } //End collapsed parenthetic
         userInfo = tempUserInfo;
         host = tempHost;
@@ -404,7 +404,7 @@ public final class URI implements Comparable<URI>, Serializable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:12.383 -0400", hash_original_method = "7C8CF37E6F7B87B68C0DE679D5852184", hash_generated_method = "43BE57C84C67A5CC4555F3461BF7015C")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 10:54:21.442 -0400", hash_original_method = "7C8CF37E6F7B87B68C0DE679D5852184", hash_generated_method = "E2B03C82E634460C200581F8B714EB83")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     private void validateUserInfo(String uri, String userInfo, int index) throws URISyntaxException {
         dsTaint.addTaint(index);
@@ -413,12 +413,12 @@ public final class URI implements Comparable<URI>, Serializable {
         {
             int i;
             i = 0;
-            boolean var61BE23789239FB4C090D5853B97C62FB_1813896906 = (i < userInfo.length());
+            boolean var61BE23789239FB4C090D5853B97C62FB_1373177270 = (i < userInfo.length());
             {
                 char ch;
                 ch = userInfo.charAt(i);
                 {
-                    throw new URISyntaxException(uri, "Illegal character in userInfo", index + i);
+                    if (DroidSafeAndroidRuntime.control) throw new URISyntaxException(uri, "Illegal character in userInfo", index + i);
                 } //End block
             } //End block
         } //End collapsed parenthetic
@@ -432,44 +432,44 @@ public final class URI implements Comparable<URI>, Serializable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:12.383 -0400", hash_original_method = "A181BC4B37A51E9F8D899B7902CC2A7C", hash_generated_method = "7540497733AABDE1CF46FC4BF9F99BA9")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 10:54:21.462 -0400", hash_original_method = "A181BC4B37A51E9F8D899B7902CC2A7C", hash_generated_method = "75B52856F8C1E1B702D2BC27F7330715")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     private boolean isValidHost(boolean forceServer, String host) throws URISyntaxException {
         dsTaint.addTaint(host);
         dsTaint.addTaint(forceServer);
         {
-            boolean varFCCCD9BDBC603228D4710DD2E5A9B32F_691266817 = (host.startsWith("["));
+            boolean varFCCCD9BDBC603228D4710DD2E5A9B32F_871331453 = (host.startsWith("["));
             {
                 {
-                    boolean varF9599A0F269A93198F48A20A694972EC_1395248610 = (!host.endsWith("]"));
+                    boolean varF9599A0F269A93198F48A20A694972EC_122325134 = (!host.endsWith("]"));
                     {
-                        throw new URISyntaxException(host,
+                        if (DroidSafeAndroidRuntime.control) throw new URISyntaxException(host,
                         "Expected a closing square bracket for IPv6 address", 0);
                     } //End block
                 } //End collapsed parenthetic
                 {
-                    boolean varD5E87321776926869A9F8CCC6C3D14FA_1284838100 = (InetAddress.isNumeric(host));
+                    boolean varD5E87321776926869A9F8CCC6C3D14FA_736026714 = (InetAddress.isNumeric(host));
                 } //End collapsed parenthetic
-                throw new URISyntaxException(host, "Malformed IPv6 address");
+                if (DroidSafeAndroidRuntime.control) throw new URISyntaxException(host, "Malformed IPv6 address");
             } //End block
         } //End collapsed parenthetic
         {
-            boolean var36FFAEAF88FC26FFC5276B550B24D5DE_1495316564 = (host.indexOf('[') != -1 || host.indexOf(']') != -1);
+            boolean var36FFAEAF88FC26FFC5276B550B24D5DE_377016026 = (host.indexOf('[') != -1 || host.indexOf(']') != -1);
             {
-                throw new URISyntaxException(host, "Illegal character in host name", 0);
+                if (DroidSafeAndroidRuntime.control) throw new URISyntaxException(host, "Illegal character in host name", 0);
             } //End block
         } //End collapsed parenthetic
         int index;
         index = host.lastIndexOf('.');
         {
-            boolean var62B5BEA078C6AF897DE86B7C91F4DAEC_302805362 = (index < 0 || index == host.length() - 1
+            boolean var62B5BEA078C6AF897DE86B7C91F4DAEC_1315539407 = (index < 0 || index == host.length() - 1
                 || !Character.isDigit(host.charAt(index + 1)));
             {
                 {
-                    boolean var60D4AC8ED4B08A7A4E9E67A3B8F29C40_1941869404 = (isValidDomainName(host));
+                    boolean var60D4AC8ED4B08A7A4E9E67A3B8F29C40_26161402 = (isValidDomainName(host));
                 } //End collapsed parenthetic
                 {
-                    throw new URISyntaxException(host, "Illegal character in host name", 0);
+                    if (DroidSafeAndroidRuntime.control) throw new URISyntaxException(host, "Illegal character in host name", 0);
                 } //End block
             } //End block
         } //End collapsed parenthetic
@@ -481,7 +481,7 @@ public final class URI implements Comparable<URI>, Serializable {
         catch (IllegalArgumentException ignored)
         { }
         {
-            throw new URISyntaxException(host, "Malformed IPv4 address", 0);
+            if (DroidSafeAndroidRuntime.control) throw new URISyntaxException(host, "Malformed IPv4 address", 0);
         } //End block
         return dsTaint.getTaintBoolean();
         // ---------- Original Method ----------
@@ -489,7 +489,7 @@ public final class URI implements Comparable<URI>, Serializable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:12.383 -0400", hash_original_method = "2E78BBD0316E5BD424863A1938BE67AE", hash_generated_method = "3DFC2BCD1EA7DC3EB2A54AB30114C90E")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 10:54:21.465 -0400", hash_original_method = "2E78BBD0316E5BD424863A1938BE67AE", hash_generated_method = "A02861CAED915244F0BF898BC00F7299")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     private boolean isValidDomainName(String host) {
         dsTaint.addTaint(host);
@@ -502,18 +502,16 @@ public final class URI implements Comparable<URI>, Serializable {
         String lastLabel;
         lastLabel = null;
         {
-            Iterator<String> seatecAstronomy42 = host.split("\\.").iterator();
-            seatecAstronomy42.hasNext();
-            String token = seatecAstronomy42.next();
+            String token = host.split("\\.")[0];
             {
                 lastLabel = token;
                 {
-                    boolean var092620AA3BCBDBEC4B02F610B8967169_624575525 = (lastLabel.startsWith("-") || lastLabel.endsWith("-"));
+                    boolean var092620AA3BCBDBEC4B02F610B8967169_386269498 = (lastLabel.startsWith("-") || lastLabel.endsWith("-"));
                 } //End collapsed parenthetic
             } //End block
         } //End collapsed parenthetic
         {
-            boolean var62581F9350E01C0148C5B044A3636F9A_74874948 = (!lastLabel.equals(host));
+            boolean var62581F9350E01C0148C5B044A3636F9A_1987805957 = (!lastLabel.equals(host));
             {
                 char ch;
                 ch = lastLabel.charAt(0);
@@ -546,7 +544,7 @@ public final class URI implements Comparable<URI>, Serializable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:12.384 -0400", hash_original_method = "5881C9F5255DAD71BFE55D2C48CC4082", hash_generated_method = "25B0F7225E08ED49EE58AB55C22DDB1E")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 10:54:21.477 -0400", hash_original_method = "5881C9F5255DAD71BFE55D2C48CC4082", hash_generated_method = "25B0F7225E08ED49EE58AB55C22DDB1E")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public int compareTo(URI uri) {
         dsTaint.addTaint(uri.dsTaint);
@@ -583,7 +581,7 @@ public final class URI implements Comparable<URI>, Serializable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:12.384 -0400", hash_original_method = "01A5D2BAF7448F542F0C842BB71CF77A", hash_generated_method = "5CFE6B8E723650D4BB791547D5DBF394")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 10:54:21.479 -0400", hash_original_method = "01A5D2BAF7448F542F0C842BB71CF77A", hash_generated_method = "5CFE6B8E723650D4BB791547D5DBF394")
     public static URI create(String uri) {
         try {
             return new URI(uri);
@@ -593,7 +591,7 @@ public final class URI implements Comparable<URI>, Serializable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:12.384 -0400", hash_original_method = "A98420F05D15A307D401E461EEAC37D0", hash_generated_method = "C00B625355C1802F6158EF8AA189B180")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 10:54:21.485 -0400", hash_original_method = "A98420F05D15A307D401E461EEAC37D0", hash_generated_method = "C00B625355C1802F6158EF8AA189B180")
     @DSModeled(DSC.SAFE)
     private URI duplicate() {
         URI clone;
@@ -629,19 +627,19 @@ public final class URI implements Comparable<URI>, Serializable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:12.384 -0400", hash_original_method = "FCD362BE8E93703CF564A6DF1A0DE711", hash_generated_method = "FB5ACBBD74ABF1F9B51C27B2D0F3CB39")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 10:54:21.487 -0400", hash_original_method = "FCD362BE8E93703CF564A6DF1A0DE711", hash_generated_method = "B8E81FBB3001E299422FC378CED1833F")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     private String convertHexToLowerCase(String s) {
         dsTaint.addTaint(s);
         StringBuilder result;
         result = new StringBuilder("");
         {
-            boolean varEB6442064EDBB8B51A5716AA5B8E92B3_1717351892 = (s.indexOf('%') == -1);
+            boolean varEB6442064EDBB8B51A5716AA5B8E92B3_1730623767 = (s.indexOf('%') == -1);
         } //End collapsed parenthetic
         int index, prevIndex;
         prevIndex = 0;
         {
-            boolean var3FA97A1C7FD8BD3DFDFB4FA1562BC71E_878751198 = ((index = s.indexOf('%', prevIndex)) != -1);
+            boolean var3FA97A1C7FD8BD3DFDFB4FA1562BC71E_520899868 = ((index = s.indexOf('%', prevIndex)) != -1);
             {
                 result.append(s.substring(prevIndex, index + 1));
                 result.append(s.substring(index + 1, index + 3).toLowerCase(Locale.US));
@@ -649,7 +647,7 @@ public final class URI implements Comparable<URI>, Serializable {
                 prevIndex = index;
             } //End block
         } //End collapsed parenthetic
-        String varEA70154FDA28CC59402440C6317B57EF_1500852123 = (result.toString());
+        String varEA70154FDA28CC59402440C6317B57EF_561647995 = (result.toString());
         return dsTaint.getTaintString();
         // ---------- Original Method ----------
         //StringBuilder result = new StringBuilder("");
@@ -667,21 +665,21 @@ public final class URI implements Comparable<URI>, Serializable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:12.384 -0400", hash_original_method = "6D42C9BDBF773AFA30CCB9F3B2C418F1", hash_generated_method = "7C7A139AD6F1917FCF5516296863988F")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 10:54:21.490 -0400", hash_original_method = "6D42C9BDBF773AFA30CCB9F3B2C418F1", hash_generated_method = "FA95A4684E57D8BB3E6ADE1C301C3F80")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     private boolean escapedEquals(String first, String second) {
         dsTaint.addTaint(second);
         dsTaint.addTaint(first);
         {
-            boolean var1F61A1CA58188B3C323B0BC1A8DADBE6_1688525894 = (first.indexOf('%') != second.indexOf('%'));
+            boolean var1F61A1CA58188B3C323B0BC1A8DADBE6_1351573196 = (first.indexOf('%') != second.indexOf('%'));
             {
-                boolean var9A92D953275813B0E21E2ACB41134B3B_760500120 = (first.equals(second));
+                boolean var9A92D953275813B0E21E2ACB41134B3B_699527858 = (first.equals(second));
             } //End block
         } //End collapsed parenthetic
         int index, prevIndex;
         prevIndex = 0;
         {
-            boolean var9722F6B33E3926CBF63854BB7D6FD389_142534034 = ((index = first.indexOf('%', prevIndex)) != -1
+            boolean var9722F6B33E3926CBF63854BB7D6FD389_830674318 = ((index = first.indexOf('%', prevIndex)) != -1
                 && second.indexOf('%', prevIndex) == index);
             {
                 boolean match;
@@ -693,7 +691,7 @@ public final class URI implements Comparable<URI>, Serializable {
                 prevIndex = index;
             } //End block
         } //End collapsed parenthetic
-        boolean var82012BF29BC079AE3198FB95B5CF6151_813805617 = (first.substring(prevIndex).equals(second.substring(prevIndex)));
+        boolean var82012BF29BC079AE3198FB95B5CF6151_1142200309 = (first.substring(prevIndex).equals(second.substring(prevIndex)));
         return dsTaint.getTaintBoolean();
         // ---------- Original Method ----------
         //if (first.indexOf('%') != second.indexOf('%')) {
@@ -719,7 +717,7 @@ public final class URI implements Comparable<URI>, Serializable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:12.385 -0400", hash_original_method = "DB7C53AF9EACD0E0331CDA9F529DED49", hash_generated_method = "C818DF9D2496CE1B5B5FFF56561E8C34")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 10:54:21.504 -0400", hash_original_method = "DB7C53AF9EACD0E0331CDA9F529DED49", hash_generated_method = "0BADC39829643577C45DFCA8F99AA008")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     @Override
     public boolean equals(Object o) {
@@ -728,37 +726,37 @@ public final class URI implements Comparable<URI>, Serializable {
         uri = (URI) o;
         {
             {
-                boolean var60CDEB48A7F58F8237D705D7C40D17CC_1400797511 = (!escapedEquals(uri.fragment, fragment));
+                boolean var60CDEB48A7F58F8237D705D7C40D17CC_1474287726 = (!escapedEquals(uri.fragment, fragment));
             } //End collapsed parenthetic
         } //End block
         {
             {
-                boolean var38EA33084FCA86881E8FD72A38A7749C_2088863996 = (!uri.scheme.equalsIgnoreCase(scheme));
+                boolean var38EA33084FCA86881E8FD72A38A7749C_550491566 = (!uri.scheme.equalsIgnoreCase(scheme));
             } //End collapsed parenthetic
         } //End block
         {
-            boolean var7E67A78714F419D789626F935DC27349_831506464 = (escapedEquals(uri.schemeSpecificPart,
+            boolean var7E67A78714F419D789626F935DC27349_473791164 = (escapedEquals(uri.schemeSpecificPart,
                     schemeSpecificPart));
         } //End block
         {
             {
-                boolean varA8C91154088202E89FE7FC4E6E5FD0C6_876163834 = (!escapedEquals(path, uri.path));
+                boolean varA8C91154088202E89FE7FC4E6E5FD0C6_1195777193 = (!escapedEquals(path, uri.path));
             } //End collapsed parenthetic
             {
                 {
-                    boolean var7C1AA47824584214BA2C304C225799C2_1787732765 = (!escapedEquals(uri.query, query));
+                    boolean var7C1AA47824584214BA2C304C225799C2_449051784 = (!escapedEquals(uri.query, query));
                 } //End collapsed parenthetic
             } //End block
             {
                 {
-                    boolean varCFCD5A99259213E0C97153FBD1F01864_791387045 = (escapedEquals(uri.authority, authority));
+                    boolean varCFCD5A99259213E0C97153FBD1F01864_253107680 = (escapedEquals(uri.authority, authority));
                 } //End block
                 {
                     {
-                        boolean var157801492CF3B05F03DFA16E5EB86961_1037882646 = (!host.equalsIgnoreCase(uri.host));
+                        boolean var157801492CF3B05F03DFA16E5EB86961_752399089 = (!host.equalsIgnoreCase(uri.host));
                     } //End collapsed parenthetic
                     {
-                        boolean varB9E57D7781CD81877C81BF504253B25D_1583210491 = (escapedEquals(userInfo, uri.userInfo));
+                        boolean varB9E57D7781CD81877C81BF504253B25D_828255660 = (escapedEquals(userInfo, uri.userInfo));
                     } //End block
                 } //End block
             } //End block
@@ -769,7 +767,7 @@ public final class URI implements Comparable<URI>, Serializable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:12.385 -0400", hash_original_method = "C01635CAE84CEFF188CA85B1E841E2AF", hash_generated_method = "6809119C812010AE912E08971A3DC4F5")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 10:54:21.506 -0400", hash_original_method = "C01635CAE84CEFF188CA85B1E841E2AF", hash_generated_method = "6809119C812010AE912E08971A3DC4F5")
     @DSModeled(DSC.SAFE)
     public String getScheme() {
         return dsTaint.getTaintString();
@@ -778,17 +776,17 @@ public final class URI implements Comparable<URI>, Serializable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:12.385 -0400", hash_original_method = "38320513FEDFF9F58DEA1E075C778208", hash_generated_method = "4296A8C71EDEDEF999E902C0650AC785")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 10:54:21.507 -0400", hash_original_method = "38320513FEDFF9F58DEA1E075C778208", hash_generated_method = "30653E55D3DB7790F62F73471A443E7C")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public String getSchemeSpecificPart() {
-        String var7875D41A22421B5A304A7CD3C5AB8974_1230021106 = (decode(schemeSpecificPart));
+        String var7875D41A22421B5A304A7CD3C5AB8974_1424156631 = (decode(schemeSpecificPart));
         return dsTaint.getTaintString();
         // ---------- Original Method ----------
         //return decode(schemeSpecificPart);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:12.385 -0400", hash_original_method = "86531F78EA1B0DD0E474B0280C353B39", hash_generated_method = "F2AC097D72C4945671E2D1439BB64476")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 10:54:21.508 -0400", hash_original_method = "86531F78EA1B0DD0E474B0280C353B39", hash_generated_method = "F2AC097D72C4945671E2D1439BB64476")
     @DSModeled(DSC.SAFE)
     public String getRawSchemeSpecificPart() {
         return dsTaint.getTaintString();
@@ -797,17 +795,17 @@ public final class URI implements Comparable<URI>, Serializable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:12.385 -0400", hash_original_method = "4FA84E8B57858A7AED973819C0FBFA33", hash_generated_method = "85969C9E6E208803E27D5ACE30265667")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 10:54:21.509 -0400", hash_original_method = "4FA84E8B57858A7AED973819C0FBFA33", hash_generated_method = "793C44FC090A8C8032F9DA4F4182CF7A")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public String getAuthority() {
-        String varF4C7A08ADB065D139D1BB7B58F758350_1276694361 = (decode(authority));
+        String varF4C7A08ADB065D139D1BB7B58F758350_647208359 = (decode(authority));
         return dsTaint.getTaintString();
         // ---------- Original Method ----------
         //return decode(authority);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:12.385 -0400", hash_original_method = "D7819D822B599F6322BA89A8602769F8", hash_generated_method = "15A809D7CC28C250038926F48A97935C")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 10:54:21.510 -0400", hash_original_method = "D7819D822B599F6322BA89A8602769F8", hash_generated_method = "15A809D7CC28C250038926F48A97935C")
     @DSModeled(DSC.SAFE)
     public String getRawAuthority() {
         return dsTaint.getTaintString();
@@ -816,17 +814,17 @@ public final class URI implements Comparable<URI>, Serializable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:12.385 -0400", hash_original_method = "A9FAB4D519B7225CD37F806FC9DB8527", hash_generated_method = "E056F276E11AA771148DFC788A359322")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 10:54:21.511 -0400", hash_original_method = "A9FAB4D519B7225CD37F806FC9DB8527", hash_generated_method = "50EFD5341FE2388D1534D49FC83DACF8")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public String getUserInfo() {
-        String var9C6358D0890AD3F5593691ED1A446F7E_1335694837 = (decode(userInfo));
+        String var9C6358D0890AD3F5593691ED1A446F7E_1439013888 = (decode(userInfo));
         return dsTaint.getTaintString();
         // ---------- Original Method ----------
         //return decode(userInfo);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:12.385 -0400", hash_original_method = "DAA16275F755FA7272E7A6BF143307B3", hash_generated_method = "89F555A211D3DA502838170F033A85C8")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 10:54:21.514 -0400", hash_original_method = "DAA16275F755FA7272E7A6BF143307B3", hash_generated_method = "89F555A211D3DA502838170F033A85C8")
     @DSModeled(DSC.SAFE)
     public String getRawUserInfo() {
         return dsTaint.getTaintString();
@@ -835,7 +833,7 @@ public final class URI implements Comparable<URI>, Serializable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:12.385 -0400", hash_original_method = "2F2AEDD17A97DC05E80343AAC323BA28", hash_generated_method = "1A7C3D805857A92DA91C7FDF3E76506B")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 10:54:21.518 -0400", hash_original_method = "2F2AEDD17A97DC05E80343AAC323BA28", hash_generated_method = "1A7C3D805857A92DA91C7FDF3E76506B")
     @DSModeled(DSC.SAFE)
     public String getHost() {
         return dsTaint.getTaintString();
@@ -844,7 +842,7 @@ public final class URI implements Comparable<URI>, Serializable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:12.385 -0400", hash_original_method = "A5F7344FAECBE0D6DB15D1F6E7BEBC6E", hash_generated_method = "17AF8596D6B7DC38593E7C5BC3B81881")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 10:54:21.518 -0400", hash_original_method = "A5F7344FAECBE0D6DB15D1F6E7BEBC6E", hash_generated_method = "17AF8596D6B7DC38593E7C5BC3B81881")
     @DSModeled(DSC.SAFE)
     public int getPort() {
         return dsTaint.getTaintInt();
@@ -853,17 +851,17 @@ public final class URI implements Comparable<URI>, Serializable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:12.385 -0400", hash_original_method = "06FADD20E42E3EC8160E0651D1C1C356", hash_generated_method = "B19A73F7E7949B1BE894A4A439AC4F4F")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 10:54:21.519 -0400", hash_original_method = "06FADD20E42E3EC8160E0651D1C1C356", hash_generated_method = "46EAC37108585DC4ADD4B5AEDC80D1DD")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public int getEffectivePort() {
-        int var12709C286048EEEA3C7AFAA905EEAD9D_851968039 = (getEffectivePort(scheme, port));
+        int var12709C286048EEEA3C7AFAA905EEAD9D_1110747375 = (getEffectivePort(scheme, port));
         return dsTaint.getTaintInt();
         // ---------- Original Method ----------
         //return getEffectivePort(scheme, port);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:12.385 -0400", hash_original_method = "288F4243CB2CAE5D0A19FF04182F1452", hash_generated_method = "0459D8510EE02E0CD1B881E8D341B39B")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 10:54:21.520 -0400", hash_original_method = "288F4243CB2CAE5D0A19FF04182F1452", hash_generated_method = "0459D8510EE02E0CD1B881E8D341B39B")
     public static int getEffectivePort(String scheme, int specifiedPort) {
         if (specifiedPort != -1) {
             return specifiedPort;
@@ -878,17 +876,17 @@ public final class URI implements Comparable<URI>, Serializable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:12.385 -0400", hash_original_method = "69A276867D65FB87E2E914A462B7AF91", hash_generated_method = "8206236C1D83981AD8F1D992C8684D7D")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 10:54:21.523 -0400", hash_original_method = "69A276867D65FB87E2E914A462B7AF91", hash_generated_method = "70646983E2A753392726A401869DFEBA")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public String getPath() {
-        String var3DFD2ABA068496EC30FEDDF853DF5DE9_1518456362 = (decode(path));
+        String var3DFD2ABA068496EC30FEDDF853DF5DE9_2041617942 = (decode(path));
         return dsTaint.getTaintString();
         // ---------- Original Method ----------
         //return decode(path);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:12.386 -0400", hash_original_method = "C60E164890B13C98164350819EFAF732", hash_generated_method = "0A78B931351B28B5329393629B843037")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 10:54:21.526 -0400", hash_original_method = "C60E164890B13C98164350819EFAF732", hash_generated_method = "0A78B931351B28B5329393629B843037")
     @DSModeled(DSC.SAFE)
     public String getRawPath() {
         return dsTaint.getTaintString();
@@ -897,17 +895,17 @@ public final class URI implements Comparable<URI>, Serializable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:12.386 -0400", hash_original_method = "630FC8264E2AC16B7C7C1CF5EE4E7165", hash_generated_method = "88C50813C9C8C8030EFA7551618BD48D")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 10:54:21.531 -0400", hash_original_method = "630FC8264E2AC16B7C7C1CF5EE4E7165", hash_generated_method = "33F0BB1774DF22B2B543383E6617DBE0")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public String getQuery() {
-        String var9B0A08ED8AB1A015FDF838C8B0A427EC_597916107 = (decode(query));
+        String var9B0A08ED8AB1A015FDF838C8B0A427EC_28223233 = (decode(query));
         return dsTaint.getTaintString();
         // ---------- Original Method ----------
         //return decode(query);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:12.386 -0400", hash_original_method = "1B73FD5BF97DE0B30570BEC9088948AD", hash_generated_method = "D4B6715A22835A63380D02DD40221FB0")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 10:54:21.533 -0400", hash_original_method = "1B73FD5BF97DE0B30570BEC9088948AD", hash_generated_method = "D4B6715A22835A63380D02DD40221FB0")
     @DSModeled(DSC.SAFE)
     public String getRawQuery() {
         return dsTaint.getTaintString();
@@ -916,17 +914,17 @@ public final class URI implements Comparable<URI>, Serializable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:12.386 -0400", hash_original_method = "997A8F1DE06A015557806F06709A8E7B", hash_generated_method = "A294F3C341838C437E1700D73442101B")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 10:54:21.534 -0400", hash_original_method = "997A8F1DE06A015557806F06709A8E7B", hash_generated_method = "585B055829CE12AB27A459C46E8B6CA4")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public String getFragment() {
-        String var88CBC913E182725BFF1DA3351FDEDD88_570317788 = (decode(fragment));
+        String var88CBC913E182725BFF1DA3351FDEDD88_945128673 = (decode(fragment));
         return dsTaint.getTaintString();
         // ---------- Original Method ----------
         //return decode(fragment);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:12.386 -0400", hash_original_method = "7B682CDC9E7215B6CAB5B55C992B88A5", hash_generated_method = "3290DAD5D83D2FD316D5D9E57FF380E4")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 10:54:21.538 -0400", hash_original_method = "7B682CDC9E7215B6CAB5B55C992B88A5", hash_generated_method = "3290DAD5D83D2FD316D5D9E57FF380E4")
     @DSModeled(DSC.SAFE)
     public String getRawFragment() {
         return dsTaint.getTaintString();
@@ -935,7 +933,7 @@ public final class URI implements Comparable<URI>, Serializable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:12.386 -0400", hash_original_method = "7F32815A976A993D04E3E3C7E39CEF39", hash_generated_method = "DC7AB5066FF1216FE2A8E74152877AFC")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 10:54:21.540 -0400", hash_original_method = "7F32815A976A993D04E3E3C7E39CEF39", hash_generated_method = "DC7AB5066FF1216FE2A8E74152877AFC")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     @Override
     public int hashCode() {
@@ -951,7 +949,7 @@ public final class URI implements Comparable<URI>, Serializable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:12.386 -0400", hash_original_method = "D85A39136D4004ABB79E6EE2109136C5", hash_generated_method = "B0B0AED2ED8F5856E0B3EEFED4613DB1")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 10:54:21.546 -0400", hash_original_method = "D85A39136D4004ABB79E6EE2109136C5", hash_generated_method = "B0B0AED2ED8F5856E0B3EEFED4613DB1")
     @DSModeled(DSC.SAFE)
     public boolean isAbsolute() {
         return dsTaint.getTaintBoolean();
@@ -960,7 +958,7 @@ public final class URI implements Comparable<URI>, Serializable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:12.386 -0400", hash_original_method = "E927F529D329E66C9C89B04CCA4C92BD", hash_generated_method = "4DA3BB9446989C1035436D8CE1815012")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 10:54:21.547 -0400", hash_original_method = "E927F529D329E66C9C89B04CCA4C92BD", hash_generated_method = "4DA3BB9446989C1035436D8CE1815012")
     @DSModeled(DSC.SAFE)
     public boolean isOpaque() {
         return dsTaint.getTaintBoolean();
@@ -969,7 +967,7 @@ public final class URI implements Comparable<URI>, Serializable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:12.386 -0400", hash_original_method = "E5D7EFF0C51BEFD641F2F6FB80CD17F5", hash_generated_method = "5733D9226DE5408E9BA8359A9E698F0C")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 10:54:21.549 -0400", hash_original_method = "E5D7EFF0C51BEFD641F2F6FB80CD17F5", hash_generated_method = "5733D9226DE5408E9BA8359A9E698F0C")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     private String normalize(String path, boolean discardRelativePrefix) {
         dsTaint.addTaint(discardRelativePrefix);
@@ -998,13 +996,13 @@ public final class URI implements Comparable<URI>, Serializable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:12.386 -0400", hash_original_method = "516FFF274D5A3C3904BD2A35075D82E5", hash_generated_method = "CC725BF306073F9EEE00027B9DCC5A13")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 10:54:21.550 -0400", hash_original_method = "516FFF274D5A3C3904BD2A35075D82E5", hash_generated_method = "67C6700B4BEFD0BC15F2AAA1526F9CB9")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public URI normalize() {
         String normalizedPath;
         normalizedPath = normalize(path, false);
         {
-            boolean varED6BB76AF8F0E8C24432884623407A00_827021780 = (path.equals(normalizedPath));
+            boolean varED6BB76AF8F0E8C24432884623407A00_935892984 = (path.equals(normalizedPath));
         } //End collapsed parenthetic
         URI result;
         result = duplicate();
@@ -1026,7 +1024,7 @@ public final class URI implements Comparable<URI>, Serializable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:12.386 -0400", hash_original_method = "561A780B99BF7A4044A2E8788BD03387", hash_generated_method = "7112AD6DAF0727980FEEEE10EB650801")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 10:54:21.551 -0400", hash_original_method = "561A780B99BF7A4044A2E8788BD03387", hash_generated_method = "7112AD6DAF0727980FEEEE10EB650801")
     @DSModeled(DSC.SAFE)
     public URI parseServerAuthority() throws URISyntaxException {
         {
@@ -1041,19 +1039,19 @@ public final class URI implements Comparable<URI>, Serializable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:12.386 -0400", hash_original_method = "BFE2EB4322D518CCAA638FC4B16C8964", hash_generated_method = "C5189683120295AD16689A6A666CFB5E")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 10:54:21.555 -0400", hash_original_method = "BFE2EB4322D518CCAA638FC4B16C8964", hash_generated_method = "0F109C09113B656846C2EA78FAD96AF9")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public URI relativize(URI relative) {
         dsTaint.addTaint(relative.dsTaint);
         {
             {
-                boolean varC865ACA7FB0CCF69283F042F0DB61312_298026490 = (!scheme
+                boolean varC865ACA7FB0CCF69283F042F0DB61312_2109075224 = (!scheme
                 .equals(relative.scheme));
             } //End flattened ternary
         } //End collapsed parenthetic
         {
             {
-                boolean varE0036196913086AF15703499E78ECF8B_947955616 = (!authority
+                boolean varE0036196913086AF15703499E78ECF8B_1309125611 = (!authority
                 .equals(relative.authority));
             } //End flattened ternary
         } //End collapsed parenthetic
@@ -1062,11 +1060,11 @@ public final class URI implements Comparable<URI>, Serializable {
         String relativePath;
         relativePath = normalize(relative.path, false);
         {
-            boolean varEDBF7EABD9E353975E483312E9BAC550_1392588046 = (!thisPath.equals(relativePath));
+            boolean varEDBF7EABD9E353975E483312E9BAC550_1656536376 = (!thisPath.equals(relativePath));
             {
                 thisPath = thisPath.substring(0, thisPath.lastIndexOf('/') + 1);
                 {
-                    boolean varDC148464305F08DF1780EDF47FFC747D_866523228 = (!relativePath.startsWith(thisPath));
+                    boolean varDC148464305F08DF1780EDF47FFC747D_1351663277 = (!relativePath.startsWith(thisPath));
                 } //End collapsed parenthetic
             } //End block
         } //End collapsed parenthetic
@@ -1082,7 +1080,7 @@ public final class URI implements Comparable<URI>, Serializable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:12.387 -0400", hash_original_method = "0C14666D7307A46BF860740DE5247B99", hash_generated_method = "4C495680B4D32ED498EEB64F3DC396E0")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 10:54:21.560 -0400", hash_original_method = "0C14666D7307A46BF860740DE5247B99", hash_generated_method = "205DBFD0AF0C03E1541EB3AB6B7C9717")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public URI resolve(URI relative) {
         dsTaint.addTaint(relative.dsTaint);
@@ -1093,7 +1091,7 @@ public final class URI implements Comparable<URI>, Serializable {
             result.absolute = absolute;
         } //End block
         {
-            boolean var03F21B31825B83006AD962520A46A4CC_665755451 = (relative.path.isEmpty() && relative.scheme == null && relative.query == null);
+            boolean var03F21B31825B83006AD962520A46A4CC_537234867 = (relative.path.isEmpty() && relative.scheme == null && relative.query == null);
             {
                 URI result;
                 result = duplicate();
@@ -1106,12 +1104,12 @@ public final class URI implements Comparable<URI>, Serializable {
         result.query = relative.query;
         String resolvedPath;
         {
-            boolean varEC53DB095CB8776983E38D0B1831503B_246063699 = (relative.path.startsWith("/"));
+            boolean varEC53DB095CB8776983E38D0B1831503B_580289203 = (relative.path.startsWith("/"));
             {
                 resolvedPath = relative.path;
             } //End block
             {
-                boolean var64B3618E3CF5D0DE8D9BCC96B26D0E61_95482953 = (relative.path.isEmpty());
+                boolean var64B3618E3CF5D0DE8D9BCC96B26D0E61_1067670669 = (relative.path.isEmpty());
                 {
                     resolvedPath = path;
                 } //End block
@@ -1130,7 +1128,7 @@ public final class URI implements Comparable<URI>, Serializable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:12.387 -0400", hash_original_method = "3DD7E8659D07AF42D9C7F4A4AC66ED05", hash_generated_method = "F1B18679430B04329E9CB4E89087A0FB")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 10:54:21.562 -0400", hash_original_method = "3DD7E8659D07AF42D9C7F4A4AC66ED05", hash_generated_method = "F1B18679430B04329E9CB4E89087A0FB")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     private void setSchemeSpecificPart() {
         StringBuilder ssp;
@@ -1162,23 +1160,23 @@ public final class URI implements Comparable<URI>, Serializable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:12.387 -0400", hash_original_method = "9168A9B8145DCA1D2A5ADCFF78018EA4", hash_generated_method = "CE79BBE39D824BF0E2E23E54BDB60704")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 10:54:21.563 -0400", hash_original_method = "9168A9B8145DCA1D2A5ADCFF78018EA4", hash_generated_method = "2F280E927E7A0C6AD8EF3A72CDB46EAA")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public URI resolve(String relative) {
         dsTaint.addTaint(relative);
-        URI var5A7A8223936F4960FA1E9C098A207BC6_851482770 = (resolve(create(relative)));
+        URI var5A7A8223936F4960FA1E9C098A207BC6_2081037074 = (resolve(create(relative)));
         return (URI)dsTaint.getTaint();
         // ---------- Original Method ----------
         //return resolve(create(relative));
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:12.387 -0400", hash_original_method = "630095D6548B2B3A1441046549437B77", hash_generated_method = "B550C9643063B5ED9AB3767A10A3A4B2")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 10:54:21.565 -0400", hash_original_method = "630095D6548B2B3A1441046549437B77", hash_generated_method = "A363CC937BA3ADD0F77402F1F39B1990")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     private String decode(String s) {
         dsTaint.addTaint(s);
         {
-            Object var5ADA1A15FA20C8D504B488D0D2BCF9C4_101073867 = (UriCodec.decode(s));
+            Object var5ADA1A15FA20C8D504B488D0D2BCF9C4_104164739 = (UriCodec.decode(s));
         } //End flattened ternary
         return dsTaint.getTaintString();
         // ---------- Original Method ----------
@@ -1186,13 +1184,13 @@ public final class URI implements Comparable<URI>, Serializable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:12.387 -0400", hash_original_method = "5974D900C8CF23409F32E47268086AF9", hash_generated_method = "A344EAA914BCB07A11B5156D96A234D9")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 10:54:21.567 -0400", hash_original_method = "5974D900C8CF23409F32E47268086AF9", hash_generated_method = "C04C945095DACA8646803653896C37E2")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public String toASCIIString() {
         StringBuilder result;
         result = new StringBuilder();
         ASCII_ONLY.appendEncoded(result, toString());
-        String varEA70154FDA28CC59402440C6317B57EF_605679459 = (result.toString());
+        String varEA70154FDA28CC59402440C6317B57EF_1730742464 = (result.toString());
         return dsTaint.getTaintString();
         // ---------- Original Method ----------
         //StringBuilder result = new StringBuilder();
@@ -1201,7 +1199,7 @@ public final class URI implements Comparable<URI>, Serializable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:12.387 -0400", hash_original_method = "17490955FE7D32C9695E89CDD3A294E6", hash_generated_method = "6086554AD890A18F085F9D32BF592FF5")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 10:54:21.575 -0400", hash_original_method = "17490955FE7D32C9695E89CDD3A294E6", hash_generated_method = "6086554AD890A18F085F9D32BF592FF5")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     @Override
     public String toString() {
@@ -1238,7 +1236,7 @@ public final class URI implements Comparable<URI>, Serializable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:12.387 -0400", hash_original_method = "854CA4638ADB9894AD51F585C304D672", hash_generated_method = "88623506CDF1FC41F95F489A9A46D10F")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 10:54:21.580 -0400", hash_original_method = "854CA4638ADB9894AD51F585C304D672", hash_generated_method = "4DA330FFFEB130E8BBEBF280046DDBD4")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     private String getHashString() {
         StringBuilder result;
@@ -1278,20 +1276,20 @@ public final class URI implements Comparable<URI>, Serializable {
             result.append('#');
             result.append(fragment);
         } //End block
-        String var52FF3CFAC0CF240166E68B4792BA0D90_1619866417 = (convertHexToLowerCase(result.toString()));
+        String var52FF3CFAC0CF240166E68B4792BA0D90_278624451 = (convertHexToLowerCase(result.toString()));
         return dsTaint.getTaintString();
         // ---------- Original Method ----------
         // Original Method Too Long, Refer to Original Implementation
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:12.388 -0400", hash_original_method = "61498548735D8100B59ED3B549CA2D7D", hash_generated_method = "481C79F013B64728F8166BEA191D1788")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 10:54:21.583 -0400", hash_original_method = "61498548735D8100B59ED3B549CA2D7D", hash_generated_method = "2C5CEF8C87C5FA73F63B82AD5E24CA2F")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public URL toURL() throws MalformedURLException {
         {
-            throw new IllegalArgumentException("URI is not absolute: " + toString());
+            if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("URI is not absolute: " + toString());
         } //End block
-        URL var65628859BF01FE50778C4D6D55A80A22_1451525310 = (new URL(toString()));
+        URL var65628859BF01FE50778C4D6D55A80A22_1877456587 = (new URL(toString()));
         return (URL)dsTaint.getTaint();
         // ---------- Original Method ----------
         //if (!absolute) {
@@ -1301,7 +1299,7 @@ public final class URI implements Comparable<URI>, Serializable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:12.388 -0400", hash_original_method = "B129014206D9E37AE762E15B64782F43", hash_generated_method = "2653B4B7E383DA2BFB127AEF056A974F")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 10:54:21.584 -0400", hash_original_method = "B129014206D9E37AE762E15B64782F43", hash_generated_method = "2D3AD1309C0E65385F157BAFF87A4E40")
     @DSModeled(DSC.SAFE)
     private void readObject(ObjectInputStream in) throws IOException, ClassNotFoundException {
         dsTaint.addTaint(in.dsTaint);
@@ -1312,7 +1310,7 @@ public final class URI implements Comparable<URI>, Serializable {
         } //End block
         catch (URISyntaxException e)
         {
-            throw new IOException(e.toString());
+            if (DroidSafeAndroidRuntime.control) throw new IOException(e.toString());
         } //End block
         // ---------- Original Method ----------
         //in.defaultReadObject();
@@ -1324,7 +1322,7 @@ public final class URI implements Comparable<URI>, Serializable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:12.388 -0400", hash_original_method = "85F695901967363D4183474FCAC9E200", hash_generated_method = "366A676DAE1D9353A7CD7E5F71A57AE7")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 10:54:21.585 -0400", hash_original_method = "85F695901967363D4183474FCAC9E200", hash_generated_method = "366A676DAE1D9353A7CD7E5F71A57AE7")
     @DSModeled(DSC.SAFE)
     private void writeObject(ObjectOutputStream out) throws IOException, ClassNotFoundException {
         dsTaint.addTaint(out.dsTaint);
@@ -1337,9 +1335,9 @@ public final class URI implements Comparable<URI>, Serializable {
 
     
     private static class PartEncoder extends UriCodec {
-        private final String extraLegalCharacters;
+        private String extraLegalCharacters;
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:12.388 -0400", hash_original_method = "4347DCA156D9FED6289ADFF2BB08A2D3", hash_generated_method = "EE1E1D91CB165B518DDCAFCEC4B6898D")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 10:54:21.587 -0400", hash_original_method = "4347DCA156D9FED6289ADFF2BB08A2D3", hash_generated_method = "EE1E1D91CB165B518DDCAFCEC4B6898D")
         @DSModeled(DSC.SAFE)
          PartEncoder(String extraLegalCharacters) {
             dsTaint.addTaint(extraLegalCharacters);
@@ -1348,12 +1346,12 @@ public final class URI implements Comparable<URI>, Serializable {
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:12.388 -0400", hash_original_method = "AEEAAE9B7BA17A8A3158EAAD8BCDF90F", hash_generated_method = "1BF9B40663C50C84652244D13B54FACA")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 10:54:21.589 -0400", hash_original_method = "AEEAAE9B7BA17A8A3158EAAD8BCDF90F", hash_generated_method = "2F0D11E38CAF32712672EDAA45BA54E1")
         //DSFIXME:  CODE0002: Requires DSC value to be set
         @Override
         protected boolean isRetained(char c) {
             dsTaint.addTaint(c);
-            boolean var0AABE6B03E9E209976286093DF507BCC_489914594 = (UNRESERVED.indexOf(c) != -1
+            boolean var0AABE6B03E9E209976286093DF507BCC_1844861018 = (UNRESERVED.indexOf(c) != -1
                     || PUNCTUATION.indexOf(c) != -1
                     || extraLegalCharacters.indexOf(c) != -1
                     || (c > 127 && !Character.isSpaceChar(c) && !Character.isISOControl(c)));

@@ -2,6 +2,7 @@ package java.util;
 
 // Droidsafe Imports
 import droidsafe.helpers.*;
+import droidsafe.runtime.DroidSafeAndroidRuntime;
 import droidsafe.annotations.*;
 
 // import Iterator to deal with enhanced for loop translation
@@ -46,7 +47,7 @@ public class Stack<E> extends Vector<E> {
     @DSModeled(DSC.SAFE)
     @SuppressWarnings("unchecked")
     public synchronized E pop() {
-        {
+        if (DroidSafeAndroidRuntime.control) {
             throw new EmptyStackException();
         } //End block
         final int index;

@@ -784,7 +784,7 @@ public final class OsConstants {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:17.490 -0400", hash_original_method = "3AB8212983BF0429B17CE24DC73FC45D", hash_generated_method = "F070490F32023BDEF984396E0AA7019D")
     private static void initConstants() {
-        //DSFIXME:  CODE0010: Native static method requires manual modeling
+        //DSFIXME:  CODE0012: Native static method requires manual modeling
     }
 
     

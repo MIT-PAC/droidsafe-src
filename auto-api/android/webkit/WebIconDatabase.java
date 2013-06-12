@@ -191,37 +191,38 @@ public final class WebIconDatabase {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:06.930 -0400", hash_original_method = "09DB41E915458842B66716A0F4A99298", hash_generated_method = "279C52AD6C2DD0481083FB4E918F34F7")
     private static void nativeOpen(String path) {
-        //DSFIXME:  CODE0010: Native static method requires manual modeling
+        //DSFIXME:  CODE0012: Native static method requires manual modeling
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:06.930 -0400", hash_original_method = "05CE1FD565A687411AE79788D0AD3AC0", hash_generated_method = "8EE85F915A6968E7323D3B181ABF3E16")
     private static void nativeClose() {
-        //DSFIXME:  CODE0010: Native static method requires manual modeling
+        //DSFIXME:  CODE0012: Native static method requires manual modeling
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:06.930 -0400", hash_original_method = "97348A58E6F3F441F5641A708F990E53", hash_generated_method = "5DEC1CD32704B254EA327B3096C31C29")
     private static void nativeRemoveAllIcons() {
-        //DSFIXME:  CODE0010: Native static method requires manual modeling
+        //DSFIXME:  CODE0012: Native static method requires manual modeling
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:06.930 -0400", hash_original_method = "7A9F29B2861B02F7FC3392BEC615F1CE", hash_generated_method = "46EB9442FBB5752F2C2945C2B14AFC07")
     private static Bitmap nativeIconForPageUrl(String url) {
-        //DSFIXME:  CODE0010: Native static method requires manual modeling
+        //DSFIXME:  CODE0012: Native static method requires manual modeling
+    	return new Bitmap();
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:06.930 -0400", hash_original_method = "2C00D0447EBAC3016EE45074237E9738", hash_generated_method = "EFFB3158D07A81A014574B48DB9444A3")
     private static void nativeRetainIconForPageUrl(String url) {
-        //DSFIXME:  CODE0010: Native static method requires manual modeling
+        //DSFIXME:  CODE0012: Native static method requires manual modeling
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:06.930 -0400", hash_original_method = "37E8D938E87B68417ABA379E40BEC4F3", hash_generated_method = "23AF527C61229738B13BDD1A48F08EF5")
     private static void nativeReleaseIconForPageUrl(String url) {
-        //DSFIXME:  CODE0010: Native static method requires manual modeling
+        //DSFIXME:  CODE0012: Native static method requires manual modeling
     }
 
     
@@ -396,9 +397,9 @@ public final class WebIconDatabase {
 
         
         private class IconResult {
-            private final String mUrl;
-            private final Bitmap mIcon;
-            private final IconListener mListener;
+            private  String mUrl;
+            private Bitmap mIcon;
+            private IconListener mListener;
             
             @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:06.931 -0400", hash_original_method = "88D8D1712732D1C320641A492AB35980", hash_generated_method = "69B9315F061BB9E2419AC8126D3FA141")
             @DSModeled(DSC.SAFE)

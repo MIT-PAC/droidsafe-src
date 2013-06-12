@@ -3,35 +3,35 @@ package java.util.regex;
 // Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
+import droidsafe.runtime.*;
 
-// import Iterator to deal with enhanced for loop translation
+// needed for enhanced for control translations
 import java.util.Iterator;
-
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.Serializable;
 
 public final class Pattern implements Serializable {
-    private static final long serialVersionUID = 5073258162644648461L;
-    public static final int UNIX_LINES = 0x01;
-    public static final int CASE_INSENSITIVE = 0x02;
-    public static final int COMMENTS = 0x04;
-    public static final int MULTILINE = 0x08;
-    public static final int LITERAL = 0x10;
-    public static final int DOTALL = 0x20;
-    public static final int UNICODE_CASE = 0x40;
-    public static final int CANON_EQ = 0x80;
-    private final String pattern;
-    private final int flags;
+    private static long serialVersionUID = 5073258162644648461L;
+    public static int UNIX_LINES = 0x01;
+    public static int CASE_INSENSITIVE = 0x02;
+    public static int COMMENTS = 0x04;
+    public static int MULTILINE = 0x08;
+    public static int LITERAL = 0x10;
+    public static int DOTALL = 0x20;
+    public static int UNICODE_CASE = 0x40;
+    public static int CANON_EQ = 0x80;
+    private String pattern;
+    private int flags;
     transient int address;
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:14.834 -0400", hash_original_method = "F3225888DE48ADF8B6D1D654970A412C", hash_generated_method = "8B69F7577DAE1E9F0F720B81B23D0215")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 12:35:50.735 -0400", hash_original_method = "F3225888DE48ADF8B6D1D654970A412C", hash_generated_method = "0BF42E92C48CC4161C3E526019EC1A7D")
     @DSModeled(DSC.SAFE)
     private Pattern(String pattern, int flags) throws PatternSyntaxException {
         dsTaint.addTaint(flags);
         dsTaint.addTaint(pattern);
         {
-            throw new UnsupportedOperationException("CANON_EQ flag not supported");
+            if (DroidSafeAndroidRuntime.control) throw new UnsupportedOperationException("CANON_EQ flag not supported");
         } //End block
         compile();
         // ---------- Original Method ----------
@@ -44,7 +44,7 @@ public final class Pattern implements Serializable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:14.834 -0400", hash_original_method = "82136F98856305B5433C94AE9E660844", hash_generated_method = "CED5FB025AA1BD9BD356F88EF55BE5AC")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 12:35:50.738 -0400", hash_original_method = "82136F98856305B5433C94AE9E660844", hash_generated_method = "CED5FB025AA1BD9BD356F88EF55BE5AC")
     @DSModeled(DSC.SAFE)
     public Matcher matcher(CharSequence input) {
         dsTaint.addTaint(input);
@@ -54,12 +54,12 @@ public final class Pattern implements Serializable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:14.834 -0400", hash_original_method = "F7B5873C63BE8AA500AA3CBEE5803928", hash_generated_method = "2560EA1453148F4A4AE69ED2D632A371")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 12:35:50.742 -0400", hash_original_method = "F7B5873C63BE8AA500AA3CBEE5803928", hash_generated_method = "8FD15C8E530AF5A5852A6B404050B6B4")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public String[] split(CharSequence input, int limit) {
         dsTaint.addTaint(limit);
         dsTaint.addTaint(input);
-        String[] var7AA7A539EC7678A4BFBE8BCB900D0B07_1240740162 = (Splitter.split(this, pattern, input.toString(), limit));
+        String[] var7AA7A539EC7678A4BFBE8BCB900D0B07_1240445148 = (Splitter.split(this, pattern, input.toString(), limit));
         String[] retVal = new String[1];
         retVal[0] = dsTaint.getTaintString();
         return retVal;
@@ -68,11 +68,11 @@ public final class Pattern implements Serializable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:14.834 -0400", hash_original_method = "B852F916561127A3CF7FAAC0D8165D0A", hash_generated_method = "FC4104B8E3A8A0B55DCF5E144147666F")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 12:35:50.745 -0400", hash_original_method = "B852F916561127A3CF7FAAC0D8165D0A", hash_generated_method = "F8916C412DCD6CD5A45EBBFF2A875EEF")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public String[] split(CharSequence input) {
         dsTaint.addTaint(input);
-        String[] var809184E771E915B5C867FEBE4CDD7F45_2034623747 = (split(input, 0));
+        String[] var809184E771E915B5C867FEBE4CDD7F45_330224911 = (split(input, 0));
         String[] retVal = new String[1];
         retVal[0] = dsTaint.getTaintString();
         return retVal;
@@ -81,7 +81,7 @@ public final class Pattern implements Serializable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:14.834 -0400", hash_original_method = "266BA96807DA041E9813A92F169CCF9C", hash_generated_method = "BF43ABF92777615EDD76D4F9A464B910")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 12:35:50.747 -0400", hash_original_method = "266BA96807DA041E9813A92F169CCF9C", hash_generated_method = "BF43ABF92777615EDD76D4F9A464B910")
     @DSModeled(DSC.SAFE)
     public String pattern() {
         return dsTaint.getTaintString();
@@ -90,7 +90,7 @@ public final class Pattern implements Serializable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:14.834 -0400", hash_original_method = "78D8A2FB7B521C80E554EF489653C471", hash_generated_method = "83E043808D1DB03D439FE216652B691D")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 12:35:50.748 -0400", hash_original_method = "78D8A2FB7B521C80E554EF489653C471", hash_generated_method = "83E043808D1DB03D439FE216652B691D")
     @DSModeled(DSC.SAFE)
     @Override
     public String toString() {
@@ -100,7 +100,7 @@ public final class Pattern implements Serializable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:14.834 -0400", hash_original_method = "2653DED91010C405DFA7C9A961BBF2C3", hash_generated_method = "9E1DA8B81A04AD378465650AB275E7F6")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 12:35:50.750 -0400", hash_original_method = "2653DED91010C405DFA7C9A961BBF2C3", hash_generated_method = "9E1DA8B81A04AD378465650AB275E7F6")
     @DSModeled(DSC.SAFE)
     public int flags() {
         return dsTaint.getTaintInt();
@@ -109,23 +109,23 @@ public final class Pattern implements Serializable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:14.834 -0400", hash_original_method = "029800E42310A5C751B07B4109A52530", hash_generated_method = "480AB8A4C0BB731089E7125A8D3EDCD6")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 12:35:50.752 -0400", hash_original_method = "029800E42310A5C751B07B4109A52530", hash_generated_method = "480AB8A4C0BB731089E7125A8D3EDCD6")
     public static Pattern compile(String regularExpression, int flags) throws PatternSyntaxException {
         return new Pattern(regularExpression, flags);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:14.834 -0400", hash_original_method = "F247F5CF281C5F9996F6C94B5EA92FED", hash_generated_method = "314F6EA271F181E366513165FAC3D0EC")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 12:35:50.769 -0400", hash_original_method = "F247F5CF281C5F9996F6C94B5EA92FED", hash_generated_method = "314F6EA271F181E366513165FAC3D0EC")
     public static Pattern compile(String pattern) {
         return new Pattern(pattern, 0);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:14.834 -0400", hash_original_method = "7197179B856EBAB7792F85CCE5015D4A", hash_generated_method = "8F36B1BD9E7E9A4C99FA3D2427903E8A")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 12:35:50.773 -0400", hash_original_method = "7197179B856EBAB7792F85CCE5015D4A", hash_generated_method = "6459F55636956EECA12DD9045E6D9716")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     private void compile() throws PatternSyntaxException {
         {
-            throw new NullPointerException("pattern == null");
+            if (DroidSafeAndroidRuntime.control) throw new NullPointerException("pattern == null");
         } //End block
         String icuPattern;
         icuPattern = pattern;
@@ -148,13 +148,13 @@ public final class Pattern implements Serializable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:14.834 -0400", hash_original_method = "3E791313A82E18EC1ADA7594E9746E1F", hash_generated_method = "A62C31C049A9EDD862B1DBC9F26CF5B2")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 12:35:50.776 -0400", hash_original_method = "3E791313A82E18EC1ADA7594E9746E1F", hash_generated_method = "A62C31C049A9EDD862B1DBC9F26CF5B2")
     public static boolean matches(String regularExpression, CharSequence input) {
         return new Matcher(new Pattern(regularExpression, 0), input).matches();
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:14.835 -0400", hash_original_method = "B294BEEA973D4CB6A8EA737C4F56E6F2", hash_generated_method = "91B1AE274685940131731B45422E6FFE")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 12:35:50.778 -0400", hash_original_method = "B294BEEA973D4CB6A8EA737C4F56E6F2", hash_generated_method = "91B1AE274685940131731B45422E6FFE")
     public static String quote(String string) {
         StringBuilder sb = new StringBuilder();
         sb.append("\\Q");
@@ -168,7 +168,7 @@ public final class Pattern implements Serializable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:14.835 -0400", hash_original_method = "40BF36D36128D4529051C108E3BC0352", hash_generated_method = "2423E3A5A529212650FA426A2F677B91")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 12:35:50.786 -0400", hash_original_method = "40BF36D36128D4529051C108E3BC0352", hash_generated_method = "2423E3A5A529212650FA426A2F677B91")
     @DSModeled(DSC.SAFE)
     @Override
     protected void finalize() throws Throwable {
@@ -189,7 +189,7 @@ public final class Pattern implements Serializable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:14.835 -0400", hash_original_method = "53B6DF024185B8C2D6E69EA267F8FA46", hash_generated_method = "1BD666E2B6EDF13FE0A5E674873CA64C")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 12:35:50.792 -0400", hash_original_method = "53B6DF024185B8C2D6E69EA267F8FA46", hash_generated_method = "1BD666E2B6EDF13FE0A5E674873CA64C")
     @DSModeled(DSC.SAFE)
     private void readObject(ObjectInputStream s) throws IOException, ClassNotFoundException {
         dsTaint.addTaint(s.dsTaint);
@@ -201,15 +201,14 @@ public final class Pattern implements Serializable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:14.835 -0400", hash_original_method = "8263343A665FA522ECFED6CB0D912EAE", hash_generated_method = "480897A941524788AA53F14F2C01EA79")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 12:35:50.794 -0400", hash_original_method = "8263343A665FA522ECFED6CB0D912EAE", hash_generated_method = "B13E0255C323949B5BBE9E38B2F35561")
     private static void closeImpl(int addr) {
-        //DSFIXME:  CODE0010: Native static method requires manual modeling
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:14.835 -0400", hash_original_method = "A1A14EF44BC9EE14629BD2A8EC1D3CE0", hash_generated_method = "C4AC0D943969198B784E75EE9C72368E")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 12:35:50.800 -0400", hash_original_method = "A1A14EF44BC9EE14629BD2A8EC1D3CE0", hash_generated_method = "3F087119EC49970C907FDB1A08050533")
     private static int compileImpl(String regex, int flags) {
-        //DSFIXME:  CODE0010: Native static method requires manual modeling
+        return DSUtils.UNKNOWN_INT;
     }
 
     

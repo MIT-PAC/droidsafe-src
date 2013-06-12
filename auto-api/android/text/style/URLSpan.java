@@ -23,6 +23,7 @@ public class URLSpan extends ClickableSpan implements ParcelableSpan {
     @DSModeled(DSC.SAFE)
     public URLSpan(String url) {
         dsTaint.addTaint(url);
+        mURL = url;
         // ---------- Original Method ----------
         //mURL = url;
     }

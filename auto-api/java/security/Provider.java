@@ -3,10 +3,10 @@ package java.security;
 // Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
+import droidsafe.runtime.*;
 
-// import Iterator to deal with enhanced for loop translation
+// needed for enhanced for control translations
 import java.util.Iterator;
-
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.NotActiveException;
@@ -44,9 +44,8 @@ public abstract class Provider extends Properties {
     private transient String lastType;
     private transient Provider.Service lastServicesByType;
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:12.674 -0400", hash_original_method = "CD3EC30E89504BC69886C014A5CD7A7E", hash_generated_method = "20FA04A2CBA59B722016BE20EEAD36DA")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
-    protected Provider(String name, double version, String info) {
+    @DSGenerator(tool_name="Doppelganger",tool_version="0.4",generated_on="2013-06-11 11:15:12.681 -0400",hash_original_method="CD20F19EDED4066F9FA28FD55133940E",hash_generated_method="1CE071B6762BDB597F028E26FF3E2760")
+protected Provider(String name, double version, String info) {
         dsTaint.addTaint(name);
         dsTaint.addTaint(version);
         dsTaint.addTaint(info);
@@ -61,7 +60,7 @@ public abstract class Provider extends Properties {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:12.674 -0400", hash_original_method = "7070E6AABEDCBA653834DDC8CF79A47C", hash_generated_method = "F47755EA38582EE7C3877DD72123E9B0")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 11:01:53.692 -0400", hash_original_method = "7070E6AABEDCBA653834DDC8CF79A47C", hash_generated_method = "F47755EA38582EE7C3877DD72123E9B0")
     @DSModeled(DSC.SAFE)
     public String getName() {
         return dsTaint.getTaintString();
@@ -70,7 +69,7 @@ public abstract class Provider extends Properties {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:12.674 -0400", hash_original_method = "849DADC9512AC29CFF5A5EB4D1517425", hash_generated_method = "357D7F9B618AB414E6E6DBBDFE525B7E")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 11:01:53.696 -0400", hash_original_method = "849DADC9512AC29CFF5A5EB4D1517425", hash_generated_method = "357D7F9B618AB414E6E6DBBDFE525B7E")
     @DSModeled(DSC.SAFE)
     public double getVersion() {
         return dsTaint.getTaintDouble();
@@ -79,7 +78,7 @@ public abstract class Provider extends Properties {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:12.674 -0400", hash_original_method = "90F1C2C1B854E8544A3CF05D4B3BD6E7", hash_generated_method = "81F650B189D54EAB726C6EFAE06B761A")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 11:01:53.697 -0400", hash_original_method = "90F1C2C1B854E8544A3CF05D4B3BD6E7", hash_generated_method = "81F650B189D54EAB726C6EFAE06B761A")
     @DSModeled(DSC.SAFE)
     public String getInfo() {
         return dsTaint.getTaintString();
@@ -88,7 +87,7 @@ public abstract class Provider extends Properties {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:12.674 -0400", hash_original_method = "58EC0A1A07497E3FA377B5366380E5E3", hash_generated_method = "598E3123C1B9993C3555ABC553FA6CF3")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 11:01:53.702 -0400", hash_original_method = "58EC0A1A07497E3FA377B5366380E5E3", hash_generated_method = "598E3123C1B9993C3555ABC553FA6CF3")
     @DSModeled(DSC.SAFE)
     @Override
     public String toString() {
@@ -98,7 +97,7 @@ public abstract class Provider extends Properties {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:12.675 -0400", hash_original_method = "53793BFB01C9C5B2BDDE9F63C2E38535", hash_generated_method = "A3119A9C3C7C97CA499A1B3AC68BDDAE")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 11:01:53.707 -0400", hash_original_method = "53793BFB01C9C5B2BDDE9F63C2E38535", hash_generated_method = "A3119A9C3C7C97CA499A1B3AC68BDDAE")
     @DSModeled(DSC.SAFE)
     @Override
     public synchronized void clear() {
@@ -144,7 +143,7 @@ public abstract class Provider extends Properties {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:12.675 -0400", hash_original_method = "EB6BD048CAF9E12CFD99EC1891725291", hash_generated_method = "3FD7D591C6C6C9B598AD7DB133417D94")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 11:01:53.710 -0400", hash_original_method = "EB6BD048CAF9E12CFD99EC1891725291", hash_generated_method = "3FD7D591C6C6C9B598AD7DB133417D94")
     @DSModeled(DSC.SAFE)
     @Override
     public synchronized void load(InputStream inStream) throws IOException {
@@ -160,7 +159,7 @@ public abstract class Provider extends Properties {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:12.675 -0400", hash_original_method = "CE4C2613BF29D966F3F961299EB30975", hash_generated_method = "B766309E65137ACC8A7818A30E92A8E6")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 11:01:53.711 -0400", hash_original_method = "CE4C2613BF29D966F3F961299EB30975", hash_generated_method = "B766309E65137ACC8A7818A30E92A8E6")
     @DSModeled(DSC.SAFE)
     @Override
     public synchronized void putAll(Map<?,?> t) {
@@ -171,9 +170,8 @@ public abstract class Provider extends Properties {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:12.675 -0400", hash_original_method = "F898BA9F30F0CED7EAABA59AE5C4F6F9", hash_generated_method = "0BD1EC138634F87324A7E8EF28526669")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
-    private void myPutAll(Map<?,?> t) {
+    @DSGenerator(tool_name="Doppelganger",tool_version="0.4",generated_on="2013-06-11 11:15:12.681 -0400",hash_original_method="CD20F19EDED4066F9FA28FD55133940E",hash_generated_method="1CE071B6762BDB597F028E26FF3E2760")
+private void myPutAll(Map<?,?> t) {
         dsTaint.addTaint(t.dsTaint);
         {
             changedProperties = new Properties();
@@ -210,9 +208,8 @@ public abstract class Provider extends Properties {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:12.675 -0400", hash_original_method = "70D9A28808783B7E2708BCE915ECB209", hash_generated_method = "DEF751F8B9449050100CFF7C634C260A")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
-    @Override
+    @DSGenerator(tool_name="Doppelganger",tool_version="0.4",generated_on="2013-06-11 11:15:12.681 -0400",hash_original_method="CD20F19EDED4066F9FA28FD55133940E",hash_generated_method="1CE071B6762BDB597F028E26FF3E2760")
+@Override
     public synchronized Set<Map.Entry<Object,Object>> entrySet() {
         Set<Map.Entry<Object,Object>> var892416AEF0B54CAC53D8AA6BB26194AB_930381112 = (Collections.unmodifiableSet(super.entrySet()));
         return (Set<Map.Entry<Object,Object>>)dsTaint.getTaint();
@@ -221,9 +218,8 @@ public abstract class Provider extends Properties {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:12.675 -0400", hash_original_method = "45BA03BABBCEC97C3CDEDDFAAD34C546", hash_generated_method = "E44ACDFB5B8660BC74B5F05C026476F3")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
-    @Override
+    @DSGenerator(tool_name="Doppelganger",tool_version="0.4",generated_on="2013-06-11 11:15:12.681 -0400",hash_original_method="CD20F19EDED4066F9FA28FD55133940E",hash_generated_method="1CE071B6762BDB597F028E26FF3E2760")
+@Override
     public Set<Object> keySet() {
         Set<Object> var46B2F611574D8BC5F48B8909B57175B2_1075403632 = (Collections.unmodifiableSet(super.keySet()));
         return (Set<Object>)dsTaint.getTaint();
@@ -232,9 +228,8 @@ public abstract class Provider extends Properties {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:12.675 -0400", hash_original_method = "4FF8F6E11AAD8FB860F173913A5840CE", hash_generated_method = "B05AC059E5E0D0AFCF9FE5E4FD231C94")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
-    @Override
+    @DSGenerator(tool_name="Doppelganger",tool_version="0.4",generated_on="2013-06-11 11:15:12.681 -0400",hash_original_method="CD20F19EDED4066F9FA28FD55133940E",hash_generated_method="1CE071B6762BDB597F028E26FF3E2760")
+@Override
     public Collection<Object> values() {
         Collection<Object> varBA06436CFEB7347D9D4F4B0646498795_2066608941 = (Collections.unmodifiableCollection(super.values()));
         return (Collection<Object>)dsTaint.getTaint();
@@ -243,9 +238,8 @@ public abstract class Provider extends Properties {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:12.675 -0400", hash_original_method = "6B0BAE35C6955DE6DEF5897424A78326", hash_generated_method = "5C2347F4FE56EC45D7613B27BA5E64F1")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
-    @Override
+    @DSGenerator(tool_name="Doppelganger",tool_version="0.4",generated_on="2013-06-11 11:15:12.681 -0400",hash_original_method="CD20F19EDED4066F9FA28FD55133940E",hash_generated_method="1CE071B6762BDB597F028E26FF3E2760")
+@Override
     public synchronized Object put(Object key, Object value) {
         dsTaint.addTaint(value.dsTaint);
         dsTaint.addTaint(key.dsTaint);
@@ -285,9 +279,8 @@ public abstract class Provider extends Properties {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:12.675 -0400", hash_original_method = "8EA23C4ABA882E49A95AE531F4BFEB20", hash_generated_method = "CD591483F70BD7B69AAFEE0E5AC5A1E8")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
-    @Override
+    @DSGenerator(tool_name="Doppelganger",tool_version="0.4",generated_on="2013-06-11 11:15:12.681 -0400",hash_original_method="CD20F19EDED4066F9FA28FD55133940E",hash_generated_method="1CE071B6762BDB597F028E26FF3E2760")
+@Override
     public synchronized Object remove(Object key) {
         dsTaint.addTaint(key.dsTaint);
         {
@@ -327,9 +320,8 @@ public abstract class Provider extends Properties {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:12.676 -0400", hash_original_method = "73ADEB588A693290C2EBE420EE1B60DD", hash_generated_method = "7133B1F4DE4F20CACAE6EF6AB10286C0")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
-     boolean implementsAlg(String serv, String alg, String attribute, String val) {
+    @DSGenerator(tool_name="Doppelganger",tool_version="0.4",generated_on="2013-06-11 11:15:12.681 -0400",hash_original_method="CD20F19EDED4066F9FA28FD55133940E",hash_generated_method="1CE071B6762BDB597F028E26FF3E2760")
+boolean implementsAlg(String serv, String alg, String attribute, String val) {
         dsTaint.addTaint(alg);
         dsTaint.addTaint(val);
         dsTaint.addTaint(attribute);
@@ -369,9 +361,8 @@ public abstract class Provider extends Properties {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:12.676 -0400", hash_original_method = "205FEBDC4595F3CAF3DB8C26A01A3B21", hash_generated_method = "65F9E41957FE26FF69F6F6149A5277BF")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
-    private boolean checkAttribute(String servAlg, String attribute, String val) {
+    @DSGenerator(tool_name="Doppelganger",tool_version="0.4",generated_on="2013-06-11 11:15:12.681 -0400",hash_original_method="CD20F19EDED4066F9FA28FD55133940E",hash_generated_method="1CE071B6762BDB597F028E26FF3E2760")
+private boolean checkAttribute(String servAlg, String attribute, String val) {
         dsTaint.addTaint(val);
         dsTaint.addTaint(attribute);
         dsTaint.addTaint(servAlg);
@@ -410,7 +401,7 @@ public abstract class Provider extends Properties {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:12.676 -0400", hash_original_method = "6418C82159D4FAB251CB16B6C408D61D", hash_generated_method = "9D3171D68789AE5D46437E00A2B03511")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 11:01:53.738 -0400", hash_original_method = "6418C82159D4FAB251CB16B6C408D61D", hash_generated_method = "9D3171D68789AE5D46437E00A2B03511")
     @DSModeled(DSC.SAFE)
      void setProviderNumber(int n) {
         dsTaint.addTaint(n);
@@ -419,7 +410,7 @@ public abstract class Provider extends Properties {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:12.676 -0400", hash_original_method = "6209D7B36FBC76163C52BAAF1CE53C35", hash_generated_method = "21DD0B1B2F36E868A69CD2DBD35F31CA")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 11:01:53.739 -0400", hash_original_method = "6209D7B36FBC76163C52BAAF1CE53C35", hash_generated_method = "21DD0B1B2F36E868A69CD2DBD35F31CA")
     @DSModeled(DSC.SAFE)
      int getProviderNumber() {
         return dsTaint.getTaintInt();
@@ -428,9 +419,8 @@ public abstract class Provider extends Properties {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:12.676 -0400", hash_original_method = "6BFCD4E62487080CD7F60A29BC4CC43B", hash_generated_method = "F922F78F129200CADACDF4E25386E328")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
-    synchronized Provider.Service getService(String type) {
+    @DSGenerator(tool_name="Doppelganger",tool_version="0.4",generated_on="2013-06-11 11:15:12.681 -0400",hash_original_method="CD20F19EDED4066F9FA28FD55133940E",hash_generated_method="1CE071B6762BDB597F028E26FF3E2760")
+synchronized Provider.Service getService(String type) {
         dsTaint.addTaint(type);
         updatePropertyServiceTable();
         {
@@ -470,14 +460,13 @@ public abstract class Provider extends Properties {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:12.676 -0400", hash_original_method = "6DABE02DE2A4DD1C36F9592BEF5E1C73", hash_generated_method = "A698798DDACEF7A81FF80C97C4FD57BF")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
-    public synchronized Provider.Service getService(String type,
+    @DSGenerator(tool_name="Doppelganger",tool_version="0.4",generated_on="2013-06-11 11:15:12.681 -0400",hash_original_method="CD20F19EDED4066F9FA28FD55133940E",hash_generated_method="1CE071B6762BDB597F028E26FF3E2760")
+public synchronized Provider.Service getService(String type,
             String algorithm) {
         dsTaint.addTaint(type);
         dsTaint.addTaint(algorithm);
         {
-            throw new NullPointerException();
+            if (DroidSafeAndroidRuntime.control) throw new NullPointerException();
         } //End block
         {
             boolean var5D9786D09CE430680B17444C7FCE5061_1674361215 = (type.equals(lastServiceName) && algorithm.equalsIgnoreCase(lastAlgorithm));
@@ -510,9 +499,8 @@ public abstract class Provider extends Properties {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:12.677 -0400", hash_original_method = "8008CDA805FE131E4E7ECE670E22E200", hash_generated_method = "A746E41C066F7DC05B226223F4203A3F")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
-    public synchronized Set<Provider.Service> getServices() {
+    @DSGenerator(tool_name="Doppelganger",tool_version="0.4",generated_on="2013-06-11 11:15:12.681 -0400",hash_original_method="CD20F19EDED4066F9FA28FD55133940E",hash_generated_method="1CE071B6762BDB597F028E26FF3E2760")
+public synchronized Set<Provider.Service> getServices() {
         updatePropertyServiceTable();
         {
             lastServicesSet = new HashSet<Service>(serviceTable.values());
@@ -543,12 +531,11 @@ public abstract class Provider extends Properties {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:12.677 -0400", hash_original_method = "3E5E06298B83C020AD9BCF69B9E3CE94", hash_generated_method = "01F76E9353B1E04E15433EBD048F687B")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
-    protected synchronized void putService(Provider.Service s) {
+    @DSGenerator(tool_name="Doppelganger",tool_version="0.4",generated_on="2013-06-11 11:15:12.681 -0400",hash_original_method="CD20F19EDED4066F9FA28FD55133940E",hash_generated_method="1CE071B6762BDB597F028E26FF3E2760")
+protected synchronized void putService(Provider.Service s) {
         dsTaint.addTaint(s.dsTaint);
         {
-            throw new NullPointerException();
+            if (DroidSafeAndroidRuntime.control) throw new NullPointerException();
         } //End block
         {
             boolean varF52B1BD6E65C5078A2BDD1FFCE56BDE7_395862720 = ("Provider".equals(s.getType()));
@@ -596,12 +583,11 @@ public abstract class Provider extends Properties {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:12.677 -0400", hash_original_method = "D2521231A8F61254D866781010E5F7B6", hash_generated_method = "0CA86F8B7F7FDF39EF4DE2684D84B324")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
-    protected synchronized void removeService(Provider.Service s) {
+    @DSGenerator(tool_name="Doppelganger",tool_version="0.4",generated_on="2013-06-11 11:15:12.681 -0400",hash_original_method="CD20F19EDED4066F9FA28FD55133940E",hash_generated_method="1CE071B6762BDB597F028E26FF3E2760")
+protected synchronized void removeService(Provider.Service s) {
         dsTaint.addTaint(s.dsTaint);
         {
-            throw new NullPointerException();
+            if (DroidSafeAndroidRuntime.control)  throw new NullPointerException();
         } //End block
         servicesChanged();
         {
@@ -635,9 +621,8 @@ public abstract class Provider extends Properties {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:12.677 -0400", hash_original_method = "FD9674DD64603638CEEAFAAECA2377E1", hash_generated_method = "CB64E018759E0EF126A26506493AEFEE")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
-    private void serviceInfoToProperties(Provider.Service s) {
+    @DSGenerator(tool_name="Doppelganger",tool_version="0.4",generated_on="2013-06-11 11:15:12.681 -0400",hash_original_method="CD20F19EDED4066F9FA28FD55133940E",hash_generated_method="1CE071B6762BDB597F028E26FF3E2760")
+private void serviceInfoToProperties(Provider.Service s) {
         dsTaint.addTaint(s.dsTaint);
         super.put(s.type + "." + s.algorithm, s.className);
         {
@@ -683,9 +668,8 @@ public abstract class Provider extends Properties {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:12.677 -0400", hash_original_method = "E3342D080F10DDAA1FF9ED29EA29694F", hash_generated_method = "B6B71C05A9FCBAC797954FAC5CFF4AF6")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
-    private void serviceInfoFromProperties(Provider.Service s) {
+    @DSGenerator(tool_name="Doppelganger",tool_version="0.4",generated_on="2013-06-11 11:15:12.681 -0400",hash_original_method="CD20F19EDED4066F9FA28FD55133940E",hash_generated_method="1CE071B6762BDB597F028E26FF3E2760")
+private void serviceInfoFromProperties(Provider.Service s) {
         dsTaint.addTaint(s.dsTaint);
         super.remove(s.type + "." + s.algorithm);
         {
@@ -729,9 +713,8 @@ public abstract class Provider extends Properties {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:12.678 -0400", hash_original_method = "C88E49400116B5906A9CAC0E8D20528B", hash_generated_method = "E327BDBB10219BB8A3D1CFCC1BFB9443")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
-    private void removeFromPropertyServiceTable(Object key) {
+    @DSGenerator(tool_name="Doppelganger",tool_version="0.4",generated_on="2013-06-11 11:15:12.681 -0400",hash_original_method="CD20F19EDED4066F9FA28FD55133940E",hash_generated_method="1CE071B6762BDB597F028E26FF3E2760")
+private void removeFromPropertyServiceTable(Object key) {
         dsTaint.addTaint(key.dsTaint);
         String k;
         k = (String) key;
@@ -816,9 +799,8 @@ public abstract class Provider extends Properties {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:12.679 -0400", hash_original_method = "C12B51396475B7F4EF23B74D619C33FD", hash_generated_method = "EB58D245A8D5E770E57458709E86217A")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
-    private void updatePropertyServiceTable() {
+    @DSGenerator(tool_name="Doppelganger",tool_version="0.4",generated_on="2013-06-11 11:15:12.681 -0400",hash_original_method="CD20F19EDED4066F9FA28FD55133940E",hash_generated_method="1CE071B6762BDB597F028E26FF3E2760")
+private void updatePropertyServiceTable() {
         Object _key;
         Object _value;
         Provider.Service s;
@@ -961,7 +943,7 @@ public abstract class Provider extends Properties {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:12.679 -0400", hash_original_method = "FD7619437CD0960F1AEBA32A154F0328", hash_generated_method = "CB41C70BD9F0FAF2E7FBD358EB7A9DB1")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 11:01:53.777 -0400", hash_original_method = "FD7619437CD0960F1AEBA32A154F0328", hash_generated_method = "CB41C70BD9F0FAF2E7FBD358EB7A9DB1")
     @DSModeled(DSC.SAFE)
     private void servicesChanged() {
         lastServicesByType = null;
@@ -974,9 +956,8 @@ public abstract class Provider extends Properties {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:12.679 -0400", hash_original_method = "768CFC89B63FD1F782E3758D2BCFC6C0", hash_generated_method = "AC7B8811169D369785C1A6CEF383B7B0")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
-    private void putProviderInfo() {
+    @DSGenerator(tool_name="Doppelganger",tool_version="0.4",generated_on="2013-06-11 11:15:12.681 -0400",hash_original_method="CD20F19EDED4066F9FA28FD55133940E",hash_generated_method="1CE071B6762BDB597F028E26FF3E2760")
+private void putProviderInfo() {
         super.put("Provider.id name", (name != null) ? name : "null");
         super.put("Provider.id version", versionString);
         super.put("Provider.id info", (info != null) ? info : "null");
@@ -989,9 +970,8 @@ public abstract class Provider extends Properties {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:12.679 -0400", hash_original_method = "62DD35352FE8FA7B38C17798ED376C47", hash_generated_method = "34253D9ACE4F772CD2161C5C2D1251CE")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
-    private String getPropertyIgnoreCase(String key) {
+    @DSGenerator(tool_name="Doppelganger",tool_version="0.4",generated_on="2013-06-11 11:15:12.681 -0400",hash_original_method="CD20F19EDED4066F9FA28FD55133940E",hash_generated_method="1CE071B6762BDB597F028E26FF3E2760")
+private String getPropertyIgnoreCase(String key) {
         dsTaint.addTaint(key);
         String res;
         res = getProperty(key);
@@ -1026,9 +1006,8 @@ public abstract class Provider extends Properties {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:12.679 -0400", hash_original_method = "C9BE26B06AA230EA20C77B7F366C53C8", hash_generated_method = "860E4158A52ACBC31AEC00EF272B5112")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
-    private void readObject(java.io.ObjectInputStream in) throws NotActiveException, IOException, ClassNotFoundException {
+    @DSGenerator(tool_name="Doppelganger",tool_version="0.4",generated_on="2013-06-11 11:15:12.681 -0400",hash_original_method="CD20F19EDED4066F9FA28FD55133940E",hash_generated_method="1CE071B6762BDB597F028E26FF3E2760")
+private void readObject(java.io.ObjectInputStream in) throws NotActiveException, IOException, ClassNotFoundException {
         dsTaint.addTaint(in.dsTaint);
         in.defaultReadObject();
         versionString = String.valueOf(version);
@@ -1050,9 +1029,8 @@ public abstract class Provider extends Properties {
         private Class<?> implementation;
         private String lastClassName;
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:12.680 -0400", hash_original_method = "82CB06DCD943152835D64FFE915BA566", hash_generated_method = "DE21891C8DA68AA6A45530A9686875FE")
-        //DSFIXME:  CODE0002: Requires DSC value to be set
-        public Service(Provider provider, String type, String algorithm,
+        @DSGenerator(tool_name="Doppelganger",tool_version="0.4",generated_on="2013-06-11 11:15:12.681 -0400",hash_original_method="CD20F19EDED4066F9FA28FD55133940E",hash_generated_method="1CE071B6762BDB597F028E26FF3E2760")
+public Service(Provider provider, String type, String algorithm,
                 String className, List<String> aliases, Map<String, String> attributes) {
             dsTaint.addTaint(provider.dsTaint);
             dsTaint.addTaint(className);
@@ -1061,7 +1039,7 @@ public abstract class Provider extends Properties {
             dsTaint.addTaint(aliases.dsTaint);
             dsTaint.addTaint(algorithm);
             {
-                throw new NullPointerException();
+                if (DroidSafeAndroidRuntime.control) throw new NullPointerException();
             } //End block
             this.aliases = ((aliases != null) && (aliases.size() == 0))
                     ? Collections.<String>emptyList() : aliases;
@@ -1085,9 +1063,8 @@ public abstract class Provider extends Properties {
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:12.680 -0400", hash_original_method = "4CA8000463C36260BD9C3E4A41E197CE", hash_generated_method = "23E72BDB2FE670C50C91CCFECB8290A4")
-        //DSFIXME:  CODE0002: Requires DSC value to be set
-         void addAlias(String alias) {
+        @DSGenerator(tool_name="Doppelganger",tool_version="0.4",generated_on="2013-06-11 11:15:12.681 -0400",hash_original_method="CD20F19EDED4066F9FA28FD55133940E",hash_generated_method="1CE071B6762BDB597F028E26FF3E2760")
+void addAlias(String alias) {
             dsTaint.addTaint(alias);
             {
                 boolean var5374BEA4A10DF1C27BAE96F18BD3D766_1996494560 = ((aliases == null) || (aliases.size() == 0));
@@ -1104,9 +1081,8 @@ public abstract class Provider extends Properties {
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:12.680 -0400", hash_original_method = "2623207C72797F9950DF9980B680F416", hash_generated_method = "40F248E350427C669F26D743D676049A")
-        //DSFIXME:  CODE0002: Requires DSC value to be set
-         void putAttribute(String name, String value) {
+        @DSGenerator(tool_name="Doppelganger",tool_version="0.4",generated_on="2013-06-11 11:15:12.681 -0400",hash_original_method="CD20F19EDED4066F9FA28FD55133940E",hash_generated_method="1CE071B6762BDB597F028E26FF3E2760")
+void putAttribute(String name, String value) {
             dsTaint.addTaint(name);
             dsTaint.addTaint(value);
             {
@@ -1124,7 +1100,7 @@ public abstract class Provider extends Properties {
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:12.680 -0400", hash_original_method = "0E0B07C7C3039087C9D268CAF8DACC19", hash_generated_method = "C33423799F46A4D983B8408DB9A92B86")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 11:01:53.801 -0400", hash_original_method = "0E0B07C7C3039087C9D268CAF8DACC19", hash_generated_method = "C33423799F46A4D983B8408DB9A92B86")
         @DSModeled(DSC.SAFE)
         public final String getType() {
             return dsTaint.getTaintString();
@@ -1133,7 +1109,7 @@ public abstract class Provider extends Properties {
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:12.680 -0400", hash_original_method = "545C988DDCCD8AD6AA15877CD458F7D6", hash_generated_method = "4A58ADD94C981C54C4328FD02BFEBA19")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 11:01:53.804 -0400", hash_original_method = "545C988DDCCD8AD6AA15877CD458F7D6", hash_generated_method = "4A58ADD94C981C54C4328FD02BFEBA19")
         @DSModeled(DSC.SAFE)
         public final String getAlgorithm() {
             return dsTaint.getTaintString();
@@ -1142,7 +1118,7 @@ public abstract class Provider extends Properties {
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:12.680 -0400", hash_original_method = "4D6A4C5C7B57C5543A93E2FA43879F89", hash_generated_method = "45F6335264F85F3B8D73CAC979348AC1")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 11:01:53.806 -0400", hash_original_method = "4D6A4C5C7B57C5543A93E2FA43879F89", hash_generated_method = "45F6335264F85F3B8D73CAC979348AC1")
         @DSModeled(DSC.SAFE)
         public final Provider getProvider() {
             return (Provider)dsTaint.getTaint();
@@ -1151,7 +1127,7 @@ public abstract class Provider extends Properties {
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:12.680 -0400", hash_original_method = "8415940D3A1E5651F883E391EC68DA41", hash_generated_method = "3E715F9B2BAD076888FA9B36FB56AF32")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 11:01:53.809 -0400", hash_original_method = "8415940D3A1E5651F883E391EC68DA41", hash_generated_method = "3E715F9B2BAD076888FA9B36FB56AF32")
         @DSModeled(DSC.SAFE)
         public final String getClassName() {
             return dsTaint.getTaintString();
@@ -1160,12 +1136,11 @@ public abstract class Provider extends Properties {
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:12.680 -0400", hash_original_method = "0C10317D01C11D1034B9356679E58CA0", hash_generated_method = "E964E48FD92AF2393CAA7DB95A3C1FC2")
-        //DSFIXME:  CODE0002: Requires DSC value to be set
-        public final String getAttribute(String name) {
+        @DSGenerator(tool_name="Doppelganger",tool_version="0.4",generated_on="2013-06-11 11:15:12.681 -0400",hash_original_method="CD20F19EDED4066F9FA28FD55133940E",hash_generated_method="1CE071B6762BDB597F028E26FF3E2760")
+public final String getAttribute(String name) {
             dsTaint.addTaint(name);
             {
-                throw new NullPointerException();
+                if (DroidSafeAndroidRuntime.control) throw new NullPointerException();
             } //End block
             String var06E87D5FB99CE656F39053A5211F274D_569938748 = (attributes.get(name));
             return dsTaint.getTaintString();
@@ -1180,7 +1155,7 @@ public abstract class Provider extends Properties {
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:12.680 -0400", hash_original_method = "7A6F8F40D5019A1C644CF7CAD3518923", hash_generated_method = "62DF9CC14B52ACF7FAACC02919E391A7")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 11:01:53.813 -0400", hash_original_method = "7A6F8F40D5019A1C644CF7CAD3518923", hash_generated_method = "62DF9CC14B52ACF7FAACC02919E391A7")
         @DSModeled(DSC.SAFE)
          List<String> getAliases() {
             {
@@ -1195,9 +1170,8 @@ public abstract class Provider extends Properties {
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:12.681 -0400", hash_original_method = "802A5A00EF15D2BF7FB674CB175B5DD7", hash_generated_method = "12733BD69A7063B4AD0ECEB74CCD03B3")
-        //DSFIXME:  CODE0002: Requires DSC value to be set
-        public Object newInstance(Object constructorParameter) throws NoSuchAlgorithmException {
+        @DSGenerator(tool_name="Doppelganger",tool_version="0.4",generated_on="2013-06-11 11:15:12.681 -0400",hash_original_method="CD20F19EDED4066F9FA28FD55133940E",hash_generated_method="1CE071B6762BDB597F028E26FF3E2760")
+public Object newInstance(Object constructorParameter) throws NoSuchAlgorithmException {
             dsTaint.addTaint(constructorParameter.dsTaint);
             {
                 boolean var3339E2EE99840D316B470BF831351DB9_854297238 = (implementation == null || !className.equals(lastClassName));
@@ -1232,12 +1206,12 @@ public abstract class Provider extends Properties {
             {
                 boolean varF38959283B90E1EE47D3A31C8BA89AD9_463741811 = (!supportsParameter(constructorParameter));
                 {
-                    throw new InvalidParameterException(type + ": service cannot use the parameter");
+                    if (DroidSafeAndroidRuntime.control) throw new InvalidParameterException(type + ": service cannot use the parameter");
                 } //End block
             } //End collapsed parenthetic
             Class[] parameterTypes;
             parameterTypes = new Class[1];
-            Object[] initargs;
+            Object[] initargs = null;
             try 
             {
                 {
@@ -1263,7 +1237,7 @@ public abstract class Provider extends Properties {
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:12.681 -0400", hash_original_method = "A158C77880B526D8A49B8720A1D647AC", hash_generated_method = "DB00DA13554A544BC195F5E487477012")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 11:01:53.822 -0400", hash_original_method = "A158C77880B526D8A49B8720A1D647AC", hash_generated_method = "DB00DA13554A544BC195F5E487477012")
         @DSModeled(DSC.SAFE)
         public boolean supportsParameter(Object parameter) {
             dsTaint.addTaint(parameter.dsTaint);
@@ -1273,9 +1247,8 @@ public abstract class Provider extends Properties {
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:12.681 -0400", hash_original_method = "CD20F19EDED4066F9FA28FD55133940E", hash_generated_method = "1CE071B6762BDB597F028E26FF3E2760")
-        //DSFIXME:  CODE0002: Requires DSC value to be set
-        @Override
+        @DSGenerator(tool_name="Doppelganger",tool_version="0.4",generated_on="2013-06-11 11:15:12.681 -0400",hash_original_method="CD20F19EDED4066F9FA28FD55133940E",hash_generated_method="1CE071B6762BDB597F028E26FF3E2760")
+@Override
         public String toString() {
             String result;
             result = "Provider " + provider.getName() + " Service "

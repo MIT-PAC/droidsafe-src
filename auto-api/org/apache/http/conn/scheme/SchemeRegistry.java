@@ -2,6 +2,7 @@ package org.apache.http.conn.scheme;
 
 // Droidsafe Imports
 import droidsafe.helpers.*;
+import droidsafe.runtime.DroidSafeAndroidRuntime;
 import droidsafe.annotations.*;
 
 // import Iterator to deal with enhanced for loop translation
@@ -33,7 +34,7 @@ public final class SchemeRegistry {
         Scheme found;
         found = get(name);
         {
-            throw new IllegalStateException
+        	if (DroidSafeAndroidRuntime.control) throw new IllegalStateException
                 ("Scheme '"+name+"' not registered.");
         } //End block
         return (Scheme)dsTaint.getTaint();
@@ -52,7 +53,7 @@ public final class SchemeRegistry {
     public synchronized final Scheme getScheme(HttpHost host) {
         dsTaint.addTaint(host.dsTaint);
         {
-            throw new IllegalArgumentException("Host must not be null.");
+        	if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("Host must not be null.");
         } //End block
         Scheme var77FF38ED695E1F93308FF3D2993C8F6D_1310161748 = (getScheme(host.getSchemeName()));
         return (Scheme)dsTaint.getTaint();
@@ -68,7 +69,7 @@ public final class SchemeRegistry {
     @DSModeled(DSC.SAFE)
     public synchronized final Scheme get(String name) {
         dsTaint.addTaint(name);
-        throw new IllegalArgumentException("Name must not be null.");
+        if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("Name must not be null.");
         Scheme found;
         found = registeredSchemes.get(name);
         return (Scheme)dsTaint.getTaint();
@@ -84,7 +85,7 @@ public final class SchemeRegistry {
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public synchronized final Scheme register(Scheme sch) {
         dsTaint.addTaint(sch.dsTaint);
-        throw new IllegalArgumentException("Scheme must not be null.");
+        if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("Scheme must not be null.");
         Scheme old;
         old = registeredSchemes.put(sch.getName(), sch);
         return (Scheme)dsTaint.getTaint();
@@ -100,7 +101,7 @@ public final class SchemeRegistry {
     @DSModeled(DSC.SAFE)
     public synchronized final Scheme unregister(String name) {
         dsTaint.addTaint(name);
-        throw new IllegalArgumentException("Name must not be null.");
+        if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("Name must not be null.");
         Scheme gone;
         gone = registeredSchemes.remove(name);
         return (Scheme)dsTaint.getTaint();

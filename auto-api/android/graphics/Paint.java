@@ -1,16 +1,14 @@
 package android.graphics;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-
-// import Iterator to deal with enhanced for loop translation
-import java.util.Iterator;
-
 import android.text.GraphicsOperations;
-import android.text.SpannableString;
-import android.text.SpannedString;
 import android.text.TextUtils;
+import droidsafe.annotations.DSC;
+import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.DSModeled;
+import droidsafe.helpers.DSUtils;
+import droidsafe.runtime.DroidSafeAndroidRuntime;
+// import Iterator to deal with enhanced for loop translation
 
 public class Paint {
     public int mNativePaint;
@@ -216,6 +214,7 @@ public class Paint {
     public void setBidiFlags(int flags) {
         dsTaint.addTaint(flags);
         flags &= BIDI_FLAG_MASK;
+        if (DroidSafeAndroidRuntime.control)
         {
             throw new IllegalArgumentException("unknown bidi flag: " + flags);
         } //End block
@@ -231,6 +230,7 @@ public class Paint {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:01.257 -0400", hash_original_method = "1AEF3AE96B7B0567703FA6E8804026B1", hash_generated_method = "A7DF5EF096080F23085F1D9D12A330F9")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public int getFlags() {
+    	return dsTaint.getTaintInt();
     }
 
     
@@ -244,6 +244,7 @@ public class Paint {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:01.257 -0400", hash_original_method = "7451F33B471F8FECF642BA91F121AF70", hash_generated_method = "270130DB88A2999BD955FFC0120B88F4")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public int getHinting() {
+    	return dsTaint.getTaintInt();
     }
 
     
@@ -413,6 +414,7 @@ public class Paint {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:01.259 -0400", hash_original_method = "A6843949A5740747763B245A4340955B", hash_generated_method = "3BCF8459A7D552F67BF7E8E9A5A1A0FD")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public int getColor() {
+    	return dsTaint.getTaintInt();
     }
 
     
@@ -426,6 +428,7 @@ public class Paint {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:01.259 -0400", hash_original_method = "D39ECC24DCC5EA2AD7BF99F063294ED7", hash_generated_method = "B1FC3D62E17C20BEB2218622F72E8AC4")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public int getAlpha() {
+    	return dsTaint.getTaintInt();
     }
 
     
@@ -452,6 +455,7 @@ public class Paint {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:01.260 -0400", hash_original_method = "6176D634A3133A706881E45A3F2EC84E", hash_generated_method = "588580C0E5AADBC724F3D72712534C75")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public float getStrokeWidth() {
+    	return DSUtils.UNKNOWN_FLOAT;
     }
 
     
@@ -465,6 +469,7 @@ public class Paint {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:01.260 -0400", hash_original_method = "4CDA12126AC6E812A74D0B2AB0DB6A34", hash_generated_method = "CD7867D2A711986095F96429AFBAF435")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public float getStrokeMiter() {
+    	return DSUtils.UNKNOWN_FLOAT;
     }
 
     
@@ -798,6 +803,7 @@ public class Paint {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:01.263 -0400", hash_original_method = "2A8BEEB1775704D2B3E07881AE922147", hash_generated_method = "37F533ECE116789054750D56E6167363")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public float getTextSize() {
+    	return DSUtils.UNKNOWN_FLOAT;
     }
 
     
@@ -811,6 +817,7 @@ public class Paint {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:01.263 -0400", hash_original_method = "EEC42792D0F71421A678CE903B4FA263", hash_generated_method = "5C0A37072C52C7A82880C9DB23224D17")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public float getTextScaleX() {
+    	return DSUtils.UNKNOWN_FLOAT;
     }
 
     
@@ -824,6 +831,7 @@ public class Paint {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:01.263 -0400", hash_original_method = "07133F92A91BAB9C1735E9B633DC996D", hash_generated_method = "B7FC6A9B5C3F915E6B4CA4BB33D86CD5")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public float getTextSkewX() {
+    	return DSUtils.UNKNOWN_FLOAT;
     }
 
     
@@ -837,12 +845,14 @@ public class Paint {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:01.263 -0400", hash_original_method = "BAAE43E1F09165366508512053D99CC4", hash_generated_method = "DDAB26337442693D6826198D708C2FF3")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public float ascent() {
+    	return DSUtils.UNKNOWN_FLOAT;
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:01.263 -0400", hash_original_method = "C74862F858F8C9C5BB339033A2D07A66", hash_generated_method = "70B847676D209635304476F632FC5804")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public float descent() {
+    	return DSUtils.UNKNOWN_FLOAT;
     }
 
     
@@ -850,6 +860,7 @@ public class Paint {
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public float getFontMetrics(FontMetrics metrics) {
         dsTaint.addTaint(metrics.dsTaint);
+        return DSUtils.UNKNOWN_FLOAT;
     }
 
     
@@ -871,6 +882,7 @@ public class Paint {
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public int getFontMetricsInt(FontMetricsInt fmi) {
         dsTaint.addTaint(fmi.dsTaint);
+        return dsTaint.getTaintInt();
     }
 
     
@@ -904,9 +916,11 @@ public class Paint {
         dsTaint.addTaint(text);
         dsTaint.addTaint(index);
         dsTaint.addTaint(count);
+        if (DroidSafeAndroidRuntime.control)
         {
             throw new IllegalArgumentException("text cannot be null");
         } //End block
+        if (DroidSafeAndroidRuntime.control)
         {
             throw new ArrayIndexOutOfBoundsException();
         } //End block
@@ -947,6 +961,7 @@ public class Paint {
         dsTaint.addTaint(text);
         dsTaint.addTaint(index);
         dsTaint.addTaint(count);
+        return DSUtils.UNKNOWN_FLOAT;
     }
 
     
@@ -956,11 +971,13 @@ public class Paint {
         dsTaint.addTaint(text);
         dsTaint.addTaint(start);
         dsTaint.addTaint(end);
+        if (DroidSafeAndroidRuntime.control)
         {
             throw new IllegalArgumentException("text cannot be null");
         } //End block
         {
             boolean var9527A5CDD965760192A60A252272F336_1631132212 = ((start | end | (end - start) | (text.length() - end)) < 0);
+            if (DroidSafeAndroidRuntime.control)
             {
                 throw new IndexOutOfBoundsException();
             } //End block
@@ -1005,6 +1022,7 @@ public class Paint {
         dsTaint.addTaint(text);
         dsTaint.addTaint(start);
         dsTaint.addTaint(end);
+        return DSUtils.UNKNOWN_FLOAT;
     }
 
     
@@ -1012,6 +1030,7 @@ public class Paint {
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public float measureText(String text) {
         dsTaint.addTaint(text);
+        if (DroidSafeAndroidRuntime.control)
         {
             throw new IllegalArgumentException("text cannot be null");
         } //End block
@@ -1046,6 +1065,7 @@ public class Paint {
     //DSFIXME:  CODE0002: Requires DSC value to be set
     private float native_measureText(String text) {
         dsTaint.addTaint(text);
+        return dsTaint.getTaintFloat();
     }
 
     
@@ -1055,11 +1075,13 @@ public class Paint {
         dsTaint.addTaint(text);
         dsTaint.addTaint(start);
         dsTaint.addTaint(end);
+        if (DroidSafeAndroidRuntime.control)
         {
             throw new IllegalArgumentException("text cannot be null");
         } //End block
         {
             boolean var9527A5CDD965760192A60A252272F336_482614801 = ((start | end | (end - start) | (text.length() - end)) < 0);
+            if (DroidSafeAndroidRuntime.control)
             {
                 throw new IndexOutOfBoundsException();
             } //End block
@@ -1097,11 +1119,13 @@ public class Paint {
         dsTaint.addTaint(index);
         dsTaint.addTaint(count);
         dsTaint.addTaint(maxWidth);
+        if (DroidSafeAndroidRuntime.control)
         {
             throw new IllegalArgumentException("text cannot be null");
         } //End block
         {
             boolean var0D5AAC51BA58AAF43D4E2413FC1B1BFC_1564525074 = (index < 0 || text.length - index < Math.abs(count));
+            if (DroidSafeAndroidRuntime.control)
             {
                 throw new ArrayIndexOutOfBoundsException();
             } //End block
@@ -1150,6 +1174,7 @@ public class Paint {
         dsTaint.addTaint(index);
         dsTaint.addTaint(count);
         dsTaint.addTaint(maxWidth);
+        return DSUtils.UNKNOWN_INT;
     }
 
     
@@ -1164,11 +1189,13 @@ public class Paint {
         dsTaint.addTaint(maxWidth);
         dsTaint.addTaint(measureForwards);
         dsTaint.addTaint(end);
+        if (DroidSafeAndroidRuntime.control)
         {
             throw new IllegalArgumentException("text cannot be null");
         } //End block
         {
             boolean var9527A5CDD965760192A60A252272F336_2030037247 = ((start | end | (end - start) | (text.length() - end)) < 0);
+            if (DroidSafeAndroidRuntime.control)
             {
                 throw new IndexOutOfBoundsException();
             } //End block
@@ -1208,6 +1235,7 @@ public class Paint {
         dsTaint.addTaint(text);
         dsTaint.addTaint(maxWidth);
         dsTaint.addTaint(measureForwards);
+        if (DroidSafeAndroidRuntime.control)
         {
             throw new IllegalArgumentException("text cannot be null");
         } //End block
@@ -1254,6 +1282,7 @@ public class Paint {
         dsTaint.addTaint(text);
         dsTaint.addTaint(maxWidth);
         dsTaint.addTaint(measureForwards);
+        return dsTaint.getTaintInt();
     }
 
     
@@ -1265,9 +1294,11 @@ public class Paint {
         dsTaint.addTaint(index);
         dsTaint.addTaint(count);
         dsTaint.addTaint(widths);
+        if (DroidSafeAndroidRuntime.control)
         {
             throw new IllegalArgumentException("text cannot be null");
         } //End block
+        if (DroidSafeAndroidRuntime.control)
         {
             throw new ArrayIndexOutOfBoundsException();
         } //End block
@@ -1321,15 +1352,18 @@ public class Paint {
         dsTaint.addTaint(start);
         dsTaint.addTaint(widths);
         dsTaint.addTaint(end);
+        if (DroidSafeAndroidRuntime.control)
         {
             throw new IllegalArgumentException("text cannot be null");
         } //End block
         {
             boolean var9527A5CDD965760192A60A252272F336_1534543056 = ((start | end | (end - start) | (text.length() - end)) < 0);
+            if (DroidSafeAndroidRuntime.control)
             {
                 throw new IndexOutOfBoundsException();
             } //End block
         } //End collapsed parenthetic
+        if (DroidSafeAndroidRuntime.control)
         {
             throw new ArrayIndexOutOfBoundsException();
         } //End block
@@ -1365,15 +1399,18 @@ public class Paint {
         dsTaint.addTaint(start);
         dsTaint.addTaint(widths);
         dsTaint.addTaint(end);
+        if (DroidSafeAndroidRuntime.control)
         {
             throw new IllegalArgumentException("text cannot be null");
         } //End block
         {
             boolean var9527A5CDD965760192A60A252272F336_775844247 = ((start | end | (end - start) | (text.length() - end)) < 0);
+            if (DroidSafeAndroidRuntime.control)
             {
                 throw new IndexOutOfBoundsException();
             } //End block
         } //End collapsed parenthetic
+        if (DroidSafeAndroidRuntime.control)
         {
             throw new ArrayIndexOutOfBoundsException();
         } //End block
@@ -1425,9 +1462,11 @@ public class Paint {
         dsTaint.addTaint(contextStart);
         dsTaint.addTaint(end);
         dsTaint.addTaint(contextEnd);
+        if (DroidSafeAndroidRuntime.control)
         {
             throw new IllegalArgumentException("text cannot be null");
         } //End block
+        if (DroidSafeAndroidRuntime.control)
         {
             throw new IllegalArgumentException("unknown flags value: " + flags);
         } //End block
@@ -1435,10 +1474,12 @@ public class Paint {
             boolean var48E9A0E727B5C13031610714A0F3121E_835513284 = ((start | end | contextStart | contextEnd | (end - start)
                 | (start - contextStart) | (contextEnd - end) | (text.length() - end)
                 | (text.length() - contextEnd)) < 0);
+            if (DroidSafeAndroidRuntime.control)
             {
                 throw new IndexOutOfBoundsException();
             } //End block
         } //End collapsed parenthetic
+        if (DroidSafeAndroidRuntime.control)
         {
             throw new ArrayIndexOutOfBoundsException();
         } //End block
@@ -1501,12 +1542,15 @@ public class Paint {
         dsTaint.addTaint(contextIndex);
         dsTaint.addTaint(reserved);
         dsTaint.addTaint(advancesIndex);
+        if (DroidSafeAndroidRuntime.control)
         {
             throw new IllegalArgumentException("text cannot be null");
         } //End block
+        if (DroidSafeAndroidRuntime.control)
         {
             throw new IllegalArgumentException("unknown flags value: " + flags);
         } //End block
+        if (DroidSafeAndroidRuntime.control)
         {
             throw new IndexOutOfBoundsException();
         } //End block
@@ -1573,6 +1617,7 @@ public class Paint {
         dsTaint.addTaint(end);
         dsTaint.addTaint(contextEnd);
         dsTaint.addTaint(advancesIndex);
+        if (DroidSafeAndroidRuntime.control)
         {
             throw new IllegalArgumentException("text cannot be null");
         } //End block
@@ -1582,6 +1627,7 @@ public class Paint {
                 | (text.length() - contextEnd)
                 | (advances == null ? 0 :
                     (advances.length - advancesIndex - (end - start)))) < 0); //DSFIXME:  CODE0008: Nested ternary operator in expression
+            if (DroidSafeAndroidRuntime.control)
             {
                 throw new IndexOutOfBoundsException();
             } //End block
@@ -1652,9 +1698,11 @@ public class Paint {
         dsTaint.addTaint(end);
         dsTaint.addTaint(contextEnd);
         dsTaint.addTaint(advancesIndex);
+        if (DroidSafeAndroidRuntime.control)
         {
             throw new IllegalArgumentException("text cannot be null");
         } //End block
+        if (DroidSafeAndroidRuntime.control)
         {
             throw new IllegalArgumentException("unknown flags value: " + flags);
         } //End block
@@ -1664,6 +1712,7 @@ public class Paint {
                 | (text.length() - contextEnd)
                 | (advances == null ? 0 :
                     (advances.length - advancesIndex - (end - start)))) < 0); //DSFIXME:  CODE0008: Nested ternary operator in expression
+            if (DroidSafeAndroidRuntime.control)
             {
                 throw new IndexOutOfBoundsException();
             } //End block
@@ -1710,6 +1759,7 @@ public class Paint {
         dsTaint.addTaint(offset);
         int contextEnd;
         contextEnd = contextStart + contextLength;
+        if (DroidSafeAndroidRuntime.control)
         {
             throw new IndexOutOfBoundsException();
         } //End block
@@ -1790,6 +1840,7 @@ public class Paint {
                 | (offset - contextStart) | (contextEnd - offset)
                 | (text.length() - contextEnd) | cursorOpt) < 0)
                 || cursorOpt > CURSOR_OPT_MAX_VALUE);
+            if (DroidSafeAndroidRuntime.control)
             {
                 throw new IndexOutOfBoundsException();
             } //End block
@@ -1819,6 +1870,7 @@ public class Paint {
         dsTaint.addTaint(path.dsTaint);
         dsTaint.addTaint(y);
         dsTaint.addTaint(x);
+        if (DroidSafeAndroidRuntime.control)
         {
             throw new ArrayIndexOutOfBoundsException();
         } //End block
@@ -1845,6 +1897,7 @@ public class Paint {
         dsTaint.addTaint(x);
         {
             boolean var9527A5CDD965760192A60A252272F336_318139093 = ((start | end | (end - start) | (text.length() - end)) < 0);
+            if (DroidSafeAndroidRuntime.control)
             {
                 throw new IndexOutOfBoundsException();
             } //End block
@@ -1869,10 +1922,12 @@ public class Paint {
         dsTaint.addTaint(end);
         {
             boolean var9527A5CDD965760192A60A252272F336_126267757 = ((start | end | (end - start) | (text.length() - end)) < 0);
+            if (DroidSafeAndroidRuntime.control)
             {
                 throw new IndexOutOfBoundsException();
             } //End block
         } //End collapsed parenthetic
+        if (DroidSafeAndroidRuntime.control)
         {
             throw new NullPointerException("need bounds Rect");
         } //End block
@@ -1895,9 +1950,11 @@ public class Paint {
         dsTaint.addTaint(text);
         dsTaint.addTaint(index);
         dsTaint.addTaint(count);
+        if (DroidSafeAndroidRuntime.control)
         {
             throw new ArrayIndexOutOfBoundsException();
         } //End block
+        if (DroidSafeAndroidRuntime.control)
         {
             throw new NullPointerException("need bounds Rect");
         } //End block
@@ -1936,151 +1993,168 @@ public class Paint {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:01.272 -0400", hash_original_method = "3C46655FB8D2300CD2F57789F5C15FA7", hash_generated_method = "4EF9FFF90F62383C346E53F3F4D0F223")
     private static int native_init() {
-        //DSFIXME:  CODE0010: Native static method requires manual modeling
+        //DSFIXME:  CODE0012: Native static method requires manual modeling
+    	return DSUtils.UNKNOWN_INT;
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:01.272 -0400", hash_original_method = "5C99CEA59365BB26B06AD1E8D37F4231", hash_generated_method = "E3B5F31D516787CB321051F484530646")
     private static int native_initWithPaint(int paint) {
-        //DSFIXME:  CODE0010: Native static method requires manual modeling
+        //DSFIXME:  CODE0012: Native static method requires manual modeling
+    	return DSUtils.UNKNOWN_INT;
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:01.272 -0400", hash_original_method = "548CCA10F3D2A7665E05666D064EBB52", hash_generated_method = "7EDB534CCC42C323E3EFF1F89E411801")
     private static void native_reset(int native_object) {
-        //DSFIXME:  CODE0010: Native static method requires manual modeling
+        //DSFIXME:  CODE0012: Native static method requires manual modeling
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:01.272 -0400", hash_original_method = "03FE39B4725C25687863AC255E842897", hash_generated_method = "BF523FC9DD9199FCC7A3E8789C7273B1")
     private static void native_set(int native_dst, int native_src) {
-        //DSFIXME:  CODE0010: Native static method requires manual modeling
+        //DSFIXME:  CODE0012: Native static method requires manual modeling
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:01.272 -0400", hash_original_method = "4B642C8B4EA1686128CAB2195F7EEE41", hash_generated_method = "AEAE8FD0EE30CF8AA4BEAB8974CB2AC9")
     private static int native_getStyle(int native_object) {
-        //DSFIXME:  CODE0010: Native static method requires manual modeling
+        //DSFIXME:  CODE0012: Native static method requires manual modeling
+    	return DSUtils.UNKNOWN_INT;
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:01.273 -0400", hash_original_method = "E81C5C6733C9D0BBD78C86A091FBCC3C", hash_generated_method = "E705A1FB9F62666F09ACC3C13D7FFE2A")
     private static void native_setStyle(int native_object, int style) {
-        //DSFIXME:  CODE0010: Native static method requires manual modeling
+        //DSFIXME:  CODE0012: Native static method requires manual modeling
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:01.273 -0400", hash_original_method = "87FA9CF22263BBF5C1229E599E9F18DF", hash_generated_method = "91C8D779545F8F26E94E385B69A55063")
     private static int native_getStrokeCap(int native_object) {
-        //DSFIXME:  CODE0010: Native static method requires manual modeling
+        //DSFIXME:  CODE0012: Native static method requires manual modeling
+    	return DSUtils.UNKNOWN_INT;
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:01.273 -0400", hash_original_method = "91A75051C20DCC14B98232CB35EC8902", hash_generated_method = "4C1C08A04DE59274A9D90FD650CFB846")
     private static void native_setStrokeCap(int native_object, int cap) {
-        //DSFIXME:  CODE0010: Native static method requires manual modeling
+        //DSFIXME:  CODE0012: Native static method requires manual modeling
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:01.273 -0400", hash_original_method = "0A26FE357DE8D02F952F86733B6A1408", hash_generated_method = "B69B914AD9DBED632B9004B53C662CE7")
     private static int native_getStrokeJoin(int native_object) {
-        //DSFIXME:  CODE0010: Native static method requires manual modeling
+        //DSFIXME:  CODE0012: Native static method requires manual modeling
+    	return DSUtils.UNKNOWN_INT;
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:01.273 -0400", hash_original_method = "7A99A56A761B7D352A3389246089E8F8", hash_generated_method = "32B71B6482D455651490E0569893EA22")
     private static void native_setStrokeJoin(int native_object,
                                                     int join) {
-        //DSFIXME:  CODE0010: Native static method requires manual modeling
+        //DSFIXME:  CODE0012: Native static method requires manual modeling
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:01.273 -0400", hash_original_method = "EDFBB5A424FC9D8BF5026FAB94D4CB02", hash_generated_method = "28E4F2DACED90A62A7C1CBFFB89BE0F4")
     private static boolean native_getFillPath(int native_object,
                                                      int src, int dst) {
-        //DSFIXME:  CODE0010: Native static method requires manual modeling
+        //DSFIXME:  CODE0012: Native static method requires manual modeling
+    	return DSUtils.UNKNOWN_BOOLEAN;
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:01.273 -0400", hash_original_method = "5AB206EF4D12989EE2D0899B3577C719", hash_generated_method = "AD951EE9EB92B070B836DCFFDA7BA71E")
     private static int native_setShader(int native_object, int shader) {
-        //DSFIXME:  CODE0010: Native static method requires manual modeling
+        //DSFIXME:  CODE0012: Native static method requires manual modeling
+    	return DSUtils.UNKNOWN_INT;
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:01.273 -0400", hash_original_method = "A0D44D8A08DCE3B90BE7398C89799713", hash_generated_method = "4F4F599EEAD669833E28BA85C0479871")
     private static int native_setColorFilter(int native_object,
                                                     int filter) {
-        //DSFIXME:  CODE0010: Native static method requires manual modeling
+        //DSFIXME:  CODE0012: Native static method requires manual modeling
+    	return DSUtils.UNKNOWN_INT;
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:01.273 -0400", hash_original_method = "AED5E952854136F11BC9C80F9B54108C", hash_generated_method = "7BD111CAEA38440A2463F014E14BE76A")
     private static int native_setXfermode(int native_object,
                                                  int xfermode) {
-        //DSFIXME:  CODE0010: Native static method requires manual modeling
+        //DSFIXME:  CODE0012: Native static method requires manual modeling
+    	return DSUtils.UNKNOWN_INT;
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:01.273 -0400", hash_original_method = "D8A4107D1C1424ACAA2A3575AF119FBC", hash_generated_method = "06FA4DBE22B4DB83A5838C6EFE402D69")
     private static int native_setPathEffect(int native_object,
                                                    int effect) {
-        //DSFIXME:  CODE0010: Native static method requires manual modeling
+        //DSFIXME:  CODE0012: Native static method requires manual modeling
+    	return DSUtils.UNKNOWN_INT;
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:01.273 -0400", hash_original_method = "D6E83ED0EB3D390FD11E73FA48EA780E", hash_generated_method = "BA6FEC81490D86F0D1EE345B9548FEBC")
     private static int native_setMaskFilter(int native_object,
                                                    int maskfilter) {
-        //DSFIXME:  CODE0010: Native static method requires manual modeling
+        //DSFIXME:  CODE0012: Native static method requires manual modeling
+    	return DSUtils.UNKNOWN_INT;
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:01.273 -0400", hash_original_method = "00E708671C7EE9990745424711A50988", hash_generated_method = "FEEB8A4CD0376F63A011E773271C0B70")
     private static int native_setTypeface(int native_object,
                                                  int typeface) {
-        //DSFIXME:  CODE0010: Native static method requires manual modeling
+        //DSFIXME:  CODE0012: Native static method requires manual modeling
+    	return DSUtils.UNKNOWN_INT;
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:01.273 -0400", hash_original_method = "BF7EAA91244464700B65D6B0693651E9", hash_generated_method = "4AE383463D17C836906C2F555E2F0D05")
     private static int native_setRasterizer(int native_object,
                                                    int rasterizer) {
-        //DSFIXME:  CODE0010: Native static method requires manual modeling
+        //DSFIXME:  CODE0012: Native static method requires manual modeling
+    	return DSUtils.UNKNOWN_INT;
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:01.273 -0400", hash_original_method = "CF7004ABBE1352B36509BA99127B9C4B", hash_generated_method = "D0AFCB65116FBABC54149CC02D6B2561")
     private static int native_getTextAlign(int native_object) {
-        //DSFIXME:  CODE0010: Native static method requires manual modeling
+        //DSFIXME:  CODE0012: Native static method requires manual modeling
+    	return DSUtils.UNKNOWN_INT;
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:01.274 -0400", hash_original_method = "F3A6C4275FF6B8111357A5009A975959", hash_generated_method = "E00E48EF0EAFE3E086D261451AC7EFBF")
     private static void native_setTextAlign(int native_object,
                                                    int align) {
-        //DSFIXME:  CODE0010: Native static method requires manual modeling
+        //DSFIXME:  CODE0012: Native static method requires manual modeling
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:01.274 -0400", hash_original_method = "D8CDB6087FA1ADD8B077630A7AA071B9", hash_generated_method = "B3CA1E0FA595AD08A18B57F1C943D826")
     private static float native_getFontMetrics(int native_paint,
                                                       FontMetrics metrics) {
-        //DSFIXME:  CODE0010: Native static method requires manual modeling
+        //DSFIXME:  CODE0012: Native static method requires manual modeling
+    	return DSUtils.UNKNOWN_FLOAT;
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:01.274 -0400", hash_original_method = "5798B9B1D7013229FF354939FCE53EE7", hash_generated_method = "8663C14281C0DF83B256B709EC6C9999")
     private static int native_getTextWidths(int native_object,
                             char[] text, int index, int count, float[] widths) {
-        //DSFIXME:  CODE0010: Native static method requires manual modeling
+        //DSFIXME:  CODE0012: Native static method requires manual modeling
+    	return DSUtils.UNKNOWN_INT;
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:01.274 -0400", hash_original_method = "A9D4407EC40F98FA32BCDA82649531A2", hash_generated_method = "141AAC9396E741C5C6F9113974D73A6E")
     private static int native_getTextWidths(int native_object,
                             String text, int start, int end, float[] widths) {
-        //DSFIXME:  CODE0010: Native static method requires manual modeling
+        //DSFIXME:  CODE0012: Native static method requires manual modeling
+    	return DSUtils.UNKNOWN_INT;
     }
 
     
@@ -2088,7 +2162,8 @@ public class Paint {
     private static int native_getTextGlyphs(int native_object,
             String text, int start, int end, int contextStart, int contextEnd,
             int flags, char[] glyphs) {
-        //DSFIXME:  CODE0010: Native static method requires manual modeling
+        //DSFIXME:  CODE0012: Native static method requires manual modeling
+    	return DSUtils.UNKNOWN_INT;
     }
 
     
@@ -2096,7 +2171,8 @@ public class Paint {
     private static float native_getTextRunAdvances(int native_object,
             char[] text, int index, int count, int contextIndex, int contextCount,
             int flags, float[] advances, int advancesIndex, int reserved) {
-        //DSFIXME:  CODE0010: Native static method requires manual modeling
+        //DSFIXME:  CODE0012: Native static method requires manual modeling
+    	return DSUtils.UNKNOWN_FLOAT;
     }
 
     
@@ -2104,7 +2180,8 @@ public class Paint {
     private static float native_getTextRunAdvances(int native_object,
             String text, int start, int end, int contextStart, int contextEnd,
             int flags, float[] advances, int advancesIndex, int reserved) {
-        //DSFIXME:  CODE0010: Native static method requires manual modeling
+        //DSFIXME:  CODE0012: Native static method requires manual modeling
+    	return DSUtils.UNKNOWN_FLOAT;
     }
 
     
@@ -2119,6 +2196,7 @@ public class Paint {
         dsTaint.addTaint(cursorOpt);
         dsTaint.addTaint(offset);
         dsTaint.addTaint(native_object);
+        return DSUtils.UNKNOWN_INT;
     }
 
     
@@ -2133,40 +2211,41 @@ public class Paint {
         dsTaint.addTaint(offset);
         dsTaint.addTaint(native_object);
         dsTaint.addTaint(contextEnd);
+        return DSUtils.UNKNOWN_INT;
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:01.274 -0400", hash_original_method = "5CD4E1AB5BC8C4A380999C810B83D369", hash_generated_method = "C0646E9F54C7DF3F980AFB36274D9B61")
     private static void native_getTextPath(int native_object, int bidiFlags,
                 char[] text, int index, int count, float x, float y, int path) {
-        //DSFIXME:  CODE0010: Native static method requires manual modeling
+        //DSFIXME:  CODE0012: Native static method requires manual modeling
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:01.274 -0400", hash_original_method = "010DC42BFFBEA9418D9D9737369294CB", hash_generated_method = "C8A33E3EC720A1DC890D9B8A896AA1EE")
     private static void native_getTextPath(int native_object, int bidiFlags,
                 String text, int start, int end, float x, float y, int path) {
-        //DSFIXME:  CODE0010: Native static method requires manual modeling
+        //DSFIXME:  CODE0012: Native static method requires manual modeling
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:01.275 -0400", hash_original_method = "31C9D65530002B3B6909EAB7B6BF4B9C", hash_generated_method = "F8DCFEB25A0F254A72D7C87F0FD46A09")
     private static void nativeGetStringBounds(int nativePaint,
                                 String text, int start, int end, Rect bounds) {
-        //DSFIXME:  CODE0010: Native static method requires manual modeling
+        //DSFIXME:  CODE0012: Native static method requires manual modeling
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:01.275 -0400", hash_original_method = "3FB16766928962DA301585D12401FD92", hash_generated_method = "1FC59B0E514B5BD511C59D383FD983B5")
     private static void nativeGetCharArrayBounds(int nativePaint,
                                 char[] text, int index, int count, Rect bounds) {
-        //DSFIXME:  CODE0010: Native static method requires manual modeling
+        //DSFIXME:  CODE0012: Native static method requires manual modeling
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:01.275 -0400", hash_original_method = "7EEE9C2C5C1A55E88B64BA7667E3DE23", hash_generated_method = "33ED3B98E882744C7C8F168F42795134")
     private static void finalizer(int nativePaint) {
-        //DSFIXME:  CODE0010: Native static method requires manual modeling
+        //DSFIXME:  CODE0012: Native static method requires manual modeling
     }
 
     

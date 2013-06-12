@@ -2,6 +2,7 @@ package java.util;
 
 // Droidsafe Imports
 import droidsafe.helpers.*;
+import droidsafe.runtime.DroidSafeAndroidRuntime;
 import droidsafe.annotations.*;
 
 // import Iterator to deal with enhanced for loop translation
@@ -50,7 +51,7 @@ public class Hashtable<K, V> extends Dictionary<K, V> implements Map<K, V>, Clon
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public Hashtable(int capacity) {
         dsTaint.addTaint(capacity);
-        {
+        if (DroidSafeAndroidRuntime.control) {
             throw new IllegalArgumentException("Capacity: " + capacity);
         } //End block
         {
@@ -126,9 +127,8 @@ public class Hashtable<K, V> extends Dictionary<K, V> implements Map<K, V>, Clon
     private void constructorPutAll(Map<? extends K, ? extends V> map) {
         dsTaint.addTaint(map.dsTaint);
         {
-            Iterator<Entry<? extends K, ? extends V>> seatecAstronomy42 = map.entrySet().iterator();
-            seatecAstronomy42.hasNext();
-            Entry<? extends K, ? extends V> e = seatecAstronomy42.next();
+            map.entrySet().iterator().hasNext();
+            Entry<? extends K, ? extends V> e = map.entrySet().iterator().next();
             {
                 constructorPut(e.getKey(), e.getValue());
             } //End block
@@ -285,7 +285,7 @@ public class Hashtable<K, V> extends Dictionary<K, V> implements Map<K, V>, Clon
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public synchronized boolean containsValue(Object value) {
         dsTaint.addTaint(value.dsTaint);
-        {
+        if (DroidSafeAndroidRuntime.control) {
             throw new NullPointerException();
         } //End block
         HashtableEntry[] tab;
@@ -342,7 +342,7 @@ public class Hashtable<K, V> extends Dictionary<K, V> implements Map<K, V>, Clon
     public synchronized V put(K key, V value) {
         dsTaint.addTaint(value.dsTaint);
         dsTaint.addTaint(key.dsTaint);
-        {
+        if (DroidSafeAndroidRuntime.control) {
             throw new NullPointerException();
         } //End block
         int hash;
@@ -409,7 +409,7 @@ public class Hashtable<K, V> extends Dictionary<K, V> implements Map<K, V>, Clon
     private void constructorPut(K key, V value) {
         dsTaint.addTaint(value.dsTaint);
         dsTaint.addTaint(key.dsTaint);
-        {
+        if (DroidSafeAndroidRuntime.control) {
             throw new NullPointerException();
         } //End block
         int hash;
@@ -460,9 +460,8 @@ public class Hashtable<K, V> extends Dictionary<K, V> implements Map<K, V>, Clon
         dsTaint.addTaint(map.dsTaint);
         ensureCapacity(map.size());
         {
-            Iterator<Entry<? extends K, ? extends V>> seatecAstronomy42 = map.entrySet().iterator();
-            seatecAstronomy42.hasNext();
-            Entry<? extends K, ? extends V> e = seatecAstronomy42.next();
+             map.entrySet().iterator().hasNext();
+            Entry<? extends K, ? extends V> e = map.entrySet().iterator().next();
             {
                 put(e.getKey(), e.getValue());
             } //End block
@@ -979,7 +978,7 @@ public class Hashtable<K, V> extends Dictionary<K, V> implements Map<K, V>, Clon
         stream.defaultReadObject();
         int capacity;
         capacity = stream.readInt();
-        {
+        if (DroidSafeAndroidRuntime.control) {
             throw new InvalidObjectException("Capacity: " + capacity);
         } //End block
         {
@@ -994,7 +993,7 @@ public class Hashtable<K, V> extends Dictionary<K, V> implements Map<K, V>, Clon
         makeTable(capacity);
         int size;
         size = stream.readInt();
-        {
+        if (DroidSafeAndroidRuntime.control) {
             throw new InvalidObjectException("Size: " + size);
         } //End block
         {
@@ -1027,10 +1026,10 @@ public class Hashtable<K, V> extends Dictionary<K, V> implements Map<K, V>, Clon
             dsTaint.addTaint(value.dsTaint);
             dsTaint.addTaint(key.dsTaint);
             // ---------- Original Method ----------
-            //this.key = key;
-            //this.value = value;
-            //this.hash = hash;
-            //this.next = next;
+            this.key = key;
+            this.value = value;
+            this.hash = hash;
+            this.next = next;
         }
 
         
@@ -1056,7 +1055,7 @@ public class Hashtable<K, V> extends Dictionary<K, V> implements Map<K, V>, Clon
         @DSModeled(DSC.SAFE)
         public final V setValue(V value) {
             dsTaint.addTaint(value.dsTaint);
-            {
+            if (DroidSafeAndroidRuntime.control) {
                 throw new NullPointerException();
             } //End block
             V oldValue;
@@ -1153,83 +1152,93 @@ public class Hashtable<K, V> extends Dictionary<K, V> implements Map<K, V>, Clon
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:14.442 -0400", hash_original_method = "5FA6641462F5564CAC982C4AF6FCFB6C", hash_generated_method = "CF14FA4E2EA7CC741223A59B97BFF53A")
         @DSModeled(DSC.SAFE)
-         HashtableEntry<K, V> nextEntry() {
-            throw new ConcurrentModificationException();
-            throw new NoSuchElementException();
-            HashtableEntry<K, V> entryToReturn;
-            entryToReturn = nextEntry;
-            HashtableEntry<K, V>[] tab;
-            tab = table;
-            HashtableEntry<K, V> next;
-            next = entryToReturn.next;
-            {
-                next = tab[nextIndex++];
-            } //End block
-            nextEntry = next;
-            HashtableEntry<K, V> varE716D0B9837917675A560095A2F6354C_1853918454 = (lastEntryReturned = entryToReturn);
-            return (HashtableEntry<K, V>)dsTaint.getTaint();
-            // ---------- Original Method ----------
-            //if (modCount != expectedModCount)
-                //throw new ConcurrentModificationException();
-            //if (nextEntry == null)
-                //throw new NoSuchElementException();
-            //HashtableEntry<K, V> entryToReturn = nextEntry;
-            //HashtableEntry<K, V>[] tab = table;
-            //HashtableEntry<K, V> next = entryToReturn.next;
-            //while (next == null && nextIndex < tab.length) {
-                //next = tab[nextIndex++];
-            //}
-            //nextEntry = next;
-            //return lastEntryReturned = entryToReturn;
+        HashtableEntry<K, V> nextEntry() {
+        	if (DroidSafeAndroidRuntime.control) {
+        		throw new ConcurrentModificationException();
+        	}
+        	if (DroidSafeAndroidRuntime.control) {
+        		throw new NoSuchElementException();
+        	}
+        	HashtableEntry<K, V> entryToReturn;
+        	entryToReturn = nextEntry;
+        	HashtableEntry<K, V>[] tab;
+        	tab = table;
+        	HashtableEntry<K, V> next;
+        	next = entryToReturn.next;
+        	{
+        		next = tab[nextIndex++];
+        	} //End block
+        	nextEntry = next;
+        	HashtableEntry<K, V> varE716D0B9837917675A560095A2F6354C_1853918454 = (lastEntryReturned = entryToReturn);
+        	return (HashtableEntry<K, V>)dsTaint.getTaint();
+        	// ---------- Original Method ----------
+        	//if (modCount != expectedModCount)
+        	//throw new ConcurrentModificationException();
+        	//if (nextEntry == null)
+        	//throw new NoSuchElementException();
+        	//HashtableEntry<K, V> entryToReturn = nextEntry;
+        	//HashtableEntry<K, V>[] tab = table;
+        	//HashtableEntry<K, V> next = entryToReturn.next;
+        	//while (next == null && nextIndex < tab.length) {
+        	//next = tab[nextIndex++];
+        	//}
+        	//nextEntry = next;
+        	//return lastEntryReturned = entryToReturn;
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:14.442 -0400", hash_original_method = "1C3D72122BB58702CE822C81122C0D27", hash_generated_method = "66495A466B656DB98EBD25ED97F4331A")
         @DSModeled(DSC.SAFE)
-         HashtableEntry<K, V> nextEntryNotFailFast() {
-            throw new NoSuchElementException();
-            HashtableEntry<K, V> entryToReturn;
-            entryToReturn = nextEntry;
-            HashtableEntry<K, V>[] tab;
-            tab = table;
-            HashtableEntry<K, V> next;
-            next = entryToReturn.next;
-            {
-                next = tab[nextIndex++];
-            } //End block
-            nextEntry = next;
-            HashtableEntry<K, V> varE716D0B9837917675A560095A2F6354C_1645606050 = (lastEntryReturned = entryToReturn);
-            return (HashtableEntry<K, V>)dsTaint.getTaint();
-            // ---------- Original Method ----------
-            //if (nextEntry == null)
-                //throw new NoSuchElementException();
-            //HashtableEntry<K, V> entryToReturn = nextEntry;
-            //HashtableEntry<K, V>[] tab = table;
-            //HashtableEntry<K, V> next = entryToReturn.next;
-            //while (next == null && nextIndex < tab.length) {
-                //next = tab[nextIndex++];
-            //}
-            //nextEntry = next;
-            //return lastEntryReturned = entryToReturn;
+        HashtableEntry<K, V> nextEntryNotFailFast() {
+        	if (DroidSafeAndroidRuntime.control) {
+        		throw new NoSuchElementException();
+        	}
+        	HashtableEntry<K, V> entryToReturn;
+        	entryToReturn = nextEntry;
+        	HashtableEntry<K, V>[] tab;
+        	tab = table;
+        	HashtableEntry<K, V> next;
+        	next = entryToReturn.next;
+        	{
+        		next = tab[nextIndex++];
+        	} //End block
+        	nextEntry = next;
+        	HashtableEntry<K, V> varE716D0B9837917675A560095A2F6354C_1645606050 = (lastEntryReturned = entryToReturn);
+        	return (HashtableEntry<K, V>)dsTaint.getTaint();
+        	// ---------- Original Method ----------
+        	//if (nextEntry == null)
+        	//throw new NoSuchElementException();
+        	//HashtableEntry<K, V> entryToReturn = nextEntry;
+        	//HashtableEntry<K, V>[] tab = table;
+        	//HashtableEntry<K, V> next = entryToReturn.next;
+        	//while (next == null && nextIndex < tab.length) {
+        	//next = tab[nextIndex++];
+        	//}
+        	//nextEntry = next;
+        	//return lastEntryReturned = entryToReturn;
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:14.442 -0400", hash_original_method = "342FDC52CA82B385D96AADB83EE8F936", hash_generated_method = "5240F1890F1D528C967E8B10ECC9EF81")
         @DSModeled(DSC.SAFE)
         public void remove() {
-            throw new IllegalStateException();
-            throw new ConcurrentModificationException();
-            Hashtable.this.remove(lastEntryReturned.key);
-            lastEntryReturned = null;
-            expectedModCount = modCount;
-            // ---------- Original Method ----------
-            //if (lastEntryReturned == null)
-                //throw new IllegalStateException();
-            //if (modCount != expectedModCount)
-                //throw new ConcurrentModificationException();
-            //Hashtable.this.remove(lastEntryReturned.key);
-            //lastEntryReturned = null;
-            //expectedModCount = modCount;
+        	if (DroidSafeAndroidRuntime.control) {
+        		throw new IllegalStateException();
+        	}
+        	if (DroidSafeAndroidRuntime.control) {
+        		throw new ConcurrentModificationException();
+        	}
+        	Hashtable.this.remove(lastEntryReturned.key);
+        	lastEntryReturned = null;
+        	expectedModCount = modCount;
+        	// ---------- Original Method ----------
+        	//if (lastEntryReturned == null)
+        	//throw new IllegalStateException();
+        	//if (modCount != expectedModCount)
+        	//throw new ConcurrentModificationException();
+        	//Hashtable.this.remove(lastEntryReturned.key);
+        	//lastEntryReturned = null;
+        	//expectedModCount = modCount;
         }
 
         
@@ -1502,7 +1511,7 @@ public class Hashtable<K, V> extends Dictionary<K, V> implements Map<K, V>, Clon
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:14.444 -0400", hash_original_method = "9FE9B3BD459851B05CC02013C00F3ABD", hash_generated_method = "32F96439660144EADD2941F66F07D15F")
         //DSFIXME:  CODE0002: Requires DSC value to be set
         public <T> T[] toArray(T[] a) {
-            dsTaint.addTaint(a.dsTaint);
+            dsTaint.addTaint(a[0].dsTaint);
             {
                 T[] var74CFC86FF606F1E8E5731D501890BE99_1421014284 = (super.toArray(a));
             } //End block
@@ -1605,7 +1614,7 @@ public class Hashtable<K, V> extends Dictionary<K, V> implements Map<K, V>, Clon
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:14.444 -0400", hash_original_method = "9FE9B3BD459851B05CC02013C00F3ABD", hash_generated_method = "7F45CA1806EDCB066AE42EBB7710908D")
         //DSFIXME:  CODE0002: Requires DSC value to be set
         public <T> T[] toArray(T[] a) {
-            dsTaint.addTaint(a.dsTaint);
+            dsTaint.addTaint(a[0].dsTaint);
             {
                 T[] var74CFC86FF606F1E8E5731D501890BE99_124300587 = (super.toArray(a));
             } //End block
@@ -1784,7 +1793,7 @@ public class Hashtable<K, V> extends Dictionary<K, V> implements Map<K, V>, Clon
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:14.445 -0400", hash_original_method = "9FE9B3BD459851B05CC02013C00F3ABD", hash_generated_method = "930D1892CE920FF9F436E7A43BB7C1E4")
         //DSFIXME:  CODE0002: Requires DSC value to be set
         public <T> T[] toArray(T[] a) {
-            dsTaint.addTaint(a.dsTaint);
+            dsTaint.addTaint(a[0].dsTaint);
             {
                 T[] var74CFC86FF606F1E8E5731D501890BE99_1827380498 = (super.toArray(a));
             } //End block

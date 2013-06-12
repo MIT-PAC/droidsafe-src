@@ -2,6 +2,7 @@ package android.server;
 
 // Droidsafe Imports
 import droidsafe.helpers.*;
+import droidsafe.runtime.DroidSafeAndroidRuntime;
 import droidsafe.annotations.*;
 
 // import Iterator to deal with enhanced for loop translation
@@ -126,14 +127,13 @@ public class BluetoothA2dpService extends IBluetoothA2dp.Stub {
     public BluetoothA2dpService(Context context, BluetoothService bluetoothService) {
         dsTaint.addTaint(context.dsTaint);
         dsTaint.addTaint(bluetoothService.dsTaint);
+        mContext = context;
+        mBluetoothService = bluetoothService;
         mAudioManager = (AudioManager) context.getSystemService(Context.AUDIO_SERVICE);
-        {
-            throw new RuntimeException("Platform does not support Bluetooth");
-        } //End block
         {
             boolean var44DF7BC6EDABA94A49843C98B2507797_992725295 = (!initNative());
             {
-                throw new RuntimeException("Could not init BluetoothA2dpService");
+            	if (DroidSafeAndroidRuntime.control) throw new RuntimeException("Could not init BluetoothA2dpService");
             } //End block
         } //End collapsed parenthetic
         mAdapter = BluetoothAdapter.getDefaultAdapter();
@@ -149,6 +149,9 @@ public class BluetoothA2dpService extends IBluetoothA2dp.Stub {
         } //End collapsed parenthetic
         mTargetA2dpState = -1;
         mBluetoothService.setA2dpService(this);
+        {
+            throw new RuntimeException("Platform does not support Bluetooth");
+        } //End block
         // ---------- Original Method ----------
         // Original Method Too Long, Refer to Original Implementation
     }
@@ -283,9 +286,7 @@ public class BluetoothA2dpService extends IBluetoothA2dp.Stub {
             String [] paths;
             paths = devices.split(",");
             {
-                Iterator<String> seatecAstronomy42 = paths.iterator();
-                seatecAstronomy42.hasNext();
-                String path = seatecAstronomy42.next();
+                String path = paths[0];
                 {
                     String address;
                     address = mBluetoothService.getAddressFromObjectPath(path);
@@ -321,9 +322,7 @@ public class BluetoothA2dpService extends IBluetoothA2dp.Stub {
                 devices = new BluetoothDevice[mAudioDevices.size()];
                 devices = mAudioDevices.keySet().toArray(devices);
                 {
-                    Iterator<BluetoothDevice> seatecAstronomy42 = devices.iterator();
-                    seatecAstronomy42.hasNext();
-                    BluetoothDevice device = seatecAstronomy42.next();
+                    BluetoothDevice device = devices[0];
                     {
                         int state;
                         state = getConnectionState(device);
@@ -997,6 +996,7 @@ public class BluetoothA2dpService extends IBluetoothA2dp.Stub {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:03.381 -0400", hash_original_method = "F316CBE5001C55DC23500428B5A4F5D7", hash_generated_method = "9398E78DB5961CFE21A6ED01251A2167")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     private boolean initNative() {
+    	return dsTaint.getTaintBoolean();
     }
 
     
@@ -1010,6 +1010,7 @@ public class BluetoothA2dpService extends IBluetoothA2dp.Stub {
     //DSFIXME:  CODE0002: Requires DSC value to be set
     private synchronized boolean connectSinkNative(String path) {
         dsTaint.addTaint(path);
+        return dsTaint.getTaintBoolean();
     }
 
     
@@ -1017,6 +1018,7 @@ public class BluetoothA2dpService extends IBluetoothA2dp.Stub {
     //DSFIXME:  CODE0002: Requires DSC value to be set
     private synchronized boolean disconnectSinkNative(String path) {
         dsTaint.addTaint(path);
+        return dsTaint.getTaintBoolean();
     }
 
     
@@ -1024,6 +1026,7 @@ public class BluetoothA2dpService extends IBluetoothA2dp.Stub {
     //DSFIXME:  CODE0002: Requires DSC value to be set
     private synchronized boolean suspendSinkNative(String path) {
         dsTaint.addTaint(path);
+        return dsTaint.getTaintBoolean();
     }
 
     
@@ -1031,6 +1034,7 @@ public class BluetoothA2dpService extends IBluetoothA2dp.Stub {
     //DSFIXME:  CODE0002: Requires DSC value to be set
     private synchronized boolean resumeSinkNative(String path) {
         dsTaint.addTaint(path);
+        return dsTaint.getTaintBoolean();
     }
 
     
@@ -1038,6 +1042,7 @@ public class BluetoothA2dpService extends IBluetoothA2dp.Stub {
     //DSFIXME:  CODE0002: Requires DSC value to be set
     private synchronized Object [] getSinkPropertiesNative(String path) {
         dsTaint.addTaint(path);
+        return (Object[])dsTaint.getTaint();
     }
 
     
@@ -1045,6 +1050,7 @@ public class BluetoothA2dpService extends IBluetoothA2dp.Stub {
     //DSFIXME:  CODE0002: Requires DSC value to be set
     private synchronized boolean avrcpVolumeUpNative(String path) {
         dsTaint.addTaint(path);
+        return dsTaint.getTaintBoolean();
     }
 
     
@@ -1052,6 +1058,7 @@ public class BluetoothA2dpService extends IBluetoothA2dp.Stub {
     //DSFIXME:  CODE0002: Requires DSC value to be set
     private synchronized boolean avrcpVolumeDownNative(String path) {
         dsTaint.addTaint(path);
+        return dsTaint.getTaintBoolean();
     }
 
     

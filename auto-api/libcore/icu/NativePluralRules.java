@@ -22,6 +22,7 @@ public final class NativePluralRules {
     @DSModeled(DSC.SAFE)
     private NativePluralRules(int address) {
         dsTaint.addTaint(address);
+        this.address = address;
         // ---------- Original Method ----------
         //this.address = address;
     }
@@ -67,19 +68,19 @@ public final class NativePluralRules {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:17.416 -0400", hash_original_method = "6C0FB45F2D3D59341F679300293E5D6A", hash_generated_method = "0BF4641792333074A7B133C3FE9B1B3F")
     private static void finalizeImpl(int address) {
-        //DSFIXME:  CODE0010: Native static method requires manual modeling
+        //DSFIXME:  CODE0012: Native static method requires manual modeling
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:17.416 -0400", hash_original_method = "595C7C121D33E635565A2FD6B6E4B355", hash_generated_method = "7A1C7E273B47A1FA82DDB4823617BA40")
     private static int forLocaleImpl(String localeName) {
-        //DSFIXME:  CODE0010: Native static method requires manual modeling
+    	return DSUtils.UNKNOWN_INT;
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:17.416 -0400", hash_original_method = "D4407CF23868C0FF3E55DA4D48672E7A", hash_generated_method = "DD6AFBAFFC69D1354F4287111FD7AFEB")
     private static int quantityForIntImpl(int address, int value) {
-        //DSFIXME:  CODE0010: Native static method requires manual modeling
+    	return DSUtils.UNKNOWN_INT;
     }
 
     

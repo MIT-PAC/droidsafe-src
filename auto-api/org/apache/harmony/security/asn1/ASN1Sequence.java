@@ -15,7 +15,7 @@ public class ASN1Sequence extends ASN1TypeCollection {
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public ASN1Sequence(ASN1Type[] type) {
         super(TAG_SEQUENCE, type);
-        dsTaint.addTaint(type.dsTaint);
+        dsTaint.addTaint(type[0].dsTaint);
         // ---------- Original Method ----------
     }
 

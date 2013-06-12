@@ -2,6 +2,7 @@ package org.apache.harmony.security.asn1;
 
 // Droidsafe Imports
 import droidsafe.helpers.*;
+import droidsafe.runtime.DroidSafeAndroidRuntime;
 import droidsafe.annotations.*;
 
 // import Iterator to deal with enhanced for loop translation
@@ -21,7 +22,7 @@ public final class BitString {
         dsTaint.addTaint(bytes);
         dsTaint.addTaint(unusedBits);
         {
-            throw new IllegalArgumentException("Number of unused bits MUST be in range 0-7");
+        	if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("Number of unused bits MUST be in range 0-7");
         } //End block
         {
             throw new IllegalArgumentException("For empty bit string unused bits MUST be 0");

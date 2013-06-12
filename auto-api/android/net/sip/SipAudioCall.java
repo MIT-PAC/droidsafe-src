@@ -2,6 +2,7 @@ package android.net.sip;
 
 // Droidsafe Imports
 import droidsafe.helpers.*;
+import droidsafe.runtime.DroidSafeAndroidRuntime;
 import droidsafe.annotations.*;
 
 // import Iterator to deal with enhanced for loop translation
@@ -335,8 +336,7 @@ public class SipAudioCall {
         {
             boolean var7C2B3BAF12F2B803CD1155B57592C3F4_786130934 = (!SipManager.isVoipSupported(mContext));
             {
-            	//DSFIXME:  Multiple exception issue...
-                //throw new SipException("VOIP API is not supported");
+            	if (DroidSafeAndroidRuntime.control) throw new SipException("VOIP API is not supported");
             } //End block
         } //End collapsed parenthetic
         {
@@ -377,8 +377,7 @@ public class SipAudioCall {
         {
             boolean var7C2B3BAF12F2B803CD1155B57592C3F4_56689602 = (!SipManager.isVoipSupported(mContext));
             {
-            	//DSFIXME:  Multiple exception issue
-                //throw new SipException("VOIP API is not supported");
+            	if (DroidSafeAndroidRuntime.control) throw new SipException("VOIP API is not supported");
             } //End block
         } //End collapsed parenthetic
         {
@@ -462,8 +461,7 @@ public class SipAudioCall {
         dsTaint.addTaint(timeout);
         {
             {
-            	//DSFIXME:  Multiple exception issue
-                //throw new SipException("No call to answer");
+            	if (DroidSafeAndroidRuntime.control) throw new SipException("No call to answer");
             } //End block
             try 
             {
@@ -632,8 +630,7 @@ public class SipAudioCall {
             } //End block
         } //End collapsed parenthetic
         {
-        	//DSFIXME:  Exception handling
-            //throw new IllegalStateException("Reject SDP: no suitable codecs");
+        	if (DroidSafeAndroidRuntime.control) throw new IllegalStateException("Reject SDP: no suitable codecs");
         } //End block
         return (SimpleSessionDescription)dsTaint.getTaint();
         // ---------- Original Method ----------
@@ -909,8 +906,7 @@ public class SipAudioCall {
     //DSFIXME:  CODE0002: Requires DSC value to be set
     private synchronized void startAudioInternal() throws UnknownHostException {
         {
-        	//DSFIXME:  Excpetion handling
-            //throw new IllegalStateException("mPeerSd = null");
+        	if (DroidSafeAndroidRuntime.control) throw new IllegalStateException("mPeerSd = null");
         } //End block
         stopCall(DONT_RELEASE_SOCKET);
         mInCall = true;
@@ -1092,8 +1088,7 @@ public class SipAudioCall {
     private void throwSipException(Throwable throwable) throws SipException {
         dsTaint.addTaint(throwable.dsTaint);
         {
-        	//DSFIXME:  Exception handlinge
-            //throw (SipException) throwable;
+        	if (DroidSafeAndroidRuntime.control) throw (SipException) throwable;
         } //End block
         {
             throw new SipException("", throwable);

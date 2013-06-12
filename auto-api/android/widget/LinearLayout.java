@@ -1,13 +1,6 @@
 package android.widget;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-
-// import Iterator to deal with enhanced for loop translation
-import java.util.Iterator;
-
-import com.android.internal.R;
 import android.content.Context;
 import android.content.res.TypedArray;
 import android.graphics.Canvas;
@@ -17,7 +10,14 @@ import android.view.Gravity;
 import android.view.View;
 import android.view.ViewDebug;
 import android.view.ViewGroup;
-import android.widget.RemoteViews.RemoteView;
+
+import com.android.internal.R;
+
+import droidsafe.annotations.DSC;
+import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.DSModeled;
+import droidsafe.runtime.DroidSafeAndroidRuntime;
+// import Iterator to deal with enhanced for loop translation
 
 public class LinearLayout extends ViewGroup {
     public static final int HORIZONTAL = 0;
@@ -440,16 +440,16 @@ public class LinearLayout extends ViewGroup {
         {
             boolean var0CC14488A448130ACFEBA1F25FFBD58A_1222436594 = (getChildCount() <= mBaselineAlignedChildIndex);
             {
-                throw new RuntimeException("mBaselineAlignedChildIndex of LinearLayout "
+                if (DroidSafeAndroidRuntime.control) throw new RuntimeException("mBaselineAlignedChildIndex of LinearLayout "
                     + "set to an index that is out of bounds.");
             } //End block
         } //End collapsed parenthetic
-        final View child;
+        View child;
         child = getChildAt(mBaselineAlignedChildIndex);
         final int childBaseline;
         childBaseline = child.getBaseline();
         {
-            throw new RuntimeException("mBaselineAlignedChildIndex of LinearLayout "
+            if (DroidSafeAndroidRuntime.control) throw new RuntimeException("mBaselineAlignedChildIndex of LinearLayout "
                     + "points to a View that doesn't know how to get its baseline.");
         } //End block
         int childTop;
@@ -541,7 +541,7 @@ public class LinearLayout extends ViewGroup {
     public void setWeightSum(float weightSum) {
         dsTaint.addTaint(weightSum);
         mWeightSum = Math.max(0.0f, weightSum);
-        // ---------- Original Method ----------
+        // ---------- Originfinalal Method ----------
         //mWeightSum = Math.max(0.0f, weightSum);
     }
 
@@ -577,7 +577,7 @@ public class LinearLayout extends ViewGroup {
             {
                 boolean hasVisibleViewBefore;
                 hasVisibleViewBefore = false;
-                {
+                {final
                     int i;
                     i = childIndex - 1;
                     {
@@ -699,7 +699,7 @@ public class LinearLayout extends ViewGroup {
                     mBaselineChildTop = mTotalLength;
                 } //End block
                 {
-                    throw new RuntimeException("A child of LinearLayout with index "
+                    if (DroidSafeAndroidRuntime.control) throw new RuntimeException("A child of LinearLayout with index "
                         + "less than mBaselineAlignedChildIndex has weight > 0, which "
                         + "won't work.  Either remove the weight, or don't set "
                         + "mBaselineAlignedChildIndex.");

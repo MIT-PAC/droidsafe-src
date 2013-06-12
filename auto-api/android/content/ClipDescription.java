@@ -1,16 +1,16 @@
 package android.content;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-
-// import Iterator to deal with enhanced for loop translation
-import java.util.Iterator;
+import java.util.ArrayList;
 
 import android.os.Parcel;
 import android.os.Parcelable;
 import android.text.TextUtils;
-import java.util.ArrayList;
+import droidsafe.annotations.DSC;
+import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.DSModeled;
+import droidsafe.runtime.DroidSafeAndroidRuntime;
+// import Iterator to deal with enhanced for loop translation
 
 public class ClipDescription implements Parcelable {
     public static final String MIMETYPE_TEXT_PLAIN = "text/plain";
@@ -204,10 +204,10 @@ public class ClipDescription implements Parcelable {
     @DSModeled(DSC.SAFE)
     public void validate() {
         {
-            throw new NullPointerException("null mime types");
+        	if (DroidSafeAndroidRuntime.control) throw new NullPointerException("null mime types");
         } //End block
         {
-            throw new IllegalArgumentException("must have at least 1 mime type");
+        	if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("must have at least 1 mime type");
         } //End block
         {
             int i;

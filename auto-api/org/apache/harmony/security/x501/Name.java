@@ -2,6 +2,7 @@ package org.apache.harmony.security.x501;
 
 // Droidsafe Imports
 import droidsafe.helpers.*;
+import droidsafe.runtime.DroidSafeAndroidRuntime;
 import droidsafe.annotations.*;
 
 // import Iterator to deal with enhanced for loop translation
@@ -61,7 +62,7 @@ public final class Name {
         {
             boolean var7BCB0509788D553E8FA912AF9C311FBA_1563249935 = (in.getEndOffset() != encoding.length);
             {
-                throw new IOException("Wrong content length");
+            	if (DroidSafeAndroidRuntime.control) throw new IOException("Wrong content length");
             } //End block
         } //End collapsed parenthetic
         ASN1.decode(in);
@@ -152,7 +153,7 @@ public final class Name {
                                     } //End block
                                 } //End block
                                 {
-                                    throw new IllegalArgumentException("Illegal format: " + format);
+                                	if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("Illegal format: " + format);
                                 } //End block
                             } //End collapsed parenthetic
                         } //End collapsed parenthetic

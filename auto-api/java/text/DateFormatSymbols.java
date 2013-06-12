@@ -2,6 +2,7 @@ package java.text;
 
 // Droidsafe Imports
 import droidsafe.helpers.*;
+import droidsafe.runtime.DroidSafeAndroidRuntime;
 import droidsafe.annotations.*;
 
 // import Iterator to deal with enhanced for loop translation
@@ -27,7 +28,7 @@ public class DateFormatSymbols implements Serializable, Cloneable {
     transient String[] shortStandAloneWeekdays;
     String[][] zoneStrings;
     transient boolean customZoneStrings;
-    transient final Locale locale;
+    transient Locale locale;
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:12.961 -0400", hash_original_method = "5D59D1DAC1D60D67A4A902493CF704FB", hash_generated_method = "FA4B550802279D28FA8A98EFAD62B86C")
     //DSFIXME:  CODE0002: Requires DSC value to be set
@@ -344,57 +345,43 @@ public class DateFormatSymbols implements Serializable, Cloneable {
         int hashCode;
         hashCode = localPatternChars.hashCode();
         {
-            Iterator<String> seatecAstronomy42 = ampms.iterator();
-            seatecAstronomy42.hasNext();
-            String element = seatecAstronomy42.next();
+            String element = ampms[0];
             {
                 hashCode += element.hashCode();
             } //End block
         } //End collapsed parenthetic
         {
-            Iterator<String> seatecAstronomy42 = eras.iterator();
-            seatecAstronomy42.hasNext();
-            String element = seatecAstronomy42.next();
+            String element = eras[0];
             {
                 hashCode += element.hashCode();
             } //End block
         } //End collapsed parenthetic
         {
-            Iterator<String> seatecAstronomy42 = months.iterator();
-            seatecAstronomy42.hasNext();
-            String element = seatecAstronomy42.next();
+            String element = months[0];
             {
                 hashCode += element.hashCode();
             } //End block
         } //End collapsed parenthetic
         {
-            Iterator<String> seatecAstronomy42 = shortMonths.iterator();
-            seatecAstronomy42.hasNext();
-            String element = seatecAstronomy42.next();
+            String element = shortMonths[0];
             {
                 hashCode += element.hashCode();
             } //End block
         } //End collapsed parenthetic
         {
-            Iterator<String> seatecAstronomy42 = shortWeekdays.iterator();
-            seatecAstronomy42.hasNext();
-            String element = seatecAstronomy42.next();
+            String element = shortWeekdays[0];
             {
                 hashCode += element.hashCode();
             } //End block
         } //End collapsed parenthetic
         {
-            Iterator<String> seatecAstronomy42 = weekdays.iterator();
-            seatecAstronomy42.hasNext();
-            String element = seatecAstronomy42.next();
+            String element = weekdays[0];
             {
                 hashCode += element.hashCode();
             } //End block
         } //End collapsed parenthetic
         {
-            Iterator<String[]> seatecAstronomy42 = zoneStrings.iterator();
-            seatecAstronomy42.hasNext();
-            String[] element = seatecAstronomy42.next();
+            String[] element = zoneStrings[0];
             {
                 {
                     int j;
@@ -491,17 +478,15 @@ public class DateFormatSymbols implements Serializable, Cloneable {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:12.964 -0400", hash_original_method = "97B75279909DC0B04FB710B3778B8E55", hash_generated_method = "25CE0EDCDBD2AB917F9A2CF7CB674074")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public void setZoneStrings(String[][] zoneStrings) {
-        dsTaint.addTaint(zoneStrings.dsTaint);
+        dsTaint.addTaint(zoneStrings[0]);
         {
-            throw new NullPointerException();
+        	if (DroidSafeAndroidRuntime.control) throw new NullPointerException();
         } //End block
         {
-            Iterator<String[]> seatecAstronomy42 = zoneStrings.iterator();
-            seatecAstronomy42.hasNext();
-            String[] row = seatecAstronomy42.next();
+            String[] row = zoneStrings[0];
             {
                 {
-                    throw new IllegalArgumentException(Arrays.toString(row) + ".length < 5");
+                	if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException(Arrays.toString(row) + ".length < 5");
                 } //End block
             } //End block
         } //End collapsed parenthetic

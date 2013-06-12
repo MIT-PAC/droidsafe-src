@@ -1,22 +1,24 @@
 package android.telephony;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-
-// import Iterator to deal with enhanced for loop translation
-import java.util.Iterator;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 
 import android.app.PendingIntent;
 import android.os.RemoteException;
 import android.os.ServiceManager;
 import android.text.TextUtils;
+
 import com.android.internal.telephony.ISms;
 import com.android.internal.telephony.IccConstants;
 import com.android.internal.telephony.SmsRawData;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
+
+import droidsafe.annotations.DSC;
+import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.DSModeled;
+import droidsafe.runtime.DroidSafeAndroidRuntime;
+// import Iterator to deal with enhanced for loop translation
 
 public final class SmsManager {
     private static final SmsManager sInstance = new SmsManager();
@@ -52,13 +54,13 @@ public final class SmsManager {
         {
             boolean varE86D05A26E104A1B0EDAE497337FA7A3_112864503 = (TextUtils.isEmpty(destinationAddress));
             {
-                throw new IllegalArgumentException("Invalid destinationAddress");
+                if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("Invalid destinationAddress");
             } //End block
         } //End collapsed parenthetic
         {
             boolean var6C86A511CD0D2845B6E0259573F6A612_1063396107 = (TextUtils.isEmpty(text));
             {
-                throw new IllegalArgumentException("Invalid message body");
+                if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("Invalid message body");
             } //End block
         } //End collapsed parenthetic
         try 
@@ -112,13 +114,13 @@ public final class SmsManager {
         {
             boolean varE86D05A26E104A1B0EDAE497337FA7A3_1125418151 = (TextUtils.isEmpty(destinationAddress));
             {
-                throw new IllegalArgumentException("Invalid destinationAddress");
+                if (DroidSafeAndroidRuntime.control)  throw new IllegalArgumentException("Invalid destinationAddress");
             } //End block
         } //End collapsed parenthetic
         {
             boolean var2E04172F06A40E8E21AAB60E7E7515E4_560252805 = (parts == null || parts.size() < 1);
             {
-                throw new IllegalArgumentException("Invalid message body");
+                if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("Invalid message body");
             } //End block
         } //End collapsed parenthetic
         {
@@ -176,11 +178,11 @@ public final class SmsManager {
         {
             boolean varE86D05A26E104A1B0EDAE497337FA7A3_1356905661 = (TextUtils.isEmpty(destinationAddress));
             {
-                throw new IllegalArgumentException("Invalid destinationAddress");
+                if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("Invalid destinationAddress");
             } //End block
         } //End collapsed parenthetic
         {
-            throw new IllegalArgumentException("Invalid message data");
+            if (DroidSafeAndroidRuntime.control)  throw new IllegalArgumentException("Invalid message data");
         } //End block
         try 
         {

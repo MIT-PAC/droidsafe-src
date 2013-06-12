@@ -1,11 +1,15 @@
 package android.widget;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
+import java.io.IOException;
+import java.lang.ref.WeakReference;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Comparator;
+import java.util.HashMap;
+import java.util.Locale;
 
-// import Iterator to deal with enhanced for loop translation
-import java.util.Iterator;
+import org.xmlpull.v1.XmlPullParserException;
 
 import android.R;
 import android.content.ClipData;
@@ -77,13 +81,11 @@ import android.text.method.TransformationMethod2;
 import android.text.method.WordIterator;
 import android.text.style.ClickableSpan;
 import android.text.style.EasyEditSpan;
-import android.text.style.ParagraphStyle;
 import android.text.style.SpellCheckSpan;
 import android.text.style.SuggestionRangeSpan;
 import android.text.style.SuggestionSpan;
 import android.text.style.TextAppearanceSpan;
 import android.text.style.URLSpan;
-import android.text.style.UpdateAppearance;
 import android.text.util.Linkify;
 import android.util.AttributeSet;
 import android.util.DisplayMetrics;
@@ -125,18 +127,15 @@ import android.view.inputmethod.InputMethodManager;
 import android.view.textservice.SpellCheckerSubtype;
 import android.view.textservice.TextServicesManager;
 import android.widget.AdapterView.OnItemClickListener;
-import android.widget.RemoteViews.RemoteView;
+
 import com.android.internal.util.FastMath;
 import com.android.internal.widget.EditableInputConnection;
-import org.xmlpull.v1.XmlPullParserException;
-import java.io.IOException;
-import java.lang.ref.WeakReference;
-import java.text.BreakIterator;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Comparator;
-import java.util.HashMap;
-import java.util.Locale;
+
+import droidsafe.annotations.DSC;
+import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.DSModeled;
+import droidsafe.runtime.DroidSafeAndroidRuntime;
+// import Iterator to deal with enhanced for loop translation
 
 public class TextView extends View implements ViewTreeObserver.OnPreDrawListener {
     static final String LOG_TAG = "TextView";
@@ -2309,6 +2308,7 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
     @DSModeled(DSC.SAFE)
     public void setTextColor(ColorStateList colors) {
         dsTaint.addTaint(colors.dsTaint);
+        if (DroidSafeAndroidRuntime.control)
         {
             throw new NullPointerException();
         } //End block
@@ -3031,9 +3031,7 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
                 Spannable sp;
                 sp = new SpannableString(mText);
                 {
-                    Iterator<ChangeWatcher> seatecAstronomy42 = sp.getSpans(0, sp.length(), ChangeWatcher.class).iterator();
-                    seatecAstronomy42.hasNext();
-                    ChangeWatcher cw = seatecAstronomy42.next();
+                    ChangeWatcher cw = sp.getSpans(0, sp.length(), ChangeWatcher.class)[0];
                     {
                         sp.removeSpan(cw);
                     } //End block
@@ -3376,6 +3374,7 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
         dsTaint.addTaint(len);
         int oldlen;
         oldlen = 0;
+        if (DroidSafeAndroidRuntime.control)
         {
             throw new IndexOutOfBoundsException(start + ", " + len);
         } //End block
@@ -3791,6 +3790,7 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
                 {
                     {
                         boolean var1C5B6BCE2F4451CCE5A9C33B9CF3E849_203955520 = (!v.requestFocus(FOCUS_FORWARD));
+				        if (DroidSafeAndroidRuntime.control)
                         {
                             throw new IllegalStateException("focus search returned a view " +
                                 "that wasn't able to take focus!");
@@ -3804,6 +3804,7 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
                 {
                     {
                         boolean varF90963F65450DE26E78172A72D4AE61B_736023970 = (!v.requestFocus(FOCUS_BACKWARD));
+				        if (DroidSafeAndroidRuntime.control)
                         {
                             throw new IllegalStateException("focus search returned a view " +
                                 "that wasn't able to take focus!");
@@ -4188,7 +4189,8 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.139 -0400", hash_original_method = "BC1716C27CAAB9B1A5BA926037A5041B", hash_generated_method = "2945FCEAEBB4880FD07B5B8796B33D6B")
     @DSModeled(DSC.SAFE)
     public void setFilters(InputFilter[] filters) {
-        dsTaint.addTaint(filters.dsTaint);
+        dsTaint.addTaint(filters[0].dsTaint);
+        if (DroidSafeAndroidRuntime.control)
         {
             throw new IllegalArgumentException();
         } //End block
@@ -4210,7 +4212,7 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
     @DSModeled(DSC.SAFE)
     private void setFilters(Editable e, InputFilter[] filters) {
         dsTaint.addTaint(e.dsTaint);
-        dsTaint.addTaint(filters.dsTaint);
+        dsTaint.addTaint(filters[0].dsTaint);
         {
             InputFilter[] nf;
             nf = new InputFilter[filters.length + 1];
@@ -4882,7 +4884,7 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
     protected int[] onCreateDrawableState(int extraSpace) {
         //DSFIXME:  CODE0009: Possible callback target function detected
         dsTaint.addTaint(extraSpace);
-        final int[] drawableState;
+        /* final */ int[] drawableState;
         {
             drawableState = super.onCreateDrawableState(extraSpace);
         } //End block
@@ -5827,6 +5829,7 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
                                 {
                                     {
                                         boolean varB999DF15E9AF0E3270EE4B72A3F644C2_1218251048 = (!v.requestFocus(FOCUS_DOWN));
+                                        if (DroidSafeAndroidRuntime.control)
                                         {
                                             throw new IllegalStateException(
                                             "focus search returned a view " +
@@ -7378,18 +7381,18 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
         {
             line = mLayout.getLineForVertical(vspace+vs-vslack-(bottom-top));
         } //End block
-        final int hspace;
+        /* final */ int hspace;
         hspace = mRight - mLeft - getCompoundPaddingLeft() - getCompoundPaddingRight();
-        final int hs;
+        /* final  */int hs;
         hs = mScrollX;
-        final int leftChar;
+        /* final  */int leftChar;
         leftChar = mLayout.getOffsetForHorizontal(line, hs);
-        final int rightChar;
+        /* final  */int rightChar;
         rightChar = mLayout.getOffsetForHorizontal(line, hspace+hs);
-        final int lowChar;
+        /* final  */int lowChar;
         lowChar = leftChar;
         lowChar = rightChar;
-        final int highChar;
+        /* final  */int highChar;
         highChar = leftChar;
         highChar = rightChar;
         int newStart;
@@ -9768,6 +9771,7 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
         TextView shadowView;
         shadowView = (TextView) inflate(mContext,
                 com.android.internal.R.layout.text_drag_thumbnail, null);
+        if (DroidSafeAndroidRuntime.control)
         {
             throw new IllegalArgumentException("Unable to inflate text drag thumbnail");
         } //End block
@@ -10505,7 +10509,7 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
                     (dragSourceStart == mText.length() ||
                     Character.isSpaceChar(mTransformed.charAt(dragSourceStart))));
                 {
-                    final int pos;
+                    /*final*/ int pos;
                     boolean var518448CA6AC99CEB1166FD5287784237_1039911499 = (dragSourceStart == mText.length());
                     pos = dragSourceStart - 1;
                     pos = dragSourceStart;
@@ -10985,6 +10989,7 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
         public CharSequence subSequence(int start, int end) {
             dsTaint.addTaint(start);
             dsTaint.addTaint(end);
+            if (DroidSafeAndroidRuntime.control)
             {
                 throw new IndexOutOfBoundsException(start + ", " + end);
             } //End block
@@ -11004,6 +11009,7 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
             dsTaint.addTaint(off);
             dsTaint.addTaint(end);
             dsTaint.addTaint(buf);
+            if (DroidSafeAndroidRuntime.control)
             {
                 throw new IndexOutOfBoundsException(start + ", " + end);
             } //End block
@@ -11175,7 +11181,7 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
     
     private static class ErrorPopup extends PopupWindow {
         private boolean mAbove = false;
-        private final TextView mView;
+        private /* final */ TextView mView;
         private int mPopupInlineErrorBackgroundId = 0;
         private int mPopupInlineErrorAboveBackgroundId = 0;
         
@@ -12721,9 +12727,7 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
             suggestionSpans = spannable.getSpans(pos, pos, SuggestionSpan.class);
             mSpansLengths.clear();
             {
-                Iterator<SuggestionSpan> seatecAstronomy42 = suggestionSpans.iterator();
-                seatecAstronomy42.hasNext();
-                SuggestionSpan suggestionSpan = seatecAstronomy42.next();
+                SuggestionSpan suggestionSpan = suggestionSpans[0];
                 {
                     int start;
                     start = spannable.getSpanStart(suggestionSpan);

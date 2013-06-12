@@ -27,6 +27,7 @@ public final class MemoryMappedFile implements AutoCloseable {
     public MemoryMappedFile(long address, long size) {
         dsTaint.addTaint(address);
         dsTaint.addTaint(size);
+        this.size = size;
         // ---------- Original Method ----------
         //this.address = address;
         //this.size = size;

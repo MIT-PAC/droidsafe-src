@@ -2,6 +2,7 @@ package org.apache.http.impl.conn;
 
 // Droidsafe Imports
 import droidsafe.helpers.*;
+import droidsafe.runtime.DroidSafeAndroidRuntime;
 import droidsafe.annotations.*;
 
 // import Iterator to deal with enhanced for loop translation
@@ -76,13 +77,13 @@ public class ProxySelectorRoutePlanner implements HttpRoutePlanner {
         dsTaint.addTaint(target.dsTaint);
         dsTaint.addTaint(context.dsTaint);
         {
-            throw new IllegalStateException
+        	if (DroidSafeAndroidRuntime.control) throw new IllegalStateException
                 ("Request must not be null.");
         } //End block
         HttpRoute route;
         route = ConnRouteParams.getForcedRoute(request.getParams());
         {
-            throw new IllegalStateException
+        	if (DroidSafeAndroidRuntime.control) throw new IllegalStateException
                 ("Target host must not be null.");
         } //End block
         final InetAddress local;
@@ -148,7 +149,7 @@ public class ProxySelectorRoutePlanner implements HttpRoutePlanner {
                 {
                     boolean var6DD03F89A211F49F0E2AE3307E289083_1699990995 = (!(p.address() instanceof InetSocketAddress));
                     {
-                        throw new HttpException
+                    	if (DroidSafeAndroidRuntime.control) throw new HttpException
                     ("Unable to handle non-Inet proxy address: "+p.address());
                     } //End block
                 } //End collapsed parenthetic
@@ -192,7 +193,7 @@ public class ProxySelectorRoutePlanner implements HttpRoutePlanner {
         {
             boolean var43769B345260203FA635DB8A1FF66D5E_1136860056 = ((proxies == null) || proxies.isEmpty());
             {
-                throw new IllegalArgumentException
+            	if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException
                 ("Proxy list must not be empty.");
             } //End block
         } //End collapsed parenthetic

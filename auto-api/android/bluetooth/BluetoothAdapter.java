@@ -1,11 +1,14 @@
 package android.bluetooth;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-
-// import Iterator to deal with enhanced for loop translation
-import java.util.Iterator;
+import java.io.IOException;
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.HashSet;
+import java.util.LinkedList;
+import java.util.Random;
+import java.util.Set;
+import java.util.UUID;
 
 import android.annotation.SdkConstant;
 import android.annotation.SdkConstant.SdkConstantType;
@@ -20,14 +23,11 @@ import android.os.RemoteException;
 import android.os.ServiceManager;
 import android.util.Log;
 import android.util.Pair;
-import java.io.IOException;
-import java.util.Arrays;
-import java.util.Collections;
-import java.util.HashSet;
-import java.util.LinkedList;
-import java.util.Random;
-import java.util.Set;
-import java.util.UUID;
+import droidsafe.annotations.DSC;
+import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.DSModeled;
+import droidsafe.runtime.DroidSafeAndroidRuntime;
+// import Iterator to deal with enhanced for loop translation
 
 public final class BluetoothAdapter {
     private static final String TAG = "BluetoothAdapter";
@@ -93,9 +93,10 @@ public final class BluetoothAdapter {
     public BluetoothAdapter(IBluetooth service) {
         dsTaint.addTaint(service.dsTaint);
         {
-            throw new IllegalArgumentException("service is null");
+        	if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("service is null");
         } //End block
         mServiceRecordHandler = null;
+        mService = service;
         // ---------- Original Method ----------
         //if (service == null) {
             //throw new IllegalArgumentException("service is null");
@@ -613,7 +614,7 @@ public final class BluetoothAdapter {
         {
             channel = picker.nextChannel();
             {
-                throw new IOException("No available channels");
+            	if (DroidSafeAndroidRuntime.control) throw new IOException("No available channels");
             } //End block
             socket = new BluetoothServerSocket(
                     BluetoothSocket.TYPE_RFCOMM, auth, encrypt, channel);
@@ -656,7 +657,7 @@ public final class BluetoothAdapter {
             } //End block
             catch (IOException e)
             { }
-            throw new IOException("Not able to register SDP record for " + name);
+            if (DroidSafeAndroidRuntime.control) throw new IOException("Not able to register SDP record for " + name);
         } //End block
         {
             mServiceRecordHandler = new Handler(Looper.getMainLooper()) {
@@ -988,6 +989,7 @@ public final class BluetoothAdapter {
                     sRandom = new Random();
                 } //End block
                 mChannels = (LinkedList<Integer>)sChannels.clone();
+                mUuid = uuid;
             } //End block
             // ---------- Original Method ----------
             //synchronized (RfcommChannelPicker.class) {

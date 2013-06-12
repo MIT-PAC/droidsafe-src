@@ -2,6 +2,7 @@ package org.apache.harmony.security.asn1;
 
 // Droidsafe Imports
 import droidsafe.helpers.*;
+import droidsafe.runtime.DroidSafeAndroidRuntime;
 import droidsafe.annotations.*;
 
 // import Iterator to deal with enhanced for loop translation
@@ -14,7 +15,7 @@ public final class ASN1Implicit extends ASN1Type {
     private static final int TAGGING_CONSTRUCTED = 1;
     private static final int TAGGING_STRING = 2;
     private final ASN1Type type;
-    private final int taggingType;
+    private int taggingType;
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:17.636 -0400", hash_original_method = "885EAD88CE0EDAA6AE8B231FCD302B70", hash_generated_method = "A45C3A512B30C30452FE31A64A3A9BA7")
     //DSFIXME:  CODE0002: Requires DSC value to be set
@@ -22,8 +23,9 @@ public final class ASN1Implicit extends ASN1Type {
         super(CLASS_CONTEXTSPECIFIC, tagNumber);
         dsTaint.addTaint(tagNumber);
         dsTaint.addTaint(type.dsTaint);
+        this.type = type;
         {
-            throw new IllegalArgumentException("Implicit tagging can not be used for ASN.1 ANY or CHOICE type");
+        	if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("Implicit tagging can not be used for ASN.1 ANY or CHOICE type");
         } //End block
         {
             boolean var7D16F4D21FCDA7B88995592766A30F11_1054940596 = (type.checkTag(type.id));
@@ -83,7 +85,7 @@ public final class ASN1Implicit extends ASN1Type {
         {
             boolean var766EA6E7D31783D8197180D70708A15A_1747435192 = (!checkTag(in.tag));
             {
-                throw new ASN1Exception("ASN.1 implicitly tagged type expected at " +
+            	if (DroidSafeAndroidRuntime.control) throw new ASN1Exception("ASN.1 implicitly tagged type expected at " +
                     "[" + in.tagOffset + "]. Expected tag: " + Integer.toHexString(id) + ", " +
                     "but got " + Integer.toHexString(in.tag));
             } //End block

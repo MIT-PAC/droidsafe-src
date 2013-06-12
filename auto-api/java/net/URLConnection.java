@@ -1,12 +1,6 @@
 package java.net;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-
-// import Iterator to deal with enhanced for loop translation
-import java.util.Iterator;
-
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
@@ -16,6 +10,12 @@ import java.util.Hashtable;
 import java.util.List;
 import java.util.Locale;
 import java.util.Map;
+
+import droidsafe.annotations.DSC;
+import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.DSModeled;
+import droidsafe.runtime.DroidSafeAndroidRuntime;
+// import Iterator to deal with enhanced for loop translation
 
 public abstract class URLConnection {
     protected URL url;
@@ -98,7 +98,7 @@ public abstract class URLConnection {
     //DSFIXME:  CODE0002: Requires DSC value to be set
     @SuppressWarnings("unchecked")
     public Object getContent(Class[] types) throws IOException {
-        dsTaint.addTaint(types.dsTaint);
+        dsTaint.addTaint(types[0].dsTaint);
         {
             connect();
         } //End block
@@ -159,9 +159,7 @@ public abstract class URLConnection {
         packageList = System.getProperty("java.content.handler.pkgs");
         {
             {
-                Iterator<String> seatecAstronomy42 = packageList.split("\\|").iterator();
-                seatecAstronomy42.hasNext();
-                String packageName = seatecAstronomy42.next();
+                String packageName = packageList.split("\\|")[0];
                 {
                     String className;
                     className = packageName + "." + typeString;
@@ -196,7 +194,7 @@ public abstract class URLConnection {
         } //End block
         {
             {
-                throw new UnknownServiceException();
+            	if (DroidSafeAndroidRuntime.control) throw new UnknownServiceException();
             } //End block
             contentHandlers.put(type, cHandler);
         } //End block
@@ -440,7 +438,7 @@ public abstract class URLConnection {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:12.432 -0400", hash_original_method = "AC7495DD6573AA12A9CB49C509EE6FD0", hash_generated_method = "F15BACF65DA66CADB01BC421570FDB9E")
     @DSModeled(DSC.SAFE)
     public InputStream getInputStream() throws IOException {
-        throw new UnknownServiceException("Does not support writing to the input stream");
+    	if (DroidSafeAndroidRuntime.control) throw new UnknownServiceException("Does not support writing to the input stream");
         return (InputStream)dsTaint.getTaint();
         // ---------- Original Method ----------
         //throw new UnknownServiceException("Does not support writing to the input stream");
@@ -463,7 +461,7 @@ public abstract class URLConnection {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:12.432 -0400", hash_original_method = "F613A2AA87619B352A0F7C7CAB39D3F5", hash_generated_method = "186AF8DFD73692F54250E1838E3C7911")
     @DSModeled(DSC.SAFE)
     public OutputStream getOutputStream() throws IOException {
-        throw new UnknownServiceException("Does not support writing to the output stream");
+    	if (DroidSafeAndroidRuntime.control) throw new UnknownServiceException("Does not support writing to the output stream");
         return (OutputStream)dsTaint.getTaint();
         // ---------- Original Method ----------
         //throw new UnknownServiceException("Does not support writing to the output stream");

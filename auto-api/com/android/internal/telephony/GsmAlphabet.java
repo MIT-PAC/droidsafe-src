@@ -890,6 +890,8 @@ public class GsmAlphabet {
         @DSModeled(DSC.SAFE)
          LanguagePairCount(int code) {
             dsTaint.addTaint(code);
+            this.languageCode = code;
+            
             int maxSingleShiftCode;
             maxSingleShiftCode = sHighestEnabledSingleShiftCode;
             septetCounts = new int[maxSingleShiftCode + 1];

@@ -160,18 +160,7 @@ public class CompatibilityInfo implements Parcelable {
                 compatFlags &= ~NEEDS_SCREEN_COMPAT;
                 compatFlags |= NEVER_NEEDS_COMPAT;
             } //End block
-            {
-                applicationDensity = DisplayMetrics.DENSITY_DEVICE;
-                applicationScale = 1.0f;
-                applicationInvertedScale = 1.0f;
-            } //End block
-            {
-                applicationDensity = DisplayMetrics.DENSITY_DEFAULT;
-                applicationScale = DisplayMetrics.DENSITY_DEVICE
-                        / (float) DisplayMetrics.DENSITY_DEFAULT;
-                applicationInvertedScale = 1.0f / applicationScale;
-                compatFlags |= SCALING_REQUIRED;
-            } //End block
+           
         } //End block
         mCompatibilityFlags = compatFlags;
         // ---------- Original Method ----------
@@ -187,6 +176,10 @@ public class CompatibilityInfo implements Parcelable {
         dsTaint.addTaint(compFlags);
         dsTaint.addTaint(invertedScale);
         dsTaint.addTaint(dens);
+        mCompatibilityFlags = compFlags;
+        applicationDensity = dens;
+        applicationScale = scale;
+        applicationInvertedScale = invertedScale;
         // ---------- Original Method ----------
         //mCompatibilityFlags = compFlags;
         //applicationDensity = dens;
@@ -519,6 +512,8 @@ public class CompatibilityInfo implements Parcelable {
          Translator(float applicationScale, float applicationInvertedScale) {
             dsTaint.addTaint(applicationInvertedScale);
             dsTaint.addTaint(applicationScale);
+            this.applicationScale = applicationScale;
+            this.applicationInvertedScale = applicationInvertedScale;
             // ---------- Original Method ----------
             //this.applicationScale = applicationScale;
             //this.applicationInvertedScale = applicationInvertedScale;

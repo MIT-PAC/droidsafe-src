@@ -2,6 +2,7 @@ package org.apache.harmony.luni.lang.reflect;
 
 // Droidsafe Imports
 import droidsafe.helpers.*;
+import droidsafe.runtime.DroidSafeAndroidRuntime;
 import droidsafe.annotations.*;
 
 // import Iterator to deal with enhanced for loop translation
@@ -112,7 +113,7 @@ public class GenericSignatureParser {
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public void parseForMethod(GenericDeclaration genericDecl,
             String signature, Class<?>[] rawExceptionTypes) {
-        dsTaint.addTaint(rawExceptionTypes.dsTaint);
+        dsTaint.addTaint(rawExceptionTypes[0].dsTaint);
         dsTaint.addTaint(genericDecl.dsTaint);
         dsTaint.addTaint(signature);
         setInput(genericDecl, signature);
@@ -160,7 +161,7 @@ public class GenericSignatureParser {
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public void parseForConstructor(GenericDeclaration genericDecl,
             String signature, Class<?>[] rawExceptionTypes) {
-        dsTaint.addTaint(rawExceptionTypes.dsTaint);
+        dsTaint.addTaint(rawExceptionTypes[0].dsTaint);
         dsTaint.addTaint(genericDecl.dsTaint);
         dsTaint.addTaint(signature);
         setInput(genericDecl, signature);
@@ -314,7 +315,7 @@ public class GenericSignatureParser {
         Type var783AD106C3F71B5D9E2DF55ADC7F6053_1960423786 = (parseTypeVariableSignature());
         //End case 'T' 
         //Begin case default 
-        throw new GenericSignatureFormatError();
+        if (DroidSafeAndroidRuntime.control) throw new GenericSignatureFormatError();
         //End case default 
         return (Type)dsTaint.getTaint();
         // ---------- Original Method ----------
@@ -508,7 +509,7 @@ public class GenericSignatureParser {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:17.577 -0400", hash_original_method = "BD4178EAA9E41C4057CACEBF28047848", hash_generated_method = "996FB9752D73BF545D5E0646B90629D5")
     //DSFIXME:  CODE0002: Requires DSC value to be set
      void parseMethodTypeSignature(Class<?>[] rawExceptionTypes) {
-        dsTaint.addTaint(rawExceptionTypes.dsTaint);
+        dsTaint.addTaint(rawExceptionTypes[0].dsTaint);
         parseOptFormalTypeParameters();
         parameterTypes = new ListOfTypes(16);
         expect('(');
@@ -657,7 +658,7 @@ public class GenericSignatureParser {
                 {
                     symbol = 0;
                     eof = true;
-                    throw new GenericSignatureFormatError();
+                    if (DroidSafeAndroidRuntime.control) throw new GenericSignatureFormatError();
                 } //End block
             } //End collapsed parenthetic
         } //End block

@@ -2,6 +2,7 @@ package java.io;
 
 // Droidsafe Imports
 import droidsafe.helpers.*;
+import droidsafe.runtime.DroidSafeAndroidRuntime;
 import droidsafe.annotations.*;
 
 // import Iterator to deal with enhanced for loop translation
@@ -24,7 +25,7 @@ public class ObjectStreamField implements Comparable<Object> {
     public ObjectStreamField(String name, Class<?> cl) {
         dsTaint.addTaint(name);
         dsTaint.addTaint(cl.dsTaint);
-        {
+        if(DroidSafeAndroidRuntime.control) {
             throw new NullPointerException();
         } //End block
         this.type = new WeakReference<Class<?>>(cl);
@@ -43,7 +44,7 @@ public class ObjectStreamField implements Comparable<Object> {
         dsTaint.addTaint(unshared);
         dsTaint.addTaint(name);
         dsTaint.addTaint(cl.dsTaint);
-        {
+        if(DroidSafeAndroidRuntime.control) {
             throw new NullPointerException();
         } //End block
         this.type = (cl.getClassLoader() == null) ? cl : new WeakReference<Class<?>>(cl);
@@ -62,7 +63,7 @@ public class ObjectStreamField implements Comparable<Object> {
      ObjectStreamField(String signature, String name) {
         dsTaint.addTaint(name);
         dsTaint.addTaint(signature);
-        {
+        if(DroidSafeAndroidRuntime.control) {
             throw new NullPointerException();
         } //End block
         this.typeString = signature.replace('.', '/').intern();

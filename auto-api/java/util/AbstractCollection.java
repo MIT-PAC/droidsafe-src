@@ -2,6 +2,7 @@ package java.util;
 
 // Droidsafe Imports
 import droidsafe.helpers.*;
+import droidsafe.runtime.DroidSafeAndroidRuntime;
 import droidsafe.annotations.*;
 
 // import Iterator to deal with enhanced for loop translation
@@ -22,7 +23,9 @@ public abstract class AbstractCollection<E> implements Collection<E> {
     @DSModeled(DSC.SAFE)
     public boolean add(E object) {
         dsTaint.addTaint(object.dsTaint);
-        throw new UnsupportedOperationException();
+        if (DroidSafeAndroidRuntime.control) {
+        	throw new UnsupportedOperationException();
+        }
         return dsTaint.getTaintBoolean();
         // ---------- Original Method ----------
         //throw new UnsupportedOperationException();
@@ -321,7 +324,7 @@ public abstract class AbstractCollection<E> implements Collection<E> {
     //DSFIXME:  CODE0002: Requires DSC value to be set
     @SuppressWarnings("unchecked")
     public <T> T[] toArray(T[] contents) {
-        dsTaint.addTaint(contents.dsTaint);
+        dsTaint.addTaint(contents[0].dsTaint);
         int size, index;
         size = size();
         index = 0;

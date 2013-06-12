@@ -3,25 +3,24 @@ package android.os;
 // Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
+import droidsafe.runtime.*;
 
-// import Iterator to deal with enhanced for loop translation
+// needed for enhanced for control translations
 import java.util.Iterator;
-
 import android.util.AndroidRuntimeException;
 import android.util.Log;
 import java.util.ArrayList;
 
 public class MessageQueue {
     Message mMessages;
-    private final ArrayList<IdleHandler> mIdleHandlers = new ArrayList<IdleHandler>();
+    private ArrayList<IdleHandler> mIdleHandlers = new ArrayList<IdleHandler>();
     private IdleHandler[] mPendingIdleHandlers;
     private boolean mQuiting;
     boolean mQuitAllowed = true;
     private boolean mBlocked;
-    @SuppressWarnings("unused")
-    private int mPtr;
+    @SuppressWarnings("unused") private int mPtr;
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:02.693 -0400", hash_original_method = "024946A17D31C4FE5B39BFCF4854F539", hash_generated_method = "60E64558AA43506939F80B21843E1D13")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 12:02:00.158 -0400", hash_original_method = "024946A17D31C4FE5B39BFCF4854F539", hash_generated_method = "60E64558AA43506939F80B21843E1D13")
     @DSModeled(DSC.SAFE)
      MessageQueue() {
         nativeInit();
@@ -30,19 +29,19 @@ public class MessageQueue {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:02.693 -0400", hash_original_method = "22793401C0EAEE553460FBFE217265A2", hash_generated_method = "EB1AB2C7FB035445B1ED2D2FA4407EB0")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 12:02:00.158 -0400", hash_original_method = "22793401C0EAEE553460FBFE217265A2", hash_generated_method = "EB1AB2C7FB035445B1ED2D2FA4407EB0")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     private void nativeInit() {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:02.693 -0400", hash_original_method = "E34EA3919C76BD220428BD59B66C56DD", hash_generated_method = "1E6A29FEC4719172DAB72764161B9E2B")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 12:02:00.158 -0400", hash_original_method = "E34EA3919C76BD220428BD59B66C56DD", hash_generated_method = "1E6A29FEC4719172DAB72764161B9E2B")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     private void nativeDestroy() {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:02.693 -0400", hash_original_method = "6B1221F32AD6E733E25E3C4E5A3B3304", hash_generated_method = "1C4ED3BC15A4C0C5633A52771B46D43F")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 12:02:00.159 -0400", hash_original_method = "6B1221F32AD6E733E25E3C4E5A3B3304", hash_generated_method = "1C4ED3BC15A4C0C5633A52771B46D43F")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     private void nativePollOnce(int ptr, int timeoutMillis) {
         dsTaint.addTaint(timeoutMillis);
@@ -50,19 +49,19 @@ public class MessageQueue {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:02.693 -0400", hash_original_method = "29C673C89C7A5B5047FFC8F646EEAF46", hash_generated_method = "613C96ADC1327E68D991BC556D2E8795")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 12:02:00.159 -0400", hash_original_method = "29C673C89C7A5B5047FFC8F646EEAF46", hash_generated_method = "613C96ADC1327E68D991BC556D2E8795")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     private void nativeWake(int ptr) {
         dsTaint.addTaint(ptr);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:02.693 -0400", hash_original_method = "58A601CE5384C8EEE6AAD65D97957616", hash_generated_method = "F86089679955D2ADCB7179494D459A01")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 12:02:00.159 -0400", hash_original_method = "58A601CE5384C8EEE6AAD65D97957616", hash_generated_method = "5DFAE704B2F161E24309FE87EA86DA82")
     @DSModeled(DSC.SAFE)
     public final void addIdleHandler(IdleHandler handler) {
         dsTaint.addTaint(handler.dsTaint);
         {
-            throw new NullPointerException("Can't add a null IdleHandler");
+            if (DroidSafeAndroidRuntime.control) throw new NullPointerException("Can't add a null IdleHandler");
         } //End block
         {
             mIdleHandlers.add(handler);
@@ -77,7 +76,7 @@ public class MessageQueue {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:02.694 -0400", hash_original_method = "42E54E0638259D139421664F7CE4D7BC", hash_generated_method = "9DF84C489BD736B4199953338B1DBCF5")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 12:02:00.160 -0400", hash_original_method = "42E54E0638259D139421664F7CE4D7BC", hash_generated_method = "9DF84C489BD736B4199953338B1DBCF5")
     @DSModeled(DSC.SAFE)
     public final void removeIdleHandler(IdleHandler handler) {
         dsTaint.addTaint(handler.dsTaint);
@@ -91,7 +90,7 @@ public class MessageQueue {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:02.694 -0400", hash_original_method = "BA2F30DE255200D64377C35EBFA66603", hash_generated_method = "7B3626979B02158336D57872085F7434")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 12:02:00.160 -0400", hash_original_method = "BA2F30DE255200D64377C35EBFA66603", hash_generated_method = "7B3626979B02158336D57872085F7434")
     @DSModeled(DSC.SAFE)
     @Override
     protected void finalize() throws Throwable {
@@ -112,7 +111,7 @@ public class MessageQueue {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:02.694 -0400", hash_original_method = "FE8F633895A73ADF340290B052DEE51B", hash_generated_method = "A532FCFEADB1F3B9CB1D4EBA9EBB4961")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 12:02:00.161 -0400", hash_original_method = "FE8F633895A73ADF340290B052DEE51B", hash_generated_method = "0564695BFFA3BE64D4EA19F4C76677E3")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     final Message next() {
         int pendingIdleHandlerCount;
@@ -125,12 +124,12 @@ public class MessageQueue {
             } //End block
             nativePollOnce(mPtr, nextPollTimeoutMillis);
             {
-                final long now;
+                long now;
                 now = SystemClock.uptimeMillis();
-                final Message msg;
+                Message msg;
                 msg = mMessages;
                 {
-                    final long when;
+                    long when;
                     when = msg.when;
                     {
                         mBlocked = false;
@@ -160,7 +159,7 @@ public class MessageQueue {
                 int i;
                 i = 0;
                 {
-                    final IdleHandler idler;
+                    IdleHandler idler;
                     idler = mPendingIdleHandlers[i];
                     mPendingIdleHandlers[i] = null;
                     boolean keep;
@@ -189,22 +188,22 @@ public class MessageQueue {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:02.695 -0400", hash_original_method = "396D043333DC708706987577D4517B14", hash_generated_method = "54DC280E949D5D7F1E14FAD64CC88323")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 12:02:00.162 -0400", hash_original_method = "396D043333DC708706987577D4517B14", hash_generated_method = "966C8C09C8EA96BBF8C043B6AB1623BA")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     final boolean enqueueMessage(Message msg, long when) {
         dsTaint.addTaint(when);
         dsTaint.addTaint(msg.dsTaint);
         {
-            boolean var8167E05B49B57A861EC1DBC3D6FD01F0_1806164744 = (msg.isInUse());
+            boolean var8167E05B49B57A861EC1DBC3D6FD01F0_376474903 = (msg.isInUse());
             {
-                throw new AndroidRuntimeException(msg
+                if (DroidSafeAndroidRuntime.control) throw new AndroidRuntimeException(msg
                     + " This message is already in use.");
             } //End block
         } //End collapsed parenthetic
         {
-            throw new RuntimeException("Main thread not allowed to quit");
+            if (DroidSafeAndroidRuntime.control) throw new RuntimeException("Main thread not allowed to quit");
         } //End block
-        final boolean needWake;
+        boolean needWake;
         {
             {
                 RuntimeException e;
@@ -242,7 +241,7 @@ public class MessageQueue {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:02.695 -0400", hash_original_method = "2C495FAE3014577A1BBEA9C534AF3749", hash_generated_method = "BEF2B9CC80A4379B3F76F91F549B0F16")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 12:02:00.163 -0400", hash_original_method = "2C495FAE3014577A1BBEA9C534AF3749", hash_generated_method = "BEF2B9CC80A4379B3F76F91F549B0F16")
     @DSModeled(DSC.SAFE)
     final boolean removeMessages(Handler h, int what, Object object,
             boolean doRemove) {
@@ -284,7 +283,7 @@ public class MessageQueue {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:02.695 -0400", hash_original_method = "4D91148BDAD186BF2429C10F6DC32C8E", hash_generated_method = "F46D07FF739220B70088A879E8F98CED")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 12:02:00.163 -0400", hash_original_method = "4D91148BDAD186BF2429C10F6DC32C8E", hash_generated_method = "F46D07FF739220B70088A879E8F98CED")
     @DSModeled(DSC.SAFE)
     final void removeMessages(Handler h, Runnable r, Object object) {
         dsTaint.addTaint(r.dsTaint);
@@ -319,7 +318,7 @@ public class MessageQueue {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:02.696 -0400", hash_original_method = "0BDD557AE388AA8E5DFEDF2C38C17A0C", hash_generated_method = "10E738AAEBC3FB7C2DF67FC0837FF7A3")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 12:02:00.164 -0400", hash_original_method = "0BDD557AE388AA8E5DFEDF2C38C17A0C", hash_generated_method = "10E738AAEBC3FB7C2DF67FC0837FF7A3")
     @DSModeled(DSC.SAFE)
     final void removeCallbacksAndMessages(Handler h, Object object) {
         dsTaint.addTaint(object.dsTaint);

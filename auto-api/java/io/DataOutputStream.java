@@ -2,6 +2,7 @@ package java.io;
 
 // Droidsafe Imports
 import droidsafe.helpers.*;
+import droidsafe.runtime.DroidSafeAndroidRuntime;
 import droidsafe.annotations.*;
 
 // import Iterator to deal with enhanced for loop translation
@@ -57,7 +58,7 @@ public class DataOutputStream extends FilterOutputStream implements DataOutput {
         dsTaint.addTaint(buffer);
         dsTaint.addTaint(count);
         dsTaint.addTaint(offset);
-        {
+        if(DroidSafeAndroidRuntime.control) {
             throw new NullPointerException("buffer == null");
         } //End block
         out.write(buffer, offset, count);

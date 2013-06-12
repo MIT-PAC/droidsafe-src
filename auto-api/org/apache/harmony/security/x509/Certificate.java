@@ -48,7 +48,7 @@ public final class Certificate {
         @DSModeled(DSC.SAFE)
         @Override
         protected void getValues(Object object, Object[] values) {
-            dsTaint.addTaint(values.dsTaint);
+            dsTaint.addTaint(values[0].dsTaint);
             dsTaint.addTaint(object.dsTaint);
             Certificate cert;
             cert = (Certificate) object;
@@ -73,6 +73,8 @@ public final class Certificate {
         dsTaint.addTaint(tbsCertificate.dsTaint);
         dsTaint.addTaint(signatureAlgorithm.dsTaint);
         dsTaint.addTaint(signatureValue);
+        this.tbsCertificate = tbsCertificate;
+        this.signatureAlgorithm = signatureAlgorithm;
         this.signatureValue = new byte[signatureValue.length];
         System.arraycopy(signatureValue, 0, this.signatureValue, 0,
                                                     signatureValue.length);

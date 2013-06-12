@@ -94,9 +94,9 @@ public final class BlockGuard {
 
     
     public static class BlockGuardPolicyException extends RuntimeException {
-        private final int mPolicyState;
-        private final int mPolicyViolated;
-        private final String mMessage;
+        private  int mPolicyState;
+        private  int mPolicyViolated;
+        private  String mMessage;
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:11.321 -0400", hash_original_method = "FE59F9C45AD8795BBBCB0FEAFA85E7D3", hash_generated_method = "34A95B1F2079D3364C36D06E6913628C")
         //DSFIXME:  CODE0002: Requires DSC value to be set

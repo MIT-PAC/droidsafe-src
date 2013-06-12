@@ -1,14 +1,13 @@
 package android.view;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-
-// import Iterator to deal with enhanced for loop translation
-import java.util.Iterator;
-
 import android.os.MessageQueue;
 import android.util.Slog;
+import droidsafe.annotations.DSC;
+import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.DSModeled;
+import droidsafe.runtime.DroidSafeAndroidRuntime;
+// import Iterator to deal with enhanced for loop translation
 
 public final class InputQueue {
     private static final String TAG = "InputQueue";
@@ -20,6 +19,7 @@ public final class InputQueue {
     @DSModeled(DSC.SAFE)
     public InputQueue(InputChannel channel) {
         dsTaint.addTaint(channel.dsTaint);
+        mChannel = channel;
         // ---------- Original Method ----------
         //mChannel = channel;
     }
@@ -28,19 +28,19 @@ public final class InputQueue {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:05.132 -0400", hash_original_method = "772137F5B17C4DBF9726AB6EC85DE71A", hash_generated_method = "AEB0F4E7B4EAE044433F7D69703B5991")
     private static void nativeRegisterInputChannel(InputChannel inputChannel,
             InputHandler inputHandler, MessageQueue messageQueue) {
-        //DSFIXME:  CODE0010: Native static method requires manual modeling
+        //DSFIXME:  CODE0012: Native static method requires manual modeling
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:05.132 -0400", hash_original_method = "3E1580E422EE53D83CECC06E5EB725DD", hash_generated_method = "3B287433B59FABC19A8B8800E3CD1246")
     private static void nativeUnregisterInputChannel(InputChannel inputChannel) {
-        //DSFIXME:  CODE0010: Native static method requires manual modeling
+        //DSFIXME:  CODE0012: Native static method requires manual modeling
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:05.132 -0400", hash_original_method = "511C8F574FC88B46AADE9D0C29C2C3B4", hash_generated_method = "5E061523DDAD10B43E8BD4CA74529232")
     private static void nativeFinished(long finishedToken, boolean handled) {
-        //DSFIXME:  CODE0010: Native static method requires manual modeling
+        //DSFIXME:  CODE0012: Native static method requires manual modeling
     }
 
     
@@ -146,7 +146,7 @@ public final class InputQueue {
             dsTaint.addTaint(handled);
             {
                 {
-                    throw new IllegalStateException("Event finished callback already invoked.");
+                    if (DroidSafeAndroidRuntime.control)  throw new IllegalStateException("Event finished callback already invoked.");
                 } //End block
                 nativeFinished(mFinishedToken, handled);
                 mFinishedToken = -1;

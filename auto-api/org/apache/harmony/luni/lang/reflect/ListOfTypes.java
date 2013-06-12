@@ -1,15 +1,15 @@
 package org.apache.harmony.luni.lang.reflect;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-
-// import Iterator to deal with enhanced for loop translation
-import java.util.Iterator;
-
 import java.lang.reflect.Type;
 import java.util.ArrayList;
 import java.util.List;
+
+import droidsafe.annotations.DSC;
+import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.DSModeled;
+import droidsafe.runtime.DroidSafeAndroidRuntime;
+// import Iterator to deal with enhanced for loop translation
 
 public final class ListOfTypes {
     public static final ListOfTypes EMPTY = new ListOfTypes(0);
@@ -29,12 +29,10 @@ public final class ListOfTypes {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:17.585 -0400", hash_original_method = "A3B43C45442B7BC58B3D5A9B17362DF9", hash_generated_method = "A646E9C067F1224C90D70747E95DDF6F")
     //DSFIXME:  CODE0002: Requires DSC value to be set
      ListOfTypes(Type[] types) {
-        dsTaint.addTaint(types.dsTaint);
+        dsTaint.addTaint(types[0].dsTaint);
         this.types = new ArrayList<Type>(types.length);
         {
-            Iterator<Type> seatecAstronomy42 = types.iterator();
-            seatecAstronomy42.hasNext();
-            Type type = seatecAstronomy42.next();
+            Type type = types[0];
             {
                 this.types.add(type);
             } //End block
@@ -52,7 +50,7 @@ public final class ListOfTypes {
      void add(Type type) {
         dsTaint.addTaint(type.dsTaint);
         {
-            throw new NullPointerException("type == null");
+        	if (DroidSafeAndroidRuntime.control) throw new NullPointerException("type == null");
         } //End block
         types.add(type);
         // ---------- Original Method ----------

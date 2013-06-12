@@ -28,6 +28,7 @@ public class AlarmManager {
     @DSModeled(DSC.SAFE)
      AlarmManager(IAlarmManager service) {
         dsTaint.addTaint(service.dsTaint);
+        mService = service;
         // ---------- Original Method ----------
         //mService = service;
     }

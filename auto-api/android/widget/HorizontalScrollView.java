@@ -1,11 +1,7 @@
 package android.widget;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-
-// import Iterator to deal with enhanced for loop translation
-import java.util.Iterator;
+import java.util.List;
 
 import android.content.Context;
 import android.content.res.TypedArray;
@@ -25,7 +21,11 @@ import android.view.ViewParent;
 import android.view.accessibility.AccessibilityEvent;
 import android.view.accessibility.AccessibilityNodeInfo;
 import android.view.animation.AnimationUtils;
-import java.util.List;
+import droidsafe.annotations.DSC;
+import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.DSModeled;
+import droidsafe.runtime.DroidSafeAndroidRuntime;
+// import Iterator to deal with enhanced for loop translation
 
 public class HorizontalScrollView extends FrameLayout {
     private static final int ANIMATED_SCROLL_GAP = ScrollView.ANIMATED_SCROLL_GAP;
@@ -187,7 +187,7 @@ public class HorizontalScrollView extends FrameLayout {
         {
             boolean varBF62E6C23FE36C17A3594E034FF46D2E_1230677549 = (getChildCount() > 0);
             {
-                throw new IllegalStateException("HorizontalScrollView can host only one direct child");
+                if (DroidSafeAndroidRuntime.control)  throw new IllegalStateException("HorizontalScrollView can host only one direct child");
             } //End block
         } //End collapsed parenthetic
         super.addView(child);
@@ -208,7 +208,7 @@ public class HorizontalScrollView extends FrameLayout {
         {
             boolean varBF62E6C23FE36C17A3594E034FF46D2E_1507647471 = (getChildCount() > 0);
             {
-                throw new IllegalStateException("HorizontalScrollView can host only one direct child");
+                if (DroidSafeAndroidRuntime.control) throw new IllegalStateException("HorizontalScrollView can host only one direct child");
             } //End block
         } //End collapsed parenthetic
         super.addView(child, index);
@@ -229,7 +229,7 @@ public class HorizontalScrollView extends FrameLayout {
         {
             boolean varBF62E6C23FE36C17A3594E034FF46D2E_509625382 = (getChildCount() > 0);
             {
-                throw new IllegalStateException("HorizontalScrollView can host only one direct child");
+                if (DroidSafeAndroidRuntime.control) throw new IllegalStateException("HorizontalScrollView can host only one direct child");
             } //End block
         } //End collapsed parenthetic
         super.addView(child, params);
@@ -251,7 +251,7 @@ public class HorizontalScrollView extends FrameLayout {
         {
             boolean varBF62E6C23FE36C17A3594E034FF46D2E_1261039524 = (getChildCount() > 0);
             {
-                throw new IllegalStateException("HorizontalScrollView can host only one direct child");
+                if (DroidSafeAndroidRuntime.control) throw new IllegalStateException("HorizontalScrollView can host only one direct child");
             } //End block
         } //End collapsed parenthetic
         super.addView(child, index, params);
@@ -772,7 +772,7 @@ public class HorizontalScrollView extends FrameLayout {
         final int pointerId;
         pointerId = ev.getPointerId(pointerIndex);
         {
-            final int newPointerIndex;
+            int newPointerIndex;
             newPointerIndex = 1;
             newPointerIndex = 0;
             mLastMotionX = ev.getX(newPointerIndex);
@@ -810,7 +810,7 @@ public class HorizontalScrollView extends FrameLayout {
                     //Begin case MotionEvent.ACTION_SCROLL 
                     {
                         {
-                            final float hscroll;
+                            float hscroll;
                             {
                                 boolean varB081D4C178A0E24C7934472C47298D77_1343776130 = ((event.getMetaState() & KeyEvent.META_SHIFT_ON) != 0);
                                 {
@@ -1670,7 +1670,7 @@ public class HorizontalScrollView extends FrameLayout {
         {
             direction = View.FOCUS_LEFT;
         } //End block
-        final View nextFocus;
+        View nextFocus;
         nextFocus = FocusFinder.getInstance().findNextFocus(this, null, direction);
         nextFocus = FocusFinder.getInstance().findNextFocusFromRect(this,
                         previouslyFocusedRect, direction);

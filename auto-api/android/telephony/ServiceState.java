@@ -367,7 +367,7 @@ public class ServiceState implements Parcelable {
             s = (ServiceState) o;
         } //End block
         catch (ClassCastException ex)
-        { }
+        { return dsTaint.getTaintBoolean(); }
         boolean varEE276B99C43E5154F1BACA397993F41B_1756734954 = ((mState == s.mState
                 && mRoaming == s.mRoaming
                 && mIsManualNetworkSelection == s.mIsManualNetworkSelection

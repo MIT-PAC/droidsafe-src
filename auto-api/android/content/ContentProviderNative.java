@@ -530,7 +530,7 @@ final class ContentProviderProxy implements IContentProvider {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:14:59.343 -0400", hash_original_method = "C992EC82CACE6E59D7619DBD9F314166", hash_generated_method = "965E2729D305751DCFB5F558C132E8D6")
     @DSModeled(DSC.SPEC)
     public int bulkInsert(Uri url, ContentValues[] values) throws RemoteException {
-        dsTaint.addTaint(values.dsTaint);
+        dsTaint.addTaint(values[0].dsTaint);
         dsTaint.addTaint(url.dsTaint);
         Parcel data;
         data = Parcel.obtain();

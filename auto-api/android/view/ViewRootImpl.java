@@ -3,6 +3,7 @@ package android.view;
 // Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
+import droidsafe.runtime.*;
 
 // import Iterator to deal with enhanced for loop translation
 import java.util.Iterator;
@@ -572,37 +573,64 @@ public final class ViewRootImpl extends Handler implements ViewParent, View.Atta
                     mFallbackEventHandler.setView(null);
                     unscheduleTraversals();
                     //Begin case WindowManagerImpl.ADD_BAD_APP_TOKEN WindowManagerImpl.ADD_BAD_SUBWINDOW_TOKEN 
-                    throw new WindowManagerImpl.BadTokenException(
-                                "Unable to add window -- token " + attrs.token
-                                + " is not valid; is your activity running?");
-                    //End case WindowManagerImpl.ADD_BAD_APP_TOKEN WindowManagerImpl.ADD_BAD_SUBWINDOW_TOKEN 
-                    //Begin case WindowManagerImpl.ADD_NOT_APP_TOKEN 
-                    throw new WindowManagerImpl.BadTokenException(
-                                "Unable to add window -- token " + attrs.token
-                                + " is not for an application");
-                    //End case WindowManagerImpl.ADD_NOT_APP_TOKEN 
-                    //Begin case WindowManagerImpl.ADD_APP_EXITING 
-                    throw new WindowManagerImpl.BadTokenException(
-                                "Unable to add window -- app for token " + attrs.token
-                                + " is exiting");
-                    //End case WindowManagerImpl.ADD_APP_EXITING 
-                    //Begin case WindowManagerImpl.ADD_DUPLICATE_ADD 
-                    throw new WindowManagerImpl.BadTokenException(
-                                "Unable to add window -- window " + mWindow
-                                + " has already been added");
-                    //End case WindowManagerImpl.ADD_DUPLICATE_ADD 
-                    //Begin case WindowManagerImpl.ADD_MULTIPLE_SINGLETON 
-                    throw new WindowManagerImpl.BadTokenException(
-                                "Unable to add window " + mWindow +
-                                " -- another window of this type already exists");
-                    //End case WindowManagerImpl.ADD_MULTIPLE_SINGLETON 
-                    //Begin case WindowManagerImpl.ADD_PERMISSION_DENIED 
-                    throw new WindowManagerImpl.BadTokenException(
-                                "Unable to add window " + mWindow +
-                                " -- permission denied for this window type");
-                    //End case WindowManagerImpl.ADD_PERMISSION_DENIED 
-                    throw new RuntimeException(
-                        "Unable to add window -- unknown error code " + res);
+                    if (DroidSafeAndroidRuntime.control)
+                    {
+	                    throw new WindowManagerImpl.BadTokenException(
+	                                "Unable to add window -- token " + attrs.token
+	                                + " is not valid; is your activity running?");
+	                    //End case WindowManagerImpl.ADD_BAD_APP_TOKEN WindowManagerImpl.ADD_BAD_SUBWINDOW_TOKEN 
+	                    //Begin case WindowManagerImpl.ADD_NOT_APP_TOKEN 
+                    }
+                    
+                    if (DroidSafeAndroidRuntime.control)
+                    {
+	                    throw new WindowManagerImpl.BadTokenException(
+	                                "Unable to add window -- token " + attrs.token
+	                                + " is not for an application");
+	                    //End case WindowManagerImpl.ADD_NOT_APP_TOKEN 
+	                    //Begin case WindowManagerImpl.ADD_APP_EXITING 
+                    }
+                    
+                    if (DroidSafeAndroidRuntime.control)
+                    {
+	                    throw new WindowManagerImpl.BadTokenException(
+	                                "Unable to add window -- app for token " + attrs.token
+	                                + " is exiting");
+	                    //End case WindowManagerImpl.ADD_APP_EXITING 
+	                    //Begin case WindowManagerImpl.ADD_DUPLICATE_ADD 
+                    }
+                    
+                    if (DroidSafeAndroidRuntime.control)
+                    {
+	                    throw new WindowManagerImpl.BadTokenException(
+	                                "Unable to add window -- window " + mWindow
+	                                + " has already been added");
+	                    //End case WindowManagerImpl.ADD_DUPLICATE_ADD 
+	                    //Begin case WindowManagerImpl.ADD_MULTIPLE_SINGLETON 
+                    }
+                    
+                    if (DroidSafeAndroidRuntime.control)
+                    {
+	                    throw new WindowManagerImpl.BadTokenException(
+	                                "Unable to add window " + mWindow +
+	                                " -- another window of this type already exists");
+	                    //End case WindowManagerImpl.ADD_MULTIPLE_SINGLETON 
+	                    //Begin case WindowManagerImpl.ADD_PERMISSION_DENIED 
+                    }
+                    
+                    if (DroidSafeAndroidRuntime.control)
+                    {
+	                    throw new WindowManagerImpl.BadTokenException(
+	                                "Unable to add window " + mWindow +
+	                                " -- permission denied for this window type");
+	                    //End case WindowManagerImpl.ADD_PERMISSION_DENIED 
+	                }
+                    
+                    if (DroidSafeAndroidRuntime.control)
+                    {
+	                    throw new RuntimeException(
+	                        "Unable to add window -- unknown error code " + res);
+                    }
                 } //End block
                 {
                     mInputQueueCallback =
@@ -629,8 +657,12 @@ public final class ViewRootImpl extends Handler implements ViewParent, View.Atta
                 } //End collapsed parenthetic
             } //End block
         } //End block
+        throw new WindowManagerImpl.BadTokenException(
+                    "Unable to add window -- token " + attrs.token
+                    + " is not valid; is your activity running?");
         // ---------- Original Method ----------
         // Original Method Too Long, Refer to Original Implementation
+        
     }
 
     
@@ -945,6 +977,7 @@ public final class ViewRootImpl extends Handler implements ViewParent, View.Atta
         dsTaint.addTaint(child.dsTaint);
         dsTaint.addTaint(r.dsTaint);
         dsTaint.addTaint(offset.dsTaint);
+        if (DroidSafeAndroidRuntime.control)
         {
             throw new RuntimeException("child is not mine, honest!");
         } //End block
@@ -1587,9 +1620,7 @@ public final class ViewRootImpl extends Handler implements ViewParent, View.Atta
                             callbacks = mSurfaceHolder.getCallbacks();
                             {
                                 {
-                                    Iterator<SurfaceHolder.Callback> seatecAstronomy42 = callbacks.iterator();
-                                    seatecAstronomy42.hasNext();
-                                    SurfaceHolder.Callback c = seatecAstronomy42.next();
+                                    SurfaceHolder.Callback c = callbacks[0];
                                     {
                                         c.surfaceCreated(mSurfaceHolder);
                                     } //End block
@@ -1604,9 +1635,7 @@ public final class ViewRootImpl extends Handler implements ViewParent, View.Atta
                             callbacks = mSurfaceHolder.getCallbacks();
                             {
                                 {
-                                    Iterator<SurfaceHolder.Callback> seatecAstronomy42 = callbacks.iterator();
-                                    seatecAstronomy42.hasNext();
-                                    SurfaceHolder.Callback c = seatecAstronomy42.next();
+                                    SurfaceHolder.Callback c = callbacks[0];
                                     {
                                         c.surfaceChanged(mSurfaceHolder, lp.format,
                                         mWidth, mHeight);
@@ -1623,9 +1652,7 @@ public final class ViewRootImpl extends Handler implements ViewParent, View.Atta
                         mSurfaceHolderCallback.surfaceDestroyed(mSurfaceHolder);
                         {
                             {
-                                Iterator<SurfaceHolder.Callback> seatecAstronomy42 = callbacks.iterator();
-                                seatecAstronomy42.hasNext();
-                                SurfaceHolder.Callback c = seatecAstronomy42.next();
+                                SurfaceHolder.Callback c = callbacks[0];
                                 {
                                     c.surfaceDestroyed(mSurfaceHolder);
                                 } //End block
@@ -1714,6 +1741,7 @@ public final class ViewRootImpl extends Handler implements ViewParent, View.Atta
             {
                 {
                     boolean var31831045BDEFED9943FC4835790CC5A9_595442659 = (!host.dispatchConsistencyCheck(ViewDebug.CONSISTENCY_LAYOUT));
+                    if (DroidSafeAndroidRuntime.control)
                     {
                         throw new IllegalStateException("The view hierarchy is an inconsistent state,"
                             + "please refer to the logs with the tag "
@@ -1771,9 +1799,9 @@ public final class ViewRootImpl extends Handler implements ViewParent, View.Atta
                 boolean var0FBD0E114506B508CD538E9D69F15B52_1700864479 = (insetsPending || !mLastGivenInsets.equals(insets));
                 {
                     mLastGivenInsets.set(insets);
-                    final Rect contentInsets;
-                    final Rect visibleInsets;
-                    final Region touchableRegion;
+                    /*final*/ Rect contentInsets;
+                    /*final*/ Rect visibleInsets;
+                    /*final*/ Region touchableRegion;
                     {
                         contentInsets = mTranslator.getTranslatedContentInsets(insets.contentInsets);
                         visibleInsets = mTranslator.getTranslatedVisibleInsets(insets.visibleInsets);
@@ -1865,9 +1893,7 @@ public final class ViewRootImpl extends Handler implements ViewParent, View.Atta
                         callbacks = mSurfaceHolder.getCallbacks();
                         {
                             {
-                                Iterator<SurfaceHolder.Callback> seatecAstronomy42 = callbacks.iterator();
-                                seatecAstronomy42.hasNext();
-                                SurfaceHolder.Callback c = seatecAstronomy42.next();
+                                SurfaceHolder.Callback c = callbacks[0];
                                 {
                                     {
                                         ((SurfaceHolder.Callback2)c).surfaceRedrawNeeded(
@@ -2219,7 +2245,7 @@ public final class ViewRootImpl extends Handler implements ViewParent, View.Atta
         {
             boolean varAC62E7C7590DB61B5214E434C55175F8_2048330033 = (!dirty.isEmpty() || mIsAnimating);
             {
-                Canvas canvas;
+                Canvas canvas = null;
                 try 
                 {
                     int left;
@@ -3029,7 +3055,7 @@ public final class ViewRootImpl extends Handler implements ViewParent, View.Atta
         } //End block
         catch (RemoteException e)
         {
-            throw new RuntimeException(e);
+            //throw new RuntimeException(e);
         } //End block
         boolean var7211DA2D02AAD3EC6219E770D8E33669_1434201494 = (ensureTouchModeLocally(inTouchMode));
         return dsTaint.getTaintBoolean();
@@ -3975,7 +4001,7 @@ public final class ViewRootImpl extends Handler implements ViewParent, View.Atta
     //DSFIXME:  CODE0002: Requires DSC value to be set
     private AudioManager getAudioManager() {
         {
-            throw new IllegalStateException("getAudioManager called when there is no mView");
+            //throw new IllegalStateException("getAudioManager called when there is no mView");
         } //End block
         {
             mAudioManager = (AudioManager) mView.getContext().getSystemService(Context.AUDIO_SERVICE);
@@ -3996,6 +4022,7 @@ public final class ViewRootImpl extends Handler implements ViewParent, View.Atta
     @DSModeled(DSC.SAFE)
     public AccessibilityInteractionController getAccessibilityInteractionController() {
         //DSFIXME:  CODE0009: Possible callback target function detected
+    	if (DroidSafeAndroidRuntime.control)
         {
             throw new IllegalStateException("getAccessibilityInteractionController"
                     + " called when there is no mView");
@@ -4580,7 +4607,7 @@ public final class ViewRootImpl extends Handler implements ViewParent, View.Atta
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public void dispatchDragEvent(DragEvent event) {
         dsTaint.addTaint(event.dsTaint);
-        final int what;
+        /*final*/ int what;
         {
             boolean varB24B6A2E894360805412F219C1784FDD_978372104 = (event.getAction() == DragEvent.ACTION_DRAG_LOCATION);
             {
@@ -5130,6 +5157,7 @@ public final class ViewRootImpl extends Handler implements ViewParent, View.Atta
                     {
                         boolean varD985B2C74752F819AC5BC1C5B2498154_163974553 = (checkCallingPermission(Manifest.permission.DUMP) !=
                             PackageManager.PERMISSION_GRANTED);
+                        if (DroidSafeAndroidRuntime.control)
                         {
                             throw new SecurityException("Insufficient permissions to invoke"
                                 + " executeCommand() from pid=" + Binder.getCallingPid()
@@ -5375,7 +5403,7 @@ public final class ViewRootImpl extends Handler implements ViewParent, View.Atta
             movement = 0;
             nonAccelMovement = 0;
             {
-                final int dir;
+                int dir;
                 dir = 1;
                 dir = -1;
                 //Begin case 0 

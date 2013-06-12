@@ -2,6 +2,7 @@ package java.util;
 
 // Droidsafe Imports
 import droidsafe.helpers.*;
+import droidsafe.runtime.DroidSafeAndroidRuntime;
 import droidsafe.annotations.*;
 
 // import Iterator to deal with enhanced for loop translation
@@ -207,7 +208,7 @@ public class Properties extends Hashtable<Object, Object> {
         dsTaint.addTaint(out.dsTaint);
         try 
         {
-            {
+        	if (DroidSafeAndroidRuntime.control) {
                 throw new NullPointerException("out == null");
             } //End block
             StringBuilder sb;
@@ -258,7 +259,7 @@ public class Properties extends Hashtable<Object, Object> {
     @DSModeled(DSC.SAFE)
     public synchronized void load(InputStream in) throws IOException {
         dsTaint.addTaint(in.dsTaint);
-        {
+        if (DroidSafeAndroidRuntime.control) {
             throw new NullPointerException();
         } //End block
         load(new InputStreamReader(in, "ISO-8859-1"));
@@ -275,7 +276,7 @@ public class Properties extends Hashtable<Object, Object> {
     @SuppressWarnings("fallthrough")
     public synchronized void load(Reader in) throws IOException {
         dsTaint.addTaint(in.dsTaint);
-        {
+        if (DroidSafeAndroidRuntime.control) {
             throw new NullPointerException();
         } //End block
         int mode, unicode, count;
@@ -306,7 +307,7 @@ public class Properties extends Hashtable<Object, Object> {
                 {
                     unicode = (unicode << 4) + digit;
                 } //End block
-                {
+                if (DroidSafeAndroidRuntime.control) {
                     throw new IllegalArgumentException("Invalid Unicode sequence: illegal character");
                 } //End block
                 mode = NONE;
@@ -415,7 +416,7 @@ public class Properties extends Hashtable<Object, Object> {
             } //End block
             buf[offset++] = nextChar;
         } //End block
-        {
+        if (DroidSafeAndroidRuntime.control) {
             throw new IllegalArgumentException("Invalid Unicode sequence: expected format \\uxxxx");
         } //End block
         {
@@ -607,7 +608,7 @@ public class Properties extends Hashtable<Object, Object> {
     public synchronized void loadFromXML(InputStream in) throws IOException,
             InvalidPropertiesFormatException {
         dsTaint.addTaint(in.dsTaint);
-        {
+        if (DroidSafeAndroidRuntime.control) {
             throw new NullPointerException();
         } //End block
         {
@@ -699,7 +700,7 @@ public class Properties extends Hashtable<Object, Object> {
         dsTaint.addTaint(os.dsTaint);
         dsTaint.addTaint(encoding);
         dsTaint.addTaint(comment);
-        {
+        if (DroidSafeAndroidRuntime.control) {
             throw new NullPointerException();
         } //End block
         String encodingCanonicalName;

@@ -1431,6 +1431,7 @@ public class IntentFilter implements Parcelable {
             mWild = host.length() > 0 && host.charAt(0) == '*';
             mHost = mWild ? host.substring(1).intern() : host;
             mPort = port != null ? Integer.parseInt(port) : -1;
+            mOrigHost = host;
             // ---------- Original Method ----------
             //mOrigHost = host;
             //mWild = host.length() > 0 && host.charAt(0) == '*';

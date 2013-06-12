@@ -2,6 +2,7 @@ package libcore.icu;
 
 // Droidsafe Imports
 import droidsafe.helpers.*;
+import droidsafe.runtime.DroidSafeAndroidRuntime;
 import droidsafe.annotations.*;
 
 // import Iterator to deal with enhanced for loop translation
@@ -388,7 +389,7 @@ public final class NativeDecimalFormat {
     public AttributedCharacterIterator formatToCharacterIterator(Object object) {
         dsTaint.addTaint(object.dsTaint);
         {
-            throw new IllegalArgumentException();
+        	if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException();
         } //End block
         Number number;
         number = (Number) object;
@@ -847,7 +848,7 @@ public final class NativeDecimalFormat {
     public void setRoundingMode(RoundingMode roundingMode, double roundingIncrement) {
         dsTaint.addTaint(roundingMode.dsTaint);
         dsTaint.addTaint(roundingIncrement);
-        final int nativeRoundingMode;
+        int nativeRoundingMode;
         //Begin case CEILING 
         nativeRoundingMode = 0;
         //End case CEILING 
@@ -870,7 +871,7 @@ public final class NativeDecimalFormat {
         nativeRoundingMode = 6;
         //End case HALF_UP 
         //Begin case default 
-        throw new AssertionError();
+        if (DroidSafeAndroidRuntime.control) throw new AssertionError();
         //End case default 
         setRoundingMode(address, nativeRoundingMode, roundingIncrement);
         // ---------- Original Method ----------
@@ -891,49 +892,52 @@ public final class NativeDecimalFormat {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:17.412 -0400", hash_original_method = "89F62B688ECDE3121536CA739962871B", hash_generated_method = "31F632A764DB59CC1E5A7C7799308E84")
     private static void applyPatternImpl(int addr, boolean localized, String pattern) {
-        //DSFIXME:  CODE0010: Native static method requires manual modeling
+        //DSFIXME:  CODE0012: Native static method requires manual modeling
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:17.412 -0400", hash_original_method = "676D307481E0FF73AF2EAFE44D354043", hash_generated_method = "AAF78712BBEF14695FD7EBFAB9329EE2")
     private static int cloneImpl(int addr) {
-        //DSFIXME:  CODE0010: Native static method requires manual modeling
+    	return DSUtils.UNKNOWN_INT;
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:17.412 -0400", hash_original_method = "A0AC48CCD57EF1310C2A722A4B9F953A", hash_generated_method = "EFDACCC4EBF587284D49C2C0FBF7D6E0")
     private static void close(int addr) {
-        //DSFIXME:  CODE0010: Native static method requires manual modeling
+        //DSFIXME:  CODE0012: Native static method requires manual modeling
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:17.412 -0400", hash_original_method = "78AA77AC4B49C61676697E6151D87C9E", hash_generated_method = "FA8C10B6C343DE44B40D1B62F9D30A11")
     private static char[] formatLong(int addr, long value, FieldPositionIterator iter) {
-        //DSFIXME:  CODE0010: Native static method requires manual modeling
+    	char[] retVal = {DSUtils.UNKNOWN_CHAR};
+    	return retVal;
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:17.412 -0400", hash_original_method = "80E8389781C960208B10710AC7F75DDD", hash_generated_method = "A26E54F40BAE732CA53D1A30BAB32FED")
     private static char[] formatDouble(int addr, double value, FieldPositionIterator iter) {
-        //DSFIXME:  CODE0010: Native static method requires manual modeling
+    	char[] retVal = {DSUtils.UNKNOWN_CHAR};
+    	return retVal;
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:17.412 -0400", hash_original_method = "39E98461A60276718905EDF97F976364", hash_generated_method = "3579274BD51A646B869128C10DB38B31")
     private static char[] formatDigitList(int addr, String value, FieldPositionIterator iter) {
-        //DSFIXME:  CODE0010: Native static method requires manual modeling
+    	char[] retVal = {DSUtils.UNKNOWN_CHAR};
+    	return retVal;
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:17.412 -0400", hash_original_method = "C45D1178C4E1B6B9AF7F4F7CA7A46697", hash_generated_method = "A6F7A245FB574EE4183FCECC7180713B")
     private static int getAttribute(int addr, int symbol) {
-        //DSFIXME:  CODE0010: Native static method requires manual modeling
+    	return DSUtils.UNKNOWN_INT;
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:17.412 -0400", hash_original_method = "E4FB143F9FEC9AD4FDFF264E83C99080", hash_generated_method = "7DA01D5C4946D00C913521AB06709E40")
     private static String getTextAttribute(int addr, int symbol) {
-        //DSFIXME:  CODE0010: Native static method requires manual modeling
+    	return DSUtils.UNKNOWN_STRING;
     }
 
     
@@ -943,13 +947,13 @@ public final class NativeDecimalFormat {
             String infinity, String internationalCurrencySymbol, char minusSign,
             char monetaryDecimalSeparator, String nan, char patternSeparator, char percent,
             char perMill, char zeroDigit) {
-        //DSFIXME:  CODE0010: Native static method requires manual modeling
+    	return DSUtils.UNKNOWN_INT;
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:17.412 -0400", hash_original_method = "37D1A239E34B82C53C1FC2AD13C180A4", hash_generated_method = "851D6DD9FA0ADF1E6C23ACC18C6A471F")
     private static Number parse(int addr, String string, ParsePosition position, boolean parseBigDecimal) {
-        //DSFIXME:  CODE0010: Native static method requires manual modeling
+    	return DSUtils.UNKNOWN_INT;
     }
 
     
@@ -959,37 +963,37 @@ public final class NativeDecimalFormat {
             String infinity, String internationalCurrencySymbol, char minusSign,
             char monetaryDecimalSeparator, String nan, char patternSeparator, char percent,
             char perMill, char zeroDigit) {
-        //DSFIXME:  CODE0010: Native static method requires manual modeling
+        //DSFIXME:  CODE0012: Native static method requires manual modeling
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:17.413 -0400", hash_original_method = "C6525103B23425151F0DF63C2E7B2CB9", hash_generated_method = "829963D45CF0545D10BFD69E6847A287")
     private static void setSymbol(int addr, int symbol, String str) {
-        //DSFIXME:  CODE0010: Native static method requires manual modeling
+        //DSFIXME:  CODE0012: Native static method requires manual modeling
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:17.413 -0400", hash_original_method = "9CF64A50E62500CEB8D69C0D8703D8DF", hash_generated_method = "51F89FC90F6B3CB5596DA3FF65B5CF8D")
     private static void setAttribute(int addr, int symbol, int i) {
-        //DSFIXME:  CODE0010: Native static method requires manual modeling
+        //DSFIXME:  CODE0012: Native static method requires manual modeling
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:17.413 -0400", hash_original_method = "B25ED26F96CD53325B9498187078B093", hash_generated_method = "92A29CB3332EABA6C521D17F65CEDE40")
     private static void setRoundingMode(int addr, int roundingMode, double roundingIncrement) {
-        //DSFIXME:  CODE0010: Native static method requires manual modeling
+        //DSFIXME:  CODE0012: Native static method requires manual modeling
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:17.413 -0400", hash_original_method = "C053560EFBE0BC86C317DA675BA27ABC", hash_generated_method = "228D7DA8EA92840DA12A250344E54A04")
     private static void setTextAttribute(int addr, int symbol, String str) {
-        //DSFIXME:  CODE0010: Native static method requires manual modeling
+        //DSFIXME:  CODE0012: Native static method requires manual modeling
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:17.413 -0400", hash_original_method = "9F1956A5D5A29CC5DA084485ACF2BCBE", hash_generated_method = "4DC63F6103A0854B923462952765C11A")
     private static String toPatternImpl(int addr, boolean localized) {
-        //DSFIXME:  CODE0010: Native static method requires manual modeling
+    	return DSUtils.UNKNOWN_STRING;
     }
 
     
@@ -1072,7 +1076,7 @@ public final class NativeDecimalFormat {
         @DSModeled(DSC.SAFE)
         public boolean next() {
             {
-                throw new NoSuchElementException();
+            	if (DroidSafeAndroidRuntime.control) throw new NoSuchElementException();
             } //End block
             pos += 3;
             return dsTaint.getTaintBoolean();

@@ -1,16 +1,15 @@
 package android.view;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-
-// import Iterator to deal with enhanced for loop translation
-import java.util.Iterator;
-
 import android.content.ClipData;
 import android.content.ClipDescription;
 import android.os.Parcel;
 import android.os.Parcelable;
+import droidsafe.annotations.DSC;
+import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.DSModeled;
+import droidsafe.runtime.DroidSafeAndroidRuntime;
+// import Iterator to deal with enhanced for loop translation
 
 public class DragEvent implements Parcelable {
     private static final boolean TRACK_RECYCLED_LOCATION = false;
@@ -217,13 +216,13 @@ public class DragEvent implements Parcelable {
     public final void recycle() {
         {
             {
-                throw new RuntimeException(toString() + " recycled twice!", mRecycledLocation);
+                if (DroidSafeAndroidRuntime.control) throw new RuntimeException(toString() + " recycled twice!", mRecycledLocation);
             } //End block
             mRecycledLocation = new RuntimeException("Last recycled here");
         } //End block
         {
             {
-                throw new RuntimeException(toString() + " recycled twice!");
+                if (DroidSafeAndroidRuntime.control) throw new RuntimeException(toString() + " recycled twice!");
             } //End block
             mRecycled = true;
         } //End block

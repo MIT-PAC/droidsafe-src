@@ -2,6 +2,7 @@ package org.apache.harmony.security.asn1;
 
 // Droidsafe Imports
 import droidsafe.helpers.*;
+import droidsafe.runtime.DroidSafeAndroidRuntime;
 import droidsafe.annotations.*;
 
 // import Iterator to deal with enhanced for loop translation
@@ -29,6 +30,7 @@ public final class ASN1Explicit extends ASN1Constructed {
         dsTaint.addTaint(tagNumber);
         dsTaint.addTaint(tagClass);
         dsTaint.addTaint(type.dsTaint);
+        this.type = type;
         // ---------- Original Method ----------
         //this.type = type;
     }
@@ -39,7 +41,7 @@ public final class ASN1Explicit extends ASN1Constructed {
     public Object decode(BerInputStream in) throws IOException {
         dsTaint.addTaint(in.dsTaint);
         {
-            throw new ASN1Exception("ASN.1 explicitly tagged type is expected at [" +
+        	if (DroidSafeAndroidRuntime.control) throw new ASN1Exception("ASN.1 explicitly tagged type is expected at [" +
                     in.tagOffset + "]. Expected tag: " + Integer.toHexString(constrId) + ", " +
                     "but encountered tag " + Integer.toHexString(in.tag));
         } //End block

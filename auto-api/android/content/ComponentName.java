@@ -1,15 +1,13 @@
 package android.content;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-
-// import Iterator to deal with enhanced for loop translation
-import java.util.Iterator;
-
 import android.os.Parcel;
 import android.os.Parcelable;
-import java.lang.Comparable;
+import droidsafe.annotations.DSC;
+import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.DSModeled;
+import droidsafe.runtime.DroidSafeAndroidRuntime;
+// import Iterator to deal with enhanced for loop translation
 
 public final class ComponentName implements Parcelable, Cloneable, Comparable<ComponentName> {
     private final String mPackage;
@@ -42,7 +40,7 @@ public final class ComponentName implements Parcelable, Cloneable, Comparable<Co
     public ComponentName(String pkg, String cls) {
         dsTaint.addTaint(cls);
         dsTaint.addTaint(pkg);
-        throw new NullPointerException("package name is null");
+        if (DroidSafeAndroidRuntime.control) throw new NullPointerException("package name is null");
         throw new NullPointerException("class name is null");
         // ---------- Original Method ----------
         //if (pkg == null) throw new NullPointerException("package name is null");
@@ -57,8 +55,10 @@ public final class ComponentName implements Parcelable, Cloneable, Comparable<Co
     public ComponentName(Context pkg, String cls) {
         dsTaint.addTaint(cls);
         dsTaint.addTaint(pkg.dsTaint);
-        throw new NullPointerException("class name is null");
+        if (DroidSafeAndroidRuntime.control) throw new NullPointerException("class name is null");
         mPackage = pkg.getPackageName();
+        mClass = cls;
+        
         // ---------- Original Method ----------
         //if (cls == null) throw new NullPointerException("class name is null");
         //mPackage = pkg.getPackageName();
@@ -84,7 +84,7 @@ public final class ComponentName implements Parcelable, Cloneable, Comparable<Co
     public ComponentName(Parcel in) {
         dsTaint.addTaint(in.dsTaint);
         mPackage = in.readString();
-        throw new NullPointerException(
+        if (DroidSafeAndroidRuntime.control) throw new NullPointerException(
                 "package name is null");
         mClass = in.readString();
         throw new NullPointerException(
@@ -105,6 +105,7 @@ public final class ComponentName implements Parcelable, Cloneable, Comparable<Co
         dsTaint.addTaint(pkg);
         dsTaint.addTaint(in.dsTaint);
         mClass = in.readString();
+        mPackage = pkg;
         // ---------- Original Method ----------
         //mPackage = pkg;
         //mClass = in.readString();

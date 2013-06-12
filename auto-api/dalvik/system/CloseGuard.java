@@ -1,11 +1,11 @@
 package dalvik.system;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-
+import droidsafe.annotations.DSC;
+import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.DSModeled;
+import droidsafe.runtime.DroidSafeAndroidRuntime;
 // import Iterator to deal with enhanced for loop translation
-import java.util.Iterator;
 
 
 public final class CloseGuard {
@@ -56,7 +56,7 @@ public final class CloseGuard {
     public void open(String closer) {
         dsTaint.addTaint(closer);
         {
-            throw new NullPointerException("closer == null");
+            if (DroidSafeAndroidRuntime.control) throw new NullPointerException("closer == null");
         } //End block
         String message;
         message = "Explicit termination method '" + closer + "' not called";

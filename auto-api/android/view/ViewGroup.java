@@ -1,9 +1,8 @@
 package android.view;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-
+import java.util.ArrayList;
+import java.util.HashSet;
 // import Iterator to deal with enhanced for loop translation
 import java.util.Iterator;
 
@@ -31,10 +30,14 @@ import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.view.animation.LayoutAnimationController;
 import android.view.animation.Transformation;
+
 import com.android.internal.R;
 import com.android.internal.util.Predicate;
-import java.util.ArrayList;
-import java.util.HashSet;
+
+import droidsafe.annotations.DSC;
+import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.DSModeled;
+import droidsafe.runtime.DroidSafeAndroidRuntime;
 
 public abstract class ViewGroup extends View implements ViewParent, ViewManager {
     private static final boolean DBG = false;
@@ -325,7 +328,7 @@ public abstract class ViewGroup extends View implements ViewParent, ViewManager 
     public void setDescendantFocusability(int focusability) {
         dsTaint.addTaint(focusability);
         //Begin case default 
-        throw new IllegalArgumentException("must be one of FOCUS_BEFORE_DESCENDANTS, "
+        if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("must be one of FOCUS_BEFORE_DESCENDANTS, "
                         + "FOCUS_AFTER_DESCENDANTS, FOCUS_BLOCK_DESCENDANTS");
         //End case default 
         mGroupFlags &= ~FLAG_MASK_FOCUSABILITY;
@@ -1619,7 +1622,7 @@ public abstract class ViewGroup extends View implements ViewParent, ViewManager 
                                         firstOldHoverTarget = hoverTarget.next;
                                     } //End block
                                     hoverTarget.next = null;
-                                    wasHovered = true;
+
                                 } //End block
                                 predecessor = hoverTarget;
                                 hoverTarget = hoverTarget.next;
@@ -1906,12 +1909,6 @@ public abstract class ViewGroup extends View implements ViewParent, ViewManager 
                         intercepted = onInterceptTouchEvent(ev);
                         ev.setAction(action);
                     } //End block
-                    {
-                        intercepted = false;
-                    } //End block
-                } //End block
-                {
-                    intercepted = true;
                 } //End block
                 final boolean canceled;
                 canceled = resetCancelNextUpFlag(this)
@@ -1928,7 +1925,6 @@ public abstract class ViewGroup extends View implements ViewParent, ViewManager 
                         actionIndex = ev.getActionIndex();
                         final int idBitsToAssign;
                         idBitsToAssign = 1 << ev.getPointerId(actionIndex);
-                        idBitsToAssign = TouchTarget.ALL_POINTER_IDS;
                         removePointersFromTouchTargets(idBitsToAssign);
                         final int childrenCount;
                         childrenCount = mChildrenCount;
@@ -2308,9 +2304,6 @@ public abstract class ViewGroup extends View implements ViewParent, ViewManager 
             {
                 handled = super.dispatchTouchEvent(event);
             } //End block
-            {
-                handled = child.dispatchTouchEvent(event);
-            } //End block
             event.setAction(oldAction);
         } //End block
         final int oldPointerIdBits;
@@ -2323,26 +2316,16 @@ public abstract class ViewGroup extends View implements ViewParent, ViewManager 
                 boolean varF3923A48A5FA342E540F86C39C1C463E_1097826874 = (child == null || child.hasIdentityMatrix());
                 {
                     {
-                        handled = super.dispatchTouchEvent(event);
-                    } //End block
-                    {
                         final float offsetX;
                         offsetX = mScrollX - child.mLeft;
                         final float offsetY;
                         offsetY = mScrollY - child.mTop;
                         event.offsetLocation(offsetX, offsetY);
-                        handled = child.dispatchTouchEvent(event);
                         event.offsetLocation(-offsetX, -offsetY);
                     } //End block
                 } //End block
             } //End collapsed parenthetic
             transformedEvent = MotionEvent.obtain(event);
-        } //End block
-        {
-            transformedEvent = event.split(newPointerIdBits);
-        } //End block
-        {
-            handled = super.dispatchTouchEvent(transformedEvent);
         } //End block
         {
             final float offsetX;
@@ -2356,7 +2339,7 @@ public abstract class ViewGroup extends View implements ViewParent, ViewManager 
                     transformedEvent.transform(child.getInverseMatrix());
                 } //End block
             } //End collapsed parenthetic
-            handled = child.dispatchTouchEvent(transformedEvent);
+ 
         } //End block
         transformedEvent.recycle();
         return dsTaint.getTaintBoolean();
@@ -2468,7 +2451,7 @@ public abstract class ViewGroup extends View implements ViewParent, ViewManager 
         } //End block
         //End case FOCUS_AFTER_DESCENDANTS 
         //Begin case default 
-        throw new IllegalStateException("descendant focusability must be "
+        if (DroidSafeAndroidRuntime.control) throw new IllegalStateException("descendant focusability must be "
                         + "one of FOCUS_BEFORE_DESCENDANTS, FOCUS_AFTER_DESCENDANTS, FOCUS_BLOCK_DESCENDANTS "
                         + "but is " + descendantFocusability);
         //End case default 
@@ -3472,10 +3455,8 @@ public abstract class ViewGroup extends View implements ViewParent, ViewManager 
                                 } //End block
                                 {
                                     final int scrollX;
-                                    scrollX = 0;
                                     scrollX = sx;
                                     final int scrollY;
-                                    scrollY = 0;
                                     scrollY = sy;
                                     canvas.saveLayerAlpha(scrollX, scrollY, scrollX + cr - cl,
                                     scrollY + cb - ct, multipliedAlpha, layerFlags);
@@ -3531,10 +3512,8 @@ public abstract class ViewGroup extends View implements ViewParent, ViewManager 
                     } //End block
                     {
                         final int scrollX;
-                        scrollX = 0;
                         scrollX = sx;
                         final int scrollY;
-                        scrollY = 0;
                         scrollY = sy;
                         canvas.saveLayer(scrollX, scrollY,
                             scrollX + cr - cl, scrollY + cb - ct, child.mLayerPaint,
@@ -3907,7 +3886,7 @@ public abstract class ViewGroup extends View implements ViewParent, ViewManager 
         {
             params = generateDefaultLayoutParams();
             {
-                throw new IllegalArgumentException("generateDefaultLayoutParams() cannot return null");
+                if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("generateDefaultLayoutParams() cannot return null");
             } //End block
         } //End block
         addView(child, index, params);
@@ -3983,11 +3962,11 @@ public abstract class ViewGroup extends View implements ViewParent, ViewManager 
         {
             boolean varDBEE735151EA33B4B64A3ED748755A2D_1257629703 = (!checkLayoutParams(params));
             {
-                throw new IllegalArgumentException("Invalid LayoutParams supplied to " + this);
+                if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("Invalid LayoutParams supplied to " + this);
             } //End block
         } //End collapsed parenthetic
         {
-            throw new IllegalArgumentException("Given view not a child of " + this);
+            if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("Given view not a child of " + this);
         } //End block
         view.setLayoutParams(params);
         // ---------- Original Method ----------
@@ -4107,7 +4086,7 @@ public abstract class ViewGroup extends View implements ViewParent, ViewManager 
         {
             boolean varA3364C4A63F6A263A8814AE455A29C59_452840725 = (child.getParent() != null);
             {
-                throw new IllegalStateException("The specified child already has a parent. " +
+                if (DroidSafeAndroidRuntime.control) throw new IllegalStateException("The specified child already has a parent. " +
                     "You must call removeView() on the child's parent first.");
             } //End block
         } //End collapsed parenthetic
@@ -4228,11 +4207,10 @@ public abstract class ViewGroup extends View implements ViewParent, ViewManager 
             children[--mChildrenCount] = null;
         } //End block
         {
-            throw new IndexOutOfBoundsException();
+           if (DroidSafeAndroidRuntime.control)  throw new IndexOutOfBoundsException();
         } //End block
         {
             mLastTouchDownTime = 0;
-            mLastTouchDownIndex = -1;
         } //End block
         {
             mLastTouchDownIndex--;
@@ -5078,7 +5056,6 @@ public abstract class ViewGroup extends View implements ViewParent, ViewManager 
         dsTaint.addTaint(r.dsTaint);
         dsTaint.addTaint(offset.dsTaint);
         final RectF rect;
-        rect = mAttachInfo.mTmpTransformRect;
         rect = new RectF();
         rect.set(r);
         {
@@ -5959,7 +5936,7 @@ protected abstract void onLayout(boolean changed,
         super.drawableStateChanged();
         {
             {
-                throw new IllegalStateException("addStateFromChildren cannot be enabled if a"
+                if (DroidSafeAndroidRuntime.control) throw new IllegalStateException("addStateFromChildren cannot be enabled if a"
                         + " child has duplicateParentState set to true");
             } //End block
             final View[] children;

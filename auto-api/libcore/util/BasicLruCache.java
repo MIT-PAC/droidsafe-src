@@ -2,6 +2,7 @@ package libcore.util;
 
 // Droidsafe Imports
 import droidsafe.helpers.*;
+import droidsafe.runtime.DroidSafeAndroidRuntime;
 import droidsafe.annotations.*;
 
 // import Iterator to deal with enhanced for loop translation
@@ -18,8 +19,9 @@ public class BasicLruCache<K, V> {
     @DSModeled(DSC.SAFE)
     public BasicLruCache(int maxSize) {
         dsTaint.addTaint(maxSize);
+        this.maxSize = maxSize;
         {
-            throw new IllegalArgumentException("maxSize <= 0");
+        	if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("maxSize <= 0");
         } //End block
         this.map = new LinkedHashMap<K, V>(0, 0.75f, true);
         // ---------- Original Method ----------
@@ -36,7 +38,7 @@ public class BasicLruCache<K, V> {
     public synchronized final V get(K key) {
         dsTaint.addTaint(key.dsTaint);
         {
-            throw new NullPointerException();
+        	if (DroidSafeAndroidRuntime.control) throw new NullPointerException();
         } //End block
         V result;
         result = map.get(key);
@@ -69,7 +71,7 @@ public class BasicLruCache<K, V> {
         dsTaint.addTaint(value.dsTaint);
         dsTaint.addTaint(key.dsTaint);
         {
-            throw new NullPointerException();
+        	if (DroidSafeAndroidRuntime.control) throw new NullPointerException();
         } //End block
         V previous;
         previous = map.put(key, value);

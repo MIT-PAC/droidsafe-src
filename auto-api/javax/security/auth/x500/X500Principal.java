@@ -2,6 +2,7 @@ package javax.security.auth.x500;
 
 // Droidsafe Imports
 import droidsafe.helpers.*;
+import droidsafe.runtime.DroidSafeAndroidRuntime;
 import droidsafe.annotations.*;
 
 // import Iterator to deal with enhanced for loop translation
@@ -29,7 +30,7 @@ public final class X500Principal implements Serializable, Principal {
     public X500Principal(byte[] name) {
         dsTaint.addTaint(name);
         {
-            throw new IllegalArgumentException("Name cannot be null");
+        	if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("Name cannot be null");
         } //End block
         try 
         {
@@ -56,7 +57,7 @@ public final class X500Principal implements Serializable, Principal {
     public X500Principal(InputStream in) {
         dsTaint.addTaint(in.dsTaint);
         {
-            throw new NullPointerException("in == null");
+        	if (DroidSafeAndroidRuntime.control) throw new NullPointerException("in == null");
         } //End block
         try 
         {
@@ -83,7 +84,7 @@ public final class X500Principal implements Serializable, Principal {
     public X500Principal(String name) {
         dsTaint.addTaint(name);
         {
-            throw new NullPointerException("Name cannot be null");
+        	if (DroidSafeAndroidRuntime.control) throw new NullPointerException("Name cannot be null");
         } //End block
         try 
         {
@@ -111,7 +112,7 @@ public final class X500Principal implements Serializable, Principal {
         dsTaint.addTaint(name);
         dsTaint.addTaint(keywordMap.dsTaint);
         {
-            throw new NullPointerException("Name cannot be null");
+        	if (DroidSafeAndroidRuntime.control) throw new NullPointerException("Name cannot be null");
         } //End block
         try 
         {
@@ -140,7 +141,7 @@ public final class X500Principal implements Serializable, Principal {
         IllegalArgumentException iae;
         iae = new IllegalArgumentException("Incorrect input encoding");
         iae.initCause(e);
-        throw iae;
+        if (DroidSafeAndroidRuntime.control) throw iae;
         return (IllegalArgumentException)dsTaint.getTaint();
         // ---------- Original Method ----------
         //IllegalArgumentException iae = new IllegalArgumentException("Incorrect input encoding");
@@ -157,7 +158,7 @@ public final class X500Principal implements Serializable, Principal {
         IllegalArgumentException iae;
         iae = new IllegalArgumentException("Incorrect input name:" + name);
         iae.initCause(e);
-        throw iae;
+        if (DroidSafeAndroidRuntime.control) throw iae;
         return (IllegalArgumentException)dsTaint.getTaint();
         // ---------- Original Method ----------
         //IllegalArgumentException iae = new IllegalArgumentException("Incorrect input name:" + name);
@@ -352,7 +353,7 @@ public final class X500Principal implements Serializable, Principal {
                     String varAE728F0FF478521C4F23B34058A0AE20_1032491136 = (resultName.toString());
                 } //End block
                 {
-                    throw new IllegalArgumentException("invalid format specified: " + format);
+                	if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("invalid format specified: " + format);
                 } //End block
             } //End collapsed parenthetic
         } //End collapsed parenthetic

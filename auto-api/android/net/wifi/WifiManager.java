@@ -1,24 +1,26 @@
 package android.net.wifi;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-
-// import Iterator to deal with enhanced for loop translation
-import java.util.Iterator;
+import java.util.List;
 
 import android.annotation.SdkConstant;
 import android.annotation.SdkConstant.SdkConstantType;
 import android.content.Context;
 import android.net.DhcpInfo;
 import android.os.Binder;
-import android.os.IBinder;
 import android.os.Handler;
+import android.os.IBinder;
+import android.os.Messenger;
 import android.os.RemoteException;
 import android.os.WorkSource;
-import android.os.Messenger;
+
 import com.android.internal.util.AsyncChannel;
-import java.util.List;
+
+import droidsafe.annotations.DSC;
+import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.DSModeled;
+import droidsafe.runtime.DroidSafeAndroidRuntime;
+// import Iterator to deal with enhanced for loop translation
 
 public class WifiManager {
     public static final int ERROR_AUTHENTICATING = 1;
@@ -989,7 +991,7 @@ public class WifiManager {
                         {
                             {
                                 mService.releaseWifiLock(mBinder);
-                                throw new UnsupportedOperationException(
+                                if (DroidSafeAndroidRuntime.control) throw new UnsupportedOperationException(
                                             "Exceeded maximum number of wifi locks");
                             } //End block
                             mActiveLockCount++;
@@ -1207,7 +1209,7 @@ public class WifiManager {
                         {
                             {
                                 mService.releaseMulticastLock();
-                                throw new UnsupportedOperationException(
+                                if (DroidSafeAndroidRuntime.control) throw new UnsupportedOperationException(
                                         "Exceeded maximum number of wifi locks");
                             } //End block
                             mActiveLockCount++;

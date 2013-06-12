@@ -46,7 +46,7 @@ public class LinkedHashSet<E> extends HashSet<E> implements Set<E>, Cloneable, S
                 : collection.size() * 2));
         dsTaint.addTaint(collection.dsTaint);
         {
-            Iterator<E> seatecAstronomy42 = collection.iterator();
+            Iterator<? extends E> seatecAstronomy42 = collection.iterator();
             seatecAstronomy42.hasNext();
             E e = seatecAstronomy42.next();
             {

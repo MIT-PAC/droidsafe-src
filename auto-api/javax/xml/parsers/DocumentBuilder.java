@@ -2,6 +2,7 @@ package javax.xml.parsers;
 
 // Droidsafe Imports
 import droidsafe.helpers.*;
+import droidsafe.runtime.DroidSafeAndroidRuntime;
 import droidsafe.annotations.*;
 
 // import Iterator to deal with enhanced for loop translation
@@ -50,7 +51,7 @@ public abstract class DocumentBuilder {
     public Document parse(InputStream is) throws SAXException, IOException {
         dsTaint.addTaint(is.dsTaint);
         {
-            throw new IllegalArgumentException("InputStream cannot be null");
+        	if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("InputStream cannot be null");
         } //End block
         InputSource in;
         in = new InputSource(is);
@@ -71,7 +72,7 @@ public abstract class DocumentBuilder {
         dsTaint.addTaint(is.dsTaint);
         dsTaint.addTaint(systemId);
         {
-            throw new IllegalArgumentException("InputStream cannot be null");
+        	if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("InputStream cannot be null");
         } //End block
         InputSource in;
         in = new InputSource(is);
@@ -93,7 +94,7 @@ public abstract class DocumentBuilder {
     public Document parse(String uri) throws SAXException, IOException {
         dsTaint.addTaint(uri);
         {
-            throw new IllegalArgumentException("URI cannot be null");
+        	if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("URI cannot be null");
         } //End block
         InputSource in;
         in = new InputSource(uri);
@@ -113,7 +114,7 @@ public abstract class DocumentBuilder {
     public Document parse(File f) throws SAXException, IOException {
         dsTaint.addTaint(f.dsTaint);
         {
-            throw new IllegalArgumentException("File cannot be null");
+        	if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("File cannot be null");
         } //End block
         String escapedURI;
         escapedURI = FilePathToURI.filepath2URI(f.getAbsolutePath());
@@ -162,7 +163,7 @@ public abstract class DocumentBuilder {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:15.555 -0400", hash_original_method = "0EC7A1CF3FE0EA75043A7D33C5A41123", hash_generated_method = "175DAC667A6680F762C43DB44CC1F188")
     @DSModeled(DSC.SAFE)
     public Schema getSchema() {
-        throw new UnsupportedOperationException(
+    	if (DroidSafeAndroidRuntime.control) throw new UnsupportedOperationException(
             "This parser does not support specification \""
             + this.getClass().getPackage().getSpecificationTitle()
             + "\" version \""
@@ -184,7 +185,7 @@ public abstract class DocumentBuilder {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:15.555 -0400", hash_original_method = "2D701854F0A16C5A4E7C38BB02DF4544", hash_generated_method = "309012FE5A9A0E5B29F1F0BC8392628A")
     @DSModeled(DSC.SAFE)
     public boolean isXIncludeAware() {
-        throw new UnsupportedOperationException(
+    	if (DroidSafeAndroidRuntime.control) throw new UnsupportedOperationException(
             "This parser does not support specification \""
             + this.getClass().getPackage().getSpecificationTitle()
             + "\" version \""

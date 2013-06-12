@@ -22,7 +22,7 @@ public final class AccessControlContext {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:12.589 -0400", hash_original_method = "D60AD149FA522283F5BA7717DB279F05", hash_generated_method = "F429BDB639AAACD5524B7C7E31541B4E")
     @DSModeled(DSC.SAFE)
     public AccessControlContext(ProtectionDomain[] context) {
-        dsTaint.addTaint(context.dsTaint);
+        dsTaint.addTaint(context[0].dsTaint);
         // ---------- Original Method ----------
     }
 

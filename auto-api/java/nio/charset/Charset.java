@@ -25,8 +25,8 @@ import libcore.icu.NativeConverter;
 public abstract class Charset implements Comparable<Charset> {
     private static final HashMap<String, Charset> CACHED_CHARSETS = new HashMap<String, Charset>();
     private static final Charset DEFAULT_CHARSET = getDefaultCharset();
-    private final String canonicalName;
-    private final HashSet<String> aliasesSet;
+    private String canonicalName;
+    private HashSet<String> aliasesSet;
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:12.526 -0400", hash_original_method = "70538FAF149E20AD4492F643DB83EDCB", hash_generated_method = "E80383F4DE7895B4D8DB185388FA7A1A")
     //DSFIXME:  CODE0002: Requires DSC value to be set
@@ -36,10 +36,8 @@ public abstract class Charset implements Comparable<Charset> {
         checkCharsetName(canonicalName);
         this.aliasesSet = new HashSet<String>();
         {
-            {
-                Iterator<String> seatecAstronomy42 = aliases.iterator();
-                seatecAstronomy42.hasNext();
-                String alias = seatecAstronomy42.next();
+			{
+                String alias = aliases[0];
                 {
                     checkCharsetName(alias);
                     this.aliasesSet.add(alias);

@@ -169,33 +169,37 @@ public final class GLUtils {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:02.504 -0400", hash_original_method = "368BCBBAD3F68FEF8C07AE5DC4D2077C", hash_generated_method = "66CFEED3BA0F1B2AF18C8805660BFF70")
     private static void nativeClassInit() {
-        //DSFIXME:  CODE0010: Native static method requires manual modeling
+        //DSFIXME:  CODE0012: Native static method requires manual modeling
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:02.504 -0400", hash_original_method = "D7A6F441E801CC1928318AEDAA360C85", hash_generated_method = "DC26CA34987AA03D680F128BB06D48D9")
     private static int native_getInternalFormat(Bitmap bitmap) {
-        //DSFIXME:  CODE0010: Native static method requires manual modeling
+        //DSFIXME:  CODE0012: Native static method requires manual modeling
+    	return DSUtils.UNKNOWN_INT;
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:02.504 -0400", hash_original_method = "70508A4AA495E8E72B724137B94EF162", hash_generated_method = "FEA8F6C9CDAAD987DA9C3C522A6F0BE3")
     private static int native_getType(Bitmap bitmap) {
-        //DSFIXME:  CODE0010: Native static method requires manual modeling
+        //DSFIXME:  CODE0012: Native static method requires manual modeling
+    	return DSUtils.UNKNOWN_INT;
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:02.504 -0400", hash_original_method = "C72BE07C69251A6FFA4F71AD75FC3B37", hash_generated_method = "810312668AA47A878C139B0154283C87")
     private static int native_texImage2D(int target, int level, int internalformat,
             Bitmap bitmap, int type, int border) {
-        //DSFIXME:  CODE0010: Native static method requires manual modeling
+        //DSFIXME:  CODE0012: Native static method requires manual modeling
+    	return DSUtils.UNKNOWN_INT;
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:02.504 -0400", hash_original_method = "5FB0A93D6E9709D3DD15E9B07C889D05", hash_generated_method = "09C5B00EC570D74816ED9735AB85707D")
     private static int native_texSubImage2D(int target, int level, int xoffset, int yoffset,
             Bitmap bitmap, int format, int type) {
-        //DSFIXME:  CODE0010: Native static method requires manual modeling
+        //DSFIXME:  CODE0012: Native static method requires manual modeling
+    	return DSUtils.UNKNOWN_INT;
     }
 
     

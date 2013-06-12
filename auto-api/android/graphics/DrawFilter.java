@@ -22,7 +22,7 @@ public class DrawFilter {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:01.187 -0400", hash_original_method = "013BCAEE9E60EF5C5662ACE7A89ABEED", hash_generated_method = "FB4C25D7801D0620CA977996640C4D63")
     private static void nativeDestructor(int nativeDrawFilter) {
-        //DSFIXME:  CODE0010: Native static method requires manual modeling
+        //DSFIXME:  CODE0012: Native static method requires manual modeling
     }
 
     

@@ -90,7 +90,9 @@ public class TextToSpeech {
         mEarcons = new HashMap<String, Uri>();
         mUtterances = new HashMap<String, Uri>();
         mUtteranceProgressListener = null;
+        mContext = context;
         mEnginesHelper = new TtsEngines(mContext);
+      
         {
             mPackageName = mContext.getPackageName();
         } //End block

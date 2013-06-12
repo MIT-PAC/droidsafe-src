@@ -46,31 +46,31 @@ public final class SQLiteDebug {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:00.816 -0400", hash_original_method = "C200FA1C335A6B915ECDB07487204354", hash_generated_method = "6DF3B1C145E39009B69FC91E2043465C")
     public static void getPagerStats(PagerStats stats) {
-        //DSFIXME:  CODE0010: Native static method requires manual modeling
+        //DSFIXME:  CODE0012: Native static method requires manual modeling
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:00.816 -0400", hash_original_method = "FB497DF0BE4C68FEE0641ECD169B11A5", hash_generated_method = "A7B236C54144E38BAE5F1CD85536AF26")
     public static long getHeapSize() {
-        //DSFIXME:  CODE0010: Native static method requires manual modeling
+    	return DSUtils.UNKNOWN_LONG;
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:00.816 -0400", hash_original_method = "A808C61059552F1A0FD5F32B2427E14D", hash_generated_method = "BC8C84A56ACE91401105E55BA591E59A")
     public static long getHeapAllocatedSize() {
-        //DSFIXME:  CODE0010: Native static method requires manual modeling
+    	return DSUtils.UNKNOWN_LONG;
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:00.816 -0400", hash_original_method = "07BF86B4C6B2B39C7021B5D42FA96017", hash_generated_method = "1BDE9FAA17A3712413B61E299D10FD88")
     public static long getHeapFreeSize() {
-        //DSFIXME:  CODE0010: Native static method requires manual modeling
+    	return DSUtils.UNKNOWN_LONG;
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:00.816 -0400", hash_original_method = "CDD34301EDD58BA01C0EEBBF57B35387", hash_generated_method = "02DCD82E0271DED912B0BD3637AD5E3F")
     public static void getHeapDirtyPages(int[] pages) {
-        //DSFIXME:  CODE0010: Native static method requires manual modeling
+        //DSFIXME:  CODE0012: Native static method requires manual modeling
     }
 
     

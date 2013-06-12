@@ -2,6 +2,7 @@ package java.util;
 
 // Droidsafe Imports
 import droidsafe.helpers.*;
+import droidsafe.runtime.DroidSafeAndroidRuntime;
 import droidsafe.annotations.*;
 
 // import Iterator to deal with enhanced for loop translation
@@ -771,8 +772,8 @@ public class WeakHashMap<K, V> extends AbstractMap<K, V> implements Map<K, V> {
             dsTaint.addTaint(type.dsTaint);
             expectedModCount = modCount;
             // ---------- Original Method ----------
-            //this.type = type;
-            //expectedModCount = modCount;
+            this.type = type;
+            expectedModCount = modCount;
         }
 
         
@@ -829,9 +830,14 @@ public class WeakHashMap<K, V> extends AbstractMap<K, V> implements Map<K, V> {
                         nextKey = null;
                     } //End block
                 } //End collapsed parenthetic
-                throw new NoSuchElementException();
+                if (DroidSafeAndroidRuntime.control) {
+                	throw new NoSuchElementException();
+                }
             } //End block
-            throw new ConcurrentModificationException();
+            if (DroidSafeAndroidRuntime.control) {
+            	throw new ConcurrentModificationException();
+            }
+            
             return (R)dsTaint.getTaint();
             // ---------- Original Method ----------
             //if (expectedModCount == modCount) {
@@ -857,11 +863,11 @@ public class WeakHashMap<K, V> extends AbstractMap<K, V> implements Map<K, V> {
                     currentEntry = null;
                     expectedModCount++;
                 } //End block
-                {
+                if (DroidSafeAndroidRuntime.control) {
                     throw new IllegalStateException();
                 } //End block
             } //End block
-            {
+            if (DroidSafeAndroidRuntime.control) {
                 throw new ConcurrentModificationException();
             } //End block
             // ---------- Original Method ----------

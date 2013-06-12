@@ -69,7 +69,7 @@ public class DdmServer {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:17.561 -0400", hash_original_method = "ACBA0D9D0B703A98482A3E6A2B9C384F", hash_generated_method = "39A1EBD2FF0786ED59D948DA2693D6AE")
     private static void nativeSendChunk(int type, byte[] data,
         int offset, int length) {
-        //DSFIXME:  CODE0010: Native static method requires manual modeling
+        //DSFIXME:  CODE0012: Native static method requires manual modeling
     }
 
     

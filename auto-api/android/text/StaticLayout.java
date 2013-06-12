@@ -278,7 +278,6 @@ public class StaticLayout extends Layout {
         {
             int paraStart;
             paraStart = bufStart;
-            paraStart = paraEnd;
             {
                 paraEnd = TextUtils.indexOf(source, CHAR_NEW_LINE, paraStart, bufEnd);
                 paraEnd = bufEnd;
@@ -379,7 +378,6 @@ public class StaticLayout extends Layout {
                     int spanStart, spanEnd, nextSpanStart;
                     spanStart = paraStart;
                     spanEnd = spanStart;
-                    spanStart = nextSpanStart;
                     {
                         {
                             spanEnd = paraEnd;
@@ -710,7 +708,7 @@ public class StaticLayout extends Layout {
         dsTaint.addTaint(trackPad);
         dsTaint.addTaint(v);
         dsTaint.addTaint(chdirs);
-        dsTaint.addTaint(chooseHt.dsTaint);
+        dsTaint.addTaint(chooseHt[0].dsTaint);
         dsTaint.addTaint(start);
         dsTaint.addTaint(bufEnd);
         dsTaint.addTaint(bottom);

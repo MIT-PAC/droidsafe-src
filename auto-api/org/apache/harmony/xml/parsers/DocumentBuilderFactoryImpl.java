@@ -2,6 +2,7 @@ package org.apache.harmony.xml.parsers;
 
 // Droidsafe Imports
 import droidsafe.helpers.*;
+import droidsafe.runtime.DroidSafeAndroidRuntime;
 import droidsafe.annotations.*;
 
 // import Iterator to deal with enhanced for loop translation
@@ -22,7 +23,7 @@ public class DocumentBuilderFactoryImpl extends DocumentBuilderFactory {
     @Override
     public Object getAttribute(String name) throws IllegalArgumentException {
         dsTaint.addTaint(name);
-        throw new IllegalArgumentException(name);
+        if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException(name);
         return (Object)dsTaint.getTaint();
         // ---------- Original Method ----------
         //throw new IllegalArgumentException(name);
@@ -35,7 +36,7 @@ public class DocumentBuilderFactoryImpl extends DocumentBuilderFactory {
     public boolean getFeature(String name) throws ParserConfigurationException {
         dsTaint.addTaint(name);
         {
-            throw new NullPointerException();
+        	if (DroidSafeAndroidRuntime.control) throw new NullPointerException();
         } //End block
         {
             boolean varB5E87EDD66EA46D6734F048A6DF6A6AC_1634928428 = (NAMESPACES.equals(name));
@@ -48,7 +49,7 @@ public class DocumentBuilderFactoryImpl extends DocumentBuilderFactory {
                     boolean var6EA7E2CAE7725614E5D458F15E089661_627544945 = (isValidating());
                 } //End block
                 {
-                    throw new ParserConfigurationException(name);
+                	if (DroidSafeAndroidRuntime.control) throw new ParserConfigurationException(name);
                 } //End block
             } //End collapsed parenthetic
         } //End collapsed parenthetic
@@ -74,7 +75,7 @@ public class DocumentBuilderFactoryImpl extends DocumentBuilderFactory {
         {
             boolean var4E297FF2ACA5FE750738C034402DA121_1743692663 = (isValidating());
             {
-                throw new ParserConfigurationException(
+            	if (DroidSafeAndroidRuntime.control) throw new ParserConfigurationException(
                     "No validating DocumentBuilder implementation available");
             } //End block
         } //End collapsed parenthetic
@@ -118,7 +119,7 @@ public class DocumentBuilderFactoryImpl extends DocumentBuilderFactory {
         dsTaint.addTaint(name);
         dsTaint.addTaint(value);
         {
-            throw new NullPointerException();
+        	if (DroidSafeAndroidRuntime.control) throw new NullPointerException();
         } //End block
         {
             boolean varB5E87EDD66EA46D6734F048A6DF6A6AC_1049088842 = (NAMESPACES.equals(name));

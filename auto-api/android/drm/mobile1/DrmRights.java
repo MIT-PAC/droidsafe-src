@@ -62,6 +62,7 @@ public class DrmRights {
     private int nativeGetConstraintInfo(int permission, DrmConstraintInfo constraint) {
         dsTaint.addTaint(constraint.dsTaint);
         dsTaint.addTaint(permission);
+        return dsTaint.getTaintInt();
     }
 
     
@@ -69,6 +70,7 @@ public class DrmRights {
     //DSFIXME:  CODE0002: Requires DSC value to be set
     private int nativeConsumeRights(int permission) {
         dsTaint.addTaint(permission);
+        return dsTaint.getTaintInt();
     }
 
     

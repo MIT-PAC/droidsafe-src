@@ -3,6 +3,7 @@ package java.io;
 // Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
+import droidsafe.runtime.DroidSafeAndroidRuntime;
 
 // import Iterator to deal with enhanced for loop translation
 import java.util.Iterator;
@@ -31,6 +32,7 @@ public class BufferedInputStream extends FilterInputStream {
         super(in);
         dsTaint.addTaint(in.dsTaint);
         dsTaint.addTaint(size);
+        if(DroidSafeAndroidRuntime.control)
         {
             throw new IllegalArgumentException("size <= 0");
         } //End block
@@ -49,7 +51,7 @@ public class BufferedInputStream extends FilterInputStream {
     public synchronized int available() throws IOException {
         InputStream localIn;
         localIn = in;
-        {
+        if(DroidSafeAndroidRuntime.control) {
             throw streamClosed();
         } //End block
         int var2B924E8BBC5F3CE3B1F1E3EF2F7F10B5_1486095762 = (count - pos + localIn.available());
@@ -66,7 +68,9 @@ public class BufferedInputStream extends FilterInputStream {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:11.372 -0400", hash_original_method = "4D8013C45FC6B1A765F1F6C3AB84963B", hash_generated_method = "C9DFDA73C8ECBAF72861548BED8E790B")
     @DSModeled(DSC.SAFE)
     private IOException streamClosed() throws IOException {
-        throw new IOException("BufferedInputStream is closed");
+        if(DroidSafeAndroidRuntime.control) {
+        	throw new IOException("BufferedInputStream is closed");
+        }
         return (IOException)dsTaint.getTaint();
         // ---------- Original Method ----------
         //throw new IOException("BufferedInputStream is closed");
@@ -164,7 +168,7 @@ public class BufferedInputStream extends FilterInputStream {
         localBuf = buf;
         InputStream localIn;
         localIn = in;
-        {
+        if(DroidSafeAndroidRuntime.control) {
             throw streamClosed();
         } //End block
         {
@@ -172,7 +176,7 @@ public class BufferedInputStream extends FilterInputStream {
         } //End collapsed parenthetic
         {
             localBuf = buf;
-            {
+            if(DroidSafeAndroidRuntime.control) {
                 throw streamClosed();
             } //End block
         } //End block
@@ -208,13 +212,13 @@ public class BufferedInputStream extends FilterInputStream {
         dsTaint.addTaint(offset);
         byte[] localBuf;
         localBuf = buf;
-        {
+        if(DroidSafeAndroidRuntime.control) {
             throw streamClosed();
         } //End block
         Arrays.checkOffsetAndCount(buffer.length, offset, byteCount);
         InputStream localIn;
         localIn = in;
-        {
+        if(DroidSafeAndroidRuntime.control) {
             throw streamClosed();
         } //End block
         int required;
@@ -244,7 +248,7 @@ public class BufferedInputStream extends FilterInputStream {
                 } //End collapsed parenthetic
                 {
                     localBuf = buf;
-                    {
+                    if(DroidSafeAndroidRuntime.control) {
                         throw streamClosed();
                     } //End block
                 } //End block
@@ -268,10 +272,10 @@ public class BufferedInputStream extends FilterInputStream {
     @DSModeled(DSC.SAFE)
     @Override
     public synchronized void reset() throws IOException {
-        {
+    	if(DroidSafeAndroidRuntime.control) {
             throw new IOException("Stream is closed");
         } //End block
-        {
+        if(DroidSafeAndroidRuntime.control) {
             throw new IOException("Mark has been invalidated.");
         } //End block
         pos = markpos;
@@ -295,10 +299,10 @@ public class BufferedInputStream extends FilterInputStream {
         localBuf = buf;
         InputStream localIn;
         localIn = in;
-        {
+        if(DroidSafeAndroidRuntime.control) {
             throw streamClosed();
         } //End block
-        {
+        if(DroidSafeAndroidRuntime.control) {
             throw streamClosed();
         } //End block
         long read;

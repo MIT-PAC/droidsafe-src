@@ -2,6 +2,7 @@ package java.util;
 
 // Droidsafe Imports
 import droidsafe.helpers.*;
+import droidsafe.runtime.DroidSafeAndroidRuntime;
 import droidsafe.annotations.*;
 
 // import Iterator to deal with enhanced for loop translation
@@ -148,7 +149,7 @@ public class LinkedList<E> extends AbstractSequentialList<E> implements List<E>,
         dsTaint.addTaint(location);
         dsTaint.addTaint(collection.dsTaint);
         {
-            throw new IndexOutOfBoundsException();
+            if (DroidSafeAndroidRuntime.control) throw new IndexOutOfBoundsException();
         } //End block
         int adding;
         adding = collection.size();
@@ -178,7 +179,7 @@ public class LinkedList<E> extends AbstractSequentialList<E> implements List<E>,
         Link<E> next;
         next = previous.next;
         {
-            Iterator<E> seatecAstronomy42 = elements.iterator();
+            Iterator<? extends E> seatecAstronomy42 = elements.iterator();
             seatecAstronomy42.hasNext();
             E e = seatecAstronomy42.next();
             {
@@ -211,7 +212,7 @@ public class LinkedList<E> extends AbstractSequentialList<E> implements List<E>,
         Link<E> previous;
         previous = voidLink.previous;
         {
-            Iterator<E> seatecAstronomy42 = elements.iterator();
+            Iterator<? extends E> seatecAstronomy42 = elements.iterator();
             seatecAstronomy42.hasNext();
             E e = seatecAstronomy42.next();
             {
@@ -415,7 +416,7 @@ public class LinkedList<E> extends AbstractSequentialList<E> implements List<E>,
                 } //End collapsed parenthetic
             } //End block
         } //End block
-        throw new IndexOutOfBoundsException();
+        if (DroidSafeAndroidRuntime.control) throw new IndexOutOfBoundsException();
         return (E)dsTaint.getTaint();
         // ---------- Original Method ----------
         //if (location >= 0 && location < size) {
@@ -450,7 +451,7 @@ public class LinkedList<E> extends AbstractSequentialList<E> implements List<E>,
     private E getFirstImpl() {
         Link<E> first;
         first = voidLink.next;
-        throw new NoSuchElementException();
+        if (DroidSafeAndroidRuntime.control) throw new NoSuchElementException();
         return (E)dsTaint.getTaint();
         // ---------- Original Method ----------
         //Link<E> first = voidLink.next;
@@ -466,7 +467,7 @@ public class LinkedList<E> extends AbstractSequentialList<E> implements List<E>,
     public E getLast() {
         Link<E> last;
         last = voidLink.previous;
-        throw new NoSuchElementException();
+        if (DroidSafeAndroidRuntime.control) throw new NoSuchElementException();
         return (E)dsTaint.getTaint();
         // ---------- Original Method ----------
         //Link<E> last = voidLink.previous;
@@ -621,7 +622,7 @@ public class LinkedList<E> extends AbstractSequentialList<E> implements List<E>,
             size--;
             modCount++;
         } //End block
-        throw new IndexOutOfBoundsException();
+        if (DroidSafeAndroidRuntime.control) throw new IndexOutOfBoundsException();
         return (E)dsTaint.getTaint();
         // ---------- Original Method ----------
         //if (location >= 0 && location < size) {
@@ -682,7 +683,7 @@ public class LinkedList<E> extends AbstractSequentialList<E> implements List<E>,
             size--;
             modCount++;
         } //End block
-        throw new NoSuchElementException();
+        if (DroidSafeAndroidRuntime.control) throw new NoSuchElementException();
         return (E)dsTaint.getTaint();
         // ---------- Original Method ----------
         //Link<E> first = voidLink.next;
@@ -721,7 +722,7 @@ public class LinkedList<E> extends AbstractSequentialList<E> implements List<E>,
             size--;
             modCount++;
         } //End block
-        throw new NoSuchElementException();
+        if (DroidSafeAndroidRuntime.control) throw new NoSuchElementException();
         return (E)dsTaint.getTaint();
         // ---------- Original Method ----------
         //Link<E> last = voidLink.previous;
@@ -937,7 +938,7 @@ public class LinkedList<E> extends AbstractSequentialList<E> implements List<E>,
             result = link.data;
             link.data = object;
         } //End block
-        throw new IndexOutOfBoundsException();
+        if (DroidSafeAndroidRuntime.control) throw new IndexOutOfBoundsException();
         return (E)dsTaint.getTaint();
         // ---------- Original Method ----------
         //if (location >= 0 && location < size) {
@@ -1066,7 +1067,7 @@ public class LinkedList<E> extends AbstractSequentialList<E> implements List<E>,
     @Override
     @SuppressWarnings("unchecked")
     public <T> T[] toArray(T[] contents) {
-        dsTaint.addTaint(contents.dsTaint);
+        dsTaint.addTaint(contents[0].dsTaint);
         int index;
         index = 0;
         {
@@ -1195,6 +1196,7 @@ public class LinkedList<E> extends AbstractSequentialList<E> implements List<E>,
          LinkIterator(LinkedList<ET> object, int location) {
             dsTaint.addTaint(location);
             dsTaint.addTaint(object.dsTaint);
+            list = object;
             expectedModCount = list.modCount;
             {
                 link = list.voidLink;
@@ -1305,9 +1307,9 @@ public class LinkedList<E> extends AbstractSequentialList<E> implements List<E>,
                     lastLink = link = next;
                     pos++;
                 } //End block
-                throw new NoSuchElementException();
+                if (DroidSafeAndroidRuntime.control) throw new NoSuchElementException();
             } //End block
-            throw new ConcurrentModificationException();
+            if (DroidSafeAndroidRuntime.control) throw new ConcurrentModificationException();
             return (ET)dsTaint.getTaint();
             // ---------- Original Method ----------
             //if (expectedModCount == list.modCount) {
@@ -1341,9 +1343,9 @@ public class LinkedList<E> extends AbstractSequentialList<E> implements List<E>,
                     link = link.previous;
                     pos--;
                 } //End block
-                throw new NoSuchElementException();
+                if (DroidSafeAndroidRuntime.control) throw new NoSuchElementException();
             } //End block
-            throw new ConcurrentModificationException();
+            if (DroidSafeAndroidRuntime.control) throw new ConcurrentModificationException();
             return (ET)dsTaint.getTaint();
             // ---------- Original Method ----------
             //if (expectedModCount == list.modCount) {
@@ -1389,11 +1391,11 @@ public class LinkedList<E> extends AbstractSequentialList<E> implements List<E>,
                     list.modCount++;
                 } //End block
                 {
-                    throw new IllegalStateException();
+                	if (DroidSafeAndroidRuntime.control) throw new IllegalStateException();
                 } //End block
             } //End block
             {
-                throw new ConcurrentModificationException();
+            	if (DroidSafeAndroidRuntime.control) throw new ConcurrentModificationException();
             } //End block
             // ---------- Original Method ----------
             //if (expectedModCount == list.modCount) {
@@ -1428,11 +1430,11 @@ public class LinkedList<E> extends AbstractSequentialList<E> implements List<E>,
                     lastLink.data = object;
                 } //End block
                 {
-                    throw new IllegalStateException();
+                	if (DroidSafeAndroidRuntime.control) throw new IllegalStateException();
                 } //End block
             } //End block
             {
-                throw new ConcurrentModificationException();
+            	if (DroidSafeAndroidRuntime.control) throw new ConcurrentModificationException();
             } //End block
             // ---------- Original Method ----------
             //if (expectedModCount == list.modCount) {
@@ -1461,6 +1463,7 @@ public class LinkedList<E> extends AbstractSequentialList<E> implements List<E>,
         @DSModeled(DSC.SAFE)
          ReverseLinkIterator(LinkedList<ET> linkedList) {
             dsTaint.addTaint(linkedList.dsTaint);
+            list = linkedList;
             expectedModCount = list.modCount;
             link = list.voidLink;
             canRemove = false;
@@ -1492,9 +1495,9 @@ public class LinkedList<E> extends AbstractSequentialList<E> implements List<E>,
                         canRemove = true;
                     } //End block
                 } //End collapsed parenthetic
-                throw new NoSuchElementException();
+                if (DroidSafeAndroidRuntime.control) throw new NoSuchElementException();
             } //End block
-            throw new ConcurrentModificationException();
+            if (DroidSafeAndroidRuntime.control) throw new ConcurrentModificationException();
             return (ET)dsTaint.getTaint();
             // ---------- Original Method ----------
             //if (expectedModCount == list.modCount) {
@@ -1526,9 +1529,9 @@ public class LinkedList<E> extends AbstractSequentialList<E> implements List<E>,
                     expectedModCount++;
                     canRemove = false;
                 } //End block
-                throw new IllegalStateException();
+                if (DroidSafeAndroidRuntime.control) throw new IllegalStateException();
             } //End block
-            throw new ConcurrentModificationException();
+            if (DroidSafeAndroidRuntime.control) throw new ConcurrentModificationException();
             // ---------- Original Method ----------
             //if (expectedModCount == list.modCount) {
                 //if (canRemove) {

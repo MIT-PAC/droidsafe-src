@@ -2,6 +2,7 @@ package android.animation;
 
 // Droidsafe Imports
 import droidsafe.helpers.*;
+import droidsafe.runtime.DroidSafeAndroidRuntime;
 import droidsafe.annotations.*;
 
 // import Iterator to deal with enhanced for loop translation
@@ -211,7 +212,7 @@ public class ValueAnimator extends Animator {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:14:57.322 -0400", hash_original_method = "AAE460ECCCBF6E694CF45A2F7BA85BA5", hash_generated_method = "41C28254B5B186994BC65120CBC02A11")
     @DSModeled(DSC.SAFE)
     public void setObjectValues(Object... values) {
-        dsTaint.addTaint(values.dsTaint);
+        dsTaint.addTaint(values[0].dsTaint);
         {
             setValues(new PropertyValuesHolder[]{PropertyValuesHolder.ofObject("",
                     (TypeEvaluator)null, values)});
@@ -240,7 +241,7 @@ public class ValueAnimator extends Animator {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:14:57.323 -0400", hash_original_method = "D9E3FD9EEAA02CD647DC7AEFD5007E3A", hash_generated_method = "A6CDE334A43BDD2266EFDA4A982506C9")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public void setValues(PropertyValuesHolder... values) {
-        dsTaint.addTaint(values.dsTaint);
+        dsTaint.addTaint(values[0].dsTaint);
         int numValues;
         numValues = values.length;
         mValuesMap = new HashMap<String, PropertyValuesHolder>(numValues);
@@ -306,7 +307,7 @@ public class ValueAnimator extends Animator {
     public ValueAnimator setDuration(long duration) {
         dsTaint.addTaint(duration);
         {
-            throw new IllegalArgumentException("Animators cannot have negative duration: " +
+        	if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("Animators cannot have negative duration: " +
                     duration);
         } //End block
         return (ValueAnimator)dsTaint.getTaint();
@@ -566,7 +567,7 @@ public class ValueAnimator extends Animator {
         {
             boolean var607F99F94A9C3E729CF05A4C4A58ABDF_1261970585 = (Looper.myLooper() == null);
             {
-                throw new AndroidRuntimeException("Animators may only be run on Looper threads");
+            	if (DroidSafeAndroidRuntime.control) throw new AndroidRuntimeException("Animators may only be run on Looper threads");
             } //End block
         } //End collapsed parenthetic
         mCurrentIteration = 0;

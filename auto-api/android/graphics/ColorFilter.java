@@ -34,7 +34,7 @@ public class ColorFilter {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:01.020 -0400", hash_original_method = "4AA054A6DE4B48C0BA2DEB83EF675B58", hash_generated_method = "AB75C3B53FF33D30AA243D76D3A25DA9")
     private static void finalizer(int native_instance, int nativeColorFilter) {
-        //DSFIXME:  CODE0010: Native static method requires manual modeling
+        //DSFIXME:  CODE0012: Native static method requires manual modeling
     }
 
     

@@ -1,16 +1,16 @@
 package android.graphics;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-
-// import Iterator to deal with enhanced for loop translation
-import java.util.Iterator;
-
 import java.lang.ref.WeakReference;
+
 import android.os.Handler;
 import android.os.Looper;
 import android.os.Message;
+import droidsafe.annotations.DSC;
+import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.DSModeled;
+import droidsafe.runtime.DroidSafeAndroidRuntime;
+// import Iterator to deal with enhanced for loop translation
 
 public class SurfaceTexture {
     private EventHandler mEventHandler;
@@ -101,6 +101,7 @@ public class SurfaceTexture {
     @DSModeled(DSC.SAFE)
     public void getTransformMatrix(float[] mtx) {
         dsTaint.addTaint(mtx);
+        if (DroidSafeAndroidRuntime.control)
         {
             throw new IllegalArgumentException();
         } //End block
@@ -192,6 +193,7 @@ public class SurfaceTexture {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:01.472 -0400", hash_original_method = "F440D167BF3058541215FA5D0CFEDE56", hash_generated_method = "53F070B94ABEFF392DEF2F7769834B0B")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     private long nativeGetTimestamp() {
+    	return dsTaint.getTaintLong();
     }
 
     
@@ -206,12 +208,14 @@ public class SurfaceTexture {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:01.472 -0400", hash_original_method = "5F79841CB1993D78C92BE65FFA4E3E7E", hash_generated_method = "3C0D18324617D8E980E27AB2830B346A")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     private int nativeUpdateTexImage() {
+    	return dsTaint.getTaintInt();
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:01.472 -0400", hash_original_method = "7EC2703D346B1354B6934AD09D0B787F", hash_generated_method = "EE3B42776CBD17A8622CB50B81025E3E")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     private int nativeGetQueuedCount() {
+    	return dsTaint.getTaintInt();
     }
 
     
@@ -223,7 +227,7 @@ public class SurfaceTexture {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:01.472 -0400", hash_original_method = "368BCBBAD3F68FEF8C07AE5DC4D2077C", hash_generated_method = "66CFEED3BA0F1B2AF18C8805660BFF70")
     private static void nativeClassInit() {
-        //DSFIXME:  CODE0010: Native static method requires manual modeling
+        //DSFIXME:  CODE0012: Native static method requires manual modeling
     }
 
     

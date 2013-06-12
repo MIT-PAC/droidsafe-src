@@ -2,6 +2,7 @@ package android.net;
 
 // Droidsafe Imports
 import droidsafe.helpers.*;
+import droidsafe.runtime.DroidSafeAndroidRuntime;
 import droidsafe.annotations.*;
 
 // import Iterator to deal with enhanced for loop translation
@@ -701,8 +702,7 @@ public class NetworkStats implements Parcelable {
         final long deltaRealtime;
         deltaRealtime = this.elapsedRealtime - value.elapsedRealtime;
         {
-        	//DSFIXME:  Get guidance on how to handle exceptions and returns
-            //throw new NonMonotonicException(this, value);
+            if (DroidSafeAndroidRuntime.control) throw new NonMonotonicException(this, value);
         } //End block
         final Entry entry;
         entry = new Entry();
@@ -740,8 +740,7 @@ public class NetworkStats implements Parcelable {
                             entry.operations = Math.max(entry.operations, 0);
                         } //End block
                         {
-                        	//DSFIXME:  Get guidance on how to handle exceptions and returns
-                            //throw new NonMonotonicException(this, i, value, j);
+                        	if (DroidSafeAndroidRuntime.control) throw new NonMonotonicException(this, i, value, j);
                         } //End block
                     } //End block
                 } //End block

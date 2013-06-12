@@ -78,13 +78,16 @@ public final class TimeZones {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:17.427 -0400", hash_original_method = "2293CF188C457515355A158905168E4D", hash_generated_method = "6644788B946E8A1F537705C1F9D2CEA0")
     private static String[] forCountryCode(String countryCode) {
-        //DSFIXME:  CODE0010: Native static method requires manual modeling
+    	String[] retVal = {DSUtils.UNKNOWN_STRING};
+    	return retVal;
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:17.427 -0400", hash_original_method = "2F5AD73BE20F62D72422B418477C0950", hash_generated_method = "108857D5AD2D5CA09C1CAF5693F6BB96")
     private static String[][] getZoneStringsImpl(String locale, String[] timeZoneIds) {
-        //DSFIXME:  CODE0010: Native static method requires manual modeling
+    	String[][] retVal = {{DSUtils.UNKNOWN_STRING}};
+    	return retVal;
+        //DSFIXME:  CODE0012: Native static method requires manual modeling
     }
 
     
@@ -138,7 +141,7 @@ public final class TimeZones {
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:17.427 -0400", hash_original_method = "B8ADCF3091CCD0EA103D9032F8613DD2", hash_generated_method = "8F848F9DDE706BE1CC885E6E01293503")
         @DSModeled(DSC.SAFE)
         private synchronized void internStrings(String[][] result) {
-            dsTaint.addTaint(result.dsTaint);
+            dsTaint.addTaint(result[0][0].dsTaint);
             {
                 int i;
                 i = 0;

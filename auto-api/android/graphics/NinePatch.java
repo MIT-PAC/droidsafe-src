@@ -9,11 +9,11 @@ import java.util.Iterator;
 
 
 public class NinePatch {
-    private final Bitmap mBitmap;
-    private final byte[] mChunk;
+    private /* final */ Bitmap mBitmap;
+    private /* final */ byte[] mChunk;
     private Paint mPaint;
     private String mSrcName;
-    private final RectF mRect = new RectF();
+    private /* final */ RectF mRect = new RectF();
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:01.228 -0400", hash_original_method = "D88879F567A4CA145787F3AF3B8F5F18", hash_generated_method = "9DFC7067A30B208CF8CAEC63F4A0978A")
     //DSFIXME:  CODE0002: Requires DSC value to be set
@@ -205,13 +205,14 @@ public class NinePatch {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:01.230 -0400", hash_original_method = "570ABE90E265E5D485D9A13A5FB144E0", hash_generated_method = "C822529437CFAAEE51CA19123DCBB2A6")
     public static boolean isNinePatchChunk(byte[] chunk) {
-        //DSFIXME:  CODE0010: Native static method requires manual modeling
+        //DSFIXME:  CODE0012: Native static method requires manual modeling
+    	return DSUtils.UNKNOWN_BOOLEAN;
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:01.230 -0400", hash_original_method = "72DE7872A496F82CF6AF13D558B6BEB5", hash_generated_method = "5DEF9EB8A9A78A8F6B74F971C10C8308")
     private static void validateNinePatchChunk(int bitmap, byte[] chunk) {
-        //DSFIXME:  CODE0010: Native static method requires manual modeling
+        //DSFIXME:  CODE0012: Native static method requires manual modeling
     }
 
     
@@ -219,7 +220,7 @@ public class NinePatch {
     private static void nativeDraw(int canvas_instance, RectF loc, int bitmap_instance,
                                           byte[] c, int paint_instance_or_null,
                                           int destDensity, int srcDensity) {
-        //DSFIXME:  CODE0010: Native static method requires manual modeling
+        //DSFIXME:  CODE0012: Native static method requires manual modeling
     }
 
     
@@ -227,14 +228,15 @@ public class NinePatch {
     private static void nativeDraw(int canvas_instance, Rect loc, int bitmap_instance,
                                           byte[] c, int paint_instance_or_null,
                                           int destDensity, int srcDensity) {
-        //DSFIXME:  CODE0010: Native static method requires manual modeling
+        //DSFIXME:  CODE0012: Native static method requires manual modeling
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:01.230 -0400", hash_original_method = "0F502DB0383B6654CBDFA70E91CC9D76", hash_generated_method = "C9BF777773EE86A9B3101F89AF050568")
     private static int nativeGetTransparentRegion(
             int bitmap, byte[] chunk, Rect location) {
-        //DSFIXME:  CODE0010: Native static method requires manual modeling
+        //DSFIXME:  CODE0012: Native static method requires manual modeling
+    	return DSUtils.UNKNOWN_INT;
     }
 
     

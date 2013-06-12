@@ -500,9 +500,7 @@ public class SIMRecords extends IccRecords {
                     String mccmncCode;
                     mccmncCode = imsi.substring(0, 6);
                     {
-                        Iterator<String> seatecAstronomy42 = MCCMNC_CODES_HAVING_3DIGITS_MNC.iterator();
-                        seatecAstronomy42.hasNext();
-                        String mccmnc = seatecAstronomy42.next();
+                        String mccmnc = MCCMNC_CODES_HAVING_3DIGITS_MNC[0];
                         {
                             {
                                 boolean var7D3F2C7003F88A96589D9955600C8CFE_1159154118 = (mccmnc.equals(mccmncCode));
@@ -766,9 +764,7 @@ public class SIMRecords extends IccRecords {
                         String mccmncCode;
                         mccmncCode = imsi.substring(0, 6);
                         {
-                            Iterator<String> seatecAstronomy42 = MCCMNC_CODES_HAVING_3DIGITS_MNC.iterator();
-                            seatecAstronomy42.hasNext();
-                            String mccmnc = seatecAstronomy42.next();
+                            String mccmnc = MCCMNC_CODES_HAVING_3DIGITS_MNC[0];
                             {
                                 {
                                     boolean var84BDA82F133A3C6DFBD3E95E8608ED9C_964776222 = (mccmnc.equals(mccmncCode));

@@ -2,6 +2,7 @@ package dalvik.system.profiler;
 
 // Droidsafe Imports
 import droidsafe.helpers.*;
+import droidsafe.runtime.DroidSafeAndroidRuntime;
 import droidsafe.annotations.*;
 
 // import Iterator to deal with enhanced for loop translation
@@ -21,15 +22,15 @@ public final class SamplingProfiler {
     private final HprofData hprofData = new HprofData(stackTraces);
     private final Timer timer = new Timer("SamplingProfiler", true);
     private Sampler sampler;
-    private final int depth;
-    private final ThreadSet threadSet;
+    private /* final */ int depth;
+    private /* final */ ThreadSet threadSet;
     private int nextThreadId = 200001;
     private int nextStackTraceId = 300001;
     private int nextObjectId = 1;
     private Thread[] currentThreads = new Thread[0];
-    private final Map<Thread, Integer> threadIds = new HashMap<Thread, Integer>();
-    private final HprofData.StackTrace mutableStackTrace = new HprofData.StackTrace();
-    private final ThreadSampler threadSampler;
+    private /* final */ Map<Thread, Integer> threadIds = new HashMap<Thread, Integer>();
+    private /* final */ HprofData.StackTrace mutableStackTrace = new HprofData.StackTrace();
+    private /* final */ ThreadSampler threadSampler;
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:11.339 -0400", hash_original_method = "E2013E33C1696BCCD8E7E5A3F3F67C32", hash_generated_method = "89F27476C55C10A42D112D9B6A9EA104")
     //DSFIXME:  CODE0002: Requires DSC value to be set
@@ -80,9 +81,11 @@ public final class SamplingProfiler {
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public void start(int interval) {
         dsTaint.addTaint(interval);
+        if (DroidSafeAndroidRuntime.control)
         {
             throw new IllegalArgumentException("interval < 1");
         } //End block
+        if (DroidSafeAndroidRuntime.control)
         {
             throw new IllegalStateException("profiling already started");
         } //End block
@@ -148,6 +151,7 @@ public final class SamplingProfiler {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:11.339 -0400", hash_original_method = "ED23570BD9F6C6F13BA5A80428CD13EC", hash_generated_method = "9EA266FFE412C37A69CBCF61273D78E9")
     @DSModeled(DSC.SAFE)
     public HprofData getHprofData() {
+    	if (DroidSafeAndroidRuntime.control)
         {
             throw new IllegalStateException("cannot access hprof data while sampling");
         } //End block
@@ -166,7 +170,7 @@ public final class SamplingProfiler {
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:11.339 -0400", hash_original_method = "77E03C0451741A4E1C44419B134120C8", hash_generated_method = "13476ED21F2D7FD37181E3EE43511318")
         @DSModeled(DSC.SAFE)
         public ArrayThreadSet(Thread... threads) {
-            dsTaint.addTaint(threads.dsTaint);
+            dsTaint.addTaint(threads[0].dsTaint);
             {
                 throw new NullPointerException("threads == null");
             } //End block
@@ -192,7 +196,7 @@ public final class SamplingProfiler {
 
     
     private static class ThreadGroupThreadSet implements ThreadSet {
-        private final ThreadGroup threadGroup;
+        private /* final */ ThreadGroup threadGroup;
         private Thread[] threads;
         private int lastThread;
         
@@ -200,6 +204,7 @@ public final class SamplingProfiler {
         @DSModeled(DSC.SAFE)
         public ThreadGroupThreadSet(ThreadGroup threadGroup) {
             dsTaint.addTaint(threadGroup.dsTaint);
+            if (DroidSafeAndroidRuntime.control)
             {
                 throw new NullPointerException("threadGroup == null");
             } //End block
@@ -292,9 +297,7 @@ public final class SamplingProfiler {
                 } //End block
             } //End collapsed parenthetic
             {
-                Iterator<Thread> seatecAstronomy42 = currentThreads.iterator();
-                seatecAstronomy42.hasNext();
-                Thread thread = seatecAstronomy42.next();
+                Thread thread = currentThreads[0];
                 {
                     StackTraceElement[] stackFrames;
                     stackFrames = threadSampler.getStackTrace(thread);
@@ -309,10 +312,11 @@ public final class SamplingProfiler {
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:11.340 -0400", hash_original_method = "F11BBDF4101A6D713104B5DB9760A085", hash_generated_method = "40D1E92733F9529BBAB6A892595B89AC")
         @DSModeled(DSC.SAFE)
         private void recordStackTrace(Thread thread, StackTraceElement[] stackFrames) {
-            dsTaint.addTaint(stackFrames.dsTaint);
+            dsTaint.addTaint(stackFrames[0].dsTaint);
             dsTaint.addTaint(thread.dsTaint);
             Integer threadId;
             threadId = threadIds.get(thread);
+            if (DroidSafeAndroidRuntime.control)
             {
                 throw new IllegalArgumentException("Unknown thread " + thread);
             } //End block
@@ -351,8 +355,8 @@ public final class SamplingProfiler {
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:11.340 -0400", hash_original_method = "B49A7EC3437DE14BA292DE44FA40B97A", hash_generated_method = "44735356387EE5891382C2A8EF8771A8")
         //DSFIXME:  CODE0002: Requires DSC value to be set
         private void updateThreadHistory(Thread[] oldThreads, Thread[] newThreads) {
-            dsTaint.addTaint(oldThreads.dsTaint);
-            dsTaint.addTaint(newThreads.dsTaint);
+            dsTaint.addTaint(oldThreads[0].dsTaint);
+            dsTaint.addTaint(newThreads[0].dsTaint);
             Set<Thread> n;
             n = new HashSet<Thread>(Arrays.asList(newThreads));
             Set<Thread> o;
@@ -388,6 +392,7 @@ public final class SamplingProfiler {
         //DSFIXME:  CODE0002: Requires DSC value to be set
         private void addStartThread(Thread thread) {
             dsTaint.addTaint(thread.dsTaint);
+            if (DroidSafeAndroidRuntime.control)
             {
                 throw new NullPointerException("thread == null");
             } //End block
@@ -395,6 +400,7 @@ public final class SamplingProfiler {
             threadId = nextThreadId++;
             Integer old;
             old = threadIds.put(thread, threadId);
+            if (DroidSafeAndroidRuntime.control)
             {
                 throw new IllegalArgumentException("Thread already registered as " + old);
             } //End block
@@ -424,11 +430,13 @@ public final class SamplingProfiler {
         @DSModeled(DSC.SAFE)
         private void addEndThread(Thread thread) {
             dsTaint.addTaint(thread.dsTaint);
+            if (DroidSafeAndroidRuntime.control)
             {
                 throw new NullPointerException("thread == null");
             } //End block
             Integer threadId;
             threadId = threadIds.remove(thread);
+            if (DroidSafeAndroidRuntime.control)
             {
                 throw new IllegalArgumentException("Unknown thread " + thread);
             } //End block

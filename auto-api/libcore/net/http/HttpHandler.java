@@ -2,6 +2,7 @@ package libcore.net.http;
 
 // Droidsafe Imports
 import droidsafe.helpers.*;
+import droidsafe.runtime.DroidSafeAndroidRuntime;
 import droidsafe.annotations.*;
 
 // import Iterator to deal with enhanced for loop translation
@@ -34,7 +35,7 @@ public final class HttpHandler extends URLStreamHandler {
         dsTaint.addTaint(proxy.dsTaint);
         dsTaint.addTaint(url.dsTaint);
         {
-            throw new IllegalArgumentException("url == null || proxy == null");
+        	if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("url == null || proxy == null");
         } //End block
         URLConnection var68ED555109D3FE3AC060547D491F640B_1886906955 = (new HttpURLConnectionImpl(url, getDefaultPort(), proxy));
         return (URLConnection)dsTaint.getTaint();

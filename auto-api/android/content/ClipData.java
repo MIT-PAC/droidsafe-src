@@ -1,11 +1,11 @@
 package android.content;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-
-// import Iterator to deal with enhanced for loop translation
-import java.util.Iterator;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.util.ArrayList;
 
 import android.content.res.AssetFileDescriptor;
 import android.graphics.Bitmap;
@@ -13,12 +13,11 @@ import android.net.Uri;
 import android.os.Parcel;
 import android.os.Parcelable;
 import android.text.TextUtils;
-import android.util.Log;
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
-import java.io.IOException;
-import java.io.InputStreamReader;
-import java.util.ArrayList;
+import droidsafe.annotations.DSC;
+import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.DSModeled;
+import droidsafe.runtime.DroidSafeAndroidRuntime;
+// import Iterator to deal with enhanced for loop translation
 
 public class ClipData implements Parcelable {
     static final String[] MIMETYPES_TEXT_PLAIN = new String[] {
@@ -61,7 +60,7 @@ public class ClipData implements Parcelable {
         dsTaint.addTaint(mimeTypes);
         mClipDescription = new ClipDescription(label, mimeTypes);
         {
-            throw new NullPointerException("item is null");
+        	if (DroidSafeAndroidRuntime.control) throw new NullPointerException("item is null");
         } //End block
         mIcon = null;
         mItems.add(item);
@@ -81,10 +80,11 @@ public class ClipData implements Parcelable {
         dsTaint.addTaint(description.dsTaint);
         dsTaint.addTaint(item.dsTaint);
         {
-            throw new NullPointerException("item is null");
+            if (DroidSafeAndroidRuntime.control)  throw new NullPointerException("item is null");
         } //End block
         mIcon = null;
         mItems.add(item);
+        mClipDescription = description;
         // ---------- Original Method ----------
         //mClipDescription = description;
         //if (item == null) {
@@ -104,9 +104,6 @@ public class ClipData implements Parcelable {
             boolean var25D67F28E4887DDC152DCB9726EAB4D3_822333345 = (in.readInt() != 0);
             {
                 mIcon = Bitmap.CREATOR.createFromParcel(in);
-            } //End block
-            {
-                mIcon = null;
             } //End block
         } //End collapsed parenthetic
         final int N;
@@ -211,7 +208,7 @@ public class ClipData implements Parcelable {
     public void addItem(Item item) {
         dsTaint.addTaint(item.dsTaint);
         {
-            throw new NullPointerException("item is null");
+            if (DroidSafeAndroidRuntime.control)  throw new NullPointerException("item is null");
         } //End block
         mItems.add(item);
         // ---------- Original Method ----------
@@ -342,6 +339,7 @@ public class ClipData implements Parcelable {
             dsTaint.addTaint(text);
             mIntent = null;
             mUri = null;
+            mText = text;
             // ---------- Original Method ----------
             //mText = text;
             //mIntent = null;
@@ -355,6 +353,7 @@ public class ClipData implements Parcelable {
             dsTaint.addTaint(intent.dsTaint);
             mText = null;
             mUri = null;
+            mIntent = intent;
             // ---------- Original Method ----------
             //mText = null;
             //mIntent = intent;
@@ -368,6 +367,7 @@ public class ClipData implements Parcelable {
             dsTaint.addTaint(uri.dsTaint);
             mText = null;
             mIntent = null;
+            mUri = uri;
             // ---------- Original Method ----------
             //mText = null;
             //mIntent = null;
@@ -381,6 +381,9 @@ public class ClipData implements Parcelable {
             dsTaint.addTaint(text);
             dsTaint.addTaint(intent.dsTaint);
             dsTaint.addTaint(uri.dsTaint);
+            mText = text;
+            mIntent = intent;
+            mUri = uri;
             // ---------- Original Method ----------
             //mText = text;
             //mIntent = intent;

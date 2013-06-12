@@ -2,6 +2,7 @@ package libcore.net.url;
 
 // Droidsafe Imports
 import droidsafe.helpers.*;
+import droidsafe.runtime.DroidSafeAndroidRuntime;
 import droidsafe.annotations.*;
 
 // import Iterator to deal with enhanced for loop translation
@@ -48,7 +49,7 @@ public class JarHandler extends URLStreamHandler {
         {
             boolean var3948E0BE2774036E4123DB53B312CCF1_1682119586 = (spec.indexOf("!/") == -1 && (file.indexOf("!/") == -1));
             {
-                throw new NullPointerException("Cannot find \"!/\"");
+            	if (DroidSafeAndroidRuntime.control) throw new NullPointerException("Cannot find \"!/\"");
             } //End block
         } //End collapsed parenthetic
         {

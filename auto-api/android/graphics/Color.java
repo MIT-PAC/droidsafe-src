@@ -229,13 +229,14 @@ public class Color {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:01.019 -0400", hash_original_method = "9A1F2FC1B6129A49478BCF684C4ABD3E", hash_generated_method = "95B96F5B480A902B8A30F850D184EA4D")
     private static void nativeRGBToHSV(int red, int greed, int blue, float hsv[]) {
-        //DSFIXME:  CODE0010: Native static method requires manual modeling
+        //DSFIXME:  CODE0012: Native static method requires manual modeling
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:01.019 -0400", hash_original_method = "DB38BA81D20D8D6ED161666F4B33032A", hash_generated_method = "EDFAD2753CEBE130047FB95BC66E1D89")
     private static int nativeHSVToColor(int alpha, float hsv[]) {
-        //DSFIXME:  CODE0010: Native static method requires manual modeling
+        //DSFIXME:  CODE0012: Native static method requires manual modeling
+    	return DSUtils.UNKNOWN_INT;
     }
 
     

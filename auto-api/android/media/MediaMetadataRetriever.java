@@ -1,21 +1,22 @@
 package android.media;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-
+import java.io.FileDescriptor;
+import java.io.FileNotFoundException;
+import java.io.IOException;
 // import Iterator to deal with enhanced for loop translation
 import java.util.Iterator;
+import java.util.Map;
 
 import android.content.ContentResolver;
 import android.content.Context;
 import android.content.res.AssetFileDescriptor;
 import android.graphics.Bitmap;
 import android.net.Uri;
-import java.io.FileDescriptor;
-import java.io.FileNotFoundException;
-import java.io.IOException;
-import java.util.Map;
+import droidsafe.annotations.DSC;
+import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.DSModeled;
+import droidsafe.runtime.DroidSafeAndroidRuntime;
 
 public class MediaMetadataRetriever {
     @SuppressWarnings("unused")
@@ -136,7 +137,7 @@ public class MediaMetadataRetriever {
         dsTaint.addTaint(context.dsTaint);
         dsTaint.addTaint(uri.dsTaint);
         {
-            throw new IllegalArgumentException();
+        	if (DroidSafeAndroidRuntime.control)throw new IllegalArgumentException();
         } //End block
         String scheme;
         scheme = uri.getScheme();
@@ -161,14 +162,14 @@ public class MediaMetadataRetriever {
                 throw new IllegalArgumentException();
             } //End block
             {
-                throw new IllegalArgumentException();
+            	if (DroidSafeAndroidRuntime.control)throw new IllegalArgumentException();
             } //End block
             FileDescriptor descriptor;
             descriptor = fd.getFileDescriptor();
             {
                 boolean varD6D1E6889A2F65271896664E86493E08_358385156 = (!descriptor.valid());
                 {
-                    throw new IllegalArgumentException();
+                	if (DroidSafeAndroidRuntime.control)throw new IllegalArgumentException();
                 } //End block
             } //End collapsed parenthetic
             {
@@ -204,6 +205,7 @@ public class MediaMetadataRetriever {
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public String extractMetadata(int keyCode) {
         dsTaint.addTaint(keyCode);
+        return dsTaint.getTaintString();
     }
 
     
@@ -213,7 +215,7 @@ public class MediaMetadataRetriever {
         dsTaint.addTaint(timeUs);
         dsTaint.addTaint(option);
         {
-            throw new IllegalArgumentException("Unsupported option: " + option);
+        	if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("Unsupported option: " + option);
         } //End block
         Bitmap var230D3FA8BC7C0BB4FFBCA21112BDCF8E_1166799729 = (_getFrameAtTime(timeUs, option));
         return (Bitmap)dsTaint.getTaint();
@@ -252,6 +254,7 @@ public class MediaMetadataRetriever {
     private Bitmap _getFrameAtTime(long timeUs, int option) {
         dsTaint.addTaint(timeUs);
         dsTaint.addTaint(option);
+        return (Bitmap)dsTaint.getTaint();
     }
 
     
@@ -271,6 +274,7 @@ public class MediaMetadataRetriever {
     //DSFIXME:  CODE0002: Requires DSC value to be set
     private byte[] getEmbeddedPicture(int pictureType) {
         dsTaint.addTaint(pictureType);
+        return new byte[] {dsTaint.getTaintByte()};
     }
 
     
@@ -288,7 +292,7 @@ public class MediaMetadataRetriever {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:01.932 -0400", hash_original_method = "9DACEB091913AFFD29EB0CE9882462AB", hash_generated_method = "3D783755AB596340F98D250656AEA902")
     private static void native_init() {
-        //DSFIXME:  CODE0010: Native static method requires manual modeling
+        //DSFIXME:  CODE0012: Native static method requires manual modeling
     }
 
     

@@ -2,6 +2,7 @@ package android.drm.mobile1;
 
 // Droidsafe Imports
 import droidsafe.helpers.*;
+import droidsafe.runtime.DroidSafeAndroidRuntime;
 import droidsafe.annotations.*;
 
 // import Iterator to deal with enhanced for loop translation
@@ -53,7 +54,7 @@ public class DrmRightsManager {
                 {
                     boolean var1523E3042FF28A6189BF8D8D034F098A_2004837897 = (DrmRawContent.DRM_MIMETYPE_MESSAGE_STRING.equals(mimeTypeStr));
                     mimeType = DRM_MIMETYPE_MESSAGE;
-                    throw new IllegalArgumentException("mimeType must be DRM_MIMETYPE_RIGHTS_XML or DRM_MIMETYPE_RIGHTS_WBXML or DRM_MIMETYPE_MESSAGE");
+                    if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("mimeType must be DRM_MIMETYPE_RIGHTS_XML or DRM_MIMETYPE_RIGHTS_WBXML or DRM_MIMETYPE_MESSAGE");
                 } //End collapsed parenthetic
             } //End collapsed parenthetic
         } //End collapsed parenthetic
@@ -61,7 +62,7 @@ public class DrmRightsManager {
         rights = new DrmRights();
         int res;
         res = nativeInstallDrmRights(rightsData, len, mimeType, rights);
-        throw new DrmException("nativeInstallDrmRights() returned JNI_DRM_FAILURE");
+        if (DroidSafeAndroidRuntime.control) throw new DrmException("nativeInstallDrmRights() returned JNI_DRM_FAILURE");
         return (DrmRights)dsTaint.getTaint();
         // ---------- Original Method ----------
         // Original Method Too Long, Refer to Original Implementation
@@ -148,6 +149,7 @@ public class DrmRightsManager {
         dsTaint.addTaint(rights.dsTaint);
         dsTaint.addTaint(len);
         dsTaint.addTaint(mimeType);
+        return dsTaint.getTaintInt();
     }
 
     
@@ -156,12 +158,14 @@ public class DrmRightsManager {
     private int nativeQueryRights(DrmRawContent content, DrmRights rights) {
         dsTaint.addTaint(content.dsTaint);
         dsTaint.addTaint(rights.dsTaint);
+        return dsTaint.getTaintInt();
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:00.868 -0400", hash_original_method = "53C2DF882AFDD7A7897768491F6FD437", hash_generated_method = "C485E592725B22B62CAC1B4DAAED41E6")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     private int nativeGetNumOfRights() {
+    	return dsTaint.getTaintInt();
     }
 
     
@@ -169,7 +173,8 @@ public class DrmRightsManager {
     //DSFIXME:  CODE0002: Requires DSC value to be set
     private int nativeGetRightsList(DrmRights[] rights, int numRights) {
         dsTaint.addTaint(numRights);
-        dsTaint.addTaint(rights.dsTaint);
+        dsTaint.addTaint(rights[0].dsTaint);
+        return dsTaint.getTaintInt();
     }
 
     
@@ -177,6 +182,7 @@ public class DrmRightsManager {
     //DSFIXME:  CODE0002: Requires DSC value to be set
     private int nativeDeleteRights(DrmRights rights) {
         dsTaint.addTaint(rights.dsTaint);
+        return dsTaint.getTaintInt();
     }
 
     
