@@ -2,6 +2,7 @@ package libcore.icu;
 
 // Droidsafe Imports
 import droidsafe.helpers.*;
+import droidsafe.runtime.DroidSafeAndroidRuntime;
 import droidsafe.annotations.*;
 
 // import Iterator to deal with enhanced for loop translation
@@ -273,7 +274,7 @@ public final class LocaleData {
     @DSModeled(DSC.SAFE)
     public String getDateFormat(int style) {
         dsTaint.addTaint(style);
-        throw new AssertionError();
+        if (DroidSafeAndroidRuntime.control) throw new AssertionError();
         return dsTaint.getTaintString();
         // ---------- Original Method ----------
         //switch (style) {
@@ -294,7 +295,7 @@ public final class LocaleData {
     @DSModeled(DSC.SAFE)
     public String getTimeFormat(int style) {
         dsTaint.addTaint(style);
-        throw new AssertionError();
+        if (DroidSafeAndroidRuntime.control) throw new AssertionError();
         return dsTaint.getTaintString();
         // ---------- Original Method ----------
         //switch (style) {

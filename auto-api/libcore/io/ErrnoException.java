@@ -2,6 +2,7 @@ package libcore.io;
 
 // Droidsafe Imports
 import droidsafe.helpers.*;
+import droidsafe.runtime.DroidSafeAndroidRuntime;
 import droidsafe.annotations.*;
 
 // import Iterator to deal with enhanced for loop translation
@@ -19,6 +20,8 @@ public final class ErrnoException extends Exception {
     public ErrnoException(String functionName, int errno) {
         dsTaint.addTaint(errno);
         dsTaint.addTaint(functionName);
+        this.functionName = functionName;
+        this.errno = errno;
         // ---------- Original Method ----------
         //this.functionName = functionName;
         //this.errno = errno;
@@ -32,6 +35,8 @@ public final class ErrnoException extends Exception {
         dsTaint.addTaint(errno);
         dsTaint.addTaint(cause.dsTaint);
         dsTaint.addTaint(functionName);
+        this.functionName = functionName;
+        this.errno = errno;
         // ---------- Original Method ----------
         //this.functionName = functionName;
         //this.errno = errno;
@@ -66,7 +71,7 @@ public final class ErrnoException extends Exception {
         IOException newException;
         newException = new IOException(getMessage());
         newException.initCause(this);
-        throw newException;
+        if (DroidSafeAndroidRuntime.control) throw newException;
         return (IOException)dsTaint.getTaint();
         // ---------- Original Method ----------
         //IOException newException = new IOException(getMessage());
@@ -78,7 +83,7 @@ public final class ErrnoException extends Exception {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:17.432 -0400", hash_original_method = "8BB4A81BC702A752206578FEF42C6BB1", hash_generated_method = "A57BE35D11372E7E9C0728DE36097191")
     @DSModeled(DSC.SAFE)
     public SocketException rethrowAsSocketException() throws SocketException {
-        throw new SocketException(getMessage(), this);
+    	if (DroidSafeAndroidRuntime.control) throw new SocketException(getMessage(), this);
         return (SocketException)dsTaint.getTaint();
         // ---------- Original Method ----------
         //throw new SocketException(getMessage(), this);

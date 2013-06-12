@@ -2,6 +2,7 @@ package libcore.net.url;
 
 // Droidsafe Imports
 import droidsafe.helpers.*;
+import droidsafe.runtime.DroidSafeAndroidRuntime;
 import droidsafe.annotations.*;
 
 // import Iterator to deal with enhanced for loop translation
@@ -33,7 +34,7 @@ public class FtpHandler extends URLStreamHandler {
         dsTaint.addTaint(proxy.dsTaint);
         dsTaint.addTaint(url.dsTaint);
         {
-            throw new IllegalArgumentException("url == null || proxy == null");
+        	if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("url == null || proxy == null");
         } //End block
         return (URLConnection)dsTaint.getTaint();
         // ---------- Original Method ----------
