@@ -1608,6 +1608,8 @@ public class PhoneNumberUtils {
         public CountryCallingCodeAndNewIndex(int countryCode, int newIndex) {
             dsTaint.addTaint(countryCode);
             dsTaint.addTaint(newIndex);
+            this.newIndex = newIndex;
+            this.countryCallingCode = countryCode;
             // ---------- Original Method ----------
             //this.countryCallingCode = countryCode;
             //this.newIndex = newIndex;
