@@ -34,6 +34,7 @@ public class QuoteSpan implements LeadingMarginSpan, ParcelableSpan {
     public QuoteSpan(int color) {
         super();
         dsTaint.addTaint(color);
+        mColor = color;
         // ---------- Original Method ----------
         //mColor = color;
     }

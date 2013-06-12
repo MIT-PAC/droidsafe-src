@@ -1,14 +1,12 @@
 package android.text;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-
-// import Iterator to deal with enhanced for loop translation
-import java.util.Iterator;
-
-import java.util.Locale;
 import android.util.LocaleUtil;
+import droidsafe.annotations.DSC;
+import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.DSModeled;
+import droidsafe.runtime.DroidSafeAndroidRuntime;
+// import Iterator to deal with enhanced for loop translation
 
 public class TextDirectionHeuristics {
     public static final TextDirectionHeuristic LTR =
@@ -67,6 +65,7 @@ public class TextDirectionHeuristics {
         @DSModeled(DSC.SAFE)
         public TextDirectionHeuristicImpl(TextDirectionAlgorithm algorithm) {
             dsTaint.addTaint(algorithm.dsTaint);
+            mAlgorithm = algorithm;
             // ---------- Original Method ----------
             //mAlgorithm = algorithm;
         }
@@ -83,7 +82,7 @@ public class TextDirectionHeuristics {
             dsTaint.addTaint(start);
             dsTaint.addTaint(chars);
             {
-                throw new IllegalArgumentException();
+                if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException();
             } //End block
             {
                 boolean var325265FB9B90A3A9C3A7CE2178D0DFEC_1885842205 = (defaultIsRtl());
@@ -140,6 +139,7 @@ public class TextDirectionHeuristics {
             super(algorithm);
             dsTaint.addTaint(defaultIsRtl);
             dsTaint.addTaint(algorithm.dsTaint);
+            mDefaultIsRtl = defaultIsRtl;
             // ---------- Original Method ----------
             //mDefaultIsRtl = defaultIsRtl;
         }
@@ -209,6 +209,7 @@ public class TextDirectionHeuristics {
         @DSModeled(DSC.SAFE)
         private AnyStrong(boolean lookForRtl) {
             dsTaint.addTaint(lookForRtl);
+            this.mLookForRtl = lookForRtl;
             // ---------- Original Method ----------
             //this.mLookForRtl = lookForRtl;
         }
