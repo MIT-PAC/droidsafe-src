@@ -8,6 +8,7 @@ import droidsafe.annotations.*;
 // import Iterator to deal with enhanced for loop translation
 import java.util.Iterator;
 
+import com.android.internal.telephony.cat.AppInterface.CommandType;
 import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
