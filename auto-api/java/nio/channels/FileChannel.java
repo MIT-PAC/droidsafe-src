@@ -58,7 +58,7 @@ public abstract class FileChannel extends AbstractInterruptibleChannel implement
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:12.483 -0400", hash_original_method = "4118483D5739F1F8B1E72DACCDF365C6", hash_generated_method = "F4D17C89F1BB34823497911D291FE64F")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public final long read(ByteBuffer[] buffers) throws IOException {
-        dsTaint.addTaint(buffers.dsTaint);
+        dsTaint.addTaint(buffers);
         long varB258DB7C8148418F66ADC2ADCE9C8A9A_2009982714 = (read(buffers, 0, buffers.length));
         return dsTaint.getTaintLong();
         // ---------- Original Method ----------
@@ -108,7 +108,7 @@ public abstract class FileChannel extends AbstractInterruptibleChannel implement
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:12.483 -0400", hash_original_method = "50EBF858502260FDC2F74EB3C865D254", hash_generated_method = "80E7AEC4E66EA91123C7C004AA67CAB1")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public final long write(ByteBuffer[] buffers) throws IOException {
-        dsTaint.addTaint(buffers.dsTaint);
+        dsTaint.addTaint(buffers);
         long varFE4BD7C9D0B65290FBD04B68812B2310_991285902 = (write(buffers, 0, buffers.length));
         return dsTaint.getTaintLong();
         // ---------- Original Method ----------
@@ -124,7 +124,7 @@ public abstract class FileChannel extends AbstractInterruptibleChannel implement
         public static final MapMode PRIVATE = new MapMode("PRIVATE");
         public static final MapMode READ_ONLY = new MapMode("READ_ONLY");
         public static final MapMode READ_WRITE = new MapMode("READ_WRITE");
-        private final String displayName;
+        private String displayName;
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:12.483 -0400", hash_original_method = "CA25667E00C4DE16C856657D4E26E93A", hash_generated_method = "EE91ECC843853F64CC308F3AD60762A3")
         @DSModeled(DSC.SAFE)

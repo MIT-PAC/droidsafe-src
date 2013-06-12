@@ -3,18 +3,18 @@ package java.nio;
 // Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
+import droidsafe.runtime.*;
 
-// import Iterator to deal with enhanced for loop translation
+// needed for enhanced for control translations
 import java.util.Iterator;
-
 import libcore.io.SizeOf;
 import libcore.io.Memory;
 
 abstract class HeapByteBuffer extends BaseByteBuffer {
-    final byte[] backingArray;
-    final int offset;
+    byte[] backingArray;
+    int offset;
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 16:35:46.737 -0400", hash_original_method = "E17EA7652E4F5A67C65770DE13DD4AE3", hash_generated_method = "EA4F87507D3BAC0C4C543FB1AF95A227")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 11:41:52.582 -0400", hash_original_method = "E17EA7652E4F5A67C65770DE13DD4AE3", hash_generated_method = "EA4F87507D3BAC0C4C543FB1AF95A227")
     //DSFIXME:  CODE0002: Requires DSC value to be set
      HeapByteBuffer(byte[] backingArray) {
         this(backingArray, backingArray.length, 0);
@@ -23,7 +23,7 @@ abstract class HeapByteBuffer extends BaseByteBuffer {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 16:35:46.739 -0400", hash_original_method = "720B251A66EBAD61E39D94F5757C7908", hash_generated_method = "C81E57AC8CEB08963DAF333E3DC8A2FB")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 11:41:52.583 -0400", hash_original_method = "720B251A66EBAD61E39D94F5757C7908", hash_generated_method = "C81E57AC8CEB08963DAF333E3DC8A2FB")
     //DSFIXME:  CODE0002: Requires DSC value to be set
      HeapByteBuffer(int capacity) {
         this(new byte[capacity], capacity, 0);
@@ -32,7 +32,7 @@ abstract class HeapByteBuffer extends BaseByteBuffer {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 16:35:46.745 -0400", hash_original_method = "7E0C48043B88A8991A81994678604015", hash_generated_method = "F118C06A582AAEDB8035E09F74F6B4D0")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 11:41:52.587 -0400", hash_original_method = "7E0C48043B88A8991A81994678604015", hash_generated_method = "D441AB7F8D24F12B617ABF44100DF82D")
     //DSFIXME:  CODE0002: Requires DSC value to be set
      HeapByteBuffer(byte[] backingArray, int capacity, int offset) {
         super(capacity, null);
@@ -40,7 +40,7 @@ abstract class HeapByteBuffer extends BaseByteBuffer {
         dsTaint.addTaint(capacity);
         dsTaint.addTaint(offset);
         {
-            throw new IndexOutOfBoundsException("backingArray.length=" + backingArray.length +
+            if (DroidSafeAndroidRuntime.control) throw new IndexOutOfBoundsException("backingArray.length=" + backingArray.length +
                     ", capacity=" + capacity + ", offset=" + offset);
         } //End block
         // ---------- Original Method ----------
@@ -53,7 +53,7 @@ abstract class HeapByteBuffer extends BaseByteBuffer {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 16:35:46.750 -0400", hash_original_method = "A92B26D30665425608E93AFD3985B529", hash_generated_method = "1E042492B82BF11B316FC4C7F297030B")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 11:41:52.591 -0400", hash_original_method = "A92B26D30665425608E93AFD3985B529", hash_generated_method = "1E042492B82BF11B316FC4C7F297030B")
     @DSModeled(DSC.SAFE)
     @Override
     public final ByteBuffer get(byte[] dst, int dstOffset, int byteCount) {
@@ -72,7 +72,7 @@ abstract class HeapByteBuffer extends BaseByteBuffer {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 16:35:46.764 -0400", hash_original_method = "ADCC30D9FE17E9265DD10F45753F8D68", hash_generated_method = "EFCFB1B939E98F2E555E6A646B110AB7")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 11:41:52.596 -0400", hash_original_method = "ADCC30D9FE17E9265DD10F45753F8D68", hash_generated_method = "EFCFB1B939E98F2E555E6A646B110AB7")
     @DSModeled(DSC.SAFE)
     final void get(char[] dst, int dstOffset, int charCount) {
         dsTaint.addTaint(dstOffset);
@@ -89,7 +89,7 @@ abstract class HeapByteBuffer extends BaseByteBuffer {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 16:35:46.783 -0400", hash_original_method = "83F82E1C4D1B0FECE4775D0F7331C2A9", hash_generated_method = "EADF3322F4A869C89BAA97519EF3570A")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 11:41:52.602 -0400", hash_original_method = "83F82E1C4D1B0FECE4775D0F7331C2A9", hash_generated_method = "EADF3322F4A869C89BAA97519EF3570A")
     @DSModeled(DSC.SAFE)
     final void get(double[] dst, int dstOffset, int doubleCount) {
         dsTaint.addTaint(dstOffset);
@@ -106,7 +106,7 @@ abstract class HeapByteBuffer extends BaseByteBuffer {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 16:35:46.789 -0400", hash_original_method = "28783106EE8F5B0602DB80B1FE3018CE", hash_generated_method = "BD88AA61E43CE460AEC7DB512EA0942A")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 11:41:52.605 -0400", hash_original_method = "28783106EE8F5B0602DB80B1FE3018CE", hash_generated_method = "BD88AA61E43CE460AEC7DB512EA0942A")
     @DSModeled(DSC.SAFE)
     final void get(float[] dst, int dstOffset, int floatCount) {
         dsTaint.addTaint(dstOffset);
@@ -123,7 +123,7 @@ abstract class HeapByteBuffer extends BaseByteBuffer {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 16:35:46.794 -0400", hash_original_method = "8AC7AD179B2BD3799E5966071FB1A6E9", hash_generated_method = "168B57D93B7641DE61576F2359FE52C8")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 11:41:52.609 -0400", hash_original_method = "8AC7AD179B2BD3799E5966071FB1A6E9", hash_generated_method = "168B57D93B7641DE61576F2359FE52C8")
     @DSModeled(DSC.SAFE)
     final void get(int[] dst, int dstOffset, int intCount) {
         dsTaint.addTaint(intCount);
@@ -140,7 +140,7 @@ abstract class HeapByteBuffer extends BaseByteBuffer {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 16:35:46.799 -0400", hash_original_method = "3C880FD9EFF1926FF9582E7F1291E034", hash_generated_method = "49FAC589370B3BD6B348DE6B5499883D")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 11:41:52.612 -0400", hash_original_method = "3C880FD9EFF1926FF9582E7F1291E034", hash_generated_method = "49FAC589370B3BD6B348DE6B5499883D")
     @DSModeled(DSC.SAFE)
     final void get(long[] dst, int dstOffset, int longCount) {
         dsTaint.addTaint(longCount);
@@ -157,7 +157,7 @@ abstract class HeapByteBuffer extends BaseByteBuffer {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 16:35:46.803 -0400", hash_original_method = "89F4F4A0F85F41D910E8D20C3ACD7123", hash_generated_method = "FDB35B02107255D200C73ADAAA331286")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 11:41:52.616 -0400", hash_original_method = "89F4F4A0F85F41D910E8D20C3ACD7123", hash_generated_method = "FDB35B02107255D200C73ADAAA331286")
     @DSModeled(DSC.SAFE)
     final void get(short[] dst, int dstOffset, int shortCount) {
         dsTaint.addTaint(shortCount);
@@ -174,12 +174,12 @@ abstract class HeapByteBuffer extends BaseByteBuffer {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 16:35:46.807 -0400", hash_original_method = "CB9AAD8BA04B2044061C99EDA53631A5", hash_generated_method = "268318FF7B1865F96CAD7061B43AE242")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 11:41:52.619 -0400", hash_original_method = "CB9AAD8BA04B2044061C99EDA53631A5", hash_generated_method = "A045D89EE8C755A4720F93FBACB91F24")
     @DSModeled(DSC.SAFE)
     @Override
     public final byte get() {
         {
-            throw new BufferUnderflowException();
+            if (DroidSafeAndroidRuntime.control) throw new BufferUnderflowException();
         } //End block
         return dsTaint.getTaintByte();
         // ---------- Original Method ----------
@@ -190,7 +190,7 @@ abstract class HeapByteBuffer extends BaseByteBuffer {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 16:35:46.814 -0400", hash_original_method = "9AAE834531B3F44ED7B8F1D4ABA54327", hash_generated_method = "A074F29C16C89456E022174ACA8DDB1E")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 11:41:52.622 -0400", hash_original_method = "9AAE834531B3F44ED7B8F1D4ABA54327", hash_generated_method = "A074F29C16C89456E022174ACA8DDB1E")
     @DSModeled(DSC.SAFE)
     @Override
     public final byte get(int index) {
@@ -203,14 +203,14 @@ abstract class HeapByteBuffer extends BaseByteBuffer {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 16:35:46.818 -0400", hash_original_method = "A30CF2DCEAEB1ADBE9659D1E77D9D3A8", hash_generated_method = "EC438198923D66E941B9EB3946522BA6")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 11:41:52.626 -0400", hash_original_method = "A30CF2DCEAEB1ADBE9659D1E77D9D3A8", hash_generated_method = "0FB04BB899BCB9BF7D270ACCEE21858C")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     @Override
     public final char getChar() {
         int newPosition;
         newPosition = position + SizeOf.CHAR;
         {
-            throw new BufferUnderflowException();
+            if (DroidSafeAndroidRuntime.control) throw new BufferUnderflowException();
         } //End block
         char result;
         result = (char) Memory.peekShort(backingArray, offset + position, order);
@@ -227,13 +227,13 @@ abstract class HeapByteBuffer extends BaseByteBuffer {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 16:35:46.828 -0400", hash_original_method = "9FC96B9C645980EC4C42FC8A098BD17B", hash_generated_method = "CDDFC73B3802578C4EE0E62716ED6748")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 11:41:52.631 -0400", hash_original_method = "9FC96B9C645980EC4C42FC8A098BD17B", hash_generated_method = "B50CD3A8A390BDF73F50FE7A29927AFA")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     @Override
     public final char getChar(int index) {
         dsTaint.addTaint(index);
         checkIndex(index, SizeOf.CHAR);
-        char var44B2D896472A7BC850649A142494D4A7_953721737 = ((char) Memory.peekShort(backingArray, offset + index, order));
+        char var44B2D896472A7BC850649A142494D4A7_1711468357 = ((char) Memory.peekShort(backingArray, offset + index, order));
         return dsTaint.getTaintChar();
         // ---------- Original Method ----------
         //checkIndex(index, SizeOf.CHAR);
@@ -241,60 +241,60 @@ abstract class HeapByteBuffer extends BaseByteBuffer {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 16:35:46.834 -0400", hash_original_method = "15CD222F9D1D43117CE6FF35DE1821E1", hash_generated_method = "086E4BA13D74DA5BAB71C42DC351471C")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 11:41:52.634 -0400", hash_original_method = "15CD222F9D1D43117CE6FF35DE1821E1", hash_generated_method = "3F3BB839FA7475683EF58CD26F1BC75B")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     @Override
     public final double getDouble() {
-        double varB9071C4F97A9550F857A40DA064024FB_624955173 = (Double.longBitsToDouble(getLong()));
+        double varB9071C4F97A9550F857A40DA064024FB_1007403439 = (Double.longBitsToDouble(getLong()));
         return dsTaint.getTaintDouble();
         // ---------- Original Method ----------
         //return Double.longBitsToDouble(getLong());
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 16:35:46.837 -0400", hash_original_method = "2A94C74E4D47B2870E4CD8E58AB3C61D", hash_generated_method = "9A6FED72FED2F61A001F751D89292ED3")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 11:41:52.638 -0400", hash_original_method = "2A94C74E4D47B2870E4CD8E58AB3C61D", hash_generated_method = "E7010A1388BAEC61B06AAB44BF181C7E")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     @Override
     public final double getDouble(int index) {
         dsTaint.addTaint(index);
-        double var9F522FDD8FB2086A480FD3F6145C1CC7_1605907650 = (Double.longBitsToDouble(getLong(index)));
+        double var9F522FDD8FB2086A480FD3F6145C1CC7_1247270578 = (Double.longBitsToDouble(getLong(index)));
         return dsTaint.getTaintDouble();
         // ---------- Original Method ----------
         //return Double.longBitsToDouble(getLong(index));
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 16:35:46.840 -0400", hash_original_method = "47893679DF29F9C7305C0FEFB94D5263", hash_generated_method = "81D41CBAD02048807DA49EFBAD74215D")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 11:41:52.641 -0400", hash_original_method = "47893679DF29F9C7305C0FEFB94D5263", hash_generated_method = "F0142A051670920579061EAC206F7318")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     @Override
     public final float getFloat() {
-        float varB77056307B6A57ADBF03074310271972_514362453 = (Float.intBitsToFloat(getInt()));
+        float varB77056307B6A57ADBF03074310271972_1174816535 = (Float.intBitsToFloat(getInt()));
         return dsTaint.getTaintFloat();
         // ---------- Original Method ----------
         //return Float.intBitsToFloat(getInt());
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 16:35:46.843 -0400", hash_original_method = "416C4BCEE10AD6D26C3C84E2597AE8E2", hash_generated_method = "6A612C32EC63B974AF96C8908BEDC865")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 11:41:52.644 -0400", hash_original_method = "416C4BCEE10AD6D26C3C84E2597AE8E2", hash_generated_method = "36A64F5CCA313E645E496BFABE860FB0")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     @Override
     public final float getFloat(int index) {
         dsTaint.addTaint(index);
-        float varA8B5FEE8BE655D5CAA8E3C9A92B8AA36_1989502941 = (Float.intBitsToFloat(getInt(index)));
+        float varA8B5FEE8BE655D5CAA8E3C9A92B8AA36_1285179244 = (Float.intBitsToFloat(getInt(index)));
         return dsTaint.getTaintFloat();
         // ---------- Original Method ----------
         //return Float.intBitsToFloat(getInt(index));
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 16:35:46.847 -0400", hash_original_method = "915288BFB7584CF14BE85156D3784045", hash_generated_method = "C15677DB82E9E99CB56E3431559DDA9C")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 11:41:52.647 -0400", hash_original_method = "915288BFB7584CF14BE85156D3784045", hash_generated_method = "C428A44AC46261D1FC4A8A80522C123B")
     @DSModeled(DSC.SAFE)
     @Override
     public final int getInt() {
         int newPosition;
         newPosition = position + SizeOf.INT;
         {
-            throw new BufferUnderflowException();
+            if (DroidSafeAndroidRuntime.control) throw new BufferUnderflowException();
         } //End block
         int result;
         result = Memory.peekInt(backingArray, offset + position, order);
@@ -311,13 +311,13 @@ abstract class HeapByteBuffer extends BaseByteBuffer {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 16:35:46.854 -0400", hash_original_method = "458AAE21B6E3B170135E629CE400B5BC", hash_generated_method = "F939622265A62AA1056EE3516E21C903")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 11:41:52.651 -0400", hash_original_method = "458AAE21B6E3B170135E629CE400B5BC", hash_generated_method = "8E6ED0E9BA9C8D6CAB6C2B7BC6E7F8BA")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     @Override
     public final int getInt(int index) {
         dsTaint.addTaint(index);
         checkIndex(index, SizeOf.INT);
-        int varDE558B6E48E3F147349E9E1C74D10296_1666344382 = (Memory.peekInt(backingArray, offset + index, order));
+        int varDE558B6E48E3F147349E9E1C74D10296_439636614 = (Memory.peekInt(backingArray, offset + index, order));
         return dsTaint.getTaintInt();
         // ---------- Original Method ----------
         //checkIndex(index, SizeOf.INT);
@@ -325,14 +325,14 @@ abstract class HeapByteBuffer extends BaseByteBuffer {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 16:35:46.861 -0400", hash_original_method = "8649950490E02A38495D16EDE99C5440", hash_generated_method = "9B617A0CAEEB22BB9676EB93175FFBE1")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 11:41:52.653 -0400", hash_original_method = "8649950490E02A38495D16EDE99C5440", hash_generated_method = "E05A239C714277BD077DA184A7C1E005")
     @DSModeled(DSC.SAFE)
     @Override
     public final long getLong() {
         int newPosition;
         newPosition = position + SizeOf.LONG;
         {
-            throw new BufferUnderflowException();
+            if (DroidSafeAndroidRuntime.control) throw new BufferUnderflowException();
         } //End block
         long result;
         result = Memory.peekLong(backingArray, offset + position, order);
@@ -349,13 +349,13 @@ abstract class HeapByteBuffer extends BaseByteBuffer {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 16:35:46.866 -0400", hash_original_method = "DA73492717D47126159C560DCCEA76B8", hash_generated_method = "E0ACBD657FCAC478FF906A2DDFB18365")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 11:41:52.657 -0400", hash_original_method = "DA73492717D47126159C560DCCEA76B8", hash_generated_method = "B9229E88447F8B26BDB4FCB0818FD2FA")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     @Override
     public final long getLong(int index) {
         dsTaint.addTaint(index);
         checkIndex(index, SizeOf.LONG);
-        long varF10F7DFA0512D91505296DEEA7FDB36E_1183834424 = (Memory.peekLong(backingArray, offset + index, order));
+        long varF10F7DFA0512D91505296DEEA7FDB36E_882181849 = (Memory.peekLong(backingArray, offset + index, order));
         return dsTaint.getTaintLong();
         // ---------- Original Method ----------
         //checkIndex(index, SizeOf.LONG);
@@ -363,14 +363,14 @@ abstract class HeapByteBuffer extends BaseByteBuffer {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 16:35:46.870 -0400", hash_original_method = "D81DB9BF3EF98746269534EE74DB9F13", hash_generated_method = "D441D730DF21069EF8B79CC7DCF8A764")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 11:41:52.659 -0400", hash_original_method = "D81DB9BF3EF98746269534EE74DB9F13", hash_generated_method = "44555A367D51817BFA26B5359858F38F")
     @DSModeled(DSC.SAFE)
     @Override
     public final short getShort() {
         int newPosition;
         newPosition = position + SizeOf.SHORT;
         {
-            throw new BufferUnderflowException();
+            if (DroidSafeAndroidRuntime.control) throw new BufferUnderflowException();
         } //End block
         short result;
         result = Memory.peekShort(backingArray, offset + position, order);
@@ -387,13 +387,13 @@ abstract class HeapByteBuffer extends BaseByteBuffer {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 16:35:46.874 -0400", hash_original_method = "1734D425058DF9CB5EF1DD869B4BCEDF", hash_generated_method = "255D2FE936FBD7B00EDEEC6264B2BF6A")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 11:41:52.662 -0400", hash_original_method = "1734D425058DF9CB5EF1DD869B4BCEDF", hash_generated_method = "1ACF5AAF1FB2F1E833534DD4B9AAE1B0")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     @Override
     public final short getShort(int index) {
         dsTaint.addTaint(index);
         checkIndex(index, SizeOf.SHORT);
-        short var3F6DA237402FA6C9FD635374C5CE6DE1_942603843 = (Memory.peekShort(backingArray, offset + index, order));
+        short var3F6DA237402FA6C9FD635374C5CE6DE1_1368685283 = (Memory.peekShort(backingArray, offset + index, order));
         return dsTaint.getTaintShort();
         // ---------- Original Method ----------
         //checkIndex(index, SizeOf.SHORT);
@@ -401,7 +401,7 @@ abstract class HeapByteBuffer extends BaseByteBuffer {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 16:35:46.876 -0400", hash_original_method = "5B6C9F359344527666A57577F107BCAE", hash_generated_method = "4E653F534A1A7B4B11306437DD6A5129")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 11:41:52.663 -0400", hash_original_method = "5B6C9F359344527666A57577F107BCAE", hash_generated_method = "4E653F534A1A7B4B11306437DD6A5129")
     @DSModeled(DSC.SAFE)
     @Override
     public final boolean isDirect() {
