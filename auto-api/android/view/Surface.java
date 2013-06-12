@@ -243,7 +243,7 @@ public class Surface implements Parcelable {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:05.535 -0400", hash_original_method = "368BCBBAD3F68FEF8C07AE5DC4D2077C", hash_generated_method = "66CFEED3BA0F1B2AF18C8805660BFF70")
     private static void nativeClassInit() {
-        //DSFIXME:  CODE0010: Native static method requires manual modeling
+        //DSFIXME:  CODE0012: Native static method requires manual modeling
     }
 
     
@@ -306,19 +306,19 @@ public class Surface implements Parcelable {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:05.535 -0400", hash_original_method = "9DB0E66C1A9AB7C90671A451BA800BC6", hash_generated_method = "7B4845FA192061F35A1DA5FC8C08EB52")
     public static void freezeDisplay(int display) {
-        //DSFIXME:  CODE0010: Native static method requires manual modeling
+        //DSFIXME:  CODE0012: Native static method requires manual modeling
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:05.535 -0400", hash_original_method = "02259213151E54B372977976EF2967D5", hash_generated_method = "2F241C200CAD6E0B7992EEC349E03F9B")
     public static void unfreezeDisplay(int display) {
-        //DSFIXME:  CODE0010: Native static method requires manual modeling
+        //DSFIXME:  CODE0012: Native static method requires manual modeling
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:05.535 -0400", hash_original_method = "42A522001273144863E04A0D6A3C57A9", hash_generated_method = "352C15DEE3A0C535E15823D0343CD1AA")
     public static void setOrientation(int display, int orientation, int flags) {
-        //DSFIXME:  CODE0010: Native static method requires manual modeling
+        //DSFIXME:  CODE0012: Native static method requires manual modeling
     }
 
     
@@ -342,13 +342,13 @@ public class Surface implements Parcelable {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:05.536 -0400", hash_original_method = "B345370D69D0ADB30EF332A201BA2580", hash_generated_method = "2C87405528355100A52329D537A4FF9B")
     public static void openTransaction() {
-        //DSFIXME:  CODE0010: Native static method requires manual modeling
+        //DSFIXME:  CODE0012: Native static method requires manual modeling
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:05.536 -0400", hash_original_method = "FAB045451AEFB5D891295D915941957C", hash_generated_method = "E14F69EB45B63E940A0A13AEE6C3527C")
     public static void closeTransaction() {
-        //DSFIXME:  CODE0010: Native static method requires manual modeling
+        //DSFIXME:  CODE0012: Native static method requires manual modeling
     }
 
     

@@ -68,7 +68,7 @@ public final class NativePluralRules {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:17.416 -0400", hash_original_method = "6C0FB45F2D3D59341F679300293E5D6A", hash_generated_method = "0BF4641792333074A7B133C3FE9B1B3F")
     private static void finalizeImpl(int address) {
-        //DSFIXME:  CODE0010: Native static method requires manual modeling
+        //DSFIXME:  CODE0012: Native static method requires manual modeling
     }
 
     

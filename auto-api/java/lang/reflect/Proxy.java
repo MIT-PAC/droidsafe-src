@@ -177,7 +177,7 @@ public class Proxy implements Serializable {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 12:56:11.843 -0400", hash_original_method = "35C55DB5A48B0F395569B015D68669C8", hash_generated_method = "1A3962981E1F8C3737CB48271654C757")
     private static Class generateProxy(String name, Class[] interfaces,
         ClassLoader loader) {
-        //DSFIXME:  CODE0010: Native static method requires manual modeling
+        //DSFIXME:  CODE0012: Native static method requires manual modeling
     	return new Proxy().getClass();
     }
 

@@ -171,9 +171,8 @@ public final class Method extends AccessibleObject implements GenericDeclaration
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 12:56:11.093 -0400", hash_original_method = "5161131687230E0D7EE89383FDDF9117", hash_generated_method = "C86FF5AA7B792DD7103D0965CACD1AC0")
     static Object[] getSignatureAnnotation(Class declaringClass, int slot) {
-        //DSFIXME:  CODE0010: Native static method requires manual modeling
+        //DSFIXME:  CODE0012: Native static method requires manual modeling
     	return new Annotation[]{(Annotation)declaringClass.dsTaint};
-    	
     }
 
     
@@ -275,7 +274,7 @@ public final class Method extends AccessibleObject implements GenericDeclaration
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 12:56:11.152 -0400", hash_original_method = "BD3C661F4197C5A0A0AE31F0699A32C5", hash_generated_method = "FF49EFB75248C7D88D6A9B1A64B1BD15")
     static Annotation[] getDeclaredAnnotations(Class<?> declaringClass, int slot) {
-        //DSFIXME:  CODE0010: Native static method requires manual modeling
+        //DSFIXME:  CODE0012: Native static method requires manual modeling
     	return new Annotation[]{(Annotation)declaringClass.dsTaint};
     }
 
@@ -301,7 +300,7 @@ public final class Method extends AccessibleObject implements GenericDeclaration
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 12:56:11.167 -0400", hash_original_method = "C4BBAD45B2B34A1D1F18CA240E0A5303", hash_generated_method = "5B5FFDB35F0BD2CDC481D11AE71987FE")
     static <A extends Annotation> A getAnnotation(
             Class<?> declaringClass, int slot, Class<A> annotationType) {
-        //DSFIXME:  CODE0010: Native static method requires manual modeling
+        //DSFIXME:  CODE0012: Native static method requires manual modeling
     	return (A)declaringClass.dsTaint;
     }
 
@@ -328,8 +327,8 @@ public final class Method extends AccessibleObject implements GenericDeclaration
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 12:56:11.184 -0400", hash_original_method = "B27804BB128191FC86404E3EF5E631CD", hash_generated_method = "743D272366C2F0078C6564F4201E20EE")
     static boolean isAnnotationPresent(
             Class<?> declaringClass, int slot, Class<? extends Annotation> annotationType) {
+        //DSFIXME:  CODE0012: Native static method requires manual modeling
         return DSUtils.UNKNOWN_BOOLEAN;
-        //DSFIXME:  CODE0009: Possible callback target function detected
     }
 
     
@@ -364,7 +363,7 @@ public final class Method extends AccessibleObject implements GenericDeclaration
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 12:56:11.203 -0400", hash_original_method = "902FB4D5FA928FFE2E97E0A201CE8947", hash_generated_method = "75BB9147FD7D7B56B48E2FD3F2EBCAAD")
     static Annotation[][] getParameterAnnotations(Class declaringClass, int slot) {
-        //DSFIXME:  CODE0010: Native static method requires manual modeling
+        //DSFIXME:  CODE0012: Native static method requires manual modeling
     	return new Annotation[][]{new Annotation[]{(Annotation)declaringClass.dsTaint}};
     }
 

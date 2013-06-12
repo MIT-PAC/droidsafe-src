@@ -189,7 +189,7 @@ public class AccessibleObject implements AnnotatedElement {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 12:56:08.416 -0400", hash_original_method = "67C020D23655E4A7F13FE58E656E68A1", hash_generated_method = "6F08FE928889572CD3740180BC0EB8D7")
     private static Object[] getClassSignatureAnnotation(Class clazz) {
-        //DSFIXME:  CODE0010: Native static method requires manual modeling
+        //DSFIXME:  CODE0012: Native static method requires manual modeling
     	return new Object[]{clazz.dsTaint};
     }
 

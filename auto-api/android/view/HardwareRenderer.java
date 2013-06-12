@@ -99,7 +99,7 @@ public abstract class HardwareRenderer {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:05.007 -0400", hash_original_method = "16A6A61D4FDE679AC43F89D450C818BD", hash_generated_method = "2C0C43E53AA4488F04E9525A99E50E72")
     private static void nSetupShadersDiskCache(String cacheFile) {
-        //DSFIXME:  CODE0010: Native static method requires manual modeling
+        //DSFIXME:  CODE0012: Native static method requires manual modeling
     }
 
     

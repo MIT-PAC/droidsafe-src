@@ -53,20 +53,20 @@ public class KeyCharacterMap {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:05.301 -0400", hash_original_method = "411AD3071A91572F7B81942058D5D570", hash_generated_method = "368014337130CE663556A45C89CA26BC")
     private static int nativeLoad(String file) {
-        //DSFIXME:  CODE0010: Native static method requires manual modeling
+        //DSFIXME:  CODE0012: Native static method requires manual modeling
     	return DSUtils.UNKNOWN_INT;
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:05.301 -0400", hash_original_method = "62D22E54D2287BCFB12AF53C33B4CDAE", hash_generated_method = "E31DEE0DEB4DDCFCF415ECA9533B7C2A")
     private static void nativeDispose(int ptr) {
-        //DSFIXME:  CODE0010: Native static method requires manual modeling
+        //DSFIXME:  CODE0012: Native static method requires manual modeling
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:05.301 -0400", hash_original_method = "AC617B6A468EF60FB326247BA76E8515", hash_generated_method = "9F5E30C03242781B5804338EBD5D554E")
     private static char nativeGetCharacter(int ptr, int keyCode, int metaState) {
-        //DSFIXME:  CODE0010: Native static method requires manual modeling
+        //DSFIXME:  CODE0012: Native static method requires manual modeling
     	return DSUtils.UNKNOWN_CHAR;
     }
 
@@ -74,42 +74,42 @@ public class KeyCharacterMap {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:05.301 -0400", hash_original_method = "93405439419D7F040B7E704E9670BD2A", hash_generated_method = "7A66E8868D6A8DCB9DB4243F34BE666C")
     private static boolean nativeGetFallbackAction(int ptr, int keyCode, int metaState,
             FallbackAction outFallbackAction) {
-        //DSFIXME:  CODE0010: Native static method requires manual modeling
+        //DSFIXME:  CODE0012: Native static method requires manual modeling
     	return DSUtils.UNKNOWN_BOOLEAN;
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:05.301 -0400", hash_original_method = "67F82152BBCBB6214B8E986E43FCD3FA", hash_generated_method = "DFBF2FF5B18CA2F8046DEABF8294DBF6")
     private static char nativeGetNumber(int ptr, int keyCode) {
-        //DSFIXME:  CODE0010: Native static method requires manual modeling
+        //DSFIXME:  CODE0012: Native static method requires manual modeling
     	return DSUtils.UNKNOWN_CHAR;
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:05.301 -0400", hash_original_method = "7FF55A2A6E3FA70141AB81C94AAA8E0C", hash_generated_method = "A5756D49850E6D29F219C762AC7EFFA6")
     private static char nativeGetMatch(int ptr, int keyCode, char[] chars, int metaState) {
-        //DSFIXME:  CODE0010: Native static method requires manual modeling
+        //DSFIXME:  CODE0012: Native static method requires manual modeling
     	return DSUtils.UNKNOWN_CHAR;
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:05.301 -0400", hash_original_method = "D2ABC738F574A9392CD60F7386727B58", hash_generated_method = "FA771FFB55EFCB0D9B751BA1C7EA8865")
     private static char nativeGetDisplayLabel(int ptr, int keyCode) {
-        //DSFIXME:  CODE0010: Native static method requires manual modeling
+        //DSFIXME:  CODE0012: Native static method requires manual modeling
     	return DSUtils.UNKNOWN_CHAR;
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:05.301 -0400", hash_original_method = "0BCA58A795A71F8E738F7EC958F12901", hash_generated_method = "645FB926E465B174DACD29C95F9D05E8")
     private static int nativeGetKeyboardType(int ptr) {
-        //DSFIXME:  CODE0010: Native static method requires manual modeling
+        //DSFIXME:  CODE0012: Native static method requires manual modeling
     	return DSUtils.UNKNOWN_INT;
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:05.301 -0400", hash_original_method = "7B494903DDF4BD8240B85C3A0A7B3708", hash_generated_method = "DC63ACBEFC1D95D7AC69561E6684825F")
     private static KeyEvent[] nativeGetEvents(int ptr, int deviceId, char[] chars) {
-        //DSFIXME:  CODE0010: Native static method requires manual modeling
+        //DSFIXME:  CODE0012: Native static method requires manual modeling
     	return new KeyEvent[] {new KeyEvent()};
     }
 

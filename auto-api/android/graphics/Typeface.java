@@ -121,34 +121,34 @@ public class Typeface {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:01.477 -0400", hash_original_method = "AECA93EE1E74230109E5D40863E367B5", hash_generated_method = "25E80E039B64D4F79101A89F47225180")
     private static int nativeCreate(String familyName, int style) {
-        //DSFIXME:  CODE0010: Native static method requires manual modeling
+        //DSFIXME:  CODE0012: Native static method requires manual modeling
     	return DSUtils.UNKNOWN_INT;
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:01.477 -0400", hash_original_method = "BA08E25700225C22375A5A91D6E9167C", hash_generated_method = "D1E0B3AB334265211045A926F88A29E5")
     private static int nativeCreateFromTypeface(int native_instance, int style) {
-        //DSFIXME:  CODE0010: Native static method requires manual modeling
+        //DSFIXME:  CODE0012: Native static method requires manual modeling
     	return DSUtils.UNKNOWN_INT;
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:01.477 -0400", hash_original_method = "A94763C4883A26DBA88C2F056A3B8A34", hash_generated_method = "03028C35F7CFFDAC6991617E3B7281CC")
     private static void nativeUnref(int native_instance) {
-        //DSFIXME:  CODE0010: Native static method requires manual modeling
+        //DSFIXME:  CODE0012: Native static method requires manual modeling
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:01.477 -0400", hash_original_method = "1BF2A4E37617F777C398CA339C4457E1", hash_generated_method = "85565332F9F7E6ACA735EDF752667D07")
     private static int nativeGetStyle(int native_instance) {
-        //DSFIXME:  CODE0010: Native static method requires manual modeling
+        //DSFIXME:  CODE0012: Native static method requires manual modeling
     	return DSUtils.UNKNOWN_INT;
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:01.477 -0400", hash_original_method = "C129326312649AA388CAA949617ABA1E", hash_generated_method = "9373BB44568E02CBCA254DF006E7A730")
     private static int nativeCreateFromAsset(AssetManager mgr, String path) {
-        //DSFIXME:  CODE0010: Native static method requires manual modeling
+        //DSFIXME:  CODE0012: Native static method requires manual modeling
     	return DSUtils.UNKNOWN_INT;
     }
 
@@ -156,13 +156,13 @@ public class Typeface {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:01.477 -0400", hash_original_method = "6ADB458B35FAC6F1A42AD6CE038AB448", hash_generated_method = "1FF48DB16CA7875574C1BC8BCCBEE758")
     private static int nativeCreateFromFile(String path) {
     	return DSUtils.UNKNOWN_INT;
-        //DSFIXME:  CODE0010: Native static method requires manual modeling
+        //DSFIXME:  CODE0012: Native static method requires manual modeling
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:01.477 -0400", hash_original_method = "2C08949F6CA5703FB74C76199B27CDFD", hash_generated_method = "2FBC3E772F7352BAA8976D073DF69629")
     public static void setGammaForText(float blackGamma, float whiteGamma) {
-        //DSFIXME:  CODE0010: Native static method requires manual modeling
+        //DSFIXME:  CODE0012: Native static method requires manual modeling
     }
 
     

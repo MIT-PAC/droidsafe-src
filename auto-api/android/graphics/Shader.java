@@ -66,14 +66,14 @@ public class Shader {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:01.468 -0400", hash_original_method = "55B993F53B66E0FD14B900962791C0E2", hash_generated_method = "A6783B560F51EC6C434EF59C93E63729")
     private static void nativeDestructor(int native_shader, int native_skiaShader) {
-        //DSFIXME:  CODE0010: Native static method requires manual modeling
+        //DSFIXME:  CODE0012: Native static method requires manual modeling
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:01.468 -0400", hash_original_method = "BE49337D8B496DB91554AF126005F4EA", hash_generated_method = "73886B0F112D4399DE885C23D69E971D")
     private static void nativeSetLocalMatrix(int native_shader,
             int native_skiaShader, int matrix_instance) {
-        //DSFIXME:  CODE0010: Native static method requires manual modeling
+        //DSFIXME:  CODE0012: Native static method requires manual modeling
     }
 
     

@@ -252,14 +252,14 @@ public final class EmojiFactory {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:00.881 -0400", hash_original_method = "423346FA0C16BA32B457763E80C8224E", hash_generated_method = "9B237D4C55695E1384CB5D3FE3CAAB3F")
     @DSModeled(DSC.BAN)
     public static EmojiFactory newInstance(String class_name) {
-        //DSFIXME:  CODE0010: Native static method requires manual modeling
+        //DSFIXME:  CODE0012: Native static method requires manual modeling
     	return new EmojiFactory();
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:00.881 -0400", hash_original_method = "75D3977F7B3982A73421732EA4218450", hash_generated_method = "9096D1C587991621D42EA7B734675E17")
     public static EmojiFactory newAvailableInstance() {
-        //DSFIXME:  CODE0010: Native static method requires manual modeling
+        //DSFIXME:  CODE0012: Native static method requires manual modeling
     	return new EmojiFactory();
     }
 

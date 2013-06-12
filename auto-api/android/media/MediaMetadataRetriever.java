@@ -292,7 +292,7 @@ public class MediaMetadataRetriever {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:01.932 -0400", hash_original_method = "9DACEB091913AFFD29EB0CE9882462AB", hash_generated_method = "3D783755AB596340F98D250656AEA902")
     private static void native_init() {
-        //DSFIXME:  CODE0010: Native static method requires manual modeling
+        //DSFIXME:  CODE0012: Native static method requires manual modeling
     }
 
     

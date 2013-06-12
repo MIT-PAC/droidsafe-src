@@ -1983,14 +1983,14 @@ public final class Parcel {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 12:02:00.469 -0400", hash_original_method = "B2F3F8B27CB4258286C773AA600B0EE8", hash_generated_method = "DAFE418B9F98DF02170136B16379440C")
     static FileDescriptor openFileDescriptor(String file,
             int mode) throws FileNotFoundException {
-        //DSFIXME:  CODE0010: Native static method requires manual modeling
+        //DSFIXME:  CODE0012: Native static method requires manual modeling
     	return new FileDescriptor();
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 12:02:00.469 -0400", hash_original_method = "8061048C5D3A6AC0A450AD6A833E6532", hash_generated_method = "EBD5E96AFE25530733FFD4680526612E")
     static FileDescriptor dupFileDescriptor(FileDescriptor orig) throws IOException {
-        //DSFIXME:  CODE0010: Native static method requires manual modeling
+        //DSFIXME:  CODE0012: Native static method requires manual modeling
     	return new FileDescriptor();
     }
 

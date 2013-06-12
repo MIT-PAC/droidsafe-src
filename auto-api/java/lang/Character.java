@@ -110,14 +110,14 @@ public final class Character implements Serializable, Comparable<Character> {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:11.761 -0400", hash_original_method = "4015C311D2E9352F0DAC3B1EE7912530", hash_generated_method = "BC6889B19F6C653D65982F668C15F9A7")
     private static int forNameImpl(String blockName) {
-        //DSFIXME:  CODE0010: Native static method requires manual modeling
+        //DSFIXME:  CODE0012: Native static method requires manual modeling
     	return DSUtils.UNKNOWN_INT;
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:11.761 -0400", hash_original_method = "B4F6660FE5C4F398695868C604C73DDE", hash_generated_method = "EDCDD3CB837022FCD0AA678FDC769ECA")
     private static int ofImpl(int codePoint) {
-        //DSFIXME:  CODE0010: Native static method requires manual modeling
+        //DSFIXME:  CODE0012: Native static method requires manual modeling
     	return DSUtils.UNKNOWN_INT;
     }
 
@@ -572,7 +572,7 @@ public final class Character implements Serializable, Comparable<Character> {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:11.763 -0400", hash_original_method = "5136D0E0B0E7F6F03C2ACBA60CD0DA7D", hash_generated_method = "FD3CE60BD3644B78228E36DD5B28BBD7")
     @DSModeled(DSC.SAFE)
     private static int digitImpl(int codePoint, int radix) {
-        //DSFIXME:  CODE0010: Native static method requires manual modeling
+        //DSFIXME:  CODE0012: Native static method requires manual modeling
     	return DSUtils.UNKNOWN_INT;
     }
 
@@ -619,7 +619,7 @@ public final class Character implements Serializable, Comparable<Character> {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:11.763 -0400", hash_original_method = "308577C469D43230519015864E3846FC", hash_generated_method = "16941F8CB59826F2E87576C549E5F313")
     @DSModeled(DSC.SAFE)
     private static String getNameImpl(int codePoint) {
-        //DSFIXME:  CODE0010: Native static method requires manual modeling
+        //DSFIXME:  CODE0012: Native static method requires manual modeling
     	return DSUtils.UNKNOWN_STRING;
     }
 
@@ -659,7 +659,7 @@ public final class Character implements Serializable, Comparable<Character> {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:11.763 -0400", hash_original_method = "92CF6E8F473015AEBE60E2D661CB1525", hash_generated_method = "21E880B116E6CB09CB0CB770FD76E30F")
     @DSModeled(DSC.SAFE)
     private static int getNumericValueImpl(int codePoint) {
-        //DSFIXME:  CODE0010: Native static method requires manual modeling
+        //DSFIXME:  CODE0012: Native static method requires manual modeling
     	return DSUtils.UNKNOWN_INT;
     }
 
@@ -684,7 +684,7 @@ public final class Character implements Serializable, Comparable<Character> {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:11.763 -0400", hash_original_method = "77B3E40EF93B0722D6FCE2DCAE56E47E", hash_generated_method = "77221D568DE9B01FC53DEF672F330314")
     @DSModeled(DSC.SAFE)
     private static int getTypeImpl(int codePoint) {
-        //DSFIXME:  CODE0010: Native static method requires manual modeling
+        //DSFIXME:  CODE0012: Native static method requires manual modeling
     	return DSUtils.UNKNOWN_INT;
     }
 
@@ -713,7 +713,7 @@ public final class Character implements Serializable, Comparable<Character> {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:11.763 -0400", hash_original_method = "7754284BD875AFA90F21F5FE8120A159", hash_generated_method = "D9F82847FCE187FDC195154610B14F7B")
     @DSModeled(DSC.SAFE)
     private static byte getDirectionalityImpl(int codePoint) {
-        //DSFIXME:  CODE0010: Native static method requires manual modeling
+        //DSFIXME:  CODE0012: Native static method requires manual modeling
     	return DSUtils.UNKNOWN_BYTE;
     }
 
@@ -735,7 +735,7 @@ public final class Character implements Serializable, Comparable<Character> {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:11.763 -0400", hash_original_method = "E292C959323B528E04496C7CCA760565", hash_generated_method = "8F4F700CCD114EF9769B4721AF51851B")
     @DSModeled(DSC.SAFE)
     private static boolean isMirroredImpl(int codePoint) {
-        //DSFIXME:  CODE0010: Native static method requires manual modeling
+        //DSFIXME:  CODE0012: Native static method requires manual modeling
     	return DSUtils.UNKNOWN_BOOLEAN;
     }
 
@@ -788,7 +788,7 @@ public final class Character implements Serializable, Comparable<Character> {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:11.764 -0400", hash_original_method = "BA2C340F1A386E9F3EC0BA5846FE0962", hash_generated_method = "A07F091AE5BE4F24E8772BD24669A831")
     @DSModeled(DSC.SAFE)
     private static boolean isDefinedImpl(int codePoint) {
-        //DSFIXME:  CODE0010: Native static method requires manual modeling
+        //DSFIXME:  CODE0012: Native static method requires manual modeling
     	return DSUtils.UNKNOWN_BOOLEAN;
     }
 
@@ -816,7 +816,7 @@ public final class Character implements Serializable, Comparable<Character> {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:11.764 -0400", hash_original_method = "F904076CF8ED09F6D0D155E03B5610A7", hash_generated_method = "0FA0ED862AECD4AB9FADA5F0EB0E01F9")
     @DSModeled(DSC.SAFE)
     private static boolean isDigitImpl(int codePoint) {
-        //DSFIXME:  CODE0010: Native static method requires manual modeling
+        //DSFIXME:  CODE0012: Native static method requires manual modeling
     	return DSUtils.UNKNOWN_BOOLEAN;
     }
 
@@ -842,7 +842,7 @@ public final class Character implements Serializable, Comparable<Character> {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:11.764 -0400", hash_original_method = "2A2AB9D0D4CBD87FC680B28F68076F12", hash_generated_method = "982218B622E2B2274763547E8F96FC33")
     @DSModeled(DSC.SAFE)
     private static boolean isIdentifierIgnorableImpl(int codePoint) {
-        //DSFIXME:  CODE0010: Native static method requires manual modeling
+        //DSFIXME:  CODE0012: Native static method requires manual modeling
     	return DSUtils.UNKNOWN_BOOLEAN;
     }
 
@@ -946,7 +946,7 @@ public final class Character implements Serializable, Comparable<Character> {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:11.764 -0400", hash_original_method = "B671C8CB4836F23CCDC793D8C06B6725", hash_generated_method = "0FB08F46807C63C8BB89F45D418CF373")
     @DSModeled(DSC.SAFE)
     private static boolean isLetterImpl(int codePoint) {
-        //DSFIXME:  CODE0010: Native static method requires manual modeling
+        //DSFIXME:  CODE0012: Native static method requires manual modeling
     	return DSUtils.UNKNOWN_BOOLEAN;
     }
 
@@ -977,7 +977,7 @@ public final class Character implements Serializable, Comparable<Character> {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:11.764 -0400", hash_original_method = "3C7B38B03B018EEA897CD89E14D09984", hash_generated_method = "58AD72D52161DAF8BDF214C174B501BA")
     @DSModeled(DSC.SAFE)
     private static boolean isLetterOrDigitImpl(int codePoint) {
-        //DSFIXME:  CODE0010: Native static method requires manual modeling
+        //DSFIXME:  CODE0012: Native static method requires manual modeling
     	return DSUtils.UNKNOWN_BOOLEAN;
     }
 
@@ -1005,7 +1005,7 @@ public final class Character implements Serializable, Comparable<Character> {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:11.764 -0400", hash_original_method = "BA09C596C26CA8AA15B61529DE1EA5CB", hash_generated_method = "B3EAE94AC11671742B9ABBED6ED85880")
     @DSModeled(DSC.SAFE)
     private static boolean isLowerCaseImpl(int codePoint) {
-        //DSFIXME:  CODE0010: Native static method requires manual modeling
+        //DSFIXME:  CODE0012: Native static method requires manual modeling
     	return DSUtils.UNKNOWN_BOOLEAN;
     }
 
@@ -1045,7 +1045,7 @@ public final class Character implements Serializable, Comparable<Character> {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:11.765 -0400", hash_original_method = "6B5A033B254409E9D1D4FA09A102D44E", hash_generated_method = "74057EF841BA310C92353E990D7AEFAD")
     @DSModeled(DSC.SAFE)
     private static boolean isSpaceCharImpl(int codePoint) {
-        //DSFIXME:  CODE0010: Native static method requires manual modeling
+        //DSFIXME:  CODE0012: Native static method requires manual modeling
     	return DSUtils.UNKNOWN_BOOLEAN;
     }
 
@@ -1067,7 +1067,7 @@ public final class Character implements Serializable, Comparable<Character> {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:11.765 -0400", hash_original_method = "5D4C2B46F0A51AB70DF29B1A0552D734", hash_generated_method = "290045B1011D688D802B6CF3EA42DFFD")
     @DSModeled(DSC.SAFE)
     private static boolean isTitleCaseImpl(int codePoint) {
-        //DSFIXME:  CODE0010: Native static method requires manual modeling
+        //DSFIXME:  CODE0012: Native static method requires manual modeling
     	return DSUtils.UNKNOWN_BOOLEAN;
     }
 
@@ -1089,7 +1089,7 @@ public final class Character implements Serializable, Comparable<Character> {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:11.765 -0400", hash_original_method = "98A737EE3ABB813CF1439C9A0D88676D", hash_generated_method = "AFA711E89FED2B2E3716F6D4F73328CE")
     @DSModeled(DSC.SAFE)
     private static boolean isUnicodeIdentifierPartImpl(int codePoint) {
-        //DSFIXME:  CODE0010: Native static method requires manual modeling
+        //DSFIXME:  CODE0012: Native static method requires manual modeling
     	return DSUtils.UNKNOWN_BOOLEAN;
     }
 
@@ -1111,7 +1111,7 @@ public final class Character implements Serializable, Comparable<Character> {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:11.765 -0400", hash_original_method = "19E0B88A41590772F2B6579654359C8A", hash_generated_method = "BC7F055DA1BBC081ECE86BF982BFE6E8")
     @DSModeled(DSC.SAFE)
     private static boolean isUnicodeIdentifierStartImpl(int codePoint) {
-        //DSFIXME:  CODE0010: Native static method requires manual modeling
+        //DSFIXME:  CODE0012: Native static method requires manual modeling
     	return DSUtils.UNKNOWN_BOOLEAN;
     }
 
@@ -1139,7 +1139,7 @@ public final class Character implements Serializable, Comparable<Character> {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:11.765 -0400", hash_original_method = "5D4232B921B2097EACFE07B8CA79F206", hash_generated_method = "55E3EAB4CF41D7AFCDF50AC0DD827771")
     @DSModeled(DSC.SAFE)
     private static boolean isUpperCaseImpl(int codePoint) {
-        //DSFIXME:  CODE0010: Native static method requires manual modeling
+        //DSFIXME:  CODE0012: Native static method requires manual modeling
     	return DSUtils.UNKNOWN_BOOLEAN;
     }
 
@@ -1174,7 +1174,7 @@ public final class Character implements Serializable, Comparable<Character> {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:11.765 -0400", hash_original_method = "13541F0E4A0D4F6FA23E865B664895DF", hash_generated_method = "FC9B03FF1DC2EB630A1E3510AC1510D1")
     @DSModeled(DSC.SAFE)
     private static boolean isWhitespaceImpl(int codePoint) {
-        //DSFIXME:  CODE0010: Native static method requires manual modeling
+        //DSFIXME:  CODE0012: Native static method requires manual modeling
     	return DSUtils.UNKNOWN_BOOLEAN;
     }
 
@@ -1209,7 +1209,7 @@ public final class Character implements Serializable, Comparable<Character> {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:11.765 -0400", hash_original_method = "BC02FA7C2EB83DBC36BD24E9BC8F5D01", hash_generated_method = "9F8F288EDE2E2B6CCC649773AD1A19DC")
     @DSModeled(DSC.SAFE)
     private static int toLowerCaseImpl(int codePoint) {
-        //DSFIXME:  CODE0010: Native static method requires manual modeling
+        //DSFIXME:  CODE0012: Native static method requires manual modeling
     	return DSUtils.UNKNOWN_INT;
     }
 
@@ -1250,7 +1250,7 @@ public final class Character implements Serializable, Comparable<Character> {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:11.765 -0400", hash_original_method = "FE2B382CC43B1E9A80006125376CDF15", hash_generated_method = "77CC16A903DA16AEBE67922377BA7B4A")
     @DSModeled
     private static int toTitleCaseImpl(int codePoint) {
-        //DSFIXME:  CODE0010: Native static method requires manual modeling
+        //DSFIXME:  CODE0012: Native static method requires manual modeling
     	return DSUtils.UNKNOWN_INT;
     }
 
@@ -1278,7 +1278,7 @@ public final class Character implements Serializable, Comparable<Character> {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:11.765 -0400", hash_original_method = "DA6B9550C074BDC69CBF47357D2E1CFA", hash_generated_method = "A32C0FEC0866250358980F33F070DD93")
     @DSModeled
     private static int toUpperCaseImpl(int codePoint) {
-        //DSFIXME:  CODE0010: Native static method requires manual modeling
+        //DSFIXME:  CODE0012: Native static method requires manual modeling
     	return DSUtils.UNKNOWN_INT;
     }
 

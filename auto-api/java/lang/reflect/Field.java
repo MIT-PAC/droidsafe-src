@@ -216,7 +216,7 @@ public final class Field extends AccessibleObject implements Member {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 12:56:10.289 -0400", hash_original_method = "3643C5C7AF3E1CB3C9A364BCB2E04542", hash_generated_method = "EDAA01609EF32978192CC6B849E81AE2")
     private static Annotation[] getDeclaredAnnotations(Class declaringClass, int slot) {
-        //DSFIXME:  CODE0010: Native static method requires manual modeling
+        //DSFIXME:  CODE0012: Native static method requires manual modeling
     	return new Annotation[]{(Annotation)declaringClass.dsTaint};
     }
 
@@ -242,7 +242,7 @@ public final class Field extends AccessibleObject implements Member {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 12:56:10.301 -0400", hash_original_method = "C4BBAD45B2B34A1D1F18CA240E0A5303", hash_generated_method = "A011795895B7724F33B4F2132ECCE669")
     private static <A extends Annotation> A getAnnotation(
             Class<?> declaringClass, int slot, Class<A> annotationType) {
-        //DSFIXME:  CODE0010: Native static method requires manual modeling
+        //DSFIXME:  CODE0012: Native static method requires manual modeling
     	// Cannot create using taint from delacringClass since cannot "create"
     	// an annotation.
     	return (A)declaringClass.dsTaint;

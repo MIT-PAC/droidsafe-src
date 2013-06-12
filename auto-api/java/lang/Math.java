@@ -24,7 +24,7 @@ public final class Math {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:11.793 -0400", hash_original_method = "B72838F5E17206050A6CAE357E34091C", hash_generated_method = "A7288F3FA0F8FD8AED0C9CE8BFEA1066")
     @DSModeled(DSC.SAFE)
     public static double abs(double d) {
-        //DSFIXME:  CODE0010: Native static method requires manual modeling
+        //DSFIXME:  CODE0012: Native static method requires manual modeling
     	return d;
     }
 
@@ -32,7 +32,7 @@ public final class Math {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:11.793 -0400", hash_original_method = "5D22FE78C1EE5EE240D13ACC7783B959", hash_generated_method = "590CB2C45B89C25AF55559BEFC7BD72E")
     @DSModeled(DSC.SAFE)
     public static float abs(float f) {
-        //DSFIXME:  CODE0010: Native static method requires manual modeling
+        //DSFIXME:  CODE0012: Native static method requires manual modeling
     	return f;
     }
 
@@ -40,7 +40,7 @@ public final class Math {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:11.793 -0400", hash_original_method = "72CE5ACD710E65CC7F27ADD67603141D", hash_generated_method = "BE2C0834230B198373E30D7587D0EBD1")
     @DSModeled(DSC.SAFE)
     public static int abs(int i) {
-        //DSFIXME:  CODE0010: Native static method requires manual modeling
+        //DSFIXME:  CODE0012: Native static method requires manual modeling
     	return i;
     }
 
@@ -48,7 +48,7 @@ public final class Math {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:11.793 -0400", hash_original_method = "6D4C81A96D7488E6F69868D1C176BFEA", hash_generated_method = "03C40B8320220CF1EFE537B8ED934063")
     @DSModeled(DSC.SAFE)
     public static long abs(long l) {
-        //DSFIXME:  CODE0010: Native static method requires manual modeling
+        //DSFIXME:  CODE0012: Native static method requires manual modeling
     	return l;
     }
 
@@ -56,7 +56,7 @@ public final class Math {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:11.793 -0400", hash_original_method = "FDBE1F4F24EACC4239C8D5F7DA1B01F3", hash_generated_method = "6437B12896EEFCCBA0701F70AA1308CF")
     @DSModeled(DSC.SAFE)
     public static double acos(double d) {
-        //DSFIXME:  CODE0010: Native static method requires manual modeling
+        //DSFIXME:  CODE0012: Native static method requires manual modeling
     	return d;
     }
 
@@ -64,7 +64,7 @@ public final class Math {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:11.793 -0400", hash_original_method = "82F6AD39F010D29B0C4E9C65E4DEC5A6", hash_generated_method = "EEA7124C5B45F86FD22EE33346E632A7")
     @DSModeled(DSC.SAFE)
     public static double asin(double d) {
-        //DSFIXME:  CODE0010: Native static method requires manual modeling
+        //DSFIXME:  CODE0012: Native static method requires manual modeling
     	return d;
     }
 
@@ -72,7 +72,7 @@ public final class Math {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:11.793 -0400", hash_original_method = "CC98A0C58823162015FDC5BA1C40596B", hash_generated_method = "74EBDFCA3BD5530B443F8089E5F6A05E")
     @DSModeled(DSC.SAFE)
     public static double atan(double d) {
-        //DSFIXME:  CODE0010: Native static method requires manual modeling
+        //DSFIXME:  CODE0012: Native static method requires manual modeling
     	return d;
     }
 
@@ -80,7 +80,7 @@ public final class Math {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:11.794 -0400", hash_original_method = "3C5FABDC659656E089FA446C04BF75BA", hash_generated_method = "D606CC7AEC08E1A7AB7A62D8AFB29F5D")
     @DSModeled(DSC.SAFE)
     public static double atan2(double y, double x) {
-        //DSFIXME:  CODE0010: Native static method requires manual modeling
+        //DSFIXME:  CODE0012: Native static method requires manual modeling
     	return (y + x);
     }
 
@@ -88,7 +88,7 @@ public final class Math {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:11.794 -0400", hash_original_method = "2303BF77BCB733553D1EF1006AD3D8D7", hash_generated_method = "EAB07CE823CF2522CA46DEAAB3A20AC8")
     @DSModeled(DSC.SAFE)
     public static double cbrt(double d) {
-        //DSFIXME:  CODE0010: Native static method requires manual modeling
+        //DSFIXME:  CODE0012: Native static method requires manual modeling
     	return d;
     }
 
@@ -96,7 +96,7 @@ public final class Math {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:11.794 -0400", hash_original_method = "93474D2C77990B2DBD2774777EEB7153", hash_generated_method = "2B72FB7871CD15E64760F78919E4B0C9")
     @DSModeled(DSC.SAFE)
     public static double ceil(double d) {
-        //DSFIXME:  CODE0010: Native static method requires manual modeling
+        //DSFIXME:  CODE0012: Native static method requires manual modeling
     	return d;
     }
 
@@ -104,7 +104,7 @@ public final class Math {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:11.794 -0400", hash_original_method = "CB4DD889C20EC042F6588E67BA914349", hash_generated_method = "4CFC695FEA7EEE53DD5E8DB52A4B5B2B")
     @DSModeled(DSC.SAFE)
     public static double cos(double d) {
-        //DSFIXME:  CODE0010: Native static method requires manual modeling
+        //DSFIXME:  CODE0012: Native static method requires manual modeling
     	return d;
     }
 
@@ -112,7 +112,7 @@ public final class Math {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:11.794 -0400", hash_original_method = "4121186610E972601D5C00781578D112", hash_generated_method = "74801CD344A88113BEACA90C9211FD21")
     @DSModeled(DSC.SAFE)
     public static double cosh(double d) {
-        //DSFIXME:  CODE0010: Native static method requires manual modeling
+        //DSFIXME:  CODE0012: Native static method requires manual modeling
     	return d;
     }
 
@@ -120,7 +120,7 @@ public final class Math {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:11.794 -0400", hash_original_method = "F9F6A51C3193EA6674BC45699CD26EC3", hash_generated_method = "0F7FBD214EDDC6CEA43DE5767D59CD1F")
     @DSModeled(DSC.SAFE)
     public static double exp(double d) {
-        //DSFIXME:  CODE0010: Native static method requires manual modeling
+        //DSFIXME:  CODE0012: Native static method requires manual modeling
     	return d;
     }
 
@@ -128,7 +128,7 @@ public final class Math {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:11.794 -0400", hash_original_method = "A60926B51F778E2890B50E5521DA9BE1", hash_generated_method = "874EB524D683F0C5B2F941E487EC8E43")
     @DSModeled(DSC.SAFE)
     public static double expm1(double d) {
-        //DSFIXME:  CODE0010: Native static method requires manual modeling
+        //DSFIXME:  CODE0012: Native static method requires manual modeling
     	return d;
     }
 
@@ -136,7 +136,7 @@ public final class Math {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:11.794 -0400", hash_original_method = "0ACE6C4F839FB4F79B7AA908D0C73F66", hash_generated_method = "52E260437DA38154B01F8B7889E4251C")
     @DSModeled(DSC.SAFE)
     public static double floor(double d) {
-        //DSFIXME:  CODE0010: Native static method requires manual modeling
+        //DSFIXME:  CODE0012: Native static method requires manual modeling
     	return d;
     }
 
@@ -144,7 +144,7 @@ public final class Math {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:11.794 -0400", hash_original_method = "F081426BD2A2C67D9EA17F2F33C0419F", hash_generated_method = "BCFF70E857B22D9F13D40CFFF943114C")
     @DSModeled(DSC.SAFE)
     public static double hypot(double x, double y) {
-        //DSFIXME:  CODE0010: Native static method requires manual modeling
+        //DSFIXME:  CODE0012: Native static method requires manual modeling
     	return (x + y);
     }
 
@@ -152,7 +152,7 @@ public final class Math {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:11.794 -0400", hash_original_method = "D3D6E06E49FDB61D8B513D04A098D113", hash_generated_method = "8E2F7E22D042FF3BE05E9A08550128B9")
     @DSModeled(DSC.SAFE)
     public static double IEEEremainder(double x, double y) {
-        //DSFIXME:  CODE0010: Native static method requires manual modeling
+        //DSFIXME:  CODE0012: Native static method requires manual modeling
     	return (x + y);
     }
 
@@ -160,7 +160,7 @@ public final class Math {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:11.794 -0400", hash_original_method = "838052BC5F632BB518977EEA53ABE6A4", hash_generated_method = "E1D4DD3BDD349584E232B533BFC4138D")
     @DSModeled(DSC.SAFE)
     public static double log(double d) {
-        //DSFIXME:  CODE0010: Native static method requires manual modeling
+        //DSFIXME:  CODE0012: Native static method requires manual modeling
     	return d;
     }
 
@@ -168,7 +168,7 @@ public final class Math {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:11.794 -0400", hash_original_method = "A0FB2B81767F49BB17969D1673531EA4", hash_generated_method = "BACF55CF0FE079F583269556A070F6EB")
     @DSModeled(DSC.SAFE)
     public static double log10(double d) {
-        //DSFIXME:  CODE0010: Native static method requires manual modeling
+        //DSFIXME:  CODE0012: Native static method requires manual modeling
     	return d;
     }
 
@@ -177,7 +177,7 @@ public final class Math {
     @DSModeled(DSC.SAFE)
     public static double log1p(double d) {
     	return d;
-        //DSFIXME:  CODE0010: Native static method requires manual modeling
+        //DSFIXME:  CODE0012: Native static method requires manual modeling
     }
 
     
@@ -220,7 +220,7 @@ public final class Math {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:11.794 -0400", hash_original_method = "696046060C2F7D4519CE6A5E5D078E9B", hash_generated_method = "0586CD44E4BDD3217A0EF59950F24F18")
     @DSModeled(DSC.SAFE)
     public static int max(int i1, int i2) {
-        //DSFIXME:  CODE0010: Native static method requires manual modeling
+        //DSFIXME:  CODE0012: Native static method requires manual modeling
     	return (i1 + i2);
     }
 
@@ -273,7 +273,7 @@ public final class Math {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:11.794 -0400", hash_original_method = "2FC6C515EC29C97BECD2D5F80787BEF9", hash_generated_method = "A31EC70BFD8565B8B2AF0CF55C327668")
     @DSModeled(DSC.SAFE)
     public static int min(int i1, int i2) {
-        //DSFIXME:  CODE0010: Native static method requires manual modeling
+        //DSFIXME:  CODE0012: Native static method requires manual modeling
     	return (i1 + i2);
     }
 
@@ -288,7 +288,7 @@ public final class Math {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:11.794 -0400", hash_original_method = "960295F3D388ED7DBC2978E89E8BE46C", hash_generated_method = "E6D7B52515FDD1C15E7F8FA04CADC10B")
     @DSModeled(DSC.SAFE)
     public static double pow(double x, double y) {
-        //DSFIXME:  CODE0010: Native static method requires manual modeling
+        //DSFIXME:  CODE0012: Native static method requires manual modeling
     	return x + y;
     }
 
@@ -296,7 +296,7 @@ public final class Math {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:11.794 -0400", hash_original_method = "3A637518A19ED1ECE6D11EE1D1CAB17C", hash_generated_method = "0844D731E638671F3B7A30B2BC24A528")
     @DSModeled(DSC.SAFE)
     public static double rint(double d) {
-        //DSFIXME:  CODE0010: Native static method requires manual modeling
+        //DSFIXME:  CODE0012: Native static method requires manual modeling
     	return d;
     }
 
@@ -356,7 +356,7 @@ public final class Math {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:11.794 -0400", hash_original_method = "9AA3BEF6D2182B4DBF156FEEC5500CF6", hash_generated_method = "8CE15C03BF3F2496C5E7C8A4DD8C6CC6")
     @DSModeled(DSC.SAFE)
     public static double sin(double d) {
-        //DSFIXME:  CODE0010: Native static method requires manual modeling
+        //DSFIXME:  CODE0012: Native static method requires manual modeling
     	return d;
     }
 
@@ -364,7 +364,7 @@ public final class Math {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:11.794 -0400", hash_original_method = "0CF56F7E3355B18CA18FDA4AD96DD5E7", hash_generated_method = "31EC148D9F44FCB31E5A939A7B61C3BB")
     @DSModeled(DSC.SAFE)
     public static double sinh(double d) {
-        //DSFIXME:  CODE0010: Native static method requires manual modeling
+        //DSFIXME:  CODE0012: Native static method requires manual modeling
     	return d;
     }
 
@@ -372,21 +372,21 @@ public final class Math {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:11.794 -0400", hash_original_method = "448BFB09737BA361516749769B4DDDEE", hash_generated_method = "694CC633C94DA3510A0055C48D8A5FD3")
     @DSModeled(DSC.SAFE)
     public static double sqrt(double d) {
-        //DSFIXME:  CODE0010: Native static method requires manual modeling
+        //DSFIXME:  CODE0012: Native static method requires manual modeling
     	return d;
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:11.794 -0400", hash_original_method = "FB9AF02AEC2E190500CF95295CEC3F0F", hash_generated_method = "03512654A9E3E9370F7DA402424FCDF8")
     public static double tan(double d) {
-        //DSFIXME:  CODE0010: Native static method requires manual modeling
+        //DSFIXME:  CODE0012: Native static method requires manual modeling
     	return d;
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:11.794 -0400", hash_original_method = "59B01B7990E77B90161AA42BA1146CB0", hash_generated_method = "A1B6461B40BD6B3F56244E8A26CF7036")
     public static double tanh(double d) {
-        //DSFIXME:  CODE0010: Native static method requires manual modeling
+        //DSFIXME:  CODE0012: Native static method requires manual modeling
     	return d;
     }
 
@@ -426,7 +426,7 @@ public final class Math {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:11.795 -0400", hash_original_method = "5301044EBD12EF16714665EE9C07F359", hash_generated_method = "E312D906B2C755014D477E80E4EE78B3")
     private static double nextafter(double x, double y) {
-        //DSFIXME:  CODE0010: Native static method requires manual modeling
+        //DSFIXME:  CODE0012: Native static method requires manual modeling
     	return (x + y);
     }
 

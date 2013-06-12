@@ -204,7 +204,7 @@ public class SQLiteDatabase extends SQLiteClosable {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:00.780 -0400", hash_original_method = "392852D60CF1BF42580AE337B7836254", hash_generated_method = "161DB10C14B7F867E6934D31E3CBCF66")
     static public int releaseMemory() {
-        //DSFIXME:  CODE0010: Native static method requires manual modeling
+        //DSFIXME:  CODE0012: Native static method requires manual modeling
     	return DSUtils.UNKNOWN_INT;
     }
 

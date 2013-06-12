@@ -46,7 +46,7 @@ public final class SQLiteDebug {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:00.816 -0400", hash_original_method = "C200FA1C335A6B915ECDB07487204354", hash_generated_method = "6DF3B1C145E39009B69FC91E2043465C")
     public static void getPagerStats(PagerStats stats) {
-        //DSFIXME:  CODE0010: Native static method requires manual modeling
+        //DSFIXME:  CODE0012: Native static method requires manual modeling
     }
 
     
@@ -70,7 +70,7 @@ public final class SQLiteDebug {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:00.816 -0400", hash_original_method = "CDD34301EDD58BA01C0EEBBF57B35387", hash_generated_method = "02DCD82E0271DED912B0BD3637AD5E3F")
     public static void getHeapDirtyPages(int[] pages) {
-        //DSFIXME:  CODE0010: Native static method requires manual modeling
+        //DSFIXME:  CODE0012: Native static method requires manual modeling
     }
 
     

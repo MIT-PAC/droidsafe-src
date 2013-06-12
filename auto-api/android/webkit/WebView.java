@@ -10282,13 +10282,13 @@ public class WebView extends AbsoluteLayout implements ViewTreeObserver.OnGlobal
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:07.380 -0400", hash_original_method = "3914688BC2C608012BB2A11771B543D9", hash_generated_method = "CB5EB2C337461A5AC8919AC12E2D43B7")
     private static void nativeOnTrimMemory(int level) {
-        //DSFIXME:  CODE0010: Native static method requires manual modeling
+        //DSFIXME:  CODE0012: Native static method requires manual modeling
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:07.381 -0400", hash_original_method = "40CAAA20A745B5C9918EDBEB33AE6FA6", hash_generated_method = "EC57F2253188ECA0A3B2B7003085B4F4")
     private static void nativeSetPauseDrawing(int instance, boolean pause) {
-        //DSFIXME:  CODE0010: Native static method requires manual modeling
+        //DSFIXME:  CODE0012: Native static method requires manual modeling
     }
 
     

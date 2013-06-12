@@ -521,28 +521,28 @@ public class Region implements Parcelable {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:01.463 -0400", hash_original_method = "598B1991EF10295B3051016A841305EB", hash_generated_method = "9DB592E037E80C5CE657CC5174F39E70")
     private static boolean nativeEquals(int native_r1, int native_r2) {
-        //DSFIXME:  CODE0010: Native static method requires manual modeling
+        //DSFIXME:  CODE0012: Native static method requires manual modeling
     	return DSUtils.UNKNOWN_BOOLEAN;
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:01.463 -0400", hash_original_method = "3E924FA274207677C1685DA252728964", hash_generated_method = "783BD50B4B71271940FA9D99D43D18FE")
     private static int nativeConstructor() {
-        //DSFIXME:  CODE0010: Native static method requires manual modeling
+        //DSFIXME:  CODE0012: Native static method requires manual modeling
     	return DSUtils.UNKNOWN_INT;
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:01.463 -0400", hash_original_method = "A8BD981701C67480B873C71171CBACF6", hash_generated_method = "3E943F367F424468A4EBB7840470C118")
     private static void nativeDestructor(int native_region) {
-        //DSFIXME:  CODE0010: Native static method requires manual modeling
+        //DSFIXME:  CODE0012: Native static method requires manual modeling
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:01.463 -0400", hash_original_method = "9E4242078355D7B184F8BCDFE25D96A8", hash_generated_method = "9335F4BB309EB5015342FF1FDA24F170")
     private static boolean nativeSetRegion(int native_dst,
                                                   int native_src) {
-        //DSFIXME:  CODE0010: Native static method requires manual modeling
+        //DSFIXME:  CODE0012: Native static method requires manual modeling
     	return DSUtils.UNKNOWN_BOOLEAN;
     }
 
@@ -550,7 +550,7 @@ public class Region implements Parcelable {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:01.463 -0400", hash_original_method = "253A4F1125E3DC2F0204ECC739AFF0FA", hash_generated_method = "C642F55203C30E07089736F03690D268")
     private static boolean nativeSetRect(int native_dst, int left,
                                                 int top, int right, int bottom) {
-        //DSFIXME:  CODE0010: Native static method requires manual modeling
+        //DSFIXME:  CODE0012: Native static method requires manual modeling
     	return DSUtils.UNKNOWN_BOOLEAN;
     }
 
@@ -558,14 +558,14 @@ public class Region implements Parcelable {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:01.463 -0400", hash_original_method = "548ADFBE3399F0238FEF07CB349B272E", hash_generated_method = "D3572AAAC0B51728378289A8D1F9F436")
     private static boolean nativeSetPath(int native_dst, int native_path,
                                                 int native_clip) {
-        //DSFIXME:  CODE0010: Native static method requires manual modeling
+        //DSFIXME:  CODE0012: Native static method requires manual modeling
     	return DSUtils.UNKNOWN_BOOLEAN;
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:01.463 -0400", hash_original_method = "1271021B06E5F4556F941DCBA2750C73", hash_generated_method = "A165287157DE09D6D76C6843F784ACAB")
     private static boolean nativeGetBounds(int native_region, Rect rect) {
-        //DSFIXME:  CODE0010: Native static method requires manual modeling
+        //DSFIXME:  CODE0012: Native static method requires manual modeling
     	return DSUtils.UNKNOWN_BOOLEAN;
     }
 
@@ -573,7 +573,7 @@ public class Region implements Parcelable {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:01.463 -0400", hash_original_method = "46A30DC6204C7043F695CF4068A135E3", hash_generated_method = "D7AC122A236D582E78C418BC29A4E00D")
     private static boolean nativeGetBoundaryPath(int native_region,
                                                         int native_path) {
-        //DSFIXME:  CODE0010: Native static method requires manual modeling
+        //DSFIXME:  CODE0012: Native static method requires manual modeling
     	return DSUtils.UNKNOWN_BOOLEAN;
     }
 
@@ -581,7 +581,7 @@ public class Region implements Parcelable {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:01.464 -0400", hash_original_method = "09186B760BB24F32CE73B2F755B3D1D7", hash_generated_method = "F343B36FBFB30229C20959AE6E4F1437")
     private static boolean nativeOp(int native_dst, int left, int top,
                                            int right, int bottom, int op) {
-        //DSFIXME:  CODE0010: Native static method requires manual modeling
+        //DSFIXME:  CODE0012: Native static method requires manual modeling
     	return DSUtils.UNKNOWN_BOOLEAN;
     }
 
@@ -589,7 +589,7 @@ public class Region implements Parcelable {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:01.464 -0400", hash_original_method = "78BAB0A233963D1BC9B112A8344E682F", hash_generated_method = "0EDC98E7FBB075D29AC2D3BF7A7F9785")
     private static boolean nativeOp(int native_dst, Rect rect,
                                            int native_region, int op) {
-        //DSFIXME:  CODE0010: Native static method requires manual modeling
+        //DSFIXME:  CODE0012: Native static method requires manual modeling
     	return DSUtils.UNKNOWN_BOOLEAN;
     }
 
@@ -597,14 +597,14 @@ public class Region implements Parcelable {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:01.464 -0400", hash_original_method = "092054E6D28B4F07C6EC84BBAA5E3501", hash_generated_method = "295B5B440359C37B992C7963ABB8ADB1")
     private static boolean nativeOp(int native_dst, int native_region1,
                                            int native_region2, int op) {
-        //DSFIXME:  CODE0010: Native static method requires manual modeling
+        //DSFIXME:  CODE0012: Native static method requires manual modeling
     	return DSUtils.UNKNOWN_BOOLEAN;
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:01.464 -0400", hash_original_method = "D561B5355DF3E88C82B4FF8EBC54B7CE", hash_generated_method = "5914FD74CA8BC723AFE9188D54BC4A1D")
     private static int nativeCreateFromParcel(Parcel p) {
-        //DSFIXME:  CODE0010: Native static method requires manual modeling
+        //DSFIXME:  CODE0012: Native static method requires manual modeling
     	return DSUtils.UNKNOWN_INT;
     }
 
@@ -612,14 +612,14 @@ public class Region implements Parcelable {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:01.464 -0400", hash_original_method = "48BF38789B9A65289141052C650618AD", hash_generated_method = "C3D5D372068833AA095282DED6949CC5")
     private static boolean nativeWriteToParcel(int native_region,
                                                       Parcel p) {
-        //DSFIXME:  CODE0010: Native static method requires manual modeling
+        //DSFIXME:  CODE0012: Native static method requires manual modeling
     	return DSUtils.UNKNOWN_BOOLEAN;
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:01.464 -0400", hash_original_method = "CE9470C796B46050D08AF02A078E3479", hash_generated_method = "443251BD69E63DECB0B9F19DB643318C")
     private static String nativeToString(int native_region) {
-        //DSFIXME:  CODE0010: Native static method requires manual modeling
+        //DSFIXME:  CODE0012: Native static method requires manual modeling
     	return new String();
     }
 

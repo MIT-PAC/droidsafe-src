@@ -37,7 +37,7 @@ public class BinderInternal {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 12:28:38.302 -0400", hash_original_method = "4B0286DE783A8C941CE660682856A17F", hash_generated_method = "80AD47B1C831C5A6063448868817EC32")
     public static final IBinder getContextObject() {
-        //DSFIXME:  CODE0010: Native static method requires manual modeling
+        //DSFIXME:  CODE0012: Native static method requires manual modeling
     	return new Binder();
     }
 

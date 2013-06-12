@@ -462,7 +462,7 @@ public final class AssetManager {
 	// DSFIXME: CODE0002: Requires DSC value to be set
 	public final String[] list(String path) throws IOException {
 		dsTaint.addTaint(path);
-		return (String[])dsTaint.getTaintArray();
+		return (String[])dsTaint.getTaintStringArray();
 	}
 
 	@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:00.210 -0400", hash_original_method = "B416CA2D934FFC444AFFEA95F80C0673", hash_generated_method = "021DFD397E2CE6C6000A4C017D2725C9")
@@ -804,7 +804,7 @@ public final class AssetManager {
 	@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:00.214 -0400", hash_original_method = "3CB696CCF0EE1BB70EEADB93E6432982", hash_generated_method = "D8FFE6127A936470619AD432F56A91B6")
 	// DSFIXME: CODE0002: Requires DSC value to be set
 	public final String[] getLocales() {
-		return (String[])dsTaint.getTaintArray();
+		return (String[])dsTaint.getTaintStringArray();
 	}
 
 	@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:00.214 -0400", hash_original_method = "0D7945B64E12882B3ACBA2198421753F", hash_generated_method = "9DA48C15BD6DCC2E15897915215B6D15")
@@ -1031,19 +1031,19 @@ public final class AssetManager {
 
 	@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:00.218 -0400", hash_original_method = "4370EC96871443F23670974D847AE56F", hash_generated_method = "C2EE1B036C415D9F3588AF483F8C99D2")
 	public static final int getGlobalAssetCount() {
-		// DSFIXME: CODE0010: Native static method requires manual modeling
+		// DSFIXME: CODE0012: Native static method requires manual modeling
 		return DSUtils.UNKNOWN_INT;
 	}
 
 	@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:00.218 -0400", hash_original_method = "8EC963245880F3B82084024EE6EBB66E", hash_generated_method = "799477ED008F458B0BE10AF5B6757053")
 	public static final String getAssetAllocations() {
-		// DSFIXME: CODE0010: Native static method requires manual modeling
+		// DSFIXME: CODE0012: Native static method requires manual modeling
 		return DSUtils.UNKNOWN_STRING;
 	}
 
 	@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:00.218 -0400", hash_original_method = "96D21C1C6F19D08B5E8ECFE50806F964", hash_generated_method = "FD05191E2D1179F762DED88E9AF77C8F")
 	public static final int getGlobalAssetManagerCount() {
-		// DSFIXME: CODE0010: Native static method requires manual modeling
+		// DSFIXME: CODE0012: Native static method requires manual modeling
 		return DSUtils.UNKNOWN_INT;
 	}
 
@@ -1061,25 +1061,25 @@ public final class AssetManager {
 
 	@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:00.219 -0400", hash_original_method = "3A117D6866461E8856A20B1EEDEB2ADD", hash_generated_method = "3482D9BBF68AD0149C9AF1AF5C102FD1")
 	static final void applyThemeStyle(int theme, int styleRes, boolean force) {
-		// DSFIXME: CODE0010: Native static method requires manual modeling
+		// DSFIXME: CODE0012: Native static method requires manual modeling
 	}
 
 	@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:00.219 -0400", hash_original_method = "6BB93CFEA8230EA066D24BFDAE799BE2", hash_generated_method = "B31A26AED95D2CB6C90C9B2EAA59A203")
 	static final void copyTheme(int dest, int source) {
-		// DSFIXME: CODE0010: Native static method requires manual modeling
+		// DSFIXME: CODE0012: Native static method requires manual modeling
 	}
 
 	@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:00.219 -0400", hash_original_method = "1932D5CD42A4E656246AC7DF27312BF2", hash_generated_method = "56509CFDBB44DC64C1710F74FF0AD16B")
 	static final int loadThemeAttributeValue(int theme, int ident,
 			TypedValue outValue, boolean resolve) {
-		// DSFIXME: CODE0010: Native static method requires manual modeling
+		// DSFIXME: CODE0012: Native static method requires manual modeling
 		return DSUtils.UNKNOWN_INT;
 	}
 
 	@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:00.219 -0400", hash_original_method = "1B2023275471B112E1A505915EFCF1D8", hash_generated_method = "C503CD2402C390FC57CF45D8CAC56B80")
 	static final void dumpTheme(int theme, int priority, String tag,
 			String prefix) {
-		// DSFIXME: CODE0010: Native static method requires manual modeling
+		// DSFIXME: CODE0012: Native static method requires manual modeling
 	}
 
 	@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:00.219 -0400", hash_original_method = "F8A041F054DE87147DC380F35C857F31", hash_generated_method = "76EBE47D137F71C8732F6118EA374521")
@@ -1094,7 +1094,7 @@ public final class AssetManager {
 	// DSFIXME: CODE0002: Requires DSC value to be set
 	private final String[] getArrayStringResource(int arrayRes) {
 		dsTaint.addTaint(arrayRes);
-		return (String[])dsTaint.getTaintArray();
+		return (String[])dsTaint.getTaintStringArray();
 	}
 
 	@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:00.220 -0400", hash_original_method = "341A9383D92FC9E302B0B298621A3766", hash_generated_method = "316C57AA567AAD2F9EC7293F0B065E45")

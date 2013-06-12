@@ -88,7 +88,7 @@ public class Movie {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:01.225 -0400", hash_original_method = "9F4D6D7AE88092AD8FB39A0D19320567", hash_generated_method = "A6D9156EFA3804A54FE57BD9ACB615AA")
     public static Movie decodeStream(InputStream is) {
-        //DSFIXME:  CODE0010: Native static method requires manual modeling
+        //DSFIXME:  CODE0012: Native static method requires manual modeling
     	return new Movie(0);
     }
 
@@ -96,14 +96,14 @@ public class Movie {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:01.225 -0400", hash_original_method = "4C1CB5E71AE8BA79EF650F5944AA6286", hash_generated_method = "C5FF05D89B051607F5C3B69F3F85F41F")
     public static Movie decodeByteArray(byte[] data, int offset,
                                                int length) {
-        //DSFIXME:  CODE0010: Native static method requires manual modeling
+        //DSFIXME:  CODE0012: Native static method requires manual modeling
     	return new Movie(0);
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:01.225 -0400", hash_original_method = "11F624E033F674569C619499368D5094", hash_generated_method = "3088B39F31F2B69539C1F7646A543170")
     private static void nativeDestructor(int nativeMovie) {
-        //DSFIXME:  CODE0010: Native static method requires manual modeling
+        //DSFIXME:  CODE0012: Native static method requires manual modeling
     }
 
     
