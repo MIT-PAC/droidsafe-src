@@ -23,6 +23,7 @@ public class CountryDetector {
     public CountryDetector(ICountryDetector service) {
         dsTaint.addTaint(service.dsTaint);
         mListeners = new HashMap<CountryListener, ListenerTransport>();
+        mService = service;
         // ---------- Original Method ----------
         //mService = service;
         //mListeners = new HashMap<CountryListener, ListenerTransport>();
@@ -129,9 +130,7 @@ public class CountryDetector {
             {
                 mHandler = new Handler(looper);
             } //End block
-            {
-                mHandler = new Handler();
-            } //End block
+            mListener = listener;
             // ---------- Original Method ----------
             //mListener = listener;
             //if (looper != null) {
