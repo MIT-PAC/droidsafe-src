@@ -1,16 +1,14 @@
 package android.net.rtp;
 
 // Droidsafe Imports
-import droidsafe.helpers.*;
-import droidsafe.annotations.*;
-
-// import Iterator to deal with enhanced for loop translation
-import java.util.Iterator;
-
 import java.net.InetAddress;
-import java.net.Inet4Address;
-import java.net.Inet6Address;
 import java.net.SocketException;
+
+import droidsafe.annotations.DSC;
+import droidsafe.annotations.DSGenerator;
+import droidsafe.annotations.DSModeled;
+import droidsafe.runtime.DroidSafeAndroidRuntime;
+// import Iterator to deal with enhanced for loop translation
 
 public class RtpStream {
     public static final int MODE_NORMAL = 0;
@@ -29,6 +27,7 @@ public class RtpStream {
      RtpStream(InetAddress address) throws SocketException {
         dsTaint.addTaint(address.dsTaint);
         mLocalPort = create(address.getHostAddress());
+        mLocalAddress = address;
         // ---------- Original Method ----------
         //mLocalPort = create(address.getHostAddress());
         //mLocalAddress = address;
@@ -39,6 +38,7 @@ public class RtpStream {
     //DSFIXME:  CODE0002: Requires DSC value to be set
     private int create(String address) throws SocketException {
         dsTaint.addTaint(address);
+        return dsTaint.getTaintInt();
     }
 
     
@@ -103,11 +103,11 @@ public class RtpStream {
         {
             boolean var6331CCDC5360782724F2E909851BBC53_621666520 = (isBusy());
             {
-                throw new IllegalStateException("Busy");
+                if (DroidSafeAndroidRuntime.control) throw new IllegalStateException("Busy");
             } //End block
         } //End collapsed parenthetic
         {
-            throw new IllegalArgumentException("Invalid mode");
+            if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("Invalid mode");
         } //End block
         // ---------- Original Method ----------
         //if (isBusy()) {
@@ -128,11 +128,11 @@ public class RtpStream {
         {
             boolean var6331CCDC5360782724F2E909851BBC53_733455746 = (isBusy());
             {
-                throw new IllegalStateException("Busy");
+                if (DroidSafeAndroidRuntime.control) throw new IllegalStateException("Busy");
             } //End block
         } //End collapsed parenthetic
         {
-            throw new IllegalArgumentException("Unsupported address");
+            if (DroidSafeAndroidRuntime.control)  throw new IllegalArgumentException("Unsupported address");
         } //End block
         {
             throw new IllegalArgumentException("Invalid port");
@@ -156,6 +156,7 @@ public class RtpStream {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:02.290 -0400", hash_original_method = "CADBAA67E59C58F3A263DE6FDC241D82", hash_generated_method = "F8D7B473034A3CCF9997801293E3E984")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     synchronized int dup() {
+    	return dsTaint.getTaintInt();
     }
 
     
@@ -165,7 +166,7 @@ public class RtpStream {
         {
             boolean var6331CCDC5360782724F2E909851BBC53_1781876265 = (isBusy());
             {
-                throw new IllegalStateException("Busy");
+                if (DroidSafeAndroidRuntime.control)  throw new IllegalStateException("Busy");
             } //End block
         } //End collapsed parenthetic
         close();
