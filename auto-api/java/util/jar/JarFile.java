@@ -3,10 +3,10 @@ package java.util.jar;
 // Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
+import droidsafe.runtime.*;
 
-// import Iterator to deal with enhanced for loop translation
+// needed for enhanced for control translations
 import java.util.Iterator;
-
 import java.io.File;
 import java.io.FilterInputStream;
 import java.io.IOException;
@@ -19,14 +19,14 @@ import java.util.zip.ZipFile;
 import libcore.io.Streams;
 
 public class JarFile extends ZipFile {
-    public static final String MANIFEST_NAME = "META-INF/MANIFEST.MF";
-    static final String META_DIR = "META-INF/";
+    public static String MANIFEST_NAME = "META-INF/MANIFEST.MF";
+    static String META_DIR = "META-INF/";
     private Manifest manifest;
     private ZipEntry manifestEntry;
     JarVerifier verifier;
     private boolean closed = false;
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:14.467 -0400", hash_original_method = "B9B0355AAF6860849CDAA93CC073B40D", hash_generated_method = "09769DB9A851943F282A77BD33F751F8")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 12:19:50.795 -0400", hash_original_method = "B9B0355AAF6860849CDAA93CC073B40D", hash_generated_method = "09769DB9A851943F282A77BD33F751F8")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public JarFile(File file) throws IOException {
         this(file, true);
@@ -35,7 +35,7 @@ public class JarFile extends ZipFile {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:14.467 -0400", hash_original_method = "5EB6670431246E3B0105DDAC48B26AC0", hash_generated_method = "1259D54ADA108F62CCCAD84A3530ACBC")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 12:19:50.800 -0400", hash_original_method = "5EB6670431246E3B0105DDAC48B26AC0", hash_generated_method = "1259D54ADA108F62CCCAD84A3530ACBC")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public JarFile(File file, boolean verify) throws IOException {
         super(file);
@@ -53,7 +53,7 @@ public class JarFile extends ZipFile {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:14.468 -0400", hash_original_method = "793A8CDEEB3B1480C6CD4A5DE140B86D", hash_generated_method = "4695641167E7A2EC3DD4594FA70872D8")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 12:19:50.809 -0400", hash_original_method = "793A8CDEEB3B1480C6CD4A5DE140B86D", hash_generated_method = "4695641167E7A2EC3DD4594FA70872D8")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public JarFile(File file, boolean verify, int mode) throws IOException {
         super(file, mode);
@@ -72,7 +72,7 @@ public class JarFile extends ZipFile {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:14.468 -0400", hash_original_method = "7A554CED3F155E72368E52962D72B4D7", hash_generated_method = "2A8BFA3E13D23F3DA9021DA1DC26420D")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 12:19:50.816 -0400", hash_original_method = "7A554CED3F155E72368E52962D72B4D7", hash_generated_method = "2A8BFA3E13D23F3DA9021DA1DC26420D")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public JarFile(String filename) throws IOException {
         this(filename, true);
@@ -81,7 +81,7 @@ public class JarFile extends ZipFile {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:14.468 -0400", hash_original_method = "54E668354AB021AFE09898CE1915F8B2", hash_generated_method = "20D6B09E2DCBF0235F71EAC9FDF91DF6")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 12:19:50.818 -0400", hash_original_method = "54E668354AB021AFE09898CE1915F8B2", hash_generated_method = "20D6B09E2DCBF0235F71EAC9FDF91DF6")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public JarFile(String filename, boolean verify) throws IOException {
         super(filename);
@@ -99,7 +99,7 @@ public class JarFile extends ZipFile {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:14.468 -0400", hash_original_method = "DDF115034FADFE53A1FD9BC36D36CE25", hash_generated_method = "10258EF66DE1457889D30118448188E9")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 12:19:50.829 -0400", hash_original_method = "DDF115034FADFE53A1FD9BC36D36CE25", hash_generated_method = "D289856B6C2D799F1553E4D86CADDC46")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     @Override
     public Enumeration<JarEntry> entries() {
@@ -108,19 +108,19 @@ public class JarFile extends ZipFile {
             Enumeration<? extends ZipEntry> ze;
             JarFile jf;
             JarFileEnumerator(Enumeration<? extends ZipEntry> zenum, JarFile jf) {
-				dsTaint.addTaint(zenum.dsTaint);
-				dsTaint.addTaint(jf.dsTaint);
+                ze = zenum;
+                this.jf = jf;
             }
             public boolean hasMoreElements() {
-                return dsTaint.getTaintBoolean();
+                return ze.hasMoreElements();
             }
             public JarEntry nextElement() {
                 JarEntry je = new JarEntry(ze.nextElement());
                 je.parentJar = jf;
-                return (JarEntry)dsTaint.getTaint();
+                return je;
             }
         }
-        Enumeration<JarEntry> var4B5F19EA680694127ABE844E7C973602_341170376 = (new JarFileEnumerator(super.entries(), this));
+        Enumeration<JarEntry> var4B5F19EA680694127ABE844E7C973602_689131129 = (new JarFileEnumerator(super.entries(), this));
         return (Enumeration<JarEntry>)dsTaint.getTaint();
         // ---------- Original Method ----------
         //class JarFileEnumerator implements Enumeration<JarEntry> {
@@ -143,22 +143,22 @@ public class JarFile extends ZipFile {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:14.468 -0400", hash_original_method = "C114B7C700B8AEF8B2BF9DB9E2302906", hash_generated_method = "3F4AAE2A06BBDF16F4CAD02C3DE22BB3")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 12:19:50.841 -0400", hash_original_method = "C114B7C700B8AEF8B2BF9DB9E2302906", hash_generated_method = "5BB6F69981EF7F2F7D39BE0D44E3F80A")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public JarEntry getJarEntry(String name) {
         dsTaint.addTaint(name);
-        JarEntry varBD3E9AFC11D257C307DE03BE60031DEA_1431049521 = ((JarEntry) getEntry(name));
+        JarEntry varBD3E9AFC11D257C307DE03BE60031DEA_1761752359 = ((JarEntry) getEntry(name));
         return (JarEntry)dsTaint.getTaint();
         // ---------- Original Method ----------
         //return (JarEntry) getEntry(name);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:14.468 -0400", hash_original_method = "E67D102DBF269AEACB3865BB39A89C99", hash_generated_method = "523FB27668FB971821420925A827458E")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 12:19:50.847 -0400", hash_original_method = "E67D102DBF269AEACB3865BB39A89C99", hash_generated_method = "96474ABF5D0BD58C02EF86076C17BD53")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public Manifest getManifest() throws IOException {
         {
-            throw new IllegalStateException("JarFile has been closed");
+            if (DroidSafeAndroidRuntime.control) throw new IllegalStateException("JarFile has been closed");
         } //End block
         try 
         {
@@ -209,7 +209,7 @@ public class JarFile extends ZipFile {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:14.468 -0400", hash_original_method = "388F847516FC198A1371FF54043E7729", hash_generated_method = "48FAA31D3ADCD428919A83CF8AB1083A")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 12:19:50.866 -0400", hash_original_method = "388F847516FC198A1371FF54043E7729", hash_generated_method = "917765689F6E97692FBC40B8B12087A0")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     private void readMetaEntries() throws IOException {
         ZipEntry[] metaEntries;
@@ -225,13 +225,13 @@ public class JarFile extends ZipFile {
                 String entryName;
                 entryName = entry.getName();
                 {
-                    boolean var225934D646BDE3C078A758A5F36FB6DA_1952763218 = (manifestEntry == null && entryName.equalsIgnoreCase(MANIFEST_NAME));
+                    boolean var225934D646BDE3C078A758A5F36FB6DA_1125543216 = (manifestEntry == null && entryName.equalsIgnoreCase(MANIFEST_NAME));
                     {
                         manifestEntry = entry;
                     } //End block
                     {
                         {
-                            boolean var389DD4FDD6BA5DDB0A85AEEA57B7C2C6_2074404739 = (verifier != null
+                            boolean var389DD4FDD6BA5DDB0A85AEEA57B7C2C6_44161714 = (verifier != null
                         && (endsWithIgnoreCase(entryName, ".SF")
                                 || endsWithIgnoreCase(entryName, ".DSA")
                                 || endsWithIgnoreCase(entryName, ".RSA")));
@@ -254,13 +254,13 @@ public class JarFile extends ZipFile {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:14.468 -0400", hash_original_method = "56C76838D318C13C94DEE83CC11CDED9", hash_generated_method = "01AD61DC1B9389BE2B87C74510A04B5F")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 12:19:50.885 -0400", hash_original_method = "56C76838D318C13C94DEE83CC11CDED9", hash_generated_method = "01AD61DC1B9389BE2B87C74510A04B5F")
     private static boolean endsWithIgnoreCase(String s, String suffix) {
         return s.regionMatches(true, s.length() - suffix.length(), suffix, 0, suffix.length());
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:14.469 -0400", hash_original_method = "53CBE19CD54AC9FA27355C4D3916E5DE", hash_generated_method = "5271487C71AE09252758DCA20CBCD6D3")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 12:19:50.905 -0400", hash_original_method = "53CBE19CD54AC9FA27355C4D3916E5DE", hash_generated_method = "F2EC5CA5F9A6D1E8EF266C3433154019")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     @Override
     public InputStream getInputStream(ZipEntry ze) throws IOException {
@@ -274,14 +274,14 @@ public class JarFile extends ZipFile {
                 verifier.mainAttributesEnd = manifest.getMainAttributesEnd();
             } //End block
             {
-                boolean varC8A59060D93D59BF577276953C85D279_725045604 = (verifier.readCertificates());
+                boolean varC8A59060D93D59BF577276953C85D279_1646912074 = (verifier.readCertificates());
                 {
                     verifier.removeMetaEntries();
                     {
                         manifest.removeChunks();
                     } //End block
                     {
-                        boolean var8293A0C85FDB7E6035589279E774449B_2107688983 = (!verifier.isSignedJar());
+                        boolean var8293A0C85FDB7E6035589279E774449B_689016120 = (!verifier.isSignedJar());
                         {
                             verifier = null;
                         } //End block
@@ -292,7 +292,7 @@ public class JarFile extends ZipFile {
         InputStream in;
         in = super.getInputStream(ze);
         {
-            boolean var2F684FA4AC00559BDF766C694C20B2C5_196973172 = (verifier == null || ze.getSize() == -1);
+            boolean var2F684FA4AC00559BDF766C694C20B2C5_1725417291 = (verifier == null || ze.getSize() == -1);
         } //End collapsed parenthetic
         JarVerifier.VerifierEntry entry;
         entry = verifier.initEntry(ze.getName());
@@ -302,7 +302,7 @@ public class JarFile extends ZipFile {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:14.469 -0400", hash_original_method = "B825DECF198E8D2309850EFFE99C9789", hash_generated_method = "F2E0D191AD72E2CDA1E164026AAEDF76")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 12:19:50.917 -0400", hash_original_method = "B825DECF198E8D2309850EFFE99C9789", hash_generated_method = "F2E0D191AD72E2CDA1E164026AAEDF76")
     @DSModeled(DSC.SAFE)
     @Override
     public ZipEntry getEntry(String name) {
@@ -324,7 +324,7 @@ public class JarFile extends ZipFile {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:14.469 -0400", hash_original_method = "4B8F98994A94A2FEBED0E4C85A619A5C", hash_generated_method = "7AB2D93CD82644009708688D9B83E394")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 12:19:50.930 -0400", hash_original_method = "4B8F98994A94A2FEBED0E4C85A619A5C", hash_generated_method = "61A698BF15C6910E4D632A42F6CC06CB")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     private ZipEntry[] getMetaEntriesImpl() {
         List<ZipEntry> list;
@@ -332,12 +332,12 @@ public class JarFile extends ZipFile {
         Enumeration<? extends ZipEntry> allEntries;
         allEntries = entries();
         {
-            boolean varC33966517FE272D25A9689F102B7D7DF_1510171818 = (allEntries.hasMoreElements());
+            boolean varC33966517FE272D25A9689F102B7D7DF_114752089 = (allEntries.hasMoreElements());
             {
                 ZipEntry ze;
                 ze = allEntries.nextElement();
                 {
-                    boolean var9BACBC07C960934D5A5FCBB74870F6A9_557321303 = (ze.getName().startsWith(META_DIR)
+                    boolean var9BACBC07C960934D5A5FCBB74870F6A9_854307692 = (ze.getName().startsWith(META_DIR)
                     && ze.getName().length() > META_DIR.length());
                     {
                         list.add(ze);
@@ -346,7 +346,7 @@ public class JarFile extends ZipFile {
             } //End block
         } //End collapsed parenthetic
         {
-            boolean var8D5789A37F50667ED0EB03D7F7D9B0AE_1234018857 = (list.size() == 0);
+            boolean var8D5789A37F50667ED0EB03D7F7D9B0AE_2045382392 = (list.size() == 0);
         } //End collapsed parenthetic
         ZipEntry[] result;
         result = new ZipEntry[list.size()];
@@ -371,7 +371,7 @@ public class JarFile extends ZipFile {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:14.469 -0400", hash_original_method = "C7FCBD344022D72FF18766A4DFEA8EE1", hash_generated_method = "BDB24D1C537D3E9E36DCA2F4C0ADA57E")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 12:19:50.945 -0400", hash_original_method = "C7FCBD344022D72FF18766A4DFEA8EE1", hash_generated_method = "BDB24D1C537D3E9E36DCA2F4C0ADA57E")
     @DSModeled(DSC.SAFE)
     @Override
     public void close() throws IOException {
@@ -389,7 +389,7 @@ public class JarFile extends ZipFile {
         private JarVerifier.VerifierEntry entry;
         private boolean done = false;
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:14.469 -0400", hash_original_method = "C5D82B21AC1025C83393044900E9B5C1", hash_generated_method = "4A2F03C2D8336ABAFD053464A25D9F0D")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 12:19:50.953 -0400", hash_original_method = "C5D82B21AC1025C83393044900E9B5C1", hash_generated_method = "4A2F03C2D8336ABAFD053464A25D9F0D")
         //DSFIXME:  CODE0002: Requires DSC value to be set
          JarFileInputStream(InputStream is, ZipEntry ze,
                 JarVerifier.VerifierEntry e) {
@@ -405,7 +405,7 @@ public class JarFile extends ZipFile {
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:14.469 -0400", hash_original_method = "89CF4CB391CD9E8B348E579506073CE6", hash_generated_method = "3DF12C68578E5B59EF4612A68BB1051F")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 12:19:50.962 -0400", hash_original_method = "89CF4CB391CD9E8B348E579506073CE6", hash_generated_method = "3DF12C68578E5B59EF4612A68BB1051F")
         @DSModeled(DSC.SAFE)
         @Override
         public int read() throws IOException {
@@ -454,7 +454,7 @@ public class JarFile extends ZipFile {
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:14.469 -0400", hash_original_method = "A2A36F60816A3448608DD8EC3FE6DD7B", hash_generated_method = "D6A7D0C82A56B7041005A8DA4DAF2459")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 12:19:50.979 -0400", hash_original_method = "A2A36F60816A3448608DD8EC3FE6DD7B", hash_generated_method = "D6A7D0C82A56B7041005A8DA4DAF2459")
         @DSModeled(DSC.SAFE)
         @Override
         public int read(byte[] buf, int off, int nbytes) throws IOException {
@@ -515,11 +515,11 @@ public class JarFile extends ZipFile {
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:14.469 -0400", hash_original_method = "F5DF26793DC8C27B5E93038A2CA57A87", hash_generated_method = "B3312A90BD9B09754B90B4B1530E5354")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 12:19:50.996 -0400", hash_original_method = "F5DF26793DC8C27B5E93038A2CA57A87", hash_generated_method = "5C8A2BFDCB4318CD5BCF8E8C92A31EEF")
         //DSFIXME:  CODE0002: Requires DSC value to be set
         @Override
         public int available() throws IOException {
-            int varBA26BD6C2684B5A5EC942BA7C9C20D72_1267345683 = (super.available());
+            int varBA26BD6C2684B5A5EC942BA7C9C20D72_155744956 = (super.available());
             return dsTaint.getTaintInt();
             // ---------- Original Method ----------
             //if (done) {
@@ -529,12 +529,12 @@ public class JarFile extends ZipFile {
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:14.470 -0400", hash_original_method = "B0B2C5ABB0F3ADBF684B825EB14D5721", hash_generated_method = "52A00E01C2476E1361525D1AD8C52022")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 12:19:51.003 -0400", hash_original_method = "B0B2C5ABB0F3ADBF684B825EB14D5721", hash_generated_method = "22D4F02FCC8AE553C3EA6C48B0922215")
         //DSFIXME:  CODE0002: Requires DSC value to be set
         @Override
         public long skip(long byteCount) throws IOException {
             dsTaint.addTaint(byteCount);
-            long var302C584A2DF1E0FB3C344FD3955C3746_463471514 = (Streams.skipByReading(this, byteCount));
+            long var302C584A2DF1E0FB3C344FD3955C3746_59108685 = (Streams.skipByReading(this, byteCount));
             return dsTaint.getTaintLong();
             // ---------- Original Method ----------
             //return Streams.skipByReading(this, byteCount);
