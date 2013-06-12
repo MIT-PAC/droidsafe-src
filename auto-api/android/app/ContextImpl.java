@@ -3,6 +3,7 @@ package android.app;
 // Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
+import droidsafe.concrete.DroidSafeContentResolver;
 import droidsafe.runtime.*;
 
 // needed for enhanced for control translations
@@ -151,7 +152,7 @@ class ReceiverRestrictedContext extends ContextWrapper {
     
 }
 
-class ContextImpl extends Context {
+public class ContextImpl extends Context {
     private static String TAG = "ApplicationContext";
     private static boolean DEBUG = false;
     private static HashMap<String, SharedPreferencesImpl> sSharedPrefs =
@@ -197,18 +198,20 @@ class ContextImpl extends Context {
 }; //Transformed anonymous class
     ArrayList<Object> mServiceCache = new ArrayList<Object>();
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 12:30:53.001 -0400", hash_original_method = "D626E4F654DE4449ACE9581A8359F0B3", hash_generated_method = "2C97AE76C2D951B1BEEFCA21E16E5FA6")
-    @DSModeled(DSC.SAFE)
-     ContextImpl() {
-        mOuterContext = this;
-        // ---------- Original Method ----------
-        //mOuterContext = this;
-    }
-
+    private DroidSafeContentResolver contentResolver;
+	private SensorManager sensorManager;
+	
+    @DSModeled
+	public ContextImpl() {
+		contentResolver = new DroidSafeContentResolver(this);
+		sensorManager = new SensorManager();
+	}
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 12:30:53.028 -0400", hash_original_method = "9A0B254F42B92476EDBA974C3F238399", hash_generated_method = "14A32BC4C3D6CA279C3AF3FE766DAAE8")
-    @DSModeled(DSC.SAFE)
+    @DSModeled(DSC.SPEC)
     public ContextImpl(ContextImpl context) {
+    	contentResolver = new DroidSafeContentResolver(this);
+		sensorManager = new SensorManager();
         dsTaint.addTaint(context.dsTaint);
         mPackageInfo = context.mPackageInfo;
         mBasePackageName = context.mBasePackageName;
