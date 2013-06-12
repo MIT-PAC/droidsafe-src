@@ -1,0 +1,14 @@
+#!/bin/bash
+
+CLASS_PATH=$APAC_HOME/classes/main:config-files
+
+for jar in $APAC_HOME/lib/*.jar
+do
+  CLASS_PATH=$CLASS_PATH:$jar
+done
+
+MAIN_CLASS=droidsafe.analyses.attr.modelgen.ModelCodeGenerator
+
+java -Xms1g -Xmx16g -cp $CLASS_PATH $MAIN_CLASS $*
+
+
