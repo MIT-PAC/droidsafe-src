@@ -17,13 +17,13 @@ public abstract class MappedByteBuffer extends ByteBuffer {
     DirectByteBuffer wrapped;
     private MapMode mapMode;
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 11:48:32.201 -0400", hash_original_method = "B4624F88D9C5C045F8BDE794FFD519CF", hash_generated_method = "8F6286607538E1E90C01094EC030AD78")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 12:51:07.277 -0400", hash_original_method = "B4624F88D9C5C045F8BDE794FFD519CF", hash_generated_method = "B1F94ADF82334D450DE0CECE7C225970")
     //DSFIXME:  CODE0002: Requires DSC value to be set
      MappedByteBuffer(ByteBuffer directBuffer) {
         super(directBuffer.capacity, directBuffer.block);
         dsTaint.addTaint(directBuffer.dsTaint);
         {
-            boolean varDC8DBD478B08EB0C265C25CC94CB6B1C_1286106511 = (!directBuffer.isDirect());
+            boolean varDC8DBD478B08EB0C265C25CC94CB6B1C_1519942322 = (!directBuffer.isDirect());
             {
                 if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException();
             } //End block
@@ -39,7 +39,7 @@ public abstract class MappedByteBuffer extends ByteBuffer {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 11:48:32.204 -0400", hash_original_method = "638BC1993DAD17C2741F99B13CBD8BD7", hash_generated_method = "7C46F88A65073230A71A304057EE6EDB")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 12:51:07.283 -0400", hash_original_method = "638BC1993DAD17C2741F99B13CBD8BD7", hash_generated_method = "7C46F88A65073230A71A304057EE6EDB")
     //DSFIXME:  CODE0002: Requires DSC value to be set
      MappedByteBuffer(MemoryBlock block, int capacity, int offset, MapMode mapMode) {
         super(capacity, block);
@@ -63,7 +63,7 @@ public abstract class MappedByteBuffer extends ByteBuffer {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 11:48:32.211 -0400", hash_original_method = "C9D4A4A6949ED0E6DB022AC73D44B615", hash_generated_method = "C3BE1FDC9BE666F6DCAD7429052A13BE")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 12:51:07.294 -0400", hash_original_method = "C9D4A4A6949ED0E6DB022AC73D44B615", hash_generated_method = "C3BE1FDC9BE666F6DCAD7429052A13BE")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public final boolean isLoaded() {
         long address;
@@ -117,7 +117,7 @@ public abstract class MappedByteBuffer extends ByteBuffer {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 11:48:32.216 -0400", hash_original_method = "61E403E118E1A4E788B2CC284AD4ABD1", hash_generated_method = "2FDE652F2C5993E597A10A266703875F")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 12:51:07.304 -0400", hash_original_method = "61E403E118E1A4E788B2CC284AD4ABD1", hash_generated_method = "2FDE652F2C5993E597A10A266703875F")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public final MappedByteBuffer load() {
         try 
@@ -138,7 +138,7 @@ public abstract class MappedByteBuffer extends ByteBuffer {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 11:48:32.219 -0400", hash_original_method = "F84161825A8E4C54BC8547EBE9290572", hash_generated_method = "8AAD7AC172369804A4C7B2877FB4AF0F")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 12:51:07.306 -0400", hash_original_method = "F84161825A8E4C54BC8547EBE9290572", hash_generated_method = "8AAD7AC172369804A4C7B2877FB4AF0F")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public final MappedByteBuffer force() {
         {

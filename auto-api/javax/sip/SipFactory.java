@@ -2,6 +2,7 @@ package javax.sip;
 
 // Droidsafe Imports
 import droidsafe.helpers.*;
+import droidsafe.runtime.DroidSafeAndroidRuntime;
 import droidsafe.annotations.*;
 
 // import Iterator to deal with enhanced for loop translation
@@ -54,7 +55,7 @@ public class SipFactory {
         {
             name = properties.getProperty(STACK_NAME_PROP);
             {
-                throw new PeerUnavailableException(
+            	if (DroidSafeAndroidRuntime.control) throw new PeerUnavailableException(
                         STACK_NAME_PROP + " property not found");
             } //End block
         } //End block

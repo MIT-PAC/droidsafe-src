@@ -2,6 +2,7 @@ package libcore.icu;
 
 // Droidsafe Imports
 import droidsafe.helpers.*;
+import droidsafe.runtime.DroidSafeAndroidRuntime;
 import droidsafe.annotations.*;
 
 // import Iterator to deal with enhanced for loop translation
@@ -41,7 +42,7 @@ public final class RuleBasedCollatorICU implements Cloneable {
     public RuleBasedCollatorICU(String rules) throws ParseException {
         dsTaint.addTaint(rules);
         {
-            throw new NullPointerException();
+        	if (DroidSafeAndroidRuntime.control) throw new NullPointerException();
         } //End block
         address = NativeCollation.openCollatorFromRules(rules, VALUE_OFF, VALUE_DEFAULT_STRENGTH);
         // ---------- Original Method ----------

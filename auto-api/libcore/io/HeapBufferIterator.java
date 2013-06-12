@@ -24,6 +24,10 @@ public final class HeapBufferIterator extends BufferIterator {
         dsTaint.addTaint(order.dsTaint);
         dsTaint.addTaint(byteCount);
         dsTaint.addTaint(offset);
+        this.order = order;
+        this.offset = offset;
+        this.byteCount = byteCount;
+        this.buffer = buffer;
         // ---------- Original Method ----------
         //this.buffer = buffer;
         //this.offset = offset;

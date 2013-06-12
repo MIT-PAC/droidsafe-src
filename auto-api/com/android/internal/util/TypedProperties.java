@@ -26,10 +26,10 @@ public class TypedProperties extends HashMap<String, Object> {
     static int TYPE_DOUBLE = 'F' | 8 << 8;
     static int TYPE_STRING = 'L' | 's' << 8;
     static int TYPE_ERROR = -1;
-    public static int STRING_TYPE_MISMATCH = -2;
-    public static int STRING_NOT_SET = -1;
-    public static int STRING_NULL = 0;
-    public static int STRING_SET = 1;
+    public static final int STRING_TYPE_MISMATCH = -2;
+    public static final int STRING_NOT_SET = -1;
+    public static final int STRING_NULL = 0;
+    public static final int STRING_SET = 1;
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 12:28:47.706 -0400", hash_original_method = "ECB16241B0AB765E13051ACDAE33A02C", hash_generated_method = "99D98552C9EB13C233788EF3DBD93E56")
     //DSFIXME:  CODE0002: Requires DSC value to be set

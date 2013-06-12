@@ -2,6 +2,7 @@ package com.android.i18n.phonenumbers;
 
 // Droidsafe Imports
 import droidsafe.helpers.*;
+import droidsafe.runtime.DroidSafeAndroidRuntime;
 import droidsafe.annotations.*;
 
 // import Iterator to deal with enhanced for loop translation
@@ -49,6 +50,82 @@ public class PhoneNumberUtil {
     private static final Map<Character, Character> ALPHA_MAPPINGS;
     private static final Map<Character, Character> ALPHA_PHONE_MAPPINGS;
     private static final Map<Character, Character> ALL_PLUS_NUMBER_GROUPING_SYMBOLS;
+  static {
+    HashMap<Character, Character> asciiDigitMappings = new HashMap<Character, Character>();
+    asciiDigitMappings.put('0', '0');
+    asciiDigitMappings.put('1', '1');
+    asciiDigitMappings.put('2', '2');
+    asciiDigitMappings.put('3', '3');
+    asciiDigitMappings.put('4', '4');
+    asciiDigitMappings.put('5', '5');
+    asciiDigitMappings.put('6', '6');
+    asciiDigitMappings.put('7', '7');
+    asciiDigitMappings.put('8', '8');
+    asciiDigitMappings.put('9', '9');
+    HashMap<Character, Character> alphaMap = new HashMap<Character, Character>(40);
+    alphaMap.put('A', '2');
+    alphaMap.put('B', '2');
+    alphaMap.put('C', '2');
+    alphaMap.put('D', '3');
+    alphaMap.put('E', '3');
+    alphaMap.put('F', '3');
+    alphaMap.put('G', '4');
+    alphaMap.put('H', '4');
+    alphaMap.put('I', '4');
+    alphaMap.put('J', '5');
+    alphaMap.put('K', '5');
+    alphaMap.put('L', '5');
+    alphaMap.put('M', '6');
+    alphaMap.put('N', '6');
+    alphaMap.put('O', '6');
+    alphaMap.put('P', '7');
+    alphaMap.put('Q', '7');
+    alphaMap.put('R', '7');
+    alphaMap.put('S', '7');
+    alphaMap.put('T', '8');
+    alphaMap.put('U', '8');
+    alphaMap.put('V', '8');
+    alphaMap.put('W', '9');
+    alphaMap.put('X', '9');
+    alphaMap.put('Y', '9');
+    alphaMap.put('Z', '9');
+    ALPHA_MAPPINGS = Collections.unmodifiableMap(alphaMap);
+    HashMap<Character, Character> combinedMap = new HashMap<Character, Character>(100);
+    combinedMap.putAll(ALPHA_MAPPINGS);
+    combinedMap.putAll(asciiDigitMappings);
+    ALPHA_PHONE_MAPPINGS = Collections.unmodifiableMap(combinedMap);
+    HashMap<Character, Character> allPlusNumberGroupings = new HashMap<Character, Character>();
+    for (char c : ALPHA_MAPPINGS.keySet()) {
+      allPlusNumberGroupings.put(Character.toLowerCase(c), c);
+      allPlusNumberGroupings.put(c, c);
+    }
+    allPlusNumberGroupings.putAll(asciiDigitMappings);
+    allPlusNumberGroupings.put('-', '-');
+    allPlusNumberGroupings.put('\uFF0D', '-');
+    allPlusNumberGroupings.put('\u2010', '-');
+    allPlusNumberGroupings.put('\u2011', '-');
+    allPlusNumberGroupings.put('\u2012', '-');
+    allPlusNumberGroupings.put('\u2013', '-');
+    allPlusNumberGroupings.put('\u2014', '-');
+    allPlusNumberGroupings.put('\u2015', '-');
+    allPlusNumberGroupings.put('\u2212', '-');
+    allPlusNumberGroupings.put('/', '/');
+    allPlusNumberGroupings.put('\uFF0F', '/');
+    allPlusNumberGroupings.put(' ', ' ');
+    allPlusNumberGroupings.put('\u3000', ' ');
+    allPlusNumberGroupings.put('\u2060', ' ');
+    allPlusNumberGroupings.put('.', '.');
+    allPlusNumberGroupings.put('\uFF0E', '.');
+    ALL_PLUS_NUMBER_GROUPING_SYMBOLS = Collections.unmodifiableMap(allPlusNumberGroupings);
+  }
+    
+  static {
+    String singleExtnSymbolsForMatching = "x\uFF58#\uFF03~\uFF5E";
+    String singleExtnSymbolsForParsing = "," + singleExtnSymbolsForMatching;
+    EXTN_PATTERNS_FOR_PARSING = createExtnPattern(singleExtnSymbolsForParsing);
+    EXTN_PATTERNS_FOR_MATCHING = createExtnPattern(singleExtnSymbolsForMatching);
+  }
+    
     private static final Pattern UNIQUE_INTERNATIONAL_PREFIX =
       Pattern.compile("[\\d]+(?:[~\u2053\u223C\uFF5E][\\d]+)?");
     static final String VALID_PUNCTUATION = "-x\u2010-\u2015\u2212\u30FC\uFF0D-\uFF0F " +
@@ -1900,7 +1977,7 @@ public class PhoneNumberUtil {
             {
                 boolean varE7EE2B23EDD4C9364B0D3D150E7CC45E_1947190041 = (fullNumber.length() < MIN_LENGTH_FOR_NSN);
                 {
-                    throw new NumberParseException(NumberParseException.ErrorType.TOO_SHORT_AFTER_IDD,
+                	if (DroidSafeAndroidRuntime.control) throw new NumberParseException(NumberParseException.ErrorType.TOO_SHORT_AFTER_IDD,
                                        "Phone number had an IDD, but after this was not "
                                        + "long enough to be a viable phone number.");
                 } //End block
@@ -1910,7 +1987,7 @@ public class PhoneNumberUtil {
             {
                 phoneNumber.setCountryCode(potentialCountryCode);
             } //End block
-            throw new NumberParseException(NumberParseException.ErrorType.INVALID_COUNTRY_CODE,
+            if (DroidSafeAndroidRuntime.control) throw new NumberParseException(NumberParseException.ErrorType.INVALID_COUNTRY_CODE,
                                      "Country calling code supplied was not recognised.");
         } //End block
         {
@@ -2287,7 +2364,7 @@ public class PhoneNumberUtil {
         dsTaint.addTaint(checkRegion);
         dsTaint.addTaint(keepRawInput);
         {
-            throw new NumberParseException(NumberParseException.ErrorType.NOT_A_NUMBER,
+        	if (DroidSafeAndroidRuntime.control) throw new NumberParseException(NumberParseException.ErrorType.NOT_A_NUMBER,
                                      "The phone number supplied was null.");
         } //End block
         String number;
@@ -2295,14 +2372,14 @@ public class PhoneNumberUtil {
         {
             boolean var6F2D6DBE1E1842574CD6CB87FFC5DB6E_1321105015 = (!isViablePhoneNumber(number));
             {
-                throw new NumberParseException(NumberParseException.ErrorType.NOT_A_NUMBER,
+            	if (DroidSafeAndroidRuntime.control) throw new NumberParseException(NumberParseException.ErrorType.NOT_A_NUMBER,
                                      "The string supplied did not seem to be a phone number.");
             } //End block
         } //End collapsed parenthetic
         {
             boolean var06E9F76E4F889EF52DC311C4A976B26A_1799833558 = (checkRegion && !checkRegionForParsing(number, defaultRegion));
             {
-                throw new NumberParseException(NumberParseException.ErrorType.INVALID_COUNTRY_CODE,
+            	if (DroidSafeAndroidRuntime.control) throw new NumberParseException(NumberParseException.ErrorType.INVALID_COUNTRY_CODE,
                                      "Missing or invalid default region.");
             } //End block
         } //End collapsed parenthetic
@@ -2350,7 +2427,7 @@ public class PhoneNumberUtil {
         {
             boolean varE256D1ABB8A26FE912AD1B0C28F9428D_622186416 = (normalizedNationalNumber.length() < MIN_LENGTH_FOR_NSN);
             {
-                throw new NumberParseException(NumberParseException.ErrorType.TOO_SHORT_NSN,
+            	if (DroidSafeAndroidRuntime.control) throw new NumberParseException(NumberParseException.ErrorType.TOO_SHORT_NSN,
                                      "The string supplied is too short to be a phone number.");
             } //End block
         } //End collapsed parenthetic
@@ -2364,11 +2441,11 @@ public class PhoneNumberUtil {
         int lengthOfNationalNumber;
         lengthOfNationalNumber = normalizedNationalNumber.length();
         {
-            throw new NumberParseException(NumberParseException.ErrorType.TOO_SHORT_NSN,
+        	if (DroidSafeAndroidRuntime.control) throw new NumberParseException(NumberParseException.ErrorType.TOO_SHORT_NSN,
                                      "The string supplied is too short to be a phone number.");
         } //End block
         {
-            throw new NumberParseException(NumberParseException.ErrorType.TOO_LONG,
+        	if (DroidSafeAndroidRuntime.control) throw new NumberParseException(NumberParseException.ErrorType.TOO_LONG,
                                      "The string supplied is too long to be a phone number.");
         } //End block
         {
@@ -2742,81 +2819,7 @@ public class PhoneNumberUtil {
   }
 
     
-    static {
-    HashMap<Character, Character> asciiDigitMappings = new HashMap<Character, Character>();
-    asciiDigitMappings.put('0', '0');
-    asciiDigitMappings.put('1', '1');
-    asciiDigitMappings.put('2', '2');
-    asciiDigitMappings.put('3', '3');
-    asciiDigitMappings.put('4', '4');
-    asciiDigitMappings.put('5', '5');
-    asciiDigitMappings.put('6', '6');
-    asciiDigitMappings.put('7', '7');
-    asciiDigitMappings.put('8', '8');
-    asciiDigitMappings.put('9', '9');
-    HashMap<Character, Character> alphaMap = new HashMap<Character, Character>(40);
-    alphaMap.put('A', '2');
-    alphaMap.put('B', '2');
-    alphaMap.put('C', '2');
-    alphaMap.put('D', '3');
-    alphaMap.put('E', '3');
-    alphaMap.put('F', '3');
-    alphaMap.put('G', '4');
-    alphaMap.put('H', '4');
-    alphaMap.put('I', '4');
-    alphaMap.put('J', '5');
-    alphaMap.put('K', '5');
-    alphaMap.put('L', '5');
-    alphaMap.put('M', '6');
-    alphaMap.put('N', '6');
-    alphaMap.put('O', '6');
-    alphaMap.put('P', '7');
-    alphaMap.put('Q', '7');
-    alphaMap.put('R', '7');
-    alphaMap.put('S', '7');
-    alphaMap.put('T', '8');
-    alphaMap.put('U', '8');
-    alphaMap.put('V', '8');
-    alphaMap.put('W', '9');
-    alphaMap.put('X', '9');
-    alphaMap.put('Y', '9');
-    alphaMap.put('Z', '9');
-    ALPHA_MAPPINGS = Collections.unmodifiableMap(alphaMap);
-    HashMap<Character, Character> combinedMap = new HashMap<Character, Character>(100);
-    combinedMap.putAll(ALPHA_MAPPINGS);
-    combinedMap.putAll(asciiDigitMappings);
-    ALPHA_PHONE_MAPPINGS = Collections.unmodifiableMap(combinedMap);
-    HashMap<Character, Character> allPlusNumberGroupings = new HashMap<Character, Character>();
-    for (char c : ALPHA_MAPPINGS.keySet()) {
-      allPlusNumberGroupings.put(Character.toLowerCase(c), c);
-      allPlusNumberGroupings.put(c, c);
-    }
-    allPlusNumberGroupings.putAll(asciiDigitMappings);
-    allPlusNumberGroupings.put('-', '-');
-    allPlusNumberGroupings.put('\uFF0D', '-');
-    allPlusNumberGroupings.put('\u2010', '-');
-    allPlusNumberGroupings.put('\u2011', '-');
-    allPlusNumberGroupings.put('\u2012', '-');
-    allPlusNumberGroupings.put('\u2013', '-');
-    allPlusNumberGroupings.put('\u2014', '-');
-    allPlusNumberGroupings.put('\u2015', '-');
-    allPlusNumberGroupings.put('\u2212', '-');
-    allPlusNumberGroupings.put('/', '/');
-    allPlusNumberGroupings.put('\uFF0F', '/');
-    allPlusNumberGroupings.put(' ', ' ');
-    allPlusNumberGroupings.put('\u3000', ' ');
-    allPlusNumberGroupings.put('\u2060', ' ');
-    allPlusNumberGroupings.put('.', '.');
-    allPlusNumberGroupings.put('\uFF0E', '.');
-    ALL_PLUS_NUMBER_GROUPING_SYMBOLS = Collections.unmodifiableMap(allPlusNumberGroupings);
-  }
-    
-    static {
-    String singleExtnSymbolsForMatching = "x\uFF58#\uFF03~\uFF5E";
-    String singleExtnSymbolsForParsing = "," + singleExtnSymbolsForMatching;
-    EXTN_PATTERNS_FOR_PARSING = createExtnPattern(singleExtnSymbolsForParsing);
-    EXTN_PATTERNS_FOR_MATCHING = createExtnPattern(singleExtnSymbolsForMatching);
-  }
+
     
 }
 
