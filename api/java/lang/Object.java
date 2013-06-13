@@ -5,7 +5,9 @@ import droidsafe.annotations.DSModeled;
 import droidsafe.helpers.DSTaintObject;
 
 public class Object {
-	public DSTaintObject dsTaint = new DSTaintObject();
+    //do not create DSTaintObject, allocations of DSTaintObject are added to the code by 
+    //the DroidSafe tool when needed.
+	public DSTaintObject dsTaint;
 	
 	@DSModeled(DSC.SAFE)
 	public Object() {
