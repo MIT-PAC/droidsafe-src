@@ -19,50 +19,15 @@ public class DSTaintObject {
     }
 
     @DSModeled(DSC.BAN)
-    public void addTaint(boolean[] taint) {
-        taintBoolean = taint[0];
-    }
-
-    @DSModeled(DSC.BAN)
-    public void addTaing(byte[] taint){
-        taintDouble = taint[0];
-    }
-
-    @DSModeled(DSC.BAN)
-    public void addTaint(char[] taint) {
-        taintDouble = taint[0];
-    }
-
-    @DSModeled(DSC.BAN)
-    public void addTaint(short[] taint) {
-        taintDouble = taint[0];
-    }
-
-    @DSModeled(DSC.BAN)
-    public void addTaint(int[] taint) {
-        taintDouble = taint[0];
-    }
-
-    @DSModeled(DSC.BAN)
-    public void addTaint(long[] taint) {
-        taintDouble = taint[0];
-    }
-
-    @DSModeled(DSC.BAN)
-    public void addTaint(float[] taint) {
-        taintDouble = taint[0];
-    }
-
-    @DSModeled(DSC.BAN)
-    public void addTaint(double[] taint) {
-        taintDouble = taint[0];
-    }
-
-    @DSModeled(DSC.BAN)
     public void addTaint(Object taint) {
         taintObject = taint;
     }
 
+	@DSModeled(DSC.BAN)
+	public void addTaint(CharSequence i) {
+		this.taintObject = i.toString();
+	}
+	
     @DSModeled(DSC.BAN)
     public byte getTaintByte() {
         return (byte)taintDouble;
