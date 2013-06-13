@@ -18,17 +18,6 @@ public abstract class Uri extends AttrModeledClass {
         super(allocNode);
     }
 
-    @Override
-    public String dsDisplay(){
-        String str = "<modeled Uri" + this.getId() + "> {";
-        if (this.invalidated) {
-            str += "invalidated";
-        } else {
-
-        }
-        return str + "}";
-    }
-
     public abstract static class AbstractHierarchicalUri extends Uri {
 
         public AbstractHierarchicalUri() {}
@@ -42,16 +31,6 @@ public abstract class Uri extends AttrModeledClass {
 
         public HierarchicalUri(AllocNode allocNode) {
             super(allocNode);
-        }
-
-        @Override
-        public String dsDisplay(){
-            String str = "<modeled HierarchicalUri" + this.getId() + "> {";
-            if (this.invalidated) {
-                str += "invalidated";
-            } else {
-            }
-            return str + "}";
         }
     }
 
@@ -74,18 +53,6 @@ public abstract class Uri extends AttrModeledClass {
 
         public Set<String> dsToString() {
             return this.uriString;
-        }
-
-        @Override
-        public String dsDisplay(){
-            String str = "<modeled StringUri" + this.getId() + "> {";
-            if (this.invalidated) {
-                str += "invalidated";
-            } else {
-                if(this.uriString != null)
-                    str += "uriString: " + this.uriString; 
-            }
-            return str + "}";
         }
     }
 }

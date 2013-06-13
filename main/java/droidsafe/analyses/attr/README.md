@@ -125,8 +125,6 @@ follow the set of rules below -
 
 * We do not track allocations. Clone methods and such should not be modeled. That is the job of GITI's modeling.
 
-* Every model must have a dsDisplay model that prints out the values of the fields you are tracking.
-
 There is a tool for automatically generating a model Class template. Given the name of a Class and the names of its 
 fields to be modeled, the tool generates a .java file for the model Class. The command line for invoking this tool is
 

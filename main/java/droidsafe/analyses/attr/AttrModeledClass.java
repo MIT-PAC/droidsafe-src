@@ -1,11 +1,17 @@
 package droidsafe.analyses.attr;
 
-import java.util.HashSet;
+import java.lang.reflect.Field;
+
+import java.util.ArrayList;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 import java.util.Set;
 
+import org.apache.commons.lang3.StringUtils;
+
 import soot.jimple.spark.pag.AllocNode;
+
+
 
 /**
  * Base class for Attribute Modeling model classes
@@ -97,7 +103,33 @@ public abstract class AttrModeledClass {
 
     /**
      * Display method for the model that says whether the model is invalidated.
+     * 
      * @returns model description as a String
      */
-    public abstract String dsDisplay();
+    public String dsDisplay(){
+        Class cls = this.getClass();
+        String str = "<modeled " + cls.getSimpleName() +  this.getId() + "> {";
+        if (this.invalidated) {
+            str += "invalidated";
+        } else {
+            ArrayList<String> attrs = new ArrayList();
+            for(Field field : cls.getFields()){
+                field.setAccessible(true);
+                try {
+                    Object value = field.get(this);
+                    if(value != null){
+                        if(value instanceof Set && ((Set)value).size() == 0) {
+                            continue;
+                        }
+                        attrs.add(field.getName() + ": " + value);
+                    }
+                } catch (IllegalAccessException e) {
+                    System.out.println(e);
+                    // simply don't print out the field value
+                }
+            }
+            str = str + StringUtils.join(attrs.toArray(), ", ");
+        }
+        return str + "}";
+    }
 }

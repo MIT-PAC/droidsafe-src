@@ -19,13 +19,4 @@ public class MockContext extends AttrModeledClass {
 
     public void _init_(){
     }
-
-    @Override
-    public String dsDisplay(){
-        String str = "<modeled MockContext" + this.getId() + "> {";
-        if (this.invalidated) {
-            str += "invalidated";
-        }
-        return str + "}";
-    }
 }

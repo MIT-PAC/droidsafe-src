@@ -257,17 +257,4 @@ public class Bundle extends AttrModeledClass {
         }
         return null;
     }
-
-    public String dsDisplay(){
-        String str = "<modeled Bundle" + this.getId() + "> {";
-        if (invalidated) {
-            str += "invalidated";
-        } else {
-            ArrayList<String> attrs = new ArrayList();
-            if(mMap.size() > 0)
-                attrs.add("mMap: " + this.mMap);
-            str += StringUtils.join(attrs.toArray(), ", ");
-        }
-        return str + "}";
-    }
 }

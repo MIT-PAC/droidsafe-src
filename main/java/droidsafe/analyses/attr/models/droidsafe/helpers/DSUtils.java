@@ -20,13 +20,4 @@ public class DSUtils extends AttrModeledClass {
             result.setData(request.getData());
         }
     }
-
-    @Override
-    public String dsDisplay(){
-        String str = "<modeled DSUtils" + this.getId() + "> {";
-        if (this.invalidated) {
-            str += "invalidated";
-        }
-        return str + "}";
-    }
 }

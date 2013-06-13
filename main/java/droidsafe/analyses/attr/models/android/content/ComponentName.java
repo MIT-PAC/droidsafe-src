@@ -109,12 +109,4 @@ public final class ComponentName extends AttrModeledClass {
     public Set<String> getClassName() {
         return mClass;
     }
-
-    @Override
-    public String dsDisplay(){
-        String str = "<modeled ComponentName" + this.getId() + "> {";
-        if (this.invalidated) {
-            str += "invalidated";
-        }
-        return str + "}";
-    }}
+}
