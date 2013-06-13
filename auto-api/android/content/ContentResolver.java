@@ -87,7 +87,9 @@ public abstract class ContentResolver {
     }
 
     
-    protected abstract IContentProvider acquireProvider(Context c, String name);
+    protected /*abstract*/ IContentProvider acquireProvider(Context c, String name){
+    	return null;
+    }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:14:59.429 -0400", hash_original_method = "4AF2A0465BC3B713C9C8E0417552AB76", hash_generated_method = "0F722510F69F635BA175092A02B9311F")
@@ -102,7 +104,7 @@ public abstract class ContentResolver {
     }
 
     
-    public abstract boolean releaseProvider(IContentProvider icp);
+    public boolean releaseProvider(IContentProvider icp) { return true; }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:14:59.430 -0400", hash_original_method = "045596B6E0367AC7BED26FC054AD1E2B", hash_generated_method = "3BCE6A14CA8B4EA3459F9D6B6672C0F0")
