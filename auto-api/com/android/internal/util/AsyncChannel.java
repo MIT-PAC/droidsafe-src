@@ -144,9 +144,6 @@ public class AsyncChannel {
         dsTaint.addTaint(dstPackageName);
         dsTaint.addTaint(srcContext.dsTaint);
         dsTaint.addTaint(srcHandler.dsTaint);
-        log("connect srcHandler to dst Package & class E");
-        //DSFIXME:  CODE0005: Class or interface declaration encountered but not expected
-        /*
         final class ConnectAsync implements Runnable {
             Context mSrcCtx;
             Handler mSrcHdlr;
@@ -154,10 +151,10 @@ public class AsyncChannel {
             String mDstClassName;
             ConnectAsync(Context srcContext, Handler srcHandler, String dstPackageName,
                     String dstClassName) {
-                mSrcCtx = srcContext;
-                mSrcHdlr = srcHandler;
-                mDstPackageName = dstPackageName;
-                mDstClassName = dstClassName;
+                dsTaint.addTaint(srcContext.dsTaint);
+                dsTaint.addTaint(srcHandler);
+                dsTaint.addTaint(dstPackageName);
+                dsTaint.addTaint(dstClassName);
             }
             @Override
             public void run() {
@@ -169,8 +166,6 @@ public class AsyncChannel {
         ConnectAsync ca;
         ca = new ConnectAsync(srcContext, srcHandler, dstPackageName, dstClassName);
         new Thread(ca).start();
-        log("connect srcHandler to dst Package & class X");
-        */
         // ---------- Original Method ----------
         // Original Method Too Long, Refer to Original Implementation
     }

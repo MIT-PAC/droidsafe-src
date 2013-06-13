@@ -103,7 +103,6 @@ public class JarFile extends ZipFile {
     //DSFIXME:  CODE0002: Requires DSC value to be set
     @Override
     public Enumeration<JarEntry> entries() {
-        //DSFIXME:  CODE0005: Class or interface declaration encountered but not expected
         class JarFileEnumerator implements Enumeration<JarEntry> {
             Enumeration<? extends ZipEntry> ze;
             JarFile jf;
