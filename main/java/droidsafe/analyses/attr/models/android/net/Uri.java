@@ -10,7 +10,9 @@ import soot.jimple.spark.pag.AllocNode;
 /**
  * @author dpetters
  */
-public abstract class Uri extends AttrModeledClass {
+public class Uri extends AttrModeledClass {
+
+    public Set<String> uriString = new AttrModelingSet<String>();
 
     public Uri(){}
 
@@ -18,41 +20,11 @@ public abstract class Uri extends AttrModeledClass {
         super(allocNode);
     }
 
-    public abstract static class AbstractHierarchicalUri extends Uri {
-
-        public AbstractHierarchicalUri() {}
-
-        public AbstractHierarchicalUri(AllocNode allocNode){
-            super(allocNode);
-        }
+    public Uri(Set<String> uriStringParam) {
+        this.uriString.addAll(uriStringParam);
     }
 
-    public static class HierarchicalUri extends AbstractHierarchicalUri {
-
-        public HierarchicalUri(AllocNode allocNode) {
-            super(allocNode);
-        }
-    }
-
-    public static class StringUri extends AbstractHierarchicalUri {
-
-        /** URI string representation. */
-        private Set<String> uriString;
-
-        public StringUri(AllocNode allocNode) {
-            super(allocNode);
-        }
-
-        public StringUri(Set<String> uriString) {
-            this.uriString.addAll(uriString);
-        }
-
-        public void _init_(Set<String> uriString){
-            this.uriString.addAll(uriString);
-        }
-
-        public Set<String> dsToString() {
-            return this.uriString;
-        }
+    public void _init_(Set<String> uriStringParam){
+        this.uriString.addAll(uriStringParam);
     }
 }

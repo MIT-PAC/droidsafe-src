@@ -2,7 +2,7 @@ package droidsafe.analyses.infoflow;
 
 import droidsafe.analyses.attr.AttributeModeling;
 import droidsafe.analyses.attr.AttrModeledClass;
-import droidsafe.analyses.attr.models.android.net.Uri.StringUri;
+import droidsafe.analyses.attr.models.android.net.Uri;
 
 import java.lang.reflect.Field;
 
@@ -59,7 +59,7 @@ public class InjectedSourceFlows {
     /**
      * returns a mapping from AllocNode's field to a set of information kinds
      *
-     * @param node AllocNode that we want to check for information kind
+     * @param allocNode AllocNode that we want to check for information kind
      * @param context The context in which we want to check for information kind
      *
      * @return a mapping from each field to a set of information kinds
@@ -98,9 +98,9 @@ public class InjectedSourceFlows {
                 Field fld = c.getDeclaredField(field.getName());
                 Object object = fld.get(modeledClass);
 
-                if (object instanceof StringUri){
-                    StringUri stringUri = (StringUri)object;
-                    stringsToInspect.addAll(stringUri.dsToString());
+                if (object instanceof Uri){
+                    Uri uri = (Uri)object;
+                    stringsToInspect.addAll(uri.uriString);
                 }
             } catch (NoSuchFieldException | IllegalAccessException e) {
                 // do nothing
