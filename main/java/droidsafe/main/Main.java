@@ -29,6 +29,7 @@ import droidsafe.android.app.resources.Resources;
 import droidsafe.android.system.API;
 import droidsafe.android.system.Permissions;
 import droidsafe.transforms.AddAllocsForAPICalls;
+import droidsafe.transforms.InsertDSTaintAllocs;
 import droidsafe.transforms.IntegrateXMLLayouts;
 import droidsafe.transforms.LocalForStringConstantArguments;
 import droidsafe.transforms.ResolveStringConstants;
@@ -138,6 +139,8 @@ public class Main {
             JSAStrings.v().log();
         }
 
+        InsertDSTaintAllocs.run();
+        
         AddAllocsForAPICalls.run();
 
         logger.info("Starting PTA...");
@@ -160,9 +163,11 @@ public class Main {
             writeAllAppClasses();
         }
 
+        System.out.println("RCFG");
         RCFG.generate();
        
         logger.info("Starting Attribute Modeling");
+        System.out.println("AttributeModeling");
         AttributeModeling.run();
         logger.info("Finished Attribute Modeling");
 
