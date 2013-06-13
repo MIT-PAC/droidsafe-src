@@ -73,7 +73,8 @@ public class OutputEvent {
 				//old check that does not work for threads since start calls run...
 				//if (Hierarchy.v().canResolveTo(ie.getMethodRef(), this.getTarget())) 
 				if (invokeExpr != null)
-					Utils.logErrorAndExit(logger, "Found multiple matches for calling context in context statement {}.", context);
+					Utils.logErrorAndExit(logger, "Found multiple matches for calling context in context statement {}.",
+					    context);
 				invokeExpr = ie;
 			}
 		}
@@ -87,14 +88,11 @@ public class OutputEvent {
 			System.exit(1);
 		}
 		
+		//ever instance invoke should have a receiver, unless something wrong with user code or with modeling or with
+		//PTA
 		if (hasReceiver() != (invokeExpr instanceof InstanceInvokeExpr)) {
-			logger.error("Presence of receiver is wrong for invoke expr type: {} and {} receiver (line {}).", invokeExpr, hasReceiver(), linesTag);
-			try {
-				throw new Exception();
-			} catch (Exception e) {
-				e.printStackTrace();
-			}
-			System.exit(1);
+			logger.info("Presence of receiver is wrong for invoke expr type: {} and {} receiver (line {}).", 
+			    invokeExpr, hasReceiver(), linesTag);
 		}
 		
 		//do some checks for things we might not fully understand yet.
