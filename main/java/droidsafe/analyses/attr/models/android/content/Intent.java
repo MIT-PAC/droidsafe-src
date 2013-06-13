@@ -7,34 +7,24 @@ import droidsafe.analyses.attr.AttrModelingSet;
 import droidsafe.analyses.attr.models.android.content.ComponentName;
 import droidsafe.analyses.attr.models.android.net.Uri;
 import droidsafe.analyses.attr.models.android.os.Bundle;
-import droidsafe.analyses.attr.models.android.test.mock.MockContext;
 
-import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.HashSet;
-import java.util.List;
 import java.util.Set;
-
-import org.apache.commons.lang3.StringUtils;
-
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
 import soot.jimple.spark.pag.AllocNode;
 
 /**
  * @author dpetters
  */
-
 public class Intent extends AttrModeledClass {
 
-    private Set<String> mAction = new AttrModelingSet<String>();
-    private Uri mData;
-    private Set<String> mType = new AttrModelingSet<String>();
-    private Set<String> mPackage = new AttrModelingSet<String>();
-    private ComponentName mComponent;
-    private Set<Integer> mFlags = new AttrModelingSet<Integer>();
-    private Bundle mExtras;
+    public Set<String> mAction = new AttrModelingSet<String>();
+    public Uri mData;
+    public Set<String> mType = new AttrModelingSet<String>();
+    public Set<String> mPackage = new AttrModelingSet<String>();
+    public ComponentName mComponent;
+    public Set<Integer> mFlags = new AttrModelingSet<Integer>();
+    public Bundle mExtras;
 
     public Intent(AllocNode allocNode) {
         super(allocNode);
@@ -639,24 +629,4 @@ public class Intent extends AttrModeledClass {
         return this;
     }
     */
-
-    @Override
-    public String dsDisplay(){
-        String str = "<modeled Intent" + this.getId() + "> {";
-        if (this.invalidated) {
-            str += "invalidated";
-        } else {
-            ArrayList<java.lang.String> attrs = new ArrayList();
-            if(this.mAction.size() > 0)
-                attrs.add("action: " + this.mAction);
-            if(this.mType.size() > 0)
-                attrs.add("type: " + this.mType);
-            if(this.mData != null)
-                attrs.add("data: " + this.mData);
-            if(this.mPackage.size() > 0)
-                attrs.add("package: " + this.mPackage);
-            str = str + StringUtils.join(attrs.toArray(), ", ");
-        }
-        return str + "}";
-    }
 }

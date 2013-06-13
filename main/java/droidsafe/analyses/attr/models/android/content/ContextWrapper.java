@@ -25,13 +25,4 @@ public class ContextWrapper extends Context {
     public Set<String> getPackageName() {
         return mBase.getPackageName();
     }
-
-    @Override
-    public String dsDisplay(){
-        String str = "<modeled ContextWrapper" + this.getId() + "> {";
-        if (this.invalidated) {
-            str += "invalidated";
-        }
-        return str + "}";
-    }
 }

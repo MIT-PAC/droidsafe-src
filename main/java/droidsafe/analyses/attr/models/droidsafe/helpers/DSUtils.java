@@ -15,18 +15,9 @@ public class DSUtils extends AttrModeledClass {
         result.setPackage(request.getPackage());
 
         if (request.getData() == null){
-            result.setData(new Uri.StringUri(request.getType()));
+            result.setData(new Uri(request.getType()));
         } else {
             result.setData(request.getData());
         }
-    }
-
-    @Override
-    public String dsDisplay(){
-        String str = "<modeled DSUtils" + this.getId() + "> {";
-        if (this.invalidated) {
-            str += "invalidated";
-        }
-        return str + "}";
     }
 }
