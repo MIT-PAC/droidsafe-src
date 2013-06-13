@@ -696,7 +696,7 @@ public class SootUtils {
      * have one, return null.
      */
     public static InstanceInvokeExpr getInstanceInvokeExpr(Stmt stmt) {
-        if (!stmt.containsInvokeExpr()) 
+        if (stmt == null || !stmt.containsInvokeExpr()) 
             return null;
 
         InvokeExpr expr = (InvokeExpr)stmt.getInvokeExpr();

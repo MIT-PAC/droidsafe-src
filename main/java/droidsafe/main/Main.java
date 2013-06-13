@@ -90,55 +90,10 @@ public class Main {
 
         // The JSA analysis fails if it follows AddAllocsForAPICalls.run()
         if (Config.v().runStringAnalysis) {
-
-            JSAStrings.init(Config.v());
-
-            // Predefined hotspots. Should be removed.
-            JSAStrings.v().addArgumentHotspots("<android.content.Intent: " +
-                    "void <init>(java.lang.String)>",
-                    0);
-            JSAStrings.v().addArgumentHotspots(
-                "<android.content.Intent: android.content.Intent addCategory(java.lang.String)>", 
-                0);
-
-            JSAStrings.v().addArgumentHotspots(
-                "<android.content.Intent: android.content.Intent setAction(java.lang.String)>", 0);
-
-            JSAStrings.v().addArgumentHotspots("<java.net.URI: void <init>(java.lang.String)>", 0);
-            JSAStrings.v().addArgumentHotspots(
-                "<android.content.Intent: android.content.Intent setType(java.lang.String)>", 0);
-
-            JSAStrings
-            .v()
-            .addArgumentHotspots(
-                "<android.widget.Toast: android.widget.Toast " +
-                        "makeText(android.content.Context,java.lang.CharSequence,int)>",
-                        1);
-
-            JSAStrings
-            .v()
-            .addArgumentHotspots(
-                "<com.example.android.apis.content.PickContact$ResultDisplayer: " +
-                        "void <init>(com.example.android.apis.content.PickContact," +
-                        "java.lang.String,java.lang.String)>",
-                        1);
-            JSAStrings
-            .v()
-            .addArgumentHotspots(
-                "<com.example.android.apis.content.PickContact$ResultDisplayer: " +
-                        "void <init>(com.example.android.apis.content.PickContact," +
-                        "java.lang.String,java.lang.String)>",
-                        2);
-
-            JSAStrings.v().addArgumentHotspots(
-                "<android.app.Activity: void setTitle(java.lang.CharSequence)>", 0);
-            JSAStrings.run();
-
-
-            // Debugging.
-            JSAStrings.v().log();
+            jsaAnalysis();
         }
 
+        logger.info("Inserting DSTaintObject allocations at each new expression...");
         InsertDSTaintAllocs.run();
         
         AddAllocsForAPICalls.run();
@@ -163,11 +118,9 @@ public class Main {
             writeAllAppClasses();
         }
 
-        System.out.println("RCFG");
         RCFG.generate();
        
         logger.info("Starting Attribute Modeling");
-        System.out.println("AttributeModeling");
         AttributeModeling.run();
         logger.info("Finished Attribute Modeling");
 
@@ -206,6 +159,55 @@ public class Main {
         }
 
         // System.out.print(RCFG.v().toString());
+    }
+    
+    private static void jsaAnalysis() {
+        JSAStrings.init(Config.v());
+
+        // Predefined hotspots. Should be removed.
+        JSAStrings.v().addArgumentHotspots("<android.content.Intent: " +
+                "void <init>(java.lang.String)>",
+                0);
+        JSAStrings.v().addArgumentHotspots(
+            "<android.content.Intent: android.content.Intent addCategory(java.lang.String)>", 
+            0);
+
+        JSAStrings.v().addArgumentHotspots(
+            "<android.content.Intent: android.content.Intent setAction(java.lang.String)>", 0);
+
+        JSAStrings.v().addArgumentHotspots("<java.net.URI: void <init>(java.lang.String)>", 0);
+        JSAStrings.v().addArgumentHotspots(
+            "<android.content.Intent: android.content.Intent setType(java.lang.String)>", 0);
+
+        JSAStrings
+        .v()
+        .addArgumentHotspots(
+            "<android.widget.Toast: android.widget.Toast " +
+                    "makeText(android.content.Context,java.lang.CharSequence,int)>",
+                    1);
+
+        JSAStrings
+        .v()
+        .addArgumentHotspots(
+            "<com.example.android.apis.content.PickContact$ResultDisplayer: " +
+                    "void <init>(com.example.android.apis.content.PickContact," +
+                    "java.lang.String,java.lang.String)>",
+                    1);
+        JSAStrings
+        .v()
+        .addArgumentHotspots(
+            "<com.example.android.apis.content.PickContact$ResultDisplayer: " +
+                    "void <init>(com.example.android.apis.content.PickContact," +
+                    "java.lang.String,java.lang.String)>",
+                    2);
+
+        JSAStrings.v().addArgumentHotspots(
+            "<android.app.Activity: void setTitle(java.lang.CharSequence)>", 0);
+        JSAStrings.run();
+
+
+        // Debugging.
+        JSAStrings.v().log();
     }
 
     /**
