@@ -125,9 +125,10 @@ public class InsertDSTaintAllocs extends BodyTransformer {
             if (stmt instanceof AssignStmt &&
                     ((AssignStmt)stmt).getRightOp() instanceof NewExpr) {
                 AssignStmt origAssign = (AssignStmt)stmt;
+                //TODO: Might want to limit this transformation to only new expressions of API classes.
                 NewExpr origNewExpr = (NewExpr)origAssign.getRightOp();
                 
-                Local local = Jimple.v().newLocal("l" + localID++, dsTaintClassRef);
+                Local local = Jimple.v().newLocal("_dstaint_" + localID++, dsTaintClassRef);
                 stmtBody.getLocals().add(local);
               
                 NewExpr newExpr = Jimple.v().newNewExpr(dsTaintClassRef);  

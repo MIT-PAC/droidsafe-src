@@ -104,9 +104,8 @@ public class SecuritySpecification  {
 		Method sameMethod = null;
 		for (Method m : eventBlocks.get(inputEvent)) {
 			if (m.isSameMethod(outputEvent)) {
-				if (sameMethod != null)
-					Utils.logErrorAndExit(logger, "More than one appearance of a method (output event) in event block: {}", inputEvent);
 				sameMethod = m;
+				break;
 			}
 		}
 		
@@ -132,7 +131,7 @@ public class SecuritySpecification  {
 		//should not see multiple output events in same input event in the spec
 		for (Method m : eventBlocks.get(inputEvent)) {
 			if (m.isSameMethod(outputEvent)) {
-				Utils.logErrorAndExit(logger, "More than one appearance of a method (output event) in event block: {}", inputEvent);
+			    logger.error("More than one appearance of a method (output event) in event block: {}", inputEvent);
 			}
 		}
 
