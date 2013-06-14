@@ -24,12 +24,15 @@ import droidsafe.utils.SourceLocationTag;
 import droidsafe.utils.Utils;
 
 /**
- * 
+ * This class represents an API call in the rCFG.  It is associated with an rCFG node (an input event).  
+ * Each output event currently has an underlying soot method, a context edge, a calling edge, and possibly a 
+ * receiver.  
  * 
  * @author mgordon
  *
  */
 public class OutputEvent {
+    /** logger field */
 	private final static Logger logger = LoggerFactory.getLogger(OutputEvent.class);
 	/** the cg edge from caller to API */
 	private Edge thisEdge;
@@ -43,7 +46,11 @@ public class OutputEvent {
 	/** The specific receiver node that triggers this output event */
 	private AllocNode receiverNode;
 	
-	public OutputEvent(Edge thisEdge, Edge contextEdge, RCFGNode parent, AllocNode receiverNode, SourceLocationTag ln) {
+	/**
+	 * Create an output event from an edge, context edge, ... 
+	 */
+	public OutputEvent(Edge thisEdge, Edge contextEdge, RCFGNode parent, 
+	                   AllocNode receiverNode, SourceLocationTag ln) {
 		this.thisEdge = thisEdge;
 		this.contextEdge = contextEdge;
 		this.parent = parent;
@@ -53,7 +60,7 @@ public class OutputEvent {
 		setInvoke();
 	}
 	
-	/*
+	/**
 	 * Try to grab the invoke expression from the context
 	 */
 	private void setInvoke() {
@@ -129,6 +136,9 @@ public class OutputEvent {
 		return ((InstanceInvokeExpr)invokeExpr).getBase();
 	}
 	
+	/**
+	 * Return the edge that called this input event's method.
+	 */
 	public Edge getThisEdge() {
 		return thisEdge;
 	}
@@ -170,14 +180,24 @@ public class OutputEvent {
 		return GeoPTA.v().getPTSet(v, contextEdge);
 	}
 	
+	/**
+	 * Return the context edge.
+	 */
 	public Edge getContextEdge() {
 		return contextEdge;
 	}
 	
+	/**
+	 * Set the context edge.
+	 */
 	public void setContextEdge(Edge contextEdge) {
 		this.contextEdge = contextEdge;
 	}
 	
+	/**
+	 * Get the target soot method of this output event.
+	 * @return
+	 */
 	public SootMethod getTarget() {
 		return thisEdge.tgt();
 	}
@@ -199,14 +219,23 @@ public class OutputEvent {
 		return GeoPTA.v().isPointer(getArgValue(i));
 	}
 	
+	/**
+	 * Return the enclosing RCFGNode.
+	 */
 	public RCFGNode getParent() {
 		return parent;
 	}
 	
+	/** 
+	 * Get the source location tag for this output event.
+	 */
 	public SourceLocationTag getSourceLocationTag() {
 		return linesTag;
 	}
 	
+	/**
+	 * Return a string representation of the OutputEvent.
+	 */
 	public String toString() {
 		StringBuilder str = new StringBuilder();
 		Formatter formatter = new Formatter(str, Locale.US);

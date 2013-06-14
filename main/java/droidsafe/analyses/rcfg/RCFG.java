@@ -61,7 +61,7 @@ import droidsafe.utils.Utils;
  */
 public class RCFG {
     /** logger object */
-    private final static Logger logger = LoggerFactory.getLogger(RCFG.class);
+    private static final Logger logger = LoggerFactory.getLogger(RCFG.class);
     /** Soot's call graph */
     private CallGraph sparkCG;
     /** The forrest of rCFG nodes */
@@ -89,7 +89,7 @@ public class RCFG {
         v.createRCFG();
 
         //for (RCFGNode node : v.rCFG)
-        //	System.out.println(node.toString());
+         //   System.out.println(node.toString());
         //logger.info("\n" + v.toString());
     }
 
@@ -322,10 +322,10 @@ public class RCFG {
                 continue;
 
             /*
-			if (!GeoPTA.v().isPointer(expr.getBase())) {
-				System.out.printf("Not a pointer %s for call %s %s\n", expr.getBase(), expr, 
-						SootUtils.getSourceLocation(stmt, src.getDeclaringClass()));
-			}
+            if (!GeoPTA.v().isPointer(expr.getBase())) {
+                System.out.printf("Not a pointer %s for call %s %s\n", expr.getBase(), expr, 
+                    SootUtils.getSourceLocation(stmt, src.getDeclaringClass()));
+            }
              */
 
             for (AllocNode alloc : GeoPTA.v().getPTSet(expr.getBase(), context)) {
