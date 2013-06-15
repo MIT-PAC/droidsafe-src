@@ -11,13 +11,13 @@ public class AttributeModelingUtils {
      * class 
      * */
     public static String toAttrModelingModelClass(String regularClass){
-        return AttributeModeling.PACKAGE_PREFIX + regularClass;
+        return AttributeModeling.MODEL_PACKAGE_PREFIX + regularClass;
     }
    
     /**
      * Convert the string signature of an attr modeling model class to a string signature of a regular class 
      * */
     public static String fromAttrModelingModelClass(String attrModelingModelClass){
-        return attrModelingModelClass.split(AttributeModeling.PACKAGE_PREFIX)[1];
+        return attrModelingModelClass.split(AttributeModeling.MODEL_PACKAGE_PREFIX)[1];
     }
 }

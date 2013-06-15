@@ -375,6 +375,7 @@ public class Intent extends AttrModeledClass {
      * @see #removeExtra
      * @see #getBooleanExtra(String, boolean)
      */
+    //TODO: make putExtras one-to-one
     public <T> Intent putExtra(Set<String> names, Set<T> values) {
         if (mExtras == null) {
             mExtras = new Bundle();

@@ -119,8 +119,11 @@ public class AttributeModeling {
     /** Generic logger */
     private static final Logger logger = LoggerFactory.getLogger(AttributeModeling.class);
 
-    /** The prefix that is prepended to fully qualified types in the src of the model */
-    public static final String PACKAGE_PREFIX = "droidsafe.analyses.attr.models.";
+    /** The package of the value analysis models */
+    public static final String MODEL_PACKAGE = "droidsafe.analyses.attr.models";
+
+    /** The prefix that is prepended to fully qualified value analysis models */
+    public static final String MODEL_PACKAGE_PREFIX = MODEL_PACKAGE + ".";
 
     /** The directory relative from APAC_HOME that is the base of the modeling source code for this abstract semantics 
     */

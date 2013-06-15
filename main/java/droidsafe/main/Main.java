@@ -1,7 +1,37 @@
 package droidsafe.main;
 
+import droidsafe.analyses.attr.AttributeModeling;
+import droidsafe.analyses.EntryPointCGEdges;
+import droidsafe.analyses.GeoPTA;
+import droidsafe.analyses.infoflow.InformationFlowAnalysis;
+import droidsafe.analyses.infoflow.InjectedSourceFlows;
+import droidsafe.analyses.infoflow.InterproceduralControlFlowGraph;
+import droidsafe.analyses.rcfg.RCFG;
+import droidsafe.analyses.RCFGToSSL;
+import droidsafe.analyses.RequiredModeling;
+import droidsafe.analyses.strings.JSAStrings;
+import droidsafe.analyses.strings.JSAUtils;
+
+import droidsafe.android.app.EntryPoints;
+import droidsafe.android.app.Harness;
+import droidsafe.android.app.Project;
+import droidsafe.android.app.resources.Resources;
+import droidsafe.android.app.TagImplementedSystemMethods;
+import droidsafe.android.system.API;
+import droidsafe.android.system.Permissions;
+
+import droidsafe.transforms.AddAllocsForAPICalls;
+import droidsafe.transforms.InsertDSTaintAllocs;
+import droidsafe.transforms.IntegrateXMLLayouts;
+import droidsafe.transforms.LocalForStringConstantArguments;
+import droidsafe.transforms.ResolveStringConstants;
+import droidsafe.transforms.ScalarAppOptimizations;
+
+import droidsafe.utils.SootUtils;
+
 import java.io.File;
 import java.io.IOException;
+
 import java.util.LinkedList;
 import java.util.List;
 
@@ -9,32 +39,10 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import soot.Scene;
+
 import soot.SootClass;
+
 import soot.SootMethod;
-import droidsafe.analyses.attr.AttributeModeling;
-import droidsafe.analyses.EntryPointCGEdges;
-import droidsafe.analyses.GeoPTA;
-import droidsafe.analyses.RCFGToSSL;
-import droidsafe.analyses.RequiredModeling;
-import droidsafe.analyses.infoflow.InformationFlowAnalysis;
-import droidsafe.analyses.infoflow.InjectedSourceFlows;
-import droidsafe.analyses.infoflow.InterproceduralControlFlowGraph;
-import droidsafe.analyses.rcfg.RCFG;
-import droidsafe.analyses.strings.JSAStrings;
-import droidsafe.android.app.EntryPoints;
-import droidsafe.android.app.Harness;
-import droidsafe.android.app.Project;
-import droidsafe.android.app.TagImplementedSystemMethods;
-import droidsafe.android.app.resources.Resources;
-import droidsafe.android.system.API;
-import droidsafe.android.system.Permissions;
-import droidsafe.transforms.AddAllocsForAPICalls;
-import droidsafe.transforms.InsertDSTaintAllocs;
-import droidsafe.transforms.IntegrateXMLLayouts;
-import droidsafe.transforms.LocalForStringConstantArguments;
-import droidsafe.transforms.ResolveStringConstants;
-import droidsafe.transforms.ScalarAppOptimizations;
-import droidsafe.utils.SootUtils;
 
 /**
  * Main entry class for DroidSafe analysis.
@@ -160,52 +168,14 @@ public class Main {
 
         // System.out.print(RCFG.v().toString());
     }
-    
+   
+    /**
+     * Run the JSA analysis
+     */ 
     private static void jsaAnalysis() {
         JSAStrings.init(Config.v());
-
-        // Predefined hotspots. Should be removed.
-        JSAStrings.v().addArgumentHotspots("<android.content.Intent: " +
-                "void <init>(java.lang.String)>",
-                0);
-        JSAStrings.v().addArgumentHotspots(
-            "<android.content.Intent: android.content.Intent addCategory(java.lang.String)>", 
-            0);
-
-        JSAStrings.v().addArgumentHotspots(
-            "<android.content.Intent: android.content.Intent setAction(java.lang.String)>", 0);
-
-        JSAStrings.v().addArgumentHotspots("<java.net.URI: void <init>(java.lang.String)>", 0);
-        JSAStrings.v().addArgumentHotspots(
-            "<android.content.Intent: android.content.Intent setType(java.lang.String)>", 0);
-
-        JSAStrings
-        .v()
-        .addArgumentHotspots(
-            "<android.widget.Toast: android.widget.Toast " +
-                    "makeText(android.content.Context,java.lang.CharSequence,int)>",
-                    1);
-
-        JSAStrings
-        .v()
-        .addArgumentHotspots(
-            "<com.example.android.apis.content.PickContact$ResultDisplayer: " +
-                    "void <init>(com.example.android.apis.content.PickContact," +
-                    "java.lang.String,java.lang.String)>",
-                    1);
-        JSAStrings
-        .v()
-        .addArgumentHotspots(
-            "<com.example.android.apis.content.PickContact$ResultDisplayer: " +
-                    "void <init>(com.example.android.apis.content.PickContact," +
-                    "java.lang.String,java.lang.String)>",
-                    2);
-
-        JSAStrings.v().addArgumentHotspots(
-            "<android.app.Activity: void setTitle(java.lang.CharSequence)>", 0);
+        JSAUtils.setUpHotspots();
         JSAStrings.run();
-
-
         // Debugging.
         JSAStrings.v().log();
     }
