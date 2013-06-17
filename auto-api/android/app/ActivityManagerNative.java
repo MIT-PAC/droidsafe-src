@@ -37,6 +37,7 @@ import java.util.List;
 
 public abstract class ActivityManagerNative extends Binder implements IActivityManager {
     static boolean sSystemReady = false;
+    
     private static final Singleton<IActivityManager> gDefault = new Singleton<IActivityManager>() {        
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:14:58.112 -0400", hash_original_method = "DB2B8F5A0363FA0CE3E5AA87CCE94A22", hash_generated_method = "5F634EB5E7A91D65EEED9646F10827FF")
         @DSModeled(DSC.SAFE)
@@ -71,6 +72,7 @@ public abstract class ActivityManagerNative extends Binder implements IActivityM
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:14:58.113 -0400", hash_original_method = "2F0865077D68737A7D6F441D3CAC24D9", hash_generated_method = "C5B42A1DFCEB823A5136B429CF9AC9B1")
+    @DSModeled(DSC.SAFE)
     static public IActivityManager asInterface(IBinder obj) {
         if (obj == null) {
             return null;
@@ -85,6 +87,7 @@ public abstract class ActivityManagerNative extends Binder implements IActivityM
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:14:58.113 -0400", hash_original_method = "C581351462D87A5CA19EFFE73691D6B8", hash_generated_method = "8A940506F46A34A8E626D5A708A565C0")
+    @DSModeled(DSC.SAFE)
     static public IActivityManager getDefault() {
         return gDefault.get();
     }

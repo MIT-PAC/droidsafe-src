@@ -28,7 +28,7 @@ public class PropertyValuesHolder implements Cloneable {
     private TypeEvaluator mEvaluator;
     private Object mAnimatedValue;
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-14 13:09:36.010 -0400", hash_original_method = "73C53AD6C55F8F35D3899F0ADDC03638", hash_generated_method = "62424CA9A7F83BC65DD77DC2447DC020")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-17 13:03:25.257 -0400", hash_original_method = "73C53AD6C55F8F35D3899F0ADDC03638", hash_generated_method = "62424CA9A7F83BC65DD77DC2447DC020")
     @DSModeled(DSC.SAFE)
     private PropertyValuesHolder(String propertyName) {
         dsTaint.addTaint(propertyName);
@@ -37,7 +37,7 @@ public class PropertyValuesHolder implements Cloneable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-14 13:09:36.020 -0400", hash_original_method = "BDE609B5B8790707A2E7C7F2E71E73EE", hash_generated_method = "A9BF136FF804517F241B4E490030AF85")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-17 13:03:25.266 -0400", hash_original_method = "BDE609B5B8790707A2E7C7F2E71E73EE", hash_generated_method = "A9BF136FF804517F241B4E490030AF85")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     private PropertyValuesHolder(Property property) {
         dsTaint.addTaint(property.dsTaint);
@@ -122,7 +122,7 @@ public class PropertyValuesHolder implements Cloneable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-14 13:09:36.072 -0400", hash_original_method = "5ACB1BF4CE1DE924456A446D3AE6F5AC", hash_generated_method = "AC1DF3AE0812762D649AAA066A4A769B")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-17 13:03:25.307 -0400", hash_original_method = "5ACB1BF4CE1DE924456A446D3AE6F5AC", hash_generated_method = "AC1DF3AE0812762D649AAA066A4A769B")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public void setIntValues(int... values) {
         dsTaint.addTaint(values);
@@ -134,7 +134,7 @@ public class PropertyValuesHolder implements Cloneable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-14 13:09:36.091 -0400", hash_original_method = "E55475A51A76C9AF68CEE5048B067603", hash_generated_method = "CA38943C6762AB1E418F6BD63EB7EEF5")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-17 13:03:25.320 -0400", hash_original_method = "E55475A51A76C9AF68CEE5048B067603", hash_generated_method = "CA38943C6762AB1E418F6BD63EB7EEF5")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public void setFloatValues(float... values) {
         dsTaint.addTaint(values);
@@ -146,7 +146,7 @@ public class PropertyValuesHolder implements Cloneable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-14 13:09:36.114 -0400", hash_original_method = "A7BBAF2A9B12EBB30CB57DBA83B6B7FC", hash_generated_method = "AD6A2A857B96CD2C8D4D79FC47542554")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-17 13:03:25.336 -0400", hash_original_method = "A7BBAF2A9B12EBB30CB57DBA83B6B7FC", hash_generated_method = "AD6A2A857B96CD2C8D4D79FC47542554")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public void setKeyframes(Keyframe... values) {
         dsTaint.addTaint(values[0].dsTaint);
@@ -174,7 +174,7 @@ public class PropertyValuesHolder implements Cloneable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-14 13:09:36.128 -0400", hash_original_method = "8EF0800B602558BC1B6F05E6446D461B", hash_generated_method = "B96DA70AA10404EF9F7B53336306E78E")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-17 13:03:25.346 -0400", hash_original_method = "8EF0800B602558BC1B6F05E6446D461B", hash_generated_method = "B96DA70AA10404EF9F7B53336306E78E")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public void setObjectValues(Object... values) {
         dsTaint.addTaint(values[0].dsTaint);
@@ -186,7 +186,7 @@ public class PropertyValuesHolder implements Cloneable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-14 13:09:36.151 -0400", hash_original_method = "13DE02BBE5B8605736F61BF53DFAC872", hash_generated_method = "D500F66BB38CE6A9780D34ADE7A3CF76")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-17 13:03:25.370 -0400", hash_original_method = "13DE02BBE5B8605736F61BF53DFAC872", hash_generated_method = "FB4C51BD93455D39C8B5CFAC13ECB256")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     private Method getPropertyFunction(Class targetClass, String prefix, Class valueType) {
         dsTaint.addTaint(prefix);
@@ -210,17 +210,17 @@ public class PropertyValuesHolder implements Cloneable {
             args = new Class[1];
             Class typeVariants[];
             {
-                boolean varA19CC413B5D979C40823A0DFD08B5B8B_1398422274 = (mValueType.equals(Float.class));
+                boolean varA19CC413B5D979C40823A0DFD08B5B8B_980852553 = (mValueType.equals(Float.class));
                 {
                     typeVariants = FLOAT_VARIANTS;
                 } //End block
                 {
-                    boolean varD5B60361EAD528E96F229CD21781680B_1814679315 = (mValueType.equals(Integer.class));
+                    boolean varD5B60361EAD528E96F229CD21781680B_477224864 = (mValueType.equals(Integer.class));
                     {
                         typeVariants = INTEGER_VARIANTS;
                     } //End block
                     {
-                        boolean var0B542F869A194F37A1EAAC7F79A1D812_88902245 = (mValueType.equals(Double.class));
+                        boolean var0B542F869A194F37A1EAAC7F79A1D812_1762162030 = (mValueType.equals(Double.class));
                         {
                             typeVariants = DOUBLE_VARIANTS;
                         } //End block
@@ -251,7 +251,7 @@ public class PropertyValuesHolder implements Cloneable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-14 13:09:36.188 -0400", hash_original_method = "D9982E89760E4BF7FBC2F6FCA80BFE72", hash_generated_method = "9DE4FC63AC4B553F1733EBF7A8518FDB")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-17 13:03:25.402 -0400", hash_original_method = "D9982E89760E4BF7FBC2F6FCA80BFE72", hash_generated_method = "9DE4FC63AC4B553F1733EBF7A8518FDB")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     private Method setupSetterOrGetter(Class targetClass,
             HashMap<Class, HashMap<String, Method>> propertyMapMap,
@@ -289,7 +289,7 @@ public class PropertyValuesHolder implements Cloneable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-14 13:09:36.196 -0400", hash_original_method = "1E4C95A3F0C35809E96A1D77677A320B", hash_generated_method = "3548C9DEB4687210847EE2E13946A387")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-17 13:03:25.410 -0400", hash_original_method = "1E4C95A3F0C35809E96A1D77677A320B", hash_generated_method = "3548C9DEB4687210847EE2E13946A387")
     //DSFIXME:  CODE0002: Requires DSC value to be set
      void setupSetter(Class targetClass) {
         dsTaint.addTaint(targetClass.dsTaint);
@@ -299,7 +299,7 @@ public class PropertyValuesHolder implements Cloneable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-14 13:09:36.206 -0400", hash_original_method = "8511F8F7AD8858B7DCF32F8ED21ED093", hash_generated_method = "85D1EA7C683AF5978252EF4A2B209A37")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-17 13:03:25.419 -0400", hash_original_method = "8511F8F7AD8858B7DCF32F8ED21ED093", hash_generated_method = "85D1EA7C683AF5978252EF4A2B209A37")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     private void setupGetter(Class targetClass) {
         dsTaint.addTaint(targetClass.dsTaint);
@@ -309,7 +309,7 @@ public class PropertyValuesHolder implements Cloneable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-14 13:09:36.243 -0400", hash_original_method = "0087C9C0C21400747AF8DC614F234C65", hash_generated_method = "A8D064E75934FAFC39C046C4547CBFCE")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-17 13:03:25.448 -0400", hash_original_method = "0087C9C0C21400747AF8DC614F234C65", hash_generated_method = "E2CA9D3D363798461DA8F827EBFD0488")
     //DSFIXME:  CODE0002: Requires DSC value to be set
      void setupSetterAndGetter(Object target) {
         dsTaint.addTaint(target.dsTaint);
@@ -319,12 +319,12 @@ public class PropertyValuesHolder implements Cloneable {
                 Object testValue;
                 testValue = mProperty.get(target);
                 {
-                    Iterator<Keyframe> var30BC71CCD48BB50A1DFF3F1C4E9C9F4A_641813839 = mKeyframeSet.mKeyframes.iterator();
-                    var30BC71CCD48BB50A1DFF3F1C4E9C9F4A_641813839.hasNext();
-                    Keyframe kf = var30BC71CCD48BB50A1DFF3F1C4E9C9F4A_641813839.next();
+                    Iterator<Keyframe> var30BC71CCD48BB50A1DFF3F1C4E9C9F4A_1612084580 = mKeyframeSet.mKeyframes.iterator();
+                    var30BC71CCD48BB50A1DFF3F1C4E9C9F4A_1612084580.hasNext();
+                    Keyframe kf = var30BC71CCD48BB50A1DFF3F1C4E9C9F4A_1612084580.next();
                     {
                         {
-                            boolean var4D41CBD03F5F0E056BC0D1CE3112DD7D_2103623054 = (!kf.hasValue());
+                            boolean var4D41CBD03F5F0E056BC0D1CE3112DD7D_780143373 = (!kf.hasValue());
                             {
                                 kf.setValue(mProperty.get(target));
                             } //End block
@@ -343,12 +343,12 @@ public class PropertyValuesHolder implements Cloneable {
             setupSetter(targetClass);
         } //End block
         {
-            Iterator<Keyframe> var30BC71CCD48BB50A1DFF3F1C4E9C9F4A_1138705710 = mKeyframeSet.mKeyframes.iterator();
-            var30BC71CCD48BB50A1DFF3F1C4E9C9F4A_1138705710.hasNext();
-            Keyframe kf = var30BC71CCD48BB50A1DFF3F1C4E9C9F4A_1138705710.next();
+            Iterator<Keyframe> var30BC71CCD48BB50A1DFF3F1C4E9C9F4A_1536575651 = mKeyframeSet.mKeyframes.iterator();
+            var30BC71CCD48BB50A1DFF3F1C4E9C9F4A_1536575651.hasNext();
+            Keyframe kf = var30BC71CCD48BB50A1DFF3F1C4E9C9F4A_1536575651.next();
             {
                 {
-                    boolean var1879ACDF397A2339AF73F7A898CEEF3F_1873573604 = (!kf.hasValue());
+                    boolean var1879ACDF397A2339AF73F7A898CEEF3F_388931025 = (!kf.hasValue());
                     {
                         {
                             setupGetter(targetClass);
@@ -370,7 +370,7 @@ public class PropertyValuesHolder implements Cloneable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-14 13:09:36.279 -0400", hash_original_method = "FD1A4547C57F636637D228B97E0E8D50", hash_generated_method = "74EFF8FB64E46DF993A925753BC07B44")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-17 13:03:25.463 -0400", hash_original_method = "FD1A4547C57F636637D228B97E0E8D50", hash_generated_method = "74EFF8FB64E46DF993A925753BC07B44")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     private void setupValue(Object target, Keyframe kf) {
         dsTaint.addTaint(kf.dsTaint);
@@ -409,7 +409,7 @@ public class PropertyValuesHolder implements Cloneable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-14 13:09:36.287 -0400", hash_original_method = "981ED4D0B23A22C5ED7F7AF0C37F067E", hash_generated_method = "7596C5B2EAD49C0E9771EAF157514220")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-17 13:03:25.470 -0400", hash_original_method = "981ED4D0B23A22C5ED7F7AF0C37F067E", hash_generated_method = "7596C5B2EAD49C0E9771EAF157514220")
     //DSFIXME:  CODE0002: Requires DSC value to be set
      void setupStartValue(Object target) {
         dsTaint.addTaint(target.dsTaint);
@@ -419,7 +419,7 @@ public class PropertyValuesHolder implements Cloneable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-14 13:09:36.291 -0400", hash_original_method = "387F5EDF2150EE198B0BBE4A1C97CF48", hash_generated_method = "07524E03C67FCC0B70B88C63CCBB28F5")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-17 13:03:25.475 -0400", hash_original_method = "387F5EDF2150EE198B0BBE4A1C97CF48", hash_generated_method = "07524E03C67FCC0B70B88C63CCBB28F5")
     //DSFIXME:  CODE0002: Requires DSC value to be set
      void setupEndValue(Object target) {
         dsTaint.addTaint(target.dsTaint);
@@ -429,7 +429,7 @@ public class PropertyValuesHolder implements Cloneable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-14 13:09:36.298 -0400", hash_original_method = "8E6DC562093F236AE410C563F47F28F2", hash_generated_method = "DC6A3EB5D44FA3500E49569D0A9731FD")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-17 13:03:25.482 -0400", hash_original_method = "8E6DC562093F236AE410C563F47F28F2", hash_generated_method = "DC6A3EB5D44FA3500E49569D0A9731FD")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     @Override
     public PropertyValuesHolder clone() {
@@ -459,7 +459,7 @@ public class PropertyValuesHolder implements Cloneable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-14 13:09:36.307 -0400", hash_original_method = "BBF3202CC4B8C1713A46E96DE0EE5426", hash_generated_method = "C6D0310FBC6B4E3A4FE5A95EAB5DC3EB")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-17 13:03:25.491 -0400", hash_original_method = "BBF3202CC4B8C1713A46E96DE0EE5426", hash_generated_method = "C6D0310FBC6B4E3A4FE5A95EAB5DC3EB")
     //DSFIXME:  CODE0002: Requires DSC value to be set
      void setAnimatedValue(Object target) {
         dsTaint.addTaint(target.dsTaint);
@@ -494,7 +494,7 @@ public class PropertyValuesHolder implements Cloneable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-14 13:09:36.315 -0400", hash_original_method = "9511AC0B81E584A22A2DBDCB260E6C63", hash_generated_method = "6FB68D7738033F4BC849D6B08F43923F")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-17 13:03:25.501 -0400", hash_original_method = "9511AC0B81E584A22A2DBDCB260E6C63", hash_generated_method = "6FB68D7738033F4BC849D6B08F43923F")
     @DSModeled(DSC.SAFE)
      void init() {
         {
@@ -517,7 +517,7 @@ public class PropertyValuesHolder implements Cloneable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-14 13:09:36.321 -0400", hash_original_method = "8817589F1B40B238224DB9B551F0527E", hash_generated_method = "08077E074803F67687F81CC62727BAE1")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-17 13:03:25.508 -0400", hash_original_method = "8817589F1B40B238224DB9B551F0527E", hash_generated_method = "08077E074803F67687F81CC62727BAE1")
     @DSModeled(DSC.SAFE)
     public void setEvaluator(TypeEvaluator evaluator) {
         dsTaint.addTaint(evaluator.dsTaint);
@@ -528,7 +528,7 @@ public class PropertyValuesHolder implements Cloneable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-14 13:09:36.327 -0400", hash_original_method = "3D77B6F49E03B0770D03717F27BECD0E", hash_generated_method = "980825A4C001A10575956452936FCF98")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-17 13:03:25.512 -0400", hash_original_method = "3D77B6F49E03B0770D03717F27BECD0E", hash_generated_method = "980825A4C001A10575956452936FCF98")
     //DSFIXME:  CODE0002: Requires DSC value to be set
      void calculateValue(float fraction) {
         dsTaint.addTaint(fraction);
@@ -538,7 +538,7 @@ public class PropertyValuesHolder implements Cloneable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-14 13:09:36.332 -0400", hash_original_method = "748680E3CF42F5BF312929F3A98BA3E4", hash_generated_method = "E96E52496C79DFA849B9E6FE242D5B8F")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-17 13:03:25.516 -0400", hash_original_method = "748680E3CF42F5BF312929F3A98BA3E4", hash_generated_method = "E96E52496C79DFA849B9E6FE242D5B8F")
     @DSModeled(DSC.SAFE)
     public void setPropertyName(String propertyName) {
         dsTaint.addTaint(propertyName);
@@ -547,7 +547,7 @@ public class PropertyValuesHolder implements Cloneable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-14 13:09:36.335 -0400", hash_original_method = "8FEFD1E6365C919A12E22D83DCF12A7D", hash_generated_method = "9CC6B949387329F614C48A65C173DBA0")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-17 13:03:25.520 -0400", hash_original_method = "8FEFD1E6365C919A12E22D83DCF12A7D", hash_generated_method = "9CC6B949387329F614C48A65C173DBA0")
     @DSModeled(DSC.SAFE)
     public void setProperty(Property property) {
         dsTaint.addTaint(property.dsTaint);
@@ -556,7 +556,7 @@ public class PropertyValuesHolder implements Cloneable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-14 13:09:36.344 -0400", hash_original_method = "53B20749B4CEAC5C134A85897865D0FE", hash_generated_method = "19C243F0DAD668218C8EB3848FFD0192")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-17 13:03:25.524 -0400", hash_original_method = "53B20749B4CEAC5C134A85897865D0FE", hash_generated_method = "19C243F0DAD668218C8EB3848FFD0192")
     @DSModeled(DSC.SAFE)
     public String getPropertyName() {
         return dsTaint.getTaintString();
@@ -565,7 +565,7 @@ public class PropertyValuesHolder implements Cloneable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-14 13:09:36.348 -0400", hash_original_method = "7EED53883B814F7F8B112CE8FF982C26", hash_generated_method = "A63991715CC64930DB987543E9DAA593")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-17 13:03:25.527 -0400", hash_original_method = "7EED53883B814F7F8B112CE8FF982C26", hash_generated_method = "A63991715CC64930DB987543E9DAA593")
     @DSModeled(DSC.SAFE)
      Object getAnimatedValue() {
         return (Object)dsTaint.getTaint();
@@ -574,11 +574,11 @@ public class PropertyValuesHolder implements Cloneable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-14 13:09:36.359 -0400", hash_original_method = "BD911D365C7FC80DCCAF5DAD046A5B1C", hash_generated_method = "FC3A90497C2342D343B0E5777E3F1A22")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-17 13:03:25.544 -0400", hash_original_method = "BD911D365C7FC80DCCAF5DAD046A5B1C", hash_generated_method = "C4A4223C714CA53A5D597065C3013619")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     @Override
     public String toString() {
-        String var6E0AA3FFE56F33AD4C3F9AC8B586A8AD_900205143 = (mPropertyName + ": " + mKeyframeSet.toString());
+        String var6E0AA3FFE56F33AD4C3F9AC8B586A8AD_171574011 = (mPropertyName + ": " + mKeyframeSet.toString());
         return dsTaint.getTaintString();
         // ---------- Original Method ----------
         //return mPropertyName + ": " + mKeyframeSet.toString();
@@ -619,7 +619,7 @@ public class PropertyValuesHolder implements Cloneable {
         IntKeyframeSet mIntKeyframeSet;
         int mIntAnimatedValue;
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-14 13:09:36.374 -0400", hash_original_method = "A1404C395B1A556C6EC35453AB25DA4D", hash_generated_method = "7596D767ED640DBCB8FB3A007C291DD8")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-17 13:03:25.555 -0400", hash_original_method = "A1404C395B1A556C6EC35453AB25DA4D", hash_generated_method = "7596D767ED640DBCB8FB3A007C291DD8")
         //DSFIXME:  CODE0002: Requires DSC value to be set
         public IntPropertyValuesHolder(String propertyName, IntKeyframeSet keyframeSet) {
             super(propertyName);
@@ -635,7 +635,7 @@ public class PropertyValuesHolder implements Cloneable {
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-14 13:09:36.379 -0400", hash_original_method = "81A38376DA5063E7A71924F7865D18EE", hash_generated_method = "98320D87A44ABE7A2AFF5B01D4B84B9F")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-17 13:03:25.560 -0400", hash_original_method = "81A38376DA5063E7A71924F7865D18EE", hash_generated_method = "98320D87A44ABE7A2AFF5B01D4B84B9F")
         //DSFIXME:  CODE0002: Requires DSC value to be set
         public IntPropertyValuesHolder(Property property, IntKeyframeSet keyframeSet) {
             super(property);
@@ -657,7 +657,7 @@ public class PropertyValuesHolder implements Cloneable {
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-14 13:09:36.383 -0400", hash_original_method = "D138EB87670EDA5FF4AD9A96EB7F8CD0", hash_generated_method = "121BEC11467DD96FAC3B30245F5EDD11")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-17 13:03:25.564 -0400", hash_original_method = "D138EB87670EDA5FF4AD9A96EB7F8CD0", hash_generated_method = "121BEC11467DD96FAC3B30245F5EDD11")
         //DSFIXME:  CODE0002: Requires DSC value to be set
         public IntPropertyValuesHolder(String propertyName, int... values) {
             super(propertyName);
@@ -669,7 +669,7 @@ public class PropertyValuesHolder implements Cloneable {
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-14 13:09:36.387 -0400", hash_original_method = "EF8A3E59A9590685EEFC24C3E37051A8", hash_generated_method = "2A7F5B3317FA5D2A87D95548E1C10E93")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-17 13:03:25.568 -0400", hash_original_method = "EF8A3E59A9590685EEFC24C3E37051A8", hash_generated_method = "2A7F5B3317FA5D2A87D95548E1C10E93")
         //DSFIXME:  CODE0002: Requires DSC value to be set
         public IntPropertyValuesHolder(Property property, int... values) {
             super(property);
@@ -687,7 +687,7 @@ public class PropertyValuesHolder implements Cloneable {
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-14 13:09:36.392 -0400", hash_original_method = "36FED796688BFE2861C8D1DF18289634", hash_generated_method = "B9EA97A23CCD51AE586AA42AB4C5E34D")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-17 13:03:25.572 -0400", hash_original_method = "36FED796688BFE2861C8D1DF18289634", hash_generated_method = "B9EA97A23CCD51AE586AA42AB4C5E34D")
         @DSModeled(DSC.SAFE)
         @Override
         public void setIntValues(int... values) {
@@ -700,7 +700,7 @@ public class PropertyValuesHolder implements Cloneable {
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-14 13:09:36.396 -0400", hash_original_method = "30F7306C8A34979730DB91915B461598", hash_generated_method = "B091DF161147875851FDFADABAE2C35D")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-17 13:03:25.576 -0400", hash_original_method = "30F7306C8A34979730DB91915B461598", hash_generated_method = "B091DF161147875851FDFADABAE2C35D")
         //DSFIXME:  CODE0002: Requires DSC value to be set
         @Override
          void calculateValue(float fraction) {
@@ -711,7 +711,7 @@ public class PropertyValuesHolder implements Cloneable {
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-14 13:09:36.408 -0400", hash_original_method = "CE13DB8914BA3896479030C59B8EB5EA", hash_generated_method = "B85693EDEC168FF8BE60D975E4FA791A")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-17 13:03:25.579 -0400", hash_original_method = "CE13DB8914BA3896479030C59B8EB5EA", hash_generated_method = "B85693EDEC168FF8BE60D975E4FA791A")
         @DSModeled(DSC.SAFE)
         @Override
          Object getAnimatedValue() {
@@ -721,7 +721,7 @@ public class PropertyValuesHolder implements Cloneable {
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-14 13:09:36.420 -0400", hash_original_method = "D2AD407C7BF3FF5B871B87BBB92EBDD2", hash_generated_method = "3526D1CBE66D4FC46222AF0C9A53A722")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-17 13:03:25.583 -0400", hash_original_method = "D2AD407C7BF3FF5B871B87BBB92EBDD2", hash_generated_method = "3526D1CBE66D4FC46222AF0C9A53A722")
         //DSFIXME:  CODE0002: Requires DSC value to be set
         @Override
         public IntPropertyValuesHolder clone() {
@@ -736,7 +736,7 @@ public class PropertyValuesHolder implements Cloneable {
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-14 13:09:36.438 -0400", hash_original_method = "774DCA711497C815C6106461263A2AF3", hash_generated_method = "239561D74F8DBF0D71B3CFF40AE6EE0B")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-17 13:03:25.593 -0400", hash_original_method = "774DCA711497C815C6106461263A2AF3", hash_generated_method = "239561D74F8DBF0D71B3CFF40AE6EE0B")
         //DSFIXME:  CODE0002: Requires DSC value to be set
         @Override
          void setAnimatedValue(Object target) {
@@ -766,7 +766,7 @@ public class PropertyValuesHolder implements Cloneable {
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-14 13:09:36.455 -0400", hash_original_method = "E5FCCB47E07ECB03BE2F278E504281F8", hash_generated_method = "9410E6343ED313461560F6161F6A32A3")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-17 13:03:25.606 -0400", hash_original_method = "E5FCCB47E07ECB03BE2F278E504281F8", hash_generated_method = "9410E6343ED313461560F6161F6A32A3")
         //DSFIXME:  CODE0002: Requires DSC value to be set
         @Override
          void setupSetter(Class targetClass) {
@@ -825,7 +825,7 @@ public class PropertyValuesHolder implements Cloneable {
         FloatKeyframeSet mFloatKeyframeSet;
         float mFloatAnimatedValue;
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-14 13:09:36.475 -0400", hash_original_method = "5C9EF6457927B43859688413E4C7829F", hash_generated_method = "E2E7A1F87679E806FF739875392DE1D9")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-17 13:03:25.615 -0400", hash_original_method = "5C9EF6457927B43859688413E4C7829F", hash_generated_method = "E2E7A1F87679E806FF739875392DE1D9")
         //DSFIXME:  CODE0002: Requires DSC value to be set
         public FloatPropertyValuesHolder(String propertyName, FloatKeyframeSet keyframeSet) {
             super(propertyName);
@@ -841,7 +841,7 @@ public class PropertyValuesHolder implements Cloneable {
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-14 13:09:36.480 -0400", hash_original_method = "3ECDE802415F2017B0BC69F95B30B753", hash_generated_method = "4B1870FB40EC26E7AAC0A6B464975BF7")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-17 13:03:25.620 -0400", hash_original_method = "3ECDE802415F2017B0BC69F95B30B753", hash_generated_method = "4B1870FB40EC26E7AAC0A6B464975BF7")
         //DSFIXME:  CODE0002: Requires DSC value to be set
         public FloatPropertyValuesHolder(Property property, FloatKeyframeSet keyframeSet) {
             super(property);
@@ -863,7 +863,7 @@ public class PropertyValuesHolder implements Cloneable {
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-14 13:09:36.484 -0400", hash_original_method = "C77EAEA380E6CBE61D90EF78014D158B", hash_generated_method = "C079D56FAE5028C762E8E44CD9993474")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-17 13:03:25.623 -0400", hash_original_method = "C77EAEA380E6CBE61D90EF78014D158B", hash_generated_method = "C079D56FAE5028C762E8E44CD9993474")
         //DSFIXME:  CODE0002: Requires DSC value to be set
         public FloatPropertyValuesHolder(String propertyName, float... values) {
             super(propertyName);
@@ -875,7 +875,7 @@ public class PropertyValuesHolder implements Cloneable {
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-14 13:09:36.490 -0400", hash_original_method = "91C83497360B006516EF522F9EB49209", hash_generated_method = "D438D5C825BD90C3DFF46758F34EA714")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-17 13:03:25.627 -0400", hash_original_method = "91C83497360B006516EF522F9EB49209", hash_generated_method = "D438D5C825BD90C3DFF46758F34EA714")
         //DSFIXME:  CODE0002: Requires DSC value to be set
         public FloatPropertyValuesHolder(Property property, float... values) {
             super(property);
@@ -893,7 +893,7 @@ public class PropertyValuesHolder implements Cloneable {
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-14 13:09:36.496 -0400", hash_original_method = "4C7839391C0E614BE090BEA208DAADC2", hash_generated_method = "0F213DF8720A74C4984EE2875978AADA")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-17 13:03:25.633 -0400", hash_original_method = "4C7839391C0E614BE090BEA208DAADC2", hash_generated_method = "0F213DF8720A74C4984EE2875978AADA")
         @DSModeled(DSC.SAFE)
         @Override
         public void setFloatValues(float... values) {
@@ -906,7 +906,7 @@ public class PropertyValuesHolder implements Cloneable {
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-14 13:09:36.502 -0400", hash_original_method = "EBADBBF750EE6D7005FAC08DD166E4F4", hash_generated_method = "46B82B2727C63A4226AD4F4A48BA0E8A")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-17 13:03:25.637 -0400", hash_original_method = "EBADBBF750EE6D7005FAC08DD166E4F4", hash_generated_method = "46B82B2727C63A4226AD4F4A48BA0E8A")
         //DSFIXME:  CODE0002: Requires DSC value to be set
         @Override
          void calculateValue(float fraction) {
@@ -917,7 +917,7 @@ public class PropertyValuesHolder implements Cloneable {
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-14 13:09:36.504 -0400", hash_original_method = "56F77D961BC82461152CD24C144983C0", hash_generated_method = "D53DC255290A97220C7D4E86724FFD50")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-17 13:03:25.640 -0400", hash_original_method = "56F77D961BC82461152CD24C144983C0", hash_generated_method = "D53DC255290A97220C7D4E86724FFD50")
         @DSModeled(DSC.SAFE)
         @Override
          Object getAnimatedValue() {
@@ -927,7 +927,7 @@ public class PropertyValuesHolder implements Cloneable {
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-14 13:09:36.508 -0400", hash_original_method = "3798C3AECEA696DCFE0B333FF00EF37C", hash_generated_method = "B716E8A4395B75FE9B78AFAC7188BF59")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-17 13:03:25.643 -0400", hash_original_method = "3798C3AECEA696DCFE0B333FF00EF37C", hash_generated_method = "B716E8A4395B75FE9B78AFAC7188BF59")
         //DSFIXME:  CODE0002: Requires DSC value to be set
         @Override
         public FloatPropertyValuesHolder clone() {
@@ -942,7 +942,7 @@ public class PropertyValuesHolder implements Cloneable {
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-14 13:09:36.515 -0400", hash_original_method = "727C6F3DB059985E066E102AF679E2D9", hash_generated_method = "85901A941102451B84DBD4955DF8D2C4")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-17 13:03:25.652 -0400", hash_original_method = "727C6F3DB059985E066E102AF679E2D9", hash_generated_method = "85901A941102451B84DBD4955DF8D2C4")
         //DSFIXME:  CODE0002: Requires DSC value to be set
         @Override
          void setAnimatedValue(Object target) {
@@ -972,7 +972,7 @@ public class PropertyValuesHolder implements Cloneable {
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-14 13:09:36.530 -0400", hash_original_method = "2E99CF7209AB7743339028E8A9433227", hash_generated_method = "14B30FDADB98FD5F311FB1A119749696")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-17 13:03:25.662 -0400", hash_original_method = "2E99CF7209AB7743339028E8A9433227", hash_generated_method = "14B30FDADB98FD5F311FB1A119749696")
         //DSFIXME:  CODE0002: Requires DSC value to be set
         @Override
          void setupSetter(Class targetClass) {

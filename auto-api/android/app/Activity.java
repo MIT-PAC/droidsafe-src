@@ -1842,6 +1842,7 @@ public class Activity extends ContextThemeWrapper implements LayoutInflater.Fact
 		*/
 	}
 	
+	@DSModeled(DSC.SAFE)
 	@Override protected void onApplyThemeResource(Resources.Theme theme, int resid,
             boolean first){
 		super.onApplyThemeResource(theme, resid, first);

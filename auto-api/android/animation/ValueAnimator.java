@@ -1004,6 +1004,7 @@ public class ValueAnimator extends Animator {
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:14:57.361 -0400", hash_original_method = "7292715E4E63D06F016EF86B523F3E45", hash_generated_method = "6CA1D9064E9F73A210D3A416401BE832")
+    @DSModeled(DSC.SAFE)
     public static int getCurrentAnimationsCount() {
         return sAnimations.get().size();
     }
