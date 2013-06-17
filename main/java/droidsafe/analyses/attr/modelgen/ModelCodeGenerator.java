@@ -2,6 +2,8 @@ package droidsafe.analyses.attr.modelgen;
 
 import japa.parser.ASTHelper;
 import japa.parser.JavaParser;
+import japa.parser.ast.BlockComment;
+import japa.parser.ast.Comment;
 import japa.parser.ast.CompilationUnit;
 import japa.parser.ast.ImportDeclaration;
 import japa.parser.ast.PackageDeclaration;
@@ -32,14 +34,18 @@ import japa.parser.ast.type.ReferenceType;
 import japa.parser.ast.type.Type;
 import japa.parser.ast.type.VoidType;
 
+import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
+import java.io.FileReader;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
+import java.util.Map;
 import java.util.Set;
 import java.util.TreeSet;
 
@@ -127,6 +133,8 @@ public class ModelCodeGenerator {
     private File androidImplJar;
     
     private Set<String> importsProcessed = new HashSet<String>();
+    private Map<BodyDeclaration, String> methodCodeMap = new HashMap<BodyDeclaration, String>();
+    private int nextLine;
 
     public ModelCodeGenerator(String sourcePath, String className, Set<String> fieldNames) {
         this.className = className;
@@ -167,10 +175,16 @@ public class ModelCodeGenerator {
                 fieldNames.add(args[i]);
             }
             ModelCodeGenerator modelGen = new ModelCodeGenerator(sourcePath, className, fieldNames);
-            modelGen.loadSootClass();
             modelGen.generate();
             logger.info("Done.");
         }
+    }
+
+    private void generate() {
+        loadSootClass();
+        CompilationUnit cu = parseJavaSource();
+        CompilationUnit model = generateModel(cu);
+        writeModel(model);
     }
 
     private void loadSootClass() {
@@ -198,10 +212,103 @@ public class ModelCodeGenerator {
 //        }
     }
 
-    private void generate() {
-        CompilationUnit cu = parseJavaSource();
-        CompilationUnit model = generateModel(cu);
-        writeModel(model);
+    private CompilationUnit parseJavaSource() {
+        String javaFileName = constructPath(sourcePath, className.replace(".", File.separator)) + ".java";
+        logger.info("Parsing Java source " + javaFileName + "...");
+        FileInputStream in = null;
+        CompilationUnit cu = null;
+        try {
+            in = new FileInputStream(javaFileName);
+            cu = JavaParser.parse(in);
+            nextLine = 1;
+            computeMethodCodeMap(cu, javaFileName);
+        } catch (Exception e) {
+            logger.error("parseClass() failed", e);
+            System.exit(1);
+        } finally {
+            if (in != null)  
+                try {
+                    in.close();
+                } catch (IOException e) {
+                    logger.error("Failed to close the Java source file", e);
+                    System.exit(1);
+                }
+        }
+        return cu;
+    }
+
+    private void computeMethodCodeMap(CompilationUnit cu, String javaFileName) {
+        BufferedReader reader = null;
+        List<TypeDeclaration> types = cu.getTypes();
+        try {
+            reader = new BufferedReader(new FileReader(javaFileName));
+            nextLine = 1;
+            for (TypeDeclaration type : types) {
+                if (type instanceof ClassOrInterfaceDeclaration) {
+                    for (BodyDeclaration member: ((ClassOrInterfaceDeclaration)type).getMembers()) {
+                        if (member instanceof ConstructorDeclaration) {
+                            String code = getMethodCode(reader, ((ConstructorDeclaration) member).getBlock());
+                            methodCodeMap.put(member, code);
+                        }
+                        if (member instanceof MethodDeclaration) {
+                            String code = getMethodCode(reader, ((MethodDeclaration) member).getBody());
+                            methodCodeMap.put(member, code);
+                        }
+                    }
+                }
+            }
+        } catch (Exception e) {
+            logger.error("parseClass() failed", e);
+            System.exit(1);
+        } finally {
+            if (reader != null) 
+                try {
+                    reader.close();
+                } catch (IOException e) {
+                    logger.error("Failed to close the Java source file", e);
+                    System.exit(1);
+                }
+        }
+    }
+    
+    private String getMethodCode(BufferedReader reader, BlockStmt block) {
+        List<Statement> stmts = block.getStmts();
+        if (stmts == null || stmts.isEmpty())
+            return "";
+        Statement firstStmt = stmts.get(0);
+        Statement lastStmt = stmts.get(stmts.size() - 1);
+        Comment leadingComment = firstStmt.getComment();
+        int beginLine = (leadingComment != null) ? leadingComment.getBeginLine() : firstStmt.getBeginLine();
+        int beginColumn = firstStmt.getBeginColumn();
+        int endLine = lastStmt.getEndLine();
+        return getMethodCode(reader, beginLine, beginColumn, endLine);
+    }
+
+    private String getMethodCode(BufferedReader reader, int beginLine, int beginColumn, int endLine) {
+        StringBuffer buf = new StringBuffer("\n");
+        try {
+            while (nextLine < beginLine)
+                readLine(reader);
+            while (nextLine < endLine + 1) {
+                String line = readLine(reader);
+                // TODO: convert block comment to line comments
+                buf.append(line);
+                buf.append("\n");
+            }
+            for (int i = 0; i < beginColumn - 1; i++) {
+                buf.append(' ');
+            }
+        } catch (IOException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        }
+        return buf.toString();
+    }
+
+    private String readLine(BufferedReader reader) throws IOException {
+        String line = reader.readLine();
+        if (line != null) nextLine++;
+        return line;
     }
 
     private CompilationUnit generateModel(CompilationUnit cu) {
@@ -253,7 +360,8 @@ public class ModelCodeGenerator {
             if (member instanceof MethodDeclaration) {
                 MethodDeclaration method = (MethodDeclaration) member;
                 SootMethod sootMethod = getSootMethod(method.getName(), method.getParameters());
-                convertMethod(modelCoi, method, sootMethod);
+                String oldCode = methodCodeMap.get(method);
+                convertMethod(modelCoi, method, sootMethod, oldCode);
             }
         }
     }
@@ -351,14 +459,16 @@ public class ModelCodeGenerator {
     private void collectImports(String clsName, boolean isFieldType) {
         if (!importsProcessed.contains(clsName)) {
             String modeledClsName = MODEL_PACKAGE_PREFIX + clsName;
-            if (modeledClassNames.contains(modeledClsName) ||
-                    (isFieldType && clsName.startsWith("android."))) {
+            if (modeledClassNames.contains(modeledClsName) || isFieldType) {
+                if (isFieldType)
+                    modeledClassNames.add(modeledClsName);
                 imports.add(modeledClsName);
             } else if (!getQualifier(clsName).equals("java.lang"))
                 imports.add(clsName);
             importsProcessed.add(clsName);
         }
     }
+    
     private void generateConstructor(ClassOrInterfaceDeclaration modelCoi) {
         ConstructorDeclaration modelConstr = new ConstructorDeclaration(ModifierSet.PUBLIC, unqualifiedClassName);
         Parameter parameter = ASTHelper.createParameter(makeReferenceType("AllocNode"), "allocNode");
@@ -376,7 +486,8 @@ public class ModelCodeGenerator {
         method.setThrows(constr.getThrows());
         method.setBody(constr.getBlock());
         SootMethod sootMethod = getSootMethod("<init>", params);
-        convertMethod(modelCoi, method, sootMethod);                       
+        String oldCode = methodCodeMap.get(constr);
+        convertMethod(modelCoi, method, sootMethod, oldCode);                       
     }
 
     private SootMethod getSootMethod(String name, List<Parameter> parameters) {
@@ -403,15 +514,15 @@ public class ModelCodeGenerator {
                 }
             }
             if (sootMethod == null) {
-                StringBuffer sb = new StringBuffer(name);
-                sb.append('(');
+                StringBuffer buf = new StringBuffer(name);
+                buf.append('(');
                 for (int i = 0; i < paramCount; i++) {
                     if (i > 0)
-                        sb.append(",");
-                    sb.append(parameters.get(i));
+                        buf.append(",");
+                    buf.append(parameters.get(i));
                 }
-                sb.append(')');
-                logger.error("Failed to find soot method " + sb);
+                buf.append(')');
+                logger.error("Failed to find soot method " + buf);
                 System.exit(1);
             }
        }
@@ -445,7 +556,7 @@ public class ModelCodeGenerator {
             return type.toString().equals(sootType.toString());
     }
 
-    private void convertMethod(ClassOrInterfaceDeclaration modelCoi, MethodDeclaration method, SootMethod sootMethod) {
+    private void convertMethod(ClassOrInterfaceDeclaration modelCoi, MethodDeclaration method, SootMethod sootMethod, String oldCode) {
         collectImports(sootMethod.getExceptions());
         collectImports(sootMethod.getReturnType(), false);
         List<Parameter> params = method.getParameters();
@@ -457,7 +568,6 @@ public class ModelCodeGenerator {
                 Type newType = convertType(type, sootType, false);
                 param.setType(newType);
             }
-        List<Statement> oldStmts = method.getBody().getStmts();
         List<Statement> newStmts = new ArrayList<Statement>();
         Type returnType = method.getType();
         if (!sootMethod.isStatic()) {
@@ -470,8 +580,8 @@ public class ModelCodeGenerator {
             newStmts.add(returnStmt);
         }
         BlockStmt newBody = new BlockStmt(newStmts);
-        if (oldStmts != null && !oldStmts.isEmpty())
-            newBody.setCommentedOutStmts(oldStmts);
+        if (!oldCode.isEmpty())
+            newBody.setEndComment(new BlockComment(oldCode));
         method.setBody(newBody);
         ASTHelper.addMember(modelCoi, method);
     }
@@ -486,30 +596,6 @@ public class ModelCodeGenerator {
            }
        }
        return null;
-    }
-
-    private CompilationUnit parseJavaSource() {
-        String javaFileName = constructPath(sourcePath, className.replace(".", File.separator)) + ".java";
-        logger.info("Parsing Java source " + javaFileName + "...");
-        FileInputStream in = null;
-        CompilationUnit cu;
-        try {
-            in = new FileInputStream(javaFileName);
-            cu = JavaParser.parse(in);
-            return cu;
-        } catch (Exception e) {
-            logger.error("parseClass() failed", e);
-            System.exit(1);
-        } finally {
-            if (in != null)
-                try {
-                    in.close();
-                } catch (IOException e) {
-                    logger.error("Failed to close the Java source file", e);
-                    System.exit(1);
-                }
-        }
-        return null;
     }
 
     private void writeModel(CompilationUnit cu) {
@@ -588,13 +674,13 @@ public class ModelCodeGenerator {
     }
 
     private String constructPath(String ...comps) {
-        StringBuffer sb = new StringBuffer();
+        StringBuffer buf = new StringBuffer();
         for (int i = 0; i < comps.length; i++) {
             if (i > 0)
-                sb.append(File.separator);
-            sb.append(comps[i]);
+                buf.append(File.separator);
+            buf.append(comps[i]);
         }
-        return sb.toString();        
+        return buf.toString();        
     }
 
 }
