@@ -34,7 +34,7 @@ public class AdnRecord implements Parcelable {
     static final int ADN_DIALING_NUMBER_END = 11;
     static final int ADN_CAPABILITY_ID = 12;
     static final int ADN_EXTENSION_ID = 13;
-    public static final Parcelable.Creator<AdnRecord> CREATOR = new Parcelable.Creator<AdnRecord>() {        
+    public static final Parcelable.Creator<AdnRecord> CREATOR = new Parcelable.Creator<AdnRecord>() {
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.541 -0400", hash_original_method = "6D3E00478735263B7A5F1362FAEF6B0C", hash_generated_method = "81A377ED527701D67710F2AB6CDA6FB1")
         //DSFIXME:  CODE0002: Requires DSC value to be set
         public AdnRecord createFromParcel(Parcel source) {
@@ -64,7 +64,7 @@ public class AdnRecord implements Parcelable {
             //return new AdnRecord(efid, recordNumber, alphaTag, number, emails);
         }
 
-        
+
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.541 -0400", hash_original_method = "3B6DA40AF43FC2C814B6AF21D490BC95", hash_generated_method = "7AEE24B08816508CF03BF7F9DF38150C")
         @DSModeled(DSC.SAFE)
         public AdnRecord[] newArray(int size) {
@@ -74,18 +74,19 @@ public class AdnRecord implements Parcelable {
             //return new AdnRecord[size];
         }
 
-        
+
 }; //Transformed anonymous class
-    
+
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.542 -0400", hash_original_method = "7045C9AFF2F4A7CC7D801D193F8DA208", hash_generated_method = "28F199EE8BA933AEC2A109945345D8D1")
     //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSModeled(DSC.SAFE)
     public AdnRecord(byte[] record) {
         this(0, 0, record);
         dsTaint.addTaint(record);
         // ---------- Original Method ----------
     }
 
-    
+
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.542 -0400", hash_original_method = "39E5440420DD5CB806135CB05DFC1155", hash_generated_method = "07390A5DA384BBB831C446F2B2B6990A")
     @DSModeled(DSC.SAFE)
     public AdnRecord(int efid, int recordNumber, byte[] record) {
@@ -99,9 +100,10 @@ public class AdnRecord implements Parcelable {
         //parseRecord(record);
     }
 
-    
+
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.542 -0400", hash_original_method = "3103748B60A6B4F91D8C8340F4241AA3", hash_generated_method = "D282EA6D20638837B40A466CEB18102C")
     //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSModeled(DSC.SAFE)
     public AdnRecord(String alphaTag, String number) {
         this(0, 0, alphaTag, number);
         dsTaint.addTaint(number);
@@ -109,9 +111,10 @@ public class AdnRecord implements Parcelable {
         // ---------- Original Method ----------
     }
 
-    
+
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.542 -0400", hash_original_method = "C511B456FEBF7A32E27BD651B4B0F96B", hash_generated_method = "81BA1EE586C3DDF221D82AA66F989CFA")
     //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSModeled(DSC.SAFE)
     public AdnRecord(String alphaTag, String number, String[] emails) {
         this(0, 0, alphaTag, number, emails);
         dsTaint.addTaint(number);
@@ -120,7 +123,7 @@ public class AdnRecord implements Parcelable {
         // ---------- Original Method ----------
     }
 
-    
+
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.542 -0400", hash_original_method = "06878C60780B4D9C01767F1F53E52E0B", hash_generated_method = "E799B8B8F7BA3B5F6ED523A5B9AB72D6")
     @DSModeled(DSC.SAFE)
     public AdnRecord(int efid, int recordNumber, String alphaTag, String number, String[] emails) {
@@ -137,7 +140,7 @@ public class AdnRecord implements Parcelable {
         //this.emails = emails;
     }
 
-    
+
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.542 -0400", hash_original_method = "D0AEC6EC6E3FB2D90C73DE97D25EE860", hash_generated_method = "25801949D05BCCBC0DDAE9295B42BF25")
     @DSModeled(DSC.SAFE)
     public AdnRecord(int efid, int recordNumber, String alphaTag, String number) {
@@ -154,7 +157,7 @@ public class AdnRecord implements Parcelable {
         //this.emails = null;
     }
 
-    
+
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.542 -0400", hash_original_method = "AC3A7A9E3A191B711B11224D0DA9AF99", hash_generated_method = "AABD74E5CCBF61E6EF72A095D3536517")
     @DSModeled(DSC.SAFE)
     public String getAlphaTag() {
@@ -163,7 +166,7 @@ public class AdnRecord implements Parcelable {
         //return alphaTag;
     }
 
-    
+
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.542 -0400", hash_original_method = "EC6570D4091CFB302FD4A14DB7A9F4B4", hash_generated_method = "175A05AA3ECCF1634EEB242036B1640B")
     @DSModeled(DSC.SAFE)
     public String getNumber() {
@@ -172,7 +175,7 @@ public class AdnRecord implements Parcelable {
         //return number;
     }
 
-    
+
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.542 -0400", hash_original_method = "92D2F53049B5866D80AA794995783C1B", hash_generated_method = "A68879C56229DBC5E5E9521F450CAE67")
     @DSModeled(DSC.SAFE)
     public String[] getEmails() {
@@ -183,7 +186,7 @@ public class AdnRecord implements Parcelable {
         //return emails;
     }
 
-    
+
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.542 -0400", hash_original_method = "318E4DB00CD29A795BAB76EF64647C6C", hash_generated_method = "7A08E51A6D24E66C96F84142AD744498")
     @DSModeled(DSC.SAFE)
     public void setEmails(String[] emails) {
@@ -192,7 +195,7 @@ public class AdnRecord implements Parcelable {
         //this.emails = emails;
     }
 
-    
+
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.542 -0400", hash_original_method = "68220200E4F2B5D293B76BDD34BEE487", hash_generated_method = "56AD64208C536A922A6B2731E0F14808")
     @DSModeled(DSC.SAFE)
     public String toString() {
@@ -201,9 +204,10 @@ public class AdnRecord implements Parcelable {
         //return "ADN Record '" + alphaTag + "' '" + number + " " + emails + "'";
     }
 
-    
+
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.542 -0400", hash_original_method = "5D6691CA551F86617D7220208AC31A8F", hash_generated_method = "F71A0F5A5DE326B9671E37069F566027")
     //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSModeled(DSC.SAFE)
     public boolean isEmpty() {
         boolean var64ACE25E19B6897AA2A6A6E9C8F778BE_2081382820 = (TextUtils.isEmpty(alphaTag) && TextUtils.isEmpty(number) && emails == null);
         return dsTaint.getTaintBoolean();
@@ -211,7 +215,7 @@ public class AdnRecord implements Parcelable {
         //return TextUtils.isEmpty(alphaTag) && TextUtils.isEmpty(number) && emails == null;
     }
 
-    
+
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.542 -0400", hash_original_method = "D17030B2DC40ED56DDEA746A2C4F2F4F", hash_generated_method = "0DE1D32BE28892DC7EE42504667E30F4")
     @DSModeled(DSC.SAFE)
     public boolean hasExtendedRecord() {
@@ -220,8 +224,9 @@ public class AdnRecord implements Parcelable {
         //return extRecord != 0 && extRecord != 0xff;
     }
 
-    
+
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.542 -0400", hash_original_method = "FFF6375FFC722DE9AA4BE2FB124374C8", hash_generated_method = "67BCA36BAA2384216D92880D51BF96F5")
+    @DSModeled(DSC.SAFE)
     private static boolean stringCompareNullEqualsEmpty(String s1, String s2) {
         if (s1 == s2) {
             return true;
@@ -235,9 +240,10 @@ public class AdnRecord implements Parcelable {
         return (s1.equals(s2));
     }
 
-    
+
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.542 -0400", hash_original_method = "EA1ABD1A8E044AEC4146178ABB95A33B", hash_generated_method = "1E300B11972FB195EFA82836552D608C")
     //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSModeled(DSC.SAFE)
     public boolean isEqual(AdnRecord adn) {
         dsTaint.addTaint(adn.dsTaint);
         boolean var845971BACDC4C2202680A46C8D0E99B3_429818235 = (( stringCompareNullEqualsEmpty(alphaTag, adn.alphaTag) &&
@@ -250,7 +256,7 @@ public class AdnRecord implements Parcelable {
                 //Arrays.equals(emails, adn.emails));
     }
 
-    
+
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.543 -0400", hash_original_method = "00F8174F9E89D0C972FA6D3F19742382", hash_generated_method = "7491C6FB42F78871A3F8EA322AF6B2FC")
     @DSModeled(DSC.SAFE)
     public int describeContents() {
@@ -259,7 +265,7 @@ public class AdnRecord implements Parcelable {
         //return 0;
     }
 
-    
+
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.543 -0400", hash_original_method = "D94966D9C7C7FE5B7B9FBD39671B9050", hash_generated_method = "3E1A07687EBA1E9ACAA8727047813A46")
     @DSModeled(DSC.SAFE)
     public void writeToParcel(Parcel dest, int flags) {
@@ -278,9 +284,10 @@ public class AdnRecord implements Parcelable {
         //dest.writeStringArray(emails);
     }
 
-    
+
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.543 -0400", hash_original_method = "43E5A3A3017D389C996FCD504E7A9103", hash_generated_method = "C61065AAFAFC2D9B3346C8B0C61D3144")
     //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSModeled(DSC.SAFE)
     public byte[] buildAdnString(int recordSize) {
         dsTaint.addTaint(recordSize);
         byte[] bcdNumber;
@@ -331,12 +338,13 @@ public class AdnRecord implements Parcelable {
         // Original Method Too Long, Refer to Original Implementation
     }
 
-    
+
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.543 -0400", hash_original_method = "D43EB4B47E694B53E14D637B6CBB15DA", hash_generated_method = "FDF95BAA65415C56F079E748B44A4AF8")
     //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSModeled(DSC.SAFE)
     public void appendExtRecord(byte[] extRecord) {
         dsTaint.addTaint(extRecord);
-        try 
+        try
         {
             number += PhoneNumberUtils.calledPartyBCDFragmentToString(
                                         extRecord, 2, 0xff & extRecord[1]);
@@ -362,12 +370,13 @@ public class AdnRecord implements Parcelable {
         //}
     }
 
-    
+
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.543 -0400", hash_original_method = "C94E0153AA9A00481672837ABFA310B4", hash_generated_method = "BAEF79DD3DA25AA27FAA83D0345C49CA")
     //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSModeled(DSC.SAFE)
     private void parseRecord(byte[] record) {
         dsTaint.addTaint(record);
-        try 
+        try
         {
             alphaTag = IccUtils.adnStringFieldToString(
                             record, 0, record.length - FOOTER_SIZE_BYTES);
@@ -393,7 +402,7 @@ public class AdnRecord implements Parcelable {
         // Original Method Too Long, Refer to Original Implementation
     }
 
-    
+
 }
 
 
