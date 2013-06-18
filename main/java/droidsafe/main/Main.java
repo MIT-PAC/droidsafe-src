@@ -1,6 +1,6 @@
 package droidsafe.main;
 
-import droidsafe.analyses.attr.AttributeModeling;
+import droidsafe.analyses.value.ValueAnalysis;
 import droidsafe.analyses.EntryPointCGEdges;
 import droidsafe.analyses.GeoPTA;
 import droidsafe.analyses.infoflow.InformationFlowAnalysis;
@@ -129,7 +129,7 @@ public class Main {
         RCFG.generate();
        
         logger.info("Starting Attribute Modeling");
-        AttributeModeling.run();
+        ValueAnalysis.run();
         logger.info("Finished Attribute Modeling");
 
         // print out what modeling is required for this application

@@ -1,7 +1,7 @@
 package droidsafe.analyses.strings;
 
-import droidsafe.analyses.attr.AttributeModeling;
-import droidsafe.analyses.attr.AttrModeledClass;
+import droidsafe.analyses.value.ValueAnalysis;
+import droidsafe.analyses.value.ValueAnalysisModeledObject;
 
 import java.lang.reflect.Method;
 import java.lang.reflect.ParameterizedType;
@@ -22,20 +22,20 @@ public class JSAUtils {
      * Set JSA hotspots to be every method signature in attr modeling that has a string as a parameter
      */
     public static void setUpHotspots(){
-        Reflections reflections = new Reflections(AttributeModeling.MODEL_PACKAGE);
+        Reflections reflections = new Reflections(ValueAnalysis.MODEL_PACKAGE);
 
-        Set<Class<? extends AttrModeledClass>> modeledClasses = 
-            reflections.getSubTypesOf(AttrModeledClass.class);
+        Set<Class<? extends ValueAnalysisModeledObject>> modeledClasses = 
+            reflections.getSubTypesOf(ValueAnalysisModeledObject.class);
 
-        for(Class<? extends AttrModeledClass> modeledClass : modeledClasses){
+        for(Class<? extends ValueAnalysisModeledObject> modeledClass : modeledClasses){
             Method modeledMethods[] = modeledClass.getDeclaredMethods();
 
             for (Method modeledMethod : modeledMethods) {
                 ArrayList<Integer> paramOfInterestIndexes = new ArrayList<Integer>();
 
                 String signature = "<";
-                signature += modeledClass.getName().replace(AttributeModeling.MODEL_PACKAGE_PREFIX, "") + ": ";
-                signature += modeledMethod.getReturnType().getName().replace(AttributeModeling.MODEL_PACKAGE_PREFIX, "")
+                signature += modeledClass.getName().replace(ValueAnalysis.MODEL_PACKAGE_PREFIX, "") + ": ";
+                signature += modeledMethod.getReturnType().getName().replace(ValueAnalysis.MODEL_PACKAGE_PREFIX, "")
                           + " ";
                 signature += modeledMethod.getName().replace("_init_", "<init>");
 
@@ -53,7 +53,7 @@ public class JSAUtils {
                             if(typeParamForBaseInterface instanceof Class) {
                                 Class typeParamForBaseInterfaceClass = (Class)typeParamForBaseInterface;
                                 paramTypeString = typeParamForBaseInterfaceClass.getName()
-                                                  .replace(AttributeModeling.MODEL_PACKAGE_PREFIX, "");
+                                                  .replace(ValueAnalysis.MODEL_PACKAGE_PREFIX, "");
                                 if(   paramTypeString.equals("java.lang.String") 
                                    || paramTypeString.equals("java.lang.CharSequence")
                                    || paramTypeString.equals("java.lang.StringBuffer")

@@ -1,8 +1,8 @@
 package droidsafe.analyses.infoflow;
 
-import droidsafe.analyses.attr.AttributeModeling;
-import droidsafe.analyses.attr.AttrModeledClass;
-import droidsafe.analyses.attr.models.android.net.Uri;
+import droidsafe.analyses.value.ValueAnalysis;
+import droidsafe.analyses.value.ValueAnalysisModeledObject;
+import droidsafe.analyses.value.models.android.net.Uri;
 
 import java.lang.reflect.Field;
 
@@ -33,7 +33,7 @@ public class InjectedSourceFlows {
     private static InjectedSourceFlows v;
 
     /** local to store the attribute modeling results in */
-    private final Map<AllocNode, AttrModeledClass> attrModelingResults;
+    private final Map<AllocNode, ValueAnalysisModeledObject> attrModelingResults;
 
     /**
      * runs the analysis
@@ -53,7 +53,7 @@ public class InjectedSourceFlows {
      * Private (to enforce singleton pattern) class constructor that runs the analysis
      */
     private InjectedSourceFlows() {
-        this.attrModelingResults = AttributeModeling.v().getResults();
+        this.attrModelingResults = ValueAnalysis.v().getResults();
     }
 
     /**
@@ -92,7 +92,7 @@ public class InjectedSourceFlows {
         Set<String> stringsToInspect = new HashSet<String>();
         
         if(this.attrModelingResults.containsKey(node)){
-            AttrModeledClass modeledClass = this.attrModelingResults.get(node);
+            ValueAnalysisModeledObject modeledClass = this.attrModelingResults.get(node);
             try {
                 Class<?> c = modeledClass.getClass();
                 Field fld = c.getDeclaredField(field.getName());
