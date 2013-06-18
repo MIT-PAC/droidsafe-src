@@ -80,6 +80,16 @@
             id="droidsafe.eclipse.plugin.core.commands.CollapseNode"
             name="Collapse Node">
       </command>
+      <command
+            defaultHandler="droidsafe.eclipse.plugin.core.commands.RerunDroidsafeAnalysis"
+            id="droidsafe.eclipse.plugin.core.commands.RerunDroidsafeAnalysis"
+            name="Rerun Droidsafe">
+      </command>
+      <command
+            defaultHandler="droidsafe.eclipse.plugin.core.commands.RefreshOutlineView"
+            id="droidsafe.eclipse.plugin.core.commands.RefreshOutlineView"
+            name="Refresh View">
+      </command>
    </extension>
    <extension
          point="org.eclipse.ui.menus">
@@ -211,7 +221,15 @@
                label="Collapse Node(s)"
                style="push">
          </command>
-      </menuContribution>
+         <separator
+               name="droidsafe.eclipse.plugin.core.outlineview.popupmenu.separator2"
+               visible="true">
+         </separator>
+         <dynamic
+               class="droidsafe.eclipse.plugin.core.view.DynamicHotspotMenu"
+               id="droidsafe.eclipse.plugin.core.view.DynamicHotspotMenu">
+         </dynamic>
+   </menuContribution> -->
       <menuContribution
             allPopups="false"
             locationURI="menu:droidsafe.eclipse.plugin.core.view.DroidsafeSpecView">
@@ -234,6 +252,15 @@
                <parameter
                      name="org.eclipse.ui.commands.radioStateParameter"
                      value="class">
+               </parameter>
+            </command>
+            <command
+                  commandId="droidsafe.eclipse.plugin.core.commands.SortView"
+                  label="Sort by Status"
+                  style="radio">
+               <parameter
+                     name="org.eclipse.ui.commands.radioStateParameter"
+                     value="status">
                </parameter>
             </command>
          </menu>
@@ -276,6 +303,16 @@
                name="droidsafe.eclipse.plugin.core.separator3"
                visible="true">
          </separator>
+         <command
+               commandId="droidsafe.eclipse.plugin.core.commands.RerunDroidsafeAnalysis"
+               label="Rerun Droidsafe Analysis"
+               style="push">
+         </command>
+         <command
+               commandId="droidsafe.eclipse.plugin.core.commands.RefreshOutlineView"
+               label="Refresh Outline View"
+               style="push">
+         </command>
       </menuContribution>
    </extension>
    <extension

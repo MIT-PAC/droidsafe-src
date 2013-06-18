@@ -9,6 +9,7 @@ import org.eclipse.jface.action.MenuManager;
 import org.eclipse.jface.text.Document;
 import org.eclipse.jface.text.IDocument;
 import org.eclipse.jface.text.TextViewer;
+import org.eclipse.jface.viewers.ColumnViewerToolTipSupport;
 import org.eclipse.jface.viewers.DoubleClickEvent;
 import org.eclipse.jface.viewers.IBaseLabelProvider;
 import org.eclipse.jface.viewers.IDoubleClickListener;
@@ -35,6 +36,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import droidsafe.eclipse.plugin.core.Activator;
+import droidsafe.eclipse.plugin.core.specmodel.CodeLocationModel;
 import droidsafe.eclipse.plugin.core.specmodel.MethodModel;
 import droidsafe.eclipse.plugin.core.specmodel.SecuritySpecModel;
 import droidsafe.eclipse.plugin.core.specmodel.TreeElement;
@@ -95,8 +97,10 @@ public class SecuritySpecOutlineViewPart extends ViewPart {
    *        security spec for the currently selected project cannot be found.
    */
   private void initializeSecuritySpec(Composite parent) {
+
     this.selectedProject = getSelectedProject();
     if (this.selectedProject == null) {
+      disposeTreeViewer();
       this.textViewer = new TextViewer(parent, SWT.MULTI | SWT.H_SCROLL | SWT.V_SCROLL);
       IDocument document = new Document();
       document.set("No Android Project selected. "
@@ -109,6 +113,7 @@ public class SecuritySpecOutlineViewPart extends ViewPart {
       this.securitySpecModel = SecuritySpecModel.deserializeSpecFromFile(projectRootPath);
 
       if (this.securitySpecModel == null) {
+        disposeTreeViewer();
         this.textViewer = new TextViewer(parent, SWT.MULTI | SWT.H_SCROLL | SWT.V_SCROLL);
         IDocument document = new Document();
         document.set("Droidsafe spec for selected project has not been computed yet. "
@@ -155,6 +160,20 @@ public class SecuritySpecOutlineViewPart extends ViewPart {
     getSite().getPage().addSelectionListener(this.selectionListener);
   }
 
+  /**
+   * Rereads the serialized spec from file and resets the tree input.
+   */
+  public void refreshSpecAndOutlineView() {
+    this.securitySpecModel = null;
+    initializeSecuritySpec(this.parentComposite);
+    if (this.securitySpecModel != null) {
+      if (getViewer() == null) {
+        initializeTreeViewer();
+      } else {
+        getViewer().setInput(securitySpecModel);
+      }
+    }
+  }
 
   /**
    * Standard Eclipse method to create a view. Initializes the security spec if a project is
@@ -178,15 +197,18 @@ public class SecuritySpecOutlineViewPart extends ViewPart {
    */
   private void initializeTreeViewer() {
     if (this.securitySpecModel != null && this.parentComposite != null) {
+      disposeTextViewer();
+      disposeTreeViewer();
       this.viewer = new TreeViewer(parentComposite, SWT.MULTI | SWT.H_SCROLL | SWT.V_SCROLL);
       viewer.setContentProvider(this.contentProvider);
       viewer.setLabelProvider(this.labelProvider);
       viewer.setAutoExpandLevel(1);
       viewer.setUseHashlookup(true);
+      ColumnViewerToolTipSupport.enableFor(viewer);
       sortViewByMethodName();
 
       // Make sure there is no text viewer in the container otherwise we get a split screen.
-      disposeTextViewer();
+
       viewer.setInput(securitySpecModel);
 
       MenuManager menuManager = new MenuManager();
@@ -282,6 +304,17 @@ public class SecuritySpecOutlineViewPart extends ViewPart {
     }
   }
 
+  /**
+   * Removes any tree viewer from the outline panel
+   * 
+   */
+  private void disposeTreeViewer() {
+    if (this.viewer != null) {
+      viewer.getTree().dispose();
+      viewer = null;
+    }
+  }
+
   @Override
   public void setFocus() {
     if (viewer != null) {
@@ -297,6 +330,10 @@ public class SecuritySpecOutlineViewPart extends ViewPart {
    */
   public TreeViewer getViewer() {
     return this.viewer;
+  }
+
+  public SecuritySpecModel getSecuritySpec() {
+    return this.securitySpecModel;
   }
 
   public void dispose() {
@@ -348,11 +385,24 @@ public class SecuritySpecOutlineViewPart extends ViewPart {
       IResource res = (IResource) ((IAdaptable) selectedObject).getAdapter(IResource.class);
       IProject project = res.getProject();
       if (project != null) {
-        //logger.debug("Project found: " + project.getName());
+        // logger.debug("Project found: " + project.getName());
         return project;
       }
     }
     return null;
+  }
+
+  /**
+   * Sets the value of the selectedProject field if it is null and returns the value of the
+   * selectedProject field.
+   * 
+   * @return The android app Eclipse project corresponding to the security spec in the outline view.
+   */
+  public IProject getProject() {
+    if (this.selectedProject == null) {
+      this.selectedProject = getSelectedProject();
+    }
+    return this.selectedProject;
   }
 
 
@@ -431,4 +481,52 @@ public class SecuritySpecOutlineViewPart extends ViewPart {
     });
   }
 
+
+  public void sortViewByStatusAndClassName() {
+    this.viewer.setSorter(new ViewerSorter() {
+      public int compare(Viewer view, Object o1, Object o2) {
+        int result = 0;
+        if (o1 instanceof TreeElement<?, ?> && o2 instanceof TreeElement<?, ?>) {
+          Object oo1 = ((TreeElement<?, ?>) o1).getData();
+          Object oo2 = ((TreeElement<?, ?>) o2).getData();
+          // logger.debug("Elements tested o1 {} o2 {} result {}", new Object[] {
+          // ((TreeElement<?, ?>) o1).getName(), ((TreeElement<?, ?>) o2).getName()});
+          return compare(view, oo1, oo2);
+
+        } else if (o1 instanceof MethodModel && o2 instanceof MethodModel) {
+          MethodModel m1 = (MethodModel) o1;
+          MethodModel m2 = (MethodModel) o2;
+          result = m1.getStatus().compareTo(m2.getStatus());
+          if (result == 0) {
+            result = m1.getClassName().compareTo(m2.getClassName());
+          }
+          // logger.debug("Class Names m1 {} m2 {} result {}",
+          // new Object[] {m1.getClassName(), m2.getClassName(), Integer.toString(result)});
+          if (result == 0) {
+            result = m1.getMethodName().compareTo(m2.getMethodName());
+          }
+          if (result == 0) {
+            result = m1.getReturnType().compareTo(m2.getReturnType());
+          }
+          if (result == 0) {
+            result = m1.getSignature().compareTo(m2.getSignature());
+          }
+          // logger.debug("Class Names m1 {} m2 {} result {}",
+          // new Object[] {m1.getClassName(), m2.getClassName(), Integer.toString(result)});
+        } else if (o1 instanceof CodeLocationModel && o2 instanceof CodeLocationModel) {
+          CodeLocationModel l1 = (CodeLocationModel) o1;
+          CodeLocationModel l2 = (CodeLocationModel) o2;
+          result = l1.getStatus().compareTo(l2.getStatus());
+          if (result == 0) {
+            result = l1.getClz().compareTo(l2.getClz());
+          }
+          if (result == 0) {
+            result = Integer.valueOf(l1.getLine()).compareTo(Integer.valueOf(l2.getLine()));
+          }
+        }
+        return result;
+      }
+    });
   }
+
+}

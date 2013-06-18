@@ -18,6 +18,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import droidsafe.eclipse.plugin.core.specmodel.CodeLocationModel;
+import droidsafe.eclipse.plugin.core.specmodel.HotspotModel;
 import droidsafe.eclipse.plugin.core.specmodel.MethodModel;
 import droidsafe.eclipse.plugin.core.specmodel.TreeElement;
 
@@ -39,6 +40,9 @@ public class TreeElementLabelProvider extends StyledCellLabelProvider {// LabelP
   /** The image for the unsafe method node in the outline view */
   private static final Image UNSAFE_METHOD_IMAGE = getImage("red-android.png");
 
+  /**  Image for Hotspot Nodes */
+  private static final Image HOTSPOT_IMAGE = getImage("hotspot.png");
+  
   /** The image for whitelist entry in the outline view */
   private static final Image DEFAULT_IMAGE = PlatformUI.getWorkbench().getSharedImages()
       .getImage(ISharedImages.IMG_OBJ_FOLDER);
@@ -69,6 +73,19 @@ public class TreeElementLabelProvider extends StyledCellLabelProvider {// LabelP
     return element.toString();
   }
 
+
+  public String getToolTipText(Object obj) {
+    if (obj instanceof TreeElement<?, ?>) {
+      TreeElement<?, ?> element = (TreeElement<?, ?>) obj;
+      Object data = element.getData();
+      if (data instanceof MethodModel) {
+        return ((MethodModel) data).getSignature();
+      }
+    }
+    return null;
+  }
+
+
   /**
    * Returns the icon image for the tree node.
    * 
@@ -97,7 +114,10 @@ public class TreeElementLabelProvider extends StyledCellLabelProvider {// LabelP
         } else {
           return UNRESOLVED_SOURCE_LOCATION_IMAGE;
         }
+      }else if (data instanceof HotspotModel){
+        return HOTSPOT_IMAGE;
       }
+        
     }
     return DEFAULT_IMAGE;
   }
