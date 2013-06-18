@@ -27,6 +27,7 @@ import java.io.PrintWriter;
 import java.lang.reflect.Constructor;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Iterator;
@@ -107,6 +108,9 @@ public class AttributeModeling {
     /** Set of methods we simulated and thus don't want to step through */
     private Set<SootMethod> simulatedMethods;
 
+    /** Set of methods to not invalidate */
+    private Set<String> sigsOfMethodsToNotInvalidate = new HashSet<String>(Arrays.asList("startActivityForResult"));
+     
     /** FileWriter used to log what we still don't model but perhaps should */
     private FileWriter attrModelingTodoLog;
 
@@ -403,18 +407,20 @@ public class AttributeModeling {
             }
             this.simulatedMethods.add(invokeExpr.getMethod());
         } catch (Exception e) {
-            String error = "The InvokeExpr " + invokeExpr + this.sourceLocation + " hasn't been modeled: " 
-                           + e.toString() + "\n";
-            error += Throwables.getStackTraceAsString(e);
-            // The method isn't modeled, so we must invalidate every argument that we modeled
-            this.invalidateParamObjects(paramObjectCartesianProduct);
+            if(!this.sigsOfMethodsToNotInvalidate.contains(methodName)) {
+                String error = "The InvokeExpr " + invokeExpr + this.sourceLocation + " hasn't been modeled: " 
+                               + e.toString() + "\n";
+                error += Throwables.getStackTraceAsString(e);
+                // The method isn't modeled, so we must invalidate every argument that we modeled
+                this.invalidateParamObjects(paramObjectCartesianProduct);
 
-            // If this is an InstanceInvoke, also invalidate the receiver object
-            if (modeledReceiverObject != null){
-                modeledReceiverObject.invalidate();
-                error += "\n" + "> invalidating receiver " + modeledReceiverObject + " as a result";
+                // If this is an InstanceInvoke, also invalidate the receiver object
+                if (modeledReceiverObject != null){
+                    modeledReceiverObject.invalidate();
+                    error += "\n" + "> invalidating receiver " + modeledReceiverObject + " as a result";
+                }
+                this.logError(error);
             }
-            this.logError(error);
         }
         return objectsToReturn;
     }

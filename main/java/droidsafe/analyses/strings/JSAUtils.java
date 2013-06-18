@@ -71,8 +71,6 @@ public class JSAUtils {
                 signature += ")>";
                 if(paramOfInterestIndexes.size() > 0){
                     for(Integer index : paramOfInterestIndexes){
-                        System.out.println(signature);
-                        System.out.println(index);
                         JSAStrings.v().addArgumentHotspots(signature, index);
                     }
                 }

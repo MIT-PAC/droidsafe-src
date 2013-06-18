@@ -4,6 +4,8 @@ import droidsafe.analyses.attr.AttrModeledClass;
 import droidsafe.analyses.attr.models.android.content.Intent;
 import droidsafe.analyses.attr.models.android.net.Uri;
 
+import java.util.Set;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -15,7 +17,13 @@ public class DSUtils extends AttrModeledClass {
         result.setPackage(request.getPackage());
 
         if (request.getData() == null){
-            result.setData(new Uri(request.getType()));
+            Uri resultData = result.getData();
+            Set<String> type = request.getType();
+            if(resultData == null) {
+                result.setData(new Uri(type));
+            } else {
+                resultData.uriString.addAll(type);
+            }
         } else {
             result.setData(request.getData());
         }

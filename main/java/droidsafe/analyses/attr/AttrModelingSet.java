@@ -48,7 +48,7 @@ public class AttrModelingSet<E> extends ForwardingSet<E> {
      * Forwarding method
      */
     public boolean addAll(Collection<? extends E> c)
-    { 
+    {
         for(E e : c) {
             if(!this.getSet().contains(e)){
                 AttributeModeling.changed = true;

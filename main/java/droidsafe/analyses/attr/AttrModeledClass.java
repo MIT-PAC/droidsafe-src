@@ -121,10 +121,15 @@ public abstract class AttrModeledClass {
                         if(value instanceof Set && ((Set)value).size() == 0) {
                             continue;
                         }
-                        attrs.add(field.getName() + ": " + value);
+                        String newAttr = field.getName() + ": ";
+                        if(value instanceof AttrModeledClass) {
+                          newAttr += ((AttrModeledClass)value).dsDisplay();
+                        } else {
+                          newAttr += value;
+                        }
+                        attrs.add(newAttr);
                     }
                 } catch (IllegalAccessException e) {
-                    System.out.println(e);
                     // simply don't print out the field value
                 }
             }
