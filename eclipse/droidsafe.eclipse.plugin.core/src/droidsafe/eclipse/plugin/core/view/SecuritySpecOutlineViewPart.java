@@ -406,6 +406,25 @@ public class SecuritySpecOutlineViewPart extends ViewPart {
   }
 
 
+  /**
+   * Method to set the type of labels should be used for method nodes in the outline. It calls the
+   * label provided method <code>setUseShortSignatureForMethods</code> and refreshes the view if
+   * necessary.
+   * 
+   * @param useShortSignature A boolean that tells if the label for methods nodes should use the
+   *        short signature (value TRUE) or if it shoul use the long signature (value FALSE).
+   * 
+   */
+  public void setUseShortSignatureForMethods(boolean useShortSignature) {
+    boolean oldValue =
+        ((TreeElementLabelProvider) this.labelProvider)
+            .setUseShortSignatureForMethods(useShortSignature);
+    if (oldValue != useShortSignature) {
+      this.viewer.refresh();
+    }
+  }
+
+
   public void sortViewByMethodName() {
     this.viewer.setSorter(new ViewerSorter() {
 

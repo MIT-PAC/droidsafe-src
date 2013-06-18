@@ -90,6 +90,30 @@
             id="droidsafe.eclipse.plugin.core.commands.RefreshOutlineView"
             name="Refresh View">
       </command>
+      <command
+            defaultHandler="droidsafe.eclipse.plugin.core.commands.SetLabelTypeForMethodNode"
+            id="droidsafe.eclipse.plugin.core.commands.SetLabelTypeForMethodNode"
+            name="Set Label Type for Method Node">
+         <commandParameter
+               id="org.eclipse.ui.commands.radioStateParameter"
+               name="SetLabelTypeForMethodNode"
+               optional="false">
+         </commandParameter>
+         <state
+               id="org.eclipse.ui.commands.radioState">
+            <class
+                  class="org.eclipse.ui.handlers.RadioState">
+               <parameter
+                     name="default"
+                     value="short_label">
+               </parameter>
+               <parameter
+                     name="persisted"
+                     value="false">
+               </parameter>
+            </class>
+         </state>
+      </command>
    </extension>
    <extension
          point="org.eclipse.ui.menus">
@@ -261,6 +285,28 @@
                <parameter
                      name="org.eclipse.ui.commands.radioStateParameter"
                      value="status">
+               </parameter>
+            </command>
+         </menu>
+         <menu
+               id="droidsafe.eclipse.plugin.core.view.SetLabelTypeForMethodNode"
+               label="Method Label">
+            <command
+                  commandId="droidsafe.eclipse.plugin.core.commands.SetLabelTypeForMethodNode"
+                  label="Short Label"
+                  style="radio">
+               <parameter
+                     name="org.eclipse.ui.commands.radioStateParameter"
+                     value="short_label">
+               </parameter>
+            </command>
+            <command
+                  commandId="droidsafe.eclipse.plugin.core.commands.SetLabelTypeForMethodNode"
+                  label="Long Label"
+                  style="radio">
+               <parameter
+                     name="org.eclipse.ui.commands.radioStateParameter"
+                     value="long_label">
                </parameter>
             </command>
          </menu>

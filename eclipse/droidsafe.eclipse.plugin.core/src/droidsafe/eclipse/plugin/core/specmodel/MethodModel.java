@@ -134,6 +134,10 @@ public class MethodModel extends ModelChangeSupport
       this.methodArgumentValues.add(argValue);
       // logger.debug("Argument for method {} is {}", new Object[] {methodSignature, argValue});
     }
+    // if (originalMethod.getReceiver() != null) {
+    // Object receiver = originalMethod.getReceiver();
+    // logger.debug("Receiver for method {}", originalMethod.getReceiver().getClass());
+    // }
   }
 
   /**
