@@ -136,7 +136,7 @@ The generated code will reside in the 'generated' subdirectory of the current di
 
 will generate a file named
 
-    * generated/droidsafe.analyses.value/models/android/content/Intent.java
+    * generated/droidsafe/analyses/value/models/android/content/Intent.java
 
 
 ## Dependencies
