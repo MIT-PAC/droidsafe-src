@@ -7,7 +7,7 @@ do
   CLASS_PATH=$CLASS_PATH:$jar
 done
 
-MAIN_CLASS=droidsafe.analyses.attr.modelgen.ModelCodeGenerator
+MAIN_CLASS=droidsafe.analyses.value.modelgen.ModelCodeGenerator
 
 java -Xms1g -Xmx16g -cp $CLASS_PATH $MAIN_CLASS $*
 
