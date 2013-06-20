@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <site>
-   <feature url="features/droidsafe.eclipse.plugin.feature_1.0.0.qualifier.jar" id="droidsafe.eclipse.plugin.feature" version="1.0.0.qualifier">
+   <feature url="features/Droidsafe_1.0.0.201306201113.jar" id="Droidsafe" version="1.0.0.201306201113">
       <category name="droidsafe"/>
    </feature>
    <category-def name="droidsafe" label="Droidsafe Plugin"/>

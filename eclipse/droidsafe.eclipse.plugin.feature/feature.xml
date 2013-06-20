@@ -29,6 +29,12 @@ All rights reserved.
       <import plugin="ch.qos.logback.classic"/>
       <import plugin="ch.qos.logback.core"/>
       <import plugin="org.eclipse.ui.editors"/>
+      <import plugin="org.eclipse.jdt.core"/>
+      <import plugin="org.eclipse.core.databinding" version="1.4.1" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.core.databinding.beans" version="1.2.200" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.core.databinding.observable" version="1.4.1" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.core.databinding.property" version="1.4.100" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.jface.databinding" version="1.6.0" match="greaterOrEqual"/>
    </requires>
 
    <plugin

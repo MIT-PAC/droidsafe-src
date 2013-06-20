@@ -36,13 +36,13 @@ import ch.qos.logback.core.util.StatusPrinter;
 import droidsafe.analyses.GeoPTA;
 import droidsafe.analyses.RCFGToSSL;
 import droidsafe.analyses.RequiredModeling;
-import droidsafe.analyses.attr.AttributeModeling;
 import droidsafe.analyses.infoflow.InformationFlowAnalysis;
 import droidsafe.analyses.infoflow.InterproceduralControlFlowGraph;
 import droidsafe.analyses.rcfg.RCFG;
 import droidsafe.analyses.strings.JSAStrings;
-import droidsafe.analyses.strings.JSAUtils;
 import droidsafe.analyses.strings.JSAStrings.Hotspot;
+import droidsafe.analyses.strings.JSAUtils;
+import droidsafe.analyses.value.ValueAnalysis;
 import droidsafe.android.app.EntryPoints;
 import droidsafe.android.app.Harness;
 import droidsafe.android.app.Project;
@@ -60,6 +60,8 @@ import droidsafe.main.SootConfig;
 import droidsafe.speclang.Method;
 import droidsafe.speclang.SecuritySpecification;
 import droidsafe.transforms.AddAllocsForAPICalls;
+import droidsafe.transforms.InsertDSTaintAllocs;
+import droidsafe.transforms.IntegrateXMLLayouts;
 import droidsafe.transforms.LocalForStringConstantArguments;
 import droidsafe.transforms.ResolveStringConstants;
 import droidsafe.transforms.ScalarAppOptimizations;
@@ -210,6 +212,14 @@ public class DroidsafeAnalysisRunner {
       }
     }
 
+    logger.info("Inserting DSTaintObject allocations at each new expression...");
+    monitor.subTask("Inserting DSTaintObject allocations at each new expression");
+    InsertDSTaintAllocs.run();
+    monitor.worked(1);
+    if (monitor.isCanceled()) {
+      return Status.CANCEL_STATUS;
+    }
+    
     AddAllocsForAPICalls.run();
     monitor.worked(1);
     if (monitor.isCanceled()) {
@@ -225,6 +235,13 @@ public class DroidsafeAnalysisRunner {
       return Status.CANCEL_STATUS;
     }
 
+    logger.info("Incorporating XML layout information");
+    monitor.subTask("Incorporating XML layout information");
+    IntegrateXMLLayouts.run();
+    monitor.worked(1);
+    if (monitor.isCanceled()) {
+      return Status.CANCEL_STATUS;
+    }    
 
     logger.info("Resolving String Constants");
     monitor.subTask("Resolving String Constants");
@@ -257,8 +274,8 @@ public class DroidsafeAnalysisRunner {
     }
 
     logger.info("Starting Attribute Modeling");
-    monitor.subTask("Attribute Modeling");
-    AttributeModeling.run();
+    monitor.subTask("Value Analysis");
+    ValueAnalysis.run();
     monitor.worked(1);
     logger.info("Finished Attribute Modeling");
     if (monitor.isCanceled()) {
