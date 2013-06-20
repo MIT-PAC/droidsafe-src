@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+
+: ${APAC_HOME:?"Need to APAC_HOME"}
+
+$APAC_HOME/system-tests/regtest.py -threads 6 -timeout 3600 -dir $APAC_HOME/android-apps/engagements
