@@ -24,9 +24,7 @@ public class StringBuilder {
 	@DSModeled(DSC.SAFE)
 	public String toString() {
 		//need a pta object and need to propagate information flow
-		String ret = new String();
-		ret += dsTaint.getTaintString();
-		return ret;
+		return new String(dsTaint.getTaintString());
 	}
 
 	@DSModeled(DSC.SAFE)
