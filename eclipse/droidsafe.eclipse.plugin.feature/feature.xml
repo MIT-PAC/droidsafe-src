@@ -41,7 +41,6 @@ All rights reserved.
          id="droidsafe.eclipse.plugin.core"
          download-size="0"
          install-size="0"
-         version="1.0.0"
-         unpack="false"/>
+         version="1.0.0"/>
 
 </feature>
