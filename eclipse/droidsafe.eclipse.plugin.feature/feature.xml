@@ -6,7 +6,7 @@
       provider-name="Kestrel Institute">
 
    <description url="http://www.example.com/description">
-      Plugin to generate droidsafe security spec and assist malware discover.
+      Plugin to generate droidsafe security spec and assist in malware discovery.
    </description>
 
    <copyright url="http://www.example.com/copyright">
