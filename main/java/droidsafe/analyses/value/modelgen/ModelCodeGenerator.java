@@ -145,6 +145,7 @@ public class ModelCodeGenerator {
         this.imports.add("soot.jimple.spark.pag.AllocNode");
         this.imports.add("droidsafe.analyses.value.ValueAnalysisModeledObject");
         this.imports.add("droidsafe.analyses.value.ValueAnalysisModelingSet");
+        this.importsProcessed.add(className);
         this.apacHome = System.getenv("APAC_HOME");
         logger.debug("APAC_HOME = {}", apacHome);
         if (this.apacHome == null) {
@@ -420,13 +421,16 @@ public class ModelCodeGenerator {
             ReferenceType refType = (ReferenceType) type;
             if (refType.getArrayCount() == 0 && refType.getType() instanceof ClassOrInterfaceType) {
                 String name = ((ClassOrInterfaceType) refType.getType()).getName();
-                if (name.equals("String"))
+                if (name.equals("String")) {
+                    imports.add("java.util.Set");
                     return SET_OF_STRING_TYPE;
+                }
                 collectImports(sootType, isFieldType);
            }
             return type;
         }
         if (type instanceof PrimitiveType) {
+            imports.add("java.util.Set");
             PrimitiveType primType = (PrimitiveType) type;
             switch (primType.getType()) {
                 case Boolean: return SET_OF_BOOLEAN_TYPE;
