@@ -35,7 +35,7 @@ public class SparseArray<E> implements Cloneable {
 	@DSModeled(DSC.SAFE)
 	@Override @SuppressWarnings("unchecked") public SparseArray<E> clone(){
 		SparseArray<E> clone = new SparseArray<E>(0);
-		cloneaddTaint(this);
+		cloneaddTaint(this.getTaint());
 		return clone;
 		// Original method
 		/*

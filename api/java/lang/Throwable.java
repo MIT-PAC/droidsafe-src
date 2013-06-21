@@ -28,15 +28,15 @@ public class Throwable implements java.io.Serializable {
 	@DSModeled(DSC.SAFE)
 	public Throwable(String detailMessage) {
         this();
-        addTaint(detailMessage);
+        addTaint(detailMessage.getTaint());
         //this.detailMessage = detailMessage;
     }
 	
 	@DSModeled(DSC.SAFE)
 	public Throwable(String detailMessage, Throwable throwable) {
         this();
-        addTaint(detailMessage);
-        addTaint(throwable.getMessage());
+        addTaint(detailMessage.getTaint());
+        addTaint(throwable.getMessage().getTaint());
         //this.detailMessage = detailMessage;
         //cause = throwable;
     }

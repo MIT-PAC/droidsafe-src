@@ -10,8 +10,8 @@ public class BasicNameValuePair implements NameValuePair, Cloneable {
 	
 	@DSModeled(DSC.SAFE)
 	public BasicNameValuePair(final String name, final String value) {
-		addTaint(name);
-		addTaint(value);
+		addTaint(name.getTaint());
+		addTaint(value.getTaint());
 	}
 	
 	@Override

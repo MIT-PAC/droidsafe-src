@@ -35,7 +35,7 @@ public final class Bitmap implements Parcelable {
 
 	@DSModeled(value = DSC.SAFE)
 	public void setDensity(int density) {
-		addTaint(density);
+		addTaint(density.getTaint());
         //mDensity = density;
     }
 	
@@ -120,7 +120,7 @@ public final class Bitmap implements Parcelable {
 	@DSModeled(DSC.SAFE)
 	private void setHeight(int height) {
 		//Synthetic method in order to track height taints, which are managed in native code
-		addTaint(height);
+		addTaint(height.getTaint());
 	}
 	
 	@DSModeled(DSC.SAFE)
@@ -132,7 +132,7 @@ public final class Bitmap implements Parcelable {
 	@DSModeled(DSC.SAFE)
 	private void setWidth(int width) {
 		//Synthetic method in order to track width taints, which are managed in native code
-		addTaint(width);
+		addTaint(width.getTaint());
 	}
 	
 	@DSModeled(DSC.SAFE)
@@ -144,7 +144,7 @@ public final class Bitmap implements Parcelable {
 	@DSModeled(DSC.SAFE)
 	private void setHasAlpha(boolean hasAlpha) {
 		//Synthetic method in order to track hasAlpha taints, which are managed in native code
-		addTaint(hasAlpha);
+		addTaint(hasAlpha.getTaint());
 	}
 	
 	@DSModeled(DSC.SAFE)

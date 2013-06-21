@@ -76,7 +76,7 @@ public class HashMap<K, V> extends AbstractMap<K, V> implements Cloneable, Seria
 	@Override
 	@DSModeled(DSC.SAFE)
 	public V put(K arg0, V arg1) {
-		//addTaint(arg0, arg1);
+		//addTaint(arg0, arg1.getTaint());
 		//DSFIXME:  Can't conflate until we plumb through  in Object
 		key = arg0;
 		value = arg1;

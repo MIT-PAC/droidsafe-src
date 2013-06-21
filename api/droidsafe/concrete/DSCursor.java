@@ -40,11 +40,11 @@ public class DSCursor implements Cursor {
 	
 	@DSModeled
 	public DSCursor(Uri uri, String[] projection, String selection, String[] selectionArgs, String sortOrder) {
-		addTaint(uri.toString());
-		addTaint(projection.toString());
-		addTaint(selection);
-		addTaint(selectionArgs.toString());
-		addTaint(sortOrder);
+		addTaint(uri.toString().getTaint());
+		addTaint(projection.toString().getTaint());
+		addTaint(selection.getTaint());
+		addTaint(selectionArgs.toString().getTaint());
+		addTaint(sortOrder.getTaint());
 	}	
     public int getColumnCount() {
         throw new UnsupportedOperationException("unimplemented mock method");

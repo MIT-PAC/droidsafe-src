@@ -109,7 +109,7 @@ public class ActivityInfo extends ComponentInfo implements Parcelable {
 	
 	public ActivityInfo(ActivityInfo orig){
 		super(orig);
-		addTaint(orig);
+		addTaint(orig.getTaint());
 		/*
 		theme = orig.theme;
 		launchMode = orig.launchMode;
@@ -202,19 +202,19 @@ public class ActivityInfo extends ComponentInfo implements Parcelable {
 	
     private ActivityInfo(Parcel source) {
     	super(source);
-        addTaint(source.readInt()); //theme
-        addTaint(source.readInt()); //launchMode
+        addTaint(source.readInt().getTaint()); //theme
+        addTaint(source.readInt().getTaint()); //launchMode
         permission = source.readString();
-        //addTaint(source.readString()); //permission
+        //addTaint(source.readString().getTaint()); //permission
         taskAffinity = source.readString();
-        //addTaint(source.readString()); //taskAffinity
+        //addTaint(source.readString().getTaint()); //taskAffinity
         targetActivity = source.readString();
-        //addTaint(source.readString()); //targetActivity
-        addTaint(source.readInt()); //flags
-        addTaint(source.readInt()); //screenOrientation
-        addTaint(source.readInt()); //configChanges
-        addTaint(source.readInt()); //softInputMode
-        addTaint(source.readInt()); //uiOptions
+        //addTaint(source.readString().getTaint()); //targetActivity
+        addTaint(source.readInt().getTaint()); //flags
+        addTaint(source.readInt().getTaint()); //screenOrientation
+        addTaint(source.readInt().getTaint()); //configChanges
+        addTaint(source.readInt().getTaint()); //softInputMode
+        addTaint(source.readInt().getTaint()); //uiOptions
     }
 }
 

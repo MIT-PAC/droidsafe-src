@@ -15,7 +15,7 @@ public class UrlEncodedFormEntity extends StringEntity {
 	@DSModeled(DSC.SAFE)
 	public UrlEncodedFormEntity(String string) {
 		super(string);
-		addTaint(string);
+		addTaint(string.getTaint());
 	}
 	
 	@DSModeled(DSC.SAFE)

@@ -19,7 +19,7 @@ public class String implements java.io.Serializable, Comparable<String>, CharSeq
 	@DSModeled(DSC.SAFE)
 	public String(String s) {
 		value = new char[0];
-        addTaint(s);
+        addTaint(s.getTaint());
     }
 	
 	@DSModeled(DSC.SAFE)

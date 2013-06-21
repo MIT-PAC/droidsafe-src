@@ -37,7 +37,7 @@ public class ContextThemeWrapper extends ContextWrapper {
     
     public ContextThemeWrapper(Context base, int themeres) {
         super(base);
-        addTaint(themeres);
+        addTaint(themeres.getTaint());
         /*
         mBase = base;
         mThemeResource = themeres;

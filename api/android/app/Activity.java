@@ -936,7 +936,7 @@ public class Activity extends ContextThemeWrapper implements LayoutInflater.Fact
 	static public final int DEFAULT_KEYS_SEARCH_GLOBAL = 4;
 	
 	public final void setDefaultKeyMode(int mode){
-		addTaint(mode);
+		addTaint(mode.getTaint());
 		mDefaultKeySsb = new SpannableStringBuilder();
 		Selection.setSelection(mDefaultKeySsb,0);
 		// Original method
@@ -2104,7 +2104,7 @@ public class Activity extends ContextThemeWrapper implements LayoutInflater.Fact
 	}
 	
 	public final void setResult(int resultCode){
-		addTaint(resultCode);
+		addTaint(resultCode.getTaint());
 		// Original method
 		/*
 		{
@@ -2118,7 +2118,7 @@ public class Activity extends ContextThemeWrapper implements LayoutInflater.Fact
 	}
 	
 	public final void setResult(int resultCode, Intent data){
-		addTaint(resultCode);
+		addTaint(resultCode.getTaint());
 		mResultData = data;
 		// Original method
 		/*
@@ -2169,7 +2169,7 @@ public class Activity extends ContextThemeWrapper implements LayoutInflater.Fact
 	}
 	
 	public void setVisible(boolean visible){
-		addTaint(visible);
+		addTaint(visible.getTaint());
 		makeVisible();
 		mDecor.setVisibility(View.INVISIBLE);
 		// Original method
@@ -2612,7 +2612,7 @@ public class Activity extends ContextThemeWrapper implements LayoutInflater.Fact
 	}
 	
 	public void setTitleColor(int textColor){
-		addTaint(textColor);
+		addTaint(textColor.getTaint());
 		onTitleChanged(mTitle, textColor);
 		
 		// Original method
@@ -2920,13 +2920,13 @@ public class Activity extends ContextThemeWrapper implements LayoutInflater.Fact
 		mMainThread = aThread;  //Preserved
 		mInstrumentation = instr;  //Preserved
 		mToken = token;  //Preserved
-		addTaint(ident);
+		addTaint(ident.getTaint());
 		mApplication = application;  //Preserved
 		mIntent = intent;  //Preserved
 		mActivityInfo = info;  //Preserved
 		mTitle = title;  //Preserved
 		mParent = parent;  //Preserved
-		addTaint(id);
+		addTaint(id.getTaint());
 		mLastNonConfigurationInstances = lastNonConfigurationInstances;  //Preserved
 		mCurrentConfig = config;  //Preserved
 		

@@ -90,7 +90,7 @@ public abstract class AbstractList<E> extends AbstractCollection<E> implements L
 	
     @DSModeled(DSC.SAFE)
 	public boolean add(E object) {
-        addTaint(object);
+        addTaint(object.getTaint());
         return getTaintBoolean();
     }
 	
@@ -102,7 +102,7 @@ public abstract class AbstractList<E> extends AbstractCollection<E> implements L
     @DSModeled(DSC.SAFE)
 	public Iterator<E> iterator() {
         Itr itr = new Itr();
-        itr.addTaint(this.getTaint());
+        itr.addTaint(this.getTaint().getTaint());
         return (Iterator<E>) itr;
      }
 	

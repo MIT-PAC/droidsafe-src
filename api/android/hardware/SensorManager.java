@@ -101,7 +101,7 @@ public class SensorManager {
 	
 	public void onRotationChanged(int rotation) {
         synchronized(sListeners) {
-        	addTaint(rotation);
+        	addTaint(rotation.getTaint());
             sRotation  = rotation;
         }
     }
@@ -209,7 +209,7 @@ public class SensorManager {
         
         
 		SensorEventPool(int poolSize) {
-			addTaint(poolSize);
+			addTaint(poolSize.getTaint());
             mPoolSize = poolSize;
             mNumItemsInPool = poolSize;
             mPool = new SensorEvent[poolSize];

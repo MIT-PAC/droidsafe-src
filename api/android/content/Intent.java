@@ -108,14 +108,14 @@ public class Intent implements Parcelable, Cloneable {
 	
 	@DSModeled(value = DSC.SAFE)
 	public Intent setAction(String action) {
-		addTaint(action);
+		addTaint(action.getTaint());
         //mAction = action != null ? action.intern() : null;
         return this;
     }
 	
 	@DSModeled(value = DSC.SAFE)
 	public Intent addFlags(int flags) {
-        addTaint(flags);
+        addTaint(flags.getTaint());
         return this;
     }
 	
@@ -127,7 +127,7 @@ public class Intent implements Parcelable, Cloneable {
 	
 	@DSModeled(value = DSC.SAFE)
 	public Intent setType(String type) {
-		addTaint(type);
+		addTaint(type.getTaint());
         //mData = null;
         //mType = type;
         return this;
@@ -161,7 +161,7 @@ public class Intent implements Parcelable, Cloneable {
 	@DSModeled(value = DSC.SAFE)
 	public void setAllowFds(boolean allowFds) {
 		// NOTE:  mExtras is a Bundle, perhaps it is best to push the taint down to that level
-		addTaint(allowFds);
+		addTaint(allowFds.getTaint());
 		/*
         if (mExtras != null) {
             mExtras.setAllowFds(allowFds);
@@ -204,7 +204,7 @@ public class Intent implements Parcelable, Cloneable {
 	
 	@DSModeled(value = DSC.SAFE)
 	public Intent setPackage(String packageName) {
-		addTaint(packageName);
+		addTaint(packageName.getTaint());
 		/*
         if (packageName != null && mSelector != null) {
             throw new IllegalArgumentException(
@@ -229,7 +229,7 @@ public class Intent implements Parcelable, Cloneable {
     }
 	
 	public Intent addCategory(String category) {
-		addTaint(category);
+		addTaint(category.getTaint());
 		/*
         if (mCategories == null) {
             mCategories = new HashSet<String>();

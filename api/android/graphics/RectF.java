@@ -60,10 +60,10 @@ public class RectF implements Parcelable {
     @DSModeled(DSC.SAFE)
     public RectF(float left, float top, float right, float bottom) {    
     	this();
-    	addTaint(left);
-    	addTaint(top);
-    	addTaint(right);
-    	addTaint(bottom);
+    	addTaint(left.getTaint());
+    	addTaint(top.getTaint());
+    	addTaint(right.getTaint());
+    	addTaint(bottom.getTaint());
     }
 
     /**
@@ -76,16 +76,16 @@ public class RectF implements Parcelable {
     @DSModeled(DSC.SAFE)
     public RectF(RectF r) { 
     	this();
-    	addTaint(r);
+    	addTaint(r.getTaint());
     }
     
     @DSModeled(DSC.SAFE)
     public RectF(Rect r) {
     	this();
-    	addTaint(r.left);
-    	addTaint(r.right);
-    	addTaint(r.top);
-    	addTaint(r.bottom);
+    	addTaint(r.left.getTaint());
+    	addTaint(r.right.getTaint());
+    	addTaint(r.top.getTaint());
+    	addTaint(r.bottom.getTaint());
     }
 
     @DSModeled(DSC.SAFE)
@@ -192,7 +192,7 @@ public class RectF implements Parcelable {
      */
     @DSModeled(DSC.SAFE)
     public void setEmpty() {
-    	//addTaint(0);	//No need to track , just an initializer type function setting things to 0   
+    	//addTaint(0.getTaint());	//No need to track , just an initializer type function setting things to 0   
     }
     
     /**
@@ -210,10 +210,10 @@ public class RectF implements Parcelable {
      */
     @DSModeled(DSC.SAFE)
     public void set(float left, float top, float right, float bottom) {
-    	addTaint(left);
-    	addTaint(top);
-    	addTaint(right);
-    	addTaint(bottom);  
+    	addTaint(left.getTaint());
+    	addTaint(top.getTaint());
+    	addTaint(right.getTaint());
+    	addTaint(bottom.getTaint());  
     }
 
     /**
@@ -227,7 +227,7 @@ public class RectF implements Parcelable {
      */
     @DSModeled(DSC.SAFE)
     public void set(RectF src) {
-    	addTaint(src);
+    	addTaint(src.getTaint());
     }
     
     /**
@@ -241,10 +241,10 @@ public class RectF implements Parcelable {
      */
     @DSModeled(DSC.SAFE)
     public void set(Rect src) {
-    	addTaint(src.left);
-    	addTaint(src.top);
-    	addTaint(src.right);
-    	addTaint(src.bottom);
+    	addTaint(src.left.getTaint());
+    	addTaint(src.top.getTaint());
+    	addTaint(src.right.getTaint());
+    	addTaint(src.bottom.getTaint());
     }
 
 	@Override

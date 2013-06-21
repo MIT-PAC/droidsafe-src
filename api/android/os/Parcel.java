@@ -133,19 +133,19 @@ public final class Parcel {
 	public final void setDataSize(int size){
 		//Formerly a native function
 		//Return nothing
-		addTaint(size);
+		addTaint(size.getTaint());
 	}
 	
 	public final void setDataPosition(int pos){
 		//Formerly a native function
 		//Return nothing
-		addTaint(pos);
+		addTaint(pos.getTaint());
 	}
 	
 	public final void setDataCapacity(int size){
 		//Formerly a native function
 		//Return nothing
-		addTaint(size);
+		addTaint(size.getTaint());
 	}
 	
 	public final boolean pushAllowFds(boolean allowFds){
@@ -156,7 +156,7 @@ public final class Parcel {
 	public final void restoreAllowFds(boolean lastValue){
 		//Formerly a native function
 		//Return nothing
-		addTaint(lastValue);
+		addTaint(lastValue.getTaint());
 	}
 	
 	private byte[] mData;
@@ -175,7 +175,7 @@ public final class Parcel {
 	public final void appendFrom(Parcel parcel, int offset, int length){
 		//Formerly a native function
 		//Return nothing
-		addTaint(parcel);
+		addTaint(parcel.getTaint());
 	}
 	
 	public final boolean hasFileDescriptors(){
@@ -186,13 +186,13 @@ public final class Parcel {
 	public final void writeInterfaceToken(String interfaceName){
 		//Formerly a native function
 		//Return nothing
-		addTaint(interfaceName);
+		addTaint(interfaceName.getTaint());
 	}
 	
 	public final void enforceInterface(String interfaceName){
 		//Formerly a native function
 		//Return nothing
-		addTaint(interfaceName);
+		addTaint(interfaceName.getTaint());
 	}
 	
 	private byte[] mValueByteArray;
@@ -233,25 +233,25 @@ public final class Parcel {
 	public final void writeInt(int val){
 		//Formerly a native function
 		//Return nothing
-		addTaint(val);
+		addTaint(val.getTaint());
 	}
 	
 	public final void writeLong(long val){
 		//Formerly a native function
 		//Return nothing
-		addTaint(val);
+		addTaint(val.getTaint());
 	}
 	
 	public final void writeFloat(float val){
 		//Formerly a native function
 		//Return nothing
-		addTaint(val);
+		addTaint(val.getTaint());
 	}
 	
 	public final void writeDouble(double val){
 		//Formerly a native function
 		//Return nothing
-		addTaint((float)val);
+		addTaint((float)val.getTaint());
 	}
 	
 	private String mValueString;
@@ -306,7 +306,7 @@ public final class Parcel {
 	}
 	
 	public final void writeByte(byte val){
-		addTaint(val);
+		addTaint(val.getTaint());
 		// Original method
 		/*
 		{

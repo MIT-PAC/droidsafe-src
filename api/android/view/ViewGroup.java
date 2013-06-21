@@ -3412,13 +3412,13 @@ public abstract class ViewGroup extends View implements ViewParent, ViewManager 
 		}
 		
 		public void setMargins(int left, int top, int right, int bottom){
-			addTaint(left);
+			addTaint(left.getTaint());
 			leftMargin = left;  //Preserved
-			addTaint(top);
+			addTaint(top.getTaint());
 			topMargin = top;  //Preserved
-			addTaint(right);
+			addTaint(right.getTaint());
 			rightMargin = right;  //Preserved
-			addTaint(bottom);
+			addTaint(bottom.getTaint());
 			bottomMargin = bottom;  //Preserved
 			
 			// Original method
@@ -3434,13 +3434,13 @@ public abstract class ViewGroup extends View implements ViewParent, ViewManager 
 		}
 		
 		public void setMarginsRelative(int start, int top, int end, int bottom){
-			addTaint(start);
+			addTaint(start.getTaint());
 			startMargin = start;  //Preserved
-			addTaint(top);
+			addTaint(top.getTaint());
 			topMargin = top;  //Preserved
-			addTaint(end);
+			addTaint(end.getTaint());
 			endMargin = end;  //Preserved
-			addTaint(bottom);
+			addTaint(bottom.getTaint());
 			bottomMargin = bottom;  //Preserved
 			
 			// Original method

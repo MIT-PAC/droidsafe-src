@@ -11,7 +11,7 @@ public abstract class Property<T, V> {
     public Property(Class<V> type, String name) {
         mName = name;
         mType = type;
-        addTaint(name); 
+        addTaint(name.getTaint()); 
     }
     public boolean isReadOnly() {
         return getTaintBoolean();

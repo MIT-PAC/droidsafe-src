@@ -17,14 +17,14 @@ public class ExifInterface {
 	
 	@DSModeled() //Decided to go with SPEC because in theory be used for covert data storage
 	private void loadAttributes() throws IOException {
-		addTaint("string attribute taint"); //Implicit taint for getAttribute
-		addTaint(-1); //Implicit taint for getAttributeInt
-		//addTaint(-2); //Implicit taint for getAttributeDouble
+		addTaint("string attribute taint".getTaint()); //Implicit taint for getAttribute
+		//addTaint(-1.getTaint()); //Implicit taint for getAttributeInt
+		//addTaint(-2.getTaint()); //Implicit taint for getAttributeDouble
 	}
 	
 	@DSModeled(value = DSC.SAFE)
 	public ExifInterface(String filename) throws IOException {
-		addTaint(filename);
+		addTaint(filename.getTaint());
         //mFilename = filename;
 		/*
 		 * DSFIXME:  loadAttributes will parse and load values obtained from a

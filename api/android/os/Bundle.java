@@ -81,7 +81,7 @@ public final class Bundle implements Parcelable, Cloneable {
 	
 	@DSModeled(DSC.SAFE)
 	public Bundle(Bundle b){
-		addTaint(b);
+		addTaint(b.getTaint());
 		/*
 		if (b.mParcelledData != null) {
             mParcelledData = Parcel.obtain();
@@ -164,7 +164,7 @@ public final class Bundle implements Parcelable, Cloneable {
 	}
 	
 	public boolean setAllowFds(boolean allowFds){
-		addTaint(allowFds);
+		addTaint(allowFds.getTaint());
 		return getTaintBoolean();
 		
 		// Original method
@@ -287,7 +287,7 @@ public final class Bundle implements Parcelable, Cloneable {
 	}
 	
 	public void putAll(Bundle map){
-		addTaint(map);
+		addTaint(map.getTaint());
 		// Original method
 		/*
 		{
@@ -327,7 +327,7 @@ public final class Bundle implements Parcelable, Cloneable {
 	
 	public void putBoolean(String key, boolean value){
 		mKey = key;
-		addTaint(value);
+		addTaint(value.getTaint());
 		// Original method
 		/*
 		{
@@ -340,7 +340,7 @@ public final class Bundle implements Parcelable, Cloneable {
 	
 	public void putByte(String key, byte value){
 		mKey = key;
-		addTaint(value);
+		addTaint(value.getTaint());
 		// Original method
 		/*
 		{
@@ -353,7 +353,7 @@ public final class Bundle implements Parcelable, Cloneable {
 	
 	public void putChar(String key, char value){
 		mKey = key;
-		addTaint(value);
+		addTaint(value.getTaint());
 		// Original method
 		/*
 		{
@@ -366,7 +366,7 @@ public final class Bundle implements Parcelable, Cloneable {
 	
 	public void putShort(String key, short value){
 		mKey = key;
-		addTaint(value);
+		addTaint(value.getTaint());
 		// Original method
 		/*
 		{
@@ -379,7 +379,7 @@ public final class Bundle implements Parcelable, Cloneable {
 	
 	public void putInt(String key, int value){
 		mKey = key;
-		addTaint(value);
+		addTaint(value.getTaint());
 		// Original method
 		/*
 		{
@@ -392,7 +392,7 @@ public final class Bundle implements Parcelable, Cloneable {
 	
 	public void putLong(String key, long value){
 		mKey = key;
-		addTaint(value);
+		addTaint(value.getTaint());
 		// Original method
 		/*
 		{
@@ -405,7 +405,7 @@ public final class Bundle implements Parcelable, Cloneable {
 	
 	public void putFloat(String key, float value){
 		mKey = key;
-		addTaint(value);
+		addTaint(value.getTaint());
 		// Original method
 		/*
 		{
@@ -421,7 +421,7 @@ public final class Bundle implements Parcelable, Cloneable {
 	public void putDouble(String key, double value){
 		mKey = key;
 		mValueDouble = value; //DSFIXME:  Temporary fix (see below)
-		//addTaint(value); //DSFIXME:  Need to add another addTaint method that takes a double
+		//addTaint(value.getTaint()); //DSFIXME:  Need to add another addTaint method that takes a double
 		// Original method
 		/*
 		{
@@ -1630,7 +1630,7 @@ public final class Bundle implements Parcelable, Cloneable {
 	}
 	
 	void readFromParcelInner(Parcel parcel, int length){
-		//addTaint(parcel);  //DSFIXME:  Add taint to parcel and uncomment this line
+		//addTaint(parcel.getTaint());  //DSFIXME:  Add taint to parcel and uncomment this line
 		// Original method
 		/*
 		{

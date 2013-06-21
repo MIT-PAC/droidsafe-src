@@ -12,13 +12,13 @@ public class StringBuilder {
 	@DSModeled(DSC.SAFE)
 	public StringBuilder(int i) {
 		this();
-		addTaint(i);
+		addTaint(i.getTaint());
 	}
 	
 	@DSModeled(DSC.SAFE)
 	public StringBuilder(String str) {
 		this();
-		addTaint(str);
+		addTaint(str.getTaint());
 	}
 	
 	@DSModeled(DSC.SAFE)
@@ -29,19 +29,19 @@ public class StringBuilder {
 
 	@DSModeled(DSC.SAFE)
 	public StringBuilder append(String str) {
-		addTaint(str);
+		addTaint(str.getTaint());
 		return this;
 	}
 	
 	@DSModeled(DSC.SAFE)
 	public StringBuilder append(Object obj) {
-		addTaint(obj.toString());
+		addTaint(obj.toString().getTaint());
 		return this;
 	}
 	
 	@DSModeled(DSC.SAFE)
 	public StringBuilder append(int obj) {
-		addTaint(obj);
+		addTaint(obj.getTaint());
 		return this;
 	}
 
@@ -54,9 +54,9 @@ public class StringBuilder {
 	// GITI DSModeled
 	@DSModeled(DSC.SAFE)
 	public void append(char[] buf, int i, int left) {
-		addTaint(new String(buf));
-		addTaint(i);
-		addTaint(left);
+		addTaint(new String(buf).getTaint());
+		addTaint(i.getTaint());
+		addTaint(left.getTaint());
 	}
 	
 }

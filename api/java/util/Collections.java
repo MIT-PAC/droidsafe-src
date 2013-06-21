@@ -43,7 +43,7 @@ public class Collections {
         
         CopiesList(int length, E object){
             //throw new IllegalArgumentException();
-            addTaint(length);
+            addTaint(length.getTaint());
             element = object;  //DSFIXME:  CODE0003: Field assignment should be reviewed
             /*
             if (length < 0) {
@@ -2126,7 +2126,7 @@ public class Collections {
                 //int length = c.size();
                 //DSFIXME:  CODE0004: Local variable requires review, uncomment if needed
                 Object[] result = new Object[1];
-                result.addTaint(this.getTaint());
+                result.addTaint(this.getTaint().getTaint());
                 //DSFIXME:  CODE0004: Local variable requires review, uncomment if needed
                 //Iterator<?> it = iterator();
                 return result;  //DSFIXME:  CODE0001: Unresolved return type/value combination
@@ -4190,7 +4190,7 @@ public class Collections {
             //checkType(e.getKey(), keyType);
             //checkType(e.getValue(), valueType);
             //m.put(entries[i].getKey(), entries[i].getValue());
-        	//addTaint(map);
+        	//addTaint(map.getTaint());
             // Original method
         @Override public K lastKey(){
             return sm.lastKey();  //DSFIXME:  CODE0001: Unresolved return type/value combination

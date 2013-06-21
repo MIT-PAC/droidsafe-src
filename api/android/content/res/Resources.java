@@ -134,9 +134,9 @@ public class Resources {
 	
 	public Resources(AssetManager assets, DisplayMetrics metrics,
             Configuration config, CompatibilityInfo compInfo){
-		//addTaint(assets);
+		//addTaint(assets.getTaint());
 		mAssets = assets;  //Preserved
-		//addTaint(compInfo);
+		//addTaint(compInfo.getTaint());
 		mCompatibilityInfo = compInfo;  //Preserved
 		/*
 		mAssets = assets;
@@ -978,7 +978,7 @@ public class Resources {
 	}
 	
 	public void setCompatibilityInfo(CompatibilityInfo ci){
-		//addTaint(ci);
+		//addTaint(ci.getTaint());
 		mCompatibilityInfo = ci;  //Preserved
 		
 		// Original method

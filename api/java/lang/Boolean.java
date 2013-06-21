@@ -16,7 +16,7 @@ public final class Boolean implements Serializable, Comparable<Boolean> {
 	
 	@DSModeled(DSC.SAFE)
 	public Boolean(boolean value) {
-		addTaint(value);
+		addTaint(value.getTaint());
         this.value = value;
     }
 	
