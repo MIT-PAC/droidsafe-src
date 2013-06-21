@@ -33,12 +33,12 @@ public class Uri {
 	
 	@DSModeled(DSC.SAFE)
 	public boolean isOpaque() {
-        return dsTaint.getTaintBoolean();
+        return getTaintBoolean();
     }
 	
 	@DSModeled(DSC.SAFE)
 	public boolean isAbsolute() {
-        return dsTaint.getTaintBoolean();
+        return getTaintBoolean();
     }
 	
 	 
@@ -49,18 +49,18 @@ public class Uri {
 
 	@DSModeled()
 	public int describeContents() {
-		return dsTaint.getTaintInt();
+		return getTaintInt();
 	}
 
 	@DSModeled()
 	public void writeToParcel(Parcel dest, int flags) {
-		dest.dsTaint.addTaint(dsTaint);
+		destaddTaint();
 	}
 
 	@DSModeled(DSC.SAFE)
 	public int compareTo(Uri arg0) {
 		// TODO Auto-generated method stub
-		return dsTaint.getTaintInt();
+		return getTaintInt();
 	}
 
 	@DSModeled(DSC.SAFE)
@@ -71,13 +71,13 @@ public class Uri {
 
 	@DSModeled(DSC.SAFE)
 	public boolean isHierarchical() {
-		return dsTaint.getTaintBoolean();
+		return getTaintBoolean();
 	}
 
 	@DSModeled(DSC.SAFE)
 	public boolean isRelative() {
 		// TODO Auto-generated method stub
-		return dsTaint.getTaintBoolean();
+		return getTaintBoolean();
 	}
 
 	@DSModeled(DSC.SAFE)
@@ -121,7 +121,7 @@ public class Uri {
 
 	@DSModeled(DSC.SAFE)
 	public int getPort() {
-		return dsTaint.getTaintInt();
+		return getTaintInt();
 	}
 
 	@DSModeled(DSC.SAFE)
@@ -171,7 +171,7 @@ public class Uri {
 
 	@DSModeled(DSC.SAFE)
 	public String toString() {
-		return dsTaint.getTaintString() + this.uriString;
+		return getTaintString() + this.uriString;
 	}
 	
 	public static class Builder { 

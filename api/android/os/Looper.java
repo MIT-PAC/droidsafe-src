@@ -119,7 +119,7 @@ public class Looper {
     }
     
     public String toString(){
-        return dsTaint.getTaintString();
+        return getTaintString();
     }
     
     public static interface Profiler {

@@ -345,7 +345,7 @@ public class Handler {
     }
 		*/
 		// DSModeled - "sending" message without need for MessageQueue by calling handler directly.
-		dsTaint.addTaint(uptimeMillis);
+		addTaint(uptimeMillis);
 		msg.callback.run();
 		return true;
 	}

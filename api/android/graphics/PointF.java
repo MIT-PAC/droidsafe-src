@@ -18,13 +18,13 @@ public class PointF implements Parcelable {
     
     @DSModeled(DSC.SAFE)
     public PointF(float x, float y){
-        dsTaint.addTaint(x);
-        dsTaint.addTaint(y);
+        addTaint(x);
+        addTaint(y);
     }
     
     @DSModeled(DSC.SAFE)
     public PointF(Point p){
-        dsTaint.addTaint(p.dsTaint);
+        addTaint(p);
         /*
         this.x = p.x;
         this.y = p.y;
@@ -33,30 +33,30 @@ public class PointF implements Parcelable {
     
     @DSModeled(DSC.SAFE)
     public final void set(float x, float y){
-        dsTaint.addTaint(x);
-        dsTaint.addTaint(y);
+        addTaint(x);
+        addTaint(y);
     }
     
     
     @DSModeled(DSC.SAFE)
     public final void set(PointF p){
-        dsTaint.addTaint(p.dsTaint);
+        addTaint(p);
     }
     
     @DSModeled(DSC.SAFE)
     public final void negate(){
-        dsTaint.addTaint(x);
-        dsTaint.addTaint(y);
+        addTaint(x);
+        addTaint(y);
     }
     
     @DSModeled(DSC.SAFE)
     public final void offset(float dx, float dy){
-        dsTaint.addTaint(dx);
-        dsTaint.addTaint(dy);
+        addTaint(dx);
+        addTaint(dy);
     }
     
     public final boolean equals(float x, float y){
-        return dsTaint.getTaintBoolean();
+        return getTaintBoolean();
 
         // Original method
         /*
@@ -67,7 +67,7 @@ public class PointF implements Parcelable {
     }
     
     public final float length(){
-        return dsTaint.getTaintFloat();
+        return getTaintFloat();
 
         // Original method
         /*
@@ -82,7 +82,7 @@ public class PointF implements Parcelable {
     }
     
     @Override public int describeContents(){
-        return dsTaint.getTaintInt();
+        return getTaintInt();
     }
     
     @Override public void writeToParcel(Parcel out, int flags){

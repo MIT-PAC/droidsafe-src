@@ -24,7 +24,7 @@ import droidsafe.annotations.DSModeled;
 	
 	@DSModeled(DSC.SAFE)
 	public Integer(int value){
-		dsTaint.addTaint(value);
+		addTaint(value);
 		this.value = value;
 		/*
 		this.value = value;
@@ -87,7 +87,7 @@ import droidsafe.annotations.DSModeled;
 	}
 	
 	@Override public double doubleValue(){
-		return dsTaint.getTaintDouble();
+		return getTaintDouble();
 		
 		// Original method
 		/*
@@ -109,7 +109,7 @@ import droidsafe.annotations.DSModeled;
 	}
 	
 	@Override public float floatValue(){
-		return dsTaint.getTaintFloat();
+		return getTaintFloat();
 		
 		// Original method
 		/*
@@ -187,7 +187,7 @@ import droidsafe.annotations.DSModeled;
 	
 	@DSModeled(DSC.SAFE)
 	@Override public int hashCode(){
-		return dsTaint.getTaintInt();
+		return getTaintInt();
 		
 		// Original method
 		/*
@@ -198,7 +198,7 @@ import droidsafe.annotations.DSModeled;
 	}
 	
 	@Override public int intValue(){
-		return dsTaint.getTaintInt();
+		return getTaintInt();
 		
 		// Original method
 		/*
@@ -209,7 +209,7 @@ import droidsafe.annotations.DSModeled;
 	}
 	
 	@Override public long longValue(){
-		return dsTaint.getTaintLong();
+		return getTaintLong();
 		
 		// Original method
 		/*

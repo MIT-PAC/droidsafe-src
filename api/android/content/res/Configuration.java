@@ -98,12 +98,12 @@ public final class Configuration implements Parcelable, Comparable<Configuration
     
 	@DSModeled(DSC.SAFE)
     public void setTo(Configuration o) {
-	    dsTaint.addTaint(o.dsTaint);
+	    addTaint(o);
     }
 	
 	@DSModeled(DSC.SAFE)
     public String toString() {
-        return dsTaint.getTaintString();
+        return getTaintString();
     }
     
 	@DSModeled(DSC.SAFE)
@@ -116,8 +116,8 @@ public final class Configuration implements Parcelable, Comparable<Configuration
     
 	@DSModeled
     public int updateFrom(Configuration delta) {
-        dsTaint.addTaint(delta.dsTaint);
-        return dsTaint.getTaintInt();
+        addTaint(delta);
+        return getTaintInt();
     }
     
     public int diff(Configuration delta) {

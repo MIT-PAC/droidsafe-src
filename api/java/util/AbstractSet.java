@@ -12,7 +12,7 @@ public abstract class AbstractSet <E> extends AbstractCollection<E> implements S
     @Override public boolean equals(Object object){
         //DSFIXME:  CODE0004: Local variable requires review, uncomment if needed
         //Set<?> s = (Set<?>) object;
-        return dsTaint.getTaintBoolean();
+        return getTaintBoolean();
 
         // Original method
         /*
@@ -44,7 +44,7 @@ public abstract class AbstractSet <E> extends AbstractCollection<E> implements S
         //DSFIXME:  CODE0004: Local variable requires review, uncomment if needed
         //Object next = it.next();
         //result += next == null ? 0 : next.hashCode();
-        return dsTaint.getTaintInt();
+        return getTaintInt();
 
         // Original method
         /*
@@ -68,7 +68,7 @@ public abstract class AbstractSet <E> extends AbstractCollection<E> implements S
         //it.remove();
         //DSFIXME:  CODE0004: Local variable requires review, uncomment if needed
         //Iterator<?> it = collection.iterator();
-        return dsTaint.getTaintBoolean();
+        return getTaintBoolean();
 
         // Original method
         /*

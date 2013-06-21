@@ -12,36 +12,36 @@ public class StringBuilder {
 	@DSModeled(DSC.SAFE)
 	public StringBuilder(int i) {
 		this();
-		dsTaint.addTaint(i);
+		addTaint(i);
 	}
 	
 	@DSModeled(DSC.SAFE)
 	public StringBuilder(String str) {
 		this();
-		dsTaint.addTaint(str);
+		addTaint(str);
 	}
 	
 	@DSModeled(DSC.SAFE)
 	public String toString() {
 		//need a pta object and need to propagate information flow
-		return new String(dsTaint.getTaintString());
+		return new String(getTaintString());
 	}
 
 	@DSModeled(DSC.SAFE)
 	public StringBuilder append(String str) {
-		dsTaint.addTaint(str);
+		addTaint(str);
 		return this;
 	}
 	
 	@DSModeled(DSC.SAFE)
 	public StringBuilder append(Object obj) {
-		dsTaint.addTaint(obj.toString());
+		addTaint(obj.toString());
 		return this;
 	}
 	
 	@DSModeled(DSC.SAFE)
 	public StringBuilder append(int obj) {
-		dsTaint.addTaint(obj);
+		addTaint(obj);
 		return this;
 	}
 
@@ -54,9 +54,9 @@ public class StringBuilder {
 	// GITI DSModeled
 	@DSModeled(DSC.SAFE)
 	public void append(char[] buf, int i, int left) {
-		dsTaint.addTaint(new String(buf));
-		dsTaint.addTaint(i);
-		dsTaint.addTaint(left);
+		addTaint(new String(buf));
+		addTaint(i);
+		addTaint(left);
 	}
 	
 }

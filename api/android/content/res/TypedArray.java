@@ -17,7 +17,7 @@ public class TypedArray {
 	TypedValue mValue = new TypedValue();
 	
 	public int length(){
-		return dsTaint.getTaintInt();
+		return getTaintInt();
 		
 		// Original method
 		/*
@@ -35,7 +35,7 @@ public class TypedArray {
         return mIndices[0];
     }
 		*/
-		return dsTaint.getTaintInt();
+		return getTaintInt();
 	}
 	
 	public int getIndex(int at){
@@ -46,7 +46,7 @@ public class TypedArray {
         return mIndices[1+at];
     }
 		*/
-		return dsTaint.getTaintInt();
+		return getTaintInt();
 	}
 	
 	public Resources getResources(){
@@ -61,7 +61,7 @@ public class TypedArray {
 	}
 	
 	public CharSequence getText(int index){
-		return dsTaint.getTaintString();
+		return getTaintString();
 		// Original method
 		/*
 		{
@@ -88,7 +88,7 @@ public class TypedArray {
 	
 	@DSModeled(DSC.SAFE)
 	public String getString(int index){
-		return dsTaint.getTaintString();
+		return getTaintString();
 		// Original method
 		/*
 		{
@@ -115,7 +115,7 @@ public class TypedArray {
 	}
 	
 	public String getNonResourceString(int index){
-		return dsTaint.getTaintString();
+		return getTaintString();
 		// Original method
 		/*
 		{
@@ -135,13 +135,13 @@ public class TypedArray {
 	}
 	
 	public String getNonConfigurationString(int index, int allowedChangingConfigs){
-		return dsTaint.getTaintString();
+		return getTaintString();
 		// Original method
 		/* Original Method Too Long, Refer to Original Implementation */
 	}
 	
 	public boolean getBoolean(int index, boolean defValue){
-		return dsTaint.getTaintBoolean();
+		return getTaintBoolean();
 		// Original method
 		/*
 		{
@@ -169,7 +169,7 @@ public class TypedArray {
 	}
 	
 	public int getInt(int index, int defValue){
-		return dsTaint.getTaintInt();
+		return getTaintInt();
 		// Original method
 		/*
 		{
@@ -197,13 +197,13 @@ public class TypedArray {
 	}
 	
 	public float getFloat(int index, float defValue){
-		return dsTaint.getTaintFloat();
+		return getTaintFloat();
 		// Original method
 		/* Original Method Too Long, Refer to Original Implementation */
 	}
 	
 	public int getColor(int index, int defValue){
-		return dsTaint.getTaintInt();
+		return getTaintInt();
 		// Original method
 		/* Original Method Too Long, Refer to Original Implementation */
 	}
@@ -223,7 +223,7 @@ public class TypedArray {
 	}
 	
 	public int getInteger(int index, int defValue){
-		return dsTaint.getTaintInt();
+		return getTaintInt();
 		// Original method
 		/*
 		{
@@ -244,7 +244,7 @@ public class TypedArray {
 	}
 	
 	public float getDimension(int index, float defValue){
-		return dsTaint.getTaintFloat();
+		return getTaintFloat();
 		// Original method
 		/*
 		{
@@ -265,7 +265,7 @@ public class TypedArray {
 	}
 	
 	public int getDimensionPixelOffset(int index, int defValue){
-		return dsTaint.getTaintInt();
+		return getTaintInt();
 		// Original method
 		/*
 		{
@@ -286,7 +286,7 @@ public class TypedArray {
 	}
 	
 	public int getDimensionPixelSize(int index, int defValue){
-		return dsTaint.getTaintInt();
+		return getTaintInt();
 		// Original method
 		/*
 		{
@@ -307,7 +307,7 @@ public class TypedArray {
 	}
 	
 	public int getLayoutDimension(int index, String name){
-		return dsTaint.getTaintInt();
+		return getTaintInt();
 		// Original method
 		/*
 		{
@@ -329,7 +329,7 @@ public class TypedArray {
 	}
 	
 	public int getLayoutDimension(int index, int defValue){
-		return dsTaint.getTaintInt();
+		return getTaintInt();
 		// Original method
 		/*
 		{
@@ -350,7 +350,7 @@ public class TypedArray {
 	}
 	
 	public float getFraction(int index, int base, int pbase, float defValue){
-		return dsTaint.getTaintFloat();
+		return getTaintFloat();
 		// Original method
 		/*
 		{
@@ -372,7 +372,7 @@ public class TypedArray {
 	
 	@DSModeled(DSC.SAFE)
 	public int getResourceId(int index, int defValue){
-		return dsTaint.getTaintInt();
+		return getTaintInt();
 		// Original method
 		/*
 		{
@@ -446,7 +446,7 @@ public class TypedArray {
 	}
 	
 	public boolean hasValue(int index){
-		return dsTaint.getTaintBoolean();
+		return getTaintBoolean();
 		// Original method
 		/*
 		{
@@ -473,7 +473,7 @@ public class TypedArray {
 	}
 	
 	public String getPositionDescription(){
-		return dsTaint.getTaintString();
+		return getTaintString();
 		// Original method
 		/*
 		{
@@ -502,13 +502,13 @@ public class TypedArray {
 	
 	private boolean getValueAt(int index, TypedValue outValue){
 		outValue.type = 0;
-        outValue.data = dsTaint.getTaintInt();
-        outValue.assetCookie = dsTaint.getTaintInt();
-        outValue.resourceId = dsTaint.getTaintInt();
-        outValue.changingConfigurations = dsTaint.getTaintInt();
-        outValue.density = dsTaint.getTaintInt();
+        outValue.data = getTaintInt();
+        outValue.assetCookie = getTaintInt();
+        outValue.resourceId = getTaintInt();
+        outValue.changingConfigurations = getTaintInt();
+        outValue.density = getTaintInt();
         outValue.string = loadStringValueAt(index);
-		return dsTaint.getTaintBoolean();
+		return getTaintBoolean();
 		// Original method
 		/*
 		{
@@ -530,7 +530,7 @@ public class TypedArray {
 	}
 	
 	private CharSequence loadStringValueAt(int index){
-		return dsTaint.getTaintString();
+		return getTaintString();
 		// Original method
 		/*
 		{
@@ -554,7 +554,7 @@ public class TypedArray {
 		mResources = resources;  //Preserved
 		mData = data;  //Preserved
 		mIndices = indices;  //Preserved
-		dsTaint.addTaint(len);
+		addTaint(len);
 		/*
 		mResources = resources;
 		mData = data;
@@ -564,7 +564,7 @@ public class TypedArray {
 	}
 	
 	public String toString(){
-		return dsTaint.getTaintString();
+		return getTaintString();
 		// Original method
 		/*
 		{

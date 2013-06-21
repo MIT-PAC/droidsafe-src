@@ -19,12 +19,12 @@ public class String implements java.io.Serializable, Comparable<String>, CharSeq
 	@DSModeled(DSC.SAFE)
 	public String(String s) {
 		value = new char[0];
-        dsTaint.addTaint(s);
+        addTaint(s);
     }
 	
 	@DSModeled(DSC.SAFE)
 	public char[] toCharArray() {
-		char[] ret = (char[])dsTaint.getTaint();
+		char[] ret = (char[])getTaint();
 		return ret;
 	}
 	
@@ -40,7 +40,7 @@ public class String implements java.io.Serializable, Comparable<String>, CharSeq
 	
 	@DSModeled(DSC.SAFE)
 	public String toString() {
-        return dsTaint.getTaintString();
+        return getTaintString();
     }
 
 	@Override

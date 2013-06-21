@@ -9,7 +9,7 @@ public class HttpPost extends HttpEntityEnclosingRequestBase {
 	@DSModeled(DSC.SPEC)
 	public HttpPost(final String uri) {
         super();
-        dsTaint.addTaint(uri);
+        addTaint(uri);
     }
 }
 

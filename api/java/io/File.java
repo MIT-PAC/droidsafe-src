@@ -20,7 +20,7 @@ public class File implements Serializable, Comparable<File> {
 	
 	@DSModeled(DSC.SAFE)
 	public File(String path) {
-		dsTaint.addTaint(path);
+		addTaint(path);
         //this.path = fixSlashes(path);
     }
 
@@ -31,8 +31,8 @@ public class File implements Serializable, Comparable<File> {
 	
 	@DSModeled(DSC.SAFE)
 	public File(String dirPath, String name) {
-		dsTaint.addTaint(dirPath);  
-		dsTaint.addTaint(name); 
+		addTaint(dirPath);  
+		addTaint(name); 
 		/*
         if (name == null) {
             throw new NullPointerException();
@@ -55,14 +55,14 @@ public class File implements Serializable, Comparable<File> {
 	
 	@DSModeled(DSC.SAFE)
 	public String getPath() {
-		return dsTaint.getTaintString();
+		return getTaintString();
         //return path;
     }
 	
 	@DSModeled(DSC.SAFE)
     @Override
     public String toString() {
-    	return dsTaint.getTaintString();
+    	return getTaintString();
         //return path;
     }
 }

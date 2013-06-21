@@ -9,22 +9,22 @@ public class SimpleDateFormat extends DateFormat {
 	
 	@DSModeled(DSC.SAFE)
 	public SimpleDateFormat(String pattern) {
-		dsTaint.addTaint(pattern);
+		addTaint(pattern);
 	}
 
 	@Override
 	@DSModeled(DSC.SAFE)
 	public StringBuffer format(Date date, StringBuffer toAppendTo,
 			FieldPosition fieldPosition) {
-		dsTaint.addTaint(date.toString());
-		dsTaint.addTaint(toAppendTo.toString());
+		addTaint(date.toString());
+		addTaint(toAppendTo.toString());
 		return new StringBuffer();
 	}
 
 	@Override
 	@DSModeled(DSC.SAFE)
 	public Date parse(String source, ParsePosition pos) {
-		dsTaint.addTaint(source);
+		addTaint(source);
 		return new Date();
 	}
 

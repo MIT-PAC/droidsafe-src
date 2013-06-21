@@ -16,13 +16,13 @@ public class Point implements Parcelable {
     
     @DSModeled(DSC.SAFE)
     public Point(int x, int y){
-        dsTaint.addTaint(x);
-        dsTaint.addTaint(y);
+        addTaint(x);
+        addTaint(y);
     }
     
     @DSModeled(DSC.SAFE)
     public Point(Point src){
-        dsTaint.addTaint(src.dsTaint);
+        addTaint(src);
         /*
         this.x = src.x;
         this.y = src.y;
@@ -31,8 +31,8 @@ public class Point implements Parcelable {
     
     @DSModeled(DSC.SAFE)
     public void set(int x, int y){
-        dsTaint.addTaint(x);
-        dsTaint.addTaint(y);
+        addTaint(x);
+        addTaint(y);
         // Original method
         /*
         {
@@ -44,8 +44,8 @@ public class Point implements Parcelable {
     
     @DSModeled(DSC.SAFE)
     public final void negate(){
-        dsTaint.addTaint(x);
-        dsTaint.addTaint(y);
+        addTaint(x);
+        addTaint(y);
     }
     
     public final void offset(int dx, int dy){
@@ -61,7 +61,7 @@ public class Point implements Parcelable {
     }
     
     public final boolean equals(int x, int y){
-        return dsTaint.getTaintBoolean();
+        return getTaintBoolean();
 
         // Original method
         /*
@@ -74,7 +74,7 @@ public class Point implements Parcelable {
     @Override public boolean equals(Object o){
         //DSFIXME:  CODE0004: Local variable requires review, uncomment if needed
         //Point p = (Point) o;
-        return dsTaint.getTaintBoolean();
+        return getTaintBoolean();
 
         // Original method
         /*
@@ -89,7 +89,7 @@ public class Point implements Parcelable {
     }
     
     @Override public int hashCode(){
-        return dsTaint.getTaintInt();
+        return getTaintInt();
 
         // Original method
         /*
@@ -100,7 +100,7 @@ public class Point implements Parcelable {
     }
     
     @Override public String toString(){
-        return dsTaint.getTaintString();
+        return getTaintString();
 
         // Original method
         /*
@@ -111,7 +111,7 @@ public class Point implements Parcelable {
     }
     
     @Override public int describeContents(){
-        return dsTaint.getTaintInt();
+        return getTaintInt();
 
         // Original method
         /*

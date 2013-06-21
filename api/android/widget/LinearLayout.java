@@ -117,18 +117,18 @@ public class LinearLayout extends ViewGroup {
     
     @DSModeled
     public void setShowDividers(int showDividers) {
-        dsTaint.addTaint(showDividers);
+        addTaint(showDividers);
         requestLayout();
     }
     
     @Override
     public boolean shouldDelayChildPressedState() {
-        return dsTaint.getTaintBoolean();
+        return getTaintBoolean();
     }
     
     @DSModeled
     public int getShowDividers() {
-        return dsTaint.getTaintInt();
+        return getTaintInt();
     }
     
     @DSModeled
@@ -140,22 +140,22 @@ public class LinearLayout extends ViewGroup {
             mDividerWidth = 0;
             mDividerHeight = 0;
         }
-        dsTaint.addTaint(divider.getIntrinsicWidth());
+        addTaint(divider.getIntrinsicWidth());
     }
     
     @DSModeled(DSC.SAFE)
     public void setDividerPadding(int padding) {
-        dsTaint.addTaint(padding);
+        addTaint(padding);
     }
     
 	@DSModeled(DSC.SAFE)
     public int getDividerPadding() {
-        return dsTaint.getTaintInt();
+        return getTaintInt();
     }
     
 	@DSModeled(DSC.SAFE)
     public int getDividerWidth() {
-        return dsTaint.getTaintInt();
+        return getTaintInt();
     }
 	
     @Override
@@ -177,13 +177,13 @@ public class LinearLayout extends ViewGroup {
     
 	@DSModeled(DSC.SAFE)
     void drawHorizontalDivider(Canvas canvas, int top) {
-        mDivider.setBounds(this.dsTaint.getTaintInt(), top, 0, 0);
+        mDivider.setBounds(thisgetTaintInt(), top, 0, 0);
         mDivider.draw(canvas);
     }
 	
 	@DSModeled(DSC.SAFE)
     void drawVerticalDivider(Canvas canvas, int left) {
-        mDivider.setBounds(this.dsTaint.getTaintInt(), left, 0, 0);
+        mDivider.setBounds(thisgetTaintInt(), left, 0, 0);
         mDivider.draw(canvas);
     }
     public boolean isBaselineAligned() {

@@ -68,7 +68,7 @@ public abstract class AbstractMap<K, V> implements Map<K,V> {
         @Override public boolean equals(Object object){
             //DSFIXME:  CODE0004: Local variable requires review, uncomment if needed
             //Map.Entry<?, ?> entry = (Map.Entry<?, ?>) object;
-            return dsTaint.getTaintBoolean();
+            return getTaintBoolean();
 
             // Original method
             /*
@@ -89,7 +89,7 @@ public abstract class AbstractMap<K, V> implements Map<K,V> {
         }
         
         @Override public int hashCode(){
-            return dsTaint.getTaintInt();
+            return getTaintInt();
 
             // Original method
             /*
@@ -101,7 +101,7 @@ public abstract class AbstractMap<K, V> implements Map<K,V> {
         }
         
         @Override public String toString(){
-            return dsTaint.getTaintString();
+            return getTaintString();
 
             // Original method
             /*
@@ -176,7 +176,7 @@ public abstract class AbstractMap<K, V> implements Map<K,V> {
         @Override public boolean equals(Object object){
             //DSFIXME:  CODE0004: Local variable requires review, uncomment if needed
             //Map.Entry<?, ?> entry = (Map.Entry<?, ?>) object;
-            return dsTaint.getTaintBoolean();
+            return getTaintBoolean();
 
             // Original method
             /*
@@ -197,7 +197,7 @@ public abstract class AbstractMap<K, V> implements Map<K,V> {
         }
         
         @Override public int hashCode(){
-            return dsTaint.getTaintInt();
+            return getTaintInt();
 
             // Original method
             /*
@@ -209,7 +209,7 @@ public abstract class AbstractMap<K, V> implements Map<K,V> {
         }
         
         @Override public String toString(){
-            return dsTaint.getTaintString();
+            return getTaintString();
 
             // Original method
             /*
@@ -238,7 +238,7 @@ public abstract class AbstractMap<K, V> implements Map<K,V> {
     public boolean containsKey(Object key){
         //DSFIXME:  CODE0004: Local variable requires review, uncomment if needed
         //Iterator<Map.Entry<K, V>> it = entrySet().iterator();
-        return dsTaint.getTaintBoolean();
+        return getTaintBoolean();
 
         // Original method
         /*
@@ -265,7 +265,7 @@ public abstract class AbstractMap<K, V> implements Map<K,V> {
     public boolean containsValue(Object value){
         //DSFIXME:  CODE0004: Local variable requires review, uncomment if needed
         //Iterator<Map.Entry<K, V>> it = entrySet().iterator();
-        return dsTaint.getTaintBoolean();
+        return getTaintBoolean();
 
         // Original method
         /*
@@ -300,7 +300,7 @@ public abstract class AbstractMap<K, V> implements Map<K,V> {
         //V mine = entry.getValue();
         //DSFIXME:  CODE0004: Local variable requires review, uncomment if needed
         //Object theirs = map.get(key);
-        return dsTaint.getTaintBoolean();
+        return getTaintBoolean();
 
         // Original method
         /* Original Method Too Long, Refer to Original Implementation */
@@ -348,7 +348,7 @@ public abstract class AbstractMap<K, V> implements Map<K,V> {
         //DSFIXME:  CODE0004: Local variable requires review, uncomment if needed
         //Iterator<Map.Entry<K, V>> it = entrySet().iterator();
         //result += it.next().hashCode();
-        return dsTaint.getTaintInt();
+        return getTaintInt();
 
         // Original method
         /*
@@ -364,7 +364,7 @@ public abstract class AbstractMap<K, V> implements Map<K,V> {
     }
     
     public boolean isEmpty(){
-        return dsTaint.getTaintBoolean();
+        return getTaintBoolean();
 
         // Original method
         /*
@@ -443,7 +443,7 @@ public abstract class AbstractMap<K, V> implements Map<K,V> {
     }
     
     public int size(){
-        return dsTaint.getTaintInt();
+        return getTaintInt();
 
         // Original method
         /*
@@ -472,7 +472,7 @@ public abstract class AbstractMap<K, V> implements Map<K,V> {
         //buffer.append("(this Map)");
         //buffer.append(", ");
         //buffer.append('}');
-        return dsTaint.getTaintString();
+        return getTaintString();
 
         // Original method
         /* Original Method Too Long, Refer to Original Implementation */
@@ -488,7 +488,7 @@ public abstract class AbstractMap<K, V> implements Map<K,V> {
     @SuppressWarnings("unchecked") @Override protected Object clone(){
         //DSFIXME:  CODE0004: Local variable requires review, uncomment if needed
         //AbstractMap<K, V> result = (AbstractMap<K, V>) super.clone();
-        return dsTaint;  //DSFIXME:  CODE0001: Unresolved return type/value combination
+        return ;  //DSFIXME:  CODE0001: Unresolved return type/value combination
 
         // Original method
         /*

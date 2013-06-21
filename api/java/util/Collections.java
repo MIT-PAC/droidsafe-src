@@ -43,7 +43,7 @@ public class Collections {
         
         CopiesList(int length, E object){
             //throw new IllegalArgumentException();
-            dsTaint.addTaint(length);
+            addTaint(length);
             element = object;  //DSFIXME:  CODE0003: Field assignment should be reviewed
             /*
             if (length < 0) {
@@ -55,7 +55,7 @@ public class Collections {
         }
         
         @Override public boolean contains(Object object){
-            return dsTaint.getTaintBoolean();
+            return getTaintBoolean();
 
             // Original method
             /*
@@ -66,7 +66,7 @@ public class Collections {
         }
         
         @Override public int size(){
-            return dsTaint.getTaintInt();
+            return getTaintInt();
 
             // Original method
             /*
@@ -99,14 +99,14 @@ public class Collections {
         private static final long serialVersionUID = 8842843931221139166L;
         
         @Override public boolean contains(Object object){
-            return dsTaint.getTaintBoolean();
+            return getTaintBoolean();
 
             // Original method
             return false;
         }
         
         @Override public int size(){
-            return dsTaint.getTaintInt();
+            return getTaintInt();
 
             // Original method
             return 0;
@@ -132,14 +132,14 @@ public class Collections {
         private static final long serialVersionUID = 1582296315990362920L;
         
         @Override public boolean contains(Object object){
-            return dsTaint.getTaintBoolean();
+            return getTaintBoolean();
 
             // Original method
             return false;
         }
         
         @Override public int size(){
-            return dsTaint.getTaintInt();
+            return getTaintInt();
 
             // Original method
             return 0;
@@ -168,14 +168,14 @@ public class Collections {
         private static final long serialVersionUID = 6428348081105594320L;
         
         @Override public boolean containsKey(Object key){
-            return dsTaint.getTaintBoolean();
+            return getTaintBoolean();
 
             // Original method
             return false;
         }
         
         @Override public boolean containsValue(Object value){
-            return dsTaint.getTaintBoolean();
+            return getTaintBoolean();
 
             // Original method
             return false;
@@ -233,7 +233,7 @@ public class Collections {
         @SuppressWarnings("unchecked") @Override public int compare(T o1, T o2){
             //DSFIXME:  CODE0004: Local variable requires review, uncomment if needed
             //Comparable<T> c2 = (Comparable<T>) o2;
-            return dsTaint.getTaintInt();
+            return getTaintInt();
 
             // Original method
             /*
@@ -270,7 +270,7 @@ public class Collections {
         }
         
         @Override public int compare(T o1, T o2){
-            return dsTaint.getTaintInt();
+            return getTaintInt();
 
             // Original method
             /*
@@ -281,7 +281,7 @@ public class Collections {
         }
         
         @Override public boolean equals(Object o){
-            return dsTaint.getTaintBoolean();
+            return getTaintBoolean();
 
             // Original method
             /*
@@ -293,7 +293,7 @@ public class Collections {
         }
         
         @Override public int hashCode(){
-            return dsTaint.getTaintInt();
+            return getTaintInt();
 
             // Original method
             /*
@@ -318,7 +318,7 @@ public class Collections {
         }
         
         @Override public boolean contains(Object object){
-            return dsTaint.getTaintBoolean();
+            return getTaintBoolean();
 
             // Original method
             /*
@@ -329,7 +329,7 @@ public class Collections {
         }
         
         @Override public int size(){
-            return dsTaint.getTaintInt();
+            return getTaintInt();
 
             // Original method
             /*
@@ -398,7 +398,7 @@ public class Collections {
         }
         
         @Override public boolean contains(Object object){
-            return dsTaint.getTaintBoolean();
+            return getTaintBoolean();
 
             // Original method
             /*
@@ -410,7 +410,7 @@ public class Collections {
         
         @Override public E get(int location){
             //throw new IndexOutOfBoundsException();
-            return (E)dsTaint;  //DSFIXME:  CODE0001: Unresolved return type/value combination
+            return (E);  //DSFIXME:  CODE0001: Unresolved return type/value combination
 
             // Original method
             /*
@@ -424,7 +424,7 @@ public class Collections {
         }
         
         @Override public int size(){
-            return dsTaint.getTaintInt();
+            return getTaintInt();
 
             // Original method
             /*
@@ -452,7 +452,7 @@ public class Collections {
         }
         
         @Override public boolean containsKey(Object key){
-            return dsTaint.getTaintBoolean();
+            return getTaintBoolean();
 
             // Original method
             /*
@@ -463,7 +463,7 @@ public class Collections {
         }
         
         @Override public boolean containsValue(Object value){
-            return dsTaint.getTaintBoolean();
+            return getTaintBoolean();
 
             // Original method
             /*
@@ -491,7 +491,7 @@ public class Collections {
         }
         
         @Override public int size(){
-            return dsTaint.getTaintInt();
+            return getTaintInt();
 
             // Original method
             /*
@@ -574,7 +574,7 @@ public class Collections {
         }
         
         @Override public boolean add(E object){
-            return dsTaint.getTaintBoolean();
+            return getTaintBoolean();
 
             // Original method
             /*
@@ -587,7 +587,7 @@ public class Collections {
         }
         
         @Override public boolean addAll(Collection<? extends E> collection){
-            return dsTaint.getTaintBoolean();
+            return getTaintBoolean();
 
             // Original method
             /*
@@ -612,7 +612,7 @@ public class Collections {
         }
         
         @Override public boolean contains(Object object){
-            return dsTaint.getTaintBoolean();
+            return getTaintBoolean();
 
             // Original method
             /*
@@ -625,7 +625,7 @@ public class Collections {
         }
         
         @Override public boolean containsAll(Collection<?> collection){
-            return dsTaint.getTaintBoolean();
+            return getTaintBoolean();
 
             // Original method
             /*
@@ -638,7 +638,7 @@ public class Collections {
         }
         
         @Override public boolean isEmpty(){
-            return dsTaint.getTaintBoolean();
+            return getTaintBoolean();
 
             // Original method
             /*
@@ -664,7 +664,7 @@ public class Collections {
         }
         
         @Override public boolean remove(Object object){
-            return dsTaint.getTaintBoolean();
+            return getTaintBoolean();
 
             // Original method
             /*
@@ -677,7 +677,7 @@ public class Collections {
         }
         
         @Override public boolean removeAll(Collection<?> collection){
-            return dsTaint.getTaintBoolean();
+            return getTaintBoolean();
 
             // Original method
             /*
@@ -690,7 +690,7 @@ public class Collections {
         }
         
         @Override public boolean retainAll(Collection<?> collection){
-            return dsTaint.getTaintBoolean();
+            return getTaintBoolean();
 
             // Original method
             /*
@@ -703,7 +703,7 @@ public class Collections {
         }
         
         @Override public int size(){
-            return dsTaint.getTaintInt();
+            return getTaintInt();
 
             // Original method
             /*
@@ -729,7 +729,7 @@ public class Collections {
         }
         
         @Override public String toString(){
-            return dsTaint.getTaintString();
+            return getTaintString();
 
             // Original method
             /*
@@ -840,7 +840,7 @@ public class Collections {
         }
         
         @Override public boolean addAll(int location, Collection<? extends E> collection){
-            return dsTaint.getTaintBoolean();
+            return getTaintBoolean();
 
             // Original method
             /*
@@ -853,7 +853,7 @@ public class Collections {
         }
         
         @Override public boolean equals(Object object){
-            return dsTaint.getTaintBoolean();
+            return getTaintBoolean();
 
             // Original method
             /*
@@ -879,7 +879,7 @@ public class Collections {
         }
         
         @Override public int hashCode(){
-            return dsTaint.getTaintInt();
+            return getTaintInt();
 
             // Original method
             /*
@@ -897,7 +897,7 @@ public class Collections {
             //DSFIXME:  CODE0004: Local variable requires review, uncomment if needed
             //final Object[] array;
             //list.toArray(array);
-            return dsTaint.getTaintInt();
+            return getTaintInt();
 
             // Original method
             /*
@@ -933,7 +933,7 @@ public class Collections {
             //DSFIXME:  CODE0004: Local variable requires review, uncomment if needed
             //final Object[] array;
             //list.toArray(array);
-            return dsTaint.getTaintInt();
+            return getTaintInt();
 
             // Original method
             /*
@@ -1094,7 +1094,7 @@ public class Collections {
         }
         
         @Override public boolean containsKey(Object key){
-            return dsTaint.getTaintBoolean();
+            return getTaintBoolean();
 
             // Original method
             /*
@@ -1107,7 +1107,7 @@ public class Collections {
         }
         
         @Override public boolean containsValue(Object value){
-            return dsTaint.getTaintBoolean();
+            return getTaintBoolean();
 
             // Original method
             /*
@@ -1133,7 +1133,7 @@ public class Collections {
         }
         
         @Override public boolean equals(Object object){
-            return dsTaint.getTaintBoolean();
+            return getTaintBoolean();
 
             // Original method
             /*
@@ -1159,7 +1159,7 @@ public class Collections {
         }
         
         @Override public int hashCode(){
-            return dsTaint.getTaintInt();
+            return getTaintInt();
 
             // Original method
             /*
@@ -1172,7 +1172,7 @@ public class Collections {
         }
         
         @Override public boolean isEmpty(){
-            return dsTaint.getTaintBoolean();
+            return getTaintBoolean();
 
             // Original method
             /*
@@ -1236,7 +1236,7 @@ public class Collections {
         }
         
         @Override public int size(){
-            return dsTaint.getTaintInt();
+            return getTaintInt();
 
             // Original method
             /*
@@ -1262,7 +1262,7 @@ public class Collections {
         }
         
         @Override public String toString(){
-            return dsTaint.getTaintString();
+            return getTaintString();
 
             // Original method
             /*
@@ -1301,7 +1301,7 @@ public class Collections {
         }
         
         @Override public boolean equals(Object object){
-            return dsTaint.getTaintBoolean();
+            return getTaintBoolean();
 
             // Original method
             /*
@@ -1314,7 +1314,7 @@ public class Collections {
         }
         
         @Override public int hashCode(){
-            return dsTaint.getTaintInt();
+            return getTaintInt();
 
             // Original method
             /*
@@ -1617,7 +1617,7 @@ public class Collections {
         }
         
         @Override public boolean contains(Object object){
-            return dsTaint.getTaintBoolean();
+            return getTaintBoolean();
 
             // Original method
             /*
@@ -1628,7 +1628,7 @@ public class Collections {
         }
         
         @Override public boolean containsAll(Collection<?> collection){
-            return dsTaint.getTaintBoolean();
+            return getTaintBoolean();
 
             // Original method
             /*
@@ -1639,7 +1639,7 @@ public class Collections {
         }
         
         @Override public boolean isEmpty(){
-            return dsTaint.getTaintBoolean();
+            return getTaintBoolean();
 
             // Original method
             /*
@@ -1719,7 +1719,7 @@ public class Collections {
         }
         
         @Override public int size(){
-            return dsTaint.getTaintInt();
+            return getTaintInt();
 
             // Original method
             /*
@@ -1752,7 +1752,7 @@ public class Collections {
         }
         
         @Override public String toString(){
-            return dsTaint.getTaintString();
+            return getTaintString();
 
             // Original method
             /*
@@ -1830,7 +1830,7 @@ public class Collections {
         }
         
         @Override public boolean equals(Object object){
-            return dsTaint.getTaintBoolean();
+            return getTaintBoolean();
 
             // Original method
             /*
@@ -1852,7 +1852,7 @@ public class Collections {
         }
         
         @Override public int hashCode(){
-            return dsTaint.getTaintInt();
+            return getTaintInt();
 
             // Original method
             /*
@@ -1863,7 +1863,7 @@ public class Collections {
         }
         
         @Override public int indexOf(Object object){
-            return dsTaint.getTaintInt();
+            return getTaintInt();
 
             // Original method
             /*
@@ -1874,7 +1874,7 @@ public class Collections {
         }
         
         @Override public int lastIndexOf(Object object){
-            return dsTaint.getTaintInt();
+            return getTaintInt();
 
             // Original method
             /*
@@ -2012,7 +2012,7 @@ public class Collections {
                 }
                 
                 @Override public boolean equals(Object object){
-                    return dsTaint.getTaintBoolean();
+                    return getTaintBoolean();
 
                     // Original method
                     /*
@@ -2045,7 +2045,7 @@ public class Collections {
                 }
                 
                 @Override public int hashCode(){
-                    return dsTaint.getTaintInt();
+                    return getTaintInt();
 
                     // Original method
                     /*
@@ -2066,7 +2066,7 @@ public class Collections {
                 }
                 
                 @Override public String toString(){
-                    return dsTaint.getTaintString();
+                    return getTaintString();
 
                     // Original method
                     /*
@@ -2126,7 +2126,7 @@ public class Collections {
                 //int length = c.size();
                 //DSFIXME:  CODE0004: Local variable requires review, uncomment if needed
                 Object[] result = new Object[1];
-                result[0] = dsTaint;
+                result.addTaint(this.getTaint());
                 //DSFIXME:  CODE0004: Local variable requires review, uncomment if needed
                 //Iterator<?> it = iterator();
                 return result;  //DSFIXME:  CODE0001: Unresolved return type/value combination
@@ -2195,7 +2195,7 @@ public class Collections {
         }
         
         @Override public boolean containsKey(Object key){
-            return dsTaint.getTaintBoolean();
+            return getTaintBoolean();
 
             // Original method
             /*
@@ -2206,7 +2206,7 @@ public class Collections {
         }
         
         @Override public boolean containsValue(Object value){
-            return dsTaint.getTaintBoolean();
+            return getTaintBoolean();
 
             // Original method
             /*
@@ -2228,7 +2228,7 @@ public class Collections {
         }
         
         @Override public boolean equals(Object object){
-            return dsTaint.getTaintBoolean();
+            return getTaintBoolean();
 
             // Original method
             /*
@@ -2250,7 +2250,7 @@ public class Collections {
         }
         
         @Override public int hashCode(){
-            return dsTaint.getTaintInt();
+            return getTaintInt();
 
             // Original method
             /*
@@ -2261,7 +2261,7 @@ public class Collections {
         }
         
         @Override public boolean isEmpty(){
-            return dsTaint.getTaintBoolean();
+            return getTaintBoolean();
 
             // Original method
             /*
@@ -2313,7 +2313,7 @@ public class Collections {
         }
         
         @Override public int size(){
-            return dsTaint.getTaintInt();
+            return getTaintInt();
 
             // Original method
             /*
@@ -2335,7 +2335,7 @@ public class Collections {
         }
         
         @Override public String toString(){
-            return dsTaint.getTaintString();
+            return getTaintString();
 
             // Original method
             /*
@@ -2356,7 +2356,7 @@ public class Collections {
         }
         
         @Override public boolean equals(Object object){
-            return dsTaint.getTaintBoolean();
+            return getTaintBoolean();
 
             // Original method
             /*
@@ -2367,7 +2367,7 @@ public class Collections {
         }
         
         @Override public int hashCode(){
-            return dsTaint.getTaintInt();
+            return getTaintInt();
 
             // Original method
             /*
@@ -3236,7 +3236,7 @@ public class Collections {
         }
         
         @Override public boolean equals(Object object){
-            return dsTaint.getTaintBoolean();
+            return getTaintBoolean();
 
             // Original method
             /*
@@ -3247,7 +3247,7 @@ public class Collections {
         }
         
         @Override public int hashCode(){
-            return dsTaint.getTaintInt();
+            return getTaintInt();
 
             // Original method
             /*
@@ -3258,7 +3258,7 @@ public class Collections {
         }
         
         @Override public boolean add(E object){
-            return dsTaint.getTaintBoolean();
+            return getTaintBoolean();
 
             // Original method
             /*
@@ -3279,7 +3279,7 @@ public class Collections {
         }
         
         @Override public String toString(){
-            return dsTaint.getTaintString();
+            return getTaintString();
 
             // Original method
             /*
@@ -3290,7 +3290,7 @@ public class Collections {
         }
         
         @Override public boolean contains(Object object){
-            return dsTaint.getTaintBoolean();
+            return getTaintBoolean();
 
             // Original method
             /*
@@ -3301,7 +3301,7 @@ public class Collections {
         }
         
         @Override public boolean containsAll(Collection<?> collection){
-            return dsTaint.getTaintBoolean();
+            return getTaintBoolean();
 
             // Original method
             /*
@@ -3312,7 +3312,7 @@ public class Collections {
         }
         
         @Override public boolean isEmpty(){
-            return dsTaint.getTaintBoolean();
+            return getTaintBoolean();
 
             // Original method
             /*
@@ -3323,7 +3323,7 @@ public class Collections {
         }
         
         @Override public boolean remove(Object object){
-            return dsTaint.getTaintBoolean();
+            return getTaintBoolean();
 
             // Original method
             /*
@@ -3334,7 +3334,7 @@ public class Collections {
         }
         
         @Override public boolean retainAll(Collection<?> collection){
-            return dsTaint.getTaintBoolean();
+            return getTaintBoolean();
 
             // Original method
             /*
@@ -3378,7 +3378,7 @@ public class Collections {
         }
         
         @Override public int size(){
-            return dsTaint.getTaintInt();
+            return getTaintInt();
 
             // Original method
             /*
@@ -3425,7 +3425,7 @@ public class Collections {
         }
         
         @Override public int size(){
-            return dsTaint.getTaintInt();
+            return getTaintInt();
 
             // Original method
             /*
@@ -3436,7 +3436,7 @@ public class Collections {
         }
         
         @Override public boolean offer(E o){
-            return dsTaint.getTaintBoolean();
+            return getTaintBoolean();
 
             // Original method
             /*
@@ -3470,7 +3470,7 @@ public class Collections {
         
         @Override public boolean add(E o){
             q.push(o);
-            return dsTaint.getTaintBoolean();
+            return getTaintBoolean();
 
             // Original method
             /*
@@ -3514,7 +3514,7 @@ public class Collections {
         }
         
         @Override public boolean contains(Object object){
-            return dsTaint.getTaintBoolean();
+            return getTaintBoolean();
 
             // Original method
             /*
@@ -3525,7 +3525,7 @@ public class Collections {
         }
         
         @Override public boolean containsAll(Collection<?> collection){
-            return dsTaint.getTaintBoolean();
+            return getTaintBoolean();
 
             // Original method
             /*
@@ -3536,7 +3536,7 @@ public class Collections {
         }
         
         @Override public boolean isEmpty(){
-            return dsTaint.getTaintBoolean();
+            return getTaintBoolean();
 
             // Original method
             /*
@@ -3547,7 +3547,7 @@ public class Collections {
         }
         
         @Override public boolean remove(Object object){
-            return dsTaint.getTaintBoolean();
+            return getTaintBoolean();
 
             // Original method
             /*
@@ -3558,7 +3558,7 @@ public class Collections {
         }
         
         @Override public boolean removeAll(Collection<?> collection){
-            return dsTaint.getTaintBoolean();
+            return getTaintBoolean();
 
             // Original method
             /*
@@ -3569,7 +3569,7 @@ public class Collections {
         }
         
         @Override public boolean retainAll(Collection<?> collection){
-            return dsTaint.getTaintBoolean();
+            return getTaintBoolean();
 
             // Original method
             /*
@@ -3602,7 +3602,7 @@ public class Collections {
         }
         
         @Override public String toString(){
-            return dsTaint.getTaintString();
+            return getTaintString();
 
             // Original method
             /*
@@ -3634,7 +3634,7 @@ public class Collections {
         }
         
         @Override public int size(){
-            return dsTaint.getTaintInt();
+            return getTaintInt();
 
             // Original method
             /*
@@ -3645,7 +3645,7 @@ public class Collections {
         }
         
         @Override public boolean isEmpty(){
-            return dsTaint.getTaintBoolean();
+            return getTaintBoolean();
 
             // Original method
             /*
@@ -3656,7 +3656,7 @@ public class Collections {
         }
         
         @Override public boolean contains(Object obj){
-            return dsTaint.getTaintBoolean();
+            return getTaintBoolean();
 
             // Original method
             /*
@@ -3669,7 +3669,7 @@ public class Collections {
         @Override public Iterator<E> iterator(){
             //DSFIXME:  CODE0004: Local variable requires review, uncomment if needed
             //Iterator<E> i = c.iterator();
-            return (Iterator)dsTaint;  //DSFIXME:  CODE0001: Unresolved return type/value combination
+            return (Iterator);  //DSFIXME:  CODE0001: Unresolved return type/value combination
 
             // Original method
             /*
@@ -3706,7 +3706,7 @@ public class Collections {
         }
         
         @Override public boolean add(E obj){
-            return dsTaint.getTaintBoolean();
+            return getTaintBoolean();
 
             // Original method
             /*
@@ -3717,7 +3717,7 @@ public class Collections {
         }
         
         @Override public boolean remove(Object obj){
-            return dsTaint.getTaintBoolean();
+            return getTaintBoolean();
 
             // Original method
             /*
@@ -3728,7 +3728,7 @@ public class Collections {
         }
         
         @Override public boolean containsAll(Collection<?> c1){
-            return dsTaint.getTaintBoolean();
+            return getTaintBoolean();
 
             // Original method
             /*
@@ -3742,7 +3742,7 @@ public class Collections {
             //DSFIXME:  CODE0004: Local variable requires review, uncomment if needed
             //Object[] array = c1.toArray();
             //checkType(o, type);
-            return dsTaint.getTaintBoolean();
+            return getTaintBoolean();
 
             // Original method
             /*
@@ -3757,7 +3757,7 @@ public class Collections {
         }
         
         @Override public boolean removeAll(Collection<?> c1){
-            return dsTaint.getTaintBoolean();
+            return getTaintBoolean();
 
             // Original method
             /*
@@ -3768,7 +3768,7 @@ public class Collections {
         }
         
         @Override public boolean retainAll(Collection<?> c1){
-            return dsTaint.getTaintBoolean();
+            return getTaintBoolean();
 
             // Original method
             /*
@@ -3789,7 +3789,7 @@ public class Collections {
         }
         
         @Override public String toString(){
-            return dsTaint.getTaintString();
+            return getTaintString();
 
             // Original method
             /*
@@ -3816,7 +3816,7 @@ public class Collections {
         }
         
         @Override public boolean hasNext(){
-            return dsTaint.getTaintBoolean();
+            return getTaintBoolean();
 
             // Original method
             /*
@@ -3848,7 +3848,7 @@ public class Collections {
         }
         
         @Override public boolean hasPrevious(){
-            return dsTaint.getTaintBoolean();
+            return getTaintBoolean();
 
             // Original method
             /*
@@ -3870,7 +3870,7 @@ public class Collections {
         }
         
         @Override public int nextIndex(){
-            return dsTaint.getTaintInt();
+            return getTaintInt();
 
             // Original method
             /*
@@ -3881,7 +3881,7 @@ public class Collections {
         }
         
         @Override public int previousIndex(){
-            return dsTaint.getTaintInt();
+            return getTaintInt();
 
             // Original method
             /*
@@ -3930,7 +3930,7 @@ public class Collections {
             //DSFIXME:  CODE0004: Local variable requires review, uncomment if needed
             //Object[] array = c1.toArray();
             //checkType(o, type);
-            return dsTaint.getTaintBoolean();
+            return getTaintBoolean();
 
             // Original method
             /*
@@ -3988,7 +3988,7 @@ public class Collections {
         }
         
         @Override public int indexOf(Object obj){
-            return dsTaint.getTaintInt();
+            return getTaintInt();
 
             // Original method
             /*
@@ -3999,7 +3999,7 @@ public class Collections {
         }
         
         @Override public int lastIndexOf(Object obj){
-            return dsTaint.getTaintInt();
+            return getTaintInt();
 
             // Original method
             /*
@@ -4043,7 +4043,7 @@ public class Collections {
         }
         
         @Override public boolean equals(Object obj){
-            return dsTaint.getTaintBoolean();
+            return getTaintBoolean();
 
             // Original method
             /*
@@ -4054,7 +4054,7 @@ public class Collections {
         }
         
         @Override public int hashCode(){
-            return dsTaint.getTaintInt();
+            return getTaintInt();
 
             // Original method
             /*
@@ -4085,7 +4085,7 @@ public class Collections {
         }
         
         @Override public boolean equals(Object obj){
-            return dsTaint.getTaintBoolean();
+            return getTaintBoolean();
 
             // Original method
             /*
@@ -4096,7 +4096,7 @@ public class Collections {
         }
         
         @Override public int hashCode(){
-            return dsTaint.getTaintInt();
+            return getTaintInt();
 
             // Original method
             /*
@@ -4130,28 +4130,28 @@ public class Collections {
         }
         
         @Override public int size(){
-            return dsTaint.getTaintInt();
+            return getTaintInt();
 
             // Original method
             return m.size();
         }
         
         @Override public boolean isEmpty(){
-            return dsTaint.getTaintBoolean();
+            return getTaintBoolean();
 
             // Original method
             return m.isEmpty();
         }
         
         @Override public boolean containsKey(Object key){
-            return dsTaint.getTaintBoolean();
+            return getTaintBoolean();
 
             // Original method
             return m.containsKey(key);
         }
         
         @Override public boolean containsValue(Object value){
-            return dsTaint.getTaintBoolean();
+            return getTaintBoolean();
 
             // Original method
             return m.containsValue(value);
@@ -4190,7 +4190,7 @@ public class Collections {
             //checkType(e.getKey(), keyType);
             //checkType(e.getValue(), valueType);
             //m.put(entries[i].getKey(), entries[i].getValue());
-        	//dsTaint.addTaint(map.dsTaint);
+        	//addTaint(map);
             // Original method
         @Override public K lastKey(){
             return sm.lastKey();  //DSFIXME:  CODE0001: Unresolved return type/value combination

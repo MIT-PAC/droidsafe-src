@@ -21,16 +21,16 @@ class Class<T>
 
 	@DSModeled(DSC.SAFE)
 	public String getSimpleName() {
-		return dsTaint.getTaintString();
+		return getTaintString();
 	}
 	
 	@DSModeled(DSC.SAFE)
 	public String getName() {
-		return dsTaint.getTaintString();
+		return getTaintString();
     }
 	
 	@DSModeled(DSC.SAFE)
 	public Class<?> getComponentType() {
-		return (Class<?>)dsTaint.getTaint();
+		return (Class<?>)getTaint();
 	}
 }

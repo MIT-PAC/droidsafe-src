@@ -95,8 +95,8 @@ public final class CursorJoiner
     	 mCursorLeft = cursorLeft;
          mCursorRight = cursorRight;
          
-        dsTaint.addTaint(columnNamesRight[0]);
-        dsTaint.addTaint(columnNamesLeft[0]);
+        addTaint(columnNamesRight[0]);
+        addTaint(columnNamesLeft[0]);
         
         if (columnNamesLeft.length != columnNamesRight.length) {
             throw new IllegalArgumentException(

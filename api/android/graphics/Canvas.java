@@ -25,33 +25,33 @@ public class Canvas {
 		 * operation happens in real time, so tracking taint is difficult
 		 * on the upflow.
 		 */
-		dsTaint.addTaint(startX);
-		dsTaint.addTaint(startY);
-		dsTaint.addTaint(stopX);
-		dsTaint.addTaint(stopY);
-		dsTaint.addTaint(paint.dsTaint);
+		addTaint(startX);
+		addTaint(startY);
+		addTaint(stopX);
+		addTaint(stopY);
+		addTaint(paint);
 	}
 	
 	@DSModeled(DSC.SAFE)
 	public void drawColor(int i) {
-		dsTaint.addTaint(i);
+		addTaint(i);
 	}
 	
 	@DSModeled(DSC.SAFE)
 	public int save(int i) {
-		dsTaint.addTaint(i);
-		return dsTaint.getTaintInt();
+		addTaint(i);
+		return getTaintInt();
 	}
 	
 	@DSModeled(value = DSC.SAFE)
 	public int getDensity() {
-		return dsTaint.getTaintInt();
+		return getTaintInt();
 		//return mDensity;
     }
 	
 	@DSModeled(value = DSC.SAFE)
 	public void setDensity(int density) {
-		dsTaint.addTaint(density);  //Density is saved both here and in the bitmap
+		addTaint(density);  //Density is saved both here and in the bitmap
 		mBitmap.setDensity(density);  //setDensity will track the taint in the Bitmap object
 		/*
         if (mBitmap != null) {
@@ -63,8 +63,8 @@ public class Canvas {
 	
 	@DSModeled(value = DSC.SAFE)
 	public void setBitmap(Bitmap bitmap) {
-		dsTaint.addTaint(bitmap.dsTaint);
-		dsTaint.addTaint(bitmap.getDensity()); //getDensity will return a tainted value
+		addTaint(bitmap);
+		addTaint(bitmap.getDensity()); //getDensity will return a tainted value
 		/*
         if (isHardwareAccelerated()) {
             throw new RuntimeException("Can't set a bitmap device on a GL canvas");
@@ -87,10 +87,10 @@ public class Canvas {
 	
 	@DSModeled(DSC.SAFE)
     public void drawBitmap(Bitmap bitmap, float left, float top, Paint paint) {
-		dsTaint.addTaint(bitmap.dsTaint);
-		dsTaint.addTaint(left);
-		dsTaint.addTaint(top);
-		dsTaint.addTaint(paint.dsTaint);
+		addTaint(bitmap);
+		addTaint(left);
+		addTaint(top);
+		addTaint(paint);
 		
 		/*
         throwIfRecycled(bitmap);
@@ -108,8 +108,8 @@ public class Canvas {
      */
 	@DSModeled(DSC.SAFE)
     public void drawOval(RectF oval, Paint paint) {
-		dsTaint.addTaint(oval.dsTaint);
-		dsTaint.addTaint(paint.dsTaint);
+		addTaint(oval);
+		addTaint(paint);
     	/* GITI DSModeled
         if (oval == null) {
             throw new NullPointerException();
@@ -120,8 +120,8 @@ public class Canvas {
 	
 	@DSModeled(DSC.SAFE)
     public void drawPath(Path path, Paint paint) {
-		dsTaint.addTaint(path.dsTaint);
-		dsTaint.addTaint(paint.dsTaint);
+		addTaint(path);
+		addTaint(paint);
         /*
          native_drawPath(mNativeCanvas, path.ni(), paint.mNativePaint);
         */
@@ -136,32 +136,32 @@ public class Canvas {
 	
 	@DSModeled(DSC.SAFE)
 	public void rotate(float degrees) {
-		dsTaint.addTaint(degrees);
+		addTaint(degrees);
 	}
 	
 	@DSModeled(DSC.SAFE)
 	public void scale(float sx, float sy) {
-		dsTaint.addTaint(sx);
-		dsTaint.addTaint(sy);
+		addTaint(sx);
+		addTaint(sy);
 	}
 	
 	@DSModeled(DSC.SAFE)
 	public void translate(float dx, float dy) {
-		dsTaint.addTaint(dx);
-		dsTaint.addTaint(dy);
+		addTaint(dx);
+		addTaint(dy);
 	}
 	
 	@DSModeled(DSC.SAFE)
 	public void concat(Matrix matrix) {
-		dsTaint.addTaint(matrix.native_instance);
+		addTaint(matrix.native_instance);
     }
 	
 	@DSModeled(DSC.SAFE)
 	public void drawBitmap(Bitmap bitmap, Rect src, RectF dst, Paint paint) {
-		dsTaint.addTaint(bitmap.dsTaint);
-		dsTaint.addTaint(src.dsTaint);
-		dsTaint.addTaint(dst.dsTaint);
-		dsTaint.addTaint(paint.dsTaint);
+		addTaint(bitmap);
+		addTaint(src);
+		addTaint(dst);
+		addTaint(paint);
     }
 	
 }

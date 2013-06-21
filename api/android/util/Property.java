@@ -11,13 +11,13 @@ public abstract class Property<T, V> {
     public Property(Class<V> type, String name) {
         mName = name;
         mType = type;
-        dsTaint.addTaint(name); 
+        addTaint(name); 
     }
     public boolean isReadOnly() {
-        return dsTaint.getTaintBoolean();
+        return getTaintBoolean();
     }
     
-    // How can we tell if object or value has dsTaint object
+    // How can we tell if object or value has  object
     public void set(T object, V value) {
         
     }
@@ -25,7 +25,7 @@ public abstract class Property<T, V> {
     
     @DSModeled (DSC.SAFE)
     public String getName() {
-        return dsTaint.getTaintString();
+        return getTaintString();
     }
     public Class<V> getType() {
         return mType;
