@@ -3,10 +3,10 @@ package javax.sip.header;
 // Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
+import droidsafe.runtime.*;
 
-// import Iterator to deal with enhanced for loop translation
+// needed for enhanced for control translations
 import java.util.Iterator;
-
 import java.text.ParseException;
 import java.util.List;
 import java.util.ListIterator;
@@ -18,4 +18,3 @@ public interface UserAgentHeader extends Header {
     void setProduct(List product) throws ParseException;
     void addProductToken(String productToken);
 }
-

@@ -2,27 +2,25 @@ package org.apache.harmony.security.utils;
 
 // Droidsafe Imports
 import droidsafe.helpers.*;
-import droidsafe.runtime.DroidSafeAndroidRuntime;
 import droidsafe.annotations.*;
+import droidsafe.runtime.*;
 
-// import Iterator to deal with enhanced for loop translation
+// needed for enhanced for control translations
 import java.util.Iterator;
-
 import java.util.Arrays;
 
 public final class ObjectIdentifier {
-    private final int[] oid;
+    private int[] oid;
     private int hash = -1;
     private String soid;
     private String sOID;
     private String name;
     private Object group;
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:17.792 -0400", hash_original_method = "7ABF15BC63C3D8D706564084308C24AA", hash_generated_method = "57C7307AA56D103B0CB66738DBBA80AF")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:40.398 -0400", hash_original_method = "7ABF15BC63C3D8D706564084308C24AA", hash_generated_method = "5176FCD3A5FF3011C2D1CD83BE3EC627")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     public ObjectIdentifier(int[] oid) {
-        dsTaint.addTaint(oid);
-        this.oid = oid;
+        dsTaint.addTaint(oid[0]);
         validateOid(oid);
         // ---------- Original Method ----------
         //validateOid(oid);
@@ -30,15 +28,15 @@ public final class ObjectIdentifier {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:17.792 -0400", hash_original_method = "383F734F3FE5E01DEDB78CACC2759E14", hash_generated_method = "7EF0D52013C5400BCEDAD0B962BE291F")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:40.398 -0400", hash_original_method = "383F734F3FE5E01DEDB78CACC2759E14", hash_generated_method = "C5D6F3401D910464C204BED5E86960F1")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public ObjectIdentifier(int[] oid, String name, Object oidGroup) {
         this(oid);
         dsTaint.addTaint(oidGroup.dsTaint);
-        dsTaint.addTaint(oid);
+        dsTaint.addTaint(oid[0]);
         dsTaint.addTaint(name);
         {
-        	if (DroidSafeAndroidRuntime.control) throw new NullPointerException("oidGroup == null");
+            if (DroidSafeAndroidRuntime.control) throw new NullPointerException("oidGroup == null");
         } //End block
         toOIDString();
         // ---------- Original Method ----------
@@ -51,7 +49,7 @@ public final class ObjectIdentifier {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:17.792 -0400", hash_original_method = "30E83D32FBE8DF043D06124E9715286A", hash_generated_method = "DC1E35D8DB3EC515D52F6161938F7A0E")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:40.398 -0400", hash_original_method = "30E83D32FBE8DF043D06124E9715286A", hash_generated_method = "6ACFD8F5C46BF2587DD8ED8967E8E5AD")
     @DSModeled(DSC.SAFE)
     public int[] getOid() {
         int[] retVal = new int[1];
@@ -62,7 +60,7 @@ public final class ObjectIdentifier {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:17.793 -0400", hash_original_method = "7070E6AABEDCBA653834DDC8CF79A47C", hash_generated_method = "F47755EA38582EE7C3877DD72123E9B0")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:40.398 -0400", hash_original_method = "7070E6AABEDCBA653834DDC8CF79A47C", hash_generated_method = "3573899E99121C9CFE87F9DDAEE36810")
     @DSModeled(DSC.SAFE)
     public String getName() {
         return dsTaint.getTaintString();
@@ -71,7 +69,7 @@ public final class ObjectIdentifier {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:17.793 -0400", hash_original_method = "FA340579AD853DABC65F97F27C820CE8", hash_generated_method = "A4E0DEDE910799A06EC6DD9B352EC819")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:40.399 -0400", hash_original_method = "FA340579AD853DABC65F97F27C820CE8", hash_generated_method = "EE2892EE5E9D70FB1668557EEC9DDB90")
     @DSModeled(DSC.SAFE)
     public Object getGroup() {
         return (Object)dsTaint.getTaint();
@@ -80,14 +78,14 @@ public final class ObjectIdentifier {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:17.793 -0400", hash_original_method = "7A1590EC642F64148081547F7DE77EEF", hash_generated_method = "15AA19B3C2E3D7D80D6C6940C6E3A09E")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:40.399 -0400", hash_original_method = "7A1590EC642F64148081547F7DE77EEF", hash_generated_method = "38305A023639401F17C2A70F833FA59F")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public boolean equals(Object o) {
         dsTaint.addTaint(o.dsTaint);
         {
-            boolean var9B27E520BBC2DDC5CC18F0AC09DC0048_2072459429 = (o == null || this.getClass() != o.getClass());
+            boolean var9B27E520BBC2DDC5CC18F0AC09DC0048_619209331 = (o == null || this.getClass() != o.getClass());
         } //End collapsed parenthetic
-        boolean var85CA6B7259588F8D393C14CCCE2DBEB8_1604886352 = (Arrays.equals(oid, ((ObjectIdentifier) o).oid));
+        boolean var85CA6B7259588F8D393C14CCCE2DBEB8_589041802 = (Arrays.equals(oid, ((ObjectIdentifier) o).oid));
         return dsTaint.getTaintBoolean();
         // ---------- Original Method ----------
         //if (this == o) {
@@ -100,7 +98,7 @@ public final class ObjectIdentifier {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:17.793 -0400", hash_original_method = "81F5AC8E69E1A1CBA984F8550D6AF5BD", hash_generated_method = "33F3B99E076E6357B25839E493EE9DDC")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:40.399 -0400", hash_original_method = "81F5AC8E69E1A1CBA984F8550D6AF5BD", hash_generated_method = "5EB2EEA32880969795091DD841546F71")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public String toOIDString() {
         {
@@ -115,7 +113,7 @@ public final class ObjectIdentifier {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:17.793 -0400", hash_original_method = "B22823BCA8FD058C901A741025BA8FB1", hash_generated_method = "522384E495A98B93B27D8BAD05DDC9A3")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:40.399 -0400", hash_original_method = "B22823BCA8FD058C901A741025BA8FB1", hash_generated_method = "8D59C3E2E9FD2A6030F8C1372B4CFDCB")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public String toString() {
         {
@@ -147,7 +145,7 @@ public final class ObjectIdentifier {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:17.793 -0400", hash_original_method = "F5FB24607FBDCD1263609B3FEECCC6D5", hash_generated_method = "56DE0D64F4335A75ED5C493368154F2D")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:40.400 -0400", hash_original_method = "F5FB24607FBDCD1263609B3FEECCC6D5", hash_generated_method = "0451A527625321CB31FE8147C28A6CA8")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public int hashCode() {
         {
@@ -162,8 +160,7 @@ public final class ObjectIdentifier {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:17.793 -0400", hash_original_method = "8A03D4A0A8F771BBDCBB48C7AE384ACF", hash_generated_method = "2F7D3B508C8CE668C31890B26F7A3F6F")
-    public static void validateOid(int[] oid) {
+        public static void validateOid(int[] oid) {
         if (oid == null) {
             throw new NullPointerException("oid == null");
         }
@@ -178,8 +175,7 @@ public final class ObjectIdentifier {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:17.793 -0400", hash_original_method = "8BE7213CC6A7767AC7788E8FF7C56936", hash_generated_method = "CEBD3A7CE307C99CD19038C61A900D09")
-    public static int hashIntArray(int[] array) {
+        public static int hashIntArray(int[] array) {
         int intHash = 0;
         for (int i = 0; i < array.length && i < 4; i++) {
             intHash += array[i] << (8 * i); 
@@ -189,5 +185,4 @@ public final class ObjectIdentifier {
 
     
 }
-
 

@@ -16,12 +16,18 @@ public class MemInfoReader {
     private long mFreeSize;
     private long mCachedSize;
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 12:28:46.482 -0400", hash_original_method = "D9BE2698B9CEABDB1C83ECE5A41CE9EF", hash_generated_method = "15083CB51C64F97CF7334E792A2A62E6")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:17.728 -0400", hash_original_method = "CF3FFFDB0877E61A8219D2CC134610A9", hash_generated_method = "CF3FFFDB0877E61A8219D2CC134610A9")
+        public MemInfoReader ()
+    {
+    }
+
+
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:17.730 -0400", hash_original_method = "D9BE2698B9CEABDB1C83ECE5A41CE9EF", hash_generated_method = "AA85314B5B25B7AFAF3EFBDD01742455")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     private boolean matchText(byte[] buffer, int index, String text) {
         dsTaint.addTaint(buffer[0]);
-        dsTaint.addTaint(index);
         dsTaint.addTaint(text);
+        dsTaint.addTaint(index);
         int N;
         N = text.length();
         {
@@ -29,7 +35,7 @@ public class MemInfoReader {
             i = 0;
             {
                 {
-                    boolean varD666446A75B53823900A4A6FFC983903_75346078 = (buffer[index+i] != text.charAt(i));
+                    boolean varD666446A75B53823900A4A6FFC983903_1906275305 = (buffer[index+i] != text.charAt(i));
                 } //End collapsed parenthetic
             } //End block
         } //End collapsed parenthetic
@@ -48,7 +54,7 @@ public class MemInfoReader {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 12:28:46.531 -0400", hash_original_method = "DB73154576977FA52BEDF797ABB76527", hash_generated_method = "E43BEA97CB6DB6C8D0505D33495B1045")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:17.731 -0400", hash_original_method = "DB73154576977FA52BEDF797ABB76527", hash_generated_method = "CE85E1744B6C5E19C8274CF0AC73E18F")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     private long extractMemValue(byte[] buffer, int index) {
         dsTaint.addTaint(buffer[0]);
@@ -57,15 +63,10 @@ public class MemInfoReader {
             {
                 int start;
                 start = index;
-                index++;
-                {
-                    index++;
-                } //End block
                 String str;
                 str = new String(buffer, 0, start, index-start);
-                long var387EC5FC2C0639E7F95A08F66A2DB6D9_953707603 = (((long)Integer.parseInt(str)) * 1024);
+                long var387EC5FC2C0639E7F95A08F66A2DB6D9_394968314 = (((long)Integer.parseInt(str)) * 1024);
             } //End block
-            index++;
         } //End block
         return dsTaint.getTaintLong();
         // ---------- Original Method ----------
@@ -86,7 +87,7 @@ public class MemInfoReader {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 12:28:46.639 -0400", hash_original_method = "BB97E1D4EA3CA166050B741E23967BDC", hash_generated_method = "98020C99C8A1471DB080A0DD0CD751FB")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:17.733 -0400", hash_original_method = "BB97E1D4EA3CA166050B741E23967BDC", hash_generated_method = "D43FFD4A6072A4A41E40CBB9C7B5E977")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public void readMemInfo() {
         StrictMode.ThreadPolicy savedPolicy;
@@ -110,32 +111,26 @@ public class MemInfoReader {
                 i = 0;
                 {
                     {
-                        boolean varECB16495266028F12021205E9D94E458_1063682094 = (matchText(mBuffer, i, "MemTotal"));
+                        boolean varECB16495266028F12021205E9D94E458_1099769788 = (matchText(mBuffer, i, "MemTotal"));
                         {
                             i += 8;
                             mTotalSize = extractMemValue(mBuffer, i);
-                            count++;
                         } //End block
                         {
-                            boolean var0B9C411E6930A2921E8F44E94088809B_232333082 = (matchText(mBuffer, i, "MemFree"));
+                            boolean var0B9C411E6930A2921E8F44E94088809B_531104520 = (matchText(mBuffer, i, "MemFree"));
                             {
                                 i += 7;
                                 mFreeSize = extractMemValue(mBuffer, i);
-                                count++;
                             } //End block
                             {
-                                boolean var700D804177A2AFC923A91B385BA28E88_1966846944 = (matchText(mBuffer, i, "Cached"));
+                                boolean var700D804177A2AFC923A91B385BA28E88_588166204 = (matchText(mBuffer, i, "Cached"));
                                 {
                                     i += 6;
                                     mCachedSize = extractMemValue(mBuffer, i);
-                                    count++;
                                 } //End block
                             } //End collapsed parenthetic
                         } //End collapsed parenthetic
                     } //End collapsed parenthetic
-                    {
-                        i++;
-                    } //End block
                 } //End block
             } //End collapsed parenthetic
         } //End block
@@ -152,7 +147,7 @@ public class MemInfoReader {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 12:28:46.693 -0400", hash_original_method = "3434AB33F130B66E857E66B11D583682", hash_generated_method = "A2494163829A09853DA3EF7C77785974")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:17.733 -0400", hash_original_method = "3434AB33F130B66E857E66B11D583682", hash_generated_method = "4B1FFEB996D577435E37EF289C3F44FD")
     @DSModeled(DSC.SAFE)
     public long getTotalSize() {
         return dsTaint.getTaintLong();
@@ -161,7 +156,7 @@ public class MemInfoReader {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 12:28:46.705 -0400", hash_original_method = "FACB48AE3A5EF9A0F8A782DC112E6801", hash_generated_method = "F5B03B503E029C6C412AD4C69CFCBCEE")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:17.733 -0400", hash_original_method = "FACB48AE3A5EF9A0F8A782DC112E6801", hash_generated_method = "2AD1F82866E7077489F71E003D3EE046")
     @DSModeled(DSC.SAFE)
     public long getFreeSize() {
         return dsTaint.getTaintLong();
@@ -170,7 +165,7 @@ public class MemInfoReader {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 12:28:46.729 -0400", hash_original_method = "67C7373745CA2083B77127FB7F7EF9BE", hash_generated_method = "4C9CEC784032581539971D901D6D99AD")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:17.734 -0400", hash_original_method = "67C7373745CA2083B77127FB7F7EF9BE", hash_generated_method = "B2AE62EFC9A9E150ECA84399C182FB3A")
     @DSModeled(DSC.SAFE)
     public long getCachedSize() {
         return dsTaint.getTaintLong();
@@ -180,5 +175,4 @@ public class MemInfoReader {
 
     
 }
-
 

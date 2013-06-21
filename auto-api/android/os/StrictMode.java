@@ -29,164 +29,26 @@ import java.util.Map;
 import java.util.concurrent.atomic.AtomicInteger;
 
 public final class StrictMode {
-    private static String TAG = "StrictMode";
-    private static boolean LOG_V = Log.isLoggable(TAG, Log.VERBOSE);
-    private static boolean IS_USER_BUILD = "user".equals(Build.TYPE);
-    private static boolean IS_ENG_BUILD = "eng".equals(Build.TYPE);
-    public static String DISABLE_PROPERTY = "persist.sys.strictmode.disable";
-    public static String VISUAL_PROPERTY = "persist.sys.strictmode.visual";
-    private static long MIN_LOG_INTERVAL_MS = 1000;
-    private static long MIN_DIALOG_INTERVAL_MS = 30000;
-    private static int MAX_SPAN_TAGS = 20;
-    private static int MAX_OFFENSES_PER_LOOP = 10;
-    public static int DETECT_DISK_WRITE = 0x01;
-    public static int DETECT_DISK_READ = 0x02;
-    public static int DETECT_NETWORK = 0x04;
-    public static int DETECT_CUSTOM = 0x08;
-    private static int ALL_THREAD_DETECT_BITS =
-            DETECT_DISK_WRITE | DETECT_DISK_READ | DETECT_NETWORK | DETECT_CUSTOM;
-    public static int DETECT_VM_CURSOR_LEAKS = 0x200;
-    public static int DETECT_VM_CLOSABLE_LEAKS = 0x400;
-    public static int DETECT_VM_ACTIVITY_LEAKS = 0x800;
-    private static int DETECT_VM_INSTANCE_LEAKS = 0x1000;
-    private static int ALL_VM_DETECT_BITS =
-            DETECT_VM_CURSOR_LEAKS | DETECT_VM_CLOSABLE_LEAKS |
-            DETECT_VM_ACTIVITY_LEAKS | DETECT_VM_INSTANCE_LEAKS;
-    public static int PENALTY_LOG = 0x10;
-    public static int PENALTY_DIALOG = 0x20;
-    public static int PENALTY_DEATH = 0x40;
-    public static int PENALTY_DEATH_ON_NETWORK = 0x200;
-    public static int PENALTY_FLASH = 0x800;
-    public static int PENALTY_DROPBOX = 0x80;
-    public static int PENALTY_GATHER = 0x100;
-    private static int THREAD_PENALTY_MASK =
-            PENALTY_LOG | PENALTY_DIALOG | PENALTY_DEATH | PENALTY_DROPBOX | PENALTY_GATHER |
-            PENALTY_DEATH_ON_NETWORK | PENALTY_FLASH;
-    private static int VM_PENALTY_MASK =
-            PENALTY_LOG | PENALTY_DEATH | PENALTY_DROPBOX;
-    private static HashMap<Class, Integer> EMPTY_CLASS_LIMIT_MAP = new HashMap<Class, Integer>();
-    private static volatile int sVmPolicyMask = 0;
-    private static volatile VmPolicy sVmPolicy = VmPolicy.LAX;
-    private static AtomicInteger sDropboxCallsInFlight = new AtomicInteger(0);
-    private static final ThreadLocal<ArrayList<ViolationInfo>> gatheredViolations = new ThreadLocal<ArrayList<ViolationInfo>>() {        
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 12:02:01.174 -0400", hash_original_method = "3F7643CB826EF0CE042B1409C79A26FA", hash_generated_method = "64DD3D0C55BC7D0122119CD45855DDDF")
-        @DSModeled(DSC.SAFE)
-        @Override
-        protected ArrayList<ViolationInfo> initialValue() {
-            return (ArrayList<ViolationInfo>)dsTaint.getTaint();
-            // ---------- Original Method ----------
-            //return null;
-        }
-
-        
-}; //Transformed anonymous class
-    private static final ThreadLocal<ArrayList<ViolationInfo>> violationsBeingTimed = new ThreadLocal<ArrayList<ViolationInfo>>() {        
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 12:02:01.175 -0400", hash_original_method = "CB5695702D478EAB2FBBE8373134ED39", hash_generated_method = "C51AFAE9714653681C694217AC042BE4")
-        @DSModeled(DSC.SAFE)
-        @Override
-        protected ArrayList<ViolationInfo> initialValue() {
-            return (ArrayList<ViolationInfo>)dsTaint.getTaint();
-            // ---------- Original Method ----------
-            //return new ArrayList<ViolationInfo>();
-        }
-
-        
-}; //Transformed anonymous class
-    private static final ThreadLocal<Handler> threadHandler = new ThreadLocal<Handler>() {        
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 12:02:01.175 -0400", hash_original_method = "AFD0CE5945D0E9D14EE2FF5512B9324A", hash_generated_method = "0FC20EA5C61B43DCE5A1A0BE0399135F")
-        @DSModeled(DSC.SAFE)
-        @Override
-        protected Handler initialValue() {
-            return (Handler)dsTaint.getTaint();
-            // ---------- Original Method ----------
-            //return new Handler();
-        }
-
-        
-}; //Transformed anonymous class
-    private static long sLastInstanceCountCheckMillis = 0;
-    private static boolean sIsIdlerRegistered = false;
-    private static final MessageQueue.IdleHandler sProcessIdleHandler = new MessageQueue.IdleHandler() {        
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 12:02:01.176 -0400", hash_original_method = "6956F5FF31712AF268FC89A0909C9E82", hash_generated_method = "447D7955FB8A5EE961B3B49C1971D63B")
-        @DSModeled(DSC.SAFE)
-        public boolean queueIdle() {
-            long now;
-            now = SystemClock.uptimeMillis();
-            {
-                sLastInstanceCountCheckMillis = now;
-                conditionallyCheckInstanceCounts();
-            } //End block
-            return dsTaint.getTaintBoolean();
-            // ---------- Original Method ----------
-            //long now = SystemClock.uptimeMillis();
-            //if (now - sLastInstanceCountCheckMillis > 30 * 1000) {
-                        //sLastInstanceCountCheckMillis = now;
-                        //conditionallyCheckInstanceCounts();
-                    //}
-            //return true;
-        }
-
-        
-}; //Transformed anonymous class
-    private static HashMap<Integer, Long> sLastVmViolationTime = new HashMap<Integer, Long>();
-    private static final Span NO_OP_SPAN = new Span() {        
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 12:02:01.176 -0400", hash_original_method = "D6FF905BC764A22CD5AFFCB47539B778", hash_generated_method = "2B69EF892B4FE48983108D5991303AF4")
-        @DSModeled(DSC.SAFE)
-        public void finish() {
-            // ---------- Original Method ----------
-        }
-
-        
-}; //Transformed anonymous class
-    private static final ThreadLocal<ThreadSpanState> sThisThreadSpanState = new ThreadLocal<ThreadSpanState>() {        
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 12:02:01.177 -0400", hash_original_method = "3F056F46AA4E010EAE891B386F384542", hash_generated_method = "7F8300E48FE602420DB7C7D5F504E959")
-        @DSModeled(DSC.SAFE)
-        @Override
-        protected ThreadSpanState initialValue() {
-            return (ThreadSpanState)dsTaint.getTaint();
-            // ---------- Original Method ----------
-            //return new ThreadSpanState();
-        }
-
-        
-}; //Transformed anonymous class
-    private static Singleton<IWindowManager> sWindowManager = new Singleton<IWindowManager>() {        
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 12:02:01.177 -0400", hash_original_method = "5B1F4967C7C17AD573D088D6B70DB243", hash_generated_method = "E716E5C39CF596C4A3A8D29144BBF6BD")
-        //DSFIXME:  CODE0002: Requires DSC value to be set
-        protected IWindowManager create() {
-            IWindowManager varC157AE586095B148703594F04CAE95C0_1902140916 = (IWindowManager.Stub.asInterface(ServiceManager.getService("window")));
-            return (IWindowManager)dsTaint.getTaint();
-            // ---------- Original Method ----------
-            //return IWindowManager.Stub.asInterface(ServiceManager.getService("window"));
-        }
-
-        
-}; //Transformed anonymous class
-    private static HashMap<Class, Integer> sExpectedActivityInstanceCount =
-            new HashMap<Class, Integer>();
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 12:02:01.178 -0400", hash_original_method = "E3867A4A77A9B912C067B4B7EB14B6CB", hash_generated_method = "588A689D3D763CE0628FAFE357D4E4BF")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:54.277 -0400", hash_original_method = "E3867A4A77A9B912C067B4B7EB14B6CB", hash_generated_method = "4A3827557D89D96B907E9813E3C5AC14")
     @DSModeled(DSC.SAFE)
     private StrictMode() {
         // ---------- Original Method ----------
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 12:02:01.178 -0400", hash_original_method = "EAF2550D78E81A3AE328ECCA2D8E112F", hash_generated_method = "5A09CA60BA8E320D1EB7DAC5A9D7D786")
-    public static void setThreadPolicy(final ThreadPolicy policy) {
+        public static void setThreadPolicy(final ThreadPolicy policy) {
         setThreadPolicyMask(policy.mask);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 12:02:01.178 -0400", hash_original_method = "E103159859299A70CFA6BDDF6D97BFB9", hash_generated_method = "D75821983262CCA2A189B2993C495F26")
-    private static void setThreadPolicyMask(final int policyMask) {
+        private static void setThreadPolicyMask(final int policyMask) {
         setBlockGuardPolicy(policyMask);
         Binder.setThreadStrictModePolicy(policyMask);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 12:02:01.178 -0400", hash_original_method = "621EB7D543F59B08E720C397686C01C7", hash_generated_method = "0C67E320A9DC44A23CD56A5FF63141B2")
-    private static void setBlockGuardPolicy(final int policyMask) {
+        private static void setBlockGuardPolicy(final int policyMask) {
         if (policyMask == 0) {
             BlockGuard.setThreadPolicy(BlockGuard.LAX_POLICY);
             return;
@@ -201,8 +63,7 @@ public final class StrictMode {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 12:02:01.178 -0400", hash_original_method = "A91AC5C680257C159878619FE045BB6E", hash_generated_method = "69E0B6702899716DD5BEDDAA8C84C9A9")
-    private static void setCloseGuardEnabled(boolean enabled) {
+        private static void setCloseGuardEnabled(boolean enabled) {
         if (!(CloseGuard.getReporter() instanceof AndroidCloseGuardReporter)) {
             CloseGuard.setReporter(new AndroidCloseGuardReporter());
         }
@@ -210,20 +71,17 @@ public final class StrictMode {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 12:02:01.178 -0400", hash_original_method = "846C0C89D35574B87DE239A886F76A3A", hash_generated_method = "DC71E2C046BD1C5E6C2EF35BD28B7815")
-    public static int getThreadPolicyMask() {
+        public static int getThreadPolicyMask() {
         return BlockGuard.getThreadPolicy().getPolicyMask();
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 12:02:01.178 -0400", hash_original_method = "B16B97050DB3110BD56237B889C54726", hash_generated_method = "776153C8E29B95C779FEB6B1071A901C")
-    public static ThreadPolicy getThreadPolicy() {
+        public static ThreadPolicy getThreadPolicy() {
         return new ThreadPolicy(getThreadPolicyMask());
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 12:02:01.179 -0400", hash_original_method = "F942EE5DD2312CA96489AB4B4ACB1570", hash_generated_method = "ED8585635C06544393EACEC3BE69878D")
-    public static ThreadPolicy allowThreadDiskWrites() {
+        public static ThreadPolicy allowThreadDiskWrites() {
         int oldPolicyMask = getThreadPolicyMask();
         int newPolicyMask = oldPolicyMask & ~(DETECT_DISK_WRITE | DETECT_DISK_READ);
         if (newPolicyMask != oldPolicyMask) {
@@ -233,8 +91,7 @@ public final class StrictMode {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 12:02:01.179 -0400", hash_original_method = "22603A4E5136644C5946CA9D6D1AB7B2", hash_generated_method = "8F75F72036EB9B28A87868A9139A6199")
-    public static ThreadPolicy allowThreadDiskReads() {
+        public static ThreadPolicy allowThreadDiskReads() {
         int oldPolicyMask = getThreadPolicyMask();
         int newPolicyMask = oldPolicyMask & ~(DETECT_DISK_READ);
         if (newPolicyMask != oldPolicyMask) {
@@ -244,8 +101,7 @@ public final class StrictMode {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 12:02:01.179 -0400", hash_original_method = "13EE91C23AA3A16D1C05B9C12BE22DBD", hash_generated_method = "F1721DE5BE015504A94FCE2418B8171B")
-    private static boolean amTheSystemServerProcess() {
+        private static boolean amTheSystemServerProcess() {
         if (Process.myUid() != Process.SYSTEM_UID) {
             return false;
         }
@@ -261,8 +117,7 @@ public final class StrictMode {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 12:02:01.179 -0400", hash_original_method = "052278CA509C38C507499B2FA93CCBD3", hash_generated_method = "94F9C50B4BD860CD41F57A04CBE09FF2")
-    public static boolean conditionallyEnableDebugLogging() {
+        public static boolean conditionallyEnableDebugLogging() {
         boolean doFlashes = SystemProperties.getBoolean(VISUAL_PROPERTY, false)
                 && !amTheSystemServerProcess();
         final boolean suppress = SystemProperties.getBoolean(DISABLE_PROPERTY, false);
@@ -297,16 +152,14 @@ public final class StrictMode {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 12:02:01.179 -0400", hash_original_method = "511C5822AAD77FC3309E37C883E816C8", hash_generated_method = "943148D2FBAAAB0DE8F1927558795D9F")
-    public static void enableDeathOnNetwork() {
+        public static void enableDeathOnNetwork() {
         int oldPolicy = getThreadPolicyMask();
         int newPolicy = oldPolicy | DETECT_NETWORK | PENALTY_DEATH_ON_NETWORK;
         setThreadPolicyMask(newPolicy);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 12:02:01.179 -0400", hash_original_method = "505B6F2C5D14D5307D2792E4869F206A", hash_generated_method = "B2A8BE88A07C1CCC431566DDEBE0F08C")
-    private static int parsePolicyFromMessage(String message) {
+        private static int parsePolicyFromMessage(String message) {
         if (message == null || !message.startsWith("policy=")) {
             return 0;
         }
@@ -323,8 +176,7 @@ public final class StrictMode {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 12:02:01.179 -0400", hash_original_method = "45B3269BE626BB87F4C05CA0ACD29C39", hash_generated_method = "4CCEDD75E9105676A0753C8872D2F662")
-    private static int parseViolationFromMessage(String message) {
+        private static int parseViolationFromMessage(String message) {
         if (message == null) {
             return 0;
         }
@@ -346,21 +198,18 @@ public final class StrictMode {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 12:02:01.180 -0400", hash_original_method = "30484C59249AAEAE6E097D020A18B06F", hash_generated_method = "37F8ED1F104DFF04041FDF639CA6DE3E")
-    private static boolean tooManyViolationsThisLoop() {
+        private static boolean tooManyViolationsThisLoop() {
         return violationsBeingTimed.get().size() >= MAX_OFFENSES_PER_LOOP;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 12:02:01.180 -0400", hash_original_method = "D57761C9E43274832734BB25E55BB64E", hash_generated_method = "C76AA26C9CA762FACBC9B4EACDE82B97")
-    private static void executeDeathPenalty(ViolationInfo info) {
+        private static void executeDeathPenalty(ViolationInfo info) {
         int violationBit = parseViolationFromMessage(info.crashInfo.exceptionMessage);
         throw new StrictModeViolation(info.policy, violationBit, null);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 12:02:01.180 -0400", hash_original_method = "494F3008991F5D0046D1B87690D6CD67", hash_generated_method = "22D07AE65C4698CEFC65F65C54E156CA")
-    private static void dropboxViolationAsync(
+        private static void dropboxViolationAsync(
             final int violationMaskSubset, final ViolationInfo info) {
         int outstanding = sDropboxCallsInFlight.incrementAndGet();
         if (outstanding > 20) {
@@ -391,20 +240,17 @@ public final class StrictMode {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 12:02:01.180 -0400", hash_original_method = "DE6218951D49C9DECACECFC904F7F4CB", hash_generated_method = "254D6A055CF39186CE308B0510685D6F")
-    static boolean hasGatheredViolations() {
+        static boolean hasGatheredViolations() {
         return gatheredViolations.get() != null;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 12:02:01.180 -0400", hash_original_method = "9805B7FF3BAD48B8D2DE0E62F52A36CA", hash_generated_method = "C424A8BDBD8B97D664023DF9B1CDBC17")
-    static void clearGatheredViolations() {
+        static void clearGatheredViolations() {
         gatheredViolations.set(null);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 12:02:01.180 -0400", hash_original_method = "C576A675E231D1AF2242B014415FC93D", hash_generated_method = "A1222721EF1B9FE226FB1D8C5D323D3A")
-    public static void conditionallyCheckInstanceCounts() {
+        public static void conditionallyCheckInstanceCounts() {
         VmPolicy policy = getVmPolicy();
         if (policy.classInstanceLimit.size() == 0) {
             return;
@@ -423,8 +269,7 @@ public final class StrictMode {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 12:02:01.180 -0400", hash_original_method = "4D7C8157BEE5C8ED378B4CE9D63026A6", hash_generated_method = "CF8E39CD834057B25689B88DE35EE11E")
-    public static void setVmPolicy(final VmPolicy policy) {
+        public static void setVmPolicy(final VmPolicy policy) {
         synchronized (StrictMode.class) {
             sVmPolicy = policy;
             sVmPolicyMask = policy.mask;
@@ -445,16 +290,14 @@ public final class StrictMode {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 12:02:01.181 -0400", hash_original_method = "773AC5E4A26A865807C4BE06BCEDFBE0", hash_generated_method = "BAC368470A9B79BBED3EFE65DCDDE574")
-    public static VmPolicy getVmPolicy() {
+        public static VmPolicy getVmPolicy() {
         synchronized (StrictMode.class) {
             return sVmPolicy;
         }
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 12:02:01.181 -0400", hash_original_method = "E2B8E9CB6BAF69ECC897B9026B7DFBD5", hash_generated_method = "9B316586E332C50571E57B05AC7C4332")
-    public static void enableDefaults() {
+        public static void enableDefaults() {
         StrictMode.setThreadPolicy(new StrictMode.ThreadPolicy.Builder()
                                    .detectAll()
                                    .penaltyLog()
@@ -466,34 +309,29 @@ public final class StrictMode {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 12:02:01.181 -0400", hash_original_method = "825007825C279D8D60066439CEB862D6", hash_generated_method = "0ACE2A786233EF90D83D444D5714465F")
-    public static boolean vmSqliteObjectLeaksEnabled() {
+        public static boolean vmSqliteObjectLeaksEnabled() {
         return (sVmPolicyMask & DETECT_VM_CURSOR_LEAKS) != 0;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 12:02:01.181 -0400", hash_original_method = "00BE297DAE272F1287785C1C4E3D4CA4", hash_generated_method = "DBE6179150F20B8185E35558E4A3B09A")
-    public static boolean vmClosableObjectLeaksEnabled() {
+        public static boolean vmClosableObjectLeaksEnabled() {
         return (sVmPolicyMask & DETECT_VM_CLOSABLE_LEAKS) != 0;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 12:02:01.181 -0400", hash_original_method = "5F852AAD19A1F9B4EA699DB4FBF77E9F", hash_generated_method = "1F2478D3B073F4E91494B4E98D500390")
-    public static void onSqliteObjectLeaked(String message, Throwable originStack) {
+        public static void onSqliteObjectLeaked(String message, Throwable originStack) {
         //DSFIXME:  CODE0009: Possible callback target function detected
         onVmPolicyViolation(message, originStack);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 12:02:01.181 -0400", hash_original_method = "4857C9DB572D29FDFE605B2B1ACB6FB5", hash_generated_method = "81B78A083132263DD1912217B6F1B1E1")
-    public static void onWebViewMethodCalledOnWrongThread(Throwable originStack) {
+        public static void onWebViewMethodCalledOnWrongThread(Throwable originStack) {
         //DSFIXME:  CODE0009: Possible callback target function detected
         onVmPolicyViolation(null, originStack);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 12:02:01.181 -0400", hash_original_method = "3BA160C791F73BC1B2756430F54D7253", hash_generated_method = "8F62917E32A2C95AAEADAEB79EDD3ADE")
-    public static void onVmPolicyViolation(String message, Throwable originStack) {
+        public static void onVmPolicyViolation(String message, Throwable originStack) {
         //DSFIXME:  CODE0009: Possible callback target function detected
         final boolean penaltyDropbox = (sVmPolicyMask & PENALTY_DROPBOX) != 0;
         final boolean penaltyDeath = (sVmPolicyMask & PENALTY_DEATH) != 0;
@@ -545,8 +383,7 @@ public final class StrictMode {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 12:02:01.182 -0400", hash_original_method = "988356C76891278DCB1E6DF1B3D94941", hash_generated_method = "D5928F7CE9894960691F2925BDD196F5")
-    static void writeGatheredViolationsToParcel(Parcel p) {
+        static void writeGatheredViolationsToParcel(Parcel p) {
         ArrayList<ViolationInfo> violations = gatheredViolations.get();
         if (violations == null) {
             p.writeInt(0);
@@ -562,8 +399,7 @@ public final class StrictMode {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 12:02:01.182 -0400", hash_original_method = "85F9A054AA9529578DD28AD736197991", hash_generated_method = "A4755520127CB5F94780E024EE048EFF")
-    static void readAndHandleBinderCallViolations(Parcel p) {
+        static void readAndHandleBinderCallViolations(Parcel p) {
         StringWriter sw = new StringWriter();
         new LogStackTrace().printStackTrace(new PrintWriter(sw));
         String ourStack = sw.toString();
@@ -582,14 +418,12 @@ public final class StrictMode {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 12:02:01.182 -0400", hash_original_method = "60E245C2A53AD4DE6244FC5F357660C8", hash_generated_method = "78945C81B34F3347D4044B647EE36D37")
-    private static void onBinderStrictModePolicyChange(int newPolicy) {
+        private static void onBinderStrictModePolicyChange(int newPolicy) {
         setBlockGuardPolicy(newPolicy);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 12:02:01.182 -0400", hash_original_method = "26856C2649829AA4775248F490BA34F6", hash_generated_method = "0E185A40104CA1873D121832171D7D38")
-    public static Span enterCriticalSpan(String name) {
+        public static Span enterCriticalSpan(String name) {
         if (IS_USER_BUILD) {
             return NO_OP_SPAN;
         }
@@ -621,8 +455,7 @@ public final class StrictMode {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 12:02:01.182 -0400", hash_original_method = "B98B8D959756B812CAEADC403B908021", hash_generated_method = "95536240377C18D6E14A4D595E2ABF9E")
-    public static void noteSlowCall(String name) {
+        public static void noteSlowCall(String name) {
         BlockGuard.Policy policy = BlockGuard.getThreadPolicy();
         if (!(policy instanceof AndroidBlockGuardPolicy)) {
             return;
@@ -631,8 +464,7 @@ public final class StrictMode {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 12:02:01.182 -0400", hash_original_method = "750E68EADFFF9EF2A8A0F45DFD480746", hash_generated_method = "45B6E4A40641A795C19B819ED5A19897")
-    public static void noteDiskRead() {
+        public static void noteDiskRead() {
         BlockGuard.Policy policy = BlockGuard.getThreadPolicy();
         if (!(policy instanceof AndroidBlockGuardPolicy)) {
             return;
@@ -641,8 +473,7 @@ public final class StrictMode {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 12:02:01.183 -0400", hash_original_method = "C2C60A74DC13C0F89DC4E47159DB8FD2", hash_generated_method = "90EE8DE9F03BE35835AC9F026701DE0D")
-    public static void noteDiskWrite() {
+        public static void noteDiskWrite() {
         BlockGuard.Policy policy = BlockGuard.getThreadPolicy();
         if (!(policy instanceof AndroidBlockGuardPolicy)) {
             return;
@@ -651,14 +482,12 @@ public final class StrictMode {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 12:02:01.183 -0400", hash_original_method = "E950565A85A7626D07FC065E3E871678", hash_generated_method = "C061937E7668406FE8E3C5A03CB49A50")
-    public static Object trackActivity(Object instance) {
+        public static Object trackActivity(Object instance) {
         return new InstanceTracker(instance);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 12:02:01.183 -0400", hash_original_method = "4C40B4FD0BD10B4EE6F7D0BFF962D7AA", hash_generated_method = "0D457BD9440D94DCA0BF865CD4A7ADDC")
-    public static void incrementExpectedActivityCount(Class klass) {
+        public static void incrementExpectedActivityCount(Class klass) {
         if (klass == null) {
             return;
         }
@@ -673,8 +502,7 @@ public final class StrictMode {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 12:02:01.183 -0400", hash_original_method = "F6C508055F46D99984B7E83214C007E3", hash_generated_method = "4D69736B2D4F53363B49EBF62BA55279")
-    public static void decrementExpectedActivityCount(Class klass) {
+        public static void decrementExpectedActivityCount(Class klass) {
         if (klass == null) {
             return;
         }
@@ -706,10 +534,9 @@ public final class StrictMode {
 
     
     public static final class ThreadPolicy {
-        public static ThreadPolicy LAX = new ThreadPolicy(0);
         int mask;
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 12:02:01.183 -0400", hash_original_method = "B0AC15ACB9093249F94C953D0A842CAE", hash_generated_method = "25A7FB3ACC15EB1652B297319B8D5570")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:54.285 -0400", hash_original_method = "B0AC15ACB9093249F94C953D0A842CAE", hash_generated_method = "7B856375CFEC6EA99C66B1BF1493B5F9")
         @DSModeled(DSC.SAFE)
         private ThreadPolicy(int mask) {
             dsTaint.addTaint(mask);
@@ -718,7 +545,7 @@ public final class StrictMode {
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 12:02:01.191 -0400", hash_original_method = "AE05BE3A66BEE06993F7653F4CB681EB", hash_generated_method = "3A490F580BDCCB73D7B6A15FB3F9FC8A")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:54.285 -0400", hash_original_method = "AE05BE3A66BEE06993F7653F4CB681EB", hash_generated_method = "681B513CA4F64F14E75C0129E1710E89")
         @DSModeled(DSC.SAFE)
         @Override
         public String toString() {
@@ -731,7 +558,7 @@ public final class StrictMode {
         public static final class Builder {
             private int mMask = 0;
             
-            @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 12:02:01.191 -0400", hash_original_method = "C72380FC51BF6FFB0D8183E2FF7C5DBE", hash_generated_method = "9591C62A9F948170D00F955E1524AE93")
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:54.286 -0400", hash_original_method = "C72380FC51BF6FFB0D8183E2FF7C5DBE", hash_generated_method = "C4A90307B6990541B60C2B86DCD4B526")
             @DSModeled(DSC.SAFE)
             public Builder() {
                 mMask = 0;
@@ -740,7 +567,7 @@ public final class StrictMode {
             }
 
             
-            @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 12:02:01.191 -0400", hash_original_method = "2270BC971D9C4F82FBD51366B809A76A", hash_generated_method = "B59745A5CEBADB74EDB47605A2FB8227")
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:54.286 -0400", hash_original_method = "2270BC971D9C4F82FBD51366B809A76A", hash_generated_method = "D07FF060604283B2DE97CE903E59E6E6")
             @DSModeled(DSC.SAFE)
             public Builder(ThreadPolicy policy) {
                 dsTaint.addTaint(policy.dsTaint);
@@ -750,167 +577,167 @@ public final class StrictMode {
             }
 
             
-            @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 12:02:01.192 -0400", hash_original_method = "399752AE3320783E8BC4077BF2BAABAB", hash_generated_method = "DA1C63DB0043E5F40CBEC4F2B9CF86B1")
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:54.286 -0400", hash_original_method = "399752AE3320783E8BC4077BF2BAABAB", hash_generated_method = "1D05088B381AE65CC4AB94AA304F81E0")
             //DSFIXME:  CODE0002: Requires DSC value to be set
             public Builder detectAll() {
-                Builder varB75010659E1D3DB33577DAACF4003834_484135508 = (enable(ALL_THREAD_DETECT_BITS));
+                Builder varB75010659E1D3DB33577DAACF4003834_1152016791 = (enable(ALL_THREAD_DETECT_BITS));
                 return (Builder)dsTaint.getTaint();
                 // ---------- Original Method ----------
                 //return enable(ALL_THREAD_DETECT_BITS);
             }
 
             
-            @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 12:02:01.192 -0400", hash_original_method = "3E31B254E1B4E9A5234881E68AADF1C7", hash_generated_method = "81D493AEC3D35241F552BF92E55F75EE")
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:54.286 -0400", hash_original_method = "3E31B254E1B4E9A5234881E68AADF1C7", hash_generated_method = "F43A13125983742225A1E047D980B754")
             //DSFIXME:  CODE0002: Requires DSC value to be set
             public Builder permitAll() {
-                Builder var90298C1A96D6CF1919E456114FCEDE8B_988347730 = (disable(ALL_THREAD_DETECT_BITS));
+                Builder var90298C1A96D6CF1919E456114FCEDE8B_1225781019 = (disable(ALL_THREAD_DETECT_BITS));
                 return (Builder)dsTaint.getTaint();
                 // ---------- Original Method ----------
                 //return disable(ALL_THREAD_DETECT_BITS);
             }
 
             
-            @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 12:02:01.192 -0400", hash_original_method = "8F1CC5D4BDA427578EB68B001E341FDD", hash_generated_method = "FE160D917C45068A8915E97741D6661A")
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:54.287 -0400", hash_original_method = "8F1CC5D4BDA427578EB68B001E341FDD", hash_generated_method = "EC51DFE7D41217FDA37DF9FDAEAB8500")
             //DSFIXME:  CODE0002: Requires DSC value to be set
             public Builder detectNetwork() {
-                Builder varFB0BE371D11A80C4E2A0C81DBB0B0000_1657613954 = (enable(DETECT_NETWORK));
+                Builder varFB0BE371D11A80C4E2A0C81DBB0B0000_322027638 = (enable(DETECT_NETWORK));
                 return (Builder)dsTaint.getTaint();
                 // ---------- Original Method ----------
                 //return enable(DETECT_NETWORK);
             }
 
             
-            @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 12:02:01.192 -0400", hash_original_method = "2A4244001D1666DDAFB3F602ED8EC7EA", hash_generated_method = "DFF01C6C83962535CF8E858AE7E4B05F")
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:54.288 -0400", hash_original_method = "2A4244001D1666DDAFB3F602ED8EC7EA", hash_generated_method = "BE105C4DB4D87149F8ABAE8C9659E136")
             //DSFIXME:  CODE0002: Requires DSC value to be set
             public Builder permitNetwork() {
-                Builder var9DBE48447AFBD0D9DCA1F53C0C120F63_1658799038 = (disable(DETECT_NETWORK));
+                Builder var9DBE48447AFBD0D9DCA1F53C0C120F63_1798511218 = (disable(DETECT_NETWORK));
                 return (Builder)dsTaint.getTaint();
                 // ---------- Original Method ----------
                 //return disable(DETECT_NETWORK);
             }
 
             
-            @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 12:02:01.192 -0400", hash_original_method = "75C524432F954C01B0149630CE54DDB4", hash_generated_method = "D55182BEAACF24D657499A99535B5554")
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:54.289 -0400", hash_original_method = "75C524432F954C01B0149630CE54DDB4", hash_generated_method = "927F1776FE158C17B4BA70260CEA2633")
             //DSFIXME:  CODE0002: Requires DSC value to be set
             public Builder detectDiskReads() {
-                Builder varFE9F28F6DCC1BED36D66D9EE8EE84768_723420148 = (enable(DETECT_DISK_READ));
+                Builder varFE9F28F6DCC1BED36D66D9EE8EE84768_2095808300 = (enable(DETECT_DISK_READ));
                 return (Builder)dsTaint.getTaint();
                 // ---------- Original Method ----------
                 //return enable(DETECT_DISK_READ);
             }
 
             
-            @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 12:02:01.199 -0400", hash_original_method = "1BD98C02F9A11EE892D0098B20BDD8BD", hash_generated_method = "7748968645B415528555BA28D6A1068E")
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:54.289 -0400", hash_original_method = "1BD98C02F9A11EE892D0098B20BDD8BD", hash_generated_method = "E06F9C9F5E25BDE29758D9A113EAC035")
             //DSFIXME:  CODE0002: Requires DSC value to be set
             public Builder permitDiskReads() {
-                Builder var6DBD1174C4A11AA0E23E951007852A39_1863276006 = (disable(DETECT_DISK_READ));
+                Builder var6DBD1174C4A11AA0E23E951007852A39_82469494 = (disable(DETECT_DISK_READ));
                 return (Builder)dsTaint.getTaint();
                 // ---------- Original Method ----------
                 //return disable(DETECT_DISK_READ);
             }
 
             
-            @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 12:02:01.200 -0400", hash_original_method = "0F761933C6E4A91421ABB8964A4D9EB8", hash_generated_method = "0DB4D8A35DBDD1C3C898B7341466C71D")
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:54.289 -0400", hash_original_method = "0F761933C6E4A91421ABB8964A4D9EB8", hash_generated_method = "D53B1A6B7FA2B2C06552A16BF1B6CEAF")
             //DSFIXME:  CODE0002: Requires DSC value to be set
             public Builder detectCustomSlowCalls() {
-                Builder var201413392CC19AD176C216B1005B7AB0_457869536 = (enable(DETECT_CUSTOM));
+                Builder var201413392CC19AD176C216B1005B7AB0_1994169202 = (enable(DETECT_CUSTOM));
                 return (Builder)dsTaint.getTaint();
                 // ---------- Original Method ----------
                 //return enable(DETECT_CUSTOM);
             }
 
             
-            @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 12:02:01.200 -0400", hash_original_method = "1F5E52FF134E5A595D9B4F3AD9EF805B", hash_generated_method = "4522B2986AA2E99AD038F59631043696")
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:54.289 -0400", hash_original_method = "1F5E52FF134E5A595D9B4F3AD9EF805B", hash_generated_method = "96EEC3AEEC6427ECB843C727F3502029")
             //DSFIXME:  CODE0002: Requires DSC value to be set
             public Builder permitCustomSlowCalls() {
-                Builder var201413392CC19AD176C216B1005B7AB0_627409884 = (enable(DETECT_CUSTOM));
+                Builder var201413392CC19AD176C216B1005B7AB0_1717509992 = (enable(DETECT_CUSTOM));
                 return (Builder)dsTaint.getTaint();
                 // ---------- Original Method ----------
                 //return enable(DETECT_CUSTOM);
             }
 
             
-            @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 12:02:01.200 -0400", hash_original_method = "583E0D5D228DC11F4F3B1B541EE8393C", hash_generated_method = "D5C2C1A95DAD4624608E5A799A98CD40")
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:54.290 -0400", hash_original_method = "583E0D5D228DC11F4F3B1B541EE8393C", hash_generated_method = "FF387EEA65A9AA0C4CE8F269A70C1BAA")
             //DSFIXME:  CODE0002: Requires DSC value to be set
             public Builder detectDiskWrites() {
-                Builder var57E2B7E251451B4FB7DA2A1472F83B9E_2015394550 = (enable(DETECT_DISK_WRITE));
+                Builder var57E2B7E251451B4FB7DA2A1472F83B9E_1927610411 = (enable(DETECT_DISK_WRITE));
                 return (Builder)dsTaint.getTaint();
                 // ---------- Original Method ----------
                 //return enable(DETECT_DISK_WRITE);
             }
 
             
-            @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 12:02:01.200 -0400", hash_original_method = "A37C6D388BF979AC5AEB871BAB2E0B6F", hash_generated_method = "8BF86FFEC2EDE3CEB927A0FE971DA143")
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:54.290 -0400", hash_original_method = "A37C6D388BF979AC5AEB871BAB2E0B6F", hash_generated_method = "6CBC7112CFE43B29A5C8D7EB563C7B97")
             //DSFIXME:  CODE0002: Requires DSC value to be set
             public Builder permitDiskWrites() {
-                Builder varA82CEF86E32E73C1DEDFF450DD9EB012_889022386 = (disable(DETECT_DISK_WRITE));
+                Builder varA82CEF86E32E73C1DEDFF450DD9EB012_1946570334 = (disable(DETECT_DISK_WRITE));
                 return (Builder)dsTaint.getTaint();
                 // ---------- Original Method ----------
                 //return disable(DETECT_DISK_WRITE);
             }
 
             
-            @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 12:02:01.200 -0400", hash_original_method = "8766DB09D651E2B3541ACB0418FFA365", hash_generated_method = "EF75AAB1D3D5D2DA1DB5FA101625ECEB")
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:54.290 -0400", hash_original_method = "8766DB09D651E2B3541ACB0418FFA365", hash_generated_method = "2AE61A7A5A3C24B91A53BB6010CA9CD0")
             //DSFIXME:  CODE0002: Requires DSC value to be set
             public Builder penaltyDialog() {
-                Builder varE3BDDF8F7BDF1A402D08692E5C898831_1016983443 = (enable(PENALTY_DIALOG));
+                Builder varE3BDDF8F7BDF1A402D08692E5C898831_454980825 = (enable(PENALTY_DIALOG));
                 return (Builder)dsTaint.getTaint();
                 // ---------- Original Method ----------
                 //return enable(PENALTY_DIALOG);
             }
 
             
-            @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 12:02:01.201 -0400", hash_original_method = "94F50CCB3C281DFAB53140F44BEA7518", hash_generated_method = "3630E284ADAC29DB78263EDB79A925C8")
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:54.290 -0400", hash_original_method = "94F50CCB3C281DFAB53140F44BEA7518", hash_generated_method = "0178D5238A5497539D6BF94F357A8E9F")
             //DSFIXME:  CODE0002: Requires DSC value to be set
             public Builder penaltyDeath() {
-                Builder var1D71F5757972FF9DC154CB7A2BBB4BA7_1596815451 = (enable(PENALTY_DEATH));
+                Builder var1D71F5757972FF9DC154CB7A2BBB4BA7_1912981319 = (enable(PENALTY_DEATH));
                 return (Builder)dsTaint.getTaint();
                 // ---------- Original Method ----------
                 //return enable(PENALTY_DEATH);
             }
 
             
-            @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 12:02:01.201 -0400", hash_original_method = "3B3840DC05B4A1C1129369D4324CF6E7", hash_generated_method = "C90298C6C54282FCA7A85DAD1474B758")
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:54.291 -0400", hash_original_method = "3B3840DC05B4A1C1129369D4324CF6E7", hash_generated_method = "17D6107C5C9D86D194B64FC2CE313290")
             //DSFIXME:  CODE0002: Requires DSC value to be set
             public Builder penaltyDeathOnNetwork() {
-                Builder var8E285BFB0382FC4C94A68FC324775001_1080159887 = (enable(PENALTY_DEATH_ON_NETWORK));
+                Builder var8E285BFB0382FC4C94A68FC324775001_1089299973 = (enable(PENALTY_DEATH_ON_NETWORK));
                 return (Builder)dsTaint.getTaint();
                 // ---------- Original Method ----------
                 //return enable(PENALTY_DEATH_ON_NETWORK);
             }
 
             
-            @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 12:02:01.201 -0400", hash_original_method = "D2175CC28C327D3A1AEA760A679D2369", hash_generated_method = "71732A8F749E0196EAD33A4B58412CC3")
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:54.291 -0400", hash_original_method = "D2175CC28C327D3A1AEA760A679D2369", hash_generated_method = "2D2C252041B409FB62DAABF643DDB391")
             //DSFIXME:  CODE0002: Requires DSC value to be set
             public Builder penaltyFlashScreen() {
-                Builder var966ADEC38EF7E614E8143F880ABA15E6_1898451893 = (enable(PENALTY_FLASH));
+                Builder var966ADEC38EF7E614E8143F880ABA15E6_1005503774 = (enable(PENALTY_FLASH));
                 return (Builder)dsTaint.getTaint();
                 // ---------- Original Method ----------
                 //return enable(PENALTY_FLASH);
             }
 
             
-            @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 12:02:01.201 -0400", hash_original_method = "2F91CFDA044E15B06DFDEA717627020F", hash_generated_method = "8A0D35963EC7721FC32AE59C00880CED")
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:54.291 -0400", hash_original_method = "2F91CFDA044E15B06DFDEA717627020F", hash_generated_method = "BB6F63969AC4863CBC325EB9A417B149")
             //DSFIXME:  CODE0002: Requires DSC value to be set
             public Builder penaltyLog() {
-                Builder varAA5DB1D11209B827A2125309FAF8E6D6_1374771172 = (enable(PENALTY_LOG));
+                Builder varAA5DB1D11209B827A2125309FAF8E6D6_64378884 = (enable(PENALTY_LOG));
                 return (Builder)dsTaint.getTaint();
                 // ---------- Original Method ----------
                 //return enable(PENALTY_LOG);
             }
 
             
-            @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 12:02:01.201 -0400", hash_original_method = "79D7F41C29935BA44118AFFA48FCC1BE", hash_generated_method = "18AFFA6C69B7587AA41F41260DC5D593")
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:54.291 -0400", hash_original_method = "79D7F41C29935BA44118AFFA48FCC1BE", hash_generated_method = "FC7A46FA62B95A5559FA44A372446E8A")
             //DSFIXME:  CODE0002: Requires DSC value to be set
             public Builder penaltyDropBox() {
-                Builder var959C22F6882E3E08E0D77F2A90947774_1731445808 = (enable(PENALTY_DROPBOX));
+                Builder var959C22F6882E3E08E0D77F2A90947774_971729628 = (enable(PENALTY_DROPBOX));
                 return (Builder)dsTaint.getTaint();
                 // ---------- Original Method ----------
                 //return enable(PENALTY_DROPBOX);
             }
 
             
-            @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 12:02:01.201 -0400", hash_original_method = "450902735A2D953DC54C05378B49DC09", hash_generated_method = "F5DC6D6D5FFF01D674BAD30FE20032C0")
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:54.292 -0400", hash_original_method = "450902735A2D953DC54C05378B49DC09", hash_generated_method = "FBDAFFE99A3DED99EFF9B948CA36075F")
             @DSModeled(DSC.SAFE)
             private Builder enable(int bit) {
                 dsTaint.addTaint(bit);
@@ -921,7 +748,7 @@ public final class StrictMode {
             }
 
             
-            @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 12:02:01.202 -0400", hash_original_method = "DD377E4C338D3B09C11C3D4D7DFD99D3", hash_generated_method = "4D40D12786F4D14B18A2D8F75F74C04E")
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:54.292 -0400", hash_original_method = "DD377E4C338D3B09C11C3D4D7DFD99D3", hash_generated_method = "1334A9F87699D9B2094D7A9130D1610D")
             @DSModeled(DSC.SAFE)
             private Builder disable(int bit) {
                 dsTaint.addTaint(bit);
@@ -933,12 +760,13 @@ public final class StrictMode {
             }
 
             
-            @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 12:02:01.212 -0400", hash_original_method = "3E686B94A275CF17A4C5CE0839D3E8D1", hash_generated_method = "8A1B8B9395B4891F2ADCD13730E3FFE3")
-            @DSModeled(DSC.SAFE)
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:54.292 -0400", hash_original_method = "3E686B94A275CF17A4C5CE0839D3E8D1", hash_generated_method = "C33203A0C1D5943348D254F38806EAA8")
+            //DSFIXME:  CODE0002: Requires DSC value to be set
             public ThreadPolicy build() {
                 {
                     penaltyLog();
                 } //End block
+                ThreadPolicy var3625EC4830B886C7D7908B528565CE0A_1749177987 = (new ThreadPolicy(mMask));
                 return (ThreadPolicy)dsTaint.getTaint();
                 // ---------- Original Method ----------
                 //if (mMask != 0 &&
@@ -954,17 +782,17 @@ public final class StrictMode {
 
 
         
+        public static final ThreadPolicy LAX = new ThreadPolicy(0);
     }
 
 
     
     public static final class VmPolicy {
-        public static VmPolicy LAX = new VmPolicy(0, EMPTY_CLASS_LIMIT_MAP);
         int mask;
         HashMap<Class, Integer> classInstanceLimit;
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 12:02:01.212 -0400", hash_original_method = "BE6E35A5EA1ACA059EF2A402B69D7023", hash_generated_method = "21368443844AEE662D0C066BBB6E37A1")
-        @DSModeled(DSC.SAFE)
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:54.293 -0400", hash_original_method = "BE6E35A5EA1ACA059EF2A402B69D7023", hash_generated_method = "1435E3B0E049CB8B13E87085816D7192")
+        //DSFIXME:  CODE0002: Requires DSC value to be set
         private VmPolicy(int mask, HashMap<Class, Integer> classInstanceLimit) {
             dsTaint.addTaint(classInstanceLimit.dsTaint);
             dsTaint.addTaint(mask);
@@ -980,7 +808,7 @@ public final class StrictMode {
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 12:02:01.213 -0400", hash_original_method = "338C4A4B8F91E885EB5A5562BE10EA45", hash_generated_method = "45B6AD5BB84358858784377315AF34FF")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:54.294 -0400", hash_original_method = "338C4A4B8F91E885EB5A5562BE10EA45", hash_generated_method = "74450E4FE3D689CEFD2EFC7E13206843")
         @DSModeled(DSC.SAFE)
         @Override
         public String toString() {
@@ -995,7 +823,7 @@ public final class StrictMode {
             private HashMap<Class, Integer> mClassInstanceLimit;
             private boolean mClassInstanceLimitNeedCow = false;
             
-            @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 12:02:01.213 -0400", hash_original_method = "C72380FC51BF6FFB0D8183E2FF7C5DBE", hash_generated_method = "9591C62A9F948170D00F955E1524AE93")
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:54.295 -0400", hash_original_method = "C72380FC51BF6FFB0D8183E2FF7C5DBE", hash_generated_method = "C4A90307B6990541B60C2B86DCD4B526")
             @DSModeled(DSC.SAFE)
             public Builder() {
                 mMask = 0;
@@ -1004,7 +832,7 @@ public final class StrictMode {
             }
 
             
-            @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 12:02:01.213 -0400", hash_original_method = "FBB1CB3954D34CB1AD109CEFAD7B1DDE", hash_generated_method = "C5CD66F3A319EE27EEFFD78E8D6ADE21")
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:54.295 -0400", hash_original_method = "FBB1CB3954D34CB1AD109CEFAD7B1DDE", hash_generated_method = "2F9E64EC4CC25D8FD89B63D46DEE7D9F")
             @DSModeled(DSC.SAFE)
             public Builder(VmPolicy base) {
                 dsTaint.addTaint(base.dsTaint);
@@ -1018,7 +846,7 @@ public final class StrictMode {
             }
 
             
-            @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 12:02:01.214 -0400", hash_original_method = "E6B0AD736B79FE1E50987D22EA6466E3", hash_generated_method = "675D31743A6B24FD74F8F9C9213661B4")
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:54.295 -0400", hash_original_method = "E6B0AD736B79FE1E50987D22EA6466E3", hash_generated_method = "87DFCD8891803405BE4BD96D26A7514F")
             //DSFIXME:  CODE0002: Requires DSC value to be set
             public Builder setClassInstanceLimit(Class klass, int instanceLimit) {
                 dsTaint.addTaint(instanceLimit);
@@ -1028,7 +856,7 @@ public final class StrictMode {
                 } //End block
                 {
                     {
-                        boolean varF54A66C0EAC712B4862EF63071243FC1_1742161061 = (mClassInstanceLimit.containsKey(klass) &&
+                        boolean varF54A66C0EAC712B4862EF63071243FC1_495774921 = (mClassInstanceLimit.containsKey(klass) &&
                         mClassInstanceLimit.get(klass) == instanceLimit);
                     } //End collapsed parenthetic
                     mClassInstanceLimitNeedCow = false;
@@ -1045,20 +873,20 @@ public final class StrictMode {
             }
 
             
-            @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 12:02:01.214 -0400", hash_original_method = "1E52C56D15D33FA545E602A30D1B7293", hash_generated_method = "563C5F7B17BFEFEA2060ECF1099ACFEE")
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:54.296 -0400", hash_original_method = "1E52C56D15D33FA545E602A30D1B7293", hash_generated_method = "86EE0075CC17DF70FA7324933A81E6D6")
             //DSFIXME:  CODE0002: Requires DSC value to be set
             public Builder detectActivityLeaks() {
-                Builder var780DBA67134F710256E37D1518C94046_1837397482 = (enable(DETECT_VM_ACTIVITY_LEAKS));
+                Builder var780DBA67134F710256E37D1518C94046_441850285 = (enable(DETECT_VM_ACTIVITY_LEAKS));
                 return (Builder)dsTaint.getTaint();
                 // ---------- Original Method ----------
                 //return enable(DETECT_VM_ACTIVITY_LEAKS);
             }
 
             
-            @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 12:02:01.215 -0400", hash_original_method = "CEAA7924A62774EE9F1DB0EAFC23F606", hash_generated_method = "57ED9F18124CCD625422006F343C3739")
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:54.296 -0400", hash_original_method = "CEAA7924A62774EE9F1DB0EAFC23F606", hash_generated_method = "1874D14562D9F93E550B138DA2B2CFA7")
             //DSFIXME:  CODE0002: Requires DSC value to be set
             public Builder detectAll() {
-                Builder var572C1D5C75201B5F2EA42D3D4A83539F_1433527131 = (enable(DETECT_VM_ACTIVITY_LEAKS |
+                Builder var572C1D5C75201B5F2EA42D3D4A83539F_1514003838 = (enable(DETECT_VM_ACTIVITY_LEAKS |
                         DETECT_VM_CURSOR_LEAKS | DETECT_VM_CLOSABLE_LEAKS));
                 return (Builder)dsTaint.getTaint();
                 // ---------- Original Method ----------
@@ -1067,57 +895,57 @@ public final class StrictMode {
             }
 
             
-            @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 12:02:01.215 -0400", hash_original_method = "7CA55A1EF27E65D4088A38B2843E1EE5", hash_generated_method = "BFBA778F3C189A6EC4FD86A521C83B23")
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:54.296 -0400", hash_original_method = "7CA55A1EF27E65D4088A38B2843E1EE5", hash_generated_method = "3F638A5943AA06FADA694067A5825473")
             //DSFIXME:  CODE0002: Requires DSC value to be set
             public Builder detectLeakedSqlLiteObjects() {
-                Builder varC0A7A54EAA5500F6B0F27C61E98371FE_1087015328 = (enable(DETECT_VM_CURSOR_LEAKS));
+                Builder varC0A7A54EAA5500F6B0F27C61E98371FE_981399103 = (enable(DETECT_VM_CURSOR_LEAKS));
                 return (Builder)dsTaint.getTaint();
                 // ---------- Original Method ----------
                 //return enable(DETECT_VM_CURSOR_LEAKS);
             }
 
             
-            @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 12:02:01.215 -0400", hash_original_method = "76FD4F08E7705E8F66E31708D9A399EA", hash_generated_method = "CDA2AEB0E23B4771F100C64D26822018")
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:54.296 -0400", hash_original_method = "76FD4F08E7705E8F66E31708D9A399EA", hash_generated_method = "664E1417019FF065D4B1A2F643B66625")
             //DSFIXME:  CODE0002: Requires DSC value to be set
             public Builder detectLeakedClosableObjects() {
-                Builder varDBDF972D13A7A0F505B3E318564FA057_936892230 = (enable(DETECT_VM_CLOSABLE_LEAKS));
+                Builder varDBDF972D13A7A0F505B3E318564FA057_812797573 = (enable(DETECT_VM_CLOSABLE_LEAKS));
                 return (Builder)dsTaint.getTaint();
                 // ---------- Original Method ----------
                 //return enable(DETECT_VM_CLOSABLE_LEAKS);
             }
 
             
-            @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 12:02:01.215 -0400", hash_original_method = "94F50CCB3C281DFAB53140F44BEA7518", hash_generated_method = "EC59CAE9BDC1AB1A7902C3EB82453CDF")
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:54.297 -0400", hash_original_method = "94F50CCB3C281DFAB53140F44BEA7518", hash_generated_method = "500BA61C909F9518D87536454199E19B")
             //DSFIXME:  CODE0002: Requires DSC value to be set
             public Builder penaltyDeath() {
-                Builder var1D71F5757972FF9DC154CB7A2BBB4BA7_1325406554 = (enable(PENALTY_DEATH));
+                Builder var1D71F5757972FF9DC154CB7A2BBB4BA7_2034279381 = (enable(PENALTY_DEATH));
                 return (Builder)dsTaint.getTaint();
                 // ---------- Original Method ----------
                 //return enable(PENALTY_DEATH);
             }
 
             
-            @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 12:02:01.219 -0400", hash_original_method = "2F91CFDA044E15B06DFDEA717627020F", hash_generated_method = "06955995D920145FEEF336052BCE9BCB")
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:54.297 -0400", hash_original_method = "2F91CFDA044E15B06DFDEA717627020F", hash_generated_method = "2E8016945C9998753B7216E55539421A")
             //DSFIXME:  CODE0002: Requires DSC value to be set
             public Builder penaltyLog() {
-                Builder varAA5DB1D11209B827A2125309FAF8E6D6_1973081119 = (enable(PENALTY_LOG));
+                Builder varAA5DB1D11209B827A2125309FAF8E6D6_468585890 = (enable(PENALTY_LOG));
                 return (Builder)dsTaint.getTaint();
                 // ---------- Original Method ----------
                 //return enable(PENALTY_LOG);
             }
 
             
-            @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 12:02:01.219 -0400", hash_original_method = "79D7F41C29935BA44118AFFA48FCC1BE", hash_generated_method = "55B52CB42F3075564C941C7EB53C4FB0")
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:54.297 -0400", hash_original_method = "79D7F41C29935BA44118AFFA48FCC1BE", hash_generated_method = "5D2BF00E26E5D7E24B2E7C0730C5BB2A")
             //DSFIXME:  CODE0002: Requires DSC value to be set
             public Builder penaltyDropBox() {
-                Builder var959C22F6882E3E08E0D77F2A90947774_1987600384 = (enable(PENALTY_DROPBOX));
+                Builder var959C22F6882E3E08E0D77F2A90947774_1182661900 = (enable(PENALTY_DROPBOX));
                 return (Builder)dsTaint.getTaint();
                 // ---------- Original Method ----------
                 //return enable(PENALTY_DROPBOX);
             }
 
             
-            @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 12:02:01.219 -0400", hash_original_method = "450902735A2D953DC54C05378B49DC09", hash_generated_method = "F5DC6D6D5FFF01D674BAD30FE20032C0")
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:54.297 -0400", hash_original_method = "450902735A2D953DC54C05378B49DC09", hash_generated_method = "FBDAFFE99A3DED99EFF9B948CA36075F")
             @DSModeled(DSC.SAFE)
             private Builder enable(int bit) {
                 dsTaint.addTaint(bit);
@@ -1128,12 +956,14 @@ public final class StrictMode {
             }
 
             
-            @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 12:02:01.219 -0400", hash_original_method = "6432BC9C97797DD02AE9BFA4A7F87D54", hash_generated_method = "5E05C2A23F2DDF49E371B215013099C7")
-            @DSModeled(DSC.SAFE)
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:54.298 -0400", hash_original_method = "6432BC9C97797DD02AE9BFA4A7F87D54", hash_generated_method = "242462A027BE695926CC5E687B66045E")
+            //DSFIXME:  CODE0002: Requires DSC value to be set
             public VmPolicy build() {
                 {
                     penaltyLog();
                 } //End block
+                VmPolicy varA4317057F58870E69471FE4C1E4C1100_1662443457 = (new VmPolicy(mMask,
+                        mClassInstanceLimit != null ? mClassInstanceLimit : EMPTY_CLASS_LIMIT_MAP)); //DSFIXME:  CODE0008: Nested ternary operator in expression
                 return (VmPolicy)dsTaint.getTaint();
                 // ---------- Original Method ----------
                 //if (mMask != 0 &&
@@ -1150,13 +980,14 @@ public final class StrictMode {
 
 
         
+        public static final VmPolicy LAX = new VmPolicy(0, EMPTY_CLASS_LIMIT_MAP);
     }
 
 
     
     public static class StrictModeViolation extends BlockGuard.BlockGuardPolicyException {
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 12:02:01.219 -0400", hash_original_method = "E7438DD65D448EA29E2BF1E2E7B9AF17", hash_generated_method = "F7F6F4BF06A22FB2A540DAC2E497E30B")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:54.298 -0400", hash_original_method = "E7438DD65D448EA29E2BF1E2E7B9AF17", hash_generated_method = "EA804F4D5B010C026570487441E53E13")
         //DSFIXME:  CODE0002: Requires DSC value to be set
         public StrictModeViolation(int policyState, int policyViolated, String message) {
             super(policyState, policyViolated, message);
@@ -1173,7 +1004,7 @@ public final class StrictMode {
     
     public static class StrictModeNetworkViolation extends StrictModeViolation {
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 12:02:01.220 -0400", hash_original_method = "DBBD717A236AEADDFBDE9EEC846203D0", hash_generated_method = "17106CA1836F6F85C159F2C298FBB91D")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:54.298 -0400", hash_original_method = "DBBD717A236AEADDFBDE9EEC846203D0", hash_generated_method = "B0F45AB4DBEE3A703CD3EA18D2DD7382")
         //DSFIXME:  CODE0002: Requires DSC value to be set
         public StrictModeNetworkViolation(int policyMask) {
             super(policyMask, DETECT_NETWORK, null);
@@ -1188,7 +1019,7 @@ public final class StrictMode {
     
     private static class StrictModeDiskReadViolation extends StrictModeViolation {
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 12:02:01.220 -0400", hash_original_method = "50FAC78594B32A364EC38A7051A6D828", hash_generated_method = "D88FC6DA2172E04DA09A3EE5DAB2E59F")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:54.299 -0400", hash_original_method = "50FAC78594B32A364EC38A7051A6D828", hash_generated_method = "0EBF0949AA7A5F95579F20A0A3C083C7")
         //DSFIXME:  CODE0002: Requires DSC value to be set
         public StrictModeDiskReadViolation(int policyMask) {
             super(policyMask, DETECT_DISK_READ, null);
@@ -1203,7 +1034,7 @@ public final class StrictMode {
     
     private static class StrictModeDiskWriteViolation extends StrictModeViolation {
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 12:02:01.220 -0400", hash_original_method = "3E79DB089B8A8B103215C527DD70DC9D", hash_generated_method = "7FBF706EC8BC800A7BD568F169B6BC1F")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:54.299 -0400", hash_original_method = "3E79DB089B8A8B103215C527DD70DC9D", hash_generated_method = "97EA8B2E91E2EF84179FE99E8526995F")
         //DSFIXME:  CODE0002: Requires DSC value to be set
         public StrictModeDiskWriteViolation(int policyMask) {
             super(policyMask, DETECT_DISK_WRITE, null);
@@ -1218,7 +1049,7 @@ public final class StrictMode {
     
     private static class StrictModeCustomViolation extends StrictModeViolation {
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 12:02:01.221 -0400", hash_original_method = "D9775B5587EA33BC7CC7CE8D67F82D3A", hash_generated_method = "162E1A3B182FB290E4AF5B8F685E6EA3")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:54.299 -0400", hash_original_method = "D9775B5587EA33BC7CC7CE8D67F82D3A", hash_generated_method = "09DD1AC236B358119985F8C5F238259D")
         //DSFIXME:  CODE0002: Requires DSC value to be set
         public StrictModeCustomViolation(int policyMask, String name) {
             super(policyMask, DETECT_CUSTOM, name);
@@ -1236,7 +1067,7 @@ public final class StrictMode {
         private int mPolicyMask;
         private HashMap<Integer, Long> mLastViolationTime = new HashMap<Integer, Long>();
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 12:02:01.221 -0400", hash_original_method = "56B73F441F57B7F1580692BF8D8E5ECB", hash_generated_method = "20B3511AABE8E80CA09AA7E062D84DB9")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:54.299 -0400", hash_original_method = "56B73F441F57B7F1580692BF8D8E5ECB", hash_generated_method = "2E775DABDE40504409FBC55CDAEC5A6F")
         @DSModeled(DSC.SAFE)
         public AndroidBlockGuardPolicy(final int policyMask) {
             dsTaint.addTaint(policyMask);
@@ -1245,7 +1076,7 @@ public final class StrictMode {
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 12:02:01.221 -0400", hash_original_method = "EC02A08C2D3910C2DE1DA94FE738CE60", hash_generated_method = "85A3FB065BC3E3874466527D7B1E51F1")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:54.300 -0400", hash_original_method = "EC02A08C2D3910C2DE1DA94FE738CE60", hash_generated_method = "23754226B77152F4728F13B9BD1590BD")
         @DSModeled(DSC.SAFE)
         @Override
         public String toString() {
@@ -1255,7 +1086,7 @@ public final class StrictMode {
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 12:02:01.250 -0400", hash_original_method = "BDAE35F9BC36FEF12DCB9013D520032B", hash_generated_method = "86DF9E8E7FD19C2312DB5FC334160C0C")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:54.300 -0400", hash_original_method = "BDAE35F9BC36FEF12DCB9013D520032B", hash_generated_method = "C5B3AE6AACA81A77F8D4463F15350A9E")
         @DSModeled(DSC.SAFE)
         public int getPolicyMask() {
             return dsTaint.getTaintInt();
@@ -1264,12 +1095,12 @@ public final class StrictMode {
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 12:02:01.252 -0400", hash_original_method = "0D85458AC3FF96FC22E8C3819C12EFAB", hash_generated_method = "2CD1C5E58032F4613A93303B717A6DB4")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:54.300 -0400", hash_original_method = "0D85458AC3FF96FC22E8C3819C12EFAB", hash_generated_method = "5D5CF7FBF09495F935497821FACE9D4D")
         //DSFIXME:  CODE0002: Requires DSC value to be set
         public void onWriteToDisk() {
             //DSFIXME:  CODE0009: Possible callback target function detected
             {
-                boolean varC1086D74C3264873DADAFE03ADA68117_426393457 = (tooManyViolationsThisLoop());
+                boolean varC1086D74C3264873DADAFE03ADA68117_1417352743 = (tooManyViolationsThisLoop());
             } //End collapsed parenthetic
             BlockGuard.BlockGuardPolicyException e;
             e = new StrictModeDiskWriteViolation(mPolicyMask);
@@ -1288,13 +1119,13 @@ public final class StrictMode {
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 12:02:01.254 -0400", hash_original_method = "B44201BA71724735A91DD4F1FF43D337", hash_generated_method = "62CFA0159A925942EA6F2B3F4064BF69")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:54.300 -0400", hash_original_method = "B44201BA71724735A91DD4F1FF43D337", hash_generated_method = "B1DEBB9C34B0220285177A36B2E88E9A")
         //DSFIXME:  CODE0002: Requires DSC value to be set
          void onCustomSlowCall(String name) {
             //DSFIXME:  CODE0009: Possible callback target function detected
             dsTaint.addTaint(name);
             {
-                boolean varC1086D74C3264873DADAFE03ADA68117_2060642392 = (tooManyViolationsThisLoop());
+                boolean varC1086D74C3264873DADAFE03ADA68117_464053220 = (tooManyViolationsThisLoop());
             } //End collapsed parenthetic
             BlockGuard.BlockGuardPolicyException e;
             e = new StrictModeCustomViolation(mPolicyMask, name);
@@ -1313,12 +1144,12 @@ public final class StrictMode {
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 12:02:01.254 -0400", hash_original_method = "DC9910586B30548E82E107CFA3542EA2", hash_generated_method = "80122E545EFE111917E8165F7A469B84")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:54.301 -0400", hash_original_method = "DC9910586B30548E82E107CFA3542EA2", hash_generated_method = "3EB46DD8B6984F914D2C96B711D948DB")
         //DSFIXME:  CODE0002: Requires DSC value to be set
         public void onReadFromDisk() {
             //DSFIXME:  CODE0009: Possible callback target function detected
             {
-                boolean varC1086D74C3264873DADAFE03ADA68117_2069292867 = (tooManyViolationsThisLoop());
+                boolean varC1086D74C3264873DADAFE03ADA68117_1790200557 = (tooManyViolationsThisLoop());
             } //End collapsed parenthetic
             BlockGuard.BlockGuardPolicyException e;
             e = new StrictModeDiskReadViolation(mPolicyMask);
@@ -1337,7 +1168,7 @@ public final class StrictMode {
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 12:02:01.254 -0400", hash_original_method = "D41EA35CCA984A26E96A9AAEEE4BCF1E", hash_generated_method = "5525183C75E4663A99DCEACA63DC31E2")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:54.301 -0400", hash_original_method = "D41EA35CCA984A26E96A9AAEEE4BCF1E", hash_generated_method = "787EEB300C778142F2D6AA324CC18D8C")
         //DSFIXME:  CODE0002: Requires DSC value to be set
         public void onNetwork() {
             //DSFIXME:  CODE0009: Possible callback target function detected
@@ -1345,7 +1176,7 @@ public final class StrictMode {
                 if (DroidSafeAndroidRuntime.control) throw new NetworkOnMainThreadException();
             } //End block
             {
-                boolean varC1086D74C3264873DADAFE03ADA68117_397390480 = (tooManyViolationsThisLoop());
+                boolean varC1086D74C3264873DADAFE03ADA68117_2125783863 = (tooManyViolationsThisLoop());
             } //End collapsed parenthetic
             BlockGuard.BlockGuardPolicyException e;
             e = new StrictModeNetworkViolation(mPolicyMask);
@@ -1367,7 +1198,7 @@ public final class StrictMode {
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 12:02:01.255 -0400", hash_original_method = "A35D2E9A8AD0B9C28C9280D1C3956061", hash_generated_method = "0FD1331CB88BF1A7427E6737A9E67F53")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:54.301 -0400", hash_original_method = "A35D2E9A8AD0B9C28C9280D1C3956061", hash_generated_method = "99367993AF814CF7CD58547AE5D679AC")
         @DSModeled(DSC.SAFE)
         public void setPolicyMask(int policyMask) {
             dsTaint.addTaint(policyMask);
@@ -1376,10 +1207,9 @@ public final class StrictMode {
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 12:02:01.255 -0400", hash_original_method = "5E39E8C314EEA382AFAE0CC045B36998", hash_generated_method = "4063906020C3F4251AD66D1C23522CF2")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:54.302 -0400", hash_original_method = "5E39E8C314EEA382AFAE0CC045B36998", hash_generated_method = "12A5E66D941B97046E918EFE395BD501")
         //DSFIXME:  CODE0002: Requires DSC value to be set
          void startHandlingViolationException(BlockGuard.BlockGuardPolicyException e) {
-            //DSFIXME:  CODE0009: Possible callback target function detected
             dsTaint.addTaint(e.dsTaint);
             ViolationInfo info;
             info = new ViolationInfo(e, e.getPolicy());
@@ -1392,10 +1222,9 @@ public final class StrictMode {
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 12:02:01.256 -0400", hash_original_method = "E564B46DD31AF359B07F190378DAA828", hash_generated_method = "A2B41F5547FEB3414065F72D59CA4F5D")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:54.305 -0400", hash_original_method = "E564B46DD31AF359B07F190378DAA828", hash_generated_method = "42D87A2F35F60AFBA3CFB7D1276AD07E")
         //DSFIXME:  CODE0002: Requires DSC value to be set
          void handleViolationWithTimingAttempt(final ViolationInfo info) {
-            //DSFIXME:  CODE0009: Possible callback target function detected
             dsTaint.addTaint(info.dsTaint);
             Looper looper;
             looper = Looper.myLooper();
@@ -1403,18 +1232,18 @@ public final class StrictMode {
                 info.durationMillis = -1;
                 handleViolation(info);
             } //End block
-            final ArrayList<ViolationInfo> records;
+            ArrayList<ViolationInfo> records;
             records = violationsBeingTimed.get();
             {
-                boolean var93D414F0DAF507CC4844CFB90F056FDD_17760579 = (records.size() >= MAX_OFFENSES_PER_LOOP);
+                boolean var93D414F0DAF507CC4844CFB90F056FDD_2089989024 = (records.size() >= MAX_OFFENSES_PER_LOOP);
             } //End collapsed parenthetic
             records.add(info);
             {
-                boolean varD777943406E4C57D521B6D48914E48C5_1649495262 = (records.size() > 1);
+                boolean varD777943406E4C57D521B6D48914E48C5_1453437591 = (records.size() > 1);
             } //End collapsed parenthetic
-            final IWindowManager windowManager;
+            IWindowManager windowManager;
             windowManager = sWindowManager.get();
-            
+            windowManager = null;
             {
                 try 
                 {
@@ -1423,31 +1252,58 @@ public final class StrictMode {
                 catch (RemoteException unused)
                 { }
             } //End block
-            threadHandler.get().post(new Runnable() {
-                    public void run() {
-                        long loopFinishTime = SystemClock.uptimeMillis();
-                        if (windowManager != null) {
-                            try {
-                                windowManager.showStrictModeViolation(false);
-                            } catch (RemoteException unused) {
-                            }
-                        }
-                        for (int n = 0; n < records.size(); ++n) {
-                            ViolationInfo v = records.get(n);
+            threadHandler.get().post(new Runnable() {                
+                @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:54.305 -0400", hash_original_method = "13A73E46BCAE9FB3F25E0C7CB59DBB78", hash_generated_method = "0AF143332D454387DF757813234C0067")
+                //DSFIXME:  CODE0002: Requires DSC value to be set
+                public void run() {
+                    long loopFinishTime;
+                    loopFinishTime = SystemClock.uptimeMillis();
+                    {
+                        try 
+                        {
+                            windowManager.showStrictModeViolation(false);
+                        } //End block
+                        catch (RemoteException unused)
+                        { }
+                    } //End block
+                    {
+                        int n;
+                        n = 0;
+                        boolean var295180DEA5F59A98ADD9FC6CF590545D_1066905390 = (n < records.size());
+                        {
+                            ViolationInfo v;
+                            v = records.get(n);
                             v.violationNumThisLoop = n + 1;
                             v.durationMillis =
                                     (int) (loopFinishTime - v.violationUptimeMillis);
                             handleViolation(v);
-                        }
-                        records.clear();
-                    }
-                });
+                        } //End block
+                    } //End collapsed parenthetic
+                    records.clear();
+                    // ---------- Original Method ----------
+                    //long loopFinishTime = SystemClock.uptimeMillis();
+                    //if (windowManager != null) {
+                            //try {
+                                //windowManager.showStrictModeViolation(false);
+                            //} catch (RemoteException unused) {
+                            //}
+                        //}
+                    //for (int n = 0; n < records.size(); ++n) {
+                            //ViolationInfo v = records.get(n);
+                            //v.violationNumThisLoop = n + 1;
+                            //v.durationMillis =
+                                    //(int) (loopFinishTime - v.violationUptimeMillis);
+                            //handleViolation(v);
+                        //}
+                    //records.clear();
+                }
+});
             // ---------- Original Method ----------
             // Original Method Too Long, Refer to Original Implementation
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 12:02:01.261 -0400", hash_original_method = "41F5C3E6841DC86E9C64A72E84C0FF7E", hash_generated_method = "06824F9063AF7648944E9129F855E57D")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:54.344 -0400", hash_original_method = "41F5C3E6841DC86E9C64A72E84C0FF7E", hash_generated_method = "A448FBCDD2997450775A73EE33062671")
         //DSFIXME:  CODE0002: Requires DSC value to be set
          void handleViolation(final ViolationInfo info) {
             dsTaint.addTaint(info.dsTaint);
@@ -1463,15 +1319,15 @@ public final class StrictMode {
                     gatheredViolations.set(violations);
                 } //End block
                 {
-                    boolean var67E0B061679ECE750C918CCF810C909E_1177006201 = (violations.size() >= 5);
+                    boolean var67E0B061679ECE750C918CCF810C909E_793748063 = (violations.size() >= 5);
                 } //End collapsed parenthetic
                 {
-                    Iterator<ViolationInfo> seatecAstronomy42 = violations.iterator();
-                    seatecAstronomy42.hasNext();
-                    ViolationInfo previous = seatecAstronomy42.next();
+                    Iterator<ViolationInfo> varD4E3ABC4825F26B3B2AA235E5643CBC8_1182401107 = (violations).iterator();
+                    varD4E3ABC4825F26B3B2AA235E5643CBC8_1182401107.hasNext();
+                    ViolationInfo previous = varD4E3ABC4825F26B3B2AA235E5643CBC8_1182401107.next();
                     {
                         {
-                            boolean varC9FD4943D1AECC98A74F6D3A1A981392_790386519 = (info.crashInfo.stackTrace.equals(previous.crashInfo.stackTrace));
+                            boolean varC9FD4943D1AECC98A74F6D3A1A981392_1180418028 = (info.crashInfo.stackTrace.equals(previous.crashInfo.stackTrace));
                         } //End collapsed parenthetic
                     } //End block
                 } //End collapsed parenthetic
@@ -1482,7 +1338,7 @@ public final class StrictMode {
             long lastViolationTime;
             lastViolationTime = 0;
             {
-                boolean var19200966257A15248BB4C14BB760875F_1500483866 = (mLastViolationTime.containsKey(crashFingerprint));
+                boolean var19200966257A15248BB4C14BB760875F_324756379 = (mLastViolationTime.containsKey(crashFingerprint));
                 {
                     lastViolationTime = mLastViolationTime.get(crashFingerprint);
                 } //End block
@@ -1550,8 +1406,14 @@ public final class StrictMode {
     
     private static class AndroidCloseGuardReporter implements CloseGuard.Reporter {
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 12:02:01.262 -0400", hash_original_method = "1648939B3F4BE7F697201ED2CA10799D", hash_generated_method = "EEBC8666AA5788DDB23C595C38CAE000")
-        @DSModeled(DSC.SAFE)
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:54.344 -0400", hash_original_method = "A9A1537F709EBCDDB56A99F2748808D0", hash_generated_method = "A9A1537F709EBCDDB56A99F2748808D0")
+                public AndroidCloseGuardReporter ()
+        {
+        }
+
+
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:54.345 -0400", hash_original_method = "1648939B3F4BE7F697201ED2CA10799D", hash_generated_method = "300D8A7C3C10F1128E114EBA485DC7E5")
+        //DSFIXME:  CODE0002: Requires DSC value to be set
         public void report(String message, Throwable allocationSite) {
             dsTaint.addTaint(message);
             dsTaint.addTaint(allocationSite.dsTaint);
@@ -1567,6 +1429,12 @@ public final class StrictMode {
     
     private static class LogStackTrace extends Exception {
         
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:54.345 -0400", hash_original_method = "BD681E6068887FE7355C45B36383086D", hash_generated_method = "BD681E6068887FE7355C45B36383086D")
+                public LogStackTrace ()
+        {
+        }
+
+
     }
 
 
@@ -1578,7 +1446,7 @@ public final class StrictMode {
         private Span mPrev;
         private ThreadSpanState mContainerState;
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 12:02:01.283 -0400", hash_original_method = "858C7F08B86E9ABCC5108174CEDFA974", hash_generated_method = "404519D152E349F6594892D5D68CBB47")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:54.346 -0400", hash_original_method = "858C7F08B86E9ABCC5108174CEDFA974", hash_generated_method = "0538523B05FDEB0859DDDA171AA78C24")
         @DSModeled(DSC.SAFE)
          Span(ThreadSpanState threadState) {
             dsTaint.addTaint(threadState.dsTaint);
@@ -1587,7 +1455,7 @@ public final class StrictMode {
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 12:02:01.283 -0400", hash_original_method = "35ECB8DB5D2E2401D23EA00A0B49C3B0", hash_generated_method = "17E98D51E9140324E072C7D772CF686C")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:54.346 -0400", hash_original_method = "35ECB8DB5D2E2401D23EA00A0B49C3B0", hash_generated_method = "9BA85CCA4EAE21C800E5947B396A9A75")
         @DSModeled(DSC.SAFE)
         protected Span() {
             mContainerState = null;
@@ -1596,8 +1464,8 @@ public final class StrictMode {
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 12:02:01.283 -0400", hash_original_method = "BAA90C1A527ED6ADE64DE9CF5831D500", hash_generated_method = "AA5FEFE04B85CDDE51264AC8DBB73F5F")
-        @DSModeled(DSC.SAFE)
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:54.347 -0400", hash_original_method = "BAA90C1A527ED6ADE64DE9CF5831D500", hash_generated_method = "49FE78DDF43055766791D85ADA96EDF5")
+        //DSFIXME:  CODE0002: Requires DSC value to be set
         public void finish() {
             ThreadSpanState state;
             state = mContainerState;
@@ -1609,9 +1477,11 @@ public final class StrictMode {
                     mNext.mPrev = mPrev;
                 } //End block
                 {
-                    state.mActiveHead = mNext;
-                } //End block
-                state.mActiveSize--;
+                    boolean var15C0794A52BA15EDCCCE733A675E1A05_1125620282 = (state.mActiveHead == this);
+                    {
+                        state.mActiveHead = mNext;
+                    } //End block
+                } //End collapsed parenthetic
                 Log.d(TAG, "Span finished=" + mName + "; size=" + state.mActiveSize);
                 this.mCreateMillis = -1;
                 this.mName = null;
@@ -1620,7 +1490,6 @@ public final class StrictMode {
                 {
                     this.mNext = state.mFreeListHead;
                     state.mFreeListHead = this;
-                    state.mFreeListSize++;
                 } //End block
             } //End block
             // ---------- Original Method ----------
@@ -1638,6 +1507,12 @@ public final class StrictMode {
         public Span mFreeListHead;
         public int mFreeListSize;
         
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:54.347 -0400", hash_original_method = "C2793DA716341667248CA1EC1009DBED", hash_generated_method = "C2793DA716341667248CA1EC1009DBED")
+                public ThreadSpanState ()
+        {
+        }
+
+
     }
 
 
@@ -1653,7 +1528,7 @@ public final class StrictMode {
         public String broadcastIntentAction;
         public long numInstances = -1;
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 12:02:01.284 -0400", hash_original_method = "D15EADA574CC6688E3A5C168E5A51EC1", hash_generated_method = "05F259CFCF46AE5605E16C87C997173A")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:54.347 -0400", hash_original_method = "D15EADA574CC6688E3A5C168E5A51EC1", hash_generated_method = "A280C1FD969189315D7D94DDC8202B0C")
         @DSModeled(DSC.SAFE)
         public ViolationInfo() {
             crashInfo = null;
@@ -1664,7 +1539,7 @@ public final class StrictMode {
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 12:02:01.284 -0400", hash_original_method = "B97F48EA0F14252413142D91DE4A3BFA", hash_generated_method = "6104BDEED5F9D1A415F0489D0D5D4CC1")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:54.348 -0400", hash_original_method = "B97F48EA0F14252413142D91DE4A3BFA", hash_generated_method = "536B5C01A4F9BF2CBAC776138F1C56EA")
         //DSFIXME:  CODE0002: Requires DSC value to be set
         public ViolationInfo(Throwable tr, int policy) {
             dsTaint.addTaint(tr.dsTaint);
@@ -1696,7 +1571,6 @@ public final class StrictMode {
                     index = 0;
                     {
                         this.tags[index] = iter.mName;
-                        index++;
                         iter = iter.mNext;
                     } //End block
                 } //End block
@@ -1706,7 +1580,7 @@ public final class StrictMode {
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 12:02:01.284 -0400", hash_original_method = "2281C8F6C464FE0E4D053A790D9731B4", hash_generated_method = "4E35E5856863C9C390797D940D4020C6")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:54.348 -0400", hash_original_method = "2281C8F6C464FE0E4D053A790D9731B4", hash_generated_method = "DE6C347B6BB16E8FA3DE1EBC02820BE9")
         //DSFIXME:  CODE0002: Requires DSC value to be set
         public ViolationInfo(Parcel in) {
             this(in, false);
@@ -1715,7 +1589,7 @@ public final class StrictMode {
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 12:02:01.285 -0400", hash_original_method = "276C18C659FAD0D183192D3E613DC123", hash_generated_method = "8E6319729A0AFE149DE6625751BDB2D9")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:54.349 -0400", hash_original_method = "276C18C659FAD0D183192D3E613DC123", hash_generated_method = "0F6BC3D9B7800F3A66C10AD70D798A79")
         //DSFIXME:  CODE0002: Requires DSC value to be set
         public ViolationInfo(Parcel in, boolean unsetGatheringBit) {
             dsTaint.addTaint(unsetGatheringBit);
@@ -1754,7 +1628,7 @@ public final class StrictMode {
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 12:02:01.286 -0400", hash_original_method = "C167EFD1AA966CEFAC170AF811F6D4AF", hash_generated_method = "6221587CB56D7F38029C11282DA5EEAB")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:54.355 -0400", hash_original_method = "C167EFD1AA966CEFAC170AF811F6D4AF", hash_generated_method = "6DC284609FB60C54C0BE0CF3EEDE9E15")
         //DSFIXME:  CODE0002: Requires DSC value to be set
         @Override
         public int hashCode() {
@@ -1794,11 +1668,11 @@ public final class StrictMode {
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 12:02:01.286 -0400", hash_original_method = "4C68F89668EEC8ACA3036C864AE1DCBA", hash_generated_method = "69229C5751E175F8EBCF8611CF912323")
-        @DSModeled(DSC.SAFE)
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:54.357 -0400", hash_original_method = "4C68F89668EEC8ACA3036C864AE1DCBA", hash_generated_method = "7182D6A3C83EEED3BF11541AA97008FB")
+        //DSFIXME:  CODE0002: Requires DSC value to be set
         public void writeToParcel(Parcel dest, int flags) {
-            dsTaint.addTaint(dest.dsTaint);
             dsTaint.addTaint(flags);
+            dsTaint.addTaint(dest.dsTaint);
             crashInfo.writeToParcel(dest, flags);
             dest.writeInt(policy);
             dest.writeInt(durationMillis);
@@ -1821,7 +1695,7 @@ public final class StrictMode {
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 12:02:01.289 -0400", hash_original_method = "FB1CB9CE36DAC72C8A293B50C548452A", hash_generated_method = "D2FB676CB320A0A9CDD0D1AD9C9DD1AE")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:54.370 -0400", hash_original_method = "FB1CB9CE36DAC72C8A293B50C548452A", hash_generated_method = "F5FD45EB66970B8D5FD22C2997B4C7FF")
         //DSFIXME:  CODE0002: Requires DSC value to be set
         public void dump(Printer pw, String prefix) {
             dsTaint.addTaint(prefix);
@@ -1867,12 +1741,8 @@ public final class StrictMode {
         Class mClass;
         long mInstances;
         int mLimit;
-        private static StackTraceElement[] FAKE_STACK = {
-            new StackTraceElement("android.os.StrictMode", "setClassInstanceLimit",
-                                  "StrictMode.java", 1)
-        };
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 12:02:01.289 -0400", hash_original_method = "E80F10435372AA752F8DBC4C44A2404B", hash_generated_method = "E406843F8E40D91721431FD518992466")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:54.370 -0400", hash_original_method = "E80F10435372AA752F8DBC4C44A2404B", hash_generated_method = "96FB8BADC8A17A0D4FC95CF4F0072A4C")
         //DSFIXME:  CODE0002: Requires DSC value to be set
         public InstanceCountViolation(Class klass, long instances, int limit) {
             super(klass.toString() + "; instances=" + instances + "; limit=" + limit);
@@ -1888,16 +1758,18 @@ public final class StrictMode {
         }
 
         
+        private static final StackTraceElement[] FAKE_STACK = {
+            new StackTraceElement("android.os.StrictMode", "setClassInstanceLimit",
+                                  "StrictMode.java", 1)
+        };
     }
 
 
     
     private static final class InstanceTracker {
-        private static HashMap<Class<?>, Integer> sInstanceCounts =
-                new HashMap<Class<?>, Integer>();
         private Class<?> mKlass;
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 12:02:01.289 -0400", hash_original_method = "D1695326538E61C61B9A9871778AEDEF", hash_generated_method = "59D88A953B4F12797050781031FEFAA6")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:54.371 -0400", hash_original_method = "D1695326538E61C61B9A9871778AEDEF", hash_generated_method = "BC6A1BD5A10FE8CD98A03F70D0214034")
         //DSFIXME:  CODE0002: Requires DSC value to be set
         public InstanceTracker(Object instance) {
             dsTaint.addTaint(instance.dsTaint);
@@ -1920,8 +1792,8 @@ public final class StrictMode {
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 12:02:01.291 -0400", hash_original_method = "3D9E07641D189E499B7BA8CA77DD9FB9", hash_generated_method = "B31B6ABE4307D880ADF984D99093F5C8")
-        @DSModeled(DSC.SAFE)
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:54.371 -0400", hash_original_method = "3D9E07641D189E499B7BA8CA77DD9FB9", hash_generated_method = "5AD6BC3EB37253904B9F1D58FC2790CC")
+        //DSFIXME:  CODE0002: Requires DSC value to be set
         @Override
         protected void finalize() throws Throwable {
             try 
@@ -1964,8 +1836,7 @@ public final class StrictMode {
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 12:02:01.291 -0400", hash_original_method = "C02E63494A43A201950056E55F3CBD0C", hash_generated_method = "7CAD8FEB118160808B68A1260CEF7531")
-        public static int getInstanceCount(Class<?> klass) {
+                public static int getInstanceCount(Class<?> klass) {
             synchronized (sInstanceCounts) {
                 final Integer value = sInstanceCounts.get(klass);
                 return value != null ? value : 0;
@@ -1973,10 +1844,149 @@ public final class StrictMode {
         }
 
         
+        private static final HashMap<Class<?>, Integer> sInstanceCounts =
+                new HashMap<Class<?>, Integer>();
     }
 
 
     
-}
+    private static final String TAG = "StrictMode";
+    private static final boolean LOG_V = Log.isLoggable(TAG, Log.VERBOSE);
+    private static final boolean IS_USER_BUILD = "user".equals(Build.TYPE);
+    private static final boolean IS_ENG_BUILD = "eng".equals(Build.TYPE);
+    public static final String DISABLE_PROPERTY = "persist.sys.strictmode.disable";
+    public static final String VISUAL_PROPERTY = "persist.sys.strictmode.visual";
+    private static final long MIN_LOG_INTERVAL_MS = 1000;
+    private static final long MIN_DIALOG_INTERVAL_MS = 30000;
+    private static final int MAX_SPAN_TAGS = 20;
+    private static final int MAX_OFFENSES_PER_LOOP = 10;
+    public static final int DETECT_DISK_WRITE = 0x01;
+    public static final int DETECT_DISK_READ = 0x02;
+    public static final int DETECT_NETWORK = 0x04;
+    public static final int DETECT_CUSTOM = 0x08;
+    private static final int ALL_THREAD_DETECT_BITS =
+            DETECT_DISK_WRITE | DETECT_DISK_READ | DETECT_NETWORK | DETECT_CUSTOM;
+    public static final int DETECT_VM_CURSOR_LEAKS = 0x200;
+    public static final int DETECT_VM_CLOSABLE_LEAKS = 0x400;
+    public static final int DETECT_VM_ACTIVITY_LEAKS = 0x800;
+    private static final int DETECT_VM_INSTANCE_LEAKS = 0x1000;
+    private static final int ALL_VM_DETECT_BITS =
+            DETECT_VM_CURSOR_LEAKS | DETECT_VM_CLOSABLE_LEAKS |
+            DETECT_VM_ACTIVITY_LEAKS | DETECT_VM_INSTANCE_LEAKS;
+    public static final int PENALTY_LOG = 0x10;
+    public static final int PENALTY_DIALOG = 0x20;
+    public static final int PENALTY_DEATH = 0x40;
+    public static final int PENALTY_DEATH_ON_NETWORK = 0x200;
+    public static final int PENALTY_FLASH = 0x800;
+    public static final int PENALTY_DROPBOX = 0x80;
+    public static final int PENALTY_GATHER = 0x100;
+    private static final int THREAD_PENALTY_MASK =
+            PENALTY_LOG | PENALTY_DIALOG | PENALTY_DEATH | PENALTY_DROPBOX | PENALTY_GATHER |
+            PENALTY_DEATH_ON_NETWORK | PENALTY_FLASH;
+    private static final int VM_PENALTY_MASK =
+            PENALTY_LOG | PENALTY_DEATH | PENALTY_DROPBOX;
+    private static final HashMap<Class, Integer> EMPTY_CLASS_LIMIT_MAP = new HashMap<Class, Integer>();
+    private static volatile int sVmPolicyMask = 0;
+    private static volatile VmPolicy sVmPolicy = VmPolicy.LAX;
+    private static final AtomicInteger sDropboxCallsInFlight = new AtomicInteger(0);
+    private static final ThreadLocal<ArrayList<ViolationInfo>> gatheredViolations = new ThreadLocal<ArrayList<ViolationInfo>>() {        
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:54.372 -0400", hash_original_method = "3F7643CB826EF0CE042B1409C79A26FA", hash_generated_method = "186CA0A4C7C571C3F97A8A91C724FE72")
+        @DSModeled(DSC.SAFE)
+        @Override
+        protected ArrayList<ViolationInfo> initialValue() {
+            return (ArrayList<ViolationInfo>)dsTaint.getTaint();
+            // ---------- Original Method ----------
+            //return null;
+        }
 
+        
+}; //Transformed anonymous class
+    private static final ThreadLocal<ArrayList<ViolationInfo>> violationsBeingTimed = new ThreadLocal<ArrayList<ViolationInfo>>() {        
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:54.372 -0400", hash_original_method = "CB5695702D478EAB2FBBE8373134ED39", hash_generated_method = "B199D71A21539352B84FDCC24654F9AE")
+        //DSFIXME:  CODE0002: Requires DSC value to be set
+        @Override
+        protected ArrayList<ViolationInfo> initialValue() {
+            ArrayList<ViolationInfo> var3A78B5BBE0BB8491FDB70462B2CC44CE_758058039 = (new ArrayList<ViolationInfo>());
+            return (ArrayList<ViolationInfo>)dsTaint.getTaint();
+            // ---------- Original Method ----------
+            //return new ArrayList<ViolationInfo>();
+        }
+
+        
+}; //Transformed anonymous class
+    private static final ThreadLocal<Handler> threadHandler = new ThreadLocal<Handler>() {        
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:54.372 -0400", hash_original_method = "AFD0CE5945D0E9D14EE2FF5512B9324A", hash_generated_method = "9251EBBEDF9514047B803AFD0F14668E")
+        //DSFIXME:  CODE0002: Requires DSC value to be set
+        @Override
+        protected Handler initialValue() {
+            Handler varBA2CC05558C0855B5670B2CE470A504D_1560033943 = (new Handler());
+            return (Handler)dsTaint.getTaint();
+            // ---------- Original Method ----------
+            //return new Handler();
+        }
+
+        
+}; //Transformed anonymous class
+    private static long sLastInstanceCountCheckMillis = 0;
+    private static boolean sIsIdlerRegistered = false;
+    private static final MessageQueue.IdleHandler sProcessIdleHandler = new MessageQueue.IdleHandler() {        
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:54.372 -0400", hash_original_method = "6956F5FF31712AF268FC89A0909C9E82", hash_generated_method = "29358FF334B70C8DF65123375CD1E793")
+        //DSFIXME:  CODE0002: Requires DSC value to be set
+        public boolean queueIdle() {
+            long now;
+            now = SystemClock.uptimeMillis();
+            {
+                sLastInstanceCountCheckMillis = now;
+                conditionallyCheckInstanceCounts();
+            } //End block
+            return dsTaint.getTaintBoolean();
+            // ---------- Original Method ----------
+            //long now = SystemClock.uptimeMillis();
+            //if (now - sLastInstanceCountCheckMillis > 30 * 1000) {
+                        //sLastInstanceCountCheckMillis = now;
+                        //conditionallyCheckInstanceCounts();
+                    //}
+            //return true;
+        }
+
+        
+}; //Transformed anonymous class
+    private static final HashMap<Integer, Long> sLastVmViolationTime = new HashMap<Integer, Long>();
+    private static final Span NO_OP_SPAN = new Span() {        
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:54.373 -0400", hash_original_method = "D6FF905BC764A22CD5AFFCB47539B778", hash_generated_method = "3802941F36A062BAA51744D8D659BBA5")
+        @DSModeled(DSC.SAFE)
+        public void finish() {
+            // ---------- Original Method ----------
+        }
+
+        
+}; //Transformed anonymous class
+    private static final ThreadLocal<ThreadSpanState> sThisThreadSpanState = new ThreadLocal<ThreadSpanState>() {        
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:54.373 -0400", hash_original_method = "3F056F46AA4E010EAE891B386F384542", hash_generated_method = "79F1672CEE9AD65B5E4A93EE44FFF3BE")
+        //DSFIXME:  CODE0002: Requires DSC value to be set
+        @Override
+        protected ThreadSpanState initialValue() {
+            ThreadSpanState var15F0A2B8FCA5E54778F4D4A4D1DDCC7B_1517201039 = (new ThreadSpanState());
+            return (ThreadSpanState)dsTaint.getTaint();
+            // ---------- Original Method ----------
+            //return new ThreadSpanState();
+        }
+
+        
+}; //Transformed anonymous class
+    private static Singleton<IWindowManager> sWindowManager = new Singleton<IWindowManager>() {        
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:54.373 -0400", hash_original_method = "5B1F4967C7C17AD573D088D6B70DB243", hash_generated_method = "970D504F80411E69369F1E06FAAC7F26")
+        //DSFIXME:  CODE0002: Requires DSC value to be set
+        protected IWindowManager create() {
+            IWindowManager varC157AE586095B148703594F04CAE95C0_396753659 = (IWindowManager.Stub.asInterface(ServiceManager.getService("window")));
+            return (IWindowManager)dsTaint.getTaint();
+            // ---------- Original Method ----------
+            //return IWindowManager.Stub.asInterface(ServiceManager.getService("window"));
+        }
+
+        
+}; //Transformed anonymous class
+    private static final HashMap<Class, Integer> sExpectedActivityInstanceCount =
+            new HashMap<Class, Integer>();
+}
 

@@ -3,26 +3,25 @@ package java.text;
 // Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
+import droidsafe.runtime.*;
 
-// import Iterator to deal with enhanced for loop translation
+// needed for enhanced for control translations
 import java.util.Iterator;
-
 import java.util.Locale;
 import libcore.icu.ICU;
 import libcore.icu.NativeBreakIterator;
 
 public abstract class BreakIterator implements Cloneable {
-    public static final int DONE = -1;
     NativeBreakIterator wrapped;
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:12.843 -0400", hash_original_method = "472E6BA7B975B8FFC4413000E223456D", hash_generated_method = "F8BF866011ABE1206CEFF09ED137AEAF")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:29.845 -0400", hash_original_method = "472E6BA7B975B8FFC4413000E223456D", hash_generated_method = "6FAD5F17105AA87E99EE906D945E3AD3")
     @DSModeled(DSC.SAFE)
     protected BreakIterator() {
         // ---------- Original Method ----------
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:12.843 -0400", hash_original_method = "72AAB41934B49D5B08FCF4597E7486A8", hash_generated_method = "4F41976A5FF91BEDA9F7247EE0A68677")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:29.845 -0400", hash_original_method = "72AAB41934B49D5B08FCF4597E7486A8", hash_generated_method = "3A39A9C9C525458A83D3A3A7B14EE9DA")
     @DSModeled(DSC.SAFE)
      BreakIterator(NativeBreakIterator iterator) {
         dsTaint.addTaint(iterator.dsTaint);
@@ -31,84 +30,75 @@ public abstract class BreakIterator implements Cloneable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:12.843 -0400", hash_original_method = "CDAA22D1266CD653C7683C0E1E518399", hash_generated_method = "4A7E3E265648FAD4A4D4C73A60531487")
-    public static Locale[] getAvailableLocales() {
+        public static Locale[] getAvailableLocales() {
         return ICU.getAvailableBreakIteratorLocales();
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:12.843 -0400", hash_original_method = "73C86D2B1E3949BDD4766F0D383D3313", hash_generated_method = "F8CD5D16899329BCB2A45FB5284273F8")
-    public static BreakIterator getCharacterInstance() {
+        public static BreakIterator getCharacterInstance() {
         return getCharacterInstance(Locale.getDefault());
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:12.843 -0400", hash_original_method = "15D8F31D878C030C879D418D3EFBB94E", hash_generated_method = "D3C21E59704B982039AA1B36F85311CB")
-    public static BreakIterator getCharacterInstance(Locale where) {
+        public static BreakIterator getCharacterInstance(Locale where) {
         return new RuleBasedBreakIterator(NativeBreakIterator.getCharacterInstance(where));
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:12.843 -0400", hash_original_method = "D6748027A113A968D41DBB54A60AFFCE", hash_generated_method = "029C393C3C27442C6813834BB5B5E2FF")
-    public static BreakIterator getLineInstance() {
+        public static BreakIterator getLineInstance() {
         return getLineInstance(Locale.getDefault());
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:12.843 -0400", hash_original_method = "16F89AC74F07F2A2F95C59850320FE25", hash_generated_method = "74869C542C2ED5F6A71360831B4A52AB")
-    public static BreakIterator getLineInstance(Locale where) {
+        public static BreakIterator getLineInstance(Locale where) {
         return new RuleBasedBreakIterator(NativeBreakIterator.getLineInstance(where));
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:12.843 -0400", hash_original_method = "18F9B58B267F0FC6B05A987F728E2486", hash_generated_method = "FE8BC1913425CF5CB06065188DBD7884")
-    public static BreakIterator getSentenceInstance() {
+        public static BreakIterator getSentenceInstance() {
         return getSentenceInstance(Locale.getDefault());
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:12.843 -0400", hash_original_method = "E0F8AFB08F46A12DF5C8B687A76303D7", hash_generated_method = "401FE9D38CCB10DFA08D8030C15E8A49")
-    public static BreakIterator getSentenceInstance(Locale where) {
+        public static BreakIterator getSentenceInstance(Locale where) {
         return new RuleBasedBreakIterator(NativeBreakIterator.getSentenceInstance(where));
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:12.843 -0400", hash_original_method = "C28E169051A38A771BB05D3E97AC5645", hash_generated_method = "8CBFC3EF1976FDA6BB220E934E80BE9E")
-    public static BreakIterator getWordInstance() {
+        public static BreakIterator getWordInstance() {
         return getWordInstance(Locale.getDefault());
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:12.843 -0400", hash_original_method = "57DB03753EEC66F7371A042EE0F78B09", hash_generated_method = "50A97362922152B394FB859081A73890")
-    public static BreakIterator getWordInstance(Locale where) {
+        public static BreakIterator getWordInstance(Locale where) {
         return new RuleBasedBreakIterator(NativeBreakIterator.getWordInstance(where));
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:12.843 -0400", hash_original_method = "A8CE13377E2BE8338E384DB518A75EF1", hash_generated_method = "A955D2D77AC54347AF233678EB51BCAA")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:29.847 -0400", hash_original_method = "A8CE13377E2BE8338E384DB518A75EF1", hash_generated_method = "8C9CC355B6ECE4236188938901D0B1E5")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public boolean isBoundary(int offset) {
         dsTaint.addTaint(offset);
-        boolean var07A670DF3E20C08BF3ACC7905CB9625F_1876799646 = (wrapped.isBoundary(offset));
+        boolean var07A670DF3E20C08BF3ACC7905CB9625F_834749986 = (wrapped.isBoundary(offset));
         return dsTaint.getTaintBoolean();
         // ---------- Original Method ----------
         //return wrapped.isBoundary(offset);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:12.843 -0400", hash_original_method = "2EB9AD97D64682279E3EECC38916DED9", hash_generated_method = "7D8F194068A8AB22FB17591043ED9CD4")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:29.848 -0400", hash_original_method = "2EB9AD97D64682279E3EECC38916DED9", hash_generated_method = "F57C74B14C19440D76C108E4BD32683A")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public int preceding(int offset) {
         dsTaint.addTaint(offset);
-        int var14341653A1F5B35705434E8CE35431DA_808547979 = (wrapped.preceding(offset));
+        int var14341653A1F5B35705434E8CE35431DA_1869539767 = (wrapped.preceding(offset));
         return dsTaint.getTaintInt();
         // ---------- Original Method ----------
         //return wrapped.preceding(offset);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:12.843 -0400", hash_original_method = "09A01C59FC40671D2FFB70D6D2572999", hash_generated_method = "5D0964E0666E1B5F81581B6CFA3A9184")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:29.848 -0400", hash_original_method = "09A01C59FC40671D2FFB70D6D2572999", hash_generated_method = "5A2E4A6A1FCA6F5CBA57AC272DEBFDF9")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     public void setText(String newText) {
         dsTaint.addTaint(newText);
         wrapped.setText(newText);
@@ -144,7 +134,7 @@ public abstract class BreakIterator implements Cloneable {
     public abstract void setText(CharacterIterator newText);
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:12.843 -0400", hash_original_method = "29575A5512234CDD5AA778EC4509422E", hash_generated_method = "B3A2760A5D404E94AB5E55BF0BC2D513")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:29.849 -0400", hash_original_method = "29575A5512234CDD5AA778EC4509422E", hash_generated_method = "712EECD8AFFE8E13CA8D5172D5FBF681")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     @Override
     public Object clone() {
@@ -156,7 +146,7 @@ public abstract class BreakIterator implements Cloneable {
         } //End block
         catch (CloneNotSupportedException e)
         {
-            throw new AssertionError(e);
+            if (DroidSafeAndroidRuntime.control) throw new AssertionError(e);
         } //End block
         return (Object)dsTaint.getTaint();
         // ---------- Original Method ----------
@@ -170,6 +160,6 @@ public abstract class BreakIterator implements Cloneable {
     }
 
     
+    public static final int DONE = -1;
 }
-
 

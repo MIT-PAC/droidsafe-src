@@ -3,19 +3,21 @@ package java.lang;
 // Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
+import droidsafe.runtime.*;
 
+// needed for enhanced for control translations
+import java.util.Iterator;
 
 public class RuntimeException extends Exception {
-    private static final long serialVersionUID = -7034897190745766939L;
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 16:38:46.411 -0400", hash_original_method = "C630CF95A30AC67866F4ABFDC2AE9E1F", hash_generated_method = "F561D77EA8D231B0F812ABD72319CD35")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:26.030 -0400", hash_original_method = "C630CF95A30AC67866F4ABFDC2AE9E1F", hash_generated_method = "2414371380C96DB54D1831DED250C02B")
     @DSModeled(DSC.SAFE)
     public RuntimeException() {
         // ---------- Original Method ----------
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 16:38:46.412 -0400", hash_original_method = "80B9FEB41572B74366DE05587056CF70", hash_generated_method = "89E37B0C62FCF45B39B746904C240434")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:26.030 -0400", hash_original_method = "80B9FEB41572B74366DE05587056CF70", hash_generated_method = "52DDE8D7CC540EE3BC63A2BC2E1B3F23")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public RuntimeException(String detailMessage) {
         super(detailMessage);
@@ -24,7 +26,7 @@ public class RuntimeException extends Exception {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 16:38:46.415 -0400", hash_original_method = "6494A6C5ABD2EBB06754B14C1D93C94D", hash_generated_method = "C9F773AE4008EC0773067E029DE4980B")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:26.030 -0400", hash_original_method = "6494A6C5ABD2EBB06754B14C1D93C94D", hash_generated_method = "8E448796328DD1FCD9D843F71530CCD3")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public RuntimeException(String detailMessage, Throwable throwable) {
         super(detailMessage, throwable);
@@ -34,7 +36,7 @@ public class RuntimeException extends Exception {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 16:38:46.418 -0400", hash_original_method = "2585C76CA369FC60FE687924F5D5A532", hash_generated_method = "895D80B3BBA151360B9B2DA1E9FC912B")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:26.030 -0400", hash_original_method = "2585C76CA369FC60FE687924F5D5A532", hash_generated_method = "054A79FAF21FB1B2E068A88498D4901E")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public RuntimeException(Throwable throwable) {
         super(throwable);
@@ -43,6 +45,6 @@ public class RuntimeException extends Exception {
     }
 
     
+    private static final long serialVersionUID = -7034897190745766939L;
 }
-
 

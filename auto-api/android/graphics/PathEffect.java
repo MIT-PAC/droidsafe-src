@@ -11,8 +11,14 @@ import java.util.Iterator;
 public class PathEffect {
     int native_instance;
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 14:17:47.347 -0400", hash_original_method = "CA9745465B207BED8177C430188A7C4B", hash_generated_method = "488C8A1EF31CE63EB0EE1F99DA838700")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:47.502 -0400", hash_original_method = "5B0214783C8D97F157690F0B6C1A9B86", hash_generated_method = "5B0214783C8D97F157690F0B6C1A9B86")
+        public PathEffect ()
+    {
+    }
+
+
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:47.502 -0400", hash_original_method = "CA9745465B207BED8177C430188A7C4B", hash_generated_method = "0F8C7E32A99795A8E0AEE47F785754CE")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     protected void finalize() throws Throwable {
         nativeDestructor(native_instance);
         // ---------- Original Method ----------
@@ -20,11 +26,9 @@ public class PathEffect {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 14:17:47.355 -0400", hash_original_method = "C27F686CACBF592E51ABDA57833AD621", hash_generated_method = "B6B3AD892F25AEE42BB86493FDF81A72")
-    private static void nativeDestructor(int native_patheffect) {
+        private static void nativeDestructor(int native_patheffect) {
     }
 
     
 }
-
 

@@ -21,11 +21,9 @@ import android.view.inputmethod.ExtractedTextRequest;
 import android.widget.TextView;
 
 public class EditableInputConnection extends BaseInputConnection {
-    private static boolean DEBUG = false;
-    private static String TAG = "EditableInputConnection";
     private TextView mTextView;
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 12:28:52.226 -0400", hash_original_method = "48AFA0A031D991327826B99C24590A71", hash_generated_method = "E82AF7570553EF5539CB6CE45EF07D81")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:19.058 -0400", hash_original_method = "48AFA0A031D991327826B99C24590A71", hash_generated_method = "2CC8E11F7AD5F1F91C136A093D7D5C07")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public EditableInputConnection(TextView textview) {
         super(textview, true);
@@ -35,14 +33,14 @@ public class EditableInputConnection extends BaseInputConnection {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 12:28:52.256 -0400", hash_original_method = "79431EAAD385E82AA03E24E6CD9A3769", hash_generated_method = "38690AC142CD9A4A2A64F093913E14ED")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:19.059 -0400", hash_original_method = "79431EAAD385E82AA03E24E6CD9A3769", hash_generated_method = "BAA9ACA44BF92A20BD870B1B3602B432")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     @Override
     public Editable getEditable() {
         TextView tv;
         tv = mTextView;
         {
-            Editable var7C838A82FB3EB1C366457C870F02262D_2049403684 = (tv.getEditableText());
+            Editable var7C838A82FB3EB1C366457C870F02262D_1388975281 = (tv.getEditableText());
         } //End block
         return (Editable)dsTaint.getTaint();
         // ---------- Original Method ----------
@@ -54,8 +52,8 @@ public class EditableInputConnection extends BaseInputConnection {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 12:28:52.265 -0400", hash_original_method = "47A7176B3179FC9D2FE377D6B6F09D07", hash_generated_method = "3A7C56F791B8902FBC75EA59064EBF80")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:19.059 -0400", hash_original_method = "47A7176B3179FC9D2FE377D6B6F09D07", hash_generated_method = "F5C5CFE5B90FA90AD95062F2375E1FA0")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     @Override
     public boolean beginBatchEdit() {
         mTextView.beginBatchEdit();
@@ -66,8 +64,8 @@ public class EditableInputConnection extends BaseInputConnection {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 12:28:52.287 -0400", hash_original_method = "2B85862E44056949DE76AFB5C9725EFA", hash_generated_method = "5DA863B413D5DF81D16C48336B8EF54C")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:19.059 -0400", hash_original_method = "2B85862E44056949DE76AFB5C9725EFA", hash_generated_method = "20A70E974BFB334B8C378D5658AAFA62")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     @Override
     public boolean endBatchEdit() {
         mTextView.endBatchEdit();
@@ -78,8 +76,8 @@ public class EditableInputConnection extends BaseInputConnection {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 12:28:52.318 -0400", hash_original_method = "963E6A0CA86932C8F9D879DC40F2C809", hash_generated_method = "074DAEFF147FED0A0D086DEF82ABD7C4")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:19.059 -0400", hash_original_method = "963E6A0CA86932C8F9D879DC40F2C809", hash_generated_method = "DB41688766DF18381FBD21FA7DB3FEAD")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     @Override
     public boolean clearMetaKeyStates(int states) {
         dsTaint.addTaint(states);
@@ -110,8 +108,8 @@ public class EditableInputConnection extends BaseInputConnection {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 12:28:52.353 -0400", hash_original_method = "120BCC39A19E9D48E7D09303ED2ED952", hash_generated_method = "F51E2A11F5E4A7CC80298D6B86E86AE0")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:19.059 -0400", hash_original_method = "120BCC39A19E9D48E7D09303ED2ED952", hash_generated_method = "5AD66039DC19604CCD712F41014940D1")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     @Override
     public boolean commitCompletion(CompletionInfo text) {
         dsTaint.addTaint(text.dsTaint);
@@ -128,8 +126,8 @@ public class EditableInputConnection extends BaseInputConnection {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 12:28:52.355 -0400", hash_original_method = "DB06BCD96079AC12D626255A3932F1C1", hash_generated_method = "DB6A1DA15AF613A9C03C1F68969129C8")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:19.060 -0400", hash_original_method = "DB06BCD96079AC12D626255A3932F1C1", hash_generated_method = "C9D233E5DDF77038D7441F33622F1EFF")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     @Override
     public boolean commitCorrection(CorrectionInfo correctionInfo) {
         dsTaint.addTaint(correctionInfo.dsTaint);
@@ -146,8 +144,8 @@ public class EditableInputConnection extends BaseInputConnection {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 12:28:52.387 -0400", hash_original_method = "E62B789941F8A63BCC6EB7B832B68D0F", hash_generated_method = "6ABC21FA940CB88B2C41559FD2CBDE5B")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:19.060 -0400", hash_original_method = "E62B789941F8A63BCC6EB7B832B68D0F", hash_generated_method = "B4F500D34CCCE10A1C6F7D3EC4C25923")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     @Override
     public boolean performEditorAction(int actionCode) {
         dsTaint.addTaint(actionCode);
@@ -160,8 +158,8 @@ public class EditableInputConnection extends BaseInputConnection {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 12:28:52.396 -0400", hash_original_method = "7AF0006D10C2DF24946CEF4909222B3C", hash_generated_method = "23302C206108BB3E262572383BA1879D")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:19.060 -0400", hash_original_method = "7AF0006D10C2DF24946CEF4909222B3C", hash_generated_method = "5A67A37B098E9D398675A94F2230D65A")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     @Override
     public boolean performContextMenuAction(int id) {
         dsTaint.addTaint(id);
@@ -178,7 +176,7 @@ public class EditableInputConnection extends BaseInputConnection {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 12:28:52.410 -0400", hash_original_method = "1D36BC67F0D3E0E821622DAE101B8DA4", hash_generated_method = "BC687CCECEAA69B82363E3FCDB89BC2A")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:19.060 -0400", hash_original_method = "1D36BC67F0D3E0E821622DAE101B8DA4", hash_generated_method = "EB46036DC2ED2139D1ABC2F7DFCD27A8")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     @Override
     public ExtractedText getExtractedText(ExtractedTextRequest request, int flags) {
@@ -188,7 +186,7 @@ public class EditableInputConnection extends BaseInputConnection {
             ExtractedText et;
             et = new ExtractedText();
             {
-                boolean varFCEACA8CA5C40DCFCB2A18DA8BD5E901_903488068 = (mTextView.extractText(request, et));
+                boolean varFCEACA8CA5C40DCFCB2A18DA8BD5E901_416854267 = (mTextView.extractText(request, et));
                 {
                     {
                         mTextView.setExtracting(request);
@@ -211,12 +209,12 @@ public class EditableInputConnection extends BaseInputConnection {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 12:28:52.441 -0400", hash_original_method = "66E210A03F4A51E56AF5DC1352B2E636", hash_generated_method = "8421FC29B8E269CD81F519F2F0E6955E")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:19.060 -0400", hash_original_method = "66E210A03F4A51E56AF5DC1352B2E636", hash_generated_method = "656D7AE2D516994926A203B4A65D480F")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     @Override
     public boolean performPrivateCommand(String action, Bundle data) {
-        dsTaint.addTaint(action);
         dsTaint.addTaint(data.dsTaint);
+        dsTaint.addTaint(action);
         mTextView.onPrivateIMECommand(action, data);
         return dsTaint.getTaintBoolean();
         // ---------- Original Method ----------
@@ -225,14 +223,14 @@ public class EditableInputConnection extends BaseInputConnection {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 12:28:52.488 -0400", hash_original_method = "ED478A4EB972D41E370E9603327B3839", hash_generated_method = "F4032F58706DE2D02684C04D192A3544")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:19.061 -0400", hash_original_method = "ED478A4EB972D41E370E9603327B3839", hash_generated_method = "22699CECA90548ED5F05F3C08C4AE036")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     @Override
     public boolean commitText(CharSequence text, int newCursorPosition) {
         dsTaint.addTaint(newCursorPosition);
         dsTaint.addTaint(text);
         {
-            boolean var3232D6DBF4B95A9709C08EED7122DED2_299071595 = (super.commitText(text, newCursorPosition));
+            boolean var3232D6DBF4B95A9709C08EED7122DED2_1011906806 = (super.commitText(text, newCursorPosition));
         } //End block
         {
             Spanned spanned;
@@ -262,6 +260,7 @@ public class EditableInputConnection extends BaseInputConnection {
     }
 
     
+    private static final boolean DEBUG = false;
+    private static final String TAG = "EditableInputConnection";
 }
-
 

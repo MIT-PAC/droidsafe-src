@@ -58,4 +58,3 @@ public interface MenuPresenter {
     
     public void onRestoreInstanceState(Parcelable state);
 }
-

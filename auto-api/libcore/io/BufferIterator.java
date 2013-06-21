@@ -3,13 +3,19 @@ package libcore.io;
 // Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
+import droidsafe.runtime.*;
 
-// import Iterator to deal with enhanced for loop translation
+// needed for enhanced for control translations
 import java.util.Iterator;
-
 
 public abstract class BufferIterator {
     
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:38.788 -0400", hash_original_method = "0D48E83ED50D873F1B5E6B77EEDA24F6", hash_generated_method = "0D48E83ED50D873F1B5E6B77EEDA24F6")
+        public BufferIterator ()
+    {
+    }
+
+
     public abstract void seek(int offset);
 
     
@@ -32,5 +38,4 @@ public abstract class BufferIterator {
 
     
 }
-
 

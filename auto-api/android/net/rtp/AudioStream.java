@@ -1,21 +1,21 @@
 package android.net.rtp;
 
 // Droidsafe Imports
+import droidsafe.helpers.*;
+import droidsafe.annotations.*;
+import droidsafe.runtime.*;
+
+// needed for enhanced for control translations
+import java.util.Iterator;
 import java.net.InetAddress;
 import java.net.SocketException;
-
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
-import droidsafe.runtime.DroidSafeAndroidRuntime;
-// import Iterator to deal with enhanced for loop translation
 
 public class AudioStream extends RtpStream {
     private AudioCodec mCodec;
     private int mDtmfType = -1;
     private AudioGroup mGroup;
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:02.286 -0400", hash_original_method = "409408EC0859D4060DA7CEF5328B7220", hash_generated_method = "A5A9C0EE3810C0D5559C88D0F19677B3")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:52.139 -0400", hash_original_method = "409408EC0859D4060DA7CEF5328B7220", hash_generated_method = "FD963E3D97E4DB8311DB8079554BA47B")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public AudioStream(InetAddress address) throws SocketException {
         super(address);
@@ -24,7 +24,7 @@ public class AudioStream extends RtpStream {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:02.286 -0400", hash_original_method = "254DAECE553220B60B3DDCDB0D3A9A7B", hash_generated_method = "04A86122AF7E73F7644272DB201337E5")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:52.139 -0400", hash_original_method = "254DAECE553220B60B3DDCDB0D3A9A7B", hash_generated_method = "D86B945AE603F7E0143CA9BF99716A7C")
     @DSModeled(DSC.SAFE)
     @Override
     public final boolean isBusy() {
@@ -34,7 +34,7 @@ public class AudioStream extends RtpStream {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:02.286 -0400", hash_original_method = "477F536A3076B0B10A19072AA2686CEC", hash_generated_method = "49BB42521F7D28E28F5ED334DDA016EC")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:52.139 -0400", hash_original_method = "477F536A3076B0B10A19072AA2686CEC", hash_generated_method = "4A046F841951266BBDF495B1FD8B0195")
     @DSModeled(DSC.SAFE)
     public AudioGroup getGroup() {
         return (AudioGroup)dsTaint.getTaint();
@@ -43,8 +43,8 @@ public class AudioStream extends RtpStream {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:02.286 -0400", hash_original_method = "119D45B9BF5FF64C97C7293B3DF5F7E3", hash_generated_method = "BC3B5878E4BC2CF560EBB2EA65BB51DD")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:52.139 -0400", hash_original_method = "119D45B9BF5FF64C97C7293B3DF5F7E3", hash_generated_method = "D42B41A0F5E73B25204ADF1D2DDDB1D2")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     public void join(AudioGroup group) {
         dsTaint.addTaint(group.dsTaint);
         {
@@ -73,7 +73,7 @@ public class AudioStream extends RtpStream {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:02.287 -0400", hash_original_method = "477233579E49B9ACBFE0DA40A2D8DF9C", hash_generated_method = "BC62456BE16A45EBDEC72FC48027E12F")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:52.139 -0400", hash_original_method = "477233579E49B9ACBFE0DA40A2D8DF9C", hash_generated_method = "8F395BAB723BEC0E0A187CCFD643FCC1")
     @DSModeled(DSC.SAFE)
     public AudioCodec getCodec() {
         return (AudioCodec)dsTaint.getTaint();
@@ -82,18 +82,18 @@ public class AudioStream extends RtpStream {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:02.287 -0400", hash_original_method = "E0A36AFBD97A7B298B1941948E16CA1A", hash_generated_method = "D5B8EBFC9E2E0515C11BD5FE0370266F")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:52.140 -0400", hash_original_method = "E0A36AFBD97A7B298B1941948E16CA1A", hash_generated_method = "6F4497609F32694538B64594DA68CE69")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public void setCodec(AudioCodec codec) {
         dsTaint.addTaint(codec.dsTaint);
         {
-            boolean var6331CCDC5360782724F2E909851BBC53_506944475 = (isBusy());
+            boolean var6331CCDC5360782724F2E909851BBC53_1645384483 = (isBusy());
             {
                 if (DroidSafeAndroidRuntime.control) throw new IllegalStateException("Busy");
             } //End block
         } //End collapsed parenthetic
         {
-            throw new IllegalArgumentException("The type is used by DTMF");
+            if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("The type is used by DTMF");
         } //End block
         // ---------- Original Method ----------
         //if (isBusy()) {
@@ -106,7 +106,7 @@ public class AudioStream extends RtpStream {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:02.287 -0400", hash_original_method = "67DA2B7B029AD6BDA2A522BA945FCCC7", hash_generated_method = "DD5E4D58AD9A37F16E8AC7D8780999EE")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:52.140 -0400", hash_original_method = "67DA2B7B029AD6BDA2A522BA945FCCC7", hash_generated_method = "FA98267BEFC9D69C6B49E9FEEF6EA95D")
     @DSModeled(DSC.SAFE)
     public int getDtmfType() {
         return dsTaint.getTaintInt();
@@ -115,12 +115,12 @@ public class AudioStream extends RtpStream {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:02.287 -0400", hash_original_method = "08CFB9D3491C3CF797064DF404EB556C", hash_generated_method = "6F77C4C6DD17BC646DD7978D7E7E7664")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:52.140 -0400", hash_original_method = "08CFB9D3491C3CF797064DF404EB556C", hash_generated_method = "A57853C2989B9B325F8AB7BBC896A23B")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public void setDtmfType(int type) {
         dsTaint.addTaint(type);
         {
-            boolean var6331CCDC5360782724F2E909851BBC53_980498546 = (isBusy());
+            boolean var6331CCDC5360782724F2E909851BBC53_1889385636 = (isBusy());
             {
                 if (DroidSafeAndroidRuntime.control) throw new IllegalStateException("Busy");
             } //End block
@@ -130,7 +130,7 @@ public class AudioStream extends RtpStream {
                 if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("Invalid type");
             } //End block
             {
-                throw new IllegalArgumentException("The type is used by codec");
+                if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("The type is used by codec");
             } //End block
         } //End block
         // ---------- Original Method ----------
@@ -150,5 +150,4 @@ public class AudioStream extends RtpStream {
 
     
 }
-
 

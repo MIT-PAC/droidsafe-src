@@ -3,10 +3,10 @@ package android.text.method;
 // Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
+import droidsafe.runtime.*;
 
-// import Iterator to deal with enhanced for loop translation
+// needed for enhanced for control translations
 import java.util.Iterator;
-
 import android.graphics.Rect;
 import android.view.View;
 import android.widget.TextView;
@@ -21,4 +21,3 @@ public interface TransformationMethod
                                boolean focused, int direction,
                                Rect previouslyFocusedRect);
 }
-

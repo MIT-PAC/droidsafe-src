@@ -3,10 +3,10 @@ package com.android.internal.telephony.cdma;
 // Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
+import droidsafe.runtime.*;
 
-// import Iterator to deal with enhanced for loop translation
+// needed for enhanced for control translations
 import java.util.Iterator;
-
 import android.content.ContentValues;
 import android.content.Context;
 import android.content.SharedPreferences;
@@ -28,25 +28,23 @@ import com.android.internal.telephony.gsm.SimCard;
 import com.android.internal.telephony.ims.IsimRecords;
 
 public class CDMALTEPhone extends CDMAPhone {
-    static final String LOG_TAG = "CDMA";
-    private static final boolean DBG = true;
     SMSDispatcher m3gppSMS;
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.664 -0400", hash_original_method = "95A3B81B84D99B553D70C547C891DC97", hash_generated_method = "FD7C986D3F49A6FCBF2D7B20005DD7DA")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:13.064 -0400", hash_original_method = "95A3B81B84D99B553D70C547C891DC97", hash_generated_method = "2AA5A48C87B9FF5E9C5D68680DFAD59B")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public CDMALTEPhone(Context context, CommandsInterface ci, PhoneNotifier notifier) {
         super(context, ci, notifier, false);
         dsTaint.addTaint(notifier.dsTaint);
-        dsTaint.addTaint(context.dsTaint);
         dsTaint.addTaint(ci.dsTaint);
+        dsTaint.addTaint(context.dsTaint);
         m3gppSMS = new GsmSMSDispatcher(this, mSmsStorageMonitor, mSmsUsageMonitor);
         // ---------- Original Method ----------
         //m3gppSMS = new GsmSMSDispatcher(this, mSmsStorageMonitor, mSmsUsageMonitor);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.664 -0400", hash_original_method = "7419DD25F2A8EC5E4F54973E3AF74E7D", hash_generated_method = "9606C2483F36459211381C5973F2FFBE")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:13.065 -0400", hash_original_method = "7419DD25F2A8EC5E4F54973E3AF74E7D", hash_generated_method = "BC61DC6DFC31700C8099BAE4A87CB1B3")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     @Override
     public void handleMessage(Message msg) {
         dsTaint.addTaint(msg.dsTaint);
@@ -71,8 +69,8 @@ public class CDMALTEPhone extends CDMAPhone {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.664 -0400", hash_original_method = "A724800C9AF8E80E36877A25E474B13E", hash_generated_method = "22A35D8C2BF3C5FDA2B2514F9F3C8353")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:13.065 -0400", hash_original_method = "A724800C9AF8E80E36877A25E474B13E", hash_generated_method = "BB92E66E6A1EC42AB8A8874247EB43E6")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     @Override
     protected void initSstIcc() {
         mSST = new CdmaLteServiceStateTracker(this);
@@ -87,8 +85,8 @@ public class CDMALTEPhone extends CDMAPhone {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.664 -0400", hash_original_method = "66C432AAD817657842F9394EA9EE83CC", hash_generated_method = "0A97EF78C7B8C15977A36A17E313344D")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:13.065 -0400", hash_original_method = "66C432AAD817657842F9394EA9EE83CC", hash_generated_method = "11237E3ED9E3EA0C65905500A42CD3EA")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     @Override
     public void dispose() {
         {
@@ -103,8 +101,8 @@ public class CDMALTEPhone extends CDMAPhone {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.664 -0400", hash_original_method = "BDA3902BB46E4D338A3093A3F1641F9B", hash_generated_method = "5BCE992A1FF91A7B065D7F1DC2785C53")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:13.065 -0400", hash_original_method = "BDA3902BB46E4D338A3093A3F1641F9B", hash_generated_method = "34741DA197EEA964843CD3F86845CD77")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     @Override
     public void removeReferences() {
         super.removeReferences();
@@ -115,11 +113,10 @@ public class CDMALTEPhone extends CDMAPhone {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.664 -0400", hash_original_method = "D6AB29F1311EC0AB849815CC3FF790B9", hash_generated_method = "8871F3FE67D3A3DAA4CE661CDC939FDB")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:13.066 -0400", hash_original_method = "D6AB29F1311EC0AB849815CC3FF790B9", hash_generated_method = "054BF8B664964BC202FD0B1355AA2D5D")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     @Override
     public DataState getDataConnectionState(String apnType) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
         dsTaint.addTaint(apnType);
         DataState ret;
         ret = DataState.DISCONNECTED;
@@ -127,19 +124,19 @@ public class CDMALTEPhone extends CDMAPhone {
             ret = DataState.DISCONNECTED;
         } //End block
         {
-            boolean varFA7F3A368C6F5E70591E7C057A7442A6_362655002 = (mDataConnectionTracker.isApnTypeEnabled(apnType) == false);
+            boolean varFA7F3A368C6F5E70591E7C057A7442A6_1996232004 = (mDataConnectionTracker.isApnTypeEnabled(apnType) == false);
             {
                 ret = DataState.DISCONNECTED;
             } //End block
             {
                 {
-                    Object varAD41FD756955096DC69FC1F1B528A339_1912891365 = (mDataConnectionTracker.getState(apnType));
+                    Object varAD41FD756955096DC69FC1F1B528A339_1125627204 = (mDataConnectionTracker.getState(apnType));
                     //Begin case FAILED IDLE 
                     ret = DataState.DISCONNECTED;
                     //End case FAILED IDLE 
                     //Begin case CONNECTED DISCONNECTING 
                     {
-                        boolean var22B6F15268758460428B7D53FE560876_1591626507 = (mCT.state != Phone.State.IDLE && !mSST.isConcurrentVoiceAndDataAllowed());
+                        boolean var22B6F15268758460428B7D53FE560876_1113478031 = (mCT.state != Phone.State.IDLE && !mSST.isConcurrentVoiceAndDataAllowed());
                         {
                             ret = DataState.SUSPENDED;
                         } //End block
@@ -161,7 +158,7 @@ public class CDMALTEPhone extends CDMAPhone {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.664 -0400", hash_original_method = "388CF66FD02B64F200B61D1E744A0B56", hash_generated_method = "955158D6787C1EAFC76CF73EC2F17E5F")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:13.066 -0400", hash_original_method = "388CF66FD02B64F200B61D1E744A0B56", hash_generated_method = "23FAE01300DB08DF398D55F7F94E80B8")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     @Override
     public void selectNetworkManually(OperatorInfo network,
@@ -186,7 +183,7 @@ public class CDMALTEPhone extends CDMAPhone {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.664 -0400", hash_original_method = "55A3B9E950023A6988A6B5C4DCBDEA6C", hash_generated_method = "5DB4E0481B0D3AD3A58D2A33BD0105FC")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:13.066 -0400", hash_original_method = "55A3B9E950023A6988A6B5C4DCBDEA6C", hash_generated_method = "1E8DE4A80CB88D3C14FCB5E6F1674DD8")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     private void handleSetSelectNetwork(AsyncResult ar) {
         dsTaint.addTaint(ar.dsTaint);
@@ -207,14 +204,14 @@ public class CDMALTEPhone extends CDMAPhone {
         editor.putString(NETWORK_SELECTION_KEY, nsm.operatorNumeric);
         editor.putString(NETWORK_SELECTION_NAME_KEY, nsm.operatorAlphaLong);
         {
-            boolean var15A115D7A2E98F40805CADB6914BBE5F_1717011896 = (! editor.commit());
+            boolean var15A115D7A2E98F40805CADB6914BBE5F_1143672241 = (! editor.commit());
         } //End collapsed parenthetic
         // ---------- Original Method ----------
         // Original Method Too Long, Refer to Original Implementation
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.665 -0400", hash_original_method = "209DB6DC61EA45DEB13BF7CF447B5FBA", hash_generated_method = "00B2DC3CC3B3F619A1EE8CC51322183E")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:13.067 -0400", hash_original_method = "209DB6DC61EA45DEB13BF7CF447B5FBA", hash_generated_method = "6F184D23E58633FBF7B211B5ED60CBC9")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     @Override
     public boolean updateCurrentCarrierInProvider() {
@@ -258,8 +255,8 @@ public class CDMALTEPhone extends CDMAPhone {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.665 -0400", hash_original_method = "3E01D20FCE14548AEDCD05440449A2C4", hash_generated_method = "80D318244EF561DC4A7E08A38F1ABE15")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:13.067 -0400", hash_original_method = "3E01D20FCE14548AEDCD05440449A2C4", hash_generated_method = "7B3697852CD4C96C503082EC154F05E9")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     @Override
     public void setSystemLocale(String language, String country, boolean fromMcc) {
         dsTaint.addTaint(fromMcc);
@@ -272,18 +269,18 @@ public class CDMALTEPhone extends CDMAPhone {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.665 -0400", hash_original_method = "418ED398A6A3FF53B03B4C5008FE3F90", hash_generated_method = "519E7EDF42751FA0DEA26CA0D9556FC4")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:13.067 -0400", hash_original_method = "418ED398A6A3FF53B03B4C5008FE3F90", hash_generated_method = "D9D448D0CDC1739AB190675C82E0A51A")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     @Override
     public String getSubscriberId() {
-        String var7FD2EEB6F75B5B5070336667783F1237_94300225 = (mIccRecords.getIMSI());
+        String var7FD2EEB6F75B5B5070336667783F1237_2078167571 = (mIccRecords.getIMSI());
         return dsTaint.getTaintString();
         // ---------- Original Method ----------
         //return mIccRecords.getIMSI();
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.665 -0400", hash_original_method = "2BFB931234EFCBDA06B75AE314A70B6B", hash_generated_method = "65460C8A8972BFADF7FBE63004DD2909")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:13.067 -0400", hash_original_method = "2BFB931234EFCBDA06B75AE314A70B6B", hash_generated_method = "F5F27CAEA75209B93847339F24821192")
     @DSModeled(DSC.SAFE)
     @Override
     public String getImei() {
@@ -293,7 +290,7 @@ public class CDMALTEPhone extends CDMAPhone {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.665 -0400", hash_original_method = "14B7BB34E0FC203F73344BD326AAB989", hash_generated_method = "B6F565272653663E1DFEFD33B9AC1C94")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:13.067 -0400", hash_original_method = "14B7BB34E0FC203F73344BD326AAB989", hash_generated_method = "E852A5C28AAD11BE031657ED6EE11944")
     @DSModeled(DSC.SAFE)
     @Override
     public String getDeviceSvn() {
@@ -303,30 +300,30 @@ public class CDMALTEPhone extends CDMAPhone {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.665 -0400", hash_original_method = "9816ECED47475DB23BCECA20DA4E2B5A", hash_generated_method = "D79227DFA11E76BA06E0272470F54DAC")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:13.067 -0400", hash_original_method = "9816ECED47475DB23BCECA20DA4E2B5A", hash_generated_method = "0645F5AEA918812C175E4B0E96722C31")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     @Override
     public IsimRecords getIsimRecords() {
-        IsimRecords var8A5C0054B8508A6A3ACBB357DC129F30_1882813507 = (mIccRecords.getIsimRecords());
+        IsimRecords var8A5C0054B8508A6A3ACBB357DC129F30_1517999908 = (mIccRecords.getIsimRecords());
         return (IsimRecords)dsTaint.getTaint();
         // ---------- Original Method ----------
         //return mIccRecords.getIsimRecords();
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.665 -0400", hash_original_method = "0F1A42666FEB7039E59CE38A804A2571", hash_generated_method = "8B87D2DEFE31274D39B8B7107D493972")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:13.068 -0400", hash_original_method = "0F1A42666FEB7039E59CE38A804A2571", hash_generated_method = "85A7AE8604E44A612E529F29C521DCD7")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     @Override
     public String getMsisdn() {
-        String var371895645902F934A5DFC882DDC1D4C9_2032961009 = (mIccRecords.getMsisdnNumber());
+        String var371895645902F934A5DFC882DDC1D4C9_858094543 = (mIccRecords.getMsisdnNumber());
         return dsTaint.getTaintString();
         // ---------- Original Method ----------
         //return mIccRecords.getMsisdnNumber();
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.665 -0400", hash_original_method = "4DC55439AC7C450EEFD22BFFC07D3CE9", hash_generated_method = "29DFB201EAF04671004F03DF1FEC9189")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:13.068 -0400", hash_original_method = "4DC55439AC7C450EEFD22BFFC07D3CE9", hash_generated_method = "C9FD11B037A0E9BAE0FC964334C96879")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     @Override
     public void getAvailableNetworks(Message response) {
         dsTaint.addTaint(response.dsTaint);
@@ -336,8 +333,8 @@ public class CDMALTEPhone extends CDMAPhone {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.665 -0400", hash_original_method = "F8B11B15838465AB38A3DDFE9FF000B6", hash_generated_method = "4995C7F7D0682DAE792622E7EB524E5D")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:13.068 -0400", hash_original_method = "F8B11B15838465AB38A3DDFE9FF000B6", hash_generated_method = "B84DDED5934BFE11AF08FBA7472EA1E3")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     @Override
     public void requestIsimAuthentication(String nonce, Message result) {
         dsTaint.addTaint(result.dsTaint);
@@ -348,8 +345,8 @@ public class CDMALTEPhone extends CDMAPhone {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.665 -0400", hash_original_method = "69A9D8984C1FC702F097120D9CC0BB90", hash_generated_method = "54F6C9844FC1F401EC4D5B8B17C910F3")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:13.068 -0400", hash_original_method = "69A9D8984C1FC702F097120D9CC0BB90", hash_generated_method = "3509100C0803A000E4CE1209271EBEFE")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     @Override
     protected void log(String s) {
         dsTaint.addTaint(s);
@@ -365,10 +362,17 @@ public class CDMALTEPhone extends CDMAPhone {
         public String operatorNumeric;
         public String operatorAlphaLong;
         
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:13.068 -0400", hash_original_method = "922A66A5EBB469E8BB894E7A6CC3C86A", hash_generated_method = "922A66A5EBB469E8BB894E7A6CC3C86A")
+                public NetworkSelectMessage ()
+        {
+        }
+
+
     }
 
 
     
+    static final String LOG_TAG = "CDMA";
+    private static final boolean DBG = true;
 }
-
 

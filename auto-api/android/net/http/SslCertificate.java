@@ -3,10 +3,10 @@ package android.net.http;
 // Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
+import droidsafe.runtime.*;
 
-// import Iterator to deal with enhanced for loop translation
+// needed for enhanced for control translations
 import java.util.Iterator;
-
 import android.content.Context;
 import android.os.Bundle;
 import android.text.format.DateFormat;
@@ -26,22 +26,16 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Vector;
-//import com.android.org.bouncycastle.asn1.x509.X509Name;
+import com.android.org.bouncycastle.asn1.x509.X509Name;
 
 public class SslCertificate {
-    private static String ISO_8601_DATE_FORMAT = "yyyy-MM-dd HH:mm:ssZ";
-    private final DName mIssuedTo;
-    private final DName mIssuedBy;
-    private final Date mValidNotBefore;
-    private final Date mValidNotAfter;
-    private final X509Certificate mX509Certificate;
-    private static final String ISSUED_TO = "issued-to";
-    private static final String ISSUED_BY = "issued-by";
-    private static final String VALID_NOT_BEFORE = "valid-not-before";
-    private static final String VALID_NOT_AFTER = "valid-not-after";
-    private static final String X509_CERTIFICATE = "x509-certificate";
+    private DName mIssuedTo;
+    private DName mIssuedBy;
+    private Date mValidNotBefore;
+    private Date mValidNotAfter;
+    private X509Certificate mX509Certificate;
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:02.026 -0400", hash_original_method = "C9600F8F1BB8A8C873CC4C3FEC87FEF5", hash_generated_method = "A8132D38A31CF9AA1045DD495C172FF5")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:52.105 -0400", hash_original_method = "C9600F8F1BB8A8C873CC4C3FEC87FEF5", hash_generated_method = "6AA0D123E125390C4F83597CF4BAEE99")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     @Deprecated
     public SslCertificate(
@@ -55,7 +49,7 @@ public class SslCertificate {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:02.026 -0400", hash_original_method = "D87F049394C2BF8E430D24ECC769A568", hash_generated_method = "318ADD2EDE025A361C720BC2C9A0696F")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:52.105 -0400", hash_original_method = "D87F049394C2BF8E430D24ECC769A568", hash_generated_method = "EDAD87E9A306E60E372DB1411A31BF71")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     @Deprecated
     public SslCertificate(
@@ -69,7 +63,7 @@ public class SslCertificate {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:02.027 -0400", hash_original_method = "44DDC0F9828E23A0D6B9681282E4B5EC", hash_generated_method = "1CE700D358F1068B1BF427B787E262FE")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:52.105 -0400", hash_original_method = "44DDC0F9828E23A0D6B9681282E4B5EC", hash_generated_method = "36957CDEF70F5E3C36F4DAFE6D9FC6CE")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public SslCertificate(X509Certificate certificate) {
         this(certificate.getSubjectDN().getName(),
@@ -82,7 +76,7 @@ public class SslCertificate {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:02.027 -0400", hash_original_method = "EBF5C56E3FBE1E8BC5B0F01C28F68A19", hash_generated_method = "D3DC119809DE8031AA12F5E6EC7EB6BB")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:52.106 -0400", hash_original_method = "EBF5C56E3FBE1E8BC5B0F01C28F68A19", hash_generated_method = "FE8F0D236F750B38643EC7D729817FDB")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     private SslCertificate(
             String issuedTo, String issuedBy,
@@ -93,7 +87,6 @@ public class SslCertificate {
         dsTaint.addTaint(validNotAfter.dsTaint);
         dsTaint.addTaint(issuedBy);
         dsTaint.addTaint(validNotBefore.dsTaint);
-        mX509Certificate = x509Certificate;
         mIssuedTo = new DName(issuedTo);
         mIssuedBy = new DName(issuedBy);
         mValidNotBefore = cloneDate(validNotBefore);
@@ -107,8 +100,7 @@ public class SslCertificate {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:02.027 -0400", hash_original_method = "880873CE7B63CF2F24561F719FB04003", hash_generated_method = "C0608A76EC65887A30B994AFF34FBFF5")
-    public static Bundle saveState(SslCertificate certificate) {
+        public static Bundle saveState(SslCertificate certificate) {
         if (certificate == null) {
             return null;
         }
@@ -128,8 +120,7 @@ public class SslCertificate {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:02.027 -0400", hash_original_method = "8A489CB2A393053F8EB365921E8E5602", hash_generated_method = "D822D24219EEE37C20EBA54E6F6E3402")
-    public static SslCertificate restoreState(Bundle bundle) {
+        public static SslCertificate restoreState(Bundle bundle) {
         if (bundle == null) {
             return null;
         }
@@ -154,49 +145,49 @@ public class SslCertificate {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:02.027 -0400", hash_original_method = "86D829D0BCD4BD19D84EADD31DD5FCE1", hash_generated_method = "A474AAEE67957EC3579D1947E72A38D3")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:52.106 -0400", hash_original_method = "86D829D0BCD4BD19D84EADD31DD5FCE1", hash_generated_method = "A6E4E9AF618955D475B8A43F0AB330B7")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public Date getValidNotBeforeDate() {
-        Date var87D83E0D1DDB0FE5D8C71669FE42FC7D_315825394 = (cloneDate(mValidNotBefore));
+        Date var87D83E0D1DDB0FE5D8C71669FE42FC7D_147628105 = (cloneDate(mValidNotBefore));
         return (Date)dsTaint.getTaint();
         // ---------- Original Method ----------
         //return cloneDate(mValidNotBefore);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:02.027 -0400", hash_original_method = "E74141FEB26284E4BA15E02DC99CE923", hash_generated_method = "48F081FB071678D5E321A99ECC52A55B")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:52.106 -0400", hash_original_method = "E74141FEB26284E4BA15E02DC99CE923", hash_generated_method = "CEBAA5D42FFC3563538250F84E520D78")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     @Deprecated
     public String getValidNotBefore() {
-        String var098AA743534228DDB6A047A0CCF18192_510200652 = (formatDate(mValidNotBefore));
+        String var098AA743534228DDB6A047A0CCF18192_756929452 = (formatDate(mValidNotBefore));
         return dsTaint.getTaintString();
         // ---------- Original Method ----------
         //return formatDate(mValidNotBefore);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:02.027 -0400", hash_original_method = "5976F2F67CC4D55E479FF99F5BD66B52", hash_generated_method = "40EF92658818C33F3750322F8B49D758")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:52.107 -0400", hash_original_method = "5976F2F67CC4D55E479FF99F5BD66B52", hash_generated_method = "4AF9AB1A06568176AEF107221D4BE5A5")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public Date getValidNotAfterDate() {
-        Date var8E2650C162C314FA81186FF148D4EB60_1834383477 = (cloneDate(mValidNotAfter));
+        Date var8E2650C162C314FA81186FF148D4EB60_19963542 = (cloneDate(mValidNotAfter));
         return (Date)dsTaint.getTaint();
         // ---------- Original Method ----------
         //return cloneDate(mValidNotAfter);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:02.027 -0400", hash_original_method = "8855AE273E27E2CAD00A7550F7D75B05", hash_generated_method = "F4411781022E4C9E256868E3D0FD84A7")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:52.107 -0400", hash_original_method = "8855AE273E27E2CAD00A7550F7D75B05", hash_generated_method = "009224AA7404A43B3D8BD745AD6D77D8")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     @Deprecated
     public String getValidNotAfter() {
-        String var876CE80D1AFA49AB02B93B7A2B18544F_348243762 = (formatDate(mValidNotAfter));
+        String var876CE80D1AFA49AB02B93B7A2B18544F_629228948 = (formatDate(mValidNotAfter));
         return dsTaint.getTaintString();
         // ---------- Original Method ----------
         //return formatDate(mValidNotAfter);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:02.028 -0400", hash_original_method = "2E4F61534C62139557AB31E5631377F2", hash_generated_method = "92CE36B2FC787CC5FEFEB9FE018C3A54")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:52.107 -0400", hash_original_method = "2E4F61534C62139557AB31E5631377F2", hash_generated_method = "27BB95870F5F049625B181B4545C67E3")
     @DSModeled(DSC.SAFE)
     public DName getIssuedTo() {
         return (DName)dsTaint.getTaint();
@@ -205,7 +196,7 @@ public class SslCertificate {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:02.028 -0400", hash_original_method = "82F93F0D2EB1DC97DAB6C30DC54F99BE", hash_generated_method = "5F69A6CA9CB7D59AA10D1BB1BD2C5EB1")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:52.107 -0400", hash_original_method = "82F93F0D2EB1DC97DAB6C30DC54F99BE", hash_generated_method = "993018F1A798C115D5154E953B1DEC20")
     @DSModeled(DSC.SAFE)
     public DName getIssuedBy() {
         return (DName)dsTaint.getTaint();
@@ -214,8 +205,7 @@ public class SslCertificate {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:02.028 -0400", hash_original_method = "F4854410C533ABCAFE3E1FF72047B328", hash_generated_method = "DA3146E2C36FF4265B9905515FBC3F07")
-    private static String getSerialNumber(X509Certificate x509Certificate) {
+        private static String getSerialNumber(X509Certificate x509Certificate) {
         if (x509Certificate == null) {
             return "";
         }
@@ -227,8 +217,7 @@ public class SslCertificate {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:02.028 -0400", hash_original_method = "BB04971521798A4AB8A6BF219B43860B", hash_generated_method = "4E7893166AF4B5CC778CD2AEB13E54AF")
-    private static String getDigest(X509Certificate x509Certificate, String algorithm) {
+        private static String getDigest(X509Certificate x509Certificate, String algorithm) {
         if (x509Certificate == null) {
             return "";
         }
@@ -245,8 +234,7 @@ public class SslCertificate {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:02.028 -0400", hash_original_method = "4FD92B21057EB8E2D86E0A29786F7A27", hash_generated_method = "B76B5A4B6D6CF46D1637D9A6AB60D36D")
-    private static final String fingerprint(byte[] bytes) {
+        private static final String fingerprint(byte[] bytes) {
         if (bytes == null) {
             return "";
         }
@@ -262,10 +250,10 @@ public class SslCertificate {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:02.028 -0400", hash_original_method = "F16D936F6355F1722DE333F4EC7C4E06", hash_generated_method = "29D829769C314D540EE14F81139EB232")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:52.108 -0400", hash_original_method = "F16D936F6355F1722DE333F4EC7C4E06", hash_generated_method = "E9D8BBD3BD96091B90BC4EA7073552AA")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public String toString() {
-        String varEE06B277718283D58269F206D2074150_817904439 = (("Issued to: " + mIssuedTo.getDName() + ";\n"
+        String varEE06B277718283D58269F206D2074150_823859163 = (("Issued to: " + mIssuedTo.getDName() + ";\n"
                 + "Issued by: " + mIssuedBy.getDName() + ";\n"));
         return dsTaint.getTaintString();
         // ---------- Original Method ----------
@@ -274,8 +262,7 @@ public class SslCertificate {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:02.028 -0400", hash_original_method = "580FA0F575468574C9336A7B61DF15D7", hash_generated_method = "83E62F628230CD0C38EF31224B3A998E")
-    private static Date parseDate(String string) {
+        private static Date parseDate(String string) {
         try {
             return new SimpleDateFormat(ISO_8601_DATE_FORMAT).parse(string);
         } catch (ParseException e) {
@@ -284,8 +271,7 @@ public class SslCertificate {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:02.028 -0400", hash_original_method = "5B5085E306AF53459A7AE9C0247F607B", hash_generated_method = "70ECBC4221D6F322FDFBB4F7F717F9B3")
-    private static String formatDate(Date date) {
+        private static String formatDate(Date date) {
         if (date == null) {
             return "";
         }
@@ -293,8 +279,7 @@ public class SslCertificate {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:02.028 -0400", hash_original_method = "601D82D104A095ABBA912C73F2E0F835", hash_generated_method = "A56786C9EEC3E634CDD3B76C435F31F8")
-    private static Date cloneDate(Date date) {
+        private static Date cloneDate(Date date) {
         if (date == null) {
             return null;
         }
@@ -302,7 +287,7 @@ public class SslCertificate {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:02.029 -0400", hash_original_method = "D583B5DA5B2EDF3475293874A3D5A1D5", hash_generated_method = "69E7050485E4A1AC7CDF636B546391AC")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:52.109 -0400", hash_original_method = "D583B5DA5B2EDF3475293874A3D5A1D5", hash_generated_method = "7AC9993ADBE6430BF38FD0CDE1A25B17")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public View inflateCertificateView(Context context) {
         dsTaint.addTaint(context.dsTaint);
@@ -351,12 +336,12 @@ public class SslCertificate {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:02.029 -0400", hash_original_method = "AFB9B131464BD8BEA4E9664B02B81FAF", hash_generated_method = "05941AA4A0158182AA0A4CC0BC69C48B")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:52.110 -0400", hash_original_method = "AFB9B131464BD8BEA4E9664B02B81FAF", hash_generated_method = "6A3EFC561225006750F58B2A814292B1")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     private String formatCertificateDate(Context context, Date certificateDate) {
         dsTaint.addTaint(certificateDate.dsTaint);
         dsTaint.addTaint(context.dsTaint);
-        String varC400BE7FB114A1D851965B1C95B81FFA_842710151 = (DateFormat.getDateFormat(context).format(certificateDate));
+        String varC400BE7FB114A1D851965B1C95B81FFA_2111071704 = (DateFormat.getDateFormat(context).format(certificateDate));
         return dsTaint.getTaintString();
         // ---------- Original Method ----------
         //if (certificateDate == null) {
@@ -366,45 +351,44 @@ public class SslCertificate {
     }
 
     
-   
     public class DName {
         private String mDName;
         private String mCName;
         private String mOName;
         private String mUName;
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:02.029 -0400", hash_original_method = "E1EC1A01B7E978D9F78C671CC9D0E725", hash_generated_method = "ADB190869C3D674A929722F80E767A27")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:52.110 -0400", hash_original_method = "E1EC1A01B7E978D9F78C671CC9D0E725", hash_generated_method = "26905E6A4DFF12C5FCCC9686EAF84E6F")
         //DSFIXME:  CODE0002: Requires DSC value to be set
         public DName(String dName) {
             dsTaint.addTaint(dName);
             {
                 try 
                 {
-                    //X509Name x509Name;
-                    //x509Name = new X509Name(dName);
-                    Vector val = new Vector();
-                    //val = x509Name.getValues();
-                    Vector oid = new Vector();
-                    //oid = x509Name.getOIDs();
+                    X509Name x509Name;
+                    x509Name = new X509Name(dName);
+                    Vector val;
+                    val = x509Name.getValues();
+                    Vector oid;
+                    oid = x509Name.getOIDs();
                     {
                         int i;
                         i = 0;
-                        boolean var81398A3258B14BF4B3BCED5C96BDA2E4_1943292897 = (i < oid.size());
+                        boolean var81398A3258B14BF4B3BCED5C96BDA2E4_399425594 = (i < oid.size());
                         {
                             {
-                                //boolean var0C6F0BE758D98D60EBB9B16537698F57_1100893589 = (oid.elementAt(i).equals(X509Name.CN));
+                                boolean var0C6F0BE758D98D60EBB9B16537698F57_1637438448 = (oid.elementAt(i).equals(X509Name.CN));
                                 {
                                     mCName = (String) val.elementAt(i);
                                 } //End block
                             } //End collapsed parenthetic
                             {
-                                //boolean var06E8299BDF4B0086B47388185FF81940_195814401 = (oid.elementAt(i).equals(X509Name.O));
+                                boolean var06E8299BDF4B0086B47388185FF81940_1861851222 = (oid.elementAt(i).equals(X509Name.O));
                                 {
                                     mOName = (String) val.elementAt(i);
                                 } //End block
                             } //End collapsed parenthetic
                             {
-                                //boolean var66A9551431E1DEC1988477609E15738C_195981043 = (oid.elementAt(i).equals(ee.OU));
+                                boolean var66A9551431E1DEC1988477609E15738C_285907294 = (oid.elementAt(i).equals(X509Name.OU));
                                 {
                                     mUName = (String) val.elementAt(i);
                                 } //End block
@@ -420,7 +404,7 @@ public class SslCertificate {
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:02.030 -0400", hash_original_method = "CA7B7457EAE364E31ECFC3E240698ADB", hash_generated_method = "6B0108AC5697AAC1D791A1F3B61F05E2")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:52.111 -0400", hash_original_method = "CA7B7457EAE364E31ECFC3E240698ADB", hash_generated_method = "5037F12E6886F4FE801B44F742B9FC8B")
         @DSModeled(DSC.SAFE)
         public String getDName() {
             return dsTaint.getTaintString();
@@ -429,7 +413,7 @@ public class SslCertificate {
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:02.030 -0400", hash_original_method = "9443834DD976C880848529D9F73675CC", hash_generated_method = "CC60BB41FC86D299B729674E398ECC94")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:52.111 -0400", hash_original_method = "9443834DD976C880848529D9F73675CC", hash_generated_method = "4360F043035733FEE3A0FF6DF70F7E24")
         @DSModeled(DSC.SAFE)
         public String getCName() {
             return dsTaint.getTaintString();
@@ -438,7 +422,7 @@ public class SslCertificate {
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:02.030 -0400", hash_original_method = "7251BF6AE7EA38B61D97CF2E138787A6", hash_generated_method = "F7DFC4D439B443651ED346CF8571C53E")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:52.111 -0400", hash_original_method = "7251BF6AE7EA38B61D97CF2E138787A6", hash_generated_method = "25C4256795E84073332EB25FA9A7F168")
         @DSModeled(DSC.SAFE)
         public String getOName() {
             return dsTaint.getTaintString();
@@ -447,7 +431,7 @@ public class SslCertificate {
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:02.030 -0400", hash_original_method = "372D1A5E33F38EEDF5C6B63F53532F1F", hash_generated_method = "087C3C1BFBF1C716611403470CA6270B")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:52.111 -0400", hash_original_method = "372D1A5E33F38EEDF5C6B63F53532F1F", hash_generated_method = "393427BA873D9B1FD4FE3CCE13F11C95")
         @DSModeled(DSC.SAFE)
         public String getUName() {
             return dsTaint.getTaintString();
@@ -460,6 +444,11 @@ public class SslCertificate {
 
 
     
+    private static String ISO_8601_DATE_FORMAT = "yyyy-MM-dd HH:mm:ssZ";
+    private static final String ISSUED_TO = "issued-to";
+    private static final String ISSUED_BY = "issued-by";
+    private static final String VALID_NOT_BEFORE = "valid-not-before";
+    private static final String VALID_NOT_AFTER = "valid-not-after";
+    private static final String X509_CERTIFICATE = "x509-certificate";
 }
-
 

@@ -3,10 +3,10 @@ package android.app;
 // Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
+import droidsafe.runtime.*;
 
-// import Iterator to deal with enhanced for loop translation
+// needed for enhanced for control translations
 import java.util.Iterator;
-
 
 public interface ITransientNotification extends android.os.IInterface
 {
@@ -103,4 +103,3 @@ static final int TRANSACTION_hide = (android.os.IBinder.FIRST_CALL_TRANSACTION +
 public void show() throws android.os.RemoteException;
 public void hide() throws android.os.RemoteException;
 }
-

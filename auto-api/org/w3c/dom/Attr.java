@@ -1,0 +1,33 @@
+package org.w3c.dom;
+
+// Droidsafe Imports
+import droidsafe.helpers.*;
+import droidsafe.annotations.*;
+import droidsafe.runtime.*;
+
+// needed for enhanced for control translations
+import java.util.Iterator;
+
+public interface Attr extends Node {
+    
+    public String getName();
+
+    
+    public boolean getSpecified();
+
+    
+    public String getValue();
+    
+    public void setValue(String value)
+                            throws DOMException;
+
+    
+    public Element getOwnerElement();
+
+    
+    public TypeInfo getSchemaTypeInfo();
+
+    
+    public boolean isId();
+
+}

@@ -3,10 +3,10 @@ package android.util;
 // Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
+import droidsafe.runtime.*;
 
-// import Iterator to deal with enhanced for loop translation
+// needed for enhanced for control translations
 import java.util.Iterator;
-
 
 public interface PoolableManager<T extends Poolable<T>> {
     T newInstance();
@@ -14,4 +14,3 @@ public interface PoolableManager<T extends Poolable<T>> {
     void onAcquired(T element);
     void onReleased(T element);
 }
-

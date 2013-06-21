@@ -3,10 +3,10 @@ package com.android.internal.view;
 // Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
+import droidsafe.runtime.*;
 
-// import Iterator to deal with enhanced for loop translation
+// needed for enhanced for control translations
 import java.util.Iterator;
-
 
 public interface IInputMethodManager extends android.os.IInterface
 {
@@ -1013,4 +1013,3 @@ public boolean switchToLastInputMethod(android.os.IBinder token) throws android.
 public boolean setInputMethodEnabled(java.lang.String id, boolean enabled) throws android.os.RemoteException;
 public void setAdditionalInputMethodSubtypes(java.lang.String id, android.view.inputmethod.InputMethodSubtype[] subtypes) throws android.os.RemoteException;
 }
-

@@ -3,10 +3,10 @@ package android.view.inputmethod;
 // Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
+import droidsafe.runtime.*;
 
-// import Iterator to deal with enhanced for loop translation
+// needed for enhanced for control translations
 import java.util.Iterator;
-
 import android.os.Bundle;
 import android.view.KeyCharacterMap;
 import android.view.KeyEvent;
@@ -82,4 +82,3 @@ public interface InputConnection {
     
     public boolean performPrivateCommand(String action, Bundle data);
 }
-

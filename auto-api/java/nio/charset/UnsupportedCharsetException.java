@@ -3,16 +3,15 @@ package java.nio.charset;
 // Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
+import droidsafe.runtime.*;
 
-// import Iterator to deal with enhanced for loop translation
+// needed for enhanced for control translations
 import java.util.Iterator;
 
-
 public class UnsupportedCharsetException extends IllegalArgumentException {
-    private static final long serialVersionUID = 1490765524727386367L;
     private String charsetName;
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:12.568 -0400", hash_original_method = "EF2B407E9854D147BA5248D252ABFDC1", hash_generated_method = "FE39C5B1D44A596F422A0BF7D5F0BE0C")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:29.282 -0400", hash_original_method = "EF2B407E9854D147BA5248D252ABFDC1", hash_generated_method = "1813068043828D1B9898BE582B2F2068")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public UnsupportedCharsetException(String charsetName) {
         super((charsetName != null) ? charsetName : "null");
@@ -22,7 +21,7 @@ public class UnsupportedCharsetException extends IllegalArgumentException {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:12.568 -0400", hash_original_method = "62D3F36CA78A6EC4185A2D1A05C169E6", hash_generated_method = "FA76CC2E17994353A2668F77510A4CB9")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:29.282 -0400", hash_original_method = "62D3F36CA78A6EC4185A2D1A05C169E6", hash_generated_method = "D3152A749E5146FD48B18AFFB6F43D9A")
     @DSModeled(DSC.SAFE)
     public String getCharsetName() {
         return dsTaint.getTaintString();
@@ -31,6 +30,6 @@ public class UnsupportedCharsetException extends IllegalArgumentException {
     }
 
     
+    private static final long serialVersionUID = 1490765524727386367L;
 }
-
 

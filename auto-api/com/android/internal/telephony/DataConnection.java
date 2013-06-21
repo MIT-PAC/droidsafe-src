@@ -1,12 +1,17 @@
 package com.android.internal.telephony;
 
 // Droidsafe Imports
-import java.util.ArrayList;
-import java.util.HashMap;
-// import Iterator to deal with enhanced for loop translation
-import java.util.Iterator;
-import java.util.List;
+import droidsafe.helpers.*;
+import droidsafe.annotations.*;
+import droidsafe.runtime.*;
 
+// needed for enhanced for control translations
+import java.util.Iterator;
+import com.android.internal.telephony.DataCallState.SetupResult;
+import com.android.internal.util.AsyncChannel;
+import com.android.internal.util.Protocol;
+import com.android.internal.util.State;
+import com.android.internal.util.StateMachine;
 import android.app.PendingIntent;
 import android.net.LinkCapabilities;
 import android.net.LinkProperties;
@@ -15,35 +20,15 @@ import android.os.AsyncResult;
 import android.os.Message;
 import android.os.SystemProperties;
 import android.text.TextUtils;
-
-import com.android.internal.util.AsyncChannel;
-import com.android.internal.util.Protocol;
-import com.android.internal.util.State;
-import com.android.internal.util.StateMachine;
-
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
-import droidsafe.runtime.DroidSafeAndroidRuntime;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
 
 public abstract class DataConnection extends StateMachine {
-    protected static final boolean DBG = true;
-    protected static final boolean VDBG = false;
-    protected static Object mCountLock = new Object();
-    protected static int mCount;
     protected AsyncChannel mAc;
     private List<ApnContext> mApnList = null;
     PendingIntent mReconnectIntent = null;
     private DataConnectionTracker mDataConnectionTracker = null;
-    protected static final int BASE = Protocol.BASE_DATA_CONNECTION;
-    protected static final int EVENT_CONNECT = BASE + 0;
-    protected static final int EVENT_SETUP_DATA_CONNECTION_DONE = BASE + 1;
-    protected static final int EVENT_GET_LAST_FAIL_DONE = BASE + 2;
-    protected static final int EVENT_DEACTIVATE_DONE = BASE + 3;
-    protected static final int EVENT_DISCONNECT = BASE + 4;
-    protected static final int EVENT_RIL_CONNECTED = BASE + 5;
-    protected static final int EVENT_DISCONNECT_ALL = BASE + 6;
-    protected static final int EVENT_LOG_BAD_DNS_ADDRESS = 50100;
     protected ApnSetting mApn;
     protected int mTag;
     protected PhoneBase phone;
@@ -55,7 +40,6 @@ public abstract class DataConnection extends StateMachine {
     protected long lastFailTime;
     protected FailCause lastFailCause;
     protected int mRetryOverride = -1;
-    protected static final String NULL_IP = "0.0.0.0";
     private int mRefCount;
     Object userData;
     private int mId;
@@ -68,7 +52,7 @@ public abstract class DataConnection extends StateMachine {
     private DcDisconnectionErrorCreatingConnection mDisconnectingErrorCreatingConnection =
                 new DcDisconnectionErrorCreatingConnection();
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.780 -0400", hash_original_method = "D7245109588C71D28E136068E4D7CDC7", hash_generated_method = "27CE2185661A552EAB280ED7A31825F8")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:10.941 -0400", hash_original_method = "D7245109588C71D28E136068E4D7CDC7", hash_generated_method = "B5BB579DF62338485ADB2496FE7F7693")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     protected DataConnection(PhoneBase phone, String name, int id, RetryManager rm,
             DataConnectionTracker dct) {
@@ -123,7 +107,7 @@ public abstract String toString();
     protected abstract void log(String s);
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.780 -0400", hash_original_method = "59ED68D7EF373C505428063E232AFE5C", hash_generated_method = "E67D3F7893225778B01BBE6BB0DB29C9")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:10.942 -0400", hash_original_method = "59ED68D7EF373C505428063E232AFE5C", hash_generated_method = "3E42D72FB53277D4BF4DA1933D36B55B")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     private void tearDownData(Object o) {
         dsTaint.addTaint(o.dsTaint);
@@ -135,12 +119,12 @@ public abstract String toString();
             Message m;
             m = dp.onCompletedMsg;
             {
-                boolean varC0DA3759AD518C5BDD466277C93185D6_722315036 = (TextUtils.equals(dp.reason, Phone.REASON_RADIO_TURNED_OFF));
+                boolean varC0DA3759AD518C5BDD466277C93185D6_839104291 = (TextUtils.equals(dp.reason, Phone.REASON_RADIO_TURNED_OFF));
                 {
                     discReason = RILConstants.DEACTIVATE_REASON_RADIO_OFF;
                 } //End block
                 {
-                    boolean var1B725C4E69E932624B2BF80526814400_412237730 = (TextUtils.equals(dp.reason, Phone.REASON_PDP_RESET));
+                    boolean var1B725C4E69E932624B2BF80526814400_808151488 = (TextUtils.equals(dp.reason, Phone.REASON_PDP_RESET));
                     {
                         discReason = RILConstants.DEACTIVATE_REASON_PDP_RESET;
                     } //End block
@@ -148,7 +132,7 @@ public abstract String toString();
             } //End collapsed parenthetic
         } //End block
         {
-            boolean varEB239098BBFA2AD31684A01774D8510E_2095982995 = (phone.mCM.getRadioState().isOn());
+            boolean varEB239098BBFA2AD31684A01774D8510E_1822259681 = (phone.mCM.getRadioState().isOn());
             {
                 log("tearDownData radio is on, call deactivateDataCall");
                 phone.mCM.deactivateDataCall(cid, discReason, obtainMessage(EVENT_DEACTIVATE_DONE, o));
@@ -165,11 +149,11 @@ public abstract String toString();
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.780 -0400", hash_original_method = "4864ED15F4860BAE9DD2587736D4A08F", hash_generated_method = "5E7DF38FAA78BE6693D7501BFEE6D04A")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:10.942 -0400", hash_original_method = "4864ED15F4860BAE9DD2587736D4A08F", hash_generated_method = "4DD197E306622BD0852B2EE944B9FF85")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     private void notifyConnectCompleted(ConnectionParams cp, FailCause cause) {
-        dsTaint.addTaint(cp.dsTaint);
         dsTaint.addTaint(cause.dsTaint);
+        dsTaint.addTaint(cp.dsTaint);
         Message connectionCompletedMsg;
         connectionCompletedMsg = cp.onCompletedMsg;
         long timeStamp;
@@ -207,7 +191,7 @@ public abstract String toString();
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.781 -0400", hash_original_method = "FAECBFACBAA2823A6757C3F4EB7F55CB", hash_generated_method = "17AE000AC5B057BF19D233D222A5443A")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:10.947 -0400", hash_original_method = "FAECBFACBAA2823A6757C3F4EB7F55CB", hash_generated_method = "4C80BC9CEC6E5AA232EFA99DCDD5E777")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     private void notifyDisconnectCompleted(DisconnectParams dp, boolean sendAll) {
         dsTaint.addTaint(dp.dsTaint);
@@ -233,9 +217,9 @@ public abstract String toString();
         } //End block
         {
             {
-                Iterator<ApnContext> seatecAstronomy42 = mApnList.iterator();
-                seatecAstronomy42.hasNext();
-                ApnContext a = seatecAstronomy42.next();
+                Iterator<ApnContext> var0EEEB325FF7CA477D7065E5F55D761AD_797379256 = (mApnList).iterator();
+                var0EEEB325FF7CA477D7065E5F55D761AD_797379256.hasNext();
+                ApnContext a = var0EEEB325FF7CA477D7065E5F55D761AD_797379256.next();
                 {
                     a.setReason(reason);
                     Message msg;
@@ -252,7 +236,7 @@ public abstract String toString();
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.781 -0400", hash_original_method = "1BB05B964694E45E9B1991E5D1915447", hash_generated_method = "E173C4D1190922EA2CBA3E6F04B4732C")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:10.947 -0400", hash_original_method = "1BB05B964694E45E9B1991E5D1915447", hash_generated_method = "4DBA85BD5640684AD726713F284C7FBF")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     protected int getRadioTechnology(int defaultRadioTechnology) {
         dsTaint.addTaint(defaultRadioTechnology);
@@ -275,38 +259,37 @@ public abstract String toString();
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.781 -0400", hash_original_method = "AAF5779D145C421CCE90F0916803977D", hash_generated_method = "CBCF066811053F93C1A385DB79B366C3")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:10.948 -0400", hash_original_method = "AAF5779D145C421CCE90F0916803977D", hash_generated_method = "4B6E9123B4317618EAF71F93EF0DC116")
     @DSModeled(DSC.SAFE)
     public int getDataConnectionId() {
-        //DSFIXME:  CODE0009: Possible callback target function detected
         return dsTaint.getTaintInt();
         // ---------- Original Method ----------
         //return mId;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.781 -0400", hash_original_method = "FC51BF074579EE4E5F8C7AB511B49B8A", hash_generated_method = "6702465D262E37840B18E894E524BA69")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:10.948 -0400", hash_original_method = "FC51BF074579EE4E5F8C7AB511B49B8A", hash_generated_method = "9051179776D2178BD246AEE8AAD7690D")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public int getRetryCount() {
-        int var449CA49043C973C5751EB0A39E24CB1F_943450382 = (mRetryMgr.getRetryCount());
+        int var449CA49043C973C5751EB0A39E24CB1F_1605688644 = (mRetryMgr.getRetryCount());
         return dsTaint.getTaintInt();
         // ---------- Original Method ----------
         //return mRetryMgr.getRetryCount();
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.781 -0400", hash_original_method = "21D3097027A7BF6D8D1F04609D8A2AE9", hash_generated_method = "C79CC3B7BBC9828BA94CA2F3DB539B97")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:10.948 -0400", hash_original_method = "21D3097027A7BF6D8D1F04609D8A2AE9", hash_generated_method = "BC6FC95A04E5A9B458C5439B2A04CEAF")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public int getRetryTimer() {
-        int var3D330706D3357A0015985CFA9194A2D9_1411216998 = (mRetryMgr.getRetryTimer());
+        int var3D330706D3357A0015985CFA9194A2D9_1793276064 = (mRetryMgr.getRetryTimer());
         return dsTaint.getTaintInt();
         // ---------- Original Method ----------
         //return mRetryMgr.getRetryTimer();
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.781 -0400", hash_original_method = "2EFBBED22C4BDBBAA07E00436CC70BDF", hash_generated_method = "125C4C2EE0F2FE2E45E59DD73ACDDF20")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:10.948 -0400", hash_original_method = "2EFBBED22C4BDBBAA07E00436CC70BDF", hash_generated_method = "0E371755B2F0C7630C7641033AED74E0")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     public void increaseRetryCount() {
         mRetryMgr.increaseRetryCount();
         // ---------- Original Method ----------
@@ -314,18 +297,18 @@ public abstract String toString();
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.781 -0400", hash_original_method = "BE0E8B7CBE5F430456218437A69801A6", hash_generated_method = "DCC2E24B4CA5F7AAAC207C20C7250A04")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:10.948 -0400", hash_original_method = "BE0E8B7CBE5F430456218437A69801A6", hash_generated_method = "21C7110B20D129932CF4390494F65BB5")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public boolean isRetryNeeded() {
-        boolean var2557A79863F82C24CE058A4712E3B3F7_190216316 = (mRetryMgr.isRetryNeeded());
+        boolean var2557A79863F82C24CE058A4712E3B3F7_430152649 = (mRetryMgr.isRetryNeeded());
         return dsTaint.getTaintBoolean();
         // ---------- Original Method ----------
         //return mRetryMgr.isRetryNeeded();
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.781 -0400", hash_original_method = "6E600B114543C0C51BDDB686B0EEF1BE", hash_generated_method = "5DA16E2E073D92967458C5926B871A9B")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:10.949 -0400", hash_original_method = "6E600B114543C0C51BDDB686B0EEF1BE", hash_generated_method = "32DE04BB7113D9D458E9B8A4B5F7798C")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     public void resetRetryCount() {
         mRetryMgr.resetRetryCount();
         // ---------- Original Method ----------
@@ -333,8 +316,8 @@ public abstract String toString();
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.781 -0400", hash_original_method = "FE4AFC35148D7FCE7B6DEB885B8B31DF", hash_generated_method = "D2B71A1549FCB4D8295D582CE0BF2CC2")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:10.949 -0400", hash_original_method = "FE4AFC35148D7FCE7B6DEB885B8B31DF", hash_generated_method = "8D1E6E9AC70CC605B5E9E3DFBC8CC440")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     public void retryForeverUsingLastTimeout() {
         mRetryMgr.retryForeverUsingLastTimeout();
         // ---------- Original Method ----------
@@ -342,42 +325,42 @@ public abstract String toString();
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.781 -0400", hash_original_method = "7BE7662A27A4557E7DE38D4C4F7B834F", hash_generated_method = "9091F54F33762B9D38DC4B5C140D78D6")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:10.949 -0400", hash_original_method = "7BE7662A27A4557E7DE38D4C4F7B834F", hash_generated_method = "2368BFA745F8BF9843B683F6E76165DF")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public boolean isRetryForever() {
-        boolean var491B6D9ADB68663515B16F16BFDDD6EB_733454152 = (mRetryMgr.isRetryForever());
+        boolean var491B6D9ADB68663515B16F16BFDDD6EB_911542438 = (mRetryMgr.isRetryForever());
         return dsTaint.getTaintBoolean();
         // ---------- Original Method ----------
         //return mRetryMgr.isRetryForever();
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.781 -0400", hash_original_method = "7F3E6401D154FAD4235CC7C3EA752D6F", hash_generated_method = "F66E0799D82F7E34409F54F704979A55")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:10.949 -0400", hash_original_method = "7F3E6401D154FAD4235CC7C3EA752D6F", hash_generated_method = "8771EBD8BE3297F5416D47B8C93A34A4")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public boolean configureRetry(int maxRetryCount, int retryTime, int randomizationTime) {
-        dsTaint.addTaint(maxRetryCount);
         dsTaint.addTaint(retryTime);
+        dsTaint.addTaint(maxRetryCount);
         dsTaint.addTaint(randomizationTime);
-        boolean var5C383AB26692B2465A8A92603FAE13E1_661795163 = (mRetryMgr.configure(maxRetryCount, retryTime, randomizationTime));
+        boolean var5C383AB26692B2465A8A92603FAE13E1_1258448798 = (mRetryMgr.configure(maxRetryCount, retryTime, randomizationTime));
         return dsTaint.getTaintBoolean();
         // ---------- Original Method ----------
         //return mRetryMgr.configure(maxRetryCount, retryTime, randomizationTime);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.781 -0400", hash_original_method = "23B74F0922BA8C1F44E04170074AC8EE", hash_generated_method = "EBEF16C3BEEEB739F1E62DFAF1CFE008")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:10.949 -0400", hash_original_method = "23B74F0922BA8C1F44E04170074AC8EE", hash_generated_method = "17A396AC3F00AA99257CEF6CEFE8ACAB")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public boolean configureRetry(String configStr) {
         dsTaint.addTaint(configStr);
-        boolean varECAEB0BD560D7A3FDF27280B64D27C2B_627270682 = (mRetryMgr.configure(configStr));
+        boolean varECAEB0BD560D7A3FDF27280B64D27C2B_747301556 = (mRetryMgr.configure(configStr));
         return dsTaint.getTaintBoolean();
         // ---------- Original Method ----------
         //return mRetryMgr.configure(configStr);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.781 -0400", hash_original_method = "14EAC6C2DDCA29A3543D7FF941CEE3A4", hash_generated_method = "3938AFF7402ED1CC58E5F892931624D4")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:10.950 -0400", hash_original_method = "14EAC6C2DDCA29A3543D7FF941CEE3A4", hash_generated_method = "DCEB0D12A18217ADB13992E69EBA0B03")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     protected void clearSettings() {
         log("clearSettings");
         createTime = -1;
@@ -401,7 +384,7 @@ public abstract String toString();
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.782 -0400", hash_original_method = "75094A2EA3723036F1D43E5DA379759D", hash_generated_method = "437D205E9EBC3F22AD871C88F4E206B5")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:10.950 -0400", hash_original_method = "75094A2EA3723036F1D43E5DA379759D", hash_generated_method = "175E0B073FB948EFE8821184ECD9F234")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     private DataCallState.SetupResult onSetupConnectionCompleted(AsyncResult ar) {
         dsTaint.addTaint(ar.dsTaint);
@@ -416,7 +399,7 @@ public abstract String toString();
                     " response=" + response);
             } //End block
             {
-                boolean var1E63C7E427F0E7C15DB7AC2E851044B0_132064354 = (ar.exception instanceof CommandException
+                boolean var1E63C7E427F0E7C15DB7AC2E851044B0_151855140 = (ar.exception instanceof CommandException
                     && ((CommandException) (ar.exception)).getCommandError()
                     == CommandException.Error.RADIO_NOT_AVAILABLE);
                 {
@@ -453,7 +436,7 @@ public abstract String toString();
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.782 -0400", hash_original_method = "F1DF17AEAB523CA725A1A0E7587A5B33", hash_generated_method = "08E574B40ABCA7CC7DA7EE6158FCC6C1")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:10.951 -0400", hash_original_method = "F1DF17AEAB523CA725A1A0E7587A5B33", hash_generated_method = "0BDF9E6B3BF818D2DC5AD5382D3C8E2E")
     @DSModeled(DSC.SAFE)
     private int getSuggestedRetryTime(AsyncResult ar) {
         dsTaint.addTaint(ar.dsTaint);
@@ -475,7 +458,7 @@ public abstract String toString();
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.782 -0400", hash_original_method = "61A23083F49649744D5BB908131730E7", hash_generated_method = "EE2C2430DDFFE196BF6520CE93D309E9")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:10.951 -0400", hash_original_method = "61A23083F49649744D5BB908131730E7", hash_generated_method = "27E2AA0A83D2E89BC638B870A8056CCA")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     private DataCallState.SetupResult setLinkProperties(DataCallState response,
             LinkProperties lp) {
@@ -490,7 +473,7 @@ public abstract String toString();
         dnsServers[0] = SystemProperties.get(propertyPrefix + "dns1");
         dnsServers[1] = SystemProperties.get(propertyPrefix + "dns2");
         okToUseSystemPropertyDns = isDnsOk(dnsServers);
-        DataCallState.SetupResult varEB53BC7FB06BF4FFA7075E1595BA295D_1303195709 = (response.setLinkProperties(lp, okToUseSystemPropertyDns));
+        DataCallState.SetupResult varEB53BC7FB06BF4FFA7075E1595BA295D_868870912 = (response.setLinkProperties(lp, okToUseSystemPropertyDns));
         return (DataCallState.SetupResult)dsTaint.getTaint();
         // ---------- Original Method ----------
         //boolean okToUseSystemPropertyDns = false;
@@ -503,7 +486,7 @@ public abstract String toString();
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.782 -0400", hash_original_method = "45E9586484C37E223B6289BDE8E786AB", hash_generated_method = "E2088F8D1CBAAEF1C62F6DCA472616B2")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:10.952 -0400", hash_original_method = "45E9586484C37E223B6289BDE8E786AB", hash_generated_method = "D26AEC650FE1554F34973D7B9C4C1A3D")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     private UpdateLinkPropertyResult updateLinkProperty(DataCallState newState) {
         dsTaint.addTaint(newState.dsTaint);
@@ -517,7 +500,7 @@ public abstract String toString();
         } //End block
         result.newLp.setHttpProxy(mLinkProperties.getHttpProxy());
         {
-            boolean var35DD507CF52E6FD709D552250B552C90_1892941766 = (DBG && (! result.oldLp.equals(result.newLp)));
+            boolean var35DD507CF52E6FD709D552250B552C90_1183639621 = (DBG && (! result.oldLp.equals(result.newLp)));
             {
                 log("updateLinkProperty old != new");
                 log("updateLinkProperty old LP=" + result.oldLp);
@@ -531,7 +514,7 @@ public abstract String toString();
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.782 -0400", hash_original_method = "DA4DADB76FBE855C8C796E356354585B", hash_generated_method = "12C9EDDF9BE570BC81AEE73E7C96EBF8")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:10.952 -0400", hash_original_method = "DA4DADB76FBE855C8C796E356354585B", hash_generated_method = "02F4199258C235C65F89FF267A0ED374")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public void bringUp(Message onCompletedMsg, ApnSetting apn) {
         dsTaint.addTaint(apn.dsTaint);
@@ -542,7 +525,7 @@ public abstract String toString();
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.782 -0400", hash_original_method = "16642B60370F95B35D583CCC8A36D6BF", hash_generated_method = "39432AFC6601B2753044D314AE377002")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:10.952 -0400", hash_original_method = "16642B60370F95B35D583CCC8A36D6BF", hash_generated_method = "0101B99270E27CE2119628BD0D61828B")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public void tearDown(String reason, Message onCompletedMsg) {
         dsTaint.addTaint(reason);
@@ -553,7 +536,7 @@ public abstract String toString();
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.782 -0400", hash_original_method = "30373688C862478A157FD6B64FFCED35", hash_generated_method = "F00450AA593F960279A61A7C6ACE99F3")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:10.952 -0400", hash_original_method = "30373688C862478A157FD6B64FFCED35", hash_generated_method = "885628B86303126F03096B3796EA546B")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public void tearDownAll(String reason, Message onCompletedMsg) {
         dsTaint.addTaint(reason);
@@ -571,7 +554,7 @@ public abstract String toString();
         public ApnSetting apn;
         public Message onCompletedMsg;
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.782 -0400", hash_original_method = "9C883FBF948634C8BFC48155A41A0F4D", hash_generated_method = "184529A1A118366A895763EEC2E80206")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:10.953 -0400", hash_original_method = "9C883FBF948634C8BFC48155A41A0F4D", hash_generated_method = "7DBD7CC68FB1C86B9E048EAA737D2761")
         @DSModeled(DSC.SAFE)
         public ConnectionParams(ApnSetting apn, Message onCompletedMsg) {
             dsTaint.addTaint(apn.dsTaint);
@@ -591,7 +574,7 @@ public abstract String toString();
         public String reason;
         public Message onCompletedMsg;
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.782 -0400", hash_original_method = "8634A04E02B052AB53AF8D3EFA7F5294", hash_generated_method = "772E091DDB5D5BB3A8F0755F90AA8930")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:10.953 -0400", hash_original_method = "8634A04E02B052AB53AF8D3EFA7F5294", hash_generated_method = "736F4778299757AA632C15A70827FB7B")
         @DSModeled(DSC.SAFE)
         public DisconnectParams(String reason, Message onCompletedMsg) {
             dsTaint.addTaint(reason);
@@ -678,7 +661,7 @@ public abstract String toString();
     public static class CallSetupException extends Exception {
         private int mRetryOverride = -1;
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.783 -0400", hash_original_method = "A504ADA2782D67F9E42B2FFAADC374C6", hash_generated_method = "33F406BE725F883EB75341C6E93A7492")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:10.953 -0400", hash_original_method = "A504ADA2782D67F9E42B2FFAADC374C6", hash_generated_method = "1E9916DD9D9F3B9AA63FDA7F5ADF1F40")
         @DSModeled(DSC.SAFE)
          CallSetupException(int retryOverride) {
             dsTaint.addTaint(retryOverride);
@@ -687,7 +670,7 @@ public abstract String toString();
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.783 -0400", hash_original_method = "474AEB2E917376DACCA3A8D3E49DB29C", hash_generated_method = "3096368B52DFC69759B8CE6F15D07EA9")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:10.953 -0400", hash_original_method = "474AEB2E917376DACCA3A8D3E49DB29C", hash_generated_method = "FA3EE1840131B66BBC1CC6BEAE458292")
         @DSModeled(DSC.SAFE)
         public int getRetryOverride() {
             return dsTaint.getTaintInt();
@@ -705,7 +688,7 @@ public abstract String toString();
         public LinkProperties oldLp;
         public LinkProperties newLp;
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.783 -0400", hash_original_method = "5FFECF7E7800E048A607977532017882", hash_generated_method = "BA37A2268AB719BF57E4F27590E92808")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:10.953 -0400", hash_original_method = "5FFECF7E7800E048A607977532017882", hash_generated_method = "DBBA0D0372C8DC168125B3061FAE6AE9")
         @DSModeled(DSC.SAFE)
         public UpdateLinkPropertyResult(LinkProperties curLp) {
             dsTaint.addTaint(curLp.dsTaint);
@@ -721,7 +704,13 @@ public abstract String toString();
     
     private class DcDefaultState extends State {
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.783 -0400", hash_original_method = "AF33D4647C9368E21A04243E95A9DF92", hash_generated_method = "0A273BAD4C41ED731C01E9CA5B622A56")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:10.954 -0400", hash_original_method = "C7DA4CDC3BF4DDE66378872887D44AE9", hash_generated_method = "C7DA4CDC3BF4DDE66378872887D44AE9")
+                public DcDefaultState ()
+        {
+        }
+
+
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:10.954 -0400", hash_original_method = "AF33D4647C9368E21A04243E95A9DF92", hash_generated_method = "F27D177C1C31D4AE7056D39884557535")
         //DSFIXME:  CODE0002: Requires DSC value to be set
         @Override
         public void enter() {
@@ -731,7 +720,7 @@ public abstract String toString();
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.783 -0400", hash_original_method = "B29A8A064FC1508BFE2503E3804D9F04", hash_generated_method = "95E1F243FFAD98E05A6E520CB56A61E1")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:10.954 -0400", hash_original_method = "B29A8A064FC1508BFE2503E3804D9F04", hash_generated_method = "89332A3E017EEAA1B196A8EF770738C3")
         //DSFIXME:  CODE0002: Requires DSC value to be set
         @Override
         public void exit() {
@@ -741,7 +730,7 @@ public abstract String toString();
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.784 -0400", hash_original_method = "861DABBEFC0C5CEA3EC16D264376B7D7", hash_generated_method = "12DA00EC89E063E4182BCB5B21871724")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:10.955 -0400", hash_original_method = "861DABBEFC0C5CEA3EC16D264376B7D7", hash_generated_method = "8B1AC9691425E7E3AAB3AA5A306B66D6")
         //DSFIXME:  CODE0002: Requires DSC value to be set
         @Override
         public boolean processMessage(Message msg) {
@@ -856,7 +845,7 @@ public abstract String toString();
                 apnContext = (ApnContext) msg.obj;
                 log("REQ_ADD_APNCONTEXT apn=" + apnContext.getApnType());
                 {
-                    boolean var4A35D05DBEBBB0D641DCA4C1673022CB_270099536 = (!mApnList.contains(apnContext));
+                    boolean var4A35D05DBEBBB0D641DCA4C1673022CB_322631163 = (!mApnList.contains(apnContext));
                     {
                         mApnList.add(apnContext);
                     } //End block
@@ -959,13 +948,18 @@ public abstract String toString();
         private FailCause mFailCause = null;
         private DisconnectParams mDisconnectParams = null;
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.784 -0400", hash_original_method = "CBB71B6A4AE30457112F09AD25305330", hash_generated_method = "9044A34552110810ADAFDC2B75DB32A2")
-        @DSModeled(DSC.SAFE)
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:10.956 -0400", hash_original_method = "626D6245888FF512F25A290E4302CE5B", hash_generated_method = "626D6245888FF512F25A290E4302CE5B")
+                public DcInactiveState ()
+        {
+        }
+
+
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:10.956 -0400", hash_original_method = "CBB71B6A4AE30457112F09AD25305330", hash_generated_method = "99F2B82AAE19D41CC0AB87E679A999C3")
+        //DSFIXME:  CODE0002: Requires DSC value to be set
         public void setEnterNotificationParams(ConnectionParams cp, FailCause cause,
                                                int retryOverride) {
-            //DSFIXME:  CODE0009: Possible callback target function detected
-            dsTaint.addTaint(cp.dsTaint);
             dsTaint.addTaint(cause.dsTaint);
+            dsTaint.addTaint(cp.dsTaint);
             dsTaint.addTaint(retryOverride);
             log("DcInactiveState: setEnterNoticationParams cp,cause");
             mRetryOverride = retryOverride;
@@ -977,10 +971,9 @@ public abstract String toString();
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.784 -0400", hash_original_method = "58F7FEE7FE1847BE132197954CFB7983", hash_generated_method = "52CEEBFC161F5740C31599260886C81A")
-        @DSModeled(DSC.SAFE)
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:10.956 -0400", hash_original_method = "58F7FEE7FE1847BE132197954CFB7983", hash_generated_method = "3F004FD1FBB785FA2CFA5106C90BA062")
+        //DSFIXME:  CODE0002: Requires DSC value to be set
         public void setEnterNotificationParams(DisconnectParams dp) {
-            //DSFIXME:  CODE0009: Possible callback target function detected
             dsTaint.addTaint(dp.dsTaint);
             log("DcInactiveState: setEnterNoticationParams dp");
             // ---------- Original Method ----------
@@ -989,8 +982,8 @@ public abstract String toString();
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.784 -0400", hash_original_method = "5ECFC066410D8ABDEB9EC29A69A13CA8", hash_generated_method = "059D524AC9AB0674AEAB778CE16A56B3")
-        @DSModeled(DSC.SAFE)
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:10.956 -0400", hash_original_method = "5ECFC066410D8ABDEB9EC29A69A13CA8", hash_generated_method = "1BCBE575411049844F9C7210B57C104A")
+        //DSFIXME:  CODE0002: Requires DSC value to be set
         @Override
         public void enter() {
             mTag += 1;
@@ -1017,7 +1010,7 @@ public abstract String toString();
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.784 -0400", hash_original_method = "0122D4B6A897CA907F15060B70B58C0B", hash_generated_method = "122DC4498F975CA097D58C88C978E116")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:10.956 -0400", hash_original_method = "0122D4B6A897CA907F15060B70B58C0B", hash_generated_method = "2FF782B07AED250A63958B87AD09AB7B")
         @DSModeled(DSC.SAFE)
         @Override
         public void exit() {
@@ -1031,7 +1024,7 @@ public abstract String toString();
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.785 -0400", hash_original_method = "5D9A3D521668E78C1CF25F8EB0112B8D", hash_generated_method = "5D0164FC021AFC022C4F4908731A4955")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:10.957 -0400", hash_original_method = "5D9A3D521668E78C1CF25F8EB0112B8D", hash_generated_method = "C50FE510FDE3637A36C158BCAE93D6DB")
         //DSFIXME:  CODE0002: Requires DSC value to be set
         @Override
         public boolean processMessage(Message msg) {
@@ -1112,7 +1105,13 @@ public abstract String toString();
     
     private class DcActivatingState extends State {
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.785 -0400", hash_original_method = "FDE326A498C74E1E809F141FF2FEACCA", hash_generated_method = "BABE00155F97A7F98753D7ABCEBB56E1")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:10.975 -0400", hash_original_method = "99DC021F46B87B675BA679B9F4997F47", hash_generated_method = "99DC021F46B87B675BA679B9F4997F47")
+                public DcActivatingState ()
+        {
+        }
+
+
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:10.976 -0400", hash_original_method = "FDE326A498C74E1E809F141FF2FEACCA", hash_generated_method = "04CDFA789D06A07A4AF4F161DE683954")
         //DSFIXME:  CODE0002: Requires DSC value to be set
         @Override
         public boolean processMessage(Message msg) {
@@ -1237,12 +1236,17 @@ public abstract String toString();
         private ConnectionParams mConnectionParams = null;
         private FailCause mFailCause = null;
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.785 -0400", hash_original_method = "65AC06854CC9D1F4537757F901F06476", hash_generated_method = "DD07181A99FCFFCE07E64A74A1DE781E")
-        @DSModeled(DSC.SAFE)
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:10.977 -0400", hash_original_method = "EBC9A4AF706CA7B76B2C10BF62CE087C", hash_generated_method = "EBC9A4AF706CA7B76B2C10BF62CE087C")
+                public DcActiveState ()
+        {
+        }
+
+
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:10.977 -0400", hash_original_method = "65AC06854CC9D1F4537757F901F06476", hash_generated_method = "F464013E1DB769828D2E9077B9FDEE82")
+        //DSFIXME:  CODE0002: Requires DSC value to be set
         public void setEnterNotificationParams(ConnectionParams cp, FailCause cause) {
-            //DSFIXME:  CODE0009: Possible callback target function detected
-            dsTaint.addTaint(cp.dsTaint);
             dsTaint.addTaint(cause.dsTaint);
+            dsTaint.addTaint(cp.dsTaint);
             log("DcInactiveState: setEnterNoticationParams cp,cause");
             // ---------- Original Method ----------
             //if (VDBG) log("DcInactiveState: setEnterNoticationParams cp,cause");
@@ -1251,8 +1255,8 @@ public abstract String toString();
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.785 -0400", hash_original_method = "F04274E6B6E666DB4B8B2ADDB4ED15CF", hash_generated_method = "3909F7E71B26716E2348C0B5F183A9BE")
-        @DSModeled(DSC.SAFE)
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:10.978 -0400", hash_original_method = "F04274E6B6E666DB4B8B2ADDB4ED15CF", hash_generated_method = "1C6450E054BB12CF4CEED6B4B3472854")
+        //DSFIXME:  CODE0002: Requires DSC value to be set
         @Override
         public void enter() {
             {
@@ -1267,7 +1271,7 @@ public abstract String toString();
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.785 -0400", hash_original_method = "6361033575190DC86852AD59967B3D8E", hash_generated_method = "02283EB896FC2DC834E3CEC198F944C4")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:10.979 -0400", hash_original_method = "6361033575190DC86852AD59967B3D8E", hash_generated_method = "41F12992C45BA1B13C3E1498872DF26C")
         @DSModeled(DSC.SAFE)
         @Override
         public void exit() {
@@ -1279,15 +1283,12 @@ public abstract String toString();
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.786 -0400", hash_original_method = "3F86B352C4AE47D7777BCBC7DBB975E2", hash_generated_method = "E60A9B96ACDA276572C7E7B76C5B2A36")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:10.979 -0400", hash_original_method = "3F86B352C4AE47D7777BCBC7DBB975E2", hash_generated_method = "C83D03F34E7B87BC992A74818E3B8EF9")
         //DSFIXME:  CODE0002: Requires DSC value to be set
         @Override
         public boolean processMessage(Message msg) {
             dsTaint.addTaint(msg.dsTaint);
             boolean retVal;
-            //Begin case EVENT_CONNECT 
-            mRefCount++;
-            //End case EVENT_CONNECT 
             //Begin case EVENT_CONNECT 
             log("DcActiveState msg.what=EVENT_CONNECT RefCount=" + mRefCount);
             //End case EVENT_CONNECT 
@@ -1299,9 +1300,6 @@ public abstract String toString();
             //Begin case EVENT_CONNECT 
             retVal = HANDLED;
             //End case EVENT_CONNECT 
-            //Begin case EVENT_DISCONNECT 
-            mRefCount--;
-            //End case EVENT_DISCONNECT 
             //Begin case EVENT_DISCONNECT 
             log("DcActiveState msg.what=EVENT_DISCONNECT RefCount=" + mRefCount);
             //End case EVENT_DISCONNECT 
@@ -1367,7 +1365,13 @@ public abstract String toString();
     
     private class DcDisconnectingState extends State {
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.786 -0400", hash_original_method = "DD3249EFBD400B69680BE43C46063370", hash_generated_method = "16B40457A83C175274FE17C5F3A0A7B8")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:10.980 -0400", hash_original_method = "BABC465FE49AC2F0EA546A90FEA84751", hash_generated_method = "BABC465FE49AC2F0EA546A90FEA84751")
+                public DcDisconnectingState ()
+        {
+        }
+
+
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:10.980 -0400", hash_original_method = "DD3249EFBD400B69680BE43C46063370", hash_generated_method = "00382A6C2BDB37CE6C3D6505EFFD370A")
         //DSFIXME:  CODE0002: Requires DSC value to be set
         @Override
         public boolean processMessage(Message msg) {
@@ -1428,7 +1432,13 @@ public abstract String toString();
     
     private class DcDisconnectionErrorCreatingConnection extends State {
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.786 -0400", hash_original_method = "E9D4515D62B87825C79C67876E4313E2", hash_generated_method = "535765EFC948B23E9863EF74ADCBF78C")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:10.980 -0400", hash_original_method = "58D25C14FE049012258E07B9DCFAB1BA", hash_generated_method = "58D25C14FE049012258E07B9DCFAB1BA")
+                public DcDisconnectionErrorCreatingConnection ()
+        {
+        }
+
+
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:10.980 -0400", hash_original_method = "E9D4515D62B87825C79C67876E4313E2", hash_generated_method = "2FE806A504F069139AB15983EE4365F6")
         //DSFIXME:  CODE0002: Requires DSC value to be set
         @Override
         public boolean processMessage(Message msg) {
@@ -1481,6 +1491,19 @@ public abstract String toString();
 
 
     
+    protected static final boolean DBG = true;
+    protected static final boolean VDBG = false;
+    protected static Object mCountLock = new Object();
+    protected static int mCount;
+    protected static final int BASE = Protocol.BASE_DATA_CONNECTION;
+    protected static final int EVENT_CONNECT = BASE + 0;
+    protected static final int EVENT_SETUP_DATA_CONNECTION_DONE = BASE + 1;
+    protected static final int EVENT_GET_LAST_FAIL_DONE = BASE + 2;
+    protected static final int EVENT_DEACTIVATE_DONE = BASE + 3;
+    protected static final int EVENT_DISCONNECT = BASE + 4;
+    protected static final int EVENT_RIL_CONNECTED = BASE + 5;
+    protected static final int EVENT_DISCONNECT_ALL = BASE + 6;
+    protected static final int EVENT_LOG_BAD_DNS_ADDRESS = 50100;
+    protected static final String NULL_IP = "0.0.0.0";
 }
-
 

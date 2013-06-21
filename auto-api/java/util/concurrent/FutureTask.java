@@ -12,8 +12,8 @@ import java.util.concurrent.locks.*;
 public class FutureTask<V> implements RunnableFuture<V> {
     private Sync sync;
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 11:36:27.733 -0400", hash_original_method = "EBD25CFA864782219EF130D05DE406FC", hash_generated_method = "A188E9CC5C46EB38CE936CC33BCD35F3")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:34.672 -0400", hash_original_method = "EBD25CFA864782219EF130D05DE406FC", hash_generated_method = "1D11295510F5CBE552EF8AE04092F8F6")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     public FutureTask(Callable<V> callable) {
         dsTaint.addTaint(callable.dsTaint);
         if (DroidSafeAndroidRuntime.control) throw new NullPointerException();
@@ -25,7 +25,7 @@ public class FutureTask<V> implements RunnableFuture<V> {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 11:36:27.734 -0400", hash_original_method = "343C63FBFE3927352CC6BAC59E679D87", hash_generated_method = "2CCB9268D56C5048A23CC4B55B195BDF")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:34.673 -0400", hash_original_method = "343C63FBFE3927352CC6BAC59E679D87", hash_generated_method = "83416B5B329B6CE27A74EAC65E12B935")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public FutureTask(Runnable runnable, V result) {
         dsTaint.addTaint(result.dsTaint);
@@ -36,68 +36,68 @@ public class FutureTask<V> implements RunnableFuture<V> {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 11:36:27.736 -0400", hash_original_method = "87256A2F3BC620B5A65A2DEACA482F4A", hash_generated_method = "45C4EF187447C64F9249F4B6E6E66DA7")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:34.673 -0400", hash_original_method = "87256A2F3BC620B5A65A2DEACA482F4A", hash_generated_method = "9EB3B2D2931C0081F06442317788573B")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public boolean isCancelled() {
-        boolean varDDF49245D95EDA4C2B1E13C2033FD842_754577830 = (sync.innerIsCancelled());
+        boolean varDDF49245D95EDA4C2B1E13C2033FD842_1015908381 = (sync.innerIsCancelled());
         return dsTaint.getTaintBoolean();
         // ---------- Original Method ----------
         //return sync.innerIsCancelled();
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 11:36:27.742 -0400", hash_original_method = "2C3AC011A196BCCAC0E9F76136242F15", hash_generated_method = "881D3A4434215C3002913FF3181FAFFD")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:34.673 -0400", hash_original_method = "2C3AC011A196BCCAC0E9F76136242F15", hash_generated_method = "F2229A4FA346FDC6238FEB72721BC76D")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public boolean isDone() {
-        boolean var965CDAC5D67CF710B30B4F663C7F54E8_2094610734 = (sync.innerIsDone());
+        boolean var965CDAC5D67CF710B30B4F663C7F54E8_240918929 = (sync.innerIsDone());
         return dsTaint.getTaintBoolean();
         // ---------- Original Method ----------
         //return sync.innerIsDone();
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 11:36:27.744 -0400", hash_original_method = "88A87863EC7E1056D8FE46146EF894BC", hash_generated_method = "A916F7A78CCFBA262C6593A46E7698FB")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:34.673 -0400", hash_original_method = "88A87863EC7E1056D8FE46146EF894BC", hash_generated_method = "2D1784F258E28882BE880D6879654455")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public boolean cancel(boolean mayInterruptIfRunning) {
         dsTaint.addTaint(mayInterruptIfRunning);
-        boolean var773625586E0267E8A3EBBAA24319A7D5_1069072882 = (sync.innerCancel(mayInterruptIfRunning));
+        boolean var773625586E0267E8A3EBBAA24319A7D5_1247459350 = (sync.innerCancel(mayInterruptIfRunning));
         return dsTaint.getTaintBoolean();
         // ---------- Original Method ----------
         //return sync.innerCancel(mayInterruptIfRunning);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 11:36:27.746 -0400", hash_original_method = "162C3BFD86443C5C054F309FCD025483", hash_generated_method = "1AB9458ED075C174399D2ED575A2E814")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:34.674 -0400", hash_original_method = "162C3BFD86443C5C054F309FCD025483", hash_generated_method = "3C6BB2D3DA49AEC13695A0808377B46D")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public V get() throws InterruptedException, ExecutionException {
-        V varA37DF55902CA2A9336EEECD4675516E6_1390521089 = (sync.innerGet());
+        V varA37DF55902CA2A9336EEECD4675516E6_1621588791 = (sync.innerGet());
         return (V)dsTaint.getTaint();
         // ---------- Original Method ----------
         //return sync.innerGet();
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 11:36:27.748 -0400", hash_original_method = "90F54A92EEE05A0240D215CA50ECEC0E", hash_generated_method = "D4D09333480DCC1BF7547D2FC7EBDE9F")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:34.674 -0400", hash_original_method = "90F54A92EEE05A0240D215CA50ECEC0E", hash_generated_method = "8F90595CCE87DE0958275113BFC23226")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public V get(long timeout, TimeUnit unit) throws InterruptedException, ExecutionException, TimeoutException {
         dsTaint.addTaint(unit.dsTaint);
         dsTaint.addTaint(timeout);
-        V varFB22D29AE11F287785E3B1D5ABE0D0BF_1668038843 = (sync.innerGet(unit.toNanos(timeout)));
+        V varFB22D29AE11F287785E3B1D5ABE0D0BF_835203112 = (sync.innerGet(unit.toNanos(timeout)));
         return (V)dsTaint.getTaint();
         // ---------- Original Method ----------
         //return sync.innerGet(unit.toNanos(timeout));
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 11:36:27.750 -0400", hash_original_method = "17876694EB227DDF47ED60F50DDB1AB8", hash_generated_method = "C94091D02744CCCC52E849681F4DC90A")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:34.674 -0400", hash_original_method = "17876694EB227DDF47ED60F50DDB1AB8", hash_generated_method = "11FDBB8776367F84FB5CD85A1E1E97A9")
     @DSModeled(DSC.SAFE)
     protected void done() {
         // ---------- Original Method ----------
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 11:36:27.751 -0400", hash_original_method = "A074A8CE9CED8FEBE8C93AF5A1F30EB2", hash_generated_method = "4AB6D33C5B5E0F3AAA23DAD4B2C2353E")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:34.674 -0400", hash_original_method = "A074A8CE9CED8FEBE8C93AF5A1F30EB2", hash_generated_method = "4C38BC12F93272ABE80B0A3E85BB3133")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     protected void set(V v) {
         dsTaint.addTaint(v.dsTaint);
         sync.innerSet(v);
@@ -106,8 +106,8 @@ public class FutureTask<V> implements RunnableFuture<V> {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 11:36:27.753 -0400", hash_original_method = "FDCD59BD475B14EFA0816CB7C0405257", hash_generated_method = "F831A11D671E3A7AB29A81D423D6BFFA")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:34.674 -0400", hash_original_method = "FDCD59BD475B14EFA0816CB7C0405257", hash_generated_method = "4BD28096153A4CFFCEF5822215EE7E4F")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     protected void setException(Throwable t) {
         dsTaint.addTaint(t.dsTaint);
         sync.innerSetException(t);
@@ -116,8 +116,8 @@ public class FutureTask<V> implements RunnableFuture<V> {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 11:36:27.755 -0400", hash_original_method = "C774B2E8DA9F32069C4712123B43B6CD", hash_generated_method = "CBF83DBDB3543F2501A1E7995AA3ED4F")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:34.675 -0400", hash_original_method = "C774B2E8DA9F32069C4712123B43B6CD", hash_generated_method = "41358DA92AFAAC7C338B8FDD86F6983F")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     public void run() {
         sync.innerRun();
         // ---------- Original Method ----------
@@ -125,10 +125,10 @@ public class FutureTask<V> implements RunnableFuture<V> {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 11:36:27.757 -0400", hash_original_method = "016A9258BFECCECB9307E0C389EB3A3D", hash_generated_method = "5E8792A8E905DA7FC8377F0637DBC4E9")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:34.675 -0400", hash_original_method = "016A9258BFECCECB9307E0C389EB3A3D", hash_generated_method = "65A7FB532291DD7ADFB3DBFFD9140173")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     protected boolean runAndReset() {
-        boolean varAE2B8B7DE670A1AC39F7189A42A39D82_1591334448 = (sync.innerRunAndReset());
+        boolean varAE2B8B7DE670A1AC39F7189A42A39D82_1065316597 = (sync.innerRunAndReset());
         return dsTaint.getTaintBoolean();
         // ---------- Original Method ----------
         //return sync.innerRunAndReset();
@@ -136,17 +136,12 @@ public class FutureTask<V> implements RunnableFuture<V> {
 
     
     private final class Sync extends AbstractQueuedSynchronizer {
-        private static final long serialVersionUID = -7828117401763700385L;
-        private static final int READY     = 0;
-        private static final int RUNNING   = 1;
-        private static final int RAN       = 2;
-        private static final int CANCELLED = 4;
         private Callable<V> callable;
         private V result;
         private Throwable exception;
         private volatile Thread runner;
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 11:36:27.759 -0400", hash_original_method = "D4E27E5AB3ABB7CBBB62FE148674AC0F", hash_generated_method = "D33E86B5CE5EF254E391312705405D24")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:34.675 -0400", hash_original_method = "D4E27E5AB3ABB7CBBB62FE148674AC0F", hash_generated_method = "BF9A50AC299CF2066F574B5EE4D633E1")
         @DSModeled(DSC.SAFE)
          Sync(Callable<V> callable) {
             dsTaint.addTaint(callable.dsTaint);
@@ -155,7 +150,7 @@ public class FutureTask<V> implements RunnableFuture<V> {
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 11:36:27.761 -0400", hash_original_method = "87EA2642D244DCFE21163D8924915415", hash_generated_method = "30212D4C56553DF31A7CC3EFF42BC762")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:34.675 -0400", hash_original_method = "87EA2642D244DCFE21163D8924915415", hash_generated_method = "316AB18521C93277D77488EF9BA0E3B5")
         @DSModeled(DSC.SAFE)
         private boolean ranOrCancelled(int state) {
             dsTaint.addTaint(state);
@@ -165,12 +160,12 @@ public class FutureTask<V> implements RunnableFuture<V> {
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 11:36:27.763 -0400", hash_original_method = "CB8395C0A8B6CFC4974D10648908BD61", hash_generated_method = "5A7FFAC07D6796B652CA5D0B58497564")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:34.676 -0400", hash_original_method = "CB8395C0A8B6CFC4974D10648908BD61", hash_generated_method = "551BB49F5A9D8857307632151B2DCA02")
         //DSFIXME:  CODE0002: Requires DSC value to be set
         protected int tryAcquireShared(int ignore) {
             dsTaint.addTaint(ignore);
             {
-                boolean var8BFC5F575698513A7EE323356BA90101_503410932 = (innerIsDone());
+                boolean var8BFC5F575698513A7EE323356BA90101_1160872795 = (innerIsDone());
             } //End flattened ternary
             return dsTaint.getTaintInt();
             // ---------- Original Method ----------
@@ -178,7 +173,7 @@ public class FutureTask<V> implements RunnableFuture<V> {
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 11:36:27.764 -0400", hash_original_method = "BADEFBD4164CAA2A58BD789F486A58F8", hash_generated_method = "09D995DEAE901778191B6C99C3A5EAAC")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:34.676 -0400", hash_original_method = "BADEFBD4164CAA2A58BD789F486A58F8", hash_generated_method = "7E016DEEB7B4077078D319244A7AF002")
         @DSModeled(DSC.SAFE)
         protected boolean tryReleaseShared(int ignore) {
             dsTaint.addTaint(ignore);
@@ -190,32 +185,32 @@ public class FutureTask<V> implements RunnableFuture<V> {
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 11:36:27.767 -0400", hash_original_method = "D8E0DD690F3527605076B5F197BA585A", hash_generated_method = "76BCBCFF7FBA4FF88F8B0F33FD858D8D")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:34.676 -0400", hash_original_method = "D8E0DD690F3527605076B5F197BA585A", hash_generated_method = "8998BB6918D44F74CFAEC0F8787CE4CD")
         //DSFIXME:  CODE0002: Requires DSC value to be set
          boolean innerIsCancelled() {
-            boolean var8BEF59445BD052803CE0794E87BAA6DD_1828897398 = (getState() == CANCELLED);
+            boolean var8BEF59445BD052803CE0794E87BAA6DD_1395579588 = (getState() == CANCELLED);
             return dsTaint.getTaintBoolean();
             // ---------- Original Method ----------
             //return getState() == CANCELLED;
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 11:36:27.768 -0400", hash_original_method = "3CE62A51F6A5DB16A8E43D03725714DF", hash_generated_method = "E6B40B6BA3BC962C42DBF51B1764A0CF")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:34.676 -0400", hash_original_method = "3CE62A51F6A5DB16A8E43D03725714DF", hash_generated_method = "0FA55A28230932538E21331CD3A85F86")
         //DSFIXME:  CODE0002: Requires DSC value to be set
          boolean innerIsDone() {
-            boolean var8999482CA2B0B8CB4140FFAD837B9ECA_729314426 = (ranOrCancelled(getState()) && runner == null);
+            boolean var8999482CA2B0B8CB4140FFAD837B9ECA_929688483 = (ranOrCancelled(getState()) && runner == null);
             return dsTaint.getTaintBoolean();
             // ---------- Original Method ----------
             //return ranOrCancelled(getState()) && runner == null;
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 11:36:27.775 -0400", hash_original_method = "E3CC861BC123329FE0CD5116647662CC", hash_generated_method = "A2B370103A61609E957FE4CA1EB7793F")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:34.676 -0400", hash_original_method = "E3CC861BC123329FE0CD5116647662CC", hash_generated_method = "3F1551A4AE06816A5C18217CC1D4A2BE")
         //DSFIXME:  CODE0002: Requires DSC value to be set
          V innerGet() throws InterruptedException, ExecutionException {
             acquireSharedInterruptibly(0);
             {
-                boolean var243AC7C964630701EBA35884971CFA3E_1359625883 = (getState() == CANCELLED);
+                boolean var243AC7C964630701EBA35884971CFA3E_1834748026 = (getState() == CANCELLED);
                 if (DroidSafeAndroidRuntime.control) throw new CancellationException();
             } //End collapsed parenthetic
             if (DroidSafeAndroidRuntime.control) throw new ExecutionException(exception);
@@ -230,16 +225,16 @@ public class FutureTask<V> implements RunnableFuture<V> {
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 11:36:27.777 -0400", hash_original_method = "C6C2CADBDD008A3436D4C69E1505E94B", hash_generated_method = "4DA3D1DA68B6137D0A63FEDB89FF87FE")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:34.676 -0400", hash_original_method = "C6C2CADBDD008A3436D4C69E1505E94B", hash_generated_method = "9A820ECAA690211CF480E91E538063D3")
         //DSFIXME:  CODE0002: Requires DSC value to be set
          V innerGet(long nanosTimeout) throws InterruptedException, ExecutionException, TimeoutException {
             dsTaint.addTaint(nanosTimeout);
             {
-                boolean var879BFE9597045A774039A7B438000BFA_668520873 = (!tryAcquireSharedNanos(0, nanosTimeout));
+                boolean var879BFE9597045A774039A7B438000BFA_1873661163 = (!tryAcquireSharedNanos(0, nanosTimeout));
                 if (DroidSafeAndroidRuntime.control) throw new TimeoutException();
             } //End collapsed parenthetic
             {
-                boolean var243AC7C964630701EBA35884971CFA3E_534143336 = (getState() == CANCELLED);
+                boolean var243AC7C964630701EBA35884971CFA3E_1051413845 = (getState() == CANCELLED);
                 if (DroidSafeAndroidRuntime.control) throw new CancellationException();
             } //End collapsed parenthetic
             if (DroidSafeAndroidRuntime.control) throw new ExecutionException(exception);
@@ -255,7 +250,7 @@ public class FutureTask<V> implements RunnableFuture<V> {
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 11:36:27.779 -0400", hash_original_method = "02A830CC89A3607D091CAAFD46553563", hash_generated_method = "7887E12DB36659AD47300E96926D2578")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:34.677 -0400", hash_original_method = "02A830CC89A3607D091CAAFD46553563", hash_generated_method = "77ABE2785031BEA0E721A61ED58DD5DE")
         //DSFIXME:  CODE0002: Requires DSC value to be set
          void innerSet(V v) {
             dsTaint.addTaint(v.dsTaint);
@@ -266,7 +261,7 @@ public class FutureTask<V> implements RunnableFuture<V> {
                     releaseShared(0);
                 } //End block
                 {
-                    boolean var02D1A0A0014E5AAB86ABA220F02F24C2_1179809617 = (compareAndSetState(s, RAN));
+                    boolean var02D1A0A0014E5AAB86ABA220F02F24C2_434927823 = (compareAndSetState(s, RAN));
                     {
                         releaseShared(0);
                         done();
@@ -292,7 +287,7 @@ public class FutureTask<V> implements RunnableFuture<V> {
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 11:36:27.783 -0400", hash_original_method = "05A852D9D717B3F2A7ED4890D7DD8417", hash_generated_method = "C24E57AE680E939EE8DAC2F269C83C6C")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:34.677 -0400", hash_original_method = "05A852D9D717B3F2A7ED4890D7DD8417", hash_generated_method = "4D729B2A1A78A7199952B411447A39DD")
         //DSFIXME:  CODE0002: Requires DSC value to be set
          void innerSetException(Throwable t) {
             dsTaint.addTaint(t.dsTaint);
@@ -303,7 +298,7 @@ public class FutureTask<V> implements RunnableFuture<V> {
                     releaseShared(0);
                 } //End block
                 {
-                    boolean var02D1A0A0014E5AAB86ABA220F02F24C2_1843749413 = (compareAndSetState(s, RAN));
+                    boolean var02D1A0A0014E5AAB86ABA220F02F24C2_651356329 = (compareAndSetState(s, RAN));
                     {
                         releaseShared(0);
                         done();
@@ -329,7 +324,7 @@ public class FutureTask<V> implements RunnableFuture<V> {
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 11:36:27.787 -0400", hash_original_method = "8B39040A94FB4A11910F39A32682A441", hash_generated_method = "6C6A7D6D7F0A616CA0BF6732C6779FE7")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:34.677 -0400", hash_original_method = "8B39040A94FB4A11910F39A32682A441", hash_generated_method = "DBEAC1382E26FF056EF58BF6F87EC0B4")
         //DSFIXME:  CODE0002: Requires DSC value to be set
          boolean innerCancel(boolean mayInterruptIfRunning) {
             dsTaint.addTaint(mayInterruptIfRunning);
@@ -337,10 +332,10 @@ public class FutureTask<V> implements RunnableFuture<V> {
                 int s;
                 s = getState();
                 {
-                    boolean var654D8D629DE56FE5E8B24F2A611B22E8_1745819685 = (ranOrCancelled(s));
+                    boolean var654D8D629DE56FE5E8B24F2A611B22E8_25780004 = (ranOrCancelled(s));
                 } //End collapsed parenthetic
                 {
-                    boolean varF924582CA0B0E32FB2E38FF23994889A_278093272 = (compareAndSetState(s, CANCELLED));
+                    boolean varF924582CA0B0E32FB2E38FF23994889A_2037979451 = (compareAndSetState(s, CANCELLED));
                 } //End collapsed parenthetic
             } //End block
             {
@@ -370,25 +365,26 @@ public class FutureTask<V> implements RunnableFuture<V> {
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 11:36:27.791 -0400", hash_original_method = "98D56FA1D01F6A8481F25F546B1688C1", hash_generated_method = "BEFD3E937207D80FE54869EA8236D508")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:34.678 -0400", hash_original_method = "98D56FA1D01F6A8481F25F546B1688C1", hash_generated_method = "98BEDC494B9D497DC45D9743B9B14438")
         //DSFIXME:  CODE0002: Requires DSC value to be set
          void innerRun() {
             {
-                boolean varBE74B7AD2AE668C01DD4E1031446E56A_1246704309 = (!compareAndSetState(READY, RUNNING));
+                boolean varBE74B7AD2AE668C01DD4E1031446E56A_1825708668 = (!compareAndSetState(READY, RUNNING));
             } //End collapsed parenthetic
             runner = Thread.currentThread();
             {
-                boolean varF5ABBEC647038120E0FB1CB92F8BC93A_1668039397 = (getState() == RUNNING);
+                boolean varF5ABBEC647038120E0FB1CB92F8BC93A_2134381308 = (getState() == RUNNING);
                 {
+                    V result;
                     try 
                     {
                         result = callable.call();
-                        set(result);
                     } //End block
                     catch (Throwable ex)
                     {
                         setException(ex);
                     } //End block
+                    set(result);
                 } //End block
                 {
                     releaseShared(0);
@@ -413,21 +409,21 @@ public class FutureTask<V> implements RunnableFuture<V> {
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 11:36:27.800 -0400", hash_original_method = "8E960784829E06CF5804B32B20F49AB2", hash_generated_method = "E1D845880A0F5E51F73C590CC02B3BFA")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:34.678 -0400", hash_original_method = "8E960784829E06CF5804B32B20F49AB2", hash_generated_method = "6DA37C6B311C531BE9D2F5B17A14AAF6")
         //DSFIXME:  CODE0002: Requires DSC value to be set
          boolean innerRunAndReset() {
             {
-                boolean varBE74B7AD2AE668C01DD4E1031446E56A_267474025 = (!compareAndSetState(READY, RUNNING));
+                boolean varBE74B7AD2AE668C01DD4E1031446E56A_240189700 = (!compareAndSetState(READY, RUNNING));
             } //End collapsed parenthetic
             try 
             {
                 runner = Thread.currentThread();
                 {
-                    boolean var83983DFCC8BA2829DC391A1772D9E100_960563019 = (getState() == RUNNING);
+                    boolean var83983DFCC8BA2829DC391A1772D9E100_756400575 = (getState() == RUNNING);
                     callable.call();
                 } //End collapsed parenthetic
                 runner = null;
-                boolean varC5BE5D0497CC7CF959738250D8E5A8F5_2006317897 = (compareAndSetState(RUNNING, READY));
+                boolean varC5BE5D0497CC7CF959738250D8E5A8F5_1006271945 = (compareAndSetState(RUNNING, READY));
             } //End block
             catch (Throwable ex)
             {
@@ -450,10 +446,14 @@ public class FutureTask<V> implements RunnableFuture<V> {
         }
 
         
+        private static final long serialVersionUID = -7828117401763700385L;
+        private static final int READY     = 0;
+        private static final int RUNNING   = 1;
+        private static final int RAN       = 2;
+        private static final int CANCELLED = 4;
     }
 
 
     
 }
-
 

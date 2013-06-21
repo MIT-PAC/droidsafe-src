@@ -2,49 +2,44 @@ package libcore.io;
 
 // Droidsafe Imports
 import droidsafe.helpers.*;
-import droidsafe.runtime.DroidSafeAndroidRuntime;
 import droidsafe.annotations.*;
+import droidsafe.runtime.*;
 
-// import Iterator to deal with enhanced for loop translation
+// needed for enhanced for control translations
 import java.util.Iterator;
-
 import java.net.UnknownHostException;
 import libcore.io.OsConstants;
 
 public final class GaiException extends RuntimeException {
-    private final String functionName;
-    public final int error;
+    private String functionName;
+    public int error;
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:17.433 -0400", hash_original_method = "BA53EB307FD31FC241DD4C6044D04AD1", hash_generated_method = "5CACD82D341729C649E693D283B29D57")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:38.892 -0400", hash_original_method = "BA53EB307FD31FC241DD4C6044D04AD1", hash_generated_method = "D7173393D71287646BA029CD05625098")
     @DSModeled(DSC.SAFE)
     public GaiException(String functionName, int error) {
         dsTaint.addTaint(error);
         dsTaint.addTaint(functionName);
-        this.functionName = functionName;
-        this.error = error;
         // ---------- Original Method ----------
         //this.functionName = functionName;
         //this.error = error;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:17.433 -0400", hash_original_method = "845DC588FB53DD48B2B7818DC3F43C36", hash_generated_method = "BA93C2853E95FE3256F39E5BA2F6F31D")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:38.892 -0400", hash_original_method = "845DC588FB53DD48B2B7818DC3F43C36", hash_generated_method = "90C8F7C26AB464E2604BBA7AB707271D")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public GaiException(String functionName, int error, Throwable cause) {
         super(cause);
         dsTaint.addTaint(cause.dsTaint);
         dsTaint.addTaint(error);
         dsTaint.addTaint(functionName);
-        this.functionName = functionName;
-        this.error = error;
         // ---------- Original Method ----------
         //this.functionName = functionName;
         //this.error = error;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:17.433 -0400", hash_original_method = "6B923BF9D17AE00E606BE15037C1D30D", hash_generated_method = "625164E37139736D38C4A92215D8AC3D")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:38.892 -0400", hash_original_method = "6B923BF9D17AE00E606BE15037C1D30D", hash_generated_method = "ABC8852FAB2352FFCA7067BED48E864E")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     @Override
     public String getMessage() {
         String gaiName;
@@ -65,8 +60,8 @@ public final class GaiException extends RuntimeException {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:17.433 -0400", hash_original_method = "5B589888D552552C8BEA12CEE384825F", hash_generated_method = "3E85D8CEBBA7B754FCDD2EF8A55062E3")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:38.892 -0400", hash_original_method = "5B589888D552552C8BEA12CEE384825F", hash_generated_method = "DD6A68BC5711A0752025BF60BB7692E2")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     public UnknownHostException rethrowAsUnknownHostException(String detailMessage) throws UnknownHostException {
         dsTaint.addTaint(detailMessage);
         UnknownHostException newException;
@@ -81,10 +76,10 @@ public final class GaiException extends RuntimeException {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:17.433 -0400", hash_original_method = "81B83C8D72DB912D679B4B84F9977C22", hash_generated_method = "3FD36E1132B94743087BD7512E8854E1")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:38.893 -0400", hash_original_method = "81B83C8D72DB912D679B4B84F9977C22", hash_generated_method = "694902AA8702CBE50EA8C44CCC1E533A")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     public UnknownHostException rethrowAsUnknownHostException() throws UnknownHostException {
-    	if (DroidSafeAndroidRuntime.control) throw rethrowAsUnknownHostException(getMessage());
+        if (DroidSafeAndroidRuntime.control) throw rethrowAsUnknownHostException(getMessage());
         return (UnknownHostException)dsTaint.getTaint();
         // ---------- Original Method ----------
         //throw rethrowAsUnknownHostException(getMessage());
@@ -92,5 +87,4 @@ public final class GaiException extends RuntimeException {
 
     
 }
-
 

@@ -51,4 +51,3 @@ public interface MenuView {
         public boolean showsIcon();
     }
 }
-

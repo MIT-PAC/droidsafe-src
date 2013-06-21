@@ -2,12 +2,11 @@ package java.io;
 
 // Droidsafe Imports
 import droidsafe.helpers.*;
-import droidsafe.runtime.DroidSafeAndroidRuntime;
 import droidsafe.annotations.*;
+import droidsafe.runtime.*;
 
-// import Iterator to deal with enhanced for loop translation
+// needed for enhanced for control translations
 import java.util.Iterator;
-
 import java.util.Arrays;
 
 public class BufferedReader extends Reader {
@@ -18,7 +17,7 @@ public class BufferedReader extends Reader {
     private int mark = -1;
     private int markLimit = -1;
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:11.384 -0400", hash_original_method = "942CB30D704BB0D453BC7285AF3F8F63", hash_generated_method = "5ADD883E0BC0AA6D87E453EBBDBEDD92")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:24.412 -0400", hash_original_method = "942CB30D704BB0D453BC7285AF3F8F63", hash_generated_method = "63C9704C59CCE22EF83F20F4DDF01A51")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public BufferedReader(Reader in) {
         this(in, 8192);
@@ -27,14 +26,14 @@ public class BufferedReader extends Reader {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:11.384 -0400", hash_original_method = "14FDA92282030C83FA853ED51BF21EF3", hash_generated_method = "382E35AE5B4C87203DFFD577399024B5")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:24.412 -0400", hash_original_method = "14FDA92282030C83FA853ED51BF21EF3", hash_generated_method = "6B68218B9863FEA4F1F060956BEEBBF4")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public BufferedReader(Reader in, int size) {
         super(in);
         dsTaint.addTaint(in.dsTaint);
         dsTaint.addTaint(size);
-        if(DroidSafeAndroidRuntime.control) {
-            throw new IllegalArgumentException("size <= 0");
+        {
+            if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("size <= 0");
         } //End block
         buf = new char[size];
         // ---------- Original Method ----------
@@ -46,13 +45,13 @@ public class BufferedReader extends Reader {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:11.384 -0400", hash_original_method = "B09EB233D31BD7460B333EC44F947FB5", hash_generated_method = "F50C481F63CE8EE760D0E5B554D00361")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:24.413 -0400", hash_original_method = "B09EB233D31BD7460B333EC44F947FB5", hash_generated_method = "98C33C326604264D427EDB3F608636E4")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     @Override
     public void close() throws IOException {
         {
             {
-                boolean varF957ACFD15F9CAB66C8B758689F75D93_690058270 = (!isClosed());
+                boolean varF957ACFD15F9CAB66C8B758689F75D93_1078184535 = (!isClosed());
                 {
                     in.close();
                     buf = null;
@@ -69,8 +68,8 @@ public class BufferedReader extends Reader {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:11.384 -0400", hash_original_method = "CF9579814E96BB14759649D94186035A", hash_generated_method = "4E941A3DA2C705BD5ACB94A4135A3B7D")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:24.413 -0400", hash_original_method = "CF9579814E96BB14759649D94186035A", hash_generated_method = "5ED0743282878AA96878349048AC68E3")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     private int fillBuf() throws IOException {
         {
             int result;
@@ -109,7 +108,7 @@ public class BufferedReader extends Reader {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:11.385 -0400", hash_original_method = "1E545822701FEAEF52AB68BFB73351A8", hash_generated_method = "2FFDC29FB8A3F15D6C850C63AA97AC5B")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:24.413 -0400", hash_original_method = "1E545822701FEAEF52AB68BFB73351A8", hash_generated_method = "8CA111BDA923EE13B5D1AEEADFE636B1")
     @DSModeled(DSC.SAFE)
     private boolean isClosed() {
         return dsTaint.getTaintBoolean();
@@ -118,13 +117,13 @@ public class BufferedReader extends Reader {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:11.385 -0400", hash_original_method = "EDD7C6600C30549E606135C51354C55D", hash_generated_method = "B9F899FC936EC0DA4B0D2220B024886C")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:24.413 -0400", hash_original_method = "EDD7C6600C30549E606135C51354C55D", hash_generated_method = "8C2CFC9B6B8BE9D0811ED3B940788FAE")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     @Override
     public void mark(int markLimit) throws IOException {
         dsTaint.addTaint(markLimit);
-        if(DroidSafeAndroidRuntime.control) {
-            throw new IllegalArgumentException();
+        {
+            if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException();
         } //End block
         {
             checkNotClosed();
@@ -142,13 +141,13 @@ public class BufferedReader extends Reader {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:11.385 -0400", hash_original_method = "DB9CD04B651C70299E4D82CCA50FA441", hash_generated_method = "624AEAB44D72894EDBEC344728DE822A")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:24.414 -0400", hash_original_method = "DB9CD04B651C70299E4D82CCA50FA441", hash_generated_method = "78BAAA59316814811A201F75BA8401F1")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     private void checkNotClosed() throws IOException {
         {
-            boolean varF463C9E3EC09CF3DDC0E11AE27E5A7FD_73534101 = (isClosed());
+            boolean varF463C9E3EC09CF3DDC0E11AE27E5A7FD_1543160977 = (isClosed());
             {
-                throw new IOException("BufferedReader is closed");
+                if (DroidSafeAndroidRuntime.control) throw new IOException("BufferedReader is closed");
             } //End block
         } //End collapsed parenthetic
         // ---------- Original Method ----------
@@ -158,7 +157,7 @@ public class BufferedReader extends Reader {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:11.385 -0400", hash_original_method = "3448BF342B33B519FE64A3FA0274077D", hash_generated_method = "1296A617D9B4AD609D1BB5E17D8BA087")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:24.414 -0400", hash_original_method = "3448BF342B33B519FE64A3FA0274077D", hash_generated_method = "4C8BC0E845541479E10014C1D7864553")
     @DSModeled(DSC.SAFE)
     @Override
     public boolean markSupported() {
@@ -168,14 +167,14 @@ public class BufferedReader extends Reader {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:11.385 -0400", hash_original_method = "434E790CE8DCEADB6D081C3AE915A829", hash_generated_method = "A33DD7E676DB65CB4F43FE45C0E40784")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:24.414 -0400", hash_original_method = "434E790CE8DCEADB6D081C3AE915A829", hash_generated_method = "DCDFF864E5A2A4C05B422F8BB24353F6")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     @Override
     public int read() throws IOException {
         {
             checkNotClosed();
             {
-                boolean varE1DCD7572611CFC342E281668DF15BD2_428536227 = (pos < end || fillBuf() != -1);
+                boolean varE1DCD7572611CFC342E281668DF15BD2_116949988 = (pos < end || fillBuf() != -1);
             } //End collapsed parenthetic
         } //End block
         return dsTaint.getTaintInt();
@@ -190,11 +189,11 @@ public class BufferedReader extends Reader {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:11.385 -0400", hash_original_method = "EFCE29DD70FA840EFC7C884DCFC84327", hash_generated_method = "4D6502B0AB127D429A7EBAB3343894DE")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:24.414 -0400", hash_original_method = "EFCE29DD70FA840EFC7C884DCFC84327", hash_generated_method = "32D9E8FC8FAE8091AFEF00622427979D")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     @Override
     public int read(char[] buffer, int offset, int length) throws IOException {
-        dsTaint.addTaint(buffer);
+        dsTaint.addTaint(buffer[0]);
         dsTaint.addTaint(length);
         dsTaint.addTaint(offset);
         {
@@ -215,7 +214,7 @@ public class BufferedReader extends Reader {
                     outstanding -= count;
                 } //End block
                 {
-                    boolean var083C8F04C054694A531EE3C49551E965_1877818645 = (outstanding == 0 || (outstanding < length && !in.ready()));
+                    boolean var083C8F04C054694A531EE3C49551E965_233350052 = (outstanding == 0 || (outstanding < length && !in.ready()));
                 } //End collapsed parenthetic
                 {
                     int count;
@@ -226,7 +225,7 @@ public class BufferedReader extends Reader {
                     } //End block
                 } //End block
                 {
-                    boolean var2F891E1904C23DFC1C9E4BA2B7129345_1872365752 = (fillBuf() == -1);
+                    boolean var2F891E1904C23DFC1C9E4BA2B7129345_823106134 = (fillBuf() == -1);
                 } //End collapsed parenthetic
             } //End block
             int count;
@@ -238,15 +237,12 @@ public class BufferedReader extends Reader {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:11.385 -0400", hash_original_method = "5E2706ACF0BEEE9ADCFD58329E615807", hash_generated_method = "0F532E46C277615063318370CF37EFAE")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:24.415 -0400", hash_original_method = "5E2706ACF0BEEE9ADCFD58329E615807", hash_generated_method = "9AABA6AC903FDEA63BD4F0CC33E71352")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     final void chompNewline() throws IOException {
         {
-            boolean var1444B0C0C85F4E3FAF371339243602E1_311034826 = ((pos != end || fillBuf() != -1)
+            boolean var1444B0C0C85F4E3FAF371339243602E1_989021546 = ((pos != end || fillBuf() != -1)
                 && buf[pos] == '\n');
-            {
-                pos++;
-            } //End block
         } //End collapsed parenthetic
         // ---------- Original Method ----------
         //if ((pos != end || fillBuf() != -1)
@@ -256,13 +252,13 @@ public class BufferedReader extends Reader {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:11.386 -0400", hash_original_method = "2E7624AE82CF066587D6991C8B167359", hash_generated_method = "48BA29A60E8B4FA93012B749CF7660D5")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:24.416 -0400", hash_original_method = "2E7624AE82CF066587D6991C8B167359", hash_generated_method = "9A98C209286BEEDB1F12FD15CDD8F188")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public String readLine() throws IOException {
         {
             checkNotClosed();
             {
-                boolean var7983B727EF81FA873169B09DF8640644_1881298717 = (pos == end && fillBuf() == -1);
+                boolean var7983B727EF81FA873169B09DF8640644_1896154611 = (pos == end && fillBuf() == -1);
             } //End collapsed parenthetic
             {
                 int charPos;
@@ -280,11 +276,8 @@ public class BufferedReader extends Reader {
                         res = new String(buf, pos, charPos - pos);
                         pos = charPos + 1;
                         {
-                            boolean varAAEDD6882D7066AC025BD33F2AAFB662_1153393327 = (((pos < end) || (fillBuf() != -1))
+                            boolean varAAEDD6882D7066AC025BD33F2AAFB662_401419165 = (((pos < end) || (fillBuf() != -1))
                             && (buf[pos] == '\n'));
-                            {
-                                pos++;
-                            } //End block
                         } //End collapsed parenthetic
                     } //End block
                 } //End block
@@ -297,14 +290,14 @@ public class BufferedReader extends Reader {
             {
                 pos = end;
                 {
-                    String varCD430CC847458CF28DA4CE072C2E0D33_1690698126 = (result.toString());
+                    String varCD430CC847458CF28DA4CE072C2E0D33_1768112761 = (result.toString());
                 } //End block
                 {
-                    boolean var2F891E1904C23DFC1C9E4BA2B7129345_1187270724 = (fillBuf() == -1);
+                    boolean var2F891E1904C23DFC1C9E4BA2B7129345_425494114 = (fillBuf() == -1);
                     {
                         {
-                            boolean varCD710FD99EF07E8245632A4ECEF451ED_454613111 = (result.length() > 0 || eol != '\0');
-                            Object varC1032D8E10FF8C1780E71B7B4F2BB762_120895889 = (result.toString());
+                            boolean varCD710FD99EF07E8245632A4ECEF451ED_366895503 = (result.length() > 0 || eol != '\0');
+                            Object varC1032D8E10FF8C1780E71B7B4F2BB762_939083997 = (result.toString());
                         } //End flattened ternary
                     } //End block
                 } //End collapsed parenthetic
@@ -324,14 +317,14 @@ public class BufferedReader extends Reader {
                                 result.append(buf, pos, charPos - pos - 1);
                             } //End block
                             pos = charPos + 1;
-                            String varC1032D8E10FF8C1780E71B7B4F2BB762_1462009000 = (result.toString());
+                            String varC1032D8E10FF8C1780E71B7B4F2BB762_205916447 = (result.toString());
                         } //End block
                         {
                             {
                                 result.append(buf, pos, charPos - pos - 1);
                             } //End block
                             pos = charPos;
-                            String varC1032D8E10FF8C1780E71B7B4F2BB762_1583849559 = (result.toString());
+                            String varC1032D8E10FF8C1780E71B7B4F2BB762_1557618989 = (result.toString());
                         } //End block
                     } //End block
                 } //End collapsed parenthetic
@@ -349,13 +342,13 @@ public class BufferedReader extends Reader {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:11.386 -0400", hash_original_method = "8DBFD5F046457CCDE72CB0FF01FB7E1A", hash_generated_method = "5A9520D3B01334FC5486E78866DB8AF4")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:24.416 -0400", hash_original_method = "8DBFD5F046457CCDE72CB0FF01FB7E1A", hash_generated_method = "0327CE7C1875125C0B69BB79944596DC")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     @Override
     public boolean ready() throws IOException {
         {
             checkNotClosed();
-            boolean var89169E58C8D8A7FBDD3FA109B0683450_1240228651 = (((end - pos) > 0) || in.ready());
+            boolean var89169E58C8D8A7FBDD3FA109B0683450_1866432764 = (((end - pos) > 0) || in.ready());
         } //End block
         return dsTaint.getTaintBoolean();
         // ---------- Original Method ----------
@@ -366,14 +359,14 @@ public class BufferedReader extends Reader {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:11.386 -0400", hash_original_method = "CFE9F55B11CEBEA9E9DFCD46210902F2", hash_generated_method = "B9CAAD067EEBD08CC582AB9538C9C244")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:24.416 -0400", hash_original_method = "CFE9F55B11CEBEA9E9DFCD46210902F2", hash_generated_method = "061C92DFB7AF9F77D95B7B194D787278")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     @Override
     public void reset() throws IOException {
         {
             checkNotClosed();
-            if(DroidSafeAndroidRuntime.control) {
-                throw new IOException("Invalid mark");
+            {
+                if (DroidSafeAndroidRuntime.control) throw new IOException("Invalid mark");
             } //End block
             pos = mark;
         } //End block
@@ -388,13 +381,13 @@ public class BufferedReader extends Reader {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:11.386 -0400", hash_original_method = "6635225943CAECFE84E5456D76E9313A", hash_generated_method = "78C0E20D97858617DAB879304D91DED2")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:24.417 -0400", hash_original_method = "6635225943CAECFE84E5456D76E9313A", hash_generated_method = "E1CEB8357730BF9F7945EDCDF3464217")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     @Override
     public long skip(long byteCount) throws IOException {
         dsTaint.addTaint(byteCount);
-        if(DroidSafeAndroidRuntime.control) {
-            throw new IllegalArgumentException("byteCount < 0: " + byteCount);
+        {
+            if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("byteCount < 0: " + byteCount);
         } //End block
         {
             checkNotClosed();
@@ -403,7 +396,7 @@ public class BufferedReader extends Reader {
             pos = end;
             {
                 {
-                    boolean var2F891E1904C23DFC1C9E4BA2B7129345_2103864907 = (fillBuf() == -1);
+                    boolean var2F891E1904C23DFC1C9E4BA2B7129345_489557385 = (fillBuf() == -1);
                 } //End collapsed parenthetic
                 {
                     pos += byteCount - read;
@@ -419,5 +412,4 @@ public class BufferedReader extends Reader {
 
     
 }
-
 

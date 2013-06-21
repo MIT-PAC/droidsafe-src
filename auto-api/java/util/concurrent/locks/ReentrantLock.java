@@ -12,11 +12,10 @@ import java.util.concurrent.*;
 import java.util.concurrent.atomic.*;
 
 public class ReentrantLock implements Lock, java.io.Serializable {
-    private static long serialVersionUID = 7373984872572414699L;
     private Sync sync;
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 12:13:29.615 -0400", hash_original_method = "CAF4BD8277F97E8E8A833F3DA738B0B2", hash_generated_method = "280DDDBD309D11E0E60A27E69059E896")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:35.220 -0400", hash_original_method = "CAF4BD8277F97E8E8A833F3DA738B0B2", hash_generated_method = "D575B8316542FC333CB3BC5C812414AD")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     public ReentrantLock() {
         sync = new NonfairSync();
         // ---------- Original Method ----------
@@ -24,8 +23,8 @@ public class ReentrantLock implements Lock, java.io.Serializable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 12:13:29.628 -0400", hash_original_method = "D5E979A18BF9FB96236498521D2048B7", hash_generated_method = "C8570869499419D8C69AFC13C0AC98DB")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:35.221 -0400", hash_original_method = "D5E979A18BF9FB96236498521D2048B7", hash_generated_method = "9A95C377335F907931C2218D7CFF6D36")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     public ReentrantLock(boolean fair) {
         dsTaint.addTaint(fair);
         sync = fair ? new FairSync() : new NonfairSync();
@@ -34,8 +33,8 @@ public class ReentrantLock implements Lock, java.io.Serializable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 12:13:29.692 -0400", hash_original_method = "97675D396F33E00D31856AF34DD1ED6B", hash_generated_method = "2ECAF7CB7FA90D3BF00BE3B835D0DE1F")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:35.221 -0400", hash_original_method = "97675D396F33E00D31856AF34DD1ED6B", hash_generated_method = "F69D427B4A2E72BA43563F8DEC741F82")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     public void lock() {
         sync.lock();
         // ---------- Original Method ----------
@@ -43,8 +42,8 @@ public class ReentrantLock implements Lock, java.io.Serializable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 12:13:29.697 -0400", hash_original_method = "5966BE77DAE264B5F21646B0E7A08FC1", hash_generated_method = "514A6A0D88F9F385AE71FC60BB19B78B")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:35.221 -0400", hash_original_method = "5966BE77DAE264B5F21646B0E7A08FC1", hash_generated_method = "CFF689BB53A067D7B9EB5F12CA3F00CC")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     public void lockInterruptibly() throws InterruptedException {
         sync.acquireInterruptibly(1);
         // ---------- Original Method ----------
@@ -52,30 +51,30 @@ public class ReentrantLock implements Lock, java.io.Serializable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 12:13:29.705 -0400", hash_original_method = "9B7882D242270D7813AEE17389132741", hash_generated_method = "CAD77C40582F98E87F53BE32C35D9598")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:35.221 -0400", hash_original_method = "9B7882D242270D7813AEE17389132741", hash_generated_method = "D80883CF2368B82BAE1EE28D3D01B21C")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public boolean tryLock() {
-        boolean var01D158C305499B950DC2B450CF0A13DF_623300695 = (sync.nonfairTryAcquire(1));
+        boolean var01D158C305499B950DC2B450CF0A13DF_1867941188 = (sync.nonfairTryAcquire(1));
         return dsTaint.getTaintBoolean();
         // ---------- Original Method ----------
         //return sync.nonfairTryAcquire(1);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 12:13:29.738 -0400", hash_original_method = "6EF7D2E282F143C52CC20B0DBAA61A21", hash_generated_method = "95539EAFB42E9C7F31E9DC544869DEC5")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:35.221 -0400", hash_original_method = "6EF7D2E282F143C52CC20B0DBAA61A21", hash_generated_method = "B4BD5451900411B27DEDC2E5FBCB5A47")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public boolean tryLock(long timeout, TimeUnit unit) throws InterruptedException {
         dsTaint.addTaint(unit.dsTaint);
         dsTaint.addTaint(timeout);
-        boolean var032A6E2E0DFEA3BC6D0CEF4809A04918_47627259 = (sync.tryAcquireNanos(1, unit.toNanos(timeout)));
+        boolean var032A6E2E0DFEA3BC6D0CEF4809A04918_196484656 = (sync.tryAcquireNanos(1, unit.toNanos(timeout)));
         return dsTaint.getTaintBoolean();
         // ---------- Original Method ----------
         //return sync.tryAcquireNanos(1, unit.toNanos(timeout));
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 12:13:29.749 -0400", hash_original_method = "7AD42B9E2BC6DD4A4DE0EB9EBA3A2515", hash_generated_method = "CBE14A8287054E66CFC35BAD3F4C1141")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:35.222 -0400", hash_original_method = "7AD42B9E2BC6DD4A4DE0EB9EBA3A2515", hash_generated_method = "87142E80D82254348B0CA43367BBC9B7")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     public void unlock() {
         sync.release(1);
         // ---------- Original Method ----------
@@ -83,47 +82,47 @@ public class ReentrantLock implements Lock, java.io.Serializable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 12:13:29.757 -0400", hash_original_method = "6BB095C6835043568D960ACB9C15058D", hash_generated_method = "4FE3174B905178F7A6913F4AE5D74965")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:35.222 -0400", hash_original_method = "6BB095C6835043568D960ACB9C15058D", hash_generated_method = "F3B050BF99872BDAF19AB65E40F2252F")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public Condition newCondition() {
-        Condition var8D61D56731D45301D15FC2EC732DBFD7_512752415 = (sync.newCondition());
+        Condition var8D61D56731D45301D15FC2EC732DBFD7_879835941 = (sync.newCondition());
         return (Condition)dsTaint.getTaint();
         // ---------- Original Method ----------
         //return sync.newCondition();
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 12:13:29.767 -0400", hash_original_method = "7FC57D6521874F49E1ACFD5770F280CF", hash_generated_method = "CC7E1E3C8ED9605A3C33B4CE1FC14CBC")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:35.222 -0400", hash_original_method = "7FC57D6521874F49E1ACFD5770F280CF", hash_generated_method = "104A28932B7E7CA326BBFAFE154C12B6")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public int getHoldCount() {
-        int var0CF7228364AC2BBEEE65804FC32AE455_1130596324 = (sync.getHoldCount());
+        int var0CF7228364AC2BBEEE65804FC32AE455_1744265450 = (sync.getHoldCount());
         return dsTaint.getTaintInt();
         // ---------- Original Method ----------
         //return sync.getHoldCount();
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 12:13:29.776 -0400", hash_original_method = "53A74F7432D74C33316852C3E739832B", hash_generated_method = "B48C694DD8CB8971610495CCAA7DB8BD")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:35.222 -0400", hash_original_method = "53A74F7432D74C33316852C3E739832B", hash_generated_method = "728A515EF67328D3E7B7323612B4678F")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public boolean isHeldByCurrentThread() {
-        boolean var12281D4A72DEB9F8816A0A46604F1374_360233321 = (sync.isHeldExclusively());
+        boolean var12281D4A72DEB9F8816A0A46604F1374_893004162 = (sync.isHeldExclusively());
         return dsTaint.getTaintBoolean();
         // ---------- Original Method ----------
         //return sync.isHeldExclusively();
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 12:13:29.790 -0400", hash_original_method = "B8A2470400F707CBBF058BF4DA6F8D15", hash_generated_method = "8636E274D3D6CA567D6D46A4E03C59B8")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:35.222 -0400", hash_original_method = "B8A2470400F707CBBF058BF4DA6F8D15", hash_generated_method = "96D4C4C8CB27995867F94461BF7A5124")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public boolean isLocked() {
-        boolean var720015946EB5BA7A9510B4F7065A84D7_146519192 = (sync.isLocked());
+        boolean var720015946EB5BA7A9510B4F7065A84D7_1800619878 = (sync.isLocked());
         return dsTaint.getTaintBoolean();
         // ---------- Original Method ----------
         //return sync.isLocked();
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 12:13:29.802 -0400", hash_original_method = "6835E283E5F9E7FBD3FF7844476992AD", hash_generated_method = "40F31E047D73F3B698B4BE0FB1C087C3")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:35.222 -0400", hash_original_method = "6835E283E5F9E7FBD3FF7844476992AD", hash_generated_method = "55D62964B9EF84187B0EE15ED60B4146")
     @DSModeled(DSC.SAFE)
     public final boolean isFair() {
         return dsTaint.getTaintBoolean();
@@ -132,64 +131,64 @@ public class ReentrantLock implements Lock, java.io.Serializable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 12:13:29.805 -0400", hash_original_method = "DB009A0944F572B5167ED6D51E109787", hash_generated_method = "F442BB8CB664AD7904C00E9EBA1E1819")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:35.222 -0400", hash_original_method = "DB009A0944F572B5167ED6D51E109787", hash_generated_method = "6301EE16A02F6A58848D18F5AF366E4D")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     protected Thread getOwner() {
-        Thread var9841B14668EFDB9EA09AF644B20927F7_1843097803 = (sync.getOwner());
+        Thread var9841B14668EFDB9EA09AF644B20927F7_208507840 = (sync.getOwner());
         return (Thread)dsTaint.getTaint();
         // ---------- Original Method ----------
         //return sync.getOwner();
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 12:13:29.817 -0400", hash_original_method = "33B7DCC82A105082FC4D268ED56F9DE5", hash_generated_method = "1F1617A49F57BCB1BC1A605618236AAD")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:35.223 -0400", hash_original_method = "33B7DCC82A105082FC4D268ED56F9DE5", hash_generated_method = "A8BA0553778BBCF84455648316F178DB")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public final boolean hasQueuedThreads() {
-        boolean var4C0A0AB508905DA8D619627A5EEFD574_953222192 = (sync.hasQueuedThreads());
+        boolean var4C0A0AB508905DA8D619627A5EEFD574_1954772308 = (sync.hasQueuedThreads());
         return dsTaint.getTaintBoolean();
         // ---------- Original Method ----------
         //return sync.hasQueuedThreads();
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 12:13:29.829 -0400", hash_original_method = "7B179E46CDF5B520CCEEF15512EC2C63", hash_generated_method = "1A485911013E78E6F8C49C217DAAA11B")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:35.223 -0400", hash_original_method = "7B179E46CDF5B520CCEEF15512EC2C63", hash_generated_method = "1167C05B87BEF768A17976E384390B27")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public final boolean hasQueuedThread(Thread thread) {
         dsTaint.addTaint(thread.dsTaint);
-        boolean var0681201A478D613CAAB4B4D5196C3EF3_468441810 = (sync.isQueued(thread));
+        boolean var0681201A478D613CAAB4B4D5196C3EF3_606996353 = (sync.isQueued(thread));
         return dsTaint.getTaintBoolean();
         // ---------- Original Method ----------
         //return sync.isQueued(thread);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 12:13:29.837 -0400", hash_original_method = "DFFF2C05339152644F00EC2FFC57EFB9", hash_generated_method = "598DDD3CF1BAF9908BE380D75EC15622")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:35.223 -0400", hash_original_method = "DFFF2C05339152644F00EC2FFC57EFB9", hash_generated_method = "A194A01BF0693534A40E7EC44A4313E6")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public final int getQueueLength() {
-        int var2545CC142A0CD1008911850681315651_470875118 = (sync.getQueueLength());
+        int var2545CC142A0CD1008911850681315651_258408467 = (sync.getQueueLength());
         return dsTaint.getTaintInt();
         // ---------- Original Method ----------
         //return sync.getQueueLength();
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 12:13:29.845 -0400", hash_original_method = "4BC73C35668DA24636BE58FB68209032", hash_generated_method = "78F1C68DCA4DAB6242EDB4095156BD59")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:35.223 -0400", hash_original_method = "4BC73C35668DA24636BE58FB68209032", hash_generated_method = "31FEDBE5B3437EB0911140405A66BB6B")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     protected Collection<Thread> getQueuedThreads() {
-        Collection<Thread> var31D858562CBAED119D353541F01C16B4_1192927234 = (sync.getQueuedThreads());
+        Collection<Thread> var31D858562CBAED119D353541F01C16B4_1154809704 = (sync.getQueuedThreads());
         return (Collection<Thread>)dsTaint.getTaint();
         // ---------- Original Method ----------
         //return sync.getQueuedThreads();
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 12:13:29.864 -0400", hash_original_method = "BF91F0F13FB6E88A38744502E21F1F2D", hash_generated_method = "644853ACB06CFDD21B7E4913E683B43F")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:35.223 -0400", hash_original_method = "BF91F0F13FB6E88A38744502E21F1F2D", hash_generated_method = "297E4ACE28AAE06858FBFB111506FBD9")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public boolean hasWaiters(Condition condition) {
         dsTaint.addTaint(condition.dsTaint);
         if (DroidSafeAndroidRuntime.control) throw new NullPointerException();
         if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("not owner");
-        boolean varD78146513D32810B85075F5879934833_188208194 = (sync.hasWaiters((AbstractQueuedSynchronizer.ConditionObject)condition));
+        boolean varD78146513D32810B85075F5879934833_246148658 = (sync.hasWaiters((AbstractQueuedSynchronizer.ConditionObject)condition));
         return dsTaint.getTaintBoolean();
         // ---------- Original Method ----------
         //if (condition == null)
@@ -200,13 +199,13 @@ public class ReentrantLock implements Lock, java.io.Serializable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 12:13:29.878 -0400", hash_original_method = "D4277B3B6ED39F705D915D3806A5548A", hash_generated_method = "E8191F9BD7EC80AD5C0DAEC13FC90E14")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:35.224 -0400", hash_original_method = "D4277B3B6ED39F705D915D3806A5548A", hash_generated_method = "E911279000B6D608CAC1FDE12E08383F")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public int getWaitQueueLength(Condition condition) {
         dsTaint.addTaint(condition.dsTaint);
         if (DroidSafeAndroidRuntime.control) throw new NullPointerException();
         if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("not owner");
-        int var60A2F707F5BC43BB059D2028F4E4733B_1654529754 = (sync.getWaitQueueLength((AbstractQueuedSynchronizer.ConditionObject)condition));
+        int var60A2F707F5BC43BB059D2028F4E4733B_927858579 = (sync.getWaitQueueLength((AbstractQueuedSynchronizer.ConditionObject)condition));
         return dsTaint.getTaintInt();
         // ---------- Original Method ----------
         //if (condition == null)
@@ -217,13 +216,13 @@ public class ReentrantLock implements Lock, java.io.Serializable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 12:13:29.894 -0400", hash_original_method = "29738EA386BFBB41E36C961DB4B1CBE5", hash_generated_method = "E6C802EE0D72D70263E3CAF191FD2522")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:35.224 -0400", hash_original_method = "29738EA386BFBB41E36C961DB4B1CBE5", hash_generated_method = "CE5A5FC618B2556325976274FE053BC1")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     protected Collection<Thread> getWaitingThreads(Condition condition) {
         dsTaint.addTaint(condition.dsTaint);
         if (DroidSafeAndroidRuntime.control) throw new NullPointerException();
         if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("not owner");
-        Collection<Thread> varACD2ABC34A7FF03371BF6C03D9CBDA6D_987663166 = (sync.getWaitingThreads((AbstractQueuedSynchronizer.ConditionObject)condition));
+        Collection<Thread> varACD2ABC34A7FF03371BF6C03D9CBDA6D_2129297427 = (sync.getWaitingThreads((AbstractQueuedSynchronizer.ConditionObject)condition));
         return (Collection<Thread>)dsTaint.getTaint();
         // ---------- Original Method ----------
         //if (condition == null)
@@ -234,12 +233,12 @@ public class ReentrantLock implements Lock, java.io.Serializable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 12:13:29.911 -0400", hash_original_method = "E0C199518E39715763AFB28F76F97305", hash_generated_method = "9FDBA0EAB4976321EA437DA87BC19BE9")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:35.225 -0400", hash_original_method = "E0C199518E39715763AFB28F76F97305", hash_generated_method = "588F9C933881510D86F4D5C051C3CCDD")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public String toString() {
         Thread o;
         o = sync.getOwner();
-        String var07CE3B177FABFF5F528A4CB3F97F9E34_2140855948 = (super.toString() + ((o == null) ?
+        String var07CE3B177FABFF5F528A4CB3F97F9E34_372540067 = (super.toString() + ((o == null) ?
                                    "[Unlocked]" :
                                    "[Locked by thread " + o.getName() + "]")); //DSFIXME:  CODE0008: Nested ternary operator in expression
         return dsTaint.getTaintString();
@@ -252,12 +251,17 @@ public class ReentrantLock implements Lock, java.io.Serializable {
 
     
     abstract static class Sync extends AbstractQueuedSynchronizer {
-        private static long serialVersionUID = -5179523762034025860L;
         
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:35.225 -0400", hash_original_method = "CE5216523211DD0EDAA573C9C4B98FBA", hash_generated_method = "CE5216523211DD0EDAA573C9C4B98FBA")
+                public Sync ()
+        {
+        }
+
+
         abstract void lock();
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 12:13:29.949 -0400", hash_original_method = "D19DB0AA686FDE0FA905238F42C3F88E", hash_generated_method = "F58B595ED4D615C4E89F89906987A292")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:35.225 -0400", hash_original_method = "D19DB0AA686FDE0FA905238F42C3F88E", hash_generated_method = "589EE1E03C726C500C7FAA5619651176")
         //DSFIXME:  CODE0002: Requires DSC value to be set
         final boolean nonfairTryAcquire(int acquires) {
             dsTaint.addTaint(acquires);
@@ -267,14 +271,14 @@ public class ReentrantLock implements Lock, java.io.Serializable {
             c = getState();
             {
                 {
-                    boolean varF66BF2DB7461880C09D8FA1630E5A95E_1523758080 = (compareAndSetState(0, acquires));
+                    boolean varF66BF2DB7461880C09D8FA1630E5A95E_855332618 = (compareAndSetState(0, acquires));
                     {
                         setExclusiveOwnerThread(current);
                     } //End block
                 } //End collapsed parenthetic
             } //End block
             {
-                boolean varE75766FA74E04E655F03A151D4B25AC7_1794852162 = (current == getExclusiveOwnerThread());
+                boolean varE75766FA74E04E655F03A151D4B25AC7_2096306897 = (current == getExclusiveOwnerThread());
                 {
                     int nextc;
                     nextc = c + acquires;
@@ -303,14 +307,14 @@ public class ReentrantLock implements Lock, java.io.Serializable {
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 12:13:29.975 -0400", hash_original_method = "F58D783FAFD21E630011410A68B89B8B", hash_generated_method = "A926FA0E652DA5855B3B6661E97EEB7A")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:35.226 -0400", hash_original_method = "F58D783FAFD21E630011410A68B89B8B", hash_generated_method = "2A42084BC8B6C08007B205C312412A72")
         //DSFIXME:  CODE0002: Requires DSC value to be set
         protected final boolean tryRelease(int releases) {
             dsTaint.addTaint(releases);
             int c;
             c = getState() - releases;
             {
-                boolean var171DA8AF5FD35C68B337E23A0EB8AC61_1582511284 = (Thread.currentThread() != getExclusiveOwnerThread());
+                boolean var171DA8AF5FD35C68B337E23A0EB8AC61_1974003572 = (Thread.currentThread() != getExclusiveOwnerThread());
                 if (DroidSafeAndroidRuntime.control) throw new IllegalMonitorStateException();
             } //End collapsed parenthetic
             boolean free;
@@ -335,31 +339,32 @@ public class ReentrantLock implements Lock, java.io.Serializable {
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 12:13:29.990 -0400", hash_original_method = "A843CC28FFAE9A089B89A0058BA2B9D5", hash_generated_method = "D3F1D431A1D0BB6D3C9A3F12DD88329B")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:35.226 -0400", hash_original_method = "A843CC28FFAE9A089B89A0058BA2B9D5", hash_generated_method = "8D23E8BBD1CC5A6320477E50B99AE07E")
         //DSFIXME:  CODE0002: Requires DSC value to be set
         protected final boolean isHeldExclusively() {
-            boolean var3CE6B8DE56D5A33803435E843AACF76A_68018482 = (getExclusiveOwnerThread() == Thread.currentThread());
+            boolean var3CE6B8DE56D5A33803435E843AACF76A_507223247 = (getExclusiveOwnerThread() == Thread.currentThread());
             return dsTaint.getTaintBoolean();
             // ---------- Original Method ----------
             //return getExclusiveOwnerThread() == Thread.currentThread();
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 12:13:29.997 -0400", hash_original_method = "093F0D0E6A279CA43864791B6FD65040", hash_generated_method = "8AA34E3FD2711094A803E6A05A1AF47C")
-        @DSModeled(DSC.SAFE)
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:35.227 -0400", hash_original_method = "093F0D0E6A279CA43864791B6FD65040", hash_generated_method = "AFD2B6DF9215189AA5EA6E95BB1FFDFC")
+        //DSFIXME:  CODE0002: Requires DSC value to be set
         final ConditionObject newCondition() {
+            ConditionObject var1FFAFF67C805BD7123742C98A74C613E_1104245312 = (new ConditionObject());
             return (ConditionObject)dsTaint.getTaint();
             // ---------- Original Method ----------
             //return new ConditionObject();
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 12:13:30.015 -0400", hash_original_method = "24CA7AAFB844A1400E08D949A036E749", hash_generated_method = "B805C756E6F07C6AF8B901A79F38DFA8")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:35.228 -0400", hash_original_method = "24CA7AAFB844A1400E08D949A036E749", hash_generated_method = "9833F000F6D691E0B911ED7240134718")
         //DSFIXME:  CODE0002: Requires DSC value to be set
         final Thread getOwner() {
             {
-                boolean var90571EFDEF06809E303E51CDC673D6CF_699989329 = (getState() == 0);
-                Object var5A65EDBF3EB11026AF2CEF6A260AEFA9_998135659 = (getExclusiveOwnerThread());
+                boolean var90571EFDEF06809E303E51CDC673D6CF_759942884 = (getState() == 0);
+                Object var5A65EDBF3EB11026AF2CEF6A260AEFA9_566114357 = (getExclusiveOwnerThread());
             } //End flattened ternary
             return (Thread)dsTaint.getTaint();
             // ---------- Original Method ----------
@@ -367,12 +372,12 @@ public class ReentrantLock implements Lock, java.io.Serializable {
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 12:13:30.031 -0400", hash_original_method = "9566A514E32EED07D696F4866CA45F30", hash_generated_method = "4FFB50AD5CE7A5F1E1B2C517B115C589")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:35.228 -0400", hash_original_method = "9566A514E32EED07D696F4866CA45F30", hash_generated_method = "88070A51EC7BA7EC9DCCABF1BF7C09B6")
         //DSFIXME:  CODE0002: Requires DSC value to be set
         final int getHoldCount() {
             {
-                boolean var34E827331B4BC7F16DFC99E8B4EE154E_1238823245 = (isHeldExclusively());
-                Object var2B84CA06A8A0E280C92148E0A83A6657_75039473 = (getState());
+                boolean var34E827331B4BC7F16DFC99E8B4EE154E_280899337 = (isHeldExclusively());
+                Object var2B84CA06A8A0E280C92148E0A83A6657_760703998 = (getState());
             } //End flattened ternary
             return dsTaint.getTaintInt();
             // ---------- Original Method ----------
@@ -380,18 +385,18 @@ public class ReentrantLock implements Lock, java.io.Serializable {
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 12:13:30.042 -0400", hash_original_method = "89AB065792F4703E484ABCB3E61E822C", hash_generated_method = "8E87EDF1848069141A997AFD91DEF6B1")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:35.228 -0400", hash_original_method = "89AB065792F4703E484ABCB3E61E822C", hash_generated_method = "D52BFC9447049336693EDB2690CF0558")
         //DSFIXME:  CODE0002: Requires DSC value to be set
         final boolean isLocked() {
-            boolean var3842E9A7CB6B96374140FC54D5D4BB54_1236049522 = (getState() != 0);
+            boolean var3842E9A7CB6B96374140FC54D5D4BB54_2014274724 = (getState() != 0);
             return dsTaint.getTaintBoolean();
             // ---------- Original Method ----------
             //return getState() != 0;
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 12:13:30.053 -0400", hash_original_method = "05D5902ED2395493955B66F039D49364", hash_generated_method = "61540257A782ED09CC435075FFBD8CCC")
-        @DSModeled(DSC.SAFE)
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:35.229 -0400", hash_original_method = "05D5902ED2395493955B66F039D49364", hash_generated_method = "2A8721E23AA59E8C0B4DC6F7665D3817")
+        //DSFIXME:  CODE0002: Requires DSC value to be set
         private void readObject(java.io.ObjectInputStream s) throws java.io.IOException, ClassNotFoundException {
             dsTaint.addTaint(s.dsTaint);
             s.defaultReadObject();
@@ -402,18 +407,24 @@ public class ReentrantLock implements Lock, java.io.Serializable {
         }
 
         
+        private static final long serialVersionUID = -5179523762034025860L;
     }
 
 
     
     static final class NonfairSync extends Sync {
-        private static long serialVersionUID = 7316153563782823691L;
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 12:13:30.066 -0400", hash_original_method = "250EC96D0AD0D747189CAF2CF367FDFE", hash_generated_method = "7DF3CE07EB52F4E83BC135CE80F54237")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:35.229 -0400", hash_original_method = "20DCF4B8D0A76106484C3A6D02F48055", hash_generated_method = "20DCF4B8D0A76106484C3A6D02F48055")
+                public NonfairSync ()
+        {
+        }
+
+
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:35.229 -0400", hash_original_method = "250EC96D0AD0D747189CAF2CF367FDFE", hash_generated_method = "AF8F0F0F38F241AC1EBF76447971586E")
         //DSFIXME:  CODE0002: Requires DSC value to be set
         final void lock() {
             {
-                boolean varF425053993EA879E03DA150C877D7F5C_51505273 = (compareAndSetState(0, 1));
+                boolean varF425053993EA879E03DA150C877D7F5C_1252241262 = (compareAndSetState(0, 1));
                 setExclusiveOwnerThread(Thread.currentThread());
                 acquire(1);
             } //End collapsed parenthetic
@@ -425,26 +436,32 @@ public class ReentrantLock implements Lock, java.io.Serializable {
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 12:13:30.078 -0400", hash_original_method = "4FB92A369E0871387D4F8186DCD16A26", hash_generated_method = "F644E210356B1E20B21ECED2FFAA74FF")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:35.229 -0400", hash_original_method = "4FB92A369E0871387D4F8186DCD16A26", hash_generated_method = "1C8B148B273732A484ED048323A67F32")
         //DSFIXME:  CODE0002: Requires DSC value to be set
         protected final boolean tryAcquire(int acquires) {
             dsTaint.addTaint(acquires);
-            boolean var0265CA842894C6CCF4077B7A67F336BF_464375987 = (nonfairTryAcquire(acquires));
+            boolean var0265CA842894C6CCF4077B7A67F336BF_873002276 = (nonfairTryAcquire(acquires));
             return dsTaint.getTaintBoolean();
             // ---------- Original Method ----------
             //return nonfairTryAcquire(acquires);
         }
 
         
+        private static final long serialVersionUID = 7316153563782823691L;
     }
 
 
     
     static final class FairSync extends Sync {
-        private static long serialVersionUID = -3000897897090466540L;
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 12:13:30.089 -0400", hash_original_method = "E6AC2D5893CA21F5681F81CF00C94AEB", hash_generated_method = "CB76B2B7FC5C57685BEA82A121FACE61")
-        @DSModeled(DSC.SAFE)
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:35.229 -0400", hash_original_method = "B5EC066612CC52332AC9D759710B6A7C", hash_generated_method = "B5EC066612CC52332AC9D759710B6A7C")
+                public FairSync ()
+        {
+        }
+
+
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:35.229 -0400", hash_original_method = "E6AC2D5893CA21F5681F81CF00C94AEB", hash_generated_method = "EA04A5A8DEC9D6FD4587640A48DF018E")
+        //DSFIXME:  CODE0002: Requires DSC value to be set
         final void lock() {
             acquire(1);
             // ---------- Original Method ----------
@@ -452,7 +469,7 @@ public class ReentrantLock implements Lock, java.io.Serializable {
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 12:13:30.103 -0400", hash_original_method = "81B34FC5A1F152836CFB423B4391D12C", hash_generated_method = "17D25C84E323BDC3810A2AF8289654DB")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:35.229 -0400", hash_original_method = "81B34FC5A1F152836CFB423B4391D12C", hash_generated_method = "B7BB9290A7A25D7899A9409A2DF4795B")
         //DSFIXME:  CODE0002: Requires DSC value to be set
         protected final boolean tryAcquire(int acquires) {
             dsTaint.addTaint(acquires);
@@ -462,7 +479,7 @@ public class ReentrantLock implements Lock, java.io.Serializable {
             c = getState();
             {
                 {
-                    boolean var5AC1E5DC83FB6F44EFD60F65BD367A21_844678910 = (!hasQueuedPredecessors() &&
+                    boolean var5AC1E5DC83FB6F44EFD60F65BD367A21_143867313 = (!hasQueuedPredecessors() &&
                     compareAndSetState(0, acquires));
                     {
                         setExclusiveOwnerThread(current);
@@ -470,7 +487,7 @@ public class ReentrantLock implements Lock, java.io.Serializable {
                 } //End collapsed parenthetic
             } //End block
             {
-                boolean varE75766FA74E04E655F03A151D4B25AC7_1041605365 = (current == getExclusiveOwnerThread());
+                boolean varE75766FA74E04E655F03A151D4B25AC7_460742021 = (current == getExclusiveOwnerThread());
                 {
                     int nextc;
                     nextc = c + acquires;
@@ -500,10 +517,11 @@ public class ReentrantLock implements Lock, java.io.Serializable {
         }
 
         
+        private static final long serialVersionUID = -3000897897090466540L;
     }
 
 
     
+    private static final long serialVersionUID = 7373984872572414699L;
 }
-
 

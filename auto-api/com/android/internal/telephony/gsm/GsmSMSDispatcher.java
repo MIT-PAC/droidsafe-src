@@ -3,10 +3,10 @@ package com.android.internal.telephony.gsm;
 // Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
+import droidsafe.runtime.*;
 
-// import Iterator to deal with enhanced for loop translation
+// needed for enhanced for control translations
 import java.util.Iterator;
-
 import android.app.Activity;
 import android.app.PendingIntent;
 import android.app.PendingIntent.CanceledException;
@@ -36,15 +36,11 @@ import java.util.Iterator;
 import static android.telephony.SmsMessage.MessageClass;
 
 public final class GsmSMSDispatcher extends SMSDispatcher {
-    private static final String TAG = "GSM";
-    private static final int EVENT_NEW_SMS_STATUS_REPORT = 100;
-    private static final int EVENT_NEW_BROADCAST_SMS = 101;
-    private static final int EVENT_WRITE_SMS_COMPLETE = 102;
-    private final UsimDataDownloadHandler mDataDownloadHandler;
-    private final HashMap<SmsCbConcatInfo, byte[][]> mSmsCbPageMap =
+    private UsimDataDownloadHandler mDataDownloadHandler;
+    private HashMap<SmsCbConcatInfo, byte[][]> mSmsCbPageMap =
             new HashMap<SmsCbConcatInfo, byte[][]>();
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.929 -0400", hash_original_method = "00834B5C758A658CCABAFC48B413096E", hash_generated_method = "F6654347351223D7CAF7BF8DA56F6EDC")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:14.980 -0400", hash_original_method = "00834B5C758A658CCABAFC48B413096E", hash_generated_method = "865900EA27B76E29CFD0119C2FE1D7C8")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public GsmSMSDispatcher(PhoneBase phone, SmsStorageMonitor storageMonitor,
             SmsUsageMonitor usageMonitor) {
@@ -64,8 +60,8 @@ public final class GsmSMSDispatcher extends SMSDispatcher {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.929 -0400", hash_original_method = "FC96C37EC7CCEA012658804CB9F94924", hash_generated_method = "69BA18D7FB84944E1B19F50AA54F7894")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:14.981 -0400", hash_original_method = "FC96C37EC7CCEA012658804CB9F94924", hash_generated_method = "AB9F18314E4DF06E27ECE87D12F5EA19")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     @Override
     public void dispose() {
         mCm.unSetOnNewGsmSms(this);
@@ -78,7 +74,7 @@ public final class GsmSMSDispatcher extends SMSDispatcher {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.929 -0400", hash_original_method = "1D516C6BB697A8ECCBFC751AA141CC3E", hash_generated_method = "9449C90884D33A6D3EEC68B39B10B2E2")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:14.981 -0400", hash_original_method = "1D516C6BB697A8ECCBFC751AA141CC3E", hash_generated_method = "B29D23E02E000047D38494E636DCE1AD")
     @DSModeled(DSC.SAFE)
     @Override
     protected String getFormat() {
@@ -88,8 +84,8 @@ public final class GsmSMSDispatcher extends SMSDispatcher {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.930 -0400", hash_original_method = "789365F05DDE44536DDE00C9B93C643B", hash_generated_method = "A0127CDDD8209B92112498B9E25D2F5A")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:14.981 -0400", hash_original_method = "789365F05DDE44536DDE00C9B93C643B", hash_generated_method = "DB590D46ABBABD449A8EAD1AAB088D29")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     @Override
     public void handleMessage(Message msg) {
         dsTaint.addTaint(msg.dsTaint);
@@ -122,7 +118,7 @@ public final class GsmSMSDispatcher extends SMSDispatcher {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.930 -0400", hash_original_method = "4DDABCDA44FFF28C561B2585B61E25F7", hash_generated_method = "8CFFE3A85D596A2F302A8D75D84EBFBE")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:14.982 -0400", hash_original_method = "4DDABCDA44FFF28C561B2585B61E25F7", hash_generated_method = "6B9D36A689E8BBF5F9BCD30EBF0F2312")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     private void handleStatusReport(AsyncResult ar) {
         dsTaint.addTaint(ar.dsTaint);
@@ -168,7 +164,7 @@ public final class GsmSMSDispatcher extends SMSDispatcher {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.930 -0400", hash_original_method = "00DA5224E05DFE04589B7B4693E817E4", hash_generated_method = "0FEB8B4E7A1225D83AFBAAFEF3D468E2")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:14.982 -0400", hash_original_method = "00DA5224E05DFE04589B7B4693E817E4", hash_generated_method = "1174F4B187CF27D81AD491030C18572B")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     @Override
     public int dispatchMessage(SmsMessageBase smsb) {
@@ -176,22 +172,22 @@ public final class GsmSMSDispatcher extends SMSDispatcher {
         SmsMessage sms;
         sms = (SmsMessage) smsb;
         {
-            boolean varB6031355C0905631735F722E8A67DE3D_899455467 = (sms.isTypeZero());
+            boolean varB6031355C0905631735F722E8A67DE3D_1852332890 = (sms.isTypeZero());
             {
                 Log.d(TAG, "Received short message type 0, Don't display or store it. Send Ack");
             } //End block
         } //End collapsed parenthetic
         {
-            boolean varA5EE62D09AEC8F9FD1898F2B6486F22D_1173131157 = (sms.isUsimDataDownload());
+            boolean varA5EE62D09AEC8F9FD1898F2B6486F22D_591443964 = (sms.isUsimDataDownload());
             {
                 UsimServiceTable ust;
                 ust = mPhone.getUsimServiceTable();
                 {
-                    boolean var12D35405AA0257D7AD5F7F54F16478EA_380212496 = (ust != null && ust.isAvailable(
+                    boolean var12D35405AA0257D7AD5F7F54F16478EA_316514473 = (ust != null && ust.isAvailable(
                     UsimServiceTable.UsimService.DATA_DL_VIA_SMS_PP));
                     {
                         Log.d(TAG, "Received SMS-PP data download, sending to UICC.");
-                        int var8B022B4480B8D4E4694849310BDCE5C7_1691246075 = (mDataDownloadHandler.startDataDownload(sms));
+                        int var8B022B4480B8D4E4694849310BDCE5C7_1048154016 = (mDataDownloadHandler.startDataDownload(sms));
                     } //End block
                     {
                         Log.d(TAG, "DATA_DL_VIA_SMS_PP service not available, storing message to UICC.");
@@ -213,7 +209,7 @@ public final class GsmSMSDispatcher extends SMSDispatcher {
         boolean handled;
         handled = false;
         {
-            boolean varF8C0D9A02B2BCE7F3BBAAC567BF16F6E_1390904552 = (sms.isMWISetMessage());
+            boolean varF8C0D9A02B2BCE7F3BBAAC567BF16F6E_501264898 = (sms.isMWISetMessage());
             {
                 mPhone.setVoiceMessageWaiting(1, -1);
                 handled = sms.isMwiDontStore();
@@ -222,7 +218,7 @@ public final class GsmSMSDispatcher extends SMSDispatcher {
                 } //End block
             } //End block
             {
-                boolean var5C4804CFC9656A5E0B83164B653B7DCC_1966030012 = (sms.isMWIClearMessage());
+                boolean var5C4804CFC9656A5E0B83164B653B7DCC_1283165663 = (sms.isMWIClearMessage());
                 {
                     mPhone.setVoiceMessageWaiting(1, 0);
                     handled = sms.isMwiDontStore();
@@ -233,25 +229,25 @@ public final class GsmSMSDispatcher extends SMSDispatcher {
             } //End collapsed parenthetic
         } //End collapsed parenthetic
         {
-            boolean varA6EC97D1C251BAAEFB63A742DEBA1DB1_291566916 = (!mStorageMonitor.isStorageAvailable() &&
+            boolean varA6EC97D1C251BAAEFB63A742DEBA1DB1_572005126 = (!mStorageMonitor.isStorageAvailable() &&
                 sms.getMessageClass() != MessageClass.CLASS_0);
         } //End collapsed parenthetic
-        int var3F541A711EB85996C611FA5F634F0615_524926752 = (dispatchNormalMessage(smsb));
+        int var3F541A711EB85996C611FA5F634F0615_168564118 = (dispatchNormalMessage(smsb));
         return dsTaint.getTaintInt();
         // ---------- Original Method ----------
         // Original Method Too Long, Refer to Original Implementation
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.930 -0400", hash_original_method = "3D7E3502DD1585858E097F3A6DC759F7", hash_generated_method = "7A6AF166AEE4FE1897D28F053D87D8EC")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:14.983 -0400", hash_original_method = "3D7E3502DD1585858E097F3A6DC759F7", hash_generated_method = "2C5B01F531549A00C35C43DF6A28E291")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     @Override
     protected void sendData(String destAddr, String scAddr, int destPort,
             byte[] data, PendingIntent sentIntent, PendingIntent deliveryIntent) {
         dsTaint.addTaint(scAddr);
         dsTaint.addTaint(destAddr);
-        dsTaint.addTaint(data);
         dsTaint.addTaint(sentIntent.dsTaint);
+        dsTaint.addTaint(data[0]);
         dsTaint.addTaint(destPort);
         dsTaint.addTaint(deliveryIntent.dsTaint);
         SmsMessage.SubmitPdu pdu;
@@ -271,8 +267,8 @@ public final class GsmSMSDispatcher extends SMSDispatcher {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.930 -0400", hash_original_method = "5889D931B0AF2BA9EF13AED6A1D3F698", hash_generated_method = "83F85C484F8AD25411C0AC7A8795E6A1")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:14.983 -0400", hash_original_method = "5889D931B0AF2BA9EF13AED6A1D3F698", hash_generated_method = "EF39717AE92A51E01371C0ADA3FDCCB2")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     @Override
     protected void sendText(String destAddr, String scAddr, String text,
             PendingIntent sentIntent, PendingIntent deliveryIntent) {
@@ -298,21 +294,21 @@ public final class GsmSMSDispatcher extends SMSDispatcher {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.931 -0400", hash_original_method = "9DEF445F0373354182FDA1EF238BF843", hash_generated_method = "8B4002D856B535E94D60498ED6EAF479")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:14.983 -0400", hash_original_method = "9DEF445F0373354182FDA1EF238BF843", hash_generated_method = "5AE097782A369B75D8AADA3C0C7847D9")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     @Override
     protected TextEncodingDetails calculateLength(CharSequence messageBody,
             boolean use7bitOnly) {
         dsTaint.addTaint(messageBody);
         dsTaint.addTaint(use7bitOnly);
-        TextEncodingDetails var43C10878969A86A3A296086B315FD31F_1578329479 = (SmsMessage.calculateLength(messageBody, use7bitOnly));
+        TextEncodingDetails var43C10878969A86A3A296086B315FD31F_737225205 = (SmsMessage.calculateLength(messageBody, use7bitOnly));
         return (TextEncodingDetails)dsTaint.getTaint();
         // ---------- Original Method ----------
         //return SmsMessage.calculateLength(messageBody, use7bitOnly);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.931 -0400", hash_original_method = "D46F86683A1628DBA1448E14FF571355", hash_generated_method = "10D5B18BA00A3F1EA9F8492C01955DE4")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:14.983 -0400", hash_original_method = "D46F86683A1628DBA1448E14FF571355", hash_generated_method = "91BF459991910CDCDA803636F43E7A34")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     @Override
     protected void sendNewSubmitPdu(String destinationAddress, String scAddress,
@@ -321,9 +317,9 @@ public final class GsmSMSDispatcher extends SMSDispatcher {
         dsTaint.addTaint(message);
         dsTaint.addTaint(lastPart);
         dsTaint.addTaint(destinationAddress);
-        dsTaint.addTaint(scAddress);
-        dsTaint.addTaint(encoding);
         dsTaint.addTaint(sentIntent.dsTaint);
+        dsTaint.addTaint(encoding);
+        dsTaint.addTaint(scAddress);
         dsTaint.addTaint(deliveryIntent.dsTaint);
         dsTaint.addTaint(smsHeader.dsTaint);
         SmsMessage.SubmitPdu pdu;
@@ -345,7 +341,7 @@ public final class GsmSMSDispatcher extends SMSDispatcher {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.931 -0400", hash_original_method = "FF8E1B494DDC1956B0825172C230EA31", hash_generated_method = "B2BD5928A77D4B69C6308F72A61C0E63")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:14.984 -0400", hash_original_method = "FF8E1B494DDC1956B0825172C230EA31", hash_generated_method = "EA697726F2597FC4A0CBFF49B046B9B2")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     @Override
     protected void sendSms(SmsTracker tracker) {
@@ -368,7 +364,7 @@ public final class GsmSMSDispatcher extends SMSDispatcher {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.931 -0400", hash_original_method = "72A464580F37288F468EE51C88A0917A", hash_generated_method = "D1212444E50B028B8A353FCFB8FB697C")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:14.984 -0400", hash_original_method = "72A464580F37288F468EE51C88A0917A", hash_generated_method = "513E9E21ACDA583DED098E6D6BCF0C61")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     @Override
     protected void acknowledgeLastIncomingSms(boolean success, int result, Message response) {
@@ -381,8 +377,7 @@ public final class GsmSMSDispatcher extends SMSDispatcher {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.931 -0400", hash_original_method = "43CB38824F520614242805C962124F56", hash_generated_method = "19C9713015A03EB3D91DB800B4276B84")
-    private static int resultToCause(int rc) {
+        private static int resultToCause(int rc) {
         switch (rc) {
             case Activity.RESULT_OK:
             case Intents.RESULT_SMS_HANDLED:
@@ -396,7 +391,7 @@ public final class GsmSMSDispatcher extends SMSDispatcher {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.931 -0400", hash_original_method = "4513E8DEDD790BB664A98AD56B29A135", hash_generated_method = "964953F205B5F09CAF3381904AE39299")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:14.985 -0400", hash_original_method = "4513E8DEDD790BB664A98AD56B29A135", hash_generated_method = "94526DBFC8CA0F9306AA82F469FEC3D5")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     private void handleBroadcastSms(AsyncResult ar) {
         dsTaint.addTaint(ar.dsTaint);
@@ -464,12 +459,12 @@ public final class GsmSMSDispatcher extends SMSDispatcher {
             Iterator<SmsCbConcatInfo> iter;
             iter = mSmsCbPageMap.keySet().iterator();
             {
-                boolean var8492AE2C695A56B730381A28B8BA3F6D_1223373139 = (iter.hasNext());
+                boolean var8492AE2C695A56B730381A28B8BA3F6D_1626662816 = (iter.hasNext());
                 {
                     SmsCbConcatInfo info;
                     info = iter.next();
                     {
-                        boolean var0270A608337A35ABA6617D8040104D0F_1019319672 = (!info.matchesLocation(plmn, lac, cid));
+                        boolean var0270A608337A35ABA6617D8040104D0F_1547279882 = (!info.matchesLocation(plmn, lac, cid));
                         {
                             iter.remove();
                         } //End block
@@ -485,22 +480,18 @@ public final class GsmSMSDispatcher extends SMSDispatcher {
 
     
     private static final class SmsCbConcatInfo {
-        private final SmsCbHeader mHeader;
-        private final String mPlmn;
-        private final int mLac;
-        private final int mCid;
+        private SmsCbHeader mHeader;
+        private String mPlmn;
+        private int mLac;
+        private int mCid;
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.932 -0400", hash_original_method = "D7F908FE9EEA79B2D247A82A8EA2135C", hash_generated_method = "9B234B4D541D9C088416102101F5D5C4")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:14.985 -0400", hash_original_method = "D7F908FE9EEA79B2D247A82A8EA2135C", hash_generated_method = "FD9C5CE5AD57D01C9EA0C20005831396")
         @DSModeled(DSC.SAFE)
         public SmsCbConcatInfo(SmsCbHeader header, String plmn, int lac, int cid) {
             dsTaint.addTaint(plmn);
             dsTaint.addTaint(cid);
-            dsTaint.addTaint(header.dsTaint);
             dsTaint.addTaint(lac);
-            mHeader = header;
-            mPlmn = plmn;
-            mLac = lac;
-            mCid = cid;
+            dsTaint.addTaint(header.dsTaint);
             // ---------- Original Method ----------
             //mHeader = header;
             //mPlmn = plmn;
@@ -509,7 +500,7 @@ public final class GsmSMSDispatcher extends SMSDispatcher {
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.932 -0400", hash_original_method = "EE152888A937A1561BADC909DEBD7300", hash_generated_method = "0128406985433CC74DBF8E6F0E3DEDCE")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:14.985 -0400", hash_original_method = "EE152888A937A1561BADC909DEBD7300", hash_generated_method = "F0FABBB182DC325777CA0B23520AAFDC")
         @DSModeled(DSC.SAFE)
         @Override
         public int hashCode() {
@@ -519,7 +510,7 @@ public final class GsmSMSDispatcher extends SMSDispatcher {
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.932 -0400", hash_original_method = "A4665EFAF0A95C2E46EAC850D0E6C5D5", hash_generated_method = "08A01EEBDE026AC0BD7C270BBCBAA03F")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:14.986 -0400", hash_original_method = "A4665EFAF0A95C2E46EAC850D0E6C5D5", hash_generated_method = "CEC70BF764F8A34C526A6813585F4126")
         //DSFIXME:  CODE0002: Requires DSC value to be set
         @Override
         public boolean equals(Object obj) {
@@ -528,7 +519,7 @@ public final class GsmSMSDispatcher extends SMSDispatcher {
                 SmsCbConcatInfo other;
                 other = (SmsCbConcatInfo)obj;
                 {
-                    boolean varBB88E0D05F92693B90C9BE1E32F42C62_838839743 = (matchesLocation(other.mPlmn, other.mLac, other.mCid));
+                    boolean varBB88E0D05F92693B90C9BE1E32F42C62_1030939418 = (matchesLocation(other.mPlmn, other.mLac, other.mCid));
                 } //End block
             } //End block
             return dsTaint.getTaintBoolean();
@@ -548,14 +539,14 @@ public final class GsmSMSDispatcher extends SMSDispatcher {
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.932 -0400", hash_original_method = "16D562DE8E79921485CB55DC774779E3", hash_generated_method = "80500AB735D8F5E1C177A0655EE7F0E3")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:14.986 -0400", hash_original_method = "16D562DE8E79921485CB55DC774779E3", hash_generated_method = "C7AF1C2044A57578D3D554375BD46D9C")
         //DSFIXME:  CODE0002: Requires DSC value to be set
         public boolean matchesLocation(String plmn, int lac, int cid) {
             dsTaint.addTaint(plmn);
             dsTaint.addTaint(cid);
             dsTaint.addTaint(lac);
             //Begin case SmsCbMessage.GEOGRAPHICAL_SCOPE_PLMN_WIDE 
-            boolean var1B5436BDE88E386A54C0FBA50F7E9CF9_1122482277 = (mPlmn != null && mPlmn.equals(plmn));
+            boolean var1B5436BDE88E386A54C0FBA50F7E9CF9_939857023 = (mPlmn != null && mPlmn.equals(plmn));
             //End case SmsCbMessage.GEOGRAPHICAL_SCOPE_PLMN_WIDE 
             return dsTaint.getTaintBoolean();
             // ---------- Original Method ----------
@@ -580,6 +571,9 @@ public final class GsmSMSDispatcher extends SMSDispatcher {
 
 
     
+    private static final String TAG = "GSM";
+    private static final int EVENT_NEW_SMS_STATUS_REPORT = 100;
+    private static final int EVENT_NEW_BROADCAST_SMS = 101;
+    private static final int EVENT_WRITE_SMS_COMPLETE = 102;
 }
-
 

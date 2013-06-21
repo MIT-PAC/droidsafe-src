@@ -3,126 +3,36 @@ package java.lang;
 // Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
+import droidsafe.runtime.*;
 
-// import Iterator to deal with enhanced for loop translation
+// needed for enhanced for control translations
 import java.util.Iterator;
-
 import java.io.Serializable;
 import java.util.Arrays;
 
 public final class Character implements Serializable, Comparable<Character> {
-    private static final long serialVersionUID = 3786198910865385080L;
-    private final char value;
-    public static final char MIN_VALUE = '\u0000';
-    public static final char MAX_VALUE = '\uffff';
-    public static final int MIN_RADIX = 2;
-    public static final int MAX_RADIX = 36;
-    @SuppressWarnings("unchecked")
-    public static final Class<Character> TYPE
-            = (Class<Character>) char[].class.getComponentType();
-    public static final byte UNASSIGNED = 0;
-    public static final byte UPPERCASE_LETTER = 1;
-    public static final byte LOWERCASE_LETTER = 2;
-    public static final byte TITLECASE_LETTER = 3;
-    public static final byte MODIFIER_LETTER = 4;
-    public static final byte OTHER_LETTER = 5;
-    public static final byte NON_SPACING_MARK = 6;
-    public static final byte ENCLOSING_MARK = 7;
-    public static final byte COMBINING_SPACING_MARK = 8;
-    public static final byte DECIMAL_DIGIT_NUMBER = 9;
-    public static final byte LETTER_NUMBER = 10;
-    public static final byte OTHER_NUMBER = 11;
-    public static final byte SPACE_SEPARATOR = 12;
-    public static final byte LINE_SEPARATOR = 13;
-    public static final byte PARAGRAPH_SEPARATOR = 14;
-    public static final byte CONTROL = 15;
-    public static final byte FORMAT = 16;
-    public static final byte PRIVATE_USE = 18;
-    public static final byte SURROGATE = 19;
-    public static final byte DASH_PUNCTUATION = 20;
-    public static final byte START_PUNCTUATION = 21;
-    public static final byte END_PUNCTUATION = 22;
-    public static final byte CONNECTOR_PUNCTUATION = 23;
-    public static final byte OTHER_PUNCTUATION = 24;
-    public static final byte MATH_SYMBOL = 25;
-    public static final byte CURRENCY_SYMBOL = 26;
-    public static final byte MODIFIER_SYMBOL = 27;
-    public static final byte OTHER_SYMBOL = 28;
-    public static final byte INITIAL_QUOTE_PUNCTUATION = 29;
-    public static final byte FINAL_QUOTE_PUNCTUATION = 30;
-    public static final byte DIRECTIONALITY_UNDEFINED = -1;
-    public static final byte DIRECTIONALITY_LEFT_TO_RIGHT = 0;
-    public static final byte DIRECTIONALITY_RIGHT_TO_LEFT = 1;
-    public static final byte DIRECTIONALITY_RIGHT_TO_LEFT_ARABIC = 2;
-    public static final byte DIRECTIONALITY_EUROPEAN_NUMBER = 3;
-    public static final byte DIRECTIONALITY_EUROPEAN_NUMBER_SEPARATOR = 4;
-    public static final byte DIRECTIONALITY_EUROPEAN_NUMBER_TERMINATOR = 5;
-    public static final byte DIRECTIONALITY_ARABIC_NUMBER = 6;
-    public static final byte DIRECTIONALITY_COMMON_NUMBER_SEPARATOR = 7;
-    public static final byte DIRECTIONALITY_NONSPACING_MARK = 8;
-    public static final byte DIRECTIONALITY_BOUNDARY_NEUTRAL = 9;
-    public static final byte DIRECTIONALITY_PARAGRAPH_SEPARATOR = 10;
-    public static final byte DIRECTIONALITY_SEGMENT_SEPARATOR = 11;
-    public static final byte DIRECTIONALITY_WHITESPACE = 12;
-    public static final byte DIRECTIONALITY_OTHER_NEUTRALS = 13;
-    public static final byte DIRECTIONALITY_LEFT_TO_RIGHT_EMBEDDING = 14;
-    public static final byte DIRECTIONALITY_LEFT_TO_RIGHT_OVERRIDE = 15;
-    public static final byte DIRECTIONALITY_RIGHT_TO_LEFT_EMBEDDING = 16;
-    public static final byte DIRECTIONALITY_RIGHT_TO_LEFT_OVERRIDE = 17;
-    public static final byte DIRECTIONALITY_POP_DIRECTIONAL_FORMAT = 18;
-    public static final char MIN_HIGH_SURROGATE = '\uD800';
-    public static final char MAX_HIGH_SURROGATE = '\uDBFF';
-    public static final char MIN_LOW_SURROGATE = '\uDC00';
-    public static final char MAX_LOW_SURROGATE = '\uDFFF';
-    public static final char MIN_SURROGATE = '\uD800';
-    public static final char MAX_SURROGATE = '\uDFFF';
-    public static final int MIN_SUPPLEMENTARY_CODE_POINT = 0x10000;
-    public static final int MIN_CODE_POINT = 0x000000;
-    public static final int MAX_CODE_POINT = 0x10FFFF;
-    public static final int SIZE = 16;
-    private static final byte[] DIRECTIONALITY = new byte[] {
-            DIRECTIONALITY_LEFT_TO_RIGHT, DIRECTIONALITY_RIGHT_TO_LEFT,
-            DIRECTIONALITY_EUROPEAN_NUMBER,
-            DIRECTIONALITY_EUROPEAN_NUMBER_SEPARATOR,
-            DIRECTIONALITY_EUROPEAN_NUMBER_TERMINATOR,
-            DIRECTIONALITY_ARABIC_NUMBER,
-            DIRECTIONALITY_COMMON_NUMBER_SEPARATOR,
-            DIRECTIONALITY_PARAGRAPH_SEPARATOR,
-            DIRECTIONALITY_SEGMENT_SEPARATOR, DIRECTIONALITY_WHITESPACE,
-            DIRECTIONALITY_OTHER_NEUTRALS,
-            DIRECTIONALITY_LEFT_TO_RIGHT_EMBEDDING,
-            DIRECTIONALITY_LEFT_TO_RIGHT_OVERRIDE,
-            DIRECTIONALITY_RIGHT_TO_LEFT_ARABIC,
-            DIRECTIONALITY_RIGHT_TO_LEFT_EMBEDDING,
-            DIRECTIONALITY_RIGHT_TO_LEFT_OVERRIDE,
-            DIRECTIONALITY_POP_DIRECTIONAL_FORMAT,
-            DIRECTIONALITY_NONSPACING_MARK, DIRECTIONALITY_BOUNDARY_NEUTRAL };
-    private static final Character[] SMALL_VALUES = new Character[128];
+    private char value;
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:11.761 -0400", hash_original_method = "8DEFF913326DC7F74512EFD131579B65", hash_generated_method = "2D36670CD570C60FE0EF01CD8020B68D")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:25.520 -0400", hash_original_method = "8DEFF913326DC7F74512EFD131579B65", hash_generated_method = "21AA08DE5D9FB709249FCA2BB4A5432B")
     @DSModeled(DSC.SAFE)
     public Character(char value) {
         dsTaint.addTaint(value);
         // ---------- Original Method ----------
-        this.value = value;
+        //this.value = value;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:11.761 -0400", hash_original_method = "4015C311D2E9352F0DAC3B1EE7912530", hash_generated_method = "BC6889B19F6C653D65982F668C15F9A7")
-    private static int forNameImpl(String blockName) {
-        //DSFIXME:  CODE0012: Native static method requires manual modeling
-    	return DSUtils.UNKNOWN_INT;
+        private static int forNameImpl(String blockName) {
+        return DSUtils.UNKNOWN_INT;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:11.761 -0400", hash_original_method = "B4F6660FE5C4F398695868C604C73DDE", hash_generated_method = "EDCDD3CB837022FCD0AA678FDC769ECA")
-    private static int ofImpl(int codePoint) {
-        //DSFIXME:  CODE0012: Native static method requires manual modeling
-    	return DSUtils.UNKNOWN_INT;
+        private static int ofImpl(int codePoint) {
+        return DSUtils.UNKNOWN_INT;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:11.761 -0400", hash_original_method = "1972D57F3C05C7BADF696B9ADC3E34F9", hash_generated_method = "979859E5D53724E7B32FEC4740ADD103")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:25.521 -0400", hash_original_method = "1972D57F3C05C7BADF696B9ADC3E34F9", hash_generated_method = "D7BF0C5F83CAFA88A8E87093DF719E92")
     @DSModeled(DSC.SAFE)
     public char charValue() {
         return dsTaint.getTaintChar();
@@ -131,102 +41,77 @@ public final class Character implements Serializable, Comparable<Character> {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:11.761 -0400", hash_original_method = "2E1CB6E5E405F453739AE358669BD826", hash_generated_method = "FCCF4BD5EC743B2E2DFD8AC0D03FDA40")
-    @DSModeled
-    private static void checkValidCodePoint(int codePoint) {
+        private static void checkValidCodePoint(int codePoint) {
         if (!isValidCodePoint(codePoint)) {
             throw new IllegalArgumentException("Invalid code point: " + codePoint);
         }
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:11.761 -0400", hash_original_method = "3BC38476D10A0BB1E7E9CABDBB184EDE", hash_generated_method = "36A79D23C6A81D0963DDD83078639AB1")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:25.521 -0400", hash_original_method = "3BC38476D10A0BB1E7E9CABDBB184EDE", hash_generated_method = "D657241DBB93D11ADEA3FF27C25E5E65")
     //DSFIXME:  CODE0002: Requires DSC value to be set
-    @DSModeled(DSC.SAFE)
     public int compareTo(Character c) {
         dsTaint.addTaint(c.dsTaint);
-        int var2D53C4D03B154FEA4531431C9E7F8DB6_1067303766 = (compare(value, c.value));
+        int var2D53C4D03B154FEA4531431C9E7F8DB6_1529659267 = (compare(value, c.value));
         return dsTaint.getTaintInt();
         // ---------- Original Method ----------
         //return compare(value, c.value);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:11.761 -0400", hash_original_method = "E7BB00F4AE5B31620C8E253034E7136C", hash_generated_method = "CC7BA13ACC12EF2EA45DD84803ECD771")
-    @DSModeled(DSC.SAFE)
-    public static int compare(char lhs, char rhs) {
+        public static int compare(char lhs, char rhs) {
         return lhs - rhs;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:11.761 -0400", hash_original_method = "F129BF1AA7DEE10DECE549FDC9BFFE92", hash_generated_method = "F095D9571C020E30A8442C3CF921848D")
-    @DSModeled
-    public static Character valueOf(char c) {
+        public static Character valueOf(char c) {
         return c < 128 ? SMALL_VALUES[c] : new Character(c);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:11.761 -0400", hash_original_method = "C3C668651D6457D78EBF7ED9F69FDBEA", hash_generated_method = "7A891326D8F1A97963AD3246CF366438")
-    @DSModeled(DSC.SAFE)
-    public static boolean isValidCodePoint(int codePoint) {
+        public static boolean isValidCodePoint(int codePoint) {
         return (MIN_CODE_POINT <= codePoint && MAX_CODE_POINT >= codePoint);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:11.761 -0400", hash_original_method = "7350229310DA887712F911A12A06A250", hash_generated_method = "FC74D85BFBCFD2A20FD40A9D9685DBD3")
-    @DSModeled(DSC.SAFE)
-    public static boolean isSupplementaryCodePoint(int codePoint) {
+        public static boolean isSupplementaryCodePoint(int codePoint) {
         return (MIN_SUPPLEMENTARY_CODE_POINT <= codePoint && MAX_CODE_POINT >= codePoint);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:11.761 -0400", hash_original_method = "CC2888AF1D68C86A10FED4F68E6B3B15", hash_generated_method = "5022015EDECC9C66A07B22D3E30C04ED")
-    @DSModeled(DSC.SAFE)
-    public static boolean isHighSurrogate(char ch) {
+        public static boolean isHighSurrogate(char ch) {
         return (MIN_HIGH_SURROGATE <= ch && MAX_HIGH_SURROGATE >= ch);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:11.761 -0400", hash_original_method = "3EEAD604696AB011239EDF6A0C629A36", hash_generated_method = "13C6BD12B5D49A39AA4098D4426B9EFD")
-    @DSModeled(DSC.SAFE)
-    public static boolean isLowSurrogate(char ch) {
+        public static boolean isLowSurrogate(char ch) {
         return (MIN_LOW_SURROGATE <= ch && MAX_LOW_SURROGATE >= ch);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:11.761 -0400", hash_original_method = "DE60A5245E3B8D87B5C64F3502226B91", hash_generated_method = "113279C604CCF4258CC3F684CEBF7053")
-    @DSModeled(DSC.SAFE)
-    public static boolean isSurrogate(char ch) {
+        public static boolean isSurrogate(char ch) {
         return ch >= MIN_SURROGATE && ch <= MAX_SURROGATE;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:11.761 -0400", hash_original_method = "7E883A5461EB25C0FF6C63AC2DCB994A", hash_generated_method = "308A7D66765E2C120C9128A71ECB6416")
-    @DSModeled(DSC.SAFE)
-    public static boolean isSurrogatePair(char high, char low) {
+        public static boolean isSurrogatePair(char high, char low) {
         return (isHighSurrogate(high) && isLowSurrogate(low));
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:11.761 -0400", hash_original_method = "C9BC23458AD053A48381AE5B5A527C8A", hash_generated_method = "EAFC8B8ACD0113BDB3495417AB6F646D")
-    @DSModeled(DSC.SAFE)
-    public static int charCount(int codePoint) {
+        public static int charCount(int codePoint) {
         return (codePoint >= 0x10000 ? 2 : 1);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:11.761 -0400", hash_original_method = "DD1FE557D625E499D35253862443F8D1", hash_generated_method = "75290209ABC8DC8238EACB2D7A21EC32")
-    @DSModeled(DSC.SAFE)
-    public static int toCodePoint(char high, char low) {
+        public static int toCodePoint(char high, char low) {
         int h = (high & 0x3FF) << 10;
         int l = low & 0x3FF;
         return (h | l) + 0x10000;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:11.762 -0400", hash_original_method = "E6242CB8B89CA1A001F7CADF5983DA48", hash_generated_method = "0802AD80AE830467DC5804D51189595A")
-    @DSModeled(DSC.SAFE)
-    public static int codePointAt(CharSequence seq, int index) {
+        public static int codePointAt(CharSequence seq, int index) {
         if (seq == null) {
             throw new NullPointerException();
         }
@@ -246,9 +131,7 @@ public final class Character implements Serializable, Comparable<Character> {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:11.762 -0400", hash_original_method = "9E66291941471B1F0D8C9AEEF9DD2957", hash_generated_method = "16083B072531CEBE8FE2A87774837615")
-    @DSModeled(DSC.SAFE)
-    public static int codePointAt(char[] seq, int index) {
+        public static int codePointAt(char[] seq, int index) {
         if (seq == null) {
             throw new NullPointerException();
         }
@@ -268,9 +151,7 @@ public final class Character implements Serializable, Comparable<Character> {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:11.762 -0400", hash_original_method = "10717D6164391B9A222449CE187E6CFD", hash_generated_method = "30A500746332709389216C1B4FD18258")
-    @DSModeled(DSC.SAFE)
-    public static int codePointAt(char[] seq, int index, int limit) {
+        public static int codePointAt(char[] seq, int index, int limit) {
         if (index < 0 || index >= limit || limit < 0 || limit > seq.length) {
             throw new IndexOutOfBoundsException();
         }
@@ -286,9 +167,7 @@ public final class Character implements Serializable, Comparable<Character> {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:11.762 -0400", hash_original_method = "E2C351EF365BE7AD1D8CE0225CD35BEB", hash_generated_method = "FCE16537C8820D043E263F1FC69263D9")
-    @DSModeled(DSC.SAFE)
-    public static int codePointBefore(CharSequence seq, int index) {
+        public static int codePointBefore(CharSequence seq, int index) {
         if (seq == null) {
             throw new NullPointerException();
         }
@@ -308,9 +187,7 @@ public final class Character implements Serializable, Comparable<Character> {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:11.762 -0400", hash_original_method = "921CAAD51ACE254BCB278600F89558CC", hash_generated_method = "22B545BE742B3AEA24F6DC1DE9B61295")
-    @DSModeled(DSC.SAFE)
-    public static int codePointBefore(char[] seq, int index) {
+        public static int codePointBefore(char[] seq, int index) {
         if (seq == null) {
             throw new NullPointerException();
         }
@@ -330,9 +207,7 @@ public final class Character implements Serializable, Comparable<Character> {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:11.762 -0400", hash_original_method = "C4A20E17E12D55162CF220605A00AD99", hash_generated_method = "9A94475CA32D7D3C295ACA189C6D0A2D")
-    @DSModeled(DSC.SAFE)
-    public static int codePointBefore(char[] seq, int index, int start) {
+        public static int codePointBefore(char[] seq, int index, int start) {
         if (seq == null) {
             throw new NullPointerException();
         }
@@ -352,9 +227,7 @@ public final class Character implements Serializable, Comparable<Character> {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:11.762 -0400", hash_original_method = "80CF91592A6B73E807BCA9FF8983A108", hash_generated_method = "65E983CA58793D9D8B1B7A4479EBB88A")
-    @DSModeled(DSC.SAFE)
-    public static int toChars(int codePoint, char[] dst, int dstIndex) {
+        public static int toChars(int codePoint, char[] dst, int dstIndex) {
         checkValidCodePoint(codePoint);
         if (dst == null) {
             throw new NullPointerException();
@@ -378,9 +251,7 @@ public final class Character implements Serializable, Comparable<Character> {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:11.762 -0400", hash_original_method = "43D4C7C89B9FD66F7552269DD4A67BA9", hash_generated_method = "E62196F0F1B9A536655AF36CC4AFAA5D")
-    @DSModeled
-    public static char[] toChars(int codePoint) {
+        public static char[] toChars(int codePoint) {
         checkValidCodePoint(codePoint);
         if (isSupplementaryCodePoint(codePoint)) {
             int cpPrime = codePoint - 0x10000;
@@ -392,9 +263,7 @@ public final class Character implements Serializable, Comparable<Character> {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:11.762 -0400", hash_original_method = "29F526428DF05B6D3CA38BC3BC73F2D3", hash_generated_method = "29E3590772F175B6E7FD917AD0F51991")
-    @DSModeled
-    public static int codePointCount(CharSequence seq, int beginIndex,
+        public static int codePointCount(CharSequence seq, int beginIndex,
             int endIndex) {
         if (seq == null) {
             throw new NullPointerException();
@@ -420,9 +289,7 @@ public final class Character implements Serializable, Comparable<Character> {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:11.762 -0400", hash_original_method = "EEAACA1E930EF9A85838BA9C7F309FA1", hash_generated_method = "96374037B4136C8AD5DEF19CAE0FE073")
-    @DSModeled
-    public static int codePointCount(char[] seq, int offset, int count) {
+        public static int codePointCount(char[] seq, int offset, int count) {
         Arrays.checkOffsetAndCount(seq.length, offset, count);
         int endIndex = offset + count;
         int result = 0;
@@ -442,9 +309,7 @@ public final class Character implements Serializable, Comparable<Character> {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:11.762 -0400", hash_original_method = "A24D68C92A9069CC6E247ECA1084686D", hash_generated_method = "33A9449B4675EB1CB38E0949D3234AC6")
-    @DSModeled
-    public static int offsetByCodePoints(CharSequence seq, int index, int codePointOffset) {
+        public static int offsetByCodePoints(CharSequence seq, int index, int codePointOffset) {
         if (seq == null) {
             throw new NullPointerException();
         }
@@ -492,9 +357,7 @@ public final class Character implements Serializable, Comparable<Character> {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:11.762 -0400", hash_original_method = "E92C62310F8BC047840FD5F8129A6310", hash_generated_method = "A4DAB334E099B0AC7D9DDAABDDB583B7")
-    @DSModeled
-    public static int offsetByCodePoints(char[] seq, int start, int count,
+        public static int offsetByCodePoints(char[] seq, int start, int count,
             int index, int codePointOffset) {
         Arrays.checkOffsetAndCount(seq.length, start, count);
         int end = start + count;
@@ -541,16 +404,12 @@ public final class Character implements Serializable, Comparable<Character> {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:11.763 -0400", hash_original_method = "189278FA1F864DD1FE3339B81D19112D", hash_generated_method = "67C2BE3190053B65E97FF514C4E35C39")
-    @DSModeled
-    public static int digit(char c, int radix) {
+        public static int digit(char c, int radix) {
         return digit((int) c, radix);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:11.763 -0400", hash_original_method = "F2A9A0041EB0F3802CEB1CDE881811BE", hash_generated_method = "93A3325702ECB8B7065FD5FF99F9394F")
-    @DSModeled
-    public static int digit(int codePoint, int radix) {
+        public static int digit(int codePoint, int radix) {
         if (radix < MIN_RADIX || radix > MAX_RADIX) {
             return -1;
         }
@@ -569,15 +428,12 @@ public final class Character implements Serializable, Comparable<Character> {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:11.763 -0400", hash_original_method = "5136D0E0B0E7F6F03C2ACBA60CD0DA7D", hash_generated_method = "FD3CE60BD3644B78228E36DD5B28BBD7")
-    @DSModeled(DSC.SAFE)
-    private static int digitImpl(int codePoint, int radix) {
-        //DSFIXME:  CODE0012: Native static method requires manual modeling
-    	return DSUtils.UNKNOWN_INT;
+        private static int digitImpl(int codePoint, int radix) {
+        return DSUtils.UNKNOWN_INT;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:11.763 -0400", hash_original_method = "88215BA2DAA464AB2808512F13A48003", hash_generated_method = "BC1AD139B66A0FB90CA6756667A65DF4")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:25.525 -0400", hash_original_method = "88215BA2DAA464AB2808512F13A48003", hash_generated_method = "61692EE26D4111810D0F94BEB4188154")
     @DSModeled(DSC.SAFE)
     @Override
     public boolean equals(Object object) {
@@ -588,9 +444,7 @@ public final class Character implements Serializable, Comparable<Character> {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:11.763 -0400", hash_original_method = "9D6DD04CE03E9B3EA92C74E656478FC0", hash_generated_method = "1C3102D8B614C030228DBA862C9FDAC8")
-    @DSModeled(DSC.SAFE)
-    public static char forDigit(int digit, int radix) {
+        public static char forDigit(int digit, int radix) {
         if (MIN_RADIX <= radix && radix <= MAX_RADIX) {
             if (digit >= 0 && digit < radix) {
                 return (char) (digit < 10 ? digit + '0' : digit + 'a' - 10);
@@ -600,9 +454,7 @@ public final class Character implements Serializable, Comparable<Character> {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:11.763 -0400", hash_original_method = "80CBCF21777696C5A7AD973BF83A0B43", hash_generated_method = "8200EE38F7E81468A3DFC3D4AC2B222F")
-    @DSModeled
-    public static String getName(int codePoint) {
+        public static String getName(int codePoint) {
         checkValidCodePoint(codePoint);
         if (getType(codePoint) == Character.UNASSIGNED) {
             return null;
@@ -616,24 +468,17 @@ public final class Character implements Serializable, Comparable<Character> {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:11.763 -0400", hash_original_method = "308577C469D43230519015864E3846FC", hash_generated_method = "16941F8CB59826F2E87576C549E5F313")
-    @DSModeled(DSC.SAFE)
-    private static String getNameImpl(int codePoint) {
-        //DSFIXME:  CODE0012: Native static method requires manual modeling
-    	return DSUtils.UNKNOWN_STRING;
+        private static String getNameImpl(int codePoint) {
+        return DSUtils.UNKNOWN_STRING;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:11.763 -0400", hash_original_method = "44A8BF8424D42743A00DC522EAFF94BC", hash_generated_method = "C6115594E660D9D27F0BC2207443C1B4")
-    @DSModeled(DSC.SAFE)
-    public static int getNumericValue(char c) {
+        public static int getNumericValue(char c) {
         return getNumericValue((int) c);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:11.763 -0400", hash_original_method = "C81D5E44B1E6A7DD313F799E48D5ADD8", hash_generated_method = "7286CC174E4342DAB5414D5E884844D6")
-    @DSModeled
-    public static int getNumericValue(int codePoint) {
+        public static int getNumericValue(int codePoint) {
         if (codePoint < 128) {
             if (codePoint >= '0' && codePoint <= '9') {
                 return codePoint - '0';
@@ -656,23 +501,17 @@ public final class Character implements Serializable, Comparable<Character> {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:11.763 -0400", hash_original_method = "92CF6E8F473015AEBE60E2D661CB1525", hash_generated_method = "21E880B116E6CB09CB0CB770FD76E30F")
-    @DSModeled(DSC.SAFE)
-    private static int getNumericValueImpl(int codePoint) {
-        //DSFIXME:  CODE0012: Native static method requires manual modeling
-    	return DSUtils.UNKNOWN_INT;
+        private static int getNumericValueImpl(int codePoint) {
+        return DSUtils.UNKNOWN_INT;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:11.763 -0400", hash_original_method = "472C14EA76E66AD56E145417CB2E2E09", hash_generated_method = "3428CD451743D99B6397CAAE215673E8")
-    @DSModeled(DSC.SAFE)
-    public static int getType(char c) {
+        public static int getType(char c) {
         return getType((int) c);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:11.763 -0400", hash_original_method = "FBB6323759AAB52949452B64054A19F7", hash_generated_method = "41874089F56E73A4751A514406D566D7")
-    public static int getType(int codePoint) {
+        public static int getType(int codePoint) {
         int type = getTypeImpl(codePoint);
         if (type <= Character.FORMAT) {
             return type;
@@ -681,24 +520,17 @@ public final class Character implements Serializable, Comparable<Character> {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:11.763 -0400", hash_original_method = "77B3E40EF93B0722D6FCE2DCAE56E47E", hash_generated_method = "77221D568DE9B01FC53DEF672F330314")
-    @DSModeled(DSC.SAFE)
-    private static int getTypeImpl(int codePoint) {
-        //DSFIXME:  CODE0012: Native static method requires manual modeling
-    	return DSUtils.UNKNOWN_INT;
+        private static int getTypeImpl(int codePoint) {
+        return DSUtils.UNKNOWN_INT;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:11.763 -0400", hash_original_method = "BAAC4031CE67ACBF5435C0572C9451C4", hash_generated_method = "B52A40EC5B7F7D5A95A5416ED7B666B9")
-    @DSModeled(DSC.SAFE)
-    public static byte getDirectionality(char c) {
+        public static byte getDirectionality(char c) {
         return getDirectionality((int)c);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:11.763 -0400", hash_original_method = "B9E955EF2712E02C1EDBC21B558449AF", hash_generated_method = "EEF8D7AA68CE492EFDDA0E97E21487CA")
-    @DSModeled(DSC.SAFE)
-    public static byte getDirectionality(int codePoint) {
+        public static byte getDirectionality(int codePoint) {
         if (getType(codePoint) == Character.UNASSIGNED) {
             return Character.DIRECTIONALITY_UNDEFINED;
         }
@@ -710,37 +542,27 @@ public final class Character implements Serializable, Comparable<Character> {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:11.763 -0400", hash_original_method = "7754284BD875AFA90F21F5FE8120A159", hash_generated_method = "D9F82847FCE187FDC195154610B14F7B")
-    @DSModeled(DSC.SAFE)
-    private static byte getDirectionalityImpl(int codePoint) {
-        //DSFIXME:  CODE0012: Native static method requires manual modeling
-    	return DSUtils.UNKNOWN_BYTE;
+        private static byte getDirectionalityImpl(int codePoint) {
+        return DSUtils.UNKNOWN_BYTE;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:11.763 -0400", hash_original_method = "1BF084B14EC69DE3E76A3A4117F862C8", hash_generated_method = "4DDD304917D503E6862800E37AB9B148")
-    @DSModeled(DSC.SAFE)
-    public static boolean isMirrored(char c) {
+        public static boolean isMirrored(char c) {
         return isMirrored((int) c);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:11.763 -0400", hash_original_method = "0D5BB93036D150E4F21C8BED2C6D4A06", hash_generated_method = "8A1642953FD4FEE1D5C42FB3D8A67A5A")
-    @DSModeled(DSC.SAFE)
-    public static boolean isMirrored(int codePoint) {
+        public static boolean isMirrored(int codePoint) {
         return isMirroredImpl(codePoint);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:11.763 -0400", hash_original_method = "E292C959323B528E04496C7CCA760565", hash_generated_method = "8F4F700CCD114EF9769B4721AF51851B")
-    @DSModeled(DSC.SAFE)
-    private static boolean isMirroredImpl(int codePoint) {
-        //DSFIXME:  CODE0012: Native static method requires manual modeling
-    	return DSUtils.UNKNOWN_BOOLEAN;
+        private static boolean isMirroredImpl(int codePoint) {
+        return DSUtils.UNKNOWN_BOOLEAN;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:11.763 -0400", hash_original_method = "961F210287166DF05D8915D632129E75", hash_generated_method = "839D1EBE643B666CA5D1F1CA10397ED1")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:25.527 -0400", hash_original_method = "961F210287166DF05D8915D632129E75", hash_generated_method = "2CC0EC8302E0602B9137F5B8629A7214")
     @DSModeled(DSC.SAFE)
     @Override
     public int hashCode() {
@@ -750,59 +572,42 @@ public final class Character implements Serializable, Comparable<Character> {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:11.763 -0400", hash_original_method = "D12B7095CE782CB3A44759C6A99FDE49", hash_generated_method = "95F67EF1AE8E8F4CFD78A7E29DCD7543")
-    @DSModeled(DSC.SAFE)
-    public static char highSurrogate(int codePoint) {
+        public static char highSurrogate(int codePoint) {
         return (char) ((codePoint >> 10) + 0xd7c0);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:11.763 -0400", hash_original_method = "ED18C5488875D7977019974254AC4633", hash_generated_method = "76CACD2B4965C51B79A8F0DD96135B8A")
-    @DSModeled(DSC.SAFE)
-    public static char lowSurrogate(int codePoint) {
+        public static char lowSurrogate(int codePoint) {
         return (char) ((codePoint & 0x3ff) | 0xdc00);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:11.763 -0400", hash_original_method = "2C53B1D476DFDA53F515478C54D797C2", hash_generated_method = "6CC3F8314BB22C54E6C591E70F8FFC7B")
-    @DSModeled(DSC.SAFE)
-    public static boolean isBmpCodePoint(int codePoint) {
+        public static boolean isBmpCodePoint(int codePoint) {
         return codePoint >= 0 && codePoint <= 0xffff;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:11.763 -0400", hash_original_method = "81B97EFCB1899F0273732CB1D268DB36", hash_generated_method = "2DD6EE83234FA7757A7B606FC293F43B")
-    @DSModeled(DSC.SAFE)
-    public static boolean isDefined(char c) {
+        public static boolean isDefined(char c) {
         return isDefinedImpl(c);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:11.763 -0400", hash_original_method = "29588F3CD418602F0EF69BC1734C6254", hash_generated_method = "9AA1DA54F15D99778DFFA4BD82692285")
-    @DSModeled(DSC.SAFE)
-    public static boolean isDefined(int codePoint) {
+        public static boolean isDefined(int codePoint) {
         return isDefinedImpl(codePoint);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:11.764 -0400", hash_original_method = "BA2C340F1A386E9F3EC0BA5846FE0962", hash_generated_method = "A07F091AE5BE4F24E8772BD24669A831")
-    @DSModeled(DSC.SAFE)
-    private static boolean isDefinedImpl(int codePoint) {
-        //DSFIXME:  CODE0012: Native static method requires manual modeling
-    	return DSUtils.UNKNOWN_BOOLEAN;
+        private static boolean isDefinedImpl(int codePoint) {
+        return DSUtils.UNKNOWN_BOOLEAN;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:11.764 -0400", hash_original_method = "5ADE199AB33D628FF4C86910DA36B8AB", hash_generated_method = "42E12700736BB9E065543D5A29400F0E")
-    @DSModeled(DSC.SAFE)
-    public static boolean isDigit(char c) {
+        public static boolean isDigit(char c) {
         return isDigit((int) c);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:11.764 -0400", hash_original_method = "68C823D8D9E30AD74311CD8E57BB79FD", hash_generated_method = "142D07B848AB542D9BE1DA2D45C16D5F")
-    @DSModeled(DSC.SAFE)
-    public static boolean isDigit(int codePoint) {
+        public static boolean isDigit(int codePoint) {
         if ('0' <= codePoint && codePoint <= '9') {
             return true;
         }
@@ -813,24 +618,17 @@ public final class Character implements Serializable, Comparable<Character> {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:11.764 -0400", hash_original_method = "F904076CF8ED09F6D0D155E03B5610A7", hash_generated_method = "0FA0ED862AECD4AB9FADA5F0EB0E01F9")
-    @DSModeled(DSC.SAFE)
-    private static boolean isDigitImpl(int codePoint) {
-        //DSFIXME:  CODE0012: Native static method requires manual modeling
-    	return DSUtils.UNKNOWN_BOOLEAN;
+        private static boolean isDigitImpl(int codePoint) {
+        return DSUtils.UNKNOWN_BOOLEAN;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:11.764 -0400", hash_original_method = "3060005E7173CF0D443847A582C02D7D", hash_generated_method = "26FBD37699A5E6F17DC0439805AFD705")
-    @DSModeled(DSC.SAFE)
-    public static boolean isIdentifierIgnorable(char c) {
+        public static boolean isIdentifierIgnorable(char c) {
         return isIdentifierIgnorable((int) c);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:11.764 -0400", hash_original_method = "12FDF0DF3583E05536965003AB19E6D0", hash_generated_method = "13166660EAD882BFFA526F22F902D067")
-    @DSModeled(DSC.SAFE)
-    public static boolean isIdentifierIgnorable(int codePoint) {
+        public static boolean isIdentifierIgnorable(int codePoint) {
         if (codePoint < 0x600) {
             return (codePoint >= 0 && codePoint <= 8) || (codePoint >= 0xe && codePoint <= 0x1b) ||
                     (codePoint >= 0x7f && codePoint <= 0x9f) || (codePoint == 0xad);
@@ -839,38 +637,27 @@ public final class Character implements Serializable, Comparable<Character> {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:11.764 -0400", hash_original_method = "2A2AB9D0D4CBD87FC680B28F68076F12", hash_generated_method = "982218B622E2B2274763547E8F96FC33")
-    @DSModeled(DSC.SAFE)
-    private static boolean isIdentifierIgnorableImpl(int codePoint) {
-        //DSFIXME:  CODE0012: Native static method requires manual modeling
-    	return DSUtils.UNKNOWN_BOOLEAN;
+        private static boolean isIdentifierIgnorableImpl(int codePoint) {
+        return DSUtils.UNKNOWN_BOOLEAN;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:11.764 -0400", hash_original_method = "02471F94F8A872CAA5DBEB3E98DF50DE", hash_generated_method = "C1662F72DC398FF54402916FC18586AB")
-    @DSModeled
-    public static boolean isISOControl(char c) {
+        public static boolean isISOControl(char c) {
         return isISOControl((int) c);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:11.764 -0400", hash_original_method = "FE7A975C42B0FF6EDFA670F841892F5F", hash_generated_method = "4C1E1EBB936BB0413D89F4C4BAF42B1E")
-    @DSModeled
-    public static boolean isISOControl(int c) {
+        public static boolean isISOControl(int c) {
         return (c >= 0 && c <= 0x1f) || (c >= 0x7f && c <= 0x9f);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:11.764 -0400", hash_original_method = "F9C7B1CB3FEBF00FF413523F33E917A8", hash_generated_method = "64DD3792DD478F9FB316DCB11420D619")
-    @DSModeled
-    public static boolean isJavaIdentifierPart(char c) {
+        public static boolean isJavaIdentifierPart(char c) {
         return isJavaIdentifierPart((int) c);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:11.764 -0400", hash_original_method = "4F1F7D3E12F4616733289A3F7EB4DC63", hash_generated_method = "E841032F7EEB6B019683FFE018C32496")
-    @DSModeled
-    public static boolean isJavaIdentifierPart(int codePoint) {
+        public static boolean isJavaIdentifierPart(int codePoint) {
         if (codePoint < 64) {
             return (0x3ff00100fffc1ffL & (1L << codePoint)) != 0;
         } else if (codePoint < 128) {
@@ -886,16 +673,12 @@ public final class Character implements Serializable, Comparable<Character> {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:11.764 -0400", hash_original_method = "D2C6EAA3E751B808447D604FB6D29517", hash_generated_method = "27B3A90E6485B3D9A0BC426A1CBFDEFB")
-    @DSModeled
-    public static boolean isJavaIdentifierStart(char c) {
+        public static boolean isJavaIdentifierStart(char c) {
         return isJavaIdentifierStart((int) c);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:11.764 -0400", hash_original_method = "F7577C4689C2BEF45089F3ACFFDAD03A", hash_generated_method = "D41E494F8324E465AFE7F625DCDEC10C")
-    @DSModeled
-    public static boolean isJavaIdentifierStart(int codePoint) {
+        public static boolean isJavaIdentifierStart(int codePoint) {
         if (codePoint < 64) {
             return (codePoint == '$'); 
         } else if (codePoint < 128) {
@@ -907,32 +690,24 @@ public final class Character implements Serializable, Comparable<Character> {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:11.764 -0400", hash_original_method = "894B7941A639354EFA5A1447EF61D132", hash_generated_method = "085C53C5C1B90EEB9084DA90BFC3A5E8")
-    @Deprecated
-    @DSModeled
+        @Deprecated
     public static boolean isJavaLetter(char c) {
         return isJavaIdentifierStart(c);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:11.764 -0400", hash_original_method = "82CCBEF7CE2F6615EFEE4A91C0BA2F9C", hash_generated_method = "422C6824B767C066DE9BAE5D3104F2DE")
-    @Deprecated
-    @DSModeled
+        @Deprecated
     public static boolean isJavaLetterOrDigit(char c) {
         return isJavaIdentifierPart(c);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:11.764 -0400", hash_original_method = "7F4F394B7A0F8301F44F921567D26367", hash_generated_method = "32A3D276372BDCAB04526997529A6AE5")
-    @DSModeled(DSC.SAFE)
-    public static boolean isLetter(char c) {
+        public static boolean isLetter(char c) {
         return isLetter((int) c);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:11.764 -0400", hash_original_method = "7BDBB6EE44226312FBB7DF96FC7BF3DE", hash_generated_method = "35A84F948084B1DD9E50B661A119CBA6")
-    @DSModeled(DSC.SAFE)
-    public static boolean isLetter(int codePoint) {
+        public static boolean isLetter(int codePoint) {
         if (('A' <= codePoint && codePoint <= 'Z') || ('a' <= codePoint && codePoint <= 'z')) {
             return true;
         }
@@ -943,24 +718,17 @@ public final class Character implements Serializable, Comparable<Character> {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:11.764 -0400", hash_original_method = "B671C8CB4836F23CCDC793D8C06B6725", hash_generated_method = "0FB08F46807C63C8BB89F45D418CF373")
-    @DSModeled(DSC.SAFE)
-    private static boolean isLetterImpl(int codePoint) {
-        //DSFIXME:  CODE0012: Native static method requires manual modeling
-    	return DSUtils.UNKNOWN_BOOLEAN;
+        private static boolean isLetterImpl(int codePoint) {
+        return DSUtils.UNKNOWN_BOOLEAN;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:11.764 -0400", hash_original_method = "07424AD55498F7F8FBBB544D5FCCF9DD", hash_generated_method = "1530ABD48035BF9C774F5A5B50B67F62")
-    @DSModeled(DSC.SAFE)
-    public static boolean isLetterOrDigit(char c) {
+        public static boolean isLetterOrDigit(char c) {
         return isLetterOrDigit((int) c);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:11.764 -0400", hash_original_method = "2AEE2538D487594FA64E74F73C7B1C5D", hash_generated_method = "F10950903EC744FBA69518321B130B6F")
-    @DSModeled(DSC.SAFE)
-    public static boolean isLetterOrDigit(int codePoint) {
+        public static boolean isLetterOrDigit(int codePoint) {
         if (('A' <= codePoint && codePoint <= 'Z') || ('a' <= codePoint && codePoint <= 'z')) {
             return true;
         }
@@ -974,24 +742,17 @@ public final class Character implements Serializable, Comparable<Character> {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:11.764 -0400", hash_original_method = "3C7B38B03B018EEA897CD89E14D09984", hash_generated_method = "58AD72D52161DAF8BDF214C174B501BA")
-    @DSModeled(DSC.SAFE)
-    private static boolean isLetterOrDigitImpl(int codePoint) {
-        //DSFIXME:  CODE0012: Native static method requires manual modeling
-    	return DSUtils.UNKNOWN_BOOLEAN;
+        private static boolean isLetterOrDigitImpl(int codePoint) {
+        return DSUtils.UNKNOWN_BOOLEAN;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:11.764 -0400", hash_original_method = "73BDBCA2665627024F8A18D3318C8DB8", hash_generated_method = "19BA20C32B3AE4D5ACF17271CBFDC670")
-    @DSModeled(DSC.SAFE)
-    public static boolean isLowerCase(char c) {
+        public static boolean isLowerCase(char c) {
         return isLowerCase((int) c);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:11.764 -0400", hash_original_method = "ADB5E41EE7B502A26DF78C97B20911AD", hash_generated_method = "0439778D78A156B7FE2FEC4E050D1167")
-    @DSModeled(DSC.SAFE)
-    public static boolean isLowerCase(int codePoint) {
+        public static boolean isLowerCase(int codePoint) {
         if ('a' <= codePoint && codePoint <= 'z') {
             return true;
         }
@@ -1002,32 +763,23 @@ public final class Character implements Serializable, Comparable<Character> {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:11.764 -0400", hash_original_method = "BA09C596C26CA8AA15B61529DE1EA5CB", hash_generated_method = "B3EAE94AC11671742B9ABBED6ED85880")
-    @DSModeled(DSC.SAFE)
-    private static boolean isLowerCaseImpl(int codePoint) {
-        //DSFIXME:  CODE0012: Native static method requires manual modeling
-    	return DSUtils.UNKNOWN_BOOLEAN;
+        private static boolean isLowerCaseImpl(int codePoint) {
+        return DSUtils.UNKNOWN_BOOLEAN;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:11.764 -0400", hash_original_method = "1C3B61A184019B571D3EC162646AADA1", hash_generated_method = "08D480873CB522669215721714160554")
-    @Deprecated
-    @DSModeled(DSC.SAFE)
+        @Deprecated
     public static boolean isSpace(char c) {
         return c == '\n' || c == '\t' || c == '\f' || c == '\r' || c == ' ';
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:11.764 -0400", hash_original_method = "5EA1910DE691C0C494DA1CD65B8AD3FB", hash_generated_method = "5AC456F721A8B07CFE0D43C462B3D7D7")
-    @DSModeled(DSC.SAFE)
-    public static boolean isSpaceChar(char c) {
+        public static boolean isSpaceChar(char c) {
         return isSpaceChar((int) c);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:11.764 -0400", hash_original_method = "A9B3EEBBDFB6A55F67B5E3A75165CDD6", hash_generated_method = "5F8DCFFC54A7FDCF3608E9F5C2195FF4")
-    @DSModeled(DSC.SAFE)
-    public static boolean isSpaceChar(int codePoint) {
+        public static boolean isSpaceChar(int codePoint) {
         if (codePoint == 0x20 || codePoint == 0xa0 || codePoint == 0x1680) {
             return true;
         }
@@ -1042,90 +794,62 @@ public final class Character implements Serializable, Comparable<Character> {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:11.765 -0400", hash_original_method = "6B5A033B254409E9D1D4FA09A102D44E", hash_generated_method = "74057EF841BA310C92353E990D7AEFAD")
-    @DSModeled(DSC.SAFE)
-    private static boolean isSpaceCharImpl(int codePoint) {
-        //DSFIXME:  CODE0012: Native static method requires manual modeling
-    	return DSUtils.UNKNOWN_BOOLEAN;
+        private static boolean isSpaceCharImpl(int codePoint) {
+        return DSUtils.UNKNOWN_BOOLEAN;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:11.765 -0400", hash_original_method = "084F70F38BAFAA7D7D5DCCB7F82C794B", hash_generated_method = "1C03C37486F31D9697FC7EBA06712FA0")
-    @DSModeled(DSC.SAFE)
-    public static boolean isTitleCase(char c) {
+        public static boolean isTitleCase(char c) {
         return isTitleCaseImpl(c);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:11.765 -0400", hash_original_method = "530406D8340E661E297BE9C5D23D16FA", hash_generated_method = "B0C7199C831C093C330F98DF15541C87")
-    @DSModeled(DSC.SAFE)
-    public static boolean isTitleCase(int codePoint) {
+        public static boolean isTitleCase(int codePoint) {
         return isTitleCaseImpl(codePoint);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:11.765 -0400", hash_original_method = "5D4C2B46F0A51AB70DF29B1A0552D734", hash_generated_method = "290045B1011D688D802B6CF3EA42DFFD")
-    @DSModeled(DSC.SAFE)
-    private static boolean isTitleCaseImpl(int codePoint) {
-        //DSFIXME:  CODE0012: Native static method requires manual modeling
-    	return DSUtils.UNKNOWN_BOOLEAN;
+        private static boolean isTitleCaseImpl(int codePoint) {
+        return DSUtils.UNKNOWN_BOOLEAN;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:11.765 -0400", hash_original_method = "2413D525F1F2FBC6EE783A47B6048FA5", hash_generated_method = "86F84AC70263C31F92A614E837A3C613")
-    @DSModeled(DSC.SAFE)
-    public static boolean isUnicodeIdentifierPart(char c) {
+        public static boolean isUnicodeIdentifierPart(char c) {
         return isUnicodeIdentifierPartImpl(c);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:11.765 -0400", hash_original_method = "F0897994A34B93CFFEB1B8CB7B346E77", hash_generated_method = "A166C0ED27BA383B63976FA2F0D9F0DC")
-    @DSModeled(DSC.SAFE)
-    public static boolean isUnicodeIdentifierPart(int codePoint) {
+        public static boolean isUnicodeIdentifierPart(int codePoint) {
         return isUnicodeIdentifierPartImpl(codePoint);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:11.765 -0400", hash_original_method = "98A737EE3ABB813CF1439C9A0D88676D", hash_generated_method = "AFA711E89FED2B2E3716F6D4F73328CE")
-    @DSModeled(DSC.SAFE)
-    private static boolean isUnicodeIdentifierPartImpl(int codePoint) {
-        //DSFIXME:  CODE0012: Native static method requires manual modeling
-    	return DSUtils.UNKNOWN_BOOLEAN;
+        private static boolean isUnicodeIdentifierPartImpl(int codePoint) {
+        return DSUtils.UNKNOWN_BOOLEAN;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:11.765 -0400", hash_original_method = "32D22A17AA82ABC9781B01DDEE5FEF29", hash_generated_method = "30C4EAA09D022FFC63275F8841A9834B")
-    @DSModeled(DSC.SAFE)
-    public static boolean isUnicodeIdentifierStart(char c) {
+        public static boolean isUnicodeIdentifierStart(char c) {
         return isUnicodeIdentifierStartImpl(c);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:11.765 -0400", hash_original_method = "EAAB05CCE538933E6B2EE13894209916", hash_generated_method = "7DBB32C2688BD2CE21DBADCCA8BA1E3D")
-    @DSModeled(DSC.SAFE)
-    public static boolean isUnicodeIdentifierStart(int codePoint) {
+        public static boolean isUnicodeIdentifierStart(int codePoint) {
         return isUnicodeIdentifierStartImpl(codePoint);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:11.765 -0400", hash_original_method = "19E0B88A41590772F2B6579654359C8A", hash_generated_method = "BC7F055DA1BBC081ECE86BF982BFE6E8")
-    @DSModeled(DSC.SAFE)
-    private static boolean isUnicodeIdentifierStartImpl(int codePoint) {
-        //DSFIXME:  CODE0012: Native static method requires manual modeling
-    	return DSUtils.UNKNOWN_BOOLEAN;
+        private static boolean isUnicodeIdentifierStartImpl(int codePoint) {
+        return DSUtils.UNKNOWN_BOOLEAN;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:11.765 -0400", hash_original_method = "51D2DA544BFD2481CED21FC5653231F0", hash_generated_method = "28E52AFBCAA76F5FEED65620D475D8C5")
-    @DSModeled(DSC.SAFE)
-    public static boolean isUpperCase(char c) {
+        public static boolean isUpperCase(char c) {
         return isUpperCase((int) c);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:11.765 -0400", hash_original_method = "F0069BE3C05BFC7EED89F20634609A58", hash_generated_method = "19E4F72FD9BE2B3015DC41A0411E9CC0")
-    @DSModeled(DSC.SAFE)
-    public static boolean isUpperCase(int codePoint) {
+        public static boolean isUpperCase(int codePoint) {
         if ('A' <= codePoint && codePoint <= 'Z') {
             return true;
         }
@@ -1136,24 +860,17 @@ public final class Character implements Serializable, Comparable<Character> {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:11.765 -0400", hash_original_method = "5D4232B921B2097EACFE07B8CA79F206", hash_generated_method = "55E3EAB4CF41D7AFCDF50AC0DD827771")
-    @DSModeled(DSC.SAFE)
-    private static boolean isUpperCaseImpl(int codePoint) {
-        //DSFIXME:  CODE0012: Native static method requires manual modeling
-    	return DSUtils.UNKNOWN_BOOLEAN;
+        private static boolean isUpperCaseImpl(int codePoint) {
+        return DSUtils.UNKNOWN_BOOLEAN;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:11.765 -0400", hash_original_method = "BD70D8F0870A48AB1ECFE4339B84BFEA", hash_generated_method = "E1645C1CBF3CF8A2D112E678E849FCD6")
-    @DSModeled(DSC.SAFE)
-    public static boolean isWhitespace(char c) {
+        public static boolean isWhitespace(char c) {
         return isWhitespace((int) c);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:11.765 -0400", hash_original_method = "EBC0D247F0203C6470AC61D5038CC471", hash_generated_method = "B5CA5B9AD7131CA83AE5C19BF76D7B31")
-    @DSModeled(DSC.SAFE)
-    public static boolean isWhitespace(int codePoint) {
+        public static boolean isWhitespace(int codePoint) {
         if ((codePoint >= 0x1c && codePoint <= 0x20) || (codePoint >= 0x9 && codePoint <= 0xd)) {
             return true;
         }
@@ -1171,31 +888,22 @@ public final class Character implements Serializable, Comparable<Character> {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:11.765 -0400", hash_original_method = "13541F0E4A0D4F6FA23E865B664895DF", hash_generated_method = "FC9B03FF1DC2EB630A1E3510AC1510D1")
-    @DSModeled(DSC.SAFE)
-    private static boolean isWhitespaceImpl(int codePoint) {
-        //DSFIXME:  CODE0012: Native static method requires manual modeling
-    	return DSUtils.UNKNOWN_BOOLEAN;
+        private static boolean isWhitespaceImpl(int codePoint) {
+        return DSUtils.UNKNOWN_BOOLEAN;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:11.765 -0400", hash_original_method = "C2BB18E49C39C3C8DD51F191BCC5B3D5", hash_generated_method = "3172C7A30AC9EA9D20E23D2663796EE5")
-    @DSModeled
-    public static char reverseBytes(char c) {
+        public static char reverseBytes(char c) {
         return (char)((c<<8) | (c>>8));
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:11.765 -0400", hash_original_method = "0D897DDA68232C66EB5005BC13278698", hash_generated_method = "39DD3E0FE93DCB6CA8480854DA182439")
-    @DSModeled
-    public static char toLowerCase(char c) {
+        public static char toLowerCase(char c) {
         return (char) toLowerCase((int) c);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:11.765 -0400", hash_original_method = "46554DD4C02B03BE2AD03A5664655738", hash_generated_method = "4FD35F342D65149E82AD89D9325C5B2A")
-    @DSModeled
-    public static int toLowerCase(int codePoint) {
+        public static int toLowerCase(int codePoint) {
         if ('A' <= codePoint && codePoint <= 'Z') {
             return (char) (codePoint + ('a' - 'A'));
         }
@@ -1206,65 +914,48 @@ public final class Character implements Serializable, Comparable<Character> {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:11.765 -0400", hash_original_method = "BC02FA7C2EB83DBC36BD24E9BC8F5D01", hash_generated_method = "9F8F288EDE2E2B6CCC649773AD1A19DC")
-    @DSModeled(DSC.SAFE)
-    private static int toLowerCaseImpl(int codePoint) {
-        //DSFIXME:  CODE0012: Native static method requires manual modeling
-    	return DSUtils.UNKNOWN_INT;
+        private static int toLowerCaseImpl(int codePoint) {
+        return DSUtils.UNKNOWN_INT;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:11.765 -0400", hash_original_method = "27F3E47E60B1213ECE72A0C1452319D1", hash_generated_method = "0AEA542B330B37C5D99F2D95C032BE35")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:25.533 -0400", hash_original_method = "27F3E47E60B1213ECE72A0C1452319D1", hash_generated_method = "FC0C81FA07C5B672CD6D0219F4BAC129")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     @Override
-    @DSModeled
     public String toString() {
-        String varE56CB71A0102261E1E6B2E712053A166_1101000707 = (String.valueOf(value));
+        String varE56CB71A0102261E1E6B2E712053A166_273951476 = (String.valueOf(value));
         return dsTaint.getTaintString();
         // ---------- Original Method ----------
         //return String.valueOf(value);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:11.765 -0400", hash_original_method = "C0C76FDDC989F4AB02663C4A842CB735", hash_generated_method = "AEAE79DA8922F05782BBF3E4E55FD854")
-    @DSModeled
-    public static String toString(char value) {
+        public static String toString(char value) {
         return String.valueOf(value);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:11.765 -0400", hash_original_method = "A4A9BAD50031A130761CE8D0E963613C", hash_generated_method = "04803B384C02AE9AAB58419BB2A08A22")
-    @DSModeled
-    public static char toTitleCase(char c) {
+        public static char toTitleCase(char c) {
         return (char) toTitleCaseImpl(c);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:11.765 -0400", hash_original_method = "61A725C4B04EDED5F335FC945F33D736", hash_generated_method = "28B8F969BFA6773BFE7CC57387648DD2")
-    @DSModeled
-    public static int toTitleCase(int codePoint) {
+        public static int toTitleCase(int codePoint) {
         return toTitleCaseImpl(codePoint);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:11.765 -0400", hash_original_method = "FE2B382CC43B1E9A80006125376CDF15", hash_generated_method = "77CC16A903DA16AEBE67922377BA7B4A")
-    @DSModeled
-    private static int toTitleCaseImpl(int codePoint) {
-        //DSFIXME:  CODE0012: Native static method requires manual modeling
-    	return DSUtils.UNKNOWN_INT;
+        private static int toTitleCaseImpl(int codePoint) {
+        return DSUtils.UNKNOWN_INT;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:11.765 -0400", hash_original_method = "6F70DC22D940915BC069D6212605A1EF", hash_generated_method = "BEA5EA638AFD1B864D7F6CBC205605AF")
-    @DSModeled
-    public static char toUpperCase(char c) {
+        public static char toUpperCase(char c) {
         return (char) toUpperCase((int) c);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:11.765 -0400", hash_original_method = "8C765A659D796CF19325E431E5641ECE", hash_generated_method = "058759B7687D4A1055165554502F358C")
-    @DSModeled
-    public static int toUpperCase(int codePoint) {
+        public static int toUpperCase(int codePoint) {
         if ('a' <= codePoint && codePoint <= 'z') {
             return (char) (codePoint - ('a' - 'A'));
         }
@@ -1275,23 +966,20 @@ public final class Character implements Serializable, Comparable<Character> {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:11.765 -0400", hash_original_method = "DA6B9550C074BDC69CBF47357D2E1CFA", hash_generated_method = "A32C0FEC0866250358980F33F070DD93")
-    @DSModeled
-    private static int toUpperCaseImpl(int codePoint) {
-        //DSFIXME:  CODE0012: Native static method requires manual modeling
-    	return DSUtils.UNKNOWN_INT;
+        private static int toUpperCaseImpl(int codePoint) {
+        return DSUtils.UNKNOWN_INT;
     }
 
     
     public static class Subset {
         String name;
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:11.765 -0400", hash_original_method = "F864A542FCD1C844E1D83841069C7DB4", hash_generated_method = "0B469ECBE2E72D19DC6CEBEE4C86A194")
-        @DSModeled(DSC.SAFE)
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:25.534 -0400", hash_original_method = "F864A542FCD1C844E1D83841069C7DB4", hash_generated_method = "9256548ED3A73C311D989009863EDBB0")
+        //DSFIXME:  CODE0002: Requires DSC value to be set
         protected Subset(String string) {
             dsTaint.addTaint(string);
             {
-                throw new NullPointerException();
+                if (DroidSafeAndroidRuntime.control) throw new NullPointerException();
             } //End block
             // ---------- Original Method ----------
             //if (string == null) {
@@ -1301,32 +989,30 @@ public final class Character implements Serializable, Comparable<Character> {
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:11.765 -0400", hash_original_method = "4C72D63DD7600BBEA68526CF4A3E7570", hash_generated_method = "55DD09AB37F2B4860EFB0F9CDC4389D1")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:25.534 -0400", hash_original_method = "4C72D63DD7600BBEA68526CF4A3E7570", hash_generated_method = "0FBB9739A338A21761CD492FE7EF4EAF")
         //DSFIXME:  CODE0002: Requires DSC value to be set
         @Override
-        @DSModeled
         public final boolean equals(Object object) {
             dsTaint.addTaint(object.dsTaint);
-            boolean varA3157AA9BC21D9DE63321077403F3F07_1857729860 = (super.equals(object));
+            boolean varA3157AA9BC21D9DE63321077403F3F07_380171902 = (super.equals(object));
             return dsTaint.getTaintBoolean();
             // ---------- Original Method ----------
             //return super.equals(object);
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:11.766 -0400", hash_original_method = "BBCDAD7BF06FB621822DBBAD11355700", hash_generated_method = "20F2370A410E3A51A9132E3CC8FF245A")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:25.534 -0400", hash_original_method = "BBCDAD7BF06FB621822DBBAD11355700", hash_generated_method = "B0FE7C43743B0FA081416321CF421A71")
         //DSFIXME:  CODE0002: Requires DSC value to be set
         @Override
-        @DSModeled
         public final int hashCode() {
-            int var7065CA1B738CD514456434D45E0A5A67_1569645044 = (super.hashCode());
+            int var7065CA1B738CD514456434D45E0A5A67_639999176 = (super.hashCode());
             return dsTaint.getTaintInt();
             // ---------- Original Method ----------
             //return super.hashCode();
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:11.766 -0400", hash_original_method = "0EB66BA5E965B83E191719250E0A82FF", hash_generated_method = "106E524F7DD5083F3F25D749353ACA76")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:25.534 -0400", hash_original_method = "0EB66BA5E965B83E191719250E0A82FF", hash_generated_method = "FEF344B1068AD1616CE235619EEF4208")
         @DSModeled(DSC.SAFE)
         @Override
         public final String toString() {
@@ -1334,13 +1020,62 @@ public final class Character implements Serializable, Comparable<Character> {
             // ---------- Original Method ----------
             //return name;
         }
+
+        
     }
 
 
     
     public static final class UnicodeBlock extends Subset {
-        @Deprecated
-        public static final UnicodeBlock SURROGATES_AREA = new UnicodeBlock("SURROGATES_AREA", 0x0, 0x0);
+        
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:25.535 -0400", hash_original_method = "234E88093AAFC12110C9FE35072443BD", hash_generated_method = "B2ABF9878AB37D4F41DFB1A7DE1C24DB")
+        //DSFIXME:  CODE0002: Requires DSC value to be set
+        private UnicodeBlock(String blockName, int start, int end) {
+            super(blockName);
+            dsTaint.addTaint(start);
+            dsTaint.addTaint(blockName);
+            dsTaint.addTaint(end);
+            // ---------- Original Method ----------
+        }
+
+        
+                public static UnicodeBlock forName(String blockName) {
+            if (blockName == null) {
+                throw new NullPointerException();
+            }
+            int block = forNameImpl(blockName);
+            if (block == -1) {
+                if (blockName.equals("SURROGATES_AREA")) {
+                    return SURROGATES_AREA;
+                } else if(blockName.equalsIgnoreCase("greek")) {
+                    return GREEK;
+                } else if(blockName.equals("COMBINING_MARKS_FOR_SYMBOLS") ||
+                        blockName.equals("Combining Marks for Symbols") ||
+                        blockName.equals("CombiningMarksforSymbols")) {
+                    return COMBINING_MARKS_FOR_SYMBOLS;
+                }
+                throw new IllegalArgumentException("Bad block name: " + blockName);
+            }
+            return BLOCKS[block];
+        }
+
+        
+                public static UnicodeBlock of(char c) {
+            return of((int) c);
+        }
+
+        
+                public static UnicodeBlock of(int codePoint) {
+            checkValidCodePoint(codePoint);
+            int block = ofImpl(codePoint);
+            if (block == -1 || block >= BLOCKS.length) {
+                return null;
+            }
+            return BLOCKS[block];
+        }
+
+        
+        @Deprecated public static final UnicodeBlock SURROGATES_AREA = new UnicodeBlock("SURROGATES_AREA", 0x0, 0x0);
         public static final UnicodeBlock BASIC_LATIN = new UnicodeBlock("BASIC_LATIN", 0x0, 0x7f);
         public static final UnicodeBlock LATIN_1_SUPPLEMENT = new UnicodeBlock("LATIN_1_SUPPLEMENT", 0x80, 0xff);
         public static final UnicodeBlock LATIN_EXTENDED_A = new UnicodeBlock("LATIN_EXTENDED_A", 0x100, 0x17f);
@@ -1594,65 +1329,95 @@ public final class Character implements Serializable, Comparable<Character> {
             UnicodeBlock.TAI_XUAN_JING_SYMBOLS,
             UnicodeBlock.VARIATION_SELECTORS_SUPPLEMENT
         };
-        
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:11.766 -0400", hash_original_method = "234E88093AAFC12110C9FE35072443BD", hash_generated_method = "1A0DDD9E9DF42098B5D19D004AD7A935")
-        //DSFIXME:  CODE0002: Requires DSC value to be set
-        @DSModeled
-        private UnicodeBlock(String blockName, int start, int end) {
-            super(blockName);
-            dsTaint.addTaint(start);
-            dsTaint.addTaint(blockName);
-            dsTaint.addTaint(end);
-            // ---------- Original Method ----------
-        }
-
-        
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:11.766 -0400", hash_original_method = "E9DB7390794C45C5DB1C50A23EEAE54D", hash_generated_method = "540C2841FB066D79347D7FF67B42E144")
-        @DSModeled
-        public static UnicodeBlock forName(String blockName) {
-            if (blockName == null) {
-                throw new NullPointerException();
-            }
-            int block = forNameImpl(blockName);
-            if (block == -1) {
-                if (blockName.equals("SURROGATES_AREA")) {
-                    return SURROGATES_AREA;
-                } else if(blockName.equalsIgnoreCase("greek")) {
-                    return GREEK;
-                } else if(blockName.equals("COMBINING_MARKS_FOR_SYMBOLS") ||
-                        blockName.equals("Combining Marks for Symbols") ||
-                        blockName.equals("CombiningMarksforSymbols")) {
-                    return COMBINING_MARKS_FOR_SYMBOLS;
-                }
-                throw new IllegalArgumentException("Bad block name: " + blockName);
-            }
-            return BLOCKS[block];
-        }
-
-        
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:11.766 -0400", hash_original_method = "392D71CF093044293F2B368B3C851863", hash_generated_method = "37315607D83E4BDAF9961621E8257316")
-        @DSModeled
-        public static UnicodeBlock of(char c) {
-            return of((int) c);
-        }
-
-        
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:11.766 -0400", hash_original_method = "C353B574FF2B3DDFEDDE0862E878329F", hash_generated_method = "B33A211A12366700A0DC5DADFEC12A20")
-        @DSModeled
-        public static UnicodeBlock of(int codePoint) {
-            checkValidCodePoint(codePoint);
-            int block = ofImpl(codePoint);
-            if (block == -1 || block >= BLOCKS.length) {
-                return null;
-            }
-            return BLOCKS[block];
-        }
-
-        
     }
 
 
     
+    private static final long serialVersionUID = 3786198910865385080L;
+    public static final char MIN_VALUE = '\u0000';
+    public static final char MAX_VALUE = '\uffff';
+    public static final int MIN_RADIX = 2;
+    public static final int MAX_RADIX = 36;
+    @SuppressWarnings("unchecked") public static final Class<Character> TYPE
+            = (Class<Character>) char[].class.getComponentType();
+    public static final byte UNASSIGNED = 0;
+    public static final byte UPPERCASE_LETTER = 1;
+    public static final byte LOWERCASE_LETTER = 2;
+    public static final byte TITLECASE_LETTER = 3;
+    public static final byte MODIFIER_LETTER = 4;
+    public static final byte OTHER_LETTER = 5;
+    public static final byte NON_SPACING_MARK = 6;
+    public static final byte ENCLOSING_MARK = 7;
+    public static final byte COMBINING_SPACING_MARK = 8;
+    public static final byte DECIMAL_DIGIT_NUMBER = 9;
+    public static final byte LETTER_NUMBER = 10;
+    public static final byte OTHER_NUMBER = 11;
+    public static final byte SPACE_SEPARATOR = 12;
+    public static final byte LINE_SEPARATOR = 13;
+    public static final byte PARAGRAPH_SEPARATOR = 14;
+    public static final byte CONTROL = 15;
+    public static final byte FORMAT = 16;
+    public static final byte PRIVATE_USE = 18;
+    public static final byte SURROGATE = 19;
+    public static final byte DASH_PUNCTUATION = 20;
+    public static final byte START_PUNCTUATION = 21;
+    public static final byte END_PUNCTUATION = 22;
+    public static final byte CONNECTOR_PUNCTUATION = 23;
+    public static final byte OTHER_PUNCTUATION = 24;
+    public static final byte MATH_SYMBOL = 25;
+    public static final byte CURRENCY_SYMBOL = 26;
+    public static final byte MODIFIER_SYMBOL = 27;
+    public static final byte OTHER_SYMBOL = 28;
+    public static final byte INITIAL_QUOTE_PUNCTUATION = 29;
+    public static final byte FINAL_QUOTE_PUNCTUATION = 30;
+    public static final byte DIRECTIONALITY_UNDEFINED = -1;
+    public static final byte DIRECTIONALITY_LEFT_TO_RIGHT = 0;
+    public static final byte DIRECTIONALITY_RIGHT_TO_LEFT = 1;
+    public static final byte DIRECTIONALITY_RIGHT_TO_LEFT_ARABIC = 2;
+    public static final byte DIRECTIONALITY_EUROPEAN_NUMBER = 3;
+    public static final byte DIRECTIONALITY_EUROPEAN_NUMBER_SEPARATOR = 4;
+    public static final byte DIRECTIONALITY_EUROPEAN_NUMBER_TERMINATOR = 5;
+    public static final byte DIRECTIONALITY_ARABIC_NUMBER = 6;
+    public static final byte DIRECTIONALITY_COMMON_NUMBER_SEPARATOR = 7;
+    public static final byte DIRECTIONALITY_NONSPACING_MARK = 8;
+    public static final byte DIRECTIONALITY_BOUNDARY_NEUTRAL = 9;
+    public static final byte DIRECTIONALITY_PARAGRAPH_SEPARATOR = 10;
+    public static final byte DIRECTIONALITY_SEGMENT_SEPARATOR = 11;
+    public static final byte DIRECTIONALITY_WHITESPACE = 12;
+    public static final byte DIRECTIONALITY_OTHER_NEUTRALS = 13;
+    public static final byte DIRECTIONALITY_LEFT_TO_RIGHT_EMBEDDING = 14;
+    public static final byte DIRECTIONALITY_LEFT_TO_RIGHT_OVERRIDE = 15;
+    public static final byte DIRECTIONALITY_RIGHT_TO_LEFT_EMBEDDING = 16;
+    public static final byte DIRECTIONALITY_RIGHT_TO_LEFT_OVERRIDE = 17;
+    public static final byte DIRECTIONALITY_POP_DIRECTIONAL_FORMAT = 18;
+    public static final char MIN_HIGH_SURROGATE = '\uD800';
+    public static final char MAX_HIGH_SURROGATE = '\uDBFF';
+    public static final char MIN_LOW_SURROGATE = '\uDC00';
+    public static final char MAX_LOW_SURROGATE = '\uDFFF';
+    public static final char MIN_SURROGATE = '\uD800';
+    public static final char MAX_SURROGATE = '\uDFFF';
+    public static final int MIN_SUPPLEMENTARY_CODE_POINT = 0x10000;
+    public static final int MIN_CODE_POINT = 0x000000;
+    public static final int MAX_CODE_POINT = 0x10FFFF;
+    public static final int SIZE = 16;
+    private static final byte[] DIRECTIONALITY = new byte[] {
+            DIRECTIONALITY_LEFT_TO_RIGHT, DIRECTIONALITY_RIGHT_TO_LEFT,
+            DIRECTIONALITY_EUROPEAN_NUMBER,
+            DIRECTIONALITY_EUROPEAN_NUMBER_SEPARATOR,
+            DIRECTIONALITY_EUROPEAN_NUMBER_TERMINATOR,
+            DIRECTIONALITY_ARABIC_NUMBER,
+            DIRECTIONALITY_COMMON_NUMBER_SEPARATOR,
+            DIRECTIONALITY_PARAGRAPH_SEPARATOR,
+            DIRECTIONALITY_SEGMENT_SEPARATOR, DIRECTIONALITY_WHITESPACE,
+            DIRECTIONALITY_OTHER_NEUTRALS,
+            DIRECTIONALITY_LEFT_TO_RIGHT_EMBEDDING,
+            DIRECTIONALITY_LEFT_TO_RIGHT_OVERRIDE,
+            DIRECTIONALITY_RIGHT_TO_LEFT_ARABIC,
+            DIRECTIONALITY_RIGHT_TO_LEFT_EMBEDDING,
+            DIRECTIONALITY_RIGHT_TO_LEFT_OVERRIDE,
+            DIRECTIONALITY_POP_DIRECTIONAL_FORMAT,
+            DIRECTIONALITY_NONSPACING_MARK, DIRECTIONALITY_BOUNDARY_NEUTRAL };
+    private static final Character[] SMALL_VALUES = new Character[128];
     static {
         for (int i = 0; i < 128; i++) {
             SMALL_VALUES[i] = new Character((char) i);
@@ -1660,5 +1425,4 @@ public final class Character implements Serializable, Comparable<Character> {
     }
     
 }
-
 

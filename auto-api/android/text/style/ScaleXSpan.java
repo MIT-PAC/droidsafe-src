@@ -3,29 +3,28 @@ package android.text.style;
 // Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
+import droidsafe.runtime.*;
 
-// import Iterator to deal with enhanced for loop translation
+// needed for enhanced for control translations
 import java.util.Iterator;
-
 import android.os.Parcel;
 import android.text.ParcelableSpan;
 import android.text.TextPaint;
 import android.text.TextUtils;
 
 public class ScaleXSpan extends MetricAffectingSpan implements ParcelableSpan {
-    private final float mProportion;
+    private float mProportion;
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:04.312 -0400", hash_original_method = "5A8420DEA89D3BA24C51E3449203D410", hash_generated_method = "76083B49FBA762C9117FB7639D7B54BE")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:57.918 -0400", hash_original_method = "5A8420DEA89D3BA24C51E3449203D410", hash_generated_method = "EA351EC46BCB3D60D8B44022D949309F")
     @DSModeled(DSC.SAFE)
     public ScaleXSpan(float proportion) {
         dsTaint.addTaint(proportion);
-        mProportion = proportion;
         // ---------- Original Method ----------
         //mProportion = proportion;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:04.312 -0400", hash_original_method = "84B8294F7669FCC40D337D5712D24934", hash_generated_method = "B5617D5C8CD6F04AEB32E05C10F916C3")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:57.918 -0400", hash_original_method = "84B8294F7669FCC40D337D5712D24934", hash_generated_method = "2917E67DF6AB12FA51442C0B0A875638")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public ScaleXSpan(Parcel src) {
         dsTaint.addTaint(src.dsTaint);
@@ -35,7 +34,7 @@ public class ScaleXSpan extends MetricAffectingSpan implements ParcelableSpan {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:04.312 -0400", hash_original_method = "305A59DEF4DC94D07B224B5DAB862393", hash_generated_method = "34EF9EE8E3886805165C6D214386566D")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:57.919 -0400", hash_original_method = "305A59DEF4DC94D07B224B5DAB862393", hash_generated_method = "16F977C435D5DC17E5F48D9AC517061A")
     @DSModeled(DSC.SAFE)
     public int getSpanTypeId() {
         return dsTaint.getTaintInt();
@@ -44,7 +43,7 @@ public class ScaleXSpan extends MetricAffectingSpan implements ParcelableSpan {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:04.312 -0400", hash_original_method = "00F8174F9E89D0C972FA6D3F19742382", hash_generated_method = "7491C6FB42F78871A3F8EA322AF6B2FC")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:57.919 -0400", hash_original_method = "00F8174F9E89D0C972FA6D3F19742382", hash_generated_method = "ED77793910767EAAB4C12F70F75B9095")
     @DSModeled(DSC.SAFE)
     public int describeContents() {
         return dsTaint.getTaintInt();
@@ -53,18 +52,18 @@ public class ScaleXSpan extends MetricAffectingSpan implements ParcelableSpan {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:04.312 -0400", hash_original_method = "0FDF8A7C1083C0A4BBAF4047CBF27DA9", hash_generated_method = "6C77D81947D60E58B922710733852F9A")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:57.919 -0400", hash_original_method = "0FDF8A7C1083C0A4BBAF4047CBF27DA9", hash_generated_method = "97924548B786DADC377DD90BA4D73D55")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     public void writeToParcel(Parcel dest, int flags) {
-        dsTaint.addTaint(dest.dsTaint);
         dsTaint.addTaint(flags);
+        dsTaint.addTaint(dest.dsTaint);
         dest.writeFloat(mProportion);
         // ---------- Original Method ----------
         //dest.writeFloat(mProportion);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:04.312 -0400", hash_original_method = "EC544E0B7E0BD00BAC5AC8960BBAB7C7", hash_generated_method = "C4F3889515A802EF670286D3B686C736")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:57.919 -0400", hash_original_method = "EC544E0B7E0BD00BAC5AC8960BBAB7C7", hash_generated_method = "05CACA2E6CD119E144D8918A8DAA47C3")
     @DSModeled(DSC.SAFE)
     public float getScaleX() {
         return dsTaint.getTaintFloat();
@@ -73,7 +72,7 @@ public class ScaleXSpan extends MetricAffectingSpan implements ParcelableSpan {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:04.312 -0400", hash_original_method = "E20B555A657035EC86C04FC249B48C55", hash_generated_method = "EB652121C015EA5676B13CE14FB02B86")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:57.920 -0400", hash_original_method = "E20B555A657035EC86C04FC249B48C55", hash_generated_method = "AE1EE255887D1EE6865C3784412512A5")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     @Override
     public void updateDrawState(TextPaint ds) {
@@ -84,7 +83,7 @@ public class ScaleXSpan extends MetricAffectingSpan implements ParcelableSpan {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:04.312 -0400", hash_original_method = "7988BDF035A46DF7E155ADF4B90D7F9B", hash_generated_method = "AA47B8F3F54CB080B6D46B72A53AFDC4")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:57.920 -0400", hash_original_method = "7988BDF035A46DF7E155ADF4B90D7F9B", hash_generated_method = "A989F7AD022F83D4E9A87E4E9A0C9A96")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     @Override
     public void updateMeasureState(TextPaint ds) {
@@ -96,5 +95,4 @@ public class ScaleXSpan extends MetricAffectingSpan implements ParcelableSpan {
 
     
 }
-
 

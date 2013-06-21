@@ -3,10 +3,10 @@ package com.android.internal.app;
 // Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
+import droidsafe.runtime.*;
 
-// import Iterator to deal with enhanced for loop translation
+// needed for enhanced for control translations
 import java.util.Iterator;
-
 
 public interface IUsageStats extends android.os.IInterface
 {
@@ -258,4 +258,3 @@ public void noteLaunchTime(android.content.ComponentName componentName, int mill
 public com.android.internal.os.PkgUsageStats getPkgUsageStats(android.content.ComponentName componentName) throws android.os.RemoteException;
 public com.android.internal.os.PkgUsageStats[] getAllPkgUsageStats() throws android.os.RemoteException;
 }
-

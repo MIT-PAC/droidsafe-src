@@ -17,8 +17,8 @@ public abstract class AbstractInterruptibleChannel implements Channel, Interrupt
     private volatile boolean closed = false;
     volatile boolean interrupted = false;
     private final Runnable interruptAndCloseRunnable = new Runnable() {        
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 11:53:51.886 -0400", hash_original_method = "AE7E9C29A12236996DA74E23561B6760", hash_generated_method = "D0927743EF96EFD1561F4B9790CACAA2")
-        @DSModeled(DSC.SAFE)
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:29.143 -0400", hash_original_method = "AE7E9C29A12236996DA74E23561B6760", hash_generated_method = "A82EC148D3A353CBA856B48EDD1EC897")
+        //DSFIXME:  CODE0002: Requires DSC value to be set
         @Override
         public void run() {
             try 
@@ -39,14 +39,14 @@ public abstract class AbstractInterruptibleChannel implements Channel, Interrupt
         
 }; //Transformed anonymous class
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 11:53:51.889 -0400", hash_original_method = "8D566223F7B6A201818F5E4BFCF4F6EB", hash_generated_method = "4966A9D2453BAE8CDF6DB3253BDB1A26")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:29.144 -0400", hash_original_method = "8D566223F7B6A201818F5E4BFCF4F6EB", hash_generated_method = "06F598EF6A4A993889CD9DF449D06062")
     @DSModeled(DSC.SAFE)
     protected AbstractInterruptibleChannel() {
         // ---------- Original Method ----------
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 11:53:51.891 -0400", hash_original_method = "EEF08D7C99E69679C24335EC336EDE1D", hash_generated_method = "7CB1A2AED7CAF78EB0D177D1C78CD72E")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:29.146 -0400", hash_original_method = "EEF08D7C99E69679C24335EC336EDE1D", hash_generated_method = "30C0D6B2AB303DC54CC8C51F91761B94")
     @DSModeled(DSC.SAFE)
     @Override
     public synchronized final boolean isOpen() {
@@ -56,8 +56,8 @@ public abstract class AbstractInterruptibleChannel implements Channel, Interrupt
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 11:53:51.894 -0400", hash_original_method = "4C9E4AC237D7628755D560FFD1AA5234", hash_generated_method = "1A26DE8D835D63DFF10DA0634B0E04FF")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:29.146 -0400", hash_original_method = "4C9E4AC237D7628755D560FFD1AA5234", hash_generated_method = "BCA59A95215F14F7536ADCAE6AB1CFE0")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     @Override
     public final void close() throws IOException {
         {
@@ -80,7 +80,7 @@ public abstract class AbstractInterruptibleChannel implements Channel, Interrupt
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 11:53:51.898 -0400", hash_original_method = "F0AA56CB3350B0CEA7EF4FF29453D45D", hash_generated_method = "BCB0111FB79D81ED2998E59B04BF3891")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:29.147 -0400", hash_original_method = "F0AA56CB3350B0CEA7EF4FF29453D45D", hash_generated_method = "6DCC83F0ECF94F334D94D331BE79DAA7")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     protected final void begin() {
         Thread.currentThread().pushInterruptAction$(interruptAndCloseRunnable);
@@ -89,7 +89,7 @@ public abstract class AbstractInterruptibleChannel implements Channel, Interrupt
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 11:53:51.906 -0400", hash_original_method = "9F919A15107680D02C9F3C07FD906976", hash_generated_method = "9AE647C5A1F4007C0208F7677DF76B2F")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:29.147 -0400", hash_original_method = "9F919A15107680D02C9F3C07FD906976", hash_generated_method = "A9DFB77C1442091619A40F973FF47D75")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     protected final void end(boolean success) throws AsynchronousCloseException {
         dsTaint.addTaint(success);
@@ -117,5 +117,4 @@ public abstract class AbstractInterruptibleChannel implements Channel, Interrupt
 
     
 }
-
 

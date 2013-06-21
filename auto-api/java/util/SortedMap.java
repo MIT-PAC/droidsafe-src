@@ -3,10 +3,10 @@ package java.util;
 // Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
+import droidsafe.runtime.*;
 
-// import Iterator to deal with enhanced for loop translation
+// needed for enhanced for control translations
 import java.util.Iterator;
-
 
 public interface SortedMap<K,V> extends Map<K,V> {
 
@@ -28,4 +28,3 @@ public interface SortedMap<K,V> extends Map<K,V> {
     
     public SortedMap<K,V> tailMap(K startKey);
 }
-

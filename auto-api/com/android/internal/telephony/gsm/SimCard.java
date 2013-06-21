@@ -3,10 +3,10 @@ package com.android.internal.telephony.gsm;
 // Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
+import droidsafe.runtime.*;
 
-// import Iterator to deal with enhanced for loop translation
+// needed for enhanced for control translations
 import java.util.Iterator;
-
 import android.util.Log;
 import com.android.internal.telephony.IccCard;
 import com.android.internal.telephony.Phone;
@@ -16,7 +16,7 @@ import android.os.SystemProperties;
 
 public final class SimCard extends IccCard {
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.935 -0400", hash_original_method = "9F0A913CCE42D6EF6B4C91409D578CD8", hash_generated_method = "48F6B09048B70FDC5A752417ED88BBEB")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:16.808 -0400", hash_original_method = "9F0A913CCE42D6EF6B4C91409D578CD8", hash_generated_method = "7BE12F6FE6EFE17685F1309F10498A09")
     //DSFIXME:  CODE0002: Requires DSC value to be set
      SimCard(GSMPhone phone) {
         super(phone, "GSM", true);
@@ -33,7 +33,7 @@ public final class SimCard extends IccCard {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.935 -0400", hash_original_method = "7954DCD4B4ED180767A5CCD973B61DEE", hash_generated_method = "3C2172991E4B54EAE4BCB9EEE5970CA9")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:16.809 -0400", hash_original_method = "7954DCD4B4ED180767A5CCD973B61DEE", hash_generated_method = "2C7F0B2AD865DC65438D25A9D75C89AF")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public SimCard(PhoneBase phone, String logTag, Boolean dbg) {
         super(phone, logTag, dbg);
@@ -45,7 +45,7 @@ public final class SimCard extends IccCard {
         mPhone.mCM.registerForSIMReady(mHandler, EVENT_ICC_READY, null);
         updateStateProperty();
         {
-            boolean varD10401BB32B3AED09684BD0E8044F683_1950247648 = (mPhone.getLteOnCdmaMode() == Phone.LTE_ON_CDMA_TRUE);
+            boolean varD10401BB32B3AED09684BD0E8044F683_972387235 = (mPhone.getLteOnCdmaMode() == Phone.LTE_ON_CDMA_TRUE);
             {
                 mPhone.mCM.registerForIccStatusChanged(mHandler, EVENT_ICC_LOCKED_OR_ABSENT, null);
             } //End block
@@ -61,7 +61,7 @@ public final class SimCard extends IccCard {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.935 -0400", hash_original_method = "C4D53CA88AF6F553E502BD318EED734B", hash_generated_method = "05878F633CB86BF6DF58F6C60513EB98")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:16.810 -0400", hash_original_method = "C4D53CA88AF6F553E502BD318EED734B", hash_generated_method = "C3124BB6192C69E33EBCC73300E7571D")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     @Override
     public void dispose() {
@@ -70,7 +70,7 @@ public final class SimCard extends IccCard {
         mPhone.mCM.unregisterForOffOrNotAvailable(mHandler);
         mPhone.mCM.unregisterForSIMReady(mHandler);
         {
-            boolean varD10401BB32B3AED09684BD0E8044F683_1294725164 = (mPhone.getLteOnCdmaMode() == Phone.LTE_ON_CDMA_TRUE);
+            boolean varD10401BB32B3AED09684BD0E8044F683_543475799 = (mPhone.getLteOnCdmaMode() == Phone.LTE_ON_CDMA_TRUE);
             {
                 mPhone.mCM.unregisterForIccStatusChanged(mHandler);
             } //End block
@@ -86,11 +86,11 @@ public final class SimCard extends IccCard {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.935 -0400", hash_original_method = "9DB5C3DD2D46DFBEACD42980054AFF5F", hash_generated_method = "93B7E3BD022C61D8C353BB4B6E910CC2")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:16.812 -0400", hash_original_method = "9DB5C3DD2D46DFBEACD42980054AFF5F", hash_generated_method = "0BA00511F59E9668D0323E6028D18194")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     @Override
     public String getServiceProviderName() {
-        String var9FE5486CA801680BBE841FA54F09C042_1760059747 = (mPhone.mIccRecords.getServiceProviderName());
+        String var9FE5486CA801680BBE841FA54F09C042_1690541228 = (mPhone.mIccRecords.getServiceProviderName());
         return dsTaint.getTaintString();
         // ---------- Original Method ----------
         //return mPhone.mIccRecords.getServiceProviderName();
@@ -98,5 +98,4 @@ public final class SimCard extends IccCard {
 
     
 }
-
 

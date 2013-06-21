@@ -3,10 +3,10 @@ package android.text.style;
 // Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
+import droidsafe.runtime.*;
 
-// import Iterator to deal with enhanced for loop translation
+// needed for enhanced for control translations
 import java.util.Iterator;
-
 import android.os.Parcel;
 import android.text.Layout;
 import android.text.ParcelableSpan;
@@ -44,4 +44,3 @@ public interface AlignmentSpan extends ParagraphStyle {
         private final Layout.Alignment mAlignment;
     }
 }
-

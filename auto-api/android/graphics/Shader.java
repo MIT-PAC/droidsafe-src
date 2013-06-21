@@ -3,23 +3,29 @@ package android.graphics;
 // Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
+import droidsafe.runtime.*;
 
-// import Iterator to deal with enhanced for loop translation
+// needed for enhanced for control translations
 import java.util.Iterator;
-
 
 public class Shader {
     public int native_instance;
     public int native_shader;
     private Matrix mLocalMatrix;
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:01.467 -0400", hash_original_method = "68EE3A19E97B552C55745306F03EBBEA", hash_generated_method = "164700A72C7EBA4EEDC404295267D047")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:47.809 -0400", hash_original_method = "96DFF47832C9B64761F91421D35D3DC0", hash_generated_method = "96DFF47832C9B64761F91421D35D3DC0")
+        public Shader ()
+    {
+    }
+
+
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:47.810 -0400", hash_original_method = "68EE3A19E97B552C55745306F03EBBEA", hash_generated_method = "EC54758F7AE7878B11F4C1562E28FD0F")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public boolean getLocalMatrix(Matrix localM) {
         dsTaint.addTaint(localM.dsTaint);
         {
             localM.set(mLocalMatrix);
-            boolean varB38993D6AEB90B988AB61A4C363EDC6E_1052573797 = (!mLocalMatrix.isIdentity());
+            boolean varB38993D6AEB90B988AB61A4C363EDC6E_98489968 = (!mLocalMatrix.isIdentity());
         } //End block
         return dsTaint.getTaintBoolean();
         // ---------- Original Method ----------
@@ -31,8 +37,8 @@ public class Shader {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:01.467 -0400", hash_original_method = "D9D7C5F09B6958B88F23796DCADEE0F6", hash_generated_method = "2CDCD88814469BA8F90AE1BD8CCFF8D9")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:47.810 -0400", hash_original_method = "D9D7C5F09B6958B88F23796DCADEE0F6", hash_generated_method = "FA36735CD994B121197CC1CC635AACBC")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     public void setLocalMatrix(Matrix localM) {
         dsTaint.addTaint(localM.dsTaint);
         nativeSetLocalMatrix(native_instance, native_shader,
@@ -44,8 +50,8 @@ public class Shader {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:01.467 -0400", hash_original_method = "C66C3B2CF2D4E3C25A1D8C5724E65539", hash_generated_method = "385C876E26B2A56231A9F5745F7E3A53")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:47.810 -0400", hash_original_method = "C66C3B2CF2D4E3C25A1D8C5724E65539", hash_generated_method = "82D789A5FB22E6C4C0B20EAD25E7E744")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     protected void finalize() throws Throwable {
         try 
         {
@@ -64,16 +70,12 @@ public class Shader {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:01.468 -0400", hash_original_method = "55B993F53B66E0FD14B900962791C0E2", hash_generated_method = "A6783B560F51EC6C434EF59C93E63729")
-    private static void nativeDestructor(int native_shader, int native_skiaShader) {
-        //DSFIXME:  CODE0012: Native static method requires manual modeling
+        private static void nativeDestructor(int native_shader, int native_skiaShader) {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:01.468 -0400", hash_original_method = "BE49337D8B496DB91554AF126005F4EA", hash_generated_method = "73886B0F112D4399DE885C23D69E971D")
-    private static void nativeSetLocalMatrix(int native_shader,
+        private static void nativeSetLocalMatrix(int native_shader,
             int native_skiaShader, int matrix_instance) {
-        //DSFIXME:  CODE0012: Native static method requires manual modeling
     }
 
     
@@ -89,5 +91,4 @@ public class Shader {
 
     
 }
-
 

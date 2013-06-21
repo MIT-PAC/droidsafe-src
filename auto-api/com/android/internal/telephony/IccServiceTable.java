@@ -3,20 +3,19 @@ package com.android.internal.telephony;
 // Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
+import droidsafe.runtime.*;
 
-// import Iterator to deal with enhanced for loop translation
+// needed for enhanced for control translations
 import java.util.Iterator;
-
 import android.util.Log;
 
 public abstract class IccServiceTable {
-    protected final byte[] mServiceTable;
+    protected byte[] mServiceTable;
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:10.142 -0400", hash_original_method = "267DA89C5A4C09BB5FED527397C007E9", hash_generated_method = "5A1D002300D5FF1752351CF909D1166D")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:11.407 -0400", hash_original_method = "267DA89C5A4C09BB5FED527397C007E9", hash_generated_method = "B04DA5B0693A2D90B353403D5C54B27E")
     @DSModeled(DSC.SAFE)
     protected IccServiceTable(byte[] table) {
-        dsTaint.addTaint(table);
-        mServiceTable = table;
+        dsTaint.addTaint(table[0]);
         // ---------- Original Method ----------
         //mServiceTable = table;
     }
@@ -28,7 +27,7 @@ public abstract class IccServiceTable {
     protected abstract Object[] getValues();
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:10.142 -0400", hash_original_method = "6BE4E4A67F9CDE5BB71262E1760DB933", hash_generated_method = "6FFD1BBD65B746991609B3D9EABCC2BC")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:11.407 -0400", hash_original_method = "6BE4E4A67F9CDE5BB71262E1760DB933", hash_generated_method = "C5C9C46758EE8DCB32D97934F683D989")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     protected boolean isAvailable(int service) {
         dsTaint.addTaint(service);
@@ -49,7 +48,7 @@ public abstract class IccServiceTable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:10.142 -0400", hash_original_method = "427975D3C71DD8A8E9A905B09CF356ED", hash_generated_method = "571C7DD24C1254F11801FC99146255CC")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:11.408 -0400", hash_original_method = "427975D3C71DD8A8E9A905B09CF356ED", hash_generated_method = "28C340A4D3FDC888ABAA539F46497C9B")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public String toString() {
         Object[] values;
@@ -91,7 +90,7 @@ public abstract class IccServiceTable {
                 } //End collapsed parenthetic
             } //End block
         } //End collapsed parenthetic
-        String varE151F35425E95AE6A2DBB07E5B6DF757_399715215 = (builder.append(" }").toString());
+        String varE151F35425E95AE6A2DBB07E5B6DF757_1203348592 = (builder.append(" }").toString());
         return dsTaint.getTaintString();
         // ---------- Original Method ----------
         // Original Method Too Long, Refer to Original Implementation
@@ -99,5 +98,4 @@ public abstract class IccServiceTable {
 
     
 }
-
 

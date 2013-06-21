@@ -26,7 +26,7 @@ public class JarEntry extends ZipEntry {
     private CertificateFactory factory;
     private boolean isFactoryChecked = false;
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 12:19:50.316 -0400", hash_original_method = "AEA0BF7FF3634BE004E609E393DDAC13", hash_generated_method = "D8A96E32D9A2280CCB835BB3F3D02738")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:35.325 -0400", hash_original_method = "AEA0BF7FF3634BE004E609E393DDAC13", hash_generated_method = "2A9AA7E13CEB9220AF008D421A8CDF36")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public JarEntry(String name) {
         super(name);
@@ -35,7 +35,7 @@ public class JarEntry extends ZipEntry {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 12:19:50.328 -0400", hash_original_method = "506E89BB6203E00495B453235D9825F2", hash_generated_method = "70BDA50E1F27EE6B4E38338749D4C051")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:35.325 -0400", hash_original_method = "506E89BB6203E00495B453235D9825F2", hash_generated_method = "E8EAA04B87AA39061DEC6890B041CD06")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public JarEntry(ZipEntry entry) {
         super(entry);
@@ -44,7 +44,7 @@ public class JarEntry extends ZipEntry {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 12:19:50.331 -0400", hash_original_method = "AA77415E9035EF2C32FB40C3C659C5A8", hash_generated_method = "1B4150A624332576D596E0B4C01316B3")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:35.325 -0400", hash_original_method = "AA77415E9035EF2C32FB40C3C659C5A8", hash_generated_method = "981C9AC29173AADC20159905D6ED08B7")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public JarEntry(JarEntry je) {
         super(je);
@@ -59,12 +59,12 @@ public class JarEntry extends ZipEntry {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 12:19:50.342 -0400", hash_original_method = "8B6D7741BEFEF015D0439F90F97A5465", hash_generated_method = "903945CD073736FDCA35F65FBD7B85D8")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:35.326 -0400", hash_original_method = "8B6D7741BEFEF015D0439F90F97A5465", hash_generated_method = "ACABA3E32C18287276AC3E313D7996E5")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public Attributes getAttributes() throws IOException {
         Manifest manifest;
         manifest = parentJar.getManifest();
-        Attributes var364C947974B7DF6B4D5F89483F9F6BAF_55914347 = (attributes = manifest.getAttributes(getName()));
+        Attributes var364C947974B7DF6B4D5F89483F9F6BAF_51814040 = (attributes = manifest.getAttributes(getName()));
         return (Attributes)dsTaint.getTaint();
         // ---------- Original Method ----------
         //if (attributes != null || parentJar == null) {
@@ -78,12 +78,12 @@ public class JarEntry extends ZipEntry {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 12:19:50.353 -0400", hash_original_method = "3CE58A412B40810ECA641FDC022C6998", hash_generated_method = "A5DCBAF4A18C8ADFAB068367B1AE9F9E")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:35.326 -0400", hash_original_method = "3CE58A412B40810ECA641FDC022C6998", hash_generated_method = "6D3A57BAC96DFDBBF53A086F715350EE")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public Certificate[] getCertificates() {
         JarVerifier jarVerifier;
         jarVerifier = parentJar.verifier;
-        Certificate[] var46BE39C749D6257F3A1AF79E0807FCCF_1626942019 = (jarVerifier.getCertificates(getName()));
+        Certificate[] var46BE39C749D6257F3A1AF79E0807FCCF_358907088 = (jarVerifier.getCertificates(getName()));
         return (Certificate[])dsTaint.getTaint();
         // ---------- Original Method ----------
         //if (parentJar == null) {
@@ -97,7 +97,7 @@ public class JarEntry extends ZipEntry {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 12:19:50.365 -0400", hash_original_method = "DAF50D69E39A2A8F586C4ACAC36673DD", hash_generated_method = "33AF288D8C6D1123D239F119ABF3E270")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:35.326 -0400", hash_original_method = "DAF50D69E39A2A8F586C4ACAC36673DD", hash_generated_method = "96240E72B2F3B9AACFF60095D9ACBDB3")
     @DSModeled(DSC.SAFE)
      void setAttributes(Attributes attrib) {
         dsTaint.addTaint(attrib.dsTaint);
@@ -106,7 +106,7 @@ public class JarEntry extends ZipEntry {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 12:19:50.368 -0400", hash_original_method = "AC53E883AD9D8ECF5D160A6258BB3798", hash_generated_method = "A710C2B842B2E5A548F6D7D3BD05E70D")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:35.326 -0400", hash_original_method = "AC53E883AD9D8ECF5D160A6258BB3798", hash_generated_method = "FD69136332BC266DD9685427E5910C2B")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public CodeSigner[] getCodeSigners() {
         {
@@ -129,7 +129,7 @@ public class JarEntry extends ZipEntry {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 12:19:50.390 -0400", hash_original_method = "3B125BDC3FCBCE7977A58F597174AB72", hash_generated_method = "AE9D7E396F23FB40D131F395E206ECAB")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:35.331 -0400", hash_original_method = "3B125BDC3FCBCE7977A58F597174AB72", hash_generated_method = "76E666D0411CDF497A38E8FE7B570695")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     private CodeSigner[] getCodeSigners(Certificate[] certs) {
         dsTaint.addTaint(certs[0].dsTaint);
@@ -148,7 +148,7 @@ public class JarEntry extends ZipEntry {
                     X500Principal subj;
                     subj = x509.getSubjectX500Principal();
                     {
-                        boolean var443FE31389A264BD2D1ABC6CE6C29DCD_1200865964 = (!prevIssuer.equals(subj));
+                        boolean var443FE31389A264BD2D1ABC6CE6C29DCD_694890102 = (!prevIssuer.equals(subj));
                         {
                             addCodeSigner(asigners, list);
                             list.clear();
@@ -160,13 +160,13 @@ public class JarEntry extends ZipEntry {
             } //End block
         } //End collapsed parenthetic
         {
-            boolean var5E5AA647E3562849B3BEAAC2D9F07249_1262805934 = (!list.isEmpty());
+            boolean var5E5AA647E3562849B3BEAAC2D9F07249_208133109 = (!list.isEmpty());
             {
                 addCodeSigner(asigners, list);
             } //End block
         } //End collapsed parenthetic
         {
-            boolean var82604B50DE04A430CD629E3A547123FD_808826104 = (asigners.isEmpty());
+            boolean var82604B50DE04A430CD629E3A547123FD_665383546 = (asigners.isEmpty());
         } //End collapsed parenthetic
         CodeSigner[] tmp;
         tmp = new CodeSigner[asigners.size()];
@@ -177,7 +177,7 @@ public class JarEntry extends ZipEntry {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 12:19:50.413 -0400", hash_original_method = "E5BFF52E3E0C861E597B700E67310005", hash_generated_method = "5397221443F1BC8D94B8CC975043CE97")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:35.332 -0400", hash_original_method = "E5BFF52E3E0C861E597B700E67310005", hash_generated_method = "CCCF7F5E26A4E138FE91D09CB7642440")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     private void addCodeSigner(ArrayList<CodeSigner> asigners,
             List<Certificate> list) {
@@ -230,5 +230,4 @@ public class JarEntry extends ZipEntry {
 
     
 }
-
 

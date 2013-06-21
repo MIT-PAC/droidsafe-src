@@ -3,20 +3,24 @@ package org.apache.harmony.luni.util;
 // Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
+import droidsafe.runtime.*;
 
-// import Iterator to deal with enhanced for loop translation
+// needed for enhanced for control translations
 import java.util.Iterator;
-
 import java.io.File;
 import java.util.ArrayList;
 import java.util.Collections;
 
 public class DeleteOnExit extends Thread {
-    private static DeleteOnExit instance;
     private ArrayList<String> files = new ArrayList<String>();
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:17.588 -0400", hash_original_method = "5F2B916DEBE9B88C4D0351AB645CF666", hash_generated_method = "D55E2D40C001CB12E806F853D6224C5F")
-    public static synchronized DeleteOnExit getInstance() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:39.857 -0400", hash_original_method = "27EE8DBC151FD7836632EA2F5F9AC7C2", hash_generated_method = "27EE8DBC151FD7836632EA2F5F9AC7C2")
+        public DeleteOnExit ()
+    {
+    }
+
+
+        public static synchronized DeleteOnExit getInstance() {
         if (instance == null) {
             instance = new DeleteOnExit();
             Runtime.getRuntime().addShutdownHook(instance);
@@ -25,13 +29,13 @@ public class DeleteOnExit extends Thread {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:17.588 -0400", hash_original_method = "9511A18425627270E054955D67656A71", hash_generated_method = "A6693430B9DC34156E30201EA7208C4A")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:39.857 -0400", hash_original_method = "9511A18425627270E054955D67656A71", hash_generated_method = "734422B3564110FA8E70824F96ABC6F1")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public void addFile(String filename) {
         dsTaint.addTaint(filename);
         {
             {
-                boolean var0374181210025ADD06309071C5B32496_367388527 = (!files.contains(filename));
+                boolean var0374181210025ADD06309071C5B32496_95209715 = (!files.contains(filename));
                 {
                     files.add(filename);
                 } //End block
@@ -46,7 +50,7 @@ public class DeleteOnExit extends Thread {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:17.588 -0400", hash_original_method = "557595D78AF878757FA1B104BCD5B60F", hash_generated_method = "3023043BD1341029BB336636231D1511")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:39.858 -0400", hash_original_method = "557595D78AF878757FA1B104BCD5B60F", hash_generated_method = "F8EAE86D111CF60BDECD596F6CA5A065")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     @Override
     public void run() {
@@ -66,6 +70,6 @@ public class DeleteOnExit extends Thread {
     }
 
     
+    private static DeleteOnExit instance;
 }
-
 

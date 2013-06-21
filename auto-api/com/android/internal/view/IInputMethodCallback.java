@@ -3,10 +3,10 @@ package com.android.internal.view;
 // Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
+import droidsafe.runtime.*;
 
-// import Iterator to deal with enhanced for loop translation
+// needed for enhanced for control translations
 import java.util.Iterator;
-
 
 public interface IInputMethodCallback extends android.os.IInterface
 {
@@ -52,6 +52,7 @@ _arg0 = data.readInt();
 boolean _arg1;
 _arg1 = (0!=data.readInt());
 this.finishedEvent(_arg0, _arg1);
+reply.writeNoException();
 return true;
 }
 case TRANSACTION_sessionCreated:
@@ -60,6 +61,7 @@ data.enforceInterface(DESCRIPTOR);
 com.android.internal.view.IInputMethodSession _arg0;
 _arg0 = com.android.internal.view.IInputMethodSession.Stub.asInterface(data.readStrongBinder());
 this.sessionCreated(_arg0);
+reply.writeNoException();
 return true;
 }
 }
@@ -83,25 +85,31 @@ return DESCRIPTOR;
 public void finishedEvent(int seq, boolean handled) throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
+android.os.Parcel _reply = android.os.Parcel.obtain();
 try {
 _data.writeInterfaceToken(DESCRIPTOR);
 _data.writeInt(seq);
 _data.writeInt(((handled)?(1):(0)));
-mRemote.transact(Stub.TRANSACTION_finishedEvent, _data, null, android.os.IBinder.FLAG_ONEWAY);
+mRemote.transact(Stub.TRANSACTION_finishedEvent, _data, _reply, 0);
+_reply.readException();
 }
 finally {
+_reply.recycle();
 _data.recycle();
 }
 }
 public void sessionCreated(com.android.internal.view.IInputMethodSession session) throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
+android.os.Parcel _reply = android.os.Parcel.obtain();
 try {
 _data.writeInterfaceToken(DESCRIPTOR);
 _data.writeStrongBinder((((session!=null))?(session.asBinder()):(null)));
-mRemote.transact(Stub.TRANSACTION_sessionCreated, _data, null, android.os.IBinder.FLAG_ONEWAY);
+mRemote.transact(Stub.TRANSACTION_sessionCreated, _data, _reply, 0);
+_reply.readException();
 }
 finally {
+_reply.recycle();
 _data.recycle();
 }
 }
@@ -112,4 +120,3 @@ static final int TRANSACTION_sessionCreated = (android.os.IBinder.FIRST_CALL_TRA
 public void finishedEvent(int seq, boolean handled) throws android.os.RemoteException;
 public void sessionCreated(com.android.internal.view.IInputMethodSession session) throws android.os.RemoteException;
 }
-

@@ -2,19 +2,17 @@ package libcore.icu;
 
 // Droidsafe Imports
 import droidsafe.helpers.*;
-import droidsafe.runtime.DroidSafeAndroidRuntime;
 import droidsafe.annotations.*;
+import droidsafe.runtime.*;
 
-// import Iterator to deal with enhanced for loop translation
+// needed for enhanced for control translations
 import java.util.Iterator;
-
 import java.text.DateFormat;
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Locale;
 
 public final class LocaleData {
-    private static final HashMap<String, LocaleData> localeDataCache = new HashMap<String, LocaleData>();
     public Integer firstDayOfWeek;
     public Integer minimalDaysInFirstWeek;
     public String[] amPm;
@@ -53,15 +51,14 @@ public final class LocaleData {
     public String currencyPattern;
     public String percentPattern;
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:17.078 -0400", hash_original_method = "CFFFBB83D5CAB96B8DF6F8A1F3FD834E", hash_generated_method = "128524007612B2F091DCC471FF35FFD9")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:38.260 -0400", hash_original_method = "CFFFBB83D5CAB96B8DF6F8A1F3FD834E", hash_generated_method = "D26C45D435D79556A74DEBD6612FAA64")
     @DSModeled(DSC.SAFE)
     private LocaleData() {
         // ---------- Original Method ----------
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:17.078 -0400", hash_original_method = "454901B37172A9DA196A9083C6F7CD55", hash_generated_method = "CA340BBB1FC2BAF9920FC327A2533A9C")
-    public static LocaleData get(Locale locale) {
+        public static LocaleData get(Locale locale) {
         if (locale == null) {
             locale = Locale.getDefault();
         }
@@ -84,8 +81,7 @@ public final class LocaleData {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:17.078 -0400", hash_original_method = "79D4FC8C2ABEB0A938BC6FE7010C2BAD", hash_generated_method = "7B1082B43E422C9CB9B5A9EB008D14A0")
-    private static LocaleData makeLocaleData(Locale locale) {
+        private static LocaleData makeLocaleData(Locale locale) {
         String language = locale.getLanguage();
         String country = locale.getCountry();
         String variant = locale.getVariant();
@@ -102,11 +98,11 @@ public final class LocaleData {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:17.085 -0400", hash_original_method = "784F7240396B6696F26C45143188C28A", hash_generated_method = "6BCE9F10B162343B2408E17884BC23FA")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:38.268 -0400", hash_original_method = "784F7240396B6696F26C45143188C28A", hash_generated_method = "852641C4738999DC90E888C6D0374B8B")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     @Override
     public String toString() {
-        String varAB003F4600C0D451FDC042A2DE4DBE8B_1986226956 = ("LocaleData[" +
+        String varAB003F4600C0D451FDC042A2DE4DBE8B_594322733 = ("LocaleData[" +
                 "firstDayOfWeek=" + firstDayOfWeek + "," +
                 "minimalDaysInFirstWeek=" + minimalDaysInFirstWeek + "," +
                 "amPm=" + Arrays.toString(amPm) + "," +
@@ -150,7 +146,7 @@ public final class LocaleData {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:17.086 -0400", hash_original_method = "97F8929D36249A9101B1710A2B088C68", hash_generated_method = "5BDB2BA1AB793CBB2192E22DBD2BF914")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:38.269 -0400", hash_original_method = "97F8929D36249A9101B1710A2B088C68", hash_generated_method = "3FE8CEB241AEAEFBEAE24D3C77DD43FB")
     @DSModeled(DSC.SAFE)
     private void overrideWithDataFrom(LocaleData overrides) {
         dsTaint.addTaint(overrides.dsTaint);
@@ -270,8 +266,8 @@ public final class LocaleData {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:17.086 -0400", hash_original_method = "348F1EE4DC68FC97E057A91A2366FE0E", hash_generated_method = "CC06221C8D8FDDE32B51B29EF44B69B0")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:38.269 -0400", hash_original_method = "348F1EE4DC68FC97E057A91A2366FE0E", hash_generated_method = "BDFC48BD9CDD8548B3C295AC04FA1416")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     public String getDateFormat(int style) {
         dsTaint.addTaint(style);
         if (DroidSafeAndroidRuntime.control) throw new AssertionError();
@@ -291,8 +287,8 @@ public final class LocaleData {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:17.086 -0400", hash_original_method = "381AB0475AE772D0631EAF7DD6B1FBEE", hash_generated_method = "832FB786DCC54347DF79C4ED3DDF6846")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:38.269 -0400", hash_original_method = "381AB0475AE772D0631EAF7DD6B1FBEE", hash_generated_method = "7100D6890D7357F89C314568E58353EB")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     public String getTimeFormat(int style) {
         dsTaint.addTaint(style);
         if (DroidSafeAndroidRuntime.control) throw new AssertionError();
@@ -312,8 +308,7 @@ public final class LocaleData {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:17.086 -0400", hash_original_method = "FA71E4202D4AE5CBCEEA55A7373875A9", hash_generated_method = "024B12D4ED907A935B784BF989636A26")
-    private static LocaleData initLocaleData(Locale locale) {
+        private static LocaleData initLocaleData(Locale locale) {
         LocaleData localeData = new LocaleData();
         if (!ICU.initLocaleDataImpl(locale.toString(), localeData)) {
             throw new AssertionError("couldn't initialize LocaleData for locale " + locale);
@@ -328,6 +323,7 @@ public final class LocaleData {
     }
 
     
+    private static final HashMap<String, LocaleData> localeDataCache = new HashMap<String, LocaleData>();
     static {
         get(Locale.ROOT);
         get(Locale.US);
@@ -335,5 +331,4 @@ public final class LocaleData {
     }
     
 }
-
 

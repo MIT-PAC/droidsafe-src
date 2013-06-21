@@ -3,10 +3,10 @@ package com.android.internal.telephony;
 // Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
+import droidsafe.runtime.*;
 
-// import Iterator to deal with enhanced for loop translation
+// needed for enhanced for control translations
 import java.util.Iterator;
-
 
 public interface PhoneNotifier {
 
@@ -32,4 +32,3 @@ public interface PhoneNotifier {
 
     public void notifyOtaspChanged(Phone sender, int otaspMode);
 }
-

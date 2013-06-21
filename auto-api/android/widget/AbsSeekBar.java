@@ -23,13 +23,12 @@ public abstract class AbsSeekBar extends ProgressBar {
     float mTouchProgressOffset;
     boolean mIsUserSeekable = true;
     private int mKeyProgressIncrement = 1;
-    private static int NO_ALPHA = 0xFF;
     private float mDisabledAlpha;
     private int mScaledTouchSlop;
     private float mTouchDownX;
     private boolean mIsDragging;
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-12 17:03:25.403 -0400", hash_original_method = "559FDCE349858758D50BC2905EE88B67", hash_generated_method = "349D141B13C43B73AB19D912F4866C28")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:06.014 -0400", hash_original_method = "559FDCE349858758D50BC2905EE88B67", hash_generated_method = "AD54C9B1E797C1CD0BE12B598ADE9B05")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public AbsSeekBar(Context context) {
         super(context);
@@ -38,7 +37,7 @@ public abstract class AbsSeekBar extends ProgressBar {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-12 17:03:25.409 -0400", hash_original_method = "9B53DFB86DC24D620F7DF1D33C461438", hash_generated_method = "9931E6AC0460BA2B22CA6DF5904E5337")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:06.014 -0400", hash_original_method = "9B53DFB86DC24D620F7DF1D33C461438", hash_generated_method = "1E859F31CE64C120DA2D0D162F68E910")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public AbsSeekBar(Context context, AttributeSet attrs) {
         super(context, attrs);
@@ -48,7 +47,7 @@ public abstract class AbsSeekBar extends ProgressBar {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-12 17:03:25.436 -0400", hash_original_method = "1A34D5E8CF032B0AA6AD65EE16F7EFF6", hash_generated_method = "DCF376D3C660E32935384E030D1F1D75")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:06.014 -0400", hash_original_method = "1A34D5E8CF032B0AA6AD65EE16F7EFF6", hash_generated_method = "3F551C7D6D998F857752E133E1E08CBE")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public AbsSeekBar(Context context, AttributeSet attrs, int defStyle) {
         super(context, attrs, defStyle);
@@ -88,7 +87,7 @@ public abstract class AbsSeekBar extends ProgressBar {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-12 17:03:25.473 -0400", hash_original_method = "998F0AEDC4C83C00C5B5C0950AA82FAF", hash_generated_method = "AADF4C4846B52C7D1C634338057C7ACE")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:06.015 -0400", hash_original_method = "998F0AEDC4C83C00C5B5C0950AA82FAF", hash_generated_method = "275D980D468516DD2DDBCAC01569B160")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public void setThumb(Drawable thumb) {
         dsTaint.addTaint(thumb.dsTaint);
@@ -104,7 +103,7 @@ public abstract class AbsSeekBar extends ProgressBar {
             thumb.setCallback(this);
             mThumbOffset = thumb.getIntrinsicWidth() / 2;
             {
-                boolean var59DF2AD9A1CFAFF2C2350A5FD63D8E2E_1761997908 = (needUpdate &&
+                boolean var59DF2AD9A1CFAFF2C2350A5FD63D8E2E_1994924445 = (needUpdate &&
                     (thumb.getIntrinsicWidth() != mThumb.getIntrinsicWidth()
                         || thumb.getIntrinsicHeight() != mThumb.getIntrinsicHeight()));
                 {
@@ -116,7 +115,7 @@ public abstract class AbsSeekBar extends ProgressBar {
         {
             updateThumbPos(getWidth(), getHeight());
             {
-                boolean varFCD92C730287EA43C3C6E5B7570040DB_331138104 = (thumb.isStateful());
+                boolean varFCD92C730287EA43C3C6E5B7570040DB_345291201 = (thumb.isStateful());
                 {
                     int[] state;
                     state = getDrawableState();
@@ -129,7 +128,7 @@ public abstract class AbsSeekBar extends ProgressBar {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-12 17:03:25.490 -0400", hash_original_method = "55BCE64F6AB8A7FA94D80EC71DE6965C", hash_generated_method = "2C13C9C0891B6DEBDB0B307B3A6936CD")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:06.015 -0400", hash_original_method = "55BCE64F6AB8A7FA94D80EC71DE6965C", hash_generated_method = "EDEC322D64E445AE7CABC59A1C6A3207")
     @DSModeled(DSC.SAFE)
     public int getThumbOffset() {
         return dsTaint.getTaintInt();
@@ -138,8 +137,8 @@ public abstract class AbsSeekBar extends ProgressBar {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-12 17:03:25.504 -0400", hash_original_method = "19F18537D3EF5D294C0A19C19876A9D3", hash_generated_method = "D7ECCC2F860C06EC30ED64CA05D98A14")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:06.015 -0400", hash_original_method = "19F18537D3EF5D294C0A19C19876A9D3", hash_generated_method = "6345117DD247583E7D937AB5A4D4A6A0")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     public void setThumbOffset(int thumbOffset) {
         dsTaint.addTaint(thumbOffset);
         invalidate();
@@ -149,7 +148,7 @@ public abstract class AbsSeekBar extends ProgressBar {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-12 17:03:25.513 -0400", hash_original_method = "47EA7303B3E1A2D7511BD2240E8B9AF2", hash_generated_method = "206F81797C482059B75D9C2C36A7BCC2")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:06.015 -0400", hash_original_method = "47EA7303B3E1A2D7511BD2240E8B9AF2", hash_generated_method = "DAFB0760DE28498C6ADFB0DD8C464D5A")
     @DSModeled(DSC.SAFE)
     public void setKeyProgressIncrement(int increment) {
         dsTaint.addTaint(increment);
@@ -159,7 +158,7 @@ public abstract class AbsSeekBar extends ProgressBar {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-12 17:03:25.518 -0400", hash_original_method = "1305A27F8447A6D05AC7D82E2D035BB9", hash_generated_method = "5173C055C49A959FED4035A71D871FC6")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:06.016 -0400", hash_original_method = "1305A27F8447A6D05AC7D82E2D035BB9", hash_generated_method = "5D908A38FDB66A77BEA3F1E1FC484B04")
     @DSModeled(DSC.SAFE)
     public int getKeyProgressIncrement() {
         return dsTaint.getTaintInt();
@@ -168,14 +167,14 @@ public abstract class AbsSeekBar extends ProgressBar {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-12 17:03:25.529 -0400", hash_original_method = "B86F9FD250EB4E355A6234A6154554E5", hash_generated_method = "25EFA57368726D93A2FEE2B61CA44D47")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:06.016 -0400", hash_original_method = "B86F9FD250EB4E355A6234A6154554E5", hash_generated_method = "E636A2878B0648EC80F1DDD40D70A153")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     @Override
     public synchronized void setMax(int max) {
         dsTaint.addTaint(max);
         super.setMax(max);
         {
-            boolean var5A2D5B08CD2B6F9FFB530FF2ED2BD2AF_1349325298 = ((mKeyProgressIncrement == 0) || (getMax() / mKeyProgressIncrement > 20));
+            boolean var5A2D5B08CD2B6F9FFB530FF2ED2BD2AF_406195985 = ((mKeyProgressIncrement == 0) || (getMax() / mKeyProgressIncrement > 20));
             {
                 setKeyProgressIncrement(Math.max(1, Math.round((float) getMax() / 20)));
             } //End block
@@ -188,20 +187,20 @@ public abstract class AbsSeekBar extends ProgressBar {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-12 17:03:25.537 -0400", hash_original_method = "9C2A9BDC8A382BBBC0B52ACD6BB3E808", hash_generated_method = "A6D64A37999FB8DACE7E07CCBAF20448")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:06.016 -0400", hash_original_method = "9C2A9BDC8A382BBBC0B52ACD6BB3E808", hash_generated_method = "8DBFBC8EBD741FE241BCEF11654B7A40")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     @Override
     protected boolean verifyDrawable(Drawable who) {
         dsTaint.addTaint(who.dsTaint);
-        boolean varE1C56A7DB014338269CA53D8B5F618C2_1386675301 = (who == mThumb || super.verifyDrawable(who));
+        boolean varE1C56A7DB014338269CA53D8B5F618C2_577737918 = (who == mThumb || super.verifyDrawable(who));
         return dsTaint.getTaintBoolean();
         // ---------- Original Method ----------
         //return who == mThumb || super.verifyDrawable(who);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-12 17:03:25.543 -0400", hash_original_method = "A2BEB9099595ED17C9F72C657E221F4D", hash_generated_method = "C03403196BCA0E5A5D86699540035FDA")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:06.016 -0400", hash_original_method = "A2BEB9099595ED17C9F72C657E221F4D", hash_generated_method = "DA07F644E239140FB7E0B906AAB88BB2")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     @Override
     public void jumpDrawablesToCurrentState() {
         super.jumpDrawablesToCurrentState();
@@ -212,7 +211,7 @@ public abstract class AbsSeekBar extends ProgressBar {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-12 17:03:25.565 -0400", hash_original_method = "18D3C014C29EEACE1B64A99674108866", hash_generated_method = "A122D9CCBCBD5674B36562C7B60636E2")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:06.017 -0400", hash_original_method = "18D3C014C29EEACE1B64A99674108866", hash_generated_method = "0084D1A4C68C14545424312BF34DAA5B")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     @Override
     protected void drawableStateChanged() {
@@ -223,7 +222,7 @@ public abstract class AbsSeekBar extends ProgressBar {
             progressDrawable.setAlpha(isEnabled() ? NO_ALPHA : (int) (NO_ALPHA * mDisabledAlpha));
         } //End block
         {
-            boolean varBADFD63D920DCCB8A0340B6A85499F1D_500160195 = (mThumb != null && mThumb.isStateful());
+            boolean varBADFD63D920DCCB8A0340B6A85499F1D_1725310756 = (mThumb != null && mThumb.isStateful());
             {
                 int[] state;
                 state = getDrawableState();
@@ -243,7 +242,7 @@ public abstract class AbsSeekBar extends ProgressBar {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-12 17:03:25.577 -0400", hash_original_method = "BD33A56797AEA3D6F712418E2C1B11B9", hash_generated_method = "C1732A913E95BE3359FE0074EFEC44A3")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:06.017 -0400", hash_original_method = "BD33A56797AEA3D6F712418E2C1B11B9", hash_generated_method = "057169092C848761D044B7B6233BDE33")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     @Override
      void onProgressRefresh(float scale, boolean fromUser) {
@@ -267,14 +266,14 @@ public abstract class AbsSeekBar extends ProgressBar {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-12 17:03:25.598 -0400", hash_original_method = "A1D4A37B8CF40CBB929E8D311A74C166", hash_generated_method = "4371648150168D521AF0F04E5F78BE61")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:06.017 -0400", hash_original_method = "A1D4A37B8CF40CBB929E8D311A74C166", hash_generated_method = "C33A7EE2CF0C04B5E50BBF34D9F1B2BE")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     @Override
     protected void onSizeChanged(int w, int h, int oldw, int oldh) {
         //DSFIXME:  CODE0009: Possible callback target function detected
         dsTaint.addTaint(w);
-        dsTaint.addTaint(oldw);
         dsTaint.addTaint(oldh);
+        dsTaint.addTaint(oldw);
         dsTaint.addTaint(h);
         updateThumbPos(w, h);
         // ---------- Original Method ----------
@@ -282,7 +281,7 @@ public abstract class AbsSeekBar extends ProgressBar {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-12 17:03:25.620 -0400", hash_original_method = "EBB195A6F6AE70942CBBB72014D4E630", hash_generated_method = "1F82ACE4F546FE76303E8DFD98ED2D8E")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:06.018 -0400", hash_original_method = "EBB195A6F6AE70942CBBB72014D4E630", hash_generated_method = "B75459261F69AF525638F2CB4011DA71")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     private void updateThumbPos(int w, int h) {
         dsTaint.addTaint(w);
@@ -329,8 +328,8 @@ public abstract class AbsSeekBar extends ProgressBar {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-12 17:03:25.641 -0400", hash_original_method = "CA4C19C8B40982548F0C235E2E1E696B", hash_generated_method = "98A1C187927A933354DCCC35349D53A8")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:06.019 -0400", hash_original_method = "CA4C19C8B40982548F0C235E2E1E696B", hash_generated_method = "91FC66EE14DC618D9E71493480F9A2E9")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     private void setThumbPos(int w, Drawable thumb, float scale, int gap) {
         dsTaint.addTaint(w);
         dsTaint.addTaint(scale);
@@ -378,8 +377,8 @@ public abstract class AbsSeekBar extends ProgressBar {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-12 17:03:25.654 -0400", hash_original_method = "317EB63F41EF20BCBD26EC2C5FF1A8E2", hash_generated_method = "10D3DFA963E02FF846156760C13A674D")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:06.020 -0400", hash_original_method = "317EB63F41EF20BCBD26EC2C5FF1A8E2", hash_generated_method = "0EEF06BEF3289F6C28FBDBF09746F38E")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     @Override
     protected synchronized void onDraw(Canvas canvas) {
         //DSFIXME:  CODE0009: Possible callback target function detected
@@ -402,7 +401,7 @@ public abstract class AbsSeekBar extends ProgressBar {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-12 17:03:25.667 -0400", hash_original_method = "6FE23FC5494DD28976118E3A2B4F8E1A", hash_generated_method = "AF23479B061F8E7B885E31489C5C5A6F")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:06.021 -0400", hash_original_method = "6FE23FC5494DD28976118E3A2B4F8E1A", hash_generated_method = "FDCC62F4C83A53146B90D7DF7DEAECE9")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     @Override
     protected synchronized void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
@@ -444,20 +443,20 @@ public abstract class AbsSeekBar extends ProgressBar {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-12 17:03:25.705 -0400", hash_original_method = "E10F6AB7670DC24DEEA2309682812EC7", hash_generated_method = "230B2C84F28704956B2E5983D626EB62")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:06.021 -0400", hash_original_method = "E10F6AB7670DC24DEEA2309682812EC7", hash_generated_method = "065B5EE91F632E12EA934753D2C19AED")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     @Override
     public boolean onTouchEvent(MotionEvent event) {
         //DSFIXME:  CODE0009: Possible callback target function detected
         dsTaint.addTaint(event.dsTaint);
         {
-            boolean var8142D51ECE34BA115A5095ACA8798364_586500301 = (!mIsUserSeekable || !isEnabled());
+            boolean var8142D51ECE34BA115A5095ACA8798364_1784911220 = (!mIsUserSeekable || !isEnabled());
         } //End collapsed parenthetic
         {
-            Object var9E1FBD251DF7E53AB77C3A31F15B2B38_1384702375 = (event.getAction());
+            Object var9E1FBD251DF7E53AB77C3A31F15B2B38_967261044 = (event.getAction());
             //Begin case MotionEvent.ACTION_DOWN 
             {
-                boolean varEE20AD2B6B37E9F2660E1C9FA2DDFF2D_367801704 = (isInScrollingContainer());
+                boolean varEE20AD2B6B37E9F2660E1C9FA2DDFF2D_1289093419 = (isInScrollingContainer());
                 {
                     mTouchDownX = event.getX();
                 } //End block
@@ -480,7 +479,7 @@ public abstract class AbsSeekBar extends ProgressBar {
                 float x;
                 x = event.getX();
                 {
-                    boolean varEBF41794203D169307B1311D8438F448_1670443923 = (Math.abs(x - mTouchDownX) > mScaledTouchSlop);
+                    boolean varEBF41794203D169307B1311D8438F448_1346675836 = (Math.abs(x - mTouchDownX) > mScaledTouchSlop);
                     {
                         setPressed(true);
                         {
@@ -524,7 +523,7 @@ public abstract class AbsSeekBar extends ProgressBar {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-12 17:03:25.721 -0400", hash_original_method = "B852C5F326259FF2E0714D28C9BE0803", hash_generated_method = "874AB94041E8BF36D5641EE8B8B02AEB")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:06.022 -0400", hash_original_method = "B852C5F326259FF2E0714D28C9BE0803", hash_generated_method = "46E55A9FA0773C3FE1EB6BAF7A5B33F4")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     private void trackTouchEvent(MotionEvent event) {
         dsTaint.addTaint(event.dsTaint);
@@ -571,8 +570,8 @@ public abstract class AbsSeekBar extends ProgressBar {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-12 17:03:25.729 -0400", hash_original_method = "EE6806E5D0C523D5F375E4021A29EB50", hash_generated_method = "9CCA36B31CEC85558770BC70A02CFBB6")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:06.022 -0400", hash_original_method = "EE6806E5D0C523D5F375E4021A29EB50", hash_generated_method = "2E73808719931C1764DD979BEA00A4A0")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     private void attemptClaimDrag() {
         {
             mParent.requestDisallowInterceptTouchEvent(true);
@@ -584,7 +583,7 @@ public abstract class AbsSeekBar extends ProgressBar {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-12 17:03:25.736 -0400", hash_original_method = "81C3D3C536033DCEF00354E775EF2F98", hash_generated_method = "D806DD1FFB9845BF831CF4B8E746CF67")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:06.022 -0400", hash_original_method = "81C3D3C536033DCEF00354E775EF2F98", hash_generated_method = "7CAEA821CD5CFD558839E482944A4FF3")
     @DSModeled(DSC.SAFE)
      void onStartTrackingTouch() {
         //DSFIXME:  CODE0009: Possible callback target function detected
@@ -594,7 +593,7 @@ public abstract class AbsSeekBar extends ProgressBar {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-12 17:03:25.740 -0400", hash_original_method = "E756AFD9567E2119FB96458DFE00C6A9", hash_generated_method = "D58F885A8EC4BC9EB851236F8F2CDDCA")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:06.022 -0400", hash_original_method = "E756AFD9567E2119FB96458DFE00C6A9", hash_generated_method = "28194EE71D53A1717F5B76FA4AF6B1F3")
     @DSModeled(DSC.SAFE)
      void onStopTrackingTouch() {
         //DSFIXME:  CODE0009: Possible callback target function detected
@@ -604,7 +603,7 @@ public abstract class AbsSeekBar extends ProgressBar {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-12 17:03:25.744 -0400", hash_original_method = "F04551903C4B751B14DE46074D4BB62C", hash_generated_method = "BBF0601F5F2A784EE4146E97E8F99804")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:06.023 -0400", hash_original_method = "F04551903C4B751B14DE46074D4BB62C", hash_generated_method = "335DF8C256CE085A3A9253CFE15462AB")
     @DSModeled(DSC.SAFE)
      void onKeyChange() {
         //DSFIXME:  CODE0009: Possible callback target function detected
@@ -612,7 +611,7 @@ public abstract class AbsSeekBar extends ProgressBar {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-12 17:03:25.755 -0400", hash_original_method = "E4D4B44B4B0BF8B3ACFCDB808BF98F5B", hash_generated_method = "F65D5486DDFAC4C3380E6F9F737976A6")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:06.023 -0400", hash_original_method = "E4D4B44B4B0BF8B3ACFCDB808BF98F5B", hash_generated_method = "CB27408981FE942E083D51AF9AB00CE8")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     @Override
     public boolean onKeyDown(int keyCode, KeyEvent event) {
@@ -620,7 +619,7 @@ public abstract class AbsSeekBar extends ProgressBar {
         dsTaint.addTaint(keyCode);
         dsTaint.addTaint(event.dsTaint);
         {
-            boolean var7DF3FD71A82DB900422A2663707EECDE_391629819 = (isEnabled());
+            boolean var7DF3FD71A82DB900422A2663707EECDE_1109850277 = (isEnabled());
             {
                 int progress;
                 progress = getProgress();
@@ -632,7 +631,7 @@ public abstract class AbsSeekBar extends ProgressBar {
                 //End case KeyEvent.KEYCODE_DPAD_LEFT 
                 //Begin case KeyEvent.KEYCODE_DPAD_RIGHT 
                 {
-                    boolean varB82DC9CDF51DAE5C4FBB90D1385705AF_1691666232 = (progress >= getMax());
+                    boolean varB82DC9CDF51DAE5C4FBB90D1385705AF_376297787 = (progress >= getMax());
                 } //End collapsed parenthetic
                 //End case KeyEvent.KEYCODE_DPAD_RIGHT 
                 //Begin case KeyEvent.KEYCODE_DPAD_RIGHT 
@@ -643,7 +642,7 @@ public abstract class AbsSeekBar extends ProgressBar {
                 //End case KeyEvent.KEYCODE_DPAD_RIGHT 
             } //End block
         } //End collapsed parenthetic
-        boolean var8C6E6C19273FC56B5C56CC7DEF63ED7B_651277622 = (super.onKeyDown(keyCode, event));
+        boolean var8C6E6C19273FC56B5C56CC7DEF63ED7B_2060095398 = (super.onKeyDown(keyCode, event));
         return dsTaint.getTaintBoolean();
         // ---------- Original Method ----------
         //if (isEnabled()) {
@@ -665,6 +664,6 @@ public abstract class AbsSeekBar extends ProgressBar {
     }
 
     
+    private static final int NO_ALPHA = 0xFF;
 }
-
 

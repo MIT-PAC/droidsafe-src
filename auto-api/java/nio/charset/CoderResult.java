@@ -12,19 +12,10 @@ import java.nio.BufferUnderflowException;
 import java.util.WeakHashMap;
 
 public class CoderResult {
-    private static int TYPE_UNDERFLOW = 1;
-    private static int TYPE_OVERFLOW = 2;
-    private static int TYPE_MALFORMED_INPUT = 3;
-    private static int TYPE_UNMAPPABLE_CHAR = 4;
-    public static CoderResult UNDERFLOW = new CoderResult(TYPE_UNDERFLOW,
-            0);
-    public static CoderResult OVERFLOW = new CoderResult(TYPE_OVERFLOW, 0);
-    private static WeakHashMap<Integer, CoderResult> _malformedErrors = new WeakHashMap<Integer, CoderResult>();
-    private static WeakHashMap<Integer, CoderResult> _unmappableErrors = new WeakHashMap<Integer, CoderResult>();
     private int type;
     private int length;
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 12:00:46.184 -0400", hash_original_method = "720E366141B1E6A3092F9CE363C44766", hash_generated_method = "7B0C2B560DB9F60DDA471F4D4D3E46B4")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:29.248 -0400", hash_original_method = "720E366141B1E6A3092F9CE363C44766", hash_generated_method = "8020233159D52FA0F16780485E311269")
     @DSModeled(DSC.SAFE)
     private CoderResult(int type, int length) {
         dsTaint.addTaint(length);
@@ -35,8 +26,7 @@ public class CoderResult {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 12:00:46.188 -0400", hash_original_method = "32B9309C5888D5D441E10DB420683F91", hash_generated_method = "EA5ABC13387F1533A05FEB74F9C87F72")
-    public static synchronized CoderResult malformedForLength(int length) throws IllegalArgumentException {
+        public static synchronized CoderResult malformedForLength(int length) throws IllegalArgumentException {
         if (length > 0) {
             Integer key = Integer.valueOf(length);
             synchronized (_malformedErrors) {
@@ -52,8 +42,7 @@ public class CoderResult {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 12:00:46.191 -0400", hash_original_method = "BBA6EC87D4C3AA6AD9F0D4B623871AE8", hash_generated_method = "D790B3ABAD493C64B831394CF1B5AB81")
-    public static synchronized CoderResult unmappableForLength(int length) throws IllegalArgumentException {
+        public static synchronized CoderResult unmappableForLength(int length) throws IllegalArgumentException {
         if (length > 0) {
             Integer key = Integer.valueOf(length);
             synchronized (_unmappableErrors) {
@@ -69,7 +58,7 @@ public class CoderResult {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 12:00:46.195 -0400", hash_original_method = "72D962B2D73E7D1A25E9E1AB76F037A1", hash_generated_method = "6F6D9E910920F52588C11A780FF25C3C")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:29.249 -0400", hash_original_method = "72D962B2D73E7D1A25E9E1AB76F037A1", hash_generated_method = "8512267AC0677E5E3892E68634EA9993")
     @DSModeled(DSC.SAFE)
     public boolean isUnderflow() {
         return dsTaint.getTaintBoolean();
@@ -78,7 +67,7 @@ public class CoderResult {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 12:00:46.200 -0400", hash_original_method = "6E4CD2CEA8B470E2711551FAF2632892", hash_generated_method = "5B408965E9380B83974693526F55C1AF")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:29.249 -0400", hash_original_method = "6E4CD2CEA8B470E2711551FAF2632892", hash_generated_method = "96F727B67C7CE5744483231BB550B072")
     @DSModeled(DSC.SAFE)
     public boolean isError() {
         return dsTaint.getTaintBoolean();
@@ -88,7 +77,7 @@ public class CoderResult {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 12:00:46.208 -0400", hash_original_method = "A1FC6FBF45CD4662583E11635A563069", hash_generated_method = "93FCE9F9F0A65AD2722395068ECF698A")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:29.249 -0400", hash_original_method = "A1FC6FBF45CD4662583E11635A563069", hash_generated_method = "B172EC35E2F59FC089F70C685BC44557")
     @DSModeled(DSC.SAFE)
     public boolean isMalformed() {
         return dsTaint.getTaintBoolean();
@@ -97,7 +86,7 @@ public class CoderResult {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 12:00:46.213 -0400", hash_original_method = "B611C5CE05597AA2840AB6FA98EFB1D0", hash_generated_method = "F6748B297E579B44B443EE37AF199E28")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:29.249 -0400", hash_original_method = "B611C5CE05597AA2840AB6FA98EFB1D0", hash_generated_method = "0CD05DAF875AC9DE83DA7CAC93B8CEAC")
     @DSModeled(DSC.SAFE)
     public boolean isOverflow() {
         return dsTaint.getTaintBoolean();
@@ -106,7 +95,7 @@ public class CoderResult {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 12:00:46.219 -0400", hash_original_method = "406F98BDE206F12612B0B50954C0A2D7", hash_generated_method = "916EAB3A2BACC6E0D4603716DCBA265A")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:29.250 -0400", hash_original_method = "406F98BDE206F12612B0B50954C0A2D7", hash_generated_method = "34EB0B01A7C3AD4A5425C21C0F55C168")
     @DSModeled(DSC.SAFE)
     public boolean isUnmappable() {
         return dsTaint.getTaintBoolean();
@@ -115,8 +104,8 @@ public class CoderResult {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 12:00:46.225 -0400", hash_original_method = "9DF3E8EF203785D8A82D753745232C5B", hash_generated_method = "DE6E3295D4FFF9890A24707A3A56AD25")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:29.250 -0400", hash_original_method = "9DF3E8EF203785D8A82D753745232C5B", hash_generated_method = "059D210714D0B77FF1F400E873DBBFF9")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     public int length() throws UnsupportedOperationException {
         if (DroidSafeAndroidRuntime.control) throw new UnsupportedOperationException("length meaningless for " + toString());
         return dsTaint.getTaintInt();
@@ -128,8 +117,8 @@ public class CoderResult {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 12:00:46.232 -0400", hash_original_method = "8994A4AB686221398F6DD6413AEB03CF", hash_generated_method = "93FAC52E75398E426AD6C8CBABF6C930")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:29.251 -0400", hash_original_method = "8994A4AB686221398F6DD6413AEB03CF", hash_generated_method = "9CC9D9B5F697ABA775A97FBE154CCC83")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     public void throwException() throws BufferUnderflowException,
             BufferOverflowException, UnmappableCharacterException,
             MalformedInputException, CharacterCodingException {
@@ -164,7 +153,7 @@ public class CoderResult {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 12:00:46.250 -0400", hash_original_method = "1AD631AC990AF6BF0D5460B8B5F54BE7", hash_generated_method = "D42C8EE83F515C6F66FCD7D638AE812D")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:29.253 -0400", hash_original_method = "1AD631AC990AF6BF0D5460B8B5F54BE7", hash_generated_method = "52E1DC9C202E597E568E09D8F2178AE0")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     @Override
     public String toString() {
@@ -187,7 +176,7 @@ public class CoderResult {
         //Begin case default 
         dsc = "";
         //End case default 
-        String var802632AAFA98609B975C47B8B34846ED_995212569 = (getClass().getName() + "[" + dsc + "]");
+        String var802632AAFA98609B975C47B8B34846ED_283109141 = (getClass().getName() + "[" + dsc + "]");
         return dsTaint.getTaintString();
         // ---------- Original Method ----------
         //String dsc = null;
@@ -214,6 +203,14 @@ public class CoderResult {
     }
 
     
+    private static final int TYPE_UNDERFLOW = 1;
+    private static final int TYPE_OVERFLOW = 2;
+    private static final int TYPE_MALFORMED_INPUT = 3;
+    private static final int TYPE_UNMAPPABLE_CHAR = 4;
+    public static final CoderResult UNDERFLOW = new CoderResult(TYPE_UNDERFLOW,
+            0);
+    public static final CoderResult OVERFLOW = new CoderResult(TYPE_OVERFLOW, 0);
+    private static WeakHashMap<Integer, CoderResult> _malformedErrors = new WeakHashMap<Integer, CoderResult>();
+    private static WeakHashMap<Integer, CoderResult> _unmappableErrors = new WeakHashMap<Integer, CoderResult>();
 }
-
 

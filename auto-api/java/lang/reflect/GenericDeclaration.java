@@ -13,4 +13,3 @@ public interface GenericDeclaration {
     
     TypeVariable<?>[] getTypeParameters();
 }
-

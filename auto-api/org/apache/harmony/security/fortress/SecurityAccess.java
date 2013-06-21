@@ -3,10 +3,10 @@ package org.apache.harmony.security.fortress;
 // Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
+import droidsafe.runtime.*;
 
-// import Iterator to deal with enhanced for loop translation
+// needed for enhanced for control translations
 import java.util.Iterator;
-
 import java.security.Provider;
 import java.util.List;
 
@@ -20,4 +20,3 @@ public interface SecurityAccess {
     
     public Provider.Service getService(Provider p, String type);
 }
-

@@ -3,10 +3,10 @@ package android.view;
 // Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
+import droidsafe.runtime.*;
 
-// import Iterator to deal with enhanced for loop translation
+// needed for enhanced for control translations
 import java.util.Iterator;
-
 import android.app.Activity;
 import android.graphics.drawable.Drawable;
 import android.widget.AdapterView;
@@ -34,4 +34,3 @@ public interface ContextMenu extends Menu {
     public interface ContextMenuInfo {
     }
 }
-

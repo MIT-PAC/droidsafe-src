@@ -3,10 +3,10 @@ package android.view;
 // Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
+import droidsafe.runtime.*;
 
-// import Iterator to deal with enhanced for loop translation
+// needed for enhanced for control translations
 import java.util.Iterator;
-
 
 public interface IRotationWatcher extends android.os.IInterface
 {
@@ -87,4 +87,3 @@ static final int TRANSACTION_onRotationChanged = (android.os.IBinder.FIRST_CALL_
 }
 public void onRotationChanged(int rotation) throws android.os.RemoteException;
 }
-

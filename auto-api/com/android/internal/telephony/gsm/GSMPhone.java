@@ -3,10 +3,10 @@ package com.android.internal.telephony.gsm;
 // Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
+import droidsafe.runtime.*;
 
-// import Iterator to deal with enhanced for loop translation
+// needed for enhanced for control translations
 import java.util.Iterator;
-
 import android.content.ContentValues;
 import android.content.Context;
 import android.content.SharedPreferences;
@@ -68,11 +68,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class GSMPhone extends PhoneBase {
-    static final String LOG_TAG = "GSM";
-    private static final boolean LOCAL_DEBUG = true;
-    public static final String CIPHERING_KEY = "ciphering_key";
-    public static final String VM_NUMBER = "vm_number_key";
-    public static final String VM_SIM_IMSI = "vm_sim_imsi_key";
     GsmCallTracker mCT;
     GsmServiceStateTracker mSST;
     CatService mStkService;
@@ -88,25 +83,25 @@ public class GSMPhone extends PhoneBase {
     private String mImeiSv;
     private String mVmNumber;
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.864 -0400", hash_original_method = "996B91F3E8316CE3D841721FC6425644", hash_generated_method = "90C8BCC32DDECA1DCC5A937F97BACEA3")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:14.086 -0400", hash_original_method = "996B91F3E8316CE3D841721FC6425644", hash_generated_method = "10353CD7A7FB0F42D9BA791FB7E417AD")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public GSMPhone(Context context, CommandsInterface ci, PhoneNotifier notifier) {
         this(context,ci,notifier, false);
         dsTaint.addTaint(notifier.dsTaint);
-        dsTaint.addTaint(context.dsTaint);
         dsTaint.addTaint(ci.dsTaint);
+        dsTaint.addTaint(context.dsTaint);
         // ---------- Original Method ----------
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.864 -0400", hash_original_method = "E0F14E16A0D8C4916EDEAC018BF6C407", hash_generated_method = "B2BDFFB462F25B98057420A97A80C778")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:14.088 -0400", hash_original_method = "E0F14E16A0D8C4916EDEAC018BF6C407", hash_generated_method = "9986D0671EA2F58510B2017F822433FA")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public GSMPhone(Context context, CommandsInterface ci, PhoneNotifier notifier, boolean unitTestMode) {
         super(notifier, context, ci, unitTestMode);
         dsTaint.addTaint(unitTestMode);
         dsTaint.addTaint(notifier.dsTaint);
-        dsTaint.addTaint(context.dsTaint);
         dsTaint.addTaint(ci.dsTaint);
+        dsTaint.addTaint(context.dsTaint);
         {
             mSimulatedRadioControl = (SimulatedRadioControl) ci;
         } //End block
@@ -139,22 +134,36 @@ public class GSMPhone extends PhoneBase {
                 debugSocket.bind (new InetSocketAddress("127.0.0.1", 6666));
                 debugPortThread
                     = new Thread(
-                        new Runnable() {
-                            public void run() {
-                                for(;;) {
-                                    try {
-                                        Socket sock;
-                                        sock = debugSocket.accept();
-                                        Log.i(LOG_TAG, "New connection; resetting radio");
-                                        mCM.resetRadio(null);
-                                        sock.close();
-                                    } catch (IOException ex) {
-                                        Log.w(LOG_TAG,
-                                            "Exception accepting socket", ex);
-                                    }
-                                }
-                            }
-                        },
+                        new Runnable() {                    
+                    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:14.088 -0400", hash_original_method = "4E77C2C2171044E4A2A86AC9695E0AD3", hash_generated_method = "344719F817D0045DB5D27299E79C4A7B")
+                    //DSFIXME:  CODE0002: Requires DSC value to be set
+                    public void run() {
+                        {
+                            try 
+                            {
+                                Socket sock;
+                                sock = debugSocket.accept();
+                                mCM.resetRadio(null);
+                                sock.close();
+                            } //End block
+                            catch (IOException ex)
+                            { }
+                        } //End block
+                        // ---------- Original Method ----------
+                        //for(;;) {
+                                    //try {
+                                        //Socket sock;
+                                        //sock = debugSocket.accept();
+                                        //Log.i(LOG_TAG, "New connection; resetting radio");
+                                        //mCM.resetRadio(null);
+                                        //sock.close();
+                                    //} catch (IOException ex) {
+                                        //Log.w(LOG_TAG,
+                                            //"Exception accepting socket", ex);
+                                    //}
+                                //}
+                    }
+},
                         "GSMPhone debug");
                 debugPortThread.start();
             } //End block
@@ -168,8 +177,8 @@ public class GSMPhone extends PhoneBase {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.865 -0400", hash_original_method = "CEF48F17C6DF6ACB05893EA0A2EE33F8", hash_generated_method = "BC0CA2321F6E50F94EB4EAAD585F081F")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:14.089 -0400", hash_original_method = "CEF48F17C6DF6ACB05893EA0A2EE33F8", hash_generated_method = "B71D38D11653193226E3F8E6531ACE0E")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     @Override
     public void dispose() {
         {
@@ -198,8 +207,8 @@ public class GSMPhone extends PhoneBase {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.865 -0400", hash_original_method = "F5F23F3B17FF3156952338384B3C94C7", hash_generated_method = "F0C366AF54A5D85AB0F8F6CB03E89322")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:14.089 -0400", hash_original_method = "F5F23F3B17FF3156952338384B3C94C7", hash_generated_method = "C0585341C604244A83CFF366F7C62C3E")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     @Override
     public void removeReferences() {
         Log.d(LOG_TAG, "removeReferences");
@@ -234,8 +243,8 @@ public class GSMPhone extends PhoneBase {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.865 -0400", hash_original_method = "B0A9A9B5818DC886F2534146C8893E7F", hash_generated_method = "1772CB1378942946B4ECC1CA990D89A4")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:14.089 -0400", hash_original_method = "B0A9A9B5818DC886F2534146C8893E7F", hash_generated_method = "346B68F817EC52430AB8DB08BE054D6D")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     protected void finalize() {
         Log.d(LOG_TAG, "GSMPhone finalized");
         // ---------- Original Method ----------
@@ -243,7 +252,7 @@ public class GSMPhone extends PhoneBase {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.865 -0400", hash_original_method = "DA0F221C2247572C4D631280E4033E9A", hash_generated_method = "E5B6B1EB690F6D9B088917DBAE500728")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:14.090 -0400", hash_original_method = "DA0F221C2247572C4D631280E4033E9A", hash_generated_method = "FC3662E440FD3765C0BCB5CC60CA3FE5")
     @DSModeled(DSC.SAFE)
     public ServiceState getServiceState() {
         return (ServiceState)dsTaint.getTaint();
@@ -252,7 +261,7 @@ public class GSMPhone extends PhoneBase {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.865 -0400", hash_original_method = "E38329BE2FF507326358BBAF596945E6", hash_generated_method = "D4688C8F6494DE9BFCEE607AF443C552")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:14.090 -0400", hash_original_method = "E38329BE2FF507326358BBAF596945E6", hash_generated_method = "4BF92BFA96FE0F27C21BD96F425A61FB")
     @DSModeled(DSC.SAFE)
     public CellLocation getCellLocation() {
         return (CellLocation)dsTaint.getTaint();
@@ -261,7 +270,7 @@ public class GSMPhone extends PhoneBase {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.865 -0400", hash_original_method = "8AEFB373111A9C8AD30F3E8C75C461D2", hash_generated_method = "C213A0F99DA8FA5EE553344DA708C105")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:14.090 -0400", hash_original_method = "8AEFB373111A9C8AD30F3E8C75C461D2", hash_generated_method = "F84554A9D23EFBD108142BA6D2D4DDB7")
     @DSModeled(DSC.SAFE)
     public Phone.State getState() {
         return (Phone.State)dsTaint.getTaint();
@@ -270,7 +279,7 @@ public class GSMPhone extends PhoneBase {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.865 -0400", hash_original_method = "59C2B6A3B95086A76D74A4AD572CD9E8", hash_generated_method = "12B489476090EFF73E08992233CF7106")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:14.090 -0400", hash_original_method = "59C2B6A3B95086A76D74A4AD572CD9E8", hash_generated_method = "D8B85ACDEECFDCA7D3715F537A63D0CD")
     @DSModeled(DSC.SAFE)
     public String getPhoneName() {
         return dsTaint.getTaintString();
@@ -279,7 +288,7 @@ public class GSMPhone extends PhoneBase {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.865 -0400", hash_original_method = "8F0362114FB07F54B581B179D597F815", hash_generated_method = "C9B60A7889171EE9ACBDE279DE04A638")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:14.090 -0400", hash_original_method = "8F0362114FB07F54B581B179D597F815", hash_generated_method = "C16BC3CEA22380AA697BE104985C73A0")
     @DSModeled(DSC.SAFE)
     public int getPhoneType() {
         return dsTaint.getTaintInt();
@@ -288,7 +297,7 @@ public class GSMPhone extends PhoneBase {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.865 -0400", hash_original_method = "46D9BC6E3280014832CD8FC523C20E6E", hash_generated_method = "EA00D66BFBB261E1E499401384677B14")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:14.090 -0400", hash_original_method = "46D9BC6E3280014832CD8FC523C20E6E", hash_generated_method = "1325ADA4CCC35C506F4F2D0414FD5D5A")
     @DSModeled(DSC.SAFE)
     public SignalStrength getSignalStrength() {
         return (SignalStrength)dsTaint.getTaint();
@@ -297,7 +306,7 @@ public class GSMPhone extends PhoneBase {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.865 -0400", hash_original_method = "79AFD9B845E4547B981131DAC9E3A14D", hash_generated_method = "B3B044A0E4933B0511AB40BCB30872E5")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:14.091 -0400", hash_original_method = "79AFD9B845E4547B981131DAC9E3A14D", hash_generated_method = "5D9B987C72AF0F100B5DAE52C9AE6FF7")
     @DSModeled(DSC.SAFE)
     public CallTracker getCallTracker() {
         return (CallTracker)dsTaint.getTaint();
@@ -306,7 +315,7 @@ public class GSMPhone extends PhoneBase {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.865 -0400", hash_original_method = "BD481539215D5A66E62B4E6909625141", hash_generated_method = "275A6A34F7E687340703DD9210B6F4DE")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:14.091 -0400", hash_original_method = "BD481539215D5A66E62B4E6909625141", hash_generated_method = "100D2458280FF91D75D69B113FFF8324")
     @DSModeled(DSC.SAFE)
     public ServiceStateTracker getServiceStateTracker() {
         return (ServiceStateTracker)dsTaint.getTaint();
@@ -315,7 +324,7 @@ public class GSMPhone extends PhoneBase {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.865 -0400", hash_original_method = "077104DE86BE536BE2C981492E640B74", hash_generated_method = "A2A101E3274F214D46C4B751C90CBA77")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:14.091 -0400", hash_original_method = "077104DE86BE536BE2C981492E640B74", hash_generated_method = "078D8E040AA741E5C774970DFE30E764")
     @DSModeled(DSC.SAFE)
     public List<? extends MmiCode> getPendingMmiCodes() {
         return (List<? extends MmiCode>)dsTaint.getTaint();
@@ -324,10 +333,9 @@ public class GSMPhone extends PhoneBase {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.865 -0400", hash_original_method = "7454904C7C93C1818F679756511639F1", hash_generated_method = "75F8AF263B7F0BC8A2CFD71D3315B01D")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:14.091 -0400", hash_original_method = "7454904C7C93C1818F679756511639F1", hash_generated_method = "6233C1BDDEF793D5EF447D30ED8DCAB8")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public DataState getDataConnectionState(String apnType) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
         dsTaint.addTaint(apnType);
         DataState ret;
         ret = DataState.DISCONNECTED;
@@ -335,26 +343,26 @@ public class GSMPhone extends PhoneBase {
             ret = DataState.DISCONNECTED;
         } //End block
         {
-            boolean var01D4A7B95FF96B8BA58C75CB12149B2D_1494745588 = (mSST.getCurrentGprsState()
+            boolean var01D4A7B95FF96B8BA58C75CB12149B2D_465258143 = (mSST.getCurrentGprsState()
                 != ServiceState.STATE_IN_SERVICE);
             {
                 ret = DataState.DISCONNECTED;
             } //End block
             {
-                boolean varEDC38D72B2381B58A0F3730E74C3817C_422656226 = (mDataConnectionTracker.isApnTypeEnabled(apnType) == false ||
+                boolean varEDC38D72B2381B58A0F3730E74C3817C_180662542 = (mDataConnectionTracker.isApnTypeEnabled(apnType) == false ||
                 mDataConnectionTracker.isApnTypeActive(apnType) == false);
                 {
                     ret = DataState.DISCONNECTED;
                 } //End block
                 {
                     {
-                        Object var819139837D42C0AD62155AA1D23C5AD5_331463625 = (mDataConnectionTracker.getState(apnType));
+                        Object var819139837D42C0AD62155AA1D23C5AD5_153186312 = (mDataConnectionTracker.getState(apnType));
                         //Begin case FAILED IDLE 
                         ret = DataState.DISCONNECTED;
                         //End case FAILED IDLE 
                         //Begin case CONNECTED DISCONNECTING 
                         {
-                            boolean var398FF6E0DCA52B02F79A9CB272BA56EC_1697158917 = (mCT.state != Phone.State.IDLE
+                            boolean var398FF6E0DCA52B02F79A9CB272BA56EC_39563358 = (mCT.state != Phone.State.IDLE
                             && !mSST.isConcurrentVoiceAndDataAllowed());
                             {
                                 ret = DataState.SUSPENDED;
@@ -377,16 +385,16 @@ public class GSMPhone extends PhoneBase {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.866 -0400", hash_original_method = "1B8E5DE4B6A16D073AB6DF5ECB4F317E", hash_generated_method = "EDC006BC318D2EAFF47BA6A43CBE50A7")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:14.092 -0400", hash_original_method = "1B8E5DE4B6A16D073AB6DF5ECB4F317E", hash_generated_method = "6821A8821626583DBA061E462C7F6049")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public DataActivityState getDataActivityState() {
         DataActivityState ret;
         ret = DataActivityState.NONE;
         {
-            boolean var1BD7F40DFB9082C5149DCE8D977AF125_437328752 = (mSST.getCurrentGprsState() == ServiceState.STATE_IN_SERVICE);
+            boolean var1BD7F40DFB9082C5149DCE8D977AF125_1684639913 = (mSST.getCurrentGprsState() == ServiceState.STATE_IN_SERVICE);
             {
                 {
-                    Object var27C7E0FDBE09DE35AC2FD606F73591E2_924299870 = (mDataConnectionTracker.getActivity());
+                    Object var27C7E0FDBE09DE35AC2FD606F73591E2_1676517853 = (mDataConnectionTracker.getActivity());
                     //Begin case DATAIN 
                     ret = DataActivityState.DATAIN;
                     //End case DATAIN 
@@ -419,8 +427,8 @@ public class GSMPhone extends PhoneBase {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.866 -0400", hash_original_method = "812A77A153EDB691C43A0B58CAFAA77A", hash_generated_method = "D88E16D17ED4309B5F77471CE77F05EC")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:14.092 -0400", hash_original_method = "812A77A153EDB691C43A0B58CAFAA77A", hash_generated_method = "AB35579F49622E7A241F12B7DDB4EC19")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
      void notifyPhoneStateChanged() {
         mNotifier.notifyPhoneState(this);
         // ---------- Original Method ----------
@@ -428,8 +436,8 @@ public class GSMPhone extends PhoneBase {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.866 -0400", hash_original_method = "3EB8461625C29B29FD6CB8E5D60B43F3", hash_generated_method = "DE6645BED63D7A84DCC69657109FEA5D")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:14.093 -0400", hash_original_method = "3EB8461625C29B29FD6CB8E5D60B43F3", hash_generated_method = "D04CBC6D94303085010D6FD72DFDF138")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
      void notifyPreciseCallStateChanged() {
         super.notifyPreciseCallStateChangedP();
         // ---------- Original Method ----------
@@ -437,8 +445,8 @@ public class GSMPhone extends PhoneBase {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.866 -0400", hash_original_method = "292444BE96E352C8E8312B338E19EF02", hash_generated_method = "1D252363C24CD454F85D9BE194A8E32A")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:14.093 -0400", hash_original_method = "292444BE96E352C8E8312B338E19EF02", hash_generated_method = "31C9E56614FB3AAD40C46802EAC18158")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
      void notifyNewRingingConnection(Connection c) {
         dsTaint.addTaint(c.dsTaint);
         super.notifyNewRingingConnectionP(c);
@@ -447,8 +455,8 @@ public class GSMPhone extends PhoneBase {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.866 -0400", hash_original_method = "1858091673D3A4B62C058FCC91892C36", hash_generated_method = "7FC21AD219962FFC4D31C1D7A498D364")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:14.094 -0400", hash_original_method = "1858091673D3A4B62C058FCC91892C36", hash_generated_method = "2C4B5AD2DBE6251947A4E99B58E84719")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
      void notifyDisconnect(Connection cn) {
         dsTaint.addTaint(cn.dsTaint);
         mDisconnectRegistrants.notifyResult(cn);
@@ -457,8 +465,8 @@ public class GSMPhone extends PhoneBase {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.866 -0400", hash_original_method = "4DFA3B176AED92FABCFB596FBC88C127", hash_generated_method = "B69649D87585A24DDF770C28059017C4")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:14.095 -0400", hash_original_method = "4DFA3B176AED92FABCFB596FBC88C127", hash_generated_method = "78FF0EBB369D5E48C88943009DE8A38C")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
      void notifyUnknownConnection() {
         mUnknownConnectionRegistrants.notifyResult(this);
         // ---------- Original Method ----------
@@ -466,8 +474,8 @@ public class GSMPhone extends PhoneBase {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.866 -0400", hash_original_method = "952D093251486E722309085461233179", hash_generated_method = "C910474C0CCCC8841497029D11F1407C")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:14.095 -0400", hash_original_method = "952D093251486E722309085461233179", hash_generated_method = "9B00EFA70F78F3A7ED04EFF6E261F229")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
      void notifySuppServiceFailed(SuppService code) {
         dsTaint.addTaint(code.dsTaint);
         mSuppServiceFailedRegistrants.notifyResult(code);
@@ -476,8 +484,8 @@ public class GSMPhone extends PhoneBase {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.866 -0400", hash_original_method = "73E7BFF04E4E9785E6146409272926BA", hash_generated_method = "E3DFCCC90DF88D6FEFDEB33D49CA936F")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:14.095 -0400", hash_original_method = "73E7BFF04E4E9785E6146409272926BA", hash_generated_method = "E90FF12135FFFA3180D191EA7D408C6A")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
      void notifyServiceStateChanged(ServiceState ss) {
         dsTaint.addTaint(ss.dsTaint);
         super.notifyServiceStateChangedP(ss);
@@ -486,18 +494,17 @@ public class GSMPhone extends PhoneBase {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.866 -0400", hash_original_method = "482FE18FBD1949DAF708F2E65940DE8F", hash_generated_method = "021882CF98B4FB93B61C157BB7AF1FCF")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:14.095 -0400", hash_original_method = "482FE18FBD1949DAF708F2E65940DE8F", hash_generated_method = "0723685B826BB9996EC0449E7B1A8FCF")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
      void notifyLocationChanged() {
-        //DSFIXME:  CODE0009: Possible callback target function detected
         mNotifier.notifyCellLocation(this);
         // ---------- Original Method ----------
         //mNotifier.notifyCellLocation(this);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.866 -0400", hash_original_method = "FCBAE539BB72BE21647FF37299DC2B96", hash_generated_method = "CEEF8D82465CDCDFD1F53A1B040E9431")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:14.095 -0400", hash_original_method = "FCBAE539BB72BE21647FF37299DC2B96", hash_generated_method = "0C6B7A0FF6350CF17887F3D234BB96C8")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
      void notifySignalStrength() {
         mNotifier.notifySignalStrength(this);
         // ---------- Original Method ----------
@@ -505,8 +512,8 @@ public class GSMPhone extends PhoneBase {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.866 -0400", hash_original_method = "25487D51A5547C84DC8EEF33482B43EF", hash_generated_method = "B67860FC5E01F8E973648065978AE075")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:14.095 -0400", hash_original_method = "25487D51A5547C84DC8EEF33482B43EF", hash_generated_method = "C35621F7AF385D2C45B899F83A20A075")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     public void notifyCallForwardingIndicator() {
         mNotifier.notifyCallForwardingChanged(this);
         // ---------- Original Method ----------
@@ -514,8 +521,8 @@ public class GSMPhone extends PhoneBase {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.866 -0400", hash_original_method = "C4157CB043EC8B3384F8270EB7DCD5BB", hash_generated_method = "E476AF6907BF3995FD9A8B5CD0688E7D")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:14.095 -0400", hash_original_method = "C4157CB043EC8B3384F8270EB7DCD5BB", hash_generated_method = "0789F4BF69E5002EE8299BC73ED51C2B")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     public final void setSystemProperty(String property, String value) {
         dsTaint.addTaint(value);
         dsTaint.addTaint(property);
@@ -525,7 +532,7 @@ public class GSMPhone extends PhoneBase {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.866 -0400", hash_original_method = "02E1DF9EF058739EC655251AF002C09F", hash_generated_method = "5E654E19004456ECF6535F0C5A0F8754")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:14.096 -0400", hash_original_method = "02E1DF9EF058739EC655251AF002C09F", hash_generated_method = "D8256CE076B92312958EF25BDB2AD283")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public void registerForSuppServiceNotification(
             Handler h, int what, Object obj) {
@@ -535,7 +542,7 @@ public class GSMPhone extends PhoneBase {
         dsTaint.addTaint(h.dsTaint);
         mSsnRegistrants.addUnique(h, what, obj);
         {
-            boolean varFAB3B0CB4521CD623976F107F015373C_1995884740 = (mSsnRegistrants.size() == 1);
+            boolean varFAB3B0CB4521CD623976F107F015373C_849509911 = (mSsnRegistrants.size() == 1);
             mCM.setSuppServiceNotifications(true, null);
         } //End collapsed parenthetic
         // ---------- Original Method ----------
@@ -544,14 +551,13 @@ public class GSMPhone extends PhoneBase {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.866 -0400", hash_original_method = "001FDCA2544BEBF92715B871E5466F8E", hash_generated_method = "F7C29C94D694A49150AF1B903D0681D3")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:14.096 -0400", hash_original_method = "001FDCA2544BEBF92715B871E5466F8E", hash_generated_method = "2B5D1A6EB560AD774EFBC91EA2D039E4")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public void unregisterForSuppServiceNotification(Handler h) {
-        //DSFIXME: CODE0010: Possible callback registration function detected
         dsTaint.addTaint(h.dsTaint);
         mSsnRegistrants.remove(h);
         {
-            boolean varB3BC4AC108FB9749A749F1E20FAFF8A8_170294640 = (mSsnRegistrants.size() == 0);
+            boolean varB3BC4AC108FB9749A749F1E20FAFF8A8_1531965666 = (mSsnRegistrants.size() == 0);
             mCM.setSuppServiceNotifications(false, null);
         } //End collapsed parenthetic
         // ---------- Original Method ----------
@@ -560,8 +566,8 @@ public class GSMPhone extends PhoneBase {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.866 -0400", hash_original_method = "C62CCD6CF2D9D7F7FA17BB7B58067AAC", hash_generated_method = "6B190360036E3A5244EB456775084C95")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:14.096 -0400", hash_original_method = "C62CCD6CF2D9D7F7FA17BB7B58067AAC", hash_generated_method = "229941362132B3EA463C13061274E96C")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     public void acceptCall() throws CallStateException {
         mCT.acceptCall();
         // ---------- Original Method ----------
@@ -569,8 +575,8 @@ public class GSMPhone extends PhoneBase {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.866 -0400", hash_original_method = "A64616985F0D82C6750D71CF8DADC6F4", hash_generated_method = "D7FCF62E2A54A2E94882B5B7CDAE3B04")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:14.096 -0400", hash_original_method = "A64616985F0D82C6750D71CF8DADC6F4", hash_generated_method = "35B0F59F3248405A594AAB683856BD2F")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     public void rejectCall() throws CallStateException {
         mCT.rejectCall();
         // ---------- Original Method ----------
@@ -578,8 +584,8 @@ public class GSMPhone extends PhoneBase {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.867 -0400", hash_original_method = "4BD56579DA53A7A8E0646A63E1978FC8", hash_generated_method = "0DE95364DCB508E20E9E381CA156DCA7")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:14.096 -0400", hash_original_method = "4BD56579DA53A7A8E0646A63E1978FC8", hash_generated_method = "4EFDBB8DAC4DC308937F3C30BD26241D")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     public void switchHoldingAndActive() throws CallStateException {
         mCT.switchWaitingOrHoldingAndActive();
         // ---------- Original Method ----------
@@ -587,28 +593,28 @@ public class GSMPhone extends PhoneBase {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.867 -0400", hash_original_method = "01AA81103C1764FB5FE5BC7D2791F36E", hash_generated_method = "7CDBE55814B5A6E1F814091BC2EC072B")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:14.097 -0400", hash_original_method = "01AA81103C1764FB5FE5BC7D2791F36E", hash_generated_method = "D0B75199FDD5700527C88450BC97B54E")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public boolean canConference() {
-        boolean var62676EA7A977651B04FEF7B6AA776FCC_904856244 = (mCT.canConference());
+        boolean var62676EA7A977651B04FEF7B6AA776FCC_1445637851 = (mCT.canConference());
         return dsTaint.getTaintBoolean();
         // ---------- Original Method ----------
         //return mCT.canConference();
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.867 -0400", hash_original_method = "27A0C6F6921751B2F5D5EAA31130917E", hash_generated_method = "A1DCB13F7BA8BFA40DC0B320F43F2E02")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:14.097 -0400", hash_original_method = "27A0C6F6921751B2F5D5EAA31130917E", hash_generated_method = "926489C7C0C1C2CAFEF6DE13FA95D35F")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public boolean canDial() {
-        boolean var17F304E4F3B49DB2D1D736D9DD207194_410519286 = (mCT.canDial());
+        boolean var17F304E4F3B49DB2D1D736D9DD207194_1592372614 = (mCT.canDial());
         return dsTaint.getTaintBoolean();
         // ---------- Original Method ----------
         //return mCT.canDial();
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.867 -0400", hash_original_method = "ED1426E2C308CED60BE3C0151AD877C7", hash_generated_method = "03CE4A311B938F2C8B0878CE3F063210")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:14.097 -0400", hash_original_method = "ED1426E2C308CED60BE3C0151AD877C7", hash_generated_method = "2CFDCF5C26A4C2BD5811B87BFB8C4AB4")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     public void conference() throws CallStateException {
         mCT.conference();
         // ---------- Original Method ----------
@@ -616,8 +622,8 @@ public class GSMPhone extends PhoneBase {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.867 -0400", hash_original_method = "B9932A8A8BD16A4F0D461DDC6FDE6B49", hash_generated_method = "393DE7A74F05B4DF79434488A3AC122A")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:14.097 -0400", hash_original_method = "B9932A8A8BD16A4F0D461DDC6FDE6B49", hash_generated_method = "BEFA10EB4DBC56DB633604D1159E6D30")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     public void clearDisconnected() {
         mCT.clearDisconnected();
         // ---------- Original Method ----------
@@ -625,18 +631,18 @@ public class GSMPhone extends PhoneBase {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.867 -0400", hash_original_method = "36A0747921C9C16BA6E56F404827E4EB", hash_generated_method = "114B9A738C47A059D241933AC09BF0DF")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:14.097 -0400", hash_original_method = "36A0747921C9C16BA6E56F404827E4EB", hash_generated_method = "E011FBE534F9C3BD5EEA4E308DBA148E")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public boolean canTransfer() {
-        boolean var8E3EEF73488C19B8AFD5D0569E1452B3_347378800 = (mCT.canTransfer());
+        boolean var8E3EEF73488C19B8AFD5D0569E1452B3_409107726 = (mCT.canTransfer());
         return dsTaint.getTaintBoolean();
         // ---------- Original Method ----------
         //return mCT.canTransfer();
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.867 -0400", hash_original_method = "844E9AE7DC0EF8644470861505601222", hash_generated_method = "4FBAB781AF70186F83D37077F0D5863B")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:14.097 -0400", hash_original_method = "844E9AE7DC0EF8644470861505601222", hash_generated_method = "C4108AEC931486BDFF732FB315DE5DD6")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     public void explicitCallTransfer() throws CallStateException {
         mCT.explicitCallTransfer();
         // ---------- Original Method ----------
@@ -644,7 +650,7 @@ public class GSMPhone extends PhoneBase {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.867 -0400", hash_original_method = "A46545098103F91B00276659EE365887", hash_generated_method = "8ABE1015DE4B4CD9CF43F402EF2A6F15")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:14.098 -0400", hash_original_method = "A46545098103F91B00276659EE365887", hash_generated_method = "47A1348CE46438E65A49037C9D3441CC")
     @DSModeled(DSC.SAFE)
     public GsmCall getForegroundCall() {
         return (GsmCall)dsTaint.getTaint();
@@ -653,7 +659,7 @@ public class GSMPhone extends PhoneBase {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.867 -0400", hash_original_method = "142F0A4524F2CBB8716568AB3A761D12", hash_generated_method = "7753380D7F737D16E695D1E8E94CF359")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:14.098 -0400", hash_original_method = "142F0A4524F2CBB8716568AB3A761D12", hash_generated_method = "739516665B340F8D905A740115A9F0CB")
     @DSModeled(DSC.SAFE)
     public GsmCall getBackgroundCall() {
         return (GsmCall)dsTaint.getTaint();
@@ -662,7 +668,7 @@ public class GSMPhone extends PhoneBase {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.867 -0400", hash_original_method = "F87806E8E26806695F0525D42F1D7DD4", hash_generated_method = "53202503AA4A7B180B99CB9B174B621F")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:14.098 -0400", hash_original_method = "F87806E8E26806695F0525D42F1D7DD4", hash_generated_method = "391E29BB0AE534E1E5E072C67B8A8360")
     @DSModeled(DSC.SAFE)
     public GsmCall getRingingCall() {
         return (GsmCall)dsTaint.getTaint();
@@ -671,16 +677,16 @@ public class GSMPhone extends PhoneBase {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.867 -0400", hash_original_method = "3A1042FC51BD24241CBFB1D3DBD11D23", hash_generated_method = "B021F2EBA54C95AA9CD11A65748F2D90")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:14.098 -0400", hash_original_method = "3A1042FC51BD24241CBFB1D3DBD11D23", hash_generated_method = "05998DD9DCF14299A101E0CD9D5A71A7")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     private boolean handleCallDeflectionIncallSupplementaryService(
             String dialString) throws CallStateException {
         dsTaint.addTaint(dialString);
         {
-            boolean var599183C7EFEA223E987C253B1794A663_631281228 = (dialString.length() > 1);
+            boolean var599183C7EFEA223E987C253B1794A663_288095780 = (dialString.length() > 1);
         } //End collapsed parenthetic
         {
-            boolean varC3EC61EA57D8BAD50CBB2912B8C19CD0_684568676 = (getRingingCall().getState() != GsmCall.State.IDLE);
+            boolean varC3EC61EA57D8BAD50CBB2912B8C19CD0_1629629066 = (getRingingCall().getState() != GsmCall.State.IDLE);
             {
                 Log.d(LOG_TAG, "MmiCode 0: rejectCall");
                 try 
@@ -695,7 +701,7 @@ public class GSMPhone extends PhoneBase {
                 } //End block
             } //End block
             {
-                boolean var3939D4E7861BC6B97F7F3D876A35B1D2_1148771324 = (getBackgroundCall().getState() != GsmCall.State.IDLE);
+                boolean var3939D4E7861BC6B97F7F3D876A35B1D2_70582154 = (getBackgroundCall().getState() != GsmCall.State.IDLE);
                 {
                     Log.d(LOG_TAG,
                     "MmiCode 0: hangupWaitingOrBackground");
@@ -726,7 +732,7 @@ public class GSMPhone extends PhoneBase {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.867 -0400", hash_original_method = "54841B6AA04B8F69693CDF35FACFE6EA", hash_generated_method = "1698183D8C4FCA8CDE3720CFF4B70666")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:14.099 -0400", hash_original_method = "54841B6AA04B8F69693CDF35FACFE6EA", hash_generated_method = "B1CE96AB48F6A003E22D1FFB01C060F8")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     private boolean handleCallWaitingIncallSupplementaryService(
             String dialString) throws CallStateException {
@@ -751,7 +757,7 @@ public class GSMPhone extends PhoneBase {
             } //End block
             {
                 {
-                    boolean varAA260EC3CDDC603D103B4D5D62C46E51_801156318 = (call.getState() != GsmCall.State.IDLE);
+                    boolean varAA260EC3CDDC603D103B4D5D62C46E51_1111753391 = (call.getState() != GsmCall.State.IDLE);
                     {
                         Log.d(LOG_TAG,
                             "MmiCode 1: hangup foreground");
@@ -777,7 +783,7 @@ public class GSMPhone extends PhoneBase {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.868 -0400", hash_original_method = "F4FAEC22329B0BDDF008B69FB760B2A4", hash_generated_method = "8F552F12F1F01C0408EFF21B7EEBF125")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:14.099 -0400", hash_original_method = "F4FAEC22329B0BDDF008B69FB760B2A4", hash_generated_method = "061FE4D54FD72E499E16786897D18714")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     private boolean handleCallHoldIncallSupplementaryService(String dialString) throws CallStateException {
         dsTaint.addTaint(dialString);
@@ -816,7 +822,7 @@ public class GSMPhone extends PhoneBase {
             try 
             {
                 {
-                    boolean var3B586179DB1A75B5DE869C498B98014C_622953131 = (getRingingCall().getState() != GsmCall.State.IDLE);
+                    boolean var3B586179DB1A75B5DE869C498B98014C_1632100791 = (getRingingCall().getState() != GsmCall.State.IDLE);
                     {
                         Log.d(LOG_TAG,
                     "MmiCode 2: accept ringing call");
@@ -842,13 +848,13 @@ public class GSMPhone extends PhoneBase {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.868 -0400", hash_original_method = "A61A93477751B5EFFB3B26065CE7F8F7", hash_generated_method = "F1A271612C4044152D70625C03CA73A1")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:14.100 -0400", hash_original_method = "A61A93477751B5EFFB3B26065CE7F8F7", hash_generated_method = "AAED8F36114481F1CD45B47BAC5E63FB")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     private boolean handleMultipartyIncallSupplementaryService(
             String dialString) throws CallStateException {
         dsTaint.addTaint(dialString);
         {
-            boolean var599183C7EFEA223E987C253B1794A663_305155391 = (dialString.length() > 1);
+            boolean var599183C7EFEA223E987C253B1794A663_812230010 = (dialString.length() > 1);
         } //End collapsed parenthetic
         Log.d(LOG_TAG, "MmiCode 3: merge calls");
         try 
@@ -878,8 +884,8 @@ public class GSMPhone extends PhoneBase {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.868 -0400", hash_original_method = "D22F8E83AE3C2E24760F930E8B1C0AF8", hash_generated_method = "574CCEAA8E205B5F7B84A28DDC1D7F13")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:14.100 -0400", hash_original_method = "D22F8E83AE3C2E24760F930E8B1C0AF8", hash_generated_method = "CA420BD590722610533FA57F1A42FE1C")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     private boolean handleEctIncallSupplementaryService(String dialString) throws CallStateException {
         dsTaint.addTaint(dialString);
         int len;
@@ -913,12 +919,12 @@ public class GSMPhone extends PhoneBase {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.868 -0400", hash_original_method = "F0B7315BB3E501E36AB72E6B89A34578", hash_generated_method = "2D063787D5C1CFE53E320EBE5BF02906")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:14.100 -0400", hash_original_method = "F0B7315BB3E501E36AB72E6B89A34578", hash_generated_method = "D17234A2073A912A4A29EF461B64BCD7")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     private boolean handleCcbsIncallSupplementaryService(String dialString) throws CallStateException {
         dsTaint.addTaint(dialString);
         {
-            boolean var599183C7EFEA223E987C253B1794A663_1883090298 = (dialString.length() > 1);
+            boolean var599183C7EFEA223E987C253B1794A663_575172295 = (dialString.length() > 1);
         } //End collapsed parenthetic
         notifySuppServiceFailed(Phone.SuppService.UNKNOWN);
         return dsTaint.getTaintBoolean();
@@ -932,15 +938,15 @@ public class GSMPhone extends PhoneBase {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.868 -0400", hash_original_method = "ADE3D3CB52AC1581EEE1CFCBED33E09A", hash_generated_method = "4D6B6BD5AAD8AF67DF6F60665C674C15")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:14.100 -0400", hash_original_method = "ADE3D3CB52AC1581EEE1CFCBED33E09A", hash_generated_method = "C4858B7153A77080539723F84AA2BBD6")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public boolean handleInCallMmiCommands(String dialString) throws CallStateException {
         dsTaint.addTaint(dialString);
         {
-            boolean var2DA7186072441CB83C6A969D8B16A442_1686477168 = (!isInCall());
+            boolean var2DA7186072441CB83C6A969D8B16A442_461655071 = (!isInCall());
         } //End collapsed parenthetic
         {
-            boolean varE12969D5E25DB7CCEEFA6845C2569D2D_901200074 = (TextUtils.isEmpty(dialString));
+            boolean varE12969D5E25DB7CCEEFA6845C2569D2D_403933365 = (TextUtils.isEmpty(dialString));
         } //End collapsed parenthetic
         boolean result;
         result = false;
@@ -972,7 +978,7 @@ public class GSMPhone extends PhoneBase {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.868 -0400", hash_original_method = "711944CD15C0B30B5C3E1DF07833B9CC", hash_generated_method = "B9E3228E2BC7CC907B43CF99A57B7AC8")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:14.101 -0400", hash_original_method = "711944CD15C0B30B5C3E1DF07833B9CC", hash_generated_method = "CD2EA0C3EAECBD98C667F56F54301A3B")
     //DSFIXME:  CODE0002: Requires DSC value to be set
      boolean isInCall() {
         GsmCall.State foregroundCallState;
@@ -981,7 +987,7 @@ public class GSMPhone extends PhoneBase {
         backgroundCallState = getBackgroundCall().getState();
         GsmCall.State ringingCallState;
         ringingCallState = getRingingCall().getState();
-        boolean var40D567FED010B1806D41F17B742032B9_1587032996 = ((foregroundCallState.isAlive() ||
+        boolean var40D567FED010B1806D41F17B742032B9_62816563 = ((foregroundCallState.isAlive() ||
                 backgroundCallState.isAlive() ||
                 ringingCallState.isAlive()));
         return dsTaint.getTaintBoolean();
@@ -995,18 +1001,18 @@ public class GSMPhone extends PhoneBase {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.869 -0400", hash_original_method = "869C8D5C9810AA3DB7F9F221ECFAACBF", hash_generated_method = "FA1A305601040A7E0F411346AF607C8E")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:14.101 -0400", hash_original_method = "869C8D5C9810AA3DB7F9F221ECFAACBF", hash_generated_method = "634DCED5C46AD337E790116BF1F470F5")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public Connection dial(String dialString) throws CallStateException {
         dsTaint.addTaint(dialString);
-        Connection var34C1005EC897F05961460403C9DF9563_974255752 = (dial(dialString, null));
+        Connection var34C1005EC897F05961460403C9DF9563_1087839983 = (dial(dialString, null));
         return (Connection)dsTaint.getTaint();
         // ---------- Original Method ----------
         //return dial(dialString, null);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.869 -0400", hash_original_method = "905878DD9E4370A9706866C1B8D62D03", hash_generated_method = "B5C3A8AF2ACC0A2DAA28958FC0B2B617")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:14.101 -0400", hash_original_method = "905878DD9E4370A9706866C1B8D62D03", hash_generated_method = "72A14DF9C21EDFF3F841FB5783315F61")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public Connection dial(String dialString, UUSInfo uusInfo) throws CallStateException {
         dsTaint.addTaint(uusInfo.dsTaint);
@@ -1014,7 +1020,7 @@ public class GSMPhone extends PhoneBase {
         String newDialString;
         newDialString = PhoneNumberUtils.stripSeparators(dialString);
         {
-            boolean var22047FA7216835015EF1E811EC89577D_1668429724 = (handleInCallMmiCommands(newDialString));
+            boolean var22047FA7216835015EF1E811EC89577D_327678002 = (handleInCallMmiCommands(newDialString));
         } //End collapsed parenthetic
         String networkPortion;
         networkPortion = PhoneNumberUtils.extractNetworkPortionAlt(newDialString);
@@ -1023,12 +1029,12 @@ public class GSMPhone extends PhoneBase {
         Log.d(LOG_TAG,
                                "dialing w/ mmi '" + mmi + "'...");
         {
-            Connection varE7EE6EF4EDE78F08791B23369411EF24_773226981 = (mCT.dial(newDialString, uusInfo));
+            Connection varE7EE6EF4EDE78F08791B23369411EF24_2141069000 = (mCT.dial(newDialString, uusInfo));
         } //End block
         {
-            boolean varD000FF2B694DE8E860A4E505705D97D0_1863205913 = (mmi.isTemporaryModeCLIR());
+            boolean varD000FF2B694DE8E860A4E505705D97D0_498391466 = (mmi.isTemporaryModeCLIR());
             {
-                Connection var1180887CC82FCCAA16E8DB97CDC8B2EA_976493943 = (mCT.dial(mmi.dialingNumber, mmi.getCLIRMode(), uusInfo));
+                Connection var1180887CC82FCCAA16E8DB97CDC8B2EA_302402287 = (mCT.dial(mmi.dialingNumber, mmi.getCLIRMode(), uusInfo));
             } //End block
             {
                 mPendingMMIs.add(mmi);
@@ -1042,14 +1048,14 @@ public class GSMPhone extends PhoneBase {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.869 -0400", hash_original_method = "4BA0C4BD36DFB68226B2317C39970473", hash_generated_method = "9699DF4ECC31C5336B071C76AC10D9D2")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:14.101 -0400", hash_original_method = "4BA0C4BD36DFB68226B2317C39970473", hash_generated_method = "9DFEA4182089A541E803961CE616E4FF")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public boolean handlePinMmi(String dialString) {
         dsTaint.addTaint(dialString);
         GsmMmiCode mmi;
         mmi = GsmMmiCode.newFromDialString(dialString, this);
         {
-            boolean var182AE2F3D97AC06A48466C4D43389C30_1033134097 = (mmi != null && mmi.isPinCommand());
+            boolean var182AE2F3D97AC06A48466C4D43389C30_2096784405 = (mmi != null && mmi.isPinCommand());
             {
                 mPendingMMIs.add(mmi);
                 mMmiRegistrants.notifyRegistrants(new AsyncResult(null, mmi, null));
@@ -1069,8 +1075,8 @@ public class GSMPhone extends PhoneBase {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.869 -0400", hash_original_method = "0D802E3B18B63F6835A66AA15E37A07D", hash_generated_method = "D7B6FA2358BC67D20E8743B4BDB30964")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:14.102 -0400", hash_original_method = "0D802E3B18B63F6835A66AA15E37A07D", hash_generated_method = "06813CDAF2762EFBE649F134D324F809")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     public void sendUssdResponse(String ussdMessge) {
         dsTaint.addTaint(ussdMessge);
         GsmMmiCode mmi;
@@ -1086,12 +1092,12 @@ public class GSMPhone extends PhoneBase {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.869 -0400", hash_original_method = "98607162C44D8873925496654D522BF8", hash_generated_method = "CF6E69F979FC8EDA99DDB9BB258B2C47")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:14.102 -0400", hash_original_method = "98607162C44D8873925496654D522BF8", hash_generated_method = "037E046708513C8F3984BF779CE2B608")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public void sendDtmf(char c) {
         dsTaint.addTaint(c);
         {
-            boolean varD5E376D61876D980336EC59E5D202EEE_1824646644 = (!PhoneNumberUtils.is12Key(c));
+            boolean varD5E376D61876D980336EC59E5D202EEE_2124262139 = (!PhoneNumberUtils.is12Key(c));
             {
                 {
                     mCM.sendDtmf(c, null);
@@ -1110,12 +1116,12 @@ public class GSMPhone extends PhoneBase {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.869 -0400", hash_original_method = "3FBA1333099AE68AF02019D712D23AB2", hash_generated_method = "CCAD3B4D02719BA076F24F646A58215F")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:14.102 -0400", hash_original_method = "3FBA1333099AE68AF02019D712D23AB2", hash_generated_method = "D143884B0A0178E37B022331E38740E6")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public void startDtmf(char c) {
         dsTaint.addTaint(c);
         {
-            boolean varD5E376D61876D980336EC59E5D202EEE_557041079 = (!PhoneNumberUtils.is12Key(c));
+            boolean varD5E376D61876D980336EC59E5D202EEE_1420108367 = (!PhoneNumberUtils.is12Key(c));
             {
                 mCM.startDtmf(c, null);
             } //End block
@@ -1130,8 +1136,8 @@ public class GSMPhone extends PhoneBase {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.869 -0400", hash_original_method = "3DAC039DE959EF34631E2B825CE1F213", hash_generated_method = "99354F65987E33161D4C71C94D255852")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:14.102 -0400", hash_original_method = "3DAC039DE959EF34631E2B825CE1F213", hash_generated_method = "E3ACE99405ED7C4AFBEE2F93E02370EB")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     public void stopDtmf() {
         mCM.stopDtmf(null);
         // ---------- Original Method ----------
@@ -1139,8 +1145,8 @@ public class GSMPhone extends PhoneBase {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.869 -0400", hash_original_method = "632DA8A1165B474AAA75C1A965AA7035", hash_generated_method = "423142D0A48F59F710017E3293521370")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:14.102 -0400", hash_original_method = "632DA8A1165B474AAA75C1A965AA7035", hash_generated_method = "E274D5DE22F0F541BDBC2E1A5C6B2873")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     public void sendBurstDtmf(String dtmfString) {
         dsTaint.addTaint(dtmfString);
         // ---------- Original Method ----------
@@ -1148,8 +1154,8 @@ public class GSMPhone extends PhoneBase {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.869 -0400", hash_original_method = "6583EBFAAE11F5B271B0C202AB11C3E9", hash_generated_method = "5BEBA30A01D6E016F48B42CCFEFBCC2D")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:14.103 -0400", hash_original_method = "6583EBFAAE11F5B271B0C202AB11C3E9", hash_generated_method = "3ACA7B12EE0462C4C6C30C6362243F5B")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     public void setRadioPower(boolean power) {
         dsTaint.addTaint(power);
         mSST.setRadioPower(power);
@@ -1158,7 +1164,7 @@ public class GSMPhone extends PhoneBase {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.869 -0400", hash_original_method = "E7F586CDCE74786257222FAC0983E7F9", hash_generated_method = "E7941B5067F900410EE1EF8967090542")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:14.103 -0400", hash_original_method = "E7F586CDCE74786257222FAC0983E7F9", hash_generated_method = "466394A358DEC335512309FE1BDFE1C5")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     private void storeVoiceMailNumber(String number) {
         dsTaint.addTaint(number);
@@ -1178,13 +1184,13 @@ public class GSMPhone extends PhoneBase {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.870 -0400", hash_original_method = "69924A8239B9858372407D5C2A54772B", hash_generated_method = "49E9C25B203976F14B0279189EB6E53A")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:14.103 -0400", hash_original_method = "69924A8239B9858372407D5C2A54772B", hash_generated_method = "FC6EA9C3429043D2C5E37E8C6322659A")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public String getVoiceMailNumber() {
         String number;
         number = mIccRecords.getVoiceMailNumber();
         {
-            boolean varDC814D5E0DD02381050A532714A4AE08_15425985 = (TextUtils.isEmpty(number));
+            boolean varDC814D5E0DD02381050A532714A4AE08_2043842758 = (TextUtils.isEmpty(number));
             {
                 SharedPreferences sp;
                 sp = PreferenceManager.getDefaultSharedPreferences(getContext());
@@ -1202,12 +1208,12 @@ public class GSMPhone extends PhoneBase {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.870 -0400", hash_original_method = "767A05C9F746992519407618C38B7609", hash_generated_method = "381BF314FAB227F04CD8D13D720BEB05")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:14.103 -0400", hash_original_method = "767A05C9F746992519407618C38B7609", hash_generated_method = "B4A3694C79DE00B64D794376D61693D8")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     private String getVmSimImsi() {
         SharedPreferences sp;
         sp = PreferenceManager.getDefaultSharedPreferences(getContext());
-        String varE426CC5947B82483C49233A789FBF788_1644812117 = (sp.getString(VM_SIM_IMSI, null));
+        String varE426CC5947B82483C49233A789FBF788_1894700422 = (sp.getString(VM_SIM_IMSI, null));
         return dsTaint.getTaintString();
         // ---------- Original Method ----------
         //SharedPreferences sp = PreferenceManager.getDefaultSharedPreferences(getContext());
@@ -1215,7 +1221,7 @@ public class GSMPhone extends PhoneBase {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.870 -0400", hash_original_method = "8C96CC1C916F049093DF13C1B1327265", hash_generated_method = "D6717310F3810C393D186CFD14523E85")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:14.103 -0400", hash_original_method = "8C96CC1C916F049093DF13C1B1327265", hash_generated_method = "7BE00A9FA3AD91D0A6BBBBC90D21175B")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     private void setVmSimImsi(String imsi) {
         dsTaint.addTaint(imsi);
@@ -1233,15 +1239,15 @@ public class GSMPhone extends PhoneBase {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.870 -0400", hash_original_method = "445A2067BED895487F73AC5A870ED091", hash_generated_method = "5F9CDD44ACF043A2FD5A06AC5EAE183B")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:14.104 -0400", hash_original_method = "445A2067BED895487F73AC5A870ED091", hash_generated_method = "CE74CA0C5093B06D6A9E74922E9C0FE2")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public String getVoiceMailAlphaTag() {
         String ret;
         ret = mIccRecords.getVoiceMailAlphaTag();
         {
-            boolean var0709D69E6C2648B4A0C93BD0750A7DE0_1656667625 = (ret == null || ret.length() == 0);
+            boolean var0709D69E6C2648B4A0C93BD0750A7DE0_1245133993 = (ret == null || ret.length() == 0);
             {
-                String varA530EF9D7F6A4C3687908C13A6C584D5_1456737728 = (mContext.getText(
+                String varA530EF9D7F6A4C3687908C13A6C584D5_1545178091 = (mContext.getText(
                 com.android.internal.R.string.defaultVoiceMailAlphaTag).toString());
             } //End block
         } //End collapsed parenthetic
@@ -1257,7 +1263,7 @@ public class GSMPhone extends PhoneBase {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.870 -0400", hash_original_method = "40864F79C0287ACEFC2860E74923A158", hash_generated_method = "FCD6475442BDAEC1DC5C33B582DB7FBA")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:14.104 -0400", hash_original_method = "40864F79C0287ACEFC2860E74923A158", hash_generated_method = "E38B3ADDD5452FE26B16FBA1E957C21A")
     @DSModeled(DSC.SAFE)
     public String getDeviceId() {
         return dsTaint.getTaintString();
@@ -1266,7 +1272,7 @@ public class GSMPhone extends PhoneBase {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.870 -0400", hash_original_method = "14B7BB34E0FC203F73344BD326AAB989", hash_generated_method = "2BA99D40BCAA5CC989C4B6AC92546DCC")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:14.104 -0400", hash_original_method = "14B7BB34E0FC203F73344BD326AAB989", hash_generated_method = "9FCC5352A830A12A9F9610ABCD2F6E50")
     @DSModeled(DSC.SAFE)
     public String getDeviceSvn() {
         return dsTaint.getTaintString();
@@ -1275,7 +1281,7 @@ public class GSMPhone extends PhoneBase {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.870 -0400", hash_original_method = "2BFB931234EFCBDA06B75AE314A70B6B", hash_generated_method = "B6CAF027166D04D94A25D273587716D5")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:14.104 -0400", hash_original_method = "2BFB931234EFCBDA06B75AE314A70B6B", hash_generated_method = "D9F2490498EB1C3D9872DA2F2F0B2C92")
     @DSModeled(DSC.SAFE)
     public String getImei() {
         return dsTaint.getTaintString();
@@ -1284,8 +1290,8 @@ public class GSMPhone extends PhoneBase {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.870 -0400", hash_original_method = "8337C263E1C0C858E7E7356286A6EE86", hash_generated_method = "82C1552087C3F9289566CB025A1765A6")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:14.104 -0400", hash_original_method = "8337C263E1C0C858E7E7356286A6EE86", hash_generated_method = "E25466CCAB33D982FFC469751A4ACC16")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     public String getEsn() {
         return dsTaint.getTaintString();
         // ---------- Original Method ----------
@@ -1294,8 +1300,8 @@ public class GSMPhone extends PhoneBase {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.870 -0400", hash_original_method = "92AF0460E6B1DF6A22F32869474C6DE7", hash_generated_method = "0E572575F8B7984DFD1028794CD5C740")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:14.104 -0400", hash_original_method = "92AF0460E6B1DF6A22F32869474C6DE7", hash_generated_method = "69CFDC4B58E35D29E4AC201CFA7EA2B2")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     public String getMeid() {
         return dsTaint.getTaintString();
         // ---------- Original Method ----------
@@ -1304,49 +1310,49 @@ public class GSMPhone extends PhoneBase {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.870 -0400", hash_original_method = "418ED398A6A3FF53B03B4C5008FE3F90", hash_generated_method = "5205B474BAE79BB3DCB9B048A3AB7D9D")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:14.104 -0400", hash_original_method = "418ED398A6A3FF53B03B4C5008FE3F90", hash_generated_method = "93C591623E58EC8A54D3FD0782D819DB")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public String getSubscriberId() {
-        String var7FD2EEB6F75B5B5070336667783F1237_1121009944 = (mIccRecords.getIMSI());
+        String var7FD2EEB6F75B5B5070336667783F1237_684535690 = (mIccRecords.getIMSI());
         return dsTaint.getTaintString();
         // ---------- Original Method ----------
         //return mIccRecords.getIMSI();
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.870 -0400", hash_original_method = "084DD7ECDC7A6E289A4C2D9F1DE10A12", hash_generated_method = "CAB904DC9BBD96E55B7819B65157DECF")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:14.105 -0400", hash_original_method = "084DD7ECDC7A6E289A4C2D9F1DE10A12", hash_generated_method = "118A45692584196BDABEA060BC0CE4B2")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public String getLine1Number() {
-        String var371895645902F934A5DFC882DDC1D4C9_1072181097 = (mIccRecords.getMsisdnNumber());
+        String var371895645902F934A5DFC882DDC1D4C9_1033803676 = (mIccRecords.getMsisdnNumber());
         return dsTaint.getTaintString();
         // ---------- Original Method ----------
         //return mIccRecords.getMsisdnNumber();
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.870 -0400", hash_original_method = "0F1A42666FEB7039E59CE38A804A2571", hash_generated_method = "F409ED94566DEBEF6500D4C77470C810")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:14.105 -0400", hash_original_method = "0F1A42666FEB7039E59CE38A804A2571", hash_generated_method = "20795FDF7842E26C1BB81AD0A9D32E1C")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     @Override
     public String getMsisdn() {
-        String var371895645902F934A5DFC882DDC1D4C9_919928022 = (mIccRecords.getMsisdnNumber());
+        String var371895645902F934A5DFC882DDC1D4C9_1192286460 = (mIccRecords.getMsisdnNumber());
         return dsTaint.getTaintString();
         // ---------- Original Method ----------
         //return mIccRecords.getMsisdnNumber();
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.870 -0400", hash_original_method = "D360BD2B0AE3500C93B786BA943E8C4F", hash_generated_method = "DF89E5E14305A9A3BD3A5D277EE8B966")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:14.105 -0400", hash_original_method = "D360BD2B0AE3500C93B786BA943E8C4F", hash_generated_method = "2D28A3E69C7804A83CCC930ED9088600")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public String getLine1AlphaTag() {
-        String varB05EBF7484E80902F440A44EB7346A0D_1720443395 = (mIccRecords.getMsisdnAlphaTag());
+        String varB05EBF7484E80902F440A44EB7346A0D_799635058 = (mIccRecords.getMsisdnAlphaTag());
         return dsTaint.getTaintString();
         // ---------- Original Method ----------
         //return mIccRecords.getMsisdnAlphaTag();
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.870 -0400", hash_original_method = "F8CED3952B50871548C8F8795A72A874", hash_generated_method = "C983E779823010416CDEBB79952DDD7D")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:14.105 -0400", hash_original_method = "F8CED3952B50871548C8F8795A72A874", hash_generated_method = "01B7797A885A7AEE7A5D0E2BC6F80470")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     public void setLine1Number(String alphaTag, String number, Message onComplete) {
         dsTaint.addTaint(onComplete.dsTaint);
         dsTaint.addTaint(number);
@@ -1357,14 +1363,14 @@ public class GSMPhone extends PhoneBase {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.870 -0400", hash_original_method = "63103D1CE9C7888BE66C8CE520564C7E", hash_generated_method = "D890C0682761B7021916DD7E606E6917")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:14.105 -0400", hash_original_method = "63103D1CE9C7888BE66C8CE520564C7E", hash_generated_method = "A9DE00EFFC13F4089A11258E9D792C4C")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public void setVoiceMailNumber(String alphaTag,
                             String voiceMailNumber,
                             Message onComplete) {
         dsTaint.addTaint(onComplete.dsTaint);
-        dsTaint.addTaint(alphaTag);
         dsTaint.addTaint(voiceMailNumber);
+        dsTaint.addTaint(alphaTag);
         Message resp;
         resp = obtainMessage(EVENT_SET_VM_NUMBER_DONE, 0, 0, onComplete);
         mIccRecords.setVoiceMailNumber(alphaTag, mVmNumber, resp);
@@ -1376,7 +1382,7 @@ public class GSMPhone extends PhoneBase {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.870 -0400", hash_original_method = "9DDD364B83D4A188246C8EC4129A09D5", hash_generated_method = "1B8C5D713CA7DE65185FDD401445C50C")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:14.105 -0400", hash_original_method = "9DDD364B83D4A188246C8EC4129A09D5", hash_generated_method = "E234132756CA12ECF19CCC5706998765")
     @DSModeled(DSC.SAFE)
     private boolean isValidCommandInterfaceCFReason(int commandInterfaceCFReason) {
         dsTaint.addTaint(commandInterfaceCFReason);
@@ -1396,7 +1402,7 @@ public class GSMPhone extends PhoneBase {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.871 -0400", hash_original_method = "138625FFD93D7E6FCFD9298408C66777", hash_generated_method = "781CD3E171EC85A2FED918FD9362FCE6")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:14.106 -0400", hash_original_method = "138625FFD93D7E6FCFD9298408C66777", hash_generated_method = "7CDCFA3DE4EC0B6449C5A6649B5C6337")
     @DSModeled(DSC.SAFE)
     private boolean isValidCommandInterfaceCFAction(int commandInterfaceCFAction) {
         dsTaint.addTaint(commandInterfaceCFAction);
@@ -1414,7 +1420,7 @@ public class GSMPhone extends PhoneBase {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.871 -0400", hash_original_method = "E62FA7EF147A8759C3C5908B3838581B", hash_generated_method = "8539A593FA482B3E7B35967361AB7BAF")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:14.106 -0400", hash_original_method = "E62FA7EF147A8759C3C5908B3838581B", hash_generated_method = "424BE843C3AEC5FCE639E30A0B6B41CD")
     @DSModeled(DSC.SAFE)
     protected boolean isCfEnable(int action) {
         dsTaint.addTaint(action);
@@ -1424,13 +1430,13 @@ public class GSMPhone extends PhoneBase {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.871 -0400", hash_original_method = "08670889C34D44E522747D6078786295", hash_generated_method = "CC9C2DB1C69DCBD3B1BFE39F65EE7F23")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:14.106 -0400", hash_original_method = "08670889C34D44E522747D6078786295", hash_generated_method = "EA16A504437C051056B0C223168499F4")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public void getCallForwardingOption(int commandInterfaceCFReason, Message onComplete) {
         dsTaint.addTaint(onComplete.dsTaint);
         dsTaint.addTaint(commandInterfaceCFReason);
         {
-            boolean varB6A05407BFCE3D15C223CC07E884F337_1314678340 = (isValidCommandInterfaceCFReason(commandInterfaceCFReason));
+            boolean varB6A05407BFCE3D15C223CC07E884F337_390909948 = (isValidCommandInterfaceCFReason(commandInterfaceCFReason));
             {
                 Log.d(LOG_TAG, "requesting call forwarding query.");
                 Message resp;
@@ -1457,7 +1463,7 @@ public class GSMPhone extends PhoneBase {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.871 -0400", hash_original_method = "C31B5CE81010007284F85A1CC1A97426", hash_generated_method = "38BD4741AFE80FFBD2C82EA6F559ACA8")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:14.106 -0400", hash_original_method = "C31B5CE81010007284F85A1CC1A97426", hash_generated_method = "E1BCB840C1D6FDD8F97F6290D78C1D1F")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public void setCallForwardingOption(int commandInterfaceCFAction,
             int commandInterfaceCFReason,
@@ -1470,7 +1476,7 @@ public class GSMPhone extends PhoneBase {
         dsTaint.addTaint(dialingNumber);
         dsTaint.addTaint(commandInterfaceCFReason);
         {
-            boolean var1CEEA491E3B272BF616FE6FFF10B0258_1856798172 = ((isValidCommandInterfaceCFAction(commandInterfaceCFAction)) &&
+            boolean var1CEEA491E3B272BF616FE6FFF10B0258_107160061 = ((isValidCommandInterfaceCFAction(commandInterfaceCFAction)) &&
                 (isValidCommandInterfaceCFReason(commandInterfaceCFReason)));
             {
                 Message resp;
@@ -1509,8 +1515,8 @@ public class GSMPhone extends PhoneBase {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.871 -0400", hash_original_method = "211ADA06D97F0C35F6F35D44159D1041", hash_generated_method = "613AEF781DA5022C52C53A0935E9AE79")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:14.106 -0400", hash_original_method = "211ADA06D97F0C35F6F35D44159D1041", hash_generated_method = "8A2C27B7491EEB441C5F80B97D0E0C96")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     public void getOutgoingCallerIdDisplay(Message onComplete) {
         dsTaint.addTaint(onComplete.dsTaint);
         mCM.getCLIR(onComplete);
@@ -1519,7 +1525,7 @@ public class GSMPhone extends PhoneBase {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.871 -0400", hash_original_method = "9A33528D3F7EB56FD0CAE46DED766DA5", hash_generated_method = "13DCAE5675A592392A6D5FDACD1D716A")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:14.107 -0400", hash_original_method = "9A33528D3F7EB56FD0CAE46DED766DA5", hash_generated_method = "C81A866D8BAE6221BDDBCFF11F10D348")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public void setOutgoingCallerIdDisplay(int commandInterfaceCLIRMode,
                                            Message onComplete) {
@@ -1533,8 +1539,8 @@ public class GSMPhone extends PhoneBase {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.871 -0400", hash_original_method = "5AA95CCFAB839BE19F56DECDE6C06EAE", hash_generated_method = "0271CC794417C00DF071944C4F98270D")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:14.107 -0400", hash_original_method = "5AA95CCFAB839BE19F56DECDE6C06EAE", hash_generated_method = "809210F55FDE28530DECD7296379CFAB")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     public void getCallWaiting(Message onComplete) {
         dsTaint.addTaint(onComplete.dsTaint);
         mCM.queryCallWaiting(CommandsInterface.SERVICE_CLASS_NONE, onComplete);
@@ -1543,8 +1549,8 @@ public class GSMPhone extends PhoneBase {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.871 -0400", hash_original_method = "378FD22E0CB0CF1CC5C649D301CEF0C1", hash_generated_method = "DDCC080A94F41E1C969FEB8102554726")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:14.107 -0400", hash_original_method = "378FD22E0CB0CF1CC5C649D301CEF0C1", hash_generated_method = "BF55E0FA90E1F5CE538B714702533307")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     public void setCallWaiting(boolean enable, Message onComplete) {
         dsTaint.addTaint(onComplete.dsTaint);
         dsTaint.addTaint(enable);
@@ -1554,8 +1560,8 @@ public class GSMPhone extends PhoneBase {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.871 -0400", hash_original_method = "4DC55439AC7C450EEFD22BFFC07D3CE9", hash_generated_method = "C12A0ADE5EE0EA92839122171FEBA302")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:14.107 -0400", hash_original_method = "4DC55439AC7C450EEFD22BFFC07D3CE9", hash_generated_method = "28D915F7B8E4503CCFFA86E12C9750AF")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     public void getAvailableNetworks(Message response) {
         dsTaint.addTaint(response.dsTaint);
         mCM.getAvailableNetworks(response);
@@ -1564,10 +1570,9 @@ public class GSMPhone extends PhoneBase {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.871 -0400", hash_original_method = "21AFB30263A6CEDCB2E90901BACA2953", hash_generated_method = "28E3E9AD2F862DA17560B6B692D50D6A")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:14.107 -0400", hash_original_method = "21AFB30263A6CEDCB2E90901BACA2953", hash_generated_method = "5D77234016BB3CB0078B9ABFB9003A88")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     public void setNetworkSelectionModeAutomatic(Message response) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
         dsTaint.addTaint(response.dsTaint);
         NetworkSelectMessage nsm;
         nsm = new NetworkSelectMessage();
@@ -1590,7 +1595,7 @@ public class GSMPhone extends PhoneBase {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.871 -0400", hash_original_method = "388CF66FD02B64F200B61D1E744A0B56", hash_generated_method = "23FE5DD52716F250327964A634146E20")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:14.108 -0400", hash_original_method = "388CF66FD02B64F200B61D1E744A0B56", hash_generated_method = "46844F6AB0478F03B4702D38C6413321")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public void selectNetworkManually(OperatorInfo network,
             Message response) {
@@ -1614,8 +1619,8 @@ public class GSMPhone extends PhoneBase {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.871 -0400", hash_original_method = "3A54DC42D0DFD8C763BDF4414C51677B", hash_generated_method = "A4231DEC58FD6C973D8FF1C95F793C56")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:14.108 -0400", hash_original_method = "3A54DC42D0DFD8C763BDF4414C51677B", hash_generated_method = "1AEC0BCD70CFB753B6C9E4CC41105603")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     public void getNeighboringCids(Message response) {
         dsTaint.addTaint(response.dsTaint);
         mCM.getNeighboringCids(response);
@@ -1624,8 +1629,8 @@ public class GSMPhone extends PhoneBase {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.872 -0400", hash_original_method = "A54F4B18F21B3A39961648F4BDA2F061", hash_generated_method = "A825A34554D8D2C4EA026942A600A43D")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:14.108 -0400", hash_original_method = "A54F4B18F21B3A39961648F4BDA2F061", hash_generated_method = "9EDB52CDA14C8129BE65EFAD662EDF17")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     public void setOnPostDialCharacter(Handler h, int what, Object obj) {
         dsTaint.addTaint(what);
         dsTaint.addTaint(obj.dsTaint);
@@ -1636,8 +1641,8 @@ public class GSMPhone extends PhoneBase {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.872 -0400", hash_original_method = "E892EC268DCFDF5C9C27A7DDC7E00573", hash_generated_method = "32B6FA271BB0C59B1698D317D84B7276")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:14.108 -0400", hash_original_method = "E892EC268DCFDF5C9C27A7DDC7E00573", hash_generated_method = "6BAE63C4A28DBAC9885CECD08BF45BE2")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     public void setMute(boolean muted) {
         dsTaint.addTaint(muted);
         mCT.setMute(muted);
@@ -1646,18 +1651,18 @@ public class GSMPhone extends PhoneBase {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.872 -0400", hash_original_method = "FA6E824680C8944626A1A959DCEA6499", hash_generated_method = "B3B8740B3CAAB1544400591DE8294CC7")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:14.108 -0400", hash_original_method = "FA6E824680C8944626A1A959DCEA6499", hash_generated_method = "BD961A0CF4A83F445B7E374E3097F567")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public boolean getMute() {
-        boolean var20663A120A6F5E860F4EB58F2E5B9228_274164621 = (mCT.getMute());
+        boolean var20663A120A6F5E860F4EB58F2E5B9228_458332810 = (mCT.getMute());
         return dsTaint.getTaintBoolean();
         // ---------- Original Method ----------
         //return mCT.getMute();
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.872 -0400", hash_original_method = "DAED77F9218E0449A772CA04214CC7F0", hash_generated_method = "8E28313666463CDB1C255669E63152E6")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:14.108 -0400", hash_original_method = "DAED77F9218E0449A772CA04214CC7F0", hash_generated_method = "695C32289DCD7DAE07301ADFF341D49F")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     public void getDataCallList(Message response) {
         dsTaint.addTaint(response.dsTaint);
         mCM.getDataCallList(response);
@@ -1666,8 +1671,8 @@ public class GSMPhone extends PhoneBase {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.872 -0400", hash_original_method = "96CADC2872DB4F7FDEDEDD322815973F", hash_generated_method = "A022147E6D33714727376A653DCDE620")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:14.109 -0400", hash_original_method = "96CADC2872DB4F7FDEDEDD322815973F", hash_generated_method = "822C445C5B4D9120BF9FC0E8634D50FF")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     public void updateServiceLocation() {
         mSST.enableSingleLocationUpdate();
         // ---------- Original Method ----------
@@ -1675,38 +1680,36 @@ public class GSMPhone extends PhoneBase {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.872 -0400", hash_original_method = "85721F5820CF0128BD1EA66BA785E274", hash_generated_method = "D50464E812E0B06564DA16F6714FF0AD")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:14.109 -0400", hash_original_method = "85721F5820CF0128BD1EA66BA785E274", hash_generated_method = "8061BA0AAC1F798918E946EB98E60D31")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     public void enableLocationUpdates() {
-        //DSFIXME:  CODE0009: Possible callback target function detected
         mSST.enableLocationUpdates();
         // ---------- Original Method ----------
         //mSST.enableLocationUpdates();
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.872 -0400", hash_original_method = "E6FECC87DDBB4D4FE984E494757397E3", hash_generated_method = "65D7CA7E3870C2C4A9FCDCC8D7F89A35")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:14.109 -0400", hash_original_method = "E6FECC87DDBB4D4FE984E494757397E3", hash_generated_method = "3FDC902944764AB6B7139C73765CF957")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     public void disableLocationUpdates() {
-        //DSFIXME:  CODE0009: Possible callback target function detected
         mSST.disableLocationUpdates();
         // ---------- Original Method ----------
         //mSST.disableLocationUpdates();
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.872 -0400", hash_original_method = "33CDF43696035DC3E16A234222A80D64", hash_generated_method = "1DC9FEE7D4012B210179C7581857518C")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:14.109 -0400", hash_original_method = "33CDF43696035DC3E16A234222A80D64", hash_generated_method = "46FDF715BAC8E337E9E8FA540A3BF875")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public boolean getDataRoamingEnabled() {
-        boolean var6ACB2ECE8621241EECE599BD6243F11B_1875898537 = (mDataConnectionTracker.getDataOnRoamingEnabled());
+        boolean var6ACB2ECE8621241EECE599BD6243F11B_101566176 = (mDataConnectionTracker.getDataOnRoamingEnabled());
         return dsTaint.getTaintBoolean();
         // ---------- Original Method ----------
         //return mDataConnectionTracker.getDataOnRoamingEnabled();
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.872 -0400", hash_original_method = "910AE5D7D70CC37EC2511A21C3761E3A", hash_generated_method = "8EAF68FE7CE73B4AB3E06DCEFBF1E67C")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:14.109 -0400", hash_original_method = "910AE5D7D70CC37EC2511A21C3761E3A", hash_generated_method = "2E73E2747928E437CDA1C67E033E6420")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     public void setDataRoamingEnabled(boolean enable) {
         dsTaint.addTaint(enable);
         mDataConnectionTracker.setDataOnRoamingEnabled(enable);
@@ -1715,13 +1718,13 @@ public class GSMPhone extends PhoneBase {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.872 -0400", hash_original_method = "AC949E64AEE76B7FF936E7A1B08DF381", hash_generated_method = "0D58E575AB66508CD483657EC8B8F65B")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:14.110 -0400", hash_original_method = "AC949E64AEE76B7FF936E7A1B08DF381", hash_generated_method = "1568CB1B72210445CE50731624A361A2")
     //DSFIXME:  CODE0002: Requires DSC value to be set
      void onMMIDone(GsmMmiCode mmi) {
         //DSFIXME:  CODE0009: Possible callback target function detected
         dsTaint.addTaint(mmi.dsTaint);
         {
-            boolean var1EA6EA5746ECD4584B3A274E648709FA_1332092428 = (mPendingMMIs.remove(mmi) || mmi.isUssdRequest());
+            boolean var1EA6EA5746ECD4584B3A274E648709FA_1747176651 = (mPendingMMIs.remove(mmi) || mmi.isUssdRequest());
             {
                 mMmiCompleteRegistrants.notifyRegistrants(
                 new AsyncResult(null, mmi, null));
@@ -1735,8 +1738,8 @@ public class GSMPhone extends PhoneBase {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.872 -0400", hash_original_method = "7B2BAD4339ABD08CFCEAE93D5F289166", hash_generated_method = "55E7219B359EE50871523A346D815F74")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:14.110 -0400", hash_original_method = "7B2BAD4339ABD08CFCEAE93D5F289166", hash_generated_method = "51FAA4A0FE3901375B8CC3DF72A6BAFF")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     private void onNetworkInitiatedUssd(GsmMmiCode mmi) {
         dsTaint.addTaint(mmi.dsTaint);
         mMmiCompleteRegistrants.notifyRegistrants(
@@ -1747,7 +1750,7 @@ public class GSMPhone extends PhoneBase {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.872 -0400", hash_original_method = "FA8827AA61AE68EAA1082E2A36657BA2", hash_generated_method = "D7B6E317D2D608524F71380C1AE8C0EB")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:14.110 -0400", hash_original_method = "FA8827AA61AE68EAA1082E2A36657BA2", hash_generated_method = "6DF9AFB516335D9E14D9D712C69E676E")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     private void onIncomingUSSD(int ussdMode, String ussdMessage) {
         dsTaint.addTaint(ussdMode);
@@ -1767,7 +1770,7 @@ public class GSMPhone extends PhoneBase {
             s = mPendingMMIs.size();
             {
                 {
-                    boolean varA016EF5F6E1ECC7C98CFC15BB240BDED_418583571 = (mPendingMMIs.get(i).isPendingUSSD());
+                    boolean varA016EF5F6E1ECC7C98CFC15BB240BDED_979303729 = (mPendingMMIs.get(i).isPendingUSSD());
                     {
                         found = mPendingMMIs.get(i);
                     } //End block
@@ -1796,7 +1799,7 @@ public class GSMPhone extends PhoneBase {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.872 -0400", hash_original_method = "B501A93D9CBCF588AB28D650AA03E986", hash_generated_method = "A6D2BBBF5127448C06646CDA91AABCF1")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:14.110 -0400", hash_original_method = "B501A93D9CBCF588AB28D650AA03E986", hash_generated_method = "4FA264C77DC40C25C12B6C20DAF6C12D")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     protected void syncClirSetting() {
         SharedPreferences sp;
@@ -1815,7 +1818,7 @@ public class GSMPhone extends PhoneBase {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.873 -0400", hash_original_method = "EA4D9CE5B4912647996EC04703971BF3", hash_generated_method = "64E67388F1F36558A154FD5D97F75FE4")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:14.112 -0400", hash_original_method = "EA4D9CE5B4912647996EC04703971BF3", hash_generated_method = "8050BC7EA0FAA418010A633514642866")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     @Override
     public void handleMessage(Message msg) {
@@ -1846,7 +1849,7 @@ public class GSMPhone extends PhoneBase {
         //End case EVENT_SIM_RECORDS_LOADED 
         //Begin case EVENT_SIM_RECORDS_LOADED 
         {
-            boolean var3AAC275703146E8A94381DBD8E1509A5_1854668190 = (imsi != null && imsiFromSIM != null && !imsiFromSIM.equals(imsi));
+            boolean var3AAC275703146E8A94381DBD8E1509A5_1714841219 = (imsi != null && imsiFromSIM != null && !imsiFromSIM.equals(imsi));
             {
                 storeVoiceMailNumber(null);
                 setVmSimImsi(null);
@@ -1898,7 +1901,7 @@ public class GSMPhone extends PhoneBase {
             s = mPendingMMIs.size();
             {
                 {
-                    boolean varA016EF5F6E1ECC7C98CFC15BB240BDED_724628938 = (mPendingMMIs.get(i).isPendingUSSD());
+                    boolean varA016EF5F6E1ECC7C98CFC15BB240BDED_2021736583 = (mPendingMMIs.get(i).isPendingUSSD());
                     {
                         mPendingMMIs.get(i).onUssdFinishedError();
                     } //End block
@@ -1938,7 +1941,7 @@ public class GSMPhone extends PhoneBase {
         //End case EVENT_SET_VM_NUMBER_DONE 
         //Begin case EVENT_SET_VM_NUMBER_DONE 
         {
-            boolean varAE18DF4A9D4BF791512D5DD4EB3D1497_116321632 = (IccVmNotSupportedException.class.isInstance(ar.exception));
+            boolean varAE18DF4A9D4BF791512D5DD4EB3D1497_1845318311 = (IccVmNotSupportedException.class.isInstance(ar.exception));
             {
                 storeVoiceMailNumber(mVmNumber);
                 ar.exception = null;
@@ -1999,7 +2002,7 @@ public class GSMPhone extends PhoneBase {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.873 -0400", hash_original_method = "0F23F53D1861BCD51C7CF85FD75916D2", hash_generated_method = "88D593E02C825AE076B9C14C3CE7B3D9")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:14.112 -0400", hash_original_method = "0F23F53D1861BCD51C7CF85FD75916D2", hash_generated_method = "30D7AA1EE4E7C57F02C5C1F32161ACDC")
     //DSFIXME:  CODE0002: Requires DSC value to be set
      boolean updateCurrentCarrierInProvider() {
         {
@@ -2032,7 +2035,7 @@ public class GSMPhone extends PhoneBase {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.874 -0400", hash_original_method = "8C87E0C6EBD471788AC0CD93A9D4E893", hash_generated_method = "9F0EE8C10A7CF18D22C0BFEC308FF7E8")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:14.113 -0400", hash_original_method = "8C87E0C6EBD471788AC0CD93A9D4E893", hash_generated_method = "D1BA779CAE06B203A72773FA7155DA2C")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     private void handleSetSelectNetwork(AsyncResult ar) {
         dsTaint.addTaint(ar.dsTaint);
@@ -2053,14 +2056,14 @@ public class GSMPhone extends PhoneBase {
         editor.putString(NETWORK_SELECTION_KEY, nsm.operatorNumeric);
         editor.putString(NETWORK_SELECTION_NAME_KEY, nsm.operatorAlphaLong);
         {
-            boolean var15A115D7A2E98F40805CADB6914BBE5F_692087400 = (! editor.commit());
+            boolean var15A115D7A2E98F40805CADB6914BBE5F_175992384 = (! editor.commit());
         } //End collapsed parenthetic
         // ---------- Original Method ----------
         // Original Method Too Long, Refer to Original Implementation
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.874 -0400", hash_original_method = "C8B4A3CF4267A4CC2FA2952E385D70CE", hash_generated_method = "CEED4D614A96E7B74F721BB7B746E25B")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:14.113 -0400", hash_original_method = "C8B4A3CF4267A4CC2FA2952E385D70CE", hash_generated_method = "01B1186CF6A2F5786A60A0AF4C9184E6")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public void saveClirSetting(int commandInterfaceCLIRMode) {
         dsTaint.addTaint(commandInterfaceCLIRMode);
@@ -2070,7 +2073,7 @@ public class GSMPhone extends PhoneBase {
         editor = sp.edit();
         editor.putInt(CLIR_KEY, commandInterfaceCLIRMode);
         {
-            boolean var15A115D7A2E98F40805CADB6914BBE5F_1715574904 = (! editor.commit());
+            boolean var15A115D7A2E98F40805CADB6914BBE5F_803104328 = (! editor.commit());
         } //End collapsed parenthetic
         // ---------- Original Method ----------
         //SharedPreferences sp = PreferenceManager.getDefaultSharedPreferences(getContext());
@@ -2082,8 +2085,8 @@ public class GSMPhone extends PhoneBase {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.874 -0400", hash_original_method = "5FFF1291CED37081608080EEE820D6BC", hash_generated_method = "4C25FACD87248D517628BF9D120B690B")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:14.113 -0400", hash_original_method = "5FFF1291CED37081608080EEE820D6BC", hash_generated_method = "EDBF806EA43E059988686B5EC28D4878")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     private void handleCfuQueryResult(CallForwardInfo[] infos) {
         dsTaint.addTaint(infos[0].dsTaint);
         {
@@ -2115,7 +2118,7 @@ public class GSMPhone extends PhoneBase {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.874 -0400", hash_original_method = "4BF16EE42BDE3709043B0CD4BA1346D5", hash_generated_method = "AC2BAD2ADC97C1D4E88D3F3201764F16")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:14.113 -0400", hash_original_method = "4BF16EE42BDE3709043B0CD4BA1346D5", hash_generated_method = "CE36A8A4D7D696266EB6543D64E6F2A5")
     @DSModeled(DSC.SAFE)
     public PhoneSubInfo getPhoneSubInfo() {
         return (PhoneSubInfo)dsTaint.getTaint();
@@ -2124,7 +2127,7 @@ public class GSMPhone extends PhoneBase {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.874 -0400", hash_original_method = "3207E33C673BD37AF8FDF81E31830AE6", hash_generated_method = "637E7466A5023822223D20E674D4AE9E")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:14.113 -0400", hash_original_method = "3207E33C673BD37AF8FDF81E31830AE6", hash_generated_method = "1EAAFD4AFF7DA748E9467DA82850441D")
     @DSModeled(DSC.SAFE)
     public IccSmsInterfaceManager getIccSmsInterfaceManager() {
         return (IccSmsInterfaceManager)dsTaint.getTaint();
@@ -2133,7 +2136,7 @@ public class GSMPhone extends PhoneBase {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.874 -0400", hash_original_method = "6E6477AE345E3D007CED20614912A5C4", hash_generated_method = "F33F52B914FA10D4124C02C90D675658")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:14.114 -0400", hash_original_method = "6E6477AE345E3D007CED20614912A5C4", hash_generated_method = "F326B0819861E468E36A0326AE37F37B")
     @DSModeled(DSC.SAFE)
     public IccPhoneBookInterfaceManager getIccPhoneBookInterfaceManager() {
         return (IccPhoneBookInterfaceManager)dsTaint.getTaint();
@@ -2142,7 +2145,7 @@ public class GSMPhone extends PhoneBase {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.874 -0400", hash_original_method = "515987807F65054AFA6AA9A268DDB599", hash_generated_method = "4C459E888C01535E2CB51C13749B6FD0")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:14.114 -0400", hash_original_method = "515987807F65054AFA6AA9A268DDB599", hash_generated_method = "3E9E03406BCF20EAA226CD3B13F7CA06")
     @DSModeled(DSC.SAFE)
     public IccFileHandler getIccFileHandler() {
         return (IccFileHandler)dsTaint.getTaint();
@@ -2151,11 +2154,11 @@ public class GSMPhone extends PhoneBase {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.874 -0400", hash_original_method = "93A82B64CE4B13442120BE4FDBB45597", hash_generated_method = "86B4CFE69805FC0ECF113E148FB12567")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:14.114 -0400", hash_original_method = "93A82B64CE4B13442120BE4FDBB45597", hash_generated_method = "F5913F074279AC8077A3A5C3CB76CC4F")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     public void activateCellBroadcastSms(int activate, Message response) {
-        dsTaint.addTaint(activate);
         dsTaint.addTaint(response.dsTaint);
+        dsTaint.addTaint(activate);
         response.sendToTarget();
         // ---------- Original Method ----------
         //Log.e(LOG_TAG, "[GSMPhone] activateCellBroadcastSms() is obsolete; use SmsManager");
@@ -2163,8 +2166,8 @@ public class GSMPhone extends PhoneBase {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.874 -0400", hash_original_method = "67DD91319C4A7AB6B9A5C1E784682816", hash_generated_method = "E9E06565223873E95CB2454E09B6FCB1")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:14.114 -0400", hash_original_method = "67DD91319C4A7AB6B9A5C1E784682816", hash_generated_method = "4E4C796BEAFBA436CC12D712DD697C8A")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     public void getCellBroadcastSmsConfig(Message response) {
         dsTaint.addTaint(response.dsTaint);
         response.sendToTarget();
@@ -2174,11 +2177,11 @@ public class GSMPhone extends PhoneBase {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.874 -0400", hash_original_method = "1D706FBF2447232FA856B129DB0956D5", hash_generated_method = "13489450C6DBF64BFD4DC6400A76C1E6")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:14.114 -0400", hash_original_method = "1D706FBF2447232FA856B129DB0956D5", hash_generated_method = "CC9754F22EE8B7A431A8767A0DEAE2EF")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     public void setCellBroadcastSmsConfig(int[] configValuesArray, Message response) {
         dsTaint.addTaint(response.dsTaint);
-        dsTaint.addTaint(configValuesArray);
+        dsTaint.addTaint(configValuesArray[0]);
         response.sendToTarget();
         // ---------- Original Method ----------
         //Log.e(LOG_TAG, "[GSMPhone] setCellBroadcastSmsConfig() is obsolete; use SmsManager");
@@ -2186,10 +2189,10 @@ public class GSMPhone extends PhoneBase {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.874 -0400", hash_original_method = "99B79EB3DF02CDEF6145664CC8FD0F29", hash_generated_method = "C8FA6E748D5870BE008ACF93192F7D68")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:14.115 -0400", hash_original_method = "99B79EB3DF02CDEF6145664CC8FD0F29", hash_generated_method = "E3F1E315F8ADA44AF2EF4D4156A1945E")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public boolean isCspPlmnEnabled() {
-        boolean varDB15A307B35D48340572A8BACE2EEC2D_149886822 = (mIccRecords.isCspPlmnEnabled());
+        boolean varDB15A307B35D48340572A8BACE2EEC2D_947626776 = (mIccRecords.isCspPlmnEnabled());
         return dsTaint.getTaintBoolean();
         // ---------- Original Method ----------
         //return mIccRecords.isCspPlmnEnabled();
@@ -2201,10 +2204,20 @@ public class GSMPhone extends PhoneBase {
         public String operatorNumeric;
         public String operatorAlphaLong;
         
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:14.115 -0400", hash_original_method = "922A66A5EBB469E8BB894E7A6CC3C86A", hash_generated_method = "922A66A5EBB469E8BB894E7A6CC3C86A")
+                public NetworkSelectMessage ()
+        {
+        }
+
+
     }
 
 
     
+    static final String LOG_TAG = "GSM";
+    private static final boolean LOCAL_DEBUG = true;
+    public static final String CIPHERING_KEY = "ciphering_key";
+    public static final String VM_NUMBER = "vm_number_key";
+    public static final String VM_SIM_IMSI = "vm_sim_imsi_key";
 }
-
 

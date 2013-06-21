@@ -3,10 +3,10 @@ package org.xmlpull.v1;
 // Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
+import droidsafe.runtime.*;
 
-// import Iterator to deal with enhanced for loop translation
+// needed for enhanced for control translations
 import java.util.Iterator;
-
 import java.io.IOException;
 import java.io.OutputStream;
 import java.io.Writer;
@@ -156,4 +156,3 @@ public interface XmlSerializer {
         throws IOException;
 
 }
-

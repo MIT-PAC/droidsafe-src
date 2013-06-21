@@ -1,40 +1,29 @@
 package android.net.sip;
 
 // Droidsafe Imports
-import java.text.ParseException;
+import droidsafe.helpers.*;
+import droidsafe.annotations.*;
+import droidsafe.runtime.*;
 
+// needed for enhanced for control translations
+import java.util.Iterator;
 import android.app.PendingIntent;
 import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.os.IBinder;
+import android.os.Looper;
 import android.os.RemoteException;
 import android.os.ServiceManager;
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
-import droidsafe.runtime.DroidSafeAndroidRuntime;
-// import Iterator to deal with enhanced for loop translation
+import android.util.Log;
+import java.text.ParseException;
 
 public class SipManager {
-    public static final int INCOMING_CALL_RESULT_CODE = 101;
-    public static final String EXTRA_CALL_ID = "android:sipCallID";
-    public static final String EXTRA_OFFER_SD = "android:sipOfferSD";
-    public static final String ACTION_SIP_SERVICE_UP =
-            "android.net.sip.SIP_SERVICE_UP";
-    public static final String ACTION_SIP_INCOMING_CALL =
-            "com.android.phone.SIP_INCOMING_CALL";
-    public static final String ACTION_SIP_ADD_PHONE =
-            "com.android.phone.SIP_ADD_PHONE";
-    public static final String ACTION_SIP_REMOVE_PHONE =
-            "com.android.phone.SIP_REMOVE_PHONE";
-    public static final String EXTRA_LOCAL_URI = "android:localSipUri";
-    private static final String TAG = "SipManager";
     private ISipService mSipService;
     private Context mContext;
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:02.337 -0400", hash_original_method = "C37128DE517781FF4AF379CF096D6229", hash_generated_method = "275FC3F434744511B8C1B8532834C002")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:52.343 -0400", hash_original_method = "C37128DE517781FF4AF379CF096D6229", hash_generated_method = "D1EEBC93C00B56C57E4EBD15077EC09D")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     private SipManager(Context context) {
         dsTaint.addTaint(context.dsTaint);
         createSipService();
@@ -44,34 +33,30 @@ public class SipManager {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:02.337 -0400", hash_original_method = "66F422A1F07B1EF61355B4A646F6CF3A", hash_generated_method = "652CF5553FF8C8C60050A97610D1CFC0")
-    public static SipManager newInstance(Context context) {
+        public static SipManager newInstance(Context context) {
         return (isApiSupported(context) ? new SipManager(context) : null);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:02.337 -0400", hash_original_method = "3DFE3DD93360D391D61344F06E56E68A", hash_generated_method = "EE9DBC42532266034E02F6C7CB27EDC1")
-    public static boolean isApiSupported(Context context) {
+        public static boolean isApiSupported(Context context) {
         return context.getPackageManager().hasSystemFeature(
                 PackageManager.FEATURE_SIP);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:02.337 -0400", hash_original_method = "2F1F4217686C723813009E2E078B2257", hash_generated_method = "0FBB255CA3773D98A3FCEEF44B21219C")
-    public static boolean isVoipSupported(Context context) {
+        public static boolean isVoipSupported(Context context) {
         return context.getPackageManager().hasSystemFeature(
                 PackageManager.FEATURE_SIP_VOIP) && isApiSupported(context);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:02.337 -0400", hash_original_method = "B035E9969048B9A33AAF34D9AA865F8C", hash_generated_method = "8EFF349340EF5493E8744793A91FA890")
-    public static boolean isSipWifiOnly(Context context) {
+        public static boolean isSipWifiOnly(Context context) {
         return context.getResources().getBoolean(
                 com.android.internal.R.bool.config_sip_wifi_only);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:02.337 -0400", hash_original_method = "78D0C1947CAE04BC8743510E34683CF6", hash_generated_method = "38C665CF5B1CB128C25E838ECBE626E1")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:52.344 -0400", hash_original_method = "78D0C1947CAE04BC8743510E34683CF6", hash_generated_method = "B081FD4C8C748236BBD7E49FB2231647")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     private void createSipService() {
         IBinder b;
@@ -83,8 +68,8 @@ public class SipManager {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:02.338 -0400", hash_original_method = "52C02C16281ED39358E05D7A6D2BF025", hash_generated_method = "5838D12335B4A0F41EAAA8F2171D2945")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:52.344 -0400", hash_original_method = "52C02C16281ED39358E05D7A6D2BF025", hash_generated_method = "19AB165953F6889037EED263688CAC25")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     public void open(SipProfile localProfile) throws SipException {
         dsTaint.addTaint(localProfile.dsTaint);
         try 
@@ -93,7 +78,7 @@ public class SipManager {
         } //End block
         catch (RemoteException e)
         {
-            throw new SipException("open()", e);
+            if (DroidSafeAndroidRuntime.control) throw new SipException("open()", e);
         } //End block
         // ---------- Original Method ----------
         //try {
@@ -104,16 +89,16 @@ public class SipManager {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:02.338 -0400", hash_original_method = "BDC8C921966B306282AD779760136C05", hash_generated_method = "0FCC00271E6FEAE6BFF25A91FEC0580A")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:52.344 -0400", hash_original_method = "BDC8C921966B306282AD779760136C05", hash_generated_method = "03C8F1E7A0DF46FB632BDF87E55BAC88")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public void open(SipProfile localProfile,
             PendingIntent incomingCallPendingIntent,
             SipRegistrationListener listener) throws SipException {
         dsTaint.addTaint(incomingCallPendingIntent.dsTaint);
-        dsTaint.addTaint(localProfile.dsTaint);
         dsTaint.addTaint(listener.dsTaint);
+        dsTaint.addTaint(localProfile.dsTaint);
         {
-           if (DroidSafeAndroidRuntime.control)  throw new NullPointerException(
+            if (DroidSafeAndroidRuntime.control) throw new NullPointerException(
                     "incomingCallPendingIntent cannot be null");
         } //End block
         try 
@@ -123,7 +108,7 @@ public class SipManager {
         } //End block
         catch (RemoteException e)
         {
-            throw new SipException("open()", e);
+            if (DroidSafeAndroidRuntime.control) throw new SipException("open()", e);
         } //End block
         // ---------- Original Method ----------
         //if (incomingCallPendingIntent == null) {
@@ -139,11 +124,10 @@ public class SipManager {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:02.338 -0400", hash_original_method = "CFF28AE1062695240C0119F8DCC4A5F5", hash_generated_method = "D206D3B8A6CBD9F18DDA4E7A7B7E654A")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:52.345 -0400", hash_original_method = "CFF28AE1062695240C0119F8DCC4A5F5", hash_generated_method = "514B1947B4D58A68D718C2206599F215")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public void setRegistrationListener(String localProfileUri,
             SipRegistrationListener listener) throws SipException {
-        //DSFIXME:  CODE0009: Possible callback target function detected
         dsTaint.addTaint(listener.dsTaint);
         dsTaint.addTaint(localProfileUri);
         try 
@@ -153,7 +137,7 @@ public class SipManager {
         } //End block
         catch (RemoteException e)
         {
-            throw new SipException("setRegistrationListener()", e);
+            if (DroidSafeAndroidRuntime.control) throw new SipException("setRegistrationListener()", e);
         } //End block
         // ---------- Original Method ----------
         //try {
@@ -165,8 +149,8 @@ public class SipManager {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:02.338 -0400", hash_original_method = "44B0A789C05B858CACCF674C81E7AABD", hash_generated_method = "BB42926BEB00FB59871484B35829664D")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:52.345 -0400", hash_original_method = "44B0A789C05B858CACCF674C81E7AABD", hash_generated_method = "28B292AA5BB1072CFA06ABF038EDED22")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     public void close(String localProfileUri) throws SipException {
         dsTaint.addTaint(localProfileUri);
         try 
@@ -175,7 +159,7 @@ public class SipManager {
         } //End block
         catch (RemoteException e)
         {
-            throw new SipException("close()", e);
+            if (DroidSafeAndroidRuntime.control) throw new SipException("close()", e);
         } //End block
         // ---------- Original Method ----------
         //try {
@@ -186,17 +170,17 @@ public class SipManager {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:02.338 -0400", hash_original_method = "360E1B00872B2424D301125F3BB142C6", hash_generated_method = "D2962A4C1B50AED6CA1C5F1C74F2FBDD")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:52.345 -0400", hash_original_method = "360E1B00872B2424D301125F3BB142C6", hash_generated_method = "5CAB3F8669C581B54A2B5F256F994189")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public boolean isOpened(String localProfileUri) throws SipException {
         dsTaint.addTaint(localProfileUri);
         try 
         {
-            boolean var6A9CBC405D38097E35D3C30EC845ACA4_1847703740 = (mSipService.isOpened(localProfileUri));
+            boolean var6A9CBC405D38097E35D3C30EC845ACA4_1993907996 = (mSipService.isOpened(localProfileUri));
         } //End block
         catch (RemoteException e)
         {
-            throw new SipException("isOpened()", e);
+            if (DroidSafeAndroidRuntime.control) throw new SipException("isOpened()", e);
         } //End block
         return dsTaint.getTaintBoolean();
         // ---------- Original Method ----------
@@ -208,17 +192,17 @@ public class SipManager {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:02.338 -0400", hash_original_method = "5A38205B94FE9DB78D17F700EB0D1FB0", hash_generated_method = "66A96C6B0866DABFB94D204A9145B3FC")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:52.346 -0400", hash_original_method = "5A38205B94FE9DB78D17F700EB0D1FB0", hash_generated_method = "E044CDC4DEF2839020A437EA9205A39C")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public boolean isRegistered(String localProfileUri) throws SipException {
         dsTaint.addTaint(localProfileUri);
         try 
         {
-            boolean var2D5D5A8EF9B3BC2166F01EEE008C27C5_1311093530 = (mSipService.isRegistered(localProfileUri));
+            boolean var2D5D5A8EF9B3BC2166F01EEE008C27C5_925735932 = (mSipService.isRegistered(localProfileUri));
         } //End block
         catch (RemoteException e)
         {
-            throw new SipException("isRegistered()", e);
+            if (DroidSafeAndroidRuntime.control) throw new SipException("isRegistered()", e);
         } //End block
         return dsTaint.getTaintBoolean();
         // ---------- Original Method ----------
@@ -230,16 +214,16 @@ public class SipManager {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:02.339 -0400", hash_original_method = "AC6B9DFAF926B776E74C72D404923FC3", hash_generated_method = "85B246D412D8D32EACBE8120B88FAE8A")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:52.346 -0400", hash_original_method = "AC6B9DFAF926B776E74C72D404923FC3", hash_generated_method = "BC10B4F76EED852BF41D5E51239E41F2")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public SipAudioCall makeAudioCall(SipProfile localProfile,
             SipProfile peerProfile, SipAudioCall.Listener listener, int timeout) throws SipException {
-        dsTaint.addTaint(localProfile.dsTaint);
         dsTaint.addTaint(listener.dsTaint);
+        dsTaint.addTaint(localProfile.dsTaint);
         dsTaint.addTaint(peerProfile.dsTaint);
         dsTaint.addTaint(timeout);
         {
-            boolean var71F47E4046802A9F78B8CD8F59926173_966384662 = (!isVoipSupported(mContext));
+            boolean var71F47E4046802A9F78B8CD8F59926173_2079010838 = (!isVoipSupported(mContext));
             {
                 if (DroidSafeAndroidRuntime.control) throw new SipException("VOIP API is not supported");
             } //End block
@@ -263,30 +247,30 @@ public class SipManager {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:02.339 -0400", hash_original_method = "7876146B456607658E8063AE5100AB4E", hash_generated_method = "C13016A2EF6E51C4A5922C7F192B0AFB")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:52.346 -0400", hash_original_method = "7876146B456607658E8063AE5100AB4E", hash_generated_method = "236D7DCF0ACAF03913636359C555264C")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public SipAudioCall makeAudioCall(String localProfileUri,
             String peerProfileUri, SipAudioCall.Listener listener, int timeout) throws SipException {
         dsTaint.addTaint(listener.dsTaint);
-        dsTaint.addTaint(localProfileUri);
         dsTaint.addTaint(peerProfileUri);
+        dsTaint.addTaint(localProfileUri);
         dsTaint.addTaint(timeout);
         {
-            boolean var71F47E4046802A9F78B8CD8F59926173_1128271583 = (!isVoipSupported(mContext));
+            boolean var71F47E4046802A9F78B8CD8F59926173_685914604 = (!isVoipSupported(mContext));
             {
                 if (DroidSafeAndroidRuntime.control) throw new SipException("VOIP API is not supported");
             } //End block
         } //End collapsed parenthetic
         try 
         {
-            SipAudioCall varA100EF02A50D4C6D7F114985A53E9E1B_1969681001 = (makeAudioCall(
+            SipAudioCall varA100EF02A50D4C6D7F114985A53E9E1B_1145068372 = (makeAudioCall(
                     new SipProfile.Builder(localProfileUri).build(),
                     new SipProfile.Builder(peerProfileUri).build(), listener,
                     timeout));
         } //End block
         catch (ParseException e)
         {
-            throw new SipException("build SipProfile", e);
+            if (DroidSafeAndroidRuntime.control) throw new SipException("build SipProfile", e);
         } //End block
         return (SipAudioCall)dsTaint.getTaint();
         // ---------- Original Method ----------
@@ -304,12 +288,12 @@ public class SipManager {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:02.339 -0400", hash_original_method = "E0DC1BF0888BDAC076F0EBE49A950610", hash_generated_method = "C420B129ADB919B76BCC63EEEC78BAAF")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:52.347 -0400", hash_original_method = "E0DC1BF0888BDAC076F0EBE49A950610", hash_generated_method = "809992DAF6D3AAF5C45EA87196186AB8")
     @DSModeled(DSC.SPEC)
     public SipAudioCall takeAudioCall(Intent incomingCallIntent,
             SipAudioCall.Listener listener) throws SipException {
-        dsTaint.addTaint(incomingCallIntent.dsTaint);
         dsTaint.addTaint(listener.dsTaint);
+        dsTaint.addTaint(incomingCallIntent.dsTaint);
         {
             if (DroidSafeAndroidRuntime.control) throw new SipException("Cannot retrieve session with null intent");
         } //End block
@@ -321,7 +305,7 @@ public class SipManager {
         String offerSd;
         offerSd = getOfferSessionDescription(incomingCallIntent);
         {
-            if (DroidSafeAndroidRuntime.control)  throw new SipException("Session description missing in incoming "
+            if (DroidSafeAndroidRuntime.control) throw new SipException("Session description missing in incoming "
                     + "call intent");
         } //End block
         try 
@@ -339,7 +323,7 @@ public class SipManager {
         } //End block
         catch (Throwable t)
         {
-            throw new SipException("takeAudioCall()", t);
+            if (DroidSafeAndroidRuntime.control) throw new SipException("takeAudioCall()", t);
         } //End block
         return (SipAudioCall)dsTaint.getTaint();
         // ---------- Original Method ----------
@@ -347,8 +331,7 @@ public class SipManager {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:02.339 -0400", hash_original_method = "C6D368F9A631ACABA788A2C236A29B4D", hash_generated_method = "B538328CDE3330B9B227E3BE8EDDED53")
-    public static boolean isIncomingCallIntent(Intent intent) {
+        public static boolean isIncomingCallIntent(Intent intent) {
         if (intent == null) return false;
         String callId = getCallId(intent);
         String offerSd = getOfferSessionDescription(intent);
@@ -356,21 +339,17 @@ public class SipManager {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:02.339 -0400", hash_original_method = "70AF429815E14941562A6F2DBFF9EBC1", hash_generated_method = "52E866D12AAA4D385EA44EAC9105F06B")
-    public static String getCallId(Intent incomingCallIntent) {
+        public static String getCallId(Intent incomingCallIntent) {
         return incomingCallIntent.getStringExtra(EXTRA_CALL_ID);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:02.339 -0400", hash_original_method = "F464808FDF7202E950EC68A83A29D052", hash_generated_method = "FA6896AFE12B4C2BC1DD3B56E533F939")
-    public static String getOfferSessionDescription(Intent incomingCallIntent) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        public static String getOfferSessionDescription(Intent incomingCallIntent) {
         return incomingCallIntent.getStringExtra(EXTRA_OFFER_SD);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:02.340 -0400", hash_original_method = "7A0B7FD710461D3DD9E5460070BF3AA7", hash_generated_method = "19C5A33FDFC1B63C0DB8E261167CC24C")
-    public static Intent createIncomingCallBroadcast(String callId,
+        public static Intent createIncomingCallBroadcast(String callId,
             String sessionDescription) {
         Intent intent = new Intent();
         intent.putExtra(EXTRA_CALL_ID, callId);
@@ -379,27 +358,27 @@ public class SipManager {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:02.340 -0400", hash_original_method = "686853C3DB5059E14B851E63F90D72E4", hash_generated_method = "BA4125F07996646B7B2FA32B29FE9BF7")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:52.351 -0400", hash_original_method = "686853C3DB5059E14B851E63F90D72E4", hash_generated_method = "E0EFE1DC1C089F429152E2FD07478BDE")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public void register(SipProfile localProfile, int expiryTime,
             SipRegistrationListener listener) throws SipException {
         dsTaint.addTaint(expiryTime);
-        dsTaint.addTaint(localProfile.dsTaint);
         dsTaint.addTaint(listener.dsTaint);
+        dsTaint.addTaint(localProfile.dsTaint);
         try 
         {
             ISipSession session;
             session = mSipService.createSession(localProfile,
                     createRelay(listener, localProfile.getUriString()));
             {
-               if (DroidSafeAndroidRuntime.control)  throw new SipException(
+                if (DroidSafeAndroidRuntime.control) throw new SipException(
                         "SipService.createSession() returns null");
             } //End block
             session.register(expiryTime);
         } //End block
         catch (RemoteException e)
         {
-            throw new SipException("register()", e);
+            if (DroidSafeAndroidRuntime.control) throw new SipException("register()", e);
         } //End block
         // ---------- Original Method ----------
         //try {
@@ -416,12 +395,12 @@ public class SipManager {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:02.340 -0400", hash_original_method = "4CCD1E71A8A3F25E13404A132CF88582", hash_generated_method = "0DC389D265356DC2135D4CB2D4A56EAC")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:52.351 -0400", hash_original_method = "4CCD1E71A8A3F25E13404A132CF88582", hash_generated_method = "3726084DCF95645884DD9464F4E38121")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public void unregister(SipProfile localProfile,
             SipRegistrationListener listener) throws SipException {
-        dsTaint.addTaint(localProfile.dsTaint);
         dsTaint.addTaint(listener.dsTaint);
+        dsTaint.addTaint(localProfile.dsTaint);
         try 
         {
             ISipSession session;
@@ -435,7 +414,7 @@ public class SipManager {
         } //End block
         catch (RemoteException e)
         {
-            throw new SipException("unregister()", e);
+            if (DroidSafeAndroidRuntime.control) throw new SipException("unregister()", e);
         } //End block
         // ---------- Original Method ----------
         //try {
@@ -452,10 +431,9 @@ public class SipManager {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:02.340 -0400", hash_original_method = "EDCDF2FC84E74B60CE6B84F2ED6BCA20", hash_generated_method = "52B2C0B78E85FFC409A920A291B329E8")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:52.352 -0400", hash_original_method = "EDCDF2FC84E74B60CE6B84F2ED6BCA20", hash_generated_method = "1ED9C1CD9A1D7D61597373F603390955")
     @DSModeled(DSC.SPEC)
     public SipSession getSessionFor(Intent incomingCallIntent) throws SipException {
-        //DSFIXME:  CODE0009: Possible callback target function detected
         dsTaint.addTaint(incomingCallIntent.dsTaint);
         try 
         {
@@ -463,10 +441,11 @@ public class SipManager {
             callId = getCallId(incomingCallIntent);
             ISipSession s;
             s = mSipService.getPendingSession(callId);
+            SipSession var9FA9B1E3839F54C00161013E7E7E3993_1185293014 = (((s == null) ? null : new SipSession(s))); //DSFIXME:  CODE0008: Nested ternary operator in expression
         } //End block
         catch (RemoteException e)
         {
-            throw new SipException("getSessionFor()", e);
+            if (DroidSafeAndroidRuntime.control) throw new SipException("getSessionFor()", e);
         } //End block
         return (SipSession)dsTaint.getTaint();
         // ---------- Original Method ----------
@@ -480,27 +459,27 @@ public class SipManager {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:02.340 -0400", hash_original_method = "202F15347D7AFCF2355EFD7038580BD7", hash_generated_method = "80280E4046A29DDF49C73CC5D51E3ECB")
-    private static ISipSessionListener createRelay(
+        private static ISipSessionListener createRelay(
             SipRegistrationListener listener, String uri) {
         return ((listener == null) ? null : new ListenerRelay(listener, uri));
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:02.340 -0400", hash_original_method = "EE079117FAD2E68EE193F65B6013BB2B", hash_generated_method = "EF5966D19520435CECC5D199FCC0B4AA")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:52.353 -0400", hash_original_method = "EE079117FAD2E68EE193F65B6013BB2B", hash_generated_method = "1640C7F000BA6512819EC6D6B917BBB5")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     public SipSession createSipSession(SipProfile localProfile,
             SipSession.Listener listener) throws SipException {
-        dsTaint.addTaint(localProfile.dsTaint);
         dsTaint.addTaint(listener.dsTaint);
+        dsTaint.addTaint(localProfile.dsTaint);
         try 
         {
             ISipSession s;
             s = mSipService.createSession(localProfile, null);
             {
-                throw new SipException(
+                if (DroidSafeAndroidRuntime.control) throw new SipException(
                         "Failed to create SipSession; network unavailable?");
             } //End block
+            SipSession varCDCFB365014C39D9D98E44B0522306FC_168637079 = (new SipSession(s, listener));
         } //End block
         catch (RemoteException e)
         {
@@ -521,15 +500,17 @@ public class SipManager {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:02.341 -0400", hash_original_method = "1735A7464BE0976B91AB92297644D35E", hash_generated_method = "E6DDA681EC2D7894BA9211B05B7D2F01")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:52.353 -0400", hash_original_method = "1735A7464BE0976B91AB92297644D35E", hash_generated_method = "204530AC9EFF3A791432E8DE6FA116A4")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public SipProfile[] getListOfProfiles() {
         try 
         {
-            SipProfile[] varAC9164DE3718394EE076A5B1FD4FC72D_173184784 = (mSipService.getListOfProfiles());
+            SipProfile[] varAC9164DE3718394EE076A5B1FD4FC72D_1736620620 = (mSipService.getListOfProfiles());
         } //End block
         catch (RemoteException e)
-        { }
+        {
+            SipProfile[] var3E440E1452150A656D543771BF8CAC24_1464696375 = (new SipProfile[0]);
+        } //End block
         return (SipProfile[])dsTaint.getTaint();
         // ---------- Original Method ----------
         //try {
@@ -544,7 +525,7 @@ public class SipManager {
         private SipRegistrationListener mListener;
         private String mUri;
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:02.341 -0400", hash_original_method = "EDC0C5FAD332557C083D99177F2D4EAD", hash_generated_method = "6AA8F587E1C5BA31A548EBC6C682A15B")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:52.353 -0400", hash_original_method = "EDC0C5FAD332557C083D99177F2D4EAD", hash_generated_method = "EC41E37C51F9432A2AE0A90DBEC96C3C")
         @DSModeled(DSC.SAFE)
         public ListenerRelay(SipRegistrationListener listener, String uri) {
             dsTaint.addTaint(listener.dsTaint);
@@ -555,13 +536,13 @@ public class SipManager {
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:02.341 -0400", hash_original_method = "DB62FE45AF7F183C085E9ABCEE6AC21A", hash_generated_method = "0AE97FF7A744FD7D0684A037913358E8")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:52.354 -0400", hash_original_method = "DB62FE45AF7F183C085E9ABCEE6AC21A", hash_generated_method = "220F70B3A443A5CC09D4AA39CF4EB4A5")
         //DSFIXME:  CODE0002: Requires DSC value to be set
         private String getUri(ISipSession session) {
             dsTaint.addTaint(session.dsTaint);
             try 
             {
-                String varE40154AEFA0D3343351769FF65ADD7DD_1914462986 = (((session == null)
+                String varE40154AEFA0D3343351769FF65ADD7DD_1654747096 = (((session == null)
                         ? mUri
                         : session.getLocalProfile().getUriString())); //DSFIXME:  CODE0008: Nested ternary operator in expression
             } //End block
@@ -580,7 +561,7 @@ public class SipManager {
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:02.341 -0400", hash_original_method = "5C196F3BA9DB038EA3DA210A6D75DA60", hash_generated_method = "F1C8FEE353DF37AE53980CD762B72451")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:52.354 -0400", hash_original_method = "5C196F3BA9DB038EA3DA210A6D75DA60", hash_generated_method = "AC2ED5B76DEF48B8F05EA5762DCF0259")
         //DSFIXME:  CODE0002: Requires DSC value to be set
         @Override
         public void onRegistering(ISipSession session) {
@@ -592,7 +573,7 @@ public class SipManager {
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:02.341 -0400", hash_original_method = "C7A68C57912DB0D6749A6AEEEB478950", hash_generated_method = "10AF2FF95C74173A12F6323787715A15")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:52.354 -0400", hash_original_method = "C7A68C57912DB0D6749A6AEEEB478950", hash_generated_method = "7D6862AEC2E5113C74471F778865E7A8")
         //DSFIXME:  CODE0002: Requires DSC value to be set
         @Override
         public void onRegistrationDone(ISipSession session, int duration) {
@@ -610,7 +591,7 @@ public class SipManager {
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:02.342 -0400", hash_original_method = "0C0A3DDB18DA2EFA9B1E7F04C9F8EEEA", hash_generated_method = "5892BCBAB477FEA403174BDFCB54FE89")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:52.354 -0400", hash_original_method = "0C0A3DDB18DA2EFA9B1E7F04C9F8EEEA", hash_generated_method = "BEE74DDCC020EFEC4E482C42E359AA33")
         //DSFIXME:  CODE0002: Requires DSC value to be set
         @Override
         public void onRegistrationFailed(ISipSession session, int errorCode,
@@ -625,7 +606,7 @@ public class SipManager {
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:02.342 -0400", hash_original_method = "3FA96A1C02B279EF2B5BC0F9EDE11DE7", hash_generated_method = "AB3359704D0E22689AB7EEE1418B86F5")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:52.355 -0400", hash_original_method = "3FA96A1C02B279EF2B5BC0F9EDE11DE7", hash_generated_method = "253DFD6FA2698D25FF9E32BE0FE73BAD")
         //DSFIXME:  CODE0002: Requires DSC value to be set
         @Override
         public void onRegistrationTimeout(ISipSession session) {
@@ -643,6 +624,18 @@ public class SipManager {
 
 
     
+    public static final int INCOMING_CALL_RESULT_CODE = 101;
+    public static final String EXTRA_CALL_ID = "android:sipCallID";
+    public static final String EXTRA_OFFER_SD = "android:sipOfferSD";
+    public static final String ACTION_SIP_SERVICE_UP =
+            "android.net.sip.SIP_SERVICE_UP";
+    public static final String ACTION_SIP_INCOMING_CALL =
+            "com.android.phone.SIP_INCOMING_CALL";
+    public static final String ACTION_SIP_ADD_PHONE =
+            "com.android.phone.SIP_ADD_PHONE";
+    public static final String ACTION_SIP_REMOVE_PHONE =
+            "com.android.phone.SIP_REMOVE_PHONE";
+    public static final String EXTRA_LOCAL_URI = "android:localSipUri";
+    private static final String TAG = "SipManager";
 }
-
 

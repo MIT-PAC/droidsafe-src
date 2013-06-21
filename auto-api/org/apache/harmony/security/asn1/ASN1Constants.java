@@ -3,10 +3,10 @@ package org.apache.harmony.security.asn1;
 // Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
+import droidsafe.runtime.*;
 
-// import Iterator to deal with enhanced for loop translation
+// needed for enhanced for control translations
 import java.util.Iterator;
-
 
 public interface ASN1Constants {
     
@@ -67,4 +67,3 @@ public interface ASN1Constants {
     int TAG_ANY = 0;
     int TAG_CHOICE = TAG_ANY;
 }
-

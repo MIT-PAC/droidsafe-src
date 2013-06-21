@@ -3,29 +3,32 @@ package java.net;
 // Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
+import droidsafe.runtime.*;
 
-// import Iterator to deal with enhanced for loop translation
+// needed for enhanced for control translations
 import java.util.Iterator;
-
 import java.io.UnsupportedEncodingException;
 import java.nio.charset.Charset;
 import libcore.net.UriCodec;
 
 public class URLDecoder {
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:12.435 -0400", hash_original_method = "B615A2BC4F9E0B242EB3A9536009FA28", hash_generated_method = "22C6E19760682FCDD3324068D65B539B")
-    @Deprecated
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:28.397 -0400", hash_original_method = "1E29D68C8A40B15616063FB658D5102A", hash_generated_method = "1E29D68C8A40B15616063FB658D5102A")
+        public URLDecoder ()
+    {
+    }
+
+
+        @Deprecated
     public static String decode(String s) {
         return UriCodec.decode(s, true, Charset.defaultCharset());
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:12.435 -0400", hash_original_method = "08FCF3E03A800113A7194CB72BB59DA9", hash_generated_method = "E0C46DB131A739C4A90A1AC029D9124F")
-    public static String decode(String s, String encoding) throws UnsupportedEncodingException {
+        public static String decode(String s, String encoding) throws UnsupportedEncodingException {
         return UriCodec.decode(s, true, Charset.forName(encoding));
     }
 
     
 }
-
 

@@ -2,12 +2,11 @@ package android.net;
 
 // Droidsafe Imports
 import droidsafe.helpers.*;
-import droidsafe.runtime.DroidSafeAndroidRuntime;
 import droidsafe.annotations.*;
+import droidsafe.runtime.*;
 
-// import Iterator to deal with enhanced for loop translation
+// needed for enhanced for control translations
 import java.util.Iterator;
-
 import static com.android.internal.util.Preconditions.checkNotNull;
 import android.os.Parcel;
 import android.os.Parcelable;
@@ -20,14 +19,7 @@ import java.util.Arrays;
 import java.util.HashSet;
 
 public class NetworkStats implements Parcelable {
-    private static final String TAG = "NetworkStats";
-    public static final String IFACE_ALL = null;
-    public static final int UID_ALL = -1;
-    public static final int SET_ALL = -1;
-    public static final int SET_DEFAULT = 0;
-    public static final int SET_FOREGROUND = 1;
-    public static final int TAG_NONE = 0;
-    private final long elapsedRealtime;
+    private long elapsedRealtime;
     private int size;
     private String[] iface;
     private int[] uid;
@@ -38,35 +30,12 @@ public class NetworkStats implements Parcelable {
     private long[] txBytes;
     private long[] txPackets;
     private long[] operations;
-    public static final Creator<NetworkStats> CREATOR = new Creator<NetworkStats>() {        
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:02.236 -0400", hash_original_method = "76D9386453B9839BC68D96B3471291B7", hash_generated_method = "787C1D430E777E703AA32AB7611F9230")
-        @DSModeled(DSC.SAFE)
-        public NetworkStats createFromParcel(Parcel in) {
-            dsTaint.addTaint(in.dsTaint);
-            return (NetworkStats)dsTaint.getTaint();
-            // ---------- Original Method ----------
-            //return new NetworkStats(in);
-        }
-
-        
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:02.236 -0400", hash_original_method = "6BCBF9A9B4039336956D31ACA3A9B0D4", hash_generated_method = "68DCF5C343C73FBF3F519F0EA9371457")
-        @DSModeled(DSC.SAFE)
-        public NetworkStats[] newArray(int size) {
-            dsTaint.addTaint(size);
-            return (NetworkStats[])dsTaint.getTaint();
-            // ---------- Original Method ----------
-            //return new NetworkStats[size];
-        }
-
-        
-}; //Transformed anonymous class
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:02.237 -0400", hash_original_method = "2A398CA499F31285985E41F8490B2A34", hash_generated_method = "A1F7EC6951659EE1EED4D2AD45C582DB")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:51.206 -0400", hash_original_method = "2A398CA499F31285985E41F8490B2A34", hash_generated_method = "FECE079066817EB596A37F771289809E")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     public NetworkStats(long elapsedRealtime, int initialSize) {
         dsTaint.addTaint(elapsedRealtime);
         dsTaint.addTaint(initialSize);
-        this.elapsedRealtime = elapsedRealtime;
         this.size = 0;
         this.iface = new String[initialSize];
         this.uid = new int[initialSize];
@@ -92,7 +61,7 @@ public class NetworkStats implements Parcelable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:02.237 -0400", hash_original_method = "D90F7AB3E4E138FF177FEBA052B61E8A", hash_generated_method = "CE9463B74535BA747A289624372BD3DF")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:51.207 -0400", hash_original_method = "D90F7AB3E4E138FF177FEBA052B61E8A", hash_generated_method = "E4525CF947EF52A2EE4179A1852F9B4A")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public NetworkStats(Parcel parcel) {
         dsTaint.addTaint(parcel.dsTaint);
@@ -122,11 +91,11 @@ public class NetworkStats implements Parcelable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:02.237 -0400", hash_original_method = "747F845D1C1DAB9F1E978429A723A0B0", hash_generated_method = "B57F7BE8D0E4F0887314ACCDA514E96F")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:51.207 -0400", hash_original_method = "747F845D1C1DAB9F1E978429A723A0B0", hash_generated_method = "C1D9A2A428F14C90C94E3ECD4FC8F5EC")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     public void writeToParcel(Parcel dest, int flags) {
-        dsTaint.addTaint(dest.dsTaint);
         dsTaint.addTaint(flags);
+        dsTaint.addTaint(dest.dsTaint);
         dest.writeLong(elapsedRealtime);
         dest.writeInt(size);
         dest.writeStringArray(iface);
@@ -153,11 +122,11 @@ public class NetworkStats implements Parcelable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:02.237 -0400", hash_original_method = "2B258B3B735A82A55EB3270F9E3A7FB6", hash_generated_method = "F6352B5F7F36A30207BEF872483E94EE")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:51.207 -0400", hash_original_method = "2B258B3B735A82A55EB3270F9E3A7FB6", hash_generated_method = "E247FA5E250EEABEB6E72CFA358E3C59")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     @Override
     public NetworkStats clone() {
-        final NetworkStats clone;
+        NetworkStats clone;
         clone = new NetworkStats(elapsedRealtime, size);
         NetworkStats.Entry entry;
         entry = null;
@@ -181,7 +150,7 @@ public class NetworkStats implements Parcelable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:02.237 -0400", hash_original_method = "C4F6601144FE185F7636CD51AD058501", hash_generated_method = "D0929B1FDB1C6F07EF96EE733879765F")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:51.208 -0400", hash_original_method = "C4F6601144FE185F7636CD51AD058501", hash_generated_method = "3E6F321543D849478C65CB69B0D699CF")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public NetworkStats addIfaceValues(
             String iface, long rxBytes, long rxPackets, long txBytes, long txPackets) {
@@ -190,7 +159,7 @@ public class NetworkStats implements Parcelable {
         dsTaint.addTaint(txBytes);
         dsTaint.addTaint(rxBytes);
         dsTaint.addTaint(rxPackets);
-        NetworkStats var3EFD197D64464EFFDBF459517CAEC880_1043034943 = (addValues(
+        NetworkStats var3EFD197D64464EFFDBF459517CAEC880_1695084568 = (addValues(
                 iface, UID_ALL, SET_DEFAULT, TAG_NONE, rxBytes, rxPackets, txBytes, txPackets, 0L));
         return (NetworkStats)dsTaint.getTaint();
         // ---------- Original Method ----------
@@ -199,20 +168,20 @@ public class NetworkStats implements Parcelable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:02.237 -0400", hash_original_method = "F572451A01AB0326B364A96213456AFC", hash_generated_method = "9702470D4358401973908EF1A398F6A8")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:51.208 -0400", hash_original_method = "F572451A01AB0326B364A96213456AFC", hash_generated_method = "3132853076C87B908F1544D1745AF2BA")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public NetworkStats addValues(String iface, int uid, int set, int tag, long rxBytes,
             long rxPackets, long txBytes, long txPackets, long operations) {
         dsTaint.addTaint(uid);
         dsTaint.addTaint(iface);
-        dsTaint.addTaint(set);
         dsTaint.addTaint(tag);
+        dsTaint.addTaint(set);
         dsTaint.addTaint(txPackets);
-        dsTaint.addTaint(txBytes);
         dsTaint.addTaint(operations);
+        dsTaint.addTaint(txBytes);
         dsTaint.addTaint(rxBytes);
         dsTaint.addTaint(rxPackets);
-        NetworkStats varBE9F1EB301E86200CA8DFDB3D9682593_1956223551 = (addValues(new Entry(
+        NetworkStats varBE9F1EB301E86200CA8DFDB3D9682593_1678774789 = (addValues(new Entry(
                 iface, uid, set, tag, rxBytes, rxPackets, txBytes, txPackets, operations)));
         return (NetworkStats)dsTaint.getTaint();
         // ---------- Original Method ----------
@@ -221,12 +190,12 @@ public class NetworkStats implements Parcelable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:02.238 -0400", hash_original_method = "BA5E7818DCBE1852CDC81090E5B13339", hash_generated_method = "720CA39698B4523A025CC29E14BB5297")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:51.208 -0400", hash_original_method = "BA5E7818DCBE1852CDC81090E5B13339", hash_generated_method = "45A82692F3E3B48B60A01E8E8F1617DB")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public NetworkStats addValues(Entry entry) {
         dsTaint.addTaint(entry.dsTaint);
         {
-            final int newLength;
+            int newLength;
             newLength = Math.max(iface.length, 10) * 3 / 2;
             iface = Arrays.copyOf(iface, newLength);
             uid = Arrays.copyOf(uid, newLength);
@@ -247,15 +216,14 @@ public class NetworkStats implements Parcelable {
         txBytes[size] = entry.txBytes;
         txPackets[size] = entry.txPackets;
         operations[size] = entry.operations;
-        size++;
         return (NetworkStats)dsTaint.getTaint();
         // ---------- Original Method ----------
         // Original Method Too Long, Refer to Original Implementation
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:02.238 -0400", hash_original_method = "784A932AD4193748EF13A1422BBA3C89", hash_generated_method = "F15ECF12CFDB6A4CF7EF5C9C4005876D")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:51.209 -0400", hash_original_method = "784A932AD4193748EF13A1422BBA3C89", hash_generated_method = "24C3E0CAF3F9CCD4C6BA13F2F97C3F20")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     public Entry getValues(int i, Entry recycle) {
         dsTaint.addTaint(recycle.dsTaint);
         dsTaint.addTaint(i);
@@ -287,7 +255,7 @@ public class NetworkStats implements Parcelable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:02.238 -0400", hash_original_method = "F3360ADB8E6D37C5AD6714A1DBEA3C2C", hash_generated_method = "D92AEDA1274C6E81C4E22C84E14B5FD4")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:51.209 -0400", hash_original_method = "F3360ADB8E6D37C5AD6714A1DBEA3C2C", hash_generated_method = "E5479F5CB8387EFCB1476F328C13B7E8")
     @DSModeled(DSC.SAFE)
     public long getElapsedRealtime() {
         return dsTaint.getTaintLong();
@@ -296,17 +264,17 @@ public class NetworkStats implements Parcelable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:02.238 -0400", hash_original_method = "A28F8D44EDD8B5977D1B4B03F62008BC", hash_generated_method = "76194B86405F69428822BFE9E18FF3E1")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:51.209 -0400", hash_original_method = "A28F8D44EDD8B5977D1B4B03F62008BC", hash_generated_method = "F957EBF8D35D8701BCB41A6677C00DCF")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public long getElapsedRealtimeAge() {
-        long var31F8EE92B793C7898ABD2D03A99BDBC1_194024701 = (SystemClock.elapsedRealtime() - elapsedRealtime);
+        long var31F8EE92B793C7898ABD2D03A99BDBC1_1915932048 = (SystemClock.elapsedRealtime() - elapsedRealtime);
         return dsTaint.getTaintLong();
         // ---------- Original Method ----------
         //return SystemClock.elapsedRealtime() - elapsedRealtime;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:02.238 -0400", hash_original_method = "3CA361324F026F8C9B0AA94A864ACDD9", hash_generated_method = "6E93BC927377E643FCF9C1E2F7D3D815")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:51.210 -0400", hash_original_method = "3CA361324F026F8C9B0AA94A864ACDD9", hash_generated_method = "5952D8F6ECECE9C90DA6440092EF19A0")
     @DSModeled(DSC.SAFE)
     public int size() {
         return dsTaint.getTaintInt();
@@ -315,7 +283,7 @@ public class NetworkStats implements Parcelable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:02.238 -0400", hash_original_method = "2B99B673BBD8E75B3053CAA25E99CAA5", hash_generated_method = "3B50C8F0F0326874BA3C0D7FF7824D45")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:51.210 -0400", hash_original_method = "2B99B673BBD8E75B3053CAA25E99CAA5", hash_generated_method = "962AC026DC0E12FF6A2922D19D6D26ED")
     @DSModeled(DSC.SAFE)
     public int internalSize() {
         return dsTaint.getTaintInt();
@@ -324,7 +292,7 @@ public class NetworkStats implements Parcelable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:02.239 -0400", hash_original_method = "60A49D4C2C28DC0F7F89BE32E32B8D66", hash_generated_method = "8AF5DCC43822CCA29C8B070E76900AB0")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:51.210 -0400", hash_original_method = "60A49D4C2C28DC0F7F89BE32E32B8D66", hash_generated_method = "92E0E82A8E60077CEBBA3F342DBC4AB8")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     @Deprecated
     public NetworkStats combineValues(String iface, int uid, int tag, long rxBytes, long rxPackets,
@@ -333,11 +301,11 @@ public class NetworkStats implements Parcelable {
         dsTaint.addTaint(iface);
         dsTaint.addTaint(tag);
         dsTaint.addTaint(txPackets);
-        dsTaint.addTaint(txBytes);
         dsTaint.addTaint(operations);
+        dsTaint.addTaint(txBytes);
         dsTaint.addTaint(rxBytes);
         dsTaint.addTaint(rxPackets);
-        NetworkStats varBEA10BEF18A033D3228BAC770D43D7F2_551767550 = (combineValues(
+        NetworkStats varBEA10BEF18A033D3228BAC770D43D7F2_696690526 = (combineValues(
                 iface, uid, SET_DEFAULT, tag, rxBytes, rxPackets, txBytes, txPackets, operations));
         return (NetworkStats)dsTaint.getTaint();
         // ---------- Original Method ----------
@@ -346,20 +314,20 @@ public class NetworkStats implements Parcelable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:02.239 -0400", hash_original_method = "F71B507E3E7A764789F38FD5530E9585", hash_generated_method = "FDA2D46165649BBBFE3B60069B60005F")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:51.211 -0400", hash_original_method = "F71B507E3E7A764789F38FD5530E9585", hash_generated_method = "BDD5C4CD2D1A6CC82BA6059872820BBD")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public NetworkStats combineValues(String iface, int uid, int set, int tag, long rxBytes,
             long rxPackets, long txBytes, long txPackets, long operations) {
         dsTaint.addTaint(uid);
         dsTaint.addTaint(iface);
-        dsTaint.addTaint(set);
         dsTaint.addTaint(tag);
+        dsTaint.addTaint(set);
         dsTaint.addTaint(txPackets);
-        dsTaint.addTaint(txBytes);
         dsTaint.addTaint(operations);
+        dsTaint.addTaint(txBytes);
         dsTaint.addTaint(rxBytes);
         dsTaint.addTaint(rxPackets);
-        NetworkStats var7E056802138AE06EBD194965821DF97B_1566777596 = (combineValues(new Entry(
+        NetworkStats var7E056802138AE06EBD194965821DF97B_990133032 = (combineValues(new Entry(
                 iface, uid, set, tag, rxBytes, rxPackets, txBytes, txPackets, operations)));
         return (NetworkStats)dsTaint.getTaint();
         // ---------- Original Method ----------
@@ -368,11 +336,11 @@ public class NetworkStats implements Parcelable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:02.239 -0400", hash_original_method = "49582C07F79A6507E237CBEC2438E36C", hash_generated_method = "86C12293BA9901130A86ED284ABEF3D6")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:51.211 -0400", hash_original_method = "49582C07F79A6507E237CBEC2438E36C", hash_generated_method = "E07DC8EEE3B0BD719D5FC7A9F8A1AC32")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     public NetworkStats combineValues(Entry entry) {
         dsTaint.addTaint(entry.dsTaint);
-        final int i;
+        int i;
         i = findIndex(entry.iface, entry.uid, entry.set, entry.tag);
         {
             addValues(entry);
@@ -400,7 +368,7 @@ public class NetworkStats implements Parcelable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:02.239 -0400", hash_original_method = "0A31FFFE210F2775172111CD7E8C7EC0", hash_generated_method = "3854C84D2CCD3C9466D83FFE24D6258A")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:51.211 -0400", hash_original_method = "0A31FFFE210F2775172111CD7E8C7EC0", hash_generated_method = "3D47E761BEE9E58E4CE1D01F8F4650C8")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public void combineAllValues(NetworkStats another) {
         dsTaint.addTaint(another.dsTaint);
@@ -423,19 +391,19 @@ public class NetworkStats implements Parcelable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:02.240 -0400", hash_original_method = "FEC91070502C1195B6460B4D97DFCE73", hash_generated_method = "A5A8EAF86B0C1B7C625FDD2D1F0D1649")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:51.212 -0400", hash_original_method = "FEC91070502C1195B6460B4D97DFCE73", hash_generated_method = "2FF356FF546EE11FE3C41DD9215D94CD")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public int findIndex(String iface, int uid, int set, int tag) {
         dsTaint.addTaint(uid);
         dsTaint.addTaint(iface);
-        dsTaint.addTaint(set);
         dsTaint.addTaint(tag);
+        dsTaint.addTaint(set);
         {
             int i;
             i = 0;
             {
                 {
-                    boolean var7F51CCC0D3B646294AFFFFFDFF3BBE72_1272986889 = (uid == this.uid[i] && set == this.set[i] && tag == this.tag[i]
+                    boolean var7F51CCC0D3B646294AFFFFFDFF3BBE72_1145098732 = (uid == this.uid[i] && set == this.set[i] && tag == this.tag[i]
                     && Objects.equal(iface, this.iface[i]));
                 } //End collapsed parenthetic
             } //End block
@@ -452,19 +420,19 @@ public class NetworkStats implements Parcelable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:02.240 -0400", hash_original_method = "09F077C80C4F986B6C39E3E7ABC587EB", hash_generated_method = "B8946989BC1E3151D2821381309DCAC4")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:51.212 -0400", hash_original_method = "09F077C80C4F986B6C39E3E7ABC587EB", hash_generated_method = "A8F8368173818821FDEEFEE747FC18EB")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public int findIndexHinted(String iface, int uid, int set, int tag, int hintIndex) {
-        dsTaint.addTaint(uid);
         dsTaint.addTaint(hintIndex);
+        dsTaint.addTaint(uid);
         dsTaint.addTaint(iface);
-        dsTaint.addTaint(set);
         dsTaint.addTaint(tag);
+        dsTaint.addTaint(set);
         {
             int offset;
             offset = 0;
             {
-                final int halfOffset;
+                int halfOffset;
                 halfOffset = offset / 2;
                 int i;
                 {
@@ -474,7 +442,7 @@ public class NetworkStats implements Parcelable {
                     i = (size + hintIndex - halfOffset - 1) % size;
                 } //End block
                 {
-                    boolean var7F51CCC0D3B646294AFFFFFDFF3BBE72_272558124 = (uid == this.uid[i] && set == this.set[i] && tag == this.tag[i]
+                    boolean var7F51CCC0D3B646294AFFFFFDFF3BBE72_1034853515 = (uid == this.uid[i] && set == this.set[i] && tag == this.tag[i]
                     && Objects.equal(iface, this.iface[i]));
                 } //End collapsed parenthetic
             } //End block
@@ -498,15 +466,15 @@ public class NetworkStats implements Parcelable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:02.240 -0400", hash_original_method = "6E339B821B6FB4996B911B569AAD524F", hash_generated_method = "12D1CB0006331A1463598F68E63EED61")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:51.212 -0400", hash_original_method = "6E339B821B6FB4996B911B569AAD524F", hash_generated_method = "A85E4033757BD6DEE5CB64AF11CBADA6")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     public void spliceOperationsFrom(NetworkStats stats) {
         dsTaint.addTaint(stats.dsTaint);
         {
             int i;
             i = 0;
             {
-                final int j;
+                int j;
                 j = stats.findIndex(IFACE_ALL, uid[i], set[i], tag[i]);
                 {
                     operations[i] = 0;
@@ -528,10 +496,10 @@ public class NetworkStats implements Parcelable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:02.240 -0400", hash_original_method = "2B2C9B0B02A7A72C63A74815DF58D4A4", hash_generated_method = "EFF1ADED8D6D64FA712DFD767940E59C")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:51.219 -0400", hash_original_method = "2B2C9B0B02A7A72C63A74815DF58D4A4", hash_generated_method = "A61C2801BFE0380B3875AA206CA0684E")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public String[] getUniqueIfaces() {
-        final HashSet<String> ifaces;
+        HashSet<String> ifaces;
         ifaces = new HashSet<String>();
         {
             String iface = this.iface[0];
@@ -541,7 +509,7 @@ public class NetworkStats implements Parcelable {
                 } //End block
             } //End block
         } //End collapsed parenthetic
-        String[] var81656A977762B8BECBF38C8836EEE497_85506687 = (ifaces.toArray(new String[ifaces.size()]));
+        String[] var81656A977762B8BECBF38C8836EEE497_1425625342 = (ifaces.toArray(new String[ifaces.size()]));
         String[] retVal = new String[1];
         retVal[0] = dsTaint.getTaintString();
         return retVal;
@@ -556,10 +524,10 @@ public class NetworkStats implements Parcelable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:02.240 -0400", hash_original_method = "C948A3950E5BB6DBF87B62BBDA0B02C8", hash_generated_method = "DAC549274321D90A4DC09CF3C311A586")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:51.226 -0400", hash_original_method = "C948A3950E5BB6DBF87B62BBDA0B02C8", hash_generated_method = "AE7DD1A1FD4F15E7E84374C773BF5CA9")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public int[] getUniqueUids() {
-        final SparseBooleanArray uids;
+        SparseBooleanArray uids;
         uids = new SparseBooleanArray();
         {
             int uid = this.uid[0];
@@ -567,9 +535,9 @@ public class NetworkStats implements Parcelable {
                 uids.put(uid, true);
             } //End block
         } //End collapsed parenthetic
-        final int size;
+        int size;
         size = uids.size();
-        final int[] result;
+        int[] result;
         result = new int[size];
         {
             int i;
@@ -595,10 +563,10 @@ public class NetworkStats implements Parcelable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:02.241 -0400", hash_original_method = "277B11F09A23B8E4B361A93BBF3584B2", hash_generated_method = "8022FE83CCF67675286836A785816D3C")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:51.227 -0400", hash_original_method = "277B11F09A23B8E4B361A93BBF3584B2", hash_generated_method = "779F5D4E0706C549872693504D4E39D7")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     public long getTotalBytes() {
-        final Entry entry;
+        Entry entry;
         entry = getTotal(null);
         return dsTaint.getTaintLong();
         // ---------- Original Method ----------
@@ -607,46 +575,46 @@ public class NetworkStats implements Parcelable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:02.241 -0400", hash_original_method = "4A2B09728CEDE32F9C68EF92F6D5889E", hash_generated_method = "706ED19E5E25D8A4008D1E4C701AAD6D")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:51.227 -0400", hash_original_method = "4A2B09728CEDE32F9C68EF92F6D5889E", hash_generated_method = "C942894C73BF89F717420D9794A55544")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public Entry getTotal(Entry recycle) {
         dsTaint.addTaint(recycle.dsTaint);
-        Entry var29CC8E7070732766F57BADC5354BA482_1601636148 = (getTotal(recycle, null, UID_ALL));
+        Entry var29CC8E7070732766F57BADC5354BA482_1530675114 = (getTotal(recycle, null, UID_ALL));
         return (Entry)dsTaint.getTaint();
         // ---------- Original Method ----------
         //return getTotal(recycle, null, UID_ALL);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:02.241 -0400", hash_original_method = "D5D19E4CD939B7A0BD1C3BDE2A399415", hash_generated_method = "1EC8F7E5F47F21D09026CC3E054192AF")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:51.227 -0400", hash_original_method = "D5D19E4CD939B7A0BD1C3BDE2A399415", hash_generated_method = "E413519C74F30354345577674822C20E")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public Entry getTotal(Entry recycle, int limitUid) {
         dsTaint.addTaint(recycle.dsTaint);
         dsTaint.addTaint(limitUid);
-        Entry var75C6295DC4159218CFFE3D014C083D57_321812790 = (getTotal(recycle, null, limitUid));
+        Entry var75C6295DC4159218CFFE3D014C083D57_353135797 = (getTotal(recycle, null, limitUid));
         return (Entry)dsTaint.getTaint();
         // ---------- Original Method ----------
         //return getTotal(recycle, null, limitUid);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:02.241 -0400", hash_original_method = "A8C67127F98A8F27D6DD2D10C54926B1", hash_generated_method = "A30E3057CB9F46181FF8B9367FEFD3DB")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:51.227 -0400", hash_original_method = "A8C67127F98A8F27D6DD2D10C54926B1", hash_generated_method = "DFE67ACF865C0F593850913B2AAA6D9F")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public Entry getTotal(Entry recycle, HashSet<String> limitIface) {
-        dsTaint.addTaint(recycle.dsTaint);
         dsTaint.addTaint(limitIface.dsTaint);
-        Entry var479BBAB7AEAFDE16463794E65A7E49B9_1740236580 = (getTotal(recycle, limitIface, UID_ALL));
+        dsTaint.addTaint(recycle.dsTaint);
+        Entry var479BBAB7AEAFDE16463794E65A7E49B9_524940545 = (getTotal(recycle, limitIface, UID_ALL));
         return (Entry)dsTaint.getTaint();
         // ---------- Original Method ----------
         //return getTotal(recycle, limitIface, UID_ALL);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:02.241 -0400", hash_original_method = "7B779B0B251D8F12031ECAB7F83EFE1D", hash_generated_method = "A958D6799ABCF67CD101A970BECF86D3")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:51.228 -0400", hash_original_method = "7B779B0B251D8F12031ECAB7F83EFE1D", hash_generated_method = "559B5D689911E1F951975106D9354921")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     private Entry getTotal(Entry recycle, HashSet<String> limitIface, int limitUid) {
-        dsTaint.addTaint(recycle.dsTaint);
         dsTaint.addTaint(limitIface.dsTaint);
+        dsTaint.addTaint(recycle.dsTaint);
         dsTaint.addTaint(limitUid);
         Entry entry;
         entry = recycle;
@@ -664,9 +632,9 @@ public class NetworkStats implements Parcelable {
             int i;
             i = 0;
             {
-                final boolean matchesUid;
+                boolean matchesUid;
                 matchesUid = (limitUid == UID_ALL) || (limitUid == uid[i]);
-                final boolean matchesIface;
+                boolean matchesIface;
                 matchesIface = (limitIface == null) || (limitIface.contains(iface[i]));
                 {
                     entry.rxBytes += rxBytes[i];
@@ -683,30 +651,30 @@ public class NetworkStats implements Parcelable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:02.241 -0400", hash_original_method = "0B77BD3659EBAD0CA6247F62089B29FF", hash_generated_method = "AB5FAED3694038CDB73B88407E3502A9")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:51.228 -0400", hash_original_method = "0B77BD3659EBAD0CA6247F62089B29FF", hash_generated_method = "A80125DB491CC7CCDE2881FB6E85C5FB")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public NetworkStats subtract(NetworkStats value) throws NonMonotonicException {
         dsTaint.addTaint(value.dsTaint);
-        NetworkStats varF1DD39D1F0E3162E5DD65714BB79F833_2021885089 = (subtract(value, false));
+        NetworkStats varF1DD39D1F0E3162E5DD65714BB79F833_260460771 = (subtract(value, false));
         return (NetworkStats)dsTaint.getTaint();
         // ---------- Original Method ----------
         //return subtract(value, false);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:02.242 -0400", hash_original_method = "04678C1B7F1434E233D6434823B40504", hash_generated_method = "8A7D2A7750C548B2630430F0DE1B201C")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:51.229 -0400", hash_original_method = "04678C1B7F1434E233D6434823B40504", hash_generated_method = "4EA1DE1C360BA1556136A7D0C4AD4358")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public NetworkStats subtract(NetworkStats value, boolean clampNonMonotonic) throws NonMonotonicException {
         dsTaint.addTaint(clampNonMonotonic);
         dsTaint.addTaint(value.dsTaint);
-        final long deltaRealtime;
+        long deltaRealtime;
         deltaRealtime = this.elapsedRealtime - value.elapsedRealtime;
         {
             if (DroidSafeAndroidRuntime.control) throw new NonMonotonicException(this, value);
         } //End block
-        final Entry entry;
+        Entry entry;
         entry = new Entry();
-        final NetworkStats result;
+        NetworkStats result;
         result = new NetworkStats(deltaRealtime, size);
         {
             int i;
@@ -716,7 +684,7 @@ public class NetworkStats implements Parcelable {
                 entry.uid = uid[i];
                 entry.set = set[i];
                 entry.tag = tag[i];
-                final int j;
+                int j;
                 j = value.findIndexHinted(entry.iface, entry.uid, entry.set, entry.tag, i);
                 {
                     entry.rxBytes = rxBytes[i];
@@ -740,7 +708,7 @@ public class NetworkStats implements Parcelable {
                             entry.operations = Math.max(entry.operations, 0);
                         } //End block
                         {
-                        	if (DroidSafeAndroidRuntime.control) throw new NonMonotonicException(this, i, value, j);
+                            if (DroidSafeAndroidRuntime.control) throw new NonMonotonicException(this, i, value, j);
                         } //End block
                     } //End block
                 } //End block
@@ -753,12 +721,12 @@ public class NetworkStats implements Parcelable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:02.242 -0400", hash_original_method = "AB3FDA05B945C3AC93E7C4BBCBA41D8F", hash_generated_method = "704039C7B70DC44C55A5A022840D8868")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:51.230 -0400", hash_original_method = "AB3FDA05B945C3AC93E7C4BBCBA41D8F", hash_generated_method = "8B7889FDC9B847FC9EE73286FD3D0FDF")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     public NetworkStats groupedByIface() {
-        final NetworkStats stats;
+        NetworkStats stats;
         stats = new NetworkStats(elapsedRealtime, 10);
-        final Entry entry;
+        Entry entry;
         entry = new Entry();
         entry.uid = UID_ALL;
         entry.set = SET_ALL;
@@ -797,12 +765,12 @@ public class NetworkStats implements Parcelable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:02.243 -0400", hash_original_method = "F7B5ADC030AABE070FE0AF3D1DEEC4FF", hash_generated_method = "E9EBE6E16EA509E01B7F4DD665347F12")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:51.231 -0400", hash_original_method = "F7B5ADC030AABE070FE0AF3D1DEEC4FF", hash_generated_method = "8EBFE1BBCDB1392169B424E608384DDC")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     public NetworkStats groupedByUid() {
-        final NetworkStats stats;
+        NetworkStats stats;
         stats = new NetworkStats(elapsedRealtime, 10);
-        final Entry entry;
+        Entry entry;
         entry = new Entry();
         entry.iface = IFACE_ALL;
         entry.set = SET_ALL;
@@ -841,11 +809,11 @@ public class NetworkStats implements Parcelable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:02.243 -0400", hash_original_method = "9245ED01B44F4BC6EDE26C84298E681C", hash_generated_method = "E556665570AFD660DBEFA2D593C8EE95")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:51.231 -0400", hash_original_method = "9245ED01B44F4BC6EDE26C84298E681C", hash_generated_method = "B22A4934BC68C1F7A5E94709716B3528")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public NetworkStats withoutUid(int uid) {
         dsTaint.addTaint(uid);
-        final NetworkStats stats;
+        NetworkStats stats;
         stats = new NetworkStats(elapsedRealtime, 10);
         Entry entry;
         entry = new Entry();
@@ -873,7 +841,7 @@ public class NetworkStats implements Parcelable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:02.243 -0400", hash_original_method = "130412F853181F3DE6D8909F69FBB580", hash_generated_method = "85CC86048FBD442CEEABDED6B99ABD9B")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:51.232 -0400", hash_original_method = "130412F853181F3DE6D8909F69FBB580", hash_generated_method = "03F5AEE9F19158EE304BA2B23DC95421")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public void dump(String prefix, PrintWriter pw) {
         dsTaint.addTaint(prefix);
@@ -929,8 +897,7 @@ public class NetworkStats implements Parcelable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:02.243 -0400", hash_original_method = "B2A79BC64162852AEFB2830FF939E603", hash_generated_method = "908C849D83A79606917F659C7F78B7EE")
-    public static String setToString(int set) {
+        public static String setToString(int set) {
         switch (set) {
             case SET_ALL:
                 return "ALL";
@@ -944,20 +911,19 @@ public class NetworkStats implements Parcelable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:02.243 -0400", hash_original_method = "DC4BF8E8A8AEC1891BB1B278A71C59F9", hash_generated_method = "6354A0C3623620729DF5D191D7AF20FC")
-    public static String tagToString(int tag) {
+        public static String tagToString(int tag) {
         return "0x" + Integer.toHexString(tag);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:02.244 -0400", hash_original_method = "C185C780AB6AF420802BBBCB2A0DA03E", hash_generated_method = "218DA0C0468B64A8CE61B017CACFE59F")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:51.232 -0400", hash_original_method = "C185C780AB6AF420802BBBCB2A0DA03E", hash_generated_method = "6166709F08BC2495859F049D42821549")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     @Override
     public String toString() {
-        final CharArrayWriter writer;
+        CharArrayWriter writer;
         writer = new CharArrayWriter();
         dump("", new PrintWriter(writer));
-        String var06A4604668A7B483F2A3D13B0FB7EF06_1534910134 = (writer.toString());
+        String var06A4604668A7B483F2A3D13B0FB7EF06_483364645 = (writer.toString());
         return dsTaint.getTaintString();
         // ---------- Original Method ----------
         //final CharArrayWriter writer = new CharArrayWriter();
@@ -966,7 +932,7 @@ public class NetworkStats implements Parcelable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:02.244 -0400", hash_original_method = "00F8174F9E89D0C972FA6D3F19742382", hash_generated_method = "7491C6FB42F78871A3F8EA322AF6B2FC")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:51.234 -0400", hash_original_method = "00F8174F9E89D0C972FA6D3F19742382", hash_generated_method = "ED77793910767EAAB4C12F70F75B9095")
     @DSModeled(DSC.SAFE)
     public int describeContents() {
         return dsTaint.getTaintInt();
@@ -986,7 +952,7 @@ public class NetworkStats implements Parcelable {
         public long txPackets;
         public long operations;
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:02.244 -0400", hash_original_method = "CF147DC846E9FA9CFBACF54E998579AF", hash_generated_method = "23F8B432FD91591A3950E94CD85ED0F3")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:51.234 -0400", hash_original_method = "CF147DC846E9FA9CFBACF54E998579AF", hash_generated_method = "F7D90DFA18CB5A7447228376F168D3F6")
         //DSFIXME:  CODE0002: Requires DSC value to be set
         public Entry() {
             this(IFACE_ALL, UID_ALL, SET_DEFAULT, TAG_NONE, 0L, 0L, 0L, 0L, 0L);
@@ -994,31 +960,31 @@ public class NetworkStats implements Parcelable {
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:02.244 -0400", hash_original_method = "E97E61BD38788E206E16E3AF28EF9986", hash_generated_method = "B41742851E3AB3B14BBC7B5C0FA590FF")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:51.234 -0400", hash_original_method = "E97E61BD38788E206E16E3AF28EF9986", hash_generated_method = "97384010DB7787278A466CE012DE6F95")
         //DSFIXME:  CODE0002: Requires DSC value to be set
         public Entry(long rxBytes, long rxPackets, long txBytes, long txPackets, long operations) {
             this(IFACE_ALL, UID_ALL, SET_DEFAULT, TAG_NONE, rxBytes, rxPackets, txBytes, txPackets,
                     operations);
             dsTaint.addTaint(txPackets);
-            dsTaint.addTaint(txBytes);
             dsTaint.addTaint(operations);
+            dsTaint.addTaint(txBytes);
             dsTaint.addTaint(rxBytes);
             dsTaint.addTaint(rxPackets);
             // ---------- Original Method ----------
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:02.244 -0400", hash_original_method = "08CED58FDA8ADE41E7B2EE03A16F55F8", hash_generated_method = "3C6C6202A0777B6E1E068D8AA301AF77")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:51.234 -0400", hash_original_method = "08CED58FDA8ADE41E7B2EE03A16F55F8", hash_generated_method = "D15344C0127FE256AA20F6C9D0D5BB4A")
         @DSModeled(DSC.SAFE)
         public Entry(String iface, int uid, int set, int tag, long rxBytes, long rxPackets,
                 long txBytes, long txPackets, long operations) {
             dsTaint.addTaint(uid);
             dsTaint.addTaint(iface);
-            dsTaint.addTaint(set);
             dsTaint.addTaint(tag);
+            dsTaint.addTaint(set);
             dsTaint.addTaint(txPackets);
-            dsTaint.addTaint(txBytes);
             dsTaint.addTaint(operations);
+            dsTaint.addTaint(txBytes);
             dsTaint.addTaint(rxBytes);
             dsTaint.addTaint(rxPackets);
             // ---------- Original Method ----------
@@ -1034,11 +1000,11 @@ public class NetworkStats implements Parcelable {
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:02.244 -0400", hash_original_method = "8BA58A1912534045F7A50ACBC1B00F2F", hash_generated_method = "709FE4C42832BF0D1538C86F14129774")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:51.235 -0400", hash_original_method = "8BA58A1912534045F7A50ACBC1B00F2F", hash_generated_method = "CFC36076E74D9813DA1A676023D8B16F")
         //DSFIXME:  CODE0002: Requires DSC value to be set
         @Override
         public String toString() {
-            final StringBuilder builder;
+            StringBuilder builder;
             builder = new StringBuilder();
             builder.append("iface=").append(iface);
             builder.append(" uid=").append(uid);
@@ -1049,7 +1015,7 @@ public class NetworkStats implements Parcelable {
             builder.append(" txBytes=").append(txBytes);
             builder.append(" txPackets=").append(txPackets);
             builder.append(" operations=").append(operations);
-            String varCEB98099F8B5AF9267E3A4873F9FB1DE_912067979 = (builder.toString());
+            String varCEB98099F8B5AF9267E3A4873F9FB1DE_2000252605 = (builder.toString());
             return dsTaint.getTaintString();
             // ---------- Original Method ----------
             //final StringBuilder builder = new StringBuilder();
@@ -1071,12 +1037,12 @@ public class NetworkStats implements Parcelable {
 
     
     public static class NonMonotonicException extends Exception {
-        public final NetworkStats left;
-        public final NetworkStats right;
-        public final int leftIndex;
-        public final int rightIndex;
+        public NetworkStats left;
+        public NetworkStats right;
+        public int leftIndex;
+        public int rightIndex;
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:02.244 -0400", hash_original_method = "0F470ECE148C3E2C73ACB1D4F54D342F", hash_generated_method = "907FB554576052C68A69A637A1F8AA76")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:51.235 -0400", hash_original_method = "0F470ECE148C3E2C73ACB1D4F54D342F", hash_generated_method = "B4E8BFA879523FE97A722B51620FFA0A")
         //DSFIXME:  CODE0002: Requires DSC value to be set
         public NonMonotonicException(NetworkStats left, NetworkStats right) {
             this(left, -1, right, -1);
@@ -1086,16 +1052,14 @@ public class NetworkStats implements Parcelable {
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:02.245 -0400", hash_original_method = "F441B58E88456542B2E0F8A35978B48D", hash_generated_method = "A3C477721651FB6AA7E481EEFB5A61F3")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:51.235 -0400", hash_original_method = "F441B58E88456542B2E0F8A35978B48D", hash_generated_method = "A2E4DE281A516F676AEBF9B42F0BA5DB")
         //DSFIXME:  CODE0002: Requires DSC value to be set
         public NonMonotonicException(
                 NetworkStats left, int leftIndex, NetworkStats right, int rightIndex) {
             dsTaint.addTaint(leftIndex);
-            dsTaint.addTaint(left.dsTaint);
             dsTaint.addTaint(rightIndex);
+            dsTaint.addTaint(left.dsTaint);
             dsTaint.addTaint(right.dsTaint);
-            this.rightIndex = rightIndex;
-            this.leftIndex = leftIndex;
             this.left = checkNotNull(left, "missing left");
             this.right = checkNotNull(right, "missing right");
             // ---------- Original Method ----------
@@ -1110,6 +1074,36 @@ public class NetworkStats implements Parcelable {
 
 
     
-}
+    private static final String TAG = "NetworkStats";
+    public static final String IFACE_ALL = null;
+    public static final int UID_ALL = -1;
+    public static final int SET_ALL = -1;
+    public static final int SET_DEFAULT = 0;
+    public static final int SET_FOREGROUND = 1;
+    public static final int TAG_NONE = 0;
+    public static final Creator<NetworkStats> CREATOR = new Creator<NetworkStats>() {        
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:51.236 -0400", hash_original_method = "76D9386453B9839BC68D96B3471291B7", hash_generated_method = "71C9090314B58195D69AD4039D5C04D5")
+        //DSFIXME:  CODE0002: Requires DSC value to be set
+        public NetworkStats createFromParcel(Parcel in) {
+            dsTaint.addTaint(in.dsTaint);
+            NetworkStats var4C6AA10D7D146D95ECFFAFCBB14EAF8D_1136813132 = (new NetworkStats(in));
+            return (NetworkStats)dsTaint.getTaint();
+            // ---------- Original Method ----------
+            //return new NetworkStats(in);
+        }
 
+        
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:51.236 -0400", hash_original_method = "6BCBF9A9B4039336956D31ACA3A9B0D4", hash_generated_method = "8E5B442CDC70949FA7808CEB0F8E6E02")
+        //DSFIXME:  CODE0002: Requires DSC value to be set
+        public NetworkStats[] newArray(int size) {
+            dsTaint.addTaint(size);
+            NetworkStats[] varF295FF2DD1641B4AEB73AA3623A37E46_1580621006 = (new NetworkStats[size]);
+            return (NetworkStats[])dsTaint.getTaint();
+            // ---------- Original Method ----------
+            //return new NetworkStats[size];
+        }
+
+        
+}; //Transformed anonymous class
+}
 

@@ -1,41 +1,33 @@
 package android.view;
 
 // Droidsafe Imports
-import java.io.IOException;
-import java.lang.reflect.Constructor;
-import java.lang.reflect.Method;
+import droidsafe.helpers.*;
+import droidsafe.annotations.*;
+import droidsafe.runtime.*;
 
+// needed for enhanced for control translations
+import java.util.Iterator;
+import com.android.internal.view.menu.MenuItemImpl;
 import org.xmlpull.v1.XmlPullParser;
 import org.xmlpull.v1.XmlPullParserException;
-
+import android.app.Activity;
 import android.content.Context;
 import android.content.res.TypedArray;
 import android.content.res.XmlResourceParser;
 import android.util.AttributeSet;
+import android.util.Log;
 import android.util.Xml;
-
-import com.android.internal.view.menu.MenuItemImpl;
-
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
-import droidsafe.runtime.DroidSafeAndroidRuntime;
-// import Iterator to deal with enhanced for loop translation
+import java.io.IOException;
+import java.lang.reflect.Constructor;
+import java.lang.reflect.Method;
 
 public class MenuInflater {
-    private static final String LOG_TAG = "MenuInflater";
-    private static final String XML_MENU = "menu";
-    private static final String XML_GROUP = "group";
-    private static final String XML_ITEM = "item";
-    private static final int NO_ID = 0;
-    private static final Class<?>[] ACTION_VIEW_CONSTRUCTOR_SIGNATURE = new Class[] {Context.class};
-    private static final Class<?>[] ACTION_PROVIDER_CONSTRUCTOR_SIGNATURE = ACTION_VIEW_CONSTRUCTOR_SIGNATURE;
-    private final Object[] mActionViewConstructorArguments;
-    private final Object[] mActionProviderConstructorArguments;
+    private Object[] mActionViewConstructorArguments;
+    private Object[] mActionProviderConstructorArguments;
     private Context mContext;
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:05.424 -0400", hash_original_method = "DAFF641201C63E19412016666CD58FB3", hash_generated_method = "EE8026DF7A4AEF3789D2546668F10565")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:59.124 -0400", hash_original_method = "DAFF641201C63E19412016666CD58FB3", hash_generated_method = "F860FE17010A3F4FA6BFAAB8ACB10906")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     public MenuInflater(Context context) {
         dsTaint.addTaint(context.dsTaint);
         mActionViewConstructorArguments = new Object[] {context};
@@ -47,7 +39,7 @@ public class MenuInflater {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:05.424 -0400", hash_original_method = "7D92BCA17E1F22EC74058A02DB16DD4F", hash_generated_method = "1FBB0B54AD2C6AC9EFA6DFAFE28C28F9")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:59.124 -0400", hash_original_method = "7D92BCA17E1F22EC74058A02DB16DD4F", hash_generated_method = "9A68D8DB49AC019DDC5205779CDD267A")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public void inflate(int menuRes, Menu menu) {
         dsTaint.addTaint(menu.dsTaint);
@@ -63,11 +55,11 @@ public class MenuInflater {
         } //End block
         catch (XmlPullParserException e)
         {
-            throw new InflateException("Error inflating menu XML", e);
+            if (DroidSafeAndroidRuntime.control) throw new InflateException("Error inflating menu XML", e);
         } //End block
         catch (IOException e)
         {
-            throw new InflateException("Error inflating menu XML", e);
+            if (DroidSafeAndroidRuntime.control) throw new InflateException("Error inflating menu XML", e);
         } //End block
         finally 
         {
@@ -89,7 +81,7 @@ public class MenuInflater {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:05.424 -0400", hash_original_method = "9930459085CDC2417094A7A8585D74E6", hash_generated_method = "C084CBFA9AD6A82AF110E8905FA2C4C5")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:59.125 -0400", hash_original_method = "9930459085CDC2417094A7A8585D74E6", hash_generated_method = "34F97524A18BA9CFF6C81EDBDC85D077")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     private void parseMenu(XmlPullParser parser, AttributeSet attrs, Menu menu) throws XmlPullParserException, IOException {
         dsTaint.addTaint(attrs.dsTaint);
@@ -108,7 +100,7 @@ public class MenuInflater {
             {
                 tagName = parser.getName();
                 {
-                    boolean var9CCB7BAC13C969AD362B259014E951BF_1828805572 = (tagName.equals(XML_MENU));
+                    boolean var9CCB7BAC13C969AD362B259014E951BF_1647929510 = (tagName.equals(XML_MENU));
                     {
                         eventType = parser.next();
                     } //End block
@@ -125,17 +117,17 @@ public class MenuInflater {
             //End case XmlPullParser.START_TAG 
             //Begin case XmlPullParser.START_TAG 
             {
-                boolean var06735938CC742DA237A5AA956C6C42C5_906672458 = (tagName.equals(XML_GROUP));
+                boolean var06735938CC742DA237A5AA956C6C42C5_2102086036 = (tagName.equals(XML_GROUP));
                 {
                     menuState.readGroup(attrs);
                 } //End block
                 {
-                    boolean var17BF2DF7C65C8DAF0549CD525A38CEE3_1066678811 = (tagName.equals(XML_ITEM));
+                    boolean var17BF2DF7C65C8DAF0549CD525A38CEE3_1677466088 = (tagName.equals(XML_ITEM));
                     {
                         menuState.readItem(attrs);
                     } //End block
                     {
-                        boolean var2AD187A82C9BC290A155265942EB19F2_1423790818 = (tagName.equals(XML_MENU));
+                        boolean var2AD187A82C9BC290A155265942EB19F2_790831692 = (tagName.equals(XML_MENU));
                         {
                             SubMenu subMenu;
                             subMenu = menuState.addSubMenuItem();
@@ -154,24 +146,24 @@ public class MenuInflater {
             //End case XmlPullParser.END_TAG 
             //Begin case XmlPullParser.END_TAG 
             {
-                boolean var24B02B07F0CCFAF88AE9E1B3596AB473_1387229482 = (lookingForEndOfUnknownTag && tagName.equals(unknownTagName));
+                boolean var24B02B07F0CCFAF88AE9E1B3596AB473_1759263388 = (lookingForEndOfUnknownTag && tagName.equals(unknownTagName));
                 {
                     lookingForEndOfUnknownTag = false;
                     unknownTagName = null;
                 } //End block
                 {
-                    boolean var5128EA2C37383EFE109673AABCB41757_596326269 = (tagName.equals(XML_GROUP));
+                    boolean var5128EA2C37383EFE109673AABCB41757_177550435 = (tagName.equals(XML_GROUP));
                     {
                         menuState.resetGroup();
                     } //End block
                     {
-                        boolean varAC2816D664C6A3E40FDF427ED6713CCB_571457201 = (tagName.equals(XML_ITEM));
+                        boolean varAC2816D664C6A3E40FDF427ED6713CCB_629894215 = (tagName.equals(XML_ITEM));
                         {
                             {
-                                boolean varC95D3D4788F89F1A516ABEDD78453836_349910745 = (!menuState.hasAddedItem());
+                                boolean varC95D3D4788F89F1A516ABEDD78453836_1874467347 = (!menuState.hasAddedItem());
                                 {
                                     {
-                                        boolean var109D657CC5D8C957FC8FE2485E1298F5_920727981 = (menuState.itemActionProvider != null &&
+                                        boolean var109D657CC5D8C957FC8FE2485E1298F5_310494040 = (menuState.itemActionProvider != null &&
                                     menuState.itemActionProvider.hasSubMenu());
                                         {
                                             menuState.addSubMenuItem();
@@ -184,7 +176,7 @@ public class MenuInflater {
                             } //End collapsed parenthetic
                         } //End block
                         {
-                            boolean var7BD40C7DE57A7C30CB915C9680E5EDD6_437682359 = (tagName.equals(XML_MENU));
+                            boolean var7BD40C7DE57A7C30CB915C9680E5EDD6_1764474850 = (tagName.equals(XML_MENU));
                             {
                                 reachedEndOfMenu = true;
                             } //End block
@@ -204,11 +196,10 @@ public class MenuInflater {
 
     
     private static class InflatedOnMenuItemClickListener implements MenuItem.OnMenuItemClickListener {
-        private static final Class<?>[] PARAM_TYPES = new Class[] { MenuItem.class };
         private Context mContext;
         private Method mMethod;
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:05.425 -0400", hash_original_method = "71989E75CB41D046D01EA62CF0B3F6AF", hash_generated_method = "1F0C2E45C730D269DFFD90E26600D31B")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:59.125 -0400", hash_original_method = "71989E75CB41D046D01EA62CF0B3F6AF", hash_generated_method = "9FDF4F598CDF072FABAA4CFE622BD617")
         //DSFIXME:  CODE0002: Requires DSC value to be set
         public InflatedOnMenuItemClickListener(Context context, String methodName) {
             dsTaint.addTaint(context.dsTaint);
@@ -226,7 +217,7 @@ public class MenuInflater {
                         "Couldn't resolve menu item onClick handler " + methodName +
                         " in class " + c.getName());
                 ex.initCause(e);
-                throw ex;
+                if (DroidSafeAndroidRuntime.control) throw ex;
             } //End block
             // ---------- Original Method ----------
             //mContext = context;
@@ -243,7 +234,7 @@ public class MenuInflater {
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:05.425 -0400", hash_original_method = "73DDD6FE1A9FD43CC9793E596C7A60B9", hash_generated_method = "C1DCC5E3C0304C129BECDF91ED747FB8")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:59.125 -0400", hash_original_method = "73DDD6FE1A9FD43CC9793E596C7A60B9", hash_generated_method = "53E3DC41A2D733C14CA43B156F61F840")
         //DSFIXME:  CODE0002: Requires DSC value to be set
         public boolean onMenuItemClick(MenuItem item) {
             //DSFIXME:  CODE0009: Possible callback target function detected
@@ -251,9 +242,9 @@ public class MenuInflater {
             try 
             {
                 {
-                    boolean varD1E827A28BBA387F0A15B2DD410BC945_1586189361 = (mMethod.getReturnType() == Boolean.TYPE);
+                    boolean varD1E827A28BBA387F0A15B2DD410BC945_672107184 = (mMethod.getReturnType() == Boolean.TYPE);
                     {
-                        boolean var823BC65078D4D4799D67201B185472A5_408725170 = ((Boolean) mMethod.invoke(mContext, item));
+                        boolean var823BC65078D4D4799D67201B185472A5_2107552579 = ((Boolean) mMethod.invoke(mContext, item));
                     } //End block
                     {
                         mMethod.invoke(mContext, item);
@@ -262,7 +253,7 @@ public class MenuInflater {
             } //End block
             catch (Exception e)
             {
-                throw new RuntimeException(e);
+                if (DroidSafeAndroidRuntime.control) throw new RuntimeException(e);
             } //End block
             return dsTaint.getTaintBoolean();
             // ---------- Original Method ----------
@@ -279,6 +270,7 @@ public class MenuInflater {
         }
 
         
+        private static final Class<?>[] PARAM_TYPES = new Class[] { MenuItem.class };
     }
 
 
@@ -309,17 +301,9 @@ public class MenuInflater {
         private String itemActionProviderClassName;
         private String itemListenerMethodName;
         private ActionProvider itemActionProvider;
-        private static final int defaultGroupId = NO_ID;
-        private static final int defaultItemId = NO_ID;
-        private static final int defaultItemCategory = 0;
-        private static final int defaultItemOrder = 0;
-        private static final int defaultItemCheckable = 0;
-        private static final boolean defaultItemChecked = false;
-        private static final boolean defaultItemVisible = true;
-        private static final boolean defaultItemEnabled = true;
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:05.425 -0400", hash_original_method = "D92FD84364574F36A2E6DED89015926B", hash_generated_method = "7B0AB15347C034D27FF050263D435DD5")
-        @DSModeled(DSC.SAFE)
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:59.126 -0400", hash_original_method = "D92FD84364574F36A2E6DED89015926B", hash_generated_method = "E9B44E175B7A069598646EB99DE2C388")
+        //DSFIXME:  CODE0002: Requires DSC value to be set
         public MenuState(final Menu menu) {
             dsTaint.addTaint(menu.dsTaint);
             resetGroup();
@@ -329,7 +313,7 @@ public class MenuInflater {
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:05.425 -0400", hash_original_method = "72B0BA7C11D7E690CFEDBC790E5F02DB", hash_generated_method = "6F09AAE2801A125C0F809D90268774E2")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:59.126 -0400", hash_original_method = "72B0BA7C11D7E690CFEDBC790E5F02DB", hash_generated_method = "52EC9BD2B64C18BC1661223C54B55626")
         @DSModeled(DSC.SAFE)
         public void resetGroup() {
             groupId = defaultGroupId;
@@ -348,7 +332,7 @@ public class MenuInflater {
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:05.426 -0400", hash_original_method = "D2A59B8CE3FF522E41AA18E3F41E01E5", hash_generated_method = "7E385F8373E6A9D962F7A2C953BCD410")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:59.126 -0400", hash_original_method = "D2A59B8CE3FF522E41AA18E3F41E01E5", hash_generated_method = "05A5C02FE701A39C8D6EFBBE076A7D45")
         //DSFIXME:  CODE0002: Requires DSC value to be set
         public void readGroup(AttributeSet attrs) {
             dsTaint.addTaint(attrs.dsTaint);
@@ -367,7 +351,7 @@ public class MenuInflater {
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:05.426 -0400", hash_original_method = "040ADD8FC534832950800B9A55359142", hash_generated_method = "A1891D7AD0D49BF67985C02B6FAED4C9")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:59.128 -0400", hash_original_method = "040ADD8FC534832950800B9A55359142", hash_generated_method = "8A463840F2C98B2D1D1A72EE20EFBD7D")
         //DSFIXME:  CODE0002: Requires DSC value to be set
         public void readItem(AttributeSet attrs) {
             dsTaint.addTaint(attrs.dsTaint);
@@ -375,9 +359,9 @@ public class MenuInflater {
             a = mContext.obtainStyledAttributes(attrs,
                     com.android.internal.R.styleable.MenuItem);
             itemId = a.getResourceId(com.android.internal.R.styleable.MenuItem_id, defaultItemId);
-            final int category;
+            int category;
             category = a.getInt(com.android.internal.R.styleable.MenuItem_menuCategory, groupCategory);
-            final int order;
+            int order;
             order = a.getInt(com.android.internal.R.styleable.MenuItem_orderInCategory, groupOrder);
             itemCategoryOrder = (category & Menu.CATEGORY_MASK) | (order & Menu.USER_MASK);
             itemTitle = a.getText(com.android.internal.R.styleable.MenuItem_title);
@@ -388,7 +372,7 @@ public class MenuInflater {
             itemNumericShortcut =
                     getShortcut(a.getString(com.android.internal.R.styleable.MenuItem_numericShortcut));
             {
-                boolean var8B68EBF2C32DFF7A57B9A2EFC06FDA44_507034470 = (a.hasValue(com.android.internal.R.styleable.MenuItem_checkable));
+                boolean var8B68EBF2C32DFF7A57B9A2EFC06FDA44_930578894 = (a.hasValue(com.android.internal.R.styleable.MenuItem_checkable));
                 {
                     itemCheckable = a.getBoolean(com.android.internal.R.styleable.MenuItem_checkable, false) ? 1 : 0;
                 } //End block
@@ -404,7 +388,7 @@ public class MenuInflater {
             itemActionViewLayout = a.getResourceId(com.android.internal.R.styleable.MenuItem_actionLayout, 0);
             itemActionViewClassName = a.getString(com.android.internal.R.styleable.MenuItem_actionViewClass);
             itemActionProviderClassName = a.getString(com.android.internal.R.styleable.MenuItem_actionProviderClass);
-            final boolean hasActionProvider;
+            boolean hasActionProvider;
             hasActionProvider = itemActionProviderClassName != null;
             {
                 itemActionProvider = newInstance(itemActionProviderClassName,
@@ -421,12 +405,12 @@ public class MenuInflater {
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:05.426 -0400", hash_original_method = "68CBADC6295F8D47EFE8794BDB31E4A9", hash_generated_method = "4A4A3EF3B1380B49395577800C4BFD7E")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:59.128 -0400", hash_original_method = "68CBADC6295F8D47EFE8794BDB31E4A9", hash_generated_method = "D3DB4D37349D7D14583BB7F3B101653C")
         //DSFIXME:  CODE0002: Requires DSC value to be set
         private char getShortcut(String shortcutString) {
             dsTaint.addTaint(shortcutString);
             {
-                char var94DDD9FE6ADE092287A1BAC249BEBC0A_63653906 = (shortcutString.charAt(0));
+                char var94DDD9FE6ADE092287A1BAC249BEBC0A_688884684 = (shortcutString.charAt(0));
             } //End block
             return dsTaint.getTaintChar();
             // ---------- Original Method ----------
@@ -438,7 +422,7 @@ public class MenuInflater {
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:05.427 -0400", hash_original_method = "AD827357C34932CC0921A74B0CE8A3EF", hash_generated_method = "ADC2E46973DBE558DB7B10DE87F52AB5")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:59.128 -0400", hash_original_method = "AD827357C34932CC0921A74B0CE8A3EF", hash_generated_method = "2ED193EAEBAB479E66DA253F0A738660")
         //DSFIXME:  CODE0002: Requires DSC value to be set
         private void setItem(MenuItem item) {
             dsTaint.addTaint(item.dsTaint);
@@ -455,7 +439,7 @@ public class MenuInflater {
             } //End block
             {
                 {
-                    boolean varEB9F229BDF825669A5F4C4A08D921F80_1963011502 = (mContext.isRestricted());
+                    boolean varEB9F229BDF825669A5F4C4A08D921F80_1190350882 = (mContext.isRestricted());
                     {
                         if (DroidSafeAndroidRuntime.control) throw new IllegalStateException("The android:onClick attribute cannot "
                             + "be used within a restricted context");
@@ -494,7 +478,7 @@ public class MenuInflater {
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:05.427 -0400", hash_original_method = "A5F782FF20BD7C7C25F84F91CFB5DEC5", hash_generated_method = "E4565D179B8DBA7C891954FC2687B620")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:59.129 -0400", hash_original_method = "A5F782FF20BD7C7C25F84F91CFB5DEC5", hash_generated_method = "E439761FFBB5453CAC5A01C16AC7F887")
         //DSFIXME:  CODE0002: Requires DSC value to be set
         public void addItem() {
             itemAdded = true;
@@ -505,7 +489,7 @@ public class MenuInflater {
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:05.427 -0400", hash_original_method = "68ADA6E6B9635F44A93B8212F1D6D8E0", hash_generated_method = "B0DFF6E9792B56BC6914F9B9299A9F7F")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:59.129 -0400", hash_original_method = "68ADA6E6B9635F44A93B8212F1D6D8E0", hash_generated_method = "5CD67BFADE14A90044DA8460E1C2AC99")
         //DSFIXME:  CODE0002: Requires DSC value to be set
         public SubMenu addSubMenuItem() {
             itemAdded = true;
@@ -521,7 +505,7 @@ public class MenuInflater {
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:05.427 -0400", hash_original_method = "EEE8EEEED979875FD25E1447BB361BB0", hash_generated_method = "2F52AD5E46DABB13911FCD3207833B80")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:59.129 -0400", hash_original_method = "EEE8EEEED979875FD25E1447BB361BB0", hash_generated_method = "A2C76096AC89187F93A3CD89510566D0")
         @DSModeled(DSC.SAFE)
         public boolean hasAddedItem() {
             return dsTaint.getTaintBoolean();
@@ -530,7 +514,7 @@ public class MenuInflater {
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:05.427 -0400", hash_original_method = "20DE6E19862FEEC3F61B05674F46168C", hash_generated_method = "CCD59C398BA799B150FAE50E66AB023F")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:59.129 -0400", hash_original_method = "20DE6E19862FEEC3F61B05674F46168C", hash_generated_method = "1D57C342667E573D93421AEB6885957C")
         //DSFIXME:  CODE0002: Requires DSC value to be set
         @SuppressWarnings("unchecked")
         private <T> T newInstance(String className, Class<?>[] constructorSignature,
@@ -544,7 +528,7 @@ public class MenuInflater {
                 clazz = mContext.getClassLoader().loadClass(className);
                 Constructor<?> constructor;
                 constructor = clazz.getConstructor(constructorSignature);
-                T var78D669D70149CC5115760FDB92FEDF5F_1683712261 = ((T) constructor.newInstance(arguments));
+                T var78D669D70149CC5115760FDB92FEDF5F_756393082 = ((T) constructor.newInstance(arguments));
             } //End block
             catch (Exception e)
             { }
@@ -561,10 +545,24 @@ public class MenuInflater {
         }
 
         
+        private static final int defaultGroupId = NO_ID;
+        private static final int defaultItemId = NO_ID;
+        private static final int defaultItemCategory = 0;
+        private static final int defaultItemOrder = 0;
+        private static final int defaultItemCheckable = 0;
+        private static final boolean defaultItemChecked = false;
+        private static final boolean defaultItemVisible = true;
+        private static final boolean defaultItemEnabled = true;
     }
 
 
     
+    private static final String LOG_TAG = "MenuInflater";
+    private static final String XML_MENU = "menu";
+    private static final String XML_GROUP = "group";
+    private static final String XML_ITEM = "item";
+    private static final int NO_ID = 0;
+    private static final Class<?>[] ACTION_VIEW_CONSTRUCTOR_SIGNATURE = new Class[] {Context.class};
+    private static final Class<?>[] ACTION_PROVIDER_CONSTRUCTOR_SIGNATURE = ACTION_VIEW_CONSTRUCTOR_SIGNATURE;
 }
-
 

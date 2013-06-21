@@ -1,88 +1,41 @@
 package android.content.res;
 
 // Droidsafe Imports
-import java.io.IOException;
-import java.lang.ref.WeakReference;
-import java.util.Arrays;
+import droidsafe.helpers.*;
+import droidsafe.annotations.*;
+import droidsafe.runtime.*;
 
+// needed for enhanced for control translations
+import java.util.Iterator;
+import com.android.internal.util.ArrayUtils;
 import org.xmlpull.v1.XmlPullParser;
 import org.xmlpull.v1.XmlPullParserException;
-
-import android.os.Parcel;
-import android.os.Parcelable;
 import android.util.AttributeSet;
 import android.util.SparseArray;
 import android.util.StateSet;
 import android.util.Xml;
-
-import com.android.internal.util.ArrayUtils;
-
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
-import droidsafe.runtime.DroidSafeAndroidRuntime;
-// import Iterator to deal with enhanced for loop translation
+import android.os.Parcel;
+import android.os.Parcelable;
+import java.io.IOException;
+import java.lang.ref.WeakReference;
+import java.util.Arrays;
 
 public class ColorStateList implements Parcelable {
     private int[][] mStateSpecs;
     private int[] mColors;
     private int mDefaultColor = 0xffff0000;
-    private static final int[][] EMPTY = new int[][] { new int[0] };
-    private static final SparseArray<WeakReference<ColorStateList>> sCache =
-                            new SparseArray<WeakReference<ColorStateList>>();
-    public static final Parcelable.Creator<ColorStateList> CREATOR = new Parcelable.Creator<ColorStateList>() {        
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:00.244 -0400", hash_original_method = "64FF1FD2247EB9835068885DC70066CC", hash_generated_method = "00A52C26146553C8E4A892514770B6A4")
-        @DSModeled(DSC.SAFE)
-        public ColorStateList[] newArray(int size) {
-            dsTaint.addTaint(size);
-            return (ColorStateList[])dsTaint.getTaint();
-            // ---------- Original Method ----------
-            //return new ColorStateList[size];
-        }
-
-        
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:00.244 -0400", hash_original_method = "99D1C755B99765C149DCD766D7B3653A", hash_generated_method = "84C48826BB86D50B81F61DF1F44DB909")
-        //DSFIXME:  CODE0002: Requires DSC value to be set
-        public ColorStateList createFromParcel(Parcel source) {
-            dsTaint.addTaint(source.dsTaint);
-            final int N;
-            N = source.readInt();
-            int[][] stateSpecs;
-            stateSpecs = new int[N][];
-            {
-                int i;
-                i = 0;
-                {
-                    stateSpecs[i] = source.createIntArray();
-                } //End block
-            } //End collapsed parenthetic
-            int[] colors;
-            colors = source.createIntArray();
-            return (ColorStateList)dsTaint.getTaint();
-            // ---------- Original Method ----------
-            //final int N = source.readInt();
-            //int[][] stateSpecs = new int[N][];
-            //for (int i=0; i<N; i++) {
-                //stateSpecs[i] = source.createIntArray();
-            //}
-            //int[] colors = source.createIntArray();
-            //return new ColorStateList(stateSpecs, colors);
-        }
-
-        
-}; //Transformed anonymous class
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:00.245 -0400", hash_original_method = "A1B9AA8D55CC71F4C566F389AC3D8BBC", hash_generated_method = "34C7AD0E3345C45675A0BED9A73A3C9D")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:45.121 -0400", hash_original_method = "A1B9AA8D55CC71F4C566F389AC3D8BBC", hash_generated_method = "B853D9FA4CC0F774905FDCA69D04F16F")
     @DSModeled(DSC.SAFE)
     private ColorStateList() {
         // ---------- Original Method ----------
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:00.245 -0400", hash_original_method = "16DE5E515D4E313298C804E12AA820B9", hash_generated_method = "C4EA759C925149BC9168708DEA22D354")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:45.122 -0400", hash_original_method = "16DE5E515D4E313298C804E12AA820B9", hash_generated_method = "6E78FA3C57ADE4DF77F34C3805B2A589")
     @DSModeled(DSC.SAFE)
     public ColorStateList(int[][] states, int[] colors) {
-        dsTaint.addTaint(colors);
+        dsTaint.addTaint(colors[0]);
         dsTaint.addTaint(states[0][0]);
         {
             mDefaultColor = colors[0];
@@ -110,8 +63,7 @@ public class ColorStateList implements Parcelable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:00.245 -0400", hash_original_method = "FCCF2821DEC9011A455F9F98CACE9BF9", hash_generated_method = "54908EBA630F5091972F57B4712DB8AF")
-    public static ColorStateList valueOf(int color) {
+        public static ColorStateList valueOf(int color) {
         synchronized (sCache) {
             WeakReference<ColorStateList> ref = sCache.get(color);
             ColorStateList csl = ref != null ? ref.get() : null;
@@ -125,8 +77,7 @@ public class ColorStateList implements Parcelable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:00.245 -0400", hash_original_method = "5986A0E2205D2782A4018155A452F4C2", hash_generated_method = "B6AA7295315B18C55E48EAB77A84A116")
-    public static ColorStateList createFromXml(Resources r, XmlPullParser parser) throws XmlPullParserException, IOException {
+        public static ColorStateList createFromXml(Resources r, XmlPullParser parser) throws XmlPullParserException, IOException {
         AttributeSet attrs = Xml.asAttributeSet(parser);
         int type;
         while ((type=parser.next()) != XmlPullParser.START_TAG
@@ -139,8 +90,7 @@ public class ColorStateList implements Parcelable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:00.245 -0400", hash_original_method = "29461E82F281519D72B414C160880677", hash_generated_method = "2A1176A16A76E420F38B3ECB1167F71E")
-    private static ColorStateList createFromXmlInner(Resources r, XmlPullParser parser,
+        private static ColorStateList createFromXmlInner(Resources r, XmlPullParser parser,
             AttributeSet attrs) throws XmlPullParserException, IOException {
         ColorStateList colorStateList;
         final String name = parser.getName();
@@ -155,8 +105,8 @@ public class ColorStateList implements Parcelable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:00.246 -0400", hash_original_method = "C02A6B069CD8C9360FEC8CA407C14B4A", hash_generated_method = "D1FF3CDBC7923719470952129EB1F93B")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:45.123 -0400", hash_original_method = "C02A6B069CD8C9360FEC8CA407C14B4A", hash_generated_method = "90007747FC466C8DBD9FBDBFF51FA4C0")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     public ColorStateList withAlpha(int alpha) {
         dsTaint.addTaint(alpha);
         int[] colors;
@@ -170,6 +120,7 @@ public class ColorStateList implements Parcelable {
                 colors[i] = (mColors[i] & 0xFFFFFF) | (alpha << 24);
             } //End block
         } //End collapsed parenthetic
+        ColorStateList var046556C5BA034F99615EE7AAEFD80427_1482605133 = (new ColorStateList(mStateSpecs, colors));
         return (ColorStateList)dsTaint.getTaint();
         // ---------- Original Method ----------
         //int[] colors = new int[mColors.length];
@@ -181,17 +132,16 @@ public class ColorStateList implements Parcelable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:00.248 -0400", hash_original_method = "096D4D4F0EE82FD61B43B813E755281E", hash_generated_method = "D9D20A28D5D3D144F9DF02839575BEB0")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:45.124 -0400", hash_original_method = "096D4D4F0EE82FD61B43B813E755281E", hash_generated_method = "F57CBF45134B5AA5CE7EB799E81D5AB6")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     private void inflate(Resources r, XmlPullParser parser, AttributeSet attrs) throws XmlPullParserException, IOException {
         dsTaint.addTaint(r.dsTaint);
         dsTaint.addTaint(attrs.dsTaint);
         dsTaint.addTaint(parser.dsTaint);
         int type;
-        final int innerDepth;
+        int innerDepth;
         innerDepth = parser.getDepth()+1;
         int depth;
-        depth = 0;
         int listAllocated;
         listAllocated = 20;
         int listSize;
@@ -201,12 +151,12 @@ public class ColorStateList implements Parcelable {
         int[][] stateSpecList;
         stateSpecList = new int[listAllocated][];
         {
-            boolean varF60F42190EBD36C414D066F0689226DF_1595536554 = ((type=parser.next()) != XmlPullParser.END_DOCUMENT
+            boolean varF60F42190EBD36C414D066F0689226DF_699665833 = ((type=parser.next()) != XmlPullParser.END_DOCUMENT
                && ((depth=parser.getDepth()) >= innerDepth
                    || type != XmlPullParser.END_TAG));
             {
                 {
-                    boolean var03C44ADC0346A0FD12ECFE38D2A0612F_247924692 = (depth > innerDepth || !parser.getName().equals("item"));
+                    boolean var03C44ADC0346A0FD12ECFE38D2A0612F_2005928810 = (depth > innerDepth || !parser.getName().equals("item"));
                 } //End collapsed parenthetic
                 int colorRes;
                 colorRes = 0;
@@ -217,14 +167,14 @@ public class ColorStateList implements Parcelable {
                 int i;
                 int j;
                 j = 0;
-                final int numAttrs;
+                int numAttrs;
                 numAttrs = attrs.getAttributeCount();
                 int[] stateSpec;
                 stateSpec = new int[numAttrs];
                 {
                     i = 0;
                     {
-                        final int stateResId;
+                        int stateResId;
                         stateResId = attrs.getAttributeNameResource(i);
                         {
                             colorRes = attrs.getAttributeResourceValue(i, 0);
@@ -245,7 +195,7 @@ public class ColorStateList implements Parcelable {
                     color = r.getColor(colorRes);
                 } //End block
                 {
-                	if (DroidSafeAndroidRuntime.control) throw new XmlPullParserException(
+                    if (DroidSafeAndroidRuntime.control) throw new XmlPullParserException(
                         parser.getPositionDescription()
                         + ": <item> tag requires a 'android:color' attribute.");
                 } //End block
@@ -265,7 +215,6 @@ public class ColorStateList implements Parcelable {
                 } //End block
                 colorList[listSize] = color;
                 stateSpecList[listSize] = stateSpec;
-                listSize++;
             } //End block
         } //End collapsed parenthetic
         mColors = new int[listSize];
@@ -277,7 +226,7 @@ public class ColorStateList implements Parcelable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:00.248 -0400", hash_original_method = "1C923E0661B9E6FB6B4C6C1FDCEBD767", hash_generated_method = "F9301553A5C55255DE505F8D1CFD16A1")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:45.125 -0400", hash_original_method = "1C923E0661B9E6FB6B4C6C1FDCEBD767", hash_generated_method = "11FE0A4041EEBD34B1ED186D48DC51C2")
     @DSModeled(DSC.SAFE)
     public boolean isStateful() {
         return dsTaint.getTaintBoolean();
@@ -286,12 +235,12 @@ public class ColorStateList implements Parcelable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:00.248 -0400", hash_original_method = "4327A241B2C451B5F5DDB6DF79352F03", hash_generated_method = "779C144A8CDC2572672FD75DFF3E9AE8")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:45.125 -0400", hash_original_method = "4327A241B2C451B5F5DDB6DF79352F03", hash_generated_method = "932BEAEA22A412CB2E69DB219E0CB847")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public int getColorForState(int[] stateSet, int defaultColor) {
-        dsTaint.addTaint(stateSet);
+        dsTaint.addTaint(stateSet[0]);
         dsTaint.addTaint(defaultColor);
-        final int setLength;
+        int setLength;
         setLength = mStateSpecs.length;
         {
             int i;
@@ -300,7 +249,7 @@ public class ColorStateList implements Parcelable {
                 int[] stateSpec;
                 stateSpec = mStateSpecs[i];
                 {
-                    boolean var0BC14A81E745300E188A9AE767EF71BA_1818944849 = (StateSet.stateSetMatches(stateSpec, stateSet));
+                    boolean var0BC14A81E745300E188A9AE767EF71BA_1934885157 = (StateSet.stateSetMatches(stateSpec, stateSet));
                 } //End collapsed parenthetic
             } //End block
         } //End collapsed parenthetic
@@ -317,7 +266,7 @@ public class ColorStateList implements Parcelable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:00.249 -0400", hash_original_method = "28A9CB761E85FC98D00C67A51FDC0266", hash_generated_method = "DC7641F3FF81398B493E272305FEAB77")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:45.126 -0400", hash_original_method = "28A9CB761E85FC98D00C67A51FDC0266", hash_generated_method = "3A0FB854E03A022A3BA13394CAFE2961")
     @DSModeled(DSC.SAFE)
     public int getDefaultColor() {
         return dsTaint.getTaintInt();
@@ -326,10 +275,10 @@ public class ColorStateList implements Parcelable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:00.249 -0400", hash_original_method = "1483B624C0E3738F481F261D24FE0627", hash_generated_method = "20238D489AB2A136154EDE1374A182B7")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:45.127 -0400", hash_original_method = "1483B624C0E3738F481F261D24FE0627", hash_generated_method = "623C2A10C03E896B55F5F91EDCA18183")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public String toString() {
-        String var5CE206CEBA5D7B0739473F0643A3116B_919273719 = ("ColorStateList{" +
+        String var5CE206CEBA5D7B0739473F0643A3116B_1880737698 = ("ColorStateList{" +
                "mStateSpecs=" + Arrays.deepToString(mStateSpecs) +
                "mColors=" + Arrays.toString(mColors) +
                "mDefaultColor=" + mDefaultColor + '}');
@@ -342,7 +291,7 @@ public class ColorStateList implements Parcelable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:00.249 -0400", hash_original_method = "00F8174F9E89D0C972FA6D3F19742382", hash_generated_method = "7491C6FB42F78871A3F8EA322AF6B2FC")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:45.128 -0400", hash_original_method = "00F8174F9E89D0C972FA6D3F19742382", hash_generated_method = "ED77793910767EAAB4C12F70F75B9095")
     @DSModeled(DSC.SAFE)
     public int describeContents() {
         return dsTaint.getTaintInt();
@@ -351,12 +300,12 @@ public class ColorStateList implements Parcelable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:00.249 -0400", hash_original_method = "E1B2D8F50F6285FEE430316C6FD92D49", hash_generated_method = "D8BADC3626ACAB3BB04F4A7A52C14940")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:45.128 -0400", hash_original_method = "E1B2D8F50F6285FEE430316C6FD92D49", hash_generated_method = "00F26585C3B31D040B199C50B98D5AF6")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     public void writeToParcel(Parcel dest, int flags) {
-        dsTaint.addTaint(dest.dsTaint);
         dsTaint.addTaint(flags);
-        final int N;
+        dsTaint.addTaint(dest.dsTaint);
+        int N;
         N = mStateSpecs.length;
         dest.writeInt(N);
         {
@@ -377,6 +326,51 @@ public class ColorStateList implements Parcelable {
     }
 
     
-}
+    private static final int[][] EMPTY = new int[][] { new int[0] };
+    private static final SparseArray<WeakReference<ColorStateList>> sCache =
+                            new SparseArray<WeakReference<ColorStateList>>();
+    public static final Parcelable.Creator<ColorStateList> CREATOR = new Parcelable.Creator<ColorStateList>() {        
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:45.129 -0400", hash_original_method = "64FF1FD2247EB9835068885DC70066CC", hash_generated_method = "107881D5DE4A87732A4D60AB3085756E")
+        //DSFIXME:  CODE0002: Requires DSC value to be set
+        public ColorStateList[] newArray(int size) {
+            dsTaint.addTaint(size);
+            ColorStateList[] var2EFB302CE56736D03F9DA278C8859BA4_187360377 = (new ColorStateList[size]);
+            return (ColorStateList[])dsTaint.getTaint();
+            // ---------- Original Method ----------
+            //return new ColorStateList[size];
+        }
 
+        
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:45.129 -0400", hash_original_method = "99D1C755B99765C149DCD766D7B3653A", hash_generated_method = "A23A4FE00F76FE3E97236E0A3ED2EBB9")
+        //DSFIXME:  CODE0002: Requires DSC value to be set
+        public ColorStateList createFromParcel(Parcel source) {
+            dsTaint.addTaint(source.dsTaint);
+            int N;
+            N = source.readInt();
+            int[][] stateSpecs;
+            stateSpecs = new int[N][];
+            {
+                int i;
+                i = 0;
+                {
+                    stateSpecs[i] = source.createIntArray();
+                } //End block
+            } //End collapsed parenthetic
+            int[] colors;
+            colors = source.createIntArray();
+            ColorStateList var68041828BDE6AAA7C173D24BF6CAA1CB_624562718 = (new ColorStateList(stateSpecs, colors));
+            return (ColorStateList)dsTaint.getTaint();
+            // ---------- Original Method ----------
+            //final int N = source.readInt();
+            //int[][] stateSpecs = new int[N][];
+            //for (int i=0; i<N; i++) {
+                //stateSpecs[i] = source.createIntArray();
+            //}
+            //int[] colors = source.createIntArray();
+            //return new ColorStateList(stateSpecs, colors);
+        }
+
+        
+}; //Transformed anonymous class
+}
 

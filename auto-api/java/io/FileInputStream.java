@@ -2,12 +2,11 @@ package java.io;
 
 // Droidsafe Imports
 import droidsafe.helpers.*;
-import droidsafe.runtime.DroidSafeAndroidRuntime;
 import droidsafe.annotations.*;
+import droidsafe.runtime.*;
 
-// import Iterator to deal with enhanced for loop translation
+// needed for enhanced for control translations
 import java.util.Iterator;
-
 import dalvik.system.CloseGuard;
 import java.nio.NioUtils;
 import java.nio.channels.FileChannel;
@@ -21,16 +20,16 @@ import static libcore.io.OsConstants.*;
 
 public class FileInputStream extends InputStream implements Closeable {
     private FileDescriptor fd;
-    private final boolean shouldClose;
+    private boolean shouldClose;
     private FileChannel channel;
-    private final CloseGuard guard = CloseGuard.get();
+    private CloseGuard guard = CloseGuard.get();
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:11.452 -0400", hash_original_method = "1BD49D518996D312C80F5CC2297619D7", hash_generated_method = "A746B8E131F428E87B4EC0616B3FC9B5")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:24.764 -0400", hash_original_method = "1BD49D518996D312C80F5CC2297619D7", hash_generated_method = "A02D5CBA8D2D341C63FDD0741282A53E")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public FileInputStream(File file) throws FileNotFoundException {
         dsTaint.addTaint(file.dsTaint);
-        if(DroidSafeAndroidRuntime.control) {
-            throw new NullPointerException("file == null");
+        {
+            if (DroidSafeAndroidRuntime.control) throw new NullPointerException("file == null");
         } //End block
         this.fd = IoBridge.open(file.getAbsolutePath(), O_RDONLY);
         this.shouldClose = true;
@@ -45,12 +44,12 @@ public class FileInputStream extends InputStream implements Closeable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:11.453 -0400", hash_original_method = "9A99F3F0C17344BC7A4198604236E89C", hash_generated_method = "57899219421C01F99EC05F73D648BBE3")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:24.765 -0400", hash_original_method = "9A99F3F0C17344BC7A4198604236E89C", hash_generated_method = "82F7BBC73466DFEF6ADD015645676E51")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     public FileInputStream(FileDescriptor fd) {
         dsTaint.addTaint(fd.dsTaint);
-        if(DroidSafeAndroidRuntime.control) {
-            throw new NullPointerException("fd == null");
+        {
+            if (DroidSafeAndroidRuntime.control) throw new NullPointerException("fd == null");
         } //End block
         this.shouldClose = false;
         // ---------- Original Method ----------
@@ -62,7 +61,7 @@ public class FileInputStream extends InputStream implements Closeable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:11.453 -0400", hash_original_method = "3B135756B4C06BFF0359EE9E41EEDC20", hash_generated_method = "A2E4A0FD3BFCEF26196876741D2C90C4")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:24.765 -0400", hash_original_method = "3B135756B4C06BFF0359EE9E41EEDC20", hash_generated_method = "0CF0490879DDF9D09886F21172D9AAF0")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public FileInputStream(String path) throws FileNotFoundException {
         this(new File(path));
@@ -71,19 +70,19 @@ public class FileInputStream extends InputStream implements Closeable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:11.453 -0400", hash_original_method = "EBD7B964937B6AA7FA3657DA1AAC30BC", hash_generated_method = "A81DF088EC088DC380310EFFAB79761A")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:24.765 -0400", hash_original_method = "EBD7B964937B6AA7FA3657DA1AAC30BC", hash_generated_method = "AF8D6FFD26E14E9587C28CF55386AE2C")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     @Override
     public int available() throws IOException {
-        int var9C891A36C646640680B2116257EF3205_624469651 = (IoBridge.available(fd));
+        int var9C891A36C646640680B2116257EF3205_276520214 = (IoBridge.available(fd));
         return dsTaint.getTaintInt();
         // ---------- Original Method ----------
         //return IoBridge.available(fd);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:11.453 -0400", hash_original_method = "F8E8B4DFEA301034B0C9D2DA47B66D8A", hash_generated_method = "1CC7D26A4F0EE263E12B684B6C157B53")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:24.765 -0400", hash_original_method = "F8E8B4DFEA301034B0C9D2DA47B66D8A", hash_generated_method = "CA7B11D8D9D676C2D46C3747A0F9596F")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     @Override
     public void close() throws IOException {
         guard.close();
@@ -113,8 +112,8 @@ public class FileInputStream extends InputStream implements Closeable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:11.453 -0400", hash_original_method = "5577B21C22C8702738A871739D038C15", hash_generated_method = "C0BCF3B286A2315D59F9F0828713B8A2")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:24.766 -0400", hash_original_method = "5577B21C22C8702738A871739D038C15", hash_generated_method = "65066866CC4C814D801C4B4403AC35AE")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     @Override
     protected void finalize() throws IOException {
         try 
@@ -132,7 +131,7 @@ public class FileInputStream extends InputStream implements Closeable {
             } //End block
             catch (Throwable t)
             {
-                throw new AssertionError(t);
+                if (DroidSafeAndroidRuntime.control) throw new AssertionError(t);
             } //End block
         } //End block
         // ---------- Original Method ----------
@@ -151,7 +150,7 @@ public class FileInputStream extends InputStream implements Closeable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:11.453 -0400", hash_original_method = "BB4E25A77FBA5E31003F6019B5643EE2", hash_generated_method = "D2AB08197D9D9FDD55E9755828BDE580")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:24.766 -0400", hash_original_method = "BB4E25A77FBA5E31003F6019B5643EE2", hash_generated_method = "AC3247DE01B3ADBA517676ECE0DA316F")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public FileChannel getChannel() {
         {
@@ -170,7 +169,7 @@ public class FileInputStream extends InputStream implements Closeable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:11.453 -0400", hash_original_method = "7178DA6FA6DD367775EBAB657FD1BDA0", hash_generated_method = "5EEBEE949DA2AB28C9F4160248A81D9F")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:24.766 -0400", hash_original_method = "7178DA6FA6DD367775EBAB657FD1BDA0", hash_generated_method = "8A875069024AA7167BD98A27CFD5212E")
     @DSModeled(DSC.SAFE)
     public final FileDescriptor getFD() throws IOException {
         return (FileDescriptor)dsTaint.getTaint();
@@ -179,38 +178,38 @@ public class FileInputStream extends InputStream implements Closeable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:11.453 -0400", hash_original_method = "DEBABCFB0D5C81DCE0E37961227F43C9", hash_generated_method = "C2B81109798C7DEA75911EFCD1C62396")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:24.767 -0400", hash_original_method = "DEBABCFB0D5C81DCE0E37961227F43C9", hash_generated_method = "D636E2C342E32D0CC58B3DC3EC446F6B")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     @Override
     public int read() throws IOException {
-        int var5941BF1153E2E81479FC3BECE4E461FF_1517565138 = (Streams.readSingleByte(this));
+        int var5941BF1153E2E81479FC3BECE4E461FF_177610283 = (Streams.readSingleByte(this));
         return dsTaint.getTaintInt();
         // ---------- Original Method ----------
         //return Streams.readSingleByte(this);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:11.453 -0400", hash_original_method = "C5A4FB68C0A55B7975F40A4160EB1CAC", hash_generated_method = "573BAF99D35207A68492447566EF9E7A")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:24.767 -0400", hash_original_method = "C5A4FB68C0A55B7975F40A4160EB1CAC", hash_generated_method = "8541CBDA1734EA8EC6B65FDC7D4FEAEB")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     @Override
     public int read(byte[] buffer, int byteOffset, int byteCount) throws IOException {
-        dsTaint.addTaint(buffer);
         dsTaint.addTaint(byteOffset);
+        dsTaint.addTaint(buffer[0]);
         dsTaint.addTaint(byteCount);
-        int varA119A82C704C62A3513B82F79810D9CB_267947955 = (IoBridge.read(fd, buffer, byteOffset, byteCount));
+        int varA119A82C704C62A3513B82F79810D9CB_502637980 = (IoBridge.read(fd, buffer, byteOffset, byteCount));
         return dsTaint.getTaintInt();
         // ---------- Original Method ----------
         //return IoBridge.read(fd, buffer, byteOffset, byteCount);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:11.453 -0400", hash_original_method = "4138A4F75DA401A9AB2AB0F0CF384113", hash_generated_method = "7722A2A35F36C5E58548345FEE27CF22")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:24.767 -0400", hash_original_method = "4138A4F75DA401A9AB2AB0F0CF384113", hash_generated_method = "0EA11DEB23E33DAA45E702192F03E521")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     @Override
     public long skip(long byteCount) throws IOException {
         dsTaint.addTaint(byteCount);
-        if(DroidSafeAndroidRuntime.control) {
-            throw new IOException("byteCount < 0: " + byteCount);
+        {
+            if (DroidSafeAndroidRuntime.control) throw new IOException("byteCount < 0: " + byteCount);
         } //End block
         try 
         {
@@ -219,9 +218,9 @@ public class FileInputStream extends InputStream implements Closeable {
         catch (ErrnoException errnoException)
         {
             {
-                long var4A2E40941A54551A3C4ADC5C3F68F40B_553843137 = (super.skip(byteCount));
+                long var4A2E40941A54551A3C4ADC5C3F68F40B_1448408250 = (super.skip(byteCount));
             } //End block
-            throw errnoException.rethrowAsIOException();
+            if (DroidSafeAndroidRuntime.control) throw errnoException.rethrowAsIOException();
         } //End block
         return dsTaint.getTaintLong();
         // ---------- Original Method ----------
@@ -241,5 +240,4 @@ public class FileInputStream extends InputStream implements Closeable {
 
     
 }
-
 

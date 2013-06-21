@@ -3,19 +3,21 @@ package java.lang;
 // Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
+import droidsafe.runtime.*;
 
+// needed for enhanced for control translations
+import java.util.Iterator;
 
 public class NumberFormatException extends IllegalArgumentException {
-    private static final long serialVersionUID = -2848938806368998894L;
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 16:38:46.389 -0400", hash_original_method = "5EB9584C9C40374DC4817FFEDC3C2AF2", hash_generated_method = "0CB536869F4EFA02E32EA6F09BFA9ECF")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:25.901 -0400", hash_original_method = "5EB9584C9C40374DC4817FFEDC3C2AF2", hash_generated_method = "CD0AD29B716E5461A290DCEA6E30AEFB")
     @DSModeled(DSC.SAFE)
     public NumberFormatException() {
         // ---------- Original Method ----------
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 16:38:46.390 -0400", hash_original_method = "E8CAE1FBBA27FF2762363375A55E9E2D", hash_generated_method = "F482BA614CBFBB5F662EDA805E7F6A05")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:25.902 -0400", hash_original_method = "E8CAE1FBBA27FF2762363375A55E9E2D", hash_generated_method = "24DD8058BF00CD2383E7D4CEC8B87B78")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public NumberFormatException(String detailMessage) {
         super(detailMessage);
@@ -24,6 +26,6 @@ public class NumberFormatException extends IllegalArgumentException {
     }
 
     
+    private static final long serialVersionUID = -2848938806368998894L;
 }
-
 

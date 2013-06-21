@@ -2,18 +2,17 @@ package java.io;
 
 // Droidsafe Imports
 import droidsafe.helpers.*;
-import droidsafe.runtime.DroidSafeAndroidRuntime;
 import droidsafe.annotations.*;
+import droidsafe.runtime.*;
 
-// import Iterator to deal with enhanced for loop translation
+// needed for enhanced for control translations
 import java.util.Iterator;
-
 
 public abstract class Writer implements Appendable, Closeable, Flushable {
     protected Object lock;
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:11.714 -0400", hash_original_method = "673B7AADE5290DAEA83488F65491132B", hash_generated_method = "0DEB66B4640DD4342CA6E68BE765F107")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:25.358 -0400", hash_original_method = "673B7AADE5290DAEA83488F65491132B", hash_generated_method = "A151A94197A0C9FE391BFFF503DB9D13")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     protected Writer() {
         lock = this;
         // ---------- Original Method ----------
@@ -21,12 +20,12 @@ public abstract class Writer implements Appendable, Closeable, Flushable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:11.714 -0400", hash_original_method = "D96C97132BD2547E52536C41B19A9E8C", hash_generated_method = "31E0835CE44C08677190B91EC8C2DBD7")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:25.358 -0400", hash_original_method = "D96C97132BD2547E52536C41B19A9E8C", hash_generated_method = "D1749FE32FF23B016759BFE32BC264E9")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     protected Writer(Object lock) {
         dsTaint.addTaint(lock.dsTaint);
         {
-            throw new NullPointerException();
+            if (DroidSafeAndroidRuntime.control) throw new NullPointerException();
         } //End block
         // ---------- Original Method ----------
         //if (lock == null) {
@@ -42,10 +41,10 @@ public abstract class Writer implements Appendable, Closeable, Flushable {
     public abstract void flush() throws IOException;
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:11.714 -0400", hash_original_method = "3613EF644BBA13BB917F4671227467C0", hash_generated_method = "8642F7C174C8975BB87F81728344B0D3")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:25.359 -0400", hash_original_method = "3613EF644BBA13BB917F4671227467C0", hash_generated_method = "AC94E8EFD96218E04311A687E74B3C40")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     public void write(char[] buf) throws IOException {
-        dsTaint.addTaint(buf);
+        dsTaint.addTaint(buf[0]);
         write(buf, 0, buf.length);
         // ---------- Original Method ----------
         //write(buf, 0, buf.length);
@@ -55,8 +54,8 @@ public abstract class Writer implements Appendable, Closeable, Flushable {
     public abstract void write(char[] buf, int offset, int count) throws IOException;
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:11.714 -0400", hash_original_method = "8F6AF6BA5D86D88C527DBF804753FF5E", hash_generated_method = "2F413AA4CE89737B61D9BE20E9F3FD08")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:25.359 -0400", hash_original_method = "8F6AF6BA5D86D88C527DBF804753FF5E", hash_generated_method = "11286F9F58AB95FF79C4D8713CA9E2DB")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     public void write(int oneChar) throws IOException {
         dsTaint.addTaint(oneChar);
         {
@@ -74,7 +73,7 @@ public abstract class Writer implements Appendable, Closeable, Flushable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:11.714 -0400", hash_original_method = "2CB0ACB6DB74A20D3FAA9874B0AAEB97", hash_generated_method = "E0E7162C5AA6C88870ED4B1546192C94")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:25.359 -0400", hash_original_method = "2CB0ACB6DB74A20D3FAA9874B0AAEB97", hash_generated_method = "CD7C4AF4AE7689375AE7813E8238B72D")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public void write(String str) throws IOException {
         dsTaint.addTaint(str);
@@ -84,16 +83,16 @@ public abstract class Writer implements Appendable, Closeable, Flushable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:11.714 -0400", hash_original_method = "2D3658401DD29E26DBD40724F9EE6A10", hash_generated_method = "4098D64B2D1C6A7A9666AFD9AF533A54")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:25.360 -0400", hash_original_method = "2D3658401DD29E26DBD40724F9EE6A10", hash_generated_method = "54C16B6F3B240ED25CA98F6B452AECE7")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public void write(String str, int offset, int count) throws IOException {
-        dsTaint.addTaint(str);
         dsTaint.addTaint(count);
+        dsTaint.addTaint(str);
         dsTaint.addTaint(offset);
         {
-            boolean var692490DEFA1D61E18F718478B787B00C_2136198034 = ((offset | count) < 0 || offset > str.length() - count);
+            boolean var692490DEFA1D61E18F718478B787B00C_230834954 = ((offset | count) < 0 || offset > str.length() - count);
             {
-            	if (DroidSafeAndroidRuntime.control) throw new StringIndexOutOfBoundsException(str, offset, count);
+                if (DroidSafeAndroidRuntime.control) throw new StringIndexOutOfBoundsException(str, offset, count);
             } //End block
         } //End collapsed parenthetic
         char[] buf;
@@ -114,8 +113,8 @@ public abstract class Writer implements Appendable, Closeable, Flushable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:11.714 -0400", hash_original_method = "9D99658000F160BDAECAED91EC9BFB5D", hash_generated_method = "51768D62E32C034FD5DD0205C499DD18")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:25.360 -0400", hash_original_method = "9D99658000F160BDAECAED91EC9BFB5D", hash_generated_method = "C32A527B2E0F876ED5C0AF429553DA84")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     public Writer append(char c) throws IOException {
         dsTaint.addTaint(c);
         write(c);
@@ -126,7 +125,7 @@ public abstract class Writer implements Appendable, Closeable, Flushable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:11.714 -0400", hash_original_method = "D993D81DE6953743EFA25FF281FB0E15", hash_generated_method = "C59823CF2141DBC888EACAC24C33FA6A")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:25.360 -0400", hash_original_method = "D993D81DE6953743EFA25FF281FB0E15", hash_generated_method = "CC24810DB57B13AFE6F8C296B08D6560")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public Writer append(CharSequence csq) throws IOException {
         dsTaint.addTaint(csq);
@@ -144,7 +143,7 @@ public abstract class Writer implements Appendable, Closeable, Flushable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:11.714 -0400", hash_original_method = "44B7413EC481F793F1919C886AE2AD0E", hash_generated_method = "C6C3DF86647037F210F81F1854D4A8ED")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:25.360 -0400", hash_original_method = "44B7413EC481F793F1919C886AE2AD0E", hash_generated_method = "552F6DEAB7D4D8378D5D90F372540C0B")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public Writer append(CharSequence csq, int start, int end) throws IOException {
         dsTaint.addTaint(start);
@@ -164,7 +163,7 @@ public abstract class Writer implements Appendable, Closeable, Flushable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:11.714 -0400", hash_original_method = "0FEA708DB7A5B3B6D16FEC9623D0EEF8", hash_generated_method = "72670A334E89D74D531B4ECE74FAA78A")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:25.361 -0400", hash_original_method = "0FEA708DB7A5B3B6D16FEC9623D0EEF8", hash_generated_method = "FDE27047AB1931599767795C9C8BC350")
     @DSModeled(DSC.SAFE)
      boolean checkError() {
         return dsTaint.getTaintBoolean();
@@ -174,5 +173,4 @@ public abstract class Writer implements Appendable, Closeable, Flushable {
 
     
 }
-
 

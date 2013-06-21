@@ -11,29 +11,37 @@ import java.util.*;
 
 public abstract class AbstractExecutorService implements ExecutorService {
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-12 17:14:39.362 -0400", hash_original_method = "68FC815A084AC2ED05B7AEC372706304", hash_generated_method = "859DE271094F8AB8BB29F3EDBFFCECD0")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:34.295 -0400", hash_original_method = "31ECDC66F28FD0CFEE08F4ABD518FEDA", hash_generated_method = "31ECDC66F28FD0CFEE08F4ABD518FEDA")
+        public AbstractExecutorService ()
+    {
+    }
+
+
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:34.295 -0400", hash_original_method = "68FC815A084AC2ED05B7AEC372706304", hash_generated_method = "843F84029734B7D920A5FEDA78454B7F")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     protected <T> RunnableFuture<T> newTaskFor(Runnable runnable, T value) {
         dsTaint.addTaint(runnable.dsTaint);
         dsTaint.addTaint(value.dsTaint);
+        RunnableFuture<T> var4EDD2A855DAE9AE386B4FD7B5DABCF33_1736773207 = (new FutureTask<T>(runnable, value));
         return (RunnableFuture<T>)dsTaint.getTaint();
         // ---------- Original Method ----------
         //return new FutureTask<T>(runnable, value);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-12 17:14:39.376 -0400", hash_original_method = "5FB2799215A846560527597078EAB474", hash_generated_method = "0A00049593FF80A2EB0A944332D0D680")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:34.295 -0400", hash_original_method = "5FB2799215A846560527597078EAB474", hash_generated_method = "9F41291A7F5DF824DB0E2ECED221CE35")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     protected <T> RunnableFuture<T> newTaskFor(Callable<T> callable) {
         dsTaint.addTaint(callable.dsTaint);
+        RunnableFuture<T> var285ED95BA3DA17FC11601A092D4365C0_1850966978 = (new FutureTask<T>(callable));
         return (RunnableFuture<T>)dsTaint.getTaint();
         // ---------- Original Method ----------
         //return new FutureTask<T>(callable);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-12 17:14:39.404 -0400", hash_original_method = "049AFBF6C6F134F34D289DFB97D38727", hash_generated_method = "0C6C8651110CFD0972B14656AE3CE2DC")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:34.296 -0400", hash_original_method = "049AFBF6C6F134F34D289DFB97D38727", hash_generated_method = "056AEFB42A7D9105BBA555900777000F")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     public Future<?> submit(Runnable task) {
         dsTaint.addTaint(task.dsTaint);
         if (DroidSafeAndroidRuntime.control) throw new NullPointerException();
@@ -49,8 +57,8 @@ public abstract class AbstractExecutorService implements ExecutorService {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-12 17:14:39.431 -0400", hash_original_method = "30E9EFFFABD0E5EC417E237355DE18FD", hash_generated_method = "845856CE104B06BEFB8798CBE3E29FA4")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:34.296 -0400", hash_original_method = "30E9EFFFABD0E5EC417E237355DE18FD", hash_generated_method = "C2BF40785FCE3AC0A1910F6CB0D734FD")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     public <T> Future<T> submit(Runnable task, T result) {
         dsTaint.addTaint(result.dsTaint);
         dsTaint.addTaint(task.dsTaint);
@@ -67,8 +75,8 @@ public abstract class AbstractExecutorService implements ExecutorService {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-12 17:14:39.462 -0400", hash_original_method = "F1883381F3EE85BA65E359E467E69859", hash_generated_method = "088FF2A6E99ECD14FDD10F4B9CA0A3CE")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:34.296 -0400", hash_original_method = "F1883381F3EE85BA65E359E467E69859", hash_generated_method = "25E9277D03AC2AA553A57C20746DF55F")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     public <T> Future<T> submit(Callable<T> task) {
         dsTaint.addTaint(task.dsTaint);
         if (DroidSafeAndroidRuntime.control) throw new NullPointerException();
@@ -84,7 +92,7 @@ public abstract class AbstractExecutorService implements ExecutorService {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-12 17:14:39.591 -0400", hash_original_method = "7ADE924855E97F021AF211771D5543D6", hash_generated_method = "C0A029D5C56215AE96FC17336EF21BB1")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:34.297 -0400", hash_original_method = "7ADE924855E97F021AF211771D5543D6", hash_generated_method = "083A23843751BD26B89A8783983D4BB6")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     private <T> T doInvokeAny(Collection<? extends Callable<T>> tasks,
                             boolean timed, long nanos) throws InterruptedException, ExecutionException, TimeoutException {
@@ -109,7 +117,6 @@ public abstract class AbstractExecutorService implements ExecutorService {
             Iterator<? extends Callable<T>> it;
             it = tasks.iterator();
             futures.add(ecs.submit(it.next()));
-            --ntasks;
             int active;
             active = 1;
             {
@@ -117,9 +124,7 @@ public abstract class AbstractExecutorService implements ExecutorService {
                 f = ecs.poll();
                 {
                     {
-                        --ntasks;
                         futures.add(ecs.submit(it.next()));
-                        ++active;
                     } //End block
                     {
                         f = ecs.poll(nanos, TimeUnit.NANOSECONDS);
@@ -132,10 +137,9 @@ public abstract class AbstractExecutorService implements ExecutorService {
                     f = ecs.take();
                 } //End block
                 {
-                    --active;
                     try 
                     {
-                        T var3594130D7EAF41224D5BED58875728BE_542011490 = (f.get());
+                        T var3594130D7EAF41224D5BED58875728BE_1130737343 = (f.get());
                     } //End block
                     catch (ExecutionException eex)
                     {
@@ -153,9 +157,9 @@ public abstract class AbstractExecutorService implements ExecutorService {
         finally 
         {
             {
-                Iterator<Future<T>> var562C00083CDEF6998493FFDF1B4B277F_1191503385 = futures.iterator();
-                var562C00083CDEF6998493FFDF1B4B277F_1191503385.hasNext();
-                Future<T> f = var562C00083CDEF6998493FFDF1B4B277F_1191503385.next();
+                Iterator<Future<T>> var562C00083CDEF6998493FFDF1B4B277F_50226114 = (futures).iterator();
+                var562C00083CDEF6998493FFDF1B4B277F_50226114.hasNext();
+                Future<T> f = var562C00083CDEF6998493FFDF1B4B277F_50226114.next();
                 f.cancel(true);
             } //End collapsed parenthetic
         } //End block
@@ -165,13 +169,13 @@ public abstract class AbstractExecutorService implements ExecutorService {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-12 17:14:39.652 -0400", hash_original_method = "97F8F3146846E948F707846D19B902DB", hash_generated_method = "C710717BC4038C098BD8793E5EBDB676")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:34.298 -0400", hash_original_method = "97F8F3146846E948F707846D19B902DB", hash_generated_method = "9F48037CFA803EF01EEBF174CBAD7E2D")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public <T> T invokeAny(Collection<? extends Callable<T>> tasks) throws InterruptedException, ExecutionException {
         dsTaint.addTaint(tasks.dsTaint);
         try 
         {
-            T varA5CCAADE6AF4AE143E03C1ED388B767A_64367517 = (doInvokeAny(tasks, false, 0));
+            T varA5CCAADE6AF4AE143E03C1ED388B767A_1457302944 = (doInvokeAny(tasks, false, 0));
         } //End block
         catch (TimeoutException cannotHappen)
         { }
@@ -186,21 +190,21 @@ public abstract class AbstractExecutorService implements ExecutorService {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-12 17:14:39.688 -0400", hash_original_method = "A9D2441D5895F636CD5D7E2B2C0159D4", hash_generated_method = "16867FC80288536EE4A14D2BB998AB78")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:34.298 -0400", hash_original_method = "A9D2441D5895F636CD5D7E2B2C0159D4", hash_generated_method = "9514A9C5C299164F2A134B93BE44408A")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public <T> T invokeAny(Collection<? extends Callable<T>> tasks,
                            long timeout, TimeUnit unit) throws InterruptedException, ExecutionException, TimeoutException {
         dsTaint.addTaint(unit.dsTaint);
         dsTaint.addTaint(tasks.dsTaint);
         dsTaint.addTaint(timeout);
-        T var7014DB679E7D20E833AAE007B001A8EA_1065550151 = (doInvokeAny(tasks, true, unit.toNanos(timeout)));
+        T var7014DB679E7D20E833AAE007B001A8EA_1312890779 = (doInvokeAny(tasks, true, unit.toNanos(timeout)));
         return (T)dsTaint.getTaint();
         // ---------- Original Method ----------
         //return doInvokeAny(tasks, true, unit.toNanos(timeout));
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-12 17:14:39.703 -0400", hash_original_method = "B24747B6507D912BAB1561A4B1530E75", hash_generated_method = "1215D4B42DF5D9B163E773A6C7A33B11")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:34.300 -0400", hash_original_method = "B24747B6507D912BAB1561A4B1530E75", hash_generated_method = "8402705E3FDF4A9048297270A3D8D6F1")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public <T> List<Future<T>> invokeAll(Collection<? extends Callable<T>> tasks) throws InterruptedException {
         dsTaint.addTaint(tasks.dsTaint);
@@ -212,9 +216,9 @@ public abstract class AbstractExecutorService implements ExecutorService {
         try 
         {
             {
-                Iterator<? extends Callable<T>> var23A0DE9A3AA56E22EDA61FDE4D4CCD8A_928259873 = tasks.iterator();
-                var23A0DE9A3AA56E22EDA61FDE4D4CCD8A_928259873.hasNext();
-                Callable<T> t = var23A0DE9A3AA56E22EDA61FDE4D4CCD8A_928259873.next();
+                Iterator<Callable<T>> var23A0DE9A3AA56E22EDA61FDE4D4CCD8A_2133254759 = (tasks).iterator();
+                var23A0DE9A3AA56E22EDA61FDE4D4CCD8A_2133254759.hasNext();
+                Callable<T> t = var23A0DE9A3AA56E22EDA61FDE4D4CCD8A_2133254759.next();
                 {
                     RunnableFuture<T> f;
                     f = newTaskFor(t);
@@ -223,12 +227,12 @@ public abstract class AbstractExecutorService implements ExecutorService {
                 } //End block
             } //End collapsed parenthetic
             {
-                Iterator<Future<T>> var562C00083CDEF6998493FFDF1B4B277F_196813851 = futures.iterator();
-                var562C00083CDEF6998493FFDF1B4B277F_196813851.hasNext();
-                Future<T> f = var562C00083CDEF6998493FFDF1B4B277F_196813851.next();
+                Iterator<Future<T>> var562C00083CDEF6998493FFDF1B4B277F_884349501 = (futures).iterator();
+                var562C00083CDEF6998493FFDF1B4B277F_884349501.hasNext();
+                Future<T> f = var562C00083CDEF6998493FFDF1B4B277F_884349501.next();
                 {
                     {
-                        boolean varF2D8200A41381633042302AEDF579A81_473533873 = (!f.isDone());
+                        boolean varF2D8200A41381633042302AEDF579A81_2018447535 = (!f.isDone());
                         {
                             try 
                             {
@@ -247,9 +251,9 @@ public abstract class AbstractExecutorService implements ExecutorService {
         finally 
         {
             {
-                Iterator<Future<T>> var562C00083CDEF6998493FFDF1B4B277F_1106217606 = futures.iterator();
-                var562C00083CDEF6998493FFDF1B4B277F_1106217606.hasNext();
-                Future<T> f = var562C00083CDEF6998493FFDF1B4B277F_1106217606.next();
+                Iterator<Future<T>> var562C00083CDEF6998493FFDF1B4B277F_2118357775 = (futures).iterator();
+                var562C00083CDEF6998493FFDF1B4B277F_2118357775.hasNext();
+                Future<T> f = var562C00083CDEF6998493FFDF1B4B277F_2118357775.next();
                 f.cancel(true);
             } //End collapsed parenthetic
         } //End block
@@ -259,7 +263,7 @@ public abstract class AbstractExecutorService implements ExecutorService {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-12 17:14:39.738 -0400", hash_original_method = "14FC4B905592A585E278FFB06E2B3922", hash_generated_method = "EFDD4B3E8FFA912D7EAE116D6DDF40EC")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:34.303 -0400", hash_original_method = "14FC4B905592A585E278FFB06E2B3922", hash_generated_method = "60145E31F6AF49A6F60D2FCA9331AC91")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public <T> List<Future<T>> invokeAll(Collection<? extends Callable<T>> tasks,
                                          long timeout, TimeUnit unit) throws InterruptedException {
@@ -276,9 +280,9 @@ public abstract class AbstractExecutorService implements ExecutorService {
         try 
         {
             {
-                Iterator<? extends Callable<T>> var23A0DE9A3AA56E22EDA61FDE4D4CCD8A_1890855274 = tasks.iterator();
-                var23A0DE9A3AA56E22EDA61FDE4D4CCD8A_1890855274.hasNext();
-                Callable<T> t = var23A0DE9A3AA56E22EDA61FDE4D4CCD8A_1890855274.next();
+                Iterator<Callable<T>> var23A0DE9A3AA56E22EDA61FDE4D4CCD8A_27577047 = (tasks).iterator();
+                var23A0DE9A3AA56E22EDA61FDE4D4CCD8A_27577047.hasNext();
+                Callable<T> t = var23A0DE9A3AA56E22EDA61FDE4D4CCD8A_27577047.next();
                 futures.add(newTaskFor(t));
             } //End collapsed parenthetic
             long lastTime;
@@ -286,7 +290,7 @@ public abstract class AbstractExecutorService implements ExecutorService {
             Iterator<Future<T>> it;
             it = futures.iterator();
             {
-                boolean varB2FF4435B274CC4BE01D264DEA08F957_458332366 = (it.hasNext());
+                boolean varB2FF4435B274CC4BE01D264DEA08F957_1911435731 = (it.hasNext());
                 {
                     execute((Runnable)(it.next()));
                     long now;
@@ -296,12 +300,12 @@ public abstract class AbstractExecutorService implements ExecutorService {
                 } //End block
             } //End collapsed parenthetic
             {
-                Iterator<Future<T>> var562C00083CDEF6998493FFDF1B4B277F_495212479 = futures.iterator();
-                var562C00083CDEF6998493FFDF1B4B277F_495212479.hasNext();
-                Future<T> f = var562C00083CDEF6998493FFDF1B4B277F_495212479.next();
+                Iterator<Future<T>> var562C00083CDEF6998493FFDF1B4B277F_484316090 = (futures).iterator();
+                var562C00083CDEF6998493FFDF1B4B277F_484316090.hasNext();
+                Future<T> f = var562C00083CDEF6998493FFDF1B4B277F_484316090.next();
                 {
                     {
-                        boolean varF2D8200A41381633042302AEDF579A81_898833025 = (!f.isDone());
+                        boolean varF2D8200A41381633042302AEDF579A81_178601076 = (!f.isDone());
                         {
                             try 
                             {
@@ -326,9 +330,9 @@ public abstract class AbstractExecutorService implements ExecutorService {
         finally 
         {
             {
-                Iterator<Future<T>> var562C00083CDEF6998493FFDF1B4B277F_1574099020 = futures.iterator();
-                var562C00083CDEF6998493FFDF1B4B277F_1574099020.hasNext();
-                Future<T> f = var562C00083CDEF6998493FFDF1B4B277F_1574099020.next();
+                Iterator<Future<T>> var562C00083CDEF6998493FFDF1B4B277F_1296372337 = (futures).iterator();
+                var562C00083CDEF6998493FFDF1B4B277F_1296372337.hasNext();
+                Future<T> f = var562C00083CDEF6998493FFDF1B4B277F_1296372337.next();
                 f.cancel(true);
             } //End collapsed parenthetic
         } //End block
@@ -339,5 +343,4 @@ public abstract class AbstractExecutorService implements ExecutorService {
 
     
 }
-
 

@@ -3,10 +3,10 @@ package org.xml.sax;
 // Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
+import droidsafe.runtime.*;
 
-// import Iterator to deal with enhanced for loop translation
+// needed for enhanced for control translations
 import java.util.Iterator;
-
 import java.io.IOException;
 
 public interface EntityResolver {
@@ -18,4 +18,3 @@ public interface EntityResolver {
     throws SAXException, IOException;
 
 }
-

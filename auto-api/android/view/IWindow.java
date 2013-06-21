@@ -3,10 +3,10 @@ package android.view;
 // Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
+import droidsafe.runtime.*;
 
-// import Iterator to deal with enhanced for loop translation
+// needed for enhanced for control translations
 import java.util.Iterator;
-
 
 public interface IWindow extends android.os.IInterface
 {
@@ -418,4 +418,3 @@ public void dispatchDragEvent(android.view.DragEvent event) throws android.os.Re
 
 public void dispatchSystemUiVisibilityChanged(int seq, int globalVisibility, int localValue, int localChanges) throws android.os.RemoteException;
 }
-

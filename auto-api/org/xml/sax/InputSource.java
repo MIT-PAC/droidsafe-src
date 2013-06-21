@@ -3,10 +3,10 @@ package org.xml.sax;
 // Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
+import droidsafe.runtime.*;
 
-// import Iterator to deal with enhanced for loop translation
+// needed for enhanced for control translations
 import java.util.Iterator;
-
 import java.io.InputStream;
 import java.io.Reader;
 
@@ -17,15 +17,15 @@ public class InputSource {
     private String encoding;
     private Reader characterStream;
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:18.163 -0400", hash_original_method = "ECF04DED512C86950B6E52F582DBB4DE", hash_generated_method = "43D3D24E201E636C61DC4D04537A1631")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:43.412 -0400", hash_original_method = "ECF04DED512C86950B6E52F582DBB4DE", hash_generated_method = "179D2E0E4F762DB57C25831D6BADEBE2")
     @DSModeled(DSC.SAFE)
     public InputSource() {
         // ---------- Original Method ----------
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:18.163 -0400", hash_original_method = "7919F547FCB87899F58CF069384E6AAD", hash_generated_method = "85F8AC17DC9760CC52DE0B4D20D56442")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:43.413 -0400", hash_original_method = "7919F547FCB87899F58CF069384E6AAD", hash_generated_method = "BB4568B9E93602AD3D665188404FC5A8")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     public InputSource(String systemId) {
         dsTaint.addTaint(systemId);
         setSystemId(systemId);
@@ -34,8 +34,8 @@ public class InputSource {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:18.163 -0400", hash_original_method = "7C3B72CDCF95023F438211CC038E601E", hash_generated_method = "00A8B3FCF0BEFA77C4C931C9662EAEDB")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:43.413 -0400", hash_original_method = "7C3B72CDCF95023F438211CC038E601E", hash_generated_method = "60BBA91BB534B942EB1EE0928BBDB417")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     public InputSource(InputStream byteStream) {
         dsTaint.addTaint(byteStream.dsTaint);
         setByteStream(byteStream);
@@ -44,8 +44,8 @@ public class InputSource {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:18.163 -0400", hash_original_method = "F589E4069755916CEDC29D447D78E1F5", hash_generated_method = "EC9044F58300D4C0535AF2BF2BD041F6")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:43.413 -0400", hash_original_method = "F589E4069755916CEDC29D447D78E1F5", hash_generated_method = "DE28031F0C4EE3D50B5BEE8427A971CE")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     public InputSource(Reader characterStream) {
         dsTaint.addTaint(characterStream.dsTaint);
         setCharacterStream(characterStream);
@@ -54,7 +54,7 @@ public class InputSource {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:18.163 -0400", hash_original_method = "0C418225BFB03C04E3636F3891B47A3E", hash_generated_method = "4E7146FBEBB06ED988760E8544E754CA")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:43.413 -0400", hash_original_method = "0C418225BFB03C04E3636F3891B47A3E", hash_generated_method = "A63FB664BFF43757802E46F09831E67B")
     @DSModeled(DSC.SAFE)
     public void setPublicId(String publicId) {
         dsTaint.addTaint(publicId);
@@ -63,7 +63,7 @@ public class InputSource {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:18.163 -0400", hash_original_method = "C19BBE926A67132A1C6BC386100A3E69", hash_generated_method = "7C29F0C6DC4E298965F868DC34008C67")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:43.413 -0400", hash_original_method = "C19BBE926A67132A1C6BC386100A3E69", hash_generated_method = "80E14D34056E183CC70BFA8E6AC62A29")
     @DSModeled(DSC.SAFE)
     public String getPublicId() {
         return dsTaint.getTaintString();
@@ -72,7 +72,7 @@ public class InputSource {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:18.163 -0400", hash_original_method = "77F5337B905F22D1C71F7C949FEF5117", hash_generated_method = "A0E2D8CB00AF551A50C3F8763A1E1CDB")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:43.414 -0400", hash_original_method = "77F5337B905F22D1C71F7C949FEF5117", hash_generated_method = "CA0D92AF74DF0B83297874E289017F25")
     @DSModeled(DSC.SAFE)
     public void setSystemId(String systemId) {
         dsTaint.addTaint(systemId);
@@ -81,7 +81,7 @@ public class InputSource {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:18.163 -0400", hash_original_method = "8088708D8DEEE6054468B7FD77400E50", hash_generated_method = "6EF27482968D634EC06A5CE842D09947")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:43.414 -0400", hash_original_method = "8088708D8DEEE6054468B7FD77400E50", hash_generated_method = "A23C365E1375B215042F45D99272D5FD")
     @DSModeled(DSC.SAFE)
     public String getSystemId() {
         return dsTaint.getTaintString();
@@ -90,7 +90,7 @@ public class InputSource {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:18.163 -0400", hash_original_method = "E15E53FA80250CBE7F24584A185B9018", hash_generated_method = "93FE9133342217D1EB151E07944A671B")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:43.414 -0400", hash_original_method = "E15E53FA80250CBE7F24584A185B9018", hash_generated_method = "E9640E0C6E8A309B61883BEF9C3CC06E")
     @DSModeled(DSC.SAFE)
     public void setByteStream(InputStream byteStream) {
         dsTaint.addTaint(byteStream.dsTaint);
@@ -99,7 +99,7 @@ public class InputSource {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:18.163 -0400", hash_original_method = "831A861201E96F794D74C2B24BAB3555", hash_generated_method = "5B294BB62C265362CFDA82D4F15407B1")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:43.414 -0400", hash_original_method = "831A861201E96F794D74C2B24BAB3555", hash_generated_method = "E50636A5CB8AF3C1F93436FF4BCA4B6D")
     @DSModeled(DSC.SAFE)
     public InputStream getByteStream() {
         return (InputStream)dsTaint.getTaint();
@@ -108,7 +108,7 @@ public class InputSource {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:18.163 -0400", hash_original_method = "109F4EE072FF4A68A1B686347AFE92DB", hash_generated_method = "EC1875A91083C01B81AE14EE21CA8B11")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:43.414 -0400", hash_original_method = "109F4EE072FF4A68A1B686347AFE92DB", hash_generated_method = "27156723D1E3FA1BA675915616B1D20A")
     @DSModeled(DSC.SAFE)
     public void setEncoding(String encoding) {
         dsTaint.addTaint(encoding);
@@ -117,7 +117,7 @@ public class InputSource {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:18.163 -0400", hash_original_method = "ECC6E581C26F132636CDCE9C9A5E5807", hash_generated_method = "D4B53047CB2B7D0B87000BF925D71E5E")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:43.415 -0400", hash_original_method = "ECC6E581C26F132636CDCE9C9A5E5807", hash_generated_method = "CBEFCA9969C56A89ACF5940A8F5F0AD9")
     @DSModeled(DSC.SAFE)
     public String getEncoding() {
         return dsTaint.getTaintString();
@@ -126,7 +126,7 @@ public class InputSource {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:18.163 -0400", hash_original_method = "079C1AFEC48E7E3C6462740060167438", hash_generated_method = "18D10E281F4CAF0426170010A4E7E0BF")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:43.415 -0400", hash_original_method = "079C1AFEC48E7E3C6462740060167438", hash_generated_method = "001C942FB671CF37380ED25EA05CB6A0")
     @DSModeled(DSC.SAFE)
     public void setCharacterStream(Reader characterStream) {
         dsTaint.addTaint(characterStream.dsTaint);
@@ -135,7 +135,7 @@ public class InputSource {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:18.163 -0400", hash_original_method = "420D22C3C623A59BA758E1AC6387B142", hash_generated_method = "EDDC1CE74AD341E9931D8EF010A34074")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:43.415 -0400", hash_original_method = "420D22C3C623A59BA758E1AC6387B142", hash_generated_method = "75287713F86A4BEBB055539543B02282")
     @DSModeled(DSC.SAFE)
     public Reader getCharacterStream() {
         return (Reader)dsTaint.getTaint();
@@ -145,5 +145,4 @@ public class InputSource {
 
     
 }
-
 

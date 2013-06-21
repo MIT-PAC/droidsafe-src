@@ -3,15 +3,15 @@ package android.content;
 // Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
+import droidsafe.runtime.*;
 
-// import Iterator to deal with enhanced for loop translation
+// needed for enhanced for control translations
 import java.util.Iterator;
 
-
 public class OperationApplicationException extends Exception {
-    private final int mNumSuccessfulYieldPoints;
+    private int mNumSuccessfulYieldPoints;
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:14:59.797 -0400", hash_original_method = "825A0D209F83C788198717CC73F99489", hash_generated_method = "EAE0888636D469FD0A7AD0411D576E11")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:42.061 -0400", hash_original_method = "825A0D209F83C788198717CC73F99489", hash_generated_method = "85FE8CBA0DFF6372570E3B97FB915BDB")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public OperationApplicationException() {
         super();
@@ -21,7 +21,7 @@ public class OperationApplicationException extends Exception {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:14:59.797 -0400", hash_original_method = "77E2AE76D845D6FB97485837BDB7758B", hash_generated_method = "D312ACC97D36C75CBED77BEAAA50D676")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:42.061 -0400", hash_original_method = "77E2AE76D845D6FB97485837BDB7758B", hash_generated_method = "3A3B6C011B29DFA15BB04DD2942D9DDE")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public OperationApplicationException(String message) {
         super(message);
@@ -32,7 +32,7 @@ public class OperationApplicationException extends Exception {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:14:59.797 -0400", hash_original_method = "F0F6059D3EFC4E5FE3F6EC4FF0F2FDFB", hash_generated_method = "94FB2E8B0B24A061275FBBB9739F844C")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:42.062 -0400", hash_original_method = "F0F6059D3EFC4E5FE3F6EC4FF0F2FDFB", hash_generated_method = "1AF34D3EF714ACA7F8FAD834AD687619")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public OperationApplicationException(String message, Throwable cause) {
         super(message, cause);
@@ -44,7 +44,7 @@ public class OperationApplicationException extends Exception {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:14:59.797 -0400", hash_original_method = "64BB28A032D4059B850837C1A5699554", hash_generated_method = "668155243B1DECD21F77594578E08387")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:42.062 -0400", hash_original_method = "64BB28A032D4059B850837C1A5699554", hash_generated_method = "8ADD89E42B88E93412798C526DEEBB03")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public OperationApplicationException(Throwable cause) {
         super(cause);
@@ -55,30 +55,28 @@ public class OperationApplicationException extends Exception {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:14:59.797 -0400", hash_original_method = "E4F3CE45A3791740F0C42342B2E05EC8", hash_generated_method = "8431AD22103AE68FE92DACC4A2879F8E")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:42.062 -0400", hash_original_method = "E4F3CE45A3791740F0C42342B2E05EC8", hash_generated_method = "7945E4FCBCE465FAEC653FABB2D76C09")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public OperationApplicationException(int numSuccessfulYieldPoints) {
         super();
         dsTaint.addTaint(numSuccessfulYieldPoints);
-        mNumSuccessfulYieldPoints = numSuccessfulYieldPoints;
         // ---------- Original Method ----------
         //mNumSuccessfulYieldPoints = numSuccessfulYieldPoints;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:14:59.798 -0400", hash_original_method = "8F9006EEA79EF42E9E468007193B747B", hash_generated_method = "453A4262D52676ABA8A441847344D3C7")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:42.062 -0400", hash_original_method = "8F9006EEA79EF42E9E468007193B747B", hash_generated_method = "52BEBF60DF7CBFCD7D4E3F11A33FACEE")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public OperationApplicationException(String message, int numSuccessfulYieldPoints) {
         super(message);
         dsTaint.addTaint(message);
         dsTaint.addTaint(numSuccessfulYieldPoints);
-        mNumSuccessfulYieldPoints = numSuccessfulYieldPoints;
         // ---------- Original Method ----------
         //mNumSuccessfulYieldPoints = numSuccessfulYieldPoints;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:14:59.798 -0400", hash_original_method = "0D03973B4F1A76863E3DF446BDE01596", hash_generated_method = "5739120E57730064A90D7068014C5FCD")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:42.063 -0400", hash_original_method = "0D03973B4F1A76863E3DF446BDE01596", hash_generated_method = "9607563B51D97930BF1EF55A640CDFF3")
     @DSModeled(DSC.SAFE)
     public int getNumSuccessfulYieldPoints() {
         return dsTaint.getTaintInt();
@@ -88,5 +86,4 @@ public class OperationApplicationException extends Exception {
 
     
 }
-
 

@@ -5,9 +5,8 @@ import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// import Iterator to deal with enhanced for loop translation
+// needed for enhanced for control translations
 import java.util.Iterator;
-
 import android.Manifest;
 import android.animation.LayoutTransition;
 import android.app.ActivityManagerNative;
@@ -77,48 +76,23 @@ import java.util.ArrayList;
 import java.util.List;
 
 public final class ViewRootImpl extends Handler implements ViewParent, View.AttachInfo.Callbacks, HardwareRenderer.HardwareDrawCallbacks {
-    private static final String TAG = "ViewRootImpl";
-    private static final boolean DBG = false;
-    private static final boolean LOCAL_LOGV = false;
-    private static final boolean DEBUG_DRAW = false || LOCAL_LOGV;
-    private static final boolean DEBUG_LAYOUT = false || LOCAL_LOGV;
-    private static final boolean DEBUG_DIALOG = false || LOCAL_LOGV;
-    private static final boolean DEBUG_INPUT_RESIZE = false || LOCAL_LOGV;
-    private static final boolean DEBUG_ORIENTATION = false || LOCAL_LOGV;
-    private static final boolean DEBUG_TRACKBALL = false || LOCAL_LOGV;
-    private static final boolean DEBUG_IMF = false || LOCAL_LOGV;
-    private static final boolean DEBUG_CONFIGURATION = false || LOCAL_LOGV;
-    private static final boolean DEBUG_FPS = false;
-    private static final boolean WATCH_POINTER = false;
-    private static final String PROPERTY_PROFILE_RENDERING = "viewancestor.profile_rendering";
-    private static final boolean MEASURE_LATENCY = false;
-    private static LatencyTimer lt;
-    static final int MAX_TRACKBALL_DELAY = 250;
-    static IWindowSession sWindowSession;
-    static final Object mStaticInit = new Object();
-    static boolean mInitialized = false;
-    static final ThreadLocal<RunQueue> sRunQueues = new ThreadLocal<RunQueue>();
-    static final ArrayList<Runnable> sFirstDrawHandlers = new ArrayList<Runnable>();
-    static boolean sFirstDrawComplete = false;
-    static final ArrayList<ComponentCallbacks> sConfigCallbacks
-            = new ArrayList<ComponentCallbacks>();
     long mLastTrackballTime = 0;
-    final TrackballAxis mTrackballAxisX = new TrackballAxis();
-    final TrackballAxis mTrackballAxisY = new TrackballAxis();
+    TrackballAxis mTrackballAxisX = new TrackballAxis();
+    TrackballAxis mTrackballAxisY = new TrackballAxis();
     int mLastJoystickXDirection;
     int mLastJoystickYDirection;
     int mLastJoystickXKeyCode;
     int mLastJoystickYKeyCode;
-    final int[] mTmpLocation = new int[2];
-    final TypedValue mTmpValue = new TypedValue();
-    final InputMethodCallback mInputMethodCallback;
-    final SparseArray<Object> mPendingEvents = new SparseArray<Object>();
+    int[] mTmpLocation = new int[2];
+    TypedValue mTmpValue = new TypedValue();
+    InputMethodCallback mInputMethodCallback;
+    SparseArray<Object> mPendingEvents = new SparseArray<Object>();
     int mPendingEventSeq = 0;
-    final Thread mThread;
-    final WindowLeaked mLocation;
-    final WindowManager.LayoutParams mWindowAttributes = new WindowManager.LayoutParams();
-    final W mWindow;
-    final int mTargetSdkVersion;
+    Thread mThread;
+    WindowLeaked mLocation;
+    WindowManager.LayoutParams mWindowAttributes = new WindowManager.LayoutParams();
+    W mWindow;
+    int mTargetSdkVersion;
     int mSeq;
     View mView;
     View mFocusedView;
@@ -132,22 +106,22 @@ public final class ViewRootImpl extends Handler implements ViewParent, View.Atta
     BaseSurfaceHolder mSurfaceHolder;
     boolean mIsCreating;
     boolean mDrawingAllowed;
-    final Region mTransparentRegion;
-    final Region mPreviousTransparentRegion;
+    Region mTransparentRegion;
+    Region mPreviousTransparentRegion;
     int mWidth;
     int mHeight;
     Rect mDirty;
-    final Rect mCurrentDirty = new Rect();
-    final Rect mPreviousDirty = new Rect();
+    Rect mCurrentDirty = new Rect();
+    Rect mPreviousDirty = new Rect();
     boolean mIsAnimating;
     CompatibilityInfo.Translator mTranslator;
-    final View.AttachInfo mAttachInfo;
+    View.AttachInfo mAttachInfo;
     InputChannel mInputChannel;
     InputQueue.Callback mInputQueueCallback;
     InputQueue mInputQueue;
     FallbackEventHandler mFallbackEventHandler;
-    final Rect mTempRect;
-    final Rect mVisRect;
+    Rect mTempRect;
+    Rect mVisRect;
     boolean mTraversalScheduled;
     long mLastTraversalFinishedTimeNanos;
     long mLastDrawDurationNanos;
@@ -162,18 +136,18 @@ public final class ViewRootImpl extends Handler implements ViewParent, View.Atta
     InputEventMessage mPendingInputEvents = null;
     boolean mWindowAttributesChanged = false;
     int mWindowAttributesChangesFlag = 0;
-    private final Surface mSurface = new Surface();
+    private Surface mSurface = new Surface();
     boolean mAdded;
     boolean mAddedTouchMode;
     CompatibilityInfoHolder mCompatibilityInfo;
     int mAddNesting;
-    final Rect mWinFrame;
-    final Rect mPendingVisibleInsets = new Rect();
-    final Rect mPendingContentInsets = new Rect();
-    final ViewTreeObserver.InternalInsetsInfo mLastGivenInsets
+    Rect mWinFrame;
+    Rect mPendingVisibleInsets = new Rect();
+    Rect mPendingContentInsets = new Rect();
+    ViewTreeObserver.InternalInsetsInfo mLastGivenInsets
             = new ViewTreeObserver.InternalInsetsInfo();
-    final Configuration mLastConfiguration = new Configuration();
-    final Configuration mPendingConfiguration = new Configuration();
+    Configuration mLastConfiguration = new Configuration();
+    Configuration mPendingConfiguration = new Configuration();
     boolean mScrollMayChange;
     int mSoftInputMode;
     View mLastScrolledFocus;
@@ -183,14 +157,13 @@ public final class ViewRootImpl extends Handler implements ViewParent, View.Atta
     HardwareLayer mResizeBuffer;
     long mResizeBufferStartTime;
     int mResizeBufferDuration;
-    static final Interpolator mResizeInterpolator = new AccelerateDecelerateInterpolator();
     private ArrayList<LayoutTransition> mPendingTransitions;
-    final ViewConfiguration mViewConfiguration;
+    ViewConfiguration mViewConfiguration;
     ClipDescription mDragDescription;
     View mCurrentDragView;
     volatile Object mLocalDragState;
-    final PointF mDragPoint = new PointF();
-    final PointF mLastTouchPoint = new PointF();
+    PointF mDragPoint = new PointF();
+    PointF mLastTouchPoint = new PointF();
     private boolean mProfileRendering;
     private Thread mRenderProfiler;
     private volatile boolean mRenderProfilingEnabled;
@@ -198,50 +171,25 @@ public final class ViewRootImpl extends Handler implements ViewParent, View.Atta
     private long mFpsPrevTime = -1;
     private int mFpsNumFrames;
     AudioManager mAudioManager;
-    final AccessibilityManager mAccessibilityManager;
+    AccessibilityManager mAccessibilityManager;
     AccessibilityInteractionController mAccessibilityInteractionController;
     AccessibilityInteractionConnectionManager mAccessibilityInteractionConnectionManager;
     SendWindowContentChangedAccessibilityEvent mSendWindowContentChangedAccessibilityEvent;
-    private final int mDensity;
-    protected final InputEventConsistencyVerifier mInputEventConsistencyVerifier =
+    private int mDensity;
+    protected InputEventConsistencyVerifier mInputEventConsistencyVerifier =
             InputEventConsistencyVerifier.isInstrumentationEnabled() ?
                     new InputEventConsistencyVerifier(this, 0) : null;
     private boolean mProfile = false;
     int mHardwareYOffset;
     int mResizeAlpha;
-    final Paint mResizePaint = new Paint();
-    public final static int DO_TRAVERSAL = 1000;
-    public final static int DIE = 1001;
-    public final static int RESIZED = 1002;
-    public final static int RESIZED_REPORT = 1003;
-    public final static int WINDOW_FOCUS_CHANGED = 1004;
-    public final static int DISPATCH_KEY = 1005;
-    public final static int DISPATCH_POINTER = 1006;
-    public final static int DISPATCH_TRACKBALL = 1007;
-    public final static int DISPATCH_APP_VISIBILITY = 1008;
-    public final static int DISPATCH_GET_NEW_SURFACE = 1009;
-    public final static int FINISHED_EVENT = 1010;
-    public final static int DISPATCH_KEY_FROM_IME = 1011;
-    public final static int FINISH_INPUT_CONNECTION = 1012;
-    public final static int CHECK_FOCUS = 1013;
-    public final static int CLOSE_SYSTEM_DIALOGS = 1014;
-    public final static int DISPATCH_DRAG_EVENT = 1015;
-    public final static int DISPATCH_DRAG_LOCATION_EVENT = 1016;
-    public final static int DISPATCH_SYSTEM_UI_VISIBILITY = 1017;
-    public final static int DISPATCH_GENERIC_MOTION = 1018;
-    public final static int UPDATE_CONFIGURATION = 1019;
-    public final static int DO_PERFORM_ACCESSIBILITY_ACTION = 1020;
-    public final static int DO_FIND_ACCESSIBLITY_NODE_INFO_BY_ACCESSIBILITY_ID = 1021;
-    public final static int DO_FIND_ACCESSIBLITY_NODE_INFO_BY_VIEW_ID = 1022;
-    public final static int DO_FIND_ACCESSIBLITY_NODE_INFO_BY_VIEW_TEXT = 1023;
-    public final static int PROCESS_INPUT_EVENTS = 1024;
+    Paint mResizePaint = new Paint();
     private long mInputEventReceiveTimeNanos;
     private long mInputEventDeliverTimeNanos;
     private long mInputEventDeliverPostImeTimeNanos;
     private InputQueue.FinishedCallback mFinishedCallback;
     private final InputHandler mInputHandler = new InputHandler() {        
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:06.706 -0400", hash_original_method = "DA8B85C0B97B283164189BFC107A0C51", hash_generated_method = "F440D15F47FE242C485B66B5BC20E671")
-        @DSModeled(DSC.SAFE)
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:01.140 -0400", hash_original_method = "DA8B85C0B97B283164189BFC107A0C51", hash_generated_method = "4F8BF8B94A34B2F19F90A4E1D25AD598")
+        //DSFIXME:  CODE0002: Requires DSC value to be set
         public void handleKey(KeyEvent event, InputQueue.FinishedCallback finishedCallback) {
             dsTaint.addTaint(finishedCallback.dsTaint);
             dsTaint.addTaint(event.dsTaint);
@@ -253,8 +201,8 @@ public final class ViewRootImpl extends Handler implements ViewParent, View.Atta
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:06.706 -0400", hash_original_method = "BA251C4BE7EEF8348B6DA839AE6C5F99", hash_generated_method = "93914AA1020CD9B9E8F5425E915FA934")
-        @DSModeled(DSC.SAFE)
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:01.140 -0400", hash_original_method = "BA251C4BE7EEF8348B6DA839AE6C5F99", hash_generated_method = "2EA1594D02D3A7D0E339F89FBF8A7E08")
+        //DSFIXME:  CODE0002: Requires DSC value to be set
         public void handleMotion(MotionEvent event, InputQueue.FinishedCallback finishedCallback) {
             dsTaint.addTaint(finishedCallback.dsTaint);
             dsTaint.addTaint(event.dsTaint);
@@ -268,7 +216,7 @@ public final class ViewRootImpl extends Handler implements ViewParent, View.Atta
         
 }; //Transformed anonymous class
     private SurfaceHolder mHolder = new SurfaceHolder() {        
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:06.706 -0400", hash_original_method = "FB03EEF08A419E6F5E4B7D4C32AA13C8", hash_generated_method = "C6283542455A71726493ABA0EB18310B")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:01.140 -0400", hash_original_method = "FB03EEF08A419E6F5E4B7D4C32AA13C8", hash_generated_method = "6892275B4B40A9EB5D5D8351C4113406")
         @DSModeled(DSC.SAFE)
         public Surface getSurface() {
             return (Surface)dsTaint.getTaint();
@@ -277,7 +225,7 @@ public final class ViewRootImpl extends Handler implements ViewParent, View.Atta
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:06.706 -0400", hash_original_method = "111414E0BC27432A58777D8D7A8A5313", hash_generated_method = "DD2624CC11AB0D3BC1E618BB799FFF8A")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:01.140 -0400", hash_original_method = "111414E0BC27432A58777D8D7A8A5313", hash_generated_method = "0F7DD69194824BA055C2DD5DAEDD639B")
         @DSModeled(DSC.SAFE)
         public boolean isCreating() {
             return dsTaint.getTaintBoolean();
@@ -286,7 +234,7 @@ public final class ViewRootImpl extends Handler implements ViewParent, View.Atta
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:06.706 -0400", hash_original_method = "1534EBA7EE38BC120F6309F5A1B3FF9E", hash_generated_method = "7A90FFA1EB6E830D2E24BFD99DAAE843")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:01.140 -0400", hash_original_method = "1534EBA7EE38BC120F6309F5A1B3FF9E", hash_generated_method = "4CAF96CEFAC9D805EAE1515BEBB029C6")
         @DSModeled(DSC.SAFE)
         public void addCallback(Callback callback) {
             dsTaint.addTaint(callback.dsTaint);
@@ -294,7 +242,7 @@ public final class ViewRootImpl extends Handler implements ViewParent, View.Atta
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:06.706 -0400", hash_original_method = "1D7F6566A3906AFA0AB54EE06949ABBB", hash_generated_method = "12713D51E0298F62C647EFAB45D4B595")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:01.140 -0400", hash_original_method = "1D7F6566A3906AFA0AB54EE06949ABBB", hash_generated_method = "3CE3122FE280688AD341C24F3DE20D00")
         @DSModeled(DSC.SAFE)
         public void removeCallback(Callback callback) {
             dsTaint.addTaint(callback.dsTaint);
@@ -302,7 +250,7 @@ public final class ViewRootImpl extends Handler implements ViewParent, View.Atta
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:06.706 -0400", hash_original_method = "0FF9F7AB4B875AE8A0C5A8C3535F85C8", hash_generated_method = "80333F2A6738627AB6A06EA1EF0C2FF4")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:01.141 -0400", hash_original_method = "0FF9F7AB4B875AE8A0C5A8C3535F85C8", hash_generated_method = "DB44A4745F18371E857ABBA8B3F2D825")
         @DSModeled(DSC.SAFE)
         public void setFixedSize(int width, int height) {
             dsTaint.addTaint(height);
@@ -311,14 +259,14 @@ public final class ViewRootImpl extends Handler implements ViewParent, View.Atta
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:06.706 -0400", hash_original_method = "0794758F1C90C59C5D7A2C0BDE8FAA38", hash_generated_method = "97F197B3D667806FF8A2A5E1FFC042A4")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:01.141 -0400", hash_original_method = "0794758F1C90C59C5D7A2C0BDE8FAA38", hash_generated_method = "2283705EABC76CCAA7D98B4015CCD0EC")
         @DSModeled(DSC.SAFE)
         public void setSizeFromLayout() {
             // ---------- Original Method ----------
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:06.706 -0400", hash_original_method = "CF1EA2FC05AD6DEBDFA26DEE8FD9DB43", hash_generated_method = "7C9503A5E310B441E9274720A8C3EBF5")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:01.141 -0400", hash_original_method = "CF1EA2FC05AD6DEBDFA26DEE8FD9DB43", hash_generated_method = "EA0923E0492D3CA020EC10069368F865")
         @DSModeled(DSC.SAFE)
         public void setFormat(int format) {
             dsTaint.addTaint(format);
@@ -326,7 +274,7 @@ public final class ViewRootImpl extends Handler implements ViewParent, View.Atta
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:06.706 -0400", hash_original_method = "B37A48D0CAD6F4AF8C78DA1B2A495A29", hash_generated_method = "2C12B38247A8844049CB884E0B89464D")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:01.141 -0400", hash_original_method = "B37A48D0CAD6F4AF8C78DA1B2A495A29", hash_generated_method = "3D5433EE7774EE621B11389063DDB309")
         @DSModeled(DSC.SAFE)
         public void setType(int type) {
             dsTaint.addTaint(type);
@@ -334,7 +282,7 @@ public final class ViewRootImpl extends Handler implements ViewParent, View.Atta
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:06.706 -0400", hash_original_method = "46E48CC06FE228B4151C3D83F1499F0C", hash_generated_method = "73145A2121D626F4D1819D6C6E89A7A7")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:01.141 -0400", hash_original_method = "46E48CC06FE228B4151C3D83F1499F0C", hash_generated_method = "EDD7F9CB94C74B72BF95F361261CF7D8")
         @DSModeled(DSC.SAFE)
         public void setKeepScreenOn(boolean screenOn) {
             dsTaint.addTaint(screenOn);
@@ -342,7 +290,7 @@ public final class ViewRootImpl extends Handler implements ViewParent, View.Atta
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:06.707 -0400", hash_original_method = "3082759B8090FD86F4392C9CC2C4FBD0", hash_generated_method = "1A135AABBA0451985426E422CFC9D072")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:01.141 -0400", hash_original_method = "3082759B8090FD86F4392C9CC2C4FBD0", hash_generated_method = "0173D114F2ACBE6C0EC31D027084B74C")
         @DSModeled(DSC.SAFE)
         public Canvas lockCanvas() {
             return (Canvas)dsTaint.getTaint();
@@ -351,7 +299,7 @@ public final class ViewRootImpl extends Handler implements ViewParent, View.Atta
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:06.707 -0400", hash_original_method = "3E84C9B445B974E90BE60751B0E8F5B3", hash_generated_method = "E5231FC96A8B12FBB5BC98F9D4EBA4C0")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:01.142 -0400", hash_original_method = "3E84C9B445B974E90BE60751B0E8F5B3", hash_generated_method = "AA3F03048672F74BB2B29B0F991E61EC")
         @DSModeled(DSC.SAFE)
         public Canvas lockCanvas(Rect dirty) {
             dsTaint.addTaint(dirty.dsTaint);
@@ -361,7 +309,7 @@ public final class ViewRootImpl extends Handler implements ViewParent, View.Atta
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:06.707 -0400", hash_original_method = "398534786B4B68CC68F8CE8B2E298404", hash_generated_method = "2EC38AACB68EF21232B647379FC7DD5E")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:01.142 -0400", hash_original_method = "398534786B4B68CC68F8CE8B2E298404", hash_generated_method = "E0F63FAC44DB0F8A89D5459546A0993F")
         @DSModeled(DSC.SAFE)
         public void unlockCanvasAndPost(Canvas canvas) {
             dsTaint.addTaint(canvas.dsTaint);
@@ -369,7 +317,7 @@ public final class ViewRootImpl extends Handler implements ViewParent, View.Atta
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:06.707 -0400", hash_original_method = "0458ACEC2C801E19AE11DF373ED70BEE", hash_generated_method = "ECAFD3DD7927CC95E8BA5235CC93898E")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:01.142 -0400", hash_original_method = "0458ACEC2C801E19AE11DF373ED70BEE", hash_generated_method = "FBF6A701C51ABBAD2B77499950A67A25")
         @DSModeled(DSC.SAFE)
         public Rect getSurfaceFrame() {
             return (Rect)dsTaint.getTaint();
@@ -380,7 +328,7 @@ public final class ViewRootImpl extends Handler implements ViewParent, View.Atta
         
 }; //Transformed anonymous class
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:06.707 -0400", hash_original_method = "30AB3DC3CF45F6460C1B2C84DB6BEEC3", hash_generated_method = "A1E6542AF1483E916A05E739C47B903A")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:01.143 -0400", hash_original_method = "30AB3DC3CF45F6460C1B2C84DB6BEEC3", hash_generated_method = "091E0A5C750FA5F27F8B2E5F4F91185F")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public ViewRootImpl(Context context) {
         super();
@@ -424,8 +372,7 @@ public final class ViewRootImpl extends Handler implements ViewParent, View.Atta
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:06.707 -0400", hash_original_method = "6204018B0410883FB8966B71E80E7FF6", hash_generated_method = "559F65FDCB3510E740B6FB09ECC8C64F")
-    public static IWindowSession getWindowSession(Looper mainLooper) {
+        public static IWindowSession getWindowSession(Looper mainLooper) {
         synchronized (mStaticInit) {
             if (!mInitialized) {
                 try {
@@ -441,8 +388,7 @@ public final class ViewRootImpl extends Handler implements ViewParent, View.Atta
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:06.707 -0400", hash_original_method = "FAC0EC3E77B4781B224707645FD3A4FF", hash_generated_method = "116B0A8AEFC670E5FAF3025171FE97B7")
-    public static void addFirstDrawHandler(Runnable callback) {
+        public static void addFirstDrawHandler(Runnable callback) {
         synchronized (sFirstDrawHandlers) {
             if (!sFirstDrawComplete) {
                 sFirstDrawHandlers.add(callback);
@@ -451,15 +397,14 @@ public final class ViewRootImpl extends Handler implements ViewParent, View.Atta
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:06.707 -0400", hash_original_method = "834621F626C96E3AD42E0A4200072657", hash_generated_method = "C3464632656664054F7604F4AA724841")
-    public static void addConfigCallback(ComponentCallbacks callback) {
+        public static void addConfigCallback(ComponentCallbacks callback) {
         synchronized (sConfigCallbacks) {
             sConfigCallbacks.add(callback);
         }
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:06.707 -0400", hash_original_method = "CC8B7F3C56C4BD3E79E20E40E6BC7183", hash_generated_method = "CC6FD02F422E1777066CBB75AE4AF55B")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:01.143 -0400", hash_original_method = "CC8B7F3C56C4BD3E79E20E40E6BC7183", hash_generated_method = "B1C47515DF4380EC2E00EEA4CF22D73A")
     @DSModeled(DSC.SAFE)
     public void profile() {
         mProfile = true;
@@ -468,8 +413,7 @@ public final class ViewRootImpl extends Handler implements ViewParent, View.Atta
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:06.707 -0400", hash_original_method = "056827AB9E74AF6C4B57ABEC8FCA9A3C", hash_generated_method = "67071346A9218C2191AEF8CE4E4334B3")
-    static boolean isInTouchMode() {
+        static boolean isInTouchMode() {
         if (mInitialized) {
             try {
                 return sWindowSession.getInTouchMode();
@@ -480,7 +424,7 @@ public final class ViewRootImpl extends Handler implements ViewParent, View.Atta
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:06.708 -0400", hash_original_method = "41A7A71F10D2AEAE23E30A793138BBB4", hash_generated_method = "7EB15F7DDB375672F951AC012EBB7811")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:01.145 -0400", hash_original_method = "41A7A71F10D2AEAE23E30A793138BBB4", hash_generated_method = "3B3724BB40755D31D69C8A469D559C4C")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public void setView(View view, WindowManager.LayoutParams attrs, View panelParentView) {
         dsTaint.addTaint(attrs.dsTaint);
@@ -515,7 +459,7 @@ public final class ViewRootImpl extends Handler implements ViewParent, View.Atta
                 } //End block
                 Log.d(TAG, "WindowLayout in setView:" + attrs);
                 {
-                    boolean var2EEA59713A247080EA419945AB126FA8_1623359861 = (!compatibilityInfo.supportsScreen());
+                    boolean var2EEA59713A247080EA419945AB126FA8_1040180643 = (!compatibilityInfo.supportsScreen());
                     {
                         attrs.flags |= WindowManager.LayoutParams.FLAG_COMPATIBLE_WINDOW;
                         mLastInCompatMode = true;
@@ -553,7 +497,7 @@ public final class ViewRootImpl extends Handler implements ViewParent, View.Atta
                     mInputChannel = null;
                     mFallbackEventHandler.setView(null);
                     unscheduleTraversals();
-                    throw new RuntimeException("Adding window failed", e);
+                    if (DroidSafeAndroidRuntime.control) throw new RuntimeException("Adding window failed", e);
                 } //End block
                 finally 
                 {
@@ -573,64 +517,37 @@ public final class ViewRootImpl extends Handler implements ViewParent, View.Atta
                     mFallbackEventHandler.setView(null);
                     unscheduleTraversals();
                     //Begin case WindowManagerImpl.ADD_BAD_APP_TOKEN WindowManagerImpl.ADD_BAD_SUBWINDOW_TOKEN 
-                    if (DroidSafeAndroidRuntime.control)
-                    {
-	                    throw new WindowManagerImpl.BadTokenException(
-	                                "Unable to add window -- token " + attrs.token
-	                                + " is not valid; is your activity running?");
-	                    //End case WindowManagerImpl.ADD_BAD_APP_TOKEN WindowManagerImpl.ADD_BAD_SUBWINDOW_TOKEN 
-	                    //Begin case WindowManagerImpl.ADD_NOT_APP_TOKEN 
-                    }
-                    
-                    if (DroidSafeAndroidRuntime.control)
-                    {
-	                    throw new WindowManagerImpl.BadTokenException(
-	                                "Unable to add window -- token " + attrs.token
-	                                + " is not for an application");
-	                    //End case WindowManagerImpl.ADD_NOT_APP_TOKEN 
-	                    //Begin case WindowManagerImpl.ADD_APP_EXITING 
-                    }
-                    
-                    if (DroidSafeAndroidRuntime.control)
-                    {
-	                    throw new WindowManagerImpl.BadTokenException(
-	                                "Unable to add window -- app for token " + attrs.token
-	                                + " is exiting");
-	                    //End case WindowManagerImpl.ADD_APP_EXITING 
-	                    //Begin case WindowManagerImpl.ADD_DUPLICATE_ADD 
-                    }
-                    
-                    if (DroidSafeAndroidRuntime.control)
-                    {
-	                    throw new WindowManagerImpl.BadTokenException(
-	                                "Unable to add window -- window " + mWindow
-	                                + " has already been added");
-	                    //End case WindowManagerImpl.ADD_DUPLICATE_ADD 
-	                    //Begin case WindowManagerImpl.ADD_MULTIPLE_SINGLETON 
-                    }
-                    
-                    if (DroidSafeAndroidRuntime.control)
-                    {
-	                    throw new WindowManagerImpl.BadTokenException(
-	                                "Unable to add window " + mWindow +
-	                                " -- another window of this type already exists");
-	                    //End case WindowManagerImpl.ADD_MULTIPLE_SINGLETON 
-	                    //Begin case WindowManagerImpl.ADD_PERMISSION_DENIED 
-                    }
-                    
-                    if (DroidSafeAndroidRuntime.control)
-                    {
-	                    throw new WindowManagerImpl.BadTokenException(
-	                                "Unable to add window " + mWindow +
-	                                " -- permission denied for this window type");
-	                    //End case WindowManagerImpl.ADD_PERMISSION_DENIED 
-	                }
-                    
-                    if (DroidSafeAndroidRuntime.control)
-                    {
-	                    throw new RuntimeException(
-	                        "Unable to add window -- unknown error code " + res);
-                    }
+                    if (DroidSafeAndroidRuntime.control) throw new WindowManagerImpl.BadTokenException(
+                                "Unable to add window -- token " + attrs.token
+                                + " is not valid; is your activity running?");
+                    //End case WindowManagerImpl.ADD_BAD_APP_TOKEN WindowManagerImpl.ADD_BAD_SUBWINDOW_TOKEN 
+                    //Begin case WindowManagerImpl.ADD_NOT_APP_TOKEN 
+                    if (DroidSafeAndroidRuntime.control) throw new WindowManagerImpl.BadTokenException(
+                                "Unable to add window -- token " + attrs.token
+                                + " is not for an application");
+                    //End case WindowManagerImpl.ADD_NOT_APP_TOKEN 
+                    //Begin case WindowManagerImpl.ADD_APP_EXITING 
+                    if (DroidSafeAndroidRuntime.control) throw new WindowManagerImpl.BadTokenException(
+                                "Unable to add window -- app for token " + attrs.token
+                                + " is exiting");
+                    //End case WindowManagerImpl.ADD_APP_EXITING 
+                    //Begin case WindowManagerImpl.ADD_DUPLICATE_ADD 
+                    if (DroidSafeAndroidRuntime.control) throw new WindowManagerImpl.BadTokenException(
+                                "Unable to add window -- window " + mWindow
+                                + " has already been added");
+                    //End case WindowManagerImpl.ADD_DUPLICATE_ADD 
+                    //Begin case WindowManagerImpl.ADD_MULTIPLE_SINGLETON 
+                    if (DroidSafeAndroidRuntime.control) throw new WindowManagerImpl.BadTokenException(
+                                "Unable to add window " + mWindow +
+                                " -- another window of this type already exists");
+                    //End case WindowManagerImpl.ADD_MULTIPLE_SINGLETON 
+                    //Begin case WindowManagerImpl.ADD_PERMISSION_DENIED 
+                    if (DroidSafeAndroidRuntime.control) throw new WindowManagerImpl.BadTokenException(
+                                "Unable to add window " + mWindow +
+                                " -- permission denied for this window type");
+                    //End case WindowManagerImpl.ADD_PERMISSION_DENIED 
+                    if (DroidSafeAndroidRuntime.control) throw new RuntimeException(
+                        "Unable to add window -- unknown error code " + res);
                 } //End block
                 {
                     mInputQueueCallback =
@@ -650,28 +567,24 @@ public final class ViewRootImpl extends Handler implements ViewParent, View.Atta
                 mAddedTouchMode = (res&WindowManagerImpl.ADD_FLAG_IN_TOUCH_MODE) != 0;
                 mAppVisible = (res&WindowManagerImpl.ADD_FLAG_APP_VISIBLE) != 0;
                 {
-                    boolean var9FA688D7A8792CFDE0FE1059C3B8F748_8897370 = (mAccessibilityManager.isEnabled());
+                    boolean var9FA688D7A8792CFDE0FE1059C3B8F748_1955386230 = (mAccessibilityManager.isEnabled());
                     {
                         mAccessibilityInteractionConnectionManager.ensureConnection();
                     } //End block
                 } //End collapsed parenthetic
             } //End block
         } //End block
-        throw new WindowManagerImpl.BadTokenException(
-                    "Unable to add window -- token " + attrs.token
-                    + " is not valid; is your activity running?");
         // ---------- Original Method ----------
         // Original Method Too Long, Refer to Original Implementation
-        
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:06.709 -0400", hash_original_method = "CB86722DA8E467DDCEDA5A630CA3194B", hash_generated_method = "326297414EBA2E1788604BFCA2979A3F")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:01.145 -0400", hash_original_method = "CB86722DA8E467DDCEDA5A630CA3194B", hash_generated_method = "DF7790EF8310BDC7A225C11C87764341")
     //DSFIXME:  CODE0002: Requires DSC value to be set
      void destroyHardwareResources() {
         {
             {
-                boolean var4CC7CC042FB1A0B872228C316C872BB4_841570951 = (mAttachInfo.mHardwareRenderer.isEnabled());
+                boolean var4CC7CC042FB1A0B872228C316C872BB4_469780981 = (mAttachInfo.mHardwareRenderer.isEnabled());
                 {
                     mAttachInfo.mHardwareRenderer.destroyLayers(mView);
                 } //End block
@@ -688,8 +601,8 @@ public final class ViewRootImpl extends Handler implements ViewParent, View.Atta
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:06.709 -0400", hash_original_method = "E3F9E04A5716D71423EBE08431EEB223", hash_generated_method = "518D9D9F4CDA82660222536106FA05FA")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:01.145 -0400", hash_original_method = "E3F9E04A5716D71423EBE08431EEB223", hash_generated_method = "80B1CB47DAD8C3CC1A3F0A3833BB55F1")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
      void terminateHardwareResources() {
         {
             mAttachInfo.mHardwareRenderer.destroyHardwareResources(mView);
@@ -703,14 +616,14 @@ public final class ViewRootImpl extends Handler implements ViewParent, View.Atta
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:06.709 -0400", hash_original_method = "E840B8B43E5ABE6BE2D8F4EA2D3CA2C1", hash_generated_method = "596B35F3788E6FA52019A6273E3DCADD")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:01.146 -0400", hash_original_method = "E840B8B43E5ABE6BE2D8F4EA2D3CA2C1", hash_generated_method = "6C6F306747E474CD609DCD81E33BD853")
     //DSFIXME:  CODE0002: Requires DSC value to be set
      void destroyHardwareLayers() {
         {
-            boolean varAB6333097DFD9DC250CE668EF24070FA_1063635787 = (mThread != Thread.currentThread());
+            boolean varAB6333097DFD9DC250CE668EF24070FA_953819237 = (mThread != Thread.currentThread());
             {
                 {
-                    boolean var4E18E42BE327D8168CEC924FF750FE04_1496294525 = (mAttachInfo.mHardwareRenderer != null &&
+                    boolean var4E18E42BE327D8168CEC924FF750FE04_2054857482 = (mAttachInfo.mHardwareRenderer != null &&
                     mAttachInfo.mHardwareRenderer.isEnabled());
                     {
                         HardwareRenderer.trimMemory(ComponentCallbacks2.TRIM_MEMORY_MODERATE);
@@ -719,7 +632,7 @@ public final class ViewRootImpl extends Handler implements ViewParent, View.Atta
             } //End block
             {
                 {
-                    boolean var4E18E42BE327D8168CEC924FF750FE04_1569412116 = (mAttachInfo.mHardwareRenderer != null &&
+                    boolean var4E18E42BE327D8168CEC924FF750FE04_142633867 = (mAttachInfo.mHardwareRenderer != null &&
                     mAttachInfo.mHardwareRenderer.isEnabled());
                     {
                         mAttachInfo.mHardwareRenderer.destroyLayers(mView);
@@ -742,30 +655,30 @@ public final class ViewRootImpl extends Handler implements ViewParent, View.Atta
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:06.709 -0400", hash_original_method = "645D4C027059B67B04B5E1D1CDD7444E", hash_generated_method = "0B6D5E2871695D5D06CFBDD64DFFDD0A")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:01.146 -0400", hash_original_method = "645D4C027059B67B04B5E1D1CDD7444E", hash_generated_method = "5013C7578CF7A3186D0802D9ACAAC079")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     private void enableHardwareAcceleration(WindowManager.LayoutParams attrs) {
         dsTaint.addTaint(attrs.dsTaint);
         mAttachInfo.mHardwareAccelerated = false;
         mAttachInfo.mHardwareAccelerationRequested = false;
-        final boolean hardwareAccelerated;
+        boolean hardwareAccelerated;
         hardwareAccelerated = (attrs.flags & WindowManager.LayoutParams.FLAG_HARDWARE_ACCELERATED) != 0;
         {
             {
-                boolean varEAF487A08F9D7C7E236198761FEC371F_65219815 = (!HardwareRenderer.isAvailable());
+                boolean varEAF487A08F9D7C7E236198761FEC371F_1645249466 = (!HardwareRenderer.isAvailable());
             } //End collapsed parenthetic
-            final boolean fakeHwAccelerated;
+            boolean fakeHwAccelerated;
             fakeHwAccelerated = (attrs.privateFlags &
                     WindowManager.LayoutParams.PRIVATE_FLAG_FAKE_HARDWARE_ACCELERATED) != 0;
-            final boolean forceHwAccelerated;
+            boolean forceHwAccelerated;
             forceHwAccelerated = (attrs.privateFlags &
                     WindowManager.LayoutParams.PRIVATE_FLAG_FORCE_HARDWARE_ACCELERATED) != 0;
             {
                 {
-                    boolean var902B8BD79FA592FACE1DE1F2E5EEDD20_1251328041 = (!HardwareRenderer.sSystemRendererDisabled
+                    boolean var902B8BD79FA592FACE1DE1F2E5EEDD20_397131470 = (!HardwareRenderer.sSystemRendererDisabled
                         && Looper.getMainLooper() != Looper.myLooper());
                 } //End collapsed parenthetic
-                final boolean translucent;
+                boolean translucent;
                 translucent = attrs.format != PixelFormat.OPAQUE;
                 {
                     mAttachInfo.mHardwareRenderer.destroy(true);
@@ -783,7 +696,7 @@ public final class ViewRootImpl extends Handler implements ViewParent, View.Atta
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:06.709 -0400", hash_original_method = "23562CAF30DEA91689886E5D0DFB3D0F", hash_generated_method = "FCF5C5BA62DE5F51C791E836B9B93019")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:01.146 -0400", hash_original_method = "23562CAF30DEA91689886E5D0DFB3D0F", hash_generated_method = "EF56CAABAD12D60EAF99B804892CE0F3")
     @DSModeled(DSC.SAFE)
     public View getView() {
         return (View)dsTaint.getTaint();
@@ -792,7 +705,7 @@ public final class ViewRootImpl extends Handler implements ViewParent, View.Atta
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:06.709 -0400", hash_original_method = "6C3085A5B27688C16B5F48D71E61D048", hash_generated_method = "00E5175B2F18FA0F371091B977C6A378")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:01.146 -0400", hash_original_method = "6C3085A5B27688C16B5F48D71E61D048", hash_generated_method = "33036E7792B63FAD960159C31D6D84D5")
     @DSModeled(DSC.SAFE)
     final WindowLeaked getLocation() {
         return (WindowLeaked)dsTaint.getTaint();
@@ -801,7 +714,7 @@ public final class ViewRootImpl extends Handler implements ViewParent, View.Atta
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:06.710 -0400", hash_original_method = "344B8CEF50FED73B6C66A984FDFE543C", hash_generated_method = "CEFF36B963AD7F8C9097E768BD59555A")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:01.147 -0400", hash_original_method = "344B8CEF50FED73B6C66A984FDFE543C", hash_generated_method = "762A0DCF9FDD95065C85E8DD9D3687F2")
     //DSFIXME:  CODE0002: Requires DSC value to be set
      void setLayoutParams(WindowManager.LayoutParams attrs, boolean newView) {
         dsTaint.addTaint(attrs.dsTaint);
@@ -831,8 +744,8 @@ public final class ViewRootImpl extends Handler implements ViewParent, View.Atta
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:06.710 -0400", hash_original_method = "F0FE5EE4E253DD8DC552809A1CA2533F", hash_generated_method = "41FD45AE8920EFF2150C9C1A54521881")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:01.147 -0400", hash_original_method = "F0FE5EE4E253DD8DC552809A1CA2533F", hash_generated_method = "0D4D5D42CE8270417CC5E5DCD5C9A658")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
      void handleAppVisibility(boolean visible) {
         dsTaint.addTaint(visible);
         {
@@ -846,8 +759,8 @@ public final class ViewRootImpl extends Handler implements ViewParent, View.Atta
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:06.710 -0400", hash_original_method = "18299B4078E7C7C61849ACAFD8526C89", hash_generated_method = "4B27894EC7F53DE4DE17F53CAFB0326E")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:01.147 -0400", hash_original_method = "18299B4078E7C7C61849ACAFD8526C89", hash_generated_method = "BB6EAB3409F9822032460A2B78E57E8C")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
      void handleGetNewSurface() {
         mNewSurfaceNeeded = true;
         mFullRedrawNeeded = true;
@@ -859,8 +772,8 @@ public final class ViewRootImpl extends Handler implements ViewParent, View.Atta
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:06.710 -0400", hash_original_method = "A2905530B195FBB19B3C3F0AC663BF20", hash_generated_method = "6BB516F5A5E3E1E7118ABA317EE9F7F4")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:01.147 -0400", hash_original_method = "A2905530B195FBB19B3C3F0AC663BF20", hash_generated_method = "B4F533FE3D3C8C28D85C11EA8103DD14")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     public void requestLayout() {
         checkThread();
         mLayoutRequested = true;
@@ -872,7 +785,7 @@ public final class ViewRootImpl extends Handler implements ViewParent, View.Atta
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:06.710 -0400", hash_original_method = "13F945759D2C310C5D0BB68B6FB1E2B8", hash_generated_method = "A516416D747EAAE4BDB79061B478FE37")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:01.147 -0400", hash_original_method = "13F945759D2C310C5D0BB68B6FB1E2B8", hash_generated_method = "C41268C47D017184DE242A6095B21D21")
     @DSModeled(DSC.SAFE)
     public boolean isLayoutRequested() {
         return dsTaint.getTaintBoolean();
@@ -881,7 +794,7 @@ public final class ViewRootImpl extends Handler implements ViewParent, View.Atta
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:06.710 -0400", hash_original_method = "1BB28848D4C8EEFEA34E8E46FE6AC5D5", hash_generated_method = "0D29575FED5D0679B1DCB286C64E6754")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:01.148 -0400", hash_original_method = "1BB28848D4C8EEFEA34E8E46FE6AC5D5", hash_generated_method = "A7DFABC5B02D3A7E7117DB347AE17ED1")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public void invalidateChild(View child, Rect dirty) {
         dsTaint.addTaint(child.dsTaint);
@@ -904,7 +817,7 @@ public final class ViewRootImpl extends Handler implements ViewParent, View.Atta
             } //End block
         } //End block
         {
-            boolean varEF86BD19BDAC3E37812F85F40921C01A_295149293 = (!mDirty.isEmpty() && !mDirty.contains(dirty));
+            boolean varEF86BD19BDAC3E37812F85F40921C01A_2036562712 = (!mDirty.isEmpty() && !mDirty.contains(dirty));
             {
                 mAttachInfo.mSetIgnoreDirtyState = true;
                 mAttachInfo.mIgnoreDirtyState = true;
@@ -919,8 +832,8 @@ public final class ViewRootImpl extends Handler implements ViewParent, View.Atta
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:06.710 -0400", hash_original_method = "813AAD1E42CFCCC731AB301BBB74FC18", hash_generated_method = "5C04F2C09C2F356F5E5693DFDD234477")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:01.148 -0400", hash_original_method = "813AAD1E42CFCCC731AB301BBB74FC18", hash_generated_method = "C9B69269B05104AFF802002D325AD2DE")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
      void invalidate() {
         mDirty.set(0, 0, mWidth, mHeight);
         scheduleTraversals();
@@ -930,8 +843,8 @@ public final class ViewRootImpl extends Handler implements ViewParent, View.Atta
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:06.710 -0400", hash_original_method = "081DD37813B858E5AB3FA0820EF5D835", hash_generated_method = "DD6B5D70A6C5486D23C82558DD7A85B8")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:01.148 -0400", hash_original_method = "081DD37813B858E5AB3FA0820EF5D835", hash_generated_method = "B7748DD7CD56A68AAA5F90F708ADD5B7")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
      void setStopped(boolean stopped) {
         dsTaint.addTaint(stopped);
         {
@@ -949,7 +862,7 @@ public final class ViewRootImpl extends Handler implements ViewParent, View.Atta
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:06.710 -0400", hash_original_method = "DCC308262D5800610A000228CF8970A4", hash_generated_method = "9E80A92699DDCFA09EDE833B95037254")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:01.148 -0400", hash_original_method = "DCC308262D5800610A000228CF8970A4", hash_generated_method = "0F483D6780219BA9A188D80AE3A4592C")
     @DSModeled(DSC.SAFE)
     public ViewParent getParent() {
         return (ViewParent)dsTaint.getTaint();
@@ -958,10 +871,10 @@ public final class ViewRootImpl extends Handler implements ViewParent, View.Atta
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:06.711 -0400", hash_original_method = "67B0199062309B0E78F2F88E3E2AD59A", hash_generated_method = "05B9CC1A830A4769268A362BCB3EBD03")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:01.149 -0400", hash_original_method = "67B0199062309B0E78F2F88E3E2AD59A", hash_generated_method = "41903AEFA05E3480B1ED319158E45BC8")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     public ViewParent invalidateChildInParent(final int[] location, final Rect dirty) {
-        dsTaint.addTaint(location);
+        dsTaint.addTaint(location[0]);
         dsTaint.addTaint(dirty.dsTaint);
         invalidateChild(null, dirty);
         return (ViewParent)dsTaint.getTaint();
@@ -971,17 +884,16 @@ public final class ViewRootImpl extends Handler implements ViewParent, View.Atta
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:06.711 -0400", hash_original_method = "FB92C76BB083D5DC37740C978F02B71C", hash_generated_method = "50198F3FBCAE72CDF16C1F407B9CF5D1")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:01.149 -0400", hash_original_method = "FB92C76BB083D5DC37740C978F02B71C", hash_generated_method = "783790263017F487AF493D061809C190")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public boolean getChildVisibleRect(View child, Rect r, android.graphics.Point offset) {
         dsTaint.addTaint(child.dsTaint);
         dsTaint.addTaint(r.dsTaint);
         dsTaint.addTaint(offset.dsTaint);
-        if (DroidSafeAndroidRuntime.control)
         {
-            throw new RuntimeException("child is not mine, honest!");
+            if (DroidSafeAndroidRuntime.control) throw new RuntimeException("child is not mine, honest!");
         } //End block
-        boolean var3C447C15080EDED58EBDD084A72DF38D_2101910600 = (r.intersect(0, 0, mWidth, mHeight));
+        boolean var3C447C15080EDED58EBDD084A72DF38D_1859653523 = (r.intersect(0, 0, mWidth, mHeight));
         return dsTaint.getTaintBoolean();
         // ---------- Original Method ----------
         //if (child != mView) {
@@ -991,7 +903,7 @@ public final class ViewRootImpl extends Handler implements ViewParent, View.Atta
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:06.711 -0400", hash_original_method = "57451ED91AC07EA69FA21499971D2B45", hash_generated_method = "01998103EA3C9AC18C6BEA04E0EB62A4")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:01.149 -0400", hash_original_method = "57451ED91AC07EA69FA21499971D2B45", hash_generated_method = "C7FFBAE63CD65B142845CE636D91FDCC")
     @DSModeled(DSC.SAFE)
     public void bringChildToFront(View child) {
         dsTaint.addTaint(child.dsTaint);
@@ -999,13 +911,13 @@ public final class ViewRootImpl extends Handler implements ViewParent, View.Atta
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:06.711 -0400", hash_original_method = "0E9A2AD60F5B60B1A096C27CF046877D", hash_generated_method = "1F62085AF30397334F31145E30D7B3A1")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:01.149 -0400", hash_original_method = "0E9A2AD60F5B60B1A096C27CF046877D", hash_generated_method = "99177F41C4759665C7DCBBBCE826136D")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     public void scheduleTraversals() {
         {
             mTraversalScheduled = true;
             {
-                final long now;
+                long now;
                 now = System.nanoTime();
                 Log.d(TAG, "Latency: Scheduled traversal, it has been "
                         + ((now - mLastTraversalFinishedTimeNanos) * 0.000001f)
@@ -1027,8 +939,8 @@ public final class ViewRootImpl extends Handler implements ViewParent, View.Atta
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:06.711 -0400", hash_original_method = "0B26D78664F51D8793A6008ECDA459E7", hash_generated_method = "AED5AB297E930A2FA4B907E3604897DB")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:01.150 -0400", hash_original_method = "0B26D78664F51D8793A6008ECDA459E7", hash_generated_method = "BFA015F92D16949DEB22819F36EBF3B3")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     public void unscheduleTraversals() {
         {
             mTraversalScheduled = false;
@@ -1042,11 +954,11 @@ public final class ViewRootImpl extends Handler implements ViewParent, View.Atta
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:06.711 -0400", hash_original_method = "27A276950AD49DC3B2BCAC57214867E1", hash_generated_method = "F5161F81D1989A4F98AD29CC74663C99")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:01.150 -0400", hash_original_method = "27A276950AD49DC3B2BCAC57214867E1", hash_generated_method = "49361E539EE1EF10D3B4C815237B5F9D")
     //DSFIXME:  CODE0002: Requires DSC value to be set
      int getHostVisibility() {
         {
-            Object var8D6CE5BDBC311FE3B049ABF0D70214FD_276931860 = (mView.getVisibility());
+            Object var8D6CE5BDBC311FE3B049ABF0D70214FD_536513063 = (mView.getVisibility());
         } //End flattened ternary
         return dsTaint.getTaintInt();
         // ---------- Original Method ----------
@@ -1054,8 +966,8 @@ public final class ViewRootImpl extends Handler implements ViewParent, View.Atta
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:06.711 -0400", hash_original_method = "4A37F94A433BB0C51ABAD4CD2013B711", hash_generated_method = "8E2E79CBEF7B800E6FA11366CCA3AB3B")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:01.150 -0400", hash_original_method = "4A37F94A433BB0C51ABAD4CD2013B711", hash_generated_method = "0B7B046B5B1C7C45D8B416132FB9272C")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
      void disposeResizeBuffer() {
         {
             mResizeBuffer.destroy();
@@ -1069,13 +981,12 @@ public final class ViewRootImpl extends Handler implements ViewParent, View.Atta
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:06.711 -0400", hash_original_method = "9CCD20C4D5BE58E51524A629AA69C9DE", hash_generated_method = "8501511A26325E04EAC861B486D9AD5C")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:01.150 -0400", hash_original_method = "9CCD20C4D5BE58E51524A629AA69C9DE", hash_generated_method = "E8DD0BBD11A2418B3518C0D8988E58E2")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public void requestTransitionStart(LayoutTransition transition) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
         dsTaint.addTaint(transition.dsTaint);
         {
-            boolean var194FCB9DF54F69E97F56CE68C10354D0_1378357194 = (mPendingTransitions == null || !mPendingTransitions.contains(transition));
+            boolean var194FCB9DF54F69E97F56CE68C10354D0_1895581950 = (mPendingTransitions == null || !mPendingTransitions.contains(transition));
             {
                 {
                     mPendingTransitions = new ArrayList<LayoutTransition>();
@@ -1093,8 +1004,8 @@ public final class ViewRootImpl extends Handler implements ViewParent, View.Atta
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:06.711 -0400", hash_original_method = "E06FBD8158D133D090EB34C23F0C9FD1", hash_generated_method = "E8832C92F0DB070A94B9D50A4A82D907")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:01.150 -0400", hash_original_method = "E06FBD8158D133D090EB34C23F0C9FD1", hash_generated_method = "89DC00F688CB268F0915107D47A234DD")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     private void processInputEvents(boolean outOfOrder) {
         dsTaint.addTaint(outOfOrder);
         {
@@ -1120,10 +1031,10 @@ public final class ViewRootImpl extends Handler implements ViewParent, View.Atta
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:06.716 -0400", hash_original_method = "DF10FEADFB061504FA9A2B620C341C55", hash_generated_method = "D98C5CB1BCFF96924021DC2CBD8086A2")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:01.464 -0400", hash_original_method = "DF10FEADFB061504FA9A2B620C341C55", hash_generated_method = "F6C75D747FBE392A4AB5D6442ADA86D0")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     private void performTraversals() {
-        final View host;
+        View host;
         host = mView;
         processInputEvents(true);
         {
@@ -1147,9 +1058,9 @@ public final class ViewRootImpl extends Handler implements ViewParent, View.Atta
         int desiredWindowHeight;
         int childWidthMeasureSpec;
         int childHeightMeasureSpec;
-        final View.AttachInfo attachInfo;
+        View.AttachInfo attachInfo;
         attachInfo = mAttachInfo;
-        final int viewVisibility;
+        int viewVisibility;
         viewVisibility = getHostVisibility();
         boolean viewVisibilityChanged;
         viewVisibilityChanged = mViewVisibility != viewVisibility
@@ -1164,7 +1075,7 @@ public final class ViewRootImpl extends Handler implements ViewParent, View.Atta
         CompatibilityInfo compatibilityInfo;
         compatibilityInfo = mCompatibilityInfo.get();
         {
-            boolean var0A004AC3811C18545614B32625CEEC49_13966073 = (compatibilityInfo.supportsScreen() == mLastInCompatMode);
+            boolean var0A004AC3811C18545614B32625CEEC49_1639352881 = (compatibilityInfo.supportsScreen() == mLastInCompatMode);
             {
                 params = lp;
                 fullRedrawNeeded = true;
@@ -1235,7 +1146,7 @@ public final class ViewRootImpl extends Handler implements ViewParent, View.Atta
         insetsChanged = false;
         {
             getRunQueue().executeActions(attachInfo.mHandler);
-            final Resources res;
+            Resources res;
             res = mView.getContext().getResources();
             {
                 mAttachInfo.mInTouchMode = !mAddedTouchMode;
@@ -1243,13 +1154,13 @@ public final class ViewRootImpl extends Handler implements ViewParent, View.Atta
             } //End block
             {
                 {
-                    boolean var62033EA88707C143C01D8EAFE9900154_734194837 = (!mPendingContentInsets.equals(mAttachInfo.mContentInsets));
+                    boolean var62033EA88707C143C01D8EAFE9900154_1254104505 = (!mPendingContentInsets.equals(mAttachInfo.mContentInsets));
                     {
                         insetsChanged = true;
                     } //End block
                 } //End collapsed parenthetic
                 {
-                    boolean var0CAA9A1F030432324CBF6F78F99C9DD7_335887727 = (!mPendingVisibleInsets.equals(mAttachInfo.mVisibleInsets));
+                    boolean var0CAA9A1F030432324CBF6F78F99C9DD7_328917176 = (!mPendingVisibleInsets.equals(mAttachInfo.mVisibleInsets));
                     {
                         mAttachInfo.mVisibleInsets.set(mPendingVisibleInsets);
                     } //End block
@@ -1276,7 +1187,7 @@ public final class ViewRootImpl extends Handler implements ViewParent, View.Atta
             boolean goodMeasure;
             goodMeasure = false;
             {
-                final DisplayMetrics packageMetrics;
+                DisplayMetrics packageMetrics;
                 packageMetrics = res.getDisplayMetrics();
                 res.getValue(com.android.internal.R.dimen.config_prefDialogWidth, mTmpValue, true);
                 int baseSize;
@@ -1289,7 +1200,7 @@ public final class ViewRootImpl extends Handler implements ViewParent, View.Atta
                     childHeightMeasureSpec = getRootMeasureSpec(desiredWindowHeight, lp.height);
                     host.measure(childWidthMeasureSpec, childHeightMeasureSpec);
                     {
-                        boolean var21D962C086164386A94062CBCB36B58F_1884304032 = ((host.getMeasuredWidthAndState()&View.MEASURED_STATE_TOO_SMALL) == 0);
+                        boolean var21D962C086164386A94062CBCB36B58F_1569258802 = ((host.getMeasuredWidthAndState()&View.MEASURED_STATE_TOO_SMALL) == 0);
                         {
                             goodMeasure = true;
                         } //End block
@@ -1298,7 +1209,7 @@ public final class ViewRootImpl extends Handler implements ViewParent, View.Atta
                             childWidthMeasureSpec = getRootMeasureSpec(baseSize, lp.width);
                             host.measure(childWidthMeasureSpec, childHeightMeasureSpec);
                             {
-                                boolean var9F98C604F7D547E03F47254F3D22799F_248584281 = ((host.getMeasuredWidthAndState()&View.MEASURED_STATE_TOO_SMALL) == 0);
+                                boolean var9F98C604F7D547E03F47254F3D22799F_1292283337 = ((host.getMeasuredWidthAndState()&View.MEASURED_STATE_TOO_SMALL) == 0);
                                 {
                                     goodMeasure = true;
                                 } //End block
@@ -1312,7 +1223,7 @@ public final class ViewRootImpl extends Handler implements ViewParent, View.Atta
                 childHeightMeasureSpec = getRootMeasureSpec(desiredWindowHeight, lp.height);
                 host.measure(childWidthMeasureSpec, childHeightMeasureSpec);
                 {
-                    boolean varDF7BF5380028FDCE8B63C5F6F1205021_1017208008 = (mWidth != host.getMeasuredWidth() || mHeight != host.getMeasuredHeight());
+                    boolean varDF7BF5380028FDCE8B63C5F6F1205021_2121126040 = (mWidth != host.getMeasuredWidth() || mHeight != host.getMeasuredHeight());
                     {
                         windowSizeMayChange = true;
                     } //End block
@@ -1350,14 +1261,14 @@ public final class ViewRootImpl extends Handler implements ViewParent, View.Atta
             resizeMode = mSoftInputMode &
                     WindowManager.LayoutParams.SOFT_INPUT_MASK_ADJUST;
             {
-                final int N;
+                int N;
                 N = attachInfo.mScrollContainers.size();
                 {
                     int i;
                     i = 0;
                     {
                         {
-                            boolean varA64E9739EA7F01D5D1160845BAD0386A_974661071 = (attachInfo.mScrollContainers.get(i).isShown());
+                            boolean varA64E9739EA7F01D5D1160845BAD0386A_812275813 = (attachInfo.mScrollContainers.get(i).isShown());
                             {
                                 resizeMode = WindowManager.LayoutParams.SOFT_INPUT_ADJUST_RESIZE;
                             } //End block
@@ -1377,7 +1288,7 @@ public final class ViewRootImpl extends Handler implements ViewParent, View.Atta
         } //End block
         {
             {
-                boolean var124397EC8E035E35B1B90F57C49E8065_10881277 = (!PixelFormat.formatHasAlpha(params.format));
+                boolean var124397EC8E035E35B1B90F57C49E8065_1719059920 = (!PixelFormat.formatHasAlpha(params.format));
                 {
                     params.format = PixelFormat.TRANSLUCENT;
                 } //End block
@@ -1390,7 +1301,7 @@ public final class ViewRootImpl extends Handler implements ViewParent, View.Atta
                         frame.width() < desiredWindowWidth && frame.width() != mWidth)
                 || (lp.height == ViewGroup.LayoutParams.WRAP_CONTENT &&
                         frame.height() < desiredWindowHeight && frame.height() != mHeight));
-        final boolean computesInternalInsets;
+        boolean computesInternalInsets;
         computesInternalInsets = attachInfo.mTreeObserver.hasComputeInternalInsetsListeners();
         boolean insetsPending;
         insetsPending = false;
@@ -1423,7 +1334,7 @@ public final class ViewRootImpl extends Handler implements ViewParent, View.Atta
                     params.subtreeSystemUiVisibility = attachInfo.mSystemUiVisibility;
                     params.hasSystemUiListeners = attachInfo.mHasSystemUiListeners;
                 } //End block
-                final int surfaceGenerationId;
+                int surfaceGenerationId;
                 surfaceGenerationId = mSurface.getGenerationId();
                 relayoutResult = relayoutWindow(params, viewVisibility, insetsPending);
                 {
@@ -1439,7 +1350,7 @@ public final class ViewRootImpl extends Handler implements ViewParent, View.Atta
                         mAttachInfo.mVisibleInsets);
                 {
                     {
-                        boolean var1E0539E09B573A600F6F1CFEAFBE4679_724996007 = (mWidth > 0 && mHeight > 0 &&
+                        boolean var1E0539E09B573A600F6F1CFEAFBE4679_1694769497 = (mWidth > 0 && mHeight > 0 &&
                             mSurface != null && mSurface.isValid() &&
                             !mAttachInfo.mTurnOffWindowResizeAnim &&
                             mAttachInfo.mHardwareRenderer != null &&
@@ -1461,7 +1372,7 @@ public final class ViewRootImpl extends Handler implements ViewParent, View.Atta
                                         mWidth, mHeight, false);
                                 } //End block
                                 {
-                                    boolean var3E6D8158ACA9AC4B059634A10A6CF6F6_968610427 = (mResizeBuffer.getWidth() != mWidth ||
+                                    boolean var3E6D8158ACA9AC4B059634A10A6CF6F6_640889770 = (mResizeBuffer.getWidth() != mWidth ||
                                     mResizeBuffer.getHeight() != mHeight);
                                     {
                                         mResizeBuffer.resize(mWidth, mHeight);
@@ -1470,11 +1381,11 @@ public final class ViewRootImpl extends Handler implements ViewParent, View.Atta
                                 layerCanvas = mResizeBuffer.start(hwRendererCanvas);
                                 layerCanvas.setViewport(mWidth, mHeight);
                                 layerCanvas.onPreDraw(null);
-                                final int restoreCount;
+                                int restoreCount;
                                 restoreCount = layerCanvas.save();
                                 layerCanvas.drawColor(0xff000000, PorterDuff.Mode.SRC);
                                 int yoff;
-                                final boolean scrolling;
+                                boolean scrolling;
                                 scrolling = mScroller != null
                                     && mScroller.computeScrollOffset();
                                 {
@@ -1520,7 +1431,7 @@ public final class ViewRootImpl extends Handler implements ViewParent, View.Atta
                 } //End block
                 {
                     {
-                        boolean var85F0101842CACF01F09324AA7EC986C7_1113335748 = (mSurface.isValid());
+                        boolean var85F0101842CACF01F09324AA7EC986C7_1997402323 = (mSurface.isValid());
                         {
                             newSurface = true;
                             fullRedrawNeeded = true;
@@ -1535,7 +1446,7 @@ public final class ViewRootImpl extends Handler implements ViewParent, View.Atta
                                     try 
                                     {
                                         {
-                                            boolean varDF4C39F3C79070D8F8930AEFD74A46C5_1776638587 = (!sWindowSession.outOfMemory(mWindow));
+                                            boolean varDF4C39F3C79070D8F8930AEFD74A46C5_1148315768 = (!sWindowSession.outOfMemory(mWindow));
                                             {
                                                 Process.killProcess(Process.myPid());
                                             } //End block
@@ -1550,7 +1461,7 @@ public final class ViewRootImpl extends Handler implements ViewParent, View.Atta
                     } //End collapsed parenthetic
                 } //End block
                 {
-                    boolean var223FE8BD2DC3BE69B6019B00E048EE0C_1442814379 = (!mSurface.isValid());
+                    boolean var223FE8BD2DC3BE69B6019B00E048EE0C_1751880847 = (!mSurface.isValid());
                     {
                         mLastScrolledFocus = null;
                         mScrollY = mCurScrollY = 0;
@@ -1559,7 +1470,7 @@ public final class ViewRootImpl extends Handler implements ViewParent, View.Atta
                         } //End block
                         disposeResizeBuffer();
                         {
-                            boolean var750EE654262A2705CF0E4AE4A63530E4_1324246229 = (mAttachInfo.mHardwareRenderer != null &&
+                            boolean var750EE654262A2705CF0E4AE4A63530E4_1374376769 = (mAttachInfo.mHardwareRenderer != null &&
                             mAttachInfo.mHardwareRenderer.isEnabled());
                             {
                                 mAttachInfo.mHardwareRenderer.destroy(true);
@@ -1567,7 +1478,7 @@ public final class ViewRootImpl extends Handler implements ViewParent, View.Atta
                         } //End collapsed parenthetic
                     } //End block
                     {
-                        boolean varA621B9B0F4C63EC9228FD0CAB33867BD_1839045143 = (surfaceGenerationId != mSurface.getGenerationId() &&
+                        boolean varA621B9B0F4C63EC9228FD0CAB33867BD_771481539 = (surfaceGenerationId != mSurface.getGenerationId() &&
                         mSurfaceHolder == null && mAttachInfo.mHardwareRenderer != null);
                         {
                             fullRedrawNeeded = true;
@@ -1580,7 +1491,7 @@ public final class ViewRootImpl extends Handler implements ViewParent, View.Atta
                                 try 
                                 {
                                     {
-                                        boolean var6D55857E69BE616DA2387C824B8B58FA_876441837 = (!sWindowSession.outOfMemory(mWindow));
+                                        boolean var6D55857E69BE616DA2387C824B8B58FA_1702052325 = (!sWindowSession.outOfMemory(mWindow));
                                         {
                                             Process.killProcess(Process.myPid());
                                         } //End block
@@ -1602,7 +1513,7 @@ public final class ViewRootImpl extends Handler implements ViewParent, View.Atta
             mHeight = frame.height();
             {
                 {
-                    boolean var0D8FEFF8FF7B19DB704450AA7E0BA173_408152193 = (mSurface.isValid());
+                    boolean var0D8FEFF8FF7B19DB704450AA7E0BA173_1178447155 = (mSurface.isValid());
                     {
                         mSurfaceHolder.mSurface = mSurface;
                     } //End block
@@ -1610,7 +1521,7 @@ public final class ViewRootImpl extends Handler implements ViewParent, View.Atta
                 mSurfaceHolder.setSurfaceFrameSize(mWidth, mHeight);
                 mSurfaceHolder.mSurfaceLock.unlock();
                 {
-                    boolean var0D8FEFF8FF7B19DB704450AA7E0BA173_1295316753 = (mSurface.isValid());
+                    boolean var0D8FEFF8FF7B19DB704450AA7E0BA173_516785529 = (mSurface.isValid());
                     {
                         {
                             mSurfaceHolder.ungetCallbacks();
@@ -1671,11 +1582,11 @@ public final class ViewRootImpl extends Handler implements ViewParent, View.Atta
                 } //End collapsed parenthetic
             } //End block
             {
-                boolean varCD2E6CE6A1CFB30D773CBD0CD1B5DD28_1879600565 = (mAttachInfo.mHardwareRenderer != null &&
+                boolean varCD2E6CE6A1CFB30D773CBD0CD1B5DD28_459746848 = (mAttachInfo.mHardwareRenderer != null &&
                     mAttachInfo.mHardwareRenderer.isEnabled());
                 {
                     {
-                        boolean var68BE6CA5337B3E1A6C30D35C34420F08_1834213584 = (hwInitialized || windowShouldResize ||
+                        boolean var68BE6CA5337B3E1A6C30D35C34420F08_2115454177 = (hwInitialized || windowShouldResize ||
                         mWidth != mAttachInfo.mHardwareRenderer.getWidth() ||
                         mHeight != mAttachInfo.mHardwareRenderer.getHeight());
                         {
@@ -1692,7 +1603,7 @@ public final class ViewRootImpl extends Handler implements ViewParent, View.Atta
                 focusChangedDueToTouchMode = ensureTouchModeLocally(
                         (relayoutResult&WindowManagerImpl.RELAYOUT_RES_IN_TOUCH_MODE) != 0);
                 {
-                    boolean varA6DAF762C1B830FF995EE7E2238847D5_678006869 = (focusChangedDueToTouchMode || mWidth != host.getMeasuredWidth()
+                    boolean varA6DAF762C1B830FF995EE7E2238847D5_2136271018 = (focusChangedDueToTouchMode || mWidth != host.getMeasuredWidth()
                         || mHeight != host.getMeasuredHeight() || contentInsetsChanged);
                     {
                         childWidthMeasureSpec = getRootMeasureSpec(mWidth, lp.width);
@@ -1724,7 +1635,7 @@ public final class ViewRootImpl extends Handler implements ViewParent, View.Atta
                 } //End collapsed parenthetic
             } //End block
         } //End block
-        final boolean didLayout;
+        boolean didLayout;
         didLayout = mLayoutRequested && !mStopped;
         boolean triggerGlobalLayoutListener;
         triggerGlobalLayoutListener = didLayout
@@ -1740,10 +1651,9 @@ public final class ViewRootImpl extends Handler implements ViewParent, View.Atta
             host.layout(0, 0, host.getMeasuredWidth(), host.getMeasuredHeight());
             {
                 {
-                    boolean var31831045BDEFED9943FC4835790CC5A9_595442659 = (!host.dispatchConsistencyCheck(ViewDebug.CONSISTENCY_LAYOUT));
-                    if (DroidSafeAndroidRuntime.control)
+                    boolean var31831045BDEFED9943FC4835790CC5A9_633461498 = (!host.dispatchConsistencyCheck(ViewDebug.CONSISTENCY_LAYOUT));
                     {
-                        throw new IllegalStateException("The view hierarchy is an inconsistent state,"
+                        if (DroidSafeAndroidRuntime.control) throw new IllegalStateException("The view hierarchy is an inconsistent state,"
                             + "please refer to the logs with the tag "
                             + ViewDebug.CONSISTENCY_LOG_TAG + " for more infomation.");
                     } //End block
@@ -1762,7 +1672,7 @@ public final class ViewRootImpl extends Handler implements ViewParent, View.Atta
                     mTranslator.translateRegionInWindowToScreen(mTransparentRegion);
                 } //End block
                 {
-                    boolean var9116609D398330DBB934B3776C260A89_1741721283 = (!mTransparentRegion.equals(mPreviousTransparentRegion));
+                    boolean var9116609D398330DBB934B3776C260A89_671812778 = (!mTransparentRegion.equals(mPreviousTransparentRegion));
                     {
                         mPreviousTransparentRegion.set(mTransparentRegion);
                         try 
@@ -1784,24 +1694,24 @@ public final class ViewRootImpl extends Handler implements ViewParent, View.Atta
             attachInfo.mRecomputeGlobalAttributes = false;
             attachInfo.mTreeObserver.dispatchOnGlobalLayout();
             {
-                boolean var673B0FAE9DD6499A44EB4983D0077ABD_789227087 = (AccessibilityManager.getInstance(host.mContext).isEnabled());
+                boolean var673B0FAE9DD6499A44EB4983D0077ABD_2042631654 = (AccessibilityManager.getInstance(host.mContext).isEnabled());
                 {
                     postSendWindowContentChangedCallback();
                 } //End block
             } //End collapsed parenthetic
         } //End block
         {
-            final ViewTreeObserver.InternalInsetsInfo insets;
+            ViewTreeObserver.InternalInsetsInfo insets;
             insets = attachInfo.mGivenInternalInsets;
             insets.reset();
             attachInfo.mTreeObserver.dispatchOnComputeInternalInsets(insets);
             {
-                boolean var0FBD0E114506B508CD538E9D69F15B52_1700864479 = (insetsPending || !mLastGivenInsets.equals(insets));
+                boolean var0FBD0E114506B508CD538E9D69F15B52_601722212 = (insetsPending || !mLastGivenInsets.equals(insets));
                 {
                     mLastGivenInsets.set(insets);
-                    /*final*/ Rect contentInsets;
-                    /*final*/ Rect visibleInsets;
-                    /*final*/ Region touchableRegion;
+                    Rect contentInsets;
+                    Rect visibleInsets;
+                    Region touchableRegion;
                     {
                         contentInsets = mTranslator.getTranslatedContentInsets(insets.contentInsets);
                         visibleInsets = mTranslator.getTranslatedVisibleInsets(insets.visibleInsets);
@@ -1825,7 +1735,7 @@ public final class ViewRootImpl extends Handler implements ViewParent, View.Atta
         {
             {
                 {
-                    boolean var4424A784A6C03CB3A8B3EDDFC8E02AD9_275075995 = (!mView.hasFocus());
+                    boolean var4424A784A6C03CB3A8B3EDDFC8E02AD9_1573570263 = (!mView.hasFocus());
                     {
                         mView.requestFocus(View.FOCUS_FORWARD);
                         mFocusedView = mRealFocusedView = mView.findFocus();
@@ -1841,7 +1751,7 @@ public final class ViewRootImpl extends Handler implements ViewParent, View.Atta
         mNewSurfaceNeeded = false;
         mViewVisibility = viewVisibility;
         {
-            final boolean imTarget;
+            boolean imTarget;
             imTarget = WindowManager.LayoutParams
                     .mayUseInputMethod(mWindowAttributes.flags);
             {
@@ -1861,12 +1771,12 @@ public final class ViewRootImpl extends Handler implements ViewParent, View.Atta
                 viewVisibility != View.VISIBLE;
         {
             {
-                boolean var01179B785E9234D284AD849ED1C97F52_1261032165 = (mPendingTransitions != null && mPendingTransitions.size() > 0);
+                boolean var01179B785E9234D284AD849ED1C97F52_716692704 = (mPendingTransitions != null && mPendingTransitions.size() > 0);
                 {
                     {
                         int i;
                         i = 0;
-                        boolean varAD8106A5496A57A8FDEF861C44502FBE_895140392 = (i < mPendingTransitions.size());
+                        boolean varAD8106A5496A57A8FDEF861C44502FBE_1713365100 = (i < mPendingTransitions.size());
                         {
                             mPendingTransitions.get(i).startChangingAnimations();
                         } //End block
@@ -1875,7 +1785,7 @@ public final class ViewRootImpl extends Handler implements ViewParent, View.Atta
                 } //End block
             } //End collapsed parenthetic
             mFullRedrawNeeded = false;
-            final long drawStartTime;
+            long drawStartTime;
             {
                 drawStartTime = System.nanoTime();
             } //End block
@@ -1886,7 +1796,7 @@ public final class ViewRootImpl extends Handler implements ViewParent, View.Atta
             {
                 mReportNextDraw = false;
                 {
-                    boolean varFBA90BC0FA837508D9D80EA4B8A252E5_2103174444 = (mSurfaceHolder != null && mSurface.isValid());
+                    boolean varFBA90BC0FA837508D9D80EA4B8A252E5_1596504134 = (mSurfaceHolder != null && mSurface.isValid());
                     {
                         mSurfaceHolderCallback.surfaceRedrawNeeded(mSurfaceHolder);
                         SurfaceHolder.Callback callbacks[];
@@ -1914,12 +1824,12 @@ public final class ViewRootImpl extends Handler implements ViewParent, View.Atta
         } //End block
         {
             {
-                boolean var01179B785E9234D284AD849ED1C97F52_1643906663 = (mPendingTransitions != null && mPendingTransitions.size() > 0);
+                boolean var01179B785E9234D284AD849ED1C97F52_1113911227 = (mPendingTransitions != null && mPendingTransitions.size() > 0);
                 {
                     {
                         int i;
                         i = 0;
-                        boolean varAD8106A5496A57A8FDEF861C44502FBE_1087658649 = (i < mPendingTransitions.size());
+                        boolean varAD8106A5496A57A8FDEF861C44502FBE_766052753 = (i < mPendingTransitions.size());
                         {
                             mPendingTransitions.get(i).endChangingAnimations();
                         } //End block
@@ -1942,8 +1852,8 @@ public final class ViewRootImpl extends Handler implements ViewParent, View.Atta
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:06.717 -0400", hash_original_method = "365202E212CCFCA6F73CFA951F572330", hash_generated_method = "AC700CDB90D147CDD8B0DD6A5CB226FC")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:01.466 -0400", hash_original_method = "365202E212CCFCA6F73CFA951F572330", hash_generated_method = "8E12023293D2E124A0E461ADE8F92DF3")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     public void requestTransparentRegion(View child) {
         dsTaint.addTaint(child.dsTaint);
         checkThread();
@@ -1964,11 +1874,11 @@ public final class ViewRootImpl extends Handler implements ViewParent, View.Atta
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:06.717 -0400", hash_original_method = "66EB141D637AEB4DAD3BF6AA91407C70", hash_generated_method = "DE880CF25549AC71DD256A8760ACA195")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:01.466 -0400", hash_original_method = "66EB141D637AEB4DAD3BF6AA91407C70", hash_generated_method = "AFF0BBD526FA76E00128A31C35D15986")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     private int getRootMeasureSpec(int windowSize, int rootDimension) {
-        dsTaint.addTaint(windowSize);
         dsTaint.addTaint(rootDimension);
+        dsTaint.addTaint(windowSize);
         int measureSpec;
         //Begin case ViewGroup.LayoutParams.MATCH_PARENT 
         measureSpec = MeasureSpec.makeMeasureSpec(windowSize, MeasureSpec.EXACTLY);
@@ -1997,8 +1907,8 @@ public final class ViewRootImpl extends Handler implements ViewParent, View.Atta
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:06.717 -0400", hash_original_method = "40FADC477E8B2549BFFAC38F5B19946C", hash_generated_method = "F30749523F20F4DCC817E70912D8F957")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:01.466 -0400", hash_original_method = "40FADC477E8B2549BFFAC38F5B19946C", hash_generated_method = "03B2CCB6CF0AF8B0EEED090BD3509798")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     public void onHardwarePreDraw(HardwareCanvas canvas) {
         //DSFIXME:  CODE0009: Possible callback target function detected
         dsTaint.addTaint(canvas.dsTaint);
@@ -2008,8 +1918,8 @@ public final class ViewRootImpl extends Handler implements ViewParent, View.Atta
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:06.717 -0400", hash_original_method = "0640B89EE45E5EFA4DD1A520BD523415", hash_generated_method = "B57B5CF9FFFCD3422F40AFEB50F1A2C4")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:01.467 -0400", hash_original_method = "0640B89EE45E5EFA4DD1A520BD523415", hash_generated_method = "45EEA69BFCF211EC481067F08C0F55B0")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     public void onHardwarePostDraw(HardwareCanvas canvas) {
         //DSFIXME:  CODE0009: Possible callback target function detected
         dsTaint.addTaint(canvas.dsTaint);
@@ -2025,8 +1935,8 @@ public final class ViewRootImpl extends Handler implements ViewParent, View.Atta
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:06.717 -0400", hash_original_method = "6ED7CE075B975161CAA5CFD7B073E953", hash_generated_method = "53EE35951C59D41989BD1A217EAE298B")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:01.467 -0400", hash_original_method = "6ED7CE075B975161CAA5CFD7B073E953", hash_generated_method = "A25138E49DEBB1F0FF8DA49C8F8CB589")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
      void outputDisplayList(View view) {
         dsTaint.addTaint(view.dsTaint);
         {
@@ -2046,32 +1956,58 @@ public final class ViewRootImpl extends Handler implements ViewParent, View.Atta
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:06.718 -0400", hash_original_method = "910E3893A962467411DC222791137B30", hash_generated_method = "2FE2909524BF5FB6D3DA6EB1882B4E7A")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:01.468 -0400", hash_original_method = "910E3893A962467411DC222791137B30", hash_generated_method = "8AB7CFA52F132865CBCBAB904F896741")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     private void profileRendering(boolean enabled) {
         dsTaint.addTaint(enabled);
         {
             {
-                mRenderProfiler = new Thread(new Runnable() {
+                mRenderProfiler = new Thread(new Runnable() {                    
+                    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:01.468 -0400", hash_original_method = "EA0E14B14C78DD1BF1B50C8FA4E06FFC", hash_generated_method = "705EDA88C9D10DBA31F87E3EBD90AF65")
+                    //DSFIXME:  CODE0002: Requires DSC value to be set
                     @Override
                     public void run() {
                         Log.d(TAG, "Starting profiling thread");
-                        while (mRenderProfilingEnabled) {
-                            mAttachInfo.mHandler.post(new Runnable() {
+                        {
+                            mAttachInfo.mHandler.post(new Runnable() {                                
+                                @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:01.468 -0400", hash_original_method = "4A3D1224B1F9A46A2478F0B98B77BC62", hash_generated_method = "3306EB70EC747DC660D40B63C10E33A1")
+                                //DSFIXME:  CODE0002: Requires DSC value to be set
                                 @Override
                                 public void run() {
                                     mDirty.set(0, 0, mWidth, mHeight);
                                     scheduleTraversals();
+                                    // ---------- Original Method ----------
+                                    //mDirty.set(0, 0, mWidth, mHeight);
+                                    //scheduleTraversals();
                                 }
-                            });
-                            try {
+});
+                            try 
+                            {
                                 Thread.sleep(15);
-                            } catch (InterruptedException e) {
+                            } //End block
+                            catch (InterruptedException e)
+                            {
                                 Log.d(TAG, "Exiting profiling thread");
-                            }                            
-                        }
+                            } //End block
+                        } //End block
+                        // ---------- Original Method ----------
+                        //Log.d(TAG, "Starting profiling thread");
+                        //while (mRenderProfilingEnabled) {
+                            //mAttachInfo.mHandler.post(new Runnable() {
+                                //@Override
+                                //public void run() {
+                                    //mDirty.set(0, 0, mWidth, mHeight);
+                                    //scheduleTraversals();
+                                //}
+                            //});
+                            //try {
+                                //Thread.sleep(15);
+                            //} catch (InterruptedException e) {
+                                //Log.d(TAG, "Exiting profiling thread");
+                            //}                            
+                        //}
                     }
-                }, "Rendering Profiler");
+}, "Rendering Profiler");
                 mRenderProfiler.start();
             } //End block
             {
@@ -2084,7 +2020,7 @@ public final class ViewRootImpl extends Handler implements ViewParent, View.Atta
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:06.718 -0400", hash_original_method = "1AA1A4B748D7601F4F3826735499E6F6", hash_generated_method = "A7B4BED50F3D8518580BC1ED0BD2AF4C")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:01.469 -0400", hash_original_method = "1AA1A4B748D7601F4F3826735499E6F6", hash_generated_method = "9142EC35AF48E8C926B3F49668F6E3FC")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     private void trackFPS() {
         long nowTime;
@@ -2094,7 +2030,6 @@ public final class ViewRootImpl extends Handler implements ViewParent, View.Atta
             mFpsNumFrames = 0;
         } //End block
         {
-            ++mFpsNumFrames;
             String thisHash;
             thisHash = Integer.toHexString(System.identityHashCode(this));
             long frameTime;
@@ -2131,14 +2066,14 @@ public final class ViewRootImpl extends Handler implements ViewParent, View.Atta
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:06.719 -0400", hash_original_method = "E37EF3DCFB26F629DB3873EE57113F2D", hash_generated_method = "6971DBF8FB70C3D3B4CD3758D3EDCDB1")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:01.470 -0400", hash_original_method = "E37EF3DCFB26F629DB3873EE57113F2D", hash_generated_method = "83F6866857FFE35532D7B38266B0C80C")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     private void draw(boolean fullRedrawNeeded) {
         dsTaint.addTaint(fullRedrawNeeded);
         Surface surface;
         surface = mSurface;
         {
-            boolean var2E815E81AF85D59B92EF3DD48D335D0C_331701327 = (surface == null || !surface.isValid());
+            boolean var2E815E81AF85D59B92EF3DD48D335D0C_2092455480 = (surface == null || !surface.isValid());
         } //End collapsed parenthetic
         {
             trackFPS();
@@ -2146,7 +2081,7 @@ public final class ViewRootImpl extends Handler implements ViewParent, View.Atta
         {
             {
                 sFirstDrawComplete = true;
-                final int count;
+                int count;
                 count = sFirstDrawHandlers.size();
                 {
                     int i;
@@ -2211,10 +2146,10 @@ public final class ViewRootImpl extends Handler implements ViewParent, View.Atta
             dirty.set(0, 0, (int) (mWidth * appScale + 0.5f), (int) (mHeight * appScale + 0.5f));
         } //End block
         {
-            boolean var5D30B77E3F89F2623E0DAAFBA8BE8C49_830930436 = (mAttachInfo.mHardwareRenderer != null && mAttachInfo.mHardwareRenderer.isEnabled());
+            boolean var5D30B77E3F89F2623E0DAAFBA8BE8C49_445562365 = (mAttachInfo.mHardwareRenderer != null && mAttachInfo.mHardwareRenderer.isEnabled());
             {
                 {
-                    boolean varD5F827B9D34B0B1DC1F85ACE756947A8_202446632 = (!dirty.isEmpty() || mIsAnimating);
+                    boolean varD5F827B9D34B0B1DC1F85ACE756947A8_1793326086 = (!dirty.isEmpty() || mIsAnimating);
                     {
                         mIsAnimating = false;
                         mHardwareYOffset = yoff;
@@ -2229,7 +2164,7 @@ public final class ViewRootImpl extends Handler implements ViewParent, View.Atta
                             currentDirty = null;
                         } //End block
                         {
-                            boolean varDE04A2AF95D6F679E2E2203A2A073551_257400994 = (mAttachInfo.mHardwareRenderer.draw(mView, mAttachInfo, this, currentDirty));
+                            boolean varDE04A2AF95D6F679E2E2203A2A073551_1551129346 = (mAttachInfo.mHardwareRenderer.draw(mView, mAttachInfo, this, currentDirty));
                             {
                                 mPreviousDirty.set(0, 0, mWidth, mHeight);
                             } //End block
@@ -2243,9 +2178,9 @@ public final class ViewRootImpl extends Handler implements ViewParent, View.Atta
             } //End block
         } //End collapsed parenthetic
         {
-            boolean varAC62E7C7590DB61B5214E434C55175F8_2048330033 = (!dirty.isEmpty() || mIsAnimating);
+            boolean varAC62E7C7590DB61B5214E434C55175F8_1955903042 = (!dirty.isEmpty() || mIsAnimating);
             {
-                Canvas canvas = null;
+                Canvas canvas;
                 try 
                 {
                     int left;
@@ -2256,7 +2191,7 @@ public final class ViewRootImpl extends Handler implements ViewParent, View.Atta
                     right = dirty.right;
                     int bottom;
                     bottom = dirty.bottom;
-                    final long lockCanvasStartTime;
+                    long lockCanvasStartTime;
                     {
                         lockCanvasStartTime = System.nanoTime();
                     } //End block
@@ -2278,7 +2213,7 @@ public final class ViewRootImpl extends Handler implements ViewParent, View.Atta
                     try 
                     {
                         {
-                            boolean var752BE542D442F142A9DEDCDCD20ADA9F_641802924 = (!sWindowSession.outOfMemory(mWindow));
+                            boolean var752BE542D442F142A9DEDCDCD20ADA9F_199201553 = (!sWindowSession.outOfMemory(mWindow));
                             {
                                 Process.killProcess(Process.myPid());
                             } //End block
@@ -2295,7 +2230,7 @@ public final class ViewRootImpl extends Handler implements ViewParent, View.Atta
                 try 
                 {
                     {
-                        boolean var94DD6BEDF06EB37762BEEC60B9337CF6_2039523715 = (!dirty.isEmpty() || mIsAnimating);
+                        boolean var94DD6BEDF06EB37762BEEC60B9337CF6_2117458177 = (!dirty.isEmpty() || mIsAnimating);
                         {
                             long startTime;
                             startTime = 0L;
@@ -2303,7 +2238,7 @@ public final class ViewRootImpl extends Handler implements ViewParent, View.Atta
                                 startTime = SystemClock.elapsedRealtime();
                             } //End block
                             {
-                                boolean varD1E08946F6E52A077FF56A289B9208C1_779938008 = (!canvas.isOpaque() || yoff != 0);
+                                boolean varD1E08946F6E52A077FF56A289B9208C1_2058712390 = (!canvas.isOpaque() || yoff != 0);
                                 {
                                     canvas.drawColor(0, PorterDuff.Mode.CLEAR);
                                 } //End block
@@ -2357,16 +2292,16 @@ public final class ViewRootImpl extends Handler implements ViewParent, View.Atta
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:06.720 -0400", hash_original_method = "FAD7953F436A3C038802D5DE07F19E9E", hash_generated_method = "E8133B601B048A6DA1057E9F68EC2108")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:01.472 -0400", hash_original_method = "FAD7953F436A3C038802D5DE07F19E9E", hash_generated_method = "9D1D3FFCEDD94FA87D019186C5C65CFE")
     //DSFIXME:  CODE0002: Requires DSC value to be set
      boolean scrollToRectOrFocus(Rect rectangle, boolean immediate) {
-        dsTaint.addTaint(rectangle.dsTaint);
         dsTaint.addTaint(immediate);
-        final View.AttachInfo attachInfo;
+        dsTaint.addTaint(rectangle.dsTaint);
+        View.AttachInfo attachInfo;
         attachInfo = mAttachInfo;
-        final Rect ci;
+        Rect ci;
         ci = attachInfo.mContentInsets;
-        final Rect vi;
+        Rect vi;
         vi = attachInfo.mVisibleInsets;
         int scrollY;
         scrollY = 0;
@@ -2386,7 +2321,7 @@ public final class ViewRootImpl extends Handler implements ViewParent, View.Atta
                 mLastScrolledFocus = focus;
                 mScrollMayChange = false;
                 {
-                    boolean var6E219E0A30DABE54C1FB5AE05AB0C96F_1046170756 = (focus.getGlobalVisibleRect(mVisRect, null));
+                    boolean var6E219E0A30DABE54C1FB5AE05AB0C96F_986960831 = (focus.getGlobalVisibleRect(mVisRect, null));
                     {
                         {
                             focus.getFocusedRect(mTempRect);
@@ -2399,16 +2334,16 @@ public final class ViewRootImpl extends Handler implements ViewParent, View.Atta
                             mTempRect.set(rectangle);
                         } //End block
                         {
-                            boolean var7B24AA8599694B5C184BD1D7A0EA3976_2121631243 = (mTempRect.intersect(mVisRect));
+                            boolean var7B24AA8599694B5C184BD1D7A0EA3976_786978677 = (mTempRect.intersect(mVisRect));
                             {
                                 {
-                                    boolean var3D339EB9AF254B1679979682435121C1_1630157564 = (mTempRect.height() >
+                                    boolean var3D339EB9AF254B1679979682435121C1_1186640816 = (mTempRect.height() >
                                 (mView.getHeight()-vi.top-vi.bottom));
                                     {
                                         scrollY -= vi.top - (mTempRect.top-scrollY);
                                     } //End block
                                     {
-                                        boolean var3406F2BDBAA7A3EBFD045E8954640BCE_141047942 = ((mTempRect.bottom-scrollY)
+                                        boolean var3406F2BDBAA7A3EBFD045E8954640BCE_670620563 = ((mTempRect.bottom-scrollY)
                                 > (mView.getHeight()-vi.bottom));
                                         {
                                             scrollY += (mTempRect.bottom-scrollY)
@@ -2441,8 +2376,8 @@ public final class ViewRootImpl extends Handler implements ViewParent, View.Atta
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:06.720 -0400", hash_original_method = "9E09AEB1258054D8E474B794DDE3DA53", hash_generated_method = "23B9A0BE6C9096A20D59EBD1FF8AC4E7")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:01.472 -0400", hash_original_method = "9E09AEB1258054D8E474B794DDE3DA53", hash_generated_method = "809212A182FDF6E3CF2C1973ABEA1906")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     public void requestChildFocus(View child, View focused) {
         dsTaint.addTaint(child.dsTaint);
         dsTaint.addTaint(focused.dsTaint);
@@ -2464,7 +2399,7 @@ public final class ViewRootImpl extends Handler implements ViewParent, View.Atta
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:06.721 -0400", hash_original_method = "D78AE43D1295D32838328E11498E7092", hash_generated_method = "55E542E8D319A5F8AB704BDD5276F76F")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:01.473 -0400", hash_original_method = "D78AE43D1295D32838328E11498E7092", hash_generated_method = "58C76B060FBD22E806CF030C9E880E3B")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public void clearChildFocus(View child) {
         dsTaint.addTaint(child.dsTaint);
@@ -2473,10 +2408,10 @@ public final class ViewRootImpl extends Handler implements ViewParent, View.Atta
         oldFocus = mFocusedView;
         mFocusedView = mRealFocusedView = null;
         {
-            boolean var0C2CE9934D88CF89C62BF802E1814E91_1606084162 = (mView != null && !mView.hasFocus());
+            boolean var0C2CE9934D88CF89C62BF802E1814E91_922082883 = (mView != null && !mView.hasFocus());
             {
                 {
-                    boolean varC84B37DB46E138B03F613C2E132675E1_662610484 = (!mView.requestFocus(View.FOCUS_FORWARD));
+                    boolean varC84B37DB46E138B03F613C2E132675E1_303070601 = (!mView.requestFocus(View.FOCUS_FORWARD));
                     {
                         mAttachInfo.mTreeObserver.dispatchOnGlobalFocusChange(oldFocus, null);
                     } //End block
@@ -2501,14 +2436,14 @@ public final class ViewRootImpl extends Handler implements ViewParent, View.Atta
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:06.721 -0400", hash_original_method = "8AB5F5420D903C559791A9BF9B9BF8FD", hash_generated_method = "542C793319C0B28EFBC0D045FBE2A284")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:01.473 -0400", hash_original_method = "8AB5F5420D903C559791A9BF9B9BF8FD", hash_generated_method = "C1040A06AD0D1C531C5F0E12C2246F46")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public void focusableViewAvailable(View v) {
         dsTaint.addTaint(v.dsTaint);
         checkThread();
         {
             {
-                boolean var9C9B0C0875517AC338686EE7008FD35A_1659799995 = (!mView.hasFocus());
+                boolean var9C9B0C0875517AC338686EE7008FD35A_1657643377 = (!mView.hasFocus());
                 {
                     v.requestFocus();
                 } //End block
@@ -2519,7 +2454,7 @@ public final class ViewRootImpl extends Handler implements ViewParent, View.Atta
                             (((ViewGroup) mFocusedView).getDescendantFocusability() ==
                                     ViewGroup.FOCUS_AFTER_DESCENDANTS);
                     {
-                        boolean var673A3BE5EE0B137534BC4B96ECEA81C3_1733907375 = (descendantsHaveDibsOnFocus && isViewDescendantOf(v, mFocusedView));
+                        boolean var673A3BE5EE0B137534BC4B96ECEA81C3_823165447 = (descendantsHaveDibsOnFocus && isViewDescendantOf(v, mFocusedView));
                         {
                             v.requestFocus();
                         } //End block
@@ -2546,8 +2481,8 @@ public final class ViewRootImpl extends Handler implements ViewParent, View.Atta
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:06.721 -0400", hash_original_method = "66451BF0E175BE00AB35036422B65D7E", hash_generated_method = "15981CE724A2C2C608A42E9DE98D8E95")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:01.473 -0400", hash_original_method = "66451BF0E175BE00AB35036422B65D7E", hash_generated_method = "443D2513915BD65E57F73A380AD46672")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     public void recomputeViewAttributes(View child) {
         dsTaint.addTaint(child.dsTaint);
         checkThread();
@@ -2568,12 +2503,12 @@ public final class ViewRootImpl extends Handler implements ViewParent, View.Atta
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:06.721 -0400", hash_original_method = "59E93FB376BDE71F69616A2B01BFF0AF", hash_generated_method = "98F16F51E2107CEC0A4728215B27EF4F")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:01.474 -0400", hash_original_method = "59E93FB376BDE71F69616A2B01BFF0AF", hash_generated_method = "9DB8F5755988093BDB19CD07A613854F")
     //DSFIXME:  CODE0002: Requires DSC value to be set
      void dispatchDetachedFromWindow() {
         {
             {
-                boolean varCD2E6CE6A1CFB30D773CBD0CD1B5DD28_1957823052 = (mAttachInfo.mHardwareRenderer != null &&
+                boolean varCD2E6CE6A1CFB30D773CBD0CD1B5DD28_1850171476 = (mAttachInfo.mHardwareRenderer != null &&
                     mAttachInfo.mHardwareRenderer.isEnabled());
                 {
                     mAttachInfo.mHardwareRenderer.validate();
@@ -2613,7 +2548,7 @@ public final class ViewRootImpl extends Handler implements ViewParent, View.Atta
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:06.721 -0400", hash_original_method = "095941099FB476714878603F2FD5257D", hash_generated_method = "10A735C5AB5A4F21B53D8201A464E12D")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:01.474 -0400", hash_original_method = "095941099FB476714878603F2FD5257D", hash_generated_method = "73CE0C8B3851D7DC5B2EA59C48F56F97")
     //DSFIXME:  CODE0002: Requires DSC value to be set
      void updateConfiguration(Configuration config, boolean force) {
         dsTaint.addTaint(config.dsTaint);
@@ -2636,7 +2571,7 @@ public final class ViewRootImpl extends Handler implements ViewParent, View.Atta
         {
             config = mView.getResources().getConfiguration();
             {
-                boolean var8C30D5838B256BB265C26C428C6B837E_1184914982 = (force || mLastConfiguration.diff(config) != 0);
+                boolean var8C30D5838B256BB265C26C428C6B837E_119230069 = (force || mLastConfiguration.diff(config) != 0);
                 {
                     mLastConfiguration.setTo(config);
                     mView.dispatchConfigurationChanged(config);
@@ -2648,8 +2583,7 @@ public final class ViewRootImpl extends Handler implements ViewParent, View.Atta
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:06.721 -0400", hash_original_method = "25276A1ACE97D138BB17C9052B223D37", hash_generated_method = "418459F41ADF951A5077179957FC2600")
-    private static boolean isViewDescendantOf(View child, View parent) {
+        private static boolean isViewDescendantOf(View child, View parent) {
         if (child == parent) {
             return true;
         }
@@ -2658,8 +2592,7 @@ public final class ViewRootImpl extends Handler implements ViewParent, View.Atta
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:06.722 -0400", hash_original_method = "4A21A3C59CED96F8D51A1FA9FDD7BAE0", hash_generated_method = "486947955DF3791BB348E635C624758E")
-    private static void forceLayout(View view) {
+        private static void forceLayout(View view) {
         view.forceLayout();
         if (view instanceof ViewGroup) {
             ViewGroup group = (ViewGroup) view;
@@ -2671,19 +2604,19 @@ public final class ViewRootImpl extends Handler implements ViewParent, View.Atta
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:06.722 -0400", hash_original_method = "95F12947A9B342E5A748CE842344783A", hash_generated_method = "10FDDA54FAFCF20E8B269380771D157E")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:01.475 -0400", hash_original_method = "95F12947A9B342E5A748CE842344783A", hash_generated_method = "76360751CCBA6BE117FBC96ED949192B")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     @Override
     public String getMessageName(Message message) {
         dsTaint.addTaint(message.dsTaint);
-        String var96322DF42F9AAAF04C6A6417DE435EFC_542828288 = (super.getMessageName(message));
+        String var96322DF42F9AAAF04C6A6417DE435EFC_267509138 = (super.getMessageName(message));
         return dsTaint.getTaintString();
         // ---------- Original Method ----------
         // Original Method Too Long, Refer to Original Implementation
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:06.723 -0400", hash_original_method = "0C83FFF474CF8ADB1C57E65037847991", hash_generated_method = "1D6BA91ED85CDFE8FE29D894703FA8F9")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:01.477 -0400", hash_original_method = "0C83FFF474CF8ADB1C57E65037847991", hash_generated_method = "40172C40A661AB567F0096A132AF3576")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     @Override
     public void handleMessage(Message msg) {
@@ -2692,7 +2625,7 @@ public final class ViewRootImpl extends Handler implements ViewParent, View.Atta
         ((View) msg.obj).invalidate();
         //End case View.AttachInfo.INVALIDATE_MSG 
         //Begin case View.AttachInfo.INVALIDATE_RECT_MSG 
-        final View.AttachInfo.InvalidateInfo info;
+        View.AttachInfo.InvalidateInfo info;
         info = (View.AttachInfo.InvalidateInfo) msg.obj;
         //End case View.AttachInfo.INVALIDATE_RECT_MSG 
         //Begin case View.AttachInfo.INVALIDATE_RECT_MSG 
@@ -2707,7 +2640,7 @@ public final class ViewRootImpl extends Handler implements ViewParent, View.Atta
         } //End block
         //End case DO_TRAVERSAL 
         //Begin case DO_TRAVERSAL 
-        final long traversalStartTime;
+        long traversalStartTime;
         //End case DO_TRAVERSAL 
         //Begin case DO_TRAVERSAL 
         {
@@ -2766,7 +2699,7 @@ public final class ViewRootImpl extends Handler implements ViewParent, View.Atta
         //End case RESIZED 
         //Begin case RESIZED 
         {
-            boolean var143D5C08604C0AF03595F421C2A612C0_2123935243 = (mWinFrame.width() == msg.arg1 && mWinFrame.height() == msg.arg2
+            boolean var143D5C08604C0AF03595F421C2A612C0_337609628 = (mWinFrame.width() == msg.arg1 && mWinFrame.height() == msg.arg2
                     && mPendingContentInsets.equals(ri.coveredInsets)
                     && mPendingVisibleInsets.equals(ri.visibleInsets)
                     && ((ResizedInfo)msg.obj).newConfig == null);
@@ -2806,7 +2739,7 @@ public final class ViewRootImpl extends Handler implements ViewParent, View.Atta
                     inTouchMode = msg.arg2 != 0;
                     ensureTouchModeLocally(inTouchMode);
                     {
-                        boolean var3AE98E3D719D8E57E314A6EF6D2DA333_1382959460 = (mAttachInfo.mHardwareRenderer != null &&
+                        boolean var3AE98E3D719D8E57E314A6EF6D2DA333_713652556 = (mAttachInfo.mHardwareRenderer != null &&
                             mSurface != null && mSurface.isValid());
                         {
                             mFullRedrawNeeded = true;
@@ -2820,7 +2753,7 @@ public final class ViewRootImpl extends Handler implements ViewParent, View.Atta
                                 try 
                                 {
                                     {
-                                        boolean var6D55857E69BE616DA2387C824B8B58FA_1004563225 = (!sWindowSession.outOfMemory(mWindow));
+                                        boolean var6D55857E69BE616DA2387C824B8B58FA_1818659389 = (!sWindowSession.outOfMemory(mWindow));
                                         {
                                             Process.killProcess(Process.myPid());
                                         } //End block
@@ -2871,7 +2804,7 @@ public final class ViewRootImpl extends Handler implements ViewParent, View.Atta
             KeyEvent event;
             event = (KeyEvent)msg.obj;
             {
-                boolean varE3C639C95D7D8182790DE92882BAC40A_1024039806 = ((event.getFlags()&KeyEvent.FLAG_FROM_SYSTEM) != 0);
+                boolean varE3C639C95D7D8182790DE92882BAC40A_1409135042 = ((event.getFlags()&KeyEvent.FLAG_FROM_SYSTEM) != 0);
                 {
                     event = KeyEvent.changeFlags(event, event.getFlags() & ~KeyEvent.FLAG_FROM_SYSTEM);
                 } //End block
@@ -2922,7 +2855,7 @@ public final class ViewRootImpl extends Handler implements ViewParent, View.Atta
             Configuration config;
             config = (Configuration)msg.obj;
             {
-                boolean var1B1857A3FCA31AAF6E6915F53921CC12_779661629 = (config.isOtherSeqNewer(mLastConfiguration));
+                boolean var1B1857A3FCA31AAF6E6915F53921CC12_294041731 = (config.isOtherSeqNewer(mLastConfiguration));
                 {
                     config = mLastConfiguration;
                 } //End block
@@ -2967,7 +2900,7 @@ public final class ViewRootImpl extends Handler implements ViewParent, View.Atta
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:06.723 -0400", hash_original_method = "0B0FC84CA02F82927D98059C965571E0", hash_generated_method = "DA8F5E28021538B2645678DB525C29C6")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:01.478 -0400", hash_original_method = "0B0FC84CA02F82927D98059C965571E0", hash_generated_method = "3F37A4EFE892B65E14EF8A163130B5D9")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     private void startInputEvent(InputQueue.FinishedCallback finishedCallback) {
         dsTaint.addTaint(finishedCallback.dsTaint);
@@ -2990,29 +2923,29 @@ public final class ViewRootImpl extends Handler implements ViewParent, View.Atta
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:06.724 -0400", hash_original_method = "06AEBC75FF0DC9B70A4E2BB2CC6850C1", hash_generated_method = "E524D5B3C81A1B3E32C9504EF44272D4")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:01.478 -0400", hash_original_method = "06AEBC75FF0DC9B70A4E2BB2CC6850C1", hash_generated_method = "EA3C3B7C7CDBEFB08C28E07685231680")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     private void finishInputEvent(InputEvent event, boolean handled) {
         dsTaint.addTaint(event.dsTaint);
         dsTaint.addTaint(handled);
         {
-            final long now;
+            long now;
             now = System.nanoTime();
-            final long eventTime;
+            long eventTime;
             eventTime = event.getEventTimeNano();
-            final StringBuilder msg;
+            StringBuilder msg;
             msg = new StringBuilder();
             msg.append("Latency: Spent ");
             msg.append((now - mInputEventReceiveTimeNanos) * 0.000001f);
             msg.append("ms processing ");
             {
-                final KeyEvent keyEvent;
+                KeyEvent keyEvent;
                 keyEvent = (KeyEvent)event;
                 msg.append("key event, action=");
                 msg.append(KeyEvent.actionToString(keyEvent.getAction()));
             } //End block
             {
-                final MotionEvent motionEvent;
+                MotionEvent motionEvent;
                 motionEvent = (MotionEvent)event;
                 msg.append("motion event, action=");
                 msg.append(MotionEvent.actionToString(motionEvent.getAction()));
@@ -3043,7 +2976,7 @@ public final class ViewRootImpl extends Handler implements ViewParent, View.Atta
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:06.724 -0400", hash_original_method = "A6640F15C2D0A406B73F798DB9EA077C", hash_generated_method = "CEC61D61A3DDE016461D254D3844BE5C")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:01.478 -0400", hash_original_method = "A6640F15C2D0A406B73F798DB9EA077C", hash_generated_method = "5DF9EFACFADA71B31ABE24E05ACC8904")
     //DSFIXME:  CODE0002: Requires DSC value to be set
      boolean ensureTouchMode(boolean inTouchMode) {
         dsTaint.addTaint(inTouchMode);
@@ -3055,9 +2988,9 @@ public final class ViewRootImpl extends Handler implements ViewParent, View.Atta
         } //End block
         catch (RemoteException e)
         {
-            //throw new RuntimeException(e);
+            if (DroidSafeAndroidRuntime.control) throw new RuntimeException(e);
         } //End block
-        boolean var7211DA2D02AAD3EC6219E770D8E33669_1434201494 = (ensureTouchModeLocally(inTouchMode));
+        boolean var7211DA2D02AAD3EC6219E770D8E33669_930485301 = (ensureTouchModeLocally(inTouchMode));
         return dsTaint.getTaintBoolean();
         // ---------- Original Method ----------
         //if (DBG) Log.d("touchmode", "ensureTouchMode(" + inTouchMode + "), current "
@@ -3072,7 +3005,7 @@ public final class ViewRootImpl extends Handler implements ViewParent, View.Atta
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:06.724 -0400", hash_original_method = "A817FB22551D2F047707EAAC44367E27", hash_generated_method = "B891037C849FDBC40EDD3CF4F1287D0F")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:01.479 -0400", hash_original_method = "A817FB22551D2F047707EAAC44367E27", hash_generated_method = "179100BCBBD1697494FCDE54962EB53F")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     private boolean ensureTouchModeLocally(boolean inTouchMode) {
         dsTaint.addTaint(inTouchMode);
@@ -3081,8 +3014,8 @@ public final class ViewRootImpl extends Handler implements ViewParent, View.Atta
         mAttachInfo.mInTouchMode = inTouchMode;
         mAttachInfo.mTreeObserver.dispatchOnTouchModeChanged(inTouchMode);
         {
-            Object varD5C5D13645C8843ADC3AA1EF553CA4E0_863413018 = (enterTouchMode());
-            Object var1779B98836824743D0F81D690D2F09AF_2006359216 = (leaveTouchMode());
+            Object varD5C5D13645C8843ADC3AA1EF553CA4E0_847886756 = (enterTouchMode());
+            Object var1779B98836824743D0F81D690D2F09AF_2088988309 = (leaveTouchMode());
         } //End flattened ternary
         return dsTaint.getTaintBoolean();
         // ---------- Original Method ----------
@@ -3095,22 +3028,22 @@ public final class ViewRootImpl extends Handler implements ViewParent, View.Atta
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:06.724 -0400", hash_original_method = "4D22F5F97C319901FE80DD8DAA6DBF2B", hash_generated_method = "44747935739D394389C5EDA1EE28C892")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:01.479 -0400", hash_original_method = "4D22F5F97C319901FE80DD8DAA6DBF2B", hash_generated_method = "9295515406ADDB87C41A5D4FB65D9E1B")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     private boolean enterTouchMode() {
         {
             {
-                boolean varC693284E56ACFD9F443A7AF6887A182D_435787871 = (mView.hasFocus());
+                boolean varC693284E56ACFD9F443A7AF6887A182D_1230777504 = (mView.hasFocus());
                 {
-                    final View focused;
+                    View focused;
                     focused = mView.findFocus();
                     {
-                        boolean var672E3B133FEEB41FF55DF762226C4368_1963032159 = (focused != null && !focused.isFocusableInTouchMode());
+                        boolean var672E3B133FEEB41FF55DF762226C4368_221293835 = (focused != null && !focused.isFocusableInTouchMode());
                         {
-                            final ViewGroup ancestorToTakeFocus;
+                            ViewGroup ancestorToTakeFocus;
                             ancestorToTakeFocus = findAncestorToTakeFocusInTouchMode(focused);
                             {
-                                boolean var4BDB6BBF285F787DB5D62E792270B9CC_1899217703 = (ancestorToTakeFocus.requestFocus());
+                                boolean var4BDB6BBF285F787DB5D62E792270B9CC_241235533 = (ancestorToTakeFocus.requestFocus());
                             } //End block
                             {
                                 mView.unFocus();
@@ -3128,21 +3061,21 @@ public final class ViewRootImpl extends Handler implements ViewParent, View.Atta
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:06.725 -0400", hash_original_method = "A2FE4CBD06D42BF7C573F07F56417767", hash_generated_method = "C9790E57DF7DF57F7557864896FA2132")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:01.480 -0400", hash_original_method = "A2FE4CBD06D42BF7C573F07F56417767", hash_generated_method = "B4AD33FCFD1F8F8AC1020501404970DC")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     private ViewGroup findAncestorToTakeFocusInTouchMode(View focused) {
         dsTaint.addTaint(focused.dsTaint);
         ViewParent parent;
         parent = focused.getParent();
         {
-            final ViewGroup vgParent;
+            ViewGroup vgParent;
             vgParent = (ViewGroup) parent;
             {
-                boolean varC23A07520BE483EA425697E9FFE7255F_637937487 = (vgParent.getDescendantFocusability() == ViewGroup.FOCUS_AFTER_DESCENDANTS
+                boolean varC23A07520BE483EA425697E9FFE7255F_1973511412 = (vgParent.getDescendantFocusability() == ViewGroup.FOCUS_AFTER_DESCENDANTS
                     && vgParent.isFocusableInTouchMode());
             } //End collapsed parenthetic
             {
-                boolean var410E9039314AA011024573FA45C6C4E3_1080467027 = (vgParent.isRootNamespace());
+                boolean var410E9039314AA011024573FA45C6C4E3_175864768 = (vgParent.isRootNamespace());
                 {
                     parent = vgParent.getParent();
                 } //End block
@@ -3167,24 +3100,24 @@ public final class ViewRootImpl extends Handler implements ViewParent, View.Atta
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:06.725 -0400", hash_original_method = "6D4A7A06FF255705F6FF85A0D8D1E147", hash_generated_method = "B0F8C684B68FE57922EFEDA33179DC66")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:01.480 -0400", hash_original_method = "6D4A7A06FF255705F6FF85A0D8D1E147", hash_generated_method = "332BC69A9A7DF25AA52387F09D30A7ED")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     private boolean leaveTouchMode() {
         {
             {
-                boolean varC693284E56ACFD9F443A7AF6887A182D_1381134058 = (mView.hasFocus());
+                boolean varC693284E56ACFD9F443A7AF6887A182D_899379474 = (mView.hasFocus());
                 {
                     mFocusedView = mView.findFocus();
                     {
-                        boolean var685A2905466615BFEF6173704AD9363B_102361281 = (((ViewGroup)mFocusedView).getDescendantFocusability() !=
+                        boolean var685A2905466615BFEF6173704AD9363B_799093694 = (((ViewGroup)mFocusedView).getDescendantFocusability() !=
                         ViewGroup.FOCUS_AFTER_DESCENDANTS);
                     } //End collapsed parenthetic
                 } //End block
             } //End collapsed parenthetic
-            final View focused;
+            View focused;
             focused = focusSearch(null, View.FOCUS_DOWN);
             {
-                boolean var36C6CFA2F3F9A6ADFC90E9AFC6590240_805953407 = (focused.requestFocus(View.FOCUS_DOWN));
+                boolean var36C6CFA2F3F9A6ADFC90E9AFC6590240_129693556 = (focused.requestFocus(View.FOCUS_DOWN));
             } //End block
         } //End block
         return dsTaint.getTaintBoolean();
@@ -3208,7 +3141,7 @@ public final class ViewRootImpl extends Handler implements ViewParent, View.Atta
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:06.725 -0400", hash_original_method = "8F847D145475DB0C2BA683E62F600908", hash_generated_method = "F32EF10D19E037794F8504AA9F5F58BD")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:01.481 -0400", hash_original_method = "8F847D145475DB0C2BA683E62F600908", hash_generated_method = "3F48C1CC19E15D10E17766A6427CF242")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     private void deliverPointerEvent(MotionEvent event, boolean sendDone) {
         dsTaint.addTaint(event.dsTaint);
@@ -3216,7 +3149,7 @@ public final class ViewRootImpl extends Handler implements ViewParent, View.Atta
         {
             mInputEventDeliverTimeNanos = System.nanoTime();
         } //End block
-        final boolean isTouchEvent;
+        boolean isTouchEvent;
         isTouchEvent = event.isTouchEvent();
         {
             {
@@ -3232,7 +3165,7 @@ public final class ViewRootImpl extends Handler implements ViewParent, View.Atta
         {
             mTranslator.translateEventInScreenToAppWindow(event);
         } //End block
-        final int action;
+        int action;
         action = event.getAction();
         {
             ensureTouchMode(true);
@@ -3261,7 +3194,7 @@ public final class ViewRootImpl extends Handler implements ViewParent, View.Atta
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:06.725 -0400", hash_original_method = "DF90914307EFCD2CA23CDB09D8C7F95D", hash_generated_method = "ACF91395B20F967F8DD77E1B705A2232")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:01.481 -0400", hash_original_method = "DF90914307EFCD2CA23CDB09D8C7F95D", hash_generated_method = "483F82EA21AEFF0FDDB8D3A90332B388")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     private void finishMotionEvent(MotionEvent event, boolean sendDone, boolean handled) {
         dsTaint.addTaint(event.dsTaint);
@@ -3273,7 +3206,7 @@ public final class ViewRootImpl extends Handler implements ViewParent, View.Atta
         } //End block
         {
             {
-                boolean varFE47529C887D16DE595A17210AB89645_966612232 = ((event.getSource() & InputDevice.SOURCE_CLASS_POINTER) != 0);
+                boolean varFE47529C887D16DE595A17210AB89645_279587292 = ((event.getSource() & InputDevice.SOURCE_CLASS_POINTER) != 0);
             } //End collapsed parenthetic
         } //End block
         // ---------- Original Method ----------
@@ -3289,7 +3222,7 @@ public final class ViewRootImpl extends Handler implements ViewParent, View.Atta
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:06.726 -0400", hash_original_method = "B306A4DB67A1B71DDAAA3D4C50CD59B0", hash_generated_method = "3AA836E0224C711E13D9ADA627FC622B")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:01.482 -0400", hash_original_method = "B306A4DB67A1B71DDAAA3D4C50CD59B0", hash_generated_method = "B986CA4C479295BC739069415BD03F3D")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     private void deliverTrackballEvent(MotionEvent event, boolean sendDone) {
         dsTaint.addTaint(event.dsTaint);
@@ -3304,16 +3237,16 @@ public final class ViewRootImpl extends Handler implements ViewParent, View.Atta
             finishMotionEvent(event, sendDone, false);
         } //End block
         {
-            boolean var0BF4F8530CCB1128C2413D92D7C48A33_1148248053 = (mView.dispatchTrackballEvent(event));
+            boolean var0BF4F8530CCB1128C2413D92D7C48A33_1659698452 = (mView.dispatchTrackballEvent(event));
             {
                 ensureTouchMode(false);
                 finishMotionEvent(event, sendDone, true);
                 mLastTrackballTime = Integer.MIN_VALUE;
             } //End block
         } //End collapsed parenthetic
-        final TrackballAxis x;
+        TrackballAxis x;
         x = mTrackballAxisX;
-        final TrackballAxis y;
+        TrackballAxis y;
         y = mTrackballAxisY;
         long curTime;
         curTime = SystemClock.uptimeMillis();
@@ -3322,9 +3255,9 @@ public final class ViewRootImpl extends Handler implements ViewParent, View.Atta
             y.reset(0);
             mLastTrackballTime = curTime;
         } //End block
-        final int action;
+        int action;
         action = event.getAction();
-        final int metaState;
+        int metaState;
         metaState = event.getMetaState();
         //Begin case MotionEvent.ACTION_DOWN 
         x.reset(2);
@@ -3350,9 +3283,9 @@ public final class ViewRootImpl extends Handler implements ViewParent, View.Atta
                         KeyCharacterMap.VIRTUAL_KEYBOARD, 0, KeyEvent.FLAG_FALLBACK,
                         InputDevice.SOURCE_KEYBOARD), false);
         //End case MotionEvent.ACTION_UP 
-        final float xOff;
+        float xOff;
         xOff = x.collect(event.getX(), event.getEventTime(), "X");
-        final float yOff;
+        float yOff;
         yOff = y.collect(event.getY(), event.getEventTime(), "Y");
         int keycode;
         keycode = 0;
@@ -3383,7 +3316,6 @@ public final class ViewRootImpl extends Handler implements ViewParent, View.Atta
             int accelMovement;
             accelMovement = (int)(movement * accel);
             {
-                movement--;
                 int repeatCount;
                 repeatCount = accelMovement - movement;
                 deliverKeyEvent(new KeyEvent(curTime, curTime,
@@ -3392,7 +3324,6 @@ public final class ViewRootImpl extends Handler implements ViewParent, View.Atta
                         InputDevice.SOURCE_KEYBOARD), false);
             } //End block
             {
-                movement--;
                 curTime = SystemClock.uptimeMillis();
                 deliverKeyEvent(new KeyEvent(curTime, curTime,
                         KeyEvent.ACTION_DOWN, keycode, 0, metaState,
@@ -3411,7 +3342,7 @@ public final class ViewRootImpl extends Handler implements ViewParent, View.Atta
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:06.727 -0400", hash_original_method = "D79206E9EE4BD2FB4F0103FA8C72904A", hash_generated_method = "A91B65450E6F26E076E181FF6F283C6E")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:01.483 -0400", hash_original_method = "D79206E9EE4BD2FB4F0103FA8C72904A", hash_generated_method = "9FF485C6F9A9CA94F8BF3DBCF80A9179")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     private void deliverGenericMotionEvent(MotionEvent event, boolean sendDone) {
         dsTaint.addTaint(event.dsTaint);
@@ -3422,9 +3353,9 @@ public final class ViewRootImpl extends Handler implements ViewParent, View.Atta
         {
             mInputEventConsistencyVerifier.onGenericMotionEvent(event, 0);
         } //End block
-        final int source;
+        int source;
         source = event.getSource();
-        final boolean isJoystick;
+        boolean isJoystick;
         isJoystick = (source & InputDevice.SOURCE_CLASS_JOYSTICK) != 0;
         {
             {
@@ -3433,7 +3364,7 @@ public final class ViewRootImpl extends Handler implements ViewParent, View.Atta
             finishMotionEvent(event, sendDone, false);
         } //End block
         {
-            boolean var1480525DCF9F333BCCE9610B03BC6BD1_601740471 = (mView.dispatchGenericMotionEvent(event));
+            boolean var1480525DCF9F333BCCE9610B03BC6BD1_1892211960 = (mView.dispatchGenericMotionEvent(event));
             {
                 {
                     updateJoystickDirection(event, false);
@@ -3453,18 +3384,18 @@ public final class ViewRootImpl extends Handler implements ViewParent, View.Atta
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:06.727 -0400", hash_original_method = "3F24F6EAAF68F5E1EBCC50D38D5B0024", hash_generated_method = "BAB5FE449E27D2E2FD5BC19D010C2D9F")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:01.483 -0400", hash_original_method = "3F24F6EAAF68F5E1EBCC50D38D5B0024", hash_generated_method = "40DD5D06DAD87B56A6AD6F5097303728")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     private void updateJoystickDirection(MotionEvent event, boolean synthesizeNewKeys) {
         dsTaint.addTaint(event.dsTaint);
         dsTaint.addTaint(synthesizeNewKeys);
-        final long time;
+        long time;
         time = event.getEventTime();
-        final int metaState;
+        int metaState;
         metaState = event.getMetaState();
-        final int deviceId;
+        int deviceId;
         deviceId = event.getDeviceId();
-        final int source;
+        int source;
         source = event.getSource();
         int xDirection;
         xDirection = joystickAxisValueToDirection(event.getAxisValue(MotionEvent.AXIS_HAT_X));
@@ -3513,8 +3444,7 @@ public final class ViewRootImpl extends Handler implements ViewParent, View.Atta
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:06.727 -0400", hash_original_method = "822C159A63B62845A16568D718169DEC", hash_generated_method = "0D9A3ACE204C7A37F242AB353E0C3216")
-    private static int joystickAxisValueToDirection(float value) {
+        private static int joystickAxisValueToDirection(float value) {
         if (value >= 0.5f) {
             return 1;
         } else if (value <= -0.5f) {
@@ -3525,8 +3455,7 @@ public final class ViewRootImpl extends Handler implements ViewParent, View.Atta
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:06.727 -0400", hash_original_method = "7C2143BAA8152610397375F7B6D253AB", hash_generated_method = "73231264E9616A58A51CB5AF770D3937")
-    private static boolean isNavigationKey(KeyEvent keyEvent) {
+        private static boolean isNavigationKey(KeyEvent keyEvent) {
         switch (keyEvent.getKeyCode()) {
         case KeyEvent.KEYCODE_DPAD_LEFT:
         case KeyEvent.KEYCODE_DPAD_RIGHT:
@@ -3546,29 +3475,28 @@ public final class ViewRootImpl extends Handler implements ViewParent, View.Atta
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:06.727 -0400", hash_original_method = "553A2E860A4F6148EE15CCC8CC3C5F34", hash_generated_method = "E371B19500089A404A3F7B6A779D7ED9")
-    private static boolean isTypingKey(KeyEvent keyEvent) {
+        private static boolean isTypingKey(KeyEvent keyEvent) {
         return keyEvent.getUnicodeChar() > 0;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:06.727 -0400", hash_original_method = "4A4EC0979E3C48040C37CBDD240E0778", hash_generated_method = "39CB1872C65B69E0D0FACB4A612F0467")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:01.484 -0400", hash_original_method = "4A4EC0979E3C48040C37CBDD240E0778", hash_generated_method = "F80F99E6A901BBB3633E90240573F1C1")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     private boolean checkForLeavingTouchModeAndConsume(KeyEvent event) {
         dsTaint.addTaint(event.dsTaint);
-        final int action;
+        int action;
         action = event.getAction();
         {
-            boolean var374764C2EBA0004373F7F9D216C18EBE_38850952 = ((event.getFlags() & KeyEvent.FLAG_KEEP_TOUCH_MODE) != 0);
+            boolean var374764C2EBA0004373F7F9D216C18EBE_1346094211 = ((event.getFlags() & KeyEvent.FLAG_KEEP_TOUCH_MODE) != 0);
         } //End collapsed parenthetic
         {
-            boolean varC540748EA661E5534CCE6D53AFE70351_1025110650 = (isNavigationKey(event));
+            boolean varC540748EA661E5534CCE6D53AFE70351_790237010 = (isNavigationKey(event));
             {
-                boolean varDCF046E768F735C43D4A4F2892DB8761_448366612 = (ensureTouchMode(false));
+                boolean varDCF046E768F735C43D4A4F2892DB8761_254441471 = (ensureTouchMode(false));
             } //End block
         } //End collapsed parenthetic
         {
-            boolean varDC7BE1867293052F150F168518DBFDDE_126257289 = (isTypingKey(event));
+            boolean varDC7BE1867293052F150F168518DBFDDE_1270533857 = (isTypingKey(event));
             {
                 ensureTouchMode(false);
             } //End block
@@ -3596,8 +3524,8 @@ public final class ViewRootImpl extends Handler implements ViewParent, View.Atta
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:06.728 -0400", hash_original_method = "DD7540FF4FE8EF5C7F3D3C1B535F6D84", hash_generated_method = "8C3972ED09336501C007393A34D21036")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:01.485 -0400", hash_original_method = "DD7540FF4FE8EF5C7F3D3C1B535F6D84", hash_generated_method = "FB48BF4A9FDBD6A936F2BA243282F417")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
      int enqueuePendingEvent(Object event, boolean sendDone) {
         dsTaint.addTaint(event.dsTaint);
         dsTaint.addTaint(sendDone);
@@ -3616,8 +3544,8 @@ public final class ViewRootImpl extends Handler implements ViewParent, View.Atta
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:06.728 -0400", hash_original_method = "D1881A2DE4A478B1C2476E8789D90C4F", hash_generated_method = "79A28D7C2002216BEFF36C065967DFE5")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:01.485 -0400", hash_original_method = "D1881A2DE4A478B1C2476E8789D90C4F", hash_generated_method = "D83FC8B9F30FF4B798B57B3FA4BE80F6")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
      Object retrievePendingEvent(int seq) {
         dsTaint.addTaint(seq);
         seq = -seq;
@@ -3637,7 +3565,7 @@ public final class ViewRootImpl extends Handler implements ViewParent, View.Atta
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:06.728 -0400", hash_original_method = "7BC82D96B9DB6F7A084DA2256A5743DA", hash_generated_method = "3656EDA74BEB7309BB5304E331E882DE")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:01.485 -0400", hash_original_method = "7BC82D96B9DB6F7A084DA2256A5743DA", hash_generated_method = "8FB26BA892EF67433FC076E6E257B7C3")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     private void deliverKeyEvent(KeyEvent event, boolean sendDone) {
         dsTaint.addTaint(event.dsTaint);
@@ -3652,7 +3580,7 @@ public final class ViewRootImpl extends Handler implements ViewParent, View.Atta
             finishKeyEvent(event, sendDone, false);
         } //End block
         {
-            boolean var5290A33EAEDAF51EED599C106DE398FD_1219575592 = (mView.dispatchKeyEventPreIme(event));
+            boolean var5290A33EAEDAF51EED599C106DE398FD_692633179 = (mView.dispatchKeyEventPreIme(event));
             {
                 finishKeyEvent(event, sendDone, true);
             } //End block
@@ -3672,15 +3600,15 @@ public final class ViewRootImpl extends Handler implements ViewParent, View.Atta
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:06.728 -0400", hash_original_method = "1D388C4C66D020B7A8C536C50B24E128", hash_generated_method = "9AAA7B18DCA565C8101F7714ED5A3909")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:01.486 -0400", hash_original_method = "1D388C4C66D020B7A8C536C50B24E128", hash_generated_method = "AAA5B9970E87703EB1C54DA3BA1472DD")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     private void handleFinishedEvent(int seq, boolean handled) {
         dsTaint.addTaint(seq);
         dsTaint.addTaint(handled);
-        final KeyEvent event;
+        KeyEvent event;
         event = (KeyEvent)retrievePendingEvent(seq);
         {
-            final boolean sendDone;
+            boolean sendDone;
             sendDone = seq >= 0;
             {
                 finishKeyEvent(event, sendDone, true);
@@ -3704,7 +3632,7 @@ public final class ViewRootImpl extends Handler implements ViewParent, View.Atta
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:06.729 -0400", hash_original_method = "3773604D66AC7B7214885F4E3DA58090", hash_generated_method = "0DFAAB7811071B4458B9A73C3345D325")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:01.487 -0400", hash_original_method = "3773604D66AC7B7214885F4E3DA58090", hash_generated_method = "165D4C6C0B6BE83F8DDE319BF5DEA8C1")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     private void deliverKeyEventPostIme(KeyEvent event, boolean sendDone) {
         dsTaint.addTaint(event.dsTaint);
@@ -3716,26 +3644,26 @@ public final class ViewRootImpl extends Handler implements ViewParent, View.Atta
             finishKeyEvent(event, sendDone, false);
         } //End block
         {
-            boolean var972B8A8CC08694C2525DE534B4F8BB01_328279026 = (checkForLeavingTouchModeAndConsume(event));
+            boolean var972B8A8CC08694C2525DE534B4F8BB01_1160654201 = (checkForLeavingTouchModeAndConsume(event));
             {
                 finishKeyEvent(event, sendDone, true);
             } //End block
         } //End collapsed parenthetic
         mFallbackEventHandler.preDispatchKeyEvent(event);
         {
-            boolean var9386095FD83FC6C0A38FFA49591950FC_1650628458 = (mView.dispatchKeyEvent(event));
+            boolean var9386095FD83FC6C0A38FFA49591950FC_1395776313 = (mView.dispatchKeyEvent(event));
             {
                 finishKeyEvent(event, sendDone, true);
             } //End block
         } //End collapsed parenthetic
         {
-            boolean var85A8FDC8626CC7E23374B602A2E2C62C_703900400 = (event.getAction() == KeyEvent.ACTION_DOWN
+            boolean var85A8FDC8626CC7E23374B602A2E2C62C_203343949 = (event.getAction() == KeyEvent.ACTION_DOWN
                 && event.isCtrlPressed()
                 && event.getRepeatCount() == 0
                 && !KeyEvent.isModifierKey(event.getKeyCode()));
             {
                 {
-                    boolean varF97DC0BD6AE66CDC354B90DB1D102EE2_466974132 = (mView.dispatchKeyShortcutEvent(event));
+                    boolean varF97DC0BD6AE66CDC354B90DB1D102EE2_898231742 = (mView.dispatchKeyShortcutEvent(event));
                     {
                         finishKeyEvent(event, sendDone, true);
                     } //End block
@@ -3743,21 +3671,21 @@ public final class ViewRootImpl extends Handler implements ViewParent, View.Atta
             } //End block
         } //End collapsed parenthetic
         {
-            boolean varB867097ED2D7A136AEC6AB204A7A4421_1400184873 = (mFallbackEventHandler.dispatchKeyEvent(event));
+            boolean varB867097ED2D7A136AEC6AB204A7A4421_748616097 = (mFallbackEventHandler.dispatchKeyEvent(event));
             {
                 finishKeyEvent(event, sendDone, true);
             } //End block
         } //End collapsed parenthetic
         {
-            boolean varE78E9647F4429F5955AD42D05C6FEF7A_1652434205 = (event.getAction() == KeyEvent.ACTION_DOWN);
+            boolean varE78E9647F4429F5955AD42D05C6FEF7A_2132444861 = (event.getAction() == KeyEvent.ACTION_DOWN);
             {
                 int direction;
                 direction = 0;
                 {
-                    Object varA0761DC6508339A4AD5D875712ADE561_1594310644 = (event.getKeyCode());
+                    Object varA0761DC6508339A4AD5D875712ADE561_1748904386 = (event.getKeyCode());
                     //Begin case KeyEvent.KEYCODE_DPAD_LEFT 
                     {
-                        boolean var3A3095F7575E47050F710FB26AF5006E_716826286 = (event.hasNoModifiers());
+                        boolean var3A3095F7575E47050F710FB26AF5006E_344632343 = (event.hasNoModifiers());
                         {
                             direction = View.FOCUS_LEFT;
                         } //End block
@@ -3765,7 +3693,7 @@ public final class ViewRootImpl extends Handler implements ViewParent, View.Atta
                     //End case KeyEvent.KEYCODE_DPAD_LEFT 
                     //Begin case KeyEvent.KEYCODE_DPAD_RIGHT 
                     {
-                        boolean var3A3095F7575E47050F710FB26AF5006E_901188085 = (event.hasNoModifiers());
+                        boolean var3A3095F7575E47050F710FB26AF5006E_1195118893 = (event.hasNoModifiers());
                         {
                             direction = View.FOCUS_RIGHT;
                         } //End block
@@ -3773,7 +3701,7 @@ public final class ViewRootImpl extends Handler implements ViewParent, View.Atta
                     //End case KeyEvent.KEYCODE_DPAD_RIGHT 
                     //Begin case KeyEvent.KEYCODE_DPAD_UP 
                     {
-                        boolean var3A3095F7575E47050F710FB26AF5006E_2070192219 = (event.hasNoModifiers());
+                        boolean var3A3095F7575E47050F710FB26AF5006E_1405165106 = (event.hasNoModifiers());
                         {
                             direction = View.FOCUS_UP;
                         } //End block
@@ -3781,7 +3709,7 @@ public final class ViewRootImpl extends Handler implements ViewParent, View.Atta
                     //End case KeyEvent.KEYCODE_DPAD_UP 
                     //Begin case KeyEvent.KEYCODE_DPAD_DOWN 
                     {
-                        boolean var3A3095F7575E47050F710FB26AF5006E_2005341655 = (event.hasNoModifiers());
+                        boolean var3A3095F7575E47050F710FB26AF5006E_1684250886 = (event.hasNoModifiers());
                         {
                             direction = View.FOCUS_DOWN;
                         } //End block
@@ -3789,12 +3717,12 @@ public final class ViewRootImpl extends Handler implements ViewParent, View.Atta
                     //End case KeyEvent.KEYCODE_DPAD_DOWN 
                     //Begin case KeyEvent.KEYCODE_TAB 
                     {
-                        boolean var3A3095F7575E47050F710FB26AF5006E_588796286 = (event.hasNoModifiers());
+                        boolean var3A3095F7575E47050F710FB26AF5006E_1289804767 = (event.hasNoModifiers());
                         {
                             direction = View.FOCUS_FORWARD;
                         } //End block
                         {
-                            boolean varC6F58190DE4A31A0CF9704EF99A62451_1062432048 = (event.hasModifiers(KeyEvent.META_SHIFT_ON));
+                            boolean varC6F58190DE4A31A0CF9704EF99A62451_239968377 = (event.hasModifiers(KeyEvent.META_SHIFT_ON));
                             {
                                 direction = View.FOCUS_BACKWARD;
                             } //End block
@@ -3818,7 +3746,7 @@ public final class ViewRootImpl extends Handler implements ViewParent, View.Atta
                                     v, mTempRect);
                             } //End block
                             {
-                                boolean var8E442CEC6A978F0FDB8EDCFD023A5F81_460559343 = (v.requestFocus(direction, mTempRect));
+                                boolean var8E442CEC6A978F0FDB8EDCFD023A5F81_84049948 = (v.requestFocus(direction, mTempRect));
                                 {
                                     playSoundEffect(
                                     SoundEffectConstants.getContantForFocusDirection(direction));
@@ -3827,7 +3755,7 @@ public final class ViewRootImpl extends Handler implements ViewParent, View.Atta
                             } //End collapsed parenthetic
                         } //End block
                         {
-                            boolean varF5C20EE82F62ADD0C6A5E46AE0DD38DF_1863196438 = (mView.dispatchUnhandledMove(focused, direction));
+                            boolean varF5C20EE82F62ADD0C6A5E46AE0DD38DF_854860038 = (mView.dispatchUnhandledMove(focused, direction));
                             {
                                 finishKeyEvent(event, sendDone, true);
                             } //End block
@@ -3842,8 +3770,8 @@ public final class ViewRootImpl extends Handler implements ViewParent, View.Atta
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:06.729 -0400", hash_original_method = "2621255CFED260FE88FD0E0DE76ACADD", hash_generated_method = "3FCC9D3D55DFDC2D00C5CE96ADD90408")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:01.487 -0400", hash_original_method = "2621255CFED260FE88FD0E0DE76ACADD", hash_generated_method = "199905CD548AE31CA3E5D69B5CE577DF")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     private void finishKeyEvent(KeyEvent event, boolean sendDone, boolean handled) {
         dsTaint.addTaint(event.dsTaint);
         dsTaint.addTaint(sendDone);
@@ -3858,7 +3786,7 @@ public final class ViewRootImpl extends Handler implements ViewParent, View.Atta
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:06.729 -0400", hash_original_method = "0FF9C383AA2E451EDBB7C2A5CA6E3F80", hash_generated_method = "229060BA2093D7E7114F51447748AC33")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:01.497 -0400", hash_original_method = "0FF9C383AA2E451EDBB7C2A5CA6E3F80", hash_generated_method = "37ECF6C45F4806DED83F1F6C7CEF44AB")
     @DSModeled(DSC.SAFE)
      void setLocalDragState(Object obj) {
         dsTaint.addTaint(obj.dsTaint);
@@ -3867,12 +3795,12 @@ public final class ViewRootImpl extends Handler implements ViewParent, View.Atta
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:06.729 -0400", hash_original_method = "977584242F0720CC5E20503FC56D761D", hash_generated_method = "B6204B49753541B71EE25CC19EDBB884")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:01.498 -0400", hash_original_method = "977584242F0720CC5E20503FC56D761D", hash_generated_method = "5938E63A0E19E4FEFEF7BDB1CFD6C5D9")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     private void handleDragEvent(DragEvent event) {
         dsTaint.addTaint(event.dsTaint);
         {
-            final int what;
+            int what;
             what = event.mAction;
             {
                 mView.dispatchDragEvent(event);
@@ -3896,7 +3824,7 @@ public final class ViewRootImpl extends Handler implements ViewParent, View.Atta
                     event.mX = mDragPoint.x;
                     event.mY = mDragPoint.y;
                 } //End block
-                final View prevDragView;
+                View prevDragView;
                 prevDragView = mCurrentDragView;
                 boolean result;
                 result = mView.dispatchDragEvent(event);
@@ -3933,8 +3861,8 @@ public final class ViewRootImpl extends Handler implements ViewParent, View.Atta
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:06.730 -0400", hash_original_method = "504EE99E4FC1047B3EE4816C6C3CF55E", hash_generated_method = "39D306B6A8FBF89288683278F87E7CC0")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:01.501 -0400", hash_original_method = "504EE99E4FC1047B3EE4816C6C3CF55E", hash_generated_method = "51E5B9EDF551BA67EA8E0C3F987E33AF")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     public void handleDispatchSystemUiVisibilityChanged(SystemUiVisibilityInfo args) {
         dsTaint.addTaint(args.dsTaint);
         {
@@ -3974,7 +3902,7 @@ public final class ViewRootImpl extends Handler implements ViewParent, View.Atta
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:06.730 -0400", hash_original_method = "45F97324DFA9B47BC7B47DB7731173BB", hash_generated_method = "7322837A651CA8956A4E26F6B80A57BB")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:01.502 -0400", hash_original_method = "45F97324DFA9B47BC7B47DB7731173BB", hash_generated_method = "FE024CA31CB9FC3C685BD84F01500212")
     @DSModeled(DSC.SAFE)
     public void getLastTouchPoint(Point outLocation) {
         dsTaint.addTaint(outLocation.dsTaint);
@@ -3986,7 +3914,7 @@ public final class ViewRootImpl extends Handler implements ViewParent, View.Atta
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:06.730 -0400", hash_original_method = "D8987F1AD41DCFCEC13505B3421C8BB0", hash_generated_method = "ADF4992383FD0BF804A2D6DCA81CA04F")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:01.502 -0400", hash_original_method = "D8987F1AD41DCFCEC13505B3421C8BB0", hash_generated_method = "B8E119799B4D3B4CDD76300265D9C0C9")
     @DSModeled(DSC.SAFE)
     public void setDragFocus(View newDragTarget) {
         dsTaint.addTaint(newDragTarget.dsTaint);
@@ -3997,11 +3925,11 @@ public final class ViewRootImpl extends Handler implements ViewParent, View.Atta
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:06.730 -0400", hash_original_method = "63BA605FA957D5097ED6886D9988BC53", hash_generated_method = "FEC845EBD439E00282F029330BFD5F85")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:01.503 -0400", hash_original_method = "63BA605FA957D5097ED6886D9988BC53", hash_generated_method = "BD6AEEB12018CDF08F06B8AD9B0680DE")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     private AudioManager getAudioManager() {
         {
-            //throw new IllegalStateException("getAudioManager called when there is no mView");
+            if (DroidSafeAndroidRuntime.control) throw new IllegalStateException("getAudioManager called when there is no mView");
         } //End block
         {
             mAudioManager = (AudioManager) mView.getContext().getSystemService(Context.AUDIO_SERVICE);
@@ -4018,13 +3946,11 @@ public final class ViewRootImpl extends Handler implements ViewParent, View.Atta
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:06.730 -0400", hash_original_method = "C22EE439EF1C63381F42BE80F34ED0C5", hash_generated_method = "A581349CB5278771D5ACF7B0EB1D8B3D")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:01.505 -0400", hash_original_method = "C22EE439EF1C63381F42BE80F34ED0C5", hash_generated_method = "EE8BAECF7B1337F300A6B16D49A2147B")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     public AccessibilityInteractionController getAccessibilityInteractionController() {
-        //DSFIXME:  CODE0009: Possible callback target function detected
-    	if (DroidSafeAndroidRuntime.control)
         {
-            throw new IllegalStateException("getAccessibilityInteractionController"
+            if (DroidSafeAndroidRuntime.control) throw new IllegalStateException("getAccessibilityInteractionController"
                     + " called when there is no mView");
         } //End block
         {
@@ -4043,7 +3969,7 @@ public final class ViewRootImpl extends Handler implements ViewParent, View.Atta
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:06.730 -0400", hash_original_method = "0B2FE2E2B393762D66EC0169ABC2799A", hash_generated_method = "12FC7762A32717A55B0A98926014F819")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:01.506 -0400", hash_original_method = "0B2FE2E2B393762D66EC0169ABC2799A", hash_generated_method = "D9931F7E85952278E0B0DEBD2EDB8050")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     private int relayoutWindow(WindowManager.LayoutParams params, int viewVisibility,
             boolean insetsPending) throws RemoteException {
@@ -4090,14 +4016,14 @@ public final class ViewRootImpl extends Handler implements ViewParent, View.Atta
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:06.731 -0400", hash_original_method = "15B8C68C65C02C1955DF774990289073", hash_generated_method = "AACF9456D5DF1A445D0C3837F657150F")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:01.506 -0400", hash_original_method = "15B8C68C65C02C1955DF774990289073", hash_generated_method = "7614898AF9204305BDEFC142FA058979")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     public void playSoundEffect(int effectId) {
         dsTaint.addTaint(effectId);
         checkThread();
         try 
         {
-            final AudioManager audioManager;
+            AudioManager audioManager;
             audioManager = getAudioManager();
             //Begin case SoundEffectConstants.CLICK 
             audioManager.playSoundEffect(AudioManager.FX_KEY_CLICK);
@@ -4115,7 +4041,7 @@ public final class ViewRootImpl extends Handler implements ViewParent, View.Atta
             audioManager.playSoundEffect(AudioManager.FX_FOCUS_NAVIGATION_UP);
             //End case SoundEffectConstants.NAVIGATION_UP 
             //Begin case default 
-            throw new IllegalArgumentException("unknown effect id " + effectId +
+            if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("unknown effect id " + effectId +
                             " not defined in " + SoundEffectConstants.class.getCanonicalName());
             //End case default 
         } //End block
@@ -4128,14 +4054,14 @@ public final class ViewRootImpl extends Handler implements ViewParent, View.Atta
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:06.731 -0400", hash_original_method = "B8D922B767BD06C4283BB3EF0BFA3172", hash_generated_method = "4B5585F32C2958307D036E1BEF3AF422")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:01.507 -0400", hash_original_method = "B8D922B767BD06C4283BB3EF0BFA3172", hash_generated_method = "860F9B0CE19AAA9BE249CAFD84591D00")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public boolean performHapticFeedback(int effectId, boolean always) {
         dsTaint.addTaint(effectId);
         dsTaint.addTaint(always);
         try 
         {
-            boolean varFBBA9023D273BC1BC4D4CED056000D00_1543563275 = (sWindowSession.performHapticFeedback(mWindow, effectId, always));
+            boolean varFBBA9023D273BC1BC4D4CED056000D00_1813724350 = (sWindowSession.performHapticFeedback(mWindow, effectId, always));
         } //End block
         catch (RemoteException e)
         { }
@@ -4149,13 +4075,13 @@ public final class ViewRootImpl extends Handler implements ViewParent, View.Atta
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:06.731 -0400", hash_original_method = "220A5158C443CFE1D4535C372C690545", hash_generated_method = "AEB83DFD867439DDA6E77598CC939BF8")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:01.507 -0400", hash_original_method = "220A5158C443CFE1D4535C372C690545", hash_generated_method = "666B848E4F4CD3B88445B9AD4E91195D")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public View focusSearch(View focused, int direction) {
         dsTaint.addTaint(direction);
         dsTaint.addTaint(focused.dsTaint);
         checkThread();
-        View varB98E74C6692446F9B2C9C3CE7AF3926B_1911974413 = (FocusFinder.getInstance().findNextFocus((ViewGroup) mView, focused, direction));
+        View varB98E74C6692446F9B2C9C3CE7AF3926B_1789524526 = (FocusFinder.getInstance().findNextFocus((ViewGroup) mView, focused, direction));
         return (View)dsTaint.getTaint();
         // ---------- Original Method ----------
         //checkThread();
@@ -4166,8 +4092,8 @@ public final class ViewRootImpl extends Handler implements ViewParent, View.Atta
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:06.731 -0400", hash_original_method = "5C67D040EE10672AA68B296434D2F63D", hash_generated_method = "92F43743AA30A45EA34991A74D1FB0CE")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:01.507 -0400", hash_original_method = "5C67D040EE10672AA68B296434D2F63D", hash_generated_method = "265CF6F642B6AAE7F0DC95CDCBD015E9")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     public void debug() {
         mView.debug();
         // ---------- Original Method ----------
@@ -4175,11 +4101,11 @@ public final class ViewRootImpl extends Handler implements ViewParent, View.Atta
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:06.731 -0400", hash_original_method = "818AD1A70B8E095131DC73E371E19514", hash_generated_method = "6186AB8DE655ED9A48AEB6EA22DE1FD7")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:01.508 -0400", hash_original_method = "818AD1A70B8E095131DC73E371E19514", hash_generated_method = "4382D1C11834E3B71D96761F7A65F3C4")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     public void dumpGfxInfo(PrintWriter pw, int[] info) {
         dsTaint.addTaint(pw.dsTaint);
-        dsTaint.addTaint(info);
+        dsTaint.addTaint(info[0]);
         {
             getGfxInfo(mView, info);
         } //End block
@@ -4195,14 +4121,13 @@ public final class ViewRootImpl extends Handler implements ViewParent, View.Atta
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:06.731 -0400", hash_original_method = "CD86B0B9CE453C77251859969963B0E8", hash_generated_method = "ED6F2BB43B9A11A84B79F7E78AEAC500")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:01.508 -0400", hash_original_method = "CD86B0B9CE453C77251859969963B0E8", hash_generated_method = "6C3CB1D2610F50AE0E9908A46F572E5C")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     private void getGfxInfo(View view, int[] info) {
         dsTaint.addTaint(view.dsTaint);
-        dsTaint.addTaint(info);
+        dsTaint.addTaint(info[0]);
         DisplayList displayList;
         displayList = view.mDisplayList;
-        info[0]++;
         {
             info[1] += displayList.getSize();
         } //End block
@@ -4235,8 +4160,8 @@ public final class ViewRootImpl extends Handler implements ViewParent, View.Atta
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:06.731 -0400", hash_original_method = "F971131E8183B74AE14F7AE1993EB770", hash_generated_method = "46C86B257CDBE0EA02E6FE7301B9E6EA")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:01.508 -0400", hash_original_method = "F971131E8183B74AE14F7AE1993EB770", hash_generated_method = "60AA267B2EBAD35EBCAFD7B31C49C509")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     public void die(boolean immediate) {
         dsTaint.addTaint(immediate);
         {
@@ -4254,7 +4179,7 @@ public final class ViewRootImpl extends Handler implements ViewParent, View.Atta
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:06.732 -0400", hash_original_method = "8D1DF41E880ED97CD9EA450CBF8DEBA9", hash_generated_method = "7A9F21B8FE5E15CE78ED937DA994B18D")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:01.508 -0400", hash_original_method = "8D1DF41E880ED97CD9EA450CBF8DEBA9", hash_generated_method = "F959AC6E71C6D3ED50085FB597D9D597")
     //DSFIXME:  CODE0002: Requires DSC value to be set
      void doDie() {
         checkThread();
@@ -4273,7 +4198,7 @@ public final class ViewRootImpl extends Handler implements ViewParent, View.Atta
                     try 
                     {
                         {
-                            boolean var9AE39921E95FF8EFBAECC8E0B3546A66_1457019261 = ((relayoutWindow(mWindowAttributes, viewVisibility, false)
+                            boolean var9AE39921E95FF8EFBAECC8E0B3546A66_556773254 = ((relayoutWindow(mWindowAttributes, viewVisibility, false)
                                 & WindowManagerImpl.RELAYOUT_RES_FIRST_TIME) != 0);
                             {
                                 sWindowSession.finishDrawing(mWindow);
@@ -4291,8 +4216,8 @@ public final class ViewRootImpl extends Handler implements ViewParent, View.Atta
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:06.732 -0400", hash_original_method = "C21E5BD1C0448C03922FA84C1B8F3673", hash_generated_method = "3D3CB273B4431811630D19181A14E9B1")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:01.509 -0400", hash_original_method = "C21E5BD1C0448C03922FA84C1B8F3673", hash_generated_method = "F2D6C5B7AF0716A1F65BE4AA0E551A54")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     public void requestUpdateConfiguration(Configuration config) {
         dsTaint.addTaint(config.dsTaint);
         Message msg;
@@ -4304,8 +4229,8 @@ public final class ViewRootImpl extends Handler implements ViewParent, View.Atta
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:06.732 -0400", hash_original_method = "83B5F7EEB6D7B3078A7769D15E86950B", hash_generated_method = "7B5906921C378606B5CF69F2CFC3EB91")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:01.509 -0400", hash_original_method = "83B5F7EEB6D7B3078A7769D15E86950B", hash_generated_method = "8B0C7B51612C6768308E296410004249")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     private void destroyHardwareRenderer() {
         {
             mAttachInfo.mHardwareRenderer.destroy(true);
@@ -4321,8 +4246,8 @@ public final class ViewRootImpl extends Handler implements ViewParent, View.Atta
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:06.732 -0400", hash_original_method = "459EFA224EE61797FCF735DB24F377FF", hash_generated_method = "CDA24AC7C737D2BA653E34673E316ADB")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:01.509 -0400", hash_original_method = "459EFA224EE61797FCF735DB24F377FF", hash_generated_method = "B1C7C42565887EF74330F1DA4038E920")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     public void dispatchFinishedEvent(int seq, boolean handled) {
         dsTaint.addTaint(seq);
         dsTaint.addTaint(handled);
@@ -4339,7 +4264,7 @@ public final class ViewRootImpl extends Handler implements ViewParent, View.Atta
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:06.732 -0400", hash_original_method = "176F47B7EDC9D70A69736114EF5A25ED", hash_generated_method = "370BB6C06937115BD9B72516207373C1")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:01.510 -0400", hash_original_method = "176F47B7EDC9D70A69736114EF5A25ED", hash_generated_method = "74D409DCCE271F7C8A40404664D32E18")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public void dispatchResized(int w, int h, Rect coveredInsets,
             Rect visibleInsets, boolean reportDraw, Configuration newConfig) {
@@ -4371,8 +4296,8 @@ public final class ViewRootImpl extends Handler implements ViewParent, View.Atta
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:06.732 -0400", hash_original_method = "42F15B8B44D9B8805537AB8032035046", hash_generated_method = "55C6D736ECC65AB4DBFCE666AC7A208C")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:01.510 -0400", hash_original_method = "42F15B8B44D9B8805537AB8032035046", hash_generated_method = "5A8FD1C62B0CF829C4D7B6862C743EDD")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     private void enqueueInputEvent(Message msg, long when) {
         dsTaint.addTaint(when);
         dsTaint.addTaint(msg.dsTaint);
@@ -4405,8 +4330,8 @@ public final class ViewRootImpl extends Handler implements ViewParent, View.Atta
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:06.733 -0400", hash_original_method = "CF232D7D6B258A687467B35A15A72FA0", hash_generated_method = "62BE3E943B92AFCDD08C9777A41BCF6D")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:01.510 -0400", hash_original_method = "CF232D7D6B258A687467B35A15A72FA0", hash_generated_method = "6865CF33D23BE97AA7D6485DECC81947")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     public void dispatchKey(KeyEvent event) {
         dsTaint.addTaint(event.dsTaint);
         dispatchKey(event, false);
@@ -4415,16 +4340,16 @@ public final class ViewRootImpl extends Handler implements ViewParent, View.Atta
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:06.733 -0400", hash_original_method = "40FF3F3DF013E72EC5E96E0A49136BE3", hash_generated_method = "98B8E4F38B7CED14F39C73400DD6FF6B")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:01.511 -0400", hash_original_method = "40FF3F3DF013E72EC5E96E0A49136BE3", hash_generated_method = "19049D6A1DA5E9BBE5A497528AB32939")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     private void dispatchKey(KeyEvent event, boolean sendDone) {
         dsTaint.addTaint(event.dsTaint);
         dsTaint.addTaint(sendDone);
         {
-            boolean var614B93C66D10470F75E816C5D006D92E_2113043867 = (false && event.getAction() == KeyEvent.ACTION_DOWN);
+            boolean var614B93C66D10470F75E816C5D006D92E_643744939 = (false && event.getAction() == KeyEvent.ACTION_DOWN);
             {
                 {
-                    boolean var93BBE93F11B74C6BE1CA3CCD54D7C4DB_1360997306 = (event.getKeyCode() == KeyEvent.KEYCODE_CAMERA);
+                    boolean var93BBE93F11B74C6BE1CA3CCD54D7C4DB_1690735359 = (event.getKeyCode() == KeyEvent.KEYCODE_CAMERA);
                     {
                         Log.d("keydisp", "===================================================");
                         Log.d("keydisp", "Focused view Hierarchy is:");
@@ -4457,8 +4382,8 @@ public final class ViewRootImpl extends Handler implements ViewParent, View.Atta
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:06.733 -0400", hash_original_method = "F90A161CC4BD8998AC3B193B63EB7E53", hash_generated_method = "37178EB25F90C6F266BA0BCB32CAB3D9")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:01.511 -0400", hash_original_method = "F90A161CC4BD8998AC3B193B63EB7E53", hash_generated_method = "9075F7A668B2CB8B08DB6F3A8501B215")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     private void dispatchMotion(MotionEvent event, boolean sendDone) {
         dsTaint.addTaint(event.dsTaint);
         dsTaint.addTaint(sendDone);
@@ -4485,7 +4410,7 @@ public final class ViewRootImpl extends Handler implements ViewParent, View.Atta
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:06.733 -0400", hash_original_method = "DD56557FEAC8CACD87B056C5C0C702D1", hash_generated_method = "79109A7F4BAE1D6CDA36F44B58A766D0")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:01.511 -0400", hash_original_method = "DD56557FEAC8CACD87B056C5C0C702D1", hash_generated_method = "F8C0F042BBC0D946F4A064777A718C82")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     private void dispatchPointer(MotionEvent event, boolean sendDone) {
         dsTaint.addTaint(event.dsTaint);
@@ -4503,7 +4428,7 @@ public final class ViewRootImpl extends Handler implements ViewParent, View.Atta
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:06.733 -0400", hash_original_method = "CA2BFA17163311E1AAAA771C667E27EE", hash_generated_method = "826E768870E345F92F6ED392A4B1569D")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:01.512 -0400", hash_original_method = "CA2BFA17163311E1AAAA771C667E27EE", hash_generated_method = "FF077EF08D8EE4C84A6F8AEAEA2B7F87")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     private void dispatchTrackball(MotionEvent event, boolean sendDone) {
         dsTaint.addTaint(event.dsTaint);
@@ -4521,7 +4446,7 @@ public final class ViewRootImpl extends Handler implements ViewParent, View.Atta
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:06.733 -0400", hash_original_method = "BF71C2E204EC82729A1EA0969E06871A", hash_generated_method = "943CFFA855B14640CF0AF85A7E102AA3")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:01.512 -0400", hash_original_method = "BF71C2E204EC82729A1EA0969E06871A", hash_generated_method = "F79F74427FD1EF5E7646D17A5DC0F6D3")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     private void dispatchGenericMotion(MotionEvent event, boolean sendDone) {
         dsTaint.addTaint(event.dsTaint);
@@ -4539,8 +4464,8 @@ public final class ViewRootImpl extends Handler implements ViewParent, View.Atta
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:06.733 -0400", hash_original_method = "609DE6F7AC6918A6ED5E47157E290835", hash_generated_method = "4A21837032DE5947337A10C7B7F402C6")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:01.512 -0400", hash_original_method = "609DE6F7AC6918A6ED5E47157E290835", hash_generated_method = "D839B42E9EE785CD16D970CE2932ADC6")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     public void dispatchAppVisibility(boolean visible) {
         dsTaint.addTaint(visible);
         Message msg;
@@ -4554,8 +4479,8 @@ public final class ViewRootImpl extends Handler implements ViewParent, View.Atta
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:06.734 -0400", hash_original_method = "4D3A3DC5DC743660725FA6A11A372A07", hash_generated_method = "251EACD52FE8F40AB09ECFFA4F82408D")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:01.512 -0400", hash_original_method = "4D3A3DC5DC743660725FA6A11A372A07", hash_generated_method = "801FCC0FB0D85A9B99876EE9478533A6")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     public void dispatchGetNewSurface() {
         Message msg;
         msg = obtainMessage(DISPATCH_GET_NEW_SURFACE);
@@ -4566,8 +4491,8 @@ public final class ViewRootImpl extends Handler implements ViewParent, View.Atta
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:06.734 -0400", hash_original_method = "0CD487AEEAC72879653D2DB3DCCCEB86", hash_generated_method = "E01336B127E1DCBF21BC37D3548673F0")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:01.513 -0400", hash_original_method = "0CD487AEEAC72879653D2DB3DCCCEB86", hash_generated_method = "93BCE6E5C9CF8DB359915D90350774BE")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     public void windowFocusChanged(boolean hasFocus, boolean inTouchMode) {
         dsTaint.addTaint(inTouchMode);
         dsTaint.addTaint(hasFocus);
@@ -4586,8 +4511,8 @@ public final class ViewRootImpl extends Handler implements ViewParent, View.Atta
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:06.734 -0400", hash_original_method = "DCE84E54CF89AABF2B838105364C2821", hash_generated_method = "3D4841A6A8CA1A5E7EC2BEC021E6C57F")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:01.513 -0400", hash_original_method = "DCE84E54CF89AABF2B838105364C2821", hash_generated_method = "BD4750D877108990E2942BE5EE34D35C")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     public void dispatchCloseSystemDialogs(String reason) {
         dsTaint.addTaint(reason);
         Message msg;
@@ -4603,13 +4528,13 @@ public final class ViewRootImpl extends Handler implements ViewParent, View.Atta
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:06.734 -0400", hash_original_method = "786F6A89EC1BE66218A42841DB30F7AC", hash_generated_method = "A99C51EE4110A430278AB53829CF022B")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:01.513 -0400", hash_original_method = "786F6A89EC1BE66218A42841DB30F7AC", hash_generated_method = "495633D0BFB4B1D7FC3A95A433ACB6BF")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public void dispatchDragEvent(DragEvent event) {
         dsTaint.addTaint(event.dsTaint);
-        /*final*/ int what;
+        int what;
         {
-            boolean varB24B6A2E894360805412F219C1784FDD_978372104 = (event.getAction() == DragEvent.ACTION_DRAG_LOCATION);
+            boolean varB24B6A2E894360805412F219C1784FDD_52619852 = (event.getAction() == DragEvent.ACTION_DRAG_LOCATION);
             {
                 what = DISPATCH_DRAG_LOCATION_EVENT;
                 removeMessages(what);
@@ -4634,7 +4559,7 @@ public final class ViewRootImpl extends Handler implements ViewParent, View.Atta
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:06.734 -0400", hash_original_method = "95F6C6AC5462FA09198431CBF084B2BE", hash_generated_method = "8ACAA5170036C9D7144F6E9B09233AFF")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:01.514 -0400", hash_original_method = "95F6C6AC5462FA09198431CBF084B2BE", hash_generated_method = "630F2129688D6683A7D49110AEC3F275")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public void dispatchSystemUiVisibilityChanged(int seq, int globalVisibility,
             int localValue, int localChanges) {
@@ -4659,11 +4584,11 @@ public final class ViewRootImpl extends Handler implements ViewParent, View.Atta
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:06.734 -0400", hash_original_method = "DE2DA8F2C91C4BAC5E71DE180C591B82", hash_generated_method = "4B351A518FF1F9C93B70B03E44BE5E88")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:01.514 -0400", hash_original_method = "DE2DA8F2C91C4BAC5E71DE180C591B82", hash_generated_method = "77F7C490598CD40737C887F6BAA1E4B3")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     private void sendAccessibilityEvents() {
         {
-            boolean var6B92FF47081CEAA2DFA035B3AA7C5808_136455917 = (!mAccessibilityManager.isEnabled());
+            boolean var6B92FF47081CEAA2DFA035B3AA7C5808_1358483286 = (!mAccessibilityManager.isEnabled());
         } //End collapsed parenthetic
         mView.sendAccessibilityEvent(AccessibilityEvent.TYPE_WINDOW_STATE_CHANGED);
         View focusedView;
@@ -4683,7 +4608,7 @@ public final class ViewRootImpl extends Handler implements ViewParent, View.Atta
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:06.734 -0400", hash_original_method = "3EBD42CE7AD44788B8B5975E509C0AD4", hash_generated_method = "78F3CB278F5A5CF4818230B7D4A8B1F9")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:01.514 -0400", hash_original_method = "3EBD42CE7AD44788B8B5975E509C0AD4", hash_generated_method = "6430AC1E6ACAAA4B282708CE6E24FA0A")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     private void postSendWindowContentChangedCallback() {
         {
@@ -4708,8 +4633,8 @@ public final class ViewRootImpl extends Handler implements ViewParent, View.Atta
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:06.734 -0400", hash_original_method = "B38BF7B18A0D0C0D14C2E79D97568CE9", hash_generated_method = "63DC9D639ED66767D495CD94052EDFFD")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:01.514 -0400", hash_original_method = "B38BF7B18A0D0C0D14C2E79D97568CE9", hash_generated_method = "FAC2CD6D88CE2CBA23C83AAB105F610D")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     private void removeSendWindowContentChangedCallback() {
         {
             removeCallbacks(mSendWindowContentChangedAccessibilityEvent);
@@ -4721,7 +4646,7 @@ public final class ViewRootImpl extends Handler implements ViewParent, View.Atta
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:06.735 -0400", hash_original_method = "3A017950A97502A630256434B0EBF7E8", hash_generated_method = "35C4012DDEF9F75623E9B22FAD8551DA")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:01.515 -0400", hash_original_method = "3A017950A97502A630256434B0EBF7E8", hash_generated_method = "04218D67179E86E6C11F7997AEC035A5")
     @DSModeled(DSC.SAFE)
     public boolean showContextMenuForChild(View originalView) {
         dsTaint.addTaint(originalView.dsTaint);
@@ -4731,10 +4656,9 @@ public final class ViewRootImpl extends Handler implements ViewParent, View.Atta
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:06.735 -0400", hash_original_method = "492AE6A9C9C6F2F7E659E19901E3E487", hash_generated_method = "46B01A7390BF41B89D59F6F45B9FD949")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:01.515 -0400", hash_original_method = "492AE6A9C9C6F2F7E659E19901E3E487", hash_generated_method = "37EF7EFD78D2751B35803EDD91A27F97")
     @DSModeled(DSC.SAFE)
     public ActionMode startActionModeForChild(View originalView, ActionMode.Callback callback) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
         dsTaint.addTaint(callback.dsTaint);
         dsTaint.addTaint(originalView.dsTaint);
         return (ActionMode)dsTaint.getTaint();
@@ -4743,7 +4667,7 @@ public final class ViewRootImpl extends Handler implements ViewParent, View.Atta
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:06.735 -0400", hash_original_method = "FB735C9133B887C07751FC797F168B65", hash_generated_method = "7880BC72ACDEBD9148E0097F362E51E1")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:01.515 -0400", hash_original_method = "FB735C9133B887C07751FC797F168B65", hash_generated_method = "6EF67E772CC4ECB02F323B23CB09ED9D")
     @DSModeled(DSC.SAFE)
     public void createContextMenu(ContextMenu menu) {
         dsTaint.addTaint(menu.dsTaint);
@@ -4751,7 +4675,7 @@ public final class ViewRootImpl extends Handler implements ViewParent, View.Atta
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:06.735 -0400", hash_original_method = "C40FC95C25B6655ACCA9227D471DC892", hash_generated_method = "5FE5B3A754E53EAF5CC74939FF8F929D")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:01.515 -0400", hash_original_method = "C40FC95C25B6655ACCA9227D471DC892", hash_generated_method = "76DAA2BB90BF7B3BAC25A29811DCA6AF")
     @DSModeled(DSC.SAFE)
     public void childDrawableStateChanged(View child) {
         dsTaint.addTaint(child.dsTaint);
@@ -4759,8 +4683,8 @@ public final class ViewRootImpl extends Handler implements ViewParent, View.Atta
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:06.735 -0400", hash_original_method = "975E17A58706A43B9CF06D84428C706E", hash_generated_method = "A7A6B9A94DBD0E4E9921D74130DD75F7")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:01.515 -0400", hash_original_method = "975E17A58706A43B9CF06D84428C706E", hash_generated_method = "0D14280ACAEA322C646244A1BD44E532")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     public boolean requestSendAccessibilityEvent(View child, AccessibilityEvent event) {
         dsTaint.addTaint(child.dsTaint);
         dsTaint.addTaint(event.dsTaint);
@@ -4775,13 +4699,13 @@ public final class ViewRootImpl extends Handler implements ViewParent, View.Atta
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:06.735 -0400", hash_original_method = "C963D9A99CD7BE986B275021EA99CB95", hash_generated_method = "15E1A87ED5308097A886DDB332A35739")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:01.516 -0400", hash_original_method = "C963D9A99CD7BE986B275021EA99CB95", hash_generated_method = "5D8EAA13DE13204DEBE898A7EC03204A")
     //DSFIXME:  CODE0002: Requires DSC value to be set
      void checkThread() {
         {
-            boolean varAB6333097DFD9DC250CE668EF24070FA_2117286118 = (mThread != Thread.currentThread());
+            boolean varAB6333097DFD9DC250CE668EF24070FA_1676836453 = (mThread != Thread.currentThread());
             {
-                throw new CalledFromWrongThreadException(
+                if (DroidSafeAndroidRuntime.control) throw new CalledFromWrongThreadException(
                     "Only the original thread that created a view hierarchy can touch its views.");
             } //End block
         } //End collapsed parenthetic
@@ -4793,7 +4717,7 @@ public final class ViewRootImpl extends Handler implements ViewParent, View.Atta
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:06.735 -0400", hash_original_method = "F9834E22E1AF22274F19B27CD50E21E5", hash_generated_method = "B173C9153F6704229CA2115E30DF51A9")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:01.516 -0400", hash_original_method = "F9834E22E1AF22274F19B27CD50E21E5", hash_generated_method = "3E9AD34D006FD1DEA8A131CC998E60E0")
     @DSModeled(DSC.SAFE)
     public void requestDisallowInterceptTouchEvent(boolean disallowIntercept) {
         dsTaint.addTaint(disallowIntercept);
@@ -4801,22 +4725,21 @@ public final class ViewRootImpl extends Handler implements ViewParent, View.Atta
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:06.735 -0400", hash_original_method = "176476ED7A31EA7594378C530DAA6036", hash_generated_method = "E832B75AA53EAADCC7BD8E61837A1824")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:01.516 -0400", hash_original_method = "176476ED7A31EA7594378C530DAA6036", hash_generated_method = "96EB952B4EFE45615163C9D5C605A0EB")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public boolean requestChildRectangleOnScreen(View child, Rect rectangle,
             boolean immediate) {
         dsTaint.addTaint(child.dsTaint);
-        dsTaint.addTaint(rectangle.dsTaint);
         dsTaint.addTaint(immediate);
-        boolean var01DB072A3F092F21B9D32C2DD4D3AD8E_472570150 = (scrollToRectOrFocus(rectangle, immediate));
+        dsTaint.addTaint(rectangle.dsTaint);
+        boolean var01DB072A3F092F21B9D32C2DD4D3AD8E_167791719 = (scrollToRectOrFocus(rectangle, immediate));
         return dsTaint.getTaintBoolean();
         // ---------- Original Method ----------
         //return scrollToRectOrFocus(rectangle, immediate);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:06.735 -0400", hash_original_method = "0956BAC4E651A6EA7D6D5241504B2332", hash_generated_method = "83B934B4D7332837C02CA90AC2A39A1E")
-    static RunQueue getRunQueue() {
+        static RunQueue getRunQueue() {
         RunQueue rq = sRunQueues.get();
         if (rq != null) {
             return rq;
@@ -4832,6 +4755,12 @@ public final class ViewRootImpl extends Handler implements ViewParent, View.Atta
         Rect visibleInsets;
         Configuration newConfig;
         
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:01.516 -0400", hash_original_method = "7D52580C54DDC128EB596C63281BD2B7", hash_generated_method = "7D52580C54DDC128EB596C63281BD2B7")
+                public ResizedInfo ()
+        {
+        }
+
+
     }
 
 
@@ -4842,6 +4771,12 @@ public final class ViewRootImpl extends Handler implements ViewParent, View.Atta
         int localValue;
         int localChanges;
         
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:01.517 -0400", hash_original_method = "3DB2F829FF9D37653AE63A451E83F000", hash_generated_method = "3DB2F829FF9D37653AE63A451E83F000")
+                public SystemUiVisibilityInfo ()
+        {
+        }
+
+
     }
 
 
@@ -4849,12 +4784,8 @@ public final class ViewRootImpl extends Handler implements ViewParent, View.Atta
     static class InputEventMessage {
         Message mMessage;
         InputEventMessage mNext;
-        private static final Object sPoolSync = new Object();
-        private static InputEventMessage sPool;
-        private static int sPoolSize = 0;
-        private static final int MAX_POOL_SIZE = 10;
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:06.735 -0400", hash_original_method = "B714885B0648B0EB69373E467D5A2ACF", hash_generated_method = "F4009A077F625E9C845346EE3B31DA0E")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:01.517 -0400", hash_original_method = "B714885B0648B0EB69373E467D5A2ACF", hash_generated_method = "3F3039D9C1B597EA1CE738EB6A52BE59")
         @DSModeled(DSC.SAFE)
         private InputEventMessage(Message m) {
             dsTaint.addTaint(m.dsTaint);
@@ -4865,8 +4796,7 @@ public final class ViewRootImpl extends Handler implements ViewParent, View.Atta
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:06.735 -0400", hash_original_method = "00E59ACDF972C6E7146BB1869D625C11", hash_generated_method = "AECBD11D2AF29C6DBB0AB5F019CE58D8")
-        public static InputEventMessage obtain(Message msg) {
+                public static InputEventMessage obtain(Message msg) {
             synchronized (sPoolSync) {
                 if (sPool != null) {
                     InputEventMessage m = sPool;
@@ -4881,15 +4811,14 @@ public final class ViewRootImpl extends Handler implements ViewParent, View.Atta
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:06.735 -0400", hash_original_method = "9F2D00AD0B3B7E97E6983E3E4DE01E8D", hash_generated_method = "7A4DC75C47A4DAF880A3D22AD9F60A24")
-        @DSModeled(DSC.SAFE)
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:01.518 -0400", hash_original_method = "9F2D00AD0B3B7E97E6983E3E4DE01E8D", hash_generated_method = "FF5788078DC74AE3CD4E25C6ECEF7407")
+        //DSFIXME:  CODE0002: Requires DSC value to be set
         public void recycle() {
             mMessage.recycle();
             {
                 {
                     mNext = sPool;
                     sPool = this;
-                    sPoolSize++;
                 } //End block
             } //End block
             // ---------- Original Method ----------
@@ -4904,13 +4833,23 @@ public final class ViewRootImpl extends Handler implements ViewParent, View.Atta
         }
 
         
+        private static final Object sPoolSync = new Object();
+        private static InputEventMessage sPool;
+        private static int sPoolSize = 0;
+        private static final int MAX_POOL_SIZE = 10;
     }
 
 
     
     class TakenSurfaceHolder extends BaseSurfaceHolder {
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:06.736 -0400", hash_original_method = "93900AD5EB4A5A0D65615E175C2FC0CA", hash_generated_method = "892CD3558EEA1287C857F54A4C5E1D04")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:01.519 -0400", hash_original_method = "BE7AEC21DA34F9EEEB4800B7E4DC3016", hash_generated_method = "BE7AEC21DA34F9EEEB4800B7E4DC3016")
+                public TakenSurfaceHolder ()
+        {
+        }
+
+
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:01.530 -0400", hash_original_method = "93900AD5EB4A5A0D65615E175C2FC0CA", hash_generated_method = "927B27AC494CB31DA34169FF09626FF3")
         @DSModeled(DSC.SAFE)
         @Override
         public boolean onAllowLockCanvas() {
@@ -4921,7 +4860,7 @@ public final class ViewRootImpl extends Handler implements ViewParent, View.Atta
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:06.736 -0400", hash_original_method = "CAFD67152D224915C2628F6ACAAF5E06", hash_generated_method = "9506BF21C5889E1CBA11EA0E3E64D826")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:01.530 -0400", hash_original_method = "CAFD67152D224915C2628F6ACAAF5E06", hash_generated_method = "769E8A917A2AE0CACCF50C3D308C76DF")
         @DSModeled(DSC.SAFE)
         @Override
         public void onRelayoutContainer() {
@@ -4930,8 +4869,8 @@ public final class ViewRootImpl extends Handler implements ViewParent, View.Atta
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:06.736 -0400", hash_original_method = "E07C2927AF02C0614ECCFDEAF72047C2", hash_generated_method = "75446937CE3F32559B584EFE02673EC4")
-        @DSModeled(DSC.SAFE)
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:01.530 -0400", hash_original_method = "E07C2927AF02C0614ECCFDEAF72047C2", hash_generated_method = "F7479ED428158182342272E3F749F7A7")
+        //DSFIXME:  CODE0002: Requires DSC value to be set
         public void setFormat(int format) {
             dsTaint.addTaint(format);
             ((RootViewSurfaceTaker)mView).setSurfaceFormat(format);
@@ -4940,8 +4879,8 @@ public final class ViewRootImpl extends Handler implements ViewParent, View.Atta
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:06.736 -0400", hash_original_method = "EE34E0B82BE2B114D60991753727E9A6", hash_generated_method = "DB085427C20E38E3B03ACE00E7DF953A")
-        @DSModeled(DSC.SAFE)
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:01.530 -0400", hash_original_method = "EE34E0B82BE2B114D60991753727E9A6", hash_generated_method = "2B5F0281D3E6CA5A0E9E2A9A85601CA8")
+        //DSFIXME:  CODE0002: Requires DSC value to be set
         public void setType(int type) {
             dsTaint.addTaint(type);
             ((RootViewSurfaceTaker)mView).setSurfaceType(type);
@@ -4950,18 +4889,18 @@ public final class ViewRootImpl extends Handler implements ViewParent, View.Atta
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:06.736 -0400", hash_original_method = "65C8D4CF87AA6164C88CB73B7231A722", hash_generated_method = "94F6FC3AB3CABD3711A5E0A288A4F7CC")
-        @DSModeled(DSC.SAFE)
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:01.531 -0400", hash_original_method = "65C8D4CF87AA6164C88CB73B7231A722", hash_generated_method = "F372C0B52A7977F3E6CD7075DE72C5D9")
+        //DSFIXME:  CODE0002: Requires DSC value to be set
         @Override
         public void onUpdateSurface() {
             //DSFIXME:  CODE0009: Possible callback target function detected
-            throw new IllegalStateException("Shouldn't be here");
+            if (DroidSafeAndroidRuntime.control) throw new IllegalStateException("Shouldn't be here");
             // ---------- Original Method ----------
             //throw new IllegalStateException("Shouldn't be here");
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:06.736 -0400", hash_original_method = "FBEC596A43003FDD0C674BF719352967", hash_generated_method = "27BBBC85A8A87FE2AF07228E5D29CDAA")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:01.532 -0400", hash_original_method = "FBEC596A43003FDD0C674BF719352967", hash_generated_method = "B19D481E062842C6A40151D647C40C32")
         @DSModeled(DSC.SAFE)
         public boolean isCreating() {
             return dsTaint.getTaintBoolean();
@@ -4970,13 +4909,13 @@ public final class ViewRootImpl extends Handler implements ViewParent, View.Atta
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:06.736 -0400", hash_original_method = "DFAAE278D74727ACF1AA5508094F804D", hash_generated_method = "913893A3D808EDD1A9163574D3BEE4FC")
-        @DSModeled(DSC.SAFE)
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:01.532 -0400", hash_original_method = "DFAAE278D74727ACF1AA5508094F804D", hash_generated_method = "F88EE69062D1DD6F5CA61B68695C3299")
+        //DSFIXME:  CODE0002: Requires DSC value to be set
         @Override
         public void setFixedSize(int width, int height) {
             dsTaint.addTaint(height);
             dsTaint.addTaint(width);
-            throw new UnsupportedOperationException(
+            if (DroidSafeAndroidRuntime.control) throw new UnsupportedOperationException(
                     "Currently only support sizing from layout");
             // ---------- Original Method ----------
             //throw new UnsupportedOperationException(
@@ -4984,8 +4923,8 @@ public final class ViewRootImpl extends Handler implements ViewParent, View.Atta
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:06.736 -0400", hash_original_method = "21F6CF6D8B53BD856057ED05ABC33177", hash_generated_method = "A6054BB21ACB7607228EEA6F46A3AD40")
-        @DSModeled(DSC.SAFE)
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:01.532 -0400", hash_original_method = "21F6CF6D8B53BD856057ED05ABC33177", hash_generated_method = "A77C70F70B6FB73952C8DFF1F790F167")
+        //DSFIXME:  CODE0002: Requires DSC value to be set
         public void setKeepScreenOn(boolean screenOn) {
             dsTaint.addTaint(screenOn);
             ((RootViewSurfaceTaker)mView).setSurfaceKeepScreenOn(screenOn);
@@ -5001,8 +4940,8 @@ public final class ViewRootImpl extends Handler implements ViewParent, View.Atta
     static class InputMethodCallback extends IInputMethodCallback.Stub {
         private WeakReference<ViewRootImpl> mViewAncestor;
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:06.736 -0400", hash_original_method = "54191F901FEF749694D67ED7BF80E958", hash_generated_method = "DD22DFE8DC6894786E12B0E43266E6F9")
-        @DSModeled(DSC.SAFE)
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:01.532 -0400", hash_original_method = "54191F901FEF749694D67ED7BF80E958", hash_generated_method = "422A66EE636ED223E5B865B2FD072679")
+        //DSFIXME:  CODE0002: Requires DSC value to be set
         public InputMethodCallback(ViewRootImpl viewAncestor) {
             dsTaint.addTaint(viewAncestor.dsTaint);
             mViewAncestor = new WeakReference<ViewRootImpl>(viewAncestor);
@@ -5011,12 +4950,12 @@ public final class ViewRootImpl extends Handler implements ViewParent, View.Atta
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:06.736 -0400", hash_original_method = "BE17249E230FCA094C5B0C5E3A1F0AA4", hash_generated_method = "A6605444BAE2D3980512FEBA7781640C")
-        @DSModeled(DSC.SAFE)
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:01.533 -0400", hash_original_method = "BE17249E230FCA094C5B0C5E3A1F0AA4", hash_generated_method = "C71C1543FE0FD048993610BE8B013535")
+        //DSFIXME:  CODE0002: Requires DSC value to be set
         public void finishedEvent(int seq, boolean handled) {
             dsTaint.addTaint(seq);
             dsTaint.addTaint(handled);
-            final ViewRootImpl viewAncestor;
+            ViewRootImpl viewAncestor;
             viewAncestor = mViewAncestor.get();
             {
                 viewAncestor.dispatchFinishedEvent(seq, handled);
@@ -5029,10 +4968,9 @@ public final class ViewRootImpl extends Handler implements ViewParent, View.Atta
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:06.736 -0400", hash_original_method = "93549AC7AA704598E881A2A0D800AB4C", hash_generated_method = "8E30B56DC625772B40EF37FDFF605DE7")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:01.534 -0400", hash_original_method = "93549AC7AA704598E881A2A0D800AB4C", hash_generated_method = "E950473C27EA146EC894AC858472F23A")
         @DSModeled(DSC.SAFE)
         public void sessionCreated(IInputMethodSession session) {
-            //DSFIXME:  CODE0009: Possible callback target function detected
             dsTaint.addTaint(session.dsTaint);
             // ---------- Original Method ----------
         }
@@ -5043,10 +4981,10 @@ public final class ViewRootImpl extends Handler implements ViewParent, View.Atta
 
     
     static class W extends IWindow.Stub {
-        private final WeakReference<ViewRootImpl> mViewAncestor;
+        private WeakReference<ViewRootImpl> mViewAncestor;
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:06.736 -0400", hash_original_method = "D1CF0E60435976F2AA38BD5BC7DA8E27", hash_generated_method = "20E67A2F8BB6DF81C623CAD9AD7E6F13")
-        @DSModeled(DSC.SAFE)
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:01.534 -0400", hash_original_method = "D1CF0E60435976F2AA38BD5BC7DA8E27", hash_generated_method = "81EE98283715D68BD647D1EFCBB6EA20")
+        //DSFIXME:  CODE0002: Requires DSC value to be set
          W(ViewRootImpl viewAncestor) {
             dsTaint.addTaint(viewAncestor.dsTaint);
             mViewAncestor = new WeakReference<ViewRootImpl>(viewAncestor);
@@ -5055,8 +4993,8 @@ public final class ViewRootImpl extends Handler implements ViewParent, View.Atta
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:06.737 -0400", hash_original_method = "A648B76CE506B7CD274906DE238C17D8", hash_generated_method = "92C2475D117B64EF4DB22AEA0975B184")
-        @DSModeled(DSC.SAFE)
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:01.534 -0400", hash_original_method = "A648B76CE506B7CD274906DE238C17D8", hash_generated_method = "724418E2A03E9D2CCC62FF5915AE79ED")
+        //DSFIXME:  CODE0002: Requires DSC value to be set
         public void resized(int w, int h, Rect coveredInsets, Rect visibleInsets,
                 boolean reportDraw, Configuration newConfig) {
             dsTaint.addTaint(w);
@@ -5065,7 +5003,7 @@ public final class ViewRootImpl extends Handler implements ViewParent, View.Atta
             dsTaint.addTaint(newConfig.dsTaint);
             dsTaint.addTaint(coveredInsets.dsTaint);
             dsTaint.addTaint(h);
-            final ViewRootImpl viewAncestor;
+            ViewRootImpl viewAncestor;
             viewAncestor = mViewAncestor.get();
             {
                 viewAncestor.dispatchResized(w, h, coveredInsets, visibleInsets, reportDraw,
@@ -5080,11 +5018,11 @@ public final class ViewRootImpl extends Handler implements ViewParent, View.Atta
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:06.737 -0400", hash_original_method = "EB98E21C67C8D9A44F58CD671F491CDA", hash_generated_method = "69725710E59BBA15657E6BC646478ACB")
-        @DSModeled(DSC.SAFE)
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:01.534 -0400", hash_original_method = "EB98E21C67C8D9A44F58CD671F491CDA", hash_generated_method = "8E81C10BF207D30DFB25FDAE4B77FF7E")
+        //DSFIXME:  CODE0002: Requires DSC value to be set
         public void dispatchAppVisibility(boolean visible) {
             dsTaint.addTaint(visible);
-            final ViewRootImpl viewAncestor;
+            ViewRootImpl viewAncestor;
             viewAncestor = mViewAncestor.get();
             {
                 viewAncestor.dispatchAppVisibility(visible);
@@ -5097,10 +5035,10 @@ public final class ViewRootImpl extends Handler implements ViewParent, View.Atta
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:06.737 -0400", hash_original_method = "5CE742A9FFA814199F790759E49D980E", hash_generated_method = "6A6910D5C2D24F997A92365082384023")
-        @DSModeled(DSC.SAFE)
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:01.535 -0400", hash_original_method = "5CE742A9FFA814199F790759E49D980E", hash_generated_method = "5863AD4219353E1F1C1357C0F6710B31")
+        //DSFIXME:  CODE0002: Requires DSC value to be set
         public void dispatchGetNewSurface() {
-            final ViewRootImpl viewAncestor;
+            ViewRootImpl viewAncestor;
             viewAncestor = mViewAncestor.get();
             {
                 viewAncestor.dispatchGetNewSurface();
@@ -5113,12 +5051,12 @@ public final class ViewRootImpl extends Handler implements ViewParent, View.Atta
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:06.737 -0400", hash_original_method = "294D771D49852BEC83940B0D8623D316", hash_generated_method = "853A20E0EA7D0E4CF1B273F167C36360")
-        @DSModeled(DSC.SAFE)
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:01.535 -0400", hash_original_method = "294D771D49852BEC83940B0D8623D316", hash_generated_method = "57A7E6C3A29BD4B231FFFD97F84B08BE")
+        //DSFIXME:  CODE0002: Requires DSC value to be set
         public void windowFocusChanged(boolean hasFocus, boolean inTouchMode) {
             dsTaint.addTaint(inTouchMode);
             dsTaint.addTaint(hasFocus);
-            final ViewRootImpl viewAncestor;
+            ViewRootImpl viewAncestor;
             viewAncestor = mViewAncestor.get();
             {
                 viewAncestor.windowFocusChanged(hasFocus, inTouchMode);
@@ -5131,8 +5069,7 @@ public final class ViewRootImpl extends Handler implements ViewParent, View.Atta
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:06.737 -0400", hash_original_method = "0F834A9D69D3D9A8D8102CFC29F0EF8E", hash_generated_method = "07BF2095C8AB8714CC7FFC034E0187CF")
-        private static int checkCallingPermission(String permission) {
+                private static int checkCallingPermission(String permission) {
             try {
                 return ActivityManagerNative.getDefault().checkPermission(
                         permission, Binder.getCallingPid(), Binder.getCallingUid());
@@ -5142,24 +5079,23 @@ public final class ViewRootImpl extends Handler implements ViewParent, View.Atta
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:06.737 -0400", hash_original_method = "BAC64B61AF453BEA5AB28D214B8FF7C5", hash_generated_method = "34CEA6E7BB1A9B90CC7F38AA16343CFC")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:01.535 -0400", hash_original_method = "BAC64B61AF453BEA5AB28D214B8FF7C5", hash_generated_method = "046E9A71B53E0B9EAB31CB7F0E623F97")
         //DSFIXME:  CODE0002: Requires DSC value to be set
         public void executeCommand(String command, String parameters, ParcelFileDescriptor out) {
             dsTaint.addTaint(command);
             dsTaint.addTaint(parameters);
             dsTaint.addTaint(out.dsTaint);
-            final ViewRootImpl viewAncestor;
+            ViewRootImpl viewAncestor;
             viewAncestor = mViewAncestor.get();
             {
-                final View view;
+                View view;
                 view = viewAncestor.mView;
                 {
                     {
-                        boolean varD985B2C74752F819AC5BC1C5B2498154_163974553 = (checkCallingPermission(Manifest.permission.DUMP) !=
+                        boolean varD985B2C74752F819AC5BC1C5B2498154_1277644226 = (checkCallingPermission(Manifest.permission.DUMP) !=
                             PackageManager.PERMISSION_GRANTED);
-                        if (DroidSafeAndroidRuntime.control)
                         {
-                            throw new SecurityException("Insufficient permissions to invoke"
+                            if (DroidSafeAndroidRuntime.control) throw new SecurityException("Insufficient permissions to invoke"
                                 + " executeCommand() from pid=" + Binder.getCallingPid()
                                 + ", uid=" + Binder.getCallingUid());
                         } //End block
@@ -5195,11 +5131,11 @@ public final class ViewRootImpl extends Handler implements ViewParent, View.Atta
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:06.737 -0400", hash_original_method = "0341134904B032AC1241DC2205E79E01", hash_generated_method = "DE0747FC95620FA238DCB94CE30B9A85")
-        @DSModeled(DSC.SAFE)
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:01.536 -0400", hash_original_method = "0341134904B032AC1241DC2205E79E01", hash_generated_method = "F00EA8B5915637C6D9E215038CA9474B")
+        //DSFIXME:  CODE0002: Requires DSC value to be set
         public void closeSystemDialogs(String reason) {
             dsTaint.addTaint(reason);
-            final ViewRootImpl viewAncestor;
+            ViewRootImpl viewAncestor;
             viewAncestor = mViewAncestor.get();
             {
                 viewAncestor.dispatchCloseSystemDialogs(reason);
@@ -5212,14 +5148,14 @@ public final class ViewRootImpl extends Handler implements ViewParent, View.Atta
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:06.737 -0400", hash_original_method = "0D1309853D34ED0E4A19A33B54F85778", hash_generated_method = "4E4B3E163CD5D356734B8BA5DCE31ADB")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:01.536 -0400", hash_original_method = "0D1309853D34ED0E4A19A33B54F85778", hash_generated_method = "D40E286C50DEADD449BDAEB4DA4EFFE0")
         //DSFIXME:  CODE0002: Requires DSC value to be set
         public void dispatchWallpaperOffsets(float x, float y, float xStep, float yStep,
                 boolean sync) {
             dsTaint.addTaint(sync);
             dsTaint.addTaint(xStep);
-            dsTaint.addTaint(y);
             dsTaint.addTaint(yStep);
+            dsTaint.addTaint(y);
             dsTaint.addTaint(x);
             {
                 try 
@@ -5239,7 +5175,7 @@ public final class ViewRootImpl extends Handler implements ViewParent, View.Atta
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:06.738 -0400", hash_original_method = "084CB00632E8F4F79253F4CBB0703969", hash_generated_method = "A42DFB33031FBB55451DC2AE75C2D4A1")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:01.537 -0400", hash_original_method = "084CB00632E8F4F79253F4CBB0703969", hash_generated_method = "B16E598FE4DFF8234E1F2F1F05036483")
         //DSFIXME:  CODE0002: Requires DSC value to be set
         public void dispatchWallpaperCommand(String action, int x, int y,
                 int z, Bundle extras, boolean sync) {
@@ -5247,8 +5183,8 @@ public final class ViewRootImpl extends Handler implements ViewParent, View.Atta
             dsTaint.addTaint(action);
             dsTaint.addTaint(z);
             dsTaint.addTaint(y);
-            dsTaint.addTaint(x);
             dsTaint.addTaint(extras.dsTaint);
+            dsTaint.addTaint(x);
             {
                 try 
                 {
@@ -5267,11 +5203,11 @@ public final class ViewRootImpl extends Handler implements ViewParent, View.Atta
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:06.738 -0400", hash_original_method = "AE33DC8C57E72B3B1EEF7B37E6DC4CB6", hash_generated_method = "F918647123D533316C251C73892304AB")
-        @DSModeled(DSC.SAFE)
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:01.537 -0400", hash_original_method = "AE33DC8C57E72B3B1EEF7B37E6DC4CB6", hash_generated_method = "71CD8A126EA05001882A1346A50733FA")
+        //DSFIXME:  CODE0002: Requires DSC value to be set
         public void dispatchDragEvent(DragEvent event) {
             dsTaint.addTaint(event.dsTaint);
-            final ViewRootImpl viewAncestor;
+            ViewRootImpl viewAncestor;
             viewAncestor = mViewAncestor.get();
             {
                 viewAncestor.dispatchDragEvent(event);
@@ -5284,15 +5220,15 @@ public final class ViewRootImpl extends Handler implements ViewParent, View.Atta
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:06.738 -0400", hash_original_method = "0BC30404A661769E03F23017D2DE8196", hash_generated_method = "98E7FA041B751EA3A06E2E7BE1C91DEA")
-        @DSModeled(DSC.SAFE)
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:01.537 -0400", hash_original_method = "0BC30404A661769E03F23017D2DE8196", hash_generated_method = "9F9F06CC62A3806325A85BBEBF825FB8")
+        //DSFIXME:  CODE0002: Requires DSC value to be set
         public void dispatchSystemUiVisibilityChanged(int seq, int globalVisibility,
                 int localValue, int localChanges) {
             dsTaint.addTaint(localChanges);
             dsTaint.addTaint(localValue);
             dsTaint.addTaint(seq);
             dsTaint.addTaint(globalVisibility);
-            final ViewRootImpl viewAncestor;
+            ViewRootImpl viewAncestor;
             viewAncestor = mViewAncestor.get();
             {
                 viewAncestor.dispatchSystemUiVisibilityChanged(seq, globalVisibility,
@@ -5312,9 +5248,6 @@ public final class ViewRootImpl extends Handler implements ViewParent, View.Atta
 
     
     static final class TrackballAxis {
-        static final float MAX_ACCELERATION = 20;
-        static final long FAST_MOVE_TIME = 150;
-        static final float ACCEL_MOVE_SCALING_FACTOR = (1.0f/40);
         float position;
         float absPosition;
         float acceleration = 1;
@@ -5323,7 +5256,13 @@ public final class ViewRootImpl extends Handler implements ViewParent, View.Atta
         int dir;
         int nonAccelMovement;
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:06.738 -0400", hash_original_method = "A6304CADA1EF057D91BA6FF70064FCCC", hash_generated_method = "7FE833C46C82A93DD5596776F5ED1F44")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:01.538 -0400", hash_original_method = "0C7EA154951275F23E03090A437C7470", hash_generated_method = "0C7EA154951275F23E03090A437C7470")
+                public TrackballAxis ()
+        {
+        }
+
+
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:01.538 -0400", hash_original_method = "A6304CADA1EF057D91BA6FF70064FCCC", hash_generated_method = "7F66D824896F9EC49911D2757E29C942")
         @DSModeled(DSC.SAFE)
          void reset(int _step) {
             dsTaint.addTaint(_step);
@@ -5340,7 +5279,7 @@ public final class ViewRootImpl extends Handler implements ViewParent, View.Atta
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:06.738 -0400", hash_original_method = "7BE12B55CFE54AFD4A89AB866136213C", hash_generated_method = "36387CD1C338CF6223C7B143ED5D672B")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:01.540 -0400", hash_original_method = "7BE12B55CFE54AFD4A89AB866136213C", hash_generated_method = "482B84D601C2FD6CE8B7C8E64C9FAEB4")
         //DSFIXME:  CODE0002: Requires DSC value to be set
          float collect(float off, long time, String axis) {
             dsTaint.addTaint(axis);
@@ -5388,14 +5327,14 @@ public final class ViewRootImpl extends Handler implements ViewParent, View.Atta
                     acceleration = acc > 1 ? acc : 1;
                 } //End block
             } //End block
-            float var529C98EBF363E511405F79C0EF23EDF4_1262648563 = ((absPosition = Math.abs(position)));
+            float var529C98EBF363E511405F79C0EF23EDF4_1269042428 = ((absPosition = Math.abs(position)));
             return dsTaint.getTaintFloat();
             // ---------- Original Method ----------
             // Original Method Too Long, Refer to Original Implementation
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:06.739 -0400", hash_original_method = "94A3484B43A305FA2D2533E09119590B", hash_generated_method = "2A15645BCB0798C2F806B309C0FE26CB")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:01.540 -0400", hash_original_method = "94A3484B43A305FA2D2533E09119590B", hash_generated_method = "03F7D2FDBF1955150F9E447E269856E4")
         //DSFIXME:  CODE0002: Requires DSC value to be set
          int generate(float precision) {
             dsTaint.addTaint(precision);
@@ -5456,13 +5395,16 @@ public final class ViewRootImpl extends Handler implements ViewParent, View.Atta
         }
 
         
+        static final float MAX_ACCELERATION = 20;
+        static final long FAST_MOVE_TIME = 150;
+        static final float ACCEL_MOVE_SCALING_FACTOR = (1.0f/40);
     }
 
 
     
     public static final class CalledFromWrongThreadException extends AndroidRuntimeException {
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:06.739 -0400", hash_original_method = "D704015D17B148E0274888D3BE6B5A1B", hash_generated_method = "D60F725A39769FB1482F881C070EA499")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:01.541 -0400", hash_original_method = "D704015D17B148E0274888D3BE6B5A1B", hash_generated_method = "351D9F06991D6268850B166BB1F5470F")
         //DSFIXME:  CODE0002: Requires DSC value to be set
         public CalledFromWrongThreadException(String msg) {
             super(msg);
@@ -5476,10 +5418,16 @@ public final class ViewRootImpl extends Handler implements ViewParent, View.Atta
 
     
     static final class RunQueue {
-        private final ArrayList<HandlerAction> mActions = new ArrayList<HandlerAction>();
+        private ArrayList<HandlerAction> mActions = new ArrayList<HandlerAction>();
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:06.739 -0400", hash_original_method = "D30AD5886AAB6A1562A9D91A9C03E0DF", hash_generated_method = "EAAE204B3C4FA73D80568CA37BA84261")
-        @DSModeled(DSC.SAFE)
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:01.541 -0400", hash_original_method = "730D61418A59D28F8EF9F56EB0F266F2", hash_generated_method = "730D61418A59D28F8EF9F56EB0F266F2")
+                public RunQueue ()
+        {
+        }
+
+
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:01.541 -0400", hash_original_method = "D30AD5886AAB6A1562A9D91A9C03E0DF", hash_generated_method = "4341E85CDCF94E57CCE50CE5220661A4")
+        //DSFIXME:  CODE0002: Requires DSC value to be set
          void post(Runnable action) {
             dsTaint.addTaint(action.dsTaint);
             postDelayed(action, 0);
@@ -5488,8 +5436,8 @@ public final class ViewRootImpl extends Handler implements ViewParent, View.Atta
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:06.739 -0400", hash_original_method = "37D90AC712BBF73BCC19C8079034F8F1", hash_generated_method = "BD8D60A554CA2A4964B8AF5F7BE86268")
-        @DSModeled(DSC.SAFE)
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:01.541 -0400", hash_original_method = "37D90AC712BBF73BCC19C8079034F8F1", hash_generated_method = "0AE9E542A07DD0547DB2DD5E051EDDDA")
+        //DSFIXME:  CODE0002: Requires DSC value to be set
          void postDelayed(Runnable action, long delayMillis) {
             dsTaint.addTaint(delayMillis);
             dsTaint.addTaint(action.dsTaint);
@@ -5510,18 +5458,18 @@ public final class ViewRootImpl extends Handler implements ViewParent, View.Atta
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:06.739 -0400", hash_original_method = "5BA3715297222A78241D425B9BCC6DE7", hash_generated_method = "8D9FEAE6C0B37876D79022603EBB9311")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:01.541 -0400", hash_original_method = "5BA3715297222A78241D425B9BCC6DE7", hash_generated_method = "6762828BD71C7B2C783B3C53EF210257")
         //DSFIXME:  CODE0002: Requires DSC value to be set
          void removeCallbacks(Runnable action) {
             dsTaint.addTaint(action.dsTaint);
-            final HandlerAction handlerAction;
+            HandlerAction handlerAction;
             handlerAction = new HandlerAction();
             handlerAction.action = action;
             {
-                final ArrayList<HandlerAction> actions;
+                ArrayList<HandlerAction> actions;
                 actions = mActions;
                 {
-                    boolean var36C1E9EF466D02D50DB2A2AD92DBF5C4_124437479 = (actions.remove(handlerAction));
+                    boolean var36C1E9EF466D02D50DB2A2AD92DBF5C4_1357858090 = (actions.remove(handlerAction));
                 } //End collapsed parenthetic
             } //End block
             // ---------- Original Method ----------
@@ -5535,20 +5483,20 @@ public final class ViewRootImpl extends Handler implements ViewParent, View.Atta
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:06.739 -0400", hash_original_method = "3626F7B757A14315643B29FE9818088B", hash_generated_method = "BB5E75B323799BD1EFBE62CC6F0A853E")
-        @DSModeled(DSC.SAFE)
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:01.542 -0400", hash_original_method = "3626F7B757A14315643B29FE9818088B", hash_generated_method = "172BADB6E44193B430C2D009DE9ED84B")
+        //DSFIXME:  CODE0002: Requires DSC value to be set
          void executeActions(Handler handler) {
             dsTaint.addTaint(handler.dsTaint);
             {
-                final ArrayList<HandlerAction> actions;
+                ArrayList<HandlerAction> actions;
                 actions = mActions;
-                final int count;
+                int count;
                 count = actions.size();
                 {
                     int i;
                     i = 0;
                     {
-                        final HandlerAction handlerAction;
+                        HandlerAction handlerAction;
                         handlerAction = actions.get(i);
                         handler.postDelayed(handlerAction.action, handlerAction.delay);
                     } //End block
@@ -5572,17 +5520,23 @@ public final class ViewRootImpl extends Handler implements ViewParent, View.Atta
             Runnable action;
             long delay;
             
-            @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:06.739 -0400", hash_original_method = "EC304D8CC82834BC90F0FBE66AB5A5B9", hash_generated_method = "6BF9ABFFF3097B652F5702BB49731E29")
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:01.542 -0400", hash_original_method = "0DE2CBF151F21CA3713C9C205746B980", hash_generated_method = "0DE2CBF151F21CA3713C9C205746B980")
+                        public HandlerAction ()
+            {
+            }
+
+
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:01.542 -0400", hash_original_method = "EC304D8CC82834BC90F0FBE66AB5A5B9", hash_generated_method = "FAD81BA70E783B7EBF2E1777C76689E7")
             //DSFIXME:  CODE0002: Requires DSC value to be set
             @Override
             public boolean equals(Object o) {
                 dsTaint.addTaint(o.dsTaint);
                 {
-                    boolean var282528ACEB1CC10074B7BD702EFB8F50_691229070 = (o == null || getClass() != o.getClass());
+                    boolean var282528ACEB1CC10074B7BD702EFB8F50_393454939 = (o == null || getClass() != o.getClass());
                 } //End collapsed parenthetic
                 HandlerAction that;
                 that = (HandlerAction) o;
-                boolean varB89771406AB9E6A784E553026517A2DD_1221652644 = (!(action != null ? !action.equals(that.action) : that.action != null)); //DSFIXME:  CODE0008: Nested ternary operator in expression
+                boolean varB89771406AB9E6A784E553026517A2DD_126026144 = (!(action != null ? !action.equals(that.action) : that.action != null)); //DSFIXME:  CODE0008: Nested ternary operator in expression
                 return dsTaint.getTaintBoolean();
                 // ---------- Original Method ----------
                 //if (this == o) return true;
@@ -5592,7 +5546,7 @@ public final class ViewRootImpl extends Handler implements ViewParent, View.Atta
             }
 
             
-            @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:06.740 -0400", hash_original_method = "09AD30FBB7C8AE284E2A2DAD39966BF7", hash_generated_method = "0ED6325336D8DA04898F5AC589DF7924")
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:01.542 -0400", hash_original_method = "09AD30FBB7C8AE284E2A2DAD39966BF7", hash_generated_method = "56C924A2F5D91D7B4A78C722678882AC")
             //DSFIXME:  CODE0002: Requires DSC value to be set
             @Override
             public int hashCode() {
@@ -5618,8 +5572,14 @@ public final class ViewRootImpl extends Handler implements ViewParent, View.Atta
     
     final class AccessibilityInteractionConnectionManager implements AccessibilityStateChangeListener {
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:06.740 -0400", hash_original_method = "8A20E0BF76F2FE3CB2E135C12DE9692E", hash_generated_method = "3662A25F59AC8AA4EE537F45A40D3AED")
-        @DSModeled(DSC.SAFE)
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:01.542 -0400", hash_original_method = "0E0F0B889EDBA451E8DD07CBC8B11C51", hash_generated_method = "0E0F0B889EDBA451E8DD07CBC8B11C51")
+                public AccessibilityInteractionConnectionManager ()
+        {
+        }
+
+
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:01.542 -0400", hash_original_method = "8A20E0BF76F2FE3CB2E135C12DE9692E", hash_generated_method = "7E0474A8E6D40076CA9D22C959B61D8B")
+        //DSFIXME:  CODE0002: Requires DSC value to be set
         public void onAccessibilityStateChanged(boolean enabled) {
             //DSFIXME:  CODE0009: Possible callback target function detected
             dsTaint.addTaint(enabled);
@@ -5638,10 +5598,10 @@ public final class ViewRootImpl extends Handler implements ViewParent, View.Atta
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:06.740 -0400", hash_original_method = "92A9A6CA8F5EA055DBA3D736397E37E0", hash_generated_method = "3362632EF5F27AFF9ACCB54F738E16F9")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:01.543 -0400", hash_original_method = "92A9A6CA8F5EA055DBA3D736397E37E0", hash_generated_method = "1224EF239655CE7CC401F03EBEF1D3EA")
         //DSFIXME:  CODE0002: Requires DSC value to be set
         public void ensureConnection() {
-            final boolean registered;
+            boolean registered;
             registered = mAttachInfo.mAccessibilityWindowId != View.NO_ID;
             {
                 mAttachInfo.mAccessibilityWindowId =
@@ -5658,10 +5618,10 @@ public final class ViewRootImpl extends Handler implements ViewParent, View.Atta
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:06.740 -0400", hash_original_method = "C22E99B1A3881672FEB45F6BE843B278", hash_generated_method = "39A4935A0986E0F7E1C5D86D9006EEE1")
-        @DSModeled(DSC.SAFE)
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:01.543 -0400", hash_original_method = "C22E99B1A3881672FEB45F6BE843B278", hash_generated_method = "A2333ED83AF0D8414333FB37BE8C96C7")
+        //DSFIXME:  CODE0002: Requires DSC value to be set
         public void ensureNoConnection() {
-            final boolean registered;
+            boolean registered;
             registered = mAttachInfo.mAccessibilityWindowId != View.NO_ID;
             {
                 mAttachInfo.mAccessibilityWindowId = View.NO_ID;
@@ -5681,10 +5641,10 @@ public final class ViewRootImpl extends Handler implements ViewParent, View.Atta
 
     
     static final class AccessibilityInteractionConnection extends IAccessibilityInteractionConnection.Stub {
-        private final WeakReference<ViewRootImpl> mRootImpl;
+        private WeakReference<ViewRootImpl> mRootImpl;
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:06.740 -0400", hash_original_method = "D539A7CCB822AF3CDF20BB7941121D94", hash_generated_method = "2B0C4B11628FB5990C0438CEAA6259CF")
-        @DSModeled(DSC.SAFE)
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:01.543 -0400", hash_original_method = "D539A7CCB822AF3CDF20BB7941121D94", hash_generated_method = "A3B3331665FC951DFE18E145985956FD")
+        //DSFIXME:  CODE0002: Requires DSC value to be set
          AccessibilityInteractionConnection(ViewRootImpl viewAncestor) {
             dsTaint.addTaint(viewAncestor.dsTaint);
             mRootImpl = new WeakReference<ViewRootImpl>(viewAncestor);
@@ -5693,7 +5653,7 @@ public final class ViewRootImpl extends Handler implements ViewParent, View.Atta
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:06.740 -0400", hash_original_method = "EE5D719A51240BF55D02CDA16E5D3A9D", hash_generated_method = "7D458BA1258101D4407F6EBAE8DCF067")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:01.543 -0400", hash_original_method = "EE5D719A51240BF55D02CDA16E5D3A9D", hash_generated_method = "569D619336E365FAFDB9D958DA4083DB")
         //DSFIXME:  CODE0002: Requires DSC value to be set
         public void findAccessibilityNodeInfoByAccessibilityId(int accessibilityId,
                 int interactionId, IAccessibilityInteractionConnectionCallback callback,
@@ -5720,15 +5680,15 @@ public final class ViewRootImpl extends Handler implements ViewParent, View.Atta
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:06.740 -0400", hash_original_method = "150D2C0671760B2C49B4A2BEA648BFF0", hash_generated_method = "A969940F5749737CF92BF24392414A8B")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:01.544 -0400", hash_original_method = "150D2C0671760B2C49B4A2BEA648BFF0", hash_generated_method = "7962E12221A6901C1C6D996C3C18F8DF")
         //DSFIXME:  CODE0002: Requires DSC value to be set
         public void performAccessibilityAction(int accessibilityId, int action,
                 int interactionId, IAccessibilityInteractionConnectionCallback callback,
                 int interogatingPid, long interrogatingTid) {
             dsTaint.addTaint(accessibilityId);
             dsTaint.addTaint(interactionId);
-            dsTaint.addTaint(action);
             dsTaint.addTaint(callback.dsTaint);
+            dsTaint.addTaint(action);
             dsTaint.addTaint(interogatingPid);
             dsTaint.addTaint(interrogatingTid);
             ViewRootImpl viewRootImpl;
@@ -5748,7 +5708,7 @@ public final class ViewRootImpl extends Handler implements ViewParent, View.Atta
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:06.740 -0400", hash_original_method = "480C93EC256597CABC1B248D841B9A3E", hash_generated_method = "8168E2E6FF43296B24527C230CA90473")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:01.544 -0400", hash_original_method = "480C93EC256597CABC1B248D841B9A3E", hash_generated_method = "0B2C578822855E534A5772255D0A9C9F")
         //DSFIXME:  CODE0002: Requires DSC value to be set
         public void findAccessibilityNodeInfoByViewId(int viewId,
                 int interactionId, IAccessibilityInteractionConnectionCallback callback,
@@ -5775,7 +5735,7 @@ public final class ViewRootImpl extends Handler implements ViewParent, View.Atta
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:06.741 -0400", hash_original_method = "9891EE3B36B5E5E829B36E62164827F4", hash_generated_method = "E05D57319E8BDC663744318E8D7E0AC4")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:01.544 -0400", hash_original_method = "9891EE3B36B5E5E829B36E62164827F4", hash_generated_method = "6003CB248BBC29B7395E3CA9307A9A4F")
         //DSFIXME:  CODE0002: Requires DSC value to be set
         public void findAccessibilityNodeInfosByViewText(String text, int accessibilityId,
                 int interactionId, IAccessibilityInteractionConnectionCallback callback,
@@ -5808,10 +5768,9 @@ public final class ViewRootImpl extends Handler implements ViewParent, View.Atta
 
     
     final class AccessibilityInteractionController {
-        private static final int POOL_SIZE = 5;
         private ArrayList<AccessibilityNodeInfo> mTempAccessibilityNodeInfoList =
             new ArrayList<AccessibilityNodeInfo>();
-        private final Pool<SomeArgs> mPool = Pools.synchronizedPool(Pools.finitePool(
+        private Pool<SomeArgs> mPool = Pools.synchronizedPool(Pools.finitePool(
                 new PoolableManager<SomeArgs>() {
                     public SomeArgs newInstance() {
                         return new SomeArgs();
@@ -5827,7 +5786,13 @@ public final class ViewRootImpl extends Handler implements ViewParent, View.Atta
                 }, POOL_SIZE)
         );
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:06.741 -0400", hash_original_method = "2F6D3BCB232629523E59C738D4AD3A95", hash_generated_method = "DFC308693DF5D4E685B90AC1FCA9BA73")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:01.544 -0400", hash_original_method = "CD08215D84712BF4DE587CBEBB75CEF8", hash_generated_method = "CD08215D84712BF4DE587CBEBB75CEF8")
+                public AccessibilityInteractionController ()
+        {
+        }
+
+
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:01.544 -0400", hash_original_method = "2F6D3BCB232629523E59C738D4AD3A95", hash_generated_method = "ABEFF45DCB6EE41C3D60DC4170CFAFBE")
         //DSFIXME:  CODE0002: Requires DSC value to be set
         public void findAccessibilityNodeInfoByAccessibilityIdClientThread(int accessibilityId,
                 int interactionId, IAccessibilityInteractionConnectionCallback callback,
@@ -5844,7 +5809,7 @@ public final class ViewRootImpl extends Handler implements ViewParent, View.Atta
             message.arg2 = interactionId;
             message.obj = callback;
             {
-                boolean var8107759D1151D3101276FAAE5511E68D_1334548012 = (interrogatingPid == Process.myPid()
+                boolean var8107759D1151D3101276FAAE5511E68D_946373185 = (interrogatingPid == Process.myPid()
                     && interrogatingTid == Looper.getMainLooper().getThread().getId());
                 {
                     message.setTarget(ViewRootImpl.this);
@@ -5870,15 +5835,15 @@ public final class ViewRootImpl extends Handler implements ViewParent, View.Atta
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:06.741 -0400", hash_original_method = "145D07D178B3372CAAF2CB93D024125F", hash_generated_method = "5ADFB23694C1FE1365A8480F6E2E84A5")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:01.545 -0400", hash_original_method = "145D07D178B3372CAAF2CB93D024125F", hash_generated_method = "314AEB65093C3A800289899A7F894278")
         //DSFIXME:  CODE0002: Requires DSC value to be set
         public void findAccessibilityNodeInfoByAccessibilityIdUiThread(Message message) {
             dsTaint.addTaint(message.dsTaint);
-            final int accessibilityId;
+            int accessibilityId;
             accessibilityId = message.arg1;
-            final int interactionId;
+            int interactionId;
             interactionId = message.arg2;
-            final IAccessibilityInteractionConnectionCallback callback;
+            IAccessibilityInteractionConnectionCallback callback;
             callback = (IAccessibilityInteractionConnectionCallback) message.obj;
             AccessibilityNodeInfo info;
             info = null;
@@ -5919,7 +5884,7 @@ public final class ViewRootImpl extends Handler implements ViewParent, View.Atta
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:06.741 -0400", hash_original_method = "ADA0B35A4DB3EC9F459DCBB8D66C434D", hash_generated_method = "8E7D12F9472C3E33FA8189A7CA09519D")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:01.545 -0400", hash_original_method = "ADA0B35A4DB3EC9F459DCBB8D66C434D", hash_generated_method = "B1E3EAA5D5260C2E8CA3881347FAA905")
         //DSFIXME:  CODE0002: Requires DSC value to be set
         public void findAccessibilityNodeInfoByViewIdClientThread(int viewId, int interactionId,
                 IAccessibilityInteractionConnectionCallback callback, int interrogatingPid,
@@ -5936,7 +5901,7 @@ public final class ViewRootImpl extends Handler implements ViewParent, View.Atta
             message.arg2 = interactionId;
             message.obj = callback;
             {
-                boolean var8107759D1151D3101276FAAE5511E68D_539359421 = (interrogatingPid == Process.myPid()
+                boolean var8107759D1151D3101276FAAE5511E68D_2056288274 = (interrogatingPid == Process.myPid()
                     && interrogatingTid == Looper.getMainLooper().getThread().getId());
                 {
                     message.setTarget(ViewRootImpl.this);
@@ -5962,15 +5927,15 @@ public final class ViewRootImpl extends Handler implements ViewParent, View.Atta
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:06.742 -0400", hash_original_method = "6B2A3077FB5BC3E815A1727E6C950B5E", hash_generated_method = "6FACE77ED74919EFAC42FD141B5E8251")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:01.546 -0400", hash_original_method = "6B2A3077FB5BC3E815A1727E6C950B5E", hash_generated_method = "53E802471B01E597B8BDEC9CE8F47379")
         //DSFIXME:  CODE0002: Requires DSC value to be set
         public void findAccessibilityNodeInfoByViewIdUiThread(Message message) {
             dsTaint.addTaint(message.dsTaint);
-            final int viewId;
+            int viewId;
             viewId = message.arg1;
-            final int interactionId;
+            int interactionId;
             interactionId = message.arg2;
-            final IAccessibilityInteractionConnectionCallback callback;
+            IAccessibilityInteractionConnectionCallback callback;
             callback = (IAccessibilityInteractionConnectionCallback) message.obj;
             AccessibilityNodeInfo info;
             info = null;
@@ -5981,7 +5946,7 @@ public final class ViewRootImpl extends Handler implements ViewParent, View.Atta
                 View target;
                 target = root.findViewById(viewId);
                 {
-                    boolean varAD6C034A8B4788EA6598018C4A7CCA13_729605953 = (target != null && target.getVisibility() == View.VISIBLE);
+                    boolean varAD6C034A8B4788EA6598018C4A7CCA13_1608787328 = (target != null && target.getVisibility() == View.VISIBLE);
                     {
                         info = target.createAccessibilityNodeInfo();
                     } //End block
@@ -6017,7 +5982,7 @@ public final class ViewRootImpl extends Handler implements ViewParent, View.Atta
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:06.742 -0400", hash_original_method = "74A990105163D5D10216C3B475062D28", hash_generated_method = "3A59D746373D5144247BC939104DDE02")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:01.546 -0400", hash_original_method = "74A990105163D5D10216C3B475062D28", hash_generated_method = "9A5710647BA1BDE0D954FE7F41053F02")
         //DSFIXME:  CODE0002: Requires DSC value to be set
         public void findAccessibilityNodeInfosByViewTextClientThread(String text,
                 int accessibilityViewId, int interactionId,
@@ -6026,8 +5991,8 @@ public final class ViewRootImpl extends Handler implements ViewParent, View.Atta
             dsTaint.addTaint(text);
             dsTaint.addTaint(interactionId);
             dsTaint.addTaint(callback.dsTaint);
-            dsTaint.addTaint(accessibilityViewId);
             dsTaint.addTaint(interrogatingPid);
+            dsTaint.addTaint(accessibilityViewId);
             dsTaint.addTaint(interrogatingTid);
             Message message;
             message = Message.obtain();
@@ -6040,7 +6005,7 @@ public final class ViewRootImpl extends Handler implements ViewParent, View.Atta
             args.arg2 = callback;
             message.obj = args;
             {
-                boolean var8107759D1151D3101276FAAE5511E68D_214432480 = (interrogatingPid == Process.myPid()
+                boolean var8107759D1151D3101276FAAE5511E68D_515136285 = (interrogatingPid == Process.myPid()
                     && interrogatingTid == Looper.getMainLooper().getThread().getId());
                 {
                     message.setTarget(ViewRootImpl.this);
@@ -6069,19 +6034,19 @@ public final class ViewRootImpl extends Handler implements ViewParent, View.Atta
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:06.742 -0400", hash_original_method = "51BC2DACC971DA52CB7F7912294499A7", hash_generated_method = "8230CD71498E9A67F435F4C4EB95234E")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:01.547 -0400", hash_original_method = "51BC2DACC971DA52CB7F7912294499A7", hash_generated_method = "DB0CAB3A2A7E7CAD10AD5AE54C32A7B2")
         //DSFIXME:  CODE0002: Requires DSC value to be set
         public void findAccessibilityNodeInfosByViewTextUiThread(Message message) {
             dsTaint.addTaint(message.dsTaint);
             SomeArgs args;
             args = (SomeArgs) message.obj;
-            final String text;
+            String text;
             text = (String) args.arg1;
-            final int accessibilityViewId;
+            int accessibilityViewId;
             accessibilityViewId = args.argi1;
-            final int interactionId;
+            int interactionId;
             interactionId = args.argi2;
-            final IAccessibilityInteractionConnectionCallback callback;
+            IAccessibilityInteractionConnectionCallback callback;
             callback = (IAccessibilityInteractionConnectionCallback) args.arg2;
             mPool.release(args);
             List<AccessibilityNodeInfo> infos;
@@ -6100,16 +6065,16 @@ public final class ViewRootImpl extends Handler implements ViewParent, View.Atta
                     root = ViewRootImpl.this.mView;
                 } //End block
                 {
-                    boolean var9C0D384BF3EBA7F37FDD9A142533A8EE_1431803784 = (root == null || root.getVisibility() != View.VISIBLE);
+                    boolean var9C0D384BF3EBA7F37FDD9A142533A8EE_993651693 = (root == null || root.getVisibility() != View.VISIBLE);
                 } //End collapsed parenthetic
                 root.findViewsWithText(foundViews, text, View.FIND_VIEWS_WITH_TEXT
                         | View.FIND_VIEWS_WITH_CONTENT_DESCRIPTION);
                 {
-                    boolean var8A7BFE1EB8C1A34CA2C8E115CC06AAA3_2065521062 = (foundViews.isEmpty());
+                    boolean var8A7BFE1EB8C1A34CA2C8E115CC06AAA3_645166749 = (foundViews.isEmpty());
                 } //End collapsed parenthetic
                 infos = mTempAccessibilityNodeInfoList;
                 infos.clear();
-                final int viewCount;
+                int viewCount;
                 viewCount = foundViews.size();
                 {
                     int i;
@@ -6118,7 +6083,7 @@ public final class ViewRootImpl extends Handler implements ViewParent, View.Atta
                         View foundView;
                         foundView = foundViews.get(i);
                         {
-                            boolean var8598062468ACAD090E81AB592F4F32E5_1654034054 = (foundView.getVisibility() == View.VISIBLE);
+                            boolean var8598062468ACAD090E81AB592F4F32E5_628833746 = (foundView.getVisibility() == View.VISIBLE);
                             {
                                 infos.add(foundView.createAccessibilityNodeInfo());
                             } //End block
@@ -6140,16 +6105,15 @@ public final class ViewRootImpl extends Handler implements ViewParent, View.Atta
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:06.743 -0400", hash_original_method = "10A09FD4DC34F1BE42EB309D47EC9715", hash_generated_method = "50BF5458F8056CBF66388EF56726A1BF")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:01.547 -0400", hash_original_method = "10A09FD4DC34F1BE42EB309D47EC9715", hash_generated_method = "B725F064AB822357491BE28BBADD1E0F")
         //DSFIXME:  CODE0002: Requires DSC value to be set
         public void performAccessibilityActionClientThread(int accessibilityId, int action,
                 int interactionId, IAccessibilityInteractionConnectionCallback callback,
                 int interogatingPid, long interrogatingTid) {
-            //DSFIXME:  CODE0009: Possible callback target function detected
             dsTaint.addTaint(accessibilityId);
             dsTaint.addTaint(interactionId);
-            dsTaint.addTaint(action);
             dsTaint.addTaint(callback.dsTaint);
+            dsTaint.addTaint(action);
             dsTaint.addTaint(interogatingPid);
             dsTaint.addTaint(interrogatingTid);
             Message message;
@@ -6163,7 +6127,7 @@ public final class ViewRootImpl extends Handler implements ViewParent, View.Atta
             args.arg1 = callback;
             message.obj = args;
             {
-                boolean varBA474D4A1DE421276FA94C5F81C7FD11_932100398 = (interogatingPid == Process.myPid()
+                boolean varBA474D4A1DE421276FA94C5F81C7FD11_746695972 = (interogatingPid == Process.myPid()
                     && interrogatingTid == Looper.getMainLooper().getThread().getId());
                 {
                     message.setTarget(ViewRootImpl.this);
@@ -6192,20 +6156,19 @@ public final class ViewRootImpl extends Handler implements ViewParent, View.Atta
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:06.743 -0400", hash_original_method = "B5557005BEFFE1DA9F706439FD376D18", hash_generated_method = "35FD5F442BB505007CBD42FED3434507")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:01.547 -0400", hash_original_method = "B5557005BEFFE1DA9F706439FD376D18", hash_generated_method = "0F7850BFCE662AA4D0BA371CEFDCB7B2")
         //DSFIXME:  CODE0002: Requires DSC value to be set
         public void perfromAccessibilityActionUiThread(Message message) {
-            //DSFIXME:  CODE0009: Possible callback target function detected
             dsTaint.addTaint(message.dsTaint);
             SomeArgs args;
             args = (SomeArgs) message.obj;
-            final int accessibilityId;
+            int accessibilityId;
             accessibilityId = args.argi1;
-            final int action;
+            int action;
             action = args.argi2;
-            final int interactionId;
+            int interactionId;
             interactionId = args.argi3;
-            final IAccessibilityInteractionConnectionCallback callback;
+            IAccessibilityInteractionConnectionCallback callback;
             callback = (IAccessibilityInteractionConnectionCallback) args.arg1;
             mPool.release(args);
             boolean succeeded;
@@ -6247,17 +6210,17 @@ public final class ViewRootImpl extends Handler implements ViewParent, View.Atta
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:06.743 -0400", hash_original_method = "0DF709A77C91001270CD6D5BCBC66D0E", hash_generated_method = "A39CDEEA869FCA68AB7E0CAA3C7C939B")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:01.548 -0400", hash_original_method = "0DF709A77C91001270CD6D5BCBC66D0E", hash_generated_method = "75ECF1EAF002B7E84AD174516C2A679B")
         //DSFIXME:  CODE0002: Requires DSC value to be set
         private boolean performActionFocus(int accessibilityId) {
             dsTaint.addTaint(accessibilityId);
             View target;
             target = findViewByAccessibilityId(accessibilityId);
             {
-                boolean var1B633B56F0AFAC0F4C74324F357BD14A_310979095 = (target == null || target.getVisibility() != View.VISIBLE);
+                boolean var1B633B56F0AFAC0F4C74324F357BD14A_2000650918 = (target == null || target.getVisibility() != View.VISIBLE);
             } //End collapsed parenthetic
             ensureTouchMode(false);
-            boolean var0F57617D4E8F9359CC9AD7E4CA12AF24_1725067985 = (target.requestFocus());
+            boolean var0F57617D4E8F9359CC9AD7E4CA12AF24_75674808 = (target.requestFocus());
             return dsTaint.getTaintBoolean();
             // ---------- Original Method ----------
             //View target = findViewByAccessibilityId(accessibilityId);
@@ -6269,20 +6232,20 @@ public final class ViewRootImpl extends Handler implements ViewParent, View.Atta
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:06.743 -0400", hash_original_method = "7E9614B48F5F4EC29BCF64D3A075976C", hash_generated_method = "4FC8387256A55124DF70E0F237B9E683")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:01.548 -0400", hash_original_method = "7E9614B48F5F4EC29BCF64D3A075976C", hash_generated_method = "19A6C736FF0CC05B43DC74F54CC566F8")
         //DSFIXME:  CODE0002: Requires DSC value to be set
         private boolean performActionClearFocus(int accessibilityId) {
             dsTaint.addTaint(accessibilityId);
             View target;
             target = findViewByAccessibilityId(accessibilityId);
             {
-                boolean var1B633B56F0AFAC0F4C74324F357BD14A_719262783 = (target == null || target.getVisibility() != View.VISIBLE);
+                boolean var1B633B56F0AFAC0F4C74324F357BD14A_177460092 = (target == null || target.getVisibility() != View.VISIBLE);
             } //End collapsed parenthetic
             {
-                boolean var85D47F37C8A8E496A11CE0CD99470B85_1531385458 = (!target.isFocused());
+                boolean var85D47F37C8A8E496A11CE0CD99470B85_390657285 = (!target.isFocused());
             } //End collapsed parenthetic
             target.clearFocus();
-            boolean var6B4E7E773AB55FC14DC5D0B1ACCA65EC_1083269384 = (!target.isFocused());
+            boolean var6B4E7E773AB55FC14DC5D0B1ACCA65EC_76332425 = (!target.isFocused());
             return dsTaint.getTaintBoolean();
             // ---------- Original Method ----------
             //View target = findViewByAccessibilityId(accessibilityId);
@@ -6297,20 +6260,20 @@ public final class ViewRootImpl extends Handler implements ViewParent, View.Atta
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:06.743 -0400", hash_original_method = "AB7AA9516F9E78D5A5AD4BBEB80A41A0", hash_generated_method = "516C827E8CC1D0D06FB4119D039A6A03")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:01.548 -0400", hash_original_method = "AB7AA9516F9E78D5A5AD4BBEB80A41A0", hash_generated_method = "02BAB2B487A22572CD974931EC6DE061")
         //DSFIXME:  CODE0002: Requires DSC value to be set
         private boolean performActionSelect(int accessibilityId) {
             dsTaint.addTaint(accessibilityId);
             View target;
             target = findViewByAccessibilityId(accessibilityId);
             {
-                boolean var1B633B56F0AFAC0F4C74324F357BD14A_1906391534 = (target == null || target.getVisibility() != View.VISIBLE);
+                boolean var1B633B56F0AFAC0F4C74324F357BD14A_1345550251 = (target == null || target.getVisibility() != View.VISIBLE);
             } //End collapsed parenthetic
             {
-                boolean varB0F56BADB6D848BC74C2EB6E3BAB7BCC_1248732383 = (target.isSelected());
+                boolean varB0F56BADB6D848BC74C2EB6E3BAB7BCC_2100609691 = (target.isSelected());
             } //End collapsed parenthetic
             target.setSelected(true);
-            boolean varE49BAE8F367158D1AAA608101541F1A5_1910427469 = (target.isSelected());
+            boolean varE49BAE8F367158D1AAA608101541F1A5_2098321952 = (target.isSelected());
             return dsTaint.getTaintBoolean();
             // ---------- Original Method ----------
             //View target = findViewByAccessibilityId(accessibilityId);
@@ -6325,20 +6288,20 @@ public final class ViewRootImpl extends Handler implements ViewParent, View.Atta
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:06.744 -0400", hash_original_method = "E102B39F5DF94C3320BE2ED1E2D3B323", hash_generated_method = "5AE1A56940DD2CA6CA3357C07AC54B5C")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:01.548 -0400", hash_original_method = "E102B39F5DF94C3320BE2ED1E2D3B323", hash_generated_method = "D1838A11DC9B2C811DF76897B0A93BA9")
         //DSFIXME:  CODE0002: Requires DSC value to be set
         private boolean performActionClearSelection(int accessibilityId) {
             dsTaint.addTaint(accessibilityId);
             View target;
             target = findViewByAccessibilityId(accessibilityId);
             {
-                boolean var1B633B56F0AFAC0F4C74324F357BD14A_120612680 = (target == null || target.getVisibility() != View.VISIBLE);
+                boolean var1B633B56F0AFAC0F4C74324F357BD14A_1784298910 = (target == null || target.getVisibility() != View.VISIBLE);
             } //End collapsed parenthetic
             {
-                boolean varCEA2FEA7AB8ACAC93A58D6FAF61E7763_1898766148 = (!target.isSelected());
+                boolean varCEA2FEA7AB8ACAC93A58D6FAF61E7763_1924699510 = (!target.isSelected());
             } //End collapsed parenthetic
             target.setSelected(false);
-            boolean varDE00FAE324BEAA0EBABFEB29089F51C8_2035636784 = (!target.isSelected());
+            boolean varDE00FAE324BEAA0EBABFEB29089F51C8_940533578 = (!target.isSelected());
             return dsTaint.getTaintBoolean();
             // ---------- Original Method ----------
             //View target = findViewByAccessibilityId(accessibilityId);
@@ -6353,7 +6316,7 @@ public final class ViewRootImpl extends Handler implements ViewParent, View.Atta
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:06.744 -0400", hash_original_method = "B9D971669B3F873AC0D1B0C38F7811F4", hash_generated_method = "90B9BDC41ECA2B2D518FC27440BCA1AD")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:01.549 -0400", hash_original_method = "B9D971669B3F873AC0D1B0C38F7811F4", hash_generated_method = "25A128CB1419130CAB0992219B7A2729")
         //DSFIXME:  CODE0002: Requires DSC value to be set
         private View findViewByAccessibilityId(int accessibilityId) {
             dsTaint.addTaint(accessibilityId);
@@ -6362,7 +6325,7 @@ public final class ViewRootImpl extends Handler implements ViewParent, View.Atta
             View foundView;
             foundView = root.findViewByAccessibilityId(accessibilityId);
             {
-                boolean varB5E3FDDC281E79B82F6D09E4AAD9E0FF_1402317644 = (foundView != null && foundView.getVisibility() != View.VISIBLE);
+                boolean varB5E3FDDC281E79B82F6D09E4AAD9E0FF_96780595 = (foundView != null && foundView.getVisibility() != View.VISIBLE);
             } //End collapsed parenthetic
             return (View)dsTaint.getTaint();
             // ---------- Original Method ----------
@@ -6387,7 +6350,13 @@ public final class ViewRootImpl extends Handler implements ViewParent, View.Atta
             public int argi2;
             public int argi3;
             
-            @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:06.744 -0400", hash_original_method = "BEE0522D727ED0DB1FBC81A3E3B176C5", hash_generated_method = "90605821903CBBFF1470A17C1794611C")
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:01.549 -0400", hash_original_method = "1DC11EC4B8DE02C86752DC3C92AC9A78", hash_generated_method = "1DC11EC4B8DE02C86752DC3C92AC9A78")
+                        public SomeArgs ()
+            {
+            }
+
+
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:01.549 -0400", hash_original_method = "BEE0522D727ED0DB1FBC81A3E3B176C5", hash_generated_method = "0CFBBE17AC04A00389A73588A7CDAB9D")
             @DSModeled(DSC.SAFE)
             public SomeArgs getNextPoolable() {
                 return (SomeArgs)dsTaint.getTaint();
@@ -6396,7 +6365,7 @@ public final class ViewRootImpl extends Handler implements ViewParent, View.Atta
             }
 
             
-            @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:06.744 -0400", hash_original_method = "4CB4F04617162A1F2BEBBAC63163A5FB", hash_generated_method = "80FFB187A01961D0CBA265CB5CA66DE6")
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:01.549 -0400", hash_original_method = "4CB4F04617162A1F2BEBBAC63163A5FB", hash_generated_method = "5D15E99725D43744F3178673C8B6AC3C")
             @DSModeled(DSC.SAFE)
             public boolean isPooled() {
                 return dsTaint.getTaintBoolean();
@@ -6405,7 +6374,7 @@ public final class ViewRootImpl extends Handler implements ViewParent, View.Atta
             }
 
             
-            @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:06.744 -0400", hash_original_method = "B595989EA0DDF2662B95D2584CF9AF77", hash_generated_method = "F0CDD934FA01297ACA849395CE3BC35A")
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:01.549 -0400", hash_original_method = "B595989EA0DDF2662B95D2584CF9AF77", hash_generated_method = "34A59A063D3BEAA8B0B630A03A52B960")
             @DSModeled(DSC.SAFE)
             public void setNextPoolable(SomeArgs args) {
                 dsTaint.addTaint(args.dsTaint);
@@ -6414,7 +6383,7 @@ public final class ViewRootImpl extends Handler implements ViewParent, View.Atta
             }
 
             
-            @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:06.744 -0400", hash_original_method = "CCE0492C3FBB65D8A1644633FE9AA3DF", hash_generated_method = "36A555F939A13685926002FBFBD79870")
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:01.549 -0400", hash_original_method = "CCE0492C3FBB65D8A1644633FE9AA3DF", hash_generated_method = "A19BE98D20006B14A3686F1F697F4E6E")
             @DSModeled(DSC.SAFE)
             public void setPooled(boolean isPooled) {
                 dsTaint.addTaint(isPooled);
@@ -6423,7 +6392,7 @@ public final class ViewRootImpl extends Handler implements ViewParent, View.Atta
             }
 
             
-            @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:06.744 -0400", hash_original_method = "95D0476EAE9CBD3221945617281C6DDB", hash_generated_method = "EB7A590852C374FA66427BD9A413E38C")
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:01.550 -0400", hash_original_method = "95D0476EAE9CBD3221945617281C6DDB", hash_generated_method = "316EB695B735DFEA458AF811F180A884")
             @DSModeled(DSC.SAFE)
             private void clear() {
                 arg1 = null;
@@ -6444,6 +6413,7 @@ public final class ViewRootImpl extends Handler implements ViewParent, View.Atta
 
 
         
+        private static final int POOL_SIZE = 5;
     }
 
 
@@ -6451,8 +6421,14 @@ public final class ViewRootImpl extends Handler implements ViewParent, View.Atta
     private class SendWindowContentChangedAccessibilityEvent implements Runnable {
         public volatile boolean mIsPending;
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:06.744 -0400", hash_original_method = "3411919DDECDF923DB080425515AE494", hash_generated_method = "C4F76454FCD401EEC7858D2666BE63D0")
-        @DSModeled(DSC.SAFE)
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:01.550 -0400", hash_original_method = "3D33A525D782F79581D1C32458A63511", hash_generated_method = "3D33A525D782F79581D1C32458A63511")
+                public SendWindowContentChangedAccessibilityEvent ()
+        {
+        }
+
+
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:01.550 -0400", hash_original_method = "3411919DDECDF923DB080425515AE494", hash_generated_method = "47C531BB66138CE208DE726513162DE0")
+        //DSFIXME:  CODE0002: Requires DSC value to be set
         public void run() {
             {
                 mView.sendAccessibilityEvent(AccessibilityEvent.TYPE_WINDOW_CONTENT_CHANGED);
@@ -6470,6 +6446,56 @@ public final class ViewRootImpl extends Handler implements ViewParent, View.Atta
 
 
     
+    private static final String TAG = "ViewRootImpl";
+    private static final boolean DBG = false;
+    private static final boolean LOCAL_LOGV = false;
+    private static final boolean DEBUG_DRAW = false || LOCAL_LOGV;
+    private static final boolean DEBUG_LAYOUT = false || LOCAL_LOGV;
+    private static final boolean DEBUG_DIALOG = false || LOCAL_LOGV;
+    private static final boolean DEBUG_INPUT_RESIZE = false || LOCAL_LOGV;
+    private static final boolean DEBUG_ORIENTATION = false || LOCAL_LOGV;
+    private static final boolean DEBUG_TRACKBALL = false || LOCAL_LOGV;
+    private static final boolean DEBUG_IMF = false || LOCAL_LOGV;
+    private static final boolean DEBUG_CONFIGURATION = false || LOCAL_LOGV;
+    private static final boolean DEBUG_FPS = false;
+    private static final boolean WATCH_POINTER = false;
+    private static final String PROPERTY_PROFILE_RENDERING = "viewancestor.profile_rendering";
+    private static final boolean MEASURE_LATENCY = false;
+    private static LatencyTimer lt;
+    static final int MAX_TRACKBALL_DELAY = 250;
+    static IWindowSession sWindowSession;
+    static final Object mStaticInit = new Object();
+    static boolean mInitialized = false;
+    static final ThreadLocal<RunQueue> sRunQueues = new ThreadLocal<RunQueue>();
+    static final ArrayList<Runnable> sFirstDrawHandlers = new ArrayList<Runnable>();
+    static boolean sFirstDrawComplete = false;
+    static final ArrayList<ComponentCallbacks> sConfigCallbacks
+            = new ArrayList<ComponentCallbacks>();
+    static final Interpolator mResizeInterpolator = new AccelerateDecelerateInterpolator();
+    public final static int DO_TRAVERSAL = 1000;
+    public final static int DIE = 1001;
+    public final static int RESIZED = 1002;
+    public final static int RESIZED_REPORT = 1003;
+    public final static int WINDOW_FOCUS_CHANGED = 1004;
+    public final static int DISPATCH_KEY = 1005;
+    public final static int DISPATCH_POINTER = 1006;
+    public final static int DISPATCH_TRACKBALL = 1007;
+    public final static int DISPATCH_APP_VISIBILITY = 1008;
+    public final static int DISPATCH_GET_NEW_SURFACE = 1009;
+    public final static int FINISHED_EVENT = 1010;
+    public final static int DISPATCH_KEY_FROM_IME = 1011;
+    public final static int FINISH_INPUT_CONNECTION = 1012;
+    public final static int CHECK_FOCUS = 1013;
+    public final static int CLOSE_SYSTEM_DIALOGS = 1014;
+    public final static int DISPATCH_DRAG_EVENT = 1015;
+    public final static int DISPATCH_DRAG_LOCATION_EVENT = 1016;
+    public final static int DISPATCH_SYSTEM_UI_VISIBILITY = 1017;
+    public final static int DISPATCH_GENERIC_MOTION = 1018;
+    public final static int UPDATE_CONFIGURATION = 1019;
+    public final static int DO_PERFORM_ACCESSIBILITY_ACTION = 1020;
+    public final static int DO_FIND_ACCESSIBLITY_NODE_INFO_BY_ACCESSIBILITY_ID = 1021;
+    public final static int DO_FIND_ACCESSIBLITY_NODE_INFO_BY_VIEW_ID = 1022;
+    public final static int DO_FIND_ACCESSIBLITY_NODE_INFO_BY_VIEW_TEXT = 1023;
+    public final static int PROCESS_INPUT_EVENTS = 1024;
 }
-
 

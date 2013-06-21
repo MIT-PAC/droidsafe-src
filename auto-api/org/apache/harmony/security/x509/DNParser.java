@@ -2,12 +2,11 @@ package org.apache.harmony.security.x509;
 
 // Droidsafe Imports
 import droidsafe.helpers.*;
-import droidsafe.runtime.DroidSafeAndroidRuntime;
 import droidsafe.annotations.*;
+import droidsafe.runtime.*;
 
-// import Iterator to deal with enhanced for loop translation
+// needed for enhanced for control translations
 import java.util.Iterator;
-
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
@@ -18,11 +17,11 @@ public final class DNParser {
     private int pos;
     private int beg;
     private int end;
-    private final char[] chars;
+    private char[] chars;
     private boolean hasQE;
     private byte[] encoded;
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:17.899 -0400", hash_original_method = "66B2F9736FABC0973929FB105735B82E", hash_generated_method = "5604407784954915025BD8646B23A8AF")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:40.628 -0400", hash_original_method = "66B2F9736FABC0973929FB105735B82E", hash_generated_method = "D72965F3E1866D4691B6137D1BAADAE1")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public DNParser(String dn) throws IOException {
         dsTaint.addTaint(dn);
@@ -32,43 +31,38 @@ public final class DNParser {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:17.900 -0400", hash_original_method = "7D5C37EF81BA8B102CA672C27E3E2647", hash_generated_method = "DED9E34C5B26C4B3CC6940805A5FE108")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:40.628 -0400", hash_original_method = "7D5C37EF81BA8B102CA672C27E3E2647", hash_generated_method = "61390AC96D9F001545C2991AD3CAD460")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     private String nextAT() throws IOException {
         hasQE = false;
         beg = pos;
-        pos++;
         {
-        	if (DroidSafeAndroidRuntime.control) throw new IOException("Invalid distinguished name string");
+            if (DroidSafeAndroidRuntime.control) throw new IOException("Invalid distinguished name string");
         } //End block
         end = pos;
         {
             {
-            	if (DroidSafeAndroidRuntime.control) throw new IOException("Invalid distinguished name string");
+                if (DroidSafeAndroidRuntime.control) throw new IOException("Invalid distinguished name string");
             } //End block
         } //End block
-        pos++;
         {
             beg += 4;
         } //End block
+        String var0400BACEB4DCDFFFD96F8F041C31470F_1942925288 = (new String(chars, beg, end - beg));
         return dsTaint.getTaintString();
         // ---------- Original Method ----------
         // Original Method Too Long, Refer to Original Implementation
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:17.900 -0400", hash_original_method = "5F9B58135FF863A8E24F4B2AD9DF48BE", hash_generated_method = "020865713F1FCBFDB71DE019EB787ED9")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:40.629 -0400", hash_original_method = "5F9B58135FF863A8E24F4B2AD9DF48BE", hash_generated_method = "BB40DAA32E676EFDCE3750B7AFC13319")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     private String quotedAV() throws IOException {
-        pos++;
         beg = pos;
         end = beg;
         {
             {
-            	if (DroidSafeAndroidRuntime.control) throw new IOException("Invalid distinguished name string");
-            } //End block
-            {
-                pos++;
+                if (DroidSafeAndroidRuntime.control) throw new IOException("Invalid distinguished name string");
             } //End block
             {
                 chars[end] = getEscaped();
@@ -76,9 +70,8 @@ public final class DNParser {
             {
                 chars[end] = chars[pos];
             } //End block
-            pos++;
-            end++;
         } //End block
+        String var0400BACEB4DCDFFFD96F8F041C31470F_1504586525 = (new String(chars, beg, end - beg));
         return dsTaint.getTaintString();
         // ---------- Original Method ----------
         //pos++;
@@ -105,31 +98,28 @@ public final class DNParser {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:17.900 -0400", hash_original_method = "59E635302CD6807B36C1A45A26BE591E", hash_generated_method = "1890AAD3131DC2C96E1A8A80DFC2E73B")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:40.629 -0400", hash_original_method = "59E635302CD6807B36C1A45A26BE591E", hash_generated_method = "B2A562B2FDE3F7F6AF34D1177B4E9F6F")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     private String hexAV() throws IOException {
         {
-        	if (DroidSafeAndroidRuntime.control) throw new IOException("Invalid distinguished name string");
+            if (DroidSafeAndroidRuntime.control) throw new IOException("Invalid distinguished name string");
         } //End block
         beg = pos;
-        pos++;
         {
             {
                 end = pos;
             } //End block
             {
                 end = pos;
-                pos++;
             } //End block
             {
                 chars[pos] += 32;
             } //End block
-            pos++;
         } //End block
         int hexLen;
         hexLen = end - beg;
         {
-        	if (DroidSafeAndroidRuntime.control) throw new IOException("Invalid distinguished name string");
+            if (DroidSafeAndroidRuntime.control) throw new IOException("Invalid distinguished name string");
         } //End block
         encoded = new byte[hexLen / 2];
         {
@@ -141,30 +131,31 @@ public final class DNParser {
                 encoded[i] = (byte) getByte(p);
             } //End block
         } //End collapsed parenthetic
+        String varA08C5BD6C809188234D1750FD7D77E28_2000585613 = (new String(chars, beg, hexLen));
         return dsTaint.getTaintString();
         // ---------- Original Method ----------
         // Original Method Too Long, Refer to Original Implementation
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:17.900 -0400", hash_original_method = "FC33535E1A62E80F93C12FF4F8D2E290", hash_generated_method = "DAA99442A9FF688B31000B42F7A37344")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:40.630 -0400", hash_original_method = "FC33535E1A62E80F93C12FF4F8D2E290", hash_generated_method = "4990178C0652359F6779EAE47497BE92")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     private String escapedAV() throws IOException {
         beg = pos;
         end = pos;
         {
+            {
+                String var927BED3135A2D08AB21C5F490FDEFB0D_67755181 = (new String(chars, beg, end - beg));
+            } //End block
+            //Begin case '+' ',' ';' 
+            String var7065A5E5E676F697BD5B3879B32F2464_904089710 = (new String(chars, beg, end - beg));
+            //End case '+' ',' ';' 
             //Begin case '\\' 
             chars[end++] = getEscaped();
-            //End case '\\' 
-            //Begin case '\\' 
-            pos++;
             //End case '\\' 
             //Begin case ' ' 
             int cur;
             cur = end;
-            //End case ' ' 
-            //Begin case ' ' 
-            pos++;
             //End case ' ' 
             //Begin case ' ' 
             chars[end++] = ' ';
@@ -174,11 +165,13 @@ public final class DNParser {
                 chars[end++] = ' ';
             } //End block
             //End case ' ' 
+            //Begin case ' ' 
+            {
+                String var1F723E037F940D01AF13AC29E2DCF338_1641873354 = (new String(chars, beg, cur - beg));
+            } //End block
+            //End case ' ' 
             //Begin case default 
             chars[end++] = chars[pos];
-            //End case default 
-            //Begin case default 
-            pos++;
             //End case default 
         } //End block
         return dsTaint.getTaintString();
@@ -187,12 +180,11 @@ public final class DNParser {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:17.900 -0400", hash_original_method = "1A89A1602A29634CB35E16E135F5FE74", hash_generated_method = "DDC6E2724BD30E20677482CD7DC19177")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:40.630 -0400", hash_original_method = "1A89A1602A29634CB35E16E135F5FE74", hash_generated_method = "BF3F704EF63081C82F527E4A6230BEFD")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     private char getEscaped() throws IOException {
-        pos++;
         {
-        	if (DroidSafeAndroidRuntime.control) throw new IOException("Invalid distinguished name string");
+            if (DroidSafeAndroidRuntime.control) throw new IOException("Invalid distinguished name string");
         } //End block
         char ch;
         ch = chars[pos];
@@ -200,7 +192,7 @@ public final class DNParser {
         hasQE = true;
         //End case '"' '\\' 
         //Begin case default 
-        char var6B59433B346D0CF4C614C82DD9B9249C_772671684 = (getUTF8());
+        char var6B59433B346D0CF4C614C82DD9B9249C_465009020 = (getUTF8());
         //End case default 
         return dsTaint.getTaintChar();
         // ---------- Original Method ----------
@@ -232,12 +224,11 @@ public final class DNParser {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:17.901 -0400", hash_original_method = "12C3774F0261E7D12FCB54FD470B78E6", hash_generated_method = "ADFF6D9BF1F87AC359B1854B0BCB6067")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:40.631 -0400", hash_original_method = "12C3774F0261E7D12FCB54FD470B78E6", hash_generated_method = "5DE6F5C5C9A38968BF55709E3581AD93")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     protected char getUTF8() throws IOException {
         int res;
         res = getByte(pos);
-        pos++;
         {
             int count;
             {
@@ -257,10 +248,7 @@ public final class DNParser {
                 int i;
                 i = 0;
                 {
-                    pos++;
-                    pos++;
                     b = getByte(pos);
-                    pos++;
                     res = (res << 6) + (b & 0x3F);
                 } //End block
             } //End collapsed parenthetic
@@ -271,12 +259,12 @@ public final class DNParser {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:17.901 -0400", hash_original_method = "C98D163E17FC33654783E302104D54C8", hash_generated_method = "7F6EC3B24FAB35885367AA650DCABD5A")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:40.631 -0400", hash_original_method = "C98D163E17FC33654783E302104D54C8", hash_generated_method = "37C9B591A77337C435BB0AE7594189FC")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     private int getByte(int position) throws IOException {
         dsTaint.addTaint(position);
         {
-        	if (DroidSafeAndroidRuntime.control) throw new IOException("Invalid distinguished name string");
+            if (DroidSafeAndroidRuntime.control) throw new IOException("Invalid distinguished name string");
         } //End block
         int b1;
         b1 = chars[position];
@@ -290,7 +278,7 @@ public final class DNParser {
             b1 = b1 - 55;
         } //End block
         {
-        	if (DroidSafeAndroidRuntime.control) throw new IOException("Invalid distinguished name string");
+            if (DroidSafeAndroidRuntime.control) throw new IOException("Invalid distinguished name string");
         } //End block
         int b2;
         b2 = chars[position + 1];
@@ -304,7 +292,7 @@ public final class DNParser {
             b2 = b2 - 55;
         } //End block
         {
-        	if (DroidSafeAndroidRuntime.control) throw new IOException("Invalid distinguished name string");
+            if (DroidSafeAndroidRuntime.control) throw new IOException("Invalid distinguished name string");
         } //End block
         return dsTaint.getTaintInt();
         // ---------- Original Method ----------
@@ -312,7 +300,7 @@ public final class DNParser {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:17.901 -0400", hash_original_method = "17512CE00D4450F012CF195B2D29239B", hash_generated_method = "709E0F391E77DD189644237615F5FB1C")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:40.632 -0400", hash_original_method = "17512CE00D4450F012CF195B2D29239B", hash_generated_method = "965B054AD1DB95315E25AE286213BF80")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public List<List<AttributeTypeAndValue>> parse() throws IOException {
         List<List<AttributeTypeAndValue>> list;
@@ -347,12 +335,11 @@ public final class DNParser {
                 atav = new ArrayList<AttributeTypeAndValue>();
             } //End block
             {
-            	if (DroidSafeAndroidRuntime.control) throw new IOException("Invalid distinguished name string");
+                if (DroidSafeAndroidRuntime.control) throw new IOException("Invalid distinguished name string");
             } //End block
-            pos++;
             attType = nextAT();
             {
-            	if (DroidSafeAndroidRuntime.control) throw new IOException("Invalid distinguished name string");
+                if (DroidSafeAndroidRuntime.control) throw new IOException("Invalid distinguished name string");
             } //End block
         } //End block
         return (List<List<AttributeTypeAndValue>>)dsTaint.getTaint();
@@ -362,5 +349,4 @@ public final class DNParser {
 
     
 }
-
 

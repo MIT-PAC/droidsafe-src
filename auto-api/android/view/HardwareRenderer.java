@@ -2,12 +2,11 @@ package android.view;
 
 // Droidsafe Imports
 import droidsafe.helpers.*;
-import droidsafe.runtime.DroidSafeAndroidRuntime;
 import droidsafe.annotations.*;
+import droidsafe.runtime.*;
 
-// import Iterator to deal with enhanced for loop translation
+// needed for enhanced for control translations
 import java.util.Iterator;
-
 import android.content.ComponentCallbacks2;
 import android.graphics.Paint;
 import android.graphics.Rect;
@@ -31,20 +30,16 @@ import java.io.File;
 import static javax.microedition.khronos.egl.EGL10.*;
 
 public abstract class HardwareRenderer {
-    static final String LOG_TAG = "HardwareRenderer";
-    private static final String CACHE_PATH_SHADERS = "com.android.opengl.shaders_cache";
-    public static final boolean RENDER_DIRTY_REGIONS = true;
-    static final String RENDER_DIRTY_REGIONS_PROPERTY = "hwui.render_dirty_regions";
-    static final String DISABLE_VSYNC_PROPERTY = "hwui.disable_vsync";
-    static final String PRINT_CONFIG_PROPERTY = "hwui.print_config";
-    private static final boolean DEBUG_DIRTY_REGION = false;
-    public static boolean sRendererDisabled = false;
-    public static boolean sSystemRendererDisabled = false;
     private boolean mEnabled;
     private boolean mRequested = true;
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:05.006 -0400", hash_original_method = "9C9980AFD7DCCC801BD37DEFF892DD3E", hash_generated_method = "685A2C4B8C1F25453A3976C90D8F5844")
-    public static void disable(boolean system) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:58.787 -0400", hash_original_method = "A97A654A9A631B851AD72361F7061261", hash_generated_method = "A97A654A9A631B851AD72361F7061261")
+        public HardwareRenderer ()
+    {
+    }
+
+
+        public static void disable(boolean system) {
         sRendererDisabled = true;
         if (system) {
             sSystemRendererDisabled = true;
@@ -52,8 +47,7 @@ public abstract class HardwareRenderer {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:05.007 -0400", hash_original_method = "290EA92060FDC76DF9899DFDEC8C2AD8", hash_generated_method = "52EB6BC0E8887F652592EF95BA41BE76")
-    public static boolean isAvailable() {
+        public static boolean isAvailable() {
         return GLES20Canvas.isAvailable();
     }
 
@@ -91,15 +85,12 @@ public abstract class HardwareRenderer {
     abstract HardwareCanvas getCanvas();
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:05.007 -0400", hash_original_method = "4D6DA7709E03DD958DC246E9D34F1611", hash_generated_method = "659680C38E48DF38D5BD90BD48E8C1D2")
-    public static void setupDiskCache(File cacheDir) {
+        public static void setupDiskCache(File cacheDir) {
         nSetupShadersDiskCache(new File(cacheDir, CACHE_PATH_SHADERS).getAbsolutePath());
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:05.007 -0400", hash_original_method = "16A6A61D4FDE679AC43F89D450C818BD", hash_generated_method = "2C0C43E53AA4488F04E9525A99E50E72")
-    private static void nSetupShadersDiskCache(String cacheFile) {
-        //DSFIXME:  CODE0012: Native static method requires manual modeling
+        private static void nSetupShadersDiskCache(String cacheFile) {
     }
 
     
@@ -119,7 +110,7 @@ public abstract class HardwareRenderer {
     abstract SurfaceTexture createSurfaceTexture(HardwareLayer layer);
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:05.007 -0400", hash_original_method = "9B70801888A6ED6A8A5716CEEB0139B3", hash_generated_method = "405395FE13CDCD11866921C1C88002C4")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:58.790 -0400", hash_original_method = "9B70801888A6ED6A8A5716CEEB0139B3", hash_generated_method = "1D26FA092BDE93E9D243572D3B0B9B10")
     //DSFIXME:  CODE0002: Requires DSC value to be set
      void initializeIfNeeded(int width, int height, View.AttachInfo attachInfo,
             SurfaceHolder holder) throws Surface.OutOfResourcesException {
@@ -128,13 +119,13 @@ public abstract class HardwareRenderer {
         dsTaint.addTaint(width);
         dsTaint.addTaint(attachInfo.dsTaint);
         {
-            boolean varC2E2705FCD6C547FA29A43E4EE096B77_1639685598 = (isRequested());
+            boolean varC2E2705FCD6C547FA29A43E4EE096B77_340270161 = (isRequested());
             {
                 {
-                    boolean varAE5712E4D523B0C93A265DF749E6E081_84422561 = (!isEnabled());
+                    boolean varAE5712E4D523B0C93A265DF749E6E081_1956953391 = (!isEnabled());
                     {
                         {
-                            boolean varF368F5F27839403AFE572C1398FD8488_2120622384 = (initialize(holder));
+                            boolean varF368F5F27839403AFE572C1398FD8488_1930795927 = (initialize(holder));
                             {
                                 setup(width, height);
                             } //End block
@@ -154,8 +145,7 @@ public abstract class HardwareRenderer {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:05.007 -0400", hash_original_method = "6EE96EBC477B77879F9A873960F8548A", hash_generated_method = "0502D06F1B00937FAD8B3C20BDF1D18F")
-    static HardwareRenderer createGlRenderer(int glVersion, boolean translucent) {
+        static HardwareRenderer createGlRenderer(int glVersion, boolean translucent) {
         switch (glVersion) {
             case 2:
                 return Gl20Renderer.create(translucent);
@@ -164,13 +154,12 @@ public abstract class HardwareRenderer {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:05.007 -0400", hash_original_method = "6B7DE4E21B02A7055F930254E2A5AEE4", hash_generated_method = "3CB24B0546585868D5A010CEBFFBB49D")
-    static void trimMemory(int level) {
+        static void trimMemory(int level) {
         Gl20Renderer.trimMemory(level);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:05.007 -0400", hash_original_method = "B599CE9BD5CE6C0947F95A74F4693444", hash_generated_method = "D88BDAAECB5E3C9E13C6C75580C56722")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:58.790 -0400", hash_original_method = "B599CE9BD5CE6C0947F95A74F4693444", hash_generated_method = "3FAB1BFDF8870FCFAD97369F311B15E0")
     @DSModeled(DSC.SAFE)
      boolean isEnabled() {
         return dsTaint.getTaintBoolean();
@@ -179,7 +168,7 @@ public abstract class HardwareRenderer {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:05.007 -0400", hash_original_method = "E431274334564F99DE06BE0647F24670", hash_generated_method = "7AF111C330CEE878DD826846B770A700")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:58.790 -0400", hash_original_method = "E431274334564F99DE06BE0647F24670", hash_generated_method = "7E9B6F85A769AF89DAB0A79576383807")
     @DSModeled(DSC.SAFE)
      void setEnabled(boolean enabled) {
         dsTaint.addTaint(enabled);
@@ -188,7 +177,7 @@ public abstract class HardwareRenderer {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:05.007 -0400", hash_original_method = "2657035D37B57C6EB1FDEBFDEB2FC631", hash_generated_method = "5ABF8BC4C82CC9C42E59C73E5652D89F")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:58.791 -0400", hash_original_method = "2657035D37B57C6EB1FDEBFDEB2FC631", hash_generated_method = "9AF42F1139CBBF128D428C350AB5661A")
     @DSModeled(DSC.SAFE)
      boolean isRequested() {
         return dsTaint.getTaintBoolean();
@@ -197,7 +186,7 @@ public abstract class HardwareRenderer {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:05.007 -0400", hash_original_method = "5489F62162525BB08E1A950602557C7B", hash_generated_method = "D3A0C7244FE8D2CF497672585A51583C")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:58.791 -0400", hash_original_method = "5489F62162525BB08E1A950602557C7B", hash_generated_method = "D060325642A5D79CB2A94E0780825F01")
     @DSModeled(DSC.SAFE)
      void setRequested(boolean requested) {
         dsTaint.addTaint(requested);
@@ -207,20 +196,7 @@ public abstract class HardwareRenderer {
 
     
     static abstract class GlRenderer extends HardwareRenderer {
-        static final int EGL_CONTEXT_CLIENT_VERSION = 0x3098;
-        static final int EGL_OPENGL_ES2_BIT = 4;
-        static final int EGL_SURFACE_TYPE = 0x3033;
-        static final int EGL_SWAP_BEHAVIOR_PRESERVED_BIT = 0x0400;
-        static final int SURFACE_STATE_ERROR = 0;
-        static final int SURFACE_STATE_SUCCESS = 1;
-        static final int SURFACE_STATE_UPDATED = 2;
-        static EGL10 sEgl;
-        static EGLDisplay sEglDisplay;
-        static EGLConfig sEglConfig;
-        static final Object[] sEglLock = new Object[0];
         int mWidth = -1, mHeight = -1;
-        static final ThreadLocal<Gl20Renderer.Gl20RendererEglContext> sEglContextStorage
-                = new ThreadLocal<Gl20Renderer.Gl20RendererEglContext>();
         EGLContext mEglContext;
         Thread mEglThread;
         EGLSurface mEglSurface;
@@ -228,23 +204,19 @@ public abstract class HardwareRenderer {
         HardwareCanvas mCanvas;
         int mFrameCount;
         Paint mDebugPaint;
-        static boolean sDirtyRegions;
-        static final boolean sDirtyRegionsRequested;
         boolean mDirtyRegionsEnabled;
-        final boolean mVsyncDisabled;
-        final int mGlVersion;
-        final boolean mTranslucent;
+        boolean mVsyncDisabled;
+        int mGlVersion;
+        boolean mTranslucent;
         private boolean mDestroyed;
-        private final Rect mRedrawClip = new Rect();
+        private Rect mRedrawClip = new Rect();
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:05.008 -0400", hash_original_method = "10324A50C61190B04368151ACA88DC91", hash_generated_method = "3CE87FE1398F751F52511982AF730134")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:58.791 -0400", hash_original_method = "10324A50C61190B04368151ACA88DC91", hash_generated_method = "B8FC13C3C1043E9C7199635CDCF1933A")
         //DSFIXME:  CODE0002: Requires DSC value to be set
          GlRenderer(int glVersion, boolean translucent) {
             dsTaint.addTaint(glVersion);
             dsTaint.addTaint(translucent);
-            mTranslucent = translucent;
-            mGlVersion = glVersion;
-            final String vsyncProperty;
+            String vsyncProperty;
             vsyncProperty = SystemProperties.get(DISABLE_VSYNC_PROPERTY, "false");
             mVsyncDisabled = "true".equalsIgnoreCase(vsyncProperty);
             {
@@ -261,7 +233,7 @@ public abstract class HardwareRenderer {
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:05.008 -0400", hash_original_method = "8E011D652AD55D9A8BD48AFBDECCE639", hash_generated_method = "A12B009E8E85718EADD1FEF0D88A0CA7")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:58.791 -0400", hash_original_method = "8E011D652AD55D9A8BD48AFBDECCE639", hash_generated_method = "2AA92FEC84EA0A368211BDA92B732041")
         @DSModeled(DSC.SAFE)
          boolean hasDirtyRegions() {
             return dsTaint.getTaintBoolean();
@@ -270,11 +242,11 @@ public abstract class HardwareRenderer {
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:05.008 -0400", hash_original_method = "5D86F2EDCD8D2650FE0B69784B6D885F", hash_generated_method = "E07484F080FF9D4686E8BA5E1B0292D2")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:58.791 -0400", hash_original_method = "5D86F2EDCD8D2650FE0B69784B6D885F", hash_generated_method = "118C69E3EA62FDB3EA5BB5BE09C9BF05")
         //DSFIXME:  CODE0002: Requires DSC value to be set
          void checkEglErrors() {
             {
-                boolean var144802B2B6A01A50D0C4CE42DADB3B73_1875588652 = (isEnabled());
+                boolean var144802B2B6A01A50D0C4CE42DADB3B73_1004874407 = (isEnabled());
                 {
                     int error;
                     error = sEgl.eglGetError();
@@ -294,8 +266,8 @@ public abstract class HardwareRenderer {
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:05.008 -0400", hash_original_method = "87E6FBE52BF3E41B35644D0BA431AF43", hash_generated_method = "3F212E171C244CD1552BA0DDF0B24910")
-        @DSModeled(DSC.SAFE)
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:58.792 -0400", hash_original_method = "87E6FBE52BF3E41B35644D0BA431AF43", hash_generated_method = "65077DD6858BFA75CE80AD12160AE792")
+        //DSFIXME:  CODE0002: Requires DSC value to be set
         private void fallback(boolean fallback) {
             dsTaint.addTaint(fallback);
             destroy(true);
@@ -312,13 +284,13 @@ public abstract class HardwareRenderer {
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:05.008 -0400", hash_original_method = "921EA5B73D96C86CDA9474B12ADD4C25", hash_generated_method = "8AEF69C75A0601CB258FA7E9FF16C542")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:58.792 -0400", hash_original_method = "921EA5B73D96C86CDA9474B12ADD4C25", hash_generated_method = "3A598F0C383D42CC523BBB02A6A955C1")
         //DSFIXME:  CODE0002: Requires DSC value to be set
         @Override
          boolean initialize(SurfaceHolder holder) throws Surface.OutOfResourcesException {
             dsTaint.addTaint(holder.dsTaint);
             {
-                boolean var3BCB7015259C3CB8CF45488CDBC1CF77_1355855388 = (isRequested() && !isEnabled());
+                boolean var3BCB7015259C3CB8CF45488CDBC1CF77_1311348011 = (isRequested() && !isEnabled());
                 {
                     initializeEgl();
                     mGl = createEglSurface(holder);
@@ -347,13 +319,13 @@ public abstract class HardwareRenderer {
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:05.008 -0400", hash_original_method = "2D2C42A66AD2DEB924E2F6769D89C4AD", hash_generated_method = "A96E7742C3E24D80C48033ACD1FCDA3F")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:58.792 -0400", hash_original_method = "2D2C42A66AD2DEB924E2F6769D89C4AD", hash_generated_method = "2081488B88BE60651069A7A509CBA85E")
         //DSFIXME:  CODE0002: Requires DSC value to be set
         @Override
          void updateSurface(SurfaceHolder holder) throws Surface.OutOfResourcesException {
             dsTaint.addTaint(holder.dsTaint);
             {
-                boolean var50F3BA8A55559ACD41E86FE1D11F765A_664171256 = (isRequested() && isEnabled());
+                boolean var50F3BA8A55559ACD41E86FE1D11F765A_783803530 = (isRequested() && isEnabled());
                 {
                     createEglSurface(holder);
                 } //End block
@@ -371,7 +343,7 @@ public abstract class HardwareRenderer {
         abstract int[] getConfig(boolean dirtyRegions);
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:05.009 -0400", hash_original_method = "B279C4718AE98DC5BFCF9CC39FB51005", hash_generated_method = "7D18A53EE08C871E5344C194DD5996CA")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:58.793 -0400", hash_original_method = "B279C4718AE98DC5BFCF9CC39FB51005", hash_generated_method = "1CFDCF3E45CB6E24076A76C0B9FBCCCF")
         //DSFIXME:  CODE0002: Requires DSC value to be set
          void initializeEgl() {
             {
@@ -385,9 +357,9 @@ public abstract class HardwareRenderer {
                     int[] version;
                     version = new int[2];
                     {
-                        boolean varD6156887E7BE0E650F0700155892DF35_1976287408 = (!sEgl.eglInitialize(sEglDisplay, version));
+                        boolean varD6156887E7BE0E650F0700155892DF35_189722188 = (!sEgl.eglInitialize(sEglDisplay, version));
                         {
-                        	if (DroidSafeAndroidRuntime.control) throw new RuntimeException("eglInitialize failed " +
+                            if (DroidSafeAndroidRuntime.control) throw new RuntimeException("eglInitialize failed " +
                                 GLUtils.getEGLErrorString(sEgl.eglGetError()));
                         } //End block
                     } //End collapsed parenthetic
@@ -397,11 +369,11 @@ public abstract class HardwareRenderer {
                             sDirtyRegions = false;
                             sEglConfig = chooseEglConfig();
                             {
-                            	if (DroidSafeAndroidRuntime.control) throw new RuntimeException("eglConfig not initialized");
+                                if (DroidSafeAndroidRuntime.control) throw new RuntimeException("eglConfig not initialized");
                             } //End block
                         } //End block
                         {
-                        	if (DroidSafeAndroidRuntime.control) throw new RuntimeException("eglConfig not initialized");
+                            if (DroidSafeAndroidRuntime.control) throw new RuntimeException("eglConfig not initialized");
                         } //End block
                     } //End block
                 } //End block
@@ -419,7 +391,7 @@ public abstract class HardwareRenderer {
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:05.009 -0400", hash_original_method = "7EBBB0609098A0727E2316EE23892E6C", hash_generated_method = "2AA25B4B16F7C65B0F7AD2AF0777017A")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:58.800 -0400", hash_original_method = "7EBBB0609098A0727E2316EE23892E6C", hash_generated_method = "682317D0AE76C22A01237DCD9E8BD193")
         //DSFIXME:  CODE0002: Requires DSC value to be set
         private EGLConfig chooseEglConfig() {
             EGLConfig[] configs;
@@ -428,10 +400,10 @@ public abstract class HardwareRenderer {
             configsCount = new int[1];
             int[] configSpec;
             configSpec = getConfig(sDirtyRegions);
-            final String debug;
+            String debug;
             debug = SystemProperties.get(PRINT_CONFIG_PROPERTY, "");
             {
-                boolean var2BF498AF35B2DE8E8EC02AA6562A3CB6_165523352 = ("all".equalsIgnoreCase(debug));
+                boolean var2BF498AF35B2DE8E8EC02AA6562A3CB6_1982752474 = ("all".equalsIgnoreCase(debug));
                 {
                     sEgl.eglChooseConfig(sEglDisplay, configSpec, null, 0, configsCount);
                     EGLConfig[] debugConfigs;
@@ -447,14 +419,14 @@ public abstract class HardwareRenderer {
                 } //End block
             } //End collapsed parenthetic
             {
-                boolean var291CF98780E894F321CE39735F052BBA_111213981 = (!sEgl.eglChooseConfig(sEglDisplay, configSpec, configs, 1, configsCount));
+                boolean var291CF98780E894F321CE39735F052BBA_1936435600 = (!sEgl.eglChooseConfig(sEglDisplay, configSpec, configs, 1, configsCount));
                 {
                     if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("eglChooseConfig failed " +
                         GLUtils.getEGLErrorString(sEgl.eglGetError()));
                 } //End block
                 {
                     {
-                        boolean var1F4F220B1BF202484B8610575B52EA82_1135300880 = ("choice".equalsIgnoreCase(debug));
+                        boolean var1F4F220B1BF202484B8610575B52EA82_805310048 = ("choice".equalsIgnoreCase(debug));
                         {
                             printConfig(configs[0]);
                         } //End block
@@ -467,7 +439,7 @@ public abstract class HardwareRenderer {
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:05.009 -0400", hash_original_method = "0890A6845DB8299C7ED9F063C47BF666", hash_generated_method = "5B8201948C540CAD47936DFBFBC6C414")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:58.800 -0400", hash_original_method = "0890A6845DB8299C7ED9F063C47BF666", hash_generated_method = "6D726ABEBE77018C54A23D4D8A7BBF41")
         //DSFIXME:  CODE0002: Requires DSC value to be set
         private void printConfig(EGLConfig config) {
             dsTaint.addTaint(config.dsTaint);
@@ -493,47 +465,47 @@ public abstract class HardwareRenderer {
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:05.009 -0400", hash_original_method = "CE78C152F3B6BB29B0F51267B059EC85", hash_generated_method = "03141E1E0C1991854B459C35334D78BE")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:58.801 -0400", hash_original_method = "CE78C152F3B6BB29B0F51267B059EC85", hash_generated_method = "AC8966E4F671D40CA74A2C7EBA631428")
         //DSFIXME:  CODE0002: Requires DSC value to be set
          GL createEglSurface(SurfaceHolder holder) throws Surface.OutOfResourcesException {
             dsTaint.addTaint(holder.dsTaint);
             {
-            	if (DroidSafeAndroidRuntime.control) throw new RuntimeException("egl not initialized");
+                if (DroidSafeAndroidRuntime.control) throw new RuntimeException("egl not initialized");
             } //End block
             {
-            	if (DroidSafeAndroidRuntime.control) throw new RuntimeException("eglDisplay not initialized");
+                if (DroidSafeAndroidRuntime.control) throw new RuntimeException("eglDisplay not initialized");
             } //End block
             {
-            	if (DroidSafeAndroidRuntime.control) throw new RuntimeException("eglConfig not initialized");
+                if (DroidSafeAndroidRuntime.control) throw new RuntimeException("eglConfig not initialized");
             } //End block
             {
-                boolean varE1A0062923CC8D105E1D641BD84ED7EC_575770295 = (Thread.currentThread() != mEglThread);
+                boolean varE1A0062923CC8D105E1D641BD84ED7EC_2044492404 = (Thread.currentThread() != mEglThread);
                 {
-                	if (DroidSafeAndroidRuntime.control) throw new IllegalStateException("HardwareRenderer cannot be used " 
+                    if (DroidSafeAndroidRuntime.control) throw new IllegalStateException("HardwareRenderer cannot be used " 
                         + "from multiple threads");
                 } //End block
             } //End collapsed parenthetic
             destroySurface();
             {
-                boolean var3C9C186337E0EEDBC330EDFE5EA34947_529909206 = (!createSurface(holder));
+                boolean var3C9C186337E0EEDBC330EDFE5EA34947_1118458258 = (!createSurface(holder));
             } //End collapsed parenthetic
             {
-                boolean var3C1887F134AFD0772B92DDFACA365517_1464405433 = (!sEgl.eglMakeCurrent(sEglDisplay, mEglSurface, mEglSurface, mEglContext));
+                boolean var3C1887F134AFD0772B92DDFACA365517_290477157 = (!sEgl.eglMakeCurrent(sEglDisplay, mEglSurface, mEglSurface, mEglContext));
                 {
-                	if (DroidSafeAndroidRuntime.control) throw new Surface.OutOfResourcesException("eglMakeCurrent failed "
+                    if (DroidSafeAndroidRuntime.control) throw new Surface.OutOfResourcesException("eglMakeCurrent failed "
                         + GLUtils.getEGLErrorString(sEgl.eglGetError()));
                 } //End block
             } //End collapsed parenthetic
             initCaches();
             {
                 {
-                    boolean varFC05E1FC19D1A0180D13CF66EEE4B0BE_858673431 = (!(mDirtyRegionsEnabled = GLES20Canvas.preserveBackBuffer()));
+                    boolean varFC05E1FC19D1A0180D13CF66EEE4B0BE_1286198230 = (!(mDirtyRegionsEnabled = GLES20Canvas.preserveBackBuffer()));
                 } //End collapsed parenthetic
             } //End block
             {
                 mDirtyRegionsEnabled = GLES20Canvas.isBackBufferPreserved();
             } //End block
-            GL varF9D0933A023DBDCACF739D8C1B82A3B2_2009433886 = (mEglContext.getGL());
+            GL varF9D0933A023DBDCACF739D8C1B82A3B2_399109775 = (mEglContext.getGL());
             return (GL)dsTaint.getTaint();
             // ---------- Original Method ----------
             // Original Method Too Long, Refer to Original Implementation
@@ -543,14 +515,14 @@ public abstract class HardwareRenderer {
         abstract void initCaches();
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:05.010 -0400", hash_original_method = "25878E68191E1BEA8EFD58CC92DB697F", hash_generated_method = "4AA8140A83CC5139D63842716E085289")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:58.801 -0400", hash_original_method = "25878E68191E1BEA8EFD58CC92DB697F", hash_generated_method = "C32E73B7AE3F31E44B3C0EB506C5320A")
         //DSFIXME:  CODE0002: Requires DSC value to be set
          EGLContext createContext(EGL10 egl, EGLDisplay eglDisplay, EGLConfig eglConfig) {
             dsTaint.addTaint(egl.dsTaint);
             dsTaint.addTaint(eglDisplay.dsTaint);
             dsTaint.addTaint(eglConfig.dsTaint);
-            int[] attribs = { EGL_CONTEXT_CLIENT_VERSION, mGlVersion, EGL_NONE };
-            EGLContext var4DEF2E5618C652038EDD892C62DCB0A3_1451664991 = (egl.eglCreateContext(eglDisplay, eglConfig, EGL_NO_CONTEXT,
+            int[] attribs;
+            EGLContext var4DEF2E5618C652038EDD892C62DCB0A3_424540494 = (egl.eglCreateContext(eglDisplay, eglConfig, EGL_NO_CONTEXT,
                     mGlVersion != 0 ? attribs : null)); //DSFIXME:  CODE0008: Nested ternary operator in expression
             return (EGLContext)dsTaint.getTaint();
             // ---------- Original Method ----------
@@ -560,7 +532,7 @@ public abstract class HardwareRenderer {
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:05.010 -0400", hash_original_method = "476B6B31B3E717E00869D611EE7348F9", hash_generated_method = "A2341D9180E71755C08E86545DDC9F84")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:58.801 -0400", hash_original_method = "476B6B31B3E717E00869D611EE7348F9", hash_generated_method = "3DAD80ED9CF96507C590D239A51DE82B")
         //DSFIXME:  CODE0002: Requires DSC value to be set
         @Override
          void destroy(boolean full) {
@@ -569,7 +541,7 @@ public abstract class HardwareRenderer {
                 mCanvas = null;
             } //End block
             {
-                boolean var7FD2B2AC2F812E9E15F51250DF65D54F_533611017 = (!isEnabled() || mDestroyed);
+                boolean var7FD2B2AC2F812E9E15F51250DF65D54F_589337165 = (!isEnabled() || mDestroyed);
                 {
                     setEnabled(false);
                 } //End block
@@ -593,8 +565,8 @@ public abstract class HardwareRenderer {
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:05.010 -0400", hash_original_method = "8729F371C5ECEEE6F9AFEEF006F001BC", hash_generated_method = "81A6948403558CBB747CEDD38C9A5173")
-        @DSModeled(DSC.SAFE)
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:58.802 -0400", hash_original_method = "8729F371C5ECEEE6F9AFEEF006F001BC", hash_generated_method = "6DFE4C4673985EF01C6C017B284828E4")
+        //DSFIXME:  CODE0002: Requires DSC value to be set
          void destroySurface() {
             {
                 sEgl.eglMakeCurrent(sEglDisplay, EGL_NO_SURFACE, EGL_NO_SURFACE, EGL_NO_CONTEXT);
@@ -610,7 +582,7 @@ public abstract class HardwareRenderer {
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:05.010 -0400", hash_original_method = "31AB32F492C93DC28936068651BB9A5D", hash_generated_method = "B9236EDCBF4EADEE2D413B9402A91AA9")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:58.802 -0400", hash_original_method = "31AB32F492C93DC28936068651BB9A5D", hash_generated_method = "EC4A859AA4736A235523146E0260297E")
         //DSFIXME:  CODE0002: Requires DSC value to be set
         @Override
          void invalidate(SurfaceHolder holder) {
@@ -622,10 +594,10 @@ public abstract class HardwareRenderer {
                 setEnabled(false);
             } //End block
             {
-                boolean varCBFBE03196001F4D16583BA378EC3188_940411843 = (holder.getSurface().isValid());
+                boolean varCBFBE03196001F4D16583BA378EC3188_44468870 = (holder.getSurface().isValid());
                 {
                     {
-                        boolean varD9304243F22C6F34FB847EA974654D54_1049429679 = (!createSurface(holder));
+                        boolean varD9304243F22C6F34FB847EA974654D54_75632305 = (!createSurface(holder));
                     } //End collapsed parenthetic
                     {
                         setEnabled(true);
@@ -650,7 +622,7 @@ public abstract class HardwareRenderer {
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:05.010 -0400", hash_original_method = "DE5D7845AE9FF0DF12BC88C1DA1B9378", hash_generated_method = "D5AFD37CC1D175033C516B6A2CE8788E")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:58.802 -0400", hash_original_method = "DE5D7845AE9FF0DF12BC88C1DA1B9378", hash_generated_method = "F66200FED88FC361D32D7DBCA59C1690")
         //DSFIXME:  CODE0002: Requires DSC value to be set
         private boolean createSurface(SurfaceHolder holder) {
             dsTaint.addTaint(holder.dsTaint);
@@ -677,25 +649,25 @@ public abstract class HardwareRenderer {
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:05.010 -0400", hash_original_method = "5192B6F9979CE04F5E58A6D4E6C990F7", hash_generated_method = "BC18E62AA72904E949B3300F75E7D4C1")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:58.802 -0400", hash_original_method = "5192B6F9979CE04F5E58A6D4E6C990F7", hash_generated_method = "C9400EA8EA2503051E6BF36ABCB191E5")
         //DSFIXME:  CODE0002: Requires DSC value to be set
         @Override
          boolean validate() {
-            boolean varD9475434482CCC29748C80263F853577_863676965 = (checkCurrent() != SURFACE_STATE_ERROR);
+            boolean varD9475434482CCC29748C80263F853577_250204316 = (checkCurrent() != SURFACE_STATE_ERROR);
             return dsTaint.getTaintBoolean();
             // ---------- Original Method ----------
             //return checkCurrent() != SURFACE_STATE_ERROR;
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:05.011 -0400", hash_original_method = "432BCA9410981741609CBA70FE61BE99", hash_generated_method = "2D813D55151C44F62BADF0D31D135993")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:58.803 -0400", hash_original_method = "432BCA9410981741609CBA70FE61BE99", hash_generated_method = "518BE3B848A52D0C8FE5850943C5CCEE")
         //DSFIXME:  CODE0002: Requires DSC value to be set
         @Override
          void setup(int width, int height) {
             dsTaint.addTaint(height);
             dsTaint.addTaint(width);
             {
-                boolean var17D7A803A05FFA096A6B1D8A438BE6FB_568079438 = (validate());
+                boolean var17D7A803A05FFA096A6B1D8A438BE6FB_1349077733 = (validate());
                 {
                     mCanvas.setViewport(width, height);
                 } //End block
@@ -709,7 +681,7 @@ public abstract class HardwareRenderer {
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:05.011 -0400", hash_original_method = "AA9BA105372BFC95AFBABED408315F5C", hash_generated_method = "E0F82C039FAF82B3856FE8DC15F2C65F")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:58.803 -0400", hash_original_method = "AA9BA105372BFC95AFBABED408315F5C", hash_generated_method = "9A32B1D573C4A96B58948A6B8D06F35A")
         @DSModeled(DSC.SAFE)
         @Override
          int getWidth() {
@@ -719,7 +691,7 @@ public abstract class HardwareRenderer {
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:05.011 -0400", hash_original_method = "0304EDCF78FF45B68A7EB91BFEAAA2CD", hash_generated_method = "B3CF5C992C09ED603D0B68DCA3160615")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:58.803 -0400", hash_original_method = "0304EDCF78FF45B68A7EB91BFEAAA2CD", hash_generated_method = "F5066031FB5D07DCE64A8C7C176449EA")
         @DSModeled(DSC.SAFE)
         @Override
          int getHeight() {
@@ -729,7 +701,7 @@ public abstract class HardwareRenderer {
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:05.011 -0400", hash_original_method = "03525402B3DC937D128A720724E320B3", hash_generated_method = "443A478AAAFFF6029C47008822277BFC")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:58.803 -0400", hash_original_method = "03525402B3DC937D128A720724E320B3", hash_generated_method = "191DFA269901C4ED3CB41BA1E496CC89")
         @DSModeled(DSC.SAFE)
         @Override
          HardwareCanvas getCanvas() {
@@ -739,7 +711,7 @@ public abstract class HardwareRenderer {
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:05.011 -0400", hash_original_method = "BAED9FCEBD48E8CDA814A9102CB815B2", hash_generated_method = "FDB5DA46EFB559488428EAB7D7F883B9")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:58.803 -0400", hash_original_method = "BAED9FCEBD48E8CDA814A9102CB815B2", hash_generated_method = "752E31BC36A967B183A59758B4202C02")
         @DSModeled(DSC.SAFE)
          boolean canDraw() {
             return dsTaint.getTaintBoolean();
@@ -748,7 +720,7 @@ public abstract class HardwareRenderer {
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:05.011 -0400", hash_original_method = "5270AAD77A1E26F7563AFAAC446C8262", hash_generated_method = "514232BA1C5F4CBFCFAEBE37BBD91973")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:58.803 -0400", hash_original_method = "5270AAD77A1E26F7563AFAAC446C8262", hash_generated_method = "3245386607B4BEF73D54E86965AE93E2")
         @DSModeled(DSC.SAFE)
          void onPreDraw(Rect dirty) {
             //DSFIXME:  CODE0009: Possible callback target function detected
@@ -757,7 +729,7 @@ public abstract class HardwareRenderer {
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:05.011 -0400", hash_original_method = "600776A2676C628EF453DCB2EAD62BCF", hash_generated_method = "33B0BF943B06EE8F6237C74E73C3861A")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:58.804 -0400", hash_original_method = "600776A2676C628EF453DCB2EAD62BCF", hash_generated_method = "CE44E4A0F53F45960A85861D50074AD3")
         @DSModeled(DSC.SAFE)
          void onPostDraw() {
             //DSFIXME:  CODE0009: Possible callback target function detected
@@ -765,7 +737,7 @@ public abstract class HardwareRenderer {
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:05.011 -0400", hash_original_method = "48B4102DE0A767B3D4749D592D5492A5", hash_generated_method = "EDDC2CB05758DDD3E59A9615F66061ED")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:58.805 -0400", hash_original_method = "48B4102DE0A767B3D4749D592D5492A5", hash_generated_method = "44A193598B31C558E71795F9C6B51F4F")
         //DSFIXME:  CODE0002: Requires DSC value to be set
         @Override
          boolean draw(View view, View.AttachInfo attachInfo, HardwareDrawCallbacks callbacks,
@@ -775,10 +747,10 @@ public abstract class HardwareRenderer {
             dsTaint.addTaint(view.dsTaint);
             dsTaint.addTaint(attachInfo.dsTaint);
             {
-                boolean var7B873551A23ADB6964E1E62C26C12628_1837868998 = (canDraw());
+                boolean var7B873551A23ADB6964E1E62C26C12628_919589563 = (canDraw());
                 {
                     {
-                        boolean varC3BDE9FC350118928E1C88FC962287F4_998142245 = (!hasDirtyRegions());
+                        boolean varC3BDE9FC350118928E1C88FC962287F4_236944030 = (!hasDirtyRegions());
                         {
                             dirty = null;
                         } //End block
@@ -789,7 +761,7 @@ public abstract class HardwareRenderer {
                     attachInfo.mIgnoreDirtyState = true;
                     attachInfo.mDrawingTime = SystemClock.uptimeMillis();
                     view.mPrivateFlags |= View.DRAWN;
-                    final int surfaceState;
+                    int surfaceState;
                     surfaceState = checkCurrent();
                     {
                         {
@@ -811,11 +783,11 @@ public abstract class HardwareRenderer {
                             displayList = view.getDisplayList();
                             {
                                 {
-                                    boolean varBF7A0A5847B93025D7528D98A8C75811_1223037265 = (canvas.drawDisplayList(displayList, view.getWidth(),
+                                    boolean varBF7A0A5847B93025D7528D98A8C75811_1384866244 = (canvas.drawDisplayList(displayList, view.getWidth(),
                                     view.getHeight(), mRedrawClip));
                                     {
                                         {
-                                            boolean varD7B1D0D428000B522C58B6351FDB129E_1780663474 = (mRedrawClip.isEmpty() || view.getParent() == null);
+                                            boolean varD7B1D0D428000B522C58B6351FDB129E_244317967 = (mRedrawClip.isEmpty() || view.getParent() == null);
                                             {
                                                 view.invalidate();
                                             } //End block
@@ -859,23 +831,23 @@ public abstract class HardwareRenderer {
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:05.012 -0400", hash_original_method = "F54ECE08CE2E8C98D4ED45C8BC0241CA", hash_generated_method = "D4547B0EA51A5AE0739672DFD20E3BE8")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:58.806 -0400", hash_original_method = "F54ECE08CE2E8C98D4ED45C8BC0241CA", hash_generated_method = "3BEC0651240B927479DB619F9AF9806F")
         //DSFIXME:  CODE0002: Requires DSC value to be set
          int checkCurrent() {
             {
-                boolean var2BE000E074BA4ADE1630B6A389B9A4D8_1215275536 = (mEglThread != Thread.currentThread());
+                boolean var2BE000E074BA4ADE1630B6A389B9A4D8_731427452 = (mEglThread != Thread.currentThread());
                 {
-                	if (DroidSafeAndroidRuntime.control) throw new IllegalStateException("Hardware acceleration can only be used with a " +
+                    if (DroidSafeAndroidRuntime.control) throw new IllegalStateException("Hardware acceleration can only be used with a " +
                         "single UI thread.\nOriginal thread: " + mEglThread + "\n" +
                         "Current thread: " + Thread.currentThread());
                 } //End block
             } //End collapsed parenthetic
             {
-                boolean var383C1CBFF0E87A815F96650DC2FDC9F7_880009312 = (!mEglContext.equals(sEgl.eglGetCurrentContext()) ||
+                boolean var383C1CBFF0E87A815F96650DC2FDC9F7_447146526 = (!mEglContext.equals(sEgl.eglGetCurrentContext()) ||
                     !mEglSurface.equals(sEgl.eglGetCurrentSurface(EGL_DRAW)));
                 {
                     {
-                        boolean varAE201570A32AF474310E703D42CF4FE4_1510023800 = (!sEgl.eglMakeCurrent(sEglDisplay, mEglSurface, mEglSurface, mEglContext));
+                        boolean varAE201570A32AF474310E703D42CF4FE4_1856562602 = (!sEgl.eglMakeCurrent(sEglDisplay, mEglSurface, mEglSurface, mEglContext));
                         {
                             fallback(true);
                         } //End block
@@ -888,6 +860,21 @@ public abstract class HardwareRenderer {
         }
 
         
+        static final int EGL_CONTEXT_CLIENT_VERSION = 0x3098;
+        static final int EGL_OPENGL_ES2_BIT = 4;
+        static final int EGL_SURFACE_TYPE = 0x3033;
+        static final int EGL_SWAP_BEHAVIOR_PRESERVED_BIT = 0x0400;
+        static final int SURFACE_STATE_ERROR = 0;
+        static final int SURFACE_STATE_SUCCESS = 1;
+        static final int SURFACE_STATE_UPDATED = 2;
+        static EGL10 sEgl;
+        static EGLDisplay sEglDisplay;
+        static EGLConfig sEglConfig;
+        static final Object[] sEglLock = new Object[0];
+        static final ThreadLocal<Gl20Renderer.Gl20RendererEglContext> sEglContextStorage
+                = new ThreadLocal<Gl20Renderer.Gl20RendererEglContext>();
+        static boolean sDirtyRegions;
+        static final boolean sDirtyRegionsRequested;
         static {
             String dirtyProperty = SystemProperties.get(RENDER_DIRTY_REGIONS_PROPERTY, "true");
             sDirtyRegions = RENDER_DIRTY_REGIONS && "true".equalsIgnoreCase(dirtyProperty);
@@ -900,10 +887,8 @@ public abstract class HardwareRenderer {
     
     static class Gl20Renderer extends GlRenderer {
         private GLES20Canvas mGlCanvas;
-        private static EGLSurface sPbuffer;
-        private static final Object[] sPbufferLock = new Object[0];
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:05.012 -0400", hash_original_method = "B1E95719A4C359FC5D5C603A14B80EB3", hash_generated_method = "BE90E2C2756F913273E86F11D2A6DA4E")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:58.806 -0400", hash_original_method = "B1E95719A4C359FC5D5C603A14B80EB3", hash_generated_method = "3C69F22BA1F092D7C01361BE63FED82B")
         //DSFIXME:  CODE0002: Requires DSC value to be set
          Gl20Renderer(boolean translucent) {
             super(2, translucent);
@@ -912,22 +897,34 @@ public abstract class HardwareRenderer {
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:05.012 -0400", hash_original_method = "F74985FDFA2E9230D4C8D7E9B7CADFBD", hash_generated_method = "583A711A069B56BD736F6B894CD2F5AB")
-        @DSModeled(DSC.SAFE)
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:58.806 -0400", hash_original_method = "F74985FDFA2E9230D4C8D7E9B7CADFBD", hash_generated_method = "F5054F5F957862642FDBC6A6F76DA716")
+        //DSFIXME:  CODE0002: Requires DSC value to be set
         @Override
          GLES20Canvas createCanvas() {
-            GLES20Canvas varF1FA269B32523AE772B76DE0A817AD90_307913697 = (mGlCanvas = new GLES20Canvas(mTranslucent));
+            GLES20Canvas varF1FA269B32523AE772B76DE0A817AD90_1390610145 = (mGlCanvas = new GLES20Canvas(mTranslucent));
             return (GLES20Canvas)dsTaint.getTaint();
             // ---------- Original Method ----------
             //return mGlCanvas = new GLES20Canvas(mTranslucent);
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:05.012 -0400", hash_original_method = "F0C99ACF7C56841B3F486F5BFE1F4C1E", hash_generated_method = "9C8669F5E0681E60FF370377DC7B055A")
-        @DSModeled(DSC.SAFE)
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:58.807 -0400", hash_original_method = "F0C99ACF7C56841B3F486F5BFE1F4C1E", hash_generated_method = "7F99FB6061FF01E4F5ABCD810CE1D97B")
+        //DSFIXME:  CODE0002: Requires DSC value to be set
         @Override
          int[] getConfig(boolean dirtyRegions) {
             dsTaint.addTaint(dirtyRegions);
+            int[] var941023AB58F9EE17A68F90360D8ED29B_1466681607 = (new int[] {
+                    EGL_RENDERABLE_TYPE, EGL_OPENGL_ES2_BIT,
+                    EGL_RED_SIZE, 8,
+                    EGL_GREEN_SIZE, 8,
+                    EGL_BLUE_SIZE, 8,
+                    EGL_ALPHA_SIZE, 8,
+                    EGL_DEPTH_SIZE, 0,
+                    EGL_STENCIL_SIZE, 0,
+                    EGL_SURFACE_TYPE, EGL_WINDOW_BIT |
+                            (dirtyRegions ? EGL_SWAP_BEHAVIOR_PRESERVED_BIT : 0),
+                    EGL_NONE
+            });
             int[] retVal = new int[1];
             retVal[0] = dsTaint.getTaintInt();
             return retVal;
@@ -947,8 +944,8 @@ public abstract class HardwareRenderer {
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:05.012 -0400", hash_original_method = "7C06275E87085241F3D16D3C83742A74", hash_generated_method = "E0DD2B0B7D1D734767E89EA7857A33E2")
-        @DSModeled(DSC.SAFE)
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:58.807 -0400", hash_original_method = "7C06275E87085241F3D16D3C83742A74", hash_generated_method = "FE9E19F8157E46F4D596C9F48C05192B")
+        //DSFIXME:  CODE0002: Requires DSC value to be set
         @Override
          void initCaches() {
             GLES20Canvas.initCaches();
@@ -957,19 +954,19 @@ public abstract class HardwareRenderer {
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:05.012 -0400", hash_original_method = "C7C1539F42BBDC0F7B3C1C5760B83BD0", hash_generated_method = "06482E7E9ADED4108396E85E3DD6E45C")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:58.807 -0400", hash_original_method = "C7C1539F42BBDC0F7B3C1C5760B83BD0", hash_generated_method = "8A6DE9226446B916EADE04216ED6D8D0")
         //DSFIXME:  CODE0002: Requires DSC value to be set
         @Override
          boolean canDraw() {
-            boolean var035A8626DACD2769091177CDE818C3DB_600792520 = (super.canDraw() && mGlCanvas != null);
+            boolean var035A8626DACD2769091177CDE818C3DB_1975162817 = (super.canDraw() && mGlCanvas != null);
             return dsTaint.getTaintBoolean();
             // ---------- Original Method ----------
             //return super.canDraw() && mGlCanvas != null;
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:05.012 -0400", hash_original_method = "0022B5A5096431CE2C7606DC3316BE73", hash_generated_method = "33BC4368D8954579C98D80AD39D98A8F")
-        @DSModeled(DSC.SAFE)
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:58.807 -0400", hash_original_method = "0022B5A5096431CE2C7606DC3316BE73", hash_generated_method = "A1641FA1B53D151AE1050A4C0BD6CCAD")
+        //DSFIXME:  CODE0002: Requires DSC value to be set
         @Override
          void onPreDraw(Rect dirty) {
             //DSFIXME:  CODE0009: Possible callback target function detected
@@ -980,8 +977,8 @@ public abstract class HardwareRenderer {
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:05.012 -0400", hash_original_method = "7433D62E540EA68CB724AA636E5E1121", hash_generated_method = "83165D3A202552EEB86378FC8C276D2E")
-        @DSModeled(DSC.SAFE)
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:58.807 -0400", hash_original_method = "7433D62E540EA68CB724AA636E5E1121", hash_generated_method = "927CC0A07657DA1C5F4A57B52A17F932")
+        //DSFIXME:  CODE0002: Requires DSC value to be set
         @Override
          void onPostDraw() {
             //DSFIXME:  CODE0009: Possible callback target function detected
@@ -991,8 +988,8 @@ public abstract class HardwareRenderer {
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:05.013 -0400", hash_original_method = "6E3A6DE775BA1410C4AD975BAADAD54E", hash_generated_method = "F2F201443D1A2F03BF586C929DC7F88E")
-        @DSModeled(DSC.SAFE)
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:58.808 -0400", hash_original_method = "6E3A6DE775BA1410C4AD975BAADAD54E", hash_generated_method = "A2DECF8DAC522DDFB23F070AC3451119")
+        //DSFIXME:  CODE0002: Requires DSC value to be set
         @Override
          void destroy(boolean full) {
             dsTaint.addTaint(full);
@@ -1017,8 +1014,8 @@ public abstract class HardwareRenderer {
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:05.013 -0400", hash_original_method = "E63C13501979998737C0E9B67210D488", hash_generated_method = "40D5903EF27389955754A4DFAA7FEF03")
-        @DSModeled(DSC.SAFE)
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:58.808 -0400", hash_original_method = "E63C13501979998737C0E9B67210D488", hash_generated_method = "CEC64200636EEB5F7A8F0409A5C018FC")
+        //DSFIXME:  CODE0002: Requires DSC value to be set
         @Override
          void setup(int width, int height) {
             dsTaint.addTaint(height);
@@ -1035,59 +1032,62 @@ public abstract class HardwareRenderer {
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:05.013 -0400", hash_original_method = "91DF561E8BF11B235EB0CF61AE2449D1", hash_generated_method = "74728DC1EA3AF2E5199604822BB44B48")
-        @DSModeled(DSC.SAFE)
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:58.808 -0400", hash_original_method = "91DF561E8BF11B235EB0CF61AE2449D1", hash_generated_method = "DE7FF51B5DF145E58FAE1BE77A1E9518")
+        //DSFIXME:  CODE0002: Requires DSC value to be set
         @Override
          DisplayList createDisplayList() {
+            DisplayList var51675C3109A733F30D9E4BD3C6FB3EBD_811376941 = (new GLES20DisplayList());
             return (DisplayList)dsTaint.getTaint();
             // ---------- Original Method ----------
             //return new GLES20DisplayList();
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:05.013 -0400", hash_original_method = "9926A5C358BE0969CD82CBEFEE88B0C5", hash_generated_method = "5C26250DEA1482E0B09330AF4D2E3AA6")
-        @DSModeled(DSC.SAFE)
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:58.808 -0400", hash_original_method = "9926A5C358BE0969CD82CBEFEE88B0C5", hash_generated_method = "B10101E008B625405991D613D3880000")
+        //DSFIXME:  CODE0002: Requires DSC value to be set
         @Override
          HardwareLayer createHardwareLayer(boolean isOpaque) {
             dsTaint.addTaint(isOpaque);
+            HardwareLayer varBF5C4AED398916EA49A9486166809614_133732605 = (new GLES20TextureLayer(isOpaque));
             return (HardwareLayer)dsTaint.getTaint();
             // ---------- Original Method ----------
             //return new GLES20TextureLayer(isOpaque);
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:05.013 -0400", hash_original_method = "4877A9BF76918321656F296A4083E728", hash_generated_method = "74EB2CBD8F8B2F33446C393F901AF80F")
-        @DSModeled(DSC.SAFE)
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:58.808 -0400", hash_original_method = "4877A9BF76918321656F296A4083E728", hash_generated_method = "A002E6517B6D2306874C7BCC2017CC06")
+        //DSFIXME:  CODE0002: Requires DSC value to be set
         @Override
          HardwareLayer createHardwareLayer(int width, int height, boolean isOpaque) {
             dsTaint.addTaint(height);
             dsTaint.addTaint(width);
             dsTaint.addTaint(isOpaque);
+            HardwareLayer var88D0D9A7E0B748326DAD407675B484A3_1776560509 = (new GLES20RenderLayer(width, height, isOpaque));
             return (HardwareLayer)dsTaint.getTaint();
             // ---------- Original Method ----------
             //return new GLES20RenderLayer(width, height, isOpaque);
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:05.013 -0400", hash_original_method = "2626CBE8666291C6CAEC91C70C04EEE5", hash_generated_method = "1EACC0D99E4590F9221527CF368BA168")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:58.809 -0400", hash_original_method = "2626CBE8666291C6CAEC91C70C04EEE5", hash_generated_method = "0A3C4E86F7AA171B74231FE6F5F29D2D")
         //DSFIXME:  CODE0002: Requires DSC value to be set
         @Override
          SurfaceTexture createSurfaceTexture(HardwareLayer layer) {
             dsTaint.addTaint(layer.dsTaint);
-            SurfaceTexture var5EECCFAEEB08809EA268C821817D5DDC_1093817601 = (((GLES20TextureLayer) layer).getSurfaceTexture());
+            SurfaceTexture var5EECCFAEEB08809EA268C821817D5DDC_244774589 = (((GLES20TextureLayer) layer).getSurfaceTexture());
             return (SurfaceTexture)dsTaint.getTaint();
             // ---------- Original Method ----------
             //return ((GLES20TextureLayer) layer).getSurfaceTexture();
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:05.013 -0400", hash_original_method = "47CAC65634322D23BF323CE20E51DB06", hash_generated_method = "D9008E4D2B535D47C13DF5C90BDB6539")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:58.809 -0400", hash_original_method = "47CAC65634322D23BF323CE20E51DB06", hash_generated_method = "93DEEECEA6652057479AAE87600500D5")
         //DSFIXME:  CODE0002: Requires DSC value to be set
         @Override
          void destroyLayers(View view) {
             dsTaint.addTaint(view.dsTaint);
             {
-                boolean varC249819A4D06EA9938518237597D517E_1316928038 = (view != null && isEnabled() && checkCurrent() != SURFACE_STATE_ERROR);
+                boolean varC249819A4D06EA9938518237597D517E_402452875 = (view != null && isEnabled() && checkCurrent() != SURFACE_STATE_ERROR);
                 {
                     destroyHardwareLayer(view);
                     GLES20Canvas.flushCaches(GLES20Canvas.FLUSH_CACHES_LAYERS);
@@ -1101,8 +1101,7 @@ public abstract class HardwareRenderer {
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:05.013 -0400", hash_original_method = "3A587C3870D559FE72764A828C177D6D", hash_generated_method = "EDE28C6E6EC3F1BD0A1A015E207F1D6C")
-        private static void destroyHardwareLayer(View view) {
+                private static void destroyHardwareLayer(View view) {
             view.destroyLayer();
             if (view instanceof ViewGroup) {
                 ViewGroup group = (ViewGroup) view;
@@ -1114,7 +1113,7 @@ public abstract class HardwareRenderer {
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:05.013 -0400", hash_original_method = "05E9CAD7CA3059A2D779D6F5B2F697AA", hash_generated_method = "F10FFD9D7512CC1ED5102026BE621405")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:58.809 -0400", hash_original_method = "05E9CAD7CA3059A2D779D6F5B2F697AA", hash_generated_method = "45A98E9F20777A2526BEE78062F54F96")
         //DSFIXME:  CODE0002: Requires DSC value to be set
         @Override
          void destroyHardwareResources(View view) {
@@ -1123,7 +1122,7 @@ public abstract class HardwareRenderer {
                 boolean needsContext;
                 needsContext = true;
                 {
-                    boolean var50ED5639F05964E73DC32579A230672A_1013935894 = (isEnabled() && checkCurrent() != SURFACE_STATE_ERROR);
+                    boolean var50ED5639F05964E73DC32579A230672A_1032627304 = (isEnabled() && checkCurrent() != SURFACE_STATE_ERROR);
                     needsContext = false;
                 } //End collapsed parenthetic
                 {
@@ -1149,8 +1148,7 @@ public abstract class HardwareRenderer {
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:05.013 -0400", hash_original_method = "8521FC3B281A56CFA34090E93CBC7058", hash_generated_method = "2C7B68118FF5420F1FD37CECE14B634D")
-        private static void destroyResources(View view) {
+                private static void destroyResources(View view) {
             view.destroyHardwareResources();
             if (view instanceof ViewGroup) {
                 ViewGroup group = (ViewGroup) view;
@@ -1162,8 +1160,7 @@ public abstract class HardwareRenderer {
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:05.014 -0400", hash_original_method = "7C42AE7FEC85968DC821581EB40A786E", hash_generated_method = "685D7EED2668661A3A81CF9CA425E372")
-        static HardwareRenderer create(boolean translucent) {
+                static HardwareRenderer create(boolean translucent) {
             if (GLES20Canvas.isAvailable()) {
                 return new Gl20Renderer(translucent);
             }
@@ -1171,8 +1168,7 @@ public abstract class HardwareRenderer {
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:05.014 -0400", hash_original_method = "07359DC32B0E99110D7D4927D57C3077", hash_generated_method = "6B9291971D245AF79EE5FF9781989F85")
-        static void trimMemory(int level) {
+                static void trimMemory(int level) {
             if (sEgl == null || sEglConfig == null) return;
             Gl20RendererEglContext managedContext = sEglContextStorage.get();
             if (managedContext == null) {
@@ -1193,8 +1189,7 @@ public abstract class HardwareRenderer {
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:05.014 -0400", hash_original_method = "34BFF10BDA33F8F3E764109893739A93", hash_generated_method = "34F92E4D0231E7880AC962B6A1A82C08")
-        private static void usePbufferSurface(EGLContext eglContext) {
+                private static void usePbufferSurface(EGLContext eglContext) {
             synchronized (sPbufferLock) {
                 if (sPbuffer == null) {
                     sPbuffer = sEgl.eglCreatePbufferSurface(sEglDisplay, sEglConfig, new int[] {
@@ -1207,9 +1202,9 @@ public abstract class HardwareRenderer {
 
         
         static class Gl20RendererEglContext extends ManagedEGLContext {
-            final Handler mHandler = new Handler();
+            Handler mHandler = new Handler();
             
-            @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:05.014 -0400", hash_original_method = "DAB7F8E2E2F55BAE2E6064B879DDA260", hash_generated_method = "6D48D4AE8188438084B6245ACE5F3500")
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:58.810 -0400", hash_original_method = "DAB7F8E2E2F55BAE2E6064B879DDA260", hash_generated_method = "BADB513E871016588217E4A9452C1A98")
             //DSFIXME:  CODE0002: Requires DSC value to be set
             public Gl20RendererEglContext(EGLContext context) {
                 super(context);
@@ -1218,25 +1213,30 @@ public abstract class HardwareRenderer {
             }
 
             
-            @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:05.014 -0400", hash_original_method = "022CE21F17BE8021C39A7EA65E477736", hash_generated_method = "2E3AECE804B593EC0803E5071FEE07AF")
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:58.811 -0400", hash_original_method = "022CE21F17BE8021C39A7EA65E477736", hash_generated_method = "A99E036D49F784E357DD7E85AEB18473")
             //DSFIXME:  CODE0002: Requires DSC value to be set
             @Override
             public void onTerminate(final EGLContext eglContext) {
                 //DSFIXME:  CODE0009: Possible callback target function detected
                 dsTaint.addTaint(eglContext.dsTaint);
                 {
-                    boolean var72DF4570FAAFD5BF41841B28E36357E7_1455310841 = (mHandler.getLooper() != Looper.myLooper());
+                    boolean var72DF4570FAAFD5BF41841B28E36357E7_1336266039 = (mHandler.getLooper() != Looper.myLooper());
                     {
-                        mHandler.post(new Runnable() {
-                        @Override public void run() {
-                            onTerminate(eglContext);
-                        }
-                    });
+                        mHandler.post(new Runnable() {                            
+                            @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:58.810 -0400", hash_original_method = "21D2857ABF6002C575615AA7F88BFAF8", hash_generated_method = "FEB39EBDBF35BC9FF5BD7B79A3DED670")
+                            //DSFIXME:  CODE0002: Requires DSC value to be set
+                            @Override
+                            public void run() {
+                                onTerminate(eglContext);
+                                // ---------- Original Method ----------
+                                //onTerminate(eglContext);
+                            }
+});
                     } //End block
                 } //End collapsed parenthetic
                 {
                     {
-                        boolean var582F742B3D76F186D18ABD8532921AC2_783726509 = (EGLImpl.getInitCount(sEglDisplay) == 1);
+                        boolean var582F742B3D76F186D18ABD8532921AC2_2070450323 = (EGLImpl.getInitCount(sEglDisplay) == 1);
                         {
                             usePbufferSurface(eglContext);
                             GLES20Canvas.terminateCaches();
@@ -1264,6 +1264,8 @@ public abstract class HardwareRenderer {
 
 
         
+        private static EGLSurface sPbuffer;
+        private static final Object[] sPbufferLock = new Object[0];
     }
 
 
@@ -1276,6 +1278,14 @@ public abstract class HardwareRenderer {
         void onHardwarePostDraw(HardwareCanvas canvas);
     }
     
+    static final String LOG_TAG = "HardwareRenderer";
+    private static final String CACHE_PATH_SHADERS = "com.android.opengl.shaders_cache";
+    public static final boolean RENDER_DIRTY_REGIONS = true;
+    static final String RENDER_DIRTY_REGIONS_PROPERTY = "hwui.render_dirty_regions";
+    static final String DISABLE_VSYNC_PROPERTY = "hwui.disable_vsync";
+    static final String PRINT_CONFIG_PROPERTY = "hwui.print_config";
+    private static final boolean DEBUG_DIRTY_REGION = false;
+    public static boolean sRendererDisabled = false;
+    public static boolean sSystemRendererDisabled = false;
 }
-
 

@@ -3,10 +3,10 @@ package android.view;
 // Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
+import droidsafe.runtime.*;
 
-// import Iterator to deal with enhanced for loop translation
+// needed for enhanced for control translations
 import java.util.Iterator;
-
 import android.content.Context;
 import android.content.ContextWrapper;
 import android.content.res.Resources;
@@ -18,7 +18,7 @@ public class ContextThemeWrapper extends ContextWrapper {
     private Resources.Theme mTheme;
     private LayoutInflater mInflater;
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:04.880 -0400", hash_original_method = "2CB22459058FC77C2233290E776C217F", hash_generated_method = "1A3837B4327DA47CE76C42D729BBC1A8")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:58.454 -0400", hash_original_method = "2CB22459058FC77C2233290E776C217F", hash_generated_method = "A52E6A8077E95A96382ABDDF2BE523D0")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public ContextThemeWrapper() {
         super(null);
@@ -26,7 +26,7 @@ public class ContextThemeWrapper extends ContextWrapper {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:04.880 -0400", hash_original_method = "41565ED1870D25D8F04F2364AB693A1C", hash_generated_method = "6E47BA1DFD940C415063F74E438C6FEF")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:58.454 -0400", hash_original_method = "41565ED1870D25D8F04F2364AB693A1C", hash_generated_method = "C8E20D88BD5DCB1AD2FCC4B752AAA2FA")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public ContextThemeWrapper(Context base, int themeres) {
         super(base);
@@ -38,8 +38,8 @@ public class ContextThemeWrapper extends ContextWrapper {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:04.880 -0400", hash_original_method = "78AA434171DBBE0A89D0F8DC1618D34C", hash_generated_method = "59B1AC7AA1BB276FBC1AB54D2AD30A1D")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:58.454 -0400", hash_original_method = "78AA434171DBBE0A89D0F8DC1618D34C", hash_generated_method = "22FF6CD1C542E6B2B0BC596182FF6968")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     @Override
     protected void attachBaseContext(Context newBase) {
         dsTaint.addTaint(newBase.dsTaint);
@@ -50,8 +50,8 @@ public class ContextThemeWrapper extends ContextWrapper {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:04.881 -0400", hash_original_method = "E97E7D3D0BCD16FFD8F18C9341C10283", hash_generated_method = "E2628C01938DD755B556197D99140ACC")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:58.455 -0400", hash_original_method = "E97E7D3D0BCD16FFD8F18C9341C10283", hash_generated_method = "DE383D5F13199E460D89D09654C42B26")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     @Override
     public void setTheme(int resid) {
         dsTaint.addTaint(resid);
@@ -62,7 +62,7 @@ public class ContextThemeWrapper extends ContextWrapper {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:04.881 -0400", hash_original_method = "AE4733E1C9FA88CFC00EFC04FF1EA93F", hash_generated_method = "F0B043051679BE8D95920D442C212F43")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:58.455 -0400", hash_original_method = "AE4733E1C9FA88CFC00EFC04FF1EA93F", hash_generated_method = "0C4E45037542F2097B57CEE6AC24E39E")
     @DSModeled(DSC.SAFE)
     @Override
     public int getThemeResId() {
@@ -72,7 +72,7 @@ public class ContextThemeWrapper extends ContextWrapper {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:04.881 -0400", hash_original_method = "21593966DDD7C797D13E86548D9AA1B9", hash_generated_method = "91CE23D5C5CD7B292F021A0E0537FF57")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:58.455 -0400", hash_original_method = "21593966DDD7C797D13E86548D9AA1B9", hash_generated_method = "34CEE8ECAF40205612A1DC202AA7C5C0")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     @Override
     public Resources.Theme getTheme() {
@@ -91,20 +91,20 @@ public class ContextThemeWrapper extends ContextWrapper {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:04.881 -0400", hash_original_method = "3DDCB0207132CDAFA0BFC718C36A2A86", hash_generated_method = "C5FEEA75809AC9B79A85C9FE8AE269D9")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:58.455 -0400", hash_original_method = "3DDCB0207132CDAFA0BFC718C36A2A86", hash_generated_method = "D05EB42BE392F79069730DCDCFC46CCC")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     @Override
     public Object getSystemService(String name) {
         dsTaint.addTaint(name);
         {
-            boolean var28A5A9D11D394EF62378796E9CC200BC_1695672111 = (LAYOUT_INFLATER_SERVICE.equals(name));
+            boolean var28A5A9D11D394EF62378796E9CC200BC_597398193 = (LAYOUT_INFLATER_SERVICE.equals(name));
             {
                 {
                     mInflater = LayoutInflater.from(mBase).cloneInContext(this);
                 } //End block
             } //End block
         } //End collapsed parenthetic
-        Object var775837DC306FA3421E42286960084F37_628215453 = (mBase.getSystemService(name));
+        Object var775837DC306FA3421E42286960084F37_453386294 = (mBase.getSystemService(name));
         return (Object)dsTaint.getTaint();
         // ---------- Original Method ----------
         //if (LAYOUT_INFLATER_SERVICE.equals(name)) {
@@ -117,8 +117,8 @@ public class ContextThemeWrapper extends ContextWrapper {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:04.881 -0400", hash_original_method = "8FCBAFBE19793DC1F6F481E8EF635F38", hash_generated_method = "65496B5FE695E4415645104212C00B94")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:58.455 -0400", hash_original_method = "8FCBAFBE19793DC1F6F481E8EF635F38", hash_generated_method = "A949883702D58BD9AAE569BE00086A34")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     protected void onApplyThemeResource(Resources.Theme theme, int resid, boolean first) {
         //DSFIXME:  CODE0009: Possible callback target function detected
         dsTaint.addTaint(resid);
@@ -130,10 +130,10 @@ public class ContextThemeWrapper extends ContextWrapper {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:04.881 -0400", hash_original_method = "274E46830CAE6261C7392F8B8EF11DA4", hash_generated_method = "355741689DA25DD30AF88A521320E5D2")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:58.456 -0400", hash_original_method = "274E46830CAE6261C7392F8B8EF11DA4", hash_generated_method = "EE56D5473699821C8E3327C853BB23C6")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     private void initializeTheme() {
-        final boolean first;
+        boolean first;
         first = mTheme == null;
         {
             mTheme = getResources().newTheme();
@@ -158,5 +158,4 @@ public class ContextThemeWrapper extends ContextWrapper {
 
     
 }
-
 

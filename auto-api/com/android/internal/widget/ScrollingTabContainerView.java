@@ -32,7 +32,6 @@ import android.widget.Spinner;
 import android.widget.TextView;
 
 public class ScrollingTabContainerView extends HorizontalScrollView implements AdapterView.OnItemSelectedListener {
-    private static String TAG = "ScrollingTabContainerView";
     Runnable mTabSelector;
     private TabClickListener mTabClickListener;
     private LinearLayout mTabLayout;
@@ -43,10 +42,8 @@ public class ScrollingTabContainerView extends HorizontalScrollView implements A
     private int mSelectedTabIndex;
     protected Animator mVisibilityAnim;
     protected VisibilityAnimListener mVisAnimListener = new VisibilityAnimListener();
-    private static TimeInterpolator sAlphaInterpolator = new DecelerateInterpolator();
-    private static int FADE_DURATION = 200;
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 12:28:52.817 -0400", hash_original_method = "B354C67837F2A6192494F63E2EFB003B", hash_generated_method = "D9294E7495049F2DF8BAD97B2F5334AF")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:19.101 -0400", hash_original_method = "B354C67837F2A6192494F63E2EFB003B", hash_generated_method = "897815BA6F29E4CBEE69CBE13FEC3F34")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public ScrollingTabContainerView(Context context) {
         super(context);
@@ -72,7 +69,7 @@ public class ScrollingTabContainerView extends HorizontalScrollView implements A
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 12:28:53.021 -0400", hash_original_method = "3098621744ABB84E77F43010FB80D748", hash_generated_method = "76984D1798B99716D356D79D25F20728")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:19.102 -0400", hash_original_method = "3098621744ABB84E77F43010FB80D748", hash_generated_method = "F1F0E5E9F9965CB977DA3013A7BE6579")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     @Override
     public void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
@@ -103,7 +100,7 @@ public class ScrollingTabContainerView extends HorizontalScrollView implements A
         {
             mTabLayout.measure(MeasureSpec.UNSPECIFIED, heightMeasureSpec);
             {
-                boolean varA52158B277B4AE6568D7696673BFD35D_601614797 = (mTabLayout.getMeasuredWidth() > MeasureSpec.getSize(widthMeasureSpec));
+                boolean varA52158B277B4AE6568D7696673BFD35D_547407798 = (mTabLayout.getMeasuredWidth() > MeasureSpec.getSize(widthMeasureSpec));
                 {
                     performCollapse();
                 } //End block
@@ -128,17 +125,17 @@ public class ScrollingTabContainerView extends HorizontalScrollView implements A
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 12:28:53.069 -0400", hash_original_method = "0C44DD211AEDE4F8875A759BF8E8E48B", hash_generated_method = "C57A8581C347913586EF8C39460321E6")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:19.102 -0400", hash_original_method = "0C44DD211AEDE4F8875A759BF8E8E48B", hash_generated_method = "9AEC754CCF40831998FC5F3B1CA545BF")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     private boolean isCollapsed() {
-        boolean var551CC5E5B099A7CFD71A28BD56D945DE_413311694 = (mTabSpinner != null && mTabSpinner.getParent() == this);
+        boolean var551CC5E5B099A7CFD71A28BD56D945DE_1884488573 = (mTabSpinner != null && mTabSpinner.getParent() == this);
         return dsTaint.getTaintBoolean();
         // ---------- Original Method ----------
         //return mTabSpinner != null && mTabSpinner.getParent() == this;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 12:28:53.089 -0400", hash_original_method = "E654067D8A391E646F927D11468DA221", hash_generated_method = "7110FD7D2BA1DAC326B035538CBEB333")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:19.102 -0400", hash_original_method = "E654067D8A391E646F927D11468DA221", hash_generated_method = "80D029598157BCABFDA18EA0EC36134A")
     @DSModeled(DSC.SAFE)
     public void setAllowCollapse(boolean allowCollapse) {
         dsTaint.addTaint(allowCollapse);
@@ -147,11 +144,11 @@ public class ScrollingTabContainerView extends HorizontalScrollView implements A
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 12:28:53.139 -0400", hash_original_method = "002FC4053C0D51D3D52C5463A6463800", hash_generated_method = "55CA81176517B70BD0935669ED8699D9")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:19.103 -0400", hash_original_method = "002FC4053C0D51D3D52C5463A6463800", hash_generated_method = "C9FEB99E145E14A11F590ABB4FAC8604")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     private void performCollapse() {
         {
-            boolean var6B72A0690292269FB07D412474ADE825_1445462687 = (isCollapsed());
+            boolean var6B72A0690292269FB07D412474ADE825_502499015 = (isCollapsed());
         } //End collapsed parenthetic
         {
             mTabSpinner = createSpinner();
@@ -160,7 +157,7 @@ public class ScrollingTabContainerView extends HorizontalScrollView implements A
         addView(mTabSpinner, new ViewGroup.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT,
                 ViewGroup.LayoutParams.MATCH_PARENT));
         {
-            boolean varD90AE433F33EF1BFD3982D954DB10099_332603337 = (mTabSpinner.getAdapter() == null);
+            boolean varD90AE433F33EF1BFD3982D954DB10099_2036028241 = (mTabSpinner.getAdapter() == null);
             {
                 mTabSpinner.setAdapter(new TabAdapter());
             } //End block
@@ -189,11 +186,11 @@ public class ScrollingTabContainerView extends HorizontalScrollView implements A
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 12:28:53.207 -0400", hash_original_method = "DC1833D7C81A29FFDE1BB4D9BF0A022D", hash_generated_method = "818DBF6DB422F951125EF9D094155773")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:19.103 -0400", hash_original_method = "DC1833D7C81A29FFDE1BB4D9BF0A022D", hash_generated_method = "82C120E1AEA56C9E7FBB1E46E0B8D803")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     private boolean performExpand() {
         {
-            boolean varFE3D7FC075FB72514E33588859243326_1578393697 = (!isCollapsed());
+            boolean varFE3D7FC075FB72514E33588859243326_1530779348 = (!isCollapsed());
         } //End collapsed parenthetic
         removeView(mTabSpinner);
         addView(mTabLayout, new ViewGroup.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT,
@@ -210,8 +207,8 @@ public class ScrollingTabContainerView extends HorizontalScrollView implements A
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 12:28:53.234 -0400", hash_original_method = "2880D1017429231FB4C783DE8155FB40", hash_generated_method = "55B6D1A45B04E6ABED791EE1878CBFA0")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:19.103 -0400", hash_original_method = "2880D1017429231FB4C783DE8155FB40", hash_generated_method = "D42A79FB575D8EFF6F0188A838F4D699")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     public void setTabSelected(int position) {
         dsTaint.addTaint(position);
         int tabCount;
@@ -244,8 +241,8 @@ public class ScrollingTabContainerView extends HorizontalScrollView implements A
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 12:28:53.285 -0400", hash_original_method = "2D264BA3FDE4BFC89C0D29CEF35AB5AF", hash_generated_method = "65E68EE4B4B3E132BEE97D4D12F0A063")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:19.104 -0400", hash_original_method = "2D264BA3FDE4BFC89C0D29CEF35AB5AF", hash_generated_method = "2DD348FF85F35B1E8911FC135248C790")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     public void setContentHeight(int contentHeight) {
         dsTaint.addTaint(contentHeight);
         requestLayout();
@@ -255,7 +252,7 @@ public class ScrollingTabContainerView extends HorizontalScrollView implements A
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 12:28:53.328 -0400", hash_original_method = "5C02AED63A2A4EB9B288612999968966", hash_generated_method = "FCF94AC09EA27DD65BE30826003D1712")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:19.104 -0400", hash_original_method = "5C02AED63A2A4EB9B288612999968966", hash_generated_method = "10215DCED8C6F70D47CF686C19205A3A")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     private LinearLayout createTabLayout() {
         LinearLayout tabLayout;
@@ -275,7 +272,7 @@ public class ScrollingTabContainerView extends HorizontalScrollView implements A
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 12:28:53.353 -0400", hash_original_method = "37274689DF291E70B964F7E850308591", hash_generated_method = "291C9986B1B3BA72DB53A0462EB34632")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:19.104 -0400", hash_original_method = "37274689DF291E70B964F7E850308591", hash_generated_method = "08A1B70E4108A6A83DA05B1CAF3F55A7")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     private Spinner createSpinner() {
         Spinner spinner;
@@ -295,7 +292,7 @@ public class ScrollingTabContainerView extends HorizontalScrollView implements A
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 12:28:53.381 -0400", hash_original_method = "DD246DFC5FD99F8FA7C3003D550B61F7", hash_generated_method = "DA3513B53D1DC057A156B83622C95FBE")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:19.104 -0400", hash_original_method = "DD246DFC5FD99F8FA7C3003D550B61F7", hash_generated_method = "9D1A4F55D71ADDB449A6A2DC8B97C939")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     @Override
     protected void onConfigurationChanged(Configuration newConfig) {
@@ -316,7 +313,7 @@ public class ScrollingTabContainerView extends HorizontalScrollView implements A
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 12:28:53.436 -0400", hash_original_method = "69157A480990C0D905A38CA00057780E", hash_generated_method = "A1F7CC7364887B6BC8A790B261390F62")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:19.105 -0400", hash_original_method = "69157A480990C0D905A38CA00057780E", hash_generated_method = "74A45862CAA87479CCD82A8FF659B7FD")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public void animateToVisibility(int visibility) {
         dsTaint.addTaint(visibility);
@@ -325,7 +322,7 @@ public class ScrollingTabContainerView extends HorizontalScrollView implements A
         } //End block
         {
             {
-                boolean varA0A81FC19EFCAB05136A17FC3377BBD3_2136694009 = (getVisibility() != VISIBLE);
+                boolean varA0A81FC19EFCAB05136A17FC3377BBD3_2005208122 = (getVisibility() != VISIBLE);
                 {
                     setAlpha(0);
                 } //End block
@@ -368,22 +365,29 @@ public class ScrollingTabContainerView extends HorizontalScrollView implements A
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 12:28:53.487 -0400", hash_original_method = "798975849EC8D4C022ED8EB3C4439FA8", hash_generated_method = "72B06178F858EAF4899CC85D15421E01")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:19.105 -0400", hash_original_method = "798975849EC8D4C022ED8EB3C4439FA8", hash_generated_method = "408A5C1F91D7FBA6755170431075AC11")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     public void animateToTab(final int position) {
         dsTaint.addTaint(position);
-        final View tabView;
+        View tabView;
         tabView = mTabLayout.getChildAt(position);
         {
             removeCallbacks(mTabSelector);
         } //End block
-        mTabSelector = new Runnable() {
+        mTabSelector = new Runnable() {            
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:19.105 -0400", hash_original_method = "624465A8A4FF7840574C164453105D67", hash_generated_method = "C126B8E44776A06A3D35D4B101D43300")
+            //DSFIXME:  CODE0002: Requires DSC value to be set
             public void run() {
-                final int scrollPos = tabView.getLeft() - (getWidth() - tabView.getWidth()) / 2;
+                int scrollPos;
+                scrollPos = tabView.getLeft() - (getWidth() - tabView.getWidth()) / 2;
                 smoothScrollTo(scrollPos, 0);
                 mTabSelector = null;
+                // ---------- Original Method ----------
+                //final int scrollPos = tabView.getLeft() - (getWidth() - tabView.getWidth()) / 2;
+                //smoothScrollTo(scrollPos, 0);
+                //mTabSelector = null;
             }
-        };
+};
         post(mTabSelector);
         // ---------- Original Method ----------
         //final View tabView = mTabLayout.getChildAt(position);
@@ -401,8 +405,8 @@ public class ScrollingTabContainerView extends HorizontalScrollView implements A
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 12:28:53.529 -0400", hash_original_method = "887CFA274A392DE8385671362C9964CB", hash_generated_method = "CD29DCC6DE058B1BE5157F858D5ECDF5")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:19.106 -0400", hash_original_method = "887CFA274A392DE8385671362C9964CB", hash_generated_method = "9F62CB462C72183B08CFCFC02D001D3B")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     @Override
     public void onAttachedToWindow() {
         //DSFIXME:  CODE0009: Possible callback target function detected
@@ -418,8 +422,8 @@ public class ScrollingTabContainerView extends HorizontalScrollView implements A
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 12:28:53.607 -0400", hash_original_method = "18C292ABA374873141A21AD02D4712CF", hash_generated_method = "4DD6289EA7508EB5D78EBDE7604E8072")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:19.106 -0400", hash_original_method = "18C292ABA374873141A21AD02D4712CF", hash_generated_method = "D72DCDA1DCA4C064AC6156264DCE07BD")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     @Override
     public void onDetachedFromWindow() {
         //DSFIXME:  CODE0009: Possible callback target function detected
@@ -435,7 +439,7 @@ public class ScrollingTabContainerView extends HorizontalScrollView implements A
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 12:28:53.670 -0400", hash_original_method = "450EFC0E420D351EC7204D6D5C8D9AC6", hash_generated_method = "2AD4C358AB202F3C64A185EC8990C0DD")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:19.106 -0400", hash_original_method = "450EFC0E420D351EC7204D6D5C8D9AC6", hash_generated_method = "7EC8EBF0E0253D394C35AFB6513C562C")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     private TabView createTabView(ActionBar.Tab tab, boolean forAdapter) {
         dsTaint.addTaint(tab.dsTaint);
@@ -472,7 +476,7 @@ public class ScrollingTabContainerView extends HorizontalScrollView implements A
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 12:28:53.754 -0400", hash_original_method = "21975DD541C9968A5D84261D431559E1", hash_generated_method = "7D7DAB98151E5CFC13ECF5AE3ECD099F")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:19.106 -0400", hash_original_method = "21975DD541C9968A5D84261D431559E1", hash_generated_method = "3B33DE22CC311C65EBF91EA5A8BE62D7")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public void addTab(ActionBar.Tab tab, boolean setSelected) {
         dsTaint.addTaint(tab.dsTaint);
@@ -506,7 +510,7 @@ public class ScrollingTabContainerView extends HorizontalScrollView implements A
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 12:28:53.836 -0400", hash_original_method = "120AD652FAF12AEC39493BA97DDC8DBA", hash_generated_method = "C3DD48AC0D61811880E905DB80D75080")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:19.107 -0400", hash_original_method = "120AD652FAF12AEC39493BA97DDC8DBA", hash_generated_method = "FA37BE66575D950C26A6DADC8F1093B9")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public void addTab(ActionBar.Tab tab, int position, boolean setSelected) {
         dsTaint.addTaint(position);
@@ -541,7 +545,7 @@ public class ScrollingTabContainerView extends HorizontalScrollView implements A
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 12:28:54.078 -0400", hash_original_method = "AB4E22DBFABD54435D3DD6BE48A7A755", hash_generated_method = "8E7B6C003AF19F3AF2B580FFC3084A77")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:19.107 -0400", hash_original_method = "AB4E22DBFABD54435D3DD6BE48A7A755", hash_generated_method = "79B37793C90B890C64390109BB167411")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public void updateTab(int position) {
         dsTaint.addTaint(position);
@@ -563,7 +567,7 @@ public class ScrollingTabContainerView extends HorizontalScrollView implements A
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 12:28:54.216 -0400", hash_original_method = "F55D08535CE5AE8E892CFC88E40F0277", hash_generated_method = "1DD58A95621CE0FF54C2CBCA9CE25A1F")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:19.107 -0400", hash_original_method = "F55D08535CE5AE8E892CFC88E40F0277", hash_generated_method = "935DAFA92ACC8AE94433C269A060F390")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public void removeTabAt(int position) {
         dsTaint.addTaint(position);
@@ -585,7 +589,7 @@ public class ScrollingTabContainerView extends HorizontalScrollView implements A
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 12:28:54.342 -0400", hash_original_method = "505192EE2E755E624302670BB829212B", hash_generated_method = "73E473C7CC5AC653E35159F785B6F67D")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:19.108 -0400", hash_original_method = "505192EE2E755E624302670BB829212B", hash_generated_method = "3FCAFF75B22CA75D6BD43E12E090EA5E")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public void removeAllTabs() {
         mTabLayout.removeAllViews();
@@ -606,13 +610,13 @@ public class ScrollingTabContainerView extends HorizontalScrollView implements A
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 12:28:54.395 -0400", hash_original_method = "1E807444FE245168D5D160AA45CB2236", hash_generated_method = "CDEACD4859221ACCED6CF3DE32C88D85")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:19.109 -0400", hash_original_method = "1E807444FE245168D5D160AA45CB2236", hash_generated_method = "56185AB1D03D9ACBE339EDA9582B9133")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     @Override
     public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
         //DSFIXME:  CODE0009: Possible callback target function detected
-        dsTaint.addTaint(position);
         dsTaint.addTaint(id);
+        dsTaint.addTaint(position);
         dsTaint.addTaint(parent.dsTaint);
         dsTaint.addTaint(view.dsTaint);
         TabView tabView;
@@ -624,7 +628,7 @@ public class ScrollingTabContainerView extends HorizontalScrollView implements A
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 12:28:54.412 -0400", hash_original_method = "ABAE53FB2582432DFD925A1EB74EEC53", hash_generated_method = "8197721D260305AB85A1A2663FB8E834")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:19.109 -0400", hash_original_method = "ABAE53FB2582432DFD925A1EB74EEC53", hash_generated_method = "A11AFE9C6AAEF778D9039DF580B1C0C2")
     @DSModeled(DSC.SAFE)
     @Override
     public void onNothingSelected(AdapterView<?> parent) {
@@ -640,13 +644,13 @@ public class ScrollingTabContainerView extends HorizontalScrollView implements A
         private ImageView mIconView;
         private View mCustomView;
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 12:28:54.477 -0400", hash_original_method = "B5DB6118A5A739AD937742D1C44B643E", hash_generated_method = "6CA5C0E174CA9BCF9F20483E82170F20")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:19.110 -0400", hash_original_method = "B5DB6118A5A739AD937742D1C44B643E", hash_generated_method = "3EF6347C5C09377D4B0B91A5754D28AA")
         //DSFIXME:  CODE0002: Requires DSC value to be set
         public TabView(Context context, ActionBar.Tab tab, boolean forList) {
             super(context, null, com.android.internal.R.attr.actionBarTabStyle);
             dsTaint.addTaint(context.dsTaint);
-            dsTaint.addTaint(tab.dsTaint);
             dsTaint.addTaint(forList);
+            dsTaint.addTaint(tab.dsTaint);
             {
                 setGravity(Gravity.LEFT | Gravity.CENTER_VERTICAL);
             } //End block
@@ -660,8 +664,8 @@ public class ScrollingTabContainerView extends HorizontalScrollView implements A
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 12:28:54.584 -0400", hash_original_method = "F47DC88329E05996F10046ACC14BB8E5", hash_generated_method = "828CCF8CA45A5B7C71E70AA339AF640D")
-        @DSModeled(DSC.SAFE)
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:19.110 -0400", hash_original_method = "F47DC88329E05996F10046ACC14BB8E5", hash_generated_method = "D760A12EB8035BC7A6ED1EEA211487EE")
+        //DSFIXME:  CODE0002: Requires DSC value to be set
         public void bindTab(ActionBar.Tab tab) {
             dsTaint.addTaint(tab.dsTaint);
             update();
@@ -671,7 +675,7 @@ public class ScrollingTabContainerView extends HorizontalScrollView implements A
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 12:28:54.613 -0400", hash_original_method = "FFA211085DE297C0E0EC5011B4DE8B57", hash_generated_method = "568B3760827500333025DCFA58CC1515")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:19.110 -0400", hash_original_method = "FFA211085DE297C0E0EC5011B4DE8B57", hash_generated_method = "225E1EBCF5B7820A610A969D1D5358BD")
         //DSFIXME:  CODE0002: Requires DSC value to be set
         @Override
         public void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
@@ -680,7 +684,7 @@ public class ScrollingTabContainerView extends HorizontalScrollView implements A
             dsTaint.addTaint(widthMeasureSpec);
             super.onMeasure(widthMeasureSpec, heightMeasureSpec);
             {
-                boolean var324CF3D70AA77B616B77CDF8D6A963D0_935820702 = (mMaxTabWidth > 0 && getMeasuredWidth() > mMaxTabWidth);
+                boolean var324CF3D70AA77B616B77CDF8D6A963D0_1437271597 = (mMaxTabWidth > 0 && getMeasuredWidth() > mMaxTabWidth);
                 {
                     super.onMeasure(MeasureSpec.makeMeasureSpec(mMaxTabWidth, MeasureSpec.EXACTLY),
                         heightMeasureSpec);
@@ -695,7 +699,7 @@ public class ScrollingTabContainerView extends HorizontalScrollView implements A
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 12:28:54.655 -0400", hash_original_method = "0AA8F20782F60FCDEB51E2F40EEE8538", hash_generated_method = "B1BB817216F9A75CBFAEB39C6C1A302C")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:19.111 -0400", hash_original_method = "0AA8F20782F60FCDEB51E2F40EEE8538", hash_generated_method = "B22202C46B7B6C693E74D1C232549FB0")
         //DSFIXME:  CODE0002: Requires DSC value to be set
         public void update() {
             ActionBar.Tab tab;
@@ -706,9 +710,12 @@ public class ScrollingTabContainerView extends HorizontalScrollView implements A
                 ViewParent customParent;
                 customParent = custom.getParent();
                 {
-                    ((ViewGroup) customParent).removeView(custom);
-                    addView(custom);
-                } //End block
+                    boolean varA92912C2F8F3D980AAEE4A18A937AA8F_91107978 = (customParent != this);
+                    {
+                        ((ViewGroup) customParent).removeView(custom);
+                        addView(custom);
+                    } //End block
+                } //End collapsed parenthetic
                 mCustomView = custom;
                 mTextView.setVisibility(GONE);
                 {
@@ -774,7 +781,7 @@ public class ScrollingTabContainerView extends HorizontalScrollView implements A
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 12:28:54.679 -0400", hash_original_method = "8ACD8C7DACBB258E07DA374214A46BC1", hash_generated_method = "62977A3FAB0606D6D6E9D5DAF45E709B")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:19.111 -0400", hash_original_method = "8ACD8C7DACBB258E07DA374214A46BC1", hash_generated_method = "07CA92A48527C57B1C1695A7067451C7")
         @DSModeled(DSC.SAFE)
         public ActionBar.Tab getTab() {
             return (ActionBar.Tab)dsTaint.getTaint();
@@ -789,30 +796,36 @@ public class ScrollingTabContainerView extends HorizontalScrollView implements A
     
     private class TabAdapter extends BaseAdapter {
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 12:28:54.688 -0400", hash_original_method = "8A8A2A6470BE340ED0660B0DF0493034", hash_generated_method = "57D52A375FE504407FA4ED32F4B7134C")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:19.111 -0400", hash_original_method = "C4625763AB86E754A24552005C6813F1", hash_generated_method = "C4625763AB86E754A24552005C6813F1")
+                public TabAdapter ()
+        {
+        }
+
+
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:19.112 -0400", hash_original_method = "8A8A2A6470BE340ED0660B0DF0493034", hash_generated_method = "E0E2AFB35BC61E2054A8AEC74ADB0013")
         //DSFIXME:  CODE0002: Requires DSC value to be set
         @Override
         public int getCount() {
-            int var05B9487F20C1BA2A8719F1ECE24F801B_485360601 = (mTabLayout.getChildCount());
+            int var05B9487F20C1BA2A8719F1ECE24F801B_673816483 = (mTabLayout.getChildCount());
             return dsTaint.getTaintInt();
             // ---------- Original Method ----------
             //return mTabLayout.getChildCount();
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 12:28:54.689 -0400", hash_original_method = "A98679EF5D46D1EF9814D015704A8113", hash_generated_method = "FA3873FFA02C8E742180260A33DA1DFA")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:19.112 -0400", hash_original_method = "A98679EF5D46D1EF9814D015704A8113", hash_generated_method = "CFCDE09165F24B8F71CD5B0C1CF2EBEA")
         //DSFIXME:  CODE0002: Requires DSC value to be set
         @Override
         public Object getItem(int position) {
             dsTaint.addTaint(position);
-            Object var07605BB39FB0E555B28B0D43F3BA8A92_1850439665 = (((TabView) mTabLayout.getChildAt(position)).getTab());
+            Object var07605BB39FB0E555B28B0D43F3BA8A92_1935835757 = (((TabView) mTabLayout.getChildAt(position)).getTab());
             return (Object)dsTaint.getTaint();
             // ---------- Original Method ----------
             //return ((TabView) mTabLayout.getChildAt(position)).getTab();
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 12:28:54.695 -0400", hash_original_method = "7144EF990F660E75AA61001CF21A1CD5", hash_generated_method = "ECCA4BEA619FBCD3F1E9C47E7B671689")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:19.112 -0400", hash_original_method = "7144EF990F660E75AA61001CF21A1CD5", hash_generated_method = "42B7A6F5FB834BAF1538980253DE1EBC")
         @DSModeled(DSC.SAFE)
         @Override
         public long getItemId(int position) {
@@ -823,7 +836,7 @@ public class ScrollingTabContainerView extends HorizontalScrollView implements A
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 12:28:54.717 -0400", hash_original_method = "C541E21433CF0B8E7E2EE0D1C892D4E4", hash_generated_method = "BF1F4D2CFF3080452FC2ADF8BF534EBB")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:19.112 -0400", hash_original_method = "C541E21433CF0B8E7E2EE0D1C892D4E4", hash_generated_method = "24FA962BAAA9C220717138004D7EEA9E")
         //DSFIXME:  CODE0002: Requires DSC value to be set
         @Override
         public View getView(int position, View convertView, ViewGroup parent) {
@@ -853,7 +866,13 @@ public class ScrollingTabContainerView extends HorizontalScrollView implements A
     
     private class TabClickListener implements OnClickListener {
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 12:28:54.741 -0400", hash_original_method = "024B6ED45DE6B4C8643F8BD12AD99CDA", hash_generated_method = "C10679C65FC5E330CA58D150907869F3")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:19.112 -0400", hash_original_method = "FB90120FB11DABD392D3949CF882B31D", hash_generated_method = "FB90120FB11DABD392D3949CF882B31D")
+                public TabClickListener ()
+        {
+        }
+
+
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:19.113 -0400", hash_original_method = "024B6ED45DE6B4C8643F8BD12AD99CDA", hash_generated_method = "9C5ECE453FD3C0469C56CDC0C3535F7B")
         //DSFIXME:  CODE0002: Requires DSC value to be set
         public void onClick(View view) {
             //DSFIXME:  CODE0009: Possible callback target function detected
@@ -891,7 +910,13 @@ public class ScrollingTabContainerView extends HorizontalScrollView implements A
         private boolean mCanceled = false;
         private int mFinalVisibility;
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 12:28:54.767 -0400", hash_original_method = "42B0250930D53F64D6DEADC73C3EFBBA", hash_generated_method = "1280A3E9D7144E6C91453BA1499F1CC3")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:19.113 -0400", hash_original_method = "75ECA60C9F4D40F51E44C573AEFCFF43", hash_generated_method = "75ECA60C9F4D40F51E44C573AEFCFF43")
+                public VisibilityAnimListener ()
+        {
+        }
+
+
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:19.113 -0400", hash_original_method = "42B0250930D53F64D6DEADC73C3EFBBA", hash_generated_method = "0EB86CF95549717BDD874A96926731C1")
         @DSModeled(DSC.SAFE)
         public VisibilityAnimListener withFinalVisibility(int visibility) {
             dsTaint.addTaint(visibility);
@@ -902,8 +927,8 @@ public class ScrollingTabContainerView extends HorizontalScrollView implements A
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 12:28:54.771 -0400", hash_original_method = "9145E12DF11688F9DD8CB4C23A0F2F13", hash_generated_method = "BD00BCAE2AB5EB8ACE46991AFDCC5093")
-        @DSModeled(DSC.SAFE)
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:19.113 -0400", hash_original_method = "9145E12DF11688F9DD8CB4C23A0F2F13", hash_generated_method = "02ED50A540B5E0EF7632FAFCF88A0B8C")
+        //DSFIXME:  CODE0002: Requires DSC value to be set
         @Override
         public void onAnimationStart(Animator animation) {
             //DSFIXME:  CODE0009: Possible callback target function detected
@@ -918,8 +943,8 @@ public class ScrollingTabContainerView extends HorizontalScrollView implements A
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 12:28:54.777 -0400", hash_original_method = "FCD0A8E872EDB46A2BFC14B31FFA43CC", hash_generated_method = "62111BFC69F275DDCE939D543160B513")
-        @DSModeled(DSC.SAFE)
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:19.113 -0400", hash_original_method = "FCD0A8E872EDB46A2BFC14B31FFA43CC", hash_generated_method = "CDEAE641D758671765107BA25CADE32C")
+        //DSFIXME:  CODE0002: Requires DSC value to be set
         @Override
         public void onAnimationEnd(Animator animation) {
             //DSFIXME:  CODE0009: Possible callback target function detected
@@ -933,7 +958,7 @@ public class ScrollingTabContainerView extends HorizontalScrollView implements A
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 12:28:54.801 -0400", hash_original_method = "2F84891C5ED8AB616225A7D641700DEA", hash_generated_method = "87338A0AE17B72148398A1A0FE6DD53B")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:19.114 -0400", hash_original_method = "2F84891C5ED8AB616225A7D641700DEA", hash_generated_method = "D78BD99B7FA096BC0F7A22E022644707")
         @DSModeled(DSC.SAFE)
         @Override
         public void onAnimationCancel(Animator animation) {
@@ -945,7 +970,7 @@ public class ScrollingTabContainerView extends HorizontalScrollView implements A
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 12:28:54.821 -0400", hash_original_method = "FA58700A4888ED9E658B43737D17A966", hash_generated_method = "75FF296FC60604A343A82AB9CB8690F0")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:19.114 -0400", hash_original_method = "FA58700A4888ED9E658B43737D17A966", hash_generated_method = "2D32F9A43E5261B156C7705DA49965D8")
         @DSModeled(DSC.SAFE)
         @Override
         public void onAnimationRepeat(Animator animation) {
@@ -959,6 +984,8 @@ public class ScrollingTabContainerView extends HorizontalScrollView implements A
 
 
     
+    private static final String TAG = "ScrollingTabContainerView";
+    private static final TimeInterpolator sAlphaInterpolator = new DecelerateInterpolator();
+    private static final int FADE_DURATION = 200;
 }
-
 

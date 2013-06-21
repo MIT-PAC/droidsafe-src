@@ -2,12 +2,11 @@ package org.apache.harmony.luni.lang.reflect;
 
 // Droidsafe Imports
 import droidsafe.helpers.*;
-import droidsafe.runtime.DroidSafeAndroidRuntime;
 import droidsafe.annotations.*;
+import droidsafe.runtime.*;
 
-// import Iterator to deal with enhanced for loop translation
+// needed for enhanced for control translations
 import java.util.Iterator;
-
 import java.lang.reflect.Constructor;
 import java.lang.reflect.GenericDeclaration;
 import java.lang.reflect.GenericSignatureFormatError;
@@ -31,7 +30,7 @@ public class GenericSignatureParser {
     char[] buffer;
     int pos;
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:17.575 -0400", hash_original_method = "B4AF29B80F8E14619B64C65F02963718", hash_generated_method = "3B3D8673BE45DA3D44F7EC545AC3DB67")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:39.809 -0400", hash_original_method = "B4AF29B80F8E14619B64C65F02963718", hash_generated_method = "B68D0C387F4540F0D10AC94FCCF7A2A2")
     @DSModeled(DSC.BAN)
     public GenericSignatureParser(ClassLoader loader) {
         dsTaint.addTaint(loader.dsTaint);
@@ -40,7 +39,7 @@ public class GenericSignatureParser {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:17.575 -0400", hash_original_method = "6F9101760876DEB9422AEF7944CF1BF2", hash_generated_method = "05D19996071D599C75AEBB1DD71D77F1")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:39.809 -0400", hash_original_method = "6F9101760876DEB9422AEF7944CF1BF2", hash_generated_method = "94D85AB9D6DF7D1DB94FA1307B65F320")
     //DSFIXME:  CODE0002: Requires DSC value to be set
      void setInput(GenericDeclaration genericDecl, String input) {
         dsTaint.addTaint(input);
@@ -66,7 +65,7 @@ public class GenericSignatureParser {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:17.575 -0400", hash_original_method = "408B9941E0DDFF19B1C3AECDF838B6FF", hash_generated_method = "F86397FFDEC199AE53EC344E5418910F")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:39.810 -0400", hash_original_method = "408B9941E0DDFF19B1C3AECDF838B6FF", hash_generated_method = "2BCF983B8A901F8E63656BA4AA1FE8B3")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public void parseForClass(GenericDeclaration genericDecl,
             String signature) {
@@ -109,7 +108,7 @@ public class GenericSignatureParser {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:17.575 -0400", hash_original_method = "15DFE7F1F24F7739B7BEC1E53A5655D9", hash_generated_method = "59F9EAECE4E2198A3CE0E7ABDB34A1C9")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:39.810 -0400", hash_original_method = "15DFE7F1F24F7739B7BEC1E53A5655D9", hash_generated_method = "6B5A63A8697FB5F9A45F57BB3D15F7D3")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public void parseForMethod(GenericDeclaration genericDecl,
             String signature, Class<?>[] rawExceptionTypes) {
@@ -157,7 +156,7 @@ public class GenericSignatureParser {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:17.575 -0400", hash_original_method = "0C9CA8BB038974E4A40BF19F7EB72426", hash_generated_method = "98180AEAB0495E981E8D2B6671F58FE3")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:39.811 -0400", hash_original_method = "0C9CA8BB038974E4A40BF19F7EB72426", hash_generated_method = "6B237DC3CD5D7B0A8079F447648A9B03")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public void parseForConstructor(GenericDeclaration genericDecl,
             String signature, Class<?>[] rawExceptionTypes) {
@@ -201,7 +200,7 @@ public class GenericSignatureParser {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:17.576 -0400", hash_original_method = "F697D7E02D0C8DEEF4B0854E9491CC15", hash_generated_method = "CB977FB31603AD2886F4E680292673AC")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:39.811 -0400", hash_original_method = "F697D7E02D0C8DEEF4B0854E9491CC15", hash_generated_method = "3DC3916E7F85DD61AC9EAF31C15C0F45")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public void parseForField(GenericDeclaration genericDecl,
             String signature) {
@@ -219,7 +218,7 @@ public class GenericSignatureParser {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:17.576 -0400", hash_original_method = "2A6822DB636AAE3DC282A54EED7D514D", hash_generated_method = "FCDB0C7EEFEE6C29115FDAF9CBC4BBB9")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:39.811 -0400", hash_original_method = "2A6822DB636AAE3DC282A54EED7D514D", hash_generated_method = "6AD39E41A42F3007E3245DCC8D631ADD")
     //DSFIXME:  CODE0002: Requires DSC value to be set
      void parseClassSignature() {
         parseOptFormalTypeParameters();
@@ -238,7 +237,7 @@ public class GenericSignatureParser {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:17.576 -0400", hash_original_method = "F25135739D6C61926B7C7AB20920C0C3", hash_generated_method = "56C796171E257CE2B763DEB57607B46A")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:39.811 -0400", hash_original_method = "F25135739D6C61926B7C7AB20920C0C3", hash_generated_method = "FC8572DC0B7CE0E4159E608A5A30484D")
     //DSFIXME:  CODE0002: Requires DSC value to be set
      void parseOptFormalTypeParameters() {
         ListOfVariables typeParams;
@@ -266,7 +265,7 @@ public class GenericSignatureParser {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:17.576 -0400", hash_original_method = "8E4B54F231B830B261D22AAC458F74D2", hash_generated_method = "3FEEA75BE97247FBFC16F8B52831B3A5")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:39.812 -0400", hash_original_method = "8E4B54F231B830B261D22AAC458F74D2", hash_generated_method = "79049915EE58EE838F540BC908E9367F")
     //DSFIXME:  CODE0002: Requires DSC value to be set
      ImplForVariable<GenericDeclaration> parseFormalTypeParameter() {
         scanIdentifier();
@@ -282,6 +281,7 @@ public class GenericSignatureParser {
             scanSymbol();
             bounds.add(parseFieldTypeSignature());
         } //End block
+        ImplForVariable<GenericDeclaration> var3194557A4F60DB80FA624EBDEA93957D_597422728 = (new ImplForVariable<GenericDeclaration>(genericDecl, name, bounds));
         return (ImplForVariable<GenericDeclaration>)dsTaint.getTaint();
         // ---------- Original Method ----------
         //scanIdentifier();
@@ -299,20 +299,20 @@ public class GenericSignatureParser {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:17.576 -0400", hash_original_method = "39858CB077F5F270CB13BCD8F5E588C4", hash_generated_method = "1C9DA1A371B5B6F070474EA899055AE2")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:39.812 -0400", hash_original_method = "39858CB077F5F270CB13BCD8F5E588C4", hash_generated_method = "5AD4F9824DDAD0F23A8974CC6E3BCD2B")
     //DSFIXME:  CODE0002: Requires DSC value to be set
      Type parseFieldTypeSignature() {
         //Begin case 'L' 
-        Type var5460A2FAE8640DF5F08CAD751C28BF41_1845695796 = (parseClassTypeSignature());
+        Type var5460A2FAE8640DF5F08CAD751C28BF41_870236702 = (parseClassTypeSignature());
         //End case 'L' 
         //Begin case '[' 
         scanSymbol();
         //End case '[' 
         //Begin case '[' 
-        Type varE0105E0B7469BF82F3833ADD7D72B480_1180950744 = (new ImplForArray(parseTypeSignature()));
+        Type varE0105E0B7469BF82F3833ADD7D72B480_197774045 = (new ImplForArray(parseTypeSignature()));
         //End case '[' 
         //Begin case 'T' 
-        Type var783AD106C3F71B5D9E2DF55ADC7F6053_1960423786 = (parseTypeVariableSignature());
+        Type var783AD106C3F71B5D9E2DF55ADC7F6053_896562063 = (parseTypeVariableSignature());
         //End case 'T' 
         //Begin case default 
         if (DroidSafeAndroidRuntime.control) throw new GenericSignatureFormatError();
@@ -333,7 +333,7 @@ public class GenericSignatureParser {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:17.576 -0400", hash_original_method = "0940B5693D1CE1CEA33652B7603676B3", hash_generated_method = "14266648F864E21153405002F449F20E")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:39.812 -0400", hash_original_method = "0940B5693D1CE1CEA33652B7603676B3", hash_generated_method = "74FCC752A8619C367EAAFACA2D04033F")
     //DSFIXME:  CODE0002: Requires DSC value to be set
      Type parseClassTypeSignature() {
         expect('L');
@@ -367,7 +367,7 @@ public class GenericSignatureParser {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:17.576 -0400", hash_original_method = "FCA6C6C42F8D0470CBF5F70C4C8E2247", hash_generated_method = "B7BD14B72DA5383FA11024B3E799A83D")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:39.812 -0400", hash_original_method = "FCA6C6C42F8D0470CBF5F70C4C8E2247", hash_generated_method = "8F3FFD1C25FB45B3BE1602BC51877E13")
     //DSFIXME:  CODE0002: Requires DSC value to be set
      ListOfTypes parseOptTypeArguments() {
         ListOfTypes typeArgs;
@@ -395,7 +395,7 @@ public class GenericSignatureParser {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:17.577 -0400", hash_original_method = "C611A5720E520CD6B6248914D1F9FF4D", hash_generated_method = "75829453209C01637D582D7BBDF9144C")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:39.813 -0400", hash_original_method = "C611A5720E520CD6B6248914D1F9FF4D", hash_generated_method = "04A8959ED7A0E5FD7643AEE866EDECFE")
     //DSFIXME:  CODE0002: Requires DSC value to be set
      Type parseTypeArgument() {
         ListOfTypes extendsBound;
@@ -405,18 +405,21 @@ public class GenericSignatureParser {
         {
             scanSymbol();
             extendsBound.add(Object.class);
+            Type var87EF2698D1B001F25D7A0B7A38EB02F8_784529415 = (new ImplForWildcard(extendsBound, superBound));
         } //End block
         {
             scanSymbol();
             extendsBound.add(parseFieldTypeSignature());
+            Type var87EF2698D1B001F25D7A0B7A38EB02F8_765948739 = (new ImplForWildcard(extendsBound, superBound));
         } //End block
         {
             scanSymbol();
             superBound.add(parseFieldTypeSignature());
             extendsBound.add(Object.class);
+            Type var87EF2698D1B001F25D7A0B7A38EB02F8_1344826983 = (new ImplForWildcard(extendsBound, superBound));
         } //End block
         {
-            Type var9BB984CA430AD56F579C91DF8CC58D02_1685379428 = (parseFieldTypeSignature());
+            Type var9BB984CA430AD56F579C91DF8CC58D02_2073837359 = (parseFieldTypeSignature());
         } //End block
         return (Type)dsTaint.getTaint();
         // ---------- Original Method ----------
@@ -444,12 +447,13 @@ public class GenericSignatureParser {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:17.577 -0400", hash_original_method = "FF6DECA5851C272F523D7639C2D071BC", hash_generated_method = "8F4C03490A32C787AC2E21E36B7EE53B")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:39.813 -0400", hash_original_method = "FF6DECA5851C272F523D7639C2D071BC", hash_generated_method = "73AF1B6376815B51B10EA89AC04476BB")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
      ImplForVariable<GenericDeclaration> parseTypeVariableSignature() {
         expect('T');
         scanIdentifier();
         expect(';');
+        ImplForVariable<GenericDeclaration> varA8EC0715DCBF47B2D5D489E65A8E56FB_555177984 = (new ImplForVariable<GenericDeclaration>(genericDecl, identifier));
         return (ImplForVariable<GenericDeclaration>)dsTaint.getTaint();
         // ---------- Original Method ----------
         //expect('T');
@@ -459,7 +463,7 @@ public class GenericSignatureParser {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:17.577 -0400", hash_original_method = "ABCBB21DD03AAC76512AB0248A5CE39A", hash_generated_method = "4A433A6B9340A1C0EA011169A303002F")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:39.813 -0400", hash_original_method = "ABCBB21DD03AAC76512AB0248A5CE39A", hash_generated_method = "5058AFEF106D16859C42C7ABC564F597")
     //DSFIXME:  CODE0002: Requires DSC value to be set
      Type parseTypeSignature() {
         //Begin case 'B' 
@@ -487,7 +491,7 @@ public class GenericSignatureParser {
         scanSymbol();
         //End case 'Z' 
         //Begin case default 
-        Type var92DBC4FA4E2487BA403973D096E12584_1898721720 = (parseFieldTypeSignature());
+        Type var92DBC4FA4E2487BA403973D096E12584_184367688 = (parseFieldTypeSignature());
         //End case default 
         return (Type)dsTaint.getTaint();
         // ---------- Original Method ----------
@@ -506,7 +510,7 @@ public class GenericSignatureParser {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:17.577 -0400", hash_original_method = "BD4178EAA9E41C4057CACEBF28047848", hash_generated_method = "996FB9752D73BF545D5E0646B90629D5")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:39.814 -0400", hash_original_method = "BD4178EAA9E41C4057CACEBF28047848", hash_generated_method = "E6804DD3832DBEAAA50412B0D66CF500")
     //DSFIXME:  CODE0002: Requires DSC value to be set
      void parseMethodTypeSignature(Class<?>[] rawExceptionTypes) {
         dsTaint.addTaint(rawExceptionTypes[0].dsTaint);
@@ -541,11 +545,11 @@ public class GenericSignatureParser {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:17.577 -0400", hash_original_method = "6FEAF434B1E5FC2FC9EAA724A7A39FCB", hash_generated_method = "6E38B13FA67A71EF73DBA441E4077560")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:39.814 -0400", hash_original_method = "6FEAF434B1E5FC2FC9EAA724A7A39FCB", hash_generated_method = "E588A8396DBE537DF31011ADDFB4233E")
     //DSFIXME:  CODE0002: Requires DSC value to be set
      Type parseReturnType() {
         {
-            Type varA139ADE5D63D4A5EA488BE81839B440A_1385383561 = (parseTypeSignature());
+            Type varA139ADE5D63D4A5EA488BE81839B440A_394791317 = (parseTypeSignature());
         } //End block
         {
             scanSymbol();
@@ -557,13 +561,12 @@ public class GenericSignatureParser {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:17.577 -0400", hash_original_method = "CAE4999AD72CF442B6BBF401B7699A36", hash_generated_method = "30D7E4B4EB6253A7FB93D55F2E08BD1D")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:39.814 -0400", hash_original_method = "CAE4999AD72CF442B6BBF401B7699A36", hash_generated_method = "2AEB0226C7D192BA1030997411AB9788")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
      void scanSymbol() {
         {
             {
                 symbol = buffer[pos];
-                pos++;
             } //End block
             {
                 symbol = 0;
@@ -571,7 +574,7 @@ public class GenericSignatureParser {
             } //End block
         } //End block
         {
-            throw new GenericSignatureFormatError();
+            if (DroidSafeAndroidRuntime.control) throw new GenericSignatureFormatError();
         } //End block
         // ---------- Original Method ----------
         //if (!eof) {
@@ -588,15 +591,15 @@ public class GenericSignatureParser {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:17.577 -0400", hash_original_method = "D25C52D6AA7AD670E052B9729E548EBD", hash_generated_method = "E6937C7547868A52E09C6F0888A620BF")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:39.815 -0400", hash_original_method = "D25C52D6AA7AD670E052B9729E548EBD", hash_generated_method = "CA42F1EEBDA534E592C531B8A746F671")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
      void expect(char c) {
         dsTaint.addTaint(c);
         {
             scanSymbol();
         } //End block
         {
-            throw new GenericSignatureFormatError();
+            if (DroidSafeAndroidRuntime.control) throw new GenericSignatureFormatError();
         } //End block
         // ---------- Original Method ----------
         //if (symbol == c) {
@@ -607,7 +610,7 @@ public class GenericSignatureParser {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:17.577 -0400", hash_original_method = "1CE8B25C92A2D6D9FB5D5E3D923D48F0", hash_generated_method = "3B8A2C382849B7FC70641F4C29E3AA1E")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:39.815 -0400", hash_original_method = "1CE8B25C92A2D6D9FB5D5E3D923D48F0", hash_generated_method = "AC5F9F5ACD01EE87E6EFCF6DBC29F410")
     @DSModeled(DSC.SAFE)
      boolean isStopSymbol(char ch) {
         dsTaint.addTaint(ch);
@@ -625,25 +628,24 @@ public class GenericSignatureParser {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:17.577 -0400", hash_original_method = "A47433FA08CE7DFA194FC642B799E216", hash_generated_method = "7ADE9EA64DCB7FEF8136A96F72C4ACC9")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:39.815 -0400", hash_original_method = "A47433FA08CE7DFA194FC642B799E216", hash_generated_method = "F2B939163B60E6B1C0E4523AFFC90DA6")
     //DSFIXME:  CODE0002: Requires DSC value to be set
      void scanIdentifier() {
         {
             StringBuilder identBuf;
             identBuf = new StringBuilder(32);
             {
-                boolean varBA8951A438FB95E4147857CD77D7FDCF_1304579822 = (!isStopSymbol(symbol));
+                boolean varBA8951A438FB95E4147857CD77D7FDCF_284834498 = (!isStopSymbol(symbol));
                 {
                     identBuf.append(symbol);
                     {
                         char ch;
                         ch = buffer[pos];
                         {
-                            boolean varC7ECC067547E5D886884C9CD83B3361C_1216980529 = ((ch >= 'a') && (ch <= 'z') || (ch >= 'A') && (ch <= 'Z')
+                            boolean varC7ECC067547E5D886884C9CD83B3361C_1692233383 = ((ch >= 'a') && (ch <= 'z') || (ch >= 'A') && (ch <= 'Z')
                             || !isStopSymbol(ch));
                             {
                                 identBuf.append(buffer[pos]);
-                                pos++;
                             } //End block
                             {
                                 identifier = identBuf.toString();
@@ -663,7 +665,7 @@ public class GenericSignatureParser {
             } //End collapsed parenthetic
         } //End block
         {
-            throw new GenericSignatureFormatError();
+            if (DroidSafeAndroidRuntime.control) throw new GenericSignatureFormatError();
         } //End block
         // ---------- Original Method ----------
         // Original Method Too Long, Refer to Original Implementation
@@ -671,5 +673,4 @@ public class GenericSignatureParser {
 
     
 }
-
 

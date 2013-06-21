@@ -3,10 +3,10 @@ package android.content.pm;
 // Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
+import droidsafe.runtime.*;
 
-// import Iterator to deal with enhanced for loop translation
+// needed for enhanced for control translations
 import java.util.Iterator;
-
 
 public interface IPackageDataObserver extends android.os.IInterface
 {
@@ -90,4 +90,3 @@ static final int TRANSACTION_onRemoveCompleted = (android.os.IBinder.FIRST_CALL_
 }
 public void onRemoveCompleted(java.lang.String packageName, boolean succeeded) throws android.os.RemoteException;
 }
-

@@ -3,10 +3,10 @@ package android.content.pm;
 // Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
+import droidsafe.runtime.*;
 
-// import Iterator to deal with enhanced for loop translation
+// needed for enhanced for control translations
 import java.util.Iterator;
-
 import android.content.IntentFilter;
 import android.graphics.drawable.Drawable;
 import android.os.Parcel;
@@ -30,42 +30,20 @@ public class ResolveInfo implements Parcelable {
     public int icon;
     public String resolvePackageName;
     public boolean system;
-    public static final Creator<ResolveInfo> CREATOR = new Creator<ResolveInfo>() {        
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:00.163 -0400", hash_original_method = "2EFE85D4E7AF81E923B1CAE80AA7FDC7", hash_generated_method = "64B2FBDDBF6748C07112589487A8AD1B")
-        @DSModeled(DSC.SAFE)
-        public ResolveInfo createFromParcel(Parcel source) {
-            dsTaint.addTaint(source.dsTaint);
-            return (ResolveInfo)dsTaint.getTaint();
-            // ---------- Original Method ----------
-            //return new ResolveInfo(source);
-        }
-
-        
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:00.163 -0400", hash_original_method = "465D54D44E371032227235105FA2E1BB", hash_generated_method = "9FCE403950C5C414990933E6BE50CB46")
-        @DSModeled(DSC.SAFE)
-        public ResolveInfo[] newArray(int size) {
-            dsTaint.addTaint(size);
-            return (ResolveInfo[])dsTaint.getTaint();
-            // ---------- Original Method ----------
-            //return new ResolveInfo[size];
-        }
-
-        
-}; //Transformed anonymous class
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:00.164 -0400", hash_original_method = "C76263445BA130B9E024AB7275119550", hash_generated_method = "33EC6DEF54FFF7E4A13088E4806371DE")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:44.951 -0400", hash_original_method = "C76263445BA130B9E024AB7275119550", hash_generated_method = "9AD240A988A931517E58A7D3FB28D552")
     @DSModeled(DSC.SAFE)
     public ResolveInfo() {
         // ---------- Original Method ----------
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:00.164 -0400", hash_original_method = "D76D30C905C95224DB17E633EB6195C1", hash_generated_method = "1678162F00324C0EBA5C05AAB094442B")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:44.952 -0400", hash_original_method = "D76D30C905C95224DB17E633EB6195C1", hash_generated_method = "A1C78509252A6EB5B3C68BBBB337D15C")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     private ResolveInfo(Parcel source) {
         dsTaint.addTaint(source.dsTaint);
         {
-            Object var533A8C7CD58A93D322295C6F0E68EC88_1317108653 = (source.readInt());
+            Object var533A8C7CD58A93D322295C6F0E68EC88_449700902 = (source.readInt());
             //Begin case 1 
             activityInfo = ActivityInfo.CREATOR.createFromParcel(source);
             //End case 1 
@@ -86,7 +64,7 @@ public class ResolveInfo implements Parcelable {
             //End case default 
         } //End collapsed parenthetic
         {
-            boolean varFD16828A378FD83700BE97539951F787_574872880 = (source.readInt() != 0);
+            boolean varFD16828A378FD83700BE97539951F787_1358158606 = (source.readInt() != 0);
             {
                 filter = IntentFilter.CREATOR.createFromParcel(source);
             } //End block
@@ -106,7 +84,7 @@ public class ResolveInfo implements Parcelable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:00.165 -0400", hash_original_method = "A33400D9D27D1859CAE2B97E545C2635", hash_generated_method = "BB9947B71F6090F34967478FC51E710E")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:44.953 -0400", hash_original_method = "A33400D9D27D1859CAE2B97E545C2635", hash_generated_method = "7886EC27ACA3EDD4001B7BE99622B32B")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public CharSequence loadLabel(PackageManager pm) {
         dsTaint.addTaint(pm.dsTaint);
@@ -114,7 +92,7 @@ public class ResolveInfo implements Parcelable {
         {
             label = pm.getText(resolvePackageName, labelRes, null);
             {
-                CharSequence var5756FBB88158B13A005DD5FF5D17599B_2141606524 = (label.toString().trim());
+                CharSequence var5756FBB88158B13A005DD5FF5D17599B_63270780 = (label.toString().trim());
             } //End block
         } //End block
         ComponentInfo ci;
@@ -125,7 +103,7 @@ public class ResolveInfo implements Parcelable {
         {
             label = pm.getText(ci.packageName, labelRes, ai);
             {
-                CharSequence var5756FBB88158B13A005DD5FF5D17599B_1329313257 = (label.toString().trim());
+                CharSequence var5756FBB88158B13A005DD5FF5D17599B_2052275977 = (label.toString().trim());
             } //End block
         } //End block
         CharSequence data;
@@ -157,7 +135,7 @@ public class ResolveInfo implements Parcelable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:00.165 -0400", hash_original_method = "D0D8D8B431D77A14F0DBD9F876D36006", hash_generated_method = "4E7D79502858FDF436986DB07755EE44")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:44.954 -0400", hash_original_method = "D0D8D8B431D77A14F0DBD9F876D36006", hash_generated_method = "E02881ABB8C89FF307DA7CDAE1AD027C")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public Drawable loadIcon(PackageManager pm) {
         dsTaint.addTaint(pm.dsTaint);
@@ -173,7 +151,7 @@ public class ResolveInfo implements Parcelable {
         {
             dr = pm.getDrawable(ci.packageName, icon, ai);
         } //End block
-        Drawable var255C38383FDE8F39033EA1E0E7298FE4_601828637 = (ci.loadIcon(pm));
+        Drawable var255C38383FDE8F39033EA1E0E7298FE4_1087175530 = (ci.loadIcon(pm));
         return (Drawable)dsTaint.getTaint();
         // ---------- Original Method ----------
         //Drawable dr;
@@ -195,12 +173,11 @@ public class ResolveInfo implements Parcelable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:00.165 -0400", hash_original_method = "A025A0B4AEE2574644D8C11C73D3261F", hash_generated_method = "8BA12D81AF559C0182C8D650E0F5B8E4")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:44.954 -0400", hash_original_method = "A025A0B4AEE2574644D8C11C73D3261F", hash_generated_method = "EC6ABB82A0EE39B5F907A7FAB397D320")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public final int getIconResource() {
-        //DSFIXME:  CODE0009: Possible callback target function detected
-        int varE23691F8C29AA1D26CC5ADD64E261A55_765189536 = (activityInfo.getIconResource());
-        int varFF6CF132766102E71E463F8C1A0179F1_1968409626 = (serviceInfo.getIconResource());
+        int varE23691F8C29AA1D26CC5ADD64E261A55_1347930608 = (activityInfo.getIconResource());
+        int varFF6CF132766102E71E463F8C1A0179F1_1654272440 = (serviceInfo.getIconResource());
         return dsTaint.getTaintInt();
         // ---------- Original Method ----------
         //if (icon != 0) return icon;
@@ -210,7 +187,7 @@ public class ResolveInfo implements Parcelable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:00.166 -0400", hash_original_method = "64245509A5FC137877FB50AC88C4351E", hash_generated_method = "84BAF891CC3C602C7CB82CDF3285FC58")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:44.955 -0400", hash_original_method = "64245509A5FC137877FB50AC88C4351E", hash_generated_method = "65E498160112DF7035C721A38E6A4B67")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public void dump(Printer pw, String prefix) {
         dsTaint.addTaint(prefix);
@@ -245,13 +222,13 @@ public class ResolveInfo implements Parcelable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:00.166 -0400", hash_original_method = "E9277D5F5F8618A42CE604147E3605E2", hash_generated_method = "86B7E4C0769379B0CAC906C9877EA097")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:44.955 -0400", hash_original_method = "E9277D5F5F8618A42CE604147E3605E2", hash_generated_method = "61A96B79951079941DF36D1ED1D1CFB2")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public String toString() {
         ComponentInfo ci;
         ci = activityInfo;
         ci = serviceInfo;
-        String var99F9605E2DA21407AD3C2E35ADD253BE_92919793 = ("ResolveInfo{"
+        String var99F9605E2DA21407AD3C2E35ADD253BE_1619957235 = ("ResolveInfo{"
             + Integer.toHexString(System.identityHashCode(this))
             + " " + ci.name + " p=" + priority + " o="
             + preferredOrder + " m=0x" + Integer.toHexString(match) + "}");
@@ -265,7 +242,7 @@ public class ResolveInfo implements Parcelable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:00.166 -0400", hash_original_method = "00F8174F9E89D0C972FA6D3F19742382", hash_generated_method = "7491C6FB42F78871A3F8EA322AF6B2FC")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:44.956 -0400", hash_original_method = "00F8174F9E89D0C972FA6D3F19742382", hash_generated_method = "ED77793910767EAAB4C12F70F75B9095")
     @DSModeled(DSC.SAFE)
     public int describeContents() {
         return dsTaint.getTaintInt();
@@ -274,8 +251,8 @@ public class ResolveInfo implements Parcelable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:00.167 -0400", hash_original_method = "C265C7C58C207232A576E6DBECFC3E71", hash_generated_method = "608B5CE18CBCDF56669B67020B999890")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:44.956 -0400", hash_original_method = "C265C7C58C207232A576E6DBECFC3E71", hash_generated_method = "0CDE34FB469AEAE3EA598200CB2CA48A")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     public void writeToParcel(Parcel dest, int parcelableFlags) {
         dsTaint.addTaint(parcelableFlags);
         dsTaint.addTaint(dest.dsTaint);
@@ -312,10 +289,10 @@ public class ResolveInfo implements Parcelable {
 
     
     public static class DisplayNameComparator implements Comparator<ResolveInfo> {
-        private final Collator   sCollator = Collator.getInstance();
+        private Collator   sCollator = Collator.getInstance();
         private PackageManager   mPM;
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:00.167 -0400", hash_original_method = "01BC6A405956ED34F2FEA27AD8C34186", hash_generated_method = "494F15836A4BD367851A6C27E9B417A0")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:44.956 -0400", hash_original_method = "01BC6A405956ED34F2FEA27AD8C34186", hash_generated_method = "AF5A9D42CCA5BEF178298CF4EA0D30B4")
         @DSModeled(DSC.SAFE)
         public DisplayNameComparator(PackageManager pm) {
             dsTaint.addTaint(pm.dsTaint);
@@ -324,7 +301,7 @@ public class ResolveInfo implements Parcelable {
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:00.168 -0400", hash_original_method = "75BF6E8997D323222280B816426CA9D8", hash_generated_method = "2F15354AC8AE70FDE672BB1C279D03F2")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:44.957 -0400", hash_original_method = "75BF6E8997D323222280B816426CA9D8", hash_generated_method = "C329292DFF6DDC98D19B1D7C33A517D0")
         //DSFIXME:  CODE0002: Requires DSC value to be set
         public final int compare(ResolveInfo a, ResolveInfo b) {
             dsTaint.addTaint(b.dsTaint);
@@ -335,7 +312,7 @@ public class ResolveInfo implements Parcelable {
             CharSequence sb;
             sb = b.loadLabel(mPM);
             sb = b.activityInfo.name;
-            int var84BDFD4BCC4C054E649C7A0FEE1F21B0_1726953716 = (sCollator.compare(sa.toString(), sb.toString()));
+            int var84BDFD4BCC4C054E649C7A0FEE1F21B0_1705045527 = (sCollator.compare(sa.toString(), sb.toString()));
             return dsTaint.getTaintInt();
             // ---------- Original Method ----------
             //CharSequence  sa = a.loadLabel(mPM);
@@ -350,6 +327,29 @@ public class ResolveInfo implements Parcelable {
 
 
     
-}
+    public static final Creator<ResolveInfo> CREATOR = new Creator<ResolveInfo>() {        
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:44.957 -0400", hash_original_method = "2EFE85D4E7AF81E923B1CAE80AA7FDC7", hash_generated_method = "514633AC5F2F68D3234874493D22AABB")
+        //DSFIXME:  CODE0002: Requires DSC value to be set
+        public ResolveInfo createFromParcel(Parcel source) {
+            dsTaint.addTaint(source.dsTaint);
+            ResolveInfo var801FB7B1D93407B88B39C6438D4E744F_2080253522 = (new ResolveInfo(source));
+            return (ResolveInfo)dsTaint.getTaint();
+            // ---------- Original Method ----------
+            //return new ResolveInfo(source);
+        }
 
+        
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:44.958 -0400", hash_original_method = "465D54D44E371032227235105FA2E1BB", hash_generated_method = "A95B140C6E9631DB6E7E4D631202AA4D")
+        //DSFIXME:  CODE0002: Requires DSC value to be set
+        public ResolveInfo[] newArray(int size) {
+            dsTaint.addTaint(size);
+            ResolveInfo[] var82FD4013D4446B5118D554010DDD881F_2067227610 = (new ResolveInfo[size]);
+            return (ResolveInfo[])dsTaint.getTaint();
+            // ---------- Original Method ----------
+            //return new ResolveInfo[size];
+        }
+
+        
+}; //Transformed anonymous class
+}
 

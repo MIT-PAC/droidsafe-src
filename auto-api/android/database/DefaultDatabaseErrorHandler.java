@@ -3,10 +3,10 @@ package android.database;
 // Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
+import droidsafe.runtime.*;
 
-// import Iterator to deal with enhanced for loop translation
+// needed for enhanced for control translations
 import java.util.Iterator;
-
 import java.io.File;
 import java.util.List;
 import android.database.sqlite.SQLiteDatabase;
@@ -15,15 +15,20 @@ import android.util.Log;
 import android.util.Pair;
 
 public final class DefaultDatabaseErrorHandler implements DatabaseErrorHandler {
-    private static final String TAG = "DefaultDatabaseErrorHandler";
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:00.692 -0400", hash_original_method = "4074EC86E696A918C28D96A3FA80513A", hash_generated_method = "C8B9F9037AB2ED5C105DBDD4678A141E")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:46.194 -0400", hash_original_method = "882765EDA4D9A3DA2FCF68E6D497FCEE", hash_generated_method = "882765EDA4D9A3DA2FCF68E6D497FCEE")
+        public DefaultDatabaseErrorHandler ()
+    {
+    }
+
+
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:46.201 -0400", hash_original_method = "4074EC86E696A918C28D96A3FA80513A", hash_generated_method = "796BCA6ED0DF285212EF04D551DA2D59")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public void onCorruption(SQLiteDatabase dbObj) {
         //DSFIXME:  CODE0009: Possible callback target function detected
         dsTaint.addTaint(dbObj.dsTaint);
         {
-            boolean varCC82C5DB1413B99E1CCAB065EFAB5770_1226526329 = (!dbObj.isOpen());
+            boolean varCC82C5DB1413B99E1CCAB065EFAB5770_881919700 = (!dbObj.isOpen());
             {
                 deleteDatabaseFile(dbObj.getPath());
             } //End block
@@ -49,9 +54,9 @@ public final class DefaultDatabaseErrorHandler implements DatabaseErrorHandler {
         {
             {
                 {
-                    Iterator<Pair<String, String>> seatecAstronomy42 = attachedDbs.iterator();
-                    seatecAstronomy42.hasNext();
-                    Pair<String, String> p = seatecAstronomy42.next();
+                    Iterator<Pair<String, String>> varAB3CF8EE812F512696CBC54246C34449_683101529 = (attachedDbs).iterator();
+                    varAB3CF8EE812F512696CBC54246C34449_683101529.hasNext();
+                    Pair<String, String> p = varAB3CF8EE812F512696CBC54246C34449_683101529.next();
                     {
                         deleteDatabaseFile(p.second);
                     } //End block
@@ -66,12 +71,12 @@ public final class DefaultDatabaseErrorHandler implements DatabaseErrorHandler {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:00.692 -0400", hash_original_method = "47DF5B8E2F3C355F760906ED9FB0475D", hash_generated_method = "F4799A1FCE7769221A1982842C59E341")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:46.202 -0400", hash_original_method = "47DF5B8E2F3C355F760906ED9FB0475D", hash_generated_method = "3CCFF70F165957220A7C3F90BC89570C")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     private void deleteDatabaseFile(String fileName) {
         dsTaint.addTaint(fileName);
         {
-            boolean var8E5C270C0C0207C35D217A26023CE022_878992565 = (fileName.equalsIgnoreCase(":memory:") || fileName.trim().length() == 0);
+            boolean var8E5C270C0C0207C35D217A26023CE022_223747442 = (fileName.equalsIgnoreCase(":memory:") || fileName.trim().length() == 0);
         } //End collapsed parenthetic
         try 
         {
@@ -92,6 +97,6 @@ public final class DefaultDatabaseErrorHandler implements DatabaseErrorHandler {
     }
 
     
+    private static final String TAG = "DefaultDatabaseErrorHandler";
 }
-
 

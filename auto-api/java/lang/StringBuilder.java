@@ -13,16 +13,15 @@ import java.io.ObjectOutputStream;
 import java.io.Serializable;
 
 public final class StringBuilder extends AbstractStringBuilder implements Appendable, CharSequence, Serializable {
-    private static long serialVersionUID = 4383685877147921099L;
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-12 17:20:26.169 -0400", hash_original_method = "7F69BEEEB3AFB76A0F531C605E603484", hash_generated_method = "C4D810675F2A64226382D164456BEACA")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:26.231 -0400", hash_original_method = "7F69BEEEB3AFB76A0F531C605E603484", hash_generated_method = "DA4EC3AD95D3DFC18B77F5FCB55D20F9")
     @DSModeled(DSC.SAFE)
     public StringBuilder() {
         // ---------- Original Method ----------
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-12 17:20:26.187 -0400", hash_original_method = "E4F57F923C13DCFDFB2A278667BC010D", hash_generated_method = "5903A0DDE5357D800C9C38D22C6CF7F5")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:26.231 -0400", hash_original_method = "E4F57F923C13DCFDFB2A278667BC010D", hash_generated_method = "8648BB5857CCFB397FFC72C2D3A72C6E")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public StringBuilder(int capacity) {
         super(capacity);
@@ -31,7 +30,7 @@ public final class StringBuilder extends AbstractStringBuilder implements Append
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-12 17:20:26.200 -0400", hash_original_method = "6026ED097BE2B2C063828C0943FCE04D", hash_generated_method = "E6D58D65DDE8016D4367BAF8A64D37EF")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:26.231 -0400", hash_original_method = "6026ED097BE2B2C063828C0943FCE04D", hash_generated_method = "D3A679D0F35A1E7ED77B5DF1ED38F8A3")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public StringBuilder(CharSequence seq) {
         super(seq.toString());
@@ -40,7 +39,7 @@ public final class StringBuilder extends AbstractStringBuilder implements Append
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-12 17:20:26.212 -0400", hash_original_method = "AED4EA464802033AF614945292CFDAC8", hash_generated_method = "9134A1DAEE02E5CFF44DC8C44CE73E0B")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:26.231 -0400", hash_original_method = "AED4EA464802033AF614945292CFDAC8", hash_generated_method = "2E5B981BD41519B64FC14733DC9BAA84")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public StringBuilder(String str) {
         super(str);
@@ -49,8 +48,8 @@ public final class StringBuilder extends AbstractStringBuilder implements Append
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-12 17:20:26.245 -0400", hash_original_method = "F4B609B0FD968769DCA7EA12F3C7D749", hash_generated_method = "4D2FA6264714191657F472856D692350")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:26.232 -0400", hash_original_method = "F4B609B0FD968769DCA7EA12F3C7D749", hash_generated_method = "77539914AD4074909DF4D3193D3C89F5")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     public StringBuilder append(boolean b) {
         dsTaint.addTaint(b);
         append0(b ? "true" : "false");
@@ -61,8 +60,8 @@ public final class StringBuilder extends AbstractStringBuilder implements Append
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-12 17:20:26.261 -0400", hash_original_method = "9D73E236BE501966A93F921E007247A5", hash_generated_method = "CF29B775C34F13F24486AB44B14BF78D")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:26.232 -0400", hash_original_method = "9D73E236BE501966A93F921E007247A5", hash_generated_method = "91F3C6D00503B9B9CBB2B964BB309E4F")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     public StringBuilder append(char c) {
         dsTaint.addTaint(c);
         append0(c);
@@ -73,8 +72,8 @@ public final class StringBuilder extends AbstractStringBuilder implements Append
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-12 17:20:26.269 -0400", hash_original_method = "03C42A72247CEAA018EF9799EE93DC9B", hash_generated_method = "014BEAB1E88369699273E248DFD76A50")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:26.232 -0400", hash_original_method = "03C42A72247CEAA018EF9799EE93DC9B", hash_generated_method = "BE2CBE4F1EC1C5D37F87CA29A1B680F7")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     public StringBuilder append(int i) {
         dsTaint.addTaint(i);
         IntegralToString.appendInt(this, i);
@@ -85,8 +84,8 @@ public final class StringBuilder extends AbstractStringBuilder implements Append
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-12 17:20:26.277 -0400", hash_original_method = "3D332B8F712AE97F73088EED6A4C60D8", hash_generated_method = "A309BEC240FC376EB9F9EF2F427816ED")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:26.232 -0400", hash_original_method = "3D332B8F712AE97F73088EED6A4C60D8", hash_generated_method = "188B4F835B33431D005F9C96C5D15D5D")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     public StringBuilder append(long l) {
         dsTaint.addTaint(l);
         IntegralToString.appendLong(this, l);
@@ -97,7 +96,7 @@ public final class StringBuilder extends AbstractStringBuilder implements Append
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-12 17:20:26.285 -0400", hash_original_method = "C39FE91FF51EAFB5C369F19D2F31B26F", hash_generated_method = "77929D862941D376F83DDD6B3D69E60F")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:26.232 -0400", hash_original_method = "C39FE91FF51EAFB5C369F19D2F31B26F", hash_generated_method = "216BF4EC337E49027C43CB52B95E7BFD")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public StringBuilder append(float f) {
         dsTaint.addTaint(f);
@@ -109,7 +108,7 @@ public final class StringBuilder extends AbstractStringBuilder implements Append
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-12 17:20:26.294 -0400", hash_original_method = "E9C651CD5B73A9D5605CA0251B77324C", hash_generated_method = "822C966604BCF146B83CAD3CFCD99F7B")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:26.233 -0400", hash_original_method = "E9C651CD5B73A9D5605CA0251B77324C", hash_generated_method = "1F3EB0D3321F5BB4855DE6EFC8A22B8A")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public StringBuilder append(double d) {
         dsTaint.addTaint(d);
@@ -121,7 +120,7 @@ public final class StringBuilder extends AbstractStringBuilder implements Append
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-12 17:20:26.309 -0400", hash_original_method = "63927F926AE6750A93D97E305D647A93", hash_generated_method = "7A164AFEE425A3991B617E6E56D04D3D")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:26.233 -0400", hash_original_method = "63927F926AE6750A93D97E305D647A93", hash_generated_method = "B7A60D7305A26ABEF8A12464CDE742D7")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public StringBuilder append(Object obj) {
         dsTaint.addTaint(obj.dsTaint);
@@ -142,8 +141,8 @@ public final class StringBuilder extends AbstractStringBuilder implements Append
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-12 17:20:26.322 -0400", hash_original_method = "055F3A9C4AB035713F11AAFD846DE2F4", hash_generated_method = "82488ADB89D79FC74BD187D61777EFF1")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:26.233 -0400", hash_original_method = "055F3A9C4AB035713F11AAFD846DE2F4", hash_generated_method = "7F313966FDEB699730F401EA23E1A029")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     public StringBuilder append(String str) {
         dsTaint.addTaint(str);
         append0(str);
@@ -154,7 +153,7 @@ public final class StringBuilder extends AbstractStringBuilder implements Append
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-12 17:20:26.332 -0400", hash_original_method = "DA3BC72B04D08CA1AE27B14F3B2132F6", hash_generated_method = "531C9C257E37EB7903807A637C2490A8")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:26.234 -0400", hash_original_method = "DA3BC72B04D08CA1AE27B14F3B2132F6", hash_generated_method = "29A45E96BFAAC75E3CB5480943CBD572")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public StringBuilder append(StringBuffer sb) {
         dsTaint.addTaint(sb.dsTaint);
@@ -175,8 +174,8 @@ public final class StringBuilder extends AbstractStringBuilder implements Append
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-12 17:20:26.346 -0400", hash_original_method = "E629F87AB17E4A16AA1195961D01ABB5", hash_generated_method = "E1AB00F95AF48ADEF771A57E660180AA")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:26.234 -0400", hash_original_method = "E629F87AB17E4A16AA1195961D01ABB5", hash_generated_method = "9B72A5F83782EE99FC2CFE53FCDCEED4")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     public StringBuilder append(char[] chars) {
         dsTaint.addTaint(chars[0]);
         append0(chars);
@@ -187,8 +186,8 @@ public final class StringBuilder extends AbstractStringBuilder implements Append
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-12 17:20:26.353 -0400", hash_original_method = "68F618A3FDF87C48D7DDC534C9C181A8", hash_generated_method = "DA46EC7677E7887C14A1CB9EAC875362")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:26.234 -0400", hash_original_method = "68F618A3FDF87C48D7DDC534C9C181A8", hash_generated_method = "7DCF9DC1E510E8EA13A11A2C5F052BC0")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     public StringBuilder append(char[] str, int offset, int len) {
         dsTaint.addTaint(str[0]);
         dsTaint.addTaint(len);
@@ -201,7 +200,7 @@ public final class StringBuilder extends AbstractStringBuilder implements Append
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-12 17:20:26.363 -0400", hash_original_method = "D80365633E36C9036E4897C864A6AF37", hash_generated_method = "CDAE46522F95841593EE5E785CB72BDB")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:26.234 -0400", hash_original_method = "D80365633E36C9036E4897C864A6AF37", hash_generated_method = "74062CED5AEF1932E1FB8CABFE0C89FA")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public StringBuilder append(CharSequence csq) {
         dsTaint.addTaint(csq);
@@ -222,8 +221,8 @@ public final class StringBuilder extends AbstractStringBuilder implements Append
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-12 17:20:26.380 -0400", hash_original_method = "B3407F260091B09D879B57806B9A4E00", hash_generated_method = "EF9B17DCF53AF7343A7795B7E7E65C80")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:26.235 -0400", hash_original_method = "B3407F260091B09D879B57806B9A4E00", hash_generated_method = "43F07B12CF073822DDA0FE81299646C2")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     public StringBuilder append(CharSequence csq, int start, int end) {
         dsTaint.addTaint(start);
         dsTaint.addTaint(csq);
@@ -236,7 +235,7 @@ public final class StringBuilder extends AbstractStringBuilder implements Append
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-12 17:20:26.396 -0400", hash_original_method = "6B412AA8DE0150EC1DBDE5B0F42A5CFB", hash_generated_method = "B90368A97BEF1C6DA270F3AA2AE0E79D")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:26.235 -0400", hash_original_method = "6B412AA8DE0150EC1DBDE5B0F42A5CFB", hash_generated_method = "F9BE6461189E0313CCD3CD2A8CA8AD15")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public StringBuilder appendCodePoint(int codePoint) {
         dsTaint.addTaint(codePoint);
@@ -248,8 +247,8 @@ public final class StringBuilder extends AbstractStringBuilder implements Append
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-12 17:20:26.401 -0400", hash_original_method = "803DF05D4CC063384FBA901C5CCA5A92", hash_generated_method = "13EA672BA9B0C79D45E6137D202A21E2")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:26.235 -0400", hash_original_method = "803DF05D4CC063384FBA901C5CCA5A92", hash_generated_method = "3047EC6679457623E66E4A62AC35951A")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     public StringBuilder delete(int start, int end) {
         dsTaint.addTaint(start);
         dsTaint.addTaint(end);
@@ -261,8 +260,8 @@ public final class StringBuilder extends AbstractStringBuilder implements Append
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-12 17:20:26.419 -0400", hash_original_method = "9587E0C001AA5E4FBDAD3ADB8121DB12", hash_generated_method = "0D69F947B338980CFDB46157F02EE6D7")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:26.235 -0400", hash_original_method = "9587E0C001AA5E4FBDAD3ADB8121DB12", hash_generated_method = "DC659E38D5BB78D8C9935C4EC13B1192")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     public StringBuilder deleteCharAt(int index) {
         dsTaint.addTaint(index);
         deleteCharAt0(index);
@@ -273,8 +272,8 @@ public final class StringBuilder extends AbstractStringBuilder implements Append
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-12 17:20:26.430 -0400", hash_original_method = "9E94636A15CA5FDDF7E9AC999A98B61E", hash_generated_method = "EE576B22C664C8B7E05B9C14C033137E")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:26.235 -0400", hash_original_method = "9E94636A15CA5FDDF7E9AC999A98B61E", hash_generated_method = "47FBA1C8251B4CB3852CABCC66E31660")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     public StringBuilder insert(int offset, boolean b) {
         dsTaint.addTaint(b);
         dsTaint.addTaint(offset);
@@ -286,8 +285,8 @@ public final class StringBuilder extends AbstractStringBuilder implements Append
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-12 17:20:26.443 -0400", hash_original_method = "50B127D3D7AA52B10DEE8D9E61CF2830", hash_generated_method = "C38D9246B22F86FB935DA69AF73E7CA8")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:26.236 -0400", hash_original_method = "50B127D3D7AA52B10DEE8D9E61CF2830", hash_generated_method = "A11728F3736869BFA600CB05F927ACD4")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     public StringBuilder insert(int offset, char c) {
         dsTaint.addTaint(c);
         dsTaint.addTaint(offset);
@@ -299,7 +298,7 @@ public final class StringBuilder extends AbstractStringBuilder implements Append
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-12 17:20:26.449 -0400", hash_original_method = "0E2F0E15101F82363F6315617D179ADE", hash_generated_method = "57AC904B6754801ECFB232B8CBCE294B")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:26.236 -0400", hash_original_method = "0E2F0E15101F82363F6315617D179ADE", hash_generated_method = "BDE1BACE1D7AA5470AD583992299DC42")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public StringBuilder insert(int offset, int i) {
         dsTaint.addTaint(offset);
@@ -312,7 +311,7 @@ public final class StringBuilder extends AbstractStringBuilder implements Append
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-12 17:20:26.456 -0400", hash_original_method = "0414BCBB4B3CD85646765E73B01D123B", hash_generated_method = "8935010488E6151D53077BE481E8C5E1")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:26.236 -0400", hash_original_method = "0414BCBB4B3CD85646765E73B01D123B", hash_generated_method = "E02BB4F059ACA8CD6CF710FAE225D8F4")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public StringBuilder insert(int offset, long l) {
         dsTaint.addTaint(l);
@@ -325,7 +324,7 @@ public final class StringBuilder extends AbstractStringBuilder implements Append
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-12 17:20:26.461 -0400", hash_original_method = "8BED9229B1DF452CCAD065018015A008", hash_generated_method = "9CC8794963F135672AA9D7CC812B7BA7")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:26.236 -0400", hash_original_method = "8BED9229B1DF452CCAD065018015A008", hash_generated_method = "95E2261105363FD2E000CE3F1A37A6B9")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public StringBuilder insert(int offset, float f) {
         dsTaint.addTaint(f);
@@ -338,7 +337,7 @@ public final class StringBuilder extends AbstractStringBuilder implements Append
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-12 17:20:26.467 -0400", hash_original_method = "1BF020DB1D2B7F2D38356085E08D1D32", hash_generated_method = "7ED27FBDB3BCE289AA5A70208EF10B79")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:26.237 -0400", hash_original_method = "1BF020DB1D2B7F2D38356085E08D1D32", hash_generated_method = "82780B5B2FF78B2FB9F97F588EA0E450")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public StringBuilder insert(int offset, double d) {
         dsTaint.addTaint(d);
@@ -351,7 +350,7 @@ public final class StringBuilder extends AbstractStringBuilder implements Append
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-12 17:20:26.472 -0400", hash_original_method = "61D3E125BF148F03C1F93F887D6D82B6", hash_generated_method = "B74596237942ECCED1F9441008F3F153")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:26.237 -0400", hash_original_method = "61D3E125BF148F03C1F93F887D6D82B6", hash_generated_method = "DE1D8DDDBDCC7A5A48A01D924DB8AC11")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public StringBuilder insert(int offset, Object obj) {
         dsTaint.addTaint(obj.dsTaint);
@@ -364,8 +363,8 @@ public final class StringBuilder extends AbstractStringBuilder implements Append
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-12 17:20:26.477 -0400", hash_original_method = "4CB9FC326C4E78987F03B46DA89B63D1", hash_generated_method = "1792524B5AFD32E4DF8EE1C6F2F5189C")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:26.237 -0400", hash_original_method = "4CB9FC326C4E78987F03B46DA89B63D1", hash_generated_method = "F3538084940BF9A3B0A9DD3784E0B240")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     public StringBuilder insert(int offset, String str) {
         dsTaint.addTaint(str);
         dsTaint.addTaint(offset);
@@ -377,8 +376,8 @@ public final class StringBuilder extends AbstractStringBuilder implements Append
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-12 17:20:26.483 -0400", hash_original_method = "9DA55870F4603974121079300CB9220C", hash_generated_method = "C84D19B8B3114D0E2858C6AFC2C02E31")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:26.237 -0400", hash_original_method = "9DA55870F4603974121079300CB9220C", hash_generated_method = "42F758567C680F8C8EC3722733F99D61")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     public StringBuilder insert(int offset, char[] ch) {
         dsTaint.addTaint(ch[0]);
         dsTaint.addTaint(offset);
@@ -390,8 +389,8 @@ public final class StringBuilder extends AbstractStringBuilder implements Append
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-12 17:20:26.488 -0400", hash_original_method = "74676FBA295331D75BECD58900BE097F", hash_generated_method = "ED75FE7289874BAC895A3DB1D4845D23")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:26.237 -0400", hash_original_method = "74676FBA295331D75BECD58900BE097F", hash_generated_method = "2CCC507E880E823E081F43A00BDBA5E0")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     public StringBuilder insert(int offset, char[] str, int strOffset,
             int strLen) {
         dsTaint.addTaint(strOffset);
@@ -406,7 +405,7 @@ public final class StringBuilder extends AbstractStringBuilder implements Append
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-12 17:20:26.496 -0400", hash_original_method = "0A4800E098392CF1EA9CC33E7FA664BB", hash_generated_method = "BBD9C58E5E6F8ECD0DF5FE57A1687DC2")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:26.238 -0400", hash_original_method = "0A4800E098392CF1EA9CC33E7FA664BB", hash_generated_method = "9F363A5F2B24230563B18E28F16CF519")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public StringBuilder insert(int offset, CharSequence s) {
         dsTaint.addTaint(s);
@@ -419,8 +418,8 @@ public final class StringBuilder extends AbstractStringBuilder implements Append
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-12 17:20:26.501 -0400", hash_original_method = "C80E7B31DC60FBAF173CE4F526E97A54", hash_generated_method = "6DE1A93530524F5D1D8300CA13CD25E2")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:26.238 -0400", hash_original_method = "C80E7B31DC60FBAF173CE4F526E97A54", hash_generated_method = "2F158759384A5F91A1947D07AFF95F03")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     public StringBuilder insert(int offset, CharSequence s, int start, int end) {
         dsTaint.addTaint(s);
         dsTaint.addTaint(start);
@@ -434,8 +433,8 @@ public final class StringBuilder extends AbstractStringBuilder implements Append
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-12 17:20:26.507 -0400", hash_original_method = "3EE339644717E8959D7BEAA9750FDE03", hash_generated_method = "0E22C4906155BBAD06C59237569D0CD6")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:26.238 -0400", hash_original_method = "3EE339644717E8959D7BEAA9750FDE03", hash_generated_method = "EDEB9BA6FDF8D248325158D253952A7E")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     public StringBuilder replace(int start, int end, String str) {
         dsTaint.addTaint(str);
         dsTaint.addTaint(start);
@@ -448,8 +447,8 @@ public final class StringBuilder extends AbstractStringBuilder implements Append
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-12 17:20:26.513 -0400", hash_original_method = "D5BEA44E320721AFAC8F5C9BC1BCBDE4", hash_generated_method = "27E65DD87BE0BD1A27AC0D4C8587CE4B")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:26.238 -0400", hash_original_method = "D5BEA44E320721AFAC8F5C9BC1BCBDE4", hash_generated_method = "D04C8A1D43AEA7CB93E5796C7FA805C1")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     public StringBuilder reverse() {
         reverse0();
         return (StringBuilder)dsTaint.getTaint();
@@ -459,18 +458,18 @@ public final class StringBuilder extends AbstractStringBuilder implements Append
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-12 17:20:26.518 -0400", hash_original_method = "C92C5C24967E99B8B02E357BFAE9005B", hash_generated_method = "115FB6F611F9A5BA5554D1E8258B1D1D")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:26.238 -0400", hash_original_method = "C92C5C24967E99B8B02E357BFAE9005B", hash_generated_method = "9E1351A72AB7C45B811A807D48E74DEB")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     @Override
     public String toString() {
-        String var68E86BD9F434ADE8AAF95F248D77470C_1381627703 = (super.toString());
+        String var68E86BD9F434ADE8AAF95F248D77470C_3861427 = (super.toString());
         return dsTaint.getTaintString();
         // ---------- Original Method ----------
         //return super.toString();
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-12 17:20:26.524 -0400", hash_original_method = "2C3CA2755DA5729156EEFA2755095C82", hash_generated_method = "D3BF67F587D4B491AF911C18E00E42E2")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:26.239 -0400", hash_original_method = "2C3CA2755DA5729156EEFA2755095C82", hash_generated_method = "85FF1EBC7EF9955B91964483F4C092C3")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     private void readObject(ObjectInputStream in) throws IOException,
             ClassNotFoundException {
@@ -489,7 +488,7 @@ public final class StringBuilder extends AbstractStringBuilder implements Append
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-12 17:20:26.530 -0400", hash_original_method = "955BAED9D745223A762EA03F9D3C1E25", hash_generated_method = "7B37C71ED12A2383B964E87C10AADA44")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:26.239 -0400", hash_original_method = "955BAED9D745223A762EA03F9D3C1E25", hash_generated_method = "45068AD3FB8726618A662619A473D9C3")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     private void writeObject(ObjectOutputStream out) throws IOException {
         dsTaint.addTaint(out.dsTaint);
@@ -503,6 +502,6 @@ public final class StringBuilder extends AbstractStringBuilder implements Append
     }
 
     
+    private static final long serialVersionUID = 4383685877147921099L;
 }
-
 

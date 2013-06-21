@@ -3,35 +3,35 @@ package com.android.internal.telephony.gsm;
 // Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
+import droidsafe.runtime.*;
 
-// import Iterator to deal with enhanced for loop translation
+// needed for enhanced for control translations
 import java.util.Iterator;
-
 import com.android.internal.telephony.IccServiceTable;
 
 public final class UsimServiceTable extends IccServiceTable {
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:10.036 -0400", hash_original_method = "817BD5CF49BC23E6643D1124A4E1BE41", hash_generated_method = "57551037BE8756E7579B9E47CABFB198")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:17.074 -0400", hash_original_method = "817BD5CF49BC23E6643D1124A4E1BE41", hash_generated_method = "954EFB53227271972229AC0B89EC4D63")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public UsimServiceTable(byte[] table) {
         super(table);
-        dsTaint.addTaint(table);
+        dsTaint.addTaint(table[0]);
         // ---------- Original Method ----------
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:10.036 -0400", hash_original_method = "DBA3BE1184DAC743D00CD4A8E44903BD", hash_generated_method = "572F999230A7F8065A161E03AA3F3D2C")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:17.074 -0400", hash_original_method = "DBA3BE1184DAC743D00CD4A8E44903BD", hash_generated_method = "82865A9BEBF2A9D680A93E53CE7EFE1E")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public boolean isAvailable(UsimService service) {
         dsTaint.addTaint(service.dsTaint);
-        boolean var42BF4AA20E44FEE0BAC84FECFBD2EC6C_1558913762 = (super.isAvailable(service.ordinal()));
+        boolean var42BF4AA20E44FEE0BAC84FECFBD2EC6C_1902706786 = (super.isAvailable(service.ordinal()));
         return dsTaint.getTaintBoolean();
         // ---------- Original Method ----------
         //return super.isAvailable(service.ordinal());
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:10.036 -0400", hash_original_method = "E87A72CCD83C43A988523404C93A686A", hash_generated_method = "7A628A4BFE89749925B9C5C40195EDEC")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:17.074 -0400", hash_original_method = "E87A72CCD83C43A988523404C93A686A", hash_generated_method = "870EA96D06C9A5963647F517714FDD8C")
     @DSModeled(DSC.SAFE)
     @Override
     protected String getTag() {
@@ -41,11 +41,11 @@ public final class UsimServiceTable extends IccServiceTable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:10.036 -0400", hash_original_method = "5896C19C7C6B06EFB443A2DEA834E8BC", hash_generated_method = "CD214BAB03D2F74C936CB130D19EEEF1")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:17.075 -0400", hash_original_method = "5896C19C7C6B06EFB443A2DEA834E8BC", hash_generated_method = "F3A60C4C6D706A5F1E2F90C5AFC338DD")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     @Override
     protected Object[] getValues() {
-        Object[] var60DDC9B4704A16DD1176EB1E67CB1602_2068056207 = (UsimService.values());
+        Object[] var60DDC9B4704A16DD1176EB1E67CB1602_1497574536 = (UsimService.values());
         return (Object[])dsTaint.getTaint();
         // ---------- Original Method ----------
         //return UsimService.values();
@@ -153,5 +153,4 @@ public final class UsimServiceTable extends IccServiceTable {
 
     
 }
-
 

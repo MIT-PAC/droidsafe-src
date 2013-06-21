@@ -3,10 +3,10 @@ package android.text;
 // Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
+import droidsafe.runtime.*;
 
-// import Iterator to deal with enhanced for loop translation
+// needed for enhanced for control translations
 import java.util.Iterator;
-
 
 public interface SpanWatcher extends NoCopySpan {
     
@@ -17,4 +17,3 @@ public interface SpanWatcher extends NoCopySpan {
     public void onSpanChanged(Spannable text, Object what, int ostart, int oend,
                               int nstart, int nend);
 }
-

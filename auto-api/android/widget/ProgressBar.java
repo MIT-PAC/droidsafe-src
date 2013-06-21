@@ -3,10 +3,10 @@ package android.widget;
 // Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
+import droidsafe.runtime.*;
 
-// import Iterator to deal with enhanced for loop translation
+// needed for enhanced for control translations
 import java.util.Iterator;
-
 import com.android.internal.R;
 import android.content.Context;
 import android.content.res.TypedArray;
@@ -44,9 +44,6 @@ import android.view.animation.Transformation;
 import android.widget.RemoteViews.RemoteView;
 
 public class ProgressBar extends View {
-    private static final int MAX_LEVEL = 10000;
-    private static final int ANIMATION_RESOLUTION = 200;
-    private static final int TIMEOUT_SEND_ACCESSIBILITY_EVENT = 200;
     int mMinWidth;
     int mMaxWidth;
     int mMinHeight;
@@ -74,7 +71,7 @@ public class ProgressBar extends View {
     private int mAnimationResolution;
     private AccessibilityEventSender mAccessibilityEventSender;
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:08.236 -0400", hash_original_method = "F5911F61390A242F23F5676C44FA4C61", hash_generated_method = "25A23576CFED552EAF394F8E88F22059")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:08.038 -0400", hash_original_method = "F5911F61390A242F23F5676C44FA4C61", hash_generated_method = "15ACAF215A6C5C0C35BC10F0FA9CE203")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public ProgressBar(Context context) {
         this(context, null);
@@ -83,7 +80,7 @@ public class ProgressBar extends View {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:08.236 -0400", hash_original_method = "D031AA7B7D98D3870546853F1BC5BC9E", hash_generated_method = "CE1B0FFDC157540C48CC76E99FA88AD3")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:08.038 -0400", hash_original_method = "D031AA7B7D98D3870546853F1BC5BC9E", hash_generated_method = "43A90D7E7C9A1C98A63E324577EAA326")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public ProgressBar(Context context, AttributeSet attrs) {
         this(context, attrs, com.android.internal.R.attr.progressBarStyle);
@@ -93,7 +90,7 @@ public class ProgressBar extends View {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:08.236 -0400", hash_original_method = "E1F87E741C36AFFDC636A9ACF6EDF064", hash_generated_method = "42C41A54CCD157FE6FD5015EB0F5711C")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:08.038 -0400", hash_original_method = "E1F87E741C36AFFDC636A9ACF6EDF064", hash_generated_method = "AA2BFD3B5FD3188B10B67B9E144A2134")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public ProgressBar(Context context, AttributeSet attrs, int defStyle) {
         this(context, attrs, defStyle, 0);
@@ -104,13 +101,13 @@ public class ProgressBar extends View {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:08.237 -0400", hash_original_method = "DAE8B382D7288D55BBDECA5C905F6E78", hash_generated_method = "91381EEFD66873C149E4E430EDED79ED")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:08.039 -0400", hash_original_method = "DAE8B382D7288D55BBDECA5C905F6E78", hash_generated_method = "28A7AB25C1995D640F1123D141B01DF7")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public ProgressBar(Context context, AttributeSet attrs, int defStyle, int styleRes) {
         super(context, attrs, defStyle);
         dsTaint.addTaint(attrs.dsTaint);
-        dsTaint.addTaint(defStyle);
         dsTaint.addTaint(styleRes);
+        dsTaint.addTaint(defStyle);
         dsTaint.addTaint(context.dsTaint);
         mUiThreadId = Thread.currentThread().getId();
         initProgressBar();
@@ -129,7 +126,7 @@ public class ProgressBar extends View {
         mMinHeight = a.getDimensionPixelSize(R.styleable.ProgressBar_minHeight, mMinHeight);
         mMaxHeight = a.getDimensionPixelSize(R.styleable.ProgressBar_maxHeight, mMaxHeight);
         mBehavior = a.getInt(R.styleable.ProgressBar_indeterminateBehavior, mBehavior);
-        final int resID;
+        int resID;
         resID = a.getResourceId(
                 com.android.internal.R.styleable.ProgressBar_interpolator, 
                 android.R.anim.linear_interpolator);
@@ -158,7 +155,7 @@ public class ProgressBar extends View {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:08.237 -0400", hash_original_method = "224A1F0FE2A7F3DC81BFFEE36861F394", hash_generated_method = "0BB3B79F427E65EB205559C5D2FAA656")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:08.040 -0400", hash_original_method = "224A1F0FE2A7F3DC81BFFEE36861F394", hash_generated_method = "3F4A1D7FC0B2FC3577D6813E09363103")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     private Drawable tileify(Drawable drawable, boolean clip) {
         dsTaint.addTaint(clip);
@@ -166,7 +163,7 @@ public class ProgressBar extends View {
         {
             LayerDrawable background;
             background = (LayerDrawable) drawable;
-            final int N;
+            int N;
             N = background.getNumberOfLayers();
             Drawable[] outDrawables;
             outDrawables = new Drawable[N];
@@ -206,17 +203,21 @@ public class ProgressBar extends View {
             } //End collapsed parenthetic
         } //End block
         {
-            final Bitmap tileBitmap;
+            Bitmap tileBitmap;
             tileBitmap = ((BitmapDrawable) drawable).getBitmap();
             {
                 mSampleTile = tileBitmap;
             } //End block
-            final ShapeDrawable shapeDrawable;
+            ShapeDrawable shapeDrawable;
             shapeDrawable = new ShapeDrawable(getDrawableShape());
-            final BitmapShader bitmapShader;
+            BitmapShader bitmapShader;
             bitmapShader = new BitmapShader(tileBitmap,
                     Shader.TileMode.REPEAT, Shader.TileMode.CLAMP);
             shapeDrawable.getPaint().setShader(bitmapShader);
+            {
+                Object var8B12F9BFFA98F68A4549ACB2CE810290_1343459255 = (new ClipDrawable(shapeDrawable, Gravity.LEFT,
+                    ClipDrawable.HORIZONTAL));
+            } //End flattened ternary
         } //End block
         return (Drawable)dsTaint.getTaint();
         // ---------- Original Method ----------
@@ -224,11 +225,12 @@ public class ProgressBar extends View {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:08.237 -0400", hash_original_method = "066FEFD8810FD39B2288696E8912725B", hash_generated_method = "ADCC4AC00A6E5C5C8FD9329C4D99A9D2")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:08.040 -0400", hash_original_method = "066FEFD8810FD39B2288696E8912725B", hash_generated_method = "5C3272BE2AF634F3B4E72C028F2CE618")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
      Shape getDrawableShape() {
-        final float[] roundedCorners;
+        float[] roundedCorners;
         roundedCorners = new float[] { 5, 5, 5, 5, 5, 5, 5, 5 };
+        Shape var02A57DA10DE338DD486CF0A73C581C27_1212127531 = (new RoundRectShape(roundedCorners, null, null));
         return (Shape)dsTaint.getTaint();
         // ---------- Original Method ----------
         //final float[] roundedCorners = new float[] { 5, 5, 5, 5, 5, 5, 5, 5 };
@@ -236,14 +238,14 @@ public class ProgressBar extends View {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:08.237 -0400", hash_original_method = "9EE7DD01E1AB6B0D269DB58A7544C17D", hash_generated_method = "302F0C2E4C0E6063901CE53C28785FA9")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:08.040 -0400", hash_original_method = "9EE7DD01E1AB6B0D269DB58A7544C17D", hash_generated_method = "09371A0B3A983D2ABCF53BA57AA41C08")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     private Drawable tileifyIndeterminate(Drawable drawable) {
         dsTaint.addTaint(drawable.dsTaint);
         {
             AnimationDrawable background;
             background = (AnimationDrawable) drawable;
-            final int N;
+            int N;
             N = background.getNumberOfFrames();
             AnimationDrawable newBg;
             newBg = new AnimationDrawable();
@@ -280,7 +282,7 @@ public class ProgressBar extends View {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:08.237 -0400", hash_original_method = "E5E4BC7A2B363BE6E2FBD0B5C26F4050", hash_generated_method = "F5E0A01AC9BD76267689A9639190A1D2")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:08.041 -0400", hash_original_method = "E5E4BC7A2B363BE6E2FBD0B5C26F4050", hash_generated_method = "8DA820DB7B007C068BE9D230A5110A34")
     @DSModeled(DSC.SAFE)
     private void initProgressBar() {
         mMax = 100;
@@ -309,7 +311,7 @@ public class ProgressBar extends View {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:08.237 -0400", hash_original_method = "3387FD7633AB5B9FD9EC30B2946E89DA", hash_generated_method = "5FBB1148D2B64D7A59C41020EE92107A")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:08.041 -0400", hash_original_method = "3387FD7633AB5B9FD9EC30B2946E89DA", hash_generated_method = "A7E17D646BEE2DD64244302F2B958CE1")
     @DSModeled(DSC.SAFE)
     @ViewDebug.ExportedProperty(category = "progress")
     public synchronized boolean isIndeterminate() {
@@ -319,8 +321,8 @@ public class ProgressBar extends View {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:08.238 -0400", hash_original_method = "9BFD2BF2FBC3833B7107C0E363644A89", hash_generated_method = "7EC2F4C93752740F73BC748CF3A72886")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:08.041 -0400", hash_original_method = "9BFD2BF2FBC3833B7107C0E363644A89", hash_generated_method = "413FB593104565409C6775CEC48A15C7")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     @android.view.RemotableViewMethod
     public synchronized void setIndeterminate(boolean indeterminate) {
         dsTaint.addTaint(indeterminate);
@@ -348,7 +350,7 @@ public class ProgressBar extends View {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:08.238 -0400", hash_original_method = "460B65565106BA0615FD22E30B040519", hash_generated_method = "439B364EF2DC0A543CC06BFA85FAA613")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:08.041 -0400", hash_original_method = "460B65565106BA0615FD22E30B040519", hash_generated_method = "403A0BFF09E00A5DE1ADB491B4F090FC")
     @DSModeled(DSC.SAFE)
     public Drawable getIndeterminateDrawable() {
         return (Drawable)dsTaint.getTaint();
@@ -357,8 +359,8 @@ public class ProgressBar extends View {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:08.238 -0400", hash_original_method = "4CAABA82B88C397ED0E927A2E15C90A0", hash_generated_method = "C390FB5355994E5ACDC1BADA9BEB72C3")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:08.042 -0400", hash_original_method = "4CAABA82B88C397ED0E927A2E15C90A0", hash_generated_method = "6E24F2885EEE6BD4354EF7E2E9665F41")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     public void setIndeterminateDrawable(Drawable d) {
         dsTaint.addTaint(d.dsTaint);
         {
@@ -379,7 +381,7 @@ public class ProgressBar extends View {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:08.238 -0400", hash_original_method = "6C8C8D805DC88A29293BE605923D5590", hash_generated_method = "082679FA3AAACA4CD251E68E7D645931")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:08.042 -0400", hash_original_method = "6C8C8D805DC88A29293BE605923D5590", hash_generated_method = "ABC640DB6A0849C2E30AECA4D58E80F5")
     @DSModeled(DSC.SAFE)
     public Drawable getProgressDrawable() {
         return (Drawable)dsTaint.getTaint();
@@ -388,7 +390,7 @@ public class ProgressBar extends View {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:08.238 -0400", hash_original_method = "3733E64362DE34A69671D2EF5503886A", hash_generated_method = "BD4DC1E61E121F1C6E39011EC1421813")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:08.042 -0400", hash_original_method = "3733E64362DE34A69671D2EF5503886A", hash_generated_method = "C37D441D3194A061E640022EE5B1530A")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public void setProgressDrawable(Drawable d) {
         dsTaint.addTaint(d.dsTaint);
@@ -423,7 +425,7 @@ public class ProgressBar extends View {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:08.238 -0400", hash_original_method = "BC108B758414D6B13292C41A47E0F703", hash_generated_method = "A26D2C3B6AF2E37DE10C954FD72DBF92")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:08.042 -0400", hash_original_method = "BC108B758414D6B13292C41A47E0F703", hash_generated_method = "DA11C1FDCFD6158B772D4EB442A9DC9B")
     @DSModeled(DSC.SAFE)
      Drawable getCurrentDrawable() {
         return (Drawable)dsTaint.getTaint();
@@ -432,12 +434,12 @@ public class ProgressBar extends View {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:08.238 -0400", hash_original_method = "56BA1F17FA722E2B64538801F5E2971D", hash_generated_method = "6522CCF317AB59C6BEB496330ED37487")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:08.042 -0400", hash_original_method = "56BA1F17FA722E2B64538801F5E2971D", hash_generated_method = "D06AF9D67CAF45A7B3A63BEF78F640FF")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     @Override
     protected boolean verifyDrawable(Drawable who) {
         dsTaint.addTaint(who.dsTaint);
-        boolean var5B9EE4C74328F86B7CFFFC48CC55DAFD_1119734234 = (who == mProgressDrawable || who == mIndeterminateDrawable
+        boolean var5B9EE4C74328F86B7CFFFC48CC55DAFD_1201561307 = (who == mProgressDrawable || who == mIndeterminateDrawable
                 || super.verifyDrawable(who));
         return dsTaint.getTaintBoolean();
         // ---------- Original Method ----------
@@ -446,8 +448,8 @@ public class ProgressBar extends View {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:08.238 -0400", hash_original_method = "7333172C31835F46D838DB3DB892DD55", hash_generated_method = "13B88CB363AEF610D026BF138CE57FEE")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:08.043 -0400", hash_original_method = "7333172C31835F46D838DB3DB892DD55", hash_generated_method = "787AD68239E9E5B97EC1726229EFB8B1")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     @Override
     public void jumpDrawablesToCurrentState() {
         super.jumpDrawablesToCurrentState();
@@ -460,8 +462,8 @@ public class ProgressBar extends View {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:08.238 -0400", hash_original_method = "9D88EC1BAB8B30E9973F963BD590322C", hash_generated_method = "1E0102F5CF19DA7941A6A31B5DE66FBE")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:08.043 -0400", hash_original_method = "9D88EC1BAB8B30E9973F963BD590322C", hash_generated_method = "E90B41141854785CFB2802E07DE0408A")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     @Override
     public void postInvalidate() {
         {
@@ -474,18 +476,18 @@ public class ProgressBar extends View {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:08.238 -0400", hash_original_method = "10671D93E2F61D98C60CD8288CC260A2", hash_generated_method = "68496051B83F34A6E886DDD23967D8CC")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:08.043 -0400", hash_original_method = "10671D93E2F61D98C60CD8288CC260A2", hash_generated_method = "15E5AE8ADC3B6E0DBE9587698327AF0D")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     private synchronized void doRefreshProgress(int id, int progress, boolean fromUser,
             boolean callBackToApp) {
-        dsTaint.addTaint(id);
         dsTaint.addTaint(progress);
-        dsTaint.addTaint(fromUser);
+        dsTaint.addTaint(id);
         dsTaint.addTaint(callBackToApp);
+        dsTaint.addTaint(fromUser);
         float scale;
         scale = (float) progress / (float) mMax;
         scale = 0;
-        final Drawable d;
+        Drawable d;
         d = mCurrentDrawable;
         {
             Drawable progressDrawable;
@@ -493,7 +495,7 @@ public class ProgressBar extends View {
             {
                 progressDrawable = ((LayerDrawable) d).findDrawableByLayerId(id);
             } //End block
-            final int level;
+            int level;
             level = (int) (scale * MAX_LEVEL);
             (progressDrawable != null ? progressDrawable : d).setLevel(level);
         } //End block
@@ -522,14 +524,14 @@ public class ProgressBar extends View {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:08.239 -0400", hash_original_method = "1EE4C81513694B44BBA27F5A11B0191B", hash_generated_method = "AB30230E1A0220F1391C4C742914E103")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:08.043 -0400", hash_original_method = "1EE4C81513694B44BBA27F5A11B0191B", hash_generated_method = "6DFC3664EEE8E302C0B387B882143118")
     //DSFIXME:  CODE0002: Requires DSC value to be set
      void onProgressRefresh(float scale, boolean fromUser) {
         //DSFIXME:  CODE0009: Possible callback target function detected
         dsTaint.addTaint(scale);
         dsTaint.addTaint(fromUser);
         {
-            boolean varFEF5E81D9E4B252970529F0E4C094F45_1463310934 = (AccessibilityManager.getInstance(mContext).isEnabled());
+            boolean varFEF5E81D9E4B252970529F0E4C094F45_1771652867 = (AccessibilityManager.getInstance(mContext).isEnabled());
             {
                 scheduleAccessibilityEventSender();
             } //End block
@@ -541,14 +543,14 @@ public class ProgressBar extends View {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:08.239 -0400", hash_original_method = "6344B397C965EAD8A2329C40E25F1FFC", hash_generated_method = "33BE478B3653A0F8392003C351272B29")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:08.044 -0400", hash_original_method = "6344B397C965EAD8A2329C40E25F1FFC", hash_generated_method = "0B041C2B910D29F34F2CD411E5DB8699")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     private synchronized void refreshProgress(int id, int progress, boolean fromUser) {
-        dsTaint.addTaint(id);
         dsTaint.addTaint(progress);
+        dsTaint.addTaint(id);
         dsTaint.addTaint(fromUser);
         {
-            boolean var1CC5D58891D5AD9A5F4B0AE57801D9FB_1460155391 = (mUiThreadId == Thread.currentThread().getId());
+            boolean var1CC5D58891D5AD9A5F4B0AE57801D9FB_819021722 = (mUiThreadId == Thread.currentThread().getId());
             {
                 doRefreshProgress(id, progress, fromUser, true);
             } //End block
@@ -582,8 +584,8 @@ public class ProgressBar extends View {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:08.239 -0400", hash_original_method = "E60A634EF77869D698E2255CD3404933", hash_generated_method = "B4D0907FC2C8352C22B6FAA2D53FE6F1")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:08.044 -0400", hash_original_method = "E60A634EF77869D698E2255CD3404933", hash_generated_method = "6A7024C8F4DEBABEB6D7B8111D2FD98E")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     @android.view.RemotableViewMethod
     public synchronized void setProgress(int progress) {
         dsTaint.addTaint(progress);
@@ -593,8 +595,8 @@ public class ProgressBar extends View {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:08.239 -0400", hash_original_method = "65EDABD4A3EBF7E0899598C1A747DEC8", hash_generated_method = "5298BC1FFAC4AEF5DC27399EEDD2FBAF")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:08.044 -0400", hash_original_method = "65EDABD4A3EBF7E0899598C1A747DEC8", hash_generated_method = "55A1B8B597832EB6652C0921F49ECBEA")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     @android.view.RemotableViewMethod
     synchronized void setProgress(int progress, boolean fromUser) {
         dsTaint.addTaint(progress);
@@ -625,8 +627,8 @@ public class ProgressBar extends View {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:08.239 -0400", hash_original_method = "9F9AE189F8359350B1506E3BE664E8EE", hash_generated_method = "A5948C0CC9859A204455DAED466A52AA")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:08.045 -0400", hash_original_method = "9F9AE189F8359350B1506E3BE664E8EE", hash_generated_method = "23A1767233B15E71054D9EEAABA96496")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     @android.view.RemotableViewMethod
     public synchronized void setSecondaryProgress(int secondaryProgress) {
         dsTaint.addTaint(secondaryProgress);
@@ -656,7 +658,7 @@ public class ProgressBar extends View {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:08.239 -0400", hash_original_method = "BF818051FE207A57D09CC2C24E2066F6", hash_generated_method = "1A9EFD67669D350298EA8F02E944A039")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:08.045 -0400", hash_original_method = "BF818051FE207A57D09CC2C24E2066F6", hash_generated_method = "DD091EBD6E21FB32EE083F0B398B0042")
     @DSModeled(DSC.SAFE)
     @ViewDebug.ExportedProperty(category = "progress")
     public synchronized int getProgress() {
@@ -666,7 +668,7 @@ public class ProgressBar extends View {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:08.239 -0400", hash_original_method = "0E2189FB3CB300C00977FC2C3BDB4D4B", hash_generated_method = "F82B3E4B6B40E9550F9F6628E7B42D09")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:08.045 -0400", hash_original_method = "0E2189FB3CB300C00977FC2C3BDB4D4B", hash_generated_method = "EB0A3EF64CD7C2B3737C9C89E86CFF1D")
     @DSModeled(DSC.SAFE)
     @ViewDebug.ExportedProperty(category = "progress")
     public synchronized int getSecondaryProgress() {
@@ -676,7 +678,7 @@ public class ProgressBar extends View {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:08.239 -0400", hash_original_method = "6E6A982D82D781B4C4E0B14E6160A2E7", hash_generated_method = "10D74DFFF88AF6611D501B0721763B74")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:08.045 -0400", hash_original_method = "6E6A982D82D781B4C4E0B14E6160A2E7", hash_generated_method = "1995EE05AA210998EF8BC69D1FE13EF0")
     @DSModeled(DSC.SAFE)
     @ViewDebug.ExportedProperty(category = "progress")
     public synchronized int getMax() {
@@ -686,8 +688,8 @@ public class ProgressBar extends View {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:08.239 -0400", hash_original_method = "DB535D9F1C65E31A54636A6B02096562", hash_generated_method = "F343C75C9FDE30567F8029A1E1EE940B")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:08.045 -0400", hash_original_method = "DB535D9F1C65E31A54636A6B02096562", hash_generated_method = "C82D32A73D4CAD18ABD2361C219FC246")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     @android.view.RemotableViewMethod
     public synchronized void setMax(int max) {
         dsTaint.addTaint(max);
@@ -713,8 +715,8 @@ public class ProgressBar extends View {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:08.239 -0400", hash_original_method = "1E5C167C76FF3FF0E5E9EED4F2394FD5", hash_generated_method = "E540420188776C39F36B169681785A5E")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:08.046 -0400", hash_original_method = "1E5C167C76FF3FF0E5E9EED4F2394FD5", hash_generated_method = "9C23357632B086CA53844833C2D96D27")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     public synchronized final void incrementProgressBy(int diff) {
         dsTaint.addTaint(diff);
         setProgress(mProgress + diff);
@@ -723,8 +725,8 @@ public class ProgressBar extends View {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:08.239 -0400", hash_original_method = "33F180031B438855CD8341D942A736A2", hash_generated_method = "658E8C7D6C918A9344B878440BEAB932")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:08.046 -0400", hash_original_method = "33F180031B438855CD8341D942A736A2", hash_generated_method = "AC197061954FB146665BBA4168021B1D")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     public synchronized final void incrementSecondaryProgressBy(int diff) {
         dsTaint.addTaint(diff);
         setSecondaryProgress(mSecondaryProgress + diff);
@@ -733,11 +735,11 @@ public class ProgressBar extends View {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:08.240 -0400", hash_original_method = "F5167F20A872A63C36DAF85A2B000FB5", hash_generated_method = "38F37C97766EE86BE8D342A0CD2E226F")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:08.046 -0400", hash_original_method = "F5167F20A872A63C36DAF85A2B000FB5", hash_generated_method = "FB4DBC4EE421DF12C28FDB7073B73D50")
     //DSFIXME:  CODE0002: Requires DSC value to be set
      void startAnimation() {
         {
-            boolean varEB2DA232CDC62C684F55F26E8E4CF877_1785505911 = (getVisibility() != VISIBLE);
+            boolean varEB2DA232CDC62C684F55F26E8E4CF877_1034902388 = (getVisibility() != VISIBLE);
         } //End collapsed parenthetic
         {
             mShouldStartAnimationDrawable = true;
@@ -779,8 +781,8 @@ public class ProgressBar extends View {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:08.240 -0400", hash_original_method = "3AFE1BBA347326120AD78BEE94F7B2A6", hash_generated_method = "BBE50C9F5CF1D927CCC5F7ADB0F2B46E")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:08.046 -0400", hash_original_method = "3AFE1BBA347326120AD78BEE94F7B2A6", hash_generated_method = "A23A36E546002B56E789E6B1959E55BE")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
      void stopAnimation() {
         mAnimation = null;
         mTransformation = null;
@@ -800,7 +802,7 @@ public class ProgressBar extends View {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:08.240 -0400", hash_original_method = "2C6481DDCCEAC913795356C9BF1AF628", hash_generated_method = "084DD1A175B4A57CD663847655FA277E")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:08.047 -0400", hash_original_method = "2C6481DDCCEAC913795356C9BF1AF628", hash_generated_method = "98C0D27C587C4CDF7DDFA11AC2FF23E8")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public void setInterpolator(Context context, int resID) {
         dsTaint.addTaint(context.dsTaint);
@@ -811,7 +813,7 @@ public class ProgressBar extends View {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:08.240 -0400", hash_original_method = "7D5A9A852D608ADF508B994526BF9EAC", hash_generated_method = "8BFFA42E2F11EC2F4AA064053DB323E7")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:08.047 -0400", hash_original_method = "7D5A9A852D608ADF508B994526BF9EAC", hash_generated_method = "A14ED552F9DB6BE8496AFC6BEA170232")
     @DSModeled(DSC.SAFE)
     public void setInterpolator(Interpolator interpolator) {
         dsTaint.addTaint(interpolator.dsTaint);
@@ -820,7 +822,7 @@ public class ProgressBar extends View {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:08.240 -0400", hash_original_method = "8AA04851FFB5BE49EA5890940035B142", hash_generated_method = "68BD8EAF0EBFDD77CF24F1750A8A54DC")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:08.047 -0400", hash_original_method = "8AA04851FFB5BE49EA5890940035B142", hash_generated_method = "76053164EB61152210D7C18D58A6F349")
     @DSModeled(DSC.SAFE)
     public Interpolator getInterpolator() {
         return (Interpolator)dsTaint.getTaint();
@@ -829,14 +831,14 @@ public class ProgressBar extends View {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:08.240 -0400", hash_original_method = "EC8B18EE88EE8E09369A36DBF52DF684", hash_generated_method = "4C678A727829AF3444982347244256E7")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:08.047 -0400", hash_original_method = "EC8B18EE88EE8E09369A36DBF52DF684", hash_generated_method = "99A77593FD653A1B3C5D7059F9D7DE0C")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     @Override
     @RemotableViewMethod
     public void setVisibility(int v) {
         dsTaint.addTaint(v);
         {
-            boolean var4AC28F1E2836D09E4E72523D7E694F40_1641439405 = (getVisibility() != v);
+            boolean var4AC28F1E2836D09E4E72523D7E694F40_1584610045 = (getVisibility() != v);
             {
                 super.setVisibility(v);
                 {
@@ -863,8 +865,8 @@ public class ProgressBar extends View {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:08.240 -0400", hash_original_method = "E937F441086D9A40C4DA651781180A92", hash_generated_method = "D5A1DF053AE6EB17BEDB546D97AEBCCC")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:08.047 -0400", hash_original_method = "E937F441086D9A40C4DA651781180A92", hash_generated_method = "956948A4E833E8A42507B2D0ADCE0F26")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     @Override
     protected void onVisibilityChanged(View changedView, int visibility) {
         //DSFIXME:  CODE0009: Possible callback target function detected
@@ -891,20 +893,20 @@ public class ProgressBar extends View {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:08.240 -0400", hash_original_method = "51F010448C03C2EA1E2B7053B0DCB7DE", hash_generated_method = "9A6DF4E9A2A419087C9C89B7B9F6E205")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:08.048 -0400", hash_original_method = "51F010448C03C2EA1E2B7053B0DCB7DE", hash_generated_method = "3749820AEDF220E6801CB4DE70CD7355")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     @Override
     public void invalidateDrawable(Drawable dr) {
         dsTaint.addTaint(dr.dsTaint);
         {
             {
-                boolean varD1865A1D464E11906E399FDFD0B19F2A_1174315446 = (verifyDrawable(dr));
+                boolean varD1865A1D464E11906E399FDFD0B19F2A_1552355887 = (verifyDrawable(dr));
                 {
-                    final Rect dirty;
+                    Rect dirty;
                     dirty = dr.getBounds();
-                    final int scrollX;
+                    int scrollX;
                     scrollX = mScrollX + mPaddingLeft;
-                    final int scrollY;
+                    int scrollY;
                     scrollY = mScrollY + mPaddingTop;
                     invalidate(dirty.left + scrollX, dirty.top + scrollY,
                         dirty.right + scrollX, dirty.bottom + scrollY);
@@ -929,14 +931,14 @@ public class ProgressBar extends View {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:08.240 -0400", hash_original_method = "74277B895F883AA5B2EB254A27C149C7", hash_generated_method = "65F5F456C413319AD36E0AB3D4EEA54B")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:08.048 -0400", hash_original_method = "74277B895F883AA5B2EB254A27C149C7", hash_generated_method = "48976378A092349B8E4979539204D540")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     @Override
     public int getResolvedLayoutDirection(Drawable who) {
         dsTaint.addTaint(who.dsTaint);
         {
-            Object varAFC6EB2C684D509A17B3A4EFF5D9CB9D_75129787 = (getResolvedLayoutDirection());
-            Object var03FD24A395AACAA1B88D723AD820AD48_1126674070 = (super.getResolvedLayoutDirection(who));
+            Object varAFC6EB2C684D509A17B3A4EFF5D9CB9D_888957580 = (getResolvedLayoutDirection());
+            Object var03FD24A395AACAA1B88D723AD820AD48_1009839703 = (super.getResolvedLayoutDirection(who));
         } //End flattened ternary
         return dsTaint.getTaintInt();
         // ---------- Original Method ----------
@@ -945,14 +947,14 @@ public class ProgressBar extends View {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:08.240 -0400", hash_original_method = "69EE8DE1AB95A9498391F63C2C373DBD", hash_generated_method = "8B361E56A8B1B8821BA106C80FEA8BB4")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:08.048 -0400", hash_original_method = "69EE8DE1AB95A9498391F63C2C373DBD", hash_generated_method = "5E9A16778128982ED368F6FEAF18809D")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     @Override
     protected void onSizeChanged(int w, int h, int oldw, int oldh) {
         //DSFIXME:  CODE0009: Possible callback target function detected
         dsTaint.addTaint(w);
-        dsTaint.addTaint(oldw);
         dsTaint.addTaint(oldh);
+        dsTaint.addTaint(oldw);
         dsTaint.addTaint(h);
         updateDrawableBounds(w, h);
         // ---------- Original Method ----------
@@ -960,8 +962,8 @@ public class ProgressBar extends View {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:08.241 -0400", hash_original_method = "EA480A5BB3C1237E93332F6C8EE84591", hash_generated_method = "5CDF84057D6FFD9CB2D463D0FFBF924D")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:08.049 -0400", hash_original_method = "EA480A5BB3C1237E93332F6C8EE84591", hash_generated_method = "D951048AC2D0136E197C83C31B8E8C21")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     private void updateDrawableBounds(int w, int h) {
         dsTaint.addTaint(w);
         dsTaint.addTaint(h);
@@ -975,23 +977,23 @@ public class ProgressBar extends View {
         left = 0;
         {
             {
-                final int intrinsicWidth;
+                int intrinsicWidth;
                 intrinsicWidth = mIndeterminateDrawable.getIntrinsicWidth();
-                final int intrinsicHeight;
+                int intrinsicHeight;
                 intrinsicHeight = mIndeterminateDrawable.getIntrinsicHeight();
-                final float intrinsicAspect;
+                float intrinsicAspect;
                 intrinsicAspect = (float) intrinsicWidth / intrinsicHeight;
-                final float boundAspect;
+                float boundAspect;
                 boundAspect = (float) w / h;
                 {
                     {
-                        final int width;
+                        int width;
                         width = (int) (h * intrinsicAspect);
                         left = (w - width) / 2;
                         right = left + width;
                     } //End block
                     {
-                        final int height;
+                        int height;
                         height = (int) (w * (1 / intrinsicAspect));
                         top = (h - height) / 2;
                         bottom = top + height;
@@ -1008,7 +1010,7 @@ public class ProgressBar extends View {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:08.241 -0400", hash_original_method = "16CD7BB578E96B322FC9201A377B65CC", hash_generated_method = "3B5D14AF5F0A5EFA0D422089CF09978C")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:08.049 -0400", hash_original_method = "16CD7BB578E96B322FC9201A377B65CC", hash_generated_method = "BDF46F4C9389DE589225796FCB084F59")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     @Override
     protected synchronized void onDraw(Canvas canvas) {
@@ -1036,7 +1038,7 @@ public class ProgressBar extends View {
                     mInDrawing = false;
                 } //End block
                 {
-                    boolean var3836B93166D135D378CFC1C2C62A0477_1378158563 = (SystemClock.uptimeMillis() - mLastDrawTime >= mAnimationResolution);
+                    boolean var3836B93166D135D378CFC1C2C62A0477_2044402005 = (SystemClock.uptimeMillis() - mLastDrawTime >= mAnimationResolution);
                     {
                         mLastDrawTime = SystemClock.uptimeMillis();
                         postInvalidateDelayed(mAnimationResolution);
@@ -1055,7 +1057,7 @@ public class ProgressBar extends View {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:08.241 -0400", hash_original_method = "6FFAE46060D92EDBE1BD141B1F5C353A", hash_generated_method = "C1706EF0D26B81DE5AC7C222CBFE853D")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:08.050 -0400", hash_original_method = "6FFAE46060D92EDBE1BD141B1F5C353A", hash_generated_method = "2069D58563BF974397ECB6093324F12B")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     @Override
     protected synchronized void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
@@ -1093,8 +1095,8 @@ public class ProgressBar extends View {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:08.241 -0400", hash_original_method = "568F14E497668D52F70AE96AA5EB6F88", hash_generated_method = "65207BD8CBF6CCCA0D4B41EF86778E98")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:08.050 -0400", hash_original_method = "568F14E497668D52F70AE96AA5EB6F88", hash_generated_method = "2B34FA3925633B97C3B9967238FEABD8")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     @Override
     protected void drawableStateChanged() {
         super.drawableStateChanged();
@@ -1105,19 +1107,19 @@ public class ProgressBar extends View {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:08.241 -0400", hash_original_method = "952B851172F804A1D432AC87BADE94E9", hash_generated_method = "458AFE25A1A9460F1C5786F05F9D8A8B")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:08.051 -0400", hash_original_method = "952B851172F804A1D432AC87BADE94E9", hash_generated_method = "8C1BEC8D24D71CE90E8BC14C3B443EF0")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     private void updateDrawableState() {
         int[] state;
         state = getDrawableState();
         {
-            boolean varC8B5BBFB2522EFF4A32AE45BFE86AD14_489343432 = (mProgressDrawable != null && mProgressDrawable.isStateful());
+            boolean varC8B5BBFB2522EFF4A32AE45BFE86AD14_1100934695 = (mProgressDrawable != null && mProgressDrawable.isStateful());
             {
                 mProgressDrawable.setState(state);
             } //End block
         } //End collapsed parenthetic
         {
-            boolean varDF233AA74F13D8A45ED1CBF7F222603B_1571575609 = (mIndeterminateDrawable != null && mIndeterminateDrawable.isStateful());
+            boolean varDF233AA74F13D8A45ED1CBF7F222603B_865977535 = (mIndeterminateDrawable != null && mIndeterminateDrawable.isStateful());
             {
                 mIndeterminateDrawable.setState(state);
             } //End block
@@ -1133,8 +1135,8 @@ public class ProgressBar extends View {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:08.241 -0400", hash_original_method = "875308A47ADC87038CC9E153A4D8FE71", hash_generated_method = "3D5F79AA714EF9B5C819F03A5231670F")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:08.051 -0400", hash_original_method = "875308A47ADC87038CC9E153A4D8FE71", hash_generated_method = "7BBDFA4F7663574AEDF59A9E1A756963")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     @Override
     public Parcelable onSaveInstanceState() {
         //DSFIXME:  CODE0009: Possible callback target function detected
@@ -1154,7 +1156,7 @@ public class ProgressBar extends View {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:08.241 -0400", hash_original_method = "A42CFAF758710477BAC4A7B2A0C98761", hash_generated_method = "D79A8B644E9265E99112AC7BD3101138")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:08.051 -0400", hash_original_method = "A42CFAF758710477BAC4A7B2A0C98761", hash_generated_method = "575C676E27AAF4492DB4BEB06AC34494")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     @Override
     public void onRestoreInstanceState(Parcelable state) {
@@ -1173,8 +1175,8 @@ public class ProgressBar extends View {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:08.242 -0400", hash_original_method = "608AE3D8DA74959AA8F2204845C7317D", hash_generated_method = "87B0A5599C9513623A2847B9C7C8243B")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:08.051 -0400", hash_original_method = "608AE3D8DA74959AA8F2204845C7317D", hash_generated_method = "AF5D2862F20D4786D23B7B35E3696FCA")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     @Override
     protected void onAttachedToWindow() {
         //DSFIXME:  CODE0009: Possible callback target function detected
@@ -1190,8 +1192,8 @@ public class ProgressBar extends View {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:08.242 -0400", hash_original_method = "3E30480EE15E7D073BA14A1FE62DC464", hash_generated_method = "0548DFF678BA07A993D58345566F6F16")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:08.052 -0400", hash_original_method = "3E30480EE15E7D073BA14A1FE62DC464", hash_generated_method = "2DB66FDCAA43B67C9554732958CC5D6A")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     @Override
     protected void onDetachedFromWindow() {
         //DSFIXME:  CODE0009: Possible callback target function detected
@@ -1219,8 +1221,8 @@ public class ProgressBar extends View {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:08.242 -0400", hash_original_method = "D1990D7DB1A5D8E4C14ADC3323533C4A", hash_generated_method = "E2FDBE9276CCFC61585610090502DA7E")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:08.052 -0400", hash_original_method = "D1990D7DB1A5D8E4C14ADC3323533C4A", hash_generated_method = "E88210FE34815D0C6C7C36F12B8C141D")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     @Override
     public void onInitializeAccessibilityEvent(AccessibilityEvent event) {
         //DSFIXME:  CODE0009: Possible callback target function detected
@@ -1235,8 +1237,8 @@ public class ProgressBar extends View {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:08.242 -0400", hash_original_method = "20F0DBCD6142D6C8A8DBD6A9085999AF", hash_generated_method = "F1A642442A515DE83B5E14957A32F211")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:08.052 -0400", hash_original_method = "20F0DBCD6142D6C8A8DBD6A9085999AF", hash_generated_method = "60F29FAE9C16BE6E15DFD777D11B9B28")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     private void scheduleAccessibilityEventSender() {
         {
             mAccessibilityEventSender = new AccessibilityEventSender();
@@ -1260,11 +1262,11 @@ public class ProgressBar extends View {
         private int mProgress;
         private boolean mFromUser;
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:08.242 -0400", hash_original_method = "84E6436ACAD7BA9E1C46F86F0883DFAC", hash_generated_method = "173F5780D0B2E55992B7F40776EA824E")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:08.052 -0400", hash_original_method = "84E6436ACAD7BA9E1C46F86F0883DFAC", hash_generated_method = "C53BB09DF32699218A7339FDE2FA375D")
         @DSModeled(DSC.SAFE)
          RefreshProgressRunnable(int id, int progress, boolean fromUser) {
-            dsTaint.addTaint(id);
             dsTaint.addTaint(progress);
+            dsTaint.addTaint(id);
             dsTaint.addTaint(fromUser);
             // ---------- Original Method ----------
             //mId = id;
@@ -1273,8 +1275,8 @@ public class ProgressBar extends View {
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:08.242 -0400", hash_original_method = "336F21C38B52B9E04C9FE91372F32949", hash_generated_method = "EA766BF631E6D13DB3F80EC308B5CAF6")
-        @DSModeled(DSC.SAFE)
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:08.052 -0400", hash_original_method = "336F21C38B52B9E04C9FE91372F32949", hash_generated_method = "51D6F418402664ECDD0B0622CCD44263")
+        //DSFIXME:  CODE0002: Requires DSC value to be set
         public void run() {
             doRefreshProgress(mId, mProgress, mFromUser, true);
             mRefreshProgressRunnable = this;
@@ -1284,11 +1286,11 @@ public class ProgressBar extends View {
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:08.242 -0400", hash_original_method = "992C4D927E51E72BEA0F4017381D8EC2", hash_generated_method = "D5C1C9325CA05267AF826BE6596FEC1F")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:08.053 -0400", hash_original_method = "992C4D927E51E72BEA0F4017381D8EC2", hash_generated_method = "C20C840D9DA2D01CBEEC76A8FB62963D")
         @DSModeled(DSC.SAFE)
         public void setup(int id, int progress, boolean fromUser) {
-            dsTaint.addTaint(id);
             dsTaint.addTaint(progress);
+            dsTaint.addTaint(id);
             dsTaint.addTaint(fromUser);
             // ---------- Original Method ----------
             //mId = id;
@@ -1304,30 +1306,8 @@ public class ProgressBar extends View {
     static class SavedState extends BaseSavedState {
         int progress;
         int secondaryProgress;
-        public static final Parcelable.Creator<SavedState> CREATOR = new Parcelable.Creator<SavedState>() {            
-            @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:08.242 -0400", hash_original_method = "E26812089C072DDE1A14AECAA6CD6686", hash_generated_method = "6C6B0A873BD52E2752F88E9968D483CA")
-            @DSModeled(DSC.SAFE)
-            public SavedState createFromParcel(Parcel in) {
-                dsTaint.addTaint(in.dsTaint);
-                return (SavedState)dsTaint.getTaint();
-                // ---------- Original Method ----------
-                //return new SavedState(in);
-            }
-
-            
-            @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:08.242 -0400", hash_original_method = "2D31E9CBAAAE05B696D738324F87FF78", hash_generated_method = "1325778BB443F872513E70F9A19C5918")
-            @DSModeled(DSC.SAFE)
-            public SavedState[] newArray(int size) {
-                dsTaint.addTaint(size);
-                return (SavedState[])dsTaint.getTaint();
-                // ---------- Original Method ----------
-                //return new SavedState[size];
-            }
-
-            
-}; //Transformed anonymous class
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:08.242 -0400", hash_original_method = "89EB4EC154F05BF905ECA8E02BBD14BC", hash_generated_method = "BBD854AA7A117C86D9FBF897ADE36FE1")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:08.053 -0400", hash_original_method = "89EB4EC154F05BF905ECA8E02BBD14BC", hash_generated_method = "AB6E14E26999AC4D7AF1972CF22F65E4")
         //DSFIXME:  CODE0002: Requires DSC value to be set
          SavedState(Parcelable superState) {
             super(superState);
@@ -1336,7 +1316,7 @@ public class ProgressBar extends View {
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:08.242 -0400", hash_original_method = "9D61E8AE00F16C0432FB33E15078B080", hash_generated_method = "542133BF0F8718674B3E909BD510CC46")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:08.053 -0400", hash_original_method = "9D61E8AE00F16C0432FB33E15078B080", hash_generated_method = "7599CB9369733076EA9968A540FA9A51")
         //DSFIXME:  CODE0002: Requires DSC value to be set
         private SavedState(Parcel in) {
             super(in);
@@ -1349,8 +1329,8 @@ public class ProgressBar extends View {
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:08.242 -0400", hash_original_method = "47949C0C27B3FB6F61C4F76D6E851E0A", hash_generated_method = "9AE028587637FE64B737D53CFC81BCB5")
-        @DSModeled(DSC.SAFE)
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:08.053 -0400", hash_original_method = "47949C0C27B3FB6F61C4F76D6E851E0A", hash_generated_method = "A689BA23AD72C9120C382BF6071D0579")
+        //DSFIXME:  CODE0002: Requires DSC value to be set
         @Override
         public void writeToParcel(Parcel out, int flags) {
             dsTaint.addTaint(flags);
@@ -1365,14 +1345,44 @@ public class ProgressBar extends View {
         }
 
         
+        public static final Parcelable.Creator<SavedState> CREATOR = new Parcelable.Creator<SavedState>() {            
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:08.053 -0400", hash_original_method = "E26812089C072DDE1A14AECAA6CD6686", hash_generated_method = "39BCD7AD56D29AA778F178DE51A0B1AE")
+            //DSFIXME:  CODE0002: Requires DSC value to be set
+            public SavedState createFromParcel(Parcel in) {
+                dsTaint.addTaint(in.dsTaint);
+                SavedState var41ED8F3548F5060881BBE51AB9112A3F_1109693791 = (new SavedState(in));
+                return (SavedState)dsTaint.getTaint();
+                // ---------- Original Method ----------
+                //return new SavedState(in);
+            }
+
+            
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:08.054 -0400", hash_original_method = "2D31E9CBAAAE05B696D738324F87FF78", hash_generated_method = "58D254F4F67C9AA011A25933F6EC9F25")
+            //DSFIXME:  CODE0002: Requires DSC value to be set
+            public SavedState[] newArray(int size) {
+                dsTaint.addTaint(size);
+                SavedState[] varB5C72E5BBB181D4CA93D7BAA0B8B5E3D_964852385 = (new SavedState[size]);
+                return (SavedState[])dsTaint.getTaint();
+                // ---------- Original Method ----------
+                //return new SavedState[size];
+            }
+
+            
+}; //Transformed anonymous class
     }
 
 
     
     private class AccessibilityEventSender implements Runnable {
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:08.242 -0400", hash_original_method = "D171B097136E37DF343D32BCCA8935F6", hash_generated_method = "FEF1396D4F2C1FE3BF25A7F63E73834E")
-        @DSModeled(DSC.SAFE)
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:08.054 -0400", hash_original_method = "4C38828AD79D0D2F452DE2611F79503D", hash_generated_method = "4C38828AD79D0D2F452DE2611F79503D")
+                public AccessibilityEventSender ()
+        {
+        }
+
+
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:08.054 -0400", hash_original_method = "D171B097136E37DF343D32BCCA8935F6", hash_generated_method = "2295CF57C52786E3AEEE5BA06534C7E1")
+        //DSFIXME:  CODE0002: Requires DSC value to be set
         public void run() {
             sendAccessibilityEvent(AccessibilityEvent.TYPE_VIEW_SELECTED);
             // ---------- Original Method ----------
@@ -1384,6 +1394,8 @@ public class ProgressBar extends View {
 
 
     
+    private static final int MAX_LEVEL = 10000;
+    private static final int ANIMATION_RESOLUTION = 200;
+    private static final int TIMEOUT_SEND_ACCESSIBILITY_EVENT = 200;
 }
-
 

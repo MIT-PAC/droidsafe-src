@@ -1,18 +1,20 @@
 package android.widget;
 
 // Droidsafe Imports
+import droidsafe.helpers.*;
+import droidsafe.annotations.*;
+import droidsafe.runtime.*;
+
+// needed for enhanced for control translations
+import java.util.Iterator;
 import android.content.Context;
 import android.database.ContentObserver;
 import android.database.Cursor;
 import android.database.DataSetObserver;
 import android.os.Handler;
+import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
-import droidsafe.runtime.DroidSafeAndroidRuntime;
-// import Iterator to deal with enhanced for loop translation
 
 public abstract class CursorAdapter extends BaseAdapter implements Filterable, CursorFilter.CursorFilterClient {
     protected boolean mDataValid;
@@ -24,12 +26,9 @@ public abstract class CursorAdapter extends BaseAdapter implements Filterable, C
     protected DataSetObserver mDataSetObserver;
     protected CursorFilter mCursorFilter;
     protected FilterQueryProvider mFilterQueryProvider;
-    @Deprecated
-    public static final int FLAG_AUTO_REQUERY = 0x01;
-    public static final int FLAG_REGISTER_CONTENT_OBSERVER = 0x02;
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:07.486 -0400", hash_original_method = "8D1D2C00F3993B5859A91333170D7E0C", hash_generated_method = "4F2A01C071078168E200A801B0ED324D")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:06.395 -0400", hash_original_method = "8D1D2C00F3993B5859A91333170D7E0C", hash_generated_method = "240E88316E97004F1EF2760239CE6F5B")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     @Deprecated
     public CursorAdapter(Context context, Cursor c) {
         dsTaint.addTaint(c.dsTaint);
@@ -40,8 +39,8 @@ public abstract class CursorAdapter extends BaseAdapter implements Filterable, C
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:07.486 -0400", hash_original_method = "E3D9EE9ED812FDA16E5801F0DB803037", hash_generated_method = "FB576E56C40D23A46BB92EBABD77D576")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:06.395 -0400", hash_original_method = "E3D9EE9ED812FDA16E5801F0DB803037", hash_generated_method = "9E05FAF22F45B0A769AE4E5916907E23")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     public CursorAdapter(Context context, Cursor c, boolean autoRequery) {
         dsTaint.addTaint(c.dsTaint);
         dsTaint.addTaint(context.dsTaint);
@@ -52,8 +51,8 @@ public abstract class CursorAdapter extends BaseAdapter implements Filterable, C
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:07.486 -0400", hash_original_method = "ED5E23B4BC6F3954BD932E88BE4B619F", hash_generated_method = "268EC029ACA944AFAB3F512B4107E52C")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:06.395 -0400", hash_original_method = "ED5E23B4BC6F3954BD932E88BE4B619F", hash_generated_method = "983070289D36DC662B62D55802BC5AE3")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     public CursorAdapter(Context context, Cursor c, int flags) {
         dsTaint.addTaint(flags);
         dsTaint.addTaint(c.dsTaint);
@@ -64,8 +63,8 @@ public abstract class CursorAdapter extends BaseAdapter implements Filterable, C
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:07.486 -0400", hash_original_method = "8A3F140CB585945159B363BD7170B858", hash_generated_method = "50CDB5ED9BF42329DC6234F35C2D1E39")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:06.395 -0400", hash_original_method = "8A3F140CB585945159B363BD7170B858", hash_generated_method = "8F4F35E8C262AB3DDE5EA6BBFF189670")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     @Deprecated
     protected void init(Context context, Cursor c, boolean autoRequery) {
         dsTaint.addTaint(c.dsTaint);
@@ -73,11 +72,11 @@ public abstract class CursorAdapter extends BaseAdapter implements Filterable, C
         dsTaint.addTaint(autoRequery);
         init(context, c, autoRequery ? FLAG_AUTO_REQUERY : FLAG_REGISTER_CONTENT_OBSERVER);
         // ---------- Original Method ----------
-        //init(context, c, autoRequery ? FLAG_AU  mContext = context;TO_REQUERY : FLAG_REGISTER_CONTENT_OBSERVER);
+        //init(context, c, autoRequery ? FLAG_AUTO_REQUERY : FLAG_REGISTER_CONTENT_OBSERVER);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:07.486 -0400", hash_original_method = "E90B8606F5AC4DC9C7FA36F3DBF50072", hash_generated_method = "7D0E6179D63A84F4595044126FA1F4B3")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:06.396 -0400", hash_original_method = "E90B8606F5AC4DC9C7FA36F3DBF50072", hash_generated_method = "405FE53C1CF8F550A0590451EFB9A17F")
     //DSFIXME:  CODE0002: Requires DSC value to be set
      void init(Context context, Cursor c, int flags) {
         dsTaint.addTaint(flags);
@@ -111,7 +110,7 @@ public abstract class CursorAdapter extends BaseAdapter implements Filterable, C
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:07.487 -0400", hash_original_method = "ED4C67C6B1C11ED6A644F86CCA800916", hash_generated_method = "6AAAD0B295363A8D1B0A3A4BD004D799")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:06.396 -0400", hash_original_method = "ED4C67C6B1C11ED6A644F86CCA800916", hash_generated_method = "857AB707DF9A2F684228CDCBB30082CB")
     @DSModeled(DSC.SAFE)
     public Cursor getCursor() {
         return (Cursor)dsTaint.getTaint();
@@ -120,11 +119,11 @@ public abstract class CursorAdapter extends BaseAdapter implements Filterable, C
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:07.487 -0400", hash_original_method = "F232C8AA0135C20BD5AF7ACB0020E9DD", hash_generated_method = "D87307D4F0920A9BA9DD7C4EEC5C4E86")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:06.396 -0400", hash_original_method = "F232C8AA0135C20BD5AF7ACB0020E9DD", hash_generated_method = "6099C4B6BF19647BE819BB7A6D174124")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public int getCount() {
         {
-            int varA0B4CA491E47E321D82FB34DD7E77E5A_152646740 = (mCursor.getCount());
+            int varA0B4CA491E47E321D82FB34DD7E77E5A_799608109 = (mCursor.getCount());
         } //End block
         return dsTaint.getTaintInt();
         // ---------- Original Method ----------
@@ -136,8 +135,8 @@ public abstract class CursorAdapter extends BaseAdapter implements Filterable, C
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:07.487 -0400", hash_original_method = "0491DE82927D7739F3937D1F88D16ECE", hash_generated_method = "13D3F347BF64536B4528CE53FFA0A7E7")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:06.397 -0400", hash_original_method = "0491DE82927D7739F3937D1F88D16ECE", hash_generated_method = "5504C8D5BC6985F55D894EBD9AF2A538")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     public Object getItem(int position) {
         dsTaint.addTaint(position);
         {
@@ -154,15 +153,15 @@ public abstract class CursorAdapter extends BaseAdapter implements Filterable, C
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:07.487 -0400", hash_original_method = "34FC88027666F3EEA6FC8DBB36C510AF", hash_generated_method = "15774361F3EF03ABAB97D876750F73B7")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:06.398 -0400", hash_original_method = "34FC88027666F3EEA6FC8DBB36C510AF", hash_generated_method = "5E1EBB84233BE28E429DCDFE4F3448F0")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public long getItemId(int position) {
         dsTaint.addTaint(position);
         {
             {
-                boolean var648D0BE9FA954D6C39DFA90BE3F73F88_202157951 = (mCursor.moveToPosition(position));
+                boolean var648D0BE9FA954D6C39DFA90BE3F73F88_1949621995 = (mCursor.moveToPosition(position));
                 {
-                    long varF10BE29D713799722194E8ADDC7A0650_447519347 = (mCursor.getLong(mRowIDColumn));
+                    long varF10BE29D713799722194E8ADDC7A0650_2128189900 = (mCursor.getLong(mRowIDColumn));
                 } //End block
             } //End collapsed parenthetic
         } //End block
@@ -180,7 +179,7 @@ public abstract class CursorAdapter extends BaseAdapter implements Filterable, C
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:07.487 -0400", hash_original_method = "047E07C1992C7400A48E08BF432AD584", hash_generated_method = "DA90C3D565BEDC7BC16C2533428675F8")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:06.398 -0400", hash_original_method = "047E07C1992C7400A48E08BF432AD584", hash_generated_method = "5B276EFEB8BB899F96DBEA3B21268F19")
     @DSModeled(DSC.SAFE)
     @Override
     public boolean hasStableIds() {
@@ -190,17 +189,17 @@ public abstract class CursorAdapter extends BaseAdapter implements Filterable, C
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:07.487 -0400", hash_original_method = "04641394EE9B89BDCE0805D3C5BEBDA5", hash_generated_method = "05B66D1EE0651555592CB37A45B542AA")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:06.399 -0400", hash_original_method = "04641394EE9B89BDCE0805D3C5BEBDA5", hash_generated_method = "E6ADA6DFD5AECDB09D5D2D5B4E461593")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public View getView(int position, View convertView, ViewGroup parent) {
         dsTaint.addTaint(position);
         dsTaint.addTaint(parent.dsTaint);
         dsTaint.addTaint(convertView.dsTaint);
         {
-            if (DroidSafeAndroidRuntime.control)  throw new IllegalStateException("this should only be called when the cursor is valid");
+            if (DroidSafeAndroidRuntime.control) throw new IllegalStateException("this should only be called when the cursor is valid");
         } //End block
         {
-            boolean var1091E50B8E5D746C74AE8CDCECCDC654_1268203118 = (!mCursor.moveToPosition(position));
+            boolean var1091E50B8E5D746C74AE8CDCECCDC654_319740814 = (!mCursor.moveToPosition(position));
             {
                 if (DroidSafeAndroidRuntime.control) throw new IllegalStateException("couldn't move cursor to position " + position);
             } //End block
@@ -232,7 +231,7 @@ public abstract class CursorAdapter extends BaseAdapter implements Filterable, C
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:07.487 -0400", hash_original_method = "8987F0888A94923BAC3C282546957FFA", hash_generated_method = "78FD19EC51F66775F3BF9A221122FB3F")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:06.399 -0400", hash_original_method = "8987F0888A94923BAC3C282546957FFA", hash_generated_method = "245F235C4CD4893D0D05D6743F622E14")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     @Override
     public View getDropDownView(int position, View convertView, ViewGroup parent) {
@@ -271,13 +270,13 @@ public abstract class CursorAdapter extends BaseAdapter implements Filterable, C
     public abstract View newView(Context context, Cursor cursor, ViewGroup parent);
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:07.487 -0400", hash_original_method = "4EAF37DD2AC2B68CF9F2E847E9D5C2B4", hash_generated_method = "4A91F3A7856F9164D5A8D62557B1D1E6")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:06.399 -0400", hash_original_method = "4EAF37DD2AC2B68CF9F2E847E9D5C2B4", hash_generated_method = "FA2F017BF33F83C2F0AE3146BAB43804")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public View newDropDownView(Context context, Cursor cursor, ViewGroup parent) {
         dsTaint.addTaint(cursor.dsTaint);
         dsTaint.addTaint(context.dsTaint);
         dsTaint.addTaint(parent.dsTaint);
-        View varDE5BF6F3702D5D1345F5496759900472_428595807 = (newView(context, cursor, parent));
+        View varDE5BF6F3702D5D1345F5496759900472_641073145 = (newView(context, cursor, parent));
         return (View)dsTaint.getTaint();
         // ---------- Original Method ----------
         //return newView(context, cursor, parent);
@@ -287,8 +286,8 @@ public abstract class CursorAdapter extends BaseAdapter implements Filterable, C
     public abstract void bindView(View view, Context context, Cursor cursor);
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:07.487 -0400", hash_original_method = "A3DB89FF308CDDA8076F4DD4182DC99B", hash_generated_method = "ED70B831360B2CBEA03F3AAA6F231371")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:06.400 -0400", hash_original_method = "A3DB89FF308CDDA8076F4DD4182DC99B", hash_generated_method = "BCDF159A55F2A3393C19F47BD30B6D64")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     public void changeCursor(Cursor cursor) {
         dsTaint.addTaint(cursor.dsTaint);
         Cursor old;
@@ -304,7 +303,7 @@ public abstract class CursorAdapter extends BaseAdapter implements Filterable, C
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:07.487 -0400", hash_original_method = "3AE932C7E61F472FB82D7B0D8E632CE6", hash_generated_method = "DA5983086159C10FF83118C703202D28")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:06.400 -0400", hash_original_method = "3AE932C7E61F472FB82D7B0D8E632CE6", hash_generated_method = "65D9DB85FED05D13A5B8F4A2C990EF36")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public Cursor swapCursor(Cursor newCursor) {
         dsTaint.addTaint(newCursor.dsTaint);
@@ -332,12 +331,12 @@ public abstract class CursorAdapter extends BaseAdapter implements Filterable, C
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:07.488 -0400", hash_original_method = "AC3E4A96BAEBA3C91CE9B7B72B03BE17", hash_generated_method = "A72343E8DC400CB7FD24421E0B41F7F9")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:06.400 -0400", hash_original_method = "AC3E4A96BAEBA3C91CE9B7B72B03BE17", hash_generated_method = "EF3DC2168EBEF349E6A8FDE94A3C3B7F")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public CharSequence convertToString(Cursor cursor) {
         dsTaint.addTaint(cursor.dsTaint);
         {
-            Object varB5DB0C81520616337ADDDB30ACAAE7EA_624789019 = (cursor.toString());
+            Object varB5DB0C81520616337ADDDB30ACAAE7EA_1504407625 = (cursor.toString());
         } //End flattened ternary
         return dsTaint.getTaintString();
         // ---------- Original Method ----------
@@ -345,12 +344,12 @@ public abstract class CursorAdapter extends BaseAdapter implements Filterable, C
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:07.488 -0400", hash_original_method = "0F9BE7C57911E33C85760ED7E36C9D33", hash_generated_method = "8E4D1F4B2C8D0CB44793737FCD7A3C14")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:06.401 -0400", hash_original_method = "0F9BE7C57911E33C85760ED7E36C9D33", hash_generated_method = "A9878360BD31523B0D31C2B61DCA7993")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public Cursor runQueryOnBackgroundThread(CharSequence constraint) {
         dsTaint.addTaint(constraint);
         {
-            Cursor var803831B16D2557A6515F41928E23F369_346911478 = (mFilterQueryProvider.runQuery(constraint));
+            Cursor var803831B16D2557A6515F41928E23F369_373697134 = (mFilterQueryProvider.runQuery(constraint));
         } //End block
         return (Cursor)dsTaint.getTaint();
         // ---------- Original Method ----------
@@ -361,8 +360,8 @@ public abstract class CursorAdapter extends BaseAdapter implements Filterable, C
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:07.488 -0400", hash_original_method = "847708A1CBB9CABD379CEB5384747381", hash_generated_method = "642A2802D0E564F504F39C6D59B94DBD")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:06.401 -0400", hash_original_method = "847708A1CBB9CABD379CEB5384747381", hash_generated_method = "AF129AB77F377DF35D9429EA851DEA69")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     public Filter getFilter() {
         {
             mCursorFilter = new CursorFilter(this);
@@ -376,7 +375,7 @@ public abstract class CursorAdapter extends BaseAdapter implements Filterable, C
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:07.488 -0400", hash_original_method = "67EA54121BE0FFEF70F7156625E7E3CE", hash_generated_method = "182459B900F165437ADCD759030BEE8C")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:06.401 -0400", hash_original_method = "67EA54121BE0FFEF70F7156625E7E3CE", hash_generated_method = "7739ED694B3CD18B6A1C443EB93B3CD9")
     @DSModeled(DSC.SAFE)
     public FilterQueryProvider getFilterQueryProvider() {
         return (FilterQueryProvider)dsTaint.getTaint();
@@ -385,7 +384,7 @@ public abstract class CursorAdapter extends BaseAdapter implements Filterable, C
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:07.488 -0400", hash_original_method = "DB32599181A301EC3439063743E0023E", hash_generated_method = "DB78DF7F1DE3E9A34F128D7FA19E6914")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:06.402 -0400", hash_original_method = "DB32599181A301EC3439063743E0023E", hash_generated_method = "926EE32BB496D8B7045E577EDCB29610")
     @DSModeled(DSC.SAFE)
     public void setFilterQueryProvider(FilterQueryProvider filterQueryProvider) {
         dsTaint.addTaint(filterQueryProvider.dsTaint);
@@ -394,12 +393,12 @@ public abstract class CursorAdapter extends BaseAdapter implements Filterable, C
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:07.488 -0400", hash_original_method = "A04D68B5B58FA27E71C6ECAA728402A5", hash_generated_method = "29EE0C3A444D6979A74F39FC7C43D5BF")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:06.402 -0400", hash_original_method = "A04D68B5B58FA27E71C6ECAA728402A5", hash_generated_method = "095A672DD8C68B434750A14C91E8D78D")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     protected void onContentChanged() {
         //DSFIXME:  CODE0009: Possible callback target function detected
         {
-            boolean varDB256AB1A28B69FFDC6BECF06252DBB3_1308124113 = (mAutoRequery && mCursor != null && !mCursor.isClosed());
+            boolean varDB256AB1A28B69FFDC6BECF06252DBB3_1984906068 = (mAutoRequery && mCursor != null && !mCursor.isClosed());
             {
                 mDataValid = mCursor.requery();
             } //End block
@@ -414,7 +413,7 @@ public abstract class CursorAdapter extends BaseAdapter implements Filterable, C
     
     private class ChangeObserver extends ContentObserver {
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:07.488 -0400", hash_original_method = "E9F5B54480B866367BA64F4A5A962E11", hash_generated_method = "D2C33D19AFF856F92F1D5C6337C09649")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:06.402 -0400", hash_original_method = "E9F5B54480B866367BA64F4A5A962E11", hash_generated_method = "26A139A9C94CF802391CF18776297177")
         //DSFIXME:  CODE0002: Requires DSC value to be set
         public ChangeObserver() {
             super(new Handler());
@@ -422,7 +421,7 @@ public abstract class CursorAdapter extends BaseAdapter implements Filterable, C
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:07.488 -0400", hash_original_method = "0AAB5F0B0973D030DF154EF2BA0EE06F", hash_generated_method = "1766BB4DDD039EEA1A219E0359C6F50E")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:06.402 -0400", hash_original_method = "0AAB5F0B0973D030DF154EF2BA0EE06F", hash_generated_method = "734EC4B846BD9CD4571F46A7ABF54491")
         @DSModeled(DSC.SAFE)
         @Override
         public boolean deliverSelfNotifications() {
@@ -432,8 +431,8 @@ public abstract class CursorAdapter extends BaseAdapter implements Filterable, C
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:07.488 -0400", hash_original_method = "E96460F373279AF9AB8806E159ABA424", hash_generated_method = "C2833F2718F3371819CF64834D7DB415")
-        @DSModeled(DSC.SAFE)
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:06.403 -0400", hash_original_method = "E96460F373279AF9AB8806E159ABA424", hash_generated_method = "4DBE673DE1D01CE6347E62E9EA26C6D4")
+        //DSFIXME:  CODE0002: Requires DSC value to be set
         @Override
         public void onChange(boolean selfChange) {
             //DSFIXME:  CODE0009: Possible callback target function detected
@@ -450,8 +449,14 @@ public abstract class CursorAdapter extends BaseAdapter implements Filterable, C
     
     private class MyDataSetObserver extends DataSetObserver {
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:07.488 -0400", hash_original_method = "06FCBC692E549C3C9873F9D5CBAEB7B0", hash_generated_method = "CE8DE0B562E079D73274FF9F83438AF1")
-        @DSModeled(DSC.SAFE)
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:06.403 -0400", hash_original_method = "5E2A8F377B43602FCFED378011E19650", hash_generated_method = "5E2A8F377B43602FCFED378011E19650")
+                public MyDataSetObserver ()
+        {
+        }
+
+
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:06.403 -0400", hash_original_method = "06FCBC692E549C3C9873F9D5CBAEB7B0", hash_generated_method = "03FD84DC8C544DE0887FEB106D75CC8E")
+        //DSFIXME:  CODE0002: Requires DSC value to be set
         @Override
         public void onChanged() {
             //DSFIXME:  CODE0009: Possible callback target function detected
@@ -463,8 +468,8 @@ public abstract class CursorAdapter extends BaseAdapter implements Filterable, C
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:07.488 -0400", hash_original_method = "EAE7DF88825384424351353A02D60615", hash_generated_method = "6A71C12A4F78759E5E706D50DD9ECFE0")
-        @DSModeled(DSC.SAFE)
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:06.403 -0400", hash_original_method = "EAE7DF88825384424351353A02D60615", hash_generated_method = "A259386E221C67E9FE12B36668278306")
+        //DSFIXME:  CODE0002: Requires DSC value to be set
         @Override
         public void onInvalidated() {
             //DSFIXME:  CODE0009: Possible callback target function detected
@@ -480,6 +485,7 @@ public abstract class CursorAdapter extends BaseAdapter implements Filterable, C
 
 
     
+    @Deprecated public static final int FLAG_AUTO_REQUERY = 0x01;
+    public static final int FLAG_REGISTER_CONTENT_OBSERVER = 0x02;
 }
-
 

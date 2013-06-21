@@ -3,10 +3,10 @@ package javax.microedition.khronos.egl;
 // Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
+import droidsafe.runtime.*;
 
-// import Iterator to deal with enhanced for loop translation
+// needed for enhanced for control translations
 import java.util.Iterator;
-
 import java.lang.String;
 
 public interface EGL10 extends EGL {
@@ -112,4 +112,3 @@ public interface EGL10 extends EGL {
     boolean     eglWaitGL();
     boolean     eglWaitNative(int engine, Object bindTarget);
 }
-

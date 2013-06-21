@@ -57,28 +57,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 public abstract class AbsListView extends AdapterView<ListAdapter> implements TextWatcher, ViewTreeObserver.OnGlobalLayoutListener, Filter.FilterListener, ViewTreeObserver.OnTouchModeChangeListener, RemoteViewsAdapter.RemoteAdapterConnectionCallback {
-    public static int TRANSCRIPT_MODE_DISABLED = 0;
-    public static int TRANSCRIPT_MODE_NORMAL = 1;
-    public static int TRANSCRIPT_MODE_ALWAYS_SCROLL = 2;
-    static int TOUCH_MODE_REST = -1;
-    static int TOUCH_MODE_DOWN = 0;
-    static int TOUCH_MODE_TAP = 1;
-    static int TOUCH_MODE_DONE_WAITING = 2;
-    static int TOUCH_MODE_SCROLL = 3;
-    static int TOUCH_MODE_FLING = 4;
-    static int TOUCH_MODE_OVERSCROLL = 5;
-    static int TOUCH_MODE_OVERFLING = 6;
-    static int LAYOUT_NORMAL = 0;
-    static int LAYOUT_FORCE_TOP = 1;
-    static int LAYOUT_SET_SELECTION = 2;
-    static int LAYOUT_FORCE_BOTTOM = 3;
-    static int LAYOUT_SPECIFIC = 4;
-    static int LAYOUT_SYNC = 5;
-    static int LAYOUT_MOVE_SELECTION = 6;
-    public static int CHOICE_MODE_NONE = 0;
-    public static int CHOICE_MODE_SINGLE = 1;
-    public static int CHOICE_MODE_MULTIPLE = 2;
-    public static int CHOICE_MODE_MULTIPLE_MODAL = 3;
     int mChoiceMode = CHOICE_MODE_NONE;
     ActionMode mChoiceActionMode;
     MultiChoiceModeWrapper mMultiChoiceModeCallback;
@@ -130,15 +108,8 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
     int mResurrectToPosition = INVALID_POSITION;
     private ContextMenuInfo mContextMenuInfo = null;
     int mOverscrollMax;
-    static int OVERSCROLL_LIMIT_DIVISOR = 3;
-    private static int CHECK_POSITION_SEARCH_DISTANCE = 20;
-    private static int TOUCH_MODE_UNKNOWN = -1;
-    private static int TOUCH_MODE_ON = 0;
-    private static int TOUCH_MODE_OFF = 1;
     private int mLastTouchMode = TOUCH_MODE_UNKNOWN;
-    private static boolean PROFILE_SCROLLING = false;
     private boolean mScrollProfilingStarted = false;
-    private static boolean PROFILE_FLINGING = false;
     private boolean mFlingProfilingStarted = false;
     private StrictMode.Span mScrollStrictSpan = null;
     private StrictMode.Span mFlingStrictSpan = null;
@@ -164,7 +135,6 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
     boolean[] mIsScrap = new boolean[1];
     private boolean mPopupHidden;
     private int mActivePointerId = INVALID_POINTER;
-    private static int INVALID_POINTER = -1;
     int mOverscrollDistance;
     int mOverflingDistance;
     private EdgeEffect mEdgeGlowTop;
@@ -180,7 +150,7 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
     boolean mIsAttached;
     private int mLastHandledItemCount;
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 14:26:43.726 -0400", hash_original_method = "6A1152DD2F769DBF7D49F3027748695E", hash_generated_method = "1A883D1294E795BE38FA2A0BA9ECC3FA")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:05.876 -0400", hash_original_method = "6A1152DD2F769DBF7D49F3027748695E", hash_generated_method = "75868CF53E18E0F4AA03FDC7BDA68EB4")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public AbsListView(Context context) {
         super(context);
@@ -200,7 +170,7 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 14:26:43.736 -0400", hash_original_method = "7DDDAAAF35FACBC75E4AE745F69121D4", hash_generated_method = "99B06368A2016C1DBED5070511CAEA3B")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:05.877 -0400", hash_original_method = "7DDDAAAF35FACBC75E4AE745F69121D4", hash_generated_method = "C9D04A10D4B80B19A704E2CD9D9A82BE")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public AbsListView(Context context, AttributeSet attrs) {
         this(context, attrs, com.android.internal.R.attr.absListViewStyle);
@@ -210,7 +180,7 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 14:26:43.767 -0400", hash_original_method = "A8C0C093ECB8745800A88EB739981F47", hash_generated_method = "DED9ED439E9DFFBBBD628F06E8881FA8")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:05.877 -0400", hash_original_method = "A8C0C093ECB8745800A88EB739981F47", hash_generated_method = "9E8A2664842313499CD55BA90ECBFCA4")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public AbsListView(Context context, AttributeSet attrs, int defStyle) {
         super(context, attrs, defStyle);
@@ -259,7 +229,7 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 14:26:43.803 -0400", hash_original_method = "2C481DB3FCB8FF016FB8E3D34F80B2B8", hash_generated_method = "DCF0451A07C7627A62B77BF2B27704F2")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:05.878 -0400", hash_original_method = "2C481DB3FCB8FF016FB8E3D34F80B2B8", hash_generated_method = "A46123E89BB157CF7C93F7A05B67F91E")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     private void initAbsListView() {
         setClickable(true);
@@ -291,8 +261,8 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 14:26:43.815 -0400", hash_original_method = "3BD104A12D7CF3E01CAF1DA422C489F3", hash_generated_method = "49E4C3EEDA409DC13AA987494CC17B17")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:05.878 -0400", hash_original_method = "3BD104A12D7CF3E01CAF1DA422C489F3", hash_generated_method = "3DC0E706E2521C01E95A5DFA7B10157E")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     @Override
     public void setOverScrollMode(int mode) {
         dsTaint.addTaint(mode);
@@ -324,14 +294,14 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 14:26:43.833 -0400", hash_original_method = "2831A8F535381CCEFB0BADB6BC86E26A", hash_generated_method = "9A66170594810BD425E46BD859A8B8DE")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:05.878 -0400", hash_original_method = "2831A8F535381CCEFB0BADB6BC86E26A", hash_generated_method = "FD35BC541FCF2255DDFFF891D11548C0")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     @Override
     public void setAdapter(ListAdapter adapter) {
         dsTaint.addTaint(adapter.dsTaint);
         {
             {
-                boolean var38CEBABFDDE46DFC47E0A770A36F9546_759733239 = (mChoiceMode != CHOICE_MODE_NONE && mAdapter.hasStableIds() &&
+                boolean var38CEBABFDDE46DFC47E0A770A36F9546_2062119674 = (mChoiceMode != CHOICE_MODE_NONE && mAdapter.hasStableIds() &&
                     mCheckedIdStates == null);
                 {
                     mCheckedIdStates = new LongSparseArray<Integer>();
@@ -360,7 +330,7 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 14:26:43.839 -0400", hash_original_method = "5DFF60E6C611266C8D61B940778B8222", hash_generated_method = "3872D9127F163978E60E3B65E662B737")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:05.879 -0400", hash_original_method = "5DFF60E6C611266C8D61B940778B8222", hash_generated_method = "0674B18D8B6CC7298BA2A6E1CCF3DB4D")
     @DSModeled(DSC.SAFE)
     public int getCheckedItemCount() {
         return dsTaint.getTaintInt();
@@ -369,12 +339,12 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 14:26:43.846 -0400", hash_original_method = "76DE4C8AF2033C88DA13B2D6D79BE8CC", hash_generated_method = "4C04676F93745168D6F4C900884ECC87")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:05.879 -0400", hash_original_method = "76DE4C8AF2033C88DA13B2D6D79BE8CC", hash_generated_method = "5CE868E55445864D0B388DA7CFDFBB6D")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public boolean isItemChecked(int position) {
         dsTaint.addTaint(position);
         {
-            boolean var0D150F0C81FAF2A662314396EC0C31E7_1040331060 = (mCheckStates.get(position));
+            boolean var0D150F0C81FAF2A662314396EC0C31E7_485188872 = (mCheckStates.get(position));
         } //End block
         return dsTaint.getTaintBoolean();
         // ---------- Original Method ----------
@@ -385,13 +355,13 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 14:26:43.854 -0400", hash_original_method = "40A1040C0B9BA1980C4FD0733FBB2F2E", hash_generated_method = "D73B86D8442137B66098C59AF7DEC39D")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:05.879 -0400", hash_original_method = "40A1040C0B9BA1980C4FD0733FBB2F2E", hash_generated_method = "593A1D31AF60A35F8B4795CEFD2DF469")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public int getCheckedItemPosition() {
         {
-            boolean varA1B9DE9EDBC04ECFD56B33C2A5BF45B0_758700905 = (mChoiceMode == CHOICE_MODE_SINGLE && mCheckStates != null && mCheckStates.size() == 1);
+            boolean varA1B9DE9EDBC04ECFD56B33C2A5BF45B0_2056961112 = (mChoiceMode == CHOICE_MODE_SINGLE && mCheckStates != null && mCheckStates.size() == 1);
             {
-                int varD7BABAE4F11D1568725A045F030C9B34_606726361 = (mCheckStates.keyAt(0));
+                int varD7BABAE4F11D1568725A045F030C9B34_1747380224 = (mCheckStates.keyAt(0));
             } //End block
         } //End collapsed parenthetic
         return dsTaint.getTaintInt();
@@ -403,7 +373,7 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 14:26:43.860 -0400", hash_original_method = "DD9B0503EDD82432AE0B7C0599D4B447", hash_generated_method = "EC8BDEED1EEBFFC52C6C05D9A852C2AF")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:05.879 -0400", hash_original_method = "DD9B0503EDD82432AE0B7C0599D4B447", hash_generated_method = "4FE223AEE04118451493B2A01CBC7AEE")
     @DSModeled(DSC.SAFE)
     public SparseBooleanArray getCheckedItemPositions() {
         return (SparseBooleanArray)dsTaint.getTaint();
@@ -415,9 +385,12 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 14:26:43.891 -0400", hash_original_method = "C085907095DB552ED74D8B304576006A", hash_generated_method = "FED1747F93CAB28F4F6FF513EFC087EF")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:05.880 -0400", hash_original_method = "C085907095DB552ED74D8B304576006A", hash_generated_method = "EC399FB52DC0A0AB7993C80842DB3C47")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public long[] getCheckedItemIds() {
+        {
+            long[] var674FEB06102F8AD50D6DDBD530249D3A_430046665 = (new long[0]);
+        } //End block
         LongSparseArray<Integer> idStates;
         idStates = mCheckedIdStates;
         int count;
@@ -448,8 +421,8 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 14:26:43.903 -0400", hash_original_method = "A5D48B0328BC1A467504F22AFA94E40C", hash_generated_method = "5C7103E7897876658DAD3F77ABF29692")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:05.880 -0400", hash_original_method = "A5D48B0328BC1A467504F22AFA94E40C", hash_generated_method = "B4A93F25373379F44D7CE7CEDE8E78AC")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     public void clearChoices() {
         {
             mCheckStates.clear();
@@ -469,7 +442,7 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 14:26:43.946 -0400", hash_original_method = "43E07392067BD1BC5F99F3882FA40E88", hash_generated_method = "D1501EB283815096BDA25E4960C6D611")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:05.880 -0400", hash_original_method = "43E07392067BD1BC5F99F3882FA40E88", hash_generated_method = "398D6057B03DB78ED0023A92A1533BF7")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public void setItemChecked(int position, boolean value) {
         dsTaint.addTaint(position);
@@ -482,7 +455,7 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
             oldValue = mCheckStates.get(position);
             mCheckStates.put(position, value);
             {
-                boolean varDF5D6CF73909C5793DEDFF57AC70B3A9_432745302 = (mCheckedIdStates != null && mAdapter.hasStableIds());
+                boolean varDF5D6CF73909C5793DEDFF57AC70B3A9_1024958562 = (mCheckedIdStates != null && mAdapter.hasStableIds());
                 {
                     {
                         mCheckedIdStates.put(mAdapter.getItemId(position), position);
@@ -492,14 +465,6 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
                     } //End block
                 } //End block
             } //End collapsed parenthetic
-            {
-                {
-                    mCheckedItemCount++;
-                } //End block
-                {
-                    mCheckedItemCount--;
-                } //End block
-            } //End block
             {
                 long id;
                 id = mAdapter.getItemId(position);
@@ -511,7 +476,7 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
             boolean updateIds;
             updateIds = mCheckedIdStates != null && mAdapter.hasStableIds();
             {
-                boolean varE3E83AB27085DF4D75DE8758E514DAA9_680880614 = (value || isItemChecked(position));
+                boolean varE3E83AB27085DF4D75DE8758E514DAA9_623263634 = (value || isItemChecked(position));
                 {
                     mCheckStates.clear();
                     {
@@ -527,7 +492,7 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
                 mCheckedItemCount = 1;
             } //End block
             {
-                boolean var425458AA9F83015DB14C2404DEE4E159_299914530 = (mCheckStates.size() == 0 || !mCheckStates.valueAt(0));
+                boolean var425458AA9F83015DB14C2404DEE4E159_340467347 = (mCheckStates.size() == 0 || !mCheckStates.valueAt(0));
                 {
                     mCheckedItemCount = 0;
                 } //End block
@@ -543,12 +508,12 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 14:26:43.989 -0400", hash_original_method = "9A0165787640E5C3A3D1AC60426CC2CC", hash_generated_method = "DC866783D01202E11C79E3B81D2F4A8D")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:05.881 -0400", hash_original_method = "9A0165787640E5C3A3D1AC60426CC2CC", hash_generated_method = "077B04658C846DA28CA12C66F924EFB1")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     @Override
     public boolean performItemClick(View view, int position, long id) {
-        dsTaint.addTaint(position);
         dsTaint.addTaint(id);
+        dsTaint.addTaint(position);
         dsTaint.addTaint(view.dsTaint);
         boolean handled;
         handled = false;
@@ -561,7 +526,7 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
                 newValue = !mCheckStates.get(position, false);
                 mCheckStates.put(position, newValue);
                 {
-                    boolean varFFF95FDDB84D487F1FD71AE5B4D04DFA_932025408 = (mCheckedIdStates != null && mAdapter.hasStableIds());
+                    boolean varFFF95FDDB84D487F1FD71AE5B4D04DFA_671245984 = (mCheckedIdStates != null && mAdapter.hasStableIds());
                     {
                         {
                             mCheckedIdStates.put(mAdapter.getItemId(position), position);
@@ -571,12 +536,6 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
                         } //End block
                     } //End block
                 } //End collapsed parenthetic
-                {
-                    mCheckedItemCount++;
-                } //End block
-                {
-                    mCheckedItemCount--;
-                } //End block
                 {
                     mMultiChoiceModeCallback.onItemCheckedStateChanged(mChoiceActionMode,
                             position, id, newValue);
@@ -590,7 +549,7 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
                     mCheckStates.clear();
                     mCheckStates.put(position, true);
                     {
-                        boolean varD30D994107B77CF4004B51C1F80A4DE7_1087540884 = (mCheckedIdStates != null && mAdapter.hasStableIds());
+                        boolean varD30D994107B77CF4004B51C1F80A4DE7_133728855 = (mCheckedIdStates != null && mAdapter.hasStableIds());
                         {
                             mCheckedIdStates.clear();
                             mCheckedIdStates.put(mAdapter.getItemId(position), position);
@@ -599,7 +558,7 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
                     mCheckedItemCount = 1;
                 } //End block
                 {
-                    boolean var6ACBF7B7E15B02DF34CBCD44F94045DE_151545096 = (mCheckStates.size() == 0 || !mCheckStates.valueAt(0));
+                    boolean var6ACBF7B7E15B02DF34CBCD44F94045DE_223335383 = (mCheckStates.size() == 0 || !mCheckStates.valueAt(0));
                     {
                         mCheckedItemCount = 0;
                     } //End block
@@ -618,7 +577,7 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 14:26:44.004 -0400", hash_original_method = "8E2D8E05EEC3041F2430430C00E99F2E", hash_generated_method = "1992BBDB6D27971182BEA4F21A0CBAEB")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:05.881 -0400", hash_original_method = "8E2D8E05EEC3041F2430430C00E99F2E", hash_generated_method = "FAAB75BEB5332BAC271F01C472A5A516")
     @DSModeled(DSC.SAFE)
     public int getChoiceMode() {
         return dsTaint.getTaintInt();
@@ -627,7 +586,7 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 14:26:44.020 -0400", hash_original_method = "31284EBF9693FA29D08DAAB1651BB216", hash_generated_method = "C23B96B555C97D14F778DD6A237DB104")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:05.882 -0400", hash_original_method = "31284EBF9693FA29D08DAAB1651BB216", hash_generated_method = "FC6CE8AA84FF4A4C6B70C784EB242FE8")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public void setChoiceMode(int choiceMode) {
         dsTaint.addTaint(choiceMode);
@@ -640,7 +599,7 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
                 mCheckStates = new SparseBooleanArray();
             } //End block
             {
-                boolean var2BF65510232B6C8CFF89CFE72E6D8ACB_445385753 = (mCheckedIdStates == null && mAdapter != null && mAdapter.hasStableIds());
+                boolean var2BF65510232B6C8CFF89CFE72E6D8ACB_724990078 = (mCheckedIdStates == null && mAdapter != null && mAdapter.hasStableIds());
                 {
                     mCheckedIdStates = new LongSparseArray<Integer>();
                 } //End block
@@ -671,8 +630,8 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 14:26:44.027 -0400", hash_original_method = "AB030C487B8A76B7A3B990C85D8D5284", hash_generated_method = "754D74694E5FB533C363DCFF28525154")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:05.882 -0400", hash_original_method = "AB030C487B8A76B7A3B990C85D8D5284", hash_generated_method = "1D2FF1ADEDDEC5D69B54A26D4B2115CB")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     public void setMultiChoiceModeListener(MultiChoiceModeListener listener) {
         dsTaint.addTaint(listener.dsTaint);
         {
@@ -687,12 +646,12 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 14:26:44.035 -0400", hash_original_method = "34BF563ABF29C3DFDECFCC44CD785338", hash_generated_method = "A21836CA5802C813AEC674B8EC83C0C8")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:05.882 -0400", hash_original_method = "34BF563ABF29C3DFDECFCC44CD785338", hash_generated_method = "1711E0AAFDE08CD922E6DA0F6F3C8196")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     private boolean contentFits() {
         int childCount;
         childCount = getChildCount();
-        boolean varB916502A2FFF50967FBE5280BE01D3D7_1949522922 = (getChildAt(0).getTop() >= mListPadding.top &&
+        boolean varB916502A2FFF50967FBE5280BE01D3D7_66308943 = (getChildAt(0).getTop() >= mListPadding.top &&
                 getChildAt(childCount - 1).getBottom() <= getHeight() - mListPadding.bottom);
         return dsTaint.getTaintBoolean();
         // ---------- Original Method ----------
@@ -704,7 +663,7 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 14:26:44.042 -0400", hash_original_method = "595588F5399A1D343B61A8313A8ACA6F", hash_generated_method = "0E23521EB2703EA47442E602AB2A36DF")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:05.883 -0400", hash_original_method = "595588F5399A1D343B61A8313A8ACA6F", hash_generated_method = "B56B7D3695C707C646F246621661F149")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public void setFastScrollEnabled(boolean enabled) {
         dsTaint.addTaint(enabled);
@@ -734,8 +693,8 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 14:26:44.048 -0400", hash_original_method = "76A971EB75129863E10E67DBAAA59745", hash_generated_method = "B254D2BC8840A168FB78113B37F6E3B0")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:05.883 -0400", hash_original_method = "76A971EB75129863E10E67DBAAA59745", hash_generated_method = "940693219D128870026EABAF13733BA3")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     public void setFastScrollAlwaysVisible(boolean alwaysShow) {
         dsTaint.addTaint(alwaysShow);
         {
@@ -758,27 +717,27 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 14:26:44.053 -0400", hash_original_method = "B8FB7506E98011F45E37A448BFD532A7", hash_generated_method = "2BD0F0B962AB62DBFB6212A8EC870E8C")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:05.883 -0400", hash_original_method = "B8FB7506E98011F45E37A448BFD532A7", hash_generated_method = "210F1E4ADB4751DF35259FC3BC60AE96")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public boolean isFastScrollAlwaysVisible() {
-        boolean var26B2F46AB3144EF80214E1227EB2F480_1556459077 = (mFastScrollEnabled && mFastScroller.isAlwaysShowEnabled());
+        boolean var26B2F46AB3144EF80214E1227EB2F480_469258949 = (mFastScrollEnabled && mFastScroller.isAlwaysShowEnabled());
         return dsTaint.getTaintBoolean();
         // ---------- Original Method ----------
         //return mFastScrollEnabled && mFastScroller.isAlwaysShowEnabled();
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 14:26:44.059 -0400", hash_original_method = "7B9EF1235ED171F1370B12BB905DC3C9", hash_generated_method = "74EB7D45A258B8A687893B7C5DD80935")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:05.883 -0400", hash_original_method = "7B9EF1235ED171F1370B12BB905DC3C9", hash_generated_method = "1458FA0774DD510A720361A223D834DF")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     @Override
     public int getVerticalScrollbarWidth() {
         {
-            boolean var26909BC69BA2F3E69FEBFE306B4E5DAD_595141964 = (isFastScrollAlwaysVisible());
+            boolean var26909BC69BA2F3E69FEBFE306B4E5DAD_2049816689 = (isFastScrollAlwaysVisible());
             {
-                int varFB51A5362339E3615BCF0229E08CB917_1712597063 = (Math.max(super.getVerticalScrollbarWidth(), mFastScroller.getWidth()));
+                int varFB51A5362339E3615BCF0229E08CB917_1045710452 = (Math.max(super.getVerticalScrollbarWidth(), mFastScroller.getWidth()));
             } //End block
         } //End collapsed parenthetic
-        int var08FF7A4CA397B890F67D51D77687712B_227674549 = (super.getVerticalScrollbarWidth());
+        int var08FF7A4CA397B890F67D51D77687712B_649665725 = (super.getVerticalScrollbarWidth());
         return dsTaint.getTaintInt();
         // ---------- Original Method ----------
         //if (isFastScrollAlwaysVisible()) {
@@ -788,7 +747,7 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 14:26:44.063 -0400", hash_original_method = "0BC112ABD3166320C6B43E3AFC3B6D61", hash_generated_method = "519E3CEBD748667B890A874B3D9E71E7")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:05.883 -0400", hash_original_method = "0BC112ABD3166320C6B43E3AFC3B6D61", hash_generated_method = "750EDCA43657FC7CC144B1729F66F335")
     @DSModeled(DSC.SAFE)
     @ViewDebug.ExportedProperty
     public boolean isFastScrollEnabled() {
@@ -798,8 +757,8 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 14:26:44.068 -0400", hash_original_method = "A675D7279FF2D5DA4484C8480BA7553A", hash_generated_method = "53A122F97D3D9DBD64D05B4D55D411F1")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:05.884 -0400", hash_original_method = "A675D7279FF2D5DA4484C8480BA7553A", hash_generated_method = "86433C67756A9B3E97DA89BB07EFFABB")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     @Override
     public void setVerticalScrollbarPosition(int position) {
         dsTaint.addTaint(position);
@@ -815,18 +774,18 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 14:26:44.073 -0400", hash_original_method = "940CDB7D64F97F8EC4A4E1C87858DFBA", hash_generated_method = "6207CDB5B38F97067239FBB0BE82EDC5")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:05.884 -0400", hash_original_method = "940CDB7D64F97F8EC4A4E1C87858DFBA", hash_generated_method = "94739890ABD6C34C07C9D757AF87D032")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     @Override
     protected boolean isVerticalScrollBarHidden() {
-        boolean varEE7670B7B7BC0CBAC7B3A19E6E35E88F_1929198459 = (mFastScroller != null && mFastScroller.isVisible());
+        boolean varEE7670B7B7BC0CBAC7B3A19E6E35E88F_1642408086 = (mFastScroller != null && mFastScroller.isVisible());
         return dsTaint.getTaintBoolean();
         // ---------- Original Method ----------
         //return mFastScroller != null && mFastScroller.isVisible();
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 14:26:44.078 -0400", hash_original_method = "1698DB675ADDAA62665F2F04BB6F72CB", hash_generated_method = "68B822AC49DD981908C46EF14340D018")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:05.884 -0400", hash_original_method = "1698DB675ADDAA62665F2F04BB6F72CB", hash_generated_method = "FE0DD1742CDD06A271D0B0E09C1F4329")
     @DSModeled(DSC.SAFE)
     public void setSmoothScrollbarEnabled(boolean enabled) {
         dsTaint.addTaint(enabled);
@@ -835,7 +794,7 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 14:26:44.081 -0400", hash_original_method = "475C5FFCF382FD26204BCB75E2B77D7D", hash_generated_method = "65A9696C30509C9E7DD8577AEED03C49")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:05.884 -0400", hash_original_method = "475C5FFCF382FD26204BCB75E2B77D7D", hash_generated_method = "866AA5C053A2F55C5FA4BA0DCC99E134")
     @DSModeled(DSC.SAFE)
     @ViewDebug.ExportedProperty
     public boolean isSmoothScrollbarEnabled() {
@@ -845,8 +804,8 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 14:26:44.085 -0400", hash_original_method = "210B7E1D385EBACE9AEF47F53212EE62", hash_generated_method = "FFD5D8B6794F3A17CEBDB4B9A922D1AD")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:05.885 -0400", hash_original_method = "210B7E1D385EBACE9AEF47F53212EE62", hash_generated_method = "0AB9C1BE380A4A7E6640A8C9F187EC61")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     public void setOnScrollListener(OnScrollListener l) {
         dsTaint.addTaint(l.dsTaint);
         invokeOnItemScrollListener();
@@ -856,7 +815,7 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 14:26:44.102 -0400", hash_original_method = "BA8530F9EF3261CEDA66BF584A9CCD3E", hash_generated_method = "4490C6700218B8942C40D7B0439191F6")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:05.885 -0400", hash_original_method = "BA8530F9EF3261CEDA66BF584A9CCD3E", hash_generated_method = "A9B81DB570E7184E3C81965E4D493FD7")
     //DSFIXME:  CODE0002: Requires DSC value to be set
      void invokeOnItemScrollListener() {
         {
@@ -877,8 +836,8 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 14:26:44.109 -0400", hash_original_method = "B64F2C3012E6A3D7EFE9332FD2B83485", hash_generated_method = "5C30422A8A71584373B08F6CB437960D")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:05.885 -0400", hash_original_method = "B64F2C3012E6A3D7EFE9332FD2B83485", hash_generated_method = "ECF40006A9590366337C3C3D049F15BB")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     @Override
     public void sendAccessibilityEvent(int eventType) {
         dsTaint.addTaint(eventType);
@@ -909,7 +868,7 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 14:26:44.113 -0400", hash_original_method = "9414D347741A5DD8E57796525BCE5898", hash_generated_method = "090F83CCE7141AF322AF3A3F56746F05")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:05.885 -0400", hash_original_method = "9414D347741A5DD8E57796525BCE5898", hash_generated_method = "205E4CD4601CE0F092ACA6CACE55EABD")
     @DSModeled(DSC.SAFE)
     @ViewDebug.ExportedProperty
     public boolean isScrollingCacheEnabled() {
@@ -919,8 +878,8 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 14:26:44.123 -0400", hash_original_method = "150D6943577E82022A370D7488992E67", hash_generated_method = "BE2793E43E0A2775964909E531AA4E62")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:05.886 -0400", hash_original_method = "150D6943577E82022A370D7488992E67", hash_generated_method = "FFCC6CD015DB13C45C9711530A204976")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     public void setScrollingCacheEnabled(boolean enabled) {
         dsTaint.addTaint(enabled);
         {
@@ -934,7 +893,7 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 14:26:44.126 -0400", hash_original_method = "8476047A74E8C2792EEAD35F27B63501", hash_generated_method = "54B40F6540DB4F5D82F322B1F0C43D10")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:05.886 -0400", hash_original_method = "8476047A74E8C2792EEAD35F27B63501", hash_generated_method = "38364A4610A50291A3C99F5A89D530D9")
     @DSModeled(DSC.SAFE)
     public void setTextFilterEnabled(boolean textFilterEnabled) {
         dsTaint.addTaint(textFilterEnabled);
@@ -943,7 +902,7 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 14:26:44.130 -0400", hash_original_method = "D536B611E01E5CFE1F666765CAB03290", hash_generated_method = "8F0BA7DE2C83127BA869BE325E00E05C")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:05.886 -0400", hash_original_method = "D536B611E01E5CFE1F666765CAB03290", hash_generated_method = "21930BD8A082BFEF494792D2738F5465")
     @DSModeled(DSC.SAFE)
     @ViewDebug.ExportedProperty
     public boolean isTextFilterEnabled() {
@@ -953,7 +912,7 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 14:26:44.135 -0400", hash_original_method = "1C8D0A5FE9343035731EC5D6D9384599", hash_generated_method = "45E1652D3C37027A9DD9EA996CDBE923")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:05.886 -0400", hash_original_method = "1C8D0A5FE9343035731EC5D6D9384599", hash_generated_method = "0FF69AF9DE45089A2CBD41D80B59C9AC")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     @Override
     public void getFocusedRect(Rect r) {
@@ -961,7 +920,7 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
         View view;
         view = getSelectedView();
         {
-            boolean varA78CB7AA6BC92F805E05829844E1ECE3_1859311629 = (view != null && view.getParent() == this);
+            boolean varA78CB7AA6BC92F805E05829844E1ECE3_1772672700 = (view != null && view.getParent() == this);
             {
                 view.getFocusedRect(r);
                 offsetDescendantRectToMyCoords(view, r);
@@ -981,7 +940,7 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 14:26:44.139 -0400", hash_original_method = "9E8C7705C9D325A7FB79BC94A2C5E742", hash_generated_method = "A902C6E379654B57A9A5D7717F7287F5")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:05.888 -0400", hash_original_method = "9E8C7705C9D325A7FB79BC94A2C5E742", hash_generated_method = "5E8864341AF6CB275CB3012A78EAE0CA")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     private void useDefaultSelector() {
         setSelector(getResources().getDrawable(
@@ -992,7 +951,7 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 14:26:44.142 -0400", hash_original_method = "991365D9D991378A506E868734A0B0D2", hash_generated_method = "FF743961B12BFA1C1C9372EB2D4EE511")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:05.888 -0400", hash_original_method = "991365D9D991378A506E868734A0B0D2", hash_generated_method = "91EC4CF08062EE4002EF06CC589B44A3")
     @DSModeled(DSC.SAFE)
     @ViewDebug.ExportedProperty
     public boolean isStackFromBottom() {
@@ -1002,8 +961,8 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 14:26:44.146 -0400", hash_original_method = "CFFEAD7E7BECCE023678F7841887953F", hash_generated_method = "B4168999A02889D4CB82CE98265191E5")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:05.888 -0400", hash_original_method = "CFFEAD7E7BECCE023678F7841887953F", hash_generated_method = "3B312BAC0C4F79394E107102433D3E82")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     public void setStackFromBottom(boolean stackFromBottom) {
         dsTaint.addTaint(stackFromBottom);
         {
@@ -1017,11 +976,11 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 14:26:44.150 -0400", hash_original_method = "DBB2E77784FB40B043F5BACE416B5D38", hash_generated_method = "89B13137991869E67D77626B17E75CC2")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:05.888 -0400", hash_original_method = "DBB2E77784FB40B043F5BACE416B5D38", hash_generated_method = "913AF492BE3878B8A0D4E567C044281D")
     //DSFIXME:  CODE0002: Requires DSC value to be set
      void requestLayoutIfNecessary() {
         {
-            boolean varBF62E6C23FE36C17A3594E034FF46D2E_1358487736 = (getChildCount() > 0);
+            boolean varBF62E6C23FE36C17A3594E034FF46D2E_1295552991 = (getChildCount() > 0);
             {
                 resetList();
                 requestLayout();
@@ -1037,7 +996,7 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 14:26:44.164 -0400", hash_original_method = "550511192552500388A3039280244936", hash_generated_method = "556A88A59D02699FDADE262A728605EA")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:05.889 -0400", hash_original_method = "550511192552500388A3039280244936", hash_generated_method = "61FDC3F444C11D232FF9A9DA1615165F")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     @Override
     public Parcelable onSaveInstanceState() {
@@ -1114,7 +1073,7 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 14:26:44.175 -0400", hash_original_method = "43BE5C5AD27C719005EFC4A46B8486A7", hash_generated_method = "FC08546170CA74D1E75263604B92F803")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:05.890 -0400", hash_original_method = "43BE5C5AD27C719005EFC4A46B8486A7", hash_generated_method = "AF76E502BFCE1C54246E9399047D337F")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     @Override
     public void onRestoreInstanceState(Parcelable state) {
@@ -1159,10 +1118,10 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 14:26:44.179 -0400", hash_original_method = "42E27AF1CE674CD4135EEA22852A217B", hash_generated_method = "E82EE111035BB980D545957FF246BF90")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:05.890 -0400", hash_original_method = "42E27AF1CE674CD4135EEA22852A217B", hash_generated_method = "9E530662EC2BCC36A626EBE616B6D422")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     private boolean acceptFilter() {
-        boolean varA2D4C9A63B028E8345B4157A680073A2_297535638 = (mTextFilterEnabled && getAdapter() instanceof Filterable &&
+        boolean varA2D4C9A63B028E8345B4157A680073A2_1564398378 = (mTextFilterEnabled && getAdapter() instanceof Filterable &&
                 ((Filterable) getAdapter()).getFilter() != null);
         return dsTaint.getTaintBoolean();
         // ---------- Original Method ----------
@@ -1171,12 +1130,12 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 14:26:44.185 -0400", hash_original_method = "A8CCB94844A67C45EFD075D798DD3AF0", hash_generated_method = "D7D79C4E4062966CD7F4862063812D7E")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:05.890 -0400", hash_original_method = "A8CCB94844A67C45EFD075D798DD3AF0", hash_generated_method = "1A7E7A1EBE9DFEED7EE33F37A7A9CA74")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public void setFilterText(String filterText) {
         dsTaint.addTaint(filterText);
         {
-            boolean var190C1EE91DE344514DA2209FAF0C3D82_2038465558 = (mTextFilterEnabled && !TextUtils.isEmpty(filterText));
+            boolean var190C1EE91DE344514DA2209FAF0C3D82_2062079856 = (mTextFilterEnabled && !TextUtils.isEmpty(filterText));
             {
                 createTextFilter(false);
                 mTextFilter.setText(filterText);
@@ -1209,11 +1168,11 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 14:26:44.190 -0400", hash_original_method = "1C9B36BFA6AA511A6999C19189070FD4", hash_generated_method = "FD9DFBF132FF5100B9742641842EF4B2")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:05.890 -0400", hash_original_method = "1C9B36BFA6AA511A6999C19189070FD4", hash_generated_method = "5C90B72A50B8BAB68DCEE09BD0F41D3F")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public CharSequence getTextFilter() {
         {
-            CharSequence varDF6F55DC5C9DC328BEED19950632B8DE_1511506764 = (mTextFilter.getText());
+            CharSequence varDF6F55DC5C9DC328BEED19950632B8DE_1586116808 = (mTextFilter.getText());
         } //End block
         return dsTaint.getTaintString();
         // ---------- Original Method ----------
@@ -1224,7 +1183,7 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 14:26:44.196 -0400", hash_original_method = "0C025ACF6797C1095DC28C93A47B3E04", hash_generated_method = "93D634EA0168C5BC81E7A94DA516D268")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:05.891 -0400", hash_original_method = "0C025ACF6797C1095DC28C93A47B3E04", hash_generated_method = "80BD54B604D4ED7F6D3659BD189CAA93")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     @Override
     protected void onFocusChanged(boolean gainFocus, int direction, Rect previouslyFocusedRect) {
@@ -1234,7 +1193,7 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
         dsTaint.addTaint(previouslyFocusedRect.dsTaint);
         super.onFocusChanged(gainFocus, direction, previouslyFocusedRect);
         {
-            boolean var8EB9364CA747E30AAC5C9F3175F02645_986168456 = (gainFocus && mSelectedPosition < 0 && !isInTouchMode());
+            boolean var8EB9364CA747E30AAC5C9F3175F02645_494182259 = (gainFocus && mSelectedPosition < 0 && !isInTouchMode());
             {
                 {
                     mDataChanged = true;
@@ -1257,8 +1216,8 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 14:26:44.200 -0400", hash_original_method = "B180005EA1177A66433DC47F81A1B223", hash_generated_method = "175D942DF737AF392287DB85FC9526F6")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:05.891 -0400", hash_original_method = "B180005EA1177A66433DC47F81A1B223", hash_generated_method = "7FA434FB1BD0F76EE21405415ADD4E7C")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     @Override
     public void requestLayout() {
         {
@@ -1271,8 +1230,8 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 14:26:44.204 -0400", hash_original_method = "8DD5C430A497277A13BB6B282542179B", hash_generated_method = "FDBC3DD61E0CEA623B9A70F23F79C8B0")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:05.891 -0400", hash_original_method = "8DD5C430A497277A13BB6B282542179B", hash_generated_method = "7581B754A737045C6DFD1C880926F30E")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
      void resetList() {
         removeAllViewsInLayout();
         mFirstPosition = 0;
@@ -1302,7 +1261,7 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 14:26:44.212 -0400", hash_original_method = "EAD3946FC18204D61E6D52ABAEC42671", hash_generated_method = "7056947F5CF883ECB0053C065F362482")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:05.892 -0400", hash_original_method = "EAD3946FC18204D61E6D52ABAEC42671", hash_generated_method = "9330965046B1FA5DB54793B048461920")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     @Override
     protected int computeVerticalScrollExtent() {
@@ -1357,7 +1316,7 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 14:26:44.221 -0400", hash_original_method = "B342EEB15F9AC09DD167764D56209B72", hash_generated_method = "E12F1E5D003F13D25FEDD17D72436610")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:05.892 -0400", hash_original_method = "B342EEB15F9AC09DD167764D56209B72", hash_generated_method = "97CDA6A60C4111F0FCBDAD6BFF7EB182")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     @Override
     protected int computeVerticalScrollOffset() {
@@ -1374,7 +1333,7 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
                 int height;
                 height = view.getHeight();
                 {
-                    int var813D884A4C0D547484060C54181A041A_1506882274 = (Math.max(firstPosition * 100 - (top * 100) / height +
+                    int var813D884A4C0D547484060C54181A041A_368275505 = (Math.max(firstPosition * 100 - (top * 100) / height +
                             (int)((float)mScrollY / getHeight() * mItemCount * 100), 0));
                 } //End block
             } //End block
@@ -1399,7 +1358,7 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 14:26:44.226 -0400", hash_original_method = "4324030F56A09BCB8354791FE2A22081", hash_generated_method = "2A7081FAE3D54665C503B12148441D6A")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:05.893 -0400", hash_original_method = "4324030F56A09BCB8354791FE2A22081", hash_generated_method = "B4BE9071745F3E63FC299802D5772AF3")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     @Override
     protected int computeVerticalScrollRange() {
@@ -1428,7 +1387,7 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 14:26:44.232 -0400", hash_original_method = "6B45AE0F220A2E6F043181E50094F343", hash_generated_method = "405FE1A15F060865FC31FDD5C6AF227F")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:05.894 -0400", hash_original_method = "6B45AE0F220A2E6F043181E50094F343", hash_generated_method = "8BAC82A6D855CA0BDDA49BB71D8E12C4")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     @Override
     protected float getTopFadingEdgeStrength() {
@@ -1459,7 +1418,7 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 14:26:44.250 -0400", hash_original_method = "7783F8E763936950C57ED5516E6F7E94", hash_generated_method = "7F8F0CC04A5B5010143A09844201045E")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:05.894 -0400", hash_original_method = "7783F8E763936950C57ED5516E6F7E94", hash_generated_method = "54D93DFB42CF1B39EBDD53720B423B01")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     @Override
     protected float getBottomFadingEdgeStrength() {
@@ -1494,7 +1453,7 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 14:26:44.260 -0400", hash_original_method = "7C6C2B65B4381736E49DE73CCD130327", hash_generated_method = "52E5B1332340A409615AC8946FECC725")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:05.895 -0400", hash_original_method = "7C6C2B65B4381736E49DE73CCD130327", hash_generated_method = "1D0EC1C6C28F68C19F89CA9425012ADC")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     @Override
     protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
@@ -1528,7 +1487,7 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 14:26:44.275 -0400", hash_original_method = "46F44099FEFDB133D6B976408934CAC6", hash_generated_method = "5953B920E51418C5F935C0B8B33F736B")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:05.895 -0400", hash_original_method = "46F44099FEFDB133D6B976408934CAC6", hash_generated_method = "E4BC24AAADA6789C59B56E268C170133")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     @Override
     protected void onLayout(boolean changed, int l, int t, int r, int b) {
@@ -1577,7 +1536,7 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 14:26:44.283 -0400", hash_original_method = "748FD791AA503E7E1D859CFD661EA755", hash_generated_method = "ECAA338204B0B06FD74DF926B7583F66")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:05.896 -0400", hash_original_method = "748FD791AA503E7E1D859CFD661EA755", hash_generated_method = "6C2D87A94F1D1FB79126CE8D991736B7")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     @Override
     protected boolean setFrame(int left, int top, int right, int bottom) {
@@ -1591,7 +1550,7 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
             boolean visible;
             visible = getWindowVisibility() == View.VISIBLE;
             {
-                boolean varFBED1B944623C6BCA164EC2723F71804_1785301441 = (mFiltered && visible && mPopup != null && mPopup.isShowing());
+                boolean varFBED1B944623C6BCA164EC2723F71804_167145158 = (mFiltered && visible && mPopup != null && mPopup.isShowing());
                 {
                     positionPopup();
                 } //End block
@@ -1610,14 +1569,14 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 14:26:44.287 -0400", hash_original_method = "402FE2CFEE98322FA56302826EFCFBC7", hash_generated_method = "7AB60EE910C1FABE0EBC2178812FE2CB")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:05.896 -0400", hash_original_method = "402FE2CFEE98322FA56302826EFCFBC7", hash_generated_method = "7C7456ED8D2FB5B664E2AB60CCD22125")
     @DSModeled(DSC.SAFE)
     protected void layoutChildren() {
         // ---------- Original Method ----------
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 14:26:44.311 -0400", hash_original_method = "180044681435C2C9D1AB0FD8756137A4", hash_generated_method = "4CB85FA69F42AF9F9FBEF3CD0D15BB2F")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:05.896 -0400", hash_original_method = "180044681435C2C9D1AB0FD8756137A4", hash_generated_method = "D6EAAE418DF0A77979820ECC821F6477")
     //DSFIXME:  CODE0002: Requires DSC value to be set
      void updateScrollIndicators() {
         {
@@ -1625,7 +1584,7 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
             canScrollUp = mFirstPosition > 0;
             {
                 {
-                    boolean var4813CB3BCCB7AE7282F404FB5F98BC43_1353311361 = (getChildCount() > 0);
+                    boolean var4813CB3BCCB7AE7282F404FB5F98BC43_1419243700 = (getChildCount() > 0);
                     {
                         View child;
                         child = getChildAt(0);
@@ -1652,13 +1611,13 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 14:26:44.317 -0400", hash_original_method = "B9D708BD110913DD38C752A46A05BBB4", hash_generated_method = "A8EC38E698639AA55C7E13F044A47CCB")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:05.896 -0400", hash_original_method = "B9D708BD110913DD38C752A46A05BBB4", hash_generated_method = "C15AAEAA947970D2A20EDDAF204A25F3")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     @Override
     @ViewDebug.ExportedProperty
     public View getSelectedView() {
         {
-            View var32627160716DC777F524CC780C8B0164_446362800 = (getChildAt(mSelectedPosition - mFirstPosition));
+            View var32627160716DC777F524CC780C8B0164_754663505 = (getChildAt(mSelectedPosition - mFirstPosition));
         } //End block
         return (View)dsTaint.getTaint();
         // ---------- Original Method ----------
@@ -1670,7 +1629,7 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 14:26:44.325 -0400", hash_original_method = "3B697574C47153B82BC97C5C46624F2C", hash_generated_method = "F52A6A558D017CECC511568133B301DB")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:05.897 -0400", hash_original_method = "3B697574C47153B82BC97C5C46624F2C", hash_generated_method = "4E9B735F38A4499F1723C1AC48A360F3")
     @DSModeled(DSC.SAFE)
     public int getListPaddingTop() {
         return dsTaint.getTaintInt();
@@ -1679,7 +1638,7 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 14:26:44.330 -0400", hash_original_method = "CEE980D8545C78DFB596AE8650DBF797", hash_generated_method = "57AA64E72E6F99BABB1AD55C304ED31F")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:05.897 -0400", hash_original_method = "CEE980D8545C78DFB596AE8650DBF797", hash_generated_method = "D01163532AA3CB40E0064AAB933ACA55")
     @DSModeled(DSC.SAFE)
     public int getListPaddingBottom() {
         return dsTaint.getTaintInt();
@@ -1688,7 +1647,7 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 14:26:44.334 -0400", hash_original_method = "C8B939C15FBE7011BDF7672B6F924B56", hash_generated_method = "F1D5E95D717592053B3EA94A470A39C4")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:05.897 -0400", hash_original_method = "C8B939C15FBE7011BDF7672B6F924B56", hash_generated_method = "AEB8712B369C63682733382F2A915475")
     @DSModeled(DSC.SAFE)
     public int getListPaddingLeft() {
         return dsTaint.getTaintInt();
@@ -1697,7 +1656,7 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 14:26:44.337 -0400", hash_original_method = "1F1F9379D690EBB0F58C075805935B4C", hash_generated_method = "F1F24C2F1822152FB486AE4997FEDFC6")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:05.897 -0400", hash_original_method = "1F1F9379D690EBB0F58C075805935B4C", hash_generated_method = "AF1E33B790EF1D66A6936AC58E72729E")
     @DSModeled(DSC.SAFE)
     public int getListPaddingRight() {
         return dsTaint.getTaintInt();
@@ -1706,7 +1665,7 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 14:26:44.345 -0400", hash_original_method = "F1A94AACBC76DA4834C170841A9D4C37", hash_generated_method = "50F68474C24EA392F5E25364399FA5D0")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:05.898 -0400", hash_original_method = "F1A94AACBC76DA4834C170841A9D4C37", hash_generated_method = "9D604F21EF1601927DCA15968F178262")
     //DSFIXME:  CODE0002: Requires DSC value to be set
      View obtainView(int position, boolean[] isScrap) {
         dsTaint.addTaint(position);
@@ -1756,7 +1715,7 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 14:26:44.354 -0400", hash_original_method = "B068259C5BBCB2A7501108708CD5A4C4", hash_generated_method = "60534E68DC779D8DCF240F5E400EE5D0")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:05.898 -0400", hash_original_method = "B068259C5BBCB2A7501108708CD5A4C4", hash_generated_method = "5396F64E9D55FA214249AE62B9999007")
     //DSFIXME:  CODE0002: Requires DSC value to be set
      void positionSelector(int position, View sel) {
         dsTaint.addTaint(position);
@@ -1772,11 +1731,11 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
         boolean isChildViewEnabled;
         isChildViewEnabled = mIsChildViewEnabled;
         {
-            boolean varFB59463D8D8AB76E1E484CE2BBC5519D_17818807 = (sel.isEnabled() != isChildViewEnabled);
+            boolean varFB59463D8D8AB76E1E484CE2BBC5519D_1605674109 = (sel.isEnabled() != isChildViewEnabled);
             {
                 mIsChildViewEnabled = !isChildViewEnabled;
                 {
-                    boolean var9ACEB0A565E658741B99EDC3F95405AB_1022156446 = (getSelectedItemPosition() != INVALID_POSITION);
+                    boolean var9ACEB0A565E658741B99EDC3F95405AB_933835812 = (getSelectedItemPosition() != INVALID_POSITION);
                     {
                         refreshDrawableState();
                     } //End block
@@ -1804,8 +1763,8 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 14:26:44.358 -0400", hash_original_method = "9958A79674A9EAF808CC1CD0A2974C67", hash_generated_method = "2ADD7AAF7B65AD07AE9D2599E646ECDE")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:05.898 -0400", hash_original_method = "9958A79674A9EAF808CC1CD0A2974C67", hash_generated_method = "9049D1584489CF5667CB85BCF0ABC437")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     private void positionSelector(int l, int t, int r, int b) {
         dsTaint.addTaint(t);
         dsTaint.addTaint(b);
@@ -1819,7 +1778,7 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 14:26:44.368 -0400", hash_original_method = "EB6A446E7A5D607DB4BF2796F54D03FA", hash_generated_method = "A42FC92A38BD72F76898B70F1F936C07")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:05.899 -0400", hash_original_method = "EB6A446E7A5D607DB4BF2796F54D03FA", hash_generated_method = "71F8C7B1BEA9261D3E1B0AE72BB6B2BD")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     @Override
     protected void dispatchDraw(Canvas canvas) {
@@ -1857,7 +1816,7 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 14:26:44.373 -0400", hash_original_method = "E1295B3F3CD2AED842AA5266ED41ED1A", hash_generated_method = "61B4078731DF7016B0D589C6DA0D728C")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:05.899 -0400", hash_original_method = "E1295B3F3CD2AED842AA5266ED41ED1A", hash_generated_method = "82304C1CBAD291496A25A42CBFC0547F")
     @DSModeled(DSC.SAFE)
     @Override
     protected boolean isPaddingOffsetRequired() {
@@ -1867,7 +1826,7 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 14:26:44.377 -0400", hash_original_method = "C31A372B11969057E398197BABCC2FB9", hash_generated_method = "AD0EDF266B5DB67D918CB8C3735EFD3E")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:05.899 -0400", hash_original_method = "C31A372B11969057E398197BABCC2FB9", hash_generated_method = "73B9345367F23C328C1B8EFC2CBDCD50")
     @DSModeled(DSC.SAFE)
     @Override
     protected int getLeftPaddingOffset() {
@@ -1877,7 +1836,7 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 14:26:44.380 -0400", hash_original_method = "F0F07013F187EA8DBDDCF030EEADD0A0", hash_generated_method = "FC9B6E0089C692D39E666F2F17CA8E31")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:05.899 -0400", hash_original_method = "F0F07013F187EA8DBDDCF030EEADD0A0", hash_generated_method = "763BD0B019445A531BAC4E98A8E2E6B0")
     @DSModeled(DSC.SAFE)
     @Override
     protected int getTopPaddingOffset() {
@@ -1887,7 +1846,7 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 14:26:44.383 -0400", hash_original_method = "D64BFD9DD2CC0187FA2BCDAC4D5056C0", hash_generated_method = "B74A448C643288C4D66A1BED5D457B0C")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:05.900 -0400", hash_original_method = "D64BFD9DD2CC0187FA2BCDAC4D5056C0", hash_generated_method = "F2348D34EB1F1BCBB913C8B3BDCA7B0D")
     @DSModeled(DSC.SAFE)
     @Override
     protected int getRightPaddingOffset() {
@@ -1897,7 +1856,7 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 14:26:44.386 -0400", hash_original_method = "A76EA354621A97D061AF35F7F0E022AA", hash_generated_method = "F52B386E7E2FB50308C3957E6D22E489")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:05.900 -0400", hash_original_method = "A76EA354621A97D061AF35F7F0E022AA", hash_generated_method = "43AEFB79FE4FE31F66D62C5DD06C2042")
     @DSModeled(DSC.SAFE)
     @Override
     protected int getBottomPaddingOffset() {
@@ -1907,17 +1866,17 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 14:26:44.393 -0400", hash_original_method = "7222D25647FA66D7134D6564AB03A11A", hash_generated_method = "CF7E70687C60F1C86DAB96DEEB20BA51")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:05.900 -0400", hash_original_method = "7222D25647FA66D7134D6564AB03A11A", hash_generated_method = "B69E65032948ED538452F40336DA4FC9")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     @Override
     protected void onSizeChanged(int w, int h, int oldw, int oldh) {
         //DSFIXME:  CODE0009: Possible callback target function detected
         dsTaint.addTaint(w);
-        dsTaint.addTaint(oldw);
         dsTaint.addTaint(oldh);
+        dsTaint.addTaint(oldw);
         dsTaint.addTaint(h);
         {
-            boolean varBF62E6C23FE36C17A3594E034FF46D2E_2030105196 = (getChildCount() > 0);
+            boolean varBF62E6C23FE36C17A3594E034FF46D2E_1192038520 = (getChildCount() > 0);
             {
                 mDataChanged = true;
                 rememberSyncState();
@@ -1937,7 +1896,7 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 14:26:44.410 -0400", hash_original_method = "E2B9A99414FF2EE03BB0A755AC5DBB16", hash_generated_method = "FF421EB84682070FB3064AA81F138B97")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:05.900 -0400", hash_original_method = "E2B9A99414FF2EE03BB0A755AC5DBB16", hash_generated_method = "B2869D19C8F590181985AF873AC4043A")
     @DSModeled(DSC.SAFE)
      boolean touchModeDrawsInPressedState() {
         return dsTaint.getTaintBoolean();
@@ -1952,22 +1911,22 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 14:26:44.428 -0400", hash_original_method = "FA7D742C09854F2E7F00273E8807D507", hash_generated_method = "AA071D6F515DD0F61BD2409DBDF64C99")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:05.900 -0400", hash_original_method = "FA7D742C09854F2E7F00273E8807D507", hash_generated_method = "0672F2C3BE8775620E5CA9DB6995CC58")
     //DSFIXME:  CODE0002: Requires DSC value to be set
      boolean shouldShowSelector() {
-        boolean var4246A524C7FBFC973820D2F78D9E8F98_694471755 = ((hasFocus() && !isInTouchMode()) || touchModeDrawsInPressedState());
+        boolean var4246A524C7FBFC973820D2F78D9E8F98_1781674327 = ((hasFocus() && !isInTouchMode()) || touchModeDrawsInPressedState());
         return dsTaint.getTaintBoolean();
         // ---------- Original Method ----------
         //return (hasFocus() && !isInTouchMode()) || touchModeDrawsInPressedState();
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 14:26:44.438 -0400", hash_original_method = "1653A38E1AF50A830D0C8CACED5D71E9", hash_generated_method = "D37CC1B5D9C37787A43159F10A5C4653")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:05.901 -0400", hash_original_method = "1653A38E1AF50A830D0C8CACED5D71E9", hash_generated_method = "989744536B4FAB79B363256CF3C2ED8D")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     private void drawSelector(Canvas canvas) {
         dsTaint.addTaint(canvas.dsTaint);
         {
-            boolean var101389AC9853324A8F2F4AC467A8FE5D_455594003 = (!mSelectorRect.isEmpty());
+            boolean var101389AC9853324A8F2F4AC467A8FE5D_1193306805 = (!mSelectorRect.isEmpty());
             {
                 Drawable selector;
                 selector = mSelector;
@@ -1984,7 +1943,7 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 14:26:44.444 -0400", hash_original_method = "E224CB1DBFEAEB35D4CBDCEA1ACB7063", hash_generated_method = "C39D9181BCD72CE83EFBF150259B142C")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:05.901 -0400", hash_original_method = "E224CB1DBFEAEB35D4CBDCEA1ACB7063", hash_generated_method = "AB8D63E7BB874B976FDFF81D5FA24B79")
     @DSModeled(DSC.SAFE)
     public void setDrawSelectorOnTop(boolean onTop) {
         dsTaint.addTaint(onTop);
@@ -1993,7 +1952,7 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 14:26:44.447 -0400", hash_original_method = "4BF5D497DEE1C8362CD452A22AD6FA64", hash_generated_method = "D1DBFA8CC2F488AB4F5AB91DD2783134")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:05.901 -0400", hash_original_method = "4BF5D497DEE1C8362CD452A22AD6FA64", hash_generated_method = "EFC80315A779346D37EC7EA02771A6C7")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public void setSelector(int resID) {
         dsTaint.addTaint(resID);
@@ -2003,8 +1962,8 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 14:26:44.453 -0400", hash_original_method = "AF217D83F5B526992017BCFB165071E1", hash_generated_method = "BBA8606D1D936903B6DC856AE1816F3B")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:05.901 -0400", hash_original_method = "AF217D83F5B526992017BCFB165071E1", hash_generated_method = "9BB2817345AD901B19C5B68E6CF60071")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     public void setSelector(Drawable sel) {
         dsTaint.addTaint(sel.dsTaint);
         {
@@ -2037,7 +1996,7 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 14:26:44.457 -0400", hash_original_method = "021D90A72F3883D0847A93B24BC54541", hash_generated_method = "03429B4354ADAD0090160F59EF7EA12D")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:05.903 -0400", hash_original_method = "021D90A72F3883D0847A93B24BC54541", hash_generated_method = "3E3551BCDB000AE61836EA812CEAEFF5")
     @DSModeled(DSC.SAFE)
     public Drawable getSelector() {
         return (Drawable)dsTaint.getTaint();
@@ -2046,25 +2005,25 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 14:26:44.466 -0400", hash_original_method = "2F7C78E24D2DA521609D152C286646B5", hash_generated_method = "8D5664882320428CF011746A6CE2C62F")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:05.904 -0400", hash_original_method = "2F7C78E24D2DA521609D152C286646B5", hash_generated_method = "F98451B7BBC15A6D28B23A3CE4819848")
     //DSFIXME:  CODE0002: Requires DSC value to be set
      void keyPressed() {
         {
-            boolean varDBE5D4BF2CCFB471B80269545EAA1B3B_1107442693 = (!isEnabled() || !isClickable());
+            boolean varDBE5D4BF2CCFB471B80269545EAA1B3B_1402578274 = (!isEnabled() || !isClickable());
         } //End collapsed parenthetic
         Drawable selector;
         selector = mSelector;
         Rect selectorRect;
         selectorRect = mSelectorRect;
         {
-            boolean var07FA5EC4F6C5A1F1386E6BB4E68E466A_759435821 = (selector != null && (isFocused() || touchModeDrawsInPressedState())
+            boolean var07FA5EC4F6C5A1F1386E6BB4E68E466A_1493147916 = (selector != null && (isFocused() || touchModeDrawsInPressedState())
                 && !selectorRect.isEmpty());
             {
                 View v;
                 v = getChildAt(mSelectedPosition - mFirstPosition);
                 {
                     {
-                        boolean varF2E1D044768D3B14172E86DA91C28BD1_1967203696 = (v.hasFocusable());
+                        boolean varF2E1D044768D3B14172E86DA91C28BD1_207237175 = (v.hasFocusable());
                     } //End collapsed parenthetic
                     v.setPressed(true);
                 } //End block
@@ -2096,7 +2055,7 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 14:26:44.471 -0400", hash_original_method = "130833F22A002ECC6A8AECA69F90873D", hash_generated_method = "938804C238FC8A8D7AA271526001F70A")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:05.904 -0400", hash_original_method = "130833F22A002ECC6A8AECA69F90873D", hash_generated_method = "A52B598080212225A16945251EC856C3")
     @DSModeled(DSC.SAFE)
     public void setScrollIndicators(View up, View down) {
         dsTaint.addTaint(down.dsTaint);
@@ -2107,12 +2066,12 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 14:26:44.475 -0400", hash_original_method = "80EC646A43ECE5B1A4600CE8EDDA24B3", hash_generated_method = "B38A6CAB2442F8A59211A87664F7050E")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:05.904 -0400", hash_original_method = "80EC646A43ECE5B1A4600CE8EDDA24B3", hash_generated_method = "49B1A5F0EA0503DB168815C1EA73E130")
     //DSFIXME:  CODE0002: Requires DSC value to be set
      void updateSelectorState() {
         {
             {
-                boolean var1EC35265200A237347BA89EC9F7CAA85_1366586228 = (shouldShowSelector());
+                boolean var1EC35265200A237347BA89EC9F7CAA85_1853783459 = (shouldShowSelector());
                 {
                     mSelector.setState(getDrawableState());
                 } //End block
@@ -2132,8 +2091,8 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 14:26:44.478 -0400", hash_original_method = "5700D7A450170541F2788B92612441B3", hash_generated_method = "BE2E0DAA4F1B9A3E2F7D52B4FE053A88")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:05.905 -0400", hash_original_method = "5700D7A450170541F2788B92612441B3", hash_generated_method = "A585E16DC9FBE9BA5368D986ED938050")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     @Override
     protected void drawableStateChanged() {
         super.drawableStateChanged();
@@ -2144,14 +2103,14 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 14:26:44.484 -0400", hash_original_method = "1ED981B25374988410BBF6BB9A2499BB", hash_generated_method = "EAE7CC455ED7240623C0C7047EE9C12C")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:05.905 -0400", hash_original_method = "1ED981B25374988410BBF6BB9A2499BB", hash_generated_method = "5F597C1748B74A69C125A3CF9BFEB868")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     @Override
     protected int[] onCreateDrawableState(int extraSpace) {
         //DSFIXME:  CODE0009: Possible callback target function detected
         dsTaint.addTaint(extraSpace);
         {
-            int[] varEB7CD746CBB534A0BF67F4323334429E_563197896 = (super.onCreateDrawableState(extraSpace));
+            int[] varEB7CD746CBB534A0BF67F4323334429E_1547441642 = (super.onCreateDrawableState(extraSpace));
         } //End block
         int enabledState;
         enabledState = ENABLED_STATE_SET[0];
@@ -2196,20 +2155,20 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 14:26:44.489 -0400", hash_original_method = "A6B05685C2044FBFF5332C34549C9055", hash_generated_method = "D44EE992ED8EEDE911B560059864288B")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:05.905 -0400", hash_original_method = "A6B05685C2044FBFF5332C34549C9055", hash_generated_method = "B78F546A4FD8234A2AA0D95EE57168E0")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     @Override
     public boolean verifyDrawable(Drawable dr) {
         dsTaint.addTaint(dr.dsTaint);
-        boolean var31983995A7CC0B4FFFDA846AE3697AC5_1112976091 = (mSelector == dr || super.verifyDrawable(dr));
+        boolean var31983995A7CC0B4FFFDA846AE3697AC5_940114807 = (mSelector == dr || super.verifyDrawable(dr));
         return dsTaint.getTaintBoolean();
         // ---------- Original Method ----------
         //return mSelector == dr || super.verifyDrawable(dr);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 14:26:44.494 -0400", hash_original_method = "7ED40C7CE5B566B3E07F33E9D37CCA58", hash_generated_method = "BFFC225CA2A1E186F1C88A9F24D455F7")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:05.906 -0400", hash_original_method = "7ED40C7CE5B566B3E07F33E9D37CCA58", hash_generated_method = "EEC30B3A9E5A1EA4E67E19E804024279")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     @Override
     public void jumpDrawablesToCurrentState() {
         super.jumpDrawablesToCurrentState();
@@ -2220,7 +2179,7 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 14:26:44.498 -0400", hash_original_method = "0EB97D149DFA0037A8214EEEE413FBAC", hash_generated_method = "B45C0AD0816F23BB15170FE6503DC916")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:05.906 -0400", hash_original_method = "0EB97D149DFA0037A8214EEEE413FBAC", hash_generated_method = "96CF11EECD89E3A25F63B38C4749E0E6")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     @Override
     protected void onAttachedToWindow() {
@@ -2258,8 +2217,8 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 14:26:44.506 -0400", hash_original_method = "91FA19273AD6EF1E2E7A8FCA605608DC", hash_generated_method = "496A039A1314503C49ACFF619D6F645D")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:05.906 -0400", hash_original_method = "91FA19273AD6EF1E2E7A8FCA605608DC", hash_generated_method = "02FA9D139996AD9D4D9864B60BEF8554")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     @Override
     protected void onDetachedFromWindow() {
         //DSFIXME:  CODE0009: Possible callback target function detected
@@ -2307,7 +2266,7 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 14:26:44.515 -0400", hash_original_method = "F46E1D5E69E9A7961CEAA1CC31FCC74A", hash_generated_method = "B4A2E3DB7794AA21F90C17CFB079B9B2")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:05.907 -0400", hash_original_method = "F46E1D5E69E9A7961CEAA1CC31FCC74A", hash_generated_method = "491961ABB46772F9A46042E7A087AB22")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     @Override
     public void onWindowFocusChanged(boolean hasWindowFocus) {
@@ -2315,7 +2274,7 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
         dsTaint.addTaint(hasWindowFocus);
         super.onWindowFocusChanged(hasWindowFocus);
         int touchMode;
-        boolean var49D8D6F90114322BA24D8547EE3F7B5B_439839618 = (isInTouchMode());
+        boolean var49D8D6F90114322BA24D8547EE3F7B5B_159981330 = (isInTouchMode());
         touchMode = TOUCH_MODE_ON;
         touchMode = TOUCH_MODE_OFF;
         {
@@ -2359,19 +2318,20 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 14:26:44.520 -0400", hash_original_method = "5DA1B21EB8CB635B0040E7A9E537D496", hash_generated_method = "5F8CE658A6DF2EB6EBF19CFC5E6D97C3")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:05.907 -0400", hash_original_method = "5DA1B21EB8CB635B0040E7A9E537D496", hash_generated_method = "60F1FE54AE1709036EF47E0F86B9157C")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
      ContextMenuInfo createContextMenuInfo(View view, int position, long id) {
-        dsTaint.addTaint(position);
         dsTaint.addTaint(id);
+        dsTaint.addTaint(position);
         dsTaint.addTaint(view.dsTaint);
+        ContextMenuInfo varF2CC585BB1D5C76D3B6245ED524C2BD7_2004199253 = (new AdapterContextMenuInfo(view, position, id));
         return (ContextMenuInfo)dsTaint.getTaint();
         // ---------- Original Method ----------
         //return new AdapterContextMenuInfo(view, position, id);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 14:26:44.526 -0400", hash_original_method = "5D95BDE73AAD1EC9BDE83FD3189DFC34", hash_generated_method = "343862D25562AE83CA71077C3C5FDE82")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:05.907 -0400", hash_original_method = "5D95BDE73AAD1EC9BDE83FD3189DFC34", hash_generated_method = "7BD7D3F7F293268F1550E354063BD62E")
     //DSFIXME:  CODE0002: Requires DSC value to be set
      boolean performLongPress(final View child,
             final int longPressPosition, final long longPressId) {
@@ -2380,7 +2340,7 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
         dsTaint.addTaint(longPressPosition);
         {
             {
-                boolean var00E98D05004FD0330F18AA64B0748865_864254685 = (mChoiceActionMode == null &&
+                boolean var00E98D05004FD0330F18AA64B0748865_1705023414 = (mChoiceActionMode == null &&
                     (mChoiceActionMode = startActionMode(mMultiChoiceModeCallback)) != null);
                 {
                     setItemChecked(longPressPosition, true);
@@ -2407,7 +2367,7 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 14:26:44.529 -0400", hash_original_method = "9F181134B78CDA48AEB577EDC6EC32D7", hash_generated_method = "772585C1AE35B7A1E276B43333291E1F")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:05.908 -0400", hash_original_method = "9F181134B78CDA48AEB577EDC6EC32D7", hash_generated_method = "57ABEC3685CFF14DEEC9B4536E36B652")
     @DSModeled(DSC.SAFE)
     @Override
     protected ContextMenuInfo getContextMenuInfo() {
@@ -2417,7 +2377,7 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 14:26:44.535 -0400", hash_original_method = "720F76E8125C4C6521A83756BA0DD98B", hash_generated_method = "AFC74F0822D597A5609F978276A1E940")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:05.908 -0400", hash_original_method = "720F76E8125C4C6521A83756BA0DD98B", hash_generated_method = "F3B913192DEB62F3AF9B400B49E15695")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     @Override
     public boolean showContextMenu(float x, float y, int metaState) {
@@ -2433,10 +2393,10 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
             child = getChildAt(position - mFirstPosition);
             {
                 mContextMenuInfo = createContextMenuInfo(child, position, id);
-                boolean var8897B192E808AB3EDB293923745D2D74_659585076 = (super.showContextMenuForChild(AbsListView.this));
+                boolean var8897B192E808AB3EDB293923745D2D74_1814436822 = (super.showContextMenuForChild(AbsListView.this));
             } //End block
         } //End block
-        boolean varE458CA81039B0A7729D96AA8ED00D0B8_1952436946 = (super.showContextMenu(x, y, metaState));
+        boolean varE458CA81039B0A7729D96AA8ED00D0B8_925482266 = (super.showContextMenu(x, y, metaState));
         return dsTaint.getTaintBoolean();
         // ---------- Original Method ----------
         //final int position = pointToPosition((int)x, (int)y);
@@ -2452,7 +2412,7 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 14:26:44.552 -0400", hash_original_method = "13B8C0CF7E224AA8E52D13CB23050F48", hash_generated_method = "E895DEB3C4F59C799D8214338F8B2B1D")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:05.908 -0400", hash_original_method = "13B8C0CF7E224AA8E52D13CB23050F48", hash_generated_method = "C709AA649F4DA649BC1E5977EB11453B")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     @Override
     public boolean showContextMenuForChild(View originalView) {
@@ -2497,7 +2457,7 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 14:26:44.556 -0400", hash_original_method = "9B8E7EBB8FE64DE94387A936F5D592CB", hash_generated_method = "D9C658CAAA9C82875D8A0176E0702827")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:05.909 -0400", hash_original_method = "9B8E7EBB8FE64DE94387A936F5D592CB", hash_generated_method = "5C8FCF841EA61740C997F251F5AA2125")
     @DSModeled(DSC.SAFE)
     @Override
     public boolean onKeyDown(int keyCode, KeyEvent event) {
@@ -2510,7 +2470,7 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 14:26:44.563 -0400", hash_original_method = "DD8448F1B5F23CC0AD3E4D53FFC7D294", hash_generated_method = "7B6210E995D3B71D42CF93465DAAA71C")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:05.909 -0400", hash_original_method = "DD8448F1B5F23CC0AD3E4D53FFC7D294", hash_generated_method = "CCC456E0F3523CEE157E5BC9D4241C58")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     @Override
     public boolean onKeyUp(int keyCode, KeyEvent event) {
@@ -2519,12 +2479,12 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
         dsTaint.addTaint(event.dsTaint);
         //Begin case KeyEvent.KEYCODE_DPAD_CENTER KeyEvent.KEYCODE_ENTER 
         {
-            boolean varC378F7D9F83769944CF2ACC662A4EAE3_565468297 = (!isEnabled());
+            boolean varC378F7D9F83769944CF2ACC662A4EAE3_1573554250 = (!isEnabled());
         } //End collapsed parenthetic
         //End case KeyEvent.KEYCODE_DPAD_CENTER KeyEvent.KEYCODE_ENTER 
         //Begin case KeyEvent.KEYCODE_DPAD_CENTER KeyEvent.KEYCODE_ENTER 
         {
-            boolean varD23167BEA6670E541F842804D07343DD_656363219 = (isClickable() && isPressed() &&
+            boolean varD23167BEA6670E541F842804D07343DD_1538363282 = (isClickable() && isPressed() &&
                     mSelectedPosition >= 0 && mAdapter != null &&
                     mSelectedPosition < mAdapter.getCount());
             {
@@ -2538,7 +2498,7 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
             } //End block
         } //End collapsed parenthetic
         //End case KeyEvent.KEYCODE_DPAD_CENTER KeyEvent.KEYCODE_ENTER 
-        boolean varEDD771EBF66425AD21882AB08CD0EE48_1468214214 = (super.onKeyUp(keyCode, event));
+        boolean varEDD771EBF66425AD21882AB08CD0EE48_706237882 = (super.onKeyUp(keyCode, event));
         return dsTaint.getTaintBoolean();
         // ---------- Original Method ----------
         //switch (keyCode) {
@@ -2564,7 +2524,7 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 14:26:44.566 -0400", hash_original_method = "AF011537E523E131D566F09FD5E6C732", hash_generated_method = "DF9F8748422E25A565E9D40F1B78D629")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:05.909 -0400", hash_original_method = "AF011537E523E131D566F09FD5E6C732", hash_generated_method = "588068610EA441BC765E85D3FD628CE7")
     @DSModeled(DSC.SAFE)
     @Override
     protected void dispatchSetPressed(boolean pressed) {
@@ -2573,7 +2533,7 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 14:26:44.572 -0400", hash_original_method = "C5D265B49C06947929C542FAD6DD4910", hash_generated_method = "41C1ACBB534E9E20BDD9F3C6377D2AB9")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:05.909 -0400", hash_original_method = "C5D265B49C06947929C542FAD6DD4910", hash_generated_method = "DDE13B65981FDDEB7FD408BE4BD1A0AC")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public int pointToPosition(int x, int y) {
         dsTaint.addTaint(y);
@@ -2593,11 +2553,11 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
                 View child;
                 child = getChildAt(i);
                 {
-                    boolean var02E23769C3E76AF1DC2C1CE956107022_1195967504 = (child.getVisibility() == View.VISIBLE);
+                    boolean var02E23769C3E76AF1DC2C1CE956107022_1268861994 = (child.getVisibility() == View.VISIBLE);
                     {
                         child.getHitRect(frame);
                         {
-                            boolean var9F1DF48D8B435FACEEE6B40EFD85C398_646096977 = (frame.contains(x, y));
+                            boolean var9F1DF48D8B435FACEEE6B40EFD85C398_1150749719 = (frame.contains(x, y));
                         } //End collapsed parenthetic
                     } //End block
                 } //End collapsed parenthetic
@@ -2624,7 +2584,7 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 14:26:44.580 -0400", hash_original_method = "0CE0E010C97C81E4AEC085897948D819", hash_generated_method = "4BE2AEBD2A7F5E511F04AF76A6758356")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:05.910 -0400", hash_original_method = "0CE0E010C97C81E4AEC085897948D819", hash_generated_method = "D03E970FF502DA83F3F7411DCE7D7FEC")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public long pointToRowId(int x, int y) {
         dsTaint.addTaint(y);
@@ -2632,7 +2592,7 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
         int position;
         position = pointToPosition(x, y);
         {
-            long varD18EE374A3F0927116BA59F2A9A03256_625395707 = (mAdapter.getItemId(position));
+            long varD18EE374A3F0927116BA59F2A9A03256_1229468816 = (mAdapter.getItemId(position));
         } //End block
         return dsTaint.getTaintLong();
         // ---------- Original Method ----------
@@ -2644,8 +2604,8 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 14:26:44.586 -0400", hash_original_method = "5EE86ADCFB65EEBAD1CBAFF86BFF869E", hash_generated_method = "04E2DA7E354B1F6FD1F6D20F1D359CCF")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:05.910 -0400", hash_original_method = "5EE86ADCFB65EEBAD1CBAFF86BFF869E", hash_generated_method = "C41C276E759C97DBBD65A956819059D8")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     private boolean startScrollIfNeeded(int y) {
         dsTaint.addTaint(y);
         int deltaY;
@@ -2689,7 +2649,7 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 14:26:44.614 -0400", hash_original_method = "24BFB982D66DDF27FDD0EB3AFC04A401", hash_generated_method = "A16B6018FBAF06ABB204734EDA3D5F76")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:05.912 -0400", hash_original_method = "24BFB982D66DDF27FDD0EB3AFC04A401", hash_generated_method = "36C805AFC1A4A76D38531E6559401C90")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     private void scrollIfNeeded(int y) {
         dsTaint.addTaint(y);
@@ -2712,7 +2672,7 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
             } //End block
             {
                 {
-                    boolean var3B6B3092E9AEF7EFB8F7DB7C1090C559_223952722 = ((mGroupFlags & FLAG_DISALLOW_INTERCEPT) == 0 &&
+                    boolean var3B6B3092E9AEF7EFB8F7DB7C1090C559_562748865 = ((mGroupFlags & FLAG_DISALLOW_INTERCEPT) == 0 &&
                         Math.abs(rawDeltaY) > mTouchSlop);
                     {
                         ViewParent parent;
@@ -2752,7 +2712,7 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
                         overScrollBy(0, overscroll, 0, mScrollY, 0, 0,
                                 0, mOverscrollDistance, true);
                         {
-                            boolean var879507118E22A9A52AEA797A263AF84E_938894868 = (Math.abs(mOverscrollDistance) == Math.abs(mScrollY));
+                            boolean var879507118E22A9A52AEA797A263AF84E_552005849 = (Math.abs(mOverscrollDistance) == Math.abs(mScrollY));
                             {
                                 {
                                     mVelocityTracker.clear();
@@ -2762,7 +2722,7 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
                         int overscrollMode;
                         overscrollMode = getOverScrollMode();
                         {
-                            boolean varAE1D066723B1EA15FA5C10A14D662F56_1400392945 = (overscrollMode == OVER_SCROLL_ALWAYS ||
+                            boolean varAE1D066723B1EA15FA5C10A14D662F56_1357160970 = (overscrollMode == OVER_SCROLL_ALWAYS ||
                                 (overscrollMode == OVER_SCROLL_IF_CONTENT_SCROLLS &&
                                         !contentFits()));
                             {
@@ -2771,7 +2731,7 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
                                 {
                                     mEdgeGlowTop.onPull((float) overscroll / getHeight());
                                     {
-                                        boolean varA87047F469C00113B6AE83492D7AB59C_1408844768 = (!mEdgeGlowBottom.isFinished());
+                                        boolean varA87047F469C00113B6AE83492D7AB59C_1974567223 = (!mEdgeGlowBottom.isFinished());
                                         {
                                             mEdgeGlowBottom.onRelease();
                                         } //End block
@@ -2780,7 +2740,7 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
                                 {
                                     mEdgeGlowBottom.onPull((float) overscroll / getHeight());
                                     {
-                                        boolean varF30E150A7784B932CC0A99DAB3E3524A_49571836 = (!mEdgeGlowTop.isFinished());
+                                        boolean varF30E150A7784B932CC0A99DAB3E3524A_1135714768 = (!mEdgeGlowTop.isFinished());
                                         {
                                             mEdgeGlowTop.onRelease();
                                         } //End block
@@ -2820,14 +2780,14 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
                     int overscrollMode;
                     overscrollMode = getOverScrollMode();
                     {
-                        boolean varA17BFA05D97ECE222863450A9B7218E6_1005178128 = (overscrollMode == OVER_SCROLL_ALWAYS ||
+                        boolean varA17BFA05D97ECE222863450A9B7218E6_84770267 = (overscrollMode == OVER_SCROLL_ALWAYS ||
                             (overscrollMode == OVER_SCROLL_IF_CONTENT_SCROLLS &&
                                     !contentFits()));
                         {
                             {
                                 mEdgeGlowTop.onPull((float) overScrollDistance / getHeight());
                                 {
-                                    boolean var352E8E7760F8F011E79FB28EFE62DA73_1674309712 = (!mEdgeGlowBottom.isFinished());
+                                    boolean var352E8E7760F8F011E79FB28EFE62DA73_1469659308 = (!mEdgeGlowBottom.isFinished());
                                     {
                                         mEdgeGlowBottom.onRelease();
                                     } //End block
@@ -2836,7 +2796,7 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
                             {
                                 mEdgeGlowBottom.onPull((float) overScrollDistance / getHeight());
                                 {
-                                    boolean var530787B3C000358ED8C3E02B71DC0120_467550401 = (!mEdgeGlowTop.isFinished());
+                                    boolean var530787B3C000358ED8C3E02B71DC0120_505666298 = (!mEdgeGlowTop.isFinished());
                                     {
                                         mEdgeGlowTop.onRelease();
                                     } //End block
@@ -2869,7 +2829,7 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 14:26:44.631 -0400", hash_original_method = "6F0203AFDEF2DCB43412C3F5E7A63F8C", hash_generated_method = "5887859069BE7AA2B9B62AEA59FA8F1E")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:05.913 -0400", hash_original_method = "6F0203AFDEF2DCB43412C3F5E7A63F8C", hash_generated_method = "26128C9F284BEE4372BBF02DDC6AB3B1")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public void onTouchModeChanged(boolean isInTouchMode) {
         //DSFIXME:  CODE0009: Possible callback target function detected
@@ -2877,7 +2837,7 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
         {
             hideSelector();
             {
-                boolean var18FDA06F2E4C20DCFBA70CFDB1F209F6_1971900212 = (getHeight() > 0 && getChildCount() > 0);
+                boolean var18FDA06F2E4C20DCFBA70CFDB1F209F6_703086818 = (getHeight() > 0 && getChildCount() > 0);
                 {
                     layoutChildren();
                 } //End block
@@ -2907,16 +2867,16 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 14:26:44.686 -0400", hash_original_method = "EC498F7AA9A002C93696F04D5F90A9F2", hash_generated_method = "BB23E594A05E29D65C21540FEEF27836")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:05.917 -0400", hash_original_method = "EC498F7AA9A002C93696F04D5F90A9F2", hash_generated_method = "AC87139408E5CD68FA5003054244F726")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     @Override
     public boolean onTouchEvent(MotionEvent ev) {
         //DSFIXME:  CODE0009: Possible callback target function detected
         dsTaint.addTaint(ev.dsTaint);
         {
-            boolean varC378F7D9F83769944CF2ACC662A4EAE3_2127063323 = (!isEnabled());
+            boolean varC378F7D9F83769944CF2ACC662A4EAE3_690738777 = (!isEnabled());
             {
-                boolean var78B3B137E9725C8407DD55321B456099_23599421 = (isClickable() || isLongClickable());
+                boolean var78B3B137E9725C8407DD55321B456099_1591938481 = (isClickable() || isLongClickable());
             } //End block
         } //End collapsed parenthetic
         {
@@ -2955,7 +2915,7 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
                 motionPosition = pointToPosition(x, y);
                 {
                     {
-                        boolean varD00D6114E840F55D6764F4976AFF0726_1311932621 = ((mTouchMode != TOUCH_MODE_FLING) && (motionPosition >= 0)
+                        boolean varD00D6114E840F55D6764F4976AFF0726_630073272 = ((mTouchMode != TOUCH_MODE_FLING) && (motionPosition >= 0)
                             && (getAdapter().isEnabled(motionPosition)));
                         {
                             mTouchMode = TOUCH_MODE_DOWN;
@@ -2986,7 +2946,7 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
             } //End block
             //End case default 
             {
-                boolean var10762BA5807EC5420815666D17984CE3_1235486380 = (performButtonActionOnTouchDown(ev));
+                boolean var10762BA5807EC5420815666D17984CE3_687239067 = (performButtonActionOnTouchDown(ev));
                 {
                     {
                         removeCallbacks(mPendingCheckForTap);
@@ -3020,7 +2980,7 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
             motionPosition = mMotionPosition;
             //End case TOUCH_MODE_DOWN TOUCH_MODE_TAP TOUCH_MODE_DONE_WAITING 
             //Begin case TOUCH_MODE_DOWN TOUCH_MODE_TAP TOUCH_MODE_DONE_WAITING 
-            final View child;
+            View child;
             child = getChildAt(motionPosition - mFirstPosition);
             //End case TOUCH_MODE_DOWN TOUCH_MODE_TAP TOUCH_MODE_DONE_WAITING 
             //Begin case TOUCH_MODE_DOWN TOUCH_MODE_TAP TOUCH_MODE_DONE_WAITING 
@@ -3033,7 +2993,7 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
             //End case TOUCH_MODE_DOWN TOUCH_MODE_TAP TOUCH_MODE_DONE_WAITING 
             //Begin case TOUCH_MODE_DOWN TOUCH_MODE_TAP TOUCH_MODE_DONE_WAITING 
             {
-                boolean var645943845E190A2FFA4FE7562EA898F8_1045860756 = (child != null && !child.hasFocusable() && inList);
+                boolean var645943845E190A2FFA4FE7562EA898F8_401426028 = (child != null && !child.hasFocusable() && inList);
                 {
                     {
                         child.setPressed(false);
@@ -3041,7 +3001,7 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
                     {
                         mPerformClick = new PerformClick();
                     } //End block
-                    final AbsListView.PerformClick performClick;
+                    AbsListView.PerformClick performClick;
                     performClick = mPerformClick;
                     performClick.mClickMotionPosition = motionPosition;
                     performClick.rememberWindowAttachCount();
@@ -3055,7 +3015,7 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
                         } //End block
                         mLayoutMode = LAYOUT_NORMAL;
                         {
-                            boolean varAD4E45D7D3DB8FFF6E14B37863D65B2D_902529029 = (!mDataChanged && mAdapter.isEnabled(motionPosition));
+                            boolean varAD4E45D7D3DB8FFF6E14B37863D65B2D_2096578998 = (!mDataChanged && mAdapter.isEnabled(motionPosition));
                             {
                                 mTouchMode = TOUCH_MODE_TAP;
                                 setSelectedPositionInt(mMotionPosition);
@@ -3073,17 +3033,26 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
                                 {
                                     removeCallbacks(mTouchModeReset);
                                 } //End block
-                                mTouchModeReset = new Runnable() {
-                                @Override
-                                public void run() {
-                                    mTouchMode = TOUCH_MODE_REST;
-                                    child.setPressed(false);
-                                    setPressed(false);
-                                    if (!mDataChanged) {
-                                        performClick.run();
+                                mTouchModeReset = new Runnable() {                                    
+                                    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:05.915 -0400", hash_original_method = "A6EC1D4E4E60E1E8895C51DF141E43B7", hash_generated_method = "9285F265A17C80263E536A0E27728322")
+                                    //DSFIXME:  CODE0002: Requires DSC value to be set
+                                    @Override
+                                    public void run() {
+                                        mTouchMode = TOUCH_MODE_REST;
+                                        child.setPressed(false);
+                                        setPressed(false);
+                                        {
+                                            performClick.run();
+                                        } //End block
+                                        // ---------- Original Method ----------
+                                        //mTouchMode = TOUCH_MODE_REST;
+                                        //child.setPressed(false);
+                                        //setPressed(false);
+                                        //if (!mDataChanged) {
+                                        //performClick.run();
+                                    //}
                                     }
-                                }
-                            };
+};
                                 postDelayed(mTouchModeReset,
                                     ViewConfiguration.getPressedStateDuration());
                             } //End block
@@ -3094,7 +3063,7 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
                         } //End collapsed parenthetic
                     } //End block
                     {
-                        boolean var523699F24A476A31015FCD9CC5BA98D8_1902239850 = (!mDataChanged && mAdapter.isEnabled(motionPosition));
+                        boolean var523699F24A476A31015FCD9CC5BA98D8_763150980 = (!mDataChanged && mAdapter.isEnabled(motionPosition));
                         {
                             performClick.run();
                         } //End block
@@ -3123,7 +3092,7 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
                 int contentBottom;
                 contentBottom = getHeight() - mListPadding.bottom;
                 {
-                    boolean varE3D06501EDBEFC68EB729C2818A34655_407429017 = (mFirstPosition == 0 && firstChildTop >= contentTop &&
+                    boolean varE3D06501EDBEFC68EB729C2818A34655_118178916 = (mFirstPosition == 0 && firstChildTop >= contentTop &&
                             mFirstPosition + childCount < mItemCount &&
                             lastChildBottom <= getHeight() - contentBottom);
                     {
@@ -3138,7 +3107,7 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
                         initialVelocity = (int)
                                 (velocityTracker.getYVelocity(mActivePointerId) * mVelocityScale);
                         {
-                            boolean varD48B4459D536B53F6277D9F8CEC82F89_1843091715 = (Math.abs(initialVelocity) > mMinimumVelocity &&
+                            boolean varD48B4459D536B53F6277D9F8CEC82F89_912190553 = (Math.abs(initialVelocity) > mMinimumVelocity &&
                                 !((mFirstPosition == 0 &&
                                         firstChildTop == contentTop - mOverscrollDistance) ||
                                   (mFirstPosition + childCount == mItemCount &&
@@ -3190,7 +3159,7 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
             //End case TOUCH_MODE_OVERSCROLL 
             //Begin case TOUCH_MODE_OVERSCROLL 
             {
-                boolean varA56DF990188ABEF5AF3A9E103B5F2778_1794096670 = (Math.abs(initialVelocity) > mMinimumVelocity);
+                boolean varA56DF990188ABEF5AF3A9E103B5F2778_1100204278 = (Math.abs(initialVelocity) > mMinimumVelocity);
                 {
                     mFlingRunnable.startOverfling(-initialVelocity);
                 } //End block
@@ -3318,8 +3287,8 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 14:26:44.708 -0400", hash_original_method = "3A1744A3CB770F6FD9FFEB222E666622", hash_generated_method = "8085DB324A9E7B7F04637DAF273798CC")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:05.919 -0400", hash_original_method = "3A1744A3CB770F6FD9FFEB222E666622", hash_generated_method = "C3D321F63F15196E9B48041AC8DD9278")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     @Override
     protected void onOverScrolled(int scrollX, int scrollY, boolean clampedX, boolean clampedY) {
         //DSFIXME:  CODE0009: Possible callback target function detected
@@ -3343,17 +3312,17 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 14:26:44.715 -0400", hash_original_method = "09132BF5E477A2B233231E384E8A2F27", hash_generated_method = "6237F55441FABD915C3F80D64D2F2707")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:05.922 -0400", hash_original_method = "09132BF5E477A2B233231E384E8A2F27", hash_generated_method = "7F0F56296CE7617ED732C376564F05B8")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     @Override
     public boolean onGenericMotionEvent(MotionEvent event) {
         //DSFIXME:  CODE0009: Possible callback target function detected
         dsTaint.addTaint(event.dsTaint);
         {
-            boolean varB5CEEFE1A0B0FE6CF2A2378211A03C4D_653260409 = ((event.getSource() & InputDevice.SOURCE_CLASS_POINTER) != 0);
+            boolean varB5CEEFE1A0B0FE6CF2A2378211A03C4D_1122550591 = ((event.getSource() & InputDevice.SOURCE_CLASS_POINTER) != 0);
             {
                 {
-                    Object varC2BF00F96F1D1B1ABEF4B0E3FC4FE9EC_1816037921 = (event.getAction());
+                    Object varC2BF00F96F1D1B1ABEF4B0E3FC4FE9EC_1386479552 = (event.getAction());
                     //Begin case MotionEvent.ACTION_SCROLL 
                     {
                         {
@@ -3363,7 +3332,7 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
                                 int delta;
                                 delta = (int) (vscroll * getVerticalScrollFactor());
                                 {
-                                    boolean var5104A1C3A4166DC9AEBE0F45BFBBFDA2_1999000392 = (!trackMotionScroll(delta, delta));
+                                    boolean var5104A1C3A4166DC9AEBE0F45BFBBFDA2_833337480 = (!trackMotionScroll(delta, delta));
                                 } //End collapsed parenthetic
                             } //End block
                         } //End block
@@ -3372,7 +3341,7 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
                 } //End collapsed parenthetic
             } //End block
         } //End collapsed parenthetic
-        boolean var32C1E3DF40BCC120C79428C7AEB27DD1_798565582 = (super.onGenericMotionEvent(event));
+        boolean var32C1E3DF40BCC120C79428C7AEB27DD1_867560244 = (super.onGenericMotionEvent(event));
         return dsTaint.getTaintBoolean();
         // ---------- Original Method ----------
         //if ((event.getSource() & InputDevice.SOURCE_CLASS_POINTER) != 0) {
@@ -3394,7 +3363,7 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 14:26:44.727 -0400", hash_original_method = "F146D016CF32B873211A043EDB782604", hash_generated_method = "D9E498B469DD083A890902CAF35E75D0")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:05.924 -0400", hash_original_method = "F146D016CF32B873211A043EDB782604", hash_generated_method = "21996382AF613580D1D896E3A6DDBE9A")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     @Override
     public void draw(Canvas canvas) {
@@ -3404,7 +3373,7 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
             int scrollY;
             scrollY = mScrollY;
             {
-                boolean varD7662701013542BC2CCE8B2B50437EBA_907239756 = (!mEdgeGlowTop.isFinished());
+                boolean varD7662701013542BC2CCE8B2B50437EBA_1632044324 = (!mEdgeGlowTop.isFinished());
                 {
                     int restoreCount;
                     restoreCount = canvas.save();
@@ -3418,7 +3387,7 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
                         Math.min(0, scrollY + mFirstPositionDistanceGuess));
                     mEdgeGlowTop.setSize(width, getHeight());
                     {
-                        boolean varAE9426D05B3D52BFC4B9E7AA44588485_1430014127 = (mEdgeGlowTop.draw(canvas));
+                        boolean varAE9426D05B3D52BFC4B9E7AA44588485_816610988 = (mEdgeGlowTop.draw(canvas));
                         {
                             invalidate();
                         } //End block
@@ -3427,7 +3396,7 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
                 } //End block
             } //End collapsed parenthetic
             {
-                boolean var71AB611E918A4C599E2F06D4154D257E_335964554 = (!mEdgeGlowBottom.isFinished());
+                boolean var71AB611E918A4C599E2F06D4154D257E_2030760443 = (!mEdgeGlowBottom.isFinished());
                 {
                     int restoreCount;
                     restoreCount = canvas.save();
@@ -3444,7 +3413,7 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
                     canvas.rotate(180, width, 0);
                     mEdgeGlowBottom.setSize(width, height);
                     {
-                        boolean var61CCF9557D478E1494862B3636E22888_98025278 = (mEdgeGlowBottom.draw(canvas));
+                        boolean var61CCF9557D478E1494862B3636E22888_1893321444 = (mEdgeGlowBottom.draw(canvas));
                         {
                             invalidate();
                         } //End block
@@ -3472,7 +3441,7 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 14:26:44.735 -0400", hash_original_method = "9FFFDAFD9442A3DE6BE69946897AC2B3", hash_generated_method = "B6637F314197B5BA1C6218FF4FCFADA8")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:05.924 -0400", hash_original_method = "9FFFDAFD9442A3DE6BE69946897AC2B3", hash_generated_method = "916746AD2943400B2F5E574487D12E4A")
     @DSModeled(DSC.SAFE)
     public void setOverScrollEffectPadding(int leftPadding, int rightPadding) {
         dsTaint.addTaint(leftPadding);
@@ -3483,7 +3452,7 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 14:26:44.738 -0400", hash_original_method = "2F2E3E2ED97C397B1954EFE1C35FD1EF", hash_generated_method = "43200DD00A758A81245813B01E7050CF")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:05.924 -0400", hash_original_method = "2F2E3E2ED97C397B1954EFE1C35FD1EF", hash_generated_method = "D2F7B701FF4A7C7D5D9BBE60A4204A34")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     private void initOrResetVelocityTracker() {
         {
@@ -3501,7 +3470,7 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 14:26:44.740 -0400", hash_original_method = "2C2F1E0A6C232182F8110D9EE75ED47E", hash_generated_method = "154B8421283BEBB50C613A81D4F65445")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:05.924 -0400", hash_original_method = "2C2F1E0A6C232182F8110D9EE75ED47E", hash_generated_method = "A47C5AEFF80C521B346EFD43CCEC463A")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     private void initVelocityTrackerIfNotExists() {
         {
@@ -3514,8 +3483,8 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 14:26:44.743 -0400", hash_original_method = "FC3B581D4963BCED4340031BA20C5421", hash_generated_method = "722D9035C242C77366688C9524CCD357")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:05.925 -0400", hash_original_method = "FC3B581D4963BCED4340031BA20C5421", hash_generated_method = "4A5B29B306AF5EDD25C8547D1436EB51")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     private void recycleVelocityTracker() {
         {
             mVelocityTracker.recycle();
@@ -3529,8 +3498,8 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 14:26:44.748 -0400", hash_original_method = "C74400E8950C106883E854683AF24673", hash_generated_method = "2B136DF901568B223FCA9653C4C29759")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:05.925 -0400", hash_original_method = "C74400E8950C106883E854683AF24673", hash_generated_method = "865CE72BE478ED109800CF1DEE433CDE")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     @Override
     public void requestDisallowInterceptTouchEvent(boolean disallowIntercept) {
         dsTaint.addTaint(disallowIntercept);
@@ -3546,7 +3515,7 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 14:26:44.762 -0400", hash_original_method = "BEACBA96FA37C833811279893053B3A1", hash_generated_method = "91285F0F5A969BFAC797E10B7FB7567D")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:05.926 -0400", hash_original_method = "BEACBA96FA37C833811279893053B3A1", hash_generated_method = "9672C39E50FE7D7C84AB9A197454B928")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     @Override
     public boolean onInterceptTouchEvent(MotionEvent ev) {
@@ -3611,7 +3580,7 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
             //End case TOUCH_MODE_DOWN 
             //Begin case TOUCH_MODE_DOWN 
             {
-                boolean varBEAADC7EDD4EC70730C4344D280FA313_43680374 = (startScrollIfNeeded(y));
+                boolean varBEAADC7EDD4EC70730C4344D280FA313_509258071 = (startScrollIfNeeded(y));
             } //End collapsed parenthetic
             //End case TOUCH_MODE_DOWN 
         } //End block
@@ -3635,7 +3604,7 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 14:26:44.770 -0400", hash_original_method = "C5DD3809C32C06AD527DF2275274EBCF", hash_generated_method = "34F9C9E6A6792370E0BBAD222CBF8DFE")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:05.926 -0400", hash_original_method = "C5DD3809C32C06AD527DF2275274EBCF", hash_generated_method = "04F6C4C45B8D8E5C8AFAD207C55A0CE2")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     private void onSecondaryPointerUp(MotionEvent ev) {
         dsTaint.addTaint(ev.dsTaint);
@@ -3667,7 +3636,7 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 14:26:44.776 -0400", hash_original_method = "7406EAB31F4F45208F8FFDB2641D9148", hash_generated_method = "CEFCD712FA15A46B675D0DA7FEAD40FE")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:05.926 -0400", hash_original_method = "7406EAB31F4F45208F8FFDB2641D9148", hash_generated_method = "28B9D12D097768B99920B9B98BD028A2")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     @Override
     public void addTouchables(ArrayList<View> views) {
@@ -3685,7 +3654,7 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
                 View child;
                 child = getChildAt(i);
                 {
-                    boolean var2E8FCA4FD70E922109B068B9683F621A_456165509 = (adapter.isEnabled(firstPosition + i));
+                    boolean var2E8FCA4FD70E922109B068B9683F621A_1592616122 = (adapter.isEnabled(firstPosition + i));
                     {
                         views.add(child);
                     } //End block
@@ -3710,8 +3679,8 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 14:26:44.784 -0400", hash_original_method = "53B60DC92C627A12BA76D6AAFD79D448", hash_generated_method = "03DAB3FED79A51B05606A1F2BAA16B3F")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:05.927 -0400", hash_original_method = "53B60DC92C627A12BA76D6AAFD79D448", hash_generated_method = "B6EDA761563C38897E878DD8DAFF6AA5")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
      void reportScrollStateChange(int newState) {
         dsTaint.addTaint(newState);
         {
@@ -3729,8 +3698,8 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 14:26:44.789 -0400", hash_original_method = "09656A4DFD81148F85DAB6B80BBEDF83", hash_generated_method = "1C84FCDB19983FF246BBB8C984C64B54")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:05.927 -0400", hash_original_method = "09656A4DFD81148F85DAB6B80BBEDF83", hash_generated_method = "7800391024A0CF9871D887A7676040FA")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     public void setFriction(float friction) {
         dsTaint.addTaint(friction);
         {
@@ -3745,7 +3714,7 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 14:26:44.793 -0400", hash_original_method = "0A97F6C2B71DEE1A9A851FDFBE6F2171", hash_generated_method = "E53366720EEF67A8DF1B39028BB78EBE")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:05.927 -0400", hash_original_method = "0A97F6C2B71DEE1A9A851FDFBE6F2171", hash_generated_method = "91E5D1A44CA7EBC5AF64BBB8AC3169F7")
     @DSModeled(DSC.SAFE)
     public void setVelocityScale(float scale) {
         dsTaint.addTaint(scale);
@@ -3754,8 +3723,8 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 14:26:44.796 -0400", hash_original_method = "5ADECEDEBCB45348FEE18FEA2660C669", hash_generated_method = "1C3B5C4AD3DDBAA62DFBD9A2745FC9D7")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:05.927 -0400", hash_original_method = "5ADECEDEBCB45348FEE18FEA2660C669", hash_generated_method = "342075910B25B1F6113E19C0BF01C83A")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     public void smoothScrollToPosition(int position) {
         dsTaint.addTaint(position);
         {
@@ -3770,8 +3739,8 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 14:26:44.801 -0400", hash_original_method = "8931967DEF21C4BF02F7EE5F6DA25484", hash_generated_method = "834A9349851644D12EE664318E9CAA31")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:05.928 -0400", hash_original_method = "8931967DEF21C4BF02F7EE5F6DA25484", hash_generated_method = "9F5C9A9881026F39BF45BFAD70D2B334")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     public void smoothScrollToPositionFromTop(int position, int offset, int duration) {
         dsTaint.addTaint(position);
         dsTaint.addTaint(duration);
@@ -3788,8 +3757,8 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 14:26:44.811 -0400", hash_original_method = "481FD979A7BEB05C5D5FED69D6209380", hash_generated_method = "2F4A92958E67B8D95EFBF4D163ECBDC2")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:05.928 -0400", hash_original_method = "481FD979A7BEB05C5D5FED69D6209380", hash_generated_method = "2B5313DA57C209B47792FB8F7A171331")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     public void smoothScrollToPositionFromTop(int position, int offset) {
         dsTaint.addTaint(position);
         dsTaint.addTaint(offset);
@@ -3805,8 +3774,8 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 14:26:44.814 -0400", hash_original_method = "D55175FA7A4D56B1E1633A69B89BF26C", hash_generated_method = "A7D2251842529225191FEE163FDA0905")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:05.928 -0400", hash_original_method = "D55175FA7A4D56B1E1633A69B89BF26C", hash_generated_method = "CDB89FC022A42126959964625AE8367F")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     public void smoothScrollToPosition(int position, int boundPosition) {
         dsTaint.addTaint(position);
         dsTaint.addTaint(boundPosition);
@@ -3822,11 +3791,11 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 14:26:44.829 -0400", hash_original_method = "F38F4C8B27D75B9B07425BD626A4F57B", hash_generated_method = "20F6AE0689DCEDB0F5EB04B205426315")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:05.929 -0400", hash_original_method = "F38F4C8B27D75B9B07425BD626A4F57B", hash_generated_method = "96FC32C4ED1A2C9B1090E64B67CBF569")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public void smoothScrollBy(int distance, int duration) {
-        dsTaint.addTaint(distance);
         dsTaint.addTaint(duration);
+        dsTaint.addTaint(distance);
         {
             mFlingRunnable = new FlingRunnable();
         } //End block
@@ -3841,7 +3810,7 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
         int bottomLimit;
         bottomLimit = getHeight() - getPaddingBottom();
         {
-            boolean varE771752E61AAE94EE838BEB839D51E29_2119398162 = (distance == 0 || mItemCount == 0 || childCount == 0 ||
+            boolean varE771752E61AAE94EE838BEB839D51E29_75631933 = (distance == 0 || mItemCount == 0 || childCount == 0 ||
                 (firstPos == 0 && getChildAt(0).getTop() == topLimit && distance < 0) ||
                 (lastPos == mItemCount - 1 &&
                         getChildAt(childCount - 1).getBottom() == bottomLimit && distance > 0));
@@ -3861,7 +3830,7 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 14:26:44.847 -0400", hash_original_method = "C17AB5094757737D3C9F6E76AFA310E4", hash_generated_method = "FD863C5CC824BAC1DEC91341F84610AD")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:05.929 -0400", hash_original_method = "C17AB5094757737D3C9F6E76AFA310E4", hash_generated_method = "6A75ED8DC449FC2507F3B586D49A0F2D")
     //DSFIXME:  CODE0002: Requires DSC value to be set
      void smoothScrollByOffset(int position) {
         dsTaint.addTaint(position);
@@ -3880,7 +3849,7 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
                 Rect visibleRect;
                 visibleRect = new Rect();
                 {
-                    boolean var18BDB2D3799631890650FD697075D5F9_309668421 = (child.getGlobalVisibleRect(visibleRect));
+                    boolean var18BDB2D3799631890650FD697075D5F9_533954761 = (child.getGlobalVisibleRect(visibleRect));
                     {
                         int childRectArea;
                         childRectArea = child.getWidth() * child.getHeight();
@@ -3890,12 +3859,6 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
                         visibleArea = (visibleRectArea / (float) childRectArea);
                         float visibleThreshold;
                         visibleThreshold = 0.75f;
-                        {
-                            ++index;
-                        } //End block
-                        {
-                            --index;
-                        } //End block
                     } //End block
                 } //End collapsed parenthetic
                 smoothScrollToPosition(Math.max(0, Math.min(getCount(), index + position)));
@@ -3906,8 +3869,8 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 14:26:44.856 -0400", hash_original_method = "81BA0C283B501CA4B76891C73CF6304F", hash_generated_method = "8C6A47691AD2825CF47D3A0D9D87E381")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:05.929 -0400", hash_original_method = "81BA0C283B501CA4B76891C73CF6304F", hash_generated_method = "4F2D2548096503CB8CD1B64A3B2D9FBF")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     private void createScrollingCache() {
         {
             setChildrenDrawnWithCacheEnabled(true);
@@ -3923,24 +3886,40 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 14:26:44.858 -0400", hash_original_method = "5EE1F7DCF1506371E8A50F14184A0F0B", hash_generated_method = "3765A6DD8E2C22A1CF99FA0644F58121")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:05.930 -0400", hash_original_method = "5EE1F7DCF1506371E8A50F14184A0F0B", hash_generated_method = "66B6F773E23DD3CDA7121D19B16E38A4")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     private void clearScrollingCache() {
         {
-            mClearScrollingCache = new Runnable() {
+            mClearScrollingCache = new Runnable() {                
+                @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:05.930 -0400", hash_original_method = "C1A06A57DD958FE417CF10EBDAA96EFE", hash_generated_method = "0B75BFD431919831E51B40289256A127")
+                //DSFIXME:  CODE0002: Requires DSC value to be set
                 public void run() {
-                    if (mCachingStarted) {
+                    {
                         mCachingStarted = mCachingActive = false;
                         setChildrenDrawnWithCacheEnabled(false);
-                        if ((mPersistentDrawingCache & PERSISTENT_SCROLLING_CACHE) == 0) {
+                        {
                             setChildrenDrawingCacheEnabled(false);
-                        }
-                        if (!isAlwaysDrawnWithCacheEnabled()) {
-                            invalidate();
-                        }
-                    }
+                        } //End block
+                        {
+                            boolean var600D0F7D7BFFDAD0124DB110898B3A19_1554309403 = (!isAlwaysDrawnWithCacheEnabled());
+                            {
+                                invalidate();
+                            } //End block
+                        } //End collapsed parenthetic
+                    } //End block
+                    // ---------- Original Method ----------
+                    //if (mCachingStarted) {
+                        //mCachingStarted = mCachingActive = false;
+                        //setChildrenDrawnWithCacheEnabled(false);
+                        //if ((mPersistentDrawingCache & PERSISTENT_SCROLLING_CACHE) == 0) {
+                            //setChildrenDrawingCacheEnabled(false);
+                        //}
+                        //if (!isAlwaysDrawnWithCacheEnabled()) {
+                            //invalidate();
+                        //}
+                    //}
                 }
-            };
+};
         } //End block
         post(mClearScrollingCache);
         // ---------- Original Method ----------
@@ -3964,7 +3943,7 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 14:26:44.906 -0400", hash_original_method = "A42371BB3F2D334094B7131C15A0F3E8", hash_generated_method = "58AF5B65A2250B40CD0DEA182FA22051")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:05.931 -0400", hash_original_method = "A42371BB3F2D334094B7131C15A0F3E8", hash_generated_method = "4B83B31EA326B0CB8E81DC7E7BE3CE0A")
     //DSFIXME:  CODE0002: Requires DSC value to be set
      boolean trackMotionScroll(int deltaY, int incrementalDeltaY) {
         dsTaint.addTaint(incrementalDeltaY);
@@ -4047,9 +4026,8 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
                     View child;
                     child = getChildAt(i);
                     {
-                        boolean varEA5CC9EA6E04B02875DA6B296CDA3DF6_1585895773 = (child.getBottom() >= top);
+                        boolean varEA5CC9EA6E04B02875DA6B296CDA3DF6_778730549 = (child.getBottom() >= top);
                         {
-                            count++;
                             int position;
                             position = firstPosition + i;
                             {
@@ -4078,10 +4056,9 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
                     View child;
                     child = getChildAt(i);
                     {
-                        boolean var0C9792EB8E72B1E8C3A203B5FF9D7EBC_368406745 = (child.getTop() <= bottom);
+                        boolean var0C9792EB8E72B1E8C3A203B5FF9D7EBC_454395402 = (child.getTop() <= bottom);
                         {
                             start = i;
-                            count++;
                             int position;
                             position = firstPosition + i;
                             {
@@ -4116,7 +4093,7 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
             int childIndex;
             childIndex = mSelectedPosition - mFirstPosition;
             {
-                boolean varE4C29A15947D7CEF0EFEE58A70FEE3AA_754855189 = (childIndex >= 0 && childIndex < getChildCount());
+                boolean varE4C29A15947D7CEF0EFEE58A70FEE3AA_1882337601 = (childIndex >= 0 && childIndex < getChildCount());
                 {
                     positionSelector(mSelectedPosition, getChildAt(childIndex));
                 } //End block
@@ -4126,7 +4103,7 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
             int childIndex;
             childIndex = mSelectorPosition - mFirstPosition;
             {
-                boolean varE4C29A15947D7CEF0EFEE58A70FEE3AA_1309787798 = (childIndex >= 0 && childIndex < getChildCount());
+                boolean varE4C29A15947D7CEF0EFEE58A70FEE3AA_1348320364 = (childIndex >= 0 && childIndex < getChildCount());
                 {
                     positionSelector(INVALID_POSITION, getChildAt(childIndex));
                 } //End block
@@ -4144,7 +4121,7 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 14:26:44.939 -0400", hash_original_method = "D1E5D38495D64541AC6B328A03DDBBE5", hash_generated_method = "055691AD274F1C61808D008EDF2A5EE6")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:05.932 -0400", hash_original_method = "D1E5D38495D64541AC6B328A03DDBBE5", hash_generated_method = "A9D70361A971D401BBFD15CADDF35D10")
     @DSModeled(DSC.SAFE)
      int getHeaderViewsCount() {
         return dsTaint.getTaintInt();
@@ -4153,7 +4130,7 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 14:26:44.947 -0400", hash_original_method = "0C261F26A2F08E82991D35E703E8BFEF", hash_generated_method = "F0AF59F493122337B97FA5981B986DC1")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:05.932 -0400", hash_original_method = "0C261F26A2F08E82991D35E703E8BFEF", hash_generated_method = "1BAA798BC0D231F35F4D874FC4B9F800")
     @DSModeled(DSC.SAFE)
      int getFooterViewsCount() {
         return dsTaint.getTaintInt();
@@ -4165,8 +4142,8 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
     abstract void fillGap(boolean down);
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 14:26:44.952 -0400", hash_original_method = "01CAE4EB89DA7F2FB8FB8C551B8C7558", hash_generated_method = "C1B62437F2092924E7628E380934985B")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:05.932 -0400", hash_original_method = "01CAE4EB89DA7F2FB8FB8C551B8C7558", hash_generated_method = "3397357B75DA44B7D8439BB69C481809")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
      void hideSelector() {
         {
             {
@@ -4194,7 +4171,7 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 14:26:44.955 -0400", hash_original_method = "3C42E05D1FE66CE321CE689DCD7609AF", hash_generated_method = "F6BE5E268C6A3399C200C2D701B0E56B")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:05.933 -0400", hash_original_method = "3C42E05D1FE66CE321CE689DCD7609AF", hash_generated_method = "C2ECF08DF2CE548202DF90EA03E4DDD2")
     //DSFIXME:  CODE0002: Requires DSC value to be set
      int reconcileSelectedPosition() {
         int position;
@@ -4219,8 +4196,8 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
     abstract int findMotionRow(int y);
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 14:26:44.959 -0400", hash_original_method = "620BFFA3FACC4E59D7B8719ED5062EB2", hash_generated_method = "30DB51B25D71CAE88BC6692ED8B9512E")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:05.933 -0400", hash_original_method = "620BFFA3FACC4E59D7B8719ED5062EB2", hash_generated_method = "862174857FB7705D09C54C364C9BE7D5")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
      int findClosestMotionRow(int y) {
         dsTaint.addTaint(y);
         int childCount;
@@ -4238,8 +4215,8 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 14:26:44.963 -0400", hash_original_method = "48746A94CCDD3AA210B8334DFA5415FB", hash_generated_method = "044634FA697086B7454D3940A7F501C6")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:05.933 -0400", hash_original_method = "48746A94CCDD3AA210B8334DFA5415FB", hash_generated_method = "60F28DC437B80BF897562B54CF102004")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     public void invalidateViews() {
         mDataChanged = true;
         rememberSyncState();
@@ -4253,11 +4230,11 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 14:26:44.967 -0400", hash_original_method = "DCA216018FB5348F17E51D7322AEEFD4", hash_generated_method = "1CB7FD79240F7A2113C76BC6AE807A29")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:05.933 -0400", hash_original_method = "DCA216018FB5348F17E51D7322AEEFD4", hash_generated_method = "F4E688242FB593C5CE46F22563BB2661")
     //DSFIXME:  CODE0002: Requires DSC value to be set
      boolean resurrectSelectionIfNeeded() {
         {
-            boolean varA94BDD63AC24FE4C16F032614F7038B6_392534358 = (mSelectedPosition < 0 && resurrectSelection());
+            boolean varA94BDD63AC24FE4C16F032614F7038B6_1176429303 = (mSelectedPosition < 0 && resurrectSelection());
             {
                 updateSelectorState();
             } //End block
@@ -4275,7 +4252,7 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
     abstract void setSelectionInt(int position);
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 14:26:44.979 -0400", hash_original_method = "46DC118C185645539DC69AE3B021DB61", hash_generated_method = "F8023C2ABC4F6C71B83C13A1251B5C6B")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:05.934 -0400", hash_original_method = "46DC118C185645539DC69AE3B021DB61", hash_generated_method = "9C56EBF05BC2ABB853C55E68BB857140")
     //DSFIXME:  CODE0002: Requires DSC value to be set
      boolean resurrectSelection() {
         int childCount;
@@ -4371,7 +4348,7 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
         mSpecificTop = selectedTop;
         selectedPos = lookForSelectablePosition(selectedPos, down);
         {
-            boolean var62F8C3AE45B38B2DECAE10F01A4F320D_264959797 = (selectedPos >= firstPosition && selectedPos <= getLastVisiblePosition());
+            boolean var62F8C3AE45B38B2DECAE10F01A4F320D_94492737 = (selectedPos >= firstPosition && selectedPos <= getLastVisiblePosition());
             {
                 mLayoutMode = LAYOUT_SPECIFIC;
                 updateSelectorState();
@@ -4389,7 +4366,7 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 14:26:44.989 -0400", hash_original_method = "7A1DBAB399A1231E28D6D54E2346B36F", hash_generated_method = "DDE05E7ECF5ADE8502BA4F2157D649EF")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:05.937 -0400", hash_original_method = "7A1DBAB399A1231E28D6D54E2346B36F", hash_generated_method = "F0D7A01C30F449E76A56C51EB9B727A4")
     //DSFIXME:  CODE0002: Requires DSC value to be set
      void confirmCheckedPositionsById() {
         mCheckStates.clear();
@@ -4398,7 +4375,7 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
         {
             int checkedIndex;
             checkedIndex = 0;
-            boolean var345B3951F4A2E6483B2D033F362E91E2_1642015559 = (checkedIndex < mCheckedIdStates.size());
+            boolean var345B3951F4A2E6483B2D033F362E91E2_494599612 = (checkedIndex < mCheckedIdStates.size());
             {
                 long id;
                 id = mCheckedIdStates.keyAt(checkedIndex);
@@ -4428,8 +4405,6 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
                     } //End collapsed parenthetic
                     {
                         mCheckedIdStates.delete(id);
-                        checkedIndex--;
-                        mCheckedItemCount--;
                         checkedCountChanged = true;
                         {
                             mMultiChoiceModeCallback.onItemCheckedStateChanged(mChoiceActionMode,
@@ -4450,7 +4425,7 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 14:26:45.007 -0400", hash_original_method = "988EE7458DA5CAE45D4D8EEE7B510700", hash_generated_method = "5924F6CC04FC27EFF7EB3BB032C36A8C")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:05.938 -0400", hash_original_method = "988EE7458DA5CAE45D4D8EEE7B510700", hash_generated_method = "6B88916D1FC0C5E59A30AB57AEFEB06E")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     @Override
     protected void handleDataChanged() {
@@ -4460,7 +4435,7 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
         lastHandledItemCount = mLastHandledItemCount;
         mLastHandledItemCount = mItemCount;
         {
-            boolean var1BF5A9488574E2FA74D8264040FC0893_1518195781 = (mChoiceMode != CHOICE_MODE_NONE && mAdapter != null && mAdapter.hasStableIds());
+            boolean var1BF5A9488574E2FA74D8264040FC0893_544405708 = (mChoiceMode != CHOICE_MODE_NONE && mAdapter != null && mAdapter.hasStableIds());
             {
                 confirmCheckedPositionsById();
             } //End block
@@ -4494,7 +4469,7 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
                 } //End block
                 //Begin case SYNC_SELECTED_POSITION 
                 {
-                    boolean varAFC77293C02F773029137FDE42129C14_102185533 = (isInTouchMode());
+                    boolean varAFC77293C02F773029137FDE42129C14_397850399 = (isInTouchMode());
                     {
                         mLayoutMode = LAYOUT_SYNC;
                         mSyncPosition = Math.min(Math.max(0, mSyncPosition), count - 1);
@@ -4506,7 +4481,7 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
                             {
                                 mSyncPosition = newPos;
                                 {
-                                    boolean varE6F64662C76820CEAED04C173D145196_2060488521 = (mSyncHeight == getHeight());
+                                    boolean varE6F64662C76820CEAED04C173D145196_65204352 = (mSyncHeight == getHeight());
                                     {
                                         mLayoutMode = LAYOUT_SYNC;
                                     } //End block
@@ -4528,7 +4503,7 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
                 //End case SYNC_FIRST_POSITION 
             } //End block
             {
-                boolean var12100596BD466B0E4730696B6E3F9C25_621747200 = (!isInTouchMode());
+                boolean var12100596BD466B0E4730696B6E3F9C25_654041208 = (!isInTouchMode());
                 {
                     newPos = getSelectedItemPosition();
                     {
@@ -4563,7 +4538,7 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 14:26:45.015 -0400", hash_original_method = "C562B15A4430BC762CC4B771E60D70AF", hash_generated_method = "CEF126A5E02CE75E19C382CDB95DAC59")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:05.938 -0400", hash_original_method = "C562B15A4430BC762CC4B771E60D70AF", hash_generated_method = "1719B08C6461C04E3113D6E2094497F0")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     @Override
     protected void onDisplayHint(int hint) {
@@ -4572,7 +4547,7 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
         super.onDisplayHint(hint);
         //Begin case INVISIBLE 
         {
-            boolean varD929D8531D595F5EA0B4A8A252DF969D_1262629412 = (mPopup != null && mPopup.isShowing());
+            boolean varD929D8531D595F5EA0B4A8A252DF969D_1700578271 = (mPopup != null && mPopup.isShowing());
             {
                 dismissPopup();
             } //End block
@@ -4580,7 +4555,7 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
         //End case INVISIBLE 
         //Begin case VISIBLE 
         {
-            boolean var003C494DA1AA746A5D5A0908F950DF91_1407212470 = (mFiltered && mPopup != null && !mPopup.isShowing());
+            boolean var003C494DA1AA746A5D5A0908F950DF91_782392594 = (mFiltered && mPopup != null && !mPopup.isShowing());
             {
                 showPopup();
             } //End block
@@ -4605,8 +4580,8 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 14:26:45.018 -0400", hash_original_method = "86B533D40AC94020BA9211F436996CAA", hash_generated_method = "60ED3D340DD8618B8173B8E50184B4DA")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:05.938 -0400", hash_original_method = "86B533D40AC94020BA9211F436996CAA", hash_generated_method = "6F219CE9A5114FCF258245673A1C0226")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     private void dismissPopup() {
         {
             mPopup.dismiss();
@@ -4618,11 +4593,11 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 14:26:45.021 -0400", hash_original_method = "6C07C7201C3F8F7AE411CAF5368DC26F", hash_generated_method = "1DE6FAE67AF8AF08F2DFA31878A1E18B")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:05.939 -0400", hash_original_method = "6C07C7201C3F8F7AE411CAF5368DC26F", hash_generated_method = "8C0B4FB35090998FF7E1763B58DCCDA3")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     private void showPopup() {
         {
-            boolean varEC31A88682EDD8797910B3EFA4C60835_1687255479 = (getWindowVisibility() == View.VISIBLE);
+            boolean varEC31A88682EDD8797910B3EFA4C60835_1695646933 = (getWindowVisibility() == View.VISIBLE);
             {
                 createTextFilter(true);
                 positionPopup();
@@ -4638,7 +4613,7 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 14:26:45.024 -0400", hash_original_method = "84FE8B62D6AD62C84F51A39D7331FBA6", hash_generated_method = "D26B3A23206F5D0522CEB9B5E231895F")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:05.939 -0400", hash_original_method = "84FE8B62D6AD62C84F51A39D7331FBA6", hash_generated_method = "EF540A1CE3CF51284C61A7D81D9E3818")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     private void positionPopup() {
         int screenHeight;
@@ -4649,7 +4624,7 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
         int bottomGap;
         bottomGap = screenHeight - xy[1] - getHeight() + (int) (mDensityScale * 20);
         {
-            boolean varE8127168ED545283F844FC09586AD49B_17606958 = (!mPopup.isShowing());
+            boolean varE8127168ED545283F844FC09586AD49B_77672508 = (!mPopup.isShowing());
             {
                 mPopup.showAtLocation(this, Gravity.BOTTOM | Gravity.CENTER_HORIZONTAL,
                     xy[0], bottomGap);
@@ -4672,8 +4647,7 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 14:26:45.027 -0400", hash_original_method = "564DB73982CD20F7720FD8D707AB5026", hash_generated_method = "A81D7BA3497D3E18ADF15D23D1E0311C")
-    static int getDistance(Rect source, Rect dest, int direction) {
+        static int getDistance(Rect source, Rect dest, int direction) {
         int sX, sY;
         int dX, dY;
         switch (direction) {
@@ -4719,7 +4693,7 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 14:26:45.030 -0400", hash_original_method = "E53786E832898AFD8F3D1858C7ADFC0B", hash_generated_method = "57C9A234B2259C052379ACEE412B6F3F")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:05.939 -0400", hash_original_method = "E53786E832898AFD8F3D1858C7ADFC0B", hash_generated_method = "772B5A618F3F152D924D525884E8C27A")
     @DSModeled(DSC.SAFE)
     @Override
     protected boolean isInFilterMode() {
@@ -4729,14 +4703,14 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 14:26:45.039 -0400", hash_original_method = "E9CFCD950A6A0EAC13FE4A21D8302AE8", hash_generated_method = "AB2DC6528244FCAA236ECFDB0B17E385")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:05.940 -0400", hash_original_method = "E9CFCD950A6A0EAC13FE4A21D8302AE8", hash_generated_method = "06CD4662471BE5416B937B3F5CB095CA")
     //DSFIXME:  CODE0002: Requires DSC value to be set
      boolean sendToTextFilter(int keyCode, int count, KeyEvent event) {
         dsTaint.addTaint(keyCode);
         dsTaint.addTaint(count);
         dsTaint.addTaint(event.dsTaint);
         {
-            boolean var8E508D5098333C3DF9E9AC1534499251_1240443457 = (!acceptFilter());
+            boolean var8E508D5098333C3DF9E9AC1534499251_1432243350 = (!acceptFilter());
         } //End collapsed parenthetic
         boolean handled;
         handled = false;
@@ -4747,10 +4721,10 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
         //End case KeyEvent.KEYCODE_DPAD_UP KeyEvent.KEYCODE_DPAD_DOWN KeyEvent.KEYCODE_DPAD_LEFT KeyEvent.KEYCODE_DPAD_RIGHT KeyEvent.KEYCODE_DPAD_CENTER KeyEvent.KEYCODE_ENTER 
         //Begin case KeyEvent.KEYCODE_BACK 
         {
-            boolean var39DB415F3D8E94BAF1BCAFDEBBF4C6EF_233475011 = (mFiltered && mPopup != null && mPopup.isShowing());
+            boolean var39DB415F3D8E94BAF1BCAFDEBBF4C6EF_205619529 = (mFiltered && mPopup != null && mPopup.isShowing());
             {
                 {
-                    boolean varF129D97EB58BBADBA4875AF25E33B341_1769963671 = (event.getAction() == KeyEvent.ACTION_DOWN
+                    boolean varF129D97EB58BBADBA4875AF25E33B341_90596353 = (event.getAction() == KeyEvent.ACTION_DOWN
                         && event.getRepeatCount() == 0);
                     {
                         KeyEvent.DispatcherState state;
@@ -4761,7 +4735,7 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
                         handled = true;
                     } //End block
                     {
-                        boolean varF38DB653E52CB4D0E4EDFCBA5E49A3DF_2131042011 = (event.getAction() == KeyEvent.ACTION_UP
+                        boolean varF38DB653E52CB4D0E4EDFCBA5E49A3DF_1450201980 = (event.getAction() == KeyEvent.ACTION_UP
                         && event.isTracking() && !event.isCanceled());
                         {
                             handled = true;
@@ -4783,7 +4757,7 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
             KeyEvent forwardEvent;
             forwardEvent = event;
             {
-                boolean var6A7BE4CA28243E587EACA0203B08BD67_144056603 = (forwardEvent.getRepeatCount() > 0);
+                boolean var6A7BE4CA28243E587EACA0203B08BD67_1656252795 = (forwardEvent.getRepeatCount() > 0);
                 {
                     forwardEvent = KeyEvent.changeTimeRepeat(event, event.getEventTime(), 0);
                 } //End block
@@ -4806,42 +4780,68 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 14:26:45.047 -0400", hash_original_method = "D11D50B93967E008BF298EC93C5B84EB", hash_generated_method = "18C4A6DBFFFE840B459556630F8D1C8F")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:05.942 -0400", hash_original_method = "D11D50B93967E008BF298EC93C5B84EB", hash_generated_method = "087EBC0368F7F9DF867289B602B72DF8")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     @Override
     public InputConnection onCreateInputConnection(EditorInfo outAttrs) {
         //DSFIXME:  CODE0009: Possible callback target function detected
         dsTaint.addTaint(outAttrs.dsTaint);
         {
-            boolean var402F49E4B8F4D68C8A96D34BD4EE8DD9_1511400070 = (isTextFilterEnabled());
+            boolean var402F49E4B8F4D68C8A96D34BD4EE8DD9_1451292 = (isTextFilterEnabled());
             {
                 createTextFilter(false);
                 {
                     mDefInputConnection = new BaseInputConnection(this, false);
                     mPublicInputConnection = new InputConnectionWrapper(
-                        mTextFilter.onCreateInputConnection(outAttrs), true) {
-                    @Override
-                    public boolean reportFullscreenMode(boolean enabled) {
-                        return mDefInputConnection.reportFullscreenMode(enabled);
-                    }
-                    @Override
-                    public boolean performEditorAction(int editorAction) {
-                        if (editorAction == EditorInfo.IME_ACTION_DONE) {
-                            InputMethodManager imm = (InputMethodManager)
+                        mTextFilter.onCreateInputConnection(outAttrs), true) {                        
+                        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:05.941 -0400", hash_original_method = "BF513EB07D63CFAF3DB0C9E86F478409", hash_generated_method = "C09C132D59CC3076A2DA0E0100233E8B")
+                        //DSFIXME:  CODE0002: Requires DSC value to be set
+                        @Override
+                        public boolean reportFullscreenMode(boolean enabled) {
+                            dsTaint.addTaint(enabled);
+                            boolean var75DA12718785A0AA273693F989B797D6_1043569676 = (mDefInputConnection.reportFullscreenMode(enabled));
+                            return dsTaint.getTaintBoolean();
+                            // ---------- Original Method ----------
+                            //return mDefInputConnection.reportFullscreenMode(enabled);
+                        }
+                        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:05.941 -0400", hash_original_method = "D9C91C9E69679EA1CEEF772A4C39F6DE", hash_generated_method = "670A2987395BA0C6D59CFFFA7F70412D")
+                        //DSFIXME:  CODE0002: Requires DSC value to be set
+                        @Override
+                        public boolean performEditorAction(int editorAction) {
+                            dsTaint.addTaint(editorAction);
+                            {
+                                InputMethodManager imm;
+                                imm = (InputMethodManager)
                                     getContext().getSystemService(
                                             Context.INPUT_METHOD_SERVICE);
-                            if (imm != null) {
-                                imm.hideSoftInputFromWindow(getWindowToken(), 0);
-                            }
-                            return true;
+                                {
+                                    imm.hideSoftInputFromWindow(getWindowToken(), 0);
+                                } //End block
+                            } //End block
+                            return dsTaint.getTaintBoolean();
+                            // ---------- Original Method ----------
+                            //if (editorAction == EditorInfo.IME_ACTION_DONE) {
+                            //InputMethodManager imm = (InputMethodManager)
+                                    //getContext().getSystemService(
+                                            //Context.INPUT_METHOD_SERVICE);
+                            //if (imm != null) {
+                                //imm.hideSoftInputFromWindow(getWindowToken(), 0);
+                            //}
+                            //return true;
+                        //}
+                            //return false;
                         }
-                        return false;
-                    }
-                    @Override
-                    public boolean sendKeyEvent(KeyEvent event) {
-                        return mDefInputConnection.sendKeyEvent(event);
-                    }
-                };
+                        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:05.942 -0400", hash_original_method = "4DB1D1C6C2201E74EC410884B47F862A", hash_generated_method = "6467C780E1E6B766B19FD671D08AD944")
+                        //DSFIXME:  CODE0002: Requires DSC value to be set
+                        @Override
+                        public boolean sendKeyEvent(KeyEvent event) {
+                            dsTaint.addTaint(event.dsTaint);
+                            boolean varDB2D5BE018F84A831888EA06678F8604_1580586636 = (mDefInputConnection.sendKeyEvent(event));
+                            return dsTaint.getTaintBoolean();
+                            // ---------- Original Method ----------
+                            //return mDefInputConnection.sendKeyEvent(event);
+                        }
+};
                 } //End block
                 outAttrs.inputType = EditorInfo.TYPE_CLASS_TEXT
                     | EditorInfo.TYPE_TEXT_VARIATION_FILTER;
@@ -4854,7 +4854,7 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 14:26:45.052 -0400", hash_original_method = "44BA525DE8B7DBBB72825E23CC2BB1F6", hash_generated_method = "F195BE14A8EBE5A260069153C15DFE4D")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:05.942 -0400", hash_original_method = "44BA525DE8B7DBBB72825E23CC2BB1F6", hash_generated_method = "9C1EE6328DD2D3D7C5DB7134504F6B16")
     @DSModeled(DSC.SAFE)
     @Override
     public boolean checkInputConnectionProxy(View view) {
@@ -4865,7 +4865,7 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 14:26:45.067 -0400", hash_original_method = "F3682B44558BD825C5F832A45B68670A", hash_generated_method = "AEE95DE51C62BE8D8717B8B2C6B3EDD0")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:05.942 -0400", hash_original_method = "F3682B44558BD825C5F832A45B68670A", hash_generated_method = "F77B9E5BA144BE18AA6A2810AC1D999D")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     private void createTextFilter(boolean animateEntrance) {
         dsTaint.addTaint(animateEntrance);
@@ -4905,14 +4905,14 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 14:26:45.078 -0400", hash_original_method = "32E21A2D6552DD3A6789EF27520CDF5A", hash_generated_method = "0B246B5B4EF847DD1301CACF551E6C07")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:05.943 -0400", hash_original_method = "32E21A2D6552DD3A6789EF27520CDF5A", hash_generated_method = "6BFB84846B38FC3E32D2A8F44DE1A8FA")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public void clearTextFilter() {
         {
             mTextFilter.setText("");
             mFiltered = false;
             {
-                boolean var8B43E06806BC96AC7F4A8D7A0BE622AC_799652887 = (mPopup != null && mPopup.isShowing());
+                boolean var8B43E06806BC96AC7F4A8D7A0BE622AC_413099384 = (mPopup != null && mPopup.isShowing());
                 {
                     dismissPopup();
                 } //End block
@@ -4929,7 +4929,7 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 14:26:45.082 -0400", hash_original_method = "65ACBB1BC8C4B28B951746B0589E48B4", hash_generated_method = "FF21A1291E509EA2DB7BC51C95DEF8F2")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:05.943 -0400", hash_original_method = "65ACBB1BC8C4B28B951746B0589E48B4", hash_generated_method = "D1A2D8C48678090BB0440CA78BE82627")
     @DSModeled(DSC.SAFE)
     public boolean hasTextFilter() {
         return dsTaint.getTaintBoolean();
@@ -4938,15 +4938,15 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 14:26:45.094 -0400", hash_original_method = "11A5FC28E28C3DFE2639108D4141B162", hash_generated_method = "BD66CDB8AA6961ED8B4459974BA3FBDA")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:05.944 -0400", hash_original_method = "11A5FC28E28C3DFE2639108D4141B162", hash_generated_method = "72D301D31FCDC9BF831059086B1C371D")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public void onGlobalLayout() {
         //DSFIXME:  CODE0009: Possible callback target function detected
         {
-            boolean var3CDBC35A1363DD4CC94823B3022E2382_1833312215 = (isShown());
+            boolean var3CDBC35A1363DD4CC94823B3022E2382_1335925153 = (isShown());
             {
                 {
-                    boolean varDA5B3CFD94DC14795F693BACD8E64777_1463097413 = (mFiltered && mPopup != null && !mPopup.isShowing() && !mPopupHidden);
+                    boolean varDA5B3CFD94DC14795F693BACD8E64777_147537754 = (mFiltered && mPopup != null && !mPopup.isShowing() && !mPopupHidden);
                     {
                         showPopup();
                     } //End block
@@ -4954,7 +4954,7 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
             } //End block
             {
                 {
-                    boolean varF98F363210E79C98D906F19BE26A0AAC_785198631 = (mPopup != null && mPopup.isShowing());
+                    boolean varF98F363210E79C98D906F19BE26A0AAC_548730771 = (mPopup != null && mPopup.isShowing());
                     {
                         dismissPopup();
                     } //End block
@@ -4974,27 +4974,27 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 14:26:45.105 -0400", hash_original_method = "46932DA0618614AAF15434EFCC9FAF04", hash_generated_method = "793050964D08C1174D57F8F1A6A4BBD2")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:05.944 -0400", hash_original_method = "46932DA0618614AAF15434EFCC9FAF04", hash_generated_method = "6037A3A1E287DC3D909FC0A30E71C281")
     @DSModeled(DSC.SAFE)
     public void beforeTextChanged(CharSequence s, int start, int count, int after) {
         dsTaint.addTaint(after);
-        dsTaint.addTaint(s);
         dsTaint.addTaint(count);
+        dsTaint.addTaint(s);
         dsTaint.addTaint(start);
         // ---------- Original Method ----------
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 14:26:45.112 -0400", hash_original_method = "971B961D673D514356DF6D21C3AC22CE", hash_generated_method = "69F851CF3B403B9C4012EA2B3257139B")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:05.944 -0400", hash_original_method = "971B961D673D514356DF6D21C3AC22CE", hash_generated_method = "3277BB8A315D13AA870727D839CF0361")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public void onTextChanged(CharSequence s, int start, int before, int count) {
         //DSFIXME:  CODE0009: Possible callback target function detected
-        dsTaint.addTaint(s);
         dsTaint.addTaint(count);
+        dsTaint.addTaint(s);
         dsTaint.addTaint(start);
         dsTaint.addTaint(before);
         {
-            boolean varCB324F139DAF9E78619086072BD20A85_34352123 = (mPopup != null && isTextFilterEnabled());
+            boolean varCB324F139DAF9E78619086072BD20A85_1217533222 = (mPopup != null && isTextFilterEnabled());
             {
                 int length;
                 length = s.length();
@@ -5026,7 +5026,7 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 14:26:45.120 -0400", hash_original_method = "2B62725FCE5BAC340D42F3403AAE31A5", hash_generated_method = "70C7C3A423EAFEF222D7D6A3D8B2625A")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:05.945 -0400", hash_original_method = "2B62725FCE5BAC340D42F3403AAE31A5", hash_generated_method = "E1E9B48623236A758AA5D88D665C2448")
     @DSModeled(DSC.SAFE)
     public void afterTextChanged(Editable s) {
         dsTaint.addTaint(s.dsTaint);
@@ -5034,8 +5034,8 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 14:26:45.124 -0400", hash_original_method = "5FB3F90813AE5A23A23BDBAA76A97056", hash_generated_method = "78D139F6DD38C5C25282DCD00B185B8A")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:05.945 -0400", hash_original_method = "5FB3F90813AE5A23A23BDBAA76A97056", hash_generated_method = "FE7CF4A586BA255B4ADB9CD37444F13B")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     public void onFilterComplete(int count) {
         //DSFIXME:  CODE0009: Possible callback target function detected
         dsTaint.addTaint(count);
@@ -5051,30 +5051,31 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 14:26:45.127 -0400", hash_original_method = "B595E0482905B38051CD63239BB5F8BA", hash_generated_method = "29644007F7CFEED57C9F56BE3742304B")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:05.946 -0400", hash_original_method = "B595E0482905B38051CD63239BB5F8BA", hash_generated_method = "B7FAC9880DBF575BC4F7AB08467EC93D")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     @Override
     protected ViewGroup.LayoutParams generateLayoutParams(ViewGroup.LayoutParams p) {
         dsTaint.addTaint(p.dsTaint);
+        ViewGroup.LayoutParams varAE4B968C4C0301DC2CC83C8A9F56D84B_549787052 = (new LayoutParams(p));
         return (ViewGroup.LayoutParams)dsTaint.getTaint();
         // ---------- Original Method ----------
         //return new LayoutParams(p);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 14:26:45.132 -0400", hash_original_method = "D7DCCEE0C1D1153E18E019649E6F2D80", hash_generated_method = "13430C26253CB907986C27C9776FDA49")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:05.946 -0400", hash_original_method = "D7DCCEE0C1D1153E18E019649E6F2D80", hash_generated_method = "1EC3361761A650DA43846044616B5394")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     @Override
     public LayoutParams generateLayoutParams(AttributeSet attrs) {
         dsTaint.addTaint(attrs.dsTaint);
-        LayoutParams varE6715DFC3A5359CE2D0ED893D38A28C7_1770325693 = (new AbsListView.LayoutParams(getContext(), attrs));
+        LayoutParams varE6715DFC3A5359CE2D0ED893D38A28C7_35815897 = (new AbsListView.LayoutParams(getContext(), attrs));
         return (LayoutParams)dsTaint.getTaint();
         // ---------- Original Method ----------
         //return new AbsListView.LayoutParams(getContext(), attrs);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 14:26:45.134 -0400", hash_original_method = "7C8047E4E7C938CA1D7BE889EE17D059", hash_generated_method = "892C754169CB63B03FF20066A09908F6")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:05.946 -0400", hash_original_method = "7C8047E4E7C938CA1D7BE889EE17D059", hash_generated_method = "C83134860102766AE512149EB6B93017")
     @DSModeled(DSC.SAFE)
     @Override
     protected boolean checkLayoutParams(ViewGroup.LayoutParams p) {
@@ -5085,7 +5086,7 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 14:26:45.138 -0400", hash_original_method = "1385B81082A7F6F42283DE7C72A352C9", hash_generated_method = "DF8ED102269D68B854C93C1132E24A46")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:05.946 -0400", hash_original_method = "1385B81082A7F6F42283DE7C72A352C9", hash_generated_method = "97791DB0E0DBDFC2FAF7C6D771158C80")
     @DSModeled(DSC.SAFE)
     public void setTranscriptMode(int mode) {
         dsTaint.addTaint(mode);
@@ -5094,7 +5095,7 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 14:26:45.142 -0400", hash_original_method = "EADF20E51473F5B82FC89B630E89BCE7", hash_generated_method = "D37E78995FA4F11F4FA55C946DCC3E1F")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:05.946 -0400", hash_original_method = "EADF20E51473F5B82FC89B630E89BCE7", hash_generated_method = "07F9E18EEF29EE6BCA400163E12A9856")
     @DSModeled(DSC.SAFE)
     public int getTranscriptMode() {
         return dsTaint.getTaintInt();
@@ -5103,7 +5104,7 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 14:26:45.145 -0400", hash_original_method = "3A641BF6273957C36676C590B4CC3444", hash_generated_method = "A9D3429C25AF1D47D97528394125FE0D")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:05.947 -0400", hash_original_method = "3A641BF6273957C36676C590B4CC3444", hash_generated_method = "63494F2FFA6F583CDA334B782082337E")
     @DSModeled(DSC.SAFE)
     @Override
     public int getSolidColor() {
@@ -5113,7 +5114,7 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 14:26:45.149 -0400", hash_original_method = "B2E4EFE21735BA4D4CA20D9D2323DF5E", hash_generated_method = "9FB13E0D2C00DA9A6ECAD14AD13035FC")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:05.947 -0400", hash_original_method = "B2E4EFE21735BA4D4CA20D9D2323DF5E", hash_generated_method = "CB458DEE938E80D76D33160CF45C6A74")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public void setCacheColorHint(int color) {
         dsTaint.addTaint(color);
@@ -5141,7 +5142,7 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 14:26:45.153 -0400", hash_original_method = "75945C93CA5A574EC2A11912410CB0E0", hash_generated_method = "4285EBFA8254DBFBD3B60F6F9C8D3AF4")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:05.947 -0400", hash_original_method = "75945C93CA5A574EC2A11912410CB0E0", hash_generated_method = "A2504607B128C5A98488CF92B671311F")
     @DSModeled(DSC.SAFE)
     @ViewDebug.ExportedProperty(category = "drawing")
     public int getCacheColorHint() {
@@ -5151,7 +5152,7 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 14:26:45.157 -0400", hash_original_method = "012761D54D3EA9FE8C837ED35E18F05A", hash_generated_method = "BD2E9611EEF6BC1F6F485B65FF0F73F8")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:05.948 -0400", hash_original_method = "012761D54D3EA9FE8C837ED35E18F05A", hash_generated_method = "AFE53D6D387462B5B8E54A0C5E0D5C23")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public void reclaimViews(List<View> views) {
         dsTaint.addTaint(views.dsTaint);
@@ -5168,7 +5169,7 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
                 AbsListView.LayoutParams lp;
                 lp = (AbsListView.LayoutParams) child.getLayoutParams();
                 {
-                    boolean var248D80F0B10623F58D6026D84DE5E671_1853336780 = (lp != null && mRecycler.shouldRecycleViewType(lp.viewType));
+                    boolean var248D80F0B10623F58D6026D84DE5E671_1962418442 = (lp != null && mRecycler.shouldRecycleViewType(lp.viewType));
                     {
                         views.add(child);
                         {
@@ -5198,7 +5199,7 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 14:26:45.166 -0400", hash_original_method = "63F1E187EEAD4E39E30E7C6F8BC8B8CA", hash_generated_method = "5AE9738B75E57115743EAAF2EC19A21D")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:05.948 -0400", hash_original_method = "63F1E187EEAD4E39E30E7C6F8BC8B8CA", hash_generated_method = "B4389B5AB25B85445A3D1BBF12AE145B")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     @Override
     protected boolean onConsistencyCheck(int consistency) {
@@ -5228,7 +5229,7 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
             ArrayList<View> scrap;
             scrap = mRecycler.mCurrentScrap;
             {
-                boolean var1B9DDC99DC36041733636881A6D6F2A7_2065420454 = (!checkScrap(scrap));
+                boolean var1B9DDC99DC36041733636881A6D6F2A7_1299459651 = (!checkScrap(scrap));
                 result = false;
             } //End collapsed parenthetic
             ArrayList<View>[] scraps;
@@ -5239,7 +5240,7 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
                 i = 0;
                 {
                     {
-                        boolean var152726F7FF3AB1D0325523449C0C26DB_380567728 = (!checkScrap(scraps[i]));
+                        boolean var152726F7FF3AB1D0325523449C0C26DB_1392682921 = (!checkScrap(scraps[i]));
                         result = false;
                     } //End collapsed parenthetic
                 } //End block
@@ -5251,7 +5252,7 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 14:26:45.176 -0400", hash_original_method = "256B8EB3FFECB4266216E5C3F84B8A1E", hash_generated_method = "FCA56BA3C3C38FC5509637C29CAD6471")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:05.949 -0400", hash_original_method = "256B8EB3FFECB4266216E5C3F84B8A1E", hash_generated_method = "2D919841C52855AC9A66BEFBC607B824")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     private boolean checkScrap(ArrayList<View> scrap) {
         dsTaint.addTaint(scrap.dsTaint);
@@ -5266,7 +5267,7 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
                 View view;
                 view = scrap.get(i);
                 {
-                    boolean varC649C41AA848C000C1488527EB85E854_374683479 = (view.getParent() != null);
+                    boolean varC649C41AA848C000C1488527EB85E854_1031162101 = (view.getParent() != null);
                     {
                         result = false;
                         Log.d(ViewDebug.CONSISTENCY_LOG_TAG, "AbsListView " + this +
@@ -5274,7 +5275,7 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
                     } //End block
                 } //End collapsed parenthetic
                 {
-                    boolean var6F0CAFE49F301E66083476B8CB251F7E_2005044351 = (indexOfChild(view) >= 0);
+                    boolean var6F0CAFE49F301E66083476B8CB251F7E_1299000067 = (indexOfChild(view) >= 0);
                     {
                         result = false;
                         Log.d(ViewDebug.CONSISTENCY_LOG_TAG, "AbsListView " + this +
@@ -5305,8 +5306,8 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 14:26:45.179 -0400", hash_original_method = "D0C284A2FBB36CA42A8E7F826DDB725F", hash_generated_method = "043D56F3C1B900C730A078E73A73A041")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:05.949 -0400", hash_original_method = "D0C284A2FBB36CA42A8E7F826DDB725F", hash_generated_method = "4702EDEA243C09BBFD77258C1ACBC569")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     private void finishGlows() {
         {
             mEdgeGlowTop.finish();
@@ -5320,7 +5321,7 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 14:26:45.184 -0400", hash_original_method = "C1CCFF5C419F753BE2BE6DDA2ACFD3CA", hash_generated_method = "19F2F8E00BE9A0107A05DCB82339E1A8")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:05.949 -0400", hash_original_method = "C1CCFF5C419F753BE2BE6DDA2ACFD3CA", hash_generated_method = "86550A51BB26D4136834849B127682FB")
     @DSModeled(DSC.SPEC)
     public void setRemoteViewsAdapter(Intent intent) {
         dsTaint.addTaint(intent.dsTaint);
@@ -5331,7 +5332,7 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
             fcOld = new Intent.FilterComparison(
                     mRemoteAdapter.getRemoteViewsServiceIntent());
             {
-                boolean var45C20E8BCA952BA88AD2862513B06923_269882277 = (fcNew.equals(fcOld));
+                boolean var45C20E8BCA952BA88AD2862513B06923_685247233 = (fcNew.equals(fcOld));
             } //End collapsed parenthetic
         } //End block
         mDeferNotifyDataSetChanged = false;
@@ -5350,7 +5351,7 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 14:26:45.187 -0400", hash_original_method = "0410210FC7BC336B3896BEA7510AAE3D", hash_generated_method = "24E63AA5C0ED0E22149D496EB356AF76")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:05.949 -0400", hash_original_method = "0410210FC7BC336B3896BEA7510AAE3D", hash_generated_method = "9D38AC80197E9738EE138974F1EA14DE")
     @DSModeled(DSC.SAFE)
     public void deferNotifyDataSetChanged() {
         mDeferNotifyDataSetChanged = true;
@@ -5359,8 +5360,8 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 14:26:45.191 -0400", hash_original_method = "28DEF371BA940ACF691CB065E03F3A69", hash_generated_method = "9832DF655552F0641267B817F9395C67")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:05.950 -0400", hash_original_method = "28DEF371BA940ACF691CB065E03F3A69", hash_generated_method = "E52D42E1AFDE98C003D89480D711778A")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     public boolean onRemoteAdapterConnected() {
         //DSFIXME:  CODE0009: Possible callback target function detected
         {
@@ -5390,7 +5391,7 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 14:26:45.193 -0400", hash_original_method = "062C10606C6763A75AEC213E65863835", hash_generated_method = "FC013EA7820589FBCF2A5C0582DC8541")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:05.950 -0400", hash_original_method = "062C10606C6763A75AEC213E65863835", hash_generated_method = "64085B2EAF9EA39B9EA364A5E4CA7F63")
     @DSModeled(DSC.SAFE)
     public void onRemoteAdapterDisconnected() {
         //DSFIXME:  CODE0009: Possible callback target function detected
@@ -5398,7 +5399,7 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 14:26:45.196 -0400", hash_original_method = "A10CF4C818C12AB96D88DAC8638A238F", hash_generated_method = "859A1FF8298FBCB699FCF0196FCC8B24")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:05.950 -0400", hash_original_method = "A10CF4C818C12AB96D88DAC8638A238F", hash_generated_method = "29173BAF9AD54182F350A468BA77876D")
     @DSModeled(DSC.SAFE)
     public void setRecyclerListener(RecyclerListener listener) {
         dsTaint.addTaint(listener.dsTaint);
@@ -5408,8 +5409,7 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 14:26:45.198 -0400", hash_original_method = "AE43FD0671E8B91C49C719592288E3E2", hash_generated_method = "6EAE2AA8C7AD3423F7AA775DC155BE9F")
-    static View retrieveFromScrap(ArrayList<View> scrapViews, int position) {
+        static View retrieveFromScrap(ArrayList<View> scrapViews, int position) {
         int size = scrapViews.size();
         if (size > 0) {
             for (int i=0; i<size; i++) {
@@ -5438,30 +5438,8 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
         int checkedItemCount;
         SparseBooleanArray checkState;
         LongSparseArray<Integer> checkIdState;
-        public static final Parcelable.Creator<SavedState> CREATOR = new Parcelable.Creator<SavedState>() {            
-            @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 14:26:45.201 -0400", hash_original_method = "E26812089C072DDE1A14AECAA6CD6686", hash_generated_method = "6C6B0A873BD52E2752F88E9968D483CA")
-            @DSModeled(DSC.SAFE)
-            public SavedState createFromParcel(Parcel in) {
-                dsTaint.addTaint(in.dsTaint);
-                return (SavedState)dsTaint.getTaint();
-                // ---------- Original Method ----------
-                //return new SavedState(in);
-            }
-
-            
-            @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 14:26:45.204 -0400", hash_original_method = "2D31E9CBAAAE05B696D738324F87FF78", hash_generated_method = "1325778BB443F872513E70F9A19C5918")
-            @DSModeled(DSC.SAFE)
-            public SavedState[] newArray(int size) {
-                dsTaint.addTaint(size);
-                return (SavedState[])dsTaint.getTaint();
-                // ---------- Original Method ----------
-                //return new SavedState[size];
-            }
-
-            
-}; //Transformed anonymous class
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 14:26:45.206 -0400", hash_original_method = "89EB4EC154F05BF905ECA8E02BBD14BC", hash_generated_method = "BBD854AA7A117C86D9FBF897ADE36FE1")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:05.951 -0400", hash_original_method = "89EB4EC154F05BF905ECA8E02BBD14BC", hash_generated_method = "AB6E14E26999AC4D7AF1972CF22F65E4")
         //DSFIXME:  CODE0002: Requires DSC value to be set
          SavedState(Parcelable superState) {
             super(superState);
@@ -5470,7 +5448,7 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 14:26:45.210 -0400", hash_original_method = "9305A5F2B13D160808C7DFC7D0F396F1", hash_generated_method = "CCE13F2ED25CFA67B89721DF304E4CDF")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:05.951 -0400", hash_original_method = "9305A5F2B13D160808C7DFC7D0F396F1", hash_generated_method = "E4F86E8AAE7F0E2FA502907EE88EE4F1")
         //DSFIXME:  CODE0002: Requires DSC value to be set
         private SavedState(Parcel in) {
             super(in);
@@ -5522,7 +5500,7 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 14:26:45.214 -0400", hash_original_method = "3B46B91B7C73B4C6AC70E6F2F8A95E0E", hash_generated_method = "2920885291704898EEC526A640D066D2")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:05.953 -0400", hash_original_method = "3B46B91B7C73B4C6AC70E6F2F8A95E0E", hash_generated_method = "5321A96CC1246D09816A688ED0100543")
         //DSFIXME:  CODE0002: Requires DSC value to be set
         @Override
         public void writeToParcel(Parcel out, int flags) {
@@ -5570,11 +5548,11 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 14:26:45.218 -0400", hash_original_method = "28CD4AAEE48E548227BD32788E936C86", hash_generated_method = "523FD12D097896DA57FB9E645CD5300B")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:05.955 -0400", hash_original_method = "28CD4AAEE48E548227BD32788E936C86", hash_generated_method = "E6317B094766D9281991821CD17241FC")
         //DSFIXME:  CODE0002: Requires DSC value to be set
         @Override
         public String toString() {
-            String var48C38BDCB5EBD69675A62C2D31FCBF6E_1166982849 = ("AbsListView.SavedState{"
+            String var48C38BDCB5EBD69675A62C2D31FCBF6E_18559158 = ("AbsListView.SavedState{"
                     + Integer.toHexString(System.identityHashCode(this))
                     + " selectedId=" + selectedId
                     + " firstId=" + firstId
@@ -5597,6 +5575,30 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
         }
 
         
+        public static final Parcelable.Creator<SavedState> CREATOR = new Parcelable.Creator<SavedState>() {            
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:05.957 -0400", hash_original_method = "E26812089C072DDE1A14AECAA6CD6686", hash_generated_method = "80E17E34C23AC50A5722B3B5AC5769BF")
+            //DSFIXME:  CODE0002: Requires DSC value to be set
+            public SavedState createFromParcel(Parcel in) {
+                dsTaint.addTaint(in.dsTaint);
+                SavedState var41ED8F3548F5060881BBE51AB9112A3F_851277939 = (new SavedState(in));
+                return (SavedState)dsTaint.getTaint();
+                // ---------- Original Method ----------
+                //return new SavedState(in);
+            }
+
+            
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:05.957 -0400", hash_original_method = "2D31E9CBAAAE05B696D738324F87FF78", hash_generated_method = "2E205BAB5217AFD63B0169E83A5EA28E")
+            //DSFIXME:  CODE0002: Requires DSC value to be set
+            public SavedState[] newArray(int size) {
+                dsTaint.addTaint(size);
+                SavedState[] varB5C72E5BBB181D4CA93D7BAA0B8B5E3D_256067745 = (new SavedState[size]);
+                return (SavedState[])dsTaint.getTaint();
+                // ---------- Original Method ----------
+                //return new SavedState[size];
+            }
+
+            
+}; //Transformed anonymous class
     }
 
 
@@ -5604,7 +5606,13 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
     private class WindowRunnnable {
         private int mOriginalAttachCount;
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 14:26:45.222 -0400", hash_original_method = "CFEEFBABEEA41C591AAAAD229F2BB0E7", hash_generated_method = "BB24A447ABBD4ACE12294B24CC279DA1")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:05.957 -0400", hash_original_method = "728AB98FE9BCCBBFB3573DE5236107D8", hash_generated_method = "728AB98FE9BCCBBFB3573DE5236107D8")
+                public WindowRunnnable ()
+        {
+        }
+
+
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:05.958 -0400", hash_original_method = "CFEEFBABEEA41C591AAAAD229F2BB0E7", hash_generated_method = "3CF34E449DE44A2D47EB624B8E366E7B")
         //DSFIXME:  CODE0002: Requires DSC value to be set
         public void rememberWindowAttachCount() {
             mOriginalAttachCount = getWindowAttachCount();
@@ -5613,10 +5621,10 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 14:26:45.224 -0400", hash_original_method = "A209657341959E6933B2954972D0CEE9", hash_generated_method = "A3E28F82AE04C5F2C52023A56E4C015F")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:05.958 -0400", hash_original_method = "A209657341959E6933B2954972D0CEE9", hash_generated_method = "62E23429F808B1ADBEE21129B0A84147")
         //DSFIXME:  CODE0002: Requires DSC value to be set
         public boolean sameWindow() {
-            boolean var8C6821449255A008A670CF7CA64A93AB_799465678 = (hasWindowFocus() && getWindowAttachCount() == mOriginalAttachCount);
+            boolean var8C6821449255A008A670CF7CA64A93AB_762053988 = (hasWindowFocus() && getWindowAttachCount() == mOriginalAttachCount);
             return dsTaint.getTaintBoolean();
             // ---------- Original Method ----------
             //return hasWindowFocus() && getWindowAttachCount() == mOriginalAttachCount;
@@ -5630,7 +5638,13 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
     private class PerformClick extends WindowRunnnable implements Runnable {
         int mClickMotionPosition;
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 14:26:45.229 -0400", hash_original_method = "A958048F64A683459F522CCD37FE7D11", hash_generated_method = "0A233182944D8BE9A85FE54BA4F17EDD")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:05.958 -0400", hash_original_method = "C0C80404DC27C2C3C59E89BEAEB36157", hash_generated_method = "C0C80404DC27C2C3C59E89BEAEB36157")
+                public PerformClick ()
+        {
+        }
+
+
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:05.958 -0400", hash_original_method = "A958048F64A683459F522CCD37FE7D11", hash_generated_method = "578E1F94A9FE3E750822BC8CEAB2F03E")
         //DSFIXME:  CODE0002: Requires DSC value to be set
         public void run() {
             ListAdapter adapter;
@@ -5638,7 +5652,7 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
             int motionPosition;
             motionPosition = mClickMotionPosition;
             {
-                boolean varB13BDDA7CDF6AF0E3819BBDA363D7ED8_51165870 = (adapter != null && mItemCount > 0 &&
+                boolean varB13BDDA7CDF6AF0E3819BBDA363D7ED8_1144490502 = (adapter != null && mItemCount > 0 &&
                     motionPosition != INVALID_POSITION &&
                     motionPosition < adapter.getCount() && sameWindow());
                 {
@@ -5670,7 +5684,13 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
     
     private class CheckForLongPress extends WindowRunnnable implements Runnable {
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 14:26:45.245 -0400", hash_original_method = "6FF0C5D4F5CC73F85A2BCE7243EBBA32", hash_generated_method = "27AD0FE1A79F422C3548474F353387E0")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:05.958 -0400", hash_original_method = "B3B2819DF408D57079A50D03B673BFB4", hash_generated_method = "B3B2819DF408D57079A50D03B673BFB4")
+                public CheckForLongPress ()
+        {
+        }
+
+
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:05.959 -0400", hash_original_method = "6FF0C5D4F5CC73F85A2BCE7243EBBA32", hash_generated_method = "14AF04D9E30057EAAE7F1221CE53C639")
         //DSFIXME:  CODE0002: Requires DSC value to be set
         public void run() {
             int motionPosition;
@@ -5685,7 +5705,7 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
                 boolean handled;
                 handled = false;
                 {
-                    boolean var67E4CE6BEABC0BB93EA224EBEDE2210E_1279285919 = (sameWindow() && !mDataChanged);
+                    boolean var67E4CE6BEABC0BB93EA224EBEDE2210E_1940754108 = (sameWindow() && !mDataChanged);
                     {
                         handled = performLongPress(child, longPressPosition, longPressId);
                     } //End block
@@ -5726,11 +5746,17 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
     
     private class CheckForKeyLongPress extends WindowRunnnable implements Runnable {
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 14:26:45.251 -0400", hash_original_method = "A3D23752A2B3700EB42478E66A11709C", hash_generated_method = "CD6EB6B350F3DFE9D4D1D27486C198E4")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:05.959 -0400", hash_original_method = "869E1D696ECFD7F574739A1B4D51B4B0", hash_generated_method = "869E1D696ECFD7F574739A1B4D51B4B0")
+                public CheckForKeyLongPress ()
+        {
+        }
+
+
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:05.959 -0400", hash_original_method = "A3D23752A2B3700EB42478E66A11709C", hash_generated_method = "BB82A16342C574708F0DEF69FE0DDD52")
         //DSFIXME:  CODE0002: Requires DSC value to be set
         public void run() {
             {
-                boolean varA166426E2772E5B5C6CC900A627665FC_1255106209 = (isPressed() && mSelectedPosition >= 0);
+                boolean varA166426E2772E5B5C6CC900A627665FC_1472080572 = (isPressed() && mSelectedPosition >= 0);
                 {
                     int index;
                     index = mSelectedPosition - mFirstPosition;
@@ -5740,7 +5766,7 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
                         boolean handled;
                         handled = false;
                         {
-                            boolean var15017B83B2D3E709399CA037CED2AFF9_47680087 = (sameWindow());
+                            boolean var15017B83B2D3E709399CA037CED2AFF9_182494656 = (sameWindow());
                             {
                                 handled = performLongPress(v, mSelectedPosition, mSelectedRowId);
                             } //End block
@@ -5783,7 +5809,13 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
     
     final class CheckForTap implements Runnable {
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 14:26:45.258 -0400", hash_original_method = "BD1CF9A4027AFE49AD3D9DDE12B9EB2A", hash_generated_method = "81F55AC9433A9B37A9CA246AFD9E7564")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:05.959 -0400", hash_original_method = "DDE2B97FC218E2B375A63A291079A391", hash_generated_method = "DDE2B97FC218E2B375A63A291079A391")
+                public CheckForTap ()
+        {
+        }
+
+
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:05.960 -0400", hash_original_method = "BD1CF9A4027AFE49AD3D9DDE12B9EB2A", hash_generated_method = "2569C61EAE898C19D232FC0E62D9D4D4")
         //DSFIXME:  CODE0002: Requires DSC value to be set
         public void run() {
             {
@@ -5791,7 +5823,7 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
                 View child;
                 child = getChildAt(mMotionPosition - mFirstPosition);
                 {
-                    boolean varEFC9B5F6E2423C87CACF29EB92D1C650_1743727428 = (child != null && !child.hasFocusable());
+                    boolean varEFC9B5F6E2423C87CACF29EB92D1C650_815295602 = (child != null && !child.hasFocusable());
                     {
                         mLayoutMode = LAYOUT_NORMAL;
                         {
@@ -5846,7 +5878,7 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
         private OverScroller mScroller;
         private int mLastFlingY;
         private final Runnable mCheckFlywheel = new Runnable() {            
-            @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 14:26:45.267 -0400", hash_original_method = "794342E61B0741E0D2D0BA9CCE24C214", hash_generated_method = "D437E30E79A0A26E124E07977572D87A")
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:05.960 -0400", hash_original_method = "794342E61B0741E0D2D0BA9CCE24C214", hash_generated_method = "4D1582E00383BD2DE8A590AEEA0BD2BC")
             //DSFIXME:  CODE0002: Requires DSC value to be set
             public void run() {
                 int activeId;
@@ -5859,7 +5891,7 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
                 float yvel;
                 yvel = -vt.getYVelocity(activeId);
                 {
-                    boolean varD670105D084B3EC9810CA2EF9B5779A0_1991991611 = (Math.abs(yvel) >= mMinimumVelocity
+                    boolean varD670105D084B3EC9810CA2EF9B5779A0_1698053718 = (Math.abs(yvel) >= mMinimumVelocity
                         && scroller.isScrollingInDirection(0, yvel));
                     {
                         postDelayed(this, FLYWHEEL_TIMEOUT);
@@ -5876,9 +5908,8 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
 
             
 }; //Transformed anonymous class
-        private static final int FLYWHEEL_TIMEOUT = 40;
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 14:26:45.270 -0400", hash_original_method = "361AA84D9C3BD42F341546EA08BE10C6", hash_generated_method = "1C5B621F79B2764B443D85B129A2C803")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:05.960 -0400", hash_original_method = "361AA84D9C3BD42F341546EA08BE10C6", hash_generated_method = "85D92534340BCEFCD6A4F33FFFEF2C53")
         //DSFIXME:  CODE0002: Requires DSC value to be set
          FlingRunnable() {
             mScroller = new OverScroller(getContext());
@@ -5887,7 +5918,7 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 14:26:45.275 -0400", hash_original_method = "03D4FA54CBC93A7E96ECD2486CBEE621", hash_generated_method = "2B7E079B38A9A0328B9C1F33D49546D6")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:05.961 -0400", hash_original_method = "03D4FA54CBC93A7E96ECD2486CBEE621", hash_generated_method = "09043309FDF6D71B35058AA0DADE0A79")
         //DSFIXME:  CODE0002: Requires DSC value to be set
          void start(int initialVelocity) {
             dsTaint.addTaint(initialVelocity);
@@ -5927,11 +5958,11 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 14:26:45.279 -0400", hash_original_method = "7C6D2E7D970FED93FF739DAAC6CC80C2", hash_generated_method = "EEC22F60AA11A28CA1B0192EBEB232E7")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:05.961 -0400", hash_original_method = "7C6D2E7D970FED93FF739DAAC6CC80C2", hash_generated_method = "64626A3EA260A44ADBA6552EB67FA039")
         //DSFIXME:  CODE0002: Requires DSC value to be set
          void startSpringback() {
             {
-                boolean var059811778A6969FDC20EDCB87A1E9DD0_594255761 = (mScroller.springBack(0, mScrollY, 0, 0, 0, 0));
+                boolean var059811778A6969FDC20EDCB87A1E9DD0_2125951143 = (mScroller.springBack(0, mScrollY, 0, 0, 0, 0));
                 {
                     mTouchMode = TOUCH_MODE_OVERFLING;
                     invalidate();
@@ -5954,7 +5985,7 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 14:26:45.282 -0400", hash_original_method = "57B70ADF06D2A10A257A1E350228503E", hash_generated_method = "7AC827FE2746F247F7556495DFF4294A")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:05.961 -0400", hash_original_method = "57B70ADF06D2A10A257A1E350228503E", hash_generated_method = "9631A962CC92680729EBC246EC459719")
         //DSFIXME:  CODE0002: Requires DSC value to be set
          void startOverfling(int initialVelocity) {
             dsTaint.addTaint(initialVelocity);
@@ -5972,7 +6003,7 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 14:26:45.288 -0400", hash_original_method = "F0692CC07A14DB0F1E581AFC2CDF3E90", hash_generated_method = "15EDBFA8FB7D25FDC049695E16B23058")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:05.961 -0400", hash_original_method = "F0692CC07A14DB0F1E581AFC2CDF3E90", hash_generated_method = "929ECD8AC68E751544A27A2483BFE460")
         //DSFIXME:  CODE0002: Requires DSC value to be set
          void edgeReached(int delta) {
             dsTaint.addTaint(delta);
@@ -5980,7 +6011,7 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
             int overscrollMode;
             overscrollMode = getOverScrollMode();
             {
-                boolean var38522C672435F8008EBC1E11034D946B_1709540696 = (overscrollMode == OVER_SCROLL_ALWAYS ||
+                boolean var38522C672435F8008EBC1E11034D946B_1625618496 = (overscrollMode == OVER_SCROLL_ALWAYS ||
                     (overscrollMode == OVER_SCROLL_IF_CONTENT_SCROLLS && !contentFits()));
                 {
                     mTouchMode = TOUCH_MODE_OVERFLING;
@@ -6007,11 +6038,11 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 14:26:45.292 -0400", hash_original_method = "16B3910BA949F2F73CCA1E8DA35CE0FF", hash_generated_method = "845F601788DB50FE7D42426719906990")
-        @DSModeled(DSC.SAFE)
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:05.962 -0400", hash_original_method = "16B3910BA949F2F73CCA1E8DA35CE0FF", hash_generated_method = "39B02B106F56AB729F09E090EFC311BD")
+        //DSFIXME:  CODE0002: Requires DSC value to be set
          void startScroll(int distance, int duration) {
-            dsTaint.addTaint(distance);
             dsTaint.addTaint(duration);
+            dsTaint.addTaint(distance);
             int initialY;
             initialY = Integer.MAX_VALUE;
             initialY = 0;
@@ -6028,8 +6059,8 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 14:26:45.294 -0400", hash_original_method = "EC718B25FAE44F694CA340373A32BE29", hash_generated_method = "588FB0CEEC778B8D38EB82AD83CA5360")
-        @DSModeled(DSC.SAFE)
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:05.962 -0400", hash_original_method = "EC718B25FAE44F694CA340373A32BE29", hash_generated_method = "2B0EEAA019059AF768DC2BD4BEFE8E7C")
+        //DSFIXME:  CODE0002: Requires DSC value to be set
          void endFling() {
             mTouchMode = TOUCH_MODE_REST;
             removeCallbacks(this);
@@ -6055,8 +6086,8 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 14:26:45.297 -0400", hash_original_method = "5D655CDBCE73395DC3C27E060B822A32", hash_generated_method = "B24B36911BFB873DE726EC36EC8BFF4D")
-        @DSModeled(DSC.SAFE)
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:05.962 -0400", hash_original_method = "5D655CDBCE73395DC3C27E060B822A32", hash_generated_method = "AF0A59A6E58D426EFA985AB4A1AD55DE")
+        //DSFIXME:  CODE0002: Requires DSC value to be set
          void flywheelTouch() {
             postDelayed(mCheckFlywheel, FLYWHEEL_TIMEOUT);
             // ---------- Original Method ----------
@@ -6064,7 +6095,7 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 14:26:45.310 -0400", hash_original_method = "4DD83535EAA65B570F4DB1073D459909", hash_generated_method = "B3875DEBA68CAB7A02B89016ED34EEE7")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:05.963 -0400", hash_original_method = "4DD83535EAA65B570F4DB1073D459909", hash_generated_method = "6C3A25CE1FBFFB7339BC229B0145EB77")
         //DSFIXME:  CODE0002: Requires DSC value to be set
         public void run() {
             //Begin case default 
@@ -6072,7 +6103,7 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
             //End case default 
             //Begin case TOUCH_MODE_SCROLL 
             {
-                boolean var8C879AC9111FA456E4D5E672C40ED1D8_581885147 = (mScroller.isFinished());
+                boolean var8C879AC9111FA456E4D5E672C40ED1D8_825541901 = (mScroller.isFinished());
             } //End collapsed parenthetic
             //End case TOUCH_MODE_SCROLL 
             //Begin case TOUCH_MODE_FLING 
@@ -6081,7 +6112,7 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
                     layoutChildren();
                 } //End block
                 {
-                    boolean varF1747C254517DB9417BE3B51D681F089_172462738 = (mItemCount == 0 || getChildCount() == 0);
+                    boolean varF1747C254517DB9417BE3B51D681F089_617888449 = (mItemCount == 0 || getChildCount() == 0);
                     {
                         endFling();
                     } //End block
@@ -6155,7 +6186,7 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
                 OverScroller scroller;
                 scroller = mScroller;
                 {
-                    boolean var0C92AC4985E057FF9B563A127E8C3B23_2106551249 = (scroller.computeScrollOffset());
+                    boolean var0C92AC4985E057FF9B563A127E8C3B23_1438724885 = (scroller.computeScrollOffset());
                     {
                         int scrollY;
                         scrollY = mScrollY;
@@ -6164,7 +6195,7 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
                         int deltaY;
                         deltaY = currY - scrollY;
                         {
-                            boolean var27491E7A6C26FA30763C389A29F73077_279094736 = (overScrollBy(0, deltaY, 0, scrollY, 0, 0,
+                            boolean var27491E7A6C26FA30763C389A29F73077_3424911 = (overScrollBy(0, deltaY, 0, scrollY, 0, 0,
                             0, mOverflingDistance, false));
                             {
                                 boolean crossDown;
@@ -6199,17 +6230,12 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
         }
 
         
+        private static final int FLYWHEEL_TIMEOUT = 40;
     }
 
 
     
     class PositionScroller implements Runnable {
-        private static final int SCROLL_DURATION = 400;
-        private static final int MOVE_DOWN_POS = 1;
-        private static final int MOVE_UP_POS = 2;
-        private static final int MOVE_DOWN_BOUND = 3;
-        private static final int MOVE_UP_BOUND = 4;
-        private static final int MOVE_OFFSET = 5;
         private int mMode;
         private int mTargetPos;
         private int mBoundPos;
@@ -6218,7 +6244,7 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
         private int mExtraScroll;
         private int mOffsetFromTop;
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 14:26:45.317 -0400", hash_original_method = "7F3588C5B47E2E7FF0D768230775AB8B", hash_generated_method = "558CDF465726341CE4B4E95BC52B9B64")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:05.963 -0400", hash_original_method = "7F3588C5B47E2E7FF0D768230775AB8B", hash_generated_method = "39D3C7BDBFB04AD5ABE46AB28461C81D")
         //DSFIXME:  CODE0002: Requires DSC value to be set
          PositionScroller() {
             mExtraScroll = ViewConfiguration.get(mContext).getScaledFadingEdgeLength();
@@ -6227,7 +6253,7 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 14:26:45.320 -0400", hash_original_method = "FDCD353E7B4C16B389C07FF98024D1F6", hash_generated_method = "049C0B098F1B55310A3CC1D25EAE6808")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:05.964 -0400", hash_original_method = "FDCD353E7B4C16B389C07FF98024D1F6", hash_generated_method = "0203BAB225BF9AB6F6EB41A257282722")
         //DSFIXME:  CODE0002: Requires DSC value to be set
          void start(int position) {
             dsTaint.addTaint(position);
@@ -6259,7 +6285,7 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 14:26:45.327 -0400", hash_original_method = "84EF03A180BC8A392D5F6234ABF1A7D7", hash_generated_method = "1C4DCABC4B65B8B572C0C10778A09A8F")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:05.964 -0400", hash_original_method = "84EF03A180BC8A392D5F6234ABF1A7D7", hash_generated_method = "674585EC14FE2D51E40ECB7D5B65DBC0")
         //DSFIXME:  CODE0002: Requires DSC value to be set
          void start(int position, int boundPosition) {
             dsTaint.addTaint(position);
@@ -6318,8 +6344,8 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 14:26:45.330 -0400", hash_original_method = "BE41DE2B3819156F24DD50B9D9C0C2E0", hash_generated_method = "0DB773A3E95F48243B13BC103C8B4297")
-        @DSModeled(DSC.SAFE)
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:05.964 -0400", hash_original_method = "BE41DE2B3819156F24DD50B9D9C0C2E0", hash_generated_method = "6F20CEF815837469B0E0A48F93E9399C")
+        //DSFIXME:  CODE0002: Requires DSC value to be set
          void startWithOffset(int position, int offset) {
             dsTaint.addTaint(position);
             dsTaint.addTaint(offset);
@@ -6329,7 +6355,7 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 14:26:45.334 -0400", hash_original_method = "6B17946EC33D794252BA778D04AAD100", hash_generated_method = "A771F86C05F44E84E5AB624459715876")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:05.965 -0400", hash_original_method = "6B17946EC33D794252BA778D04AAD100", hash_generated_method = "63AAEEE61688C3AA0A88B58B6080A080")
         //DSFIXME:  CODE0002: Requires DSC value to be set
          void startWithOffset(int position, int offset, int duration) {
             dsTaint.addTaint(position);
@@ -6368,8 +6394,8 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 14:26:45.337 -0400", hash_original_method = "EE84C7B9935E89C7F265FE60CF403C46", hash_generated_method = "F66BC6D91F03A7F0DA45EA07CBD856FF")
-        @DSModeled(DSC.SAFE)
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:05.967 -0400", hash_original_method = "EE84C7B9935E89C7F265FE60CF403C46", hash_generated_method = "8545B8FD33B72FF1E0D42710AB6A286F")
+        //DSFIXME:  CODE0002: Requires DSC value to be set
          void stop() {
             removeCallbacks(this);
             // ---------- Original Method ----------
@@ -6377,7 +6403,7 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 14:26:45.347 -0400", hash_original_method = "BF3ECE172F6D799B3639990958E45277", hash_generated_method = "401992C6AA25BF73B19B0E3B8820808D")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:05.968 -0400", hash_original_method = "BF3ECE172F6D799B3639990958E45277", hash_generated_method = "541A4A7060C1ACC870F4ECE2FC5604DD")
         //DSFIXME:  CODE0002: Requires DSC value to be set
         public void run() {
             int listHeight;
@@ -6543,14 +6569,26 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
         }
 
         
+        private static final int SCROLL_DURATION = 400;
+        private static final int MOVE_DOWN_POS = 1;
+        private static final int MOVE_UP_POS = 2;
+        private static final int MOVE_DOWN_BOUND = 3;
+        private static final int MOVE_UP_BOUND = 4;
+        private static final int MOVE_OFFSET = 5;
     }
 
 
     
     class AdapterDataSetObserver extends AdapterView<ListAdapter>.AdapterDataSetObserver {
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 14:26:45.354 -0400", hash_original_method = "70826FE759108269AA8BACD409E1C863", hash_generated_method = "DB405082D9EC010DA03FDA2644BB6815")
-        @DSModeled(DSC.SAFE)
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:05.968 -0400", hash_original_method = "273FED591BB98950FDD1BF5E03A12471", hash_generated_method = "273FED591BB98950FDD1BF5E03A12471")
+                public AdapterDataSetObserver ()
+        {
+        }
+
+
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:05.968 -0400", hash_original_method = "70826FE759108269AA8BACD409E1C863", hash_generated_method = "DE01F6EC3ED43C4CD1396D4089463EFC")
+        //DSFIXME:  CODE0002: Requires DSC value to be set
         @Override
         public void onChanged() {
             //DSFIXME:  CODE0009: Possible callback target function detected
@@ -6566,8 +6604,8 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 14:26:45.357 -0400", hash_original_method = "4570C5F375E9950A79093241C88AF34D", hash_generated_method = "163463F2B6FBA95783CB67C1DEC79A29")
-        @DSModeled(DSC.SAFE)
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:05.969 -0400", hash_original_method = "4570C5F375E9950A79093241C88AF34D", hash_generated_method = "122CC95F86F15B9927F1E8118900CD7B")
+        //DSFIXME:  CODE0002: Requires DSC value to be set
         @Override
         public void onInvalidated() {
             //DSFIXME:  CODE0009: Possible callback target function detected
@@ -6590,7 +6628,13 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
     class MultiChoiceModeWrapper implements MultiChoiceModeListener {
         private MultiChoiceModeListener mWrapped;
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 14:26:45.360 -0400", hash_original_method = "57C233A5EDE21FDF3E40ACFA65FCBA6D", hash_generated_method = "BA6BCDFE73371F37F04B4580724CF81E")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:05.969 -0400", hash_original_method = "5296A2C1EA6411CB9788AB3F96A54C03", hash_generated_method = "5296A2C1EA6411CB9788AB3F96A54C03")
+                public MultiChoiceModeWrapper ()
+        {
+        }
+
+
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:05.969 -0400", hash_original_method = "57C233A5EDE21FDF3E40ACFA65FCBA6D", hash_generated_method = "0E1C19B1035ECF220CE33F115AA5BFD1")
         @DSModeled(DSC.SAFE)
         public void setWrapped(MultiChoiceModeListener wrapped) {
             dsTaint.addTaint(wrapped.dsTaint);
@@ -6599,14 +6643,14 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 14:26:45.365 -0400", hash_original_method = "92496BA2B215F9BD39661C34B9C10361", hash_generated_method = "1B7A6A63C682C42ECE2A12FBD08BB458")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:05.969 -0400", hash_original_method = "92496BA2B215F9BD39661C34B9C10361", hash_generated_method = "5C1BBA60EB35E2079FB82CFE502BFF24")
         //DSFIXME:  CODE0002: Requires DSC value to be set
         public boolean onCreateActionMode(ActionMode mode, Menu menu) {
             //DSFIXME:  CODE0009: Possible callback target function detected
             dsTaint.addTaint(menu.dsTaint);
             dsTaint.addTaint(mode.dsTaint);
             {
-                boolean varD6C93448152EF2C372CDE7A0E8CB7504_2056825254 = (mWrapped.onCreateActionMode(mode, menu));
+                boolean varD6C93448152EF2C372CDE7A0E8CB7504_104453980 = (mWrapped.onCreateActionMode(mode, menu));
                 {
                     setLongClickable(false);
                 } //End block
@@ -6621,34 +6665,34 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 14:26:45.369 -0400", hash_original_method = "605F5D923BF72CFC73E9AAB7E02967CC", hash_generated_method = "369317C9BDCCAC7831221C848A0C58F2")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:05.969 -0400", hash_original_method = "605F5D923BF72CFC73E9AAB7E02967CC", hash_generated_method = "7EA0255FF6006A055630C9BA6A4A645F")
         //DSFIXME:  CODE0002: Requires DSC value to be set
         public boolean onPrepareActionMode(ActionMode mode, Menu menu) {
             //DSFIXME:  CODE0009: Possible callback target function detected
             dsTaint.addTaint(menu.dsTaint);
             dsTaint.addTaint(mode.dsTaint);
-            boolean var889963BD11CE1DC6E3538FA5CA769B04_1049820019 = (mWrapped.onPrepareActionMode(mode, menu));
+            boolean var889963BD11CE1DC6E3538FA5CA769B04_1844975945 = (mWrapped.onPrepareActionMode(mode, menu));
             return dsTaint.getTaintBoolean();
             // ---------- Original Method ----------
             //return mWrapped.onPrepareActionMode(mode, menu);
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 14:26:45.372 -0400", hash_original_method = "033C72B6C9A09D3E8E7805BD6C059806", hash_generated_method = "488B0C287B54E8A0C28C8B048A83145D")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:05.970 -0400", hash_original_method = "033C72B6C9A09D3E8E7805BD6C059806", hash_generated_method = "CED7916342AFB1EAE10D759DC851A201")
         //DSFIXME:  CODE0002: Requires DSC value to be set
         public boolean onActionItemClicked(ActionMode mode, MenuItem item) {
             //DSFIXME:  CODE0009: Possible callback target function detected
             dsTaint.addTaint(item.dsTaint);
             dsTaint.addTaint(mode.dsTaint);
-            boolean varFD1FD09DE497AC204C6AFB08C6591DDB_11813698 = (mWrapped.onActionItemClicked(mode, item));
+            boolean varFD1FD09DE497AC204C6AFB08C6591DDB_610096460 = (mWrapped.onActionItemClicked(mode, item));
             return dsTaint.getTaintBoolean();
             // ---------- Original Method ----------
             //return mWrapped.onActionItemClicked(mode, item);
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 14:26:45.374 -0400", hash_original_method = "38D50D306A79D91BC9BAC512614B14E4", hash_generated_method = "194BF2D68DE138C482D26B73ECDC6611")
-        @DSModeled(DSC.SAFE)
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:05.970 -0400", hash_original_method = "38D50D306A79D91BC9BAC512614B14E4", hash_generated_method = "B9A8A9E60B6F0E1D2E676F431C6EE411")
+        //DSFIXME:  CODE0002: Requires DSC value to be set
         public void onDestroyActionMode(ActionMode mode) {
             //DSFIXME:  CODE0009: Possible callback target function detected
             dsTaint.addTaint(mode.dsTaint);
@@ -6670,18 +6714,18 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 14:26:45.377 -0400", hash_original_method = "54A7C456AE4C179767C141D1533A24F9", hash_generated_method = "4BD56AD9A4EDF5E35D9244195CCDCC1B")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:05.970 -0400", hash_original_method = "54A7C456AE4C179767C141D1533A24F9", hash_generated_method = "DE4157B0C4927F2BB0CF94AC27C16909")
         //DSFIXME:  CODE0002: Requires DSC value to be set
         public void onItemCheckedStateChanged(ActionMode mode,
                 int position, long id, boolean checked) {
             //DSFIXME:  CODE0009: Possible callback target function detected
-            dsTaint.addTaint(position);
             dsTaint.addTaint(id);
+            dsTaint.addTaint(position);
             dsTaint.addTaint(checked);
             dsTaint.addTaint(mode.dsTaint);
             mWrapped.onItemCheckedStateChanged(mode, position, id, checked);
             {
-                boolean var9E354D1EAEB52E913322B0C21F0A7D1D_21345387 = (getCheckedItemCount() == 0);
+                boolean var9E354D1EAEB52E913322B0C21F0A7D1D_325609590 = (getCheckedItemCount() == 0);
                 {
                     mode.finish();
                 } //End block
@@ -6707,7 +6751,7 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
         @ViewDebug.ExportedProperty(category = "list") boolean forceAdd;
         int scrappedFromPosition;
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 14:26:45.380 -0400", hash_original_method = "35869249D2D5BC08819A8507F87D33FD", hash_generated_method = "27AA4F047E6B38797AD586ED7B1454BA")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:05.970 -0400", hash_original_method = "35869249D2D5BC08819A8507F87D33FD", hash_generated_method = "29097574B95BAB8FE5C81F6EF894805C")
         //DSFIXME:  CODE0002: Requires DSC value to be set
         public LayoutParams(Context c, AttributeSet attrs) {
             super(c, attrs);
@@ -6717,7 +6761,7 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 14:26:45.383 -0400", hash_original_method = "979C42732F8B715475115A738CE7596D", hash_generated_method = "4E89BA887C1433BB59EDBB6A5307B13A")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:05.971 -0400", hash_original_method = "979C42732F8B715475115A738CE7596D", hash_generated_method = "F71B67880A1259DC17133E677BB52754")
         //DSFIXME:  CODE0002: Requires DSC value to be set
         public LayoutParams(int w, int h) {
             super(w, h);
@@ -6727,7 +6771,7 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 14:26:45.385 -0400", hash_original_method = "CB5E57490495E3D022159C4744E426CF", hash_generated_method = "C2C3D5B45917B20599EDFF73DF7F99F6")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:05.971 -0400", hash_original_method = "CB5E57490495E3D022159C4744E426CF", hash_generated_method = "8065F8D29F26C408A17CA23D298B5345")
         //DSFIXME:  CODE0002: Requires DSC value to be set
         public LayoutParams(int w, int h, int viewType) {
             super(w, h);
@@ -6739,7 +6783,7 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 14:26:45.387 -0400", hash_original_method = "E78B3F1574E2791FC4B55C9E6B90274C", hash_generated_method = "56865DF2AAA17BD60F7856200319F1B6")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:05.971 -0400", hash_original_method = "E78B3F1574E2791FC4B55C9E6B90274C", hash_generated_method = "1B8A923CB2D1359AEB1E56B11A4FD570")
         //DSFIXME:  CODE0002: Requires DSC value to be set
         public LayoutParams(ViewGroup.LayoutParams source) {
             super(source);
@@ -6760,8 +6804,14 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
         private int mViewTypeCount;
         private ArrayList<View> mCurrentScrap;
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 14:26:45.391 -0400", hash_original_method = "2027E38C638AFAF08EBC73DB2999B11D", hash_generated_method = "9D67E8468B0C02E8E80EA84A3F508C79")
-        @DSModeled(DSC.SAFE)
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:05.971 -0400", hash_original_method = "77072A41A6368207FF0B7DC6E8B24F28", hash_generated_method = "77072A41A6368207FF0B7DC6E8B24F28")
+                public RecycleBin ()
+        {
+        }
+
+
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:05.971 -0400", hash_original_method = "2027E38C638AFAF08EBC73DB2999B11D", hash_generated_method = "57383540E29B36C27C7D0550D0DC8798")
+        //DSFIXME:  CODE0002: Requires DSC value to be set
         public void setViewTypeCount(int viewTypeCount) {
             dsTaint.addTaint(viewTypeCount);
             {
@@ -6792,7 +6842,7 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 14:26:45.394 -0400", hash_original_method = "84FB41DBF94FAC74E383190ECD19AC3F", hash_generated_method = "87770040F2AD576FC52060DB52A3882A")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:05.972 -0400", hash_original_method = "84FB41DBF94FAC74E383190ECD19AC3F", hash_generated_method = "B7905DF833EFD25178251E1C5FF4CCF5")
         //DSFIXME:  CODE0002: Requires DSC value to be set
         public void markChildrenDirty() {
             {
@@ -6849,7 +6899,7 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 14:26:45.399 -0400", hash_original_method = "511AFE11A00C49C0B36C81F833AD1339", hash_generated_method = "4F01AE633DBF5B8D64D09DBEE5D18D93")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:05.972 -0400", hash_original_method = "511AFE11A00C49C0B36C81F833AD1339", hash_generated_method = "9FE31748252841C3DC0054831876B9FA")
         @DSModeled(DSC.SAFE)
         public boolean shouldRecycleViewType(int viewType) {
             dsTaint.addTaint(viewType);
@@ -6859,7 +6909,7 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 14:26:45.402 -0400", hash_original_method = "D3A3C7CFD0DB416C40300347744B44D9", hash_generated_method = "63F1EFAEC6199074EE7443071355505A")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:05.972 -0400", hash_original_method = "D3A3C7CFD0DB416C40300347744B44D9", hash_generated_method = "EAA7B8E911CBEEAE8B2178784036FBBE")
         //DSFIXME:  CODE0002: Requires DSC value to be set
          void clear() {
             {
@@ -6916,7 +6966,7 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 14:26:45.406 -0400", hash_original_method = "8EEC6DB7AE7CDFC4B2320C472F7412E6", hash_generated_method = "4637D98951F3B3EDBA3AA76934F52B58")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:05.973 -0400", hash_original_method = "8EEC6DB7AE7CDFC4B2320C472F7412E6", hash_generated_method = "A011E1DB5C4418B35757B9D04ED12AB3")
         //DSFIXME:  CODE0002: Requires DSC value to be set
          void fillActiveViews(int childCount, int firstActivePosition) {
             dsTaint.addTaint(childCount);
@@ -6955,7 +7005,7 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 14:26:45.411 -0400", hash_original_method = "6DDE0EAFBBDE35C2F4BC64D693E74936", hash_generated_method = "525951F1624BE74361DB767984A69F7A")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:05.973 -0400", hash_original_method = "6DDE0EAFBBDE35C2F4BC64D693E74936", hash_generated_method = "B03703BDADFF29A0EE80BBF26220EF74")
         @DSModeled(DSC.SAFE)
          View getActiveView(int position) {
             dsTaint.addTaint(position);
@@ -6981,18 +7031,18 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 14:26:45.415 -0400", hash_original_method = "7C1BB02F0CFB7D7F7BDB0DC42C0788DA", hash_generated_method = "A482BF163D72AED608AC8004C47844C9")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:05.973 -0400", hash_original_method = "7C1BB02F0CFB7D7F7BDB0DC42C0788DA", hash_generated_method = "A54A7B9937474C2D0B80DD6328147153")
         //DSFIXME:  CODE0002: Requires DSC value to be set
          View getScrapView(int position) {
             dsTaint.addTaint(position);
             {
-                View varA923EEA0464BA2DCF247B08DE4AB8E85_1370570096 = (retrieveFromScrap(mCurrentScrap, position));
+                View varA923EEA0464BA2DCF247B08DE4AB8E85_815849720 = (retrieveFromScrap(mCurrentScrap, position));
             } //End block
             {
                 int whichScrap;
                 whichScrap = mAdapter.getItemViewType(position);
                 {
-                    View var06E35DD32C4D93E075CDF1EE9C79FA1E_1539339702 = (retrieveFromScrap(mScrapViews[whichScrap], position));
+                    View var06E35DD32C4D93E075CDF1EE9C79FA1E_178519654 = (retrieveFromScrap(mScrapViews[whichScrap], position));
                 } //End block
             } //End block
             return (View)dsTaint.getTaint();
@@ -7009,7 +7059,7 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 14:26:45.420 -0400", hash_original_method = "ED120D0157D66531494A9FD53EAE380E", hash_generated_method = "ADEBF5F982020FF247B3EA60D22F3381")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:05.974 -0400", hash_original_method = "ED120D0157D66531494A9FD53EAE380E", hash_generated_method = "06FE026815B38E1273DD065147DE99BE")
         //DSFIXME:  CODE0002: Requires DSC value to be set
          void addScrapView(View scrap, int position) {
             dsTaint.addTaint(position);
@@ -7019,7 +7069,7 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
             int viewType;
             viewType = lp.viewType;
             {
-                boolean var78318F84F970183913C3A58475F2628A_1863492452 = (!shouldRecycleViewType(viewType));
+                boolean var78318F84F970183913C3A58475F2628A_2063405958 = (!shouldRecycleViewType(viewType));
                 {
                     {
                         removeDetachedView(scrap, false);
@@ -7043,7 +7093,7 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 14:26:45.427 -0400", hash_original_method = "3138270AA2660474D2B7E99137A02556", hash_generated_method = "F38FEA06FAB4E93E6199B71C9BEF959C")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:05.975 -0400", hash_original_method = "3138270AA2660474D2B7E99137A02556", hash_generated_method = "5F32C106AC21B92028950E28A4FE57EF")
         //DSFIXME:  CODE0002: Requires DSC value to be set
          void scrapActiveViews() {
             View[] activeViews;
@@ -7069,7 +7119,7 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
                         whichScrap = lp.viewType;
                         activeViews[i] = null;
                         {
-                            boolean var51E473BD444D9F2F14A7E3EC67387565_1176191278 = (!shouldRecycleViewType(whichScrap));
+                            boolean var51E473BD444D9F2F14A7E3EC67387565_1202274428 = (!shouldRecycleViewType(whichScrap));
                             {
                                 {
                                     removeDetachedView(victim, false);
@@ -7099,7 +7149,7 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 14:26:45.432 -0400", hash_original_method = "EA58D1FE496277FE2ED85A93396A169A", hash_generated_method = "8CADE124F3D3490018B38D1A94C15BB0")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:05.975 -0400", hash_original_method = "EA58D1FE496277FE2ED85A93396A169A", hash_generated_method = "55567F6691B28724F3D86D3D21366CBA")
         //DSFIXME:  CODE0002: Requires DSC value to be set
         private void pruneScrapViews() {
             int maxViews;
@@ -7118,7 +7168,6 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
                     size = scrapPile.size();
                     int extras;
                     extras = size - maxViews;
-                    size--;
                     {
                         int j;
                         j = 0;
@@ -7144,8 +7193,8 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 14:26:45.436 -0400", hash_original_method = "3FD0A968FC7E2613466435C98B02B7BD", hash_generated_method = "72FE05871AE7ECB3B653CEF83D8157CA")
-        @DSModeled(DSC.SAFE)
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:05.975 -0400", hash_original_method = "3FD0A968FC7E2613466435C98B02B7BD", hash_generated_method = "267F70FD9D6EA9F1F3E73F44C270F011")
+        //DSFIXME:  CODE0002: Requires DSC value to be set
          void reclaimScrapViews(List<View> views) {
             dsTaint.addTaint(views.dsTaint);
             {
@@ -7180,7 +7229,7 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 14:26:45.443 -0400", hash_original_method = "BA10D81754F1A95A0F7C755DD4764D3B", hash_generated_method = "63E7DDB622FF007686A4A459181CD41A")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:05.976 -0400", hash_original_method = "BA10D81754F1A95A0F7C755DD4764D3B", hash_generated_method = "C4F1D0DCC2ADE02098250228C55E8DCA")
         //DSFIXME:  CODE0002: Requires DSC value to be set
          void setCacheColorHint(int color) {
             dsTaint.addTaint(color);
@@ -7277,6 +7326,35 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
         void onMovedToScrapHeap(View view);
     }
     
+    public static final int TRANSCRIPT_MODE_DISABLED = 0;
+    public static final int TRANSCRIPT_MODE_NORMAL = 1;
+    public static final int TRANSCRIPT_MODE_ALWAYS_SCROLL = 2;
+    static final int TOUCH_MODE_REST = -1;
+    static final int TOUCH_MODE_DOWN = 0;
+    static final int TOUCH_MODE_TAP = 1;
+    static final int TOUCH_MODE_DONE_WAITING = 2;
+    static final int TOUCH_MODE_SCROLL = 3;
+    static final int TOUCH_MODE_FLING = 4;
+    static final int TOUCH_MODE_OVERSCROLL = 5;
+    static final int TOUCH_MODE_OVERFLING = 6;
+    static final int LAYOUT_NORMAL = 0;
+    static final int LAYOUT_FORCE_TOP = 1;
+    static final int LAYOUT_SET_SELECTION = 2;
+    static final int LAYOUT_FORCE_BOTTOM = 3;
+    static final int LAYOUT_SPECIFIC = 4;
+    static final int LAYOUT_SYNC = 5;
+    static final int LAYOUT_MOVE_SELECTION = 6;
+    public static final int CHOICE_MODE_NONE = 0;
+    public static final int CHOICE_MODE_SINGLE = 1;
+    public static final int CHOICE_MODE_MULTIPLE = 2;
+    public static final int CHOICE_MODE_MULTIPLE_MODAL = 3;
+    static final int OVERSCROLL_LIMIT_DIVISOR = 3;
+    private static final int CHECK_POSITION_SEARCH_DISTANCE = 20;
+    private static final int TOUCH_MODE_UNKNOWN = -1;
+    private static final int TOUCH_MODE_ON = 0;
+    private static final int TOUCH_MODE_OFF = 1;
+    private static final boolean PROFILE_SCROLLING = false;
+    private static final boolean PROFILE_FLINGING = false;
+    private static final int INVALID_POINTER = -1;
 }
-
 

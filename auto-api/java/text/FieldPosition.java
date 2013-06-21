@@ -3,16 +3,16 @@ package java.text;
 // Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
+import droidsafe.runtime.*;
 
-// import Iterator to deal with enhanced for loop translation
+// needed for enhanced for control translations
 import java.util.Iterator;
-
 
 public class FieldPosition {
     private int myField, beginIndex, endIndex;
     private Format.Field myAttribute;
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:13.105 -0400", hash_original_method = "E695F5151E58D69BC230540B458252AA", hash_generated_method = "DB6C8026F47F52B522A9993E6DE8A5C8")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:30.288 -0400", hash_original_method = "E695F5151E58D69BC230540B458252AA", hash_generated_method = "414C370ED5F861D62603796A9C3740AF")
     @DSModeled(DSC.SAFE)
     public FieldPosition(int field) {
         dsTaint.addTaint(field);
@@ -21,7 +21,7 @@ public class FieldPosition {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:13.105 -0400", hash_original_method = "67EE9DAFC04AACFB1E7BD135DD8AA2FB", hash_generated_method = "795F5A19486DAE566CB9B6B15E91B4C1")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:30.288 -0400", hash_original_method = "67EE9DAFC04AACFB1E7BD135DD8AA2FB", hash_generated_method = "2598780227B97AABB19CBDA7B088BFED")
     @DSModeled(DSC.SAFE)
     public FieldPosition(Format.Field attribute) {
         dsTaint.addTaint(attribute.dsTaint);
@@ -32,7 +32,7 @@ public class FieldPosition {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:13.105 -0400", hash_original_method = "D49B7D40F2EA042BB514EAEBCB178B5A", hash_generated_method = "A99F0D4355FD65754BDAEC75261CD29B")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:30.289 -0400", hash_original_method = "D49B7D40F2EA042BB514EAEBCB178B5A", hash_generated_method = "F8E12D54432FD82D4629A39D5B767BB3")
     @DSModeled(DSC.SAFE)
     public FieldPosition(Format.Field attribute, int field) {
         dsTaint.addTaint(field);
@@ -43,7 +43,7 @@ public class FieldPosition {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:13.105 -0400", hash_original_method = "0917A34BEC387437E422442FF9D128A9", hash_generated_method = "B3A4323D4A039FA5AF465BB8B7EB95FF")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:30.289 -0400", hash_original_method = "0917A34BEC387437E422442FF9D128A9", hash_generated_method = "7B55DCEF19A54303A6AEE5DCD2981156")
     @DSModeled(DSC.SAFE)
      void clear() {
         beginIndex = endIndex = 0;
@@ -52,7 +52,7 @@ public class FieldPosition {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:13.105 -0400", hash_original_method = "2EFD5CC62AE2C3EDB89CEF52D471F874", hash_generated_method = "81ED41C92D449BE26EC59EB160529ED5")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:30.289 -0400", hash_original_method = "2EFD5CC62AE2C3EDB89CEF52D471F874", hash_generated_method = "4CD75467E461BB1ABC60C0F68E8D03BB")
     @DSModeled(DSC.SAFE)
     @Override
     public boolean equals(Object object) {
@@ -70,7 +70,7 @@ public class FieldPosition {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:13.105 -0400", hash_original_method = "D73EFD1B11663E2F20B33728384A7709", hash_generated_method = "CD4C8C13E512D94C6E8B30F5447A1EE8")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:30.289 -0400", hash_original_method = "D73EFD1B11663E2F20B33728384A7709", hash_generated_method = "0D59CBB564C3AA7249E6A2E0DC303D16")
     @DSModeled(DSC.SAFE)
     public int getBeginIndex() {
         return dsTaint.getTaintInt();
@@ -79,7 +79,7 @@ public class FieldPosition {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:13.105 -0400", hash_original_method = "9236177A75F6147947B59829E100715E", hash_generated_method = "9C8138656D08AC48E476438D3A7848EC")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:30.289 -0400", hash_original_method = "9236177A75F6147947B59829E100715E", hash_generated_method = "2B0F1AD88EFD4BD74044E3E154370D10")
     @DSModeled(DSC.SAFE)
     public int getEndIndex() {
         return dsTaint.getTaintInt();
@@ -88,7 +88,7 @@ public class FieldPosition {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:13.105 -0400", hash_original_method = "FA0D18F7CDA71089ACF7D0CA54DB97A6", hash_generated_method = "0C368B5FC364BB7DE9F25217ADC13ACF")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:30.290 -0400", hash_original_method = "FA0D18F7CDA71089ACF7D0CA54DB97A6", hash_generated_method = "163A8FD6A81073C866C27F04E273E43D")
     @DSModeled(DSC.SAFE)
     public int getField() {
         return dsTaint.getTaintInt();
@@ -97,7 +97,7 @@ public class FieldPosition {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:13.105 -0400", hash_original_method = "7CAF144562B490BE3E2EB59461F9FF9F", hash_generated_method = "8B1E6CC15DF0BE6728D359B233F38783")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:30.290 -0400", hash_original_method = "7CAF144562B490BE3E2EB59461F9FF9F", hash_generated_method = "FEFE009C93FAD788BF46D415D4D721D6")
     @DSModeled(DSC.SAFE)
     public Format.Field getFieldAttribute() {
         return (Format.Field)dsTaint.getTaint();
@@ -106,7 +106,7 @@ public class FieldPosition {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:13.105 -0400", hash_original_method = "C545ABA0B6D3CBB4D119673C6F3DBEAC", hash_generated_method = "6B3FFE554419CD2A78056149138E4F42")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:30.290 -0400", hash_original_method = "C545ABA0B6D3CBB4D119673C6F3DBEAC", hash_generated_method = "AF710574461241432D1CDEC1BD297296")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     @Override
     public int hashCode() {
@@ -120,7 +120,7 @@ public class FieldPosition {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:13.105 -0400", hash_original_method = "B6704CE8D3A3B86DBE7C4466AFBF63DE", hash_generated_method = "3BC8C6131C7C8619786FD88989353EC9")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:30.290 -0400", hash_original_method = "B6704CE8D3A3B86DBE7C4466AFBF63DE", hash_generated_method = "B02629589226D51D0D8FC0BB062FC1E6")
     @DSModeled(DSC.SAFE)
     public void setBeginIndex(int index) {
         dsTaint.addTaint(index);
@@ -129,7 +129,7 @@ public class FieldPosition {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:13.105 -0400", hash_original_method = "D0945845F8EA8830C89E5D5682FA6C51", hash_generated_method = "CDEF5D13448C6B118F6643802BDE31C7")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:30.290 -0400", hash_original_method = "D0945845F8EA8830C89E5D5682FA6C51", hash_generated_method = "10DB7B99F9D00ECEA50497492D3CF093")
     @DSModeled(DSC.SAFE)
     public void setEndIndex(int index) {
         dsTaint.addTaint(index);
@@ -138,11 +138,11 @@ public class FieldPosition {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:13.106 -0400", hash_original_method = "C87731FA15F0C601F30AE5E2B46DBDCA", hash_generated_method = "E92E926B3FC09E70F612C91ED753F167")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:30.291 -0400", hash_original_method = "C87731FA15F0C601F30AE5E2B46DBDCA", hash_generated_method = "49628A085D29BCCD01CD50925C6DCF9F")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     @Override
     public String toString() {
-        String varF4747AE3225DE36EA37AB251C37648AF_127238477 = (getClass().getName() + "[attribute=" + myAttribute + ", field="
+        String varF4747AE3225DE36EA37AB251C37648AF_728899775 = (getClass().getName() + "[attribute=" + myAttribute + ", field="
                 + myField + ", beginIndex=" + beginIndex + ", endIndex="
                 + endIndex + "]");
         return dsTaint.getTaintString();
@@ -154,5 +154,4 @@ public class FieldPosition {
 
     
 }
-
 

@@ -3,16 +3,15 @@ package javax.net.ssl;
 // Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
+import droidsafe.runtime.*;
 
-// import Iterator to deal with enhanced for loop translation
+// needed for enhanced for control translations
 import java.util.Iterator;
-
 import java.io.IOException;
 
 public class SSLException extends IOException {
-    private static final long serialVersionUID = 4511006460650708967L;
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:15.450 -0400", hash_original_method = "767432C29D53FDFEE031F1BE821865F4", hash_generated_method = "4B8AD0A0AD9A45818B61FB66107B035C")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:36.085 -0400", hash_original_method = "767432C29D53FDFEE031F1BE821865F4", hash_generated_method = "D1B8D8D4A1C5BC847F9AAE5F17E600CE")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public SSLException(String reason) {
         super(reason);
@@ -21,7 +20,7 @@ public class SSLException extends IOException {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:15.450 -0400", hash_original_method = "5FF36E085E786A28DDEEC1EBE169EDD3", hash_generated_method = "592C8CC7B218F1441E6D24C6C0F89541")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:36.085 -0400", hash_original_method = "5FF36E085E786A28DDEEC1EBE169EDD3", hash_generated_method = "62F745A2E109BA91FB9779F2BC6CA9C0")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public SSLException(String message, Throwable cause) {
         super(message);
@@ -33,7 +32,7 @@ public class SSLException extends IOException {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:15.450 -0400", hash_original_method = "1E7679A49A32A86556807238CABB4D3B", hash_generated_method = "6A3FA42FA4B6E45C7B6DE0D126CAB7E6")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:36.085 -0400", hash_original_method = "1E7679A49A32A86556807238CABB4D3B", hash_generated_method = "357612B4C6CFB2FD6F7FC1B91C99A572")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public SSLException(Throwable cause) {
         super(cause == null ? null : cause.toString());
@@ -44,6 +43,6 @@ public class SSLException extends IOException {
     }
 
     
+    private static final long serialVersionUID = 4511006460650708967L;
 }
-
 

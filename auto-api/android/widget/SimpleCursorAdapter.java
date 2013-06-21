@@ -3,10 +3,10 @@ package android.widget;
 // Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
+import droidsafe.runtime.*;
 
-// import Iterator to deal with enhanced for loop translation
+// needed for enhanced for control translations
 import java.util.Iterator;
-
 import android.content.Context;
 import android.database.Cursor;
 import android.net.Uri;
@@ -20,16 +20,16 @@ public class SimpleCursorAdapter extends ResourceCursorAdapter {
     private ViewBinder mViewBinder;
     String[] mOriginalFrom;
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:08.382 -0400", hash_original_method = "4CA266072E0BEF58A4BC70323B402D31", hash_generated_method = "48654CECD14F562EFDE789B307704D64")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:08.535 -0400", hash_original_method = "4CA266072E0BEF58A4BC70323B402D31", hash_generated_method = "B16F8A92D9C483F1329D476D83880D0C")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     @Deprecated
     public SimpleCursorAdapter(Context context, int layout, Cursor c, String[] from, int[] to) {
         super(context, layout, c);
-        dsTaint.addTaint(to);
+        dsTaint.addTaint(to[0]);
         dsTaint.addTaint(c.dsTaint);
         dsTaint.addTaint(layout);
         dsTaint.addTaint(context.dsTaint);
-        dsTaint.addTaint(from);
+        dsTaint.addTaint(from[0]);
         findColumns(from);
         // ---------- Original Method ----------
         //mTo = to;
@@ -38,17 +38,17 @@ public class SimpleCursorAdapter extends ResourceCursorAdapter {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:08.382 -0400", hash_original_method = "07FEC305B6EF36E13BFB609FC3D08908", hash_generated_method = "624C22CB814941595C8FD66C7F29E3F8")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:08.535 -0400", hash_original_method = "07FEC305B6EF36E13BFB609FC3D08908", hash_generated_method = "392DD3CF52BBACF4DA0113D0CAF4D617")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public SimpleCursorAdapter(Context context, int layout, Cursor c, String[] from,
             int[] to, int flags) {
         super(context, layout, c, flags);
-        dsTaint.addTaint(to);
+        dsTaint.addTaint(to[0]);
         dsTaint.addTaint(flags);
         dsTaint.addTaint(c.dsTaint);
         dsTaint.addTaint(layout);
         dsTaint.addTaint(context.dsTaint);
-        dsTaint.addTaint(from);
+        dsTaint.addTaint(from[0]);
         findColumns(from);
         // ---------- Original Method ----------
         //mTo = to;
@@ -57,26 +57,26 @@ public class SimpleCursorAdapter extends ResourceCursorAdapter {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:08.382 -0400", hash_original_method = "DC8B275A35A5B1D2099C370F56E50BB9", hash_generated_method = "C0359FFD6863E8D6B44EA03C7CAABE29")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:08.536 -0400", hash_original_method = "DC8B275A35A5B1D2099C370F56E50BB9", hash_generated_method = "434BA1DD9C3F5A169F1619A52678F327")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     @Override
     public void bindView(View view, Context context, Cursor cursor) {
         dsTaint.addTaint(cursor.dsTaint);
         dsTaint.addTaint(context.dsTaint);
         dsTaint.addTaint(view.dsTaint);
-        final ViewBinder binder;
+        ViewBinder binder;
         binder = mViewBinder;
-        final int count;
+        int count;
         count = mTo.length;
-        final int[] from;
+        int[] from;
         from = mFrom;
-        final int[] to;
+        int[] to;
         to = mTo;
         {
             int i;
             i = 0;
             {
-                final View v;
+                View v;
                 v = view.findViewById(to[i]);
                 {
                     boolean bound;
@@ -97,7 +97,7 @@ public class SimpleCursorAdapter extends ResourceCursorAdapter {
                             setViewImage((ImageView) v, text);
                         } //End block
                         {
-                            throw new IllegalStateException(v.getClass().getName() + " is not a " +
+                            if (DroidSafeAndroidRuntime.control) throw new IllegalStateException(v.getClass().getName() + " is not a " +
                                 " view that can be bounds by this SimpleCursorAdapter");
                         } //End block
                     } //End block
@@ -109,7 +109,7 @@ public class SimpleCursorAdapter extends ResourceCursorAdapter {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:08.382 -0400", hash_original_method = "E0E2C9BDE209838004B6CAB60CB87613", hash_generated_method = "B7C159CD5C78FC330018146E62554154")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:08.536 -0400", hash_original_method = "E0E2C9BDE209838004B6CAB60CB87613", hash_generated_method = "CAECD65D9B62B932B579F1D0CC746F3F")
     @DSModeled(DSC.SAFE)
     public ViewBinder getViewBinder() {
         return (ViewBinder)dsTaint.getTaint();
@@ -118,7 +118,7 @@ public class SimpleCursorAdapter extends ResourceCursorAdapter {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:08.382 -0400", hash_original_method = "119DFC3ED073D5B4FB9A3C0337902379", hash_generated_method = "10FA99797254E1FF2740D41E30C9C036")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:08.536 -0400", hash_original_method = "119DFC3ED073D5B4FB9A3C0337902379", hash_generated_method = "6A2F46BCFBAFDDF5F790CFEDA9A5804E")
     @DSModeled(DSC.SAFE)
     public void setViewBinder(ViewBinder viewBinder) {
         dsTaint.addTaint(viewBinder.dsTaint);
@@ -127,7 +127,7 @@ public class SimpleCursorAdapter extends ResourceCursorAdapter {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:08.382 -0400", hash_original_method = "31A5526470C992FDAE212BFFA88B0730", hash_generated_method = "52BA9C00ABE30DB5A65057B0EDEC3108")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:08.537 -0400", hash_original_method = "31A5526470C992FDAE212BFFA88B0730", hash_generated_method = "CE085611AA522476003D6D197DA78852")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public void setViewImage(ImageView v, String value) {
         dsTaint.addTaint(v.dsTaint);
@@ -149,8 +149,8 @@ public class SimpleCursorAdapter extends ResourceCursorAdapter {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:08.382 -0400", hash_original_method = "5AA8DD17AC94ADB8D267F5D4267EA13E", hash_generated_method = "384D35A4211CAE94D41E30B25BF180C5")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:08.537 -0400", hash_original_method = "5AA8DD17AC94ADB8D267F5D4267EA13E", hash_generated_method = "73D0869DBE490F835EF3ABD92D71BA20")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     public void setViewText(TextView v, String text) {
         dsTaint.addTaint(v.dsTaint);
         dsTaint.addTaint(text);
@@ -160,27 +160,25 @@ public class SimpleCursorAdapter extends ResourceCursorAdapter {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:08.382 -0400", hash_original_method = "505C15BD7A524BAA123874B0B6BE7D4B", hash_generated_method = "BE25F6D3833170D0749AA62E581BB02F")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:08.537 -0400", hash_original_method = "505C15BD7A524BAA123874B0B6BE7D4B", hash_generated_method = "0B082FD6D05F694C7CBFB8BFEA869214")
     @DSModeled(DSC.SAFE)
     public int getStringConversionColumn() {
-        //DSFIXME:  CODE0009: Possible callback target function detected
         return dsTaint.getTaintInt();
         // ---------- Original Method ----------
         //return mStringConversionColumn;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:08.382 -0400", hash_original_method = "CAA7C791E82A28ED194AFE600FF6DEEE", hash_generated_method = "92B2158C99C9EED0E4490F3CCEBE8C87")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:08.537 -0400", hash_original_method = "CAA7C791E82A28ED194AFE600FF6DEEE", hash_generated_method = "1040B8D0174AC5CE546A12B2E567B273")
     @DSModeled(DSC.SAFE)
     public void setStringConversionColumn(int stringConversionColumn) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
         dsTaint.addTaint(stringConversionColumn);
         // ---------- Original Method ----------
         //mStringConversionColumn = stringConversionColumn;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:08.382 -0400", hash_original_method = "80E6B5584C3F52CF90E7103CF53469C6", hash_generated_method = "46CD3F2DCEF4F203D0528BBF903C7749")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:08.537 -0400", hash_original_method = "80E6B5584C3F52CF90E7103CF53469C6", hash_generated_method = "6F0AA370C5208B2348CA704DA9C87DC1")
     @DSModeled(DSC.SAFE)
     public CursorToStringConverter getCursorToStringConverter() {
         return (CursorToStringConverter)dsTaint.getTaint();
@@ -189,7 +187,7 @@ public class SimpleCursorAdapter extends ResourceCursorAdapter {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:08.382 -0400", hash_original_method = "5D90B32B884A493C1622C9D829A83B10", hash_generated_method = "A20738075AF65423ED53784BEFA32A04")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:08.537 -0400", hash_original_method = "5D90B32B884A493C1622C9D829A83B10", hash_generated_method = "5097AC3D5D513CAC0893FFF5CCC8423B")
     @DSModeled(DSC.SAFE)
     public void setCursorToStringConverter(CursorToStringConverter cursorToStringConverter) {
         dsTaint.addTaint(cursorToStringConverter.dsTaint);
@@ -198,18 +196,18 @@ public class SimpleCursorAdapter extends ResourceCursorAdapter {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:08.382 -0400", hash_original_method = "600E1910E4ECD6C26E4D3B813A27ACFC", hash_generated_method = "EAA259648A5CBCF418C2B851752EB983")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:08.538 -0400", hash_original_method = "600E1910E4ECD6C26E4D3B813A27ACFC", hash_generated_method = "9BC3794A534F3E8B4B5C8CD4F66C4633")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     @Override
     public CharSequence convertToString(Cursor cursor) {
         dsTaint.addTaint(cursor.dsTaint);
         {
-            CharSequence var6189414100EEA9A4230F8D8AA3BFB95D_267806777 = (mCursorToStringConverter.convertToString(cursor));
+            CharSequence var6189414100EEA9A4230F8D8AA3BFB95D_1962737563 = (mCursorToStringConverter.convertToString(cursor));
         } //End block
         {
-            CharSequence var7626C22DEBA60A6A21B2A4E0B1DC6C6D_560959302 = (cursor.getString(mStringConversionColumn));
+            CharSequence var7626C22DEBA60A6A21B2A4E0B1DC6C6D_95120217 = (cursor.getString(mStringConversionColumn));
         } //End block
-        CharSequence var50DC25DC4A30BE082F62477C1AE559DF_812239729 = (super.convertToString(cursor));
+        CharSequence var50DC25DC4A30BE082F62477C1AE559DF_1684867205 = (super.convertToString(cursor));
         return dsTaint.getTaintString();
         // ---------- Original Method ----------
         //if (mCursorToStringConverter != null) {
@@ -221,10 +219,10 @@ public class SimpleCursorAdapter extends ResourceCursorAdapter {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:08.383 -0400", hash_original_method = "FB1AB395EA625B0EC9BE174CD444F84E", hash_generated_method = "C3B2B16DFE1C5F108E15FF760D9415FC")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:08.538 -0400", hash_original_method = "FB1AB395EA625B0EC9BE174CD444F84E", hash_generated_method = "96C268AA0FD10225245989DEC9FB3EDC")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     private void findColumns(String[] from) {
-        dsTaint.addTaint(from);
+        dsTaint.addTaint(from[0]);
         {
             int i;
             int count;
@@ -258,8 +256,8 @@ public class SimpleCursorAdapter extends ResourceCursorAdapter {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:08.383 -0400", hash_original_method = "4582D229162590CE1749F675A6BA90D6", hash_generated_method = "2E1F561320CB2454C257D1D3EDA305D9")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:08.538 -0400", hash_original_method = "4582D229162590CE1749F675A6BA90D6", hash_generated_method = "BB04FD6FB862DE67139A602037378C1E")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     @Override
     public Cursor swapCursor(Cursor c) {
         dsTaint.addTaint(c.dsTaint);
@@ -280,12 +278,12 @@ public class SimpleCursorAdapter extends ResourceCursorAdapter {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:08.383 -0400", hash_original_method = "6EF93FFBB8E610946B54D3F2EC498321", hash_generated_method = "8415435408E2B7565D5B8DB8E27F1AF8")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:08.538 -0400", hash_original_method = "6EF93FFBB8E610946B54D3F2EC498321", hash_generated_method = "83ACEF15B1027247518CF6B2B3D4C540")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     public void changeCursorAndColumns(Cursor c, String[] from, int[] to) {
-        dsTaint.addTaint(to);
+        dsTaint.addTaint(to[0]);
         dsTaint.addTaint(c.dsTaint);
-        dsTaint.addTaint(from);
+        dsTaint.addTaint(from[0]);
         {
             findColumns(mOriginalFrom);
         } //End block
@@ -313,5 +311,4 @@ public class SimpleCursorAdapter extends ResourceCursorAdapter {
     }
     
 }
-
 

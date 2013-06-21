@@ -3,36 +3,28 @@ package java.net;
 // Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
+import droidsafe.runtime.*;
 
-// import Iterator to deal with enhanced for loop translation
+// needed for enhanced for control translations
 import java.util.Iterator;
-
 import java.io.ObjectStreamException;
 import java.nio.ByteOrder;
 import libcore.io.Memory;
 import static libcore.io.OsConstants.*;
 
 public final class Inet4Address extends InetAddress {
-    private static final long serialVersionUID = 3286316764910316507L;
-    public static final InetAddress ANY =
-            new Inet4Address(new byte[] { 0, 0, 0, 0 }, null);
-    public static final InetAddress ALL =
-            new Inet4Address(new byte[] { (byte) 255, (byte) 255,
-                                          (byte) 255, (byte) 255 }, null);
-    public static final InetAddress LOOPBACK =
-            new Inet4Address(new byte[] { 127, 0, 0, 1 }, "localhost");
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:12.204 -0400", hash_original_method = "456618C96C185AE7EE8C57F26D0D0668", hash_generated_method = "8F6297983AE9E810E261C487F32F0440")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:27.816 -0400", hash_original_method = "456618C96C185AE7EE8C57F26D0D0668", hash_generated_method = "00C87F30470BF47ABE996036FFAB3439")
     //DSFIXME:  CODE0002: Requires DSC value to be set
      Inet4Address(byte[] ipaddress, String hostName) {
         super(AF_INET, ipaddress, hostName);
         dsTaint.addTaint(hostName);
-        dsTaint.addTaint(ipaddress);
+        dsTaint.addTaint(ipaddress[0]);
         // ---------- Original Method ----------
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:12.204 -0400", hash_original_method = "0C1A3E77D90A82A5EF8B4836AA337609", hash_generated_method = "37712AE823A1BFC68E4E57FCFB3D206C")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:27.816 -0400", hash_original_method = "0C1A3E77D90A82A5EF8B4836AA337609", hash_generated_method = "7E5AE852DC11AD7723E72814B526C29B")
     @DSModeled(DSC.SAFE)
     @Override
     public boolean isAnyLocalAddress() {
@@ -42,7 +34,7 @@ public final class Inet4Address extends InetAddress {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:12.204 -0400", hash_original_method = "38D1AA1924F9F7EC1F4EB08BE7254781", hash_generated_method = "ACCBCED4B6AF0D13B7B1B93613642616")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:27.816 -0400", hash_original_method = "38D1AA1924F9F7EC1F4EB08BE7254781", hash_generated_method = "9838CDF8160A8EE4026BC867F8B0D511")
     @DSModeled(DSC.SAFE)
     @Override
     public boolean isLinkLocalAddress() {
@@ -52,7 +44,7 @@ public final class Inet4Address extends InetAddress {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:12.204 -0400", hash_original_method = "FB35E1A46B66244783B8471385CB1A76", hash_generated_method = "6396C9343F70151CA3142B0C98203B6D")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:27.816 -0400", hash_original_method = "FB35E1A46B66244783B8471385CB1A76", hash_generated_method = "C74D1F37CFF4F177C07498AED2674AFB")
     @DSModeled(DSC.SAFE)
     @Override
     public boolean isLoopbackAddress() {
@@ -62,12 +54,12 @@ public final class Inet4Address extends InetAddress {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:12.204 -0400", hash_original_method = "7EC53D5BF716DEFD994FB15A461002F1", hash_generated_method = "C087E7F7013CA7A4DC12C3287D97C5D7")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:27.817 -0400", hash_original_method = "7EC53D5BF716DEFD994FB15A461002F1", hash_generated_method = "69DD56EBA0A51FBE88BAD0056215EA2C")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     @Override
     public boolean isMCGlobal() {
         {
-            boolean var0588D32C09A60BA0A448759EA893261D_496742656 = (!isMulticastAddress());
+            boolean var0588D32C09A60BA0A448759EA893261D_170096115 = (!isMulticastAddress());
         } //End collapsed parenthetic
         int address;
         address = Memory.peekInt(ipaddress, 0, ByteOrder.BIG_ENDIAN);
@@ -87,7 +79,7 @@ public final class Inet4Address extends InetAddress {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:12.204 -0400", hash_original_method = "CB22C78468AA446CA5A943070CD230A8", hash_generated_method = "A8693D543167D403399CC503EFEDFEB7")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:27.817 -0400", hash_original_method = "CB22C78468AA446CA5A943070CD230A8", hash_generated_method = "EF8EA6DBEE6CA33C3B6DB2F94B76A534")
     @DSModeled(DSC.SAFE)
     @Override
     public boolean isMCLinkLocal() {
@@ -97,7 +89,7 @@ public final class Inet4Address extends InetAddress {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:12.204 -0400", hash_original_method = "B0B42DF39D7CC893DB97C3031173A44B", hash_generated_method = "5508A68F47D8ED29B1A36C093E63B673")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:27.817 -0400", hash_original_method = "B0B42DF39D7CC893DB97C3031173A44B", hash_generated_method = "D896D081F26012F0111455895A14D508")
     @DSModeled(DSC.SAFE)
     @Override
     public boolean isMCNodeLocal() {
@@ -107,7 +99,7 @@ public final class Inet4Address extends InetAddress {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:12.204 -0400", hash_original_method = "77DF4C339990FEF620E26E135CB9F40A", hash_generated_method = "652515857BE273F1E4AB33E760FB2E06")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:27.817 -0400", hash_original_method = "77DF4C339990FEF620E26E135CB9F40A", hash_generated_method = "8C72D67988603D1D16B38592D8EDC43B")
     @DSModeled(DSC.SAFE)
     @Override
     public boolean isMCOrgLocal() {
@@ -117,7 +109,7 @@ public final class Inet4Address extends InetAddress {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:12.204 -0400", hash_original_method = "9C14EBCA764FFF67AE16B4B98A6FB7C0", hash_generated_method = "66BEF588351C827CE13249DCF03E45F6")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:27.818 -0400", hash_original_method = "9C14EBCA764FFF67AE16B4B98A6FB7C0", hash_generated_method = "ED9D53DC057EA27A4FA3F6A2F84DA9D1")
     @DSModeled(DSC.SAFE)
     @Override
     public boolean isMCSiteLocal() {
@@ -127,7 +119,7 @@ public final class Inet4Address extends InetAddress {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:12.204 -0400", hash_original_method = "D19738A63A8D007E2A9921EAE82BC6DA", hash_generated_method = "C0AD85E2909450A209E564DD15DBEBD2")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:27.818 -0400", hash_original_method = "D19738A63A8D007E2A9921EAE82BC6DA", hash_generated_method = "FA33B3A26323CCAA7B9A0F67FDBEF566")
     @DSModeled(DSC.SAFE)
     @Override
     public boolean isMulticastAddress() {
@@ -137,7 +129,7 @@ public final class Inet4Address extends InetAddress {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:12.204 -0400", hash_original_method = "ACDDA2FDB8C312E800968083D2342A94", hash_generated_method = "B5005988C4C38B7577FA9F7ECAD5BEA5")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:27.818 -0400", hash_original_method = "ACDDA2FDB8C312E800968083D2342A94", hash_generated_method = "D7E6FA53AF7EA73FD0B16FEAF203DBE6")
     @DSModeled(DSC.SAFE)
     @Override
     public boolean isSiteLocalAddress() {
@@ -154,15 +146,23 @@ public final class Inet4Address extends InetAddress {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:12.204 -0400", hash_original_method = "ED281EE0C7A186E413EE6AFE3B25FC7C", hash_generated_method = "E90248C7BAC104E3D232D96E3F0B94A4")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:27.818 -0400", hash_original_method = "ED281EE0C7A186E413EE6AFE3B25FC7C", hash_generated_method = "33B9D2701096C4754E66A8D8C18D18CD")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     private Object writeReplace() throws ObjectStreamException {
+        Object varDDF12B0D9770160307F932778BB004F2_879833549 = (new Inet4Address(ipaddress, hostName));
         return (Object)dsTaint.getTaint();
         // ---------- Original Method ----------
         //return new Inet4Address(ipaddress, hostName);
     }
 
     
+    private static final long serialVersionUID = 3286316764910316507L;
+    public static final InetAddress ANY =
+            new Inet4Address(new byte[] { 0, 0, 0, 0 }, null);
+    public static final InetAddress ALL =
+            new Inet4Address(new byte[] { (byte) 255, (byte) 255,
+                                          (byte) 255, (byte) 255 }, null);
+    public static final InetAddress LOOPBACK =
+            new Inet4Address(new byte[] { 127, 0, 0, 1 }, "localhost");
 }
-
 

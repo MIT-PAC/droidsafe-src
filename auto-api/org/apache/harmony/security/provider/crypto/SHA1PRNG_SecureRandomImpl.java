@@ -2,12 +2,11 @@ package org.apache.harmony.security.provider.crypto;
 
 // Droidsafe Imports
 import droidsafe.helpers.*;
-import droidsafe.runtime.DroidSafeAndroidRuntime;
 import droidsafe.annotations.*;
+import droidsafe.runtime.*;
 
-// import Iterator to deal with enhanced for loop translation
+// needed for enhanced for control translations
 import java.util.Iterator;
-
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
@@ -18,24 +17,6 @@ import libcore.io.Streams;
 import libcore.util.EmptyArray;
 
 public class SHA1PRNG_SecureRandomImpl extends SecureRandomSpi implements Serializable, SHA1_Data {
-    private static final long serialVersionUID = 283736797212159675L;
-    private static final int[] END_FLAGS = { 0x80000000, 0x800000, 0x8000, 0x80 };
-    private static final int[] RIGHT1 = { 0, 40, 48, 56 };
-    private static final int[] RIGHT2 = { 0, 8, 16, 24 };
-    private static final int[] LEFT = { 0, 24, 16, 8 };
-    private static final int[] MASK = { 0xFFFFFFFF, 0x00FFFFFF, 0x0000FFFF,
-            0x000000FF };
-    private static final int HASHBYTES_TO_USE = 20;
-    private static final int FRAME_LENGTH = 16;
-    private static final int COUNTER_BASE = 0;
-    private static final int HASHCOPY_OFFSET = 0;
-    private static final int EXTRAFRAME_OFFSET = 5;
-    private static final int FRAME_OFFSET = 21;
-    private static final int MAX_BYTES = 48;
-    private static final int UNDEFINED = 0;
-    private static final int SET_SEED = 1;
-    private static final int NEXT_BYTES = 2;
-    private static SHA1PRNG_SecureRandomImpl myRandom;
     private transient int[] seed;
     private transient long seedLength;
     private transient int[] copies;
@@ -44,8 +25,8 @@ public class SHA1PRNG_SecureRandomImpl extends SecureRandomSpi implements Serial
     private transient long counter;
     private transient int state;
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:17.778 -0400", hash_original_method = "D644E56206842370DC4588BE79799AE3", hash_generated_method = "10F4A9076034100C8C935D612DEA08CF")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:40.336 -0400", hash_original_method = "D644E56206842370DC4588BE79799AE3", hash_generated_method = "7CC69FE4B2EBF55A1C1DCB7DE02B3CF2")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     public SHA1PRNG_SecureRandomImpl() {
         seed = new int[HASH_OFFSET + EXTRAFRAME_OFFSET];
         seed[HASH_OFFSET] = H0;
@@ -75,10 +56,10 @@ public class SHA1PRNG_SecureRandomImpl extends SecureRandomSpi implements Serial
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:17.778 -0400", hash_original_method = "71D119B7F725F786DBF6F5411B9162C3", hash_generated_method = "7904914C43AB8047884E33F948F58DEB")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:40.336 -0400", hash_original_method = "71D119B7F725F786DBF6F5411B9162C3", hash_generated_method = "667C9C44670D6BFD66E1BAB734BF2123")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     private void updateSeed(byte[] bytes) {
-        dsTaint.addTaint(bytes);
+        dsTaint.addTaint(bytes[0]);
         SHA1Impl.updateHash(seed, bytes, 0, bytes.length - 1);
         seedLength += bytes.length;
         // ---------- Original Method ----------
@@ -87,12 +68,12 @@ public class SHA1PRNG_SecureRandomImpl extends SecureRandomSpi implements Serial
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:17.778 -0400", hash_original_method = "D3CE71F13CE971E436333BDFEF7BBD46", hash_generated_method = "C5CC23BCD59AF25E3F40AE9AF590E2A9")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:40.337 -0400", hash_original_method = "D3CE71F13CE971E436333BDFEF7BBD46", hash_generated_method = "D1781FD18733138776180D8D37B2C320")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     protected synchronized void engineSetSeed(byte[] seed) {
-        dsTaint.addTaint(seed);
+        dsTaint.addTaint(seed[0]);
         {
-        	if (DroidSafeAndroidRuntime.control) throw new NullPointerException("seed == null");
+            if (DroidSafeAndroidRuntime.control) throw new NullPointerException("seed == null");
         } //End block
         {
             System.arraycopy(copies, HASHCOPY_OFFSET, this.seed, HASH_OFFSET,
@@ -117,13 +98,13 @@ public class SHA1PRNG_SecureRandomImpl extends SecureRandomSpi implements Serial
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:17.779 -0400", hash_original_method = "DD8EBB0EDF44ABE263687E4C98AB74A0", hash_generated_method = "78B12CCD65380ED155649804296F042F")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:40.337 -0400", hash_original_method = "DD8EBB0EDF44ABE263687E4C98AB74A0", hash_generated_method = "AA2A44B134898CE2887AB67C2796C138")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     protected synchronized byte[] engineGenerateSeed(int numBytes) {
         dsTaint.addTaint(numBytes);
         byte[] myBytes;
         {
-        	if (DroidSafeAndroidRuntime.control) throw new NegativeArraySizeException(Integer.toString(numBytes));
+            if (DroidSafeAndroidRuntime.control) throw new NegativeArraySizeException(Integer.toString(numBytes));
         } //End block
         {
             myRandom = new SHA1PRNG_SecureRandomImpl();
@@ -152,18 +133,18 @@ public class SHA1PRNG_SecureRandomImpl extends SecureRandomSpi implements Serial
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:17.779 -0400", hash_original_method = "788172F4432069DD19F6D1F4ED0FDE85", hash_generated_method = "01D6A5BD3D5B1AB7C1840B9B8E1FA4C7")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:40.338 -0400", hash_original_method = "788172F4432069DD19F6D1F4ED0FDE85", hash_generated_method = "A6CDB23A749D6662AF8FB6B4E02437C9")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     protected synchronized void engineNextBytes(byte[] bytes) {
-        dsTaint.addTaint(bytes);
+        dsTaint.addTaint(bytes[0]);
         int i, n;
         long bits;
         int nextByteToReturn;
         int lastWord;
-        final int extrabytes;
+        int extrabytes;
         extrabytes = 7;
         {
-        	if (DroidSafeAndroidRuntime.control) throw new NullPointerException("bytes == null");
+            if (DroidSafeAndroidRuntime.control) throw new NullPointerException("bytes == null");
         } //End block
         lastWord = seed[BYTES_OFFSET] == 0 ? 0
                 : (seed[BYTES_OFFSET] + extrabytes) >> 3 - 1;
@@ -225,7 +206,6 @@ public class SHA1PRNG_SecureRandomImpl extends SecureRandomSpi implements Serial
                 SHA1Impl.computeHash(seed);
                 System.arraycopy(copies, FRAME_OFFSET, seed, 0, FRAME_LENGTH);
             } //End block
-            counter++;
             int j;
             j = 0;
             {
@@ -254,17 +234,17 @@ public class SHA1PRNG_SecureRandomImpl extends SecureRandomSpi implements Serial
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:17.780 -0400", hash_original_method = "716FAD60FA2495E9DABF23B35E588917", hash_generated_method = "9443F10CCECFD8C8B0CFC2B6B91DD41F")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:40.339 -0400", hash_original_method = "716FAD60FA2495E9DABF23B35E588917", hash_generated_method = "204A1DEDBF1E740669211371D10F196B")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     private void writeObject(ObjectOutputStream oos) throws IOException {
         dsTaint.addTaint(oos.dsTaint);
         int[] intData;
         intData = null;
-        final int only_hash;
+        int only_hash;
         only_hash = EXTRAFRAME_OFFSET;
-        final int hashes_and_frame;
+        int hashes_and_frame;
         hashes_and_frame = EXTRAFRAME_OFFSET * 2 + FRAME_LENGTH;
-        final int hashes_and_frame_extra;
+        int hashes_and_frame_extra;
         hashes_and_frame_extra = EXTRAFRAME_OFFSET * 2 + FRAME_LENGTH
                 * 2;
         oos.writeLong(seedLength);
@@ -317,7 +297,7 @@ public class SHA1PRNG_SecureRandomImpl extends SecureRandomSpi implements Serial
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:17.780 -0400", hash_original_method = "87BDC97ACB5596298F61FE4642318DFC", hash_generated_method = "707E5DD4A85D091B3C01D82A7FDB457A")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:40.340 -0400", hash_original_method = "87BDC97ACB5596298F61FE4642318DFC", hash_generated_method = "F4A8F3F41AB80C692938C1D7A36E3568")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     private void readObject(ObjectInputStream ois) throws IOException,
             ClassNotFoundException {
@@ -390,6 +370,23 @@ public class SHA1PRNG_SecureRandomImpl extends SecureRandomSpi implements Serial
     }
 
     
+    private static final long serialVersionUID = 283736797212159675L;
+    private static final int[] END_FLAGS = { 0x80000000, 0x800000, 0x8000, 0x80 };
+    private static final int[] RIGHT1 = { 0, 40, 48, 56 };
+    private static final int[] RIGHT2 = { 0, 8, 16, 24 };
+    private static final int[] LEFT = { 0, 24, 16, 8 };
+    private static final int[] MASK = { 0xFFFFFFFF, 0x00FFFFFF, 0x0000FFFF,
+            0x000000FF };
+    private static final int HASHBYTES_TO_USE = 20;
+    private static final int FRAME_LENGTH = 16;
+    private static final int COUNTER_BASE = 0;
+    private static final int HASHCOPY_OFFSET = 0;
+    private static final int EXTRAFRAME_OFFSET = 5;
+    private static final int FRAME_OFFSET = 21;
+    private static final int MAX_BYTES = 48;
+    private static final int UNDEFINED = 0;
+    private static final int SET_SEED = 1;
+    private static final int NEXT_BYTES = 2;
+    private static SHA1PRNG_SecureRandomImpl myRandom;
 }
-
 

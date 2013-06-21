@@ -3,31 +3,27 @@ package libcore.io;
 // Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
+import droidsafe.runtime.*;
 
-// import Iterator to deal with enhanced for loop translation
+// needed for enhanced for control translations
 import java.util.Iterator;
-
 import java.nio.ByteOrder;
 import libcore.io.Memory;
 
 public final class HeapBufferIterator extends BufferIterator {
-    private final byte[] buffer;
-    private final int offset;
-    private final int byteCount;
-    private final ByteOrder order;
+    private byte[] buffer;
+    private int offset;
+    private int byteCount;
+    private ByteOrder order;
     private int position;
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:17.434 -0400", hash_original_method = "A6C30EED25CCFD2AB62FEA4E16ACBAB8", hash_generated_method = "08798E32B45119ECF7E3557EE9582BC9")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:38.894 -0400", hash_original_method = "A6C30EED25CCFD2AB62FEA4E16ACBAB8", hash_generated_method = "958007770149E517F9392721ABBA3959")
     @DSModeled(DSC.SAFE)
      HeapBufferIterator(byte[] buffer, int offset, int byteCount, ByteOrder order) {
-        dsTaint.addTaint(buffer);
+        dsTaint.addTaint(buffer[0]);
         dsTaint.addTaint(order.dsTaint);
         dsTaint.addTaint(byteCount);
         dsTaint.addTaint(offset);
-        this.order = order;
-        this.offset = offset;
-        this.byteCount = byteCount;
-        this.buffer = buffer;
         // ---------- Original Method ----------
         //this.buffer = buffer;
         //this.offset = offset;
@@ -36,7 +32,7 @@ public final class HeapBufferIterator extends BufferIterator {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:17.435 -0400", hash_original_method = "E36D4B83C08A879BB369FD4BF3E743B5", hash_generated_method = "36C4833EE09B638F986DC76641959CE2")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:38.894 -0400", hash_original_method = "E36D4B83C08A879BB369FD4BF3E743B5", hash_generated_method = "F8B859F1E52FD5E547C55C87002C7508")
     @DSModeled(DSC.SAFE)
     public void seek(int offset) {
         dsTaint.addTaint(offset);
@@ -45,7 +41,7 @@ public final class HeapBufferIterator extends BufferIterator {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:17.435 -0400", hash_original_method = "5C6BD475B81B38C95ED571F8A0E18EDC", hash_generated_method = "35AAC2E3BEDCA6DE4735D9FD7C89C78C")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:38.895 -0400", hash_original_method = "5C6BD475B81B38C95ED571F8A0E18EDC", hash_generated_method = "9905B39D257D33824B56812EDA1528CB")
     @DSModeled(DSC.SAFE)
     public void skip(int byteCount) {
         dsTaint.addTaint(byteCount);
@@ -54,12 +50,12 @@ public final class HeapBufferIterator extends BufferIterator {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:17.435 -0400", hash_original_method = "3E61A2FCBE8F1A085EF50016EDA93C91", hash_generated_method = "850EA7BFC78D2F14A9F0B371F784BCA0")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:38.895 -0400", hash_original_method = "3E61A2FCBE8F1A085EF50016EDA93C91", hash_generated_method = "7867ECB0ED59E7208C0EE9969B2ADF49")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     public void readByteArray(byte[] dst, int dstOffset, int byteCount) {
         dsTaint.addTaint(byteCount);
         dsTaint.addTaint(dstOffset);
-        dsTaint.addTaint(dst);
+        dsTaint.addTaint(dst[0]);
         System.arraycopy(buffer, offset + position, dst, dstOffset, byteCount);
         // ---------- Original Method ----------
         //System.arraycopy(buffer, offset + position, dst, dstOffset, byteCount);
@@ -67,12 +63,11 @@ public final class HeapBufferIterator extends BufferIterator {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:17.435 -0400", hash_original_method = "7E225AB4906C9181CA855352CCAC2289", hash_generated_method = "852C822B8488C7CCD1B45022BA90CC86")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:38.895 -0400", hash_original_method = "7E225AB4906C9181CA855352CCAC2289", hash_generated_method = "31004E72FA8C80EF9983FDEA2E220095")
     @DSModeled(DSC.SAFE)
     public byte readByte() {
         byte result;
         result = buffer[offset + position];
-        ++position;
         return dsTaint.getTaintByte();
         // ---------- Original Method ----------
         //byte result = buffer[offset + position];
@@ -81,8 +76,8 @@ public final class HeapBufferIterator extends BufferIterator {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:17.435 -0400", hash_original_method = "DB59E455EA40BB4A6ED9DEE68F53B94D", hash_generated_method = "A1F547237BEAEACFDB6B665662EA4841")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:38.895 -0400", hash_original_method = "DB59E455EA40BB4A6ED9DEE68F53B94D", hash_generated_method = "DA3C281AEFD8BDE71F1476C77C0CBE3B")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     public int readInt() {
         int result;
         result = Memory.peekInt(buffer, offset + position, order);
@@ -95,13 +90,13 @@ public final class HeapBufferIterator extends BufferIterator {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:17.435 -0400", hash_original_method = "329E16A9527E1EB7B49C2B3423D775A3", hash_generated_method = "257BD240CC0079204119DE74142A1561")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:38.895 -0400", hash_original_method = "329E16A9527E1EB7B49C2B3423D775A3", hash_generated_method = "C9339B83FE78472630FBCDC0417947FC")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     public void readIntArray(int[] dst, int dstOffset, int intCount) {
         dsTaint.addTaint(intCount);
         dsTaint.addTaint(dstOffset);
-        dsTaint.addTaint(dst);
-        final int byteCount;
+        dsTaint.addTaint(dst[0]);
+        int byteCount;
         byteCount = intCount * SizeOf.INT;
         Memory.unsafeBulkGet(dst, dstOffset, byteCount, buffer, offset + position, SizeOf.INT, order.needsSwap);
         position += byteCount;
@@ -112,8 +107,8 @@ public final class HeapBufferIterator extends BufferIterator {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:17.435 -0400", hash_original_method = "DE8A7EDE581D91941B0B91B035994D93", hash_generated_method = "9CAE3ACCE2B05A3DA31831CE3532DCAA")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:38.895 -0400", hash_original_method = "DE8A7EDE581D91941B0B91B035994D93", hash_generated_method = "312F4A575993DA64EFBCD7BF744A5B69")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     public short readShort() {
         short result;
         result = Memory.peekShort(buffer, offset + position, order);
@@ -126,12 +121,10 @@ public final class HeapBufferIterator extends BufferIterator {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:17.435 -0400", hash_original_method = "50DDBF65236F6B74CE26E4FFEB599E26", hash_generated_method = "1C6F16E9EC71C8983BCCE2335895A333")
-    public static BufferIterator iterator(byte[] buffer, int offset, int byteCount, ByteOrder order) {
+        public static BufferIterator iterator(byte[] buffer, int offset, int byteCount, ByteOrder order) {
         return new HeapBufferIterator(buffer, offset, byteCount, order);
     }
 
     
 }
-
 

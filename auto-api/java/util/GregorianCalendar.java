@@ -2,35 +2,20 @@ package java.util;
 
 // Droidsafe Imports
 import droidsafe.helpers.*;
-import droidsafe.runtime.DroidSafeAndroidRuntime;
 import droidsafe.annotations.*;
+import droidsafe.runtime.*;
 
-// import Iterator to deal with enhanced for loop translation
+// needed for enhanced for control translations
 import java.util.Iterator;
-
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 
 public class GregorianCalendar extends Calendar {
-    private static final long serialVersionUID = -8125100834729963327L;
-    public static final int BC = 0;
-    public static final int AD = 1;
-    private static final long defaultGregorianCutover = -12219292800000l;
     private long gregorianCutover = defaultGregorianCutover;
     private transient int changeYear = 1582;
     private transient int julianSkew = ((changeYear - 2000) / 400)
             + julianError() - ((changeYear - 2000) / 100);
-    static byte[] DaysInMonth = new byte[] { 31, 28, 31, 30, 31, 30, 31, 31,
-            30, 31, 30, 31 };
-    private static int[] DaysInYear = new int[] { 0, 31, 59, 90, 120, 151, 181,
-            212, 243, 273, 304, 334 };
-    private static int[] maximums = new int[] { 1, 292278994, 11, 53, 6, 31,
-            366, 7, 6, 1, 11, 23, 59, 59, 999, 14 * 3600 * 1000, 7200000 };
-    private static int[] minimums = new int[] { 0, 1, 0, 1, 0, 1, 1, 1, 1, 0,
-            0, 0, 0, 0, 0, -13 * 3600 * 1000, 0 };
-    private static int[] leastMaximums = new int[] { 1, 292269054, 11, 50, 3,
-            28, 355, 7, 3, 1, 11, 23, 59, 59, 999, 50400000, 1200000 };
     private boolean isCached;
     private int[] cachedFields = { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
     private long nextMidnightMillis = 0L;
@@ -38,7 +23,7 @@ public class GregorianCalendar extends Calendar {
     private int currentYearSkew = 10;
     private int lastYearSkew = 0;
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:14.337 -0400", hash_original_method = "7EB3091E87333B7AA987345512812570", hash_generated_method = "95B23C008011C3DCD3F4CF29F5337241")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:32.287 -0400", hash_original_method = "7EB3091E87333B7AA987345512812570", hash_generated_method = "2E973698D04F2D2AAC57C914B74CED19")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public GregorianCalendar() {
         this(TimeZone.getDefault(), Locale.getDefault());
@@ -46,7 +31,7 @@ public class GregorianCalendar extends Calendar {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:14.337 -0400", hash_original_method = "B0762BDDD2B39759F6CE94DB8F25D3E0", hash_generated_method = "35E4012DBFC1F6C82A349E2EA230840A")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:32.287 -0400", hash_original_method = "B0762BDDD2B39759F6CE94DB8F25D3E0", hash_generated_method = "4723F3461C62115BBBAF34AB6CE0FC7D")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public GregorianCalendar(int year, int month, int day) {
         super(TimeZone.getDefault(), Locale.getDefault());
@@ -59,22 +44,22 @@ public class GregorianCalendar extends Calendar {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:14.337 -0400", hash_original_method = "D6C72587979F1136CC7CF710B2F32D12", hash_generated_method = "7246C20E574E6259176F556778D69DF0")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:32.287 -0400", hash_original_method = "D6C72587979F1136CC7CF710B2F32D12", hash_generated_method = "99D7E5042ABD6EF9A86AF6CDA433AAF6")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public GregorianCalendar(int year, int month, int day, int hour, int minute) {
         super(TimeZone.getDefault(), Locale.getDefault());
         dsTaint.addTaint(minute);
         dsTaint.addTaint(month);
         dsTaint.addTaint(year);
-        dsTaint.addTaint(day);
         dsTaint.addTaint(hour);
+        dsTaint.addTaint(day);
         set(year, month, day, hour, minute);
         // ---------- Original Method ----------
         //set(year, month, day, hour, minute);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:14.338 -0400", hash_original_method = "BC793B84C6DC2AD69827C6FC0D0FCEDD", hash_generated_method = "CF7B93E35A270062930D348D6825FD27")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:32.287 -0400", hash_original_method = "BC793B84C6DC2AD69827C6FC0D0FCEDD", hash_generated_method = "5F52B7BB55E10C09610EA01B760620BD")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public GregorianCalendar(int year, int month, int day, int hour,
             int minute, int second) {
@@ -83,15 +68,15 @@ public class GregorianCalendar extends Calendar {
         dsTaint.addTaint(second);
         dsTaint.addTaint(month);
         dsTaint.addTaint(year);
-        dsTaint.addTaint(day);
         dsTaint.addTaint(hour);
+        dsTaint.addTaint(day);
         set(year, month, day, hour, minute, second);
         // ---------- Original Method ----------
         //set(year, month, day, hour, minute, second);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:14.338 -0400", hash_original_method = "63C34121AB8507D7813FBAF0F269A9D2", hash_generated_method = "5ADB36A91D8276884DE1679C906233EE")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:32.287 -0400", hash_original_method = "63C34121AB8507D7813FBAF0F269A9D2", hash_generated_method = "A339492AB9DCA1E68AC8D274AD5C97CE")
     //DSFIXME:  CODE0002: Requires DSC value to be set
      GregorianCalendar(long milliseconds) {
         this(false);
@@ -102,7 +87,7 @@ public class GregorianCalendar extends Calendar {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:14.338 -0400", hash_original_method = "56E3B8EB09DD30B0731434891C29D1A4", hash_generated_method = "C5FB2A70E3266B335673F0BEEDCE5FA7")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:32.287 -0400", hash_original_method = "56E3B8EB09DD30B0731434891C29D1A4", hash_generated_method = "19CEF1D321FC749CCD3F248F7ABA60FF")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public GregorianCalendar(Locale locale) {
         this(TimeZone.getDefault(), locale);
@@ -111,7 +96,7 @@ public class GregorianCalendar extends Calendar {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:14.338 -0400", hash_original_method = "7987E4D71BE0DBF5086B038B74101A38", hash_generated_method = "B02AFFF48F569E2A5D059B87CC79F919")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:32.288 -0400", hash_original_method = "7987E4D71BE0DBF5086B038B74101A38", hash_generated_method = "3F1DD170728681AD58E34082DFDE597C")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public GregorianCalendar(TimeZone timezone) {
         this(timezone, Locale.getDefault());
@@ -120,7 +105,7 @@ public class GregorianCalendar extends Calendar {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:14.338 -0400", hash_original_method = "98E484CB97D77C9503930A8DB608CAE2", hash_generated_method = "535D43382999EB0CA7FDCACE65F23B55")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:32.288 -0400", hash_original_method = "98E484CB97D77C9503930A8DB608CAE2", hash_generated_method = "F3EBCAAB65D60CE237182428D74207C3")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public GregorianCalendar(TimeZone timezone, Locale locale) {
         super(timezone, locale);
@@ -132,7 +117,7 @@ public class GregorianCalendar extends Calendar {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:14.338 -0400", hash_original_method = "0CE38BA4675BDF22B153CA671467EBE6", hash_generated_method = "BE6AABFB406BD262E0EE9933D62F4A17")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:32.288 -0400", hash_original_method = "0CE38BA4675BDF22B153CA671467EBE6", hash_generated_method = "17A1B51BDF0FB3620D6AF45E550B2603")
     //DSFIXME:  CODE0002: Requires DSC value to be set
      GregorianCalendar(boolean ignored) {
         super(TimeZone.getDefault());
@@ -145,14 +130,14 @@ public class GregorianCalendar extends Calendar {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:14.338 -0400", hash_original_method = "1FE1308881E1142F9D3B7A007897B586", hash_generated_method = "9E1B70BE415F3B73742C547B24503AE5")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:32.289 -0400", hash_original_method = "1FE1308881E1142F9D3B7A007897B586", hash_generated_method = "ADF63E289EC92360E09DE0A1F90D4372")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     @Override
     public void add(int field, int value) {
         dsTaint.addTaint(field);
         dsTaint.addTaint(value);
-        if (DroidSafeAndroidRuntime.control) {
-            throw new IllegalArgumentException();
+        {
+            if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException();
         } //End block
         isCached = false;
         {
@@ -226,7 +211,7 @@ public class GregorianCalendar extends Calendar {
         int dstDelta;
         dstDelta = offsetBefore - offsetAfter;
         {
-            boolean var9358D1B1EAE58BFD158E73011F5E9B63_394551666 = (getOffset(time + zoneOffset + delta + dstDelta) == offsetAfter);
+            boolean var9358D1B1EAE58BFD158E73011F5E9B63_1364588230 = (getOffset(time + zoneOffset + delta + dstDelta) == offsetAfter);
             {
                 delta += dstDelta;
             } //End block
@@ -239,7 +224,7 @@ public class GregorianCalendar extends Calendar {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:14.338 -0400", hash_original_method = "4451E97BB30CB152B3F7FF3125B7AC95", hash_generated_method = "AC1757CCFD06446D8476EF766EFD2AB5")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:32.289 -0400", hash_original_method = "4451E97BB30CB152B3F7FF3125B7AC95", hash_generated_method = "23F685A66C515EAE5CAF710E9202CD00")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     @Override
     public Object clone() {
@@ -254,7 +239,7 @@ public class GregorianCalendar extends Calendar {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:14.339 -0400", hash_original_method = "005B3A99F85903E106454DD8B0079421", hash_generated_method = "412DF2975B689E525813A05A07BC7A4C")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:32.290 -0400", hash_original_method = "005B3A99F85903E106454DD8B0079421", hash_generated_method = "C0DC26A28B2E68A4FADAE87CF75BFD78")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     private final void fullFieldsCalc(long timeVal, int millis, int zoneOffset) {
         dsTaint.addTaint(timeVal);
@@ -264,16 +249,13 @@ public class GregorianCalendar extends Calendar {
         days = timeVal / 86400000;
         {
             millis += 86400000;
-            days--;
         } //End block
         millis += zoneOffset;
         {
             millis += 86400000;
-            days--;
         } //End block
         {
             millis -= 86400000;
-            days++;
         } //End block
         int dayOfYear;
         dayOfYear = computeYearAndDay(days, timeVal + zoneOffset);
@@ -288,10 +270,9 @@ public class GregorianCalendar extends Calendar {
         int date;
         date = dayOfYear - daysInYear(leapYear, month);
         {
-            boolean varBCFBCFA689BAE03ACCDE398C77284B61_1154027988 = (date > daysInMonth(leapYear, month));
+            boolean varBCFBCFA689BAE03ACCDE398C77284B61_1825644872 = (date > daysInMonth(leapYear, month));
             {
                 date -= daysInMonth(leapYear, month);
-                month++;
             } //End block
         } //End collapsed parenthetic
         fields[DAY_OF_WEEK] = mod7(days - 3) + 1;
@@ -309,11 +290,9 @@ public class GregorianCalendar extends Calendar {
             millis += dstOffset;
             {
                 millis += 86400000;
-                days--;
             } //End block
             {
                 millis -= 86400000;
-                days++;
             } //End block
             {
                 dayOfYear = computeYearAndDay(days, timeVal - zoneOffset
@@ -326,10 +305,9 @@ public class GregorianCalendar extends Calendar {
                 leapYear = isLeapYear(fields[YEAR]);
                 date = dayOfYear - daysInYear(leapYear, month);
                 {
-                    boolean varFF9B0C37338F3CA779F0DC4C0603FE9D_209544062 = (date > daysInMonth(leapYear, month));
+                    boolean varFF9B0C37338F3CA779F0DC4C0603FE9D_1519884202 = (date > daysInMonth(leapYear, month));
                     {
                         date -= daysInMonth(leapYear, month);
-                        month++;
                     } //End block
                 } //End collapsed parenthetic
                 fields[DAY_OF_WEEK] = mod7(days - 3) + 1;
@@ -368,7 +346,7 @@ public class GregorianCalendar extends Calendar {
                     : 52;
         } //End block
         {
-            boolean varE7C3C9E4DCC52FFB6D2FD77C3546E93F_900262647 = (fields[DAY_OF_YEAR] >= (leapYear ? 367 : 366)
+            boolean varE7C3C9E4DCC52FFB6D2FD77C3546E93F_1134515193 = (fields[DAY_OF_YEAR] >= (leapYear ? 367 : 366)
                 - mod7(daysFromStart + (leapYear ? 2 : 1))); //DSFIXME:  CODE0008: Nested ternary operator in expression
             {
                 fields[WEEK_OF_YEAR] = 7 - mod7(daysFromStart + (leapYear ? 2 : 1)) >= getMinimalDaysInFirstWeek() ? 1
@@ -383,13 +361,13 @@ public class GregorianCalendar extends Calendar {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:14.340 -0400", hash_original_method = "2E866A22E927A34EE822F5C0BBDFB40C", hash_generated_method = "2FB61618B2D95DD180CFF81B70AA5EEB")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:32.291 -0400", hash_original_method = "2E866A22E927A34EE822F5C0BBDFB40C", hash_generated_method = "0107A8B66349D2F232B3C26A59A6267F")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     private final void cachedFieldsCheckAndGet(long timeVal,
             long newTimeMillis, long newTimeMillisAdjusted, int millis,
             int zoneOffset) {
-        dsTaint.addTaint(newTimeMillis);
         dsTaint.addTaint(newTimeMillisAdjusted);
+        dsTaint.addTaint(newTimeMillis);
         dsTaint.addTaint(timeVal);
         dsTaint.addTaint(millis);
         dsTaint.addTaint(zoneOffset);
@@ -415,14 +393,14 @@ public class GregorianCalendar extends Calendar {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:14.340 -0400", hash_original_method = "B0DF08CEBB1EE730F98FF9762C9FEBD4", hash_generated_method = "F7099062B5161D4BE588E8365FE541C2")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:32.292 -0400", hash_original_method = "B0DF08CEBB1EE730F98FF9762C9FEBD4", hash_generated_method = "EB38116D1D54C780E8C4AAF4B5819DBC")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     @Override
     protected void computeFields() {
         TimeZone timeZone;
         timeZone = getTimeZone();
         int dstOffset;
-        boolean var7227D111493F5C9AE3EFCCBBD3DA3A95_1194127764 = (timeZone.inDaylightTime(new Date(time)));
+        boolean var7227D111493F5C9AE3EFCCBBD3DA3A95_1788031670 = (timeZone.inDaylightTime(new Date(time)));
         dstOffset = timeZone.getDSTSavings();
         dstOffset = 0;
         int zoneOffset;
@@ -468,7 +446,7 @@ public class GregorianCalendar extends Calendar {
             long newTimeAdjusted;
             newTimeAdjusted = newTime;
             {
-                boolean varC91B9F9D8FA1076E10F0661EFE1DB41B_505908060 = (timeZone.useDaylightTime());
+                boolean varC91B9F9D8FA1076E10F0661EFE1DB41B_1528388485 = (timeZone.useDaylightTime());
                 {
                     int dstSavings;
                     dstSavings = timeZone.getDSTSavings();
@@ -495,7 +473,7 @@ public class GregorianCalendar extends Calendar {
             } //End block
         } //End collapsed parenthetic
         {
-            boolean var9612C0EF2FD4C7A52D997E0A251788F4_546701125 = (!isCached
+            boolean var9612C0EF2FD4C7A52D997E0A251788F4_1098048602 = (!isCached
                 && newTime != 0x7fffffffffffffffL
                 && newTime != 0x8000000000000000L
                 && (!timeZone.useDaylightTime() || timeZone instanceof SimpleTimeZone));
@@ -528,230 +506,233 @@ public class GregorianCalendar extends Calendar {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:14.342 -0400", hash_original_method = "2C41A89AB92A41E731883E58EB4B865A", hash_generated_method = "32B20602A32B0F1BD5DC80ACFA234D68")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:32.295 -0400", hash_original_method = "2C41A89AB92A41E731883E58EB4B865A", hash_generated_method = "BA6CE7DE2BA5EE39EE0B8F640C0F3F14")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     @Override
     protected void computeTime() {
-    	{
-    		boolean varFACDFEC6F69DADFC305CEE68F7E56304_658280687 = (!isLenient());
-    		if (DroidSafeAndroidRuntime.control) {
-    			throw new IllegalArgumentException();
-    		} //End block
-    		if (DroidSafeAndroidRuntime.control) {
-    			throw new IllegalArgumentException();
-    		} //End block
-    		if (DroidSafeAndroidRuntime.control) {
-    			throw new IllegalArgumentException();
-    		} //End block
-    		if (DroidSafeAndroidRuntime.control) {
-    			throw new IllegalArgumentException();
-    		} //End block
-    		if (DroidSafeAndroidRuntime.control) {
-    			throw new IllegalArgumentException();
-    		} //End block
-    		if (DroidSafeAndroidRuntime.control) {
-    			throw new IllegalArgumentException();
-    		} //End block
-    		if (DroidSafeAndroidRuntime.control) {
-    			throw new IllegalArgumentException();
-    		} //End block
-    		if (DroidSafeAndroidRuntime.control) {
-    			throw new IllegalArgumentException();
-    		} //End block
-    		if (DroidSafeAndroidRuntime.control) {
-    			throw new IllegalArgumentException();
-    		} //End block
-    		if (DroidSafeAndroidRuntime.control) {
-    			throw new IllegalArgumentException();
-    		} //End block
-    		if (DroidSafeAndroidRuntime.control) {
-    			throw new IllegalArgumentException();
-    		} //End block
-    		if (DroidSafeAndroidRuntime.control) {
-    			throw new IllegalArgumentException();
-    		} //End block
-    		if (DroidSafeAndroidRuntime.control) {
-    			throw new IllegalArgumentException();
-    		} //End block
-    		if (DroidSafeAndroidRuntime.control) {
-    			throw new IllegalArgumentException();
-    		} //End block
-    		long timeVal;
-    		long hour;
-    		hour = 0;
-    		{
-    			hour = fields[HOUR_OF_DAY];
-    		} //End block
-    		{
-    			hour = (fields[AM_PM] * 12) + fields[HOUR];
-    		} //End block
-    		timeVal = hour * 3600000;
-    		{
-    			timeVal += ((long) fields[MINUTE]) * 60000;
-    		} //End block
-    		{
-    			timeVal += ((long) fields[SECOND]) * 1000;
-    		} //End block
-    		{
-    			timeVal += fields[MILLISECOND];
-    		} //End block
-    		long days;
-    		int year;
-    		year = fields[YEAR];
-    		year = 1970;
-    		{
-    			if (DroidSafeAndroidRuntime.control) {
-    				throw new IllegalArgumentException();
-    			} //End block
-    			{
-    				year = 1 - year;
-    			} //End block
-    		} //End block
-    		boolean weekMonthSet;
-    		weekMonthSet = isSet[WEEK_OF_MONTH]
-    				|| isSet[DAY_OF_WEEK_IN_MONTH];
-    		boolean useMonth;
-    		useMonth = (isSet[DATE] || isSet[MONTH] || weekMonthSet)
-    				&& lastDateFieldSet != DAY_OF_YEAR;
-    		{
-    			{
-    				useMonth = lastDateFieldSet != WEEK_OF_YEAR && weekMonthSet
-    						&& isSet[DAY_OF_WEEK];
-    			} //End block
-    			{
-    				useMonth = isSet[DATE] && isSet[MONTH];
-    			} //End block
-    		} //End block
-    		{
-    			int month;
-    			month = fields[MONTH];
-    			year += month / 12;
-    			month %= 12;
-    			{
-    				year--;
-    				month += 12;
-    			} //End block
-    			boolean leapYear;
-    			leapYear = isLeapYear(year);
-    			days = daysFromBaseYear(year) + daysInYear(leapYear, month);
-    			boolean useDate;
-    			useDate = isSet[DATE];
-    			{
-    				useDate = !(isSet[DAY_OF_WEEK] && weekMonthSet);
-    			} //End block
-    			{
-    				{
-    					boolean varAD72E57B80110245423B5A8B5FE79293_2039705735 = (!isLenient()
-    							&& (fields[DATE] < 1 || fields[DATE] > daysInMonth(
-    									leapYear, month)));
-    					if (DroidSafeAndroidRuntime.control) {
-    						throw new IllegalArgumentException();
-    					} //End block
-    				} //End collapsed parenthetic
-    				days += fields[DATE] - 1;
-    			} //End block
-    			{
-    				int dayOfWeek;
-    				{
-    					dayOfWeek = fields[DAY_OF_WEEK] - 1;
-    				} //End block
-    				{
-    					dayOfWeek = getFirstDayOfWeek() - 1;
-    				} //End block
-    				{
-    					int skew;
-    					skew = mod7(days - 3 - (getFirstDayOfWeek() - 1));
-    					days += (fields[WEEK_OF_MONTH] - 1) * 7
-    							+ mod7(skew + dayOfWeek - (days - 3)) - skew;
-    				} //End block
-    				{
-    					{
-    						days += mod7(dayOfWeek - (days - 3))
-    								+ (fields[DAY_OF_WEEK_IN_MONTH] - 1) * 7;
-    					} //End block
-    					{
-    						days += daysInMonth(leapYear, month)
-    								+ mod7(dayOfWeek
-    										- (days + daysInMonth(leapYear, month) - 3))
-    										+ fields[DAY_OF_WEEK_IN_MONTH] * 7;
-    					} //End block
-    				} //End block
-    				{
-    					int skew;
-    					skew = mod7(days - 3 - (getFirstDayOfWeek() - 1));
-    					days += mod7(mod7(skew + dayOfWeek - (days - 3)) - skew);
-    				} //End block
-    			} //End block
-    		} //End block
-    		{
-    			boolean useWeekYear;
-    			useWeekYear = isSet[WEEK_OF_YEAR]
-    					&& lastDateFieldSet != DAY_OF_YEAR;
-    			{
-    				useWeekYear = isSet[DAY_OF_WEEK];
-    			} //End block
-    			days = daysFromBaseYear(year);
-    			{
-    				int dayOfWeek;
-    				{
-    					dayOfWeek = fields[DAY_OF_WEEK] - 1;
-    				} //End block
-    				{
-    					dayOfWeek = getFirstDayOfWeek() - 1;
-    				} //End block
-    				int skew;
-    				skew = mod7(days - 3 - (getFirstDayOfWeek() - 1));
-    				days += (fields[WEEK_OF_YEAR] - 1) * 7
-    						+ mod7(skew + dayOfWeek - (days - 3)) - skew;
-    				{
-    					boolean varE26E43FD9372BC0247AD2F35115E53C0_27160895 = (7 - skew < getMinimalDaysInFirstWeek());
-    					{
-    						days += 7;
-    					} //End block
-    				} //End collapsed parenthetic
-    			} //End block
-    			{
-    				{
-    					boolean var5E54B386391C54C1445EC2DD47905BC4_458291964 = (!isLenient()
-    							&& (fields[DAY_OF_YEAR] < 1 || fields[DAY_OF_YEAR] > (365 + (isLeapYear(year) ? 1
-    									: 0)))); //DSFIXME:  CODE0008: Nested ternary operator in expression
-    					{
-    						if (DroidSafeAndroidRuntime.control) {
-    							throw new IllegalArgumentException();
-    						}
-    					} //End block
-    				} //End collapsed parenthetic
-    				days += fields[DAY_OF_YEAR] - 1;
-    			} //End block
-    			{
-    				days += mod7(fields[DAY_OF_WEEK] - 1 - (days - 3));
-    			} //End block
-    		} //End block
-    		lastDateFieldSet = 0;
-    		timeVal += days * 86400000;
-    		{
-    			boolean var4521363AC2DA99125953BA39F1463F28_888899476 = (year == changeYear
-    					&& timeVal >= gregorianCutover + julianError() * 86400000L);
-    			{
-    				timeVal -= julianError() * 86400000L;
-    			} //End block
-    		} //End collapsed parenthetic
-    		long timeValWithoutDST;
-    		timeValWithoutDST = timeVal - getOffset(timeVal)
-    				+ getTimeZone().getRawOffset();
-    		timeVal -= getOffset(timeValWithoutDST);
-    		this.time = timeVal;
-    		{
-    			computeFields();
-    			areFieldsSet = true;
-    		} //End block
-    		// ---------- Original Method ----------
-    		// Original Method Too Long, Refer to Original Implementation
-    	}
+        {
+            boolean varFACDFEC6F69DADFC305CEE68F7E56304_849384112 = (!isLenient());
+            {
+                {
+                    {
+                        if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException();
+                    } //End block
+                } //End block
+                {
+                    if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException();
+                } //End block
+                {
+                    if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException();
+                } //End block
+                {
+                    if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException();
+                } //End block
+                {
+                    if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException();
+                } //End block
+                {
+                    if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException();
+                } //End block
+                {
+                    if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException();
+                } //End block
+                {
+                    if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException();
+                } //End block
+                {
+                    if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException();
+                } //End block
+                {
+                    if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException();
+                } //End block
+                {
+                    if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException();
+                } //End block
+                {
+                    {
+                        if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException();
+                    } //End block
+                    {
+                        if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException();
+                    } //End block
+                } //End block
+                {
+                    if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException();
+                } //End block
+            } //End block
+        } //End collapsed parenthetic
+        long timeVal;
+        long hour;
+        hour = 0;
+        {
+            hour = fields[HOUR_OF_DAY];
+        } //End block
+        {
+            hour = (fields[AM_PM] * 12) + fields[HOUR];
+        } //End block
+        timeVal = hour * 3600000;
+        {
+            timeVal += ((long) fields[MINUTE]) * 60000;
+        } //End block
+        {
+            timeVal += ((long) fields[SECOND]) * 1000;
+        } //End block
+        {
+            timeVal += fields[MILLISECOND];
+        } //End block
+        long days;
+        int year;
+        year = fields[YEAR];
+        year = 1970;
+        {
+            {
+                if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException();
+            } //End block
+            {
+                year = 1 - year;
+            } //End block
+        } //End block
+        boolean weekMonthSet;
+        weekMonthSet = isSet[WEEK_OF_MONTH]
+                || isSet[DAY_OF_WEEK_IN_MONTH];
+        boolean useMonth;
+        useMonth = (isSet[DATE] || isSet[MONTH] || weekMonthSet)
+                && lastDateFieldSet != DAY_OF_YEAR;
+        {
+            {
+                useMonth = lastDateFieldSet != WEEK_OF_YEAR && weekMonthSet
+                        && isSet[DAY_OF_WEEK];
+            } //End block
+            {
+                useMonth = isSet[DATE] && isSet[MONTH];
+            } //End block
+        } //End block
+        {
+            int month;
+            month = fields[MONTH];
+            year += month / 12;
+            month %= 12;
+            {
+                month += 12;
+            } //End block
+            boolean leapYear;
+            leapYear = isLeapYear(year);
+            days = daysFromBaseYear(year) + daysInYear(leapYear, month);
+            boolean useDate;
+            useDate = isSet[DATE];
+            {
+                useDate = !(isSet[DAY_OF_WEEK] && weekMonthSet);
+            } //End block
+            {
+                {
+                    boolean varAD72E57B80110245423B5A8B5FE79293_2104954026 = (!isLenient()
+                        && (fields[DATE] < 1 || fields[DATE] > daysInMonth(
+                                leapYear, month)));
+                    {
+                        if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException();
+                    } //End block
+                } //End collapsed parenthetic
+                days += fields[DATE] - 1;
+            } //End block
+            {
+                int dayOfWeek;
+                {
+                    dayOfWeek = fields[DAY_OF_WEEK] - 1;
+                } //End block
+                {
+                    dayOfWeek = getFirstDayOfWeek() - 1;
+                } //End block
+                {
+                    int skew;
+                    skew = mod7(days - 3 - (getFirstDayOfWeek() - 1));
+                    days += (fields[WEEK_OF_MONTH] - 1) * 7
+                            + mod7(skew + dayOfWeek - (days - 3)) - skew;
+                } //End block
+                {
+                    {
+                        days += mod7(dayOfWeek - (days - 3))
+                                + (fields[DAY_OF_WEEK_IN_MONTH] - 1) * 7;
+                    } //End block
+                    {
+                        days += daysInMonth(leapYear, month)
+                                + mod7(dayOfWeek
+                                        - (days + daysInMonth(leapYear, month) - 3))
+                                + fields[DAY_OF_WEEK_IN_MONTH] * 7;
+                    } //End block
+                } //End block
+                {
+                    int skew;
+                    skew = mod7(days - 3 - (getFirstDayOfWeek() - 1));
+                    days += mod7(mod7(skew + dayOfWeek - (days - 3)) - skew);
+                } //End block
+            } //End block
+        } //End block
+        {
+            boolean useWeekYear;
+            useWeekYear = isSet[WEEK_OF_YEAR]
+                    && lastDateFieldSet != DAY_OF_YEAR;
+            {
+                useWeekYear = isSet[DAY_OF_WEEK];
+            } //End block
+            days = daysFromBaseYear(year);
+            {
+                int dayOfWeek;
+                {
+                    dayOfWeek = fields[DAY_OF_WEEK] - 1;
+                } //End block
+                {
+                    dayOfWeek = getFirstDayOfWeek() - 1;
+                } //End block
+                int skew;
+                skew = mod7(days - 3 - (getFirstDayOfWeek() - 1));
+                days += (fields[WEEK_OF_YEAR] - 1) * 7
+                        + mod7(skew + dayOfWeek - (days - 3)) - skew;
+                {
+                    boolean varE26E43FD9372BC0247AD2F35115E53C0_2133579249 = (7 - skew < getMinimalDaysInFirstWeek());
+                    {
+                        days += 7;
+                    } //End block
+                } //End collapsed parenthetic
+            } //End block
+            {
+                {
+                    boolean var5E54B386391C54C1445EC2DD47905BC4_1790871815 = (!isLenient()
+                        && (fields[DAY_OF_YEAR] < 1 || fields[DAY_OF_YEAR] > (365 + (isLeapYear(year) ? 1
+                                : 0)))); //DSFIXME:  CODE0008: Nested ternary operator in expression
+                    {
+                        if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException();
+                    } //End block
+                } //End collapsed parenthetic
+                days += fields[DAY_OF_YEAR] - 1;
+            } //End block
+            {
+                days += mod7(fields[DAY_OF_WEEK] - 1 - (days - 3));
+            } //End block
+        } //End block
+        lastDateFieldSet = 0;
+        timeVal += days * 86400000;
+        {
+            boolean var4521363AC2DA99125953BA39F1463F28_1554862560 = (year == changeYear
+                && timeVal >= gregorianCutover + julianError() * 86400000L);
+            {
+                timeVal -= julianError() * 86400000L;
+            } //End block
+        } //End collapsed parenthetic
+        long timeValWithoutDST;
+        timeValWithoutDST = timeVal - getOffset(timeVal)
+                + getTimeZone().getRawOffset();
+        timeVal -= getOffset(timeValWithoutDST);
+        this.time = timeVal;
+        {
+            computeFields();
+            areFieldsSet = true;
+        } //End block
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:14.342 -0400", hash_original_method = "2A644CA75A846A9F294F6A7DE0BAB232", hash_generated_method = "1A1258D4D7639D01C253F4CCF5D61024")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:32.296 -0400", hash_original_method = "2A644CA75A846A9F294F6A7DE0BAB232", hash_generated_method = "CF7D1EC63EFDD2420C07710DD15B9303")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     private int computeYearAndDay(long dayCount, long localTime) {
         dsTaint.addTaint(localTime);
@@ -765,7 +746,7 @@ public class GregorianCalendar extends Calendar {
         } //End block
         int approxYears;
         {
-            boolean varA0C372859F6CDCA7B1B6C2DB149AE991_567846570 = ((approxYears = (int) (days / 365)) != 0);
+            boolean varA0C372859F6CDCA7B1B6C2DB149AE991_1949929531 = ((approxYears = (int) (days / 365)) != 0);
             {
                 year = year + approxYears;
                 days = dayCount - daysFromBaseYear(year);
@@ -797,7 +778,7 @@ public class GregorianCalendar extends Calendar {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:14.342 -0400", hash_original_method = "975CAA178CB1C52E2022FF53CD13129C", hash_generated_method = "1E0331620B7CB3E93B659D1AA1D65FE7")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:32.296 -0400", hash_original_method = "975CAA178CB1C52E2022FF53CD13129C", hash_generated_method = "B8EA8AF49D8EF285F3B9F9F971C36042")
     @DSModeled(DSC.SAFE)
     private long daysFromBaseYear(int iyear) {
         dsTaint.addTaint(iyear);
@@ -846,17 +827,17 @@ public class GregorianCalendar extends Calendar {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:14.343 -0400", hash_original_method = "B393AFA9309B3ECCDD74469F481095BD", hash_generated_method = "A4CCD941D2668EA92B9FA8A8575CFB4F")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:32.297 -0400", hash_original_method = "B393AFA9309B3ECCDD74469F481095BD", hash_generated_method = "E476A2B34B62EF95A2162BF64960A40E")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     private int daysInMonth() {
-        int varE318A98C4AE10FD73CDBBCD84B832D8D_1185664109 = (daysInMonth(isLeapYear(fields[YEAR]), fields[MONTH]));
+        int varE318A98C4AE10FD73CDBBCD84B832D8D_382399954 = (daysInMonth(isLeapYear(fields[YEAR]), fields[MONTH]));
         return dsTaint.getTaintInt();
         // ---------- Original Method ----------
         //return daysInMonth(isLeapYear(fields[YEAR]), fields[MONTH]);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:14.343 -0400", hash_original_method = "F030460418FCB84947C9AD9647C8CF35", hash_generated_method = "6ABEB4DDB5CD260B0421229D9EE48B7E")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:32.297 -0400", hash_original_method = "F030460418FCB84947C9AD9647C8CF35", hash_generated_method = "3034CEDD25E44FAFE39F8CD02C08E4F6")
     @DSModeled(DSC.SAFE)
     private int daysInMonth(boolean leapYear, int month) {
         dsTaint.addTaint(month);
@@ -870,12 +851,12 @@ public class GregorianCalendar extends Calendar {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:14.343 -0400", hash_original_method = "643B799339D2A3831DACB9C12752109A", hash_generated_method = "1F14B1269D91053A657F9E14A9A8930F")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:32.297 -0400", hash_original_method = "643B799339D2A3831DACB9C12752109A", hash_generated_method = "8BC833F46EA6C6F101196B1E0B789E60")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     private int daysInYear(int year) {
         dsTaint.addTaint(year);
         int daysInYear;
-        boolean var806EDE1361E2163FF12E03ABFE47D72B_556769560 = (isLeapYear(year));
+        boolean var806EDE1361E2163FF12E03ABFE47D72B_796297432 = (isLeapYear(year));
         daysInYear = 366;
         daysInYear = 365;
         {
@@ -897,7 +878,7 @@ public class GregorianCalendar extends Calendar {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:14.343 -0400", hash_original_method = "7E255F605E98F52E53144D7126E773F6", hash_generated_method = "14B5533A090938A9AB4BA153000FA424")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:32.297 -0400", hash_original_method = "7E255F605E98F52E53144D7126E773F6", hash_generated_method = "650D1CA8F315161DBA582C07B5FA27E8")
     @DSModeled(DSC.SAFE)
     private int daysInYear(boolean leapYear, int month) {
         dsTaint.addTaint(month);
@@ -911,12 +892,15 @@ public class GregorianCalendar extends Calendar {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:14.343 -0400", hash_original_method = "61C11EDCA3B03978A14421C2440916AB", hash_generated_method = "F8141873F51CC3B8E5E6CA15A2A0390A")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:32.297 -0400", hash_original_method = "61C11EDCA3B03978A14421C2440916AB", hash_generated_method = "2BFB2BD5D211125902AC7DA21392C983")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     @Override
     public boolean equals(Object object) {
         dsTaint.addTaint(object.dsTaint);
-        boolean var37CB9CE3CFC322844A11D9381BF57718_367995721 = (super.equals(object)
+        {
+            boolean var3F549205D4C262003697A031F89E5954_2027120194 = (object == this);
+        } //End collapsed parenthetic
+        boolean var37CB9CE3CFC322844A11D9381BF57718_269075688 = (super.equals(object)
                 && gregorianCutover == ((GregorianCalendar) object).gregorianCutover);
         return dsTaint.getTaintBoolean();
         // ---------- Original Method ----------
@@ -931,14 +915,14 @@ public class GregorianCalendar extends Calendar {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:14.343 -0400", hash_original_method = "F6A8281F341CD14B238EE5FA427449C3", hash_generated_method = "7C3EB7DD22028B9A07B49A2EF6D15159")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:32.298 -0400", hash_original_method = "F6A8281F341CD14B238EE5FA427449C3", hash_generated_method = "59A4CF7AA4F2ABFF4183E081068A87CB")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     @Override
     public int getActualMaximum(int field) {
         dsTaint.addTaint(field);
         int value;
         {
-            boolean varF889B32F8A6F0D9644F5182C32B821CC_179035862 = ((value = maximums[field]) == leastMaximums[field]);
+            boolean varF889B32F8A6F0D9644F5182C32B821CC_141700339 = ((value = maximums[field]) == leastMaximums[field]);
         } //End collapsed parenthetic
         //Begin case WEEK_OF_YEAR WEEK_OF_MONTH 
         isCached = false;
@@ -976,10 +960,10 @@ public class GregorianCalendar extends Calendar {
         areFieldsSet = false;
         //End case WEEK_OF_MONTH 
         //Begin case DATE 
-        int var5CFABCF07DB75122C7B613B74C3A77A0_232020824 = (daysInMonth());
+        int var5CFABCF07DB75122C7B613B74C3A77A0_1880252676 = (daysInMonth());
         //End case DATE 
         //Begin case DAY_OF_YEAR 
-        int var0AC5B37CA37BB4CB746E2A8A2E3240E0_82692304 = (daysInYear(fields[YEAR]));
+        int var0AC5B37CA37BB4CB746E2A8A2E3240E0_561380229 = (daysInYear(fields[YEAR]));
         //End case DAY_OF_YEAR 
         //Begin case DAY_OF_WEEK_IN_MONTH 
         result = get(DAY_OF_WEEK_IN_MONTH)
@@ -991,7 +975,7 @@ public class GregorianCalendar extends Calendar {
         //End case YEAR 
         //Begin case YEAR 
         {
-            boolean varB09F384FEFE292415D2A5D3359C67CC8_1807488974 = (get(ERA) == AD);
+            boolean varB09F384FEFE292415D2A5D3359C67CC8_1471458991 = (get(ERA) == AD);
             {
                 clone.setTimeInMillis(Long.MAX_VALUE);
             } //End block
@@ -1008,10 +992,7 @@ public class GregorianCalendar extends Calendar {
         //End case YEAR 
         //Begin case YEAR 
         {
-            boolean var67E7F62106250BA6B0F4638123528C99_689562623 = (clone.before(this));
-            {
-                result--;
-            } //End block
+            boolean var67E7F62106250BA6B0F4638123528C99_1628771396 = (clone.before(this));
         } //End collapsed parenthetic
         //End case YEAR 
         //Begin case DST_OFFSET 
@@ -1024,19 +1005,19 @@ public class GregorianCalendar extends Calendar {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:14.343 -0400", hash_original_method = "0094646504037C44C448A8626AEC2CA3", hash_generated_method = "10DC7BD4D701218359F80591F27B21DE")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:32.298 -0400", hash_original_method = "0094646504037C44C448A8626AEC2CA3", hash_generated_method = "C957F120B55122739591132952F2CF35")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     @Override
     public int getActualMinimum(int field) {
         dsTaint.addTaint(field);
-        int var5E6945756F684C789AC7D19DD344C7B7_730119205 = (getMinimum(field));
+        int var5E6945756F684C789AC7D19DD344C7B7_1302646405 = (getMinimum(field));
         return dsTaint.getTaintInt();
         // ---------- Original Method ----------
         //return getMinimum(field);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:14.343 -0400", hash_original_method = "F3CD156C4D2759DEA34A15A000EAB551", hash_generated_method = "95AE167106F9ED2D7A20E3A5169E3DEE")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:32.298 -0400", hash_original_method = "F3CD156C4D2759DEA34A15A000EAB551", hash_generated_method = "2EAD28EB2E772198CCD491EEDAF56835")
     @DSModeled(DSC.SAFE)
     @Override
     public int getGreatestMinimum(int field) {
@@ -1047,17 +1028,18 @@ public class GregorianCalendar extends Calendar {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:14.343 -0400", hash_original_method = "BD206861177D272D9EC33433339CB64F", hash_generated_method = "9BD694324037E6E487F8D54C25E97E39")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:32.299 -0400", hash_original_method = "BD206861177D272D9EC33433339CB64F", hash_generated_method = "0DBBA8BF9EB7295824F585B2697B9F8E")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     public final Date getGregorianChange() {
+        Date varACDE9D5A8514D358A744AE5C23509AA2_513405679 = (new Date(gregorianCutover));
         return (Date)dsTaint.getTaint();
         // ---------- Original Method ----------
         //return new Date(gregorianCutover);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:14.344 -0400", hash_original_method = "3B0100990EBACC07D6E54BAA89A3102A", hash_generated_method = "A37F93B4B541497ACD8E684B952D3A62")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:32.299 -0400", hash_original_method = "3B0100990EBACC07D6E54BAA89A3102A", hash_generated_method = "81033D102A649A5497F8FAA8DF7CBB6F")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     @Override
     public int getLeastMaximum(int field) {
         dsTaint.addTaint(field);
@@ -1083,7 +1065,7 @@ public class GregorianCalendar extends Calendar {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:14.344 -0400", hash_original_method = "80794FF1ED1E8F2177114BCAA53EED59", hash_generated_method = "6B5CAE5E596DCCAE5D15D8AA14EFF9EB")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:32.299 -0400", hash_original_method = "80794FF1ED1E8F2177114BCAA53EED59", hash_generated_method = "ED48FC6E14CF3246978598627872B6FC")
     @DSModeled(DSC.SAFE)
     @Override
     public int getMaximum(int field) {
@@ -1094,7 +1076,7 @@ public class GregorianCalendar extends Calendar {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:14.344 -0400", hash_original_method = "1A09A14EE8971B3B0503081305AF18CB", hash_generated_method = "0A2695BE4941EE961A8412531AF25895")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:32.299 -0400", hash_original_method = "1A09A14EE8971B3B0503081305AF18CB", hash_generated_method = "8ECFD960F0D6B80E0EB3969EBC388B4E")
     @DSModeled(DSC.SAFE)
     @Override
     public int getMinimum(int field) {
@@ -1105,7 +1087,7 @@ public class GregorianCalendar extends Calendar {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:14.344 -0400", hash_original_method = "A5F3F970AF018D82525827EF3879E8F1", hash_generated_method = "6E22E1C1CE364782C30A46A509EC4E82")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:32.300 -0400", hash_original_method = "A5F3F970AF018D82525827EF3879E8F1", hash_generated_method = "EA71DA8AD3A41221A722AB6002FCD4DC")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     private int getOffset(long localTime) {
         dsTaint.addTaint(localTime);
@@ -1117,7 +1099,6 @@ public class GregorianCalendar extends Calendar {
         millis = (int) (localTime % 86400000);
         {
             millis += 86400000;
-            dayCount--;
         } //End block
         int year;
         year = 1970;
@@ -1128,7 +1109,7 @@ public class GregorianCalendar extends Calendar {
         } //End block
         int approxYears;
         {
-            boolean varA0C372859F6CDCA7B1B6C2DB149AE991_696155368 = ((approxYears = (int) (days / 365)) != 0);
+            boolean varA0C372859F6CDCA7B1B6C2DB149AE991_2000274323 = ((approxYears = (int) (days / 365)) != 0);
             {
                 year = year + approxYears;
                 days = dayCount - daysFromBaseYear(year);
@@ -1142,7 +1123,7 @@ public class GregorianCalendar extends Calendar {
             } //End block
         } //End block
         {
-            int var83195CF641F8AED9D4B81C2528687249_2046564242 = (timeZone.getRawOffset());
+            int var83195CF641F8AED9D4B81C2528687249_269835064 = (timeZone.getRawOffset());
         } //End block
         int dayOfYear;
         dayOfYear = (int) days + 1;
@@ -1153,10 +1134,9 @@ public class GregorianCalendar extends Calendar {
         int date;
         date = dayOfYear - daysInYear(leapYear, month);
         {
-            boolean varBCFBCFA689BAE03ACCDE398C77284B61_651478812 = (date > daysInMonth(leapYear, month));
+            boolean varBCFBCFA689BAE03ACCDE398C77284B61_1673336990 = (date > daysInMonth(leapYear, month));
             {
                 date -= daysInMonth(leapYear, month);
-                month++;
             } //End block
         } //End collapsed parenthetic
         int dayOfWeek;
@@ -1170,11 +1150,11 @@ public class GregorianCalendar extends Calendar {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:14.344 -0400", hash_original_method = "6907F2ED2DF57E219AB70EADED509565", hash_generated_method = "7C32203CD5DD8E8EA7052168AF5A9922")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:32.300 -0400", hash_original_method = "6907F2ED2DF57E219AB70EADED509565", hash_generated_method = "AB4A13F1D1AB87EF48BDF3DE14288282")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     @Override
     public int hashCode() {
-        int var692CE3A7B5A5A51EE98F7911213C9198_60518908 = (super.hashCode()
+        int var692CE3A7B5A5A51EE98F7911213C9198_1056534567 = (super.hashCode()
                 + ((int) (gregorianCutover >>> 32) ^ (int) gregorianCutover));
         return dsTaint.getTaintInt();
         // ---------- Original Method ----------
@@ -1183,7 +1163,7 @@ public class GregorianCalendar extends Calendar {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:14.344 -0400", hash_original_method = "FD1210B9D1DAC87CC2975B1EB57E42AE", hash_generated_method = "DCDF0182FDCA2D014CE3E815887C48D2")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:32.300 -0400", hash_original_method = "FD1210B9D1DAC87CC2975B1EB57E42AE", hash_generated_method = "B57DC77A2072289F8EB28DF30BA0C9D5")
     @DSModeled(DSC.SAFE)
     public boolean isLeapYear(int year) {
         dsTaint.addTaint(year);
@@ -1196,7 +1176,7 @@ public class GregorianCalendar extends Calendar {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:14.344 -0400", hash_original_method = "6792E5EC134CCE3576D348D7664F192E", hash_generated_method = "5944CB417BF3CA9172F7BB551AF7F778")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:32.301 -0400", hash_original_method = "6792E5EC134CCE3576D348D7664F192E", hash_generated_method = "5374F3CEC002DCA7304F02B735DAB1F0")
     @DSModeled(DSC.SAFE)
     private int julianError() {
         return dsTaint.getTaintInt();
@@ -1205,7 +1185,7 @@ public class GregorianCalendar extends Calendar {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:14.344 -0400", hash_original_method = "C7B77E5A8B6CB394A26ACFDB4CA2A34C", hash_generated_method = "170D997152F156A6069B4B234261BA4C")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:32.301 -0400", hash_original_method = "C7B77E5A8B6CB394A26ACFDB4CA2A34C", hash_generated_method = "A0460C874DE5BD8680A95C7103CAD205")
     @DSModeled(DSC.SAFE)
     private int mod(int value, int mod) {
         dsTaint.addTaint(mod);
@@ -1222,7 +1202,7 @@ public class GregorianCalendar extends Calendar {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:14.344 -0400", hash_original_method = "B5B6FCF50F48D18673AA227255C5F0A5", hash_generated_method = "63A872B1CB44C26398C640A815317DD0")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:32.301 -0400", hash_original_method = "B5B6FCF50F48D18673AA227255C5F0A5", hash_generated_method = "8F5DB8012AC7F6C7835237119E41AADB")
     @DSModeled(DSC.SAFE)
     private int mod7(long num1) {
         dsTaint.addTaint(num1);
@@ -1238,14 +1218,14 @@ public class GregorianCalendar extends Calendar {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:14.345 -0400", hash_original_method = "B265969ED1D5B160D0AFF42D0A073F4D", hash_generated_method = "A4DC97AB10082B2DD02A4D5FB9A549A2")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:32.303 -0400", hash_original_method = "B265969ED1D5B160D0AFF42D0A073F4D", hash_generated_method = "1EC4E9539436A853D93886039D8F89A1")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     @Override
     public void roll(int field, int value) {
         dsTaint.addTaint(field);
         dsTaint.addTaint(value);
-        if (DroidSafeAndroidRuntime.control) {
-            throw new IllegalArgumentException();
+        {
+            if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException();
         } //End block
         isCached = false;
         complete();
@@ -1355,7 +1335,7 @@ public class GregorianCalendar extends Calendar {
         //End case ERA MONTH AM_PM HOUR HOUR_OF_DAY MINUTE SECOND MILLISECOND 
         //Begin case ERA MONTH AM_PM HOUR HOUR_OF_DAY MINUTE SECOND MILLISECOND 
         {
-            boolean var996091B13023E8401BC1CAC33664D345_2120420653 = (field == MONTH && fields[DATE] > daysInMonth());
+            boolean var996091B13023E8401BC1CAC33664D345_251478011 = (field == MONTH && fields[DATE] > daysInMonth());
             {
                 set(DATE, daysInMonth());
             } //End block
@@ -1373,8 +1353,8 @@ public class GregorianCalendar extends Calendar {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:14.345 -0400", hash_original_method = "011BFEF6AF7823592586BFF14A1F0FAF", hash_generated_method = "557FD4A7844791AE6B3E403904901404")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:32.304 -0400", hash_original_method = "011BFEF6AF7823592586BFF14A1F0FAF", hash_generated_method = "7A25CBCA4854DEA689F739A8122A0701")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     @Override
     public void roll(int field, boolean increment) {
         dsTaint.addTaint(field);
@@ -1385,7 +1365,7 @@ public class GregorianCalendar extends Calendar {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:14.346 -0400", hash_original_method = "BBA926F39AADCD3D723F5CC72B7A16F3", hash_generated_method = "EDBA6D03AB1632BD75D1468F351FF587")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:32.304 -0400", hash_original_method = "BBA926F39AADCD3D723F5CC72B7A16F3", hash_generated_method = "CD7CA4E116FF0022AD59D2A59FC0E45A")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public void setGregorianChange(Date date) {
         dsTaint.addTaint(date.dsTaint);
@@ -1395,7 +1375,7 @@ public class GregorianCalendar extends Calendar {
         cal.setTime(date);
         changeYear = cal.get(YEAR);
         {
-            boolean var6B3F925C21EB7C0091F9A66AE842BD58_1779556214 = (cal.get(ERA) == BC);
+            boolean var6B3F925C21EB7C0091F9A66AE842BD58_1008113167 = (cal.get(ERA) == BC);
             {
                 changeYear = 1 - changeYear;
             } //End block
@@ -1437,8 +1417,8 @@ public class GregorianCalendar extends Calendar {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:14.346 -0400", hash_original_method = "93271132EFBEDC29196C798673AC5EE7", hash_generated_method = "30618BF31E3EF9B57496D830B4496A05")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:32.304 -0400", hash_original_method = "93271132EFBEDC29196C798673AC5EE7", hash_generated_method = "955BAAA6CA6DA7A6424B31877C0C2952")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     private void writeObject(ObjectOutputStream stream) throws IOException {
         dsTaint.addTaint(stream.dsTaint);
         stream.defaultWriteObject();
@@ -1447,8 +1427,8 @@ public class GregorianCalendar extends Calendar {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:14.346 -0400", hash_original_method = "6812E7459A56AAC638E0A1455D3A3623", hash_generated_method = "7B57F65846BE78D95D3495A4AA8E2731")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:32.304 -0400", hash_original_method = "6812E7459A56AAC638E0A1455D3A3623", hash_generated_method = "E33F9938FD3A6BA9F20AD75F5AA93D84")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     private void readObject(ObjectInputStream stream) throws IOException,
             ClassNotFoundException {
         dsTaint.addTaint(stream.dsTaint);
@@ -1462,8 +1442,8 @@ public class GregorianCalendar extends Calendar {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:14.346 -0400", hash_original_method = "803EF27234E46811EE9F1109A1277F23", hash_generated_method = "EBACC9C393C383D7AD4781E044B98D9D")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:32.305 -0400", hash_original_method = "803EF27234E46811EE9F1109A1277F23", hash_generated_method = "05874A31DE37CE611A8F07551C3D03AF")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     @Override
     public void setFirstDayOfWeek(int value) {
         dsTaint.addTaint(value);
@@ -1475,8 +1455,8 @@ public class GregorianCalendar extends Calendar {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:14.346 -0400", hash_original_method = "77A4B23D11FEBAAF4DA5B074DBE88F4F", hash_generated_method = "DDA7BC32D1FF3BD7620E2E441BF8B0D3")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:32.305 -0400", hash_original_method = "77A4B23D11FEBAAF4DA5B074DBE88F4F", hash_generated_method = "C2F31E4058E5DC560A9F8A42162527BC")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     @Override
     public void setMinimalDaysInFirstWeek(int value) {
         dsTaint.addTaint(value);
@@ -1488,6 +1468,19 @@ public class GregorianCalendar extends Calendar {
     }
 
     
+    private static final long serialVersionUID = -8125100834729963327L;
+    public static final int BC = 0;
+    public static final int AD = 1;
+    private static final long defaultGregorianCutover = -12219292800000l;
+    static byte[] DaysInMonth = new byte[] { 31, 28, 31, 30, 31, 30, 31, 31,
+            30, 31, 30, 31 };
+    private static int[] DaysInYear = new int[] { 0, 31, 59, 90, 120, 151, 181,
+            212, 243, 273, 304, 334 };
+    private static int[] maximums = new int[] { 1, 292278994, 11, 53, 6, 31,
+            366, 7, 6, 1, 11, 23, 59, 59, 999, 14 * 3600 * 1000, 7200000 };
+    private static int[] minimums = new int[] { 0, 1, 0, 1, 0, 1, 1, 1, 1, 0,
+            0, 0, 0, 0, 0, -13 * 3600 * 1000, 0 };
+    private static int[] leastMaximums = new int[] { 1, 292269054, 11, 50, 3,
+            28, 355, 7, 3, 1, 11, 23, 59, 59, 999, 50400000, 1200000 };
 }
-
 

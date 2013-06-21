@@ -3,20 +3,19 @@ package android.util;
 // Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
+import droidsafe.runtime.*;
 
-// import Iterator to deal with enhanced for loop translation
+// needed for enhanced for control translations
 import java.util.Iterator;
-
 import com.android.internal.util.ArrayUtils;
 
 public class SparseArray<E> implements Cloneable {
-    private static final Object DELETED = new Object();
     private boolean mGarbage = false;
     private int[] mKeys;
     private Object[] mValues;
     private int mSize;
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:04.671 -0400", hash_original_method = "E97D5EED29ED8377C999990C20A12343", hash_generated_method = "3B8A10A8A777D2877F19458E7EB1EB1F")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:58.350 -0400", hash_original_method = "E97D5EED29ED8377C999990C20A12343", hash_generated_method = "E245EEBE3057EE5A6B20AA3D7F52AD37")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public SparseArray() {
         this(10);
@@ -24,7 +23,7 @@ public class SparseArray<E> implements Cloneable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:04.671 -0400", hash_original_method = "F193A0D2E79CC42C4145064D20AB5B71", hash_generated_method = "7122B4C21BFBD266208136173F657F02")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:58.351 -0400", hash_original_method = "F193A0D2E79CC42C4145064D20AB5B71", hash_generated_method = "056B2DD2BF53BC703D6EFFB0B0FD443A")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public SparseArray(int initialCapacity) {
         dsTaint.addTaint(initialCapacity);
@@ -40,7 +39,7 @@ public class SparseArray<E> implements Cloneable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:04.671 -0400", hash_original_method = "A950936C46135A90B64D99C98FBE0DD0", hash_generated_method = "4A9B94EBAE8B948FEA99004B06D6ED82")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:58.351 -0400", hash_original_method = "A950936C46135A90B64D99C98FBE0DD0", hash_generated_method = "249C09E06807EB24B9DF660950D1200B")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     @Override
     @SuppressWarnings("unchecked")
@@ -68,19 +67,19 @@ public class SparseArray<E> implements Cloneable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:04.671 -0400", hash_original_method = "63029C5D60DB5A1F0C43DA1A71993094", hash_generated_method = "C6F778886EE7C8BDA8191FE4064E85A2")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:58.351 -0400", hash_original_method = "63029C5D60DB5A1F0C43DA1A71993094", hash_generated_method = "9F66543DB810EF3031B63D3C32198C85")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public E get(int key) {
         dsTaint.addTaint(key);
-        E var2D4BC10AF814DB6E28CC507D53A17135_624517660 = (get(key, null));
+        E var2D4BC10AF814DB6E28CC507D53A17135_2056258915 = (get(key, null));
         return (E)dsTaint.getTaint();
         // ---------- Original Method ----------
         //return get(key, null);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:04.672 -0400", hash_original_method = "C9E62D05249D95E7C50A204FF58AB455", hash_generated_method = "0F5A522FAC7A6FAEC4D5349F9B68B9B4")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:58.352 -0400", hash_original_method = "C9E62D05249D95E7C50A204FF58AB455", hash_generated_method = "14BDBE96A043F63A5408D6EC49CB76C9")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     @SuppressWarnings("unchecked")
     public E get(int key, E valueIfKeyNotFound) {
         dsTaint.addTaint(valueIfKeyNotFound.dsTaint);
@@ -98,8 +97,8 @@ public class SparseArray<E> implements Cloneable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:04.672 -0400", hash_original_method = "D16C073A10FD3671AE05EBC49E38DA17", hash_generated_method = "326088E29F4DFF93C8FE716705992271")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:58.352 -0400", hash_original_method = "D16C073A10FD3671AE05EBC49E38DA17", hash_generated_method = "ADE65D58EC89C7EE714DAD3674C3370F")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     public void delete(int key) {
         dsTaint.addTaint(key);
         int i;
@@ -121,8 +120,8 @@ public class SparseArray<E> implements Cloneable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:04.672 -0400", hash_original_method = "EE51F875218CA8C1C2C8959A48F2A4BB", hash_generated_method = "E593B8474D34B1A05154C46F3F9947DE")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:58.352 -0400", hash_original_method = "EE51F875218CA8C1C2C8959A48F2A4BB", hash_generated_method = "20686B83AF38136F728CD0AD7933BC1E")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     public void remove(int key) {
         dsTaint.addTaint(key);
         delete(key);
@@ -131,7 +130,7 @@ public class SparseArray<E> implements Cloneable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:04.672 -0400", hash_original_method = "1992218C2CA2A9A793E8A4995C16BACA", hash_generated_method = "1E11FA3321E96F07C92B07886F1A842F")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:58.352 -0400", hash_original_method = "1992218C2CA2A9A793E8A4995C16BACA", hash_generated_method = "2CE0590F816199A892876E301FE1694F")
     @DSModeled(DSC.SAFE)
     public void removeAt(int index) {
         dsTaint.addTaint(index);
@@ -147,7 +146,7 @@ public class SparseArray<E> implements Cloneable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:04.672 -0400", hash_original_method = "92E5B832E30042BFCDC9211BA5952F8C", hash_generated_method = "86960A4A1A232F49C8BCCD2C92C75075")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:58.353 -0400", hash_original_method = "92E5B832E30042BFCDC9211BA5952F8C", hash_generated_method = "881BBA9ECADDDC35BAEE45B0C3432ACE")
     @DSModeled(DSC.SAFE)
     private void gc() {
         int n;
@@ -170,7 +169,6 @@ public class SparseArray<E> implements Cloneable {
                         values[o] = val;
                         values[i] = null;
                     } //End block
-                    o++;
                 } //End block
             } //End block
         } //End collapsed parenthetic
@@ -197,7 +195,7 @@ public class SparseArray<E> implements Cloneable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:04.672 -0400", hash_original_method = "D431925AC076B56C67C685DECF88777D", hash_generated_method = "EB73F5416960FCDD4F52201BCDF62ADF")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:58.353 -0400", hash_original_method = "D431925AC076B56C67C685DECF88777D", hash_generated_method = "C6A93C5555C198DACB382313BDB32917")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public void put(int key, E value) {
         dsTaint.addTaint(value.dsTaint);
@@ -235,15 +233,14 @@ public class SparseArray<E> implements Cloneable {
             } //End block
             mKeys[i] = key;
             mValues[i] = value;
-            mSize++;
         } //End block
         // ---------- Original Method ----------
         // Original Method Too Long, Refer to Original Implementation
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:04.672 -0400", hash_original_method = "F891E9E45688B24DB77EAA9DE670091B", hash_generated_method = "C7A0E536EFB673E50E1CD975BB9DC486")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:58.354 -0400", hash_original_method = "F891E9E45688B24DB77EAA9DE670091B", hash_generated_method = "EA130492709E5C5A63682A798DFF2A11")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     public int size() {
         {
             gc();
@@ -257,8 +254,8 @@ public class SparseArray<E> implements Cloneable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:04.672 -0400", hash_original_method = "AD3650995583655A8D059B5C8CE85FAD", hash_generated_method = "9E0E8E137B0F841F8EE529E6C548DCC0")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:58.354 -0400", hash_original_method = "AD3650995583655A8D059B5C8CE85FAD", hash_generated_method = "3CD8DAF97A159B42459C8DDFC8BEFC7A")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     public int keyAt(int index) {
         dsTaint.addTaint(index);
         {
@@ -273,8 +270,8 @@ public class SparseArray<E> implements Cloneable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:04.673 -0400", hash_original_method = "23592451CB50AFA841274AC3732C91A0", hash_generated_method = "AAB46A833D0DA6F0B106C4F6AA33B861")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:58.354 -0400", hash_original_method = "23592451CB50AFA841274AC3732C91A0", hash_generated_method = "4B17D6B08B97218B284C1338ACE98E64")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     @SuppressWarnings("unchecked")
     public E valueAt(int index) {
         dsTaint.addTaint(index);
@@ -290,8 +287,8 @@ public class SparseArray<E> implements Cloneable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:04.673 -0400", hash_original_method = "7F2F6916ED61673EAF8E91642A81797D", hash_generated_method = "688C50169BB42B09C9FBD40D76AD344E")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:58.354 -0400", hash_original_method = "7F2F6916ED61673EAF8E91642A81797D", hash_generated_method = "3E89D5ABD90985EA47019D7DDCEF7A65")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     public void setValueAt(int index, E value) {
         dsTaint.addTaint(index);
         dsTaint.addTaint(value.dsTaint);
@@ -307,14 +304,14 @@ public class SparseArray<E> implements Cloneable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:04.673 -0400", hash_original_method = "2AE05DC6F4A524A5C2D1FCD4B3573FB7", hash_generated_method = "FA79F3BD3787CC196168B131EAC04AB4")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:58.354 -0400", hash_original_method = "2AE05DC6F4A524A5C2D1FCD4B3573FB7", hash_generated_method = "B44C44A2100294720C7B6CAF97E0173B")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public int indexOfKey(int key) {
         dsTaint.addTaint(key);
         {
             gc();
         } //End block
-        int varEF803A1EE726CA2553B95F3E48B65AD1_1342832257 = (binarySearch(mKeys, 0, mSize, key));
+        int varEF803A1EE726CA2553B95F3E48B65AD1_805531734 = (binarySearch(mKeys, 0, mSize, key));
         return dsTaint.getTaintInt();
         // ---------- Original Method ----------
         //if (mGarbage) {
@@ -324,8 +321,8 @@ public class SparseArray<E> implements Cloneable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:04.673 -0400", hash_original_method = "726CF5EE08645CFDA1A6766EA2A8BAE2", hash_generated_method = "0B61CD6A3BB5FDDC7D794A4C208AC967")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:58.355 -0400", hash_original_method = "726CF5EE08645CFDA1A6766EA2A8BAE2", hash_generated_method = "B44723DEFBC57AB3594BA94F1B51DD0E")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     public int indexOfValue(E value) {
         dsTaint.addTaint(value.dsTaint);
         {
@@ -347,7 +344,7 @@ public class SparseArray<E> implements Cloneable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:04.673 -0400", hash_original_method = "43C05B8A0FF5CBFFF8E027DF94B104CB", hash_generated_method = "E980226B785262E24F1E4C5D013A16A2")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:58.355 -0400", hash_original_method = "43C05B8A0FF5CBFFF8E027DF94B104CB", hash_generated_method = "0C4828A3CB0B54289774B69C4B300C28")
     @DSModeled(DSC.SAFE)
     public void clear() {
         int n;
@@ -374,8 +371,8 @@ public class SparseArray<E> implements Cloneable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:04.673 -0400", hash_original_method = "5B63A048C0AD4A7F3A46491DB8DBCD38", hash_generated_method = "FFC98A4ED3547E68D9846307E172BDE9")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:58.355 -0400", hash_original_method = "5B63A048C0AD4A7F3A46491DB8DBCD38", hash_generated_method = "A897CE649C7B6855E81D91E82E34856F")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     public void append(int key, E value) {
         dsTaint.addTaint(value.dsTaint);
         dsTaint.addTaint(key);
@@ -426,8 +423,7 @@ public class SparseArray<E> implements Cloneable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:04.673 -0400", hash_original_method = "7DB5AA23E16883217822FBC6D13669D2", hash_generated_method = "FEB35469F5B9E3BA231D8C8D51EF0135")
-    private static int binarySearch(int[] a, int start, int len, int key) {
+        private static int binarySearch(int[] a, int start, int len, int key) {
         int high = start + len, low = start - 1, guess;
         while (high - low > 1) {
             guess = (high + low) / 2;
@@ -445,6 +441,6 @@ public class SparseArray<E> implements Cloneable {
     }
 
     
+    private static final Object DELETED = new Object();
 }
-
 

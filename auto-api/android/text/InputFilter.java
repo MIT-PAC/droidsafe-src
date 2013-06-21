@@ -3,10 +3,10 @@ package android.text;
 // Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
+import droidsafe.runtime.*;
 
-// import Iterator to deal with enhanced for loop translation
+// needed for enhanced for control translations
 import java.util.Iterator;
-
 
 public interface InputFilter
 {
@@ -68,4 +68,3 @@ public interface InputFilter
         private int mMax;
     }
 }
-

@@ -3,10 +3,10 @@ package com.android.internal.view;
 // Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
+import droidsafe.runtime.*;
 
-// import Iterator to deal with enhanced for loop translation
+// needed for enhanced for control translations
 import java.util.Iterator;
-
 
 public interface IInputContext extends android.os.IInterface
 {
@@ -56,6 +56,7 @@ _arg2 = data.readInt();
 com.android.internal.view.IInputContextCallback _arg3;
 _arg3 = com.android.internal.view.IInputContextCallback.Stub.asInterface(data.readStrongBinder());
 this.getTextBeforeCursor(_arg0, _arg1, _arg2, _arg3);
+reply.writeNoException();
 return true;
 }
 case TRANSACTION_getTextAfterCursor:
@@ -70,6 +71,7 @@ _arg2 = data.readInt();
 com.android.internal.view.IInputContextCallback _arg3;
 _arg3 = com.android.internal.view.IInputContextCallback.Stub.asInterface(data.readStrongBinder());
 this.getTextAfterCursor(_arg0, _arg1, _arg2, _arg3);
+reply.writeNoException();
 return true;
 }
 case TRANSACTION_getCursorCapsMode:
@@ -82,6 +84,7 @@ _arg1 = data.readInt();
 com.android.internal.view.IInputContextCallback _arg2;
 _arg2 = com.android.internal.view.IInputContextCallback.Stub.asInterface(data.readStrongBinder());
 this.getCursorCapsMode(_arg0, _arg1, _arg2);
+reply.writeNoException();
 return true;
 }
 case TRANSACTION_getExtractedText:
@@ -101,6 +104,7 @@ _arg2 = data.readInt();
 com.android.internal.view.IInputContextCallback _arg3;
 _arg3 = com.android.internal.view.IInputContextCallback.Stub.asInterface(data.readStrongBinder());
 this.getExtractedText(_arg0, _arg1, _arg2, _arg3);
+reply.writeNoException();
 return true;
 }
 case TRANSACTION_deleteSurroundingText:
@@ -111,6 +115,7 @@ _arg0 = data.readInt();
 int _arg1;
 _arg1 = data.readInt();
 this.deleteSurroundingText(_arg0, _arg1);
+reply.writeNoException();
 return true;
 }
 case TRANSACTION_setComposingText:
@@ -126,12 +131,14 @@ _arg0 = null;
 int _arg1;
 _arg1 = data.readInt();
 this.setComposingText(_arg0, _arg1);
+reply.writeNoException();
 return true;
 }
 case TRANSACTION_finishComposingText:
 {
 data.enforceInterface(DESCRIPTOR);
 this.finishComposingText();
+reply.writeNoException();
 return true;
 }
 case TRANSACTION_commitText:
@@ -147,6 +154,7 @@ _arg0 = null;
 int _arg1;
 _arg1 = data.readInt();
 this.commitText(_arg0, _arg1);
+reply.writeNoException();
 return true;
 }
 case TRANSACTION_commitCompletion:
@@ -160,6 +168,7 @@ else {
 _arg0 = null;
 }
 this.commitCompletion(_arg0);
+reply.writeNoException();
 return true;
 }
 case TRANSACTION_commitCorrection:
@@ -173,6 +182,7 @@ else {
 _arg0 = null;
 }
 this.commitCorrection(_arg0);
+reply.writeNoException();
 return true;
 }
 case TRANSACTION_setSelection:
@@ -183,6 +193,7 @@ _arg0 = data.readInt();
 int _arg1;
 _arg1 = data.readInt();
 this.setSelection(_arg0, _arg1);
+reply.writeNoException();
 return true;
 }
 case TRANSACTION_performEditorAction:
@@ -191,6 +202,7 @@ data.enforceInterface(DESCRIPTOR);
 int _arg0;
 _arg0 = data.readInt();
 this.performEditorAction(_arg0);
+reply.writeNoException();
 return true;
 }
 case TRANSACTION_performContextMenuAction:
@@ -199,18 +211,21 @@ data.enforceInterface(DESCRIPTOR);
 int _arg0;
 _arg0 = data.readInt();
 this.performContextMenuAction(_arg0);
+reply.writeNoException();
 return true;
 }
 case TRANSACTION_beginBatchEdit:
 {
 data.enforceInterface(DESCRIPTOR);
 this.beginBatchEdit();
+reply.writeNoException();
 return true;
 }
 case TRANSACTION_endBatchEdit:
 {
 data.enforceInterface(DESCRIPTOR);
 this.endBatchEdit();
+reply.writeNoException();
 return true;
 }
 case TRANSACTION_reportFullscreenMode:
@@ -219,6 +234,7 @@ data.enforceInterface(DESCRIPTOR);
 boolean _arg0;
 _arg0 = (0!=data.readInt());
 this.reportFullscreenMode(_arg0);
+reply.writeNoException();
 return true;
 }
 case TRANSACTION_sendKeyEvent:
@@ -232,6 +248,7 @@ else {
 _arg0 = null;
 }
 this.sendKeyEvent(_arg0);
+reply.writeNoException();
 return true;
 }
 case TRANSACTION_clearMetaKeyStates:
@@ -240,6 +257,7 @@ data.enforceInterface(DESCRIPTOR);
 int _arg0;
 _arg0 = data.readInt();
 this.clearMetaKeyStates(_arg0);
+reply.writeNoException();
 return true;
 }
 case TRANSACTION_performPrivateCommand:
@@ -255,6 +273,7 @@ else {
 _arg1 = null;
 }
 this.performPrivateCommand(_arg0, _arg1);
+reply.writeNoException();
 return true;
 }
 case TRANSACTION_setComposingRegion:
@@ -265,6 +284,7 @@ _arg0 = data.readInt();
 int _arg1;
 _arg1 = data.readInt();
 this.setComposingRegion(_arg0, _arg1);
+reply.writeNoException();
 return true;
 }
 case TRANSACTION_getSelectedText:
@@ -277,6 +297,7 @@ _arg1 = data.readInt();
 com.android.internal.view.IInputContextCallback _arg2;
 _arg2 = com.android.internal.view.IInputContextCallback.Stub.asInterface(data.readStrongBinder());
 this.getSelectedText(_arg0, _arg1, _arg2);
+reply.writeNoException();
 return true;
 }
 }
@@ -300,50 +321,60 @@ return DESCRIPTOR;
 public void getTextBeforeCursor(int length, int flags, int seq, com.android.internal.view.IInputContextCallback callback) throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
+android.os.Parcel _reply = android.os.Parcel.obtain();
 try {
 _data.writeInterfaceToken(DESCRIPTOR);
 _data.writeInt(length);
 _data.writeInt(flags);
 _data.writeInt(seq);
 _data.writeStrongBinder((((callback!=null))?(callback.asBinder()):(null)));
-mRemote.transact(Stub.TRANSACTION_getTextBeforeCursor, _data, null, android.os.IBinder.FLAG_ONEWAY);
+mRemote.transact(Stub.TRANSACTION_getTextBeforeCursor, _data, _reply, 0);
+_reply.readException();
 }
 finally {
+_reply.recycle();
 _data.recycle();
 }
 }
 public void getTextAfterCursor(int length, int flags, int seq, com.android.internal.view.IInputContextCallback callback) throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
+android.os.Parcel _reply = android.os.Parcel.obtain();
 try {
 _data.writeInterfaceToken(DESCRIPTOR);
 _data.writeInt(length);
 _data.writeInt(flags);
 _data.writeInt(seq);
 _data.writeStrongBinder((((callback!=null))?(callback.asBinder()):(null)));
-mRemote.transact(Stub.TRANSACTION_getTextAfterCursor, _data, null, android.os.IBinder.FLAG_ONEWAY);
+mRemote.transact(Stub.TRANSACTION_getTextAfterCursor, _data, _reply, 0);
+_reply.readException();
 }
 finally {
+_reply.recycle();
 _data.recycle();
 }
 }
 public void getCursorCapsMode(int reqModes, int seq, com.android.internal.view.IInputContextCallback callback) throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
+android.os.Parcel _reply = android.os.Parcel.obtain();
 try {
 _data.writeInterfaceToken(DESCRIPTOR);
 _data.writeInt(reqModes);
 _data.writeInt(seq);
 _data.writeStrongBinder((((callback!=null))?(callback.asBinder()):(null)));
-mRemote.transact(Stub.TRANSACTION_getCursorCapsMode, _data, null, android.os.IBinder.FLAG_ONEWAY);
+mRemote.transact(Stub.TRANSACTION_getCursorCapsMode, _data, _reply, 0);
+_reply.readException();
 }
 finally {
+_reply.recycle();
 _data.recycle();
 }
 }
 public void getExtractedText(android.view.inputmethod.ExtractedTextRequest request, int flags, int seq, com.android.internal.view.IInputContextCallback callback) throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
+android.os.Parcel _reply = android.os.Parcel.obtain();
 try {
 _data.writeInterfaceToken(DESCRIPTOR);
 if ((request!=null)) {
@@ -356,28 +387,34 @@ _data.writeInt(0);
 _data.writeInt(flags);
 _data.writeInt(seq);
 _data.writeStrongBinder((((callback!=null))?(callback.asBinder()):(null)));
-mRemote.transact(Stub.TRANSACTION_getExtractedText, _data, null, android.os.IBinder.FLAG_ONEWAY);
+mRemote.transact(Stub.TRANSACTION_getExtractedText, _data, _reply, 0);
+_reply.readException();
 }
 finally {
+_reply.recycle();
 _data.recycle();
 }
 }
 public void deleteSurroundingText(int leftLength, int rightLength) throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
+android.os.Parcel _reply = android.os.Parcel.obtain();
 try {
 _data.writeInterfaceToken(DESCRIPTOR);
 _data.writeInt(leftLength);
 _data.writeInt(rightLength);
-mRemote.transact(Stub.TRANSACTION_deleteSurroundingText, _data, null, android.os.IBinder.FLAG_ONEWAY);
+mRemote.transact(Stub.TRANSACTION_deleteSurroundingText, _data, _reply, 0);
+_reply.readException();
 }
 finally {
+_reply.recycle();
 _data.recycle();
 }
 }
 public void setComposingText(java.lang.CharSequence text, int newCursorPosition) throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
+android.os.Parcel _reply = android.os.Parcel.obtain();
 try {
 _data.writeInterfaceToken(DESCRIPTOR);
 if ((text!=null)) {
@@ -388,26 +425,32 @@ else {
 _data.writeInt(0);
 }
 _data.writeInt(newCursorPosition);
-mRemote.transact(Stub.TRANSACTION_setComposingText, _data, null, android.os.IBinder.FLAG_ONEWAY);
+mRemote.transact(Stub.TRANSACTION_setComposingText, _data, _reply, 0);
+_reply.readException();
 }
 finally {
+_reply.recycle();
 _data.recycle();
 }
 }
 public void finishComposingText() throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
+android.os.Parcel _reply = android.os.Parcel.obtain();
 try {
 _data.writeInterfaceToken(DESCRIPTOR);
-mRemote.transact(Stub.TRANSACTION_finishComposingText, _data, null, android.os.IBinder.FLAG_ONEWAY);
+mRemote.transact(Stub.TRANSACTION_finishComposingText, _data, _reply, 0);
+_reply.readException();
 }
 finally {
+_reply.recycle();
 _data.recycle();
 }
 }
 public void commitText(java.lang.CharSequence text, int newCursorPosition) throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
+android.os.Parcel _reply = android.os.Parcel.obtain();
 try {
 _data.writeInterfaceToken(DESCRIPTOR);
 if ((text!=null)) {
@@ -418,15 +461,18 @@ else {
 _data.writeInt(0);
 }
 _data.writeInt(newCursorPosition);
-mRemote.transact(Stub.TRANSACTION_commitText, _data, null, android.os.IBinder.FLAG_ONEWAY);
+mRemote.transact(Stub.TRANSACTION_commitText, _data, _reply, 0);
+_reply.readException();
 }
 finally {
+_reply.recycle();
 _data.recycle();
 }
 }
 public void commitCompletion(android.view.inputmethod.CompletionInfo completion) throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
+android.os.Parcel _reply = android.os.Parcel.obtain();
 try {
 _data.writeInterfaceToken(DESCRIPTOR);
 if ((completion!=null)) {
@@ -436,15 +482,18 @@ completion.writeToParcel(_data, 0);
 else {
 _data.writeInt(0);
 }
-mRemote.transact(Stub.TRANSACTION_commitCompletion, _data, null, android.os.IBinder.FLAG_ONEWAY);
+mRemote.transact(Stub.TRANSACTION_commitCompletion, _data, _reply, 0);
+_reply.readException();
 }
 finally {
+_reply.recycle();
 _data.recycle();
 }
 }
 public void commitCorrection(android.view.inputmethod.CorrectionInfo correction) throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
+android.os.Parcel _reply = android.os.Parcel.obtain();
 try {
 _data.writeInterfaceToken(DESCRIPTOR);
 if ((correction!=null)) {
@@ -454,86 +503,107 @@ correction.writeToParcel(_data, 0);
 else {
 _data.writeInt(0);
 }
-mRemote.transact(Stub.TRANSACTION_commitCorrection, _data, null, android.os.IBinder.FLAG_ONEWAY);
+mRemote.transact(Stub.TRANSACTION_commitCorrection, _data, _reply, 0);
+_reply.readException();
 }
 finally {
+_reply.recycle();
 _data.recycle();
 }
 }
 public void setSelection(int start, int end) throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
+android.os.Parcel _reply = android.os.Parcel.obtain();
 try {
 _data.writeInterfaceToken(DESCRIPTOR);
 _data.writeInt(start);
 _data.writeInt(end);
-mRemote.transact(Stub.TRANSACTION_setSelection, _data, null, android.os.IBinder.FLAG_ONEWAY);
+mRemote.transact(Stub.TRANSACTION_setSelection, _data, _reply, 0);
+_reply.readException();
 }
 finally {
+_reply.recycle();
 _data.recycle();
 }
 }
 public void performEditorAction(int actionCode) throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
+android.os.Parcel _reply = android.os.Parcel.obtain();
 try {
 _data.writeInterfaceToken(DESCRIPTOR);
 _data.writeInt(actionCode);
-mRemote.transact(Stub.TRANSACTION_performEditorAction, _data, null, android.os.IBinder.FLAG_ONEWAY);
+mRemote.transact(Stub.TRANSACTION_performEditorAction, _data, _reply, 0);
+_reply.readException();
 }
 finally {
+_reply.recycle();
 _data.recycle();
 }
 }
 public void performContextMenuAction(int id) throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
+android.os.Parcel _reply = android.os.Parcel.obtain();
 try {
 _data.writeInterfaceToken(DESCRIPTOR);
 _data.writeInt(id);
-mRemote.transact(Stub.TRANSACTION_performContextMenuAction, _data, null, android.os.IBinder.FLAG_ONEWAY);
+mRemote.transact(Stub.TRANSACTION_performContextMenuAction, _data, _reply, 0);
+_reply.readException();
 }
 finally {
+_reply.recycle();
 _data.recycle();
 }
 }
 public void beginBatchEdit() throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
+android.os.Parcel _reply = android.os.Parcel.obtain();
 try {
 _data.writeInterfaceToken(DESCRIPTOR);
-mRemote.transact(Stub.TRANSACTION_beginBatchEdit, _data, null, android.os.IBinder.FLAG_ONEWAY);
+mRemote.transact(Stub.TRANSACTION_beginBatchEdit, _data, _reply, 0);
+_reply.readException();
 }
 finally {
+_reply.recycle();
 _data.recycle();
 }
 }
 public void endBatchEdit() throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
+android.os.Parcel _reply = android.os.Parcel.obtain();
 try {
 _data.writeInterfaceToken(DESCRIPTOR);
-mRemote.transact(Stub.TRANSACTION_endBatchEdit, _data, null, android.os.IBinder.FLAG_ONEWAY);
+mRemote.transact(Stub.TRANSACTION_endBatchEdit, _data, _reply, 0);
+_reply.readException();
 }
 finally {
+_reply.recycle();
 _data.recycle();
 }
 }
 public void reportFullscreenMode(boolean enabled) throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
+android.os.Parcel _reply = android.os.Parcel.obtain();
 try {
 _data.writeInterfaceToken(DESCRIPTOR);
 _data.writeInt(((enabled)?(1):(0)));
-mRemote.transact(Stub.TRANSACTION_reportFullscreenMode, _data, null, android.os.IBinder.FLAG_ONEWAY);
+mRemote.transact(Stub.TRANSACTION_reportFullscreenMode, _data, _reply, 0);
+_reply.readException();
 }
 finally {
+_reply.recycle();
 _data.recycle();
 }
 }
 public void sendKeyEvent(android.view.KeyEvent event) throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
+android.os.Parcel _reply = android.os.Parcel.obtain();
 try {
 _data.writeInterfaceToken(DESCRIPTOR);
 if ((event!=null)) {
@@ -543,27 +613,33 @@ event.writeToParcel(_data, 0);
 else {
 _data.writeInt(0);
 }
-mRemote.transact(Stub.TRANSACTION_sendKeyEvent, _data, null, android.os.IBinder.FLAG_ONEWAY);
+mRemote.transact(Stub.TRANSACTION_sendKeyEvent, _data, _reply, 0);
+_reply.readException();
 }
 finally {
+_reply.recycle();
 _data.recycle();
 }
 }
 public void clearMetaKeyStates(int states) throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
+android.os.Parcel _reply = android.os.Parcel.obtain();
 try {
 _data.writeInterfaceToken(DESCRIPTOR);
 _data.writeInt(states);
-mRemote.transact(Stub.TRANSACTION_clearMetaKeyStates, _data, null, android.os.IBinder.FLAG_ONEWAY);
+mRemote.transact(Stub.TRANSACTION_clearMetaKeyStates, _data, _reply, 0);
+_reply.readException();
 }
 finally {
+_reply.recycle();
 _data.recycle();
 }
 }
 public void performPrivateCommand(java.lang.String action, android.os.Bundle data) throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
+android.os.Parcel _reply = android.os.Parcel.obtain();
 try {
 _data.writeInterfaceToken(DESCRIPTOR);
 _data.writeString(action);
@@ -574,36 +650,44 @@ data.writeToParcel(_data, 0);
 else {
 _data.writeInt(0);
 }
-mRemote.transact(Stub.TRANSACTION_performPrivateCommand, _data, null, android.os.IBinder.FLAG_ONEWAY);
+mRemote.transact(Stub.TRANSACTION_performPrivateCommand, _data, _reply, 0);
+_reply.readException();
 }
 finally {
+_reply.recycle();
 _data.recycle();
 }
 }
 public void setComposingRegion(int start, int end) throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
+android.os.Parcel _reply = android.os.Parcel.obtain();
 try {
 _data.writeInterfaceToken(DESCRIPTOR);
 _data.writeInt(start);
 _data.writeInt(end);
-mRemote.transact(Stub.TRANSACTION_setComposingRegion, _data, null, android.os.IBinder.FLAG_ONEWAY);
+mRemote.transact(Stub.TRANSACTION_setComposingRegion, _data, _reply, 0);
+_reply.readException();
 }
 finally {
+_reply.recycle();
 _data.recycle();
 }
 }
 public void getSelectedText(int flags, int seq, com.android.internal.view.IInputContextCallback callback) throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
+android.os.Parcel _reply = android.os.Parcel.obtain();
 try {
 _data.writeInterfaceToken(DESCRIPTOR);
 _data.writeInt(flags);
 _data.writeInt(seq);
 _data.writeStrongBinder((((callback!=null))?(callback.asBinder()):(null)));
-mRemote.transact(Stub.TRANSACTION_getSelectedText, _data, null, android.os.IBinder.FLAG_ONEWAY);
+mRemote.transact(Stub.TRANSACTION_getSelectedText, _data, _reply, 0);
+_reply.readException();
 }
 finally {
+_reply.recycle();
 _data.recycle();
 }
 }
@@ -652,4 +736,3 @@ public void performPrivateCommand(java.lang.String action, android.os.Bundle dat
 public void setComposingRegion(int start, int end) throws android.os.RemoteException;
 public void getSelectedText(int flags, int seq, com.android.internal.view.IInputContextCallback callback) throws android.os.RemoteException;
 }
-

@@ -2,19 +2,17 @@ package org.apache.harmony.security.asn1;
 
 // Droidsafe Imports
 import droidsafe.helpers.*;
-import droidsafe.runtime.DroidSafeAndroidRuntime;
 import droidsafe.annotations.*;
+import droidsafe.runtime.*;
 
-// import Iterator to deal with enhanced for loop translation
+// needed for enhanced for control translations
 import java.util.Iterator;
-
 import java.io.IOException;
 import libcore.util.EmptyArray;
 
 public class ASN1BitString extends ASN1StringType {
-    private static final ASN1BitString ASN1 = new ASN1BitString();
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:17.623 -0400", hash_original_method = "AD601F3532730C1588B10C0B2F4700C0", hash_generated_method = "646406D8A2F994C77239AB18E2322B53")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:39.915 -0400", hash_original_method = "AD601F3532730C1588B10C0B2F4700C0", hash_generated_method = "2D61DE183F5D6ABAA7F4E57F92D94159")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public ASN1BitString() {
         super(TAG_BITSTRING);
@@ -22,19 +20,18 @@ public class ASN1BitString extends ASN1StringType {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:17.623 -0400", hash_original_method = "66B1F67B2E4924691687068C01957881", hash_generated_method = "09FC42AAA2010F0F571B2693B7BFC711")
-    public static ASN1BitString getInstance() {
+        public static ASN1BitString getInstance() {
         return ASN1;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:17.623 -0400", hash_original_method = "BF14955802A2C4E7FA1CD34E2A56A014", hash_generated_method = "8D5BE3D2EBCADFE0A42656E4305D670B")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:39.915 -0400", hash_original_method = "BF14955802A2C4E7FA1CD34E2A56A014", hash_generated_method = "7D93E689E739E35764E83ED2F5A45C52")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     @Override
     public Object decode(BerInputStream in) throws IOException {
         dsTaint.addTaint(in.dsTaint);
         in.readBitString();
-        Object var883E4A51D9FE1FCA5622395E00C94DE9_1538905689 = (getDecodedObject(in));
+        Object var883E4A51D9FE1FCA5622395E00C94DE9_1824770334 = (getDecodedObject(in));
         return (Object)dsTaint.getTaint();
         // ---------- Original Method ----------
         //in.readBitString();
@@ -45,8 +42,8 @@ public class ASN1BitString extends ASN1StringType {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:17.623 -0400", hash_original_method = "E5B2C829F55FF77DE885EB0182CA875F", hash_generated_method = "C3F87C0035697CCF4BF7724B218A52B3")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:39.915 -0400", hash_original_method = "E5B2C829F55FF77DE885EB0182CA875F", hash_generated_method = "BE35406A1B404988C2616E757C9D6132")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     @Override
     public Object getDecodedObject(BerInputStream in) throws IOException {
         dsTaint.addTaint(in.dsTaint);
@@ -54,6 +51,7 @@ public class ASN1BitString extends ASN1StringType {
         bytes = new byte[in.length - 1];
         System.arraycopy(in.buffer, in.contentOffset + 1, bytes, 0,
                 in.length - 1);
+        Object varAE3BAD8EA24DB6B044BCCAE5854CCD06_1171297318 = (new BitString(bytes, in.buffer[in.contentOffset]));
         return (Object)dsTaint.getTaint();
         // ---------- Original Method ----------
         //byte[] bytes = new byte[in.length - 1];
@@ -63,8 +61,8 @@ public class ASN1BitString extends ASN1StringType {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:17.623 -0400", hash_original_method = "F26C5493E5849E857C2B791290EA66B7", hash_generated_method = "A671E972352EAD75E6BEBDD31EF5B996")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:39.916 -0400", hash_original_method = "F26C5493E5849E857C2B791290EA66B7", hash_generated_method = "196D843EE644924D2CF7E80CEDAC8E90")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     @Override
     public void encodeContent(BerOutputStream out) {
         dsTaint.addTaint(out.dsTaint);
@@ -74,7 +72,7 @@ public class ASN1BitString extends ASN1StringType {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:17.623 -0400", hash_original_method = "FF34851DE63579E10DEA6E02E8081017", hash_generated_method = "41A48B00799A746730653C933207BCF3")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:39.916 -0400", hash_original_method = "FF34851DE63579E10DEA6E02E8081017", hash_generated_method = "6DB1C6026E3135E51572C2E600B2D6E9")
     @DSModeled(DSC.SAFE)
     @Override
     public void setEncodingContent(BerOutputStream out) {
@@ -86,17 +84,13 @@ public class ASN1BitString extends ASN1StringType {
 
     
     public static class ASN1NamedBitList extends ASN1BitString {
-        private static final byte[] SET_MASK = { (byte) 128, 64, 32, 16, 8, 4, 2, 1};
-        private static final BitString emptyString = new BitString(EmptyArray.BYTE, 0);
-        private static final int INDEFINITE_SIZE = -1;
-        private final int minBits;
-        private final int maxBits;
+        private int minBits;
+        private int maxBits;
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:17.623 -0400", hash_original_method = "C4F695AEADF70B93944D050F01760534", hash_generated_method = "CA852FCC8AE07A9A5F369DEA3670A1F5")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:39.916 -0400", hash_original_method = "C4F695AEADF70B93944D050F01760534", hash_generated_method = "7DFA5BB5135DAC29E4C9C3AC33464CD2")
         @DSModeled(DSC.SAFE)
         public ASN1NamedBitList(int minBits) {
             dsTaint.addTaint(minBits);
-            this.minBits = minBits;
             this.maxBits = INDEFINITE_SIZE;
             // ---------- Original Method ----------
             //this.minBits = minBits;
@@ -104,8 +98,8 @@ public class ASN1BitString extends ASN1StringType {
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:17.623 -0400", hash_original_method = "039CEFCC208866EAEA17CE6A32A74892", hash_generated_method = "A5341ED418AA743A100CA304E4B11E95")
-        @DSModeled(DSC.SAFE)
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:39.917 -0400", hash_original_method = "039CEFCC208866EAEA17CE6A32A74892", hash_generated_method = "62A7D18DE60E706BECC5989C71A4FCF4")
+        //DSFIXME:  CODE0002: Requires DSC value to be set
         @Override
         public Object getDecodedObject(BerInputStream in) throws IOException {
             dsTaint.addTaint(in.dsTaint);
@@ -129,7 +123,7 @@ public class ASN1BitString extends ASN1StringType {
             } //End block
             {
                 {
-                	if (DroidSafeAndroidRuntime.control) throw new ASN1Exception("ASN.1 Named Bitstring: size constraints");
+                    if (DroidSafeAndroidRuntime.control) throw new ASN1Exception("ASN.1 Named Bitstring: size constraints");
                 } //End block
                 value = new boolean[maxBits];
             } //End block
@@ -150,7 +144,6 @@ public class ASN1BitString extends ASN1StringType {
                             value[j] = (SET_MASK[k] & octet) != 0;
                         } //End block
                     } //End collapsed parenthetic
-                    i++;
                     octet = in.buffer[in.contentOffset + i];
                 } //End block
             } //End collapsed parenthetic
@@ -167,8 +160,8 @@ public class ASN1BitString extends ASN1StringType {
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:17.624 -0400", hash_original_method = "41EEFA120EBBC70AD57105C61092B6CF", hash_generated_method = "F550E7F6564BBE254174F5AECFBD3100")
-        @DSModeled(DSC.SAFE)
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:39.918 -0400", hash_original_method = "41EEFA120EBBC70AD57105C61092B6CF", hash_generated_method = "F28D33D56AE6A5DADAA2BD63AAD7826E")
+        //DSFIXME:  CODE0002: Requires DSC value to be set
         @Override
         public void setEncodingContent(BerOutputStream out) {
             dsTaint.addTaint(out.dsTaint);
@@ -176,9 +169,6 @@ public class ASN1BitString extends ASN1StringType {
             toEncode = (boolean[]) out.content;
             int index;
             index = toEncode.length - 1;
-            {
-                index--;
-            } //End block
             {
                 out.content = emptyString;
                 out.length = 1;
@@ -223,10 +213,13 @@ public class ASN1BitString extends ASN1StringType {
         }
 
         
+        private static final byte[] SET_MASK = { (byte) 128, 64, 32, 16, 8, 4, 2, 1};
+        private static final BitString emptyString = new BitString(EmptyArray.BYTE, 0);
+        private static final int INDEFINITE_SIZE = -1;
     }
 
 
     
+    private static final ASN1BitString ASN1 = new ASN1BitString();
 }
-
 

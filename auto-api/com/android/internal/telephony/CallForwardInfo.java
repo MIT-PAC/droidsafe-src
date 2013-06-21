@@ -3,10 +3,10 @@ package com.android.internal.telephony;
 // Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
+import droidsafe.runtime.*;
 
-// import Iterator to deal with enhanced for loop translation
+// needed for enhanced for control translations
 import java.util.Iterator;
-
 import android.telephony.PhoneNumberUtils;
 
 public class CallForwardInfo {
@@ -17,10 +17,16 @@ public class CallForwardInfo {
     public String          number;
     public int             timeSeconds;
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.607 -0400", hash_original_method = "EA7E7BF9BED1BC105930545F926483CA", hash_generated_method = "2B0C9E9454357767BA5316A00177AB2A")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:10.766 -0400", hash_original_method = "CF91EBDCAEA441679119019CCAC8281C", hash_generated_method = "CF91EBDCAEA441679119019CCAC8281C")
+        public CallForwardInfo ()
+    {
+    }
+
+
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:10.766 -0400", hash_original_method = "EA7E7BF9BED1BC105930545F926483CA", hash_generated_method = "FABB925E9130901662229E7A40654139")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public String toString() {
-        String varD9EC4C32971AAEE83F4B08EB607ABB4A_1388425095 = (super.toString() + (status == 0 ? " not active " : " active ")
+        String varD9EC4C32971AAEE83F4B08EB607ABB4A_1225717557 = (super.toString() + (status == 0 ? " not active " : " active ")
             + " reason: " + reason
             + " serviceClass: " + serviceClass
             + " \"" + PhoneNumberUtils.stringFromStringAndTOA(number, toa) + "\" "
@@ -36,5 +42,4 @@ public class CallForwardInfo {
 
     
 }
-
 

@@ -3,10 +3,10 @@ package android.text.method;
 // Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
+import droidsafe.runtime.*;
 
-// import Iterator to deal with enhanced for loop translation
+// needed for enhanced for control translations
 import java.util.Iterator;
-
 import android.text.InputType;
 import android.text.Spanned;
 import android.text.SpannableStringBuilder;
@@ -16,17 +16,8 @@ public class DigitsKeyListener extends NumberKeyListener {
     private char[] mAccepted;
     private boolean mSign;
     private boolean mDecimal;
-    private static final int SIGN = 1;
-    private static final int DECIMAL = 2;
-    private static final char[][] CHARACTERS = new char[][] {
-        new char[] { '0', '1', '2', '3', '4', '5', '6', '7', '8', '9' },
-        new char[] { '0', '1', '2', '3', '4', '5', '6', '7', '8', '9', '-' },
-        new char[] { '0', '1', '2', '3', '4', '5', '6', '7', '8', '9', '.' },
-        new char[] { '0', '1', '2', '3', '4', '5', '6', '7', '8', '9', '-', '.' },
-    };
-    private static DigitsKeyListener[] sInstance = new DigitsKeyListener[4];
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:04.046 -0400", hash_original_method = "6BE6AAF45437494799568EB9C567DA33", hash_generated_method = "79796F4CECB6F1DB3FC8F1EB08E7E6AA")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:57.269 -0400", hash_original_method = "6BE6AAF45437494799568EB9C567DA33", hash_generated_method = "96F31F59DAF98D6C6BCAE9A71EA0B101")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public DigitsKeyListener() {
         this(false, false);
@@ -34,7 +25,7 @@ public class DigitsKeyListener extends NumberKeyListener {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:04.046 -0400", hash_original_method = "FA23D3FC8F275B4F859DA176A5851F12", hash_generated_method = "EBFDE6BFA87CC52C4AFF48694ABB616A")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:57.269 -0400", hash_original_method = "FA23D3FC8F275B4F859DA176A5851F12", hash_generated_method = "12F5CE838C23AED40AD674A5A2B15ABA")
     @DSModeled(DSC.SAFE)
     public DigitsKeyListener(boolean sign, boolean decimal) {
         dsTaint.addTaint(sign);
@@ -50,7 +41,7 @@ public class DigitsKeyListener extends NumberKeyListener {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:04.046 -0400", hash_original_method = "699568E4919BD4E82DA190E9B839182F", hash_generated_method = "F3572B061B2EE45B7B1D78B5868135D8")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:57.270 -0400", hash_original_method = "699568E4919BD4E82DA190E9B839182F", hash_generated_method = "59DB2118926376E525ADEEB46DC19D69")
     @DSModeled(DSC.SAFE)
     @Override
     protected char[] getAcceptedChars() {
@@ -62,14 +53,12 @@ public class DigitsKeyListener extends NumberKeyListener {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:04.046 -0400", hash_original_method = "196C44AF0E4E6E9F7A5ABEBEF1B89855", hash_generated_method = "9C92B0FB155A6AF9255A3D0C67209ECD")
-    public static DigitsKeyListener getInstance() {
+        public static DigitsKeyListener getInstance() {
         return getInstance(false, false);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:04.046 -0400", hash_original_method = "0786C44C9A5E0C02A12CFA1A471595DB", hash_generated_method = "6FCA8A80FB5020CEFEDD5BE1AA9953D2")
-    public static DigitsKeyListener getInstance(boolean sign, boolean decimal) {
+        public static DigitsKeyListener getInstance(boolean sign, boolean decimal) {
         int kind = (sign ? SIGN : 0) | (decimal ? DECIMAL : 0);
         if (sInstance[kind] != null)
             return sInstance[kind];
@@ -78,8 +67,7 @@ public class DigitsKeyListener extends NumberKeyListener {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:04.047 -0400", hash_original_method = "D4B3324806FC820344ACA4BE2085B64A", hash_generated_method = "5E3512AF0D2EDADA595C6B70A4587CF2")
-    public static DigitsKeyListener getInstance(String accepted) {
+        public static DigitsKeyListener getInstance(String accepted) {
         DigitsKeyListener dim = new DigitsKeyListener();
         dim.mAccepted = new char[accepted.length()];
         accepted.getChars(0, accepted.length(), dim.mAccepted, 0);
@@ -87,7 +75,7 @@ public class DigitsKeyListener extends NumberKeyListener {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:04.047 -0400", hash_original_method = "C58B63A603B7A45CFB1185F323DD143F", hash_generated_method = "9FBD06634829EB968A13B972476E50F2")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:57.270 -0400", hash_original_method = "C58B63A603B7A45CFB1185F323DD143F", hash_generated_method = "3C22278AB12853453CBEA9B0D6E9B4F1")
     @DSModeled(DSC.SAFE)
     public int getInputType() {
         int contentType;
@@ -111,16 +99,16 @@ public class DigitsKeyListener extends NumberKeyListener {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:04.048 -0400", hash_original_method = "A15A4B8B8366C48B770873BA3926F314", hash_generated_method = "90A73514B4C92AEA2BC4A964D5EC9471")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:57.278 -0400", hash_original_method = "A15A4B8B8366C48B770873BA3926F314", hash_generated_method = "9E2501C7835D159E59470EE22421EB05")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     @Override
     public CharSequence filter(CharSequence source, int start, int end,
                                Spanned dest, int dstart, int dend) {
         dsTaint.addTaint(dest.dsTaint);
-        dsTaint.addTaint(source);
         dsTaint.addTaint(dstart);
-        dsTaint.addTaint(start);
+        dsTaint.addTaint(source);
         dsTaint.addTaint(dend);
+        dsTaint.addTaint(start);
         dsTaint.addTaint(end);
         CharSequence out;
         out = super.filter(source, start, end, dest, dstart, dend);
@@ -203,6 +191,14 @@ public class DigitsKeyListener extends NumberKeyListener {
     }
 
     
+    private static final int SIGN = 1;
+    private static final int DECIMAL = 2;
+    private static final char[][] CHARACTERS = new char[][] {
+        new char[] { '0', '1', '2', '3', '4', '5', '6', '7', '8', '9' },
+        new char[] { '0', '1', '2', '3', '4', '5', '6', '7', '8', '9', '-' },
+        new char[] { '0', '1', '2', '3', '4', '5', '6', '7', '8', '9', '.' },
+        new char[] { '0', '1', '2', '3', '4', '5', '6', '7', '8', '9', '-', '.' },
+    };
+    private static DigitsKeyListener[] sInstance = new DigitsKeyListener[4];
 }
-
 

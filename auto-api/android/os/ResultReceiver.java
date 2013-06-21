@@ -13,30 +13,8 @@ public class ResultReceiver implements Parcelable {
     boolean mLocal;
     Handler mHandler;
     IResultReceiver mReceiver;
-    public static final Parcelable.Creator<ResultReceiver> CREATOR = new Parcelable.Creator<ResultReceiver>() {        
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 12:02:00.793 -0400", hash_original_method = "90D8D656578FFDEDED0B312BAABC9891", hash_generated_method = "7756034FF43302352924E15060BBBC23")
-        @DSModeled(DSC.SAFE)
-        public ResultReceiver createFromParcel(Parcel in) {
-            dsTaint.addTaint(in.dsTaint);
-            return (ResultReceiver)dsTaint.getTaint();
-            // ---------- Original Method ----------
-            //return new ResultReceiver(in);
-        }
-
-        
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 12:02:00.794 -0400", hash_original_method = "9A50003BF7D81A82F5D7809D6B7D611A", hash_generated_method = "7A106B491B8ABF920017535FA4D69750")
-        @DSModeled(DSC.SAFE)
-        public ResultReceiver[] newArray(int size) {
-            dsTaint.addTaint(size);
-            return (ResultReceiver[])dsTaint.getTaint();
-            // ---------- Original Method ----------
-            //return new ResultReceiver[size];
-        }
-
-        
-}; //Transformed anonymous class
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 12:02:00.794 -0400", hash_original_method = "F6B889D041061686778698E3127A426F", hash_generated_method = "2F24DE909A14BE384097F3DFDA4DD141")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:54.180 -0400", hash_original_method = "F6B889D041061686778698E3127A426F", hash_generated_method = "6F6052D4E9FCF772721E5CED0890AD00")
     @DSModeled(DSC.SAFE)
     public ResultReceiver(Handler handler) {
         dsTaint.addTaint(handler.dsTaint);
@@ -47,7 +25,7 @@ public class ResultReceiver implements Parcelable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 12:02:00.795 -0400", hash_original_method = "3121A8D4339499004112052A7E531E42", hash_generated_method = "44E6D541E02CDCDBFB4DC6863E623B48")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:54.182 -0400", hash_original_method = "3121A8D4339499004112052A7E531E42", hash_generated_method = "0BABE4D28586909AA9AAC94515604343")
     //DSFIXME:  CODE0002: Requires DSC value to be set
      ResultReceiver(Parcel in) {
         dsTaint.addTaint(in.dsTaint);
@@ -61,8 +39,8 @@ public class ResultReceiver implements Parcelable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 12:02:00.795 -0400", hash_original_method = "09F6E48395AF4822069195CE0B4A582F", hash_generated_method = "9E95D28F300AA7A916A4BFEA6C75DCCB")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:54.182 -0400", hash_original_method = "09F6E48395AF4822069195CE0B4A582F", hash_generated_method = "09616DB726E41BEA6D4C41C6A2C9DF0F")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     public void send(int resultCode, Bundle resultData) {
         dsTaint.addTaint(resultData.dsTaint);
         dsTaint.addTaint(resultCode);
@@ -100,7 +78,7 @@ public class ResultReceiver implements Parcelable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 12:02:00.796 -0400", hash_original_method = "BDE6DE984C100A6F17C2FEFAD669078A", hash_generated_method = "B6BD7235AA9F7B9DBA6F08576C48860C")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:54.183 -0400", hash_original_method = "BDE6DE984C100A6F17C2FEFAD669078A", hash_generated_method = "76307C5EA4DFF79E935B0DCB79A2B347")
     @DSModeled(DSC.SAFE)
     protected void onReceiveResult(int resultCode, Bundle resultData) {
         //DSFIXME:  CODE0009: Possible callback target function detected
@@ -110,7 +88,7 @@ public class ResultReceiver implements Parcelable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 12:02:00.796 -0400", hash_original_method = "00F8174F9E89D0C972FA6D3F19742382", hash_generated_method = "7491C6FB42F78871A3F8EA322AF6B2FC")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:54.183 -0400", hash_original_method = "00F8174F9E89D0C972FA6D3F19742382", hash_generated_method = "ED77793910767EAAB4C12F70F75B9095")
     @DSModeled(DSC.SAFE)
     public int describeContents() {
         return dsTaint.getTaintInt();
@@ -119,7 +97,7 @@ public class ResultReceiver implements Parcelable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 12:02:00.797 -0400", hash_original_method = "E9FDB79317602314EF1A33B246E828FD", hash_generated_method = "5B110928A89254A24EC7EB8FBCFB5ED6")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:54.183 -0400", hash_original_method = "E9FDB79317602314EF1A33B246E828FD", hash_generated_method = "2A51B121B649C236F057707CA550BBD8")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public void writeToParcel(Parcel out, int flags) {
         dsTaint.addTaint(flags);
@@ -144,7 +122,7 @@ public class ResultReceiver implements Parcelable {
         int mResultCode;
         Bundle mResultData;
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 12:02:00.797 -0400", hash_original_method = "B34498DE61E9C5C61C7671D4F0FD5B9A", hash_generated_method = "573D9529391BF8CE89747046181871C9")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:54.184 -0400", hash_original_method = "B34498DE61E9C5C61C7671D4F0FD5B9A", hash_generated_method = "E2857C81885BF19D5293F20CFBA84610")
         @DSModeled(DSC.SAFE)
          MyRunnable(int resultCode, Bundle resultData) {
             dsTaint.addTaint(resultData.dsTaint);
@@ -155,8 +133,8 @@ public class ResultReceiver implements Parcelable {
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 12:02:00.797 -0400", hash_original_method = "B2EEF2B3DE60D5C6AF2898B6D426B2C7", hash_generated_method = "7726CE83497707B26880B809FBF6C248")
-        @DSModeled(DSC.SAFE)
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:54.184 -0400", hash_original_method = "B2EEF2B3DE60D5C6AF2898B6D426B2C7", hash_generated_method = "CE9FA5919F14757E6813C53A6BF42E89")
+        //DSFIXME:  CODE0002: Requires DSC value to be set
         public void run() {
             onReceiveResult(mResultCode, mResultData);
             // ---------- Original Method ----------
@@ -170,8 +148,14 @@ public class ResultReceiver implements Parcelable {
     
     class MyResultReceiver extends IResultReceiver.Stub {
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 12:02:00.797 -0400", hash_original_method = "B49F987C1CD0318792118745999D9DB4", hash_generated_method = "BD805F1B724563BF512990CB13ABEDF1")
-        @DSModeled(DSC.SAFE)
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:54.184 -0400", hash_original_method = "A7B2CA7C370BD2A5EB04FE13F4A5CB47", hash_generated_method = "A7B2CA7C370BD2A5EB04FE13F4A5CB47")
+                public MyResultReceiver ()
+        {
+        }
+
+
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:54.184 -0400", hash_original_method = "B49F987C1CD0318792118745999D9DB4", hash_generated_method = "2D116872D5A63E7EAC9F80EADFA7415B")
+        //DSFIXME:  CODE0002: Requires DSC value to be set
         public void send(int resultCode, Bundle resultData) {
             dsTaint.addTaint(resultData.dsTaint);
             dsTaint.addTaint(resultCode);
@@ -194,6 +178,29 @@ public class ResultReceiver implements Parcelable {
 
 
     
-}
+    public static final Parcelable.Creator<ResultReceiver> CREATOR = new Parcelable.Creator<ResultReceiver>() {        
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:54.184 -0400", hash_original_method = "90D8D656578FFDEDED0B312BAABC9891", hash_generated_method = "D92DD75BC45F9501B40AEBD3F68CA93E")
+        //DSFIXME:  CODE0002: Requires DSC value to be set
+        public ResultReceiver createFromParcel(Parcel in) {
+            dsTaint.addTaint(in.dsTaint);
+            ResultReceiver var8D8BA5751C56309FB851DC4E4E8F5B2C_280810632 = (new ResultReceiver(in));
+            return (ResultReceiver)dsTaint.getTaint();
+            // ---------- Original Method ----------
+            //return new ResultReceiver(in);
+        }
 
+        
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:54.185 -0400", hash_original_method = "9A50003BF7D81A82F5D7809D6B7D611A", hash_generated_method = "775379F66222DFBFF5B448C80250E37D")
+        //DSFIXME:  CODE0002: Requires DSC value to be set
+        public ResultReceiver[] newArray(int size) {
+            dsTaint.addTaint(size);
+            ResultReceiver[] var5D325FC5C92EDC6970401C2BD65B0032_963526676 = (new ResultReceiver[size]);
+            return (ResultReceiver[])dsTaint.getTaint();
+            // ---------- Original Method ----------
+            //return new ResultReceiver[size];
+        }
+
+        
+}; //Transformed anonymous class
+}
 

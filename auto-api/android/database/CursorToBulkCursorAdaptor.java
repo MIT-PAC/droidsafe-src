@@ -2,27 +2,25 @@ package android.database;
 
 // Droidsafe Imports
 import droidsafe.helpers.*;
-import droidsafe.runtime.DroidSafeAndroidRuntime;
 import droidsafe.annotations.*;
+import droidsafe.runtime.*;
 
-// import Iterator to deal with enhanced for loop translation
+// needed for enhanced for control translations
 import java.util.Iterator;
-
 import android.os.Bundle;
 import android.os.IBinder;
 import android.os.RemoteException;
 import android.util.Log;
 
 public final class CursorToBulkCursorAdaptor extends BulkCursorNative implements IBinder.DeathRecipient {
-    private static final String TAG = "Cursor";
-    private /* final */ Object mLock = new Object();
-    private /* final */ String mProviderName;
+    private Object mLock = new Object();
+    private String mProviderName;
     private ContentObserverProxy mObserver;
     private CrossProcessCursor mCursor;
     private CursorWindow mFilledWindow;
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:00.589 -0400", hash_original_method = "DFFFDCE95BD5626A15621DE9255909D3", hash_generated_method = "5A5B40432C38786E7D2D5D9BAB3C1627")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:46.007 -0400", hash_original_method = "DFFFDCE95BD5626A15621DE9255909D3", hash_generated_method = "11C6797AF8DAB82B3DC79FF96010CDF0")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     public CursorToBulkCursorAdaptor(Cursor cursor, IContentObserver observer,
             String providerName) {
         dsTaint.addTaint(cursor.dsTaint);
@@ -50,8 +48,8 @@ public final class CursorToBulkCursorAdaptor extends BulkCursorNative implements
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:00.589 -0400", hash_original_method = "AD579F119ED4886B2C182C86869C4CD9", hash_generated_method = "C8EF84E3117D208FAF7CFF1A7441A7C4")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:46.007 -0400", hash_original_method = "AD579F119ED4886B2C182C86869C4CD9", hash_generated_method = "C0A1ED446740574B689012835A978650")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     private void closeFilledWindowLocked() {
         {
             mFilledWindow.close();
@@ -65,8 +63,8 @@ public final class CursorToBulkCursorAdaptor extends BulkCursorNative implements
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:00.590 -0400", hash_original_method = "E626ABF61F7540C19BF105C7958133EC", hash_generated_method = "F8E2433AD3CDBCD056A25C8D76289129")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:46.008 -0400", hash_original_method = "E626ABF61F7540C19BF105C7958133EC", hash_generated_method = "FC6E01A149851342D11F794232C93227")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     private void disposeLocked() {
         {
             unregisterObserverProxyLocked();
@@ -84,11 +82,11 @@ public final class CursorToBulkCursorAdaptor extends BulkCursorNative implements
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:00.590 -0400", hash_original_method = "18B24C6ABC409A0E548E21131FCA3F48", hash_generated_method = "4C9F595EB91BDBD0631296FB7543B275")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:46.008 -0400", hash_original_method = "18B24C6ABC409A0E548E21131FCA3F48", hash_generated_method = "52590B2688227D4F3CDE916B839BBFBF")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     private void throwIfCursorIsClosed() {
         {
-            throw new StaleDataException("Attempted to access a cursor after it has been closed.");
+            if (DroidSafeAndroidRuntime.control) throw new StaleDataException("Attempted to access a cursor after it has been closed.");
         } //End block
         // ---------- Original Method ----------
         //if (mCursor == null) {
@@ -97,8 +95,8 @@ public final class CursorToBulkCursorAdaptor extends BulkCursorNative implements
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:00.590 -0400", hash_original_method = "C4AF1DDC0409484A2B59D555E10A97E5", hash_generated_method = "B6A05E3301186D9B71AC93C3AC582556")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:46.008 -0400", hash_original_method = "C4AF1DDC0409484A2B59D555E10A97E5", hash_generated_method = "7811CE0DF771F7DCC608E68A68E599FA")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     @Override
     public void binderDied() {
         {
@@ -111,7 +109,7 @@ public final class CursorToBulkCursorAdaptor extends BulkCursorNative implements
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:00.590 -0400", hash_original_method = "4ECB0E8EDFF03AFDCED1B443F780B12E", hash_generated_method = "85E7DCBCADC4298D753FBCDA82A80EE7")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:46.009 -0400", hash_original_method = "4ECB0E8EDFF03AFDCED1B443F780B12E", hash_generated_method = "6E37611918186EFD94AEBEE0A37D3368")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     @Override
     public CursorWindow getWindow(int startPos) {
@@ -119,7 +117,7 @@ public final class CursorToBulkCursorAdaptor extends BulkCursorNative implements
         {
             throwIfCursorIsClosed();
             {
-                boolean var04D558ECAB1E17991563926E69879491_517211760 = (!mCursor.moveToPosition(startPos));
+                boolean var04D558ECAB1E17991563926E69879491_290514987 = (!mCursor.moveToPosition(startPos));
                 {
                     closeFilledWindowLocked();
                 } //End block
@@ -137,7 +135,7 @@ public final class CursorToBulkCursorAdaptor extends BulkCursorNative implements
                     mCursor.fillWindow(startPos, window);
                 } //End block
                 {
-                    boolean varC97F342FBEDA56BA63E8F208810D5BA4_47882419 = (startPos < window.getStartPosition()
+                    boolean varC97F342FBEDA56BA63E8F208810D5BA4_1369253371 = (startPos < window.getStartPosition()
                         || startPos >= window.getStartPosition() + window.getNumRows());
                     {
                         window.clear();
@@ -155,7 +153,7 @@ public final class CursorToBulkCursorAdaptor extends BulkCursorNative implements
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:00.591 -0400", hash_original_method = "4E23514B564E80A833367A4C9E43D15C", hash_generated_method = "41B190427C30D120FF4C1C455E6AB4AD")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:46.018 -0400", hash_original_method = "4E23514B564E80A833367A4C9E43D15C", hash_generated_method = "524BD24B682D30851391BA5E5F5C5939")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     @Override
     public void onMove(int position) {
@@ -173,13 +171,13 @@ public final class CursorToBulkCursorAdaptor extends BulkCursorNative implements
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:00.591 -0400", hash_original_method = "DC4D033FD1BAE66931C8A4D6EEEA211D", hash_generated_method = "06C4269F07E8863A969E8C7AAE402714")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:46.019 -0400", hash_original_method = "DC4D033FD1BAE66931C8A4D6EEEA211D", hash_generated_method = "1178CFE323DDEC9BBD58B3FA14F60B48")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     @Override
     public int count() {
         {
             throwIfCursorIsClosed();
-            int varA0B4CA491E47E321D82FB34DD7E77E5A_1577330787 = (mCursor.getCount());
+            int varA0B4CA491E47E321D82FB34DD7E77E5A_1009321604 = (mCursor.getCount());
         } //End block
         return dsTaint.getTaintInt();
         // ---------- Original Method ----------
@@ -190,13 +188,13 @@ public final class CursorToBulkCursorAdaptor extends BulkCursorNative implements
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:00.591 -0400", hash_original_method = "51920E427207C9DB40FE51CEF3CF1E5F", hash_generated_method = "580C1A0FA10060269658F6A1F1D40D0D")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:46.021 -0400", hash_original_method = "51920E427207C9DB40FE51CEF3CF1E5F", hash_generated_method = "B6CA023DD652EBE64649E61F87A1851F")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     @Override
     public String[] getColumnNames() {
         {
             throwIfCursorIsClosed();
-            String[] varC7830ACD2DB98FB85D5A2F4CC0B549B0_1093138181 = (mCursor.getColumnNames());
+            String[] varC7830ACD2DB98FB85D5A2F4CC0B549B0_1417672312 = (mCursor.getColumnNames());
         } //End block
         String[] retVal = new String[1];
         retVal[0] = dsTaint.getTaintString();
@@ -209,8 +207,8 @@ public final class CursorToBulkCursorAdaptor extends BulkCursorNative implements
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:00.591 -0400", hash_original_method = "E8CA6D89EFD51007B93658764C0D15A1", hash_generated_method = "71BC80BA06745462F3013139FB3FE960")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:46.024 -0400", hash_original_method = "E8CA6D89EFD51007B93658764C0D15A1", hash_generated_method = "4301E443B96F110B0EDD6EDBEB212BEE")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     @Override
     public void deactivate() {
         {
@@ -231,8 +229,8 @@ public final class CursorToBulkCursorAdaptor extends BulkCursorNative implements
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:00.591 -0400", hash_original_method = "AC20EBAE7250AB68ABF5848E6A31630D", hash_generated_method = "E603BA2BA469E1013430925F31251133")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:46.025 -0400", hash_original_method = "AC20EBAE7250AB68ABF5848E6A31630D", hash_generated_method = "66209B28B9295F964E905A06C3A39A02")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     @Override
     public void close() {
         {
@@ -245,7 +243,7 @@ public final class CursorToBulkCursorAdaptor extends BulkCursorNative implements
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:00.592 -0400", hash_original_method = "C42BE5036A3BA050EE736974AEACDE99", hash_generated_method = "0F65859A1D1F3124602C914F50BF9A19")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:46.026 -0400", hash_original_method = "C42BE5036A3BA050EE736974AEACDE99", hash_generated_method = "42F0983F7C0F6B315050745F04134E3D")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     @Override
     public int requery(IContentObserver observer) {
@@ -256,7 +254,7 @@ public final class CursorToBulkCursorAdaptor extends BulkCursorNative implements
             try 
             {
                 {
-                    boolean var9F860FB704DE0324D019EBF4330135F9_1151212798 = (!mCursor.requery());
+                    boolean var9F860FB704DE0324D019EBF4330135F9_1476343312 = (!mCursor.requery());
                 } //End collapsed parenthetic
             } //End block
             catch (IllegalStateException e)
@@ -265,11 +263,11 @@ public final class CursorToBulkCursorAdaptor extends BulkCursorNative implements
                 leakProgram = new IllegalStateException(
                         mProviderName + " Requery misuse db, mCursor isClosed:" +
                         mCursor.isClosed(), e);
-                throw leakProgram;
+                if (DroidSafeAndroidRuntime.control) throw leakProgram;
             } //End block
             unregisterObserverProxyLocked();
             createAndRegisterObserverProxyLocked(observer);
-            int varA0B4CA491E47E321D82FB34DD7E77E5A_1944407150 = (mCursor.getCount());
+            int varA0B4CA491E47E321D82FB34DD7E77E5A_917036360 = (mCursor.getCount());
         } //End block
         return dsTaint.getTaintInt();
         // ---------- Original Method ----------
@@ -293,13 +291,13 @@ public final class CursorToBulkCursorAdaptor extends BulkCursorNative implements
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:00.592 -0400", hash_original_method = "4EDF40CD28E1B076C101ED75649491F5", hash_generated_method = "CD3375FCFB316064C7A176D4BEF5F693")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:46.027 -0400", hash_original_method = "4EDF40CD28E1B076C101ED75649491F5", hash_generated_method = "36822924F350867D062E6DB22C02EDF8")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     @Override
     public boolean getWantsAllOnMoveCalls() {
         {
             throwIfCursorIsClosed();
-            boolean varA4ACC3F53F22F27EF64482D87EFB3327_2033699668 = (mCursor.getWantsAllOnMoveCalls());
+            boolean varA4ACC3F53F22F27EF64482D87EFB3327_1743557819 = (mCursor.getWantsAllOnMoveCalls());
         } //End block
         return dsTaint.getTaintBoolean();
         // ---------- Original Method ----------
@@ -310,13 +308,12 @@ public final class CursorToBulkCursorAdaptor extends BulkCursorNative implements
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:00.592 -0400", hash_original_method = "1F751777DEFC6D435260F5703D7849F2", hash_generated_method = "836DE81395A0E3886A1269C6A5F00114")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:46.029 -0400", hash_original_method = "1F751777DEFC6D435260F5703D7849F2", hash_generated_method = "677E6029A8E907833680B44D7A816DEA")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     private void createAndRegisterObserverProxyLocked(IContentObserver observer) {
         dsTaint.addTaint(observer.dsTaint);
-        if (DroidSafeAndroidRuntime.control)
         {
-            throw new IllegalStateException("an observer is already registered");
+            if (DroidSafeAndroidRuntime.control) throw new IllegalStateException("an observer is already registered");
         } //End block
         mObserver = new ContentObserverProxy(observer, this);
         mCursor.registerContentObserver(mObserver);
@@ -329,8 +326,8 @@ public final class CursorToBulkCursorAdaptor extends BulkCursorNative implements
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:00.592 -0400", hash_original_method = "8431B5C8F0968484F229748CA95CA0A8", hash_generated_method = "002C7903C9B809A7064A64068962962D")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:46.030 -0400", hash_original_method = "8431B5C8F0968484F229748CA95CA0A8", hash_generated_method = "5059298AAFCE2E73868DD161EF14E61F")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     private void unregisterObserverProxyLocked() {
         {
             mCursor.unregisterContentObserver(mObserver);
@@ -346,13 +343,13 @@ public final class CursorToBulkCursorAdaptor extends BulkCursorNative implements
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:00.593 -0400", hash_original_method = "D70B44F91871C59AEA1A14E0E16BCFE5", hash_generated_method = "1642C4A3460C5745824270CDB9220E7F")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:46.030 -0400", hash_original_method = "D70B44F91871C59AEA1A14E0E16BCFE5", hash_generated_method = "5E5D707BE2E48067BA7FF929C8FD3F56")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     @Override
     public Bundle getExtras() {
         {
             throwIfCursorIsClosed();
-            Bundle var7916F32BF738E1F7CD36D940EA225A08_701992004 = (mCursor.getExtras());
+            Bundle var7916F32BF738E1F7CD36D940EA225A08_942764347 = (mCursor.getExtras());
         } //End block
         return (Bundle)dsTaint.getTaint();
         // ---------- Original Method ----------
@@ -363,14 +360,14 @@ public final class CursorToBulkCursorAdaptor extends BulkCursorNative implements
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:00.593 -0400", hash_original_method = "7B57D96B3C93268C95F4ADF84D5A7417", hash_generated_method = "9BF4BBCCBF4B069ABE0259097F55DBC8")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:46.030 -0400", hash_original_method = "7B57D96B3C93268C95F4ADF84D5A7417", hash_generated_method = "3B63DEDED53484DA4637E288107BA0A4")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     @Override
     public Bundle respond(Bundle extras) {
         dsTaint.addTaint(extras.dsTaint);
         {
             throwIfCursorIsClosed();
-            Bundle var32A09397F8F15377A87480A62043F9AB_2053541493 = (mCursor.respond(extras));
+            Bundle var32A09397F8F15377A87480A62043F9AB_551599293 = (mCursor.respond(extras));
         } //End block
         return (Bundle)dsTaint.getTaint();
         // ---------- Original Method ----------
@@ -384,7 +381,7 @@ public final class CursorToBulkCursorAdaptor extends BulkCursorNative implements
     private static final class ContentObserverProxy extends ContentObserver {
         protected IContentObserver mRemote;
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:00.593 -0400", hash_original_method = "319996A1B242CEE2610029D3C2CFA436", hash_generated_method = "E5D21F9F6A007F1C1D79B2447D32D4C6")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:46.031 -0400", hash_original_method = "319996A1B242CEE2610029D3C2CFA436", hash_generated_method = "0FE28152A7A5E06B06D9D6E6B4543FD8")
         //DSFIXME:  CODE0002: Requires DSC value to be set
         public ContentObserverProxy(IContentObserver remoteObserver, DeathRecipient recipient) {
             super(null);
@@ -405,18 +402,18 @@ public final class CursorToBulkCursorAdaptor extends BulkCursorNative implements
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:00.593 -0400", hash_original_method = "96222C4BC704270291C489EC7FF2AF65", hash_generated_method = "895AAC279A939623D93387BA1C070ED7")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:46.031 -0400", hash_original_method = "96222C4BC704270291C489EC7FF2AF65", hash_generated_method = "0F3B2966612221DD7CCFFEFAE0525F2F")
         //DSFIXME:  CODE0002: Requires DSC value to be set
         public boolean unlinkToDeath(DeathRecipient recipient) {
             dsTaint.addTaint(recipient.dsTaint);
-            boolean var9B7D13AFC7CC219CF51B2ED7350C5633_1637609225 = (mRemote.asBinder().unlinkToDeath(recipient, 0));
+            boolean var9B7D13AFC7CC219CF51B2ED7350C5633_965490589 = (mRemote.asBinder().unlinkToDeath(recipient, 0));
             return dsTaint.getTaintBoolean();
             // ---------- Original Method ----------
             //return mRemote.asBinder().unlinkToDeath(recipient, 0);
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:00.593 -0400", hash_original_method = "A5B2D8696143266ED24B145CF029F206", hash_generated_method = "04AF9B9E52102CC0A16782543D266E43")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:46.031 -0400", hash_original_method = "A5B2D8696143266ED24B145CF029F206", hash_generated_method = "F715171AD0DE912B03270516F086F02E")
         @DSModeled(DSC.SAFE)
         @Override
         public boolean deliverSelfNotifications() {
@@ -426,8 +423,8 @@ public final class CursorToBulkCursorAdaptor extends BulkCursorNative implements
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:00.594 -0400", hash_original_method = "288C053C9E4DFF84CBC0887DEC7513A2", hash_generated_method = "70F26799975000E596746C61F269D741")
-        @DSModeled(DSC.SAFE)
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:46.031 -0400", hash_original_method = "288C053C9E4DFF84CBC0887DEC7513A2", hash_generated_method = "854F507851EDCE08C9D662B8D4C05008")
+        //DSFIXME:  CODE0002: Requires DSC value to be set
         @Override
         public void onChange(boolean selfChange) {
             //DSFIXME:  CODE0009: Possible callback target function detected
@@ -450,6 +447,6 @@ public final class CursorToBulkCursorAdaptor extends BulkCursorNative implements
 
 
     
+    private static final String TAG = "Cursor";
 }
-
 

@@ -9,16 +9,15 @@ import droidsafe.runtime.*;
 import java.util.Iterator;
 
 public class InvalidMarkException extends IllegalStateException {
-    private static long serialVersionUID = 1698329710438510774L;
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 12:51:07.186 -0400", hash_original_method = "B1EE027FE89EEC127536AB7DEF53C391", hash_generated_method = "EA0FC36E27220A16036BDCC6F864B120")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:28.774 -0400", hash_original_method = "B1EE027FE89EEC127536AB7DEF53C391", hash_generated_method = "02636A3D0215C600F7C165854E4FB0DC")
     @DSModeled(DSC.SAFE)
     public InvalidMarkException() {
         // ---------- Original Method ----------
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 12:51:07.188 -0400", hash_original_method = "29531E800CAD0F117D34A6102B8A5CF9", hash_generated_method = "381186AB743B8FA12CE299882920A1E7")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:28.774 -0400", hash_original_method = "29531E800CAD0F117D34A6102B8A5CF9", hash_generated_method = "C187029EC8FE50A87A225F109AFF99A8")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public InvalidMarkException(String detailMessage) {
         super(detailMessage);
@@ -27,6 +26,6 @@ public class InvalidMarkException extends IllegalStateException {
     }
 
     
+    private static final long serialVersionUID = 1698329710438510774L;
 }
-
 

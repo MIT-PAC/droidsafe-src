@@ -3,10 +3,10 @@ package android.provider;
 // Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
+import droidsafe.runtime.*;
 
-// import Iterator to deal with enhanced for loop translation
+// needed for enhanced for control translations
 import java.util.Iterator;
-
 import android.annotation.SdkConstant;
 import android.annotation.SdkConstant.SdkConstantType;
 import android.content.ContentResolver;
@@ -27,11 +27,8 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public final class Telephony {
-    private static final String TAG = "Telephony";
-    private static final boolean DEBUG = true;
-    private static final boolean LOCAL_LOGV = false;
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:03.342 -0400", hash_original_method = "2CAFC6EF3CCF11FE20893B46D3EAF4A2", hash_generated_method = "3D9F25CB2CDF264F632EE8D12E84D55C")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:55.081 -0400", hash_original_method = "2CAFC6EF3CCF11FE20893B46D3EAF4A2", hash_generated_method = "A6723A410EBE39DDFE0725B9413E935E")
     @DSModeled(DSC.SAFE)
     public Telephony() {
         // ---------- Original Method ----------
@@ -39,26 +36,26 @@ public final class Telephony {
 
     
     public static final class Sms implements BaseColumns, TextBasedSmsColumns {
-        public static final Uri CONTENT_URI =
-            Uri.parse("content://sms");
-        public static final String DEFAULT_SORT_ORDER = "date DESC";
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:03.342 -0400", hash_original_method = "91491FADEEC62466B0F9FF75744CEEB2", hash_generated_method = "4116C537EA1E1C0A55E8CE52971B78AD")
-        public static final Cursor query(ContentResolver cr, String[] projection) {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:55.082 -0400", hash_original_method = "6829BA2F4FD673BBA0D9AF4706DFB2B5", hash_generated_method = "6829BA2F4FD673BBA0D9AF4706DFB2B5")
+                public Sms ()
+        {
+        }
+
+
+                public static final Cursor query(ContentResolver cr, String[] projection) {
             return cr.query(CONTENT_URI, projection, null, null, DEFAULT_SORT_ORDER);
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:03.343 -0400", hash_original_method = "B0F13298A0CBF5A4AA63780A1FEDFE05", hash_generated_method = "FB43394C3A2ED7C0643EFD2496CAF1D5")
-        public static final Cursor query(ContentResolver cr, String[] projection,
+                public static final Cursor query(ContentResolver cr, String[] projection,
                 String where, String orderBy) {
             return cr.query(CONTENT_URI, projection, where,
                                          null, orderBy == null ? DEFAULT_SORT_ORDER : orderBy);
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:03.343 -0400", hash_original_method = "90E3D05E7FA8C4A5A0CC776C9A15B4D4", hash_generated_method = "638BC91476844A0336C657D1247F41AF")
-        public static Uri addMessageToUri(ContentResolver resolver,
+                public static Uri addMessageToUri(ContentResolver resolver,
                 Uri uri, String address, String body, String subject,
                 Long date, boolean read, boolean deliveryReport) {
             return addMessageToUri(resolver, uri, address, body, subject,
@@ -66,8 +63,7 @@ public final class Telephony {
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:03.343 -0400", hash_original_method = "9A391F653EB77CB550BC26AB7CC01602", hash_generated_method = "A608344FBF0D790676D8628D631977D9")
-        public static Uri addMessageToUri(ContentResolver resolver,
+                public static Uri addMessageToUri(ContentResolver resolver,
                 Uri uri, String address, String body, String subject,
                 Long date, boolean read, boolean deliveryReport, long threadId) {
             ContentValues values = new ContentValues(7);
@@ -88,8 +84,7 @@ public final class Telephony {
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:03.343 -0400", hash_original_method = "0C99D40A04CE0C54D0586AC5BB676809", hash_generated_method = "FABA5607187BC6A04AE4466752028609")
-        public static boolean moveMessageToFolder(Context context,
+                public static boolean moveMessageToFolder(Context context,
                 Uri uri, int folder, int error) {
             if (uri == null) {
                 return false;
@@ -124,8 +119,7 @@ public final class Telephony {
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:03.343 -0400", hash_original_method = "1CCE7318461ADE9CB53CE2EA893C8873", hash_generated_method = "90A482B97B590AF1BE73CDF7AA7E340D")
-        public static boolean isOutgoingFolder(int messageType) {
+                public static boolean isOutgoingFolder(int messageType) {
             return  (messageType == MESSAGE_TYPE_FAILED)
                     || (messageType == MESSAGE_TYPE_OUTBOX)
                     || (messageType == MESSAGE_TYPE_SENT)
@@ -134,12 +128,14 @@ public final class Telephony {
 
         
         public static final class Inbox implements BaseColumns, TextBasedSmsColumns {
-            public static final Uri CONTENT_URI =
-                Uri.parse("content://sms/inbox");
-            public static final String DEFAULT_SORT_ORDER = "date DESC";
             
-            @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:03.343 -0400", hash_original_method = "24A367F278E951BFB0108340D732C0BD", hash_generated_method = "91C312071CD24E43C61BF1F37B0EC04E")
-            public static Uri addMessage(ContentResolver resolver,
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:55.083 -0400", hash_original_method = "20ABA847644C6179AB5A3586E0076328", hash_generated_method = "20ABA847644C6179AB5A3586E0076328")
+                        public Inbox ()
+            {
+            }
+
+
+                        public static Uri addMessage(ContentResolver resolver,
                     String address, String body, String subject, Long date,
                     boolean read) {
                 return addMessageToUri(resolver, CONTENT_URI, address, body,
@@ -147,42 +143,51 @@ public final class Telephony {
             }
 
             
+            public static final Uri CONTENT_URI =
+                Uri.parse("content://sms/inbox");
+            public static final String DEFAULT_SORT_ORDER = "date DESC";
         }
 
 
         
         public static final class Sent implements BaseColumns, TextBasedSmsColumns {
-            public static final Uri CONTENT_URI =
-                    Uri.parse("content://sms/sent");
-            public static final String DEFAULT_SORT_ORDER = "date DESC";
             
-            @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:03.343 -0400", hash_original_method = "B05C371FE3D3E8ED1D5DB9B0F1B6DE4B", hash_generated_method = "4473028CCD135DEA7DEAAF783BCB6AF9")
-            public static Uri addMessage(ContentResolver resolver,
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:55.083 -0400", hash_original_method = "41FD6FEE7053C56AB006CC2648CC328A", hash_generated_method = "41FD6FEE7053C56AB006CC2648CC328A")
+                        public Sent ()
+            {
+            }
+
+
+                        public static Uri addMessage(ContentResolver resolver,
                     String address, String body, String subject, Long date) {
                 return addMessageToUri(resolver, CONTENT_URI, address, body,
                         subject, date, true, false);
             }
 
             
+            public static final Uri CONTENT_URI =
+                    Uri.parse("content://sms/sent");
+            public static final String DEFAULT_SORT_ORDER = "date DESC";
         }
 
 
         
         public static final class Draft implements BaseColumns, TextBasedSmsColumns {
-            public static final Uri CONTENT_URI =
-                    Uri.parse("content://sms/draft");
-            public static final String DEFAULT_SORT_ORDER = "date DESC";
             
-            @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:03.343 -0400", hash_original_method = "B05C371FE3D3E8ED1D5DB9B0F1B6DE4B", hash_generated_method = "4473028CCD135DEA7DEAAF783BCB6AF9")
-            public static Uri addMessage(ContentResolver resolver,
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:55.083 -0400", hash_original_method = "5D4B4431A7D4E124E70BFCFABE5A0431", hash_generated_method = "5D4B4431A7D4E124E70BFCFABE5A0431")
+                        public Draft ()
+            {
+            }
+
+
+                        public static Uri addMessage(ContentResolver resolver,
                     String address, String body, String subject, Long date) {
                 return addMessageToUri(resolver, CONTENT_URI, address, body,
                         subject, date, true, false);
             }
 
             
-            @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:03.344 -0400", hash_original_method = "B78F91348B547B443EE01569E11C3D93", hash_generated_method = "9B48A3A4C5FF372CC1729573D67368C2")
-            public static boolean saveMessage(ContentResolver resolver,
+                        public static boolean saveMessage(ContentResolver resolver,
                     Uri uri, String body) {
                 ContentValues values = new ContentValues(2);
                 values.put(BODY, body);
@@ -191,17 +196,22 @@ public final class Telephony {
             }
 
             
+            public static final Uri CONTENT_URI =
+                    Uri.parse("content://sms/draft");
+            public static final String DEFAULT_SORT_ORDER = "date DESC";
         }
 
 
         
         public static final class Outbox implements BaseColumns, TextBasedSmsColumns {
-            public static final Uri CONTENT_URI =
-                Uri.parse("content://sms/outbox");
-            public static final String DEFAULT_SORT_ORDER = "date DESC";
             
-            @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:03.344 -0400", hash_original_method = "F8B592BECD63B81B7040E19C27BB214C", hash_generated_method = "FA02E7F418AA98558E4D9BFA87F69268")
-            public static Uri addMessage(ContentResolver resolver,
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:55.083 -0400", hash_original_method = "6421BC7B8652A2EE064B19667FC00891", hash_generated_method = "6421BC7B8652A2EE064B19667FC00891")
+                        public Outbox ()
+            {
+            }
+
+
+                        public static Uri addMessage(ContentResolver resolver,
                     String address, String body, String subject, Long date,
                     boolean deliveryReport, long threadId) {
                 return addMessageToUri(resolver, CONTENT_URI, address, body,
@@ -209,50 +219,39 @@ public final class Telephony {
             }
 
             
+            public static final Uri CONTENT_URI =
+                Uri.parse("content://sms/outbox");
+            public static final String DEFAULT_SORT_ORDER = "date DESC";
         }
 
 
         
         public static final class Conversations implements BaseColumns, TextBasedSmsColumns {
+            
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:55.084 -0400", hash_original_method = "350981951DFFFA5BCCA87B49119500E7", hash_generated_method = "350981951DFFFA5BCCA87B49119500E7")
+                        public Conversations ()
+            {
+            }
+
+
             public static final Uri CONTENT_URI =
                 Uri.parse("content://sms/conversations");
             public static final String DEFAULT_SORT_ORDER = "date DESC";
             public static final String SNIPPET = "snippet";
             public static final String MESSAGE_COUNT = "msg_count";
-            
         }
 
 
         
         public static final class Intents {
-            public static final int RESULT_SMS_HANDLED = 1;
-            public static final int RESULT_SMS_GENERIC_ERROR = 2;
-            public static final int RESULT_SMS_OUT_OF_MEMORY = 3;
-            public static final int RESULT_SMS_UNSUPPORTED = 4;
-            @SdkConstant(SdkConstantType.BROADCAST_INTENT_ACTION)
-            public static final String SMS_RECEIVED_ACTION =
-                    "android.provider.Telephony.SMS_RECEIVED";
-            @SdkConstant(SdkConstantType.BROADCAST_INTENT_ACTION)
-            public static final String DATA_SMS_RECEIVED_ACTION =
-                    "android.intent.action.DATA_SMS_RECEIVED";
-            @SdkConstant(SdkConstantType.BROADCAST_INTENT_ACTION)
-            public static final String WAP_PUSH_RECEIVED_ACTION =
-                    "android.provider.Telephony.WAP_PUSH_RECEIVED";
-            @SdkConstant(SdkConstantType.BROADCAST_INTENT_ACTION)
-            public static final String SMS_CB_RECEIVED_ACTION =
-                    "android.provider.Telephony.SMS_CB_RECEIVED";
-            @SdkConstant(SdkConstantType.BROADCAST_INTENT_ACTION)
-            public static final String SMS_EMERGENCY_CB_RECEIVED_ACTION =
-                    "android.provider.Telephony.SMS_EMERGENCY_CB_RECEIVED";
-            @SdkConstant(SdkConstantType.BROADCAST_INTENT_ACTION)
-            public static final String SIM_FULL_ACTION =
-                    "android.provider.Telephony.SIM_FULL";
-            @SdkConstant(SdkConstantType.BROADCAST_INTENT_ACTION)
-            public static final String SMS_REJECTED_ACTION =
-                "android.provider.Telephony.SMS_REJECTED";
             
-            @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:03.344 -0400", hash_original_method = "30B8C5FF17840C780307DC9CA4EA96D5", hash_generated_method = "B4D9EFA98711619F8882196BFB843AEA")
-            public static SmsMessage[] getMessagesFromIntent(
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:55.084 -0400", hash_original_method = "FD95D140BFADEB4CFA03E1D7AD3D1B16", hash_generated_method = "FD95D140BFADEB4CFA03E1D7AD3D1B16")
+                        public Intents ()
+            {
+            }
+
+
+                        public static SmsMessage[] getMessagesFromIntent(
                     Intent intent) {
                 Object[] messages = (Object[]) intent.getSerializableExtra("pdus");
                 String format = intent.getStringExtra("format");
@@ -271,43 +270,52 @@ public final class Telephony {
             }
 
             
+            public static final int RESULT_SMS_HANDLED = 1;
+            public static final int RESULT_SMS_GENERIC_ERROR = 2;
+            public static final int RESULT_SMS_OUT_OF_MEMORY = 3;
+            public static final int RESULT_SMS_UNSUPPORTED = 4;
+            @SdkConstant(SdkConstantType.BROADCAST_INTENT_ACTION) public static final String SMS_RECEIVED_ACTION =
+                    "android.provider.Telephony.SMS_RECEIVED";
+            @SdkConstant(SdkConstantType.BROADCAST_INTENT_ACTION) public static final String DATA_SMS_RECEIVED_ACTION =
+                    "android.intent.action.DATA_SMS_RECEIVED";
+            @SdkConstant(SdkConstantType.BROADCAST_INTENT_ACTION) public static final String WAP_PUSH_RECEIVED_ACTION =
+                    "android.provider.Telephony.WAP_PUSH_RECEIVED";
+            @SdkConstant(SdkConstantType.BROADCAST_INTENT_ACTION) public static final String SMS_CB_RECEIVED_ACTION =
+                    "android.provider.Telephony.SMS_CB_RECEIVED";
+            @SdkConstant(SdkConstantType.BROADCAST_INTENT_ACTION) public static final String SMS_EMERGENCY_CB_RECEIVED_ACTION =
+                    "android.provider.Telephony.SMS_EMERGENCY_CB_RECEIVED";
+            @SdkConstant(SdkConstantType.BROADCAST_INTENT_ACTION) public static final String SIM_FULL_ACTION =
+                    "android.provider.Telephony.SIM_FULL";
+            @SdkConstant(SdkConstantType.BROADCAST_INTENT_ACTION) public static final String SMS_REJECTED_ACTION =
+                "android.provider.Telephony.SMS_REJECTED";
         }
 
 
         
+        public static final Uri CONTENT_URI =
+            Uri.parse("content://sms");
+        public static final String DEFAULT_SORT_ORDER = "date DESC";
     }
 
 
     
     public static final class Threads implements ThreadsColumns {
-        private static final String[] ID_PROJECTION = { BaseColumns._ID };
-        private static final String STANDARD_ENCODING = "UTF-8";
-        private static final Uri THREAD_ID_CONTENT_URI = Uri.parse(
-                "content://mms-sms/threadID");
-        public static final Uri CONTENT_URI = Uri.withAppendedPath(
-                MmsSms.CONTENT_URI, "conversations");
-        public static final Uri OBSOLETE_THREADS_URI = Uri.withAppendedPath(
-                CONTENT_URI, "obsolete");
-        public static final int COMMON_THREAD    = 0;
-        public static final int BROADCAST_THREAD = 1;
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:03.344 -0400", hash_original_method = "45D6965ABD617E611598473C57FD4F7C", hash_generated_method = "89126905C5659C91E5C48EF59D69F365")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:55.084 -0400", hash_original_method = "45D6965ABD617E611598473C57FD4F7C", hash_generated_method = "082B4F6FF5F0018201C341C776361FB0")
         @DSModeled(DSC.SAFE)
         private Threads() {
             // ---------- Original Method ----------
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:03.344 -0400", hash_original_method = "D36339876722268ADD72D9390788DF4A", hash_generated_method = "E3AC7FDC3914C3AABCD9217339F48988")
-        public static long getOrCreateThreadId(Context context, String recipient) {
+                public static long getOrCreateThreadId(Context context, String recipient) {
             Set<String> recipients = new HashSet<String>();
             recipients.add(recipient);
             return getOrCreateThreadId(context, recipients);
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:03.344 -0400", hash_original_method = "D4D7C19F5599D44D3DC4D465F273833D", hash_generated_method = "9C4C44EB0D746CDF8C4A15CC8F790355")
-        public static long getOrCreateThreadId(
+                public static long getOrCreateThreadId(
                 Context context, Set<String> recipients) {
             Uri.Builder uriBuilder = THREAD_ID_CONTENT_URI.buildUpon();
             for (String recipient : recipients) {
@@ -335,31 +343,35 @@ public final class Telephony {
         }
 
         
+        private static final String[] ID_PROJECTION = { BaseColumns._ID };
+        private static final String STANDARD_ENCODING = "UTF-8";
+        private static final Uri THREAD_ID_CONTENT_URI = Uri.parse(
+                "content://mms-sms/threadID");
+        public static final Uri CONTENT_URI = Uri.withAppendedPath(
+                MmsSms.CONTENT_URI, "conversations");
+        public static final Uri OBSOLETE_THREADS_URI = Uri.withAppendedPath(
+                CONTENT_URI, "obsolete");
+        public static final int COMMON_THREAD    = 0;
+        public static final int BROADCAST_THREAD = 1;
     }
 
 
     
     public static final class Mms implements BaseMmsColumns {
-        public static final Uri CONTENT_URI = Uri.parse("content://mms");
-        public static final Uri REPORT_REQUEST_URI = Uri.withAppendedPath(
-                                            CONTENT_URI, "report-request");
-        public static final Uri REPORT_STATUS_URI = Uri.withAppendedPath(
-                                            CONTENT_URI, "report-status");
-        public static final String DEFAULT_SORT_ORDER = "date DESC";
-        public static final Pattern NAME_ADDR_EMAIL_PATTERN =
-                Pattern.compile("\\s*(\"[^\"]*\"|[^<>\"]+)\\s*<([^<>]+)>\\s*");
-        public static final Pattern QUOTED_STRING_PATTERN =
-                Pattern.compile("\\s*\"([^\"]*)\"\\s*");
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:03.344 -0400", hash_original_method = "91491FADEEC62466B0F9FF75744CEEB2", hash_generated_method = "4116C537EA1E1C0A55E8CE52971B78AD")
-        public static final Cursor query(
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:55.085 -0400", hash_original_method = "9C1DE143FF3A8E7B94174DD56D606D53", hash_generated_method = "9C1DE143FF3A8E7B94174DD56D606D53")
+                public Mms ()
+        {
+        }
+
+
+                public static final Cursor query(
                 ContentResolver cr, String[] projection) {
             return cr.query(CONTENT_URI, projection, null, null, DEFAULT_SORT_ORDER);
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:03.345 -0400", hash_original_method = "B0F13298A0CBF5A4AA63780A1FEDFE05", hash_generated_method = "FB43394C3A2ED7C0643EFD2496CAF1D5")
-        public static final Cursor query(
+                public static final Cursor query(
                 ContentResolver cr, String[] projection,
                 String where, String orderBy) {
             return cr.query(CONTENT_URI, projection,
@@ -367,8 +379,7 @@ public final class Telephony {
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:03.345 -0400", hash_original_method = "6DB13AD38B4DC3E9CBC9DA281EEB426F", hash_generated_method = "4652DF285AB1742B5F40F80951719A49")
-        public static final String getMessageBoxName(int msgBox) {
+                public static final String getMessageBoxName(int msgBox) {
             switch (msgBox) {
                 case MESSAGE_BOX_ALL:
                     return "all";
@@ -386,8 +397,7 @@ public final class Telephony {
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:03.345 -0400", hash_original_method = "CCA57381283D62D095D139A9A920A036", hash_generated_method = "8033A4802D183ED4B77A615B7A76D850")
-        public static String extractAddrSpec(String address) {
+                public static String extractAddrSpec(String address) {
             Matcher match = NAME_ADDR_EMAIL_PATTERN.matcher(address);
             if (match.matches()) {
                 return match.group(2);
@@ -396,8 +406,7 @@ public final class Telephony {
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:03.345 -0400", hash_original_method = "E723E071866ECCDFA5A86BCF8A6012B5", hash_generated_method = "C38F869CE1A4085986CDE3EF2701AD8C")
-        public static boolean isEmailAddress(String address) {
+                public static boolean isEmailAddress(String address) {
             if (TextUtils.isEmpty(address)) {
                 return false;
             }
@@ -407,8 +416,7 @@ public final class Telephony {
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:03.345 -0400", hash_original_method = "48737B27A1984E395C1B06BCA471AE58", hash_generated_method = "FAF14C1DCEFEFDE472765199E90BD518")
-        public static boolean isPhoneNumber(String number) {
+                public static boolean isPhoneNumber(String number) {
             if (TextUtils.isEmpty(number)) {
                 return false;
             }
@@ -418,53 +426,90 @@ public final class Telephony {
 
         
         public static final class Inbox implements BaseMmsColumns {
+            
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:55.086 -0400", hash_original_method = "20ABA847644C6179AB5A3586E0076328", hash_generated_method = "20ABA847644C6179AB5A3586E0076328")
+                        public Inbox ()
+            {
+            }
+
+
             public static final Uri
                     CONTENT_URI = Uri.parse("content://mms/inbox");
             public static final String DEFAULT_SORT_ORDER = "date DESC";
-            
         }
 
 
         
         public static final class Sent implements BaseMmsColumns {
+            
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:55.093 -0400", hash_original_method = "41FD6FEE7053C56AB006CC2648CC328A", hash_generated_method = "41FD6FEE7053C56AB006CC2648CC328A")
+                        public Sent ()
+            {
+            }
+
+
             public static final Uri
                     CONTENT_URI = Uri.parse("content://mms/sent");
             public static final String DEFAULT_SORT_ORDER = "date DESC";
-            
         }
 
 
         
         public static final class Draft implements BaseMmsColumns {
+            
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:55.094 -0400", hash_original_method = "5D4B4431A7D4E124E70BFCFABE5A0431", hash_generated_method = "5D4B4431A7D4E124E70BFCFABE5A0431")
+                        public Draft ()
+            {
+            }
+
+
             public static final Uri
                     CONTENT_URI = Uri.parse("content://mms/drafts");
             public static final String DEFAULT_SORT_ORDER = "date DESC";
-            
         }
 
 
         
         public static final class Outbox implements BaseMmsColumns {
+            
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:55.094 -0400", hash_original_method = "6421BC7B8652A2EE064B19667FC00891", hash_generated_method = "6421BC7B8652A2EE064B19667FC00891")
+                        public Outbox ()
+            {
+            }
+
+
             public static final Uri
                     CONTENT_URI = Uri.parse("content://mms/outbox");
             public static final String DEFAULT_SORT_ORDER = "date DESC";
-            
         }
 
 
         
         public static final class Addr implements BaseColumns {
+            
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:55.094 -0400", hash_original_method = "C723C7FC256368D165BE4A59AD483152", hash_generated_method = "C723C7FC256368D165BE4A59AD483152")
+                        public Addr ()
+            {
+            }
+
+
             public static final String MSG_ID = "msg_id";
             public static final String CONTACT_ID = "contact_id";
             public static final String ADDRESS = "address";
             public static final String TYPE = "type";
             public static final String CHARSET = "charset";
-            
         }
 
 
         
         public static final class Part implements BaseColumns {
+            
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:55.094 -0400", hash_original_method = "5A016F84BF5EC8BA99ACC9805438FA5D", hash_generated_method = "5A016F84BF5EC8BA99ACC9805438FA5D")
+                        public Part ()
+            {
+            }
+
+
             public static final String MSG_ID = "mid";
             public static final String SEQ = "seq";
             public static final String CONTENT_TYPE = "ct";
@@ -478,21 +523,34 @@ public final class Telephony {
             public static final String CT_TYPE = "ctt_t";
             public static final String _DATA = "_data";
             public static final String TEXT = "text";
-            
         }
 
 
         
         public static final class Rate {
+            
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:55.094 -0400", hash_original_method = "747921686999CBC86B7FC4C313931235", hash_generated_method = "747921686999CBC86B7FC4C313931235")
+                        public Rate ()
+            {
+            }
+
+
             public static final Uri CONTENT_URI = Uri.withAppendedPath(
                     Mms.CONTENT_URI, "rate");
             public static final String SENT_TIME = "sent_time";
-            
         }
 
 
         
         public static final class Intents {
+            
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:55.094 -0400", hash_original_method = "23EEC61853691C96DADBA42E1C0CC78D", hash_generated_method = "EA72F3CC8155CC6EE36EFFE9F5347D99")
+            @DSModeled(DSC.SAFE)
+            private Intents() {
+                // ---------- Original Method ----------
+            }
+
+            
             public static final String EXTRA_CONTENTS = "contents";
             public static final String EXTRA_TYPES    = "types";
             public static final String EXTRA_CC       = "cc";
@@ -501,23 +559,70 @@ public final class Telephony {
             public static final String
             CONTENT_CHANGED_ACTION = "android.intent.action.CONTENT_CHANGED";
             public static final String DELETED_CONTENTS = "deleted_contents";
-            
-            @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:03.345 -0400", hash_original_method = "23EEC61853691C96DADBA42E1C0CC78D", hash_generated_method = "D9F44DD1EC0D1491AFEB56A573FB48C5")
-            @DSModeled(DSC.SAFE)
-            private Intents() {
-                // ---------- Original Method ----------
-            }
-
-            
         }
 
 
         
+        public static final Uri CONTENT_URI = Uri.parse("content://mms");
+        public static final Uri REPORT_REQUEST_URI = Uri.withAppendedPath(
+                                            CONTENT_URI, "report-request");
+        public static final Uri REPORT_STATUS_URI = Uri.withAppendedPath(
+                                            CONTENT_URI, "report-status");
+        public static final String DEFAULT_SORT_ORDER = "date DESC";
+        public static final Pattern NAME_ADDR_EMAIL_PATTERN =
+                Pattern.compile("\\s*(\"[^\"]*\"|[^<>\"]+)\\s*<([^<>]+)>\\s*");
+        public static final Pattern QUOTED_STRING_PATTERN =
+                Pattern.compile("\\s*\"([^\"]*)\"\\s*");
     }
 
 
     
     public static final class MmsSms implements BaseColumns {
+        
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:55.094 -0400", hash_original_method = "983D4F6B9EDC094AE28C05EBBA20A57C", hash_generated_method = "983D4F6B9EDC094AE28C05EBBA20A57C")
+                public MmsSms ()
+        {
+        }
+
+
+        public static final class PendingMessages implements BaseColumns {
+            
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:55.095 -0400", hash_original_method = "FAF402554F7AD1D23E115D486CC038D4", hash_generated_method = "FAF402554F7AD1D23E115D486CC038D4")
+                        public PendingMessages ()
+            {
+            }
+
+
+            public static final Uri CONTENT_URI = Uri.withAppendedPath(
+                    MmsSms.CONTENT_URI, "pending");
+            public static final String PROTO_TYPE = "proto_type";
+            public static final String MSG_ID = "msg_id";
+            public static final String MSG_TYPE = "msg_type";
+            public static final String ERROR_TYPE = "err_type";
+            public static final String ERROR_CODE = "err_code";
+            public static final String RETRY_INDEX = "retry_index";
+            public static final String DUE_TIME = "due_time";
+            public static final String LAST_TRY = "last_try";
+        }
+
+
+        
+        public static final class WordsTable {
+            
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:55.095 -0400", hash_original_method = "5B18C6639285C639D79D448EA64D4CA1", hash_generated_method = "5B18C6639285C639D79D448EA64D4CA1")
+                        public WordsTable ()
+            {
+            }
+
+
+            public static final String ID = "_id";
+            public static final String SOURCE_ROW_ID = "source_id";
+            public static final String TABLE_ID = "table_to_use";
+            public static final String INDEXED_TEXT = "index_text";
+        }
+
+
+        
         public static final String TYPE_DISCRIMINATOR_COLUMN =
                 "transport_type";
         public static final Uri CONTENT_URI = Uri.parse("content://mms-sms/");
@@ -543,38 +648,18 @@ public final class Telephony {
         public static final int ERR_TYPE_GENERIC_PERMANENT    = 10;
         public static final int ERR_TYPE_SMS_PROTO_PERMANENT  = 11;
         public static final int ERR_TYPE_MMS_PROTO_PERMANENT  = 12;
-        
-        public static final class PendingMessages implements BaseColumns {
-            public static final Uri CONTENT_URI = Uri.withAppendedPath(
-                    MmsSms.CONTENT_URI, "pending");
-            public static final String PROTO_TYPE = "proto_type";
-            public static final String MSG_ID = "msg_id";
-            public static final String MSG_TYPE = "msg_type";
-            public static final String ERROR_TYPE = "err_type";
-            public static final String ERROR_CODE = "err_code";
-            public static final String RETRY_INDEX = "retry_index";
-            public static final String DUE_TIME = "due_time";
-            public static final String LAST_TRY = "last_try";
-            
-        }
-
-
-        
-        public static final class WordsTable {
-            public static final String ID = "_id";
-            public static final String SOURCE_ROW_ID = "source_id";
-            public static final String TABLE_ID = "table_to_use";
-            public static final String INDEXED_TEXT = "index_text";
-            
-        }
-
-
-        
     }
 
 
     
     public static final class Carriers implements BaseColumns {
+        
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:55.095 -0400", hash_original_method = "BB8C0C3ED33513D8E449DC4720B84D04", hash_generated_method = "BB8C0C3ED33513D8E449DC4720B84D04")
+                public Carriers ()
+        {
+        }
+
+
         public static final Uri CONTENT_URI =
             Uri.parse("content://telephony/carriers");
         public static final String DEFAULT_SORT_ORDER = "name ASC";
@@ -601,12 +686,19 @@ public final class Telephony {
         public static final String CURRENT = "current";
         public static final String CARRIER_ENABLED = "carrier_enabled";
         public static final String BEARER = "bearer";
-        
     }
 
 
     
     public static final class Intents {
+        
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:55.101 -0400", hash_original_method = "23EEC61853691C96DADBA42E1C0CC78D", hash_generated_method = "EA72F3CC8155CC6EE36EFFE9F5347D99")
+        @DSModeled(DSC.SAFE)
+        private Intents() {
+            // ---------- Original Method ----------
+        }
+
+        
         public static final String SECRET_CODE_ACTION =
                 "android.provider.Telephony.SECRET_CODE";
         public static final String SPN_STRINGS_UPDATED_ACTION =
@@ -615,14 +707,6 @@ public final class Telephony {
         public static final String EXTRA_PLMN       = "plmn";
         public static final String EXTRA_SHOW_SPN   = "showSpn";
         public static final String EXTRA_SPN        = "spn";
-        
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:03.346 -0400", hash_original_method = "23EEC61853691C96DADBA42E1C0CC78D", hash_generated_method = "D9F44DD1EC0D1491AFEB56A573FB48C5")
-        @DSModeled(DSC.SAFE)
-        private Intents() {
-            // ---------- Original Method ----------
-        }
-
-        
     }
 
 
@@ -957,6 +1041,8 @@ public final class Telephony {
         public static final String HAS_ATTACHMENT = "has_attachment";
     }
     
+    private static final String TAG = "Telephony";
+    private static final boolean DEBUG = true;
+    private static final boolean LOCAL_LOGV = false;
 }
-
 

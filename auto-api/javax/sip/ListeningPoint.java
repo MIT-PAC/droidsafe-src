@@ -3,10 +3,10 @@ package javax.sip;
 // Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
+import droidsafe.runtime.*;
 
-// import Iterator to deal with enhanced for loop translation
+// needed for enhanced for control translations
 import java.util.Iterator;
-
 import java.io.IOException;
 import java.text.ParseException;
 import javax.sip.header.ContactHeader;
@@ -30,4 +30,3 @@ public interface ListeningPoint extends Cloneable {
 
     void sendHeartbeat(String s, int i) throws IOException;
 }
-

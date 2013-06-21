@@ -3,10 +3,10 @@ package android.text.style;
 // Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
+import droidsafe.runtime.*;
 
-// import Iterator to deal with enhanced for loop translation
+// needed for enhanced for control translations
 import java.util.Iterator;
-
 import android.os.Parcel;
 import android.text.ParcelableSpan;
 import android.text.TextUtils;
@@ -14,14 +14,14 @@ import android.widget.TextView;
 
 public class EasyEditSpan implements ParcelableSpan {
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:04.302 -0400", hash_original_method = "A230929293AFFCA631493D5E514D429F", hash_generated_method = "45E759F8FF6DD4464CA89EA2F4360819")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:57.839 -0400", hash_original_method = "A230929293AFFCA631493D5E514D429F", hash_generated_method = "30C43FC9D033188B5BCE7C639844F2F1")
     @DSModeled(DSC.SAFE)
     public EasyEditSpan() {
         // ---------- Original Method ----------
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:04.302 -0400", hash_original_method = "00F8174F9E89D0C972FA6D3F19742382", hash_generated_method = "826038BB7EBD5D3C24D01F025676D20A")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:57.839 -0400", hash_original_method = "00F8174F9E89D0C972FA6D3F19742382", hash_generated_method = "0DB50BC0CCE4711867E95DEC1B2117C7")
     @DSModeled(DSC.SAFE)
     @Override
     public int describeContents() {
@@ -31,17 +31,17 @@ public class EasyEditSpan implements ParcelableSpan {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:04.302 -0400", hash_original_method = "36081754C4A09732AEC95BB21FA0BDE7", hash_generated_method = "260D035BBA10E3330EE6D5BE4AE27F6E")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:57.840 -0400", hash_original_method = "36081754C4A09732AEC95BB21FA0BDE7", hash_generated_method = "CD65F49A8BD341D31D95169522EF61F2")
     @DSModeled(DSC.SAFE)
     @Override
     public void writeToParcel(Parcel dest, int flags) {
-        dsTaint.addTaint(dest.dsTaint);
         dsTaint.addTaint(flags);
+        dsTaint.addTaint(dest.dsTaint);
         // ---------- Original Method ----------
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:04.302 -0400", hash_original_method = "B70B692D38FEF311001170F890E9CCAE", hash_generated_method = "12FB6E13B0F5626D68D1C438623C389C")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:57.840 -0400", hash_original_method = "B70B692D38FEF311001170F890E9CCAE", hash_generated_method = "36499195B32A57609CD7E1B8BC286994")
     @DSModeled(DSC.SAFE)
     @Override
     public int getSpanTypeId() {
@@ -52,5 +52,4 @@ public class EasyEditSpan implements ParcelableSpan {
 
     
 }
-
 

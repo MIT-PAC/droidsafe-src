@@ -3,10 +3,10 @@ package com.android.internal.telephony;
 // Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
+import droidsafe.runtime.*;
 
-// import Iterator to deal with enhanced for loop translation
+// needed for enhanced for control translations
 import java.util.Iterator;
-
 import android.telephony.SmsMessage;
 import com.android.internal.util.HexDump;
 import java.io.ByteArrayInputStream;
@@ -14,54 +14,20 @@ import java.io.ByteArrayOutputStream;
 import java.util.ArrayList;
 
 public class SmsHeader {
-    public static final int ELT_ID_CONCATENATED_8_BIT_REFERENCE       = 0x00;
-    public static final int ELT_ID_SPECIAL_SMS_MESSAGE_INDICATION     = 0x01;
-    public static final int ELT_ID_APPLICATION_PORT_ADDRESSING_8_BIT  = 0x04;
-    public static final int ELT_ID_APPLICATION_PORT_ADDRESSING_16_BIT = 0x05;
-    public static final int ELT_ID_SMSC_CONTROL_PARAMS                = 0x06;
-    public static final int ELT_ID_UDH_SOURCE_INDICATION              = 0x07;
-    public static final int ELT_ID_CONCATENATED_16_BIT_REFERENCE      = 0x08;
-    public static final int ELT_ID_WIRELESS_CTRL_MSG_PROTOCOL         = 0x09;
-    public static final int ELT_ID_TEXT_FORMATTING                    = 0x0A;
-    public static final int ELT_ID_PREDEFINED_SOUND                   = 0x0B;
-    public static final int ELT_ID_USER_DEFINED_SOUND                 = 0x0C;
-    public static final int ELT_ID_PREDEFINED_ANIMATION               = 0x0D;
-    public static final int ELT_ID_LARGE_ANIMATION                    = 0x0E;
-    public static final int ELT_ID_SMALL_ANIMATION                    = 0x0F;
-    public static final int ELT_ID_LARGE_PICTURE                      = 0x10;
-    public static final int ELT_ID_SMALL_PICTURE                      = 0x11;
-    public static final int ELT_ID_VARIABLE_PICTURE                   = 0x12;
-    public static final int ELT_ID_USER_PROMPT_INDICATOR              = 0x13;
-    public static final int ELT_ID_EXTENDED_OBJECT                    = 0x14;
-    public static final int ELT_ID_REUSED_EXTENDED_OBJECT             = 0x15;
-    public static final int ELT_ID_COMPRESSION_CONTROL                = 0x16;
-    public static final int ELT_ID_OBJECT_DISTR_INDICATOR             = 0x17;
-    public static final int ELT_ID_STANDARD_WVG_OBJECT                = 0x18;
-    public static final int ELT_ID_CHARACTER_SIZE_WVG_OBJECT          = 0x19;
-    public static final int ELT_ID_EXTENDED_OBJECT_DATA_REQUEST_CMD   = 0x1A;
-    public static final int ELT_ID_RFC_822_EMAIL_HEADER               = 0x20;
-    public static final int ELT_ID_HYPERLINK_FORMAT_ELEMENT           = 0x21;
-    public static final int ELT_ID_REPLY_ADDRESS_ELEMENT              = 0x22;
-    public static final int ELT_ID_ENHANCED_VOICE_MAIL_INFORMATION    = 0x23;
-    public static final int ELT_ID_NATIONAL_LANGUAGE_SINGLE_SHIFT     = 0x24;
-    public static final int ELT_ID_NATIONAL_LANGUAGE_LOCKING_SHIFT    = 0x25;
-    public static final int PORT_WAP_PUSH = 2948;
-    public static final int PORT_WAP_WSP  = 9200;
     public PortAddrs portAddrs;
     public ConcatRef concatRef;
     public ArrayList<MiscElt> miscEltList = new ArrayList<MiscElt>();
     public int languageTable;
     public int languageShiftTable;
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:10.569 -0400", hash_original_method = "F06BD280EA34997B1794CB44E7D9D16A", hash_generated_method = "89F70F99238AD7E7965731A2BB0014E4")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:12.447 -0400", hash_original_method = "F06BD280EA34997B1794CB44E7D9D16A", hash_generated_method = "EBF9FF6335726A7119DA9BD07425785D")
     @DSModeled(DSC.SAFE)
     public SmsHeader() {
         // ---------- Original Method ----------
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:10.569 -0400", hash_original_method = "7EEA5ED41B923A03FC6EA491A90F691D", hash_generated_method = "E15573F139D01C08AAB779B5B447FD26")
-    public static SmsHeader fromByteArray(byte[] data) {
+        public static SmsHeader fromByteArray(byte[] data) {
         ByteArrayInputStream inStream = new ByteArrayInputStream(data);
         SmsHeader smsHeader = new SmsHeader();
         while (inStream.available() > 0) {
@@ -124,8 +90,7 @@ public class SmsHeader {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:10.570 -0400", hash_original_method = "313D7507D012D5A754A21F769BA1BB3D", hash_generated_method = "E61F57DB8C58E56E795CC1C73527316C")
-    public static byte[] toByteArray(SmsHeader smsHeader) {
+        public static byte[] toByteArray(SmsHeader smsHeader) {
         if ((smsHeader.portAddrs == null) &&
             (smsHeader.concatRef == null) &&
             (smsHeader.miscEltList.isEmpty()) &&
@@ -184,7 +149,7 @@ public class SmsHeader {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:10.570 -0400", hash_original_method = "3B501A432F153619ABA258E9F603F65E", hash_generated_method = "EC24CA1A35251C08B32D7186DF82F17C")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:12.474 -0400", hash_original_method = "3B501A432F153619ABA258E9F603F65E", hash_generated_method = "6185035E11E358F2751DC34A2ACF3F12")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     @Override
     public String toString() {
@@ -219,9 +184,9 @@ public class SmsHeader {
             builder.append(", languageTable=" + languageTable);
         } //End block
         {
-            Iterator<MiscElt> seatecAstronomy42 = miscEltList.iterator();
-            seatecAstronomy42.hasNext();
-            MiscElt miscElt = seatecAstronomy42.next();
+            Iterator<MiscElt> var37918556E8645AADA45026E0287225E4_1179575514 = (miscEltList).iterator();
+            var37918556E8645AADA45026E0287225E4_1179575514.hasNext();
+            MiscElt miscElt = var37918556E8645AADA45026E0287225E4_1179575514.next();
             {
                 builder.append(", MiscElt ");
                 builder.append("{ id=" + miscElt.id);
@@ -231,7 +196,7 @@ public class SmsHeader {
             } //End block
         } //End collapsed parenthetic
         builder.append(" }");
-        String var687AAF24B90629C9BFCFE9608FDCE6E7_889247058 = (builder.toString());
+        String var687AAF24B90629C9BFCFE9608FDCE6E7_1418299756 = (builder.toString());
         return dsTaint.getTaintString();
         // ---------- Original Method ----------
         // Original Method Too Long, Refer to Original Implementation
@@ -243,6 +208,12 @@ public class SmsHeader {
         public int origPort;
         public boolean areEightBits;
         
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:12.474 -0400", hash_original_method = "0B312E7ECF151C35388E05EE60DB7DD4", hash_generated_method = "0B312E7ECF151C35388E05EE60DB7DD4")
+                public PortAddrs ()
+        {
+        }
+
+
     }
 
 
@@ -253,6 +224,12 @@ public class SmsHeader {
         public int msgCount;
         public boolean isEightBits;
         
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:12.474 -0400", hash_original_method = "0786A43A61BEA5172FDB7BF22105EF29", hash_generated_method = "0786A43A61BEA5172FDB7BF22105EF29")
+                public ConcatRef ()
+        {
+        }
+
+
     }
 
 
@@ -261,10 +238,48 @@ public class SmsHeader {
         public int id;
         public byte[] data;
         
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:12.474 -0400", hash_original_method = "61D293152108B49002664927DFA39B7E", hash_generated_method = "61D293152108B49002664927DFA39B7E")
+                public MiscElt ()
+        {
+        }
+
+
     }
 
 
     
+    public static final int ELT_ID_CONCATENATED_8_BIT_REFERENCE       = 0x00;
+    public static final int ELT_ID_SPECIAL_SMS_MESSAGE_INDICATION     = 0x01;
+    public static final int ELT_ID_APPLICATION_PORT_ADDRESSING_8_BIT  = 0x04;
+    public static final int ELT_ID_APPLICATION_PORT_ADDRESSING_16_BIT = 0x05;
+    public static final int ELT_ID_SMSC_CONTROL_PARAMS                = 0x06;
+    public static final int ELT_ID_UDH_SOURCE_INDICATION              = 0x07;
+    public static final int ELT_ID_CONCATENATED_16_BIT_REFERENCE      = 0x08;
+    public static final int ELT_ID_WIRELESS_CTRL_MSG_PROTOCOL         = 0x09;
+    public static final int ELT_ID_TEXT_FORMATTING                    = 0x0A;
+    public static final int ELT_ID_PREDEFINED_SOUND                   = 0x0B;
+    public static final int ELT_ID_USER_DEFINED_SOUND                 = 0x0C;
+    public static final int ELT_ID_PREDEFINED_ANIMATION               = 0x0D;
+    public static final int ELT_ID_LARGE_ANIMATION                    = 0x0E;
+    public static final int ELT_ID_SMALL_ANIMATION                    = 0x0F;
+    public static final int ELT_ID_LARGE_PICTURE                      = 0x10;
+    public static final int ELT_ID_SMALL_PICTURE                      = 0x11;
+    public static final int ELT_ID_VARIABLE_PICTURE                   = 0x12;
+    public static final int ELT_ID_USER_PROMPT_INDICATOR              = 0x13;
+    public static final int ELT_ID_EXTENDED_OBJECT                    = 0x14;
+    public static final int ELT_ID_REUSED_EXTENDED_OBJECT             = 0x15;
+    public static final int ELT_ID_COMPRESSION_CONTROL                = 0x16;
+    public static final int ELT_ID_OBJECT_DISTR_INDICATOR             = 0x17;
+    public static final int ELT_ID_STANDARD_WVG_OBJECT                = 0x18;
+    public static final int ELT_ID_CHARACTER_SIZE_WVG_OBJECT          = 0x19;
+    public static final int ELT_ID_EXTENDED_OBJECT_DATA_REQUEST_CMD   = 0x1A;
+    public static final int ELT_ID_RFC_822_EMAIL_HEADER               = 0x20;
+    public static final int ELT_ID_HYPERLINK_FORMAT_ELEMENT           = 0x21;
+    public static final int ELT_ID_REPLY_ADDRESS_ELEMENT              = 0x22;
+    public static final int ELT_ID_ENHANCED_VOICE_MAIL_INFORMATION    = 0x23;
+    public static final int ELT_ID_NATIONAL_LANGUAGE_SINGLE_SHIFT     = 0x24;
+    public static final int ELT_ID_NATIONAL_LANGUAGE_LOCKING_SHIFT    = 0x25;
+    public static final int PORT_WAP_PUSH = 2948;
+    public static final int PORT_WAP_WSP  = 9200;
 }
-
 

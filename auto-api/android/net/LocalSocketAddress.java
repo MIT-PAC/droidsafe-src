@@ -3,29 +3,27 @@ package android.net;
 // Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
+import droidsafe.runtime.*;
 
-// import Iterator to deal with enhanced for loop translation
+// needed for enhanced for control translations
 import java.util.Iterator;
 
-
 public class LocalSocketAddress {
-    private final String name;
-    private final Namespace namespace;
+    private String name;
+    private Namespace namespace;
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:02.177 -0400", hash_original_method = "ACE50F43918FAC0899CFC1784787037A", hash_generated_method = "A68A950AC5BC77BF8E8BD5AD6430334E")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:51.010 -0400", hash_original_method = "ACE50F43918FAC0899CFC1784787037A", hash_generated_method = "59C1A3DB07E8CC44F749383EA937A9B2")
     @DSModeled(DSC.SAFE)
     public LocalSocketAddress(String name, Namespace namespace) {
         dsTaint.addTaint(name);
         dsTaint.addTaint(namespace.dsTaint);
-        this.name = name;
-        this.namespace = namespace;
         // ---------- Original Method ----------
         //this.name = name;
         //this.namespace = namespace;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:02.177 -0400", hash_original_method = "66D42DD819FBC28DB7D788D131A117E8", hash_generated_method = "F9761568C3B2538563A7FB9C163D6988")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:51.010 -0400", hash_original_method = "66D42DD819FBC28DB7D788D131A117E8", hash_generated_method = "27199BDAA56F55F3F6F6EB6E80E597CF")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public LocalSocketAddress(String name) {
         this(name,Namespace.ABSTRACT);
@@ -34,7 +32,7 @@ public class LocalSocketAddress {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:02.177 -0400", hash_original_method = "7070E6AABEDCBA653834DDC8CF79A47C", hash_generated_method = "F47755EA38582EE7C3877DD72123E9B0")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:51.010 -0400", hash_original_method = "7070E6AABEDCBA653834DDC8CF79A47C", hash_generated_method = "3573899E99121C9CFE87F9DDAEE36810")
     @DSModeled(DSC.SAFE)
     public String getName() {
         return dsTaint.getTaintString();
@@ -43,7 +41,7 @@ public class LocalSocketAddress {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:02.177 -0400", hash_original_method = "F383712D804FA1C6C6A9CA72960DBCA2", hash_generated_method = "DE867311A2C7BCD577DF921D1D5D96D2")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:51.011 -0400", hash_original_method = "F383712D804FA1C6C6A9CA72960DBCA2", hash_generated_method = "4CA486DA6B997BF6502A5FDD8464AB48")
     @DSModeled(DSC.SAFE)
     public Namespace getNamespace() {
         return (Namespace)dsTaint.getTaint();
@@ -67,5 +65,4 @@ public class LocalSocketAddress {
 
     
 }
-
 

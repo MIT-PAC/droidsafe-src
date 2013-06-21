@@ -10,33 +10,8 @@ import java.util.Iterator;
 
 public final class Messenger implements Parcelable {
     private IMessenger mTarget;
-    public static final Parcelable.Creator<Messenger> CREATOR = new Parcelable.Creator<Messenger>() {        
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 12:02:00.186 -0400", hash_original_method = "9CB182A89C6CC0D581283770DD971374", hash_generated_method = "FF752DE05D9BA2E21D0639B07FDE297C")
-        @DSModeled(DSC.SAFE)
-        public Messenger createFromParcel(Parcel in) {
-            dsTaint.addTaint(in.dsTaint);
-            IBinder target;
-            target = in.readStrongBinder();
-            return (Messenger)dsTaint.getTaint();
-            // ---------- Original Method ----------
-            //IBinder target = in.readStrongBinder();
-            //return target != null ? new Messenger(target) : null;
-        }
-
-        
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 12:02:00.186 -0400", hash_original_method = "C17D90CCDCF71AAAA610D955331D85E9", hash_generated_method = "03E97A3B33CF58F48EFA604E0D06A540")
-        @DSModeled(DSC.SAFE)
-        public Messenger[] newArray(int size) {
-            dsTaint.addTaint(size);
-            return (Messenger[])dsTaint.getTaint();
-            // ---------- Original Method ----------
-            //return new Messenger[size];
-        }
-
-        
-}; //Transformed anonymous class
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 12:02:00.186 -0400", hash_original_method = "A65C5BAC2E4407473A9171FA89173DDE", hash_generated_method = "3DB5304DBD04F139550DEF3D50351D16")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:53.875 -0400", hash_original_method = "A65C5BAC2E4407473A9171FA89173DDE", hash_generated_method = "72654B9ED0398571BEC541EB36A4F0BE")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public Messenger(Handler target) {
         dsTaint.addTaint(target.dsTaint);
@@ -46,7 +21,7 @@ public final class Messenger implements Parcelable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 12:02:00.186 -0400", hash_original_method = "291BB446453057D831D652E8D2879500", hash_generated_method = "2485A5BA53FE3CF7EAD700485748C366")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:53.875 -0400", hash_original_method = "291BB446453057D831D652E8D2879500", hash_generated_method = "5C338002943A610961B0035998BE31C4")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public Messenger(IBinder target) {
         dsTaint.addTaint(target.dsTaint);
@@ -56,8 +31,8 @@ public final class Messenger implements Parcelable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 12:02:00.186 -0400", hash_original_method = "87BB77B45562A993DA127AF8A28A35EF", hash_generated_method = "1B09746A458AEA45F55804A71765EFCC")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:53.875 -0400", hash_original_method = "87BB77B45562A993DA127AF8A28A35EF", hash_generated_method = "B5045DF5732C8353DA5999DF5C6D9627")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     public void send(Message message) throws RemoteException {
         dsTaint.addTaint(message.dsTaint);
         mTarget.send(message);
@@ -66,23 +41,23 @@ public final class Messenger implements Parcelable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 12:02:00.186 -0400", hash_original_method = "4371CC0F380F9E28159928FBC65693A0", hash_generated_method = "D2A25911B6FE9491B2BED34616C4B8C2")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:53.876 -0400", hash_original_method = "4371CC0F380F9E28159928FBC65693A0", hash_generated_method = "4097DFB6CE22BB645DABD6C921827F49")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public IBinder getBinder() {
-        IBinder var9F96EEDD6D88CDCD88F18F43C30585FB_1993966570 = (mTarget.asBinder());
+        IBinder var9F96EEDD6D88CDCD88F18F43C30585FB_564667122 = (mTarget.asBinder());
         return (IBinder)dsTaint.getTaint();
         // ---------- Original Method ----------
         //return mTarget.asBinder();
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 12:02:00.187 -0400", hash_original_method = "C149400C0C5347CE34188C78467CE5CF", hash_generated_method = "60BAEAC4DEC78AB56DB8A8E693044881")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:53.876 -0400", hash_original_method = "C149400C0C5347CE34188C78467CE5CF", hash_generated_method = "0630D11BBC23CEE05B16C18025CFD920")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public boolean equals(Object otherObj) {
         dsTaint.addTaint(otherObj.dsTaint);
         try 
         {
-            boolean varA46265C4594AEBA2B5864671A2E4F79F_1443235132 = (mTarget.asBinder().equals(((Messenger)otherObj)
+            boolean varA46265C4594AEBA2B5864671A2E4F79F_222603046 = (mTarget.asBinder().equals(((Messenger)otherObj)
                     .mTarget.asBinder()));
         } //End block
         catch (ClassCastException e)
@@ -101,17 +76,17 @@ public final class Messenger implements Parcelable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 12:02:00.187 -0400", hash_original_method = "72E49DA56EC3D19D8D09B0982F6DDB55", hash_generated_method = "C58C8D1563C31FD520FCFA1064DC440A")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:53.876 -0400", hash_original_method = "72E49DA56EC3D19D8D09B0982F6DDB55", hash_generated_method = "FAAD2E8641F022AD0F8319296044E9A0")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public int hashCode() {
-        int varE5FBB4A5F6456F5D2CFFCAD33E59F123_1360593244 = (mTarget.asBinder().hashCode());
+        int varE5FBB4A5F6456F5D2CFFCAD33E59F123_658956851 = (mTarget.asBinder().hashCode());
         return dsTaint.getTaintInt();
         // ---------- Original Method ----------
         //return mTarget.asBinder().hashCode();
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 12:02:00.187 -0400", hash_original_method = "00F8174F9E89D0C972FA6D3F19742382", hash_generated_method = "7491C6FB42F78871A3F8EA322AF6B2FC")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:53.877 -0400", hash_original_method = "00F8174F9E89D0C972FA6D3F19742382", hash_generated_method = "ED77793910767EAAB4C12F70F75B9095")
     @DSModeled(DSC.SAFE)
     public int describeContents() {
         return dsTaint.getTaintInt();
@@ -120,7 +95,7 @@ public final class Messenger implements Parcelable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 12:02:00.187 -0400", hash_original_method = "FF0A290BC61B9CD02F1DD23699EA8B8B", hash_generated_method = "4DBC8FF64D1607D57C2D13908DAFE7EA")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:53.878 -0400", hash_original_method = "FF0A290BC61B9CD02F1DD23699EA8B8B", hash_generated_method = "82E673ADF87F6A34F82CD67D6313EA4D")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public void writeToParcel(Parcel out, int flags) {
         dsTaint.addTaint(flags);
@@ -131,21 +106,47 @@ public final class Messenger implements Parcelable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 12:02:00.187 -0400", hash_original_method = "7C769D0B94813ACF4E3098A48F898F66", hash_generated_method = "4E5092E07E492479F3E51A72D368FAE5")
-    public static void writeMessengerOrNullToParcel(Messenger messenger,
+        public static void writeMessengerOrNullToParcel(Messenger messenger,
             Parcel out) {
         out.writeStrongBinder(messenger != null ? messenger.mTarget.asBinder()
                 : null);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 12:02:00.187 -0400", hash_original_method = "8F665F93AE5872E3C9D6C82BD46E5841", hash_generated_method = "03126B1938C7C6517C3532D868601491")
-    public static Messenger readMessengerOrNullFromParcel(Parcel in) {
+        public static Messenger readMessengerOrNullFromParcel(Parcel in) {
         IBinder b = in.readStrongBinder();
         return b != null ? new Messenger(b) : null;
     }
 
     
-}
+    public static final Parcelable.Creator<Messenger> CREATOR = new Parcelable.Creator<Messenger>() {        
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:53.878 -0400", hash_original_method = "9CB182A89C6CC0D581283770DD971374", hash_generated_method = "D0D93FDE2B9EA4615BE4F226A4F33651")
+        //DSFIXME:  CODE0002: Requires DSC value to be set
+        public Messenger createFromParcel(Parcel in) {
+            dsTaint.addTaint(in.dsTaint);
+            IBinder target;
+            target = in.readStrongBinder();
+            {
+                Object varF64E152F01256F52583EB5696192F110_1783837735 = (new Messenger(target));
+            } //End flattened ternary
+            return (Messenger)dsTaint.getTaint();
+            // ---------- Original Method ----------
+            //IBinder target = in.readStrongBinder();
+            //return target != null ? new Messenger(target) : null;
+        }
 
+        
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:53.879 -0400", hash_original_method = "C17D90CCDCF71AAAA610D955331D85E9", hash_generated_method = "B13F56E6F40CEAE8F666ABEA5DF31CF5")
+        //DSFIXME:  CODE0002: Requires DSC value to be set
+        public Messenger[] newArray(int size) {
+            dsTaint.addTaint(size);
+            Messenger[] varDB3C5CD1584A296ABFD264D480ADB6D7_771348801 = (new Messenger[size]);
+            return (Messenger[])dsTaint.getTaint();
+            // ---------- Original Method ----------
+            //return new Messenger[size];
+        }
+
+        
+}; //Transformed anonymous class
+}
 

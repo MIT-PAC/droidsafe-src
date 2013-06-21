@@ -3,10 +3,10 @@ package android.net;
 // Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
+import droidsafe.runtime.*;
 
-// import Iterator to deal with enhanced for loop translation
+// needed for enhanced for control translations
 import java.util.Iterator;
-
 
 public interface IConnectivityManager extends android.os.IInterface
 {
@@ -1463,4 +1463,3 @@ public android.os.ParcelFileDescriptor establishVpn(com.android.internal.net.Vpn
 public void startLegacyVpn(com.android.internal.net.VpnConfig config, java.lang.String[] racoon, java.lang.String[] mtpd) throws android.os.RemoteException;
 public com.android.internal.net.LegacyVpnInfo getLegacyVpnInfo() throws android.os.RemoteException;
 }
-

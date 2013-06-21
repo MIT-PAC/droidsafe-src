@@ -3,17 +3,17 @@ package com.android.internal.telephony;
 // Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
+import droidsafe.runtime.*;
 
-// import Iterator to deal with enhanced for loop translation
+// needed for enhanced for control translations
 import java.util.Iterator;
-
 import com.android.internal.telephony.RILConstants;
 import android.util.Log;
 
 public class CommandException extends RuntimeException {
     private Error e;
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.727 -0400", hash_original_method = "AE462A80EC1EE4B5A1CC7ED5CD5F752D", hash_generated_method = "2C5261FF2D327C1AC30BC41AB2A72E22")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:10.778 -0400", hash_original_method = "AE462A80EC1EE4B5A1CC7ED5CD5F752D", hash_generated_method = "6A1E12F4FC6CF26154BF6B7E32BA7BA3")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public CommandException(Error e) {
         super(e.toString());
@@ -23,8 +23,7 @@ public class CommandException extends RuntimeException {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.727 -0400", hash_original_method = "7B4AFAAC8EB612842A78BF3BAF671903", hash_generated_method = "D23204A182913A2BF15910A1336B0B1F")
-    public static CommandException fromRilErrno(int ril_errno) {
+        public static CommandException fromRilErrno(int ril_errno) {
         switch(ril_errno) {
             case RILConstants.SUCCESS:                       return null;
             case RILConstants.RIL_ERRNO_INVALID_RESPONSE:
@@ -64,7 +63,7 @@ public class CommandException extends RuntimeException {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.727 -0400", hash_original_method = "279F774637579DF8D6F317F53F6621B2", hash_generated_method = "E8B90C3F83D65AD910A112890A083672")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:10.778 -0400", hash_original_method = "279F774637579DF8D6F317F53F6621B2", hash_generated_method = "640CE416FF41F1A9BB90CC85E201F9AF")
     @DSModeled(DSC.SAFE)
     public Error getCommandError() {
         return (Error)dsTaint.getTaint();
@@ -93,5 +92,4 @@ public class CommandException extends RuntimeException {
 
     
 }
-
 

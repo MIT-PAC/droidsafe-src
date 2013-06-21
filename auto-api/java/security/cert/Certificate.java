@@ -20,19 +20,18 @@ import java.security.SignatureException;
 import java.util.Arrays;
 
 public abstract class Certificate implements Serializable {
-    private static final long serialVersionUID = -3585440601605666277L;
-    private  String type;
+    private String type;
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 11:01:54.187 -0400", hash_original_method = "244ADEDBEBB96EF97070F535965BB014", hash_generated_method = "0438A18F45C59EEF58E2C6F18D7E099B")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:29.629 -0400", hash_original_method = "244ADEDBEBB96EF97070F535965BB014", hash_generated_method = "E82C868D059D96D95DD4C27FEE46721F")
     @DSModeled(DSC.SAFE)
     protected Certificate(String type) {
         dsTaint.addTaint(type);
-          // ---------- Original Method ----------
+        // ---------- Original Method ----------
         //this.type = type;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 11:01:54.188 -0400", hash_original_method = "0E0B07C7C3039087C9D268CAF8DACC19", hash_generated_method = "C33423799F46A4D983B8408DB9A92B86")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:29.629 -0400", hash_original_method = "0E0B07C7C3039087C9D268CAF8DACC19", hash_generated_method = "2AE4CD67D4DDBE32BC864794C06C4464")
     @DSModeled(DSC.SAFE)
     public final String getType() {
         return dsTaint.getTaintString();
@@ -41,18 +40,19 @@ public abstract class Certificate implements Serializable {
     }
 
     
-    @DSGenerator(tool_name="Doppelganger",tool_version="0.4",generated_on="2013-06-11 11:15:12.593 -0400",hash_original_method="4FCDFCCBC9683C8411983C8346CDCC6D",hash_generated_method="A5CEB9E7F02AB7B2D0FD22A81DEF3BCD")
-public boolean equals(Object other) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:29.630 -0400", hash_original_method = "34CF5F66357C97013C2BECCDE3CD7868", hash_generated_method = "053C203ECF687CA54A29CC213C510120")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
+    public boolean equals(Object other) {
         dsTaint.addTaint(other.dsTaint);
         {
             try 
             {
-                boolean var4B38EF159D3F0D18D03DD6C018FE1989_1594960761 = (Arrays.equals(this.getEncoded(),
+                boolean var4B38EF159D3F0D18D03DD6C018FE1989_296399393 = (Arrays.equals(this.getEncoded(),
                         ((Certificate)other).getEncoded()));
             } //End block
             catch (CertificateEncodingException e)
             {
-                throw new RuntimeException(e);
+                if (DroidSafeAndroidRuntime.control) throw new RuntimeException(e);
             } //End block
         } //End block
         return dsTaint.getTaintBoolean();
@@ -72,8 +72,8 @@ public boolean equals(Object other) {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 11:01:54.189 -0400", hash_original_method = "4607E15AFDECFF486998F7FDB6C49986", hash_generated_method = "6BCE348DC039B7425D322E4C09343571")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:29.630 -0400", hash_original_method = "4607E15AFDECFF486998F7FDB6C49986", hash_generated_method = "67C774F48B804E3360E13B4A368EA963")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     public int hashCode() {
         try 
         {
@@ -133,15 +133,16 @@ public boolean equals(Object other) {
     public abstract PublicKey getPublicKey();
 
     
-    @DSGenerator(tool_name="Doppelganger",tool_version="0.4",generated_on="2013-06-11 11:15:12.593 -0400",hash_original_method="4FCDFCCBC9683C8411983C8346CDCC6D",hash_generated_method="A5CEB9E7F02AB7B2D0FD22A81DEF3BCD")
-protected Object writeReplace() throws ObjectStreamException {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:29.631 -0400", hash_original_method = "99E789CC29F8A2F97D8F3F24132FD9A6", hash_generated_method = "D5D9FA05B5EB47B04CA05E53F08905D0")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
+    protected Object writeReplace() throws ObjectStreamException {
         try 
         {
-            Object varF23AD4F891D39C8A76F1BF958063D6D0_1837745347 = (new CertificateRep(getType(), getEncoded()));
+            Object varF23AD4F891D39C8A76F1BF958063D6D0_1291336210 = (new CertificateRep(getType(), getEncoded()));
         } //End block
         catch (CertificateEncodingException e)
         {
-            throw new NotSerializableException("Could not create serialization object: " + e);
+            if (DroidSafeAndroidRuntime.control) throw new NotSerializableException("Could not create serialization object: " + e);
         } //End block
         return (Object)dsTaint.getTaint();
         // ---------- Original Method ----------
@@ -154,18 +155,13 @@ protected Object writeReplace() throws ObjectStreamException {
 
     
     protected static class CertificateRep implements Serializable {
-        private static final long serialVersionUID = -8563758940495660020L;
-        private  String type;
-        private  byte[] data;
-        private static final ObjectStreamField[] serialPersistentFields = {
-             new ObjectStreamField("type", String.class),
-             new ObjectStreamField("data", byte[].class, true)
-        };
+        private String type;
+        private byte[] data;
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 11:01:54.203 -0400", hash_original_method = "D627339278E2A38DCC6197D27B1C70B7", hash_generated_method = "1E82B3987B0E3EDDF973C218ACB73B08")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:29.631 -0400", hash_original_method = "D627339278E2A38DCC6197D27B1C70B7", hash_generated_method = "4AA7E8952D12DC69AB50E1AD6384AFD4")
         @DSModeled(DSC.SAFE)
         protected CertificateRep(String type, byte[] data) {
-            dsTaint.addTaint(data);
+            dsTaint.addTaint(data[0]);
             dsTaint.addTaint(type);
             // ---------- Original Method ----------
             //this.type = type;
@@ -173,17 +169,18 @@ protected Object writeReplace() throws ObjectStreamException {
         }
 
         
-        @DSGenerator(tool_name="Doppelganger",tool_version="0.4",generated_on="2013-06-11 11:15:12.593 -0400",hash_original_method="4FCDFCCBC9683C8411983C8346CDCC6D",hash_generated_method="A5CEB9E7F02AB7B2D0FD22A81DEF3BCD")
-protected Object readResolve() throws ObjectStreamException {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:29.631 -0400", hash_original_method = "4FCDFCCBC9683C8411983C8346CDCC6D", hash_generated_method = "B8D8818127CB52A335CD421DB9B79777")
+        //DSFIXME:  CODE0002: Requires DSC value to be set
+        protected Object readResolve() throws ObjectStreamException {
             try 
             {
                 CertificateFactory cf;
                 cf = CertificateFactory.getInstance(type);
-                Object var898435BA3E378976DA7CE7E87BF7861A_517426307 = (cf.generateCertificate(new ByteArrayInputStream(data)));
+                Object var898435BA3E378976DA7CE7E87BF7861A_417387269 = (cf.generateCertificate(new ByteArrayInputStream(data)));
             } //End block
             catch (Throwable t)
             {
-                throw new NotSerializableException("Could not resolve certificate: " + t);
+                if (DroidSafeAndroidRuntime.control) throw new NotSerializableException("Could not resolve certificate: " + t);
             } //End block
             return (Object)dsTaint.getTaint();
             // ---------- Original Method ----------
@@ -196,14 +193,15 @@ protected Object readResolve() throws ObjectStreamException {
         }
 
         
+        private static final long serialVersionUID = -8563758940495660020L;
+        private static final ObjectStreamField[] serialPersistentFields = {
+             new ObjectStreamField("type", String.class),
+             new ObjectStreamField("data", byte[].class, true)
+        };
     }
 
 
     
+    private static final long serialVersionUID = -3585440601605666277L;
 }
 
-
-//DSFIXME:  CODE0011:  Unresolved legacy methods exist in original model
-/*
-
-*/

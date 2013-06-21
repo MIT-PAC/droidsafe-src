@@ -5,9 +5,8 @@ import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
-// import Iterator to deal with enhanced for loop translation
+// needed for enhanced for control translations
 import java.util.Iterator;
-
 import android.emoji.EmojiFactory;
 import android.graphics.Canvas;
 import android.graphics.Paint;
@@ -25,11 +24,6 @@ import com.android.internal.util.ArrayUtils;
 import java.util.Arrays;
 
 public abstract class Layout {
-    private static final ParagraphStyle[] NO_PARA_SPANS =
-        ArrayUtils.emptyArray(ParagraphStyle.class);
-    static final EmojiFactory EMOJI_FACTORY =
-        EmojiFactory.newAvailableInstance();
-    static final int MIN_EMOJI, MAX_EMOJI;
     private CharSequence mText;
     private TextPaint mPaint;
     TextPaint mWorkPaint;
@@ -37,26 +31,10 @@ public abstract class Layout {
     private Alignment mAlignment = Alignment.ALIGN_NORMAL;
     private float mSpacingMult;
     private float mSpacingAdd;
-    private static final Rect sTempRect = new Rect();
     private boolean mSpannedText;
     private TextDirectionHeuristic mTextDir;
-    public static final int DIR_LEFT_TO_RIGHT = 1;
-    public static final int DIR_RIGHT_TO_LEFT = -1;
-    static final int DIR_REQUEST_LTR = 1;
-    static final int DIR_REQUEST_RTL = -1;
-    static final int DIR_REQUEST_DEFAULT_LTR = 2;
-    static final int DIR_REQUEST_DEFAULT_RTL = -2;
-    static final int RUN_LENGTH_MASK = 0x03ffffff;
-    static final int RUN_LEVEL_SHIFT = 26;
-    static final int RUN_LEVEL_MASK = 0x3f;
-    static final int RUN_RTL_FLAG = 1 << RUN_LEVEL_SHIFT;
-    private static final int TAB_INCREMENT = 20;
-    static final Directions DIRS_ALL_LEFT_TO_RIGHT =
-        new Directions(new int[] { 0, RUN_LENGTH_MASK });
-    static final Directions DIRS_ALL_RIGHT_TO_LEFT =
-        new Directions(new int[] { 0, RUN_LENGTH_MASK | RUN_RTL_FLAG });
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:04.002 -0400", hash_original_method = "DA432A00E31F4EFC04FE32B9AEC1CEE4", hash_generated_method = "20F5DD47C5F552651095E8671A79857D")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:56.102 -0400", hash_original_method = "DA432A00E31F4EFC04FE32B9AEC1CEE4", hash_generated_method = "DC4D1694C5AA1B90D4820FBBFB5A7E58")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     protected Layout(CharSequence text, TextPaint paint,
                      int width, Alignment align,
@@ -65,24 +43,24 @@ public abstract class Layout {
                 spacingMult, spacingAdd);
         dsTaint.addTaint(spacingAdd);
         dsTaint.addTaint(text);
-        dsTaint.addTaint(width);
         dsTaint.addTaint(align.dsTaint);
+        dsTaint.addTaint(width);
         dsTaint.addTaint(spacingMult);
         dsTaint.addTaint(paint.dsTaint);
         // ---------- Original Method ----------
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:04.002 -0400", hash_original_method = "E08E539EEFF1AD274546B85662DC9DCC", hash_generated_method = "5FD8057E44C6A2E473219FB09FA50E9A")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:56.102 -0400", hash_original_method = "E08E539EEFF1AD274546B85662DC9DCC", hash_generated_method = "27411CFAB4ECC20C6D112C7F7FB36679")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     protected Layout(CharSequence text, TextPaint paint,
                      int width, Alignment align, TextDirectionHeuristic textDir,
                      float spacingMult, float spacingAdd) {
-        dsTaint.addTaint(textDir.dsTaint);
         dsTaint.addTaint(spacingAdd);
+        dsTaint.addTaint(textDir.dsTaint);
         dsTaint.addTaint(text);
-        dsTaint.addTaint(width);
         dsTaint.addTaint(align.dsTaint);
+        dsTaint.addTaint(width);
         dsTaint.addTaint(spacingMult);
         dsTaint.addTaint(paint.dsTaint);
         if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("Layout: " + width + " < 0");
@@ -111,15 +89,13 @@ public abstract class Layout {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:04.002 -0400", hash_original_method = "1597B0DF539C50975D1094B78D7BA08C", hash_generated_method = "2413E4414C0FEBD348BCD3878230BC25")
-    public static float getDesiredWidth(CharSequence source,
+        public static float getDesiredWidth(CharSequence source,
                                         TextPaint paint) {
         return getDesiredWidth(source, 0, source.length(), paint);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:04.002 -0400", hash_original_method = "70F93B7B36BD9F1CA7DABE2B88F9D9BC", hash_generated_method = "3668FF3A627B62D4DD819B230014C36D")
-    public static float getDesiredWidth(CharSequence source,
+        public static float getDesiredWidth(CharSequence source,
                                         int start, int end,
                                         TextPaint paint) {
         float need = 0;
@@ -138,14 +114,14 @@ public abstract class Layout {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:04.003 -0400", hash_original_method = "4BA809AE232557C36D4CE5AE6E36D4D2", hash_generated_method = "E9C2E0D39B8CC27DF5CD2455FE572111")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:56.103 -0400", hash_original_method = "4BA809AE232557C36D4CE5AE6E36D4D2", hash_generated_method = "565D021D127A659F64D3D7460CDF5841")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
      void replaceWith(CharSequence text, TextPaint paint,
                               int width, Alignment align,
                               float spacingmult, float spacingadd) {
         dsTaint.addTaint(text);
-        dsTaint.addTaint(width);
         dsTaint.addTaint(align.dsTaint);
+        dsTaint.addTaint(width);
         dsTaint.addTaint(paint.dsTaint);
         dsTaint.addTaint(spacingadd);
         dsTaint.addTaint(spacingmult);
@@ -167,8 +143,8 @@ public abstract class Layout {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:04.003 -0400", hash_original_method = "21986991A7FC788A39082240DAE8B9C3", hash_generated_method = "58C12063FF3846A40E567A90F4B16205")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:56.103 -0400", hash_original_method = "21986991A7FC788A39082240DAE8B9C3", hash_generated_method = "8C8FFA4CB27BDE4519409628F812E868")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     public void draw(Canvas c) {
         dsTaint.addTaint(c.dsTaint);
         draw(c, null, null, 0);
@@ -177,7 +153,7 @@ public abstract class Layout {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:04.004 -0400", hash_original_method = "C63D8686FF6D60F338825542CA174C93", hash_generated_method = "2495B42997EFC88301DFB646A1DE4B0B")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:56.105 -0400", hash_original_method = "C63D8686FF6D60F338825542CA174C93", hash_generated_method = "43B599C6A9DAF626930C9EDA2ADE9CF1")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public void draw(Canvas c, Path highlight, Paint highlightPaint,
                      int cursorOffsetVertical) {
@@ -188,7 +164,7 @@ public abstract class Layout {
         int dtop, dbottom;
         {
             {
-                boolean varC42A531B776DA8F33EFB072E74A6FC1E_107406722 = (!c.getClipBounds(sTempRect));
+                boolean varC42A531B776DA8F33EFB072E74A6FC1E_1709382169 = (!c.getClipBounds(sTempRect));
             } //End collapsed parenthetic
             dtop = sTempRect.top;
             dbottom = sTempRect.bottom;
@@ -330,7 +306,7 @@ public abstract class Layout {
                         } //End collapsed parenthetic
                         tabStopsIsInitialized = false;
                     } //End block
-                    final int length;
+                    int length;
                     length = spans.length;
                     {
                         int n;
@@ -427,7 +403,7 @@ public abstract class Layout {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:04.005 -0400", hash_original_method = "94C8B0A33C8A9972488E17891E7B8BAC", hash_generated_method = "3D43B5F507A6A13D3EFE487C5E4DA9B8")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:56.106 -0400", hash_original_method = "94C8B0A33C8A9972488E17891E7B8BAC", hash_generated_method = "264CA77DEFD101FBA00BFE55A41B7718")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     private int getLineStartPos(int line, int left, int right) {
         dsTaint.addTaint(line);
@@ -453,7 +429,7 @@ public abstract class Layout {
             TabStops tabStops;
             tabStops = null;
             {
-                boolean varEBDDE922AE0589A6CEAD24B0AC5E6B48_170169525 = (mSpannedText && getLineContainsTab(line));
+                boolean varEBDDE922AE0589A6CEAD24B0AC5E6B48_1094094256 = (mSpannedText && getLineContainsTab(line));
                 {
                     Spanned spanned;
                     spanned = (Spanned) mText;
@@ -493,7 +469,7 @@ public abstract class Layout {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:04.005 -0400", hash_original_method = "D3D56665E0CC0B43413FBFB4C720E96C", hash_generated_method = "30DFD727B26C3356B6ADF1B6FEF34DE8")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:56.106 -0400", hash_original_method = "D3D56665E0CC0B43413FBFB4C720E96C", hash_generated_method = "ACFAACEEAFC35ED18A33AE824F74CEA6")
     @DSModeled(DSC.SAFE)
     public final CharSequence getText() {
         return dsTaint.getTaintString();
@@ -502,7 +478,7 @@ public abstract class Layout {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:04.005 -0400", hash_original_method = "7064C5093467A23605D5C425E4D25B83", hash_generated_method = "A04E242F688D6A106A69FACC35E80558")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:56.107 -0400", hash_original_method = "7064C5093467A23605D5C425E4D25B83", hash_generated_method = "AB12CFA3AB0E4E96BEACABB6E94663D2")
     @DSModeled(DSC.SAFE)
     public final TextPaint getPaint() {
         return (TextPaint)dsTaint.getTaint();
@@ -511,7 +487,7 @@ public abstract class Layout {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:04.005 -0400", hash_original_method = "AA9BA105372BFC95AFBABED408315F5C", hash_generated_method = "C051626A128DDEFDBDD1399886E0334F")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:56.107 -0400", hash_original_method = "AA9BA105372BFC95AFBABED408315F5C", hash_generated_method = "B7093611B93F43844E581B058C2FA6F0")
     @DSModeled(DSC.SAFE)
     public final int getWidth() {
         return dsTaint.getTaintInt();
@@ -520,7 +496,7 @@ public abstract class Layout {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:04.005 -0400", hash_original_method = "90F96A059D406483E44444E82D555D1F", hash_generated_method = "F85377ECAAF25BB285F575642615BF70")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:56.107 -0400", hash_original_method = "90F96A059D406483E44444E82D555D1F", hash_generated_method = "974A0014D2435573605189970634E3F4")
     @DSModeled(DSC.SAFE)
     public int getEllipsizedWidth() {
         return dsTaint.getTaintInt();
@@ -529,12 +505,12 @@ public abstract class Layout {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:04.005 -0400", hash_original_method = "461CE12B89AFCA61718D5C5F590357B0", hash_generated_method = "F40893EFD0F785C71BC197EF94B19742")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:56.107 -0400", hash_original_method = "461CE12B89AFCA61718D5C5F590357B0", hash_generated_method = "78ECBA37B8AD928B98310F4CB548A81E")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     public final void increaseWidthTo(int wid) {
         dsTaint.addTaint(wid);
         {
-            throw new RuntimeException("attempted to reduce Layout width");
+            if (DroidSafeAndroidRuntime.control) throw new RuntimeException("attempted to reduce Layout width");
         } //End block
         // ---------- Original Method ----------
         //if (wid < mWidth) {
@@ -544,17 +520,17 @@ public abstract class Layout {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:04.005 -0400", hash_original_method = "5212B162F472F11B6A60B5BD891C860A", hash_generated_method = "16131FC9B145E089D17AC05EAD1B8E58")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:56.107 -0400", hash_original_method = "5212B162F472F11B6A60B5BD891C860A", hash_generated_method = "4D9B9415D224F664A7725030CE8F77A4")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public int getHeight() {
-        int var7ED7F6E2EB0B1BC7A56013BEE63A9A35_305509911 = (getLineTop(getLineCount()));
+        int var7ED7F6E2EB0B1BC7A56013BEE63A9A35_1447391176 = (getLineTop(getLineCount()));
         return dsTaint.getTaintInt();
         // ---------- Original Method ----------
         //return getLineTop(getLineCount());
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:04.005 -0400", hash_original_method = "FB2D4D43E3EFDD971010AB3AFA49B442", hash_generated_method = "AB5A1AB8C6FBD38D8137475C61A508B7")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:56.108 -0400", hash_original_method = "FB2D4D43E3EFDD971010AB3AFA49B442", hash_generated_method = "A0FC633010451F8DE5C6DCACFDEFC145")
     @DSModeled(DSC.SAFE)
     public final Alignment getAlignment() {
         return (Alignment)dsTaint.getTaint();
@@ -563,7 +539,7 @@ public abstract class Layout {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:04.006 -0400", hash_original_method = "F861D6694D511E0A8AF4CE2A5552F333", hash_generated_method = "5412600FB8AE872FDF7259E98AD0476C")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:56.108 -0400", hash_original_method = "F861D6694D511E0A8AF4CE2A5552F333", hash_generated_method = "E5EC466AF05CB62F06D0A3843F1EA1B0")
     @DSModeled(DSC.SAFE)
     public final float getSpacingMultiplier() {
         return dsTaint.getTaintFloat();
@@ -572,7 +548,7 @@ public abstract class Layout {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:04.006 -0400", hash_original_method = "E15AF37508F3C3C8F31DF2917343152C", hash_generated_method = "E9E59B5D780E418D76CA93B583BA8C01")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:56.108 -0400", hash_original_method = "E15AF37508F3C3C8F31DF2917343152C", hash_generated_method = "D749B67207C856EA2395D28B7863DA82")
     @DSModeled(DSC.SAFE)
     public final float getSpacingAdd() {
         return dsTaint.getTaintFloat();
@@ -581,10 +557,9 @@ public abstract class Layout {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:04.006 -0400", hash_original_method = "CEF29A1F61D81E3972548E19A0D7158C", hash_generated_method = "16665CB15ECBD268B35B8F9A9000F785")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:56.108 -0400", hash_original_method = "CEF29A1F61D81E3972548E19A0D7158C", hash_generated_method = "4E3BCCD33446F29451F508BEA32963A9")
     @DSModeled(DSC.SAFE)
     public final TextDirectionHeuristic getTextDirectionHeuristic() {
-        //DSFIXME:  CODE0009: Possible callback target function detected
         return (TextDirectionHeuristic)dsTaint.getTaint();
         // ---------- Original Method ----------
         //return mTextDir;
@@ -594,7 +569,7 @@ public abstract class Layout {
     public abstract int getLineCount();
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:04.006 -0400", hash_original_method = "6295516BE4612811C14BD1DCED80BAB8", hash_generated_method = "63E8015E05BFE3135323D863CB84201F")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:56.109 -0400", hash_original_method = "6295516BE4612811C14BD1DCED80BAB8", hash_generated_method = "93D159687F8DA7ED8327F0C55B86C688")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public int getLineBounds(int line, Rect bounds) {
         dsTaint.addTaint(bounds.dsTaint);
@@ -605,7 +580,7 @@ public abstract class Layout {
             bounds.right = mWidth;
             bounds.bottom = getLineTop(line + 1);
         } //End block
-        int var29FD769CAB68A42F60CF514C827201BE_624903212 = (getLineBaseline(line));
+        int var29FD769CAB68A42F60CF514C827201BE_555821563 = (getLineBaseline(line));
         return dsTaint.getTaintInt();
         // ---------- Original Method ----------
         //if (bounds != null) {
@@ -642,7 +617,7 @@ public abstract class Layout {
     public abstract int getBottomPadding();
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:04.006 -0400", hash_original_method = "2C3949CE81E6BE871356E85B216A576F", hash_generated_method = "50572D8AC8E91BD14D77E6D48558CA75")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:56.110 -0400", hash_original_method = "2C3949CE81E6BE871356E85B216A576F", hash_generated_method = "425BDACC21E5BF0D651531BB58707FD7")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public boolean isLevelBoundary(int offset) {
         dsTaint.addTaint(offset);
@@ -658,7 +633,7 @@ public abstract class Layout {
         lineEnd = getLineEnd(line);
         {
             int paraLevel;
-            boolean varEEB6B6B705B0C78401688F613A79E083_449773088 = (getParagraphDirection(line) == 1);
+            boolean varEEB6B6B705B0C78401688F613A79E083_1946026408 = (getParagraphDirection(line) == 1);
             paraLevel = 0;
             paraLevel = 1;
             int runIndex;
@@ -696,8 +671,8 @@ public abstract class Layout {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:04.006 -0400", hash_original_method = "AF5CCAD1718916CFF1EB4C8EF2E12FAE", hash_generated_method = "8E21D0359BF91E3EF999EDB4BB411900")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:56.110 -0400", hash_original_method = "AF5CCAD1718916CFF1EB4C8EF2E12FAE", hash_generated_method = "7622942D51D34B45F531CFBDD51BE695")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     public boolean isRtlCharAt(int offset) {
         dsTaint.addTaint(offset);
         int line;
@@ -744,7 +719,7 @@ public abstract class Layout {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:04.007 -0400", hash_original_method = "2802B19F8A9E2D0D463FD305FA66136A", hash_generated_method = "C1BC741E736B07A38CD4977E6BD3D241")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:56.111 -0400", hash_original_method = "2802B19F8A9E2D0D463FD305FA66136A", hash_generated_method = "EBAEDAA6EA4B5A1AD1EA6D4558DCB93E")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     private boolean primaryIsTrailingPrevious(int offset) {
         dsTaint.addTaint(offset);
@@ -809,13 +784,13 @@ public abstract class Layout {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:04.007 -0400", hash_original_method = "80ABC300097314837E01431F08FED39C", hash_generated_method = "D42750FEFC769D2D78F7A990F014D4D5")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:56.112 -0400", hash_original_method = "80ABC300097314837E01431F08FED39C", hash_generated_method = "5F9E09F298522B9186BF3E931691EA7E")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public float getPrimaryHorizontal(int offset) {
         dsTaint.addTaint(offset);
         boolean trailing;
         trailing = primaryIsTrailingPrevious(offset);
-        float var58B325E5B7FB5DC54EFDE69C8EB888FB_936139537 = (getHorizontal(offset, trailing));
+        float var58B325E5B7FB5DC54EFDE69C8EB888FB_175896672 = (getHorizontal(offset, trailing));
         return dsTaint.getTaintFloat();
         // ---------- Original Method ----------
         //boolean trailing = primaryIsTrailingPrevious(offset);
@@ -823,13 +798,13 @@ public abstract class Layout {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:04.007 -0400", hash_original_method = "5EA78F3566FFC0563802F8455C66332C", hash_generated_method = "37A6C362BDF13BBE14DBB2B4037F1F73")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:56.112 -0400", hash_original_method = "5EA78F3566FFC0563802F8455C66332C", hash_generated_method = "9CD927AA26840862DAAB189ACBE45714")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public float getSecondaryHorizontal(int offset) {
         dsTaint.addTaint(offset);
         boolean trailing;
         trailing = primaryIsTrailingPrevious(offset);
-        float var88A0B1B7EB4DA5EBC1FC42BFB863BDDB_1822772762 = (getHorizontal(offset, !trailing));
+        float var88A0B1B7EB4DA5EBC1FC42BFB863BDDB_562332782 = (getHorizontal(offset, !trailing));
         return dsTaint.getTaintFloat();
         // ---------- Original Method ----------
         //boolean trailing = primaryIsTrailingPrevious(offset);
@@ -837,14 +812,14 @@ public abstract class Layout {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:04.007 -0400", hash_original_method = "A6F47D9472D86FF595A17085495F07A6", hash_generated_method = "DA2E317A99A5DF8DAC4C7FEDCAE66F48")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:56.112 -0400", hash_original_method = "A6F47D9472D86FF595A17085495F07A6", hash_generated_method = "BE6640B68CD0C64E1EBFEAC0B8FDC9A7")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     private float getHorizontal(int offset, boolean trailing) {
         dsTaint.addTaint(trailing);
         dsTaint.addTaint(offset);
         int line;
         line = getLineForOffset(offset);
-        float varE96D4127286387DC83C70FBC1CFA8E14_592967777 = (getHorizontal(offset, trailing, line));
+        float varE96D4127286387DC83C70FBC1CFA8E14_638809842 = (getHorizontal(offset, trailing, line));
         return dsTaint.getTaintFloat();
         // ---------- Original Method ----------
         //int line = getLineForOffset(offset);
@@ -852,7 +827,7 @@ public abstract class Layout {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:04.008 -0400", hash_original_method = "B47A0ABADD57DE266AAF87A7E699E873", hash_generated_method = "E09EB288C721AF28BACC6D764C2DBF9F")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:56.113 -0400", hash_original_method = "B47A0ABADD57DE266AAF87A7E699E873", hash_generated_method = "DDFEF9E5FD2CDA0AA0E864C9534213F9")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     private float getHorizontal(int offset, boolean trailing, int line) {
         dsTaint.addTaint(trailing);
@@ -887,14 +862,14 @@ public abstract class Layout {
         left = getParagraphLeft(line);
         int right;
         right = getParagraphRight(line);
-        float var4B4FA8270CE482A0F053465908FBE10D_1079420793 = (getLineStartPos(line, left, right) + wid);
+        float var4B4FA8270CE482A0F053465908FBE10D_49404180 = (getLineStartPos(line, left, right) + wid);
         return dsTaint.getTaintFloat();
         // ---------- Original Method ----------
         // Original Method Too Long, Refer to Original Implementation
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:04.008 -0400", hash_original_method = "185391EA60FA7533A9126C3E791BF275", hash_generated_method = "15FD4F12A28918F7BC78EAB4C1B50339")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:56.114 -0400", hash_original_method = "185391EA60FA7533A9126C3E791BF275", hash_generated_method = "8E7D534CD7FBF9D13CB8EC11792E5842")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public float getLineLeft(int line) {
         dsTaint.addTaint(line);
@@ -903,13 +878,13 @@ public abstract class Layout {
         Alignment align;
         align = getParagraphAlignment(line);
         {
-            float var98F794A324A0919CA2BAAE75E672BC61_1401613178 = (getParagraphRight(line) - getLineMax(line));
+            float var98F794A324A0919CA2BAAE75E672BC61_1041039846 = (getParagraphRight(line) - getLineMax(line));
         } //End block
         {
-            float varB6842D18BAF51681C1C350FBC007B514_1646746871 = (mWidth - getLineMax(line));
+            float varB6842D18BAF51681C1C350FBC007B514_763358498 = (mWidth - getLineMax(line));
         } //End block
         {
-            float varB6842D18BAF51681C1C350FBC007B514_2093894881 = (mWidth - getLineMax(line));
+            float varB6842D18BAF51681C1C350FBC007B514_1262773489 = (mWidth - getLineMax(line));
         } //End block
         {
             int left;
@@ -925,7 +900,7 @@ public abstract class Layout {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:04.008 -0400", hash_original_method = "D344E3703EA76C4344B547792AB00F8E", hash_generated_method = "B59FA9F2C025FF7AF9031066E5D41AFE")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:56.114 -0400", hash_original_method = "D344E3703EA76C4344B547792AB00F8E", hash_generated_method = "4B3349C547497FBA3A251D029ADF7964")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public float getLineRight(int line) {
         dsTaint.addTaint(line);
@@ -934,13 +909,13 @@ public abstract class Layout {
         Alignment align;
         align = getParagraphAlignment(line);
         {
-            float varC6136DD4ADABC05AB18240388355DC3F_456444744 = (getParagraphLeft(line) + getLineMax(line));
+            float varC6136DD4ADABC05AB18240388355DC3F_2030433907 = (getParagraphLeft(line) + getLineMax(line));
         } //End block
         {
-            float varC6136DD4ADABC05AB18240388355DC3F_970136051 = (getParagraphLeft(line) + getLineMax(line));
+            float varC6136DD4ADABC05AB18240388355DC3F_505169160 = (getParagraphLeft(line) + getLineMax(line));
         } //End block
         {
-            float varDA3557094C6D55255BC5DF32F9EC5DA6_1996277684 = (getLineMax(line));
+            float varDA3557094C6D55255BC5DF32F9EC5DA6_1597886578 = (getLineMax(line));
         } //End block
         {
             int left;
@@ -956,8 +931,8 @@ public abstract class Layout {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:04.008 -0400", hash_original_method = "F9A5FD2221E6CC8B07379CD2792C3C3D", hash_generated_method = "DCB7C4238FCDB00B0BECA4A08B352043")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:56.115 -0400", hash_original_method = "F9A5FD2221E6CC8B07379CD2792C3C3D", hash_generated_method = "01A471290E47FD84A990F63D67A04752")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     public float getLineMax(int line) {
         dsTaint.addTaint(line);
         float margin;
@@ -972,8 +947,8 @@ public abstract class Layout {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:04.008 -0400", hash_original_method = "71AEB5E1BA96E910342AC0DBF85E1ED1", hash_generated_method = "54D21464AF1902CA08DC2F84AAD026F5")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:56.115 -0400", hash_original_method = "71AEB5E1BA96E910342AC0DBF85E1ED1", hash_generated_method = "7E2DF932BEC7AA965BD9D32D3E81E11D")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     public float getLineWidth(int line) {
         dsTaint.addTaint(line);
         float margin;
@@ -988,7 +963,7 @@ public abstract class Layout {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:04.009 -0400", hash_original_method = "22E5E0C81FE58627900045F7BF4DB10C", hash_generated_method = "77D6016AC496BB530B219E5E1CB3A73C")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:56.116 -0400", hash_original_method = "22E5E0C81FE58627900045F7BF4DB10C", hash_generated_method = "1BFE77F2BC97FECBE7D0B8EB34CB0B48")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     private float getLineExtent(int line, boolean full) {
         dsTaint.addTaint(full);
@@ -1025,7 +1000,7 @@ public abstract class Layout {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:04.009 -0400", hash_original_method = "8D693BD7DA670D75D51405BA4AD1D35A", hash_generated_method = "218738DB151E0E57EC5FC8A085EBC15B")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:56.117 -0400", hash_original_method = "8D693BD7DA670D75D51405BA4AD1D35A", hash_generated_method = "1FA49699D2DAB1927403748488682994")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     private float getLineExtent(int line, TabStops tabStops, boolean full) {
         dsTaint.addTaint(tabStops.dsTaint);
@@ -1063,7 +1038,7 @@ public abstract class Layout {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:04.009 -0400", hash_original_method = "10EB5BCC671C8F4E5C56CFC3872691D1", hash_generated_method = "50CCF137D494574261BB1C284D741D5A")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:56.117 -0400", hash_original_method = "10EB5BCC671C8F4E5C56CFC3872691D1", hash_generated_method = "1E070EDE00C9DA928A0E5C30D9EDC63C")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public int getLineForVertical(int vertical) {
         dsTaint.addTaint(vertical);
@@ -1073,7 +1048,7 @@ public abstract class Layout {
         {
             guess = (high + low) / 2;
             {
-                boolean var61BBF3CF1E0BB57196057707E3B4D6BF_1768368952 = (getLineTop(guess) > vertical);
+                boolean var61BBF3CF1E0BB57196057707E3B4D6BF_1429465487 = (getLineTop(guess) > vertical);
                 high = guess;
                 low = guess;
             } //End collapsed parenthetic
@@ -1095,7 +1070,7 @@ public abstract class Layout {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:04.009 -0400", hash_original_method = "42BF795D8C0B31EF6FC35C1F4CBE0EBA", hash_generated_method = "3ACAF5284A64D09351CA665F0E9AA545")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:56.118 -0400", hash_original_method = "42BF795D8C0B31EF6FC35C1F4CBE0EBA", hash_generated_method = "9B8ED02243D875B147E64DBAF0BF4FCF")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public int getLineForOffset(int offset) {
         dsTaint.addTaint(offset);
@@ -1105,7 +1080,7 @@ public abstract class Layout {
         {
             guess = (high + low) / 2;
             {
-                boolean var3154698616D95C0A37FAB8F8A883C99B_196050894 = (getLineStart(guess) > offset);
+                boolean var3154698616D95C0A37FAB8F8A883C99B_587203653 = (getLineStart(guess) > offset);
                 high = guess;
                 low = guess;
             } //End collapsed parenthetic
@@ -1127,7 +1102,7 @@ public abstract class Layout {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:04.010 -0400", hash_original_method = "C7C29A2E2D90FB22FF824A86EA8883C4", hash_generated_method = "49E736136840B62781B0DCDF24FE7463")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:56.119 -0400", hash_original_method = "C7C29A2E2D90FB22FF824A86EA8883C4", hash_generated_method = "191FAFDB043455649863716926474D31")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public int getOffsetForHorizontal(int line, float horiz) {
         dsTaint.addTaint(horiz);
@@ -1139,8 +1114,7 @@ public abstract class Layout {
         Directions dirs;
         dirs = getLineDirections(line);
         {
-            boolean varE1129FD6E3F799951EC526B3F962E39B_2123675908 = (line == getLineCount() - 1);
-            max++;
+            boolean varE1129FD6E3F799951EC526B3F962E39B_738150134 = (line == getLineCount() - 1);
         } //End collapsed parenthetic
         int best;
         best = min;
@@ -1167,7 +1141,7 @@ public abstract class Layout {
                     int adguess;
                     adguess = getOffsetAtStartOf(guess);
                     {
-                        boolean var598D8798A97CE595A660B245ECEF3FB1_1736858769 = (getPrimaryHorizontal(adguess) * swap >= horiz * swap);
+                        boolean var598D8798A97CE595A660B245ECEF3FB1_2125380575 = (getPrimaryHorizontal(adguess) * swap >= horiz * swap);
                         high = guess;
                         low = guess;
                     } //End collapsed parenthetic
@@ -1212,29 +1186,29 @@ public abstract class Layout {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:04.010 -0400", hash_original_method = "AEF50F2FA9A7358F560FC7521C77962F", hash_generated_method = "AF7D3B089BB68E24B3F562AAF6C8057D")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:56.120 -0400", hash_original_method = "AEF50F2FA9A7358F560FC7521C77962F", hash_generated_method = "0EF68F7D5B3EF24009A7D2F2D415AC36")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public final int getLineEnd(int line) {
         dsTaint.addTaint(line);
-        int var8CC52E19BC990AEB0402BCF31B3C0E24_980399568 = (getLineStart(line + 1));
+        int var8CC52E19BC990AEB0402BCF31B3C0E24_653378785 = (getLineStart(line + 1));
         return dsTaint.getTaintInt();
         // ---------- Original Method ----------
         //return getLineStart(line + 1);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:04.010 -0400", hash_original_method = "A5D943CCC73667A904F00DFE82793835", hash_generated_method = "E194AD2CA62CA068667EF20BA27994CC")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:56.120 -0400", hash_original_method = "A5D943CCC73667A904F00DFE82793835", hash_generated_method = "BC304AAF16FEC6B275F71A72F7C8D871")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public int getLineVisibleEnd(int line) {
         dsTaint.addTaint(line);
-        int var62428E356DD4C198AB8841D5C8B61434_1909508209 = (getLineVisibleEnd(line, getLineStart(line), getLineStart(line+1)));
+        int var62428E356DD4C198AB8841D5C8B61434_1543041869 = (getLineVisibleEnd(line, getLineStart(line), getLineStart(line+1)));
         return dsTaint.getTaintInt();
         // ---------- Original Method ----------
         //return getLineVisibleEnd(line, getLineStart(line), getLineStart(line+1));
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:04.010 -0400", hash_original_method = "2B63DEF38DAE998AFE5301FAAC214E4B", hash_generated_method = "FA6E7386D16BDF11C962D9FE45B539A7")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:56.121 -0400", hash_original_method = "2B63DEF38DAE998AFE5301FAAC214E4B", hash_generated_method = "1605C4E7A4C9F9015D5F679A9D890B01")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     private int getLineVisibleEnd(int line, int start, int end) {
         dsTaint.addTaint(start);
@@ -1244,7 +1218,7 @@ public abstract class Layout {
         text = mText;
         char ch;
         {
-            boolean varE1129FD6E3F799951EC526B3F962E39B_1539214507 = (line == getLineCount() - 1);
+            boolean varE1129FD6E3F799951EC526B3F962E39B_1082345830 = (line == getLineCount() - 1);
         } //End collapsed parenthetic
         {
             ch = text.charAt(end - 1);
@@ -1269,62 +1243,62 @@ public abstract class Layout {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:04.010 -0400", hash_original_method = "230C56044F8D52E3D0BA17DE5C72A914", hash_generated_method = "51F4FCAEAE06719429088C953E65A2CA")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:56.121 -0400", hash_original_method = "230C56044F8D52E3D0BA17DE5C72A914", hash_generated_method = "3F2CD7E4D4FF6F05D3554C43EB5D81B7")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public final int getLineBottom(int line) {
         dsTaint.addTaint(line);
-        int var87591D8CFD866D80B89A94BD35FF5C53_1008818646 = (getLineTop(line + 1));
+        int var87591D8CFD866D80B89A94BD35FF5C53_1338884961 = (getLineTop(line + 1));
         return dsTaint.getTaintInt();
         // ---------- Original Method ----------
         //return getLineTop(line + 1);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:04.010 -0400", hash_original_method = "BC6E93964E3CCD0D48881D9F9ABB9170", hash_generated_method = "7150235189A90196CB88AD24AFA7C993")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:56.121 -0400", hash_original_method = "BC6E93964E3CCD0D48881D9F9ABB9170", hash_generated_method = "89579A72359C6566E202C36E3E5392B6")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public final int getLineBaseline(int line) {
         dsTaint.addTaint(line);
-        int varF759BC48D9E18C48A2D84A1D35A4C202_1088617311 = (getLineTop(line+1) - getLineDescent(line));
+        int varF759BC48D9E18C48A2D84A1D35A4C202_2081851815 = (getLineTop(line+1) - getLineDescent(line));
         return dsTaint.getTaintInt();
         // ---------- Original Method ----------
         //return getLineTop(line+1) - getLineDescent(line);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:04.010 -0400", hash_original_method = "577197C969745092B110831C30EF14E9", hash_generated_method = "B5BD70BC15DBBC97D7BDB681C3AD2BC5")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:56.121 -0400", hash_original_method = "577197C969745092B110831C30EF14E9", hash_generated_method = "FE210EF452C536C4A18FEE6CF263C578")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public final int getLineAscent(int line) {
         dsTaint.addTaint(line);
-        int var77CECF3AA081362BA73A6FE592826DBA_1590983673 = (getLineTop(line) - (getLineTop(line+1) - getLineDescent(line)));
+        int var77CECF3AA081362BA73A6FE592826DBA_1827187317 = (getLineTop(line) - (getLineTop(line+1) - getLineDescent(line)));
         return dsTaint.getTaintInt();
         // ---------- Original Method ----------
         //return getLineTop(line) - (getLineTop(line+1) - getLineDescent(line));
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:04.011 -0400", hash_original_method = "AA9B5ECC044BD491182BF4F86B4B2DB2", hash_generated_method = "698A8803DAD2A158D370F7D6F1401BFA")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:56.122 -0400", hash_original_method = "AA9B5ECC044BD491182BF4F86B4B2DB2", hash_generated_method = "7319052CCBDBF984328D212132FD0565")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public int getOffsetToLeftOf(int offset) {
         dsTaint.addTaint(offset);
-        int var277357E3410E8D01615B66CFEDE5D6BD_540413399 = (getOffsetToLeftRightOf(offset, true));
+        int var277357E3410E8D01615B66CFEDE5D6BD_660239155 = (getOffsetToLeftRightOf(offset, true));
         return dsTaint.getTaintInt();
         // ---------- Original Method ----------
         //return getOffsetToLeftRightOf(offset, true);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:04.011 -0400", hash_original_method = "684E6D0185E1F1B7C4ABCAB8ADBE45B0", hash_generated_method = "A6EDED38F27D85A3F3C5C58074BBB25A")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:56.122 -0400", hash_original_method = "684E6D0185E1F1B7C4ABCAB8ADBE45B0", hash_generated_method = "07CA1E13F617B735129C2D3DA5EA5239")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public int getOffsetToRightOf(int offset) {
         dsTaint.addTaint(offset);
-        int var8F86D7AF4916F278DC98BA8E19B1D241_1859957747 = (getOffsetToLeftRightOf(offset, false));
+        int var8F86D7AF4916F278DC98BA8E19B1D241_2003792298 = (getOffsetToLeftRightOf(offset, false));
         return dsTaint.getTaintInt();
         // ---------- Original Method ----------
         //return getOffsetToLeftRightOf(offset, false);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:04.011 -0400", hash_original_method = "0024CF60F9AAE9E8C390E55EB92D8B7D", hash_generated_method = "4BDD6772B087967CE98547518EE0A68A")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:56.122 -0400", hash_original_method = "0024CF60F9AAE9E8C390E55EB92D8B7D", hash_generated_method = "58E6F77D068FF463C1B6E880C6FA1E77")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     private int getOffsetToLeftRightOf(int caret, boolean toLeft) {
         dsTaint.addTaint(caret);
@@ -1344,10 +1318,9 @@ public abstract class Layout {
         {
             {
                 {
-                    boolean var355D79A48691714F7AD418B6FB65073C_73997676 = (line < getLineCount() - 1);
+                    boolean var355D79A48691714F7AD418B6FB65073C_1787132474 = (line < getLineCount() - 1);
                     {
                         lineChanged = true;
-                        ++line;
                     } //End block
                 } //End collapsed parenthetic
             } //End block
@@ -1356,7 +1329,6 @@ public abstract class Layout {
             {
                 {
                     lineChanged = true;
-                    --line;
                 } //End block
             } //End block
         } //End block
@@ -1383,8 +1355,8 @@ public abstract class Layout {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:04.011 -0400", hash_original_method = "F9D5E8173F5C3CA491A1C8A8AE760B93", hash_generated_method = "B256742DB0DFA87B6F381D4A5A79340B")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:56.123 -0400", hash_original_method = "F9D5E8173F5C3CA491A1C8A8AE760B93", hash_generated_method = "A16E2CA5AD935011FDAFE3BF4E6AD902")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     private int getOffsetAtStartOf(int offset) {
         dsTaint.addTaint(offset);
         CharSequence text;
@@ -1437,7 +1409,7 @@ public abstract class Layout {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:04.012 -0400", hash_original_method = "B9C7ED4514D9377B34881167E2C24E2C", hash_generated_method = "645E5D0EE209BABC062FA7149362535B")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:56.124 -0400", hash_original_method = "B9C7ED4514D9377B34881167E2C24E2C", hash_generated_method = "B7789143B90E7F2B66F231F13FF0C4AC")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public void getCursorPath(int point, Path dest,
                               CharSequence editingBuffer) {
@@ -1454,7 +1426,7 @@ public abstract class Layout {
         float h1;
         h1 = getPrimaryHorizontal(point) - 0.5f;
         float h2;
-        boolean var35ABFB89C4D7CB3AAB07DF4BC2B8B7DB_1130597527 = (isLevelBoundary(point));
+        boolean var35ABFB89C4D7CB3AAB07DF4BC2B8B7DB_1031263352 = (isLevelBoundary(point));
         h2 = getSecondaryHorizontal(point) - 0.5f;
         h2 = h1;
         int caps;
@@ -1472,7 +1444,7 @@ public abstract class Layout {
         h1 = 0.5f;
         h2 = 0.5f;
         {
-            boolean varB967F472C1B8F55EC25126285D862C13_914238708 = (Float.compare(h1, h2) == 0);
+            boolean varB967F472C1B8F55EC25126285D862C13_1411797861 = (Float.compare(h1, h2) == 0);
             {
                 dest.moveTo(h1, top);
                 dest.lineTo(h1, bottom);
@@ -1517,7 +1489,7 @@ public abstract class Layout {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:04.012 -0400", hash_original_method = "12119B0793FEC64A3F791B69831CA1AC", hash_generated_method = "40B8E9ED602A0113541E13A19AC28277")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:56.131 -0400", hash_original_method = "12119B0793FEC64A3F791B69831CA1AC", hash_generated_method = "0747DEE1D7B6DCADA8955E1E5CDA6E7D")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     private void addSelection(int line, int start, int end,
                               int top, int bottom, Path dest) {
@@ -1534,8 +1506,7 @@ public abstract class Layout {
         Directions dirs;
         dirs = getLineDirections(line);
         {
-            boolean varB43E309FBAB2B8F1A4B7179F5EBC83BF_1617205107 = (lineend > linestart && mText.charAt(lineend - 1) == '\n');
-            lineend--;
+            boolean varB43E309FBAB2B8F1A4B7179F5EBC83BF_1378547223 = (lineend > linestart && mText.charAt(lineend - 1) == '\n');
         } //End collapsed parenthetic
         {
             int i;
@@ -1571,10 +1542,9 @@ public abstract class Layout {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:04.013 -0400", hash_original_method = "E504AED84523F80835FFB88244A923D5", hash_generated_method = "BAA35CA60D20A3E5F2418168278379C4")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:56.132 -0400", hash_original_method = "E504AED84523F80835FFB88244A923D5", hash_generated_method = "C150BC2CD73565A855B2D0DEEDB16BA0")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public void getSelectionPath(int start, int end, Path dest) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
         dsTaint.addTaint(dest.dsTaint);
         dsTaint.addTaint(start);
         dsTaint.addTaint(end);
@@ -1597,12 +1567,12 @@ public abstract class Layout {
             addSelection(startline, start, end, top, bottom, dest);
         } //End block
         {
-            final float width;
+            float width;
             width = mWidth;
             addSelection(startline, start, getLineEnd(startline),
                          top, getLineBottom(startline), dest);
             {
-                boolean var641B20D73ACAC5B224EFAB6A2D83DEC5_1043591283 = (getParagraphDirection(startline) == DIR_RIGHT_TO_LEFT);
+                boolean var641B20D73ACAC5B224EFAB6A2D83DEC5_1322458664 = (getParagraphDirection(startline) == DIR_RIGHT_TO_LEFT);
                 dest.addRect(getLineLeft(startline), top,
                               0, getLineBottom(startline), Path.Direction.CW);
                 dest.addRect(getLineRight(startline), top,
@@ -1622,7 +1592,7 @@ public abstract class Layout {
             addSelection(endline, getLineStart(endline), end,
                          top, bottom, dest);
             {
-                boolean var2D05D65F6C53E0529A94B0C267529750_1804329254 = (getParagraphDirection(endline) == DIR_RIGHT_TO_LEFT);
+                boolean var2D05D65F6C53E0529A94B0C267529750_1380262190 = (getParagraphDirection(endline) == DIR_RIGHT_TO_LEFT);
                 dest.addRect(width, top, getLineRight(endline), bottom, Path.Direction.CW);
                 dest.addRect(0, top, getLineLeft(endline), bottom, Path.Direction.CW);
             } //End collapsed parenthetic
@@ -1632,7 +1602,7 @@ public abstract class Layout {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:04.013 -0400", hash_original_method = "8E26BC9825AB85694FDEA00F755B3420", hash_generated_method = "35D7DB57666A71C41357786124F78A90")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:56.133 -0400", hash_original_method = "8E26BC9825AB85694FDEA00F755B3420", hash_generated_method = "8EA145FBB7B8DA95E8FC4168DF91CB75")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public final Alignment getParagraphAlignment(int line) {
         dsTaint.addTaint(line);
@@ -1668,7 +1638,7 @@ public abstract class Layout {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:04.013 -0400", hash_original_method = "D8249C79FD486A8037899C5A02304321", hash_generated_method = "5A55FB95BB596BB5F789A3D19A091F15")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:56.133 -0400", hash_original_method = "D8249C79FD486A8037899C5A02304321", hash_generated_method = "47E94BC343B888E832A7E1E8188841DD")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public final int getParagraphLeft(int line) {
         dsTaint.addTaint(line);
@@ -1676,7 +1646,7 @@ public abstract class Layout {
         left = 0;
         int dir;
         dir = getParagraphDirection(line);
-        int var2A867EA544174101A4992A444C3E4549_1488511093 = (getParagraphLeadingMargin(line));
+        int var2A867EA544174101A4992A444C3E4549_101726180 = (getParagraphLeadingMargin(line));
         return dsTaint.getTaintInt();
         // ---------- Original Method ----------
         //int left = 0;
@@ -1688,7 +1658,7 @@ public abstract class Layout {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:04.013 -0400", hash_original_method = "4AFE65CA85EFF9BA5DD1726E8E021AC9", hash_generated_method = "566212DE02FD6F7ED800BD04B1EABF95")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:56.134 -0400", hash_original_method = "4AFE65CA85EFF9BA5DD1726E8E021AC9", hash_generated_method = "5974CB44C1183174ADEEE207B3D7C1B9")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public final int getParagraphRight(int line) {
         dsTaint.addTaint(line);
@@ -1696,7 +1666,7 @@ public abstract class Layout {
         right = mWidth;
         int dir;
         dir = getParagraphDirection(line);
-        int varFDCC0DBACB708D752171E60779D4D664_913512491 = (right - getParagraphLeadingMargin(line));
+        int varFDCC0DBACB708D752171E60779D4D664_1406073893 = (right - getParagraphLeadingMargin(line));
         return dsTaint.getTaintInt();
         // ---------- Original Method ----------
         //int right = mWidth;
@@ -1708,7 +1678,7 @@ public abstract class Layout {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:04.014 -0400", hash_original_method = "E5BF73D13B43F74BA21E795D809567BE", hash_generated_method = "D91C2F1CB891E5CA7FAC0DAF5EA0AA24")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:56.134 -0400", hash_original_method = "E5BF73D13B43F74BA21E795D809567BE", hash_generated_method = "0D81A6930EF66D288E67AE761F260DA8")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     private int getParagraphLeadingMargin(int line) {
         dsTaint.addTaint(line);
@@ -1755,8 +1725,7 @@ public abstract class Layout {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:04.014 -0400", hash_original_method = "7B0A64808977E314E16FC537E6BE92A2", hash_generated_method = "FED1B0E58631CF885CFF2382EE5FAA5C")
-    static float measurePara(TextPaint paint, TextPaint workPaint,
+        static float measurePara(TextPaint paint, TextPaint workPaint,
             CharSequence text, int start, int end) {
         MeasuredText mt = MeasuredText.obtain();
         TextLine tl = TextLine.obtain();
@@ -1801,8 +1770,7 @@ public abstract class Layout {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:04.014 -0400", hash_original_method = "63723EF0B95DB45865B535A7B07F44F6", hash_generated_method = "E35782AC4B0B6B04DFA37943BF4BF52F")
-    static float nextTab(CharSequence text, int start, int end,
+        static float nextTab(CharSequence text, int start, int end,
                                        float h, Object[] tabs) {
         float nh = Float.MAX_VALUE;
         boolean alltabs = false;
@@ -1827,7 +1795,7 @@ public abstract class Layout {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:04.014 -0400", hash_original_method = "CAFF1C73D2C9EA6C410B2B2D519C8AC7", hash_generated_method = "D78FBD0A06CAE7570405F020A1477A94")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:56.135 -0400", hash_original_method = "CAFF1C73D2C9EA6C410B2B2D519C8AC7", hash_generated_method = "212C676547C367A991F8474C00BBAF37")
     @DSModeled(DSC.SAFE)
     protected final boolean isSpanned() {
         return dsTaint.getTaintBoolean();
@@ -1836,8 +1804,7 @@ public abstract class Layout {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:04.014 -0400", hash_original_method = "DCB131883C78F5EE877FC5DB76C76481", hash_generated_method = "B15F93ECD760D522EEB88C984F412233")
-    static <T> T[] getParagraphSpans(Spanned text, int start, int end, Class<T> type) {
+        static <T> T[] getParagraphSpans(Spanned text, int start, int end, Class<T> type) {
         if (start == end && start > 0) {
             return (T[]) ArrayUtils.emptyArray(type);
         }
@@ -1845,11 +1812,11 @@ public abstract class Layout {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:04.014 -0400", hash_original_method = "0902B773EC3014719EA37A51347EC9C6", hash_generated_method = "22F061F0F71E1C48A7E30617B048B8DF")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:56.136 -0400", hash_original_method = "0902B773EC3014719EA37A51347EC9C6", hash_generated_method = "0E02E1F813D0646F77119D94B8A0F1DD")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     private void ellipsize(int start, int end, int line,
                            char[] dest, int destoff) {
-        dsTaint.addTaint(dest);
+        dsTaint.addTaint(dest[0]);
         dsTaint.addTaint(start);
         dsTaint.addTaint(destoff);
         dsTaint.addTaint(line);
@@ -1911,8 +1878,8 @@ public abstract class Layout {
         private int mNumStops;
         private int mIncrement;
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:04.015 -0400", hash_original_method = "56D1FFBFF7D6B6649609A0E9FF6888AB", hash_generated_method = "8853C22E33B22FCD077A6C90D74A3BF6")
-        @DSModeled(DSC.SAFE)
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:56.137 -0400", hash_original_method = "56D1FFBFF7D6B6649609A0E9FF6888AB", hash_generated_method = "C9FD9F9513E218A163D979D0B5936DBE")
+        //DSFIXME:  CODE0002: Requires DSC value to be set
          TabStops(int increment, Object[] spans) {
             dsTaint.addTaint(increment);
             dsTaint.addTaint(spans[0].dsTaint);
@@ -1922,7 +1889,7 @@ public abstract class Layout {
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:04.015 -0400", hash_original_method = "12BC3A9AA4E5F32DB7C736F6D72E4602", hash_generated_method = "78DA859EDEBF6299A5BF2A7AEC7A4AC8")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:56.145 -0400", hash_original_method = "12BC3A9AA4E5F32DB7C736F6D72E4602", hash_generated_method = "3CDD47F2F15EA9C9B97270E4C64A7718")
         //DSFIXME:  CODE0002: Requires DSC value to be set
          void reset(int increment, Object[] spans) {
             dsTaint.addTaint(increment);
@@ -1968,7 +1935,7 @@ public abstract class Layout {
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:04.015 -0400", hash_original_method = "A46080BC8F3B4D3099E262DAA9B4728B", hash_generated_method = "9810F98AA850C666C507624162BA21B3")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:56.146 -0400", hash_original_method = "A46080BC8F3B4D3099E262DAA9B4728B", hash_generated_method = "D0D4598FEAFD92BE1BF0E5FBA486A14E")
         //DSFIXME:  CODE0002: Requires DSC value to be set
          float nextTab(float h) {
             dsTaint.addTaint(h);
@@ -1986,7 +1953,7 @@ public abstract class Layout {
                     } //End block
                 } //End collapsed parenthetic
             } //End block
-            float varA772933572361B833B090C93A4B38B40_1418585339 = (nextDefaultStop(h, mIncrement));
+            float varA772933572361B833B090C93A4B38B40_1966483032 = (nextDefaultStop(h, mIncrement));
             return dsTaint.getTaintFloat();
             // ---------- Original Method ----------
             //int ns = this.mNumStops;
@@ -2003,8 +1970,7 @@ public abstract class Layout {
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:04.015 -0400", hash_original_method = "770DB8A4DEEA87A4BD324D7E61285BEE", hash_generated_method = "FB23D16440FEC713311FAF8CB6A09A6C")
-        public static float nextDefaultStop(float h, int inc) {
+                public static float nextDefaultStop(float h, int inc) {
             return ((int) ((h + inc) / inc)) * inc;
         }
 
@@ -2016,10 +1982,10 @@ public abstract class Layout {
     public static class Directions {
         int[] mDirections;
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:04.015 -0400", hash_original_method = "DA94802578AA1A107A88665DAAC4811A", hash_generated_method = "4EBBD9FA52E5D83FE84B9319B2AFC5DC")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:56.146 -0400", hash_original_method = "DA94802578AA1A107A88665DAAC4811A", hash_generated_method = "0B77294812F3426DFE2E220A0DAE838E")
         @DSModeled(DSC.SAFE)
          Directions(int[] dirs) {
-            dsTaint.addTaint(dirs);
+            dsTaint.addTaint(dirs[0]);
             // ---------- Original Method ----------
             //mDirections = dirs;
         }
@@ -2035,7 +2001,7 @@ public abstract class Layout {
         int mWidth;
         TextUtils.TruncateAt mMethod;
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:04.015 -0400", hash_original_method = "991CD3860414493D5159CDEA8946E94D", hash_generated_method = "90DD9BF6C93D9FECED28A25FF5B0496F")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:56.147 -0400", hash_original_method = "991CD3860414493D5159CDEA8946E94D", hash_generated_method = "6A6D1284088C04BEB33D11E0E28BD26C")
         @DSModeled(DSC.SAFE)
         public Ellipsizer(CharSequence s) {
             dsTaint.addTaint(s);
@@ -2044,8 +2010,8 @@ public abstract class Layout {
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:04.015 -0400", hash_original_method = "D253D2AD2D0DACD122596323ACBBAF25", hash_generated_method = "B813BDB17287DE6E9C1E1D36A5713FA7")
-        @DSModeled(DSC.SAFE)
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:56.147 -0400", hash_original_method = "D253D2AD2D0DACD122596323ACBBAF25", hash_generated_method = "105BFFDF9E7A0EDE223A6ED138782272")
+        //DSFIXME:  CODE0002: Requires DSC value to be set
         public char charAt(int off) {
             dsTaint.addTaint(off);
             char[] buf;
@@ -2064,10 +2030,10 @@ public abstract class Layout {
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:04.016 -0400", hash_original_method = "F2DBD2F3D78F3955B1714BB078A793F8", hash_generated_method = "E80D11529E66D83D483B85776675207B")
-        @DSModeled(DSC.SAFE)
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:56.147 -0400", hash_original_method = "F2DBD2F3D78F3955B1714BB078A793F8", hash_generated_method = "8C744695643D7ED53FB7E0598FE14D5A")
+        //DSFIXME:  CODE0002: Requires DSC value to be set
         public void getChars(int start, int end, char[] dest, int destoff) {
-            dsTaint.addTaint(dest);
+            dsTaint.addTaint(dest[0]);
             dsTaint.addTaint(start);
             dsTaint.addTaint(destoff);
             dsTaint.addTaint(end);
@@ -2093,24 +2059,25 @@ public abstract class Layout {
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:04.016 -0400", hash_original_method = "9A68249D01A4FE1CBD4D535668FCEB6F", hash_generated_method = "84B05679313887469747C4467536D348")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:56.148 -0400", hash_original_method = "9A68249D01A4FE1CBD4D535668FCEB6F", hash_generated_method = "960C05FC371EB3AF46CE7AF73B5F3F11")
         //DSFIXME:  CODE0002: Requires DSC value to be set
         public int length() {
-            int varE8711A0ED7EDCE918346EA0F2DE620ED_2033294644 = (mText.length());
+            int varE8711A0ED7EDCE918346EA0F2DE620ED_19776007 = (mText.length());
             return dsTaint.getTaintInt();
             // ---------- Original Method ----------
             //return mText.length();
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:04.016 -0400", hash_original_method = "019151395F1B77A008AA178A5A5CA402", hash_generated_method = "F81ABFC15DCA823F13B3181343B4ED48")
-        @DSModeled(DSC.SAFE)
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:56.148 -0400", hash_original_method = "019151395F1B77A008AA178A5A5CA402", hash_generated_method = "EF286EC54101F3FA7ABE8401039D5B82")
+        //DSFIXME:  CODE0002: Requires DSC value to be set
         public CharSequence subSequence(int start, int end) {
             dsTaint.addTaint(start);
             dsTaint.addTaint(end);
             char[] s;
             s = new char[end - start];
             getChars(start, end, s, 0);
+            CharSequence var76BF35DD9309BFD9AD6D4B6E43C697C9_838651778 = (new String(s));
             return dsTaint.getTaintString();
             // ---------- Original Method ----------
             //char[] s = new char[end - start];
@@ -2119,13 +2086,14 @@ public abstract class Layout {
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:04.016 -0400", hash_original_method = "8ED281151745D3FC40324C23FDF16D10", hash_generated_method = "F1FC2A1EFDFAA0E4ECC04BC9BAC88CFA")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:56.148 -0400", hash_original_method = "8ED281151745D3FC40324C23FDF16D10", hash_generated_method = "D8D6B9F9E22624AD9DD5AD34B3BF7017")
         //DSFIXME:  CODE0002: Requires DSC value to be set
         @Override
         public String toString() {
             char[] s;
             s = new char[length()];
             getChars(0, length(), s, 0);
+            String var76BF35DD9309BFD9AD6D4B6E43C697C9_1375205854 = (new String(s));
             return dsTaint.getTaintString();
             // ---------- Original Method ----------
             //char[] s = new char[length()];
@@ -2141,7 +2109,7 @@ public abstract class Layout {
     static class SpannedEllipsizer extends Ellipsizer implements Spanned {
         private Spanned mSpanned;
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:04.016 -0400", hash_original_method = "F42AC9AEDB79FF2719E5DE12CF0CD85E", hash_generated_method = "97178BEFFAE46BFE2C3DCECEDBDB2D31")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:56.148 -0400", hash_original_method = "F42AC9AEDB79FF2719E5DE12CF0CD85E", hash_generated_method = "03502F04DDBBB029D2322D8B001598F6")
         //DSFIXME:  CODE0002: Requires DSC value to be set
         public SpannedEllipsizer(CharSequence display) {
             super(display);
@@ -2152,67 +2120,67 @@ public abstract class Layout {
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:04.016 -0400", hash_original_method = "E8AB479016A2E00AFF48AA43F345FA2A", hash_generated_method = "7539A4C480C785A33AB2126928B62090")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:56.149 -0400", hash_original_method = "E8AB479016A2E00AFF48AA43F345FA2A", hash_generated_method = "78DE24120B2D6EC8C4099E4620310744")
         //DSFIXME:  CODE0002: Requires DSC value to be set
         public <T> T[] getSpans(int start, int end, Class<T> type) {
             dsTaint.addTaint(start);
             dsTaint.addTaint(type.dsTaint);
             dsTaint.addTaint(end);
-            T[] varD7D8544F4A8114420D7401F18A483DF9_212899818 = (mSpanned.getSpans(start, end, type));
+            T[] varD7D8544F4A8114420D7401F18A483DF9_993551756 = (mSpanned.getSpans(start, end, type));
             return (T[])dsTaint.getTaint();
             // ---------- Original Method ----------
             //return mSpanned.getSpans(start, end, type);
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:04.016 -0400", hash_original_method = "2071284CDE64572D4D3F80F80EB4C823", hash_generated_method = "CFE92684ABCD3FE73DD9E9CBA7BADB05")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:56.149 -0400", hash_original_method = "2071284CDE64572D4D3F80F80EB4C823", hash_generated_method = "052867C35D1E5949A841CF20C4D43A5F")
         //DSFIXME:  CODE0002: Requires DSC value to be set
         public int getSpanStart(Object tag) {
             dsTaint.addTaint(tag.dsTaint);
-            int varD7924E7B7A12FA5A3B050A8325F5D9BE_249543617 = (mSpanned.getSpanStart(tag));
+            int varD7924E7B7A12FA5A3B050A8325F5D9BE_1299943844 = (mSpanned.getSpanStart(tag));
             return dsTaint.getTaintInt();
             // ---------- Original Method ----------
             //return mSpanned.getSpanStart(tag);
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:04.016 -0400", hash_original_method = "B1DC38D90632AE4EB220020E4C5B16DF", hash_generated_method = "22B6DFB66511163A6C929E598FF8AEB0")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:56.149 -0400", hash_original_method = "B1DC38D90632AE4EB220020E4C5B16DF", hash_generated_method = "40AC9920A6C0163FB7D5A89A02FC3C45")
         //DSFIXME:  CODE0002: Requires DSC value to be set
         public int getSpanEnd(Object tag) {
             dsTaint.addTaint(tag.dsTaint);
-            int varFDD9D023F9FB8A63C470934B7C2E8224_1189269118 = (mSpanned.getSpanEnd(tag));
+            int varFDD9D023F9FB8A63C470934B7C2E8224_1380094625 = (mSpanned.getSpanEnd(tag));
             return dsTaint.getTaintInt();
             // ---------- Original Method ----------
             //return mSpanned.getSpanEnd(tag);
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:04.016 -0400", hash_original_method = "A386D5CC8A9C15386840381A75E4D6FD", hash_generated_method = "D61627F400FD7DCD6162C0A4B66A69BA")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:56.149 -0400", hash_original_method = "A386D5CC8A9C15386840381A75E4D6FD", hash_generated_method = "3258B97B7010A241BB2F47A9485D8787")
         //DSFIXME:  CODE0002: Requires DSC value to be set
         public int getSpanFlags(Object tag) {
             dsTaint.addTaint(tag.dsTaint);
-            int var689A4E26E56E6EC55263E3776149ED4A_221898141 = (mSpanned.getSpanFlags(tag));
+            int var689A4E26E56E6EC55263E3776149ED4A_1610956583 = (mSpanned.getSpanFlags(tag));
             return dsTaint.getTaintInt();
             // ---------- Original Method ----------
             //return mSpanned.getSpanFlags(tag);
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:04.016 -0400", hash_original_method = "AF35DA8DF947D9C1330368703ECE15BE", hash_generated_method = "3E70110E94DD0D9AAC0AD1D2836803E4")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:56.150 -0400", hash_original_method = "AF35DA8DF947D9C1330368703ECE15BE", hash_generated_method = "6E97ABF794009E559255735CFE588F61")
         //DSFIXME:  CODE0002: Requires DSC value to be set
         public int nextSpanTransition(int start, int limit, Class type) {
             dsTaint.addTaint(limit);
             dsTaint.addTaint(start);
             dsTaint.addTaint(type.dsTaint);
-            int varF2EB81A12DD76D71166CCB6A597BD229_1721551857 = (mSpanned.nextSpanTransition(start, limit, type));
+            int varF2EB81A12DD76D71166CCB6A597BD229_1441504649 = (mSpanned.nextSpanTransition(start, limit, type));
             return dsTaint.getTaintInt();
             // ---------- Original Method ----------
             //return mSpanned.nextSpanTransition(start, limit, type);
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:04.017 -0400", hash_original_method = "16B37527DFF576A9EB476E4EC2A69F5D", hash_generated_method = "D73565F97F0F30FB7DF88DED804262DC")
-        @DSModeled(DSC.SAFE)
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:56.150 -0400", hash_original_method = "16B37527DFF576A9EB476E4EC2A69F5D", hash_generated_method = "D63646593A1663041A2CF69721674A0D")
+        //DSFIXME:  CODE0002: Requires DSC value to be set
         @Override
         public CharSequence subSequence(int start, int end) {
             dsTaint.addTaint(start);
@@ -2246,6 +2214,11 @@ public abstract class Layout {
     }
 
     
+    private static final ParagraphStyle[] NO_PARA_SPANS =
+        ArrayUtils.emptyArray(ParagraphStyle.class);
+    static final EmojiFactory EMOJI_FACTORY =
+        EmojiFactory.newAvailableInstance();
+    static final int MIN_EMOJI, MAX_EMOJI;
     static {
         if (EMOJI_FACTORY != null) {
             MIN_EMOJI = EMOJI_FACTORY.getMinimumAndroidPua();
@@ -2256,6 +2229,21 @@ public abstract class Layout {
         }
     }
     
+    private static final Rect sTempRect = new Rect();
+    public static final int DIR_LEFT_TO_RIGHT = 1;
+    public static final int DIR_RIGHT_TO_LEFT = -1;
+    static final int DIR_REQUEST_LTR = 1;
+    static final int DIR_REQUEST_RTL = -1;
+    static final int DIR_REQUEST_DEFAULT_LTR = 2;
+    static final int DIR_REQUEST_DEFAULT_RTL = -2;
+    static final int RUN_LENGTH_MASK = 0x03ffffff;
+    static final int RUN_LEVEL_SHIFT = 26;
+    static final int RUN_LEVEL_MASK = 0x3f;
+    static final int RUN_RTL_FLAG = 1 << RUN_LEVEL_SHIFT;
+    private static final int TAB_INCREMENT = 20;
+    static final Directions DIRS_ALL_LEFT_TO_RIGHT =
+        new Directions(new int[] { 0, RUN_LENGTH_MASK });
+    static final Directions DIRS_ALL_RIGHT_TO_LEFT =
+        new Directions(new int[] { 0, RUN_LENGTH_MASK | RUN_RTL_FLAG });
 }
-
 

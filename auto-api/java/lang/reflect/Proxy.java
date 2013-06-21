@@ -14,13 +14,9 @@ import java.util.Map;
 import java.util.WeakHashMap;
 
 public class Proxy implements Serializable {
-    private static long serialVersionUID = -2222568056686623797L;
-    private static Map<ClassLoader, Map<String, WeakReference<Class<?>>>> loaderCache = new WeakHashMap<ClassLoader, Map<String, WeakReference<Class<?>>>>();
-    private static Map<Class<?>, String> proxyCache = new WeakHashMap<Class<?>, String>();
-    private static int NextClassNameIndex = 0;
     protected InvocationHandler h;
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 12:56:11.807 -0400", hash_original_method = "1299DC7DDC1977A0E223548A22BEB1B2", hash_generated_method = "FB43E00434676ACEFA16B9DD82D1CEAF")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:27.015 -0400", hash_original_method = "1299DC7DDC1977A0E223548A22BEB1B2", hash_generated_method = "D647A7D612843DD58BA0B0DD89164A21")
     @DSModeled(DSC.SAFE)
     @SuppressWarnings("unused")
     private Proxy() {
@@ -28,7 +24,7 @@ public class Proxy implements Serializable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 12:56:11.813 -0400", hash_original_method = "4536AE1A64E0852F0920CAD3D2F2C594", hash_generated_method = "8DEC5C4D1E7F26EDE9D589CA9A4B3341")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:27.015 -0400", hash_original_method = "4536AE1A64E0852F0920CAD3D2F2C594", hash_generated_method = "D515EC287420E8240223F51AE67D3F32")
     @DSModeled(DSC.SAFE)
     protected Proxy(InvocationHandler h) {
         dsTaint.addTaint(h.dsTaint);
@@ -37,8 +33,7 @@ public class Proxy implements Serializable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 12:56:11.820 -0400", hash_original_method = "4E746CE0495D3DB0FF249BFCBD025F6A", hash_generated_method = "6702610A565CD0334F3F14D01485CB89")
-    public static Class<?> getProxyClass(ClassLoader loader,
+        public static Class<?> getProxyClass(ClassLoader loader,
             Class<?>... interfaces) throws IllegalArgumentException {
         if (interfaces == null) {
             throw new NullPointerException();
@@ -126,8 +121,7 @@ public class Proxy implements Serializable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 12:56:11.829 -0400", hash_original_method = "4375560191FF9AF2AD66AAFC6EDA1910", hash_generated_method = "403419D6FE97EEEE4440D238B61372F5")
-    public static Object newProxyInstance(ClassLoader loader,
+        public static Object newProxyInstance(ClassLoader loader,
             Class<?>[] interfaces, InvocationHandler h) throws IllegalArgumentException {
         if (h == null) {
             throw new NullPointerException();
@@ -153,8 +147,7 @@ public class Proxy implements Serializable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 12:56:11.835 -0400", hash_original_method = "03238E01E6CC0C4AD4BEE1E476C6E17D", hash_generated_method = "C5EA26D411549E035FF02BE748611EEB")
-    public static boolean isProxyClass(Class<?> cl) {
+        public static boolean isProxyClass(Class<?> cl) {
         if (cl == null) {
             throw new NullPointerException();
         }
@@ -164,9 +157,7 @@ public class Proxy implements Serializable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 12:56:11.839 -0400", hash_original_method = "BDB130E146D4EEE1EE2A0139344DF6E4", hash_generated_method = "004214B75F0803A84DB8B6AEAF156188")
-    public static InvocationHandler getInvocationHandler(Object proxy) throws IllegalArgumentException {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        public static InvocationHandler getInvocationHandler(Object proxy) throws IllegalArgumentException {
         if (isProxyClass(proxy.getClass())) {
             return ((Proxy) proxy).h;
         }
@@ -174,19 +165,19 @@ public class Proxy implements Serializable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 12:56:11.843 -0400", hash_original_method = "35C55DB5A48B0F395569B015D68669C8", hash_generated_method = "1A3962981E1F8C3737CB48271654C757")
-    private static Class generateProxy(String name, Class[] interfaces,
+        private static Class generateProxy(String name, Class[] interfaces,
         ClassLoader loader) {
         //DSFIXME:  CODE0012: Native static method requires manual modeling
-    	return new Proxy().getClass();
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 12:56:11.846 -0400", hash_original_method = "EBFFD66DCB885BD74568982AE6528CDF", hash_generated_method = "0006F4062A7BC1AC38EEB6C7DF03CC94")
-    private static void constructorPrototype(InvocationHandler h) {
+        private static void constructorPrototype(InvocationHandler h) {
     }
 
     
+    private static final long serialVersionUID = -2222568056686623797L;
+    private static final Map<ClassLoader, Map<String, WeakReference<Class<?>>>> loaderCache = new WeakHashMap<ClassLoader, Map<String, WeakReference<Class<?>>>>();
+    private static final Map<Class<?>, String> proxyCache = new WeakHashMap<Class<?>, String>();
+    private static int NextClassNameIndex = 0;
 }
-
 

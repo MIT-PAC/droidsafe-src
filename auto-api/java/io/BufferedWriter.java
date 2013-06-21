@@ -2,12 +2,11 @@ package java.io;
 
 // Droidsafe Imports
 import droidsafe.helpers.*;
-import droidsafe.runtime.DroidSafeAndroidRuntime;
 import droidsafe.annotations.*;
+import droidsafe.runtime.*;
 
-// import Iterator to deal with enhanced for loop translation
+// needed for enhanced for control translations
 import java.util.Iterator;
-
 import java.util.Arrays;
 import libcore.util.SneakyThrow;
 
@@ -16,7 +15,7 @@ public class BufferedWriter extends Writer {
     private char[] buf;
     private int pos;
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:11.392 -0400", hash_original_method = "D0AF799B17153797A8965CAE82858C8B", hash_generated_method = "E81134180DB4D67A8EF55CE0AD65B112")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:24.425 -0400", hash_original_method = "D0AF799B17153797A8965CAE82858C8B", hash_generated_method = "71A180186F040996B33B21C7911395E4")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public BufferedWriter(Writer out) {
         this(out, 8192);
@@ -25,15 +24,14 @@ public class BufferedWriter extends Writer {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:11.392 -0400", hash_original_method = "BD90CD6D32AE7EB9B6CCE31F3688E0F2", hash_generated_method = "3945D32C8DBE3D07A58320D233627FE6")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:24.425 -0400", hash_original_method = "BD90CD6D32AE7EB9B6CCE31F3688E0F2", hash_generated_method = "378E1ABC0F5252C78383E8018FC52E57")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public BufferedWriter(Writer out, int size) {
         super(out);
-        dsTaint.addTaint(out.dsTaint);
         dsTaint.addTaint(size);
-        if (DroidSafeAndroidRuntime.control)
+        dsTaint.addTaint(out.dsTaint);
         {
-            throw new IllegalArgumentException("size <= 0");
+            if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("size <= 0");
         } //End block
         this.buf = new char[size];
         // ---------- Original Method ----------
@@ -45,13 +43,13 @@ public class BufferedWriter extends Writer {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:11.392 -0400", hash_original_method = "1FFBADE50F933DAEBE6B8AB97A0787F1", hash_generated_method = "1609E98CA1F5890404A589B7BBE9CF59")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:24.426 -0400", hash_original_method = "1FFBADE50F933DAEBE6B8AB97A0787F1", hash_generated_method = "A705606A0993AB0F4F2CF1EF964CC84D")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     @Override
     public void close() throws IOException {
         {
             {
-                boolean var073668DCF2DBBA30CA010AF5A40EF5D1_690824976 = (isClosed());
+                boolean var073668DCF2DBBA30CA010AF5A40EF5D1_313744168 = (isClosed());
             } //End collapsed parenthetic
             Throwable thrown;
             thrown = null;
@@ -106,8 +104,8 @@ public class BufferedWriter extends Writer {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:11.392 -0400", hash_original_method = "CDBC99BDF3D706FE5CF6000E4273C9D9", hash_generated_method = "9BEFFD7F4C7F3ACC68ECA4352AFFE204")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:24.426 -0400", hash_original_method = "CDBC99BDF3D706FE5CF6000E4273C9D9", hash_generated_method = "3CEF361F896CE5CCC011D59648FF8B61")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     @Override
     public void flush() throws IOException {
         {
@@ -124,13 +122,13 @@ public class BufferedWriter extends Writer {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:11.393 -0400", hash_original_method = "023D06F961F755F2334356A83B61D7A7", hash_generated_method = "3F5FAC67952CBAEDEA1C9C6D0ECE7DC5")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:24.426 -0400", hash_original_method = "023D06F961F755F2334356A83B61D7A7", hash_generated_method = "DEB13054089A24AA67E3786DC7042EFC")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     private void checkNotClosed() throws IOException {
         {
-            boolean varF463C9E3EC09CF3DDC0E11AE27E5A7FD_1337893291 = (isClosed());
+            boolean varF463C9E3EC09CF3DDC0E11AE27E5A7FD_2006913214 = (isClosed());
             {
-                throw new IOException("BufferedWriter is closed");
+                if (DroidSafeAndroidRuntime.control) throw new IOException("BufferedWriter is closed");
             } //End block
         } //End collapsed parenthetic
         // ---------- Original Method ----------
@@ -140,8 +138,8 @@ public class BufferedWriter extends Writer {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:11.393 -0400", hash_original_method = "56ED8A50252CAA4A163E554237CE5ACA", hash_generated_method = "E5AC4006B0577021F59466A3B5ECC7CF")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:24.426 -0400", hash_original_method = "56ED8A50252CAA4A163E554237CE5ACA", hash_generated_method = "A8C600A134459EA77656A476F11E549A")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     private void flushInternal() throws IOException {
         {
             out.write(buf, 0, pos);
@@ -155,7 +153,7 @@ public class BufferedWriter extends Writer {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:11.393 -0400", hash_original_method = "65F785E5C7A072182DBDFA4385D9D27B", hash_generated_method = "0333BC1293EA40AE4BE2D5C62AF4BD70")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:24.426 -0400", hash_original_method = "65F785E5C7A072182DBDFA4385D9D27B", hash_generated_method = "22B90F664085D6824B9017421A267F06")
     @DSModeled(DSC.SAFE)
     private boolean isClosed() {
         return dsTaint.getTaintBoolean();
@@ -164,7 +162,7 @@ public class BufferedWriter extends Writer {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:11.393 -0400", hash_original_method = "2B3D7D602A7E63B6C09E849C2D681C65", hash_generated_method = "6C5A50A108AC84A9B0B4B2A2AC01C3C3")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:24.427 -0400", hash_original_method = "2B3D7D602A7E63B6C09E849C2D681C65", hash_generated_method = "95268A8136CFE30ED36AA1BE72C081F8")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public void newLine() throws IOException {
         write(System.lineSeparator());
@@ -173,18 +171,17 @@ public class BufferedWriter extends Writer {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:11.393 -0400", hash_original_method = "2ACD1A4D73C211D3299604BDD7AD25D9", hash_generated_method = "ECC4C3A0FE2356EAC2274BF0D4A5B06A")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:24.427 -0400", hash_original_method = "2ACD1A4D73C211D3299604BDD7AD25D9", hash_generated_method = "06C42B169BB5A574C4E3BDE5E118FDBA")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     @Override
     public void write(char[] cbuf, int offset, int count) throws IOException {
-        dsTaint.addTaint(cbuf);
+        dsTaint.addTaint(cbuf[0]);
         dsTaint.addTaint(count);
         dsTaint.addTaint(offset);
         {
             checkNotClosed();
-            if (DroidSafeAndroidRuntime.control)
             {
-                throw new NullPointerException("buffer == null");
+                if (DroidSafeAndroidRuntime.control) throw new NullPointerException("buffer == null");
             } //End block
             Arrays.checkOffsetAndCount(cbuf.length, offset, count);
             {
@@ -218,8 +215,8 @@ public class BufferedWriter extends Writer {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:11.393 -0400", hash_original_method = "C57AC7B5490B3E246FD3E407701AE232", hash_generated_method = "6CCB189A69ACBE1F70E38B21FF852A34")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:24.427 -0400", hash_original_method = "C57AC7B5490B3E246FD3E407701AE232", hash_generated_method = "83F803456A6A4258301C2FD22DAE261E")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     @Override
     public void write(int oneChar) throws IOException {
         dsTaint.addTaint(oneChar);
@@ -243,20 +240,19 @@ public class BufferedWriter extends Writer {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:11.393 -0400", hash_original_method = "AE740E7607559E2B849C6855BC31C773", hash_generated_method = "C4E375D8E59306138005074C4496635A")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:24.428 -0400", hash_original_method = "AE740E7607559E2B849C6855BC31C773", hash_generated_method = "ED4ADE4D2966C02223F8000F38ED96BC")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     @Override
     public void write(String str, int offset, int count) throws IOException {
-        dsTaint.addTaint(str);
         dsTaint.addTaint(count);
+        dsTaint.addTaint(str);
         dsTaint.addTaint(offset);
         {
             checkNotClosed();
             {
-                boolean var2D623A9FEC72D9FC3DAAD61AA5D26F0E_760764726 = (offset < 0 || offset > str.length() - count);
-                if (DroidSafeAndroidRuntime.control)
+                boolean var2D623A9FEC72D9FC3DAAD61AA5D26F0E_124151862 = (offset < 0 || offset > str.length() - count);
                 {
-                    throw new StringIndexOutOfBoundsException(str, offset, count);
+                    if (DroidSafeAndroidRuntime.control) throw new StringIndexOutOfBoundsException(str, offset, count);
                 } //End block
             } //End collapsed parenthetic
             {
@@ -297,5 +293,4 @@ public class BufferedWriter extends Writer {
 
     
 }
-
 

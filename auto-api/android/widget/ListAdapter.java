@@ -3,10 +3,10 @@ package android.widget;
 // Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
+import droidsafe.runtime.*;
 
-// import Iterator to deal with enhanced for loop translation
+// needed for enhanced for control translations
 import java.util.Iterator;
-
 
 public interface ListAdapter extends Adapter {
 
@@ -16,4 +16,3 @@ public interface ListAdapter extends Adapter {
     
     boolean isEnabled(int position);
 }
-

@@ -3,18 +3,24 @@ package android.util;
 // Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
+import droidsafe.runtime.*;
 
-// import Iterator to deal with enhanced for loop translation
+// needed for enhanced for control translations
 import java.util.Iterator;
-
 
 public abstract class Singleton<T> {
     private T mInstance;
     
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:58.333 -0400", hash_original_method = "F690099100A98A07FA7A1C97A5E2AEA4", hash_generated_method = "F690099100A98A07FA7A1C97A5E2AEA4")
+        public Singleton ()
+    {
+    }
+
+
     protected abstract T create();
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:04.660 -0400", hash_original_method = "CF8212F11D8E5F22A25C4FBFDDF16383", hash_generated_method = "681962A3305BAF303E1D351A59428012")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:58.333 -0400", hash_original_method = "CF8212F11D8E5F22A25C4FBFDDF16383", hash_generated_method = "64900959C54BC707A7DD66B9137F919A")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public final T get() {
         {
@@ -34,5 +40,4 @@ public abstract class Singleton<T> {
 
     
 }
-
 

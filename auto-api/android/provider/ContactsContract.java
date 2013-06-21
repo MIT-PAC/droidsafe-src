@@ -2,12 +2,11 @@ package android.provider;
 
 // Droidsafe Imports
 import droidsafe.helpers.*;
-import droidsafe.runtime.DroidSafeAndroidRuntime;
 import droidsafe.annotations.*;
+import droidsafe.runtime.*;
 
-// import Iterator to deal with enhanced for loop translation
+// needed for enhanced for control translations
 import java.util.Iterator;
-
 import android.accounts.Account;
 import android.app.Activity;
 import android.content.ContentProviderClient;
@@ -41,28 +40,19 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public final class ContactsContract {
-    public static final String AUTHORITY = "com.android.contacts";
-    public static final Uri AUTHORITY_URI = Uri.parse("content://" + AUTHORITY);
-    public static final String CALLER_IS_SYNCADAPTER = "caller_is_syncadapter";
-    public static final String DIRECTORY_PARAM_KEY = "directory";
-    public static final String LIMIT_PARAM_KEY = "limit";
-    public static final String PRIMARY_ACCOUNT_NAME = "name_for_primary_account";
-    public static final String PRIMARY_ACCOUNT_TYPE = "type_for_primary_account";
-    public static final String STREQUENT_PHONE_ONLY = "strequent_phone_only";
-    public static final String DEFERRED_SNIPPETING = "deferred_snippeting";
-    public static final String DEFERRED_SNIPPETING_QUERY = "deferred_snippeting_query";
-    public static final String REMOVE_DUPLICATE_ENTRIES = "remove_duplicate_entries";
-    private static Pattern SPLIT_PATTERN =
-        Pattern.compile("([\\w-\\.]+)@((?:[\\w]+\\.)+)([a-zA-Z]{2,4})|[\\w]+");
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:03.185 -0400", hash_original_method = "0941112ABD9069C80C65289B6D5666C2", hash_generated_method = "2B2E591A90F2D66450BD3C85D36EE73D")
-    public static boolean isProfileId(long id) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:54.898 -0400", hash_original_method = "DE2ED6AA3D68F52B4EF025394B7016A4", hash_generated_method = "DE2ED6AA3D68F52B4EF025394B7016A4")
+        public ContactsContract ()
+    {
+    }
+
+
+        public static boolean isProfileId(long id) {
         return id >= Profile.MIN_ID;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:03.185 -0400", hash_original_method = "BBD9B5CD65A55FC3201E30C2D0E96E71", hash_generated_method = "AE2BAF3D8CFE03FA01456F64B6681992")
-    public static String snippetize(String content, String displayName, String query,
+        public static String snippetize(String content, String displayName, String query,
             char snippetStartMatch, char snippetEndMatch, String snippetEllipsis,
             int snippetMaxTokens) {
         String lowerQuery = query != null ? query.toLowerCase() : null;
@@ -132,8 +122,7 @@ public final class ContactsContract {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:03.185 -0400", hash_original_method = "712ABC4CE2C3A9D659D9E51530EC203D", hash_generated_method = "190F3C53417FE6D5980891B58347F2FB")
-    private static void split(String content, List<String> tokens, List<Integer> offsets) {
+        private static void split(String content, List<String> tokens, List<Integer> offsets) {
         Matcher matcher = SPLIT_PATTERN.matcher(content);
         while (matcher.find()) {
             tokens.add(matcher.group());
@@ -143,27 +132,53 @@ public final class ContactsContract {
 
     
     public static final class Authorization {
+        
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:54.899 -0400", hash_original_method = "460893BF8B7147DB04A39628F031E773", hash_generated_method = "460893BF8B7147DB04A39628F031E773")
+                public Authorization ()
+        {
+        }
+
+
         public static final String AUTHORIZATION_METHOD = "authorize";
         public static final String KEY_URI_TO_AUTHORIZE = "uri_to_authorize";
         public static final String KEY_AUTHORIZED_URI = "authorized_uri";
-        
     }
 
 
     
     public static final class Preferences {
+        
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:54.899 -0400", hash_original_method = "F56ABB7FD848C190C791B36E6DBA54ED", hash_generated_method = "F56ABB7FD848C190C791B36E6DBA54ED")
+                public Preferences ()
+        {
+        }
+
+
         public static final String SORT_ORDER = "android.contacts.SORT_ORDER";
         public static final int SORT_ORDER_PRIMARY = 1;
         public static final int SORT_ORDER_ALTERNATIVE = 2;
         public static final String DISPLAY_ORDER = "android.contacts.DISPLAY_ORDER";
         public static final int DISPLAY_ORDER_PRIMARY = 1;
         public static final int DISPLAY_ORDER_ALTERNATIVE = 2;
-        
     }
 
 
     
     public static final class Directory implements BaseColumns {
+        
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:54.899 -0400", hash_original_method = "C1FAFD7F8C25A27903905826E99B3CB4", hash_generated_method = "32027E1E1476A00A97D4C9A87338A0EE")
+        @DSModeled(DSC.SAFE)
+        private Directory() {
+            // ---------- Original Method ----------
+        }
+
+        
+                public static void notifyDirectoryChange(ContentResolver resolver) {
+            ContentValues contentValues = new ContentValues();
+            resolver.update(Directory.CONTENT_URI, contentValues, null, null);
+        }
+
+        
         public static final Uri CONTENT_URI =
                 Uri.withAppendedPath(AUTHORITY_URI, "directories");
         public static final String CONTENT_TYPE =
@@ -191,148 +206,109 @@ public final class ContactsContract {
         public static final int PHOTO_SUPPORT_THUMBNAIL_ONLY = 1;
         public static final int PHOTO_SUPPORT_FULL_SIZE_ONLY = 2;
         public static final int PHOTO_SUPPORT_FULL = 3;
-        
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:03.186 -0400", hash_original_method = "C1FAFD7F8C25A27903905826E99B3CB4", hash_generated_method = "DA73FD90234FC4BE012C1AE709342E4C")
-        @DSModeled(DSC.SAFE)
-        private Directory() {
-            // ---------- Original Method ----------
-        }
-
-        
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:03.186 -0400", hash_original_method = "6D608DB52AC8952A89B8472446A9496C", hash_generated_method = "D71015D103F5403B70A115DAA5CEE7B6")
-        public static void notifyDirectoryChange(ContentResolver resolver) {
-            ContentValues contentValues = new ContentValues();
-            resolver.update(Directory.CONTENT_URI, contentValues, null, null);
-        }
-
-        
     }
 
 
     
     public static final class SyncState implements SyncStateContract.Columns {
-        public static final String CONTENT_DIRECTORY =
-                SyncStateContract.Constants.CONTENT_DIRECTORY;
-        public static final Uri CONTENT_URI =
-                Uri.withAppendedPath(AUTHORITY_URI, CONTENT_DIRECTORY);
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:03.186 -0400", hash_original_method = "C3CB9524AE86EE634A43E203167EAA5A", hash_generated_method = "E5FA8B7167A782C4D192D2EE83D7166D")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:54.899 -0400", hash_original_method = "C3CB9524AE86EE634A43E203167EAA5A", hash_generated_method = "7C56DAB1CC85D73593C30D4266013E44")
         @DSModeled(DSC.SAFE)
         private SyncState() {
             // ---------- Original Method ----------
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:03.186 -0400", hash_original_method = "466578A19F0FCF2DD10FDB6DAFFC0887", hash_generated_method = "2968688090F0A89899005B639287D49D")
-        public static byte[] get(ContentProviderClient provider, Account account) throws RemoteException {
+                public static byte[] get(ContentProviderClient provider, Account account) throws RemoteException {
             return SyncStateContract.Helpers.get(provider, CONTENT_URI, account);
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:03.186 -0400", hash_original_method = "B9E8FB5AB055D4E1E45E9949F3C016CF", hash_generated_method = "6E822DD6634A9EBA8F5FA49F5EB38784")
-        public static Pair<Uri, byte[]> getWithUri(ContentProviderClient provider, Account account) throws RemoteException {
+                public static Pair<Uri, byte[]> getWithUri(ContentProviderClient provider, Account account) throws RemoteException {
             return SyncStateContract.Helpers.getWithUri(provider, CONTENT_URI, account);
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:03.186 -0400", hash_original_method = "579F427E12689D3799FB7240CB2CED7E", hash_generated_method = "0929C6A0E720D5E2073DF205F65D7551")
-        public static void set(ContentProviderClient provider, Account account, byte[] data) throws RemoteException {
+                public static void set(ContentProviderClient provider, Account account, byte[] data) throws RemoteException {
             SyncStateContract.Helpers.set(provider, CONTENT_URI, account, data);
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:03.186 -0400", hash_original_method = "4E10B60B39C26218926D7406FB7CC71E", hash_generated_method = "4874286873285082166E1414165C7F12")
-        public static ContentProviderOperation newSetOperation(Account account, byte[] data) {
+                public static ContentProviderOperation newSetOperation(Account account, byte[] data) {
             return SyncStateContract.Helpers.newSetOperation(CONTENT_URI, account, data);
         }
 
         
+        public static final String CONTENT_DIRECTORY =
+                SyncStateContract.Constants.CONTENT_DIRECTORY;
+        public static final Uri CONTENT_URI =
+                Uri.withAppendedPath(AUTHORITY_URI, CONTENT_DIRECTORY);
     }
 
 
     
     public static final class ProfileSyncState implements SyncStateContract.Columns {
-        public static final String CONTENT_DIRECTORY =
-                SyncStateContract.Constants.CONTENT_DIRECTORY;
-        public static final Uri CONTENT_URI =
-                Uri.withAppendedPath(Profile.CONTENT_URI, CONTENT_DIRECTORY);
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:03.186 -0400", hash_original_method = "1AF1C4539078F536A57F5CC0E82C2CE1", hash_generated_method = "3EDFEEA4475387220DCAD005AE3CCE1C")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:54.900 -0400", hash_original_method = "1AF1C4539078F536A57F5CC0E82C2CE1", hash_generated_method = "62C098D2F6555C9344B4BEE7E8733390")
         @DSModeled(DSC.SAFE)
         private ProfileSyncState() {
             // ---------- Original Method ----------
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:03.186 -0400", hash_original_method = "466578A19F0FCF2DD10FDB6DAFFC0887", hash_generated_method = "2968688090F0A89899005B639287D49D")
-        public static byte[] get(ContentProviderClient provider, Account account) throws RemoteException {
+                public static byte[] get(ContentProviderClient provider, Account account) throws RemoteException {
             return SyncStateContract.Helpers.get(provider, CONTENT_URI, account);
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:03.186 -0400", hash_original_method = "B9E8FB5AB055D4E1E45E9949F3C016CF", hash_generated_method = "6E822DD6634A9EBA8F5FA49F5EB38784")
-        public static Pair<Uri, byte[]> getWithUri(ContentProviderClient provider, Account account) throws RemoteException {
+                public static Pair<Uri, byte[]> getWithUri(ContentProviderClient provider, Account account) throws RemoteException {
             return SyncStateContract.Helpers.getWithUri(provider, CONTENT_URI, account);
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:03.186 -0400", hash_original_method = "579F427E12689D3799FB7240CB2CED7E", hash_generated_method = "0929C6A0E720D5E2073DF205F65D7551")
-        public static void set(ContentProviderClient provider, Account account, byte[] data) throws RemoteException {
+                public static void set(ContentProviderClient provider, Account account, byte[] data) throws RemoteException {
             SyncStateContract.Helpers.set(provider, CONTENT_URI, account, data);
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:03.187 -0400", hash_original_method = "4E10B60B39C26218926D7406FB7CC71E", hash_generated_method = "4874286873285082166E1414165C7F12")
-        public static ContentProviderOperation newSetOperation(Account account, byte[] data) {
+                public static ContentProviderOperation newSetOperation(Account account, byte[] data) {
             return SyncStateContract.Helpers.newSetOperation(CONTENT_URI, account, data);
         }
 
         
+        public static final String CONTENT_DIRECTORY =
+                SyncStateContract.Constants.CONTENT_DIRECTORY;
+        public static final Uri CONTENT_URI =
+                Uri.withAppendedPath(Profile.CONTENT_URI, CONTENT_DIRECTORY);
     }
 
 
     
     public final static class ContactCounts {
+        
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:54.901 -0400", hash_original_method = "E1917A0FB6C6615BBBC7A1650D47A092", hash_generated_method = "E1917A0FB6C6615BBBC7A1650D47A092")
+                public ContactCounts ()
+        {
+        }
+
+
         public static final String ADDRESS_BOOK_INDEX_EXTRAS = "address_book_index_extras";
         public static final String EXTRA_ADDRESS_BOOK_INDEX_TITLES = "address_book_index_titles";
         public static final String EXTRA_ADDRESS_BOOK_INDEX_COUNTS = "address_book_index_counts";
-        
     }
 
 
     
     public static class Contacts implements BaseColumns, ContactsColumns, ContactOptionsColumns, ContactNameColumns, ContactStatusColumns {
-        public static final Uri CONTENT_URI = Uri.withAppendedPath(AUTHORITY_URI, "contacts");
-        public static final Uri CONTENT_LOOKUP_URI = Uri.withAppendedPath(CONTENT_URI,
-                "lookup");
-        public static final Uri CONTENT_VCARD_URI = Uri.withAppendedPath(CONTENT_URI,
-                "as_vcard");
-        public static final String QUERY_PARAMETER_VCARD_NO_PHOTO = "nophoto";
-        public static final Uri CONTENT_MULTI_VCARD_URI = Uri.withAppendedPath(CONTENT_URI,
-                "as_multi_vcard");
-        public static final Uri CONTENT_FILTER_URI = Uri.withAppendedPath(
-                CONTENT_URI, "filter");
-        public static final Uri CONTENT_STREQUENT_URI = Uri.withAppendedPath(
-                CONTENT_URI, "strequent");
-        public static final Uri CONTENT_FREQUENT_URI = Uri.withAppendedPath(
-                CONTENT_URI, "frequent");
-        public static final Uri CONTENT_STREQUENT_FILTER_URI = Uri.withAppendedPath(
-                CONTENT_STREQUENT_URI, "filter");
-        public static final Uri CONTENT_GROUP_URI = Uri.withAppendedPath(
-                CONTENT_URI, "group");
-        public static final String CONTENT_TYPE = "vnd.android.cursor.dir/contact";
-        public static final String CONTENT_ITEM_TYPE = "vnd.android.cursor.item/contact";
-        public static final String CONTENT_VCARD_TYPE = "text/x-vcard";
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:03.187 -0400", hash_original_method = "F5E3085137E37D29F0F8CB3C296F1F57", hash_generated_method = "B7BFE0CB877BB67929CBA3A0EFBDC212")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:54.901 -0400", hash_original_method = "F5E3085137E37D29F0F8CB3C296F1F57", hash_generated_method = "EBAB9AC2EF768DD752DA8373D9E74008")
         @DSModeled(DSC.SAFE)
         private Contacts() {
             // ---------- Original Method ----------
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:03.187 -0400", hash_original_method = "297CD8052D16F966DA20463FE5C9F18D", hash_generated_method = "E132A7F36CE1995AD84D3CA4E748E1F1")
-        public static Uri getLookupUri(ContentResolver resolver, Uri contactUri) {
+                public static Uri getLookupUri(ContentResolver resolver, Uri contactUri) {
             final Cursor c = resolver.query(contactUri, new String[] {
                     Contacts.LOOKUP_KEY, Contacts._ID
             }, null, null, null);
@@ -352,15 +328,13 @@ public final class ContactsContract {
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:03.187 -0400", hash_original_method = "0E35577C3A2634FAB6CE2A7C0110A8D4", hash_generated_method = "7A2D838CE8D4D565E159F4336E306008")
-        public static Uri getLookupUri(long contactId, String lookupKey) {
+                public static Uri getLookupUri(long contactId, String lookupKey) {
             return ContentUris.withAppendedId(Uri.withAppendedPath(Contacts.CONTENT_LOOKUP_URI,
                     lookupKey), contactId);
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:03.187 -0400", hash_original_method = "4F238AFCA9F990B01002B079DB33FCDE", hash_generated_method = "6BC905CC6054CBBC02A4C6C4B960B080")
-        public static Uri lookupContact(ContentResolver resolver, Uri lookupUri) {
+                public static Uri lookupContact(ContentResolver resolver, Uri lookupUri) {
             if (lookupUri == null) {
                 return null;
             }
@@ -380,8 +354,7 @@ public final class ContactsContract {
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:03.187 -0400", hash_original_method = "EA7A02146AEC4BB6B360E334F2919FC1", hash_generated_method = "42C78D1BFC696157921943AD8E80F582")
-        public static void markAsContacted(ContentResolver resolver, long contactId) {
+                public static void markAsContacted(ContentResolver resolver, long contactId) {
             Uri uri = ContentUris.withAppendedId(CONTENT_URI, contactId);
             ContentValues values = new ContentValues();
             values.put(LAST_TIME_CONTACTED, System.currentTimeMillis());
@@ -389,8 +362,7 @@ public final class ContactsContract {
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:03.187 -0400", hash_original_method = "39CCF57C11710ED9D7B06C24BDE6652B", hash_generated_method = "9A2A4D019DB2AEB88056535D3154458E")
-        public static InputStream openContactPhotoInputStream(ContentResolver cr, Uri contactUri,
+                public static InputStream openContactPhotoInputStream(ContentResolver cr, Uri contactUri,
                 boolean preferHighres) {
             if (preferHighres) {
                 final Uri displayPhotoUri = Uri.withAppendedPath(contactUri,
@@ -427,72 +399,65 @@ public final class ContactsContract {
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:03.187 -0400", hash_original_method = "38D81F9B93E07ADE0E2E072FADEAEAB2", hash_generated_method = "366EB5E49CE660D34F00F358317E4C64")
-        public static InputStream openContactPhotoInputStream(ContentResolver cr, Uri contactUri) {
+                public static InputStream openContactPhotoInputStream(ContentResolver cr, Uri contactUri) {
             return openContactPhotoInputStream(cr, contactUri, false);
         }
 
         
         public static final class Data implements BaseColumns, DataColumns {
-            public static final String CONTENT_DIRECTORY = "data";
             
-            @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:03.187 -0400", hash_original_method = "AE2AC52C1B086D07AB414F4634EAA37E", hash_generated_method = "DE7A34A900372B7572DE779BBF70EB12")
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:54.902 -0400", hash_original_method = "AE2AC52C1B086D07AB414F4634EAA37E", hash_generated_method = "68BBF991BD74A1EFA8A89E7D9D24A1BD")
             @DSModeled(DSC.SAFE)
             private Data() {
                 // ---------- Original Method ----------
             }
 
             
+            public static final String CONTENT_DIRECTORY = "data";
         }
 
 
         
         public static final class Entity implements BaseColumns, ContactsColumns, ContactNameColumns, RawContactsColumns, BaseSyncColumns, SyncColumns, DataColumns, StatusColumns, ContactOptionsColumns, ContactStatusColumns {
-            public static final String CONTENT_DIRECTORY = "entities";
-            public static final String RAW_CONTACT_ID = "raw_contact_id";
-            public static final String DATA_ID = "data_id";
             
-            @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:03.188 -0400", hash_original_method = "607EBA13DCD67902F3CEC6239F391768", hash_generated_method = "8D879C3001A6BEC9B7598231AC21E7B0")
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:54.902 -0400", hash_original_method = "607EBA13DCD67902F3CEC6239F391768", hash_generated_method = "72BDB032AD922DE54B8D777470530676")
             @DSModeled(DSC.SAFE)
             private Entity() {
                 // ---------- Original Method ----------
             }
 
             
+            public static final String CONTENT_DIRECTORY = "entities";
+            public static final String RAW_CONTACT_ID = "raw_contact_id";
+            public static final String DATA_ID = "data_id";
         }
 
 
         
         public static final class StreamItems implements StreamItemsColumns {
-            public static final String CONTENT_DIRECTORY = "stream_items";
             
-            @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:03.188 -0400", hash_original_method = "50B0D0B78D385E8C0BEE924F86CB84EC", hash_generated_method = "354370F6EFAA994E1B0309101BC73A16")
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:54.903 -0400", hash_original_method = "50B0D0B78D385E8C0BEE924F86CB84EC", hash_generated_method = "49F523F180DE7D539C580F6D11E59338")
             @DSModeled(DSC.SAFE)
             private StreamItems() {
                 // ---------- Original Method ----------
             }
 
             
+            public static final String CONTENT_DIRECTORY = "stream_items";
         }
 
 
         
         public static final class AggregationSuggestions implements BaseColumns, ContactsColumns, ContactOptionsColumns, ContactStatusColumns {
-            public static final String CONTENT_DIRECTORY = "suggestions";
-            public static final String PARAMETER_MATCH_NAME = "name";
-            public static final String PARAMETER_MATCH_EMAIL = "email";
-            public static final String PARAMETER_MATCH_PHONE = "phone";
-            public static final String PARAMETER_MATCH_NICKNAME = "nickname";
             
-            @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:03.188 -0400", hash_original_method = "35E5891C5F5088704DD7A6D202E906B4", hash_generated_method = "1E2F973CBF4BCF1F80E6F9F4FF532E66")
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:54.903 -0400", hash_original_method = "35E5891C5F5088704DD7A6D202E906B4", hash_generated_method = "466C7EBC7F53D00329A79C14605D9051")
             @DSModeled(DSC.SAFE)
             private AggregationSuggestions() {
                 // ---------- Original Method ----------
             }
 
             
-            @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:03.188 -0400", hash_original_method = "B7290700D54BBB985B4CC30322753CF6", hash_generated_method = "C24B0573979CF7DEB9AEBD50BF3FB4FB")
-            public static final Builder builder() {
+                        public static final Builder builder() {
                 return new Builder();
             }
 
@@ -503,7 +468,13 @@ public final class ContactsContract {
                 private ArrayList<String> mValues = new ArrayList<String>();
                 private int mLimit;
                 
-                @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:03.188 -0400", hash_original_method = "9AAB1F7A5A7D8D5960972B4CBC4F52B3", hash_generated_method = "A14CDE0CA0F63C6356C07689F49A9890")
+                @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:54.903 -0400", hash_original_method = "E3E7F27996F0F2E94367F4C927CC51AE", hash_generated_method = "E3E7F27996F0F2E94367F4C927CC51AE")
+                                public Builder ()
+                {
+                }
+
+
+                @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:54.903 -0400", hash_original_method = "9AAB1F7A5A7D8D5960972B4CBC4F52B3", hash_generated_method = "60A4DDE5F6CF4E6DBD1C351588D074BB")
                 @DSModeled(DSC.SAFE)
                 public Builder setContactId(long contactId) {
                     dsTaint.addTaint(contactId);
@@ -514,13 +485,13 @@ public final class ContactsContract {
                 }
 
                 
-                @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:03.188 -0400", hash_original_method = "C32C8611EF5F2627AFE89485D07DC5FB", hash_generated_method = "A81274F0579669B028952395620833F8")
+                @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:54.904 -0400", hash_original_method = "C32C8611EF5F2627AFE89485D07DC5FB", hash_generated_method = "AF7543D9D3507E952A0CE7FFEB73B716")
                 //DSFIXME:  CODE0002: Requires DSC value to be set
                 public Builder addParameter(String kind, String value) {
                     dsTaint.addTaint(value);
                     dsTaint.addTaint(kind);
                     {
-                        boolean varD361F572B1E67BC677F2A4DD67C6D3CF_529792628 = (!TextUtils.isEmpty(value));
+                        boolean varD361F572B1E67BC677F2A4DD67C6D3CF_469032767 = (!TextUtils.isEmpty(value));
                         {
                             mKinds.add(kind);
                             mValues.add(value);
@@ -536,7 +507,7 @@ public final class ContactsContract {
                 }
 
                 
-                @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:03.188 -0400", hash_original_method = "C603E268BE9EB815AE093A2C036882D2", hash_generated_method = "0884197288167F6AA7053C9BFE68C4E8")
+                @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:54.904 -0400", hash_original_method = "C603E268BE9EB815AE093A2C036882D2", hash_generated_method = "647B2A9FFAA00B08353A2DE44982021E")
                 @DSModeled(DSC.SAFE)
                 public Builder setLimit(int limit) {
                     dsTaint.addTaint(limit);
@@ -547,7 +518,7 @@ public final class ContactsContract {
                 }
 
                 
-                @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:03.188 -0400", hash_original_method = "CC75446D812A1F4BC170E31BF0668A44", hash_generated_method = "6817D37318F34F451293F8F5B1BE2F9F")
+                @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:54.904 -0400", hash_original_method = "CC75446D812A1F4BC170E31BF0668A44", hash_generated_method = "D4B68AD0FD7893DA52F6CE0B8CF40BC6")
                 @DSModeled(DSC.SPEC)
                 public Uri build() {
                     android.net.Uri.Builder builder;
@@ -566,7 +537,7 @@ public final class ContactsContract {
                             builder.appendQueryParameter("query", mKinds.get(i) + ":" + mValues.get(i));
                         } //End block
                     } //End collapsed parenthetic
-                    Uri varFEE94907A62FB2E049F7AD84119F88A7_1624179198 = (builder.build());
+                    Uri varFEE94907A62FB2E049F7AD84119F88A7_130233238 = (builder.build());
                     return (Uri)dsTaint.getTaint();
                     // ---------- Original Method ----------
                     //android.net.Uri.Builder builder = Contacts.CONTENT_URI.buildUpon();
@@ -587,69 +558,86 @@ public final class ContactsContract {
 
 
             
+            public static final String CONTENT_DIRECTORY = "suggestions";
+            public static final String PARAMETER_MATCH_NAME = "name";
+            public static final String PARAMETER_MATCH_EMAIL = "email";
+            public static final String PARAMETER_MATCH_PHONE = "phone";
+            public static final String PARAMETER_MATCH_NICKNAME = "nickname";
         }
 
 
         
         public static final class Photo implements BaseColumns, DataColumnsWithJoins {
-            public static final String CONTENT_DIRECTORY = "photo";
-            public static final String DISPLAY_PHOTO = "display_photo";
-            public static final String PHOTO_FILE_ID = DATA14;
-            public static final String PHOTO = DATA15;
             
-            @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:03.189 -0400", hash_original_method = "C03E3395BFF21729CC93322BBC7A82DE", hash_generated_method = "2D85DD80A144D36F33275D4A6419D75B")
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:54.905 -0400", hash_original_method = "C03E3395BFF21729CC93322BBC7A82DE", hash_generated_method = "6353485435339DC025174C823A75D00F")
             @DSModeled(DSC.SAFE)
             private Photo() {
                 // ---------- Original Method ----------
             }
 
             
+            public static final String CONTENT_DIRECTORY = "photo";
+            public static final String DISPLAY_PHOTO = "display_photo";
+            public static final String PHOTO_FILE_ID = DATA14;
+            public static final String PHOTO = DATA15;
         }
 
 
         
+        public static final Uri CONTENT_URI = Uri.withAppendedPath(AUTHORITY_URI, "contacts");
+        public static final Uri CONTENT_LOOKUP_URI = Uri.withAppendedPath(CONTENT_URI,
+                "lookup");
+        public static final Uri CONTENT_VCARD_URI = Uri.withAppendedPath(CONTENT_URI,
+                "as_vcard");
+        public static final String QUERY_PARAMETER_VCARD_NO_PHOTO = "nophoto";
+        public static final Uri CONTENT_MULTI_VCARD_URI = Uri.withAppendedPath(CONTENT_URI,
+                "as_multi_vcard");
+        public static final Uri CONTENT_FILTER_URI = Uri.withAppendedPath(
+                CONTENT_URI, "filter");
+        public static final Uri CONTENT_STREQUENT_URI = Uri.withAppendedPath(
+                CONTENT_URI, "strequent");
+        public static final Uri CONTENT_FREQUENT_URI = Uri.withAppendedPath(
+                CONTENT_URI, "frequent");
+        public static final Uri CONTENT_STREQUENT_FILTER_URI = Uri.withAppendedPath(
+                CONTENT_STREQUENT_URI, "filter");
+        public static final Uri CONTENT_GROUP_URI = Uri.withAppendedPath(
+                CONTENT_URI, "group");
+        public static final String CONTENT_TYPE = "vnd.android.cursor.dir/contact";
+        public static final String CONTENT_ITEM_TYPE = "vnd.android.cursor.item/contact";
+        public static final String CONTENT_VCARD_TYPE = "text/x-vcard";
     }
 
 
     
     public static final class Profile implements BaseColumns, ContactsColumns, ContactOptionsColumns, ContactNameColumns, ContactStatusColumns {
-        public static final Uri CONTENT_URI = Uri.withAppendedPath(AUTHORITY_URI, "profile");
-        public static final Uri CONTENT_VCARD_URI = Uri.withAppendedPath(CONTENT_URI,
-                "as_vcard");
-        public static final Uri CONTENT_RAW_CONTACTS_URI = Uri.withAppendedPath(CONTENT_URI,
-                "raw_contacts");
-        public static final long MIN_ID = Long.MAX_VALUE - (long) Integer.MAX_VALUE;
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:03.189 -0400", hash_original_method = "B87424FB8F4DF05D98854CA5453341A1", hash_generated_method = "05CA6694745671FBA7DA4CC7D9B9D110")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:54.905 -0400", hash_original_method = "B87424FB8F4DF05D98854CA5453341A1", hash_generated_method = "F0740920D8E660C3FAFA79C0F30FDA26")
         @DSModeled(DSC.SAFE)
         private Profile() {
             // ---------- Original Method ----------
         }
 
         
+        public static final Uri CONTENT_URI = Uri.withAppendedPath(AUTHORITY_URI, "profile");
+        public static final Uri CONTENT_VCARD_URI = Uri.withAppendedPath(CONTENT_URI,
+                "as_vcard");
+        public static final Uri CONTENT_RAW_CONTACTS_URI = Uri.withAppendedPath(CONTENT_URI,
+                "raw_contacts");
+        public static final long MIN_ID = Long.MAX_VALUE - (long) Integer.MAX_VALUE;
     }
 
 
     
     public static final class RawContacts implements BaseColumns, RawContactsColumns, ContactOptionsColumns, ContactNameColumns, SyncColumns {
-        public static final Uri CONTENT_URI = Uri.withAppendedPath(AUTHORITY_URI, "raw_contacts");
-        public static final String CONTENT_TYPE = "vnd.android.cursor.dir/raw_contact";
-        public static final String CONTENT_ITEM_TYPE = "vnd.android.cursor.item/raw_contact";
-        public static final int AGGREGATION_MODE_DEFAULT = 0;
-        @Deprecated
-        public static final int AGGREGATION_MODE_IMMEDIATE = 1;
-        public static final int AGGREGATION_MODE_SUSPENDED = 2;
-        public static final int AGGREGATION_MODE_DISABLED = 3;
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:03.189 -0400", hash_original_method = "6107CD4B76D912ACDA57642552743C0C", hash_generated_method = "0808D93202C62DFC45F7A1E22478ED56")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:54.905 -0400", hash_original_method = "6107CD4B76D912ACDA57642552743C0C", hash_generated_method = "005A36265C3975138432C36B012CB07D")
         @DSModeled(DSC.SAFE)
         private RawContacts() {
             // ---------- Original Method ----------
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:03.189 -0400", hash_original_method = "4F63AD3366CF1143E7246464BD728917", hash_generated_method = "8E7F0FBB009CEA016C37BBBBB31D551A")
-        public static Uri getContactLookupUri(ContentResolver resolver, Uri rawContactUri) {
+                public static Uri getContactLookupUri(ContentResolver resolver, Uri rawContactUri) {
             final Uri dataUri = Uri.withAppendedPath(rawContactUri, Data.CONTENT_DIRECTORY);
             final Cursor cursor = resolver.query(dataUri, new String[] {
                     RawContacts.CONTACT_ID, Contacts.LOOKUP_KEY
@@ -668,92 +656,71 @@ public final class ContactsContract {
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:03.189 -0400", hash_original_method = "7C8784537648600B4251C9E262BFEFC5", hash_generated_method = "9F167F07FC0CADA08203BAA255DB9A81")
-        public static EntityIterator newEntityIterator(Cursor cursor) {
+                public static EntityIterator newEntityIterator(Cursor cursor) {
             return new EntityIteratorImpl(cursor);
         }
 
         
         public static final class Data implements BaseColumns, DataColumns {
-            public static final String CONTENT_DIRECTORY = "data";
             
-            @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:03.189 -0400", hash_original_method = "AE2AC52C1B086D07AB414F4634EAA37E", hash_generated_method = "DE7A34A900372B7572DE779BBF70EB12")
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:54.906 -0400", hash_original_method = "AE2AC52C1B086D07AB414F4634EAA37E", hash_generated_method = "68BBF991BD74A1EFA8A89E7D9D24A1BD")
             @DSModeled(DSC.SAFE)
             private Data() {
                 // ---------- Original Method ----------
             }
 
             
+            public static final String CONTENT_DIRECTORY = "data";
         }
 
 
         
         public static final class Entity implements BaseColumns, DataColumns {
-            public static final String CONTENT_DIRECTORY = "entity";
-            public static final String DATA_ID = "data_id";
             
-            @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:03.189 -0400", hash_original_method = "607EBA13DCD67902F3CEC6239F391768", hash_generated_method = "8D879C3001A6BEC9B7598231AC21E7B0")
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:54.906 -0400", hash_original_method = "607EBA13DCD67902F3CEC6239F391768", hash_generated_method = "72BDB032AD922DE54B8D777470530676")
             @DSModeled(DSC.SAFE)
             private Entity() {
                 // ---------- Original Method ----------
             }
 
             
+            public static final String CONTENT_DIRECTORY = "entity";
+            public static final String DATA_ID = "data_id";
         }
 
 
         
         public static final class StreamItems implements BaseColumns, StreamItemsColumns {
-            public static final String CONTENT_DIRECTORY = "stream_items";
             
-            @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:03.189 -0400", hash_original_method = "50B0D0B78D385E8C0BEE924F86CB84EC", hash_generated_method = "354370F6EFAA994E1B0309101BC73A16")
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:54.906 -0400", hash_original_method = "50B0D0B78D385E8C0BEE924F86CB84EC", hash_generated_method = "49F523F180DE7D539C580F6D11E59338")
             @DSModeled(DSC.SAFE)
             private StreamItems() {
                 // ---------- Original Method ----------
             }
 
             
+            public static final String CONTENT_DIRECTORY = "stream_items";
         }
 
 
         
         public static final class DisplayPhoto {
-            public static final String CONTENT_DIRECTORY = "display_photo";
             
-            @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:03.189 -0400", hash_original_method = "4DA607ACD5E6F502EC932EC179042892", hash_generated_method = "E301244D8E4F99AA0567061D7FED0A7C")
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:54.906 -0400", hash_original_method = "4DA607ACD5E6F502EC932EC179042892", hash_generated_method = "B2E13164C0532FB7A083C12460677DAB")
             @DSModeled(DSC.SAFE)
             private DisplayPhoto() {
                 // ---------- Original Method ----------
             }
 
             
+            public static final String CONTENT_DIRECTORY = "display_photo";
         }
 
 
         
         private static class EntityIteratorImpl extends CursorEntityIterator {
-            private static final String[] DATA_KEYS = new String[]{
-                    Data.DATA1,
-                    Data.DATA2,
-                    Data.DATA3,
-                    Data.DATA4,
-                    Data.DATA5,
-                    Data.DATA6,
-                    Data.DATA7,
-                    Data.DATA8,
-                    Data.DATA9,
-                    Data.DATA10,
-                    Data.DATA11,
-                    Data.DATA12,
-                    Data.DATA13,
-                    Data.DATA14,
-                    Data.DATA15,
-                    Data.SYNC1,
-                    Data.SYNC2,
-                    Data.SYNC3,
-                    Data.SYNC4};
             
-            @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:03.189 -0400", hash_original_method = "5371E683B36CD927F8174DD86149D4D5", hash_generated_method = "3B59B4CAFFC6405C709C46CE9ED84B82")
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:54.906 -0400", hash_original_method = "5371E683B36CD927F8174DD86149D4D5", hash_generated_method = "E6BE4064EE211A3FD662F23DCF234396")
             //DSFIXME:  CODE0002: Requires DSC value to be set
             public EntityIteratorImpl(Cursor cursor) {
                 super(cursor);
@@ -762,14 +729,14 @@ public final class ContactsContract {
             }
 
             
-            @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:03.190 -0400", hash_original_method = "BE255AFD270DEBC5451268E05A1F1326", hash_generated_method = "D19B71975F17EB9B499C518729625D6A")
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:54.908 -0400", hash_original_method = "BE255AFD270DEBC5451268E05A1F1326", hash_generated_method = "37D1298B15B40A09B1D3CB27B316F12C")
             //DSFIXME:  CODE0002: Requires DSC value to be set
             @Override
             public android.content.Entity getEntityAndIncrementCursor(Cursor cursor) throws RemoteException {
                 dsTaint.addTaint(cursor.dsTaint);
-                final int columnRawContactId;
+                int columnRawContactId;
                 columnRawContactId = cursor.getColumnIndexOrThrow(RawContacts._ID);
-                final long rawContactId;
+                long rawContactId;
                 rawContactId = cursor.getLong(columnRawContactId);
                 ContentValues cv;
                 cv = new ContentValues();
@@ -792,7 +759,7 @@ public final class ContactsContract {
                 contact = new android.content.Entity(cv);
                 {
                     {
-                        boolean varB99BF263731FCDD1B7D97568AF1A5FAF_1243302452 = (rawContactId != cursor.getLong(columnRawContactId));
+                        boolean varB99BF263731FCDD1B7D97568AF1A5FAF_23142086 = (rawContactId != cursor.getLong(columnRawContactId));
                     } //End collapsed parenthetic
                     cv = new ContentValues();
                     cv.put(Data._ID, cursor.getLong(cursor.getColumnIndexOrThrow(Entity.DATA_ID)));
@@ -808,19 +775,21 @@ public final class ContactsContract {
                     DatabaseUtils.cursorStringToContentValuesIfPresent(cursor, cv,
                             Data.DATA_VERSION);
                     {
-                        String key = DATA_KEYS[0];
+                        Iterator<String> varA6BF6BB8A5490D54E38BAEF6FB4093F0_135184805 = (DATA_KEYS).iterator();
+                        varA6BF6BB8A5490D54E38BAEF6FB4093F0_135184805.hasNext();
+                        String key = varA6BF6BB8A5490D54E38BAEF6FB4093F0_135184805.next();
                         {
-                            final int columnIndex;
+                            int columnIndex;
                             columnIndex = cursor.getColumnIndexOrThrow(key);
                             {
-                                Object varEC1574263D651B776F9708DA9F11928E_789113990 = (cursor.getType(columnIndex));
+                                Object varEC1574263D651B776F9708DA9F11928E_1278945703 = (cursor.getType(columnIndex));
                                 //Begin case Cursor.FIELD_TYPE_INTEGER Cursor.FIELD_TYPE_FLOAT Cursor.FIELD_TYPE_STRING 
                                 cv.put(key, cursor.getString(columnIndex));
                                 //End case Cursor.FIELD_TYPE_INTEGER Cursor.FIELD_TYPE_FLOAT Cursor.FIELD_TYPE_STRING 
                                 //Begin case Cursor.FIELD_TYPE_BLOB 
                                 cv.put(key, cursor.getBlob(columnIndex));
                                 //End case Cursor.FIELD_TYPE_BLOB 
-                                //Begin case default
+                                //Begin case default 
                                 if (DroidSafeAndroidRuntime.control) throw new IllegalStateException("Invalid or unhandled data type");
                                 //End case default 
                             } //End collapsed parenthetic
@@ -829,7 +798,7 @@ public final class ContactsContract {
                     contact.addSubValue(ContactsContract.Data.CONTENT_URI, cv);
                 } //End block
                 {
-                    boolean var916090E1B2D032E1EC67FFC8B3451FBE_608381955 = (cursor.moveToNext());
+                    boolean var916090E1B2D032E1EC67FFC8B3451FBE_1342760827 = (cursor.moveToNext());
                 } //End collapsed parenthetic
                 return (android.content.Entity)dsTaint.getTaint();
                 // ---------- Original Method ----------
@@ -837,24 +806,44 @@ public final class ContactsContract {
             }
 
             
+            private static final String[] DATA_KEYS = new String[]{
+                    Data.DATA1,
+                    Data.DATA2,
+                    Data.DATA3,
+                    Data.DATA4,
+                    Data.DATA5,
+                    Data.DATA6,
+                    Data.DATA7,
+                    Data.DATA8,
+                    Data.DATA9,
+                    Data.DATA10,
+                    Data.DATA11,
+                    Data.DATA12,
+                    Data.DATA13,
+                    Data.DATA14,
+                    Data.DATA15,
+                    Data.SYNC1,
+                    Data.SYNC2,
+                    Data.SYNC3,
+                    Data.SYNC4};
         }
 
 
         
+        public static final Uri CONTENT_URI = Uri.withAppendedPath(AUTHORITY_URI, "raw_contacts");
+        public static final String CONTENT_TYPE = "vnd.android.cursor.dir/raw_contact";
+        public static final String CONTENT_ITEM_TYPE = "vnd.android.cursor.item/raw_contact";
+        public static final int AGGREGATION_MODE_DEFAULT = 0;
+        @Deprecated public static final int AGGREGATION_MODE_IMMEDIATE = 1;
+        public static final int AGGREGATION_MODE_SUSPENDED = 2;
+        public static final int AGGREGATION_MODE_DISABLED = 3;
     }
 
 
     
     public static final class StreamItems implements BaseColumns, StreamItemsColumns {
-        public static final Uri CONTENT_URI = Uri.withAppendedPath(AUTHORITY_URI, "stream_items");
-        public static final Uri CONTENT_PHOTO_URI = Uri.withAppendedPath(CONTENT_URI, "photo");
-        public static final Uri CONTENT_LIMIT_URI =
-                Uri.withAppendedPath(AUTHORITY_URI, "stream_items_limit");
-        public static final String CONTENT_TYPE = "vnd.android.cursor.dir/stream_item";
-        public static final String CONTENT_ITEM_TYPE = "vnd.android.cursor.item/stream_item";
-        public static final String MAX_ITEMS = "max_items";
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:03.190 -0400", hash_original_method = "50B0D0B78D385E8C0BEE924F86CB84EC", hash_generated_method = "354370F6EFAA994E1B0309101BC73A16")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:54.908 -0400", hash_original_method = "50B0D0B78D385E8C0BEE924F86CB84EC", hash_generated_method = "49F523F180DE7D539C580F6D11E59338")
         @DSModeled(DSC.SAFE)
         private StreamItems() {
             // ---------- Original Method ----------
@@ -862,43 +851,50 @@ public final class ContactsContract {
 
         
         public static final class StreamItemPhotos implements BaseColumns, StreamItemPhotosColumns {
-            public static final String CONTENT_DIRECTORY = "photo";
-            public static final String CONTENT_TYPE = "vnd.android.cursor.dir/stream_item_photo";
-            public static final String CONTENT_ITEM_TYPE
-                    = "vnd.android.cursor.item/stream_item_photo";
             
-            @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:03.190 -0400", hash_original_method = "52BE888A2784297EE4FE3818D09C55BC", hash_generated_method = "08A160F26688984D392632DE59456E55")
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:54.909 -0400", hash_original_method = "52BE888A2784297EE4FE3818D09C55BC", hash_generated_method = "802E4A54077CF0761BF1353DB1940447")
             @DSModeled(DSC.SAFE)
             private StreamItemPhotos() {
                 // ---------- Original Method ----------
             }
 
             
+            public static final String CONTENT_DIRECTORY = "photo";
+            public static final String CONTENT_TYPE = "vnd.android.cursor.dir/stream_item_photo";
+            public static final String CONTENT_ITEM_TYPE
+                    = "vnd.android.cursor.item/stream_item_photo";
         }
 
 
         
+        public static final Uri CONTENT_URI = Uri.withAppendedPath(AUTHORITY_URI, "stream_items");
+        public static final Uri CONTENT_PHOTO_URI = Uri.withAppendedPath(CONTENT_URI, "photo");
+        public static final Uri CONTENT_LIMIT_URI =
+                Uri.withAppendedPath(AUTHORITY_URI, "stream_items_limit");
+        public static final String CONTENT_TYPE = "vnd.android.cursor.dir/stream_item";
+        public static final String CONTENT_ITEM_TYPE = "vnd.android.cursor.item/stream_item";
+        public static final String MAX_ITEMS = "max_items";
     }
 
 
     
     public static final class StreamItemPhotos implements BaseColumns, StreamItemPhotosColumns {
-        public static final String PHOTO = "photo";
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:03.190 -0400", hash_original_method = "52BE888A2784297EE4FE3818D09C55BC", hash_generated_method = "08A160F26688984D392632DE59456E55")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:54.909 -0400", hash_original_method = "52BE888A2784297EE4FE3818D09C55BC", hash_generated_method = "802E4A54077CF0761BF1353DB1940447")
         @DSModeled(DSC.SAFE)
         private StreamItemPhotos() {
             // ---------- Original Method ----------
         }
 
         
+        public static final String PHOTO = "photo";
     }
 
 
     
     public static final class PhotoFiles implements BaseColumns, PhotoFilesColumns {
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:03.190 -0400", hash_original_method = "68B58AFB95B4CB9CF9AA43D4A8112325", hash_generated_method = "94D2384E080CBF934AC2B02D797E6182")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:54.909 -0400", hash_original_method = "68B58AFB95B4CB9CF9AA43D4A8112325", hash_generated_method = "059107858AF90ED764E5882C1FCC748C")
         @DSModeled(DSC.SAFE)
         private PhotoFiles() {
             // ---------- Original Method ----------
@@ -910,18 +906,15 @@ public final class ContactsContract {
 
     
     public final static class Data implements DataColumnsWithJoins {
-        public static final Uri CONTENT_URI = Uri.withAppendedPath(AUTHORITY_URI, "data");
-        public static final String CONTENT_TYPE = "vnd.android.cursor.dir/data";
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:03.191 -0400", hash_original_method = "AE2AC52C1B086D07AB414F4634EAA37E", hash_generated_method = "DE7A34A900372B7572DE779BBF70EB12")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:54.909 -0400", hash_original_method = "AE2AC52C1B086D07AB414F4634EAA37E", hash_generated_method = "68BBF991BD74A1EFA8A89E7D9D24A1BD")
         @DSModeled(DSC.SAFE)
         private Data() {
             // ---------- Original Method ----------
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:03.191 -0400", hash_original_method = "0B01F4FFA9092B5AD574B1F239B48F30", hash_generated_method = "AEC79E50439816765945FD5849DA7650")
-        public static Uri getContactLookupUri(ContentResolver resolver, Uri dataUri) {
+                public static Uri getContactLookupUri(ContentResolver resolver, Uri dataUri) {
             final Cursor cursor = resolver.query(dataUri, new String[] {
                     RawContacts.CONTACT_ID, Contacts.LOOKUP_KEY
             }, null, null, null);
@@ -939,11 +932,21 @@ public final class ContactsContract {
         }
 
         
+        public static final Uri CONTENT_URI = Uri.withAppendedPath(AUTHORITY_URI, "data");
+        public static final String CONTENT_TYPE = "vnd.android.cursor.dir/data";
     }
 
 
     
     public final static class RawContactsEntity implements BaseColumns, DataColumns, RawContactsColumns {
+        
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:54.910 -0400", hash_original_method = "F8C55B41037119D58D30171BDB7F39D2", hash_generated_method = "B8AC49C785E02A24876BA7954CC9671E")
+        @DSModeled(DSC.SAFE)
+        private RawContactsEntity() {
+            // ---------- Original Method ----------
+        }
+
+        
         public static final Uri CONTENT_URI =
                 Uri.withAppendedPath(AUTHORITY_URI, "raw_contact_entities");
         public static final Uri PROFILE_CONTENT_URI =
@@ -951,52 +954,37 @@ public final class ContactsContract {
         public static final String CONTENT_TYPE = "vnd.android.cursor.dir/raw_contact_entity";
         public static final String FOR_EXPORT_ONLY = "for_export_only";
         public static final String DATA_ID = "data_id";
-        
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:03.191 -0400", hash_original_method = "F8C55B41037119D58D30171BDB7F39D2", hash_generated_method = "B9621E6A5F68F73AE2176EFD48C98C7B")
-        @DSModeled(DSC.SAFE)
-        private RawContactsEntity() {
-            // ---------- Original Method ----------
-        }
-
-        
     }
 
 
     
     public static final class PhoneLookup implements BaseColumns, PhoneLookupColumns, ContactsColumns, ContactOptionsColumns {
-        public static final Uri CONTENT_FILTER_URI = Uri.withAppendedPath(AUTHORITY_URI,
-                "phone_lookup");
-        public static final String CONTENT_TYPE = "vnd.android.cursor.dir/phone_lookup";
-        public static final String QUERY_PARAMETER_SIP_ADDRESS = "sip";
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:03.191 -0400", hash_original_method = "D1B05D947AED4866E4130EF727A894C9", hash_generated_method = "0E37383C881421367FB764E354AD890C")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:54.910 -0400", hash_original_method = "D1B05D947AED4866E4130EF727A894C9", hash_generated_method = "CEF12FA719FCE0616B6F9109D727ED4D")
         @DSModeled(DSC.SAFE)
         private PhoneLookup() {
             // ---------- Original Method ----------
         }
 
         
+        public static final Uri CONTENT_FILTER_URI = Uri.withAppendedPath(AUTHORITY_URI,
+                "phone_lookup");
+        public static final String CONTENT_TYPE = "vnd.android.cursor.dir/phone_lookup";
+        public static final String QUERY_PARAMETER_SIP_ADDRESS = "sip";
     }
 
 
     
     public static class StatusUpdates implements StatusColumns, PresenceColumns {
-        public static final Uri CONTENT_URI = Uri.withAppendedPath(AUTHORITY_URI, "status_updates");
-        public static final Uri PROFILE_CONTENT_URI =
-                Uri.withAppendedPath(Profile.CONTENT_URI, "status_updates");
-        public static final String CONTENT_TYPE = "vnd.android.cursor.dir/status-update";
-        public static final String CONTENT_ITEM_TYPE = "vnd.android.cursor.item/status-update";
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:03.191 -0400", hash_original_method = "5AF8C140309DC273491B33B4E92E1FA7", hash_generated_method = "C4E17EFF92E8B4DEE8FDEFF7605D695A")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:54.910 -0400", hash_original_method = "5AF8C140309DC273491B33B4E92E1FA7", hash_generated_method = "F61E7CF0B8D56F58CA9C892D1715AD61")
         @DSModeled(DSC.SAFE)
         private StatusUpdates() {
             // ---------- Original Method ----------
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:03.191 -0400", hash_original_method = "446C58B7C43E87E7412C64E179FEA5CC", hash_generated_method = "FEA2EB291A0761BEC2E482F505CD797B")
-        public static final int getPresenceIconResourceId(int status) {
-            //DSFIXME:  CODE0009: Possible callback target function detected
+                public static final int getPresenceIconResourceId(int status) {
             switch (status) {
                 case AVAILABLE:
                     return android.R.drawable.presence_online;
@@ -1014,35 +1002,50 @@ public final class ContactsContract {
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:03.191 -0400", hash_original_method = "039C6EEFF77EBB58265A91F8AD87418B", hash_generated_method = "00CFC14E581A7183DBDB4EA053649282")
-        public static final int getPresencePrecedence(int status) {
+                public static final int getPresencePrecedence(int status) {
             return status;
         }
 
         
+        public static final Uri CONTENT_URI = Uri.withAppendedPath(AUTHORITY_URI, "status_updates");
+        public static final Uri PROFILE_CONTENT_URI =
+                Uri.withAppendedPath(Profile.CONTENT_URI, "status_updates");
+        public static final String CONTENT_TYPE = "vnd.android.cursor.dir/status-update";
+        public static final String CONTENT_ITEM_TYPE = "vnd.android.cursor.item/status-update";
     }
 
 
     
     public static final class Presence extends StatusUpdates {
         
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:54.911 -0400", hash_original_method = "AF71AE7F9B40D333BE404BDE10FDE89F", hash_generated_method = "AF71AE7F9B40D333BE404BDE10FDE89F")
+                public Presence ()
+        {
+        }
+
+
     }
 
 
     
     public static class SearchSnippetColumns {
+        
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:54.911 -0400", hash_original_method = "54D04D1ED0AD28A61B11FDFDE926885E", hash_generated_method = "54D04D1ED0AD28A61B11FDFDE926885E")
+                public SearchSnippetColumns ()
+        {
+        }
+
+
         public static final String SNIPPET = "snippet";
         public static final String SNIPPET_ARGS_PARAM_KEY = "snippet_args";
         public static final String DEFERRED_SNIPPETING_KEY = "deferred_snippeting";
-        
     }
 
 
     
     public static final class CommonDataKinds {
-        public static final String PACKAGE_COMMON = "common";
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:03.191 -0400", hash_original_method = "3EB47618DCA126249F6622B558B44C8E", hash_generated_method = "D67CA9FACE645E16235A5A9CF03ED0D0")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:54.911 -0400", hash_original_method = "3EB47618DCA126249F6622B558B44C8E", hash_generated_method = "17AE15FF7C1A5C629F88953C9F30A23B")
         @DSModeled(DSC.SAFE)
         private CommonDataKinds() {
             // ---------- Original Method ----------
@@ -1050,6 +1053,14 @@ public final class ContactsContract {
 
         
         public static final class StructuredName implements DataColumnsWithJoins {
+            
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:54.911 -0400", hash_original_method = "3FC3D91ED9F213084C3DE2075E5DC6AD", hash_generated_method = "CE1EF34405CD085F5E1F4B00ACF1AACC")
+            @DSModeled(DSC.SAFE)
+            private StructuredName() {
+                // ---------- Original Method ----------
+            }
+
+            
             public static final String CONTENT_ITEM_TYPE = "vnd.android.cursor.item/name";
             public static final String DISPLAY_NAME = DATA1;
             public static final String GIVEN_NAME = DATA2;
@@ -1062,41 +1073,92 @@ public final class ContactsContract {
             public static final String PHONETIC_FAMILY_NAME = DATA9;
             public static final String FULL_NAME_STYLE = DATA10;
             public static final String PHONETIC_NAME_STYLE = DATA11;
-            
-            @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:03.191 -0400", hash_original_method = "3FC3D91ED9F213084C3DE2075E5DC6AD", hash_generated_method = "6A1F3342D9AFC65EDB522A71322179F7")
-            @DSModeled(DSC.SAFE)
-            private StructuredName() {
-                // ---------- Original Method ----------
-            }
-
-            
         }
 
 
         
         public static final class Nickname implements DataColumnsWithJoins, CommonColumns {
-            public static final String CONTENT_ITEM_TYPE = "vnd.android.cursor.item/nickname";
-            public static final int TYPE_DEFAULT = 1;
-            public static final int TYPE_OTHER_NAME = 2;
-            public static final int TYPE_MAIDEN_NAME = 3;
-            @Deprecated
-            public static final int TYPE_MAINDEN_NAME = 3;
-            public static final int TYPE_SHORT_NAME = 4;
-            public static final int TYPE_INITIALS = 5;
-            public static final String NAME = DATA;
             
-            @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:03.191 -0400", hash_original_method = "C2B5C7987B903EB42CE1EDEA1961E0EA", hash_generated_method = "FCCEDE5C46B02C5DEF1E35025E6FBA02")
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:54.911 -0400", hash_original_method = "C2B5C7987B903EB42CE1EDEA1961E0EA", hash_generated_method = "32E284B5312A7E0C5334C9B07602E0ED")
             @DSModeled(DSC.SAFE)
             private Nickname() {
                 // ---------- Original Method ----------
             }
 
             
+            public static final String CONTENT_ITEM_TYPE = "vnd.android.cursor.item/nickname";
+            public static final int TYPE_DEFAULT = 1;
+            public static final int TYPE_OTHER_NAME = 2;
+            public static final int TYPE_MAIDEN_NAME = 3;
+            @Deprecated public static final int TYPE_MAINDEN_NAME = 3;
+            public static final int TYPE_SHORT_NAME = 4;
+            public static final int TYPE_INITIALS = 5;
+            public static final String NAME = DATA;
         }
 
 
         
         public static final class Phone implements DataColumnsWithJoins, CommonColumns {
+            
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:54.912 -0400", hash_original_method = "8C72E3409D1DFC404D9CBFEE30B178A0", hash_generated_method = "5D173D82F090B2D243AF646F29A6957E")
+            @DSModeled(DSC.SAFE)
+            private Phone() {
+                // ---------- Original Method ----------
+            }
+
+            
+                        @Deprecated
+            public static final CharSequence getDisplayLabel(Context context, int type,
+                    CharSequence label, CharSequence[] labelArray) {
+                return getTypeLabel(context.getResources(), type, label);
+            }
+
+            
+                        @Deprecated
+            public static final CharSequence getDisplayLabel(Context context, int type,
+                    CharSequence label) {
+                return getTypeLabel(context.getResources(), type, label);
+            }
+
+            
+                        public static final int getTypeLabelResource(int type) {
+                switch (type) {
+                    case TYPE_HOME: return com.android.internal.R.string.phoneTypeHome;
+                    case TYPE_MOBILE: return com.android.internal.R.string.phoneTypeMobile;
+                    case TYPE_WORK: return com.android.internal.R.string.phoneTypeWork;
+                    case TYPE_FAX_WORK: return com.android.internal.R.string.phoneTypeFaxWork;
+                    case TYPE_FAX_HOME: return com.android.internal.R.string.phoneTypeFaxHome;
+                    case TYPE_PAGER: return com.android.internal.R.string.phoneTypePager;
+                    case TYPE_OTHER: return com.android.internal.R.string.phoneTypeOther;
+                    case TYPE_CALLBACK: return com.android.internal.R.string.phoneTypeCallback;
+                    case TYPE_CAR: return com.android.internal.R.string.phoneTypeCar;
+                    case TYPE_COMPANY_MAIN: return com.android.internal.R.string.phoneTypeCompanyMain;
+                    case TYPE_ISDN: return com.android.internal.R.string.phoneTypeIsdn;
+                    case TYPE_MAIN: return com.android.internal.R.string.phoneTypeMain;
+                    case TYPE_OTHER_FAX: return com.android.internal.R.string.phoneTypeOtherFax;
+                    case TYPE_RADIO: return com.android.internal.R.string.phoneTypeRadio;
+                    case TYPE_TELEX: return com.android.internal.R.string.phoneTypeTelex;
+                    case TYPE_TTY_TDD: return com.android.internal.R.string.phoneTypeTtyTdd;
+                    case TYPE_WORK_MOBILE: return com.android.internal.R.string.phoneTypeWorkMobile;
+                    case TYPE_WORK_PAGER: return com.android.internal.R.string.phoneTypeWorkPager;
+                    case TYPE_ASSISTANT: return com.android.internal.R.string.phoneTypeAssistant;
+                    case TYPE_MMS: return com.android.internal.R.string.phoneTypeMms;
+                    default: return com.android.internal.R.string.phoneTypeCustom;
+                }
+            }
+
+            
+                        public static final CharSequence getTypeLabel(Resources res, int type,
+                    CharSequence label) {
+                if ((type == TYPE_CUSTOM || type == TYPE_ASSISTANT) && !TextUtils.isEmpty(label)) {
+                    return label;
+                } else {
+                    final int labelRes = getTypeLabelResource(type);
+                    return res.getText(labelRes);
+                }
+            }
+
+            
             public static final String CONTENT_ITEM_TYPE = "vnd.android.cursor.item/phone_v2";
             public static final String CONTENT_TYPE = "vnd.android.cursor.dir/phone_v2";
             public static final Uri CONTENT_URI = Uri.withAppendedPath(Data.CONTENT_URI,
@@ -1125,62 +1187,33 @@ public final class ContactsContract {
             public static final int TYPE_MMS = 20;
             public static final String NUMBER = DATA;
             public static final String NORMALIZED_NUMBER = DATA4;
+        }
+
+
+        
+        public static final class Email implements DataColumnsWithJoins, CommonColumns {
             
-            @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:03.192 -0400", hash_original_method = "8C72E3409D1DFC404D9CBFEE30B178A0", hash_generated_method = "99567417F8DD76150A67183757743A01")
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:54.913 -0400", hash_original_method = "4685E1971C120F244FF83B34E469953F", hash_generated_method = "AE4BB686E4A7B4068C4E01F323C0B09B")
             @DSModeled(DSC.SAFE)
-            private Phone() {
+            private Email() {
                 // ---------- Original Method ----------
             }
 
             
-            @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:03.192 -0400", hash_original_method = "EDF764EB0E7CD97EABC22A940CB89180", hash_generated_method = "E36ABE3BDA6AAD825A671925C6585D0B")
-            @Deprecated
-            public static final CharSequence getDisplayLabel(Context context, int type,
-                    CharSequence label, CharSequence[] labelArray) {
-                return getTypeLabel(context.getResources(), type, label);
-            }
-
-            
-            @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:03.192 -0400", hash_original_method = "9A10A12FCE02DEF77AEA0F0D7AE31554", hash_generated_method = "94E05A3692E1861476EF4BD15F819DAD")
-            @Deprecated
-            public static final CharSequence getDisplayLabel(Context context, int type,
-                    CharSequence label) {
-                return getTypeLabel(context.getResources(), type, label);
-            }
-
-            
-            @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:03.192 -0400", hash_original_method = "A6D4C160D00AA3D36D5417E79FCE7BE2", hash_generated_method = "519BDFA1CF1FDA85ED2C90BFCB4EAA27")
-            public static final int getTypeLabelResource(int type) {
+                        public static final int getTypeLabelResource(int type) {
                 switch (type) {
-                    case TYPE_HOME: return com.android.internal.R.string.phoneTypeHome;
-                    case TYPE_MOBILE: return com.android.internal.R.string.phoneTypeMobile;
-                    case TYPE_WORK: return com.android.internal.R.string.phoneTypeWork;
-                    case TYPE_FAX_WORK: return com.android.internal.R.string.phoneTypeFaxWork;
-                    case TYPE_FAX_HOME: return com.android.internal.R.string.phoneTypeFaxHome;
-                    case TYPE_PAGER: return com.android.internal.R.string.phoneTypePager;
-                    case TYPE_OTHER: return com.android.internal.R.string.phoneTypeOther;
-                    case TYPE_CALLBACK: return com.android.internal.R.string.phoneTypeCallback;
-                    case TYPE_CAR: return com.android.internal.R.string.phoneTypeCar;
-                    case TYPE_COMPANY_MAIN: return com.android.internal.R.string.phoneTypeCompanyMain;
-                    case TYPE_ISDN: return com.android.internal.R.string.phoneTypeIsdn;
-                    case TYPE_MAIN: return com.android.internal.R.string.phoneTypeMain;
-                    case TYPE_OTHER_FAX: return com.android.internal.R.string.phoneTypeOtherFax;
-                    case TYPE_RADIO: return com.android.internal.R.string.phoneTypeRadio;
-                    case TYPE_TELEX: return com.android.internal.R.string.phoneTypeTelex;
-                    case TYPE_TTY_TDD: return com.android.internal.R.string.phoneTypeTtyTdd;
-                    case TYPE_WORK_MOBILE: return com.android.internal.R.string.phoneTypeWorkMobile;
-                    case TYPE_WORK_PAGER: return com.android.internal.R.string.phoneTypeWorkPager;
-                    case TYPE_ASSISTANT: return com.android.internal.R.string.phoneTypeAssistant;
-                    case TYPE_MMS: return com.android.internal.R.string.phoneTypeMms;
-                    default: return com.android.internal.R.string.phoneTypeCustom;
+                    case TYPE_HOME: return com.android.internal.R.string.emailTypeHome;
+                    case TYPE_WORK: return com.android.internal.R.string.emailTypeWork;
+                    case TYPE_OTHER: return com.android.internal.R.string.emailTypeOther;
+                    case TYPE_MOBILE: return com.android.internal.R.string.emailTypeMobile;
+                    default: return com.android.internal.R.string.emailTypeCustom;
                 }
             }
 
             
-            @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:03.192 -0400", hash_original_method = "DB726CF4AF0A68CE45AE4CC8697A8990", hash_generated_method = "16C263C0668F5C7F953A2DE5737E1ECD")
-            public static final CharSequence getTypeLabel(Resources res, int type,
+                        public static final CharSequence getTypeLabel(Resources res, int type,
                     CharSequence label) {
-                if ((type == TYPE_CUSTOM || type == TYPE_ASSISTANT) && !TextUtils.isEmpty(label)) {
+                if (type == TYPE_CUSTOM && !TextUtils.isEmpty(label)) {
                     return label;
                 } else {
                     final int labelRes = getTypeLabelResource(type);
@@ -1189,11 +1222,6 @@ public final class ContactsContract {
             }
 
             
-        }
-
-
-        
-        public static final class Email implements DataColumnsWithJoins, CommonColumns {
             public static final String CONTENT_ITEM_TYPE = "vnd.android.cursor.item/email_v2";
             public static final String CONTENT_TYPE = "vnd.android.cursor.dir/email_v2";
             public static final Uri CONTENT_URI = Uri.withAppendedPath(Data.CONTENT_URI,
@@ -1208,28 +1236,30 @@ public final class ContactsContract {
             public static final int TYPE_OTHER = 3;
             public static final int TYPE_MOBILE = 4;
             public static final String DISPLAY_NAME = DATA4;
+        }
+
+
+        
+        public static final class StructuredPostal implements DataColumnsWithJoins, CommonColumns {
             
-            @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:03.192 -0400", hash_original_method = "4685E1971C120F244FF83B34E469953F", hash_generated_method = "65F6B10BB1ED51A92B90C5C9BAC77EA1")
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:54.913 -0400", hash_original_method = "C8D888449545672CEC46DD26E7BDDD9A", hash_generated_method = "6863A6EEFAC7C6659E60E563C7E51932")
             @DSModeled(DSC.SAFE)
-            private Email() {
+            private StructuredPostal() {
                 // ---------- Original Method ----------
             }
 
             
-            @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:03.192 -0400", hash_original_method = "E7DA05307A110C99CAAC7B66439AA912", hash_generated_method = "3AC091B7B77748F12E12FDDA82CBE6AC")
-            public static final int getTypeLabelResource(int type) {
+                        public static final int getTypeLabelResource(int type) {
                 switch (type) {
-                    case TYPE_HOME: return com.android.internal.R.string.emailTypeHome;
-                    case TYPE_WORK: return com.android.internal.R.string.emailTypeWork;
-                    case TYPE_OTHER: return com.android.internal.R.string.emailTypeOther;
-                    case TYPE_MOBILE: return com.android.internal.R.string.emailTypeMobile;
-                    default: return com.android.internal.R.string.emailTypeCustom;
+                    case TYPE_HOME: return com.android.internal.R.string.postalTypeHome;
+                    case TYPE_WORK: return com.android.internal.R.string.postalTypeWork;
+                    case TYPE_OTHER: return com.android.internal.R.string.postalTypeOther;
+                    default: return com.android.internal.R.string.postalTypeCustom;
                 }
             }
 
             
-            @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:03.192 -0400", hash_original_method = "139D7841F98AAFAD137DC9F312A6888E", hash_generated_method = "EFE05700DC3AFF7BDD17577F45ECCDA9")
-            public static final CharSequence getTypeLabel(Resources res, int type,
+                        public static final CharSequence getTypeLabel(Resources res, int type,
                     CharSequence label) {
                 if (type == TYPE_CUSTOM && !TextUtils.isEmpty(label)) {
                     return label;
@@ -1240,11 +1270,6 @@ public final class ContactsContract {
             }
 
             
-        }
-
-
-        
-        public static final class StructuredPostal implements DataColumnsWithJoins, CommonColumns {
             public static final String CONTENT_ITEM_TYPE =
                     "vnd.android.cursor.item/postal-address_v2";
             public static final String CONTENT_TYPE = "vnd.android.cursor.dir/postal-address_v2";
@@ -1261,27 +1286,30 @@ public final class ContactsContract {
             public static final String REGION = DATA8;
             public static final String POSTCODE = DATA9;
             public static final String COUNTRY = DATA10;
+        }
+
+
+        
+        public static final class Im implements DataColumnsWithJoins, CommonColumns {
             
-            @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:03.192 -0400", hash_original_method = "C8D888449545672CEC46DD26E7BDDD9A", hash_generated_method = "E068EF38C09A88D110AF449424738557")
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:54.914 -0400", hash_original_method = "7F43853CDED9232ACA3765709B5C5CC7", hash_generated_method = "3D120A0520BAC27E9D81D0F0F88DB3FD")
             @DSModeled(DSC.SAFE)
-            private StructuredPostal() {
+            private Im() {
                 // ---------- Original Method ----------
             }
 
             
-            @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:03.193 -0400", hash_original_method = "5BF2306E301E46F8BD771E4EFD0EBA38", hash_generated_method = "0222ACA728765DEA2E42F4BB1C03A29A")
-            public static final int getTypeLabelResource(int type) {
+                        public static final int getTypeLabelResource(int type) {
                 switch (type) {
-                    case TYPE_HOME: return com.android.internal.R.string.postalTypeHome;
-                    case TYPE_WORK: return com.android.internal.R.string.postalTypeWork;
-                    case TYPE_OTHER: return com.android.internal.R.string.postalTypeOther;
-                    default: return com.android.internal.R.string.postalTypeCustom;
+                    case TYPE_HOME: return com.android.internal.R.string.imTypeHome;
+                    case TYPE_WORK: return com.android.internal.R.string.imTypeWork;
+                    case TYPE_OTHER: return com.android.internal.R.string.imTypeOther;
+                    default: return com.android.internal.R.string.imTypeCustom;
                 }
             }
 
             
-            @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:03.193 -0400", hash_original_method = "139D7841F98AAFAD137DC9F312A6888E", hash_generated_method = "EFE05700DC3AFF7BDD17577F45ECCDA9")
-            public static final CharSequence getTypeLabel(Resources res, int type,
+                        public static final CharSequence getTypeLabel(Resources res, int type,
                     CharSequence label) {
                 if (type == TYPE_CUSTOM && !TextUtils.isEmpty(label)) {
                     return label;
@@ -1292,11 +1320,33 @@ public final class ContactsContract {
             }
 
             
-        }
+                        public static final int getProtocolLabelResource(int type) {
+                switch (type) {
+                    case PROTOCOL_AIM: return com.android.internal.R.string.imProtocolAim;
+                    case PROTOCOL_MSN: return com.android.internal.R.string.imProtocolMsn;
+                    case PROTOCOL_YAHOO: return com.android.internal.R.string.imProtocolYahoo;
+                    case PROTOCOL_SKYPE: return com.android.internal.R.string.imProtocolSkype;
+                    case PROTOCOL_QQ: return com.android.internal.R.string.imProtocolQq;
+                    case PROTOCOL_GOOGLE_TALK: return com.android.internal.R.string.imProtocolGoogleTalk;
+                    case PROTOCOL_ICQ: return com.android.internal.R.string.imProtocolIcq;
+                    case PROTOCOL_JABBER: return com.android.internal.R.string.imProtocolJabber;
+                    case PROTOCOL_NETMEETING: return com.android.internal.R.string.imProtocolNetMeeting;
+                    default: return com.android.internal.R.string.imProtocolCustom;
+                }
+            }
 
+            
+                        public static final CharSequence getProtocolLabel(Resources res, int type,
+                    CharSequence label) {
+                if (type == PROTOCOL_CUSTOM && !TextUtils.isEmpty(label)) {
+                    return label;
+                } else {
+                    final int labelRes = getProtocolLabelResource(type);
+                    return res.getText(labelRes);
+                }
+            }
 
-        
-        public static final class Im implements DataColumnsWithJoins, CommonColumns {
+            
             public static final String CONTENT_ITEM_TYPE = "vnd.android.cursor.item/im";
             public static final int TYPE_HOME = 1;
             public static final int TYPE_WORK = 2;
@@ -1313,27 +1363,29 @@ public final class ContactsContract {
             public static final int PROTOCOL_ICQ = 6;
             public static final int PROTOCOL_JABBER = 7;
             public static final int PROTOCOL_NETMEETING = 8;
+        }
+
+
+        
+        public static final class Organization implements DataColumnsWithJoins, CommonColumns {
             
-            @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:03.193 -0400", hash_original_method = "7F43853CDED9232ACA3765709B5C5CC7", hash_generated_method = "9F792EDCCD4BB87BF48243FA7DF53E47")
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:54.916 -0400", hash_original_method = "DB9E0507E0CFF6D3A6878FC813F638FB", hash_generated_method = "24D678582F58DD0084445608A443E82F")
             @DSModeled(DSC.SAFE)
-            private Im() {
+            private Organization() {
                 // ---------- Original Method ----------
             }
 
             
-            @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:03.193 -0400", hash_original_method = "DB933F4CCE4B2417E3234A3CAF5584A5", hash_generated_method = "A6E4D3E4D827895C2D526B84B05B7EC5")
-            public static final int getTypeLabelResource(int type) {
+                        public static final int getTypeLabelResource(int type) {
                 switch (type) {
-                    case TYPE_HOME: return com.android.internal.R.string.imTypeHome;
-                    case TYPE_WORK: return com.android.internal.R.string.imTypeWork;
-                    case TYPE_OTHER: return com.android.internal.R.string.imTypeOther;
-                    default: return com.android.internal.R.string.imTypeCustom;
+                    case TYPE_WORK: return com.android.internal.R.string.orgTypeWork;
+                    case TYPE_OTHER: return com.android.internal.R.string.orgTypeOther;
+                    default: return com.android.internal.R.string.orgTypeCustom;
                 }
             }
 
             
-            @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:03.193 -0400", hash_original_method = "139D7841F98AAFAD137DC9F312A6888E", hash_generated_method = "EFE05700DC3AFF7BDD17577F45ECCDA9")
-            public static final CharSequence getTypeLabel(Resources res, int type,
+                        public static final CharSequence getTypeLabel(Resources res, int type,
                     CharSequence label) {
                 if (type == TYPE_CUSTOM && !TextUtils.isEmpty(label)) {
                     return label;
@@ -1344,40 +1396,6 @@ public final class ContactsContract {
             }
 
             
-            @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:03.193 -0400", hash_original_method = "2439B316AC02293F1C1BC72135D6806F", hash_generated_method = "7601F5260A424E1A642596C53EDA9D8A")
-            public static final int getProtocolLabelResource(int type) {
-                switch (type) {
-                    case PROTOCOL_AIM: return com.android.internal.R.string.imProtocolAim;
-                    case PROTOCOL_MSN: return com.android.internal.R.string.imProtocolMsn;
-                    case PROTOCOL_YAHOO: return com.android.internal.R.string.imProtocolYahoo;
-                    case PROTOCOL_SKYPE: return com.android.internal.R.string.imProtocolSkype;
-                    case PROTOCOL_QQ: return com.android.internal.R.string.imProtocolQq;
-                    case PROTOCOL_GOOGLE_TALK: return com.android.internal.R.string.imProtocolGoogleTalk;
-                    case PROTOCOL_ICQ: return com.android.internal.R.string.imProtocolIcq;
-                    case PROTOCOL_JABBER: return com.android.internal.R.string.imProtocolJabber;
-                    case PROTOCOL_NETMEETING: return com.android.internal.R.string.imProtocolNetMeeting;
-                    default: return com.android.internal.R.string.imProtocolCustom;
-                }
-            }
-
-            
-            @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:03.193 -0400", hash_original_method = "719F720CCBDAB5B3884CB87DEE9715B5", hash_generated_method = "05C319BA1E315915AA4D439E1FDBD977")
-            public static final CharSequence getProtocolLabel(Resources res, int type,
-                    CharSequence label) {
-                if (type == PROTOCOL_CUSTOM && !TextUtils.isEmpty(label)) {
-                    return label;
-                } else {
-                    final int labelRes = getProtocolLabelResource(type);
-                    return res.getText(labelRes);
-                }
-            }
-
-            
-        }
-
-
-        
-        public static final class Organization implements DataColumnsWithJoins, CommonColumns {
             public static final String CONTENT_ITEM_TYPE = "vnd.android.cursor.item/organization";
             public static final int TYPE_WORK = 1;
             public static final int TYPE_OTHER = 2;
@@ -1389,67 +1407,20 @@ public final class ContactsContract {
             public static final String PHONETIC_NAME = DATA8;
             public static final String OFFICE_LOCATION = DATA9;
             public static final String PHONETIC_NAME_STYLE = DATA10;
-            
-            @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:03.193 -0400", hash_original_method = "DB9E0507E0CFF6D3A6878FC813F638FB", hash_generated_method = "86CDC8DAAC9D24725921B75CFB0152DA")
-            @DSModeled(DSC.SAFE)
-            private Organization() {
-                // ---------- Original Method ----------
-            }
-
-            
-            @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:03.193 -0400", hash_original_method = "3DA16CECB36036B59D78BB88E80196B3", hash_generated_method = "91AD13C9A65F98147CABF426F48DD4E5")
-            public static final int getTypeLabelResource(int type) {
-                switch (type) {
-                    case TYPE_WORK: return com.android.internal.R.string.orgTypeWork;
-                    case TYPE_OTHER: return com.android.internal.R.string.orgTypeOther;
-                    default: return com.android.internal.R.string.orgTypeCustom;
-                }
-            }
-
-            
-            @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:03.193 -0400", hash_original_method = "139D7841F98AAFAD137DC9F312A6888E", hash_generated_method = "EFE05700DC3AFF7BDD17577F45ECCDA9")
-            public static final CharSequence getTypeLabel(Resources res, int type,
-                    CharSequence label) {
-                if (type == TYPE_CUSTOM && !TextUtils.isEmpty(label)) {
-                    return label;
-                } else {
-                    final int labelRes = getTypeLabelResource(type);
-                    return res.getText(labelRes);
-                }
-            }
-
-            
         }
 
 
         
         public static final class Relation implements DataColumnsWithJoins, CommonColumns {
-            public static final String CONTENT_ITEM_TYPE = "vnd.android.cursor.item/relation";
-            public static final int TYPE_ASSISTANT = 1;
-            public static final int TYPE_BROTHER = 2;
-            public static final int TYPE_CHILD = 3;
-            public static final int TYPE_DOMESTIC_PARTNER = 4;
-            public static final int TYPE_FATHER = 5;
-            public static final int TYPE_FRIEND = 6;
-            public static final int TYPE_MANAGER = 7;
-            public static final int TYPE_MOTHER = 8;
-            public static final int TYPE_PARENT = 9;
-            public static final int TYPE_PARTNER = 10;
-            public static final int TYPE_REFERRED_BY = 11;
-            public static final int TYPE_RELATIVE = 12;
-            public static final int TYPE_SISTER = 13;
-            public static final int TYPE_SPOUSE = 14;
-            public static final String NAME = DATA;
             
-            @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:03.194 -0400", hash_original_method = "AB820511C2318175DFB023ADDE00500D", hash_generated_method = "16C413ED0611D3B2A916528F29365204")
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:54.917 -0400", hash_original_method = "AB820511C2318175DFB023ADDE00500D", hash_generated_method = "004DD1D842B963562C78785064E7989B")
             @DSModeled(DSC.SAFE)
             private Relation() {
                 // ---------- Original Method ----------
             }
 
             
-            @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:03.194 -0400", hash_original_method = "DC92F7F77AD275BC3178229A766744FB", hash_generated_method = "51A27705782CDA7F0811032820233425")
-            public static final int getTypeLabelResource(int type) {
+                        public static final int getTypeLabelResource(int type) {
                 switch (type) {
                     case TYPE_ASSISTANT: return com.android.internal.R.string.relationTypeAssistant;
                     case TYPE_BROTHER: return com.android.internal.R.string.relationTypeBrother;
@@ -1472,8 +1443,7 @@ public final class ContactsContract {
             }
 
             
-            @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:03.194 -0400", hash_original_method = "139D7841F98AAFAD137DC9F312A6888E", hash_generated_method = "EFE05700DC3AFF7BDD17577F45ECCDA9")
-            public static final CharSequence getTypeLabel(Resources res, int type,
+                        public static final CharSequence getTypeLabel(Resources res, int type,
                     CharSequence label) {
                 if (type == TYPE_CUSTOM && !TextUtils.isEmpty(label)) {
                     return label;
@@ -1484,26 +1454,36 @@ public final class ContactsContract {
             }
 
             
+            public static final String CONTENT_ITEM_TYPE = "vnd.android.cursor.item/relation";
+            public static final int TYPE_ASSISTANT = 1;
+            public static final int TYPE_BROTHER = 2;
+            public static final int TYPE_CHILD = 3;
+            public static final int TYPE_DOMESTIC_PARTNER = 4;
+            public static final int TYPE_FATHER = 5;
+            public static final int TYPE_FRIEND = 6;
+            public static final int TYPE_MANAGER = 7;
+            public static final int TYPE_MOTHER = 8;
+            public static final int TYPE_PARENT = 9;
+            public static final int TYPE_PARTNER = 10;
+            public static final int TYPE_REFERRED_BY = 11;
+            public static final int TYPE_RELATIVE = 12;
+            public static final int TYPE_SISTER = 13;
+            public static final int TYPE_SPOUSE = 14;
+            public static final String NAME = DATA;
         }
 
 
         
         public static final class Event implements DataColumnsWithJoins, CommonColumns {
-            public static final String CONTENT_ITEM_TYPE = "vnd.android.cursor.item/contact_event";
-            public static final int TYPE_ANNIVERSARY = 1;
-            public static final int TYPE_OTHER = 2;
-            public static final int TYPE_BIRTHDAY = 3;
-            public static final String START_DATE = DATA;
             
-            @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:03.194 -0400", hash_original_method = "D3DDD15A13BA6EC1D9CD48C2CCCFE0B4", hash_generated_method = "8E618CD2B3C8E3CA2B7F98B80459403A")
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:54.917 -0400", hash_original_method = "D3DDD15A13BA6EC1D9CD48C2CCCFE0B4", hash_generated_method = "F9069AC01DFBB6E335236591397070B2")
             @DSModeled(DSC.SAFE)
             private Event() {
                 // ---------- Original Method ----------
             }
 
             
-            @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:03.194 -0400", hash_original_method = "44A585035560330F504A000D56682C48", hash_generated_method = "D17577314C62A57FCC47AE3081A84877")
-            public static int getTypeResource(Integer type) {
+                        public static int getTypeResource(Integer type) {
                 if (type == null) {
                     return com.android.internal.R.string.eventTypeOther;
                 }
@@ -1517,59 +1497,72 @@ public final class ContactsContract {
             }
 
             
+            public static final String CONTENT_ITEM_TYPE = "vnd.android.cursor.item/contact_event";
+            public static final int TYPE_ANNIVERSARY = 1;
+            public static final int TYPE_OTHER = 2;
+            public static final int TYPE_BIRTHDAY = 3;
+            public static final String START_DATE = DATA;
         }
 
 
         
         public static final class Photo implements DataColumnsWithJoins {
-            public static final String CONTENT_ITEM_TYPE = "vnd.android.cursor.item/photo";
-            public static final String PHOTO_FILE_ID = DATA14;
-            public static final String PHOTO = DATA15;
             
-            @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:03.194 -0400", hash_original_method = "C03E3395BFF21729CC93322BBC7A82DE", hash_generated_method = "2D85DD80A144D36F33275D4A6419D75B")
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:54.918 -0400", hash_original_method = "C03E3395BFF21729CC93322BBC7A82DE", hash_generated_method = "6353485435339DC025174C823A75D00F")
             @DSModeled(DSC.SAFE)
             private Photo() {
                 // ---------- Original Method ----------
             }
 
             
+            public static final String CONTENT_ITEM_TYPE = "vnd.android.cursor.item/photo";
+            public static final String PHOTO_FILE_ID = DATA14;
+            public static final String PHOTO = DATA15;
         }
 
 
         
         public static final class Note implements DataColumnsWithJoins {
-            public static final String CONTENT_ITEM_TYPE = "vnd.android.cursor.item/note";
-            public static final String NOTE = DATA1;
             
-            @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:03.194 -0400", hash_original_method = "EBAE52FCFF9289B17EA2262C75B6F6C0", hash_generated_method = "68E52E195DA567961D08E76AC31625A3")
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:54.918 -0400", hash_original_method = "EBAE52FCFF9289B17EA2262C75B6F6C0", hash_generated_method = "22ECB65A834798A58E72F146C908C2C8")
             @DSModeled(DSC.SAFE)
             private Note() {
                 // ---------- Original Method ----------
             }
 
             
+            public static final String CONTENT_ITEM_TYPE = "vnd.android.cursor.item/note";
+            public static final String NOTE = DATA1;
         }
 
 
         
         public static final class GroupMembership implements DataColumnsWithJoins {
-            public static final String CONTENT_ITEM_TYPE =
-                    "vnd.android.cursor.item/group_membership";
-            public static final String GROUP_ROW_ID = DATA1;
-            public static final String GROUP_SOURCE_ID = "group_sourceid";
             
-            @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:03.194 -0400", hash_original_method = "9948141C64D53CA8E17E7FD2EBA08DA8", hash_generated_method = "6455CBCB097771EA280C661AD3A32623")
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:54.918 -0400", hash_original_method = "9948141C64D53CA8E17E7FD2EBA08DA8", hash_generated_method = "428CD6B4AF8D64BBC7FE2E70673D8538")
             @DSModeled(DSC.SAFE)
             private GroupMembership() {
                 // ---------- Original Method ----------
             }
 
             
+            public static final String CONTENT_ITEM_TYPE =
+                    "vnd.android.cursor.item/group_membership";
+            public static final String GROUP_ROW_ID = DATA1;
+            public static final String GROUP_SOURCE_ID = "group_sourceid";
         }
 
 
         
         public static final class Website implements DataColumnsWithJoins, CommonColumns {
+            
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:54.918 -0400", hash_original_method = "CC2DAF060546DD565E4193F5085BC2F2", hash_generated_method = "95610DE2A4CA3A3ED50311363B3F2A27")
+            @DSModeled(DSC.SAFE)
+            private Website() {
+                // ---------- Original Method ----------
+            }
+
+            
             public static final String CONTENT_ITEM_TYPE = "vnd.android.cursor.item/website";
             public static final int TYPE_HOMEPAGE = 1;
             public static final int TYPE_BLOG = 2;
@@ -1579,34 +1572,20 @@ public final class ContactsContract {
             public static final int TYPE_FTP = 6;
             public static final int TYPE_OTHER = 7;
             public static final String URL = DATA;
-            
-            @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:03.194 -0400", hash_original_method = "CC2DAF060546DD565E4193F5085BC2F2", hash_generated_method = "F6C6D617268CA92026A827B818CF4A68")
-            @DSModeled(DSC.SAFE)
-            private Website() {
-                // ---------- Original Method ----------
-            }
-
-            
         }
 
 
         
         public static final class SipAddress implements DataColumnsWithJoins, CommonColumns {
-            public static final String CONTENT_ITEM_TYPE = "vnd.android.cursor.item/sip_address";
-            public static final int TYPE_HOME = 1;
-            public static final int TYPE_WORK = 2;
-            public static final int TYPE_OTHER = 3;
-            public static final String SIP_ADDRESS = DATA1;
             
-            @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:03.195 -0400", hash_original_method = "7307A74E42B27B76827D43357DA8B367", hash_generated_method = "7464EC37FCB0CCF8EDADE93313863056")
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:54.919 -0400", hash_original_method = "7307A74E42B27B76827D43357DA8B367", hash_generated_method = "EF707E530C2FC911E23A8D91CEFB5F2B")
             @DSModeled(DSC.SAFE)
             private SipAddress() {
                 // ---------- Original Method ----------
             }
 
             
-            @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:03.195 -0400", hash_original_method = "D9A58CDEECC9F427DB69C45B7BC2621A", hash_generated_method = "3A09EC7B1D8BD60AEA44FE340DA1D020")
-            public static final int getTypeLabelResource(int type) {
+                        public static final int getTypeLabelResource(int type) {
                 switch (type) {
                     case TYPE_HOME: return com.android.internal.R.string.sipAddressTypeHome;
                     case TYPE_WORK: return com.android.internal.R.string.sipAddressTypeWork;
@@ -1616,8 +1595,7 @@ public final class ContactsContract {
             }
 
             
-            @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:03.195 -0400", hash_original_method = "139D7841F98AAFAD137DC9F312A6888E", hash_generated_method = "EFE05700DC3AFF7BDD17577F45ECCDA9")
-            public static final CharSequence getTypeLabel(Resources res, int type,
+                        public static final CharSequence getTypeLabel(Resources res, int type,
                     CharSequence label) {
                 if (type == TYPE_CUSTOM && !TextUtils.isEmpty(label)) {
                     return label;
@@ -1628,22 +1606,27 @@ public final class ContactsContract {
             }
 
             
+            public static final String CONTENT_ITEM_TYPE = "vnd.android.cursor.item/sip_address";
+            public static final int TYPE_HOME = 1;
+            public static final int TYPE_WORK = 2;
+            public static final int TYPE_OTHER = 3;
+            public static final String SIP_ADDRESS = DATA1;
         }
 
 
         
         public static final class Identity implements DataColumnsWithJoins {
-            public static final String CONTENT_ITEM_TYPE = "vnd.android.cursor.item/identity";
-            public static final String IDENTITY = DataColumns.DATA1;
-            public static final String NAMESPACE = DataColumns.DATA2;
             
-            @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:03.195 -0400", hash_original_method = "CB97BE8665681C1FD82290A9CE03A1A5", hash_generated_method = "BFE1C69B5E11F43EE8F56892C31FB4CF")
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:54.919 -0400", hash_original_method = "CB97BE8665681C1FD82290A9CE03A1A5", hash_generated_method = "EAF95E91D3C42B1A473D86AA0DA890E2")
             @DSModeled(DSC.SAFE)
             private Identity() {
                 // ---------- Original Method ----------
             }
 
             
+            public static final String CONTENT_ITEM_TYPE = "vnd.android.cursor.item/identity";
+            public static final String IDENTITY = DataColumns.DATA1;
+            public static final String NAMESPACE = DataColumns.DATA2;
         }
 
 
@@ -1664,33 +1647,28 @@ public final class ContactsContract {
             public static final String LABEL = DataColumns.DATA3;
         }
         
+        public static final String PACKAGE_COMMON = "common";
     }
 
 
     
     public static final class Groups implements BaseColumns, GroupsColumns, SyncColumns {
-        public static final Uri CONTENT_URI = Uri.withAppendedPath(AUTHORITY_URI, "groups");
-        public static final Uri CONTENT_SUMMARY_URI = Uri.withAppendedPath(AUTHORITY_URI,
-                "groups_summary");
-        public static final String CONTENT_TYPE = "vnd.android.cursor.dir/group";
-        public static final String CONTENT_ITEM_TYPE = "vnd.android.cursor.item/group";
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:03.195 -0400", hash_original_method = "7BA2DC4B038FD72F399C633B1C4B5B34", hash_generated_method = "E58712013FF7B36A6658A1494B5BFC26")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:54.919 -0400", hash_original_method = "7BA2DC4B038FD72F399C633B1C4B5B34", hash_generated_method = "4AF005563E89F66C166EA0E603C46AC1")
         @DSModeled(DSC.SAFE)
         private Groups() {
             // ---------- Original Method ----------
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:03.195 -0400", hash_original_method = "7C8784537648600B4251C9E262BFEFC5", hash_generated_method = "9F167F07FC0CADA08203BAA255DB9A81")
-        public static EntityIterator newEntityIterator(Cursor cursor) {
+                public static EntityIterator newEntityIterator(Cursor cursor) {
             return new EntityIteratorImpl(cursor);
         }
 
         
         private static class EntityIteratorImpl extends CursorEntityIterator {
             
-            @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:03.195 -0400", hash_original_method = "5371E683B36CD927F8174DD86149D4D5", hash_generated_method = "3B59B4CAFFC6405C709C46CE9ED84B82")
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:54.920 -0400", hash_original_method = "5371E683B36CD927F8174DD86149D4D5", hash_generated_method = "E6BE4064EE211A3FD662F23DCF234396")
             //DSFIXME:  CODE0002: Requires DSC value to be set
             public EntityIteratorImpl(Cursor cursor) {
                 super(cursor);
@@ -1699,12 +1677,12 @@ public final class ContactsContract {
             }
 
             
-            @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:03.195 -0400", hash_original_method = "DDAF6836AC46D694049E3DD971FAB2B5", hash_generated_method = "5F916ABCAC8C36214B32F75EA1881674")
-            @DSModeled(DSC.SAFE)
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:54.920 -0400", hash_original_method = "DDAF6836AC46D694049E3DD971FAB2B5", hash_generated_method = "A0D94741EA0CBA94EC9C58BD3B5B015E")
+            //DSFIXME:  CODE0002: Requires DSC value to be set
             @Override
             public Entity getEntityAndIncrementCursor(Cursor cursor) throws RemoteException {
                 dsTaint.addTaint(cursor.dsTaint);
-                final ContentValues values;
+                ContentValues values;
                 values = new ContentValues();
                 DatabaseUtils.cursorLongToContentValuesIfPresent(cursor, values, _ID);
                 DatabaseUtils.cursorStringToContentValuesIfPresent(cursor, values, ACCOUNT_NAME);
@@ -1727,6 +1705,7 @@ public final class ContactsContract {
                 DatabaseUtils.cursorStringToContentValuesIfPresent(cursor, values, FAVORITES);
                 DatabaseUtils.cursorStringToContentValuesIfPresent(cursor, values, AUTO_ADD);
                 cursor.moveToNext();
+                Entity varB61519D85100DB0A4303B499E710283C_1942946485 = (new Entity(values));
                 return (Entity)dsTaint.getTaint();
                 // ---------- Original Method ----------
                 // Original Method Too Long, Refer to Original Implementation
@@ -1737,11 +1716,24 @@ public final class ContactsContract {
 
 
         
+        public static final Uri CONTENT_URI = Uri.withAppendedPath(AUTHORITY_URI, "groups");
+        public static final Uri CONTENT_SUMMARY_URI = Uri.withAppendedPath(AUTHORITY_URI,
+                "groups_summary");
+        public static final String CONTENT_TYPE = "vnd.android.cursor.dir/group";
+        public static final String CONTENT_ITEM_TYPE = "vnd.android.cursor.item/group";
     }
 
 
     
     public static final class AggregationExceptions implements BaseColumns {
+        
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:54.920 -0400", hash_original_method = "AEC5F5D30A84CFEC2D9D1903833FB78B", hash_generated_method = "ED7E5F4AC17489A373923084FD271B08")
+        @DSModeled(DSC.SAFE)
+        private AggregationExceptions() {
+            // ---------- Original Method ----------
+        }
+
+        
         public static final Uri CONTENT_URI =
                 Uri.withAppendedPath(AUTHORITY_URI, "aggregation_exceptions");
         public static final String CONTENT_TYPE = "vnd.android.cursor.dir/aggregation_exception";
@@ -1753,36 +1745,36 @@ public final class ContactsContract {
         public static final int TYPE_KEEP_SEPARATE = 2;
         public static final String RAW_CONTACT_ID1 = "raw_contact_id1";
         public static final String RAW_CONTACT_ID2 = "raw_contact_id2";
-        
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:03.196 -0400", hash_original_method = "AEC5F5D30A84CFEC2D9D1903833FB78B", hash_generated_method = "171321AF6B201B2E625585662DDA8C29")
-        @DSModeled(DSC.SAFE)
-        private AggregationExceptions() {
-            // ---------- Original Method ----------
-        }
-
-        
     }
 
 
     
     public static final class Settings implements SettingsColumns {
-        public static final Uri CONTENT_URI =
-                Uri.withAppendedPath(AUTHORITY_URI, "settings");
-        public static final String CONTENT_TYPE = "vnd.android.cursor.dir/setting";
-        public static final String CONTENT_ITEM_TYPE = "vnd.android.cursor.item/setting";
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:03.196 -0400", hash_original_method = "E49204FD271E895B10D86A1AFEA21B04", hash_generated_method = "365127D9A7AD23806BCE93C671023170")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:54.921 -0400", hash_original_method = "E49204FD271E895B10D86A1AFEA21B04", hash_generated_method = "2C16D3C86A761A9DF5E58231442F813C")
         @DSModeled(DSC.SAFE)
         private Settings() {
             // ---------- Original Method ----------
         }
 
         
+        public static final Uri CONTENT_URI =
+                Uri.withAppendedPath(AUTHORITY_URI, "settings");
+        public static final String CONTENT_TYPE = "vnd.android.cursor.dir/setting";
+        public static final String CONTENT_ITEM_TYPE = "vnd.android.cursor.item/setting";
     }
 
 
     
     public static final class ProviderStatus {
+        
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:54.921 -0400", hash_original_method = "795A4A88B7E0FFCBF277CCA1899F11E6", hash_generated_method = "31F9DB0C46ADEE3AB9E7AC4FBB60BDC4")
+        @DSModeled(DSC.SAFE)
+        private ProviderStatus() {
+            // ---------- Original Method ----------
+        }
+
+        
         public static final Uri CONTENT_URI =
                 Uri.withAppendedPath(AUTHORITY_URI, "provider_status");
         public static final String CONTENT_TYPE = "vnd.android.cursor.dir/provider_status";
@@ -1793,43 +1785,37 @@ public final class ContactsContract {
         public static final int STATUS_CHANGING_LOCALE = 3;
         public static final int STATUS_NO_ACCOUNTS_NO_CONTACTS = 4;
         public static final String DATA1 = "data1";
-        
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:03.196 -0400", hash_original_method = "795A4A88B7E0FFCBF277CCA1899F11E6", hash_generated_method = "BBEE064010E6EDA8B135501C35456E66")
-        @DSModeled(DSC.SAFE)
-        private ProviderStatus() {
-            // ---------- Original Method ----------
-        }
-
-        
     }
 
 
     
     public static final class DataUsageFeedback {
+        
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:54.921 -0400", hash_original_method = "BEB0B4B11EAAF2CBA3A75F70D7ACF1F2", hash_generated_method = "BEB0B4B11EAAF2CBA3A75F70D7ACF1F2")
+                public DataUsageFeedback ()
+        {
+        }
+
+
         public static final Uri FEEDBACK_URI =
                 Uri.withAppendedPath(Data.CONTENT_URI, "usagefeedback");
         public static final String USAGE_TYPE = "type";
         public static final String USAGE_TYPE_CALL = "call";
         public static final String USAGE_TYPE_LONG_TEXT = "long_text";
         public static final String USAGE_TYPE_SHORT_TEXT = "short_text";
-        
     }
 
 
     
     public static final class QuickContact {
-        public static final String ACTION_QUICK_CONTACT =
-                "com.android.contacts.action.QUICK_CONTACT";
-        @Deprecated
-        public static final String EXTRA_TARGET_RECT = "target_rect";
-        public static final String EXTRA_MODE = "mode";
-        public static final String EXTRA_EXCLUDE_MIMES = "exclude_mimes";
-        public static final int MODE_SMALL = 1;
-        public static final int MODE_MEDIUM = 2;
-        public static final int MODE_LARGE = 3;
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:03.196 -0400", hash_original_method = "718CFEA83C0A766BFE63C0D34638CAC0", hash_generated_method = "3CF162F58BF77AD3CD38447E706C37BE")
-        public static void showQuickContact(Context context, View target, Uri lookupUri, int mode,
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:54.921 -0400", hash_original_method = "B8AA0779852F22CBD95581123836D7A0", hash_generated_method = "B8AA0779852F22CBD95581123836D7A0")
+                public QuickContact ()
+        {
+        }
+
+
+                public static void showQuickContact(Context context, View target, Uri lookupUri, int mode,
                 String[] excludeMimes) {
             final float appScale = context.getResources().getCompatibilityInfo().applicationScale;
             final int[] pos = new int[2];
@@ -1843,8 +1829,7 @@ public final class ContactsContract {
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:03.196 -0400", hash_original_method = "55973817E502F758AB5135D809FEAF34", hash_generated_method = "6291C2EA61D352DD30F6A4846A421DB6")
-        public static void showQuickContact(Context context, Rect target, Uri lookupUri, int mode,
+                public static void showQuickContact(Context context, Rect target, Uri lookupUri, int mode,
                 String[] excludeMimes) {
             final Intent intent = new Intent(ACTION_QUICK_CONTACT);
             intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP
@@ -1857,63 +1842,52 @@ public final class ContactsContract {
         }
 
         
+        public static final String ACTION_QUICK_CONTACT =
+                "com.android.contacts.action.QUICK_CONTACT";
+        @Deprecated public static final String EXTRA_TARGET_RECT = "target_rect";
+        public static final String EXTRA_MODE = "mode";
+        public static final String EXTRA_EXCLUDE_MIMES = "exclude_mimes";
+        public static final int MODE_SMALL = 1;
+        public static final int MODE_MEDIUM = 2;
+        public static final int MODE_LARGE = 3;
     }
 
 
     
     public static final class DisplayPhoto {
-        public static final Uri CONTENT_URI = Uri.withAppendedPath(AUTHORITY_URI, "display_photo");
-        public static final Uri CONTENT_MAX_DIMENSIONS_URI =
-                Uri.withAppendedPath(AUTHORITY_URI, "photo_dimensions");
-        public static final String DISPLAY_MAX_DIM = "display_max_dim";
-        public static final String THUMBNAIL_MAX_DIM = "thumbnail_max_dim";
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:03.196 -0400", hash_original_method = "4DA607ACD5E6F502EC932EC179042892", hash_generated_method = "E301244D8E4F99AA0567061D7FED0A7C")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:54.922 -0400", hash_original_method = "4DA607ACD5E6F502EC932EC179042892", hash_generated_method = "B2E13164C0532FB7A083C12460677DAB")
         @DSModeled(DSC.SAFE)
         private DisplayPhoto() {
             // ---------- Original Method ----------
         }
 
         
+        public static final Uri CONTENT_URI = Uri.withAppendedPath(AUTHORITY_URI, "display_photo");
+        public static final Uri CONTENT_MAX_DIMENSIONS_URI =
+                Uri.withAppendedPath(AUTHORITY_URI, "photo_dimensions");
+        public static final String DISPLAY_MAX_DIM = "display_max_dim";
+        public static final String THUMBNAIL_MAX_DIM = "thumbnail_max_dim";
     }
 
 
     
     public static final class Intents {
-        public static final String SEARCH_SUGGESTION_CLICKED =
-                "android.provider.Contacts.SEARCH_SUGGESTION_CLICKED";
-        public static final String SEARCH_SUGGESTION_DIAL_NUMBER_CLICKED =
-                "android.provider.Contacts.SEARCH_SUGGESTION_DIAL_NUMBER_CLICKED";
-        public static final String SEARCH_SUGGESTION_CREATE_CONTACT_CLICKED =
-                "android.provider.Contacts.SEARCH_SUGGESTION_CREATE_CONTACT_CLICKED";
-        public static final String ATTACH_IMAGE =
-                "com.android.contacts.action.ATTACH_IMAGE";
-        public static final String INVITE_CONTACT =
-                "com.android.contacts.action.INVITE_CONTACT";
-        public static final String SHOW_OR_CREATE_CONTACT =
-                "com.android.contacts.action.SHOW_OR_CREATE_CONTACT";
-        public static final String ACTION_GET_MULTIPLE_PHONES =
-                "com.android.contacts.action.GET_MULTIPLE_PHONES";
-        public static final String EXTRA_FORCE_CREATE =
-                "com.android.contacts.action.FORCE_CREATE";
-        public static final String EXTRA_CREATE_DESCRIPTION =
-            "com.android.contacts.action.CREATE_DESCRIPTION";
-        public static final String EXTRA_PHONE_URIS =
-            "com.android.contacts.extra.PHONE_URIS";
-        @Deprecated
-        public static final String EXTRA_TARGET_RECT = "target_rect";
-        @Deprecated
-        public static final String EXTRA_MODE = "mode";
-        @Deprecated
-        public static final int MODE_SMALL = 1;
-        @Deprecated
-        public static final int MODE_MEDIUM = 2;
-        @Deprecated
-        public static final int MODE_LARGE = 3;
-        @Deprecated
-        public static final String EXTRA_EXCLUDE_MIMES = "exclude_mimes";
         
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:54.922 -0400", hash_original_method = "FD95D140BFADEB4CFA03E1D7AD3D1B16", hash_generated_method = "FD95D140BFADEB4CFA03E1D7AD3D1B16")
+                public Intents ()
+        {
+        }
+
+
         public static final class UI {
+            
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:54.922 -0400", hash_original_method = "FBD9B6F08D1222C15E507E68DED61A3A", hash_generated_method = "FBD9B6F08D1222C15E507E68DED61A3A")
+                        public UI ()
+            {
+            }
+
+
             public static final String LIST_DEFAULT =
                     "com.android.contacts.action.LIST_DEFAULT";
             public static final String LIST_GROUP_ACTION =
@@ -1935,12 +1909,18 @@ public final class ContactsContract {
                     "com.android.contacts.action.FILTER_CONTACTS";
             public static final String FILTER_TEXT_EXTRA_KEY =
                     "com.android.contacts.extra.FILTER_TEXT";
-            
         }
 
 
         
         public static final class Insert {
+            
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:54.922 -0400", hash_original_method = "7C6323E6962BB80DF6B7F45EE17A4436", hash_generated_method = "7C6323E6962BB80DF6B7F45EE17A4436")
+                        public Insert ()
+            {
+            }
+
+
             public static final String ACTION = Intent.ACTION_INSERT;
             public static final String FULL_MODE = "full_mode";
             public static final String NAME = "name";
@@ -1971,11 +1951,36 @@ public final class ContactsContract {
             public static final String DATA = "data";
             public static final String ACCOUNT = "com.android.contacts.extra.ACCOUNT";
             public static final String DATA_SET = "com.android.contacts.extra.DATA_SET";
-            
         }
 
 
         
+        public static final String SEARCH_SUGGESTION_CLICKED =
+                "android.provider.Contacts.SEARCH_SUGGESTION_CLICKED";
+        public static final String SEARCH_SUGGESTION_DIAL_NUMBER_CLICKED =
+                "android.provider.Contacts.SEARCH_SUGGESTION_DIAL_NUMBER_CLICKED";
+        public static final String SEARCH_SUGGESTION_CREATE_CONTACT_CLICKED =
+                "android.provider.Contacts.SEARCH_SUGGESTION_CREATE_CONTACT_CLICKED";
+        public static final String ATTACH_IMAGE =
+                "com.android.contacts.action.ATTACH_IMAGE";
+        public static final String INVITE_CONTACT =
+                "com.android.contacts.action.INVITE_CONTACT";
+        public static final String SHOW_OR_CREATE_CONTACT =
+                "com.android.contacts.action.SHOW_OR_CREATE_CONTACT";
+        public static final String ACTION_GET_MULTIPLE_PHONES =
+                "com.android.contacts.action.GET_MULTIPLE_PHONES";
+        public static final String EXTRA_FORCE_CREATE =
+                "com.android.contacts.action.FORCE_CREATE";
+        public static final String EXTRA_CREATE_DESCRIPTION =
+            "com.android.contacts.action.CREATE_DESCRIPTION";
+        public static final String EXTRA_PHONE_URIS =
+            "com.android.contacts.extra.PHONE_URIS";
+        @Deprecated public static final String EXTRA_TARGET_RECT = "target_rect";
+        @Deprecated public static final String EXTRA_MODE = "mode";
+        @Deprecated public static final int MODE_SMALL = 1;
+        @Deprecated public static final int MODE_MEDIUM = 2;
+        @Deprecated public static final int MODE_LARGE = 3;
+        @Deprecated public static final String EXTRA_EXCLUDE_MIMES = "exclude_mimes";
     }
 
 
@@ -2491,6 +2496,18 @@ public final class ContactsContract {
         public static final String UNGROUPED_WITH_PHONES = "summ_phones";
     }
     
+    public static final String AUTHORITY = "com.android.contacts";
+    public static final Uri AUTHORITY_URI = Uri.parse("content://" + AUTHORITY);
+    public static final String CALLER_IS_SYNCADAPTER = "caller_is_syncadapter";
+    public static final String DIRECTORY_PARAM_KEY = "directory";
+    public static final String LIMIT_PARAM_KEY = "limit";
+    public static final String PRIMARY_ACCOUNT_NAME = "name_for_primary_account";
+    public static final String PRIMARY_ACCOUNT_TYPE = "type_for_primary_account";
+    public static final String STREQUENT_PHONE_ONLY = "strequent_phone_only";
+    public static final String DEFERRED_SNIPPETING = "deferred_snippeting";
+    public static final String DEFERRED_SNIPPETING_QUERY = "deferred_snippeting_query";
+    public static final String REMOVE_DUPLICATE_ENTRIES = "remove_duplicate_entries";
+    private static Pattern SPLIT_PATTERN =
+        Pattern.compile("([\\w-\\.]+)@((?:[\\w]+\\.)+)([a-zA-Z]{2,4})|[\\w]+");
 }
-
 

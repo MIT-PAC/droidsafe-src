@@ -3,10 +3,10 @@ package android.database;
 // Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
+import droidsafe.runtime.*;
 
-// import Iterator to deal with enhanced for loop translation
+// needed for enhanced for control translations
 import java.util.Iterator;
-
 import android.os.Bundle;
 import android.os.IBinder;
 import android.os.IInterface;
@@ -50,4 +50,3 @@ public interface IBulkCursor extends IInterface  {
     static final int RESPOND_TRANSACTION = IBinder.FIRST_CALL_TRANSACTION + 10;
     static final int CLOSE_TRANSACTION = IBinder.FIRST_CALL_TRANSACTION + 11;
 }
-

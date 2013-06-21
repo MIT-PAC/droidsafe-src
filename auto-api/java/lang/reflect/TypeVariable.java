@@ -19,4 +19,3 @@ public interface TypeVariable<D extends GenericDeclaration> extends Type {
     
     String getName();
 }
-

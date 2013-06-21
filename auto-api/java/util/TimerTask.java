@@ -3,27 +3,27 @@ package java.util;
 // Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
+import droidsafe.runtime.*;
 
-// import Iterator to deal with enhanced for loop translation
+// needed for enhanced for control translations
 import java.util.Iterator;
 
-
 public abstract class TimerTask implements Runnable {
-    final Object lock = new Object();
+    Object lock = new Object();
     boolean cancelled;
     long when;
     long period;
     boolean fixedRate;
     private long scheduledTime;
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:15.196 -0400", hash_original_method = "41AFEAE31E9AFC51442EB32F1B803F09", hash_generated_method = "A5E31C09BA1EB4605DAFC965C97B3580")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:33.857 -0400", hash_original_method = "41AFEAE31E9AFC51442EB32F1B803F09", hash_generated_method = "77D10C16E519E63639DFE51A512851F6")
     @DSModeled(DSC.SAFE)
     protected TimerTask() {
         // ---------- Original Method ----------
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:15.196 -0400", hash_original_method = "61DD03075FF1927377D7CEC2AE97ED1A", hash_generated_method = "D12CE277B8BE6ED762789D845E808CA0")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:33.857 -0400", hash_original_method = "61DD03075FF1927377D7CEC2AE97ED1A", hash_generated_method = "59660757F41CD4479FCD4ED1519CE94D")
     @DSModeled(DSC.SAFE)
      long getWhen() {
         return dsTaint.getTaintLong();
@@ -34,7 +34,7 @@ public abstract class TimerTask implements Runnable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:15.196 -0400", hash_original_method = "AE139E2AB369CB1B1C48D00C62C96DCB", hash_generated_method = "229827CCB8EDE003D9723F6143290797")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:33.857 -0400", hash_original_method = "AE139E2AB369CB1B1C48D00C62C96DCB", hash_generated_method = "B0F2959845401D9E08B94D5E3ABC92B8")
     @DSModeled(DSC.SAFE)
      void setScheduledTime(long time) {
         dsTaint.addTaint(time);
@@ -45,7 +45,7 @@ public abstract class TimerTask implements Runnable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:15.196 -0400", hash_original_method = "0BC3D740AEEAEAE472C572E03A1906A5", hash_generated_method = "A0F16CC88CC7FD25760C81F06A616728")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:33.857 -0400", hash_original_method = "0BC3D740AEEAEAE472C572E03A1906A5", hash_generated_method = "0A2876F5A87751B39A63ED575D07FA1D")
     @DSModeled(DSC.SAFE)
      boolean isScheduled() {
         return dsTaint.getTaintBoolean();
@@ -56,7 +56,7 @@ public abstract class TimerTask implements Runnable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:15.196 -0400", hash_original_method = "1700D6DAFB7BC2815E6FE0B3C1768102", hash_generated_method = "858F80A74242EB8A56FD01D9DA3D7B6F")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:33.858 -0400", hash_original_method = "1700D6DAFB7BC2815E6FE0B3C1768102", hash_generated_method = "D0BAC2E24969A808984D690A847704A2")
     @DSModeled(DSC.SAFE)
     public boolean cancel() {
         {
@@ -74,10 +74,9 @@ public abstract class TimerTask implements Runnable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:15.196 -0400", hash_original_method = "BAEF9B11043548CD5E25A5F175F23300", hash_generated_method = "BCDCE9D387A83252354ED3944DF1FC66")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:33.858 -0400", hash_original_method = "BAEF9B11043548CD5E25A5F175F23300", hash_generated_method = "53F685224C2FB006200A9DA4A31FCCA3")
     @DSModeled(DSC.SAFE)
     public long scheduledExecutionTime() {
-        //DSFIXME:  CODE0009: Possible callback target function detected
         return dsTaint.getTaintLong();
         // ---------- Original Method ----------
         //synchronized (lock) {
@@ -90,5 +89,4 @@ public abstract class TimerTask implements Runnable {
 
     
 }
-
 

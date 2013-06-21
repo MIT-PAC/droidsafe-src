@@ -3,19 +3,21 @@ package java.lang;
 // Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
+import droidsafe.runtime.*;
 
+// needed for enhanced for control translations
+import java.util.Iterator;
 
 public class StringIndexOutOfBoundsException extends IndexOutOfBoundsException {
-    private static final long serialVersionUID = -6762910422159637258L;
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 16:38:46.540 -0400", hash_original_method = "BFD818381E149072D6480C59814A950B", hash_generated_method = "BA8F92AD8AF360B67F28BA4AFD59E76E")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:26.245 -0400", hash_original_method = "BFD818381E149072D6480C59814A950B", hash_generated_method = "77DAF02289D0EDFB843688C7F448C11C")
     @DSModeled(DSC.SAFE)
     public StringIndexOutOfBoundsException() {
         // ---------- Original Method ----------
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 16:38:46.549 -0400", hash_original_method = "7844EE32C07F0B5F2D2D2CE3133A8CE2", hash_generated_method = "D8E19BBBB5E27157055446A38684BAF8")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:26.246 -0400", hash_original_method = "7844EE32C07F0B5F2D2D2CE3133A8CE2", hash_generated_method = "90DD2A8B0A64605ACE6F250E729315BB")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public StringIndexOutOfBoundsException(int index) {
         super("String index out of range: " + index);
@@ -24,7 +26,7 @@ public class StringIndexOutOfBoundsException extends IndexOutOfBoundsException {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 16:38:46.555 -0400", hash_original_method = "2720998883F0FDFEFA87A6BF1A5B67C6", hash_generated_method = "2E93D6D81BE1B2B5DB57A698CF24AA92")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:26.246 -0400", hash_original_method = "2720998883F0FDFEFA87A6BF1A5B67C6", hash_generated_method = "FFFC052E4648C9DCB9FA6C87CEA90981")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public StringIndexOutOfBoundsException(String detailMessage) {
         super(detailMessage);
@@ -33,7 +35,7 @@ public class StringIndexOutOfBoundsException extends IndexOutOfBoundsException {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 16:38:46.558 -0400", hash_original_method = "FCCD2BDA38C43A03106A3DA5EA866DEA", hash_generated_method = "BA02C09DE120AFD5280009D52FF92663")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:26.246 -0400", hash_original_method = "FCCD2BDA38C43A03106A3DA5EA866DEA", hash_generated_method = "1B5205FEFDEC51B3A371004B807C413B")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public StringIndexOutOfBoundsException(String s, int index) {
         this(s.length(), index);
@@ -43,7 +45,7 @@ public class StringIndexOutOfBoundsException extends IndexOutOfBoundsException {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 16:38:46.562 -0400", hash_original_method = "78176BEE1BF5E3D3E49AE6693FD0EBDF", hash_generated_method = "9B74DF59D0E8DC4C9A2C0B73E8A0480B")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:26.246 -0400", hash_original_method = "78176BEE1BF5E3D3E49AE6693FD0EBDF", hash_generated_method = "47F6CF288368315CA9C0C1CB74458812")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public StringIndexOutOfBoundsException(int sourceLength, int index) {
         super("length=" + sourceLength + "; index=" + index);
@@ -53,18 +55,18 @@ public class StringIndexOutOfBoundsException extends IndexOutOfBoundsException {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 16:38:46.566 -0400", hash_original_method = "E66129678530AEEFFFBEABAD39F4532F", hash_generated_method = "CC4F4E8FA13F9561CB119FA0D90A5BA4")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:26.246 -0400", hash_original_method = "E66129678530AEEFFFBEABAD39F4532F", hash_generated_method = "24EF913C1444A988B02959E3D329C7C5")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public StringIndexOutOfBoundsException(String s, int offset, int count) {
         this(s.length(), offset, count);
-        dsTaint.addTaint(s);
         dsTaint.addTaint(count);
+        dsTaint.addTaint(s);
         dsTaint.addTaint(offset);
         // ---------- Original Method ----------
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 16:38:46.578 -0400", hash_original_method = "47D615FB94A12D10BEA7B6CBBC941916", hash_generated_method = "23326F9F76057F99DEDF9FAEE5E14F2D")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:26.247 -0400", hash_original_method = "47D615FB94A12D10BEA7B6CBBC941916", hash_generated_method = "36D44FACFB795A1A068A3C6DCA2EF16D")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public StringIndexOutOfBoundsException(int sourceLength, int offset,
             int count) {
@@ -77,6 +79,6 @@ public class StringIndexOutOfBoundsException extends IndexOutOfBoundsException {
     }
 
     
+    private static final long serialVersionUID = -6762910422159637258L;
 }
-
 

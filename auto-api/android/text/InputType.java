@@ -3,10 +3,10 @@ package android.text;
 // Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
+import droidsafe.runtime.*;
 
-// import Iterator to deal with enhanced for loop translation
+// needed for enhanced for control translations
 import java.util.Iterator;
-
 import android.text.TextUtils;
 
 public interface InputType {
@@ -144,4 +144,3 @@ public interface InputType {
     
     public static final int TYPE_DATETIME_VARIATION_TIME = 0x00000020;
 }
-

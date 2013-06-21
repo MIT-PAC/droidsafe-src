@@ -3,10 +3,10 @@ package android.app;
 // Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
+import droidsafe.runtime.*;
 
-// import Iterator to deal with enhanced for loop translation
+// needed for enhanced for control translations
 import java.util.Iterator;
-
 import com.android.internal.app.AlertController;
 import android.content.Context;
 import android.content.DialogInterface;
@@ -27,13 +27,8 @@ import android.widget.ListView;
 
 public class AlertDialog extends Dialog implements DialogInterface {
     private AlertController mAlert;
-    public static final int THEME_TRADITIONAL = 1;
-    public static final int THEME_HOLO_DARK = 2;
-    public static final int THEME_HOLO_LIGHT = 3;
-    public static final int THEME_DEVICE_DEFAULT_DARK = 4;
-    public static final int THEME_DEVICE_DEFAULT_LIGHT = 5;
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:14:58.696 -0400", hash_original_method = "3B9AE3A4287FBB2F8914E3FC42E19D75", hash_generated_method = "8ABCA4E6BC54E5E07B753430182D3459")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:36.467 -0400", hash_original_method = "3B9AE3A4287FBB2F8914E3FC42E19D75", hash_generated_method = "DA18684D073BD46FFB50C38007B2B132")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     protected AlertDialog(Context context) {
         this(context, resolveDialogTheme(context, 0), true);
@@ -42,7 +37,7 @@ public class AlertDialog extends Dialog implements DialogInterface {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:14:58.696 -0400", hash_original_method = "C5FA972556687388DAE356FD387A2EE9", hash_generated_method = "5126FE6AEBDCCB6C125B3DEDACFD6380")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:36.467 -0400", hash_original_method = "C5FA972556687388DAE356FD387A2EE9", hash_generated_method = "34B516C2A2C223B0B727F46542414A47")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     protected AlertDialog(Context context, int theme) {
         this(context, theme, true);
@@ -52,7 +47,7 @@ public class AlertDialog extends Dialog implements DialogInterface {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:14:58.696 -0400", hash_original_method = "6D386DC5BAB559A725B0E80B3B80739F", hash_generated_method = "C0B1976CF4C6B8EDBBB9FC5DCBB69141")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:36.468 -0400", hash_original_method = "6D386DC5BAB559A725B0E80B3B80739F", hash_generated_method = "506D90F63BCA644F334817D132DC506A")
     //DSFIXME:  CODE0002: Requires DSC value to be set
      AlertDialog(Context context, int theme, boolean createContextWrapper) {
         super(context, resolveDialogTheme(context, theme), createContextWrapper);
@@ -67,7 +62,7 @@ public class AlertDialog extends Dialog implements DialogInterface {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:14:58.697 -0400", hash_original_method = "EA464E0CF4AA10E0AEDF6B163BEEF729", hash_generated_method = "A9E93662205438C420727A1A425E9A99")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:36.469 -0400", hash_original_method = "EA464E0CF4AA10E0AEDF6B163BEEF729", hash_generated_method = "9301A178ED829E320B648CF3C29554CF")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     protected AlertDialog(Context context, boolean cancelable, OnCancelListener cancelListener) {
         super(context, resolveDialogTheme(context, 0));
@@ -86,8 +81,7 @@ public class AlertDialog extends Dialog implements DialogInterface {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:14:58.697 -0400", hash_original_method = "B16DF712FADBC6F763054B9AFC3C54C8", hash_generated_method = "F44F5FA06CEE315FB7317D3B45E8CE1D")
-    static int resolveDialogTheme(Context context, int resid) {
+        static int resolveDialogTheme(Context context, int resid) {
         if (resid == THEME_TRADITIONAL) {
             return com.android.internal.R.style.Theme_Dialog_Alert;
         } else if (resid == THEME_HOLO_DARK) {
@@ -109,29 +103,29 @@ public class AlertDialog extends Dialog implements DialogInterface {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:14:58.697 -0400", hash_original_method = "2277A8C194577CB499FB53C1370D61D1", hash_generated_method = "B7B15D7187C014C82EAD82067496E03D")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:36.470 -0400", hash_original_method = "2277A8C194577CB499FB53C1370D61D1", hash_generated_method = "AD57380994B1975ABD2FD28C7D11B482")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public Button getButton(int whichButton) {
         dsTaint.addTaint(whichButton);
-        Button var029B30BB7360A70A943E2608DA0A708B_695408802 = (mAlert.getButton(whichButton));
+        Button var029B30BB7360A70A943E2608DA0A708B_267978943 = (mAlert.getButton(whichButton));
         return (Button)dsTaint.getTaint();
         // ---------- Original Method ----------
         //return mAlert.getButton(whichButton);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:14:58.698 -0400", hash_original_method = "ECC410A91FC6F30B82508F44C93EA39B", hash_generated_method = "A709E341E8B0A1978DBD6C4B637FD9FF")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:36.470 -0400", hash_original_method = "ECC410A91FC6F30B82508F44C93EA39B", hash_generated_method = "4199504C72F7C41E817B0B17AB7FC2BE")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public ListView getListView() {
-        ListView var95A49C1FAF2DDB8BED96C01B211B1216_1701033091 = (mAlert.getListView());
+        ListView var95A49C1FAF2DDB8BED96C01B211B1216_1939659311 = (mAlert.getListView());
         return (ListView)dsTaint.getTaint();
         // ---------- Original Method ----------
         //return mAlert.getListView();
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:14:58.698 -0400", hash_original_method = "5655E82DFA793B6CD86300EA45F77D5A", hash_generated_method = "DE3FEC2CDB464E35AC4AF069540E9D7D")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:36.471 -0400", hash_original_method = "5655E82DFA793B6CD86300EA45F77D5A", hash_generated_method = "AC26E86426E2BFCF19C7ACA1690E403B")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     @Override
     public void setTitle(CharSequence title) {
         dsTaint.addTaint(title);
@@ -143,8 +137,8 @@ public class AlertDialog extends Dialog implements DialogInterface {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:14:58.698 -0400", hash_original_method = "0AAF0E3192DB53DCF899ECF927301A42", hash_generated_method = "6E4E161226DF6647637BCFD2EAD7CE8F")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:36.471 -0400", hash_original_method = "0AAF0E3192DB53DCF899ECF927301A42", hash_generated_method = "9E4ADA0B5C543D3EC88D98FD91C353F5")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     public void setCustomTitle(View customTitleView) {
         dsTaint.addTaint(customTitleView.dsTaint);
         mAlert.setCustomTitle(customTitleView);
@@ -153,8 +147,8 @@ public class AlertDialog extends Dialog implements DialogInterface {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:14:58.699 -0400", hash_original_method = "0FDFF41BD74285789F29E89A2F2C112C", hash_generated_method = "F334590EFA1328F19E188ADA8295C4B4")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:36.472 -0400", hash_original_method = "0FDFF41BD74285789F29E89A2F2C112C", hash_generated_method = "E9965DF480613ACFEE1CA00787D15214")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     public void setMessage(CharSequence message) {
         dsTaint.addTaint(message);
         mAlert.setMessage(message);
@@ -163,8 +157,8 @@ public class AlertDialog extends Dialog implements DialogInterface {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:14:58.699 -0400", hash_original_method = "588C26275F4E62D9742C7DBB082EE340", hash_generated_method = "4FE72C9BE50966DABCD846F9A7A0471E")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:36.473 -0400", hash_original_method = "588C26275F4E62D9742C7DBB082EE340", hash_generated_method = "B55E8F48B2AB65D7C4551A8B182300A3")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     public void setView(View view) {
         dsTaint.addTaint(view.dsTaint);
         mAlert.setView(view);
@@ -173,8 +167,8 @@ public class AlertDialog extends Dialog implements DialogInterface {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:14:58.699 -0400", hash_original_method = "399D46DD3D86F04F15AA9836309BED7E", hash_generated_method = "EF3A25BD4015B6BCD798D7E01A62EED7")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:36.475 -0400", hash_original_method = "399D46DD3D86F04F15AA9836309BED7E", hash_generated_method = "EC642ADE8958F28A64459667FBF3C4B1")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     public void setView(View view, int viewSpacingLeft, int viewSpacingTop, int viewSpacingRight,
             int viewSpacingBottom) {
         dsTaint.addTaint(viewSpacingBottom);
@@ -188,11 +182,11 @@ public class AlertDialog extends Dialog implements DialogInterface {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:14:58.699 -0400", hash_original_method = "CFE09EBA63F60A6BEEDA0ECE4DBD2BBE", hash_generated_method = "29EEE3A15E194A6C9DAF0A4715FF95AD")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:36.476 -0400", hash_original_method = "CFE09EBA63F60A6BEEDA0ECE4DBD2BBE", hash_generated_method = "C982819977F329DA0506AC5998DE6382")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     public void setButton(int whichButton, CharSequence text, Message msg) {
-        dsTaint.addTaint(whichButton);
         dsTaint.addTaint(text);
+        dsTaint.addTaint(whichButton);
         dsTaint.addTaint(msg.dsTaint);
         mAlert.setButton(whichButton, text, null, msg);
         // ---------- Original Method ----------
@@ -200,11 +194,11 @@ public class AlertDialog extends Dialog implements DialogInterface {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:14:58.700 -0400", hash_original_method = "FD92C01692F456341A0525E9D1CD5A83", hash_generated_method = "4ADA53CD48FBCBC4D8D3DD81C2E2DCB6")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:36.476 -0400", hash_original_method = "FD92C01692F456341A0525E9D1CD5A83", hash_generated_method = "6ACBA5941A104134E2BF1B1F9EFF88B2")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     public void setButton(int whichButton, CharSequence text, OnClickListener listener) {
-        dsTaint.addTaint(whichButton);
         dsTaint.addTaint(text);
+        dsTaint.addTaint(whichButton);
         dsTaint.addTaint(listener.dsTaint);
         mAlert.setButton(whichButton, text, listener, null);
         // ---------- Original Method ----------
@@ -212,8 +206,8 @@ public class AlertDialog extends Dialog implements DialogInterface {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:14:58.700 -0400", hash_original_method = "2930D21A7389B776726F7D14477E22A5", hash_generated_method = "194F5CA9A0041DB3D627F14934CF83FF")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:36.477 -0400", hash_original_method = "2930D21A7389B776726F7D14477E22A5", hash_generated_method = "1E20B9D853C6A09998D6F37A7B2A77C2")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     @Deprecated
     public void setButton(CharSequence text, Message msg) {
         dsTaint.addTaint(text);
@@ -224,8 +218,8 @@ public class AlertDialog extends Dialog implements DialogInterface {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:14:58.700 -0400", hash_original_method = "5D138EC6D4B89A4911514A5D190A83FC", hash_generated_method = "4ADDF364C2EC87BD83BAE8E7603D4692")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:36.477 -0400", hash_original_method = "5D138EC6D4B89A4911514A5D190A83FC", hash_generated_method = "1D7B979E0D42A526D0DC341D8AE8E070")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     @Deprecated
     public void setButton2(CharSequence text, Message msg) {
         dsTaint.addTaint(text);
@@ -236,8 +230,8 @@ public class AlertDialog extends Dialog implements DialogInterface {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:14:58.701 -0400", hash_original_method = "E62AA308196D7D74E77874CB13CC8D38", hash_generated_method = "6B4447EEB1421E7409F6B8BA550C21DF")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:36.478 -0400", hash_original_method = "E62AA308196D7D74E77874CB13CC8D38", hash_generated_method = "3F090488A77783AFDAACB95E43C019B0")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     @Deprecated
     public void setButton3(CharSequence text, Message msg) {
         dsTaint.addTaint(text);
@@ -248,8 +242,8 @@ public class AlertDialog extends Dialog implements DialogInterface {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:14:58.701 -0400", hash_original_method = "14303CDDA201782BB4EE72003EBE4B25", hash_generated_method = "5939C6BA3438C00FAADD705BF520CFB6")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:36.478 -0400", hash_original_method = "14303CDDA201782BB4EE72003EBE4B25", hash_generated_method = "7396C6983891A1AB72DB3A06DE1B6829")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     @Deprecated
     public void setButton(CharSequence text, final OnClickListener listener) {
         dsTaint.addTaint(text);
@@ -260,8 +254,8 @@ public class AlertDialog extends Dialog implements DialogInterface {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:14:58.701 -0400", hash_original_method = "99FBB4BC7546CFCEFDAC9CCE0B0EC52F", hash_generated_method = "BFE1A1285557EEAD37E374181E49910E")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:36.478 -0400", hash_original_method = "99FBB4BC7546CFCEFDAC9CCE0B0EC52F", hash_generated_method = "2781764F4F23642441FED10C33C94ABB")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     @Deprecated
     public void setButton2(CharSequence text, final OnClickListener listener) {
         dsTaint.addTaint(text);
@@ -272,8 +266,8 @@ public class AlertDialog extends Dialog implements DialogInterface {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:14:58.702 -0400", hash_original_method = "9225C5ACB453A48CCE22F622BD426A12", hash_generated_method = "0B029F1FB408DE032C8D78426CFEA6ED")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:36.479 -0400", hash_original_method = "9225C5ACB453A48CCE22F622BD426A12", hash_generated_method = "47D639777C94CD314C1475F31B0B5162")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     @Deprecated
     public void setButton3(CharSequence text, final OnClickListener listener) {
         dsTaint.addTaint(text);
@@ -284,8 +278,8 @@ public class AlertDialog extends Dialog implements DialogInterface {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:14:58.702 -0400", hash_original_method = "B742B976A105323EE27DB344109D47DF", hash_generated_method = "BAD8698276E6F1D5F308792D0380C1B6")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:36.480 -0400", hash_original_method = "B742B976A105323EE27DB344109D47DF", hash_generated_method = "B4CAB4F1DDD08966EABDC674F2D5BAF8")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     public void setIcon(int resId) {
         dsTaint.addTaint(resId);
         mAlert.setIcon(resId);
@@ -294,8 +288,8 @@ public class AlertDialog extends Dialog implements DialogInterface {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:14:58.702 -0400", hash_original_method = "58CB6A167EA4E7B84F26608014843ADF", hash_generated_method = "2F93A052308C85E3162E08171E2BFDC9")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:36.480 -0400", hash_original_method = "58CB6A167EA4E7B84F26608014843ADF", hash_generated_method = "5CE9A91A74261EB1F3E7C960CDE1DF93")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     public void setIcon(Drawable icon) {
         dsTaint.addTaint(icon.dsTaint);
         mAlert.setIcon(icon);
@@ -304,10 +298,9 @@ public class AlertDialog extends Dialog implements DialogInterface {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:14:58.702 -0400", hash_original_method = "1B8133F4D68862D013C951EDD0C82832", hash_generated_method = "0F6E1FEB060A1C209376526D7496B8FF")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:36.481 -0400", hash_original_method = "1B8133F4D68862D013C951EDD0C82832", hash_generated_method = "7052FCAAA31351E986103ED8035243B2")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public void setIconAttribute(int attrId) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
         dsTaint.addTaint(attrId);
         TypedValue out;
         out = new TypedValue();
@@ -320,8 +313,8 @@ public class AlertDialog extends Dialog implements DialogInterface {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:14:58.703 -0400", hash_original_method = "21C74C630736CECBD7AD6F509C2AA5D7", hash_generated_method = "8CD3BBE8079EC0048C9511ED54B3D284")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:36.481 -0400", hash_original_method = "21C74C630736CECBD7AD6F509C2AA5D7", hash_generated_method = "ADBF60BA66ADA8B82F49BDFB35475F3C")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     public void setInverseBackgroundForced(boolean forceInverseBackground) {
         dsTaint.addTaint(forceInverseBackground);
         mAlert.setInverseBackgroundForced(forceInverseBackground);
@@ -330,8 +323,8 @@ public class AlertDialog extends Dialog implements DialogInterface {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:14:58.703 -0400", hash_original_method = "84106AE7CC1A6E59D6E45CD48A2A2307", hash_generated_method = "6CE541DA57C553C3745AB307F3BB4737")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:36.482 -0400", hash_original_method = "84106AE7CC1A6E59D6E45CD48A2A2307", hash_generated_method = "E1C42F5103326E68F60675C6390A8F08")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         //DSFIXME:  CODE0009: Possible callback target function detected
@@ -344,7 +337,7 @@ public class AlertDialog extends Dialog implements DialogInterface {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:14:58.703 -0400", hash_original_method = "BF8AB256B91D3A887301218CA5494F2D", hash_generated_method = "6694E46CE8CB756CE24BCF6CBB1780FC")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:36.483 -0400", hash_original_method = "BF8AB256B91D3A887301218CA5494F2D", hash_generated_method = "3886B9959B428FE271CF43D80E8AC43D")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     @Override
     public boolean onKeyDown(int keyCode, KeyEvent event) {
@@ -352,9 +345,9 @@ public class AlertDialog extends Dialog implements DialogInterface {
         dsTaint.addTaint(keyCode);
         dsTaint.addTaint(event.dsTaint);
         {
-            boolean var0860591BEC688168A96E8D7B8A8FC21B_582890114 = (mAlert.onKeyDown(keyCode, event));
+            boolean var0860591BEC688168A96E8D7B8A8FC21B_1730813808 = (mAlert.onKeyDown(keyCode, event));
         } //End collapsed parenthetic
-        boolean var8C6E6C19273FC56B5C56CC7DEF63ED7B_1357479989 = (super.onKeyDown(keyCode, event));
+        boolean var8C6E6C19273FC56B5C56CC7DEF63ED7B_1015214375 = (super.onKeyDown(keyCode, event));
         return dsTaint.getTaintBoolean();
         // ---------- Original Method ----------
         //if (mAlert.onKeyDown(keyCode, event)) return true;
@@ -362,7 +355,7 @@ public class AlertDialog extends Dialog implements DialogInterface {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:14:58.704 -0400", hash_original_method = "A1B1EEF278CFBA53A19AA72D7DAA37CB", hash_generated_method = "E9A21927B0EE4B56A389E0C38CB6FB48")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:36.483 -0400", hash_original_method = "A1B1EEF278CFBA53A19AA72D7DAA37CB", hash_generated_method = "13CA8AD346B9E657489889EB92AB661D")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     @Override
     public boolean onKeyUp(int keyCode, KeyEvent event) {
@@ -370,9 +363,9 @@ public class AlertDialog extends Dialog implements DialogInterface {
         dsTaint.addTaint(keyCode);
         dsTaint.addTaint(event.dsTaint);
         {
-            boolean varC975F70000285699A9B742C42371726C_1010512554 = (mAlert.onKeyUp(keyCode, event));
+            boolean varC975F70000285699A9B742C42371726C_67600207 = (mAlert.onKeyUp(keyCode, event));
         } //End collapsed parenthetic
-        boolean varEDD771EBF66425AD21882AB08CD0EE48_898882030 = (super.onKeyUp(keyCode, event));
+        boolean varEDD771EBF66425AD21882AB08CD0EE48_127777484 = (super.onKeyUp(keyCode, event));
         return dsTaint.getTaintBoolean();
         // ---------- Original Method ----------
         //if (mAlert.onKeyUp(keyCode, event)) return true;
@@ -381,10 +374,10 @@ public class AlertDialog extends Dialog implements DialogInterface {
 
     
     public static class Builder {
-        private final AlertController.AlertParams P;
+        private AlertController.AlertParams P;
         private int mTheme;
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:14:58.704 -0400", hash_original_method = "CB1BA6F353D1C3D1D9DFD93D2E2AA221", hash_generated_method = "8B1CD487E6E560E91D01C9962D73C134")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:36.484 -0400", hash_original_method = "CB1BA6F353D1C3D1D9DFD93D2E2AA221", hash_generated_method = "65A4F22CD16D792A93CFAA09FD611D09")
         //DSFIXME:  CODE0002: Requires DSC value to be set
         public Builder(Context context) {
             this(context, resolveDialogTheme(context, 0));
@@ -393,7 +386,7 @@ public class AlertDialog extends Dialog implements DialogInterface {
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:14:58.705 -0400", hash_original_method = "054A5871E094F7103A36213597CB2400", hash_generated_method = "DF58781580C9F1256809490AEE212FA2")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:36.484 -0400", hash_original_method = "054A5871E094F7103A36213597CB2400", hash_generated_method = "70287CF43A543D03BB9E3EA61951D74B")
         //DSFIXME:  CODE0002: Requires DSC value to be set
         public Builder(Context context, int theme) {
             dsTaint.addTaint(theme);
@@ -407,7 +400,7 @@ public class AlertDialog extends Dialog implements DialogInterface {
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:14:58.705 -0400", hash_original_method = "D1A12C2F09D145663A4318954DC7CD00", hash_generated_method = "19B136A4C0A1F8FF977BF8DDB89FFAB7")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:36.485 -0400", hash_original_method = "D1A12C2F09D145663A4318954DC7CD00", hash_generated_method = "757A00004CAC04C42D6356DFB48169C0")
         @DSModeled(DSC.SAFE)
         public Context getContext() {
             return (Context)dsTaint.getTaint();
@@ -416,7 +409,7 @@ public class AlertDialog extends Dialog implements DialogInterface {
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:14:58.705 -0400", hash_original_method = "E63FAC4DEED51E16AAD703A71B581EEF", hash_generated_method = "33049EF090B2EA24546B4C53CE7BAC6A")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:36.486 -0400", hash_original_method = "E63FAC4DEED51E16AAD703A71B581EEF", hash_generated_method = "230695B4EF0BFBA618BB3FCBB7EA27DF")
         //DSFIXME:  CODE0002: Requires DSC value to be set
         public Builder setTitle(int titleId) {
             dsTaint.addTaint(titleId);
@@ -428,7 +421,7 @@ public class AlertDialog extends Dialog implements DialogInterface {
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:14:58.705 -0400", hash_original_method = "255D326AF0B389CCA9CBF4AFBC3FE756", hash_generated_method = "633CA40264DE168CC345430652BD0777")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:36.487 -0400", hash_original_method = "255D326AF0B389CCA9CBF4AFBC3FE756", hash_generated_method = "B315DC7EAE7471D87BF8B1A3E5A95D6F")
         @DSModeled(DSC.SAFE)
         public Builder setTitle(CharSequence title) {
             dsTaint.addTaint(title);
@@ -440,7 +433,7 @@ public class AlertDialog extends Dialog implements DialogInterface {
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:14:58.706 -0400", hash_original_method = "0009CCFABCB39131348E93CD167BBCD7", hash_generated_method = "9DEF2D8ABCA5909892B082C848A17F26")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:36.487 -0400", hash_original_method = "0009CCFABCB39131348E93CD167BBCD7", hash_generated_method = "A63241008966394EFBF4BDF6C7D15FE0")
         @DSModeled(DSC.SAFE)
         public Builder setCustomTitle(View customTitleView) {
             dsTaint.addTaint(customTitleView.dsTaint);
@@ -452,7 +445,7 @@ public class AlertDialog extends Dialog implements DialogInterface {
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:14:58.706 -0400", hash_original_method = "3B23BD93B750653B90374824F5917D89", hash_generated_method = "BA691C75DD957111DFFCBFF1F6DA1BF6")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:36.488 -0400", hash_original_method = "3B23BD93B750653B90374824F5917D89", hash_generated_method = "C42172972B39089795DC894AA583ABAD")
         //DSFIXME:  CODE0002: Requires DSC value to be set
         public Builder setMessage(int messageId) {
             dsTaint.addTaint(messageId);
@@ -464,7 +457,7 @@ public class AlertDialog extends Dialog implements DialogInterface {
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:14:58.706 -0400", hash_original_method = "F560859B14C962F22BDF3327E633A8EC", hash_generated_method = "368D3986F1E78EFDE5059C850FBF22F8")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:36.488 -0400", hash_original_method = "F560859B14C962F22BDF3327E633A8EC", hash_generated_method = "EA902B42CB4921523FE783DE7ABACEAF")
         @DSModeled(DSC.SAFE)
         public Builder setMessage(CharSequence message) {
             dsTaint.addTaint(message);
@@ -476,7 +469,7 @@ public class AlertDialog extends Dialog implements DialogInterface {
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:14:58.707 -0400", hash_original_method = "EBD38AA9C651B93ADF14B14E5D33C5C9", hash_generated_method = "78944630EE7CBC2E01B4535970260756")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:36.489 -0400", hash_original_method = "EBD38AA9C651B93ADF14B14E5D33C5C9", hash_generated_method = "F77AF34F4FA3BD0A5719D560DD48B2E9")
         @DSModeled(DSC.SAFE)
         public Builder setIcon(int iconId) {
             dsTaint.addTaint(iconId);
@@ -488,7 +481,7 @@ public class AlertDialog extends Dialog implements DialogInterface {
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:14:58.707 -0400", hash_original_method = "EDCD80F224B2F3CED85A928D84460540", hash_generated_method = "3002C46616AB6CD460015775AF19FF71")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:36.489 -0400", hash_original_method = "EDCD80F224B2F3CED85A928D84460540", hash_generated_method = "D90AE2908AEAC05ECEF5CDCD10B82881")
         @DSModeled(DSC.SAFE)
         public Builder setIcon(Drawable icon) {
             dsTaint.addTaint(icon.dsTaint);
@@ -500,10 +493,9 @@ public class AlertDialog extends Dialog implements DialogInterface {
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:14:58.707 -0400", hash_original_method = "3A94A6A2822E55FB53EB2F980E52FF8E", hash_generated_method = "67E43DCCF6C500145B31B1FC8260BA70")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:36.490 -0400", hash_original_method = "3A94A6A2822E55FB53EB2F980E52FF8E", hash_generated_method = "6DDEB89D8D07F38350E1781D59B7431D")
         //DSFIXME:  CODE0002: Requires DSC value to be set
         public Builder setIconAttribute(int attrId) {
-            //DSFIXME:  CODE0009: Possible callback target function detected
             dsTaint.addTaint(attrId);
             TypedValue out;
             out = new TypedValue();
@@ -518,11 +510,11 @@ public class AlertDialog extends Dialog implements DialogInterface {
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:14:58.708 -0400", hash_original_method = "1908B917B7F2E57ADC23D5E48F4386F2", hash_generated_method = "8044B4D1DE6AE8B20541661CFCDEE990")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:36.490 -0400", hash_original_method = "1908B917B7F2E57ADC23D5E48F4386F2", hash_generated_method = "7C313E3FBC87BA8C8835CF8B467EBF52")
         //DSFIXME:  CODE0002: Requires DSC value to be set
         public Builder setPositiveButton(int textId, final OnClickListener listener) {
-            dsTaint.addTaint(textId);
             dsTaint.addTaint(listener.dsTaint);
+            dsTaint.addTaint(textId);
             P.mPositiveButtonText = P.mContext.getText(textId);
             P.mPositiveButtonListener = listener;
             return (Builder)dsTaint.getTaint();
@@ -533,7 +525,7 @@ public class AlertDialog extends Dialog implements DialogInterface {
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:14:58.708 -0400", hash_original_method = "1500328C36AB679D672A26C184A5FC31", hash_generated_method = "BE7744F9AF76A68F1E19BB6AD6CDC1ED")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:36.491 -0400", hash_original_method = "1500328C36AB679D672A26C184A5FC31", hash_generated_method = "5DDAB6C8FE277C7668113CB1F9A6DD97")
         @DSModeled(DSC.SAFE)
         public Builder setPositiveButton(CharSequence text, final OnClickListener listener) {
             dsTaint.addTaint(text);
@@ -548,11 +540,11 @@ public class AlertDialog extends Dialog implements DialogInterface {
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:14:58.708 -0400", hash_original_method = "375537371A0A52AA7AA0B24EAC6A7474", hash_generated_method = "D80177E48737287568323A62D465D5F5")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:36.491 -0400", hash_original_method = "375537371A0A52AA7AA0B24EAC6A7474", hash_generated_method = "BBD278E65CA06C11BC74E98F97CAE1B3")
         //DSFIXME:  CODE0002: Requires DSC value to be set
         public Builder setNegativeButton(int textId, final OnClickListener listener) {
-            dsTaint.addTaint(textId);
             dsTaint.addTaint(listener.dsTaint);
+            dsTaint.addTaint(textId);
             P.mNegativeButtonText = P.mContext.getText(textId);
             P.mNegativeButtonListener = listener;
             return (Builder)dsTaint.getTaint();
@@ -563,7 +555,7 @@ public class AlertDialog extends Dialog implements DialogInterface {
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:14:58.709 -0400", hash_original_method = "50EFB872DEBCC22CFB32B40979906BC8", hash_generated_method = "C020C3DFBE2D8574F1BD9A2E832B7696")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:36.492 -0400", hash_original_method = "50EFB872DEBCC22CFB32B40979906BC8", hash_generated_method = "DD81F93FCC50208EE8FFC387FB7972B1")
         @DSModeled(DSC.SAFE)
         public Builder setNegativeButton(CharSequence text, final OnClickListener listener) {
             dsTaint.addTaint(text);
@@ -578,11 +570,11 @@ public class AlertDialog extends Dialog implements DialogInterface {
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:14:58.709 -0400", hash_original_method = "0D40DB16A6B6349ABA0D8583C3D4D844", hash_generated_method = "27A419E28BEF2238FDAF14772465597E")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:36.492 -0400", hash_original_method = "0D40DB16A6B6349ABA0D8583C3D4D844", hash_generated_method = "FDD57A265C158E7A0AF5393AA7A92405")
         //DSFIXME:  CODE0002: Requires DSC value to be set
         public Builder setNeutralButton(int textId, final OnClickListener listener) {
-            dsTaint.addTaint(textId);
             dsTaint.addTaint(listener.dsTaint);
+            dsTaint.addTaint(textId);
             P.mNeutralButtonText = P.mContext.getText(textId);
             P.mNeutralButtonListener = listener;
             return (Builder)dsTaint.getTaint();
@@ -593,7 +585,7 @@ public class AlertDialog extends Dialog implements DialogInterface {
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:14:58.709 -0400", hash_original_method = "4D91C8A8E1E08D55171F5837D3929412", hash_generated_method = "974E2A5971F512BEC760B15A3114409D")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:36.493 -0400", hash_original_method = "4D91C8A8E1E08D55171F5837D3929412", hash_generated_method = "07760C682290614415552BCB02357634")
         @DSModeled(DSC.SAFE)
         public Builder setNeutralButton(CharSequence text, final OnClickListener listener) {
             dsTaint.addTaint(text);
@@ -608,7 +600,7 @@ public class AlertDialog extends Dialog implements DialogInterface {
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:14:58.710 -0400", hash_original_method = "D23CAE45E6F3DF826F9F93A9D8E4F37B", hash_generated_method = "6FBF2ED52063199E78088D4139B3CF94")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:36.493 -0400", hash_original_method = "D23CAE45E6F3DF826F9F93A9D8E4F37B", hash_generated_method = "B1362DE1C377293A1BC37D21DDBE1D34")
         @DSModeled(DSC.SAFE)
         public Builder setCancelable(boolean cancelable) {
             dsTaint.addTaint(cancelable);
@@ -620,7 +612,7 @@ public class AlertDialog extends Dialog implements DialogInterface {
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:14:58.710 -0400", hash_original_method = "D6E5909FD450512C75F4E75E987AC229", hash_generated_method = "BE2E644E8012B51C4B7444FF7724D169")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:36.494 -0400", hash_original_method = "D6E5909FD450512C75F4E75E987AC229", hash_generated_method = "CCC181EC68B8275BED6389C21BFD6B8B")
         @DSModeled(DSC.SAFE)
         public Builder setOnCancelListener(OnCancelListener onCancelListener) {
             dsTaint.addTaint(onCancelListener.dsTaint);
@@ -632,7 +624,7 @@ public class AlertDialog extends Dialog implements DialogInterface {
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:14:58.710 -0400", hash_original_method = "6E5FB56A362A817B52A235DFACC25DAE", hash_generated_method = "50EE5B14CC92D6623FDF7F4FA6AE971C")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:36.494 -0400", hash_original_method = "6E5FB56A362A817B52A235DFACC25DAE", hash_generated_method = "2C7D858FECD1B2ECD41892A93034DBD8")
         @DSModeled(DSC.SAFE)
         public Builder setOnKeyListener(OnKeyListener onKeyListener) {
             dsTaint.addTaint(onKeyListener.dsTaint);
@@ -644,7 +636,7 @@ public class AlertDialog extends Dialog implements DialogInterface {
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:14:58.710 -0400", hash_original_method = "6D193582453841FD4D6BB305EA061757", hash_generated_method = "B05E24B4CBD7F5F8BBA796955404573F")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:36.495 -0400", hash_original_method = "6D193582453841FD4D6BB305EA061757", hash_generated_method = "EF961A0C44768CEA660D3FC8D0162F45")
         //DSFIXME:  CODE0002: Requires DSC value to be set
         public Builder setItems(int itemsId, final OnClickListener listener) {
             dsTaint.addTaint(itemsId);
@@ -659,10 +651,10 @@ public class AlertDialog extends Dialog implements DialogInterface {
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:14:58.711 -0400", hash_original_method = "AFD2C4146CF077CBCC62EEF7225AE645", hash_generated_method = "2EFD3FCE41EAE52C1089A4238AFAA71C")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:36.495 -0400", hash_original_method = "AFD2C4146CF077CBCC62EEF7225AE645", hash_generated_method = "FC6344E23F89EA0A7F741A2050E72906")
         @DSModeled(DSC.SAFE)
         public Builder setItems(CharSequence[] items, final OnClickListener listener) {
-            dsTaint.addTaint(items);
+            dsTaint.addTaint(items[0]);
             dsTaint.addTaint(listener.dsTaint);
             P.mItems = items;
             P.mOnClickListener = listener;
@@ -674,7 +666,7 @@ public class AlertDialog extends Dialog implements DialogInterface {
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:14:58.711 -0400", hash_original_method = "2FCAEDE0B3C9195EDB3158F22A7C0109", hash_generated_method = "3C9BFBAA3C484598EC0043AF53C9EC99")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:36.496 -0400", hash_original_method = "2FCAEDE0B3C9195EDB3158F22A7C0109", hash_generated_method = "46D0F4F161735572039B8CAB8FCF1028")
         @DSModeled(DSC.SAFE)
         public Builder setAdapter(final ListAdapter adapter, final OnClickListener listener) {
             dsTaint.addTaint(listener.dsTaint);
@@ -689,7 +681,7 @@ public class AlertDialog extends Dialog implements DialogInterface {
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:14:58.711 -0400", hash_original_method = "7DFF15703A2CCBB36AC3557F6AE7E187", hash_generated_method = "9527363D69191CCA5C71B158DAC60ABE")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:36.496 -0400", hash_original_method = "7DFF15703A2CCBB36AC3557F6AE7E187", hash_generated_method = "107B51880A9426DF7F30E9989414EF94")
         @DSModeled(DSC.SAFE)
         public Builder setCursor(final Cursor cursor, final OnClickListener listener,
                 String labelColumn) {
@@ -708,13 +700,13 @@ public class AlertDialog extends Dialog implements DialogInterface {
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:14:58.712 -0400", hash_original_method = "7878252A286B56EBCE9E439D4FCEB298", hash_generated_method = "0340627206AABF2876B79A38CE6DBB71")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:36.497 -0400", hash_original_method = "7878252A286B56EBCE9E439D4FCEB298", hash_generated_method = "1E33619EBD743CE81781B1C79B325CA2")
         //DSFIXME:  CODE0002: Requires DSC value to be set
         public Builder setMultiChoiceItems(int itemsId, boolean[] checkedItems, 
                 final OnMultiChoiceClickListener listener) {
             dsTaint.addTaint(itemsId);
             dsTaint.addTaint(listener.dsTaint);
-            dsTaint.addTaint(checkedItems);
+            dsTaint.addTaint(checkedItems[0]);
             P.mItems = P.mContext.getResources().getTextArray(itemsId);
             P.mOnCheckboxClickListener = listener;
             P.mCheckedItems = checkedItems;
@@ -729,13 +721,13 @@ public class AlertDialog extends Dialog implements DialogInterface {
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:14:58.712 -0400", hash_original_method = "73AB6C3AD26EFF6561BAC3BA481ECFD7", hash_generated_method = "F78AB0F3DC674A7DD757253F2584208C")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:36.498 -0400", hash_original_method = "73AB6C3AD26EFF6561BAC3BA481ECFD7", hash_generated_method = "DDF244A9DDFA1F1B6AB14EF9CAB7A597")
         @DSModeled(DSC.SAFE)
         public Builder setMultiChoiceItems(CharSequence[] items, boolean[] checkedItems, 
                 final OnMultiChoiceClickListener listener) {
-            dsTaint.addTaint(items);
+            dsTaint.addTaint(items[0]);
             dsTaint.addTaint(listener.dsTaint);
-            dsTaint.addTaint(checkedItems);
+            dsTaint.addTaint(checkedItems[0]);
             P.mItems = items;
             P.mOnCheckboxClickListener = listener;
             P.mCheckedItems = checkedItems;
@@ -750,7 +742,7 @@ public class AlertDialog extends Dialog implements DialogInterface {
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:14:58.713 -0400", hash_original_method = "E8A3FFCE7184DC2DAE306B849E312FF3", hash_generated_method = "D8AB6EE3418E5C1E1331104696CE0AFC")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:36.499 -0400", hash_original_method = "E8A3FFCE7184DC2DAE306B849E312FF3", hash_generated_method = "6C88B8C750175251E5192A39368D82D5")
         @DSModeled(DSC.SAFE)
         public Builder setMultiChoiceItems(Cursor cursor, String isCheckedColumn, String labelColumn, 
                 final OnMultiChoiceClickListener listener) {
@@ -774,7 +766,7 @@ public class AlertDialog extends Dialog implements DialogInterface {
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:14:58.713 -0400", hash_original_method = "CF9378D7D2AE06BB2F5FFE088D660C44", hash_generated_method = "50BCAF8FBED393085C86F35875F8F6DE")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:36.500 -0400", hash_original_method = "CF9378D7D2AE06BB2F5FFE088D660C44", hash_generated_method = "948EC164DC904FF66022D5266ED5FBB1")
         //DSFIXME:  CODE0002: Requires DSC value to be set
         public Builder setSingleChoiceItems(int itemsId, int checkedItem, 
                 final OnClickListener listener) {
@@ -795,7 +787,7 @@ public class AlertDialog extends Dialog implements DialogInterface {
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:14:58.713 -0400", hash_original_method = "02441459B611830238DF1D8B31546828", hash_generated_method = "BCE8A39F698033E0076E8F8EF8533DAD")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:36.500 -0400", hash_original_method = "02441459B611830238DF1D8B31546828", hash_generated_method = "0D0BE9CB6E83A4F6F5FFE59A8AD51294")
         @DSModeled(DSC.SAFE)
         public Builder setSingleChoiceItems(Cursor cursor, int checkedItem, String labelColumn, 
                 final OnClickListener listener) {
@@ -819,10 +811,10 @@ public class AlertDialog extends Dialog implements DialogInterface {
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:14:58.714 -0400", hash_original_method = "7491118E608CEFA972DD3B23E3E7B8C6", hash_generated_method = "3ED9B55A630D9DBA5AFEF5BA13748521")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:36.501 -0400", hash_original_method = "7491118E608CEFA972DD3B23E3E7B8C6", hash_generated_method = "CE0FC23B653D8A378438BD4EEBF5CD63")
         @DSModeled(DSC.SAFE)
         public Builder setSingleChoiceItems(CharSequence[] items, int checkedItem, final OnClickListener listener) {
-            dsTaint.addTaint(items);
+            dsTaint.addTaint(items[0]);
             dsTaint.addTaint(listener.dsTaint);
             dsTaint.addTaint(checkedItem);
             P.mItems = items;
@@ -839,7 +831,7 @@ public class AlertDialog extends Dialog implements DialogInterface {
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:14:58.714 -0400", hash_original_method = "06BB43759703ED3EE55275B85ACF4622", hash_generated_method = "508F7B378210B4B909ADA3688245109C")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:36.502 -0400", hash_original_method = "06BB43759703ED3EE55275B85ACF4622", hash_generated_method = "E3440E5A4C18E3ECF66ED0464F761BAC")
         @DSModeled(DSC.SAFE)
         public Builder setSingleChoiceItems(ListAdapter adapter, int checkedItem, final OnClickListener listener) {
             dsTaint.addTaint(listener.dsTaint);
@@ -859,7 +851,7 @@ public class AlertDialog extends Dialog implements DialogInterface {
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:14:58.714 -0400", hash_original_method = "2F93F9BAEF2ABE538EE141EAC45DF294", hash_generated_method = "3ED7E335DE9EDD7DAFD0361BDC4C1166")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:36.503 -0400", hash_original_method = "2F93F9BAEF2ABE538EE141EAC45DF294", hash_generated_method = "DA9B27F0127762A3D2C285359F0C53E8")
         @DSModeled(DSC.SAFE)
         public Builder setOnItemSelectedListener(final AdapterView.OnItemSelectedListener listener) {
             dsTaint.addTaint(listener.dsTaint);
@@ -871,7 +863,7 @@ public class AlertDialog extends Dialog implements DialogInterface {
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:14:58.715 -0400", hash_original_method = "ECE0E9F89C9289601A4B4F810B41F8E6", hash_generated_method = "BC4B549905706B10493F4F96A387AD8E")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:36.504 -0400", hash_original_method = "ECE0E9F89C9289601A4B4F810B41F8E6", hash_generated_method = "84EE86AA6B2BAE19991316B6DA423AEE")
         @DSModeled(DSC.SAFE)
         public Builder setView(View view) {
             dsTaint.addTaint(view.dsTaint);
@@ -885,7 +877,7 @@ public class AlertDialog extends Dialog implements DialogInterface {
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:14:58.715 -0400", hash_original_method = "BAFAE1A19AC8AE3D7A23796C6231E632", hash_generated_method = "8610F38A1DCA241C1DE76509CD146491")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:36.505 -0400", hash_original_method = "BAFAE1A19AC8AE3D7A23796C6231E632", hash_generated_method = "0772DAEC85BAFA50E85E4227E973CDCF")
         @DSModeled(DSC.SAFE)
         public Builder setView(View view, int viewSpacingLeft, int viewSpacingTop,
                 int viewSpacingRight, int viewSpacingBottom) {
@@ -912,7 +904,7 @@ public class AlertDialog extends Dialog implements DialogInterface {
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:14:58.715 -0400", hash_original_method = "574A516CEEC9B60678E7B4D3D76288FB", hash_generated_method = "086F4B60A5EE2E8097352477957BFECB")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:36.506 -0400", hash_original_method = "574A516CEEC9B60678E7B4D3D76288FB", hash_generated_method = "AE41E90F66813A0EE547440728C69F09")
         @DSModeled(DSC.SAFE)
         public Builder setInverseBackgroundForced(boolean useInverseBackground) {
             dsTaint.addTaint(useInverseBackground);
@@ -924,7 +916,7 @@ public class AlertDialog extends Dialog implements DialogInterface {
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:14:58.716 -0400", hash_original_method = "B90B897256AEB065436BDBB1FFCE63CD", hash_generated_method = "7EEC6733898411E01A969B9AF7DE875A")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:36.507 -0400", hash_original_method = "B90B897256AEB065436BDBB1FFCE63CD", hash_generated_method = "B80CAE2E6025A7990C6F4227C1FC82E0")
         @DSModeled(DSC.SAFE)
         public Builder setRecycleOnMeasureEnabled(boolean enabled) {
             dsTaint.addTaint(enabled);
@@ -936,10 +928,10 @@ public class AlertDialog extends Dialog implements DialogInterface {
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:14:58.716 -0400", hash_original_method = "24F2ECF5FEA53B0907C34A4AFC4C2134", hash_generated_method = "7650F9359215B9DA0ABF5BF5A17B8FDD")
-        @DSModeled(DSC.SAFE)
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:36.507 -0400", hash_original_method = "24F2ECF5FEA53B0907C34A4AFC4C2134", hash_generated_method = "3E9D61A3418626F5C092E3C209459FBF")
+        //DSFIXME:  CODE0002: Requires DSC value to be set
         public AlertDialog create() {
-            final AlertDialog dialog;
+            AlertDialog dialog;
             dialog = new AlertDialog(P.mContext, mTheme, false);
             P.apply(dialog.mAlert);
             dialog.setCancelable(P.mCancelable);
@@ -966,8 +958,8 @@ public class AlertDialog extends Dialog implements DialogInterface {
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:14:58.716 -0400", hash_original_method = "9ED881995B2EAB3CB90B8129D2705377", hash_generated_method = "30B67CF037DF521D3C4245ABBDC11265")
-        @DSModeled(DSC.SAFE)
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:36.508 -0400", hash_original_method = "9ED881995B2EAB3CB90B8129D2705377", hash_generated_method = "7D61511C9C8D6253B259A1566D7A0540")
+        //DSFIXME:  CODE0002: Requires DSC value to be set
         public AlertDialog show() {
             AlertDialog dialog;
             dialog = create();
@@ -984,6 +976,10 @@ public class AlertDialog extends Dialog implements DialogInterface {
 
 
     
+    public static final int THEME_TRADITIONAL = 1;
+    public static final int THEME_HOLO_DARK = 2;
+    public static final int THEME_HOLO_LIGHT = 3;
+    public static final int THEME_DEVICE_DEFAULT_DARK = 4;
+    public static final int THEME_DEVICE_DEFAULT_LIGHT = 5;
 }
-
 

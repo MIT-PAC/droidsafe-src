@@ -3,35 +3,21 @@ package android.net.sip;
 // Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
+import droidsafe.runtime.*;
 
-// import Iterator to deal with enhanced for loop translation
+// needed for enhanced for control translations
 import java.util.Iterator;
 
-
 public class SipErrorCode {
-    public static final int NO_ERROR = 0;
-    public static final int SOCKET_ERROR = -1;
-    public static final int SERVER_ERROR = -2;
-    public static final int TRANSACTION_TERMINTED = -3;
-    public static final int CLIENT_ERROR = -4;
-    public static final int TIME_OUT = -5;
-    public static final int INVALID_REMOTE_URI = -6;
-    public static final int PEER_NOT_REACHABLE = -7;
-    public static final int INVALID_CREDENTIALS = -8;
-    public static final int IN_PROGRESS = -9;
-    public static final int DATA_CONNECTION_LOST = -10;
-    public static final int CROSS_DOMAIN_AUTHENTICATION = -11;
-    public static final int SERVER_UNREACHABLE = -12;
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:02.328 -0400", hash_original_method = "298DBB0089D5BDD0947985D624D66502", hash_generated_method = "591CE4BA1F559212C625C1A0AE2BDB03")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:52.330 -0400", hash_original_method = "298DBB0089D5BDD0947985D624D66502", hash_generated_method = "A393C2CD781F4E1A7DF9F09461968B5C")
     @DSModeled(DSC.SAFE)
     private SipErrorCode() {
         // ---------- Original Method ----------
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:02.328 -0400", hash_original_method = "4F9BFA28170DB7CB0E6F645850B92FEE", hash_generated_method = "58EB78A50ECE703708D7F8B99BE4EC5E")
-    public static String toString(int errorCode) {
+        public static String toString(int errorCode) {
         switch (errorCode) {
             case NO_ERROR:
                 return "NO_ERROR";
@@ -65,6 +51,18 @@ public class SipErrorCode {
     }
 
     
+    public static final int NO_ERROR = 0;
+    public static final int SOCKET_ERROR = -1;
+    public static final int SERVER_ERROR = -2;
+    public static final int TRANSACTION_TERMINTED = -3;
+    public static final int CLIENT_ERROR = -4;
+    public static final int TIME_OUT = -5;
+    public static final int INVALID_REMOTE_URI = -6;
+    public static final int PEER_NOT_REACHABLE = -7;
+    public static final int INVALID_CREDENTIALS = -8;
+    public static final int IN_PROGRESS = -9;
+    public static final int DATA_CONNECTION_LOST = -10;
+    public static final int CROSS_DOMAIN_AUTHENTICATION = -11;
+    public static final int SERVER_UNREACHABLE = -12;
 }
-
 

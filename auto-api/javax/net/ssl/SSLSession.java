@@ -3,10 +3,10 @@ package javax.net.ssl;
 // Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
+import droidsafe.runtime.*;
 
-// import Iterator to deal with enhanced for loop translation
+// needed for enhanced for control translations
 import java.util.Iterator;
-
 import java.security.Principal;
 import java.security.cert.Certificate;
 import javax.security.cert.X509Certificate;
@@ -76,4 +76,3 @@ public interface SSLSession {
     
     public void removeValue(String name);
 }
-

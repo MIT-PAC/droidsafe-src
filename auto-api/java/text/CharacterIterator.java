@@ -3,10 +3,10 @@ package java.text;
 // Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
+import droidsafe.runtime.*;
 
-// import Iterator to deal with enhanced for loop translation
+// needed for enhanced for control translations
 import java.util.Iterator;
-
 
 public interface CharacterIterator extends Cloneable {
 
@@ -43,4 +43,3 @@ public interface CharacterIterator extends Cloneable {
     
     public char setIndex(int location);
 }
-

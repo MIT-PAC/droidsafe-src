@@ -3,10 +3,10 @@ package android.app.backup;
 // Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
+import droidsafe.runtime.*;
 
-// import Iterator to deal with enhanced for loop translation
+// needed for enhanced for control translations
 import java.util.Iterator;
-
 
 public interface IBackupManager extends android.os.IInterface
 {
@@ -774,4 +774,3 @@ public android.app.backup.IRestoreSession beginRestoreSession(java.lang.String p
 
 public void opComplete(int token) throws android.os.RemoteException;
 }
-

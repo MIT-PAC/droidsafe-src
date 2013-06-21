@@ -3,10 +3,10 @@ package android.content;
 // Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
+import droidsafe.runtime.*;
 
-// import Iterator to deal with enhanced for loop translation
+// needed for enhanced for control translations
 import java.util.Iterator;
-
 import android.content.res.AssetFileDescriptor;
 import android.database.BulkCursorNative;
 import android.database.BulkCursorToCursorAdaptor;
@@ -28,10 +28,9 @@ import java.io.FileNotFoundException;
 import java.util.ArrayList;
 
 abstract public class ContentProviderNative extends Binder implements IContentProvider {
-    private static final String TAG = "ContentProvider";
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:14:59.337 -0400", hash_original_method = "AF85EE1D14BCBAFA210CD4FE8D0D0EAA", hash_generated_method = "D3560515CA6FB712272EE8F809401721")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:40.248 -0400", hash_original_method = "AF85EE1D14BCBAFA210CD4FE8D0D0EAA", hash_generated_method = "5B89B81546A27F738FE867A18D587122")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     public ContentProviderNative() {
         attachInterface(this, descriptor);
         // ---------- Original Method ----------
@@ -39,8 +38,7 @@ abstract public class ContentProviderNative extends Binder implements IContentPr
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:14:59.338 -0400", hash_original_method = "BCEEC91D2F6017DAD22E9F53C646452C", hash_generated_method = "CF5F2A29E4DF9D556817C098B8278274")
-    static public IContentProvider asInterface(IBinder obj) {
+        static public IContentProvider asInterface(IBinder obj) {
         if (obj == null) {
             return null;
         }
@@ -56,7 +54,7 @@ abstract public class ContentProviderNative extends Binder implements IContentPr
     public abstract String getProviderName();
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:14:59.340 -0400", hash_original_method = "0A95D8923EFA335F625BF0735B390C42", hash_generated_method = "3EF6F4F1B6511685FDB471B6FD33D035")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:40.260 -0400", hash_original_method = "0A95D8923EFA335F625BF0735B390C42", hash_generated_method = "3C372A6D68E77D9C218FF725836EF92A")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     @Override
     public boolean onTransact(int code, Parcel data, Parcel reply, int flags) throws RemoteException {
@@ -112,14 +110,14 @@ abstract public class ContentProviderNative extends Binder implements IContentPr
                     CursorToBulkCursorAdaptor adaptor;
                     adaptor = new CursorToBulkCursorAdaptor(
                                 cursor, observer, getProviderName());
-                    final IBinder binder;
+                    IBinder binder;
                     binder = adaptor.asBinder();
-                    final int count;
+                    int count;
                     count = adaptor.count();
-                    final int index;
+                    int index;
                     index = BulkCursorToCursorAdaptor.findRowIdColumnIndex(
                                 adaptor.getColumnNames());
-                    final boolean wantsAllOnMoveCalls;
+                    boolean wantsAllOnMoveCalls;
                     wantsAllOnMoveCalls = adaptor.getWantsAllOnMoveCalls();
                     reply.writeNoException();
                     reply.writeStrongBinder(binder);
@@ -173,9 +171,9 @@ abstract public class ContentProviderNative extends Binder implements IContentPr
             //Begin case APPLY_BATCH_TRANSACTION 
             {
                 data.enforceInterface(IContentProvider.descriptor);
-                final int numOperations;
+                int numOperations;
                 numOperations = data.readInt();
-                final ArrayList<ContentProviderOperation> operations;
+                ArrayList<ContentProviderOperation> operations;
                 operations = new ArrayList<ContentProviderOperation>(numOperations);
                 {
                     int i;
@@ -184,7 +182,7 @@ abstract public class ContentProviderNative extends Binder implements IContentPr
                         operations.add(i, ContentProviderOperation.CREATOR.createFromParcel(data));
                     } //End block
                 } //End collapsed parenthetic
-                final ContentProviderResult[] results;
+                ContentProviderResult[] results;
                 results = applyBatch(operations);
                 reply.writeNoException();
                 reply.writeTypedArray(results, 0);
@@ -317,14 +315,14 @@ abstract public class ContentProviderNative extends Binder implements IContentPr
         {
             DatabaseUtils.writeExceptionToParcel(reply, e);
         } //End block
-        boolean var3746A99EF74DBE66CD43EDAE5F9B6D9F_2117650009 = (super.onTransact(code, data, reply, flags));
+        boolean var3746A99EF74DBE66CD43EDAE5F9B6D9F_184907646 = (super.onTransact(code, data, reply, flags));
         return dsTaint.getTaintBoolean();
         // ---------- Original Method ----------
         // Original Method Too Long, Refer to Original Implementation
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:14:59.340 -0400", hash_original_method = "2E6ED031FA2AB47CC2982E0232E351E2", hash_generated_method = "ACC1BEBA79475825CC8A93A9C0BD1CF3")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:40.262 -0400", hash_original_method = "2E6ED031FA2AB47CC2982E0232E351E2", hash_generated_method = "1992535F0C7EB8757F965477F5292EC0")
     @DSModeled(DSC.SAFE)
     public IBinder asBinder() {
         return (IBinder)dsTaint.getTaint();
@@ -333,12 +331,13 @@ abstract public class ContentProviderNative extends Binder implements IContentPr
     }
 
     
+    private static final String TAG = "ContentProvider";
 }
 
 final class ContentProviderProxy implements IContentProvider {
     private IBinder mRemote;
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:14:59.341 -0400", hash_original_method = "EBB42AB6A7E6F2E0E7C721E0ED401456", hash_generated_method = "B68B60AAF568881D0D5C8B4FFED5F305")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:40.264 -0400", hash_original_method = "EBB42AB6A7E6F2E0E7C721E0ED401456", hash_generated_method = "01F65B35CD6FE1A14A4AD664FBF19C4E")
     @DSModeled(DSC.SAFE)
     public ContentProviderProxy(IBinder remote) {
         dsTaint.addTaint(remote.dsTaint);
@@ -347,7 +346,7 @@ final class ContentProviderProxy implements IContentProvider {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:14:59.341 -0400", hash_original_method = "315E1319E410798CBDE68A27410B7DFB", hash_generated_method = "117DDE791BEA1B91BCA97AE8A36628B3")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:40.265 -0400", hash_original_method = "315E1319E410798CBDE68A27410B7DFB", hash_generated_method = "DD6FDB77557F0A5920AFCE061E8D4085")
     @DSModeled(DSC.SAFE)
     public IBinder asBinder() {
         return (IBinder)dsTaint.getTaint();
@@ -356,15 +355,15 @@ final class ContentProviderProxy implements IContentProvider {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:14:59.342 -0400", hash_original_method = "E2AF136D03A7F093E9BB31072F6BF55F", hash_generated_method = "2495306FD2BE8B26EAAF3773884751AF")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:40.267 -0400", hash_original_method = "E2AF136D03A7F093E9BB31072F6BF55F", hash_generated_method = "160D2A08801B7731473A595F60061185")
     @DSModeled(DSC.SPEC)
     public Cursor query(Uri url, String[] projection, String selection,
             String[] selectionArgs, String sortOrder) throws RemoteException {
-        dsTaint.addTaint(selectionArgs);
+        dsTaint.addTaint(selectionArgs[0]);
         dsTaint.addTaint(sortOrder);
-        dsTaint.addTaint(projection);
-        dsTaint.addTaint(url.dsTaint);
+        dsTaint.addTaint(projection[0]);
         dsTaint.addTaint(selection);
+        dsTaint.addTaint(url.dsTaint);
         BulkCursorToCursorAdaptor adaptor;
         adaptor = new BulkCursorToCursorAdaptor();
         Parcel data;
@@ -426,12 +425,12 @@ final class ContentProviderProxy implements IContentProvider {
         catch (RemoteException ex)
         {
             adaptor.close();
-            throw ex;
+            if (DroidSafeAndroidRuntime.control) throw ex;
         } //End block
         catch (RuntimeException ex)
         {
             adaptor.close();
-            throw ex;
+            if (DroidSafeAndroidRuntime.control) throw ex;
         } //End block
         finally 
         {
@@ -444,7 +443,7 @@ final class ContentProviderProxy implements IContentProvider {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:14:59.342 -0400", hash_original_method = "53511528A81FA80D8FEA51649EBDE31C", hash_generated_method = "431DBB9477C2FB363066D9EF26C40CC4")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:40.269 -0400", hash_original_method = "53511528A81FA80D8FEA51649EBDE31C", hash_generated_method = "67DEF0134BF8280C4273576A2F7C2B11")
     @DSModeled(DSC.SPEC)
     public String getType(Uri url) throws RemoteException {
         dsTaint.addTaint(url.dsTaint);
@@ -484,7 +483,7 @@ final class ContentProviderProxy implements IContentProvider {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:14:59.342 -0400", hash_original_method = "357B46C024ADAE1E71A2CDEC64307714", hash_generated_method = "2F41ED1C96E48C4D8702FA532CF86150")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:40.270 -0400", hash_original_method = "357B46C024ADAE1E71A2CDEC64307714", hash_generated_method = "6E259F819D569388248716FFDBBA4877")
     @DSModeled(DSC.SPEC)
     public Uri insert(Uri url, ContentValues values) throws RemoteException {
         dsTaint.addTaint(values.dsTaint);
@@ -527,7 +526,7 @@ final class ContentProviderProxy implements IContentProvider {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:14:59.343 -0400", hash_original_method = "C992EC82CACE6E59D7619DBD9F314166", hash_generated_method = "965E2729D305751DCFB5F558C132E8D6")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:40.271 -0400", hash_original_method = "C992EC82CACE6E59D7619DBD9F314166", hash_generated_method = "EBEE8CFC869BC8A41B2F0DEFFAA67E3C")
     @DSModeled(DSC.SPEC)
     public int bulkInsert(Uri url, ContentValues[] values) throws RemoteException {
         dsTaint.addTaint(values[0].dsTaint);
@@ -570,7 +569,7 @@ final class ContentProviderProxy implements IContentProvider {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:14:59.343 -0400", hash_original_method = "4CFA8AC0349C29482D059E42163688C7", hash_generated_method = "A952426F565539DF7BB46D8109CD230F")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:40.294 -0400", hash_original_method = "4CFA8AC0349C29482D059E42163688C7", hash_generated_method = "70BC5EF4D8B29DF02DE3F049B0E5C6B8")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public ContentProviderResult[] applyBatch(ArrayList<ContentProviderOperation> operations) throws RemoteException, OperationApplicationException {
         dsTaint.addTaint(operations.dsTaint);
@@ -583,16 +582,16 @@ final class ContentProviderProxy implements IContentProvider {
             data.writeInterfaceToken(IContentProvider.descriptor);
             data.writeInt(operations.size());
             {
-                Iterator<ContentProviderOperation> seatecAstronomy42 = operations.iterator();
-                seatecAstronomy42.hasNext();
-                ContentProviderOperation operation = seatecAstronomy42.next();
+                Iterator<ContentProviderOperation> varE9602D9F0CB9F920ADAA80E0AEDB4F89_1417742020 = (operations).iterator();
+                varE9602D9F0CB9F920ADAA80E0AEDB4F89_1417742020.hasNext();
+                ContentProviderOperation operation = varE9602D9F0CB9F920ADAA80E0AEDB4F89_1417742020.next();
                 {
                     operation.writeToParcel(data, 0);
                 } //End block
             } //End collapsed parenthetic
             mRemote.transact(IContentProvider.APPLY_BATCH_TRANSACTION, data, reply, 0);
             DatabaseUtils.readExceptionWithOperationApplicationExceptionFromParcel(reply);
-            final ContentProviderResult[] results;
+            ContentProviderResult[] results;
             results = reply.createTypedArray(ContentProviderResult.CREATOR);
         } //End block
         finally 
@@ -622,12 +621,12 @@ final class ContentProviderProxy implements IContentProvider {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:14:59.344 -0400", hash_original_method = "171153BCF0A5412C89BF2E4EC609D033", hash_generated_method = "1FF601630D2D59093919D08CBCCFF182")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:40.295 -0400", hash_original_method = "171153BCF0A5412C89BF2E4EC609D033", hash_generated_method = "AC5017E6EF2BC6C94729447327CC63FD")
     @DSModeled(DSC.SPEC)
     public int delete(Uri url, String selection, String[] selectionArgs) throws RemoteException {
-        dsTaint.addTaint(selectionArgs);
-        dsTaint.addTaint(url.dsTaint);
+        dsTaint.addTaint(selectionArgs[0]);
         dsTaint.addTaint(selection);
+        dsTaint.addTaint(url.dsTaint);
         Parcel data;
         data = Parcel.obtain();
         Parcel reply;
@@ -668,14 +667,14 @@ final class ContentProviderProxy implements IContentProvider {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:14:59.344 -0400", hash_original_method = "7CDD92EB66B20F5C2AB905C31B15C465", hash_generated_method = "BFF7335C8D7D1574D1EC2B985691DBA3")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:40.310 -0400", hash_original_method = "7CDD92EB66B20F5C2AB905C31B15C465", hash_generated_method = "B87B8B26E4D176DA9B0AAB407F5A5431")
     @DSModeled(DSC.SPEC)
     public int update(Uri url, ContentValues values, String selection,
             String[] selectionArgs) throws RemoteException {
         dsTaint.addTaint(values.dsTaint);
-        dsTaint.addTaint(selectionArgs);
-        dsTaint.addTaint(url.dsTaint);
+        dsTaint.addTaint(selectionArgs[0]);
         dsTaint.addTaint(selection);
+        dsTaint.addTaint(url.dsTaint);
         Parcel data;
         data = Parcel.obtain();
         Parcel reply;
@@ -718,7 +717,7 @@ final class ContentProviderProxy implements IContentProvider {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:14:59.345 -0400", hash_original_method = "D396B7AA54F286AF30F0B787DF60D2FE", hash_generated_method = "6CD719EFBB1664FAB90C5B53C0F05008")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:40.322 -0400", hash_original_method = "D396B7AA54F286AF30F0B787DF60D2FE", hash_generated_method = "3E4BEC4F10B6DAA6D2D60860E69A3C49")
     @DSModeled(DSC.SPEC)
     public ParcelFileDescriptor openFile(Uri url, String mode) throws RemoteException, FileNotFoundException {
         dsTaint.addTaint(url.dsTaint);
@@ -765,7 +764,7 @@ final class ContentProviderProxy implements IContentProvider {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:14:59.345 -0400", hash_original_method = "FE6B9D37BFC5622E35633D8C501B06FF", hash_generated_method = "041214CDD8FCB283A9B688A398287020")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:40.325 -0400", hash_original_method = "FE6B9D37BFC5622E35633D8C501B06FF", hash_generated_method = "1CD7740078ACEF304B5611B6CE0CFB81")
     @DSModeled(DSC.SPEC)
     public AssetFileDescriptor openAssetFile(Uri url, String mode) throws RemoteException, FileNotFoundException {
         dsTaint.addTaint(url.dsTaint);
@@ -813,8 +812,8 @@ final class ContentProviderProxy implements IContentProvider {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:14:59.346 -0400", hash_original_method = "EF6BE11399C3C767419E53090230088A", hash_generated_method = "9420BC07BEFF8D335D036D67334D9A3A")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:40.326 -0400", hash_original_method = "EF6BE11399C3C767419E53090230088A", hash_generated_method = "2C1BE38C181212AC58833D9713D7F43F")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     public Bundle call(String method, String request, Bundle args) throws RemoteException {
         dsTaint.addTaint(args.dsTaint);
         dsTaint.addTaint(request);
@@ -859,7 +858,7 @@ final class ContentProviderProxy implements IContentProvider {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:14:59.346 -0400", hash_original_method = "395B2F944828CBA26EF4C9D4B93255E5", hash_generated_method = "59C8C8CA3D48825A3E34BDF8C1364882")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:40.327 -0400", hash_original_method = "395B2F944828CBA26EF4C9D4B93255E5", hash_generated_method = "CD5F6C1B0BA95F1A9047ED4405E350C9")
     @DSModeled(DSC.SPEC)
     public String[] getStreamTypes(Uri url, String mimeTypeFilter) throws RemoteException {
         dsTaint.addTaint(mimeTypeFilter);
@@ -904,12 +903,12 @@ final class ContentProviderProxy implements IContentProvider {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:14:59.347 -0400", hash_original_method = "9C6FC6B0610E79E726A369C065C9DA4C", hash_generated_method = "9B307C08045E3E14F6325286FC051F7B")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:40.328 -0400", hash_original_method = "9C6FC6B0610E79E726A369C065C9DA4C", hash_generated_method = "DEF1F005E9592236901B2F7A85E5D9C6")
     @DSModeled(DSC.SPEC)
     public AssetFileDescriptor openTypedAssetFile(Uri url, String mimeType, Bundle opts) throws RemoteException, FileNotFoundException {
         dsTaint.addTaint(opts.dsTaint);
-        dsTaint.addTaint(url.dsTaint);
         dsTaint.addTaint(mimeType);
+        dsTaint.addTaint(url.dsTaint);
         Parcel data;
         data = Parcel.obtain();
         Parcel reply;
@@ -956,5 +955,4 @@ final class ContentProviderProxy implements IContentProvider {
 
     
 }
-
 

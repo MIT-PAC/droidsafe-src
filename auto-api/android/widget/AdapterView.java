@@ -3,10 +3,10 @@ package android.widget;
 // Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
+import droidsafe.runtime.*;
 
-// import Iterator to deal with enhanced for loop translation
+// needed for enhanced for control translations
 import java.util.Iterator;
-
 import android.content.Context;
 import android.database.DataSetObserver;
 import android.os.Parcelable;
@@ -23,10 +23,7 @@ import android.view.accessibility.AccessibilityEvent;
 import android.view.accessibility.AccessibilityNodeInfo;
 
 public abstract class AdapterView<T extends Adapter> extends ViewGroup {
-    public static final int ITEM_VIEW_TYPE_IGNORE = -1;
-    public static final int ITEM_VIEW_TYPE_HEADER_OR_FOOTER = -2;
-    @ViewDebug.ExportedProperty(category = "scrolling")
-    int mFirstPosition = 0;
+    @ViewDebug.ExportedProperty(category = "scrolling") int mFirstPosition = 0;
     int mSpecificTop;
     int mSyncPosition;
     long mSyncRowId = INVALID_ROW_ID;
@@ -34,26 +31,18 @@ public abstract class AdapterView<T extends Adapter> extends ViewGroup {
     boolean mNeedSync = false;
     int mSyncMode;
     private int mLayoutHeight;
-    static final int SYNC_SELECTED_POSITION = 0;
-    static final int SYNC_FIRST_POSITION = 1;
-    static final int SYNC_MAX_DURATION_MILLIS = 100;
     boolean mInLayout = false;
     OnItemSelectedListener mOnItemSelectedListener;
     OnItemClickListener mOnItemClickListener;
     OnItemLongClickListener mOnItemLongClickListener;
     boolean mDataChanged;
-    @ViewDebug.ExportedProperty(category = "list")
-    int mNextSelectedPosition = INVALID_POSITION;
+    @ViewDebug.ExportedProperty(category = "list") int mNextSelectedPosition = INVALID_POSITION;
     long mNextSelectedRowId = INVALID_ROW_ID;
-    @ViewDebug.ExportedProperty(category = "list")
-    int mSelectedPosition = INVALID_POSITION;
+    @ViewDebug.ExportedProperty(category = "list") int mSelectedPosition = INVALID_POSITION;
     long mSelectedRowId = INVALID_ROW_ID;
     private View mEmptyView;
-    @ViewDebug.ExportedProperty(category = "list")
-    int mItemCount;
+    @ViewDebug.ExportedProperty(category = "list") int mItemCount;
     int mOldItemCount;
-    public static final int INVALID_POSITION = -1;
-    public static final long INVALID_ROW_ID = Long.MIN_VALUE;
     int mOldSelectedPosition = INVALID_POSITION;
     long mOldSelectedRowId = INVALID_ROW_ID;
     private boolean mDesiredFocusableState;
@@ -61,7 +50,7 @@ public abstract class AdapterView<T extends Adapter> extends ViewGroup {
     private SelectionNotifier mSelectionNotifier;
     boolean mBlockLayoutRequests = false;
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:07.450 -0400", hash_original_method = "57FCDFF67BC1DAFCD174DA15B87A1337", hash_generated_method = "F29CE29D93BFDC1C4C48A53B25EA38A1")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:06.131 -0400", hash_original_method = "57FCDFF67BC1DAFCD174DA15B87A1337", hash_generated_method = "76FA426266991BB79EADF66717D0F649")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public AdapterView(Context context) {
         super(context);
@@ -70,7 +59,7 @@ public abstract class AdapterView<T extends Adapter> extends ViewGroup {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:07.450 -0400", hash_original_method = "A1536CC4437039F5CF27987414A5A415", hash_generated_method = "8A85CA0B89DD5111F05A3CA8E921939D")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:06.131 -0400", hash_original_method = "A1536CC4437039F5CF27987414A5A415", hash_generated_method = "3B4D2DB6603C115DB677E384A5688A23")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public AdapterView(Context context, AttributeSet attrs) {
         super(context, attrs);
@@ -80,7 +69,7 @@ public abstract class AdapterView<T extends Adapter> extends ViewGroup {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:07.450 -0400", hash_original_method = "4DD39388BA45E8CBF534A54DFA59E3BD", hash_generated_method = "06C9906C824B31C3FA5252E82D9DB40B")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:06.131 -0400", hash_original_method = "4DD39388BA45E8CBF534A54DFA59E3BD", hash_generated_method = "1327BDB1A899FA45BA5C8AC57CA46C56")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public AdapterView(Context context, AttributeSet attrs, int defStyle) {
         super(context, attrs, defStyle);
@@ -91,7 +80,7 @@ public abstract class AdapterView<T extends Adapter> extends ViewGroup {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:07.450 -0400", hash_original_method = "3AA164DD2030E1BF06F3CA1CD9427DA1", hash_generated_method = "D71D432AF331185862606AB145E3C5E8")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:06.132 -0400", hash_original_method = "3AA164DD2030E1BF06F3CA1CD9427DA1", hash_generated_method = "2730E79E629D9CEF9B3699FAED65595C")
     @DSModeled(DSC.SAFE)
     public void setOnItemClickListener(OnItemClickListener listener) {
         dsTaint.addTaint(listener.dsTaint);
@@ -100,7 +89,7 @@ public abstract class AdapterView<T extends Adapter> extends ViewGroup {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:07.450 -0400", hash_original_method = "53FBB33228561FD1F46130BA576FD131", hash_generated_method = "6430A6A327108E39CC802CFF8E2836C5")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:06.132 -0400", hash_original_method = "53FBB33228561FD1F46130BA576FD131", hash_generated_method = "6DA04F5AE79793E5221D092CEFE27F74")
     @DSModeled(DSC.SAFE)
     public final OnItemClickListener getOnItemClickListener() {
         return (OnItemClickListener)dsTaint.getTaint();
@@ -109,11 +98,11 @@ public abstract class AdapterView<T extends Adapter> extends ViewGroup {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:07.451 -0400", hash_original_method = "60B3F62567C83CF5181D16CCAFD621F4", hash_generated_method = "DFF13C0CCFCBE7ABCDB3186621D47027")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:06.132 -0400", hash_original_method = "60B3F62567C83CF5181D16CCAFD621F4", hash_generated_method = "67B209799B4C12B319687EA82A8662EA")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     public boolean performItemClick(View view, int position, long id) {
-        dsTaint.addTaint(position);
         dsTaint.addTaint(id);
+        dsTaint.addTaint(position);
         dsTaint.addTaint(view.dsTaint);
         {
             playSoundEffect(SoundEffectConstants.CLICK);
@@ -136,12 +125,12 @@ public abstract class AdapterView<T extends Adapter> extends ViewGroup {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:07.451 -0400", hash_original_method = "8890007B6750F9F3A0AF363421C33470", hash_generated_method = "16B9C7A90C6BFC93EA8DB3A06AB63112")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:06.132 -0400", hash_original_method = "8890007B6750F9F3A0AF363421C33470", hash_generated_method = "0B1030237D91D012816DA838755791A6")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public void setOnItemLongClickListener(OnItemLongClickListener listener) {
         dsTaint.addTaint(listener.dsTaint);
         {
-            boolean var4E9822764F29F607F332912995A375BC_2065853450 = (!isLongClickable());
+            boolean var4E9822764F29F607F332912995A375BC_1508457301 = (!isLongClickable());
             {
                 setLongClickable(true);
             } //End block
@@ -154,7 +143,7 @@ public abstract class AdapterView<T extends Adapter> extends ViewGroup {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:07.451 -0400", hash_original_method = "450D7DEA9BB200CD772C171D001DF2F0", hash_generated_method = "5C626099404E41FC0F645917814FD95C")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:06.132 -0400", hash_original_method = "450D7DEA9BB200CD772C171D001DF2F0", hash_generated_method = "537501AFA383BC0ACE4064761D878ADE")
     @DSModeled(DSC.SAFE)
     public final OnItemLongClickListener getOnItemLongClickListener() {
         return (OnItemLongClickListener)dsTaint.getTaint();
@@ -163,7 +152,7 @@ public abstract class AdapterView<T extends Adapter> extends ViewGroup {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:07.451 -0400", hash_original_method = "9092AD2A5F83CE601E3913D803C386F2", hash_generated_method = "9CE74065A80433FC766771E3D8A1D41B")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:06.132 -0400", hash_original_method = "9092AD2A5F83CE601E3913D803C386F2", hash_generated_method = "A2F01420A320F6D5C66EAE5F44861512")
     @DSModeled(DSC.SAFE)
     public void setOnItemSelectedListener(OnItemSelectedListener listener) {
         dsTaint.addTaint(listener.dsTaint);
@@ -172,7 +161,7 @@ public abstract class AdapterView<T extends Adapter> extends ViewGroup {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:07.451 -0400", hash_original_method = "C1B2E8F5BC8E80BA634AE326A645C328", hash_generated_method = "96FFE5C3C5F43881AEDC5FF3171CCA9C")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:06.133 -0400", hash_original_method = "C1B2E8F5BC8E80BA634AE326A645C328", hash_generated_method = "828AEEBAC57F93378E9F920501C45D34")
     @DSModeled(DSC.SAFE)
     public final OnItemSelectedListener getOnItemSelectedListener() {
         return (OnItemSelectedListener)dsTaint.getTaint();
@@ -187,36 +176,36 @@ public abstract class AdapterView<T extends Adapter> extends ViewGroup {
     public abstract void setAdapter(T adapter);
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:07.451 -0400", hash_original_method = "F16CCCAA9B27A0794F506D96FD601909", hash_generated_method = "CC281BD08ECCE7834E9F4CCD870C69A8")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:06.133 -0400", hash_original_method = "F16CCCAA9B27A0794F506D96FD601909", hash_generated_method = "80F6EC2010FE6FED549F619C945C9A3C")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     @Override
     public void addView(View child) {
         dsTaint.addTaint(child.dsTaint);
-        throw new UnsupportedOperationException("addView(View) is not supported in AdapterView");
+        if (DroidSafeAndroidRuntime.control) throw new UnsupportedOperationException("addView(View) is not supported in AdapterView");
         // ---------- Original Method ----------
         //throw new UnsupportedOperationException("addView(View) is not supported in AdapterView");
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:07.451 -0400", hash_original_method = "A0B74413A848464618EA89DE3FE41FDC", hash_generated_method = "9ADA8933A609015C14154EB3219EEEB2")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:06.133 -0400", hash_original_method = "A0B74413A848464618EA89DE3FE41FDC", hash_generated_method = "EA49271F0813B40CBAE762217965096A")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     @Override
     public void addView(View child, int index) {
         dsTaint.addTaint(child.dsTaint);
         dsTaint.addTaint(index);
-        throw new UnsupportedOperationException("addView(View, int) is not supported in AdapterView");
+        if (DroidSafeAndroidRuntime.control) throw new UnsupportedOperationException("addView(View, int) is not supported in AdapterView");
         // ---------- Original Method ----------
         //throw new UnsupportedOperationException("addView(View, int) is not supported in AdapterView");
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:07.451 -0400", hash_original_method = "18B2907968F7312EE2BBDDA25EF143B2", hash_generated_method = "90607874A639164B6F364718E9381806")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:06.133 -0400", hash_original_method = "18B2907968F7312EE2BBDDA25EF143B2", hash_generated_method = "8220AC8DF942B85366A849BF6FB25DAB")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     @Override
     public void addView(View child, LayoutParams params) {
         dsTaint.addTaint(child.dsTaint);
         dsTaint.addTaint(params.dsTaint);
-        throw new UnsupportedOperationException("addView(View, LayoutParams) "
+        if (DroidSafeAndroidRuntime.control) throw new UnsupportedOperationException("addView(View, LayoutParams) "
                 + "is not supported in AdapterView");
         // ---------- Original Method ----------
         //throw new UnsupportedOperationException("addView(View, LayoutParams) "
@@ -224,14 +213,14 @@ public abstract class AdapterView<T extends Adapter> extends ViewGroup {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:07.451 -0400", hash_original_method = "ECB319B81CB6A3F46E583210A29BAF16", hash_generated_method = "307C5895D4B495E876A49DE03AADC78A")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:06.133 -0400", hash_original_method = "ECB319B81CB6A3F46E583210A29BAF16", hash_generated_method = "510596887D23CBE504287A3EBC3F37DE")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     @Override
     public void addView(View child, int index, LayoutParams params) {
         dsTaint.addTaint(child.dsTaint);
         dsTaint.addTaint(index);
         dsTaint.addTaint(params.dsTaint);
-        throw new UnsupportedOperationException("addView(View, int, LayoutParams) "
+        if (DroidSafeAndroidRuntime.control) throw new UnsupportedOperationException("addView(View, int, LayoutParams) "
                 + "is not supported in AdapterView");
         // ---------- Original Method ----------
         //throw new UnsupportedOperationException("addView(View, int, LayoutParams) "
@@ -239,39 +228,39 @@ public abstract class AdapterView<T extends Adapter> extends ViewGroup {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:07.451 -0400", hash_original_method = "886BA97B45AC28A61B534339E77983B5", hash_generated_method = "BB5372E69EC1E158652D7FD0581C3E09")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:06.134 -0400", hash_original_method = "886BA97B45AC28A61B534339E77983B5", hash_generated_method = "087965F196D0D1CB8CC15D17C9E1FDCD")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     @Override
     public void removeView(View child) {
         dsTaint.addTaint(child.dsTaint);
-        throw new UnsupportedOperationException("removeView(View) is not supported in AdapterView");
+        if (DroidSafeAndroidRuntime.control) throw new UnsupportedOperationException("removeView(View) is not supported in AdapterView");
         // ---------- Original Method ----------
         //throw new UnsupportedOperationException("removeView(View) is not supported in AdapterView");
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:07.451 -0400", hash_original_method = "EB15614617786EFEBA3A034D912AA71E", hash_generated_method = "8AC21CD2ADFEE9F70D5618828A8D2E0E")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:06.134 -0400", hash_original_method = "EB15614617786EFEBA3A034D912AA71E", hash_generated_method = "FB2A87AF935E8AE6BCFA6DFD4F892EDB")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     @Override
     public void removeViewAt(int index) {
         dsTaint.addTaint(index);
-        throw new UnsupportedOperationException("removeViewAt(int) is not supported in AdapterView");
+        if (DroidSafeAndroidRuntime.control) throw new UnsupportedOperationException("removeViewAt(int) is not supported in AdapterView");
         // ---------- Original Method ----------
         //throw new UnsupportedOperationException("removeViewAt(int) is not supported in AdapterView");
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:07.451 -0400", hash_original_method = "F33294BE6C28FDF867EC6161A7E416F0", hash_generated_method = "CC861906D66C24FFFD5A1FC1164753D3")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:06.134 -0400", hash_original_method = "F33294BE6C28FDF867EC6161A7E416F0", hash_generated_method = "7B3E7F45AB92E9FDE7B41CDFC06F8C22")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     @Override
     public void removeAllViews() {
-        throw new UnsupportedOperationException("removeAllViews() is not supported in AdapterView");
+        if (DroidSafeAndroidRuntime.control) throw new UnsupportedOperationException("removeAllViews() is not supported in AdapterView");
         // ---------- Original Method ----------
         //throw new UnsupportedOperationException("removeAllViews() is not supported in AdapterView");
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:07.451 -0400", hash_original_method = "5EA85597DECD951B7F4C51D999F17C5D", hash_generated_method = "A72ECBB752537F00D1F2DE65CF10635D")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:06.134 -0400", hash_original_method = "5EA85597DECD951B7F4C51D999F17C5D", hash_generated_method = "D4FD16C06692F828F508D6AFE1E4B022")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     @Override
     protected void onLayout(boolean changed, int left, int top, int right, int bottom) {
@@ -279,15 +268,15 @@ public abstract class AdapterView<T extends Adapter> extends ViewGroup {
         dsTaint.addTaint(bottom);
         dsTaint.addTaint(left);
         dsTaint.addTaint(right);
-        dsTaint.addTaint(changed);
         dsTaint.addTaint(top);
+        dsTaint.addTaint(changed);
         mLayoutHeight = getHeight();
         // ---------- Original Method ----------
         //mLayoutHeight = getHeight();
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:07.451 -0400", hash_original_method = "40CA9E4E71293F3BC1D33E874AD305A1", hash_generated_method = "77E2FDD9958465E3C8B74F905D6B818D")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:06.134 -0400", hash_original_method = "40CA9E4E71293F3BC1D33E874AD305A1", hash_generated_method = "E5333976162F458A10BEE79FFD155B4C")
     @DSModeled(DSC.SAFE)
     @ViewDebug.CapturedViewProperty
     public int getSelectedItemPosition() {
@@ -297,7 +286,7 @@ public abstract class AdapterView<T extends Adapter> extends ViewGroup {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:07.451 -0400", hash_original_method = "52C80BDBAB2E8D6D945028E83F843260", hash_generated_method = "B5A0866E18DCBC9152D3311DCF84304E")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:06.134 -0400", hash_original_method = "52C80BDBAB2E8D6D945028E83F843260", hash_generated_method = "5560BC0E1FD344D5198585D1E6415203")
     @DSModeled(DSC.SAFE)
     @ViewDebug.CapturedViewProperty
     public long getSelectedItemId() {
@@ -310,7 +299,7 @@ public abstract class AdapterView<T extends Adapter> extends ViewGroup {
     public abstract View getSelectedView();
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:07.452 -0400", hash_original_method = "F45E40D646583F63F7A00B28C1D0B4AE", hash_generated_method = "D074CBF016602823387FE5902E4323B5")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:06.135 -0400", hash_original_method = "F45E40D646583F63F7A00B28C1D0B4AE", hash_generated_method = "8D0B48E5B51A77398B62FE43B5303205")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public Object getSelectedItem() {
         T adapter;
@@ -318,9 +307,9 @@ public abstract class AdapterView<T extends Adapter> extends ViewGroup {
         int selection;
         selection = getSelectedItemPosition();
         {
-            boolean varC431EBC257F1DAB69F88175BCB5250FC_614206302 = (adapter != null && adapter.getCount() > 0 && selection >= 0);
+            boolean varC431EBC257F1DAB69F88175BCB5250FC_302689200 = (adapter != null && adapter.getCount() > 0 && selection >= 0);
             {
-                Object varE8050918912787131FDE6ED7E0F431BB_1957658220 = (adapter.getItem(selection));
+                Object varE8050918912787131FDE6ED7E0F431BB_1216239592 = (adapter.getItem(selection));
             } //End block
         } //End collapsed parenthetic
         return (Object)dsTaint.getTaint();
@@ -335,7 +324,7 @@ public abstract class AdapterView<T extends Adapter> extends ViewGroup {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:07.452 -0400", hash_original_method = "C515244CDC30F9529A71B0CAA70231C3", hash_generated_method = "DAB88C9956DF6D58A26E65E5FDFA9775")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:06.135 -0400", hash_original_method = "C515244CDC30F9529A71B0CAA70231C3", hash_generated_method = "46FD6B5B047F56CEAD04646FBAFA928E")
     @DSModeled(DSC.SAFE)
     @ViewDebug.CapturedViewProperty
     public int getCount() {
@@ -345,10 +334,9 @@ public abstract class AdapterView<T extends Adapter> extends ViewGroup {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:07.452 -0400", hash_original_method = "7F8A3609232C6E4C7447DF803294CB0C", hash_generated_method = "FB7334C20E8A96E9E8235E4F404C339C")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:06.135 -0400", hash_original_method = "7F8A3609232C6E4C7447DF803294CB0C", hash_generated_method = "8255C97A26E6A4EF0E7840C340EB9612")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public int getPositionForView(View view) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
         dsTaint.addTaint(view.dsTaint);
         View listItem;
         listItem = view;
@@ -356,7 +344,7 @@ public abstract class AdapterView<T extends Adapter> extends ViewGroup {
         {
             View v;
             {
-                boolean varE341D27A264F3482D6A76BDFDFF68A64_1759188476 = (!(v = (View) listItem.getParent()).equals(this));
+                boolean varE341D27A264F3482D6A76BDFDFF68A64_336931556 = (!(v = (View) listItem.getParent()).equals(this));
                 {
                     listItem = v;
                 } //End block
@@ -364,14 +352,14 @@ public abstract class AdapterView<T extends Adapter> extends ViewGroup {
         } //End block
         catch (ClassCastException e)
         { }
-        final int childCount;
+        int childCount;
         childCount = getChildCount();
         {
             int i;
             i = 0;
             {
                 {
-                    boolean varAB7E8859D0826E12EC53AD21DB274535_441630485 = (getChildAt(i).equals(listItem));
+                    boolean varAB7E8859D0826E12EC53AD21DB274535_2027637006 = (getChildAt(i).equals(listItem));
                 } //End collapsed parenthetic
             } //End block
         } //End collapsed parenthetic
@@ -396,7 +384,7 @@ public abstract class AdapterView<T extends Adapter> extends ViewGroup {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:07.452 -0400", hash_original_method = "3F582E36FEB434C42F8F2A7A83CA506D", hash_generated_method = "C5E91A81A929771DCEB14A855B7455E7")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:06.135 -0400", hash_original_method = "3F582E36FEB434C42F8F2A7A83CA506D", hash_generated_method = "1E7A95F318A20F3BD79D2EE55E203429")
     @DSModeled(DSC.SAFE)
     public int getFirstVisiblePosition() {
         return dsTaint.getTaintInt();
@@ -405,10 +393,10 @@ public abstract class AdapterView<T extends Adapter> extends ViewGroup {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:07.452 -0400", hash_original_method = "E5B0A16A7A6C9870BA6F980F2DB39BC0", hash_generated_method = "4E87552E52AE980B343B43BD634A223F")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:06.135 -0400", hash_original_method = "E5B0A16A7A6C9870BA6F980F2DB39BC0", hash_generated_method = "CBAB9F918D922C92C9EFB2824488100B")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public int getLastVisiblePosition() {
-        int var502BAFD3638A317DEFA14DE990B7A10C_46470779 = (mFirstPosition + getChildCount() - 1);
+        int var502BAFD3638A317DEFA14DE990B7A10C_1428952808 = (mFirstPosition + getChildCount() - 1);
         return dsTaint.getTaintInt();
         // ---------- Original Method ----------
         //return mFirstPosition + getChildCount() - 1;
@@ -418,14 +406,14 @@ public abstract class AdapterView<T extends Adapter> extends ViewGroup {
     public abstract void setSelection(int position);
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:07.452 -0400", hash_original_method = "0D2B56D1373B44CFA7E95FC0E87B79DB", hash_generated_method = "6CDA4C0D8CAC661A104AB8A2C6D5E57D")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:06.136 -0400", hash_original_method = "0D2B56D1373B44CFA7E95FC0E87B79DB", hash_generated_method = "C9A7DEF1D20FA139398778C0679C634E")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     @android.view.RemotableViewMethod
     public void setEmptyView(View emptyView) {
         dsTaint.addTaint(emptyView.dsTaint);
-        final T adapter;
+        T adapter;
         adapter = getAdapter();
-        final boolean empty;
+        boolean empty;
         empty = ((adapter == null) || adapter.isEmpty());
         updateEmptyStatus(empty);
         // ---------- Original Method ----------
@@ -436,7 +424,7 @@ public abstract class AdapterView<T extends Adapter> extends ViewGroup {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:07.452 -0400", hash_original_method = "1914B98508B1C21B71F42F5D07F0BF47", hash_generated_method = "24B9D5940BF96E7A275A1C1FC16A3AA1")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:06.136 -0400", hash_original_method = "1914B98508B1C21B71F42F5D07F0BF47", hash_generated_method = "791F04EE90C32B180B35F64FC4D2FD36")
     @DSModeled(DSC.SAFE)
     public View getEmptyView() {
         return (View)dsTaint.getTaint();
@@ -445,7 +433,7 @@ public abstract class AdapterView<T extends Adapter> extends ViewGroup {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:07.452 -0400", hash_original_method = "FD285526E2677013E6DDAFB01C953F85", hash_generated_method = "403A6BF494E19AF5823D96F7EDA99351")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:06.136 -0400", hash_original_method = "FD285526E2677013E6DDAFB01C953F85", hash_generated_method = "CE87187DE585FF484FDDDE9355E82304")
     @DSModeled(DSC.SAFE)
      boolean isInFilterMode() {
         return dsTaint.getTaintBoolean();
@@ -454,14 +442,14 @@ public abstract class AdapterView<T extends Adapter> extends ViewGroup {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:07.452 -0400", hash_original_method = "2405FD914E83FFA9F0D8BC78F36E017E", hash_generated_method = "264E6773B9E5A3D894761A714C05898D")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:06.136 -0400", hash_original_method = "2405FD914E83FFA9F0D8BC78F36E017E", hash_generated_method = "9FB84FBB8F741BCBD425BE540CB591EB")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     @Override
     public void setFocusable(boolean focusable) {
         dsTaint.addTaint(focusable);
-        final T adapter;
+        T adapter;
         adapter = getAdapter();
-        final boolean empty;
+        boolean empty;
         empty = adapter == null || adapter.getCount() == 0;
         {
             mDesiredFocusableInTouchModeState = false;
@@ -478,14 +466,14 @@ public abstract class AdapterView<T extends Adapter> extends ViewGroup {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:07.452 -0400", hash_original_method = "510CB97D998AEB67CD24BEC214B467D4", hash_generated_method = "33D7F563382D05357E6FDBB835C25F41")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:06.137 -0400", hash_original_method = "510CB97D998AEB67CD24BEC214B467D4", hash_generated_method = "AADD050321416F7579402634F23EA643")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     @Override
     public void setFocusableInTouchMode(boolean focusable) {
         dsTaint.addTaint(focusable);
-        final T adapter;
+        T adapter;
         adapter = getAdapter();
-        final boolean empty;
+        boolean empty;
         empty = adapter == null || adapter.getCount() == 0;
         {
             mDesiredFocusableState = true;
@@ -502,14 +490,14 @@ public abstract class AdapterView<T extends Adapter> extends ViewGroup {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:07.453 -0400", hash_original_method = "247C1C860FE83D8C6969E8D7AD161A84", hash_generated_method = "1CD014B0153ED3DF67078442EEBB6069")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:06.137 -0400", hash_original_method = "247C1C860FE83D8C6969E8D7AD161A84", hash_generated_method = "34214D909D342D706EB49D1E32B9A23E")
     //DSFIXME:  CODE0002: Requires DSC value to be set
      void checkFocus() {
-        final T adapter;
+        T adapter;
         adapter = getAdapter();
-        final boolean empty;
+        boolean empty;
         empty = adapter == null || adapter.getCount() == 0;
-        final boolean focusable;
+        boolean focusable;
         focusable = !empty || isInFilterMode();
         super.setFocusableInTouchMode(focusable && mDesiredFocusableInTouchModeState);
         super.setFocusable(focusable && mDesiredFocusableState);
@@ -528,12 +516,12 @@ public abstract class AdapterView<T extends Adapter> extends ViewGroup {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:07.453 -0400", hash_original_method = "3E542C38250D34B64375C7B9ACE53374", hash_generated_method = "2EE1DAF6C313A034B2B5AE1F05BF5E41")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:06.137 -0400", hash_original_method = "3E542C38250D34B64375C7B9ACE53374", hash_generated_method = "BEB1960374F41E671ED8AB9350873675")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     private void updateEmptyStatus(boolean empty) {
         dsTaint.addTaint(empty);
         {
-            boolean varF35CB9186B7E386AC3090FFD7A78DB53_1939789864 = (isInFilterMode());
+            boolean varF35CB9186B7E386AC3090FFD7A78DB53_1684980326 = (isInFilterMode());
             {
                 empty = false;
             } //End block
@@ -575,14 +563,14 @@ public abstract class AdapterView<T extends Adapter> extends ViewGroup {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:07.453 -0400", hash_original_method = "D3C6D351E34AE1C5D83960F098A550AE", hash_generated_method = "C26C45F4B87EB755CC9C6560178A43BE")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:06.138 -0400", hash_original_method = "D3C6D351E34AE1C5D83960F098A550AE", hash_generated_method = "3DCD9BB2869BD58F859C44BE8CC76288")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public Object getItemAtPosition(int position) {
         dsTaint.addTaint(position);
         T adapter;
         adapter = getAdapter();
         {
-            Object var9E4BD85BFCA3C1ACF1685F0753798E30_2094482161 = (adapter.getItem(position));
+            Object var9E4BD85BFCA3C1ACF1685F0753798E30_859839057 = (adapter.getItem(position));
         } //End flattened ternary
         return (Object)dsTaint.getTaint();
         // ---------- Original Method ----------
@@ -591,14 +579,14 @@ public abstract class AdapterView<T extends Adapter> extends ViewGroup {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:07.453 -0400", hash_original_method = "1B8B19ED8D728A74BB7DD4694FA31397", hash_generated_method = "39DA07E1C9BC65E07E590D5244880FB8")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:06.138 -0400", hash_original_method = "1B8B19ED8D728A74BB7DD4694FA31397", hash_generated_method = "696C2C904045089FF69FFF2D800873C8")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public long getItemIdAtPosition(int position) {
         dsTaint.addTaint(position);
         T adapter;
         adapter = getAdapter();
         {
-            Object var97E149A12F4F82A568B3B77523943250_2115052331 = (adapter.getItemId(position));
+            Object var97E149A12F4F82A568B3B77523943250_1327243556 = (adapter.getItemId(position));
         } //End flattened ternary
         return dsTaint.getTaintLong();
         // ---------- Original Method ----------
@@ -607,12 +595,12 @@ public abstract class AdapterView<T extends Adapter> extends ViewGroup {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:07.453 -0400", hash_original_method = "1A557FA8FE05A519D86B900EB24DF4D7", hash_generated_method = "D31714E8561D8E7E19BB1B8F57737020")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:06.138 -0400", hash_original_method = "1A557FA8FE05A519D86B900EB24DF4D7", hash_generated_method = "9791FA6BE3B1879E87045DE8C291DD79")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     @Override
     public void setOnClickListener(OnClickListener l) {
         dsTaint.addTaint(l.dsTaint);
-        throw new RuntimeException("Don't call setOnClickListener for an AdapterView. "
+        if (DroidSafeAndroidRuntime.control) throw new RuntimeException("Don't call setOnClickListener for an AdapterView. "
                 + "You probably want setOnItemClickListener instead");
         // ---------- Original Method ----------
         //throw new RuntimeException("Don't call setOnClickListener for an AdapterView. "
@@ -620,8 +608,8 @@ public abstract class AdapterView<T extends Adapter> extends ViewGroup {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:07.453 -0400", hash_original_method = "0F3E63187E008FDE1692E75AF7E8484F", hash_generated_method = "3A652E4EC92983FDB6E2C29855040AA4")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:06.138 -0400", hash_original_method = "0F3E63187E008FDE1692E75AF7E8484F", hash_generated_method = "6B8831D37E64EA8DEB3135196CED0FC4")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     @Override
     protected void dispatchSaveInstanceState(SparseArray<Parcelable> container) {
         dsTaint.addTaint(container.dsTaint);
@@ -631,8 +619,8 @@ public abstract class AdapterView<T extends Adapter> extends ViewGroup {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:07.453 -0400", hash_original_method = "3B9D7DC916535DA1F64238687579C1A4", hash_generated_method = "40F912F53AEF9944D08FCA7F79B97AF8")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:06.138 -0400", hash_original_method = "3B9D7DC916535DA1F64238687579C1A4", hash_generated_method = "73C4D905A5C52E93115E715065730A26")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     @Override
     protected void dispatchRestoreInstanceState(SparseArray<Parcelable> container) {
         dsTaint.addTaint(container.dsTaint);
@@ -642,8 +630,8 @@ public abstract class AdapterView<T extends Adapter> extends ViewGroup {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:07.453 -0400", hash_original_method = "8130EF0B42BA515F653DEDC83DE0BC01", hash_generated_method = "6A3F623564B4934D23B81791D529DA3B")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:06.139 -0400", hash_original_method = "8130EF0B42BA515F653DEDC83DE0BC01", hash_generated_method = "8B173CA825B846127BB6829734ADDC00")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     @Override
     protected void onDetachedFromWindow() {
         //DSFIXME:  CODE0009: Possible callback target function detected
@@ -655,10 +643,9 @@ public abstract class AdapterView<T extends Adapter> extends ViewGroup {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:07.453 -0400", hash_original_method = "BC6042705725732210E15D64CD41C7D9", hash_generated_method = "E4B7023F2E8F97BD5817A84857C1F62A")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:06.139 -0400", hash_original_method = "BC6042705725732210E15D64CD41C7D9", hash_generated_method = "2C994AB19E75247557B6A914A8CF444D")
     //DSFIXME:  CODE0002: Requires DSC value to be set
      void selectionChanged() {
-        //DSFIXME:  CODE0009: Possible callback target function detected
         {
             {
                 {
@@ -671,7 +658,7 @@ public abstract class AdapterView<T extends Adapter> extends ViewGroup {
             } //End block
         } //End block
         {
-            boolean var5C1F0A052282BDFB4F8B56B7331CF594_556421761 = (mSelectedPosition != ListView.INVALID_POSITION && isShown() && !isInTouchMode());
+            boolean var5C1F0A052282BDFB4F8B56B7331CF594_513271059 = (mSelectedPosition != ListView.INVALID_POSITION && isShown() && !isInTouchMode());
             {
                 sendAccessibilityEvent(AccessibilityEvent.TYPE_VIEW_SELECTED);
             } //End block
@@ -693,7 +680,7 @@ public abstract class AdapterView<T extends Adapter> extends ViewGroup {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:07.453 -0400", hash_original_method = "02337B5D029912B3F89D3F5D70F11AFE", hash_generated_method = "8466FB9B5B61EDB1E138E5785AF69CD1")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:06.139 -0400", hash_original_method = "02337B5D029912B3F89D3F5D70F11AFE", hash_generated_method = "5209C9FA757C7C3C94F7FDDD5A7801CB")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     private void fireOnSelected() {
         int selection;
@@ -721,7 +708,7 @@ public abstract class AdapterView<T extends Adapter> extends ViewGroup {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:07.454 -0400", hash_original_method = "2ECE900C628E5D932F56A2139561AD87", hash_generated_method = "DEC6AF21F08792507EEC6B24F709A566")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:06.139 -0400", hash_original_method = "2ECE900C628E5D932F56A2139561AD87", hash_generated_method = "542D1C460051F3EC53AD2C2099F9EB0B")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     @Override
     public boolean dispatchPopulateAccessibilityEvent(AccessibilityEvent event) {
@@ -729,7 +716,7 @@ public abstract class AdapterView<T extends Adapter> extends ViewGroup {
         View selectedView;
         selectedView = getSelectedView();
         {
-            boolean varAB0D18640FD723634A00876A9A643B2A_703614053 = (selectedView != null && selectedView.getVisibility() == VISIBLE
+            boolean varAB0D18640FD723634A00876A9A643B2A_1215442327 = (selectedView != null && selectedView.getVisibility() == VISIBLE
                 && selectedView.dispatchPopulateAccessibilityEvent(event));
         } //End collapsed parenthetic
         return dsTaint.getTaintBoolean();
@@ -743,7 +730,7 @@ public abstract class AdapterView<T extends Adapter> extends ViewGroup {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:07.454 -0400", hash_original_method = "6C132B6F44CAB6ECEF4D7E674DFB11BC", hash_generated_method = "0D30473BE84017F6D21D23969994FD89")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:06.140 -0400", hash_original_method = "6C132B6F44CAB6ECEF4D7E674DFB11BC", hash_generated_method = "06274750445774BB9EAB0BAE45E32F12")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     @Override
     public boolean onRequestSendAccessibilityEvent(View child, AccessibilityEvent event) {
@@ -751,7 +738,7 @@ public abstract class AdapterView<T extends Adapter> extends ViewGroup {
         dsTaint.addTaint(child.dsTaint);
         dsTaint.addTaint(event.dsTaint);
         {
-            boolean varFFC657A579ED797FAC38E2B4B1796721_1588836473 = (super.onRequestSendAccessibilityEvent(child, event));
+            boolean varFFC657A579ED797FAC38E2B4B1796721_1725812698 = (super.onRequestSendAccessibilityEvent(child, event));
             {
                 AccessibilityEvent record;
                 record = AccessibilityEvent.obtain();
@@ -773,7 +760,7 @@ public abstract class AdapterView<T extends Adapter> extends ViewGroup {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:07.454 -0400", hash_original_method = "A92D1861287ECAEDED59E2308FF3FC59", hash_generated_method = "AA0840C823BB8599CBE25E6C15302E03")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:06.140 -0400", hash_original_method = "A92D1861287ECAEDED59E2308FF3FC59", hash_generated_method = "4838EDBD1FE9D871BD9679D7FC9BEAF8")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     @Override
     public void onInitializeAccessibilityNodeInfo(AccessibilityNodeInfo info) {
@@ -796,7 +783,7 @@ public abstract class AdapterView<T extends Adapter> extends ViewGroup {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:07.454 -0400", hash_original_method = "73EE58FB2C3D5181C9EEF91D06B60047", hash_generated_method = "B2147C06AE7D6FB43C9419288378BB6C")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:06.140 -0400", hash_original_method = "73EE58FB2C3D5181C9EEF91D06B60047", hash_generated_method = "F5D4A81BE5EE8645E450906773BD507C")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     @Override
     public void onInitializeAccessibilityEvent(AccessibilityEvent event) {
@@ -827,15 +814,15 @@ public abstract class AdapterView<T extends Adapter> extends ViewGroup {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:07.454 -0400", hash_original_method = "1A6615688A72EC8D9F005EEFA4CD86A3", hash_generated_method = "B69C6510E6F09E05B340ED1EA5A9E7A5")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:06.141 -0400", hash_original_method = "1A6615688A72EC8D9F005EEFA4CD86A3", hash_generated_method = "8030F47C13BE2DD4A03802391BF09D7C")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     private boolean isScrollableForAccessibility() {
         T adapter;
         adapter = getAdapter();
         {
-            final int itemCount;
+            int itemCount;
             itemCount = adapter.getCount();
-            boolean var0CADBBA3C9973A4C32A29A1A7D305AA3_1008560860 = (itemCount > 0
+            boolean var0CADBBA3C9973A4C32A29A1A7D305AA3_1652085645 = (itemCount > 0
                 && (getFirstVisiblePosition() > 0 || getLastVisiblePosition() < itemCount - 1));
         } //End block
         return dsTaint.getTaintBoolean();
@@ -850,21 +837,21 @@ public abstract class AdapterView<T extends Adapter> extends ViewGroup {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:07.454 -0400", hash_original_method = "F40AC428F4D570BD34339564A5B5BB04", hash_generated_method = "7018498DC17B2DB66D94E91BABEA037F")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:06.141 -0400", hash_original_method = "F40AC428F4D570BD34339564A5B5BB04", hash_generated_method = "06BB5846F9FD8BBF87C4E4FFD40FD624")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     @Override
     protected boolean canAnimate() {
-        boolean varDA480D2F8FF037BACA5DB54A8FBF9642_1410923367 = (super.canAnimate() && mItemCount > 0);
+        boolean varDA480D2F8FF037BACA5DB54A8FBF9642_2138168514 = (super.canAnimate() && mItemCount > 0);
         return dsTaint.getTaintBoolean();
         // ---------- Original Method ----------
         //return super.canAnimate() && mItemCount > 0;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:07.454 -0400", hash_original_method = "E1C2247A84AC5366AD699C7DB3F92349", hash_generated_method = "9434B91E2DEE89648D5A752816757AB7")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:06.141 -0400", hash_original_method = "E1C2247A84AC5366AD699C7DB3F92349", hash_generated_method = "3793C88056766A8AEA525957AC559964")
     //DSFIXME:  CODE0002: Requires DSC value to be set
      void handleDataChanged() {
-        final int count;
+        int count;
         count = mItemCount;
         boolean found;
         found = false;
@@ -915,10 +902,9 @@ public abstract class AdapterView<T extends Adapter> extends ViewGroup {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:07.455 -0400", hash_original_method = "25705A5902194616A467B0383F1D3CBC", hash_generated_method = "58A5F39ADEFFCFBF0B78BB78A627D052")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:06.141 -0400", hash_original_method = "25705A5902194616A467B0383F1D3CBC", hash_generated_method = "C4F0AB53E38DFFA650B0899EA0C97EF9")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
      void checkSelectionChanged() {
-        //DSFIXME:  CODE0009: Possible callback target function detected
         {
             selectionChanged();
             mOldSelectedPosition = mSelectedPosition;
@@ -933,7 +919,7 @@ public abstract class AdapterView<T extends Adapter> extends ViewGroup {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:07.455 -0400", hash_original_method = "40C5EABEA31AF953B54DF3485AA93D4F", hash_generated_method = "001D0072A96812C56EDF13AA45866F7E")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:06.142 -0400", hash_original_method = "40C5EABEA31AF953B54DF3485AA93D4F", hash_generated_method = "0DBF8FDDE941B5DF1755AE1E61E73DFF")
     //DSFIXME:  CODE0002: Requires DSC value to be set
      int findSyncPosition() {
         int count;
@@ -958,18 +944,16 @@ public abstract class AdapterView<T extends Adapter> extends ViewGroup {
         T adapter;
         adapter = getAdapter();
         {
-            boolean var456DAD1228A2E995CDD3C7508B2D1BC6_1424084354 = (SystemClock.uptimeMillis() <= endTime);
+            boolean var456DAD1228A2E995CDD3C7508B2D1BC6_376625046 = (SystemClock.uptimeMillis() <= endTime);
             {
                 rowId = adapter.getItemId(seed);
                 hitLast = last == count - 1;
                 hitFirst = first == 0;
                 {
-                    last++;
                     seed = last;
                     next = false;
                 } //End block
                 {
-                    first--;
                     seed = first;
                     next = true;
                 } //End block
@@ -981,7 +965,7 @@ public abstract class AdapterView<T extends Adapter> extends ViewGroup {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:07.455 -0400", hash_original_method = "63DA3BDCCF3458E05F2C2D5853C22A6D", hash_generated_method = "5499FB8BF00B71D4A00B954A0A1B10F8")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:06.142 -0400", hash_original_method = "63DA3BDCCF3458E05F2C2D5853C22A6D", hash_generated_method = "9C67BD4F98FF4E66B2696E61190A3F66")
     @DSModeled(DSC.SAFE)
      int lookForSelectablePosition(int position, boolean lookDown) {
         dsTaint.addTaint(position);
@@ -992,10 +976,9 @@ public abstract class AdapterView<T extends Adapter> extends ViewGroup {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:07.455 -0400", hash_original_method = "DDA5E37B089AD4C213077E832500B341", hash_generated_method = "50301D141C6AD0417F21E82947BB9DCD")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:06.142 -0400", hash_original_method = "DDA5E37B089AD4C213077E832500B341", hash_generated_method = "54872F8945F75C6C9088BF45669F4DDA")
     //DSFIXME:  CODE0002: Requires DSC value to be set
      void setSelectedPositionInt(int position) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
         dsTaint.addTaint(position);
         mSelectedRowId = getItemIdAtPosition(position);
         // ---------- Original Method ----------
@@ -1004,10 +987,9 @@ public abstract class AdapterView<T extends Adapter> extends ViewGroup {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:07.455 -0400", hash_original_method = "8F63B2D5F340C4F249BDEC055C5E8E67", hash_generated_method = "851E79B50DA7365206A15CD863C7B11D")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:06.142 -0400", hash_original_method = "8F63B2D5F340C4F249BDEC055C5E8E67", hash_generated_method = "58B5DE2A52C5E977DA77BB2126EF37AA")
     //DSFIXME:  CODE0002: Requires DSC value to be set
      void setNextSelectedPositionInt(int position) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
         dsTaint.addTaint(position);
         mNextSelectedRowId = getItemIdAtPosition(position);
         {
@@ -1023,11 +1005,11 @@ public abstract class AdapterView<T extends Adapter> extends ViewGroup {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:07.455 -0400", hash_original_method = "1A0C0740A6F6610404D57CE1BAD32EA0", hash_generated_method = "25B806C4BCE5305C81395D91E03275E5")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:06.143 -0400", hash_original_method = "1A0C0740A6F6610404D57CE1BAD32EA0", hash_generated_method = "25C51B22BDD694B7D39DEA8AF497CD1D")
     //DSFIXME:  CODE0002: Requires DSC value to be set
      void rememberSyncState() {
         {
-            boolean varBF62E6C23FE36C17A3594E034FF46D2E_1561951436 = (getChildCount() > 0);
+            boolean varBF62E6C23FE36C17A3594E034FF46D2E_1198958955 = (getChildCount() > 0);
             {
                 mNeedSync = true;
                 mSyncHeight = mLayoutHeight;
@@ -1047,7 +1029,7 @@ public abstract class AdapterView<T extends Adapter> extends ViewGroup {
                     T adapter;
                     adapter = getAdapter();
                     {
-                        boolean var4513742AC4398C98A59B8301E0BEEF78_1204291796 = (mFirstPosition >= 0 && mFirstPosition < adapter.getCount());
+                        boolean var4513742AC4398C98A59B8301E0BEEF78_1017525719 = (mFirstPosition >= 0 && mFirstPosition < adapter.getCount());
                         {
                             mSyncRowId = adapter.getItemId(mFirstPosition);
                         } //End block
@@ -1073,11 +1055,11 @@ public abstract class AdapterView<T extends Adapter> extends ViewGroup {
         public int position;
         public long id;
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:07.456 -0400", hash_original_method = "4451CA35940742220E7BA55A02F436E7", hash_generated_method = "0F271B8907CC2114D04DA544598ED547")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:06.143 -0400", hash_original_method = "4451CA35940742220E7BA55A02F436E7", hash_generated_method = "87F245F097FA0C5AD86B69E360AA2B47")
         @DSModeled(DSC.SAFE)
         public AdapterContextMenuInfo(View targetView, int position, long id) {
-            dsTaint.addTaint(position);
             dsTaint.addTaint(id);
+            dsTaint.addTaint(position);
             dsTaint.addTaint(targetView.dsTaint);
             // ---------- Original Method ----------
             //this.targetView = targetView;
@@ -1093,7 +1075,13 @@ public abstract class AdapterView<T extends Adapter> extends ViewGroup {
     class AdapterDataSetObserver extends DataSetObserver {
         private Parcelable mInstanceState = null;
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:07.456 -0400", hash_original_method = "26DD6C25DA2F390817D1ECC15F4F8536", hash_generated_method = "C6B0157814325A0C206F1D6FD518BA87")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:06.144 -0400", hash_original_method = "273FED591BB98950FDD1BF5E03A12471", hash_generated_method = "273FED591BB98950FDD1BF5E03A12471")
+                public AdapterDataSetObserver ()
+        {
+        }
+
+
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:06.144 -0400", hash_original_method = "26DD6C25DA2F390817D1ECC15F4F8536", hash_generated_method = "D42175F69880FCC541823A9FF3BED63F")
         //DSFIXME:  CODE0002: Requires DSC value to be set
         @Override
         public void onChanged() {
@@ -1102,7 +1090,7 @@ public abstract class AdapterView<T extends Adapter> extends ViewGroup {
             mOldItemCount = mItemCount;
             mItemCount = getAdapter().getCount();
             {
-                boolean var863BC7806B599EEA548F40281B88AA1A_974445497 = (AdapterView.this.getAdapter().hasStableIds() && mInstanceState != null
+                boolean var863BC7806B599EEA548F40281B88AA1A_1320033303 = (AdapterView.this.getAdapter().hasStableIds() && mInstanceState != null
                     && mOldItemCount == 0 && mItemCount > 0);
                 {
                     AdapterView.this.onRestoreInstanceState(mInstanceState);
@@ -1130,14 +1118,14 @@ public abstract class AdapterView<T extends Adapter> extends ViewGroup {
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:07.456 -0400", hash_original_method = "384362603CD3BC78F8E9701AA98D7AA3", hash_generated_method = "EAF50C30D8893C735CC43810133A8C30")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:06.145 -0400", hash_original_method = "384362603CD3BC78F8E9701AA98D7AA3", hash_generated_method = "B905800A06D9127E403A240C2A665AA3")
         //DSFIXME:  CODE0002: Requires DSC value to be set
         @Override
         public void onInvalidated() {
             //DSFIXME:  CODE0009: Possible callback target function detected
             mDataChanged = true;
             {
-                boolean var7489B38452FA33CED2860E46905E6201_1800461354 = (AdapterView.this.getAdapter().hasStableIds());
+                boolean var7489B38452FA33CED2860E46905E6201_1024294996 = (AdapterView.this.getAdapter().hasStableIds());
                 {
                     mInstanceState = AdapterView.this.onSaveInstanceState();
                 } //End block
@@ -1168,7 +1156,7 @@ public abstract class AdapterView<T extends Adapter> extends ViewGroup {
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:07.456 -0400", hash_original_method = "FEB1A2B1EE4CD2130FB08EC4E4CC489E", hash_generated_method = "A7E0B1533EBFF1B3CA93C583E781A007")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:06.145 -0400", hash_original_method = "FEB1A2B1EE4CD2130FB08EC4E4CC489E", hash_generated_method = "45FAE979B6EF5255E98919F10948FE73")
         @DSModeled(DSC.SAFE)
         public void clearSavedState() {
             mInstanceState = null;
@@ -1183,12 +1171,18 @@ public abstract class AdapterView<T extends Adapter> extends ViewGroup {
     
     private class SelectionNotifier implements Runnable {
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:07.456 -0400", hash_original_method = "D0BC3F1278F7B077D905A46BC661B1BD", hash_generated_method = "3F29CE83D87C4AF1C9E3D82524D2DFA8")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:06.146 -0400", hash_original_method = "312D8E9DCD4DDE02E517740F17432542", hash_generated_method = "312D8E9DCD4DDE02E517740F17432542")
+                public SelectionNotifier ()
+        {
+        }
+
+
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:06.146 -0400", hash_original_method = "D0BC3F1278F7B077D905A46BC661B1BD", hash_generated_method = "8893B58606098D462BC0C44FA2F859E9")
         //DSFIXME:  CODE0002: Requires DSC value to be set
         public void run() {
             {
                 {
-                    boolean var6E1AA78244E28A1874D7E5FE58FB0DD3_1689604517 = (getAdapter() != null);
+                    boolean var6E1AA78244E28A1874D7E5FE58FB0DD3_2139343085 = (getAdapter() != null);
                     {
                         post(this);
                     } //End block
@@ -1231,6 +1225,12 @@ public abstract class AdapterView<T extends Adapter> extends ViewGroup {
         void onNothingSelected(AdapterView<?> parent);
     }
     
+    public static final int ITEM_VIEW_TYPE_IGNORE = -1;
+    public static final int ITEM_VIEW_TYPE_HEADER_OR_FOOTER = -2;
+    static final int SYNC_SELECTED_POSITION = 0;
+    static final int SYNC_FIRST_POSITION = 1;
+    static final int SYNC_MAX_DURATION_MILLIS = 100;
+    public static final int INVALID_POSITION = -1;
+    public static final long INVALID_ROW_ID = Long.MIN_VALUE;
 }
-
 

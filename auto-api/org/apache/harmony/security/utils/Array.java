@@ -3,22 +3,21 @@ package org.apache.harmony.security.utils;
 // Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
+import droidsafe.runtime.*;
 
-// import Iterator to deal with enhanced for loop translation
+// needed for enhanced for control translations
 import java.util.Iterator;
-
 
 public class Array {
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:17.787 -0400", hash_original_method = "27C967B98A825ABE55DF7CE292BE2D15", hash_generated_method = "92D643DFF8307AE432533FD1FEDACBDE")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:40.360 -0400", hash_original_method = "27C967B98A825ABE55DF7CE292BE2D15", hash_generated_method = "8F496C8B0F35FBBE27EB4065BD3777B5")
     @DSModeled(DSC.SAFE)
     private Array() {
         // ---------- Original Method ----------
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:17.787 -0400", hash_original_method = "FA034E4EBC074D0021BF09B925B81D45", hash_generated_method = "378E379754A9699AAC53073DD4B4E1A8")
-    public static String getBytesAsString(byte[] data) {
+        public static String getBytesAsString(byte[] data) {
         StringBuilder result = new StringBuilder(data.length * 3);
         for (int i = 0; i < data.length; ++i) {
             result.append(Byte.toHexString(data[i], false));
@@ -28,8 +27,7 @@ public class Array {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:17.787 -0400", hash_original_method = "A9B6ED6B9ACE659EADD4FA05AC05EB96", hash_generated_method = "CDE0D79B74E968D0CC603A0C0491896B")
-    public static String toString(byte[] array, String prefix) {
+        public static String toString(byte[] array, String prefix) {
         final String[] offsetPrefix = {
                 "",
                 "000",
@@ -80,5 +78,4 @@ public class Array {
 
     
 }
-
 

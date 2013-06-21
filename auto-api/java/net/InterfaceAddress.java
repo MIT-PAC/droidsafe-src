@@ -13,8 +13,9 @@ public class InterfaceAddress {
     private InetAddress broadcastAddress;
     private short prefixLength;
     
-    @DSGenerator(tool_name="Doppelganger",tool_version="0.4",generated_on="2013-06-11 16:42:03.370 -0400",hash_original_method="D89613E4F9F0153F2E4A2BF9077CFCE5",hash_generated_method="4DF21898E7535EBCFD09B20C8B7F7448")
-InterfaceAddress(Inet4Address address, Inet4Address broadcastAddress, Inet4Address mask) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:27.919 -0400", hash_original_method = "A47E632924417AF09C6FD6A35089DC11", hash_generated_method = "ADDCE9CBBFE509605456EA3A43ACB864")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
+     InterfaceAddress(Inet4Address address, Inet4Address broadcastAddress, Inet4Address mask) {
         dsTaint.addTaint(address.dsTaint);
         dsTaint.addTaint(mask.dsTaint);
         dsTaint.addTaint(broadcastAddress.dsTaint);
@@ -26,7 +27,7 @@ InterfaceAddress(Inet4Address address, Inet4Address broadcastAddress, Inet4Addre
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 10:29:35.602 -0400", hash_original_method = "48C591F4E78B8661DAF333100DFF1834", hash_generated_method = "42494D2C87C619CD48BB4749542A6067")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:27.920 -0400", hash_original_method = "48C591F4E78B8661DAF333100DFF1834", hash_generated_method = "589E9BB6E578F2ACC735C7CC52EAB25C")
     @DSModeled(DSC.SAFE)
      InterfaceAddress(Inet6Address address, short prefixLength) {
         dsTaint.addTaint(address.dsTaint);
@@ -39,8 +40,7 @@ InterfaceAddress(Inet4Address address, Inet4Address broadcastAddress, Inet4Addre
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 10:29:35.604 -0400", hash_original_method = "5E42B457EFC972934681320D52288B28", hash_generated_method = "CC498109EDA786AF03805FD940E7B974")
-    private static short countPrefixLength(Inet4Address mask) {
+        private static short countPrefixLength(Inet4Address mask) {
         short count = 0;
         for (byte b : mask.ipaddress) {
             for (int i = 0; i < 8; ++i) {
@@ -53,13 +53,17 @@ InterfaceAddress(Inet4Address address, Inet4Address broadcastAddress, Inet4Addre
     }
 
     
-    @DSGenerator(tool_name="Doppelganger",tool_version="0.4",generated_on="2013-06-11 16:42:03.370 -0400",hash_original_method="D89613E4F9F0153F2E4A2BF9077CFCE5",hash_generated_method="4DF21898E7535EBCFD09B20C8B7F7448")
-@Override
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:27.923 -0400", hash_original_method = "C2F63B53807D79A96FCD6544A2D6E3D6", hash_generated_method = "49C6EB17E6E6C4555BFB145BF2528906")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @Override
     public boolean equals(Object obj) {
         dsTaint.addTaint(obj.dsTaint);
+        {
+            boolean var8D1D3E5F4C020ED4FA594AED365B4BD8_519727842 = (obj == this);
+        } //End collapsed parenthetic
         InterfaceAddress rhs;
         rhs = (InterfaceAddress) obj;
-        boolean varCD50253B938630268FE23FE3AAE7B570_2085933770 = (((address == null) ? rhs.address == null : address.equals(rhs.address)) &&
+        boolean varCD50253B938630268FE23FE3AAE7B570_2012956155 = (((address == null) ? rhs.address == null : address.equals(rhs.address)) &&
                 (rhs.prefixLength == prefixLength) &&
                 ((broadcastAddress == null) ? rhs.broadcastAddress == null : broadcastAddress.equals(rhs.broadcastAddress))); //DSFIXME:  CODE0008: Nested ternary operator in expression
         return dsTaint.getTaintBoolean();
@@ -77,8 +81,9 @@ InterfaceAddress(Inet4Address address, Inet4Address broadcastAddress, Inet4Addre
     }
 
     
-    @DSGenerator(tool_name="Doppelganger",tool_version="0.4",generated_on="2013-06-11 16:42:03.370 -0400",hash_original_method="D89613E4F9F0153F2E4A2BF9077CFCE5",hash_generated_method="4DF21898E7535EBCFD09B20C8B7F7448")
-@Override
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:27.924 -0400", hash_original_method = "2A9C5EEED856061F72C9734D5432AB47", hash_generated_method = "661922B2BBC500507042592471A20BB0")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @Override
     public int hashCode() {
         int hashCode;
         hashCode = 0;
@@ -94,7 +99,7 @@ InterfaceAddress(Inet4Address address, Inet4Address broadcastAddress, Inet4Addre
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 10:29:35.611 -0400", hash_original_method = "1F9308CDA843BEB3E12C5EE04150EA0F", hash_generated_method = "779DB86A8C6ECC2CF12286BD8C7929D0")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:27.924 -0400", hash_original_method = "1F9308CDA843BEB3E12C5EE04150EA0F", hash_generated_method = "03300CA289DEEFB4C8D6CB45B2A21C7E")
     @DSModeled(DSC.SAFE)
     @Override
     public String toString() {
@@ -104,7 +109,7 @@ InterfaceAddress(Inet4Address address, Inet4Address broadcastAddress, Inet4Addre
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 10:29:35.614 -0400", hash_original_method = "F0319BA9B19AC93124B00C2891893A52", hash_generated_method = "F969AA9DC137AA0CC2CBDFD0B5D5DCB7")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:27.924 -0400", hash_original_method = "F0319BA9B19AC93124B00C2891893A52", hash_generated_method = "FC5E46BCF945F23313A97C581817054D")
     @DSModeled(DSC.SAFE)
     public InetAddress getAddress() {
         return (InetAddress)dsTaint.getTaint();
@@ -113,7 +118,7 @@ InterfaceAddress(Inet4Address address, Inet4Address broadcastAddress, Inet4Addre
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 10:29:35.615 -0400", hash_original_method = "CFDC66E7DE04051E5606E381D802784E", hash_generated_method = "34D5BFFEA4B955B23AF197B720D7D315")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:27.924 -0400", hash_original_method = "CFDC66E7DE04051E5606E381D802784E", hash_generated_method = "2DA262A47C0238263378EBB7F9DF2198")
     @DSModeled(DSC.SAFE)
     public InetAddress getBroadcast() {
         return (InetAddress)dsTaint.getTaint();
@@ -122,7 +127,7 @@ InterfaceAddress(Inet4Address address, Inet4Address broadcastAddress, Inet4Addre
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 10:29:35.618 -0400", hash_original_method = "D89613E4F9F0153F2E4A2BF9077CFCE5", hash_generated_method = "4DF21898E7535EBCFD09B20C8B7F7448")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:27.924 -0400", hash_original_method = "D89613E4F9F0153F2E4A2BF9077CFCE5", hash_generated_method = "9867EF324C63BA7DDA95989AA5A8545E")
     @DSModeled(DSC.SAFE)
     public short getNetworkPrefixLength() {
         return dsTaint.getTaintShort();
@@ -132,5 +137,4 @@ InterfaceAddress(Inet4Address address, Inet4Address broadcastAddress, Inet4Addre
 
     
 }
-
 

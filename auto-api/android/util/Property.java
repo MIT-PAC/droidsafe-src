@@ -3,35 +3,32 @@ package android.util;
 // Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
+import droidsafe.runtime.*;
 
-// import Iterator to deal with enhanced for loop translation
+// needed for enhanced for control translations
 import java.util.Iterator;
 
-
 public abstract class Property<T, V> {
-    private final String mName;
-    private final Class<V> mType;
+    private String mName;
+    private Class<V> mType;
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:04.659 -0400", hash_original_method = "74C6113835E416F987A9EF157CFAA5F3", hash_generated_method = "B52BE3D809136DEAB9FA16EF54EE65D6")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:58.317 -0400", hash_original_method = "74C6113835E416F987A9EF157CFAA5F3", hash_generated_method = "A41F76336052A65F209937A950BCFD70")
     @DSModeled(DSC.SAFE)
     public Property(Class<V> type, String name) {
         dsTaint.addTaint(name);
         dsTaint.addTaint(type.dsTaint);
-        mName = name;
-        mType = type;
         // ---------- Original Method ----------
         //mName = name;
         //mType = type;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:04.659 -0400", hash_original_method = "0CA4226127E9536CCAF6270256C23524", hash_generated_method = "F2CD846E5F32F591E2832C14E1788542")
-    public static <T, V> Property<T, V> of(Class<T> hostType, Class<V> valueType, String name) {
+        public static <T, V> Property<T, V> of(Class<T> hostType, Class<V> valueType, String name) {
         return new ReflectiveProperty<T, V>(hostType, valueType, name);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:04.659 -0400", hash_original_method = "19E9B6B291778F8D7BAF6F9BA6FE7EDF", hash_generated_method = "D23D2B4F73515B66CAEDED63B92079BD")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:58.317 -0400", hash_original_method = "19E9B6B291778F8D7BAF6F9BA6FE7EDF", hash_generated_method = "B39B54BF66CD868E7DFE476A22460D6C")
     @DSModeled(DSC.SAFE)
     public boolean isReadOnly() {
         return dsTaint.getTaintBoolean();
@@ -40,12 +37,12 @@ public abstract class Property<T, V> {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:04.659 -0400", hash_original_method = "D4D656EA66F575192422159E9E949A42", hash_generated_method = "70B20FB703C24C4211D3C578D76C6EBD")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:58.317 -0400", hash_original_method = "D4D656EA66F575192422159E9E949A42", hash_generated_method = "69A7BB3638721254DDE9A7C13F18C252")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     public void set(T object, V value) {
         dsTaint.addTaint(value.dsTaint);
         dsTaint.addTaint(object.dsTaint);
-        throw new UnsupportedOperationException("Property " + getName() +" is read-only");
+        if (DroidSafeAndroidRuntime.control) throw new UnsupportedOperationException("Property " + getName() +" is read-only");
         // ---------- Original Method ----------
         //throw new UnsupportedOperationException("Property " + getName() +" is read-only");
     }
@@ -54,7 +51,7 @@ public abstract class Property<T, V> {
     public abstract V get(T object);
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:04.659 -0400", hash_original_method = "9194A7433912D38B9A3F1171AC921C56", hash_generated_method = "5B64F8F5AC7FE997D96CC003BA212E34")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:58.318 -0400", hash_original_method = "9194A7433912D38B9A3F1171AC921C56", hash_generated_method = "1698AF415E3250D582962C1A88D4A564")
     @DSModeled(DSC.SAFE)
     public String getName() {
         return dsTaint.getTaintString();
@@ -63,7 +60,7 @@ public abstract class Property<T, V> {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:04.659 -0400", hash_original_method = "016782D9983A30CCA54FD921B5345587", hash_generated_method = "77220B019D2BA38FE27146D3541AFF33")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:58.318 -0400", hash_original_method = "016782D9983A30CCA54FD921B5345587", hash_generated_method = "10A314F678A153689E23ACA394EDD4F7")
     @DSModeled(DSC.SAFE)
     public Class<V> getType() {
         return (Class<V>)dsTaint.getTaint();
@@ -73,5 +70,4 @@ public abstract class Property<T, V> {
 
     
 }
-
 

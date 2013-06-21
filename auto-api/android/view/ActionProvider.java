@@ -3,16 +3,16 @@ package android.view;
 // Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
+import droidsafe.runtime.*;
 
-// import Iterator to deal with enhanced for loop translation
+// needed for enhanced for control translations
 import java.util.Iterator;
-
 import android.content.Context;
 
 public abstract class ActionProvider {
     private SubUiVisibilityListener mSubUiVisibilityListener;
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:04.816 -0400", hash_original_method = "AD51B37569819E728EA786F52DA39151", hash_generated_method = "45026BCF8DC39012C231C357FFEFB7F7")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:58.445 -0400", hash_original_method = "AD51B37569819E728EA786F52DA39151", hash_generated_method = "6FB4C8FACFE057588253CD56B562C842")
     @DSModeled(DSC.SAFE)
     public ActionProvider(Context context) {
         dsTaint.addTaint(context.dsTaint);
@@ -23,7 +23,7 @@ public abstract class ActionProvider {
     public abstract View onCreateActionView();
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:04.816 -0400", hash_original_method = "366B075407E0A5F04994070AE9F78DED", hash_generated_method = "F430CDF3DA60102D61ED387DB2D16C0A")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:58.445 -0400", hash_original_method = "366B075407E0A5F04994070AE9F78DED", hash_generated_method = "36D15F7CEE8F4540B3DD414D6E261156")
     @DSModeled(DSC.SAFE)
     public boolean onPerformDefaultAction() {
         //DSFIXME:  CODE0009: Possible callback target function detected
@@ -33,7 +33,7 @@ public abstract class ActionProvider {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:04.816 -0400", hash_original_method = "6145E76FB29B74D78245641D6BEF294B", hash_generated_method = "1E6C2AA5B9FBCD80A65C77C0B0D662F6")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:58.445 -0400", hash_original_method = "6145E76FB29B74D78245641D6BEF294B", hash_generated_method = "20C765D3C01C10AF786EFC952B2BCCA5")
     @DSModeled(DSC.SAFE)
     public boolean hasSubMenu() {
         return dsTaint.getTaintBoolean();
@@ -42,7 +42,7 @@ public abstract class ActionProvider {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:04.816 -0400", hash_original_method = "F59137EC2C0A4379BE18A71AFD20A9D8", hash_generated_method = "0B2ECDE24BB3BC268472B315DB05DB3F")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:58.445 -0400", hash_original_method = "F59137EC2C0A4379BE18A71AFD20A9D8", hash_generated_method = "1236574EFE720C2FCE027A711EF072A0")
     @DSModeled(DSC.SAFE)
     public void onPrepareSubMenu(SubMenu subMenu) {
         //DSFIXME:  CODE0009: Possible callback target function detected
@@ -51,8 +51,8 @@ public abstract class ActionProvider {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:04.816 -0400", hash_original_method = "486EC9DD7EB4D66CD412B7154F65545B", hash_generated_method = "3A2C67DDE558C47B422E14983C2E5B10")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:58.446 -0400", hash_original_method = "486EC9DD7EB4D66CD412B7154F65545B", hash_generated_method = "8C3E52E33E539DB2C51DEE38B1D6522D")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     public void subUiVisibilityChanged(boolean isVisible) {
         dsTaint.addTaint(isVisible);
         {
@@ -65,7 +65,7 @@ public abstract class ActionProvider {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:04.816 -0400", hash_original_method = "D36B582FBFECE681E89AD6546A9F8E0B", hash_generated_method = "E1EEB31B5EC54C8A901907DBA99FF39C")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:58.446 -0400", hash_original_method = "D36B582FBFECE681E89AD6546A9F8E0B", hash_generated_method = "0DFD797833E27DD1A93C33B3A739B611")
     @DSModeled(DSC.SAFE)
     public void setSubUiVisibilityListener(SubUiVisibilityListener listener) {
         dsTaint.addTaint(listener.dsTaint);
@@ -79,5 +79,4 @@ public abstract class ActionProvider {
     }
     
 }
-
 

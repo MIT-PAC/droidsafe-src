@@ -3,10 +3,10 @@ package android.graphics;
 // Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
+import droidsafe.runtime.*;
 
-// import Iterator to deal with enhanced for loop translation
+// needed for enhanced for control translations
 import java.util.Iterator;
-
 import java.io.PrintWriter;
 import android.os.Parcel;
 import android.os.Parcelable;
@@ -18,42 +18,15 @@ public class RectF implements Parcelable {
     public float top;
     public float right;
     public float bottom;
-    public static final Parcelable.Creator<RectF> CREATOR = new Parcelable.Creator<RectF>() {        
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:01.445 -0400", hash_original_method = "A6A0C6EE524221145489C3D66C6A94BD", hash_generated_method = "456D719092899FB3D9600B55AB14E1F5")
-        @DSModeled(DSC.SAFE)
-        public RectF createFromParcel(Parcel in) {
-            dsTaint.addTaint(in.dsTaint);
-            RectF r;
-            r = new RectF();
-            r.readFromParcel(in);
-            return (RectF)dsTaint.getTaint();
-            // ---------- Original Method ----------
-            //RectF r = new RectF();
-            //r.readFromParcel(in);
-            //return r;
-        }
-
-        
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:01.446 -0400", hash_original_method = "889447B8D00C814B8B32F8DD32D6D4FC", hash_generated_method = "5C413A65AE0D45BBC98C9A3D2CAB7F6C")
-        @DSModeled(DSC.SAFE)
-        public RectF[] newArray(int size) {
-            dsTaint.addTaint(size);
-            return (RectF[])dsTaint.getTaint();
-            // ---------- Original Method ----------
-            //return new RectF[size];
-        }
-
-        
-}; //Transformed anonymous class
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:01.446 -0400", hash_original_method = "D61F570F41294C50B794115B72F287CF", hash_generated_method = "7599FE274C35911927241997C13A906A")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:47.773 -0400", hash_original_method = "D61F570F41294C50B794115B72F287CF", hash_generated_method = "FB1DA24AD52B1F8131024D12E52691C3")
     @DSModeled(DSC.SAFE)
     public RectF() {
         // ---------- Original Method ----------
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:01.446 -0400", hash_original_method = "5B128CE85C88A209036C5C9DCC51E26B", hash_generated_method = "58399C0041A06CB8BC609D4E50A48FCC")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:47.773 -0400", hash_original_method = "5B128CE85C88A209036C5C9DCC51E26B", hash_generated_method = "D17598C744E9560119ED0F255EF6BDE4")
     @DSModeled(DSC.SAFE)
     public RectF(float left, float top, float right, float bottom) {
         dsTaint.addTaint(bottom);
@@ -68,7 +41,7 @@ public class RectF implements Parcelable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:01.446 -0400", hash_original_method = "B04E1848489B49A13109B1343E9C5563", hash_generated_method = "4B22244CA2BE4A746E908F975801815B")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:47.774 -0400", hash_original_method = "B04E1848489B49A13109B1343E9C5563", hash_generated_method = "4BAB760EE26525E4185A388B8D061095")
     @DSModeled(DSC.SAFE)
     public RectF(RectF r) {
         dsTaint.addTaint(r.dsTaint);
@@ -84,7 +57,7 @@ public class RectF implements Parcelable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:01.446 -0400", hash_original_method = "7FD4415AACB98A397DC21B4FD086AC26", hash_generated_method = "B74716F7C622F9A55BA6E1BCA7E0DF99")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:47.774 -0400", hash_original_method = "7FD4415AACB98A397DC21B4FD086AC26", hash_generated_method = "05D8D81149BA84AD924024D584CAF6DE")
     @DSModeled(DSC.SAFE)
     public RectF(Rect r) {
         dsTaint.addTaint(r.dsTaint);
@@ -100,7 +73,7 @@ public class RectF implements Parcelable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:01.446 -0400", hash_original_method = "FA213D713D9B00A169FC8BD98F160501", hash_generated_method = "0F4E145C064219060A736BF2959E03A9")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:47.774 -0400", hash_original_method = "FA213D713D9B00A169FC8BD98F160501", hash_generated_method = "AFF9E0F9F539B7FCFAA49C9E7984F34F")
     @DSModeled(DSC.SAFE)
     public String toString() {
         return dsTaint.getTaintString();
@@ -110,17 +83,17 @@ public class RectF implements Parcelable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:01.446 -0400", hash_original_method = "1840D8CED4FEDA16C265C984A5256101", hash_generated_method = "950B90C98564DE62093D3EEABD10F663")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:47.774 -0400", hash_original_method = "1840D8CED4FEDA16C265C984A5256101", hash_generated_method = "3B06E494085A09A41F9EB622E61FF865")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public String toShortString() {
-        String var0EC9E8761441C3A2F419EB3055FA5FD5_1181206353 = (toShortString(new StringBuilder(32)));
+        String var0EC9E8761441C3A2F419EB3055FA5FD5_262772793 = (toShortString(new StringBuilder(32)));
         return dsTaint.getTaintString();
         // ---------- Original Method ----------
         //return toShortString(new StringBuilder(32));
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:01.446 -0400", hash_original_method = "2BF61B85E091A9DA2C18EB7FC26222B9", hash_generated_method = "710922910501CB28E51C674256EF410A")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:47.775 -0400", hash_original_method = "2BF61B85E091A9DA2C18EB7FC26222B9", hash_generated_method = "6C880AA9462C57FD535F1D0A0F7E515D")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public String toShortString(StringBuilder sb) {
         dsTaint.addTaint(sb.dsTaint);
@@ -134,7 +107,7 @@ public class RectF implements Parcelable {
         sb.append(',');
         sb.append(bottom);
         sb.append(']');
-        String var806458D832AB974D230FEE4CBBDBD390_254586247 = (sb.toString());
+        String var806458D832AB974D230FEE4CBBDBD390_380519307 = (sb.toString());
         return dsTaint.getTaintString();
         // ---------- Original Method ----------
         //sb.setLength(0);
@@ -151,8 +124,8 @@ public class RectF implements Parcelable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:01.447 -0400", hash_original_method = "78960F3D6EA700D282D0F0C0E94AA84C", hash_generated_method = "03BD660F1DDB3828E3A5F49E9DFA0019")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:47.775 -0400", hash_original_method = "78960F3D6EA700D282D0F0C0E94AA84C", hash_generated_method = "CA6976325644E6F9F00A363C8E99CBCB")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     public void printShortString(PrintWriter pw) {
         dsTaint.addTaint(pw.dsTaint);
         pw.print('[');
@@ -177,7 +150,7 @@ public class RectF implements Parcelable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:01.447 -0400", hash_original_method = "D667CC92208C0C47552A2E0207FE57FF", hash_generated_method = "08F62DE2D06DB3B638122CED65B8703F")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:47.775 -0400", hash_original_method = "D667CC92208C0C47552A2E0207FE57FF", hash_generated_method = "C0210E5C9447513E4FC4247231DA00F2")
     @DSModeled(DSC.SAFE)
     public final boolean isEmpty() {
         return dsTaint.getTaintBoolean();
@@ -186,7 +159,7 @@ public class RectF implements Parcelable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:01.447 -0400", hash_original_method = "83288196EAFBF73D3FE580ACE3981D30", hash_generated_method = "72BF7153BC2574DB295E1974E3763D3E")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:47.775 -0400", hash_original_method = "83288196EAFBF73D3FE580ACE3981D30", hash_generated_method = "F2C01578B4236CFD8CC224D19E601B94")
     @DSModeled(DSC.SAFE)
     public final float width() {
         return dsTaint.getTaintFloat();
@@ -195,7 +168,7 @@ public class RectF implements Parcelable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:01.447 -0400", hash_original_method = "1451CC0FB907B74D5032AD3E1AFBE720", hash_generated_method = "99693050FF7C18D4EAE4A13AA93E580D")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:47.776 -0400", hash_original_method = "1451CC0FB907B74D5032AD3E1AFBE720", hash_generated_method = "90A241DC389CAA0909D88A187518312F")
     @DSModeled(DSC.SAFE)
     public final float height() {
         return dsTaint.getTaintFloat();
@@ -204,7 +177,7 @@ public class RectF implements Parcelable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:01.447 -0400", hash_original_method = "7ED8FBEF71AFB3C2D5FC3097D0B688F2", hash_generated_method = "1DCBA0995B7ECB874E1BE9007BB5BA89")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:47.776 -0400", hash_original_method = "7ED8FBEF71AFB3C2D5FC3097D0B688F2", hash_generated_method = "EC92A6849747288329837749CF2F5D5B")
     @DSModeled(DSC.SAFE)
     public final float centerX() {
         return dsTaint.getTaintFloat();
@@ -213,7 +186,7 @@ public class RectF implements Parcelable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:01.447 -0400", hash_original_method = "5D537442DB3A76F3BCD6B0013959D546", hash_generated_method = "562050A035ADC9B341DE52F701762A78")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:47.776 -0400", hash_original_method = "5D537442DB3A76F3BCD6B0013959D546", hash_generated_method = "0A6190E9AEBC51B842AFF21742C5D962")
     @DSModeled(DSC.SAFE)
     public final float centerY() {
         return dsTaint.getTaintFloat();
@@ -222,7 +195,7 @@ public class RectF implements Parcelable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:01.447 -0400", hash_original_method = "86DA251BA391C7524C2010551ABD907E", hash_generated_method = "B326DAE3A43903D892BEA87C06A32045")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:47.776 -0400", hash_original_method = "86DA251BA391C7524C2010551ABD907E", hash_generated_method = "A534843FC0914524CAF333DFA3D47813")
     @DSModeled(DSC.SAFE)
     public void setEmpty() {
         left = right = top = bottom = 0;
@@ -231,7 +204,7 @@ public class RectF implements Parcelable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:01.447 -0400", hash_original_method = "C9CE428718CAD939ED870CC4D06675F8", hash_generated_method = "6CCDCDA9D57E636A6A62D16AE1E44C9B")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:47.777 -0400", hash_original_method = "C9CE428718CAD939ED870CC4D06675F8", hash_generated_method = "346813D48D569F4823971C0842B56923")
     @DSModeled(DSC.SAFE)
     public void set(float left, float top, float right, float bottom) {
         dsTaint.addTaint(bottom);
@@ -246,7 +219,7 @@ public class RectF implements Parcelable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:01.448 -0400", hash_original_method = "A444578B9144FD8B7BC0F962002ECA0D", hash_generated_method = "CDF609CA03418103A2FFCC2593453A82")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:47.777 -0400", hash_original_method = "A444578B9144FD8B7BC0F962002ECA0D", hash_generated_method = "76D0AC940C6AF1636C475644AC477FB3")
     @DSModeled(DSC.SAFE)
     public void set(RectF src) {
         dsTaint.addTaint(src.dsTaint);
@@ -262,7 +235,7 @@ public class RectF implements Parcelable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:01.448 -0400", hash_original_method = "91C11C9F320DC60DE37EBB0C50768E5F", hash_generated_method = "82CB74A07F3BF76818BB61D99F6B9E8C")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:47.777 -0400", hash_original_method = "91C11C9F320DC60DE37EBB0C50768E5F", hash_generated_method = "2161481957620216A7C02A72AB36A466")
     @DSModeled(DSC.SAFE)
     public void set(Rect src) {
         dsTaint.addTaint(src.dsTaint);
@@ -278,7 +251,7 @@ public class RectF implements Parcelable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:01.448 -0400", hash_original_method = "987CF6DAC95BF2616996F2B7580ECF09", hash_generated_method = "6AC972DC46D8E37497615C5357E964F7")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:47.777 -0400", hash_original_method = "987CF6DAC95BF2616996F2B7580ECF09", hash_generated_method = "DA196AFE3D90EB9443FCDFC4B90009B2")
     @DSModeled(DSC.SAFE)
     public void offset(float dx, float dy) {
         dsTaint.addTaint(dx);
@@ -291,7 +264,7 @@ public class RectF implements Parcelable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:01.448 -0400", hash_original_method = "17E8F6A0DA6BEF949708E45EF28FBDEC", hash_generated_method = "1C2C9A2392AB43F00CD2D3BFB95EF71A")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:47.778 -0400", hash_original_method = "17E8F6A0DA6BEF949708E45EF28FBDEC", hash_generated_method = "59F14F079832A0EB4A2756533F3D4DC0")
     @DSModeled(DSC.SAFE)
     public void offsetTo(float newLeft, float newTop) {
         dsTaint.addTaint(newLeft);
@@ -306,7 +279,7 @@ public class RectF implements Parcelable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:01.448 -0400", hash_original_method = "4ED8FEC7EC4817417CFF539CEB8CD3D5", hash_generated_method = "68BF072773C575A15F6D58C8F4798EEF")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:47.778 -0400", hash_original_method = "4ED8FEC7EC4817417CFF539CEB8CD3D5", hash_generated_method = "9B043959AAAB9EE1BB211D6E3DBB3A93")
     @DSModeled(DSC.SAFE)
     public void inset(float dx, float dy) {
         dsTaint.addTaint(dx);
@@ -319,7 +292,7 @@ public class RectF implements Parcelable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:01.448 -0400", hash_original_method = "7C65F21BA78E9C886CB99F3A821D7FC2", hash_generated_method = "86E8A77E0E7716FE821B02E33DC0B42B")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:47.778 -0400", hash_original_method = "7C65F21BA78E9C886CB99F3A821D7FC2", hash_generated_method = "A6F8E82D8BB3D9669EDFD2082E21D2A0")
     @DSModeled(DSC.SAFE)
     public boolean contains(float x, float y) {
         dsTaint.addTaint(y);
@@ -331,7 +304,7 @@ public class RectF implements Parcelable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:01.448 -0400", hash_original_method = "5736B1A89F8587C3C51B72E5484012E7", hash_generated_method = "9BDCBC1B1B52E1B04A4D6A5814EE2300")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:47.778 -0400", hash_original_method = "5736B1A89F8587C3C51B72E5484012E7", hash_generated_method = "03E00C6365F64A84660132F69D910A7E")
     @DSModeled(DSC.SAFE)
     public boolean contains(float left, float top, float right, float bottom) {
         dsTaint.addTaint(bottom);
@@ -346,7 +319,7 @@ public class RectF implements Parcelable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:01.449 -0400", hash_original_method = "89862D8BCB63DE9E9B3F12DF7005EDAF", hash_generated_method = "481743E92B91E23430D0A61061F1A616")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:47.779 -0400", hash_original_method = "89862D8BCB63DE9E9B3F12DF7005EDAF", hash_generated_method = "1D44BAE796D25C897A140D6BF842EEA4")
     @DSModeled(DSC.SAFE)
     public boolean contains(RectF r) {
         dsTaint.addTaint(r.dsTaint);
@@ -358,7 +331,7 @@ public class RectF implements Parcelable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:01.449 -0400", hash_original_method = "B665C4D2FA87DEF248CEB5906A538992", hash_generated_method = "70CF260FF232EEA59A4BEAA93BE4C151")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:47.779 -0400", hash_original_method = "B665C4D2FA87DEF248CEB5906A538992", hash_generated_method = "2DE43EF5FAB8691BA0B6BD877F4B1222")
     @DSModeled(DSC.SAFE)
     public boolean intersect(float left, float top, float right, float bottom) {
         dsTaint.addTaint(bottom);
@@ -387,18 +360,18 @@ public class RectF implements Parcelable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:01.449 -0400", hash_original_method = "F1511D7F30AFB03A76430BC5FB3647DC", hash_generated_method = "0C5E754794F603D74EDE6976E956D26E")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:47.779 -0400", hash_original_method = "F1511D7F30AFB03A76430BC5FB3647DC", hash_generated_method = "02836E740B3FAB7F00EBFDF2110A26A8")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public boolean intersect(RectF r) {
         dsTaint.addTaint(r.dsTaint);
-        boolean var774B7820222CF99C9D397FA2889989AA_1236631277 = (intersect(r.left, r.top, r.right, r.bottom));
+        boolean var774B7820222CF99C9D397FA2889989AA_1437483626 = (intersect(r.left, r.top, r.right, r.bottom));
         return dsTaint.getTaintBoolean();
         // ---------- Original Method ----------
         //return intersect(r.left, r.top, r.right, r.bottom);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:01.449 -0400", hash_original_method = "798EF6BEBDE27EE5C0F4552CB6C0BADF", hash_generated_method = "6DE5D26852CF4BE23553F64B41CFD248")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:47.780 -0400", hash_original_method = "798EF6BEBDE27EE5C0F4552CB6C0BADF", hash_generated_method = "6B32E21DA1DA4C4D67855FA765530A64")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public boolean setIntersect(RectF a, RectF b) {
         dsTaint.addTaint(b.dsTaint);
@@ -423,7 +396,7 @@ public class RectF implements Parcelable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:01.449 -0400", hash_original_method = "7636A1ABF3E5D698C7B1F582C19267F0", hash_generated_method = "11EE0CBF69D933F81C6D00B3D09FFCB6")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:47.780 -0400", hash_original_method = "7636A1ABF3E5D698C7B1F582C19267F0", hash_generated_method = "A201FA43D96778930B825CC62290A7AC")
     @DSModeled(DSC.SAFE)
     public boolean intersects(float left, float top, float right,
                               float bottom) {
@@ -438,14 +411,13 @@ public class RectF implements Parcelable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:01.449 -0400", hash_original_method = "1FAEC0442F27706D6D5F3E840B971AB4", hash_generated_method = "B7ECD36105B38ABAEED5381ABDCCD9B3")
-    public static boolean intersects(RectF a, RectF b) {
+        public static boolean intersects(RectF a, RectF b) {
         return a.left < b.right && b.left < a.right
                 && a.top < b.bottom && b.top < a.bottom;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:01.450 -0400", hash_original_method = "1D9E886326ACAAED42A7320F81B83BDE", hash_generated_method = "0D76E976527FE461E386ABBD045E6E46")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:47.780 -0400", hash_original_method = "1D9E886326ACAAED42A7320F81B83BDE", hash_generated_method = "1A583777B3B6DAFB52FC1E894963B2AD")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public void round(Rect dst) {
         dsTaint.addTaint(dst.dsTaint);
@@ -457,7 +429,7 @@ public class RectF implements Parcelable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:01.450 -0400", hash_original_method = "5165AD4866DE272C811B07E7C1D571CC", hash_generated_method = "2C8C9429C65DECADAC0EEAD9494BC8A4")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:47.781 -0400", hash_original_method = "5165AD4866DE272C811B07E7C1D571CC", hash_generated_method = "B72198A229D53095C4CB515E21781D43")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public void roundOut(Rect dst) {
         dsTaint.addTaint(dst.dsTaint);
@@ -469,7 +441,7 @@ public class RectF implements Parcelable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:01.450 -0400", hash_original_method = "4ED17A6A0BD221C6F562FF187EDE0EC1", hash_generated_method = "753D1BC259635EE0769E6A25BDC616B3")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:47.781 -0400", hash_original_method = "4ED17A6A0BD221C6F562FF187EDE0EC1", hash_generated_method = "D9EF88CD98A6FD7E7EAE84C747499E92")
     @DSModeled(DSC.SAFE)
     public void union(float left, float top, float right, float bottom) {
         dsTaint.addTaint(bottom);
@@ -497,8 +469,8 @@ public class RectF implements Parcelable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:01.450 -0400", hash_original_method = "7333A4F184A018E8DCD665D788936108", hash_generated_method = "912ADB9E902D69F1D167ABA95524DAEB")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:47.781 -0400", hash_original_method = "7333A4F184A018E8DCD665D788936108", hash_generated_method = "04335B738AFA77C1E2139E7DA117D8F8")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     public void union(RectF r) {
         dsTaint.addTaint(r.dsTaint);
         union(r.left, r.top, r.right, r.bottom);
@@ -507,7 +479,7 @@ public class RectF implements Parcelable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:01.450 -0400", hash_original_method = "5491E96A191FF9AA58559CF28A27B675", hash_generated_method = "F14D52C5663F9A241832E5B8DD2194D8")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:47.782 -0400", hash_original_method = "5491E96A191FF9AA58559CF28A27B675", hash_generated_method = "F788648B872BC8C804D33978EED63C78")
     @DSModeled(DSC.SAFE)
     public void union(float x, float y) {
         dsTaint.addTaint(y);
@@ -526,7 +498,7 @@ public class RectF implements Parcelable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:01.450 -0400", hash_original_method = "5E187609DBD260B5F8E2F7AA44836C46", hash_generated_method = "F703DF5CC721C1AA528258402C2441CD")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:47.782 -0400", hash_original_method = "5E187609DBD260B5F8E2F7AA44836C46", hash_generated_method = "442C16DA530705E8E4D036A737CEFC18")
     @DSModeled(DSC.SAFE)
     public void sort() {
         {
@@ -555,7 +527,7 @@ public class RectF implements Parcelable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:01.450 -0400", hash_original_method = "00F8174F9E89D0C972FA6D3F19742382", hash_generated_method = "7491C6FB42F78871A3F8EA322AF6B2FC")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:47.782 -0400", hash_original_method = "00F8174F9E89D0C972FA6D3F19742382", hash_generated_method = "ED77793910767EAAB4C12F70F75B9095")
     @DSModeled(DSC.SAFE)
     public int describeContents() {
         return dsTaint.getTaintInt();
@@ -564,8 +536,8 @@ public class RectF implements Parcelable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:01.451 -0400", hash_original_method = "5C789B83F9658DFF3AD82091DAFFDD49", hash_generated_method = "920CE1DB4F02C70ADD40C9AD58BAD0AD")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:47.782 -0400", hash_original_method = "5C789B83F9658DFF3AD82091DAFFDD49", hash_generated_method = "3205EF0A85BD5A8E94793C68BD8EA9FE")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     public void writeToParcel(Parcel out, int flags) {
         dsTaint.addTaint(flags);
         dsTaint.addTaint(out.dsTaint);
@@ -581,7 +553,7 @@ public class RectF implements Parcelable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:01.451 -0400", hash_original_method = "BACCEAD3B6EC38250A4D00D9AA0D9F78", hash_generated_method = "E06C63B986CB8B1715B8570B6E1D6909")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:47.783 -0400", hash_original_method = "BACCEAD3B6EC38250A4D00D9AA0D9F78", hash_generated_method = "91CC9D1A02C5CDDAE40C781BC73E1624")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public void readFromParcel(Parcel in) {
         dsTaint.addTaint(in.dsTaint);
@@ -597,6 +569,33 @@ public class RectF implements Parcelable {
     }
 
     
-}
+    public static final Parcelable.Creator<RectF> CREATOR = new Parcelable.Creator<RectF>() {        
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:47.783 -0400", hash_original_method = "A6A0C6EE524221145489C3D66C6A94BD", hash_generated_method = "3EF6C5F8296473AF096EA669499BF98C")
+        //DSFIXME:  CODE0002: Requires DSC value to be set
+        public RectF createFromParcel(Parcel in) {
+            dsTaint.addTaint(in.dsTaint);
+            RectF r;
+            r = new RectF();
+            r.readFromParcel(in);
+            return (RectF)dsTaint.getTaint();
+            // ---------- Original Method ----------
+            //RectF r = new RectF();
+            //r.readFromParcel(in);
+            //return r;
+        }
 
+        
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:47.783 -0400", hash_original_method = "889447B8D00C814B8B32F8DD32D6D4FC", hash_generated_method = "71B8DCBF636EF8934D1E98B536BA123C")
+        //DSFIXME:  CODE0002: Requires DSC value to be set
+        public RectF[] newArray(int size) {
+            dsTaint.addTaint(size);
+            RectF[] varBC89C2709041F51370842C26F8F201BB_801623266 = (new RectF[size]);
+            return (RectF[])dsTaint.getTaint();
+            // ---------- Original Method ----------
+            //return new RectF[size];
+        }
+
+        
+}; //Transformed anonymous class
+}
 

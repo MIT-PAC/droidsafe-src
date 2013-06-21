@@ -3,49 +3,26 @@ package android.content.pm;
 // Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
+import droidsafe.runtime.*;
 
-// import Iterator to deal with enhanced for loop translation
+// needed for enhanced for control translations
 import java.util.Iterator;
-
 import android.os.Parcel;
 import android.os.Parcelable;
 import android.util.Printer;
 
 public class ServiceInfo extends ComponentInfo implements Parcelable {
     public String permission;
-    public static final int FLAG_STOP_WITH_TASK = 0x0001;
     public int flags;
-    public static final Creator<ServiceInfo> CREATOR = new Creator<ServiceInfo>() {        
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:00.172 -0400", hash_original_method = "8978DD753FD4CAD4F30EAB16B876BC2A", hash_generated_method = "413308CCA47B0DE70FA2F411F69EC102")
-        @DSModeled(DSC.SAFE)
-        public ServiceInfo createFromParcel(Parcel source) {
-            dsTaint.addTaint(source.dsTaint);
-            return (ServiceInfo)dsTaint.getTaint();
-            // ---------- Original Method ----------
-            //return new ServiceInfo(source);
-        }
-
-        
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:00.172 -0400", hash_original_method = "A983BB1A64296EC543A70CA925936DDB", hash_generated_method = "AD1DE88103F6FD7F48BA2CDFD4D96D1D")
-        @DSModeled(DSC.SAFE)
-        public ServiceInfo[] newArray(int size) {
-            dsTaint.addTaint(size);
-            return (ServiceInfo[])dsTaint.getTaint();
-            // ---------- Original Method ----------
-            //return new ServiceInfo[size];
-        }
-
-        
-}; //Transformed anonymous class
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:00.173 -0400", hash_original_method = "F8437ACFEC0EA098621A29EA36F6AD07", hash_generated_method = "D89098FEE90079F93DE89D569D08986C")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:44.963 -0400", hash_original_method = "F8437ACFEC0EA098621A29EA36F6AD07", hash_generated_method = "EDCE9066F17AD3973393DCDC0BE762D3")
     @DSModeled(DSC.SAFE)
     public ServiceInfo() {
         // ---------- Original Method ----------
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:00.173 -0400", hash_original_method = "FE9252C5AEDF7EDCC5A8663E23AE8AA0", hash_generated_method = "FA5750A4988C6AA9A381FBDEF57BAEC2")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:44.963 -0400", hash_original_method = "FE9252C5AEDF7EDCC5A8663E23AE8AA0", hash_generated_method = "13A36E92E533E40609F860D5E0F6E63C")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public ServiceInfo(ServiceInfo orig) {
         super(orig);
@@ -58,7 +35,7 @@ public class ServiceInfo extends ComponentInfo implements Parcelable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:00.173 -0400", hash_original_method = "03E698CAC1E21FAA46C8FF1C3071D430", hash_generated_method = "25FAB989EB43AD091CAA7400302E02EE")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:44.963 -0400", hash_original_method = "03E698CAC1E21FAA46C8FF1C3071D430", hash_generated_method = "71E0DB250691AD7C7AD414FCE0A4EA14")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     private ServiceInfo(Parcel source) {
         super(source);
@@ -71,7 +48,7 @@ public class ServiceInfo extends ComponentInfo implements Parcelable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:00.173 -0400", hash_original_method = "DA4A80B9AC3442B8DFBCD8315889AD94", hash_generated_method = "8E2916DB3305A810B39880F6B39AA4DA")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:44.964 -0400", hash_original_method = "DA4A80B9AC3442B8DFBCD8315889AD94", hash_generated_method = "0A7AC559E0709CABFA6509ACA1D51AAF")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public void dump(Printer pw, String prefix) {
         dsTaint.addTaint(prefix);
@@ -86,10 +63,10 @@ public class ServiceInfo extends ComponentInfo implements Parcelable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:00.173 -0400", hash_original_method = "59146AE4B3130A7BADEE9DF4447D4A3B", hash_generated_method = "D2A8775586614C045729F3609889100B")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:44.964 -0400", hash_original_method = "59146AE4B3130A7BADEE9DF4447D4A3B", hash_generated_method = "8F8AC2560966FC37E517B34E73E36E3F")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public String toString() {
-        String var9DC1DFC9378ADB3ABB2A214490D7C96A_507177302 = ("ServiceInfo{"
+        String var9DC1DFC9378ADB3ABB2A214490D7C96A_1319833587 = ("ServiceInfo{"
             + Integer.toHexString(System.identityHashCode(this))
             + " " + name + "}");
         return dsTaint.getTaintString();
@@ -100,7 +77,7 @@ public class ServiceInfo extends ComponentInfo implements Parcelable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:00.174 -0400", hash_original_method = "00F8174F9E89D0C972FA6D3F19742382", hash_generated_method = "7491C6FB42F78871A3F8EA322AF6B2FC")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:44.964 -0400", hash_original_method = "00F8174F9E89D0C972FA6D3F19742382", hash_generated_method = "ED77793910767EAAB4C12F70F75B9095")
     @DSModeled(DSC.SAFE)
     public int describeContents() {
         return dsTaint.getTaintInt();
@@ -109,8 +86,8 @@ public class ServiceInfo extends ComponentInfo implements Parcelable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:00.174 -0400", hash_original_method = "0D65CECC76E553C003E9EF65F2ADA018", hash_generated_method = "50EBE759D9FA94B96A4E0A0AA9867201")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:44.964 -0400", hash_original_method = "0D65CECC76E553C003E9EF65F2ADA018", hash_generated_method = "428438BF9E5CDA466DE3364DA35275B5")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     public void writeToParcel(Parcel dest, int parcelableFlags) {
         dsTaint.addTaint(parcelableFlags);
         dsTaint.addTaint(dest.dsTaint);
@@ -124,6 +101,30 @@ public class ServiceInfo extends ComponentInfo implements Parcelable {
     }
 
     
-}
+    public static final int FLAG_STOP_WITH_TASK = 0x0001;
+    public static final Creator<ServiceInfo> CREATOR = new Creator<ServiceInfo>() {        
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:44.965 -0400", hash_original_method = "8978DD753FD4CAD4F30EAB16B876BC2A", hash_generated_method = "F840F58E0A4BE1860DA430B5D8B1A783")
+        //DSFIXME:  CODE0002: Requires DSC value to be set
+        public ServiceInfo createFromParcel(Parcel source) {
+            dsTaint.addTaint(source.dsTaint);
+            ServiceInfo varC5AFB410BB859DE83F1BC1E85587AF3C_1910241098 = (new ServiceInfo(source));
+            return (ServiceInfo)dsTaint.getTaint();
+            // ---------- Original Method ----------
+            //return new ServiceInfo(source);
+        }
 
+        
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:44.965 -0400", hash_original_method = "A983BB1A64296EC543A70CA925936DDB", hash_generated_method = "68BA80B9CC8DB17E010BC91823AC0958")
+        //DSFIXME:  CODE0002: Requires DSC value to be set
+        public ServiceInfo[] newArray(int size) {
+            dsTaint.addTaint(size);
+            ServiceInfo[] var4615BC9904FF862CF4331AC15040243E_1314621157 = (new ServiceInfo[size]);
+            return (ServiceInfo[])dsTaint.getTaint();
+            // ---------- Original Method ----------
+            //return new ServiceInfo[size];
+        }
+
+        
+}; //Transformed anonymous class
+}
 

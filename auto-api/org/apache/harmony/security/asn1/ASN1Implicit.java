@@ -2,36 +2,31 @@ package org.apache.harmony.security.asn1;
 
 // Droidsafe Imports
 import droidsafe.helpers.*;
-import droidsafe.runtime.DroidSafeAndroidRuntime;
 import droidsafe.annotations.*;
+import droidsafe.runtime.*;
 
-// import Iterator to deal with enhanced for loop translation
+// needed for enhanced for control translations
 import java.util.Iterator;
-
 import java.io.IOException;
 
 public final class ASN1Implicit extends ASN1Type {
-    private static final int TAGGING_PRIMITIVE = 0;
-    private static final int TAGGING_CONSTRUCTED = 1;
-    private static final int TAGGING_STRING = 2;
-    private final ASN1Type type;
+    private ASN1Type type;
     private int taggingType;
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:17.636 -0400", hash_original_method = "885EAD88CE0EDAA6AE8B231FCD302B70", hash_generated_method = "A45C3A512B30C30452FE31A64A3A9BA7")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:39.969 -0400", hash_original_method = "885EAD88CE0EDAA6AE8B231FCD302B70", hash_generated_method = "E5FFBD89E626BCC3D1AA11D96079EA3C")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public ASN1Implicit(int tagNumber, ASN1Type type) {
         super(CLASS_CONTEXTSPECIFIC, tagNumber);
         dsTaint.addTaint(tagNumber);
         dsTaint.addTaint(type.dsTaint);
-        this.type = type;
         {
-        	if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("Implicit tagging can not be used for ASN.1 ANY or CHOICE type");
+            if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("Implicit tagging can not be used for ASN.1 ANY or CHOICE type");
         } //End block
         {
-            boolean var7D16F4D21FCDA7B88995592766A30F11_1054940596 = (type.checkTag(type.id));
+            boolean var7D16F4D21FCDA7B88995592766A30F11_1382721343 = (type.checkTag(type.id));
             {
                 {
-                    boolean var198894DB5720C5DF4565C2CB8C2924C0_1185645351 = (type.checkTag(type.constrId));
+                    boolean var198894DB5720C5DF4565C2CB8C2924C0_417624406 = (type.checkTag(type.constrId));
                     {
                         taggingType = TAGGING_STRING;
                     } //End block
@@ -61,7 +56,7 @@ public final class ASN1Implicit extends ASN1Type {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:17.636 -0400", hash_original_method = "D92B272BF30997E81DA1469852FE3C4F", hash_generated_method = "1E4AECED97C6C0AF239541339155B5D5")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:39.970 -0400", hash_original_method = "D92B272BF30997E81DA1469852FE3C4F", hash_generated_method = "93006607416BF43D83741F941BF10D08")
     @DSModeled(DSC.SAFE)
     public final boolean checkTag(int identifier) {
         dsTaint.addTaint(identifier);
@@ -78,14 +73,14 @@ public final class ASN1Implicit extends ASN1Type {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:17.637 -0400", hash_original_method = "7AB778F30F3F4E1DD4EDD8138709F383", hash_generated_method = "C4A26B5EE4834EA21303993D6AF24CEA")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:39.970 -0400", hash_original_method = "7AB778F30F3F4E1DD4EDD8138709F383", hash_generated_method = "56A0EED7FC856A8ECA0FFD60CAEF7CB2")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public Object decode(BerInputStream in) throws IOException {
         dsTaint.addTaint(in.dsTaint);
         {
-            boolean var766EA6E7D31783D8197180D70708A15A_1747435192 = (!checkTag(in.tag));
+            boolean var766EA6E7D31783D8197180D70708A15A_941971655 = (!checkTag(in.tag));
             {
-            	if (DroidSafeAndroidRuntime.control) throw new ASN1Exception("ASN.1 implicitly tagged type expected at " +
+                if (DroidSafeAndroidRuntime.control) throw new ASN1Exception("ASN.1 implicitly tagged type expected at " +
                     "[" + in.tagOffset + "]. Expected tag: " + Integer.toHexString(id) + ", " +
                     "but got " + Integer.toHexString(in.tag));
             } //End block
@@ -97,7 +92,7 @@ public final class ASN1Implicit extends ASN1Type {
             in.tag = type.constrId;
         } //End block
         in.content = type.decode(in);
-        Object var883E4A51D9FE1FCA5622395E00C94DE9_1139964896 = (getDecodedObject(in));
+        Object var883E4A51D9FE1FCA5622395E00C94DE9_932625733 = (getDecodedObject(in));
         return (Object)dsTaint.getTaint();
         // ---------- Original Method ----------
         //if (!checkTag(in.tag)) {
@@ -118,8 +113,8 @@ public final class ASN1Implicit extends ASN1Type {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:17.637 -0400", hash_original_method = "5EC2F9C60EB654B91B6E1D4F997368F9", hash_generated_method = "F146BD007AB8080BB49BD9A3A144898C")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:39.970 -0400", hash_original_method = "5EC2F9C60EB654B91B6E1D4F997368F9", hash_generated_method = "FADC12A7FCD6F7C0CB82E483A4804F50")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     public void encodeASN(BerOutputStream out) {
         dsTaint.addTaint(out.dsTaint);
         {
@@ -139,8 +134,8 @@ public final class ASN1Implicit extends ASN1Type {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:17.637 -0400", hash_original_method = "774C00840199094903FD771E0305B5DA", hash_generated_method = "B810D6790A1B5575A976FA0595AE5D34")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:39.970 -0400", hash_original_method = "774C00840199094903FD771E0305B5DA", hash_generated_method = "14C788C79BC139879EF406166B7164F7")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     public void encodeContent(BerOutputStream out) {
         dsTaint.addTaint(out.dsTaint);
         type.encodeContent(out);
@@ -149,8 +144,8 @@ public final class ASN1Implicit extends ASN1Type {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:17.637 -0400", hash_original_method = "142D84AECEAB554A6A5BF2DED12EF71F", hash_generated_method = "28B38CE23984A2CF3EDF740F85F51CEF")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:39.971 -0400", hash_original_method = "142D84AECEAB554A6A5BF2DED12EF71F", hash_generated_method = "7B62B916A39DA9CF55A566FC7EE90EA6")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     public void setEncodingContent(BerOutputStream out) {
         dsTaint.addTaint(out.dsTaint);
         type.setEncodingContent(out);
@@ -159,6 +154,8 @@ public final class ASN1Implicit extends ASN1Type {
     }
 
     
+    private static final int TAGGING_PRIMITIVE = 0;
+    private static final int TAGGING_CONSTRUCTED = 1;
+    private static final int TAGGING_STRING = 2;
 }
-
 

@@ -3,10 +3,10 @@ package android.content.pm;
 // Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
+import droidsafe.runtime.*;
 
-// import Iterator to deal with enhanced for loop translation
+// needed for enhanced for control translations
 import java.util.Iterator;
-
 
 public interface IPackageManager extends android.os.IInterface
 {
@@ -3070,4 +3070,3 @@ public void verifyPendingInstall(int id, int verificationCode) throws android.os
 public android.content.pm.VerifierDeviceIdentity getVerifierDeviceIdentity() throws android.os.RemoteException;
 public boolean isFirstBoot() throws android.os.RemoteException;
 }
-

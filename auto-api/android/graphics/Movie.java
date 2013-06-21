@@ -3,22 +3,22 @@ package android.graphics;
 // Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
+import droidsafe.runtime.*;
 
-// import Iterator to deal with enhanced for loop translation
+// needed for enhanced for control translations
 import java.util.Iterator;
-
 import java.io.InputStream;
 import java.io.FileInputStream;
 
 public class Movie {
-    private final int mNativeMovie;
+    private int mNativeMovie;
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:01.224 -0400", hash_original_method = "E5F06651A3B56F187AA9A006C8924984", hash_generated_method = "65795E112E43353A8D0ACB1E3D621B78")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:47.348 -0400", hash_original_method = "E5F06651A3B56F187AA9A006C8924984", hash_generated_method = "D311BFF91539F33A89E447D48E9DDB0A")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     private Movie(int nativeMovie) {
         dsTaint.addTaint(nativeMovie);
         {
-            throw new RuntimeException("native movie creation failed");
+            if (DroidSafeAndroidRuntime.control) throw new RuntimeException("native movie creation failed");
         } //End block
         // ---------- Original Method ----------
         //if (nativeMovie == 0) {
@@ -28,43 +28,43 @@ public class Movie {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:01.225 -0400", hash_original_method = "84910C7B35CA680EF9DD8AE9E26E21F9", hash_generated_method = "768F3541DC59F715B33374F8861B3ED0")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:47.349 -0400", hash_original_method = "84910C7B35CA680EF9DD8AE9E26E21F9", hash_generated_method = "C11E4CD3ADBB0894E9960D2F29E9B9CA")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public int width() {
-    	return dsTaint.getTaintInt();
+        return dsTaint.getTaintInt();
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:01.225 -0400", hash_original_method = "C25EEDFD8D4C31BF8873912BD17554C7", hash_generated_method = "4C69BEEB27C663212B753607CEF6BD76")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:47.349 -0400", hash_original_method = "C25EEDFD8D4C31BF8873912BD17554C7", hash_generated_method = "0F4898D25A37D31BDAC89B0BE8190055")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public int height() {
-    	return dsTaint.getTaintInt();
+        return dsTaint.getTaintInt();
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:01.225 -0400", hash_original_method = "9A759A0D04375324D8F6D99375FF174F", hash_generated_method = "B5E14EAC8468AB1C1A41FC932088673B")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:47.349 -0400", hash_original_method = "9A759A0D04375324D8F6D99375FF174F", hash_generated_method = "85D01AAC2BE5DE26630731B8B3847BEC")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public boolean isOpaque() {
-    	return dsTaint.getTaintBoolean();
+        return dsTaint.getTaintBoolean();
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:01.225 -0400", hash_original_method = "6FBC32EA70076DE70D25629F42C7072B", hash_generated_method = "B94DF9F368000C94F9C02BB595DE9019")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:47.349 -0400", hash_original_method = "6FBC32EA70076DE70D25629F42C7072B", hash_generated_method = "17ED92EC86503B7603D3B45953D25045")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public int duration() {
-    	return dsTaint.getTaintInt();
+        return dsTaint.getTaintInt();
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:01.225 -0400", hash_original_method = "8413562E7FCFCF0CDE16790D77663C90", hash_generated_method = "7A415011371D42706723EE8DE0EA8B39")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:47.350 -0400", hash_original_method = "8413562E7FCFCF0CDE16790D77663C90", hash_generated_method = "730B9EC590D899DCACAB6CCEB32DEB0D")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public boolean setTime(int relativeMilliseconds) {
         dsTaint.addTaint(relativeMilliseconds);
-    	return dsTaint.getTaintBoolean();
+        return dsTaint.getTaintBoolean();
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:01.225 -0400", hash_original_method = "AB91E3BC6684B90AB29C38A2A4978664", hash_generated_method = "FCF278E0DE8F6C7FE6323931FC5FEC05")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:47.350 -0400", hash_original_method = "AB91E3BC6684B90AB29C38A2A4978664", hash_generated_method = "454D36BBDF138AF3951DB9A86B1061E9")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public void draw(Canvas canvas, float x, float y, Paint paint) {
         dsTaint.addTaint(canvas.dsTaint);
@@ -74,8 +74,8 @@ public class Movie {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:01.225 -0400", hash_original_method = "27AF6C33DD27E3F7A12E5155D66D2F71", hash_generated_method = "2B48F130485E4C502B99F0A40133C25A")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:47.350 -0400", hash_original_method = "27AF6C33DD27E3F7A12E5155D66D2F71", hash_generated_method = "6973BD64F84466B8A16F14BE9ACC383B")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     public void draw(Canvas canvas, float x, float y) {
         dsTaint.addTaint(canvas.dsTaint);
         dsTaint.addTaint(y);
@@ -86,29 +86,22 @@ public class Movie {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:01.225 -0400", hash_original_method = "9F4D6D7AE88092AD8FB39A0D19320567", hash_generated_method = "A6D9156EFA3804A54FE57BD9ACB615AA")
-    public static Movie decodeStream(InputStream is) {
+        public static Movie decodeStream(InputStream is) {
         //DSFIXME:  CODE0012: Native static method requires manual modeling
-    	return new Movie(0);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:01.225 -0400", hash_original_method = "4C1CB5E71AE8BA79EF650F5944AA6286", hash_generated_method = "C5FF05D89B051607F5C3B69F3F85F41F")
-    public static Movie decodeByteArray(byte[] data, int offset,
+        public static Movie decodeByteArray(byte[] data, int offset,
                                                int length) {
         //DSFIXME:  CODE0012: Native static method requires manual modeling
-    	return new Movie(0);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:01.225 -0400", hash_original_method = "11F624E033F674569C619499368D5094", hash_generated_method = "3088B39F31F2B69539C1F7646A543170")
-    private static void nativeDestructor(int nativeMovie) {
-        //DSFIXME:  CODE0012: Native static method requires manual modeling
+        private static void nativeDestructor(int nativeMovie) {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:01.225 -0400", hash_original_method = "7CEF8D05BF0B6EBDABA0245FC8F1DEC0", hash_generated_method = "C53B8DB7DF660164057BC04C9A33EBBD")
-    public static Movie decodeFile(String pathName) {
+        public static Movie decodeFile(String pathName) {
         InputStream is;
         try {
             is = new FileInputStream(pathName);
@@ -120,8 +113,8 @@ public class Movie {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:01.226 -0400", hash_original_method = "2A8A5725920B2887C390528D14702FB9", hash_generated_method = "F1B4D9A898DF262B7755C533B5A2B653")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:47.351 -0400", hash_original_method = "2A8A5725920B2887C390528D14702FB9", hash_generated_method = "F60431C87802AFB4C31B956CE5749F71")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     @Override
     protected void finalize() throws Throwable {
         try 
@@ -141,8 +134,7 @@ public class Movie {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:01.226 -0400", hash_original_method = "1F682A68BAFB057136222BC2E907245D", hash_generated_method = "5F2F3246A5F7CF1FF781CB29304A3197")
-    private static Movie decodeTempStream(InputStream is) {
+        private static Movie decodeTempStream(InputStream is) {
         Movie moov = null;
         try {
             moov = decodeStream(is);
@@ -155,5 +147,4 @@ public class Movie {
 
     
 }
-
 

@@ -3,10 +3,10 @@ package javax.sip.header;
 // Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
+import droidsafe.runtime.*;
 
-// import Iterator to deal with enhanced for loop translation
+// needed for enhanced for control translations
 import java.util.Iterator;
-
 import java.text.ParseException;
 import java.util.Calendar;
 import java.util.List;
@@ -176,4 +176,3 @@ public interface HeaderFactory {
     WWWAuthenticateHeader createWWWAuthenticateHeader(String scheme)
             throws ParseException;
 }
-

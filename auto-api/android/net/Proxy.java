@@ -3,10 +3,10 @@ package android.net;
 // Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
+import droidsafe.runtime.*;
 
-// import Iterator to deal with enhanced for loop translation
+// needed for enhanced for control translations
 import java.util.Iterator;
-
 import android.annotation.SdkConstant;
 import android.annotation.SdkConstant.SdkConstantType;
 import android.content.ContentResolver;
@@ -39,22 +39,14 @@ import org.apache.http.impl.conn.ProxySelectorRoutePlanner;
 import org.apache.http.protocol.HttpContext;
 
 public final class Proxy {
-    private static final boolean DEBUG = false;
-    private static final String TAG = "Proxy";
-    @SdkConstant(SdkConstantType.BROADCAST_INTENT_ACTION)
-    public static final String PROXY_CHANGE_ACTION = "android.intent.action.PROXY_CHANGE";
-    public static final String EXTRA_PROXY_INFO = "proxy";
-    private static ConnectivityManager sConnectivityManager = null;
-    private static final String NAME_IP_REGEX =
-        "[a-zA-Z0-9]+(\\-[a-zA-Z0-9]+)*(\\.[a-zA-Z0-9]+(\\-[a-zA-Z0-9]+)*)*";
-    private static final String HOSTNAME_REGEXP = "^$|^" + NAME_IP_REGEX + "$";
-    private static final Pattern HOSTNAME_PATTERN;
-    private static final String EXCLLIST_REGEXP = "$|^(.?" + NAME_IP_REGEX
-        + ")+(,(.?" + NAME_IP_REGEX + "))*$";
-    private static final Pattern EXCLLIST_PATTERN;
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:02.257 -0400", hash_original_method = "66D3F50ED16481B0B14959535BF8F553", hash_generated_method = "528CCAEC6E9BE135E54AC7B8FB019990")
-    public static final java.net.Proxy getProxy(Context ctx, String url) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:51.368 -0400", hash_original_method = "7027194AD9EE6C73E0D1E06E53602BFC", hash_generated_method = "7027194AD9EE6C73E0D1E06E53602BFC")
+        public Proxy ()
+    {
+    }
+
+
+        public static final java.net.Proxy getProxy(Context ctx, String url) {
         String host = "";
         if (url != null) {
             URI uri = URI.create(url);
@@ -77,8 +69,7 @@ public final class Proxy {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:02.257 -0400", hash_original_method = "F0F69366C00A2E0E35F4A59DBEA02BB9", hash_generated_method = "0E70946C3B52F40077328D4F152C081F")
-    public static final String getHost(Context ctx) {
+        public static final String getHost(Context ctx) {
         java.net.Proxy proxy = getProxy(ctx, null);
         if (proxy == java.net.Proxy.NO_PROXY) return null;
         try {
@@ -89,8 +80,7 @@ public final class Proxy {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:02.257 -0400", hash_original_method = "E6F7F0D1C666FFE934B85206D0305367", hash_generated_method = "A624C191E0B15FF56E0DE2AEAE61CA27")
-    public static final int getPort(Context ctx) {
+        public static final int getPort(Context ctx) {
         java.net.Proxy proxy = getProxy(ctx, null);
         if (proxy == java.net.Proxy.NO_PROXY) return -1;
         try {
@@ -101,16 +91,14 @@ public final class Proxy {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:02.257 -0400", hash_original_method = "E669A7ACE9D8EEFE98E3D6369305AEB7", hash_generated_method = "7FC5045A7478361888863018FE1881A6")
-    public static final String getDefaultHost() {
+        public static final String getDefaultHost() {
         String host = System.getProperty("http.proxyHost");
         if (TextUtils.isEmpty(host)) return null;
         return host;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:02.257 -0400", hash_original_method = "01B1A8B7C4F3BCE745F57F14A5BC3036", hash_generated_method = "8119E6B41E7E3AB07740DD38B66C78EF")
-    public static final int getDefaultPort() {
+        public static final int getDefaultPort() {
         if (getDefaultHost() == null) return -1;
         try {
             return Integer.parseInt(System.getProperty("http.proxyPort"));
@@ -120,8 +108,7 @@ public final class Proxy {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:02.258 -0400", hash_original_method = "0DC6892F9119B40AD3A553AA53E42E93", hash_generated_method = "F705D319450A7271C0F406E7D09BA266")
-    public static final HttpHost getPreferredHttpHost(Context context,
+        public static final HttpHost getPreferredHttpHost(Context context,
             String url) {
         java.net.Proxy prefProxy = getProxy(context, url);
         if (prefProxy.equals(java.net.Proxy.NO_PROXY)) {
@@ -133,8 +120,7 @@ public final class Proxy {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:02.258 -0400", hash_original_method = "26F6A89AC3C35BA8FFA3188781C71F9A", hash_generated_method = "4F141E0CF1506F8783721B545795D180")
-    private static final boolean isLocalHost(String host) {
+        private static final boolean isLocalHost(String host) {
         if (host == null) {
             return false;
         }
@@ -153,8 +139,7 @@ public final class Proxy {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:02.258 -0400", hash_original_method = "94CFA4003ECFAF43F31C4E4E1165E3BE", hash_generated_method = "CBA1A2309F41EBDEFC09CD69FF58C38D")
-    public static void validate(String hostname, String port, String exclList) {
+        public static void validate(String hostname, String port, String exclList) {
         Matcher match = HOSTNAME_PATTERN.matcher(hostname);
         Matcher listMatch = EXCLLIST_PATTERN.matcher(exclList);
         if (!match.matches()) {
@@ -183,16 +168,14 @@ public final class Proxy {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:02.258 -0400", hash_original_method = "6F2826910ED861BE3917BC7BA6F33E4C", hash_generated_method = "813C1AC8F77D5BB4C302553C27F9DC4E")
-    public static final HttpRoutePlanner getAndroidProxySelectorRoutePlanner(Context context) {
+        public static final HttpRoutePlanner getAndroidProxySelectorRoutePlanner(Context context) {
         AndroidProxySelectorRoutePlanner ret = new AndroidProxySelectorRoutePlanner(
                 new SchemeRegistry(), ProxySelector.getDefault(), context);
         return ret;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:02.258 -0400", hash_original_method = "3244352400EDEDB3EB7AED58C0739291", hash_generated_method = "41A838C684F7837508B7C2979D0DC19A")
-    public static final void setHttpProxySystemProperty(ProxyProperties p) {
+        public static final void setHttpProxySystemProperty(ProxyProperties p) {
         String host = null;
         String port = null;
         String exclList = null;
@@ -205,8 +188,7 @@ public final class Proxy {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:02.258 -0400", hash_original_method = "660478F21FCA5D999AF8E2D00B3AE310", hash_generated_method = "46766221F08D587407E031D1B550AE85")
-    public static final void setHttpProxySystemProperty(String host, String port, String exclList) {
+        public static final void setHttpProxySystemProperty(String host, String port, String exclList) {
         if (exclList != null) exclList = exclList.replace(",", "|");
         if (false) Log.d(TAG, "setHttpProxySystemProperty :"+host+":"+port+" - "+exclList);
         if (host != null) {
@@ -236,7 +218,7 @@ public final class Proxy {
     static class AndroidProxySelectorRoutePlanner extends org.apache.http.impl.conn.ProxySelectorRoutePlanner {
         private Context mContext;
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:02.258 -0400", hash_original_method = "DEB2A922BA71DCCF9BE099E600C1C02C", hash_generated_method = "D74E338F9DB9F18E6CF705BF20C541D7")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:51.371 -0400", hash_original_method = "DEB2A922BA71DCCF9BE099E600C1C02C", hash_generated_method = "AEA409474585F3B2270DE9565DB125B6")
         //DSFIXME:  CODE0002: Requires DSC value to be set
         public AndroidProxySelectorRoutePlanner(SchemeRegistry schreg, ProxySelector prosel,
                 Context context) {
@@ -249,47 +231,53 @@ public final class Proxy {
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:02.259 -0400", hash_original_method = "48F5B4B79C87549F69CC4C6A9BA0C6B0", hash_generated_method = "796CD68CFB60567D6B346A4B5C5DA056")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:51.371 -0400", hash_original_method = "48F5B4B79C87549F69CC4C6A9BA0C6B0", hash_generated_method = "0D69711076B84D2BC6BBE336EE7CDC00")
         //DSFIXME:  CODE0002: Requires DSC value to be set
         @Override
         protected java.net.Proxy chooseProxy(List<java.net.Proxy> proxies, HttpHost target,
                 HttpRequest request, HttpContext context) {
             dsTaint.addTaint(request.dsTaint);
-            dsTaint.addTaint(target.dsTaint);
             dsTaint.addTaint(context.dsTaint);
+            dsTaint.addTaint(target.dsTaint);
             dsTaint.addTaint(proxies.dsTaint);
-            java.net.Proxy varFB6838E6FC7950F90E160BE7CEAF66EA_881556685 = (getProxy(mContext, target.getHostName()));
+            java.net.Proxy varFB6838E6FC7950F90E160BE7CEAF66EA_1402795674 = (getProxy(mContext, target.getHostName()));
             return (java.net.Proxy)dsTaint.getTaint();
             // ---------- Original Method ----------
             //return getProxy(mContext, target.getHostName());
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:02.259 -0400", hash_original_method = "9701FEC44D63FCB85406EC9CE91F80E5", hash_generated_method = "9BF5D5DD2D29F2A61390FA4D4FDFD28F")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:51.372 -0400", hash_original_method = "9701FEC44D63FCB85406EC9CE91F80E5", hash_generated_method = "353A4D6E60F3F02C26E0E6AE14EFC403")
         //DSFIXME:  CODE0002: Requires DSC value to be set
         @Override
         protected HttpHost determineProxy(HttpHost target, HttpRequest request,
                 HttpContext context) {
             dsTaint.addTaint(request.dsTaint);
-            dsTaint.addTaint(target.dsTaint);
             dsTaint.addTaint(context.dsTaint);
-            HttpHost varF391FC4647239405C0A62B4799FC6E89_388211046 = (getPreferredHttpHost(mContext, target.getHostName()));
+            dsTaint.addTaint(target.dsTaint);
+            HttpHost varF391FC4647239405C0A62B4799FC6E89_1034356156 = (getPreferredHttpHost(mContext, target.getHostName()));
             return (HttpHost)dsTaint.getTaint();
             // ---------- Original Method ----------
             //return getPreferredHttpHost(mContext, target.getHostName());
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:02.259 -0400", hash_original_method = "DA8D3BCA6C8948678C6240635F743B49", hash_generated_method = "EAE2DC545B4330B53384B8E612E11FC0")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:51.373 -0400", hash_original_method = "DA8D3BCA6C8948678C6240635F743B49", hash_generated_method = "51810DFF08238A3DFA290650DD4D57A3")
         //DSFIXME:  CODE0002: Requires DSC value to be set
         @Override
         public HttpRoute determineRoute(HttpHost target, HttpRequest request,
                 HttpContext context) {
             dsTaint.addTaint(request.dsTaint);
-            dsTaint.addTaint(target.dsTaint);
             dsTaint.addTaint(context.dsTaint);
+            dsTaint.addTaint(target.dsTaint);
             HttpHost proxy;
             proxy = getPreferredHttpHost(mContext, target.getHostName());
+            {
+                HttpRoute var1FBA228E09F460E309072AC5F8703A59_1976966031 = (new HttpRoute(target));
+            } //End block
+            {
+                HttpRoute var4475B0F255FE2B3156CEDC4D140F67EC_1936941835 = (new HttpRoute(target, null, proxy, false));
+            } //End block
             return (HttpRoute)dsTaint.getTaint();
             // ---------- Original Method ----------
             //HttpHost proxy = getPreferredHttpHost(mContext, target.getHostName());
@@ -305,11 +293,22 @@ public final class Proxy {
 
 
     
+    private static final boolean DEBUG = false;
+    private static final String TAG = "Proxy";
+    @SdkConstant(SdkConstantType.BROADCAST_INTENT_ACTION) public static final String PROXY_CHANGE_ACTION = "android.intent.action.PROXY_CHANGE";
+    public static final String EXTRA_PROXY_INFO = "proxy";
+    private static ConnectivityManager sConnectivityManager = null;
+    private static final String NAME_IP_REGEX =
+        "[a-zA-Z0-9]+(\\-[a-zA-Z0-9]+)*(\\.[a-zA-Z0-9]+(\\-[a-zA-Z0-9]+)*)*";
+    private static final String HOSTNAME_REGEXP = "^$|^" + NAME_IP_REGEX + "$";
+    private static final Pattern HOSTNAME_PATTERN;
+    private static final String EXCLLIST_REGEXP = "$|^(.?" + NAME_IP_REGEX
+        + ")+(,(.?" + NAME_IP_REGEX + "))*$";
+    private static final Pattern EXCLLIST_PATTERN;
     static {
         HOSTNAME_PATTERN = Pattern.compile(HOSTNAME_REGEXP);
         EXCLLIST_PATTERN = Pattern.compile(EXCLLIST_REGEXP);
     }
     
 }
-
 

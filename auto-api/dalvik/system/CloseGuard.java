@@ -1,28 +1,24 @@
 package dalvik.system;
 
 // Droidsafe Imports
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
-import droidsafe.runtime.DroidSafeAndroidRuntime;
-// import Iterator to deal with enhanced for loop translation
+import droidsafe.helpers.*;
+import droidsafe.annotations.*;
+import droidsafe.runtime.*;
 
+// needed for enhanced for control translations
+import java.util.Iterator;
 
 public final class CloseGuard {
-    private static final CloseGuard NOOP = new CloseGuard();
-    private static volatile boolean ENABLED = true;
-    private static volatile Reporter REPORTER = new DefaultReporter();
     private Throwable allocationSite;
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:11.322 -0400", hash_original_method = "7E89EAFA67D8405D89044A4D05C8D63F", hash_generated_method = "701DC1E0E4AA50C857F64D2D748054FF")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:19.211 -0400", hash_original_method = "7E89EAFA67D8405D89044A4D05C8D63F", hash_generated_method = "AA4636AB88E09C5D66362FE0FE9F4125")
     @DSModeled(DSC.SAFE)
     private CloseGuard() {
         // ---------- Original Method ----------
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:11.322 -0400", hash_original_method = "60AA5991C5D5BFE19992192180646E81", hash_generated_method = "D63DC4D9AAA49649EDA1206BE665E8CE")
-    public static CloseGuard get() {
+        public static CloseGuard get() {
         if (!ENABLED) {
             return NOOP;
         }
@@ -30,14 +26,12 @@ public final class CloseGuard {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:11.322 -0400", hash_original_method = "53F9E7719DDD6D5480287D0F89E86DFF", hash_generated_method = "55BD6F93933C40B16BA3F98E6D2A56A0")
-    public static void setEnabled(boolean enabled) {
+        public static void setEnabled(boolean enabled) {
         ENABLED = enabled;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:11.322 -0400", hash_original_method = "150DC033BA91B5EF524041581C913795", hash_generated_method = "06CBF192CC52CAE3BB1B81869648BB50")
-    public static void setReporter(Reporter reporter) {
+        public static void setReporter(Reporter reporter) {
         if (reporter == null) {
             throw new NullPointerException("reporter == null");
         }
@@ -45,14 +39,13 @@ public final class CloseGuard {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:11.322 -0400", hash_original_method = "8AA20116AD29534DA3D86FA9B0344405", hash_generated_method = "F5F2AE543AA2DF6E031E1B38EA90EB2B")
-    public static Reporter getReporter() {
+        public static Reporter getReporter() {
         return REPORTER;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:11.322 -0400", hash_original_method = "CFE7FE2A946B79A92C3DD646F9FF1E18", hash_generated_method = "1718AC63F42006A62D52BE261FE37DF2")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:19.212 -0400", hash_original_method = "CFE7FE2A946B79A92C3DD646F9FF1E18", hash_generated_method = "F6B42D828BA92BD65F3D9D4F5DD32229")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     public void open(String closer) {
         dsTaint.addTaint(closer);
         {
@@ -73,7 +66,7 @@ public final class CloseGuard {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:11.322 -0400", hash_original_method = "E7BB2570D728B9A5CD21AC75D54C0108", hash_generated_method = "1DC1657707A184ADDF4C83C4312AC290")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:19.212 -0400", hash_original_method = "E7BB2570D728B9A5CD21AC75D54C0108", hash_generated_method = "81B1FE4E6BB63DD2B6DF9A82CBBAEB20")
     @DSModeled(DSC.SAFE)
     public void close() {
         allocationSite = null;
@@ -82,8 +75,8 @@ public final class CloseGuard {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:11.322 -0400", hash_original_method = "DF59B79C33BF4141D53B378215072C22", hash_generated_method = "CB8B87973F9FE329B551C493B3834510")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:19.212 -0400", hash_original_method = "DF59B79C33BF4141D53B378215072C22", hash_generated_method = "ABD59B8E0639EFA73E2B8A199BF8154D")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     public void warnIfOpen() {
         String message;
         message = ("A resource was acquired at attached stack trace but never released. "
@@ -102,8 +95,14 @@ public final class CloseGuard {
     
     private static final class DefaultReporter implements Reporter {
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:11.322 -0400", hash_original_method = "F3799B66B3E6BA78B84AD9198872DB1A", hash_generated_method = "28750E5FE65F42A0C5F3C5B7654A7C39")
-        @DSModeled(DSC.SAFE)
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:19.212 -0400", hash_original_method = "D8BDEF67D7972649723D6EDD5745A4EF", hash_generated_method = "D8BDEF67D7972649723D6EDD5745A4EF")
+                public DefaultReporter ()
+        {
+        }
+
+
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:19.212 -0400", hash_original_method = "F3799B66B3E6BA78B84AD9198872DB1A", hash_generated_method = "81D9A3DB088D2F699EFCBDAA7564F774")
+        //DSFIXME:  CODE0002: Requires DSC value to be set
         public void report(String message, Throwable allocationSite) {
             dsTaint.addTaint(message);
             dsTaint.addTaint(allocationSite.dsTaint);
@@ -121,6 +120,8 @@ public final class CloseGuard {
         public void report (String message, Throwable allocationSite);
     }
     
+    private static final CloseGuard NOOP = new CloseGuard();
+    private static volatile boolean ENABLED = true;
+    private static volatile Reporter REPORTER = new DefaultReporter();
 }
-
 

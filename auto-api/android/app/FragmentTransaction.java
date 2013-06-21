@@ -3,20 +3,19 @@ package android.app;
 // Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
+import droidsafe.runtime.*;
 
-// import Iterator to deal with enhanced for loop translation
+// needed for enhanced for control translations
 import java.util.Iterator;
 
-
 public abstract class FragmentTransaction {
-    public static final int TRANSIT_ENTER_MASK = 0x1000;
-    public static final int TRANSIT_EXIT_MASK = 0x2000;
-    public static final int TRANSIT_UNSET = -1;
-    public static final int TRANSIT_NONE = 0;
-    public static final int TRANSIT_FRAGMENT_OPEN = 1 | TRANSIT_ENTER_MASK;
-    public static final int TRANSIT_FRAGMENT_CLOSE = 2 | TRANSIT_EXIT_MASK;
-    public static final int TRANSIT_FRAGMENT_FADE = 3 | TRANSIT_ENTER_MASK;
     
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:37.826 -0400", hash_original_method = "660B6184177859FEC5048BCCFE89F1F0", hash_generated_method = "660B6184177859FEC5048BCCFE89F1F0")
+        public FragmentTransaction ()
+    {
+    }
+
+
     public abstract FragmentTransaction add(Fragment fragment, String tag);
 
     
@@ -90,6 +89,12 @@ public abstract class FragmentTransaction {
     public abstract int commitAllowingStateLoss();
 
     
+    public static final int TRANSIT_ENTER_MASK = 0x1000;
+    public static final int TRANSIT_EXIT_MASK = 0x2000;
+    public static final int TRANSIT_UNSET = -1;
+    public static final int TRANSIT_NONE = 0;
+    public static final int TRANSIT_FRAGMENT_OPEN = 1 | TRANSIT_ENTER_MASK;
+    public static final int TRANSIT_FRAGMENT_CLOSE = 2 | TRANSIT_EXIT_MASK;
+    public static final int TRANSIT_FRAGMENT_FADE = 3 | TRANSIT_ENTER_MASK;
 }
-
 

@@ -1,23 +1,29 @@
 package java.net;
 
 // Droidsafe Imports
-import java.io.IOException;
+import droidsafe.helpers.*;
+import droidsafe.annotations.*;
+import droidsafe.runtime.*;
 
+// needed for enhanced for control translations
+import java.util.Iterator;
+import java.io.IOException;
 import libcore.net.url.UrlUtils;
 import libcore.util.Objects;
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
-// import Iterator to deal with enhanced for loop translation
-import droidsafe.runtime.DroidSafeAndroidRuntime;
 
 public abstract class URLStreamHandler {
     
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:28.436 -0400", hash_original_method = "919ABF7A3B92CE9A2158E78B16E132AF", hash_generated_method = "919ABF7A3B92CE9A2158E78B16E132AF")
+        public URLStreamHandler ()
+    {
+    }
+
+
     protected abstract URLConnection openConnection(URL u) throws IOException;
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:12.457 -0400", hash_original_method = "E25BD4FE17DCB1FC5CA1FF6A9FF13CCB", hash_generated_method = "29CCF907ACEE9977428AA4C1ACCD7BEC")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:28.437 -0400", hash_original_method = "E25BD4FE17DCB1FC5CA1FF6A9FF13CCB", hash_generated_method = "0EF2BB8405935B6AC1BC6B1CD40358DA")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     protected URLConnection openConnection(URL u, Proxy proxy) throws IOException {
         dsTaint.addTaint(u.dsTaint);
         dsTaint.addTaint(proxy.dsTaint);
@@ -28,18 +34,18 @@ public abstract class URLStreamHandler {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:12.457 -0400", hash_original_method = "5B20F12B631910788308FABDC13B25A0", hash_generated_method = "3413A1DF00EF89079A494BEC7486C2E3")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:28.438 -0400", hash_original_method = "5B20F12B631910788308FABDC13B25A0", hash_generated_method = "D36CB45BAF80C4C22603435A5AA5D76D")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     protected void parseURL(URL url, String spec, int start, int end) {
         dsTaint.addTaint(spec);
         dsTaint.addTaint(start);
-        dsTaint.addTaint(url.dsTaint);
         dsTaint.addTaint(end);
+        dsTaint.addTaint(url.dsTaint);
         {
-        	if (DroidSafeAndroidRuntime.control) throw new SecurityException("Only a URL's stream handler is permitted to mutate it");
+            if (DroidSafeAndroidRuntime.control) throw new SecurityException("Only a URL's stream handler is permitted to mutate it");
         } //End block
         {
-        	if (DroidSafeAndroidRuntime.control) throw new StringIndexOutOfBoundsException(spec, start, end - start);
+            if (DroidSafeAndroidRuntime.control) throw new StringIndexOutOfBoundsException(spec, start, end - start);
         } //End block
         int fileStart;
         String authority;
@@ -51,7 +57,7 @@ public abstract class URLStreamHandler {
         String query;
         String ref;
         {
-            boolean varC28F71AE0377A5B89EE543B4A9138ADF_294832586 = (spec.regionMatches(start, "//", 0, 2));
+            boolean varC28F71AE0377A5B89EE543B4A9138ADF_1777331001 = (spec.regionMatches(start, "//", 0, 2));
             {
                 int authorityStart;
                 authorityStart = start + 2;
@@ -74,9 +80,9 @@ public abstract class URLStreamHandler {
                 ipv6End = UrlUtils.findFirstOf(spec, "]", hostStart, fileStart);
                 {
                     {
-                        boolean var94751DC0C0DBFE32ADF3E9F980ED4A0D_1543698637 = (UrlUtils.findFirstOf(spec, ":", hostStart, ipv6End) == ipv6End);
+                        boolean var94751DC0C0DBFE32ADF3E9F980ED4A0D_627251683 = (UrlUtils.findFirstOf(spec, ":", hostStart, ipv6End) == ipv6End);
                         {
-                        	if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("Expected an IPv6 address: "
+                            if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("Expected an IPv6 address: "
                             + spec.substring(hostStart, ipv6End + 1));
                         } //End block
                     } //End collapsed parenthetic
@@ -90,7 +96,7 @@ public abstract class URLStreamHandler {
                 {
                     port = Integer.parseInt(spec.substring(portStart, fileStart));
                     {
-                    	if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("port < 0: " + port);
+                        if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("port < 0: " + port);
                     } //End block
                 } //End block
                 path = null;
@@ -116,7 +122,7 @@ public abstract class URLStreamHandler {
         {
             int nextPos;
             {
-                Object var37FBD7EC15D4DF88223F1C260149F042_761117036 = (spec.charAt(pos));
+                Object var37FBD7EC15D4DF88223F1C260149F042_1410834876 = (spec.charAt(pos));
                 //Begin case '#' 
                 nextPos = end;
                 //End case '#' 
@@ -157,8 +163,7 @@ public abstract class URLStreamHandler {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:12.458 -0400", hash_original_method = "A806CA7014E8BD9EACDE88341CB2140E", hash_generated_method = "9BE48AEDEDDA3DE7BD6115522CF4A620")
-    private static String relativePath(String base, String path) {
+        private static String relativePath(String base, String path) {
         if (path.startsWith("/")) {
             return UrlUtils.canonicalizePath(path, true);
         } else if (base != null) {
@@ -170,19 +175,19 @@ public abstract class URLStreamHandler {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:12.458 -0400", hash_original_method = "9ADA0257B485782D9CE22060B8B1EC7F", hash_generated_method = "E1AAE9F01C21EE1EFFABAC3C848E1259")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:28.438 -0400", hash_original_method = "9ADA0257B485782D9CE22060B8B1EC7F", hash_generated_method = "7D26194F986F0A09A7C814750E6B9A81")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     @Deprecated
     protected void setURL(URL u, String protocol, String host, int port,
             String file, String ref) {
         dsTaint.addTaint(port);
         dsTaint.addTaint(ref);
-        dsTaint.addTaint(u.dsTaint);
         dsTaint.addTaint(protocol);
+        dsTaint.addTaint(u.dsTaint);
         dsTaint.addTaint(host);
         dsTaint.addTaint(file);
         {
-        	if (DroidSafeAndroidRuntime.control) throw new SecurityException();
+            if (DroidSafeAndroidRuntime.control) throw new SecurityException();
         } //End block
         u.set(protocol, host, port, file, ref);
         // ---------- Original Method ----------
@@ -193,22 +198,22 @@ public abstract class URLStreamHandler {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:12.458 -0400", hash_original_method = "CB2D373AEC994000865666F394E860FE", hash_generated_method = "4BDB20814386227A1113CD11486B7C2A")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:28.439 -0400", hash_original_method = "CB2D373AEC994000865666F394E860FE", hash_generated_method = "9E6C9D8DCC12807F65F7B894C5FF9B6B")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     protected void setURL(URL u, String protocol, String host, int port,
             String authority, String userInfo, String path, String query,
             String ref) {
         dsTaint.addTaint(port);
-        dsTaint.addTaint(authority);
         dsTaint.addTaint(ref);
-        dsTaint.addTaint(u.dsTaint);
+        dsTaint.addTaint(authority);
         dsTaint.addTaint(protocol);
+        dsTaint.addTaint(u.dsTaint);
         dsTaint.addTaint(host);
         dsTaint.addTaint(query);
         dsTaint.addTaint(path);
         dsTaint.addTaint(userInfo);
         {
-        	if (DroidSafeAndroidRuntime.control) throw new SecurityException();
+            if (DroidSafeAndroidRuntime.control) throw new SecurityException();
         } //End block
         u.set(protocol, host, port, authority, userInfo, path, query, ref);
         // ---------- Original Method ----------
@@ -219,18 +224,18 @@ public abstract class URLStreamHandler {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:12.458 -0400", hash_original_method = "D96D9FB5C1BC6194BEC4A07D1C2B48A4", hash_generated_method = "1F3456F91911AC0EC30F0C58F89DA68E")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:28.439 -0400", hash_original_method = "D96D9FB5C1BC6194BEC4A07D1C2B48A4", hash_generated_method = "2867B400ED39AB788296C39C06EBE94F")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     protected String toExternalForm(URL url) {
         dsTaint.addTaint(url.dsTaint);
-        String var245DAA992E80995AE29BC0E02176D7A6_2036165992 = (toExternalForm(url, false));
+        String var245DAA992E80995AE29BC0E02176D7A6_2120460914 = (toExternalForm(url, false));
         return dsTaint.getTaintString();
         // ---------- Original Method ----------
         //return toExternalForm(url, false);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:12.458 -0400", hash_original_method = "629852CED0E76D3D83A14B3CB57F0652", hash_generated_method = "B37A04EA18364CCC977FF0FBB7923ADB")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:28.439 -0400", hash_original_method = "629852CED0E76D3D83A14B3CB57F0652", hash_generated_method = "117B9C0E66ACE29487BABED657FCD0BF")
     //DSFIXME:  CODE0002: Requires DSC value to be set
      String toExternalForm(URL url, boolean escapeIllegalCharacters) {
         dsTaint.addTaint(escapeIllegalCharacters);
@@ -271,19 +276,19 @@ public abstract class URLStreamHandler {
                 result.append(ref);
             } //End block
         } //End block
-        String varEA70154FDA28CC59402440C6317B57EF_1274018646 = (result.toString());
+        String varEA70154FDA28CC59402440C6317B57EF_1302647945 = (result.toString());
         return dsTaint.getTaintString();
         // ---------- Original Method ----------
         // Original Method Too Long, Refer to Original Implementation
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:12.458 -0400", hash_original_method = "5273434A62CED7D2FFF6F02112157609", hash_generated_method = "D0AA5266C515EC0B30219D54F2593B34")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:28.439 -0400", hash_original_method = "5273434A62CED7D2FFF6F02112157609", hash_generated_method = "D8484596910017BD30D5CCAEAEB2D7DD")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     protected boolean equals(URL a, URL b) {
         dsTaint.addTaint(b.dsTaint);
         dsTaint.addTaint(a.dsTaint);
-        boolean var2605B69A8297093AF445A28C99C6DA19_1714935234 = (sameFile(a, b)
+        boolean var2605B69A8297093AF445A28C99C6DA19_142196744 = (sameFile(a, b)
                 && Objects.equal(a.getRef(), b.getRef())
                 && Objects.equal(a.getQuery(), b.getQuery()));
         return dsTaint.getTaintBoolean();
@@ -294,7 +299,7 @@ public abstract class URLStreamHandler {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:12.458 -0400", hash_original_method = "8D2F4C3352F1FCC45C0A9BA0F2D59609", hash_generated_method = "D55807BCEBF384B20B3EA556151BFC63")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:28.440 -0400", hash_original_method = "8D2F4C3352F1FCC45C0A9BA0F2D59609", hash_generated_method = "BA24E4F3BDCCEA097CAC389CE8309045")
     @DSModeled(DSC.SAFE)
     protected int getDefaultPort() {
         return dsTaint.getTaintInt();
@@ -303,7 +308,7 @@ public abstract class URLStreamHandler {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:12.458 -0400", hash_original_method = "788D5B882334646F933829D465387DFF", hash_generated_method = "3C5043EA0BF00B2BD5CBCD6F110F6554")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:28.440 -0400", hash_original_method = "788D5B882334646F933829D465387DFF", hash_generated_method = "3E19CAD2BDDE50712DF76DB0301B43CE")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     protected InetAddress getHostAddress(URL url) {
         dsTaint.addTaint(url.dsTaint);
@@ -312,9 +317,9 @@ public abstract class URLStreamHandler {
             String host;
             host = url.getHost();
             {
-                boolean varE80B7F8F5DF3C0E96BEA9E404FDFEC5D_2057735840 = (host == null || host.length() == 0);
+                boolean varE80B7F8F5DF3C0E96BEA9E404FDFEC5D_1682178896 = (host == null || host.length() == 0);
             } //End collapsed parenthetic
-            InetAddress var6E3A33EF0B7E1B243D0B854D532FE28E_1786171852 = (InetAddress.getByName(host));
+            InetAddress var6E3A33EF0B7E1B243D0B854D532FE28E_1520657661 = (InetAddress.getByName(host));
         } //End block
         catch (UnknownHostException e)
         { }
@@ -332,18 +337,18 @@ public abstract class URLStreamHandler {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:12.459 -0400", hash_original_method = "1FF09FFC26156931BD17C23B3B706502", hash_generated_method = "4A20D7651B3E31BCAE1EE67DE20C8F34")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:28.440 -0400", hash_original_method = "1FF09FFC26156931BD17C23B3B706502", hash_generated_method = "A083B4B18966E6FC70A1DFF86352EA98")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     protected int hashCode(URL url) {
         dsTaint.addTaint(url.dsTaint);
-        int var48425AB4600D15902F703B9031278502_1981673495 = (toExternalForm(url).hashCode());
+        int var48425AB4600D15902F703B9031278502_2012538622 = (toExternalForm(url).hashCode());
         return dsTaint.getTaintInt();
         // ---------- Original Method ----------
         //return toExternalForm(url).hashCode();
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:12.459 -0400", hash_original_method = "41623183DD090D045D5E8C150A9F330D", hash_generated_method = "F4B38164611A081263B906818AE32A7F")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:28.440 -0400", hash_original_method = "41623183DD090D045D5E8C150A9F330D", hash_generated_method = "61AD786757157B5CE85B58583912361E")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     protected boolean hostsEqual(URL a, URL b) {
         dsTaint.addTaint(b.dsTaint);
@@ -352,7 +357,7 @@ public abstract class URLStreamHandler {
         aHost = a.getHost();
         String bHost;
         bHost = b.getHost();
-        boolean var146AC139A61EB6606DF27A5A6CF8C6E7_693204613 = ((aHost == bHost) || aHost != null && aHost.equalsIgnoreCase(bHost));
+        boolean var146AC139A61EB6606DF27A5A6CF8C6E7_268413472 = ((aHost == bHost) || aHost != null && aHost.equalsIgnoreCase(bHost));
         return dsTaint.getTaintBoolean();
         // ---------- Original Method ----------
         //String aHost = a.getHost();
@@ -361,12 +366,12 @@ public abstract class URLStreamHandler {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:12.459 -0400", hash_original_method = "995D235EB42F12C8FDC3FCC0E24D4349", hash_generated_method = "68AB93E18D8C910788347162BEB85621")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:28.441 -0400", hash_original_method = "995D235EB42F12C8FDC3FCC0E24D4349", hash_generated_method = "2C9E6B9EF4ECEB8DF067FA40A2CEB672")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     protected boolean sameFile(URL a, URL b) {
         dsTaint.addTaint(b.dsTaint);
         dsTaint.addTaint(a.dsTaint);
-        boolean var58D8CC8800DB2F4FEEA36EE340F18B83_176656849 = (Objects.equal(a.getProtocol(), b.getProtocol())
+        boolean var58D8CC8800DB2F4FEEA36EE340F18B83_168356859 = (Objects.equal(a.getProtocol(), b.getProtocol())
                 && hostsEqual(a, b)
                 && a.getEffectivePort() == b.getEffectivePort()
                 && Objects.equal(a.getFile(), b.getFile()));
@@ -380,5 +385,4 @@ public abstract class URLStreamHandler {
 
     
 }
-
 

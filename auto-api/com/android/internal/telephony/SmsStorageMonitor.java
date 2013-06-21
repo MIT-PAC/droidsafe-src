@@ -3,10 +3,10 @@ package com.android.internal.telephony;
 // Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
+import droidsafe.runtime.*;
 
-// import Iterator to deal with enhanced for loop translation
+// needed for enhanced for control translations
 import java.util.Iterator;
-
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
@@ -19,18 +19,13 @@ import android.provider.Telephony.Sms.Intents;
 import android.util.Log;
 
 public final class SmsStorageMonitor extends Handler {
-    private static final String TAG = "SmsStorageMonitor";
-    private static final int EVENT_ICC_FULL = 1;
-    private static final int EVENT_REPORT_MEMORY_STATUS_DONE = 2;
-    private static final int EVENT_RADIO_ON = 3;
-    private final Context mContext;
+    private Context mContext;
     private PowerManager.WakeLock mWakeLock;
     private boolean mReportMemoryStatusPending;
-    final CommandsInterface mCm;
+    CommandsInterface mCm;
     boolean mStorageAvailable = true;
-    private static final int WAKE_LOCK_TIMEOUT = 5000;
     private final BroadcastReceiver mResultReceiver = new BroadcastReceiver() {        
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:10.583 -0400", hash_original_method = "5F38BA022ACD3718858B6FAF49C82F2C", hash_generated_method = "775F374E48B865436FEF3EADCEA5EABD")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:12.511 -0400", hash_original_method = "5F38BA022ACD3718858B6FAF49C82F2C", hash_generated_method = "18F4C45C784D8A109211F07DA137FDBB")
         @DSModeled(DSC.SPEC)
         @Override
         public void onReceive(Context context, Intent intent) {
@@ -38,13 +33,13 @@ public final class SmsStorageMonitor extends Handler {
             dsTaint.addTaint(context.dsTaint);
             dsTaint.addTaint(intent.dsTaint);
             {
-                boolean varFEE2B96B675C3083926B6753B5B2523D_444936329 = (intent.getAction().equals(Intent.ACTION_DEVICE_STORAGE_FULL));
+                boolean varFEE2B96B675C3083926B6753B5B2523D_319640562 = (intent.getAction().equals(Intent.ACTION_DEVICE_STORAGE_FULL));
                 {
                     mStorageAvailable = false;
                     mCm.reportSmsMemoryStatus(false, obtainMessage(EVENT_REPORT_MEMORY_STATUS_DONE));
                 } //End block
                 {
-                    boolean var77E80C3E4ECA6359DEEA0E8583A1E670_2090225456 = (intent.getAction().equals(Intent.ACTION_DEVICE_STORAGE_NOT_FULL));
+                    boolean var77E80C3E4ECA6359DEEA0E8583A1E670_1729770038 = (intent.getAction().equals(Intent.ACTION_DEVICE_STORAGE_NOT_FULL));
                     {
                         mStorageAvailable = true;
                         mCm.reportSmsMemoryStatus(true, obtainMessage(EVENT_REPORT_MEMORY_STATUS_DONE));
@@ -64,7 +59,7 @@ public final class SmsStorageMonitor extends Handler {
         
 }; //Transformed anonymous class
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:10.583 -0400", hash_original_method = "F493AFE631289C3191DD16CD5D858B75", hash_generated_method = "D391038D01ECFA55A73715BD5BF9A4E8")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:12.512 -0400", hash_original_method = "F493AFE631289C3191DD16CD5D858B75", hash_generated_method = "1A39A918E500606AC3F46D7E84996053")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public SmsStorageMonitor(PhoneBase phone) {
         dsTaint.addTaint(phone.dsTaint);
@@ -91,8 +86,8 @@ public final class SmsStorageMonitor extends Handler {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:10.583 -0400", hash_original_method = "811671DD7468C3C7A858127154F03F58", hash_generated_method = "F7CE2AF6C7831157A6945D424948DC78")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:12.512 -0400", hash_original_method = "811671DD7468C3C7A858127154F03F58", hash_generated_method = "693978ED23A36C55265B819E3BC96139")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     public void dispose() {
         mCm.unSetOnIccSmsFull(this);
         mCm.unregisterForOn(this);
@@ -104,7 +99,7 @@ public final class SmsStorageMonitor extends Handler {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:10.583 -0400", hash_original_method = "4ADFD820FBAEE3B9207F7288ABB2B3FA", hash_generated_method = "65CDF2A122C3BA914A1B92B48ADDEEE6")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:12.513 -0400", hash_original_method = "4ADFD820FBAEE3B9207F7288ABB2B3FA", hash_generated_method = "803636A13458EE538007EE194BEE64AF")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     @Override
     public void handleMessage(Message msg) {
@@ -135,7 +130,7 @@ public final class SmsStorageMonitor extends Handler {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:10.583 -0400", hash_original_method = "CBDD17965584D059356B67C204E0599E", hash_generated_method = "47AE94977BD7115BD911BF31FF384F62")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:12.513 -0400", hash_original_method = "CBDD17965584D059356B67C204E0599E", hash_generated_method = "BA916EB318DE607B4A69076AD4F9EE79")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     private void createWakelock() {
         PowerManager pm;
@@ -149,8 +144,8 @@ public final class SmsStorageMonitor extends Handler {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:10.583 -0400", hash_original_method = "A1AEC8C81078600BF66207F442C7D632", hash_generated_method = "E18E9BC880F70510E3B16F66BC07180F")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:12.513 -0400", hash_original_method = "A1AEC8C81078600BF66207F442C7D632", hash_generated_method = "639CB459C287B160183E346F8A80A77B")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     private void handleIccFull() {
         Intent intent;
         intent = new Intent(Intents.SIM_FULL_ACTION);
@@ -163,7 +158,7 @@ public final class SmsStorageMonitor extends Handler {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:10.583 -0400", hash_original_method = "8AEABE91EB74288702D500EE9C97116A", hash_generated_method = "747A42BA4C0915BDD5F0C81F309291E7")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:12.513 -0400", hash_original_method = "8AEABE91EB74288702D500EE9C97116A", hash_generated_method = "5A4F0EC70A9D7D7CCF8B828A7141D783")
     @DSModeled(DSC.SAFE)
     public boolean isStorageAvailable() {
         return dsTaint.getTaintBoolean();
@@ -172,6 +167,10 @@ public final class SmsStorageMonitor extends Handler {
     }
 
     
+    private static final String TAG = "SmsStorageMonitor";
+    private static final int EVENT_ICC_FULL = 1;
+    private static final int EVENT_REPORT_MEMORY_STATUS_DONE = 2;
+    private static final int EVENT_RADIO_ON = 3;
+    private static final int WAKE_LOCK_TIMEOUT = 5000;
 }
-
 

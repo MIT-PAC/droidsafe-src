@@ -3,19 +3,21 @@ package java.lang;
 // Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
+import droidsafe.runtime.*;
 
+// needed for enhanced for control translations
+import java.util.Iterator;
 
 public class ClassCastException extends RuntimeException {
-    private static final long serialVersionUID = -9223365651070458532L;
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 16:38:45.067 -0400", hash_original_method = "54A88184B9052FBFDEDAE165A6A4F85C", hash_generated_method = "D7AE170023561F01D8CC5F349FEADC10")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:25.635 -0400", hash_original_method = "54A88184B9052FBFDEDAE165A6A4F85C", hash_generated_method = "BCB3275847821F22276E01938C0B7F6E")
     @DSModeled(DSC.SAFE)
     public ClassCastException() {
         // ---------- Original Method ----------
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 16:38:45.070 -0400", hash_original_method = "9AC0043646A15326C62DB46FBF4E3D5F", hash_generated_method = "C4872EE6089D5DEA0695B2544C11F287")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:25.635 -0400", hash_original_method = "9AC0043646A15326C62DB46FBF4E3D5F", hash_generated_method = "1A3C018D2A1C9462ACC07CECE62A09D6")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public ClassCastException(String detailMessage) {
         super(detailMessage);
@@ -24,6 +26,6 @@ public class ClassCastException extends RuntimeException {
     }
 
     
+    private static final long serialVersionUID = -9223365651070458532L;
 }
-
 

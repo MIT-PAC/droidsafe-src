@@ -2,22 +2,19 @@ package java.util;
 
 // Droidsafe Imports
 import droidsafe.helpers.*;
-import droidsafe.runtime.DroidSafeAndroidRuntime;
 import droidsafe.annotations.*;
+import droidsafe.runtime.*;
 
-// import Iterator to deal with enhanced for loop translation
+// needed for enhanced for control translations
 import java.util.Iterator;
-
 import java.io.Serializable;
 
 public class Random implements Serializable {
-    private static final long serialVersionUID = 3905348978240129619L;
-    private static final long multiplier = 0x5deece66dL;
     private boolean haveNextNextGaussian;
     private long seed;
     private double nextNextGaussian;
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:14.816 -0400", hash_original_method = "3173C51AF7594D647EC1C2CFA488A448", hash_generated_method = "C869C0929D32101439BDA079DCA2A944")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:33.081 -0400", hash_original_method = "3173C51AF7594D647EC1C2CFA488A448", hash_generated_method = "973708C9D1F059DB74B65B6DA7E473CF")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public Random() {
         setSeed(System.currentTimeMillis() + System.identityHashCode(this));
@@ -26,8 +23,8 @@ public class Random implements Serializable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:14.816 -0400", hash_original_method = "D88C1F5B76368386940C522DAEBBB898", hash_generated_method = "5670086485A5AC97E40C3AC00CA55E8E")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:33.082 -0400", hash_original_method = "D88C1F5B76368386940C522DAEBBB898", hash_generated_method = "4A9376567BAFFD208104A701D8F4A543")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     public Random(long seed) {
         dsTaint.addTaint(seed);
         setSeed(seed);
@@ -36,7 +33,7 @@ public class Random implements Serializable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:14.816 -0400", hash_original_method = "9E0494734DCD804B33C2E0A263F97885", hash_generated_method = "43A299B9D455EB27263C2A7C49A107B2")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:33.082 -0400", hash_original_method = "9E0494734DCD804B33C2E0A263F97885", hash_generated_method = "9E5DEE8A412DBD7632201D77F05989F5")
     @DSModeled(DSC.SAFE)
     protected synchronized int next(int bits) {
         dsTaint.addTaint(bits);
@@ -48,20 +45,20 @@ public class Random implements Serializable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:14.816 -0400", hash_original_method = "D8D2D3A52478C6F30DF9DDCAD352622E", hash_generated_method = "D0BA83C00D7E48A09D99F17655CCCDC5")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:33.082 -0400", hash_original_method = "D8D2D3A52478C6F30DF9DDCAD352622E", hash_generated_method = "8751FF670FCE35DBC48A5A1E6C6DD723")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public boolean nextBoolean() {
-        boolean varE5ACCBA47091347A8BDFF4D5327FEC5D_584483647 = (next(1) != 0);
+        boolean varE5ACCBA47091347A8BDFF4D5327FEC5D_1089974447 = (next(1) != 0);
         return dsTaint.getTaintBoolean();
         // ---------- Original Method ----------
         //return next(1) != 0;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:14.816 -0400", hash_original_method = "43464E5BE3E8DA331BE8CD0E59C0FE2A", hash_generated_method = "E8BEFE8514A276D40515F05E5B371074")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:33.083 -0400", hash_original_method = "43464E5BE3E8DA331BE8CD0E59C0FE2A", hash_generated_method = "DA830F3D448F9E6CAF25CF64F2582AFC")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public void nextBytes(byte[] buf) {
-        dsTaint.addTaint(buf);
+        dsTaint.addTaint(buf[0]);
         int rand, count, loop;
         rand = 0;
         count = 0;
@@ -70,9 +67,6 @@ public class Random implements Serializable {
             {
                 rand = nextInt();
                 loop = 3;
-            } //End block
-            {
-                loop--;
             } //End block
             buf[count++] = (byte) rand;
             rand >>= 8;
@@ -92,27 +86,27 @@ public class Random implements Serializable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:14.816 -0400", hash_original_method = "B5A1D72A0CE7841EEF7745ACB102A3D0", hash_generated_method = "A4CDCE13AAEAB0624E64A744B78A96DF")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:33.083 -0400", hash_original_method = "B5A1D72A0CE7841EEF7745ACB102A3D0", hash_generated_method = "DF90E3F81D48958DAA59FF525E71DA24")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public double nextDouble() {
-        double varC8DBCDB2F76D24AB1BE15CC823BFFACE_181453680 = (((((long) next(26) << 27) + next(27)) / (double) (1L << 53)));
+        double varC8DBCDB2F76D24AB1BE15CC823BFFACE_1846013360 = (((((long) next(26) << 27) + next(27)) / (double) (1L << 53)));
         return dsTaint.getTaintDouble();
         // ---------- Original Method ----------
         //return ((((long) next(26) << 27) + next(27)) / (double) (1L << 53));
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:14.816 -0400", hash_original_method = "D1E3B2B06AA527A72663F03AD501BB2B", hash_generated_method = "69626627EB9DD7850DFF83E17929077B")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:33.083 -0400", hash_original_method = "D1E3B2B06AA527A72663F03AD501BB2B", hash_generated_method = "74FAD051F69BDD82E771AC3146F6475F")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public float nextFloat() {
-        float varBCCD376348376BED7CB4BDAAF9F93BD5_1043544359 = ((next(24) / 16777216f));
+        float varBCCD376348376BED7CB4BDAAF9F93BD5_830603362 = ((next(24) / 16777216f));
         return dsTaint.getTaintFloat();
         // ---------- Original Method ----------
         //return (next(24) / 16777216f);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:14.816 -0400", hash_original_method = "ABAEC318233CC46845A76D8E695280DE", hash_generated_method = "BC4FC1FA469310F7CDD4E8D0D40E89F3")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:33.084 -0400", hash_original_method = "ABAEC318233CC46845A76D8E695280DE", hash_generated_method = "DDB34702CBF3D01E0997BFADEA1C8EBE")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public synchronized double nextGaussian() {
         {
@@ -147,23 +141,23 @@ public class Random implements Serializable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:14.817 -0400", hash_original_method = "82F6347EB6C4A01CB76B611DAE5AF092", hash_generated_method = "527386F12F1080DAF732F98035995F96")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:33.084 -0400", hash_original_method = "82F6347EB6C4A01CB76B611DAE5AF092", hash_generated_method = "74D9AF1926EAC4D3CB3466C5DC867B3C")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public int nextInt() {
-        int var7C0A77E74215A5F7316622DD5618A3D6_1211016129 = (next(32));
+        int var7C0A77E74215A5F7316622DD5618A3D6_467934593 = (next(32));
         return dsTaint.getTaintInt();
         // ---------- Original Method ----------
         //return next(32);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:14.817 -0400", hash_original_method = "173DEE1A34208F3BEEC0CED47E74657B", hash_generated_method = "C1FE1E9139F29E7FA1B4F27D3880FDE3")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:33.085 -0400", hash_original_method = "173DEE1A34208F3BEEC0CED47E74657B", hash_generated_method = "3E165A15C46F464EA263AEE6A1FE9557")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public int nextInt(int n) {
         dsTaint.addTaint(n);
         {
             {
-                int varA79DB788DD9B958F0570240FEE805296_1858857211 = ((int) ((n * (long) next(31)) >> 31));
+                int varA79DB788DD9B958F0570240FEE805296_886191043 = ((int) ((n * (long) next(31)) >> 31));
             } //End block
             int bits, val;
             {
@@ -171,9 +165,7 @@ public class Random implements Serializable {
                 val = bits % n;
             } //End block
         } //End block
-        if (DroidSafeAndroidRuntime.control) {
-        	throw new IllegalArgumentException();
-        }
+        if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException();
         return dsTaint.getTaintInt();
         // ---------- Original Method ----------
         //if (n > 0) {
@@ -191,17 +183,17 @@ public class Random implements Serializable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:14.817 -0400", hash_original_method = "A03CC01D80C9639D8965955A7EA1BA6B", hash_generated_method = "7EFBDB41349D4443D6FC05518B2FF38C")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:33.094 -0400", hash_original_method = "A03CC01D80C9639D8965955A7EA1BA6B", hash_generated_method = "D564D51C58FE9D0E7DA5E0084383F1E4")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public long nextLong() {
-        long varBF611F33B152C4A9A72A301CE07D6614_1047552362 = (((long) next(32) << 32) + next(32));
+        long varBF611F33B152C4A9A72A301CE07D6614_420058352 = (((long) next(32) << 32) + next(32));
         return dsTaint.getTaintLong();
         // ---------- Original Method ----------
         //return ((long) next(32) << 32) + next(32);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:14.817 -0400", hash_original_method = "7BB21D33F15BE2B6645BBF6EE498410D", hash_generated_method = "855B6281AF0B4B829377AF9BDCB177E4")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:33.094 -0400", hash_original_method = "7BB21D33F15BE2B6645BBF6EE498410D", hash_generated_method = "7BEE1BC80E2ED6DF777FDC3F31339117")
     @DSModeled(DSC.SAFE)
     public synchronized void setSeed(long seed) {
         dsTaint.addTaint(seed);
@@ -213,6 +205,7 @@ public class Random implements Serializable {
     }
 
     
+    private static final long serialVersionUID = 3905348978240129619L;
+    private static final long multiplier = 0x5deece66dL;
 }
-
 

@@ -3,10 +3,10 @@ package com.android.internal.telephony;
 // Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
+import droidsafe.runtime.*;
 
-// import Iterator to deal with enhanced for loop translation
+// needed for enhanced for control translations
 import java.util.Iterator;
-
 import android.content.res.Resources;
 import android.text.TextUtils;
 import android.util.SparseIntArray;
@@ -21,6 +21,592 @@ import static android.telephony.SmsMessage.MAX_USER_DATA_SEPTETS;
 import static android.telephony.SmsMessage.MAX_USER_DATA_SEPTETS_WITH_HEADER;
 
 public class GsmAlphabet {
+    
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:11.178 -0400", hash_original_method = "ACEB66A7A5EB57C667A16876F7FFD7A1", hash_generated_method = "9D914C4804B753FB0D925E0024275993")
+    @DSModeled(DSC.SAFE)
+    private GsmAlphabet() {
+        // ---------- Original Method ----------
+    }
+
+    
+        public static int charToGsm(char c) {
+        try {
+            return charToGsm(c, false);
+        } catch (EncodeException ex) {
+            return sCharsToGsmTables[0].get(' ', ' ');
+        }
+    }
+
+    
+        public static int charToGsm(char c, boolean throwException) throws EncodeException {
+        int ret;
+        ret = sCharsToGsmTables[0].get(c, -1);
+        if (ret == -1) {
+            ret = sCharsToShiftTables[0].get(c, -1);
+            if (ret == -1) {
+                if (throwException) {
+                    throw new EncodeException(c);
+                } else {
+                    return sCharsToGsmTables[0].get(' ', ' ');
+                }
+            } else {
+                return GSM_EXTENDED_ESCAPE;
+            }
+        }
+        return ret;
+    }
+
+    
+        public static int charToGsmExtended(char c) {
+        int ret;
+        ret = sCharsToShiftTables[0].get(c, -1);
+        if (ret == -1) {
+            return sCharsToGsmTables[0].get(' ', ' ');
+        }
+        return ret;
+    }
+
+    
+        public static char gsmToChar(int gsmChar) {
+        if (gsmChar >= 0 && gsmChar < 128) {
+            return sLanguageTables[0].charAt(gsmChar);
+        } else {
+            return ' ';
+        }
+    }
+
+    
+        public static char gsmExtendedToChar(int gsmChar) {
+        if (gsmChar == GSM_EXTENDED_ESCAPE) {
+            return ' ';
+        } else if (gsmChar >= 0 && gsmChar < 128) {
+            char c = sLanguageShiftTables[0].charAt(gsmChar);
+            if (c == ' ') {
+                return sLanguageTables[0].charAt(gsmChar);
+            } else {
+                return c;
+            }
+        } else {
+            return ' ';     
+        }
+    }
+
+    
+        public static byte[] stringToGsm7BitPackedWithHeader(String data, byte[] header) throws EncodeException {
+        return stringToGsm7BitPackedWithHeader(data, header, 0, 0);
+    }
+
+    
+        public static byte[] stringToGsm7BitPackedWithHeader(String data, byte[] header,
+            int languageTable, int languageShiftTable) throws EncodeException {
+        if (header == null || header.length == 0) {
+            return stringToGsm7BitPacked(data, languageTable, languageShiftTable);
+        }
+        int headerBits = (header.length + 1) * 8;
+        int headerSeptets = (headerBits + 6) / 7;
+        byte[] ret = stringToGsm7BitPacked(data, headerSeptets, true, languageTable,
+                languageShiftTable);
+        ret[1] = (byte)header.length;
+        System.arraycopy(header, 0, ret, 2, header.length);
+        return ret;
+    }
+
+    
+        public static byte[] stringToGsm7BitPacked(String data) throws EncodeException {
+        return stringToGsm7BitPacked(data, 0, true, 0, 0);
+    }
+
+    
+        public static byte[] stringToGsm7BitPacked(String data, int languageTable,
+            int languageShiftTable) throws EncodeException {
+        return stringToGsm7BitPacked(data, 0, true, languageTable, languageShiftTable);
+    }
+
+    
+        public static byte[] stringToGsm7BitPacked(String data, int startingSeptetOffset,
+            boolean throwException, int languageTable, int languageShiftTable) throws EncodeException {
+        int dataLen = data.length();
+        int septetCount = countGsmSeptetsUsingTables(data, !throwException,
+                languageTable, languageShiftTable);
+        if (septetCount == -1) {
+            throw new EncodeException("countGsmSeptetsUsingTables(): unencodable char");
+        }
+        septetCount += startingSeptetOffset;
+        if (septetCount > 255) {
+            throw new EncodeException("Payload cannot exceed 255 septets");
+        }
+        int byteCount = ((septetCount * 7) + 7) / 8;
+        byte[] ret = new byte[byteCount + 1];
+        SparseIntArray charToLanguageTable = sCharsToGsmTables[languageTable];
+        SparseIntArray charToShiftTable = sCharsToShiftTables[languageShiftTable];
+        for (int i = 0, septets = startingSeptetOffset, bitOffset = startingSeptetOffset * 7;
+                 i < dataLen && septets < septetCount;
+                 i++, bitOffset += 7) {
+            char c = data.charAt(i);
+            int v = charToLanguageTable.get(c, -1);
+            if (v == -1) {
+                v = charToShiftTable.get(c, -1);  
+                if (v == -1) {
+                    if (throwException) {
+                        throw new EncodeException("stringToGsm7BitPacked(): unencodable char");
+                    } else {
+                        v = charToLanguageTable.get(' ', ' ');   
+                    }
+                } else {
+                    packSmsChar(ret, bitOffset, GSM_EXTENDED_ESCAPE);
+                    bitOffset += 7;
+                    septets++;
+                }
+            }
+            packSmsChar(ret, bitOffset, v);
+            septets++;
+        }
+        ret[0] = (byte) (septetCount);
+        return ret;
+    }
+
+    
+        private static void packSmsChar(byte[] packedChars, int bitOffset, int value) {
+        int byteOffset = bitOffset / 8;
+        int shift = bitOffset % 8;
+        packedChars[++byteOffset] |= value << shift;
+        if (shift > 1) {
+            packedChars[++byteOffset] = (byte)(value >> (8 - shift));
+        }
+    }
+
+    
+        public static String gsm7BitPackedToString(byte[] pdu, int offset,
+            int lengthSeptets) {
+        return gsm7BitPackedToString(pdu, offset, lengthSeptets, 0, 0, 0);
+    }
+
+    
+        public static String gsm7BitPackedToString(byte[] pdu, int offset,
+            int lengthSeptets, int numPaddingBits, int languageTable, int shiftTable) {
+        StringBuilder ret = new StringBuilder(lengthSeptets);
+        if (languageTable < 0 || languageTable > sLanguageTables.length) {
+            Log.w(TAG, "unknown language table " + languageTable + ", using default");
+            languageTable = 0;
+        }
+        if (shiftTable < 0 || shiftTable > sLanguageShiftTables.length) {
+            Log.w(TAG, "unknown single shift table " + shiftTable + ", using default");
+            shiftTable = 0;
+        }
+        try {
+            boolean prevCharWasEscape = false;
+            String languageTableToChar = sLanguageTables[languageTable];
+            String shiftTableToChar = sLanguageShiftTables[shiftTable];
+            if (languageTableToChar.isEmpty()) {
+                Log.w(TAG, "no language table for code " + languageTable + ", using default");
+                languageTableToChar = sLanguageTables[0];
+            }
+            if (shiftTableToChar.isEmpty()) {
+                Log.w(TAG, "no single shift table for code " + shiftTable + ", using default");
+                shiftTableToChar = sLanguageShiftTables[0];
+            }
+            for (int i = 0 ; i < lengthSeptets ; i++) {
+                int bitOffset = (7 * i) + numPaddingBits;
+                int byteOffset = bitOffset / 8;
+                int shift = bitOffset % 8;
+                int gsmVal;
+                gsmVal = (0x7f & (pdu[offset + byteOffset] >> shift));
+                if (shift > 1) {
+                    gsmVal &= 0x7f >> (shift - 1);
+                    gsmVal |= 0x7f & (pdu[offset + byteOffset + 1] << (8 - shift));
+                }
+                if (prevCharWasEscape) {
+                    if (gsmVal == GSM_EXTENDED_ESCAPE) {
+                        ret.append(' ');    
+                    } else {
+                        char c = shiftTableToChar.charAt(gsmVal);
+                        if (c == ' ') {
+                            ret.append(languageTableToChar.charAt(gsmVal));
+                        } else {
+                            ret.append(c);
+                        }
+                    }
+                    prevCharWasEscape = false;
+                } else if (gsmVal == GSM_EXTENDED_ESCAPE) {
+                    prevCharWasEscape = true;
+                } else {
+                    ret.append(languageTableToChar.charAt(gsmVal));
+                }
+            }
+        } catch (RuntimeException ex) {
+            Log.e(TAG, "Error GSM 7 bit packed: ", ex);
+            return null;
+        }
+        return ret.toString();
+    }
+
+    
+        public static String gsm8BitUnpackedToString(byte[] data, int offset, int length) {
+        return gsm8BitUnpackedToString(data, offset, length, "");
+    }
+
+    
+        public static String gsm8BitUnpackedToString(byte[] data, int offset, int length, String characterset) {
+        boolean isMbcs = false;
+        Charset charset = null;
+        ByteBuffer mbcsBuffer = null;
+        if (!TextUtils.isEmpty(characterset)
+                && !characterset.equalsIgnoreCase("us-ascii")
+                && Charset.isSupported(characterset)) {
+            isMbcs = true;
+            charset = Charset.forName(characterset);
+            mbcsBuffer = ByteBuffer.allocate(2);
+        }
+        String languageTableToChar = sLanguageTables[0];
+        String shiftTableToChar = sLanguageShiftTables[0];
+        StringBuilder ret = new StringBuilder(length);
+        boolean prevWasEscape = false;
+        for (int i = offset ; i < offset + length ; i++) {
+            int c = data[i] & 0xff;
+            if (c == 0xff) {
+                break;
+            } else if (c == GSM_EXTENDED_ESCAPE) {
+                if (prevWasEscape) {
+                    ret.append(' ');
+                    prevWasEscape = false;
+                } else {
+                    prevWasEscape = true;
+                }
+            } else {
+                if (prevWasEscape) {
+                    char shiftChar = shiftTableToChar.charAt(c);
+                    if (shiftChar == ' ') {
+                        ret.append(languageTableToChar.charAt(c));
+                    } else {
+                        ret.append(shiftChar);
+                    }
+                } else {
+                    if (!isMbcs || c < 0x80 || i + 1 >= offset + length) {
+                        ret.append(languageTableToChar.charAt(c));
+                    } else {
+                        mbcsBuffer.clear();
+                        mbcsBuffer.put(data, i++, 2);
+                        mbcsBuffer.flip();
+                        ret.append(charset.decode(mbcsBuffer).toString());
+                    }
+                }
+                prevWasEscape = false;
+            }
+        }
+        return ret.toString();
+    }
+
+    
+        public static byte[] stringToGsm8BitPacked(String s) {
+        byte[] ret;
+        int septets = countGsmSeptetsUsingTables(s, true, 0, 0);
+        ret = new byte[septets];
+        stringToGsm8BitUnpackedField(s, ret, 0, ret.length);
+        return ret;
+    }
+
+    
+        public static void stringToGsm8BitUnpackedField(String s, byte dest[], int offset, int length) {
+        int outByteIndex = offset;
+        SparseIntArray charToLanguageTable = sCharsToGsmTables[0];
+        SparseIntArray charToShiftTable = sCharsToShiftTables[0];
+        for (int i = 0, sz = s.length()
+                ; i < sz && (outByteIndex - offset) < length
+                ; i++
+        ) {
+            char c = s.charAt(i);
+            int v = charToLanguageTable.get(c, -1);
+            if (v == -1) {
+                v = charToShiftTable.get(c, -1);
+                if (v == -1) {
+                    v = charToLanguageTable.get(' ', ' ');  
+                } else {
+                    if (! (outByteIndex + 1 - offset < length)) {
+                        break;
+                    }
+                    dest[outByteIndex++] = GSM_EXTENDED_ESCAPE;
+                }
+            }
+            dest[outByteIndex++] = (byte)v;
+        }
+        while((outByteIndex - offset) < length) {
+            dest[outByteIndex++] = (byte)0xff;
+        }
+    }
+
+    
+        public static int countGsmSeptets(char c) {
+        try {
+            return countGsmSeptets(c, false);
+        } catch (EncodeException ex) {
+            return 0;
+        }
+    }
+
+    
+        public static int countGsmSeptets(char c, boolean throwsException) throws EncodeException {
+        if (sCharsToGsmTables[0].get(c, -1) != -1) {
+            return 1;
+        }
+        if (sCharsToShiftTables[0].get(c, -1) != -1) {
+            return 2;
+        }
+        if (throwsException) {
+            throw new EncodeException(c);
+        } else {
+            return 1;
+        }
+    }
+
+    
+        public static int countGsmSeptetsUsingTables(CharSequence s, boolean use7bitOnly,
+            int languageTable, int languageShiftTable) {
+        int count = 0;
+        int sz = s.length();
+        SparseIntArray charToLanguageTable = sCharsToGsmTables[languageTable];
+        SparseIntArray charToShiftTable = sCharsToShiftTables[languageShiftTable];
+        for (int i = 0; i < sz; i++) {
+            char c = s.charAt(i);
+            if (c == GSM_EXTENDED_ESCAPE) {
+                Log.w(TAG, "countGsmSeptets() string contains Escape character, skipping.");
+                continue;
+            }
+            if (charToLanguageTable.get(c, -1) != -1) {
+                count++;
+            } else if (charToShiftTable.get(c, -1) != -1) {
+                count += 2; 
+            } else if (use7bitOnly) {
+                count++;    
+            } else {
+                return -1;  
+            }
+        }
+        return count;
+    }
+
+    
+        public static SmsMessageBase.TextEncodingDetails countGsmSeptets(CharSequence s, boolean use7bitOnly) {
+        if (sEnabledSingleShiftTables.length + sEnabledLockingShiftTables.length == 0) {
+            SmsMessageBase.TextEncodingDetails ted = new SmsMessageBase.TextEncodingDetails();
+            int septets = GsmAlphabet.countGsmSeptetsUsingTables(s, use7bitOnly, 0, 0);
+            if (septets == -1) {
+                return null;
+            }
+            ted.codeUnitSize = ENCODING_7BIT;
+            ted.codeUnitCount = septets;
+            if (septets > MAX_USER_DATA_SEPTETS) {
+                ted.msgCount = (septets + (MAX_USER_DATA_SEPTETS_WITH_HEADER - 1)) /
+                        MAX_USER_DATA_SEPTETS_WITH_HEADER;
+                ted.codeUnitsRemaining = (ted.msgCount *
+                        MAX_USER_DATA_SEPTETS_WITH_HEADER) - septets;
+            } else {
+                ted.msgCount = 1;
+                ted.codeUnitsRemaining = MAX_USER_DATA_SEPTETS - septets;
+            }
+            ted.codeUnitSize = ENCODING_7BIT;
+            return ted;
+        }
+        int maxSingleShiftCode = sHighestEnabledSingleShiftCode;
+        List<LanguagePairCount> lpcList = new ArrayList<LanguagePairCount>(
+                sEnabledLockingShiftTables.length + 1);
+        lpcList.add(new LanguagePairCount(0));
+        for (int i : sEnabledLockingShiftTables) {
+            if (i != 0 && !sLanguageTables[i].isEmpty()) {
+                lpcList.add(new LanguagePairCount(i));
+            }
+        }
+        int sz = s.length();
+        for (int i = 0; i < sz && !lpcList.isEmpty(); i++) {
+            char c = s.charAt(i);
+            if (c == GSM_EXTENDED_ESCAPE) {
+                Log.w(TAG, "countGsmSeptets() string contains Escape character, ignoring!");
+                continue;
+            }
+            for (LanguagePairCount lpc : lpcList) {
+                int tableIndex = sCharsToGsmTables[lpc.languageCode].get(c, -1);
+                if (tableIndex == -1) {
+                    for (int table = 0; table <= maxSingleShiftCode; table++) {
+                        if (lpc.septetCounts[table] != -1) {
+                            int shiftTableIndex = sCharsToShiftTables[table].get(c, -1);
+                            if (shiftTableIndex == -1) {
+                                if (use7bitOnly) {
+                                    lpc.septetCounts[table]++;
+                                    lpc.unencodableCounts[table]++;
+                                } else {
+                                    lpc.septetCounts[table] = -1;
+                                }
+                            } else {
+                                lpc.septetCounts[table] += 2;
+                            }
+                        }
+                    }
+                } else {
+                    for (int table = 0; table <= maxSingleShiftCode; table++) {
+                        if (lpc.septetCounts[table] != -1) {
+                            lpc.septetCounts[table]++;
+                        }
+                    }
+                }
+            }
+        }
+        SmsMessageBase.TextEncodingDetails ted = new SmsMessageBase.TextEncodingDetails();
+        ted.msgCount = Integer.MAX_VALUE;
+        ted.codeUnitSize = ENCODING_7BIT;
+        int minUnencodableCount = Integer.MAX_VALUE;
+        for (LanguagePairCount lpc : lpcList) {
+            for (int shiftTable = 0; shiftTable <= maxSingleShiftCode; shiftTable++) {
+                int septets = lpc.septetCounts[shiftTable];
+                if (septets == -1) {
+                    continue;
+                }
+                int udhLength;
+                if (lpc.languageCode != 0 && shiftTable != 0) {
+                    udhLength = UDH_SEPTET_COST_LENGTH + UDH_SEPTET_COST_TWO_SHIFT_TABLES;
+                } else if (lpc.languageCode != 0 || shiftTable != 0) {
+                    udhLength = UDH_SEPTET_COST_LENGTH + UDH_SEPTET_COST_ONE_SHIFT_TABLE;
+                } else {
+                    udhLength = 0;
+                }
+                int msgCount;
+                int septetsRemaining;
+                if (septets + udhLength > MAX_USER_DATA_SEPTETS) {
+                    if (udhLength == 0) {
+                        udhLength = UDH_SEPTET_COST_LENGTH;
+                    }
+                    udhLength += UDH_SEPTET_COST_CONCATENATED_MESSAGE;
+                    int septetsPerMessage = MAX_USER_DATA_SEPTETS - udhLength;
+                    msgCount = (septets + septetsPerMessage - 1) / septetsPerMessage;
+                    septetsRemaining = (msgCount * septetsPerMessage) - septets;
+                } else {
+                    msgCount = 1;
+                    septetsRemaining = MAX_USER_DATA_SEPTETS - udhLength - septets;
+                }
+                int unencodableCount = lpc.unencodableCounts[shiftTable];
+                if (use7bitOnly && unencodableCount > minUnencodableCount) {
+                    continue;
+                }
+                if ((use7bitOnly && unencodableCount < minUnencodableCount)
+                        || msgCount < ted.msgCount || (msgCount == ted.msgCount
+                        && septetsRemaining > ted.codeUnitsRemaining)) {
+                    minUnencodableCount = unencodableCount;
+                    ted.msgCount = msgCount;
+                    ted.codeUnitCount = septets;
+                    ted.codeUnitsRemaining = septetsRemaining;
+                    ted.languageTable = lpc.languageCode;
+                    ted.languageShiftTable = shiftTable;
+                }
+            }
+        }
+        if (ted.msgCount == Integer.MAX_VALUE) {
+            return null;
+        }
+        return ted;
+    }
+
+    
+        public static int findGsmSeptetLimitIndex(String s, int start, int limit, int langTable, int langShiftTable) {
+        int accumulator = 0;
+        int size = s.length();
+        SparseIntArray charToLangTable = sCharsToGsmTables[langTable];
+        SparseIntArray charToLangShiftTable = sCharsToShiftTables[langShiftTable];
+        for (int i = start; i < size; i++) {
+            int encodedSeptet = charToLangTable.get(s.charAt(i), -1);
+            if (encodedSeptet == -1) {
+                encodedSeptet = charToLangShiftTable.get(s.charAt(i), -1);
+                if (encodedSeptet == -1) {
+                    accumulator++;
+                } else {
+                    accumulator += 2;  
+                }
+            } else {
+                accumulator++;
+            }
+            if (accumulator > limit) {
+                return i;
+            }
+        }
+        return size;
+    }
+
+    
+        static synchronized void setEnabledSingleShiftTables(int[] tables) {
+        sEnabledSingleShiftTables = tables;
+        if (tables.length > 0) {
+            sHighestEnabledSingleShiftCode = tables[tables.length - 1];
+        } else {
+            sHighestEnabledSingleShiftCode = 0;
+        }
+    }
+
+    
+        static synchronized void setEnabledLockingShiftTables(int[] tables) {
+        sEnabledLockingShiftTables = tables;
+    }
+
+    
+        static synchronized int[] getEnabledSingleShiftTables() {
+        return sEnabledSingleShiftTables;
+    }
+
+    
+        static synchronized int[] getEnabledLockingShiftTables() {
+        return sEnabledLockingShiftTables;
+    }
+
+    
+    private static class LanguagePairCount {
+        int languageCode;
+        int[] septetCounts;
+        int[] unencodableCounts;
+        
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:11.184 -0400", hash_original_method = "62389A632F9774EDFBFC18A0B528AAFD", hash_generated_method = "EE479A4DAC697A779A2FA5E4942DF9EB")
+        //DSFIXME:  CODE0002: Requires DSC value to be set
+         LanguagePairCount(int code) {
+            dsTaint.addTaint(code);
+            int maxSingleShiftCode;
+            maxSingleShiftCode = sHighestEnabledSingleShiftCode;
+            septetCounts = new int[maxSingleShiftCode + 1];
+            unencodableCounts = new int[maxSingleShiftCode + 1];
+            {
+                int i, tableOffset;
+                i = 1;
+                tableOffset = 0;
+                {
+                    {
+                        septetCounts[i] = -1;
+                    } //End block
+                } //End block
+            } //End collapsed parenthetic
+            {
+                septetCounts[1] = -1;
+            } //End block
+            {
+                septetCounts[2] = -1;
+            } //End block
+            // ---------- Original Method ----------
+            //this.languageCode = code;
+            //int maxSingleShiftCode = sHighestEnabledSingleShiftCode;
+            //septetCounts = new int[maxSingleShiftCode + 1];
+            //unencodableCounts = new int[maxSingleShiftCode + 1];
+            //for (int i = 1, tableOffset = 0; i <= maxSingleShiftCode; i++) {
+                //if (sEnabledSingleShiftTables[tableOffset] == i) {
+                    //tableOffset++;
+                //} else {
+                    //septetCounts[i] = -1;   
+                //}
+            //}
+            //if (code == 1 && maxSingleShiftCode >= 1) {
+                //septetCounts[1] = -1;   
+            //} else if (code == 3 && maxSingleShiftCode >= 2) {
+                //septetCounts[2] = -1;   
+            //}
+        }
+
+        
+    }
+
+
+    
     private static final String TAG = "GSM";
     public static final byte GSM_EXTENDED_ESCAPE = 0x1B;
     public static final int UDH_SEPTET_COST_LENGTH = 1;
@@ -322,623 +908,6 @@ public class GsmAlphabet {
             
             + "\u06cd[~]\u06d4|ABCDEFGHIJKLMNOPQRSTUVWXYZ          \u20ac                          "
     };
-    
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.821 -0400", hash_original_method = "ACEB66A7A5EB57C667A16876F7FFD7A1", hash_generated_method = "6480855B809B0008E23CCA72F72143DA")
-    @DSModeled(DSC.SAFE)
-    private GsmAlphabet() {
-        // ---------- Original Method ----------
-    }
-
-    
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.821 -0400", hash_original_method = "0740E554006F2DFE2DCF335B04D4CE86", hash_generated_method = "989AA067E23EEAC5906FC865A95208D5")
-    public static int charToGsm(char c) {
-        try {
-            return charToGsm(c, false);
-        } catch (EncodeException ex) {
-            return sCharsToGsmTables[0].get(' ', ' ');
-        }
-    }
-
-    
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.821 -0400", hash_original_method = "C5A6CD560F9FCF717C5BAB266CC5E4CD", hash_generated_method = "DC34FEB9C0F826D88D02DAD3B9F71847")
-    public static int charToGsm(char c, boolean throwException) throws EncodeException {
-        int ret;
-        ret = sCharsToGsmTables[0].get(c, -1);
-        if (ret == -1) {
-            ret = sCharsToShiftTables[0].get(c, -1);
-            if (ret == -1) {
-                if (throwException) {
-                    throw new EncodeException(c);
-                } else {
-                    return sCharsToGsmTables[0].get(' ', ' ');
-                }
-            } else {
-                return GSM_EXTENDED_ESCAPE;
-            }
-        }
-        return ret;
-    }
-
-    
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.821 -0400", hash_original_method = "92A4F1B66361CC9BE6180C48EF42AF5A", hash_generated_method = "D6A943FE64E4DA4220B2DEDCE39E9375")
-    public static int charToGsmExtended(char c) {
-        int ret;
-        ret = sCharsToShiftTables[0].get(c, -1);
-        if (ret == -1) {
-            return sCharsToGsmTables[0].get(' ', ' ');
-        }
-        return ret;
-    }
-
-    
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.821 -0400", hash_original_method = "33A72088F866CE60A95FDCD7FA3E1376", hash_generated_method = "F2BE5F72D37C4478F4171512DE2BF5FE")
-    public static char gsmToChar(int gsmChar) {
-        if (gsmChar >= 0 && gsmChar < 128) {
-            return sLanguageTables[0].charAt(gsmChar);
-        } else {
-            return ' ';
-        }
-    }
-
-    
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.821 -0400", hash_original_method = "F58589DCA46C15E931642ACA6B53E7A5", hash_generated_method = "43CEF1B5E01CF8D7C7B06AA1A5DCE208")
-    public static char gsmExtendedToChar(int gsmChar) {
-        if (gsmChar == GSM_EXTENDED_ESCAPE) {
-            return ' ';
-        } else if (gsmChar >= 0 && gsmChar < 128) {
-            char c = sLanguageShiftTables[0].charAt(gsmChar);
-            if (c == ' ') {
-                return sLanguageTables[0].charAt(gsmChar);
-            } else {
-                return c;
-            }
-        } else {
-            return ' ';     
-        }
-    }
-
-    
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.821 -0400", hash_original_method = "2F721D777A36DFB8DFB35BB3F12A2C71", hash_generated_method = "8CBE85E4D5CC888894020E43CC5894C6")
-    public static byte[] stringToGsm7BitPackedWithHeader(String data, byte[] header) throws EncodeException {
-        return stringToGsm7BitPackedWithHeader(data, header, 0, 0);
-    }
-
-    
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.821 -0400", hash_original_method = "830AB81103073BE5F7AB467D579AEC22", hash_generated_method = "0457D60CAD19A5883FFFCD5B952447BA")
-    public static byte[] stringToGsm7BitPackedWithHeader(String data, byte[] header,
-            int languageTable, int languageShiftTable) throws EncodeException {
-        if (header == null || header.length == 0) {
-            return stringToGsm7BitPacked(data, languageTable, languageShiftTable);
-        }
-        int headerBits = (header.length + 1) * 8;
-        int headerSeptets = (headerBits + 6) / 7;
-        byte[] ret = stringToGsm7BitPacked(data, headerSeptets, true, languageTable,
-                languageShiftTable);
-        ret[1] = (byte)header.length;
-        System.arraycopy(header, 0, ret, 2, header.length);
-        return ret;
-    }
-
-    
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.821 -0400", hash_original_method = "4B8A35C111D653EE4FB3175AA95E287D", hash_generated_method = "60D0EAA4AAAF6E66518CDCAD0A181CD4")
-    public static byte[] stringToGsm7BitPacked(String data) throws EncodeException {
-        return stringToGsm7BitPacked(data, 0, true, 0, 0);
-    }
-
-    
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.821 -0400", hash_original_method = "0327FB2868DF4020C01C73472A1250C2", hash_generated_method = "5C840CD56D613D383A8D887516F98DEF")
-    public static byte[] stringToGsm7BitPacked(String data, int languageTable,
-            int languageShiftTable) throws EncodeException {
-        return stringToGsm7BitPacked(data, 0, true, languageTable, languageShiftTable);
-    }
-
-    
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.821 -0400", hash_original_method = "FBF38886347372CA6BF9139CF8BB5D1E", hash_generated_method = "A705F2C53838174C7BDDC83A72EF6307")
-    public static byte[] stringToGsm7BitPacked(String data, int startingSeptetOffset,
-            boolean throwException, int languageTable, int languageShiftTable) throws EncodeException {
-        int dataLen = data.length();
-        int septetCount = countGsmSeptetsUsingTables(data, !throwException,
-                languageTable, languageShiftTable);
-        if (septetCount == -1) {
-            throw new EncodeException("countGsmSeptetsUsingTables(): unencodable char");
-        }
-        septetCount += startingSeptetOffset;
-        if (septetCount > 255) {
-            throw new EncodeException("Payload cannot exceed 255 septets");
-        }
-        int byteCount = ((septetCount * 7) + 7) / 8;
-        byte[] ret = new byte[byteCount + 1];
-        SparseIntArray charToLanguageTable = sCharsToGsmTables[languageTable];
-        SparseIntArray charToShiftTable = sCharsToShiftTables[languageShiftTable];
-        for (int i = 0, septets = startingSeptetOffset, bitOffset = startingSeptetOffset * 7;
-                 i < dataLen && septets < septetCount;
-                 i++, bitOffset += 7) {
-            char c = data.charAt(i);
-            int v = charToLanguageTable.get(c, -1);
-            if (v == -1) {
-                v = charToShiftTable.get(c, -1);  
-                if (v == -1) {
-                    if (throwException) {
-                        throw new EncodeException("stringToGsm7BitPacked(): unencodable char");
-                    } else {
-                        v = charToLanguageTable.get(' ', ' ');   
-                    }
-                } else {
-                    packSmsChar(ret, bitOffset, GSM_EXTENDED_ESCAPE);
-                    bitOffset += 7;
-                    septets++;
-                }
-            }
-            packSmsChar(ret, bitOffset, v);
-            septets++;
-        }
-        ret[0] = (byte) (septetCount);
-        return ret;
-    }
-
-    
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.821 -0400", hash_original_method = "8A74673B598B0BDC221AF89902C2BEC8", hash_generated_method = "92139D8AC94846C0E57C2E010BA4FFCA")
-    private static void packSmsChar(byte[] packedChars, int bitOffset, int value) {
-        int byteOffset = bitOffset / 8;
-        int shift = bitOffset % 8;
-        packedChars[++byteOffset] |= value << shift;
-        if (shift > 1) {
-            packedChars[++byteOffset] = (byte)(value >> (8 - shift));
-        }
-    }
-
-    
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.821 -0400", hash_original_method = "269FD25A339CA6CBEE5F724860093CE2", hash_generated_method = "73DFB8CE64B8DD4EB43B7885FF4CD897")
-    public static String gsm7BitPackedToString(byte[] pdu, int offset,
-            int lengthSeptets) {
-        return gsm7BitPackedToString(pdu, offset, lengthSeptets, 0, 0, 0);
-    }
-
-    
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.822 -0400", hash_original_method = "4C26043E02DE22C96AB37FBDCC151121", hash_generated_method = "13466F05523E461A8DA70089F138A243")
-    public static String gsm7BitPackedToString(byte[] pdu, int offset,
-            int lengthSeptets, int numPaddingBits, int languageTable, int shiftTable) {
-        StringBuilder ret = new StringBuilder(lengthSeptets);
-        if (languageTable < 0 || languageTable > sLanguageTables.length) {
-            Log.w(TAG, "unknown language table " + languageTable + ", using default");
-            languageTable = 0;
-        }
-        if (shiftTable < 0 || shiftTable > sLanguageShiftTables.length) {
-            Log.w(TAG, "unknown single shift table " + shiftTable + ", using default");
-            shiftTable = 0;
-        }
-        try {
-            boolean prevCharWasEscape = false;
-            String languageTableToChar = sLanguageTables[languageTable];
-            String shiftTableToChar = sLanguageShiftTables[shiftTable];
-            if (languageTableToChar.isEmpty()) {
-                Log.w(TAG, "no language table for code " + languageTable + ", using default");
-                languageTableToChar = sLanguageTables[0];
-            }
-            if (shiftTableToChar.isEmpty()) {
-                Log.w(TAG, "no single shift table for code " + shiftTable + ", using default");
-                shiftTableToChar = sLanguageShiftTables[0];
-            }
-            for (int i = 0 ; i < lengthSeptets ; i++) {
-                int bitOffset = (7 * i) + numPaddingBits;
-                int byteOffset = bitOffset / 8;
-                int shift = bitOffset % 8;
-                int gsmVal;
-                gsmVal = (0x7f & (pdu[offset + byteOffset] >> shift));
-                if (shift > 1) {
-                    gsmVal &= 0x7f >> (shift - 1);
-                    gsmVal |= 0x7f & (pdu[offset + byteOffset + 1] << (8 - shift));
-                }
-                if (prevCharWasEscape) {
-                    if (gsmVal == GSM_EXTENDED_ESCAPE) {
-                        ret.append(' ');    
-                    } else {
-                        char c = shiftTableToChar.charAt(gsmVal);
-                        if (c == ' ') {
-                            ret.append(languageTableToChar.charAt(gsmVal));
-                        } else {
-                            ret.append(c);
-                        }
-                    }
-                    prevCharWasEscape = false;
-                } else if (gsmVal == GSM_EXTENDED_ESCAPE) {
-                    prevCharWasEscape = true;
-                } else {
-                    ret.append(languageTableToChar.charAt(gsmVal));
-                }
-            }
-        } catch (RuntimeException ex) {
-            Log.e(TAG, "Error GSM 7 bit packed: ", ex);
-            return null;
-        }
-        return ret.toString();
-    }
-
-    
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.822 -0400", hash_original_method = "9FFA63EC0EE85D31116151AE382BD19B", hash_generated_method = "4ECC9E9262A30223A86CC137CCEBCD99")
-    public static String gsm8BitUnpackedToString(byte[] data, int offset, int length) {
-        return gsm8BitUnpackedToString(data, offset, length, "");
-    }
-
-    
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.822 -0400", hash_original_method = "F4F7246DD691380E13C09E794F3AA7A8", hash_generated_method = "4A7AF0C8D864AADAB258EACCA9667AA4")
-    public static String gsm8BitUnpackedToString(byte[] data, int offset, int length, String characterset) {
-        boolean isMbcs = false;
-        Charset charset = null;
-        ByteBuffer mbcsBuffer = null;
-        if (!TextUtils.isEmpty(characterset)
-                && !characterset.equalsIgnoreCase("us-ascii")
-                && Charset.isSupported(characterset)) {
-            isMbcs = true;
-            charset = Charset.forName(characterset);
-            mbcsBuffer = ByteBuffer.allocate(2);
-        }
-        String languageTableToChar = sLanguageTables[0];
-        String shiftTableToChar = sLanguageShiftTables[0];
-        StringBuilder ret = new StringBuilder(length);
-        boolean prevWasEscape = false;
-        for (int i = offset ; i < offset + length ; i++) {
-            int c = data[i] & 0xff;
-            if (c == 0xff) {
-                break;
-            } else if (c == GSM_EXTENDED_ESCAPE) {
-                if (prevWasEscape) {
-                    ret.append(' ');
-                    prevWasEscape = false;
-                } else {
-                    prevWasEscape = true;
-                }
-            } else {
-                if (prevWasEscape) {
-                    char shiftChar = shiftTableToChar.charAt(c);
-                    if (shiftChar == ' ') {
-                        ret.append(languageTableToChar.charAt(c));
-                    } else {
-                        ret.append(shiftChar);
-                    }
-                } else {
-                    if (!isMbcs || c < 0x80 || i + 1 >= offset + length) {
-                        ret.append(languageTableToChar.charAt(c));
-                    } else {
-                        mbcsBuffer.clear();
-                        mbcsBuffer.put(data, i++, 2);
-                        mbcsBuffer.flip();
-                        ret.append(charset.decode(mbcsBuffer).toString());
-                    }
-                }
-                prevWasEscape = false;
-            }
-        }
-        return ret.toString();
-    }
-
-    
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.822 -0400", hash_original_method = "9F01E3A806C3F2E1984EAD9F3EE0C531", hash_generated_method = "BE855166C75D8DE506D5481E04939D9A")
-    public static byte[] stringToGsm8BitPacked(String s) {
-        byte[] ret;
-        int septets = countGsmSeptetsUsingTables(s, true, 0, 0);
-        ret = new byte[septets];
-        stringToGsm8BitUnpackedField(s, ret, 0, ret.length);
-        return ret;
-    }
-
-    
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.822 -0400", hash_original_method = "4F9FE824A1A1412EB15D3E5F93B9B70E", hash_generated_method = "8D10910F75602824B5E45512B7F19C9D")
-    public static void stringToGsm8BitUnpackedField(String s, byte dest[], int offset, int length) {
-        int outByteIndex = offset;
-        SparseIntArray charToLanguageTable = sCharsToGsmTables[0];
-        SparseIntArray charToShiftTable = sCharsToShiftTables[0];
-        for (int i = 0, sz = s.length()
-                ; i < sz && (outByteIndex - offset) < length
-                ; i++
-        ) {
-            char c = s.charAt(i);
-            int v = charToLanguageTable.get(c, -1);
-            if (v == -1) {
-                v = charToShiftTable.get(c, -1);
-                if (v == -1) {
-                    v = charToLanguageTable.get(' ', ' ');  
-                } else {
-                    if (! (outByteIndex + 1 - offset < length)) {
-                        break;
-                    }
-                    dest[outByteIndex++] = GSM_EXTENDED_ESCAPE;
-                }
-            }
-            dest[outByteIndex++] = (byte)v;
-        }
-        while((outByteIndex - offset) < length) {
-            dest[outByteIndex++] = (byte)0xff;
-        }
-    }
-
-    
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.822 -0400", hash_original_method = "BCBDE9868C3CBC78368831B9E15D690C", hash_generated_method = "1907D71DACB46026517DC6113E64C89E")
-    public static int countGsmSeptets(char c) {
-        try {
-            return countGsmSeptets(c, false);
-        } catch (EncodeException ex) {
-            return 0;
-        }
-    }
-
-    
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.822 -0400", hash_original_method = "B44C6C2E80E3CC30A9FA34837FBF03A6", hash_generated_method = "2262F1262C4912ED4F892FEE3924BC81")
-    public static int countGsmSeptets(char c, boolean throwsException) throws EncodeException {
-        if (sCharsToGsmTables[0].get(c, -1) != -1) {
-            return 1;
-        }
-        if (sCharsToShiftTables[0].get(c, -1) != -1) {
-            return 2;
-        }
-        if (throwsException) {
-            throw new EncodeException(c);
-        } else {
-            return 1;
-        }
-    }
-
-    
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.822 -0400", hash_original_method = "116518F1A4221980790E05262EEBEF20", hash_generated_method = "3F60A3612B3510C0CD1C05CEFCB354DA")
-    public static int countGsmSeptetsUsingTables(CharSequence s, boolean use7bitOnly,
-            int languageTable, int languageShiftTable) {
-        int count = 0;
-        int sz = s.length();
-        SparseIntArray charToLanguageTable = sCharsToGsmTables[languageTable];
-        SparseIntArray charToShiftTable = sCharsToShiftTables[languageShiftTable];
-        for (int i = 0; i < sz; i++) {
-            char c = s.charAt(i);
-            if (c == GSM_EXTENDED_ESCAPE) {
-                Log.w(TAG, "countGsmSeptets() string contains Escape character, skipping.");
-                continue;
-            }
-            if (charToLanguageTable.get(c, -1) != -1) {
-                count++;
-            } else if (charToShiftTable.get(c, -1) != -1) {
-                count += 2; 
-            } else if (use7bitOnly) {
-                count++;    
-            } else {
-                return -1;  
-            }
-        }
-        return count;
-    }
-
-    
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.823 -0400", hash_original_method = "719D5AC424353622F8A42BB3C1E4F44E", hash_generated_method = "81885E31920C17F0442494CA0EA4DD4F")
-    public static SmsMessageBase.TextEncodingDetails countGsmSeptets(CharSequence s, boolean use7bitOnly) {
-        if (sEnabledSingleShiftTables.length + sEnabledLockingShiftTables.length == 0) {
-            SmsMessageBase.TextEncodingDetails ted = new SmsMessageBase.TextEncodingDetails();
-            int septets = GsmAlphabet.countGsmSeptetsUsingTables(s, use7bitOnly, 0, 0);
-            if (septets == -1) {
-                return null;
-            }
-            ted.codeUnitSize = ENCODING_7BIT;
-            ted.codeUnitCount = septets;
-            if (septets > MAX_USER_DATA_SEPTETS) {
-                ted.msgCount = (septets + (MAX_USER_DATA_SEPTETS_WITH_HEADER - 1)) /
-                        MAX_USER_DATA_SEPTETS_WITH_HEADER;
-                ted.codeUnitsRemaining = (ted.msgCount *
-                        MAX_USER_DATA_SEPTETS_WITH_HEADER) - septets;
-            } else {
-                ted.msgCount = 1;
-                ted.codeUnitsRemaining = MAX_USER_DATA_SEPTETS - septets;
-            }
-            ted.codeUnitSize = ENCODING_7BIT;
-            return ted;
-        }
-        int maxSingleShiftCode = sHighestEnabledSingleShiftCode;
-        List<LanguagePairCount> lpcList = new ArrayList<LanguagePairCount>(
-                sEnabledLockingShiftTables.length + 1);
-        lpcList.add(new LanguagePairCount(0));
-        for (int i : sEnabledLockingShiftTables) {
-            if (i != 0 && !sLanguageTables[i].isEmpty()) {
-                lpcList.add(new LanguagePairCount(i));
-            }
-        }
-        int sz = s.length();
-        for (int i = 0; i < sz && !lpcList.isEmpty(); i++) {
-            char c = s.charAt(i);
-            if (c == GSM_EXTENDED_ESCAPE) {
-                Log.w(TAG, "countGsmSeptets() string contains Escape character, ignoring!");
-                continue;
-            }
-            for (LanguagePairCount lpc : lpcList) {
-                int tableIndex = sCharsToGsmTables[lpc.languageCode].get(c, -1);
-                if (tableIndex == -1) {
-                    for (int table = 0; table <= maxSingleShiftCode; table++) {
-                        if (lpc.septetCounts[table] != -1) {
-                            int shiftTableIndex = sCharsToShiftTables[table].get(c, -1);
-                            if (shiftTableIndex == -1) {
-                                if (use7bitOnly) {
-                                    lpc.septetCounts[table]++;
-                                    lpc.unencodableCounts[table]++;
-                                } else {
-                                    lpc.septetCounts[table] = -1;
-                                }
-                            } else {
-                                lpc.septetCounts[table] += 2;
-                            }
-                        }
-                    }
-                } else {
-                    for (int table = 0; table <= maxSingleShiftCode; table++) {
-                        if (lpc.septetCounts[table] != -1) {
-                            lpc.septetCounts[table]++;
-                        }
-                    }
-                }
-            }
-        }
-        SmsMessageBase.TextEncodingDetails ted = new SmsMessageBase.TextEncodingDetails();
-        ted.msgCount = Integer.MAX_VALUE;
-        ted.codeUnitSize = ENCODING_7BIT;
-        int minUnencodableCount = Integer.MAX_VALUE;
-        for (LanguagePairCount lpc : lpcList) {
-            for (int shiftTable = 0; shiftTable <= maxSingleShiftCode; shiftTable++) {
-                int septets = lpc.septetCounts[shiftTable];
-                if (septets == -1) {
-                    continue;
-                }
-                int udhLength;
-                if (lpc.languageCode != 0 && shiftTable != 0) {
-                    udhLength = UDH_SEPTET_COST_LENGTH + UDH_SEPTET_COST_TWO_SHIFT_TABLES;
-                } else if (lpc.languageCode != 0 || shiftTable != 0) {
-                    udhLength = UDH_SEPTET_COST_LENGTH + UDH_SEPTET_COST_ONE_SHIFT_TABLE;
-                } else {
-                    udhLength = 0;
-                }
-                int msgCount;
-                int septetsRemaining;
-                if (septets + udhLength > MAX_USER_DATA_SEPTETS) {
-                    if (udhLength == 0) {
-                        udhLength = UDH_SEPTET_COST_LENGTH;
-                    }
-                    udhLength += UDH_SEPTET_COST_CONCATENATED_MESSAGE;
-                    int septetsPerMessage = MAX_USER_DATA_SEPTETS - udhLength;
-                    msgCount = (septets + septetsPerMessage - 1) / septetsPerMessage;
-                    septetsRemaining = (msgCount * septetsPerMessage) - septets;
-                } else {
-                    msgCount = 1;
-                    septetsRemaining = MAX_USER_DATA_SEPTETS - udhLength - septets;
-                }
-                int unencodableCount = lpc.unencodableCounts[shiftTable];
-                if (use7bitOnly && unencodableCount > minUnencodableCount) {
-                    continue;
-                }
-                if ((use7bitOnly && unencodableCount < minUnencodableCount)
-                        || msgCount < ted.msgCount || (msgCount == ted.msgCount
-                        && septetsRemaining > ted.codeUnitsRemaining)) {
-                    minUnencodableCount = unencodableCount;
-                    ted.msgCount = msgCount;
-                    ted.codeUnitCount = septets;
-                    ted.codeUnitsRemaining = septetsRemaining;
-                    ted.languageTable = lpc.languageCode;
-                    ted.languageShiftTable = shiftTable;
-                }
-            }
-        }
-        if (ted.msgCount == Integer.MAX_VALUE) {
-            return null;
-        }
-        return ted;
-    }
-
-    
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.823 -0400", hash_original_method = "63F51E0098156CE1BAC1B0BBFFF952B1", hash_generated_method = "9B6600161691EEACCC202B235C5681DC")
-    public static int findGsmSeptetLimitIndex(String s, int start, int limit, int langTable, int langShiftTable) {
-        int accumulator = 0;
-        int size = s.length();
-        SparseIntArray charToLangTable = sCharsToGsmTables[langTable];
-        SparseIntArray charToLangShiftTable = sCharsToShiftTables[langShiftTable];
-        for (int i = start; i < size; i++) {
-            int encodedSeptet = charToLangTable.get(s.charAt(i), -1);
-            if (encodedSeptet == -1) {
-                encodedSeptet = charToLangShiftTable.get(s.charAt(i), -1);
-                if (encodedSeptet == -1) {
-                    accumulator++;
-                } else {
-                    accumulator += 2;  
-                }
-            } else {
-                accumulator++;
-            }
-            if (accumulator > limit) {
-                return i;
-            }
-        }
-        return size;
-    }
-
-    
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.823 -0400", hash_original_method = "23491E3B19CA1A0372FB07B6E5962749", hash_generated_method = "B2262967F2201DF1AA99A77E5ADAC619")
-    static synchronized void setEnabledSingleShiftTables(int[] tables) {
-        sEnabledSingleShiftTables = tables;
-        if (tables.length > 0) {
-            sHighestEnabledSingleShiftCode = tables[tables.length - 1];
-        } else {
-            sHighestEnabledSingleShiftCode = 0;
-        }
-    }
-
-    
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.823 -0400", hash_original_method = "1CDBFB6022978351EB57E2AB2AC797D1", hash_generated_method = "31EAF8A9E098DCC0DE525062826D6BE9")
-    static synchronized void setEnabledLockingShiftTables(int[] tables) {
-        sEnabledLockingShiftTables = tables;
-    }
-
-    
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.823 -0400", hash_original_method = "199F40335AE19B445C77FA5EEE4476CE", hash_generated_method = "1CF0EBA223248AC82DA5D2B51BDCE44C")
-    static synchronized int[] getEnabledSingleShiftTables() {
-        return sEnabledSingleShiftTables;
-    }
-
-    
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.823 -0400", hash_original_method = "A94B11FCDA8381B4E3DEFD717897E065", hash_generated_method = "B96ED6965210D281C8265A9365306243")
-    static synchronized int[] getEnabledLockingShiftTables() {
-        return sEnabledLockingShiftTables;
-    }
-
-    
-    private static class LanguagePairCount {
-        final int languageCode;
-        final int[] septetCounts;
-        final int[] unencodableCounts;
-        
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.823 -0400", hash_original_method = "62389A632F9774EDFBFC18A0B528AAFD", hash_generated_method = "3C54289F59DC4BD4447603F76F8AC7FA")
-        @DSModeled(DSC.SAFE)
-         LanguagePairCount(int code) {
-            dsTaint.addTaint(code);
-            this.languageCode = code;
-            
-            int maxSingleShiftCode;
-            maxSingleShiftCode = sHighestEnabledSingleShiftCode;
-            septetCounts = new int[maxSingleShiftCode + 1];
-            unencodableCounts = new int[maxSingleShiftCode + 1];
-            {
-                int i, tableOffset;
-                i = 1;
-                tableOffset = 0;
-                {
-                    {
-                        tableOffset++;
-                    } //End block
-                    {
-                        septetCounts[i] = -1;
-                    } //End block
-                } //End block
-            } //End collapsed parenthetic
-            {
-                septetCounts[1] = -1;
-            } //End block
-            {
-                septetCounts[2] = -1;
-            } //End block
-            // ---------- Original Method ----------
-            //this.languageCode = code;
-            //int maxSingleShiftCode = sHighestEnabledSingleShiftCode;
-            //septetCounts = new int[maxSingleShiftCode + 1];
-            //unencodableCounts = new int[maxSingleShiftCode + 1];
-            //for (int i = 1, tableOffset = 0; i <= maxSingleShiftCode; i++) {
-                //if (sEnabledSingleShiftTables[tableOffset] == i) {
-                    //tableOffset++;
-                //} else {
-                    //septetCounts[i] = -1;   
-                //}
-            //}
-            //if (code == 1 && maxSingleShiftCode >= 1) {
-                //septetCounts[1] = -1;   
-            //} else if (code == 3 && maxSingleShiftCode >= 2) {
-                //septetCounts[2] = -1;   
-            //}
-        }
-
-        
-    }
-
-
-    
     static {
         Resources r = Resources.getSystem();
         sEnabledSingleShiftTables = r.getIntArray(R.array.config_sms_enabled_single_shift_tables);
@@ -990,5 +959,4 @@ public class GsmAlphabet {
     }
     
 }
-
 

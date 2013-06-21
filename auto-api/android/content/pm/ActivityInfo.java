@@ -3,111 +3,34 @@ package android.content.pm;
 // Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
+import droidsafe.runtime.*;
 
-// import Iterator to deal with enhanced for loop translation
+// needed for enhanced for control translations
 import java.util.Iterator;
-
 import android.os.Parcel;
 import android.os.Parcelable;
 import android.util.Printer;
 
 public class ActivityInfo extends ComponentInfo implements Parcelable {
     public int theme;
-    public static final int LAUNCH_MULTIPLE = 0;
-    public static final int LAUNCH_SINGLE_TOP = 1;
-    public static final int LAUNCH_SINGLE_TASK = 2;
-    public static final int LAUNCH_SINGLE_INSTANCE = 3;
     public int launchMode;
     public String permission;
     public String taskAffinity;
     public String targetActivity;
-    public static final int FLAG_MULTIPROCESS = 0x0001;
-    public static final int FLAG_FINISH_ON_TASK_LAUNCH = 0x0002;
-    public static final int FLAG_CLEAR_TASK_ON_LAUNCH = 0x0004;
-    public static final int FLAG_ALWAYS_RETAIN_TASK_STATE = 0x0008;
-    public static final int FLAG_STATE_NOT_NEEDED = 0x0010;
-    public static final int FLAG_EXCLUDE_FROM_RECENTS = 0x0020;
-    public static final int FLAG_ALLOW_TASK_REPARENTING = 0x0040;
-    public static final int FLAG_NO_HISTORY = 0x0080;
-    public static final int FLAG_FINISH_ON_CLOSE_SYSTEM_DIALOGS = 0x0100;
-    public static final int FLAG_HARDWARE_ACCELERATED = 0x0200;
-    public static final int FLAG_IMMERSIVE = 0x0400;
     public int flags;
-    public static final int SCREEN_ORIENTATION_UNSPECIFIED = -1;
-    public static final int SCREEN_ORIENTATION_LANDSCAPE = 0;
-    public static final int SCREEN_ORIENTATION_PORTRAIT = 1;
-    public static final int SCREEN_ORIENTATION_USER = 2;
-    public static final int SCREEN_ORIENTATION_BEHIND = 3;
-    public static final int SCREEN_ORIENTATION_SENSOR = 4;
-    public static final int SCREEN_ORIENTATION_NOSENSOR = 5;
-    public static final int SCREEN_ORIENTATION_SENSOR_LANDSCAPE = 6;
-    public static final int SCREEN_ORIENTATION_SENSOR_PORTRAIT = 7;
-    public static final int SCREEN_ORIENTATION_REVERSE_LANDSCAPE = 8;
-    public static final int SCREEN_ORIENTATION_REVERSE_PORTRAIT = 9;
-    public static final int SCREEN_ORIENTATION_FULL_SENSOR = 10;
     public int screenOrientation = SCREEN_ORIENTATION_UNSPECIFIED;
-    public static final int CONFIG_MCC = 0x0001;
-    public static final int CONFIG_MNC = 0x0002;
-    public static final int CONFIG_LOCALE = 0x0004;
-    public static final int CONFIG_TOUCHSCREEN = 0x0008;
-    public static final int CONFIG_KEYBOARD = 0x0010;
-    public static final int CONFIG_KEYBOARD_HIDDEN = 0x0020;
-    public static final int CONFIG_NAVIGATION = 0x0040;
-    public static final int CONFIG_ORIENTATION = 0x0080;
-    public static final int CONFIG_SCREEN_LAYOUT = 0x0100;
-    public static final int CONFIG_UI_MODE = 0x0200;
-    public static final int CONFIG_SCREEN_SIZE = 0x0400;
-    public static final int CONFIG_SMALLEST_SCREEN_SIZE = 0x0800;
-    public static final int CONFIG_FONT_SCALE = 0x40000000;
-    public static int[] CONFIG_NATIVE_BITS = new int[] {
-        0x0001, 
-        0x0002, 
-        0x0004, 
-        0x0008, 
-        0x0010, 
-        0x0020, 
-        0x0040, 
-        0x0080, 
-        0x0800, 
-        0x1000, 
-        0x0200, 
-        0x2000, 
-    };
     public int configChanges;
     public int softInputMode;
     public int uiOptions = 0;
-    public static final int UIOPTION_SPLIT_ACTION_BAR_WHEN_NARROW = 1;
-    public static final Parcelable.Creator<ActivityInfo> CREATOR = new Parcelable.Creator<ActivityInfo>() {        
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:14:59.814 -0400", hash_original_method = "7881E2AE5504281E1113E4204713DBE5", hash_generated_method = "AE9AE914E425469112549975055E5C6F")
-        @DSModeled(DSC.SAFE)
-        public ActivityInfo createFromParcel(Parcel source) {
-            dsTaint.addTaint(source.dsTaint);
-            return (ActivityInfo)dsTaint.getTaint();
-            // ---------- Original Method ----------
-            //return new ActivityInfo(source);
-        }
-
-        
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:14:59.814 -0400", hash_original_method = "55042204736C415254FD6A445E807C5C", hash_generated_method = "E760A9B15DCA039785A21EF1CF8D6784")
-        @DSModeled(DSC.SAFE)
-        public ActivityInfo[] newArray(int size) {
-            dsTaint.addTaint(size);
-            return (ActivityInfo[])dsTaint.getTaint();
-            // ---------- Original Method ----------
-            //return new ActivityInfo[size];
-        }
-
-        
-}; //Transformed anonymous class
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:14:59.814 -0400", hash_original_method = "AADA555071E489A7B136029649F29F63", hash_generated_method = "9E70C68B9887592D59FEEF7F7700D3D4")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:43.648 -0400", hash_original_method = "AADA555071E489A7B136029649F29F63", hash_generated_method = "853ED7E1741821951AE7AFCCD338E611")
     @DSModeled(DSC.SAFE)
     public ActivityInfo() {
         // ---------- Original Method ----------
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:14:59.814 -0400", hash_original_method = "4FD441668078A896A91515A186821C6A", hash_generated_method = "E5DDA5921EFF6EE97CBFB10D93748190")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:43.649 -0400", hash_original_method = "4FD441668078A896A91515A186821C6A", hash_generated_method = "1D05AD43D9EDB80134E9EC9E49E2DE80")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public ActivityInfo(ActivityInfo orig) {
         super(orig);
@@ -136,7 +59,7 @@ public class ActivityInfo extends ComponentInfo implements Parcelable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:14:59.815 -0400", hash_original_method = "BC25ED8BD045A23681F3CDE53EF4296B", hash_generated_method = "EA4DC6F03038837975CB2D14A1F192FB")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:43.649 -0400", hash_original_method = "BC25ED8BD045A23681F3CDE53EF4296B", hash_generated_method = "9C0A36F3D3B9B1113E0F65CF10A3CB83")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     private ActivityInfo(Parcel source) {
         super(source);
@@ -165,8 +88,7 @@ public class ActivityInfo extends ComponentInfo implements Parcelable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:14:59.815 -0400", hash_original_method = "C07DEDE9C3F530AB4B741282ACF39C55", hash_generated_method = "F8E93384A437C7284764054AA9855E71")
-    public static int activityInfoConfigToNative(int input) {
+        public static int activityInfoConfigToNative(int input) {
         int output = 0;
         for (int i=0; i<CONFIG_NATIVE_BITS.length; i++) {
             if ((input&(1<<i)) != 0) {
@@ -177,7 +99,7 @@ public class ActivityInfo extends ComponentInfo implements Parcelable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:14:59.815 -0400", hash_original_method = "2220B48CFCD1F70E454B4F27BFE80BE1", hash_generated_method = "6A36B1DD7F46C113A23DB69690E6F735")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:43.650 -0400", hash_original_method = "2220B48CFCD1F70E454B4F27BFE80BE1", hash_generated_method = "1952D1B8A2B31D29CC0C6797E7F6E4A8")
     @DSModeled(DSC.SAFE)
     public int getRealConfigChanged() {
         return dsTaint.getTaintInt();
@@ -189,7 +111,7 @@ public class ActivityInfo extends ComponentInfo implements Parcelable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:14:59.816 -0400", hash_original_method = "49F7EEB7DFDAB588B69DE97F89E77EAC", hash_generated_method = "8D898DF19C9C1C6AD77597D2AEFA55F7")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:43.650 -0400", hash_original_method = "49F7EEB7DFDAB588B69DE97F89E77EAC", hash_generated_method = "D800850351CC342C0326FDDC02AB3B11")
     @DSModeled(DSC.SAFE)
     public final int getThemeResource() {
         return dsTaint.getTaintInt();
@@ -198,7 +120,7 @@ public class ActivityInfo extends ComponentInfo implements Parcelable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:14:59.816 -0400", hash_original_method = "0EA21654C0B5D84D36E2F9B8C286493E", hash_generated_method = "CA2CAA5692BA42FA1B69D4B4AF126331")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:43.651 -0400", hash_original_method = "0EA21654C0B5D84D36E2F9B8C286493E", hash_generated_method = "26E2C4C7A6522A3BFE6674E2DD7EB985")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public void dump(Printer pw, String prefix) {
         dsTaint.addTaint(prefix);
@@ -228,10 +150,10 @@ public class ActivityInfo extends ComponentInfo implements Parcelable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:14:59.816 -0400", hash_original_method = "B913D35C681ED2748C3576E23600DB3E", hash_generated_method = "B61F0FEB7B6410CF82B36B1EDAEB585D")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:43.651 -0400", hash_original_method = "B913D35C681ED2748C3576E23600DB3E", hash_generated_method = "4F89F49FBEADCAADCA987E9214C0FFCD")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public String toString() {
-        String var9DB3A741CB7CB892609070B737E1C25D_1449530019 = ("ActivityInfo{"
+        String var9DB3A741CB7CB892609070B737E1C25D_734565293 = ("ActivityInfo{"
             + Integer.toHexString(System.identityHashCode(this))
             + " " + name + "}");
         return dsTaint.getTaintString();
@@ -242,7 +164,7 @@ public class ActivityInfo extends ComponentInfo implements Parcelable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:14:59.817 -0400", hash_original_method = "00F8174F9E89D0C972FA6D3F19742382", hash_generated_method = "7491C6FB42F78871A3F8EA322AF6B2FC")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:43.651 -0400", hash_original_method = "00F8174F9E89D0C972FA6D3F19742382", hash_generated_method = "ED77793910767EAAB4C12F70F75B9095")
     @DSModeled(DSC.SAFE)
     public int describeContents() {
         return dsTaint.getTaintInt();
@@ -251,8 +173,8 @@ public class ActivityInfo extends ComponentInfo implements Parcelable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:14:59.817 -0400", hash_original_method = "0DBABFC7118E214F01D60FEE309F0914", hash_generated_method = "9A77AB31B0C07A3CB380E2E9AB185D5A")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:43.652 -0400", hash_original_method = "0DBABFC7118E214F01D60FEE309F0914", hash_generated_method = "2DD0B65441FAEF970FCAD25E24FFC113")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     public void writeToParcel(Parcel dest, int parcelableFlags) {
         dsTaint.addTaint(parcelableFlags);
         dsTaint.addTaint(dest.dsTaint);
@@ -282,6 +204,84 @@ public class ActivityInfo extends ComponentInfo implements Parcelable {
     }
 
     
-}
+    public static final int LAUNCH_MULTIPLE = 0;
+    public static final int LAUNCH_SINGLE_TOP = 1;
+    public static final int LAUNCH_SINGLE_TASK = 2;
+    public static final int LAUNCH_SINGLE_INSTANCE = 3;
+    public static final int FLAG_MULTIPROCESS = 0x0001;
+    public static final int FLAG_FINISH_ON_TASK_LAUNCH = 0x0002;
+    public static final int FLAG_CLEAR_TASK_ON_LAUNCH = 0x0004;
+    public static final int FLAG_ALWAYS_RETAIN_TASK_STATE = 0x0008;
+    public static final int FLAG_STATE_NOT_NEEDED = 0x0010;
+    public static final int FLAG_EXCLUDE_FROM_RECENTS = 0x0020;
+    public static final int FLAG_ALLOW_TASK_REPARENTING = 0x0040;
+    public static final int FLAG_NO_HISTORY = 0x0080;
+    public static final int FLAG_FINISH_ON_CLOSE_SYSTEM_DIALOGS = 0x0100;
+    public static final int FLAG_HARDWARE_ACCELERATED = 0x0200;
+    public static final int FLAG_IMMERSIVE = 0x0400;
+    public static final int SCREEN_ORIENTATION_UNSPECIFIED = -1;
+    public static final int SCREEN_ORIENTATION_LANDSCAPE = 0;
+    public static final int SCREEN_ORIENTATION_PORTRAIT = 1;
+    public static final int SCREEN_ORIENTATION_USER = 2;
+    public static final int SCREEN_ORIENTATION_BEHIND = 3;
+    public static final int SCREEN_ORIENTATION_SENSOR = 4;
+    public static final int SCREEN_ORIENTATION_NOSENSOR = 5;
+    public static final int SCREEN_ORIENTATION_SENSOR_LANDSCAPE = 6;
+    public static final int SCREEN_ORIENTATION_SENSOR_PORTRAIT = 7;
+    public static final int SCREEN_ORIENTATION_REVERSE_LANDSCAPE = 8;
+    public static final int SCREEN_ORIENTATION_REVERSE_PORTRAIT = 9;
+    public static final int SCREEN_ORIENTATION_FULL_SENSOR = 10;
+    public static final int CONFIG_MCC = 0x0001;
+    public static final int CONFIG_MNC = 0x0002;
+    public static final int CONFIG_LOCALE = 0x0004;
+    public static final int CONFIG_TOUCHSCREEN = 0x0008;
+    public static final int CONFIG_KEYBOARD = 0x0010;
+    public static final int CONFIG_KEYBOARD_HIDDEN = 0x0020;
+    public static final int CONFIG_NAVIGATION = 0x0040;
+    public static final int CONFIG_ORIENTATION = 0x0080;
+    public static final int CONFIG_SCREEN_LAYOUT = 0x0100;
+    public static final int CONFIG_UI_MODE = 0x0200;
+    public static final int CONFIG_SCREEN_SIZE = 0x0400;
+    public static final int CONFIG_SMALLEST_SCREEN_SIZE = 0x0800;
+    public static final int CONFIG_FONT_SCALE = 0x40000000;
+    public static int[] CONFIG_NATIVE_BITS = new int[] {
+        0x0001, 
+        0x0002, 
+        0x0004, 
+        0x0008, 
+        0x0010, 
+        0x0020, 
+        0x0040, 
+        0x0080, 
+        0x0800, 
+        0x1000, 
+        0x0200, 
+        0x2000, 
+    };
+    public static final int UIOPTION_SPLIT_ACTION_BAR_WHEN_NARROW = 1;
+    public static final Parcelable.Creator<ActivityInfo> CREATOR = new Parcelable.Creator<ActivityInfo>() {        
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:43.653 -0400", hash_original_method = "7881E2AE5504281E1113E4204713DBE5", hash_generated_method = "7733F31E86DB38213041C886CB35A1D4")
+        //DSFIXME:  CODE0002: Requires DSC value to be set
+        public ActivityInfo createFromParcel(Parcel source) {
+            dsTaint.addTaint(source.dsTaint);
+            ActivityInfo varBFD1BCFD2E31843562E2034EBA111EB5_1683787284 = (new ActivityInfo(source));
+            return (ActivityInfo)dsTaint.getTaint();
+            // ---------- Original Method ----------
+            //return new ActivityInfo(source);
+        }
 
+        
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:43.653 -0400", hash_original_method = "55042204736C415254FD6A445E807C5C", hash_generated_method = "137877F081D73362D6C479F921066608")
+        //DSFIXME:  CODE0002: Requires DSC value to be set
+        public ActivityInfo[] newArray(int size) {
+            dsTaint.addTaint(size);
+            ActivityInfo[] var2F10FE16E4046AF411F2FCEEE76D24F9_1675903970 = (new ActivityInfo[size]);
+            return (ActivityInfo[])dsTaint.getTaint();
+            // ---------- Original Method ----------
+            //return new ActivityInfo[size];
+        }
+
+        
+}; //Transformed anonymous class
+}
 

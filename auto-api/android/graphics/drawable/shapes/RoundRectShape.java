@@ -19,12 +19,12 @@ public class RoundRectShape extends RectShape {
     private RectF mInnerRect;
     private Path  mPath;
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 11:47:17.843 -0400", hash_original_method = "BFB37C497FF277AFDA0C7FF1B797A20B", hash_generated_method = "F8208E316999C406496B813FD2AA4C33")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:48.726 -0400", hash_original_method = "BFB37C497FF277AFDA0C7FF1B797A20B", hash_generated_method = "CEB2551EBFE907EEF443B868768F8B29")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     public RoundRectShape(float[] outerRadii, RectF inset,
                           float[] innerRadii) {
-        dsTaint.addTaint(outerRadii);
-        dsTaint.addTaint(innerRadii);
+        dsTaint.addTaint(outerRadii[0]);
+        dsTaint.addTaint(innerRadii[0]);
         dsTaint.addTaint(inset.dsTaint);
         {
             if (DroidSafeAndroidRuntime.control) throw new ArrayIndexOutOfBoundsException("outer radii must have >= 8 values");
@@ -53,8 +53,8 @@ public class RoundRectShape extends RectShape {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 11:47:17.852 -0400", hash_original_method = "2040FB3810CEA26BCA97DD1BCDDED3AB", hash_generated_method = "CE80D9993DBEDCCF58272E27CEE9A1B3")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:48.727 -0400", hash_original_method = "2040FB3810CEA26BCA97DD1BCDDED3AB", hash_generated_method = "CD90CC21973D5E2125F2D0A7F2911B6E")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     @Override
     public void draw(Canvas canvas, Paint paint) {
         dsTaint.addTaint(canvas.dsTaint);
@@ -65,7 +65,7 @@ public class RoundRectShape extends RectShape {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 11:47:17.866 -0400", hash_original_method = "76E13F34AD3978846D0DA3AA18C0FAE1", hash_generated_method = "3AAE5BD9468E59B15A993246D2F8FDE7")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:48.727 -0400", hash_original_method = "76E13F34AD3978846D0DA3AA18C0FAE1", hash_generated_method = "C411BD700A112214D8C2C9B832C4AE31")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     @Override
     protected void onResize(float w, float h) {
@@ -86,7 +86,7 @@ public class RoundRectShape extends RectShape {
             mInnerRect.set(r.left + mInset.left, r.top + mInset.top,
                            r.right - mInset.right, r.bottom - mInset.bottom);
             {
-                boolean varFA69053F663231AFFAF816545E5D72F2_1874676645 = (mInnerRect.width() < w && mInnerRect.height() < h);
+                boolean varFA69053F663231AFFAF816545E5D72F2_1842328047 = (mInnerRect.width() < w && mInnerRect.height() < h);
                 {
                     {
                         mPath.addRoundRect(mInnerRect, mInnerRadii, Path.Direction.CCW);
@@ -120,8 +120,9 @@ public class RoundRectShape extends RectShape {
     }
 
     
-    @DSGenerator(tool_name="Doppelganger",tool_version="0.4",generated_on="2013-06-11 11:15:01.168 -0400",hash_original_method="C8F54F0C5741E48CA334E7AB381892D2",hash_generated_method="4940FA84ACC0E27BE9E0A8A450C20BA2")
-@Override
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:48.727 -0400", hash_original_method = "C8F54F0C5741E48CA334E7AB381892D2", hash_generated_method = "39397D29070155A8A9133D0A3F194F27")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @Override
     public RoundRectShape clone() throws CloneNotSupportedException {
         RoundRectShape shape;
         shape = (RoundRectShape) super.clone();
@@ -143,5 +144,4 @@ public class RoundRectShape extends RectShape {
 
     
 }
-
 

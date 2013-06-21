@@ -1,14 +1,19 @@
 package android.app;
 
 // Droidsafe Imports
-import java.io.FileDescriptor;
-import java.io.PrintWriter;
-import java.util.ArrayList;
-import java.util.HashMap;
+import droidsafe.helpers.*;
+import droidsafe.annotations.*;
+import droidsafe.runtime.*;
 
+// needed for enhanced for control translations
+import java.util.Iterator;
+import com.android.internal.app.ActionBarImpl;
+import com.android.internal.policy.PolicyManager;
 import android.content.ComponentCallbacks2;
 import android.content.ComponentName;
+import android.content.ContentResolver;
 import android.content.Context;
+import android.content.CursorLoader;
 import android.content.IIntentSender;
 import android.content.Intent;
 import android.content.IntentSender;
@@ -16,23 +21,31 @@ import android.content.SharedPreferences;
 import android.content.pm.ActivityInfo;
 import android.content.res.Configuration;
 import android.content.res.Resources;
+import android.content.res.TypedArray;
+import android.content.res.Resources.Theme;
 import android.database.Cursor;
 import android.graphics.Bitmap;
 import android.graphics.Canvas;
 import android.graphics.drawable.Drawable;
+import android.media.AudioManager;
 import android.net.Uri;
+import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.IBinder;
+import android.os.Looper;
 import android.os.Parcelable;
 import android.os.RemoteException;
+import android.os.StrictMode;
 import android.text.Selection;
 import android.text.SpannableStringBuilder;
 import android.text.TextUtils;
+import android.text.method.TextKeyListener;
 import android.util.AttributeSet;
 import android.util.EventLog;
 import android.util.Log;
 import android.util.SparseArray;
+import android.util.TypedValue;
 import android.view.ActionMode;
 import android.view.ContextMenu;
 import android.view.ContextMenu.ContextMenuInfo;
@@ -44,121 +57,77 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.MotionEvent;
 import android.view.View;
+import android.view.WindowManagerImpl;
 import android.view.View.OnCreateContextMenuListener;
 import android.view.ViewGroup;
+import android.view.ViewGroup.LayoutParams;
 import android.view.ViewManager;
 import android.view.Window;
 import android.view.WindowManager;
 import android.view.accessibility.AccessibilityEvent;
-
-import com.android.internal.app.ActionBarImpl;
-import com.android.internal.policy.PolicyManager;
-
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSModeled;
+import android.widget.AdapterView;
+import java.io.FileDescriptor;
+import java.io.PrintWriter;
+import java.util.ArrayList;
+import java.util.HashMap;
 
 public class Activity extends ContextThemeWrapper implements LayoutInflater.Factory2, Window.Callback, KeyEvent.Callback, OnCreateContextMenuListener, ComponentCallbacks2 {
-	
-	private static final String TAG = "Activity";
-	public static final int RESULT_CANCELED    = 0;
-	public static final int RESULT_OK           = -1;
-	public static final int RESULT_FIRST_USER   = 1;
-	private static final String WINDOW_HIERARCHY_TAG = "android:viewHierarchyState";
-	private static final String FRAGMENTS_TAG = "android:fragments";
-	private static final String SAVED_DIALOG_IDS_KEY = "android:savedDialogIds";
-	private static final String SAVED_DIALOGS_TAG = "android:savedDialogs";
-	private static final String SAVED_DIALOG_KEY_PREFIX = "android:dialog_";
-	private static final String SAVED_DIALOG_ARGS_KEY_PREFIX = "android:dialog_args_";
-	
-	private static class ManagedDialog {
-		
-		Dialog mDialog;
-		Bundle mArgs;
-	}
-	
-	private SparseArray<ManagedDialog> mManagedDialogs;
-	private Instrumentation mInstrumentation;
-	private IBinder mToken;
-	private int mIdent;
-	String mEmbeddedID;
-	private Application mApplication;
-	Intent mIntent;
-	private ComponentName mComponent;
-	ActivityInfo mActivityInfo;
-	ActivityThread mMainThread;
-	Activity mParent;
-	boolean mCalled;
-	boolean mCheckedForLoaderManager;
-	boolean mLoadersStarted;
-	boolean mResumed;
-	private boolean mStopped;
-	boolean mFinished;
-	boolean mStartedActivity;
-	boolean mTemporaryPause = false;
-	boolean mChangingConfigurations = false;
-	int mConfigChangeFlags;
-	Configuration mCurrentConfig;
-	private SearchManager mSearchManager;
-	private MenuInflater mMenuInflater;
-	
-	static final class NonConfigurationInstances {
-		
-		Object activity;
-		HashMap<String, Object> children;
-		ArrayList<Fragment> fragments;
-		SparseArray<LoaderManagerImpl> loaders;
-	}
-	
-	NonConfigurationInstances mLastNonConfigurationInstances;
-	private Window mWindow;
-	private WindowManager mWindowManager;
-	View mDecor = null;
-	boolean mWindowAdded = false;
-	boolean mVisibleFromServer = false;
-	boolean mVisibleFromClient = true;
-	ActionBarImpl mActionBar = null;
-	private CharSequence mTitle;
-	private int mTitleColor = 0;
-	final FragmentManagerImpl mFragments = new FragmentManagerImpl();
-	SparseArray<LoaderManagerImpl> mAllLoaderManagers;
-	LoaderManagerImpl mLoaderManager;
-	
-	private static final class ManagedCursor {
-		
-		ManagedCursor(Cursor cursor){
-			mCursor = cursor;
-			/*
-			mCursor = cursor;
-			mReleased = false;
-			mUpdated = false;
-			*/
-		}
-		private final Cursor mCursor;
-		private boolean mReleased;
-		private boolean mUpdated;
-	}
-	
-	private final ArrayList<ManagedCursor> mManagedCursors =
+    private SparseArray<ManagedDialog> mManagedDialogs;
+    private Instrumentation mInstrumentation;
+    private IBinder mToken;
+    private int mIdent;
+    String mEmbeddedID;
+    private Application mApplication;
+    Intent mIntent;
+    private ComponentName mComponent;
+    ActivityInfo mActivityInfo;
+    ActivityThread mMainThread;
+    Activity mParent;
+    boolean mCalled;
+    boolean mCheckedForLoaderManager;
+    boolean mLoadersStarted;
+    boolean mResumed;
+    private boolean mStopped;
+    boolean mFinished;
+    boolean mStartedActivity;
+    boolean mTemporaryPause = false;
+    boolean mChangingConfigurations = false;
+    int mConfigChangeFlags;
+    Configuration mCurrentConfig;
+    private SearchManager mSearchManager;
+    private MenuInflater mMenuInflater;
+    NonConfigurationInstances mLastNonConfigurationInstances;
+    private Window mWindow;
+    private WindowManager mWindowManager;
+    View mDecor = null;
+    boolean mWindowAdded = false;
+    boolean mVisibleFromServer = false;
+    boolean mVisibleFromClient = true;
+    ActionBarImpl mActionBar = null;
+    private CharSequence mTitle;
+    private int mTitleColor = 0;
+    FragmentManagerImpl mFragments = new FragmentManagerImpl();
+    SparseArray<LoaderManagerImpl> mAllLoaderManagers;
+    LoaderManagerImpl mLoaderManager;
+    private ArrayList<ManagedCursor> mManagedCursors =
         new ArrayList<ManagedCursor>();
-	int mResultCode = RESULT_CANCELED;
-	Intent mResultData = null;
-	private boolean mTitleReady = false;
-	private int mDefaultKeyMode = DEFAULT_KEYS_DISABLE;
-	private SpannableStringBuilder mDefaultKeySsb = null;
-	protected static final int[] FOCUSED_STATE_SET = {com.android.internal.R.attr.state_focused};
-	//private final Object mInstanceTracker = StrictMode.trackActivity(this);
-	private final Object mInstanceTracker = null;
-	private Thread mUiThread;
-	final Handler mHandler = new Handler();
-	
-	@DSModeled(DSC.SAFE)
-	public Activity() {
-		super();
-	}
-	
-	public Intent getIntent(){
+    int mResultCode = RESULT_CANCELED;
+    Intent mResultData = null;
+    private boolean mTitleReady = false;
+    private int mDefaultKeyMode = DEFAULT_KEYS_DISABLE;
+    private SpannableStringBuilder mDefaultKeySsb = null;
+    private Object mInstanceTracker = StrictMode.trackActivity(this);
+    private Thread mUiThread;
+    Handler mHandler = new Handler();
+    
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:41:01.727 -0400", hash_original_method = "79801A4320B259B00088E64C775AA360", hash_generated_method = "79801A4320B259B00088E64C775AA360")
+        public Activity ()
+    {
+    }
+
+
+    public Intent getIntent(){
 		return mIntent;
-		
 		// Original method
 		/*
 		{
@@ -166,10 +135,10 @@ public class Activity extends ContextThemeWrapper implements LayoutInflater.Fact
     }
 		*/
 	}
-	
-	public void setIntent(Intent newIntent){
+
+    
+    public void setIntent(Intent newIntent){
 		mIntent = newIntent;  //Preserved
-		
 		// Original method
 		/*
 		{
@@ -178,11 +147,11 @@ public class Activity extends ContextThemeWrapper implements LayoutInflater.Fact
 		*/
 		//Return nothing
 	}
-	
-	@DSModeled(DSC.SAFE)
+
+    
+    @DSModeled(DSC.SAFE)
 	public final Application getApplication(){
 		return mApplication;
-		
 		// Original method
 		/*
 		{
@@ -190,8 +159,9 @@ public class Activity extends ContextThemeWrapper implements LayoutInflater.Fact
     }
 		*/
 	}
-	
-	public final boolean isChild(){
+
+    
+    public final boolean isChild(){
 		return dsTaint.getTaintBoolean();
 		// Original method
 		/*
@@ -200,10 +170,10 @@ public class Activity extends ContextThemeWrapper implements LayoutInflater.Fact
     }
 		*/
 	}
-	
-	public final Activity getParent(){
+
+    
+    public final Activity getParent(){
 		return mParent;
-		
 		// Original method
 		/*
 		{
@@ -211,10 +181,10 @@ public class Activity extends ContextThemeWrapper implements LayoutInflater.Fact
     }
 		*/
 	}
-	
-	public WindowManager getWindowManager(){
+
+    
+    public WindowManager getWindowManager(){
 		return mWindowManager;
-		
 		// Original method
 		/*
 		{
@@ -222,11 +192,11 @@ public class Activity extends ContextThemeWrapper implements LayoutInflater.Fact
     }
 		*/
 	}
-	
-	@DSModeled(DSC.SAFE)
+
+    
+    @DSModeled(DSC.SAFE)
 	public Window getWindow(){
 		return mWindow;
-		
 		// Original method
 		/*
 		{
@@ -234,11 +204,11 @@ public class Activity extends ContextThemeWrapper implements LayoutInflater.Fact
     }
 		*/
 	}
-	
-	public LoaderManager getLoaderManager(){
+
+    
+    public LoaderManager getLoaderManager(){
 		mLoaderManager = getLoaderManager(-1, mLoadersStarted, true);
 		return mLoaderManager;
-		
 		// Original method
 		/*
 		{
@@ -251,8 +221,9 @@ public class Activity extends ContextThemeWrapper implements LayoutInflater.Fact
     }
 		*/
 	}
-	
-	LoaderManagerImpl getLoaderManager(int index, boolean started, boolean create){
+
+    
+    LoaderManagerImpl getLoaderManager(int index, boolean started, boolean create){
 		mAllLoaderManagers = new SparseArray<LoaderManagerImpl>();
 		LoaderManagerImpl lm = mAllLoaderManagers.get(index);
 		lm.updateActivity(this);
@@ -276,8 +247,9 @@ public class Activity extends ContextThemeWrapper implements LayoutInflater.Fact
     }
 		*/
 	}
-	
-	public View getCurrentFocus(){
+
+    
+    public View getCurrentFocus(){
 		return mWindow.getCurrentFocus();
 		// Original method
 		/*
@@ -286,8 +258,9 @@ public class Activity extends ContextThemeWrapper implements LayoutInflater.Fact
     }
 		*/
 	}
-	
-	@DSModeled(DSC.SAFE)
+
+    
+    @DSModeled(DSC.SAFE)
 	protected void onCreate(Bundle savedInstanceState){
 		mAllLoaderManagers = mLastNonConfigurationInstances.loaders;
 		Parcelable p = savedInstanceState.getParcelable(FRAGMENTS_TAG);
@@ -312,8 +285,9 @@ public class Activity extends ContextThemeWrapper implements LayoutInflater.Fact
 		*/
 		//Return nothing
 	}
-	
-	final void performRestoreInstanceState(Bundle savedInstanceState){
+
+    
+    final void performRestoreInstanceState(Bundle savedInstanceState){
 		onRestoreInstanceState(savedInstanceState);
         restoreManagedDialogs(savedInstanceState);
 		// Original method
@@ -325,8 +299,9 @@ public class Activity extends ContextThemeWrapper implements LayoutInflater.Fact
 		*/
 		//Return nothing
 	}
-	
-	protected void onRestoreInstanceState(Bundle savedInstanceState){
+
+    
+    protected void onRestoreInstanceState(Bundle savedInstanceState){
 		Bundle windowState = savedInstanceState.getBundle(WINDOW_HIERARCHY_TAG); //DSFIXME:  Model method in bundle
 		mWindow.restoreHierarchyState(windowState);
 		// Original method
@@ -342,15 +317,16 @@ public class Activity extends ContextThemeWrapper implements LayoutInflater.Fact
 		*/
 		//Return nothing
 	}
-	
-	private void restoreManagedDialogs(Bundle savedInstanceState){
-		
+
+    
+    private void restoreManagedDialogs(Bundle savedInstanceState){
 		// Original method
 		/* Original Method Too Long, Refer to Original Implementation */
 		//Return nothing
 	}
-	
-	private Dialog createDialog(Integer dialogId, Bundle state, Bundle args){
+
+    
+    private Dialog createDialog(Integer dialogId, Bundle state, Bundle args){
 		final Dialog dialog = onCreateDialog(dialogId, args);
 		dialog.dispatchOnCreate(state);
         return dialog;
@@ -366,9 +342,9 @@ public class Activity extends ContextThemeWrapper implements LayoutInflater.Fact
     }
 		*/
 	}
-	
-	private static String savedDialogKeyFor(int key){
-		
+
+    
+    private static String savedDialogKeyFor(int key){
 		// Original method
 		/*
 		{
@@ -377,9 +353,9 @@ public class Activity extends ContextThemeWrapper implements LayoutInflater.Fact
 		*/
 		return "";
 	}
-	
-	private static String savedDialogArgsKeyFor(int key){
-		
+
+    
+    private static String savedDialogArgsKeyFor(int key){
 		// Original method
 		/*
 		{
@@ -388,8 +364,9 @@ public class Activity extends ContextThemeWrapper implements LayoutInflater.Fact
 		*/
 		return "";
 	}
-	
-	protected void onPostCreate(Bundle savedInstanceState){
+
+    
+    protected void onPostCreate(Bundle savedInstanceState){
 		onTitleChanged(getTitle(), getTitleColor());
 		// Original method
 		/*
@@ -403,8 +380,9 @@ public class Activity extends ContextThemeWrapper implements LayoutInflater.Fact
 		*/
 		//Return nothing
 	}
-	
-	protected void onStart(){
+
+    
+    protected void onStart(){
 		mLoaderManager = getLoaderManager(-1, mLoadersStarted, false);
 		mLoaderManager.doStart();
 		getApplication().dispatchActivityStarted(this);
@@ -412,7 +390,6 @@ public class Activity extends ContextThemeWrapper implements LayoutInflater.Fact
 		/*
 		{
         mCalled = true;
-        
         if (!mLoadersStarted) {
             mLoadersStarted = true;
             if (mLoaderManager != null) {
@@ -422,15 +399,14 @@ public class Activity extends ContextThemeWrapper implements LayoutInflater.Fact
             }
             mCheckedForLoaderManager = true;
         }
-
         getApplication().dispatchActivityStarted(this);
     }
 		*/
 		//Return nothing
 	}
-	
-	protected void onRestart(){
-		
+
+    
+    protected void onRestart(){
 		// Original method
 		/*
 		{
@@ -439,8 +415,9 @@ public class Activity extends ContextThemeWrapper implements LayoutInflater.Fact
 		*/
 		//Return nothing
 	}
-	
-	@DSModeled(DSC.SAFE)
+
+    
+    @DSModeled(DSC.SAFE)
 	protected void onResume(){
 		getApplication().dispatchActivityResumed(this);
 		// Original method
@@ -452,8 +429,9 @@ public class Activity extends ContextThemeWrapper implements LayoutInflater.Fact
 		*/
 		//Return nothing
 	}
-	
-	protected void onPostResume(){
+
+    
+    protected void onPostResume(){
 		final Window win = getWindow();
 		win.makeActive();
 		mActionBar.setShowHideAnimationEnabled(true);
@@ -468,9 +446,9 @@ public class Activity extends ContextThemeWrapper implements LayoutInflater.Fact
 		*/
 		//Return nothing
 	}
-	
-	protected void onNewIntent(Intent intent){
-		
+
+    
+    protected void onNewIntent(Intent intent){
 		// Original method
 		/*
 		{
@@ -478,8 +456,9 @@ public class Activity extends ContextThemeWrapper implements LayoutInflater.Fact
 		*/
 		//Return nothing
 	}
-	
-	final void performSaveInstanceState(Bundle outState){
+
+    
+    final void performSaveInstanceState(Bundle outState){
 		onSaveInstanceState(outState);
         saveManagedDialogs(outState);
 		// Original method
@@ -491,8 +470,9 @@ public class Activity extends ContextThemeWrapper implements LayoutInflater.Fact
 		*/
 		//Return nothing
 	}
-	
-	protected void onSaveInstanceState(Bundle outState){
+
+    
+    protected void onSaveInstanceState(Bundle outState){
 		outState.putBundle(WINDOW_HIERARCHY_TAG, mWindow.saveHierarchyState());
         Parcelable p = mFragments.saveAllState();
         outState.putParcelable(FRAGMENTS_TAG, p);
@@ -510,15 +490,16 @@ public class Activity extends ContextThemeWrapper implements LayoutInflater.Fact
 		*/
 		//Return nothing
 	}
-	
-	private void saveManagedDialogs(Bundle outState){
-		
+
+    
+    private void saveManagedDialogs(Bundle outState){
 		// Original method
 		/* Original Method Too Long, Refer to Original Implementation */
 		//Return nothing
 	}
-	
-	protected void onPause(){
+
+    
+    protected void onPause(){
 		getApplication().dispatchActivityPaused(this);
 		// Original method
 		/*
@@ -529,9 +510,9 @@ public class Activity extends ContextThemeWrapper implements LayoutInflater.Fact
 		*/
 		//Return nothing
 	}
-	
-	protected void onUserLeaveHint(){
-		
+
+    
+    protected void onUserLeaveHint(){
 		// Original method
 		/*
 		{
@@ -539,9 +520,9 @@ public class Activity extends ContextThemeWrapper implements LayoutInflater.Fact
 		*/
 		//Return nothing
 	}
-	
-	public boolean onCreateThumbnail(Bitmap outBitmap, Canvas canvas){
-		
+
+    
+    public boolean onCreateThumbnail(Bitmap outBitmap, Canvas canvas){
 		// Original method
 		/*
 		{
@@ -550,9 +531,9 @@ public class Activity extends ContextThemeWrapper implements LayoutInflater.Fact
 		*/
 		return false;
 	}
-	
-	public CharSequence onCreateDescription(){
-		
+
+    
+    public CharSequence onCreateDescription(){
 		// Original method
 		/*
 		{
@@ -561,8 +542,9 @@ public class Activity extends ContextThemeWrapper implements LayoutInflater.Fact
 		*/
 		return null;
 	}
-	
-	@DSModeled(DSC.SAFE)
+
+    
+    @DSModeled(DSC.SAFE)
 	protected void onStop(){
 		mActionBar.setShowHideAnimationEnabled(false);
 		getApplication().dispatchActivityStopped(this);
@@ -576,16 +558,17 @@ public class Activity extends ContextThemeWrapper implements LayoutInflater.Fact
 		*/
 		//Return nothing
 	}
-	
-	@DSModeled(DSC.SAFE)
+
+    
+    @DSModeled(DSC.SAFE)
 	protected void onDestroy(){
-		
 		// Original method
 		/* Original Method Too Long, Refer to Original Implementation */
 		//Return nothing
 	}
-	
-	public void onConfigurationChanged(Configuration newConfig){
+
+    
+    public void onConfigurationChanged(Configuration newConfig){
 		mFragments.dispatchConfigurationChanged(newConfig);
 		mWindow.onConfigurationChanged(newConfig);
 		mActionBar.onConfigurationChanged(newConfig);
@@ -593,27 +576,21 @@ public class Activity extends ContextThemeWrapper implements LayoutInflater.Fact
 		/*
 		{
         mCalled = true;
-
         mFragments.dispatchConfigurationChanged(newConfig);
-
         if (mWindow != null) {
-            
             mWindow.onConfigurationChanged(newConfig);
         }
-
         if (mActionBar != null) {
-            
-            
             mActionBar.onConfigurationChanged(newConfig);
         }
     }
 		*/
 		//Return nothing
 	}
-	
-	public int getChangingConfigurations(){
+
+    
+    public int getChangingConfigurations(){
 		return dsTaint.getTaintInt();
-		
 		// Original method
 		/*
 		{
@@ -621,8 +598,9 @@ public class Activity extends ContextThemeWrapper implements LayoutInflater.Fact
     }
 		*/
 	}
-	
-	@Deprecated public Object getLastNonConfigurationInstance(){
+
+    
+    @Deprecated public Object getLastNonConfigurationInstance(){
 		return mLastNonConfigurationInstances.activity;
 		// Original method
 		/*
@@ -632,9 +610,9 @@ public class Activity extends ContextThemeWrapper implements LayoutInflater.Fact
     }
 		*/
 	}
-	
-	public Object onRetainNonConfigurationInstance(){
-		
+
+    
+    public Object onRetainNonConfigurationInstance(){
 		// Original method
 		/*
 		{
@@ -643,8 +621,9 @@ public class Activity extends ContextThemeWrapper implements LayoutInflater.Fact
 		*/
 		return null;
 	}
-	
-	HashMap<String, Object> getLastNonConfigurationChildInstances(){
+
+    
+    HashMap<String, Object> getLastNonConfigurationChildInstances(){
 		return mLastNonConfigurationInstances.children;
 		// Original method
 		/*
@@ -654,9 +633,9 @@ public class Activity extends ContextThemeWrapper implements LayoutInflater.Fact
     }
 		*/
 	}
-	
-	HashMap<String,Object> onRetainNonConfigurationChildInstances(){
-		
+
+    
+    HashMap<String,Object> onRetainNonConfigurationChildInstances(){
 		// Original method
 		/*
 		{
@@ -665,15 +644,16 @@ public class Activity extends ContextThemeWrapper implements LayoutInflater.Fact
 		*/
 		return null;
 	}
-	
-	NonConfigurationInstances retainNonConfigurationInstances(){
-		
+
+    
+    NonConfigurationInstances retainNonConfigurationInstances(){
 		// Original method
 		/* Original Method Too Long, Refer to Original Implementation */
 		return null;
 	}
-	
-	public void onLowMemory(){
+
+    
+    public void onLowMemory(){
 		mFragments.dispatchLowMemory();
 		// Original method
 		/*
@@ -684,8 +664,9 @@ public class Activity extends ContextThemeWrapper implements LayoutInflater.Fact
 		*/
 		//Return nothing
 	}
-	
-	public void onTrimMemory(int level){
+
+    
+    public void onTrimMemory(int level){
 		mFragments.dispatchTrimMemory(level);
 		// Original method
 		/*
@@ -696,10 +677,10 @@ public class Activity extends ContextThemeWrapper implements LayoutInflater.Fact
 		*/
 		//Return nothing
 	}
-	
-	public FragmentManager getFragmentManager(){
+
+    
+    public FragmentManager getFragmentManager(){
 		return mFragments;
-		
 		// Original method
 		/*
 		{
@@ -707,15 +688,15 @@ public class Activity extends ContextThemeWrapper implements LayoutInflater.Fact
     }
 		*/
 	}
-	
-	void invalidateFragmentIndex(int index){
+
+    
+    void invalidateFragmentIndex(int index){
 		LoaderManagerImpl lm = mAllLoaderManagers.get(0);
 		lm.doDestroy();
 		mAllLoaderManagers.remove(0);
 		// Original method
 		/*
 		{
-        
         if (mAllLoaderManagers != null) {
             LoaderManagerImpl lm = mAllLoaderManagers.get(index);
             if (lm != null && !lm.mRetaining) {
@@ -727,9 +708,9 @@ public class Activity extends ContextThemeWrapper implements LayoutInflater.Fact
 		*/
 		//Return nothing
 	}
-	
-	public void onAttachFragment(Fragment fragment){
-		
+
+    
+    public void onAttachFragment(Fragment fragment){
 		// Original method
 		/*
 		{
@@ -737,8 +718,9 @@ public class Activity extends ContextThemeWrapper implements LayoutInflater.Fact
 		*/
 		//Return nothing
 	}
-	
-	@Deprecated public final Cursor managedQuery(Uri uri, String[] projection, String selection,
+
+    
+    @Deprecated public final Cursor managedQuery(Uri uri, String[] projection, String selection,
             String sortOrder){
 		Cursor c = getContentResolver().query(uri, projection, selection, null, sortOrder);
 		startManagingCursor(c);
@@ -754,8 +736,9 @@ public class Activity extends ContextThemeWrapper implements LayoutInflater.Fact
     }
 		*/
 	}
-	
-	@Deprecated public final Cursor managedQuery(Uri uri, String[] projection, String selection,
+
+    
+    @Deprecated public final Cursor managedQuery(Uri uri, String[] projection, String selection,
             String[] selectionArgs, String sortOrder){
 		Cursor c = getContentResolver().query(uri, projection, selection, selectionArgs, sortOrder);
 		startManagingCursor(c);
@@ -771,9 +754,9 @@ public class Activity extends ContextThemeWrapper implements LayoutInflater.Fact
     }
 		*/
 	}
-	
-	@Deprecated public void startManagingCursor(Cursor c){
-		
+
+    
+    @Deprecated public void startManagingCursor(Cursor c){
 		// Original method
 		/*
 		{
@@ -784,8 +767,9 @@ public class Activity extends ContextThemeWrapper implements LayoutInflater.Fact
 		*/
 		//Return nothing
 	}
-	
-	@Deprecated public void stopManagingCursor(Cursor c){
+
+    
+    @Deprecated public void stopManagingCursor(Cursor c){
 		ManagedCursor mc = mManagedCursors.get(0);
 		mManagedCursors.remove(0);
 		// Original method
@@ -805,9 +789,9 @@ public class Activity extends ContextThemeWrapper implements LayoutInflater.Fact
 		*/
 		//Return nothing
 	}
-	
-	@Deprecated public void setPersistent(boolean isPersistent){
-		
+
+    
+    @Deprecated public void setPersistent(boolean isPersistent){
 		// Original method
 		/*
 		{
@@ -815,8 +799,9 @@ public class Activity extends ContextThemeWrapper implements LayoutInflater.Fact
 		*/
 		//Return nothing
 	}
-	
-	@DSModeled(DSC.SAFE)
+
+    
+    @DSModeled(DSC.SAFE)
 	public View findViewById(int id){
 		return getWindow().findViewById(id);
 		// Original method
@@ -826,11 +811,11 @@ public class Activity extends ContextThemeWrapper implements LayoutInflater.Fact
     }
 		*/
 	}
-	
-	public ActionBar getActionBar(){
+
+    
+    public ActionBar getActionBar(){
 		initActionBar();
         return mActionBar;
-		
 		// Original method
 		/*
 		{
@@ -839,8 +824,9 @@ public class Activity extends ContextThemeWrapper implements LayoutInflater.Fact
     }
 		*/
 	}
-	
-	@DSModeled(DSC.SAFE)
+
+    
+    @DSModeled(DSC.SAFE)
 	private void initActionBar(){
 		Window window = getWindow();
 		window.getDecorView();
@@ -850,22 +836,18 @@ public class Activity extends ContextThemeWrapper implements LayoutInflater.Fact
 		/*
 		{
         Window window = getWindow();
-
-        
-        
         window.getDecorView();
-
         if (isChild() || !window.hasFeature(Window.FEATURE_ACTION_BAR) || mActionBar != null) {
             return;
         }
-        
         mActionBar = new ActionBarImpl(this);
     }
 		*/
 		//Return nothing
 	}
-	
-	@DSModeled(DSC.SAFE)
+
+    
+    @DSModeled(DSC.SAFE)
 	public void setContentView(int layoutResID){
 		getWindow().setContentView(layoutResID);
         initActionBar();
@@ -878,8 +860,9 @@ public class Activity extends ContextThemeWrapper implements LayoutInflater.Fact
 		*/
 		//Return nothing
 	}
-	
-	@DSModeled(DSC.SAFE)
+
+    
+    @DSModeled(DSC.SAFE)
 	public void setContentView(View view){
 		getWindow().setContentView(view);
         initActionBar();
@@ -892,8 +875,9 @@ public class Activity extends ContextThemeWrapper implements LayoutInflater.Fact
 		*/
 		//Return nothing
 	}
-	
-	public void setContentView(View view, ViewGroup.LayoutParams params){
+
+    
+    public void setContentView(View view, ViewGroup.LayoutParams params){
 		getWindow().setContentView(view, params);
         initActionBar();
 		// Original method
@@ -905,8 +889,9 @@ public class Activity extends ContextThemeWrapper implements LayoutInflater.Fact
 		*/
 		//Return nothing
 	}
-	
-	public void addContentView(View view, ViewGroup.LayoutParams params){
+
+    
+    public void addContentView(View view, ViewGroup.LayoutParams params){
 		getWindow().addContentView(view, params);
         initActionBar();
 		// Original method
@@ -918,8 +903,9 @@ public class Activity extends ContextThemeWrapper implements LayoutInflater.Fact
 		*/
 		//Return nothing
 	}
-	
-	public void setFinishOnTouchOutside(boolean finish){
+
+    
+    public void setFinishOnTouchOutside(boolean finish){
 		mWindow.setCloseOnTouchOutside(finish);
 		// Original method
 		/*
@@ -929,13 +915,9 @@ public class Activity extends ContextThemeWrapper implements LayoutInflater.Fact
 		*/
 		//Return nothing
 	}
-	static public final int DEFAULT_KEYS_DISABLE = 0;
-	static public final int DEFAULT_KEYS_DIALER = 1;
-	static public final int DEFAULT_KEYS_SHORTCUT = 2;
-	static public final int DEFAULT_KEYS_SEARCH_LOCAL = 3;
-	static public final int DEFAULT_KEYS_SEARCH_GLOBAL = 4;
-	
-	public final void setDefaultKeyMode(int mode){
+
+    
+    public final void setDefaultKeyMode(int mode){
 		dsTaint.addTaint(mode);
 		mDefaultKeySsb = new SpannableStringBuilder();
 		Selection.setSelection(mDefaultKeySsb,0);
@@ -943,9 +925,6 @@ public class Activity extends ContextThemeWrapper implements LayoutInflater.Fact
 		/*
 		{
         mDefaultKeyMode = mode;
-        
-        
-        
         switch (mode) {
         case DEFAULT_KEYS_DISABLE:
         case DEFAULT_KEYS_SHORTCUT:
@@ -964,16 +943,16 @@ public class Activity extends ContextThemeWrapper implements LayoutInflater.Fact
 		*/
 		//Return nothing
 	}
-	
-	public boolean onKeyDown(int keyCode, KeyEvent event){
-		
+
+    
+    public boolean onKeyDown(int keyCode, KeyEvent event){
 		// Original method
 		/* Original Method Too Long, Refer to Original Implementation */
 		return false;
 	}
-	
-	public boolean onKeyLongPress(int keyCode, KeyEvent event){
-		
+
+    
+    public boolean onKeyLongPress(int keyCode, KeyEvent event){
 		// Original method
 		/*
 		{
@@ -982,8 +961,9 @@ public class Activity extends ContextThemeWrapper implements LayoutInflater.Fact
 		*/
 		return false;
 	}
-	
-	public boolean onKeyUp(int keyCode, KeyEvent event){
+
+    
+    public boolean onKeyUp(int keyCode, KeyEvent event){
 		getApplicationInfo();
 		onBackPressed();
 		return (event.isCanceled() || event.isTracking()); //Probably just want to get a taint bool from inside event
@@ -1002,9 +982,9 @@ public class Activity extends ContextThemeWrapper implements LayoutInflater.Fact
     }
 		*/
 	}
-	
-	public boolean onKeyMultiple(int keyCode, int repeatCount, KeyEvent event){
-		
+
+    
+    public boolean onKeyMultiple(int keyCode, int repeatCount, KeyEvent event){
 		// Original method
 		/*
 		{
@@ -1013,8 +993,9 @@ public class Activity extends ContextThemeWrapper implements LayoutInflater.Fact
 		*/
 		return false;
 	}
-	
-	public void onBackPressed(){
+
+    
+    public void onBackPressed(){
 		mFragments.popBackStackImmediate();
 		finish();
 		// Original method
@@ -1027,9 +1008,9 @@ public class Activity extends ContextThemeWrapper implements LayoutInflater.Fact
 		*/
 		//Return nothing
 	}
-	
-	public boolean onKeyShortcut(int keyCode, KeyEvent event){
-		
+
+    
+    public boolean onKeyShortcut(int keyCode, KeyEvent event){
 		// Original method
 		/*
 		{
@@ -1038,8 +1019,9 @@ public class Activity extends ContextThemeWrapper implements LayoutInflater.Fact
 		*/
 		return false;
 	}
-	
-	public boolean onTouchEvent(MotionEvent event){
+
+    
+    public boolean onTouchEvent(MotionEvent event){
 		finish();
 		return mWindow.shouldCloseOnTouch(this, event); //Taint should bubble up
 		// Original method
@@ -1049,14 +1031,13 @@ public class Activity extends ContextThemeWrapper implements LayoutInflater.Fact
             finish();
             return true;
         }
-        
         return false;
     }
 		*/
 	}
-	
-	public boolean onTrackballEvent(MotionEvent event){
-		
+
+    
+    public boolean onTrackballEvent(MotionEvent event){
 		// Original method
 		/*
 		{
@@ -1065,9 +1046,9 @@ public class Activity extends ContextThemeWrapper implements LayoutInflater.Fact
 		*/
 		return false;
 	}
-	
-	public boolean onGenericMotionEvent(MotionEvent event){
-		
+
+    
+    public boolean onGenericMotionEvent(MotionEvent event){
 		// Original method
 		/*
 		{
@@ -1076,9 +1057,9 @@ public class Activity extends ContextThemeWrapper implements LayoutInflater.Fact
 		*/
 		return false;
 	}
-	
-	public void onUserInteraction(){
-		
+
+    
+    public void onUserInteraction(){
 		// Original method
 		/*
 		{
@@ -1086,16 +1067,14 @@ public class Activity extends ContextThemeWrapper implements LayoutInflater.Fact
 		*/
 		//Return nothing
 	}
-	
-	public void onWindowAttributesChanged(WindowManager.LayoutParams params){
+
+    
+    public void onWindowAttributesChanged(WindowManager.LayoutParams params){
 		mDecor.getParent();
 		getWindowManager().updateViewLayout(mDecor, params);
 		// Original method
 		/*
 		{
-        
-        
-        
         if (mParent == null) {
             View decor = mDecor;
             if (decor != null && decor.getParent() != null) {
@@ -1106,9 +1085,9 @@ public class Activity extends ContextThemeWrapper implements LayoutInflater.Fact
 		*/
 		//Return nothing
 	}
-	
-	public void onContentChanged(){
-		
+
+    
+    public void onContentChanged(){
 		// Original method
 		/*
 		{
@@ -1116,9 +1095,9 @@ public class Activity extends ContextThemeWrapper implements LayoutInflater.Fact
 		*/
 		//Return nothing
 	}
-	
-	public void onWindowFocusChanged(boolean hasFocus){
-		
+
+    
+    public void onWindowFocusChanged(boolean hasFocus){
 		// Original method
 		/*
 		{
@@ -1126,9 +1105,9 @@ public class Activity extends ContextThemeWrapper implements LayoutInflater.Fact
 		*/
 		//Return nothing
 	}
-	
-	public void onAttachedToWindow(){
-		
+
+    
+    public void onAttachedToWindow(){
 		// Original method
 		/*
 		{
@@ -1136,9 +1115,9 @@ public class Activity extends ContextThemeWrapper implements LayoutInflater.Fact
 		*/
 		//Return nothing
 	}
-	
-	public void onDetachedFromWindow(){
-		
+
+    
+    public void onDetachedFromWindow(){
 		// Original method
 		/*
 		{
@@ -1146,8 +1125,9 @@ public class Activity extends ContextThemeWrapper implements LayoutInflater.Fact
 		*/
 		//Return nothing
 	}
-	
-	public boolean hasWindowFocus(){
+
+    
+    public boolean hasWindowFocus(){
 		Window w = getWindow();
 		View d = w.getDecorView();
 		return d.hasWindowFocus();
@@ -1165,8 +1145,9 @@ public class Activity extends ContextThemeWrapper implements LayoutInflater.Fact
     }
 		*/
 	}
-	
-	public boolean dispatchKeyEvent(KeyEvent event){
+
+    
+    public boolean dispatchKeyEvent(KeyEvent event){
 		onUserInteraction();
 		Window win = getWindow();
 		View decor = mDecor;
@@ -1187,8 +1168,9 @@ public class Activity extends ContextThemeWrapper implements LayoutInflater.Fact
     }
 		*/
 	}
-	
-	public boolean dispatchKeyShortcutEvent(KeyEvent event){
+
+    
+    public boolean dispatchKeyShortcutEvent(KeyEvent event){
 		onUserInteraction();
 		return (getWindow().superDispatchKeyShortcutEvent(event) || onKeyShortcut(event.getKeyCode(), event));
 		// Original method
@@ -1202,8 +1184,9 @@ public class Activity extends ContextThemeWrapper implements LayoutInflater.Fact
     }
 		*/
 	}
-	
-	public boolean dispatchTouchEvent(MotionEvent ev){
+
+    
+    public boolean dispatchTouchEvent(MotionEvent ev){
 		onUserInteraction();
 		return (getWindow().superDispatchTouchEvent(ev) || onTouchEvent(ev));
 		// Original method
@@ -1219,8 +1202,9 @@ public class Activity extends ContextThemeWrapper implements LayoutInflater.Fact
     }
 		*/
 	}
-	
-	public boolean dispatchTrackballEvent(MotionEvent ev){
+
+    
+    public boolean dispatchTrackballEvent(MotionEvent ev){
 		onUserInteraction();
 		return (getWindow().superDispatchTrackballEvent(ev) || onTrackballEvent(ev));
 		// Original method
@@ -1234,8 +1218,9 @@ public class Activity extends ContextThemeWrapper implements LayoutInflater.Fact
     }
 		*/
 	}
-	
-	public boolean dispatchGenericMotionEvent(MotionEvent ev){
+
+    
+    public boolean dispatchGenericMotionEvent(MotionEvent ev){
 		onUserInteraction();
 		return (getWindow().superDispatchGenericMotionEvent(ev) || onGenericMotionEvent(ev));
 		// Original method
@@ -1249,8 +1234,9 @@ public class Activity extends ContextThemeWrapper implements LayoutInflater.Fact
     }
 		*/
 	}
-	
-	public boolean dispatchPopulateAccessibilityEvent(AccessibilityEvent event){
+
+    
+    public boolean dispatchPopulateAccessibilityEvent(AccessibilityEvent event){
 		event.setClassName(getClass().getName());
         event.setPackageName(getPackageName());
         getWindow().getAttributes();
@@ -1263,24 +1249,21 @@ public class Activity extends ContextThemeWrapper implements LayoutInflater.Fact
 		{
         event.setClassName(getClass().getName());
         event.setPackageName(getPackageName());
-
         LayoutParams params = getWindow().getAttributes();
         boolean isFullScreen = (params.width == LayoutParams.MATCH_PARENT) &&
             (params.height == LayoutParams.MATCH_PARENT);
         event.setFullScreen(isFullScreen);
-
         CharSequence title = getTitle();
         if (!TextUtils.isEmpty(title)) {
            event.getText().add(title);
         }
-
         return true;
     }
 		*/
 	}
-	
-	public View onCreatePanelView(int featureId){
-		
+
+    
+    public View onCreatePanelView(int featureId){
 		// Original method
 		/*
 		{
@@ -1289,8 +1272,9 @@ public class Activity extends ContextThemeWrapper implements LayoutInflater.Fact
 		*/
 		return null;
 	}
-	
-	public boolean onCreatePanelMenu(int featureId, Menu menu){
+
+    
+    public boolean onCreatePanelMenu(int featureId, Menu menu){
 		return (onCreateOptionsMenu(menu) || mFragments.dispatchCreateOptionsMenu(menu, getMenuInflater()));
 		// Original method
 		/*
@@ -1304,8 +1288,9 @@ public class Activity extends ContextThemeWrapper implements LayoutInflater.Fact
     }
 		*/
 	}
-	
-	public boolean onPreparePanel(int featureId, View view, Menu menu){
+
+    
+    public boolean onPreparePanel(int featureId, View view, Menu menu){
 		return (onPrepareOptionsMenu(menu) || mFragments.dispatchPrepareOptionsMenu(menu) && menu.hasVisibleItems());
 		// Original method
 		/*
@@ -1319,8 +1304,9 @@ public class Activity extends ContextThemeWrapper implements LayoutInflater.Fact
     }
 		*/
 	}
-	
-	public boolean onMenuOpened(int featureId, Menu menu){
+
+    
+    public boolean onMenuOpened(int featureId, Menu menu){
 		initActionBar();
 		mActionBar.dispatchMenuVisibilityChanged(true);
 		Log.e(TAG, "Tried to open action bar menu with no action bar");
@@ -1340,8 +1326,9 @@ public class Activity extends ContextThemeWrapper implements LayoutInflater.Fact
     }
 		*/
 	}
-	
-	public boolean onMenuItemSelected(int featureId, MenuItem item){
+
+    
+    public boolean onMenuItemSelected(int featureId, MenuItem item){
 		EventLog.writeEvent(50000, 0, item.getTitleCondensed());
 		return (onOptionsItemSelected(item) || mFragments.dispatchContextItemSelected(item));
 		// Original method
@@ -1349,30 +1336,26 @@ public class Activity extends ContextThemeWrapper implements LayoutInflater.Fact
 		{
         switch (featureId) {
             case Window.FEATURE_OPTIONS_PANEL:
-                
-                
-                
                 EventLog.writeEvent(50000, 0, item.getTitleCondensed());
                 if (onOptionsItemSelected(item)) {
                     return true;
                 }
                 return mFragments.dispatchOptionsItemSelected(item);
-                
             case Window.FEATURE_CONTEXT_MENU:
                 EventLog.writeEvent(50000, 1, item.getTitleCondensed());
                 if (onContextItemSelected(item)) {
                     return true;
                 }
                 return mFragments.dispatchContextItemSelected(item);
-
             default:
                 return false;
         }
     }
 		*/
 	}
-	
-	public void onPanelClosed(int featureId, Menu menu){
+
+    
+    public void onPanelClosed(int featureId, Menu menu){
 		mFragments.dispatchOptionsMenuClosed(menu);
 		onOptionsMenuClosed(menu);
 		initActionBar();
@@ -1385,11 +1368,9 @@ public class Activity extends ContextThemeWrapper implements LayoutInflater.Fact
                 mFragments.dispatchOptionsMenuClosed(menu);
                 onOptionsMenuClosed(menu);
                 break;
-                
             case Window.FEATURE_CONTEXT_MENU:
                 onContextMenuClosed(menu);
                 break;
-
             case Window.FEATURE_ACTION_BAR:
                 initActionBar();
                 mActionBar.dispatchMenuVisibilityChanged(false);
@@ -1399,8 +1380,9 @@ public class Activity extends ContextThemeWrapper implements LayoutInflater.Fact
 		*/
 		//Return nothing
 	}
-	
-	public void invalidateOptionsMenu(){
+
+    
+    public void invalidateOptionsMenu(){
 		mWindow.invalidatePanelMenu(Window.FEATURE_OPTIONS_PANEL);
 		// Original method
 		/*
@@ -1410,8 +1392,9 @@ public class Activity extends ContextThemeWrapper implements LayoutInflater.Fact
 		*/
 		//Return nothing
 	}
-	
-	public boolean onCreateOptionsMenu(Menu menu){
+
+    
+    public boolean onCreateOptionsMenu(Menu menu){
 		return mParent.onCreateOptionsMenu(menu);
 		// Original method
 		/*
@@ -1423,8 +1406,9 @@ public class Activity extends ContextThemeWrapper implements LayoutInflater.Fact
     }
 		*/
 	}
-	
-	public boolean onPrepareOptionsMenu(Menu menu){
+
+    
+    public boolean onPrepareOptionsMenu(Menu menu){
 		return mParent.onPrepareOptionsMenu(menu);
 		// Original method
 		/*
@@ -1436,8 +1420,9 @@ public class Activity extends ContextThemeWrapper implements LayoutInflater.Fact
     }
 		*/
 	}
-	
-	public boolean onOptionsItemSelected(MenuItem item){
+
+    
+    public boolean onOptionsItemSelected(MenuItem item){
 		return mParent.onOptionsItemSelected(item);
 		// Original method
 		/*
@@ -1449,8 +1434,9 @@ public class Activity extends ContextThemeWrapper implements LayoutInflater.Fact
     }
 		*/
 	}
-	
-	public void onOptionsMenuClosed(Menu menu){
+
+    
+    public void onOptionsMenuClosed(Menu menu){
 		mParent.onOptionsMenuClosed(menu);
 		// Original method
 		/*
@@ -1462,8 +1448,9 @@ public class Activity extends ContextThemeWrapper implements LayoutInflater.Fact
 		*/
 		//Return nothing
 	}
-	
-	public void openOptionsMenu(){
+
+    
+    public void openOptionsMenu(){
 		mWindow.openPanel(Window.FEATURE_OPTIONS_PANEL, null);
 		// Original method
 		/*
@@ -1473,9 +1460,9 @@ public class Activity extends ContextThemeWrapper implements LayoutInflater.Fact
 		*/
 		//Return nothing
 	}
-	
-	public void closeOptionsMenu(){
-		
+
+    
+    public void closeOptionsMenu(){
 		// Original method
 		/*
 		{
@@ -1484,9 +1471,9 @@ public class Activity extends ContextThemeWrapper implements LayoutInflater.Fact
 		*/
 		//Return nothing
 	}
-	
-	public void onCreateContextMenu(ContextMenu menu, View v, ContextMenuInfo menuInfo){
-		
+
+    
+    public void onCreateContextMenu(ContextMenu menu, View v, ContextMenuInfo menuInfo){
 		// Original method
 		/*
 		{
@@ -1494,8 +1481,9 @@ public class Activity extends ContextThemeWrapper implements LayoutInflater.Fact
 		*/
 		//Return nothing
 	}
-	
-	public void registerForContextMenu(View view){
+
+    
+    public void registerForContextMenu(View view){
 		view.setOnCreateContextMenuListener(this);
 		// Original method
 		/*
@@ -1505,8 +1493,9 @@ public class Activity extends ContextThemeWrapper implements LayoutInflater.Fact
 		*/
 		//Return nothing
 	}
-	
-	public void unregisterForContextMenu(View view){
+
+    
+    public void unregisterForContextMenu(View view){
 		view.setOnCreateContextMenuListener(null);
 		// Original method
 		/*
@@ -1516,8 +1505,9 @@ public class Activity extends ContextThemeWrapper implements LayoutInflater.Fact
 		*/
 		//Return nothing
 	}
-	
-	public void openContextMenu(View view){
+
+    
+    public void openContextMenu(View view){
 		view.showContextMenu();
 		// Original method
 		/*
@@ -1527,8 +1517,9 @@ public class Activity extends ContextThemeWrapper implements LayoutInflater.Fact
 		*/
 		//Return nothing
 	}
-	
-	public void closeContextMenu(){
+
+    
+    public void closeContextMenu(){
 		mWindow.closePanel(Window.FEATURE_CONTEXT_MENU);
 		// Original method
 		/*
@@ -1538,8 +1529,9 @@ public class Activity extends ContextThemeWrapper implements LayoutInflater.Fact
 		*/
 		//Return nothing
 	}
-	
-	public boolean onContextItemSelected(MenuItem item){
+
+    
+    public boolean onContextItemSelected(MenuItem item){
 		return mParent.onContextItemSelected(item);
 		// Original method
 		/*
@@ -1551,8 +1543,9 @@ public class Activity extends ContextThemeWrapper implements LayoutInflater.Fact
     }
 		*/
 	}
-	
-	public void onContextMenuClosed(Menu menu){
+
+    
+    public void onContextMenuClosed(Menu menu){
 		mParent.onContextMenuClosed(menu);
 		// Original method
 		/*
@@ -1564,9 +1557,9 @@ public class Activity extends ContextThemeWrapper implements LayoutInflater.Fact
 		*/
 		//Return nothing
 	}
-	
-	@Deprecated protected Dialog onCreateDialog(int id){
-		
+
+    
+    @Deprecated protected Dialog onCreateDialog(int id){
 		// Original method
 		/*
 		{
@@ -1575,8 +1568,9 @@ public class Activity extends ContextThemeWrapper implements LayoutInflater.Fact
 		*/
 		return null;
 	}
-	
-	@Deprecated protected Dialog onCreateDialog(int id, Bundle args){
+
+    
+    @Deprecated protected Dialog onCreateDialog(int id, Bundle args){
 		return onCreateDialog(id);
 		// Original method
 		/*
@@ -1585,8 +1579,9 @@ public class Activity extends ContextThemeWrapper implements LayoutInflater.Fact
     }
 		*/
 	}
-	
-	@Deprecated protected void onPrepareDialog(int id, Dialog dialog){
+
+    
+    @Deprecated protected void onPrepareDialog(int id, Dialog dialog){
 		dialog.setOwnerActivity(this);
 		// Original method
 		/*
@@ -1596,8 +1591,9 @@ public class Activity extends ContextThemeWrapper implements LayoutInflater.Fact
 		*/
 		//Return nothing
 	}
-	
-	@Deprecated protected void onPrepareDialog(int id, Dialog dialog, Bundle args){
+
+    
+    @Deprecated protected void onPrepareDialog(int id, Dialog dialog, Bundle args){
 		onPrepareDialog(id, dialog);
 		// Original method
 		/*
@@ -1607,8 +1603,9 @@ public class Activity extends ContextThemeWrapper implements LayoutInflater.Fact
 		*/
 		//Return nothing
 	}
-	
-	@Deprecated public final void showDialog(int id){
+
+    
+    @Deprecated public final void showDialog(int id){
 		showDialog(id, null);
 		// Original method
 		/*
@@ -1618,8 +1615,9 @@ public class Activity extends ContextThemeWrapper implements LayoutInflater.Fact
 		*/
 		//Return nothing
 	}
-	
-	@Deprecated public final boolean showDialog(int id, Bundle args){
+
+    
+    @Deprecated public final boolean showDialog(int id, Bundle args){
 		mManagedDialogs = new SparseArray<ManagedDialog>();
 		ManagedDialog md = mManagedDialogs.get(id);
 		md = new ManagedDialog();
@@ -1643,7 +1641,6 @@ public class Activity extends ContextThemeWrapper implements LayoutInflater.Fact
             }
             mManagedDialogs.put(id, md);
         }
-        
         md.mArgs = args;
         onPrepareDialog(id, md.mDialog, args);
         md.mDialog.show();
@@ -1651,8 +1648,9 @@ public class Activity extends ContextThemeWrapper implements LayoutInflater.Fact
     }
 		*/
 	}
-	
-	@Deprecated public final void dismissDialog(int id){
+
+    
+    @Deprecated public final void dismissDialog(int id){
 		final ManagedDialog md = mManagedDialogs.get(id);
 		md.mDialog.dismiss();
 		throw missingDialog(id);
@@ -1662,7 +1660,6 @@ public class Activity extends ContextThemeWrapper implements LayoutInflater.Fact
         if (mManagedDialogs == null) {
             throw missingDialog(id);
         }
-        
         final ManagedDialog md = mManagedDialogs.get(id);
         if (md == null) {
             throw missingDialog(id);
@@ -1672,8 +1669,9 @@ public class Activity extends ContextThemeWrapper implements LayoutInflater.Fact
 		*/
 		//Return nothing
 	}
-	
-	private IllegalArgumentException missingDialog(int id){
+
+    
+    private IllegalArgumentException missingDialog(int id){
 		return new IllegalArgumentException("");
 		// Original method
 		/*
@@ -1682,10 +1680,10 @@ public class Activity extends ContextThemeWrapper implements LayoutInflater.Fact
                 + "shown via Activity#showDialog");
     }
 		*/
-
 	}
-	
-	@Deprecated public final void removeDialog(int id){
+
+    
+    @Deprecated public final void removeDialog(int id){
 		final ManagedDialog md = mManagedDialogs.get(id);
 		md.mDialog.dismiss();
         mManagedDialogs.remove(id);
@@ -1703,8 +1701,9 @@ public class Activity extends ContextThemeWrapper implements LayoutInflater.Fact
 		*/
 		//Return nothing
 	}
-	
-	public boolean onSearchRequested(){
+
+    
+    public boolean onSearchRequested(){
 		startSearch(null, false, null, false); 
         return true;
 		// Original method
@@ -1715,8 +1714,9 @@ public class Activity extends ContextThemeWrapper implements LayoutInflater.Fact
     }
 		*/
 	}
-	
-	public void startSearch(String initialQuery, boolean selectInitialQuery, 
+
+    
+    public void startSearch(String initialQuery, boolean selectInitialQuery, 
             Bundle appSearchData, boolean globalSearch){
 		ensureSearchManager();
 		mSearchManager.startSearch(initialQuery, selectInitialQuery, getComponentName(),
@@ -1731,8 +1731,9 @@ public class Activity extends ContextThemeWrapper implements LayoutInflater.Fact
 		*/
 		//Return nothing
 	}
-	
-	public void triggerSearch(String query, Bundle appSearchData){
+
+    
+    public void triggerSearch(String query, Bundle appSearchData){
 		ensureSearchManager();
 	    mSearchManager.triggerSearch(query, getComponentName(), appSearchData);
 		// Original method
@@ -1744,8 +1745,9 @@ public class Activity extends ContextThemeWrapper implements LayoutInflater.Fact
 		*/
 		//Return nothing
 	}
-	
-	public void takeKeyEvents(boolean get){
+
+    
+    public void takeKeyEvents(boolean get){
 		getWindow().takeKeyEvents(get);
 		// Original method
 		/*
@@ -1755,8 +1757,9 @@ public class Activity extends ContextThemeWrapper implements LayoutInflater.Fact
 		*/
 		//Return nothing
 	}
-	
-	public final boolean requestWindowFeature(int featureId){
+
+    
+    public final boolean requestWindowFeature(int featureId){
 		return getWindow().requestFeature(featureId);
 		// Original method
 		/*
@@ -1765,8 +1768,9 @@ public class Activity extends ContextThemeWrapper implements LayoutInflater.Fact
     }
 		*/
 	}
-	
-	public final void setFeatureDrawableResource(int featureId, int resId){
+
+    
+    public final void setFeatureDrawableResource(int featureId, int resId){
 		 getWindow().setFeatureDrawableResource(featureId, resId);
 		// Original method
 		/*
@@ -1776,8 +1780,9 @@ public class Activity extends ContextThemeWrapper implements LayoutInflater.Fact
 		*/
 		//Return nothing
 	}
-	
-	public final void setFeatureDrawableUri(int featureId, Uri uri){
+
+    
+    public final void setFeatureDrawableUri(int featureId, Uri uri){
 		getWindow().setFeatureDrawableUri(featureId, uri);
 		// Original method
 		/*
@@ -1787,8 +1792,9 @@ public class Activity extends ContextThemeWrapper implements LayoutInflater.Fact
 		*/
 		//Return nothing
 	}
-	
-	public final void setFeatureDrawable(int featureId, Drawable drawable){
+
+    
+    public final void setFeatureDrawable(int featureId, Drawable drawable){
 		getWindow().setFeatureDrawable(featureId, drawable);
 		// Original method
 		/*
@@ -1798,8 +1804,9 @@ public class Activity extends ContextThemeWrapper implements LayoutInflater.Fact
 		*/
 		//Return nothing
 	}
-	
-	public final void setFeatureDrawableAlpha(int featureId, int alpha){
+
+    
+    public final void setFeatureDrawableAlpha(int featureId, int alpha){
 		getWindow().setFeatureDrawableAlpha(featureId, alpha);
 		// Original method
 		/*
@@ -1809,8 +1816,9 @@ public class Activity extends ContextThemeWrapper implements LayoutInflater.Fact
 		*/
 		//Return nothing
 	}
-	
-	public LayoutInflater getLayoutInflater(){
+
+    
+    public LayoutInflater getLayoutInflater(){
 		return getWindow().getLayoutInflater();
 		// Original method
 		/*
@@ -1819,8 +1827,9 @@ public class Activity extends ContextThemeWrapper implements LayoutInflater.Fact
     }
 		*/
 	}
-	
-	public MenuInflater getMenuInflater(){
+
+    
+    public MenuInflater getMenuInflater(){
 		initActionBar();
 		mMenuInflater = new MenuInflater(mActionBar.getThemedContext()); //DSFIXME:  Look at underlying method to determine if this can be colapsed.
 		mMenuInflater = new MenuInflater(this);
@@ -1828,7 +1837,6 @@ public class Activity extends ContextThemeWrapper implements LayoutInflater.Fact
 		// Original method
 		/*
 		{
-        
         if (mMenuInflater == null) {
             initActionBar();
             if (mActionBar != null) {
@@ -1841,9 +1849,9 @@ public class Activity extends ContextThemeWrapper implements LayoutInflater.Fact
     }
 		*/
 	}
-	
-	@DSModeled(DSC.SAFE)
-	@Override protected void onApplyThemeResource(Resources.Theme theme, int resid,
+
+    
+    @Override protected void onApplyThemeResource(Resources.Theme theme, int resid,
             boolean first){
 		super.onApplyThemeResource(theme, resid, first);
 		theme.setTo(mParent.getTheme());
@@ -1857,7 +1865,6 @@ public class Activity extends ContextThemeWrapper implements LayoutInflater.Fact
             try {
                 theme.setTo(mParent.getTheme());
             } catch (Exception e) {
-                
             }
             theme.applyStyle(resid, false);
         }
@@ -1865,8 +1872,9 @@ public class Activity extends ContextThemeWrapper implements LayoutInflater.Fact
 		*/
 		//Return nothing
 	}
-	
-	@DSModeled(DSC.SAFE)
+
+    
+    @DSModeled(DSC.SAFE)
 	public void startActivityForResult(Intent intent, int requestCode){
 		/*
         The modeling required here will create the call to onActivityResult that 
@@ -1876,12 +1884,9 @@ public class Activity extends ContextThemeWrapper implements LayoutInflater.Fact
         perfectly, but grab as many fields as we can.
 		*/
 		Intent resultIntent = new Intent();
-
 		droidsafe.helpers.DSUtils.translateIntent(intent, resultIntent);
-
 		this.onActivityResult(requestCode, /* just make this up */ -1,
 				resultIntent);
-		
 		// Original method
 		/*
 		{
@@ -1896,13 +1901,6 @@ public class Activity extends ContextThemeWrapper implements LayoutInflater.Fact
                     ar.getResultData());
             }
             if (requestCode >= 0) {
-                
-                
-                
-                
-                
-                
-                
                 mStartedActivity = true;
             }
         } else {
@@ -1912,8 +1910,9 @@ public class Activity extends ContextThemeWrapper implements LayoutInflater.Fact
 		*/
 		//Return nothing
 	}
-	
-	public void startIntentSenderForResult(IntentSender intent, int requestCode,
+
+    
+    public void startIntentSenderForResult(IntentSender intent, int requestCode,
             Intent fillInIntent, int flagsMask, int flagsValues, int extraFlags){
 		startIntentSenderForResultInner(intent, requestCode, fillInIntent,
                 flagsMask, flagsValues, this);
@@ -1933,16 +1932,17 @@ public class Activity extends ContextThemeWrapper implements LayoutInflater.Fact
 		*/
 		//Return nothing
 	}
-	
-	private void startIntentSenderForResultInner(IntentSender intent, int requestCode,
+
+    
+    private void startIntentSenderForResultInner(IntentSender intent, int requestCode,
             Intent fillInIntent, int flagsMask, int flagsValues, Activity activity){
-		
 		// Original method
 		/* Original Method Too Long, Refer to Original Implementation */
 		//Return nothing
 	}
-	
-	@Override public void startActivity(Intent intent){
+
+    
+    @Override public void startActivity(Intent intent){
 		startActivityForResult(intent, -1);
 		// Original method
 		/*
@@ -1952,8 +1952,9 @@ public class Activity extends ContextThemeWrapper implements LayoutInflater.Fact
 		*/
 		//Return nothing
 	}
-	
-	@Override public void startActivities(Intent[] intents){
+
+    
+    @Override public void startActivities(Intent[] intents){
 		mInstrumentation.execStartActivities(this, mMainThread.getApplicationThread(),
                 mToken, this, intents);
 		// Original method
@@ -1965,8 +1966,9 @@ public class Activity extends ContextThemeWrapper implements LayoutInflater.Fact
 		*/
 		//Return nothing
 	}
-	
-	public void startIntentSender(IntentSender intent,
+
+    
+    public void startIntentSender(IntentSender intent,
             Intent fillInIntent, int flagsMask, int flagsValues, int extraFlags){
 		startIntentSenderForResult(intent, -1, fillInIntent, flagsMask,
                 flagsValues, extraFlags);
@@ -1979,21 +1981,21 @@ public class Activity extends ContextThemeWrapper implements LayoutInflater.Fact
 		*/
 		//Return nothing
 	}
-	
-	public boolean startActivityIfNeeded(Intent intent, int requestCode){
 
+    
+    public boolean startActivityIfNeeded(Intent intent, int requestCode){
 		// Original method
 		/* Original Method Too Long, Refer to Original Implementation */
 		return false;
 	}
-	
-	public boolean startNextMatchingActivity(Intent intent){
+
+    
+    public boolean startNextMatchingActivity(Intent intent){
 		try {
             intent.setAllowFds(false);
             return ActivityManagerNative.getDefault()
                 .startNextMatchingActivity(mToken, intent);
         } catch (RemoteException e) {
-            
         }
 		// Original method
 		/*
@@ -2004,19 +2006,18 @@ public class Activity extends ContextThemeWrapper implements LayoutInflater.Fact
                 return ActivityManagerNative.getDefault()
                     .startNextMatchingActivity(mToken, intent);
             } catch (RemoteException e) {
-                
             }
             return false;
         }
-
         throw new UnsupportedOperationException(
             "startNextMatchingActivity can only be called from a top-level activity");
     }
 		*/
 		return false;
 	}
-	
-	public void startActivityFromChild(Activity child, Intent intent, 
+
+    
+    public void startActivityFromChild(Activity child, Intent intent, 
             int requestCode){
 		Instrumentation.ActivityResult ar =
 	            mInstrumentation.execStartActivity(
@@ -2041,8 +2042,9 @@ public class Activity extends ContextThemeWrapper implements LayoutInflater.Fact
 		*/
 		//Return nothing
 	}
-	
-	public void startActivityFromFragment(Fragment fragment, Intent intent, 
+
+    
+    public void startActivityFromFragment(Fragment fragment, Intent intent, 
             int requestCode){
 	    /*
 		Instrumentation.ActivityResult ar =
@@ -2069,8 +2071,9 @@ public class Activity extends ContextThemeWrapper implements LayoutInflater.Fact
 		*/
 		//Return nothing
 	}
-	
-	public void startIntentSenderFromChild(Activity child, IntentSender intent,
+
+    
+    public void startIntentSenderFromChild(Activity child, IntentSender intent,
             int requestCode, Intent fillInIntent, int flagsMask, int flagsValues,
             int extraFlags){
 		startIntentSenderForResultInner(intent, requestCode, fillInIntent,
@@ -2084,8 +2087,9 @@ public class Activity extends ContextThemeWrapper implements LayoutInflater.Fact
 		*/
 		//Return nothing
 	}
-	
-	public void overridePendingTransition(int enterAnim, int exitAnim){
+
+    
+    public void overridePendingTransition(int enterAnim, int exitAnim){
 		try {
             ActivityManagerNative.getDefault().overridePendingTransition(
                     mToken, getPackageName(), enterAnim, exitAnim);
@@ -2103,8 +2107,9 @@ public class Activity extends ContextThemeWrapper implements LayoutInflater.Fact
 		*/
 		//Return nothing
 	}
-	
-	public final void setResult(int resultCode){
+
+    
+    public final void setResult(int resultCode){
 		dsTaint.addTaint(resultCode);
 		// Original method
 		/*
@@ -2117,8 +2122,9 @@ public class Activity extends ContextThemeWrapper implements LayoutInflater.Fact
 		*/
 		//Return nothing
 	}
-	
-	public final void setResult(int resultCode, Intent data){
+
+    
+    public final void setResult(int resultCode, Intent data){
 		dsTaint.addTaint(resultCode);
 		mResultData = data;
 		// Original method
@@ -2132,8 +2138,9 @@ public class Activity extends ContextThemeWrapper implements LayoutInflater.Fact
 		*/
 		//Return nothing
 	}
-	
-	public String getCallingPackage(){
+
+    
+    public String getCallingPackage(){
 		try {
             return ActivityManagerNative.getDefault().getCallingPackage(mToken);
         } catch (RemoteException e) {
@@ -2150,8 +2157,9 @@ public class Activity extends ContextThemeWrapper implements LayoutInflater.Fact
     }
 		*/
 	}
-	
-	public ComponentName getCallingActivity(){
+
+    
+    public ComponentName getCallingActivity(){
 		try {
             return ActivityManagerNative.getDefault().getCallingActivity(mToken);
         } catch (RemoteException e) {
@@ -2168,8 +2176,9 @@ public class Activity extends ContextThemeWrapper implements LayoutInflater.Fact
     }
 		*/
 	}
-	
-	public void setVisible(boolean visible){
+
+    
+    public void setVisible(boolean visible){
 		dsTaint.addTaint(visible);
 		makeVisible();
 		mDecor.setVisibility(View.INVISIBLE);
@@ -2187,8 +2196,9 @@ public class Activity extends ContextThemeWrapper implements LayoutInflater.Fact
 		*/
 		//Return nothing
 	}
-	
-	void makeVisible(){
+
+    
+    void makeVisible(){
 		ViewManager wm = getWindowManager();
         wm.addView(mDecor, getWindow().getAttributes());
 		mDecor.setVisibility(View.VISIBLE);
@@ -2205,10 +2215,10 @@ public class Activity extends ContextThemeWrapper implements LayoutInflater.Fact
 		*/
 		//Return nothing
 	}
-	
-	public boolean isFinishing(){
+
+    
+    public boolean isFinishing(){
 		return dsTaint.getTaintBoolean();
-		
 		// Original method
 		/*
 		{
@@ -2216,10 +2226,10 @@ public class Activity extends ContextThemeWrapper implements LayoutInflater.Fact
     }
 		*/
 	}
-	
-	public boolean isChangingConfigurations(){
+
+    
+    public boolean isChangingConfigurations(){
 		return dsTaint.getTaintBoolean();
-		
 		// Original method
 		/*
 		{
@@ -2227,8 +2237,9 @@ public class Activity extends ContextThemeWrapper implements LayoutInflater.Fact
     }
 		*/
 	}
-	
-	public void recreate(){
+
+    
+    public void recreate(){
 		mMainThread.requestRelaunchActivity(mToken, null, null, 0, false, null, false);
 		// Original method
 		/*
@@ -2244,15 +2255,15 @@ public class Activity extends ContextThemeWrapper implements LayoutInflater.Fact
 		*/
 		//Return nothing
 	}
-	
-	public void finish(){
+
+    
+    public void finish(){
 		Log.v(TAG, "Finishing self: token=" + mToken);
 		mResultData.setAllowFds(false);
 		try {
 		ActivityManagerNative.getDefault()
         .finishActivity(mToken, mResultCode, mResultData);
 		} catch (RemoteException e) {
-            
         }
 		mParent.finishFromChild(this);
 		// Original method
@@ -2275,7 +2286,6 @@ public class Activity extends ContextThemeWrapper implements LayoutInflater.Fact
                     mFinished = true;
                 }
             } catch (RemoteException e) {
-                
             }
         } else {
             mParent.finishFromChild(this);
@@ -2284,8 +2294,9 @@ public class Activity extends ContextThemeWrapper implements LayoutInflater.Fact
 		*/
 		//Return nothing
 	}
-	
-	public void finishFromChild(Activity child){
+
+    
+    public void finishFromChild(Activity child){
 		finish();
 		// Original method
 		/*
@@ -2295,13 +2306,13 @@ public class Activity extends ContextThemeWrapper implements LayoutInflater.Fact
 		*/
 		//Return nothing
 	}
-	
-	public void finishActivity(int requestCode){
+
+    
+    public void finishActivity(int requestCode){
 		try {
             ActivityManagerNative.getDefault()
                 .finishSubActivity(mToken, mEmbeddedID, requestCode);
         } catch (RemoteException e) {
-            
         }
 		mParent.finishActivityFromChild(this, requestCode);
 		// Original method
@@ -2312,7 +2323,6 @@ public class Activity extends ContextThemeWrapper implements LayoutInflater.Fact
                 ActivityManagerNative.getDefault()
                     .finishSubActivity(mToken, mEmbeddedID, requestCode);
             } catch (RemoteException e) {
-                
             }
         } else {
             mParent.finishActivityFromChild(this, requestCode);
@@ -2321,13 +2331,13 @@ public class Activity extends ContextThemeWrapper implements LayoutInflater.Fact
 		*/
 		//Return nothing
 	}
-	
-	public void finishActivityFromChild(Activity child, int requestCode){
+
+    
+    public void finishActivityFromChild(Activity child, int requestCode){
 		try {
             ActivityManagerNative.getDefault()
                 .finishSubActivity(mToken, child.mEmbeddedID, requestCode);
         } catch (RemoteException e) {
-            
         }
 		// Original method
 		/*
@@ -2336,16 +2346,15 @@ public class Activity extends ContextThemeWrapper implements LayoutInflater.Fact
             ActivityManagerNative.getDefault()
                 .finishSubActivity(mToken, child.mEmbeddedID, requestCode);
         } catch (RemoteException e) {
-            
         }
     }
 		*/
 		//Return nothing
 	}
-	
-	@DSModeled(DSC.SAFE)
+
+    
+    @DSModeled(DSC.SAFE)
 	protected void onActivityResult(int requestCode, int resultCode, Intent data){
-		
 		// Original method
 		/*
 		{
@@ -2353,8 +2362,9 @@ public class Activity extends ContextThemeWrapper implements LayoutInflater.Fact
 		*/
 		//Return nothing
 	}
-	
-	public PendingIntent createPendingResult(int requestCode, Intent data,
+
+    
+    public PendingIntent createPendingResult(int requestCode, Intent data,
             int flags){
 		String packageName = getPackageName();
 		IIntentSender target = null;
@@ -2366,7 +2376,6 @@ public class Activity extends ContextThemeWrapper implements LayoutInflater.Fact
                         mParent == null ? mToken : mParent.mToken,
                         mEmbeddedID, requestCode, new Intent[] { data }, null, flags);
 		} catch (RemoteException e) {
-            
         }
 		return new PendingIntent(target);
 		// Original method
@@ -2382,19 +2391,18 @@ public class Activity extends ContextThemeWrapper implements LayoutInflater.Fact
                         mEmbeddedID, requestCode, new Intent[] { data }, null, flags);
             return target != null ? new PendingIntent(target) : null;
         } catch (RemoteException e) {
-            
         }
         return null;
     }
 		*/
 	}
-	
-	public void setRequestedOrientation(int requestedOrientation){
+
+    
+    public void setRequestedOrientation(int requestedOrientation){
 		try {
             ActivityManagerNative.getDefault().setRequestedOrientation(
                     mToken, requestedOrientation);
         } catch (RemoteException e) {
-            
         }
 		mParent.setRequestedOrientation(requestedOrientation);
 		// Original method
@@ -2405,7 +2413,6 @@ public class Activity extends ContextThemeWrapper implements LayoutInflater.Fact
                 ActivityManagerNative.getDefault().setRequestedOrientation(
                         mToken, requestedOrientation);
             } catch (RemoteException e) {
-                
             }
         } else {
             mParent.setRequestedOrientation(requestedOrientation);
@@ -2414,13 +2421,13 @@ public class Activity extends ContextThemeWrapper implements LayoutInflater.Fact
 		*/
 		//Return nothing
 	}
-	
-	public int getRequestedOrientation(){
+
+    
+    public int getRequestedOrientation(){
 		int retval = 0;
 		try {
 			retval = ActivityManagerNative.getDefault().getRequestedOrientation(mToken) + mParent.getRequestedOrientation();
 		} catch (RemoteException e) {
-            
         }
 		return retval;
 		// Original method
@@ -2431,7 +2438,6 @@ public class Activity extends ContextThemeWrapper implements LayoutInflater.Fact
                 return ActivityManagerNative.getDefault()
                         .getRequestedOrientation(mToken);
             } catch (RemoteException e) {
-                
             }
         } else {
             return mParent.getRequestedOrientation();
@@ -2440,8 +2446,9 @@ public class Activity extends ContextThemeWrapper implements LayoutInflater.Fact
     }
 		*/
 	}
-	
-	public int getTaskId(){
+
+    
+    public int getTaskId(){
 		try {
             return ActivityManagerNative.getDefault()
                 .getTaskForActivity(mToken, false);
@@ -2460,8 +2467,9 @@ public class Activity extends ContextThemeWrapper implements LayoutInflater.Fact
     }
 		*/
 	}
-	
-	public boolean isTaskRoot(){
+
+    
+    public boolean isTaskRoot(){
 		try {
             return ActivityManagerNative.getDefault()
                 .getTaskForActivity(mToken, true) >= 0;
@@ -2480,13 +2488,13 @@ public class Activity extends ContextThemeWrapper implements LayoutInflater.Fact
     }
 		*/
 	}
-	
-	public boolean moveTaskToBack(boolean nonRoot){
+
+    
+    public boolean moveTaskToBack(boolean nonRoot){
 		try {
             return ActivityManagerNative.getDefault().moveActivityTaskToBack(
                     mToken, nonRoot);
         } catch (RemoteException e) {
-            
         }
         return false;
 		// Original method
@@ -2496,14 +2504,14 @@ public class Activity extends ContextThemeWrapper implements LayoutInflater.Fact
             return ActivityManagerNative.getDefault().moveActivityTaskToBack(
                     mToken, nonRoot);
         } catch (RemoteException e) {
-            
         }
         return false;
     }
 		*/
 	}
-	
-	public String getLocalClassName(){
+
+    
+    public String getLocalClassName(){
 		return mComponent.getClassName();
 		// Original method
 		/*
@@ -2519,10 +2527,10 @@ public class Activity extends ContextThemeWrapper implements LayoutInflater.Fact
     }
 		*/
 	}
-	
-	public ComponentName getComponentName(){
+
+    
+    public ComponentName getComponentName(){
 		return mComponent;
-		
 		// Original method
 		/*
 		{
@@ -2530,8 +2538,9 @@ public class Activity extends ContextThemeWrapper implements LayoutInflater.Fact
     }
 		*/
 	}
-	
-	public SharedPreferences getPreferences(int mode){
+
+    
+    public SharedPreferences getPreferences(int mode){
 		return getSharedPreferences(getLocalClassName(), mode);
 		// Original method
 		/*
@@ -2540,8 +2549,9 @@ public class Activity extends ContextThemeWrapper implements LayoutInflater.Fact
     }
 		*/
 	}
-	
-	@DSModeled(DSC.SAFE)
+
+    
+    @DSModeled(DSC.SAFE)
 	private void ensureSearchManager(){
 		mSearchManager = new SearchManager(this, null);
 		// Original method
@@ -2550,14 +2560,14 @@ public class Activity extends ContextThemeWrapper implements LayoutInflater.Fact
         if (mSearchManager != null) {
             return;
         }
-        
         mSearchManager = new SearchManager(this, null);
     }
 		*/
 		//Return nothing
 	}
-	
-	@DSModeled(DSC.SAFE)
+
+    
+    @DSModeled(DSC.SAFE)
 	@Override public Object getSystemService(String name){
 		getBaseContext();
 		ensureSearchManager();
@@ -2570,7 +2580,6 @@ public class Activity extends ContextThemeWrapper implements LayoutInflater.Fact
             throw new IllegalStateException(
                     "System services not available to Activities before onCreate()");
         }
-
         if (WINDOW_SERVICE.equals(name)) {
             return mWindowManager;
         } else if (SEARCH_SERVICE.equals(name)) {
@@ -2581,18 +2590,17 @@ public class Activity extends ContextThemeWrapper implements LayoutInflater.Fact
     }
 		*/
 	}
-	
-	public void setTitle(CharSequence title){
+
+    
+    public void setTitle(CharSequence title){
 		mTitle = title;  //Preserved
 		onTitleChanged(title, mTitleColor);
 		mParent.onChildTitleChanged(this, title);
-		
 		// Original method
 		/*
 		{
         mTitle = title;
         onTitleChanged(title, mTitleColor);
-
         if (mParent != null) {
             mParent.onChildTitleChanged(this, title);
         }
@@ -2600,8 +2608,9 @@ public class Activity extends ContextThemeWrapper implements LayoutInflater.Fact
 		*/
 		//Return nothing
 	}
-	
-	public void setTitle(int titleId){
+
+    
+    public void setTitle(int titleId){
 		setTitle(getText(titleId));
 		// Original method
 		/*
@@ -2611,11 +2620,11 @@ public class Activity extends ContextThemeWrapper implements LayoutInflater.Fact
 		*/
 		//Return nothing
 	}
-	
-	public void setTitleColor(int textColor){
+
+    
+    public void setTitleColor(int textColor){
 		dsTaint.addTaint(textColor);
 		onTitleChanged(mTitle, textColor);
-		
 		// Original method
 		/*
 		{
@@ -2625,10 +2634,10 @@ public class Activity extends ContextThemeWrapper implements LayoutInflater.Fact
 		*/
 		//Return nothing
 	}
-	
-	public final CharSequence getTitle(){
+
+    
+    public final CharSequence getTitle(){
 		return mTitle;
-		
 		// Original method
 		/*
 		{
@@ -2636,10 +2645,10 @@ public class Activity extends ContextThemeWrapper implements LayoutInflater.Fact
     }
 		*/
 	}
-	
-	public final int getTitleColor(){
+
+    
+    public final int getTitleColor(){
 		return dsTaint.getTaintInt();
-		
 		// Original method
 		/*
 		{
@@ -2647,8 +2656,9 @@ public class Activity extends ContextThemeWrapper implements LayoutInflater.Fact
     }
 		*/
 	}
-	
-	protected void onTitleChanged(CharSequence title, int color){
+
+    
+    protected void onTitleChanged(CharSequence title, int color){
 		final Window win = getWindow();
 		win.setTitle(title);
 		win.setTitleColor(color);
@@ -2668,9 +2678,9 @@ public class Activity extends ContextThemeWrapper implements LayoutInflater.Fact
 		*/
 		//Return nothing
 	}
-	
-	protected void onChildTitleChanged(Activity childActivity, CharSequence title){
-		
+
+    
+    protected void onChildTitleChanged(Activity childActivity, CharSequence title){
 		// Original method
 		/*
 		{
@@ -2678,8 +2688,9 @@ public class Activity extends ContextThemeWrapper implements LayoutInflater.Fact
 		*/
 		//Return nothing
 	}
-	
-	public final void setProgressBarVisibility(boolean visible){
+
+    
+    public final void setProgressBarVisibility(boolean visible){
 		getWindow().setFeatureInt(Window.FEATURE_PROGRESS, Window.PROGRESS_VISIBILITY_ON);
 		// Original method
 		/*
@@ -2690,8 +2701,9 @@ public class Activity extends ContextThemeWrapper implements LayoutInflater.Fact
 		*/
 		//Return nothing
 	}
-	
-	public final void setProgressBarIndeterminateVisibility(boolean visible){
+
+    
+    public final void setProgressBarIndeterminateVisibility(boolean visible){
 		getWindow().setFeatureInt(Window.FEATURE_INDETERMINATE_PROGRESS, Window.PROGRESS_VISIBILITY_ON);
 		// Original method
 		/*
@@ -2702,8 +2714,9 @@ public class Activity extends ContextThemeWrapper implements LayoutInflater.Fact
 		*/
 		//Return nothing
 	}
-	
-	public final void setProgressBarIndeterminate(boolean indeterminate){
+
+    
+    public final void setProgressBarIndeterminate(boolean indeterminate){
 		getWindow().setFeatureInt(Window.FEATURE_PROGRESS, Window.PROGRESS_INDETERMINATE_ON);
 		// Original method
 		/*
@@ -2714,8 +2727,9 @@ public class Activity extends ContextThemeWrapper implements LayoutInflater.Fact
 		*/
 		//Return nothing
 	}
-	
-	public final void setProgress(int progress){
+
+    
+    public final void setProgress(int progress){
 		getWindow().setFeatureInt(Window.FEATURE_PROGRESS, Window.PROGRESS_START);
 		// Original method
 		/*
@@ -2725,8 +2739,9 @@ public class Activity extends ContextThemeWrapper implements LayoutInflater.Fact
 		*/
 		//Return nothing
 	}
-	
-	public final void setSecondaryProgress(int secondaryProgress){
+
+    
+    public final void setSecondaryProgress(int secondaryProgress){
 		getWindow().setFeatureInt(Window.FEATURE_PROGRESS, Window.PROGRESS_SECONDARY_START);
 		// Original method
 		/*
@@ -2737,8 +2752,9 @@ public class Activity extends ContextThemeWrapper implements LayoutInflater.Fact
 		*/
 		//Return nothing
 	}
-	
-	public final void setVolumeControlStream(int streamType){
+
+    
+    public final void setVolumeControlStream(int streamType){
 		getWindow().setVolumeControlStream(0);
 		// Original method
 		/*
@@ -2748,8 +2764,9 @@ public class Activity extends ContextThemeWrapper implements LayoutInflater.Fact
 		*/
 		//Return nothing
 	}
-	
-	public final int getVolumeControlStream(){
+
+    
+    public final int getVolumeControlStream(){
 		return getWindow().getVolumeControlStream();
 		// Original method
 		/*
@@ -2758,8 +2775,9 @@ public class Activity extends ContextThemeWrapper implements LayoutInflater.Fact
     }
 		*/
 	}
-	
-	@DSModeled(DSC.SAFE)
+
+    
+    @DSModeled(DSC.SAFE)
 	public final void runOnUiThread(Runnable action){
 		mHandler.post(action);
 		action.run();
@@ -2775,9 +2793,9 @@ public class Activity extends ContextThemeWrapper implements LayoutInflater.Fact
 		*/
 		//Return nothing
 	}
-	
-	public View onCreateView(String name, Context context, AttributeSet attrs){
-		
+
+    
+    public View onCreateView(String name, Context context, AttributeSet attrs){
 		// Original method
 		/*
 		{
@@ -2786,21 +2804,23 @@ public class Activity extends ContextThemeWrapper implements LayoutInflater.Fact
 		*/
 		return null;
 	}
-	
-	public View onCreateView(View parent, String name, Context context, AttributeSet attrs){
+
+    
+    public View onCreateView(View parent, String name, Context context, AttributeSet attrs){
 		// Original method
 		/* Original Method Too Long, Refer to Original Implementation */
 		return null;
 	}
-	
-	public void dump(String prefix, FileDescriptor fd, PrintWriter writer, String[] args){
-		
+
+    
+    public void dump(String prefix, FileDescriptor fd, PrintWriter writer, String[] args){
 		// Original method
 		/* Original Method Too Long, Refer to Original Implementation */
 		//Return nothing
 	}
-	
-	public boolean isImmersive(){
+
+    
+    public boolean isImmersive(){
 		try {
             return ActivityManagerNative.getDefault().isImmersive(mToken); //Call down into 
         } catch (RemoteException e) {
@@ -2817,12 +2837,12 @@ public class Activity extends ContextThemeWrapper implements LayoutInflater.Fact
     }
 		*/
 	}
-	
-	public void setImmersive(boolean i){
+
+    
+    public void setImmersive(boolean i){
 		try {
             ActivityManagerNative.getDefault().setImmersive(mToken, i);
         } catch (RemoteException e) {
-            
         }
 		// Original method
 		/*
@@ -2830,14 +2850,14 @@ public class Activity extends ContextThemeWrapper implements LayoutInflater.Fact
         try {
             ActivityManagerNative.getDefault().setImmersive(mToken, i);
         } catch (RemoteException e) {
-            
         }
     }
 		*/
 		//Return nothing
 	}
-	
-	public ActionMode startActionMode(ActionMode.Callback callback){
+
+    
+    public ActionMode startActionMode(ActionMode.Callback callback){
 		return mWindow.getDecorView().startActionMode(callback);
 		// Original method
 		/*
@@ -2846,8 +2866,9 @@ public class Activity extends ContextThemeWrapper implements LayoutInflater.Fact
     }
 		*/
 	}
-	
-	public ActionMode onWindowStartingActionMode(ActionMode.Callback callback){
+
+    
+    public ActionMode onWindowStartingActionMode(ActionMode.Callback callback){
 		initActionBar();
 		return mActionBar.startActionMode(callback);
 		// Original method
@@ -2861,9 +2882,9 @@ public class Activity extends ContextThemeWrapper implements LayoutInflater.Fact
     }
 		*/
 	}
-	
-	public void onActionModeStarted(ActionMode mode){
-		
+
+    
+    public void onActionModeStarted(ActionMode mode){
 		// Original method
 		/*
 		{
@@ -2871,9 +2892,9 @@ public class Activity extends ContextThemeWrapper implements LayoutInflater.Fact
 		*/
 		//Return nothing
 	}
-	
-	public void onActionModeFinished(ActionMode mode){
-		
+
+    
+    public void onActionModeFinished(ActionMode mode){
 		// Original method
 		/*
 		{
@@ -2881,10 +2902,10 @@ public class Activity extends ContextThemeWrapper implements LayoutInflater.Fact
 		*/
 		//Return nothing
 	}
-	
-	final void setParent(Activity parent){
+
+    
+    final void setParent(Activity parent){
 		mParent = parent;  //Preserved
-		
 		// Original method
 		/*
 		{
@@ -2893,8 +2914,9 @@ public class Activity extends ContextThemeWrapper implements LayoutInflater.Fact
 		*/
 		//Return nothing
 	}
-	
-	@DSModeled(DSC.SAFE)
+
+    
+    @DSModeled(DSC.SAFE)
 	final void attach(Context context, ActivityThread aThread, Instrumentation instr, IBinder token,
             Application application, Intent intent, ActivityInfo info, CharSequence title, 
             Activity parent, String id, NonConfigurationInstances lastNonConfigurationInstances,
@@ -2910,8 +2932,9 @@ public class Activity extends ContextThemeWrapper implements LayoutInflater.Fact
 		*/
 		//Return nothing
 	}
-	
-	@DSModeled(DSC.SAFE)
+
+    
+    @DSModeled(DSC.SAFE)
 	final void attach(Context context, ActivityThread aThread,
             Instrumentation instr, IBinder token, int ident,
             Application application, Intent intent, ActivityInfo info,
@@ -2930,7 +2953,6 @@ public class Activity extends ContextThemeWrapper implements LayoutInflater.Fact
 		dsTaint.addTaint(id);
 		mLastNonConfigurationInstances = lastNonConfigurationInstances;  //Preserved
 		mCurrentConfig = config;  //Preserved
-		
 		attachBaseContext(context);
 		mFragments.attachActivity(this);
 		mWindow = PolicyManager.makeNewWindow(this);
@@ -2941,13 +2963,13 @@ public class Activity extends ContextThemeWrapper implements LayoutInflater.Fact
                 (info.flags & ActivityInfo.FLAG_HARDWARE_ACCELERATED) != 0);
         mWindow.setContainer(parent.getWindow());
         mWindowManager = mWindow.getWindowManager();
-		
 		// Original method
 		/* Original Method Too Long, Refer to Original Implementation */
 		//Return nothing
 	}
-	
-	final IBinder getActivityToken(){
+
+    
+    final IBinder getActivityToken(){
 		return mParent.getActivityToken();
 		// Original method
 		/*
@@ -2956,27 +2978,25 @@ public class Activity extends ContextThemeWrapper implements LayoutInflater.Fact
     }
 		*/
 	}
-	
-	@DSModeled(DSC.BAN) //called by dsruntime to perform the onCreate
-	public final void performCreate(Bundle icicle, Context context){
-		this.attachBaseContext(context);
-		onCreate(icicle);
-		mVisibleFromClient = !mWindow.getWindowStyle().getBoolean(
-                com.android.internal.R.styleable.Window_windowNoDisplay, false);
-		mFragments.dispatchActivityCreated();
-		// Original method
-		/*
-		{
+
+    
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:41:01.803 -0400", hash_original_method = "DAB379B095765C858B51976FA2FCF6E4", hash_generated_method = "632E192CF328D77010B5D3E327B25B07")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
+    final void performCreate(Bundle icicle) {
+        dsTaint.addTaint(icicle.dsTaint);
         onCreate(icicle);
         mVisibleFromClient = !mWindow.getWindowStyle().getBoolean(
                 com.android.internal.R.styleable.Window_windowNoDisplay, false);
         mFragments.dispatchActivityCreated();
+        // ---------- Original Method ----------
+        //onCreate(icicle);
+        //mVisibleFromClient = !mWindow.getWindowStyle().getBoolean(
+                //com.android.internal.R.styleable.Window_windowNoDisplay, false);
+        //mFragments.dispatchActivityCreated();
     }
-		*/
-		//Return nothing
-	}
-	
-	final void performStart(){
+
+    
+    final void performStart(){
 		mFragments.noteStateNotSaved();
 		mFragments.execPendingActions();
 		mInstrumentation.callActivityOnStart(this);
@@ -3008,15 +3028,16 @@ public class Activity extends ContextThemeWrapper implements LayoutInflater.Fact
 		*/
 		//Return nothing
 	}
-	
-	final void performRestart(){
-		
+
+    
+    final void performRestart(){
 		// Original method
 		/* Original Method Too Long, Refer to Original Implementation */
 		//Return nothing
 	}
-	
-	final void performResume(){
+
+    
+    final void performResume(){
 		performRestart();
 		mFragments.execPendingActions();
 		mInstrumentation.callActivityOnResume(this);
@@ -3027,26 +3048,18 @@ public class Activity extends ContextThemeWrapper implements LayoutInflater.Fact
 		/*
 		{
         performRestart();
-        
         mFragments.execPendingActions();
-        
         mLastNonConfigurationInstances = null;
-        
         mCalled = false;
-        
         mInstrumentation.callActivityOnResume(this);
         if (!mCalled) {
             throw new SuperNotCalledException(
                 "Activity " + mComponent.toShortString() +
                 " did not call through to super.onResume()");
         }
-
-        
         mCalled = false;
-        
         mFragments.dispatchResume();
         mFragments.execPendingActions();
-        
         onPostResume();
         if (!mCalled) {
             throw new SuperNotCalledException(
@@ -3057,8 +3070,9 @@ public class Activity extends ContextThemeWrapper implements LayoutInflater.Fact
 		*/
 		//Return nothing
 	}
-	
-	final void performPause(){
+
+    
+    final void performPause(){
 		mFragments.dispatchPause();
 		onPause();
 		getApplicationInfo();
@@ -3080,8 +3094,9 @@ public class Activity extends ContextThemeWrapper implements LayoutInflater.Fact
 		*/
 		//Return nothing
 	}
-	
-	final void performUserLeaving(){
+
+    
+    final void performUserLeaving(){
 		onUserInteraction();
         onUserLeaveHint();
 		// Original method
@@ -3093,15 +3108,16 @@ public class Activity extends ContextThemeWrapper implements LayoutInflater.Fact
 		*/
 		//Return nothing
 	}
-	
-	final void performStop(){
-		
+
+    
+    final void performStop(){
 		// Original method
 		/* Original Method Too Long, Refer to Original Implementation */
 		//Return nothing
 	}
-	
-	final void performDestroy(){
+
+    
+    final void performDestroy(){
 		mWindow.destroy();
         mFragments.dispatchDestroy();
         onDestroy();
@@ -3119,10 +3135,10 @@ public class Activity extends ContextThemeWrapper implements LayoutInflater.Fact
 		*/
 		//Return nothing
 	}
-	
-	public final boolean isResumed(){
+
+    
+    public final boolean isResumed(){
 		return dsTaint.getTaintBoolean();
-		
 		// Original method
 		/*
 		{
@@ -3130,8 +3146,9 @@ public class Activity extends ContextThemeWrapper implements LayoutInflater.Fact
     }
 		*/
 	}
-	
-	void dispatchActivityResult(String who, int requestCode, 
+
+    
+    void dispatchActivityResult(String who, int requestCode, 
         int resultCode, Intent data){
 		 Log.v(
 		            TAG, "Dispatching result: who=" + who + ", reqCode=" + requestCode
@@ -3159,24 +3176,115 @@ public class Activity extends ContextThemeWrapper implements LayoutInflater.Fact
 		*/
 		//Return nothing
 	}
-	
-	// ------------- Droidsafe Hooks ------------- 
-	@DSModeled(DSC.BAN)
+
+    
+    private static class ManagedDialog {
+        Dialog mDialog;
+        Bundle mArgs;
+        
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:41:01.808 -0400", hash_original_method = "2C009272DC0D8762FB5CB071DA8C5158", hash_generated_method = "2C009272DC0D8762FB5CB071DA8C5158")
+                public ManagedDialog ()
+        {
+        }
+
+
+    }
+
+
+    
+    static final class NonConfigurationInstances {
+        Object activity;
+        HashMap<String, Object> children;
+        ArrayList<Fragment> fragments;
+        SparseArray<LoaderManagerImpl> loaders;
+        
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:41:01.808 -0400", hash_original_method = "B10799BC0D6A1F438CC296585523EB3B", hash_generated_method = "B10799BC0D6A1F438CC296585523EB3B")
+                public NonConfigurationInstances ()
+        {
+        }
+
+
+    }
+
+
+    
+    private static final class ManagedCursor {
+        private Cursor mCursor;
+        private boolean mReleased;
+        private boolean mUpdated;
+        
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:41:01.809 -0400", hash_original_method = "1B2A6EC67EE1273DC41D2716939B2D2A", hash_generated_method = "8451A6F1CFEF0B2F0462CA6374D3D5F7")
+        @DSModeled(DSC.SAFE)
+         ManagedCursor(Cursor cursor) {
+            dsTaint.addTaint(cursor.dsTaint);
+            mReleased = false;
+            mUpdated = false;
+            // ---------- Original Method ----------
+            //mCursor = cursor;
+            //mReleased = false;
+            //mUpdated = false;
+        }
+
+        
+    }
+
+
+    
+    // orphaned legacy method
+    @DSModeled(DSC.BAN)
+	public void droidsafeOnDestroy() {
+		onDestroy();
+	}
+    
+    // orphaned legacy method
+    @DSModeled(DSC.BAN)
     public void droidsafeOnResume() {
 		//This method is called by droidsafe itself, and should NEVER be called by an app
     	onResume();
     }
-	
-	
-	@DSModeled(DSC.BAN)
+    
+    // orphaned legacy method
+    @DSModeled(DSC.BAN) //called by dsruntime to perform the onCreate
+	public final void performCreate(Bundle icicle, Context context){
+		this.attachBaseContext(context);
+		onCreate(icicle);
+		mVisibleFromClient = !mWindow.getWindowStyle().getBoolean(
+                com.android.internal.R.styleable.Window_windowNoDisplay, false);
+		mFragments.dispatchActivityCreated();
+		// Original method
+		/*
+		{
+        onCreate(icicle);
+        mVisibleFromClient = !mWindow.getWindowStyle().getBoolean(
+                com.android.internal.R.styleable.Window_windowNoDisplay, false);
+        mFragments.dispatchActivityCreated();
+    }
+		*/
+		//Return nothing
+	}
+    
+    // orphaned legacy method
+    @DSModeled(DSC.BAN)
     public void droidsafeOnStop() {
 		//This method is called by droidsafe itself, and should NEVER be called by an app
     	onStop();
     }
-	
-	@DSModeled(DSC.BAN)
-	public void droidsafeOnDestroy() {
-		onDestroy();
-	}
+    
+    private static final String TAG = "Activity";
+    public static final int RESULT_CANCELED    = 0;
+    public static final int RESULT_OK           = -1;
+    public static final int RESULT_FIRST_USER   = 1;
+    private static final String WINDOW_HIERARCHY_TAG = "android:viewHierarchyState";
+    private static final String FRAGMENTS_TAG = "android:fragments";
+    private static final String SAVED_DIALOG_IDS_KEY = "android:savedDialogIds";
+    private static final String SAVED_DIALOGS_TAG = "android:savedDialogs";
+    private static final String SAVED_DIALOG_KEY_PREFIX = "android:dialog_";
+    private static final String SAVED_DIALOG_ARGS_KEY_PREFIX = "android:dialog_args_";
+    protected static final int[] FOCUSED_STATE_SET = {com.android.internal.R.attr.state_focused};
+    static public final int DEFAULT_KEYS_DISABLE = 0;
+    static public final int DEFAULT_KEYS_DIALER = 1;
+    static public final int DEFAULT_KEYS_SHORTCUT = 2;
+    static public final int DEFAULT_KEYS_SEARCH_LOCAL = 3;
+    static public final int DEFAULT_KEYS_SEARCH_GLOBAL = 4;
 }
 

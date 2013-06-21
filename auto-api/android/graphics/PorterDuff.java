@@ -3,13 +3,19 @@ package android.graphics;
 // Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
+import droidsafe.runtime.*;
 
-// import Iterator to deal with enhanced for loop translation
+// needed for enhanced for control translations
 import java.util.Iterator;
-
 
 public class PorterDuff {
     
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:47.546 -0400", hash_original_method = "04B394C0B431FFB3996C1B4223CC7C93", hash_generated_method = "04B394C0B431FFB3996C1B4223CC7C93")
+        public PorterDuff ()
+    {
+    }
+
+
     public enum Mode {
         CLEAR       (0),
         SRC         (1),
@@ -37,5 +43,4 @@ public class PorterDuff {
 
     
 }
-
 

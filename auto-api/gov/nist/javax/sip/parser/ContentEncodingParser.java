@@ -1,0 +1,88 @@
+package gov.nist.javax.sip.parser;
+
+// Droidsafe Imports
+import droidsafe.helpers.*;
+import droidsafe.annotations.*;
+import droidsafe.runtime.*;
+
+// needed for enhanced for control translations
+import java.util.Iterator;
+import gov.nist.javax.sip.header.*;
+import gov.nist.core.*;
+import java.text.ParseException;
+
+public class ContentEncodingParser extends HeaderParser {
+    
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:22.261 -0400", hash_original_method = "025E1AD213DC2532673CB1D1FC75B1CC", hash_generated_method = "11DD7932D8BA31AD41B6872DCB4EFA64")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
+    public ContentEncodingParser(String contentEncoding) {
+        super(contentEncoding);
+        dsTaint.addTaint(contentEncoding);
+        // ---------- Original Method ----------
+    }
+
+    
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:22.262 -0400", hash_original_method = "15007428AB3C93C7C47122E74B782E26", hash_generated_method = "4B12522E1CAB179A56EC9A43303D8555")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
+    protected ContentEncodingParser(Lexer lexer) {
+        super(lexer);
+        dsTaint.addTaint(lexer.dsTaint);
+        // ---------- Original Method ----------
+    }
+
+    
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:22.262 -0400", hash_original_method = "8ACC6861A4ACA970AEBA8CCFE6984687", hash_generated_method = "0C89CF5A3C824490331B44E8CE393851")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
+    public SIPHeader parse() throws ParseException {
+        dbg_enter("ContentEncodingParser.parse");
+        ContentEncodingList list;
+        list = new ContentEncodingList();
+        try 
+        {
+            headerName(TokenTypes.CONTENT_ENCODING);
+            {
+                boolean varA38820C66B6BCE71087D920E2767FF09_700631254 = (lexer.lookAhead(0) != '\n');
+                {
+                    ContentEncoding cl;
+                    cl = new ContentEncoding();
+                    cl.setHeaderName(SIPHeaderNames.CONTENT_ENCODING);
+                    this.lexer.SPorHT();
+                    this.lexer.match(TokenTypes.ID);
+                    Token token;
+                    token = lexer.getNextToken();
+                    cl.setEncoding(token.getTokenValue());
+                    this.lexer.SPorHT();
+                    list.add(cl);
+                    {
+                        boolean var7DC6EF7D2962860F171D1CEF6887AFF5_1897741479 = (lexer.lookAhead(0) == ',');
+                        {
+                            cl = new ContentEncoding();
+                            this.lexer.match(',');
+                            this.lexer.SPorHT();
+                            this.lexer.match(TokenTypes.ID);
+                            this.lexer.SPorHT();
+                            token = lexer.getNextToken();
+                            cl.setEncoding(token.getTokenValue());
+                            this.lexer.SPorHT();
+                            list.add(cl);
+                        } //End block
+                    } //End collapsed parenthetic
+                } //End block
+            } //End collapsed parenthetic
+        } //End block
+        catch (ParseException ex)
+        {
+            if (DroidSafeAndroidRuntime.control) throw createParseException(ex.getMessage());
+        } //End block
+        finally 
+        {
+            dbg_leave("ContentEncodingParser.parse");
+        } //End block
+        return (SIPHeader)dsTaint.getTaint();
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
+    }
+
+    
+}
+

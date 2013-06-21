@@ -22,7 +22,13 @@ public abstract class AbstractInputMethodService extends Service implements KeyE
     KeyEvent.DispatcherState mDispatcherState
             = new KeyEvent.DispatcherState();
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-12 16:56:34.018 -0400", hash_original_method = "506AD561617E231B7466C0A7229483CE", hash_generated_method = "FF71C853F6FE0A125B8AF48B97FBFBEC")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:49.194 -0400", hash_original_method = "3C5E619BFA60E4549A53A0C5EF34E44D", hash_generated_method = "3C5E619BFA60E4549A53A0C5EF34E44D")
+        public AbstractInputMethodService ()
+    {
+    }
+
+
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:49.194 -0400", hash_original_method = "506AD561617E231B7466C0A7229483CE", hash_generated_method = "34F08E104AE59CBEF9B42FFA1AFC518E")
     @DSModeled(DSC.SAFE)
     public KeyEvent.DispatcherState getKeyDispatcherState() {
         return (KeyEvent.DispatcherState)dsTaint.getTaint();
@@ -37,7 +43,7 @@ public abstract class AbstractInputMethodService extends Service implements KeyE
     public abstract AbstractInputMethodSessionImpl onCreateInputMethodSessionInterface();
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-12 16:56:34.028 -0400", hash_original_method = "8E1D6FEDF1AFEDBCDCF9E63EFF23CA00", hash_generated_method = "F9CCE3223ABC8209871F2DA81F987463")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:49.195 -0400", hash_original_method = "8E1D6FEDF1AFEDBCDCF9E63EFF23CA00", hash_generated_method = "6CF40A5AD6EAB3A3D61C7A8F6965C7F4")
     @DSModeled(DSC.SAFE)
     @Override
     protected void dump(FileDescriptor fd, PrintWriter fout, String[] args) {
@@ -48,7 +54,7 @@ public abstract class AbstractInputMethodService extends Service implements KeyE
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-12 16:56:34.038 -0400", hash_original_method = "A37FBA98B4D1A366D99013E441DCBD11", hash_generated_method = "5F00D1AC5E874F0104DE87E5283D772F")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:49.195 -0400", hash_original_method = "A37FBA98B4D1A366D99013E441DCBD11", hash_generated_method = "D1F70C9B5C06ADD72BE26EF9689EC64D")
     @DSModeled(DSC.SPEC)
     @Override
     final public IBinder onBind(Intent intent) {
@@ -57,6 +63,7 @@ public abstract class AbstractInputMethodService extends Service implements KeyE
         {
             mInputMethod = onCreateInputMethodInterface();
         } //End block
+        IBinder var4BB6BE0A070CD15BEEC6523C61F84E3B_229183023 = (new IInputMethodWrapper(this, mInputMethod));
         return (IBinder)dsTaint.getTaint();
         // ---------- Original Method ----------
         //if (mInputMethod == null) {
@@ -66,7 +73,7 @@ public abstract class AbstractInputMethodService extends Service implements KeyE
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-12 16:56:34.052 -0400", hash_original_method = "4A983FDB3FF481E2165B7D8D641CDD48", hash_generated_method = "B408743212A32554110D224D6DDF0567")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:49.195 -0400", hash_original_method = "4A983FDB3FF481E2165B7D8D641CDD48", hash_generated_method = "833D77A11226C846CBB638957F249990")
     @DSModeled(DSC.SAFE)
     public boolean onTrackballEvent(MotionEvent event) {
         //DSFIXME:  CODE0009: Possible callback target function detected
@@ -79,7 +86,13 @@ public abstract class AbstractInputMethodService extends Service implements KeyE
     
     public abstract class AbstractInputMethodImpl implements InputMethod {
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-12 16:56:34.062 -0400", hash_original_method = "084F24BCF671A12F38D7783BEA9F6E08", hash_generated_method = "A316A38073C6339C147ACCD544F67348")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:49.196 -0400", hash_original_method = "D6C4AD7630EA63217AB7FFD645D89AF9", hash_generated_method = "D6C4AD7630EA63217AB7FFD645D89AF9")
+                public AbstractInputMethodImpl ()
+        {
+        }
+
+
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:49.196 -0400", hash_original_method = "084F24BCF671A12F38D7783BEA9F6E08", hash_generated_method = "7DD629B2406FD2D1F252C59CAB57DCEC")
         //DSFIXME:  CODE0002: Requires DSC value to be set
         public void createSession(SessionCallback callback) {
             dsTaint.addTaint(callback.dsTaint);
@@ -89,8 +102,8 @@ public abstract class AbstractInputMethodService extends Service implements KeyE
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-12 16:56:34.076 -0400", hash_original_method = "66C173BC408ADA3F5326213B71DD3797", hash_generated_method = "2588C88037A3148417B449B00D15069F")
-        @DSModeled(DSC.SAFE)
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:49.196 -0400", hash_original_method = "66C173BC408ADA3F5326213B71DD3797", hash_generated_method = "2FBB8905CA70C0BDA4B98B6FAB9DEFF0")
+        //DSFIXME:  CODE0002: Requires DSC value to be set
         public void setSessionEnabled(InputMethodSession session, boolean enabled) {
             dsTaint.addTaint(enabled);
             dsTaint.addTaint(session.dsTaint);
@@ -100,8 +113,8 @@ public abstract class AbstractInputMethodService extends Service implements KeyE
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-12 16:56:34.087 -0400", hash_original_method = "79971C84DD1A2F851BEBA1D6EABE42F6", hash_generated_method = "68477BD54BDFB0CAE774710916E597EA")
-        @DSModeled(DSC.SAFE)
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:49.196 -0400", hash_original_method = "79971C84DD1A2F851BEBA1D6EABE42F6", hash_generated_method = "91A4E5D9554C520C0612BEB42B48D40F")
+        //DSFIXME:  CODE0002: Requires DSC value to be set
         public void revokeSession(InputMethodSession session) {
             dsTaint.addTaint(session.dsTaint);
             ((AbstractInputMethodSessionImpl)session).revokeSelf();
@@ -118,7 +131,13 @@ public abstract class AbstractInputMethodService extends Service implements KeyE
         boolean mEnabled = true;
         boolean mRevoked;
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-12 16:56:34.096 -0400", hash_original_method = "B599CE9BD5CE6C0947F95A74F4693444", hash_generated_method = "D3221B9EBF9B45829BBBD9E6EE8A9205")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:49.196 -0400", hash_original_method = "14FE0FF293F499EEE7EE8AB557DFCDA2", hash_generated_method = "14FE0FF293F499EEE7EE8AB557DFCDA2")
+                public AbstractInputMethodSessionImpl ()
+        {
+        }
+
+
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:49.197 -0400", hash_original_method = "B599CE9BD5CE6C0947F95A74F4693444", hash_generated_method = "1942C8160CC405585840489895F59E2E")
         @DSModeled(DSC.SAFE)
         public boolean isEnabled() {
             return dsTaint.getTaintBoolean();
@@ -127,7 +146,7 @@ public abstract class AbstractInputMethodService extends Service implements KeyE
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-12 16:56:34.101 -0400", hash_original_method = "C0B4C5A0A5D7F00D5E6612F5DDAFF7B5", hash_generated_method = "B254DD67E77D50A8D186C37BFCDD6893")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:49.197 -0400", hash_original_method = "C0B4C5A0A5D7F00D5E6612F5DDAFF7B5", hash_generated_method = "E8BAD024660C8E4579ECC72397316F55")
         @DSModeled(DSC.SAFE)
         public boolean isRevoked() {
             return dsTaint.getTaintBoolean();
@@ -136,7 +155,7 @@ public abstract class AbstractInputMethodService extends Service implements KeyE
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-12 16:56:34.114 -0400", hash_original_method = "BA8B8E3B4141C528807EA03970F3ED77", hash_generated_method = "B2D4E80140934850743286E003FA8DF9")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:49.197 -0400", hash_original_method = "BA8B8E3B4141C528807EA03970F3ED77", hash_generated_method = "6B93B969A6AFCB541DBAFEF1060C2EEF")
         @DSModeled(DSC.SAFE)
         public void setEnabled(boolean enabled) {
             dsTaint.addTaint(enabled);
@@ -147,7 +166,7 @@ public abstract class AbstractInputMethodService extends Service implements KeyE
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-12 16:56:34.121 -0400", hash_original_method = "6150597809F85496BEE526162ACEB60F", hash_generated_method = "0D26C303491329A4014A68E0F40E1D13")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:49.197 -0400", hash_original_method = "6150597809F85496BEE526162ACEB60F", hash_generated_method = "E60B36F04B14FB96FAC9E90F23CA5FB2")
         @DSModeled(DSC.SAFE)
         public void revokeSelf() {
             mRevoked = true;
@@ -158,12 +177,12 @@ public abstract class AbstractInputMethodService extends Service implements KeyE
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-12 16:56:34.132 -0400", hash_original_method = "352A951CCD835CDBB0D749381932ADC2", hash_generated_method = "2BE4461651F36E4BCD508283D9F966AB")
-        @DSModeled(DSC.SAFE)
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:49.198 -0400", hash_original_method = "352A951CCD835CDBB0D749381932ADC2", hash_generated_method = "0067E241230AB90CD31CF7C81B4B64F2")
+        //DSFIXME:  CODE0002: Requires DSC value to be set
         public void dispatchKeyEvent(int seq, KeyEvent event, EventCallback callback) {
             dsTaint.addTaint(event.dsTaint);
-            dsTaint.addTaint(seq);
             dsTaint.addTaint(callback.dsTaint);
+            dsTaint.addTaint(seq);
             boolean handled;
             handled = event.dispatch(AbstractInputMethodService.this,
                     mDispatcherState, this);
@@ -179,12 +198,12 @@ public abstract class AbstractInputMethodService extends Service implements KeyE
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-12 16:56:34.143 -0400", hash_original_method = "D1FB978C0FC3E262298A1F84CE672B17", hash_generated_method = "1DD32B33D8E3FFDF3CBACF5AE8EFF672")
-        @DSModeled(DSC.SAFE)
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:49.198 -0400", hash_original_method = "D1FB978C0FC3E262298A1F84CE672B17", hash_generated_method = "AFDF3B7635BC91B3A0D7D1016A3E00A7")
+        //DSFIXME:  CODE0002: Requires DSC value to be set
         public void dispatchTrackballEvent(int seq, MotionEvent event, EventCallback callback) {
             dsTaint.addTaint(event.dsTaint);
-            dsTaint.addTaint(seq);
             dsTaint.addTaint(callback.dsTaint);
+            dsTaint.addTaint(seq);
             boolean handled;
             handled = onTrackballEvent(event);
             {
@@ -203,5 +222,4 @@ public abstract class AbstractInputMethodService extends Service implements KeyE
 
     
 }
-
 

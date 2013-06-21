@@ -3,16 +3,15 @@ package java.nio.charset;
 // Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
+import droidsafe.runtime.*;
 
-// import Iterator to deal with enhanced for loop translation
+// needed for enhanced for control translations
 import java.util.Iterator;
 
-
 public class MalformedInputException extends CharacterCodingException {
-    private static final long serialVersionUID = -3438823399834806194L;
     private int inputLength;
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:12.562 -0400", hash_original_method = "18BAC8E5082B44B03924789E1D8CD6BE", hash_generated_method = "40FEACF7364460289888074248B4D424")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:29.260 -0400", hash_original_method = "18BAC8E5082B44B03924789E1D8CD6BE", hash_generated_method = "1E940EBE4EF7EBD1E0792CFE85DF6A3A")
     @DSModeled(DSC.SAFE)
     public MalformedInputException(int length) {
         dsTaint.addTaint(length);
@@ -21,7 +20,7 @@ public class MalformedInputException extends CharacterCodingException {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:12.562 -0400", hash_original_method = "99174ED6911F5F8CBB68A90343CD57CF", hash_generated_method = "EFC5B3F001E7567529B83049A5E6C919")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:29.260 -0400", hash_original_method = "99174ED6911F5F8CBB68A90343CD57CF", hash_generated_method = "C22C3903B408976A897A8BC896A23157")
     @DSModeled(DSC.SAFE)
     public int getInputLength() {
         return dsTaint.getTaintInt();
@@ -30,7 +29,7 @@ public class MalformedInputException extends CharacterCodingException {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:12.562 -0400", hash_original_method = "7D10807CFABB560A12F38675F46A3FF5", hash_generated_method = "28E14EB10804D5D7CFFBDC30A7FCA4EE")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:29.260 -0400", hash_original_method = "7D10807CFABB560A12F38675F46A3FF5", hash_generated_method = "02B4FEA78B64EA9671FFD858ABC07DB1")
     @DSModeled(DSC.SAFE)
     @Override
     public String getMessage() {
@@ -40,6 +39,6 @@ public class MalformedInputException extends CharacterCodingException {
     }
 
     
+    private static final long serialVersionUID = -3438823399834806194L;
 }
-
 

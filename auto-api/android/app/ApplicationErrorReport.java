@@ -3,10 +3,10 @@ package android.app;
 // Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
+import droidsafe.runtime.*;
 
-// import Iterator to deal with enhanced for loop translation
+// needed for enhanced for control translations
 import java.util.Iterator;
-
 import android.content.ComponentName;
 import android.content.Context;
 import android.content.Intent;
@@ -23,13 +23,6 @@ import java.io.PrintWriter;
 import java.io.StringWriter;
 
 public class ApplicationErrorReport implements Parcelable {
-    static final String SYSTEM_APPS_ERROR_RECEIVER_PROPERTY = "ro.error.receiver.system.apps";
-    static final String DEFAULT_ERROR_RECEIVER_PROPERTY = "ro.error.receiver.default";
-    public static final int TYPE_NONE = 0;
-    public static final int TYPE_CRASH = 1;
-    public static final int TYPE_ANR = 2;
-    public static final int TYPE_BATTERY = 3;
-    public static final int TYPE_RUNNING_SERVICE = 5;
     public int type;
     public String packageName;
     public String installerPackageName;
@@ -40,38 +33,16 @@ public class ApplicationErrorReport implements Parcelable {
     public AnrInfo anrInfo;
     public BatteryInfo batteryInfo;
     public RunningServiceInfo runningServiceInfo;
-    public static final Parcelable.Creator<ApplicationErrorReport> CREATOR = new Parcelable.Creator<ApplicationErrorReport>() {        
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:14:58.753 -0400", hash_original_method = "D02E7C98CADEACD71C390EF313CCEAC7", hash_generated_method = "9EADE481C23E1933C958B4E0AC47B224")
-        @DSModeled(DSC.SAFE)
-        public ApplicationErrorReport createFromParcel(Parcel source) {
-            dsTaint.addTaint(source.dsTaint);
-            return (ApplicationErrorReport)dsTaint.getTaint();
-            // ---------- Original Method ----------
-            //return new ApplicationErrorReport(source);
-        }
-
-        
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:14:58.754 -0400", hash_original_method = "910469A5C451BE7A7AD117B169DA9905", hash_generated_method = "E1AAB49DD146999E765D3B8E8C29EA9A")
-        @DSModeled(DSC.SAFE)
-        public ApplicationErrorReport[] newArray(int size) {
-            dsTaint.addTaint(size);
-            return (ApplicationErrorReport[])dsTaint.getTaint();
-            // ---------- Original Method ----------
-            //return new ApplicationErrorReport[size];
-        }
-
-        
-}; //Transformed anonymous class
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:14:58.754 -0400", hash_original_method = "6CC6117712C6457F9E284742535D4C3A", hash_generated_method = "C578B2373547E2D0BC7DD89DD97E6348")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:36.575 -0400", hash_original_method = "6CC6117712C6457F9E284742535D4C3A", hash_generated_method = "A32824C33E3DAEF3E43183F720B0B2CF")
     @DSModeled(DSC.SAFE)
     public ApplicationErrorReport() {
         // ---------- Original Method ----------
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:14:58.754 -0400", hash_original_method = "56C9FAB6FC92FE279C6A2DB2655BED71", hash_generated_method = "56C62A9E73F26E1878FC095B8FF870C8")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:36.575 -0400", hash_original_method = "56C9FAB6FC92FE279C6A2DB2655BED71", hash_generated_method = "112780957AAADE58BDB64727D4CA648B")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
      ApplicationErrorReport(Parcel in) {
         dsTaint.addTaint(in.dsTaint);
         readFromParcel(in);
@@ -80,8 +51,7 @@ public class ApplicationErrorReport implements Parcelable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:14:58.755 -0400", hash_original_method = "113BB55A947D145420F5CC219A4706D7", hash_generated_method = "2CE219B5DA8C1C773C84D5B9C63EB865")
-    public static ComponentName getErrorReportReceiver(Context context,
+        public static ComponentName getErrorReportReceiver(Context context,
             String packageName, int appFlags) {
         int enabled = Settings.Secure.getInt(context.getContentResolver(),
                 Settings.Secure.SEND_ACTION_APP_ERROR, 0);
@@ -106,8 +76,7 @@ public class ApplicationErrorReport implements Parcelable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:14:58.755 -0400", hash_original_method = "E8A44BB5F91823678290CFFD8154BF15", hash_generated_method = "CE5B7AF521BD346C94C471FA8397C804")
-    static ComponentName getErrorReportReceiver(PackageManager pm, String errorPackage,
+        static ComponentName getErrorReportReceiver(PackageManager pm, String errorPackage,
             String receiverPackage) {
         if (receiverPackage == null || receiverPackage.length() == 0) {
             return null;
@@ -125,11 +94,11 @@ public class ApplicationErrorReport implements Parcelable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:14:58.755 -0400", hash_original_method = "A097CEBB0222A4C65AC186DA78BE4FCB", hash_generated_method = "EDC12AE54F7D53E979D91E0F005179B2")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:36.577 -0400", hash_original_method = "A097CEBB0222A4C65AC186DA78BE4FCB", hash_generated_method = "33E590D4FCACC8DC8BE37DE158FA0B87")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     public void writeToParcel(Parcel dest, int flags) {
-        dsTaint.addTaint(dest.dsTaint);
         dsTaint.addTaint(flags);
+        dsTaint.addTaint(dest.dsTaint);
         dest.writeInt(type);
         dest.writeString(packageName);
         dest.writeString(installerPackageName);
@@ -172,7 +141,7 @@ public class ApplicationErrorReport implements Parcelable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:14:58.756 -0400", hash_original_method = "D8BAAB71575DEB17ADCE92E48607D31D", hash_generated_method = "91A2B51933555D94E99681B98D91C99C")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:36.578 -0400", hash_original_method = "D8BAAB71575DEB17ADCE92E48607D31D", hash_generated_method = "EA2432E48E7A0637E082ABFB830B9045")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public void readFromParcel(Parcel in) {
         dsTaint.addTaint(in.dsTaint);
@@ -235,7 +204,7 @@ public class ApplicationErrorReport implements Parcelable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:14:58.756 -0400", hash_original_method = "00F8174F9E89D0C972FA6D3F19742382", hash_generated_method = "7491C6FB42F78871A3F8EA322AF6B2FC")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:36.578 -0400", hash_original_method = "00F8174F9E89D0C972FA6D3F19742382", hash_generated_method = "ED77793910767EAAB4C12F70F75B9095")
     @DSModeled(DSC.SAFE)
     public int describeContents() {
         return dsTaint.getTaintInt();
@@ -244,8 +213,8 @@ public class ApplicationErrorReport implements Parcelable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:14:58.757 -0400", hash_original_method = "EB05E0A242CB818854C5BC92B57FA752", hash_generated_method = "6F1FAE4E41112C9520BCC65C517290AE")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:36.579 -0400", hash_original_method = "EB05E0A242CB818854C5BC92B57FA752", hash_generated_method = "13BAE4AEF6D85E558874BC0C966CC62F")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     public void dump(Printer pw, String prefix) {
         dsTaint.addTaint(prefix);
         dsTaint.addTaint(pw.dsTaint);
@@ -300,14 +269,14 @@ public class ApplicationErrorReport implements Parcelable {
         public int throwLineNumber;
         public String stackTrace;
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:14:58.757 -0400", hash_original_method = "A5C69B6119C4811D45501C8F0E46959E", hash_generated_method = "4D52CD3EBF4F7379D1A526C84F0D9EA1")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:36.579 -0400", hash_original_method = "A5C69B6119C4811D45501C8F0E46959E", hash_generated_method = "8F2057BAD303C22C04121A18F120A112")
         @DSModeled(DSC.SAFE)
         public CrashInfo() {
             // ---------- Original Method ----------
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:14:58.758 -0400", hash_original_method = "8E877A457FA4EF293EE7618CA0C5075F", hash_generated_method = "FBE8CB43B108630BABAF725CCF1D9272")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:36.581 -0400", hash_original_method = "8E877A457FA4EF293EE7618CA0C5075F", hash_generated_method = "A967EA81D548D4954E470376E253DE87")
         //DSFIXME:  CODE0002: Requires DSC value to be set
         public CrashInfo(Throwable tr) {
             dsTaint.addTaint(tr.dsTaint);
@@ -319,11 +288,11 @@ public class ApplicationErrorReport implements Parcelable {
             Throwable rootTr;
             rootTr = tr;
             {
-                boolean var49386827104CDB7695A0A911D7203930_1660258638 = (tr.getCause() != null);
+                boolean var49386827104CDB7695A0A911D7203930_1997972846 = (tr.getCause() != null);
                 {
                     tr = tr.getCause();
                     {
-                        boolean varFAC1DD4231C98510C5F83CEABF61BBE8_1488055454 = (tr.getStackTrace() != null && tr.getStackTrace().length > 0);
+                        boolean varFAC1DD4231C98510C5F83CEABF61BBE8_937989313 = (tr.getStackTrace() != null && tr.getStackTrace().length > 0);
                         {
                             rootTr = tr;
                         } //End block
@@ -331,7 +300,7 @@ public class ApplicationErrorReport implements Parcelable {
                     String msg;
                     msg = tr.getMessage();
                     {
-                        boolean var1F789A916FEA465A3D5B39DAAFBEE0CA_1751704208 = (msg != null && msg.length() > 0);
+                        boolean var1F789A916FEA465A3D5B39DAAFBEE0CA_395719329 = (msg != null && msg.length() > 0);
                         {
                             exceptionMessage = msg;
                         } //End block
@@ -340,7 +309,7 @@ public class ApplicationErrorReport implements Parcelable {
             } //End collapsed parenthetic
             exceptionClassName = rootTr.getClass().getName();
             {
-                boolean varB1864E601FD927D95B56A69CA736BC55_1283798336 = (rootTr.getStackTrace().length > 0);
+                boolean varB1864E601FD927D95B56A69CA736BC55_1558164788 = (rootTr.getStackTrace().length > 0);
                 {
                     StackTraceElement trace;
                     trace = rootTr.getStackTrace()[0];
@@ -361,7 +330,7 @@ public class ApplicationErrorReport implements Parcelable {
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:14:58.758 -0400", hash_original_method = "260530F70C73453962E6EA8579F649BC", hash_generated_method = "5DBB873E0C7C946E1B9D4323CA5FCDDD")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:36.581 -0400", hash_original_method = "260530F70C73453962E6EA8579F649BC", hash_generated_method = "B1738BAAE256B192E19041230FAACB84")
         //DSFIXME:  CODE0002: Requires DSC value to be set
         public CrashInfo(Parcel in) {
             dsTaint.addTaint(in.dsTaint);
@@ -383,11 +352,11 @@ public class ApplicationErrorReport implements Parcelable {
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:14:58.758 -0400", hash_original_method = "7B93ED55B73724A8D927AFB13EC86251", hash_generated_method = "D28F05703B7E858A1B66F5B1E8550E34")
-        @DSModeled(DSC.SAFE)
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:36.582 -0400", hash_original_method = "7B93ED55B73724A8D927AFB13EC86251", hash_generated_method = "1F3CF8055A4ABAC93211CE0F7CCE6D62")
+        //DSFIXME:  CODE0002: Requires DSC value to be set
         public void writeToParcel(Parcel dest, int flags) {
-            dsTaint.addTaint(dest.dsTaint);
             dsTaint.addTaint(flags);
+            dsTaint.addTaint(dest.dsTaint);
             dest.writeString(exceptionClassName);
             dest.writeString(exceptionMessage);
             dest.writeString(throwFileName);
@@ -406,8 +375,8 @@ public class ApplicationErrorReport implements Parcelable {
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:14:58.759 -0400", hash_original_method = "12CDDF08CF66932EC00C47C0F2860F33", hash_generated_method = "83C7DDE76EC9D527307E051BBC8CB1F6")
-        @DSModeled(DSC.SAFE)
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:36.583 -0400", hash_original_method = "12CDDF08CF66932EC00C47C0F2860F33", hash_generated_method = "DF2CF963F7CF879CCBEDEFB298453BD7")
+        //DSFIXME:  CODE0002: Requires DSC value to be set
         public void dump(Printer pw, String prefix) {
             dsTaint.addTaint(prefix);
             dsTaint.addTaint(pw.dsTaint);
@@ -438,14 +407,14 @@ public class ApplicationErrorReport implements Parcelable {
         public String cause;
         public String info;
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:14:58.759 -0400", hash_original_method = "76183B88EF41C33999366984D15A43B8", hash_generated_method = "6853368D02B8C63A3B62E4A04DF3BB56")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:36.583 -0400", hash_original_method = "76183B88EF41C33999366984D15A43B8", hash_generated_method = "97ECD60A9856E55398AB9A94F8B3E0EF")
         @DSModeled(DSC.SAFE)
         public AnrInfo() {
             // ---------- Original Method ----------
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:14:58.759 -0400", hash_original_method = "A1816E63F03CA551A7DF54BED5A962BD", hash_generated_method = "E8B7BA22FDE4C12B47BD3A173B60FC42")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:36.584 -0400", hash_original_method = "A1816E63F03CA551A7DF54BED5A962BD", hash_generated_method = "85767D15FEB08DC240ACE89141FB4A3D")
         //DSFIXME:  CODE0002: Requires DSC value to be set
         public AnrInfo(Parcel in) {
             dsTaint.addTaint(in.dsTaint);
@@ -459,11 +428,11 @@ public class ApplicationErrorReport implements Parcelable {
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:14:58.760 -0400", hash_original_method = "C2E7AD44BF6B2BCB887E6B9726568F1C", hash_generated_method = "45E4C7E4F918906F8B3BA9153FA98833")
-        @DSModeled(DSC.SAFE)
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:36.585 -0400", hash_original_method = "C2E7AD44BF6B2BCB887E6B9726568F1C", hash_generated_method = "DAF1666E6E7FCFB9520696BF93086AB1")
+        //DSFIXME:  CODE0002: Requires DSC value to be set
         public void writeToParcel(Parcel dest, int flags) {
-            dsTaint.addTaint(dest.dsTaint);
             dsTaint.addTaint(flags);
+            dsTaint.addTaint(dest.dsTaint);
             dest.writeString(activity);
             dest.writeString(cause);
             dest.writeString(info);
@@ -474,8 +443,8 @@ public class ApplicationErrorReport implements Parcelable {
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:14:58.760 -0400", hash_original_method = "B28573F62D1F3D7B120AF5A59DF14509", hash_generated_method = "8031017A8FD36967E6182A7F992AF35B")
-        @DSModeled(DSC.SAFE)
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:36.586 -0400", hash_original_method = "B28573F62D1F3D7B120AF5A59DF14509", hash_generated_method = "50DDC82C5ECEBF205BD946F95648063D")
+        //DSFIXME:  CODE0002: Requires DSC value to be set
         public void dump(Printer pw, String prefix) {
             dsTaint.addTaint(prefix);
             dsTaint.addTaint(pw.dsTaint);
@@ -499,14 +468,14 @@ public class ApplicationErrorReport implements Parcelable {
         public String usageDetails;
         public String checkinDetails;
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:14:58.760 -0400", hash_original_method = "D2192429514F02BB97F8B55205CB5D4D", hash_generated_method = "7B6B43B4B91AC49439F12B7DA6768F98")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:36.587 -0400", hash_original_method = "D2192429514F02BB97F8B55205CB5D4D", hash_generated_method = "50D456E6A7890D787C7F0F99F1A3C64A")
         @DSModeled(DSC.SAFE)
         public BatteryInfo() {
             // ---------- Original Method ----------
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:14:58.761 -0400", hash_original_method = "73596E36061F6AD3279B28A01C976EEF", hash_generated_method = "8553060EB6E6EFF283657F9F45579383")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:36.588 -0400", hash_original_method = "73596E36061F6AD3279B28A01C976EEF", hash_generated_method = "828BD388F112EC8BC09E50A6BDDDC35A")
         //DSFIXME:  CODE0002: Requires DSC value to be set
         public BatteryInfo(Parcel in) {
             dsTaint.addTaint(in.dsTaint);
@@ -522,11 +491,11 @@ public class ApplicationErrorReport implements Parcelable {
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:14:58.761 -0400", hash_original_method = "530617490987BC288812A812A090F855", hash_generated_method = "7788107997C55E11EC1F9B6D09DFA35C")
-        @DSModeled(DSC.SAFE)
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:36.588 -0400", hash_original_method = "530617490987BC288812A812A090F855", hash_generated_method = "B3F0E929DAE15F7817EB7917A3C0A3A6")
+        //DSFIXME:  CODE0002: Requires DSC value to be set
         public void writeToParcel(Parcel dest, int flags) {
-            dsTaint.addTaint(dest.dsTaint);
             dsTaint.addTaint(flags);
+            dsTaint.addTaint(dest.dsTaint);
             dest.writeInt(usagePercent);
             dest.writeLong(durationMicros);
             dest.writeString(usageDetails);
@@ -539,8 +508,8 @@ public class ApplicationErrorReport implements Parcelable {
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:14:58.761 -0400", hash_original_method = "A13E8F561D1454805516846C4F2ACB3F", hash_generated_method = "4E2470BB1F10136CA9F2D4500A047B11")
-        @DSModeled(DSC.SAFE)
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:36.589 -0400", hash_original_method = "A13E8F561D1454805516846C4F2ACB3F", hash_generated_method = "49910E7181E7778EE22D28792AA82131")
+        //DSFIXME:  CODE0002: Requires DSC value to be set
         public void dump(Printer pw, String prefix) {
             dsTaint.addTaint(prefix);
             dsTaint.addTaint(pw.dsTaint);
@@ -564,14 +533,14 @@ public class ApplicationErrorReport implements Parcelable {
         public long durationMillis;
         public String serviceDetails;
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:14:58.762 -0400", hash_original_method = "621426751430068D32289E518662756C", hash_generated_method = "4C034224787D515760D957854524B900")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:36.589 -0400", hash_original_method = "621426751430068D32289E518662756C", hash_generated_method = "822CEFC1BD8FA9077CAB00884D317765")
         @DSModeled(DSC.SAFE)
         public RunningServiceInfo() {
             // ---------- Original Method ----------
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:14:58.762 -0400", hash_original_method = "2BF3FED145657C6E98603A374CE15B79", hash_generated_method = "E2E4CCF02C747BBFE33EEE0E677069F6")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:36.590 -0400", hash_original_method = "2BF3FED145657C6E98603A374CE15B79", hash_generated_method = "CF9CD3E9BB172C9C4E5FDA2CA8A71DD8")
         //DSFIXME:  CODE0002: Requires DSC value to be set
         public RunningServiceInfo(Parcel in) {
             dsTaint.addTaint(in.dsTaint);
@@ -583,11 +552,11 @@ public class ApplicationErrorReport implements Parcelable {
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:14:58.762 -0400", hash_original_method = "DD72EF524B8A5B3FA338ADFF302C8897", hash_generated_method = "40F42B5A7AB7A9BE08DEE969ECB6917D")
-        @DSModeled(DSC.SAFE)
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:36.590 -0400", hash_original_method = "DD72EF524B8A5B3FA338ADFF302C8897", hash_generated_method = "674813DC4B8954A3EECBAE5B8D0302DF")
+        //DSFIXME:  CODE0002: Requires DSC value to be set
         public void writeToParcel(Parcel dest, int flags) {
-            dsTaint.addTaint(dest.dsTaint);
             dsTaint.addTaint(flags);
+            dsTaint.addTaint(dest.dsTaint);
             dest.writeLong(durationMillis);
             dest.writeString(serviceDetails);
             // ---------- Original Method ----------
@@ -596,8 +565,8 @@ public class ApplicationErrorReport implements Parcelable {
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:14:58.762 -0400", hash_original_method = "BA9B01A70699F7EA70070719DF8ACE84", hash_generated_method = "A90B0A37B732EE983C1B2C239A23AD35")
-        @DSModeled(DSC.SAFE)
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:36.591 -0400", hash_original_method = "BA9B01A70699F7EA70070719DF8ACE84", hash_generated_method = "9DA9781CB7F53431FA3395DF60F83BAC")
+        //DSFIXME:  CODE0002: Requires DSC value to be set
         public void dump(Printer pw, String prefix) {
             dsTaint.addTaint(prefix);
             dsTaint.addTaint(pw.dsTaint);
@@ -613,6 +582,36 @@ public class ApplicationErrorReport implements Parcelable {
 
 
     
-}
+    static final String SYSTEM_APPS_ERROR_RECEIVER_PROPERTY = "ro.error.receiver.system.apps";
+    static final String DEFAULT_ERROR_RECEIVER_PROPERTY = "ro.error.receiver.default";
+    public static final int TYPE_NONE = 0;
+    public static final int TYPE_CRASH = 1;
+    public static final int TYPE_ANR = 2;
+    public static final int TYPE_BATTERY = 3;
+    public static final int TYPE_RUNNING_SERVICE = 5;
+    public static final Parcelable.Creator<ApplicationErrorReport> CREATOR = new Parcelable.Creator<ApplicationErrorReport>() {        
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:36.591 -0400", hash_original_method = "D02E7C98CADEACD71C390EF313CCEAC7", hash_generated_method = "7B3DAE36EEA7A52DBD2662CB418AD767")
+        //DSFIXME:  CODE0002: Requires DSC value to be set
+        public ApplicationErrorReport createFromParcel(Parcel source) {
+            dsTaint.addTaint(source.dsTaint);
+            ApplicationErrorReport varDEB1E74CA060D1FE7FFCFBEF3C27185D_202160681 = (new ApplicationErrorReport(source));
+            return (ApplicationErrorReport)dsTaint.getTaint();
+            // ---------- Original Method ----------
+            //return new ApplicationErrorReport(source);
+        }
 
+        
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:36.592 -0400", hash_original_method = "910469A5C451BE7A7AD117B169DA9905", hash_generated_method = "86096685BDFD9BC33BCCEEC414074EA2")
+        //DSFIXME:  CODE0002: Requires DSC value to be set
+        public ApplicationErrorReport[] newArray(int size) {
+            dsTaint.addTaint(size);
+            ApplicationErrorReport[] var745C9C1DC2BA712B7E1960DED8D77B69_1960651356 = (new ApplicationErrorReport[size]);
+            return (ApplicationErrorReport[])dsTaint.getTaint();
+            // ---------- Original Method ----------
+            //return new ApplicationErrorReport[size];
+        }
+
+        
+}; //Transformed anonymous class
+}
 

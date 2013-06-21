@@ -1,22 +1,20 @@
 package java.security;
 
 // Droidsafe Imports
-import java.nio.ByteBuffer;
+import droidsafe.helpers.*;
+import droidsafe.annotations.*;
+import droidsafe.runtime.*;
 
+// needed for enhanced for control translations
+import java.util.Iterator;
+import java.nio.ByteBuffer;
 import org.apache.harmony.security.fortress.Engine;
 
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
-import droidsafe.runtime.DroidSafeAndroidRuntime;
-// import Iterator to deal with enhanced for loop translation
-
 public abstract class MessageDigest extends MessageDigestSpi {
-    private static final Engine ENGINE = new Engine("MessageDigest");
     private Provider provider;
     private String algorithm;
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:12.610 -0400", hash_original_method = "DA3220D378CF53A8E8D20808A7040AB6", hash_generated_method = "E180219C8941B16B26893BEBFB42D9CF")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:29.388 -0400", hash_original_method = "DA3220D378CF53A8E8D20808A7040AB6", hash_generated_method = "5E20F883A187FDE8DDA24D37B2E72148")
     @DSModeled(DSC.SAFE)
     protected MessageDigest(String algorithm) {
         dsTaint.addTaint(algorithm);
@@ -25,8 +23,7 @@ public abstract class MessageDigest extends MessageDigestSpi {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:12.610 -0400", hash_original_method = "5C601ADA1D2E18CF500EF6D66253600E", hash_generated_method = "7136D7DF10FBBCC2A23B2BFE80B5FAB3")
-    public static MessageDigest getInstance(String algorithm) throws NoSuchAlgorithmException {
+        public static MessageDigest getInstance(String algorithm) throws NoSuchAlgorithmException {
         if (algorithm == null) {
             throw new NullPointerException();
         }
@@ -43,8 +40,7 @@ public abstract class MessageDigest extends MessageDigestSpi {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:12.610 -0400", hash_original_method = "4A47CCCAB9E7CA50F3AD4953C61AD60D", hash_generated_method = "E109005BEF06DBB9107F58DD5DA16131")
-    public static MessageDigest getInstance(String algorithm, String provider) throws NoSuchAlgorithmException, NoSuchProviderException {
+        public static MessageDigest getInstance(String algorithm, String provider) throws NoSuchAlgorithmException, NoSuchProviderException {
         if (provider == null || provider.isEmpty()) {
             throw new IllegalArgumentException();
         }
@@ -56,8 +52,7 @@ public abstract class MessageDigest extends MessageDigestSpi {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:12.610 -0400", hash_original_method = "723C5C1CC0AC6B47325C4EFD63C83CA5", hash_generated_method = "FB6253B2AEE8F1F7762F8C00D3303C27")
-    public static MessageDigest getInstance(String algorithm, Provider provider) throws NoSuchAlgorithmException {
+        public static MessageDigest getInstance(String algorithm, Provider provider) throws NoSuchAlgorithmException {
         if (provider == null) {
             throw new IllegalArgumentException();
         }
@@ -75,8 +70,8 @@ public abstract class MessageDigest extends MessageDigestSpi {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:12.610 -0400", hash_original_method = "E1E123B455D04188508A4B0941F355AE", hash_generated_method = "9A18E1EA5DA5ED8723D99F67644C1D1B")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:29.388 -0400", hash_original_method = "E1E123B455D04188508A4B0941F355AE", hash_generated_method = "886270F67B96DDF0DAA56D42A28596B7")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     public void reset() {
         engineReset();
         // ---------- Original Method ----------
@@ -84,8 +79,8 @@ public abstract class MessageDigest extends MessageDigestSpi {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:12.610 -0400", hash_original_method = "5D76F053E1EB2FF1CE017209E211EA20", hash_generated_method = "5DA658A39B1C8F68C59CD01D37B669A2")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:29.388 -0400", hash_original_method = "5D76F053E1EB2FF1CE017209E211EA20", hash_generated_method = "A31C02E5C14B38733023DF36561605FA")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     public void update(byte arg0) {
         dsTaint.addTaint(arg0);
         engineUpdate(arg0);
@@ -94,10 +89,10 @@ public abstract class MessageDigest extends MessageDigestSpi {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:12.610 -0400", hash_original_method = "4F50D6AF2B6F6CC75F087F1B36C7BEE9", hash_generated_method = "1B21890B195C618377C9E73C9C534DF0")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:29.389 -0400", hash_original_method = "4F50D6AF2B6F6CC75F087F1B36C7BEE9", hash_generated_method = "2A1C6793BF12B0522CA4DA1DFC275BF4")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     public void update(byte[] input, int offset, int len) {
-        dsTaint.addTaint(input);
+        dsTaint.addTaint(input[0]);
         dsTaint.addTaint(len);
         dsTaint.addTaint(offset);
         {
@@ -113,12 +108,12 @@ public abstract class MessageDigest extends MessageDigestSpi {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:12.610 -0400", hash_original_method = "2D0F4C2E65A537F2694C1C3FF3BB32CC", hash_generated_method = "56143787DD02F2305ABD5DC5C29A878C")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:29.389 -0400", hash_original_method = "2D0F4C2E65A537F2694C1C3FF3BB32CC", hash_generated_method = "6605466A67FB8D8CFB4C532B49C8E54E")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     public void update(byte[] input) {
-        dsTaint.addTaint(input);
+        dsTaint.addTaint(input[0]);
         {
-            if (DroidSafeAndroidRuntime.control)  throw new NullPointerException();
+            if (DroidSafeAndroidRuntime.control) throw new NullPointerException();
         } //End block
         engineUpdate(input, 0, input.length);
         // ---------- Original Method ----------
@@ -129,10 +124,10 @@ public abstract class MessageDigest extends MessageDigestSpi {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:12.610 -0400", hash_original_method = "BFC8812962D9635EA2DD9DD3F9DF8CCE", hash_generated_method = "5E21BD81FAA2663721C8ABAE3703AF89")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:29.389 -0400", hash_original_method = "BFC8812962D9635EA2DD9DD3F9DF8CCE", hash_generated_method = "3DD789A92A63F7B6EE3881803119482F")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public byte[] digest() {
-        byte[] var57D103A63674F987D87BF0540FEA990B_1440208752 = (engineDigest());
+        byte[] var57D103A63674F987D87BF0540FEA990B_1476527891 = (engineDigest());
         byte[] retVal = new byte[1];
         retVal[0] = (byte)dsTaint.getTaintInt();
         return retVal;
@@ -141,16 +136,16 @@ public abstract class MessageDigest extends MessageDigestSpi {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:12.610 -0400", hash_original_method = "427D2D0CC508C9C4E8BC486441041E72", hash_generated_method = "3FA8D36DC9B0C39AFB93D23F307F926A")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:29.389 -0400", hash_original_method = "427D2D0CC508C9C4E8BC486441041E72", hash_generated_method = "6F3DA9F752AF5C40EEB92399296CCCEB")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public int digest(byte[] buf, int offset, int len) throws DigestException {
         dsTaint.addTaint(len);
         dsTaint.addTaint(offset);
-        dsTaint.addTaint(buf);
+        dsTaint.addTaint(buf[0]);
         {
-            if (DroidSafeAndroidRuntime.control)  throw new IllegalArgumentException();
+            if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException();
         } //End block
-        int var2CAEA613A9CD0DCE46D4A8F510BE3822_326166221 = (engineDigest(buf, offset, len));
+        int var2CAEA613A9CD0DCE46D4A8F510BE3822_872630612 = (engineDigest(buf, offset, len));
         return dsTaint.getTaintInt();
         // ---------- Original Method ----------
         //if (buf == null ||
@@ -161,12 +156,12 @@ public abstract class MessageDigest extends MessageDigestSpi {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:12.610 -0400", hash_original_method = "C04191B06E52578EA4C996F47114224E", hash_generated_method = "6A09943E4DD3AC53D132673530F0B48E")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:29.389 -0400", hash_original_method = "C04191B06E52578EA4C996F47114224E", hash_generated_method = "C45230CEABE39D696BCC1F731E4B0F07")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public byte[] digest(byte[] input) {
-        dsTaint.addTaint(input);
+        dsTaint.addTaint(input[0]);
         update(input);
-        byte[] var0ABA005EAD8E4308D8116BD872FEB63C_2138288854 = (digest());
+        byte[] var0ABA005EAD8E4308D8116BD872FEB63C_723379880 = (digest());
         byte[] retVal = new byte[1];
         retVal[0] = (byte)dsTaint.getTaintInt();
         return retVal;
@@ -176,7 +171,7 @@ public abstract class MessageDigest extends MessageDigestSpi {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:12.611 -0400", hash_original_method = "67B827C914C444116C889B9B936D23D1", hash_generated_method = "86D94A15C4D0A67C7319571CE84074C9")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:29.389 -0400", hash_original_method = "67B827C914C444116C889B9B936D23D1", hash_generated_method = "D2B8F03F95EA0AB9289E523AA0AE5C2B")
     @DSModeled(DSC.SAFE)
     @Override
     public String toString() {
@@ -186,8 +181,7 @@ public abstract class MessageDigest extends MessageDigestSpi {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:12.611 -0400", hash_original_method = "8E343D7D0CF266D2D2F5F12353F2E5FB", hash_generated_method = "3F0DC5CF6405BEFFC970BFCD2FEB88B1")
-    public static boolean isEqual(byte[] digesta, byte[] digestb) {
+        public static boolean isEqual(byte[] digesta, byte[] digestb) {
         if (digesta.length != digestb.length) {
             return false;
         }
@@ -200,7 +194,7 @@ public abstract class MessageDigest extends MessageDigestSpi {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:12.611 -0400", hash_original_method = "545C988DDCCD8AD6AA15877CD458F7D6", hash_generated_method = "4A58ADD94C981C54C4328FD02BFEBA19")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:29.390 -0400", hash_original_method = "545C988DDCCD8AD6AA15877CD458F7D6", hash_generated_method = "D8B68EE02F71705BA62E93B42B805D25")
     @DSModeled(DSC.SAFE)
     public final String getAlgorithm() {
         return dsTaint.getTaintString();
@@ -209,7 +203,7 @@ public abstract class MessageDigest extends MessageDigestSpi {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:12.611 -0400", hash_original_method = "4D6A4C5C7B57C5543A93E2FA43879F89", hash_generated_method = "45F6335264F85F3B8D73CAC979348AC1")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:29.390 -0400", hash_original_method = "4D6A4C5C7B57C5543A93E2FA43879F89", hash_generated_method = "828895F1878B3605546159F61AC099C2")
     @DSModeled(DSC.SAFE)
     public final Provider getProvider() {
         return (Provider)dsTaint.getTaint();
@@ -218,7 +212,7 @@ public abstract class MessageDigest extends MessageDigestSpi {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:12.611 -0400", hash_original_method = "CB1E3F95FB76C6289C61CD25B71DC6B2", hash_generated_method = "1BA214A6324D2788B159CB817EF9608F")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:29.390 -0400", hash_original_method = "CB1E3F95FB76C6289C61CD25B71DC6B2", hash_generated_method = "01A46C4978C267937BFBEE7DFF3FF5F1")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public final int getDigestLength() {
         int l;
@@ -227,7 +221,7 @@ public abstract class MessageDigest extends MessageDigestSpi {
         {
             MessageDigest md;
             md = (MessageDigest) clone();
-            int var7CB7B46411ABEA4D435C69516DBB5D10_72985822 = (md.digest().length);
+            int var7CB7B46411ABEA4D435C69516DBB5D10_763565220 = (md.digest().length);
         } //End block
         catch (CloneNotSupportedException e)
         { }
@@ -249,12 +243,12 @@ public abstract class MessageDigest extends MessageDigestSpi {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:12.611 -0400", hash_original_method = "31D01322C9910F836DA03F7FCF4D6261", hash_generated_method = "E34C97055C4AE9820250D0DC445DF77C")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:29.390 -0400", hash_original_method = "31D01322C9910F836DA03F7FCF4D6261", hash_generated_method = "7F26427DB9E8FAA5789670E876F6D97F")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     @Override
     public Object clone() throws CloneNotSupportedException {
         {
-            Object varDEB570B566DA7549E2F197D0AFA5A2B6_1775111893 = (super.clone());
+            Object varDEB570B566DA7549E2F197D0AFA5A2B6_1918874000 = (super.clone());
         } //End block
         if (DroidSafeAndroidRuntime.control) throw new CloneNotSupportedException();
         return (Object)dsTaint.getTaint();
@@ -266,8 +260,8 @@ public abstract class MessageDigest extends MessageDigestSpi {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:12.611 -0400", hash_original_method = "8AF1ACEDEB3ACC905C3D0DD872BD7C78", hash_generated_method = "EA8C88C11CD8C44DDD2FD6CB65C570EF")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:29.390 -0400", hash_original_method = "8AF1ACEDEB3ACC905C3D0DD872BD7C78", hash_generated_method = "59D53DBF8B091BD8B260267D9B70B4FB")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     public final void update(ByteBuffer input) {
         dsTaint.addTaint(input.dsTaint);
         engineUpdate(input);
@@ -279,7 +273,7 @@ public abstract class MessageDigest extends MessageDigestSpi {
     private static class MessageDigestImpl extends MessageDigest {
         private MessageDigestSpi spiImpl;
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:12.611 -0400", hash_original_method = "AF4F6C5934F11306EFBE5B299B5A2B9A", hash_generated_method = "2E55E6EB3522E690C729CD6EF32C37DD")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:29.391 -0400", hash_original_method = "AF4F6C5934F11306EFBE5B299B5A2B9A", hash_generated_method = "46575F14548FE1D78C120052B06C8633")
         //DSFIXME:  CODE0002: Requires DSC value to be set
         private MessageDigestImpl(MessageDigestSpi messageDigestSpi,
                 Provider provider, String algorithm) {
@@ -294,8 +288,8 @@ public abstract class MessageDigest extends MessageDigestSpi {
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:12.611 -0400", hash_original_method = "7B2BEE5C01EE533E37620968FDA4C371", hash_generated_method = "3AABAC2FE712BE7FEFE62FAFC0DCF7D3")
-        @DSModeled(DSC.SAFE)
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:29.391 -0400", hash_original_method = "7B2BEE5C01EE533E37620968FDA4C371", hash_generated_method = "80CF2DD0AD898031D6EF2CECA4BECD8D")
+        //DSFIXME:  CODE0002: Requires DSC value to be set
         @Override
         protected void engineReset() {
             spiImpl.engineReset();
@@ -304,11 +298,11 @@ public abstract class MessageDigest extends MessageDigestSpi {
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:12.611 -0400", hash_original_method = "F90FDD38A509FFE526728E64881BF6E1", hash_generated_method = "E650A99B7B46CA8DC73C1F48FC95BA53")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:29.391 -0400", hash_original_method = "F90FDD38A509FFE526728E64881BF6E1", hash_generated_method = "904728B6549BA415BFC7E39F1F099EC6")
         //DSFIXME:  CODE0002: Requires DSC value to be set
         @Override
         protected byte[] engineDigest() {
-            byte[] varFA3C40A0C93E6BBA5F82AAEEFBCFA132_1393449418 = (spiImpl.engineDigest());
+            byte[] varFA3C40A0C93E6BBA5F82AAEEFBCFA132_111638915 = (spiImpl.engineDigest());
             byte[] retVal = new byte[1];
             retVal[0] = (byte)dsTaint.getTaintInt();
             return retVal;
@@ -317,19 +311,19 @@ public abstract class MessageDigest extends MessageDigestSpi {
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:12.611 -0400", hash_original_method = "A58BB0AA00BEE25A1A003BC1A1C82C78", hash_generated_method = "2EF1829A702C24F94EADBE0AD8680658")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:29.391 -0400", hash_original_method = "A58BB0AA00BEE25A1A003BC1A1C82C78", hash_generated_method = "BED59E0477157D878D536DF05F6EAD1B")
         //DSFIXME:  CODE0002: Requires DSC value to be set
         @Override
         protected int engineGetDigestLength() {
-            int varADF268C32B044A7824ABB952579ACEC5_2022377557 = (spiImpl.engineGetDigestLength());
+            int varADF268C32B044A7824ABB952579ACEC5_1686737636 = (spiImpl.engineGetDigestLength());
             return dsTaint.getTaintInt();
             // ---------- Original Method ----------
             //return spiImpl.engineGetDigestLength();
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:12.611 -0400", hash_original_method = "D358F15D417A4020320217683B1513E5", hash_generated_method = "EFCB956D055C56DEA9519DE278495D6D")
-        @DSModeled(DSC.SAFE)
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:29.391 -0400", hash_original_method = "D358F15D417A4020320217683B1513E5", hash_generated_method = "5984827D71605D6DCCD0DB5B671F4481")
+        //DSFIXME:  CODE0002: Requires DSC value to be set
         @Override
         protected void engineUpdate(byte arg0) {
             dsTaint.addTaint(arg0);
@@ -339,27 +333,27 @@ public abstract class MessageDigest extends MessageDigestSpi {
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:12.611 -0400", hash_original_method = "A2CCF3CCE76988A3320BAC87F00B4D63", hash_generated_method = "ED1B0418970AFCA6520D9D4D0A7C9FF0")
-        @DSModeled(DSC.SAFE)
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:29.391 -0400", hash_original_method = "A2CCF3CCE76988A3320BAC87F00B4D63", hash_generated_method = "8BB172FE07C21E7E8A9098DC57FFBA80")
+        //DSFIXME:  CODE0002: Requires DSC value to be set
         @Override
         protected void engineUpdate(byte[] arg0, int arg1, int arg2) {
             dsTaint.addTaint(arg2);
             dsTaint.addTaint(arg1);
-            dsTaint.addTaint(arg0);
+            dsTaint.addTaint(arg0[0]);
             spiImpl.engineUpdate(arg0, arg1, arg2);
             // ---------- Original Method ----------
             //spiImpl.engineUpdate(arg0, arg1, arg2);
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:12.611 -0400", hash_original_method = "C83E6E6E4FE5D7C377E3AA33AF7D3FC4", hash_generated_method = "FB2E94E00714C473D6496C621682A782")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:29.392 -0400", hash_original_method = "C83E6E6E4FE5D7C377E3AA33AF7D3FC4", hash_generated_method = "0A0DFABD11760324F93C03DD4235C773")
         //DSFIXME:  CODE0002: Requires DSC value to be set
         @Override
         public Object clone() throws CloneNotSupportedException {
             {
                 MessageDigestSpi spi;
                 spi = (MessageDigestSpi) spiImpl.clone();
-                Object varCAE1575D4CACB58BC0AA8C6BC6F6B288_1892674179 = (new MessageDigestImpl(spi, getProvider(), getAlgorithm()));
+                Object varCAE1575D4CACB58BC0AA8C6BC6F6B288_1925924089 = (new MessageDigestImpl(spi, getProvider(), getAlgorithm()));
             } //End block
             if (DroidSafeAndroidRuntime.control) throw new CloneNotSupportedException();
             return (Object)dsTaint.getTaint();
@@ -376,6 +370,6 @@ public abstract class MessageDigest extends MessageDigestSpi {
 
 
     
+    private static final Engine ENGINE = new Engine("MessageDigest");
 }
-
 

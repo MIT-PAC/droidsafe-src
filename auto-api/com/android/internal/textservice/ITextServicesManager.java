@@ -3,10 +3,10 @@ package com.android.internal.textservice;
 // Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
+import droidsafe.runtime.*;
 
-// import Iterator to deal with enhanced for loop translation
+// needed for enhanced for control translations
 import java.util.Iterator;
-
 
 public interface ITextServicesManager extends android.os.IInterface
 {
@@ -343,4 +343,3 @@ public void setSpellCheckerEnabled(boolean enabled) throws android.os.RemoteExce
 public boolean isSpellCheckerEnabled() throws android.os.RemoteException;
 public android.view.textservice.SpellCheckerInfo[] getEnabledSpellCheckers() throws android.os.RemoteException;
 }
-

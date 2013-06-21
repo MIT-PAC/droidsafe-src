@@ -3,10 +3,10 @@ package android.accessibilityservice;
 // Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
+import droidsafe.runtime.*;
 
-// import Iterator to deal with enhanced for loop translation
+// needed for enhanced for control translations
 import java.util.Iterator;
-
 
 public interface IAccessibilityServiceConnection extends android.os.IInterface
 {
@@ -322,4 +322,3 @@ public float findAccessibilityNodeInfoByViewIdInActiveWindow(int viewId, int int
 
 public boolean performAccessibilityAction(int accessibilityWindowId, int accessibilityViewId, int action, int interactionId, android.view.accessibility.IAccessibilityInteractionConnectionCallback callback, long threadId) throws android.os.RemoteException;
 }
-

@@ -11,4 +11,3 @@ import java.util.Iterator;
 public interface Type {
     
 }
-

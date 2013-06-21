@@ -10,11 +10,10 @@ import java.util.Iterator;
 import android.util.Log;
 
 public class Vibrator {
-    private static String TAG = "Vibrator";
     IVibratorService mService;
     private Binder mToken = new Binder();
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 12:02:01.351 -0400", hash_original_method = "EB80C050D853B4D9B5A1231C0F61B7C6", hash_generated_method = "EE7052073461539AFD3B766C3F4A4D51")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:54.391 -0400", hash_original_method = "EB80C050D853B4D9B5A1231C0F61B7C6", hash_generated_method = "4A65C1EF3E63664EB269704222364679")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public Vibrator() {
         mService = IVibratorService.Stub.asInterface(
@@ -25,12 +24,12 @@ public class Vibrator {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 12:02:01.354 -0400", hash_original_method = "340743421AEB659E5123D51116E8257B", hash_generated_method = "5C42FA5C3C23E18A1361CFE75DFBEA1E")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:54.391 -0400", hash_original_method = "340743421AEB659E5123D51116E8257B", hash_generated_method = "E3C966F4FBDABBF477C4BF8659D939A7")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public boolean hasVibrator() {
         try 
         {
-            boolean var5CDAA7782E0492C697AE35EAB5CE95A3_1494928467 = (mService.hasVibrator());
+            boolean var5CDAA7782E0492C697AE35EAB5CE95A3_135156962 = (mService.hasVibrator());
         } //End block
         catch (RemoteException e)
         { }
@@ -48,8 +47,8 @@ public class Vibrator {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 12:02:01.354 -0400", hash_original_method = "7274B01F62B26782B2CB11F21188B55D", hash_generated_method = "37BFFAF55678674879D964498B03506A")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:54.392 -0400", hash_original_method = "7274B01F62B26782B2CB11F21188B55D", hash_generated_method = "7A9A5B69626500F3B11AF2F4F092D4D5")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     public void vibrate(long milliseconds) {
         dsTaint.addTaint(milliseconds);
         try 
@@ -71,8 +70,8 @@ public class Vibrator {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 12:02:01.355 -0400", hash_original_method = "7A7D54B587DD258FAC49023E7C932C75", hash_generated_method = "8BC3532E8A4026995A3D4C82025D69A9")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:54.392 -0400", hash_original_method = "7A7D54B587DD258FAC49023E7C932C75", hash_generated_method = "16D4FD1AEF0A71E0A8BF1D437327330A")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     public void vibrate(long[] pattern, int repeat) {
         dsTaint.addTaint(pattern[0]);
         dsTaint.addTaint(repeat);
@@ -104,8 +103,8 @@ public class Vibrator {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 12:02:01.360 -0400", hash_original_method = "9CFB04510A80ABA723862EE634095A2D", hash_generated_method = "F17B63824EFFCF67ACB3C5B09750AF08")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:54.392 -0400", hash_original_method = "9CFB04510A80ABA723862EE634095A2D", hash_generated_method = "CA18ED2B0743D8CDB9503A504E4ABAFF")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     public void cancel() {
         try 
         {
@@ -125,6 +124,6 @@ public class Vibrator {
     }
 
     
+    private static final String TAG = "Vibrator";
 }
-
 

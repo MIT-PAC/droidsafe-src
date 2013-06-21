@@ -1,0 +1,33 @@
+package javax.sip;
+
+// Droidsafe Imports
+import droidsafe.helpers.*;
+import droidsafe.annotations.*;
+import droidsafe.runtime.*;
+
+// needed for enhanced for control translations
+import java.util.Iterator;
+import java.io.Serializable;
+import javax.sip.message.Request;
+
+public interface Transaction extends Serializable {
+    Object getApplicationData();
+    void setApplicationData (Object applicationData);
+
+    String getBranchId();
+    Dialog getDialog();
+    String getHost();
+    String getPeerAddress();
+    int getPeerPort();
+    int getPort();
+    Request getRequest();
+    SipProvider getSipProvider();
+    TransactionState getState();
+    String getTransport();
+
+    int getRetransmitTimer() throws UnsupportedOperationException;
+    void setRetransmitTimer(int retransmitTimer)
+            throws UnsupportedOperationException;
+
+    void terminate() throws ObjectInUseException;
+}

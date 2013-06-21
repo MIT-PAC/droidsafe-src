@@ -1,59 +1,20 @@
 package com.android.internal.telephony;
 
 // Droidsafe Imports
+import droidsafe.helpers.*;
+import droidsafe.annotations.*;
+import droidsafe.runtime.*;
+
+// needed for enhanced for control translations
+import java.util.Iterator;
+import android.os.*;
+import android.util.Log;
 import java.util.ArrayList;
 
-import android.os.AsyncResult;
-import android.os.Handler;
-import android.os.Message;
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
-import droidsafe.runtime.DroidSafeAndroidRuntime;
-// import Iterator to deal with enhanced for loop translation
-
 public abstract class IccFileHandler extends Handler implements IccConstants {
-    static protected final int COMMAND_READ_BINARY = 0xb0;
-    static protected final int COMMAND_UPDATE_BINARY = 0xd6;
-    static protected final int COMMAND_READ_RECORD = 0xb2;
-    static protected final int COMMAND_UPDATE_RECORD = 0xdc;
-    static protected final int COMMAND_SEEK = 0xa2;
-    static protected final int COMMAND_GET_RESPONSE = 0xc0;
-    static protected final int READ_RECORD_MODE_ABSOLUTE = 4;
-    static protected final int EF_TYPE_TRANSPARENT = 0;
-    static protected final int EF_TYPE_LINEAR_FIXED = 1;
-    static protected final int EF_TYPE_CYCLIC = 3;
-    static protected final int TYPE_RFU = 0;
-    static protected final int TYPE_MF  = 1;
-    static protected final int TYPE_DF  = 2;
-    static protected final int TYPE_EF  = 4;
-    static protected final int GET_RESPONSE_EF_SIZE_BYTES = 15;
-    static protected final int GET_RESPONSE_EF_IMG_SIZE_BYTES = 10;
-    static protected final int RESPONSE_DATA_RFU_1 = 0;
-    static protected final int RESPONSE_DATA_RFU_2 = 1;
-    static protected final int RESPONSE_DATA_FILE_SIZE_1 = 2;
-    static protected final int RESPONSE_DATA_FILE_SIZE_2 = 3;
-    static protected final int RESPONSE_DATA_FILE_ID_1 = 4;
-    static protected final int RESPONSE_DATA_FILE_ID_2 = 5;
-    static protected final int RESPONSE_DATA_FILE_TYPE = 6;
-    static protected final int RESPONSE_DATA_RFU_3 = 7;
-    static protected final int RESPONSE_DATA_ACCESS_CONDITION_1 = 8;
-    static protected final int RESPONSE_DATA_ACCESS_CONDITION_2 = 9;
-    static protected final int RESPONSE_DATA_ACCESS_CONDITION_3 = 10;
-    static protected final int RESPONSE_DATA_FILE_STATUS = 11;
-    static protected final int RESPONSE_DATA_LENGTH = 12;
-    static protected final int RESPONSE_DATA_STRUCTURE = 13;
-    static protected final int RESPONSE_DATA_RECORD_LENGTH = 14;
-    static protected final int EVENT_GET_BINARY_SIZE_DONE = 4;
-    static protected final int EVENT_READ_BINARY_DONE = 5;
-    static protected final int EVENT_GET_RECORD_SIZE_DONE = 6;
-    static protected final int EVENT_READ_RECORD_DONE = 7;
-    static protected final int EVENT_GET_EF_LINEAR_RECORD_SIZE_DONE = 8;
-    static protected final int EVENT_READ_IMG_DONE = 9;
-    static protected final int EVENT_READ_ICON_DONE = 10;
     protected PhoneBase phone;
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:10.111 -0400", hash_original_method = "D43DCB164382547ACBC107CD3DAC237A", hash_generated_method = "6D586EA69EFE291C2BA0191102F7C603")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:11.324 -0400", hash_original_method = "D43DCB164382547ACBC107CD3DAC237A", hash_generated_method = "9F21649DDBC4ED485AB5E4503DA4EDF9")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     protected IccFileHandler(PhoneBase phone) {
         super();
@@ -63,14 +24,14 @@ public abstract class IccFileHandler extends Handler implements IccConstants {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:10.112 -0400", hash_original_method = "090E1F04EFD80CF69ADD306ED1D79AE5", hash_generated_method = "3A329BEB950A8D91DEFEC69B3995ED8C")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:11.325 -0400", hash_original_method = "090E1F04EFD80CF69ADD306ED1D79AE5", hash_generated_method = "614D737B8CBDA53A99A22331B445C19D")
     @DSModeled(DSC.SAFE)
     public void dispose() {
         // ---------- Original Method ----------
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:10.112 -0400", hash_original_method = "663260DCC0AEA6DC2CA2BB2A67F595C2", hash_generated_method = "B3257EBAE7BD6B61A6B70DD84896F30F")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:11.325 -0400", hash_original_method = "663260DCC0AEA6DC2CA2BB2A67F595C2", hash_generated_method = "96B19B4E15EEC01AC17AE098EF1BD89F")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public void loadEFLinearFixed(int fileid, int recordNum, Message onLoaded) {
         dsTaint.addTaint(recordNum);
@@ -90,8 +51,8 @@ public abstract class IccFileHandler extends Handler implements IccConstants {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:10.112 -0400", hash_original_method = "AD3D0941CCBE990655E4D58F2671DA3B", hash_generated_method = "9836AB61EE3B4A8302E25F583F983641")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:11.325 -0400", hash_original_method = "AD3D0941CCBE990655E4D58F2671DA3B", hash_generated_method = "025EA9239F917DA7326E34320EC478DE")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     public void loadEFImgLinearFixed(int recordNum, Message onLoaded) {
         dsTaint.addTaint(recordNum);
         dsTaint.addTaint(onLoaded.dsTaint);
@@ -112,7 +73,7 @@ public abstract class IccFileHandler extends Handler implements IccConstants {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:10.112 -0400", hash_original_method = "50E0C1880D1B176F78B29AB1FC2AC0F6", hash_generated_method = "3FE1155A867DD16A7CD4E5468DDCC8A9")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:11.325 -0400", hash_original_method = "50E0C1880D1B176F78B29AB1FC2AC0F6", hash_generated_method = "3652F4C38804AAACCCC3521221914967")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public void getEFLinearRecordSize(int fileid, Message onLoaded) {
         dsTaint.addTaint(onLoaded.dsTaint);
@@ -131,7 +92,7 @@ public abstract class IccFileHandler extends Handler implements IccConstants {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:10.112 -0400", hash_original_method = "65C59C00611DFB92BBD6DFE9FDCAEDDA", hash_generated_method = "5F77D95C6BE4B1AABF0353AAC97A4A20")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:11.325 -0400", hash_original_method = "65C59C00611DFB92BBD6DFE9FDCAEDDA", hash_generated_method = "8D3152ECDD1376A2D9157D113241613B")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public void loadEFLinearFixedAll(int fileid, Message onLoaded) {
         dsTaint.addTaint(onLoaded.dsTaint);
@@ -149,7 +110,7 @@ public abstract class IccFileHandler extends Handler implements IccConstants {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:10.112 -0400", hash_original_method = "E6873BA2275643766469BAAFD3B2D8F2", hash_generated_method = "DA283C93EFE3E67B60D209B7B6F87C4A")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:11.326 -0400", hash_original_method = "E6873BA2275643766469BAAFD3B2D8F2", hash_generated_method = "929D14DBA96AC524C74F7CE49FC95405")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public void loadEFTransparent(int fileid, Message onLoaded) {
         dsTaint.addTaint(onLoaded.dsTaint);
@@ -167,8 +128,8 @@ public abstract class IccFileHandler extends Handler implements IccConstants {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:10.112 -0400", hash_original_method = "2560A35ADA01F4B533EB0E56DA8161F2", hash_generated_method = "013518F676BFA31319C9598320CCE60D")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:11.326 -0400", hash_original_method = "2560A35ADA01F4B533EB0E56DA8161F2", hash_generated_method = "A73132FC20879BE4100C1AD2C2047CCD")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     public void loadEFImgTransparent(int fileid, int highOffset, int lowOffset,
             int length, Message onLoaded) {
         dsTaint.addTaint(onLoaded.dsTaint);
@@ -189,14 +150,14 @@ public abstract class IccFileHandler extends Handler implements IccConstants {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:10.112 -0400", hash_original_method = "FA70C1BBB046CBB00612B81948F784B1", hash_generated_method = "31A2FC48E8DA11B560A4411BD01CB562")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:11.326 -0400", hash_original_method = "FA70C1BBB046CBB00612B81948F784B1", hash_generated_method = "8CC4D503BE634ABB47B8C0BD1B8CBE77")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public void updateEFLinearFixed(int fileid, int recordNum, byte[] data,
             String pin2, Message onComplete) {
         dsTaint.addTaint(recordNum);
         dsTaint.addTaint(pin2);
         dsTaint.addTaint(onComplete.dsTaint);
-        dsTaint.addTaint(data);
+        dsTaint.addTaint(data[0]);
         dsTaint.addTaint(fileid);
         phone.mCM.iccIO(COMMAND_UPDATE_RECORD, fileid, getEFPath(fileid),
                         recordNum, READ_RECORD_MODE_ABSOLUTE, data.length,
@@ -208,11 +169,11 @@ public abstract class IccFileHandler extends Handler implements IccConstants {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:10.112 -0400", hash_original_method = "E2C68C0F33001D18516AF5A16FEBCDCE", hash_generated_method = "FD93E82EB36ADD72AAEA5C60277BBFAA")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:11.327 -0400", hash_original_method = "E2C68C0F33001D18516AF5A16FEBCDCE", hash_generated_method = "CF96C154D0EB2AD86C040F8DFFFAE7FC")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public void updateEFTransparent(int fileid, byte[] data, Message onComplete) {
         dsTaint.addTaint(onComplete.dsTaint);
-        dsTaint.addTaint(data);
+        dsTaint.addTaint(data[0]);
         dsTaint.addTaint(fileid);
         phone.mCM.iccIO(COMMAND_UPDATE_BINARY, fileid, getEFPath(fileid),
                         0, 0, data.length,
@@ -224,12 +185,12 @@ public abstract class IccFileHandler extends Handler implements IccConstants {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:10.112 -0400", hash_original_method = "75655596118E033F36F4E4359D6ED264", hash_generated_method = "DE59B092609C2FD5D3F46136689C61C0")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:11.327 -0400", hash_original_method = "75655596118E033F36F4E4359D6ED264", hash_generated_method = "AD50DB7F2D3B8A52E37D00BD757084E9")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     private void sendResult(Message response, Object result, Throwable ex) {
         dsTaint.addTaint(response.dsTaint);
-        dsTaint.addTaint(result.dsTaint);
         dsTaint.addTaint(ex.dsTaint);
+        dsTaint.addTaint(result.dsTaint);
         AsyncResult.forMessage(response, result, ex);
         response.sendToTarget();
         // ---------- Original Method ----------
@@ -241,7 +202,7 @@ public abstract class IccFileHandler extends Handler implements IccConstants {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:10.114 -0400", hash_original_method = "7545CD0BE0B692221088F308787036AD", hash_generated_method = "BE405790F8EFA0C1D2C2A537DDC9DC3E")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:11.331 -0400", hash_original_method = "7545CD0BE0B692221088F308787036AD", hash_generated_method = "7E9DC5A0E91DDD2DA23649F240A3E1B0")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public void handleMessage(Message msg) {
         dsTaint.addTaint(msg.dsTaint);
@@ -490,7 +451,6 @@ public abstract class IccFileHandler extends Handler implements IccConstants {
             } //End block
             {
                 lc.results.add(result.payload);
-                lc.recordNum++;
                 {
                     sendResult(response, lc.results, null);
                 } //End block
@@ -543,10 +503,9 @@ public abstract class IccFileHandler extends Handler implements IccConstants {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:10.114 -0400", hash_original_method = "186CFCBD54A740D0E08382313B3D28EB", hash_generated_method = "331A33AA729521829F63BA685DDF48C2")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:11.332 -0400", hash_original_method = "186CFCBD54A740D0E08382313B3D28EB", hash_generated_method = "9BEE016EED3CD8DBA2506F1A91FEBA45")
     @DSModeled(DSC.SAFE)
     protected String getCommonIccEFPath(int efid) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
         dsTaint.addTaint(efid);
         return dsTaint.getTaintString();
         // ---------- Original Method ----------
@@ -585,7 +544,7 @@ public abstract class IccFileHandler extends Handler implements IccConstants {
         Message onLoaded;
         ArrayList<byte[]> results;
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:10.114 -0400", hash_original_method = "51FF1105D833FA23AFEA102913139717", hash_generated_method = "41622D33F6ED74DBF105AD7FA6D6C3A5")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:11.332 -0400", hash_original_method = "51FF1105D833FA23AFEA102913139717", hash_generated_method = "CABBD6AB490E7FCA7C8CC1C20DBD9DF9")
         @DSModeled(DSC.SAFE)
          LoadLinearFixedContext(int efid, int recordNum, Message onLoaded) {
             dsTaint.addTaint(recordNum);
@@ -600,7 +559,7 @@ public abstract class IccFileHandler extends Handler implements IccConstants {
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:10.114 -0400", hash_original_method = "D730261F991D6C5434BBC408762FB0A8", hash_generated_method = "21ED4ABC9C157CEC315ADC3E18BD4060")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:11.333 -0400", hash_original_method = "D730261F991D6C5434BBC408762FB0A8", hash_generated_method = "A32B704011772A18B8469E43F72261F9")
         @DSModeled(DSC.SAFE)
          LoadLinearFixedContext(int efid, Message onLoaded) {
             dsTaint.addTaint(onLoaded.dsTaint);
@@ -619,6 +578,43 @@ public abstract class IccFileHandler extends Handler implements IccConstants {
 
 
     
+    static protected final int COMMAND_READ_BINARY = 0xb0;
+    static protected final int COMMAND_UPDATE_BINARY = 0xd6;
+    static protected final int COMMAND_READ_RECORD = 0xb2;
+    static protected final int COMMAND_UPDATE_RECORD = 0xdc;
+    static protected final int COMMAND_SEEK = 0xa2;
+    static protected final int COMMAND_GET_RESPONSE = 0xc0;
+    static protected final int READ_RECORD_MODE_ABSOLUTE = 4;
+    static protected final int EF_TYPE_TRANSPARENT = 0;
+    static protected final int EF_TYPE_LINEAR_FIXED = 1;
+    static protected final int EF_TYPE_CYCLIC = 3;
+    static protected final int TYPE_RFU = 0;
+    static protected final int TYPE_MF  = 1;
+    static protected final int TYPE_DF  = 2;
+    static protected final int TYPE_EF  = 4;
+    static protected final int GET_RESPONSE_EF_SIZE_BYTES = 15;
+    static protected final int GET_RESPONSE_EF_IMG_SIZE_BYTES = 10;
+    static protected final int RESPONSE_DATA_RFU_1 = 0;
+    static protected final int RESPONSE_DATA_RFU_2 = 1;
+    static protected final int RESPONSE_DATA_FILE_SIZE_1 = 2;
+    static protected final int RESPONSE_DATA_FILE_SIZE_2 = 3;
+    static protected final int RESPONSE_DATA_FILE_ID_1 = 4;
+    static protected final int RESPONSE_DATA_FILE_ID_2 = 5;
+    static protected final int RESPONSE_DATA_FILE_TYPE = 6;
+    static protected final int RESPONSE_DATA_RFU_3 = 7;
+    static protected final int RESPONSE_DATA_ACCESS_CONDITION_1 = 8;
+    static protected final int RESPONSE_DATA_ACCESS_CONDITION_2 = 9;
+    static protected final int RESPONSE_DATA_ACCESS_CONDITION_3 = 10;
+    static protected final int RESPONSE_DATA_FILE_STATUS = 11;
+    static protected final int RESPONSE_DATA_LENGTH = 12;
+    static protected final int RESPONSE_DATA_STRUCTURE = 13;
+    static protected final int RESPONSE_DATA_RECORD_LENGTH = 14;
+    static protected final int EVENT_GET_BINARY_SIZE_DONE = 4;
+    static protected final int EVENT_READ_BINARY_DONE = 5;
+    static protected final int EVENT_GET_RECORD_SIZE_DONE = 6;
+    static protected final int EVENT_READ_RECORD_DONE = 7;
+    static protected final int EVENT_GET_EF_LINEAR_RECORD_SIZE_DONE = 8;
+    static protected final int EVENT_READ_IMG_DONE = 9;
+    static protected final int EVENT_READ_ICON_DONE = 10;
 }
-
 

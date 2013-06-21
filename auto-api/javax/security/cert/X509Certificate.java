@@ -3,10 +3,10 @@ package javax.security.cert;
 // Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
+import droidsafe.runtime.*;
 
-// import Iterator to deal with enhanced for loop translation
+// needed for enhanced for control translations
 import java.util.Iterator;
-
 import java.io.ByteArrayInputStream;
 import java.io.InputStream;
 import java.lang.reflect.Constructor;
@@ -22,17 +22,15 @@ import java.security.cert.CertificateFactory;
 import java.util.Date;
 
 public abstract class X509Certificate extends Certificate {
-    private static Constructor constructor;
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:15.509 -0400", hash_original_method = "0337B060243DB2E8E059CE304C023100", hash_generated_method = "460B224B2237B305BCFCD2A5573D70E4")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:36.224 -0400", hash_original_method = "0337B060243DB2E8E059CE304C023100", hash_generated_method = "9BA920E90C5C7EE22A37FD86BC262ED2")
     @DSModeled(DSC.SAFE)
     public X509Certificate() {
         // ---------- Original Method ----------
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:15.510 -0400", hash_original_method = "87F1229CF520DB9BF87CB67582242D96", hash_generated_method = "B3DF29D7D73306426D18F71AD1526C77")
-    public static final X509Certificate getInstance(InputStream inStream) throws CertificateException {
+        public static final X509Certificate getInstance(InputStream inStream) throws CertificateException {
         if (inStream == null) {
             throw new CertificateException("inStream == null");
         }
@@ -137,8 +135,7 @@ public abstract class X509Certificate extends Certificate {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:15.510 -0400", hash_original_method = "4740B2B56500AAF60D83C231AF13C259", hash_generated_method = "0C866782C071AAF4B318273EC6BE3C9F")
-    public static final X509Certificate getInstance(byte[] certData) throws CertificateException {
+        public static final X509Certificate getInstance(byte[] certData) throws CertificateException {
         if (certData == null) {
             throw new CertificateException("certData == null");
         }
@@ -182,6 +179,7 @@ public abstract class X509Certificate extends Certificate {
     public abstract byte[] getSigAlgParams();
 
     
+    private static Constructor constructor;
     static {
         try {
             String classname = Security.getProperty("cert.provider.x509v1");
@@ -192,5 +190,4 @@ public abstract class X509Certificate extends Certificate {
     }
     
 }
-
 

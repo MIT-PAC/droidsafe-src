@@ -3,17 +3,23 @@ package android.graphics;
 // Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
+import droidsafe.runtime.*;
 
-// import Iterator to deal with enhanced for loop translation
+// needed for enhanced for control translations
 import java.util.Iterator;
-
 
 public class ColorFilter {
     int native_instance;
     public int nativeColorFilter;
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:01.020 -0400", hash_original_method = "4AD2A6CCCDD358BAD652AE03056C36C3", hash_generated_method = "2A8FD0AB7638C4E3F5432790ECFF4DA8")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:47.230 -0400", hash_original_method = "6AB6F7F41EBFAB1EA211B7B3B6070EBE", hash_generated_method = "6AB6F7F41EBFAB1EA211B7B3B6070EBE")
+        public ColorFilter ()
+    {
+    }
+
+
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:47.230 -0400", hash_original_method = "4AD2A6CCCDD358BAD652AE03056C36C3", hash_generated_method = "705C0CD94FF3798AD8571A1588FCA6C7")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     protected void finalize() throws Throwable {
         try 
         {
@@ -32,12 +38,9 @@ public class ColorFilter {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:01.020 -0400", hash_original_method = "4AA054A6DE4B48C0BA2DEB83EF675B58", hash_generated_method = "AB75C3B53FF33D30AA243D76D3A25DA9")
-    private static void finalizer(int native_instance, int nativeColorFilter) {
-        //DSFIXME:  CODE0012: Native static method requires manual modeling
+        private static void finalizer(int native_instance, int nativeColorFilter) {
     }
 
     
 }
-
 

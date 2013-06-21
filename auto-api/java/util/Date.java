@@ -3,10 +3,10 @@ package java.util;
 // Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
+import droidsafe.runtime.*;
 
-// import Iterator to deal with enhanced for loop translation
+// needed for enhanced for control translations
 import java.util.Iterator;
-
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
@@ -17,11 +17,9 @@ import java.text.SimpleDateFormat;
 import libcore.icu.LocaleData;
 
 public class Date implements Serializable, Cloneable, Comparable<Date> {
-    private static final long serialVersionUID = 7523967970034938905L;
-    private static int creationYear = new Date().getYear();
     private transient long milliseconds;
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:14.124 -0400", hash_original_method = "117F9B64DCE96B425DE39D6FF0E7C956", hash_generated_method = "3084B38B14C82536717A9F355D0FF3F9")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:31.834 -0400", hash_original_method = "117F9B64DCE96B425DE39D6FF0E7C956", hash_generated_method = "B532C1831EBB14D72EFD726653EE6196")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public Date() {
         this(System.currentTimeMillis());
@@ -29,7 +27,7 @@ public class Date implements Serializable, Cloneable, Comparable<Date> {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:14.124 -0400", hash_original_method = "1DCF8B1AF6198BC90A64E56405CA39AF", hash_generated_method = "F53DD0916478BF07A77BBA9BD47656F1")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:31.835 -0400", hash_original_method = "1DCF8B1AF6198BC90A64E56405CA39AF", hash_generated_method = "351C1951BAB288B6B235C61A40D4DE91")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     @Deprecated
     public Date(int year, int month, int day) {
@@ -47,15 +45,15 @@ public class Date implements Serializable, Cloneable, Comparable<Date> {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:14.124 -0400", hash_original_method = "426C20A19A7753D3CB1FAC13BA7CC9BA", hash_generated_method = "2B5B748BC52C97AA4C57A447F70E3C93")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:31.835 -0400", hash_original_method = "426C20A19A7753D3CB1FAC13BA7CC9BA", hash_generated_method = "4FC87E5A70EA8A06C4D32D77AD215A9B")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     @Deprecated
     public Date(int year, int month, int day, int hour, int minute) {
         dsTaint.addTaint(minute);
         dsTaint.addTaint(month);
         dsTaint.addTaint(year);
-        dsTaint.addTaint(day);
         dsTaint.addTaint(hour);
+        dsTaint.addTaint(day);
         GregorianCalendar cal;
         cal = new GregorianCalendar(false);
         cal.set(1900 + year, month, day, hour, minute);
@@ -67,7 +65,7 @@ public class Date implements Serializable, Cloneable, Comparable<Date> {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:14.124 -0400", hash_original_method = "139F1B989333E9F68B465E1B19165668", hash_generated_method = "41011801AE29AACDFA08EA71DD7E1DEE")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:31.835 -0400", hash_original_method = "139F1B989333E9F68B465E1B19165668", hash_generated_method = "660A1F4AD56F107D03A10E715DE4BD1E")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     @Deprecated
     public Date(int year, int month, int day, int hour, int minute, int second) {
@@ -75,8 +73,8 @@ public class Date implements Serializable, Cloneable, Comparable<Date> {
         dsTaint.addTaint(second);
         dsTaint.addTaint(month);
         dsTaint.addTaint(year);
-        dsTaint.addTaint(day);
         dsTaint.addTaint(hour);
+        dsTaint.addTaint(day);
         GregorianCalendar cal;
         cal = new GregorianCalendar(false);
         cal.set(1900 + year, month, day, hour, minute, second);
@@ -88,7 +86,7 @@ public class Date implements Serializable, Cloneable, Comparable<Date> {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:14.124 -0400", hash_original_method = "F91B8E0C111622A18C17EB4FC5AA472B", hash_generated_method = "F7BBB419B4B7AF6921247A5404C925DE")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:31.835 -0400", hash_original_method = "F91B8E0C111622A18C17EB4FC5AA472B", hash_generated_method = "AA54BCAF60B8121A267EA6F812EED924")
     @DSModeled(DSC.SAFE)
     public Date(long milliseconds) {
         dsTaint.addTaint(milliseconds);
@@ -97,7 +95,7 @@ public class Date implements Serializable, Cloneable, Comparable<Date> {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:14.124 -0400", hash_original_method = "2B1036AFFF9E6DD3B4220E3E27A88A34", hash_generated_method = "E770BA055C9886863647D3BB65088457")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:31.836 -0400", hash_original_method = "2B1036AFFF9E6DD3B4220E3E27A88A34", hash_generated_method = "84E80D589709C76E5367E3838A24D987")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     @Deprecated
     public Date(String string) {
@@ -108,7 +106,7 @@ public class Date implements Serializable, Cloneable, Comparable<Date> {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:14.124 -0400", hash_original_method = "A5A1DDC35C23D543E612D23967A596DA", hash_generated_method = "C5358179C723557143A8FD40EBC81D08")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:31.836 -0400", hash_original_method = "A5A1DDC35C23D543E612D23967A596DA", hash_generated_method = "4D57B35FD3EDB674FA7534BA6F1D26DF")
     @DSModeled(DSC.SAFE)
     public boolean after(Date date) {
         dsTaint.addTaint(date.dsTaint);
@@ -118,7 +116,7 @@ public class Date implements Serializable, Cloneable, Comparable<Date> {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:14.124 -0400", hash_original_method = "EB21B83A31DD3DBD1842C230376F433E", hash_generated_method = "D5D0046D7F8447D2CBA6FAD59F2575E0")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:31.836 -0400", hash_original_method = "EB21B83A31DD3DBD1842C230376F433E", hash_generated_method = "4AED47E74A23F41256387E227C220353")
     @DSModeled(DSC.SAFE)
     public boolean before(Date date) {
         dsTaint.addTaint(date.dsTaint);
@@ -128,17 +126,17 @@ public class Date implements Serializable, Cloneable, Comparable<Date> {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:14.124 -0400", hash_original_method = "0B6FE6D01B20019581445CB40F5DED3F", hash_generated_method = "B6A013511AE4BC74A141B1D846BDC7FB")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:31.836 -0400", hash_original_method = "0B6FE6D01B20019581445CB40F5DED3F", hash_generated_method = "ED3264871F70A85F4DE73B7EA0F8C7BB")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     @Override
     public Object clone() {
         try 
         {
-            Object varDEB570B566DA7549E2F197D0AFA5A2B6_1055853677 = (super.clone());
+            Object varDEB570B566DA7549E2F197D0AFA5A2B6_901638063 = (super.clone());
         } //End block
         catch (CloneNotSupportedException e)
         {
-            throw new AssertionError(e);
+            if (DroidSafeAndroidRuntime.control) throw new AssertionError(e);
         } //End block
         return (Object)dsTaint.getTaint();
         // ---------- Original Method ----------
@@ -150,7 +148,7 @@ public class Date implements Serializable, Cloneable, Comparable<Date> {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:14.124 -0400", hash_original_method = "7C9742DC24BA8DF560999557E5DD5087", hash_generated_method = "A8095D35A4020C8E501551CDB3773C36")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:31.837 -0400", hash_original_method = "7C9742DC24BA8DF560999557E5DD5087", hash_generated_method = "8B8603800A4BBB0BDD74BDA5AFF90DA9")
     @DSModeled(DSC.SAFE)
     public int compareTo(Date date) {
         dsTaint.addTaint(date.dsTaint);
@@ -166,11 +164,13 @@ public class Date implements Serializable, Cloneable, Comparable<Date> {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:14.125 -0400", hash_original_method = "DDDF9262D80550B9DB77ACA0997BD3D6", hash_generated_method = "EB6B0A6D6393E5933F5C6786E21EC54D")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:31.837 -0400", hash_original_method = "DDDF9262D80550B9DB77ACA0997BD3D6", hash_generated_method = "BC34E16DC250AE697AAE07FEDF58383A")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     @Override
     public boolean equals(Object object) {
         dsTaint.addTaint(object.dsTaint);
+        boolean varEAE97717131044CA6F192EFDC5FF5D60_119351363 = ((object == this) || (object instanceof Date)
+                && (milliseconds == ((Date) object).milliseconds));
         return dsTaint.getTaintBoolean();
         // ---------- Original Method ----------
         //return (object == this) || (object instanceof Date)
@@ -178,73 +178,73 @@ public class Date implements Serializable, Cloneable, Comparable<Date> {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:14.125 -0400", hash_original_method = "9CDBB71B4B3C803B1AA8EE69EFD3E0ED", hash_generated_method = "997BAA5B45E23A8F5289B114E2EFB2E9")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:31.837 -0400", hash_original_method = "9CDBB71B4B3C803B1AA8EE69EFD3E0ED", hash_generated_method = "F80119795C8DC802C7AF2E3C1AE834C5")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     @Deprecated
     public int getDate() {
-        int varC0A714720A6D4DAC31FEF058D8440CD7_1233875961 = (new GregorianCalendar(milliseconds).get(Calendar.DATE));
+        int varC0A714720A6D4DAC31FEF058D8440CD7_1003741867 = (new GregorianCalendar(milliseconds).get(Calendar.DATE));
         return dsTaint.getTaintInt();
         // ---------- Original Method ----------
         //return new GregorianCalendar(milliseconds).get(Calendar.DATE);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:14.125 -0400", hash_original_method = "A7B9A9C37FFBE4D61CB1113163F9DEB3", hash_generated_method = "D136881B54CECE8BB3E9D0F0F1706DE8")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:31.837 -0400", hash_original_method = "A7B9A9C37FFBE4D61CB1113163F9DEB3", hash_generated_method = "AE76E7022F5D351B7CC26FE7BEF4EE47")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     @Deprecated
     public int getDay() {
-        int var3FE3B012F56C52737C59335A2FCB89A8_1569033890 = (new GregorianCalendar(milliseconds).get(Calendar.DAY_OF_WEEK) - 1);
+        int var3FE3B012F56C52737C59335A2FCB89A8_792398255 = (new GregorianCalendar(milliseconds).get(Calendar.DAY_OF_WEEK) - 1);
         return dsTaint.getTaintInt();
         // ---------- Original Method ----------
         //return new GregorianCalendar(milliseconds).get(Calendar.DAY_OF_WEEK) - 1;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:14.125 -0400", hash_original_method = "E9FAB79941832FB5BB28A56A75132611", hash_generated_method = "777C278A227885FB3D23535DAAD41566")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:31.837 -0400", hash_original_method = "E9FAB79941832FB5BB28A56A75132611", hash_generated_method = "2265672E7F4F045B34CEB2C957CEE491")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     @Deprecated
     public int getHours() {
-        int var4CFAA335C0802D591C180C590651DB9C_1035496958 = (new GregorianCalendar(milliseconds).get(Calendar.HOUR_OF_DAY));
+        int var4CFAA335C0802D591C180C590651DB9C_282781412 = (new GregorianCalendar(milliseconds).get(Calendar.HOUR_OF_DAY));
         return dsTaint.getTaintInt();
         // ---------- Original Method ----------
         //return new GregorianCalendar(milliseconds).get(Calendar.HOUR_OF_DAY);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:14.125 -0400", hash_original_method = "905F61D3BDD6A004D6695A8C4C0A588F", hash_generated_method = "7E655A9E97B8A764DB7C1412AE462165")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:31.838 -0400", hash_original_method = "905F61D3BDD6A004D6695A8C4C0A588F", hash_generated_method = "CE045FB4B9F95092997EAE43B33B923A")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     @Deprecated
     public int getMinutes() {
-        int varB9975022E7FEA5A13782580C91D0E1A8_2067509215 = (new GregorianCalendar(milliseconds).get(Calendar.MINUTE));
+        int varB9975022E7FEA5A13782580C91D0E1A8_278687964 = (new GregorianCalendar(milliseconds).get(Calendar.MINUTE));
         return dsTaint.getTaintInt();
         // ---------- Original Method ----------
         //return new GregorianCalendar(milliseconds).get(Calendar.MINUTE);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:14.125 -0400", hash_original_method = "62BF86AE189F2A0680B405E29E252A59", hash_generated_method = "3E504D0B1515AFAECA4FE1DA596CB4A9")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:31.838 -0400", hash_original_method = "62BF86AE189F2A0680B405E29E252A59", hash_generated_method = "61B698F04105A89975BBC695B0674BBB")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     @Deprecated
     public int getMonth() {
-        int varBFC3339A9B04E6CFC333A192D60231AA_485400060 = (new GregorianCalendar(milliseconds).get(Calendar.MONTH));
+        int varBFC3339A9B04E6CFC333A192D60231AA_1660344388 = (new GregorianCalendar(milliseconds).get(Calendar.MONTH));
         return dsTaint.getTaintInt();
         // ---------- Original Method ----------
         //return new GregorianCalendar(milliseconds).get(Calendar.MONTH);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:14.125 -0400", hash_original_method = "21461173A59BCEF943A6FBABC454A724", hash_generated_method = "ED24F5D2A952EA3267C253D0B8F88F3E")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:31.838 -0400", hash_original_method = "21461173A59BCEF943A6FBABC454A724", hash_generated_method = "3527AD36CB06EB85FC53D9A46A37E34F")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     @Deprecated
     public int getSeconds() {
-        int varA854ACC5DFBE36B1C5F437CD467A3D27_2069144334 = (new GregorianCalendar(milliseconds).get(Calendar.SECOND));
+        int varA854ACC5DFBE36B1C5F437CD467A3D27_114336966 = (new GregorianCalendar(milliseconds).get(Calendar.SECOND));
         return dsTaint.getTaintInt();
         // ---------- Original Method ----------
         //return new GregorianCalendar(milliseconds).get(Calendar.SECOND);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:14.125 -0400", hash_original_method = "6634404A1A66BE1A7302C8A8E427A289", hash_generated_method = "E4F256366403581143FA9BD487C11D08")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:31.838 -0400", hash_original_method = "6634404A1A66BE1A7302C8A8E427A289", hash_generated_method = "9DEDFE93BF5EAD6558AFD32C00E61483")
     @DSModeled(DSC.SAFE)
     public long getTime() {
         return dsTaint.getTaintLong();
@@ -253,13 +253,13 @@ public class Date implements Serializable, Cloneable, Comparable<Date> {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:14.125 -0400", hash_original_method = "1B1108BADA7A1EB96631D5AF2C5C5E87", hash_generated_method = "E212DDF6691F4BA7D156159551E81015")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:31.838 -0400", hash_original_method = "1B1108BADA7A1EB96631D5AF2C5C5E87", hash_generated_method = "477DA0699E4386C280C98799C83F1BD7")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     @Deprecated
     public int getTimezoneOffset() {
         GregorianCalendar cal;
         cal = new GregorianCalendar(milliseconds);
-        int varFFFB7142DA303EFC159034F99D5D2BAC_1247321229 = (-(cal.get(Calendar.ZONE_OFFSET) + cal.get(Calendar.DST_OFFSET)) / 60000);
+        int varFFFB7142DA303EFC159034F99D5D2BAC_1667094521 = (-(cal.get(Calendar.ZONE_OFFSET) + cal.get(Calendar.DST_OFFSET)) / 60000);
         return dsTaint.getTaintInt();
         // ---------- Original Method ----------
         //GregorianCalendar cal = new GregorianCalendar(milliseconds);
@@ -267,18 +267,18 @@ public class Date implements Serializable, Cloneable, Comparable<Date> {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:14.125 -0400", hash_original_method = "C799A54F09693A95BB69288113BB6509", hash_generated_method = "9DF69D566B8F08851B15EF78C95DF679")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:31.839 -0400", hash_original_method = "C799A54F09693A95BB69288113BB6509", hash_generated_method = "24EB75D4ABCD45FAE9F67B527ED6FFA7")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     @Deprecated
     public int getYear() {
-        int var8A0F590C032321D56632D8913269C9D8_1856126879 = (new GregorianCalendar(milliseconds).get(Calendar.YEAR) - 1900);
+        int var8A0F590C032321D56632D8913269C9D8_1398960120 = (new GregorianCalendar(milliseconds).get(Calendar.YEAR) - 1900);
         return dsTaint.getTaintInt();
         // ---------- Original Method ----------
         //return new GregorianCalendar(milliseconds).get(Calendar.YEAR) - 1900;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:14.125 -0400", hash_original_method = "B128FED5B5AAAF883404F36E34AD6524", hash_generated_method = "9D745894EA43B0A6E366E694CEED57E3")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:31.839 -0400", hash_original_method = "B128FED5B5AAAF883404F36E34AD6524", hash_generated_method = "D9B5260338760AA0D29231ECB6F6FBD2")
     @DSModeled(DSC.SAFE)
     @Override
     public int hashCode() {
@@ -288,8 +288,7 @@ public class Date implements Serializable, Cloneable, Comparable<Date> {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:14.125 -0400", hash_original_method = "000F0F69BA8739697FCA4FE0C538316B", hash_generated_method = "4CAA8F423C86610AB9A4DC527B436221")
-    private static int parse(String string, String[] array) {
+        private static int parse(String string, String[] array) {
         for (int i = 0, alength = array.length, slength = string.length(); i < alength; i++) {
             if (string.regionMatches(true, 0, array[i], 0, slength)) {
                 return i;
@@ -299,8 +298,7 @@ public class Date implements Serializable, Cloneable, Comparable<Date> {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:14.125 -0400", hash_original_method = "26CEAF17592ACE33BD9CA17B808F7A9D", hash_generated_method = "535233CC874036DDECD6C99B0C4734BE")
-    @Deprecated
+        @Deprecated
     public static long parse(String string) {
         if (string == null) {
             throw new IllegalArgumentException("The string argument is null");
@@ -478,7 +476,7 @@ public class Date implements Serializable, Cloneable, Comparable<Date> {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:14.126 -0400", hash_original_method = "CA2D09B2D9B2F9BDCD2321E1B3353343", hash_generated_method = "4DB2ED6558A6BF2FB813E93191E14E6D")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:31.840 -0400", hash_original_method = "CA2D09B2D9B2F9BDCD2321E1B3353343", hash_generated_method = "5EAC46126672EB7DC2F50C59FAB5A801")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     @Deprecated
     public void setDate(int day) {
@@ -494,7 +492,7 @@ public class Date implements Serializable, Cloneable, Comparable<Date> {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:14.126 -0400", hash_original_method = "DAB8B4072C80F91D1F54942852D0B029", hash_generated_method = "C410254A4499750E5552E033C5C84826")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:31.840 -0400", hash_original_method = "DAB8B4072C80F91D1F54942852D0B029", hash_generated_method = "00CA4B497FA44E980736476E47A19764")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     @Deprecated
     public void setHours(int hour) {
@@ -510,7 +508,7 @@ public class Date implements Serializable, Cloneable, Comparable<Date> {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:14.126 -0400", hash_original_method = "9DC7826FE54BE20D0703E6C2CC9AB71D", hash_generated_method = "0556486D71A6601FFE4686A0B839BB3E")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:31.840 -0400", hash_original_method = "9DC7826FE54BE20D0703E6C2CC9AB71D", hash_generated_method = "01FD8D7E2A819D3F3EC53F0993D758BD")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     @Deprecated
     public void setMinutes(int minute) {
@@ -526,7 +524,7 @@ public class Date implements Serializable, Cloneable, Comparable<Date> {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:14.126 -0400", hash_original_method = "CBC4CDF52C0128D6B57913B17A16C753", hash_generated_method = "DEB566DCDC0DA8C55DAC5D97DB9032A5")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:31.840 -0400", hash_original_method = "CBC4CDF52C0128D6B57913B17A16C753", hash_generated_method = "6972BE94B3C2622D66990AFBEE8C4EFA")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     @Deprecated
     public void setMonth(int month) {
@@ -542,7 +540,7 @@ public class Date implements Serializable, Cloneable, Comparable<Date> {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:14.126 -0400", hash_original_method = "2FB8CB70BDB70CDBCF22A1F179F9FAD0", hash_generated_method = "669113BCE2723B496DBB9DBAB03BFA42")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:31.841 -0400", hash_original_method = "2FB8CB70BDB70CDBCF22A1F179F9FAD0", hash_generated_method = "C072E51C51B445D008B12042340CD0FA")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     @Deprecated
     public void setSeconds(int second) {
@@ -558,7 +556,7 @@ public class Date implements Serializable, Cloneable, Comparable<Date> {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:14.126 -0400", hash_original_method = "9E6A699B7F6421DBF4934C3ED6E82161", hash_generated_method = "F1C1895A752D427B42DBF8AD4ACCC0E5")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:31.841 -0400", hash_original_method = "9E6A699B7F6421DBF4934C3ED6E82161", hash_generated_method = "CE1B0CC2896111A2EC89F6D9AF5DC5ED")
     @DSModeled(DSC.SAFE)
     public void setTime(long milliseconds) {
         dsTaint.addTaint(milliseconds);
@@ -567,7 +565,7 @@ public class Date implements Serializable, Cloneable, Comparable<Date> {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:14.126 -0400", hash_original_method = "6618142CAD2C334ADC07B7799C053111", hash_generated_method = "FD5CD344AAE8578E19C42E4EAF3D993B")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:31.841 -0400", hash_original_method = "6618142CAD2C334ADC07B7799C053111", hash_generated_method = "67B0A452CBA292B5875B207BDC8E9DE8")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     @Deprecated
     public void setYear(int year) {
@@ -583,7 +581,7 @@ public class Date implements Serializable, Cloneable, Comparable<Date> {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:14.126 -0400", hash_original_method = "3D40A4C7B327D97106C4C4EC9B9A341F", hash_generated_method = "446BB43B7AE78CEA9A8D3203B1C52DFF")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:31.841 -0400", hash_original_method = "3D40A4C7B327D97106C4C4EC9B9A341F", hash_generated_method = "B62847386D5AF5C5CC64825987BBA460")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     @Deprecated
     public String toGMTString() {
@@ -595,7 +593,7 @@ public class Date implements Serializable, Cloneable, Comparable<Date> {
         GregorianCalendar gc;
         gc = new GregorianCalendar(gmtZone);
         gc.setTimeInMillis(milliseconds);
-        String var80FD1B3DD621A9ECFAAF22472D76FBF2_1115839277 = (sdf.format(this));
+        String var80FD1B3DD621A9ECFAAF22472D76FBF2_1637814957 = (sdf.format(this));
         return dsTaint.getTaintString();
         // ---------- Original Method ----------
         //SimpleDateFormat sdf = new SimpleDateFormat("d MMM y HH:mm:ss 'GMT'", Locale.US);
@@ -607,18 +605,18 @@ public class Date implements Serializable, Cloneable, Comparable<Date> {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:14.126 -0400", hash_original_method = "D0CA357369B8BFBAFFC49AE023576C24", hash_generated_method = "020915D6AED2D2A08C06FAA58F3EC1AB")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:31.842 -0400", hash_original_method = "D0CA357369B8BFBAFFC49AE023576C24", hash_generated_method = "B769EF62C581E0FD21C3D6CCBB9580BB")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     @Deprecated
     public String toLocaleString() {
-        String varCD10F257CC4627286D81728D32AE9C08_1195046034 = (DateFormat.getDateTimeInstance().format(this));
+        String varCD10F257CC4627286D81728D32AE9C08_1331879555 = (DateFormat.getDateTimeInstance().format(this));
         return dsTaint.getTaintString();
         // ---------- Original Method ----------
         //return DateFormat.getDateTimeInstance().format(this);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:14.126 -0400", hash_original_method = "6C5F0B4EE91530ACACAA7ACB374F6D90", hash_generated_method = "406027FFCF42CC5ED7CE67FA89233E3C")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:31.842 -0400", hash_original_method = "6C5F0B4EE91530ACACAA7ACB374F6D90", hash_generated_method = "200E9332730682D7A6CF67FE2EDAF7CB")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     @Override
     public String toString() {
@@ -645,15 +643,14 @@ public class Date implements Serializable, Cloneable, Comparable<Date> {
         result.append(tz.getDisplayName(tz.inDaylightTime(this), TimeZone.SHORT));
         result.append(' ');
         result.append(cal.get(Calendar.YEAR));
-        String varEA70154FDA28CC59402440C6317B57EF_806284476 = (result.toString());
+        String varEA70154FDA28CC59402440C6317B57EF_1627392851 = (result.toString());
         return dsTaint.getTaintString();
         // ---------- Original Method ----------
         // Original Method Too Long, Refer to Original Implementation
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:14.127 -0400", hash_original_method = "36BC9397BA7EB541FFE75F65C1FDFC91", hash_generated_method = "AED77C3BCF21E4A96669B0606306F259")
-    private static void appendTwoDigits(StringBuilder sb, int n) {
+        private static void appendTwoDigits(StringBuilder sb, int n) {
         if (n < 10) {
             sb.append('0');
         }
@@ -661,8 +658,7 @@ public class Date implements Serializable, Cloneable, Comparable<Date> {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:14.127 -0400", hash_original_method = "70F846D8FDB0E87F2FB9AE4E0EB18175", hash_generated_method = "9B05589635D862B5D833B705C4EEAAB3")
-    @Deprecated
+        @Deprecated
     public static long UTC(int year, int month, int day, int hour, int minute,
             int second) {
         GregorianCalendar cal = new GregorianCalendar(false);
@@ -672,8 +668,7 @@ public class Date implements Serializable, Cloneable, Comparable<Date> {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:14.127 -0400", hash_original_method = "AD2AD2E6D9D4EAA290D91166777B213B", hash_generated_method = "86E9BCCDB2DF1EDB770370F1C0989B3E")
-    private static int zone(String text) {
+        private static int zone(String text) {
         if (text.equals("EST")) {
             return -5;
         }
@@ -702,7 +697,7 @@ public class Date implements Serializable, Cloneable, Comparable<Date> {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:14.127 -0400", hash_original_method = "A8D1E2059FF037BF4B3478BBC82EA0DD", hash_generated_method = "22A1E21C8BE9CACCE173043E6D6319DF")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:31.843 -0400", hash_original_method = "A8D1E2059FF037BF4B3478BBC82EA0DD", hash_generated_method = "3DF3E4A65609F9FB9F2ECBC7B36EFB42")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     private void writeObject(ObjectOutputStream stream) throws IOException {
         dsTaint.addTaint(stream.dsTaint);
@@ -714,7 +709,7 @@ public class Date implements Serializable, Cloneable, Comparable<Date> {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:14.127 -0400", hash_original_method = "59F27179ED4F1C5D53DD2971937048C1", hash_generated_method = "F5958D093D5E56755ED0B9A12CCBA1A1")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:31.843 -0400", hash_original_method = "59F27179ED4F1C5D53DD2971937048C1", hash_generated_method = "63ABE1500BB356285BBF36FA25485AFF")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     private void readObject(ObjectInputStream stream) throws IOException,
             ClassNotFoundException {
@@ -727,6 +722,7 @@ public class Date implements Serializable, Cloneable, Comparable<Date> {
     }
 
     
+    private static final long serialVersionUID = 7523967970034938905L;
+    private static int creationYear = new Date().getYear();
 }
-
 

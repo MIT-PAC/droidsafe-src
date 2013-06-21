@@ -3,10 +3,10 @@ package android.database;
 // Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
+import droidsafe.runtime.*;
 
-// import Iterator to deal with enhanced for loop translation
+// needed for enhanced for control translations
 import java.util.Iterator;
-
 
 public interface IContentObserver extends android.os.IInterface
 {
@@ -89,4 +89,3 @@ static final int TRANSACTION_onChange = (android.os.IBinder.FIRST_CALL_TRANSACTI
 
 public void onChange(boolean selfUpdate) throws android.os.RemoteException;
 }
-

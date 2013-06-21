@@ -11,7 +11,7 @@ import java.util.Iterator;
 public final class Long extends Number implements Comparable<Long> {
     private long value;
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-18 16:15:13.853 -0400", hash_original_method = "F7421F28ECB11D742A45928A1DF88A80", hash_generated_method = "09817C490D514246AD6D2785438A6A00")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:25.845 -0400", hash_original_method = "F7421F28ECB11D742A45928A1DF88A80", hash_generated_method = "09817C490D514246AD6D2785438A6A00")
     @DSModeled(DSC.SAFE)
     public Long(long value) {
         dsTaint.addTaint(value);
@@ -20,7 +20,7 @@ public final class Long extends Number implements Comparable<Long> {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-18 16:15:13.863 -0400", hash_original_method = "FBD907393492057451D7BFE621A4E030", hash_generated_method = "0431A6B5B402F0EE9EEA6682D5907ADB")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:25.845 -0400", hash_original_method = "FBD907393492057451D7BFE621A4E030", hash_generated_method = "0431A6B5B402F0EE9EEA6682D5907ADB")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public Long(String string) throws NumberFormatException {
         this(parseLong(string));
@@ -29,7 +29,7 @@ public final class Long extends Number implements Comparable<Long> {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-18 16:15:13.875 -0400", hash_original_method = "6B61312FC318A12A6B19178CA8B54E86", hash_generated_method = "4F78E57EE61A27A10E7A632140A3DDA6")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:25.845 -0400", hash_original_method = "6B61312FC318A12A6B19178CA8B54E86", hash_generated_method = "4F78E57EE61A27A10E7A632140A3DDA6")
     @DSModeled(DSC.SAFE)
     @Override
     public byte byteValue() {
@@ -39,11 +39,11 @@ public final class Long extends Number implements Comparable<Long> {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-18 16:15:13.893 -0400", hash_original_method = "B49F758A210AD21F31F3B71259593715", hash_generated_method = "A5F405F51321310F147CBC1489D7EEDD")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:25.845 -0400", hash_original_method = "B49F758A210AD21F31F3B71259593715", hash_generated_method = "6228503A161DCF4976AA681D1AB7B7D9")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public int compareTo(Long object) {
         dsTaint.addTaint(object.dsTaint);
-        int varEB17148B4676BC6C35C2467C947D57DF_2031927653 = (compare(value, object.value));
+        int varEB17148B4676BC6C35C2467C947D57DF_1192324059 = (compare(value, object.value));
         return dsTaint.getTaintInt();
         // ---------- Original Method ----------
         //return compare(value, object.value);
@@ -99,7 +99,7 @@ public final class Long extends Number implements Comparable<Long> {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-18 16:15:13.952 -0400", hash_original_method = "3D3B0AF18CC8081B7BB4A7DC662E1F07", hash_generated_method = "02C8EAF77A98DB2CD3BC8AC0566EBE67")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:25.846 -0400", hash_original_method = "3D3B0AF18CC8081B7BB4A7DC662E1F07", hash_generated_method = "02C8EAF77A98DB2CD3BC8AC0566EBE67")
     @DSModeled(DSC.SAFE)
     @Override
     public double doubleValue() {
@@ -109,7 +109,7 @@ public final class Long extends Number implements Comparable<Long> {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-18 16:15:13.965 -0400", hash_original_method = "9DAD4C26B4F70BDE1AF6A261529DF01A", hash_generated_method = "E242CEEA16A6A4918A189F621504B3C9")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:25.846 -0400", hash_original_method = "9DAD4C26B4F70BDE1AF6A261529DF01A", hash_generated_method = "E242CEEA16A6A4918A189F621504B3C9")
     @DSModeled(DSC.SAFE)
     @Override
     public boolean equals(Object o) {
@@ -120,7 +120,7 @@ public final class Long extends Number implements Comparable<Long> {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-18 16:15:13.975 -0400", hash_original_method = "9E2C0918A44EC11D2232D0B603F66A6B", hash_generated_method = "89D86731B5289C6353CA0DC29E484746")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:25.846 -0400", hash_original_method = "9E2C0918A44EC11D2232D0B603F66A6B", hash_generated_method = "89D86731B5289C6353CA0DC29E484746")
     @DSModeled(DSC.SAFE)
     @Override
     public float floatValue() {
@@ -178,7 +178,7 @@ public final class Long extends Number implements Comparable<Long> {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-18 16:15:14.034 -0400", hash_original_method = "7CEEFB1EC71C1E868FBC10557351E2DA", hash_generated_method = "085CB39A2C7F49431DD6BF9F7FF46952")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:25.847 -0400", hash_original_method = "7CEEFB1EC71C1E868FBC10557351E2DA", hash_generated_method = "085CB39A2C7F49431DD6BF9F7FF46952")
     @DSModeled(DSC.SAFE)
     @Override
     public int hashCode() {
@@ -188,7 +188,7 @@ public final class Long extends Number implements Comparable<Long> {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-18 16:15:14.050 -0400", hash_original_method = "138584002FB2DE9D0E5B5F8DAEDB3270", hash_generated_method = "7F343EC6551F993ABCCC87486B9C3CD6")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:25.847 -0400", hash_original_method = "138584002FB2DE9D0E5B5F8DAEDB3270", hash_generated_method = "7F343EC6551F993ABCCC87486B9C3CD6")
     @DSModeled(DSC.SAFE)
     @Override
     public int intValue() {
@@ -198,7 +198,7 @@ public final class Long extends Number implements Comparable<Long> {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-18 16:15:14.062 -0400", hash_original_method = "ABF4FE035C950AC910A646D4B85E3F35", hash_generated_method = "80C9E384C663D2D407424A79AF4BFC59")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:25.847 -0400", hash_original_method = "ABF4FE035C950AC910A646D4B85E3F35", hash_generated_method = "80C9E384C663D2D407424A79AF4BFC59")
     @DSModeled(DSC.SAFE)
     @Override
     public long longValue() {
@@ -259,7 +259,7 @@ public final class Long extends Number implements Comparable<Long> {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-18 16:15:14.117 -0400", hash_original_method = "8E8C16CBE89F9837B346C9544C9B6BCC", hash_generated_method = "41D347FA9B5B0AF32CD8FBD284185B0B")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:25.848 -0400", hash_original_method = "8E8C16CBE89F9837B346C9544C9B6BCC", hash_generated_method = "41D347FA9B5B0AF32CD8FBD284185B0B")
     @DSModeled(DSC.SAFE)
     @Override
     public short shortValue() {
@@ -284,11 +284,11 @@ public final class Long extends Number implements Comparable<Long> {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-18 16:15:14.148 -0400", hash_original_method = "6878CA43BE92FEF897301589A58FE568", hash_generated_method = "2A81A7CAB8ECE91C21DC4CABC2E4334E")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:25.848 -0400", hash_original_method = "6878CA43BE92FEF897301589A58FE568", hash_generated_method = "CA50D78B8433A922BA33EEB90EC9AF9B")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     @Override
     public String toString() {
-        String varBD7F3E2EE807B2A34047F3A9BB6671E5_671713120 = (Long.toString(value));
+        String varBD7F3E2EE807B2A34047F3A9BB6671E5_824797655 = (Long.toString(value));
         return dsTaint.getTaintString();
         // ---------- Original Method ----------
         //return Long.toString(value);

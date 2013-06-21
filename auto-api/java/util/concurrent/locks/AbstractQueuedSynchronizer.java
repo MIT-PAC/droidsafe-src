@@ -13,26 +13,18 @@ import java.util.concurrent.atomic.*;
 import sun.misc.Unsafe;
 
 public abstract class AbstractQueuedSynchronizer extends AbstractOwnableSynchronizer implements java.io.Serializable {
-    private static long serialVersionUID = 7373984972572414691L;
     private transient volatile Node head;
     private transient volatile Node tail;
     private volatile int state;
-    static long spinForTimeoutThreshold = 1000L;
-    private static Unsafe unsafe = UnsafeAccess.THE_ONE;
-    private static long stateOffset;
-    private static long headOffset;
-    private static long tailOffset;
-    private static long waitStatusOffset;
-    private static long nextOffset;
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-12 17:11:56.922 -0400", hash_original_method = "C7F1FA27B1E7517E25F1C7951B5E8CA8", hash_generated_method = "F9D57149049C0DDB18DA9A7AD5AFC9F5")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:35.150 -0400", hash_original_method = "C7F1FA27B1E7517E25F1C7951B5E8CA8", hash_generated_method = "D0F5CBC29675A9CABCA264BF6F7A7644")
     @DSModeled(DSC.SAFE)
     protected AbstractQueuedSynchronizer() {
         // ---------- Original Method ----------
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-12 17:11:56.930 -0400", hash_original_method = "15A8F8E5739EB2961628EAE8F68BF29F", hash_generated_method = "A5DA23FDF6A4D45AEB1F4357F344982A")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:35.151 -0400", hash_original_method = "15A8F8E5739EB2961628EAE8F68BF29F", hash_generated_method = "8E975A5B19E8C2C420B76156D3B7CEF5")
     @DSModeled(DSC.SAFE)
     protected final int getState() {
         return dsTaint.getTaintInt();
@@ -41,7 +33,7 @@ public abstract class AbstractQueuedSynchronizer extends AbstractOwnableSynchron
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-12 17:11:56.937 -0400", hash_original_method = "57BE013BA515294E586014B30A336C04", hash_generated_method = "817A5525512FDE16885B0F524B33CD01")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:35.151 -0400", hash_original_method = "57BE013BA515294E586014B30A336C04", hash_generated_method = "2088A6FE2517D6565BCB31C53CDBB963")
     @DSModeled(DSC.SAFE)
     protected final void setState(int newState) {
         dsTaint.addTaint(newState);
@@ -50,19 +42,19 @@ public abstract class AbstractQueuedSynchronizer extends AbstractOwnableSynchron
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-12 17:11:56.946 -0400", hash_original_method = "DF00243144DD556AB3E9A0ABE3AEC78F", hash_generated_method = "81A2D348D002335E696A63F2BDD664D1")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:35.151 -0400", hash_original_method = "DF00243144DD556AB3E9A0ABE3AEC78F", hash_generated_method = "1C0D7EA50FAFC20EA9B794D78E7D6404")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     protected final boolean compareAndSetState(int expect, int update) {
-        dsTaint.addTaint(expect);
         dsTaint.addTaint(update);
-        boolean var281C41540058F29F0DB0A762C52DDE13_2143748727 = (unsafe.compareAndSwapInt(this, stateOffset, expect, update));
+        dsTaint.addTaint(expect);
+        boolean var281C41540058F29F0DB0A762C52DDE13_149583434 = (unsafe.compareAndSwapInt(this, stateOffset, expect, update));
         return dsTaint.getTaintBoolean();
         // ---------- Original Method ----------
         //return unsafe.compareAndSwapInt(this, stateOffset, expect, update);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-12 17:11:56.968 -0400", hash_original_method = "D115C79C5FCCB59668763118EBD8CBBB", hash_generated_method = "E33E66F23DC3CFA7AFC7991297149CB3")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:35.152 -0400", hash_original_method = "D115C79C5FCCB59668763118EBD8CBBB", hash_generated_method = "D6210A079E51A952E87900069751A036")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     private Node enq(final Node node) {
         dsTaint.addTaint(node.dsTaint);
@@ -71,14 +63,14 @@ public abstract class AbstractQueuedSynchronizer extends AbstractOwnableSynchron
             t = tail;
             {
                 {
-                    boolean varC2BD7D899FDAEA316177871081826EFD_884214811 = (compareAndSetHead(new Node()));
+                    boolean varC2BD7D899FDAEA316177871081826EFD_498208228 = (compareAndSetHead(new Node()));
                     tail = head;
                 } //End collapsed parenthetic
             } //End block
             {
                 node.prev = t;
                 {
-                    boolean var30CFF97C04D4F21E508F35AC3CDBADC7_319553303 = (compareAndSetTail(t, node));
+                    boolean var30CFF97C04D4F21E508F35AC3CDBADC7_387052508 = (compareAndSetTail(t, node));
                     {
                         t.next = node;
                     } //End block
@@ -103,7 +95,7 @@ public abstract class AbstractQueuedSynchronizer extends AbstractOwnableSynchron
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-12 17:11:56.988 -0400", hash_original_method = "7269E5EC16B8883F661BF745CCC5E6A6", hash_generated_method = "0F11C13FDD505949D97DA84871257F9A")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:35.152 -0400", hash_original_method = "7269E5EC16B8883F661BF745CCC5E6A6", hash_generated_method = "2036A6E3A07EBD9FCEE7B81422D54D74")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     private Node addWaiter(Node mode) {
         dsTaint.addTaint(mode.dsTaint);
@@ -114,7 +106,7 @@ public abstract class AbstractQueuedSynchronizer extends AbstractOwnableSynchron
         {
             node.prev = pred;
             {
-                boolean varB759FEC06526555CC952C851C67B8004_1964367256 = (compareAndSetTail(pred, node));
+                boolean varB759FEC06526555CC952C851C67B8004_1786640531 = (compareAndSetTail(pred, node));
                 {
                     pred.next = node;
                 } //End block
@@ -137,7 +129,7 @@ public abstract class AbstractQueuedSynchronizer extends AbstractOwnableSynchron
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-12 17:11:57.003 -0400", hash_original_method = "51AEDFDDD323C78EE2EC4A6DE568B8D1", hash_generated_method = "17B45587EF08758B28F32C280CBCC8B2")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:35.153 -0400", hash_original_method = "51AEDFDDD323C78EE2EC4A6DE568B8D1", hash_generated_method = "5210379EAA462490775B5BC50BBECC7B")
     @DSModeled(DSC.SAFE)
     private void setHead(Node node) {
         dsTaint.addTaint(node.dsTaint);
@@ -150,8 +142,8 @@ public abstract class AbstractQueuedSynchronizer extends AbstractOwnableSynchron
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-12 17:11:57.027 -0400", hash_original_method = "F262A3A18BABECF7EC492736953EAF6E", hash_generated_method = "544F7F4175CCEFC33759365672A63EE0")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:35.153 -0400", hash_original_method = "F262A3A18BABECF7EC492736953EAF6E", hash_generated_method = "2AA34F4FFA5397F7EDAD627FC960FDCA")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     private void unparkSuccessor(Node node) {
         dsTaint.addTaint(node.dsTaint);
         int ws;
@@ -185,7 +177,7 @@ public abstract class AbstractQueuedSynchronizer extends AbstractOwnableSynchron
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-12 17:11:57.044 -0400", hash_original_method = "D8D55646997B45206CD2F0528B603753", hash_generated_method = "A47121A61DBAAF224496B1D53728B433")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:35.154 -0400", hash_original_method = "D8D55646997B45206CD2F0528B603753", hash_generated_method = "7E0547D1D5D8E2A671720D8BB11C2D0F")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     private void doReleaseShared() {
         {
@@ -196,12 +188,12 @@ public abstract class AbstractQueuedSynchronizer extends AbstractOwnableSynchron
                 ws = h.waitStatus;
                 {
                     {
-                        boolean varCC865867FC8DEDE4843F9E3D62245755_1491679293 = (!compareAndSetWaitStatus(h, Node.SIGNAL, 0));
+                        boolean varCC865867FC8DEDE4843F9E3D62245755_352388207 = (!compareAndSetWaitStatus(h, Node.SIGNAL, 0));
                     } //End collapsed parenthetic
                     unparkSuccessor(h);
                 } //End block
                 {
-                    boolean var658C7F41A73D231A5E38D15A1070790F_297070266 = (ws == 0 &&
+                    boolean var658C7F41A73D231A5E38D15A1070790F_562624164 = (ws == 0 &&
                          !compareAndSetWaitStatus(h, 0, Node.PROPAGATE));
                 } //End collapsed parenthetic
             } //End block
@@ -226,7 +218,7 @@ public abstract class AbstractQueuedSynchronizer extends AbstractOwnableSynchron
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-12 17:11:57.068 -0400", hash_original_method = "A2FB30DAE399AEFA487E20396027BD36", hash_generated_method = "EC06B533B5634F5A455EDA7ABF797E52")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:35.154 -0400", hash_original_method = "A2FB30DAE399AEFA487E20396027BD36", hash_generated_method = "631CC31784FA18F5F990A2F89A7E85AD")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     private void setHeadAndPropagate(Node node, int propagate) {
         dsTaint.addTaint(node.dsTaint);
@@ -238,7 +230,7 @@ public abstract class AbstractQueuedSynchronizer extends AbstractOwnableSynchron
             Node s;
             s = node.next;
             {
-                boolean varB6D0E63ACFCFA5DA33C33F91435930F9_1924528307 = (s == null || s.isShared());
+                boolean varB6D0E63ACFCFA5DA33C33F91435930F9_987651654 = (s == null || s.isShared());
                 doReleaseShared();
             } //End collapsed parenthetic
         } //End block
@@ -253,7 +245,7 @@ public abstract class AbstractQueuedSynchronizer extends AbstractOwnableSynchron
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-12 17:11:57.105 -0400", hash_original_method = "1CA41B58715410C4216B9DE6C43BB9D4", hash_generated_method = "A76218FCB97952487D3BC121A765B14E")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:35.155 -0400", hash_original_method = "1CA41B58715410C4216B9DE6C43BB9D4", hash_generated_method = "FFE02B8353688788BC3986FDD2A75F40")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     private void cancelAcquire(Node node) {
         dsTaint.addTaint(node.dsTaint);
@@ -265,14 +257,14 @@ public abstract class AbstractQueuedSynchronizer extends AbstractOwnableSynchron
         predNext = pred.next;
         node.waitStatus = Node.CANCELLED;
         {
-            boolean var9C67AE94C69ECBB4560E786F86E10C76_360995503 = (node == tail && compareAndSetTail(node, pred));
+            boolean var9C67AE94C69ECBB4560E786F86E10C76_912497678 = (node == tail && compareAndSetTail(node, pred));
             {
                 compareAndSetNext(pred, predNext, null);
             } //End block
             {
                 int ws;
                 {
-                    boolean var806CB84C61F87A678A0A252FCBFAAB06_1519867794 = (pred != head &&
+                    boolean var806CB84C61F87A678A0A252FCBFAAB06_1035408294 = (pred != head &&
                 ((ws = pred.waitStatus) == Node.SIGNAL ||
                  (ws <= 0 && compareAndSetWaitStatus(pred, ws, Node.SIGNAL))) &&
                 pred.thread != null);
@@ -293,8 +285,7 @@ public abstract class AbstractQueuedSynchronizer extends AbstractOwnableSynchron
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-12 17:11:57.112 -0400", hash_original_method = "F65239B395BF4DB687722F10CCB87FAF", hash_generated_method = "73C14A112E3BE4BF2C82CABE04458317")
-    private static boolean shouldParkAfterFailedAcquire(Node pred, Node node) {
+        private static boolean shouldParkAfterFailedAcquire(Node pred, Node node) {
         int ws = pred.waitStatus;
         if (ws == Node.SIGNAL)
             return true;
@@ -310,17 +301,16 @@ public abstract class AbstractQueuedSynchronizer extends AbstractOwnableSynchron
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-12 17:11:57.116 -0400", hash_original_method = "A017FE2B347BB8E3F328A9771EBB4299", hash_generated_method = "8DC8129982A7D3B365DA079876162962")
-    private static void selfInterrupt() {
+        private static void selfInterrupt() {
         Thread.currentThread().interrupt();
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-12 17:11:57.121 -0400", hash_original_method = "C551D5FD0C0A2C72DAD755E48C68905F", hash_generated_method = "F13C60AFF794BC9541147B248E76871E")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:35.156 -0400", hash_original_method = "C551D5FD0C0A2C72DAD755E48C68905F", hash_generated_method = "10A1E62785D9327BF374FEC94CD5D85A")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     private final boolean parkAndCheckInterrupt() {
         LockSupport.park(this);
-        boolean var17A536D12FEB0466CF9F0EDC1509A805_368599132 = (Thread.interrupted());
+        boolean var17A536D12FEB0466CF9F0EDC1509A805_1273323779 = (Thread.interrupted());
         return dsTaint.getTaintBoolean();
         // ---------- Original Method ----------
         //LockSupport.park(this);
@@ -328,7 +318,7 @@ public abstract class AbstractQueuedSynchronizer extends AbstractOwnableSynchron
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-12 17:11:57.133 -0400", hash_original_method = "0D7553B7A8DFDAC7C355CECFA0DBF574", hash_generated_method = "D9D1B6571B93637A5C0C1E16C5503541")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:35.156 -0400", hash_original_method = "0D7553B7A8DFDAC7C355CECFA0DBF574", hash_generated_method = "04841704D7B610F0A2AEC572AFEEA129")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     final boolean acquireQueued(final Node node, int arg) {
         dsTaint.addTaint(arg);
@@ -343,7 +333,7 @@ public abstract class AbstractQueuedSynchronizer extends AbstractOwnableSynchron
                 Node p;
                 p = node.predecessor();
                 {
-                    boolean varB702A2D695A14FF8E8F201BF2E513471_340022998 = (p == head && tryAcquire(arg));
+                    boolean varB702A2D695A14FF8E8F201BF2E513471_503351483 = (p == head && tryAcquire(arg));
                     {
                         setHead(node);
                         p.next = null;
@@ -351,7 +341,7 @@ public abstract class AbstractQueuedSynchronizer extends AbstractOwnableSynchron
                     } //End block
                 } //End collapsed parenthetic
                 {
-                    boolean var9C0B051AA94D017E376D03A90C5698A7_568993547 = (shouldParkAfterFailedAcquire(p, node) &&
+                    boolean var9C0B051AA94D017E376D03A90C5698A7_1954136603 = (shouldParkAfterFailedAcquire(p, node) &&
                     parkAndCheckInterrupt());
                     interrupted = true;
                 } //End collapsed parenthetic
@@ -385,7 +375,7 @@ public abstract class AbstractQueuedSynchronizer extends AbstractOwnableSynchron
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-12 17:11:57.146 -0400", hash_original_method = "E74C4677EAF9B6C97A4A9A93D88FC71E", hash_generated_method = "6E3DCDFDAF27D3434EB5186CE76602C1")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:35.157 -0400", hash_original_method = "E74C4677EAF9B6C97A4A9A93D88FC71E", hash_generated_method = "D3B4C2886D67969DDC8541DBCAD3A729")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     private void doAcquireInterruptibly(int arg) throws InterruptedException {
         dsTaint.addTaint(arg);
@@ -399,7 +389,7 @@ public abstract class AbstractQueuedSynchronizer extends AbstractOwnableSynchron
                 Node p;
                 p = node.predecessor();
                 {
-                    boolean varB702A2D695A14FF8E8F201BF2E513471_1367479 = (p == head && tryAcquire(arg));
+                    boolean varB702A2D695A14FF8E8F201BF2E513471_618800452 = (p == head && tryAcquire(arg));
                     {
                         setHead(node);
                         p.next = null;
@@ -407,7 +397,7 @@ public abstract class AbstractQueuedSynchronizer extends AbstractOwnableSynchron
                     } //End block
                 } //End collapsed parenthetic
                 {
-                    boolean var9C0B051AA94D017E376D03A90C5698A7_1775837345 = (shouldParkAfterFailedAcquire(p, node) &&
+                    boolean var9C0B051AA94D017E376D03A90C5698A7_922837649 = (shouldParkAfterFailedAcquire(p, node) &&
                     parkAndCheckInterrupt());
                     if (DroidSafeAndroidRuntime.control) throw new InterruptedException();
                 } //End collapsed parenthetic
@@ -440,7 +430,7 @@ public abstract class AbstractQueuedSynchronizer extends AbstractOwnableSynchron
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-12 17:11:57.171 -0400", hash_original_method = "AF980EBAC4BC6C4AB1174BED3B10073B", hash_generated_method = "F39B67F83546A970846FF464A7DC1848")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:35.157 -0400", hash_original_method = "AF980EBAC4BC6C4AB1174BED3B10073B", hash_generated_method = "B3611F88EDB1F31E6F8CF7F74BDF5940")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     private boolean doAcquireNanos(int arg, long nanosTimeout) throws InterruptedException {
         dsTaint.addTaint(arg);
@@ -457,7 +447,7 @@ public abstract class AbstractQueuedSynchronizer extends AbstractOwnableSynchron
                 Node p;
                 p = node.predecessor();
                 {
-                    boolean varB702A2D695A14FF8E8F201BF2E513471_199402777 = (p == head && tryAcquire(arg));
+                    boolean varB702A2D695A14FF8E8F201BF2E513471_1548333358 = (p == head && tryAcquire(arg));
                     {
                         setHead(node);
                         p.next = null;
@@ -465,7 +455,7 @@ public abstract class AbstractQueuedSynchronizer extends AbstractOwnableSynchron
                     } //End block
                 } //End collapsed parenthetic
                 {
-                    boolean var00B5F1835D8E1D445CE64BB60FAD1503_428369492 = (shouldParkAfterFailedAcquire(p, node) &&
+                    boolean var00B5F1835D8E1D445CE64BB60FAD1503_228821734 = (shouldParkAfterFailedAcquire(p, node) &&
                     nanosTimeout > spinForTimeoutThreshold);
                     LockSupport.parkNanos(this, nanosTimeout);
                 } //End collapsed parenthetic
@@ -474,7 +464,7 @@ public abstract class AbstractQueuedSynchronizer extends AbstractOwnableSynchron
                 nanosTimeout -= now - lastTime;
                 lastTime = now;
                 {
-                    boolean varFDD1D09D0FE11E5BCA86E55DE77A8E11_1534944051 = (Thread.interrupted());
+                    boolean varFDD1D09D0FE11E5BCA86E55DE77A8E11_1046792266 = (Thread.interrupted());
                     if (DroidSafeAndroidRuntime.control) throw new InterruptedException();
                 } //End collapsed parenthetic
             } //End block
@@ -489,7 +479,7 @@ public abstract class AbstractQueuedSynchronizer extends AbstractOwnableSynchron
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-12 17:11:57.188 -0400", hash_original_method = "D66678B4038334D8E14600B3A8FC8FD7", hash_generated_method = "D84A4557A7E9F72826E98B71FC4AACBD")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:35.157 -0400", hash_original_method = "D66678B4038334D8E14600B3A8FC8FD7", hash_generated_method = "C5CF1FCE25567A2670BB8023B7B908FC")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     private void doAcquireShared(int arg) {
         dsTaint.addTaint(arg);
@@ -515,7 +505,7 @@ public abstract class AbstractQueuedSynchronizer extends AbstractOwnableSynchron
                     } //End block
                 } //End block
                 {
-                    boolean var9C0B051AA94D017E376D03A90C5698A7_1343693251 = (shouldParkAfterFailedAcquire(p, node) &&
+                    boolean var9C0B051AA94D017E376D03A90C5698A7_596276119 = (shouldParkAfterFailedAcquire(p, node) &&
                     parkAndCheckInterrupt());
                     interrupted = true;
                 } //End collapsed parenthetic
@@ -530,7 +520,7 @@ public abstract class AbstractQueuedSynchronizer extends AbstractOwnableSynchron
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-12 17:11:57.203 -0400", hash_original_method = "4E093FA1B6FCF5593272CE0DEA00D69B", hash_generated_method = "3AE45A350F14DE4DBBD835B912891C1A")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:35.158 -0400", hash_original_method = "4E093FA1B6FCF5593272CE0DEA00D69B", hash_generated_method = "9AC2ABCF338B4E6226ABCE2467DC22E5")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     private void doAcquireSharedInterruptibly(int arg) throws InterruptedException {
         dsTaint.addTaint(arg);
@@ -553,7 +543,7 @@ public abstract class AbstractQueuedSynchronizer extends AbstractOwnableSynchron
                     } //End block
                 } //End block
                 {
-                    boolean var9C0B051AA94D017E376D03A90C5698A7_470020849 = (shouldParkAfterFailedAcquire(p, node) &&
+                    boolean var9C0B051AA94D017E376D03A90C5698A7_1304802644 = (shouldParkAfterFailedAcquire(p, node) &&
                     parkAndCheckInterrupt());
                     if (DroidSafeAndroidRuntime.control) throw new InterruptedException();
                 } //End collapsed parenthetic
@@ -589,7 +579,7 @@ public abstract class AbstractQueuedSynchronizer extends AbstractOwnableSynchron
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-12 17:11:57.235 -0400", hash_original_method = "873D99639E9E59C87CD3A574B36E4573", hash_generated_method = "98DFDD3DD9EF941755ED4DB736C0921F")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:35.158 -0400", hash_original_method = "873D99639E9E59C87CD3A574B36E4573", hash_generated_method = "FDEDE7D16D36E401772A94A0DA54A922")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     private boolean doAcquireSharedNanos(int arg, long nanosTimeout) throws InterruptedException {
         dsTaint.addTaint(arg);
@@ -615,7 +605,7 @@ public abstract class AbstractQueuedSynchronizer extends AbstractOwnableSynchron
                     } //End block
                 } //End block
                 {
-                    boolean var00B5F1835D8E1D445CE64BB60FAD1503_2102755282 = (shouldParkAfterFailedAcquire(p, node) &&
+                    boolean var00B5F1835D8E1D445CE64BB60FAD1503_610340698 = (shouldParkAfterFailedAcquire(p, node) &&
                     nanosTimeout > spinForTimeoutThreshold);
                     LockSupport.parkNanos(this, nanosTimeout);
                 } //End collapsed parenthetic
@@ -624,7 +614,7 @@ public abstract class AbstractQueuedSynchronizer extends AbstractOwnableSynchron
                 nanosTimeout -= now - lastTime;
                 lastTime = now;
                 {
-                    boolean varFDD1D09D0FE11E5BCA86E55DE77A8E11_2021655843 = (Thread.interrupted());
+                    boolean varFDD1D09D0FE11E5BCA86E55DE77A8E11_1264645377 = (Thread.interrupted());
                     if (DroidSafeAndroidRuntime.control) throw new InterruptedException();
                 } //End collapsed parenthetic
             } //End block
@@ -639,8 +629,8 @@ public abstract class AbstractQueuedSynchronizer extends AbstractOwnableSynchron
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-12 17:11:57.241 -0400", hash_original_method = "FADA99D99649E8B049B596B89A86AFE3", hash_generated_method = "86F62B374742D2C50BD84D21C443DC8B")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:35.158 -0400", hash_original_method = "FADA99D99649E8B049B596B89A86AFE3", hash_generated_method = "E53BCAC1A2EEC6BA908021262CD9C0A7")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     protected boolean tryAcquire(int arg) {
         dsTaint.addTaint(arg);
         if (DroidSafeAndroidRuntime.control) throw new UnsupportedOperationException();
@@ -650,8 +640,8 @@ public abstract class AbstractQueuedSynchronizer extends AbstractOwnableSynchron
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-12 17:11:57.245 -0400", hash_original_method = "0AA9B3926B88397CF769442818D9CA16", hash_generated_method = "69A8911AA8CA6F00123D7965030981F7")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:35.159 -0400", hash_original_method = "0AA9B3926B88397CF769442818D9CA16", hash_generated_method = "485E3267FC608DD42B0B998584647418")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     protected boolean tryRelease(int arg) {
         dsTaint.addTaint(arg);
         if (DroidSafeAndroidRuntime.control) throw new UnsupportedOperationException();
@@ -661,8 +651,8 @@ public abstract class AbstractQueuedSynchronizer extends AbstractOwnableSynchron
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-12 17:11:57.252 -0400", hash_original_method = "143AB2DE4C7A8CA8F45FD3C862AFB93B", hash_generated_method = "ED0CD4F34345EA32F9CCF6B0C9F8E1E9")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:35.159 -0400", hash_original_method = "143AB2DE4C7A8CA8F45FD3C862AFB93B", hash_generated_method = "974D8F2CF66C0ACF865717700A3FEA38")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     protected int tryAcquireShared(int arg) {
         dsTaint.addTaint(arg);
         if (DroidSafeAndroidRuntime.control) throw new UnsupportedOperationException();
@@ -672,8 +662,8 @@ public abstract class AbstractQueuedSynchronizer extends AbstractOwnableSynchron
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-12 17:11:57.257 -0400", hash_original_method = "57760B0E19163CFD26451EB4C702B2B7", hash_generated_method = "3BFFD91C3CB3A12A6FCBF849A9689EDD")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:35.159 -0400", hash_original_method = "57760B0E19163CFD26451EB4C702B2B7", hash_generated_method = "7C6702BD6E60ED4A6E045901CF2D51F1")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     protected boolean tryReleaseShared(int arg) {
         dsTaint.addTaint(arg);
         if (DroidSafeAndroidRuntime.control) throw new UnsupportedOperationException();
@@ -683,8 +673,8 @@ public abstract class AbstractQueuedSynchronizer extends AbstractOwnableSynchron
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-12 17:11:57.261 -0400", hash_original_method = "B1A3EF7BA2A74EEB6B3236F0A99ED9FE", hash_generated_method = "7BAFEF9B60619758C7CC9D78BB2E3C8C")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:35.159 -0400", hash_original_method = "B1A3EF7BA2A74EEB6B3236F0A99ED9FE", hash_generated_method = "B47FC36CCB09A3A9A73EFF267AC5722A")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     protected boolean isHeldExclusively() {
         if (DroidSafeAndroidRuntime.control) throw new UnsupportedOperationException();
         return dsTaint.getTaintBoolean();
@@ -693,12 +683,12 @@ public abstract class AbstractQueuedSynchronizer extends AbstractOwnableSynchron
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-12 17:11:57.273 -0400", hash_original_method = "10DE26F4AB94E5F1867D5F821F4BF0D7", hash_generated_method = "83A7EDCA1C0A97F176A2052A72E89AF4")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:35.159 -0400", hash_original_method = "10DE26F4AB94E5F1867D5F821F4BF0D7", hash_generated_method = "9AF9F515771F0DDBFF4916E07BBD0CDF")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public final void acquire(int arg) {
         dsTaint.addTaint(arg);
         {
-            boolean varFCEF5DD222F9CABA3FDCCFE99D21AA7A_2128277486 = (!tryAcquire(arg) &&
+            boolean varFCEF5DD222F9CABA3FDCCFE99D21AA7A_1897596328 = (!tryAcquire(arg) &&
             acquireQueued(addWaiter(Node.EXCLUSIVE), arg));
             selfInterrupt();
         } //End collapsed parenthetic
@@ -709,16 +699,16 @@ public abstract class AbstractQueuedSynchronizer extends AbstractOwnableSynchron
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-12 17:11:57.290 -0400", hash_original_method = "34DE0EEECFCC486100F3F952023E1D48", hash_generated_method = "E45027B1B0C1C661A7AB09A63095E67F")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:35.159 -0400", hash_original_method = "34DE0EEECFCC486100F3F952023E1D48", hash_generated_method = "AAF3F05C61A4AF55FD961607268D0347")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public final void acquireInterruptibly(int arg) throws InterruptedException {
         dsTaint.addTaint(arg);
         {
-            boolean var59C8EE922E8B3738507C43FFF99EACF7_1510935662 = (Thread.interrupted());
+            boolean var59C8EE922E8B3738507C43FFF99EACF7_1476142422 = (Thread.interrupted());
             if (DroidSafeAndroidRuntime.control) throw new InterruptedException();
         } //End collapsed parenthetic
         {
-            boolean var6C80CD83DDCC36721F42CDF9EFE1FC97_610272321 = (!tryAcquire(arg));
+            boolean var6C80CD83DDCC36721F42CDF9EFE1FC97_688819149 = (!tryAcquire(arg));
             doAcquireInterruptibly(arg);
         } //End collapsed parenthetic
         // ---------- Original Method ----------
@@ -729,16 +719,16 @@ public abstract class AbstractQueuedSynchronizer extends AbstractOwnableSynchron
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-12 17:11:57.300 -0400", hash_original_method = "C2BC4409CE226EEA6D2598B40FA64E1C", hash_generated_method = "958E77FE189B47698584DB913D1576B0")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:35.160 -0400", hash_original_method = "C2BC4409CE226EEA6D2598B40FA64E1C", hash_generated_method = "87CCEECB0B4547AB782454307AC052EB")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public final boolean tryAcquireNanos(int arg, long nanosTimeout) throws InterruptedException {
         dsTaint.addTaint(arg);
         dsTaint.addTaint(nanosTimeout);
         {
-            boolean var59C8EE922E8B3738507C43FFF99EACF7_1200226037 = (Thread.interrupted());
+            boolean var59C8EE922E8B3738507C43FFF99EACF7_1997284049 = (Thread.interrupted());
             if (DroidSafeAndroidRuntime.control) throw new InterruptedException();
         } //End collapsed parenthetic
-        boolean var34DCAB88C8A0F240E32D599EDB2FE196_1049999696 = (tryAcquire(arg) ||
+        boolean var34DCAB88C8A0F240E32D599EDB2FE196_905525607 = (tryAcquire(arg) ||
             doAcquireNanos(arg, nanosTimeout));
         return dsTaint.getTaintBoolean();
         // ---------- Original Method ----------
@@ -749,12 +739,12 @@ public abstract class AbstractQueuedSynchronizer extends AbstractOwnableSynchron
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-12 17:11:57.308 -0400", hash_original_method = "482847B9E820B21E98E389768A5050E4", hash_generated_method = "6B76899A411999D8931E42813ABB4618")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:35.160 -0400", hash_original_method = "482847B9E820B21E98E389768A5050E4", hash_generated_method = "EB3952783026E7C438479463EDD851FE")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public final boolean release(int arg) {
         dsTaint.addTaint(arg);
         {
-            boolean varFF82B8E2BC2E04000CA63D87A88AB8D2_2017284318 = (tryRelease(arg));
+            boolean varFF82B8E2BC2E04000CA63D87A88AB8D2_1407366777 = (tryRelease(arg));
             {
                 Node h;
                 h = head;
@@ -773,12 +763,12 @@ public abstract class AbstractQueuedSynchronizer extends AbstractOwnableSynchron
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-12 17:11:57.313 -0400", hash_original_method = "503864E706CF656D09684EB1E461773D", hash_generated_method = "69A070276586343F2D72F3CF3FE8A88B")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:35.194 -0400", hash_original_method = "503864E706CF656D09684EB1E461773D", hash_generated_method = "8DC316B63E3C70220819C3F19A84DEBD")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public final void acquireShared(int arg) {
         dsTaint.addTaint(arg);
         {
-            boolean varE24C999E8142A86B0EF4E6AFA805A8A0_1786384239 = (tryAcquireShared(arg) < 0);
+            boolean varE24C999E8142A86B0EF4E6AFA805A8A0_1533264157 = (tryAcquireShared(arg) < 0);
             doAcquireShared(arg);
         } //End collapsed parenthetic
         // ---------- Original Method ----------
@@ -787,16 +777,16 @@ public abstract class AbstractQueuedSynchronizer extends AbstractOwnableSynchron
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-12 17:11:57.319 -0400", hash_original_method = "10425BDCE3B0F2DAA2E0ECCAD9B4BACD", hash_generated_method = "C14AC69B56A6842266928B66CB121135")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:35.195 -0400", hash_original_method = "10425BDCE3B0F2DAA2E0ECCAD9B4BACD", hash_generated_method = "DDEFF2C055ECA0B9C4ECCA2126636EDE")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public final void acquireSharedInterruptibly(int arg) throws InterruptedException {
         dsTaint.addTaint(arg);
         {
-            boolean var59C8EE922E8B3738507C43FFF99EACF7_1512548875 = (Thread.interrupted());
+            boolean var59C8EE922E8B3738507C43FFF99EACF7_1084046884 = (Thread.interrupted());
             if (DroidSafeAndroidRuntime.control) throw new InterruptedException();
         } //End collapsed parenthetic
         {
-            boolean varE24C999E8142A86B0EF4E6AFA805A8A0_187674174 = (tryAcquireShared(arg) < 0);
+            boolean varE24C999E8142A86B0EF4E6AFA805A8A0_1468055196 = (tryAcquireShared(arg) < 0);
             doAcquireSharedInterruptibly(arg);
         } //End collapsed parenthetic
         // ---------- Original Method ----------
@@ -807,16 +797,16 @@ public abstract class AbstractQueuedSynchronizer extends AbstractOwnableSynchron
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-12 17:11:57.326 -0400", hash_original_method = "34AA5C57E6BB40898FDB5D4BB2EF37C3", hash_generated_method = "011D5EF076E4A7C9857376F75D5C3F9F")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:35.195 -0400", hash_original_method = "34AA5C57E6BB40898FDB5D4BB2EF37C3", hash_generated_method = "6087FC039D33925E8F6DE8DFC35D4F30")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public final boolean tryAcquireSharedNanos(int arg, long nanosTimeout) throws InterruptedException {
         dsTaint.addTaint(arg);
         dsTaint.addTaint(nanosTimeout);
         {
-            boolean var59C8EE922E8B3738507C43FFF99EACF7_596140279 = (Thread.interrupted());
+            boolean var59C8EE922E8B3738507C43FFF99EACF7_1878241679 = (Thread.interrupted());
             if (DroidSafeAndroidRuntime.control) throw new InterruptedException();
         } //End collapsed parenthetic
-        boolean varE4B1D6DE7AE03DFEE28CA37F75A87EB4_850127086 = (tryAcquireShared(arg) >= 0 ||
+        boolean varE4B1D6DE7AE03DFEE28CA37F75A87EB4_542868266 = (tryAcquireShared(arg) >= 0 ||
             doAcquireSharedNanos(arg, nanosTimeout));
         return dsTaint.getTaintBoolean();
         // ---------- Original Method ----------
@@ -827,12 +817,12 @@ public abstract class AbstractQueuedSynchronizer extends AbstractOwnableSynchron
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-12 17:11:57.333 -0400", hash_original_method = "64AF2599D3C05FF36535D67856367D8D", hash_generated_method = "30D2FF03FF83922A444D99632236FD8B")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:35.195 -0400", hash_original_method = "64AF2599D3C05FF36535D67856367D8D", hash_generated_method = "EC1B7DDD37E6E2E901195C7E8F6D2CD5")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public final boolean releaseShared(int arg) {
         dsTaint.addTaint(arg);
         {
-            boolean varEB9480595F3C382515F926391F6AAE14_341058516 = (tryReleaseShared(arg));
+            boolean varEB9480595F3C382515F926391F6AAE14_1412998584 = (tryReleaseShared(arg));
             {
                 doReleaseShared();
             } //End block
@@ -847,7 +837,7 @@ public abstract class AbstractQueuedSynchronizer extends AbstractOwnableSynchron
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-12 17:11:57.337 -0400", hash_original_method = "3ACA5092770D7AD1442898AF3B627DFE", hash_generated_method = "82129C619441442B9CA3EA4FDD4B1EA6")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:35.195 -0400", hash_original_method = "3ACA5092770D7AD1442898AF3B627DFE", hash_generated_method = "1926303FC75B8D39BD806D6A99DC4BFE")
     @DSModeled(DSC.SAFE)
     public final boolean hasQueuedThreads() {
         return dsTaint.getTaintBoolean();
@@ -856,7 +846,7 @@ public abstract class AbstractQueuedSynchronizer extends AbstractOwnableSynchron
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-12 17:11:57.342 -0400", hash_original_method = "3ED9D0D071477B613E998B33D61DD4C5", hash_generated_method = "A49B64A400C6120C3248DBF82292AFB5")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:35.195 -0400", hash_original_method = "3ED9D0D071477B613E998B33D61DD4C5", hash_generated_method = "73A1347608DAD9D5EBD1DD381E8F73F6")
     @DSModeled(DSC.SAFE)
     public final boolean hasContended() {
         return dsTaint.getTaintBoolean();
@@ -865,11 +855,11 @@ public abstract class AbstractQueuedSynchronizer extends AbstractOwnableSynchron
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-12 17:11:57.351 -0400", hash_original_method = "DB23AE447B60E978D848F5CEAEC8257B", hash_generated_method = "555AE1FC60E5AA1E2D0E2E9B28DA27F8")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:35.196 -0400", hash_original_method = "DB23AE447B60E978D848F5CEAEC8257B", hash_generated_method = "888A12A67EEE89CBDA3FCA12D8C7221B")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public final Thread getFirstQueuedThread() {
         {
-            Object var3B7CB660AB505354CD602C60DFD0581B_1638755966 = (fullGetFirstQueuedThread());
+            Object var3B7CB660AB505354CD602C60DFD0581B_2070697224 = (fullGetFirstQueuedThread());
         } //End flattened ternary
         return (Thread)dsTaint.getTaint();
         // ---------- Original Method ----------
@@ -877,13 +867,13 @@ public abstract class AbstractQueuedSynchronizer extends AbstractOwnableSynchron
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-12 17:11:57.364 -0400", hash_original_method = "18818CB637EBC5CF82DC4C50B37FB17C", hash_generated_method = "6804C584ABF48D1F4BB38C9A4165D9B2")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:35.196 -0400", hash_original_method = "18818CB637EBC5CF82DC4C50B37FB17C", hash_generated_method = "166FF2223F7AA85753D63A8740069CFB")
     @DSModeled(DSC.SAFE)
     private Thread fullGetFirstQueuedThread() {
         Node h, s;
         Thread st;
         {
-            boolean varAB96948AFE2AAAF3BBF624BD73ABA985_538648853 = (((h = head) != null && (s = h.next) != null &&
+            boolean varAB96948AFE2AAAF3BBF624BD73ABA985_1855476912 = (((h = head) != null && (s = h.next) != null &&
              s.prev == head && (st = s.thread) != null) ||
             ((h = head) != null && (s = h.next) != null &&
              s.prev == head && (st = s.thread) != null));
@@ -919,8 +909,8 @@ public abstract class AbstractQueuedSynchronizer extends AbstractOwnableSynchron
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-12 17:11:57.373 -0400", hash_original_method = "1573E83A14D593E0BFADABB9AEDBB7D2", hash_generated_method = "D42E570190DB29AC70F2D7D3CA0C02F5")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:35.196 -0400", hash_original_method = "1573E83A14D593E0BFADABB9AEDBB7D2", hash_generated_method = "06470FC6882E6A5D0BA87A82DEEE6C08")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     public final boolean isQueued(Thread thread) {
         dsTaint.addTaint(thread.dsTaint);
         if (DroidSafeAndroidRuntime.control) throw new NullPointerException();
@@ -940,11 +930,11 @@ public abstract class AbstractQueuedSynchronizer extends AbstractOwnableSynchron
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-12 17:11:57.389 -0400", hash_original_method = "4993AFB2E466C494E10B5DA4780E51AB", hash_generated_method = "05A38B730A9B97FA5B850CB394C89209")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:35.197 -0400", hash_original_method = "4993AFB2E466C494E10B5DA4780E51AB", hash_generated_method = "E3DAFF547232270EFBB70DD2E4BAE6CE")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     final boolean apparentlyFirstQueuedIsExclusive() {
         Node h, s;
-        boolean var7A2694C8A18196F041BDCF2FCD7324AE_65474182 = ((h = head) != null &&
+        boolean var7A2694C8A18196F041BDCF2FCD7324AE_2070840412 = ((h = head) != null &&
             (s = h.next)  != null &&
             !s.isShared()         &&
             s.thread != null);
@@ -958,7 +948,7 @@ public abstract class AbstractQueuedSynchronizer extends AbstractOwnableSynchron
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-12 17:11:57.402 -0400", hash_original_method = "155F6B01F514C41CA8367710346D37E3", hash_generated_method = "31353F735A0EDAF61356E629623E790F")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:35.197 -0400", hash_original_method = "155F6B01F514C41CA8367710346D37E3", hash_generated_method = "4CF5DAD1CDB6D42763118ACEAE979FCC")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public final boolean hasQueuedPredecessors() {
         Node t;
@@ -966,7 +956,7 @@ public abstract class AbstractQueuedSynchronizer extends AbstractOwnableSynchron
         Node h;
         h = head;
         Node s;
-        boolean var4B72E4D0E536DE6B3ACB8283BCD4F664_858851180 = (h != t &&
+        boolean var4B72E4D0E536DE6B3ACB8283BCD4F664_422805301 = (h != t &&
             ((s = h.next) == null || s.thread != Thread.currentThread()));
         return dsTaint.getTaintBoolean();
         // ---------- Original Method ----------
@@ -978,7 +968,7 @@ public abstract class AbstractQueuedSynchronizer extends AbstractOwnableSynchron
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-12 17:11:57.410 -0400", hash_original_method = "65AB677A04652631BF1CC269A789F93A", hash_generated_method = "A592F7A5F1B4A7BA05F3E7C57A78C289")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:35.197 -0400", hash_original_method = "65AB677A04652631BF1CC269A789F93A", hash_generated_method = "5350739B623E9F444E0C8FF5347CCDD3")
     @DSModeled(DSC.SAFE)
     public final int getQueueLength() {
         int n;
@@ -987,9 +977,6 @@ public abstract class AbstractQueuedSynchronizer extends AbstractOwnableSynchron
             Node p;
             p = tail;
             p = p.prev;
-            {
-                ++n;
-            } //End block
         } //End collapsed parenthetic
         return dsTaint.getTaintInt();
         // ---------- Original Method ----------
@@ -1002,8 +989,8 @@ public abstract class AbstractQueuedSynchronizer extends AbstractOwnableSynchron
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-12 17:11:57.415 -0400", hash_original_method = "BA97C075FB0E9B39CEF398B585209CAD", hash_generated_method = "832C16240D93053BC8FF6E9CFE311885")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:35.197 -0400", hash_original_method = "BA97C075FB0E9B39CEF398B585209CAD", hash_generated_method = "902C56B06DD343BBAC574FD6CE5F83A2")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     public final Collection<Thread> getQueuedThreads() {
         ArrayList<Thread> list;
         list = new ArrayList<Thread>();
@@ -1029,7 +1016,7 @@ public abstract class AbstractQueuedSynchronizer extends AbstractOwnableSynchron
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-12 17:11:57.421 -0400", hash_original_method = "8F9C05C78C38CDEC6B94C7386A00C30C", hash_generated_method = "120CCDA4DB34D694CC0FCE4ABA052822")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:35.197 -0400", hash_original_method = "8F9C05C78C38CDEC6B94C7386A00C30C", hash_generated_method = "66D4C423546E439158A7107621BB118A")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public final Collection<Thread> getExclusiveQueuedThreads() {
         ArrayList<Thread> list;
@@ -1040,7 +1027,7 @@ public abstract class AbstractQueuedSynchronizer extends AbstractOwnableSynchron
             p = p.prev;
             {
                 {
-                    boolean varDFA54A0E0CB503BCC5CE98449AAB2A08_1374710215 = (!p.isShared());
+                    boolean varDFA54A0E0CB503BCC5CE98449AAB2A08_1518817635 = (!p.isShared());
                     {
                         Thread t;
                         t = p.thread;
@@ -1063,7 +1050,7 @@ public abstract class AbstractQueuedSynchronizer extends AbstractOwnableSynchron
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-12 17:11:57.428 -0400", hash_original_method = "3B2BC348731488178C75B0F7C3256BE4", hash_generated_method = "22EB660C6B6E076E30244E6822386766")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:35.198 -0400", hash_original_method = "3B2BC348731488178C75B0F7C3256BE4", hash_generated_method = "4C7C6938284C80064A790998F1EB1065")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public final Collection<Thread> getSharedQueuedThreads() {
         ArrayList<Thread> list;
@@ -1074,7 +1061,7 @@ public abstract class AbstractQueuedSynchronizer extends AbstractOwnableSynchron
             p = p.prev;
             {
                 {
-                    boolean varC6C07EC060C76D1E58FED758F007D903_1779791464 = (p.isShared());
+                    boolean varC6C07EC060C76D1E58FED758F007D903_1133831126 = (p.isShared());
                     {
                         Thread t;
                         t = p.thread;
@@ -1097,16 +1084,16 @@ public abstract class AbstractQueuedSynchronizer extends AbstractOwnableSynchron
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-12 17:11:57.434 -0400", hash_original_method = "2C49C090DBE6788B4A91D995132AEECA", hash_generated_method = "FFCB0087D3F8CF94C6C5E032ED1BED31")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:35.198 -0400", hash_original_method = "2C49C090DBE6788B4A91D995132AEECA", hash_generated_method = "D4153D152CC2B235FB95CAC182B00547")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public String toString() {
         int s;
         s = getState();
         String q;
-        boolean var58703E822CB7EE24CF8A625587E1C63E_1846317666 = (hasQueuedThreads());
+        boolean var58703E822CB7EE24CF8A625587E1C63E_766230039 = (hasQueuedThreads());
         q = "non";
         q = "";
-        String varA627899E43EA43F388C27ED3471D90CE_1597854435 = (super.toString() +
+        String varA627899E43EA43F388C27ED3471D90CE_243942170 = (super.toString() +
             "[State = " + s + ", " + q + "empty queue]");
         return dsTaint.getTaintString();
         // ---------- Original Method ----------
@@ -1117,11 +1104,11 @@ public abstract class AbstractQueuedSynchronizer extends AbstractOwnableSynchron
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-12 17:11:57.439 -0400", hash_original_method = "0981A7B7481B56654552F826D97FC7A4", hash_generated_method = "CFC210D73053946DDDB9353E5B0826BD")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:35.198 -0400", hash_original_method = "0981A7B7481B56654552F826D97FC7A4", hash_generated_method = "A901D15F8103E8FDBC66F7286E9C9C35")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     final boolean isOnSyncQueue(Node node) {
         dsTaint.addTaint(node.dsTaint);
-        boolean varF3A4D6770CAC1AA85AF3A6C51812BE70_29172381 = (findNodeFromTail(node));
+        boolean varF3A4D6770CAC1AA85AF3A6C51812BE70_1637527454 = (findNodeFromTail(node));
         return dsTaint.getTaintBoolean();
         // ---------- Original Method ----------
         //if (node.waitStatus == Node.CONDITION || node.prev == null)
@@ -1132,7 +1119,7 @@ public abstract class AbstractQueuedSynchronizer extends AbstractOwnableSynchron
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-12 17:11:57.443 -0400", hash_original_method = "E84A510853D9F9659F34649D5E631E14", hash_generated_method = "85BD075848FEFC6E030C9201EECB621B")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:35.198 -0400", hash_original_method = "E84A510853D9F9659F34649D5E631E14", hash_generated_method = "3BB04F151AAAD586B19DE78139480C4D")
     @DSModeled(DSC.SAFE)
     private boolean findNodeFromTail(Node node) {
         dsTaint.addTaint(node.dsTaint);
@@ -1154,19 +1141,19 @@ public abstract class AbstractQueuedSynchronizer extends AbstractOwnableSynchron
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-12 17:11:57.449 -0400", hash_original_method = "AC7EB2A7C3E5842E27808853E2EADEA4", hash_generated_method = "B821EB90DEFB4CC596D3348A3A954D78")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:35.199 -0400", hash_original_method = "AC7EB2A7C3E5842E27808853E2EADEA4", hash_generated_method = "EFB284CA3526E2923E99A11DCB33F821")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     final boolean transferForSignal(Node node) {
         dsTaint.addTaint(node.dsTaint);
         {
-            boolean var8F78D6E41179A92913D59E278DAF4713_1096978272 = (!compareAndSetWaitStatus(node, Node.CONDITION, 0));
+            boolean var8F78D6E41179A92913D59E278DAF4713_2040604341 = (!compareAndSetWaitStatus(node, Node.CONDITION, 0));
         } //End collapsed parenthetic
         Node p;
         p = enq(node);
         int ws;
         ws = p.waitStatus;
         {
-            boolean var11909F9DE762D0C62EFBB539D3DF08AB_297058875 = (ws > 0 || !compareAndSetWaitStatus(p, ws, Node.SIGNAL));
+            boolean var11909F9DE762D0C62EFBB539D3DF08AB_1483248538 = (ws > 0 || !compareAndSetWaitStatus(p, ws, Node.SIGNAL));
             LockSupport.unpark(node.thread);
         } //End collapsed parenthetic
         return dsTaint.getTaintBoolean();
@@ -1181,18 +1168,18 @@ public abstract class AbstractQueuedSynchronizer extends AbstractOwnableSynchron
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-12 17:11:57.454 -0400", hash_original_method = "202AE2159172221E521994FECA693914", hash_generated_method = "1A15FDE2DA8F2918BBE544E0AE57B3DF")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:35.199 -0400", hash_original_method = "202AE2159172221E521994FECA693914", hash_generated_method = "3C205C19A86113370AB05C526002FA4F")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     final boolean transferAfterCancelledWait(Node node) {
         dsTaint.addTaint(node.dsTaint);
         {
-            boolean varAB52CB6F165D0797C877670E5EE00069_236531398 = (compareAndSetWaitStatus(node, Node.CONDITION, 0));
+            boolean varAB52CB6F165D0797C877670E5EE00069_1388536983 = (compareAndSetWaitStatus(node, Node.CONDITION, 0));
             {
                 enq(node);
             } //End block
         } //End collapsed parenthetic
         {
-            boolean varA5ECD06A31929CB111AEF5ECED825AFB_959912580 = (!isOnSyncQueue(node));
+            boolean varA5ECD06A31929CB111AEF5ECED825AFB_2034573624 = (!isOnSyncQueue(node));
             Thread.yield();
         } //End collapsed parenthetic
         return dsTaint.getTaintBoolean();
@@ -1207,7 +1194,7 @@ public abstract class AbstractQueuedSynchronizer extends AbstractOwnableSynchron
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-12 17:11:57.460 -0400", hash_original_method = "13260C05A29655F6FC8F2FA182B20EC8", hash_generated_method = "C04DB21F12A4FC6FE14A6DE83643C0F5")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:35.199 -0400", hash_original_method = "13260C05A29655F6FC8F2FA182B20EC8", hash_generated_method = "A1B3896BD7D60FFFD49B447425CC0EF0")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     final int fullyRelease(Node node) {
         dsTaint.addTaint(node.dsTaint);
@@ -1218,7 +1205,7 @@ public abstract class AbstractQueuedSynchronizer extends AbstractOwnableSynchron
             int savedState;
             savedState = getState();
             {
-                boolean var3C6705464C8EDF86A554C3C7455FE111_1087333980 = (release(savedState));
+                boolean var3C6705464C8EDF86A554C3C7455FE111_1691801365 = (release(savedState));
                 {
                     failed = false;
                 } //End block
@@ -1249,12 +1236,12 @@ public abstract class AbstractQueuedSynchronizer extends AbstractOwnableSynchron
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-12 17:11:57.466 -0400", hash_original_method = "B60D02054E03A30F41C10CC4F7B33B2F", hash_generated_method = "DADF1C63108685508A3AF19169413563")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:35.199 -0400", hash_original_method = "B60D02054E03A30F41C10CC4F7B33B2F", hash_generated_method = "818645E43AD76523A25286361AD363EA")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public final boolean owns(ConditionObject condition) {
         dsTaint.addTaint(condition.dsTaint);
         if (DroidSafeAndroidRuntime.control) throw new NullPointerException();
-        boolean var81F8FCB295780CD2D5751E1181CC9428_1629798303 = (condition.isOwnedBy(this));
+        boolean var81F8FCB295780CD2D5751E1181CC9428_1330916858 = (condition.isOwnedBy(this));
         return dsTaint.getTaintBoolean();
         // ---------- Original Method ----------
         //if (condition == null)
@@ -1263,15 +1250,15 @@ public abstract class AbstractQueuedSynchronizer extends AbstractOwnableSynchron
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-12 17:11:57.470 -0400", hash_original_method = "B87CA02CD99C2C81A6ADCC153DE8BF7D", hash_generated_method = "9E6B14E72DBC9CB93E523D5EB8BF4B90")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:35.199 -0400", hash_original_method = "B87CA02CD99C2C81A6ADCC153DE8BF7D", hash_generated_method = "D6E408D1511A35500D4D30E3173C691D")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public final boolean hasWaiters(ConditionObject condition) {
         dsTaint.addTaint(condition.dsTaint);
         {
-            boolean varF6FA8CE34847109F1EDDCFA2A2B550C8_1509661862 = (!owns(condition));
+            boolean varF6FA8CE34847109F1EDDCFA2A2B550C8_1046937326 = (!owns(condition));
             if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("Not owner");
         } //End collapsed parenthetic
-        boolean var335079E40CDAA9EFDA14CFAFE44A0835_1830446024 = (condition.hasWaiters());
+        boolean var335079E40CDAA9EFDA14CFAFE44A0835_2116742447 = (condition.hasWaiters());
         return dsTaint.getTaintBoolean();
         // ---------- Original Method ----------
         //if (!owns(condition))
@@ -1280,15 +1267,15 @@ public abstract class AbstractQueuedSynchronizer extends AbstractOwnableSynchron
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-12 17:11:57.475 -0400", hash_original_method = "FDFBF2604A26737643DD133E9F8A257F", hash_generated_method = "3A115FFC1B012DA8DE2C3123951646C3")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:35.200 -0400", hash_original_method = "FDFBF2604A26737643DD133E9F8A257F", hash_generated_method = "C62485655265947BE916945F0C0786CF")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public final int getWaitQueueLength(ConditionObject condition) {
         dsTaint.addTaint(condition.dsTaint);
         {
-            boolean varF6FA8CE34847109F1EDDCFA2A2B550C8_92264801 = (!owns(condition));
+            boolean varF6FA8CE34847109F1EDDCFA2A2B550C8_1577165814 = (!owns(condition));
             if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("Not owner");
         } //End collapsed parenthetic
-        int var5991F4798FCDE9B9D32781CE8A86C9C1_2137791237 = (condition.getWaitQueueLength());
+        int var5991F4798FCDE9B9D32781CE8A86C9C1_1430367408 = (condition.getWaitQueueLength());
         return dsTaint.getTaintInt();
         // ---------- Original Method ----------
         //if (!owns(condition))
@@ -1297,15 +1284,15 @@ public abstract class AbstractQueuedSynchronizer extends AbstractOwnableSynchron
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-12 17:11:57.480 -0400", hash_original_method = "70972013E049E7504ADBD56143485C77", hash_generated_method = "2896136097860F6FAA478F619BE7192E")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:35.200 -0400", hash_original_method = "70972013E049E7504ADBD56143485C77", hash_generated_method = "8F44FC4B2430437DFB2C1C74DF9A2FFB")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public final Collection<Thread> getWaitingThreads(ConditionObject condition) {
         dsTaint.addTaint(condition.dsTaint);
         {
-            boolean varF6FA8CE34847109F1EDDCFA2A2B550C8_1503180472 = (!owns(condition));
+            boolean varF6FA8CE34847109F1EDDCFA2A2B550C8_1422048224 = (!owns(condition));
             if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("Not owner");
         } //End collapsed parenthetic
-        Collection<Thread> var36A2E52470B9D7B4821E23B59E8D5DE3_1083333535 = (condition.getWaitingThreads());
+        Collection<Thread> var36A2E52470B9D7B4821E23B59E8D5DE3_1356509876 = (condition.getWaitingThreads());
         return (Collection<Thread>)dsTaint.getTaint();
         // ---------- Original Method ----------
         //if (!owns(condition))
@@ -1314,31 +1301,30 @@ public abstract class AbstractQueuedSynchronizer extends AbstractOwnableSynchron
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-12 17:11:57.488 -0400", hash_original_method = "20D2259271C7B1C96C133ACBD2C26B14", hash_generated_method = "64CE45C4BBB8D74F71E1BE579417A056")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:35.200 -0400", hash_original_method = "20D2259271C7B1C96C133ACBD2C26B14", hash_generated_method = "119E27C16F085B92486972C8C3C71AEF")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     private final boolean compareAndSetHead(Node update) {
         dsTaint.addTaint(update.dsTaint);
-        boolean var7C9BAC36D5138868FE92F3C1948386AB_1173042372 = (unsafe.compareAndSwapObject(this, headOffset, null, update));
+        boolean var7C9BAC36D5138868FE92F3C1948386AB_19878794 = (unsafe.compareAndSwapObject(this, headOffset, null, update));
         return dsTaint.getTaintBoolean();
         // ---------- Original Method ----------
         //return unsafe.compareAndSwapObject(this, headOffset, null, update);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-12 17:11:57.491 -0400", hash_original_method = "8C47C531A43F622294BF6051B04C8993", hash_generated_method = "EADCA5E6FCF37314F8F3A0F65A3C2F67")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:35.200 -0400", hash_original_method = "8C47C531A43F622294BF6051B04C8993", hash_generated_method = "A2EF8015A917535E9AE246A5E4EB6B8A")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     private final boolean compareAndSetTail(Node expect, Node update) {
-        dsTaint.addTaint(expect.dsTaint);
         dsTaint.addTaint(update.dsTaint);
-        boolean varC5CCFD292C10D03F1C8C777B8815D2E2_716797871 = (unsafe.compareAndSwapObject(this, tailOffset, expect, update));
+        dsTaint.addTaint(expect.dsTaint);
+        boolean varC5CCFD292C10D03F1C8C777B8815D2E2_1482802689 = (unsafe.compareAndSwapObject(this, tailOffset, expect, update));
         return dsTaint.getTaintBoolean();
         // ---------- Original Method ----------
         //return unsafe.compareAndSwapObject(this, tailOffset, expect, update);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-12 17:11:57.494 -0400", hash_original_method = "C08E184A516295B7BF20ABCE746571ED", hash_generated_method = "357E5ABF0E0719E98E02C88719CE5D0C")
-    private static final boolean compareAndSetWaitStatus(Node node,
+        private static final boolean compareAndSetWaitStatus(Node node,
                                                          int expect,
                                                          int update) {
         return unsafe.compareAndSwapInt(node, waitStatusOffset,
@@ -1346,8 +1332,7 @@ public abstract class AbstractQueuedSynchronizer extends AbstractOwnableSynchron
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-12 17:11:57.497 -0400", hash_original_method = "E6B89C35380C1CC08274185C89FBCA81", hash_generated_method = "39BD2E41F5823D830B4D7DC13E878B54")
-    private static final boolean compareAndSetNext(Node node,
+        private static final boolean compareAndSetNext(Node node,
                                                    Node expect,
                                                    Node update) {
         return unsafe.compareAndSwapObject(node, nextOffset, expect, update);
@@ -1355,26 +1340,20 @@ public abstract class AbstractQueuedSynchronizer extends AbstractOwnableSynchron
 
     
     static final class Node {
-        static Node SHARED = new Node();
-        static Node EXCLUSIVE = null;
-        static int CANCELLED =  1;
-        static int SIGNAL    = -1;
-        static int CONDITION = -2;
-        static int PROPAGATE = -3;
         volatile int waitStatus;
         volatile Node prev;
         volatile Node next;
         volatile Thread thread;
         Node nextWaiter;
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-12 17:11:57.500 -0400", hash_original_method = "2DD8BF5485F2495811D83404AF44A29C", hash_generated_method = "D97AA86E3E532ED09C929914C7D648A4")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:35.201 -0400", hash_original_method = "2DD8BF5485F2495811D83404AF44A29C", hash_generated_method = "AAE5751DE21B256CB4EDD0DDB605F24E")
         @DSModeled(DSC.SAFE)
          Node() {
             // ---------- Original Method ----------
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-12 17:11:57.502 -0400", hash_original_method = "764EF23A3C66C99D5E5160039F46E6BD", hash_generated_method = "CD9AC8B2F6F2152AB82B53E42AE0F4F5")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:35.201 -0400", hash_original_method = "764EF23A3C66C99D5E5160039F46E6BD", hash_generated_method = "54E531E3602058910E4DEE08059882EF")
         @DSModeled(DSC.SAFE)
          Node(Thread thread, Node mode) {
             dsTaint.addTaint(thread.dsTaint);
@@ -1385,7 +1364,7 @@ public abstract class AbstractQueuedSynchronizer extends AbstractOwnableSynchron
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-12 17:11:57.506 -0400", hash_original_method = "5118904E6021AE155CDFF15DB609BD48", hash_generated_method = "141ACF42047CCE85E8BA418A6528A446")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:35.201 -0400", hash_original_method = "5118904E6021AE155CDFF15DB609BD48", hash_generated_method = "E4B75623035EB5337E7111134A811EBE")
         @DSModeled(DSC.SAFE)
          Node(Thread thread, int waitStatus) {
             dsTaint.addTaint(thread.dsTaint);
@@ -1396,7 +1375,7 @@ public abstract class AbstractQueuedSynchronizer extends AbstractOwnableSynchron
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-12 17:11:57.509 -0400", hash_original_method = "EA506AD78E2AE8ACF234FE0610B9A575", hash_generated_method = "41C123C3414DBA44B501221AC54D0509")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:35.201 -0400", hash_original_method = "EA506AD78E2AE8ACF234FE0610B9A575", hash_generated_method = "6F1E0E258120A81BA69DC057AD95A263")
         @DSModeled(DSC.SAFE)
         final boolean isShared() {
             return dsTaint.getTaintBoolean();
@@ -1405,8 +1384,8 @@ public abstract class AbstractQueuedSynchronizer extends AbstractOwnableSynchron
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-12 17:11:57.512 -0400", hash_original_method = "7AA5CFB77F71DE2C6FFA937BCE62ADAE", hash_generated_method = "483C6E6CB2CB9463FDF8C10466102307")
-        @DSModeled(DSC.SAFE)
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:35.201 -0400", hash_original_method = "7AA5CFB77F71DE2C6FFA937BCE62ADAE", hash_generated_method = "9670B1B52BFF85027385032D16C5B6D7")
+        //DSFIXME:  CODE0002: Requires DSC value to be set
         final Node predecessor() throws NullPointerException {
             Node p;
             p = prev;
@@ -1421,25 +1400,28 @@ public abstract class AbstractQueuedSynchronizer extends AbstractOwnableSynchron
         }
 
         
+        static final Node SHARED = new Node();
+        static final Node EXCLUSIVE = null;
+        static final int CANCELLED =  1;
+        static final int SIGNAL    = -1;
+        static final int CONDITION = -2;
+        static final int PROPAGATE = -3;
     }
 
 
     
     public class ConditionObject implements Condition, java.io.Serializable {
-        private static final long serialVersionUID = 1173984872572414699L;
         private transient Node firstWaiter;
         private transient Node lastWaiter;
-        private static final int REINTERRUPT =  1;
-        private static final int THROW_IE    = -1;
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-12 17:11:57.526 -0400", hash_original_method = "0A3E2C1E27BAEA738FDF96AD17500BEE", hash_generated_method = "9DA9DA1CBE0707973004B0B03662E1B6")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:35.201 -0400", hash_original_method = "0A3E2C1E27BAEA738FDF96AD17500BEE", hash_generated_method = "6AF9B0E3D406E6C56AA07F09E795B0E2")
         @DSModeled(DSC.SAFE)
         public ConditionObject() {
             // ---------- Original Method ----------
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-12 17:11:57.531 -0400", hash_original_method = "43F5E066353E431B2C9AD7CD0397BCCF", hash_generated_method = "BBF67622FB115A977496F8F046066F62")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:35.202 -0400", hash_original_method = "43F5E066353E431B2C9AD7CD0397BCCF", hash_generated_method = "01D874DAA3D0A265959A9CF5AE46AB3C")
         //DSFIXME:  CODE0002: Requires DSC value to be set
         private Node addConditionWaiter() {
             Node t;
@@ -1470,19 +1452,19 @@ public abstract class AbstractQueuedSynchronizer extends AbstractOwnableSynchron
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-12 17:11:57.543 -0400", hash_original_method = "74B8316ED8B5F40365D8BD9CF002AB2D", hash_generated_method = "50F37F74C599B82243458BC271154F60")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:35.202 -0400", hash_original_method = "74B8316ED8B5F40365D8BD9CF002AB2D", hash_generated_method = "86F47601EFA8B1FDC36708CD65C0A66E")
         //DSFIXME:  CODE0002: Requires DSC value to be set
         private void doSignal(Node first) {
             dsTaint.addTaint(first.dsTaint);
             {
                 {
-                    boolean varBC585BCE36C017A7C94055DA929092A7_2123884796 = ((firstWaiter = first.nextWaiter) == null);
+                    boolean varBC585BCE36C017A7C94055DA929092A7_1697038473 = ((firstWaiter = first.nextWaiter) == null);
                     lastWaiter = null;
                 } //End collapsed parenthetic
                 first.nextWaiter = null;
             } //End block
             {
-                boolean var608C6B17E7E10DD5072B7876717FB9A1_686731967 = (!transferForSignal(first) &&
+                boolean var608C6B17E7E10DD5072B7876717FB9A1_1422398810 = (!transferForSignal(first) &&
                      (first = firstWaiter) != null);
             } //End collapsed parenthetic
             // ---------- Original Method ----------
@@ -1495,8 +1477,8 @@ public abstract class AbstractQueuedSynchronizer extends AbstractOwnableSynchron
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-12 17:11:57.560 -0400", hash_original_method = "DE4F68C515AD9FDEF86DCFCC83AF390E", hash_generated_method = "858B59C04FB731AF2E5F00DA57E24238")
-        @DSModeled(DSC.SAFE)
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:35.202 -0400", hash_original_method = "DE4F68C515AD9FDEF86DCFCC83AF390E", hash_generated_method = "7B55B834A1B864B0F4AB6937CFE4E2C9")
+        //DSFIXME:  CODE0002: Requires DSC value to be set
         private void doSignalAll(Node first) {
             dsTaint.addTaint(first.dsTaint);
             lastWaiter = firstWaiter = null;
@@ -1518,7 +1500,7 @@ public abstract class AbstractQueuedSynchronizer extends AbstractOwnableSynchron
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-12 17:11:57.571 -0400", hash_original_method = "2AF991EC026F340CB09E7C74A01E5A9A", hash_generated_method = "BD1AC915A4D162535B95C32DD9B6F9D9")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:35.202 -0400", hash_original_method = "2AF991EC026F340CB09E7C74A01E5A9A", hash_generated_method = "3356A25D8D13BF5A01088971CA423629")
         @DSModeled(DSC.SAFE)
         private void unlinkCancelledWaiters() {
             Node t;
@@ -1558,11 +1540,11 @@ public abstract class AbstractQueuedSynchronizer extends AbstractOwnableSynchron
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-12 17:11:57.576 -0400", hash_original_method = "217DDC96D1B25C0D1457937D523A3AA4", hash_generated_method = "71070EBE4134B86C59211B023849E560")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:35.203 -0400", hash_original_method = "217DDC96D1B25C0D1457937D523A3AA4", hash_generated_method = "D596EC9A010EB530EB03F247DB1B60A0")
         //DSFIXME:  CODE0002: Requires DSC value to be set
         public final void signal() {
             {
-                boolean varBDF0ABD2F20F8D3DCB5C83DB8D0ED9B5_169817353 = (!isHeldExclusively());
+                boolean varBDF0ABD2F20F8D3DCB5C83DB8D0ED9B5_472381675 = (!isHeldExclusively());
                 if (DroidSafeAndroidRuntime.control) throw new IllegalMonitorStateException();
             } //End collapsed parenthetic
             Node first;
@@ -1577,11 +1559,11 @@ public abstract class AbstractQueuedSynchronizer extends AbstractOwnableSynchron
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-12 17:11:57.589 -0400", hash_original_method = "8098E0901B1513A38FF0251B40A20DA9", hash_generated_method = "CEEDC292D06727BFA07316D003F5E34B")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:35.203 -0400", hash_original_method = "8098E0901B1513A38FF0251B40A20DA9", hash_generated_method = "866AD9E3D1237B712315897169794886")
         //DSFIXME:  CODE0002: Requires DSC value to be set
         public final void signalAll() {
             {
-                boolean varBDF0ABD2F20F8D3DCB5C83DB8D0ED9B5_1415650377 = (!isHeldExclusively());
+                boolean varBDF0ABD2F20F8D3DCB5C83DB8D0ED9B5_70410909 = (!isHeldExclusively());
                 if (DroidSafeAndroidRuntime.control) throw new IllegalMonitorStateException();
             } //End collapsed parenthetic
             Node first;
@@ -1596,7 +1578,7 @@ public abstract class AbstractQueuedSynchronizer extends AbstractOwnableSynchron
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-12 17:11:57.594 -0400", hash_original_method = "03B567BE1E70F2310FD90D1C09544B27", hash_generated_method = "0CE3F11BB278324E56253B7DB30D414E")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:35.203 -0400", hash_original_method = "03B567BE1E70F2310FD90D1C09544B27", hash_generated_method = "73EBB22532FC3D9E753721EC2FD27189")
         //DSFIXME:  CODE0002: Requires DSC value to be set
         public final void awaitUninterruptibly() {
             Node node;
@@ -1606,17 +1588,17 @@ public abstract class AbstractQueuedSynchronizer extends AbstractOwnableSynchron
             boolean interrupted;
             interrupted = false;
             {
-                boolean var7669BC6629557DFF8ED85859E0E0A9CB_243380679 = (!isOnSyncQueue(node));
+                boolean var7669BC6629557DFF8ED85859E0E0A9CB_2064192103 = (!isOnSyncQueue(node));
                 {
                     LockSupport.park(this);
                     {
-                        boolean varA664C6144AE4C03C0F8F972E8F70F7E8_458047830 = (Thread.interrupted());
+                        boolean varA664C6144AE4C03C0F8F972E8F70F7E8_796601239 = (Thread.interrupted());
                         interrupted = true;
                     } //End collapsed parenthetic
                 } //End block
             } //End collapsed parenthetic
             {
-                boolean var17DE45DCF221A6E3B338FD5BCAB95962_949013050 = (acquireQueued(node, savedState) || interrupted);
+                boolean var17DE45DCF221A6E3B338FD5BCAB95962_57320907 = (acquireQueued(node, savedState) || interrupted);
                 selfInterrupt();
             } //End collapsed parenthetic
             // ---------- Original Method ----------
@@ -1633,13 +1615,13 @@ public abstract class AbstractQueuedSynchronizer extends AbstractOwnableSynchron
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-12 17:11:57.600 -0400", hash_original_method = "5CA3F4E55230C1BE0E77A65DF87A61F3", hash_generated_method = "38750407663D94273F1B9F0A882F3BB7")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:35.204 -0400", hash_original_method = "5CA3F4E55230C1BE0E77A65DF87A61F3", hash_generated_method = "40295928E0A507AE246751BB1BE3D166")
         //DSFIXME:  CODE0002: Requires DSC value to be set
         private int checkInterruptWhileWaiting(Node node) {
             dsTaint.addTaint(node.dsTaint);
             {
-                boolean var0E37FE7B424140ECEE412D02939B568B_792662624 = (Thread.interrupted());
-                Object varE3D941AA1F8858C4DCE68CB723942357_1717461883 = ((transferAfterCancelledWait(node) ? THROW_IE : REINTERRUPT)); //DSFIXME:  CODE0008: Nested ternary operator in expression
+                boolean var0E37FE7B424140ECEE412D02939B568B_1649857849 = (Thread.interrupted());
+                Object varE3D941AA1F8858C4DCE68CB723942357_1694515528 = ((transferAfterCancelledWait(node) ? THROW_IE : REINTERRUPT)); //DSFIXME:  CODE0008: Nested ternary operator in expression
             } //End flattened ternary
             //DSFIXME:  CODE0008: Nested ternary operator in expression
             return dsTaint.getTaintInt();
@@ -1650,8 +1632,8 @@ public abstract class AbstractQueuedSynchronizer extends AbstractOwnableSynchron
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-12 17:11:57.603 -0400", hash_original_method = "5304D5C5F98F936C59A15960318DA98F", hash_generated_method = "932C78A15BA0F00EB25AC07C3935A0F3")
-        @DSModeled(DSC.SAFE)
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:35.204 -0400", hash_original_method = "5304D5C5F98F936C59A15960318DA98F", hash_generated_method = "AC7CD6AB2210C5945975486B4D92E78E")
+        //DSFIXME:  CODE0002: Requires DSC value to be set
         private void reportInterruptAfterWait(int interruptMode) throws InterruptedException {
             dsTaint.addTaint(interruptMode);
             if (DroidSafeAndroidRuntime.control) throw new InterruptedException();
@@ -1664,11 +1646,11 @@ public abstract class AbstractQueuedSynchronizer extends AbstractOwnableSynchron
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-12 17:11:57.611 -0400", hash_original_method = "316B8F22454E74CF1A9F01045EC67EC6", hash_generated_method = "F750814BE3355448FD647C6B9A14627C")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:35.204 -0400", hash_original_method = "316B8F22454E74CF1A9F01045EC67EC6", hash_generated_method = "78B704DCFDBDF2FAC0220E09A4C4E1A5")
         //DSFIXME:  CODE0002: Requires DSC value to be set
         public final void await() throws InterruptedException {
             {
-                boolean var0E37FE7B424140ECEE412D02939B568B_817837905 = (Thread.interrupted());
+                boolean var0E37FE7B424140ECEE412D02939B568B_2024941382 = (Thread.interrupted());
                 if (DroidSafeAndroidRuntime.control) throw new InterruptedException();
             } //End collapsed parenthetic
             Node node;
@@ -1678,16 +1660,16 @@ public abstract class AbstractQueuedSynchronizer extends AbstractOwnableSynchron
             int interruptMode;
             interruptMode = 0;
             {
-                boolean var7669BC6629557DFF8ED85859E0E0A9CB_1265891550 = (!isOnSyncQueue(node));
+                boolean var7669BC6629557DFF8ED85859E0E0A9CB_408289386 = (!isOnSyncQueue(node));
                 {
                     LockSupport.park(this);
                     {
-                        boolean var6AE23BDEA9D63180A0E3C204AF41FD36_1968200345 = ((interruptMode = checkInterruptWhileWaiting(node)) != 0);
+                        boolean var6AE23BDEA9D63180A0E3C204AF41FD36_1986797060 = ((interruptMode = checkInterruptWhileWaiting(node)) != 0);
                     } //End collapsed parenthetic
                 } //End block
             } //End collapsed parenthetic
             {
-                boolean var9A8AD69289DFCA583A17189FA6FE1B11_1590671837 = (acquireQueued(node, savedState) && interruptMode != THROW_IE);
+                boolean var9A8AD69289DFCA583A17189FA6FE1B11_1184935818 = (acquireQueued(node, savedState) && interruptMode != THROW_IE);
                 interruptMode = REINTERRUPT;
             } //End collapsed parenthetic
             unlinkCancelledWaiters();
@@ -1712,12 +1694,12 @@ public abstract class AbstractQueuedSynchronizer extends AbstractOwnableSynchron
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-12 17:11:57.621 -0400", hash_original_method = "46C34832DD3406F7F3C664FF7A3A79B4", hash_generated_method = "651173E126EC32BFE743C9433C77817B")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:35.204 -0400", hash_original_method = "46C34832DD3406F7F3C664FF7A3A79B4", hash_generated_method = "12A0E09C8B0FBBD3D5889BB266373AAA")
         //DSFIXME:  CODE0002: Requires DSC value to be set
         public final long awaitNanos(long nanosTimeout) throws InterruptedException {
             dsTaint.addTaint(nanosTimeout);
             {
-                boolean var0E37FE7B424140ECEE412D02939B568B_553939973 = (Thread.interrupted());
+                boolean var0E37FE7B424140ECEE412D02939B568B_562017246 = (Thread.interrupted());
                 if (DroidSafeAndroidRuntime.control) throw new InterruptedException();
             } //End collapsed parenthetic
             Node node;
@@ -1729,14 +1711,14 @@ public abstract class AbstractQueuedSynchronizer extends AbstractOwnableSynchron
             int interruptMode;
             interruptMode = 0;
             {
-                boolean var7669BC6629557DFF8ED85859E0E0A9CB_452324251 = (!isOnSyncQueue(node));
+                boolean var7669BC6629557DFF8ED85859E0E0A9CB_1364957196 = (!isOnSyncQueue(node));
                 {
                     {
                         transferAfterCancelledWait(node);
                     } //End block
                     LockSupport.parkNanos(this, nanosTimeout);
                     {
-                        boolean var6AE23BDEA9D63180A0E3C204AF41FD36_1988985599 = ((interruptMode = checkInterruptWhileWaiting(node)) != 0);
+                        boolean var6AE23BDEA9D63180A0E3C204AF41FD36_1285841667 = ((interruptMode = checkInterruptWhileWaiting(node)) != 0);
                     } //End collapsed parenthetic
                     long now;
                     now = System.nanoTime();
@@ -1745,19 +1727,19 @@ public abstract class AbstractQueuedSynchronizer extends AbstractOwnableSynchron
                 } //End block
             } //End collapsed parenthetic
             {
-                boolean var9A8AD69289DFCA583A17189FA6FE1B11_1635006852 = (acquireQueued(node, savedState) && interruptMode != THROW_IE);
+                boolean var9A8AD69289DFCA583A17189FA6FE1B11_1786863191 = (acquireQueued(node, savedState) && interruptMode != THROW_IE);
                 interruptMode = REINTERRUPT;
             } //End collapsed parenthetic
             unlinkCancelledWaiters();
             reportInterruptAfterWait(interruptMode);
-            long var0AE99C9194A9E8813170658867C876DB_1888469245 = (nanosTimeout - (System.nanoTime() - lastTime));
+            long var0AE99C9194A9E8813170658867C876DB_1759425233 = (nanosTimeout - (System.nanoTime() - lastTime));
             return dsTaint.getTaintLong();
             // ---------- Original Method ----------
             // Original Method Too Long, Refer to Original Implementation
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-12 17:11:57.631 -0400", hash_original_method = "9B6F9AFE5FC55A4D3153D2EEB76307B9", hash_generated_method = "EE61F1590E5B5594B5F1A65F7325D27A")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:35.205 -0400", hash_original_method = "9B6F9AFE5FC55A4D3153D2EEB76307B9", hash_generated_method = "A7809F7888B7AFF8BA33E9F8A66C8517")
         //DSFIXME:  CODE0002: Requires DSC value to be set
         public final boolean awaitUntil(Date deadline) throws InterruptedException {
             dsTaint.addTaint(deadline.dsTaint);
@@ -1765,7 +1747,7 @@ public abstract class AbstractQueuedSynchronizer extends AbstractOwnableSynchron
             long abstime;
             abstime = deadline.getTime();
             {
-                boolean var0E37FE7B424140ECEE412D02939B568B_1951427015 = (Thread.interrupted());
+                boolean var0E37FE7B424140ECEE412D02939B568B_716294017 = (Thread.interrupted());
                 if (DroidSafeAndroidRuntime.control) throw new InterruptedException();
             } //End collapsed parenthetic
             Node node;
@@ -1777,22 +1759,22 @@ public abstract class AbstractQueuedSynchronizer extends AbstractOwnableSynchron
             int interruptMode;
             interruptMode = 0;
             {
-                boolean var7669BC6629557DFF8ED85859E0E0A9CB_1812336851 = (!isOnSyncQueue(node));
+                boolean var7669BC6629557DFF8ED85859E0E0A9CB_1687727529 = (!isOnSyncQueue(node));
                 {
                     {
-                        boolean varD36E947A894CF1227DF67FCDA3A195E9_49102021 = (System.currentTimeMillis() > abstime);
+                        boolean varD36E947A894CF1227DF67FCDA3A195E9_667382577 = (System.currentTimeMillis() > abstime);
                         {
                             timedout = transferAfterCancelledWait(node);
                         } //End block
                     } //End collapsed parenthetic
                     LockSupport.parkUntil(this, abstime);
                     {
-                        boolean var6AE23BDEA9D63180A0E3C204AF41FD36_1323440037 = ((interruptMode = checkInterruptWhileWaiting(node)) != 0);
+                        boolean var6AE23BDEA9D63180A0E3C204AF41FD36_627345362 = ((interruptMode = checkInterruptWhileWaiting(node)) != 0);
                     } //End collapsed parenthetic
                 } //End block
             } //End collapsed parenthetic
             {
-                boolean var9A8AD69289DFCA583A17189FA6FE1B11_1868273423 = (acquireQueued(node, savedState) && interruptMode != THROW_IE);
+                boolean var9A8AD69289DFCA583A17189FA6FE1B11_348246108 = (acquireQueued(node, savedState) && interruptMode != THROW_IE);
                 interruptMode = REINTERRUPT;
             } //End collapsed parenthetic
             unlinkCancelledWaiters();
@@ -1803,7 +1785,7 @@ public abstract class AbstractQueuedSynchronizer extends AbstractOwnableSynchron
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-12 17:11:57.642 -0400", hash_original_method = "BFE4D71142E465ECC716594C0843F211", hash_generated_method = "C8CE02C8F6D9BAE8CA22F1DEBCAA302E")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:35.205 -0400", hash_original_method = "BFE4D71142E465ECC716594C0843F211", hash_generated_method = "F5C58F397D42790A0B2343076BB228BD")
         //DSFIXME:  CODE0002: Requires DSC value to be set
         public final boolean await(long time, TimeUnit unit) throws InterruptedException {
             dsTaint.addTaint(unit.dsTaint);
@@ -1812,7 +1794,7 @@ public abstract class AbstractQueuedSynchronizer extends AbstractOwnableSynchron
             long nanosTimeout;
             nanosTimeout = unit.toNanos(time);
             {
-                boolean var0E37FE7B424140ECEE412D02939B568B_313112169 = (Thread.interrupted());
+                boolean var0E37FE7B424140ECEE412D02939B568B_479666773 = (Thread.interrupted());
                 if (DroidSafeAndroidRuntime.control) throw new InterruptedException();
             } //End collapsed parenthetic
             Node node;
@@ -1826,14 +1808,14 @@ public abstract class AbstractQueuedSynchronizer extends AbstractOwnableSynchron
             int interruptMode;
             interruptMode = 0;
             {
-                boolean var7669BC6629557DFF8ED85859E0E0A9CB_704474120 = (!isOnSyncQueue(node));
+                boolean var7669BC6629557DFF8ED85859E0E0A9CB_972768413 = (!isOnSyncQueue(node));
                 {
                     {
                         timedout = transferAfterCancelledWait(node);
                     } //End block
                     LockSupport.parkNanos(this, nanosTimeout);
                     {
-                        boolean var6AE23BDEA9D63180A0E3C204AF41FD36_1020680597 = ((interruptMode = checkInterruptWhileWaiting(node)) != 0);
+                        boolean var6AE23BDEA9D63180A0E3C204AF41FD36_1064096058 = ((interruptMode = checkInterruptWhileWaiting(node)) != 0);
                     } //End collapsed parenthetic
                     long now;
                     now = System.nanoTime();
@@ -1842,7 +1824,7 @@ public abstract class AbstractQueuedSynchronizer extends AbstractOwnableSynchron
                 } //End block
             } //End collapsed parenthetic
             {
-                boolean var9A8AD69289DFCA583A17189FA6FE1B11_1590624999 = (acquireQueued(node, savedState) && interruptMode != THROW_IE);
+                boolean var9A8AD69289DFCA583A17189FA6FE1B11_2063573650 = (acquireQueued(node, savedState) && interruptMode != THROW_IE);
                 interruptMode = REINTERRUPT;
             } //End collapsed parenthetic
             unlinkCancelledWaiters();
@@ -1853,21 +1835,22 @@ public abstract class AbstractQueuedSynchronizer extends AbstractOwnableSynchron
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-12 17:11:57.657 -0400", hash_original_method = "165B5BC520C58D38E1ED3303B481AD06", hash_generated_method = "6FE71AFAE1A002E97F9629B79AA17CDC")
-        @DSModeled(DSC.SAFE)
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:35.205 -0400", hash_original_method = "165B5BC520C58D38E1ED3303B481AD06", hash_generated_method = "6A59CEA3BC5880D7AB367E036C9B2F96")
+        //DSFIXME:  CODE0002: Requires DSC value to be set
         final boolean isOwnedBy(AbstractQueuedSynchronizer sync) {
             dsTaint.addTaint(sync.dsTaint);
+            boolean var2A8E0121C9EBA5DBD487804D196CA981_76244728 = (sync == AbstractQueuedSynchronizer.this);
             return dsTaint.getTaintBoolean();
             // ---------- Original Method ----------
             //return sync == AbstractQueuedSynchronizer.this;
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-12 17:11:57.662 -0400", hash_original_method = "5570422C2D22E250B14B7FB8C176D89A", hash_generated_method = "CB31759CE7AAAC5B7EF10F81313356FF")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:35.206 -0400", hash_original_method = "5570422C2D22E250B14B7FB8C176D89A", hash_generated_method = "BBCF97675A567FAFB9D4207F902278BA")
         //DSFIXME:  CODE0002: Requires DSC value to be set
         protected final boolean hasWaiters() {
             {
-                boolean varBDF0ABD2F20F8D3DCB5C83DB8D0ED9B5_1453780419 = (!isHeldExclusively());
+                boolean varBDF0ABD2F20F8D3DCB5C83DB8D0ED9B5_1762442327 = (!isHeldExclusively());
                 if (DroidSafeAndroidRuntime.control) throw new IllegalMonitorStateException();
             } //End collapsed parenthetic
             {
@@ -1887,11 +1870,11 @@ public abstract class AbstractQueuedSynchronizer extends AbstractOwnableSynchron
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-12 17:11:57.667 -0400", hash_original_method = "586699B2B19676C29FE19392CDC481BB", hash_generated_method = "22AE6B3A64B529D95B65DE2109FB165D")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:35.206 -0400", hash_original_method = "586699B2B19676C29FE19392CDC481BB", hash_generated_method = "FD802F74270AB8DD464F57CF222CD703")
         //DSFIXME:  CODE0002: Requires DSC value to be set
         protected final int getWaitQueueLength() {
             {
-                boolean varBDF0ABD2F20F8D3DCB5C83DB8D0ED9B5_580179418 = (!isHeldExclusively());
+                boolean varBDF0ABD2F20F8D3DCB5C83DB8D0ED9B5_148353248 = (!isHeldExclusively());
                 if (DroidSafeAndroidRuntime.control) throw new IllegalMonitorStateException();
             } //End collapsed parenthetic
             int n;
@@ -1900,9 +1883,6 @@ public abstract class AbstractQueuedSynchronizer extends AbstractOwnableSynchron
                 Node w;
                 w = firstWaiter;
                 w = w.nextWaiter;
-                {
-                    ++n;
-                } //End block
             } //End collapsed parenthetic
             return dsTaint.getTaintInt();
             // ---------- Original Method ----------
@@ -1917,11 +1897,11 @@ public abstract class AbstractQueuedSynchronizer extends AbstractOwnableSynchron
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-12 17:11:57.672 -0400", hash_original_method = "D1136CB2B0FE173AD3F139F996FAE8B5", hash_generated_method = "649F8475759C0676DEA0250F81F4ACBA")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:35.206 -0400", hash_original_method = "D1136CB2B0FE173AD3F139F996FAE8B5", hash_generated_method = "817BE8AC455549E43A6D033A9A5CCC31")
         //DSFIXME:  CODE0002: Requires DSC value to be set
         protected final Collection<Thread> getWaitingThreads() {
             {
-                boolean varBDF0ABD2F20F8D3DCB5C83DB8D0ED9B5_1700846775 = (!isHeldExclusively());
+                boolean varBDF0ABD2F20F8D3DCB5C83DB8D0ED9B5_1439892869 = (!isHeldExclusively());
                 if (DroidSafeAndroidRuntime.control) throw new IllegalMonitorStateException();
             } //End collapsed parenthetic
             ArrayList<Thread> list;
@@ -1954,10 +1934,21 @@ public abstract class AbstractQueuedSynchronizer extends AbstractOwnableSynchron
         }
 
         
+        private static final long serialVersionUID = 1173984872572414699L;
+        private static final int REINTERRUPT =  1;
+        private static final int THROW_IE    = -1;
     }
 
 
     
+    private static final long serialVersionUID = 7373984972572414691L;
+    static final long spinForTimeoutThreshold = 1000L;
+    private static final Unsafe unsafe = UnsafeAccess.THE_ONE;
+    private static final long stateOffset;
+    private static final long headOffset;
+    private static final long tailOffset;
+    private static final long waitStatusOffset;
+    private static final long nextOffset;
     static {
         try {
             stateOffset = unsafe.objectFieldOffset
@@ -1974,5 +1965,4 @@ public abstract class AbstractQueuedSynchronizer extends AbstractOwnableSynchron
     }
     
 }
-
 

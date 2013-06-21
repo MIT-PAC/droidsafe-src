@@ -27,24 +27,19 @@ import java.util.concurrent.atomic.AtomicBoolean;
 import libcore.io.IoUtils;
 
 public class SamplingProfilerIntegration {
-    private static String TAG = "SamplingProfilerIntegration";
-    public static String SNAPSHOT_DIR = "/data/snapshots";
-    private static boolean enabled;
-    private static Executor snapshotWriter;
-    private static int samplingProfilerMilliseconds;
-    private static int samplingProfilerDepth;
-    private static AtomicBoolean pending = new AtomicBoolean(false);
-    private static SamplingProfiler samplingProfiler;
-    private static long startMillis;
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 12:28:45.269 -0400", hash_original_method = "7F96EB9041812BCBDE3CAB21860F0D78", hash_generated_method = "176744FB379C063ED5EE004EDB8E802B")
-    public static boolean isEnabled() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:10.276 -0400", hash_original_method = "75CCCEF1F1C8F6D6E2F52808B28DDD7D", hash_generated_method = "75CCCEF1F1C8F6D6E2F52808B28DDD7D")
+        public SamplingProfilerIntegration ()
+    {
+    }
+
+
+        public static boolean isEnabled() {
         return enabled;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 12:28:45.274 -0400", hash_original_method = "EB3E524D388CAA0001E918D3BE2E0050", hash_generated_method = "F8904635ACB2C47E51F6597E693D3268")
-    public static void start() {
+        public static void start() {
         if (!enabled) {
             return;
         }
@@ -60,8 +55,7 @@ public class SamplingProfilerIntegration {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 12:28:45.294 -0400", hash_original_method = "B569CAA62A49ECE2C19ECFCEE09DE2D9", hash_generated_method = "3A28FE200324C4DCFED82C5C974452F9")
-    public static void writeSnapshot(final String processName, final PackageInfo packageInfo) {
+        public static void writeSnapshot(final String processName, final PackageInfo packageInfo) {
         if (!enabled) {
             return;
         }
@@ -83,8 +77,7 @@ public class SamplingProfilerIntegration {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 12:28:45.306 -0400", hash_original_method = "A979A74A67ED90384C5F9F6956F4ECC6", hash_generated_method = "CAA6DC70FBFADEE08CBFA9A96FE4955F")
-    public static void writeZygoteSnapshot() {
+        public static void writeZygoteSnapshot() {
         if (!enabled) {
             return;
         }
@@ -95,8 +88,7 @@ public class SamplingProfilerIntegration {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 12:28:45.330 -0400", hash_original_method = "31CB55FEBB712AC9C6C246D13CF90696", hash_generated_method = "8D54DAD10C9821C52EC61B7E3546A7F3")
-    private static void writeSnapshotFile(String processName, PackageInfo packageInfo) {
+        private static void writeSnapshotFile(String processName, PackageInfo packageInfo) {
         if (!enabled) {
             return;
         }
@@ -126,8 +118,7 @@ public class SamplingProfilerIntegration {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 12:28:45.337 -0400", hash_original_method = "209578548F46DD00349D7E4CCC9857FB", hash_generated_method = "242648A1C4E83113983571FFB3DA5232")
-    private static void generateSnapshotHeader(String processName, PackageInfo packageInfo,
+        private static void generateSnapshotHeader(String processName, PackageInfo packageInfo,
             PrintStream out) {
         out.println("Version: 3");
         out.println("Process: " + processName);
@@ -140,6 +131,13 @@ public class SamplingProfilerIntegration {
     }
 
     
+    private static final String TAG = "SamplingProfilerIntegration";
+    public static final String SNAPSHOT_DIR = "/data/snapshots";
+    private static final boolean enabled;
+    private static final Executor snapshotWriter;
+    private static final int samplingProfilerMilliseconds;
+    private static final int samplingProfilerDepth;
+    private static final AtomicBoolean pending = new AtomicBoolean(false);
     static {
         samplingProfilerMilliseconds = SystemProperties.getInt("persist.sys.profiler_ms", 0);
         samplingProfilerDepth = SystemProperties.getInt("persist.sys.profiler_depth", 4);
@@ -169,6 +167,7 @@ public class SamplingProfilerIntegration {
         }
     }
     
+    private static SamplingProfiler samplingProfiler;
+    private static long startMillis;
 }
-
 

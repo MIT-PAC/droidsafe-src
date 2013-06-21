@@ -17,4 +17,3 @@ public interface RootViewSurfaceTaker {
     void setSurfaceKeepScreenOn(boolean keepOn);
     InputQueue.Callback willYouTakeTheInputQueue();
 }
-

@@ -3,14 +3,49 @@ package android.util;
 // Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
+import droidsafe.runtime.*;
 
-// import Iterator to deal with enhanced for loop translation
+// needed for enhanced for control translations
 import java.util.Iterator;
-
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public class Patterns {
+    
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:58.305 -0400", hash_original_method = "91DADCDFBE7734A1949A5AEB67A00312", hash_generated_method = "DCA1D744818DE2F75F6DF6E223A6F400")
+    @DSModeled(DSC.SAFE)
+    private Patterns() {
+        // ---------- Original Method ----------
+    }
+
+    
+        public static final String concatGroups(Matcher matcher) {
+        StringBuilder b = new StringBuilder();
+        final int numGroups = matcher.groupCount();
+        for (int i = 1; i <= numGroups; i++) {
+            String s = matcher.group(i);
+            System.err.println("Group(" + i + ") : " + s);
+            if (s != null) {
+                b.append(s);
+            }
+        }
+        return b.toString();
+    }
+
+    
+        public static final String digitsAndPlusOnly(Matcher matcher) {
+        StringBuilder buffer = new StringBuilder();
+        String matchingRegion = matcher.group();
+        for (int i = 0, size = matchingRegion.length(); i < size; i++) {
+            char character = matchingRegion.charAt(i);
+            if (character == '+' || Character.isDigit(character)) {
+                buffer.append(character);
+            }
+        }
+        return buffer.toString();
+    }
+
+    
     public static final String TOP_LEVEL_DOMAIN_STR =
         "((aero|arpa|asia|a[cdefgilmnoqrstuwxz])"
         + "|(biz|b[abdefghijmnorstvwyz])"
@@ -111,43 +146,5 @@ public class Patterns {
                 "(\\+[0-9]+[\\- \\.]*)?"                    
                 + "(\\([0-9]+\\)[\\- \\.]*)?"               
                 + "([0-9][0-9\\- \\.][0-9\\- \\.]+[0-9])");
-    
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:04.652 -0400", hash_original_method = "91DADCDFBE7734A1949A5AEB67A00312", hash_generated_method = "0164EEFD4B05F7E135077CB5ADF46FE0")
-    @DSModeled(DSC.SAFE)
-    private Patterns() {
-        // ---------- Original Method ----------
-    }
-
-    
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:04.652 -0400", hash_original_method = "E4620A6545EAD8C2EF58B04DD910C84A", hash_generated_method = "ECD42CB2BC0D3CF90D60C6906B14E163")
-    public static final String concatGroups(Matcher matcher) {
-        StringBuilder b = new StringBuilder();
-        final int numGroups = matcher.groupCount();
-        for (int i = 1; i <= numGroups; i++) {
-            String s = matcher.group(i);
-            System.err.println("Group(" + i + ") : " + s);
-            if (s != null) {
-                b.append(s);
-            }
-        }
-        return b.toString();
-    }
-
-    
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:04.652 -0400", hash_original_method = "1928D2CC90BCDA265F17C4239580FA33", hash_generated_method = "0DBBABD66A413E6B5273396CCBCEF1B1")
-    public static final String digitsAndPlusOnly(Matcher matcher) {
-        StringBuilder buffer = new StringBuilder();
-        String matchingRegion = matcher.group();
-        for (int i = 0, size = matchingRegion.length(); i < size; i++) {
-            char character = matchingRegion.charAt(i);
-            if (character == '+' || Character.isDigit(character)) {
-                buffer.append(character);
-            }
-        }
-        return buffer.toString();
-    }
-
-    
 }
-
 

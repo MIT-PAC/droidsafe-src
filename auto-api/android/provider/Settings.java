@@ -3,10 +3,10 @@ package android.provider;
 // Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
+import droidsafe.runtime.*;
 
-// import Iterator to deal with enhanced for loop translation
+// needed for enhanced for control translations
 import java.util.Iterator;
-
 import android.annotation.SdkConstant;
 import android.annotation.SdkConstant.SdkConstantType;
 import android.app.SearchManager;
@@ -39,131 +39,21 @@ import java.util.HashMap;
 import java.util.HashSet;
 
 public final class Settings {
-    @SdkConstant(SdkConstantType.ACTIVITY_INTENT_ACTION)
-    public static final String ACTION_SETTINGS = "android.settings.SETTINGS";
-    @SdkConstant(SdkConstantType.ACTIVITY_INTENT_ACTION)
-    public static final String ACTION_APN_SETTINGS = "android.settings.APN_SETTINGS";
-    @SdkConstant(SdkConstantType.ACTIVITY_INTENT_ACTION)
-    public static final String ACTION_LOCATION_SOURCE_SETTINGS =
-            "android.settings.LOCATION_SOURCE_SETTINGS";
-    @SdkConstant(SdkConstantType.ACTIVITY_INTENT_ACTION)
-    public static final String ACTION_WIRELESS_SETTINGS =
-            "android.settings.WIRELESS_SETTINGS";
-    @SdkConstant(SdkConstantType.ACTIVITY_INTENT_ACTION)
-    public static final String ACTION_AIRPLANE_MODE_SETTINGS =
-            "android.settings.AIRPLANE_MODE_SETTINGS";
-    @SdkConstant(SdkConstantType.ACTIVITY_INTENT_ACTION)
-    public static final String ACTION_ACCESSIBILITY_SETTINGS =
-            "android.settings.ACCESSIBILITY_SETTINGS";
-    @SdkConstant(SdkConstantType.ACTIVITY_INTENT_ACTION)
-    public static final String ACTION_SECURITY_SETTINGS =
-            "android.settings.SECURITY_SETTINGS";
-    @SdkConstant(SdkConstantType.ACTIVITY_INTENT_ACTION)
-    public static final String ACTION_PRIVACY_SETTINGS =
-            "android.settings.PRIVACY_SETTINGS";
-    @SdkConstant(SdkConstantType.ACTIVITY_INTENT_ACTION)
-    public static final String ACTION_WIFI_SETTINGS =
-            "android.settings.WIFI_SETTINGS";
-    @SdkConstant(SdkConstantType.ACTIVITY_INTENT_ACTION)
-    public static final String ACTION_WIFI_IP_SETTINGS =
-            "android.settings.WIFI_IP_SETTINGS";
-    @SdkConstant(SdkConstantType.ACTIVITY_INTENT_ACTION)
-    public static final String ACTION_BLUETOOTH_SETTINGS =
-            "android.settings.BLUETOOTH_SETTINGS";
-    @SdkConstant(SdkConstantType.ACTIVITY_INTENT_ACTION)
-    public static final String ACTION_DATE_SETTINGS =
-            "android.settings.DATE_SETTINGS";
-    @SdkConstant(SdkConstantType.ACTIVITY_INTENT_ACTION)
-    public static final String ACTION_SOUND_SETTINGS =
-            "android.settings.SOUND_SETTINGS";
-    @SdkConstant(SdkConstantType.ACTIVITY_INTENT_ACTION)
-    public static final String ACTION_DISPLAY_SETTINGS =
-            "android.settings.DISPLAY_SETTINGS";
-    @SdkConstant(SdkConstantType.ACTIVITY_INTENT_ACTION)
-    public static final String ACTION_LOCALE_SETTINGS =
-            "android.settings.LOCALE_SETTINGS";
-    @SdkConstant(SdkConstantType.ACTIVITY_INTENT_ACTION)
-    public static final String ACTION_INPUT_METHOD_SETTINGS =
-            "android.settings.INPUT_METHOD_SETTINGS";
-    @SdkConstant(SdkConstantType.ACTIVITY_INTENT_ACTION)
-    public static final String ACTION_INPUT_METHOD_SUBTYPE_SETTINGS =
-            "android.settings.INPUT_METHOD_SUBTYPE_SETTINGS";
-    @SdkConstant(SdkConstantType.ACTIVITY_INTENT_ACTION)
-    public static final String ACTION_SHOW_INPUT_METHOD_PICKER =
-            "android.settings.SHOW_INPUT_METHOD_PICKER";
-    @SdkConstant(SdkConstantType.ACTIVITY_INTENT_ACTION)
-    public static final String ACTION_USER_DICTIONARY_SETTINGS =
-            "android.settings.USER_DICTIONARY_SETTINGS";
-    @SdkConstant(SdkConstantType.ACTIVITY_INTENT_ACTION)
-    public static final String ACTION_USER_DICTIONARY_INSERT =
-            "com.android.settings.USER_DICTIONARY_INSERT";
-    @SdkConstant(SdkConstantType.ACTIVITY_INTENT_ACTION)
-    public static final String ACTION_APPLICATION_SETTINGS =
-            "android.settings.APPLICATION_SETTINGS";
-    @SdkConstant(SdkConstantType.ACTIVITY_INTENT_ACTION)
-    public static final String ACTION_APPLICATION_DEVELOPMENT_SETTINGS =
-            "android.settings.APPLICATION_DEVELOPMENT_SETTINGS";
-    @SdkConstant(SdkConstantType.ACTIVITY_INTENT_ACTION)
-    public static final String ACTION_QUICK_LAUNCH_SETTINGS =
-            "android.settings.QUICK_LAUNCH_SETTINGS";
-    @SdkConstant(SdkConstantType.ACTIVITY_INTENT_ACTION)
-    public static final String ACTION_MANAGE_APPLICATIONS_SETTINGS =
-            "android.settings.MANAGE_APPLICATIONS_SETTINGS";
-    @SdkConstant(SdkConstantType.ACTIVITY_INTENT_ACTION)
-    public static final String ACTION_MANAGE_ALL_APPLICATIONS_SETTINGS =
-            "android.settings.MANAGE_ALL_APPLICATIONS_SETTINGS";
-    @SdkConstant(SdkConstantType.ACTIVITY_INTENT_ACTION)
-    public static final String ACTION_APPLICATION_DETAILS_SETTINGS =
-            "android.settings.APPLICATION_DETAILS_SETTINGS";
-    @SdkConstant(SdkConstantType.ACTIVITY_INTENT_ACTION)
-    public static final String ACTION_SYSTEM_UPDATE_SETTINGS =
-            "android.settings.SYSTEM_UPDATE_SETTINGS";
-    @SdkConstant(SdkConstantType.ACTIVITY_INTENT_ACTION)
-    public static final String ACTION_SYNC_SETTINGS =
-            "android.settings.SYNC_SETTINGS";
-    @SdkConstant(SdkConstantType.ACTIVITY_INTENT_ACTION)
-    public static final String ACTION_ADD_ACCOUNT =
-            "android.settings.ADD_ACCOUNT_SETTINGS";
-    @SdkConstant(SdkConstantType.ACTIVITY_INTENT_ACTION)
-    public static final String ACTION_NETWORK_OPERATOR_SETTINGS =
-            "android.settings.NETWORK_OPERATOR_SETTINGS";
-    @SdkConstant(SdkConstantType.ACTIVITY_INTENT_ACTION)
-    public static final String ACTION_DATA_ROAMING_SETTINGS =
-            "android.settings.DATA_ROAMING_SETTINGS";
-    @SdkConstant(SdkConstantType.ACTIVITY_INTENT_ACTION)
-    public static final String ACTION_INTERNAL_STORAGE_SETTINGS =
-            "android.settings.INTERNAL_STORAGE_SETTINGS";
-    @SdkConstant(SdkConstantType.ACTIVITY_INTENT_ACTION)
-    public static final String ACTION_MEMORY_CARD_SETTINGS =
-            "android.settings.MEMORY_CARD_SETTINGS";
-    @SdkConstant(SdkConstantType.ACTIVITY_INTENT_ACTION)
-    public static final String ACTION_SEARCH_SETTINGS =
-        "android.search.action.SEARCH_SETTINGS";
-    @SdkConstant(SdkConstantType.ACTIVITY_INTENT_ACTION)
-    public static final String ACTION_DEVICE_INFO_SETTINGS =
-        "android.settings.DEVICE_INFO_SETTINGS";
-    @SdkConstant(SdkConstantType.ACTIVITY_INTENT_ACTION)
-    public static final String ACTION_NFCSHARING_SETTINGS =
-        "android.settings.NFCSHARING_SETTINGS";
-    public static final String CALL_METHOD_GET_SYSTEM = "GET_system";
-    public static final String CALL_METHOD_GET_SECURE = "GET_secure";
-    public static final String EXTRA_AUTHORITIES =
-            "authorities";
-    public static final String EXTRA_INPUT_METHOD_ID = "input_method_id";
-    private static final String JID_RESOURCE_PREFIX = "android";
-    public static final String AUTHORITY = "settings";
-    private static final String TAG = "Settings";
-    private static final boolean LOCAL_LOGV = false || false;
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:03.268 -0400", hash_original_method = "8B3803D6F4B33CAB905DD137BF81E092", hash_generated_method = "241E6E8D94A86CBDA619EC3D24D550FE")
-    public static String getGTalkDeviceId(long androidId) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:54.991 -0400", hash_original_method = "9E9C65F3ECED90949A3BED36B52A3064", hash_generated_method = "9E9C65F3ECED90949A3BED36B52A3064")
+        public Settings ()
+    {
+    }
+
+
+        public static String getGTalkDeviceId(long androidId) {
         return "android-" + Long.toHexString(androidId);
     }
 
     
     public static class SettingNotFoundException extends AndroidException {
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:03.268 -0400", hash_original_method = "9D3DA3FD01BD65E9C8D44BD33E232128", hash_generated_method = "45195FA79CFBE42E7ABEF9FBE1B754E0")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:54.992 -0400", hash_original_method = "9D3DA3FD01BD65E9C8D44BD33E232128", hash_generated_method = "52BC52B0A250352B9CAF9585096F5384")
         //DSFIXME:  CODE0002: Requires DSC value to be set
         public SettingNotFoundException(String msg) {
             super(msg);
@@ -177,11 +67,14 @@ public final class Settings {
 
     
     public static class NameValueTable implements BaseColumns {
-        public static final String NAME = "name";
-        public static final String VALUE = "value";
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:03.268 -0400", hash_original_method = "21FF82E299A7324E4B71C8146DBBBDA8", hash_generated_method = "48D5437854E20D639CF88E5F3172B280")
-        protected static boolean putString(ContentResolver resolver, Uri uri,
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:54.992 -0400", hash_original_method = "DD1594AE2393A9C243453FFEF17696E5", hash_generated_method = "DD1594AE2393A9C243453FFEF17696E5")
+                public NameValueTable ()
+        {
+        }
+
+
+                protected static boolean putString(ContentResolver resolver, Uri uri,
                 String name, String value) {
             try {
                 ContentValues values = new ContentValues();
@@ -196,28 +89,26 @@ public final class Settings {
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:03.268 -0400", hash_original_method = "C630C296F5C357D60AA0A465458F1635", hash_generated_method = "EBD10A190A45E97629EFAC370345EAD4")
-        public static Uri getUriFor(Uri uri, String name) {
+                public static Uri getUriFor(Uri uri, String name) {
             return Uri.withAppendedPath(uri, name);
         }
 
         
+        public static final String NAME = "name";
+        public static final String VALUE = "value";
     }
 
 
     
     private static class NameValueCache {
-        private  String mVersionSystemProperty;
+        private String mVersionSystemProperty;
         private Uri mUri;
-        private static final String[] SELECT_VALUE =
-            new String[] { Settings.NameValueTable.VALUE };
-        private static final String NAME_EQ_PLACEHOLDER = "name=?";
-        private final HashMap<String, String> mValues = new HashMap<String, String>();
+        private HashMap<String, String> mValues = new HashMap<String, String>();
         private long mValuesVersion = 0;
         private IContentProvider mContentProvider = null;
-        private  String mCallCommand;
+        private String mCallCommand;
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:03.268 -0400", hash_original_method = "AA2EC60B6F4EA71E8A16119EB161E070", hash_generated_method = "43D1A66A873AAC1B33AC6E30E14D361A")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:54.992 -0400", hash_original_method = "AA2EC60B6F4EA71E8A16119EB161E070", hash_generated_method = "258E18A5EA291563A0BB98303A3911E6")
         @DSModeled(DSC.SPEC)
         public NameValueCache(String versionSystemProperty, Uri uri, String callCommand) {
             dsTaint.addTaint(callCommand);
@@ -230,7 +121,7 @@ public final class Settings {
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:03.269 -0400", hash_original_method = "30813ECB8D9A0346E7379ADA0BD790C8", hash_generated_method = "E0E1D86A83B24603D0FF63C24AA82262")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:54.993 -0400", hash_original_method = "30813ECB8D9A0346E7379ADA0BD790C8", hash_generated_method = "1DCD733CBB302AF4F745ED429DFC8AD2")
         //DSFIXME:  CODE0002: Requires DSC value to be set
         public String getString(ContentResolver cr, String name) {
             dsTaint.addTaint(cr.dsTaint);
@@ -243,9 +134,9 @@ public final class Settings {
                     mValuesVersion = newValuesVersion;
                 } //End block
                 {
-                    boolean varF248B3A69A82BD386B70A575B06BB5F0_1640982639 = (mValues.containsKey(name));
+                    boolean varF248B3A69A82BD386B70A575B06BB5F0_417441669 = (mValues.containsKey(name));
                     {
-                        String var3CC66E8B9BAEC9E10CE33AD641F02C18_947770638 = (mValues.get(name));
+                        String var3CC66E8B9BAEC9E10CE33AD641F02C18_1730472165 = (mValues.get(name));
                     } //End block
                 } //End collapsed parenthetic
             } //End block
@@ -280,7 +171,7 @@ public final class Settings {
                 c = cp.query(mUri, SELECT_VALUE, NAME_EQ_PLACEHOLDER,
                              new String[]{name}, null);
                 String value;
-                boolean var4D86B3BFFD03EEDEB3FCD4358BA0EB15_900114495 = (c.moveToNext());
+                boolean var4D86B3BFFD03EEDEB3FCD4358BA0EB15_517595812 = (c.moveToNext());
                 value = c.getString(0);
                 value = null;
                 {
@@ -299,14 +190,209 @@ public final class Settings {
         }
 
         
+        private static final String[] SELECT_VALUE =
+            new String[] { Settings.NameValueTable.VALUE };
+        private static final String NAME_EQ_PLACEHOLDER = "name=?";
     }
 
 
     
     public static final class System extends NameValueTable {
+        
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:54.994 -0400", hash_original_method = "011E22A399537A71CE4EA301896DF590", hash_generated_method = "011E22A399537A71CE4EA301896DF590")
+                public System ()
+        {
+        }
+
+
+                public synchronized static String getString(ContentResolver resolver, String name) {
+            if (MOVED_TO_SECURE.contains(name)) {
+                Log.w(TAG, "Setting " + name + " has moved from android.provider.Settings.System"
+                        + " to android.provider.Settings.Secure, returning read-only value.");
+                return Secure.getString(resolver, name);
+            }
+            if (sNameValueCache == null) {
+                sNameValueCache = new NameValueCache(SYS_PROP_SETTING_VERSION, CONTENT_URI,
+                                                     CALL_METHOD_GET_SYSTEM);
+            }
+            return sNameValueCache.getString(resolver, name);
+        }
+
+        
+                public static boolean putString(ContentResolver resolver, String name, String value) {
+            if (MOVED_TO_SECURE.contains(name)) {
+                Log.w(TAG, "Setting " + name + " has moved from android.provider.Settings.System"
+                        + " to android.provider.Settings.Secure, value is unchanged.");
+                return false;
+            }
+            return putString(resolver, CONTENT_URI, name, value);
+        }
+
+        
+                public static Uri getUriFor(String name) {
+            if (MOVED_TO_SECURE.contains(name)) {
+                Log.w(TAG, "Setting " + name + " has moved from android.provider.Settings.System"
+                    + " to android.provider.Settings.Secure, returning Secure URI.");
+                return Secure.getUriFor(Secure.CONTENT_URI, name);
+            }
+            return getUriFor(CONTENT_URI, name);
+        }
+
+        
+                public static int getInt(ContentResolver cr, String name, int def) {
+            String v = getString(cr, name);
+            try {
+                return v != null ? Integer.parseInt(v) : def;
+            } catch (NumberFormatException e) {
+                return def;
+            }
+        }
+
+        
+                public static int getInt(ContentResolver cr, String name) throws SettingNotFoundException {
+            String v = getString(cr, name);
+            try {
+                return Integer.parseInt(v);
+            } catch (NumberFormatException e) {
+                throw new SettingNotFoundException(name);
+            }
+        }
+
+        
+                public static boolean putInt(ContentResolver cr, String name, int value) {
+            return putString(cr, name, Integer.toString(value));
+        }
+
+        
+                public static long getLong(ContentResolver cr, String name, long def) {
+            String valString = getString(cr, name);
+            long value;
+            try {
+                value = valString != null ? Long.parseLong(valString) : def;
+            } catch (NumberFormatException e) {
+                value = def;
+            }
+            return value;
+        }
+
+        
+                public static long getLong(ContentResolver cr, String name) throws SettingNotFoundException {
+            String valString = getString(cr, name);
+            try {
+                return Long.parseLong(valString);
+            } catch (NumberFormatException e) {
+                throw new SettingNotFoundException(name);
+            }
+        }
+
+        
+                public static boolean putLong(ContentResolver cr, String name, long value) {
+            return putString(cr, name, Long.toString(value));
+        }
+
+        
+                public static float getFloat(ContentResolver cr, String name, float def) {
+            String v = getString(cr, name);
+            try {
+                return v != null ? Float.parseFloat(v) : def;
+            } catch (NumberFormatException e) {
+                return def;
+            }
+        }
+
+        
+                public static float getFloat(ContentResolver cr, String name) throws SettingNotFoundException {
+            String v = getString(cr, name);
+            if (v == null) {
+                throw new SettingNotFoundException(name);
+            }
+            try {
+                return Float.parseFloat(v);
+            } catch (NumberFormatException e) {
+                throw new SettingNotFoundException(name);
+            }
+        }
+
+        
+                public static boolean putFloat(ContentResolver cr, String name, float value) {
+            return putString(cr, name, Float.toString(value));
+        }
+
+        
+                public static void getConfiguration(ContentResolver cr, Configuration outConfig) {
+            outConfig.fontScale = Settings.System.getFloat(
+                cr, FONT_SCALE, outConfig.fontScale);
+            if (outConfig.fontScale < 0) {
+                outConfig.fontScale = 1;
+            }
+        }
+
+        
+                public static void clearConfiguration(Configuration inoutConfig) {
+            inoutConfig.fontScale = 0;
+        }
+
+        
+                public static boolean putConfiguration(ContentResolver cr, Configuration config) {
+            return Settings.System.putFloat(cr, FONT_SCALE, config.fontScale);
+        }
+
+        
+                public static boolean hasInterestingConfigurationChanges(int changes) {
+            return (changes&ActivityInfo.CONFIG_FONT_SCALE) != 0;
+        }
+
+        
+                public static boolean getShowGTalkServiceStatus(ContentResolver cr) {
+            return getInt(cr, SHOW_GTALK_SERVICE_STATUS, 0) != 0;
+        }
+
+        
+                public static void setShowGTalkServiceStatus(ContentResolver cr, boolean flag) {
+            putInt(cr, SHOW_GTALK_SERVICE_STATUS, flag ? 1 : 0);
+        }
+
+        
         public static final String SYS_PROP_SETTING_VERSION = "sys.settings_system_version";
         private static NameValueCache sNameValueCache = null;
         private static final HashSet<String> MOVED_TO_SECURE;
+        static {
+            MOVED_TO_SECURE = new HashSet<String>(30);
+            MOVED_TO_SECURE.add(Secure.ADB_ENABLED);
+            MOVED_TO_SECURE.add(Secure.ANDROID_ID);
+            MOVED_TO_SECURE.add(Secure.BLUETOOTH_ON);
+            MOVED_TO_SECURE.add(Secure.DATA_ROAMING);
+            MOVED_TO_SECURE.add(Secure.DEVICE_PROVISIONED);
+            MOVED_TO_SECURE.add(Secure.HTTP_PROXY);
+            MOVED_TO_SECURE.add(Secure.INSTALL_NON_MARKET_APPS);
+            MOVED_TO_SECURE.add(Secure.LOCATION_PROVIDERS_ALLOWED);
+            MOVED_TO_SECURE.add(Secure.LOCK_PATTERN_ENABLED);
+            MOVED_TO_SECURE.add(Secure.LOCK_PATTERN_VISIBLE);
+            MOVED_TO_SECURE.add(Secure.LOCK_PATTERN_TACTILE_FEEDBACK_ENABLED);
+            MOVED_TO_SECURE.add(Secure.LOGGING_ID);
+            MOVED_TO_SECURE.add(Secure.PARENTAL_CONTROL_ENABLED);
+            MOVED_TO_SECURE.add(Secure.PARENTAL_CONTROL_LAST_UPDATE);
+            MOVED_TO_SECURE.add(Secure.PARENTAL_CONTROL_REDIRECT_URL);
+            MOVED_TO_SECURE.add(Secure.SETTINGS_CLASSNAME);
+            MOVED_TO_SECURE.add(Secure.USB_MASS_STORAGE_ENABLED);
+            MOVED_TO_SECURE.add(Secure.USE_GOOGLE_MAIL);
+            MOVED_TO_SECURE.add(Secure.WIFI_NETWORKS_AVAILABLE_NOTIFICATION_ON);
+            MOVED_TO_SECURE.add(Secure.WIFI_NETWORKS_AVAILABLE_REPEAT_DELAY);
+            MOVED_TO_SECURE.add(Secure.WIFI_NUM_OPEN_NETWORKS_KEPT);
+            MOVED_TO_SECURE.add(Secure.WIFI_ON);
+            MOVED_TO_SECURE.add(Secure.WIFI_WATCHDOG_ACCEPTABLE_PACKET_LOSS_PERCENTAGE);
+            MOVED_TO_SECURE.add(Secure.WIFI_WATCHDOG_AP_COUNT);
+            MOVED_TO_SECURE.add(Secure.WIFI_WATCHDOG_BACKGROUND_CHECK_DELAY_MS);
+            MOVED_TO_SECURE.add(Secure.WIFI_WATCHDOG_BACKGROUND_CHECK_ENABLED);
+            MOVED_TO_SECURE.add(Secure.WIFI_WATCHDOG_BACKGROUND_CHECK_TIMEOUT_MS);
+            MOVED_TO_SECURE.add(Secure.WIFI_WATCHDOG_INITIAL_IGNORED_PING_COUNT);
+            MOVED_TO_SECURE.add(Secure.WIFI_WATCHDOG_MAX_AP_CHECKS);
+            MOVED_TO_SECURE.add(Secure.WIFI_WATCHDOG_ON);
+            MOVED_TO_SECURE.add(Secure.WIFI_WATCHDOG_PING_COUNT);
+            MOVED_TO_SECURE.add(Secure.WIFI_WATCHDOG_PING_DELAY_MS);
+            MOVED_TO_SECURE.add(Secure.WIFI_WATCHDOG_PING_TIMEOUT_MS);
+        }
+        
         public static final Uri CONTENT_URI =
             Uri.parse("content://" + AUTHORITY + "/system");
         public static final String STAY_ON_WHILE_PLUGGED_IN = "stay_on_while_plugged_in";
@@ -338,12 +424,9 @@ public final class Settings {
             "bluetooth_discoverability";
         public static final String BLUETOOTH_DISCOVERABILITY_TIMEOUT =
             "bluetooth_discoverability_timeout";
-        @Deprecated
-        public static final String LOCK_PATTERN_ENABLED = Secure.LOCK_PATTERN_ENABLED;
-        @Deprecated
-        public static final String LOCK_PATTERN_VISIBLE = "lock_pattern_visible_pattern";
-        @Deprecated
-        public static final String LOCK_PATTERN_TACTILE_FEEDBACK_ENABLED =
+        @Deprecated public static final String LOCK_PATTERN_ENABLED = Secure.LOCK_PATTERN_ENABLED;
+        @Deprecated public static final String LOCK_PATTERN_VISIBLE = "lock_pattern_visible_pattern";
+        @Deprecated public static final String LOCK_PATTERN_TACTILE_FEEDBACK_ENABLED =
             "lock_pattern_tactile_feedback_enabled";
         public static final String NEXT_ALARM_FORMATTED = "next_alarm_formatted";
         public static final String FONT_SCALE = "font_scale";
@@ -370,8 +453,7 @@ public final class Settings {
         public static final String VOLUME_ALARM = "volume_alarm";
         public static final String VOLUME_NOTIFICATION = "volume_notification";
         public static final String VOLUME_BLUETOOTH_SCO = "volume_bluetooth_sco";
-        @Deprecated
-        public static final String NOTIFICATIONS_USE_RING_VOLUME =
+        @Deprecated public static final String NOTIFICATIONS_USE_RING_VOLUME =
             "notifications_use_ring_volume";
         public static final String VIBRATE_IN_SILENT = "vibrate_in_silent";
         public static final String[] VOLUME_SETTINGS = {
@@ -411,8 +493,7 @@ public final class Settings {
         public static final String TTY_MODE = "tty_mode";
         public static final String SOUND_EFFECTS_ENABLED = "sound_effects_enabled";
         public static final String HAPTIC_FEEDBACK_ENABLED = "haptic_feedback_enabled";
-        @Deprecated
-        public static final String SHOW_WEB_SUGGESTIONS = "show_web_suggestions";
+        @Deprecated public static final String SHOW_WEB_SUGGESTIONS = "show_web_suggestions";
         public static final String NOTIFICATION_LIGHT_PULSE = "notification_light_pulse";
         public static final String POINTER_LOCATION = "pointer_location";
         public static final String SHOW_TOUCHES = "show_touches";
@@ -494,122 +575,82 @@ public final class Settings {
             SIP_RECEIVE_CALLS,
             POINTER_SPEED,
         };
-        @Deprecated
-        public static final String ADB_ENABLED = Secure.ADB_ENABLED;
-        @Deprecated
-        public static final String ANDROID_ID = Secure.ANDROID_ID;
-        @Deprecated
-        public static final String BLUETOOTH_ON = Secure.BLUETOOTH_ON;
-        @Deprecated
-        public static final String DATA_ROAMING = Secure.DATA_ROAMING;
-        @Deprecated
-        public static final String DEVICE_PROVISIONED = Secure.DEVICE_PROVISIONED;
-        @Deprecated
-        public static final String HTTP_PROXY = Secure.HTTP_PROXY;
-        @Deprecated
-        public static final String INSTALL_NON_MARKET_APPS = Secure.INSTALL_NON_MARKET_APPS;
-        @Deprecated
-        public static final String LOCATION_PROVIDERS_ALLOWED = Secure.LOCATION_PROVIDERS_ALLOWED;
-        @Deprecated
-        public static final String LOGGING_ID = Secure.LOGGING_ID;
-        @Deprecated
-        public static final String NETWORK_PREFERENCE = Secure.NETWORK_PREFERENCE;
-        @Deprecated
-        public static final String PARENTAL_CONTROL_ENABLED = Secure.PARENTAL_CONTROL_ENABLED;
-        @Deprecated
-        public static final String PARENTAL_CONTROL_LAST_UPDATE = Secure.PARENTAL_CONTROL_LAST_UPDATE;
-        @Deprecated
-        public static final String PARENTAL_CONTROL_REDIRECT_URL =
+        @Deprecated public static final String ADB_ENABLED = Secure.ADB_ENABLED;
+        @Deprecated public static final String ANDROID_ID = Secure.ANDROID_ID;
+        @Deprecated public static final String BLUETOOTH_ON = Secure.BLUETOOTH_ON;
+        @Deprecated public static final String DATA_ROAMING = Secure.DATA_ROAMING;
+        @Deprecated public static final String DEVICE_PROVISIONED = Secure.DEVICE_PROVISIONED;
+        @Deprecated public static final String HTTP_PROXY = Secure.HTTP_PROXY;
+        @Deprecated public static final String INSTALL_NON_MARKET_APPS = Secure.INSTALL_NON_MARKET_APPS;
+        @Deprecated public static final String LOCATION_PROVIDERS_ALLOWED = Secure.LOCATION_PROVIDERS_ALLOWED;
+        @Deprecated public static final String LOGGING_ID = Secure.LOGGING_ID;
+        @Deprecated public static final String NETWORK_PREFERENCE = Secure.NETWORK_PREFERENCE;
+        @Deprecated public static final String PARENTAL_CONTROL_ENABLED = Secure.PARENTAL_CONTROL_ENABLED;
+        @Deprecated public static final String PARENTAL_CONTROL_LAST_UPDATE = Secure.PARENTAL_CONTROL_LAST_UPDATE;
+        @Deprecated public static final String PARENTAL_CONTROL_REDIRECT_URL =
             Secure.PARENTAL_CONTROL_REDIRECT_URL;
-        @Deprecated
-        public static final String SETTINGS_CLASSNAME = Secure.SETTINGS_CLASSNAME;
-        @Deprecated
-        public static final String USB_MASS_STORAGE_ENABLED = Secure.USB_MASS_STORAGE_ENABLED;
-        @Deprecated
-        public static final String USE_GOOGLE_MAIL = Secure.USE_GOOGLE_MAIL;
-        @Deprecated
-        public static final String WIFI_MAX_DHCP_RETRY_COUNT = Secure.WIFI_MAX_DHCP_RETRY_COUNT;
-        @Deprecated
-        public static final String WIFI_MOBILE_DATA_TRANSITION_WAKELOCK_TIMEOUT_MS =
+        @Deprecated public static final String SETTINGS_CLASSNAME = Secure.SETTINGS_CLASSNAME;
+        @Deprecated public static final String USB_MASS_STORAGE_ENABLED = Secure.USB_MASS_STORAGE_ENABLED;
+        @Deprecated public static final String USE_GOOGLE_MAIL = Secure.USE_GOOGLE_MAIL;
+        @Deprecated public static final String WIFI_MAX_DHCP_RETRY_COUNT = Secure.WIFI_MAX_DHCP_RETRY_COUNT;
+        @Deprecated public static final String WIFI_MOBILE_DATA_TRANSITION_WAKELOCK_TIMEOUT_MS =
                 Secure.WIFI_MOBILE_DATA_TRANSITION_WAKELOCK_TIMEOUT_MS;
-        @Deprecated
-        public static final String WIFI_NETWORKS_AVAILABLE_NOTIFICATION_ON =
+        @Deprecated public static final String WIFI_NETWORKS_AVAILABLE_NOTIFICATION_ON =
             Secure.WIFI_NETWORKS_AVAILABLE_NOTIFICATION_ON;
-        @Deprecated
-        public static final String WIFI_NETWORKS_AVAILABLE_REPEAT_DELAY =
+        @Deprecated public static final String WIFI_NETWORKS_AVAILABLE_REPEAT_DELAY =
             Secure.WIFI_NETWORKS_AVAILABLE_REPEAT_DELAY;
-        @Deprecated
-        public static final String WIFI_NUM_OPEN_NETWORKS_KEPT = Secure.WIFI_NUM_OPEN_NETWORKS_KEPT;
-        @Deprecated
-        public static final String WIFI_ON = Secure.WIFI_ON;
-        @Deprecated
-        public static final String WIFI_WATCHDOG_ACCEPTABLE_PACKET_LOSS_PERCENTAGE =
+        @Deprecated public static final String WIFI_NUM_OPEN_NETWORKS_KEPT = Secure.WIFI_NUM_OPEN_NETWORKS_KEPT;
+        @Deprecated public static final String WIFI_ON = Secure.WIFI_ON;
+        @Deprecated public static final String WIFI_WATCHDOG_ACCEPTABLE_PACKET_LOSS_PERCENTAGE =
                 Secure.WIFI_WATCHDOG_ACCEPTABLE_PACKET_LOSS_PERCENTAGE;
-        @Deprecated
-        public static final String WIFI_WATCHDOG_AP_COUNT = Secure.WIFI_WATCHDOG_AP_COUNT;
-        @Deprecated
-        public static final String WIFI_WATCHDOG_BACKGROUND_CHECK_DELAY_MS =
+        @Deprecated public static final String WIFI_WATCHDOG_AP_COUNT = Secure.WIFI_WATCHDOG_AP_COUNT;
+        @Deprecated public static final String WIFI_WATCHDOG_BACKGROUND_CHECK_DELAY_MS =
                 Secure.WIFI_WATCHDOG_BACKGROUND_CHECK_DELAY_MS;
-        @Deprecated
-        public static final String WIFI_WATCHDOG_BACKGROUND_CHECK_ENABLED =
+        @Deprecated public static final String WIFI_WATCHDOG_BACKGROUND_CHECK_ENABLED =
                 Secure.WIFI_WATCHDOG_BACKGROUND_CHECK_ENABLED;
-        @Deprecated
-        public static final String WIFI_WATCHDOG_BACKGROUND_CHECK_TIMEOUT_MS =
+        @Deprecated public static final String WIFI_WATCHDOG_BACKGROUND_CHECK_TIMEOUT_MS =
                 Secure.WIFI_WATCHDOG_BACKGROUND_CHECK_TIMEOUT_MS;
-        @Deprecated
-        public static final String WIFI_WATCHDOG_INITIAL_IGNORED_PING_COUNT =
+        @Deprecated public static final String WIFI_WATCHDOG_INITIAL_IGNORED_PING_COUNT =
             Secure.WIFI_WATCHDOG_INITIAL_IGNORED_PING_COUNT;
-        @Deprecated
-        public static final String WIFI_WATCHDOG_MAX_AP_CHECKS = Secure.WIFI_WATCHDOG_MAX_AP_CHECKS;
-        @Deprecated
-        public static final String WIFI_WATCHDOG_ON = Secure.WIFI_WATCHDOG_ON;
-        @Deprecated
-        public static final String WIFI_WATCHDOG_PING_COUNT = Secure.WIFI_WATCHDOG_PING_COUNT;
-        @Deprecated
-        public static final String WIFI_WATCHDOG_PING_DELAY_MS = Secure.WIFI_WATCHDOG_PING_DELAY_MS;
-        @Deprecated
-        public static final String WIFI_WATCHDOG_PING_TIMEOUT_MS =
+        @Deprecated public static final String WIFI_WATCHDOG_MAX_AP_CHECKS = Secure.WIFI_WATCHDOG_MAX_AP_CHECKS;
+        @Deprecated public static final String WIFI_WATCHDOG_ON = Secure.WIFI_WATCHDOG_ON;
+        @Deprecated public static final String WIFI_WATCHDOG_PING_COUNT = Secure.WIFI_WATCHDOG_PING_COUNT;
+        @Deprecated public static final String WIFI_WATCHDOG_PING_DELAY_MS = Secure.WIFI_WATCHDOG_PING_DELAY_MS;
+        @Deprecated public static final String WIFI_WATCHDOG_PING_TIMEOUT_MS =
             Secure.WIFI_WATCHDOG_PING_TIMEOUT_MS;
+    }
+
+
+    
+    public static final class Secure extends NameValueTable {
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:03.269 -0400", hash_original_method = "BCE17AD551131F3C5B0199F6E8D71A65", hash_generated_method = "0E3882E2540A80A5533039D724BE4002")
-        public synchronized static String getString(ContentResolver resolver, String name) {
-            if (MOVED_TO_SECURE.contains(name)) {
-                Log.w(TAG, "Setting " + name + " has moved from android.provider.Settings.System"
-                        + " to android.provider.Settings.Secure, returning read-only value.");
-                return Secure.getString(resolver, name);
-            }
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:54.997 -0400", hash_original_method = "DD2238145688C91DCB19B1B9D1BE5809", hash_generated_method = "DD2238145688C91DCB19B1B9D1BE5809")
+                public Secure ()
+        {
+        }
+
+
+                public synchronized static String getString(ContentResolver resolver, String name) {
             if (sNameValueCache == null) {
                 sNameValueCache = new NameValueCache(SYS_PROP_SETTING_VERSION, CONTENT_URI,
-                                                     CALL_METHOD_GET_SYSTEM);
+                                                     CALL_METHOD_GET_SECURE);
             }
             return sNameValueCache.getString(resolver, name);
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:03.270 -0400", hash_original_method = "77FDB26F7E07396FBB2F925B9C6125A4", hash_generated_method = "EC73CBB8EAD727032252B9D5371705BD")
-        public static boolean putString(ContentResolver resolver, String name, String value) {
-            if (MOVED_TO_SECURE.contains(name)) {
-                Log.w(TAG, "Setting " + name + " has moved from android.provider.Settings.System"
-                        + " to android.provider.Settings.Secure, value is unchanged.");
-                return false;
-            }
+                public static boolean putString(ContentResolver resolver,
+                String name, String value) {
             return putString(resolver, CONTENT_URI, name, value);
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:03.270 -0400", hash_original_method = "B4A26DD7AFB6F0356A37068D3E87F288", hash_generated_method = "4DF70A8ABC36243ABA00FC2E52415B98")
-        public static Uri getUriFor(String name) {
-            if (MOVED_TO_SECURE.contains(name)) {
-                Log.w(TAG, "Setting " + name + " has moved from android.provider.Settings.System"
-                    + " to android.provider.Settings.Secure, returning Secure URI.");
-                return Secure.getUriFor(Secure.CONTENT_URI, name);
-            }
+                public static Uri getUriFor(String name) {
             return getUriFor(CONTENT_URI, name);
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:03.270 -0400", hash_original_method = "DBD93DA0568D4E47C40E6BFA100A1EF2", hash_generated_method = "6431710C35E8CCD460BB62DB2BBC4A9B")
-        public static int getInt(ContentResolver cr, String name, int def) {
+                public static int getInt(ContentResolver cr, String name, int def) {
             String v = getString(cr, name);
             try {
                 return v != null ? Integer.parseInt(v) : def;
@@ -619,8 +660,7 @@ public final class Settings {
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:03.270 -0400", hash_original_method = "BC1F410DCF7E88197DA27D0D425DD822", hash_generated_method = "65A02ED2DBB08389547A19AA8589B1B4")
-        public static int getInt(ContentResolver cr, String name) throws SettingNotFoundException {
+                public static int getInt(ContentResolver cr, String name) throws SettingNotFoundException {
             String v = getString(cr, name);
             try {
                 return Integer.parseInt(v);
@@ -630,14 +670,12 @@ public final class Settings {
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:03.270 -0400", hash_original_method = "5F86FAE7117D2E108E68CEB80BF49DA7", hash_generated_method = "6ED7733ABB42EB8D1CAB516377E36AA4")
-        public static boolean putInt(ContentResolver cr, String name, int value) {
+                public static boolean putInt(ContentResolver cr, String name, int value) {
             return putString(cr, name, Integer.toString(value));
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:03.270 -0400", hash_original_method = "2986E5629421403DA55C169D77194DCA", hash_generated_method = "334B1526468744A2753D53DD17327221")
-        public static long getLong(ContentResolver cr, String name, long def) {
+                public static long getLong(ContentResolver cr, String name, long def) {
             String valString = getString(cr, name);
             long value;
             try {
@@ -649,8 +687,7 @@ public final class Settings {
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:03.270 -0400", hash_original_method = "69C00B9492B59345A478AD340BB82560", hash_generated_method = "DEF6F194A9786A3EC928CD0D3E9ABD57")
-        public static long getLong(ContentResolver cr, String name) throws SettingNotFoundException {
+                public static long getLong(ContentResolver cr, String name) throws SettingNotFoundException {
             String valString = getString(cr, name);
             try {
                 return Long.parseLong(valString);
@@ -660,14 +697,12 @@ public final class Settings {
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:03.270 -0400", hash_original_method = "A37AC0F546410BFB8FB9B835A95E1AD0", hash_generated_method = "776F05CA560EFB9C0C763CBDB1EB98A5")
-        public static boolean putLong(ContentResolver cr, String name, long value) {
+                public static boolean putLong(ContentResolver cr, String name, long value) {
             return putString(cr, name, Long.toString(value));
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:03.270 -0400", hash_original_method = "0D9E7A4535CB773913AB18AAD472FAE3", hash_generated_method = "3B5A88E4A2869809F140DF533B38E22D")
-        public static float getFloat(ContentResolver cr, String name, float def) {
+                public static float getFloat(ContentResolver cr, String name, float def) {
             String v = getString(cr, name);
             try {
                 return v != null ? Float.parseFloat(v) : def;
@@ -677,8 +712,7 @@ public final class Settings {
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:03.270 -0400", hash_original_method = "8F942018F858810492E264878914C1E0", hash_generated_method = "B4F108BE0DBD2F067C9CEB071B929767")
-        public static float getFloat(ContentResolver cr, String name) throws SettingNotFoundException {
+                public static float getFloat(ContentResolver cr, String name) throws SettingNotFoundException {
             String v = getString(cr, name);
             if (v == null) {
                 throw new SettingNotFoundException(name);
@@ -691,95 +725,43 @@ public final class Settings {
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:03.271 -0400", hash_original_method = "7C7CB2A2E239FDA02FE8F80A9EE7770A", hash_generated_method = "DFFDFDA6D89A1873E0163B25D5D32EAF")
-        public static boolean putFloat(ContentResolver cr, String name, float value) {
+                public static boolean putFloat(ContentResolver cr, String name, float value) {
             return putString(cr, name, Float.toString(value));
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:03.271 -0400", hash_original_method = "3441F4800E5F4590193E9727722854D0", hash_generated_method = "CA07B71A7B303EEF0499F1C39F506351")
-        public static void getConfiguration(ContentResolver cr, Configuration outConfig) {
-            outConfig.fontScale = Settings.System.getFloat(
-                cr, FONT_SCALE, outConfig.fontScale);
-            if (outConfig.fontScale < 0) {
-                outConfig.fontScale = 1;
+                public static final String getBluetoothHeadsetPriorityKey(String address) {
+            return ("bluetooth_headset_priority_" + address.toUpperCase());
+        }
+
+        
+                public static final String getBluetoothA2dpSinkPriorityKey(String address) {
+            return ("bluetooth_a2dp_sink_priority_" + address.toUpperCase());
+        }
+
+        
+                public static final String getBluetoothInputDevicePriorityKey(String address) {
+            return ("bluetooth_input_device_priority_" + address.toUpperCase());
+        }
+
+        
+                public static final boolean isLocationProviderEnabled(ContentResolver cr, String provider) {
+            String allowedProviders = Settings.Secure.getString(cr, LOCATION_PROVIDERS_ALLOWED);
+            return TextUtils.delimitedStringContains(allowedProviders, ',', provider);
+        }
+
+        
+                public static final void setLocationProviderEnabled(ContentResolver cr,
+                String provider, boolean enabled) {
+            if (enabled) {
+                provider = "+" + provider;
+            } else {
+                provider = "-" + provider;
             }
+            putString(cr, Settings.Secure.LOCATION_PROVIDERS_ALLOWED, provider);
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:03.271 -0400", hash_original_method = "B73938E08E789E74114DBF59F86C2CB2", hash_generated_method = "CCD285729676B3FCF20DE207B47440D9")
-        public static void clearConfiguration(Configuration inoutConfig) {
-            inoutConfig.fontScale = 0;
-        }
-
-        
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:03.271 -0400", hash_original_method = "D58FF0184DFDAF7AB1234DB16705A709", hash_generated_method = "7FF98E9DB431AA9B44B4C794A2D2999E")
-        public static boolean putConfiguration(ContentResolver cr, Configuration config) {
-            return Settings.System.putFloat(cr, FONT_SCALE, config.fontScale);
-        }
-
-        
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:03.271 -0400", hash_original_method = "C45518EFECA9F1C0734505050BA0E26B", hash_generated_method = "E596CDBE3883E139634FC7A2B0CF418A")
-        public static boolean hasInterestingConfigurationChanges(int changes) {
-            //DSFIXME:  CODE0009: Possible callback target function detected
-            return (changes&ActivityInfo.CONFIG_FONT_SCALE) != 0;
-        }
-
-        
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:03.271 -0400", hash_original_method = "1E8F844182FAFB552A3979783C673A64", hash_generated_method = "24E124FCC1ED56754477DEE8FC55F00E")
-        public static boolean getShowGTalkServiceStatus(ContentResolver cr) {
-            return getInt(cr, SHOW_GTALK_SERVICE_STATUS, 0) != 0;
-        }
-
-        
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:03.271 -0400", hash_original_method = "0CA3CDD297682AF780AE81001E5FE18D", hash_generated_method = "442A1C074A9C96D62DE3C91B02F7F082")
-        public static void setShowGTalkServiceStatus(ContentResolver cr, boolean flag) {
-            putInt(cr, SHOW_GTALK_SERVICE_STATUS, flag ? 1 : 0);
-        }
-
-        
-        static {
-            MOVED_TO_SECURE = new HashSet<String>(30);
-            MOVED_TO_SECURE.add(Secure.ADB_ENABLED);
-            MOVED_TO_SECURE.add(Secure.ANDROID_ID);
-            MOVED_TO_SECURE.add(Secure.BLUETOOTH_ON);
-            MOVED_TO_SECURE.add(Secure.DATA_ROAMING);
-            MOVED_TO_SECURE.add(Secure.DEVICE_PROVISIONED);
-            MOVED_TO_SECURE.add(Secure.HTTP_PROXY);
-            MOVED_TO_SECURE.add(Secure.INSTALL_NON_MARKET_APPS);
-            MOVED_TO_SECURE.add(Secure.LOCATION_PROVIDERS_ALLOWED);
-            MOVED_TO_SECURE.add(Secure.LOCK_PATTERN_ENABLED);
-            MOVED_TO_SECURE.add(Secure.LOCK_PATTERN_VISIBLE);
-            MOVED_TO_SECURE.add(Secure.LOCK_PATTERN_TACTILE_FEEDBACK_ENABLED);
-            MOVED_TO_SECURE.add(Secure.LOGGING_ID);
-            MOVED_TO_SECURE.add(Secure.PARENTAL_CONTROL_ENABLED);
-            MOVED_TO_SECURE.add(Secure.PARENTAL_CONTROL_LAST_UPDATE);
-            MOVED_TO_SECURE.add(Secure.PARENTAL_CONTROL_REDIRECT_URL);
-            MOVED_TO_SECURE.add(Secure.SETTINGS_CLASSNAME);
-            MOVED_TO_SECURE.add(Secure.USB_MASS_STORAGE_ENABLED);
-            MOVED_TO_SECURE.add(Secure.USE_GOOGLE_MAIL);
-            MOVED_TO_SECURE.add(Secure.WIFI_NETWORKS_AVAILABLE_NOTIFICATION_ON);
-            MOVED_TO_SECURE.add(Secure.WIFI_NETWORKS_AVAILABLE_REPEAT_DELAY);
-            MOVED_TO_SECURE.add(Secure.WIFI_NUM_OPEN_NETWORKS_KEPT);
-            MOVED_TO_SECURE.add(Secure.WIFI_ON);
-            MOVED_TO_SECURE.add(Secure.WIFI_WATCHDOG_ACCEPTABLE_PACKET_LOSS_PERCENTAGE);
-            MOVED_TO_SECURE.add(Secure.WIFI_WATCHDOG_AP_COUNT);
-            MOVED_TO_SECURE.add(Secure.WIFI_WATCHDOG_BACKGROUND_CHECK_DELAY_MS);
-            MOVED_TO_SECURE.add(Secure.WIFI_WATCHDOG_BACKGROUND_CHECK_ENABLED);
-            MOVED_TO_SECURE.add(Secure.WIFI_WATCHDOG_BACKGROUND_CHECK_TIMEOUT_MS);
-            MOVED_TO_SECURE.add(Secure.WIFI_WATCHDOG_INITIAL_IGNORED_PING_COUNT);
-            MOVED_TO_SECURE.add(Secure.WIFI_WATCHDOG_MAX_AP_CHECKS);
-            MOVED_TO_SECURE.add(Secure.WIFI_WATCHDOG_ON);
-            MOVED_TO_SECURE.add(Secure.WIFI_WATCHDOG_PING_COUNT);
-            MOVED_TO_SECURE.add(Secure.WIFI_WATCHDOG_PING_DELAY_MS);
-            MOVED_TO_SECURE.add(Secure.WIFI_WATCHDOG_PING_TIMEOUT_MS);
-        }
-        
-    }
-
-
-    
-    public static final class Secure extends NameValueTable {
         public static final String SYS_PROP_SETTING_VERSION = "sys.settings_secure_version";
         private static NameValueCache sNameValueCache = null;
         public static final Uri CONTENT_URI =
@@ -818,8 +800,7 @@ public final class Settings {
             "lock_screen_owner_info_enabled";
         public static final String DISPLAY_SIZE_FORCED = "display_size_forced";
         public static final String ASSISTED_GPS_ENABLED = "assisted_gps_enabled";
-        @Deprecated
-        public static final String LOGGING_ID = "logging_id";
+        @Deprecated public static final String LOGGING_ID = "logging_id";
         public static final String NETWORK_PREFERENCE = "network_preference";
         public static final String TETHER_SUPPORTED = "tether_supported";
         public static final String TETHER_DUN_REQUIRED = "tether_dun_required";
@@ -841,17 +822,13 @@ public final class Settings {
         public static final String ACCESSIBILITY_WEB_CONTENT_KEY_BINDINGS =
             "accessibility_web_content_key_bindings";
         public static final String LONG_PRESS_TIMEOUT = "long_press_timeout";
-        @Deprecated
-        public static final String TTS_USE_DEFAULTS = "tts_use_defaults";
+        @Deprecated public static final String TTS_USE_DEFAULTS = "tts_use_defaults";
         public static final String TTS_DEFAULT_RATE = "tts_default_rate";
         public static final String TTS_DEFAULT_PITCH = "tts_default_pitch";
         public static final String TTS_DEFAULT_SYNTH = "tts_default_synth";
-        @Deprecated
-        public static final String TTS_DEFAULT_LANG = "tts_default_lang";
-        @Deprecated
-        public static final String TTS_DEFAULT_COUNTRY = "tts_default_country";
-        @Deprecated
-        public static final String TTS_DEFAULT_VARIANT = "tts_default_variant";
+        @Deprecated public static final String TTS_DEFAULT_LANG = "tts_default_lang";
+        @Deprecated public static final String TTS_DEFAULT_COUNTRY = "tts_default_country";
+        @Deprecated public static final String TTS_DEFAULT_VARIANT = "tts_default_variant";
         public static final String TTS_DEFAULT_LOCALE = "tts_default_locale";
         public static final String TTS_ENABLED_PLUGINS = "tts_enabled_plugins";
         public static final String WIFI_NETWORKS_AVAILABLE_NOTIFICATION_ON =
@@ -867,34 +844,23 @@ public final class Settings {
         public static final String WIFI_AP_SSID = "wifi_ap_ssid";
         public static final String WIFI_AP_SECURITY = "wifi_ap_security";
         public static final String WIFI_AP_PASSWD = "wifi_ap_passwd";
-        @Deprecated
-        public static final String WIFI_WATCHDOG_ACCEPTABLE_PACKET_LOSS_PERCENTAGE =
+        @Deprecated public static final String WIFI_WATCHDOG_ACCEPTABLE_PACKET_LOSS_PERCENTAGE =
                 "wifi_watchdog_acceptable_packet_loss_percentage";
-        @Deprecated
-        public static final String WIFI_WATCHDOG_AP_COUNT = "wifi_watchdog_ap_count";
-        @Deprecated
-        public static final String WIFI_WATCHDOG_BACKGROUND_CHECK_DELAY_MS =
+        @Deprecated public static final String WIFI_WATCHDOG_AP_COUNT = "wifi_watchdog_ap_count";
+        @Deprecated public static final String WIFI_WATCHDOG_BACKGROUND_CHECK_DELAY_MS =
                 "wifi_watchdog_background_check_delay_ms";
-        @Deprecated
-        public static final String WIFI_WATCHDOG_BACKGROUND_CHECK_ENABLED =
+        @Deprecated public static final String WIFI_WATCHDOG_BACKGROUND_CHECK_ENABLED =
                 "wifi_watchdog_background_check_enabled";
-        @Deprecated
-        public static final String WIFI_WATCHDOG_BACKGROUND_CHECK_TIMEOUT_MS =
+        @Deprecated public static final String WIFI_WATCHDOG_BACKGROUND_CHECK_TIMEOUT_MS =
                 "wifi_watchdog_background_check_timeout_ms";
-        @Deprecated
-        public static final String WIFI_WATCHDOG_INITIAL_IGNORED_PING_COUNT =
+        @Deprecated public static final String WIFI_WATCHDOG_INITIAL_IGNORED_PING_COUNT =
             "wifi_watchdog_initial_ignored_ping_count";
-        @Deprecated
-        public static final String WIFI_WATCHDOG_MAX_AP_CHECKS = "wifi_watchdog_max_ap_checks";
+        @Deprecated public static final String WIFI_WATCHDOG_MAX_AP_CHECKS = "wifi_watchdog_max_ap_checks";
         public static final String WIFI_WATCHDOG_ON = "wifi_watchdog_on";
-        @Deprecated
-        public static final String WIFI_WATCHDOG_WATCH_LIST = "wifi_watchdog_watch_list";
-        @Deprecated
-        public static final String WIFI_WATCHDOG_PING_COUNT = "wifi_watchdog_ping_count";
-        @Deprecated
-        public static final String WIFI_WATCHDOG_PING_DELAY_MS = "wifi_watchdog_ping_delay_ms";
-        @Deprecated
-        public static final String WIFI_WATCHDOG_PING_TIMEOUT_MS = "wifi_watchdog_ping_timeout_ms";
+        @Deprecated public static final String WIFI_WATCHDOG_WATCH_LIST = "wifi_watchdog_watch_list";
+        @Deprecated public static final String WIFI_WATCHDOG_PING_COUNT = "wifi_watchdog_ping_count";
+        @Deprecated public static final String WIFI_WATCHDOG_PING_DELAY_MS = "wifi_watchdog_ping_delay_ms";
+        @Deprecated public static final String WIFI_WATCHDOG_PING_TIMEOUT_MS = "wifi_watchdog_ping_timeout_ms";
         public static final String WIFI_WATCHDOG_DNS_CHECK_SHORT_INTERVAL_MS =
                 "wifi_watchdog_dns_check_short_interval_ms";
         public static final String WIFI_WATCHDOG_DNS_CHECK_LONG_INTERVAL_MS =
@@ -922,8 +888,7 @@ public final class Settings {
         public static final String WIFI_FREQUENCY_BAND = "wifi_frequency_band";
         public static final String WIFI_MOBILE_DATA_TRANSITION_WAKELOCK_TIMEOUT_MS =
             "wifi_mobile_data_transition_wakelock_timeout_ms";
-        @Deprecated
-        public static final String BACKGROUND_DATA = "background_data";
+        @Deprecated public static final String BACKGROUND_DATA = "background_data";
         public static final String ALLOWED_GEOLOCATION_ORIGINS
                 = "allowed_geolocation_origins";
         public static final String MOBILE_DATA = "mobile_data";
@@ -1143,178 +1108,19 @@ public final class Settings {
             LOCK_SCREEN_OWNER_INFO,
             LOCK_SCREEN_OWNER_INFO_ENABLED
         };
-        
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:03.272 -0400", hash_original_method = "673ACF52738B2550EB82A63F524A794C", hash_generated_method = "DF23D5CD90F7627E0234D522B83FB549")
-        public synchronized static String getString(ContentResolver resolver, String name) {
-            if (sNameValueCache == null) {
-                sNameValueCache = new NameValueCache(SYS_PROP_SETTING_VERSION, CONTENT_URI,
-                                                     CALL_METHOD_GET_SECURE);
-            }
-            return sNameValueCache.getString(resolver, name);
-        }
-
-        
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:03.272 -0400", hash_original_method = "0140B0C084561EBE6D9CB9F916362E53", hash_generated_method = "2E5FD5211A5DBC3FA7DD1C6845765FB6")
-        public static boolean putString(ContentResolver resolver,
-                String name, String value) {
-            return putString(resolver, CONTENT_URI, name, value);
-        }
-
-        
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:03.272 -0400", hash_original_method = "6094EDC02DB67FDF86E7659AB564A860", hash_generated_method = "D066004669828715526BC70324C79D5D")
-        public static Uri getUriFor(String name) {
-            return getUriFor(CONTENT_URI, name);
-        }
-
-        
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:03.272 -0400", hash_original_method = "DBD93DA0568D4E47C40E6BFA100A1EF2", hash_generated_method = "6431710C35E8CCD460BB62DB2BBC4A9B")
-        public static int getInt(ContentResolver cr, String name, int def) {
-            String v = getString(cr, name);
-            try {
-                return v != null ? Integer.parseInt(v) : def;
-            } catch (NumberFormatException e) {
-                return def;
-            }
-        }
-
-        
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:03.272 -0400", hash_original_method = "BC1F410DCF7E88197DA27D0D425DD822", hash_generated_method = "65A02ED2DBB08389547A19AA8589B1B4")
-        public static int getInt(ContentResolver cr, String name) throws SettingNotFoundException {
-            String v = getString(cr, name);
-            try {
-                return Integer.parseInt(v);
-            } catch (NumberFormatException e) {
-                throw new SettingNotFoundException(name);
-            }
-        }
-
-        
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:03.272 -0400", hash_original_method = "5F86FAE7117D2E108E68CEB80BF49DA7", hash_generated_method = "6ED7733ABB42EB8D1CAB516377E36AA4")
-        public static boolean putInt(ContentResolver cr, String name, int value) {
-            return putString(cr, name, Integer.toString(value));
-        }
-
-        
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:03.272 -0400", hash_original_method = "2986E5629421403DA55C169D77194DCA", hash_generated_method = "334B1526468744A2753D53DD17327221")
-        public static long getLong(ContentResolver cr, String name, long def) {
-            String valString = getString(cr, name);
-            long value;
-            try {
-                value = valString != null ? Long.parseLong(valString) : def;
-            } catch (NumberFormatException e) {
-                value = def;
-            }
-            return value;
-        }
-
-        
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:03.272 -0400", hash_original_method = "69C00B9492B59345A478AD340BB82560", hash_generated_method = "DEF6F194A9786A3EC928CD0D3E9ABD57")
-        public static long getLong(ContentResolver cr, String name) throws SettingNotFoundException {
-            String valString = getString(cr, name);
-            try {
-                return Long.parseLong(valString);
-            } catch (NumberFormatException e) {
-                throw new SettingNotFoundException(name);
-            }
-        }
-
-        
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:03.272 -0400", hash_original_method = "A37AC0F546410BFB8FB9B835A95E1AD0", hash_generated_method = "776F05CA560EFB9C0C763CBDB1EB98A5")
-        public static boolean putLong(ContentResolver cr, String name, long value) {
-            return putString(cr, name, Long.toString(value));
-        }
-
-        
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:03.273 -0400", hash_original_method = "0D9E7A4535CB773913AB18AAD472FAE3", hash_generated_method = "3B5A88E4A2869809F140DF533B38E22D")
-        public static float getFloat(ContentResolver cr, String name, float def) {
-            String v = getString(cr, name);
-            try {
-                return v != null ? Float.parseFloat(v) : def;
-            } catch (NumberFormatException e) {
-                return def;
-            }
-        }
-
-        
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:03.273 -0400", hash_original_method = "8F942018F858810492E264878914C1E0", hash_generated_method = "B4F108BE0DBD2F067C9CEB071B929767")
-        public static float getFloat(ContentResolver cr, String name) throws SettingNotFoundException {
-            String v = getString(cr, name);
-            if (v == null) {
-                throw new SettingNotFoundException(name);
-            }
-            try {
-                return Float.parseFloat(v);
-            } catch (NumberFormatException e) {
-                throw new SettingNotFoundException(name);
-            }
-        }
-
-        
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:03.273 -0400", hash_original_method = "7C7CB2A2E239FDA02FE8F80A9EE7770A", hash_generated_method = "DFFDFDA6D89A1873E0163B25D5D32EAF")
-        public static boolean putFloat(ContentResolver cr, String name, float value) {
-            return putString(cr, name, Float.toString(value));
-        }
-
-        
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:03.273 -0400", hash_original_method = "9F3FDD311864041364D161CC9D459AEC", hash_generated_method = "D143F6CF5A5053E047AEA9033141920E")
-        public static final String getBluetoothHeadsetPriorityKey(String address) {
-            return ("bluetooth_headset_priority_" + address.toUpperCase());
-        }
-
-        
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:03.273 -0400", hash_original_method = "88ED3EEF3F850491928892A6D7A98BFC", hash_generated_method = "EBF41E9A33477D1B5948416D50C28E94")
-        public static final String getBluetoothA2dpSinkPriorityKey(String address) {
-            return ("bluetooth_a2dp_sink_priority_" + address.toUpperCase());
-        }
-
-        
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:03.273 -0400", hash_original_method = "92FDA249B7A1BC5A23BF9AFC1E60BB2A", hash_generated_method = "6CAC2E4AC13C7A35781AE7FB38ABBE8F")
-        public static final String getBluetoothInputDevicePriorityKey(String address) {
-            return ("bluetooth_input_device_priority_" + address.toUpperCase());
-        }
-
-        
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:03.273 -0400", hash_original_method = "D85F37EBA7BADE4247645DA206EE836F", hash_generated_method = "EEA52D7221F3E12A163AA812849477A1")
-        public static final boolean isLocationProviderEnabled(ContentResolver cr, String provider) {
-            //DSFIXME:  CODE0009: Possible callback target function detected
-            String allowedProviders = Settings.Secure.getString(cr, LOCATION_PROVIDERS_ALLOWED);
-            return TextUtils.delimitedStringContains(allowedProviders, ',', provider);
-        }
-
-        
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:03.273 -0400", hash_original_method = "36D25F998AFB22F91E8D73E56A87BBDF", hash_generated_method = "8DC459E674AC7F727FFAD0A7A7CF26DA")
-        public static final void setLocationProviderEnabled(ContentResolver cr,
-                String provider, boolean enabled) {
-            //DSFIXME:  CODE0009: Possible callback target function detected
-            if (enabled) {
-                provider = "+" + provider;
-            } else {
-                provider = "-" + provider;
-            }
-            putString(cr, Settings.Secure.LOCATION_PROVIDERS_ALLOWED, provider);
-        }
-
-        
     }
 
 
     
     public static final class Bookmarks implements BaseColumns {
-        private static final String TAG = "Bookmarks";
-        public static final Uri CONTENT_URI =
-            Uri.parse("content://" + AUTHORITY + "/bookmarks");
-        public static final String ID = "_id";
-        public static final String TITLE = "title";
-        public static final String FOLDER = "folder";
-        public static final String INTENT = "intent";
-        public static final String SHORTCUT = "shortcut";
-        public static final String ORDERING = "ordering";
-        private static final String[] sIntentProjection = { INTENT };
-        private static final String[] sShortcutProjection = { ID, SHORTCUT };
-        private static final String sShortcutSelection = SHORTCUT + "=?";
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:03.273 -0400", hash_original_method = "54DB2A6B806A611A983C56EA34B7AD6A", hash_generated_method = "9B480616AC42C21A727A9FBDD80F0009")
-        public static Intent getIntentForShortcut(ContentResolver cr, char shortcut) {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:55.001 -0400", hash_original_method = "FBB082DE8180752D32E62381CDBD146E", hash_generated_method = "FBB082DE8180752D32E62381CDBD146E")
+                public Bookmarks ()
+        {
+        }
+
+
+                public static Intent getIntentForShortcut(ContentResolver cr, char shortcut) {
             Intent intent = null;
             Cursor c = cr.query(CONTENT_URI,
                     sIntentProjection, sShortcutSelection,
@@ -1336,8 +1142,7 @@ public final class Settings {
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:03.274 -0400", hash_original_method = "DE029E7F723B320891C027CB0C38824B", hash_generated_method = "5903FE9B3A10F2CAA83C6DB1101C9572")
-        public static Uri add(ContentResolver cr,
+                public static Uri add(ContentResolver cr,
                                            Intent intent,
                                            String title,
                                            String folder,
@@ -1357,14 +1162,12 @@ public final class Settings {
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:03.274 -0400", hash_original_method = "906E03827D89C4CEA0BE70B198F9463B", hash_generated_method = "DEF88F8284054F8954D22926A5EADC81")
-        public static CharSequence getLabelForFolder(Resources r, String folder) {
+                public static CharSequence getLabelForFolder(Resources r, String folder) {
             return folder;
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:03.274 -0400", hash_original_method = "CEF1D2F717830086ECA4871334F6B001", hash_generated_method = "3EC304D62692B33131B3CA88A5083CAF")
-        public static CharSequence getTitle(Context context, Cursor cursor) {
+                public static CharSequence getTitle(Context context, Cursor cursor) {
             int titleColumn = cursor.getColumnIndex(TITLE);
             int intentColumn = cursor.getColumnIndex(INTENT);
             if (titleColumn == -1 || intentColumn == -1) {
@@ -1391,10 +1194,100 @@ public final class Settings {
         }
 
         
+        private static final String TAG = "Bookmarks";
+        public static final Uri CONTENT_URI =
+            Uri.parse("content://" + AUTHORITY + "/bookmarks");
+        public static final String ID = "_id";
+        public static final String TITLE = "title";
+        public static final String FOLDER = "folder";
+        public static final String INTENT = "intent";
+        public static final String SHORTCUT = "shortcut";
+        public static final String ORDERING = "ordering";
+        private static final String[] sIntentProjection = { INTENT };
+        private static final String[] sShortcutProjection = { ID, SHORTCUT };
+        private static final String sShortcutSelection = SHORTCUT + "=?";
     }
 
 
     
+    @SdkConstant(SdkConstantType.ACTIVITY_INTENT_ACTION) public static final String ACTION_SETTINGS = "android.settings.SETTINGS";
+    @SdkConstant(SdkConstantType.ACTIVITY_INTENT_ACTION) public static final String ACTION_APN_SETTINGS = "android.settings.APN_SETTINGS";
+    @SdkConstant(SdkConstantType.ACTIVITY_INTENT_ACTION) public static final String ACTION_LOCATION_SOURCE_SETTINGS =
+            "android.settings.LOCATION_SOURCE_SETTINGS";
+    @SdkConstant(SdkConstantType.ACTIVITY_INTENT_ACTION) public static final String ACTION_WIRELESS_SETTINGS =
+            "android.settings.WIRELESS_SETTINGS";
+    @SdkConstant(SdkConstantType.ACTIVITY_INTENT_ACTION) public static final String ACTION_AIRPLANE_MODE_SETTINGS =
+            "android.settings.AIRPLANE_MODE_SETTINGS";
+    @SdkConstant(SdkConstantType.ACTIVITY_INTENT_ACTION) public static final String ACTION_ACCESSIBILITY_SETTINGS =
+            "android.settings.ACCESSIBILITY_SETTINGS";
+    @SdkConstant(SdkConstantType.ACTIVITY_INTENT_ACTION) public static final String ACTION_SECURITY_SETTINGS =
+            "android.settings.SECURITY_SETTINGS";
+    @SdkConstant(SdkConstantType.ACTIVITY_INTENT_ACTION) public static final String ACTION_PRIVACY_SETTINGS =
+            "android.settings.PRIVACY_SETTINGS";
+    @SdkConstant(SdkConstantType.ACTIVITY_INTENT_ACTION) public static final String ACTION_WIFI_SETTINGS =
+            "android.settings.WIFI_SETTINGS";
+    @SdkConstant(SdkConstantType.ACTIVITY_INTENT_ACTION) public static final String ACTION_WIFI_IP_SETTINGS =
+            "android.settings.WIFI_IP_SETTINGS";
+    @SdkConstant(SdkConstantType.ACTIVITY_INTENT_ACTION) public static final String ACTION_BLUETOOTH_SETTINGS =
+            "android.settings.BLUETOOTH_SETTINGS";
+    @SdkConstant(SdkConstantType.ACTIVITY_INTENT_ACTION) public static final String ACTION_DATE_SETTINGS =
+            "android.settings.DATE_SETTINGS";
+    @SdkConstant(SdkConstantType.ACTIVITY_INTENT_ACTION) public static final String ACTION_SOUND_SETTINGS =
+            "android.settings.SOUND_SETTINGS";
+    @SdkConstant(SdkConstantType.ACTIVITY_INTENT_ACTION) public static final String ACTION_DISPLAY_SETTINGS =
+            "android.settings.DISPLAY_SETTINGS";
+    @SdkConstant(SdkConstantType.ACTIVITY_INTENT_ACTION) public static final String ACTION_LOCALE_SETTINGS =
+            "android.settings.LOCALE_SETTINGS";
+    @SdkConstant(SdkConstantType.ACTIVITY_INTENT_ACTION) public static final String ACTION_INPUT_METHOD_SETTINGS =
+            "android.settings.INPUT_METHOD_SETTINGS";
+    @SdkConstant(SdkConstantType.ACTIVITY_INTENT_ACTION) public static final String ACTION_INPUT_METHOD_SUBTYPE_SETTINGS =
+            "android.settings.INPUT_METHOD_SUBTYPE_SETTINGS";
+    @SdkConstant(SdkConstantType.ACTIVITY_INTENT_ACTION) public static final String ACTION_SHOW_INPUT_METHOD_PICKER =
+            "android.settings.SHOW_INPUT_METHOD_PICKER";
+    @SdkConstant(SdkConstantType.ACTIVITY_INTENT_ACTION) public static final String ACTION_USER_DICTIONARY_SETTINGS =
+            "android.settings.USER_DICTIONARY_SETTINGS";
+    @SdkConstant(SdkConstantType.ACTIVITY_INTENT_ACTION) public static final String ACTION_USER_DICTIONARY_INSERT =
+            "com.android.settings.USER_DICTIONARY_INSERT";
+    @SdkConstant(SdkConstantType.ACTIVITY_INTENT_ACTION) public static final String ACTION_APPLICATION_SETTINGS =
+            "android.settings.APPLICATION_SETTINGS";
+    @SdkConstant(SdkConstantType.ACTIVITY_INTENT_ACTION) public static final String ACTION_APPLICATION_DEVELOPMENT_SETTINGS =
+            "android.settings.APPLICATION_DEVELOPMENT_SETTINGS";
+    @SdkConstant(SdkConstantType.ACTIVITY_INTENT_ACTION) public static final String ACTION_QUICK_LAUNCH_SETTINGS =
+            "android.settings.QUICK_LAUNCH_SETTINGS";
+    @SdkConstant(SdkConstantType.ACTIVITY_INTENT_ACTION) public static final String ACTION_MANAGE_APPLICATIONS_SETTINGS =
+            "android.settings.MANAGE_APPLICATIONS_SETTINGS";
+    @SdkConstant(SdkConstantType.ACTIVITY_INTENT_ACTION) public static final String ACTION_MANAGE_ALL_APPLICATIONS_SETTINGS =
+            "android.settings.MANAGE_ALL_APPLICATIONS_SETTINGS";
+    @SdkConstant(SdkConstantType.ACTIVITY_INTENT_ACTION) public static final String ACTION_APPLICATION_DETAILS_SETTINGS =
+            "android.settings.APPLICATION_DETAILS_SETTINGS";
+    @SdkConstant(SdkConstantType.ACTIVITY_INTENT_ACTION) public static final String ACTION_SYSTEM_UPDATE_SETTINGS =
+            "android.settings.SYSTEM_UPDATE_SETTINGS";
+    @SdkConstant(SdkConstantType.ACTIVITY_INTENT_ACTION) public static final String ACTION_SYNC_SETTINGS =
+            "android.settings.SYNC_SETTINGS";
+    @SdkConstant(SdkConstantType.ACTIVITY_INTENT_ACTION) public static final String ACTION_ADD_ACCOUNT =
+            "android.settings.ADD_ACCOUNT_SETTINGS";
+    @SdkConstant(SdkConstantType.ACTIVITY_INTENT_ACTION) public static final String ACTION_NETWORK_OPERATOR_SETTINGS =
+            "android.settings.NETWORK_OPERATOR_SETTINGS";
+    @SdkConstant(SdkConstantType.ACTIVITY_INTENT_ACTION) public static final String ACTION_DATA_ROAMING_SETTINGS =
+            "android.settings.DATA_ROAMING_SETTINGS";
+    @SdkConstant(SdkConstantType.ACTIVITY_INTENT_ACTION) public static final String ACTION_INTERNAL_STORAGE_SETTINGS =
+            "android.settings.INTERNAL_STORAGE_SETTINGS";
+    @SdkConstant(SdkConstantType.ACTIVITY_INTENT_ACTION) public static final String ACTION_MEMORY_CARD_SETTINGS =
+            "android.settings.MEMORY_CARD_SETTINGS";
+    @SdkConstant(SdkConstantType.ACTIVITY_INTENT_ACTION) public static final String ACTION_SEARCH_SETTINGS =
+        "android.search.action.SEARCH_SETTINGS";
+    @SdkConstant(SdkConstantType.ACTIVITY_INTENT_ACTION) public static final String ACTION_DEVICE_INFO_SETTINGS =
+        "android.settings.DEVICE_INFO_SETTINGS";
+    @SdkConstant(SdkConstantType.ACTIVITY_INTENT_ACTION) public static final String ACTION_NFCSHARING_SETTINGS =
+        "android.settings.NFCSHARING_SETTINGS";
+    public static final String CALL_METHOD_GET_SYSTEM = "GET_system";
+    public static final String CALL_METHOD_GET_SECURE = "GET_secure";
+    public static final String EXTRA_AUTHORITIES =
+            "authorities";
+    public static final String EXTRA_INPUT_METHOD_ID = "input_method_id";
+    private static final String JID_RESOURCE_PREFIX = "android";
+    public static final String AUTHORITY = "settings";
+    private static final String TAG = "Settings";
+    private static final boolean LOCAL_LOGV = false || false;
 }
-
 

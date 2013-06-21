@@ -3,10 +3,10 @@ package android.widget;
 // Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
+import droidsafe.runtime.*;
 
-// import Iterator to deal with enhanced for loop translation
+// needed for enhanced for control translations
 import java.util.Iterator;
-
 import java.util.ArrayList;
 import android.content.Context;
 import android.content.res.TypedArray;
@@ -22,29 +22,20 @@ import android.view.ViewGroup;
 import android.widget.RemoteViews.RemoteView;
 
 public class FrameLayout extends ViewGroup {
-    private static final int DEFAULT_CHILD_GRAVITY = Gravity.TOP | Gravity.LEFT;
-    @ViewDebug.ExportedProperty(category = "measurement")
-    boolean mMeasureAllChildren = false;
-    @ViewDebug.ExportedProperty(category = "drawing")
-    private Drawable mForeground;
-    @ViewDebug.ExportedProperty(category = "padding")
-    private int mForegroundPaddingLeft = 0;
-    @ViewDebug.ExportedProperty(category = "padding")
-    private int mForegroundPaddingTop = 0;
-    @ViewDebug.ExportedProperty(category = "padding")
-    private int mForegroundPaddingRight = 0;
-    @ViewDebug.ExportedProperty(category = "padding")
-    private int mForegroundPaddingBottom = 0;
-    private final Rect mSelfBounds = new Rect();
-    private final Rect mOverlayBounds = new Rect();
-    @ViewDebug.ExportedProperty(category = "drawing")
-    private int mForegroundGravity = Gravity.FILL;
-    @ViewDebug.ExportedProperty(category = "drawing")
-    protected boolean mForegroundInPadding = true;
+    @ViewDebug.ExportedProperty(category = "measurement") boolean mMeasureAllChildren = false;
+    @ViewDebug.ExportedProperty(category = "drawing") private Drawable mForeground;
+    @ViewDebug.ExportedProperty(category = "padding") private int mForegroundPaddingLeft = 0;
+    @ViewDebug.ExportedProperty(category = "padding") private int mForegroundPaddingTop = 0;
+    @ViewDebug.ExportedProperty(category = "padding") private int mForegroundPaddingRight = 0;
+    @ViewDebug.ExportedProperty(category = "padding") private int mForegroundPaddingBottom = 0;
+    private Rect mSelfBounds = new Rect();
+    private Rect mOverlayBounds = new Rect();
+    @ViewDebug.ExportedProperty(category = "drawing") private int mForegroundGravity = Gravity.FILL;
+    @ViewDebug.ExportedProperty(category = "drawing") protected boolean mForegroundInPadding = true;
     boolean mForegroundBoundsChanged = false;
-    private final ArrayList<View> mMatchParentChildren = new ArrayList<View>(1);
+    private ArrayList<View> mMatchParentChildren = new ArrayList<View>(1);
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:07.533 -0400", hash_original_method = "C65968E2416D9A27DB8533C5F0C75B69", hash_generated_method = "A322F9F62717237F1ACB4AABB9EDA06B")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:06.758 -0400", hash_original_method = "C65968E2416D9A27DB8533C5F0C75B69", hash_generated_method = "B0A94841BC72A4B435ABF1D8D0EB2250")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public FrameLayout(Context context) {
         super(context);
@@ -53,7 +44,7 @@ public class FrameLayout extends ViewGroup {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:07.533 -0400", hash_original_method = "874EEAD1D73BF9A0D133CBC5B921EDD8", hash_generated_method = "EC2F371F1F370D219AB519220AECA0C3")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:06.758 -0400", hash_original_method = "874EEAD1D73BF9A0D133CBC5B921EDD8", hash_generated_method = "BA013A5D0EBC082366010448D4A6E4D4")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public FrameLayout(Context context, AttributeSet attrs) {
         this(context, attrs, 0);
@@ -63,7 +54,7 @@ public class FrameLayout extends ViewGroup {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:07.534 -0400", hash_original_method = "CEC811F1E2979D1B9B78B672C02AD5D3", hash_generated_method = "C4F39EC1EDF1065C04C8D472666D55FB")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:06.759 -0400", hash_original_method = "CEC811F1E2979D1B9B78B672C02AD5D3", hash_generated_method = "E6E692F79339381E85932ACED5BA0DBB")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public FrameLayout(Context context, AttributeSet attrs, int defStyle) {
         super(context, attrs, defStyle);
@@ -75,13 +66,13 @@ public class FrameLayout extends ViewGroup {
                     defStyle, 0);
         mForegroundGravity = a.getInt(
                 com.android.internal.R.styleable.FrameLayout_foregroundGravity, mForegroundGravity);
-        final Drawable d;
+        Drawable d;
         d = a.getDrawable(com.android.internal.R.styleable.FrameLayout_foreground);
         {
             setForeground(d);
         } //End block
         {
-            boolean var060BD58CD70382001F4DF1DEF51F4B47_1626715183 = (a.getBoolean(com.android.internal.R.styleable.FrameLayout_measureAllChildren, false));
+            boolean var060BD58CD70382001F4DF1DEF51F4B47_1329802016 = (a.getBoolean(com.android.internal.R.styleable.FrameLayout_measureAllChildren, false));
             {
                 setMeasureAllChildren(true);
             } //End block
@@ -107,7 +98,7 @@ public class FrameLayout extends ViewGroup {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:07.534 -0400", hash_original_method = "8BC875BA00D5710711DB00A919CACCE0", hash_generated_method = "C0F9217F06ECAFCB5D8E8389CCF8C544")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:06.759 -0400", hash_original_method = "8BC875BA00D5710711DB00A919CACCE0", hash_generated_method = "6BD8A73F0F771C174970D45A67E5FCDB")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     @android.view.RemotableViewMethod
     public void setForegroundGravity(int foregroundGravity) {
@@ -123,7 +114,7 @@ public class FrameLayout extends ViewGroup {
                 Rect padding;
                 padding = new Rect();
                 {
-                    boolean varEC4E72B2B4FAF413CB9D2BD426568F5B_695591023 = (mForeground.getPadding(padding));
+                    boolean varEC4E72B2B4FAF413CB9D2BD426568F5B_90219137 = (mForeground.getPadding(padding));
                     {
                         mForegroundPaddingLeft = padding.left;
                         mForegroundPaddingTop = padding.top;
@@ -145,20 +136,20 @@ public class FrameLayout extends ViewGroup {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:07.534 -0400", hash_original_method = "10BAAC6631BEDC803E3228221401304B", hash_generated_method = "4A6AAA811FC4B1AEDD7DDAFFA6B502BA")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:06.759 -0400", hash_original_method = "10BAAC6631BEDC803E3228221401304B", hash_generated_method = "CA7AB2AFA805A3887051533ACBDAE34A")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     @Override
     protected boolean verifyDrawable(Drawable who) {
         dsTaint.addTaint(who.dsTaint);
-        boolean var5DDC393BAE0536F27182E72C3FC3DFA4_1854447578 = (super.verifyDrawable(who) || (who == mForeground));
+        boolean var5DDC393BAE0536F27182E72C3FC3DFA4_421131438 = (super.verifyDrawable(who) || (who == mForeground));
         return dsTaint.getTaintBoolean();
         // ---------- Original Method ----------
         //return super.verifyDrawable(who) || (who == mForeground);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:07.534 -0400", hash_original_method = "583607554001D9F198CD54104E44B797", hash_generated_method = "A3C6B9E7BEB7DD591EDA5A810D831888")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:06.760 -0400", hash_original_method = "583607554001D9F198CD54104E44B797", hash_generated_method = "CB2D19DEF124A6EF8070C12F720EBEA8")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     @Override
     public void jumpDrawablesToCurrentState() {
         super.jumpDrawablesToCurrentState();
@@ -169,13 +160,13 @@ public class FrameLayout extends ViewGroup {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:07.534 -0400", hash_original_method = "D0BDA221075CF616F9E9A9FBE3F4B88A", hash_generated_method = "A79BEE609F13DECF0320D9D79A5A4B0E")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:06.760 -0400", hash_original_method = "D0BDA221075CF616F9E9A9FBE3F4B88A", hash_generated_method = "B1B4670C8BA65401FDF96D1122EE6FBA")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     @Override
     protected void drawableStateChanged() {
         super.drawableStateChanged();
         {
-            boolean varF047BC408D282175FD6894DD2CA5E4AA_530143301 = (mForeground != null && mForeground.isStateful());
+            boolean varF047BC408D282175FD6894DD2CA5E4AA_2123407946 = (mForeground != null && mForeground.isStateful());
             {
                 mForeground.setState(getDrawableState());
             } //End block
@@ -188,17 +179,18 @@ public class FrameLayout extends ViewGroup {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:07.534 -0400", hash_original_method = "988BCAE6A6E42EFDC25DEBC315DD1190", hash_generated_method = "E460B10AF4C79334E4B05268CA35AFA8")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:06.760 -0400", hash_original_method = "988BCAE6A6E42EFDC25DEBC315DD1190", hash_generated_method = "5938FD204CCD8629D2161CDE06125381")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     @Override
     protected LayoutParams generateDefaultLayoutParams() {
+        LayoutParams var1F8908D216039FE210A315F49B7718BD_351039200 = (new LayoutParams(LayoutParams.MATCH_PARENT, LayoutParams.MATCH_PARENT));
         return (LayoutParams)dsTaint.getTaint();
         // ---------- Original Method ----------
         //return new LayoutParams(LayoutParams.MATCH_PARENT, LayoutParams.MATCH_PARENT);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:07.534 -0400", hash_original_method = "9754375AE3C405E0761F3FE1F1DE65D9", hash_generated_method = "03346B91B7A928B0F801F67D03D09A63")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:06.760 -0400", hash_original_method = "9754375AE3C405E0761F3FE1F1DE65D9", hash_generated_method = "4149B0C15B3BD01DFE0241BE77FA259F")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public void setForeground(Drawable drawable) {
         dsTaint.addTaint(drawable.dsTaint);
@@ -215,7 +207,7 @@ public class FrameLayout extends ViewGroup {
                 setWillNotDraw(false);
                 drawable.setCallback(this);
                 {
-                    boolean var7A233AAD91A9FC1732BFC704C20F2EC0_1311201064 = (drawable.isStateful());
+                    boolean var7A233AAD91A9FC1732BFC704C20F2EC0_641637357 = (drawable.isStateful());
                     {
                         drawable.setState(getDrawableState());
                     } //End block
@@ -224,7 +216,7 @@ public class FrameLayout extends ViewGroup {
                     Rect padding;
                     padding = new Rect();
                     {
-                        boolean var640F577FE90036D5B7F6C5FBC863E5E1_1491776636 = (drawable.getPadding(padding));
+                        boolean var640F577FE90036D5B7F6C5FBC863E5E1_1723404614 = (drawable.getPadding(padding));
                         {
                             mForegroundPaddingLeft = padding.left;
                             mForegroundPaddingTop = padding.top;
@@ -245,7 +237,7 @@ public class FrameLayout extends ViewGroup {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:07.534 -0400", hash_original_method = "8DDBBCB9F2E6942D000521EEF66C0D86", hash_generated_method = "5AE950EDC98215BB934ECB6F3D42686F")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:06.761 -0400", hash_original_method = "8DDBBCB9F2E6942D000521EEF66C0D86", hash_generated_method = "851D5B9D0B825EFA5E89D1F42EA3CB28")
     @DSModeled(DSC.SAFE)
     public Drawable getForeground() {
         return (Drawable)dsTaint.getTaint();
@@ -254,11 +246,11 @@ public class FrameLayout extends ViewGroup {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:07.535 -0400", hash_original_method = "FF3A696BD56D74C1EF72BB71EC65ECEC", hash_generated_method = "F72D3C7CE77C58AC6709A4ED9AD38C6F")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:06.761 -0400", hash_original_method = "FF3A696BD56D74C1EF72BB71EC65ECEC", hash_generated_method = "D3401D6EC27798D363A4FB472E7A5DE0")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     private int getPaddingLeftWithForeground() {
         {
-            Object var8418F173DB412201BC8297CCEF71A2D0_1000539763 = (Math.max(mPaddingLeft, mForegroundPaddingLeft));
+            Object var8418F173DB412201BC8297CCEF71A2D0_104711468 = (Math.max(mPaddingLeft, mForegroundPaddingLeft));
         } //End flattened ternary
         return dsTaint.getTaintInt();
         // ---------- Original Method ----------
@@ -267,11 +259,11 @@ public class FrameLayout extends ViewGroup {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:07.535 -0400", hash_original_method = "6F38D617A9DA11062600EF5C115E1518", hash_generated_method = "D9F9802DEA45D21AC9A072C84E413CD4")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:06.761 -0400", hash_original_method = "6F38D617A9DA11062600EF5C115E1518", hash_generated_method = "60F8AB444BCE4921E1D2724539C48A62")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     private int getPaddingRightWithForeground() {
         {
-            Object varDF068A7244503D471731ABCFF3C011C6_890695859 = (Math.max(mPaddingRight, mForegroundPaddingRight));
+            Object varDF068A7244503D471731ABCFF3C011C6_2081374125 = (Math.max(mPaddingRight, mForegroundPaddingRight));
         } //End flattened ternary
         return dsTaint.getTaintInt();
         // ---------- Original Method ----------
@@ -280,11 +272,11 @@ public class FrameLayout extends ViewGroup {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:07.535 -0400", hash_original_method = "9A91E9D92D71EE5460C3A06ABC1FBD77", hash_generated_method = "F329295F4B4EF688C105BBDC89AFB9A5")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:06.762 -0400", hash_original_method = "9A91E9D92D71EE5460C3A06ABC1FBD77", hash_generated_method = "A61FBF3D6A8BC7DE7430116B90D7D3F8")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     private int getPaddingTopWithForeground() {
         {
-            Object varEC4D518B0257A4830CF6F1BBCA4DFEDC_275299535 = (Math.max(mPaddingTop, mForegroundPaddingTop));
+            Object varEC4D518B0257A4830CF6F1BBCA4DFEDC_327179615 = (Math.max(mPaddingTop, mForegroundPaddingTop));
         } //End flattened ternary
         return dsTaint.getTaintInt();
         // ---------- Original Method ----------
@@ -293,11 +285,11 @@ public class FrameLayout extends ViewGroup {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:07.535 -0400", hash_original_method = "6BA199CF08BDB4F9A10CECB43AC6A7C1", hash_generated_method = "3A492F7903A174C877A6AA793E563BF6")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:06.762 -0400", hash_original_method = "6BA199CF08BDB4F9A10CECB43AC6A7C1", hash_generated_method = "3ED9BE141F5F991007855AC48342BA77")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     private int getPaddingBottomWithForeground() {
         {
-            Object varD5F18AAE1C8F95C812828DD0D3D39BCF_2029806784 = (Math.max(mPaddingBottom, mForegroundPaddingBottom));
+            Object varD5F18AAE1C8F95C812828DD0D3D39BCF_531826024 = (Math.max(mPaddingBottom, mForegroundPaddingBottom));
         } //End flattened ternary
         return dsTaint.getTaintInt();
         // ---------- Original Method ----------
@@ -306,7 +298,7 @@ public class FrameLayout extends ViewGroup {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:07.536 -0400", hash_original_method = "5535255FB97D5EBC35FC058E1C30F774", hash_generated_method = "59C9A1634D5F11F514F2D8A67E6F439A")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:06.763 -0400", hash_original_method = "5535255FB97D5EBC35FC058E1C30F774", hash_generated_method = "D03F7792165BD1147F0FC9DB6E7530F5")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     @Override
     protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
@@ -315,7 +307,7 @@ public class FrameLayout extends ViewGroup {
         dsTaint.addTaint(widthMeasureSpec);
         int count;
         count = getChildCount();
-        final boolean measureMatchParentChildren;
+        boolean measureMatchParentChildren;
         measureMatchParentChildren = MeasureSpec.getMode(widthMeasureSpec) != MeasureSpec.EXACTLY ||
                 MeasureSpec.getMode(heightMeasureSpec) != MeasureSpec.EXACTLY;
         mMatchParentChildren.clear();
@@ -329,13 +321,13 @@ public class FrameLayout extends ViewGroup {
             int i;
             i = 0;
             {
-                final View child;
+                View child;
                 child = getChildAt(i);
                 {
-                    boolean var52D84F7738B8AF8E899201F04FE0F413_299547964 = (mMeasureAllChildren || child.getVisibility() != GONE);
+                    boolean var52D84F7738B8AF8E899201F04FE0F413_1767479859 = (mMeasureAllChildren || child.getVisibility() != GONE);
                     {
                         measureChildWithMargins(child, widthMeasureSpec, 0, heightMeasureSpec, 0);
-                        final LayoutParams lp;
+                        LayoutParams lp;
                         lp = (LayoutParams) child.getLayoutParams();
                         maxWidth = Math.max(maxWidth,
                         child.getMeasuredWidth() + lp.leftMargin + lp.rightMargin);
@@ -355,7 +347,7 @@ public class FrameLayout extends ViewGroup {
         maxHeight += getPaddingTopWithForeground() + getPaddingBottomWithForeground();
         maxHeight = Math.max(maxHeight, getSuggestedMinimumHeight());
         maxWidth = Math.max(maxWidth, getSuggestedMinimumWidth());
-        final Drawable drawable;
+        Drawable drawable;
         drawable = getForeground();
         {
             maxHeight = Math.max(maxHeight, drawable.getMinimumHeight());
@@ -370,9 +362,9 @@ public class FrameLayout extends ViewGroup {
                 int i;
                 i = 0;
                 {
-                    final View child;
+                    View child;
                     child = mMatchParentChildren.get(i);
-                    final MarginLayoutParams lp;
+                    MarginLayoutParams lp;
                     lp = (MarginLayoutParams) child.getLayoutParams();
                     int childWidthMeasureSpec;
                     int childHeightMeasureSpec;
@@ -409,7 +401,7 @@ public class FrameLayout extends ViewGroup {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:07.536 -0400", hash_original_method = "E7FA69BF1895927226A22DFF32FA5B4F", hash_generated_method = "6D8DE6218446532E3F0DFF9A723E1C4B")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:06.764 -0400", hash_original_method = "E7FA69BF1895927226A22DFF32FA5B4F", hash_generated_method = "A197C1FF38752ABA02F3FE7F9F574579")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     @Override
     protected void onLayout(boolean changed, int left, int top, int right, int bottom) {
@@ -417,33 +409,33 @@ public class FrameLayout extends ViewGroup {
         dsTaint.addTaint(bottom);
         dsTaint.addTaint(left);
         dsTaint.addTaint(right);
-        dsTaint.addTaint(changed);
         dsTaint.addTaint(top);
-        final int count;
+        dsTaint.addTaint(changed);
+        int count;
         count = getChildCount();
-        final int parentLeft;
+        int parentLeft;
         parentLeft = getPaddingLeftWithForeground();
-        final int parentRight;
+        int parentRight;
         parentRight = right - left - getPaddingRightWithForeground();
-        final int parentTop;
+        int parentTop;
         parentTop = getPaddingTopWithForeground();
-        final int parentBottom;
+        int parentBottom;
         parentBottom = bottom - top - getPaddingBottomWithForeground();
         mForegroundBoundsChanged = true;
         {
             int i;
             i = 0;
             {
-                final View child;
+                View child;
                 child = getChildAt(i);
                 {
-                    boolean var6B4F6D9B07C374A63E00C1591AF2C9D6_806382740 = (child.getVisibility() != GONE);
+                    boolean var6B4F6D9B07C374A63E00C1591AF2C9D6_104158473 = (child.getVisibility() != GONE);
                     {
-                        final LayoutParams lp;
+                        LayoutParams lp;
                         lp = (LayoutParams) child.getLayoutParams();
-                        final int width;
+                        int width;
                         width = child.getMeasuredWidth();
-                        final int height;
+                        int height;
                         height = child.getMeasuredHeight();
                         int childLeft;
                         int childTop;
@@ -452,11 +444,11 @@ public class FrameLayout extends ViewGroup {
                         {
                             gravity = DEFAULT_CHILD_GRAVITY;
                         } //End block
-                        final int layoutDirection;
+                        int layoutDirection;
                         layoutDirection = getResolvedLayoutDirection();
-                        final int absoluteGravity;
+                        int absoluteGravity;
                         absoluteGravity = Gravity.getAbsoluteGravity(gravity, layoutDirection);
-                        final int verticalGravity;
+                        int verticalGravity;
                         verticalGravity = gravity & Gravity.VERTICAL_GRAVITY_MASK;
                         //Begin case Gravity.LEFT 
                         childLeft = parentLeft + lp.leftMargin;
@@ -494,14 +486,14 @@ public class FrameLayout extends ViewGroup {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:07.536 -0400", hash_original_method = "4AC6B20E904606B8A51AEBBB15006C72", hash_generated_method = "E41E5E8E5B2EA18C257A14E72C13A5F4")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:06.764 -0400", hash_original_method = "4AC6B20E904606B8A51AEBBB15006C72", hash_generated_method = "1FA4300EFE01C11F721448C60734A6F9")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     @Override
     protected void onSizeChanged(int w, int h, int oldw, int oldh) {
         //DSFIXME:  CODE0009: Possible callback target function detected
         dsTaint.addTaint(w);
-        dsTaint.addTaint(oldw);
         dsTaint.addTaint(oldh);
+        dsTaint.addTaint(oldw);
         dsTaint.addTaint(h);
         super.onSizeChanged(w, h, oldw, oldh);
         mForegroundBoundsChanged = true;
@@ -511,24 +503,24 @@ public class FrameLayout extends ViewGroup {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:07.537 -0400", hash_original_method = "6D753914B55367AEDC866ACE8B2692D8", hash_generated_method = "5192E8FA5278B06C63F3292DACA1CACC")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:06.765 -0400", hash_original_method = "6D753914B55367AEDC866ACE8B2692D8", hash_generated_method = "C2F783105F0580E44F6B1DA3ECF2F769")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     @Override
     public void draw(Canvas canvas) {
         dsTaint.addTaint(canvas.dsTaint);
         super.draw(canvas);
         {
-            final Drawable foreground;
+            Drawable foreground;
             foreground = mForeground;
             {
                 mForegroundBoundsChanged = false;
-                final Rect selfBounds;
+                Rect selfBounds;
                 selfBounds = mSelfBounds;
-                final Rect overlayBounds;
+                Rect overlayBounds;
                 overlayBounds = mOverlayBounds;
-                final int w;
+                int w;
                 w = mRight-mLeft;
-                final int h;
+                int h;
                 h = mBottom-mTop;
                 {
                     selfBounds.set(0, 0, w, h);
@@ -536,7 +528,7 @@ public class FrameLayout extends ViewGroup {
                 {
                     selfBounds.set(mPaddingLeft, mPaddingTop, w - mPaddingRight, h - mPaddingBottom);
                 } //End block
-                final int layoutDirection;
+                int layoutDirection;
                 layoutDirection = getResolvedLayoutDirection();
                 Gravity.apply(mForegroundGravity, foreground.getIntrinsicWidth(),
                         foreground.getIntrinsicHeight(), selfBounds, overlayBounds,
@@ -550,8 +542,8 @@ public class FrameLayout extends ViewGroup {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:07.537 -0400", hash_original_method = "89E57DF442BD7C3C4F7FCB93934115A6", hash_generated_method = "158FE14FA186AB72B084B1CDC0FC4BD6")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:06.765 -0400", hash_original_method = "89E57DF442BD7C3C4F7FCB93934115A6", hash_generated_method = "B515470742351521D2179A60C74C0BDF")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     @Override
     public boolean gatherTransparentRegion(Region region) {
         dsTaint.addTaint(region.dsTaint);
@@ -570,7 +562,7 @@ public class FrameLayout extends ViewGroup {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:07.537 -0400", hash_original_method = "F157652BCC07DCD3C1A1E63F95BA7504", hash_generated_method = "9A85A57D0141033559DE2A9CDB1EC515")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:06.765 -0400", hash_original_method = "F157652BCC07DCD3C1A1E63F95BA7504", hash_generated_method = "A43C60824AA705998B649256A25B2FB7")
     @DSModeled(DSC.SAFE)
     @android.view.RemotableViewMethod
     public void setMeasureAllChildren(boolean measureAll) {
@@ -580,18 +572,18 @@ public class FrameLayout extends ViewGroup {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:07.537 -0400", hash_original_method = "E2FDB5CCBB08727222AD77E37CF74AF8", hash_generated_method = "116195ED06BF586994EB439856288943")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:06.765 -0400", hash_original_method = "E2FDB5CCBB08727222AD77E37CF74AF8", hash_generated_method = "2AA6D7F8764DBCD967196A0536C89AA4")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     @Deprecated
     public boolean getConsiderGoneChildrenWhenMeasuring() {
-        boolean var9F57B6D4A5A1C146ADB9D4B74E243376_391869466 = (getMeasureAllChildren());
+        boolean var9F57B6D4A5A1C146ADB9D4B74E243376_122519672 = (getMeasureAllChildren());
         return dsTaint.getTaintBoolean();
         // ---------- Original Method ----------
         //return getMeasureAllChildren();
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:07.537 -0400", hash_original_method = "52ECFF8459DAA24A15017A3D3C6FE0BF", hash_generated_method = "4DF85E2F3AF5ECBB96F7B02A37099942")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:06.765 -0400", hash_original_method = "52ECFF8459DAA24A15017A3D3C6FE0BF", hash_generated_method = "9D7A86D0C5FED3C18839B8BE868BB813")
     @DSModeled(DSC.SAFE)
     public boolean getMeasureAllChildren() {
         return dsTaint.getTaintBoolean();
@@ -600,19 +592,19 @@ public class FrameLayout extends ViewGroup {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:07.537 -0400", hash_original_method = "A40DD32EC45E4EF4D9BB874732A909D0", hash_generated_method = "C4226C74C861ACBB6C854E6761DF21CD")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:06.766 -0400", hash_original_method = "A40DD32EC45E4EF4D9BB874732A909D0", hash_generated_method = "45795E48489B3193409B5E5692D279CD")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     @Override
     public LayoutParams generateLayoutParams(AttributeSet attrs) {
         dsTaint.addTaint(attrs.dsTaint);
-        LayoutParams var65F932752F70D2B8EE875E34B10EE93F_1298060882 = (new FrameLayout.LayoutParams(getContext(), attrs));
+        LayoutParams var65F932752F70D2B8EE875E34B10EE93F_737647788 = (new FrameLayout.LayoutParams(getContext(), attrs));
         return (LayoutParams)dsTaint.getTaint();
         // ---------- Original Method ----------
         //return new FrameLayout.LayoutParams(getContext(), attrs);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:07.537 -0400", hash_original_method = "9DA99B4E01A506E72BA59AF598A3C38D", hash_generated_method = "1239C6C76A60BF63BE5F6B305C415611")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:06.766 -0400", hash_original_method = "9DA99B4E01A506E72BA59AF598A3C38D", hash_generated_method = "B6A28B76ECD4015FD614215B915AB786")
     @DSModeled(DSC.SAFE)
     @Override
     public boolean shouldDelayChildPressedState() {
@@ -622,7 +614,7 @@ public class FrameLayout extends ViewGroup {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:07.537 -0400", hash_original_method = "E5E3FCBA546B7CFE2F525BEFE910A396", hash_generated_method = "C77E7F6AA46AE234AD2714622128D283")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:06.766 -0400", hash_original_method = "E5E3FCBA546B7CFE2F525BEFE910A396", hash_generated_method = "FD5901788E9E0B41B664D0FE806FCC4B")
     @DSModeled(DSC.SAFE)
     @Override
     protected boolean checkLayoutParams(ViewGroup.LayoutParams p) {
@@ -633,11 +625,12 @@ public class FrameLayout extends ViewGroup {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:07.537 -0400", hash_original_method = "B595E0482905B38051CD63239BB5F8BA", hash_generated_method = "29644007F7CFEED57C9F56BE3742304B")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:06.766 -0400", hash_original_method = "B595E0482905B38051CD63239BB5F8BA", hash_generated_method = "DCE01DF9821F25E5FBB953D732964955")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     @Override
     protected ViewGroup.LayoutParams generateLayoutParams(ViewGroup.LayoutParams p) {
         dsTaint.addTaint(p.dsTaint);
+        ViewGroup.LayoutParams varAE4B968C4C0301DC2CC83C8A9F56D84B_1061963211 = (new LayoutParams(p));
         return (ViewGroup.LayoutParams)dsTaint.getTaint();
         // ---------- Original Method ----------
         //return new LayoutParams(p);
@@ -647,7 +640,7 @@ public class FrameLayout extends ViewGroup {
     public static class LayoutParams extends MarginLayoutParams {
         public int gravity = -1;
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:07.537 -0400", hash_original_method = "8477494D7C126F8EB5E8F09916E06813", hash_generated_method = "EB2EE49C4B59DE58F1C1EEAEE5FC9850")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:06.766 -0400", hash_original_method = "8477494D7C126F8EB5E8F09916E06813", hash_generated_method = "86EC3141F414927FC5ED5DD439104892")
         //DSFIXME:  CODE0002: Requires DSC value to be set
         public LayoutParams(Context c, AttributeSet attrs) {
             super(c, attrs);
@@ -664,7 +657,7 @@ public class FrameLayout extends ViewGroup {
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:07.537 -0400", hash_original_method = "B179862558DB9232A546423CE2E9C45B", hash_generated_method = "22D5D1595758A01FFF9BAF1C2C6C1819")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:06.766 -0400", hash_original_method = "B179862558DB9232A546423CE2E9C45B", hash_generated_method = "719B57EEE223D614E50C7B226C3A395B")
         //DSFIXME:  CODE0002: Requires DSC value to be set
         public LayoutParams(int width, int height) {
             super(width, height);
@@ -674,7 +667,7 @@ public class FrameLayout extends ViewGroup {
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:07.537 -0400", hash_original_method = "DAE5F643078D3DA273ACC6BEF5E44EF2", hash_generated_method = "8234EE5A67690B1367ADD7B55C8976E1")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:06.767 -0400", hash_original_method = "DAE5F643078D3DA273ACC6BEF5E44EF2", hash_generated_method = "4572ACE587AE879584DF2A3E9FDE0E61")
         //DSFIXME:  CODE0002: Requires DSC value to be set
         public LayoutParams(int width, int height, int gravity) {
             super(width, height);
@@ -686,7 +679,7 @@ public class FrameLayout extends ViewGroup {
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:07.537 -0400", hash_original_method = "E78B3F1574E2791FC4B55C9E6B90274C", hash_generated_method = "56865DF2AAA17BD60F7856200319F1B6")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:06.767 -0400", hash_original_method = "E78B3F1574E2791FC4B55C9E6B90274C", hash_generated_method = "1B8A923CB2D1359AEB1E56B11A4FD570")
         //DSFIXME:  CODE0002: Requires DSC value to be set
         public LayoutParams(ViewGroup.LayoutParams source) {
             super(source);
@@ -695,7 +688,7 @@ public class FrameLayout extends ViewGroup {
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:07.537 -0400", hash_original_method = "600A366FF17B7D40DFA738E77A628E8F", hash_generated_method = "5EA9C52E234CE7134779B1629A95F683")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:06.767 -0400", hash_original_method = "600A366FF17B7D40DFA738E77A628E8F", hash_generated_method = "0060BDEBA86B5F7BA850375D97811B45")
         //DSFIXME:  CODE0002: Requires DSC value to be set
         public LayoutParams(ViewGroup.MarginLayoutParams source) {
             super(source);
@@ -708,6 +701,6 @@ public class FrameLayout extends ViewGroup {
 
 
     
+    private static final int DEFAULT_CHILD_GRAVITY = Gravity.TOP | Gravity.LEFT;
 }
-
 

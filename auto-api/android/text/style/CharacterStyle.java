@@ -3,19 +3,24 @@ package android.text.style;
 // Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
+import droidsafe.runtime.*;
 
-// import Iterator to deal with enhanced for loop translation
+// needed for enhanced for control translations
 import java.util.Iterator;
-
 import android.text.TextPaint;
 
 public abstract class CharacterStyle {
     
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:57.827 -0400", hash_original_method = "839A8E46E465181FCE6461B2975F7AFA", hash_generated_method = "839A8E46E465181FCE6461B2975F7AFA")
+        public CharacterStyle ()
+    {
+    }
+
+
     public abstract void updateDrawState(TextPaint tp);
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:04.300 -0400", hash_original_method = "46FD3049FFDEA6A9F7272E8860D8996C", hash_generated_method = "1F3D2CA3D63B80A74836D378DF6D34AD")
-    public static CharacterStyle wrap(CharacterStyle cs) {
+        public static CharacterStyle wrap(CharacterStyle cs) {
         if (cs instanceof MetricAffectingSpan) {
             return new MetricAffectingSpan.Passthrough((MetricAffectingSpan) cs);
         } else {
@@ -24,7 +29,7 @@ public abstract class CharacterStyle {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:04.300 -0400", hash_original_method = "2ADDE7DAB4ECDACBF15B0CE8CBCF2C82", hash_generated_method = "280EBF3F88CA94F7053B37ACD0129097")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:57.828 -0400", hash_original_method = "2ADDE7DAB4ECDACBF15B0CE8CBCF2C82", hash_generated_method = "BBF890D271B5763B96F346544B50460C")
     @DSModeled(DSC.SAFE)
     public CharacterStyle getUnderlying() {
         return (CharacterStyle)dsTaint.getTaint();
@@ -36,7 +41,7 @@ public abstract class CharacterStyle {
     private static class Passthrough extends CharacterStyle {
         private CharacterStyle mStyle;
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:04.301 -0400", hash_original_method = "CAC991CB238644E494D2A55B9FB554CC", hash_generated_method = "D3F71B8019DB684257311EC700892E37")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:57.828 -0400", hash_original_method = "CAC991CB238644E494D2A55B9FB554CC", hash_generated_method = "8895CAC943D5C790A5EEC260C14D17EE")
         @DSModeled(DSC.SAFE)
         public Passthrough(CharacterStyle cs) {
             dsTaint.addTaint(cs.dsTaint);
@@ -45,8 +50,8 @@ public abstract class CharacterStyle {
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:04.301 -0400", hash_original_method = "813F80F60D9F0493A35140828DCD41CA", hash_generated_method = "7930B665CDBD48FC47727250062097A5")
-        @DSModeled(DSC.SAFE)
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:57.828 -0400", hash_original_method = "813F80F60D9F0493A35140828DCD41CA", hash_generated_method = "0D947C76B3853EC9A9B3AEAABC5DE2B8")
+        //DSFIXME:  CODE0002: Requires DSC value to be set
         @Override
         public void updateDrawState(TextPaint tp) {
             dsTaint.addTaint(tp.dsTaint);
@@ -56,11 +61,11 @@ public abstract class CharacterStyle {
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:04.301 -0400", hash_original_method = "1F67DF9DEB8C0E16558BBAAD1B5FDCCE", hash_generated_method = "3740B3D9665C09B26E2CAE6592B89112")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:57.829 -0400", hash_original_method = "1F67DF9DEB8C0E16558BBAAD1B5FDCCE", hash_generated_method = "4997C80DE04D8588CE3E8471241A0626")
         //DSFIXME:  CODE0002: Requires DSC value to be set
         @Override
         public CharacterStyle getUnderlying() {
-            CharacterStyle varA2CC679CE5B8D13CD0277BDEBCBD5DC3_441888873 = (mStyle.getUnderlying());
+            CharacterStyle varA2CC679CE5B8D13CD0277BDEBCBD5DC3_435034832 = (mStyle.getUnderlying());
             return (CharacterStyle)dsTaint.getTaint();
             // ---------- Original Method ----------
             //return mStyle.getUnderlying();
@@ -72,5 +77,4 @@ public abstract class CharacterStyle {
 
     
 }
-
 

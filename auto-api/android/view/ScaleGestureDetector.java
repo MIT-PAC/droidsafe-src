@@ -3,20 +3,18 @@ package android.view;
 // Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
+import droidsafe.runtime.*;
 
-// import Iterator to deal with enhanced for loop translation
+// needed for enhanced for control translations
 import java.util.Iterator;
-
 import android.content.Context;
 import android.util.DisplayMetrics;
 import android.util.FloatMath;
 import android.util.Log;
 
 public class ScaleGestureDetector {
-    private static final String TAG = "ScaleGestureDetector";
-    private static final float PRESSURE_THRESHOLD = 0.67f;
-    private final Context mContext;
-    private final OnScaleGestureListener mListener;
+    private Context mContext;
+    private OnScaleGestureListener mListener;
     private boolean mGestureInProgress;
     private MotionEvent mPrevEvent;
     private MotionEvent mCurrEvent;
@@ -32,7 +30,7 @@ public class ScaleGestureDetector {
     private float mCurrPressure;
     private float mPrevPressure;
     private long mTimeDelta;
-    private final float mEdgeSlop;
+    private float mEdgeSlop;
     private float mRightSlopEdge;
     private float mBottomSlopEdge;
     private boolean mSloppyGesture;
@@ -40,20 +38,18 @@ public class ScaleGestureDetector {
     private int mActiveId0;
     private int mActiveId1;
     private boolean mActive0MostRecent;
-    private final InputEventConsistencyVerifier mInputEventConsistencyVerifier =
+    private InputEventConsistencyVerifier mInputEventConsistencyVerifier =
             InputEventConsistencyVerifier.isInstrumentationEnabled() ?
                     new InputEventConsistencyVerifier(this, 0) : null;
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:05.520 -0400", hash_original_method = "3F765CE5C3F1587A362200597A84993F", hash_generated_method = "97B0320E1AA9806EDFDA523347714883")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:59.278 -0400", hash_original_method = "3F765CE5C3F1587A362200597A84993F", hash_generated_method = "90E2F59DB9B2155C6BAAA9831167E555")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public ScaleGestureDetector(Context context, OnScaleGestureListener listener) {
-        dsTaint.addTaint(context.dsTaint);
         dsTaint.addTaint(listener.dsTaint);
+        dsTaint.addTaint(context.dsTaint);
         ViewConfiguration config;
         config = ViewConfiguration.get(context);
         mEdgeSlop = config.getScaledEdgeSlop();
-        mListener = listener;
-        mContext = context;
         // ---------- Original Method ----------
         //ViewConfiguration config = ViewConfiguration.get(context);
         //mContext = context;
@@ -62,7 +58,7 @@ public class ScaleGestureDetector {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:05.522 -0400", hash_original_method = "3D0907AC17DE553CA8E37D6A8A0F580A", hash_generated_method = "1C127810533BE0E1E6C0A2A761E00FA0")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:59.282 -0400", hash_original_method = "3D0907AC17DE553CA8E37D6A8A0F580A", hash_generated_method = "1081F936FABABA0B1836A1EF3942F06A")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public boolean onTouchEvent(MotionEvent event) {
         //DSFIXME:  CODE0009: Possible callback target function detected
@@ -70,7 +66,7 @@ public class ScaleGestureDetector {
         {
             mInputEventConsistencyVerifier.onTouchEvent(event, 0);
         } //End block
-        final int action;
+        int action;
         action = event.getActionMasked();
         {
             reset();
@@ -110,11 +106,11 @@ public class ScaleGestureDetector {
                 } //End block
                 mActive0MostRecent = false;
                 setContext(event);
-                final float edgeSlop;
+                float edgeSlop;
                 edgeSlop = mEdgeSlop;
-                final float rightSlop;
+                float rightSlop;
                 rightSlop = mRightSlopEdge;
-                final float bottomSlop;
+                float bottomSlop;
                 bottomSlop = mBottomSlopEdge;
                 float x0;
                 x0 = getRawX(event, index0);
@@ -153,11 +149,11 @@ public class ScaleGestureDetector {
             //End case MotionEvent.ACTION_POINTER_DOWN 
             //Begin case MotionEvent.ACTION_MOVE 
             {
-                final float edgeSlop;
+                float edgeSlop;
                 edgeSlop = mEdgeSlop;
-                final float rightSlop;
+                float rightSlop;
                 rightSlop = mRightSlopEdge;
-                final float bottomSlop;
+                float bottomSlop;
                 bottomSlop = mBottomSlopEdge;
                 int index0;
                 index0 = event.findPointerIndex(mActiveId0);
@@ -219,26 +215,26 @@ public class ScaleGestureDetector {
             //End case MotionEvent.ACTION_MOVE 
             //Begin case MotionEvent.ACTION_POINTER_UP 
             {
-                final int pointerCount;
+                int pointerCount;
                 pointerCount = event.getPointerCount();
-                final int actionIndex;
+                int actionIndex;
                 actionIndex = event.getActionIndex();
-                final int actionId;
+                int actionId;
                 actionId = event.getPointerId(actionIndex);
                 {
                     {
-                        final int newIndex;
+                        int newIndex;
                         newIndex = findNewActiveIndex(event, mActiveId1, actionIndex);
                         mActiveId0 = event.getPointerId(newIndex);
                     } //End block
                     {
-                        final int newIndex;
+                        int newIndex;
                         newIndex = findNewActiveIndex(event, mActiveId0, actionIndex);
                         mActiveId1 = event.getPointerId(newIndex);
                     } //End block
                 } //End block
                 {
-                    final int index;
+                    int index;
                     index = event.findPointerIndex(actionId == mActiveId0 ?
                                 mActiveId1 : mActiveId0);//DSFIXME:  CODE0008: Nested ternary operator in expression
                     {
@@ -260,9 +256,9 @@ public class ScaleGestureDetector {
             //Begin case MotionEvent.ACTION_POINTER_DOWN 
             {
                 mListener.onScaleEnd(this);
-                final int oldActive0;
+                int oldActive0;
                 oldActive0 = mActiveId0;
-                final int oldActive1;
+                int oldActive1;
                 oldActive1 = mActiveId1;
                 reset();
                 mPrevEvent = MotionEvent.obtain(event);
@@ -282,17 +278,17 @@ public class ScaleGestureDetector {
             //End case MotionEvent.ACTION_POINTER_DOWN 
             //Begin case MotionEvent.ACTION_POINTER_UP 
             {
-                final int pointerCount;
+                int pointerCount;
                 pointerCount = event.getPointerCount();
-                final int actionIndex;
+                int actionIndex;
                 actionIndex = event.getActionIndex();
-                final int actionId;
+                int actionId;
                 actionId = event.getPointerId(actionIndex);
                 boolean gestureEnded;
                 gestureEnded = false;
                 {
                     {
-                        final int newIndex;
+                        int newIndex;
                         newIndex = findNewActiveIndex(event, mActiveId1, actionIndex);
                         {
                             mListener.onScaleEnd(this);
@@ -307,7 +303,7 @@ public class ScaleGestureDetector {
                         } //End block
                     } //End block
                     {
-                        final int newIndex;
+                        int newIndex;
                         newIndex = findNewActiveIndex(event, mActiveId0, actionIndex);
                         {
                             mListener.onScaleEnd(this);
@@ -330,10 +326,10 @@ public class ScaleGestureDetector {
                 } //End block
                 {
                     setContext(event);
-                    final int activeId;
+                    int activeId;
                     activeId = mActiveId1;
-
-                    final int index;
+                    activeId = mActiveId0;
+                    int index;
                     index = event.findPointerIndex(activeId);
                     mFocusX = event.getX(index);
                     mFocusY = event.getY(index);
@@ -357,7 +353,7 @@ public class ScaleGestureDetector {
             {
                 setContext(event);
                 {
-                    final boolean updatePrevious;
+                    boolean updatePrevious;
                     updatePrevious = mListener.onScale(this);
                     {
                         mPrevEvent.recycle();
@@ -376,15 +372,15 @@ public class ScaleGestureDetector {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:05.523 -0400", hash_original_method = "26EE043A8FDD34A9021E8F106FD508B5", hash_generated_method = "A94342A2114DBD8E7E496D1DA7A89254")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:59.283 -0400", hash_original_method = "26EE043A8FDD34A9021E8F106FD508B5", hash_generated_method = "7BC7DA53FDD6D37BBBDC0479A40FEFCD")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     private int findNewActiveIndex(MotionEvent ev, int otherActiveId, int oldIndex) {
         dsTaint.addTaint(otherActiveId);
         dsTaint.addTaint(oldIndex);
         dsTaint.addTaint(ev.dsTaint);
-        final int pointerCount;
+        int pointerCount;
         pointerCount = ev.getPointerCount();
-        final int otherActiveIndex;
+        int otherActiveIndex;
         otherActiveIndex = ev.findPointerIndex(otherActiveId);
         int newActiveIndex;
         newActiveIndex = -1;
@@ -393,11 +389,11 @@ public class ScaleGestureDetector {
             i = 0;
             {
                 {
-                    final float edgeSlop;
+                    float edgeSlop;
                     edgeSlop = mEdgeSlop;
-                    final float rightSlop;
+                    float rightSlop;
                     rightSlop = mRightSlopEdge;
-                    final float bottomSlop;
+                    float bottomSlop;
                     bottomSlop = mBottomSlopEdge;
                     float x;
                     x = getRawX(ev, i);
@@ -431,8 +427,7 @@ public class ScaleGestureDetector {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:05.523 -0400", hash_original_method = "1C74B9CEBA7069C1C46FE5AC2377DD74", hash_generated_method = "9F535709078E10633F597DAC5E474805")
-    private static float getRawX(MotionEvent event, int pointerIndex) {
+        private static float getRawX(MotionEvent event, int pointerIndex) {
         if (pointerIndex < 0) return Float.MIN_VALUE;
         if (pointerIndex == 0) return event.getRawX();
         float offset = event.getRawX() - event.getX();
@@ -440,8 +435,7 @@ public class ScaleGestureDetector {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:05.523 -0400", hash_original_method = "E9D933E20849778B1DB8C91D44A0DC56", hash_generated_method = "F03B96929C9C0CCA5FAA5D104052F336")
-    private static float getRawY(MotionEvent event, int pointerIndex) {
+        private static float getRawY(MotionEvent event, int pointerIndex) {
         if (pointerIndex < 0) return Float.MIN_VALUE;
         if (pointerIndex == 0) return event.getRawY();
         float offset = event.getRawY() - event.getY();
@@ -449,7 +443,7 @@ public class ScaleGestureDetector {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:05.523 -0400", hash_original_method = "E851AC8F08388EEFFE10C17212886186", hash_generated_method = "266284E1A761940C0D8CE294C8F0AB61")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:59.284 -0400", hash_original_method = "E851AC8F08388EEFFE10C17212886186", hash_generated_method = "35259CD198FCF804613740B6ED52CB9C")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     private void setContext(MotionEvent curr) {
         dsTaint.addTaint(curr.dsTaint);
@@ -460,15 +454,15 @@ public class ScaleGestureDetector {
         mCurrLen = -1;
         mPrevLen = -1;
         mScaleFactor = -1;
-        final MotionEvent prev;
+        MotionEvent prev;
         prev = mPrevEvent;
-        final int prevIndex0;
+        int prevIndex0;
         prevIndex0 = prev.findPointerIndex(mActiveId0);
-        final int prevIndex1;
+        int prevIndex1;
         prevIndex1 = prev.findPointerIndex(mActiveId1);
-        final int currIndex0;
+        int currIndex0;
         currIndex0 = curr.findPointerIndex(mActiveId0);
-        final int currIndex1;
+        int currIndex1;
         currIndex1 = curr.findPointerIndex(mActiveId1);
         {
             mInvalidGesture = true;
@@ -476,29 +470,29 @@ public class ScaleGestureDetector {
                 mListener.onScaleEnd(this);
             } //End block
         } //End block
-        final float px0;
+        float px0;
         px0 = prev.getX(prevIndex0);
-        final float py0;
+        float py0;
         py0 = prev.getY(prevIndex0);
-        final float px1;
+        float px1;
         px1 = prev.getX(prevIndex1);
-        final float py1;
+        float py1;
         py1 = prev.getY(prevIndex1);
-        final float cx0;
+        float cx0;
         cx0 = curr.getX(currIndex0);
-        final float cy0;
+        float cy0;
         cy0 = curr.getY(currIndex0);
-        final float cx1;
+        float cx1;
         cx1 = curr.getX(currIndex1);
-        final float cy1;
+        float cy1;
         cy1 = curr.getY(currIndex1);
-        final float pvx;
+        float pvx;
         pvx = px1 - px0;
-        final float pvy;
+        float pvy;
         pvy = py1 - py0;
-        final float cvx;
+        float cvx;
         cvx = cx1 - cx0;
-        final float cvy;
+        float cvy;
         cvy = cy1 - cy0;
         mPrevFingerDiffX = pvx;
         mPrevFingerDiffY = pvy;
@@ -514,8 +508,8 @@ public class ScaleGestureDetector {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:05.523 -0400", hash_original_method = "F9E5E3809E5750745599790F573B8504", hash_generated_method = "C9B3A84BC9D1DAD098FA38EB567950E5")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:59.284 -0400", hash_original_method = "F9E5E3809E5750745599790F573B8504", hash_generated_method = "13E97FC9D617B6DED16F5D4A448F71C6")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     private void reset() {
         {
             mPrevEvent.recycle();
@@ -547,7 +541,7 @@ public class ScaleGestureDetector {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:05.523 -0400", hash_original_method = "898B0555390D80294F48D1832D7CA7F1", hash_generated_method = "770023E2812384C115FF3B325892FF2C")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:59.284 -0400", hash_original_method = "898B0555390D80294F48D1832D7CA7F1", hash_generated_method = "628F76EA26A165F5982E20F74BCCE28A")
     @DSModeled(DSC.SAFE)
     public boolean isInProgress() {
         return dsTaint.getTaintBoolean();
@@ -556,7 +550,7 @@ public class ScaleGestureDetector {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:05.524 -0400", hash_original_method = "5AA73E7030B433A4A506EA714645F254", hash_generated_method = "D172E9F97F51CABDD7EED2A905CAE967")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:59.284 -0400", hash_original_method = "5AA73E7030B433A4A506EA714645F254", hash_generated_method = "F2735F64B18FF2FECEC61DB9C43695C2")
     @DSModeled(DSC.SAFE)
     public float getFocusX() {
         return dsTaint.getTaintFloat();
@@ -565,7 +559,7 @@ public class ScaleGestureDetector {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:05.524 -0400", hash_original_method = "1634272865979B530C4105679871001B", hash_generated_method = "322524301766F467F8319B5A27A72A18")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:59.284 -0400", hash_original_method = "1634272865979B530C4105679871001B", hash_generated_method = "22D1F2E70C83ECDD1F973379FA1DD6D0")
     @DSModeled(DSC.SAFE)
     public float getFocusY() {
         return dsTaint.getTaintFloat();
@@ -574,13 +568,13 @@ public class ScaleGestureDetector {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:05.524 -0400", hash_original_method = "AB0C6BF3BCA5EEB3D5CA8E031A94ABD9", hash_generated_method = "028CCD11AF46010D327BC55414D855CA")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:59.285 -0400", hash_original_method = "AB0C6BF3BCA5EEB3D5CA8E031A94ABD9", hash_generated_method = "8F0F0801051834F885B4D038844DB488")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public float getCurrentSpan() {
         {
-            final float cvx;
+            float cvx;
             cvx = mCurrFingerDiffX;
-            final float cvy;
+            float cvy;
             cvy = mCurrFingerDiffY;
             mCurrLen = FloatMath.sqrt(cvx*cvx + cvy*cvy);
         } //End block
@@ -595,7 +589,7 @@ public class ScaleGestureDetector {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:05.524 -0400", hash_original_method = "96703DCF80F0F42B9182D748E24B5F12", hash_generated_method = "1BD2471918ED70536CBFDAE9BFE68FC7")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:59.285 -0400", hash_original_method = "96703DCF80F0F42B9182D748E24B5F12", hash_generated_method = "0E4CAABA4F8626CF22B1FFD78AF065D7")
     @DSModeled(DSC.SAFE)
     public float getCurrentSpanX() {
         return dsTaint.getTaintFloat();
@@ -604,7 +598,7 @@ public class ScaleGestureDetector {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:05.524 -0400", hash_original_method = "46ABD98E7ABFBBE92F1E1C8C1A82F921", hash_generated_method = "9583101056AD2E9FA3A39FEECC91FFE7")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:59.285 -0400", hash_original_method = "46ABD98E7ABFBBE92F1E1C8C1A82F921", hash_generated_method = "D376B13CE6F721A23F7137134E9F7D59")
     @DSModeled(DSC.SAFE)
     public float getCurrentSpanY() {
         return dsTaint.getTaintFloat();
@@ -613,13 +607,13 @@ public class ScaleGestureDetector {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:05.524 -0400", hash_original_method = "61588E4085777CBFF7E61092314CDCD6", hash_generated_method = "814C357FFBB070FCB3E13121998A1DDA")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:59.285 -0400", hash_original_method = "61588E4085777CBFF7E61092314CDCD6", hash_generated_method = "B931A89EFC44C0450B6D45E77863DB59")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public float getPreviousSpan() {
         {
-            final float pvx;
+            float pvx;
             pvx = mPrevFingerDiffX;
-            final float pvy;
+            float pvy;
             pvy = mPrevFingerDiffY;
             mPrevLen = FloatMath.sqrt(pvx*pvx + pvy*pvy);
         } //End block
@@ -634,7 +628,7 @@ public class ScaleGestureDetector {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:05.524 -0400", hash_original_method = "0AFCA4EC344BB39A6FBEFCC5BD88D7B6", hash_generated_method = "19BC6DFDFB78D80A3B0F9312E7473718")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:59.285 -0400", hash_original_method = "0AFCA4EC344BB39A6FBEFCC5BD88D7B6", hash_generated_method = "62E6EB932E75756352732474BF544D56")
     @DSModeled(DSC.SAFE)
     public float getPreviousSpanX() {
         return dsTaint.getTaintFloat();
@@ -643,7 +637,7 @@ public class ScaleGestureDetector {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:05.524 -0400", hash_original_method = "F0E427EE2F15CB9D89F340FD227EA8BF", hash_generated_method = "3BA6791F3B997E82A35CDD3081C9C46B")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:59.286 -0400", hash_original_method = "F0E427EE2F15CB9D89F340FD227EA8BF", hash_generated_method = "8DD2E3883F8E2611D406355E05E6FA57")
     @DSModeled(DSC.SAFE)
     public float getPreviousSpanY() {
         return dsTaint.getTaintFloat();
@@ -652,7 +646,7 @@ public class ScaleGestureDetector {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:05.524 -0400", hash_original_method = "EF10CCD331D0CD8126F652B47BBB1296", hash_generated_method = "D7086EB26024486BE0B23C3BAB325E46")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:59.286 -0400", hash_original_method = "EF10CCD331D0CD8126F652B47BBB1296", hash_generated_method = "D4D9A3E9E80982722C9C0E54228D680C")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public float getScaleFactor() {
         {
@@ -667,7 +661,7 @@ public class ScaleGestureDetector {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:05.524 -0400", hash_original_method = "478681CCF9BA4A844274161522001BDE", hash_generated_method = "4081647FB03195C9592F74EA34628703")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:59.286 -0400", hash_original_method = "478681CCF9BA4A844274161522001BDE", hash_generated_method = "D1E440C87498A0EBC9705C861411AD75")
     @DSModeled(DSC.SAFE)
     public long getTimeDelta() {
         return dsTaint.getTaintLong();
@@ -676,10 +670,10 @@ public class ScaleGestureDetector {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:05.524 -0400", hash_original_method = "93D380EA2FE2DB10568746F6E0FB3B8E", hash_generated_method = "334E1457E46CB093CA32F09B1A577128")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:59.286 -0400", hash_original_method = "93D380EA2FE2DB10568746F6E0FB3B8E", hash_generated_method = "2A52715F550E3E66B0C26CF4D9B1E77A")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public long getEventTime() {
-        long var1C6AD87B9864EE888540D94E95CFDF79_1589607651 = (mCurrEvent.getEventTime());
+        long var1C6AD87B9864EE888540D94E95CFDF79_1634330063 = (mCurrEvent.getEventTime());
         return dsTaint.getTaintLong();
         // ---------- Original Method ----------
         //return mCurrEvent.getEventTime();
@@ -688,7 +682,13 @@ public class ScaleGestureDetector {
     
     public static class SimpleOnScaleGestureListener implements OnScaleGestureListener {
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:05.524 -0400", hash_original_method = "F1A51F1E1A44A60BDE5250CC79B6BF22", hash_generated_method = "647BF690F646970EE2616FD8B00B263E")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:59.286 -0400", hash_original_method = "C4FB092E5FF1150EC7AEFBBEBFFF48C4", hash_generated_method = "C4FB092E5FF1150EC7AEFBBEBFFF48C4")
+                public SimpleOnScaleGestureListener ()
+        {
+        }
+
+
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:59.286 -0400", hash_original_method = "F1A51F1E1A44A60BDE5250CC79B6BF22", hash_generated_method = "4745A1D95151E0F635F6AE929FB1E982")
         @DSModeled(DSC.SAFE)
         public boolean onScale(ScaleGestureDetector detector) {
             //DSFIXME:  CODE0009: Possible callback target function detected
@@ -699,7 +699,7 @@ public class ScaleGestureDetector {
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:05.524 -0400", hash_original_method = "2018A466C052949DAB40F7C8547E8FA5", hash_generated_method = "A4202344A27FD97CB78DD0D05754B147")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:59.286 -0400", hash_original_method = "2018A466C052949DAB40F7C8547E8FA5", hash_generated_method = "2504A17B67F79AE4E9E516493DA3119B")
         @DSModeled(DSC.SAFE)
         public boolean onScaleBegin(ScaleGestureDetector detector) {
             //DSFIXME:  CODE0009: Possible callback target function detected
@@ -710,7 +710,7 @@ public class ScaleGestureDetector {
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:05.525 -0400", hash_original_method = "5B9499EAA38A4A49EE469DC4AE83A358", hash_generated_method = "0AF5DF76233BB7290CE2C595328BB54D")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:59.287 -0400", hash_original_method = "5B9499EAA38A4A49EE469DC4AE83A358", hash_generated_method = "03AF9275B9878E458F54431AA757E6A2")
         @DSModeled(DSC.SAFE)
         public void onScaleEnd(ScaleGestureDetector detector) {
             //DSFIXME:  CODE0009: Possible callback target function detected
@@ -734,6 +734,7 @@ public class ScaleGestureDetector {
         public void onScaleEnd(ScaleGestureDetector detector);
     }
     
+    private static final String TAG = "ScaleGestureDetector";
+    private static final float PRESSURE_THRESHOLD = 0.67f;
 }
-
 

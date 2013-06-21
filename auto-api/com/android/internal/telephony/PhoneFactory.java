@@ -3,10 +3,10 @@ package com.android.internal.telephony;
 // Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
+import droidsafe.runtime.*;
 
-// import Iterator to deal with enhanced for loop translation
+// needed for enhanced for control translations
 import java.util.Iterator;
-
 import android.content.Context;
 import android.net.LocalServerSocket;
 import android.os.Looper;
@@ -20,25 +20,19 @@ import com.android.internal.telephony.sip.SipPhone;
 import com.android.internal.telephony.sip.SipPhoneFactory;
 
 public class PhoneFactory {
-    static final String LOG_TAG = "PHONE";
-    static final int SOCKET_OPEN_RETRY_MILLIS = 2 * 1000;
-    static final int SOCKET_OPEN_MAX_RETRY = 3;
-    static private Phone sProxyPhone = null;
-    static private CommandsInterface sCommandsInterface = null;
-    static private boolean sMadeDefaults = false;
-    static private PhoneNotifier sPhoneNotifier;
-    static private Looper sLooper;
-    static private Context sContext;
-    static final int preferredCdmaSubscription = RILConstants.PREFERRED_CDMA_SUBSCRIPTION;
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:10.379 -0400", hash_original_method = "0E1E8931F63DFB6885BA0E932A386482", hash_generated_method = "EAE0AA2B1398ECEDBB04FE2727AB5B98")
-    public static void makeDefaultPhones(Context context) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:11.655 -0400", hash_original_method = "A5A2411EAE8CB20F35449EA0283F36D4", hash_generated_method = "A5A2411EAE8CB20F35449EA0283F36D4")
+        public PhoneFactory ()
+    {
+    }
+
+
+        public static void makeDefaultPhones(Context context) {
         makeDefaultPhone(context);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:10.379 -0400", hash_original_method = "FD504A8EE66FE46638165E4FA7669C08", hash_generated_method = "80D99D5B1B90E1EA071D6419A5D0B43F")
-    public static void makeDefaultPhone(Context context) {
+        public static void makeDefaultPhone(Context context) {
         synchronized(Phone.class) {
             if (!sMadeDefaults) {
                 sLooper = Looper.myLooper();
@@ -122,8 +116,7 @@ public class PhoneFactory {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:10.379 -0400", hash_original_method = "EF5F5E28A34E9E9EC202E3A779439E2A", hash_generated_method = "94CF00F3DB299927356F6894DC43E2D8")
-    public static int getPhoneType(int networkMode) {
+        public static int getPhoneType(int networkMode) {
         switch(networkMode) {
         case RILConstants.NETWORK_MODE_CDMA:
         case RILConstants.NETWORK_MODE_CDMA_NO_EVDO:
@@ -150,8 +143,7 @@ public class PhoneFactory {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:10.380 -0400", hash_original_method = "E0E640EABAC4777B910C56F03DFB97E3", hash_generated_method = "AF440F5EC61D362F245508B2E93D2847")
-    public static Phone getDefaultPhone() {
+        public static Phone getDefaultPhone() {
         if (sLooper != Looper.myLooper()) {
             throw new RuntimeException(
                 "PhoneFactory.getDefaultPhone must be called from Looper thread");
@@ -163,8 +155,7 @@ public class PhoneFactory {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:10.380 -0400", hash_original_method = "3914D022DA63364ED06A0A76AA75F742", hash_generated_method = "C3AD0A4549895A2281873672BB52AEDE")
-    public static Phone getCdmaPhone() {
+        public static Phone getCdmaPhone() {
         Phone phone;
         synchronized(PhoneProxy.lockForRadioTechnologyChange) {
             switch (BaseCommands.getLteOnCdmaModeStatic()) {
@@ -184,8 +175,7 @@ public class PhoneFactory {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:10.380 -0400", hash_original_method = "D21324550B0D208FEBE5EE2A4FB6D6A5", hash_generated_method = "30715F2D0DF0026F0D876CE7EC5B115B")
-    public static Phone getGsmPhone() {
+        public static Phone getGsmPhone() {
         synchronized(PhoneProxy.lockForRadioTechnologyChange) {
             Phone phone = new GSMPhone(sContext, sCommandsInterface, sPhoneNotifier);
             return phone;
@@ -193,12 +183,20 @@ public class PhoneFactory {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:10.380 -0400", hash_original_method = "602CEBAA873618AF473B0ECCA9F1A939", hash_generated_method = "CB4F46AA4D258D2DB4E21ECE953B9CFF")
-    public static SipPhone makeSipPhone(String sipUri) {
+        public static SipPhone makeSipPhone(String sipUri) {
         return SipPhoneFactory.makePhone(sipUri, sContext, sPhoneNotifier);
     }
 
     
+    static final String LOG_TAG = "PHONE";
+    static final int SOCKET_OPEN_RETRY_MILLIS = 2 * 1000;
+    static final int SOCKET_OPEN_MAX_RETRY = 3;
+    static private Phone sProxyPhone = null;
+    static private CommandsInterface sCommandsInterface = null;
+    static private boolean sMadeDefaults = false;
+    static private PhoneNotifier sPhoneNotifier;
+    static private Looper sLooper;
+    static private Context sContext;
+    static final int preferredCdmaSubscription = RILConstants.PREFERRED_CDMA_SUBSCRIPTION;
 }
-
 

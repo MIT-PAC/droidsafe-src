@@ -3,10 +3,10 @@ package org.w3c.dom;
 // Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
+import droidsafe.runtime.*;
 
-// import Iterator to deal with enhanced for loop translation
+// needed for enhanced for control translations
 import java.util.Iterator;
-
 
 public interface Element extends Node {
     
@@ -96,4 +96,3 @@ public interface Element extends Node {
                                    throws DOMException;
 
 }
-

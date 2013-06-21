@@ -2,22 +2,19 @@ package org.apache.harmony.security.asn1;
 
 // Droidsafe Imports
 import droidsafe.helpers.*;
-import droidsafe.runtime.DroidSafeAndroidRuntime;
 import droidsafe.annotations.*;
+import droidsafe.runtime.*;
 
-// import Iterator to deal with enhanced for loop translation
+// needed for enhanced for control translations
 import java.util.Iterator;
-
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.ArrayList;
 
 public class BerInputStream {
-    private final InputStream in;
+    private InputStream in;
     protected byte[] buffer;
     protected int offset = 0;
-    private static final int BUF_INCREASE_SIZE = 1024 * 16;
-    protected static final int INDEFINIT_LENGTH = -1;
     public int tag;
     protected int length;
     public Object content;
@@ -30,25 +27,25 @@ public class BerInputStream {
     protected boolean isIndefinedLength;
     private Object[][] pool;
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:17.692 -0400", hash_original_method = "879F2FC8DE697B067D571C3BF31ADD98", hash_generated_method = "B04472EDE478FFC6BAC4B9EEC87D0B0D")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:40.067 -0400", hash_original_method = "879F2FC8DE697B067D571C3BF31ADD98", hash_generated_method = "65F5A12FC8FE89BAD0C1D69B6421982D")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public BerInputStream(byte[] encoded) throws IOException {
         this(encoded, 0, encoded.length);
-        dsTaint.addTaint(encoded);
+        dsTaint.addTaint(encoded[0]);
         // ---------- Original Method ----------
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:17.692 -0400", hash_original_method = "FB2C80FA06C3B0FD8EA5024440AD49C3", hash_generated_method = "9D3795A013FD9D17D5011E9AD437E58A")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:40.067 -0400", hash_original_method = "FB2C80FA06C3B0FD8EA5024440AD49C3", hash_generated_method = "387FAE34F7BF7F49E359DA1204F5E4B5")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     public BerInputStream(byte[] encoded, int offset, int expectedLength) throws IOException {
         dsTaint.addTaint(expectedLength);
-        dsTaint.addTaint(encoded);
         dsTaint.addTaint(offset);
+        dsTaint.addTaint(encoded[0]);
         this.in = null;
         next();
         {
-            throw new ASN1Exception("Wrong content length");
+            if (DroidSafeAndroidRuntime.control) throw new ASN1Exception("Wrong content length");
         } //End block
         // ---------- Original Method ----------
         //this.in = null;
@@ -62,7 +59,7 @@ public class BerInputStream {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:17.692 -0400", hash_original_method = "43063225C34584E29FE6185CE8AAB05D", hash_generated_method = "B6491FB9A31CE16B15C889E70E1B32E4")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:40.067 -0400", hash_original_method = "43063225C34584E29FE6185CE8AAB05D", hash_generated_method = "F0518550884DEF18F48BF6CDBCD9B385")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public BerInputStream(InputStream in) throws IOException {
         this(in, BUF_INCREASE_SIZE);
@@ -71,8 +68,8 @@ public class BerInputStream {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:17.692 -0400", hash_original_method = "ED7F15B5071BF063BB4017E313468A57", hash_generated_method = "F364192B4F8D3FE70EB9683882D9E0CB")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:40.067 -0400", hash_original_method = "ED7F15B5071BF063BB4017E313468A57", hash_generated_method = "3F59E294A93A07291B8C1E7CAD8BEDB4")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     public BerInputStream(InputStream in, int initialSize) throws IOException {
         dsTaint.addTaint(initialSize);
         dsTaint.addTaint(in.dsTaint);
@@ -88,7 +85,7 @@ public class BerInputStream {
         } //End block
         {
             isIndefinedLength = true;
-            throw new ASN1Exception("Decoding indefinite length encoding is not supported");
+            if (DroidSafeAndroidRuntime.control) throw new ASN1Exception("Decoding indefinite length encoding is not supported");
         } //End block
         // ---------- Original Method ----------
         //this.in = in;
@@ -107,10 +104,10 @@ public class BerInputStream {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:17.692 -0400", hash_original_method = "4CCBB4621387969DDD8BDCB7ADDE8473", hash_generated_method = "8261ECD2C78A5C458C99E780D65E5B1C")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:40.068 -0400", hash_original_method = "4CCBB4621387969DDD8BDCB7ADDE8473", hash_generated_method = "C5D65835331C5DB63EF10445E6596ACB")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     public final void reset(byte[] encoded) throws IOException {
-        dsTaint.addTaint(encoded);
+        dsTaint.addTaint(encoded[0]);
         next();
         // ---------- Original Method ----------
         //buffer = encoded;
@@ -118,7 +115,7 @@ public class BerInputStream {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:17.692 -0400", hash_original_method = "E21A3F5A1E5C42E0733DFCD7E2B1A37B", hash_generated_method = "C15AFD9D91DC8BD57BB2D17A6EB1EB03")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:40.068 -0400", hash_original_method = "E21A3F5A1E5C42E0733DFCD7E2B1A37B", hash_generated_method = "FA64751B3214EE7C3D62F95468014E91")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public int next() throws IOException {
         tagOffset = offset;
@@ -129,7 +126,7 @@ public class BerInputStream {
                 int numOctets;
                 numOctets = length & 0x7F;
                 {
-                	if (DroidSafeAndroidRuntime.control) throw new ASN1Exception("Too long encoding at [" + tagOffset + "]");
+                    if (DroidSafeAndroidRuntime.control) throw new ASN1Exception("Too long encoding at [" + tagOffset + "]");
                 } //End block
                 length = read();
                 {
@@ -142,7 +139,7 @@ public class BerInputStream {
                     } //End block
                 } //End collapsed parenthetic
                 {
-                	if (DroidSafeAndroidRuntime.control) throw new ASN1Exception("Too long encoding at [" + tagOffset + "]");
+                    if (DroidSafeAndroidRuntime.control) throw new ASN1Exception("Too long encoding at [" + tagOffset + "]");
                 } //End block
             } //End block
         } //End block
@@ -156,8 +153,7 @@ public class BerInputStream {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:17.692 -0400", hash_original_method = "0FB1A1C4D911EA5AEA102491DDF03FDC", hash_generated_method = "E755A778E4E44F1166A369813D42A1EA")
-    public static int getLength(byte[] encoding) {
+        public static int getLength(byte[] encoding) {
         int length = encoding[1] & 0xFF;
         int numOctets = 0;
         if ((length & 0x80) != 0) { 
@@ -171,42 +167,42 @@ public class BerInputStream {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:17.693 -0400", hash_original_method = "A15B72AB03BE363B2B31FA8E7C1F64A3", hash_generated_method = "28A4A2431C556D636929AAD01B8D088A")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:40.068 -0400", hash_original_method = "A15B72AB03BE363B2B31FA8E7C1F64A3", hash_generated_method = "0DEC710C40C2937BF8E71691B5612733")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     public void readBitString() throws IOException {
         {
             {
-            	if (DroidSafeAndroidRuntime.control) throw new ASN1Exception("ASN.1 Bitstring: wrong length. Tag at [" + tagOffset + "]");
+                if (DroidSafeAndroidRuntime.control) throw new ASN1Exception("ASN.1 Bitstring: wrong length. Tag at [" + tagOffset + "]");
             } //End block
             readContent();
             {
-            	if (DroidSafeAndroidRuntime.control) throw new ASN1Exception("ASN.1 Bitstring: wrong content at [" + contentOffset
+                if (DroidSafeAndroidRuntime.control) throw new ASN1Exception("ASN.1 Bitstring: wrong content at [" + contentOffset
                         + "]. A number of unused bits MUST be in range 0 to 7");
             } //End block
             {
-            	if (DroidSafeAndroidRuntime.control) throw new ASN1Exception("ASN.1 Bitstring: wrong content at [" + contentOffset
+                if (DroidSafeAndroidRuntime.control) throw new ASN1Exception("ASN.1 Bitstring: wrong content at [" + contentOffset
                         + "]. For empty string unused bits MUST be 0");
             } //End block
         } //End block
         {
-        	if (DroidSafeAndroidRuntime.control) throw new ASN1Exception("Decoding constructed ASN.1 bitstring  type is not provided");
+            if (DroidSafeAndroidRuntime.control) throw new ASN1Exception("Decoding constructed ASN.1 bitstring  type is not provided");
         } //End block
         {
-            throw expected("bitstring");
+            if (DroidSafeAndroidRuntime.control) throw expected("bitstring");
         } //End block
         // ---------- Original Method ----------
         // Original Method Too Long, Refer to Original Implementation
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:17.693 -0400", hash_original_method = "70271B544C5D122FB5ABE2DE9A460926", hash_generated_method = "9120E8151B81025F3C19AAB358E6FC57")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:40.069 -0400", hash_original_method = "70271B544C5D122FB5ABE2DE9A460926", hash_generated_method = "B04EF58B5AE7F40B5FEBAD5E16F7D731")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     public void readEnumerated() throws IOException {
         {
-        	if (DroidSafeAndroidRuntime.control) throw expected("enumerated");
+            if (DroidSafeAndroidRuntime.control) throw expected("enumerated");
         } //End block
         {
-        	if (DroidSafeAndroidRuntime.control) throw new ASN1Exception("ASN.1 enumerated: wrong length for identifier at ["
+            if (DroidSafeAndroidRuntime.control) throw new ASN1Exception("ASN.1 enumerated: wrong length for identifier at ["
                     + tagOffset + "]");
         } //End block
         readContent();
@@ -217,7 +213,7 @@ public class BerInputStream {
                 bits += 0x100;
             } //End block
             {
-                throw new ASN1Exception("ASN.1 enumerated: wrong content at [" + contentOffset
+                if (DroidSafeAndroidRuntime.control) throw new ASN1Exception("ASN.1 enumerated: wrong content at [" + contentOffset
                         + "]. An integer MUST be encoded in minimum number of octets");
             } //End block
         } //End block
@@ -243,14 +239,14 @@ public class BerInputStream {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:17.693 -0400", hash_original_method = "13F2651D91961A81EAE79BEA9D5230AF", hash_generated_method = "573382286708A4FEF41CBD3842A14FE0")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:40.069 -0400", hash_original_method = "13F2651D91961A81EAE79BEA9D5230AF", hash_generated_method = "637B7CD8DAC946DEC9D5356E62610BA9")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     public void readBoolean() throws IOException {
         {
-        	if (DroidSafeAndroidRuntime.control) throw expected("boolean");
+            if (DroidSafeAndroidRuntime.control) throw expected("boolean");
         } //End block
         {
-        	if (DroidSafeAndroidRuntime.control) throw new ASN1Exception("Wrong length for ASN.1 boolean at [" + tagOffset + "]");
+            if (DroidSafeAndroidRuntime.control) throw new ASN1Exception("Wrong length for ASN.1 boolean at [" + tagOffset + "]");
         } //End block
         readContent();
         // ---------- Original Method ----------
@@ -264,23 +260,23 @@ public class BerInputStream {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:17.693 -0400", hash_original_method = "1A3161CCB7646B7891B929A5396BF673", hash_generated_method = "8F479E2A79BF4D17D70EF32460C26282")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:40.069 -0400", hash_original_method = "1A3161CCB7646B7891B929A5396BF673", hash_generated_method = "3D5AD4206FA2785BB8F59D73CAB1ADA3")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public void readGeneralizedTime() throws IOException {
         {
             readContent();
             {
-            	if (DroidSafeAndroidRuntime.control) throw new ASN1Exception("ASN.1 GeneralizedTime: encoded format is not implemented");
+                if (DroidSafeAndroidRuntime.control) throw new ASN1Exception("ASN.1 GeneralizedTime: encoded format is not implemented");
             } //End block
             {
-            	if (DroidSafeAndroidRuntime.control) throw new ASN1Exception("ASN.1 GeneralizedTime wrongly encoded at ["
+                if (DroidSafeAndroidRuntime.control) throw new ASN1Exception("ASN.1 GeneralizedTime wrongly encoded at ["
                         + contentOffset + "]");
             } //End block
             {
                 byte char14;
                 char14 = buffer[contentOffset + 14];
                 {
-                	if (DroidSafeAndroidRuntime.control) throw new ASN1Exception("ASN.1 GeneralizedTime wrongly encoded at ["
+                    if (DroidSafeAndroidRuntime.control) throw new ASN1Exception("ASN.1 GeneralizedTime wrongly encoded at ["
                             + contentOffset + "]");
                 } //End block
             } //End block
@@ -304,29 +300,29 @@ public class BerInputStream {
             } //End block
         } //End block
         {
-        	if (DroidSafeAndroidRuntime.control) throw new ASN1Exception("Decoding constructed ASN.1 GeneralizedTime type is not supported");
+            if (DroidSafeAndroidRuntime.control) throw new ASN1Exception("Decoding constructed ASN.1 GeneralizedTime type is not supported");
         } //End block
         {
-            throw expected("GeneralizedTime");
+            if (DroidSafeAndroidRuntime.control) throw expected("GeneralizedTime");
         } //End block
         // ---------- Original Method ----------
         // Original Method Too Long, Refer to Original Implementation
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:17.694 -0400", hash_original_method = "D1E9408574A13A490CB1D3EF3A359E97", hash_generated_method = "B3F805A26A037D9444E5BF21853E06F8")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:40.070 -0400", hash_original_method = "D1E9408574A13A490CB1D3EF3A359E97", hash_generated_method = "F3F29495B82786F8ADFF0B2734839221")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public void readUTCTime() throws IOException {
         {
             //Begin case ASN1UTCTime.UTC_LOCAL_HM ASN1UTCTime.UTC_LOCAL_HMS 
-        	if (DroidSafeAndroidRuntime.control) throw new ASN1Exception("ASN.1 UTCTime: local time format is not supported");
+            if (DroidSafeAndroidRuntime.control) throw new ASN1Exception("ASN.1 UTCTime: local time format is not supported");
             //End case ASN1UTCTime.UTC_LOCAL_HM ASN1UTCTime.UTC_LOCAL_HMS 
             //Begin case default 
-        	if (DroidSafeAndroidRuntime.control) throw new ASN1Exception("ASN.1 UTCTime: wrong length, identifier at " + tagOffset);
+            if (DroidSafeAndroidRuntime.control) throw new ASN1Exception("ASN.1 UTCTime: wrong length, identifier at " + tagOffset);
             //End case default 
             readContent();
             {
-            	if (DroidSafeAndroidRuntime.control) throw new ASN1Exception("ASN.1 UTCTime wrongly encoded at ["
+                if (DroidSafeAndroidRuntime.control) throw new ASN1Exception("ASN.1 UTCTime wrongly encoded at ["
                         + contentOffset + ']');
             } //End block
             {
@@ -348,18 +344,18 @@ public class BerInputStream {
             } //End block
         } //End block
         {
-        	if (DroidSafeAndroidRuntime.control) throw new ASN1Exception("Decoding constructed ASN.1 UTCTime type is not supported");
+            if (DroidSafeAndroidRuntime.control) throw new ASN1Exception("Decoding constructed ASN.1 UTCTime type is not supported");
         } //End block
         {
-            throw expected("UTCTime");
+            if (DroidSafeAndroidRuntime.control) throw expected("UTCTime");
         } //End block
         // ---------- Original Method ----------
         // Original Method Too Long, Refer to Original Implementation
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:17.694 -0400", hash_original_method = "7B8FBAB80C5ADD7C25B56AA6C7A7A7A0", hash_generated_method = "3858DBE0FB95B79CB0B8CE94152609C2")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:40.070 -0400", hash_original_method = "7B8FBAB80C5ADD7C25B56AA6C7A7A7A0", hash_generated_method = "179A2B77E8F1010932B92647CA9AE608")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     private int strToInt(int off, int count) throws ASN1Exception {
         dsTaint.addTaint(count);
         dsTaint.addTaint(off);
@@ -373,7 +369,7 @@ public class BerInputStream {
                 int c;
                 c = buffer[i] - 48;
                 {
-                	if (DroidSafeAndroidRuntime.control) throw new ASN1Exception("Time encoding has invalid char");
+                    if (DroidSafeAndroidRuntime.control) throw new ASN1Exception("Time encoding has invalid char");
                 } //End block
                 result = result * 10 + c;
             } //End block
@@ -392,14 +388,14 @@ public class BerInputStream {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:17.694 -0400", hash_original_method = "8E0BB334F5FA3F917B6C3297724E29A6", hash_generated_method = "5E7C21802A186546E3244CBC18766BC2")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:40.071 -0400", hash_original_method = "8E0BB334F5FA3F917B6C3297724E29A6", hash_generated_method = "61A60DC43DA2513BA5D56102014FE4A8")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     public void readInteger() throws IOException {
         {
-        	if (DroidSafeAndroidRuntime.control) throw expected("integer");
+            if (DroidSafeAndroidRuntime.control) throw expected("integer");
         } //End block
         {
-        	if (DroidSafeAndroidRuntime.control) throw new ASN1Exception("Wrong length for ASN.1 integer at [" + tagOffset + "]");
+            if (DroidSafeAndroidRuntime.control) throw new ASN1Exception("Wrong length for ASN.1 integer at [" + tagOffset + "]");
         } //End block
         readContent();
         {
@@ -408,7 +404,7 @@ public class BerInputStream {
             byte secondByte;
             secondByte = (byte) (buffer[offset - length + 1] & 0x80);
             {
-                throw new ASN1Exception("Wrong content for ASN.1 integer at [" + (offset - length) + "]. An integer MUST be encoded in minimum number of octets");
+                if (DroidSafeAndroidRuntime.control) throw new ASN1Exception("Wrong content for ASN.1 integer at [" + (offset - length) + "]. An integer MUST be encoded in minimum number of octets");
             } //End block
         } //End block
         // ---------- Original Method ----------
@@ -430,17 +426,17 @@ public class BerInputStream {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:17.694 -0400", hash_original_method = "FF10597CCF521EBE62B89D95947AA842", hash_generated_method = "A7470BD5DF5347644CE5E8847482C3EC")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:40.071 -0400", hash_original_method = "FF10597CCF521EBE62B89D95947AA842", hash_generated_method = "316E1EFF7AA7849D7C98342C5C32CC3B")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     public void readOctetString() throws IOException {
         {
             readContent();
         } //End block
         {
-        	if (DroidSafeAndroidRuntime.control) throw new ASN1Exception("Decoding constructed ASN.1 octet string type is not supported");
+            if (DroidSafeAndroidRuntime.control) throw new ASN1Exception("Decoding constructed ASN.1 octet string type is not supported");
         } //End block
         {
-            throw expected("octetstring");
+            if (DroidSafeAndroidRuntime.control) throw expected("octetstring");
         } //End block
         // ---------- Original Method ----------
         //if (tag == ASN1Constants.TAG_OCTETSTRING) {
@@ -453,8 +449,8 @@ public class BerInputStream {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:17.694 -0400", hash_original_method = "31EAA277FAF0612B23F88A136EEA2499", hash_generated_method = "26F39A920D3E0D7E537CA8DAF11D4A24")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:40.071 -0400", hash_original_method = "31EAA277FAF0612B23F88A136EEA2499", hash_generated_method = "BC7272BFA1E9999CEC2A1E10C3E7790A")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     private ASN1Exception expected(String what) throws ASN1Exception {
         dsTaint.addTaint(what);
         if (DroidSafeAndroidRuntime.control) throw new ASN1Exception("ASN.1 " + what + " identifier expected at [" + tagOffset + "], got " + Integer.toHexString(tag));
@@ -464,28 +460,23 @@ public class BerInputStream {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:17.694 -0400", hash_original_method = "1DFB0A727BF9534907B350DDA9E1A15B", hash_generated_method = "AD61B3A1ABFCDA08FE678040107CFC7A")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:40.071 -0400", hash_original_method = "1DFB0A727BF9534907B350DDA9E1A15B", hash_generated_method = "B26975F49FD81D2F760AAD3258AE180A")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     public void readOID() throws IOException {
         {
-        	if (DroidSafeAndroidRuntime.control) throw expected("OID");
+            if (DroidSafeAndroidRuntime.control) throw expected("OID");
         } //End block
         {
-        	if (DroidSafeAndroidRuntime.control) throw new ASN1Exception("Wrong length for ASN.1 object identifier at [" + tagOffset + "]");
+            if (DroidSafeAndroidRuntime.control) throw new ASN1Exception("Wrong length for ASN.1 object identifier at [" + tagOffset + "]");
         } //End block
         readContent();
         {
-        	if (DroidSafeAndroidRuntime.control) throw new ASN1Exception("Wrong encoding at [" + (offset - 1) + "]");
+            if (DroidSafeAndroidRuntime.control) throw new ASN1Exception("Wrong encoding at [" + (offset - 1) + "]");
         } //End block
         oidElement = 1;
         {
             int i;
             i = 0;
-            {
-                {
-                    i++;
-                } //End block
-            } //End block
         } //End collapsed parenthetic
         // ---------- Original Method ----------
         //if (tag != ASN1Constants.TAG_OID) {
@@ -507,12 +498,12 @@ public class BerInputStream {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:17.695 -0400", hash_original_method = "97688987A014CB8C0C54BAB32FA72A4F", hash_generated_method = "1816E08556FA2D3C2CFCAD2179C7A854")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:40.072 -0400", hash_original_method = "97688987A014CB8C0C54BAB32FA72A4F", hash_generated_method = "42182585609C15179F1E2F4D40DDD04B")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public void readSequence(ASN1Sequence sequence) throws IOException {
         dsTaint.addTaint(sequence.dsTaint);
         {
-        	if (DroidSafeAndroidRuntime.control) throw expected("sequence");
+            if (DroidSafeAndroidRuntime.control) throw expected("sequence");
         } //End block
         int begOffset;
         begOffset = offset;
@@ -526,19 +517,18 @@ public class BerInputStream {
             {
                 next();
                 {
-                    boolean var2E238A45E4200E5E112737C7305019BA_1992570584 = (!type[i].checkTag(tag));
+                    boolean var2E238A45E4200E5E112737C7305019BA_657410086 = (!type[i].checkTag(tag));
                     {
                         {
-                        	if (DroidSafeAndroidRuntime.control) throw new ASN1Exception("ASN.1 Sequence: mandatory value is missing at [" + tagOffset + "]");
+                            if (DroidSafeAndroidRuntime.control) throw new ASN1Exception("ASN.1 Sequence: mandatory value is missing at [" + tagOffset + "]");
                         } //End block
-                        i++;
                     } //End block
                 } //End collapsed parenthetic
                 type[i].decode(this);
             } //End block
             {
                 {
-                	if (DroidSafeAndroidRuntime.control) throw new ASN1Exception("ASN.1 Sequence: mandatory value is missing at [" + tagOffset + "]");
+                    if (DroidSafeAndroidRuntime.control) throw new ASN1Exception("ASN.1 Sequence: mandatory value is missing at [" + tagOffset + "]");
                 } //End block
             } //End block
         } //End block
@@ -550,22 +540,21 @@ public class BerInputStream {
             {
                 next();
                 {
-                    boolean var2E238A45E4200E5E112737C7305019BA_2078475741 = (!type[i].checkTag(tag));
+                    boolean var2E238A45E4200E5E112737C7305019BA_856097146 = (!type[i].checkTag(tag));
                     {
                         {
-                        	if (DroidSafeAndroidRuntime.control) throw new ASN1Exception("ASN.1 Sequence: mandatory value is missing at [" + tagOffset + "]");
+                            if (DroidSafeAndroidRuntime.control) throw new ASN1Exception("ASN.1 Sequence: mandatory value is missing at [" + tagOffset + "]");
                         } //End block
                         {
                             values[i] = sequence.DEFAULT[i];
                         } //End block
-                        i++;
                     } //End block
                 } //End collapsed parenthetic
                 values[i] = type[i].decode(this);
             } //End block
             {
                 {
-                	if (DroidSafeAndroidRuntime.control) throw new ASN1Exception("ASN.1 Sequence: mandatory value is missing at [" + tagOffset + "]");
+                    if (DroidSafeAndroidRuntime.control) throw new ASN1Exception("ASN.1 Sequence: mandatory value is missing at [" + tagOffset + "]");
                 } //End block
                 {
                     values[i] = sequence.DEFAULT[i];
@@ -575,19 +564,19 @@ public class BerInputStream {
             tagOffset = seqTagOffset;
         } //End block
         {
-            throw new ASN1Exception("Wrong encoding at [" + begOffset + "]. Content's length and encoded length are not the same");
+            if (DroidSafeAndroidRuntime.control) throw new ASN1Exception("Wrong encoding at [" + begOffset + "]. Content's length and encoded length are not the same");
         } //End block
         // ---------- Original Method ----------
         // Original Method Too Long, Refer to Original Implementation
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:17.695 -0400", hash_original_method = "48BA5600C2E0D1ED619B576E3555D97D", hash_generated_method = "D97AC676DB718E399F1EEB46AA583F8E")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:40.072 -0400", hash_original_method = "48BA5600C2E0D1ED619B576E3555D97D", hash_generated_method = "7E891FD8363AF465A8FCE402951D326D")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     public void readSequenceOf(ASN1SequenceOf sequenceOf) throws IOException {
         dsTaint.addTaint(sequenceOf.dsTaint);
         {
-        	if (DroidSafeAndroidRuntime.control) throw expected("sequenceOf");
+            if (DroidSafeAndroidRuntime.control) throw expected("sequenceOf");
         } //End block
         decodeValueCollection(sequenceOf);
         // ---------- Original Method ----------
@@ -598,14 +587,14 @@ public class BerInputStream {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:17.695 -0400", hash_original_method = "51B09D41A46E89A1CD0754E5C1F0D1B8", hash_generated_method = "1EC5475B20947B6F7726A596919582F2")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:40.072 -0400", hash_original_method = "51B09D41A46E89A1CD0754E5C1F0D1B8", hash_generated_method = "7C86B93CF076B7BF2DC07724E2AB149C")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     public void readSet(ASN1Set set) throws IOException {
         dsTaint.addTaint(set.dsTaint);
         {
-        	if (DroidSafeAndroidRuntime.control) throw expected("set");
+            if (DroidSafeAndroidRuntime.control) throw expected("set");
         } //End block
-        throw new ASN1Exception("Decoding ASN.1 Set type is not supported");
+        if (DroidSafeAndroidRuntime.control) throw new ASN1Exception("Decoding ASN.1 Set type is not supported");
         // ---------- Original Method ----------
         //if (tag != ASN1Constants.TAG_C_SET) {
             //throw expected("set");
@@ -614,12 +603,12 @@ public class BerInputStream {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:17.695 -0400", hash_original_method = "8593963787440F0A1F5CC05E2CC3EB6D", hash_generated_method = "BA4F82B0B79778CB8BB1AF4BC02011C1")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:40.073 -0400", hash_original_method = "8593963787440F0A1F5CC05E2CC3EB6D", hash_generated_method = "DA85C5598DAEAF0FEF5CD1FA572B7069")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     public void readSetOf(ASN1SetOf setOf) throws IOException {
         dsTaint.addTaint(setOf.dsTaint);
         {
-        	if (DroidSafeAndroidRuntime.control) throw expected("setOf");
+            if (DroidSafeAndroidRuntime.control) throw expected("setOf");
         } //End block
         decodeValueCollection(setOf);
         // ---------- Original Method ----------
@@ -630,7 +619,7 @@ public class BerInputStream {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:17.695 -0400", hash_original_method = "A1B2FAB02C0A9A6283AF8F291FFC1121", hash_generated_method = "448301AE2E40A65B26FD8D2BAA3BD680")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:40.073 -0400", hash_original_method = "A1B2FAB02C0A9A6283AF8F291FFC1121", hash_generated_method = "6B860DA503086C70536655BF56BD9A69")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     private void decodeValueCollection(ASN1ValueCollection collection) throws IOException {
         dsTaint.addTaint(collection.dsTaint);
@@ -660,7 +649,7 @@ public class BerInputStream {
             tagOffset = seqTagOffset;
         } //End block
         {
-            throw new ASN1Exception("Wrong encoding at [" + begOffset + "]. Content's length and encoded length are not the same");
+            if (DroidSafeAndroidRuntime.control) throw new ASN1Exception("Wrong encoding at [" + begOffset + "]. Content's length and encoded length are not the same");
         } //End block
         // ---------- Original Method ----------
         //int begOffset = offset;
@@ -688,18 +677,18 @@ public class BerInputStream {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:17.695 -0400", hash_original_method = "2E006816EDCCACEA53589D73DD63B701", hash_generated_method = "212337D84531C3C21030A5E7D0794938")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:40.073 -0400", hash_original_method = "2E006816EDCCACEA53589D73DD63B701", hash_generated_method = "BD381E3934DCCB19FF0F8F81C5CBF2BB")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     public void readString(ASN1StringType type) throws IOException {
         dsTaint.addTaint(type.dsTaint);
         {
             readContent();
         } //End block
         {
-        	if (DroidSafeAndroidRuntime.control) throw new ASN1Exception("Decoding constructed ASN.1 string type is not provided");
+            if (DroidSafeAndroidRuntime.control) throw new ASN1Exception("Decoding constructed ASN.1 string type is not provided");
         } //End block
         {
-            throw expected("string");
+            if (DroidSafeAndroidRuntime.control) throw expected("string");
         } //End block
         // ---------- Original Method ----------
         //if (tag == type.id) {
@@ -712,8 +701,8 @@ public class BerInputStream {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:17.695 -0400", hash_original_method = "34E54E473055277C13E19CBB4B194845", hash_generated_method = "8DA977CD16FCF12264770D325DAA9097")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:40.073 -0400", hash_original_method = "34E54E473055277C13E19CBB4B194845", hash_generated_method = "0D900C329630FB283BE6EE38C643A6CF")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     public byte[] getEncoded() {
         byte[] encoded;
         encoded = new byte[offset - tagOffset];
@@ -728,7 +717,7 @@ public class BerInputStream {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:17.695 -0400", hash_original_method = "6B125A4F0D6B27C0C7AD41FB42F4DE53", hash_generated_method = "E12F17D59A7ECFBAE3B120BFC5C8B5F4")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:40.074 -0400", hash_original_method = "6B125A4F0D6B27C0C7AD41FB42F4DE53", hash_generated_method = "36BD9AD5B4D5848D14AAFFE2F163E57E")
     @DSModeled(DSC.SAFE)
     public final byte[] getBuffer() {
         byte[] retVal = new byte[1];
@@ -739,7 +728,7 @@ public class BerInputStream {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:17.695 -0400", hash_original_method = "A993727E7D5DC0CA2BB581135F7F678B", hash_generated_method = "0871B05172E7E6942D8451DFB6AC8136")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:40.074 -0400", hash_original_method = "A993727E7D5DC0CA2BB581135F7F678B", hash_generated_method = "58ED0984C83D466030ED815429CB2F9F")
     @DSModeled(DSC.SAFE)
     public final int getLength() {
         return dsTaint.getTaintInt();
@@ -748,7 +737,7 @@ public class BerInputStream {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:17.695 -0400", hash_original_method = "ACEB13DAA855070296BA592FB1ADADA1", hash_generated_method = "D84240EC9E64699FD3C198F20DF79661")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:40.074 -0400", hash_original_method = "ACEB13DAA855070296BA592FB1ADADA1", hash_generated_method = "C9ECEB219A9A9357C537D2F01FAD8653")
     @DSModeled(DSC.SAFE)
     public final int getOffset() {
         return dsTaint.getTaintInt();
@@ -757,7 +746,7 @@ public class BerInputStream {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:17.695 -0400", hash_original_method = "1367D9753B97C5C3A102B7D6550881B9", hash_generated_method = "489877DCC4276F88B737B1A634232EC2")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:40.074 -0400", hash_original_method = "1367D9753B97C5C3A102B7D6550881B9", hash_generated_method = "2CDC9D712E09049CA68347B79F567F01")
     @DSModeled(DSC.SAFE)
     public final int getEndOffset() {
         return dsTaint.getTaintInt();
@@ -766,7 +755,7 @@ public class BerInputStream {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:17.695 -0400", hash_original_method = "1FDDE163F1BBA6CDA778E0FD08E430DE", hash_generated_method = "CC7611A5EE9C1D02F5D45891FF37FB37")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:40.074 -0400", hash_original_method = "1FDDE163F1BBA6CDA778E0FD08E430DE", hash_generated_method = "D2D20A10C657EE003A84756EAEDCF49C")
     @DSModeled(DSC.SAFE)
     public final int getTagOffset() {
         return dsTaint.getTaintInt();
@@ -775,7 +764,7 @@ public class BerInputStream {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:17.695 -0400", hash_original_method = "E5C1E507EA76A704FAE5F4AC771876E5", hash_generated_method = "C40866982B85682AE4337290D9FD2E90")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:40.074 -0400", hash_original_method = "E5C1E507EA76A704FAE5F4AC771876E5", hash_generated_method = "38A0FA5CCBFAD28A394824D8D2033CBB")
     @DSModeled(DSC.SAFE)
     public final void setVerify() {
         isVerify = true;
@@ -784,17 +773,17 @@ public class BerInputStream {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:17.695 -0400", hash_original_method = "BBFB621282CA0716A19F3267ACDEEE7E", hash_generated_method = "49E69A78EB52FFAFC46B0BFC332443C1")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:40.075 -0400", hash_original_method = "BBFB621282CA0716A19F3267ACDEEE7E", hash_generated_method = "737B8F58F03C1BFA4C5A1D0C761358DC")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     protected int read() throws IOException {
         {
-        	if (DroidSafeAndroidRuntime.control) throw new ASN1Exception("Unexpected end of encoding");
+            if (DroidSafeAndroidRuntime.control) throw new ASN1Exception("Unexpected end of encoding");
         } //End block
         {
             int octet;
             octet = in.read();
             {
-            	if (DroidSafeAndroidRuntime.control) throw new ASN1Exception("Unexpected end of encoding");
+                if (DroidSafeAndroidRuntime.control) throw new ASN1Exception("Unexpected end of encoding");
             } //End block
             buffer[offset++] = (byte) octet;
         } //End block
@@ -816,11 +805,11 @@ public class BerInputStream {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:17.696 -0400", hash_original_method = "73ADE766083E21B57FB910CFDB1C7433", hash_generated_method = "53F4CB4A8CC5275DBD7D6ECD8F20515B")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:40.075 -0400", hash_original_method = "73ADE766083E21B57FB910CFDB1C7433", hash_generated_method = "21FF3E4A36E51F5E31FD4998546EB73E")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public void readContent() throws IOException {
         {
-        	if (DroidSafeAndroidRuntime.control) throw new ASN1Exception("Unexpected end of encoding");
+            if (DroidSafeAndroidRuntime.control) throw new ASN1Exception("Unexpected end of encoding");
         } //End block
         {
             offset += length;
@@ -833,7 +822,7 @@ public class BerInputStream {
                 c = bytesRead;
                 {
                     {
-                    	if (DroidSafeAndroidRuntime.control) throw new ASN1Exception("Failed to read encoded content");
+                        if (DroidSafeAndroidRuntime.control) throw new ASN1Exception("Failed to read encoded content");
                     } //End block
                     c = in.read(buffer, offset + bytesRead, length - bytesRead);
                     bytesRead += c;
@@ -864,8 +853,8 @@ public class BerInputStream {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:17.696 -0400", hash_original_method = "DCB4E4732715D068A4BB6AF51135E41B", hash_generated_method = "A936A9A336D019B8AFF397E4B62A27E1")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:40.075 -0400", hash_original_method = "DCB4E4732715D068A4BB6AF51135E41B", hash_generated_method = "FAD2789C1F8F3DF0BDFF824E48071CB3")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     public void compactBuffer() {
         {
             byte[] newBuffer;
@@ -882,8 +871,8 @@ public class BerInputStream {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:17.696 -0400", hash_original_method = "AFFB1C62116A7F4F1AC3586F8D79C157", hash_generated_method = "F7ABC2B9A1E50651B603AC6BD3622064")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:40.076 -0400", hash_original_method = "AFFB1C62116A7F4F1AC3586F8D79C157", hash_generated_method = "20A566387F937179A55B9FBB54027664")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     public void put(Object key, Object entry) {
         dsTaint.addTaint(entry.dsTaint);
         dsTaint.addTaint(key.dsTaint);
@@ -931,7 +920,7 @@ public class BerInputStream {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:17.696 -0400", hash_original_method = "5B069BEEA06FE3B546FE9A5858249664", hash_generated_method = "CA52DE523A39CCC5BC2CE02BFA8C8CAE")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:40.076 -0400", hash_original_method = "5B069BEEA06FE3B546FE9A5858249664", hash_generated_method = "CE98DB7FF1A3E29ED5EEA1C79B6CC87F")
     @DSModeled(DSC.SAFE)
     public Object get(Object key) {
         dsTaint.addTaint(key.dsTaint);
@@ -953,6 +942,7 @@ public class BerInputStream {
     }
 
     
+    private static final int BUF_INCREASE_SIZE = 1024 * 16;
+    protected static final int INDEFINIT_LENGTH = -1;
 }
-
 

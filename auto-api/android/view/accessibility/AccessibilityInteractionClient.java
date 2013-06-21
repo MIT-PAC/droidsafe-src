@@ -3,10 +3,10 @@ package android.view.accessibility;
 // Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
+import droidsafe.runtime.*;
 
-// import Iterator to deal with enhanced for loop translation
+// needed for enhanced for control translations
 import java.util.Iterator;
-
 import android.accessibilityservice.IAccessibilityServiceConnection;
 import android.graphics.Rect;
 import android.os.Message;
@@ -19,25 +19,22 @@ import java.util.List;
 import java.util.concurrent.atomic.AtomicInteger;
 
 public final class AccessibilityInteractionClient extends IAccessibilityInteractionConnectionCallback.Stub {
-    public static final int NO_ID = -1;
-    private static final String LOG_TAG = "AccessibilityInteractionClient";
-    private static final boolean DEBUG = false;
-    private static final long TIMEOUT_INTERACTION_MILLIS = 5000;
-    private static final Object sStaticLock = new Object();
-    private static AccessibilityInteractionClient sInstance;
-    private final AtomicInteger mInteractionIdCounter = new AtomicInteger();
-    private final Object mInstanceLock = new Object();
+    private AtomicInteger mInteractionIdCounter = new AtomicInteger();
+    private Object mInstanceLock = new Object();
     private int mInteractionId = -1;
     private AccessibilityNodeInfo mFindAccessibilityNodeInfoResult;
     private List<AccessibilityNodeInfo> mFindAccessibilityNodeInfosResult;
     private boolean mPerformAccessibilityActionResult;
     private Message mSameThreadMessage;
-    private final Rect mTempBounds = new Rect();
-    private static final SparseArray<IAccessibilityServiceConnection> sConnectionCache =
-        new SparseArray<IAccessibilityServiceConnection>();
+    private Rect mTempBounds = new Rect();
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:04.750 -0400", hash_original_method = "AC9C8E6AFA4BD19860E3B01D77CE7140", hash_generated_method = "0E252EFFE9F6AA2CE9503B245466CB85")
-    public static AccessibilityInteractionClient getInstance() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:01.807 -0400", hash_original_method = "AAB66CD8BF1197B9DB48F0548E0BA0CF", hash_generated_method = "AAB66CD8BF1197B9DB48F0548E0BA0CF")
+        public AccessibilityInteractionClient ()
+    {
+    }
+
+
+        public static AccessibilityInteractionClient getInstance() {
         synchronized (sStaticLock) {
             if (sInstance == null) {
                 sInstance = new AccessibilityInteractionClient();
@@ -47,8 +44,8 @@ public final class AccessibilityInteractionClient extends IAccessibilityInteract
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:04.750 -0400", hash_original_method = "552BFB14766A8DC73E6AAA7040599DCF", hash_generated_method = "E134AE2A3283E3FCC2A389A9167F2C38")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:01.808 -0400", hash_original_method = "552BFB14766A8DC73E6AAA7040599DCF", hash_generated_method = "9781BB4E1D1438F6F05ABAAD72E2076A")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     public void setSameThreadMessage(Message message) {
         dsTaint.addTaint(message.dsTaint);
         {
@@ -62,7 +59,7 @@ public final class AccessibilityInteractionClient extends IAccessibilityInteract
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:04.751 -0400", hash_original_method = "5C41BEE5A47D8A94E160F887E5B51CE0", hash_generated_method = "491E29BEC399282E517B123168BF70F6")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:01.808 -0400", hash_original_method = "5C41BEE5A47D8A94E160F887E5B51CE0", hash_generated_method = "4EDDFA849625A77722A4F59D3A6A6E81")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public AccessibilityNodeInfo findAccessibilityNodeInfoByAccessibilityId(int connectionId,
             int accessibilityWindowId, int accessibilityViewId) {
@@ -74,9 +71,9 @@ public final class AccessibilityInteractionClient extends IAccessibilityInteract
             IAccessibilityServiceConnection connection;
             connection = getConnection(connectionId);
             {
-                final int interactionId;
+                int interactionId;
                 interactionId = mInteractionIdCounter.getAndIncrement();
-                final float windowScale;
+                float windowScale;
                 windowScale = connection.findAccessibilityNodeInfoByAccessibilityId(
                         accessibilityWindowId, accessibilityViewId, interactionId, this,
                         Thread.currentThread().getId());
@@ -96,7 +93,7 @@ public final class AccessibilityInteractionClient extends IAccessibilityInteract
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:04.751 -0400", hash_original_method = "60BBE77BB0E3F47D3C9CB3C547527867", hash_generated_method = "9B27A91EC961BDB778D1CBB36D2F4E6C")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:01.808 -0400", hash_original_method = "60BBE77BB0E3F47D3C9CB3C547527867", hash_generated_method = "78DE9142CE1C62FEFF3EB1854668EE62")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public AccessibilityNodeInfo findAccessibilityNodeInfoByViewIdInActiveWindow(int connectionId,
             int viewId) {
@@ -107,9 +104,9 @@ public final class AccessibilityInteractionClient extends IAccessibilityInteract
             IAccessibilityServiceConnection connection;
             connection = getConnection(connectionId);
             {
-                final int interactionId;
+                int interactionId;
                 interactionId = mInteractionIdCounter.getAndIncrement();
-                final float windowScale;
+                float windowScale;
                 windowScale = connection.findAccessibilityNodeInfoByViewIdInActiveWindow(viewId,
                             interactionId, this, Thread.currentThread().getId());
                 {
@@ -128,7 +125,7 @@ public final class AccessibilityInteractionClient extends IAccessibilityInteract
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:04.751 -0400", hash_original_method = "672E254807B5370E478DCC44723B0294", hash_generated_method = "534D25B01F20AF97EECA6724205E6111")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:01.809 -0400", hash_original_method = "672E254807B5370E478DCC44723B0294", hash_generated_method = "D626D0AC808B19D320B6BB12BECED655")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public List<AccessibilityNodeInfo> findAccessibilityNodeInfosByViewTextInActiveWindow(
             int connectionId, String text) {
@@ -139,9 +136,9 @@ public final class AccessibilityInteractionClient extends IAccessibilityInteract
             IAccessibilityServiceConnection connection;
             connection = getConnection(connectionId);
             {
-                final int interactionId;
+                int interactionId;
                 interactionId = mInteractionIdCounter.getAndIncrement();
-                final float windowScale;
+                float windowScale;
                 windowScale = connection.findAccessibilityNodeInfosByViewTextInActiveWindow(text,
                             interactionId, this, Thread.currentThread().getId());
                 {
@@ -160,7 +157,7 @@ public final class AccessibilityInteractionClient extends IAccessibilityInteract
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:04.751 -0400", hash_original_method = "AC3652D7BF4240B02C1C5545B023526D", hash_generated_method = "01D6B96A0482DAC2215358515B2F13D8")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:01.809 -0400", hash_original_method = "AC3652D7BF4240B02C1C5545B023526D", hash_generated_method = "45C5A2ECB83C85B8269D2003C0D45E6A")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public List<AccessibilityNodeInfo> findAccessibilityNodeInfosByViewText(int connectionId,
             String text, int accessibilityWindowId, int accessibilityViewId) {
@@ -173,9 +170,9 @@ public final class AccessibilityInteractionClient extends IAccessibilityInteract
             IAccessibilityServiceConnection connection;
             connection = getConnection(connectionId);
             {
-                final int interactionId;
+                int interactionId;
                 interactionId = mInteractionIdCounter.getAndIncrement();
-                final float windowScale;
+                float windowScale;
                 windowScale = connection.findAccessibilityNodeInfosByViewText(text,
                         accessibilityWindowId, accessibilityViewId, interactionId, this,
                         Thread.currentThread().getId());
@@ -189,14 +186,14 @@ public final class AccessibilityInteractionClient extends IAccessibilityInteract
         } //End block
         catch (RemoteException re)
         { }
-        List<AccessibilityNodeInfo> varDA6BCEB8474C9FFEA13E4E44889D7138_1104315326 = (Collections.emptyList());
+        List<AccessibilityNodeInfo> varDA6BCEB8474C9FFEA13E4E44889D7138_1995035232 = (Collections.emptyList());
         return (List<AccessibilityNodeInfo>)dsTaint.getTaint();
         // ---------- Original Method ----------
         // Original Method Too Long, Refer to Original Implementation
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:04.751 -0400", hash_original_method = "DACD676F99BB7BF8CCFB6D2A7B9FDEF9", hash_generated_method = "1A88B55EAF293A3A1BF504029F660C5C")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:01.809 -0400", hash_original_method = "DACD676F99BB7BF8CCFB6D2A7B9FDEF9", hash_generated_method = "6CD2AAFD161DD279DE00D85104C07301")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public boolean performAccessibilityAction(int connectionId, int accessibilityWindowId,
             int accessibilityViewId, int action) {
@@ -209,14 +206,14 @@ public final class AccessibilityInteractionClient extends IAccessibilityInteract
             IAccessibilityServiceConnection connection;
             connection = getConnection(connectionId);
             {
-                final int interactionId;
+                int interactionId;
                 interactionId = mInteractionIdCounter.getAndIncrement();
-                final boolean success;
+                boolean success;
                 success = connection.performAccessibilityAction(
                         accessibilityWindowId, accessibilityViewId, action, interactionId, this,
                         Thread.currentThread().getId());
                 {
-                    boolean var0B4F88CEC11C94715435D9E907451D2F_713304246 = (getPerformAccessibilityActionResult(interactionId));
+                    boolean var0B4F88CEC11C94715435D9E907451D2F_1459550263 = (getPerformAccessibilityActionResult(interactionId));
                 } //End block
             } //End block
         } //End block
@@ -228,12 +225,12 @@ public final class AccessibilityInteractionClient extends IAccessibilityInteract
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:04.752 -0400", hash_original_method = "6C285733A381BDAF8984CA8B204B1B7E", hash_generated_method = "9C989F6A37215B64E829DCE7D68243EA")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:01.810 -0400", hash_original_method = "6C285733A381BDAF8984CA8B204B1B7E", hash_generated_method = "4B7B92E121F4626D37ED208751CA11F1")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     private AccessibilityNodeInfo getFindAccessibilityNodeInfoResultAndClear(int interactionId) {
         dsTaint.addTaint(interactionId);
         {
-            final boolean success;
+            boolean success;
             success = waitForResultTimedLocked(interactionId);
             AccessibilityNodeInfo result;
             result = mFindAccessibilityNodeInfoResult;
@@ -251,8 +248,8 @@ public final class AccessibilityInteractionClient extends IAccessibilityInteract
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:04.752 -0400", hash_original_method = "5773A7995D438CAC0AFDE10E46EB704D", hash_generated_method = "3CBC130C0504F221E39A5403C387E82D")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:01.810 -0400", hash_original_method = "5773A7995D438CAC0AFDE10E46EB704D", hash_generated_method = "01849B28DA0C8F7B874A59A9AA1F52EA")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     public void setFindAccessibilityNodeInfoResult(AccessibilityNodeInfo info,
                 int interactionId) {
         dsTaint.addTaint(interactionId);
@@ -271,13 +268,13 @@ public final class AccessibilityInteractionClient extends IAccessibilityInteract
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:04.752 -0400", hash_original_method = "12169805BC03BC63B5C90B56149C0703", hash_generated_method = "B88CD120A3A55EF7E1D7DF459BDF42BE")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:01.810 -0400", hash_original_method = "12169805BC03BC63B5C90B56149C0703", hash_generated_method = "9A5CC4401EB688097512F83115182D8A")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     private List<AccessibilityNodeInfo> getFindAccessibilityNodeInfosResultAndClear(
                 int interactionId) {
         dsTaint.addTaint(interactionId);
         {
-            final boolean success;
+            boolean success;
             success = waitForResultTimedLocked(interactionId);
             List<AccessibilityNodeInfo> result;
             result = mFindAccessibilityNodeInfosResult;
@@ -295,8 +292,8 @@ public final class AccessibilityInteractionClient extends IAccessibilityInteract
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:04.752 -0400", hash_original_method = "6CF51605A938A0D2B20285F05873A357", hash_generated_method = "8A6D23D8E541F3FBD9EF9E648AD06E48")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:01.810 -0400", hash_original_method = "6CF51605A938A0D2B20285F05873A357", hash_generated_method = "2B39E3F9F6BF8A99701B79E34D05F85A")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     public void setFindAccessibilityNodeInfosResult(List<AccessibilityNodeInfo> infos,
                 int interactionId) {
         dsTaint.addTaint(infos.dsTaint);
@@ -315,12 +312,12 @@ public final class AccessibilityInteractionClient extends IAccessibilityInteract
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:04.752 -0400", hash_original_method = "785F868CD3C42AFCCB7588732B0BC5FA", hash_generated_method = "31262D2B9A178265B7385FDBC9BF2001")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:01.811 -0400", hash_original_method = "785F868CD3C42AFCCB7588732B0BC5FA", hash_generated_method = "E446145E59D29A9B5C49C02100961FC8")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     private boolean getPerformAccessibilityActionResult(int interactionId) {
         dsTaint.addTaint(interactionId);
         {
-            final boolean success;
+            boolean success;
             success = waitForResultTimedLocked(interactionId);
             boolean result;
             result = mPerformAccessibilityActionResult;
@@ -338,10 +335,9 @@ public final class AccessibilityInteractionClient extends IAccessibilityInteract
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:04.752 -0400", hash_original_method = "F5BCF8753FEED883A431A33F4CB0BF32", hash_generated_method = "7603FEF5C058B8629A200B99AD3F14E9")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:01.811 -0400", hash_original_method = "F5BCF8753FEED883A431A33F4CB0BF32", hash_generated_method = "9DFA66647BEDCC226B1EAB12BFF09D58")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     public void setPerformAccessibilityActionResult(boolean succeeded, int interactionId) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
         dsTaint.addTaint(succeeded);
         dsTaint.addTaint(interactionId);
         {
@@ -358,7 +354,7 @@ public final class AccessibilityInteractionClient extends IAccessibilityInteract
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:04.752 -0400", hash_original_method = "903092ED2C38BF649D61CAF92AAF4DF4", hash_generated_method = "D6905C4B501562426206006685FABF91")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:01.811 -0400", hash_original_method = "903092ED2C38BF649D61CAF92AAF4DF4", hash_generated_method = "B091948D31507164528E2CB3A01B1509")
     @DSModeled(DSC.SAFE)
     private void clearResultLocked() {
         mInteractionId = -1;
@@ -373,13 +369,13 @@ public final class AccessibilityInteractionClient extends IAccessibilityInteract
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:04.752 -0400", hash_original_method = "28474D5684D129A1738A9E8F91D9820E", hash_generated_method = "FF967502DF6EC2551E65C1DC2881BB52")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:01.811 -0400", hash_original_method = "28474D5684D129A1738A9E8F91D9820E", hash_generated_method = "6C4AB86EE47C7856717755F5ED1EE26B")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     private boolean waitForResultTimedLocked(int interactionId) {
         dsTaint.addTaint(interactionId);
         long waitTimeMillis;
         waitTimeMillis = TIMEOUT_INTERACTION_MILLIS;
-        final long startTimeMillis;
+        long startTimeMillis;
         startTimeMillis = SystemClock.uptimeMillis();
         {
             try 
@@ -389,7 +385,7 @@ public final class AccessibilityInteractionClient extends IAccessibilityInteract
                 {
                     sameProcessMessage.getTarget().handleMessage(sameProcessMessage);
                 } //End block
-                final long elapsedTimeMillis;
+                long elapsedTimeMillis;
                 elapsedTimeMillis = SystemClock.uptimeMillis() - startTimeMillis;
                 waitTimeMillis = TIMEOUT_INTERACTION_MILLIS - elapsedTimeMillis;
                 mInstanceLock.wait(waitTimeMillis);
@@ -403,8 +399,8 @@ public final class AccessibilityInteractionClient extends IAccessibilityInteract
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:04.753 -0400", hash_original_method = "061B568C08B51F012B887F4F0E2A3802", hash_generated_method = "3D2AA5DECC98FDE3EEEECEB2D40D0C5D")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:01.811 -0400", hash_original_method = "061B568C08B51F012B887F4F0E2A3802", hash_generated_method = "237450D1615FF8CB293A52DF7B70F9D9")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     private void applyCompatibilityScaleIfNeeded(AccessibilityNodeInfo info, float scale) {
         dsTaint.addTaint(scale);
         dsTaint.addTaint(info.dsTaint);
@@ -430,8 +426,8 @@ public final class AccessibilityInteractionClient extends IAccessibilityInteract
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:04.753 -0400", hash_original_method = "50C3A05545C97DCA046561890361C747", hash_generated_method = "A82317813AD8F65A9FFC61129BCF1212")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:01.812 -0400", hash_original_method = "50C3A05545C97DCA046561890361C747", hash_generated_method = "B3A4B7341919E7573F7032ACC39F0DA8")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     private void finalizeAccessibilityNodeInfo(AccessibilityNodeInfo info, int connectionId,
             float windowScale) {
         dsTaint.addTaint(connectionId);
@@ -451,15 +447,15 @@ public final class AccessibilityInteractionClient extends IAccessibilityInteract
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:04.753 -0400", hash_original_method = "C4CCA9503A1FCF65E2280A82ABED87CD", hash_generated_method = "15876924A80BF87BF12674372EF684E2")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:01.812 -0400", hash_original_method = "C4CCA9503A1FCF65E2280A82ABED87CD", hash_generated_method = "98053CCA0B5C825EB1144C122C0A6303")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     private void finalizeAccessibilityNodeInfos(List<AccessibilityNodeInfo> infos,
             int connectionId, float windowScale) {
         dsTaint.addTaint(infos.dsTaint);
         dsTaint.addTaint(connectionId);
         dsTaint.addTaint(windowScale);
         {
-            final int infosCount;
+            int infosCount;
             infosCount = infos.size();
             {
                 int i;
@@ -482,7 +478,7 @@ public final class AccessibilityInteractionClient extends IAccessibilityInteract
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:04.753 -0400", hash_original_method = "44FB956257430D3824804A6F98AEDC24", hash_generated_method = "E03A44E1D86AF6E9DFCBB44948128E40")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:01.812 -0400", hash_original_method = "44FB956257430D3824804A6F98AEDC24", hash_generated_method = "D0B7DCB796BE1FD1E0F61FF65D45E1E4")
     @DSModeled(DSC.SAFE)
     private Message getSameProcessMessageAndClear() {
         {
@@ -500,12 +496,12 @@ public final class AccessibilityInteractionClient extends IAccessibilityInteract
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:04.753 -0400", hash_original_method = "C30C93509C0684283448214BFA9D8225", hash_generated_method = "37A4D8A0E30429E0DD02CD98835FC395")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:01.813 -0400", hash_original_method = "C30C93509C0684283448214BFA9D8225", hash_generated_method = "1F1896F3C07D5C0E7E115F6A30F5F610")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public IAccessibilityServiceConnection getConnection(int connectionId) {
         dsTaint.addTaint(connectionId);
         {
-            IAccessibilityServiceConnection var509C164EDA4099B8A6B68661391EDAB7_2077351996 = (sConnectionCache.get(connectionId));
+            IAccessibilityServiceConnection var509C164EDA4099B8A6B68661391EDAB7_1089731241 = (sConnectionCache.get(connectionId));
         } //End block
         return (IAccessibilityServiceConnection)dsTaint.getTaint();
         // ---------- Original Method ----------
@@ -515,8 +511,8 @@ public final class AccessibilityInteractionClient extends IAccessibilityInteract
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:04.753 -0400", hash_original_method = "7A0506F80A0A925F6D871EC270864AAB", hash_generated_method = "A658E2E89443E4FFBBF547E1E950E271")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:01.813 -0400", hash_original_method = "7A0506F80A0A925F6D871EC270864AAB", hash_generated_method = "B52DEF925E1B1C3FAC5075AB7BAF1DAF")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     public void addConnection(int connectionId, IAccessibilityServiceConnection connection) {
         dsTaint.addTaint(connection.dsTaint);
         dsTaint.addTaint(connectionId);
@@ -530,8 +526,8 @@ public final class AccessibilityInteractionClient extends IAccessibilityInteract
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:04.753 -0400", hash_original_method = "A8D0295941AD6316CEC94ABF823C5DD4", hash_generated_method = "F66BA9D5D4C4EDB07D709254CF2804E2")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:01.813 -0400", hash_original_method = "A8D0295941AD6316CEC94ABF823C5DD4", hash_generated_method = "973C15264DB6B8D4ED93243AEDEB28CA")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     public void removeConnection(int connectionId) {
         dsTaint.addTaint(connectionId);
         {
@@ -544,6 +540,13 @@ public final class AccessibilityInteractionClient extends IAccessibilityInteract
     }
 
     
+    public static final int NO_ID = -1;
+    private static final String LOG_TAG = "AccessibilityInteractionClient";
+    private static final boolean DEBUG = false;
+    private static final long TIMEOUT_INTERACTION_MILLIS = 5000;
+    private static final Object sStaticLock = new Object();
+    private static AccessibilityInteractionClient sInstance;
+    private static final SparseArray<IAccessibilityServiceConnection> sConnectionCache =
+        new SparseArray<IAccessibilityServiceConnection>();
 }
-
 

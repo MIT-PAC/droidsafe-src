@@ -3,10 +3,10 @@ package android.provider;
 // Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
+import droidsafe.runtime.*;
 
-// import Iterator to deal with enhanced for loop translation
+// needed for enhanced for control translations
 import java.util.Iterator;
-
 
 public interface BaseColumns
 {
@@ -16,4 +16,3 @@ public interface BaseColumns
     
     public static final String _COUNT = "_count";
 }
-

@@ -3,10 +3,10 @@ package com.android.internal.os;
 // Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
+import droidsafe.runtime.*;
 
-// import Iterator to deal with enhanced for loop translation
+// needed for enhanced for control translations
 import java.util.Iterator;
-
 
 public interface IResultReceiver extends android.os.IInterface
 {
@@ -101,4 +101,3 @@ static final int TRANSACTION_send = (android.os.IBinder.FIRST_CALL_TRANSACTION +
 }
 public void send(int resultCode, android.os.Bundle resultData) throws android.os.RemoteException;
 }
-

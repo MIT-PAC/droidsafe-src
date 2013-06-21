@@ -3,11 +3,10 @@ package java.io;
 // Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
-import droidsafe.runtime.DroidSafeAndroidRuntime;
+import droidsafe.runtime.*;
 
-// import Iterator to deal with enhanced for loop translation
+// needed for enhanced for control translations
 import java.util.Iterator;
-
 import java.util.Arrays;
 
 public class BufferedInputStream extends FilterInputStream {
@@ -17,7 +16,7 @@ public class BufferedInputStream extends FilterInputStream {
     protected int markpos = -1;
     protected int pos;
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:11.372 -0400", hash_original_method = "21B504722C790213175AE0F5E25EEBB8", hash_generated_method = "AA737C1786C3B364E0AE26A09C39858A")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:24.393 -0400", hash_original_method = "21B504722C790213175AE0F5E25EEBB8", hash_generated_method = "89A6E050CAF862EC4C9AF90ECEB8EAAB")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public BufferedInputStream(InputStream in) {
         this(in, 8192);
@@ -26,15 +25,14 @@ public class BufferedInputStream extends FilterInputStream {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:11.372 -0400", hash_original_method = "4F467422085302825BDB985C2FDC72F9", hash_generated_method = "090B07BB2110AE9809569D00A62CA79F")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:24.393 -0400", hash_original_method = "4F467422085302825BDB985C2FDC72F9", hash_generated_method = "7806E2B1B3F41A91A3C3A6B4DD6142BF")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public BufferedInputStream(InputStream in, int size) {
         super(in);
         dsTaint.addTaint(in.dsTaint);
         dsTaint.addTaint(size);
-        if(DroidSafeAndroidRuntime.control)
         {
-            throw new IllegalArgumentException("size <= 0");
+            if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("size <= 0");
         } //End block
         buf = new byte[size];
         // ---------- Original Method ----------
@@ -45,16 +43,16 @@ public class BufferedInputStream extends FilterInputStream {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:11.372 -0400", hash_original_method = "07FFB00D7B3DCD194F29893BBF5B52EB", hash_generated_method = "BA8F3433848F84A37DDD48E9D8F55CA8")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:24.393 -0400", hash_original_method = "07FFB00D7B3DCD194F29893BBF5B52EB", hash_generated_method = "4218DAB108BD94253890BDCF0194A7D0")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     @Override
     public synchronized int available() throws IOException {
         InputStream localIn;
         localIn = in;
-        if(DroidSafeAndroidRuntime.control) {
-            throw streamClosed();
+        {
+            if (DroidSafeAndroidRuntime.control) throw streamClosed();
         } //End block
-        int var2B924E8BBC5F3CE3B1F1E3EF2F7F10B5_1486095762 = (count - pos + localIn.available());
+        int var2B924E8BBC5F3CE3B1F1E3EF2F7F10B5_576389774 = (count - pos + localIn.available());
         return dsTaint.getTaintInt();
         // ---------- Original Method ----------
         //InputStream localIn = in;
@@ -65,20 +63,18 @@ public class BufferedInputStream extends FilterInputStream {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:11.372 -0400", hash_original_method = "4D8013C45FC6B1A765F1F6C3AB84963B", hash_generated_method = "C9DFDA73C8ECBAF72861548BED8E790B")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:24.393 -0400", hash_original_method = "4D8013C45FC6B1A765F1F6C3AB84963B", hash_generated_method = "33F8B4057DEB708887213EA9C5DDEAFE")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     private IOException streamClosed() throws IOException {
-        if(DroidSafeAndroidRuntime.control) {
-        	throw new IOException("BufferedInputStream is closed");
-        }
+        if (DroidSafeAndroidRuntime.control) throw new IOException("BufferedInputStream is closed");
         return (IOException)dsTaint.getTaint();
         // ---------- Original Method ----------
         //throw new IOException("BufferedInputStream is closed");
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:11.372 -0400", hash_original_method = "9458B5514F81355F9A651152E456CAE7", hash_generated_method = "2AB89AC82E0457D5984E3403A60DEEDB")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:24.394 -0400", hash_original_method = "9458B5514F81355F9A651152E456CAE7", hash_generated_method = "73DDD97D2DBC2C5446BEF3E26DAF144E")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     @Override
     public void close() throws IOException {
         buf = null;
@@ -98,10 +94,10 @@ public class BufferedInputStream extends FilterInputStream {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:11.372 -0400", hash_original_method = "763578223906D5382275DB1FE1B265CB", hash_generated_method = "33BC0422F43B6BFBD883D938B738BF77")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:24.394 -0400", hash_original_method = "763578223906D5382275DB1FE1B265CB", hash_generated_method = "BBCD7DBC4B0A93F6897AD21F9CD5CE94")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     private int fillbuf(InputStream localIn, byte[] localBuf) throws IOException {
-        dsTaint.addTaint(localBuf);
+        dsTaint.addTaint(localBuf[0]);
         dsTaint.addTaint(localIn.dsTaint);
         {
             int result;
@@ -138,7 +134,7 @@ public class BufferedInputStream extends FilterInputStream {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:11.372 -0400", hash_original_method = "DF417F804FB76ED4D7DE805338DD287E", hash_generated_method = "B55883B16FD81192155D05FC5CD3D784")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:24.394 -0400", hash_original_method = "DF417F804FB76ED4D7DE805338DD287E", hash_generated_method = "BE0EB24ECBE7CFBEEF56FDFC49FFBE7B")
     @DSModeled(DSC.SAFE)
     @Override
     public synchronized void mark(int readlimit) {
@@ -150,7 +146,7 @@ public class BufferedInputStream extends FilterInputStream {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:11.372 -0400", hash_original_method = "3448BF342B33B519FE64A3FA0274077D", hash_generated_method = "1296A617D9B4AD609D1BB5E17D8BA087")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:24.395 -0400", hash_original_method = "3448BF342B33B519FE64A3FA0274077D", hash_generated_method = "4C8BC0E845541479E10014C1D7864553")
     @DSModeled(DSC.SAFE)
     @Override
     public boolean markSupported() {
@@ -160,7 +156,7 @@ public class BufferedInputStream extends FilterInputStream {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:11.373 -0400", hash_original_method = "44D2E1EC0EF3B53AC5594D464D2C83B9", hash_generated_method = "49B22BA69345516FFE8EA124C878CF91")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:24.395 -0400", hash_original_method = "44D2E1EC0EF3B53AC5594D464D2C83B9", hash_generated_method = "8D7533800BE30313F8B22A092986DA6B")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     @Override
     public synchronized int read() throws IOException {
@@ -168,16 +164,16 @@ public class BufferedInputStream extends FilterInputStream {
         localBuf = buf;
         InputStream localIn;
         localIn = in;
-        if(DroidSafeAndroidRuntime.control) {
-            throw streamClosed();
+        {
+            if (DroidSafeAndroidRuntime.control) throw streamClosed();
         } //End block
         {
-            boolean varF86809B8FFE08F3AD3A1687782FBCF09_333047779 = (pos >= count && fillbuf(localIn, localBuf) == -1);
+            boolean varF86809B8FFE08F3AD3A1687782FBCF09_746496637 = (pos >= count && fillbuf(localIn, localBuf) == -1);
         } //End collapsed parenthetic
         {
             localBuf = buf;
-            if(DroidSafeAndroidRuntime.control) {
-                throw streamClosed();
+            {
+                if (DroidSafeAndroidRuntime.control) throw streamClosed();
             } //End block
         } //End block
         return dsTaint.getTaintInt();
@@ -203,23 +199,23 @@ public class BufferedInputStream extends FilterInputStream {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:11.373 -0400", hash_original_method = "61DEF23C4EC5BF0BA1725AB1A56B4C17", hash_generated_method = "1E7C9E718CAEBC5E6CF74F46C836501F")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:24.395 -0400", hash_original_method = "61DEF23C4EC5BF0BA1725AB1A56B4C17", hash_generated_method = "F61C3ADF0BE03B1B7ED00366B6781A51")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     @Override
     public synchronized int read(byte[] buffer, int offset, int byteCount) throws IOException {
-        dsTaint.addTaint(buffer);
+        dsTaint.addTaint(buffer[0]);
         dsTaint.addTaint(byteCount);
         dsTaint.addTaint(offset);
         byte[] localBuf;
         localBuf = buf;
-        if(DroidSafeAndroidRuntime.control) {
-            throw streamClosed();
+        {
+            if (DroidSafeAndroidRuntime.control) throw streamClosed();
         } //End block
         Arrays.checkOffsetAndCount(buffer.length, offset, byteCount);
         InputStream localIn;
         localIn = in;
-        if(DroidSafeAndroidRuntime.control) {
-            throw streamClosed();
+        {
+            if (DroidSafeAndroidRuntime.control) throw streamClosed();
         } //End block
         int required;
         {
@@ -229,7 +225,7 @@ public class BufferedInputStream extends FilterInputStream {
             System.arraycopy(localBuf, pos, buffer, offset, copylength);
             pos += copylength;
             {
-                boolean varEFE87A34F8169BCA8D8DC98CCC9095FD_1239699758 = (copylength == byteCount || localIn.available() == 0);
+                boolean varEFE87A34F8169BCA8D8DC98CCC9095FD_2068161786 = (copylength == byteCount || localIn.available() == 0);
             } //End collapsed parenthetic
             offset += copylength;
             required = byteCount - copylength;
@@ -244,12 +240,12 @@ public class BufferedInputStream extends FilterInputStream {
             } //End block
             {
                 {
-                    boolean varF25EF1B23AB1732E312B5DFAAD3BFA2F_1604316412 = (fillbuf(localIn, localBuf) == -1);
+                    boolean varF25EF1B23AB1732E312B5DFAAD3BFA2F_61175241 = (fillbuf(localIn, localBuf) == -1);
                 } //End collapsed parenthetic
                 {
                     localBuf = buf;
-                    if(DroidSafeAndroidRuntime.control) {
-                        throw streamClosed();
+                    {
+                        if (DroidSafeAndroidRuntime.control) throw streamClosed();
                     } //End block
                 } //End block
                 read = count - pos >= required ? required : count - pos;
@@ -258,7 +254,7 @@ public class BufferedInputStream extends FilterInputStream {
             } //End block
             required -= read;
             {
-                boolean var31130D1C27C6C1FAA5AC8921793A9099_1915954890 = (localIn.available() == 0);
+                boolean var31130D1C27C6C1FAA5AC8921793A9099_1770522302 = (localIn.available() == 0);
             } //End collapsed parenthetic
             offset += read;
         } //End block
@@ -268,15 +264,15 @@ public class BufferedInputStream extends FilterInputStream {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:11.373 -0400", hash_original_method = "0EB3739ECCD523AAEBB3A3F64D0A35BC", hash_generated_method = "46A53D2EF5B6A1B5CDA5E8F5668BF34A")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:24.396 -0400", hash_original_method = "0EB3739ECCD523AAEBB3A3F64D0A35BC", hash_generated_method = "33CCC16E38D43BA69C021996A176D548")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     @Override
     public synchronized void reset() throws IOException {
-    	if(DroidSafeAndroidRuntime.control) {
-            throw new IOException("Stream is closed");
+        {
+            if (DroidSafeAndroidRuntime.control) throw new IOException("Stream is closed");
         } //End block
-        if(DroidSafeAndroidRuntime.control) {
-            throw new IOException("Mark has been invalidated.");
+        {
+            if (DroidSafeAndroidRuntime.control) throw new IOException("Mark has been invalidated.");
         } //End block
         pos = markpos;
         // ---------- Original Method ----------
@@ -290,7 +286,7 @@ public class BufferedInputStream extends FilterInputStream {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:11.373 -0400", hash_original_method = "61D210443DD8F238003AAFD35E7B7777", hash_generated_method = "B8ECC37BC0471BE5AF12A4CFA93090C3")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:24.396 -0400", hash_original_method = "61D210443DD8F238003AAFD35E7B7777", hash_generated_method = "9741B2A0E669D65A73A86AD21847A890")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     @Override
     public synchronized long skip(long byteCount) throws IOException {
@@ -299,11 +295,11 @@ public class BufferedInputStream extends FilterInputStream {
         localBuf = buf;
         InputStream localIn;
         localIn = in;
-        if(DroidSafeAndroidRuntime.control) {
-            throw streamClosed();
+        {
+            if (DroidSafeAndroidRuntime.control) throw streamClosed();
         } //End block
-        if(DroidSafeAndroidRuntime.control) {
-            throw streamClosed();
+        {
+            if (DroidSafeAndroidRuntime.control) throw streamClosed();
         } //End block
         long read;
         read = count - pos;
@@ -311,7 +307,7 @@ public class BufferedInputStream extends FilterInputStream {
         {
             {
                 {
-                    boolean varF25EF1B23AB1732E312B5DFAAD3BFA2F_169807420 = (fillbuf(localIn, localBuf) == -1);
+                    boolean varF25EF1B23AB1732E312B5DFAAD3BFA2F_245801226 = (fillbuf(localIn, localBuf) == -1);
                 } //End collapsed parenthetic
                 {
                     pos += byteCount - read;
@@ -320,7 +316,7 @@ public class BufferedInputStream extends FilterInputStream {
                 pos = count;
             } //End block
         } //End block
-        long var8633DA1A1892299DE222DC19D4AC5EB0_213017901 = (read + localIn.skip(byteCount - read));
+        long var8633DA1A1892299DE222DC19D4AC5EB0_1068046712 = (read + localIn.skip(byteCount - read));
         return dsTaint.getTaintLong();
         // ---------- Original Method ----------
         // Original Method Too Long, Refer to Original Implementation
@@ -328,5 +324,4 @@ public class BufferedInputStream extends FilterInputStream {
 
     
 }
-
 

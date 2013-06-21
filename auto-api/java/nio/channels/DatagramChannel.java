@@ -3,10 +3,10 @@ package java.nio.channels;
 // Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
+import droidsafe.runtime.*;
 
-// import Iterator to deal with enhanced for loop translation
+// needed for enhanced for control translations
 import java.util.Iterator;
-
 import java.io.IOException;
 import java.net.DatagramSocket;
 import java.net.SocketAddress;
@@ -16,7 +16,7 @@ import java.nio.channels.spi.SelectorProvider;
 
 public abstract class DatagramChannel extends AbstractSelectableChannel implements ByteChannel, ScatteringByteChannel, GatheringByteChannel {
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:12.482 -0400", hash_original_method = "CB53873E4EB950556D4A1D46A395181D", hash_generated_method = "5253FDB737F446F269763B6BBEB82334")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:29.103 -0400", hash_original_method = "CB53873E4EB950556D4A1D46A395181D", hash_generated_method = "F1D83FF8D05C80E605D5B118A58AE603")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     protected DatagramChannel(SelectorProvider selectorProvider) {
         super(selectorProvider);
@@ -25,13 +25,12 @@ public abstract class DatagramChannel extends AbstractSelectableChannel implemen
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:12.482 -0400", hash_original_method = "FF19FCAA1AEEA14F76CE4D3DFB2AA57C", hash_generated_method = "9FAF3ABF2C27F02B828E01EB0D389166")
-    public static DatagramChannel open() throws IOException {
+        public static DatagramChannel open() throws IOException {
         return SelectorProvider.provider().openDatagramChannel();
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:12.482 -0400", hash_original_method = "389104566E9179427B49B1E6618B4C60", hash_generated_method = "B9F07D03B9DC063D8B98FEC0C56733D8")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:29.104 -0400", hash_original_method = "389104566E9179427B49B1E6618B4C60", hash_generated_method = "E6BAC865645517DE70A7D9253D1A71F5")
     @DSModeled(DSC.SAFE)
     @Override
     public final int validOps() {
@@ -67,11 +66,11 @@ public abstract class DatagramChannel extends AbstractSelectableChannel implemen
             throws IOException;
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:12.482 -0400", hash_original_method = "27A2349B12D0C34616F4A42E88CDB7C6", hash_generated_method = "DAF0B6501917C146B1C648E791000AAC")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:29.105 -0400", hash_original_method = "27A2349B12D0C34616F4A42E88CDB7C6", hash_generated_method = "8AEDC5C17366A11AA6CA292B2B11A803")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public synchronized final long read(ByteBuffer[] targets) throws IOException {
-        dsTaint.addTaint(targets);
-        long var8C8D63ACDBC3A6604609CB688A50835B_1896116486 = (read(targets, 0, targets.length));
+        dsTaint.addTaint(targets[0].dsTaint);
+        long var8C8D63ACDBC3A6604609CB688A50835B_1566914284 = (read(targets, 0, targets.length));
         return dsTaint.getTaintLong();
         // ---------- Original Method ----------
         //return read(targets, 0, targets.length);
@@ -85,11 +84,11 @@ public abstract class DatagramChannel extends AbstractSelectableChannel implemen
             throws IOException;
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:12.482 -0400", hash_original_method = "3D11D927406C5CFD8B6F27A884F1DAA7", hash_generated_method = "3E24476E30BFD4D0B0A180C92B520C79")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:29.105 -0400", hash_original_method = "3D11D927406C5CFD8B6F27A884F1DAA7", hash_generated_method = "2169742AB8CDEFAD3F06DFDCB5CAA04F")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public synchronized final long write(ByteBuffer[] sources) throws IOException {
-        dsTaint.addTaint(sources);
-        long var284611C5A2FA51DEC3760F3DD09B2EC8_1954603681 = (write(sources, 0, sources.length));
+        dsTaint.addTaint(sources[0].dsTaint);
+        long var284611C5A2FA51DEC3760F3DD09B2EC8_2063090671 = (write(sources, 0, sources.length));
         return dsTaint.getTaintLong();
         // ---------- Original Method ----------
         //return write(sources, 0, sources.length);
@@ -97,5 +96,4 @@ public abstract class DatagramChannel extends AbstractSelectableChannel implemen
 
     
 }
-
 

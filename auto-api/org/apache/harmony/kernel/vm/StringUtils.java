@@ -3,22 +3,21 @@ package org.apache.harmony.kernel.vm;
 // Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
+import droidsafe.runtime.*;
 
-// import Iterator to deal with enhanced for loop translation
+// needed for enhanced for control translations
 import java.util.Iterator;
-
 
 public final class StringUtils {
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:17.563 -0400", hash_original_method = "9E881C2879A613DB548C02DA2AC20129", hash_generated_method = "86870A444310F6AABD800048DA519F59")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:39.795 -0400", hash_original_method = "9E881C2879A613DB548C02DA2AC20129", hash_generated_method = "FB29FB27CF76117908D2A8FF7E9D0E73")
     @DSModeled(DSC.SAFE)
     private StringUtils() {
         // ---------- Original Method ----------
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:17.563 -0400", hash_original_method = "888FC51886C6044A7D8C9FF6C24BD9F3", hash_generated_method = "2BD935C62418A5B02B2F993978154287")
-    public static String combineStrings(Object[] list) {
+        public static String combineStrings(Object[] list) {
         int listLength = list.length;
         switch (listLength) {
             case 0: {
@@ -41,5 +40,4 @@ public final class StringUtils {
 
     
 }
-
 

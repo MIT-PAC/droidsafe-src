@@ -1,20 +1,27 @@
 package android.database.sqlite;
 
 // Droidsafe Imports
+import droidsafe.helpers.*;
+import droidsafe.annotations.*;
+import droidsafe.runtime.*;
+
+// needed for enhanced for control translations
+import java.util.Iterator;
 import android.database.CursorWindow;
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
-import droidsafe.runtime.DroidSafeAndroidRuntime;
-// import Iterator to deal with enhanced for loop translation
 
 public abstract class SQLiteClosable {
     private int mReferenceCount = 1;
     
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:46.270 -0400", hash_original_method = "9E030C88A072FD1CDF2911DCD18DDDBF", hash_generated_method = "9E030C88A072FD1CDF2911DCD18DDDBF")
+        public SQLiteClosable ()
+    {
+    }
+
+
     protected abstract void onAllReferencesReleased();
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:00.699 -0400", hash_original_method = "E024C98C9CCE430E2F2A96AB4D1C1206", hash_generated_method = "C13A33C2569B29C2D76B51FD03AA0690")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:46.271 -0400", hash_original_method = "E024C98C9CCE430E2F2A96AB4D1C1206", hash_generated_method = "3847CCA86EF22D8030ACE2211D68342D")
     @DSModeled(DSC.SAFE)
     protected void onAllReferencesReleasedFromContainer() {
         //DSFIXME:  CODE0009: Possible callback target function detected
@@ -22,16 +29,14 @@ public abstract class SQLiteClosable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:00.699 -0400", hash_original_method = "1061625992B0C8C116E9B0FDA746DD53", hash_generated_method = "53F390D3CD0F6BA11993C98E67C8D51D")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:46.271 -0400", hash_original_method = "1061625992B0C8C116E9B0FDA746DD53", hash_generated_method = "E1C9E3F7C5F37E93374A232562C01032")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     public void acquireReference() {
         {
-            if (DroidSafeAndroidRuntime.control)
             {
-                throw new IllegalStateException(
+                if (DroidSafeAndroidRuntime.control) throw new IllegalStateException(
                         "attempt to re-open an already-closed object: " + getObjInfo());
             } //End block
-            mReferenceCount++;
         } //End block
         // ---------- Original Method ----------
         //synchronized(this) {
@@ -44,8 +49,8 @@ public abstract class SQLiteClosable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:00.700 -0400", hash_original_method = "9A856B4F8EE35DA89AAA5714CDA66263", hash_generated_method = "90F483940C799423799B6F5413EC635E")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:46.272 -0400", hash_original_method = "9A856B4F8EE35DA89AAA5714CDA66263", hash_generated_method = "4A17BBD9A435ABAC8FFB392A51AB3C22")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     public void releaseReference() {
         boolean refCountIsZero;
         refCountIsZero = false;
@@ -66,8 +71,8 @@ public abstract class SQLiteClosable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:00.700 -0400", hash_original_method = "09E098F074A456ED367ED67E041E3D74", hash_generated_method = "6042248758B1CB8D9877A551D7C00C16")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:46.272 -0400", hash_original_method = "09E098F074A456ED367ED67E041E3D74", hash_generated_method = "EE972F60D52976575418ABA56B93EE87")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     public void releaseReferenceFromContainer() {
         boolean refCountIsZero;
         refCountIsZero = false;
@@ -88,7 +93,7 @@ public abstract class SQLiteClosable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:00.700 -0400", hash_original_method = "DF04C7F4D466F671C367EF5E9F18369F", hash_generated_method = "2610A6C0AAD0BE8C4E3222A9557C6C22")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:46.273 -0400", hash_original_method = "DF04C7F4D466F671C367EF5E9F18369F", hash_generated_method = "46C56C5EBC27604577A6070C51916204")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     private String getObjInfo() {
         StringBuilder buff;
@@ -108,7 +113,7 @@ public abstract class SQLiteClosable {
             buff.append(((CursorWindow)this).getStartPosition());
         } //End block
         buff.append(") ");
-        String var7886FFD5307B2368E4A89A54A82E532B_1287490998 = (buff.toString());
+        String var7886FFD5307B2368E4A89A54A82E532B_398196971 = (buff.toString());
         return dsTaint.getTaintString();
         // ---------- Original Method ----------
         //StringBuilder buff = new StringBuilder();
@@ -130,5 +135,4 @@ public abstract class SQLiteClosable {
 
     
 }
-
 

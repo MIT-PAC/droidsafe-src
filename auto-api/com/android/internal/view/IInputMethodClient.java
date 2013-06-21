@@ -3,10 +3,10 @@ package com.android.internal.view;
 // Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
+import droidsafe.runtime.*;
 
-// import Iterator to deal with enhanced for loop translation
+// needed for enhanced for control translations
 import java.util.Iterator;
-
 
 public interface IInputMethodClient extends android.os.IInterface
 {
@@ -50,6 +50,7 @@ data.enforceInterface(DESCRIPTOR);
 boolean _arg0;
 _arg0 = (0!=data.readInt());
 this.setUsingInputMethod(_arg0);
+reply.writeNoException();
 return true;
 }
 case TRANSACTION_onBindMethod:
@@ -63,6 +64,7 @@ else {
 _arg0 = null;
 }
 this.onBindMethod(_arg0);
+reply.writeNoException();
 return true;
 }
 case TRANSACTION_onUnbindMethod:
@@ -71,6 +73,7 @@ data.enforceInterface(DESCRIPTOR);
 int _arg0;
 _arg0 = data.readInt();
 this.onUnbindMethod(_arg0);
+reply.writeNoException();
 return true;
 }
 case TRANSACTION_setActive:
@@ -79,6 +82,7 @@ data.enforceInterface(DESCRIPTOR);
 boolean _arg0;
 _arg0 = (0!=data.readInt());
 this.setActive(_arg0);
+reply.writeNoException();
 return true;
 }
 }
@@ -102,18 +106,22 @@ return DESCRIPTOR;
 public void setUsingInputMethod(boolean state) throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
+android.os.Parcel _reply = android.os.Parcel.obtain();
 try {
 _data.writeInterfaceToken(DESCRIPTOR);
 _data.writeInt(((state)?(1):(0)));
-mRemote.transact(Stub.TRANSACTION_setUsingInputMethod, _data, null, android.os.IBinder.FLAG_ONEWAY);
+mRemote.transact(Stub.TRANSACTION_setUsingInputMethod, _data, _reply, 0);
+_reply.readException();
 }
 finally {
+_reply.recycle();
 _data.recycle();
 }
 }
 public void onBindMethod(com.android.internal.view.InputBindResult res) throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
+android.os.Parcel _reply = android.os.Parcel.obtain();
 try {
 _data.writeInterfaceToken(DESCRIPTOR);
 if ((res!=null)) {
@@ -123,33 +131,41 @@ res.writeToParcel(_data, 0);
 else {
 _data.writeInt(0);
 }
-mRemote.transact(Stub.TRANSACTION_onBindMethod, _data, null, android.os.IBinder.FLAG_ONEWAY);
+mRemote.transact(Stub.TRANSACTION_onBindMethod, _data, _reply, 0);
+_reply.readException();
 }
 finally {
+_reply.recycle();
 _data.recycle();
 }
 }
 public void onUnbindMethod(int sequence) throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
+android.os.Parcel _reply = android.os.Parcel.obtain();
 try {
 _data.writeInterfaceToken(DESCRIPTOR);
 _data.writeInt(sequence);
-mRemote.transact(Stub.TRANSACTION_onUnbindMethod, _data, null, android.os.IBinder.FLAG_ONEWAY);
+mRemote.transact(Stub.TRANSACTION_onUnbindMethod, _data, _reply, 0);
+_reply.readException();
 }
 finally {
+_reply.recycle();
 _data.recycle();
 }
 }
 public void setActive(boolean active) throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
+android.os.Parcel _reply = android.os.Parcel.obtain();
 try {
 _data.writeInterfaceToken(DESCRIPTOR);
 _data.writeInt(((active)?(1):(0)));
-mRemote.transact(Stub.TRANSACTION_setActive, _data, null, android.os.IBinder.FLAG_ONEWAY);
+mRemote.transact(Stub.TRANSACTION_setActive, _data, _reply, 0);
+_reply.readException();
 }
 finally {
+_reply.recycle();
 _data.recycle();
 }
 }
@@ -164,4 +180,3 @@ public void onBindMethod(com.android.internal.view.InputBindResult res) throws a
 public void onUnbindMethod(int sequence) throws android.os.RemoteException;
 public void setActive(boolean active) throws android.os.RemoteException;
 }
-

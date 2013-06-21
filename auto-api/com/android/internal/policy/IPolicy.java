@@ -3,10 +3,10 @@ package com.android.internal.policy;
 // Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
+import droidsafe.runtime.*;
 
-// import Iterator to deal with enhanced for loop translation
+// needed for enhanced for control translations
 import java.util.Iterator;
-
 import android.content.Context;
 import android.view.FallbackEventHandler;
 import android.view.LayoutInflater;
@@ -22,4 +22,3 @@ public interface IPolicy {
 
     public FallbackEventHandler makeNewFallbackEventHandler(Context context);
 }
-

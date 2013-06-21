@@ -1,16 +1,12 @@
 package android.widget;
 
 // Droidsafe Imports
-import java.io.IOException;
-import java.lang.ref.WeakReference;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Comparator;
-import java.util.HashMap;
-import java.util.Locale;
+import droidsafe.helpers.*;
+import droidsafe.annotations.*;
+import droidsafe.runtime.*;
 
-import org.xmlpull.v1.XmlPullParserException;
-
+// needed for enhanced for control translations
+import java.util.Iterator;
 import android.R;
 import android.content.ClipData;
 import android.content.ClipData.Item;
@@ -81,11 +77,13 @@ import android.text.method.TransformationMethod2;
 import android.text.method.WordIterator;
 import android.text.style.ClickableSpan;
 import android.text.style.EasyEditSpan;
+import android.text.style.ParagraphStyle;
 import android.text.style.SpellCheckSpan;
 import android.text.style.SuggestionRangeSpan;
 import android.text.style.SuggestionSpan;
 import android.text.style.TextAppearanceSpan;
 import android.text.style.URLSpan;
+import android.text.style.UpdateAppearance;
 import android.text.util.Linkify;
 import android.util.AttributeSet;
 import android.util.DisplayMetrics;
@@ -127,22 +125,22 @@ import android.view.inputmethod.InputMethodManager;
 import android.view.textservice.SpellCheckerSubtype;
 import android.view.textservice.TextServicesManager;
 import android.widget.AdapterView.OnItemClickListener;
-
+import android.widget.RemoteViews.RemoteView;
 import com.android.internal.util.FastMath;
 import com.android.internal.widget.EditableInputConnection;
-
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
-import droidsafe.runtime.DroidSafeAndroidRuntime;
-// import Iterator to deal with enhanced for loop translation
+import org.xmlpull.v1.XmlPullParserException;
+import java.io.IOException;
+import java.lang.ref.WeakReference;
+import java.text.BreakIterator;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Comparator;
+import java.util.HashMap;
+import java.util.Locale;
 
 public class TextView extends View implements ViewTreeObserver.OnPreDrawListener {
-    static final String LOG_TAG = "TextView";
-    static final boolean DEBUG_EXTRACT = false;
-    private static final int PRIORITY = 100;
     private int mCurrentAlpha = 255;
-    final int[] mTempCoords = new int[2];
+    int[] mTempCoords = new int[2];
     Rect mTempRect;
     private ColorStateList mTextColor;
     private int mCurTextColor;
@@ -158,16 +156,8 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
     private Editable.Factory mEditableFactory = Editable.Factory.getInstance();
     private Spannable.Factory mSpannableFactory = Spannable.Factory.getInstance();
     private float mShadowRadius, mShadowDx, mShadowDy;
-    private static final int PREDRAW_NOT_REGISTERED = 0;
-    private static final int PREDRAW_PENDING = 1;
-    private static final int PREDRAW_DONE = 2;
     private int mPreDrawState = PREDRAW_NOT_REGISTERED;
     private TextUtils.TruncateAt mEllipsize = null;
-    private static final int SANS = 1;
-    private static final int SERIF = 2;
-    private static final int MONOSPACE = 3;
-    private static final int SIGNED = 2;
-    private static final int DECIMAL = 4;
     private Drawables mDrawables;
     private CharSequence mError;
     private boolean mErrorWasChanged;
@@ -188,7 +178,7 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
     private SuggestionsPopupWindow mSuggestionsPopupWindow;
     private SuggestionRangeSpan mSuggestionRangeSpan;
     private int mCursorDrawableRes;
-    private final Drawable[] mCursorDrawable = new Drawable[2];
+    private Drawable[] mCursorDrawable = new Drawable[2];
     private int mCursorCount;
     private Drawable mSelectHandleLeft;
     private Drawable mSelectHandleRight;
@@ -196,7 +186,7 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
     private PositionListener mPositionListener;
     private float mLastDownPositionX, mLastDownPositionY;
     private Callback mCustomSelectionActionModeCallback;
-    private final int mSquaredTouchSlopDistance;
+    private int mSquaredTouchSlopDistance;
     private boolean mCreatedWithASelection = false;
     private WordIterator mWordIterator;
     private SpellChecker mSpellChecker;
@@ -206,18 +196,7 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
     private boolean mResolvedDrawables = false;
     private int mMarqueeFadeMode = MARQUEE_FADE_NORMAL;
     private Layout mSavedMarqueeModeLayout;
-    private static final int MARQUEE_FADE_NORMAL = 0;
-    private static final int MARQUEE_FADE_SWITCH_SHOW_ELLIPSIS = 1;
-    private static final int MARQUEE_FADE_SWITCH_SHOW_FADE = 2;
-    static final int EXTRACT_NOTHING = -2;
-    static final int EXTRACT_UNKNOWN = -1;
-    private static final BoringLayout.Metrics UNKNOWN_BORING = new BoringLayout.Metrics();
-    private static final int ID_SELECT_ALL = android.R.id.selectAll;
-    private static final int ID_CUT = android.R.id.cut;
-    private static final int ID_COPY = android.R.id.copy;
-    private static final int ID_PASTE = android.R.id.paste;
-    @ViewDebug.ExportedProperty(category = "text")
-    private CharSequence            mText;
+    @ViewDebug.ExportedProperty(category = "text") private CharSequence            mText;
     private CharSequence            mTransformed;
     private BufferType              mBufferType = BufferType.NORMAL;
     private int                     mInputType = EditorInfo.TYPE_NULL;
@@ -229,9 +208,9 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
     private boolean                 mAllowTransformationLengthChange;
     private ChangeWatcher           mChangeWatcher;
     private ArrayList<TextWatcher>  mListeners = null;
-    private final TextPaint         mTextPaint;
+    private TextPaint         mTextPaint;
     private boolean                 mUserSetTextScaleX;
-    private final Paint             mHighlightPaint;
+    private Paint             mHighlightPaint;
     private int                     mHighlightColor = 0x6633B5E5;
     protected Layout                mLayout;
     private long                    mShowCursor;
@@ -251,9 +230,6 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
     private float                   mSpacingMult = 1.0f;
     private float                   mSpacingAdd = 0.0f;
     private boolean                 mTextIsSelectable = false;
-    private static final int        LINES = 1;
-    private static final int        EMS = LINES;
-    private static final int        PIXELS = 2;
     private int                     mMaximum = Integer.MAX_VALUE;
     private int                     mMaxMode = LINES;
     private int                     mMinimum = 0;
@@ -269,26 +245,16 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
     private boolean                 mIncludePad = true;
     private Path                    mHighlightPath;
     private boolean                 mHighlightPathBogus = true;
-    private static final RectF      sTempRect = new RectF();
-    private static final float[]    sTmpPosition = new float[2];
-    private static final int        VERY_WIDE = 1024*1024;
-    private static final int        BLINK = 500;
-    private static final int ANIMATED_SCROLL_GAP = 250;
     private long mLastScroll;
     private Scroller mScroller = null;
     private BoringLayout.Metrics mBoring;
     private BoringLayout.Metrics mHintBoring;
     private BoringLayout mSavedLayout, mSavedHintLayout;
     private TextDirectionHeuristic mTextDir = null;
-    private static final InputFilter[] NO_FILTERS = new InputFilter[0];
     private InputFilter[] mFilters = NO_FILTERS;
-    private static final Spanned EMPTY_SPANNED = new SpannedString("");
-    private static int DRAG_SHADOW_MAX_TEXT_LENGTH = 20;
-    private static long sLastCutOrCopyTime;
     private CorrectionHighlighter mCorrectionHighlighter;
-    private static final int[] MULTILINE_STATE_SET = { R.attr.state_multiline };
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.118 -0400", hash_original_method = "16A18A865F32B95685EAC04EF434D4B5", hash_generated_method = "82BE524C73333A3734B22B45B2676AF4")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:09.445 -0400", hash_original_method = "16A18A865F32B95685EAC04EF434D4B5", hash_generated_method = "6297D7907490FD92D7BF43303871287E")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public TextView(Context context) {
         this(context, null);
@@ -297,7 +263,7 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.118 -0400", hash_original_method = "2AA1B7AF4AA0321ED5A0A8E3910A65F3", hash_generated_method = "B3AA918E2C896C98A0F62D84ED81F095")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:09.445 -0400", hash_original_method = "2AA1B7AF4AA0321ED5A0A8E3910A65F3", hash_generated_method = "DE575475BB7D2735829E143CAF4A7FF2")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public TextView(Context context,
                     AttributeSet attrs) {
@@ -308,7 +274,7 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.120 -0400", hash_original_method = "9090DB4BB502E7A1E7DDA866F2D92623", hash_generated_method = "B7D8532F6C5C6C60B00FBEC9D0189B4E")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:09.449 -0400", hash_original_method = "9090DB4BB502E7A1E7DDA866F2D92623", hash_generated_method = "C931075D60B06A44DF1A7B2C83E506C8")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     @SuppressWarnings("deprecation")
     public TextView(Context context,
@@ -319,9 +285,9 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
         dsTaint.addTaint(defStyle);
         dsTaint.addTaint(context.dsTaint);
         mText = "";
-        final Resources res;
+        Resources res;
         res = getResources();
-        final CompatibilityInfo compat;
+        CompatibilityInfo compat;
         compat = res.getCompatibilityInfo();
         mTextPaint = new TextPaint(Paint.ANTI_ALIAS_FLAG);
         mTextPaint.density = res.getDisplayMetrics().density;
@@ -346,7 +312,7 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
         styleIndex = -1;
         boolean allCaps;
         allCaps = false;
-        final Resources.Theme theme;
+        Resources.Theme theme;
         theme = context.getTheme();
         TypedArray a;
         a = theme.obtainStyledAttributes(
@@ -556,7 +522,7 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
                 //End case com.android.internal.R.styleable.TextView_text 
                 //Begin case com.android.internal.R.styleable.TextView_scrollHorizontally 
                 {
-                    boolean var45591D90FC7AE21A8CB6FE28079E45A9_103616111 = (a.getBoolean(attr, false));
+                    boolean var45591D90FC7AE21A8CB6FE28079E45A9_665783135 = (a.getBoolean(attr, false));
                     {
                         setHorizontallyScrolling(true);
                     } //End block
@@ -573,7 +539,7 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
                 //End case com.android.internal.R.styleable.TextView_marqueeRepeatLimit 
                 //Begin case com.android.internal.R.styleable.TextView_includeFontPadding 
                 {
-                    boolean varE83A5B5DD6F1EFE4CE2BCD602A46684B_1393092573 = (!a.getBoolean(attr, true));
+                    boolean varE83A5B5DD6F1EFE4CE2BCD602A46684B_583582943 = (!a.getBoolean(attr, true));
                     {
                         setIncludeFontPadding(false);
                     } //End block
@@ -581,7 +547,7 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
                 //End case com.android.internal.R.styleable.TextView_includeFontPadding 
                 //Begin case com.android.internal.R.styleable.TextView_cursorVisible 
                 {
-                    boolean varE83A5B5DD6F1EFE4CE2BCD602A46684B_306964061 = (!a.getBoolean(attr, true));
+                    boolean varE83A5B5DD6F1EFE4CE2BCD602A46684B_370084567 = (!a.getBoolean(attr, true));
                     {
                         setCursorVisible(false);
                     } //End block
@@ -709,15 +675,15 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
         a.recycle();
         BufferType bufferType;
         bufferType = BufferType.EDITABLE;
-        final int variation;
+        int variation;
         variation = inputType & (EditorInfo.TYPE_MASK_CLASS | EditorInfo.TYPE_MASK_VARIATION);
-        final boolean passwordInputType;
+        boolean passwordInputType;
         passwordInputType = variation
                 == (EditorInfo.TYPE_CLASS_TEXT | EditorInfo.TYPE_TEXT_VARIATION_PASSWORD);
-        final boolean webPasswordInputType;
+        boolean webPasswordInputType;
         webPasswordInputType = variation
                 == (EditorInfo.TYPE_CLASS_TEXT | EditorInfo.TYPE_TEXT_VARIATION_WEB_PASSWORD);
-        final boolean numberPasswordInputType;
+        boolean numberPasswordInputType;
         numberPasswordInputType = variation
                 == (EditorInfo.TYPE_CLASS_NUMBER | EditorInfo.TYPE_NUMBER_VARIATION_PASSWORD);
         {
@@ -728,7 +694,7 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
             } //End block
             catch (ClassNotFoundException ex)
             {
-                throw new RuntimeException(ex);
+                if (DroidSafeAndroidRuntime.control) throw new RuntimeException(ex);
             } //End block
             try 
             {
@@ -736,11 +702,11 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
             } //End block
             catch (InstantiationException ex)
             {
-                throw new RuntimeException(ex);
+                if (DroidSafeAndroidRuntime.control) throw new RuntimeException(ex);
             } //End block
             catch (IllegalAccessException ex)
             {
-                throw new RuntimeException(ex);
+                if (DroidSafeAndroidRuntime.control) throw new RuntimeException(ex);
             } //End block
             try 
             {
@@ -868,7 +834,7 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
         //End case 3 
         //Begin case 4 
         {
-            boolean var8F0ACED8C99F3716300411BE9198A3C2_1160793041 = (ViewConfiguration.get(context).isFadingMarqueeEnabled());
+            boolean var8F0ACED8C99F3716300411BE9198A3C2_594368500 = (ViewConfiguration.get(context).isFadingMarqueeEnabled());
             {
                 setHorizontalFadingEdgeEnabled(true);
                 mMarqueeFadeMode = MARQUEE_FADE_NORMAL;
@@ -943,9 +909,9 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
         setClickable(clickable);
         setLongClickable(longClickable);
         prepareCursorControllers();
-        final ViewConfiguration viewConfiguration;
+        ViewConfiguration viewConfiguration;
         viewConfiguration = ViewConfiguration.get(context);
-        final int touchSlop;
+        int touchSlop;
         touchSlop = viewConfiguration.getScaledTouchSlop();
         mSquaredTouchSlopDistance = touchSlop * touchSlop;
         // ---------- Original Method ----------
@@ -953,8 +919,8 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.121 -0400", hash_original_method = "C60E18AF77ADDBBD7F15C48D3326353D", hash_generated_method = "DADD23FF2BF3909F999D5F80EA7C94BE")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:09.451 -0400", hash_original_method = "C60E18AF77ADDBBD7F15C48D3326353D", hash_generated_method = "247D80EEA5C2F23FB174C9B27A38729A")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     private void setTypefaceByIndex(int typefaceIndex, int styleIndex) {
         dsTaint.addTaint(typefaceIndex);
         dsTaint.addTaint(styleIndex);
@@ -987,7 +953,7 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.122 -0400", hash_original_method = "81361F4824C6D1D7960776386313375B", hash_generated_method = "3707B5F5F642ABD4EDEEFEF0AC46064E")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:09.451 -0400", hash_original_method = "81361F4824C6D1D7960776386313375B", hash_generated_method = "C4F07A3DE1275D1267CD925FC67084B5")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     private void setRelativeDrawablesIfNeeded(Drawable start, Drawable end) {
         dsTaint.addTaint(start.dsTaint);
@@ -1000,7 +966,7 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
             {
                 mDrawables = dr = new Drawables();
             } //End block
-            final Rect compoundRect;
+            Rect compoundRect;
             compoundRect = dr.mCompoundRect;
             int[] state;
             state = getDrawableState();
@@ -1034,19 +1000,19 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.122 -0400", hash_original_method = "224789FFA5DBD63B17185276A15DADF0", hash_generated_method = "06B21F3FE17A9C5BE15DD23CB75CCD4D")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:09.452 -0400", hash_original_method = "224789FFA5DBD63B17185276A15DADF0", hash_generated_method = "C1A81E610A5EAF214580FC0ABF8C97DE")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     @Override
     public void setEnabled(boolean enabled) {
         dsTaint.addTaint(enabled);
         {
-            boolean var7DA8DB0EDBF2B3C1E618EFC1F33534DC_1355871767 = (enabled == isEnabled());
+            boolean var7DA8DB0EDBF2B3C1E618EFC1F33534DC_1718235387 = (enabled == isEnabled());
         } //End collapsed parenthetic
         {
             InputMethodManager imm;
             imm = InputMethodManager.peekInstance();
             {
-                boolean var4937F8F03F6BF371ED8AD64A66FE25A6_635987005 = (imm != null && imm.isActive(this));
+                boolean var4937F8F03F6BF371ED8AD64A66FE25A6_1739075159 = (imm != null && imm.isActive(this));
                 {
                     imm.hideSoftInputFromWindow(getWindowToken(), 0);
                 } //End block
@@ -1080,7 +1046,7 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.122 -0400", hash_original_method = "6CE73F981984CDCC5004358BB070DFC0", hash_generated_method = "6F628327DAB730FBA07E920E59969361")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:09.452 -0400", hash_original_method = "6CE73F981984CDCC5004358BB070DFC0", hash_generated_method = "8BC88E1352097E31A6718C0FFF6219A7")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public void setTypeface(Typeface tf, int style) {
         dsTaint.addTaint(style);
@@ -1126,7 +1092,7 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.122 -0400", hash_original_method = "BFDF598F6F7CD4AFD7EB65F700EA9607", hash_generated_method = "0AF641645DE0D5070416814B7EA9FFAE")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:09.452 -0400", hash_original_method = "BFDF598F6F7CD4AFD7EB65F700EA9607", hash_generated_method = "6EC5C10FA41E91E9CA1F3C7277A5E796")
     @DSModeled(DSC.SAFE)
     protected boolean getDefaultEditable() {
         return dsTaint.getTaintBoolean();
@@ -1135,7 +1101,7 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.122 -0400", hash_original_method = "BBE0A92ADC5D9278A97962CE8941F1CB", hash_generated_method = "4C916CCEEA653DB5D52EE0C655BDC5C5")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:09.452 -0400", hash_original_method = "BBE0A92ADC5D9278A97962CE8941F1CB", hash_generated_method = "876D413D7A10A0037E8D7FFE2CF5AFBF")
     @DSModeled(DSC.SAFE)
     protected MovementMethod getDefaultMovementMethod() {
         return (MovementMethod)dsTaint.getTaint();
@@ -1144,7 +1110,7 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.122 -0400", hash_original_method = "D3D56665E0CC0B43413FBFB4C720E96C", hash_generated_method = "147F46DB804BBA7DE5EBD49D453EEBFF")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:09.453 -0400", hash_original_method = "D3D56665E0CC0B43413FBFB4C720E96C", hash_generated_method = "3106688BC7242B7A592FE2D5845EDF02")
     @DSModeled(DSC.SAFE)
     @ViewDebug.CapturedViewProperty
     public CharSequence getText() {
@@ -1154,17 +1120,17 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.122 -0400", hash_original_method = "9A68249D01A4FE1CBD4D535668FCEB6F", hash_generated_method = "6E0DA3F420364EF5FDFF799F5ED9BBA4")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:09.453 -0400", hash_original_method = "9A68249D01A4FE1CBD4D535668FCEB6F", hash_generated_method = "0E7EA3978A0267A78972BE7B05D3B792")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public int length() {
-        int var32A6F8CD5764B26A2339FAB65BD4098F_1103832924 = (mText.length());
+        int var32A6F8CD5764B26A2339FAB65BD4098F_761515620 = (mText.length());
         return dsTaint.getTaintInt();
         // ---------- Original Method ----------
         //return mText.length();
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.122 -0400", hash_original_method = "7ED3A36B3A9686857AF495D746EF7144", hash_generated_method = "0150380F11F0FC7EF6D45E968C09DD12")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:09.453 -0400", hash_original_method = "7ED3A36B3A9686857AF495D746EF7144", hash_generated_method = "B0BE2585C879DF3E56C7DD026E7BB0CB")
     @DSModeled(DSC.SAFE)
     public Editable getEditableText() {
         return (Editable)dsTaint.getTaint();
@@ -1173,17 +1139,17 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.122 -0400", hash_original_method = "0FF7B2A5A4CF7321FA6B03810945EA51", hash_generated_method = "C3277E4A39E65703302FD1BBE469660A")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:09.453 -0400", hash_original_method = "0FF7B2A5A4CF7321FA6B03810945EA51", hash_generated_method = "330B021CAB8797460F803FC2A2187A4E")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public int getLineHeight() {
-        int var20B277202414C5A1CC77B4034C64DAD9_748679670 = (FastMath.round(mTextPaint.getFontMetricsInt(null) * mSpacingMult + mSpacingAdd));
+        int var20B277202414C5A1CC77B4034C64DAD9_1713249873 = (FastMath.round(mTextPaint.getFontMetricsInt(null) * mSpacingMult + mSpacingAdd));
         return dsTaint.getTaintInt();
         // ---------- Original Method ----------
         //return FastMath.round(mTextPaint.getFontMetricsInt(null) * mSpacingMult + mSpacingAdd);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.123 -0400", hash_original_method = "AA853122D8F66FE025B9AF375421C379", hash_generated_method = "8949E3D8E817518891DBBEEBCC53A342")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:09.453 -0400", hash_original_method = "AA853122D8F66FE025B9AF375421C379", hash_generated_method = "20298C9CD9BA9D5272E2AB74432A19A1")
     @DSModeled(DSC.SAFE)
     public final Layout getLayout() {
         return (Layout)dsTaint.getTaint();
@@ -1192,7 +1158,7 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.123 -0400", hash_original_method = "16C14256413AD7EC2C071FEF64E5C315", hash_generated_method = "12A61F3968786C55D14E75E8C5ED1E7C")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:09.453 -0400", hash_original_method = "16C14256413AD7EC2C071FEF64E5C315", hash_generated_method = "55469AABCF2666C93BF2384AA20874D4")
     @DSModeled(DSC.SAFE)
     public final KeyListener getKeyListener() {
         return (KeyListener)dsTaint.getTaint();
@@ -1201,7 +1167,7 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.123 -0400", hash_original_method = "C24E7464E624E00527FA94ACF2B78CDF", hash_generated_method = "C72ED7B0AA6AFD91E43C4E6BFA3DEB3F")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:09.454 -0400", hash_original_method = "C24E7464E624E00527FA94ACF2B78CDF", hash_generated_method = "F12D2F2465609AAAC1C4D558A08FA4BD")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public void setKeyListener(KeyListener input) {
         dsTaint.addTaint(input.dsTaint);
@@ -1242,8 +1208,8 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.123 -0400", hash_original_method = "4C0922906A0644E54152EA479C6FB8D4", hash_generated_method = "D2BAFDFA9A038DA9C02D66933047D206")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:09.454 -0400", hash_original_method = "4C0922906A0644E54152EA479C6FB8D4", hash_generated_method = "3D44A185C5630C6EAD5F1B1D5196CB89")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     private void setKeyListenerOnly(KeyListener input) {
         dsTaint.addTaint(input.dsTaint);
         setText(mText);
@@ -1256,7 +1222,7 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.123 -0400", hash_original_method = "48923BC0AD13C4CAAF5FC92105497B11", hash_generated_method = "84B89A0728DE36C00CB3C7BE29461022")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:09.454 -0400", hash_original_method = "48923BC0AD13C4CAAF5FC92105497B11", hash_generated_method = "B6E975692CAA7014222E68564328D061")
     @DSModeled(DSC.SAFE)
     public final MovementMethod getMovementMethod() {
         return (MovementMethod)dsTaint.getTaint();
@@ -1265,8 +1231,8 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.123 -0400", hash_original_method = "A60F83672BBDF336AF379460700DB19E", hash_generated_method = "A34AA172EE0108A17EE11D8CDCD26951")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:09.454 -0400", hash_original_method = "A60F83672BBDF336AF379460700DB19E", hash_generated_method = "6624EE8D3EA9BBC9F3955C36FEDEA264")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     public final void setMovementMethod(MovementMethod movement) {
         dsTaint.addTaint(movement.dsTaint);
         setText(mText);
@@ -1281,8 +1247,8 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.123 -0400", hash_original_method = "20BA1DEB0A4AF2EE483D2287D9007BE7", hash_generated_method = "9D27F10C0D75385B8CB10D490D7D7D68")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:09.454 -0400", hash_original_method = "20BA1DEB0A4AF2EE483D2287D9007BE7", hash_generated_method = "B98752575E441289B05AA5A2F0F91865")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     private void fixFocusableAndClickableSettings() {
         {
             setFocusable(true);
@@ -1307,20 +1273,18 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.123 -0400", hash_original_method = "2CDC6DDF1029E76D6DBEC0602C28EC15", hash_generated_method = "9B284BF7C4F44D89C001ADCACD67659A")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:09.455 -0400", hash_original_method = "2CDC6DDF1029E76D6DBEC0602C28EC15", hash_generated_method = "635797DAD5E2CE582ABCBB7331CD0C8B")
     @DSModeled(DSC.SAFE)
     public final TransformationMethod getTransformationMethod() {
-        //DSFIXME:  CODE0009: Possible callback target function detected
         return (TransformationMethod)dsTaint.getTaint();
         // ---------- Original Method ----------
         //return mTransformation;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.123 -0400", hash_original_method = "93D394D84FFC0B02B9FD24841443EB6E", hash_generated_method = "5CB68DDA3CFB94CB9F7BD8BE5F0AD09F")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:09.455 -0400", hash_original_method = "93D394D84FFC0B02B9FD24841443EB6E", hash_generated_method = "A4FAA3B2A57629AAA46342EA77F7EBA1")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     public final void setTransformationMethod(TransformationMethod method) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
         dsTaint.addTaint(method.dsTaint);
         {
             {
@@ -1358,10 +1322,10 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.123 -0400", hash_original_method = "CD4E87E17C71F6F36E69A30DF125A2EC", hash_generated_method = "0FEC5B9630832CD8D933B5A188596B4E")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:09.455 -0400", hash_original_method = "CD4E87E17C71F6F36E69A30DF125A2EC", hash_generated_method = "3D72672DA0FBD91E4488DF91F9DFB83F")
     @DSModeled(DSC.SAFE)
     public int getCompoundPaddingTop() {
-        final Drawables dr;
+        Drawables dr;
         dr = mDrawables;
         return dsTaint.getTaintInt();
         // ---------- Original Method ----------
@@ -1374,10 +1338,10 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.124 -0400", hash_original_method = "F8E73EA88ED50BD236713C6E1FD6275E", hash_generated_method = "030AD396DF482524ECCF5EFF25635DEC")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:09.455 -0400", hash_original_method = "F8E73EA88ED50BD236713C6E1FD6275E", hash_generated_method = "6534669FC0E3FBECD79F56F63A3B7D77")
     @DSModeled(DSC.SAFE)
     public int getCompoundPaddingBottom() {
-        final Drawables dr;
+        Drawables dr;
         dr = mDrawables;
         return dsTaint.getTaintInt();
         // ---------- Original Method ----------
@@ -1390,10 +1354,10 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.124 -0400", hash_original_method = "E37CE1C2FEDB3DD18FEE34DF2470D692", hash_generated_method = "2F9C815C5419A86A942246E4105BCD3D")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:09.455 -0400", hash_original_method = "E37CE1C2FEDB3DD18FEE34DF2470D692", hash_generated_method = "0CB8075C7C1DA38F94EA4C7059BC094C")
     @DSModeled(DSC.SAFE)
     public int getCompoundPaddingLeft() {
-        final Drawables dr;
+        Drawables dr;
         dr = mDrawables;
         return dsTaint.getTaintInt();
         // ---------- Original Method ----------
@@ -1406,10 +1370,10 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.124 -0400", hash_original_method = "FA75E1802F0BBA6FD5DC7258A0FBEB3C", hash_generated_method = "3BDEE2A9C52E6D149E4E2926CDBB080E")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:09.456 -0400", hash_original_method = "FA75E1802F0BBA6FD5DC7258A0FBEB3C", hash_generated_method = "207ADAA20715AB0CCF1BC4DC56C5A656")
     @DSModeled(DSC.SAFE)
     public int getCompoundPaddingRight() {
-        final Drawables dr;
+        Drawables dr;
         dr = mDrawables;
         return dsTaint.getTaintInt();
         // ---------- Original Method ----------
@@ -1422,17 +1386,17 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.124 -0400", hash_original_method = "045E56B45A145CD7B99AFA777E63AEB3", hash_generated_method = "3352D42034F613C9C722116B4017125F")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:09.456 -0400", hash_original_method = "045E56B45A145CD7B99AFA777E63AEB3", hash_generated_method = "1F29BD714ADE51ECCDCC2569A371F0DF")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public int getCompoundPaddingStart() {
         resolveDrawables();
         {
-            Object varAFC6EB2C684D509A17B3A4EFF5D9CB9D_440197315 = (getResolvedLayoutDirection());
+            Object varAFC6EB2C684D509A17B3A4EFF5D9CB9D_540885358 = (getResolvedLayoutDirection());
             //Begin case default LAYOUT_DIRECTION_LTR 
-            int var781EBC093D28721525521D7AA075C977_970649627 = (getCompoundPaddingLeft());
+            int var781EBC093D28721525521D7AA075C977_494962148 = (getCompoundPaddingLeft());
             //End case default LAYOUT_DIRECTION_LTR 
             //Begin case LAYOUT_DIRECTION_RTL 
-            int var8A1D5A6585B3402DA0435C7A847F7E9A_1780398574 = (getCompoundPaddingRight());
+            int var8A1D5A6585B3402DA0435C7A847F7E9A_1957437497 = (getCompoundPaddingRight());
             //End case LAYOUT_DIRECTION_RTL 
         } //End collapsed parenthetic
         return dsTaint.getTaintInt();
@@ -1448,17 +1412,17 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.124 -0400", hash_original_method = "0C4A0FB6513BA7C283389B0C3E09BE68", hash_generated_method = "2000C6FC0B14818697D3665B92F0E167")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:09.456 -0400", hash_original_method = "0C4A0FB6513BA7C283389B0C3E09BE68", hash_generated_method = "00FD8B1BF4DE1824B7E814F162AA2B75")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public int getCompoundPaddingEnd() {
         resolveDrawables();
         {
-            Object varAFC6EB2C684D509A17B3A4EFF5D9CB9D_1485027664 = (getResolvedLayoutDirection());
+            Object varAFC6EB2C684D509A17B3A4EFF5D9CB9D_1234412352 = (getResolvedLayoutDirection());
             //Begin case default LAYOUT_DIRECTION_LTR 
-            int var8A1D5A6585B3402DA0435C7A847F7E9A_2088456051 = (getCompoundPaddingRight());
+            int var8A1D5A6585B3402DA0435C7A847F7E9A_99050892 = (getCompoundPaddingRight());
             //End case default LAYOUT_DIRECTION_LTR 
             //Begin case LAYOUT_DIRECTION_RTL 
-            int var781EBC093D28721525521D7AA075C977_606422475 = (getCompoundPaddingLeft());
+            int var781EBC093D28721525521D7AA075C977_887313162 = (getCompoundPaddingLeft());
             //End case LAYOUT_DIRECTION_RTL 
         } //End collapsed parenthetic
         return dsTaint.getTaintInt();
@@ -1474,16 +1438,16 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.124 -0400", hash_original_method = "363FF0B4BA7F59F6CC6EB59AE673A7C9", hash_generated_method = "82E23BE350954720B3FC88E47EC3DF1E")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:09.456 -0400", hash_original_method = "363FF0B4BA7F59F6CC6EB59AE673A7C9", hash_generated_method = "DAD8ED04786C1EB989AB506FD168B916")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public int getExtendedPaddingTop() {
         {
-            int var616A12A33C5C9277AD7C0C5C89BD69B5_215287676 = (getCompoundPaddingTop());
+            int var616A12A33C5C9277AD7C0C5C89BD69B5_1028097922 = (getCompoundPaddingTop());
         } //End block
         {
-            boolean var907B1900A80A700A44CB9B3E7CFA8547_1823854344 = (mLayout.getLineCount() <= mMaximum);
+            boolean var907B1900A80A700A44CB9B3E7CFA8547_1979030980 = (mLayout.getLineCount() <= mMaximum);
             {
-                int varDAC50BDCD5E1A4A87E580425D0AB90D1_1640458951 = (getCompoundPaddingTop());
+                int varDAC50BDCD5E1A4A87E580425D0AB90D1_1644191689 = (getCompoundPaddingTop());
             } //End block
         } //End collapsed parenthetic
         int top;
@@ -1494,7 +1458,7 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
         viewht = getHeight() - top - bottom;
         int layoutht;
         layoutht = mLayout.getLineTop(mMaximum);
-        final int gravity;
+        int gravity;
         gravity = mGravity & Gravity.VERTICAL_GRAVITY_MASK;
         return dsTaint.getTaintInt();
         // ---------- Original Method ----------
@@ -1522,16 +1486,16 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.124 -0400", hash_original_method = "7A2DB8BFB057F07CEDE0D120BE6FFB10", hash_generated_method = "9A862074B42D99DA2C3BB1DB05CD6153")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:09.457 -0400", hash_original_method = "7A2DB8BFB057F07CEDE0D120BE6FFB10", hash_generated_method = "D9ADD560DB5E4EC1F2429D2E6389B3C6")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public int getExtendedPaddingBottom() {
         {
-            int varB616C533FD1413DFA57A8B3E4A355326_1123809786 = (getCompoundPaddingBottom());
+            int varB616C533FD1413DFA57A8B3E4A355326_1857974753 = (getCompoundPaddingBottom());
         } //End block
         {
-            boolean var907B1900A80A700A44CB9B3E7CFA8547_91196669 = (mLayout.getLineCount() <= mMaximum);
+            boolean var907B1900A80A700A44CB9B3E7CFA8547_53304678 = (mLayout.getLineCount() <= mMaximum);
             {
-                int varF7C5B922A73A10EEE346A45E2A7B3E82_928393072 = (getCompoundPaddingBottom());
+                int varF7C5B922A73A10EEE346A45E2A7B3E82_704341592 = (getCompoundPaddingBottom());
             } //End block
         } //End collapsed parenthetic
         int top;
@@ -1542,7 +1506,7 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
         viewht = getHeight() - top - bottom;
         int layoutht;
         layoutht = mLayout.getLineTop(mMaximum);
-        final int gravity;
+        int gravity;
         gravity = mGravity & Gravity.VERTICAL_GRAVITY_MASK;
         return dsTaint.getTaintInt();
         // ---------- Original Method ----------
@@ -1570,67 +1534,67 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.124 -0400", hash_original_method = "5245DB1A490E586E6093F4BFC26117D1", hash_generated_method = "B17E16D547B3ADFB7FF05E22D4411424")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:09.457 -0400", hash_original_method = "5245DB1A490E586E6093F4BFC26117D1", hash_generated_method = "AA912B9F61942ED995272BA4C8550A1D")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public int getTotalPaddingLeft() {
-        int var34500B372695C1C0BF8F0AECDF252C98_1321661101 = (getCompoundPaddingLeft());
+        int var34500B372695C1C0BF8F0AECDF252C98_531958468 = (getCompoundPaddingLeft());
         return dsTaint.getTaintInt();
         // ---------- Original Method ----------
         //return getCompoundPaddingLeft();
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.124 -0400", hash_original_method = "A1EB6CC80DC85EDA662D4DD9C10BBDEB", hash_generated_method = "6956742095F799928A81F1B4C4436A62")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:09.457 -0400", hash_original_method = "A1EB6CC80DC85EDA662D4DD9C10BBDEB", hash_generated_method = "58DC9B595D6FCE5D3B2ED66B74290DF7")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public int getTotalPaddingRight() {
-        int var9B702A81BD3510988CA34C6D5C5CC2BB_93994669 = (getCompoundPaddingRight());
+        int var9B702A81BD3510988CA34C6D5C5CC2BB_1167586148 = (getCompoundPaddingRight());
         return dsTaint.getTaintInt();
         // ---------- Original Method ----------
         //return getCompoundPaddingRight();
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.125 -0400", hash_original_method = "DD9B038504EC66CC7FCB75AE1CB753E5", hash_generated_method = "162AAA76EDA61FF0E9CD53CD8D3E1796")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:09.457 -0400", hash_original_method = "DD9B038504EC66CC7FCB75AE1CB753E5", hash_generated_method = "B518E4FE5F5DEF460F16733A26FF21D6")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public int getTotalPaddingStart() {
-        int var7D7F8C48280E1131C487BF0950634EDB_46092121 = (getCompoundPaddingStart());
+        int var7D7F8C48280E1131C487BF0950634EDB_1271988938 = (getCompoundPaddingStart());
         return dsTaint.getTaintInt();
         // ---------- Original Method ----------
         //return getCompoundPaddingStart();
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.125 -0400", hash_original_method = "7924A3AF5CA0D716DAB0CFDF1EC0C456", hash_generated_method = "1A282857882D1217F384385CF5116FCC")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:09.457 -0400", hash_original_method = "7924A3AF5CA0D716DAB0CFDF1EC0C456", hash_generated_method = "7A104340B6224DD2CF907012230FC3C7")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public int getTotalPaddingEnd() {
-        int varF719AD7587A07158D4596514D0584E08_1049377824 = (getCompoundPaddingEnd());
+        int varF719AD7587A07158D4596514D0584E08_986925193 = (getCompoundPaddingEnd());
         return dsTaint.getTaintInt();
         // ---------- Original Method ----------
         //return getCompoundPaddingEnd();
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.125 -0400", hash_original_method = "3FBB92A2EE65C62C674BD5E5A5FB2713", hash_generated_method = "3B5CFF0629EFDF2B722C8ED658CFD282")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:09.458 -0400", hash_original_method = "3FBB92A2EE65C62C674BD5E5A5FB2713", hash_generated_method = "14243A9BFB45B8C20989034F2C2AFEF9")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public int getTotalPaddingTop() {
-        int varCBA1A1AACA4E5447F7B59F1AEE81650D_1544402165 = (getExtendedPaddingTop() + getVerticalOffset(true));
+        int varCBA1A1AACA4E5447F7B59F1AEE81650D_1560442712 = (getExtendedPaddingTop() + getVerticalOffset(true));
         return dsTaint.getTaintInt();
         // ---------- Original Method ----------
         //return getExtendedPaddingTop() + getVerticalOffset(true);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.125 -0400", hash_original_method = "DD0E7E66835F9F938ABD11A206F39F98", hash_generated_method = "C415E8358CB2B37FF5E57740E60E93CF")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:09.458 -0400", hash_original_method = "DD0E7E66835F9F938ABD11A206F39F98", hash_generated_method = "D6EF184B31705798F3B91BD2E1312730")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public int getTotalPaddingBottom() {
-        int var8B593715CC9C8A177070B563C501DACE_1513968181 = (getExtendedPaddingBottom() + getBottomVerticalOffset(true));
+        int var8B593715CC9C8A177070B563C501DACE_1846242993 = (getExtendedPaddingBottom() + getBottomVerticalOffset(true));
         return dsTaint.getTaintInt();
         // ---------- Original Method ----------
         //return getExtendedPaddingBottom() + getBottomVerticalOffset(true);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.125 -0400", hash_original_method = "FDA2BF05D2CC3125A844DA2F1CDB97F3", hash_generated_method = "5ECBF0BFF5D7228FA7C06B754EC6E90F")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:09.459 -0400", hash_original_method = "FDA2BF05D2CC3125A844DA2F1CDB97F3", hash_generated_method = "04388A7E49C7AE798D4714A989560E37")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public void setCompoundDrawables(Drawable left, Drawable top,
                                      Drawable right, Drawable bottom) {
@@ -1640,7 +1604,7 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
         dsTaint.addTaint(top.dsTaint);
         Drawables dr;
         dr = mDrawables;
-        final boolean drawables;
+        boolean drawables;
         drawables = left != null || top != null
                 || right != null || bottom != null;
         {
@@ -1684,7 +1648,7 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
                 dr.mDrawableBottom.setCallback(null);
             } //End block
             dr.mDrawableBottom = bottom;
-            final Rect compoundRect;
+            Rect compoundRect;
             compoundRect = dr.mCompoundRect;
             int[] state;
             state = getDrawableState();
@@ -1736,14 +1700,14 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.126 -0400", hash_original_method = "4DA9B29500DC46492C6684BECC05C749", hash_generated_method = "350F5B77128A09FE6C4783A5F13ED511")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:09.459 -0400", hash_original_method = "4DA9B29500DC46492C6684BECC05C749", hash_generated_method = "559B8F49A14CE4B2A1892E953E28ABFF")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public void setCompoundDrawablesWithIntrinsicBounds(int left, int top, int right, int bottom) {
         dsTaint.addTaint(bottom);
         dsTaint.addTaint(left);
         dsTaint.addTaint(right);
         dsTaint.addTaint(top);
-        final Resources resources;
+        Resources resources;
         resources = getContext().getResources();
         setCompoundDrawablesWithIntrinsicBounds(left != 0 ? resources.getDrawable(left) : null,
                 top != 0 ? resources.getDrawable(top) : null,
@@ -1758,7 +1722,7 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.126 -0400", hash_original_method = "19E536EC7FD9E8E0EBEABA79F37A1C35", hash_generated_method = "E944289203A2416B957A434D81A8840D")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:09.459 -0400", hash_original_method = "19E536EC7FD9E8E0EBEABA79F37A1C35", hash_generated_method = "4C49EB17A15624C9B58320B5F3EB4AB4")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public void setCompoundDrawablesWithIntrinsicBounds(Drawable left, Drawable top,
             Drawable right, Drawable bottom) {
@@ -1796,7 +1760,7 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.126 -0400", hash_original_method = "C527F166CA85E985387BA0B670132163", hash_generated_method = "0F79CC47D96B6EDB43AA93C363D34B6B")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:09.461 -0400", hash_original_method = "C527F166CA85E985387BA0B670132163", hash_generated_method = "A0DB54B654023E03BF6705B59AF1472C")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public void setCompoundDrawablesRelative(Drawable start, Drawable top,
                                      Drawable end, Drawable bottom) {
@@ -1806,7 +1770,7 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
         dsTaint.addTaint(top.dsTaint);
         Drawables dr;
         dr = mDrawables;
-        final boolean drawables;
+        boolean drawables;
         drawables = start != null || top != null
                 || end != null || bottom != null;
         {
@@ -1850,7 +1814,7 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
                 dr.mDrawableBottom.setCallback(null);
             } //End block
             dr.mDrawableBottom = bottom;
-            final Rect compoundRect;
+            Rect compoundRect;
             compoundRect = dr.mCompoundRect;
             int[] state;
             state = getDrawableState();
@@ -1903,7 +1867,7 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.127 -0400", hash_original_method = "08DFFEC64B0A3553E53B210C6E8B4F5B", hash_generated_method = "197487F9307F8F441D677AFA6CA2AF25")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:09.462 -0400", hash_original_method = "08DFFEC64B0A3553E53B210C6E8B4F5B", hash_generated_method = "02A8152449E5BD46F1B220525F0BED0C")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public void setCompoundDrawablesRelativeWithIntrinsicBounds(int start, int top, int end,
             int bottom) {
@@ -1912,7 +1876,7 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
         dsTaint.addTaint(end);
         dsTaint.addTaint(top);
         resetResolvedDrawables();
-        final Resources resources;
+        Resources resources;
         resources = getContext().getResources();
         setCompoundDrawablesRelativeWithIntrinsicBounds(
                 start != 0 ? resources.getDrawable(start) : null,
@@ -1930,7 +1894,7 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.127 -0400", hash_original_method = "BA79780015035B80B72E7A4B08D0D299", hash_generated_method = "175DD1BD94548837206F29C7CE9F0A92")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:09.463 -0400", hash_original_method = "BA79780015035B80B72E7A4B08D0D299", hash_generated_method = "46102E4386A2F02DD0E704373A0243E6")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public void setCompoundDrawablesRelativeWithIntrinsicBounds(Drawable start, Drawable top,
             Drawable end, Drawable bottom) {
@@ -1970,11 +1934,19 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.127 -0400", hash_original_method = "06FDA6F654D58A3BC65C29C47124F71A", hash_generated_method = "D7FB5726DD856412E93F62317B639B54")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:09.463 -0400", hash_original_method = "06FDA6F654D58A3BC65C29C47124F71A", hash_generated_method = "4B967381BD3B914A1356B75460FFD28A")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     public Drawable[] getCompoundDrawables() {
-        final Drawables dr;
+        Drawables dr;
         dr = mDrawables;
+        {
+            Drawable[] varDB06F88672E857E8FA7FBBD328C0E874_1929788268 = (new Drawable[] {
+                dr.mDrawableLeft, dr.mDrawableTop, dr.mDrawableRight, dr.mDrawableBottom
+            });
+        } //End block
+        {
+            Drawable[] varEC9095EAD94EF02FFF305F53E5E81F43_1281360507 = (new Drawable[] { null, null, null, null });
+        } //End block
         return (Drawable[])dsTaint.getTaint();
         // ---------- Original Method ----------
         //final Drawables dr = mDrawables;
@@ -1988,11 +1960,19 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.127 -0400", hash_original_method = "7D536599368FF7E7773D59B2D0C7C092", hash_generated_method = "DB85D13F32FE00821B66E65DC936A5C4")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:09.463 -0400", hash_original_method = "7D536599368FF7E7773D59B2D0C7C092", hash_generated_method = "79D4498F4AD7F0D8EBE094D25DAB2716")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     public Drawable[] getCompoundDrawablesRelative() {
-        final Drawables dr;
+        Drawables dr;
         dr = mDrawables;
+        {
+            Drawable[] var1391DBB55D11770A921A3B68B3E0CAC1_824615071 = (new Drawable[] {
+                dr.mDrawableStart, dr.mDrawableTop, dr.mDrawableEnd, dr.mDrawableBottom
+            });
+        } //End block
+        {
+            Drawable[] varEC9095EAD94EF02FFF305F53E5E81F43_453682047 = (new Drawable[] { null, null, null, null });
+        } //End block
         return (Drawable[])dsTaint.getTaint();
         // ---------- Original Method ----------
         //final Drawables dr = mDrawables;
@@ -2006,8 +1986,8 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.127 -0400", hash_original_method = "7E4DBC59802038B0E00C34B579D2DA37", hash_generated_method = "5DBAF13BEDCDB94ABE70D273A21A0899")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:09.463 -0400", hash_original_method = "7E4DBC59802038B0E00C34B579D2DA37", hash_generated_method = "24D610DCC56D0F6F14AAA6B7AC09DB54")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     public void setCompoundDrawablePadding(int pad) {
         dsTaint.addTaint(pad);
         Drawables dr;
@@ -2042,10 +2022,10 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.127 -0400", hash_original_method = "6B458DA6759E58857DA3CAF4E6D1B789", hash_generated_method = "907FD77385BCFC329A37A29BB219C608")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:09.464 -0400", hash_original_method = "6B458DA6759E58857DA3CAF4E6D1B789", hash_generated_method = "3230D44BBB674523ED18D59D2543E0E4")
     @DSModeled(DSC.SAFE)
     public int getCompoundDrawablePadding() {
-        final Drawables dr;
+        Drawables dr;
         dr = mDrawables;
         return dsTaint.getTaintInt();
         // ---------- Original Method ----------
@@ -2054,8 +2034,8 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.127 -0400", hash_original_method = "4C42E9479946D6D8F38619DA66232863", hash_generated_method = "988AD2E604AFEF9B34D8E363E4E482BC")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:09.464 -0400", hash_original_method = "4C42E9479946D6D8F38619DA66232863", hash_generated_method = "49B7EB050CEA08A72FF214FF62AF2EBA")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     @Override
     public void setPadding(int left, int top, int right, int bottom) {
         dsTaint.addTaint(bottom);
@@ -2079,7 +2059,7 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.127 -0400", hash_original_method = "D796BA921A3359840CCD26FF0DD1CFB0", hash_generated_method = "55B685B1E64A4DFA9F03256EBBB75761")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:09.464 -0400", hash_original_method = "D796BA921A3359840CCD26FF0DD1CFB0", hash_generated_method = "79D49F5B7095314464D37AFAE3C3C1ED")
     @DSModeled(DSC.SAFE)
     public final int getAutoLinkMask() {
         return dsTaint.getTaintInt();
@@ -2088,7 +2068,7 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.128 -0400", hash_original_method = "FFEF779179433D30901B486DA8C4C9D0", hash_generated_method = "9B688B1735D98CEA72DF385E092C2F4D")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:09.465 -0400", hash_original_method = "FFEF779179433D30901B486DA8C4C9D0", hash_generated_method = "21C0E0BF7AD2307871A812B54A6133C3")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public void setTextAppearance(Context context, int resid) {
         dsTaint.addTaint(resid);
@@ -2130,7 +2110,7 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
                                        TextAppearance_textStyle, -1);
         setTypefaceByIndex(typefaceIndex, styleIndex);
         {
-            boolean var3D022060DB92710670FAA09E327DBB0B_1360109337 = (appearance.getBoolean(com.android.internal.R.styleable.TextAppearance_textAllCaps,
+            boolean var3D022060DB92710670FAA09E327DBB0B_72252921 = (appearance.getBoolean(com.android.internal.R.styleable.TextAppearance_textAllCaps,
                 false));
             {
                 setTransformationMethod(new AllCapsTransformationMethod(getContext()));
@@ -2142,18 +2122,18 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.128 -0400", hash_original_method = "5E6FE671862457C6BB25EDC2CEDE399B", hash_generated_method = "ED852D64D7C38F689B6A11BD84561A06")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:09.465 -0400", hash_original_method = "5E6FE671862457C6BB25EDC2CEDE399B", hash_generated_method = "607B2F1A9953CC42490F83976DC6E4B7")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public float getTextSize() {
-        float var0C1431BDAC3C89F7C02E56A482F7EB06_1556583773 = (mTextPaint.getTextSize());
+        float var0C1431BDAC3C89F7C02E56A482F7EB06_1624118628 = (mTextPaint.getTextSize());
         return dsTaint.getTaintFloat();
         // ---------- Original Method ----------
         //return mTextPaint.getTextSize();
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.128 -0400", hash_original_method = "7DB2A551583349AB1C418E0528006365", hash_generated_method = "F7847B312615B3E11A68A58C00451909")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:09.465 -0400", hash_original_method = "7DB2A551583349AB1C418E0528006365", hash_generated_method = "A2C3F021F4931D6BB8D462208BC2D5DC")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     @android.view.RemotableViewMethod
     public void setTextSize(float size) {
         dsTaint.addTaint(size);
@@ -2163,7 +2143,7 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.128 -0400", hash_original_method = "487975E6A0CF72E721F7BDECB44E1312", hash_generated_method = "92147818B3770CA8057A903C0254F1C1")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:09.465 -0400", hash_original_method = "487975E6A0CF72E721F7BDECB44E1312", hash_generated_method = "CA81F1F7AC102D19DA1BA492FCE5EEA5")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public void setTextSize(int unit, float size) {
         dsTaint.addTaint(unit);
@@ -2187,12 +2167,12 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.128 -0400", hash_original_method = "ADDFE88D6F3490AE157EE578011F4FFC", hash_generated_method = "57731E03552DF994A36D2592F418BB59")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:09.466 -0400", hash_original_method = "ADDFE88D6F3490AE157EE578011F4FFC", hash_generated_method = "507917232E835331D712C2BA067A1C25")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     private void setRawTextSize(float size) {
         dsTaint.addTaint(size);
         {
-            boolean var8490AB7BC9B8B736A0090BC029E3A656_1660726715 = (size != mTextPaint.getTextSize());
+            boolean var8490AB7BC9B8B736A0090BC029E3A656_505575758 = (size != mTextPaint.getTextSize());
             {
                 mTextPaint.setTextSize(size);
                 {
@@ -2214,23 +2194,23 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.128 -0400", hash_original_method = "8F71F8091E79DE5D49BC786B53F6B56F", hash_generated_method = "5A6BDDC37EF426BB6F250F342843DFBC")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:09.466 -0400", hash_original_method = "8F71F8091E79DE5D49BC786B53F6B56F", hash_generated_method = "B72A8608E032685C2CB0DEBA4206035F")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public float getTextScaleX() {
-        float var4A490DCBBE6DC7C04831F39DE35D9E8E_2048010126 = (mTextPaint.getTextScaleX());
+        float var4A490DCBBE6DC7C04831F39DE35D9E8E_1889782701 = (mTextPaint.getTextScaleX());
         return dsTaint.getTaintFloat();
         // ---------- Original Method ----------
         //return mTextPaint.getTextScaleX();
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.128 -0400", hash_original_method = "32FC23A8E8D24759E03CF98EE692BD3E", hash_generated_method = "FD769C371C494FA108C986C5FCE6932B")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:09.466 -0400", hash_original_method = "32FC23A8E8D24759E03CF98EE692BD3E", hash_generated_method = "402A653F560A47083A0C0BA66DD75A46")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     @android.view.RemotableViewMethod
     public void setTextScaleX(float size) {
         dsTaint.addTaint(size);
         {
-            boolean varE98E2F263E58724773A791619F9AA580_1439256394 = (size != mTextPaint.getTextScaleX());
+            boolean varE98E2F263E58724773A791619F9AA580_1786735019 = (size != mTextPaint.getTextScaleX());
             {
                 mUserSetTextScaleX = true;
                 mTextPaint.setTextScaleX(size);
@@ -2254,12 +2234,12 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.128 -0400", hash_original_method = "780D15535FA403FCFD3F32D6E7303769", hash_generated_method = "D6292D0C23EBEB10A94D98649F92F46A")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:09.466 -0400", hash_original_method = "780D15535FA403FCFD3F32D6E7303769", hash_generated_method = "44E57208F9A9E3AACEC848175A7C65BA")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public void setTypeface(Typeface tf) {
         dsTaint.addTaint(tf.dsTaint);
         {
-            boolean var53A61D5B68551E1C004BF255C4B2B68F_2121948162 = (mTextPaint.getTypeface() != tf);
+            boolean var53A61D5B68551E1C004BF255C4B2B68F_1936467753 = (mTextPaint.getTypeface() != tf);
             {
                 mTextPaint.setTypeface(tf);
                 {
@@ -2281,17 +2261,17 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.128 -0400", hash_original_method = "6FFDE601A24D081BE5F9A52F7BB654E9", hash_generated_method = "CCAD96D0177403F74136836C6440D512")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:09.466 -0400", hash_original_method = "6FFDE601A24D081BE5F9A52F7BB654E9", hash_generated_method = "53D98ACD96634BCDFCD2E92EF6786020")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public Typeface getTypeface() {
-        Typeface varBBE09A13FC0F6DCAEE22122CCEE5E0EF_516918077 = (mTextPaint.getTypeface());
+        Typeface varBBE09A13FC0F6DCAEE22122CCEE5E0EF_538507371 = (mTextPaint.getTypeface());
         return (Typeface)dsTaint.getTaint();
         // ---------- Original Method ----------
         //return mTextPaint.getTypeface();
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.128 -0400", hash_original_method = "7D6C422943C1CBA6B222D2B0CA531386", hash_generated_method = "3782FDDA321E08154D931A8A8C26F14E")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:09.467 -0400", hash_original_method = "7D6C422943C1CBA6B222D2B0CA531386", hash_generated_method = "16C90B8E356AA1AE10E07F4BC87E060C")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     @android.view.RemotableViewMethod
     public void setTextColor(int color) {
@@ -2304,13 +2284,12 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.129 -0400", hash_original_method = "E5548FB85C1126384CE08AD8E1667A0C", hash_generated_method = "324010096829CCEFFE6BFF3082060FF3")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:09.467 -0400", hash_original_method = "E5548FB85C1126384CE08AD8E1667A0C", hash_generated_method = "2791136BC69D2B766AF0647243734BC4")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     public void setTextColor(ColorStateList colors) {
         dsTaint.addTaint(colors.dsTaint);
-        if (DroidSafeAndroidRuntime.control)
         {
-            throw new NullPointerException();
+            if (DroidSafeAndroidRuntime.control) throw new NullPointerException();
         } //End block
         updateTextColors();
         // ---------- Original Method ----------
@@ -2322,7 +2301,7 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.129 -0400", hash_original_method = "E9708E6780595497A0F38B1A3DFD4921", hash_generated_method = "4A1EBAF45C7822C2D7291B28FBADF0FB")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:09.467 -0400", hash_original_method = "E9708E6780595497A0F38B1A3DFD4921", hash_generated_method = "76E9B0B115B9165CA37907404EB2CE45")
     @DSModeled(DSC.SAFE)
     public final ColorStateList getTextColors() {
         return (ColorStateList)dsTaint.getTaint();
@@ -2331,7 +2310,7 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.129 -0400", hash_original_method = "69BC167CA8CC0024E4446D6ED57F972B", hash_generated_method = "C4A9442BC43300DBE2F5DA7416BE79A0")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:09.467 -0400", hash_original_method = "69BC167CA8CC0024E4446D6ED57F972B", hash_generated_method = "5C8520BE4356ECEED268ED4F164F1A3B")
     @DSModeled(DSC.SAFE)
     public final int getCurrentTextColor() {
         return dsTaint.getTaintInt();
@@ -2340,8 +2319,8 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.129 -0400", hash_original_method = "969DDD835D55F329C6E2048E92EE3D41", hash_generated_method = "6E7E839073A2A9D56AEEA6A871A1D686")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:09.467 -0400", hash_original_method = "969DDD835D55F329C6E2048E92EE3D41", hash_generated_method = "DDFF0FBAE7AC75EE1AC9312AB8D8B266")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     @android.view.RemotableViewMethod
     public void setHighlightColor(int color) {
         dsTaint.addTaint(color);
@@ -2356,12 +2335,12 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.129 -0400", hash_original_method = "5ADAC484D4689A7795B408EA7D6B6AC8", hash_generated_method = "E9D277D96A9CB2B610A583747AD4E34A")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:09.467 -0400", hash_original_method = "5ADAC484D4689A7795B408EA7D6B6AC8", hash_generated_method = "19D218165C175571AC8EC39C533F6C75")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     public void setShadowLayer(float radius, float dx, float dy, int color) {
         dsTaint.addTaint(dx);
-        dsTaint.addTaint(dy);
         dsTaint.addTaint(color);
+        dsTaint.addTaint(dy);
         dsTaint.addTaint(radius);
         mTextPaint.setShadowLayer(radius, dx, dy, color);
         invalidate();
@@ -2374,7 +2353,7 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.129 -0400", hash_original_method = "5B4E8CD3DF4A8D21F89EBB7BF27B30F6", hash_generated_method = "3D09AFB02C409D90F6283A0250F29D2D")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:09.468 -0400", hash_original_method = "5B4E8CD3DF4A8D21F89EBB7BF27B30F6", hash_generated_method = "B2B3577F807D2BF87C9A808BBD715808")
     @DSModeled(DSC.SAFE)
     public TextPaint getPaint() {
         return (TextPaint)dsTaint.getTaint();
@@ -2383,7 +2362,7 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.129 -0400", hash_original_method = "9B238C42610AAE77586EFF469787CAA2", hash_generated_method = "A2EE709B270EFD39F55D4762492A5EAB")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:09.468 -0400", hash_original_method = "9B238C42610AAE77586EFF469787CAA2", hash_generated_method = "93319DF5C336803F8F8BBFEE307C4BA8")
     @DSModeled(DSC.SAFE)
     @android.view.RemotableViewMethod
     public final void setAutoLinkMask(int mask) {
@@ -2393,7 +2372,7 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.129 -0400", hash_original_method = "E276016FD2FFF976FC669270E78164FC", hash_generated_method = "AD653C87150243A67DE3D5CBA5F39ECB")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:09.468 -0400", hash_original_method = "E276016FD2FFF976FC669270E78164FC", hash_generated_method = "AF90B775ADC0B1F276DCDDDEBF66AEF5")
     @DSModeled(DSC.SAFE)
     @android.view.RemotableViewMethod
     public final void setLinksClickable(boolean whether) {
@@ -2403,7 +2382,7 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.129 -0400", hash_original_method = "5582C38299F4F11EB9D233BD445CE8CA", hash_generated_method = "0D8211060FC7629194FEA9DE5A8771AE")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:09.468 -0400", hash_original_method = "5582C38299F4F11EB9D233BD445CE8CA", hash_generated_method = "DDA66ECE065B44B31C9AC9E2FB7C2197")
     @DSModeled(DSC.SAFE)
     public final boolean getLinksClickable() {
         return dsTaint.getTaintBoolean();
@@ -2412,7 +2391,7 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.129 -0400", hash_original_method = "4DF4A96EB5A0519062801E1FD0A991F4", hash_generated_method = "5F5FFAF3A35109837439BF3F0A423DAB")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:09.468 -0400", hash_original_method = "4DF4A96EB5A0519062801E1FD0A991F4", hash_generated_method = "8A8816DE73EFED895653DA09F8BC1E51")
     @DSModeled(DSC.SAFE)
     @android.view.RemotableViewMethod
     public final void setSoftInputShownOnFocus(boolean show) {
@@ -2422,7 +2401,7 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.129 -0400", hash_original_method = "5A10A6630E4A15A93780A83DCE21BFA6", hash_generated_method = "0259D94C8A6589FD1E33025626AEDDD8")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:09.468 -0400", hash_original_method = "5A10A6630E4A15A93780A83DCE21BFA6", hash_generated_method = "04EA33C69A473FE441633D05172916F7")
     @DSModeled(DSC.SAFE)
     public final boolean getSoftInputShownOnFocus() {
         return dsTaint.getTaintBoolean();
@@ -2431,11 +2410,14 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.129 -0400", hash_original_method = "7722BA5204257A1CDED1550384208856", hash_generated_method = "7784C73693CF691120CA83D5BB5560DB")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:09.469 -0400", hash_original_method = "7722BA5204257A1CDED1550384208856", hash_generated_method = "C687A96D624E67DA24A3B1540FDEFA7E")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public URLSpan[] getUrls() {
         {
-            URLSpan[] var5B57915DC6AEEED37A2366C3E794B561_1398513660 = (((Spanned) mText).getSpans(0, mText.length(), URLSpan.class));
+            URLSpan[] var5B57915DC6AEEED37A2366C3E794B561_481511821 = (((Spanned) mText).getSpans(0, mText.length(), URLSpan.class));
+        } //End block
+        {
+            URLSpan[] varFEF5A1C68A1752A8356EC6345288FC01_411990366 = (new URLSpan[0]);
         } //End block
         return (URLSpan[])dsTaint.getTaint();
         // ---------- Original Method ----------
@@ -2447,7 +2429,7 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.129 -0400", hash_original_method = "E9B4A1B921938A82A5322DAF3992AE5D", hash_generated_method = "D347A9BC5D3D581D201EFAD67969A374")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:09.469 -0400", hash_original_method = "E9B4A1B921938A82A5322DAF3992AE5D", hash_generated_method = "B8C48844FED3067E058DDEFC8742BE72")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     @android.view.RemotableViewMethod
     public final void setHintTextColor(int color) {
@@ -2460,8 +2442,8 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.129 -0400", hash_original_method = "FDEA4F057DD6E07AD523C7053B227866", hash_generated_method = "E2C72BD8D4A1E6C02E10638C537BC737")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:09.469 -0400", hash_original_method = "FDEA4F057DD6E07AD523C7053B227866", hash_generated_method = "8D3CBC106E849FFBC10894162779B42E")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     public final void setHintTextColor(ColorStateList colors) {
         dsTaint.addTaint(colors.dsTaint);
         updateTextColors();
@@ -2471,7 +2453,7 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.130 -0400", hash_original_method = "475EC0453C7F74E6A779EAD7F8319059", hash_generated_method = "8BE7E248BA78611CFFDEC29C242E1E04")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:09.469 -0400", hash_original_method = "475EC0453C7F74E6A779EAD7F8319059", hash_generated_method = "EA8F324B239269E6994E9CC9E7AB4510")
     @DSModeled(DSC.SAFE)
     public final ColorStateList getHintTextColors() {
         return (ColorStateList)dsTaint.getTaint();
@@ -2480,7 +2462,7 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.130 -0400", hash_original_method = "1826756F3CA2F0D97D555C81DC90D9D1", hash_generated_method = "F256B11EA0687D3B5CB288C45F925C28")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:09.469 -0400", hash_original_method = "1826756F3CA2F0D97D555C81DC90D9D1", hash_generated_method = "2FD384AB41EC741C61F5603833725B1A")
     @DSModeled(DSC.SAFE)
     public final int getCurrentHintTextColor() {
         return dsTaint.getTaintInt();
@@ -2489,7 +2471,7 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.130 -0400", hash_original_method = "9463279339C3C6EB304729CC6A96FD58", hash_generated_method = "2676E571A57F4E07B99BA8A690CCF048")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:09.470 -0400", hash_original_method = "9463279339C3C6EB304729CC6A96FD58", hash_generated_method = "460906F7E1347BB7F36C85D221C5E91B")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     @android.view.RemotableViewMethod
     public final void setLinkTextColor(int color) {
@@ -2502,8 +2484,8 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.130 -0400", hash_original_method = "9B67E7CBCE87C562841DDA31DA1BE653", hash_generated_method = "3ADDFED429D2167F10382152BE26BECA")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:09.470 -0400", hash_original_method = "9B67E7CBCE87C562841DDA31DA1BE653", hash_generated_method = "784E4422DB944D9460F1EB3C63C0C1CC")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     public final void setLinkTextColor(ColorStateList colors) {
         dsTaint.addTaint(colors.dsTaint);
         updateTextColors();
@@ -2513,7 +2495,7 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.130 -0400", hash_original_method = "3A49B90BEACC4CBB32A44A5B9C48739C", hash_generated_method = "A18BE2E8E1614C8E66742A7D06BAB4C7")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:09.470 -0400", hash_original_method = "3A49B90BEACC4CBB32A44A5B9C48739C", hash_generated_method = "3D5B0C7E93D77285E72051B36EE55255")
     @DSModeled(DSC.SAFE)
     public final ColorStateList getLinkTextColors() {
         return (ColorStateList)dsTaint.getTaint();
@@ -2522,7 +2504,7 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.130 -0400", hash_original_method = "AEAA45BF8B2B9C05CF6AA4E644080F44", hash_generated_method = "ACB9304F744B395545DAF76C5FEFA903")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:09.470 -0400", hash_original_method = "AEAA45BF8B2B9C05CF6AA4E644080F44", hash_generated_method = "EA35A8B8B2C53B1114FA08C996E56461")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public void setGravity(int gravity) {
         dsTaint.addTaint(gravity);
@@ -2556,7 +2538,7 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.130 -0400", hash_original_method = "80A4065F7A7EA77AF4C4ADD19E36F9A5", hash_generated_method = "B36E983EF0539DE2797EC970A15D4977")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:09.470 -0400", hash_original_method = "80A4065F7A7EA77AF4C4ADD19E36F9A5", hash_generated_method = "67EF2F55F7EE6F0F16EBD39D273B0E1A")
     @DSModeled(DSC.SAFE)
     public int getGravity() {
         return dsTaint.getTaintInt();
@@ -2565,23 +2547,23 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.130 -0400", hash_original_method = "7C7AF1B698E75A76793B55FAC07B7AAB", hash_generated_method = "438EC7563CF8AEB72554D9110084E26C")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:09.471 -0400", hash_original_method = "7C7AF1B698E75A76793B55FAC07B7AAB", hash_generated_method = "3214E95AF174EBE1DDA7616EF038358B")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public int getPaintFlags() {
-        int var1FCED777482D649D2D08ED31F26C7C02_1116231989 = (mTextPaint.getFlags());
+        int var1FCED777482D649D2D08ED31F26C7C02_25389674 = (mTextPaint.getFlags());
         return dsTaint.getTaintInt();
         // ---------- Original Method ----------
         //return mTextPaint.getFlags();
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.130 -0400", hash_original_method = "8002046373E96371B4D25FE3E547C1A2", hash_generated_method = "B3C001C00EE6D8F85DACAE7B98619056")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:09.471 -0400", hash_original_method = "8002046373E96371B4D25FE3E547C1A2", hash_generated_method = "EE3A080A96C58FA69008B66E33936258")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     @android.view.RemotableViewMethod
     public void setPaintFlags(int flags) {
         dsTaint.addTaint(flags);
         {
-            boolean var8072314ED7B1DF7B4CA975059BE6435F_234302933 = (mTextPaint.getFlags() != flags);
+            boolean var8072314ED7B1DF7B4CA975059BE6435F_1963375125 = (mTextPaint.getFlags() != flags);
             {
                 mTextPaint.setFlags(flags);
                 {
@@ -2603,8 +2585,8 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.130 -0400", hash_original_method = "EA5DCBED1A48E34EEA6259FD93E64EB0", hash_generated_method = "77E5F1E97DAEC053D4417BA536A95C42")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:09.471 -0400", hash_original_method = "EA5DCBED1A48E34EEA6259FD93E64EB0", hash_generated_method = "51641DA60D87106280DB67BD63478020")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     public void setHorizontallyScrolling(boolean whether) {
         dsTaint.addTaint(whether);
         {
@@ -2626,7 +2608,7 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.130 -0400", hash_original_method = "7B94D421E91473A8A956329EBDF6A0E9", hash_generated_method = "439217B77A6963397486EFE3F81BF3BF")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:09.471 -0400", hash_original_method = "7B94D421E91473A8A956329EBDF6A0E9", hash_generated_method = "5EAB41323C2E7945CDBECC5FF75DA937")
     @DSModeled(DSC.SAFE)
     public boolean getHorizontallyScrolling() {
         return dsTaint.getTaintBoolean();
@@ -2635,8 +2617,8 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.130 -0400", hash_original_method = "0EE7081F083B0DC579019805442C8765", hash_generated_method = "4D88B9F09E3FE625AAC0B9DC540BFC30")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:09.471 -0400", hash_original_method = "0EE7081F083B0DC579019805442C8765", hash_generated_method = "096603FF315F98AEEFEFBCD44FC608CB")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     @android.view.RemotableViewMethod
     public void setMinLines(int minlines) {
         dsTaint.addTaint(minlines);
@@ -2651,8 +2633,8 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.130 -0400", hash_original_method = "68757877A1DD20E33F15DE32FA3B7F07", hash_generated_method = "B2AACF0E81D97130C7CC9EEE5EAC7202")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:09.471 -0400", hash_original_method = "68757877A1DD20E33F15DE32FA3B7F07", hash_generated_method = "3E71DD5C2A0D8937AAC864CE06F8FE5B")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     @android.view.RemotableViewMethod
     public void setMinHeight(int minHeight) {
         dsTaint.addTaint(minHeight);
@@ -2667,8 +2649,8 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.131 -0400", hash_original_method = "8B36C1E1F9FD83BB5DA2A8A03A7A6664", hash_generated_method = "E2215AE51312468CED75AFDACCB6B635")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:09.472 -0400", hash_original_method = "8B36C1E1F9FD83BB5DA2A8A03A7A6664", hash_generated_method = "1139C5E2D18EC5AE7A32D63819F33B33")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     @android.view.RemotableViewMethod
     public void setMaxLines(int maxlines) {
         dsTaint.addTaint(maxlines);
@@ -2683,8 +2665,8 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.131 -0400", hash_original_method = "04C4C22BF9024D43E2A856D219B26DEF", hash_generated_method = "20625BC1C172F5EF6B5C0E5759463F3D")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:09.472 -0400", hash_original_method = "04C4C22BF9024D43E2A856D219B26DEF", hash_generated_method = "A982EA27EC902D1B40EE24BFCEEC621F")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     @android.view.RemotableViewMethod
     public void setMaxHeight(int maxHeight) {
         dsTaint.addTaint(maxHeight);
@@ -2699,8 +2681,8 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.131 -0400", hash_original_method = "1ADF089518552DEF85C429E373D0543D", hash_generated_method = "42BEE4DB29FB28B19B0530FC150E6C38")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:09.472 -0400", hash_original_method = "1ADF089518552DEF85C429E373D0543D", hash_generated_method = "472CD8241CA4BC6E08C28C7BE1301B87")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     @android.view.RemotableViewMethod
     public void setLines(int lines) {
         dsTaint.addTaint(lines);
@@ -2716,8 +2698,8 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.131 -0400", hash_original_method = "6CD9B04ABBE9A4E392854E2FFBA64155", hash_generated_method = "A92AF55224C0F0F936AFDDF792C318DC")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:09.472 -0400", hash_original_method = "6CD9B04ABBE9A4E392854E2FFBA64155", hash_generated_method = "91AC611752FE7352A670EF6353CF1044")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     @android.view.RemotableViewMethod
     public void setHeight(int pixels) {
         dsTaint.addTaint(pixels);
@@ -2733,8 +2715,8 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.131 -0400", hash_original_method = "6EF109AA0B8A98B265CEDBFE77B13F24", hash_generated_method = "FE41C4206161B33E447144FCB7AD28DD")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:09.472 -0400", hash_original_method = "6EF109AA0B8A98B265CEDBFE77B13F24", hash_generated_method = "A7FA251F3D6DB4F7CEA31858CEDA4AE0")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     @android.view.RemotableViewMethod
     public void setMinEms(int minems) {
         dsTaint.addTaint(minems);
@@ -2749,8 +2731,8 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.131 -0400", hash_original_method = "CC5034BC1B28BBCD01B0947E11300CEA", hash_generated_method = "EEDF6753B3C1A84836CDF8AFC6E5E101")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:09.473 -0400", hash_original_method = "CC5034BC1B28BBCD01B0947E11300CEA", hash_generated_method = "4ABB444ACE890F12973965DA95FCF186")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     @android.view.RemotableViewMethod
     public void setMinWidth(int minpixels) {
         dsTaint.addTaint(minpixels);
@@ -2765,8 +2747,8 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.131 -0400", hash_original_method = "024C424B12C855A76B8C4D4EF37E56E9", hash_generated_method = "778D31E94449C020D715245C958048DB")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:09.473 -0400", hash_original_method = "024C424B12C855A76B8C4D4EF37E56E9", hash_generated_method = "694EE19E62F366FFAE3B6E67FF669D3C")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     @android.view.RemotableViewMethod
     public void setMaxEms(int maxems) {
         dsTaint.addTaint(maxems);
@@ -2781,8 +2763,8 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.131 -0400", hash_original_method = "66D27E295E9935EDB856E68754ECCF50", hash_generated_method = "33E511C44FA98912CC503B46E6485CCE")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:09.473 -0400", hash_original_method = "66D27E295E9935EDB856E68754ECCF50", hash_generated_method = "52D33CC24D2B929B330F0A400BD1EDD9")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     @android.view.RemotableViewMethod
     public void setMaxWidth(int maxpixels) {
         dsTaint.addTaint(maxpixels);
@@ -2797,8 +2779,8 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.131 -0400", hash_original_method = "29184B32707510663C7CC00A1776202A", hash_generated_method = "D70ECB2DE5C3EC746AF1D89D435BDC6C")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:09.473 -0400", hash_original_method = "29184B32707510663C7CC00A1776202A", hash_generated_method = "8873C0984B1B98D3F8551FF32005492E")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     @android.view.RemotableViewMethod
     public void setEms(int ems) {
         dsTaint.addTaint(ems);
@@ -2814,8 +2796,8 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.131 -0400", hash_original_method = "A6A8746AE8743344ECC9244BF17B5285", hash_generated_method = "2F16FFAD252B6747D89DAB629861FBF2")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:09.473 -0400", hash_original_method = "A6A8746AE8743344ECC9244BF17B5285", hash_generated_method = "F3A378C9C126F37BA468AFD9678AF5B8")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     @android.view.RemotableViewMethod
     public void setWidth(int pixels) {
         dsTaint.addTaint(pixels);
@@ -2831,8 +2813,8 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.131 -0400", hash_original_method = "9D5DCCC1076394887EA3B21F5DF8F706", hash_generated_method = "4C568E775DF85F6401DCF5F975B37A7A")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:09.474 -0400", hash_original_method = "9D5DCCC1076394887EA3B21F5DF8F706", hash_generated_method = "52F054E400B4BEA9E41549199D1D5CE1")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     public void setLineSpacing(float add, float mult) {
         dsTaint.addTaint(mult);
         dsTaint.addTaint(add);
@@ -2856,7 +2838,7 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.132 -0400", hash_original_method = "699FFD9CCBE3B133871A47DAD4072321", hash_generated_method = "785814ADA51926E75846E892BA62C207")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:09.474 -0400", hash_original_method = "699FFD9CCBE3B133871A47DAD4072321", hash_generated_method = "BAE0C224BC34D0E0D980E3AA6156DE84")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public final void append(CharSequence text) {
         dsTaint.addTaint(text);
@@ -2866,8 +2848,8 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.132 -0400", hash_original_method = "B2621C1C8DC7A6B197F310747926C024", hash_generated_method = "D6F794A6C1512A4485BEF269FA5C0AC1")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:09.474 -0400", hash_original_method = "B2621C1C8DC7A6B197F310747926C024", hash_generated_method = "8C29CA67585F84CF9F79C2761D5C1F7C")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     public void append(CharSequence text, int start, int end) {
         dsTaint.addTaint(text);
         dsTaint.addTaint(start);
@@ -2884,7 +2866,7 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.132 -0400", hash_original_method = "ADC7043537742A0A0C5E53BD45A182BE", hash_generated_method = "B3622C010B64804B92FB1C00A598D786")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:09.474 -0400", hash_original_method = "ADC7043537742A0A0C5E53BD45A182BE", hash_generated_method = "C7E9AA344A0FD06A0E2B5A9EBA7A2983")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     private void updateTextColors() {
         boolean inval;
@@ -2905,7 +2887,7 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
         {
             color = mHintTextColor.getColorForState(getDrawableState(), 0);
             {
-                boolean var945E40D0ED79B723BC035DCD3A98AEB6_1001817680 = (color != mCurHintTextColor && mText.length() == 0);
+                boolean var945E40D0ED79B723BC035DCD3A98AEB6_566522897 = (color != mCurHintTextColor && mText.length() == 0);
                 {
                     mCurHintTextColor = color;
                     inval = true;
@@ -2942,56 +2924,56 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.132 -0400", hash_original_method = "3E3CC8861E854C1E6B450E5CB8D8974F", hash_generated_method = "BE4A943B0EA953B41D7187254BF15751")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:09.475 -0400", hash_original_method = "3E3CC8861E854C1E6B450E5CB8D8974F", hash_generated_method = "EFA75560E21F711B39CCF878BC86DCFD")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     @Override
     protected void drawableStateChanged() {
         super.drawableStateChanged();
         {
-            boolean varF38C62369483FE4C64EC61B6DD68F7F8_943525557 = (mTextColor != null && mTextColor.isStateful()
+            boolean varF38C62369483FE4C64EC61B6DD68F7F8_1252828190 = (mTextColor != null && mTextColor.isStateful()
                 || (mHintTextColor != null && mHintTextColor.isStateful())
                 || (mLinkTextColor != null && mLinkTextColor.isStateful()));
             {
                 updateTextColors();
             } //End block
         } //End collapsed parenthetic
-        final Drawables dr;
+        Drawables dr;
         dr = mDrawables;
         {
             int[] state;
             state = getDrawableState();
             {
-                boolean varACD1486C54959F8A8C53C39EC3474E1F_356775102 = (dr.mDrawableTop != null && dr.mDrawableTop.isStateful());
+                boolean varACD1486C54959F8A8C53C39EC3474E1F_42592482 = (dr.mDrawableTop != null && dr.mDrawableTop.isStateful());
                 {
                     dr.mDrawableTop.setState(state);
                 } //End block
             } //End collapsed parenthetic
             {
-                boolean var75A7C8EBF3DB0CE7B23F457B9BBE81BE_2107024280 = (dr.mDrawableBottom != null && dr.mDrawableBottom.isStateful());
+                boolean var75A7C8EBF3DB0CE7B23F457B9BBE81BE_777436856 = (dr.mDrawableBottom != null && dr.mDrawableBottom.isStateful());
                 {
                     dr.mDrawableBottom.setState(state);
                 } //End block
             } //End collapsed parenthetic
             {
-                boolean var351650CF2FFB93A328E0FCD6DD1DB2A5_1553451487 = (dr.mDrawableLeft != null && dr.mDrawableLeft.isStateful());
+                boolean var351650CF2FFB93A328E0FCD6DD1DB2A5_896331360 = (dr.mDrawableLeft != null && dr.mDrawableLeft.isStateful());
                 {
                     dr.mDrawableLeft.setState(state);
                 } //End block
             } //End collapsed parenthetic
             {
-                boolean varD9BDE0148E482F4604F5C34A36FCFF7F_1663627713 = (dr.mDrawableRight != null && dr.mDrawableRight.isStateful());
+                boolean varD9BDE0148E482F4604F5C34A36FCFF7F_748471467 = (dr.mDrawableRight != null && dr.mDrawableRight.isStateful());
                 {
                     dr.mDrawableRight.setState(state);
                 } //End block
             } //End collapsed parenthetic
             {
-                boolean var324017722E1CA9DC15695D4422A8ADEC_283503219 = (dr.mDrawableStart != null && dr.mDrawableStart.isStateful());
+                boolean var324017722E1CA9DC15695D4422A8ADEC_1248131628 = (dr.mDrawableStart != null && dr.mDrawableStart.isStateful());
                 {
                     dr.mDrawableStart.setState(state);
                 } //End block
             } //End collapsed parenthetic
             {
-                boolean var6C06DB7410AEA6854519536D78FF530C_924043567 = (dr.mDrawableEnd != null && dr.mDrawableEnd.isStateful());
+                boolean var6C06DB7410AEA6854519536D78FF530C_179568133 = (dr.mDrawableEnd != null && dr.mDrawableEnd.isStateful());
                 {
                     dr.mDrawableEnd.setState(state);
                 } //End block
@@ -3002,7 +2984,7 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.132 -0400", hash_original_method = "AF2C3EA4891B79A54157B80D9A5CB454", hash_generated_method = "A333D7E9A30C1C166AFB6D51C05D1518")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:09.496 -0400", hash_original_method = "AF2C3EA4891B79A54157B80D9A5CB454", hash_generated_method = "BFA078B8BB5B582982C559F05FD04AE9")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     @Override
     public Parcelable onSaveInstanceState() {
@@ -3044,7 +3026,7 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
                 ss.text = mText.toString();
             } //End block
             {
-                boolean var7B30392DD0636DC4945382169DDF5396_782102164 = (isFocused() && start >= 0 && end >= 0);
+                boolean var7B30392DD0636DC4945382169DDF5396_1708569932 = (isFocused() && start >= 0 && end >= 0);
                 {
                     ss.frozenWithFocus = true;
                 } //End block
@@ -3057,7 +3039,7 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.133 -0400", hash_original_method = "F2FC1C379415C0983647E04C4964FB91", hash_generated_method = "4168F286184876784EC2873AAF97EF57")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:09.497 -0400", hash_original_method = "F2FC1C379415C0983647E04C4964FB91", hash_generated_method = "8035607A090282DF36C9DB848BDE5819")
     //DSFIXME:  CODE0002: Requires DSC value to be set
      void removeMisspelledSpans(Spannable spannable) {
         dsTaint.addTaint(spannable.dsTaint);
@@ -3088,7 +3070,7 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.133 -0400", hash_original_method = "F50E2D5CE86BF5E6A61BC8360971F12F", hash_generated_method = "F779BCDD48CF2888C1DF1D879B53B66A")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:09.497 -0400", hash_original_method = "F50E2D5CE86BF5E6A61BC8360971F12F", hash_generated_method = "9096C1654A7D99CF6204D27257F20CFE")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     @Override
     public void onRestoreInstanceState(Parcelable state) {
@@ -3124,20 +3106,24 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
             } //End block
         } //End block
         {
-            final CharSequence error;
+            CharSequence error;
             error = ss.error;
-            post(new Runnable() {
+            post(new Runnable() {                
+                @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:09.497 -0400", hash_original_method = "6D4719BAECED3DD83F9692F93AFBC954", hash_generated_method = "28C54C47F8D5EF53BCA9BB85B0F3683C")
+                //DSFIXME:  CODE0002: Requires DSC value to be set
                 public void run() {
                     setError(error);
+                    // ---------- Original Method ----------
+                    //setError(error);
                 }
-            });
+});
         } //End block
         // ---------- Original Method ----------
         // Original Method Too Long, Refer to Original Implementation
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.133 -0400", hash_original_method = "73E23EE9831A5ABB45118C6D9D08B19B", hash_generated_method = "A6B85C781E6514DCE00262F368F4BBA7")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:09.498 -0400", hash_original_method = "73E23EE9831A5ABB45118C6D9D08B19B", hash_generated_method = "B6CC83DB2036CBCBD90B57B03B8F410F")
     @DSModeled(DSC.SAFE)
     @android.view.RemotableViewMethod
     public void setFreezesText(boolean freezesText) {
@@ -3147,7 +3133,7 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.133 -0400", hash_original_method = "8E3F839ECE8B91BC1C15216DAAE76890", hash_generated_method = "F81EB9BBDF5D5B6C7055F1B3B0727DD6")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:09.498 -0400", hash_original_method = "8E3F839ECE8B91BC1C15216DAAE76890", hash_generated_method = "B6B1B99F508A6B3AC620AD27FAC43D33")
     @DSModeled(DSC.SAFE)
     public boolean getFreezesText() {
         return dsTaint.getTaintBoolean();
@@ -3156,8 +3142,8 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.133 -0400", hash_original_method = "72071F64A960BCDF8628E8519218C076", hash_generated_method = "A63721822798465BBEA6DDF104672EB6")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:09.498 -0400", hash_original_method = "72071F64A960BCDF8628E8519218C076", hash_generated_method = "D03D6209BD5E211D430F25A452CE42AD")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     public final void setEditableFactory(Editable.Factory factory) {
         dsTaint.addTaint(factory.dsTaint);
         setText(mText);
@@ -3167,8 +3153,8 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.133 -0400", hash_original_method = "EE70434E54240A6008C9D2EA9B017339", hash_generated_method = "8CA98296AD89E47F6EC98EA125658341")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:09.498 -0400", hash_original_method = "EE70434E54240A6008C9D2EA9B017339", hash_generated_method = "BF2A52D1C8CD67244597E953402713F8")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     public final void setSpannableFactory(Spannable.Factory factory) {
         dsTaint.addTaint(factory.dsTaint);
         setText(mText);
@@ -3178,8 +3164,8 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.133 -0400", hash_original_method = "F37C8918E495A353D909855BE6AEA0B3", hash_generated_method = "42798EC8012B435C6A041C42858440E1")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:09.498 -0400", hash_original_method = "F37C8918E495A353D909855BE6AEA0B3", hash_generated_method = "8E584925C1E324974E3D130316E924C9")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     @android.view.RemotableViewMethod
     public final void setText(CharSequence text) {
         dsTaint.addTaint(text);
@@ -3189,8 +3175,8 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.133 -0400", hash_original_method = "8D1404A47F965A96F115CE2D4080AFCB", hash_generated_method = "EC6E41EC8F876897CC755926B99A34BE")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:09.499 -0400", hash_original_method = "8D1404A47F965A96F115CE2D4080AFCB", hash_generated_method = "12DCCEBED38767B02CC096141692F01E")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     @android.view.RemotableViewMethod
     public final void setTextKeepState(CharSequence text) {
         dsTaint.addTaint(text);
@@ -3200,8 +3186,8 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.133 -0400", hash_original_method = "607651EBB019EF2524713C89A6A4FC8C", hash_generated_method = "4948E8B91CC578CA67A1F6396950B6BF")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:09.499 -0400", hash_original_method = "607651EBB019EF2524713C89A6A4FC8C", hash_generated_method = "5F1F9216E0C8BA47A71B0244BA2D7937")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     public void setText(CharSequence text, BufferType type) {
         dsTaint.addTaint(text);
         dsTaint.addTaint(type.dsTaint);
@@ -3217,7 +3203,7 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.134 -0400", hash_original_method = "EBAE4ED74D570AD4FF310073DD3BF4E5", hash_generated_method = "0097B955A50F2FD00837E1BFA3861F4D")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:09.500 -0400", hash_original_method = "EBAE4ED74D570AD4FF310073DD3BF4E5", hash_generated_method = "434B8A18E4C2F9B48521BAC75007674F")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     private void setText(CharSequence text, BufferType type,
                          boolean notifyBefore, int oldlen) {
@@ -3229,18 +3215,18 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
             text = "";
         } //End block
         {
-            boolean var39C938BA181442FDC10CD6D971F0DA0A_634466424 = (!isSuggestionsEnabled());
+            boolean var39C938BA181442FDC10CD6D971F0DA0A_1553079099 = (!isSuggestionsEnabled());
             {
                 text = removeSuggestionSpans(text);
             } //End block
         } //End collapsed parenthetic
         mTextPaint.setTextScaleX(1.0f);
         {
-            boolean var61457476FF8B912C20F73CBD6BFFF2E9_1778092371 = (text instanceof Spanned &&
+            boolean var61457476FF8B912C20F73CBD6BFFF2E9_1218855940 = (text instanceof Spanned &&
             ((Spanned) text).getSpanStart(TextUtils.TruncateAt.MARQUEE) >= 0);
             {
                 {
-                    boolean varA499503C31DDA8FD1F6C5109B7E818B8_913538393 = (ViewConfiguration.get(mContext).isFadingMarqueeEnabled());
+                    boolean varA499503C31DDA8FD1F6C5109B7E818B8_1931076502 = (ViewConfiguration.get(mContext).isFadingMarqueeEnabled());
                     {
                         setHorizontalFadingEdgeEnabled(true);
                         mMarqueeFadeMode = MARQUEE_FADE_NORMAL;
@@ -3279,7 +3265,7 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
         boolean needEditableForNotification;
         needEditableForNotification = false;
         {
-            boolean var1E59861D1519785A5B1D3AA4CF100E2E_1543135020 = (mListeners != null && mListeners.size() != 0);
+            boolean var1E59861D1519785A5B1D3AA4CF100E2E_1115119922 = (mListeners != null && mListeners.size() != 0);
             {
                 needEditableForNotification = true;
             } //End block
@@ -3308,12 +3294,12 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
                 s2 = mSpannableFactory.newSpannable(text);
             } //End block
             {
-                boolean var97F4E593FAFDDCB3DADB34B707ECC3A4_1833582910 = (Linkify.addLinks(s2, mAutoLinkMask));
+                boolean var97F4E593FAFDDCB3DADB34B707ECC3A4_869872975 = (Linkify.addLinks(s2, mAutoLinkMask));
                 {
                     text = s2;
                     type = (type == BufferType.EDITABLE) ? BufferType.EDITABLE : BufferType.SPANNABLE;
                     {
-                        boolean var397E1740E7A0A45470AA95146AAA2DB6_202727838 = (mLinksClickable && !textCanBeSelected());
+                        boolean var397E1740E7A0A45470AA95146AAA2DB6_1795779986 = (mLinksClickable && !textCanBeSelected());
                         {
                             setMovementMethod(LinkMovementMethod.getInstance());
                         } //End block
@@ -3324,14 +3310,14 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
         {
             mTransformed = mTransformation.getTransformation(text, this);
         } //End block
-        final int textLength;
+        int textLength;
         textLength = text.length();
         {
             Spannable sp;
             sp = (Spannable) text;
-            final ChangeWatcher[] watchers;
+            ChangeWatcher[] watchers;
             watchers = sp.getSpans(0, sp.length(), ChangeWatcher.class);
-            final int count;
+            int count;
             count = watchers.length;
             {
                 int i;
@@ -3366,17 +3352,16 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.134 -0400", hash_original_method = "36BFF315CD4AAC9D68E14477979C2AB5", hash_generated_method = "B0E1C577C515B92C4E7E14BD4879199F")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:09.500 -0400", hash_original_method = "36BFF315CD4AAC9D68E14477979C2AB5", hash_generated_method = "D1BAA9D2723D78F21B864ED2426881ED")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public final void setText(char[] text, int start, int len) {
-        dsTaint.addTaint(text);
+        dsTaint.addTaint(text[0]);
         dsTaint.addTaint(start);
         dsTaint.addTaint(len);
         int oldlen;
         oldlen = 0;
-        if (DroidSafeAndroidRuntime.control)
         {
-            throw new IndexOutOfBoundsException(start + ", " + len);
+            if (DroidSafeAndroidRuntime.control) throw new IndexOutOfBoundsException(start + ", " + len);
         } //End block
         {
             oldlen = mText.length();
@@ -3412,7 +3397,7 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.134 -0400", hash_original_method = "9AF748BA799D545173D512FE98AE91A8", hash_generated_method = "96676A0FD76178B58B131A233E88FEF9")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:09.501 -0400", hash_original_method = "9AF748BA799D545173D512FE98AE91A8", hash_generated_method = "DA1757B273F253AA2568FE3A43E5D26F")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public final void setTextKeepState(CharSequence text, BufferType type) {
         dsTaint.addTaint(text);
@@ -3446,7 +3431,7 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.135 -0400", hash_original_method = "F67FB9F700F5516CACC8B84E46FAB678", hash_generated_method = "3DDC28935F9F0425E683F7BC1B8F588A")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:09.501 -0400", hash_original_method = "F67FB9F700F5516CACC8B84E46FAB678", hash_generated_method = "274226C0A3E208D57D55C949761E050C")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     @android.view.RemotableViewMethod
     public final void setText(int resid) {
@@ -3457,7 +3442,7 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.135 -0400", hash_original_method = "A59BD645A347EA39C4147D9E24C2BE1F", hash_generated_method = "B2E6D2EA5D09CFF3B8655D327FF9F859")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:09.501 -0400", hash_original_method = "A59BD645A347EA39C4147D9E24C2BE1F", hash_generated_method = "184D88428946C20DE03AE21C962E25B8")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public final void setText(int resid, BufferType type) {
         dsTaint.addTaint(resid);
@@ -3468,7 +3453,7 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.135 -0400", hash_original_method = "E428F8CA5E03E5225CDDDB51AA0FFAC9", hash_generated_method = "50C8992746C08FE6D9A73ED40F974149")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:09.501 -0400", hash_original_method = "E428F8CA5E03E5225CDDDB51AA0FFAC9", hash_generated_method = "82026B9C7648B0B020F995412EE44683")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     @android.view.RemotableViewMethod
     public final void setHint(CharSequence hint) {
@@ -3478,7 +3463,7 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
             checkForRelayout();
         } //End block
         {
-            boolean varC3772D22FF7A469D7982AA256079D67D_345483254 = (mText.length() == 0);
+            boolean varC3772D22FF7A469D7982AA256079D67D_77357996 = (mText.length() == 0);
             {
                 invalidate();
             } //End block
@@ -3494,7 +3479,7 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.135 -0400", hash_original_method = "38FC4DBAEFB265C97233FE4F28F668E7", hash_generated_method = "F2E8C012B79FD87BEA1A6C3957D355AB")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:09.502 -0400", hash_original_method = "38FC4DBAEFB265C97233FE4F28F668E7", hash_generated_method = "3756BE98BD3379C9C888C5CDC4C4C81A")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     @android.view.RemotableViewMethod
     public final void setHint(int resid) {
@@ -3505,7 +3490,7 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.135 -0400", hash_original_method = "B545FCA8809064A694F5A37F99B0BBF1", hash_generated_method = "9F4921FF7921AD62FD82754607769197")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:09.502 -0400", hash_original_method = "B545FCA8809064A694F5A37F99B0BBF1", hash_generated_method = "024D3C074E1FA2C96B3DB56C74646583")
     @DSModeled(DSC.SAFE)
     @ViewDebug.CapturedViewProperty
     public CharSequence getHint() {
@@ -3515,25 +3500,24 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.135 -0400", hash_original_method = "CF798DBA236922C7D3F20B562F3C113C", hash_generated_method = "6EB0B365903FFEA482F4C4B0A27940DE")
-    private static boolean isMultilineInputType(int type) {
+        private static boolean isMultilineInputType(int type) {
         return (type & (EditorInfo.TYPE_MASK_CLASS | EditorInfo.TYPE_TEXT_FLAG_MULTI_LINE)) ==
             (EditorInfo.TYPE_CLASS_TEXT | EditorInfo.TYPE_TEXT_FLAG_MULTI_LINE);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.135 -0400", hash_original_method = "49514C27E12484581D1021562BB6B56C", hash_generated_method = "92A12BF4D726B83B3946EE48F553136B")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:09.502 -0400", hash_original_method = "49514C27E12484581D1021562BB6B56C", hash_generated_method = "C9947E579FFD23AF08EDD5141015E2A2")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public void setInputType(int type) {
         dsTaint.addTaint(type);
-        final boolean wasPassword;
+        boolean wasPassword;
         wasPassword = isPasswordInputType(mInputType);
-        final boolean wasVisiblePassword;
+        boolean wasVisiblePassword;
         wasVisiblePassword = isVisiblePasswordInputType(mInputType);
         setInputType(type, false);
-        final boolean isPassword;
+        boolean isPassword;
         isPassword = isPasswordInputType(type);
-        final boolean isVisiblePassword;
+        boolean isVisiblePassword;
         isVisiblePassword = isVisiblePasswordInputType(type);
         boolean forceUpdate;
         forceUpdate = false;
@@ -3543,7 +3527,7 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
         } //End block
         {
             {
-                boolean var8E3893E4544969EB4AD418651F643506_669312517 = (mTransformation == PasswordTransformationMethod.getInstance());
+                boolean var8E3893E4544969EB4AD418651F643506_1723727478 = (mTransformation == PasswordTransformationMethod.getInstance());
                 {
                     forceUpdate = true;
                 } //End block
@@ -3553,7 +3537,7 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
         {
             setTypefaceByIndex(-1, -1);
             {
-                boolean var8E3893E4544969EB4AD418651F643506_1330190853 = (mTransformation == PasswordTransformationMethod.getInstance());
+                boolean var8E3893E4544969EB4AD418651F643506_633210828 = (mTransformation == PasswordTransformationMethod.getInstance());
                 {
                     forceUpdate = true;
                 } //End block
@@ -3565,7 +3549,7 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
             applySingleLine(singleLine, !isPassword, true);
         } //End block
         {
-            boolean var39C938BA181442FDC10CD6D971F0DA0A_140647600 = (!isSuggestionsEnabled());
+            boolean var39C938BA181442FDC10CD6D971F0DA0A_1466751938 = (!isSuggestionsEnabled());
             {
                 mText = removeSuggestionSpans(mText);
             } //End block
@@ -3578,7 +3562,7 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.135 -0400", hash_original_method = "103CDD92E42BC521C8FE05F02491D14C", hash_generated_method = "291752BBC8A02A59FB8D6DA4616F8C3F")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:09.503 -0400", hash_original_method = "103CDD92E42BC521C8FE05F02491D14C", hash_generated_method = "4CCB4BCD9C39B61EAFD7FF4B8CACAFD0")
     @DSModeled(DSC.SAFE)
     private boolean hasPasswordTransformationMethod() {
         return dsTaint.getTaintBoolean();
@@ -3587,8 +3571,7 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.135 -0400", hash_original_method = "E0A9182B87E4303FDDF2B8B7ED0929E4", hash_generated_method = "FC94ED4940EE725651B02473EC2D27D2")
-    private static boolean isPasswordInputType(int inputType) {
+        private static boolean isPasswordInputType(int inputType) {
         final int variation =
                 inputType & (EditorInfo.TYPE_MASK_CLASS | EditorInfo.TYPE_MASK_VARIATION);
         return variation
@@ -3600,8 +3583,7 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.135 -0400", hash_original_method = "184D7B00FEDEC84189B51C8F1682F683", hash_generated_method = "40626CA272A26BF73AE4224D8B70099C")
-    private static boolean isVisiblePasswordInputType(int inputType) {
+        private static boolean isVisiblePasswordInputType(int inputType) {
         final int variation =
                 inputType & (EditorInfo.TYPE_MASK_CLASS | EditorInfo.TYPE_MASK_VARIATION);
         return variation
@@ -3609,7 +3591,7 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.135 -0400", hash_original_method = "5561319FE52E5BCF6B9F27794140DEB3", hash_generated_method = "A36ACC1F1235CB85A11AAC09A8D6695E")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:09.503 -0400", hash_original_method = "5561319FE52E5BCF6B9F27794140DEB3", hash_generated_method = "C8A679F727BB0AB54638B11734812C3C")
     @DSModeled(DSC.SAFE)
     public void setRawInputType(int type) {
         dsTaint.addTaint(type);
@@ -3618,12 +3600,12 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.136 -0400", hash_original_method = "95BF8AE0F4607DDA852256E0031089E3", hash_generated_method = "D6FED7AB7F678244EF91ADF5309A22AB")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:09.504 -0400", hash_original_method = "95BF8AE0F4607DDA852256E0031089E3", hash_generated_method = "C61EDD54DB71F74D04E6C3B4EAC84974")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     private void setInputType(int type, boolean direct) {
         dsTaint.addTaint(direct);
         dsTaint.addTaint(type);
-        final int cls;
+        int cls;
         cls = type & EditorInfo.TYPE_MASK_CLASS;
         KeyListener input;
         {
@@ -3676,7 +3658,7 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.136 -0400", hash_original_method = "CC20F62DEC3871662808940856B4AD97", hash_generated_method = "B6DCC78D31034474EFD5E94C78B3E4DC")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:09.504 -0400", hash_original_method = "CC20F62DEC3871662808940856B4AD97", hash_generated_method = "E2BBC4E2D768DCB2C58516DD5FAEA123")
     @DSModeled(DSC.SAFE)
     public int getInputType() {
         return dsTaint.getTaintInt();
@@ -3685,8 +3667,8 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.136 -0400", hash_original_method = "15D43244184C7971E001BEB05B105E77", hash_generated_method = "14DEAD769EC1D6B6E01F21DD366FFFB9")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:09.504 -0400", hash_original_method = "15D43244184C7971E001BEB05B105E77", hash_generated_method = "5EB8D2F8765D43D32DA8EF084BABFB0E")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     public void setImeOptions(int imeOptions) {
         dsTaint.addTaint(imeOptions);
         {
@@ -3701,7 +3683,7 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.136 -0400", hash_original_method = "2B64657558FBAC5C9C7E6BDC8C1A3258", hash_generated_method = "B472D44A16082F23E06C4FB7C345258C")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:09.505 -0400", hash_original_method = "2B64657558FBAC5C9C7E6BDC8C1A3258", hash_generated_method = "DD0D5323C432893EA0E962E5E0AE7F1B")
     @DSModeled(DSC.SAFE)
     public int getImeOptions() {
         return dsTaint.getTaintInt();
@@ -3711,10 +3693,9 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.136 -0400", hash_original_method = "1A4477F3225C39150F0F3FBD7557F91B", hash_generated_method = "1E95D7D422716EF33EF3B80FBC9EE791")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:09.505 -0400", hash_original_method = "1A4477F3225C39150F0F3FBD7557F91B", hash_generated_method = "2074D7257AA8F42C649865BFD52D1257")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     public void setImeActionLabel(CharSequence label, int actionId) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
         dsTaint.addTaint(label);
         dsTaint.addTaint(actionId);
         {
@@ -3731,10 +3712,9 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.136 -0400", hash_original_method = "A4E3D8286D59E9D4715BBC467F3D8808", hash_generated_method = "A4A273B43F3FEF20CAAFCA7444D75E51")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:09.505 -0400", hash_original_method = "A4E3D8286D59E9D4715BBC467F3D8808", hash_generated_method = "B4222B0B1BFC11992677A88C89943F6B")
     @DSModeled(DSC.SAFE)
     public CharSequence getImeActionLabel() {
-        //DSFIXME:  CODE0009: Possible callback target function detected
         return dsTaint.getTaintString();
         // ---------- Original Method ----------
         //return mInputContentType != null
@@ -3742,10 +3722,9 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.136 -0400", hash_original_method = "4B4E4CA7604BFFF08B66F520F2D9A667", hash_generated_method = "370F095809329D181C49DF6A6FEF51BD")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:09.505 -0400", hash_original_method = "4B4E4CA7604BFFF08B66F520F2D9A667", hash_generated_method = "E0890BC7E8BFFBDC3D289F287A31B207")
     @DSModeled(DSC.SAFE)
     public int getImeActionId() {
-        //DSFIXME:  CODE0009: Possible callback target function detected
         return dsTaint.getTaintInt();
         // ---------- Original Method ----------
         //return mInputContentType != null
@@ -3753,10 +3732,9 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.136 -0400", hash_original_method = "46DFB908E4A3870151F9CA120300C85B", hash_generated_method = "E07BBF730B8233DFAAC46422186BC743")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:09.506 -0400", hash_original_method = "46DFB908E4A3870151F9CA120300C85B", hash_generated_method = "1943840BF091C1ED0863EC866801DB9E")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     public void setOnEditorActionListener(OnEditorActionListener l) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
         dsTaint.addTaint(l.dsTaint);
         {
             mInputContentType = new InputContentType();
@@ -3770,17 +3748,17 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.137 -0400", hash_original_method = "0518018E7AD402CBF7FDAFFEA66C2B57", hash_generated_method = "6CB66B76FFD18DFD0280EEA350ABE52F")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:09.506 -0400", hash_original_method = "0518018E7AD402CBF7FDAFFEA66C2B57", hash_generated_method = "27BD01B6E3108D2CDF65804CE479B659")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public void onEditorAction(int actionCode) {
         //DSFIXME:  CODE0009: Possible callback target function detected
         dsTaint.addTaint(actionCode);
-        final InputContentType ict;
+        InputContentType ict;
         ict = mInputContentType;
         {
             {
                 {
-                    boolean varC6096D11527A2336F0603C550DF9620B_1837754375 = (ict.onEditorActionListener.onEditorAction(this,
+                    boolean varC6096D11527A2336F0603C550DF9620B_434461294 = (ict.onEditorActionListener.onEditorAction(this,
                         actionCode, null));
                 } //End collapsed parenthetic
             } //End block
@@ -3789,10 +3767,9 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
                 v = focusSearch(FOCUS_FORWARD);
                 {
                     {
-                        boolean var1C5B6BCE2F4451CCE5A9C33B9CF3E849_203955520 = (!v.requestFocus(FOCUS_FORWARD));
-				        if (DroidSafeAndroidRuntime.control)
+                        boolean var1C5B6BCE2F4451CCE5A9C33B9CF3E849_1088358803 = (!v.requestFocus(FOCUS_FORWARD));
                         {
-                            throw new IllegalStateException("focus search returned a view " +
+                            if (DroidSafeAndroidRuntime.control) throw new IllegalStateException("focus search returned a view " +
                                 "that wasn't able to take focus!");
                         } //End block
                     } //End collapsed parenthetic
@@ -3803,10 +3780,9 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
                 v = focusSearch(FOCUS_BACKWARD);
                 {
                     {
-                        boolean varF90963F65450DE26E78172A72D4AE61B_736023970 = (!v.requestFocus(FOCUS_BACKWARD));
-				        if (DroidSafeAndroidRuntime.control)
+                        boolean varF90963F65450DE26E78172A72D4AE61B_1207109016 = (!v.requestFocus(FOCUS_BACKWARD));
                         {
-                            throw new IllegalStateException("focus search returned a view " +
+                            if (DroidSafeAndroidRuntime.control) throw new IllegalStateException("focus search returned a view " +
                                 "that wasn't able to take focus!");
                         } //End block
                     } //End collapsed parenthetic
@@ -3816,7 +3792,7 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
                 InputMethodManager imm;
                 imm = InputMethodManager.peekInstance();
                 {
-                    boolean var4FA09E363AF255ACFA7DE6A3A2C1C773_1833011536 = (imm != null && imm.isActive(this));
+                    boolean var4FA09E363AF255ACFA7DE6A3A2C1C773_252426054 = (imm != null && imm.isActive(this));
                     {
                         imm.hideSoftInputFromWindow(getWindowToken(), 0);
                     } //End block
@@ -3846,8 +3822,8 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.137 -0400", hash_original_method = "E93C7F3F4C0717B4FFE77CC972CA5ABA", hash_generated_method = "87D2FCE8E91242FB7072DD675917A644")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:09.506 -0400", hash_original_method = "E93C7F3F4C0717B4FFE77CC972CA5ABA", hash_generated_method = "E3A83EFB8A586CEFEE6B63CF9860B728")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     public void setPrivateImeOptions(String type) {
         dsTaint.addTaint(type);
         mInputContentType = new InputContentType();
@@ -3858,7 +3834,7 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.137 -0400", hash_original_method = "92B56934BB38E74A857D4D87A23CFEBD", hash_generated_method = "27F33C6C3152D133B1D154FA4D9D9CE3")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:09.507 -0400", hash_original_method = "92B56934BB38E74A857D4D87A23CFEBD", hash_generated_method = "86D92E8FA2EDD5BECCE93E0759BE1CE3")
     @DSModeled(DSC.SAFE)
     public String getPrivateImeOptions() {
         return dsTaint.getTaintString();
@@ -3868,7 +3844,7 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.137 -0400", hash_original_method = "4D2957EAEB6AF33B1C49D1AAB860E441", hash_generated_method = "35355BD158A477C2B58481AA959E347B")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:09.507 -0400", hash_original_method = "4D2957EAEB6AF33B1C49D1AAB860E441", hash_generated_method = "2FD28DE13E653F729087C1098CD2CDD9")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public void setInputExtras(int xmlResId) throws XmlPullParserException, IOException {
         dsTaint.addTaint(xmlResId);
@@ -3885,8 +3861,8 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.137 -0400", hash_original_method = "3CCBAE1ACA56EC727CC56362E5EC99DC", hash_generated_method = "58372EC3A52820E2870D0320A864E8EA")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:09.507 -0400", hash_original_method = "3CCBAE1ACA56EC727CC56362E5EC99DC", hash_generated_method = "08C6689F72A2819A7184A48863158016")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     public Bundle getInputExtras(boolean create) {
         dsTaint.addTaint(create);
         {
@@ -3909,7 +3885,7 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.137 -0400", hash_original_method = "9A980CBEBB946A11C624D95D8D1017B2", hash_generated_method = "8602D33A9C48A71E60FC1A99A19D7E2E")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:09.507 -0400", hash_original_method = "9A980CBEBB946A11C624D95D8D1017B2", hash_generated_method = "9BD0D41F12F468369B1C9F296ED354ED")
     @DSModeled(DSC.SAFE)
     public CharSequence getError() {
         return dsTaint.getTaintString();
@@ -3918,7 +3894,7 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.137 -0400", hash_original_method = "D7457C91A83A908A8309ED29F602BDCA", hash_generated_method = "36D14F6133A38954D7B99060CFF1A004")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:09.508 -0400", hash_original_method = "D7457C91A83A908A8309ED29F602BDCA", hash_generated_method = "DB33602425BCC863809D7579CF0E0979")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     @android.view.RemotableViewMethod
     public void setError(CharSequence error) {
@@ -3945,18 +3921,18 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.138 -0400", hash_original_method = "A707A7C4B74C4D669C69114C0D73A7BA", hash_generated_method = "236DC79FE8058B479DA7E5D968E3FCAD")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:09.508 -0400", hash_original_method = "A707A7C4B74C4D669C69114C0D73A7BA", hash_generated_method = "14FDC14E52B6703A44B3D3F32EB991E9")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public void setError(CharSequence error, Drawable icon) {
         dsTaint.addTaint(icon.dsTaint);
         dsTaint.addTaint(error);
         error = TextUtils.stringOrSpannedString(error);
         mErrorWasChanged = true;
-        final Drawables dr;
+        Drawables dr;
         dr = mDrawables;
         {
             {
-                Object var9F1D8BFC1663434C04073ED5C9ABAE03_2137900331 = (getResolvedLayoutDirection());
+                Object var9F1D8BFC1663434C04073ED5C9ABAE03_1698725029 = (getResolvedLayoutDirection());
                 //Begin case default LAYOUT_DIRECTION_LTR 
                 setCompoundDrawables(dr.mDrawableLeft, dr.mDrawableTop, icon,
                             dr.mDrawableBottom);
@@ -3973,7 +3949,7 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
         {
             {
                 {
-                    boolean var4EAD5BA12B52AD8D73AFD9224AD88B47_1050729340 = (mPopup.isShowing());
+                    boolean var4EAD5BA12B52AD8D73AFD9224AD88B47_1549426979 = (mPopup.isShowing());
                     {
                         mPopup.dismiss();
                     } //End block
@@ -3983,7 +3959,7 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
         } //End block
         {
             {
-                boolean var98C1250B21329AE579A768A5FB60FE48_2072963656 = (isFocused());
+                boolean var98C1250B21329AE579A768A5FB60FE48_1227835928 = (isFocused());
                 {
                     showError();
                 } //End block
@@ -3994,11 +3970,11 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.138 -0400", hash_original_method = "691606EEB666F38CF8433096C671CCBD", hash_generated_method = "94FEE2C719D19454E4A1336CF668E42C")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:09.508 -0400", hash_original_method = "691606EEB666F38CF8433096C671CCBD", hash_generated_method = "9E3A09461BDC3D517FA92A914B3E09E3")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     private void showError() {
         {
-            boolean varFF25C8C36D549896D247167EFDFCA86E_2141759609 = (getWindowToken() == null);
+            boolean varFF25C8C36D549896D247167EFDFCA86E_1335165802 = (getWindowToken() == null);
             {
                 mShowErrorAfterAttach = true;
             } //End block
@@ -4006,10 +3982,10 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
         {
             LayoutInflater inflater;
             inflater = LayoutInflater.from(getContext());
-            final TextView err;
+            TextView err;
             err = (TextView) inflater.inflate(
                     com.android.internal.R.layout.textview_hint, null);
-            final float scale;
+            float scale;
             scale = getResources().getDisplayMetrics().density;
             mPopup = new ErrorPopup(err, (int) (200 * scale + 0.5f), (int) (50 * scale + 0.5f));
             mPopup.setFocusable(false);
@@ -4026,14 +4002,14 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.138 -0400", hash_original_method = "193E855DAAE9F0495F7DD2501E8046B7", hash_generated_method = "6437CAF5ED7354157558D4F33A381B66")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:09.509 -0400", hash_original_method = "193E855DAAE9F0495F7DD2501E8046B7", hash_generated_method = "8E3845F01CF735F55E74A864D9369916")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     private int getErrorX() {
-        final float scale;
+        float scale;
         scale = getResources().getDisplayMetrics().density;
-        final Drawables dr;
+        Drawables dr;
         dr = mDrawables;
-        int var5CC39021D81A29A88ABF707530C095B6_1487204772 = (getWidth() - mPopup.getWidth() - getPaddingRight() -
+        int var5CC39021D81A29A88ABF707530C095B6_1064709628 = (getWidth() - mPopup.getWidth() - getPaddingRight() -
                 (dr != null ? dr.mDrawableSizeRight : 0) / 2 + (int) (25 * scale + 0.5f)); //DSFIXME:  CODE0008: Nested ternary operator in expression
         return dsTaint.getTaintInt();
         // ---------- Original Method ----------
@@ -4044,21 +4020,21 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.138 -0400", hash_original_method = "AEF78C4F5C84BB7DCAE783FBA8691257", hash_generated_method = "857A9E4A8DE3356791E574D6D334B887")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:09.509 -0400", hash_original_method = "AEF78C4F5C84BB7DCAE783FBA8691257", hash_generated_method = "9C02919160AB7FE33AFB29F0E6F6D72E")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     private int getErrorY() {
-        final int compoundPaddingTop;
+        int compoundPaddingTop;
         compoundPaddingTop = getCompoundPaddingTop();
         int vspace;
         vspace = mBottom - mTop - getCompoundPaddingBottom() - compoundPaddingTop;
-        final Drawables dr;
+        Drawables dr;
         dr = mDrawables;
         int icontop;
         icontop = compoundPaddingTop +
                 (vspace - (dr != null ? dr.mDrawableHeightRight : 0)) / 2;//DSFIXME:  CODE0008: Nested ternary operator in expression
-        final float scale;
+        float scale;
         scale = getResources().getDisplayMetrics().density;
-        int var003746F0616F92D98A8FCB729FE8B13B_2138526491 = (icontop + (dr != null ? dr.mDrawableHeightRight : 0) - getHeight() -
+        int var003746F0616F92D98A8FCB729FE8B13B_249937807 = (icontop + (dr != null ? dr.mDrawableHeightRight : 0) - getHeight() -
                 (int) (2 * scale + 0.5f)); //DSFIXME:  CODE0008: Nested ternary operator in expression
         return dsTaint.getTaintInt();
         // ---------- Original Method ----------
@@ -4073,12 +4049,12 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.138 -0400", hash_original_method = "F599686205634A1B40098A399108C287", hash_generated_method = "1F5514A78132415C051C0D281833B692")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:09.509 -0400", hash_original_method = "F599686205634A1B40098A399108C287", hash_generated_method = "C18376A9FBB233040FBBEB252EC16E5C")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     private void hideError() {
         {
             {
-                boolean var064AFD47A2F0375BD3A49E11623DCB44_1845630759 = (mPopup.isShowing());
+                boolean var064AFD47A2F0375BD3A49E11623DCB44_551311811 = (mPopup.isShowing());
                 {
                     mPopup.dismiss();
                 } //End block
@@ -4095,7 +4071,7 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.139 -0400", hash_original_method = "E776865F48A57A0CE6F068EC64FA9769", hash_generated_method = "6F8F8DB195A27D41C7CBF21998E95660")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:09.509 -0400", hash_original_method = "E776865F48A57A0CE6F068EC64FA9769", hash_generated_method = "B989DEA8527A8D6BE193FAF32951DFED")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     private void chooseSize(PopupWindow pop, CharSequence text, TextView tv) {
         dsTaint.addTaint(text);
@@ -4116,7 +4092,7 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
         {
             int i;
             i = 0;
-            boolean var042843EFDE50DED9CF686A63F696B025_565640117 = (i < l.getLineCount());
+            boolean var042843EFDE50DED9CF686A63F696B025_306640840 = (i < l.getLineCount());
             {
                 max = Math.max(max, l.getLineWidth(i));
             } //End block
@@ -4139,7 +4115,7 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.139 -0400", hash_original_method = "5914A6C90CD99156CDEB55240C7F0CC3", hash_generated_method = "BE61D5E24F3CDD2D36351A72AADD4F69")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:09.510 -0400", hash_original_method = "5914A6C90CD99156CDEB55240C7F0CC3", hash_generated_method = "698006C18050F4618F326F0B4DA2CA14")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     @Override
     protected boolean setFrame(int l, int t, int r, int b) {
@@ -4171,8 +4147,8 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.139 -0400", hash_original_method = "F008D6FB8FE5770ECA7C6E535BB409D7", hash_generated_method = "386EC7AE8DE80FBB5EC3F2E194B1B7AD")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:09.510 -0400", hash_original_method = "F008D6FB8FE5770ECA7C6E535BB409D7", hash_generated_method = "58C3F38AB1DCEF27A70B6FDEB5D5ADF4")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     private void restartMarqueeIfNeeded() {
         {
             mRestartMarquee = false;
@@ -4186,13 +4162,12 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.139 -0400", hash_original_method = "BC1716C27CAAB9B1A5BA926037A5041B", hash_generated_method = "2945FCEAEBB4880FD07B5B8796B33D6B")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:09.510 -0400", hash_original_method = "BC1716C27CAAB9B1A5BA926037A5041B", hash_generated_method = "C30FDB9B45889235E01C8C3F5E0183C1")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     public void setFilters(InputFilter[] filters) {
         dsTaint.addTaint(filters[0].dsTaint);
-        if (DroidSafeAndroidRuntime.control)
         {
-            throw new IllegalArgumentException();
+            if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException();
         } //End block
         {
             setFilters((Editable) mText, filters);
@@ -4208,8 +4183,8 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.139 -0400", hash_original_method = "48C3B4A6108D00EDE1CFE79059C5E0E2", hash_generated_method = "ECAB60EFE4D6F44DF1F1502A298FEE87")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:09.510 -0400", hash_original_method = "48C3B4A6108D00EDE1CFE79059C5E0E2", hash_generated_method = "DD85F6A09D9D6CA66FE105F2368C8611")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     private void setFilters(Editable e, InputFilter[] filters) {
         dsTaint.addTaint(e.dsTaint);
         dsTaint.addTaint(filters[0].dsTaint);
@@ -4235,7 +4210,7 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.139 -0400", hash_original_method = "E0010D0DD1DD8F03E408AEE972028B3D", hash_generated_method = "72517622107523BEB7D841862EFB75D0")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:09.510 -0400", hash_original_method = "E0010D0DD1DD8F03E408AEE972028B3D", hash_generated_method = "87725238C2B74CB2B66708E6EC4A6126")
     @DSModeled(DSC.SAFE)
     public InputFilter[] getFilters() {
         return (InputFilter[])dsTaint.getTaint();
@@ -4244,18 +4219,18 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.139 -0400", hash_original_method = "DAA92D774C652EE383E55D96FD59260D", hash_generated_method = "4B8BC5A9351DAA827840509878A27EEB")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:09.511 -0400", hash_original_method = "DAA92D774C652EE383E55D96FD59260D", hash_generated_method = "07D0A1855EDDED7CF5F884762349F3CF")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     private int getVerticalOffset(boolean forceNormal) {
         dsTaint.addTaint(forceNormal);
         int voffset;
         voffset = 0;
-        final int gravity;
+        int gravity;
         gravity = mGravity & Gravity.VERTICAL_GRAVITY_MASK;
         Layout l;
         l = mLayout;
         {
-            boolean varD5DF217776FEC14CA244AC2CD8EE62D0_839280394 = (!forceNormal && mText.length() == 0 && mHintLayout != null);
+            boolean varD5DF217776FEC14CA244AC2CD8EE62D0_1398377085 = (!forceNormal && mText.length() == 0 && mHintLayout != null);
             {
                 l = mHintLayout;
             } //End block
@@ -4283,18 +4258,18 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.139 -0400", hash_original_method = "FA4757416C7C28BA09CF9D290B4D7551", hash_generated_method = "385ED33C66EEF3944CBADFAD05AF1053")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:09.521 -0400", hash_original_method = "FA4757416C7C28BA09CF9D290B4D7551", hash_generated_method = "F2BE744D66316DA0A4A32BD5E8A84166")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     private int getBottomVerticalOffset(boolean forceNormal) {
         dsTaint.addTaint(forceNormal);
         int voffset;
         voffset = 0;
-        final int gravity;
+        int gravity;
         gravity = mGravity & Gravity.VERTICAL_GRAVITY_MASK;
         Layout l;
         l = mLayout;
         {
-            boolean varD5DF217776FEC14CA244AC2CD8EE62D0_363931482 = (!forceNormal && mText.length() == 0 && mHintLayout != null);
+            boolean varD5DF217776FEC14CA244AC2CD8EE62D0_884211756 = (!forceNormal && mText.length() == 0 && mHintLayout != null);
             {
                 l = mHintLayout;
             } //End block
@@ -4322,16 +4297,16 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.140 -0400", hash_original_method = "53216DF5147B6AD3B10E93427C42A87D", hash_generated_method = "307D0F79089C716DA85AC223017F9AD2")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:09.523 -0400", hash_original_method = "53216DF5147B6AD3B10E93427C42A87D", hash_generated_method = "421687B0918584DB2AFE7849AF85CADA")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     private void invalidateCursorPath() {
         {
             invalidateCursor();
         } //End block
         {
-            final int horizontalPadding;
+            int horizontalPadding;
             horizontalPadding = getCompoundPaddingLeft();
-            final int verticalPadding;
+            int verticalPadding;
             verticalPadding = getExtendedPaddingTop() + getVerticalOffset(true);
             {
                 {
@@ -4366,8 +4341,8 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.140 -0400", hash_original_method = "18CF38FA770F258E57001CEB5008E4BD", hash_generated_method = "56C19C92D73EE084CA2F1EF1E08BD0F6")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:09.524 -0400", hash_original_method = "18CF38FA770F258E57001CEB5008E4BD", hash_generated_method = "0546C0D28AEF5BC033824D5EC02856DE")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     private void invalidateCursor() {
         int where;
         where = getSelectionEnd();
@@ -4378,7 +4353,7 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.140 -0400", hash_original_method = "7C61928A88071E487AF3987FA1C70EFA", hash_generated_method = "3BBA6AA3D60F5E90773A0884F2CEC682")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:09.524 -0400", hash_original_method = "7C61928A88071E487AF3987FA1C70EFA", hash_generated_method = "37C4AE0B309ED73A2C3255F513E0AF68")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     private void invalidateCursor(int a, int b, int c) {
         dsTaint.addTaint(b);
@@ -4400,7 +4375,7 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.140 -0400", hash_original_method = "D9CEA3E6F10B2E8340E14518563D9425", hash_generated_method = "2251F57F2AB8CCE207AAEE0995E1DAAE")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:09.525 -0400", hash_original_method = "D9CEA3E6F10B2E8340E14518563D9425", hash_generated_method = "A8AB31473769511B573AC69A201E4695")
     //DSFIXME:  CODE0002: Requires DSC value to be set
      void invalidateRegion(int start, int end, boolean invalidateCursor) {
         dsTaint.addTaint(start);
@@ -4434,9 +4409,9 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
                     } //End block
                 } //End collapsed parenthetic
             } //End block
-            final int compoundPaddingLeft;
+            int compoundPaddingLeft;
             compoundPaddingLeft = getCompoundPaddingLeft();
-            final int verticalPadding;
+            int verticalPadding;
             verticalPadding = getExtendedPaddingTop() + getVerticalOffset(true);
             int left, right;
             {
@@ -4457,10 +4432,10 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.140 -0400", hash_original_method = "14444C10F141ED0D65415BFE9043EE15", hash_generated_method = "E8AEDE9A3E45B8F108AA1F22E8A1F69F")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:09.526 -0400", hash_original_method = "14444C10F141ED0D65415BFE9043EE15", hash_generated_method = "88E9D8CE25955F3B01039CE6A8BC6CAB")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     private void registerForPreDraw() {
-        final ViewTreeObserver observer;
+        ViewTreeObserver observer;
         observer = getViewTreeObserver();
         {
             observer.addOnPreDrawListener(this);
@@ -4480,7 +4455,7 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.140 -0400", hash_original_method = "7ED99206FCCA4C828A375B5616572C0F", hash_generated_method = "A60FC4565052F55594EA0C88C3E739B0")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:09.526 -0400", hash_original_method = "7ED99206FCCA4C828A375B5616572C0F", hash_generated_method = "7B059726FAA23388551438876540B975")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public boolean onPreDraw() {
         //DSFIXME:  CODE0009: Possible callback target function detected
@@ -4493,7 +4468,7 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
             int curs;
             curs = getSelectionEnd();
             {
-                boolean var12D57A2CE148B359BC68B232D2B7DC8F_1579118601 = (mSelectionModifierCursorController != null &&
+                boolean var12D57A2CE148B359BC68B232D2B7DC8F_1612450674 = (mSelectionModifierCursorController != null &&
                     mSelectionModifierCursorController.isSelectionStartDragged());
                 {
                     curs = getSelectionStart();
@@ -4514,7 +4489,7 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
             mCreatedWithASelection = false;
         } //End block
         {
-            boolean varA5CB988193F65A0949A8B845CF954A56_1186476342 = (this instanceof ExtractEditText && hasSelection());
+            boolean varA5CB988193F65A0949A8B845CF954A56_367207233 = (this instanceof ExtractEditText && hasSelection());
             {
                 startSelectionActionMode();
             } //End block
@@ -4526,7 +4501,7 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.141 -0400", hash_original_method = "37A00D47E5792B2A68D22343089CAC73", hash_generated_method = "640FC4D234A2FE1965D9E59B240BEDE9")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:09.527 -0400", hash_original_method = "37A00D47E5792B2A68D22343089CAC73", hash_generated_method = "F27A0C97CE7F2D601E55DD34C1A6F403")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     @Override
     protected void onAttachedToWindow() {
@@ -4537,7 +4512,7 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
             showError();
             mShowErrorAfterAttach = false;
         } //End block
-        final ViewTreeObserver observer;
+        ViewTreeObserver observer;
         observer = getViewTreeObserver();
         {
             observer.addOnTouchModeChangeListener(mInsertionPointCursorController);
@@ -4566,13 +4541,13 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.141 -0400", hash_original_method = "16099E9CBA4D38D7973AB46B58716911", hash_generated_method = "CE741C16B97D9C14D402002F8651B689")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:09.528 -0400", hash_original_method = "16099E9CBA4D38D7973AB46B58716911", hash_generated_method = "2A5D4722F837D32D1039532CE4527E5B")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     @Override
     protected void onDetachedFromWindow() {
         //DSFIXME:  CODE0009: Possible callback target function detected
         super.onDetachedFromWindow();
-        final ViewTreeObserver observer;
+        ViewTreeObserver observer;
         observer = getViewTreeObserver();
         {
             observer.removeOnPreDrawListener(this);
@@ -4601,7 +4576,7 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.141 -0400", hash_original_method = "F9485E7598554FF005152B05BE66332E", hash_generated_method = "03CF7474D396AD927CE9E7DD0BD69294")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:09.529 -0400", hash_original_method = "F9485E7598554FF005152B05BE66332E", hash_generated_method = "69BBFE8D2D9BD9821DD6978A2CE7989B")
     @DSModeled(DSC.SAFE)
     @Override
     protected boolean isPaddingOffsetRequired() {
@@ -4611,11 +4586,11 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.141 -0400", hash_original_method = "7F5FAD56D372BFDBD8919382F1DF4F10", hash_generated_method = "D014F0C15066268D3E0AC61C5626D705")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:09.529 -0400", hash_original_method = "7F5FAD56D372BFDBD8919382F1DF4F10", hash_generated_method = "1F7D5539F4104B9B74BA99316C342F27")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     @Override
     protected int getLeftPaddingOffset() {
-        int var58C5EE75D3D1900953AF755581344C8A_1826894968 = (getCompoundPaddingLeft() - mPaddingLeft +
+        int var58C5EE75D3D1900953AF755581344C8A_1869248028 = (getCompoundPaddingLeft() - mPaddingLeft +
                 (int) Math.min(0, mShadowDx - mShadowRadius));
         return dsTaint.getTaintInt();
         // ---------- Original Method ----------
@@ -4624,33 +4599,33 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.141 -0400", hash_original_method = "BBBA34DDC8A574B01D58B3AC0235EEFE", hash_generated_method = "B5AD5CC8F0D977520C357CFCC3D75151")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:09.529 -0400", hash_original_method = "BBBA34DDC8A574B01D58B3AC0235EEFE", hash_generated_method = "EF2BD31A46E91922B0571C4E51E7A3D2")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     @Override
     protected int getTopPaddingOffset() {
-        int var0ED6224353BB97F3F21905FBACD93DCB_638072421 = ((int) Math.min(0, mShadowDy - mShadowRadius));
+        int var0ED6224353BB97F3F21905FBACD93DCB_2048413527 = ((int) Math.min(0, mShadowDy - mShadowRadius));
         return dsTaint.getTaintInt();
         // ---------- Original Method ----------
         //return (int) Math.min(0, mShadowDy - mShadowRadius);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.141 -0400", hash_original_method = "2F5480661817CC97DFDD529692B7CB6A", hash_generated_method = "6C24535CBF4F52D6CFEBA9A7AB550DDB")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:09.530 -0400", hash_original_method = "2F5480661817CC97DFDD529692B7CB6A", hash_generated_method = "132518CE22A6515235439537468F6EA9")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     @Override
     protected int getBottomPaddingOffset() {
-        int varB10121B4D3A3118F0C573D58A81C1C32_1785405508 = ((int) Math.max(0, mShadowDy + mShadowRadius));
+        int varB10121B4D3A3118F0C573D58A81C1C32_194254909 = ((int) Math.max(0, mShadowDy + mShadowRadius));
         return dsTaint.getTaintInt();
         // ---------- Original Method ----------
         //return (int) Math.max(0, mShadowDy + mShadowRadius);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.141 -0400", hash_original_method = "03B94E40D261DCBBD1910980153D8E7A", hash_generated_method = "783911B8E950767662930EF78E6DA149")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:09.530 -0400", hash_original_method = "03B94E40D261DCBBD1910980153D8E7A", hash_generated_method = "AD79ED997678EAD6A4B9457FFCAD60B3")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     @Override
     protected int getRightPaddingOffset() {
-        int var513406E75DBEDB7AB1D4B061E88F3D83_2025443006 = (-(getCompoundPaddingRight() - mPaddingRight) +
+        int var513406E75DBEDB7AB1D4B061E88F3D83_819516442 = (-(getCompoundPaddingRight() - mPaddingRight) +
                 (int) Math.max(0, mShadowDx + mShadowRadius));
         return dsTaint.getTaintInt();
         // ---------- Original Method ----------
@@ -4659,12 +4634,12 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.141 -0400", hash_original_method = "CE928B829998126087759CE89BCD7C50", hash_generated_method = "B91FD5FAF8D3F63111560634F76CB934")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:09.530 -0400", hash_original_method = "CE928B829998126087759CE89BCD7C50", hash_generated_method = "10B79223B43F387E66EA6E678D754E5A")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     @Override
     protected boolean verifyDrawable(Drawable who) {
         dsTaint.addTaint(who.dsTaint);
-        final boolean verified;
+        boolean verified;
         verified = super.verifyDrawable(who);
         return dsTaint.getTaintBoolean();
         // ---------- Original Method ----------
@@ -4678,8 +4653,8 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.141 -0400", hash_original_method = "40478AC632904F83B590338EFFF77EC4", hash_generated_method = "00398E2BA6F635936BEFD6C61F762C30")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:09.530 -0400", hash_original_method = "40478AC632904F83B590338EFFF77EC4", hash_generated_method = "D986EC85476D6044DCA7E50788DFA532")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     @Override
     public void jumpDrawablesToCurrentState() {
         super.jumpDrawablesToCurrentState();
@@ -4708,59 +4683,59 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.142 -0400", hash_original_method = "BFAA7AB246AB7FE030F8E5E06E7C4938", hash_generated_method = "C96329F4EF920049A3BC0F05D98F1632")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:09.531 -0400", hash_original_method = "BFAA7AB246AB7FE030F8E5E06E7C4938", hash_generated_method = "E4B075CCB6720A1F073A0AF36226D54E")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     @Override
     public void invalidateDrawable(Drawable drawable) {
         dsTaint.addTaint(drawable.dsTaint);
         {
-            boolean var6429BFA2CE72B3A4B0873DE16CAD3D14_429471091 = (verifyDrawable(drawable));
+            boolean var6429BFA2CE72B3A4B0873DE16CAD3D14_1972305992 = (verifyDrawable(drawable));
             {
-                final Rect dirty;
+                Rect dirty;
                 dirty = drawable.getBounds();
                 int scrollX;
                 scrollX = mScrollX;
                 int scrollY;
                 scrollY = mScrollY;
-                final TextView.Drawables drawables;
+                TextView.Drawables drawables;
                 drawables = mDrawables;
                 {
                     {
-                        final int compoundPaddingTop;
+                        int compoundPaddingTop;
                         compoundPaddingTop = getCompoundPaddingTop();
-                        final int compoundPaddingBottom;
+                        int compoundPaddingBottom;
                         compoundPaddingBottom = getCompoundPaddingBottom();
-                        final int vspace;
+                        int vspace;
                         vspace = mBottom - mTop - compoundPaddingBottom - compoundPaddingTop;
                         scrollX += mPaddingLeft;
                         scrollY += compoundPaddingTop + (vspace - drawables.mDrawableHeightLeft) / 2;
                     } //End block
                     {
-                        final int compoundPaddingTop;
+                        int compoundPaddingTop;
                         compoundPaddingTop = getCompoundPaddingTop();
-                        final int compoundPaddingBottom;
+                        int compoundPaddingBottom;
                         compoundPaddingBottom = getCompoundPaddingBottom();
-                        final int vspace;
+                        int vspace;
                         vspace = mBottom - mTop - compoundPaddingBottom - compoundPaddingTop;
                         scrollX += (mRight - mLeft - mPaddingRight - drawables.mDrawableSizeRight);
                         scrollY += compoundPaddingTop + (vspace - drawables.mDrawableHeightRight) / 2;
                     } //End block
                     {
-                        final int compoundPaddingLeft;
+                        int compoundPaddingLeft;
                         compoundPaddingLeft = getCompoundPaddingLeft();
-                        final int compoundPaddingRight;
+                        int compoundPaddingRight;
                         compoundPaddingRight = getCompoundPaddingRight();
-                        final int hspace;
+                        int hspace;
                         hspace = mRight - mLeft - compoundPaddingRight - compoundPaddingLeft;
                         scrollX += compoundPaddingLeft + (hspace - drawables.mDrawableWidthTop) / 2;
                         scrollY += mPaddingTop;
                     } //End block
                     {
-                        final int compoundPaddingLeft;
+                        int compoundPaddingLeft;
                         compoundPaddingLeft = getCompoundPaddingLeft();
-                        final int compoundPaddingRight;
+                        int compoundPaddingRight;
                         compoundPaddingRight = getCompoundPaddingRight();
-                        final int hspace;
+                        int hspace;
                         hspace = mRight - mLeft - compoundPaddingRight - compoundPaddingLeft;
                         scrollX += compoundPaddingLeft + (hspace - drawables.mDrawableWidthBottom) / 2;
                         scrollY += (mBottom - mTop - mPaddingBottom - drawables.mDrawableSizeBottom);
@@ -4775,19 +4750,19 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.142 -0400", hash_original_method = "365B978F98464E672BAE2334EE130C56", hash_generated_method = "FFBF3C4C6D769B55CA1EC556F42425D5")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:09.531 -0400", hash_original_method = "365B978F98464E672BAE2334EE130C56", hash_generated_method = "A41DFAB1927CEEFCC75F85FB5ECCE3FA")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     @Override
     public int getResolvedLayoutDirection(Drawable who) {
         dsTaint.addTaint(who.dsTaint);
         {
-            final Drawables drawables;
+            Drawables drawables;
             drawables = mDrawables;
             {
-                int var9F1D8BFC1663434C04073ED5C9ABAE03_633483701 = (getResolvedLayoutDirection());
+                int var9F1D8BFC1663434C04073ED5C9ABAE03_548443413 = (getResolvedLayoutDirection());
             } //End block
         } //End block
-        int varC2F7741B418937D0E08C7C868777F70A_1381393949 = (super.getResolvedLayoutDirection(who));
+        int varC2F7741B418937D0E08C7C868777F70A_664982791 = (super.getResolvedLayoutDirection(who));
         return dsTaint.getTaintInt();
         // ---------- Original Method ----------
         //if (who == null) return View.LAYOUT_DIRECTION_LTR;
@@ -4803,16 +4778,16 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.142 -0400", hash_original_method = "361EEEB4229AF287B326C983EB9B20B0", hash_generated_method = "FC29E572BFF1FA88BB747F3FE2AFF7BB")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:09.532 -0400", hash_original_method = "361EEEB4229AF287B326C983EB9B20B0", hash_generated_method = "41908EBE58BAEE4B16A204E13AF0486B")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     @Override
     protected boolean onSetAlpha(int alpha) {
         //DSFIXME:  CODE0009: Possible callback target function detected
         dsTaint.addTaint(alpha);
         {
-            boolean varF9737FBB3FA84CB9364E87D929DD087B_84680287 = (getBackground() == null);
+            boolean varF9737FBB3FA84CB9364E87D929DD087B_659753081 = (getBackground() == null);
             {
-                final Drawables dr;
+                Drawables dr;
                 dr = mDrawables;
                 {
                     dr.mDrawableLeft.mutate().setAlpha(alpha);
@@ -4845,7 +4820,7 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.142 -0400", hash_original_method = "CB6193FD8EC60616857FED31421868C5", hash_generated_method = "5ED078AA3AB496853D19E40E61118A9D")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:09.532 -0400", hash_original_method = "CB6193FD8EC60616857FED31421868C5", hash_generated_method = "06F724B3A7F44FBA10445EAF479C33A7")
     @DSModeled(DSC.SAFE)
     public boolean isTextSelectable() {
         return dsTaint.getTaintBoolean();
@@ -4854,7 +4829,7 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.142 -0400", hash_original_method = "F5356B5CDB0C54713C7C3659E2E49BDB", hash_generated_method = "AB5DF6801AAC17EEA672247AA39F95BA")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:09.532 -0400", hash_original_method = "F5356B5CDB0C54713C7C3659E2E49BDB", hash_generated_method = "EC7F9C740C9634C0C31604EFA3742AC5")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public void setTextIsSelectable(boolean selectable) {
         dsTaint.addTaint(selectable);
@@ -4878,13 +4853,13 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.143 -0400", hash_original_method = "E327CCF4B590DA515951F33B48F8FD2D", hash_generated_method = "2D05EFAE4111B581DC295895BC8F56A6")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:09.533 -0400", hash_original_method = "E327CCF4B590DA515951F33B48F8FD2D", hash_generated_method = "20D85DD858798C636C0B655050D70968")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     @Override
     protected int[] onCreateDrawableState(int extraSpace) {
         //DSFIXME:  CODE0009: Possible callback target function detected
         dsTaint.addTaint(extraSpace);
-        /* final */ int[] drawableState;
+        int[] drawableState;
         {
             drawableState = super.onCreateDrawableState(extraSpace);
         } //End block
@@ -4893,14 +4868,14 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
             mergeDrawableStates(drawableState, MULTILINE_STATE_SET);
         } //End block
         {
-            final int length;
+            int length;
             length = drawableState.length;
             {
                 int i;
                 i = 0;
                 {
                     {
-                        final int[] nonPressedState;
+                        int[] nonPressedState;
                         nonPressedState = new int[length - 1];
                         System.arraycopy(drawableState, 0, nonPressedState, 0, i);
                         System.arraycopy(drawableState, i + 1, nonPressedState, i, length - i - 1);
@@ -4916,41 +4891,41 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.144 -0400", hash_original_method = "FA11BA597CA3990806012CD62CCA6F49", hash_generated_method = "C51EB1457C82DE4CE04B5545A71B85F5")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:09.535 -0400", hash_original_method = "FA11BA597CA3990806012CD62CCA6F49", hash_generated_method = "34E503DC508AA05947E414AD6562B8C2")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     @Override
     protected void onDraw(Canvas canvas) {
         //DSFIXME:  CODE0009: Possible callback target function detected
         dsTaint.addTaint(canvas.dsTaint);
         {
-            final ViewTreeObserver observer;
+            ViewTreeObserver observer;
             observer = getViewTreeObserver();
             observer.removeOnPreDrawListener(this);
             mPreDrawState = PREDRAW_NOT_REGISTERED;
         } //End block
         restartMarqueeIfNeeded();
         super.onDraw(canvas);
-        final int compoundPaddingLeft;
+        int compoundPaddingLeft;
         compoundPaddingLeft = getCompoundPaddingLeft();
-        final int compoundPaddingTop;
+        int compoundPaddingTop;
         compoundPaddingTop = getCompoundPaddingTop();
-        final int compoundPaddingRight;
+        int compoundPaddingRight;
         compoundPaddingRight = getCompoundPaddingRight();
-        final int compoundPaddingBottom;
+        int compoundPaddingBottom;
         compoundPaddingBottom = getCompoundPaddingBottom();
-        final int scrollX;
+        int scrollX;
         scrollX = mScrollX;
-        final int scrollY;
+        int scrollY;
         scrollY = mScrollY;
-        final int right;
+        int right;
         right = mRight;
-        final int left;
+        int left;
         left = mLeft;
-        final int bottom;
+        int bottom;
         bottom = mBottom;
-        final int top;
+        int top;
         top = mTop;
-        final Drawables dr;
+        Drawables dr;
         dr = mDrawables;
         {
             int vspace;
@@ -4998,7 +4973,7 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
         int cursorcolor;
         cursorcolor = color;
         {
-            boolean var316D35E2F5ECBA0973BB7AA3F3D5BB99_1488620874 = (mHint != null && mText.length() == 0);
+            boolean var316D35E2F5ECBA0973BB7AA3F3D5BB99_1102784798 = (mHint != null && mText.length() == 0);
             {
                 {
                     color = mCurHintTextColor;
@@ -5042,13 +5017,13 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
             } //End block
             canvas.translate(compoundPaddingLeft, extendedPaddingTop + voffsetText);
         } //End block
-        final int layoutDirection;
+        int layoutDirection;
         layoutDirection = getResolvedLayoutDirection();
-        final int absoluteGravity;
+        int absoluteGravity;
         absoluteGravity = Gravity.getAbsoluteGravity(mGravity, layoutDirection);
         {
             {
-                boolean varECABE171DF753EC9B7649613B9CE32E8_1930861547 = (!mSingleLine && getLineCount() == 1 && canMarquee() &&
+                boolean varECABE171DF753EC9B7649613B9CE32E8_1033129174 = (!mSingleLine && getLineCount() == 1 && canMarquee() &&
                     (absoluteGravity & Gravity.HORIZONTAL_GRAVITY_MASK) != Gravity.LEFT);
                 {
                     canvas.translate(mLayout.getLineRight(0) - (mRight - mLeft -
@@ -5056,7 +5031,7 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
                 } //End block
             } //End collapsed parenthetic
             {
-                boolean var2C1AA9C80F2908423E5F4CFC350F7281_1952824706 = (mMarquee != null && mMarquee.isRunning());
+                boolean var2C1AA9C80F2908423E5F4CFC350F7281_1666845669 = (mMarquee != null && mMarquee.isRunning());
                 {
                     canvas.translate(-mMarquee.mScroll, 0.0f);
                 } //End block
@@ -5070,7 +5045,7 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
         boolean drawCursor;
         drawCursor = false;
         {
-            boolean var6689D80642F8609001A87CC7FE23D763_1732594191 = (mMovement != null && (isFocused() || isPressed()));
+            boolean var6689D80642F8609001A87CC7FE23D763_364963301 = (mMovement != null && (isFocused() || isPressed()));
             {
                 selStart = getSelectionStart();
                 selEnd = getSelectionEnd();
@@ -5078,7 +5053,7 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
                     mHighlightPath = new Path();
                     {
                         {
-                            boolean varC70ECF1643A49D8E64E841F8740CC733_993181417 = (isCursorVisible() &&
+                            boolean varC70ECF1643A49D8E64E841F8740CC733_76738834 = (isCursorVisible() &&
                             (SystemClock.uptimeMillis() - mShowCursor) % (2 * BLINK) < BLINK);
                             {
                                 {
@@ -5099,7 +5074,7 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
                         } //End collapsed parenthetic
                     } //End block
                     {
-                        boolean varD2470F8649BF231BDB682780036CA3E1_394690984 = (textCanBeSelected());
+                        boolean varD2470F8649BF231BDB682780036CA3E1_85804348 = (textCanBeSelected());
                         {
                             {
                                 mHighlightPath.reset();
@@ -5118,16 +5093,16 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
                 } //End block
             } //End block
         } //End collapsed parenthetic
-        final InputMethodState ims;
+        InputMethodState ims;
         ims = mInputMethodState;
-        final int cursorOffsetVertical;
+        int cursorOffsetVertical;
         cursorOffsetVertical = voffsetCursor - voffsetText;
         {
             InputMethodManager imm;
             imm = InputMethodManager.peekInstance();
             {
                 {
-                    boolean varCD832678EBF561BEF5C67C864ED57D5D_1328555533 = (imm.isActive(this));
+                    boolean varCD832678EBF561BEF5C67C864ED57D5D_1930884681 = (imm.isActive(this));
                     {
                         boolean reported;
                         reported = false;
@@ -5150,7 +5125,7 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
                     } //End block
                 } //End collapsed parenthetic
                 {
-                    boolean varDFBBC9A1B31B7114329F69A82B5D3704_1888168917 = (imm.isWatchingCursor(this) && highlight != null);
+                    boolean varDFBBC9A1B31B7114329F69A82B5D3704_69609651 = (imm.isWatchingCursor(this) && highlight != null);
                     {
                         highlight.computeBounds(ims.mTmpRectF, true);
                         ims.mTmpOffset[0] = ims.mTmpOffset[1] = 0;
@@ -5177,7 +5152,7 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
         } //End block
         layout.draw(canvas, highlight, mHighlightPaint, cursorOffsetVertical);
         {
-            boolean var6C9C7A2601C4C103D29484E050BD6314_847439730 = (mMarquee != null && mMarquee.shouldDrawGhost());
+            boolean var6C9C7A2601C4C103D29484E050BD6314_316633631 = (mMarquee != null && mMarquee.shouldDrawGhost());
             {
                 canvas.translate((int) mMarquee.getGhostOffset(), 0.0f);
                 layout.draw(canvas, highlight, mHighlightPaint, cursorOffsetVertical);
@@ -5189,19 +5164,19 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.144 -0400", hash_original_method = "78F759649DF9DADE7AC797D0043ECB32", hash_generated_method = "80EBFEDEA004F5177683B8A6B02DA005")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:09.535 -0400", hash_original_method = "78F759649DF9DADE7AC797D0043ECB32", hash_generated_method = "D3E76B4B918A3C4421CFC2AA742067E2")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     private void updateCursorsPositions() {
         {
             mCursorCount = 0;
         } //End block
-        final int offset;
+        int offset;
         offset = getSelectionStart();
-        final int line;
+        int line;
         line = mLayout.getLineForOffset(offset);
-        final int top;
+        int top;
         top = mLayout.getLineTop(line);
-        final int bottom;
+        int bottom;
         bottom = mLayout.getLineTop(line + 1);
         mCursorCount = mLayout.isLevelBoundary(offset) ? 2 : 1;
         int middle;
@@ -5234,7 +5209,7 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.145 -0400", hash_original_method = "E19C5E504E793D85568DEA288EC3BB71", hash_generated_method = "6A2EBB95DA2767BD43AFB69ECE5D6C65")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:09.536 -0400", hash_original_method = "E19C5E504E793D85568DEA288EC3BB71", hash_generated_method = "5D3DED74997553C5B121B569CAE3E650")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     private void updateCursorPosition(int cursorIndex, int top, int bottom, float horizontal) {
         dsTaint.addTaint(cursorIndex);
@@ -5244,10 +5219,10 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
         mCursorDrawable[cursorIndex] = mContext.getResources().getDrawable(mCursorDrawableRes);
         mTempRect = new Rect();
         mCursorDrawable[cursorIndex].getPadding(mTempRect);
-        final int width;
+        int width;
         width = mCursorDrawable[cursorIndex].getIntrinsicWidth();
         horizontal = Math.max(0.5f, horizontal - 0.5f);
-        final int left;
+        int left;
         left = (int) (horizontal) - mTempRect.left;
         mCursorDrawable[cursorIndex].setBounds(left, top - mTempRect.top, left + width,
                 bottom + mTempRect.bottom);
@@ -5264,12 +5239,12 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.145 -0400", hash_original_method = "38A0E9FCBE0DF4E61FBA21D6958F939A", hash_generated_method = "64B9F5A88E145DA81FBD65197F120D4A")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:09.536 -0400", hash_original_method = "38A0E9FCBE0DF4E61FBA21D6958F939A", hash_generated_method = "117031EC14C23D4384BB3CE364B5023F")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     private void drawCursor(Canvas canvas, int cursorOffsetVertical) {
-        dsTaint.addTaint(canvas.dsTaint);
         dsTaint.addTaint(cursorOffsetVertical);
-        final boolean translate;
+        dsTaint.addTaint(canvas.dsTaint);
+        boolean translate;
         translate = cursorOffsetVertical != 0;
         canvas.translate(0, cursorOffsetVertical);
         {
@@ -5290,7 +5265,7 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.145 -0400", hash_original_method = "9AB167D6C4B117BDFB6C2B72A1D862B5", hash_generated_method = "D3D5FA6D962DF865064DC1179966E443")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:09.537 -0400", hash_original_method = "9AB167D6C4B117BDFB6C2B72A1D862B5", hash_generated_method = "9EDC6CBD21EBED282F554815730092F4")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     @Override
     public void getFocusedRect(Rect r) {
@@ -5351,11 +5326,11 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.145 -0400", hash_original_method = "97BE8C8E19AAF13DDBB7397BA8716CD7", hash_generated_method = "F95D252F1753F075F7173081CE83B832")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:09.537 -0400", hash_original_method = "97BE8C8E19AAF13DDBB7397BA8716CD7", hash_generated_method = "2121DB4F3B861AA234FF9B8FE1D230EC")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public int getLineCount() {
         {
-            Object varD975483664E4A2ABD3BE6A7FE00BEAE4_1509921976 = (mLayout.getLineCount());
+            Object varD975483664E4A2ABD3BE6A7FE00BEAE4_1373809581 = (mLayout.getLineCount());
         } //End flattened ternary
         return dsTaint.getTaintInt();
         // ---------- Original Method ----------
@@ -5363,7 +5338,7 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.145 -0400", hash_original_method = "C119BED798B9C2A141229B29A4C86BDD", hash_generated_method = "39E83B18A53772667B71A9B42ADA163E")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:09.537 -0400", hash_original_method = "C119BED798B9C2A141229B29A4C86BDD", hash_generated_method = "44700B2E29997C21645A7BE424CD605B")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public int getLineBounds(int line, Rect bounds) {
         dsTaint.addTaint(bounds.dsTaint);
@@ -5407,19 +5382,19 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.146 -0400", hash_original_method = "3C56831CF91C4818C48A7DCC6043867F", hash_generated_method = "12F97D2F06B069521FD00E1E521E14A5")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:09.538 -0400", hash_original_method = "3C56831CF91C4818C48A7DCC6043867F", hash_generated_method = "EA7B124FA9E8B9E05889779439962AF5")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     @Override
     public int getBaseline() {
         {
-            int varEC5F70FA49520212A319ACA653FC0209_801241517 = (super.getBaseline());
+            int varEC5F70FA49520212A319ACA653FC0209_1055236111 = (super.getBaseline());
         } //End block
         int voffset;
         voffset = 0;
         {
             voffset = getVerticalOffset(true);
         } //End block
-        int varB40014DBFC3B8DB0A96D34443E0FBB7F_673559972 = (getExtendedPaddingTop() + voffset + mLayout.getLineBaseline(0));
+        int varB40014DBFC3B8DB0A96D34443E0FBB7F_1608022957 = (getExtendedPaddingTop() + voffset + mLayout.getLineBaseline(0));
         return dsTaint.getTaintInt();
         // ---------- Original Method ----------
         //if (mLayout == null) {
@@ -5433,7 +5408,7 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.146 -0400", hash_original_method = "9B40D92CA2D66C315619C6CA13460A4B", hash_generated_method = "7EC9A339979C760291E92DD06955D0EC")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:09.538 -0400", hash_original_method = "9B40D92CA2D66C315619C6CA13460A4B", hash_generated_method = "6AD3EE77B94272AEF7D2B07F471751A3")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     @Override
     protected int getFadeTop(boolean offsetRequired) {
@@ -5444,7 +5419,7 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
             voffset = getVerticalOffset(true);
         } //End block
         voffset += getTopPaddingOffset();
-        int var96B16999098121B80A3E9BC63992503B_721301774 = (getExtendedPaddingTop() + voffset);
+        int var96B16999098121B80A3E9BC63992503B_1331012126 = (getExtendedPaddingTop() + voffset);
         return dsTaint.getTaintInt();
         // ---------- Original Method ----------
         //if (mLayout == null) return 0;
@@ -5457,13 +5432,13 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.146 -0400", hash_original_method = "4B4E36AF8D516BA2309E720A4535DE33", hash_generated_method = "B355EBCD413631D085AC3AA3081B8A17")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:09.538 -0400", hash_original_method = "4B4E36AF8D516BA2309E720A4535DE33", hash_generated_method = "7C531AE6B83595E5161F50755F271F51")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     @Override
     protected int getFadeHeight(boolean offsetRequired) {
         dsTaint.addTaint(offsetRequired);
         {
-            Object var1822177AD24E1DAE2984AAF8E0B02DF5_1509828333 = (mLayout.getHeight());
+            Object var1822177AD24E1DAE2984AAF8E0B02DF5_902062663 = (mLayout.getHeight());
         } //End flattened ternary
         return dsTaint.getTaintInt();
         // ---------- Original Method ----------
@@ -5471,7 +5446,7 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.146 -0400", hash_original_method = "D780B8C0D740C935BBFD0FE1FAA345B5", hash_generated_method = "497F46B1A935701A76C208FAE020386A")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:09.539 -0400", hash_original_method = "D780B8C0D740C935BBFD0FE1FAA345B5", hash_generated_method = "5FDDA1F5A98660A8C5C86BED0C2FF92C")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     @Override
     public boolean onKeyPreIme(int keyCode, KeyEvent event) {
@@ -5483,7 +5458,7 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
             isInSelectionMode = mSelectionActionMode != null;
             {
                 {
-                    boolean var51947D54DEEA690F1B41A17DE6323711_1062036247 = (event.getAction() == KeyEvent.ACTION_DOWN && event.getRepeatCount() == 0);
+                    boolean var51947D54DEEA690F1B41A17DE6323711_1783222664 = (event.getAction() == KeyEvent.ACTION_DOWN && event.getRepeatCount() == 0);
                     {
                         KeyEvent.DispatcherState state;
                         state = getKeyDispatcherState();
@@ -5492,7 +5467,7 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
                         } //End block
                     } //End block
                     {
-                        boolean varA6D964A9D1A4D1D485BD8D60F2BFCDEE_201132904 = (event.getAction() == KeyEvent.ACTION_UP);
+                        boolean varA6D964A9D1A4D1D485BD8D60F2BFCDEE_5088752 = (event.getAction() == KeyEvent.ACTION_UP);
                         {
                             KeyEvent.DispatcherState state;
                             state = getKeyDispatcherState();
@@ -5500,7 +5475,7 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
                                 state.handleUpEvent(event);
                             } //End block
                             {
-                                boolean varBE09C907F92D135687297C67489D82A5_878048142 = (event.isTracking() && !event.isCanceled());
+                                boolean varBE09C907F92D135687297C67489D82A5_1272577672 = (event.isTracking() && !event.isCanceled());
                                 {
                                     {
                                         stopSelectionActionMode();
@@ -5512,14 +5487,14 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
                 } //End collapsed parenthetic
             } //End block
         } //End block
-        boolean var84A59BF21652B099F795A333EE25717D_125591071 = (super.onKeyPreIme(keyCode, event));
+        boolean var84A59BF21652B099F795A333EE25717D_1691499260 = (super.onKeyPreIme(keyCode, event));
         return dsTaint.getTaintBoolean();
         // ---------- Original Method ----------
         // Original Method Too Long, Refer to Original Implementation
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.146 -0400", hash_original_method = "34FB4F2A2A6D04958B0CB574357346B4", hash_generated_method = "039B5BCB786940235980F9CB7F047443")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:09.539 -0400", hash_original_method = "34FB4F2A2A6D04958B0CB574357346B4", hash_generated_method = "DC2C66B8B40A2C155A8787AA6CBB57EC")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     @Override
     public boolean onKeyDown(int keyCode, KeyEvent event) {
@@ -5529,7 +5504,7 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
         int which;
         which = doKeyDown(keyCode, event, null);
         {
-            boolean varF37828D47239888646D0D534C127ED8C_743341490 = (super.onKeyDown(keyCode, event));
+            boolean varF37828D47239888646D0D534C127ED8C_655239578 = (super.onKeyDown(keyCode, event));
         } //End block
         return dsTaint.getTaintBoolean();
         // ---------- Original Method ----------
@@ -5541,7 +5516,7 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.146 -0400", hash_original_method = "29E1D0F837CE3120BC9F0CF834D8CD7B", hash_generated_method = "BC86565AEABF973BC7C24C36703A9F82")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:09.539 -0400", hash_original_method = "29E1D0F837CE3120BC9F0CF834D8CD7B", hash_generated_method = "72C896F445250F535B32C0BDC53E945F")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     @Override
     public boolean onKeyMultiple(int keyCode, int repeatCount, KeyEvent event) {
@@ -5554,9 +5529,8 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
         int which;
         which = doKeyDown(keyCode, down, event);
         {
-            boolean varDC1E2957B5A61BDC225D3800F9D03961_1096554109 = (super.onKeyMultiple(keyCode, repeatCount, event));
+            boolean varDC1E2957B5A61BDC225D3800F9D03961_228219294 = (super.onKeyMultiple(keyCode, repeatCount, event));
         } //End block
-        repeatCount--;
         KeyEvent up;
         up = KeyEvent.changeAction(event, KeyEvent.ACTION_UP);
         {
@@ -5580,7 +5554,7 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.147 -0400", hash_original_method = "F8A8C23B2901B68727EC4DCE05389523", hash_generated_method = "1C16624B992FFAEE1BD5BFF1157ACB8E")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:09.540 -0400", hash_original_method = "F8A8C23B2901B68727EC4DCE05389523", hash_generated_method = "F51582C50F25B3B661658FCB8F9AFC45")
     @DSModeled(DSC.SAFE)
     private boolean shouldAdvanceFocusOnEnter() {
         {
@@ -5606,7 +5580,7 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.147 -0400", hash_original_method = "3820039215BEB2B783682B0606CB8390", hash_generated_method = "5E58748FCE141C4C7D3A9D0C8A6D4505")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:09.540 -0400", hash_original_method = "3820039215BEB2B783682B0606CB8390", hash_generated_method = "02EA9B3721FE19C905AD7F16D5138B5F")
     @DSModeled(DSC.SAFE)
     private boolean shouldAdvanceFocusOnTab() {
         {
@@ -5630,22 +5604,22 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.147 -0400", hash_original_method = "06C558A5D7DCBFD0B9ED82B9C331F1F3", hash_generated_method = "1B84F4D3C35B27D98534629A0348739D")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:09.541 -0400", hash_original_method = "06C558A5D7DCBFD0B9ED82B9C331F1F3", hash_generated_method = "4F111CBF59BB548D895398486EDD64D5")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     private int doKeyDown(int keyCode, KeyEvent event, KeyEvent otherEvent) {
         dsTaint.addTaint(keyCode);
         dsTaint.addTaint(event.dsTaint);
         dsTaint.addTaint(otherEvent.dsTaint);
         {
-            boolean varC378F7D9F83769944CF2ACC662A4EAE3_1124817110 = (!isEnabled());
+            boolean varC378F7D9F83769944CF2ACC662A4EAE3_1274884477 = (!isEnabled());
         } //End collapsed parenthetic
         //Begin case KeyEvent.KEYCODE_ENTER 
         {
-            boolean var6A2352E2C5239DCC8C3CFCEB22E8E32E_2112998336 = (event.hasNoModifiers());
+            boolean var6A2352E2C5239DCC8C3CFCEB22E8E32E_1156919837 = (event.hasNoModifiers());
             {
                 {
                     {
-                        boolean var1D94CC9EA7F6DC2AEFBF8FBA8E934A5F_2143630671 = (mInputContentType.onEditorActionListener != null &&
+                        boolean var1D94CC9EA7F6DC2AEFBF8FBA8E934A5F_1499320350 = (mInputContentType.onEditorActionListener != null &&
                                 mInputContentType.onEditorActionListener.onEditorAction(
                                 this, EditorInfo.IME_NULL, event));
                         {
@@ -5654,11 +5628,11 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
                     } //End collapsed parenthetic
                 } //End block
                 {
-                    boolean var05FC5A78E345546917334D934F323222_1694321071 = ((event.getFlags() & KeyEvent.FLAG_EDITOR_ACTION) != 0
+                    boolean var05FC5A78E345546917334D934F323222_2103697551 = ((event.getFlags() & KeyEvent.FLAG_EDITOR_ACTION) != 0
                             || shouldAdvanceFocusOnEnter());
                     {
                         {
-                            boolean var272B07794F8FB9CA178BF9284513CEF1_2143713553 = (hasOnClickListeners());
+                            boolean var272B07794F8FB9CA178BF9284513CEF1_1567458416 = (hasOnClickListeners());
                         } //End collapsed parenthetic
                     } //End block
                 } //End collapsed parenthetic
@@ -5667,20 +5641,20 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
         //End case KeyEvent.KEYCODE_ENTER 
         //Begin case KeyEvent.KEYCODE_DPAD_CENTER 
         {
-            boolean var6A2352E2C5239DCC8C3CFCEB22E8E32E_1925628007 = (event.hasNoModifiers());
+            boolean var6A2352E2C5239DCC8C3CFCEB22E8E32E_1794217234 = (event.hasNoModifiers());
             {
                 {
-                    boolean varB57504F668DBD47828E53D1AA62D2476_435653036 = (shouldAdvanceFocusOnEnter());
+                    boolean varB57504F668DBD47828E53D1AA62D2476_2037231967 = (shouldAdvanceFocusOnEnter());
                 } //End collapsed parenthetic
             } //End block
         } //End collapsed parenthetic
         //End case KeyEvent.KEYCODE_DPAD_CENTER 
         //Begin case KeyEvent.KEYCODE_TAB 
         {
-            boolean var41B4248114FD3FFF5603132EE2379F75_1990223090 = (event.hasNoModifiers() || event.hasModifiers(KeyEvent.META_SHIFT_ON));
+            boolean var41B4248114FD3FFF5603132EE2379F75_484755497 = (event.hasNoModifiers() || event.hasModifiers(KeyEvent.META_SHIFT_ON));
             {
                 {
-                    boolean var4CB07B26821EBD1E83E544AE45714F5A_698657828 = (shouldAdvanceFocusOnTab());
+                    boolean var4CB07B26821EBD1E83E544AE45714F5A_1124110760 = (shouldAdvanceFocusOnTab());
                 } //End collapsed parenthetic
             } //End block
         } //End collapsed parenthetic
@@ -5698,7 +5672,7 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
                 try 
                 {
                     beginBatchEdit();
-                    final boolean handled;
+                    boolean handled;
                     handled = mInput.onKeyOther(this, (Editable) mText, otherEvent);
                     hideErrorIfUnchanged();
                     doDown = false;
@@ -5712,7 +5686,7 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
             } //End block
             {
                 beginBatchEdit();
-                final boolean handled;
+                boolean handled;
                 handled = mInput.onKeyDown(this, (Editable) mText, keyCode, event);
                 endBatchEdit();
                 hideErrorIfUnchanged();
@@ -5734,7 +5708,7 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
             } //End block
             {
                 {
-                    boolean var899D769AE8C1CEA63FDF2F946CDD9B0C_51080775 = (mMovement.onKeyDown(this, (Spannable)mText, keyCode, event));
+                    boolean var899D769AE8C1CEA63FDF2F946CDD9B0C_355010307 = (mMovement.onKeyDown(this, (Spannable)mText, keyCode, event));
                 } //End collapsed parenthetic
             } //End block
         } //End block
@@ -5744,7 +5718,7 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.147 -0400", hash_original_method = "7246AB9167FB26EEC2DE7F4C0B385BF5", hash_generated_method = "CFB4E9D4EC1CA542E651DBBFB79BB094")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:09.541 -0400", hash_original_method = "7246AB9167FB26EEC2DE7F4C0B385BF5", hash_generated_method = "942D510B431E2EA8FDD86A5C3DFCBA19")
     @DSModeled(DSC.SAFE)
     public void resetErrorChangedFlag() {
         mErrorWasChanged = false;
@@ -5753,8 +5727,8 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.147 -0400", hash_original_method = "0D0DD73869C4F453DDB81949A9BAE239", hash_generated_method = "8E1A00471066CB78A5882A4DA37385DC")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:09.541 -0400", hash_original_method = "0D0DD73869C4F453DDB81949A9BAE239", hash_generated_method = "3E2A8FC9925589DC311AEF9DD7F3D897")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     public void hideErrorIfUnchanged() {
         {
             setError(null, null);
@@ -5766,7 +5740,7 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.148 -0400", hash_original_method = "5424E0BE647EA73439DA25EAE2FC3B50", hash_generated_method = "23E14183052A26FEA22C2DAF6A8B8872")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:09.550 -0400", hash_original_method = "5424E0BE647EA73439DA25EAE2FC3B50", hash_generated_method = "B659B0E82188D5E5AAECA4907EEE3FBB")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     @Override
     public boolean onKeyUp(int keyCode, KeyEvent event) {
@@ -5774,20 +5748,20 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
         dsTaint.addTaint(keyCode);
         dsTaint.addTaint(event.dsTaint);
         {
-            boolean varC378F7D9F83769944CF2ACC662A4EAE3_206578436 = (!isEnabled());
+            boolean varC378F7D9F83769944CF2ACC662A4EAE3_1269974047 = (!isEnabled());
             {
-                boolean var22F2FED66C108E4B3C1571CD2DEF9BD7_1757974857 = (super.onKeyUp(keyCode, event));
+                boolean var22F2FED66C108E4B3C1571CD2DEF9BD7_1083635286 = (super.onKeyUp(keyCode, event));
             } //End block
         } //End collapsed parenthetic
         //Begin case KeyEvent.KEYCODE_DPAD_CENTER 
         {
-            boolean var6A2352E2C5239DCC8C3CFCEB22E8E32E_1358725890 = (event.hasNoModifiers());
+            boolean var6A2352E2C5239DCC8C3CFCEB22E8E32E_1647230025 = (event.hasNoModifiers());
             {
                 {
-                    boolean var210C7F5CA56C3EC36E879FBFEDD09928_806262697 = (!hasOnClickListeners());
+                    boolean var210C7F5CA56C3EC36E879FBFEDD09928_1231290181 = (!hasOnClickListeners());
                     {
                         {
-                            boolean varE74AE2A246DD26B137F541368B4BE791_549112371 = (mMovement != null && mText instanceof Editable
+                            boolean varE74AE2A246DD26B137F541368B4BE791_968778799 = (mMovement != null && mText instanceof Editable
                                 && mLayout != null && onCheckIsTextEditor());
                             {
                                 InputMethodManager imm;
@@ -5804,34 +5778,33 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
         } //End collapsed parenthetic
         //End case KeyEvent.KEYCODE_DPAD_CENTER 
         //Begin case KeyEvent.KEYCODE_DPAD_CENTER 
-        boolean varEDD771EBF66425AD21882AB08CD0EE48_2109429736 = (super.onKeyUp(keyCode, event));
+        boolean varEDD771EBF66425AD21882AB08CD0EE48_1268290120 = (super.onKeyUp(keyCode, event));
         //End case KeyEvent.KEYCODE_DPAD_CENTER 
         //Begin case KeyEvent.KEYCODE_ENTER 
         {
-            boolean var6A2352E2C5239DCC8C3CFCEB22E8E32E_92460253 = (event.hasNoModifiers());
+            boolean var6A2352E2C5239DCC8C3CFCEB22E8E32E_1055072791 = (event.hasNoModifiers());
             {
                 {
                     mInputContentType.enterDown = false;
                     {
-                        boolean varFB4D8364BD486E8AC15C78086C055D0E_1958037276 = (mInputContentType.onEditorActionListener.onEditorAction(
+                        boolean varFB4D8364BD486E8AC15C78086C055D0E_496310232 = (mInputContentType.onEditorActionListener.onEditorAction(
                                 this, EditorInfo.IME_NULL, event));
                     } //End collapsed parenthetic
                 } //End block
                 {
-                    boolean var05FC5A78E345546917334D934F323222_1299230991 = ((event.getFlags() & KeyEvent.FLAG_EDITOR_ACTION) != 0
+                    boolean var05FC5A78E345546917334D934F323222_1715780869 = ((event.getFlags() & KeyEvent.FLAG_EDITOR_ACTION) != 0
                             || shouldAdvanceFocusOnEnter());
                     {
                         {
-                            boolean varEDA239B0EF60ED2C8B069E42FB575E6D_2132774612 = (!hasOnClickListeners());
+                            boolean varEDA239B0EF60ED2C8B069E42FB575E6D_2079507220 = (!hasOnClickListeners());
                             {
                                 View v;
                                 v = focusSearch(FOCUS_DOWN);
                                 {
                                     {
-                                        boolean varB999DF15E9AF0E3270EE4B72A3F644C2_1218251048 = (!v.requestFocus(FOCUS_DOWN));
-                                        if (DroidSafeAndroidRuntime.control)
+                                        boolean varB999DF15E9AF0E3270EE4B72A3F644C2_2096315468 = (!v.requestFocus(FOCUS_DOWN));
                                         {
-                                            throw new IllegalStateException(
+                                            if (DroidSafeAndroidRuntime.control) throw new IllegalStateException(
                                             "focus search returned a view " +
                                             "that wasn't able to take focus!");
                                         } //End block
@@ -5839,13 +5812,13 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
                                     super.onKeyUp(keyCode, event);
                                 } //End block
                                 {
-                                    boolean var28FD9F71D61E7F2DAF140411AD18D69B_53160315 = ((event.getFlags()
+                                    boolean var28FD9F71D61E7F2DAF140411AD18D69B_850452537 = ((event.getFlags()
                                     & KeyEvent.FLAG_EDITOR_ACTION) != 0);
                                     {
                                         InputMethodManager imm;
                                         imm = InputMethodManager.peekInstance();
                                         {
-                                            boolean var18AFA631B94FB215076105938165749C_28238257 = (imm != null && imm.isActive(this));
+                                            boolean var18AFA631B94FB215076105938165749C_1788040326 = (imm != null && imm.isActive(this));
                                             {
                                                 imm.hideSoftInputFromWindow(getWindowToken(), 0);
                                             } //End block
@@ -5856,24 +5829,24 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
                         } //End collapsed parenthetic
                     } //End block
                 } //End collapsed parenthetic
-                boolean var22F2FED66C108E4B3C1571CD2DEF9BD7_545834679 = (super.onKeyUp(keyCode, event));
+                boolean var22F2FED66C108E4B3C1571CD2DEF9BD7_1697065681 = (super.onKeyUp(keyCode, event));
             } //End block
         } //End collapsed parenthetic
         //End case KeyEvent.KEYCODE_ENTER 
         {
-            boolean var952AD4616936F2C47880365DAADE02E9_1370834170 = (mInput.onKeyUp(this, (Editable) mText, keyCode, event));
+            boolean var952AD4616936F2C47880365DAADE02E9_2021330703 = (mInput.onKeyUp(this, (Editable) mText, keyCode, event));
         } //End collapsed parenthetic
         {
-            boolean varDA972FE6CE2955659F74CF0FCCBDD027_491029950 = (mMovement.onKeyUp(this, (Spannable) mText, keyCode, event));
+            boolean varDA972FE6CE2955659F74CF0FCCBDD027_1260664293 = (mMovement.onKeyUp(this, (Spannable) mText, keyCode, event));
         } //End collapsed parenthetic
-        boolean varEDD771EBF66425AD21882AB08CD0EE48_614136180 = (super.onKeyUp(keyCode, event));
+        boolean varEDD771EBF66425AD21882AB08CD0EE48_881567507 = (super.onKeyUp(keyCode, event));
         return dsTaint.getTaintBoolean();
         // ---------- Original Method ----------
         // Original Method Too Long, Refer to Original Implementation
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.148 -0400", hash_original_method = "71F7C8422E0B6AB59261F7E112139F7A", hash_generated_method = "CEAEA811378297635753782577893791")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:09.554 -0400", hash_original_method = "71F7C8422E0B6AB59261F7E112139F7A", hash_generated_method = "BB954CD399600CAB9ED6CC55EAC2CDAA")
     @DSModeled(DSC.SAFE)
     @Override
     public boolean onCheckIsTextEditor() {
@@ -5884,14 +5857,14 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.148 -0400", hash_original_method = "B65AC544FAB392A4E417298C2021FD9E", hash_generated_method = "F66A9B31291B23E2FAEA06185888907D")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:09.557 -0400", hash_original_method = "B65AC544FAB392A4E417298C2021FD9E", hash_generated_method = "D8F735F55DFFD61AE4B796F3021493D5")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     @Override
     public InputConnection onCreateInputConnection(EditorInfo outAttrs) {
         //DSFIXME:  CODE0009: Possible callback target function detected
         dsTaint.addTaint(outAttrs.dsTaint);
         {
-            boolean var14E748864EBD1D56528D6630F011C9F4_1940826576 = (onCheckIsTextEditor() && isEnabled());
+            boolean var14E748864EBD1D56528D6630F011C9F4_1675049997 = (onCheckIsTextEditor() && isEnabled());
             {
                 {
                     mInputMethodState = new InputMethodState();
@@ -5908,13 +5881,13 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
                     outAttrs.imeOptions = EditorInfo.IME_NULL;
                 } //End block
                 {
-                    boolean var4A83C13B10866AEA8D3AB0257DD13346_559140002 = (focusSearch(FOCUS_DOWN) != null);
+                    boolean var4A83C13B10866AEA8D3AB0257DD13346_1345053414 = (focusSearch(FOCUS_DOWN) != null);
                     {
                         outAttrs.imeOptions |= EditorInfo.IME_FLAG_NAVIGATE_NEXT;
                     } //End block
                 } //End collapsed parenthetic
                 {
-                    boolean varD336D5944BC7007368BBB4D990F0F8EA_778666136 = (focusSearch(FOCUS_UP) != null);
+                    boolean varD336D5944BC7007368BBB4D990F0F8EA_904151771 = (focusSearch(FOCUS_UP) != null);
                     {
                         outAttrs.imeOptions |= EditorInfo.IME_FLAG_NAVIGATE_PREVIOUS;
                     } //End block
@@ -5927,14 +5900,14 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
                         outAttrs.imeOptions |= EditorInfo.IME_ACTION_DONE;
                     } //End block
                     {
-                        boolean var46380488EEE32CF6F78CFB4D43E28058_1065958016 = (!shouldAdvanceFocusOnEnter());
+                        boolean var46380488EEE32CF6F78CFB4D43E28058_1527315443 = (!shouldAdvanceFocusOnEnter());
                         {
                             outAttrs.imeOptions |= EditorInfo.IME_FLAG_NO_ENTER_ACTION;
                         } //End block
                     } //End collapsed parenthetic
                 } //End block
                 {
-                    boolean var6CF4D9D9DC3252829459B4AC99D1E1CE_226150557 = (isMultilineInputType(outAttrs.inputType));
+                    boolean var6CF4D9D9DC3252829459B4AC99D1E1CE_253004751 = (isMultilineInputType(outAttrs.inputType));
                     {
                         outAttrs.imeOptions |= EditorInfo.IME_FLAG_NO_ENTER_ACTION;
                     } //End block
@@ -5955,13 +5928,13 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.149 -0400", hash_original_method = "99984EBDDEABE6A84A830C32C2411508", hash_generated_method = "E187F74163BF38FB923EA72A387172ED")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:09.557 -0400", hash_original_method = "99984EBDDEABE6A84A830C32C2411508", hash_generated_method = "385EDD839DA0C093013E3CA5517F58BF")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public boolean extractText(ExtractedTextRequest request,
             ExtractedText outText) {
         dsTaint.addTaint(request.dsTaint);
         dsTaint.addTaint(outText.dsTaint);
-        boolean varED261EE6A1DA9340DC710F511F735890_683858411 = (extractTextInternal(request, EXTRACT_UNKNOWN, EXTRACT_UNKNOWN,
+        boolean varED261EE6A1DA9340DC710F511F735890_1094412609 = (extractTextInternal(request, EXTRACT_UNKNOWN, EXTRACT_UNKNOWN,
                 EXTRACT_UNKNOWN, outText));
         return dsTaint.getTaintBoolean();
         // ---------- Original Method ----------
@@ -5970,21 +5943,21 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.149 -0400", hash_original_method = "D5583180449515B28719DEEF8D226179", hash_generated_method = "857650AB477CD7B2F21D059311F9B9B7")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:09.558 -0400", hash_original_method = "D5583180449515B28719DEEF8D226179", hash_generated_method = "52EFFA170E8F308BB06A969373344839")
     //DSFIXME:  CODE0002: Requires DSC value to be set
      boolean extractTextInternal(ExtractedTextRequest request,
             int partialStartOffset, int partialEndOffset, int delta,
             ExtractedText outText) {
         dsTaint.addTaint(partialStartOffset);
         dsTaint.addTaint(partialEndOffset);
-        dsTaint.addTaint(request.dsTaint);
         dsTaint.addTaint(delta);
+        dsTaint.addTaint(request.dsTaint);
         dsTaint.addTaint(outText.dsTaint);
-        final CharSequence content;
+        CharSequence content;
         content = mText;
         {
             {
-                final int N;
+                int N;
                 N = content.length();
                 {
                     outText.partialStartOffset = outText.partialEndOffset = -1;
@@ -6002,7 +5975,6 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
                         int i;
                         i = spans.length;
                         {
-                            i--;
                             int j;
                             j = spanned.getSpanStart(spans[i]);
                             partialStartOffset = j;
@@ -6041,7 +6013,7 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
             } //End block
             outText.flags = 0;
             {
-                boolean varA35D3A020D07691CB25122C024188410_1389605448 = (MetaKeyKeyListener.getMetaState(mText, MetaKeyKeyListener.META_SELECTING) != 0);
+                boolean varA35D3A020D07691CB25122C024188410_313174193 = (MetaKeyKeyListener.getMetaState(mText, MetaKeyKeyListener.META_SELECTING) != 0);
                 {
                     outText.flags |= ExtractedText.FLAG_SELECTING;
                 } //End block
@@ -6059,18 +6031,18 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.149 -0400", hash_original_method = "E0B2F563BD380D089394FF3F6A004FAB", hash_generated_method = "E9560825E576A3A4FF905B047D6295F6")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:09.559 -0400", hash_original_method = "E0B2F563BD380D089394FF3F6A004FAB", hash_generated_method = "BBA579360F5717CCEE79C525A526A36A")
     //DSFIXME:  CODE0002: Requires DSC value to be set
      boolean reportExtractedText() {
-        final InputMethodState ims;
+        InputMethodState ims;
         ims = mInputMethodState;
         {
-            final boolean contentChanged;
+            boolean contentChanged;
             contentChanged = ims.mContentChanged;
             {
                 ims.mContentChanged = false;
                 ims.mSelectionModeChanged = false;
-                final ExtractedTextRequest req;
+                ExtractedTextRequest req;
                 req = mInputMethodState.mExtracting;
                 {
                     InputMethodManager imm;
@@ -6080,7 +6052,7 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
                             ims.mChangedStart = EXTRACT_NOTHING;
                         } //End block
                         {
-                            boolean varF32A83F45BD97D2740B78BFB41050619_1998912804 = (extractTextInternal(req, ims.mChangedStart, ims.mChangedEnd,
+                            boolean varF32A83F45BD97D2740B78BFB41050619_1109360631 = (extractTextInternal(req, ims.mChangedStart, ims.mChangedEnd,
                                 ims.mChangedDelta, ims.mTmpExtracted));
                             {
                                 imm.updateExtractedText(this, req.token,
@@ -6101,8 +6073,7 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.149 -0400", hash_original_method = "19B083F16A9E6F8D7C9301AD2E77499E", hash_generated_method = "84E0D74E88344C70AC04251A53043A8C")
-    static void removeParcelableSpans(Spannable spannable, int start, int end) {
+        static void removeParcelableSpans(Spannable spannable, int start, int end) {
         Object[] spans = spannable.getSpans(start, end, ParcelableSpan.class);
         int i = spans.length;
         while (i > 0) {
@@ -6112,7 +6083,7 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.150 -0400", hash_original_method = "BCA6F941081EC35E5D75ECC5825A5773", hash_generated_method = "7515BA001ADE71CFD38CA6624D0387D2")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:09.561 -0400", hash_original_method = "BCA6F941081EC35E5D75ECC5825A5773", hash_generated_method = "34AF4497686B9253BEDA02F26E7921CC")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public void setExtractedText(ExtractedText text) {
         dsTaint.addTaint(text.dsTaint);
@@ -6127,7 +6098,7 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
                 content.replace(0, content.length(), text.text);
             } //End block
             {
-                final int N;
+                int N;
                 N = content.length();
                 int start;
                 start = text.partialStartOffset;
@@ -6141,7 +6112,7 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
         } //End block
         Spannable sp;
         sp = (Spannable)getText();
-        final int N;
+        int N;
         N = sp.length();
         int start;
         start = text.selectionStart;
@@ -6163,8 +6134,8 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.154 -0400", hash_original_method = "7277A5A8CCC47DEA1B4CD7EF17ABC767", hash_generated_method = "F7EECE2BF8DA1B52D00C963AB3EF694A")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:09.562 -0400", hash_original_method = "7277A5A8CCC47DEA1B4CD7EF17ABC767", hash_generated_method = "7DE07DB0941D28B644B5CFADF4254643")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     public void setExtracting(ExtractedTextRequest req) {
         dsTaint.addTaint(req.dsTaint);
         {
@@ -6179,7 +6150,7 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.154 -0400", hash_original_method = "00B2156ECAED706F16E8F8EE554C74A0", hash_generated_method = "7ED7E98E0AF9FDD98E633A616A71E495")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:09.563 -0400", hash_original_method = "00B2156ECAED706F16E8F8EE554C74A0", hash_generated_method = "68FBE1E55D5F2D15D28E352710786D79")
     @DSModeled(DSC.SAFE)
     public void onCommitCompletion(CompletionInfo text) {
         //DSFIXME:  CODE0009: Possible callback target function detected
@@ -6188,8 +6159,8 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.154 -0400", hash_original_method = "F0F3377304175B47C81480C4E8ACCA98", hash_generated_method = "00D0E0E8EB765FB2960C943C63433ECA")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:09.563 -0400", hash_original_method = "F0F3377304175B47C81480C4E8ACCA98", hash_generated_method = "9566DC317A50C1192A536E73B8957E1B")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     public void onCommitCorrection(CorrectionInfo info) {
         //DSFIXME:  CODE0009: Possible callback target function detected
         dsTaint.addTaint(info.dsTaint);
@@ -6210,11 +6181,11 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.154 -0400", hash_original_method = "7E84F411EBAFCA8676D2B5471CC899F7", hash_generated_method = "32772779D13FFED3AE64BEA379C629EB")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:09.563 -0400", hash_original_method = "7E84F411EBAFCA8676D2B5471CC899F7", hash_generated_method = "C6ED258C6943B5864279549D8C2B5EDF")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public void beginBatchEdit() {
         mInBatchEditControllers = true;
-        final InputMethodState ims;
+        InputMethodState ims;
         ims = mInputMethodState;
         {
             int nesting;
@@ -6256,11 +6227,11 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.154 -0400", hash_original_method = "53E9CEBDC3778C58F6F63CD77BA92C78", hash_generated_method = "CDFF56510AC64D8A26F1B3C09C843BB7")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:09.563 -0400", hash_original_method = "53E9CEBDC3778C58F6F63CD77BA92C78", hash_generated_method = "77B017871EE5930E49E23C9847FD088B")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     public void endBatchEdit() {
         mInBatchEditControllers = false;
-        final InputMethodState ims;
+        InputMethodState ims;
         ims = mInputMethodState;
         {
             int nesting;
@@ -6281,10 +6252,10 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.154 -0400", hash_original_method = "49FC9F53534FDBC4416EED2F953235D5", hash_generated_method = "3DA37BDB73E8FF25972132B6DCB56F6E")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:09.564 -0400", hash_original_method = "49FC9F53534FDBC4416EED2F953235D5", hash_generated_method = "A4C75BEA5E2325357E5E68918C55A6E4")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
      void ensureEndedBatchEdit() {
-        final InputMethodState ims;
+        InputMethodState ims;
         ims = mInputMethodState;
         {
             ims.mBatchEditNesting = 0;
@@ -6299,8 +6270,8 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.155 -0400", hash_original_method = "5C56AEFFFAF99A5A2B83332AB2B67F77", hash_generated_method = "DAAB6A89728D1C590FE6297BD63EA5BB")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:09.564 -0400", hash_original_method = "5C56AEFFFAF99A5A2B83332AB2B67F77", hash_generated_method = "405847ABA229BA440AF274174A873846")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
      void finishBatchEdit(final InputMethodState ims) {
         dsTaint.addTaint(ims.dsTaint);
         onEndBatchEdit();
@@ -6322,8 +6293,8 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.155 -0400", hash_original_method = "208D05A3FD324C57DA7FED31CDB936F2", hash_generated_method = "088D94A8E75B7DC325476B5DF611F70F")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:09.564 -0400", hash_original_method = "208D05A3FD324C57DA7FED31CDB936F2", hash_generated_method = "7C66F10DE264EA448BBD871EBD45C2E6")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
      void updateAfterEdit() {
         invalidate();
         int curs;
@@ -6352,7 +6323,7 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.155 -0400", hash_original_method = "77FDC1BC2641DD2E3C25361410AF5DB0", hash_generated_method = "BABD032611396A879417AB280F9DEEE0")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:09.564 -0400", hash_original_method = "77FDC1BC2641DD2E3C25361410AF5DB0", hash_generated_method = "BC5277DD7D56968D2F4723F142BD5C12")
     @DSModeled(DSC.SAFE)
     public void onBeginBatchEdit() {
         //DSFIXME:  CODE0009: Possible callback target function detected
@@ -6360,7 +6331,7 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.155 -0400", hash_original_method = "52249F36F9A17EF1D72281B7699502C1", hash_generated_method = "3524F895FA7BC8483188AD0433D46CD3")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:09.565 -0400", hash_original_method = "52249F36F9A17EF1D72281B7699502C1", hash_generated_method = "47AA9BDFFBC119BCE27C341493B00781")
     @DSModeled(DSC.SAFE)
     public void onEndBatchEdit() {
         //DSFIXME:  CODE0009: Possible callback target function detected
@@ -6368,20 +6339,20 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.155 -0400", hash_original_method = "4EBA5E538796A46420814B4C84FDA4F7", hash_generated_method = "91E92E985E03F615A6A9D04A5052F6A4")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:09.565 -0400", hash_original_method = "4EBA5E538796A46420814B4C84FDA4F7", hash_generated_method = "35E6FAC2074BE4672AE7E32C2A9C9975")
     @DSModeled(DSC.SAFE)
     public boolean onPrivateIMECommand(String action, Bundle data) {
         //DSFIXME:  CODE0009: Possible callback target function detected
-        dsTaint.addTaint(action);
         dsTaint.addTaint(data.dsTaint);
+        dsTaint.addTaint(action);
         return dsTaint.getTaintBoolean();
         // ---------- Original Method ----------
         //return false;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.155 -0400", hash_original_method = "4BBE7444811911981578CD1FC44D7898", hash_generated_method = "53A9471330ECAECA0240CE356AA6CCD5")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:09.565 -0400", hash_original_method = "4BBE7444811911981578CD1FC44D7898", hash_generated_method = "C2DFA03E13DDE7509D862426BF7710F7")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     private void nullLayouts() {
         {
             mSavedLayout = (BoringLayout) mLayout;
@@ -6403,7 +6374,7 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.155 -0400", hash_original_method = "DE76D8533357DD76552FFACD362B9B5D", hash_generated_method = "04C32FBAFA2DBDF532837A3B278D9E91")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:09.565 -0400", hash_original_method = "DE76D8533357DD76552FFACD362B9B5D", hash_generated_method = "28C029B52CAF1F9F7C163FF4922C6280")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     private void assumeLayout() {
         int width;
@@ -6432,8 +6403,8 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.155 -0400", hash_original_method = "FF379A6CAE0485B60E59F45E1B8A7246", hash_generated_method = "39EBDD67101F0FA0254DD11D44887C00")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:09.566 -0400", hash_original_method = "FF379A6CAE0485B60E59F45E1B8A7246", hash_generated_method = "8899D16BAE890A74AD65848A0AADAC0E")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     @Override
     protected void resetResolvedLayoutDirection() {
         super.resetResolvedLayoutDirection();
@@ -6450,7 +6421,7 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.155 -0400", hash_original_method = "C784F6D37EB77044D77D743FABD50125", hash_generated_method = "E2937F17949F1F97AB9482F1DAB7A356")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:09.566 -0400", hash_original_method = "C784F6D37EB77044D77D743FABD50125", hash_generated_method = "6B091E86B17F2ECE8CFE12DE9B6DF6D4")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     private Layout.Alignment getLayoutAlignment() {
         {
@@ -6505,7 +6476,7 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.156 -0400", hash_original_method = "A69555D5DBD727E4B4531FE7AB9727A4", hash_generated_method = "849919D55A70C4272C9ADF57F17E53E3")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:09.567 -0400", hash_original_method = "A69555D5DBD727E4B4531FE7AB9727A4", hash_generated_method = "E4F9D449F2C5CF9967799935655D5B87")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     protected void makeNewLayout(int wantWidth, int hintWidth,
                                  BoringLayout.Metrics boring,
@@ -6515,8 +6486,8 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
         dsTaint.addTaint(hintBoring.dsTaint);
         dsTaint.addTaint(boring.dsTaint);
         dsTaint.addTaint(wantWidth);
-        dsTaint.addTaint(hintWidth);
         dsTaint.addTaint(ellipsisWidth);
+        dsTaint.addTaint(hintWidth);
         stopMarquee();
         mOldMaximum = mMaximum;
         mOldMaxMode = mMaxMode;
@@ -6531,7 +6502,7 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
         alignment = getLayoutAlignment();
         boolean shouldEllipsize;
         shouldEllipsize = mEllipsize != null && mInput == null;
-        final boolean switchEllipsize;
+        boolean switchEllipsize;
         switchEllipsize = mEllipsize == TruncateAt.MARQUEE &&
                 mMarqueeFadeMode != MARQUEE_FADE_NORMAL;
         TruncateAt effectiveEllipsize;
@@ -6620,9 +6591,9 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
         } //End block
         {
             {
-                boolean var74FA680CFF3550946DD695F927344B4C_336911445 = (!compressText(ellipsisWidth));
+                boolean var74FA680CFF3550946DD695F927344B4C_1125246838 = (!compressText(ellipsisWidth));
                 {
-                    final int height;
+                    int height;
                     height = mLayoutParams.height;
                     {
                         startMarquee();
@@ -6639,15 +6610,15 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.157 -0400", hash_original_method = "919E80CF27514D43AA0D66AD56F3C47B", hash_generated_method = "3A8F7D3FD27CC65ED224F8FB27449340")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:09.568 -0400", hash_original_method = "919E80CF27514D43AA0D66AD56F3C47B", hash_generated_method = "8702ABBAE48C515FAEB3DBA879F59FCF")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     private Layout makeSingleLayout(int wantWidth, BoringLayout.Metrics boring, int ellipsisWidth,
             Layout.Alignment alignment, boolean shouldEllipsize, TruncateAt effectiveEllipsize,
             boolean useSaved) {
         dsTaint.addTaint(alignment.dsTaint);
-        dsTaint.addTaint(boring.dsTaint);
-        dsTaint.addTaint(shouldEllipsize);
         dsTaint.addTaint(useSaved);
+        dsTaint.addTaint(shouldEllipsize);
+        dsTaint.addTaint(boring.dsTaint);
         dsTaint.addTaint(effectiveEllipsize.dsTaint);
         dsTaint.addTaint(wantWidth);
         dsTaint.addTaint(ellipsisWidth);
@@ -6725,28 +6696,32 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.157 -0400", hash_original_method = "F38DBB61FA92C8376A0BF0DADC8F1411", hash_generated_method = "56549ACD22B1473D0DEAB4C144C4FABB")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:09.569 -0400", hash_original_method = "F38DBB61FA92C8376A0BF0DADC8F1411", hash_generated_method = "5A25730BDAE4E2097A662A68A405789A")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     private boolean compressText(float width) {
         dsTaint.addTaint(width);
         {
-            boolean varBDA84146B1D9E3F7F12351B38C986FB8_1061184662 = (isHardwareAccelerated());
+            boolean varBDA84146B1D9E3F7F12351B38C986FB8_1830057236 = (isHardwareAccelerated());
         } //End collapsed parenthetic
         {
-            boolean var743F2FC0D45BA571C6484FE1669492A0_1298268417 = (width > 0.0f && mLayout != null && getLineCount() == 1 && !mUserSetTextScaleX &&
+            boolean var743F2FC0D45BA571C6484FE1669492A0_1681845706 = (width > 0.0f && mLayout != null && getLineCount() == 1 && !mUserSetTextScaleX &&
                 mTextPaint.getTextScaleX() == 1.0f);
             {
-                final float textWidth;
+                float textWidth;
                 textWidth = mLayout.getLineWidth(0);
-                final float overflow;
+                float overflow;
                 overflow = (textWidth + 1.0f - width) / width;
                 {
                     mTextPaint.setTextScaleX(1.0f - overflow - 0.005f);
-                    post(new Runnable() {
-                    public void run() {
-                        requestLayout();
-                    }
-                });
+                    post(new Runnable() {                        
+                        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:09.569 -0400", hash_original_method = "13996B392673F4526875359F0F526DB3", hash_generated_method = "221C03470D8DDA191DC873FAC4B9A060")
+                        //DSFIXME:  CODE0002: Requires DSC value to be set
+                        public void run() {
+                            requestLayout();
+                            // ---------- Original Method ----------
+                            //requestLayout();
+                        }
+});
                 } //End block
             } //End block
         } //End collapsed parenthetic
@@ -6771,8 +6746,7 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.157 -0400", hash_original_method = "96CB246721D7A29D66FE7CD97D8BA203", hash_generated_method = "6E35653B22149AD608030C0BF7897C24")
-    private static int desired(Layout layout) {
+        private static int desired(Layout layout) {
         int n = layout.getLineCount();
         CharSequence text = layout.getText();
         float max = 0;
@@ -6787,8 +6761,8 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.157 -0400", hash_original_method = "6C6FEB869E07EC14B89A3785CB4B2378", hash_generated_method = "C5291748C9E2892C34563931E1D54934")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:09.569 -0400", hash_original_method = "6C6FEB869E07EC14B89A3785CB4B2378", hash_generated_method = "F8C42849364E775BE39B83AC3564B55B")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     public void setIncludeFontPadding(boolean includepad) {
         dsTaint.addTaint(includepad);
         {
@@ -6810,7 +6784,7 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.158 -0400", hash_original_method = "CC856997CB919A81C5DE847B897CC56B", hash_generated_method = "3FA4C610ED7C512FE9DE078A36B79DF8")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:09.571 -0400", hash_original_method = "CC856997CB919A81C5DE847B897CC56B", hash_generated_method = "032C4908619FBB806721900B6E90DA2F")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     @Override
     protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
@@ -6863,7 +6837,7 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
             {
                 width = boring.width;
             } //End block
-            final Drawables dr;
+            Drawables dr;
             dr = mDrawables;
             {
                 width = Math.max(width, dr.mDrawableWidthTop);
@@ -6929,17 +6903,17 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
                           width - getCompoundPaddingLeft() - getCompoundPaddingRight(), false);
         } //End block
         {
-            final boolean layoutChanged;
+            boolean layoutChanged;
             layoutChanged = (mLayout.getWidth() != want) ||
                     (hintWidth != hintWant) ||
                     (mLayout.getEllipsizedWidth() !=
                             width - getCompoundPaddingLeft() - getCompoundPaddingRight());
-            final boolean widthChanged;
+            boolean widthChanged;
             widthChanged = (mHint == null) &&
                     (mEllipsize == null) &&
                     (want > mLayout.getWidth()) &&
                     (mLayout instanceof BoringLayout || (fromexisting && des >= 0 && des <= want));
-            final boolean maximumChanged;
+            boolean maximumChanged;
             maximumChanged = (mMaxMode != mOldMaxMode) || (mMaximum != mOldMaximum);
             {
                 {
@@ -6967,13 +6941,13 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
         int unpaddedHeight;
         unpaddedHeight = height - getCompoundPaddingTop() - getCompoundPaddingBottom();
         {
-            boolean var3DB10CBFB12ED38DCBD3FB16EF151096_1839980547 = (mMaxMode == LINES && mLayout.getLineCount() > mMaximum);
+            boolean var3DB10CBFB12ED38DCBD3FB16EF151096_2059509015 = (mMaxMode == LINES && mLayout.getLineCount() > mMaximum);
             {
                 unpaddedHeight = Math.min(unpaddedHeight, mLayout.getLineTop(mMaximum));
             } //End block
         } //End collapsed parenthetic
         {
-            boolean varFFED0DDEAA53977A5F429726E600A8F2_1681688604 = (mMovement != null ||
+            boolean varFFED0DDEAA53977A5F429726E600A8F2_140905046 = (mMovement != null ||
             mLayout.getWidth() > unpaddedWidth ||
             mLayout.getHeight() > unpaddedHeight);
             {
@@ -6989,10 +6963,10 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.158 -0400", hash_original_method = "94259D4548546EABDDB6F8414E37FA42", hash_generated_method = "9F676254835108C55C540CDA1ED63AB3")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:09.571 -0400", hash_original_method = "94259D4548546EABDDB6F8414E37FA42", hash_generated_method = "8145BCD42628E5868BA41F22779101B6")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     private int getDesiredHeight() {
-        int var2840A69C5B812317D9CA537C29691369_1494542165 = (Math.max(
+        int var2840A69C5B812317D9CA537C29691369_1689579316 = (Math.max(
                 getDesiredHeight(mLayout, true),
                 getDesiredHeight(mHintLayout, mEllipsize != null)));
         return dsTaint.getTaintInt();
@@ -7003,7 +6977,7 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.158 -0400", hash_original_method = "7AA300272C545049E0340D139CA1349D", hash_generated_method = "F009311F6607B592A99B9DEDD1DD9E5C")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:09.581 -0400", hash_original_method = "7AA300272C545049E0340D139CA1349D", hash_generated_method = "96F70D40270D04B76B222DE4BAEA1506")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     private int getDesiredHeight(Layout layout, boolean cap) {
         dsTaint.addTaint(cap);
@@ -7014,7 +6988,7 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
         pad = getCompoundPaddingTop() + getCompoundPaddingBottom();
         int desired;
         desired = layout.getLineTop(linecount);
-        final Drawables dr;
+        Drawables dr;
         dr = mDrawables;
         {
             desired = Math.max(desired, dr.mDrawableHeightLeft);
@@ -7052,7 +7026,7 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.159 -0400", hash_original_method = "112907D8B10F62764352610BA7B79108", hash_generated_method = "E3A5FC44A6D7C63BF9876A9CF46D0385")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:09.584 -0400", hash_original_method = "112907D8B10F62764352610BA7B79108", hash_generated_method = "9BC0820397C5A1E9B2629CB428586A0C")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     private void checkForResize() {
         boolean sizeChanged;
@@ -7066,7 +7040,7 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
                 int desiredHeight;
                 desiredHeight = getDesiredHeight();
                 {
-                    boolean var76B417FEF15CB7997AEC250AB014098F_438084770 = (desiredHeight != this.getHeight());
+                    boolean var76B417FEF15CB7997AEC250AB014098F_76724066 = (desiredHeight != this.getHeight());
                     {
                         sizeChanged = true;
                     } //End block
@@ -7090,11 +7064,11 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.159 -0400", hash_original_method = "5832A71588E0ABA41180B589D326BF70", hash_generated_method = "D755A7A569DCD7B2AC11CB23059B9926")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:09.586 -0400", hash_original_method = "5832A71588E0ABA41180B589D326BF70", hash_generated_method = "98E073E4982BFDCCA1C7A18D961C77A3")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     private void checkForRelayout() {
         {
-            boolean var32BFD96E0546ED5F291DC663279A0815_1208861771 = ((mLayoutParams.width != LayoutParams.WRAP_CONTENT ||
+            boolean var32BFD96E0546ED5F291DC663279A0815_1218931938 = ((mLayoutParams.width != LayoutParams.WRAP_CONTENT ||
                 (mMaxWidthMode == mMinWidthMode && mMaxWidth == mMinWidth)) &&
                 (mHint == null || mHintLayout != null) &&
                 (mRight - mLeft - getCompoundPaddingLeft() - getCompoundPaddingRight() > 0));
@@ -7114,7 +7088,7 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
                         invalidate();
                     } //End block
                     {
-                        boolean varE1571FB91561235A70F553E0D47B6412_849605004 = (mLayout.getHeight() == oldht &&
+                        boolean varE1571FB91561235A70F553E0D47B6412_19921101 = (mLayout.getHeight() == oldht &&
                     (mHintLayout == null || mHintLayout.getHeight() == oldht));
                         {
                             invalidate();
@@ -7135,7 +7109,7 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.159 -0400", hash_original_method = "0DA3D6D28C1432B95D5D1B1B5DDB2BC8", hash_generated_method = "C8DC22F4097D858FBB46604680BED801")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:09.587 -0400", hash_original_method = "0DA3D6D28C1432B95D5D1B1B5DDB2BC8", hash_generated_method = "FFA65954017D47E6AF0B0C9B99E067F3")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     private boolean bringTextIntoView() {
         int line;
@@ -7207,7 +7181,7 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.160 -0400", hash_original_method = "3C0DD43A95E696C7A1592341A7B2F740", hash_generated_method = "0749A139F83A78FC0BB990A4E0DDA087")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:09.589 -0400", hash_original_method = "3C0DD43A95E696C7A1592341A7B2F740", hash_generated_method = "0CACEFC9A842127E9A08770EDDF25C8E")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public boolean bringPointIntoView(int offset) {
         dsTaint.addTaint(offset);
@@ -7215,11 +7189,11 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
         changed = false;
         int line;
         line = mLayout.getLineForOffset(offset);
-        final int x;
+        int x;
         x = (int)mLayout.getPrimaryHorizontal(offset);
-        final int top;
+        int top;
         top = mLayout.getLineTop(line);
-        final int bottom;
+        int bottom;
         bottom = mLayout.getLineTop(line + 1);
         int left;
         left = (int) FloatMath.floor(mLayout.getLineLeft(line));
@@ -7229,7 +7203,7 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
         ht = mLayout.getHeight();
         int grav;
         {
-            Object var027910B290B59420177BD30BF1DDB958_153877688 = (mLayout.getParagraphAlignment(line));
+            Object var027910B290B59420177BD30BF1DDB958_155202800 = (mLayout.getParagraphAlignment(line));
             //Begin case ALIGN_LEFT 
             grav = 1;
             //End case ALIGN_LEFT 
@@ -7323,7 +7297,7 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
                 } //End block
                 {
                     {
-                        boolean varD539631976251D8AA391F3162DE97B1C_1129729042 = (!mScroller.isFinished());
+                        boolean varD539631976251D8AA391F3162DE97B1C_120174459 = (!mScroller.isFinished());
                         {
                             mScroller.abortAnimation();
                         } //End block
@@ -7335,14 +7309,14 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
             changed = true;
         } //End block
         {
-            boolean var1C23F183BE3EEE2A8667855A22865324_1976068824 = (isFocused());
+            boolean var1C23F183BE3EEE2A8667855A22865324_2131960794 = (isFocused());
             {
                 mTempRect = new Rect();
                 mTempRect.set(x - 2, top, x + 2, bottom);
                 getInterestingRect(mTempRect, line);
                 mTempRect.offset(mScrollX, mScrollY);
                 {
-                    boolean var5DD27CBBEE9D998C97ABDC1CFDA74333_11253568 = (requestRectangleOnScreen(mTempRect));
+                    boolean var5DD27CBBEE9D998C97ABDC1CFDA74333_1310091692 = (requestRectangleOnScreen(mTempRect));
                     {
                         changed = true;
                     } //End block
@@ -7355,7 +7329,7 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.161 -0400", hash_original_method = "02D4B7457672C459E287DBA1B16986EC", hash_generated_method = "2D6913FB75AF73935B8AF85E33B9F081")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:09.591 -0400", hash_original_method = "02D4B7457672C459E287DBA1B16986EC", hash_generated_method = "A4453B6BA3A452575E73BFEAE816C02A")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public boolean moveCursorToVisibleOffset() {
         int start;
@@ -7364,16 +7338,16 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
         end = getSelectionEnd();
         int line;
         line = mLayout.getLineForOffset(start);
-        final int top;
+        int top;
         top = mLayout.getLineTop(line);
-        final int bottom;
+        int bottom;
         bottom = mLayout.getLineTop(line + 1);
-        final int vspace;
+        int vspace;
         vspace = mBottom - mTop - getExtendedPaddingTop() - getExtendedPaddingBottom();
         int vslack;
         vslack = (bottom - top) / 2;
         vslack = vspace / 4;
-        final int vs;
+        int vs;
         vs = mScrollY;
         {
             line = mLayout.getLineForVertical(vs+vslack+(bottom-top));
@@ -7381,18 +7355,18 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
         {
             line = mLayout.getLineForVertical(vspace+vs-vslack-(bottom-top));
         } //End block
-        /* final */ int hspace;
+        int hspace;
         hspace = mRight - mLeft - getCompoundPaddingLeft() - getCompoundPaddingRight();
-        /* final  */int hs;
+        int hs;
         hs = mScrollX;
-        /* final  */int leftChar;
+        int leftChar;
         leftChar = mLayout.getOffsetForHorizontal(line, hs);
-        /* final  */int rightChar;
+        int rightChar;
         rightChar = mLayout.getOffsetForHorizontal(line, hspace+hs);
-        /* final  */int lowChar;
+        int lowChar;
         lowChar = leftChar;
         lowChar = rightChar;
-        /* final  */int highChar;
+        int highChar;
         highChar = leftChar;
         highChar = rightChar;
         int newStart;
@@ -7412,13 +7386,13 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.161 -0400", hash_original_method = "D06313C44705A7887AB654B7CF5A74B3", hash_generated_method = "FA417AD9517145D2BBF75787774AD274")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:09.591 -0400", hash_original_method = "D06313C44705A7887AB654B7CF5A74B3", hash_generated_method = "4B1F8DE1146649F5476A0EEB4D33ADB2")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     @Override
     public void computeScroll() {
         {
             {
-                boolean varD8983424724D79AFF92B0ED68CFEBCB5_501888602 = (mScroller.computeScrollOffset());
+                boolean varD8983424724D79AFF92B0ED68CFEBCB5_1050618063 = (mScroller.computeScrollOffset());
                 {
                     mScrollX = mScroller.getCurrX();
                     mScrollY = mScroller.getCurrY();
@@ -7439,7 +7413,7 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.161 -0400", hash_original_method = "ABFDC323272F3E6393D3C4F9B9F60889", hash_generated_method = "3248823DFF8733CAEF5FF9E5521931F6")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:09.591 -0400", hash_original_method = "ABFDC323272F3E6393D3C4F9B9F60889", hash_generated_method = "D000013E0CC98FDCCEEC4D2A87E8F0D0")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     private void getInterestingRect(Rect r, int line) {
         dsTaint.addTaint(r.dsTaint);
@@ -7447,7 +7421,7 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
         convertFromViewportToContentCoordinates(r);
         r.top -= getExtendedPaddingTop();
         {
-            boolean var36B5761D6C0D25FD94548457569D0FDF_918562719 = (line == mLayout.getLineCount() - 1);
+            boolean var36B5761D6C0D25FD94548457569D0FDF_844844483 = (line == mLayout.getLineCount() - 1);
             r.bottom += getExtendedPaddingBottom();
         } //End collapsed parenthetic
         // ---------- Original Method ----------
@@ -7457,15 +7431,15 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.161 -0400", hash_original_method = "D2E7C9E2773084F5B5BC96B85475267E", hash_generated_method = "E77A7D138B665DC2A3BF6100972AC3FF")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:09.592 -0400", hash_original_method = "D2E7C9E2773084F5B5BC96B85475267E", hash_generated_method = "AEEA4CD2FC5623C277274E645E48EFDE")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     private void convertFromViewportToContentCoordinates(Rect r) {
         dsTaint.addTaint(r.dsTaint);
-        final int horizontalOffset;
+        int horizontalOffset;
         horizontalOffset = viewportToContentHorizontalOffset();
         r.left += horizontalOffset;
         r.right += horizontalOffset;
-        final int verticalOffset;
+        int verticalOffset;
         verticalOffset = viewportToContentVerticalOffset();
         r.top += verticalOffset;
         r.bottom += verticalOffset;
@@ -7479,17 +7453,17 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.161 -0400", hash_original_method = "3DB802CF5F82AE3562BB26F896D07DB6", hash_generated_method = "709DEAB844C57A0F00CFF81C639E6266")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:09.592 -0400", hash_original_method = "3DB802CF5F82AE3562BB26F896D07DB6", hash_generated_method = "B1BD869022F73867FDEA53049DFE52A7")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     private int viewportToContentHorizontalOffset() {
-        int var094701FAECA9F0FDE06C5A96E63AF57B_1286727031 = (getCompoundPaddingLeft() - mScrollX);
+        int var094701FAECA9F0FDE06C5A96E63AF57B_207427065 = (getCompoundPaddingLeft() - mScrollX);
         return dsTaint.getTaintInt();
         // ---------- Original Method ----------
         //return getCompoundPaddingLeft() - mScrollX;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.161 -0400", hash_original_method = "1E5AEDFCDEE7B994A62FE1D426BA9AAE", hash_generated_method = "61DE87DD83C2AF07E01F468831E31379")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:09.592 -0400", hash_original_method = "1E5AEDFCDEE7B994A62FE1D426BA9AAE", hash_generated_method = "FD48B1D39334AB9183BAAEB8F3D6CEDA")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     private int viewportToContentVerticalOffset() {
         int offset;
@@ -7507,7 +7481,7 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.161 -0400", hash_original_method = "7E6A70E8247BE9F0E1C3854BAECCAE99", hash_generated_method = "23BEFC463A5C4DB8A77E8C4F2611ECD6")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:09.593 -0400", hash_original_method = "7E6A70E8247BE9F0E1C3854BAECCAE99", hash_generated_method = "F7109A974FB60A8932481A18D8B09E61")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     @Override
     public void debug(int depth) {
@@ -7548,36 +7522,34 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.161 -0400", hash_original_method = "FC0380BF9D344F57087ADAA0F0C8C1E5", hash_generated_method = "24012FCDF9A98BC5DE4E8FBC1359F0F3")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:09.593 -0400", hash_original_method = "FC0380BF9D344F57087ADAA0F0C8C1E5", hash_generated_method = "8EA1CC20DAA56D38704688CC298DD926")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     @ViewDebug.ExportedProperty(category = "text")
     public int getSelectionStart() {
-        //DSFIXME:  CODE0009: Possible callback target function detected
-        int varB37ACFCDE0514D1AD6E7980466D0642F_260434894 = (Selection.getSelectionStart(getText()));
+        int varB37ACFCDE0514D1AD6E7980466D0642F_315754670 = (Selection.getSelectionStart(getText()));
         return dsTaint.getTaintInt();
         // ---------- Original Method ----------
         //return Selection.getSelectionStart(getText());
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.161 -0400", hash_original_method = "59139061668C8515BDA5938230C2D233", hash_generated_method = "3276E0E6E31F560038E895113422398B")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:09.593 -0400", hash_original_method = "59139061668C8515BDA5938230C2D233", hash_generated_method = "8DF6432BBB1FC59FD08A00CD1EA8579C")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     @ViewDebug.ExportedProperty(category = "text")
     public int getSelectionEnd() {
-        //DSFIXME:  CODE0009: Possible callback target function detected
-        int var62647D48C20F4425C471C6DB7EC335FA_825565169 = (Selection.getSelectionEnd(getText()));
+        int var62647D48C20F4425C471C6DB7EC335FA_1103370957 = (Selection.getSelectionEnd(getText()));
         return dsTaint.getTaintInt();
         // ---------- Original Method ----------
         //return Selection.getSelectionEnd(getText());
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.162 -0400", hash_original_method = "BD52AC55F75FC20C70791ABE185D07B3", hash_generated_method = "8B2B93FB06468D6CDE04B7F4350340CC")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:09.593 -0400", hash_original_method = "BD52AC55F75FC20C70791ABE185D07B3", hash_generated_method = "20BDE6CD7C749F0CB20E609C2F5F8511")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     public boolean hasSelection() {
-        final int selectionStart;
+        int selectionStart;
         selectionStart = getSelectionStart();
-        final int selectionEnd;
+        int selectionEnd;
         selectionEnd = getSelectionEnd();
         return dsTaint.getTaintBoolean();
         // ---------- Original Method ----------
@@ -7587,8 +7559,8 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.162 -0400", hash_original_method = "08C77724BEA7FD604DDC056EC8AC0A85", hash_generated_method = "A3D8F6C3642FCF18D74296EFCC945E68")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:09.593 -0400", hash_original_method = "08C77724BEA7FD604DDC056EC8AC0A85", hash_generated_method = "3BCA6B79215B55736909B9CF7C5FC574")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     public void setSingleLine() {
         setSingleLine(true);
         // ---------- Original Method ----------
@@ -7596,7 +7568,7 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.162 -0400", hash_original_method = "02E25EABD0939EA349140FD704ABC4B2", hash_generated_method = "3D889E23FB38CD6E19C30A44FDF4EFDD")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:09.594 -0400", hash_original_method = "02E25EABD0939EA349140FD704ABC4B2", hash_generated_method = "24696A566C8EC9F65493607FE061B70C")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public void setAllCaps(boolean allCaps) {
         dsTaint.addTaint(allCaps);
@@ -7615,8 +7587,8 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.162 -0400", hash_original_method = "F67AECEDD15B73EEA4C7246A27A881B1", hash_generated_method = "ACDA794750907F1A4872501FD7FCFC82")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:09.594 -0400", hash_original_method = "F67AECEDD15B73EEA4C7246A27A881B1", hash_generated_method = "6F2D5D7AE035AD382D15F0256B1A1271")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     @android.view.RemotableViewMethod
     public void setSingleLine(boolean singleLine) {
         dsTaint.addTaint(singleLine);
@@ -7628,7 +7600,7 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.162 -0400", hash_original_method = "7606E2D7FCC52ECFF0946358CA46A596", hash_generated_method = "9E30756852806CFF08F95F590CD08AF6")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:09.594 -0400", hash_original_method = "7606E2D7FCC52ECFF0946358CA46A596", hash_generated_method = "7AC9B728CFC8505C8D7BF8038FE5EDAD")
     @DSModeled(DSC.SAFE)
     private void setInputTypeSingleLine(boolean singleLine) {
         dsTaint.addTaint(singleLine);
@@ -7651,12 +7623,12 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.162 -0400", hash_original_method = "939294E5BC9AAD2D1E9D05ACD8801E5C", hash_generated_method = "179FB82398E667D64B0C47601F78AD96")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:09.594 -0400", hash_original_method = "939294E5BC9AAD2D1E9D05ACD8801E5C", hash_generated_method = "58B8AE4354CE2AA3B91D2FE4E7F64A96")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     private void applySingleLine(boolean singleLine, boolean applyTransformation,
             boolean changeMaxLines) {
-        dsTaint.addTaint(applyTransformation);
         dsTaint.addTaint(changeMaxLines);
+        dsTaint.addTaint(applyTransformation);
         dsTaint.addTaint(singleLine);
         {
             setLines(1);
@@ -7694,8 +7666,8 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.162 -0400", hash_original_method = "8F48F7BF1B8DCE5D5519F1200A0ED853", hash_generated_method = "1885B14DA9BC9AF54FC785030A4C060E")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:09.595 -0400", hash_original_method = "8F48F7BF1B8DCE5D5519F1200A0ED853", hash_generated_method = "F7406CF0C4C57C560C1FE1C241A133CE")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     public void setEllipsize(TextUtils.TruncateAt where) {
         dsTaint.addTaint(where.dsTaint);
         {
@@ -7717,7 +7689,7 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.162 -0400", hash_original_method = "CD4BE90CF39D915FD988D1208E7FE9CE", hash_generated_method = "96D55CA77C9ADD704C9C8C01D27A48FA")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:09.595 -0400", hash_original_method = "CD4BE90CF39D915FD988D1208E7FE9CE", hash_generated_method = "1ED1FF7F25F3031551D433B29AEA4A3D")
     @DSModeled(DSC.SAFE)
     public void setMarqueeRepeatLimit(int marqueeLimit) {
         dsTaint.addTaint(marqueeLimit);
@@ -7726,7 +7698,7 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.162 -0400", hash_original_method = "A6931739C39A011B325E0D6A04B5E1A4", hash_generated_method = "896D46AB6B3F51F5A4B8D1FD5071FBE4")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:09.595 -0400", hash_original_method = "A6931739C39A011B325E0D6A04B5E1A4", hash_generated_method = "BE6E65E9D8D05535CF0A1E817ACFF874")
     @DSModeled(DSC.SAFE)
     @ViewDebug.ExportedProperty
     public TextUtils.TruncateAt getEllipsize() {
@@ -7736,8 +7708,8 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.162 -0400", hash_original_method = "EF856664E3DB8B213F8E2D5A0092DC9C", hash_generated_method = "752513298D2B16D6F0BBFE7303003616")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:09.595 -0400", hash_original_method = "EF856664E3DB8B213F8E2D5A0092DC9C", hash_generated_method = "F295B731CDB53C93BB3AF92FCB4A2FFA")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     @android.view.RemotableViewMethod
     public void setSelectAllOnFocus(boolean selectAllOnFocus) {
         dsTaint.addTaint(selectAllOnFocus);
@@ -7752,8 +7724,8 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.163 -0400", hash_original_method = "8363604A399432417CD34524C965D01B", hash_generated_method = "AC3EE2CE54294D9896D905A76DC10543")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:09.595 -0400", hash_original_method = "8363604A399432417CD34524C965D01B", hash_generated_method = "7B72DEF94406155BB8764830CAAD64C2")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     @android.view.RemotableViewMethod
     public void setCursorVisible(boolean visible) {
         dsTaint.addTaint(visible);
@@ -7772,22 +7744,22 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.163 -0400", hash_original_method = "D29F788B650242C9D9871158254DD48F", hash_generated_method = "C9F8F16DF2F20B7BFDD49F05BFCEEE57")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:09.596 -0400", hash_original_method = "D29F788B650242C9D9871158254DD48F", hash_generated_method = "DB673EF77BB5AA8F6F3DE6AA6E061108")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     private boolean isCursorVisible() {
-        boolean var34066627433670C8BAD177AAE0AA915E_787304913 = (mCursorVisible && isTextEditable());
+        boolean var34066627433670C8BAD177AAE0AA915E_2059214554 = (mCursorVisible && isTextEditable());
         return dsTaint.getTaintBoolean();
         // ---------- Original Method ----------
         //return mCursorVisible && isTextEditable();
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.163 -0400", hash_original_method = "20D9FD35375357DA34698727A7AEC969", hash_generated_method = "C8AB1BA91849335CBA008B966E2992A7")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:09.596 -0400", hash_original_method = "20D9FD35375357DA34698727A7AEC969", hash_generated_method = "2FA3EE5EE773C4EECB41A4F8EE4B3A71")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     private boolean canMarquee() {
         int width;
         width = (mRight - mLeft - getCompoundPaddingLeft() - getCompoundPaddingRight());
-        boolean var7BCDD076660CE26696388675CAFFA311_1027473279 = (width > 0 && (mLayout.getLineWidth(0) > width ||
+        boolean var7BCDD076660CE26696388675CAFFA311_32221541 = (width > 0 && (mLayout.getLineWidth(0) > width ||
                 (mMarqueeFadeMode != MARQUEE_FADE_NORMAL && mSavedMarqueeModeLayout != null &&
                         mSavedMarqueeModeLayout.getLineWidth(0) > width)));
         return dsTaint.getTaintBoolean();
@@ -7799,19 +7771,19 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.163 -0400", hash_original_method = "A5A9508FE00ED8FCDF4CF88DA2302AE0", hash_generated_method = "230DA644C5FD5F7CFF804B80D59EBDFF")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:09.596 -0400", hash_original_method = "A5A9508FE00ED8FCDF4CF88DA2302AE0", hash_generated_method = "741FEE6BCC192DEAE7AD79C0C83AE152")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     private void startMarquee() {
         {
-            boolean var6ED3A362A2778E1490EC444CE7783B2B_16237655 = (compressText(getWidth() - getCompoundPaddingLeft() - getCompoundPaddingRight()));
+            boolean var6ED3A362A2778E1490EC444CE7783B2B_869458678 = (compressText(getWidth() - getCompoundPaddingLeft() - getCompoundPaddingRight()));
         } //End collapsed parenthetic
         {
-            boolean var075BA9C6A85CDA01D82AF38828D63BDE_846124087 = ((mMarquee == null || mMarquee.isStopped()) && (isFocused() || isSelected()) &&
+            boolean var075BA9C6A85CDA01D82AF38828D63BDE_1583999189 = ((mMarquee == null || mMarquee.isStopped()) && (isFocused() || isSelected()) &&
                 getLineCount() == 1 && canMarquee());
             {
                 {
                     mMarqueeFadeMode = MARQUEE_FADE_SWITCH_SHOW_FADE;
-                    final Layout tmp;
+                    Layout tmp;
                     tmp = mLayout;
                     mLayout = mSavedMarqueeModeLayout;
                     mSavedMarqueeModeLayout = tmp;
@@ -7828,18 +7800,18 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.163 -0400", hash_original_method = "20FFAC26BF2AB259CA62980CC6D60A71", hash_generated_method = "851F2BAC04E29E0AB07A41D400599417")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:09.597 -0400", hash_original_method = "20FFAC26BF2AB259CA62980CC6D60A71", hash_generated_method = "70CC7F198D1381B434E4EF21A62943B2")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     private void stopMarquee() {
         {
-            boolean varC29061DCB050768224BF65B86692AEF9_781520673 = (mMarquee != null && !mMarquee.isStopped());
+            boolean varC29061DCB050768224BF65B86692AEF9_545490398 = (mMarquee != null && !mMarquee.isStopped());
             {
                 mMarquee.stop();
             } //End block
         } //End collapsed parenthetic
         {
             mMarqueeFadeMode = MARQUEE_FADE_SWITCH_SHOW_ELLIPSIS;
-            final Layout tmp;
+            Layout tmp;
             tmp = mSavedMarqueeModeLayout;
             mSavedMarqueeModeLayout = mLayout;
             mLayout = tmp;
@@ -7863,8 +7835,8 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.163 -0400", hash_original_method = "21D240E17A817FDDEDCDA696469AE631", hash_generated_method = "A0980D8FD5E6737BC51A032E62494F32")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:09.597 -0400", hash_original_method = "21D240E17A817FDDEDCDA696469AE631", hash_generated_method = "67B14F2DF4E96AA7EBBF538AE358343D")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     private void startStopMarquee(boolean start) {
         dsTaint.addTaint(start);
         {
@@ -7886,7 +7858,7 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.163 -0400", hash_original_method = "CD3A5A17C18A7E4515BB5E10EEE133D7", hash_generated_method = "581B9167E6EC57C5A0CDDB227D961F50")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:09.597 -0400", hash_original_method = "CD3A5A17C18A7E4515BB5E10EEE133D7", hash_generated_method = "A14C096F5AC8CA9BC46A4E4620B7747C")
     @DSModeled(DSC.SAFE)
     protected void onTextChanged(CharSequence text, int start, int lengthBefore, int lengthAfter) {
         //DSFIXME:  CODE0009: Possible callback target function detected
@@ -7898,8 +7870,8 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.163 -0400", hash_original_method = "50DC1B812435050055FA72016E5949C2", hash_generated_method = "90443E5ACB9E2AE2A9CEE706B26945D3")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:09.597 -0400", hash_original_method = "50DC1B812435050055FA72016E5949C2", hash_generated_method = "6CDB32BDB3B74DEF22F4C66FD01FD5EE")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     protected void onSelectionChanged(int selStart, int selEnd) {
         //DSFIXME:  CODE0009: Possible callback target function detected
         dsTaint.addTaint(selStart);
@@ -7910,8 +7882,8 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.163 -0400", hash_original_method = "B64F50676D912718618203C6EADBF90A", hash_generated_method = "C55EB5C715FAEAE8B2FCEC33977B3B83")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:09.597 -0400", hash_original_method = "B64F50676D912718618203C6EADBF90A", hash_generated_method = "FD61E01117570BA4B7B43084426D6BEE")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     public void addTextChangedListener(TextWatcher watcher) {
         dsTaint.addTaint(watcher.dsTaint);
         {
@@ -7926,8 +7898,8 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.164 -0400", hash_original_method = "8E2AAA118EDD6CA871B924E45DB79686", hash_generated_method = "3106B2AB91E1039B6776268BF855C519")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:09.598 -0400", hash_original_method = "8E2AAA118EDD6CA871B924E45DB79686", hash_generated_method = "7F421310508EB583C593CB99141FFC38")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     public void removeTextChangedListener(TextWatcher watcher) {
         dsTaint.addTaint(watcher.dsTaint);
         {
@@ -7947,7 +7919,7 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.164 -0400", hash_original_method = "282476D07DF9C69037F7F82B56506B50", hash_generated_method = "AE6CB8F6DF0B583D3B83B24A821F92DA")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:09.598 -0400", hash_original_method = "282476D07DF9C69037F7F82B56506B50", hash_generated_method = "27036F12F07CEEE5B2C4874D640810F2")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     private void sendBeforeTextChanged(CharSequence text, int start, int before, int after) {
         dsTaint.addTaint(after);
@@ -7955,9 +7927,9 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
         dsTaint.addTaint(start);
         dsTaint.addTaint(before);
         {
-            final ArrayList<TextWatcher> list;
+            ArrayList<TextWatcher> list;
             list = mListeners;
-            final int count;
+            int count;
             count = list.size();
             {
                 int i;
@@ -7982,8 +7954,8 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.164 -0400", hash_original_method = "3C2834233455B82E3097E9750018AB89", hash_generated_method = "87D5F75D17AEA385FA334C662744DE72")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:09.598 -0400", hash_original_method = "3C2834233455B82E3097E9750018AB89", hash_generated_method = "0FCB6F807707305517905D6CC3F9CA75")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     private <T> void removeIntersectingSpans(int start, int end, Class<T> type) {
         dsTaint.addTaint(start);
         dsTaint.addTaint(type.dsTaint);
@@ -7992,15 +7964,15 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
         text = (Editable) mText;
         T[] spans;
         spans = text.getSpans(start, end, type);
-        final int length;
+        int length;
         length = spans.length;
         {
             int i;
             i = 0;
             {
-                final int s;
+                int s;
                 s = text.getSpanStart(spans[i]);
-                final int e;
+                int e;
                 e = text.getSpanEnd(spans[i]);
                 text.removeSpan(spans[i]);
             } //End block
@@ -8019,7 +7991,7 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.164 -0400", hash_original_method = "942AE7F3893B5D5A1A729CC9A3D3A214", hash_generated_method = "7DB257A262BCF8438408D9B68399894B")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:09.599 -0400", hash_original_method = "942AE7F3893B5D5A1A729CC9A3D3A214", hash_generated_method = "73F4C7478440767627C2E2D6D98EAE57")
     //DSFIXME:  CODE0002: Requires DSC value to be set
      void sendOnTextChanged(CharSequence text, int start, int before, int after) {
         dsTaint.addTaint(after);
@@ -8027,9 +7999,9 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
         dsTaint.addTaint(start);
         dsTaint.addTaint(before);
         {
-            final ArrayList<TextWatcher> list;
+            ArrayList<TextWatcher> list;
             list = mListeners;
-            final int count;
+            int count;
             count = list.size();
             {
                 int i;
@@ -8054,14 +8026,14 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.164 -0400", hash_original_method = "9B73ECD477F18D05FDDE640FFC672625", hash_generated_method = "3CC5426479B54E3C9CCF253D3097A333")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:09.599 -0400", hash_original_method = "9B73ECD477F18D05FDDE640FFC672625", hash_generated_method = "E1DCB1C1F4B07C01E0618610AF5AA6B7")
     //DSFIXME:  CODE0002: Requires DSC value to be set
      void sendAfterTextChanged(Editable text) {
         dsTaint.addTaint(text.dsTaint);
         {
-            final ArrayList<TextWatcher> list;
+            ArrayList<TextWatcher> list;
             list = mListeners;
-            final int count;
+            int count;
             count = list.size();
             {
                 int i;
@@ -8082,14 +8054,14 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.164 -0400", hash_original_method = "4CD104B06ADE0BFE958B91634E28368D", hash_generated_method = "5EC8D7757B348D180D66D79D8E12DEC8")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:09.599 -0400", hash_original_method = "4CD104B06ADE0BFE958B91634E28368D", hash_generated_method = "BA8CB31EE752D80C24A741AB43EE71BC")
     //DSFIXME:  CODE0002: Requires DSC value to be set
      void handleTextChanged(CharSequence buffer, int start, int before, int after) {
-        dsTaint.addTaint(buffer);
         dsTaint.addTaint(after);
+        dsTaint.addTaint(buffer);
         dsTaint.addTaint(start);
         dsTaint.addTaint(before);
-        final InputMethodState ims;
+        InputMethodState ims;
         ims = mInputMethodState;
         {
             updateAfterEdit();
@@ -8129,28 +8101,28 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.165 -0400", hash_original_method = "69940040C167925CDE0DCFB6E34891AF", hash_generated_method = "0FF67416EC7D06ADA44D3B3A706443E8")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:09.600 -0400", hash_original_method = "69940040C167925CDE0DCFB6E34891AF", hash_generated_method = "CDFC4BE82B97F8CC4727D963D968BD25")
     //DSFIXME:  CODE0002: Requires DSC value to be set
      void spanChange(Spanned buf, Object what, int oldStart, int newStart, int oldEnd, int newEnd) {
         dsTaint.addTaint(oldEnd);
         dsTaint.addTaint(what.dsTaint);
         dsTaint.addTaint(newStart);
         dsTaint.addTaint(oldStart);
-        dsTaint.addTaint(buf.dsTaint);
         dsTaint.addTaint(newEnd);
+        dsTaint.addTaint(buf.dsTaint);
         boolean selChanged;
         selChanged = false;
         int newSelStart, newSelEnd;
         newSelStart = -1;
         newSelEnd = -1;
-        final InputMethodState ims;
+        InputMethodState ims;
         ims = mInputMethodState;
         {
             mHighlightPathBogus = true;
             selChanged = true;
             newSelEnd = newStart;
             {
-                boolean varCCB6FB0842D1DC09DCB72C373334A6F6_1213845290 = (!isFocused());
+                boolean varCCB6FB0842D1DC09DCB72C373334A6F6_884286000 = (!isFocused());
                 {
                     mSelectionMoved = true;
                 } //End block
@@ -8166,7 +8138,7 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
             selChanged = true;
             newSelStart = newStart;
             {
-                boolean varCCB6FB0842D1DC09DCB72C373334A6F6_1120840984 = (!isFocused());
+                boolean varCCB6FB0842D1DC09DCB72C373334A6F6_300675413 = (!isFocused());
                 {
                     mSelectionMoved = true;
                 } //End block
@@ -8179,7 +8151,7 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
         } //End block
         {
             {
-                boolean varA8F0B10D2B3144CBC8414B61F2255511_1457049196 = ((buf.getSpanFlags(what)&Spanned.SPAN_INTERMEDIATE) == 0);
+                boolean varA8F0B10D2B3144CBC8414B61F2255511_813211630 = ((buf.getSpanFlags(what)&Spanned.SPAN_INTERMEDIATE) == 0);
                 {
                     {
                         newSelStart = Selection.getSelectionStart(buf);
@@ -8202,17 +8174,17 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
             } //End block
         } //End block
         {
-            boolean var534517144FEFDAEF71F7C8FA756F16FC_2129313670 = (MetaKeyKeyListener.isMetaTracker(buf, what));
+            boolean var534517144FEFDAEF71F7C8FA756F16FC_2053154533 = (MetaKeyKeyListener.isMetaTracker(buf, what));
             {
                 mHighlightPathBogus = true;
                 {
-                    boolean var16FFCEF6C055C210FC735BC7F134F961_1089930043 = (ims != null && MetaKeyKeyListener.isSelectingMetaTracker(buf, what));
+                    boolean var16FFCEF6C055C210FC735BC7F134F961_315318829 = (ims != null && MetaKeyKeyListener.isSelectingMetaTracker(buf, what));
                     {
                         ims.mSelectionModeChanged = true;
                     } //End block
                 } //End collapsed parenthetic
                 {
-                    boolean varEFD569E843D74170ABE4EC8DA8C94C51_992721556 = (Selection.getSelectionStart(buf) >= 0);
+                    boolean varEFD569E843D74170ABE4EC8DA8C94C51_1122114325 = (Selection.getSelectionStart(buf) >= 0);
                     {
                         {
                             invalidateCursor();
@@ -8257,14 +8229,14 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.165 -0400", hash_original_method = "3584A2B9A599770217F39B9A82ACFE32", hash_generated_method = "1E4B7D2AF1D514222EB9AB7011B3F6BE")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:09.601 -0400", hash_original_method = "3584A2B9A599770217F39B9A82ACFE32", hash_generated_method = "C04E63752BC94DC5CD70DB6E26C6F0FA")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     private void updateSpellCheckSpans(int start, int end, boolean createSpellChecker) {
         dsTaint.addTaint(createSpellChecker);
         dsTaint.addTaint(start);
         dsTaint.addTaint(end);
         {
-            boolean var330582D41A8577FF8D2F4281F7486A79_1806313222 = (isTextEditable() && isSuggestionsEnabled() && !(this instanceof ExtractEditText));
+            boolean var330582D41A8577FF8D2F4281F7486A79_1377397795 = (isTextEditable() && isSuggestionsEnabled() && !(this instanceof ExtractEditText));
             {
                 {
                     mSpellChecker = new SpellChecker(this);
@@ -8286,8 +8258,8 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.165 -0400", hash_original_method = "5B060B8ED8B2D254991A03FDABE416A2", hash_generated_method = "DB1EB795A7883D0F9EBCBE0445AFD858")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:09.601 -0400", hash_original_method = "5B060B8ED8B2D254991A03FDABE416A2", hash_generated_method = "5442F0493B231BDA57B4F0511037B18F")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     @Override
     public void dispatchFinishTemporaryDetach() {
         mDispatchTemporaryDetach = true;
@@ -8300,8 +8272,8 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.165 -0400", hash_original_method = "F389EC0F4785B5FE5917104FC845071C", hash_generated_method = "B42C33B9BDC87CD63938B7B9BF7CF104")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:09.601 -0400", hash_original_method = "F389EC0F4785B5FE5917104FC845071C", hash_generated_method = "1A91DFB12354DC797253849F4D5C2578")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     @Override
     public void onStartTemporaryDetach() {
         //DSFIXME:  CODE0009: Possible callback target function detected
@@ -8315,8 +8287,8 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.165 -0400", hash_original_method = "FEAF0C4CB4DA72DBC669293A29968ABE", hash_generated_method = "29558E58349D48FEEE3A414037165D50")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:09.610 -0400", hash_original_method = "FEAF0C4CB4DA72DBC669293A29968ABE", hash_generated_method = "B710ACB4EFD7C32268C236E59191274A")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     @Override
     public void onFinishTemporaryDetach() {
         //DSFIXME:  CODE0009: Possible callback target function detected
@@ -8328,14 +8300,14 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.166 -0400", hash_original_method = "B5EB741E17FA804FF18CB2D4805829B5", hash_generated_method = "8928B1A9F489841AD418253C91CB7E5E")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:09.613 -0400", hash_original_method = "B5EB741E17FA804FF18CB2D4805829B5", hash_generated_method = "EBD391494BB37E9F0045F9473CBB5691")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     @Override
     protected void onFocusChanged(boolean focused, int direction, Rect previouslyFocusedRect) {
         //DSFIXME:  CODE0009: Possible callback target function detected
         dsTaint.addTaint(direction);
-        dsTaint.addTaint(focused);
         dsTaint.addTaint(previouslyFocusedRect.dsTaint);
+        dsTaint.addTaint(focused);
         {
             super.onFocusChanged(focused, direction, previouslyFocusedRect);
         } //End block
@@ -8346,12 +8318,12 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
             selStart = getSelectionStart();
             int selEnd;
             selEnd = getSelectionEnd();
-            final boolean isFocusHighlighted;
+            boolean isFocusHighlighted;
             isFocusHighlighted = mSelectAllOnFocus && selStart == 0 &&
                     selEnd == mText.length();
             mCreatedWithASelection = mFrozenWithFocus && hasSelection() && !isFocusHighlighted;
             {
-                final int lastTapPosition;
+                int lastTapPosition;
                 lastTapPosition = getLastTapPosition();
                 {
                     Selection.setSelection((Spannable) mText, lastTapPosition);
@@ -8385,9 +8357,9 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
             } //End block
             onEndBatchEdit();
             {
-                final int selStart;
+                int selStart;
                 selStart = getSelectionStart();
-                final int selEnd;
+                int selEnd;
                 selEnd = getSelectionEnd();
                 hideControllers();
                 Selection.setSelection((Spannable) mText, selStart, selEnd);
@@ -8410,7 +8382,7 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.166 -0400", hash_original_method = "CD7EF11AEB2748DC958E6E43AA11AC3D", hash_generated_method = "64B2D12C3D53C7BB38FBEF175811844E")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:09.614 -0400", hash_original_method = "CD7EF11AEB2748DC958E6E43AA11AC3D", hash_generated_method = "75538C2DB111EAE32CECDA7BBF55DE0B")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     private int getLastTapPosition() {
         {
@@ -8418,7 +8390,7 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
             lastTapPosition = mSelectionModifierCursorController.getMinTouchOffset();
             {
                 {
-                    boolean var164D0FD6416EC18A9D0895B7ABD638B0_189747940 = (lastTapPosition > mText.length());
+                    boolean var164D0FD6416EC18A9D0895B7ABD638B0_1012430860 = (lastTapPosition > mText.length());
                     {
                         lastTapPosition = mText.length();
                     } //End block
@@ -8442,8 +8414,8 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.166 -0400", hash_original_method = "52F09857D084B6A7FF7DED6ACD447E38", hash_generated_method = "D5D6B533393C83A94E74BE2A4E6AC2F6")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:09.614 -0400", hash_original_method = "52F09857D084B6A7FF7DED6ACD447E38", hash_generated_method = "7C45A8468A2E9492646E4D406B2180EF")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     @Override
     public void onWindowFocusChanged(boolean hasWindowFocus) {
         //DSFIXME:  CODE0009: Possible callback target function detected
@@ -8493,8 +8465,8 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.166 -0400", hash_original_method = "CACE22E1BEC14AEE1A4D35946DA3AF11", hash_generated_method = "1B795EB3E273A9D55A6324DA1EDE2873")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:09.614 -0400", hash_original_method = "CACE22E1BEC14AEE1A4D35946DA3AF11", hash_generated_method = "A6B3E6125FD08B739D77909671CD8DD5")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     @Override
     protected void onVisibilityChanged(View changedView, int visibility) {
         //DSFIXME:  CODE0009: Possible callback target function detected
@@ -8512,8 +8484,8 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.166 -0400", hash_original_method = "B1100F7CC0894E179F002CED35623F94", hash_generated_method = "D6A9FE6460F444067BC53062D9DD2D1A")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:09.615 -0400", hash_original_method = "B1100F7CC0894E179F002CED35623F94", hash_generated_method = "7326FA68EB3D2B7287F66A500889967C")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     public void clearComposingText() {
         {
             BaseInputConnection.removeComposingSpans((Spannable)mText);
@@ -8525,8 +8497,8 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.166 -0400", hash_original_method = "D9A75FFCA0200824B6C25D7D7E778114", hash_generated_method = "B2FA1D475AE9D59FC9969BABBE857886")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:09.615 -0400", hash_original_method = "D9A75FFCA0200824B6C25D7D7E778114", hash_generated_method = "A2B16D75ACAAA178DFD0C7D584E93F32")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     @Override
     public void setSelected(boolean selected) {
         dsTaint.addTaint(selected);
@@ -8554,16 +8526,16 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.167 -0400", hash_original_method = "66B01BC66F894D20F58119BE8C84CE2C", hash_generated_method = "B67BD620D1A20D6066BC8B7F1C9D5A6B")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:09.645 -0400", hash_original_method = "66B01BC66F894D20F58119BE8C84CE2C", hash_generated_method = "6D80F6C25EBA2ADDE614C7D0DED6575A")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     @Override
     public boolean onTouchEvent(MotionEvent event) {
         //DSFIXME:  CODE0009: Possible callback target function detected
         dsTaint.addTaint(event.dsTaint);
-        final int action;
+        int action;
         action = event.getActionMasked();
         {
-            boolean varCA8C62D3CC4BCF9B6208820C93DA2727_1059290662 = (hasSelectionController());
+            boolean varCA8C62D3CC4BCF9B6208820C93DA2727_549995237 = (hasSelectionController());
             {
                 getSelectionController().onTouchEvent(event);
             } //End block
@@ -8574,16 +8546,16 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
             mTouchFocusSelected = false;
             mIgnoreActionUpEvent = false;
         } //End block
-        final boolean superResult;
+        boolean superResult;
         superResult = super.onTouchEvent(event);
         {
             mDiscardNextActionUp = false;
         } //End block
-        final boolean touchIsFinished;
+        boolean touchIsFinished;
         touchIsFinished = (action == MotionEvent.ACTION_UP) &&
                 !shouldIgnoreActionUpEvent() && isFocused();
         {
-            boolean var20D4C59FE6C285ECEE884C522E960420_2004053595 = ((mMovement != null || onCheckIsTextEditor()) && isEnabled()
+            boolean var20D4C59FE6C285ECEE884C522E960420_678877976 = ((mMovement != null || onCheckIsTextEditor()) && isEnabled()
                 && mText instanceof Spannable && mLayout != null);
             {
                 boolean handled;
@@ -8601,9 +8573,9 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
                     } //End block
                 } //End block
                 {
-                    boolean varA138BB91854FD0E07817A4930DAB4E64_1093672396 = (touchIsFinished && (isTextEditable() || mTextIsSelectable));
+                    boolean varA138BB91854FD0E07817A4930DAB4E64_798305289 = (touchIsFinished && (isTextEditable() || mTextIsSelectable));
                     {
-                        final InputMethodManager imm;
+                        InputMethodManager imm;
                         imm = InputMethodManager.peekInstance();
                         viewClicked(imm);
                         {
@@ -8613,21 +8585,21 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
                         selectAllGotFocus = mSelectAllOnFocus && didTouchFocusSelect();
                         hideControllers();
                         {
-                            boolean varC8FC4D62C210E65C8DA1490C44E99120_820930822 = (!selectAllGotFocus && mText.length() > 0);
+                            boolean varC8FC4D62C210E65C8DA1490C44E99120_362365046 = (!selectAllGotFocus && mText.length() > 0);
                             {
                                 {
                                     mSpellChecker.onSelectionChanged();
                                 } //End block
                                 {
-                                    boolean var1CF112AAAC5F75383DBE7BFFD7531552_1014007474 = (!extractedTextModeWillBeStarted());
+                                    boolean var1CF112AAAC5F75383DBE7BFFD7531552_413454979 = (!extractedTextModeWillBeStarted());
                                     {
                                         {
-                                            boolean var60BC98927E3B58E7C5E7F75DDA71E61E_1884277080 = (isCursorInsideEasyCorrectionSpan());
+                                            boolean var60BC98927E3B58E7C5E7F75DDA71E61E_1922605530 = (isCursorInsideEasyCorrectionSpan());
                                             {
                                                 showSuggestions();
                                             } //End block
                                             {
-                                                boolean varB6DE6ED2562A6539C8A95CCE9438A153_1596229927 = (hasInsertionController());
+                                                boolean varB6DE6ED2562A6539C8A95CCE9438A153_684544094 = (hasInsertionController());
                                                 {
                                                     getInsertionController().show();
                                                 } //End block
@@ -8648,7 +8620,7 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.167 -0400", hash_original_method = "03AC5F43014CB2A7B3EC5095819B8787", hash_generated_method = "85C8A1A0C71DBF0A2FE2744C78CCDA05")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:09.647 -0400", hash_original_method = "03AC5F43014CB2A7B3EC5095819B8787", hash_generated_method = "295BA2401BCD90FF96C4A8F6BFD6C88B")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     private boolean isCursorInsideSuggestionSpan() {
         SuggestionSpan[] suggestionSpans;
@@ -8663,7 +8635,7 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.167 -0400", hash_original_method = "FDBB0D2E258BF757A8B32CAC4ADCAFC2", hash_generated_method = "8FC98A13CE93D725B7DFBE1F22FBC446")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:09.647 -0400", hash_original_method = "FDBB0D2E258BF757A8B32CAC4ADCAFC2", hash_generated_method = "BE200C75B03B39C0CEF14DEC866C01CE")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     private boolean isCursorInsideEasyCorrectionSpan() {
         Spannable spannable;
@@ -8676,7 +8648,7 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
             i = 0;
             {
                 {
-                    boolean var2346E33123BC41A418719A614F5A6DD6_228057375 = ((suggestionSpans[i].getFlags() & SuggestionSpan.FLAG_EASY_CORRECT) != 0);
+                    boolean var2346E33123BC41A418719A614F5A6DD6_1912601453 = ((suggestionSpans[i].getFlags() & SuggestionSpan.FLAG_EASY_CORRECT) != 0);
                 } //End collapsed parenthetic
             } //End block
         } //End collapsed parenthetic
@@ -8694,7 +8666,7 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.167 -0400", hash_original_method = "B422CE655E2FA1B2DED230B806484199", hash_generated_method = "A8A62007F69A17BC38E0A004444D29B0")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:09.647 -0400", hash_original_method = "B422CE655E2FA1B2DED230B806484199", hash_generated_method = "0A559A7FAC9EA69A96CC73F8A5F42A64")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     private void downgradeEasyCorrectionSpans() {
         {
@@ -8733,7 +8705,7 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.167 -0400", hash_original_method = "F41FEEC7411770322E4286C20722D03F", hash_generated_method = "2AE8443A2D09F0A14108F66762199C39")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:09.648 -0400", hash_original_method = "F41FEEC7411770322E4286C20722D03F", hash_generated_method = "2CBAA3F5CBE192EBBD02259C393F620F")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     @Override
     public boolean onGenericMotionEvent(MotionEvent event) {
@@ -8743,13 +8715,13 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
             try 
             {
                 {
-                    boolean var8B12764D2A804081F5E2F3C6ECF4057D_596442713 = (mMovement.onGenericMotionEvent(this, (Spannable) mText, event));
+                    boolean var8B12764D2A804081F5E2F3C6ECF4057D_814805282 = (mMovement.onGenericMotionEvent(this, (Spannable) mText, event));
                 } //End collapsed parenthetic
             } //End block
             catch (AbstractMethodError ex)
             { }
         } //End block
-        boolean var32C1E3DF40BCC120C79428C7AEB27DD1_829193646 = (super.onGenericMotionEvent(event));
+        boolean var32C1E3DF40BCC120C79428C7AEB27DD1_406486805 = (super.onGenericMotionEvent(event));
         return dsTaint.getTaintBoolean();
         // ---------- Original Method ----------
         //if (mMovement != null && mText instanceof Spannable && mLayout != null) {
@@ -8764,7 +8736,7 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.168 -0400", hash_original_method = "1022846F3BD24E55F7B42FF144EBDE9C", hash_generated_method = "79599AB3046A2445BA53B2420FD7939D")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:09.649 -0400", hash_original_method = "1022846F3BD24E55F7B42FF144EBDE9C", hash_generated_method = "849AF7208BC2DCF3552FDD801F81866B")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     private void prepareCursorControllers() {
         boolean windowSupportsHandles;
@@ -8799,17 +8771,17 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.168 -0400", hash_original_method = "5768F33DD15C2D6A1E8DF566C117D02C", hash_generated_method = "715331F92C25D0267CE9D4C1793C2CC5")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:09.649 -0400", hash_original_method = "5768F33DD15C2D6A1E8DF566C117D02C", hash_generated_method = "7107B3A3628ACD1C96CAE79E7548A4C9")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     private boolean isTextEditable() {
-        boolean varE3EE8DDB74DAF8872FE53127269AB9E6_46077094 = (mText instanceof Editable && onCheckIsTextEditor() && isEnabled());
+        boolean varE3EE8DDB74DAF8872FE53127269AB9E6_2133748222 = (mText instanceof Editable && onCheckIsTextEditor() && isEnabled());
         return dsTaint.getTaintBoolean();
         // ---------- Original Method ----------
         //return mText instanceof Editable && onCheckIsTextEditor() && isEnabled();
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.168 -0400", hash_original_method = "319EEEA24E78F0A8A97E7B3282410D43", hash_generated_method = "02D0F367665EE808DFC6E9A98410BA88")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:09.650 -0400", hash_original_method = "319EEEA24E78F0A8A97E7B3282410D43", hash_generated_method = "1607EFDD17228D56C083B9C0657FCB75")
     @DSModeled(DSC.SAFE)
     public boolean didTouchFocusSelect() {
         return dsTaint.getTaintBoolean();
@@ -8818,8 +8790,8 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.168 -0400", hash_original_method = "F8EF60C67754333637E515F4BC0EB2C7", hash_generated_method = "88B73F63A912974B215F75BA15A39193")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:09.650 -0400", hash_original_method = "F8EF60C67754333637E515F4BC0EB2C7", hash_generated_method = "3F8E08FFCA833AB1C4B66C0BC80B43D3")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     @Override
     public void cancelLongPress() {
         super.cancelLongPress();
@@ -8830,17 +8802,16 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.168 -0400", hash_original_method = "1EBA305C38503D593DE5ED34528F31AE", hash_generated_method = "784136402B1C653B5CA80A745B475C0D")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:09.650 -0400", hash_original_method = "1EBA305C38503D593DE5ED34528F31AE", hash_generated_method = "6BAF69F0E3279129E7183D3BB97E3636")
     @DSModeled(DSC.SAFE)
     public boolean shouldIgnoreActionUpEvent() {
-        //DSFIXME:  CODE0009: Possible callback target function detected
         return dsTaint.getTaintBoolean();
         // ---------- Original Method ----------
         //return mIgnoreActionUpEvent;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.168 -0400", hash_original_method = "2ED59B8CED9712CD9EFEA3386ABFE955", hash_generated_method = "00EC4F3FBF3CEECE14B03FEE9C7DF919")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:09.650 -0400", hash_original_method = "2ED59B8CED9712CD9EFEA3386ABFE955", hash_generated_method = "660928F84869664071551DC0F56730A1")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     @Override
     public boolean onTrackballEvent(MotionEvent event) {
@@ -8848,10 +8819,10 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
         dsTaint.addTaint(event.dsTaint);
         {
             {
-                boolean var8C6289BC177E1FC846FED60E961858F7_800520330 = (mMovement.onTrackballEvent(this, (Spannable) mText, event));
+                boolean var8C6289BC177E1FC846FED60E961858F7_4281918 = (mMovement.onTrackballEvent(this, (Spannable) mText, event));
             } //End collapsed parenthetic
         } //End block
-        boolean var52056F11E16FA151938F980C67CD97F9_1983518054 = (super.onTrackballEvent(event));
+        boolean var52056F11E16FA151938F980C67CD97F9_1230840170 = (super.onTrackballEvent(event));
         return dsTaint.getTaintBoolean();
         // ---------- Original Method ----------
         //if (mMovement != null && mText instanceof Spannable &&
@@ -8864,7 +8835,7 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.168 -0400", hash_original_method = "9E4C5FDADE7CEAD68CF365879A643A39", hash_generated_method = "5D05686EECFC92EAA4E78F1AC0F2D5F6")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:09.651 -0400", hash_original_method = "9E4C5FDADE7CEAD68CF365879A643A39", hash_generated_method = "9102C4C5148BFC71B0BDE997ABC55898")
     @DSModeled(DSC.SAFE)
     public void setScroller(Scroller s) {
         dsTaint.addTaint(s.dsTaint);
@@ -8873,15 +8844,15 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.168 -0400", hash_original_method = "D90D14C34AE2DD19EDEA4AA99DD580AF", hash_generated_method = "787D2DB3288A288B5893EA9956689C77")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:09.652 -0400", hash_original_method = "D90D14C34AE2DD19EDEA4AA99DD580AF", hash_generated_method = "3558D6F6EBC976A5B073597B520EE18D")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     private boolean shouldBlink() {
         {
-            boolean var4ABCBE6852627F4B46FBEF2A6A4ECCCA_1054049840 = (!isFocused());
+            boolean var4ABCBE6852627F4B46FBEF2A6A4ECCCA_1166134017 = (!isFocused());
         } //End collapsed parenthetic
-        final int start;
+        int start;
         start = getSelectionStart();
-        final int end;
+        int end;
         end = getSelectionEnd();
         return dsTaint.getTaintBoolean();
         // ---------- Original Method ----------
@@ -8894,14 +8865,14 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.168 -0400", hash_original_method = "D1BDF909CEA832525561C896748DB631", hash_generated_method = "25977AF1CA40C6ED0BEF2A6B6CC068EF")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:09.654 -0400", hash_original_method = "D1BDF909CEA832525561C896748DB631", hash_generated_method = "13F251F9A6BB34F4498AAB3854FD1342")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     private void makeBlink() {
         {
-            boolean var36B9A155CA4AF19B05F2985EF7AEDB1C_1683200441 = (isCursorVisible());
+            boolean var36B9A155CA4AF19B05F2985EF7AEDB1C_1611095362 = (isCursorVisible());
             {
                 {
-                    boolean var1E1DE2716F3F9B589A087F50D1F61A8B_1004560186 = (shouldBlink());
+                    boolean var1E1DE2716F3F9B589A087F50D1F61A8B_1455472788 = (shouldBlink());
                     {
                         mShowCursor = SystemClock.uptimeMillis();
                         mBlink = new Blink(this);
@@ -8928,32 +8899,32 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.169 -0400", hash_original_method = "2371CC9F994A54DD5E29CBD2552784AA", hash_generated_method = "DB125B44D17889F96F6100D66E9EDE4F")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:09.656 -0400", hash_original_method = "2371CC9F994A54DD5E29CBD2552784AA", hash_generated_method = "C3C68E01EFE8FBFFE7773D2A9836F833")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     @Override
     protected float getLeftFadingEdgeStrength() {
         {
             {
-                boolean var48B2E39505E7202B89848EF3423B9152_131488260 = (mMarquee != null && !mMarquee.isStopped());
+                boolean var48B2E39505E7202B89848EF3423B9152_1877179555 = (mMarquee != null && !mMarquee.isStopped());
                 {
-                    final Marquee marquee;
+                    Marquee marquee;
                     marquee = mMarquee;
                     {
-                        boolean var9BA25C39B44D42503DBE86D96DDE3F89_305854765 = (marquee.shouldDrawLeftFade());
+                        boolean var9BA25C39B44D42503DBE86D96DDE3F89_1309811894 = (marquee.shouldDrawLeftFade());
                         {
-                            float varACB89E3006AD14B300166FDE2E87A6BF_1337000597 = (marquee.mScroll / getHorizontalFadingEdgeLength());
+                            float varACB89E3006AD14B300166FDE2E87A6BF_448578693 = (marquee.mScroll / getHorizontalFadingEdgeLength());
                         } //End block
                     } //End collapsed parenthetic
                 } //End block
                 {
-                    boolean varB42567ABE2BADBC605E1B78E45085C46_838674882 = (getLineCount() == 1);
+                    boolean varB42567ABE2BADBC605E1B78E45085C46_903004707 = (getLineCount() == 1);
                     {
-                        final int layoutDirection;
+                        int layoutDirection;
                         layoutDirection = getResolvedLayoutDirection();
-                        final int absoluteGravity;
+                        int absoluteGravity;
                         absoluteGravity = Gravity.getAbsoluteGravity(mGravity, layoutDirection);
                         //Begin case Gravity.RIGHT 
-                        float var77CC60141975FCCCD80D9A2419BB6C1C_39826741 = ((mLayout.getLineRight(0) - (mRight - mLeft) -
+                        float var77CC60141975FCCCD80D9A2419BB6C1C_1616585660 = ((mLayout.getLineRight(0) - (mRight - mLeft) -
                                 getCompoundPaddingLeft() - getCompoundPaddingRight() -
                                 mLayout.getLineLeft(0)) / getHorizontalFadingEdgeLength());
                         //End case Gravity.RIGHT 
@@ -8961,46 +8932,46 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
                 } //End collapsed parenthetic
             } //End collapsed parenthetic
         } //End block
-        float var4F5C2129A9FDB4D7873C15071EC74FAF_770000852 = (super.getLeftFadingEdgeStrength());
+        float var4F5C2129A9FDB4D7873C15071EC74FAF_1574268604 = (super.getLeftFadingEdgeStrength());
         return dsTaint.getTaintFloat();
         // ---------- Original Method ----------
         // Original Method Too Long, Refer to Original Implementation
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.169 -0400", hash_original_method = "7D05EA9E8579412E6DC4A8392EC7FDC2", hash_generated_method = "2F8F54EAD4F40A60963BD23BE298EB38")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:09.657 -0400", hash_original_method = "7D05EA9E8579412E6DC4A8392EC7FDC2", hash_generated_method = "0F22417443D61097A43A31BBE2CD07E7")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     @Override
     protected float getRightFadingEdgeStrength() {
         {
             {
-                boolean var48B2E39505E7202B89848EF3423B9152_1106905105 = (mMarquee != null && !mMarquee.isStopped());
+                boolean var48B2E39505E7202B89848EF3423B9152_699418661 = (mMarquee != null && !mMarquee.isStopped());
                 {
-                    final Marquee marquee;
+                    Marquee marquee;
                     marquee = mMarquee;
-                    float var5FA73A5ADF77E0C7B666EC3867F0A8A9_376247091 = ((marquee.mMaxFadeScroll - marquee.mScroll) / getHorizontalFadingEdgeLength());
+                    float var5FA73A5ADF77E0C7B666EC3867F0A8A9_288773861 = ((marquee.mMaxFadeScroll - marquee.mScroll) / getHorizontalFadingEdgeLength());
                 } //End block
                 {
-                    boolean varB42567ABE2BADBC605E1B78E45085C46_1539528522 = (getLineCount() == 1);
+                    boolean varB42567ABE2BADBC605E1B78E45085C46_1402795224 = (getLineCount() == 1);
                     {
-                        final int layoutDirection;
+                        int layoutDirection;
                         layoutDirection = getResolvedLayoutDirection();
-                        final int absoluteGravity;
+                        int absoluteGravity;
                         absoluteGravity = Gravity.getAbsoluteGravity(mGravity, layoutDirection);
                         //Begin case Gravity.LEFT 
-                        final int textWidth;
+                        int textWidth;
                         textWidth = (mRight - mLeft) - getCompoundPaddingLeft() -
                                 getCompoundPaddingRight();
                         //End case Gravity.LEFT 
                         //Begin case Gravity.LEFT 
-                        final float lineWidth;
+                        float lineWidth;
                         lineWidth = mLayout.getLineWidth(0);
                         //End case Gravity.LEFT 
                         //Begin case Gravity.LEFT 
-                        float varE0BE637D155EE291A7CF14784CC269F6_1794132055 = ((lineWidth - textWidth) / getHorizontalFadingEdgeLength());
+                        float varE0BE637D155EE291A7CF14784CC269F6_176567120 = ((lineWidth - textWidth) / getHorizontalFadingEdgeLength());
                         //End case Gravity.LEFT 
                         //Begin case Gravity.CENTER_HORIZONTAL Gravity.FILL_HORIZONTAL 
-                        float varDB511E24CC8812A21F30B808ED92516B_415902218 = ((mLayout.getLineWidth(0) - ((mRight - mLeft) -
+                        float varDB511E24CC8812A21F30B808ED92516B_2104998279 = ((mLayout.getLineWidth(0) - ((mRight - mLeft) -
                                 getCompoundPaddingLeft() - getCompoundPaddingRight())) /
                                 getHorizontalFadingEdgeLength());
                         //End case Gravity.CENTER_HORIZONTAL Gravity.FILL_HORIZONTAL 
@@ -9008,24 +8979,24 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
                 } //End collapsed parenthetic
             } //End collapsed parenthetic
         } //End block
-        float var23E074F03E79DB75514A1493E85330EB_1180040683 = (super.getRightFadingEdgeStrength());
+        float var23E074F03E79DB75514A1493E85330EB_770558925 = (super.getRightFadingEdgeStrength());
         return dsTaint.getTaintFloat();
         // ---------- Original Method ----------
         // Original Method Too Long, Refer to Original Implementation
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.169 -0400", hash_original_method = "A3B3BBCD8F5911495212C23A0CDB87AF", hash_generated_method = "DCCDEF96B5667BBAE1FBD5CE89316639")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:09.658 -0400", hash_original_method = "A3B3BBCD8F5911495212C23A0CDB87AF", hash_generated_method = "AE3C654CE53287A88E09B42B1E2911A2")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     @Override
     protected int computeHorizontalScrollRange() {
         {
             {
-                Object varB9E01A838DEDF048798537932C3D53D0_1790683687 = ((int) mLayout.getLineWidth(0));
-                Object var48F73E2237CC10856F86F9441A565829_2124455849 = (mLayout.getWidth());
+                Object varB9E01A838DEDF048798537932C3D53D0_515728237 = ((int) mLayout.getLineWidth(0));
+                Object var48F73E2237CC10856F86F9441A565829_590589913 = (mLayout.getWidth());
             } //End flattened ternary
         } //End block
-        int varED0C9CF0B7C065764BC0B4CBB9BD10B1_82440755 = (super.computeHorizontalScrollRange());
+        int varED0C9CF0B7C065764BC0B4CBB9BD10B1_62881670 = (super.computeHorizontalScrollRange());
         return dsTaint.getTaintInt();
         // ---------- Original Method ----------
         //if (mLayout != null) {
@@ -9036,12 +9007,12 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.169 -0400", hash_original_method = "FD0A725F27B0D409B10AFF4BD8232C49", hash_generated_method = "0174F3CEBB365A479AA52FF4DEA1CEFA")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:09.658 -0400", hash_original_method = "FD0A725F27B0D409B10AFF4BD8232C49", hash_generated_method = "B42E781096A6E89BD39E750B230534C1")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     @Override
     protected int computeVerticalScrollRange() {
-        int varEEB54A75518B385B09E35C2F7B0BB4DB_137357373 = (mLayout.getHeight());
-        int var06B1DFE229A17C2C5018936314B519D0_851022004 = (super.computeVerticalScrollRange());
+        int varEEB54A75518B385B09E35C2F7B0BB4DB_142983316 = (mLayout.getHeight());
+        int var06B1DFE229A17C2C5018936314B519D0_1429617981 = (super.computeVerticalScrollRange());
         return dsTaint.getTaintInt();
         // ---------- Original Method ----------
         //if (mLayout != null)
@@ -9050,18 +9021,18 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.169 -0400", hash_original_method = "9A16EAE7151454D3FA35454A6C3BB413", hash_generated_method = "82D4D02D093B03710BF9E320820D9190")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:09.658 -0400", hash_original_method = "9A16EAE7151454D3FA35454A6C3BB413", hash_generated_method = "572AC276F9FB4AF70AB728AB44DFBD64")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     @Override
     protected int computeVerticalScrollExtent() {
-        int var3D22FDF56C8F597D4B164222BB4A2F41_2062940026 = (getHeight() - getCompoundPaddingTop() - getCompoundPaddingBottom());
+        int var3D22FDF56C8F597D4B164222BB4A2F41_147906079 = (getHeight() - getCompoundPaddingTop() - getCompoundPaddingBottom());
         return dsTaint.getTaintInt();
         // ---------- Original Method ----------
         //return getHeight() - getCompoundPaddingTop() - getCompoundPaddingBottom();
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.170 -0400", hash_original_method = "AF6DED1CDDAE4FEC9AD8DCCD50DF8C26", hash_generated_method = "70526BA25326CFC896A381B353A31331")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:09.659 -0400", hash_original_method = "AF6DED1CDDAE4FEC9AD8DCCD50DF8C26", hash_generated_method = "71ABBD68BE12E4BBEAA352D9337FE301")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     @Override
     public void findViewsWithText(ArrayList<View> outViews, CharSequence searched, int flags) {
@@ -9070,7 +9041,7 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
         dsTaint.addTaint(searched);
         super.findViewsWithText(outViews, searched, flags);
         {
-            boolean var87A9E824D7926B465D9F8E23653E1606_1511069840 = (!outViews.contains(this) && (flags & FIND_VIEWS_WITH_TEXT) != 0
+            boolean var87A9E824D7926B465D9F8E23653E1606_1593331010 = (!outViews.contains(this) && (flags & FIND_VIEWS_WITH_TEXT) != 0
                 && !TextUtils.isEmpty(searched) && !TextUtils.isEmpty(mText));
             {
                 String searchedLowerCase;
@@ -9078,7 +9049,7 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
                 String textLowerCase;
                 textLowerCase = mText.toString().toLowerCase();
                 {
-                    boolean var4E8F3CA643822EB3D628A081C82F102F_392904366 = (textLowerCase.contains(searchedLowerCase));
+                    boolean var4E8F3CA643822EB3D628A081C82F102F_1890603022 = (textLowerCase.contains(searchedLowerCase));
                     {
                         outViews.add(this);
                     } //End block
@@ -9098,8 +9069,7 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.170 -0400", hash_original_method = "610DF4562C72E9710D612FAA54D67DFE", hash_generated_method = "A75A6D7F80F1F0271AD4582D7821E552")
-    public static ColorStateList getTextColors(Context context, TypedArray attrs) {
+        public static ColorStateList getTextColors(Context context, TypedArray attrs) {
         ColorStateList colors;
         colors = attrs.getColorStateList(com.android.internal.R.styleable.
                                          TextView_textColor);
@@ -9119,8 +9089,7 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.170 -0400", hash_original_method = "97B35435029E9835DF5CDCF17B9F2F51", hash_generated_method = "73EE96094A2B5463D96C2ABCBBBBB25C")
-    public static int getTextColor(Context context,
+        public static int getTextColor(Context context,
                                    TypedArray attrs,
                                    int def) {
         ColorStateList colors = getTextColors(context, attrs);
@@ -9132,76 +9101,76 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.170 -0400", hash_original_method = "9DEDF12E7A1F2B52484CF7C1E98D635C", hash_generated_method = "D1749CDEDB0B630B5F51C9D1A9F96A1A")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:09.660 -0400", hash_original_method = "9DEDF12E7A1F2B52484CF7C1E98D635C", hash_generated_method = "5F739CEFACF5CCEA6E260A7ADA764AA3")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     @Override
     public boolean onKeyShortcut(int keyCode, KeyEvent event) {
         //DSFIXME:  CODE0009: Possible callback target function detected
         dsTaint.addTaint(keyCode);
         dsTaint.addTaint(event.dsTaint);
-        final int filteredMetaState;
+        int filteredMetaState;
         filteredMetaState = event.getMetaState() & ~KeyEvent.META_CTRL_MASK;
         {
-            boolean varC56AADD2FE16B97F2C4A1A86C8CB9277_91574168 = (KeyEvent.metaStateHasNoModifiers(filteredMetaState));
+            boolean varC56AADD2FE16B97F2C4A1A86C8CB9277_256367302 = (KeyEvent.metaStateHasNoModifiers(filteredMetaState));
             {
                 //Begin case KeyEvent.KEYCODE_A 
                 {
-                    boolean var2C54826044A6A463985C967714461581_268600126 = (canSelectText());
+                    boolean var2C54826044A6A463985C967714461581_664628047 = (canSelectText());
                     {
-                        boolean varEB35FFB1E0BAFF4B98799DF0DAE3AD9A_1893144216 = (onTextContextMenuItem(ID_SELECT_ALL));
+                        boolean varEB35FFB1E0BAFF4B98799DF0DAE3AD9A_1018390780 = (onTextContextMenuItem(ID_SELECT_ALL));
                     } //End block
                 } //End collapsed parenthetic
                 //End case KeyEvent.KEYCODE_A 
                 //Begin case KeyEvent.KEYCODE_X 
                 {
-                    boolean varD70E317BC144C26B73AA08B3BA3A1DF7_1469332500 = (canCut());
+                    boolean varD70E317BC144C26B73AA08B3BA3A1DF7_1748706553 = (canCut());
                     {
-                        boolean varF1F4885B43FDB12CD2347207BFCBE15D_156835246 = (onTextContextMenuItem(ID_CUT));
+                        boolean varF1F4885B43FDB12CD2347207BFCBE15D_1738687048 = (onTextContextMenuItem(ID_CUT));
                     } //End block
                 } //End collapsed parenthetic
                 //End case KeyEvent.KEYCODE_X 
                 //Begin case KeyEvent.KEYCODE_C 
                 {
-                    boolean var64A51BC817B541ED78EC45FE802A582B_1093326724 = (canCopy());
+                    boolean var64A51BC817B541ED78EC45FE802A582B_580056165 = (canCopy());
                     {
-                        boolean var7EC513D62717566DFF11F991DB68179B_706568450 = (onTextContextMenuItem(ID_COPY));
+                        boolean var7EC513D62717566DFF11F991DB68179B_1894455130 = (onTextContextMenuItem(ID_COPY));
                     } //End block
                 } //End collapsed parenthetic
                 //End case KeyEvent.KEYCODE_C 
                 //Begin case KeyEvent.KEYCODE_V 
                 {
-                    boolean varB590DB230E7D99BE97C8070362518C3D_305497086 = (canPaste());
+                    boolean varB590DB230E7D99BE97C8070362518C3D_1162149867 = (canPaste());
                     {
-                        boolean varB380C053436C26C9F75D58F60AA0273E_647325996 = (onTextContextMenuItem(ID_PASTE));
+                        boolean varB380C053436C26C9F75D58F60AA0273E_218044952 = (onTextContextMenuItem(ID_PASTE));
                     } //End block
                 } //End collapsed parenthetic
                 //End case KeyEvent.KEYCODE_V 
             } //End block
         } //End collapsed parenthetic
-        boolean var18CCACF7413D8761F4926498DDE0852A_425122352 = (super.onKeyShortcut(keyCode, event));
+        boolean var18CCACF7413D8761F4926498DDE0852A_572023555 = (super.onKeyShortcut(keyCode, event));
         return dsTaint.getTaintBoolean();
         // ---------- Original Method ----------
         // Original Method Too Long, Refer to Original Implementation
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.170 -0400", hash_original_method = "CD8FD18ADF4940449D6A099035EC8FE9", hash_generated_method = "94B87B9DFD9D0610694408728A5BC9FD")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:09.660 -0400", hash_original_method = "CD8FD18ADF4940449D6A099035EC8FE9", hash_generated_method = "382ACF49D2BAD006CB5DB1DBD2F9E094")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     private boolean canSelectText() {
-        boolean var45174109A5D4D4DED4D6B043F4737E70_1896053922 = (hasSelectionController() && mText.length() != 0);
+        boolean var45174109A5D4D4DED4D6B043F4737E70_1216873356 = (hasSelectionController() && mText.length() != 0);
         return dsTaint.getTaintBoolean();
         // ---------- Original Method ----------
         //return hasSelectionController() && mText.length() != 0;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.170 -0400", hash_original_method = "09898B129565A0932D7F5D96EEC9BB39", hash_generated_method = "51EB8BCF8E1424C82BB3929AC21503D3")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:09.660 -0400", hash_original_method = "09898B129565A0932D7F5D96EEC9BB39", hash_generated_method = "32AF0EEFD41FFC198ED4D37D5128326F")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     private boolean textCanBeSelected() {
         {
-            boolean var0579FE66F74E6B0CAEB7B0FFED7BF6F0_974735036 = (mMovement == null || !mMovement.canSelectArbitrarily());
+            boolean var0579FE66F74E6B0CAEB7B0FFED7BF6F0_1481469732 = (mMovement == null || !mMovement.canSelectArbitrarily());
         } //End collapsed parenthetic
-        boolean varEA838F60BF8890D30F87CAA0AEA5A5AD_380515577 = (isTextEditable() || (mTextIsSelectable && mText instanceof Spannable && isEnabled()));
+        boolean varEA838F60BF8890D30F87CAA0AEA5A5AD_2048029892 = (isTextEditable() || (mTextIsSelectable && mText instanceof Spannable && isEnabled()));
         return dsTaint.getTaintBoolean();
         // ---------- Original Method ----------
         //if (mMovement == null || !mMovement.canSelectArbitrarily()) return false;
@@ -9209,14 +9178,14 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.170 -0400", hash_original_method = "5A8A75E52337470DA5834210CD94E844", hash_generated_method = "FD5E6AAA5667DC196B16493988FBE76F")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:09.661 -0400", hash_original_method = "5A8A75E52337470DA5834210CD94E844", hash_generated_method = "04B0A6FA76AC5C2C3E23461F0EC2A8C7")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     private boolean canCut() {
         {
-            boolean varAFBCCFFAA18696A12B6915A938CC8475_1664260435 = (hasPasswordTransformationMethod());
+            boolean varAFBCCFFAA18696A12B6915A938CC8475_215179090 = (hasPasswordTransformationMethod());
         } //End collapsed parenthetic
         {
-            boolean varDFBD28C454DECC5A34D6B1D50ACA53BA_1448184797 = (mText.length() > 0 && hasSelection() && mText instanceof Editable && mInput != null);
+            boolean varDFBD28C454DECC5A34D6B1D50ACA53BA_1668966356 = (mText.length() > 0 && hasSelection() && mText instanceof Editable && mInput != null);
         } //End collapsed parenthetic
         return dsTaint.getTaintBoolean();
         // ---------- Original Method ----------
@@ -9230,14 +9199,14 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.170 -0400", hash_original_method = "C5BA619EC7C225A5F87BCD822F6EF570", hash_generated_method = "E55E297EAD10DF7A2177F5BCE3851F73")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:09.661 -0400", hash_original_method = "C5BA619EC7C225A5F87BCD822F6EF570", hash_generated_method = "A48AB0320C825762D66C2CDC3000F53B")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     private boolean canCopy() {
         {
-            boolean varAFBCCFFAA18696A12B6915A938CC8475_1351693698 = (hasPasswordTransformationMethod());
+            boolean varAFBCCFFAA18696A12B6915A938CC8475_786043448 = (hasPasswordTransformationMethod());
         } //End collapsed parenthetic
         {
-            boolean varCAC8FC6B32A4536E20AA1AECC8F0BAF1_40848534 = (mText.length() > 0 && hasSelection());
+            boolean varCAC8FC6B32A4536E20AA1AECC8F0BAF1_1813763770 = (mText.length() > 0 && hasSelection());
         } //End collapsed parenthetic
         return dsTaint.getTaintBoolean();
         // ---------- Original Method ----------
@@ -9251,10 +9220,10 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.170 -0400", hash_original_method = "4C1E94F781705995B290C548A8DF616E", hash_generated_method = "3FCBFBF101068DCAD5D0217E4BA05853")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:09.661 -0400", hash_original_method = "4C1E94F781705995B290C548A8DF616E", hash_generated_method = "085BE8DE6FEBFF212BFF44DCE54919A6")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     private boolean canPaste() {
-        boolean varE457499D879154E36F02FF3DB5A1ED3A_1004174904 = ((mText instanceof Editable &&
+        boolean varE457499D879154E36F02FF3DB5A1ED3A_361857481 = ((mText instanceof Editable &&
                 mInput != null &&
                 getSelectionStart() >= 0 &&
                 getSelectionEnd() >= 0 &&
@@ -9271,28 +9240,25 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.170 -0400", hash_original_method = "6CF90DF2EC40ED00D80E18C1F33E11BC", hash_generated_method = "5FA359866299A35489C3737B61CC9E43")
-    private static long packRangeInLong(int start, int end) {
+        private static long packRangeInLong(int start, int end) {
         return (((long) start) << 32) | end;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.171 -0400", hash_original_method = "B8457D164A465BC6DBF90754C8516687", hash_generated_method = "EC410F8EAE725FE659DD2D2EFBCDB07E")
-    private static int extractRangeStartFromLong(long range) {
+        private static int extractRangeStartFromLong(long range) {
         return (int) (range >>> 32);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.171 -0400", hash_original_method = "F1A2938AD077ADF89D5A8BD63BAC91E0", hash_generated_method = "644C64A378737B0C013497F66056F5D5")
-    private static int extractRangeEndFromLong(long range) {
+        private static int extractRangeEndFromLong(long range) {
         return (int) (range & 0x00000000FFFFFFFFL);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.171 -0400", hash_original_method = "493FC66F8A7ACF6A75CECBBBC666AB3C", hash_generated_method = "1223A7AE57CB488C1C500D160C4E80BD")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:09.662 -0400", hash_original_method = "493FC66F8A7ACF6A75CECBBBC666AB3C", hash_generated_method = "1821C3E8C38CAE7BB416836E643D5EA6")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     private boolean selectAll() {
-        final int length;
+        int length;
         length = mText.length();
         Selection.setSelection((Spannable) mText, 0, length);
         return dsTaint.getTaintBoolean();
@@ -9303,16 +9269,16 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.171 -0400", hash_original_method = "B770D2F4FC63A979B3CD07A81B20384D", hash_generated_method = "30057AB6418158B24F3A050DADFC91A2")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:09.662 -0400", hash_original_method = "B770D2F4FC63A979B3CD07A81B20384D", hash_generated_method = "9C6B828044066819E2AC8E2A0732F9A4")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     private boolean selectCurrentWord() {
         {
-            boolean varDED1C694F054C8DDF1A29A76C5F20F19_1851354988 = (!canSelectText());
+            boolean varDED1C694F054C8DDF1A29A76C5F20F19_938523851 = (!canSelectText());
         } //End collapsed parenthetic
         {
-            boolean varAFBCCFFAA18696A12B6915A938CC8475_1683335200 = (hasPasswordTransformationMethod());
+            boolean varAFBCCFFAA18696A12B6915A938CC8475_456436568 = (hasPasswordTransformationMethod());
             {
-                boolean varE332F16868C9FD223E86B20517E855EF_544662389 = (selectAll());
+                boolean varE332F16868C9FD223E86B20517E855EF_998451389 = (selectAll());
             } //End block
         } //End collapsed parenthetic
         int klass;
@@ -9320,19 +9286,19 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
         int variation;
         variation = mInputType & InputType.TYPE_MASK_VARIATION;
         {
-            boolean varA650E26BD9A4F09AA14DDEB72540C88C_1104402805 = (selectAll());
+            boolean varA650E26BD9A4F09AA14DDEB72540C88C_330095386 = (selectAll());
         } //End block
         long lastTouchOffsets;
         lastTouchOffsets = getLastTouchOffsets();
-        final int minOffset;
+        int minOffset;
         minOffset = extractRangeStartFromLong(lastTouchOffsets);
-        final int maxOffset;
+        int maxOffset;
         maxOffset = extractRangeEndFromLong(lastTouchOffsets);
         {
-            boolean var7155FC6291E75A72164AEF06E53012B4_1308718003 = (minOffset < 0 || minOffset >= mText.length());
+            boolean var7155FC6291E75A72164AEF06E53012B4_1769223005 = (minOffset < 0 || minOffset >= mText.length());
         } //End collapsed parenthetic
         {
-            boolean var1D5071A17653318C6F5B2B7CEE876EF7_2067968748 = (maxOffset < 0 || maxOffset >= mText.length());
+            boolean var1D5071A17653318C6F5B2B7CEE876EF7_1938226439 = (maxOffset < 0 || maxOffset >= mText.length());
         } //End collapsed parenthetic
         int selectionStart, selectionEnd;
         URLSpan[] urlSpans;
@@ -9344,7 +9310,7 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
             selectionEnd = ((Spanned) mText).getSpanEnd(urlSpan);
         } //End block
         {
-            final WordIterator wordIterator;
+            WordIterator wordIterator;
             wordIterator = getWordIterator();
             wordIterator.setCharSequence(mText, minOffset, maxOffset);
             selectionStart = wordIterator.getBeginning(minOffset);
@@ -9363,15 +9329,15 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.171 -0400", hash_original_method = "9DCEB61D4BC0794F06560CB12151C0AA", hash_generated_method = "5DC9994F4F41B9C7A40FB97F1A1DB0FD")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:09.669 -0400", hash_original_method = "9DCEB61D4BC0794F06560CB12151C0AA", hash_generated_method = "EDF890A5C09E97890B6C41FA86EE37BB")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public Locale getTextServicesLocale() {
         Locale locale;
         locale = Locale.getDefault();
-        final TextServicesManager textServicesManager;
+        TextServicesManager textServicesManager;
         textServicesManager = (TextServicesManager)
                 mContext.getSystemService(Context.TEXT_SERVICES_MANAGER_SERVICE);
-        final SpellCheckerSubtype subtype;
+        SpellCheckerSubtype subtype;
         subtype = textServicesManager.getCurrentSpellCheckerSubtype(true);
         {
             locale = new Locale(subtype.getLocale());
@@ -9389,7 +9355,7 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.171 -0400", hash_original_method = "84E4450A5BCA42ECDB6E0E833B2BF3C6", hash_generated_method = "E7E57370501B192176E97E27A714450B")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:09.670 -0400", hash_original_method = "84E4450A5BCA42ECDB6E0E833B2BF3C6", hash_generated_method = "00A6EC577A937BD6BC25376AD1589672")
     @DSModeled(DSC.SAFE)
      void onLocaleChanged() {
         //DSFIXME:  CODE0009: Possible callback target function detected
@@ -9399,7 +9365,7 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.171 -0400", hash_original_method = "D7DB0153FBA43371270FE2DB428D268F", hash_generated_method = "AE2EA64D2C123066BDD3156CFF00A987")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:09.670 -0400", hash_original_method = "D7DB0153FBA43371270FE2DB428D268F", hash_generated_method = "60CDAFDBBA85548554FEE8D1A4029AF3")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public WordIterator getWordIterator() {
         {
@@ -9414,59 +9380,59 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.171 -0400", hash_original_method = "B4D83E103073E3F8ED3897EF06B95E07", hash_generated_method = "7E71EC76ABF913AC70310A2A31C43AFC")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:09.670 -0400", hash_original_method = "B4D83E103073E3F8ED3897EF06B95E07", hash_generated_method = "E435A9CE9E39F115FDC0057F098324A8")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     private long getCharRange(int offset) {
         dsTaint.addTaint(offset);
-        final int textLength;
+        int textLength;
         textLength = mText.length();
         {
-            final char currentChar;
+            char currentChar;
             currentChar = mText.charAt(offset);
-            final char nextChar;
+            char nextChar;
             nextChar = mText.charAt(offset + 1);
             {
-                boolean varD9CF44D283E0863128B66037E6BFB8CF_513361835 = (Character.isSurrogatePair(currentChar, nextChar));
+                boolean varD9CF44D283E0863128B66037E6BFB8CF_610547671 = (Character.isSurrogatePair(currentChar, nextChar));
                 {
-                    long varDEC17ADCE274EF4E4EA0CD9ABF597677_1402695111 = (packRangeInLong(offset,  offset + 2));
+                    long varDEC17ADCE274EF4E4EA0CD9ABF597677_826748860 = (packRangeInLong(offset,  offset + 2));
                 } //End block
             } //End collapsed parenthetic
         } //End block
         {
-            long var4A76496E7082009E497234E69A837D4C_2003444950 = (packRangeInLong(offset,  offset + 1));
+            long var4A76496E7082009E497234E69A837D4C_1525938334 = (packRangeInLong(offset,  offset + 1));
         } //End block
         {
-            final char previousChar;
+            char previousChar;
             previousChar = mText.charAt(offset - 1);
-            final char previousPreviousChar;
+            char previousPreviousChar;
             previousPreviousChar = mText.charAt(offset - 2);
             {
-                boolean var08ECDF9036721977163DCB5E7280D7DA_839180038 = (Character.isSurrogatePair(previousPreviousChar, previousChar));
+                boolean var08ECDF9036721977163DCB5E7280D7DA_1797972406 = (Character.isSurrogatePair(previousPreviousChar, previousChar));
                 {
-                    long var579E9393D23E6CD1E4A1644DEA02C196_1638692849 = (packRangeInLong(offset - 2,  offset));
+                    long var579E9393D23E6CD1E4A1644DEA02C196_1895314859 = (packRangeInLong(offset - 2,  offset));
                 } //End block
             } //End collapsed parenthetic
         } //End block
         {
-            long var7F931D32D69CE46E71E33A6E014D5A4B_1010070496 = (packRangeInLong(offset - 1,  offset));
+            long var7F931D32D69CE46E71E33A6E014D5A4B_485795757 = (packRangeInLong(offset - 1,  offset));
         } //End block
-        long var1DBEC51B3461A29B2118BF318D35E0B5_137288588 = (packRangeInLong(offset,  offset));
+        long var1DBEC51B3461A29B2118BF318D35E0B5_1050001694 = (packRangeInLong(offset,  offset));
         return dsTaint.getTaintLong();
         // ---------- Original Method ----------
         // Original Method Too Long, Refer to Original Implementation
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.172 -0400", hash_original_method = "C07E078EE2A4D1805F6BF366C72ED78F", hash_generated_method = "BD003FC741FC429BC2F192B8C5E4F827")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:09.670 -0400", hash_original_method = "C07E078EE2A4D1805F6BF366C72ED78F", hash_generated_method = "FAD66F97B3D51ADC2071271D18A2F937")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     private long getLastTouchOffsets() {
         SelectionModifierCursorController selectionController;
         selectionController = getSelectionController();
-        final int minOffset;
+        int minOffset;
         minOffset = selectionController.getMinTouchOffset();
-        final int maxOffset;
+        int maxOffset;
         maxOffset = selectionController.getMaxTouchOffset();
-        long var6C22B70D609AA0EDBEA57BAC907EBF70_1409291965 = (packRangeInLong(minOffset, maxOffset));
+        long var6C22B70D609AA0EDBEA57BAC907EBF70_703118219 = (packRangeInLong(minOffset, maxOffset));
         return dsTaint.getTaintLong();
         // ---------- Original Method ----------
         //SelectionModifierCursorController selectionController = getSelectionController();
@@ -9476,20 +9442,20 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.172 -0400", hash_original_method = "A81C1729DD6237516D7BACF34829C51D", hash_generated_method = "CCE1989FB4EA6FCE7A5275A680B1E080")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:09.671 -0400", hash_original_method = "A81C1729DD6237516D7BACF34829C51D", hash_generated_method = "574715AE8E6EA57C91F63208296566EF")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     @Override
     public void onPopulateAccessibilityEvent(AccessibilityEvent event) {
         //DSFIXME:  CODE0009: Possible callback target function detected
         dsTaint.addTaint(event.dsTaint);
         super.onPopulateAccessibilityEvent(event);
-        final boolean isPassword;
+        boolean isPassword;
         isPassword = hasPasswordTransformationMethod();
         {
             CharSequence text;
             text = getTextForAccessibility();
             {
-                boolean varE82D2DAF247906B4725B56EFEDF2A150_1268646119 = (!TextUtils.isEmpty(text));
+                boolean varE82D2DAF247906B4725B56EFEDF2A150_716827435 = (!TextUtils.isEmpty(text));
                 {
                     event.getText().add(text);
                 } //End block
@@ -9507,18 +9473,18 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.172 -0400", hash_original_method = "6FC069A7F29DA435C1F4CA8AC1DF9A7A", hash_generated_method = "FF49A0B3C242D83EFFE3C37193FDD7F5")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:09.671 -0400", hash_original_method = "6FC069A7F29DA435C1F4CA8AC1DF9A7A", hash_generated_method = "E462161E3F7FC90B03F73E66CBB0594D")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     @Override
     public void onInitializeAccessibilityEvent(AccessibilityEvent event) {
         //DSFIXME:  CODE0009: Possible callback target function detected
         dsTaint.addTaint(event.dsTaint);
         super.onInitializeAccessibilityEvent(event);
-        final boolean isPassword;
+        boolean isPassword;
         isPassword = hasPasswordTransformationMethod();
         event.setPassword(isPassword);
         {
-            boolean var9F2EDE90BC8D745F3A5915C44AB298CC_1115044965 = (event.getEventType() == AccessibilityEvent.TYPE_VIEW_TEXT_SELECTION_CHANGED);
+            boolean var9F2EDE90BC8D745F3A5915C44AB298CC_1081928310 = (event.getEventType() == AccessibilityEvent.TYPE_VIEW_TEXT_SELECTION_CHANGED);
             {
                 event.setFromIndex(Selection.getSelectionStart(mText));
                 event.setToIndex(Selection.getSelectionEnd(mText));
@@ -9537,14 +9503,14 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.172 -0400", hash_original_method = "305122B0EBB45F51524377B6AB6D9296", hash_generated_method = "791C1689D333DBE99DD1573784E3F9C3")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:09.671 -0400", hash_original_method = "305122B0EBB45F51524377B6AB6D9296", hash_generated_method = "25048058EAF377DD8C0BEFCBA91DE8A3")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     @Override
     public void onInitializeAccessibilityNodeInfo(AccessibilityNodeInfo info) {
         //DSFIXME:  CODE0009: Possible callback target function detected
         dsTaint.addTaint(info.dsTaint);
         super.onInitializeAccessibilityNodeInfo(info);
-        final boolean isPassword;
+        boolean isPassword;
         isPassword = hasPasswordTransformationMethod();
         {
             info.setText(getTextForAccessibility());
@@ -9560,8 +9526,8 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.172 -0400", hash_original_method = "69E83CE4CD48DE4ECD21620922EFCC1A", hash_generated_method = "84C6A1EF228F62F3DF17CD3AD2ABC4C5")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:09.671 -0400", hash_original_method = "69E83CE4CD48DE4ECD21620922EFCC1A", hash_generated_method = "AD548AB65459161B5AAA6DD24B2282E7")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     @Override
     public void sendAccessibilityEvent(int eventType) {
         dsTaint.addTaint(eventType);
@@ -9574,13 +9540,13 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.172 -0400", hash_original_method = "8463B72D535FD98D84B93D99DA9D2B3A", hash_generated_method = "36E4C9F64405CA7F7AC257C691A109D6")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:09.672 -0400", hash_original_method = "8463B72D535FD98D84B93D99DA9D2B3A", hash_generated_method = "06A387C686A249021B03C708B28B670E")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     private CharSequence getTextForAccessibility() {
         CharSequence text;
         text = getText();
         {
-            boolean var6C86A511CD0D2845B6E0259573F6A612_371609358 = (TextUtils.isEmpty(text));
+            boolean var6C86A511CD0D2845B6E0259573F6A612_2009161881 = (TextUtils.isEmpty(text));
             {
                 text = getHint();
             } //End block
@@ -9595,8 +9561,8 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.172 -0400", hash_original_method = "77215EF020F664C77A4E0174E763346B", hash_generated_method = "23349E3B25267BD9DCA558BF64B8A54B")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:09.672 -0400", hash_original_method = "77215EF020F664C77A4E0174E763346B", hash_generated_method = "F8EB170C5AA753092FEB905E7D2D2037")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
      void sendAccessibilityEventTypeViewTextChanged(CharSequence beforeText,
             int fromIndex, int removedCount, int addedCount) {
         dsTaint.addTaint(fromIndex);
@@ -9621,12 +9587,12 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.172 -0400", hash_original_method = "10EC795892359880AFC1661A7060F8D4", hash_generated_method = "3E1B3D3EC4C13F4496EB13E387BF29DB")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:09.672 -0400", hash_original_method = "10EC795892359880AFC1661A7060F8D4", hash_generated_method = "6995B74DE7B7A8A4BA05C30D45307EAD")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public boolean isInputMethodTarget() {
         InputMethodManager imm;
         imm = InputMethodManager.peekInstance();
-        boolean var2E8BF75A8D890E760B8A4C35FF8B91BD_1158928859 = (imm != null && imm.isActive(this));
+        boolean var2E8BF75A8D890E760B8A4C35FF8B91BD_237883703 = (imm != null && imm.isActive(this));
         return dsTaint.getTaintBoolean();
         // ---------- Original Method ----------
         //InputMethodManager imm = InputMethodManager.peekInstance();
@@ -9634,7 +9600,7 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.172 -0400", hash_original_method = "395A8406E426F55316A0BF37153197E7", hash_generated_method = "B5EF0ED7A7F2F09C5F5770D60AB73D77")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:09.672 -0400", hash_original_method = "395A8406E426F55316A0BF37153197E7", hash_generated_method = "9143C039448304F2C099CE7E938C029D")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public boolean onTextContextMenuItem(int id) {
         //DSFIXME:  CODE0009: Possible callback target function detected
@@ -9644,11 +9610,11 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
         int max;
         max = mText.length();
         {
-            boolean var1C23F183BE3EEE2A8667855A22865324_1908512977 = (isFocused());
+            boolean var1C23F183BE3EEE2A8667855A22865324_1300646979 = (isFocused());
             {
-                final int selStart;
+                int selStart;
                 selStart = getSelectionStart();
-                final int selEnd;
+                int selEnd;
                 selEnd = getSelectionEnd();
                 min = Math.max(0, Math.min(selStart, selEnd));
                 max = Math.max(0, Math.max(selStart, selEnd));
@@ -9681,51 +9647,51 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.173 -0400", hash_original_method = "FE79E6B9FD3BC9A3AB2F6DF9CAFCD48E", hash_generated_method = "0CEBACBF88BFA6B53A2FCDAB56625F17")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:09.673 -0400", hash_original_method = "FE79E6B9FD3BC9A3AB2F6DF9CAFCD48E", hash_generated_method = "854CA3B1D25FBB6AF45F15FF7D907FD6")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     private CharSequence getTransformedText(int start, int end) {
         dsTaint.addTaint(start);
         dsTaint.addTaint(end);
-        CharSequence varA2ECE102943016D3DE205B2C28E69806_1578998024 = (removeSuggestionSpans(mTransformed.subSequence(start, end)));
+        CharSequence varA2ECE102943016D3DE205B2C28E69806_696008714 = (removeSuggestionSpans(mTransformed.subSequence(start, end)));
         return dsTaint.getTaintString();
         // ---------- Original Method ----------
         //return removeSuggestionSpans(mTransformed.subSequence(start, end));
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.173 -0400", hash_original_method = "6ABCBA1E552641094DE1B3327AD7FDD1", hash_generated_method = "2BBB6D894B1B60560724BCA553D61212")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:09.673 -0400", hash_original_method = "6ABCBA1E552641094DE1B3327AD7FDD1", hash_generated_method = "98C45CD9985C6118CA74D671090FFE90")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     private long prepareSpacesAroundPaste(int min, int max, CharSequence paste) {
         dsTaint.addTaint(min);
         dsTaint.addTaint(max);
         dsTaint.addTaint(paste);
         {
-            boolean var350AE6B9AD47061FFDF129B7005A2411_116526075 = (paste.length() > 0);
+            boolean var350AE6B9AD47061FFDF129B7005A2411_100657667 = (paste.length() > 0);
             {
                 {
-                    final char charBefore;
+                    char charBefore;
                     charBefore = mTransformed.charAt(min - 1);
-                    final char charAfter;
+                    char charAfter;
                     charAfter = paste.charAt(0);
                     {
-                        boolean var3C202C664C757CF8D249A87B1D846040_111497262 = (Character.isSpaceChar(charBefore) && Character.isSpaceChar(charAfter));
+                        boolean var3C202C664C757CF8D249A87B1D846040_106217367 = (Character.isSpaceChar(charBefore) && Character.isSpaceChar(charAfter));
                         {
-                            final int originalLength;
+                            int originalLength;
                             originalLength = mText.length();
                             deleteText_internal(min - 1, min);
-                            final int delta;
+                            int delta;
                             delta = mText.length() - originalLength;
                             min += delta;
                             max += delta;
                         } //End block
                         {
-                            boolean varB469BF59168A8579CE9E3A2CAF0C1642_1917413350 = (!Character.isSpaceChar(charBefore) && charBefore != '\n' &&
+                            boolean varB469BF59168A8579CE9E3A2CAF0C1642_1110218428 = (!Character.isSpaceChar(charBefore) && charBefore != '\n' &&
                         !Character.isSpaceChar(charAfter) && charAfter != '\n');
                             {
-                                final int originalLength;
+                                int originalLength;
                                 originalLength = mText.length();
                                 replaceText_internal(min, min, " ");
-                                final int delta;
+                                int delta;
                                 delta = mText.length() - originalLength;
                                 min += delta;
                                 max += delta;
@@ -9734,19 +9700,19 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
                     } //End collapsed parenthetic
                 } //End block
                 {
-                    boolean varEEF1C48FC1D3D39DDF48A720B8628129_2001213128 = (max < mText.length());
+                    boolean varEEF1C48FC1D3D39DDF48A720B8628129_1809415590 = (max < mText.length());
                     {
-                        final char charBefore;
+                        char charBefore;
                         charBefore = paste.charAt(paste.length() - 1);
-                        final char charAfter;
+                        char charAfter;
                         charAfter = mTransformed.charAt(max);
                         {
-                            boolean varBF8E0F80E2B510B9D515C61513407B2D_1114999005 = (Character.isSpaceChar(charBefore) && Character.isSpaceChar(charAfter));
+                            boolean varBF8E0F80E2B510B9D515C61513407B2D_1974514400 = (Character.isSpaceChar(charBefore) && Character.isSpaceChar(charAfter));
                             {
                                 deleteText_internal(max, max + 1);
                             } //End block
                             {
-                                boolean var59E656C6DF389BAD07A380CF8AC3667A_10187500 = (!Character.isSpaceChar(charBefore) && charBefore != '\n' &&
+                                boolean var59E656C6DF389BAD07A380CF8AC3667A_397054981 = (!Character.isSpaceChar(charBefore) && charBefore != '\n' &&
                         !Character.isSpaceChar(charAfter) && charAfter != '\n');
                                 {
                                     replaceText_internal(max, max, " ");
@@ -9757,26 +9723,25 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
                 } //End collapsed parenthetic
             } //End block
         } //End collapsed parenthetic
-        long var541DF126AEC1F4495FAD956E97F187A7_834327269 = (packRangeInLong(min, max));
+        long var541DF126AEC1F4495FAD956E97F187A7_553772623 = (packRangeInLong(min, max));
         return dsTaint.getTaintLong();
         // ---------- Original Method ----------
         // Original Method Too Long, Refer to Original Implementation
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.173 -0400", hash_original_method = "E0F0E7304052F47B24D850362D52309F", hash_generated_method = "A55C29DABC9E0360E56A3A9D31C5ED91")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:09.674 -0400", hash_original_method = "E0F0E7304052F47B24D850362D52309F", hash_generated_method = "587819248861069E12D12E3925B1B6B8")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     private DragShadowBuilder getTextThumbnailBuilder(CharSequence text) {
         dsTaint.addTaint(text);
         TextView shadowView;
         shadowView = (TextView) inflate(mContext,
                 com.android.internal.R.layout.text_drag_thumbnail, null);
-        if (DroidSafeAndroidRuntime.control)
         {
-            throw new IllegalArgumentException("Unable to inflate text drag thumbnail");
+            if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("Unable to inflate text drag thumbnail");
         } //End block
         {
-            boolean var8664184B362287947D63596A4517BCE2_869590629 = (text.length() > DRAG_SHADOW_MAX_TEXT_LENGTH);
+            boolean var8664184B362287947D63596A4517BCE2_1841513124 = (text.length() > DRAG_SHADOW_MAX_TEXT_LENGTH);
             {
                 text = text.subSequence(0, DRAG_SHADOW_MAX_TEXT_LENGTH);
             } //End block
@@ -9787,18 +9752,19 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
         shadowView.setGravity(Gravity.CENTER);
         shadowView.setLayoutParams(new LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT,
                 ViewGroup.LayoutParams.WRAP_CONTENT));
-        final int size;
+        int size;
         size = View.MeasureSpec.makeMeasureSpec(0, View.MeasureSpec.UNSPECIFIED);
         shadowView.measure(size, size);
         shadowView.layout(0, 0, shadowView.getMeasuredWidth(), shadowView.getMeasuredHeight());
         shadowView.invalidate();
+        DragShadowBuilder varB921669A143095D5CF22F189BC50E48E_2019952966 = (new DragShadowBuilder(shadowView));
         return (DragShadowBuilder)dsTaint.getTaint();
         // ---------- Original Method ----------
         // Original Method Too Long, Refer to Original Implementation
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.173 -0400", hash_original_method = "FE9E03D9F3FD52DB88C5DE28D1E8768B", hash_generated_method = "9076732ED18CE2918862863782C61531")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:09.674 -0400", hash_original_method = "FE9E03D9F3FD52DB88C5DE28D1E8768B", hash_generated_method = "7DE5A545414114B6E8A5CC23B784474A")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     @Override
     public boolean performLongClick() {
@@ -9807,17 +9773,17 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
         boolean vibrate;
         vibrate = true;
         {
-            boolean varC298D59926924FB0808A70DC864C4372_2080073073 = (super.performLongClick());
+            boolean varC298D59926924FB0808A70DC864C4372_785480596 = (super.performLongClick());
             {
                 mDiscardNextActionUp = true;
                 handled = true;
             } //End block
         } //End collapsed parenthetic
         {
-            boolean varC22EC044E5AC4CF0B865C252AF7A9AA6_596049865 = (!handled && !isPositionOnText(mLastDownPositionX, mLastDownPositionY) &&
+            boolean varC22EC044E5AC4CF0B865C252AF7A9AA6_840576607 = (!handled && !isPositionOnText(mLastDownPositionX, mLastDownPositionY) &&
                 mInsertionControllerEnabled);
             {
-                final int offset;
+                int offset;
                 offset = getOffsetForPosition(mLastDownPositionX, mLastDownPositionY);
                 stopSelectionActionMode();
                 Selection.setSelection((Spannable) mText, offset);
@@ -9828,11 +9794,11 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
         } //End collapsed parenthetic
         {
             {
-                boolean var6D40024296296040632FE8120E16CDA8_376649195 = (touchPositionIsInSelection());
+                boolean var6D40024296296040632FE8120E16CDA8_100225824 = (touchPositionIsInSelection());
                 {
-                    final int start;
+                    int start;
                     start = getSelectionStart();
-                    final int end;
+                    int end;
                     end = getSelectionEnd();
                     CharSequence selectedText;
                     selectedText = getTransformedText(start, end);
@@ -9866,8 +9832,8 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.174 -0400", hash_original_method = "227669F89CB3324004EC787BF93F591D", hash_generated_method = "F0ECB0BD26F8D67C1F6E1E024E0C7094")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:09.674 -0400", hash_original_method = "227669F89CB3324004EC787BF93F591D", hash_generated_method = "48A0D4B0CDB62C1A19974B295D579D4B")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     private boolean touchPositionIsInSelection() {
         int selectionStart;
         selectionStart = getSelectionStart();
@@ -9906,8 +9872,8 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.174 -0400", hash_original_method = "A2BF41305999CD5C7E75DA3423749804", hash_generated_method = "6D84C0E52AA793CEACFBFDC4F7435F2B")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:09.675 -0400", hash_original_method = "A2BF41305999CD5C7E75DA3423749804", hash_generated_method = "6ADF9F540933093BFC625F1E2C1D986D")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     private PositionListener getPositionListener() {
         {
             mPositionListener = new PositionListener();
@@ -9921,13 +9887,13 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.174 -0400", hash_original_method = "23179C09AF51D00D4FCF53E6D8173595", hash_generated_method = "C2235EF4F12FCB0F9F5B9C4729A22640")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:09.675 -0400", hash_original_method = "23179C09AF51D00D4FCF53E6D8173595", hash_generated_method = "52DA5E503ABC0174FE331CB49EA6C580")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     private boolean isPositionVisible(int positionX, int positionY) {
         dsTaint.addTaint(positionX);
         dsTaint.addTaint(positionY);
         {
-            final float[] position;
+            float[] position;
             position = sTmpPosition;
             position[0] = positionX;
             position[1] = positionY;
@@ -9935,22 +9901,25 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
             view = this;
             {
                 {
-                    position[0] -= view.getScrollX();
-                    position[1] -= view.getScrollY();
-                } //End block
+                    boolean var5103DE2BDA9F56FC7E36F1B0BD1193A5_2110172235 = (view != this);
+                    {
+                        position[0] -= view.getScrollX();
+                        position[1] -= view.getScrollY();
+                    } //End block
+                } //End collapsed parenthetic
                 {
-                    boolean varCC3EA170661AE32B143B6B8CB851A271_886518071 = (position[0] < 0 || position[1] < 0 ||
+                    boolean varCC3EA170661AE32B143B6B8CB851A271_557488099 = (position[0] < 0 || position[1] < 0 ||
                         position[0] > view.getWidth() || position[1] > view.getHeight());
                 } //End collapsed parenthetic
                 {
-                    boolean var020714D8D65A6851489742B00823B874_113164812 = (!view.getMatrix().isIdentity());
+                    boolean var020714D8D65A6851489742B00823B874_1041179607 = (!view.getMatrix().isIdentity());
                     {
                         view.getMatrix().mapPoints(position);
                     } //End block
                 } //End collapsed parenthetic
                 position[0] += view.getLeft();
                 position[1] += view.getTop();
-                final ViewParent parent;
+                ViewParent parent;
                 parent = view.getParent();
                 {
                     view = (View) parent;
@@ -9966,17 +9935,17 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.174 -0400", hash_original_method = "51F76D7934106C8713E6D720A3BD9BE7", hash_generated_method = "59B048ACE2D539C0ED90CDF2BBAA44B0")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:09.676 -0400", hash_original_method = "51F76D7934106C8713E6D720A3BD9BE7", hash_generated_method = "D88D7FB80B19D0C95D0A71363EF01080")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     private boolean isOffsetVisible(int offset) {
         dsTaint.addTaint(offset);
-        final int line;
+        int line;
         line = mLayout.getLineForOffset(offset);
-        final int lineBottom;
+        int lineBottom;
         lineBottom = mLayout.getLineBottom(line);
-        final int primaryHorizontal;
+        int primaryHorizontal;
         primaryHorizontal = (int) mLayout.getPrimaryHorizontal(offset);
-        boolean varD4446F991D74BA64F3AC992B6F4738F8_245031823 = (isPositionVisible(primaryHorizontal + viewportToContentHorizontalOffset(),
+        boolean varD4446F991D74BA64F3AC992B6F4738F8_1399149759 = (isPositionVisible(primaryHorizontal + viewportToContentHorizontalOffset(),
                 lineBottom + viewportToContentVerticalOffset()));
         return dsTaint.getTaintBoolean();
         // ---------- Original Method ----------
@@ -9988,8 +9957,8 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.174 -0400", hash_original_method = "8567BA4CA284138DD0CB4B48B9C8C278", hash_generated_method = "19436A22C145E9113C2B4639CA244B31")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:09.676 -0400", hash_original_method = "8567BA4CA284138DD0CB4B48B9C8C278", hash_generated_method = "97685686EFED9687FC3D3D9860F642BA")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     @Override
     protected void onScrollChanged(int horiz, int vert, int oldHoriz, int oldVert) {
         //DSFIXME:  CODE0009: Possible callback target function detected
@@ -10009,10 +9978,9 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.174 -0400", hash_original_method = "9FAF02695A10AC660CF2B5DD3EDB7DD4", hash_generated_method = "B093D0AA6ED9D475C187A839FEAD3EA4")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:09.676 -0400", hash_original_method = "9FAF02695A10AC660CF2B5DD3EDB7DD4", hash_generated_method = "410F28E74807BD92A7D1F7A465B14161")
     //DSFIXME:  CODE0002: Requires DSC value to be set
      CharSequence removeSuggestionSpans(CharSequence text) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
         dsTaint.addTaint(text);
         {
             Spannable spannable;
@@ -10052,8 +10020,8 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.174 -0400", hash_original_method = "97397C66433481C877E194A1E7813AF3", hash_generated_method = "8A39CD1B1AD7ADF8966320554862E152")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:09.677 -0400", hash_original_method = "97397C66433481C877E194A1E7813AF3", hash_generated_method = "8C09B45831F6B0FC0EEC21C59FB38634")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
      void showSuggestions() {
         {
             mSuggestionsPopupWindow = new SuggestionsPopupWindow();
@@ -10069,20 +10037,20 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.175 -0400", hash_original_method = "E5A6F19BA20AF228602A3EAA320E6192", hash_generated_method = "E33D88D337FDEA080C825619B0D668A9")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:09.677 -0400", hash_original_method = "E5A6F19BA20AF228602A3EAA320E6192", hash_generated_method = "E80E48A6ED99AB269A3D5344191EF4E8")
     //DSFIXME:  CODE0002: Requires DSC value to be set
      boolean areSuggestionsShown() {
-        boolean var29FA41D6182C8FCF2B2C7ECDA0C38EBD_1999543346 = (mSuggestionsPopupWindow != null && mSuggestionsPopupWindow.isShowing());
+        boolean var29FA41D6182C8FCF2B2C7ECDA0C38EBD_197324940 = (mSuggestionsPopupWindow != null && mSuggestionsPopupWindow.isShowing());
         return dsTaint.getTaintBoolean();
         // ---------- Original Method ----------
         //return mSuggestionsPopupWindow != null && mSuggestionsPopupWindow.isShowing();
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.175 -0400", hash_original_method = "25A5AF708197CD0F2143471E812F624E", hash_generated_method = "FD8DD0BC14321497D91E287A1D76D5F8")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:09.677 -0400", hash_original_method = "25A5AF708197CD0F2143471E812F624E", hash_generated_method = "C1127ABC6F9D9B3C99D8B93363699F9D")
     @DSModeled(DSC.SAFE)
     public boolean isSuggestionsEnabled() {
-        final int variation;
+        int variation;
         variation = mInputType & EditorInfo.TYPE_MASK_VARIATION;
         return dsTaint.getTaintBoolean();
         // ---------- Original Method ----------
@@ -10097,37 +10065,35 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.175 -0400", hash_original_method = "9876FACCD4EAE43EA4CB6FD414FD5E5A", hash_generated_method = "48EFC13993992622C903FA5B03FAAF99")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:09.678 -0400", hash_original_method = "9876FACCD4EAE43EA4CB6FD414FD5E5A", hash_generated_method = "8AB9830870762A73F5601E0B4E221F51")
     @DSModeled(DSC.SAFE)
     public void setCustomSelectionActionModeCallback(ActionMode.Callback actionModeCallback) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
         dsTaint.addTaint(actionModeCallback.dsTaint);
         // ---------- Original Method ----------
         //mCustomSelectionActionModeCallback = actionModeCallback;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.175 -0400", hash_original_method = "6671930C0B8994CBEF8AFBE835B485C8", hash_generated_method = "5571163D69DA0D3C15F375F9BEAA57C7")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:09.678 -0400", hash_original_method = "6671930C0B8994CBEF8AFBE835B485C8", hash_generated_method = "600EA7BC06DB4E80F9576902B7BC88FB")
     @DSModeled(DSC.SAFE)
     public ActionMode.Callback getCustomSelectionActionModeCallback() {
-        //DSFIXME:  CODE0009: Possible callback target function detected
         return (ActionMode.Callback)dsTaint.getTaint();
         // ---------- Original Method ----------
         //return mCustomSelectionActionModeCallback;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.175 -0400", hash_original_method = "B9B1CE7E81D0AD0E9224682576CA1ABE", hash_generated_method = "6EE3489C396D4140F404D3078F1C6881")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:09.680 -0400", hash_original_method = "B9B1CE7E81D0AD0E9224682576CA1ABE", hash_generated_method = "A854FCF809B61FCFB4F9EE7589D111F9")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     private boolean startSelectionActionMode() {
         {
-            boolean varDD51C7CC25E36170CF1A5B45DEEBD783_75944539 = (!canSelectText() || !requestFocus());
+            boolean varDD51C7CC25E36170CF1A5B45DEEBD783_1356395866 = (!canSelectText() || !requestFocus());
         } //End collapsed parenthetic
         {
-            boolean varD18B2E3785F2697D3F393507C051114C_1316045921 = (!hasSelection());
+            boolean varD18B2E3785F2697D3F393507C051114C_990766225 = (!hasSelection());
             {
                 {
-                    boolean var2694D05A2D7BEB6A7092F61157ECE50C_1539181027 = (!selectCurrentWord());
+                    boolean var2694D05A2D7BEB6A7092F61157ECE50C_1837070989 = (!selectCurrentWord());
                 } //End collapsed parenthetic
             } //End block
         } //End collapsed parenthetic
@@ -10138,10 +10104,10 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
             actionModeCallback = new SelectionActionModeCallback();
             mSelectionActionMode = startActionMode(actionModeCallback);
         } //End block
-        final boolean selectionStarted;
+        boolean selectionStarted;
         selectionStarted = mSelectionActionMode != null || willExtract;
         {
-            final InputMethodManager imm;
+            InputMethodManager imm;
             imm = InputMethodManager.peekInstance();
             {
                 imm.showSoftInput(this, 0, null);
@@ -10153,13 +10119,13 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.175 -0400", hash_original_method = "F292596F6DB6F0A1BCB4946717902139", hash_generated_method = "731723A2784C39E8EA8BD3AE73720981")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:09.680 -0400", hash_original_method = "F292596F6DB6F0A1BCB4946717902139", hash_generated_method = "2ADA453C81A78618F3D822A8B3F51721")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     private boolean extractedTextModeWillBeStarted() {
         {
-            final InputMethodManager imm;
+            InputMethodManager imm;
             imm = InputMethodManager.peekInstance();
-            boolean var2F4E2C66FC57F06F55546BB121BBAB53_191430236 = (imm != null && imm.isFullscreenMode());
+            boolean var2F4E2C66FC57F06F55546BB121BBAB53_419902183 = (imm != null && imm.isFullscreenMode());
         } //End block
         return dsTaint.getTaintBoolean();
         // ---------- Original Method ----------
@@ -10171,8 +10137,8 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.175 -0400", hash_original_method = "9843C3F333617B8C113B72E2C38319BA", hash_generated_method = "E5C8D4FD8E2343F3654845E2A4DC9C41")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:09.681 -0400", hash_original_method = "9843C3F333617B8C113B72E2C38319BA", hash_generated_method = "A0249CA7D39C0509B23718121E90129E")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     private void stopSelectionActionMode() {
         {
             mSelectionActionMode.finish();
@@ -10184,7 +10150,7 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.175 -0400", hash_original_method = "FD893A1B640E2E356DBE924FBE58EA4D", hash_generated_method = "48D1250BCCE3E2BF8B744E6B018AB4BF")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:09.681 -0400", hash_original_method = "FD893A1B640E2E356DBE924FBE58EA4D", hash_generated_method = "83315AA7DB9F6498AC0EF13C00695305")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     private void paste(int min, int max) {
         dsTaint.addTaint(min);
@@ -10199,7 +10165,7 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
             {
                 int i;
                 i = 0;
-                boolean varCF4CF6A541CEE14E85EAE2AF810764AC_1299048926 = (i<clip.getItemCount());
+                boolean varCF4CF6A541CEE14E85EAE2AF810764AC_4935709 = (i<clip.getItemCount());
                 {
                     CharSequence paste;
                     paste = clip.getItemAt(i).coerceToText(getContext());
@@ -10228,7 +10194,7 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.175 -0400", hash_original_method = "8BE6A63416328BC319B0B5D0DB32AF7B", hash_generated_method = "770EBFF6D9E86FE5912B69733D32EE11")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:09.681 -0400", hash_original_method = "8BE6A63416328BC319B0B5D0DB32AF7B", hash_generated_method = "E4D8EF7C6197832BD12656009266D3DA")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     private void setPrimaryClip(ClipData clip) {
         dsTaint.addTaint(clip.dsTaint);
@@ -10245,8 +10211,8 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.176 -0400", hash_original_method = "EC32E229F62759229A3F9E53D2729660", hash_generated_method = "39D8019582CBEDEF2F96A32F244C3C86")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:09.682 -0400", hash_original_method = "EC32E229F62759229A3F9E53D2729660", hash_generated_method = "29E097B4A8943645223D542B5C9F2EB3")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     private void hideInsertionPointCursorController() {
         {
             mInsertionPointCursorController.hide();
@@ -10258,8 +10224,8 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.176 -0400", hash_original_method = "24BE7797312EE966374B6FFCFBB4586E", hash_generated_method = "5F333164C622046F3D80B95C6784B92C")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:09.682 -0400", hash_original_method = "24BE7797312EE966374B6FFCFBB4586E", hash_generated_method = "957DAB26CB1B7753D50A6C44463DD0BC")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     private void hideControllers() {
         hideCursorControllers();
         hideSpanControllers();
@@ -10269,8 +10235,8 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.176 -0400", hash_original_method = "49CA1E2702021EF560B250FA375633C6", hash_generated_method = "E257E2671B5E7746CF5E81FB5922AFDE")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:09.682 -0400", hash_original_method = "49CA1E2702021EF560B250FA375633C6", hash_generated_method = "DF3B309A0E8B4C37468C98D609346973")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     private void hideSpanControllers() {
         {
             mChangeWatcher.hideControllers();
@@ -10282,11 +10248,11 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.176 -0400", hash_original_method = "1E18C93748F74C8EE354333AE329FDA3", hash_generated_method = "C9DCEEBE8D40B20CFF0B7CAF63824949")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:09.682 -0400", hash_original_method = "1E18C93748F74C8EE354333AE329FDA3", hash_generated_method = "68103FDAA4279EB8BD3AC0B451A50CC2")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     private void hideCursorControllers() {
         {
-            boolean var97060A385B2EE20942D359972C3B987E_711179684 = (mSuggestionsPopupWindow != null && !mSuggestionsPopupWindow.isShowingUp());
+            boolean var97060A385B2EE20942D359972C3B987E_112508338 = (mSuggestionsPopupWindow != null && !mSuggestionsPopupWindow.isShowingUp());
             {
                 mSuggestionsPopupWindow.hide();
             } //End block
@@ -10302,17 +10268,17 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.176 -0400", hash_original_method = "3AC7FDA43CAD0B3033F953FC5E229096", hash_generated_method = "69599A1C0C87D062981FFF24419A8024")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:09.682 -0400", hash_original_method = "3AC7FDA43CAD0B3033F953FC5E229096", hash_generated_method = "C56F3E309C1F6A10823E345A2AAD8A66")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public int getOffsetForPosition(float x, float y) {
         dsTaint.addTaint(y);
         dsTaint.addTaint(x);
         {
-            boolean var778B744EBE60DF815BEE98852B413FC5_683991099 = (getLayout() == null);
+            boolean var778B744EBE60DF815BEE98852B413FC5_1946760572 = (getLayout() == null);
         } //End collapsed parenthetic
-        final int line;
+        int line;
         line = getLineAtCoordinate(y);
-        final int offset;
+        int offset;
         offset = getOffsetAtCoordinate(line, x);
         return dsTaint.getTaintInt();
         // ---------- Original Method ----------
@@ -10323,7 +10289,7 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.176 -0400", hash_original_method = "C0F2EACF537DEE598E512FB7710303B4", hash_generated_method = "21892A994F8E03116922D245CD43531E")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:09.683 -0400", hash_original_method = "C0F2EACF537DEE598E512FB7710303B4", hash_generated_method = "0FC8E9EAFB7364416157BD223DC4704D")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     private float convertToLocalHorizontalCoordinate(float x) {
         dsTaint.addTaint(x);
@@ -10341,7 +10307,7 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.176 -0400", hash_original_method = "69F0EDA2749521F4A39C0BEAC846F1E5", hash_generated_method = "B89B48E81A7A1F408F4E38466449AB82")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:09.683 -0400", hash_original_method = "69F0EDA2749521F4A39C0BEAC846F1E5", hash_generated_method = "8B9973F1AD2A4868E5AB35D0410F09EF")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     private int getLineAtCoordinate(float y) {
         dsTaint.addTaint(y);
@@ -10349,7 +10315,7 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
         y = Math.max(0.0f, y);
         y = Math.min(getHeight() - getTotalPaddingBottom() - 1, y);
         y += getScrollY();
-        int var6DD28032E606AA4BF99A53AB522278D5_1824855486 = (getLayout().getLineForVertical((int) y));
+        int var6DD28032E606AA4BF99A53AB522278D5_2011741263 = (getLayout().getLineForVertical((int) y));
         return dsTaint.getTaintInt();
         // ---------- Original Method ----------
         //y -= getTotalPaddingTop();
@@ -10360,13 +10326,13 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.176 -0400", hash_original_method = "78600135096D77C91825CF9049D3F243", hash_generated_method = "2F6018EA3527034D52441B30BC6A9E15")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:09.683 -0400", hash_original_method = "78600135096D77C91825CF9049D3F243", hash_generated_method = "167285FB560BF0263E8C1BD307657030")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     private int getOffsetAtCoordinate(int line, float x) {
         dsTaint.addTaint(line);
         dsTaint.addTaint(x);
         x = convertToLocalHorizontalCoordinate(x);
-        int varD73392C253D779C86FFAE24ED89F63F1_1963891356 = (getLayout().getOffsetForHorizontal(line, x));
+        int varD73392C253D779C86FFAE24ED89F63F1_537264668 = (getLayout().getOffsetForHorizontal(line, x));
         return dsTaint.getTaintInt();
         // ---------- Original Method ----------
         //x = convertToLocalHorizontalCoordinate(x);
@@ -10374,22 +10340,22 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.176 -0400", hash_original_method = "B77333C8EDA86B5BA4A004A4B129217A", hash_generated_method = "4031DE7435E0A57094D3FEC858E269D6")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:09.683 -0400", hash_original_method = "B77333C8EDA86B5BA4A004A4B129217A", hash_generated_method = "46B6573691225C99C8919D2A2DE5839D")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     private boolean isPositionOnText(float x, float y) {
         dsTaint.addTaint(y);
         dsTaint.addTaint(x);
         {
-            boolean var778B744EBE60DF815BEE98852B413FC5_1624450727 = (getLayout() == null);
+            boolean var778B744EBE60DF815BEE98852B413FC5_1618424596 = (getLayout() == null);
         } //End collapsed parenthetic
-        final int line;
+        int line;
         line = getLineAtCoordinate(y);
         x = convertToLocalHorizontalCoordinate(x);
         {
-            boolean var59E035AC6E596093F53E603EDA382B91_4703262 = (x < getLayout().getLineLeft(line));
+            boolean var59E035AC6E596093F53E603EDA382B91_371686543 = (x < getLayout().getLineLeft(line));
         } //End collapsed parenthetic
         {
-            boolean var04BE7C77E8AA35EC39BE529B038AF3DD_2019151683 = (x > getLayout().getLineRight(line));
+            boolean var04BE7C77E8AA35EC39BE529B038AF3DD_535586770 = (x > getLayout().getLineRight(line));
         } //End collapsed parenthetic
         return dsTaint.getTaintBoolean();
         // ---------- Original Method ----------
@@ -10402,22 +10368,22 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.176 -0400", hash_original_method = "282C8F5427700D40A542E64F343C6674", hash_generated_method = "52E75EEDBCFE78D72C3650ADC0253BD2")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:09.684 -0400", hash_original_method = "282C8F5427700D40A542E64F343C6674", hash_generated_method = "D381D24FFC9A48291D51DB383FA8513D")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     @Override
     public boolean onDragEvent(DragEvent event) {
         //DSFIXME:  CODE0009: Possible callback target function detected
         dsTaint.addTaint(event.dsTaint);
         {
-            Object var9E1FBD251DF7E53AB77C3A31F15B2B38_1060395162 = (event.getAction());
+            Object var9E1FBD251DF7E53AB77C3A31F15B2B38_55830118 = (event.getAction());
             //Begin case DragEvent.ACTION_DRAG_STARTED 
-            boolean varB5182ED29788A31653E5E1546400D879_581680508 = (hasInsertionController());
+            boolean varB5182ED29788A31653E5E1546400D879_1475403703 = (hasInsertionController());
             //End case DragEvent.ACTION_DRAG_STARTED 
             //Begin case DragEvent.ACTION_DRAG_ENTERED 
             TextView.this.requestFocus();
             //End case DragEvent.ACTION_DRAG_ENTERED 
             //Begin case DragEvent.ACTION_DRAG_LOCATION 
-            final int offset;
+            int offset;
             offset = getOffsetForPosition(event.getX(), event.getY());
             //End case DragEvent.ACTION_DRAG_LOCATION 
             //Begin case DragEvent.ACTION_DRAG_LOCATION 
@@ -10450,7 +10416,7 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.177 -0400", hash_original_method = "89464BC34879AFE88152B04970AA44D2", hash_generated_method = "554853D115A1FF4FD5201FF76D3A65C3")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:09.684 -0400", hash_original_method = "89464BC34879AFE88152B04970AA44D2", hash_generated_method = "D2EFAA7EA73D3B8B0CDF004486722752")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     private void onDrop(DragEvent event) {
         dsTaint.addTaint(event.dsTaint);
@@ -10458,7 +10424,7 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
         content = new StringBuilder("");
         ClipData clipData;
         clipData = event.getClipData();
-        final int itemCount;
+        int itemCount;
         itemCount = clipData.getItemCount();
         {
             int i;
@@ -10469,7 +10435,7 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
                 content.append(item.coerceToText(TextView.this.mContext));
             } //End block
         } //End collapsed parenthetic
-        final int offset;
+        int offset;
         offset = getOffsetForPosition(event.getX(), event.getY());
         Object localState;
         localState = event.getLocalState();
@@ -10481,7 +10447,7 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
         boolean dragDropIntoItself;
         dragDropIntoItself = dragLocalState != null &&
                 dragLocalState.sourceTextView == this;
-        final int originalLength;
+        int originalLength;
         originalLength = mText.length();
         long minMax;
         minMax = prepareSpacesAroundPaste(offset, offset, content);
@@ -10497,20 +10463,20 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
             int dragSourceEnd;
             dragSourceEnd = dragLocalState.end;
             {
-                final int shift;
+                int shift;
                 shift = mText.length() - originalLength;
                 dragSourceStart += shift;
                 dragSourceEnd += shift;
             } //End block
             deleteText_internal(dragSourceStart, dragSourceEnd);
             {
-                boolean var353A6E4F7751153EED06FB844C167F01_461772085 = ((dragSourceStart == 0 ||
+                boolean var353A6E4F7751153EED06FB844C167F01_1636612863 = ((dragSourceStart == 0 ||
                     Character.isSpaceChar(mTransformed.charAt(dragSourceStart - 1))) &&
                     (dragSourceStart == mText.length() ||
                     Character.isSpaceChar(mTransformed.charAt(dragSourceStart))));
                 {
-                    /*final*/ int pos;
-                    boolean var518448CA6AC99CEB1166FD5287784237_1039911499 = (dragSourceStart == mText.length());
+                    int pos;
+                    boolean var518448CA6AC99CEB1166FD5287784237_1825174718 = (dragSourceStart == mText.length());
                     pos = dragSourceStart - 1;
                     pos = dragSourceStart;
                     deleteText_internal(pos, pos + 1);
@@ -10522,33 +10488,30 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.177 -0400", hash_original_method = "91BB575EAEE11A270473B31B356B5B12", hash_generated_method = "DBD11980A52B66C9307A05665D96E670")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:09.685 -0400", hash_original_method = "91BB575EAEE11A270473B31B356B5B12", hash_generated_method = "8779C490E7A682551377716A2C10D3FA")
     @DSModeled(DSC.SAFE)
      boolean hasInsertionController() {
-        //DSFIXME:  CODE0009: Possible callback target function detected
         return dsTaint.getTaintBoolean();
         // ---------- Original Method ----------
         //return mInsertionControllerEnabled;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.177 -0400", hash_original_method = "EE05979336406D2A8CCC57049072454C", hash_generated_method = "2F11BB84B084413434FE63FD3657461F")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:09.685 -0400", hash_original_method = "EE05979336406D2A8CCC57049072454C", hash_generated_method = "C3B6FCAC5C8D1A793B34966B544B1E1F")
     @DSModeled(DSC.SAFE)
      boolean hasSelectionController() {
-        //DSFIXME:  CODE0009: Possible callback target function detected
         return dsTaint.getTaintBoolean();
         // ---------- Original Method ----------
         //return mSelectionControllerEnabled;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.177 -0400", hash_original_method = "02A03A91466BF03F45C3C819266A605E", hash_generated_method = "E7B19BED26D08DF4D857AA86A5A5E5D6")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:09.685 -0400", hash_original_method = "02A03A91466BF03F45C3C819266A605E", hash_generated_method = "4C26959786618F0B436884E7E1F1CB3E")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
      InsertionPointCursorController getInsertionController() {
-        //DSFIXME:  CODE0009: Possible callback target function detected
         {
             mInsertionPointCursorController = new InsertionPointCursorController();
-            final ViewTreeObserver observer;
+            ViewTreeObserver observer;
             observer = getViewTreeObserver();
             observer.addOnTouchModeChangeListener(mInsertionPointCursorController);
         } //End block
@@ -10566,13 +10529,12 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.177 -0400", hash_original_method = "CD09732805D28B5BF513C98008463942", hash_generated_method = "0B9C238CCFF2A3AC0256D25227CA5037")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:09.685 -0400", hash_original_method = "CD09732805D28B5BF513C98008463942", hash_generated_method = "7D624B7692C4D029673E0A2AA2DB34B5")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
      SelectionModifierCursorController getSelectionController() {
-        //DSFIXME:  CODE0009: Possible callback target function detected
         {
             mSelectionModifierCursorController = new SelectionModifierCursorController();
-            final ViewTreeObserver observer;
+            ViewTreeObserver observer;
             observer = getViewTreeObserver();
             observer.addOnTouchModeChangeListener(mSelectionModifierCursorController);
         } //End block
@@ -10590,10 +10552,10 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.177 -0400", hash_original_method = "2A090273FA835CA26EC17C458A37DEC8", hash_generated_method = "DEF2319451ADC133E5F6BC755356F370")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:09.686 -0400", hash_original_method = "2A090273FA835CA26EC17C458A37DEC8", hash_generated_method = "F07FC689D105B75B9A8D0D09371C09DF")
     @DSModeled(DSC.SAFE)
      boolean isInBatchEditMode() {
-        final InputMethodState ims;
+        InputMethodState ims;
         ims = mInputMethodState;
         return dsTaint.getTaintBoolean();
         // ---------- Original Method ----------
@@ -10605,17 +10567,17 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.177 -0400", hash_original_method = "6388CB4B4CF218043B88410FEBCF8F11", hash_generated_method = "A801D7E89426CC45DDDFD6EA5BDCA23A")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:09.686 -0400", hash_original_method = "6388CB4B4CF218043B88410FEBCF8F11", hash_generated_method = "43DC73EEEDD5C9E82160691601C1DF2D")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     @Override
     protected void resolveTextDirection() {
         {
-            boolean varAFBCCFFAA18696A12B6915A938CC8475_1574535881 = (hasPasswordTransformationMethod());
+            boolean varAFBCCFFAA18696A12B6915A938CC8475_177320776 = (hasPasswordTransformationMethod());
             {
                 mTextDir = TextDirectionHeuristics.LOCALE;
             } //End block
         } //End collapsed parenthetic
-        final boolean defaultIsRtl;
+        boolean defaultIsRtl;
         defaultIsRtl = (getResolvedLayoutDirection() == LAYOUT_DIRECTION_RTL);
         super.resolveTextDirection();
         int textDir;
@@ -10638,7 +10600,7 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.178 -0400", hash_original_method = "E2C9FAE08740394CAC2960942379DB19", hash_generated_method = "EB966E9FCDFD74E723A7AD1694DDC086")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:09.687 -0400", hash_original_method = "E2C9FAE08740394CAC2960942379DB19", hash_generated_method = "37D886613C3DC07A475F600B71A98606")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     protected void resolveDrawables() {
         {
@@ -10647,7 +10609,7 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
         Drawables dr;
         dr = mDrawables;
         {
-            Object varAFC6EB2C684D509A17B3A4EFF5D9CB9D_1747278823 = (getResolvedLayoutDirection());
+            Object varAFC6EB2C684D509A17B3A4EFF5D9CB9D_1616194895 = (getResolvedLayoutDirection());
             //Begin case LAYOUT_DIRECTION_RTL 
             {
                 dr.mDrawableRight = dr.mDrawableStart;
@@ -10683,7 +10645,7 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.178 -0400", hash_original_method = "18FE12CF478DF44CED567E30FAAD0C93", hash_generated_method = "653942155A7AC109F0415301B0B31B2C")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:09.687 -0400", hash_original_method = "18FE12CF478DF44CED567E30FAAD0C93", hash_generated_method = "39C62916D85B160D1BFEF9F52F7B861D")
     @DSModeled(DSC.SAFE)
     protected void resetResolvedDrawables() {
         mResolvedDrawables = false;
@@ -10692,8 +10654,8 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.178 -0400", hash_original_method = "6AA5A1E8B49AF4D4943616613CE0B2E3", hash_generated_method = "1460F2394E5A0E488FA165AB55AF908F")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:09.687 -0400", hash_original_method = "6AA5A1E8B49AF4D4943616613CE0B2E3", hash_generated_method = "BF9008AA36FFD5F36A923E7D8F1E940E")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     protected void viewClicked(InputMethodManager imm) {
         dsTaint.addTaint(imm.dsTaint);
         {
@@ -10706,8 +10668,8 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.178 -0400", hash_original_method = "D7BCF3915857A038F77C712DE4BFFF5D", hash_generated_method = "0183277F9F73D15B895BA928B6F44DEC")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:09.687 -0400", hash_original_method = "D7BCF3915857A038F77C712DE4BFFF5D", hash_generated_method = "92AD857E47266D83AB9EC16A6C9E7EF5")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     protected void deleteText_internal(int start, int end) {
         dsTaint.addTaint(start);
         dsTaint.addTaint(end);
@@ -10717,8 +10679,8 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.178 -0400", hash_original_method = "2F865B1F2B94D9294078802BAAEABE19", hash_generated_method = "C684D6CBF34A4F1014072EF203FC80B7")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:09.688 -0400", hash_original_method = "2F865B1F2B94D9294078802BAAEABE19", hash_generated_method = "F81461DB2CBFE9F2911C6FE9A884CF44")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     protected void replaceText_internal(int start, int end, CharSequence text) {
         dsTaint.addTaint(text);
         dsTaint.addTaint(start);
@@ -10729,8 +10691,8 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.178 -0400", hash_original_method = "80E41DC8CAFBEBBFCDBF175A54ED075C", hash_generated_method = "26E212CF6ABF7F0536824B595CAA80A6")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:09.688 -0400", hash_original_method = "80E41DC8CAFBEBBFCDBF175A54ED075C", hash_generated_method = "71F6D07982372D896C08D12063089E3D")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     protected void setSpan_internal(Object span, int start, int end, int flags) {
         dsTaint.addTaint(flags);
         dsTaint.addTaint(start);
@@ -10742,8 +10704,8 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.178 -0400", hash_original_method = "ED942619162EB0C0AFB16CB348D15185", hash_generated_method = "60F03CDC3EAB69E714B86E7ED962F580")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:09.688 -0400", hash_original_method = "ED942619162EB0C0AFB16CB348D15185", hash_generated_method = "274047F95CD371B3EF8E34233169F7ED")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     protected void setCursorPosition_internal(int start, int end) {
         dsTaint.addTaint(start);
         dsTaint.addTaint(end);
@@ -10754,7 +10716,7 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
 
     
     static class Drawables {
-        final Rect mCompoundRect = new Rect();
+        Rect mCompoundRect = new Rect();
         Drawable mDrawableTop, mDrawableBottom, mDrawableLeft, mDrawableRight,
                 mDrawableStart, mDrawableEnd;
         int mDrawableSizeTop, mDrawableSizeBottom, mDrawableSizeLeft, mDrawableSizeRight,
@@ -10763,6 +10725,12 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
                 mDrawableHeightStart, mDrawableHeightEnd;
         int mDrawablePadding;
         
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:09.688 -0400", hash_original_method = "CC610AA382554D4A9CDD23788CECCCB8", hash_generated_method = "CC610AA382554D4A9CDD23788CECCCB8")
+                public Drawables ()
+        {
+        }
+
+
     }
 
 
@@ -10776,6 +10744,12 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
         OnEditorActionListener onEditorActionListener;
         boolean enterDown;
         
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:09.688 -0400", hash_original_method = "6081A7A5D01231A6F4C40DA5B58BF9F4", hash_generated_method = "6081A7A5D01231A6F4C40DA5B58BF9F4")
+                public InputContentType ()
+        {
+        }
+
+
     }
 
 
@@ -10785,13 +10759,19 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
         RectF mTmpRectF = new RectF();
         float[] mTmpOffset = new float[2];
         ExtractedTextRequest mExtracting;
-        final ExtractedText mTmpExtracted = new ExtractedText();
+        ExtractedText mTmpExtracted = new ExtractedText();
         int mBatchEditNesting;
         boolean mCursorChanged;
         boolean mSelectionModeChanged;
         boolean mContentChanged;
         int mChangedStart, mChangedEnd, mChangedDelta;
         
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:09.688 -0400", hash_original_method = "79CA6BE42ECC693E0BB6F32CD0B062A3", hash_generated_method = "79CA6BE42ECC693E0BB6F32CD0B062A3")
+                public InputMethodState ()
+        {
+        }
+
+
     }
 
 
@@ -10807,30 +10787,8 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
         CharSequence text;
         boolean frozenWithFocus;
         CharSequence error;
-        @SuppressWarnings("hiding") public static final Parcelable.Creator<SavedState> CREATOR = new Parcelable.Creator<SavedState>() {            
-            @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.178 -0400", hash_original_method = "E26812089C072DDE1A14AECAA6CD6686", hash_generated_method = "6C6B0A873BD52E2752F88E9968D483CA")
-            @DSModeled(DSC.SAFE)
-            public SavedState createFromParcel(Parcel in) {
-                dsTaint.addTaint(in.dsTaint);
-                return (SavedState)dsTaint.getTaint();
-                // ---------- Original Method ----------
-                //return new SavedState(in);
-            }
-
-            
-            @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.178 -0400", hash_original_method = "2D31E9CBAAAE05B696D738324F87FF78", hash_generated_method = "1325778BB443F872513E70F9A19C5918")
-            @DSModeled(DSC.SAFE)
-            public SavedState[] newArray(int size) {
-                dsTaint.addTaint(size);
-                return (SavedState[])dsTaint.getTaint();
-                // ---------- Original Method ----------
-                //return new SavedState[size];
-            }
-
-            
-}; //Transformed anonymous class
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.178 -0400", hash_original_method = "89EB4EC154F05BF905ECA8E02BBD14BC", hash_generated_method = "BBD854AA7A117C86D9FBF897ADE36FE1")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:09.688 -0400", hash_original_method = "89EB4EC154F05BF905ECA8E02BBD14BC", hash_generated_method = "AB6E14E26999AC4D7AF1972CF22F65E4")
         //DSFIXME:  CODE0002: Requires DSC value to be set
          SavedState(Parcelable superState) {
             super(superState);
@@ -10839,7 +10797,7 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.178 -0400", hash_original_method = "37D3E7AD53C42A47440A9F9D38DFF900", hash_generated_method = "CE9B4B43F262FAC3A3E791B374275AB4")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:09.689 -0400", hash_original_method = "37D3E7AD53C42A47440A9F9D38DFF900", hash_generated_method = "9EF668649849417105A94EAAF287E32A")
         //DSFIXME:  CODE0002: Requires DSC value to be set
         private SavedState(Parcel in) {
             super(in);
@@ -10849,7 +10807,7 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
             frozenWithFocus = (in.readInt() != 0);
             text = TextUtils.CHAR_SEQUENCE_CREATOR.createFromParcel(in);
             {
-                boolean var331417C59A822E59FB0B216D2F29CB47_1961775847 = (in.readInt() != 0);
+                boolean var331417C59A822E59FB0B216D2F29CB47_1921197618 = (in.readInt() != 0);
                 {
                     error = TextUtils.CHAR_SEQUENCE_CREATOR.createFromParcel(in);
                 } //End block
@@ -10865,8 +10823,8 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.179 -0400", hash_original_method = "0917C7384BCC053D7DFEC5346FB5EF0D", hash_generated_method = "2103B0C4F0CB59EBD036007AAC4FB3CB")
-        @DSModeled(DSC.SAFE)
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:09.689 -0400", hash_original_method = "0917C7384BCC053D7DFEC5346FB5EF0D", hash_generated_method = "D492007C146AFD23DA53701A310E06A8")
+        //DSFIXME:  CODE0002: Requires DSC value to be set
         @Override
         public void writeToParcel(Parcel out, int flags) {
             dsTaint.addTaint(flags);
@@ -10898,7 +10856,7 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.179 -0400", hash_original_method = "B2667A033A504E8795AC5B896DD98B5F", hash_generated_method = "0589E698B1525C9AC981AA2DA56A31FD")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:09.689 -0400", hash_original_method = "B2667A033A504E8795AC5B896DD98B5F", hash_generated_method = "CE853EEC8CDFF815C983C48BFF93CA2F")
         //DSFIXME:  CODE0002: Requires DSC value to be set
         @Override
         public String toString() {
@@ -10921,6 +10879,30 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
         }
 
         
+        @SuppressWarnings("hiding") public static final Parcelable.Creator<SavedState> CREATOR = new Parcelable.Creator<SavedState>() {            
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:09.689 -0400", hash_original_method = "E26812089C072DDE1A14AECAA6CD6686", hash_generated_method = "413BE4D84A82FB60F26ADB71FC74C68A")
+            //DSFIXME:  CODE0002: Requires DSC value to be set
+            public SavedState createFromParcel(Parcel in) {
+                dsTaint.addTaint(in.dsTaint);
+                SavedState var41ED8F3548F5060881BBE51AB9112A3F_1630211171 = (new SavedState(in));
+                return (SavedState)dsTaint.getTaint();
+                // ---------- Original Method ----------
+                //return new SavedState(in);
+            }
+
+            
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:09.689 -0400", hash_original_method = "2D31E9CBAAAE05B696D738324F87FF78", hash_generated_method = "3D496327542358D3D523D53D82AB33A1")
+            //DSFIXME:  CODE0002: Requires DSC value to be set
+            public SavedState[] newArray(int size) {
+                dsTaint.addTaint(size);
+                SavedState[] varB5C72E5BBB181D4CA93D7BAA0B8B5E3D_1804643744 = (new SavedState[size]);
+                return (SavedState[])dsTaint.getTaint();
+                // ---------- Original Method ----------
+                //return new SavedState[size];
+            }
+
+            
+}; //Transformed anonymous class
     }
 
 
@@ -10929,11 +10911,11 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
         private char[] mChars;
         private int mStart, mLength;
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.179 -0400", hash_original_method = "91EFB0F7C01F6A5A0D8B3974D02E0951", hash_generated_method = "DC1DD2B0EB2DD62A9EF4071A29EE7187")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:09.690 -0400", hash_original_method = "91EFB0F7C01F6A5A0D8B3974D02E0951", hash_generated_method = "B5A1D07C00B3D70989D4034640677D5D")
         @DSModeled(DSC.SAFE)
         public CharWrapper(char[] chars, int start, int len) {
             dsTaint.addTaint(start);
-            dsTaint.addTaint(chars);
+            dsTaint.addTaint(chars[0]);
             dsTaint.addTaint(len);
             // ---------- Original Method ----------
             //mChars = chars;
@@ -10942,11 +10924,11 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.179 -0400", hash_original_method = "9DC2F69D47DD9984FB3378BE28468419", hash_generated_method = "855B5103325DD7CE1B50B5CF117CC647")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:09.690 -0400", hash_original_method = "9DC2F69D47DD9984FB3378BE28468419", hash_generated_method = "77FAE12FCD23522E17BD7AB8AFFD6D37")
         @DSModeled(DSC.SAFE)
          void set(char[] chars, int start, int len) {
             dsTaint.addTaint(start);
-            dsTaint.addTaint(chars);
+            dsTaint.addTaint(chars[0]);
             dsTaint.addTaint(len);
             // ---------- Original Method ----------
             //mChars = chars;
@@ -10955,7 +10937,7 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.179 -0400", hash_original_method = "C0D624CC7CEFFAF650D54F4FB963FAF6", hash_generated_method = "E88F9A3FF76C14C0BB1A084B2CA56712")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:09.690 -0400", hash_original_method = "C0D624CC7CEFFAF650D54F4FB963FAF6", hash_generated_method = "223B168FF17CEB39254F4FA4815BC666")
         @DSModeled(DSC.SAFE)
         public int length() {
             return dsTaint.getTaintInt();
@@ -10964,7 +10946,7 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.179 -0400", hash_original_method = "02B707818F2669493B94939B301EE67F", hash_generated_method = "66A09420698002542C2D7D8D7C7C209F")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:09.690 -0400", hash_original_method = "02B707818F2669493B94939B301EE67F", hash_generated_method = "1618A06BE7CBDCFAD59E14A37985B9B2")
         @DSModeled(DSC.SAFE)
         public char charAt(int off) {
             dsTaint.addTaint(off);
@@ -10974,25 +10956,26 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.179 -0400", hash_original_method = "16BC7956BCD83D2479A5892A7E5C0E12", hash_generated_method = "8059471C5627D328C1B72A7DB4FCE6D4")
-        @DSModeled(DSC.SAFE)
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:09.690 -0400", hash_original_method = "16BC7956BCD83D2479A5892A7E5C0E12", hash_generated_method = "51D1FB1B6A1CF6C6A160E0A77D1EE868")
+        //DSFIXME:  CODE0002: Requires DSC value to be set
         @Override
         public String toString() {
+            String varAE7FB2AF73A9B68DBD18B7101317D23A_1008469714 = (new String(mChars, mStart, mLength));
             return dsTaint.getTaintString();
             // ---------- Original Method ----------
             //return new String(mChars, mStart, mLength);
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.179 -0400", hash_original_method = "BA853CED33F98EDEC6E428BC258874A3", hash_generated_method = "7CBB9687A6FE73BB1A534F2C83D51D17")
-        @DSModeled(DSC.SAFE)
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:09.690 -0400", hash_original_method = "BA853CED33F98EDEC6E428BC258874A3", hash_generated_method = "8AC7A5AE2F3D6628F840AFB11C698116")
+        //DSFIXME:  CODE0002: Requires DSC value to be set
         public CharSequence subSequence(int start, int end) {
             dsTaint.addTaint(start);
             dsTaint.addTaint(end);
-            if (DroidSafeAndroidRuntime.control)
             {
-                throw new IndexOutOfBoundsException(start + ", " + end);
+                if (DroidSafeAndroidRuntime.control) throw new IndexOutOfBoundsException(start + ", " + end);
             } //End block
+            CharSequence varAC58F28A5C463E5822A012D4748EC255_1278791949 = (new String(mChars, start + mStart, end - start));
             return dsTaint.getTaintString();
             // ---------- Original Method ----------
             //if (start < 0 || end < 0 || start > mLength || end > mLength) {
@@ -11002,16 +10985,15 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.179 -0400", hash_original_method = "BA41D2BD366E4073F3399B79828CDD69", hash_generated_method = "18A3028998431C1386B2A0BE231EFB81")
-        @DSModeled(DSC.SAFE)
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:09.691 -0400", hash_original_method = "BA41D2BD366E4073F3399B79828CDD69", hash_generated_method = "280290C60783A003592CCF8E82E89C69")
+        //DSFIXME:  CODE0002: Requires DSC value to be set
         public void getChars(int start, int end, char[] buf, int off) {
             dsTaint.addTaint(start);
             dsTaint.addTaint(off);
+            dsTaint.addTaint(buf[0]);
             dsTaint.addTaint(end);
-            dsTaint.addTaint(buf);
-            if (DroidSafeAndroidRuntime.control)
             {
-                throw new IndexOutOfBoundsException(start + ", " + end);
+                if (DroidSafeAndroidRuntime.control) throw new IndexOutOfBoundsException(start + ", " + end);
             } //End block
             System.arraycopy(mChars, start + mStart, buf, off, end - start);
             // ---------- Original Method ----------
@@ -11022,15 +11004,15 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.179 -0400", hash_original_method = "69B7B91382C25765CF25BB95E9C19951", hash_generated_method = "75179EB17546530639005A7823D11703")
-        @DSModeled(DSC.SAFE)
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:09.691 -0400", hash_original_method = "69B7B91382C25765CF25BB95E9C19951", hash_generated_method = "1C398D2931CE52369DB50D1E53385075")
+        //DSFIXME:  CODE0002: Requires DSC value to be set
         public void drawText(Canvas c, int start, int end,
                              float x, float y, Paint p) {
-            dsTaint.addTaint(c.dsTaint);
             dsTaint.addTaint(start);
+            dsTaint.addTaint(c.dsTaint);
             dsTaint.addTaint(p.dsTaint);
-            dsTaint.addTaint(end);
             dsTaint.addTaint(y);
+            dsTaint.addTaint(end);
             dsTaint.addTaint(x);
             c.drawText(mChars, start + mStart, end - start, x, y, p);
             // ---------- Original Method ----------
@@ -11038,19 +11020,19 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.179 -0400", hash_original_method = "7645CF39D6B95BCD64DC33FB4F483F74", hash_generated_method = "E4A110CA975934103E54B256409FB2F5")
-        @DSModeled(DSC.SAFE)
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:09.691 -0400", hash_original_method = "7645CF39D6B95BCD64DC33FB4F483F74", hash_generated_method = "73A228214A25D69A59C35700DED17A33")
+        //DSFIXME:  CODE0002: Requires DSC value to be set
         public void drawTextRun(Canvas c, int start, int end,
                 int contextStart, int contextEnd, float x, float y, int flags, Paint p) {
             dsTaint.addTaint(flags);
-            dsTaint.addTaint(c.dsTaint);
-            dsTaint.addTaint(start);
             dsTaint.addTaint(contextStart);
+            dsTaint.addTaint(start);
+            dsTaint.addTaint(c.dsTaint);
             dsTaint.addTaint(p.dsTaint);
-            dsTaint.addTaint(end);
             dsTaint.addTaint(y);
-            dsTaint.addTaint(contextEnd);
+            dsTaint.addTaint(end);
             dsTaint.addTaint(x);
+            dsTaint.addTaint(contextEnd);
             int count;
             count = end - start;
             int contextCount;
@@ -11065,51 +11047,51 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.180 -0400", hash_original_method = "4FA2C1189F8B48AEDF7B10BEDFF84543", hash_generated_method = "7B774A4B40AB1A914A17DD2E1E9425C0")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:09.691 -0400", hash_original_method = "4FA2C1189F8B48AEDF7B10BEDFF84543", hash_generated_method = "B4D6ED31C84D1ADCD188E79A22578E42")
         //DSFIXME:  CODE0002: Requires DSC value to be set
         public float measureText(int start, int end, Paint p) {
             dsTaint.addTaint(start);
             dsTaint.addTaint(p.dsTaint);
             dsTaint.addTaint(end);
-            float var5A7F792133FF7C4A81B497C5A4720CB1_177905201 = (p.measureText(mChars, start + mStart, end - start));
+            float var5A7F792133FF7C4A81B497C5A4720CB1_1906382595 = (p.measureText(mChars, start + mStart, end - start));
             return dsTaint.getTaintFloat();
             // ---------- Original Method ----------
             //return p.measureText(mChars, start + mStart, end - start);
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.180 -0400", hash_original_method = "E75F381DB76AB16AB72FA7895D0F4EE0", hash_generated_method = "6BB842E04631303075CE93E2B49A44CB")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:09.691 -0400", hash_original_method = "E75F381DB76AB16AB72FA7895D0F4EE0", hash_generated_method = "A9A4DAEF78AA8CEDDF6E7407975C6D66")
         //DSFIXME:  CODE0002: Requires DSC value to be set
         public int getTextWidths(int start, int end, float[] widths, Paint p) {
             dsTaint.addTaint(start);
             dsTaint.addTaint(p.dsTaint);
-            dsTaint.addTaint(widths);
+            dsTaint.addTaint(widths[0]);
             dsTaint.addTaint(end);
-            int varE3ED158C14EA094EB292BB32B5DD8EF6_1994703361 = (p.getTextWidths(mChars, start + mStart, end - start, widths));
+            int varE3ED158C14EA094EB292BB32B5DD8EF6_1461456953 = (p.getTextWidths(mChars, start + mStart, end - start, widths));
             return dsTaint.getTaintInt();
             // ---------- Original Method ----------
             //return p.getTextWidths(mChars, start + mStart, end - start, widths);
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.180 -0400", hash_original_method = "8AE304950D3C27A7D6E58BA388580EF8", hash_generated_method = "26EF1097E6335E5621CB700EB79A07EB")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:09.692 -0400", hash_original_method = "8AE304950D3C27A7D6E58BA388580EF8", hash_generated_method = "8DAFC7CC7B1651CE710D72229DE4C579")
         //DSFIXME:  CODE0002: Requires DSC value to be set
         public float getTextRunAdvances(int start, int end, int contextStart,
                 int contextEnd, int flags, float[] advances, int advancesIndex,
                 Paint p) {
             dsTaint.addTaint(flags);
-            dsTaint.addTaint(start);
             dsTaint.addTaint(contextStart);
+            dsTaint.addTaint(start);
             dsTaint.addTaint(p.dsTaint);
-            dsTaint.addTaint(advances);
+            dsTaint.addTaint(advances[0]);
             dsTaint.addTaint(end);
-            dsTaint.addTaint(contextEnd);
             dsTaint.addTaint(advancesIndex);
+            dsTaint.addTaint(contextEnd);
             int count;
             count = end - start;
             int contextCount;
             contextCount = contextEnd - contextStart;
-            float var95DA16B05752FC715454FE8979E745DE_1652191358 = (p.getTextRunAdvances(mChars, start + mStart, count,
+            float var95DA16B05752FC715454FE8979E745DE_1318855885 = (p.getTextRunAdvances(mChars, start + mStart, count,
                     contextStart + mStart, contextCount, flags, advances,
                     advancesIndex));
             return dsTaint.getTaintFloat();
@@ -11122,25 +11104,25 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.180 -0400", hash_original_method = "F8F49F104CF6E56864F062F013326F8E", hash_generated_method = "B18CBE1BE27CE1CF3AAA66B28B99A4F1")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:09.692 -0400", hash_original_method = "F8F49F104CF6E56864F062F013326F8E", hash_generated_method = "FDE1E2B2405880D3D2AFCFE8E474064B")
         //DSFIXME:  CODE0002: Requires DSC value to be set
         public float getTextRunAdvances(int start, int end, int contextStart,
                 int contextEnd, int flags, float[] advances, int advancesIndex,
                 Paint p, int reserved) {
             dsTaint.addTaint(flags);
-            dsTaint.addTaint(start);
             dsTaint.addTaint(contextStart);
+            dsTaint.addTaint(start);
             dsTaint.addTaint(p.dsTaint);
-            dsTaint.addTaint(advances);
+            dsTaint.addTaint(advances[0]);
             dsTaint.addTaint(reserved);
             dsTaint.addTaint(end);
-            dsTaint.addTaint(contextEnd);
             dsTaint.addTaint(advancesIndex);
+            dsTaint.addTaint(contextEnd);
             int count;
             count = end - start;
             int contextCount;
             contextCount = contextEnd - contextStart;
-            float var96D3717415879B74E71057007515D708_48348676 = (p.getTextRunAdvances(mChars, start + mStart, count,
+            float var96D3717415879B74E71057007515D708_854354735 = (p.getTextRunAdvances(mChars, start + mStart, count,
                     contextStart + mStart, contextCount, flags, advances,
                     advancesIndex, reserved));
             return dsTaint.getTaintFloat();
@@ -11153,7 +11135,7 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.180 -0400", hash_original_method = "BDCC8CC855D861C4246044B3842097FC", hash_generated_method = "5548359596BCCAC886E0962080925C45")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:09.692 -0400", hash_original_method = "BDCC8CC855D861C4246044B3842097FC", hash_generated_method = "23A135C5395C1331BF14C792EB6BEB26")
         //DSFIXME:  CODE0002: Requires DSC value to be set
         public int getTextRunCursor(int contextStart, int contextEnd, int flags,
                 int offset, int cursorOpt, Paint p) {
@@ -11165,7 +11147,7 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
             dsTaint.addTaint(contextEnd);
             int contextCount;
             contextCount = contextEnd - contextStart;
-            int var068FAD7452971D895CA3E5455D974B2C_1869849544 = (p.getTextRunCursor(mChars, contextStart + mStart,
+            int var068FAD7452971D895CA3E5455D974B2C_818589445 = (p.getTextRunCursor(mChars, contextStart + mStart,
                     contextCount, flags, offset + mStart, cursorOpt));
             return dsTaint.getTaintInt();
             // ---------- Original Method ----------
@@ -11181,11 +11163,11 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
     
     private static class ErrorPopup extends PopupWindow {
         private boolean mAbove = false;
-        private /* final */ TextView mView;
+        private TextView mView;
         private int mPopupInlineErrorBackgroundId = 0;
         private int mPopupInlineErrorAboveBackgroundId = 0;
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.180 -0400", hash_original_method = "272870BAEDFD334116717C4E8AB7F4AA", hash_generated_method = "BB155E9BE4481FC74E40E3E9563B89DF")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:09.692 -0400", hash_original_method = "272870BAEDFD334116717C4E8AB7F4AA", hash_generated_method = "56A7B4DA09E075BEC170A7985FE129D2")
         //DSFIXME:  CODE0002: Requires DSC value to be set
          ErrorPopup(TextView v, int width, int height) {
             super(v, width, height);
@@ -11203,7 +11185,7 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.180 -0400", hash_original_method = "FF785E3F959B10F16CB73DE59942CDE6", hash_generated_method = "792FF9AC4E3575D7D7DFDB9EC4FBA1D6")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:09.693 -0400", hash_original_method = "FF785E3F959B10F16CB73DE59942CDE6", hash_generated_method = "93F8971C8B623EDF4CACABF335FB2022")
         //DSFIXME:  CODE0002: Requires DSC value to be set
          void fixDirection(boolean above) {
             dsTaint.addTaint(above);
@@ -11233,7 +11215,7 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.180 -0400", hash_original_method = "283134609ABCFB2A4CA7FFE3B421D4C1", hash_generated_method = "DCE327F480CFD548B6F97CF508145980")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:09.693 -0400", hash_original_method = "283134609ABCFB2A4CA7FFE3B421D4C1", hash_generated_method = "07AC86A6CC05D41DA33A592A33DCE060")
         //DSFIXME:  CODE0002: Requires DSC value to be set
         private int getResourceId(int currentId, int index) {
             dsTaint.addTaint(index);
@@ -11257,14 +11239,14 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.180 -0400", hash_original_method = "D12B38B9E303D838A7A28156EE92AFAA", hash_generated_method = "D68B9B93B05C8A9C2AB4843CDFBE11D7")
-        @DSModeled(DSC.SAFE)
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:09.693 -0400", hash_original_method = "D12B38B9E303D838A7A28156EE92AFAA", hash_generated_method = "05755111E85BE6D7DA631AEE81C4F7C4")
+        //DSFIXME:  CODE0002: Requires DSC value to be set
         @Override
         public void update(int x, int y, int w, int h, boolean force) {
             dsTaint.addTaint(w);
             dsTaint.addTaint(force);
-            dsTaint.addTaint(y);
             dsTaint.addTaint(h);
+            dsTaint.addTaint(y);
             dsTaint.addTaint(x);
             super.update(x, y, w, h, force);
             boolean above;
@@ -11286,13 +11268,12 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
 
     
     private class CorrectionHighlighter {
-        private final Path mPath = new Path();
-        private final Paint mPaint = new Paint(Paint.ANTI_ALIAS_FLAG);
+        private Path mPath = new Path();
+        private Paint mPaint = new Paint(Paint.ANTI_ALIAS_FLAG);
         private int mStart, mEnd;
         private long mFadingStartTime;
-        private final static int FADE_OUT_DURATION = 400;
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.180 -0400", hash_original_method = "76400340233C9D40D55E8C6995EBADF6", hash_generated_method = "27028B5CABB86E3CA0E434D497E8151B")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:09.694 -0400", hash_original_method = "76400340233C9D40D55E8C6995EBADF6", hash_generated_method = "B77926F0B0BE367B250F0A650FF30C45")
         //DSFIXME:  CODE0002: Requires DSC value to be set
         public CorrectionHighlighter() {
             mPaint.setCompatibilityScaling(getResources().getCompatibilityInfo().applicationScale);
@@ -11303,7 +11284,7 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.181 -0400", hash_original_method = "9DA46F38DADC56BDE7EACA06EAFC15FB", hash_generated_method = "FBA07139D4C4558705C2185F2B7AF14E")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:09.694 -0400", hash_original_method = "9DA46F38DADC56BDE7EACA06EAFC15FB", hash_generated_method = "0B1E1185B156E8DBE0B11D90567D2F73")
         //DSFIXME:  CODE0002: Requires DSC value to be set
         public void highlight(CorrectionInfo info) {
             dsTaint.addTaint(info.dsTaint);
@@ -11323,13 +11304,13 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.181 -0400", hash_original_method = "F315418B1425EA36D28AB47D63F906BC", hash_generated_method = "A459392FCC35AD72391D889273ABB989")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:09.694 -0400", hash_original_method = "F315418B1425EA36D28AB47D63F906BC", hash_generated_method = "8FA3A56A1E1B4C52C3526666B87BAE41")
         //DSFIXME:  CODE0002: Requires DSC value to be set
         public void draw(Canvas canvas, int cursorOffsetVertical) {
-            dsTaint.addTaint(canvas.dsTaint);
             dsTaint.addTaint(cursorOffsetVertical);
+            dsTaint.addTaint(canvas.dsTaint);
             {
-                boolean var4DB6C275C605DA5ED2D731F7F8E79A54_1320575711 = (updatePath() && updatePaint());
+                boolean var4DB6C275C605DA5ED2D731F7F8E79A54_1862721805 = (updatePath() && updatePaint());
                 {
                     {
                         canvas.translate(0, cursorOffsetVertical);
@@ -11362,16 +11343,16 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.181 -0400", hash_original_method = "5CBDA1AAE290DD8920EE208B7E44B556", hash_generated_method = "AD4477A071F1147C85825D64D2C24584")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:09.694 -0400", hash_original_method = "5CBDA1AAE290DD8920EE208B7E44B556", hash_generated_method = "7BA566C816177F436D8FD722A3BF99E3")
         //DSFIXME:  CODE0002: Requires DSC value to be set
         private boolean updatePaint() {
-            final long duration;
+            long duration;
             duration = SystemClock.uptimeMillis() - mFadingStartTime;
-            final float coef;
+            float coef;
             coef = 1.0f - (float) duration / FADE_OUT_DURATION;
-            final int highlightColorAlpha;
+            int highlightColorAlpha;
             highlightColorAlpha = Color.alpha(mHighlightColor);
-            final int color;
+            int color;
             color = (mHighlightColor & 0x00FFFFFF) +
                     ((int) (highlightColorAlpha * coef) << 24);
             mPaint.setColor(color);
@@ -11388,12 +11369,12 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.181 -0400", hash_original_method = "77DEEE2C70776896B8DA6C9B8DAC8452", hash_generated_method = "5C5DA7D2D82DE1D83A824736B9FE48A2")
-        @DSModeled(DSC.SAFE)
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:09.695 -0400", hash_original_method = "77DEEE2C70776896B8DA6C9B8DAC8452", hash_generated_method = "1426777E7D0197BD75B26A4C9E409EA3")
+        //DSFIXME:  CODE0002: Requires DSC value to be set
         private boolean updatePath() {
-            final Layout layout;
+            Layout layout;
             layout = TextView.this.mLayout;
-            final int length;
+            int length;
             length = mText.length();
             int start;
             start = Math.min(length, mStart);
@@ -11414,10 +11395,13 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.181 -0400", hash_original_method = "E7B5FD6BE43D84566E63BFC892235B90", hash_generated_method = "5016544DF463572AB44C34909BBA9D9D")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:09.695 -0400", hash_original_method = "E7B5FD6BE43D84566E63BFC892235B90", hash_generated_method = "3C080460745BCD7D6992EEB786768581")
         //DSFIXME:  CODE0002: Requires DSC value to be set
         private void invalidate(boolean delayed) {
             dsTaint.addTaint(delayed);
+            {
+                boolean var21FA9EC81F38017B1959E255822905B7_53528225 = (TextView.this.mLayout == null);
+            } //End collapsed parenthetic
             {
                 mPath.computeBounds(sTempRect, false);
                 int left;
@@ -11452,8 +11436,8 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.181 -0400", hash_original_method = "4BD6A36A746D13E089BD00A9CC0A6FB7", hash_generated_method = "56A6B1F09C22B10DAD17481A72BF47E2")
-        @DSModeled(DSC.SAFE)
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:09.695 -0400", hash_original_method = "4BD6A36A746D13E089BD00A9CC0A6FB7", hash_generated_method = "78D02156987325E73BE90677BD5A4AF4")
+        //DSFIXME:  CODE0002: Requires DSC value to be set
         private void stopAnimation() {
             TextView.this.mCorrectionHighlighter = null;
             // ---------- Original Method ----------
@@ -11461,25 +11445,15 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
         }
 
         
+        private final static int FADE_OUT_DURATION = 400;
     }
 
 
     
     private static final class Marquee extends Handler {
-        private static final float MARQUEE_DELTA_MAX = 0.07f;
-        private static final int MARQUEE_DELAY = 1200;
-        private static final int MARQUEE_RESTART_DELAY = 1200;
-        private static final int MARQUEE_RESOLUTION = 1000 / 30;
-        private static final int MARQUEE_PIXELS_PER_SECOND = 30;
-        private static final byte MARQUEE_STOPPED = 0x0;
-        private static final byte MARQUEE_STARTING = 0x1;
-        private static final byte MARQUEE_RUNNING = 0x2;
-        private static final int MESSAGE_START = 0x1;
-        private static final int MESSAGE_TICK = 0x2;
-        private static final int MESSAGE_RESTART = 0x3;
-        private final WeakReference<TextView> mView;
+        private WeakReference<TextView> mView;
         private byte mStatus = MARQUEE_STOPPED;
-        private final float mScrollUnit;
+        private float mScrollUnit;
         private float mMaxScroll;
         float mMaxFadeScroll;
         private float mGhostStart;
@@ -11488,11 +11462,11 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
         private int mRepeatLimit;
         float mScroll;
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.181 -0400", hash_original_method = "EC19D4EFFC7CC18F674B4C588B8FB87B", hash_generated_method = "77730606180FFA584068CB84DA0CB17C")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:09.695 -0400", hash_original_method = "EC19D4EFFC7CC18F674B4C588B8FB87B", hash_generated_method = "BF25B4BDA0D6B880DD6E6452AFDF1F62")
         //DSFIXME:  CODE0002: Requires DSC value to be set
          Marquee(TextView v) {
             dsTaint.addTaint(v.dsTaint);
-            final float density;
+            float density;
             density = v.getContext().getResources().getDisplayMetrics().density;
             mScrollUnit = (MARQUEE_PIXELS_PER_SECOND * density) / MARQUEE_RESOLUTION;
             mView = new WeakReference<TextView>(v);
@@ -11503,8 +11477,8 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.181 -0400", hash_original_method = "6484E5DEDF9A6D25913C9D3BAE668871", hash_generated_method = "927DB482B71F2E98A3293D2C41F28F8C")
-        @DSModeled(DSC.SAFE)
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:09.696 -0400", hash_original_method = "6484E5DEDF9A6D25913C9D3BAE668871", hash_generated_method = "AFBE765D5A9B16DDB2EE5E15ECAD0E77")
+        //DSFIXME:  CODE0002: Requires DSC value to be set
         @Override
         public void handleMessage(Message msg) {
             dsTaint.addTaint(msg.dsTaint);
@@ -11519,9 +11493,6 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
             //End case MESSAGE_TICK 
             //Begin case MESSAGE_RESTART 
             {
-                {
-                    mRepeatLimit--;
-                } //End block
                 start(mRepeatLimit);
             } //End block
             //End case MESSAGE_RESTART 
@@ -11546,14 +11517,14 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.182 -0400", hash_original_method = "EE95900433272316B4E2225B22ADF455", hash_generated_method = "59C2BCEAC39E712819191A2C67C78947")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:09.696 -0400", hash_original_method = "EE95900433272316B4E2225B22ADF455", hash_generated_method = "64F1E9BAB11939AD9526BD07DF909D8D")
         //DSFIXME:  CODE0002: Requires DSC value to be set
          void tick() {
             removeMessages(MESSAGE_TICK);
-            final TextView textView;
+            TextView textView;
             textView = mView.get();
             {
-                boolean var9E991AA08531BDDAB4E605F21C288264_859246964 = (textView != null && (textView.isFocused() || textView.isSelected()));
+                boolean var9E991AA08531BDDAB4E605F21C288264_1686813443 = (textView != null && (textView.isFocused() || textView.isSelected()));
                 {
                     mScroll += mScrollUnit;
                     {
@@ -11585,8 +11556,8 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.182 -0400", hash_original_method = "559B799FFC0EAE80362A4924AC6B387F", hash_generated_method = "E05FA592BCF06507137BECD403B976BD")
-        @DSModeled(DSC.SAFE)
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:09.696 -0400", hash_original_method = "559B799FFC0EAE80362A4924AC6B387F", hash_generated_method = "AEBFA0DC15336E07980941BA4CDDF3E1")
+        //DSFIXME:  CODE0002: Requires DSC value to be set
          void stop() {
             mStatus = MARQUEE_STOPPED;
             removeMessages(MESSAGE_START);
@@ -11602,11 +11573,11 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.182 -0400", hash_original_method = "E75276DE0DCFDFD0F42F697FF2F53A01", hash_generated_method = "C926ED65AAC3B839330111C6CF57488A")
-        @DSModeled(DSC.SAFE)
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:09.696 -0400", hash_original_method = "E75276DE0DCFDFD0F42F697FF2F53A01", hash_generated_method = "0270D113FA80FB0D48DB11FA52CA1ECF")
+        //DSFIXME:  CODE0002: Requires DSC value to be set
         private void resetScroll() {
             mScroll = 0.0f;
-            final TextView textView;
+            TextView textView;
             textView = mView.get();
             textView.invalidate();
             // ---------- Original Method ----------
@@ -11616,24 +11587,24 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.182 -0400", hash_original_method = "C8CF1974A44593F9FA59199A16CE27AD", hash_generated_method = "13A61616C97D085290AC641A40D66A71")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:09.697 -0400", hash_original_method = "C8CF1974A44593F9FA59199A16CE27AD", hash_generated_method = "10C2F18DECB7D09663B699DE686B607D")
         //DSFIXME:  CODE0002: Requires DSC value to be set
          void start(int repeatLimit) {
             dsTaint.addTaint(repeatLimit);
             {
                 stop();
             } //End block
-            final TextView textView;
+            TextView textView;
             textView = mView.get();
             {
                 mStatus = MARQUEE_STARTING;
                 mScroll = 0.0f;
-                final int textWidth;
+                int textWidth;
                 textWidth = textView.getWidth() - textView.getCompoundPaddingLeft() -
                         textView.getCompoundPaddingRight();
-                final float lineWidth;
+                float lineWidth;
                 lineWidth = textView.mLayout.getLineWidth(0);
-                final float gap;
+                float gap;
                 gap = textWidth / 3.0f;
                 mGhostStart = lineWidth - textWidth + gap;
                 mMaxScroll = mGhostStart + textWidth;
@@ -11648,7 +11619,7 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.182 -0400", hash_original_method = "8BEDD434588E893B08521C1E5E937982", hash_generated_method = "DE2AC8CC42E899426994F9C4F115A018")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:09.697 -0400", hash_original_method = "8BEDD434588E893B08521C1E5E937982", hash_generated_method = "A3E9D851AEC9C1F54E4AD8327577E9C8")
         @DSModeled(DSC.SAFE)
          float getGhostOffset() {
             return dsTaint.getTaintFloat();
@@ -11657,7 +11628,7 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.182 -0400", hash_original_method = "FBB73F0BC2F425DEBE19335413BBBBD5", hash_generated_method = "5555F7F26B597080EA122E19E9E32BF6")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:09.697 -0400", hash_original_method = "FBB73F0BC2F425DEBE19335413BBBBD5", hash_generated_method = "49725673FDA4BF3DB4C40474BFF17EC5")
         @DSModeled(DSC.SAFE)
          boolean shouldDrawLeftFade() {
             return dsTaint.getTaintBoolean();
@@ -11666,7 +11637,7 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.182 -0400", hash_original_method = "297E21CB54951ECF2F6E26FAB2DC7036", hash_generated_method = "122EC0003BE716A677A4821DCD71DC89")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:09.697 -0400", hash_original_method = "297E21CB54951ECF2F6E26FAB2DC7036", hash_generated_method = "0DC6FAD2BDA4278F41B487786B709192")
         @DSModeled(DSC.SAFE)
          boolean shouldDrawGhost() {
             return dsTaint.getTaintBoolean();
@@ -11675,7 +11646,7 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.182 -0400", hash_original_method = "9069B9288EAB1BBCE4A11291BAF7E3F4", hash_generated_method = "DC9B14A40E87AA5F4E2E07C8A7F15B7F")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:09.697 -0400", hash_original_method = "9069B9288EAB1BBCE4A11291BAF7E3F4", hash_generated_method = "8EED99853DEC534D3F23567A8F9F49F3")
         @DSModeled(DSC.SAFE)
          boolean isRunning() {
             return dsTaint.getTaintBoolean();
@@ -11684,7 +11655,7 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.182 -0400", hash_original_method = "57F6027DED5DA77924B224C2BB22701E", hash_generated_method = "3E6FAEE7F70501F0833625D398BCA030")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:09.698 -0400", hash_original_method = "57F6027DED5DA77924B224C2BB22701E", hash_generated_method = "AC3E0EB249D6AF5C33916FAEA9A64526")
         @DSModeled(DSC.SAFE)
          boolean isStopped() {
             return dsTaint.getTaintBoolean();
@@ -11693,18 +11664,34 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
         }
 
         
+        private static final float MARQUEE_DELTA_MAX = 0.07f;
+        private static final int MARQUEE_DELAY = 1200;
+        private static final int MARQUEE_RESTART_DELAY = 1200;
+        private static final int MARQUEE_RESOLUTION = 1000 / 30;
+        private static final int MARQUEE_PIXELS_PER_SECOND = 30;
+        private static final byte MARQUEE_STOPPED = 0x0;
+        private static final byte MARQUEE_STARTING = 0x1;
+        private static final byte MARQUEE_RUNNING = 0x2;
+        private static final int MESSAGE_START = 0x1;
+        private static final int MESSAGE_TICK = 0x2;
+        private static final int MESSAGE_RESTART = 0x3;
     }
 
 
     
     private class EasyEditSpanController {
-        private static final int DISPLAY_TIMEOUT_MS = 3000;
         private EasyEditPopupWindow mPopupWindow;
         private EasyEditSpan mEasyEditSpan;
         private Runnable mHidePopup;
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.182 -0400", hash_original_method = "EDC90536D8A41E1495260C5D2B0A4CB4", hash_generated_method = "28CB76A62522243DB4F9DBA907315D53")
-        @DSModeled(DSC.SAFE)
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:09.698 -0400", hash_original_method = "086CD01A9FA511A4B1ECCBD4CA2C15D8", hash_generated_method = "086CD01A9FA511A4B1ECCBD4CA2C15D8")
+                public EasyEditSpanController ()
+        {
+        }
+
+
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:09.698 -0400", hash_original_method = "EDC90536D8A41E1495260C5D2B0A4CB4", hash_generated_method = "D5E089DE56B1FB79DD2F6BF40F47DD08")
+        //DSFIXME:  CODE0002: Requires DSC value to be set
         private void hide() {
             {
                 mPopupWindow.hide();
@@ -11722,19 +11709,19 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.183 -0400", hash_original_method = "400D6F397C7E694E5D2CC26E5076AFF1", hash_generated_method = "5E03E94C566B2CB4324BC996BE33DCE6")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:09.699 -0400", hash_original_method = "400D6F397C7E694E5D2CC26E5076AFF1", hash_generated_method = "2314499A0C06A1CE4A51292EF9F4CFA7")
         //DSFIXME:  CODE0002: Requires DSC value to be set
         public void onTextChange(CharSequence buffer) {
             //DSFIXME:  CODE0009: Possible callback target function detected
             dsTaint.addTaint(buffer);
             adjustSpans(mText);
             {
-                boolean varF8A6C8295E7EAA2547FD83421DD5A52E_1439643382 = (getWindowVisibility() != View.VISIBLE);
+                boolean varF8A6C8295E7EAA2547FD83421DD5A52E_2137051029 = (getWindowVisibility() != View.VISIBLE);
             } //End collapsed parenthetic
             InputMethodManager imm;
             imm = InputMethodManager.peekInstance();
             {
-                boolean var508564AC928822EB83F33B379556AE9E_1009834705 = (!(TextView.this instanceof ExtractEditText)
+                boolean var508564AC928822EB83F33B379556AE9E_54301405 = (!(TextView.this instanceof ExtractEditText)
                     && imm != null && imm.isFullscreenMode());
             } //End collapsed parenthetic
             {
@@ -11744,7 +11731,7 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
                 mEasyEditSpan = null;
             } //End block
             {
-                boolean varB1ED909A9B3812E269C4F5A19320975C_1921103728 = (mPopupWindow != null && mPopupWindow.isShowing());
+                boolean varB1ED909A9B3812E269C4F5A19320975C_1317437608 = (mPopupWindow != null && mPopupWindow.isShowing());
                 {
                     mPopupWindow.hide();
                 } //End block
@@ -11754,12 +11741,16 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
                 {
                     {
                         mPopupWindow = new EasyEditPopupWindow();
-                        mHidePopup = new Runnable() {
+                        mHidePopup = new Runnable() {                            
+                            @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:09.699 -0400", hash_original_method = "21815FA27ABEB649DED6A46E4F97905B", hash_generated_method = "891AC471650FB94DC3945684A90962FE")
+                            //DSFIXME:  CODE0002: Requires DSC value to be set
                             @Override
                             public void run() {
                                 hide();
+                                // ---------- Original Method ----------
+                                //hide();
                             }
-                        };
+};
                     } //End block
                     mPopupWindow.show(mEasyEditSpan);
                     TextView.this.removeCallbacks(mHidePopup);
@@ -11771,7 +11762,7 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.183 -0400", hash_original_method = "BE935C64EC56548296E167AABD21FC2C", hash_generated_method = "B426629497EFEA2D4EF1D5975275F00B")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:09.699 -0400", hash_original_method = "BE935C64EC56548296E167AABD21FC2C", hash_generated_method = "69ED536407449478420CAB45C6B368A1")
         //DSFIXME:  CODE0002: Requires DSC value to be set
         private void adjustSpans(CharSequence buffer) {
             dsTaint.addTaint(buffer);
@@ -11801,7 +11792,7 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.183 -0400", hash_original_method = "D4568FCB8F606B40F32BB2FF24EF8AE2", hash_generated_method = "D77D3EFA6B79388C2C05D020DE83226D")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:09.699 -0400", hash_original_method = "D4568FCB8F606B40F32BB2FF24EF8AE2", hash_generated_method = "E54294BAA6B8E09FD28537B8398AB475")
         //DSFIXME:  CODE0002: Requires DSC value to be set
         private void removeSpans(CharSequence buffer) {
             dsTaint.addTaint(buffer);
@@ -11831,7 +11822,7 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.183 -0400", hash_original_method = "FD0036F1377269974D72D9C2BC2EFAA3", hash_generated_method = "7E8D604CDD4272911D5587903C843B81")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:09.699 -0400", hash_original_method = "FD0036F1377269974D72D9C2BC2EFAA3", hash_generated_method = "ED30E9B3732D90FD3E2A6E0AAFA786D1")
         //DSFIXME:  CODE0002: Requires DSC value to be set
         private EasyEditSpan getSpan(Spanned spanned) {
             dsTaint.addTaint(spanned.dsTaint);
@@ -11850,18 +11841,23 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
         }
 
         
+        private static final int DISPLAY_TIMEOUT_MS = 3000;
     }
 
 
     
     private class EasyEditPopupWindow extends PinnedPopupWindow implements OnClickListener {
-        private static final int POPUP_TEXT_LAYOUT =
-                com.android.internal.R.layout.text_edit_action_popup_text;
         private TextView mDeleteTextView;
         private EasyEditSpan mEasyEditSpan;
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.183 -0400", hash_original_method = "57DC4A0271DC22A49F19ED5E582C7E72", hash_generated_method = "7FD2B5434F6A35FC0809230799F3EED9")
-        @DSModeled(DSC.SAFE)
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:09.699 -0400", hash_original_method = "257284A3DCD792E4C881BDFE5A5800F1", hash_generated_method = "257284A3DCD792E4C881BDFE5A5800F1")
+                public EasyEditPopupWindow ()
+        {
+        }
+
+
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:09.700 -0400", hash_original_method = "57DC4A0271DC22A49F19ED5E582C7E72", hash_generated_method = "B54116FA46C572BBDB8F1D27160DF59E")
+        //DSFIXME:  CODE0002: Requires DSC value to be set
         @Override
         protected void createPopupWindow() {
             mPopupWindow = new PopupWindow(TextView.this.mContext, null,
@@ -11876,7 +11872,7 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.183 -0400", hash_original_method = "128C0E079A8A50F8B38C36065ADCA0D3", hash_generated_method = "060E54FD4CA76B55A04E310730ADF66A")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:09.700 -0400", hash_original_method = "128C0E079A8A50F8B38C36065ADCA0D3", hash_generated_method = "42EAEE7B64D00670C65005FC26908836")
         //DSFIXME:  CODE0002: Requires DSC value to be set
         @Override
         protected void initContentView() {
@@ -11902,8 +11898,8 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.183 -0400", hash_original_method = "EB30ECB06A4982701AF1B8E86934D288", hash_generated_method = "0451EDE5F4EF9A49276A765A4AA5B526")
-        @DSModeled(DSC.SAFE)
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:09.700 -0400", hash_original_method = "EB30ECB06A4982701AF1B8E86934D288", hash_generated_method = "A1E5182E25DD30032CF49E6AB79F1E50")
+        //DSFIXME:  CODE0002: Requires DSC value to be set
         public void show(EasyEditSpan easyEditSpan) {
             dsTaint.addTaint(easyEditSpan.dsTaint);
             super.show();
@@ -11913,8 +11909,8 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.183 -0400", hash_original_method = "C063208218D3B6E27F261A5578D5D2B9", hash_generated_method = "33E93699EF87A1BC97A2E78AC4DEDE97")
-        @DSModeled(DSC.SAFE)
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:09.700 -0400", hash_original_method = "C063208218D3B6E27F261A5578D5D2B9", hash_generated_method = "E70DB3391EF93F284FEFE95E1D65C06A")
+        //DSFIXME:  CODE0002: Requires DSC value to be set
         @Override
         public void onClick(View view) {
             //DSFIXME:  CODE0009: Possible callback target function detected
@@ -11942,13 +11938,13 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.183 -0400", hash_original_method = "7C1AF53FA575FE23CA1F61E7AC0FA9D9", hash_generated_method = "DB5FD31A85EFCFDBCC0FF958FFB6D79D")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:09.701 -0400", hash_original_method = "7C1AF53FA575FE23CA1F61E7AC0FA9D9", hash_generated_method = "2DEEF35080569D82B80CAC2B68ECBE62")
         //DSFIXME:  CODE0002: Requires DSC value to be set
         @Override
         protected int getTextOffset() {
             Editable editable;
             editable = (Editable) mText;
-            int var250A5466B0BCD45EA6B6F640A95FFADA_1165972783 = (editable.getSpanEnd(mEasyEditSpan));
+            int var250A5466B0BCD45EA6B6F640A95FFADA_1852353875 = (editable.getSpanEnd(mEasyEditSpan));
             return dsTaint.getTaintInt();
             // ---------- Original Method ----------
             //Editable editable = (Editable) mText;
@@ -11956,19 +11952,19 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.184 -0400", hash_original_method = "87FFA2F036D6FB2F317732DF596E05CB", hash_generated_method = "9F94832086DA678402388231AA2D825D")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:09.701 -0400", hash_original_method = "87FFA2F036D6FB2F317732DF596E05CB", hash_generated_method = "4DF7E61BB1D066EAB47381EFEAA16955")
         //DSFIXME:  CODE0002: Requires DSC value to be set
         @Override
         protected int getVerticalLocalPosition(int line) {
             dsTaint.addTaint(line);
-            int varC530C119C90DEC1E0FFF523326A5138A_1077096662 = (mLayout.getLineBottom(line));
+            int varC530C119C90DEC1E0FFF523326A5138A_1781294675 = (mLayout.getLineBottom(line));
             return dsTaint.getTaintInt();
             // ---------- Original Method ----------
             //return mLayout.getLineBottom(line);
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.184 -0400", hash_original_method = "48C7510506F753F88F1EBACB4F114059", hash_generated_method = "2EE8E1F51DACF9A3923BF6ECF01A849A")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:09.701 -0400", hash_original_method = "48C7510506F753F88F1EBACB4F114059", hash_generated_method = "E894C26F95F04E4554AD1ECD01A3B00E")
         @DSModeled(DSC.SAFE)
         @Override
         protected int clipVertically(int positionY) {
@@ -11979,6 +11975,8 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
         }
 
         
+        private static final int POPUP_TEXT_LAYOUT =
+                com.android.internal.R.layout.text_edit_action_popup_text;
     }
 
 
@@ -11987,8 +11985,8 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
         private CharSequence mBeforeText;
         private EasyEditSpanController mEasyEditSpanController;
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.184 -0400", hash_original_method = "41973225A14E12423F2683848135C141", hash_generated_method = "961B2763F1DAF5AB69167021A4B25413")
-        @DSModeled(DSC.SAFE)
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:09.701 -0400", hash_original_method = "41973225A14E12423F2683848135C141", hash_generated_method = "ACD55DB72B049A56A0B6E74650948667")
+        //DSFIXME:  CODE0002: Requires DSC value to be set
         private ChangeWatcher() {
             mEasyEditSpanController = new EasyEditSpanController();
             // ---------- Original Method ----------
@@ -11996,16 +11994,16 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.184 -0400", hash_original_method = "720D371807084B06633282B0029EC53C", hash_generated_method = "72676EAD7EFA9C58F10FE3E789068255")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:09.701 -0400", hash_original_method = "720D371807084B06633282B0029EC53C", hash_generated_method = "FBAD42F05A6430BEF45C1BDA39C67953")
         //DSFIXME:  CODE0002: Requires DSC value to be set
         public void beforeTextChanged(CharSequence buffer, int start,
                                       int before, int after) {
-            dsTaint.addTaint(buffer);
             dsTaint.addTaint(after);
+            dsTaint.addTaint(buffer);
             dsTaint.addTaint(start);
             dsTaint.addTaint(before);
             {
-                boolean var58E0C133E73001AE9B82AF19F4A709BD_20214262 = (AccessibilityManager.getInstance(mContext).isEnabled()
+                boolean var58E0C133E73001AE9B82AF19F4A709BD_2120602531 = (AccessibilityManager.getInstance(mContext).isEnabled()
                     && !isPasswordInputType(mInputType)
                     && !hasPasswordTransformationMethod());
                 {
@@ -12025,19 +12023,19 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.184 -0400", hash_original_method = "94F338CF670251E301395B1B01A5E75A", hash_generated_method = "12857153259C9C47430BB61800E5398D")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:09.702 -0400", hash_original_method = "94F338CF670251E301395B1B01A5E75A", hash_generated_method = "7826704034AF3CFE8C2CC29AB04E7015")
         //DSFIXME:  CODE0002: Requires DSC value to be set
         public void onTextChanged(CharSequence buffer, int start,
                                   int before, int after) {
             //DSFIXME:  CODE0009: Possible callback target function detected
-            dsTaint.addTaint(buffer);
             dsTaint.addTaint(after);
+            dsTaint.addTaint(buffer);
             dsTaint.addTaint(start);
             dsTaint.addTaint(before);
             TextView.this.handleTextChanged(buffer, start, before, after);
             mEasyEditSpanController.onTextChange(buffer);
             {
-                boolean var2CE54939AB34C356367D1A2596516E7D_125679855 = (AccessibilityManager.getInstance(mContext).isEnabled() &&
+                boolean var2CE54939AB34C356367D1A2596516E7D_959223565 = (AccessibilityManager.getInstance(mContext).isEnabled() &&
                     (isFocused() || isSelected() && isShown()));
                 {
                     sendAccessibilityEventTypeViewTextChanged(mBeforeText, start, before, after);
@@ -12057,13 +12055,13 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.184 -0400", hash_original_method = "36BCFC0FC76553AA6F29D2F790EC381C", hash_generated_method = "0C000CAF04A88637879104483AEC8933")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:09.702 -0400", hash_original_method = "36BCFC0FC76553AA6F29D2F790EC381C", hash_generated_method = "EA2CDFA2004C696CBF334A08D12E2A1B")
         //DSFIXME:  CODE0002: Requires DSC value to be set
         public void afterTextChanged(Editable buffer) {
             dsTaint.addTaint(buffer.dsTaint);
             TextView.this.sendAfterTextChanged(buffer);
             {
-                boolean varD9AAC580C15E35EE8A21660BC6977A2B_72970746 = (MetaKeyKeyListener.getMetaState(buffer, MetaKeyKeyListener.META_SELECTING) != 0);
+                boolean varD9AAC580C15E35EE8A21660BC6977A2B_1128864414 = (MetaKeyKeyListener.getMetaState(buffer, MetaKeyKeyListener.META_SELECTING) != 0);
                 {
                     MetaKeyKeyListener.stopSelecting(TextView.this, buffer);
                 } //End block
@@ -12077,8 +12075,8 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.184 -0400", hash_original_method = "6F9EDB470C5AD5F1E23596AFEC700ED3", hash_generated_method = "491A6171B1895FB7638C102DB5A167DC")
-        @DSModeled(DSC.SAFE)
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:09.702 -0400", hash_original_method = "6F9EDB470C5AD5F1E23596AFEC700ED3", hash_generated_method = "CC4EC288835D1EBEC7E0F478DFA19EF4")
+        //DSFIXME:  CODE0002: Requires DSC value to be set
         public void onSpanChanged(Spannable buf,
                                   Object what, int s, int e, int st, int en) {
             //DSFIXME:  CODE0009: Possible callback target function detected
@@ -12096,8 +12094,8 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.184 -0400", hash_original_method = "B2A75CCE31AAD63896365B7E450A433A", hash_generated_method = "13F0910F97FC3194A85589D57CD6BDEC")
-        @DSModeled(DSC.SAFE)
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:09.703 -0400", hash_original_method = "B2A75CCE31AAD63896365B7E450A433A", hash_generated_method = "974A695399D5E74A96737C53D0E26907")
+        //DSFIXME:  CODE0002: Requires DSC value to be set
         public void onSpanAdded(Spannable buf, Object what, int s, int e) {
             //DSFIXME:  CODE0009: Possible callback target function detected
             dsTaint.addTaint(e);
@@ -12112,8 +12110,8 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.184 -0400", hash_original_method = "11DC5396F5D4F6210F8F1D677B03B553", hash_generated_method = "CD0AFB9092DB8C6C36BF764916E5A004")
-        @DSModeled(DSC.SAFE)
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:09.703 -0400", hash_original_method = "11DC5396F5D4F6210F8F1D677B03B553", hash_generated_method = "75B129DEC79964E3BC477E09918C367D")
+        //DSFIXME:  CODE0002: Requires DSC value to be set
         public void onSpanRemoved(Spannable buf, Object what, int s, int e) {
             //DSFIXME:  CODE0009: Possible callback target function detected
             dsTaint.addTaint(e);
@@ -12128,8 +12126,8 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.184 -0400", hash_original_method = "FB97DDA9E5EB9C645F7C42D5DCEE1A36", hash_generated_method = "2C1ED5CA7148924C279FCDE0A6CE9315")
-        @DSModeled(DSC.SAFE)
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:09.703 -0400", hash_original_method = "FB97DDA9E5EB9C645F7C42D5DCEE1A36", hash_generated_method = "E6D7B22DFBEA218F7C05A2FD98CE4F0E")
+        //DSFIXME:  CODE0002: Requires DSC value to be set
         private void hideControllers() {
             mEasyEditSpanController.hide();
             // ---------- Original Method ----------
@@ -12142,11 +12140,11 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
 
     
     private static class Blink extends Handler implements Runnable {
-        private final WeakReference<TextView> mView;
+        private WeakReference<TextView> mView;
         private boolean mCancelled;
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.185 -0400", hash_original_method = "B3B341EB4735766A8EE81E50FC9FCC5D", hash_generated_method = "7F875EF4A15742C157C601FEC957A587")
-        @DSModeled(DSC.SAFE)
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:09.703 -0400", hash_original_method = "B3B341EB4735766A8EE81E50FC9FCC5D", hash_generated_method = "D0AEF57B3FAA7F9F4C3D59666967BCA4")
+        //DSFIXME:  CODE0002: Requires DSC value to be set
         public Blink(TextView v) {
             dsTaint.addTaint(v.dsTaint);
             mView = new WeakReference<TextView>(v);
@@ -12155,14 +12153,14 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.185 -0400", hash_original_method = "ACD5284757446306F2E6E1BADED5158A", hash_generated_method = "45E2244398CB8092774125C9572A53E1")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:09.704 -0400", hash_original_method = "ACD5284757446306F2E6E1BADED5158A", hash_generated_method = "6D001BAAEE4904D62729232D60DE82F3")
         //DSFIXME:  CODE0002: Requires DSC value to be set
         public void run() {
             removeCallbacks(Blink.this);
             TextView tv;
             tv = mView.get();
             {
-                boolean var397A686FF4DC8BC40834AF9DD4FC6DD1_753530157 = (tv != null && tv.shouldBlink());
+                boolean var397A686FF4DC8BC40834AF9DD4FC6DD1_1997136605 = (tv != null && tv.shouldBlink());
                 {
                     {
                         tv.invalidateCursorPath();
@@ -12185,8 +12183,8 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.185 -0400", hash_original_method = "A015A25EF128A9724656D77FE5A94B9E", hash_generated_method = "A0D0F70F82A1CEBE540495E937B4273B")
-        @DSModeled(DSC.SAFE)
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:09.704 -0400", hash_original_method = "A015A25EF128A9724656D77FE5A94B9E", hash_generated_method = "CB1FFD1BF8FD38BFCDE2C9951972BDB6")
+        //DSFIXME:  CODE0002: Requires DSC value to be set
          void cancel() {
             {
                 removeCallbacks(Blink.this);
@@ -12200,7 +12198,7 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.185 -0400", hash_original_method = "A06944554EAF73141DA4277B06D0E2BD", hash_generated_method = "8FB7877A91FFEF6EF690F2615D9C6FB3")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:09.704 -0400", hash_original_method = "A06944554EAF73141DA4277B06D0E2BD", hash_generated_method = "EA43542F6DD16B86D3EB9C7A9CB5E56B")
         @DSModeled(DSC.SAFE)
          void uncancel() {
             mCancelled = false;
@@ -12222,7 +12220,7 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
         public TextView sourceTextView;
         public int start, end;
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.185 -0400", hash_original_method = "78F248ABC93BE1F7C9E297B91A3F7D55", hash_generated_method = "1FA0B478994B99993D3B5AED4FF53BA9")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:09.704 -0400", hash_original_method = "78F248ABC93BE1F7C9E297B91A3F7D55", hash_generated_method = "AFC767A8AECBD98CF276C52BEDC3251D")
         @DSModeled(DSC.SAFE)
         public DragLocalState(TextView sourceTextView, int start, int end) {
             dsTaint.addTaint(start);
@@ -12240,7 +12238,7 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
 
     
     private class PositionListener implements ViewTreeObserver.OnPreDrawListener {
-        private final int MAXIMUM_NUMBER_OF_LISTENERS = 6;
+        private int MAXIMUM_NUMBER_OF_LISTENERS = 6;
         private TextViewPositionListener[] mPositionListeners =
                 new TextViewPositionListener[MAXIMUM_NUMBER_OF_LISTENERS];
         private boolean mCanMove[] = new boolean[MAXIMUM_NUMBER_OF_LISTENERS];
@@ -12249,8 +12247,14 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
         private int mNumberOfListeners;
         private boolean mScrollHasChanged;
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.185 -0400", hash_original_method = "2CEF91B445974B7F0C1F2F2831D38171", hash_generated_method = "7A0C14FB3E334CAF579B78F5618CC86A")
-        @DSModeled(DSC.SAFE)
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:09.704 -0400", hash_original_method = "9251680DF9847507551FB653717DBEE4", hash_generated_method = "9251680DF9847507551FB653717DBEE4")
+                public PositionListener ()
+        {
+        }
+
+
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:09.705 -0400", hash_original_method = "2CEF91B445974B7F0C1F2F2831D38171", hash_generated_method = "F33FE77037DBB52781150CD5FDDE4CD2")
+        //DSFIXME:  CODE0002: Requires DSC value to be set
         public void addSubscriber(TextViewPositionListener positionListener, boolean canMove) {
             dsTaint.addTaint(positionListener.dsTaint);
             dsTaint.addTaint(canMove);
@@ -12275,7 +12279,6 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
             } //End collapsed parenthetic
             mPositionListeners[emptySlotIndex] = positionListener;
             mCanMove[emptySlotIndex] = canMove;
-            mNumberOfListeners++;
             // ---------- Original Method ----------
             //if (mNumberOfListeners == 0) {
                 //updatePosition();
@@ -12297,8 +12300,8 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.185 -0400", hash_original_method = "F36C99880C8165921A7F03E512CBB647", hash_generated_method = "BC8551E2A9F45B24105FDC845A0C890D")
-        @DSModeled(DSC.SAFE)
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:09.705 -0400", hash_original_method = "F36C99880C8165921A7F03E512CBB647", hash_generated_method = "A27590CAFA392CA6B30D487CF5114702")
+        //DSFIXME:  CODE0002: Requires DSC value to be set
         public void removeSubscriber(TextViewPositionListener positionListener) {
             dsTaint.addTaint(positionListener.dsTaint);
             {
@@ -12307,7 +12310,6 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
                 {
                     {
                         mPositionListeners[i] = null;
-                        mNumberOfListeners--;
                     } //End block
                 } //End block
             } //End collapsed parenthetic
@@ -12331,28 +12333,26 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.185 -0400", hash_original_method = "256A376A54FD4CD53D18A0F020A0467C", hash_generated_method = "A856DAD0C65CF062BD60A450A0BEB8ED")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:09.705 -0400", hash_original_method = "256A376A54FD4CD53D18A0F020A0467C", hash_generated_method = "AAF2F947BF1085CA9C68F29DB91683A1")
         @DSModeled(DSC.SAFE)
         public int getPositionX() {
-            //DSFIXME:  CODE0009: Possible callback target function detected
             return dsTaint.getTaintInt();
             // ---------- Original Method ----------
             //return mPositionX;
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.185 -0400", hash_original_method = "4CCC26BBD5544F9405CBD90295EAF862", hash_generated_method = "473A7B29E6F36D36CC4FFD58E688B55F")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:09.705 -0400", hash_original_method = "4CCC26BBD5544F9405CBD90295EAF862", hash_generated_method = "19A767D8AD15A06FF693218C3793C9F8")
         @DSModeled(DSC.SAFE)
         public int getPositionY() {
-            //DSFIXME:  CODE0009: Possible callback target function detected
             return dsTaint.getTaintInt();
             // ---------- Original Method ----------
             //return mPositionY;
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.185 -0400", hash_original_method = "4634D6360837F07AB476144D9CD27591", hash_generated_method = "E169F46B759BD41268D48C50D5FC60C2")
-        @DSModeled(DSC.SAFE)
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:09.706 -0400", hash_original_method = "4634D6360837F07AB476144D9CD27591", hash_generated_method = "923C7F91B26090503F4B6A4E497EA23E")
+        //DSFIXME:  CODE0002: Requires DSC value to be set
         @Override
         public boolean onPreDraw() {
             //DSFIXME:  CODE0009: Possible callback target function detected
@@ -12389,8 +12389,8 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.186 -0400", hash_original_method = "65C89C768DE236BFCC52E144F22BF85B", hash_generated_method = "3E0F4FDADAA28BED7BA5C983F8AB3E9D")
-        @DSModeled(DSC.SAFE)
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:09.706 -0400", hash_original_method = "65C89C768DE236BFCC52E144F22BF85B", hash_generated_method = "142481B1DEA1328234C9335DBA74DC0E")
+        //DSFIXME:  CODE0002: Requires DSC value to be set
         private void updatePosition() {
             TextView.this.getLocationInWindow(mTempCoords);
             mPositionHasChanged = mTempCoords[0] != mPositionX || mTempCoords[1] != mPositionY;
@@ -12404,7 +12404,7 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.186 -0400", hash_original_method = "45AFA571A6FC9FC84FC093F1FB86DABC", hash_generated_method = "34751C5B16AF30DA2FFAD5094F8587B0")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:09.706 -0400", hash_original_method = "45AFA571A6FC9FC84FC093F1FB86DABC", hash_generated_method = "85B5F4ED6EC23E44740E0F696105857A")
         @DSModeled(DSC.SAFE)
         public void onScrollChanged() {
             //DSFIXME:  CODE0009: Possible callback target function detected
@@ -12423,8 +12423,8 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
         protected ViewGroup mContentView;
         int mPositionX, mPositionY;
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.186 -0400", hash_original_method = "596A5600AE60FE2F4CDE653E6E3819B3", hash_generated_method = "F79D611CA0256A42501D743E5569107F")
-        @DSModeled(DSC.SAFE)
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:09.706 -0400", hash_original_method = "596A5600AE60FE2F4CDE653E6E3819B3", hash_generated_method = "1059D7A0032ED6D1E1FCB675ACE28E5A")
+        //DSFIXME:  CODE0002: Requires DSC value to be set
         public PinnedPopupWindow() {
             createPopupWindow();
             mPopupWindow.setWindowLayoutType(WindowManager.LayoutParams.TYPE_APPLICATION_SUB_PANEL);
@@ -12464,12 +12464,12 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
         protected abstract int clipVertically(int positionY);
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.186 -0400", hash_original_method = "6C3D8663E8D10274240ADCEB82AE9A86", hash_generated_method = "7AD98A889CCDDED4F268291E8B40D7EB")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:09.707 -0400", hash_original_method = "6C3D8663E8D10274240ADCEB82AE9A86", hash_generated_method = "9F69F4BE8887C9F2FC737CBDDEB46664")
         //DSFIXME:  CODE0002: Requires DSC value to be set
         public void show() {
             TextView.this.getPositionListener().addSubscriber(this, false );
             computeLocalPosition();
-            final PositionListener positionListener;
+            PositionListener positionListener;
             positionListener = TextView.this.getPositionListener();
             updatePosition(positionListener.getPositionX(), positionListener.getPositionY());
             // ---------- Original Method ----------
@@ -12480,10 +12480,10 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.186 -0400", hash_original_method = "AFC1F8ABC6317EB9C1F375A956F1E985", hash_generated_method = "F73F5AA3539DA53DAC4F1AB396816898")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:09.707 -0400", hash_original_method = "AFC1F8ABC6317EB9C1F375A956F1E985", hash_generated_method = "DEDDDD288DD31044038011AC8C0806CD")
         //DSFIXME:  CODE0002: Requires DSC value to be set
         protected void measureContent() {
-            final DisplayMetrics displayMetrics;
+            DisplayMetrics displayMetrics;
             displayMetrics = mContext.getResources().getDisplayMetrics();
             mContentView.measure(
                     View.MeasureSpec.makeMeasureSpec(displayMetrics.widthPixels,
@@ -12500,17 +12500,17 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.186 -0400", hash_original_method = "422A968B45C30695D0BEB603E4E72147", hash_generated_method = "ADB94253F94910AE037A0137629BD6FD")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:09.708 -0400", hash_original_method = "422A968B45C30695D0BEB603E4E72147", hash_generated_method = "0F0046847459D3DFC43A3885BFAEEFE6")
         //DSFIXME:  CODE0002: Requires DSC value to be set
         private void computeLocalPosition() {
             measureContent();
-            final int width;
+            int width;
             width = mContentView.getMeasuredWidth();
-            final int offset;
+            int offset;
             offset = getTextOffset();
             mPositionX = (int) (mLayout.getPrimaryHorizontal(offset) - width / 2.0f);
             mPositionX += viewportToContentHorizontalOffset();
-            final int line;
+            int line;
             line = mLayout.getLineForOffset(offset);
             mPositionY = getVerticalLocalPosition(line);
             mPositionY += viewportToContentVerticalOffset();
@@ -12526,7 +12526,7 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.186 -0400", hash_original_method = "3C2767EB11AB639449E091DD5FC9CB2A", hash_generated_method = "4B3A6B80AF904D3AD50EA32A20E97BEC")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:09.708 -0400", hash_original_method = "3C2767EB11AB639449E091DD5FC9CB2A", hash_generated_method = "AB2EEEED5DFA0D21550F32BCEE022BD4")
         //DSFIXME:  CODE0002: Requires DSC value to be set
         private void updatePosition(int parentPositionX, int parentPositionY) {
             dsTaint.addTaint(parentPositionX);
@@ -12536,14 +12536,14 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
             int positionY;
             positionY = parentPositionY + mPositionY;
             positionY = clipVertically(positionY);
-            final DisplayMetrics displayMetrics;
+            DisplayMetrics displayMetrics;
             displayMetrics = mContext.getResources().getDisplayMetrics();
-            final int width;
+            int width;
             width = mContentView.getMeasuredWidth();
             positionX = Math.min(displayMetrics.widthPixels - width, positionX);
             positionX = Math.max(0, positionX);
             {
-                boolean varC328115627DFB8318D2C3484959F5057_1591534784 = (isShowing());
+                boolean varC328115627DFB8318D2C3484959F5057_1787588114 = (isShowing());
                 {
                     mPopupWindow.update(positionX, positionY, -1, -1);
                 } //End block
@@ -12569,7 +12569,7 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.186 -0400", hash_original_method = "9C51A5E6940629038A75840F54DCC577", hash_generated_method = "62DC542205FA2AEC4ADCFB2BB6AC5A9D")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:09.708 -0400", hash_original_method = "9C51A5E6940629038A75840F54DCC577", hash_generated_method = "25525D9132782287790F8AECFEF17792")
         //DSFIXME:  CODE0002: Requires DSC value to be set
         public void hide() {
             mPopupWindow.dismiss();
@@ -12580,7 +12580,7 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.186 -0400", hash_original_method = "48D3C5BA4737FA32BEEBA9E620F4B3A6", hash_generated_method = "B0BE2D10545F92C85F8793ECA57C5E38")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:09.709 -0400", hash_original_method = "48D3C5BA4737FA32BEEBA9E620F4B3A6", hash_generated_method = "43444E34A3029D59326FE47BF776119A")
         //DSFIXME:  CODE0002: Requires DSC value to be set
         @Override
         public void updatePosition(int parentPositionX, int parentPositionY,
@@ -12590,7 +12590,7 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
             dsTaint.addTaint(parentPositionY);
             dsTaint.addTaint(parentPositionChanged);
             {
-                boolean varF3B8B81213123AA3F897761495709D4F_1402033618 = (isShowing() && isOffsetVisible(getTextOffset()));
+                boolean varF3B8B81213123AA3F897761495709D4F_1661983466 = (isShowing() && isOffsetVisible(getTextOffset()));
                 {
                     computeLocalPosition();
                     updatePosition(parentPositionX, parentPositionY);
@@ -12609,10 +12609,10 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.186 -0400", hash_original_method = "771871BA8F1191126AB0990E72BA0594", hash_generated_method = "D3468A38C2BA23D5B4AAF744439C205B")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:09.709 -0400", hash_original_method = "771871BA8F1191126AB0990E72BA0594", hash_generated_method = "AE81C3230DB44A8A113C236F9A1CAA20")
         //DSFIXME:  CODE0002: Requires DSC value to be set
         public boolean isShowing() {
-            boolean varDAFC67E962E4584ADE09C9440ED4C8A8_948326057 = (mPopupWindow.isShowing());
+            boolean varDAFC67E962E4584ADE09C9440ED4C8A8_805043222 = (mPopupWindow.isShowing());
             return dsTaint.getTaintBoolean();
             // ---------- Original Method ----------
             //return mPopupWindow.isShowing();
@@ -12624,19 +12624,16 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
 
     
     private class SuggestionsPopupWindow extends PinnedPopupWindow implements OnItemClickListener {
-        private static final int MAX_NUMBER_SUGGESTIONS = SuggestionSpan.SUGGESTIONS_MAX_SIZE;
-        private static final int ADD_TO_DICTIONARY = -1;
-        private static final int DELETE_TEXT = -2;
         private SuggestionInfo[] mSuggestionInfos;
         private int mNumberOfSuggestions;
         private boolean mCursorWasVisibleBeforeSuggestions;
         private boolean mIsShowingUp = false;
         private SuggestionAdapter mSuggestionsAdapter;
-        private final Comparator<SuggestionSpan> mSuggestionSpanComparator;
-        private final HashMap<SuggestionSpan, Integer> mSpansLengths;
+        private Comparator<SuggestionSpan> mSuggestionSpanComparator;
+        private HashMap<SuggestionSpan, Integer> mSpansLengths;
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.187 -0400", hash_original_method = "296BEE5065EB2EF8F82574E0F3647EF2", hash_generated_method = "01B4B8EC28F87FBD09B358B36081DBDB")
-        @DSModeled(DSC.SAFE)
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:09.709 -0400", hash_original_method = "296BEE5065EB2EF8F82574E0F3647EF2", hash_generated_method = "C9FE2AEB77D5E42436EC81728FF2A6EB")
+        //DSFIXME:  CODE0002: Requires DSC value to be set
         public SuggestionsPopupWindow() {
             mCursorWasVisibleBeforeSuggestions = mCursorVisible;
             mSuggestionSpanComparator = new SuggestionSpanComparator();
@@ -12648,8 +12645,8 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.187 -0400", hash_original_method = "2C5A34402E22C878AD33972323D3ACC4", hash_generated_method = "D46B2719DAB1DA2B77363471A191FC3C")
-        @DSModeled(DSC.SAFE)
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:09.710 -0400", hash_original_method = "2C5A34402E22C878AD33972323D3ACC4", hash_generated_method = "1D075CDCA4E55E9BDBE0B58CE507DA50")
+        //DSFIXME:  CODE0002: Requires DSC value to be set
         @Override
         protected void createPopupWindow() {
             mPopupWindow = new CustomPopupWindow(TextView.this.mContext,
@@ -12666,7 +12663,7 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.187 -0400", hash_original_method = "E003230CE90A2ACB93D34E336B67EF46", hash_generated_method = "C052861B6987BA99770076EB84D10567")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:09.710 -0400", hash_original_method = "E003230CE90A2ACB93D34E336B67EF46", hash_generated_method = "AABD926A4B110D202DE0215E6D29C7C0")
         //DSFIXME:  CODE0002: Requires DSC value to be set
         @Override
         protected void initContentView() {
@@ -12697,7 +12694,7 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.187 -0400", hash_original_method = "4C7853BA5C99567CAD84815F4452E5F9", hash_generated_method = "D9B99A11836C7865862480BD124A6F4E")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:09.710 -0400", hash_original_method = "4C7853BA5C99567CAD84815F4452E5F9", hash_generated_method = "C0EFA04AD7654B7E3D3FDC1848809991")
         @DSModeled(DSC.SAFE)
         public boolean isShowingUp() {
             return dsTaint.getTaintBoolean();
@@ -12706,7 +12703,7 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.187 -0400", hash_original_method = "3914DCDC5DB3E14D1A1A163B7497EFBA", hash_generated_method = "29EDEA25184A6FD9A6FE47DB3E46FE34")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:09.711 -0400", hash_original_method = "3914DCDC5DB3E14D1A1A163B7497EFBA", hash_generated_method = "CBD237ACC458BFEA613530AFCAFC26CB")
         @DSModeled(DSC.SAFE)
         public void onParentLostFocus() {
             //DSFIXME:  CODE0009: Possible callback target function detected
@@ -12716,7 +12713,7 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.187 -0400", hash_original_method = "A21D81008594D05973BC33E2948715E2", hash_generated_method = "3B3077450B1994201521D2B2348C56B3")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:09.716 -0400", hash_original_method = "A21D81008594D05973BC33E2948715E2", hash_generated_method = "C2AC3C3823A6F66F7136867FD88402DE")
         //DSFIXME:  CODE0002: Requires DSC value to be set
         private SuggestionSpan[] getSuggestionSpans() {
             int pos;
@@ -12753,8 +12750,8 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.187 -0400", hash_original_method = "C166DC70ACC1835B92197E48CEB369FC", hash_generated_method = "B0D6CEDF5E2A6FA80ABAAD8759FA2D09")
-        @DSModeled(DSC.SAFE)
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:09.717 -0400", hash_original_method = "C166DC70ACC1835B92197E48CEB369FC", hash_generated_method = "A8A5518D4F8C68A79453BA1F542C22F5")
+        //DSFIXME:  CODE0002: Requires DSC value to be set
         @Override
         public void show() {
             updateSuggestions();
@@ -12772,16 +12769,16 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.187 -0400", hash_original_method = "8DDB7ED8B40AC8DC3D4FF9060DA06A2E", hash_generated_method = "F6E14391796B51A4355CD8E93EE522BC")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:09.717 -0400", hash_original_method = "8DDB7ED8B40AC8DC3D4FF9060DA06A2E", hash_generated_method = "02E628F06E4EAFB8076434D10898869A")
         //DSFIXME:  CODE0002: Requires DSC value to be set
         @Override
         protected void measureContent() {
-            final DisplayMetrics displayMetrics;
+            DisplayMetrics displayMetrics;
             displayMetrics = mContext.getResources().getDisplayMetrics();
-            final int horizontalMeasure;
+            int horizontalMeasure;
             horizontalMeasure = View.MeasureSpec.makeMeasureSpec(
                     displayMetrics.widthPixels, View.MeasureSpec.AT_MOST);
-            final int verticalMeasure;
+            int verticalMeasure;
             verticalMeasure = View.MeasureSpec.makeMeasureSpec(
                     displayMetrics.heightPixels, View.MeasureSpec.AT_MOST);
             int width;
@@ -12814,39 +12811,39 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.187 -0400", hash_original_method = "6820F3398D40FE1AF57F321A0934E9B8", hash_generated_method = "44B1E35C5E63EC55D8A9F7F3251F0F2C")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:09.718 -0400", hash_original_method = "6820F3398D40FE1AF57F321A0934E9B8", hash_generated_method = "03EECE3F632D215FD99B6685646A3611")
         //DSFIXME:  CODE0002: Requires DSC value to be set
         @Override
         protected int getTextOffset() {
-            int varBC8718B34213775E0E86386F1B689831_1405647684 = (getSelectionStart());
+            int varBC8718B34213775E0E86386F1B689831_260037629 = (getSelectionStart());
             return dsTaint.getTaintInt();
             // ---------- Original Method ----------
             //return getSelectionStart();
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.188 -0400", hash_original_method = "87FFA2F036D6FB2F317732DF596E05CB", hash_generated_method = "411CDCB2649F14D17CE360B27F3782A1")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:09.718 -0400", hash_original_method = "87FFA2F036D6FB2F317732DF596E05CB", hash_generated_method = "4F6A80939710A24A7B0941F0DAB85705")
         //DSFIXME:  CODE0002: Requires DSC value to be set
         @Override
         protected int getVerticalLocalPosition(int line) {
             dsTaint.addTaint(line);
-            int varC530C119C90DEC1E0FFF523326A5138A_662785866 = (mLayout.getLineBottom(line));
+            int varC530C119C90DEC1E0FFF523326A5138A_1750303401 = (mLayout.getLineBottom(line));
             return dsTaint.getTaintInt();
             // ---------- Original Method ----------
             //return mLayout.getLineBottom(line);
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.188 -0400", hash_original_method = "BF4D66DCAEE7C7EAD97F70105958840C", hash_generated_method = "88C1BB87C72E0DF76E80D6D4564C324A")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:09.718 -0400", hash_original_method = "BF4D66DCAEE7C7EAD97F70105958840C", hash_generated_method = "FDB9CAFE52251D4D7C5A97F907C00D1D")
         //DSFIXME:  CODE0002: Requires DSC value to be set
         @Override
         protected int clipVertically(int positionY) {
             dsTaint.addTaint(positionY);
-            final int height;
+            int height;
             height = mContentView.getMeasuredHeight();
-            final DisplayMetrics displayMetrics;
+            DisplayMetrics displayMetrics;
             displayMetrics = mContext.getResources().getDisplayMetrics();
-            int var7B483E1A6A6C9FD21BCAE2DB59DA5C3D_464463967 = (Math.min(positionY, displayMetrics.heightPixels - height));
+            int var7B483E1A6A6C9FD21BCAE2DB59DA5C3D_726877069 = (Math.min(positionY, displayMetrics.heightPixels - height));
             return dsTaint.getTaintInt();
             // ---------- Original Method ----------
             //final int height = mContentView.getMeasuredHeight();
@@ -12855,8 +12852,8 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.188 -0400", hash_original_method = "7609E0B22D3FA397AAE3B56DEE3F8C83", hash_generated_method = "F6449DD9958F3A5F628E2384E63E97DE")
-        @DSModeled(DSC.SAFE)
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:09.718 -0400", hash_original_method = "7609E0B22D3FA397AAE3B56DEE3F8C83", hash_generated_method = "F131B81970709DA64760DF4AAFB46819")
+        //DSFIXME:  CODE0002: Requires DSC value to be set
         @Override
         public void hide() {
             super.hide();
@@ -12865,14 +12862,14 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.188 -0400", hash_original_method = "43D89583824EB2CC5185C1DC5EA2D76A", hash_generated_method = "B80980215C52BB56F2302988A40F7339")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:09.719 -0400", hash_original_method = "43D89583824EB2CC5185C1DC5EA2D76A", hash_generated_method = "28EFF611C3DE5E454BBD9D8F29F95DC9")
         //DSFIXME:  CODE0002: Requires DSC value to be set
         private void updateSuggestions() {
             Spannable spannable;
             spannable = (Spannable) TextView.this.mText;
             SuggestionSpan[] suggestionSpans;
             suggestionSpans = getSuggestionSpans();
-            final int nbSpans;
+            int nbSpans;
             nbSpans = suggestionSpans.length;
             mNumberOfSuggestions = 0;
             int spanUnionStart;
@@ -12889,14 +12886,14 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
                 {
                     SuggestionSpan suggestionSpan;
                     suggestionSpan = suggestionSpans[spanIndex];
-                    final int spanStart;
+                    int spanStart;
                     spanStart = spannable.getSpanStart(suggestionSpan);
-                    final int spanEnd;
+                    int spanEnd;
                     spanEnd = spannable.getSpanEnd(suggestionSpan);
                     spanUnionStart = Math.min(spanStart, spanUnionStart);
                     spanUnionEnd = Math.max(spanEnd, spanUnionEnd);
                     {
-                        boolean var41ED7D23113F09082657F25EB9349901_656557040 = ((suggestionSpan.getFlags() & SuggestionSpan.FLAG_MISSPELLED) != 0);
+                        boolean var41ED7D23113F09082657F25EB9349901_579986108 = ((suggestionSpan.getFlags() & SuggestionSpan.FLAG_MISSPELLED) != 0);
                         {
                             misspelledSpan = suggestionSpan;
                         } //End block
@@ -12916,7 +12913,6 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
                             suggestionInfo.suggestionIndex = suggestionIndex;
                             suggestionInfo.text.replace(0, suggestionInfo.text.length(),
                             suggestions[suggestionIndex]);
-                            mNumberOfSuggestions++;
                             {
                                 spanIndex = nbSpans;
                             } //End block
@@ -12932,9 +12928,9 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
                 } //End block
             } //End collapsed parenthetic
             {
-                final int misspelledStart;
+                int misspelledStart;
                 misspelledStart = spannable.getSpanStart(misspelledSpan);
-                final int misspelledEnd;
+                int misspelledEnd;
                 misspelledEnd = spannable.getSpanEnd(misspelledSpan);
                 {
                     SuggestionInfo suggestionInfo;
@@ -12945,7 +12941,6 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
                             getContext().getString(com.android.internal.R.string.addToDictionary));
                     suggestionInfo.text.setSpan(suggestionInfo.highlightSpan, 0, 0,
                             Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
-                    mNumberOfSuggestions++;
                 } //End block
             } //End block
             SuggestionInfo suggestionInfo;
@@ -12956,15 +12951,14 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
                     getContext().getString(com.android.internal.R.string.deleteText));
             suggestionInfo.text.setSpan(suggestionInfo.highlightSpan, 0, 0,
                     Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
-            mNumberOfSuggestions++;
             mSuggestionRangeSpan = new SuggestionRangeSpan();
             {
                 mSuggestionRangeSpan.setBackgroundColor(mHighlightColor);
             } //End block
             {
-                final float BACKGROUND_TRANSPARENCY;
+                float BACKGROUND_TRANSPARENCY;
                 BACKGROUND_TRANSPARENCY = 0.4f;
-                final int newAlpha;
+                int newAlpha;
                 newAlpha = (int) (Color.alpha(underlineColor) * BACKGROUND_TRANSPARENCY);
                 mSuggestionRangeSpan.setBackgroundColor(
                         (underlineColor & 0x00FFFFFF) + (newAlpha << 24));
@@ -12977,18 +12971,18 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.188 -0400", hash_original_method = "9587A8E163DBC119C2F6F3B6CD33F02D", hash_generated_method = "C993D555F99DC09AA927F49451DF9DDD")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:09.720 -0400", hash_original_method = "9587A8E163DBC119C2F6F3B6CD33F02D", hash_generated_method = "1DAF5E03CCC32B62B4D02871124E7FDE")
         //DSFIXME:  CODE0002: Requires DSC value to be set
         private void highlightTextDifferences(SuggestionInfo suggestionInfo, int unionStart,
                 int unionEnd) {
             dsTaint.addTaint(suggestionInfo.dsTaint);
-            dsTaint.addTaint(unionStart);
             dsTaint.addTaint(unionEnd);
-            final Spannable text;
+            dsTaint.addTaint(unionStart);
+            Spannable text;
             text = (Spannable) mText;
-            final int spanStart;
+            int spanStart;
             spanStart = text.getSpanStart(suggestionInfo.suggestionSpan);
-            final int spanEnd;
+            int spanEnd;
             spanEnd = text.getSpanEnd(suggestionInfo.suggestionSpan);
             suggestionInfo.suggestionStart = spanStart - unionStart;
             suggestionInfo.suggestionEnd = suggestionInfo.suggestionStart 
@@ -13011,13 +13005,13 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.189 -0400", hash_original_method = "73388536B046BC3C58C91A89E4930696", hash_generated_method = "CB84C613D7B037D22F8CFDDCF4CA8158")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:09.721 -0400", hash_original_method = "73388536B046BC3C58C91A89E4930696", hash_generated_method = "18B6BB2F97C86D878D7F4D9524B8283D")
         //DSFIXME:  CODE0002: Requires DSC value to be set
         @Override
         public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
             //DSFIXME:  CODE0009: Possible callback target function detected
-            dsTaint.addTaint(position);
             dsTaint.addTaint(id);
+            dsTaint.addTaint(position);
             dsTaint.addTaint(parent.dsTaint);
             dsTaint.addTaint(view.dsTaint);
             Editable editable;
@@ -13025,13 +13019,13 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
             SuggestionInfo suggestionInfo;
             suggestionInfo = mSuggestionInfos[position];
             {
-                final int spanUnionStart;
+                int spanUnionStart;
                 spanUnionStart = editable.getSpanStart(mSuggestionRangeSpan);
                 int spanUnionEnd;
                 spanUnionEnd = editable.getSpanEnd(mSuggestionRangeSpan);
                 {
                     {
-                        boolean var84A1A3093EA4E5C4D94593E4EC39F7A6_1665232973 = (spanUnionEnd < editable.length() &&
+                        boolean var84A1A3093EA4E5C4D94593E4EC39F7A6_856526453 = (spanUnionEnd < editable.length() &&
                             Character.isSpaceChar(editable.charAt(spanUnionEnd)) &&
                             (spanUnionStart == 0 ||
                             Character.isSpaceChar(editable.charAt(spanUnionStart - 1))));
@@ -13043,14 +13037,14 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
                 } //End block
                 hide();
             } //End block
-            final int spanStart;
+            int spanStart;
             spanStart = editable.getSpanStart(suggestionInfo.suggestionSpan);
-            final int spanEnd;
+            int spanEnd;
             spanEnd = editable.getSpanEnd(suggestionInfo.suggestionSpan);
             {
                 hide();
             } //End block
-            final String originalText;
+            String originalText;
             originalText = mText.toString().substring(spanStart, spanEnd);
             {
                 Intent intent;
@@ -13066,7 +13060,7 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
                 SuggestionSpan[] suggestionSpans;
                 suggestionSpans = editable.getSpans(spanStart, spanEnd,
                         SuggestionSpan.class);
-                final int length;
+                int length;
                 length = suggestionSpans.length;
                 int[] suggestionSpansStarts;
                 suggestionSpansStarts = new int[length];
@@ -13078,7 +13072,7 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
                     int i;
                     i = 0;
                     {
-                        final SuggestionSpan suggestionSpan;
+                        SuggestionSpan suggestionSpan;
                         suggestionSpan = suggestionSpans[i];
                         suggestionSpansStarts[i] = editable.getSpanStart(suggestionSpan);
                         suggestionSpansEnds[i] = editable.getSpanEnd(suggestionSpan);
@@ -13092,16 +13086,16 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
                         } //End block
                     } //End block
                 } //End collapsed parenthetic
-                final int suggestionStart;
+                int suggestionStart;
                 suggestionStart = suggestionInfo.suggestionStart;
-                final int suggestionEnd;
+                int suggestionEnd;
                 suggestionEnd = suggestionInfo.suggestionEnd;
-                final String suggestion;
+                String suggestion;
                 suggestion = suggestionInfo.text.subSequence(
                         suggestionStart, suggestionEnd).toString();
                 replaceText_internal(spanStart, spanEnd, suggestion);
                 {
-                    boolean varF79A598750887E0098FCD17D2840688C_1286250677 = (!TextUtils.isEmpty(
+                    boolean varF79A598750887E0098FCD17D2840688C_1567399174 = (!TextUtils.isEmpty(
                         suggestionInfo.suggestionSpan.getNotificationTargetClassName()));
                     {
                         InputMethodManager imm;
@@ -13115,7 +13109,7 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
                 String[] suggestions;
                 suggestions = suggestionInfo.suggestionSpan.getSuggestions();
                 suggestions[suggestionInfo.suggestionIndex] = originalText;
-                final int lengthDifference;
+                int lengthDifference;
                 lengthDifference = suggestion.length() - (spanEnd - spanStart);
                 {
                     int i;
@@ -13127,7 +13121,7 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
                         } //End block
                     } //End block
                 } //End collapsed parenthetic
-                final int newCursorPosition;
+                int newCursorPosition;
                 newCursorPosition = spanEnd + lengthDifference;
                 setCursorPosition_internal(newCursorPosition, newCursorPosition);
             } //End block
@@ -13139,7 +13133,7 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
         
         private class CustomPopupWindow extends PopupWindow {
             
-            @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.189 -0400", hash_original_method = "76E50B1843F1484B0424D837A17373EE", hash_generated_method = "48AD3AD29A74132525C3B9FA22AD2876")
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:09.722 -0400", hash_original_method = "76E50B1843F1484B0424D837A17373EE", hash_generated_method = "8D34D8851E3FAE08F934DF22B80AD5D2")
             //DSFIXME:  CODE0002: Requires DSC value to be set
             public CustomPopupWindow(Context context, int defStyle) {
                 super(context, null, defStyle);
@@ -13149,7 +13143,7 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
             }
 
             
-            @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.189 -0400", hash_original_method = "3CF42E745499FBF7012823B6BEAA6E8B", hash_generated_method = "E5D63D6AFEB37DD68FEE660D50210D31")
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:09.722 -0400", hash_original_method = "3CF42E745499FBF7012823B6BEAA6E8B", hash_generated_method = "01AEAFB162CE8D7E4D2CCCC5AEA5C025")
             //DSFIXME:  CODE0002: Requires DSC value to be set
             @Override
             public void dismiss() {
@@ -13158,7 +13152,7 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
                 ((Spannable) mText).removeSpan(mSuggestionRangeSpan);
                 setCursorVisible(mCursorWasVisibleBeforeSuggestions);
                 {
-                    boolean var6A9CA976632F28E945987868EDCFC2A8_1456954663 = (hasInsertionController());
+                    boolean var6A9CA976632F28E945987868EDCFC2A8_1244690184 = (hasInsertionController());
                     {
                         getInsertionController().show();
                     } //End block
@@ -13186,6 +13180,12 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
             TextAppearanceSpan highlightSpan = new TextAppearanceSpan(mContext,
                     android.R.style.TextAppearance_SuggestionHighlight);
             
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:09.722 -0400", hash_original_method = "EB7C529F29376DC3EBD2E1C2C541A94E", hash_generated_method = "EB7C529F29376DC3EBD2E1C2C541A94E")
+                        public SuggestionInfo ()
+            {
+            }
+
+
         }
 
 
@@ -13194,7 +13194,13 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
             private LayoutInflater mInflater = (LayoutInflater) TextView.this.mContext.
                     getSystemService(Context.LAYOUT_INFLATER_SERVICE);
             
-            @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.189 -0400", hash_original_method = "02B536C5901CCC3DE9A3084712F44E45", hash_generated_method = "A3B076560F59E85065DF9A69BB93A719")
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:09.722 -0400", hash_original_method = "6676F46FE5E00B932B6EAEDF3F42CA42", hash_generated_method = "6676F46FE5E00B932B6EAEDF3F42CA42")
+                        public SuggestionAdapter ()
+            {
+            }
+
+
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:09.722 -0400", hash_original_method = "02B536C5901CCC3DE9A3084712F44E45", hash_generated_method = "85EF6547FFE07016F3F58F9231FE5C30")
             @DSModeled(DSC.SAFE)
             @Override
             public int getCount() {
@@ -13204,7 +13210,7 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
             }
 
             
-            @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.190 -0400", hash_original_method = "AB9B090A0CFC1C7403BFB1F3A94BDE2B", hash_generated_method = "659C1F9F21F09EB5056FCA9D6C154C77")
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:09.722 -0400", hash_original_method = "AB9B090A0CFC1C7403BFB1F3A94BDE2B", hash_generated_method = "CFC4C47483E8C458D62ACDCC6C5FCCE5")
             @DSModeled(DSC.SAFE)
             @Override
             public Object getItem(int position) {
@@ -13215,7 +13221,7 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
             }
 
             
-            @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.190 -0400", hash_original_method = "7144EF990F660E75AA61001CF21A1CD5", hash_generated_method = "ECCA4BEA619FBCD3F1E9C47E7B671689")
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:09.722 -0400", hash_original_method = "7144EF990F660E75AA61001CF21A1CD5", hash_generated_method = "42B7A6F5FB834BAF1538980253DE1EBC")
             @DSModeled(DSC.SAFE)
             @Override
             public long getItemId(int position) {
@@ -13226,7 +13232,7 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
             }
 
             
-            @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.190 -0400", hash_original_method = "EB7381461F4FDD3A1934D144B2D8DE50", hash_generated_method = "F602624AA0A443F7E5677E37CA8F52E7")
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:09.723 -0400", hash_original_method = "EB7381461F4FDD3A1934D144B2D8DE50", hash_generated_method = "A2CE2927E2779182ED705D14E5980D7D")
             //DSFIXME:  CODE0002: Requires DSC value to be set
             @Override
             public View getView(int position, View convertView, ViewGroup parent) {
@@ -13239,7 +13245,7 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
                     textView = (TextView) mInflater.inflate(mTextEditSuggestionItemLayout, parent,
                             false);
                 } //End block
-                final SuggestionInfo suggestionInfo;
+                SuggestionInfo suggestionInfo;
                 suggestionInfo = mSuggestionInfos[position];
                 textView.setText(suggestionInfo.text);
                 {
@@ -13265,26 +13271,32 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
         
         private class SuggestionSpanComparator implements Comparator<SuggestionSpan> {
             
-            @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.190 -0400", hash_original_method = "D4A09F0FD84AABB3F69B7BD15CCD92DF", hash_generated_method = "99AF3C243645B7171B680E1460B557C1")
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:09.723 -0400", hash_original_method = "83C764A746E8733FD03A82E875B61B9A", hash_generated_method = "83C764A746E8733FD03A82E875B61B9A")
+                        public SuggestionSpanComparator ()
+            {
+            }
+
+
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:09.723 -0400", hash_original_method = "D4A09F0FD84AABB3F69B7BD15CCD92DF", hash_generated_method = "0C4483ADA07D7055F1376F5A179688BA")
             //DSFIXME:  CODE0002: Requires DSC value to be set
             public int compare(SuggestionSpan span1, SuggestionSpan span2) {
                 dsTaint.addTaint(span2.dsTaint);
                 dsTaint.addTaint(span1.dsTaint);
-                final int flag1;
+                int flag1;
                 flag1 = span1.getFlags();
-                final int flag2;
+                int flag2;
                 flag2 = span2.getFlags();
                 {
-                    final boolean easy1;
+                    boolean easy1;
                     easy1 = (flag1 & SuggestionSpan.FLAG_EASY_CORRECT) != 0;
-                    final boolean easy2;
+                    boolean easy2;
                     easy2 = (flag2 & SuggestionSpan.FLAG_EASY_CORRECT) != 0;
-                    final boolean misspelled1;
+                    boolean misspelled1;
                     misspelled1 = (flag1 & SuggestionSpan.FLAG_MISSPELLED) != 0;
-                    final boolean misspelled2;
+                    boolean misspelled2;
                     misspelled2 = (flag2 & SuggestionSpan.FLAG_MISSPELLED) != 0;
                 } //End block
-                int var69AC0EE4C836195D7157808630CBE920_990963070 = (mSpansLengths.get(span1).intValue() - mSpansLengths.get(span2).intValue());
+                int var69AC0EE4C836195D7157808630CBE920_1310113298 = (mSpansLengths.get(span1).intValue() - mSpansLengths.get(span2).intValue());
                 return dsTaint.getTaintInt();
                 // ---------- Original Method ----------
                 // Original Method Too Long, Refer to Original Implementation
@@ -13295,13 +13307,22 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
 
 
         
+        private static final int MAX_NUMBER_SUGGESTIONS = SuggestionSpan.SUGGESTIONS_MAX_SIZE;
+        private static final int ADD_TO_DICTIONARY = -1;
+        private static final int DELETE_TEXT = -2;
     }
 
 
     
     private class SelectionActionModeCallback implements ActionMode.Callback {
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.191 -0400", hash_original_method = "9BA90F93967180A852B2E5C718CC8322", hash_generated_method = "986817DB49AFC01DE2656C205F00B242")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:09.723 -0400", hash_original_method = "149BAB91011FFF4F06F9BB2A2D73DDCF", hash_generated_method = "149BAB91011FFF4F06F9BB2A2D73DDCF")
+                public SelectionActionModeCallback ()
+        {
+        }
+
+
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:09.724 -0400", hash_original_method = "9BA90F93967180A852B2E5C718CC8322", hash_generated_method = "16E21700BDFC42DAE7EF484929C6192B")
         //DSFIXME:  CODE0002: Requires DSC value to be set
         @Override
         public boolean onCreateActionMode(ActionMode mode, Menu menu) {
@@ -13329,7 +13350,7 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
                     setShowAsAction(
                             MenuItem.SHOW_AS_ACTION_ALWAYS | MenuItem.SHOW_AS_ACTION_WITH_TEXT);
             {
-                boolean var4087A2A70EC4D6F0409558B6C4258D55_1728097084 = (canCut());
+                boolean var4087A2A70EC4D6F0409558B6C4258D55_225550403 = (canCut());
                 {
                     menu.add(0, ID_CUT, 0, com.android.internal.R.string.cut).
                     setIcon(styledAttributes.getResourceId(
@@ -13340,7 +13361,7 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
                 } //End block
             } //End collapsed parenthetic
             {
-                boolean var6AFF96D83000797E509C5DFB5D242F34_887419043 = (canCopy());
+                boolean var6AFF96D83000797E509C5DFB5D242F34_1914892644 = (canCopy());
                 {
                     menu.add(0, ID_COPY, 0, com.android.internal.R.string.copy).
                     setIcon(styledAttributes.getResourceId(
@@ -13351,7 +13372,7 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
                 } //End block
             } //End collapsed parenthetic
             {
-                boolean varE76E09F5D4A1A03C0560F618234DAA0E_1210082476 = (canPaste());
+                boolean varE76E09F5D4A1A03C0560F618234DAA0E_1206184264 = (canPaste());
                 {
                     menu.add(0, ID_PASTE, 0, com.android.internal.R.string.paste).
                         setIcon(styledAttributes.getResourceId(
@@ -13364,11 +13385,11 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
             styledAttributes.recycle();
             {
                 {
-                    boolean var41AD4209F91C4824352554BD86D35AA9_791913185 = (!mCustomSelectionActionModeCallback.onCreateActionMode(mode, menu));
+                    boolean var41AD4209F91C4824352554BD86D35AA9_2134878365 = (!mCustomSelectionActionModeCallback.onCreateActionMode(mode, menu));
                 } //End collapsed parenthetic
             } //End block
             {
-                boolean var7C369957434C066B84C56D449BD80D86_1627926019 = (menu.hasVisibleItems() || mode.getCustomView() != null);
+                boolean var7C369957434C066B84C56D449BD80D86_1616432331 = (menu.hasVisibleItems() || mode.getCustomView() != null);
                 {
                     getSelectionController().show();
                 } //End block
@@ -13379,7 +13400,7 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.191 -0400", hash_original_method = "350C4916EAD271625C17FEEF1988576E", hash_generated_method = "EE06EB5858D020B8FB1B2E5A572630FE")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:09.724 -0400", hash_original_method = "350C4916EAD271625C17FEEF1988576E", hash_generated_method = "742BC19F96F3539FC69BF7C8E0C39486")
         //DSFIXME:  CODE0002: Requires DSC value to be set
         @Override
         public boolean onPrepareActionMode(ActionMode mode, Menu menu) {
@@ -13387,7 +13408,7 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
             dsTaint.addTaint(menu.dsTaint);
             dsTaint.addTaint(mode.dsTaint);
             {
-                boolean varADAB2DA7C682C9431AEBA3613F94A97B_164694545 = (mCustomSelectionActionModeCallback.onPrepareActionMode(mode, menu));
+                boolean varADAB2DA7C682C9431AEBA3613F94A97B_992890706 = (mCustomSelectionActionModeCallback.onPrepareActionMode(mode, menu));
             } //End block
             return dsTaint.getTaintBoolean();
             // ---------- Original Method ----------
@@ -13398,7 +13419,7 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.191 -0400", hash_original_method = "7EC2472DA1F2018FBE0DB5359E02217C", hash_generated_method = "5546A70CD1DB587DC3C113B6457140C5")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:09.725 -0400", hash_original_method = "7EC2472DA1F2018FBE0DB5359E02217C", hash_generated_method = "A8B653A2DF448F8110CCB674E6D14898")
         //DSFIXME:  CODE0002: Requires DSC value to be set
         @Override
         public boolean onActionItemClicked(ActionMode mode, MenuItem item) {
@@ -13406,10 +13427,10 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
             dsTaint.addTaint(item.dsTaint);
             dsTaint.addTaint(mode.dsTaint);
             {
-                boolean var6A3E1D5B368A4625952314ECA607D6A0_470991426 = (mCustomSelectionActionModeCallback != null &&
+                boolean var6A3E1D5B368A4625952314ECA607D6A0_74012774 = (mCustomSelectionActionModeCallback != null &&
                  mCustomSelectionActionModeCallback.onActionItemClicked(mode, item));
             } //End collapsed parenthetic
-            boolean varAAAC964C7BDBEAA3EC5B24BBD90E6008_1127234423 = (onTextContextMenuItem(item.getItemId()));
+            boolean varAAAC964C7BDBEAA3EC5B24BBD90E6008_69697564 = (onTextContextMenuItem(item.getItemId()));
             return dsTaint.getTaintBoolean();
             // ---------- Original Method ----------
             //if (mCustomSelectionActionModeCallback != null &&
@@ -13420,7 +13441,7 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.191 -0400", hash_original_method = "E3DA233478038DA411461438FCA54906", hash_generated_method = "333932D312FC8F1BB481A5D6AD22B2A9")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:09.725 -0400", hash_original_method = "E3DA233478038DA411461438FCA54906", hash_generated_method = "F6D272E4A932E1140366098323735EDF")
         //DSFIXME:  CODE0002: Requires DSC value to be set
         @Override
         public void onDestroyActionMode(ActionMode mode) {
@@ -13451,13 +13472,17 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
 
     
     private class ActionPopupWindow extends PinnedPopupWindow implements OnClickListener {
-        private static final int POPUP_TEXT_LAYOUT =
-                com.android.internal.R.layout.text_edit_action_popup_text;
         private TextView mPasteTextView;
         private TextView mReplaceTextView;
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.191 -0400", hash_original_method = "3A27BFF151DD7090A49C43ED6F082D3A", hash_generated_method = "AAE65103E2B787B5607B5F644C0B17A6")
-        @DSModeled(DSC.SAFE)
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:09.725 -0400", hash_original_method = "273A0E45738AE2DE71DEB36DF9FCC6F9", hash_generated_method = "273A0E45738AE2DE71DEB36DF9FCC6F9")
+                public ActionPopupWindow ()
+        {
+        }
+
+
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:09.725 -0400", hash_original_method = "3A27BFF151DD7090A49C43ED6F082D3A", hash_generated_method = "8DC88F4954A2CB9FB764336AB0459502")
+        //DSFIXME:  CODE0002: Requires DSC value to be set
         @Override
         protected void createPopupWindow() {
             mPopupWindow = new PopupWindow(TextView.this.mContext, null,
@@ -13470,7 +13495,7 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.191 -0400", hash_original_method = "24A2CF459D5801BCD7B986330654CD38", hash_generated_method = "5E29B0E8EF9BA16FF570D5BC2F86CC7D")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:09.726 -0400", hash_original_method = "24A2CF459D5801BCD7B986330654CD38", hash_generated_method = "28DB9C01CAE54D60251AADEB19097688")
         //DSFIXME:  CODE0002: Requires DSC value to be set
         @Override
         protected void initContentView() {
@@ -13501,7 +13526,7 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.191 -0400", hash_original_method = "A37D41A60FC392DB422E94A09527D04E", hash_generated_method = "AD5F3DE9699B90A784F8560523DE73D0")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:09.726 -0400", hash_original_method = "A37D41A60FC392DB422E94A09527D04E", hash_generated_method = "F26ED6C94F7ABCC30E42C6D3DF48D3F7")
         //DSFIXME:  CODE0002: Requires DSC value to be set
         @Override
         public void show() {
@@ -13522,20 +13547,20 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.192 -0400", hash_original_method = "35B6F06783189901121FFF5DA40FB852", hash_generated_method = "D68F245B816C01254DB868585FFBFAFE")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:09.726 -0400", hash_original_method = "35B6F06783189901121FFF5DA40FB852", hash_generated_method = "39181F4C8D408C161805BD84C91480C5")
         //DSFIXME:  CODE0002: Requires DSC value to be set
         @Override
         public void onClick(View view) {
             //DSFIXME:  CODE0009: Possible callback target function detected
             dsTaint.addTaint(view.dsTaint);
             {
-                boolean var3F1B0BC67C85AC74E9CC7447E1F80F7C_1257063572 = (view == mPasteTextView && canPaste());
+                boolean var3F1B0BC67C85AC74E9CC7447E1F80F7C_20930974 = (view == mPasteTextView && canPaste());
                 {
                     onTextContextMenuItem(ID_PASTE);
                     hide();
                 } //End block
                 {
-                    final int middle;
+                    int middle;
                     middle = (getSelectionStart() + getSelectionEnd()) / 2;
                     stopSelectionActionMode();
                     Selection.setSelection((Spannable) mText, middle);
@@ -13555,42 +13580,42 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.192 -0400", hash_original_method = "6C32A970FB91901A3510EE736EF065A8", hash_generated_method = "E66F2704EA6BA82B43156DA58E2BF81A")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:09.727 -0400", hash_original_method = "6C32A970FB91901A3510EE736EF065A8", hash_generated_method = "B98486F2A1F270CDE0CD6A0E62FDA48F")
         //DSFIXME:  CODE0002: Requires DSC value to be set
         @Override
         protected int getTextOffset() {
-            int var3BEB3DEB1E2E3C75F7F6F972590B6F26_1524676245 = ((getSelectionStart() + getSelectionEnd()) / 2);
+            int var3BEB3DEB1E2E3C75F7F6F972590B6F26_835416930 = ((getSelectionStart() + getSelectionEnd()) / 2);
             return dsTaint.getTaintInt();
             // ---------- Original Method ----------
             //return (getSelectionStart() + getSelectionEnd()) / 2;
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.192 -0400", hash_original_method = "AB01324FAF38A5FF69620E59B4546722", hash_generated_method = "7D639D965412094A99931F795850C325")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:09.727 -0400", hash_original_method = "AB01324FAF38A5FF69620E59B4546722", hash_generated_method = "35837662AE045BEF62161DF62E7B8851")
         //DSFIXME:  CODE0002: Requires DSC value to be set
         @Override
         protected int getVerticalLocalPosition(int line) {
             dsTaint.addTaint(line);
-            int varEE26756D259E6923CEEA10605E3E8378_1458296993 = (mLayout.getLineTop(line) - mContentView.getMeasuredHeight());
+            int varEE26756D259E6923CEEA10605E3E8378_1010055741 = (mLayout.getLineTop(line) - mContentView.getMeasuredHeight());
             return dsTaint.getTaintInt();
             // ---------- Original Method ----------
             //return mLayout.getLineTop(line) - mContentView.getMeasuredHeight();
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.192 -0400", hash_original_method = "155BF5081251C49CE36145C9CC0615FD", hash_generated_method = "B7636F96D203E341FE603855B1128E85")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:09.727 -0400", hash_original_method = "155BF5081251C49CE36145C9CC0615FD", hash_generated_method = "5B3420C50B6315727B31186B87825C2D")
         //DSFIXME:  CODE0002: Requires DSC value to be set
         @Override
         protected int clipVertically(int positionY) {
             dsTaint.addTaint(positionY);
             {
-                final int offset;
+                int offset;
                 offset = getTextOffset();
-                final int line;
+                int line;
                 line = mLayout.getLineForOffset(offset);
                 positionY += mLayout.getLineBottom(line) - mLayout.getLineTop(line);
                 positionY += mContentView.getMeasuredHeight();
-                final Drawable handle;
+                Drawable handle;
                 handle = mContext.getResources().getDrawable(mTextSelectHandleRes);
                 positionY += handle.getIntrinsicHeight();
             } //End block
@@ -13608,6 +13633,8 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
         }
 
         
+        private static final int POPUP_TEXT_LAYOUT =
+                com.android.internal.R.layout.text_edit_action_popup_text;
     }
 
 
@@ -13616,7 +13643,7 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
         protected Drawable mDrawable;
         protected Drawable mDrawableLtr;
         protected Drawable mDrawableRtl;
-        private final PopupWindow mContainer;
+        private PopupWindow mContainer;
         private int mPositionX, mPositionY;
         private boolean mIsDragging;
         private float mTouchToWindowOffsetX, mTouchToWindowOffsetY;
@@ -13628,15 +13655,12 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
         private int mPreviousOffset = -1;
         private boolean mPositionHasChanged = true;
         private Runnable mActionPopupShower;
-        private static final int HISTORY_SIZE = 5;
-        private static final int TOUCH_UP_FILTER_DELAY_AFTER = 150;
-        private static final int TOUCH_UP_FILTER_DELAY_BEFORE = 350;
-        private final long[] mPreviousOffsetsTimes = new long[HISTORY_SIZE];
-        private final int[] mPreviousOffsets = new int[HISTORY_SIZE];
+        private long[] mPreviousOffsetsTimes = new long[HISTORY_SIZE];
+        private int[] mPreviousOffsets = new int[HISTORY_SIZE];
         private int mPreviousOffsetIndex = 0;
         private int mNumberPreviousOffsets = 0;
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.192 -0400", hash_original_method = "96CFEA14605480F2CAC7A5BABB016DB2", hash_generated_method = "5CF5C47CFF3D701A7C663ABF8A570807")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:09.728 -0400", hash_original_method = "96CFEA14605480F2CAC7A5BABB016DB2", hash_generated_method = "CD4B7BC329DD25B5B3E56711CF772D2F")
         //DSFIXME:  CODE0002: Requires DSC value to be set
         public HandleView(Drawable drawableLtr, Drawable drawableRtl) {
             super(TextView.this.mContext);
@@ -13649,7 +13673,7 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
             mContainer.setWindowLayoutType(WindowManager.LayoutParams.TYPE_APPLICATION_SUB_PANEL);
             mContainer.setContentView(this);
             updateDrawable();
-            final int handleHeight;
+            int handleHeight;
             handleHeight = mDrawable.getIntrinsicHeight();
             mTouchOffsetY = -0.3f * handleHeight;
             mIdealVerticalOffset = 0.7f * handleHeight;
@@ -13669,12 +13693,12 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.192 -0400", hash_original_method = "79B760AD39E8E4DC7B1000745317DEB7", hash_generated_method = "5ADDAD296AA962F79343DA08FBE63033")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:09.728 -0400", hash_original_method = "79B760AD39E8E4DC7B1000745317DEB7", hash_generated_method = "27180675DD4339AB2F84E10B6ADA9A96")
         //DSFIXME:  CODE0002: Requires DSC value to be set
         protected void updateDrawable() {
-            final int offset;
+            int offset;
             offset = getCurrentCursorOffset();
-            final boolean isRtlCharAtOffset;
+            boolean isRtlCharAtOffset;
             isRtlCharAtOffset = mLayout.isRtlCharAt(offset);
             mDrawable = isRtlCharAtOffset ? mDrawableRtl : mDrawableLtr;
             mHotspotX = getHotspotX(mDrawable, isRtlCharAtOffset);
@@ -13689,8 +13713,8 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
         protected abstract int getHotspotX(Drawable drawable, boolean isRtlRun);
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.192 -0400", hash_original_method = "FC7484D3CDDEA8A708B164CA1D725BB5", hash_generated_method = "A9BDDA27DAB9CFA61C6BAFE0DEA4FE7C")
-        @DSModeled(DSC.SAFE)
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:09.728 -0400", hash_original_method = "FC7484D3CDDEA8A708B164CA1D725BB5", hash_generated_method = "B659FB0263C50C8EFA210812CF5B2CFD")
+        //DSFIXME:  CODE0002: Requires DSC value to be set
         private void startTouchUpFilter(int offset) {
             dsTaint.addTaint(offset);
             mNumberPreviousOffsets = 0;
@@ -13701,14 +13725,13 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.192 -0400", hash_original_method = "F067815A22302FA44603BE1943641FAF", hash_generated_method = "180DAD126776C3E38F34E932CCC1C89E")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:09.728 -0400", hash_original_method = "F067815A22302FA44603BE1943641FAF", hash_generated_method = "8628C36DD3444957DEB8CE6B50FF6305")
         //DSFIXME:  CODE0002: Requires DSC value to be set
         private void addPositionToTouchUpFilter(int offset) {
             dsTaint.addTaint(offset);
             mPreviousOffsetIndex = (mPreviousOffsetIndex + 1) % HISTORY_SIZE;
             mPreviousOffsets[mPreviousOffsetIndex] = offset;
             mPreviousOffsetsTimes[mPreviousOffsetIndex] = SystemClock.uptimeMillis();
-            mNumberPreviousOffsets++;
             // ---------- Original Method ----------
             //mPreviousOffsetIndex = (mPreviousOffsetIndex + 1) % HISTORY_SIZE;
             //mPreviousOffsets[mPreviousOffsetIndex] = offset;
@@ -13717,19 +13740,18 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.193 -0400", hash_original_method = "55F0EF9CEF8C5AA4299D2A57A3F07803", hash_generated_method = "8A34D019986AB913060033D9A968F722")
-        @DSModeled(DSC.SAFE)
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:09.729 -0400", hash_original_method = "55F0EF9CEF8C5AA4299D2A57A3F07803", hash_generated_method = "E6A423AF98CF8707E08F7FF7E6A2C33D")
+        //DSFIXME:  CODE0002: Requires DSC value to be set
         private void filterOnTouchUp() {
-            final long now;
+            long now;
             now = SystemClock.uptimeMillis();
             int i;
             i = 0;
             int index;
             index = mPreviousOffsetIndex;
-            final int iMax;
+            int iMax;
             iMax = Math.min(mNumberPreviousOffsets, HISTORY_SIZE);
             {
-                i++;
                 index = (mPreviousOffsetIndex - i + HISTORY_SIZE) % HISTORY_SIZE;
             } //End block
             {
@@ -13751,7 +13773,7 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.193 -0400", hash_original_method = "8E1053DB926B4787A5B252A5CCF7E3E6", hash_generated_method = "15D6920ED716B817444A02029A3EDE94")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:09.729 -0400", hash_original_method = "8E1053DB926B4787A5B252A5CCF7E3E6", hash_generated_method = "B1088AD0A0645F8A87A7FF5B96E31C6F")
         @DSModeled(DSC.SAFE)
         public boolean offsetHasBeenChanged() {
             return dsTaint.getTaintBoolean();
@@ -13760,7 +13782,7 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.193 -0400", hash_original_method = "F1B9B11E208A14EF1A8385C794E8615A", hash_generated_method = "C901E665C3E54E715AC059B1C5F660A1")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:09.729 -0400", hash_original_method = "F1B9B11E208A14EF1A8385C794E8615A", hash_generated_method = "C52E5A189056F0AD1E3B00452F66953C")
         //DSFIXME:  CODE0002: Requires DSC value to be set
         @Override
         protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
@@ -13773,11 +13795,11 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.193 -0400", hash_original_method = "0CEFB75F912E1774230D056666C1CB4D", hash_generated_method = "AB543FE36A288A29757C77C3168AEA4C")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:09.729 -0400", hash_original_method = "0CEFB75F912E1774230D056666C1CB4D", hash_generated_method = "540B8139C884226F2C787ABD87FB26EA")
         //DSFIXME:  CODE0002: Requires DSC value to be set
         public void show() {
             {
-                boolean varC328115627DFB8318D2C3484959F5057_967235412 = (isShowing());
+                boolean varC328115627DFB8318D2C3484959F5057_446907781 = (isShowing());
             } //End collapsed parenthetic
             getPositionListener().addSubscriber(this, true );
             mPreviousOffset = -1;
@@ -13792,8 +13814,8 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.193 -0400", hash_original_method = "58A1CA71E65CA8505283F80ECD55B125", hash_generated_method = "FAD0D503597A6ABE326524871350A175")
-        @DSModeled(DSC.SAFE)
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:09.730 -0400", hash_original_method = "58A1CA71E65CA8505283F80ECD55B125", hash_generated_method = "733B087F4D13E07199A0682C98829C56")
+        //DSFIXME:  CODE0002: Requires DSC value to be set
         protected void dismiss() {
             mIsDragging = false;
             mContainer.dismiss();
@@ -13805,7 +13827,7 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.193 -0400", hash_original_method = "E51AD13D62B6328756BEDC07E20C91A7", hash_generated_method = "BC5477B2853797A83290D6A4A3A8DAE3")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:09.730 -0400", hash_original_method = "E51AD13D62B6328756BEDC07E20C91A7", hash_generated_method = "B3050A8544288284788803BE9D39F46E")
         //DSFIXME:  CODE0002: Requires DSC value to be set
         public void hide() {
             dismiss();
@@ -13816,20 +13838,23 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.193 -0400", hash_original_method = "0D5333D88B146866CC739B7BC1FA2E0A", hash_generated_method = "EC2FFC919A43C8D8DD208428D966ACF3")
-        @DSModeled(DSC.SAFE)
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:09.730 -0400", hash_original_method = "0D5333D88B146866CC739B7BC1FA2E0A", hash_generated_method = "CD1E4E2116410883F6F000CC254EB7F1")
+        //DSFIXME:  CODE0002: Requires DSC value to be set
          void showActionPopupWindow(int delay) {
-            //DSFIXME:  CODE0009: Possible callback target function detected
             dsTaint.addTaint(delay);
             {
                 mActionPopupWindow = new ActionPopupWindow();
             } //End block
             {
-                mActionPopupShower = new Runnable() {
+                mActionPopupShower = new Runnable() {                    
+                    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:09.730 -0400", hash_original_method = "3DEF90E085B5D89C941B0ED88F0DC7FD", hash_generated_method = "0FD34D73BCA925EC1AF406DCBE797EF5")
+                    //DSFIXME:  CODE0002: Requires DSC value to be set
                     public void run() {
                         mActionPopupWindow.show();
+                        // ---------- Original Method ----------
+                        //mActionPopupWindow.show();
                     }
-                };
+};
             } //End block
             {
                 TextView.this.removeCallbacks(mActionPopupShower);
@@ -13852,10 +13877,9 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.193 -0400", hash_original_method = "7E990B2771AC26D4AD93278F16BEC9C8", hash_generated_method = "612ECA58EC0B112F6FF0D0557A096D7B")
-        @DSModeled(DSC.SAFE)
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:09.730 -0400", hash_original_method = "7E990B2771AC26D4AD93278F16BEC9C8", hash_generated_method = "C71F220859CCDEBCBEEA3A66F1FBEC1A")
+        //DSFIXME:  CODE0002: Requires DSC value to be set
         protected void hideActionPopupWindow() {
-            //DSFIXME:  CODE0009: Possible callback target function detected
             {
                 TextView.this.removeCallbacks(mActionPopupShower);
             } //End block
@@ -13872,23 +13896,23 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.193 -0400", hash_original_method = "4C582CFB225DCFD162C1BDA55C8E191D", hash_generated_method = "ED73BBCA4221968343A0AC2A8D0A7455")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:09.731 -0400", hash_original_method = "4C582CFB225DCFD162C1BDA55C8E191D", hash_generated_method = "E313797DF5C17007F7D047A021472C1B")
         //DSFIXME:  CODE0002: Requires DSC value to be set
         public boolean isShowing() {
-            boolean var150C3AF6C0593C2D596AE332D213A317_1991539934 = (mContainer.isShowing());
+            boolean var150C3AF6C0593C2D596AE332D213A317_1720666984 = (mContainer.isShowing());
             return dsTaint.getTaintBoolean();
             // ---------- Original Method ----------
             //return mContainer.isShowing();
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.193 -0400", hash_original_method = "622F11C59DDFBBB8F6FA4F43A2282A80", hash_generated_method = "579F9F320BFC68F5479FEB41C37B155A")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:09.731 -0400", hash_original_method = "622F11C59DDFBBB8F6FA4F43A2282A80", hash_generated_method = "7B1168538BE8E9BFC0F557DD402E0269")
         //DSFIXME:  CODE0002: Requires DSC value to be set
         private boolean isVisible() {
             {
-                boolean var50BDB7CF84FD9415E39B194F38BCA676_1265650863 = (isInBatchEditMode());
+                boolean var50BDB7CF84FD9415E39B194F38BCA676_1031729061 = (isInBatchEditMode());
             } //End collapsed parenthetic
-            boolean varFDA4E5DACCCE5BDB1C7FF02945B0CF5E_1972703148 = (TextView.this.isPositionVisible(mPositionX + mHotspotX, mPositionY));
+            boolean varFDA4E5DACCCE5BDB1C7FF02945B0CF5E_557641532 = (TextView.this.isPositionVisible(mPositionX + mHotspotX, mPositionY));
             return dsTaint.getTaintBoolean();
             // ---------- Original Method ----------
             //if (mIsDragging) {
@@ -13910,10 +13934,9 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
         public abstract void updatePosition(float x, float y);
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.193 -0400", hash_original_method = "23AE0E97732D2E1BD689A17102858930", hash_generated_method = "CDA43BF893978D3A06A553323264FA62")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:09.732 -0400", hash_original_method = "23AE0E97732D2E1BD689A17102858930", hash_generated_method = "46F7D1D9768B699F53D2A80906993581")
         //DSFIXME:  CODE0002: Requires DSC value to be set
         protected void positionAtCursorOffset(int offset, boolean parentScrolled) {
-            //DSFIXME:  CODE0009: Possible callback target function detected
             dsTaint.addTaint(parentScrolled);
             dsTaint.addTaint(offset);
             {
@@ -13922,7 +13945,7 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
             {
                 updateSelection(offset);
                 addPositionToTouchUpFilter(offset);
-                final int line;
+                int line;
                 line = mLayout.getLineForOffset(offset);
                 mPositionX = (int) (mLayout.getPrimaryHorizontal(offset) - 0.5f - mHotspotX);
                 mPositionY = mLayout.getLineBottom(line);
@@ -13949,7 +13972,7 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.194 -0400", hash_original_method = "13FE1FBB4F8CE63ECDC017603A6579A6", hash_generated_method = "E05DA81D968D721B8829B21B1D9B0FDD")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:09.732 -0400", hash_original_method = "13FE1FBB4F8CE63ECDC017603A6579A6", hash_generated_method = "6DBB2B5CDF1A3792FD54CBCAC53431D8")
         //DSFIXME:  CODE0002: Requires DSC value to be set
         public void updatePosition(int parentPositionX, int parentPositionY,
                 boolean parentPositionChanged, boolean parentScrolled) {
@@ -13967,14 +13990,14 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
                     onHandleMoved();
                 } //End block
                 {
-                    boolean varFF8AC1520C23E15E72910D87BF05E9DD_21479094 = (isVisible());
+                    boolean varFF8AC1520C23E15E72910D87BF05E9DD_919273668 = (isVisible());
                     {
-                        final int positionX;
+                        int positionX;
                         positionX = parentPositionX + mPositionX;
-                        final int positionY;
+                        int positionY;
                         positionY = parentPositionY + mPositionY;
                         {
-                            boolean varAD9BB22364C576DF82257324184E3F6D_734619799 = (isShowing());
+                            boolean varAD9BB22364C576DF82257324184E3F6D_1121017015 = (isShowing());
                             {
                                 mContainer.update(positionX, positionY, -1, -1);
                             } //End block
@@ -13986,7 +14009,7 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
                     } //End block
                     {
                         {
-                            boolean varAD9BB22364C576DF82257324184E3F6D_1167567237 = (isShowing());
+                            boolean varAD9BB22364C576DF82257324184E3F6D_1273485693 = (isShowing());
                             {
                                 dismiss();
                             } //End block
@@ -14000,8 +14023,8 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.194 -0400", hash_original_method = "F8254677C35EEC48CDE0AC0DA5BFAEC5", hash_generated_method = "076825C6D871D9A6EF040B9980638232")
-        @DSModeled(DSC.SAFE)
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:09.732 -0400", hash_original_method = "F8254677C35EEC48CDE0AC0DA5BFAEC5", hash_generated_method = "8F3D3D94D89DCC83538106F55A0965E5")
+        //DSFIXME:  CODE0002: Requires DSC value to be set
         @Override
         protected void onDraw(Canvas c) {
             //DSFIXME:  CODE0009: Possible callback target function detected
@@ -14014,20 +14037,20 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.194 -0400", hash_original_method = "AFDBACCAFCABC81309AB0079A4EAD49F", hash_generated_method = "FAFA0C728B3EDE51AC8FA034C941C2DD")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:09.733 -0400", hash_original_method = "AFDBACCAFCABC81309AB0079A4EAD49F", hash_generated_method = "BA3DA0D82C4EDA0F09E0D9305FA2C79F")
         //DSFIXME:  CODE0002: Requires DSC value to be set
         @Override
         public boolean onTouchEvent(MotionEvent ev) {
             //DSFIXME:  CODE0009: Possible callback target function detected
             dsTaint.addTaint(ev.dsTaint);
             {
-                Object var373A6BAE1146FCFC2FEA12BA752DB0E2_72472805 = (ev.getActionMasked());
+                Object var373A6BAE1146FCFC2FEA12BA752DB0E2_58798468 = (ev.getActionMasked());
                 //Begin case MotionEvent.ACTION_DOWN 
                 {
                     startTouchUpFilter(getCurrentCursorOffset());
                     mTouchToWindowOffsetX = ev.getRawX() - mPositionX;
                     mTouchToWindowOffsetY = ev.getRawY() - mPositionY;
-                    final PositionListener positionListener;
+                    PositionListener positionListener;
                     positionListener = getPositionListener();
                     mLastParentX = positionListener.getPositionX();
                     mLastParentY = positionListener.getPositionY();
@@ -14036,13 +14059,13 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
                 //End case MotionEvent.ACTION_DOWN 
                 //Begin case MotionEvent.ACTION_MOVE 
                 {
-                    final float rawX;
+                    float rawX;
                     rawX = ev.getRawX();
-                    final float rawY;
+                    float rawY;
                     rawY = ev.getRawY();
-                    final float previousVerticalOffset;
+                    float previousVerticalOffset;
                     previousVerticalOffset = mTouchToWindowOffsetY - mLastParentY;
-                    final float currentVerticalOffset;
+                    float currentVerticalOffset;
                     currentVerticalOffset = rawY - mPositionY - mLastParentY;
                     float newVerticalOffset;
                     {
@@ -14054,9 +14077,9 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
                         newVerticalOffset = Math.min(newVerticalOffset, previousVerticalOffset);
                     } //End block
                     mTouchToWindowOffsetY = newVerticalOffset + mLastParentY;
-                    final float newPosX;
+                    float newPosX;
                     newPosX = rawX - mTouchToWindowOffsetX + mHotspotX;
-                    final float newPosY;
+                    float newPosY;
                     newPosY = rawY - mTouchToWindowOffsetY + mTouchOffsetY;
                     updatePosition(newPosX, newPosY);
                 } //End block
@@ -14077,7 +14100,7 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.194 -0400", hash_original_method = "A2059A5EB773F7552F7C3D2AAFE1E47B", hash_generated_method = "1DFF483DF7047FAEC11F7EA94B8F5267")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:09.733 -0400", hash_original_method = "A2059A5EB773F7552F7C3D2AAFE1E47B", hash_generated_method = "8A83E9F56995DCDA5CB238555283026B")
         @DSModeled(DSC.SAFE)
         public boolean isDragging() {
             return dsTaint.getTaintBoolean();
@@ -14086,8 +14109,8 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.194 -0400", hash_original_method = "5C16B6634DA5CEF817B70D10C5EDCDFD", hash_generated_method = "BA15C6791746CB86782858F2701C5751")
-        @DSModeled(DSC.SAFE)
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:09.733 -0400", hash_original_method = "5C16B6634DA5CEF817B70D10C5EDCDFD", hash_generated_method = "2D666D5FB7EA2FA5400262CA3F1C8A1F")
+        //DSFIXME:  CODE0002: Requires DSC value to be set
          void onHandleMoved() {
             //DSFIXME:  CODE0009: Possible callback target function detected
             hideActionPopupWindow();
@@ -14096,8 +14119,8 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.194 -0400", hash_original_method = "0744EFF256BE5CA55B7C747C6AB06865", hash_generated_method = "EF26ACF4E8E4D174870BA35B14D61397")
-        @DSModeled(DSC.SAFE)
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:09.733 -0400", hash_original_method = "0744EFF256BE5CA55B7C747C6AB06865", hash_generated_method = "07B6D1B0BEF9A03B240C16C543BA4B2F")
+        //DSFIXME:  CODE0002: Requires DSC value to be set
         public void onDetached() {
             //DSFIXME:  CODE0009: Possible callback target function detected
             hideActionPopupWindow();
@@ -14106,17 +14129,18 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
         }
 
         
+        private static final int HISTORY_SIZE = 5;
+        private static final int TOUCH_UP_FILTER_DELAY_AFTER = 150;
+        private static final int TOUCH_UP_FILTER_DELAY_BEFORE = 350;
     }
 
 
     
     private class InsertionHandleView extends HandleView {
-        private static final int DELAY_BEFORE_HANDLE_FADES_OUT = 4000;
-        private static final int RECENT_CUT_COPY_DURATION = 15 * 1000;
         private float mDownPositionX, mDownPositionY;
         private Runnable mHider;
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.194 -0400", hash_original_method = "F74814C2C752895D626389ECC5F1998A", hash_generated_method = "0CA77A8F37A8F40562EC097E7DE0C5FB")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:09.734 -0400", hash_original_method = "F74814C2C752895D626389ECC5F1998A", hash_generated_method = "CF1FC63B8551A5218F0792355B70E464")
         //DSFIXME:  CODE0002: Requires DSC value to be set
         public InsertionHandleView(Drawable drawable) {
             super(drawable, drawable);
@@ -14125,12 +14149,12 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.194 -0400", hash_original_method = "0F6B36BAB7494929112A1B2A0EAC8D6C", hash_generated_method = "6AB20E0ABC1BFB0EFDE006EFB0188F9C")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:09.734 -0400", hash_original_method = "0F6B36BAB7494929112A1B2A0EAC8D6C", hash_generated_method = "A7BEB9F1BF742B1C98F51B01E918156A")
         //DSFIXME:  CODE0002: Requires DSC value to be set
         @Override
         public void show() {
             super.show();
-            final long durationSinceCutOrCopy;
+            long durationSinceCutOrCopy;
             durationSinceCutOrCopy = SystemClock.uptimeMillis() - sLastCutOrCopyTime;
             {
                 showActionPopupWindow(0);
@@ -14146,10 +14170,9 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.194 -0400", hash_original_method = "59B6A837BA01A6E9F2644C670D997B83", hash_generated_method = "F25FDD3CD70064D6BD3896F765DC7FAE")
-        @DSModeled(DSC.SAFE)
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:09.734 -0400", hash_original_method = "59B6A837BA01A6E9F2644C670D997B83", hash_generated_method = "3AF35DDAFA81E0D862669F6D69826EB8")
+        //DSFIXME:  CODE0002: Requires DSC value to be set
         public void showWithActionPopup() {
-            //DSFIXME:  CODE0009: Possible callback target function detected
             show();
             showActionPopupWindow(0);
             // ---------- Original Method ----------
@@ -14158,16 +14181,20 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.195 -0400", hash_original_method = "60FC6C1FF502D89543DDAA49F0EA3292", hash_generated_method = "3AFDCB5A05C4BC0BFDE88F7F570DD885")
-        @DSModeled(DSC.SAFE)
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:09.735 -0400", hash_original_method = "60FC6C1FF502D89543DDAA49F0EA3292", hash_generated_method = "7B646CC06701AC5AA03E51FB8B1A5060")
+        //DSFIXME:  CODE0002: Requires DSC value to be set
         private void hideAfterDelay() {
             removeHiderCallback();
             {
-                mHider = new Runnable() {
+                mHider = new Runnable() {                    
+                    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:09.735 -0400", hash_original_method = "21815FA27ABEB649DED6A46E4F97905B", hash_generated_method = "2FF065C6B89057BF4ADFF6066462708E")
+                    //DSFIXME:  CODE0002: Requires DSC value to be set
                     public void run() {
                         hide();
+                        // ---------- Original Method ----------
+                        //hide();
                     }
-                };
+};
             } //End block
             TextView.this.postDelayed(mHider, DELAY_BEFORE_HANDLE_FADES_OUT);
             // ---------- Original Method ----------
@@ -14183,8 +14210,8 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.195 -0400", hash_original_method = "C682D1056E8259D8BAEA8A544AED7A4D", hash_generated_method = "F99AAF32F447CD86E65D57A5E6E5333B")
-        @DSModeled(DSC.SAFE)
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:09.735 -0400", hash_original_method = "C682D1056E8259D8BAEA8A544AED7A4D", hash_generated_method = "867A7692AB60EB72837193F437C04B2D")
+        //DSFIXME:  CODE0002: Requires DSC value to be set
         private void removeHiderCallback() {
             {
                 TextView.this.removeCallbacks(mHider);
@@ -14196,29 +14223,29 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.195 -0400", hash_original_method = "6DC2E28231BC586AA27A394F083E414A", hash_generated_method = "B7EFD831146D7C93388E3D25FC128542")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:09.735 -0400", hash_original_method = "6DC2E28231BC586AA27A394F083E414A", hash_generated_method = "0E044D6E2961705D588F7695E634593F")
         //DSFIXME:  CODE0002: Requires DSC value to be set
         @Override
         protected int getHotspotX(Drawable drawable, boolean isRtlRun) {
             dsTaint.addTaint(drawable.dsTaint);
             dsTaint.addTaint(isRtlRun);
-            int varA8B7D89D4E5B94692BDCD2F6C401B00C_428864287 = (drawable.getIntrinsicWidth() / 2);
+            int varA8B7D89D4E5B94692BDCD2F6C401B00C_115582003 = (drawable.getIntrinsicWidth() / 2);
             return dsTaint.getTaintInt();
             // ---------- Original Method ----------
             //return drawable.getIntrinsicWidth() / 2;
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.195 -0400", hash_original_method = "0786A2C72AD62CB255408C178910DEC1", hash_generated_method = "4C14E35B9F85561B6967F76396EFB8DB")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:09.736 -0400", hash_original_method = "0786A2C72AD62CB255408C178910DEC1", hash_generated_method = "9D2DBC4F6365DF2830810C8C061EB3D5")
         //DSFIXME:  CODE0002: Requires DSC value to be set
         @Override
         public boolean onTouchEvent(MotionEvent ev) {
             //DSFIXME:  CODE0009: Possible callback target function detected
             dsTaint.addTaint(ev.dsTaint);
-            final boolean result;
+            boolean result;
             result = super.onTouchEvent(ev);
             {
-                Object var373A6BAE1146FCFC2FEA12BA752DB0E2_578058862 = (ev.getActionMasked());
+                Object var373A6BAE1146FCFC2FEA12BA752DB0E2_570083742 = (ev.getActionMasked());
                 //Begin case MotionEvent.ACTION_DOWN 
                 mDownPositionX = ev.getRawX();
                 //End case MotionEvent.ACTION_DOWN 
@@ -14227,17 +14254,17 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
                 //End case MotionEvent.ACTION_DOWN 
                 //Begin case MotionEvent.ACTION_UP 
                 {
-                    boolean varEEEFE49273E9B0F999D591B54BA07697_1381175135 = (!offsetHasBeenChanged());
+                    boolean varEEEFE49273E9B0F999D591B54BA07697_807977204 = (!offsetHasBeenChanged());
                     {
-                        final float deltaX;
+                        float deltaX;
                         deltaX = mDownPositionX - ev.getRawX();
-                        final float deltaY;
+                        float deltaY;
                         deltaY = mDownPositionY - ev.getRawY();
-                        final float distanceSquared;
+                        float distanceSquared;
                         distanceSquared = deltaX * deltaX + deltaY * deltaY;
                         {
                             {
-                                boolean var33D1446792CC339F933EE732A5EACA0F_1726315839 = (mActionPopupWindow != null && mActionPopupWindow.isShowing());
+                                boolean var33D1446792CC339F933EE732A5EACA0F_392667372 = (mActionPopupWindow != null && mActionPopupWindow.isShowing());
                                 {
                                     mActionPopupWindow.hide();
                                 } //End block
@@ -14262,19 +14289,19 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.195 -0400", hash_original_method = "CA0934B91A8FE7B0CF5B9D9FD475827B", hash_generated_method = "3C29A49E637E6A8CFBFD89A93DCE9649")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:09.736 -0400", hash_original_method = "CA0934B91A8FE7B0CF5B9D9FD475827B", hash_generated_method = "209E121A32C2FAEDEF66CAD7EBF0E998")
         //DSFIXME:  CODE0002: Requires DSC value to be set
         @Override
         public int getCurrentCursorOffset() {
-            int var3A0ADF979623B6D0242973915DBE6180_281277957 = (TextView.this.getSelectionStart());
+            int var3A0ADF979623B6D0242973915DBE6180_1050815447 = (TextView.this.getSelectionStart());
             return dsTaint.getTaintInt();
             // ---------- Original Method ----------
             //return TextView.this.getSelectionStart();
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.195 -0400", hash_original_method = "A55C2EA19B8C1EC0135F14E2406421A5", hash_generated_method = "7D7E5A845B4B4008BFA549E09F84B4B7")
-        @DSModeled(DSC.SAFE)
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:09.736 -0400", hash_original_method = "A55C2EA19B8C1EC0135F14E2406421A5", hash_generated_method = "5D5FBF1ED6C43FAB01FE021EC25DCDFC")
+        //DSFIXME:  CODE0002: Requires DSC value to be set
         @Override
         public void updateSelection(int offset) {
             dsTaint.addTaint(offset);
@@ -14284,7 +14311,7 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.195 -0400", hash_original_method = "76FEC5259BD2EF7A10D2C6D9447263AD", hash_generated_method = "14285F1CB22200A2CC85BF6B92A130A8")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:09.736 -0400", hash_original_method = "76FEC5259BD2EF7A10D2C6D9447263AD", hash_generated_method = "382B40428C5DE7BAA60F3BF8973E4DA5")
         //DSFIXME:  CODE0002: Requires DSC value to be set
         @Override
         public void updatePosition(float x, float y) {
@@ -14296,8 +14323,8 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.195 -0400", hash_original_method = "DF26232D8C6513289215597105F4C19A", hash_generated_method = "BBC6932F045F9B2CE73EA9BF7B21E36F")
-        @DSModeled(DSC.SAFE)
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:09.736 -0400", hash_original_method = "DF26232D8C6513289215597105F4C19A", hash_generated_method = "78394009F817C89807523E4EB6438C76")
+        //DSFIXME:  CODE0002: Requires DSC value to be set
         @Override
          void onHandleMoved() {
             //DSFIXME:  CODE0009: Possible callback target function detected
@@ -14309,8 +14336,8 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.195 -0400", hash_original_method = "58D1696EBF955B571F830BA2F6EDC257", hash_generated_method = "9D9F255BF0DE5428FACBF63E88FB2A79")
-        @DSModeled(DSC.SAFE)
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:09.737 -0400", hash_original_method = "58D1696EBF955B571F830BA2F6EDC257", hash_generated_method = "8A539C8A229F23A70E85F98BCBADCFB1")
+        //DSFIXME:  CODE0002: Requires DSC value to be set
         @Override
         public void onDetached() {
             //DSFIXME:  CODE0009: Possible callback target function detected
@@ -14322,13 +14349,15 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
         }
 
         
+        private static final int DELAY_BEFORE_HANDLE_FADES_OUT = 4000;
+        private static final int RECENT_CUT_COPY_DURATION = 15 * 1000;
     }
 
 
     
     private class SelectionStartHandleView extends HandleView {
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.195 -0400", hash_original_method = "83BC78691BC747F1E4426492F397A3E5", hash_generated_method = "7EBDC899551659F50441A8AFF35B4565")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:09.737 -0400", hash_original_method = "83BC78691BC747F1E4426492F397A3E5", hash_generated_method = "7BFEBCF679805501882289EE1CA161C5")
         //DSFIXME:  CODE0002: Requires DSC value to be set
         public SelectionStartHandleView(Drawable drawableLtr, Drawable drawableRtl) {
             super(drawableLtr, drawableRtl);
@@ -14338,17 +14367,17 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.195 -0400", hash_original_method = "E4FEF24C3E269A0B427919DBE201803F", hash_generated_method = "E94BBF91941B6778B77B8946F60A6071")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:09.737 -0400", hash_original_method = "E4FEF24C3E269A0B427919DBE201803F", hash_generated_method = "884D9B018D334A358930A11D6F037C7D")
         //DSFIXME:  CODE0002: Requires DSC value to be set
         @Override
         protected int getHotspotX(Drawable drawable, boolean isRtlRun) {
             dsTaint.addTaint(drawable.dsTaint);
             dsTaint.addTaint(isRtlRun);
             {
-                int var825C3AB963C858F505D8A99BED9B8FB2_1427389985 = (drawable.getIntrinsicWidth() / 4);
+                int var825C3AB963C858F505D8A99BED9B8FB2_70821492 = (drawable.getIntrinsicWidth() / 4);
             } //End block
             {
-                int var2619A169F3B5A531F91E617BA41D1854_1310502458 = ((drawable.getIntrinsicWidth() * 3) / 4);
+                int var2619A169F3B5A531F91E617BA41D1854_1096316635 = ((drawable.getIntrinsicWidth() * 3) / 4);
             } //End block
             return dsTaint.getTaintInt();
             // ---------- Original Method ----------
@@ -14360,18 +14389,18 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.196 -0400", hash_original_method = "CA0934B91A8FE7B0CF5B9D9FD475827B", hash_generated_method = "E9D03CDAC5E839440366DE9D32EDDBA1")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:09.737 -0400", hash_original_method = "CA0934B91A8FE7B0CF5B9D9FD475827B", hash_generated_method = "89223C19DD6130CDAB847DBFBC03A761")
         //DSFIXME:  CODE0002: Requires DSC value to be set
         @Override
         public int getCurrentCursorOffset() {
-            int var3A0ADF979623B6D0242973915DBE6180_985864663 = (TextView.this.getSelectionStart());
+            int var3A0ADF979623B6D0242973915DBE6180_856969900 = (TextView.this.getSelectionStart());
             return dsTaint.getTaintInt();
             // ---------- Original Method ----------
             //return TextView.this.getSelectionStart();
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.196 -0400", hash_original_method = "E42DF79873294756C3452434D16E6BD3", hash_generated_method = "399892CDFFAAA7EC784AA9AB0ED3A672")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:09.738 -0400", hash_original_method = "E42DF79873294756C3452434D16E6BD3", hash_generated_method = "F3A933D0589A7E4AC7F5BF66A3EB8267")
         //DSFIXME:  CODE0002: Requires DSC value to be set
         @Override
         public void updateSelection(int offset) {
@@ -14384,7 +14413,7 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.196 -0400", hash_original_method = "7B45D907648A79384D6568EC81E6D22D", hash_generated_method = "565F51CF5B125FB5DDB7043290AAD866")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:09.738 -0400", hash_original_method = "7B45D907648A79384D6568EC81E6D22D", hash_generated_method = "1E3DC4027FEBDBF5D955802D6C1CD849")
         //DSFIXME:  CODE0002: Requires DSC value to be set
         @Override
         public void updatePosition(float x, float y) {
@@ -14392,7 +14421,7 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
             dsTaint.addTaint(x);
             int offset;
             offset = getOffsetForPosition(x, y);
-            final int selectionEnd;
+            int selectionEnd;
             selectionEnd = getSelectionEnd();
             offset = Math.max(0, selectionEnd - 1);
             positionAtCursorOffset(offset, false);
@@ -14404,10 +14433,9 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.196 -0400", hash_original_method = "0C631CE72876F998F945C3B67884BC26", hash_generated_method = "CC63201144CA12F63CAB59055188660E")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:09.738 -0400", hash_original_method = "0C631CE72876F998F945C3B67884BC26", hash_generated_method = "9EDE06A1604962CC2C83E68B74BFB5A4")
         @DSModeled(DSC.SAFE)
         public ActionPopupWindow getActionPopupWindow() {
-            //DSFIXME:  CODE0009: Possible callback target function detected
             return (ActionPopupWindow)dsTaint.getTaint();
             // ---------- Original Method ----------
             //return mActionPopupWindow;
@@ -14420,7 +14448,7 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
     
     private class SelectionEndHandleView extends HandleView {
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.196 -0400", hash_original_method = "883DF21D67E4B772D6E1A322F4D5F533", hash_generated_method = "2F2B86E7D3452DA8B4BEF80FAACC7F6A")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:09.738 -0400", hash_original_method = "883DF21D67E4B772D6E1A322F4D5F533", hash_generated_method = "B9C12CA961205E8310AD3AC00FA948FA")
         //DSFIXME:  CODE0002: Requires DSC value to be set
         public SelectionEndHandleView(Drawable drawableLtr, Drawable drawableRtl) {
             super(drawableLtr, drawableRtl);
@@ -14430,17 +14458,17 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.196 -0400", hash_original_method = "6A8A8B43FF48B8BB585E51FD6E86C9E2", hash_generated_method = "115ADDB549740434D9863F0321B2DA0C")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:09.738 -0400", hash_original_method = "6A8A8B43FF48B8BB585E51FD6E86C9E2", hash_generated_method = "1009DAE46BE88EB8256E0D6758454AC6")
         //DSFIXME:  CODE0002: Requires DSC value to be set
         @Override
         protected int getHotspotX(Drawable drawable, boolean isRtlRun) {
             dsTaint.addTaint(drawable.dsTaint);
             dsTaint.addTaint(isRtlRun);
             {
-                int var2619A169F3B5A531F91E617BA41D1854_1637636839 = ((drawable.getIntrinsicWidth() * 3) / 4);
+                int var2619A169F3B5A531F91E617BA41D1854_1099428960 = ((drawable.getIntrinsicWidth() * 3) / 4);
             } //End block
             {
-                int var825C3AB963C858F505D8A99BED9B8FB2_1956056611 = (drawable.getIntrinsicWidth() / 4);
+                int var825C3AB963C858F505D8A99BED9B8FB2_68028922 = (drawable.getIntrinsicWidth() / 4);
             } //End block
             return dsTaint.getTaintInt();
             // ---------- Original Method ----------
@@ -14452,18 +14480,18 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.196 -0400", hash_original_method = "CA6DDFB8F86FC43076502B090D003904", hash_generated_method = "06A61BAC14E34CCC1BEED6BE3DA25A8D")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:09.738 -0400", hash_original_method = "CA6DDFB8F86FC43076502B090D003904", hash_generated_method = "1A19FBFFF52C42BB61A5449C836E701C")
         //DSFIXME:  CODE0002: Requires DSC value to be set
         @Override
         public int getCurrentCursorOffset() {
-            int varA2E0C17AA3D1EB612E8CF0B487723C9B_1978007365 = (TextView.this.getSelectionEnd());
+            int varA2E0C17AA3D1EB612E8CF0B487723C9B_2092440870 = (TextView.this.getSelectionEnd());
             return dsTaint.getTaintInt();
             // ---------- Original Method ----------
             //return TextView.this.getSelectionEnd();
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.196 -0400", hash_original_method = "B3473CE6965F2521B605BA0101D0A91A", hash_generated_method = "1674E09CE68E77200C9DBA54B1C555A8")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:09.739 -0400", hash_original_method = "B3473CE6965F2521B605BA0101D0A91A", hash_generated_method = "B10E1BAE19CF2FBE423834363DDA6C52")
         //DSFIXME:  CODE0002: Requires DSC value to be set
         @Override
         public void updateSelection(int offset) {
@@ -14476,7 +14504,7 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.196 -0400", hash_original_method = "DE26EB392137324C128BF7B92FEE748A", hash_generated_method = "310C6902389D7CEC390749C0F25DC81D")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:09.739 -0400", hash_original_method = "DE26EB392137324C128BF7B92FEE748A", hash_generated_method = "DBB2170957C976ADC33762DAF76475BD")
         //DSFIXME:  CODE0002: Requires DSC value to be set
         @Override
         public void updatePosition(float x, float y) {
@@ -14484,7 +14512,7 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
             dsTaint.addTaint(x);
             int offset;
             offset = getOffsetForPosition(x, y);
-            final int selectionStart;
+            int selectionStart;
             selectionStart = getSelectionStart();
             offset = Math.min(selectionStart + 1, mText.length());
             positionAtCursorOffset(offset, false);
@@ -14496,10 +14524,9 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.196 -0400", hash_original_method = "1AE0953CF1E401F1791B2AA9D0C762E1", hash_generated_method = "53D70E462F8D513C599C258CFA1A42BD")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:09.739 -0400", hash_original_method = "1AE0953CF1E401F1791B2AA9D0C762E1", hash_generated_method = "66861A9BB34365520B58651783FE8E73")
         @DSModeled(DSC.SAFE)
         public void setActionPopupWindow(ActionPopupWindow actionPopupWindow) {
-            //DSFIXME:  CODE0009: Possible callback target function detected
             dsTaint.addTaint(actionPopupWindow.dsTaint);
             mActionPopupWindow = actionPopupWindow;
             // ---------- Original Method ----------
@@ -14514,7 +14541,13 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
     private class InsertionPointCursorController implements CursorController {
         private InsertionHandleView mHandle;
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.196 -0400", hash_original_method = "5D45AEF69914729B932C554DDDCEB4D3", hash_generated_method = "6526F702C41F0CDD64B51E03268179E7")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:09.739 -0400", hash_original_method = "56353DF7C2219043E1E150689A9219CA", hash_generated_method = "56353DF7C2219043E1E150689A9219CA")
+                public InsertionPointCursorController ()
+        {
+        }
+
+
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:09.739 -0400", hash_original_method = "5D45AEF69914729B932C554DDDCEB4D3", hash_generated_method = "5EA31E88AA733E4213C40495380DD157")
         //DSFIXME:  CODE0002: Requires DSC value to be set
         public void show() {
             getHandle().show();
@@ -14523,18 +14556,17 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.196 -0400", hash_original_method = "BEDA636D814D43341B0837622BB75D12", hash_generated_method = "68118B24FEFC67D1E3FB2A78486F157A")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:09.739 -0400", hash_original_method = "BEDA636D814D43341B0837622BB75D12", hash_generated_method = "16B9CF12A56CC458EBA14E68A570766E")
         //DSFIXME:  CODE0002: Requires DSC value to be set
         public void showWithActionPopup() {
-            //DSFIXME:  CODE0009: Possible callback target function detected
             getHandle().showWithActionPopup();
             // ---------- Original Method ----------
             //getHandle().showWithActionPopup();
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.196 -0400", hash_original_method = "99DAD3C319227F2A1F78AE95D96BD2B3", hash_generated_method = "330FA5E07111BB1FFB47EA09675D6471")
-        @DSModeled(DSC.SAFE)
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:09.740 -0400", hash_original_method = "99DAD3C319227F2A1F78AE95D96BD2B3", hash_generated_method = "1A323EAA6938558E1F65AF39AFB175B6")
+        //DSFIXME:  CODE0002: Requires DSC value to be set
         public void hide() {
             {
                 mHandle.hide();
@@ -14546,8 +14578,8 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.196 -0400", hash_original_method = "43F562659DF9586EE8DC985200A1394B", hash_generated_method = "D40C53B9EE92733D1B4885A879CD7F14")
-        @DSModeled(DSC.SAFE)
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:09.740 -0400", hash_original_method = "43F562659DF9586EE8DC985200A1394B", hash_generated_method = "BF1BF5812957CE2D365CD2A696640B64")
+        //DSFIXME:  CODE0002: Requires DSC value to be set
         public void onTouchModeChanged(boolean isInTouchMode) {
             //DSFIXME:  CODE0009: Possible callback target function detected
             dsTaint.addTaint(isInTouchMode);
@@ -14561,7 +14593,7 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.196 -0400", hash_original_method = "AFBF832B3C2DD5F3EC6366306B6BB027", hash_generated_method = "D9A697D96232CA57CBC380F0BD2F2FB3")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:09.740 -0400", hash_original_method = "AFBF832B3C2DD5F3EC6366306B6BB027", hash_generated_method = "1DFA7F2B8BAA2EB3301D4377D579BE12")
         //DSFIXME:  CODE0002: Requires DSC value to be set
         private InsertionHandleView getHandle() {
             {
@@ -14584,12 +14616,12 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.197 -0400", hash_original_method = "5CA35A7F100FC077200BA56F0D1F67CB", hash_generated_method = "9AE2A541721A940AAE014FF55275810D")
-        @DSModeled(DSC.SAFE)
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:09.740 -0400", hash_original_method = "5CA35A7F100FC077200BA56F0D1F67CB", hash_generated_method = "84ABC3E50DDA92E7C6A044A164C84F3E")
+        //DSFIXME:  CODE0002: Requires DSC value to be set
         @Override
         public void onDetached() {
             //DSFIXME:  CODE0009: Possible callback target function detected
-            final ViewTreeObserver observer;
+            ViewTreeObserver observer;
             observer = getViewTreeObserver();
             observer.removeOnTouchModeChangeListener(this);
             mHandle.onDetached();
@@ -14605,15 +14637,14 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
 
     
     private class SelectionModifierCursorController implements CursorController {
-        private static final int DELAY_BEFORE_REPLACE_ACTION = 200;
         private SelectionStartHandleView mStartHandle;
         private SelectionEndHandleView mEndHandle;
         private int mMinTouchOffset, mMaxTouchOffset;
         private long mPreviousTapUpTime = 0;
         private float mPreviousTapPositionX, mPreviousTapPositionY;
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.197 -0400", hash_original_method = "7762686ED4BD194662F98430835FCC93", hash_generated_method = "8B6ECBF63899EEFB30DBF05E298C6ED7")
-        @DSModeled(DSC.SAFE)
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:09.740 -0400", hash_original_method = "7762686ED4BD194662F98430835FCC93", hash_generated_method = "996EF3777B9152A62DF6DD828F075A23")
+        //DSFIXME:  CODE0002: Requires DSC value to be set
          SelectionModifierCursorController() {
             resetTouchOffsets();
             // ---------- Original Method ----------
@@ -14621,11 +14652,11 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.197 -0400", hash_original_method = "803DF98A86477F9509B518860444CA62", hash_generated_method = "CA20F0453BB64C5EC407E9EB5B6EA2CD")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:09.741 -0400", hash_original_method = "803DF98A86477F9509B518860444CA62", hash_generated_method = "2B42490FB67F41FEEBE1CF99D904B3A0")
         //DSFIXME:  CODE0002: Requires DSC value to be set
         public void show() {
             {
-                boolean var50BDB7CF84FD9415E39B194F38BCA676_616446293 = (isInBatchEditMode());
+                boolean var50BDB7CF84FD9415E39B194F38BCA676_995158704 = (isInBatchEditMode());
             } //End collapsed parenthetic
             initDrawables();
             initHandles();
@@ -14640,7 +14671,7 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.197 -0400", hash_original_method = "2C322B9176F95E96CE86AF105C0AA144", hash_generated_method = "804667F88ABDEBF499ADC8A2ED359FF1")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:09.741 -0400", hash_original_method = "2C322B9176F95E96CE86AF105C0AA144", hash_generated_method = "F631ADBBD886B9722F2546BD7CFF6D80")
         //DSFIXME:  CODE0002: Requires DSC value to be set
         private void initDrawables() {
             {
@@ -14663,7 +14694,7 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.197 -0400", hash_original_method = "C3351664D38EE8E6983EFA56F5011D2A", hash_generated_method = "9EFC2ABE3409537EE115BEF41E297095")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:09.741 -0400", hash_original_method = "C3351664D38EE8E6983EFA56F5011D2A", hash_generated_method = "99C9F2D76A1C7AED04BBBED298E45F37")
         //DSFIXME:  CODE0002: Requires DSC value to be set
         private void initHandles() {
             {
@@ -14692,8 +14723,8 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.198 -0400", hash_original_method = "9904AE40606D29E60FAC10481978E041", hash_generated_method = "3E2DBE4D779E80BCE923DBD22EC8FE5D")
-        @DSModeled(DSC.SAFE)
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:09.742 -0400", hash_original_method = "9904AE40606D29E60FAC10481978E041", hash_generated_method = "3FEAC2D7413111579488390C9577D61B")
+        //DSFIXME:  CODE0002: Requires DSC value to be set
         public void hide() {
             mStartHandle.hide();
             mEndHandle.hide();
@@ -14703,19 +14734,19 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.198 -0400", hash_original_method = "4BB059019645E4258A18514D6F6D1609", hash_generated_method = "0835F05FE9D35FC1D75E7A126849A3FE")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:09.742 -0400", hash_original_method = "4BB059019645E4258A18514D6F6D1609", hash_generated_method = "EDC401B728E98CE5C7BDE5AB498BE2E1")
         //DSFIXME:  CODE0002: Requires DSC value to be set
         public void onTouchEvent(MotionEvent event) {
             //DSFIXME:  CODE0009: Possible callback target function detected
             dsTaint.addTaint(event.dsTaint);
             {
-                Object varF6D597E8558CB9D89114B4B1D82BA68F_92476991 = (event.getActionMasked());
+                Object varF6D597E8558CB9D89114B4B1D82BA68F_828635681 = (event.getActionMasked());
                 //Begin case MotionEvent.ACTION_DOWN 
-                final float x;
+                float x;
                 x = event.getX();
                 //End case MotionEvent.ACTION_DOWN 
                 //Begin case MotionEvent.ACTION_DOWN 
-                final float y;
+                float y;
                 y = event.getY();
                 //End case MotionEvent.ACTION_DOWN 
                 //Begin case MotionEvent.ACTION_DOWN 
@@ -14727,14 +14758,14 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
                 //End case MotionEvent.ACTION_DOWN 
                 //Begin case MotionEvent.ACTION_DOWN 
                 {
-                    boolean varD222D501AFFB3FFBAB7C6BF5A68FBCF1_1966039943 = (duration <= ViewConfiguration.getDoubleTapTimeout() &&
+                    boolean varD222D501AFFB3FFBAB7C6BF5A68FBCF1_35983210 = (duration <= ViewConfiguration.getDoubleTapTimeout() &&
                             isPositionOnText(x, y));
                     {
-                        final float deltaX;
+                        float deltaX;
                         deltaX = x - mPreviousTapPositionX;
-                        final float deltaY;
+                        float deltaY;
                         deltaY = y - mPreviousTapPositionY;
-                        final float distanceSquared;
+                        float distanceSquared;
                         distanceSquared = deltaX * deltaX + deltaY * deltaY;
                         {
                             startSelectionActionMode();
@@ -14751,7 +14782,7 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
                 //End case MotionEvent.ACTION_DOWN 
                 //Begin case MotionEvent.ACTION_POINTER_DOWN MotionEvent.ACTION_POINTER_UP 
                 {
-                    boolean var4F7B392379BD182D25B1AE93077ACAB8_147074658 = (mContext.getPackageManager().hasSystemFeature(
+                    boolean var4F7B392379BD182D25B1AE93077ACAB8_553628298 = (mContext.getPackageManager().hasSystemFeature(
                             PackageManager.FEATURE_TOUCHSCREEN_MULTITOUCH_DISTINCT));
                     {
                         updateMinAndMaxOffsets(event);
@@ -14767,7 +14798,7 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.198 -0400", hash_original_method = "ABEB7C98C3FEAD2725211345FA5A10D0", hash_generated_method = "D0A84514320FE4A222F08EAC7D3D4137")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:09.744 -0400", hash_original_method = "ABEB7C98C3FEAD2725211345FA5A10D0", hash_generated_method = "B8CA34099577603C574C56800B4E5869")
         //DSFIXME:  CODE0002: Requires DSC value to be set
         private void updateMinAndMaxOffsets(MotionEvent event) {
             dsTaint.addTaint(event.dsTaint);
@@ -14793,7 +14824,7 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.198 -0400", hash_original_method = "CE1D6B62E449D2E0E68A6EA4156BEDFA", hash_generated_method = "043B3E3584B1F4D2820AD850DE203578")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:09.744 -0400", hash_original_method = "CE1D6B62E449D2E0E68A6EA4156BEDFA", hash_generated_method = "C61311AE00F37107283CED5AEBBDA27A")
         @DSModeled(DSC.SAFE)
         public int getMinTouchOffset() {
             return dsTaint.getTaintInt();
@@ -14802,7 +14833,7 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.198 -0400", hash_original_method = "C55B3C28483F8C218641DDDF4F4BCFF7", hash_generated_method = "4AE589A0CF00D20A2A37ACF21088B20D")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:09.744 -0400", hash_original_method = "C55B3C28483F8C218641DDDF4F4BCFF7", hash_generated_method = "03389B83346BA3113E9ABC8A106CEE9A")
         @DSModeled(DSC.SAFE)
         public int getMaxTouchOffset() {
             return dsTaint.getTaintInt();
@@ -14811,7 +14842,7 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.198 -0400", hash_original_method = "4C87B6BF406B366B26A5C4FE4B60E794", hash_generated_method = "41D4261163AE655B6BBA89E729DCBA53")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:09.744 -0400", hash_original_method = "4C87B6BF406B366B26A5C4FE4B60E794", hash_generated_method = "9EFAFC374F80667294B5FCC935B7A9C3")
         @DSModeled(DSC.SAFE)
         public void resetTouchOffsets() {
             mMinTouchOffset = mMaxTouchOffset = -1;
@@ -14820,19 +14851,18 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.198 -0400", hash_original_method = "CED25BB71024452A25A320AF88BD1346", hash_generated_method = "E88BC82AFF11A69AB68F72D4E5B09CCA")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:09.745 -0400", hash_original_method = "CED25BB71024452A25A320AF88BD1346", hash_generated_method = "D0C5093600B9DA767AE092316FF7210A")
         //DSFIXME:  CODE0002: Requires DSC value to be set
         public boolean isSelectionStartDragged() {
-            //DSFIXME:  CODE0009: Possible callback target function detected
-            boolean var3AC7E3EAE321C45E3F97AC24793B70E6_1281219941 = (mStartHandle != null && mStartHandle.isDragging());
+            boolean var3AC7E3EAE321C45E3F97AC24793B70E6_583337606 = (mStartHandle != null && mStartHandle.isDragging());
             return dsTaint.getTaintBoolean();
             // ---------- Original Method ----------
             //return mStartHandle != null && mStartHandle.isDragging();
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.198 -0400", hash_original_method = "43F562659DF9586EE8DC985200A1394B", hash_generated_method = "D40C53B9EE92733D1B4885A879CD7F14")
-        @DSModeled(DSC.SAFE)
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:09.745 -0400", hash_original_method = "43F562659DF9586EE8DC985200A1394B", hash_generated_method = "BF1BF5812957CE2D365CD2A696640B64")
+        //DSFIXME:  CODE0002: Requires DSC value to be set
         public void onTouchModeChanged(boolean isInTouchMode) {
             //DSFIXME:  CODE0009: Possible callback target function detected
             dsTaint.addTaint(isInTouchMode);
@@ -14846,12 +14876,12 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:09.198 -0400", hash_original_method = "190B38DD5A1110FFE55D8237DE7DCE67", hash_generated_method = "C7B80B8BFA7990EBC5315F4932112E66")
-        @DSModeled(DSC.SAFE)
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:09.745 -0400", hash_original_method = "190B38DD5A1110FFE55D8237DE7DCE67", hash_generated_method = "67F962F4029D636B40B68A7CC2149A16")
+        //DSFIXME:  CODE0002: Requires DSC value to be set
         @Override
         public void onDetached() {
             //DSFIXME:  CODE0009: Possible callback target function detected
-            final ViewTreeObserver observer;
+            ViewTreeObserver observer;
             observer = getViewTreeObserver();
             observer.removeOnTouchModeChangeListener(this);
             mStartHandle.onDetached();
@@ -14864,6 +14894,7 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
         }
 
         
+        private static final int DELAY_BEFORE_REPLACE_ACTION = 200;
     }
 
 
@@ -14889,12 +14920,45 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
         public void onDetached();
     }
     
+    static final String LOG_TAG = "TextView";
+    static final boolean DEBUG_EXTRACT = false;
+    private static final int PRIORITY = 100;
+    private static final int PREDRAW_NOT_REGISTERED = 0;
+    private static final int PREDRAW_PENDING = 1;
+    private static final int PREDRAW_DONE = 2;
+    private static final int SANS = 1;
+    private static final int SERIF = 2;
+    private static final int MONOSPACE = 3;
+    private static final int SIGNED = 2;
+    private static final int DECIMAL = 4;
+    private static final int MARQUEE_FADE_NORMAL = 0;
+    private static final int MARQUEE_FADE_SWITCH_SHOW_ELLIPSIS = 1;
+    private static final int MARQUEE_FADE_SWITCH_SHOW_FADE = 2;
     static {
         Paint p = new Paint();
         p.setAntiAlias(true);
         p.measureText("H");
     }
     
+    static final int EXTRACT_NOTHING = -2;
+    static final int EXTRACT_UNKNOWN = -1;
+    private static final BoringLayout.Metrics UNKNOWN_BORING = new BoringLayout.Metrics();
+    private static final int ID_SELECT_ALL = android.R.id.selectAll;
+    private static final int ID_CUT = android.R.id.cut;
+    private static final int ID_COPY = android.R.id.copy;
+    private static final int ID_PASTE = android.R.id.paste;
+    private static final int        LINES = 1;
+    private static final int        EMS = LINES;
+    private static final int        PIXELS = 2;
+    private static final RectF      sTempRect = new RectF();
+    private static final float[]    sTmpPosition = new float[2];
+    private static final int        VERY_WIDE = 1024*1024;
+    private static final int        BLINK = 500;
+    private static final int ANIMATED_SCROLL_GAP = 250;
+    private static final InputFilter[] NO_FILTERS = new InputFilter[0];
+    private static final Spanned EMPTY_SPANNED = new SpannedString("");
+    private static int DRAG_SHADOW_MAX_TEXT_LENGTH = 20;
+    private static long sLastCutOrCopyTime;
+    private static final int[] MULTILINE_STATE_SET = { R.attr.state_multiline };
 }
-
 

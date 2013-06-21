@@ -3,27 +3,17 @@ package java.io;
 // Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
+import droidsafe.runtime.*;
 
-// import Iterator to deal with enhanced for loop translation
+// needed for enhanced for control translations
 import java.util.Iterator;
-
 import java.util.Locale;
 
 public class StreamTokenizer {
     public double nval;
     public String sval;
-    public static final int TT_EOF = -1;
-    public static final int TT_EOL = '\n';
-    public static final int TT_NUMBER = -2;
-    public static final int TT_WORD = -3;
-    private static final int TT_UNKNOWN = -4;
     public int ttype = TT_UNKNOWN;
     private byte[] tokenTypes = new byte[256];
-    private static final byte TOKEN_COMMENT = 1;
-    private static final byte TOKEN_QUOTE = 2;
-    private static final byte TOKEN_WHITE = 4;
-    private static final byte TOKEN_WORD = 8;
-    private static final byte TOKEN_DIGIT = 16;
     private int lineNumber = 1;
     private boolean forceLowercase;
     private boolean isEOLSignificant;
@@ -35,8 +25,8 @@ public class StreamTokenizer {
     private Reader inReader;
     private int peekChar = -2;
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:11.701 -0400", hash_original_method = "0C9484F593CC2C76BC0994AA6F883855", hash_generated_method = "0E0636B51ED0CD718142D73A42A1B07C")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:25.329 -0400", hash_original_method = "0C9484F593CC2C76BC0994AA6F883855", hash_generated_method = "BFE199D36DA44C634A3493E1E1F493C8")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     private StreamTokenizer() {
         wordChars('A', 'Z');
         wordChars('a', 'z');
@@ -58,14 +48,14 @@ public class StreamTokenizer {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:11.702 -0400", hash_original_method = "024007D8DD8258E54D25FF7D12CDFD92", hash_generated_method = "FE5B4DDB67E75E314E5C7858AA291C93")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:25.329 -0400", hash_original_method = "024007D8DD8258E54D25FF7D12CDFD92", hash_generated_method = "EA58EAFF3D1E0FDFB49C0E269389F738")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     @Deprecated
     public StreamTokenizer(InputStream is) {
         this();
         dsTaint.addTaint(is.dsTaint);
         {
-            throw new NullPointerException();
+            if (DroidSafeAndroidRuntime.control) throw new NullPointerException();
         } //End block
         // ---------- Original Method ----------
         //if (is == null) {
@@ -75,13 +65,13 @@ public class StreamTokenizer {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:11.702 -0400", hash_original_method = "0EF3862126AC8C7CB18364F21A3441E5", hash_generated_method = "94AABF97DEAB599039BDBE3D03977664")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:25.329 -0400", hash_original_method = "0EF3862126AC8C7CB18364F21A3441E5", hash_generated_method = "5436C5A6A008F7BCDE88B2144AA69423")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public StreamTokenizer(Reader r) {
         this();
         dsTaint.addTaint(r.dsTaint);
         {
-            throw new NullPointerException();
+            if (DroidSafeAndroidRuntime.control) throw new NullPointerException();
         } //End block
         // ---------- Original Method ----------
         //if (r == null) {
@@ -91,7 +81,7 @@ public class StreamTokenizer {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:11.702 -0400", hash_original_method = "E38E4469494A7A375F4DC16613BFC71B", hash_generated_method = "9F5FFFF3EED51D9534DAD074E89B7991")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:25.329 -0400", hash_original_method = "E38E4469494A7A375F4DC16613BFC71B", hash_generated_method = "5C3A11F301AEB8E3957AFB2AE11B56D2")
     @DSModeled(DSC.SAFE)
     public void commentChar(int ch) {
         dsTaint.addTaint(ch);
@@ -105,7 +95,7 @@ public class StreamTokenizer {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:11.702 -0400", hash_original_method = "4574927758DBFC248F61FB44F6B60AD5", hash_generated_method = "4C05EDC3B37713AF37C9F57045BE87C9")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:25.329 -0400", hash_original_method = "4574927758DBFC248F61FB44F6B60AD5", hash_generated_method = "DA793CA2233EF30D794003B5E17FC0A4")
     @DSModeled(DSC.SAFE)
     public void eolIsSignificant(boolean flag) {
         dsTaint.addTaint(flag);
@@ -114,7 +104,7 @@ public class StreamTokenizer {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:11.702 -0400", hash_original_method = "CFD9FB1CAAFA0B398D0DDE009E39DD95", hash_generated_method = "996AD77A23D721A26857D98BF5C4B7E8")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:25.329 -0400", hash_original_method = "CFD9FB1CAAFA0B398D0DDE009E39DD95", hash_generated_method = "98B181D00FA0B2A6B256AD859C457D23")
     @DSModeled(DSC.SAFE)
     public int lineno() {
         return dsTaint.getTaintInt();
@@ -123,7 +113,7 @@ public class StreamTokenizer {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:11.702 -0400", hash_original_method = "C3C8ED01DF0631C29C770DF7973EAB61", hash_generated_method = "1F47BACECEEB1124CC89600BADFAE7BD")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:25.330 -0400", hash_original_method = "C3C8ED01DF0631C29C770DF7973EAB61", hash_generated_method = "8191D8312FBADFA802979F5CB033B54D")
     @DSModeled(DSC.SAFE)
     public void lowerCaseMode(boolean flag) {
         dsTaint.addTaint(flag);
@@ -132,7 +122,7 @@ public class StreamTokenizer {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:11.703 -0400", hash_original_method = "6817D84A74EC2CE0E287784F864856A8", hash_generated_method = "AD748EDFF75C3D43F56B20CE9EC3253C")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:25.332 -0400", hash_original_method = "6817D84A74EC2CE0E287784F864856A8", hash_generated_method = "6929F8B2EBBD914AD48E606A66A32410")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public int nextToken() throws IOException {
         {
@@ -147,31 +137,29 @@ public class StreamTokenizer {
             currentChar = read();
         } //End block
         {
-            int var17C05B32AD394A4CBEBB2B851E4EA4AB_2110376185 = ((ttype = TT_EOF));
+            int var17C05B32AD394A4CBEBB2B851E4EA4AB_27494673 = ((ttype = TT_EOF));
         } //End block
         byte currentType;
         currentType = TOKEN_WORD;
         currentType = tokenTypes[currentChar];
         {
             {
-                lineNumber++;
                 {
                     lastCr = true;
                     peekChar = -2;
-                    int var2F623C72499F8529FA801CB02BFBAD9C_1185772051 = ((ttype = TT_EOL));
+                    int var2F623C72499F8529FA801CB02BFBAD9C_2141786406 = ((ttype = TT_EOL));
                 } //End block
                 {
-                    boolean varCD31E5D361309EFEAEC95C77708754BA_2128295187 = ((currentChar = read()) == '\n');
+                    boolean varCD31E5D361309EFEAEC95C77708754BA_277616485 = ((currentChar = read()) == '\n');
                     {
                         currentChar = read();
                     } //End block
                 } //End collapsed parenthetic
             } //End block
             {
-                lineNumber++;
                 {
                     peekChar = -2;
-                    int var2F623C72499F8529FA801CB02BFBAD9C_953006456 = ((ttype = TT_EOL));
+                    int var2F623C72499F8529FA801CB02BFBAD9C_1146609165 = ((ttype = TT_EOL));
                 } //End block
                 currentChar = read();
             } //End block
@@ -179,7 +167,7 @@ public class StreamTokenizer {
                 currentChar = read();
             } //End block
             {
-                int var061EA61648A946E752E81360A8626CBC_848581025 = ((ttype = TT_EOF));
+                int var061EA61648A946E752E81360A8626CBC_1914330705 = ((ttype = TT_EOF));
             } //End block
             currentType = currentChar > 255 ? TOKEN_WORD
                     : tokenTypes[currentChar];
@@ -199,9 +187,9 @@ public class StreamTokenizer {
             } //End block
             peekChar = currentChar;
             {
-                boolean varB46BEBABFCE2ADF32A4BAE6982576127_816982979 = (checkJustNegative && digits.length() == 1);
+                boolean varB46BEBABFCE2ADF32A4BAE6982576127_512892299 = (checkJustNegative && digits.length() == 1);
                 {
-                    int var1F147751DA2366DB3B63FF702929E5CA_1665882834 = ((ttype = '-'));
+                    int var1F147751DA2366DB3B63FF702929E5CA_1760832610 = ((ttype = '-'));
                 } //End block
             } //End collapsed parenthetic
             try 
@@ -212,7 +200,7 @@ public class StreamTokenizer {
             {
                 nval = 0;
             } //End block
-            int var12F9A9044A4D8A12472DFF66BBC77784_1645281603 = ((ttype = TT_NUMBER));
+            int var12F9A9044A4D8A12472DFF66BBC77784_242845622 = ((ttype = TT_NUMBER));
         } //End block
         {
             StringBuilder word;
@@ -226,7 +214,7 @@ public class StreamTokenizer {
             {
                 sval = sval.toLowerCase(Locale.getDefault());
             } //End block
-            int var1D67CB335E27D24492DE41527B52985A_359650414 = ((ttype = TT_WORD));
+            int var1D67CB335E27D24492DE41527B52985A_557816809 = ((ttype = TT_WORD));
         } //End block
         {
             int matchQuote;
@@ -307,7 +295,7 @@ public class StreamTokenizer {
         } //End block
         {
             {
-                boolean var72FDA29550C5DA6495D00C7F15A9B87A_771522993 = ((currentChar = read()) == '*' && slashStarComments);
+                boolean var72FDA29550C5DA6495D00C7F15A9B87A_760306756 = ((currentChar = read()) == '*' && slashStarComments);
                 {
                     int peekOne;
                     peekOne = read();
@@ -316,54 +304,50 @@ public class StreamTokenizer {
                         peekOne = read();
                         {
                             peekChar = -1;
-                            int var9876CE61C45609B4CCA0BBBEB428CF76_479393895 = ((ttype = TT_EOF));
+                            int var9876CE61C45609B4CCA0BBBEB428CF76_1261889641 = ((ttype = TT_EOF));
                         } //End block
                         {
                             {
                                 peekOne = read();
                             } //End block
-                            lineNumber++;
-                        } //End block
-                        {
-                            lineNumber++;
                         } //End block
                         {
                             peekChar = read();
-                            int var7D5AC34CE07646C4210056D34B004003_2056134482 = (nextToken());
+                            int var7D5AC34CE07646C4210056D34B004003_949839744 = (nextToken());
                         } //End block
                     } //End block
                 } //End block
                 {
                     {
-                        boolean var6F3B1E23367A173B795E7B7019053D39_1042408355 = ((currentChar = read()) >= 0 && currentChar != '\r'
+                        boolean var6F3B1E23367A173B795E7B7019053D39_417676736 = ((currentChar = read()) >= 0 && currentChar != '\r'
                         && currentChar != '\n');
                     } //End collapsed parenthetic
                     peekChar = currentChar;
-                    int var73914B109F928801A1A2BAD2774AFFAC_19857942 = (nextToken());
+                    int var73914B109F928801A1A2BAD2774AFFAC_366346338 = (nextToken());
                 } //End block
                 {
                     peekChar = currentChar;
-                    int var404135D2182227365EE19289C9AAE88B_564818399 = ((ttype = '/'));
+                    int var404135D2182227365EE19289C9AAE88B_1804357395 = ((ttype = '/'));
                 } //End block
             } //End collapsed parenthetic
         } //End block
         {
             {
-                boolean var4CDDE76CAE3442F3A7EDAC9B601E603B_2143700787 = ((currentChar = read()) >= 0 && currentChar != '\r'
+                boolean var4CDDE76CAE3442F3A7EDAC9B601E603B_205197561 = ((currentChar = read()) >= 0 && currentChar != '\r'
                     && currentChar != '\n');
             } //End collapsed parenthetic
             peekChar = currentChar;
-            int varE9995CE7B76BA31C319036288CB615F9_1450194603 = (nextToken());
+            int varE9995CE7B76BA31C319036288CB615F9_1191733418 = (nextToken());
         } //End block
         peekChar = read();
-        int varE630A50255FA0F6D82561A4E33322DC6_44061663 = ((ttype = currentChar));
+        int varE630A50255FA0F6D82561A4E33322DC6_664887432 = ((ttype = currentChar));
         return dsTaint.getTaintInt();
         // ---------- Original Method ----------
         // Original Method Too Long, Refer to Original Implementation
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:11.704 -0400", hash_original_method = "F56215932CA46446CC1F49421E19E4D4", hash_generated_method = "BEF269970B9A3924135A6C14BC5F8CDA")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:25.333 -0400", hash_original_method = "F56215932CA46446CC1F49421E19E4D4", hash_generated_method = "04B6171B021B83569E6254D16B37CD42")
     @DSModeled(DSC.SAFE)
     public void ordinaryChar(int ch) {
         dsTaint.addTaint(ch);
@@ -377,7 +361,7 @@ public class StreamTokenizer {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:11.704 -0400", hash_original_method = "022AE8E9D3C39CFDE89A16E6E6C68B23", hash_generated_method = "09D7DFD158449A04C366AFCDE6429F17")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:25.334 -0400", hash_original_method = "022AE8E9D3C39CFDE89A16E6E6C68B23", hash_generated_method = "D72ACE5F5EA4D29921AEF4F4C2DAEC4E")
     @DSModeled(DSC.SAFE)
     public void ordinaryChars(int low, int hi) {
         dsTaint.addTaint(hi);
@@ -408,7 +392,7 @@ public class StreamTokenizer {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:11.704 -0400", hash_original_method = "F9A1AE339D1E856A34C84852283E0CEC", hash_generated_method = "DA3C6EA03BEED1CC68A0162B1E686086")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:25.335 -0400", hash_original_method = "F9A1AE339D1E856A34C84852283E0CEC", hash_generated_method = "737F0FC3780F20EE288C2019D4F43260")
     @DSModeled(DSC.SAFE)
     public void parseNumbers() {
         {
@@ -429,7 +413,7 @@ public class StreamTokenizer {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:11.704 -0400", hash_original_method = "60DC1125C539441B12106C43E5B596F1", hash_generated_method = "C1F7CBC6AD720EABBEE9DFB8822C0418")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:25.335 -0400", hash_original_method = "60DC1125C539441B12106C43E5B596F1", hash_generated_method = "A3EF001CA6E665A21C1D9FF188DBBDB5")
     @DSModeled(DSC.SAFE)
     public void pushBack() {
         pushBackToken = true;
@@ -438,7 +422,7 @@ public class StreamTokenizer {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:11.704 -0400", hash_original_method = "9CC8FE0D7A922378FBAE42482AA646D9", hash_generated_method = "AD7D7730EEAB10EDC3787550A7489C6C")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:25.335 -0400", hash_original_method = "9CC8FE0D7A922378FBAE42482AA646D9", hash_generated_method = "67D3B042006CCBA18CFBA5DB4400C1E2")
     @DSModeled(DSC.SAFE)
     public void quoteChar(int ch) {
         dsTaint.addTaint(ch);
@@ -452,13 +436,13 @@ public class StreamTokenizer {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:11.704 -0400", hash_original_method = "056CD8A5FA209600CEBA1D62E49B6620", hash_generated_method = "ABE557AA66B10B0C66285070536448D4")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:25.336 -0400", hash_original_method = "056CD8A5FA209600CEBA1D62E49B6620", hash_generated_method = "37F52D6754F7D562E22D9C53FCFFEA5F")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     private int read() throws IOException {
         {
-            int varC4C6DAE5422CCF4C0F11D932EDC135E6_1134482028 = (inReader.read());
+            int varC4C6DAE5422CCF4C0F11D932EDC135E6_1665258418 = (inReader.read());
         } //End block
-        int var00673B8227E32F75A138B89CA02A0FA2_947983479 = (inStream.read());
+        int var00673B8227E32F75A138B89CA02A0FA2_1241572901 = (inStream.read());
         return dsTaint.getTaintInt();
         // ---------- Original Method ----------
         //if (inStream == null) {
@@ -468,7 +452,7 @@ public class StreamTokenizer {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:11.704 -0400", hash_original_method = "2D6865C117A48D63E7E9EC7F43B1136B", hash_generated_method = "223D3CF545BE05AB71B6FFBABF67BDA0")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:25.336 -0400", hash_original_method = "2D6865C117A48D63E7E9EC7F43B1136B", hash_generated_method = "54201012E0B04CC1DDAFF46E938942E9")
     @DSModeled(DSC.SAFE)
     public void resetSyntax() {
         {
@@ -485,7 +469,7 @@ public class StreamTokenizer {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:11.704 -0400", hash_original_method = "0BBEE324D353623AAF036FC109969157", hash_generated_method = "579F20DB99BD44755715BF87274D699D")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:25.336 -0400", hash_original_method = "0BBEE324D353623AAF036FC109969157", hash_generated_method = "98C28A83D067D1D0356809CA862BFFBA")
     @DSModeled(DSC.SAFE)
     public void slashSlashComments(boolean flag) {
         dsTaint.addTaint(flag);
@@ -494,7 +478,7 @@ public class StreamTokenizer {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:11.704 -0400", hash_original_method = "73AA04832C7FF855283D30769102DB3E", hash_generated_method = "ABDA8B66D9BD88DF5B3AFE6B803F463C")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:25.336 -0400", hash_original_method = "73AA04832C7FF855283D30769102DB3E", hash_generated_method = "DB6A67824AEC5EE472E8D278E1F1B406")
     @DSModeled(DSC.SAFE)
     public void slashStarComments(boolean flag) {
         dsTaint.addTaint(flag);
@@ -503,7 +487,7 @@ public class StreamTokenizer {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:11.704 -0400", hash_original_method = "00DF77F4EAECB68BC1742A03B5A51C8E", hash_generated_method = "0B73BF69FC6DB0F093C5826DFC2F1313")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:25.336 -0400", hash_original_method = "00DF77F4EAECB68BC1742A03B5A51C8E", hash_generated_method = "F2B456077F0CBB1AA1AE98503FCF7FFF")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     @Override
     public String toString() {
@@ -537,14 +521,14 @@ public class StreamTokenizer {
         //End case default 
         result.append("], line ");
         result.append(lineNumber);
-        String varEA70154FDA28CC59402440C6317B57EF_1197754212 = (result.toString());
+        String varEA70154FDA28CC59402440C6317B57EF_1594795241 = (result.toString());
         return dsTaint.getTaintString();
         // ---------- Original Method ----------
         // Original Method Too Long, Refer to Original Implementation
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:11.704 -0400", hash_original_method = "70A99B8CFA2D4FEC72EA62C54EC3FE21", hash_generated_method = "92D14286C5958D6DBFBE7BF0B35942CA")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:25.337 -0400", hash_original_method = "70A99B8CFA2D4FEC72EA62C54EC3FE21", hash_generated_method = "088A6A800DD8F7408C89DF962C5A18B6")
     @DSModeled(DSC.SAFE)
     public void whitespaceChars(int low, int hi) {
         dsTaint.addTaint(hi);
@@ -575,7 +559,7 @@ public class StreamTokenizer {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:11.705 -0400", hash_original_method = "CCF6D4E2D65BDFCC5D3A11ED629A7633", hash_generated_method = "6CA50924A180D0C06682E086EF11B22E")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:25.337 -0400", hash_original_method = "CCF6D4E2D65BDFCC5D3A11ED629A7633", hash_generated_method = "14DC45A7D2EDC0E278FBC5B76BEFFED7")
     @DSModeled(DSC.SAFE)
     public void wordChars(int low, int hi) {
         dsTaint.addTaint(hi);
@@ -606,6 +590,15 @@ public class StreamTokenizer {
     }
 
     
+    public static final int TT_EOF = -1;
+    public static final int TT_EOL = '\n';
+    public static final int TT_NUMBER = -2;
+    public static final int TT_WORD = -3;
+    private static final int TT_UNKNOWN = -4;
+    private static final byte TOKEN_COMMENT = 1;
+    private static final byte TOKEN_QUOTE = 2;
+    private static final byte TOKEN_WHITE = 4;
+    private static final byte TOKEN_WORD = 8;
+    private static final byte TOKEN_DIGIT = 16;
 }
-
 

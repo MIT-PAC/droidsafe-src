@@ -3,16 +3,21 @@ package libcore.internal;
 // Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
+import droidsafe.runtime.*;
 
-// import Iterator to deal with enhanced for loop translation
+// needed for enhanced for control translations
 import java.util.Iterator;
 
-
 public final class StringPool {
-    private final String[] pool = new String[512];
+    private String[] pool = new String[512];
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:17.430 -0400", hash_original_method = "9B32FE5AB257BF8F1743169E9DF2009F", hash_generated_method = "A73EDA67461E9FEFF0B0297D0C357EB1")
-    private static boolean contentEquals(String s, char[] chars, int start, int length) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:38.760 -0400", hash_original_method = "749941B62E4E8DBDE326146B3D9E4EF8", hash_generated_method = "749941B62E4E8DBDE326146B3D9E4EF8")
+        public StringPool ()
+    {
+    }
+
+
+        private static boolean contentEquals(String s, char[] chars, int start, int length) {
         if (s.length() != length) {
             return false;
         }
@@ -25,12 +30,12 @@ public final class StringPool {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:17.430 -0400", hash_original_method = "84455256120C340B9F8A0E1FDB3B796B", hash_generated_method = "7C8E2BBC19C4A4C01E10669EA9894063")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:38.760 -0400", hash_original_method = "84455256120C340B9F8A0E1FDB3B796B", hash_generated_method = "8FC069FAFA27F23D0E0F6300B8C55EC6")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public String get(char[] array, int start, int length) {
         dsTaint.addTaint(start);
         dsTaint.addTaint(length);
-        dsTaint.addTaint(array);
+        dsTaint.addTaint(array[0]);
         int hashCode;
         hashCode = 0;
         {
@@ -47,7 +52,7 @@ public final class StringPool {
         String pooled;
         pooled = pool[index];
         {
-            boolean var0E29A3BBD67CCC228CA6E68E863F0F24_148518681 = (pooled != null && contentEquals(pooled, array, start, length));
+            boolean var0E29A3BBD67CCC228CA6E68E863F0F24_2100474955 = (pooled != null && contentEquals(pooled, array, start, length));
         } //End collapsed parenthetic
         String result;
         result = new String(array, start, length);
@@ -72,5 +77,4 @@ public final class StringPool {
 
     
 }
-
 

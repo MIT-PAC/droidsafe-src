@@ -9,7 +9,6 @@ import droidsafe.runtime.*;
 import java.util.Iterator;
 
 public abstract class Buffer {
-    static int UNSET_MARK = -1;
     int capacity;
     int limit;
     int mark = UNSET_MARK;
@@ -18,11 +17,11 @@ public abstract class Buffer {
     int effectiveDirectAddress;
     MemoryBlock block;
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 12:51:05.269 -0400", hash_original_method = "2FDB6310072AD349AB73186351A07476", hash_generated_method = "E49AC8F44059F9D9124AEEB2FC82C47A")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:28.460 -0400", hash_original_method = "2FDB6310072AD349AB73186351A07476", hash_generated_method = "040BC15D3D7883134A5BFDCC17AFA81E")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
      Buffer(int elementSizeShift, int capacity, MemoryBlock block) {
-        dsTaint.addTaint(capacity);
         dsTaint.addTaint(block.dsTaint);
+        dsTaint.addTaint(capacity);
         dsTaint.addTaint(elementSizeShift);
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("capacity < 0: " + capacity);
@@ -44,7 +43,7 @@ public abstract class Buffer {
     public abstract int arrayOffset();
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 12:51:05.296 -0400", hash_original_method = "BDE11E8E3D76C140A59ECD57AE712B97", hash_generated_method = "82773967EE05FCB1991AEE782EFF592B")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:28.460 -0400", hash_original_method = "BDE11E8E3D76C140A59ECD57AE712B97", hash_generated_method = "6430ACE1430AB9BF6CF2288048933EBB")
     @DSModeled(DSC.SAFE)
     public final int capacity() {
         return dsTaint.getTaintInt();
@@ -53,8 +52,8 @@ public abstract class Buffer {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 12:51:05.299 -0400", hash_original_method = "3713E0ECC304C61FA995548AAE6F6858", hash_generated_method = "6C3560C1CA15CAD1C5C53443447C949D")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:28.460 -0400", hash_original_method = "3713E0ECC304C61FA995548AAE6F6858", hash_generated_method = "52A50EDD8A93B4C2C140D7F87731C97E")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
      void checkIndex(int index) {
         dsTaint.addTaint(index);
         {
@@ -67,8 +66,8 @@ public abstract class Buffer {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 12:51:05.320 -0400", hash_original_method = "E27C706F4FA27A5F90FA0BA455FA267B", hash_generated_method = "D6B582A9EDC034D6A24D36D250B4D7D7")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:28.460 -0400", hash_original_method = "E27C706F4FA27A5F90FA0BA455FA267B", hash_generated_method = "D5856BBE543C3F460323531AD0F8797E")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
      void checkIndex(int index, int sizeOfType) {
         dsTaint.addTaint(index);
         dsTaint.addTaint(sizeOfType);
@@ -84,11 +83,11 @@ public abstract class Buffer {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 12:51:05.356 -0400", hash_original_method = "BA880ED8E3C58CA5885B3C340E7A6A66", hash_generated_method = "E34B859FAE4420E703C88670B3443DC2")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:28.461 -0400", hash_original_method = "BA880ED8E3C58CA5885B3C340E7A6A66", hash_generated_method = "0C14F4F4E1A4369B9F9F921492ED972E")
     //DSFIXME:  CODE0002: Requires DSC value to be set
      int checkGetBounds(int bytesPerElement, int length, int offset, int count) {
-        dsTaint.addTaint(bytesPerElement);
         dsTaint.addTaint(count);
+        dsTaint.addTaint(bytesPerElement);
         dsTaint.addTaint(length);
         dsTaint.addTaint(offset);
         int byteCount;
@@ -98,7 +97,7 @@ public abstract class Buffer {
                     ", count=" + count + ", length=" + length);
         } //End block
         {
-            boolean varB9787195162C3B0FEC3FB85BC4A74CE2_1078257632 = (byteCount > remaining());
+            boolean varB9787195162C3B0FEC3FB85BC4A74CE2_800709912 = (byteCount > remaining());
             {
                 if (DroidSafeAndroidRuntime.control) throw new BufferUnderflowException();
             } //End block
@@ -117,11 +116,11 @@ public abstract class Buffer {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 12:51:05.375 -0400", hash_original_method = "A9251187BC2FC71988179BCFBD0F334A", hash_generated_method = "2A03CECC8F1AC605B33330AE1F95FA32")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:28.461 -0400", hash_original_method = "A9251187BC2FC71988179BCFBD0F334A", hash_generated_method = "BFD7570C4686072E56DC066FAFFD4E64")
     //DSFIXME:  CODE0002: Requires DSC value to be set
      int checkPutBounds(int bytesPerElement, int length, int offset, int count) {
-        dsTaint.addTaint(bytesPerElement);
         dsTaint.addTaint(count);
+        dsTaint.addTaint(bytesPerElement);
         dsTaint.addTaint(length);
         dsTaint.addTaint(offset);
         int byteCount;
@@ -131,13 +130,13 @@ public abstract class Buffer {
                     ", count=" + count + ", length=" + length);
         } //End block
         {
-            boolean varB9787195162C3B0FEC3FB85BC4A74CE2_464424790 = (byteCount > remaining());
+            boolean varB9787195162C3B0FEC3FB85BC4A74CE2_1047914720 = (byteCount > remaining());
             {
                 if (DroidSafeAndroidRuntime.control) throw new BufferOverflowException();
             } //End block
         } //End collapsed parenthetic
         {
-            boolean varAC4B8D6BC6438967D655421106AB549D_1301275222 = (isReadOnly());
+            boolean varAC4B8D6BC6438967D655421106AB549D_286767179 = (isReadOnly());
             {
                 if (DroidSafeAndroidRuntime.control) throw new ReadOnlyBufferException();
             } //End block
@@ -159,13 +158,13 @@ public abstract class Buffer {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 12:51:05.406 -0400", hash_original_method = "37F8609F5279E5BC0D8BC318C47B5ADC", hash_generated_method = "895191D037CCBECB79AE76FFB53B81AD")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:28.461 -0400", hash_original_method = "37F8609F5279E5BC0D8BC318C47B5ADC", hash_generated_method = "39CAA16F9C15FC7C45915A9D0059970C")
     //DSFIXME:  CODE0002: Requires DSC value to be set
      void checkStartEndRemaining(int start, int end) {
         dsTaint.addTaint(start);
         dsTaint.addTaint(end);
         {
-            boolean varE1A6830CB4AFEE77D5B9A4BD05B2AA83_1202379183 = (end < start || start < 0 || end > remaining());
+            boolean varE1A6830CB4AFEE77D5B9A4BD05B2AA83_828457530 = (end < start || start < 0 || end > remaining());
             {
                 if (DroidSafeAndroidRuntime.control) throw new IndexOutOfBoundsException("start=" + start + ", end=" + end +
                     ", remaining()=" + remaining());
@@ -179,7 +178,7 @@ public abstract class Buffer {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 12:51:05.418 -0400", hash_original_method = "7210DA7B6C2A4BE4693F950CE68DF306", hash_generated_method = "B41FF19A7CD3F9B80D09C52DFA0C6D6E")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:28.462 -0400", hash_original_method = "7210DA7B6C2A4BE4693F950CE68DF306", hash_generated_method = "6B7E288F63FFD22775A69891468EAADE")
     @DSModeled(DSC.SAFE)
     public final Buffer clear() {
         position = 0;
@@ -194,7 +193,7 @@ public abstract class Buffer {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 12:51:05.430 -0400", hash_original_method = "A8519E3C9C4A5F3DEEC9F7CACEDF020E", hash_generated_method = "49E7C91BA34FB6DBA33E7075A269C9F4")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:28.463 -0400", hash_original_method = "A8519E3C9C4A5F3DEEC9F7CACEDF020E", hash_generated_method = "0E4B453C945E4DF60B540D8A405E5341")
     @DSModeled(DSC.SAFE)
     public final Buffer flip() {
         limit = position;
@@ -212,7 +211,7 @@ public abstract class Buffer {
     public abstract boolean hasArray();
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 12:51:05.476 -0400", hash_original_method = "13F7C083DDE22C46FB0AD1170426F423", hash_generated_method = "A5B0E2175E01924BF907FE3AB8023642")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:28.463 -0400", hash_original_method = "13F7C083DDE22C46FB0AD1170426F423", hash_generated_method = "6E47EE9979240433A915412EB4DE24D1")
     @DSModeled(DSC.SAFE)
     public final boolean hasRemaining() {
         return dsTaint.getTaintBoolean();
@@ -227,11 +226,11 @@ public abstract class Buffer {
     public abstract boolean isReadOnly();
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 12:51:05.491 -0400", hash_original_method = "08F9CA73B929B3F2D88417804C3457BC", hash_generated_method = "F6D81024D3663D3710C567A323F850B2")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:28.464 -0400", hash_original_method = "08F9CA73B929B3F2D88417804C3457BC", hash_generated_method = "400D4A5239B57C144609B2CDA2BD86EC")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     final void checkWritable() {
         {
-            boolean varAC4B8D6BC6438967D655421106AB549D_349159965 = (isReadOnly());
+            boolean varAC4B8D6BC6438967D655421106AB549D_98657394 = (isReadOnly());
             {
                 if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("read-only buffer");
             } //End block
@@ -243,7 +242,7 @@ public abstract class Buffer {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 12:51:05.500 -0400", hash_original_method = "D5C1223BE3A23A4695C92DD81173DEDC", hash_generated_method = "E493CEA9A33BDAE9C82A85F17A9F7628")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:28.464 -0400", hash_original_method = "D5C1223BE3A23A4695C92DD81173DEDC", hash_generated_method = "3163E2E04C8C39D864A93BAF913AF9A8")
     @DSModeled(DSC.SAFE)
     public final int limit() {
         return dsTaint.getTaintInt();
@@ -252,8 +251,8 @@ public abstract class Buffer {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 12:51:05.512 -0400", hash_original_method = "44A9FE5FA1BE9CFEEC46842C8860150F", hash_generated_method = "F166543204F8C3976C469F66BA9983D8")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:28.464 -0400", hash_original_method = "44A9FE5FA1BE9CFEEC46842C8860150F", hash_generated_method = "1CD3AE87186E8031785B4DC230DBD1D9")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     public final Buffer limit(int newLimit) {
         dsTaint.addTaint(newLimit);
         limitImpl(newLimit);
@@ -264,8 +263,8 @@ public abstract class Buffer {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 12:51:05.536 -0400", hash_original_method = "513739890B0FB1849008B6B4DB830FEC", hash_generated_method = "7D25E37E475B2C98797CA34D4479B3DA")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:28.465 -0400", hash_original_method = "513739890B0FB1849008B6B4DB830FEC", hash_generated_method = "5DFEBDB8CAE5687A489BC015068727E5")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
      void limitImpl(int newLimit) {
         dsTaint.addTaint(newLimit);
         {
@@ -288,7 +287,7 @@ public abstract class Buffer {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 12:51:05.553 -0400", hash_original_method = "A81425374E4EA5264849380D40913956", hash_generated_method = "48BCC97AE60CE545A428C42067688613")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:28.465 -0400", hash_original_method = "A81425374E4EA5264849380D40913956", hash_generated_method = "E2A47DCD22FFF012C6F1BC3D4104C393")
     @DSModeled(DSC.SAFE)
     public final Buffer mark() {
         mark = position;
@@ -299,7 +298,7 @@ public abstract class Buffer {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 12:51:05.561 -0400", hash_original_method = "DAD201A4DC24D53E1106EBA819979825", hash_generated_method = "F4F529FE3DBEAA043F76E4773DC61729")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:28.465 -0400", hash_original_method = "DAD201A4DC24D53E1106EBA819979825", hash_generated_method = "903CD85BE6330DEE691F840ACC1AEF3E")
     @DSModeled(DSC.SAFE)
     public final int position() {
         return dsTaint.getTaintInt();
@@ -308,8 +307,8 @@ public abstract class Buffer {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 12:51:05.569 -0400", hash_original_method = "E134461CBBE71A88508EDF7172D7480E", hash_generated_method = "F640B3484871E3602BA53516BF9BF35A")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:28.465 -0400", hash_original_method = "E134461CBBE71A88508EDF7172D7480E", hash_generated_method = "A20A2C5E9B8E1413B9DC778C4554476A")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     public final Buffer position(int newPosition) {
         dsTaint.addTaint(newPosition);
         positionImpl(newPosition);
@@ -320,10 +319,9 @@ public abstract class Buffer {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 12:51:05.583 -0400", hash_original_method = "291AA3CEE66D23BDF7C966DCE30CC485", hash_generated_method = "09BBDE0F6B509F9BE38167842F03CE17")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:28.466 -0400", hash_original_method = "291AA3CEE66D23BDF7C966DCE30CC485", hash_generated_method = "AFA177C6BE712341D4FA18A9DB5FBA19")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
      void positionImpl(int newPosition) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
         dsTaint.addTaint(newPosition);
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("Bad position (limit " + limit + "): " + newPosition);
@@ -342,7 +340,7 @@ public abstract class Buffer {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 12:51:05.599 -0400", hash_original_method = "BFA4599854F3739E9A14ABA863ADA9FF", hash_generated_method = "1E29B539F191FF4AEEDD7859E63D2C0B")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:28.466 -0400", hash_original_method = "BFA4599854F3739E9A14ABA863ADA9FF", hash_generated_method = "C9DD8A18C26A3EF0057698ED454F5BCF")
     @DSModeled(DSC.SAFE)
     public final int remaining() {
         return dsTaint.getTaintInt();
@@ -351,8 +349,8 @@ public abstract class Buffer {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 12:51:05.608 -0400", hash_original_method = "2BE1864DF6C90B2A62411C9F7C095DEC", hash_generated_method = "2559DAC301C7846BD6452F423CEC13DA")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:28.466 -0400", hash_original_method = "2BE1864DF6C90B2A62411C9F7C095DEC", hash_generated_method = "CA91CA1C07C3F7C835F56E37251F5F6C")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     public final Buffer reset() {
         {
             if (DroidSafeAndroidRuntime.control) throw new InvalidMarkException("Mark not set");
@@ -368,7 +366,7 @@ public abstract class Buffer {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 12:51:05.621 -0400", hash_original_method = "533909B48B402AC142AA1672CC89D5CC", hash_generated_method = "0C960E9B8F5E7005E86B5BE1B3C2CC4B")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:28.466 -0400", hash_original_method = "533909B48B402AC142AA1672CC89D5CC", hash_generated_method = "935B957A3173C3197ACB469C6D4D3FEF")
     @DSModeled(DSC.SAFE)
     public final Buffer rewind() {
         position = 0;
@@ -381,7 +379,7 @@ public abstract class Buffer {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 12:51:05.635 -0400", hash_original_method = "E469E128CB7197E7BD730454D1CDC172", hash_generated_method = "575618DAD429DEE6C205384799F4DA85")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:28.466 -0400", hash_original_method = "E469E128CB7197E7BD730454D1CDC172", hash_generated_method = "66C7A26CB1D27AFBC1970AE9843BE122")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     @Override
     public String toString() {
@@ -394,7 +392,7 @@ public abstract class Buffer {
         buf.append(position);
         buf.append(" limit=");
         buf.append(limit);
-        String var0C174602EFE4BFBCB80A7056CFA680FB_1464753162 = (buf.toString());
+        String var0C174602EFE4BFBCB80A7056CFA680FB_391929303 = (buf.toString());
         return dsTaint.getTaintString();
         // ---------- Original Method ----------
         //StringBuilder buf = new StringBuilder();
@@ -409,6 +407,6 @@ public abstract class Buffer {
     }
 
     
+    static final int UNSET_MARK = -1;
 }
-
 

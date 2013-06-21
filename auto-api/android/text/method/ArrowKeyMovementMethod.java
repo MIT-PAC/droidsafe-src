@@ -3,10 +3,10 @@ package android.text.method;
 // Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
+import droidsafe.runtime.*;
 
-// import Iterator to deal with enhanced for loop translation
+// needed for enhanced for control translations
 import java.util.Iterator;
-
 import android.graphics.Rect;
 import android.text.Layout;
 import android.text.Selection;
@@ -17,30 +17,31 @@ import android.view.View;
 import android.widget.TextView;
 
 public class ArrowKeyMovementMethod extends BaseMovementMethod implements MovementMethod {
-    private static final Object LAST_TAP_DOWN = new Object();
-    private static ArrowKeyMovementMethod sInstance;
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:04.034 -0400", hash_original_method = "10FB2C5181FC75DCDE827D6825AC823C", hash_generated_method = "3DF60ED1FB680D7B0FC31C6971FBC7AB")
-    private static boolean isSelecting(Spannable buffer) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:57.152 -0400", hash_original_method = "00448DD508D672AB35F41320ACE4EDF0", hash_generated_method = "00448DD508D672AB35F41320ACE4EDF0")
+        public ArrowKeyMovementMethod ()
+    {
+    }
+
+
+        private static boolean isSelecting(Spannable buffer) {
         return ((MetaKeyKeyListener.getMetaState(buffer, MetaKeyKeyListener.META_SHIFT_ON) == 1) ||
                 (MetaKeyKeyListener.getMetaState(buffer, MetaKeyKeyListener.META_SELECTING) != 0));
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:04.034 -0400", hash_original_method = "B32CF67C9FC1D2460F3CDAFFC02432C6", hash_generated_method = "E50627C444B7462E735DEC4717099E16")
-    private static int getCurrentLineTop(Spannable buffer, Layout layout) {
+        private static int getCurrentLineTop(Spannable buffer, Layout layout) {
         return layout.getLineTop(layout.getLineForOffset(Selection.getSelectionEnd(buffer)));
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:04.034 -0400", hash_original_method = "198FB1E56D73131196EB8E515A75F310", hash_generated_method = "C1537F7EF88680ACCCDC57FFB5D8EC81")
-    private static int getPageHeight(TextView widget) {
+        private static int getPageHeight(TextView widget) {
         final Rect rect = new Rect();
         return widget.getGlobalVisibleRect(rect) ? rect.height() : 0;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:04.034 -0400", hash_original_method = "71AB0E1C222F7165F2E5407A96AE4AA1", hash_generated_method = "FFAA5D3B000E61732FE969ACDAC3FBD3")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:57.153 -0400", hash_original_method = "71AB0E1C222F7165F2E5407A96AE4AA1", hash_generated_method = "4DBCB24FE4BE8C8F971F1F4CDE9EEA2A")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     @Override
     protected boolean handleMovementKey(TextView widget, Spannable buffer, int keyCode,
@@ -52,21 +53,21 @@ public class ArrowKeyMovementMethod extends BaseMovementMethod implements Moveme
         dsTaint.addTaint(movementMetaState);
         //Begin case KeyEvent.KEYCODE_DPAD_CENTER 
         {
-            boolean varD311727E65FDD806D61A6271FF483A84_1021770688 = (KeyEvent.metaStateHasNoModifiers(movementMetaState));
+            boolean varD311727E65FDD806D61A6271FF483A84_1050004621 = (KeyEvent.metaStateHasNoModifiers(movementMetaState));
             {
                 {
-                    boolean var76939DA1EC207A63458F74083CB75919_48615703 = (event.getAction() == KeyEvent.ACTION_DOWN
+                    boolean var76939DA1EC207A63458F74083CB75919_272007739 = (event.getAction() == KeyEvent.ACTION_DOWN
                             && event.getRepeatCount() == 0
                             && MetaKeyKeyListener.getMetaState(buffer,
                                         MetaKeyKeyListener.META_SELECTING) != 0);
                     {
-                        boolean var73B0288BF23C1878DD5D23C7B8DE645A_1562273167 = (widget.showContextMenu());
+                        boolean var73B0288BF23C1878DD5D23C7B8DE645A_732991189 = (widget.showContextMenu());
                     } //End block
                 } //End collapsed parenthetic
             } //End block
         } //End collapsed parenthetic
         //End case KeyEvent.KEYCODE_DPAD_CENTER 
-        boolean varB3AE6E56434D9D50711491B13D9952B2_1760566137 = (super.handleMovementKey(widget, buffer, keyCode, movementMetaState, event));
+        boolean varB3AE6E56434D9D50711491B13D9952B2_2076542695 = (super.handleMovementKey(widget, buffer, keyCode, movementMetaState, event));
         return dsTaint.getTaintBoolean();
         // ---------- Original Method ----------
         //switch (keyCode) {
@@ -85,21 +86,21 @@ public class ArrowKeyMovementMethod extends BaseMovementMethod implements Moveme
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:04.034 -0400", hash_original_method = "EF44D7EB21450A63AD253DA49BF056E0", hash_generated_method = "06B21ECFDAB7151FC7C5EA45E06DDD71")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:57.153 -0400", hash_original_method = "EF44D7EB21450A63AD253DA49BF056E0", hash_generated_method = "1CF8C843D4EC80113924C213D7A8FF07")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     @Override
     protected boolean left(TextView widget, Spannable buffer) {
         dsTaint.addTaint(buffer.dsTaint);
         dsTaint.addTaint(widget.dsTaint);
-        final Layout layout;
+        Layout layout;
         layout = widget.getLayout();
         {
-            boolean varA39AC56FA77F4727AD58F987600717C2_1999045536 = (isSelecting(buffer));
+            boolean varA39AC56FA77F4727AD58F987600717C2_1407356821 = (isSelecting(buffer));
             {
-                boolean varCDC07301B68653E82EF77D5D3E7D066F_805465013 = (Selection.extendLeft(buffer, layout));
+                boolean varCDC07301B68653E82EF77D5D3E7D066F_925378855 = (Selection.extendLeft(buffer, layout));
             } //End block
             {
-                boolean varC4BF08D777B0A042F49FED3028D7D05A_544009416 = (Selection.moveLeft(buffer, layout));
+                boolean varC4BF08D777B0A042F49FED3028D7D05A_1272986221 = (Selection.moveLeft(buffer, layout));
             } //End block
         } //End collapsed parenthetic
         return dsTaint.getTaintBoolean();
@@ -113,21 +114,21 @@ public class ArrowKeyMovementMethod extends BaseMovementMethod implements Moveme
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:04.034 -0400", hash_original_method = "B7F7970A1171CA8F77BB045891103F0E", hash_generated_method = "D1F3BBC5DA79E72D7FF22F5307EBBF10")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:57.154 -0400", hash_original_method = "B7F7970A1171CA8F77BB045891103F0E", hash_generated_method = "9577AB23EE76E1FFDAF55F014B4BB36A")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     @Override
     protected boolean right(TextView widget, Spannable buffer) {
         dsTaint.addTaint(buffer.dsTaint);
         dsTaint.addTaint(widget.dsTaint);
-        final Layout layout;
+        Layout layout;
         layout = widget.getLayout();
         {
-            boolean varA39AC56FA77F4727AD58F987600717C2_2039044690 = (isSelecting(buffer));
+            boolean varA39AC56FA77F4727AD58F987600717C2_725727064 = (isSelecting(buffer));
             {
-                boolean var67ECF37412B30F89073547F3C34324B4_1157619077 = (Selection.extendRight(buffer, layout));
+                boolean var67ECF37412B30F89073547F3C34324B4_525340721 = (Selection.extendRight(buffer, layout));
             } //End block
             {
-                boolean var8EC8DA8DE281B3C82BC4665C217C5696_1070989454 = (Selection.moveRight(buffer, layout));
+                boolean var8EC8DA8DE281B3C82BC4665C217C5696_1614227674 = (Selection.moveRight(buffer, layout));
             } //End block
         } //End collapsed parenthetic
         return dsTaint.getTaintBoolean();
@@ -141,21 +142,21 @@ public class ArrowKeyMovementMethod extends BaseMovementMethod implements Moveme
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:04.035 -0400", hash_original_method = "66883526BDCDE7C41943B5DCF27F9554", hash_generated_method = "BE82835F0C53296CE68AAA89CBB95274")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:57.154 -0400", hash_original_method = "66883526BDCDE7C41943B5DCF27F9554", hash_generated_method = "C1F4ED0DA893F72815286629D10F99A0")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     @Override
     protected boolean up(TextView widget, Spannable buffer) {
         dsTaint.addTaint(buffer.dsTaint);
         dsTaint.addTaint(widget.dsTaint);
-        final Layout layout;
+        Layout layout;
         layout = widget.getLayout();
         {
-            boolean varA39AC56FA77F4727AD58F987600717C2_2097307051 = (isSelecting(buffer));
+            boolean varA39AC56FA77F4727AD58F987600717C2_397912126 = (isSelecting(buffer));
             {
-                boolean varDE99DF773D51054F95D78312B8DB7CA7_1356121030 = (Selection.extendUp(buffer, layout));
+                boolean varDE99DF773D51054F95D78312B8DB7CA7_2004445716 = (Selection.extendUp(buffer, layout));
             } //End block
             {
-                boolean var729357B9FFAC7F8AFC1E8A39E3C60461_618368296 = (Selection.moveUp(buffer, layout));
+                boolean var729357B9FFAC7F8AFC1E8A39E3C60461_1665310462 = (Selection.moveUp(buffer, layout));
             } //End block
         } //End collapsed parenthetic
         return dsTaint.getTaintBoolean();
@@ -169,21 +170,21 @@ public class ArrowKeyMovementMethod extends BaseMovementMethod implements Moveme
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:04.035 -0400", hash_original_method = "6DF71BB34A28EC828AC8FDD5308B170F", hash_generated_method = "04372BADC60FCE57E931F5021B46D3D4")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:57.154 -0400", hash_original_method = "6DF71BB34A28EC828AC8FDD5308B170F", hash_generated_method = "76DCC48C66B9BCB98D0CC715896A75B3")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     @Override
     protected boolean down(TextView widget, Spannable buffer) {
         dsTaint.addTaint(buffer.dsTaint);
         dsTaint.addTaint(widget.dsTaint);
-        final Layout layout;
+        Layout layout;
         layout = widget.getLayout();
         {
-            boolean varA39AC56FA77F4727AD58F987600717C2_1289413294 = (isSelecting(buffer));
+            boolean varA39AC56FA77F4727AD58F987600717C2_1242151205 = (isSelecting(buffer));
             {
-                boolean var1DF63A314E4C0F2F8159D81EED847F8F_1717706945 = (Selection.extendDown(buffer, layout));
+                boolean var1DF63A314E4C0F2F8159D81EED847F8F_1997849334 = (Selection.extendDown(buffer, layout));
             } //End block
             {
-                boolean var952F4A80043476B1BF22E477488F97C8_548723134 = (Selection.moveDown(buffer, layout));
+                boolean var952F4A80043476B1BF22E477488F97C8_740310333 = (Selection.moveDown(buffer, layout));
             } //End block
         } //End collapsed parenthetic
         return dsTaint.getTaintBoolean();
@@ -197,22 +198,22 @@ public class ArrowKeyMovementMethod extends BaseMovementMethod implements Moveme
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:04.035 -0400", hash_original_method = "0758556D4F657617BD5DD9C53A72AD4E", hash_generated_method = "10C8BA7EE4A19CDFDC0DE308CDDED2C5")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:57.155 -0400", hash_original_method = "0758556D4F657617BD5DD9C53A72AD4E", hash_generated_method = "3E727643B5991E4C701D866A78E4C829")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     @Override
     protected boolean pageUp(TextView widget, Spannable buffer) {
         dsTaint.addTaint(buffer.dsTaint);
         dsTaint.addTaint(widget.dsTaint);
-        final Layout layout;
+        Layout layout;
         layout = widget.getLayout();
-        final boolean selecting;
+        boolean selecting;
         selecting = isSelecting(buffer);
-        final int targetY;
+        int targetY;
         targetY = getCurrentLineTop(buffer, layout) - getPageHeight(widget);
         boolean handled;
         handled = false;
         {
-            final int previousSelectionEnd;
+            int previousSelectionEnd;
             previousSelectionEnd = Selection.getSelectionEnd(buffer);
             {
                 Selection.extendUp(buffer, layout);
@@ -221,11 +222,11 @@ public class ArrowKeyMovementMethod extends BaseMovementMethod implements Moveme
                 Selection.moveUp(buffer, layout);
             } //End block
             {
-                boolean var4733E7C82A69173F794B955030939C99_1286988058 = (Selection.getSelectionEnd(buffer) == previousSelectionEnd);
+                boolean var4733E7C82A69173F794B955030939C99_1837391569 = (Selection.getSelectionEnd(buffer) == previousSelectionEnd);
             } //End collapsed parenthetic
             handled = true;
             {
-                boolean varB9CAEB7B78A7F0585D0C5FEFD36222F8_472803898 = (getCurrentLineTop(buffer, layout) <= targetY);
+                boolean varB9CAEB7B78A7F0585D0C5FEFD36222F8_1232450342 = (getCurrentLineTop(buffer, layout) <= targetY);
             } //End collapsed parenthetic
         } //End block
         return dsTaint.getTaintBoolean();
@@ -253,22 +254,22 @@ public class ArrowKeyMovementMethod extends BaseMovementMethod implements Moveme
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:04.035 -0400", hash_original_method = "A67CFCD6529729C61F17F48248354AB4", hash_generated_method = "4F09C075A9344E624BA73E7CA814FA79")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:57.155 -0400", hash_original_method = "A67CFCD6529729C61F17F48248354AB4", hash_generated_method = "9E4FCECC924E97EF0E77B84B5677C8B9")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     @Override
     protected boolean pageDown(TextView widget, Spannable buffer) {
         dsTaint.addTaint(buffer.dsTaint);
         dsTaint.addTaint(widget.dsTaint);
-        final Layout layout;
+        Layout layout;
         layout = widget.getLayout();
-        final boolean selecting;
+        boolean selecting;
         selecting = isSelecting(buffer);
-        final int targetY;
+        int targetY;
         targetY = getCurrentLineTop(buffer, layout) + getPageHeight(widget);
         boolean handled;
         handled = false;
         {
-            final int previousSelectionEnd;
+            int previousSelectionEnd;
             previousSelectionEnd = Selection.getSelectionEnd(buffer);
             {
                 Selection.extendDown(buffer, layout);
@@ -277,11 +278,11 @@ public class ArrowKeyMovementMethod extends BaseMovementMethod implements Moveme
                 Selection.moveDown(buffer, layout);
             } //End block
             {
-                boolean var4733E7C82A69173F794B955030939C99_1084311550 = (Selection.getSelectionEnd(buffer) == previousSelectionEnd);
+                boolean var4733E7C82A69173F794B955030939C99_624402783 = (Selection.getSelectionEnd(buffer) == previousSelectionEnd);
             } //End collapsed parenthetic
             handled = true;
             {
-                boolean varF64B0272FDC6514D4788816B81B860EC_486710406 = (getCurrentLineTop(buffer, layout) >= targetY);
+                boolean varF64B0272FDC6514D4788816B81B860EC_1922366468 = (getCurrentLineTop(buffer, layout) >= targetY);
             } //End collapsed parenthetic
         } //End block
         return dsTaint.getTaintBoolean();
@@ -309,14 +310,14 @@ public class ArrowKeyMovementMethod extends BaseMovementMethod implements Moveme
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:04.035 -0400", hash_original_method = "06E1F50FC60AD51807CA9DABCD3FCC05", hash_generated_method = "2144B546212A99D1650759CE5C240DFA")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:57.155 -0400", hash_original_method = "06E1F50FC60AD51807CA9DABCD3FCC05", hash_generated_method = "8E69E7C460BA91F71F8B467734C8A004")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     @Override
     protected boolean top(TextView widget, Spannable buffer) {
         dsTaint.addTaint(buffer.dsTaint);
         dsTaint.addTaint(widget.dsTaint);
         {
-            boolean varA39AC56FA77F4727AD58F987600717C2_790335349 = (isSelecting(buffer));
+            boolean varA39AC56FA77F4727AD58F987600717C2_647669247 = (isSelecting(buffer));
             {
                 Selection.extendSelection(buffer, 0);
             } //End block
@@ -335,14 +336,14 @@ public class ArrowKeyMovementMethod extends BaseMovementMethod implements Moveme
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:04.036 -0400", hash_original_method = "BBC6BB5270095971A5BCCB29BC5686E5", hash_generated_method = "91FFF5FE36238B91594E95052733436A")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:57.156 -0400", hash_original_method = "BBC6BB5270095971A5BCCB29BC5686E5", hash_generated_method = "94AC4C3D8A7DDE1B9CACF7445661B6E3")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     @Override
     protected boolean bottom(TextView widget, Spannable buffer) {
         dsTaint.addTaint(buffer.dsTaint);
         dsTaint.addTaint(widget.dsTaint);
         {
-            boolean varA39AC56FA77F4727AD58F987600717C2_834603444 = (isSelecting(buffer));
+            boolean varA39AC56FA77F4727AD58F987600717C2_1072117003 = (isSelecting(buffer));
             {
                 Selection.extendSelection(buffer, buffer.length());
             } //End block
@@ -361,21 +362,21 @@ public class ArrowKeyMovementMethod extends BaseMovementMethod implements Moveme
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:04.036 -0400", hash_original_method = "7B8F77C5EC46A68660F722ECA60D096A", hash_generated_method = "8F614B00B710808436510C254750603D")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:57.156 -0400", hash_original_method = "7B8F77C5EC46A68660F722ECA60D096A", hash_generated_method = "479B79E2E2A4AC576A8FC3A7B7CE8D2D")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     @Override
     protected boolean lineStart(TextView widget, Spannable buffer) {
         dsTaint.addTaint(buffer.dsTaint);
         dsTaint.addTaint(widget.dsTaint);
-        final Layout layout;
+        Layout layout;
         layout = widget.getLayout();
         {
-            boolean varA39AC56FA77F4727AD58F987600717C2_1550613823 = (isSelecting(buffer));
+            boolean varA39AC56FA77F4727AD58F987600717C2_777163802 = (isSelecting(buffer));
             {
-                boolean var07305073A8F196E2FB7735E331F954A0_1643904027 = (Selection.extendToLeftEdge(buffer, layout));
+                boolean var07305073A8F196E2FB7735E331F954A0_1291554630 = (Selection.extendToLeftEdge(buffer, layout));
             } //End block
             {
-                boolean var839412FED6549C29C28824CEFDCE0017_1212145464 = (Selection.moveToLeftEdge(buffer, layout));
+                boolean var839412FED6549C29C28824CEFDCE0017_754798725 = (Selection.moveToLeftEdge(buffer, layout));
             } //End block
         } //End collapsed parenthetic
         return dsTaint.getTaintBoolean();
@@ -389,21 +390,21 @@ public class ArrowKeyMovementMethod extends BaseMovementMethod implements Moveme
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:04.036 -0400", hash_original_method = "35F3ADFF6FA8FAD8E2E9FED3F3766C71", hash_generated_method = "C5302118504024D8EBF81A5D3AAF3D9F")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:57.156 -0400", hash_original_method = "35F3ADFF6FA8FAD8E2E9FED3F3766C71", hash_generated_method = "2931C929814224F456535355CEF87197")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     @Override
     protected boolean lineEnd(TextView widget, Spannable buffer) {
         dsTaint.addTaint(buffer.dsTaint);
         dsTaint.addTaint(widget.dsTaint);
-        final Layout layout;
+        Layout layout;
         layout = widget.getLayout();
         {
-            boolean varA39AC56FA77F4727AD58F987600717C2_1034245667 = (isSelecting(buffer));
+            boolean varA39AC56FA77F4727AD58F987600717C2_227978890 = (isSelecting(buffer));
             {
-                boolean var781475A0D78601F054522A5C6B281C44_913558867 = (Selection.extendToRightEdge(buffer, layout));
+                boolean var781475A0D78601F054522A5C6B281C44_1725687392 = (Selection.extendToRightEdge(buffer, layout));
             } //End block
             {
-                boolean varC1D1956BB9F1FD7167AC12BE8515B8A9_2091414893 = (Selection.moveToRightEdge(buffer, layout));
+                boolean varC1D1956BB9F1FD7167AC12BE8515B8A9_2063515899 = (Selection.moveToRightEdge(buffer, layout));
             } //End block
         } //End collapsed parenthetic
         return dsTaint.getTaintBoolean();
@@ -417,18 +418,18 @@ public class ArrowKeyMovementMethod extends BaseMovementMethod implements Moveme
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:04.036 -0400", hash_original_method = "67D023CBFAD79BEA97EFF9BE9D5119F7", hash_generated_method = "391364600CCAD486062A7AC2F9CDCC70")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:57.156 -0400", hash_original_method = "67D023CBFAD79BEA97EFF9BE9D5119F7", hash_generated_method = "36FBB70C88B6530B27C17A1EF3EE3C4A")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     @Override
     protected boolean leftWord(TextView widget, Spannable buffer) {
         dsTaint.addTaint(buffer.dsTaint);
         dsTaint.addTaint(widget.dsTaint);
-        final int selectionEnd;
+        int selectionEnd;
         selectionEnd = widget.getSelectionEnd();
-        final WordIterator wordIterator;
+        WordIterator wordIterator;
         wordIterator = widget.getWordIterator();
         wordIterator.setCharSequence(buffer, selectionEnd, selectionEnd);
-        boolean var00DC013268CCCEB562BE79BDEE107BFD_2132999941 = (Selection.moveToPreceding(buffer, wordIterator, isSelecting(buffer)));
+        boolean var00DC013268CCCEB562BE79BDEE107BFD_122427254 = (Selection.moveToPreceding(buffer, wordIterator, isSelecting(buffer)));
         return dsTaint.getTaintBoolean();
         // ---------- Original Method ----------
         //final int selectionEnd = widget.getSelectionEnd();
@@ -438,18 +439,18 @@ public class ArrowKeyMovementMethod extends BaseMovementMethod implements Moveme
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:04.036 -0400", hash_original_method = "117E80B3C82F659E45802A24AF653E84", hash_generated_method = "9DB824386EAE8B9F435DF120BCF33717")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:57.157 -0400", hash_original_method = "117E80B3C82F659E45802A24AF653E84", hash_generated_method = "D61A836F3C41ED7B20CBC689224D0E18")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     @Override
     protected boolean rightWord(TextView widget, Spannable buffer) {
         dsTaint.addTaint(buffer.dsTaint);
         dsTaint.addTaint(widget.dsTaint);
-        final int selectionEnd;
+        int selectionEnd;
         selectionEnd = widget.getSelectionEnd();
-        final WordIterator wordIterator;
+        WordIterator wordIterator;
         wordIterator = widget.getWordIterator();
         wordIterator.setCharSequence(buffer, selectionEnd, selectionEnd);
-        boolean var1663946D21B0253D2BA5F3A9E29A5557_1979947576 = (Selection.moveToFollowing(buffer, wordIterator, isSelecting(buffer)));
+        boolean var1663946D21B0253D2BA5F3A9E29A5557_140658322 = (Selection.moveToFollowing(buffer, wordIterator, isSelecting(buffer)));
         return dsTaint.getTaintBoolean();
         // ---------- Original Method ----------
         //final int selectionEnd = widget.getSelectionEnd();
@@ -459,33 +460,33 @@ public class ArrowKeyMovementMethod extends BaseMovementMethod implements Moveme
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:04.036 -0400", hash_original_method = "DA5AF1C545D6EFE1C03B36F52D97E891", hash_generated_method = "2B5B8EA0E7106F575EA510923EBD345A")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:57.157 -0400", hash_original_method = "DA5AF1C545D6EFE1C03B36F52D97E891", hash_generated_method = "02CFC36EC63E91145FA243E8ED5C73DC")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     @Override
     protected boolean home(TextView widget, Spannable buffer) {
         dsTaint.addTaint(buffer.dsTaint);
         dsTaint.addTaint(widget.dsTaint);
-        boolean var15D6AAE84B1824A04ABA9DFAD2A0EF2B_1790865992 = (lineStart(widget, buffer));
+        boolean var15D6AAE84B1824A04ABA9DFAD2A0EF2B_1319388400 = (lineStart(widget, buffer));
         return dsTaint.getTaintBoolean();
         // ---------- Original Method ----------
         //return lineStart(widget, buffer);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:04.036 -0400", hash_original_method = "ED4119443F83D3A11CB1CCD10457DD79", hash_generated_method = "2FCF6A4EA65CF5B3F9FF720BC3DA4B04")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:57.157 -0400", hash_original_method = "ED4119443F83D3A11CB1CCD10457DD79", hash_generated_method = "5E59C347B21768051351F08E52FDC3F6")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     @Override
     protected boolean end(TextView widget, Spannable buffer) {
         dsTaint.addTaint(buffer.dsTaint);
         dsTaint.addTaint(widget.dsTaint);
-        boolean var7D30E610B15E5CA72FE602D226D165B2_82168851 = (lineEnd(widget, buffer));
+        boolean var7D30E610B15E5CA72FE602D226D165B2_1425191400 = (lineEnd(widget, buffer));
         return dsTaint.getTaintBoolean();
         // ---------- Original Method ----------
         //return lineEnd(widget, buffer);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:04.037 -0400", hash_original_method = "775DDAA4B9285FEC985F9D7EBE9B59EB", hash_generated_method = "42243AC52C59374B47F419468443CD73")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:57.158 -0400", hash_original_method = "775DDAA4B9285FEC985F9D7EBE9B59EB", hash_generated_method = "A70905A5CBE54CFD2E32ED7860DEEBA6")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     @Override
     public boolean onTouchEvent(TextView widget, Spannable buffer, MotionEvent event) {
@@ -497,7 +498,7 @@ public class ArrowKeyMovementMethod extends BaseMovementMethod implements Moveme
         initialScrollX = -1;
         int initialScrollY;
         initialScrollY = -1;
-        final int action;
+        int action;
         action = event.getAction();
         {
             initialScrollX = Touch.getInitialScrollX(widget, buffer);
@@ -506,11 +507,11 @@ public class ArrowKeyMovementMethod extends BaseMovementMethod implements Moveme
         boolean handled;
         handled = Touch.onTouchEvent(widget, buffer, event);
         {
-            boolean varB26B19C2F6D79EF4FEDF57316F6290F6_927167068 = (widget.isFocused() && !widget.didTouchFocusSelect());
+            boolean varB26B19C2F6D79EF4FEDF57316F6290F6_2064034157 = (widget.isFocused() && !widget.didTouchFocusSelect());
             {
                 {
                     {
-                        boolean varEF5C4D8D9A9043E70D0670EF6B805231_1827673276 = (isSelecting(buffer));
+                        boolean varEF5C4D8D9A9043E70D0670EF6B805231_151018075 = (isSelecting(buffer));
                         {
                             int offset;
                             offset = widget.getOffsetForPosition(event.getX(), event.getY());
@@ -521,7 +522,7 @@ public class ArrowKeyMovementMethod extends BaseMovementMethod implements Moveme
                 } //End block
                 {
                     {
-                        boolean varF3BD3294A0EDF892E6B430CAE4F4B9A3_1746835115 = (isSelecting(buffer) && handled);
+                        boolean varF3BD3294A0EDF892E6B430CAE4F4B9A3_1719405856 = (isSelecting(buffer) && handled);
                         {
                             widget.cancelLongPress();
                             int offset;
@@ -532,7 +533,7 @@ public class ArrowKeyMovementMethod extends BaseMovementMethod implements Moveme
                 } //End block
                 {
                     {
-                        boolean varA5065FE199EB21698026F41C929E052F_1390033663 = ((initialScrollY >= 0 && initialScrollY != widget.getScrollY()) ||
+                        boolean varA5065FE199EB21698026F41C929E052F_1611796507 = ((initialScrollY >= 0 && initialScrollY != widget.getScrollY()) ||
                     (initialScrollX >= 0 && initialScrollX != widget.getScrollX()));
                         {
                             widget.moveCursorToVisibleOffset();
@@ -541,13 +542,13 @@ public class ArrowKeyMovementMethod extends BaseMovementMethod implements Moveme
                     int offset;
                     offset = widget.getOffsetForPosition(event.getX(), event.getY());
                     {
-                        boolean varEF5C4D8D9A9043E70D0670EF6B805231_394398229 = (isSelecting(buffer));
+                        boolean varEF5C4D8D9A9043E70D0670EF6B805231_1285631405 = (isSelecting(buffer));
                         {
                             buffer.removeSpan(LAST_TAP_DOWN);
                             Selection.extendSelection(buffer, offset);
                         } //End block
                         {
-                            boolean var1DBE2387C29CB59C93933696E5F33161_1912740718 = (!widget.shouldIgnoreActionUpEvent());
+                            boolean var1DBE2387C29CB59C93933696E5F33161_279445902 = (!widget.shouldIgnoreActionUpEvent());
                             {
                                 Selection.setSelection(buffer, offset);
                             } //End block
@@ -564,7 +565,7 @@ public class ArrowKeyMovementMethod extends BaseMovementMethod implements Moveme
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:04.037 -0400", hash_original_method = "1CF42BC1A6BA86440BF6AECA28532C33", hash_generated_method = "BB235D7B650FF0F9E99037C5874F2CC2")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:57.158 -0400", hash_original_method = "1CF42BC1A6BA86440BF6AECA28532C33", hash_generated_method = "B3896B6E823048518FAFEC4F16D891B3")
     @DSModeled(DSC.SAFE)
     @Override
     public boolean canSelectArbitrarily() {
@@ -574,8 +575,8 @@ public class ArrowKeyMovementMethod extends BaseMovementMethod implements Moveme
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:04.037 -0400", hash_original_method = "B727A4A512DEA5751C53503018F86261", hash_generated_method = "07F325B3F35AD8EA82F8E048FC24B37E")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:57.158 -0400", hash_original_method = "B727A4A512DEA5751C53503018F86261", hash_generated_method = "55100602FA3FCA7E0A7BFDFF0B254532")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     @Override
     public void initialize(TextView widget, Spannable text) {
         dsTaint.addTaint(text.dsTaint);
@@ -586,7 +587,7 @@ public class ArrowKeyMovementMethod extends BaseMovementMethod implements Moveme
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:04.037 -0400", hash_original_method = "0BB03034B6278DCF1B976D7F50A71CD4", hash_generated_method = "AE9C311AD370C09971A7FF9725C717FB")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:57.158 -0400", hash_original_method = "0BB03034B6278DCF1B976D7F50A71CD4", hash_generated_method = "B35B89DDEA7C3679D0EA77D30448DECA")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     @Override
     public void onTakeFocus(TextView view, Spannable text, int dir) {
@@ -596,7 +597,7 @@ public class ArrowKeyMovementMethod extends BaseMovementMethod implements Moveme
         dsTaint.addTaint(view.dsTaint);
         {
             {
-                boolean var6BAF94F53EEC1A5206B9365724449745_2117602033 = (view.getLayout() == null);
+                boolean var6BAF94F53EEC1A5206B9365724449745_379502558 = (view.getLayout() == null);
                 {
                     Selection.setSelection(text, text.length());
                 } //End block
@@ -616,8 +617,7 @@ public class ArrowKeyMovementMethod extends BaseMovementMethod implements Moveme
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:04.037 -0400", hash_original_method = "1DB0A35A4E73C95F823446362F035621", hash_generated_method = "7D06961535B06F9469B80E24BBEF2437")
-    public static MovementMethod getInstance() {
+        public static MovementMethod getInstance() {
         if (sInstance == null) {
             sInstance = new ArrowKeyMovementMethod();
         }
@@ -625,6 +625,7 @@ public class ArrowKeyMovementMethod extends BaseMovementMethod implements Moveme
     }
 
     
+    private static final Object LAST_TAP_DOWN = new Object();
+    private static ArrowKeyMovementMethod sInstance;
 }
-
 

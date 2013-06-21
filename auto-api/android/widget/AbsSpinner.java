@@ -33,7 +33,7 @@ public abstract class AbsSpinner extends AdapterView<SpinnerAdapter> {
     private DataSetObserver mDataSetObserver;
     private Rect mTouchFrame;
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 14:34:42.348 -0400", hash_original_method = "CE4C0E9ECE12F7FD7C8BEF83C3609839", hash_generated_method = "869443E98EC91EB7957F28969A6BD4F9")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:06.063 -0400", hash_original_method = "CE4C0E9ECE12F7FD7C8BEF83C3609839", hash_generated_method = "70E1BCB796C3554F67D6F74F7C98E961")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public AbsSpinner(Context context) {
         super(context);
@@ -44,7 +44,7 @@ public abstract class AbsSpinner extends AdapterView<SpinnerAdapter> {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 14:34:42.358 -0400", hash_original_method = "48F93C8F12C5C0BCE27736B4F067DE36", hash_generated_method = "08C6897177EFB5217125400C084B1AE8")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:06.063 -0400", hash_original_method = "48F93C8F12C5C0BCE27736B4F067DE36", hash_generated_method = "A5D80CCACCF796FBFEDAA0266A65EAD8")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public AbsSpinner(Context context, AttributeSet attrs) {
         this(context, attrs, 0);
@@ -54,7 +54,7 @@ public abstract class AbsSpinner extends AdapterView<SpinnerAdapter> {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 14:34:42.395 -0400", hash_original_method = "22AD9CC9923933C5995E60FF80D5916E", hash_generated_method = "B1A0CE8243F7B7B23610B982FBF1E920")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:06.063 -0400", hash_original_method = "22AD9CC9923933C5995E60FF80D5916E", hash_generated_method = "53B6FF749A33DF6A4D6E5808974FDE8C")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public AbsSpinner(Context context, AttributeSet attrs, int defStyle) {
         super(context, attrs, defStyle);
@@ -91,8 +91,8 @@ public abstract class AbsSpinner extends AdapterView<SpinnerAdapter> {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 14:34:42.429 -0400", hash_original_method = "189B5B9E645B86B5245C2FF55DEC5907", hash_generated_method = "65AA139ADD2F38F5C7610659D5503359")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:06.064 -0400", hash_original_method = "189B5B9E645B86B5245C2FF55DEC5907", hash_generated_method = "95F290FF3D8900B1A5D05DB6AC9E34A4")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     private void initAbsSpinner() {
         setFocusable(true);
         setWillNotDraw(false);
@@ -102,7 +102,7 @@ public abstract class AbsSpinner extends AdapterView<SpinnerAdapter> {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 14:34:42.485 -0400", hash_original_method = "E5824BE9B0ACFF3A1B32EE310E006300", hash_generated_method = "9C2EE3E7E15371D60239B4ADAC599701")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:06.064 -0400", hash_original_method = "E5824BE9B0ACFF3A1B32EE310E006300", hash_generated_method = "64EBF0FBD4467DE75EC322805E6FF10D")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     @Override
     public void setAdapter(SpinnerAdapter adapter) {
@@ -139,8 +139,8 @@ public abstract class AbsSpinner extends AdapterView<SpinnerAdapter> {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 14:34:42.544 -0400", hash_original_method = "5DEE49E4A107B00C6160988898CCE14A", hash_generated_method = "CF26B38755C7FA84296F64746DE0241D")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:06.064 -0400", hash_original_method = "5DEE49E4A107B00C6160988898CCE14A", hash_generated_method = "0FFDFA172FF8DE0D08C732AFE9AF8AB3")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
      void resetList() {
         mDataChanged = false;
         mNeedSync = false;
@@ -162,7 +162,7 @@ public abstract class AbsSpinner extends AdapterView<SpinnerAdapter> {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 14:34:42.638 -0400", hash_original_method = "29BB60D69D80C0C6339E2E86482D98C0", hash_generated_method = "4FE87EC09EC0E67537C02FA2A2966597")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:06.065 -0400", hash_original_method = "29BB60D69D80C0C6339E2E86482D98C0", hash_generated_method = "78B96A25A1F99F4B836DFACB1B29AE5B")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     @Override
     protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
@@ -193,7 +193,7 @@ public abstract class AbsSpinner extends AdapterView<SpinnerAdapter> {
         int selectedPosition;
         selectedPosition = getSelectedItemPosition();
         {
-            boolean var0A913476FEE00BF2CC6981FB21FC379C_68213583 = (selectedPosition >= 0 && mAdapter != null && selectedPosition < mAdapter.getCount());
+            boolean var0A913476FEE00BF2CC6981FB21FC379C_1484512619 = (selectedPosition >= 0 && mAdapter != null && selectedPosition < mAdapter.getCount());
             {
                 View view;
                 view = mRecycler.get(selectedPosition);
@@ -205,7 +205,7 @@ public abstract class AbsSpinner extends AdapterView<SpinnerAdapter> {
                 } //End block
                 {
                     {
-                        boolean var5796118831C98F47A208EF62E7CCA9A9_385468782 = (view.getLayoutParams() == null);
+                        boolean var5796118831C98F47A208EF62E7CCA9A9_227761575 = (view.getLayoutParams() == null);
                         {
                             mBlockLayoutRequests = true;
                             view.setLayoutParams(generateDefaultLayoutParams());
@@ -235,32 +235,35 @@ public abstract class AbsSpinner extends AdapterView<SpinnerAdapter> {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 14:34:42.653 -0400", hash_original_method = "44D3B1A6F440757321735895159CF3F5", hash_generated_method = "1CBD3D7981E030A427CF115EBA535EC6")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:06.065 -0400", hash_original_method = "44D3B1A6F440757321735895159CF3F5", hash_generated_method = "410D466D4518B354A2B4419A6968855D")
     //DSFIXME:  CODE0002: Requires DSC value to be set
      int getChildHeight(View child) {
         dsTaint.addTaint(child.dsTaint);
-        int var58D497011C6F03727DC75B3DA924936B_1713841458 = (child.getMeasuredHeight());
+        int var58D497011C6F03727DC75B3DA924936B_545668099 = (child.getMeasuredHeight());
         return dsTaint.getTaintInt();
         // ---------- Original Method ----------
         //return child.getMeasuredHeight();
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 14:34:42.661 -0400", hash_original_method = "3D627342594CC491E8B9982EF63DBDD8", hash_generated_method = "023269BF5AA68FC552BC3635E798B200")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:06.066 -0400", hash_original_method = "3D627342594CC491E8B9982EF63DBDD8", hash_generated_method = "E3736EFC459B693977F3F578DF1425AB")
     //DSFIXME:  CODE0002: Requires DSC value to be set
      int getChildWidth(View child) {
         dsTaint.addTaint(child.dsTaint);
-        int var515E0207FEB0ACB672E13F622A8D400F_1290526470 = (child.getMeasuredWidth());
+        int var515E0207FEB0ACB672E13F622A8D400F_822988667 = (child.getMeasuredWidth());
         return dsTaint.getTaintInt();
         // ---------- Original Method ----------
         //return child.getMeasuredWidth();
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 14:34:42.666 -0400", hash_original_method = "2179BEF90E842D00377926E5531ABF89", hash_generated_method = "37107B554F899169CCDE2462E221458A")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:06.066 -0400", hash_original_method = "2179BEF90E842D00377926E5531ABF89", hash_generated_method = "42460744442E2893F908BF5F319B7B01")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     @Override
     protected ViewGroup.LayoutParams generateDefaultLayoutParams() {
+        ViewGroup.LayoutParams var787E09DC2E8C4BF7F094431A7F313DC8_94947771 = (new ViewGroup.LayoutParams(
+                ViewGroup.LayoutParams.MATCH_PARENT,
+                ViewGroup.LayoutParams.WRAP_CONTENT));
         return (ViewGroup.LayoutParams)dsTaint.getTaint();
         // ---------- Original Method ----------
         //return new ViewGroup.LayoutParams(
@@ -269,8 +272,8 @@ public abstract class AbsSpinner extends AdapterView<SpinnerAdapter> {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 14:34:42.694 -0400", hash_original_method = "44A3231F2CD8F60C6B590B4146A8EF3F", hash_generated_method = "1BA790924B4B52195CE24BE0D8E02365")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:06.066 -0400", hash_original_method = "44A3231F2CD8F60C6B590B4146A8EF3F", hash_generated_method = "8EFF952EDB524B76CCD269F617407394")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
      void recycleAllViews() {
         int childCount;
         childCount = getChildCount();
@@ -301,7 +304,7 @@ public abstract class AbsSpinner extends AdapterView<SpinnerAdapter> {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 14:34:42.715 -0400", hash_original_method = "D2708A7FDB907C7B6958E15DD672DA8E", hash_generated_method = "0D31DFA7165CD2A8468808B92D30FAB1")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:06.066 -0400", hash_original_method = "D2708A7FDB907C7B6958E15DD672DA8E", hash_generated_method = "24ED8D1535E0A5DA9C3093255EE2C1C3")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public void setSelection(int position, boolean animate) {
         dsTaint.addTaint(position);
@@ -317,8 +320,8 @@ public abstract class AbsSpinner extends AdapterView<SpinnerAdapter> {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 14:34:42.722 -0400", hash_original_method = "7E33360CBDBF59A4E473BBC01C4A9D09", hash_generated_method = "644E82EC703FD3452471FB42D7BA2BEE")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:06.067 -0400", hash_original_method = "7E33360CBDBF59A4E473BBC01C4A9D09", hash_generated_method = "415E68D3B88E7970E1F92C5A692CF81A")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     @Override
     public void setSelection(int position) {
         dsTaint.addTaint(position);
@@ -332,8 +335,8 @@ public abstract class AbsSpinner extends AdapterView<SpinnerAdapter> {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 14:34:42.731 -0400", hash_original_method = "63246E2C9E0D90A96046BA94228CF775", hash_generated_method = "07ACA77D37265C8DCEAAC324802CE84D")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:06.067 -0400", hash_original_method = "63246E2C9E0D90A96046BA94228CF775", hash_generated_method = "2D897B931C965F31F16B72BC3AEE69BD")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
      void setSelectionInt(int position, boolean animate) {
         dsTaint.addTaint(position);
         dsTaint.addTaint(animate);
@@ -359,12 +362,12 @@ public abstract class AbsSpinner extends AdapterView<SpinnerAdapter> {
     abstract void layout(int delta, boolean animate);
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 14:34:42.741 -0400", hash_original_method = "B9D708BD110913DD38C752A46A05BBB4", hash_generated_method = "1CFF2673FA3DC6FD9C41C91B8326DBB1")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:06.067 -0400", hash_original_method = "B9D708BD110913DD38C752A46A05BBB4", hash_generated_method = "C0BA2A463C5F599B898392F92428E253")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     @Override
     public View getSelectedView() {
         {
-            View var32627160716DC777F524CC780C8B0164_2022173616 = (getChildAt(mSelectedPosition - mFirstPosition));
+            View var32627160716DC777F524CC780C8B0164_674101250 = (getChildAt(mSelectedPosition - mFirstPosition));
         } //End block
         return (View)dsTaint.getTaint();
         // ---------- Original Method ----------
@@ -376,8 +379,8 @@ public abstract class AbsSpinner extends AdapterView<SpinnerAdapter> {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 14:34:42.748 -0400", hash_original_method = "7199FF25ED586C3851E847C0919D8CB4", hash_generated_method = "8049CB0EE75F673258BD8E132090352D")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:06.067 -0400", hash_original_method = "7199FF25ED586C3851E847C0919D8CB4", hash_generated_method = "4DAA914E3ADF769173AA0207A91E4AEA")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     @Override
     public void requestLayout() {
         {
@@ -390,7 +393,7 @@ public abstract class AbsSpinner extends AdapterView<SpinnerAdapter> {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 14:34:42.754 -0400", hash_original_method = "0B2662100CCA74662649DCCD28954A76", hash_generated_method = "F44EA9DF4D69A7A72BFFF6CC6DA1FF29")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:06.068 -0400", hash_original_method = "0B2662100CCA74662649DCCD28954A76", hash_generated_method = "04C8FE331B956404E9BAB94607B00C79")
     @DSModeled(DSC.SAFE)
     @Override
     public SpinnerAdapter getAdapter() {
@@ -400,7 +403,7 @@ public abstract class AbsSpinner extends AdapterView<SpinnerAdapter> {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 14:34:42.759 -0400", hash_original_method = "C515244CDC30F9529A71B0CAA70231C3", hash_generated_method = "D7F65C005A6A482602F9F30AB1F481D7")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:06.068 -0400", hash_original_method = "C515244CDC30F9529A71B0CAA70231C3", hash_generated_method = "CF19339979A47A12A6738D2E816F5310")
     @DSModeled(DSC.SAFE)
     @Override
     public int getCount() {
@@ -410,7 +413,7 @@ public abstract class AbsSpinner extends AdapterView<SpinnerAdapter> {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 14:34:42.774 -0400", hash_original_method = "AD87FEA47379DE9B1BE65A322C86E61D", hash_generated_method = "74C27D4DC446F405AA3FDAE8CC94EAEF")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:06.068 -0400", hash_original_method = "AD87FEA47379DE9B1BE65A322C86E61D", hash_generated_method = "8850239BDF470EC57600C598123FB612")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public int pointToPosition(int x, int y) {
         dsTaint.addTaint(y);
@@ -430,11 +433,11 @@ public abstract class AbsSpinner extends AdapterView<SpinnerAdapter> {
                 View child;
                 child = getChildAt(i);
                 {
-                    boolean var02E23769C3E76AF1DC2C1CE956107022_239489342 = (child.getVisibility() == View.VISIBLE);
+                    boolean var02E23769C3E76AF1DC2C1CE956107022_1122173991 = (child.getVisibility() == View.VISIBLE);
                     {
                         child.getHitRect(frame);
                         {
-                            boolean var9F1DF48D8B435FACEEE6B40EFD85C398_1110506319 = (frame.contains(x, y));
+                            boolean var9F1DF48D8B435FACEEE6B40EFD85C398_894233641 = (frame.contains(x, y));
                         } //End collapsed parenthetic
                     } //End block
                 } //End collapsed parenthetic
@@ -461,7 +464,7 @@ public abstract class AbsSpinner extends AdapterView<SpinnerAdapter> {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 14:34:42.786 -0400", hash_original_method = "2B2E0178AF4521152109C90D1424ECD0", hash_generated_method = "C0CE7D29A2C7F7B5F36AFDD10D97668A")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:06.068 -0400", hash_original_method = "2B2E0178AF4521152109C90D1424ECD0", hash_generated_method = "735263A35E403D56F4101B06D9FC3D46")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     @Override
     public Parcelable onSaveInstanceState() {
@@ -491,7 +494,7 @@ public abstract class AbsSpinner extends AdapterView<SpinnerAdapter> {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 14:34:42.796 -0400", hash_original_method = "41BC9B1A20EF7E956C712A8B84EE3401", hash_generated_method = "2EAE3840C93493F3FD902707C6FF72DF")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:06.069 -0400", hash_original_method = "41BC9B1A20EF7E956C712A8B84EE3401", hash_generated_method = "F6C21AA7BFB739962C124BC065F38626")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     @Override
     public void onRestoreInstanceState(Parcelable state) {
@@ -525,30 +528,8 @@ public abstract class AbsSpinner extends AdapterView<SpinnerAdapter> {
     static class SavedState extends BaseSavedState {
         long selectedId;
         int position;
-        public static final Parcelable.Creator<SavedState> CREATOR = new Parcelable.Creator<SavedState>() {            
-            @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 14:34:42.802 -0400", hash_original_method = "E26812089C072DDE1A14AECAA6CD6686", hash_generated_method = "6C6B0A873BD52E2752F88E9968D483CA")
-            @DSModeled(DSC.SAFE)
-            public SavedState createFromParcel(Parcel in) {
-                dsTaint.addTaint(in.dsTaint);
-                return (SavedState)dsTaint.getTaint();
-                // ---------- Original Method ----------
-                //return new SavedState(in);
-            }
-
-            
-            @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 14:34:42.807 -0400", hash_original_method = "2D31E9CBAAAE05B696D738324F87FF78", hash_generated_method = "1325778BB443F872513E70F9A19C5918")
-            @DSModeled(DSC.SAFE)
-            public SavedState[] newArray(int size) {
-                dsTaint.addTaint(size);
-                return (SavedState[])dsTaint.getTaint();
-                // ---------- Original Method ----------
-                //return new SavedState[size];
-            }
-
-            
-}; //Transformed anonymous class
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 14:34:42.810 -0400", hash_original_method = "89EB4EC154F05BF905ECA8E02BBD14BC", hash_generated_method = "BBD854AA7A117C86D9FBF897ADE36FE1")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:06.069 -0400", hash_original_method = "89EB4EC154F05BF905ECA8E02BBD14BC", hash_generated_method = "AB6E14E26999AC4D7AF1972CF22F65E4")
         //DSFIXME:  CODE0002: Requires DSC value to be set
          SavedState(Parcelable superState) {
             super(superState);
@@ -557,7 +538,7 @@ public abstract class AbsSpinner extends AdapterView<SpinnerAdapter> {
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 14:34:42.825 -0400", hash_original_method = "65E5A0CAB50633949DC788A62A186FA9", hash_generated_method = "B42BD906A969FA4240367AA4514458A1")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:06.069 -0400", hash_original_method = "65E5A0CAB50633949DC788A62A186FA9", hash_generated_method = "C58F7A82DD5B3EBF8D8B03583EA2F74D")
         //DSFIXME:  CODE0002: Requires DSC value to be set
         private SavedState(Parcel in) {
             super(in);
@@ -570,8 +551,8 @@ public abstract class AbsSpinner extends AdapterView<SpinnerAdapter> {
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 14:34:42.831 -0400", hash_original_method = "0007C2F01F0ACF691918256360E82965", hash_generated_method = "484B3CAD92CCDE74E63EE91B7CC951D9")
-        @DSModeled(DSC.SAFE)
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:06.069 -0400", hash_original_method = "0007C2F01F0ACF691918256360E82965", hash_generated_method = "D4A0C4A5D5C1DC6454325731FE40D383")
+        //DSFIXME:  CODE0002: Requires DSC value to be set
         @Override
         public void writeToParcel(Parcel out, int flags) {
             dsTaint.addTaint(flags);
@@ -586,11 +567,11 @@ public abstract class AbsSpinner extends AdapterView<SpinnerAdapter> {
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 14:34:42.849 -0400", hash_original_method = "7A4BA85F6ACBC7FE9656B24BA8A57B9A", hash_generated_method = "AE7985381C9A00CBD869E1754DC8A7A5")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:06.070 -0400", hash_original_method = "7A4BA85F6ACBC7FE9656B24BA8A57B9A", hash_generated_method = "F01EFAB49DE31CEDAC0A3754595DB76E")
         //DSFIXME:  CODE0002: Requires DSC value to be set
         @Override
         public String toString() {
-            String varF5593F943A5C5F2746EE7152B0258022_918338447 = ("AbsSpinner.SavedState{"
+            String varF5593F943A5C5F2746EE7152B0258022_1395609489 = ("AbsSpinner.SavedState{"
                     + Integer.toHexString(System.identityHashCode(this))
                     + " selectedId=" + selectedId
                     + " position=" + position + "}");
@@ -603,6 +584,30 @@ public abstract class AbsSpinner extends AdapterView<SpinnerAdapter> {
         }
 
         
+        public static final Parcelable.Creator<SavedState> CREATOR = new Parcelable.Creator<SavedState>() {            
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:06.070 -0400", hash_original_method = "E26812089C072DDE1A14AECAA6CD6686", hash_generated_method = "08A7E1F8FC10D92DFCACEC3765779CD0")
+            //DSFIXME:  CODE0002: Requires DSC value to be set
+            public SavedState createFromParcel(Parcel in) {
+                dsTaint.addTaint(in.dsTaint);
+                SavedState var41ED8F3548F5060881BBE51AB9112A3F_154562615 = (new SavedState(in));
+                return (SavedState)dsTaint.getTaint();
+                // ---------- Original Method ----------
+                //return new SavedState(in);
+            }
+
+            
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:06.070 -0400", hash_original_method = "2D31E9CBAAAE05B696D738324F87FF78", hash_generated_method = "2A9B3CC808C06A16BA9CF95C83896A2D")
+            //DSFIXME:  CODE0002: Requires DSC value to be set
+            public SavedState[] newArray(int size) {
+                dsTaint.addTaint(size);
+                SavedState[] varB5C72E5BBB181D4CA93D7BAA0B8B5E3D_43262205 = (new SavedState[size]);
+                return (SavedState[])dsTaint.getTaint();
+                // ---------- Original Method ----------
+                //return new SavedState[size];
+            }
+
+            
+}; //Transformed anonymous class
     }
 
 
@@ -610,8 +615,14 @@ public abstract class AbsSpinner extends AdapterView<SpinnerAdapter> {
     class RecycleBin {
         private SparseArray<View> mScrapHeap = new SparseArray<View>();
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 14:34:42.858 -0400", hash_original_method = "12E9E54F63615166D97804FCD5F19EB6", hash_generated_method = "D2A042EE30BD173C0D5B3C2EAA3815DA")
-        @DSModeled(DSC.SAFE)
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:06.070 -0400", hash_original_method = "77072A41A6368207FF0B7DC6E8B24F28", hash_generated_method = "77072A41A6368207FF0B7DC6E8B24F28")
+                public RecycleBin ()
+        {
+        }
+
+
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:06.070 -0400", hash_original_method = "12E9E54F63615166D97804FCD5F19EB6", hash_generated_method = "DE768CFC26794C2451F8C1B17B953F79")
+        //DSFIXME:  CODE0002: Requires DSC value to be set
         public void put(int position, View v) {
             dsTaint.addTaint(position);
             dsTaint.addTaint(v.dsTaint);
@@ -621,8 +632,8 @@ public abstract class AbsSpinner extends AdapterView<SpinnerAdapter> {
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 14:34:42.866 -0400", hash_original_method = "13D5A4FF59BF1643EBD5228E429384EA", hash_generated_method = "EFE27363E285230649B3CE99C1D9E03B")
-        @DSModeled(DSC.SAFE)
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:06.071 -0400", hash_original_method = "13D5A4FF59BF1643EBD5228E429384EA", hash_generated_method = "EBDEEA462A1EA1977BF721F91C07A957")
+        //DSFIXME:  CODE0002: Requires DSC value to be set
          View get(int position) {
             dsTaint.addTaint(position);
             View result;
@@ -641,8 +652,8 @@ public abstract class AbsSpinner extends AdapterView<SpinnerAdapter> {
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 14:34:42.876 -0400", hash_original_method = "1B173351B88254AC852DFD7E9D6DC12C", hash_generated_method = "012F6C7C672722BBC93FD0030802FA66")
-        @DSModeled(DSC.SAFE)
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:06.071 -0400", hash_original_method = "1B173351B88254AC852DFD7E9D6DC12C", hash_generated_method = "D515209F3459E69D9D0FA226CB3B69FE")
+        //DSFIXME:  CODE0002: Requires DSC value to be set
          void clear() {
             SparseArray<View> scrapHeap;
             scrapHeap = mScrapHeap;
@@ -678,5 +689,4 @@ public abstract class AbsSpinner extends AdapterView<SpinnerAdapter> {
 
     
 }
-
 

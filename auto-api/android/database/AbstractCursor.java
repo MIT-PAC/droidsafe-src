@@ -2,12 +2,11 @@ package android.database;
 
 // Droidsafe Imports
 import droidsafe.helpers.*;
-import droidsafe.runtime.DroidSafeAndroidRuntime;
 import droidsafe.annotations.*;
+import droidsafe.runtime.*;
 
-// import Iterator to deal with enhanced for loop translation
+// needed for enhanced for control translations
 import java.util.Iterator;
-
 import android.content.ContentResolver;
 import android.net.Uri;
 import android.os.Bundle;
@@ -17,12 +16,10 @@ import java.util.HashMap;
 import java.util.Map;
 
 public abstract class AbstractCursor implements CrossProcessCursor {
-    private static final String TAG = "Cursor";
     DataSetObservable mDataSetObservable = new DataSetObservable();
     ContentObservable mContentObservable = new ContentObservable();
     Bundle mExtras = Bundle.EMPTY;
-    @Deprecated
-    protected HashMap<Long, Map<String, Object>> mUpdatedRows;
+    @Deprecated protected HashMap<Long, Map<String, Object>> mUpdatedRows;
     protected int mRowIdColumnIndex;
     protected int mPos;
     protected Long mCurrentRowID;
@@ -30,11 +27,11 @@ public abstract class AbstractCursor implements CrossProcessCursor {
     protected boolean mClosed = false;
     private Uri mNotifyUri;
     private ContentObserver mSelfObserver;
-    final private Object mSelfObserverLock = new Object();
+    private Object mSelfObserverLock = new Object();
     private boolean mSelfObserverRegistered;
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:00.540 -0400", hash_original_method = "F60281D0CC7516E8B7AB1E4DD5850BC4", hash_generated_method = "A271EA34FD442DA8E3BE8D398214FEAE")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:45.784 -0400", hash_original_method = "F60281D0CC7516E8B7AB1E4DD5850BC4", hash_generated_method = "3B5E09C25C600EDC4F66CDCD37507170")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     public AbstractCursor() {
         mPos = -1;
         mRowIdColumnIndex = -1;
@@ -75,7 +72,7 @@ public abstract class AbstractCursor implements CrossProcessCursor {
     abstract public boolean isNull(int column);
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:00.541 -0400", hash_original_method = "DA5F8C1E79CBE35B90A3C92DA2B8F28D", hash_generated_method = "591C387801B9F0D67F0A284855E8703A")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:45.793 -0400", hash_original_method = "DA5F8C1E79CBE35B90A3C92DA2B8F28D", hash_generated_method = "42432289036085FD5A0BFD741E9DFB7D")
     @DSModeled(DSC.SAFE)
     public int getType(int column) {
         dsTaint.addTaint(column);
@@ -85,13 +82,11 @@ public abstract class AbstractCursor implements CrossProcessCursor {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:00.541 -0400", hash_original_method = "5BC3F93BAD50F14F34AFA39612F89CC6", hash_generated_method = "A7CDF90170FBA191D4C2B035DED70FDA")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:45.793 -0400", hash_original_method = "5BC3F93BAD50F14F34AFA39612F89CC6", hash_generated_method = "4DAF896FCB5A766334BA00BFF2BB10E6")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     public byte[] getBlob(int column) {
         dsTaint.addTaint(column);
-        if (DroidSafeAndroidRuntime.control) {
-        	throw new UnsupportedOperationException("getBlob is not supported");
-        }
+        if (DroidSafeAndroidRuntime.control) throw new UnsupportedOperationException("getBlob is not supported");
         byte[] retVal = new byte[1];
         retVal[0] = (byte)dsTaint.getTaintInt();
         return retVal;
@@ -100,7 +95,7 @@ public abstract class AbstractCursor implements CrossProcessCursor {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:00.541 -0400", hash_original_method = "DD0E28415E6C930BA9DBA04095F3A7EA", hash_generated_method = "B25919085723C9D527E42B41CA052E69")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:45.794 -0400", hash_original_method = "DD0E28415E6C930BA9DBA04095F3A7EA", hash_generated_method = "8B53AEC943D9BAFA435CF6B9A84EF810")
     @DSModeled(DSC.SAFE)
     public CursorWindow getWindow() {
         return (CursorWindow)dsTaint.getTaint();
@@ -109,18 +104,18 @@ public abstract class AbstractCursor implements CrossProcessCursor {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:00.542 -0400", hash_original_method = "97CA757ED7462ACFFD2DF70EB3327BE9", hash_generated_method = "1A3A6C85FA0453B0EC73313B6EF043FD")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:45.794 -0400", hash_original_method = "97CA757ED7462ACFFD2DF70EB3327BE9", hash_generated_method = "888FBB85688CE49C3E29E1A0B8AF7DFB")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public int getColumnCount() {
-        int varE598DA0DE038A65D9C059A044E9E4C36_92264038 = (getColumnNames().length);
+        int varE598DA0DE038A65D9C059A044E9E4C36_1517698858 = (getColumnNames().length);
         return dsTaint.getTaintInt();
         // ---------- Original Method ----------
         //return getColumnNames().length;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:00.542 -0400", hash_original_method = "FE85B15F7B4AB77AD59F907B33A4DE11", hash_generated_method = "1F8ECED9BEC78E4807451DB31352F4CC")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:45.794 -0400", hash_original_method = "FE85B15F7B4AB77AD59F907B33A4DE11", hash_generated_method = "17FE726C99E84E75E28F21C8A3D0BF8F")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     public void deactivate() {
         onDeactivateOrClose();
         // ---------- Original Method ----------
@@ -128,8 +123,8 @@ public abstract class AbstractCursor implements CrossProcessCursor {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:00.542 -0400", hash_original_method = "5696E4CEEE521AD3C05FDA1D1F1B30F5", hash_generated_method = "8A992EBD1A1B248991920F67C7199539")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:45.795 -0400", hash_original_method = "5696E4CEEE521AD3C05FDA1D1F1B30F5", hash_generated_method = "1A88E5AE7EDDB03D758D160469F2BE50")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     protected void onDeactivateOrClose() {
         //DSFIXME:  CODE0009: Possible callback target function detected
         {
@@ -146,8 +141,8 @@ public abstract class AbstractCursor implements CrossProcessCursor {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:00.542 -0400", hash_original_method = "6C342ADEDDD7EC7E0C1CE765BD80D8D1", hash_generated_method = "422518A340CE10C07D4A8E433AD047B4")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:45.795 -0400", hash_original_method = "6C342ADEDDD7EC7E0C1CE765BD80D8D1", hash_generated_method = "7D04A8C380C3AB60D47C742BF4126FCB")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     public boolean requery() {
         {
             mContentResolver.registerContentObserver(mNotifyUri, true, mSelfObserver);
@@ -165,7 +160,7 @@ public abstract class AbstractCursor implements CrossProcessCursor {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:00.542 -0400", hash_original_method = "B825EEA007B34E9E28068D61BE8C7018", hash_generated_method = "0E80242423912E1366BA961031DAA7D9")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:45.795 -0400", hash_original_method = "B825EEA007B34E9E28068D61BE8C7018", hash_generated_method = "062C4E9ADC5A2E925A8AD80D6896BD48")
     @DSModeled(DSC.SAFE)
     public boolean isClosed() {
         return dsTaint.getTaintBoolean();
@@ -174,8 +169,8 @@ public abstract class AbstractCursor implements CrossProcessCursor {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:00.542 -0400", hash_original_method = "75E7685835D22353FA19EABDEF4435E7", hash_generated_method = "24B939CB1FB13B4AE91CFC402C1850EA")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:45.795 -0400", hash_original_method = "75E7685835D22353FA19EABDEF4435E7", hash_generated_method = "2BF4E0E42FFFCB99FDCE632E9C0D4D96")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     public void close() {
         mClosed = true;
         mContentObservable.unregisterAll();
@@ -187,7 +182,7 @@ public abstract class AbstractCursor implements CrossProcessCursor {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:00.543 -0400", hash_original_method = "316C43B210EB72CE31C6D4E542FB15C5", hash_generated_method = "F13FF5CAE95AFAB5E46088630A031448")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:45.796 -0400", hash_original_method = "316C43B210EB72CE31C6D4E542FB15C5", hash_generated_method = "A5BA08037F31E1277D0447C93FE90ED0")
     @DSModeled(DSC.SAFE)
     public boolean onMove(int oldPosition, int newPosition) {
         //DSFIXME:  CODE0009: Possible callback target function detected
@@ -199,7 +194,7 @@ public abstract class AbstractCursor implements CrossProcessCursor {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:00.543 -0400", hash_original_method = "8CF2CB9941A08AAA09DBF5869325E31C", hash_generated_method = "E2E35C36E51853DB0AFE686097F659FF")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:45.806 -0400", hash_original_method = "8CF2CB9941A08AAA09DBF5869325E31C", hash_generated_method = "F0115DF00A3F3956E27EA58BCF4BE78C")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public void copyStringToBuffer(int columnIndex, CharArrayBuffer buffer) {
         dsTaint.addTaint(buffer.dsTaint);
@@ -210,7 +205,7 @@ public abstract class AbstractCursor implements CrossProcessCursor {
             char[] data;
             data = buffer.data;
             {
-                boolean varB3C493CCA0A5FEEBFBA4E5B6E1AC0832_317326447 = (data == null || data.length < result.length());
+                boolean varB3C493CCA0A5FEEBFBA4E5B6E1AC0832_605870548 = (data == null || data.length < result.length());
                 {
                     buffer.data = result.toCharArray();
                 } //End block
@@ -239,7 +234,7 @@ public abstract class AbstractCursor implements CrossProcessCursor {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:00.543 -0400", hash_original_method = "EC88CAE72DCB37222F19A173793DEE6F", hash_generated_method = "44B9C4E51097EF92CC8528F577D1CEF7")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:45.806 -0400", hash_original_method = "EC88CAE72DCB37222F19A173793DEE6F", hash_generated_method = "124A96BC3BF8A07B4C2DBABE9C37D702")
     @DSModeled(DSC.SAFE)
     public final int getPosition() {
         return dsTaint.getTaintInt();
@@ -248,11 +243,11 @@ public abstract class AbstractCursor implements CrossProcessCursor {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:00.543 -0400", hash_original_method = "65BBCEF155E9F61984647ADC3CD9D8D5", hash_generated_method = "569882D3CB182EF16492ADE2F62F930E")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:45.807 -0400", hash_original_method = "65BBCEF155E9F61984647ADC3CD9D8D5", hash_generated_method = "88A2AEE3C861BA0211EF984E3D912260")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public final boolean moveToPosition(int position) {
         dsTaint.addTaint(position);
-        final int count;
+        int count;
         count = getCount();
         {
             mPos = count;
@@ -297,8 +292,8 @@ public abstract class AbstractCursor implements CrossProcessCursor {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:00.544 -0400", hash_original_method = "6FC66EDC6A2293E690F6FEA8028519D4", hash_generated_method = "75432ED8B023B28E9484F537AF940082")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:45.808 -0400", hash_original_method = "6FC66EDC6A2293E690F6FEA8028519D4", hash_generated_method = "633971343A6EC2948BE3D1F22B80473B")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     @Override
     public void fillWindow(int position, CursorWindow window) {
         dsTaint.addTaint(position);
@@ -309,69 +304,69 @@ public abstract class AbstractCursor implements CrossProcessCursor {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:00.544 -0400", hash_original_method = "389B6720AF899474C54E777E5A800C06", hash_generated_method = "2936E0A6DA822D3C14CA95DC6C51FD77")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:45.809 -0400", hash_original_method = "389B6720AF899474C54E777E5A800C06", hash_generated_method = "9452DDF8725147E566BE100E91C8D8AC")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public final boolean move(int offset) {
         dsTaint.addTaint(offset);
-        boolean varA63C7CEC1F816BE1838C38173C94CB20_273796195 = (moveToPosition(mPos + offset));
+        boolean varA63C7CEC1F816BE1838C38173C94CB20_391570541 = (moveToPosition(mPos + offset));
         return dsTaint.getTaintBoolean();
         // ---------- Original Method ----------
         //return moveToPosition(mPos + offset);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:00.544 -0400", hash_original_method = "B3EA5CAC0D9EF5BCE0C71FFF26BBF7DF", hash_generated_method = "3F322FE3616B59ACC1ACA72893BEE637")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:45.810 -0400", hash_original_method = "B3EA5CAC0D9EF5BCE0C71FFF26BBF7DF", hash_generated_method = "8BF8D8D966EA2C7F0C11CF970DD36317")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public final boolean moveToFirst() {
-        boolean var7169217BA523AE68C1F7B0C7563B6D2F_326330355 = (moveToPosition(0));
+        boolean var7169217BA523AE68C1F7B0C7563B6D2F_1646761889 = (moveToPosition(0));
         return dsTaint.getTaintBoolean();
         // ---------- Original Method ----------
         //return moveToPosition(0);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:00.544 -0400", hash_original_method = "A0FD9DA9666B94596708F3F8CB94A387", hash_generated_method = "6E867059FEBE9E42135192663746617D")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:45.811 -0400", hash_original_method = "A0FD9DA9666B94596708F3F8CB94A387", hash_generated_method = "F3E73FB2F0B5FD7FEABFED60DD1A750B")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public final boolean moveToLast() {
-        boolean var883322E63C74EFF5BA3E9BBFA1EB0817_89462760 = (moveToPosition(getCount() - 1));
+        boolean var883322E63C74EFF5BA3E9BBFA1EB0817_779161361 = (moveToPosition(getCount() - 1));
         return dsTaint.getTaintBoolean();
         // ---------- Original Method ----------
         //return moveToPosition(getCount() - 1);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:00.544 -0400", hash_original_method = "44D940C3A0E42253110DBD8C1211FDCC", hash_generated_method = "A0D80EC12C836DB2EDD0BA2A02411E0E")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:45.812 -0400", hash_original_method = "44D940C3A0E42253110DBD8C1211FDCC", hash_generated_method = "035FB1FEE875B4A643D9248A86367BD4")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public final boolean moveToNext() {
-        boolean var6557A178A7D0E5B123127618582893AA_2071824515 = (moveToPosition(mPos + 1));
+        boolean var6557A178A7D0E5B123127618582893AA_1060399034 = (moveToPosition(mPos + 1));
         return dsTaint.getTaintBoolean();
         // ---------- Original Method ----------
         //return moveToPosition(mPos + 1);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:00.545 -0400", hash_original_method = "70B7D1CBA52F6D8A8ABC528A78C51C39", hash_generated_method = "505810E2927FCE96A9A83DB8C105D9D2")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:45.812 -0400", hash_original_method = "70B7D1CBA52F6D8A8ABC528A78C51C39", hash_generated_method = "4974EB77DDFB7369048BE89A6D33DE17")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public final boolean moveToPrevious() {
-        boolean var62DFA72D2B670D9088C02CC6B3B7A7B4_1827456634 = (moveToPosition(mPos - 1));
+        boolean var62DFA72D2B670D9088C02CC6B3B7A7B4_349501942 = (moveToPosition(mPos - 1));
         return dsTaint.getTaintBoolean();
         // ---------- Original Method ----------
         //return moveToPosition(mPos - 1);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:00.545 -0400", hash_original_method = "9906FDA9BB1856CC0A1F7D5381F7AEF7", hash_generated_method = "8FF6BA9839D6494C4B84672A9319A48A")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:45.814 -0400", hash_original_method = "9906FDA9BB1856CC0A1F7D5381F7AEF7", hash_generated_method = "F0B39D45DFA1EF473F024A89781E7E49")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public final boolean isFirst() {
-        boolean varADB2B3DA6A35A98BE1B5E66B40FE6B61_950740189 = (mPos == 0 && getCount() != 0);
+        boolean varADB2B3DA6A35A98BE1B5E66B40FE6B61_310193875 = (mPos == 0 && getCount() != 0);
         return dsTaint.getTaintBoolean();
         // ---------- Original Method ----------
         //return mPos == 0 && getCount() != 0;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:00.545 -0400", hash_original_method = "5D098944D57453F70DEC79DF938E50E8", hash_generated_method = "F432030B0D5DD49A9E8F50AD430EA979")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:45.815 -0400", hash_original_method = "5D098944D57453F70DEC79DF938E50E8", hash_generated_method = "D7261EC53FD41E54F366E1EDD6FC203E")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     public final boolean isLast() {
         int cnt;
         cnt = getCount();
@@ -382,11 +377,11 @@ public abstract class AbstractCursor implements CrossProcessCursor {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:00.545 -0400", hash_original_method = "BEAF42FFABF4F6277016BED9CE1900CE", hash_generated_method = "AC7D03B7400126C03F326DE747919865")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:45.816 -0400", hash_original_method = "BEAF42FFABF4F6277016BED9CE1900CE", hash_generated_method = "97A23692BF66988127915DE76EEFE395")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public final boolean isBeforeFirst() {
         {
-            boolean var1E308F1B2924DF35832B0C6653D5399D_781064403 = (getCount() == 0);
+            boolean var1E308F1B2924DF35832B0C6653D5399D_1834793147 = (getCount() == 0);
         } //End collapsed parenthetic
         return dsTaint.getTaintBoolean();
         // ---------- Original Method ----------
@@ -397,13 +392,13 @@ public abstract class AbstractCursor implements CrossProcessCursor {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:00.546 -0400", hash_original_method = "EBC209D2038AD2122CD62927CB78B2F3", hash_generated_method = "694B03A12B86FBD737FE53D5B4A84BB2")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:45.816 -0400", hash_original_method = "EBC209D2038AD2122CD62927CB78B2F3", hash_generated_method = "FBA71A0082435A0DD757198F56E4027C")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public final boolean isAfterLast() {
         {
-            boolean var1E308F1B2924DF35832B0C6653D5399D_2025421122 = (getCount() == 0);
+            boolean var1E308F1B2924DF35832B0C6653D5399D_1449226990 = (getCount() == 0);
         } //End collapsed parenthetic
-        boolean var0FABA7953C222ACDE339B5487276FBD9_1913583556 = (mPos == getCount());
+        boolean var0FABA7953C222ACDE339B5487276FBD9_908015011 = (mPos == getCount());
         return dsTaint.getTaintBoolean();
         // ---------- Original Method ----------
         //if (getCount() == 0) {
@@ -413,11 +408,11 @@ public abstract class AbstractCursor implements CrossProcessCursor {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:00.546 -0400", hash_original_method = "1BC2DDCF2F027B280B5593E829676223", hash_generated_method = "6FE5A23EB87330B0C6A73157C50B81DE")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:45.817 -0400", hash_original_method = "1BC2DDCF2F027B280B5593E829676223", hash_generated_method = "6DAD6B606842D77CCEB823E458DFD7B7")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public int getColumnIndex(String columnName) {
         dsTaint.addTaint(columnName);
-        final int periodIndex;
+        int periodIndex;
         periodIndex = columnName.lastIndexOf('.');
         {
             Exception e;
@@ -433,13 +428,13 @@ public abstract class AbstractCursor implements CrossProcessCursor {
             i = 0;
             {
                 {
-                    boolean var8A92D03C059C3C4A74106A947683F96E_608627849 = (columnNames[i].equalsIgnoreCase(columnName));
+                    boolean var8A92D03C059C3C4A74106A947683F96E_1825788377 = (columnNames[i].equalsIgnoreCase(columnName));
                 } //End collapsed parenthetic
             } //End block
         } //End collapsed parenthetic
         {
             {
-                boolean varFC53D64D8090E12EDE66C4B1525878D8_421798304 = (getCount() > 0);
+                boolean varFC53D64D8090E12EDE66C4B1525878D8_1548657501 = (getCount() > 0);
             } //End collapsed parenthetic
         } //End block
         return dsTaint.getTaintInt();
@@ -466,15 +461,14 @@ public abstract class AbstractCursor implements CrossProcessCursor {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:00.546 -0400", hash_original_method = "7BAA81DCDF7699C82AB2A31918E9C0C1", hash_generated_method = "BC2552B7AF9F3021E1049D4A4E6D5998")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:45.817 -0400", hash_original_method = "7BAA81DCDF7699C82AB2A31918E9C0C1", hash_generated_method = "98139FF886C007407954E225DECF7562")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     public int getColumnIndexOrThrow(String columnName) {
         dsTaint.addTaint(columnName);
-        final int index;
+        int index;
         index = getColumnIndex(columnName);
-        if (DroidSafeAndroidRuntime.control) 
         {
-            throw new IllegalArgumentException("column '" + columnName + "' does not exist");
+            if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("column '" + columnName + "' does not exist");
         } //End block
         return dsTaint.getTaintInt();
         // ---------- Original Method ----------
@@ -486,19 +480,19 @@ public abstract class AbstractCursor implements CrossProcessCursor {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:00.546 -0400", hash_original_method = "2C8B9F57D7BABEC67595057D4A416343", hash_generated_method = "59D54675B485015F00C16134DFB46364")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:45.817 -0400", hash_original_method = "2C8B9F57D7BABEC67595057D4A416343", hash_generated_method = "2A672817849F8643FF33B74C8B2CE655")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public String getColumnName(int columnIndex) {
         dsTaint.addTaint(columnIndex);
-        String var2071FD3E4F686DB35A30EE516361B518_1343056781 = (getColumnNames()[columnIndex]);
+        String var2071FD3E4F686DB35A30EE516361B518_548313344 = (getColumnNames()[columnIndex]);
         return dsTaint.getTaintString();
         // ---------- Original Method ----------
         //return getColumnNames()[columnIndex];
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:00.547 -0400", hash_original_method = "969C8D7FAD299958455EEA8274658457", hash_generated_method = "42D263B1E83A219973C01A6B58DAB1F1")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:45.818 -0400", hash_original_method = "969C8D7FAD299958455EEA8274658457", hash_generated_method = "6285F50948A2D047C2F8E141FE8C9E90")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     public void registerContentObserver(ContentObserver observer) {
         //DSFIXME: CODE0010: Possible callback registration function detected
         dsTaint.addTaint(observer.dsTaint);
@@ -508,10 +502,9 @@ public abstract class AbstractCursor implements CrossProcessCursor {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:00.547 -0400", hash_original_method = "0986E51B80B8DF6AE5336EB6410DC9C5", hash_generated_method = "AA529AD8D6185D5AA4D93D4B78CCC65B")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:45.818 -0400", hash_original_method = "0986E51B80B8DF6AE5336EB6410DC9C5", hash_generated_method = "4CA1204B0B685D55D4F85729CFC8AC9E")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     public void unregisterContentObserver(ContentObserver observer) {
-        //DSFIXME: CODE0010: Possible callback registration function detected
         dsTaint.addTaint(observer.dsTaint);
         {
             mContentObservable.unregisterObserver(observer);
@@ -523,8 +516,8 @@ public abstract class AbstractCursor implements CrossProcessCursor {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:00.547 -0400", hash_original_method = "C09BE1AB0F1EB5BF63EC2A314B1EC0E8", hash_generated_method = "B39AD203FA3D26698B93CB86583F192E")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:45.818 -0400", hash_original_method = "C09BE1AB0F1EB5BF63EC2A314B1EC0E8", hash_generated_method = "362A8921CADC3161CC20FD83BD5E4602")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     protected void notifyDataSetChange() {
         mDataSetObservable.notifyChanged();
         // ---------- Original Method ----------
@@ -532,7 +525,7 @@ public abstract class AbstractCursor implements CrossProcessCursor {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:00.547 -0400", hash_original_method = "9CE71984FA039D61518575C1361CCA79", hash_generated_method = "0ADB28AA71DA90C2F368E938F0D64956")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:45.819 -0400", hash_original_method = "9CE71984FA039D61518575C1361CCA79", hash_generated_method = "53A88933A1A9D4706FB74137F947E001")
     @DSModeled(DSC.SAFE)
     protected DataSetObservable getDataSetObservable() {
         return (DataSetObservable)dsTaint.getTaint();
@@ -541,8 +534,8 @@ public abstract class AbstractCursor implements CrossProcessCursor {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:00.547 -0400", hash_original_method = "5BE178AB760CC925EF7E1111F1B4915D", hash_generated_method = "811252175843CCDF842E079E3B96FACD")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:45.819 -0400", hash_original_method = "5BE178AB760CC925EF7E1111F1B4915D", hash_generated_method = "FC77F1E3F279C66541FD7DA4F64358F4")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     public void registerDataSetObserver(DataSetObserver observer) {
         //DSFIXME: CODE0010: Possible callback registration function detected
         dsTaint.addTaint(observer.dsTaint);
@@ -552,10 +545,9 @@ public abstract class AbstractCursor implements CrossProcessCursor {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:00.547 -0400", hash_original_method = "8548074F279CEB9C75C60995B3E76B4B", hash_generated_method = "CBB7E927B1F7161B4FF823B366BA6706")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:45.819 -0400", hash_original_method = "8548074F279CEB9C75C60995B3E76B4B", hash_generated_method = "C1751D77F2D779318A80DD109F1E6D00")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     public void unregisterDataSetObserver(DataSetObserver observer) {
-        //DSFIXME: CODE0010: Possible callback registration function detected
         dsTaint.addTaint(observer.dsTaint);
         mDataSetObservable.unregisterObserver(observer);
         // ---------- Original Method ----------
@@ -563,8 +555,8 @@ public abstract class AbstractCursor implements CrossProcessCursor {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:00.548 -0400", hash_original_method = "46E00F9025A0D5563AEDF0BD12648840", hash_generated_method = "247C6601A943A0D3EF3F5F028123375C")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:45.820 -0400", hash_original_method = "46E00F9025A0D5563AEDF0BD12648840", hash_generated_method = "F65D3999BB632B4D0CD1831AE8B4260B")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     protected void onChange(boolean selfChange) {
         //DSFIXME:  CODE0009: Possible callback target function detected
         dsTaint.addTaint(selfChange);
@@ -584,10 +576,9 @@ public abstract class AbstractCursor implements CrossProcessCursor {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:00.548 -0400", hash_original_method = "265F32C67EE2A711D5C4BAD496137660", hash_generated_method = "50BBAC57A8AA772B87ADB8801DD48495")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:45.822 -0400", hash_original_method = "265F32C67EE2A711D5C4BAD496137660", hash_generated_method = "6CBE7F3F51F79FC2116E1874FE73C972")
     @DSModeled(DSC.SPEC)
     public void setNotificationUri(ContentResolver cr, Uri notifyUri) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
         dsTaint.addTaint(cr.dsTaint);
         dsTaint.addTaint(notifyUri.dsTaint);
         {
@@ -612,17 +603,16 @@ public abstract class AbstractCursor implements CrossProcessCursor {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:00.548 -0400", hash_original_method = "DDB9421669E815EA51C0F68469B23471", hash_generated_method = "E2604D85E415344FF70A9241D9C0F502")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:45.823 -0400", hash_original_method = "DDB9421669E815EA51C0F68469B23471", hash_generated_method = "7F4746D14C9EA7994065084FDCDC3D14")
     @DSModeled(DSC.SPEC)
     public Uri getNotificationUri() {
-        //DSFIXME:  CODE0009: Possible callback target function detected
         return (Uri)dsTaint.getTaint();
         // ---------- Original Method ----------
         //return mNotifyUri;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:00.548 -0400", hash_original_method = "95EB5F956072F4428350A5713DB4F16C", hash_generated_method = "0630D156785E7E754DC6AB00107AB61F")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:45.823 -0400", hash_original_method = "95EB5F956072F4428350A5713DB4F16C", hash_generated_method = "0743E50CE490F5D11D908B7FAB507449")
     @DSModeled(DSC.SAFE)
     public boolean getWantsAllOnMoveCalls() {
         return dsTaint.getTaintBoolean();
@@ -631,7 +621,7 @@ public abstract class AbstractCursor implements CrossProcessCursor {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:00.548 -0400", hash_original_method = "FFD927D835EC033CA0D5789154520D3B", hash_generated_method = "07AEC52227AF9598A1CB1C0E1C7071D6")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:45.823 -0400", hash_original_method = "FFD927D835EC033CA0D5789154520D3B", hash_generated_method = "5D4EA0DED19B9ABB5E8C702295A672FC")
     @DSModeled(DSC.SAFE)
     public void setExtras(Bundle extras) {
         dsTaint.addTaint(extras.dsTaint);
@@ -641,7 +631,7 @@ public abstract class AbstractCursor implements CrossProcessCursor {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:00.549 -0400", hash_original_method = "CF33C86C13BFD55DE499066ECC955562", hash_generated_method = "6A426F46B05FC9BFE882ECE023FE1517")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:45.824 -0400", hash_original_method = "CF33C86C13BFD55DE499066ECC955562", hash_generated_method = "5467DB301C93271E15B2B85B3DDE4C93")
     @DSModeled(DSC.SAFE)
     public Bundle getExtras() {
         return (Bundle)dsTaint.getTaint();
@@ -650,7 +640,7 @@ public abstract class AbstractCursor implements CrossProcessCursor {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:00.549 -0400", hash_original_method = "0DCA3EA5579BB07DA7E61D916C230104", hash_generated_method = "9BAE41E0A112C18324327FB2DCC297BD")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:45.824 -0400", hash_original_method = "0DCA3EA5579BB07DA7E61D916C230104", hash_generated_method = "634275E652210744BEA34DB46178FD06")
     @DSModeled(DSC.SAFE)
     public Bundle respond(Bundle extras) {
         dsTaint.addTaint(extras.dsTaint);
@@ -660,7 +650,7 @@ public abstract class AbstractCursor implements CrossProcessCursor {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:00.549 -0400", hash_original_method = "038210FB7F6D7350A83F25D9DA43B6B8", hash_generated_method = "AD706E5D287BAD17C8DF158F25D06326")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:45.824 -0400", hash_original_method = "038210FB7F6D7350A83F25D9DA43B6B8", hash_generated_method = "E6B09E8F2ED884D7EFE8216BFD4F02CC")
     @DSModeled(DSC.SAFE)
     @Deprecated
     protected boolean isFieldUpdated(int columnIndex) {
@@ -671,7 +661,7 @@ public abstract class AbstractCursor implements CrossProcessCursor {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:00.549 -0400", hash_original_method = "C12342D6451FF7A0A51B2EFC9932FDFD", hash_generated_method = "F0DC8C9284F7A758D28C9724E561A8A6")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:45.825 -0400", hash_original_method = "C12342D6451FF7A0A51B2EFC9932FDFD", hash_generated_method = "4D42EEBBC835998838F33EE1A03EF0EA")
     @DSModeled(DSC.SAFE)
     @Deprecated
     protected Object getUpdatedField(int columnIndex) {
@@ -682,13 +672,13 @@ public abstract class AbstractCursor implements CrossProcessCursor {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:00.549 -0400", hash_original_method = "D69CAFAFBC9C61DD3802AD1DC7C32FD3", hash_generated_method = "2424598918DFB41983B092ED1C65FE61")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:45.825 -0400", hash_original_method = "D69CAFAFBC9C61DD3802AD1DC7C32FD3", hash_generated_method = "FC2FC3400845C1E582F8034558AA4FE0")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     protected void checkPosition() {
         {
-            boolean var63B4E4AC12944E47003AF0905D5ED5FF_2106027352 = (-1 == mPos || getCount() == mPos);
+            boolean var63B4E4AC12944E47003AF0905D5ED5FF_1167801500 = (-1 == mPos || getCount() == mPos);
             {
-                throw new CursorIndexOutOfBoundsException(mPos, getCount());
+                if (DroidSafeAndroidRuntime.control) throw new CursorIndexOutOfBoundsException(mPos, getCount());
             } //End block
         } //End collapsed parenthetic
         // ---------- Original Method ----------
@@ -698,8 +688,8 @@ public abstract class AbstractCursor implements CrossProcessCursor {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:00.549 -0400", hash_original_method = "F26D041066C4F03E188153BABFEE500A", hash_generated_method = "E891B2111FEE4905977CA85B177AB593")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:45.825 -0400", hash_original_method = "F26D041066C4F03E188153BABFEE500A", hash_generated_method = "527FAC0CAA846B70BB6AE3177A20EE40")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     @Override
     protected void finalize() {
         {
@@ -715,7 +705,7 @@ public abstract class AbstractCursor implements CrossProcessCursor {
     protected static class SelfContentObserver extends ContentObserver {
         WeakReference<AbstractCursor> mCursor;
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:00.550 -0400", hash_original_method = "F9E51D895511CEE60B782983BAF87140", hash_generated_method = "190BB3E7F3504B505B03C006E6B9F1DE")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:45.826 -0400", hash_original_method = "F9E51D895511CEE60B782983BAF87140", hash_generated_method = "EA2D927889FD7BAF0D1A277AB0F02B87")
         //DSFIXME:  CODE0002: Requires DSC value to be set
         public SelfContentObserver(AbstractCursor cursor) {
             super(null);
@@ -726,7 +716,7 @@ public abstract class AbstractCursor implements CrossProcessCursor {
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:00.550 -0400", hash_original_method = "A5B2D8696143266ED24B145CF029F206", hash_generated_method = "04AF9B9E52102CC0A16782543D266E43")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:45.837 -0400", hash_original_method = "A5B2D8696143266ED24B145CF029F206", hash_generated_method = "F715171AD0DE912B03270516F086F02E")
         @DSModeled(DSC.SAFE)
         @Override
         public boolean deliverSelfNotifications() {
@@ -736,8 +726,8 @@ public abstract class AbstractCursor implements CrossProcessCursor {
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:00.550 -0400", hash_original_method = "DA6E4383047955D7231484890E1F062B", hash_generated_method = "B26EC6EB9ACE0EE11488E33FE1CCFC7B")
-        @DSModeled(DSC.SAFE)
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:45.837 -0400", hash_original_method = "DA6E4383047955D7231484890E1F062B", hash_generated_method = "F4114780C23FCA10E581BFB821D2A5FE")
+        //DSFIXME:  CODE0002: Requires DSC value to be set
         @Override
         public void onChange(boolean selfChange) {
             //DSFIXME:  CODE0009: Possible callback target function detected
@@ -759,6 +749,6 @@ public abstract class AbstractCursor implements CrossProcessCursor {
 
 
     
+    private static final String TAG = "Cursor";
 }
-
 

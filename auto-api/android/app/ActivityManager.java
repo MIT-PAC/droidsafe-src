@@ -3,10 +3,10 @@ package android.app;
 // Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
+import droidsafe.runtime.*;
 
-// import Iterator to deal with enhanced for loop translation
+// needed for enhanced for control translations
 import java.util.Iterator;
-
 import com.android.internal.app.IUsageStats;
 import com.android.internal.os.PkgUsageStats;
 import com.android.internal.util.MemInfoReader;
@@ -38,41 +38,26 @@ import java.util.List;
 import java.util.Map;
 
 public class ActivityManager {
-    private static String TAG = "ActivityManager";
-    private static boolean localLOGV = false;
-    private final Context mContext;
-    private final Handler mHandler;
-    public static final int COMPAT_MODE_ALWAYS = -1;
-    public static final int COMPAT_MODE_NEVER = -2;
-    public static final int COMPAT_MODE_UNKNOWN = -3;
-    public static final int COMPAT_MODE_DISABLED = 0;
-    public static final int COMPAT_MODE_ENABLED = 1;
-    public static final int COMPAT_MODE_TOGGLE = 2;
-    public static final int RECENT_WITH_EXCLUDED = 0x0001;
-    public static final int RECENT_IGNORE_UNAVAILABLE = 0x0002;
-    public static final int REMOVE_TASK_KILL_PROCESS = 0x0001;
-    public static final int MOVE_TASK_WITH_HOME = 0x00000001;
-    public static final int MOVE_TASK_NO_USER_ACTION = 0x00000002;
+    private Context mContext;
+    private Handler mHandler;
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:14:57.905 -0400", hash_original_method = "5B4171109A2201F1FE14E6225146AB80", hash_generated_method = "5E16DF085F48C17E4878B4B9472FEA79")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:34.380 -0400", hash_original_method = "5B4171109A2201F1FE14E6225146AB80", hash_generated_method = "B3E6E823A19D053211AE897745B4E102")
     @DSModeled(DSC.SAFE)
      ActivityManager(Context context, Handler handler) {
         dsTaint.addTaint(context.dsTaint);
         dsTaint.addTaint(handler.dsTaint);
-        mContext = context;
-        mHandler = handler;
         // ---------- Original Method ----------
         //mContext = context;
         //mHandler = handler;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:14:57.905 -0400", hash_original_method = "BCFF8F5D8C51374E31DC49464CB803A5", hash_generated_method = "61DB3FBF582B8D88D6BA49D963676847")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:34.381 -0400", hash_original_method = "BCFF8F5D8C51374E31DC49464CB803A5", hash_generated_method = "2ADBE0709342C6F19DFC360B11A639E8")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public int getFrontActivityScreenCompatMode() {
         try 
         {
-            int var6D57FFF049EDBBD675CB42E6E5881F63_265626937 = (ActivityManagerNative.getDefault().getFrontActivityScreenCompatMode());
+            int var6D57FFF049EDBBD675CB42E6E5881F63_1512851723 = (ActivityManagerNative.getDefault().getFrontActivityScreenCompatMode());
         } //End block
         catch (RemoteException e)
         { }
@@ -86,7 +71,7 @@ public class ActivityManager {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:14:57.906 -0400", hash_original_method = "1AD781893C5FA74DDB5BF5981AAFC282", hash_generated_method = "54EFC726908A071D34C0575165BAA6E8")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:34.381 -0400", hash_original_method = "1AD781893C5FA74DDB5BF5981AAFC282", hash_generated_method = "3441318D623934E3D99C126BF6D7BB22")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public void setFrontActivityScreenCompatMode(int mode) {
         dsTaint.addTaint(mode);
@@ -104,13 +89,13 @@ public class ActivityManager {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:14:57.906 -0400", hash_original_method = "08DE0842CE89FB88CEE40B6F1F1D5D8A", hash_generated_method = "5704C14807F884CD2A5F20B11079BFEA")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:34.382 -0400", hash_original_method = "08DE0842CE89FB88CEE40B6F1F1D5D8A", hash_generated_method = "3E1E155BAD738BEC0BA4B1F6F589E501")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public int getPackageScreenCompatMode(String packageName) {
         dsTaint.addTaint(packageName);
         try 
         {
-            int var4970DBBC19CF020D2AB9E07CA6C5607B_794654768 = (ActivityManagerNative.getDefault().getPackageScreenCompatMode(packageName));
+            int var4970DBBC19CF020D2AB9E07CA6C5607B_640745391 = (ActivityManagerNative.getDefault().getPackageScreenCompatMode(packageName));
         } //End block
         catch (RemoteException e)
         { }
@@ -124,7 +109,7 @@ public class ActivityManager {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:14:57.907 -0400", hash_original_method = "6272BC343B5B54EAA927E2C6A7A229FA", hash_generated_method = "75EC392A1DD790CF8848E9C2533C3B7C")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:34.382 -0400", hash_original_method = "6272BC343B5B54EAA927E2C6A7A229FA", hash_generated_method = "2D9D23EE618DB836FE43AF30B9DEE372")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public void setPackageScreenCompatMode(String packageName, int mode) {
         dsTaint.addTaint(packageName);
@@ -143,13 +128,13 @@ public class ActivityManager {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:14:57.907 -0400", hash_original_method = "43CD4547C63AA5BA08A4BB7431262A61", hash_generated_method = "5A123E6305C7F21BAC29F5E90AB9D625")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:34.383 -0400", hash_original_method = "43CD4547C63AA5BA08A4BB7431262A61", hash_generated_method = "ED689D87FD29450B8319CC5A63A4839E")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public boolean getPackageAskScreenCompat(String packageName) {
         dsTaint.addTaint(packageName);
         try 
         {
-            boolean var8E89A0F6D10823A8701FE5BBBD1FE149_2021169865 = (ActivityManagerNative.getDefault().getPackageAskScreenCompat(packageName));
+            boolean var8E89A0F6D10823A8701FE5BBBD1FE149_1043857624 = (ActivityManagerNative.getDefault().getPackageAskScreenCompat(packageName));
         } //End block
         catch (RemoteException e)
         { }
@@ -163,7 +148,7 @@ public class ActivityManager {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:14:57.908 -0400", hash_original_method = "3BC1D3C0234B303E106B1ACB51D8D800", hash_generated_method = "C47A7AB138486414FA021BBF68ED5C6E")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:34.383 -0400", hash_original_method = "3BC1D3C0234B303E106B1ACB51D8D800", hash_generated_method = "978A90A2369B8073D7D29B23AB879250")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public void setPackageAskScreenCompat(String packageName, boolean ask) {
         dsTaint.addTaint(packageName);
@@ -182,18 +167,17 @@ public class ActivityManager {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:14:57.908 -0400", hash_original_method = "B7DBD08AF6CFCEAABC628A74B78E8B6F", hash_generated_method = "D07375CC19D000B93AA4F7F7D0185011")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:34.384 -0400", hash_original_method = "B7DBD08AF6CFCEAABC628A74B78E8B6F", hash_generated_method = "6D9897B49DFFA67872E1F9832755DBF9")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public int getMemoryClass() {
-        int var9862DFF8105689D1FAD16F0A2A7D04D2_611345889 = (staticGetMemoryClass());
+        int var9862DFF8105689D1FAD16F0A2A7D04D2_1137826592 = (staticGetMemoryClass());
         return dsTaint.getTaintInt();
         // ---------- Original Method ----------
         //return staticGetMemoryClass();
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:14:57.909 -0400", hash_original_method = "0BAD5E2BAC82418DEF60529619F507F9", hash_generated_method = "E5423F9463EEC9125DA27B0C5B1C0238")
-    static public int staticGetMemoryClass() {
+        static public int staticGetMemoryClass() {
         String vmHeapSize = SystemProperties.get("dalvik.vm.heapgrowthlimit", "");
         if (vmHeapSize != null && !"".equals(vmHeapSize)) {
             return Integer.parseInt(vmHeapSize.substring(0, vmHeapSize.length()-1));
@@ -202,25 +186,23 @@ public class ActivityManager {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:14:57.909 -0400", hash_original_method = "50F084ADAAFF8EB942A9D9EB0C93D87F", hash_generated_method = "1912B5D57334FBD804BB846CBD3EF834")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:34.385 -0400", hash_original_method = "50F084ADAAFF8EB942A9D9EB0C93D87F", hash_generated_method = "6BE64B5C24ACB4BB638667560CC5B5C3")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public int getLargeMemoryClass() {
-        int var69D319CAE7493EBEEA5EC841CBB29C6C_946238295 = (staticGetLargeMemoryClass());
+        int var69D319CAE7493EBEEA5EC841CBB29C6C_1516307496 = (staticGetLargeMemoryClass());
         return dsTaint.getTaintInt();
         // ---------- Original Method ----------
         //return staticGetLargeMemoryClass();
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:14:57.910 -0400", hash_original_method = "D5DE26C76366228A47CE9C0908FBCDED", hash_generated_method = "92F5BE76FC0C65507C2A3D675D3253AE")
-    static public int staticGetLargeMemoryClass() {
+        static public int staticGetLargeMemoryClass() {
         String vmHeapSize = SystemProperties.get("dalvik.vm.heapsize", "16m");
         return Integer.parseInt(vmHeapSize.substring(0, vmHeapSize.length()-1));
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:14:57.910 -0400", hash_original_method = "439624820785E6C7317999C60D151459", hash_generated_method = "15CDE9B8F7ED0780DE8E94B76800E00D")
-    static public boolean isHighEndGfx(Display display) {
+        static public boolean isHighEndGfx(Display display) {
         MemInfoReader reader = new MemInfoReader();
         reader.readMemInfo();
         if (reader.getTotalSize() >= (512*1024*1024)) {
@@ -236,8 +218,7 @@ public class ActivityManager {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:14:57.911 -0400", hash_original_method = "68A91D72405A4CE5DF9B72D6FF4E6DC9", hash_generated_method = "A3987591DF10460FED0F899EAEDF9991")
-    static public boolean isLargeRAM() {
+        static public boolean isLargeRAM() {
         MemInfoReader reader = new MemInfoReader();
         reader.readMemInfo();
         if (reader.getTotalSize() >= (640*1024*1024)) {
@@ -247,14 +228,14 @@ public class ActivityManager {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:14:57.911 -0400", hash_original_method = "F8BE7228FE8A06DB7E3F7EC0517EBE16", hash_generated_method = "DBA00792C93E16378CC9D7002BC700EF")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:34.387 -0400", hash_original_method = "F8BE7228FE8A06DB7E3F7EC0517EBE16", hash_generated_method = "A63A09200F1E3C58CFEDD31C512AF96A")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public List<RecentTaskInfo> getRecentTasks(int maxNum, int flags) throws SecurityException {
         dsTaint.addTaint(flags);
         dsTaint.addTaint(maxNum);
         try 
         {
-            List<RecentTaskInfo> var26C34576422CD3AA6F64606A10610CD6_308827508 = (ActivityManagerNative.getDefault().getRecentTasks(maxNum,
+            List<RecentTaskInfo> var26C34576422CD3AA6F64606A10610CD6_2050314820 = (ActivityManagerNative.getDefault().getRecentTasks(maxNum,
                     flags));
         } //End block
         catch (RemoteException e)
@@ -270,7 +251,7 @@ public class ActivityManager {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:14:57.912 -0400", hash_original_method = "324273237D89470A473FD6EC5C103A40", hash_generated_method = "B4E22B0A78B6F693D3B4BBE327A21016")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:34.388 -0400", hash_original_method = "324273237D89470A473FD6EC5C103A40", hash_generated_method = "E0845C5BFFD09969E2650FCCDCE2A0F5")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public List<RunningTaskInfo> getRunningTasks(int maxNum, int flags, IThumbnailReceiver receiver) throws SecurityException {
         dsTaint.addTaint(flags);
@@ -278,7 +259,7 @@ public class ActivityManager {
         dsTaint.addTaint(maxNum);
         try 
         {
-            List<RunningTaskInfo> varE0092079F64DEAD6D1D4101A8E7ADCD0_498844190 = (ActivityManagerNative.getDefault().getTasks(maxNum, flags, receiver));
+            List<RunningTaskInfo> varE0092079F64DEAD6D1D4101A8E7ADCD0_2089883153 = (ActivityManagerNative.getDefault().getTasks(maxNum, flags, receiver));
         } //End block
         catch (RemoteException e)
         { }
@@ -292,25 +273,25 @@ public class ActivityManager {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:14:57.912 -0400", hash_original_method = "048E08D6499B0F81FA41B243F96225CE", hash_generated_method = "88F004088BAB42CF7D9AC3B35BED6D57")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:34.388 -0400", hash_original_method = "048E08D6499B0F81FA41B243F96225CE", hash_generated_method = "007D9282FCE2E9DDCECB9657137F0152")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public List<RunningTaskInfo> getRunningTasks(int maxNum) throws SecurityException {
         dsTaint.addTaint(maxNum);
-        List<RunningTaskInfo> var2DF5CA28CDF194C5DCBEA41663028194_1679813403 = (getRunningTasks(maxNum, 0, null));
+        List<RunningTaskInfo> var2DF5CA28CDF194C5DCBEA41663028194_1064143360 = (getRunningTasks(maxNum, 0, null));
         return (List<RunningTaskInfo>)dsTaint.getTaint();
         // ---------- Original Method ----------
         //return getRunningTasks(maxNum, 0, null);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:14:57.913 -0400", hash_original_method = "06417D4703E772AA57E4535D9CA52E2C", hash_generated_method = "AD02558A0C4434D41AAA820171E7EB16")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:34.389 -0400", hash_original_method = "06417D4703E772AA57E4535D9CA52E2C", hash_generated_method = "D3306FCB35EB5B203662BE46D637079B")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public boolean removeSubTask(int taskId, int subTaskIndex) throws SecurityException {
-        dsTaint.addTaint(taskId);
         dsTaint.addTaint(subTaskIndex);
+        dsTaint.addTaint(taskId);
         try 
         {
-            boolean var07CF28A51B530B1C42F191E5697D370C_940138229 = (ActivityManagerNative.getDefault().removeSubTask(taskId, subTaskIndex));
+            boolean var07CF28A51B530B1C42F191E5697D370C_92666530 = (ActivityManagerNative.getDefault().removeSubTask(taskId, subTaskIndex));
         } //End block
         catch (RemoteException e)
         { }
@@ -324,14 +305,14 @@ public class ActivityManager {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:14:57.914 -0400", hash_original_method = "B1BB833FCE4ABF3667361FA6F055417F", hash_generated_method = "0555985E1887B6DBCC0EBCE1182AC8CF")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:34.390 -0400", hash_original_method = "B1BB833FCE4ABF3667361FA6F055417F", hash_generated_method = "A2BF6EB768B330BBCFAF167765AC521F")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public boolean removeTask(int taskId, int flags) throws SecurityException {
         dsTaint.addTaint(taskId);
         dsTaint.addTaint(flags);
         try 
         {
-            boolean varE06E21935A507F8A824839E5F554648C_1497859369 = (ActivityManagerNative.getDefault().removeTask(taskId, flags));
+            boolean varE06E21935A507F8A824839E5F554648C_1460366241 = (ActivityManagerNative.getDefault().removeTask(taskId, flags));
         } //End block
         catch (RemoteException e)
         { }
@@ -345,13 +326,13 @@ public class ActivityManager {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:14:57.914 -0400", hash_original_method = "90A15739ABCD71E20C2601B2E690D2DC", hash_generated_method = "1548B62A34862E50F618F783340C9D44")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:34.390 -0400", hash_original_method = "90A15739ABCD71E20C2601B2E690D2DC", hash_generated_method = "0304E991E9883ECBDB8073277FFE606E")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public TaskThumbnails getTaskThumbnails(int id) throws SecurityException {
         dsTaint.addTaint(id);
         try 
         {
-            TaskThumbnails var5B632D12431BADBB3E85B2C4C0A1E560_1940772954 = (ActivityManagerNative.getDefault().getTaskThumbnails(id));
+            TaskThumbnails var5B632D12431BADBB3E85B2C4C0A1E560_1140418704 = (ActivityManagerNative.getDefault().getTaskThumbnails(id));
         } //End block
         catch (RemoteException e)
         { }
@@ -365,7 +346,7 @@ public class ActivityManager {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:14:57.915 -0400", hash_original_method = "68F3ECC95EA33C5EF7CED37FFBD163D9", hash_generated_method = "701BE803BB230F4C04E7AF0A29B9A106")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:34.391 -0400", hash_original_method = "68F3ECC95EA33C5EF7CED37FFBD163D9", hash_generated_method = "DC4004A6F98AD53922716B93451E9671")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public void moveTaskToFront(int taskId, int flags) {
         dsTaint.addTaint(taskId);
@@ -384,13 +365,13 @@ public class ActivityManager {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:14:57.915 -0400", hash_original_method = "93643A575557EDD801C5647B318BA97A", hash_generated_method = "A24E199DF16061D281D669E04E4E2B63")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:34.391 -0400", hash_original_method = "93643A575557EDD801C5647B318BA97A", hash_generated_method = "F496C1653B39AF744517D2CDD6C3E5B4")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public List<RunningServiceInfo> getRunningServices(int maxNum) throws SecurityException {
         dsTaint.addTaint(maxNum);
         try 
         {
-            List<RunningServiceInfo> var906A88D4420C6DBB6E72B2196F3B3C79_258798461 = (ActivityManagerNative.getDefault()
+            List<RunningServiceInfo> var906A88D4420C6DBB6E72B2196F3B3C79_1138526343 = (ActivityManagerNative.getDefault()
                     .getServices(maxNum, 0));
         } //End block
         catch (RemoteException e)
@@ -406,13 +387,13 @@ public class ActivityManager {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:14:57.916 -0400", hash_original_method = "3F37B5EEA2E0ADFF7012B4DB8D3BC71C", hash_generated_method = "8020AD47ECD4F3A234060D527BD6102B")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:34.392 -0400", hash_original_method = "3F37B5EEA2E0ADFF7012B4DB8D3BC71C", hash_generated_method = "563CB69CA8261CA91CDE1DB6D5D59750")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public PendingIntent getRunningServiceControlPanel(ComponentName service) throws SecurityException {
         dsTaint.addTaint(service.dsTaint);
         try 
         {
-            PendingIntent var2B1F7394D13D9BCE30265B30D995C712_1867361335 = (ActivityManagerNative.getDefault()
+            PendingIntent var2B1F7394D13D9BCE30265B30D995C712_125969401 = (ActivityManagerNative.getDefault()
                     .getRunningServiceControlPanel(service));
         } //End block
         catch (RemoteException e)
@@ -428,7 +409,7 @@ public class ActivityManager {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:14:57.916 -0400", hash_original_method = "B6E6E4E46821E411AC60EE30A7424576", hash_generated_method = "6FE44E422478B02898DAE8837B85A078")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:34.393 -0400", hash_original_method = "B6E6E4E46821E411AC60EE30A7424576", hash_generated_method = "A0CD8B49D91035A37C9A914356BF9E65")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public void getMemoryInfo(MemoryInfo outInfo) {
         dsTaint.addTaint(outInfo.dsTaint);
@@ -446,15 +427,14 @@ public class ActivityManager {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:14:57.917 -0400", hash_original_method = "F72074CE1B364F8B93C8BBDF31501500", hash_generated_method = "24A9A662C40FFC88181072E101ADBCB0")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:34.393 -0400", hash_original_method = "F72074CE1B364F8B93C8BBDF31501500", hash_generated_method = "792EFD7870D0A938D081A8A0F8E35F52")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public boolean clearApplicationUserData(String packageName, IPackageDataObserver observer) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
         dsTaint.addTaint(packageName);
         dsTaint.addTaint(observer.dsTaint);
         try 
         {
-            boolean var6850AED94B5983BF09E13F93CF984187_678564826 = (ActivityManagerNative.getDefault().clearApplicationUserData(packageName, 
+            boolean var6850AED94B5983BF09E13F93CF984187_1385202819 = (ActivityManagerNative.getDefault().clearApplicationUserData(packageName, 
                     observer));
         } //End block
         catch (RemoteException e)
@@ -470,12 +450,12 @@ public class ActivityManager {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:14:57.918 -0400", hash_original_method = "F53E97F522CAE83DA0CBCF957085AF2C", hash_generated_method = "98AD4ABF7153EA742A9D1229F9E211AE")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:34.397 -0400", hash_original_method = "F53E97F522CAE83DA0CBCF957085AF2C", hash_generated_method = "DE832A8CB340935B0AA8AE52B9B28D4E")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public List<ProcessErrorStateInfo> getProcessesInErrorState() {
         try 
         {
-            List<ProcessErrorStateInfo> var21830C4C4064299EF5EAAEF44E9533E0_1925571824 = (ActivityManagerNative.getDefault().getProcessesInErrorState());
+            List<ProcessErrorStateInfo> var21830C4C4064299EF5EAAEF44E9533E0_1571851128 = (ActivityManagerNative.getDefault().getProcessesInErrorState());
         } //End block
         catch (RemoteException e)
         { }
@@ -489,12 +469,12 @@ public class ActivityManager {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:14:57.919 -0400", hash_original_method = "5737B6241A3389A78D86162B5C5BDB02", hash_generated_method = "4EA029A4B9C6AAE499817E3A80090757")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:34.401 -0400", hash_original_method = "5737B6241A3389A78D86162B5C5BDB02", hash_generated_method = "55DC4CCEAE49C4CE6D22C0039F6AEE02")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public List<ApplicationInfo> getRunningExternalApplications() {
         try 
         {
-            List<ApplicationInfo> varA73169A7478F77D402570A5B0E1FF006_1244315380 = (ActivityManagerNative.getDefault().getRunningExternalApplications());
+            List<ApplicationInfo> varA73169A7478F77D402570A5B0E1FF006_1505189253 = (ActivityManagerNative.getDefault().getRunningExternalApplications());
         } //End block
         catch (RemoteException e)
         { }
@@ -508,12 +488,12 @@ public class ActivityManager {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:14:57.920 -0400", hash_original_method = "BB41AA7EC02A452F0653300FBA1EFF8A", hash_generated_method = "D744FDB965DF4229FBEF2FA909DD76D2")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:34.402 -0400", hash_original_method = "BB41AA7EC02A452F0653300FBA1EFF8A", hash_generated_method = "B4384D88AFB6B963D921FBCF77FF81B5")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public List<RunningAppProcessInfo> getRunningAppProcesses() {
         try 
         {
-            List<RunningAppProcessInfo> var8BA730091C8E2B4321BB5C84DF3EB143_511980310 = (ActivityManagerNative.getDefault().getRunningAppProcesses());
+            List<RunningAppProcessInfo> var8BA730091C8E2B4321BB5C84DF3EB143_892423492 = (ActivityManagerNative.getDefault().getRunningAppProcesses());
         } //End block
         catch (RemoteException e)
         { }
@@ -527,13 +507,13 @@ public class ActivityManager {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:14:57.921 -0400", hash_original_method = "BA29C29542BF4FC0E2178C81FA222823", hash_generated_method = "8148E8364A219A182ABC59E055A78CE4")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:34.403 -0400", hash_original_method = "BA29C29542BF4FC0E2178C81FA222823", hash_generated_method = "1CC5C01BDBAA7783E5C725DA5465EAB8")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public Debug.MemoryInfo[] getProcessMemoryInfo(int[] pids) {
-        dsTaint.addTaint(pids);
+        dsTaint.addTaint(pids[0]);
         try 
         {
-            Debug.MemoryInfo[] var72A4E7F6179FD37B2A53189E6AD76F09_1901624735 = (ActivityManagerNative.getDefault().getProcessMemoryInfo(pids));
+            Debug.MemoryInfo[] var72A4E7F6179FD37B2A53189E6AD76F09_1554686125 = (ActivityManagerNative.getDefault().getProcessMemoryInfo(pids));
         } //End block
         catch (RemoteException e)
         { }
@@ -547,8 +527,8 @@ public class ActivityManager {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:14:57.921 -0400", hash_original_method = "AB97F58AF8359C056EB136FA16E11328", hash_generated_method = "ECAFDBFE4C28864B624A0B1845E456FB")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:34.405 -0400", hash_original_method = "AB97F58AF8359C056EB136FA16E11328", hash_generated_method = "7ABD9542A00FCFD97A968850A6554884")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     @Deprecated
     public void restartPackage(String packageName) {
         dsTaint.addTaint(packageName);
@@ -558,7 +538,7 @@ public class ActivityManager {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:14:57.922 -0400", hash_original_method = "BAC028425422747AF2B8DB952F37E411", hash_generated_method = "691B2F1E796F266878AE038AC8F12032")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:34.406 -0400", hash_original_method = "BAC028425422747AF2B8DB952F37E411", hash_generated_method = "49BEE698A78CED9B26DC2F5ADA75A0B5")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public void killBackgroundProcesses(String packageName) {
         dsTaint.addTaint(packageName);
@@ -576,7 +556,7 @@ public class ActivityManager {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:14:57.923 -0400", hash_original_method = "F30C6D9D6BE88E1DA2EC5D39F1D44538", hash_generated_method = "DD0653A153459BA52347103C6C60AC6E")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:34.407 -0400", hash_original_method = "F30C6D9D6BE88E1DA2EC5D39F1D44538", hash_generated_method = "AE84589B2AFAF48BD16F97FA09F01804")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public void forceStopPackage(String packageName) {
         dsTaint.addTaint(packageName);
@@ -594,13 +574,12 @@ public class ActivityManager {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:14:57.924 -0400", hash_original_method = "002CA49339A7476A8E8EF41ECCC37BDD", hash_generated_method = "4A845FED58F72A2F3A4794C9D65406F8")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:34.407 -0400", hash_original_method = "002CA49339A7476A8E8EF41ECCC37BDD", hash_generated_method = "E7C9B9EFDD90915AD28EB09CA6696AB9")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public ConfigurationInfo getDeviceConfigurationInfo() {
-        //DSFIXME:  CODE0009: Possible callback target function detected
         try 
         {
-            ConfigurationInfo var9A01BB6CE6372EDF72014ACCA11C22C3_2062184400 = (ActivityManagerNative.getDefault().getDeviceConfigurationInfo());
+            ConfigurationInfo var9A01BB6CE6372EDF72014ACCA11C22C3_121430373 = (ActivityManagerNative.getDefault().getDeviceConfigurationInfo());
         } //End block
         catch (RemoteException e)
         { }
@@ -614,16 +593,15 @@ public class ActivityManager {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:14:57.925 -0400", hash_original_method = "E6A8DEADBC97DC6A083D1FDDD3BF2E4E", hash_generated_method = "E721EBBA5B604F785A2231A3C81DC889")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:34.408 -0400", hash_original_method = "E6A8DEADBC97DC6A083D1FDDD3BF2E4E", hash_generated_method = "0AF4A280AF895B192F6DE2C10873F8CB")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public int getLauncherLargeIconDensity() {
-        //DSFIXME:  CODE0009: Possible callback target function detected
-        final Resources res;
+        Resources res;
         res = mContext.getResources();
-        final int density;
+        int density;
         density = res.getDisplayMetrics().densityDpi;
         {
-            boolean varE01F796B7DD545CA1852C72371851054_1138987648 = ((res.getConfiguration().screenLayout & Configuration.SCREENLAYOUT_SIZE_MASK)
+            boolean varE01F796B7DD545CA1852C72371851054_100395864 = ((res.getConfiguration().screenLayout & Configuration.SCREENLAYOUT_SIZE_MASK)
                 != Configuration.SCREENLAYOUT_SIZE_XLARGE);
         } //End collapsed parenthetic
         return dsTaint.getTaintInt();
@@ -649,19 +627,18 @@ public class ActivityManager {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:14:57.926 -0400", hash_original_method = "1ABECD33DDCEDD9654A62357CF29D109", hash_generated_method = "A631A0D3375D89D818A3DAFB51B92163")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:34.409 -0400", hash_original_method = "1ABECD33DDCEDD9654A62357CF29D109", hash_generated_method = "200C30F3391BA95D4C1DCEFC787C6745")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public int getLauncherLargeIconSize() {
-        //DSFIXME:  CODE0009: Possible callback target function detected
-        final Resources res;
+        Resources res;
         res = mContext.getResources();
-        final int size;
+        int size;
         size = res.getDimensionPixelSize(android.R.dimen.app_icon_size);
         {
-            boolean varE01F796B7DD545CA1852C72371851054_1538806873 = ((res.getConfiguration().screenLayout & Configuration.SCREENLAYOUT_SIZE_MASK)
+            boolean varE01F796B7DD545CA1852C72371851054_695768113 = ((res.getConfiguration().screenLayout & Configuration.SCREENLAYOUT_SIZE_MASK)
                 != Configuration.SCREENLAYOUT_SIZE_XLARGE);
         } //End collapsed parenthetic
-        final int density;
+        int density;
         density = res.getDisplayMetrics().densityDpi;
         return dsTaint.getTaintInt();
         // ---------- Original Method ----------
@@ -669,8 +646,7 @@ public class ActivityManager {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:14:57.927 -0400", hash_original_method = "03688D49C7EA4499A5ECC87E8FAFC0E6", hash_generated_method = "1BD01B4CCE15FE5F5E68F115FFC02FD3")
-    public static boolean isUserAMonkey() {
+        public static boolean isUserAMonkey() {
         try {
             return ActivityManagerNative.getDefault().isUserAMonkey();
         } catch (RemoteException e) {
@@ -679,13 +655,12 @@ public class ActivityManager {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:14:57.928 -0400", hash_original_method = "B24CD2C7FF3B887A2D7E4705F48A60B3", hash_generated_method = "AD4C9EC03B4473759DDBFA6016BEFB25")
-    public static boolean isRunningInTestHarness() {
+        public static boolean isRunningInTestHarness() {
         return SystemProperties.getBoolean("ro.test_harness", false);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:14:57.929 -0400", hash_original_method = "2575FA7FD2518D90A93FBC6E066D35C1", hash_generated_method = "580248ED7A859D5E792126447576E15F")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:34.417 -0400", hash_original_method = "2575FA7FD2518D90A93FBC6E066D35C1", hash_generated_method = "8BB20C8EF1A089E3C4B3C18D40663E35")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public Map<String, Integer> getAllPackageLaunchCounts() {
         try 
@@ -693,26 +668,36 @@ public class ActivityManager {
             IUsageStats usageStatsService;
             usageStatsService = IUsageStats.Stub.asInterface(
                     ServiceManager.getService("usagestats"));
+            {
+                Map<String, Integer> varE2EF074359A6EFF9F3A2866FEBE371E4_2072595822 = (new HashMap<String, Integer>());
+            } //End block
             PkgUsageStats[] allPkgUsageStats;
             allPkgUsageStats = usageStatsService.getAllPkgUsageStats();
+            {
+                Map<String, Integer> varE2EF074359A6EFF9F3A2866FEBE371E4_645331469 = (new HashMap<String, Integer>());
+            } //End block
             Map<String, Integer> launchCounts;
             launchCounts = new HashMap<String, Integer>();
             {
-                PkgUsageStats pkgUsageStats = allPkgUsageStats[0];
+                Iterator<PkgUsageStats> varBE58BF7E38EBDF2D969BE0FA0EE8F65D_131224279 = (allPkgUsageStats).iterator();
+                varBE58BF7E38EBDF2D969BE0FA0EE8F65D_131224279.hasNext();
+                PkgUsageStats pkgUsageStats = varBE58BF7E38EBDF2D969BE0FA0EE8F65D_131224279.next();
                 {
                     launchCounts.put(pkgUsageStats.packageName, pkgUsageStats.launchCount);
                 } //End block
             } //End collapsed parenthetic
         } //End block
         catch (RemoteException e)
-        { }
+        {
+            Map<String, Integer> var8BFDF47EE17777B99F54208F78485CC4_432573685 = (new HashMap<String, Integer>());
+        } //End block
         return (Map<String, Integer>)dsTaint.getTaint();
         // ---------- Original Method ----------
         // Original Method Too Long, Refer to Original Implementation
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:14:57.930 -0400", hash_original_method = "97D195D4FE7E8BCA1AFB9969B53F0E5E", hash_generated_method = "E660882E48619CE01ABB0023B6B769A3")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:34.418 -0400", hash_original_method = "97D195D4FE7E8BCA1AFB9969B53F0E5E", hash_generated_method = "EC88BA3D6FE570F1D483F1FAB1F54483")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public PkgUsageStats[] getAllPackageUsageStats() {
         try 
@@ -721,11 +706,12 @@ public class ActivityManager {
             usageStatsService = IUsageStats.Stub.asInterface(
                     ServiceManager.getService("usagestats"));
             {
-                PkgUsageStats[] varBAFDD5C3196C35C285B9E383CDC82FF9_597382081 = (usageStatsService.getAllPkgUsageStats());
+                PkgUsageStats[] varBAFDD5C3196C35C285B9E383CDC82FF9_1190885689 = (usageStatsService.getAllPkgUsageStats());
             } //End block
         } //End block
         catch (RemoteException e)
         { }
+        PkgUsageStats[] varB50B0713829D32DB9D4BA86059EB0436_1933478293 = (new PkgUsageStats[0]);
         return (PkgUsageStats[])dsTaint.getTaint();
         // ---------- Original Method ----------
         //try {
@@ -741,13 +727,13 @@ public class ActivityManager {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:14:57.931 -0400", hash_original_method = "5F692D6C0F0BEC319B49459A73599D4B", hash_generated_method = "90363BC2548451917635977B5C1A3470")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:34.419 -0400", hash_original_method = "5F692D6C0F0BEC319B49459A73599D4B", hash_generated_method = "4D6C71FDD929C3D0AAF621D49DCE140E")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public boolean switchUser(int userid) {
         dsTaint.addTaint(userid);
         try 
         {
-            boolean var2D87E0C1C61F5F6722509A3C54C5660D_1167694855 = (ActivityManagerNative.getDefault().switchUser(userid));
+            boolean var2D87E0C1C61F5F6722509A3C54C5660D_247452699 = (ActivityManagerNative.getDefault().switchUser(userid));
         } //End block
         catch (RemoteException e)
         { }
@@ -767,38 +753,16 @@ public class ActivityManager {
         public Intent baseIntent;
         public ComponentName origActivity;
         public CharSequence description;
-        public static final Creator<RecentTaskInfo> CREATOR = new Creator<RecentTaskInfo>() {            
-            @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:14:57.932 -0400", hash_original_method = "754BED839284C604C75BEECB20D1E8CF", hash_generated_method = "DCC02579F79993A1E2E031E698175299")
-            @DSModeled(DSC.SAFE)
-            public RecentTaskInfo createFromParcel(Parcel source) {
-                dsTaint.addTaint(source.dsTaint);
-                return (RecentTaskInfo)dsTaint.getTaint();
-                // ---------- Original Method ----------
-                //return new RecentTaskInfo(source);
-            }
-
-            
-            @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:14:57.932 -0400", hash_original_method = "D970AC33B35E94C08348859E4EC02E6C", hash_generated_method = "9AA1D485721D59D4A8A1B418B5CA4330")
-            @DSModeled(DSC.SAFE)
-            public RecentTaskInfo[] newArray(int size) {
-                dsTaint.addTaint(size);
-                return (RecentTaskInfo[])dsTaint.getTaint();
-                // ---------- Original Method ----------
-                //return new RecentTaskInfo[size];
-            }
-
-            
-}; //Transformed anonymous class
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:14:57.933 -0400", hash_original_method = "C08B7337C6B109635FE340903513A97B", hash_generated_method = "A77170FD7E21200D87524658945CB42E")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:34.420 -0400", hash_original_method = "C08B7337C6B109635FE340903513A97B", hash_generated_method = "3151CC50C901E54C1039F8A4558613C1")
         @DSModeled(DSC.SAFE)
         public RecentTaskInfo() {
             // ---------- Original Method ----------
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:14:57.934 -0400", hash_original_method = "1CABC845DDD8B9A1DEC9FF64F1615AFC", hash_generated_method = "A2EEF2AF33BD2397BABD26E9F310B7B8")
-        @DSModeled(DSC.SAFE)
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:34.421 -0400", hash_original_method = "1CABC845DDD8B9A1DEC9FF64F1615AFC", hash_generated_method = "CE268B8EF4BFC4BF05C1E18C19B70696")
+        //DSFIXME:  CODE0002: Requires DSC value to be set
         private RecentTaskInfo(Parcel source) {
             dsTaint.addTaint(source.dsTaint);
             readFromParcel(source);
@@ -807,7 +771,7 @@ public class ActivityManager {
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:14:57.934 -0400", hash_original_method = "00F8174F9E89D0C972FA6D3F19742382", hash_generated_method = "7491C6FB42F78871A3F8EA322AF6B2FC")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:34.422 -0400", hash_original_method = "00F8174F9E89D0C972FA6D3F19742382", hash_generated_method = "ED77793910767EAAB4C12F70F75B9095")
         @DSModeled(DSC.SAFE)
         public int describeContents() {
             return dsTaint.getTaintInt();
@@ -816,11 +780,11 @@ public class ActivityManager {
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:14:57.935 -0400", hash_original_method = "A024AE935060D48D15B6110668C59DDF", hash_generated_method = "B076856FDD97439DE748226FC48A9FDD")
-        @DSModeled(DSC.SAFE)
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:34.423 -0400", hash_original_method = "A024AE935060D48D15B6110668C59DDF", hash_generated_method = "C55982A9B97B8A7288ABC9A7BA86DD93")
+        //DSFIXME:  CODE0002: Requires DSC value to be set
         public void writeToParcel(Parcel dest, int flags) {
-            dsTaint.addTaint(dest.dsTaint);
             dsTaint.addTaint(flags);
+            dsTaint.addTaint(dest.dsTaint);
             dest.writeInt(id);
             dest.writeInt(persistentId);
             {
@@ -848,14 +812,14 @@ public class ActivityManager {
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:14:57.937 -0400", hash_original_method = "F67217ABAEC36040C8F444901EE65BC8", hash_generated_method = "9F14778692E44DCABF7E68E627B29DBA")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:34.504 -0400", hash_original_method = "F67217ABAEC36040C8F444901EE65BC8", hash_generated_method = "D10E7D35CE0B376DA951A027482300BE")
         //DSFIXME:  CODE0002: Requires DSC value to be set
         public void readFromParcel(Parcel source) {
             dsTaint.addTaint(source.dsTaint);
             id = source.readInt();
             persistentId = source.readInt();
             {
-                boolean varCD45DF3165DBB462488DC9800D3FFD9B_466642694 = (source.readInt() != 0);
+                boolean varCD45DF3165DBB462488DC9800D3FFD9B_2041840778 = (source.readInt() != 0);
                 {
                     baseIntent = Intent.CREATOR.createFromParcel(source);
                 } //End block
@@ -878,6 +842,30 @@ public class ActivityManager {
         }
 
         
+        public static final Creator<RecentTaskInfo> CREATOR = new Creator<RecentTaskInfo>() {            
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:34.505 -0400", hash_original_method = "754BED839284C604C75BEECB20D1E8CF", hash_generated_method = "94999372F24303F93028AA69147060CB")
+            //DSFIXME:  CODE0002: Requires DSC value to be set
+            public RecentTaskInfo createFromParcel(Parcel source) {
+                dsTaint.addTaint(source.dsTaint);
+                RecentTaskInfo var366D6EC27AF5C2DB7D3C22B1523A96A3_1957322075 = (new RecentTaskInfo(source));
+                return (RecentTaskInfo)dsTaint.getTaint();
+                // ---------- Original Method ----------
+                //return new RecentTaskInfo(source);
+            }
+
+            
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:34.510 -0400", hash_original_method = "D970AC33B35E94C08348859E4EC02E6C", hash_generated_method = "03A624EE7D1560534C4CD8B3E5C1E666")
+            //DSFIXME:  CODE0002: Requires DSC value to be set
+            public RecentTaskInfo[] newArray(int size) {
+                dsTaint.addTaint(size);
+                RecentTaskInfo[] var0DC66E4CA4EA597F0D9D6678FF206969_1634203563 = (new RecentTaskInfo[size]);
+                return (RecentTaskInfo[])dsTaint.getTaint();
+                // ---------- Original Method ----------
+                //return new RecentTaskInfo[size];
+            }
+
+            
+}; //Transformed anonymous class
     }
 
 
@@ -890,38 +878,16 @@ public class ActivityManager {
         public CharSequence description;
         public int numActivities;
         public int numRunning;
-        public static final Creator<RunningTaskInfo> CREATOR = new Creator<RunningTaskInfo>() {            
-            @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:14:57.938 -0400", hash_original_method = "289D74B80F1DDE34702D81134C81DC0D", hash_generated_method = "DABAE3F4D9DEC4CCFA4DC7D49A6C058A")
-            @DSModeled(DSC.SAFE)
-            public RunningTaskInfo createFromParcel(Parcel source) {
-                dsTaint.addTaint(source.dsTaint);
-                return (RunningTaskInfo)dsTaint.getTaint();
-                // ---------- Original Method ----------
-                //return new RunningTaskInfo(source);
-            }
-
-            
-            @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:14:57.939 -0400", hash_original_method = "87B1B374C2173B951C96C3D08DE2EEAE", hash_generated_method = "17087CF1446746719445E4454574731C")
-            @DSModeled(DSC.SAFE)
-            public RunningTaskInfo[] newArray(int size) {
-                dsTaint.addTaint(size);
-                return (RunningTaskInfo[])dsTaint.getTaint();
-                // ---------- Original Method ----------
-                //return new RunningTaskInfo[size];
-            }
-
-            
-}; //Transformed anonymous class
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:14:57.939 -0400", hash_original_method = "6DA0A8D9CEF41C0CB91D2D95D7E71D44", hash_generated_method = "A00468204BD448D8ACF80F92CE9BBF68")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:34.511 -0400", hash_original_method = "6DA0A8D9CEF41C0CB91D2D95D7E71D44", hash_generated_method = "00FB201893D0BF493904CEE004049E1E")
         @DSModeled(DSC.SAFE)
         public RunningTaskInfo() {
             // ---------- Original Method ----------
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:14:57.940 -0400", hash_original_method = "A0900FA369CFAE0B339B23849E0D0E54", hash_generated_method = "D063C4E88FFBBB2C9216A404EECFDD53")
-        @DSModeled(DSC.SAFE)
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:34.511 -0400", hash_original_method = "A0900FA369CFAE0B339B23849E0D0E54", hash_generated_method = "AF4A56E5574F28D8194E5AD2A12BDBF4")
+        //DSFIXME:  CODE0002: Requires DSC value to be set
         private RunningTaskInfo(Parcel source) {
             dsTaint.addTaint(source.dsTaint);
             readFromParcel(source);
@@ -930,7 +896,7 @@ public class ActivityManager {
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:14:57.940 -0400", hash_original_method = "00F8174F9E89D0C972FA6D3F19742382", hash_generated_method = "7491C6FB42F78871A3F8EA322AF6B2FC")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:34.512 -0400", hash_original_method = "00F8174F9E89D0C972FA6D3F19742382", hash_generated_method = "ED77793910767EAAB4C12F70F75B9095")
         @DSModeled(DSC.SAFE)
         public int describeContents() {
             return dsTaint.getTaintInt();
@@ -939,11 +905,11 @@ public class ActivityManager {
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:14:57.941 -0400", hash_original_method = "224D236A6A210D9CABF5D7D423C96E97", hash_generated_method = "8146690DBD1C9A07B0517B1A3EBE5219")
-        @DSModeled(DSC.SAFE)
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:34.513 -0400", hash_original_method = "224D236A6A210D9CABF5D7D423C96E97", hash_generated_method = "299993D45E81AFF1FF92CAAA7F81725B")
+        //DSFIXME:  CODE0002: Requires DSC value to be set
         public void writeToParcel(Parcel dest, int flags) {
-            dsTaint.addTaint(dest.dsTaint);
             dsTaint.addTaint(flags);
+            dsTaint.addTaint(dest.dsTaint);
             dest.writeInt(id);
             ComponentName.writeToParcel(baseActivity, dest);
             ComponentName.writeToParcel(topActivity, dest);
@@ -975,7 +941,7 @@ public class ActivityManager {
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:14:57.943 -0400", hash_original_method = "1A58A87C00619395DA7F7A454E1E03D5", hash_generated_method = "00EB73242DA7E4E622B51CD9E00E43C6")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:34.513 -0400", hash_original_method = "1A58A87C00619395DA7F7A454E1E03D5", hash_generated_method = "3BA18BE6E3694B6921E5C80EDECD3F22")
         //DSFIXME:  CODE0002: Requires DSC value to be set
         public void readFromParcel(Parcel source) {
             dsTaint.addTaint(source.dsTaint);
@@ -983,7 +949,7 @@ public class ActivityManager {
             baseActivity = ComponentName.readFromParcel(source);
             topActivity = ComponentName.readFromParcel(source);
             {
-                boolean varCD45DF3165DBB462488DC9800D3FFD9B_683802721 = (source.readInt() != 0);
+                boolean varCD45DF3165DBB462488DC9800D3FFD9B_2132322140 = (source.readInt() != 0);
                 {
                     thumbnail = Bitmap.CREATOR.createFromParcel(source);
                 } //End block
@@ -1009,6 +975,30 @@ public class ActivityManager {
         }
 
         
+        public static final Creator<RunningTaskInfo> CREATOR = new Creator<RunningTaskInfo>() {            
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:34.514 -0400", hash_original_method = "289D74B80F1DDE34702D81134C81DC0D", hash_generated_method = "EEFECB59E988B514C022690E97957DD5")
+            //DSFIXME:  CODE0002: Requires DSC value to be set
+            public RunningTaskInfo createFromParcel(Parcel source) {
+                dsTaint.addTaint(source.dsTaint);
+                RunningTaskInfo varC8E9F6CEC0FC0F52579DF98D55DD4880_2080720563 = (new RunningTaskInfo(source));
+                return (RunningTaskInfo)dsTaint.getTaint();
+                // ---------- Original Method ----------
+                //return new RunningTaskInfo(source);
+            }
+
+            
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:34.515 -0400", hash_original_method = "87B1B374C2173B951C96C3D08DE2EEAE", hash_generated_method = "169C0993C90DDC8B0D9AE4635D34B1C2")
+            //DSFIXME:  CODE0002: Requires DSC value to be set
+            public RunningTaskInfo[] newArray(int size) {
+                dsTaint.addTaint(size);
+                RunningTaskInfo[] varC3A8431C821F8959F8FDA0AA0AA4600C_235226183 = (new RunningTaskInfo[size]);
+                return (RunningTaskInfo[])dsTaint.getTaint();
+                // ---------- Original Method ----------
+                //return new RunningTaskInfo[size];
+            }
+
+            
+}; //Transformed anonymous class
     }
 
 
@@ -1017,38 +1007,16 @@ public class ActivityManager {
         public Bitmap mainThumbnail;
         public int numSubThumbbails;
         public IThumbnailRetriever retriever;
-        public static final Creator<TaskThumbnails> CREATOR = new Creator<TaskThumbnails>() {            
-            @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:14:57.943 -0400", hash_original_method = "D293F4B5B5D1E8DEC87E5785C502F4A1", hash_generated_method = "9744DBEC828453395EEB85919CF8E045")
-            @DSModeled(DSC.SAFE)
-            public TaskThumbnails createFromParcel(Parcel source) {
-                dsTaint.addTaint(source.dsTaint);
-                return (TaskThumbnails)dsTaint.getTaint();
-                // ---------- Original Method ----------
-                //return new TaskThumbnails(source);
-            }
-
-            
-            @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:14:57.944 -0400", hash_original_method = "32482EB33A7D57DC46F839E5FD8415A1", hash_generated_method = "CE771A42006691486CED5B5138ADFEB7")
-            @DSModeled(DSC.SAFE)
-            public TaskThumbnails[] newArray(int size) {
-                dsTaint.addTaint(size);
-                return (TaskThumbnails[])dsTaint.getTaint();
-                // ---------- Original Method ----------
-                //return new TaskThumbnails[size];
-            }
-
-            
-}; //Transformed anonymous class
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:14:57.944 -0400", hash_original_method = "EB2263C71F650A09D4909FB1B34C782F", hash_generated_method = "71FF6DF34EEC4EB82EB990715ACFDE79")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:34.515 -0400", hash_original_method = "EB2263C71F650A09D4909FB1B34C782F", hash_generated_method = "1036CA739667021DAECAC8857E8C6B4B")
         @DSModeled(DSC.SAFE)
         public TaskThumbnails() {
             // ---------- Original Method ----------
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:14:57.945 -0400", hash_original_method = "0FEFA86B10CDE25FCF4328B39BD2F7D5", hash_generated_method = "F053103AC098E97D06645182B90AB5C1")
-        @DSModeled(DSC.SAFE)
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:34.517 -0400", hash_original_method = "0FEFA86B10CDE25FCF4328B39BD2F7D5", hash_generated_method = "0D0BE2DB70938BFC87CBE5DEBB3E8D16")
+        //DSFIXME:  CODE0002: Requires DSC value to be set
         private TaskThumbnails(Parcel source) {
             dsTaint.addTaint(source.dsTaint);
             readFromParcel(source);
@@ -1057,13 +1025,13 @@ public class ActivityManager {
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:14:57.945 -0400", hash_original_method = "C8A1C6791C443D43BB18F989CA6219B6", hash_generated_method = "8A676CA04AC460103BD1A63D74596F9E")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:34.518 -0400", hash_original_method = "C8A1C6791C443D43BB18F989CA6219B6", hash_generated_method = "8A2EB574C7A26E25339E2BBEB33EB74F")
         //DSFIXME:  CODE0002: Requires DSC value to be set
         public Bitmap getSubThumbnail(int index) {
             dsTaint.addTaint(index);
             try 
             {
-                Bitmap var68E445C93AEE27D5BFCA67096C8050B5_177316707 = (retriever.getThumbnail(index));
+                Bitmap var68E445C93AEE27D5BFCA67096C8050B5_846113082 = (retriever.getThumbnail(index));
             } //End block
             catch (RemoteException e)
             { }
@@ -1077,7 +1045,7 @@ public class ActivityManager {
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:14:57.946 -0400", hash_original_method = "00F8174F9E89D0C972FA6D3F19742382", hash_generated_method = "7491C6FB42F78871A3F8EA322AF6B2FC")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:34.519 -0400", hash_original_method = "00F8174F9E89D0C972FA6D3F19742382", hash_generated_method = "ED77793910767EAAB4C12F70F75B9095")
         @DSModeled(DSC.SAFE)
         public int describeContents() {
             return dsTaint.getTaintInt();
@@ -1086,11 +1054,11 @@ public class ActivityManager {
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:14:57.946 -0400", hash_original_method = "1641949793D35FD49D0AD46DB3E00603", hash_generated_method = "155C4E462E40A01C4A94D9E3B4FBE86B")
-        @DSModeled(DSC.SAFE)
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:34.520 -0400", hash_original_method = "1641949793D35FD49D0AD46DB3E00603", hash_generated_method = "0768B6E06B9987EC49016C5CE01FDBC6")
+        //DSFIXME:  CODE0002: Requires DSC value to be set
         public void writeToParcel(Parcel dest, int flags) {
-            dsTaint.addTaint(dest.dsTaint);
             dsTaint.addTaint(flags);
+            dsTaint.addTaint(dest.dsTaint);
             {
                 dest.writeInt(1);
                 mainThumbnail.writeToParcel(dest, 0);
@@ -1112,12 +1080,12 @@ public class ActivityManager {
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:14:57.947 -0400", hash_original_method = "19A7C144CCAE5CD51406B760DF512EA1", hash_generated_method = "E41BA7E6DB4FDF121D1DF70417C0BE6E")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:34.521 -0400", hash_original_method = "19A7C144CCAE5CD51406B760DF512EA1", hash_generated_method = "8A85FED5C6562FA11A37CFA94886759F")
         //DSFIXME:  CODE0002: Requires DSC value to be set
         public void readFromParcel(Parcel source) {
             dsTaint.addTaint(source.dsTaint);
             {
-                boolean varCD45DF3165DBB462488DC9800D3FFD9B_931844687 = (source.readInt() != 0);
+                boolean varCD45DF3165DBB462488DC9800D3FFD9B_611842467 = (source.readInt() != 0);
                 {
                     mainThumbnail = Bitmap.CREATOR.createFromParcel(source);
                 } //End block
@@ -1138,6 +1106,30 @@ public class ActivityManager {
         }
 
         
+        public static final Creator<TaskThumbnails> CREATOR = new Creator<TaskThumbnails>() {            
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:34.522 -0400", hash_original_method = "D293F4B5B5D1E8DEC87E5785C502F4A1", hash_generated_method = "F4933D663B2E5D0EDED9A9D596AC0F86")
+            //DSFIXME:  CODE0002: Requires DSC value to be set
+            public TaskThumbnails createFromParcel(Parcel source) {
+                dsTaint.addTaint(source.dsTaint);
+                TaskThumbnails var3FFCB8FCD2705F782CFC8F26D1E928C9_281827396 = (new TaskThumbnails(source));
+                return (TaskThumbnails)dsTaint.getTaint();
+                // ---------- Original Method ----------
+                //return new TaskThumbnails(source);
+            }
+
+            
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:34.523 -0400", hash_original_method = "32482EB33A7D57DC46F839E5FD8415A1", hash_generated_method = "80D6762479A2F89BE80067209B245833")
+            //DSFIXME:  CODE0002: Requires DSC value to be set
+            public TaskThumbnails[] newArray(int size) {
+                dsTaint.addTaint(size);
+                TaskThumbnails[] var847D8D14FB3DF306C640B94A64D47E3A_767769308 = (new TaskThumbnails[size]);
+                return (TaskThumbnails[])dsTaint.getTaint();
+                // ---------- Original Method ----------
+                //return new TaskThumbnails[size];
+            }
+
+            
+}; //Transformed anonymous class
     }
 
 
@@ -1154,45 +1146,19 @@ public class ActivityManager {
         public int crashCount;
         public long lastActivityTime;
         public long restarting;
-        public static final int FLAG_STARTED = 1<<0;
-        public static final int FLAG_FOREGROUND = 1<<1;
-        public static final int FLAG_SYSTEM_PROCESS = 1<<2;
-        public static final int FLAG_PERSISTENT_PROCESS = 1<<3;
         public int flags;
         public String clientPackage;
         public int clientLabel;
-        public static final Creator<RunningServiceInfo> CREATOR = new Creator<RunningServiceInfo>() {            
-            @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:14:57.948 -0400", hash_original_method = "E255B8128AC8F9856A7419AECFDCF636", hash_generated_method = "F6E55A5286C21F1A0C3BF1374BF5706F")
-            @DSModeled(DSC.SAFE)
-            public RunningServiceInfo createFromParcel(Parcel source) {
-                dsTaint.addTaint(source.dsTaint);
-                return (RunningServiceInfo)dsTaint.getTaint();
-                // ---------- Original Method ----------
-                //return new RunningServiceInfo(source);
-            }
-
-            
-            @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:14:57.948 -0400", hash_original_method = "FD3ED620F54DFB73AA55E8F30DE37B83", hash_generated_method = "A4DA6D441AB39B84D5D5F3026E19BEB9")
-            @DSModeled(DSC.SAFE)
-            public RunningServiceInfo[] newArray(int size) {
-                dsTaint.addTaint(size);
-                return (RunningServiceInfo[])dsTaint.getTaint();
-                // ---------- Original Method ----------
-                //return new RunningServiceInfo[size];
-            }
-
-            
-}; //Transformed anonymous class
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:14:57.949 -0400", hash_original_method = "621426751430068D32289E518662756C", hash_generated_method = "4C034224787D515760D957854524B900")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:34.524 -0400", hash_original_method = "621426751430068D32289E518662756C", hash_generated_method = "822CEFC1BD8FA9077CAB00884D317765")
         @DSModeled(DSC.SAFE)
         public RunningServiceInfo() {
             // ---------- Original Method ----------
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:14:57.949 -0400", hash_original_method = "35E5A4903D7EB9EB66480EDFA6F47A72", hash_generated_method = "AD778B61C9B0F774DB06CA1C6B484A08")
-        @DSModeled(DSC.SAFE)
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:34.524 -0400", hash_original_method = "35E5A4903D7EB9EB66480EDFA6F47A72", hash_generated_method = "ECD249336DC2770F375900E6DF4D77E8")
+        //DSFIXME:  CODE0002: Requires DSC value to be set
         private RunningServiceInfo(Parcel source) {
             dsTaint.addTaint(source.dsTaint);
             readFromParcel(source);
@@ -1201,7 +1167,7 @@ public class ActivityManager {
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:14:57.949 -0400", hash_original_method = "00F8174F9E89D0C972FA6D3F19742382", hash_generated_method = "7491C6FB42F78871A3F8EA322AF6B2FC")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:34.525 -0400", hash_original_method = "00F8174F9E89D0C972FA6D3F19742382", hash_generated_method = "ED77793910767EAAB4C12F70F75B9095")
         @DSModeled(DSC.SAFE)
         public int describeContents() {
             return dsTaint.getTaintInt();
@@ -1210,11 +1176,11 @@ public class ActivityManager {
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:14:57.950 -0400", hash_original_method = "048D37EC670A88D2663FCC084087D5E3", hash_generated_method = "93B70A6E470CE0583BE35BE56431A3C0")
-        @DSModeled(DSC.SAFE)
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:34.526 -0400", hash_original_method = "048D37EC670A88D2663FCC084087D5E3", hash_generated_method = "82DB61D1A4D014CA001E0CDA2695484C")
+        //DSFIXME:  CODE0002: Requires DSC value to be set
         public void writeToParcel(Parcel dest, int flags) {
-            dsTaint.addTaint(dest.dsTaint);
             dsTaint.addTaint(flags);
+            dsTaint.addTaint(dest.dsTaint);
             ComponentName.writeToParcel(service, dest);
             dest.writeInt(pid);
             dest.writeInt(uid);
@@ -1247,7 +1213,7 @@ public class ActivityManager {
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:14:57.952 -0400", hash_original_method = "264C3E4C1DAB76B38CA08CE45829A86C", hash_generated_method = "4499C325D1CD21686AC5C7C6C9007704")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:34.526 -0400", hash_original_method = "264C3E4C1DAB76B38CA08CE45829A86C", hash_generated_method = "E7AA91EA354F9FB17D58EC19AEFDAED8")
         //DSFIXME:  CODE0002: Requires DSC value to be set
         public void readFromParcel(Parcel source) {
             dsTaint.addTaint(source.dsTaint);
@@ -1283,6 +1249,34 @@ public class ActivityManager {
         }
 
         
+        public static final int FLAG_STARTED = 1<<0;
+        public static final int FLAG_FOREGROUND = 1<<1;
+        public static final int FLAG_SYSTEM_PROCESS = 1<<2;
+        public static final int FLAG_PERSISTENT_PROCESS = 1<<3;
+        public static final Creator<RunningServiceInfo> CREATOR = new Creator<RunningServiceInfo>() {            
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:34.527 -0400", hash_original_method = "E255B8128AC8F9856A7419AECFDCF636", hash_generated_method = "DE15F8DA14DE738C5A4CE6D0A6196355")
+            //DSFIXME:  CODE0002: Requires DSC value to be set
+            public RunningServiceInfo createFromParcel(Parcel source) {
+                dsTaint.addTaint(source.dsTaint);
+                RunningServiceInfo varD5396DDC8CE2DBE2FF3ECC76E75E0682_274778208 = (new RunningServiceInfo(source));
+                return (RunningServiceInfo)dsTaint.getTaint();
+                // ---------- Original Method ----------
+                //return new RunningServiceInfo(source);
+            }
+
+            
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:34.528 -0400", hash_original_method = "FD3ED620F54DFB73AA55E8F30DE37B83", hash_generated_method = "310554C89C9E2382812B12E7A8F34664")
+            //DSFIXME:  CODE0002: Requires DSC value to be set
+            public RunningServiceInfo[] newArray(int size) {
+                dsTaint.addTaint(size);
+                RunningServiceInfo[] var37281D4930B48C06F58F227B538E78CA_2067826259 = (new RunningServiceInfo[size]);
+                return (RunningServiceInfo[])dsTaint.getTaint();
+                // ---------- Original Method ----------
+                //return new RunningServiceInfo[size];
+            }
+
+            
+}; //Transformed anonymous class
     }
 
 
@@ -1295,38 +1289,16 @@ public class ActivityManager {
         public long secondaryServerThreshold;
         public long visibleAppThreshold;
         public long foregroundAppThreshold;
-        public static final Creator<MemoryInfo> CREATOR = new Creator<MemoryInfo>() {            
-            @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:14:57.952 -0400", hash_original_method = "83921F47BB880779DC0FD4AB57F3B1E1", hash_generated_method = "B611F41F62E50BA3B46021808792C460")
-            @DSModeled(DSC.SAFE)
-            public MemoryInfo createFromParcel(Parcel source) {
-                dsTaint.addTaint(source.dsTaint);
-                return (MemoryInfo)dsTaint.getTaint();
-                // ---------- Original Method ----------
-                //return new MemoryInfo(source);
-            }
-
-            
-            @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:14:57.953 -0400", hash_original_method = "15F51E1DA13C1BB1AA9F8A3C297A7987", hash_generated_method = "10FBEB26B0431A1763072A515665C82C")
-            @DSModeled(DSC.SAFE)
-            public MemoryInfo[] newArray(int size) {
-                dsTaint.addTaint(size);
-                return (MemoryInfo[])dsTaint.getTaint();
-                // ---------- Original Method ----------
-                //return new MemoryInfo[size];
-            }
-
-            
-}; //Transformed anonymous class
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:14:57.953 -0400", hash_original_method = "09AE2D253AD01F5533857164DB70587D", hash_generated_method = "1B8A9DB070B9C5EE97692E3C2182BBFA")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:34.528 -0400", hash_original_method = "09AE2D253AD01F5533857164DB70587D", hash_generated_method = "FF74B0D10914F28AB3E573FB192E254D")
         @DSModeled(DSC.SAFE)
         public MemoryInfo() {
             // ---------- Original Method ----------
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:14:57.954 -0400", hash_original_method = "EAA33F4FBF3C878879D517CBC8FFA048", hash_generated_method = "45707563C7C263D0E9F46A063A1DEF08")
-        @DSModeled(DSC.SAFE)
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:34.529 -0400", hash_original_method = "EAA33F4FBF3C878879D517CBC8FFA048", hash_generated_method = "59177374CF85231EEAEF1DAD1A5EE39A")
+        //DSFIXME:  CODE0002: Requires DSC value to be set
         private MemoryInfo(Parcel source) {
             dsTaint.addTaint(source.dsTaint);
             readFromParcel(source);
@@ -1335,7 +1307,7 @@ public class ActivityManager {
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:14:57.954 -0400", hash_original_method = "00F8174F9E89D0C972FA6D3F19742382", hash_generated_method = "7491C6FB42F78871A3F8EA322AF6B2FC")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:34.529 -0400", hash_original_method = "00F8174F9E89D0C972FA6D3F19742382", hash_generated_method = "ED77793910767EAAB4C12F70F75B9095")
         @DSModeled(DSC.SAFE)
         public int describeContents() {
             return dsTaint.getTaintInt();
@@ -1344,11 +1316,11 @@ public class ActivityManager {
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:14:57.955 -0400", hash_original_method = "F89D0A9B79191784D882D224AE236CD7", hash_generated_method = "9AF6CD2E4B7E45B3993545474614F350")
-        @DSModeled(DSC.SAFE)
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:34.530 -0400", hash_original_method = "F89D0A9B79191784D882D224AE236CD7", hash_generated_method = "F9C620AC508D321837F966CC72B2630A")
+        //DSFIXME:  CODE0002: Requires DSC value to be set
         public void writeToParcel(Parcel dest, int flags) {
-            dsTaint.addTaint(dest.dsTaint);
             dsTaint.addTaint(flags);
+            dsTaint.addTaint(dest.dsTaint);
             dest.writeLong(availMem);
             dest.writeLong(threshold);
             dest.writeInt(lowMemory ? 1 : 0);
@@ -1367,7 +1339,7 @@ public class ActivityManager {
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:14:57.956 -0400", hash_original_method = "63344B29322BA9906ACD5F2C274D4AFB", hash_generated_method = "FB74758E198345557EFD9E66617BDDB5")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:34.530 -0400", hash_original_method = "63344B29322BA9906ACD5F2C274D4AFB", hash_generated_method = "BE3C5F7EEE6514A66005ADF587AC69D4")
         //DSFIXME:  CODE0002: Requires DSC value to be set
         public void readFromParcel(Parcel source) {
             dsTaint.addTaint(source.dsTaint);
@@ -1389,14 +1361,35 @@ public class ActivityManager {
         }
 
         
+        public static final Creator<MemoryInfo> CREATOR = new Creator<MemoryInfo>() {            
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:34.532 -0400", hash_original_method = "83921F47BB880779DC0FD4AB57F3B1E1", hash_generated_method = "B5633F215E705A2F010EDE0AAC55DC2E")
+            //DSFIXME:  CODE0002: Requires DSC value to be set
+            public MemoryInfo createFromParcel(Parcel source) {
+                dsTaint.addTaint(source.dsTaint);
+                MemoryInfo varB2BE3C5741554A81AA92EC3CD868A516_1991605453 = (new MemoryInfo(source));
+                return (MemoryInfo)dsTaint.getTaint();
+                // ---------- Original Method ----------
+                //return new MemoryInfo(source);
+            }
+
+            
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:34.533 -0400", hash_original_method = "15F51E1DA13C1BB1AA9F8A3C297A7987", hash_generated_method = "71F8EAEB37899DB5E931AFA0C06563F7")
+            //DSFIXME:  CODE0002: Requires DSC value to be set
+            public MemoryInfo[] newArray(int size) {
+                dsTaint.addTaint(size);
+                MemoryInfo[] var83C4D7A2FE00961CCE7E750BDC9FCD35_764094057 = (new MemoryInfo[size]);
+                return (MemoryInfo[])dsTaint.getTaint();
+                // ---------- Original Method ----------
+                //return new MemoryInfo[size];
+            }
+
+            
+}; //Transformed anonymous class
     }
 
 
     
     public static class ProcessErrorStateInfo implements Parcelable {
-        public static final int NO_ERROR = 0;
-        public static final int CRASHED = 1;
-        public static final int NOT_RESPONDING = 2;
         public int condition;
         public String processName;
         public int pid;
@@ -1406,38 +1399,16 @@ public class ActivityManager {
         public String longMsg;
         public String stackTrace;
         public byte[] crashData = null;
-        public static final Creator<ProcessErrorStateInfo> CREATOR = new Creator<ProcessErrorStateInfo>() {            
-            @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:14:57.956 -0400", hash_original_method = "07B9A1AE51A67C5D4F0A79E60F9AF9EC", hash_generated_method = "FFF26AC404C680645DCCA9231C66282A")
-            @DSModeled(DSC.SAFE)
-            public ProcessErrorStateInfo createFromParcel(Parcel source) {
-                dsTaint.addTaint(source.dsTaint);
-                return (ProcessErrorStateInfo)dsTaint.getTaint();
-                // ---------- Original Method ----------
-                //return new ProcessErrorStateInfo(source);
-            }
-
-            
-            @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:14:57.957 -0400", hash_original_method = "7FF60EC2BC9C16F2A15285777268F35B", hash_generated_method = "B2937B1C1AB67CA8772DA3BEA853FBD7")
-            @DSModeled(DSC.SAFE)
-            public ProcessErrorStateInfo[] newArray(int size) {
-                dsTaint.addTaint(size);
-                return (ProcessErrorStateInfo[])dsTaint.getTaint();
-                // ---------- Original Method ----------
-                //return new ProcessErrorStateInfo[size];
-            }
-
-            
-}; //Transformed anonymous class
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:14:57.957 -0400", hash_original_method = "5ED73996FC5896C9F894604FFBFF8609", hash_generated_method = "A00F72E13D03B2E2079D10155B143311")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:34.534 -0400", hash_original_method = "5ED73996FC5896C9F894604FFBFF8609", hash_generated_method = "3E55B7B14A298521D7B421AC3B025230")
         @DSModeled(DSC.SAFE)
         public ProcessErrorStateInfo() {
             // ---------- Original Method ----------
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:14:57.957 -0400", hash_original_method = "94E8D1B421B7A163DD1B499E5670983F", hash_generated_method = "B0E7D727D1C71ED27573A113552B1D0F")
-        @DSModeled(DSC.SAFE)
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:34.534 -0400", hash_original_method = "94E8D1B421B7A163DD1B499E5670983F", hash_generated_method = "F273E5BE6652BE4715E720D874282CF7")
+        //DSFIXME:  CODE0002: Requires DSC value to be set
         private ProcessErrorStateInfo(Parcel source) {
             dsTaint.addTaint(source.dsTaint);
             readFromParcel(source);
@@ -1446,7 +1417,7 @@ public class ActivityManager {
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:14:57.958 -0400", hash_original_method = "00F8174F9E89D0C972FA6D3F19742382", hash_generated_method = "7491C6FB42F78871A3F8EA322AF6B2FC")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:34.535 -0400", hash_original_method = "00F8174F9E89D0C972FA6D3F19742382", hash_generated_method = "ED77793910767EAAB4C12F70F75B9095")
         @DSModeled(DSC.SAFE)
         public int describeContents() {
             return dsTaint.getTaintInt();
@@ -1455,11 +1426,11 @@ public class ActivityManager {
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:14:57.958 -0400", hash_original_method = "38EC9879A184B274D068BE64A2E942B7", hash_generated_method = "250A73FDE3E8C2741719EED82BB48057")
-        @DSModeled(DSC.SAFE)
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:34.536 -0400", hash_original_method = "38EC9879A184B274D068BE64A2E942B7", hash_generated_method = "C3F40BAAF6F271C7CF93BDCF392B5E07")
+        //DSFIXME:  CODE0002: Requires DSC value to be set
         public void writeToParcel(Parcel dest, int flags) {
-            dsTaint.addTaint(dest.dsTaint);
             dsTaint.addTaint(flags);
+            dsTaint.addTaint(dest.dsTaint);
             dest.writeInt(condition);
             dest.writeString(processName);
             dest.writeInt(pid);
@@ -1480,7 +1451,7 @@ public class ActivityManager {
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:14:57.959 -0400", hash_original_method = "7EE07760084269563BF2AEE27C9085AD", hash_generated_method = "7E474D7C36171DD3F7EFD0ADD9AFA121")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:34.536 -0400", hash_original_method = "7EE07760084269563BF2AEE27C9085AD", hash_generated_method = "158C72204EEBB79A7CA0A65BD5B5F5E4")
         //DSFIXME:  CODE0002: Requires DSC value to be set
         public void readFromParcel(Parcel source) {
             dsTaint.addTaint(source.dsTaint);
@@ -1504,6 +1475,33 @@ public class ActivityManager {
         }
 
         
+        public static final int NO_ERROR = 0;
+        public static final int CRASHED = 1;
+        public static final int NOT_RESPONDING = 2;
+        public static final Creator<ProcessErrorStateInfo> CREATOR = new Creator<ProcessErrorStateInfo>() {            
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:34.537 -0400", hash_original_method = "07B9A1AE51A67C5D4F0A79E60F9AF9EC", hash_generated_method = "E367C5807FFBFB3C9468A1E1C2A4E2B8")
+            //DSFIXME:  CODE0002: Requires DSC value to be set
+            public ProcessErrorStateInfo createFromParcel(Parcel source) {
+                dsTaint.addTaint(source.dsTaint);
+                ProcessErrorStateInfo varC1212714070B3D1CDBB174C275966DE5_706418223 = (new ProcessErrorStateInfo(source));
+                return (ProcessErrorStateInfo)dsTaint.getTaint();
+                // ---------- Original Method ----------
+                //return new ProcessErrorStateInfo(source);
+            }
+
+            
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:34.537 -0400", hash_original_method = "7FF60EC2BC9C16F2A15285777268F35B", hash_generated_method = "A8865CD24C3CDDDA5C1573A250E32C8C")
+            //DSFIXME:  CODE0002: Requires DSC value to be set
+            public ProcessErrorStateInfo[] newArray(int size) {
+                dsTaint.addTaint(size);
+                ProcessErrorStateInfo[] var0906007A5BC1E7A4CB322172DB1E9D50_1813412661 = (new ProcessErrorStateInfo[size]);
+                return (ProcessErrorStateInfo[])dsTaint.getTaint();
+                // ---------- Original Method ----------
+                //return new ProcessErrorStateInfo[size];
+            }
+
+            
+}; //Transformed anonymous class
     }
 
 
@@ -1513,49 +1511,15 @@ public class ActivityManager {
         public int pid;
         public int uid;
         public String pkgList[];
-        public static final int FLAG_CANT_SAVE_STATE = 1<<0;
-        public static final int FLAG_PERSISTENT = 1<<1;
         public int flags;
-        public static final int IMPORTANCE_FOREGROUND = 100;
-        public static final int IMPORTANCE_VISIBLE = 200;
-        public static final int IMPORTANCE_PERCEPTIBLE = 130;
-        public static final int IMPORTANCE_CANT_SAVE_STATE = 170;
-        public static final int IMPORTANCE_SERVICE = 300;
-        public static final int IMPORTANCE_BACKGROUND = 400;
-        public static final int IMPORTANCE_EMPTY = 500;
         public int importance;
         public int lru;
-        public static final int REASON_UNKNOWN = 0;
-        public static final int REASON_PROVIDER_IN_USE = 1;
-        public static final int REASON_SERVICE_IN_USE = 2;
         public int importanceReasonCode;
         public int importanceReasonPid;
         public ComponentName importanceReasonComponent;
         public int importanceReasonImportance;
-        public static final Creator<RunningAppProcessInfo> CREATOR = new Creator<RunningAppProcessInfo>() {            
-            @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:14:57.960 -0400", hash_original_method = "A770AC12CE4BE94620C93B553EEF1E54", hash_generated_method = "F06BF6020A586DF4F209AC5F42DA7E89")
-            @DSModeled(DSC.SAFE)
-            public RunningAppProcessInfo createFromParcel(Parcel source) {
-                dsTaint.addTaint(source.dsTaint);
-                return (RunningAppProcessInfo)dsTaint.getTaint();
-                // ---------- Original Method ----------
-                //return new RunningAppProcessInfo(source);
-            }
-
-            
-            @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:14:57.960 -0400", hash_original_method = "D1ED3F98A48A1EB116D00D47762C4476", hash_generated_method = "5BB5DD61478F95BE8CCCB71083B6503F")
-            @DSModeled(DSC.SAFE)
-            public RunningAppProcessInfo[] newArray(int size) {
-                dsTaint.addTaint(size);
-                return (RunningAppProcessInfo[])dsTaint.getTaint();
-                // ---------- Original Method ----------
-                //return new RunningAppProcessInfo[size];
-            }
-
-            
-}; //Transformed anonymous class
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:14:57.961 -0400", hash_original_method = "037D75A14244F6412C20718AD220CDB7", hash_generated_method = "B773345B9DA7CD55EC5125BC59FB789A")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:34.538 -0400", hash_original_method = "037D75A14244F6412C20718AD220CDB7", hash_generated_method = "EBA9A2537661CB41AD3E24299B24227D")
         @DSModeled(DSC.SAFE)
         public RunningAppProcessInfo() {
             importance = IMPORTANCE_FOREGROUND;
@@ -1566,7 +1530,7 @@ public class ActivityManager {
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:14:57.961 -0400", hash_original_method = "09307CF5135B482F1E6BA3C6F777D6D1", hash_generated_method = "D50E5DF1C6A45CA8BBB780ED4556310E")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:34.539 -0400", hash_original_method = "09307CF5135B482F1E6BA3C6F777D6D1", hash_generated_method = "CE161B391348F130CAF1DF0CE5BA33AD")
         @DSModeled(DSC.SAFE)
         public RunningAppProcessInfo(String pProcessName, int pPid, String pArr[]) {
             dsTaint.addTaint(pPid);
@@ -1580,8 +1544,8 @@ public class ActivityManager {
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:14:57.961 -0400", hash_original_method = "224713C5B1CB6C52B9BDAF058DA172D4", hash_generated_method = "8B0AB27D120A1C2461F0AAFCCA403ED5")
-        @DSModeled(DSC.SAFE)
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:34.539 -0400", hash_original_method = "224713C5B1CB6C52B9BDAF058DA172D4", hash_generated_method = "C97DC43E0A14FAAA38890D3B79869937")
+        //DSFIXME:  CODE0002: Requires DSC value to be set
         private RunningAppProcessInfo(Parcel source) {
             dsTaint.addTaint(source.dsTaint);
             readFromParcel(source);
@@ -1590,7 +1554,7 @@ public class ActivityManager {
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:14:57.962 -0400", hash_original_method = "00F8174F9E89D0C972FA6D3F19742382", hash_generated_method = "7491C6FB42F78871A3F8EA322AF6B2FC")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:34.540 -0400", hash_original_method = "00F8174F9E89D0C972FA6D3F19742382", hash_generated_method = "ED77793910767EAAB4C12F70F75B9095")
         @DSModeled(DSC.SAFE)
         public int describeContents() {
             return dsTaint.getTaintInt();
@@ -1599,11 +1563,11 @@ public class ActivityManager {
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:14:57.963 -0400", hash_original_method = "DDF0D3D0D0B3E35B68DDE155F98679B3", hash_generated_method = "70FD6860C9AD11BBE04BF6E5514A9A2D")
-        @DSModeled(DSC.SAFE)
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:34.541 -0400", hash_original_method = "DDF0D3D0D0B3E35B68DDE155F98679B3", hash_generated_method = "19D2239C9034ED4D163FB5FDB091A2F6")
+        //DSFIXME:  CODE0002: Requires DSC value to be set
         public void writeToParcel(Parcel dest, int flags) {
-            dsTaint.addTaint(dest.dsTaint);
             dsTaint.addTaint(flags);
+            dsTaint.addTaint(dest.dsTaint);
             dest.writeString(processName);
             dest.writeInt(pid);
             dest.writeInt(uid);
@@ -1630,7 +1594,7 @@ public class ActivityManager {
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:14:57.964 -0400", hash_original_method = "41C420DA0EF6445C06E1F94D547B6411", hash_generated_method = "5E95954FC9DD43BC8948A8F0C9F39C16")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:34.542 -0400", hash_original_method = "41C420DA0EF6445C06E1F94D547B6411", hash_generated_method = "B6190DE7CABF0ECD18111F7911134D98")
         //DSFIXME:  CODE0002: Requires DSC value to be set
         public void readFromParcel(Parcel source) {
             dsTaint.addTaint(source.dsTaint);
@@ -1660,10 +1624,58 @@ public class ActivityManager {
         }
 
         
+        public static final int FLAG_CANT_SAVE_STATE = 1<<0;
+        public static final int FLAG_PERSISTENT = 1<<1;
+        public static final int IMPORTANCE_FOREGROUND = 100;
+        public static final int IMPORTANCE_VISIBLE = 200;
+        public static final int IMPORTANCE_PERCEPTIBLE = 130;
+        public static final int IMPORTANCE_CANT_SAVE_STATE = 170;
+        public static final int IMPORTANCE_SERVICE = 300;
+        public static final int IMPORTANCE_BACKGROUND = 400;
+        public static final int IMPORTANCE_EMPTY = 500;
+        public static final int REASON_UNKNOWN = 0;
+        public static final int REASON_PROVIDER_IN_USE = 1;
+        public static final int REASON_SERVICE_IN_USE = 2;
+        public static final Creator<RunningAppProcessInfo> CREATOR = new Creator<RunningAppProcessInfo>() {            
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:34.543 -0400", hash_original_method = "A770AC12CE4BE94620C93B553EEF1E54", hash_generated_method = "B3F34BAB3C9C5CFD7D858D603AF7EBD2")
+            //DSFIXME:  CODE0002: Requires DSC value to be set
+            public RunningAppProcessInfo createFromParcel(Parcel source) {
+                dsTaint.addTaint(source.dsTaint);
+                RunningAppProcessInfo var4535AD2F2B60AA7789F6CBC35C19BB42_243684515 = (new RunningAppProcessInfo(source));
+                return (RunningAppProcessInfo)dsTaint.getTaint();
+                // ---------- Original Method ----------
+                //return new RunningAppProcessInfo(source);
+            }
+
+            
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:34.544 -0400", hash_original_method = "D1ED3F98A48A1EB116D00D47762C4476", hash_generated_method = "A57B168D25A206570E91BCC7E7B9D34B")
+            //DSFIXME:  CODE0002: Requires DSC value to be set
+            public RunningAppProcessInfo[] newArray(int size) {
+                dsTaint.addTaint(size);
+                RunningAppProcessInfo[] var87CE275BE946E7F3E4ABD9584298A724_1785988848 = (new RunningAppProcessInfo[size]);
+                return (RunningAppProcessInfo[])dsTaint.getTaint();
+                // ---------- Original Method ----------
+                //return new RunningAppProcessInfo[size];
+            }
+
+            
+}; //Transformed anonymous class
     }
 
 
     
+    private static String TAG = "ActivityManager";
+    private static boolean localLOGV = false;
+    public static final int COMPAT_MODE_ALWAYS = -1;
+    public static final int COMPAT_MODE_NEVER = -2;
+    public static final int COMPAT_MODE_UNKNOWN = -3;
+    public static final int COMPAT_MODE_DISABLED = 0;
+    public static final int COMPAT_MODE_ENABLED = 1;
+    public static final int COMPAT_MODE_TOGGLE = 2;
+    public static final int RECENT_WITH_EXCLUDED = 0x0001;
+    public static final int RECENT_IGNORE_UNAVAILABLE = 0x0002;
+    public static final int REMOVE_TASK_KILL_PROCESS = 0x0001;
+    public static final int MOVE_TASK_WITH_HOME = 0x00000001;
+    public static final int MOVE_TASK_NO_USER_ACTION = 0x00000002;
 }
-
 

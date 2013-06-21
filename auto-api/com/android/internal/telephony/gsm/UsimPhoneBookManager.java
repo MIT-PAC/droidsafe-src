@@ -3,10 +3,10 @@ package com.android.internal.telephony.gsm;
 // Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
+import droidsafe.runtime.*;
 
-// import Iterator to deal with enhanced for loop translation
+// needed for enhanced for control translations
 import java.util.Iterator;
-
 import android.os.AsyncResult;
 import android.os.Handler;
 import android.os.Message;
@@ -21,8 +21,6 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class UsimPhoneBookManager extends Handler implements IccConstants {
-    private static final String LOG_TAG = "GSM";
-    private static final boolean DBG = true;
     private PbrFile mPbrFile;
     private Boolean mIsPbrPresent;
     private PhoneBase mPhone;
@@ -35,28 +33,9 @@ public class UsimPhoneBookManager extends Handler implements IccConstants {
     private ArrayList<byte[]> mEmailFileRecord;
     private Map<Integer, ArrayList<String>> mEmailsForAdnRec;
     private boolean mRefreshCache = false;
-    private static final int EVENT_PBR_LOAD_DONE = 1;
-    private static final int EVENT_USIM_ADN_LOAD_DONE = 2;
-    private static final int EVENT_IAP_LOAD_DONE = 3;
-    private static final int EVENT_EMAIL_LOAD_DONE = 4;
-    private static final int USIM_TYPE1_TAG   = 0xA8;
-    private static final int USIM_TYPE2_TAG   = 0xA9;
-    private static final int USIM_TYPE3_TAG   = 0xAA;
-    private static final int USIM_EFADN_TAG   = 0xC0;
-    private static final int USIM_EFIAP_TAG   = 0xC1;
-    private static final int USIM_EFEXT1_TAG  = 0xC2;
-    private static final int USIM_EFSNE_TAG   = 0xC3;
-    private static final int USIM_EFANR_TAG   = 0xC4;
-    private static final int USIM_EFPBC_TAG   = 0xC5;
-    private static final int USIM_EFGRP_TAG   = 0xC6;
-    private static final int USIM_EFAAS_TAG   = 0xC7;
-    private static final int USIM_EFGSD_TAG   = 0xC8;
-    private static final int USIM_EFUID_TAG   = 0xC9;
-    private static final int USIM_EFEMAIL_TAG = 0xCA;
-    private static final int USIM_EFCCP1_TAG  = 0xCB;
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:10.031 -0400", hash_original_method = "49FEAD20C5C47E2BA26F4ED2BE1800D2", hash_generated_method = "0CF8E3173060DC9D9F1E662BCF6E3833")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:17.050 -0400", hash_original_method = "49FEAD20C5C47E2BA26F4ED2BE1800D2", hash_generated_method = "79D28584EAFE923BC98DB831CD1302B5")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     public UsimPhoneBookManager(PhoneBase phone, AdnRecordCache cache) {
         dsTaint.addTaint(phone.dsTaint);
         dsTaint.addTaint(cache.dsTaint);
@@ -72,8 +51,8 @@ public class UsimPhoneBookManager extends Handler implements IccConstants {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:10.031 -0400", hash_original_method = "E0D906663A0994551C89240DFDC0BDC8", hash_generated_method = "47F3B608A6245F766CA9414ADD30BE85")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:17.051 -0400", hash_original_method = "E0D906663A0994551C89240DFDC0BDC8", hash_generated_method = "ABA5A37BF0D9B72AE08F6D010D45EC01")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     public void reset() {
         mPhoneBookRecords.clear();
         mIapFileRecord = null;
@@ -91,12 +70,12 @@ public class UsimPhoneBookManager extends Handler implements IccConstants {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:10.032 -0400", hash_original_method = "B81A15F32DE42ED7FA5FD76607998109", hash_generated_method = "EF37AC99D76730C3704CBDBCD65CDC56")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:17.051 -0400", hash_original_method = "B81A15F32DE42ED7FA5FD76607998109", hash_generated_method = "F7A11AF571A1C16E9EE827F8E2207E8C")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public ArrayList<AdnRecord> loadEfFilesFromUsim() {
         {
             {
-                boolean var9D433910E1D3843659FCB90F123565EA_2121532727 = (!mPhoneBookRecords.isEmpty());
+                boolean var9D433910E1D3843659FCB90F123565EA_1114640297 = (!mPhoneBookRecords.isEmpty());
                 {
                     {
                         mRefreshCache = false;
@@ -143,8 +122,8 @@ public class UsimPhoneBookManager extends Handler implements IccConstants {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:10.032 -0400", hash_original_method = "B532D4E2E21067521A95047E8C8D19E8", hash_generated_method = "64AD0AA3CBBE29ACB14255D08712532A")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:17.052 -0400", hash_original_method = "B532D4E2E21067521A95047E8C8D19E8", hash_generated_method = "DEE7A7A6E640A8A49F0A7EEB22EC3C5D")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     private void refreshCache() {
         mPhoneBookRecords.clear();
         int numRecs;
@@ -166,7 +145,7 @@ public class UsimPhoneBookManager extends Handler implements IccConstants {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:10.032 -0400", hash_original_method = "4227D3403F7221594B4C4984D58136B1", hash_generated_method = "8F49576F19EC20F09F515824E0C0EDA9")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:17.052 -0400", hash_original_method = "4227D3403F7221594B4C4984D58136B1", hash_generated_method = "94D421C1BCB4B33EF173797F9066F6AC")
     @DSModeled(DSC.SAFE)
     public void invalidateCache() {
         mRefreshCache = true;
@@ -175,7 +154,7 @@ public class UsimPhoneBookManager extends Handler implements IccConstants {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:10.032 -0400", hash_original_method = "78E381AC3959E12E81678D4DFFBA5C8B", hash_generated_method = "32F655C1E8B5C3DB71F8E60267F66255")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:17.052 -0400", hash_original_method = "78E381AC3959E12E81678D4DFFBA5C8B", hash_generated_method = "3F8F554B0DFE76C73E3BA3F105EA8D1B")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     private void readPbrFileAndWait() {
         mPhone.getIccFileHandler().loadEFLinearFixedAll(EF_PBR, obtainMessage(EVENT_PBR_LOAD_DONE));
@@ -195,14 +174,14 @@ public class UsimPhoneBookManager extends Handler implements IccConstants {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:10.032 -0400", hash_original_method = "48BBB6A0A30AD38B5848D3F55664B632", hash_generated_method = "BDAF8ED78DB51DC8C7CCC6B0DAF884EB")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:17.053 -0400", hash_original_method = "48BBB6A0A30AD38B5848D3F55664B632", hash_generated_method = "D130841AE3D99EB1DFF2FE8CBD0DD294")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     private void readEmailFileAndWait(int recNum) {
         dsTaint.addTaint(recNum);
         Map <Integer,Integer> fileIds;
         fileIds = mPbrFile.mFileIds.get(recNum);
         {
-            boolean var2294A8F7D58B58C18C6F6AAEB87D3621_2016077493 = (fileIds.containsKey(USIM_EFEMAIL_TAG));
+            boolean var2294A8F7D58B58C18C6F6AAEB87D3621_1808994267 = (fileIds.containsKey(USIM_EFEMAIL_TAG));
             {
                 int efid;
                 efid = fileIds.get(USIM_EFEMAIL_TAG);
@@ -225,7 +204,7 @@ public class UsimPhoneBookManager extends Handler implements IccConstants {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:10.032 -0400", hash_original_method = "9E809A1ED86DEC7D2454BACD182423F6", hash_generated_method = "70380AFA24B23C42563D23C384147DF6")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:17.053 -0400", hash_original_method = "9E809A1ED86DEC7D2454BACD182423F6", hash_generated_method = "00F8F0EC6198FA35B627EA8F9BA99179")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     private void readIapFileAndWait(int efid) {
         dsTaint.addTaint(efid);
@@ -246,7 +225,7 @@ public class UsimPhoneBookManager extends Handler implements IccConstants {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:10.032 -0400", hash_original_method = "DBF9EE6E650F45B09979783B6AE92B3D", hash_generated_method = "DBEA21267A77CDEB81F8D6819D2E9C9F")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:17.053 -0400", hash_original_method = "DBF9EE6E650F45B09979783B6AE92B3D", hash_generated_method = "06321A5C5906311640F6F52BEE62B55E")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     private void updatePhoneAdnRecord() {
         int numAdnRecs;
@@ -314,7 +293,7 @@ public class UsimPhoneBookManager extends Handler implements IccConstants {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:10.033 -0400", hash_original_method = "8AA09CE6055FA7D5E93DEAB0645B4CBD", hash_generated_method = "DA4E870B5E6DA279EA21E379D0991127")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:17.054 -0400", hash_original_method = "8AA09CE6055FA7D5E93DEAB0645B4CBD", hash_generated_method = "56F618ADE9506487D2E4EB3983BF6561")
     //DSFIXME:  CODE0002: Requires DSC value to be set
      void parseType1EmailFile(int numRecs) {
         dsTaint.addTaint(numRecs);
@@ -336,7 +315,7 @@ public class UsimPhoneBookManager extends Handler implements IccConstants {
                 String email;
                 email = readEmailRecord(i);
                 {
-                    boolean var7580166154D64CB834904276F6B67CAD_1892216223 = (email == null || email.equals(""));
+                    boolean var7580166154D64CB834904276F6B67CAD_787003197 = (email == null || email.equals(""));
                 } //End collapsed parenthetic
                 ArrayList<String> val;
                 val = mEmailsForAdnRec.get(adnRecNum - 1);
@@ -352,7 +331,7 @@ public class UsimPhoneBookManager extends Handler implements IccConstants {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:10.033 -0400", hash_original_method = "9DD87F6722942AC55924DBE05DD72D60", hash_generated_method = "A764DA207A59D243E5D062E999E039C2")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:17.054 -0400", hash_original_method = "9DD87F6722942AC55924DBE05DD72D60", hash_generated_method = "92531E34A6B645FB427CA74993E39BF8")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     private String readEmailRecord(int recNum) {
         dsTaint.addTaint(recNum);
@@ -379,19 +358,19 @@ public class UsimPhoneBookManager extends Handler implements IccConstants {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:10.033 -0400", hash_original_method = "4035A9584818EC181E07E84AC976F741", hash_generated_method = "B278F90076D5AF7E9487B0E4EC7B7330")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:17.055 -0400", hash_original_method = "4035A9584818EC181E07E84AC976F741", hash_generated_method = "5A4F9CD51853BFE9A61D8DE61BF74A1B")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     private void readAdnFileAndWait(int recNum) {
         dsTaint.addTaint(recNum);
         Map <Integer,Integer> fileIds;
         fileIds = mPbrFile.mFileIds.get(recNum);
         {
-            boolean varA67B124270236CD7C1FC832187360DEE_183743922 = (fileIds == null || fileIds.isEmpty());
+            boolean varA67B124270236CD7C1FC832187360DEE_810040990 = (fileIds == null || fileIds.isEmpty());
         } //End collapsed parenthetic
         int extEf;
         extEf = 0;
         {
-            boolean var826F82931AF9A1D83BE91383C0B6480A_1744432822 = (fileIds.containsKey(USIM_EFEXT1_TAG));
+            boolean var826F82931AF9A1D83BE91383C0B6480A_2076160927 = (fileIds.containsKey(USIM_EFEXT1_TAG));
             {
                 extEf = fileIds.get(USIM_EFEXT1_TAG);
             } //End block
@@ -422,8 +401,8 @@ public class UsimPhoneBookManager extends Handler implements IccConstants {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:10.033 -0400", hash_original_method = "EC7FC3EA469B316149A3EE38C863088E", hash_generated_method = "888F9A26BA5B918E62082ABF3E65B588")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:17.055 -0400", hash_original_method = "EC7FC3EA469B316149A3EE38C863088E", hash_generated_method = "C35BEFAAE54EE0A1672BB5D80066D3B1")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     private void createPbrFile(ArrayList<byte[]> records) {
         dsTaint.addTaint(records.dsTaint);
         {
@@ -441,8 +420,8 @@ public class UsimPhoneBookManager extends Handler implements IccConstants {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:10.033 -0400", hash_original_method = "DBCDBDCB51A5EB5E1A763E38D42C7855", hash_generated_method = "4E10D0AE86D6132E2F569BC14A8252A0")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:17.065 -0400", hash_original_method = "DBCDBDCB51A5EB5E1A763E38D42C7855", hash_generated_method = "47FC7C612F110C25D46D035E546748D4")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     @Override
     public void handleMessage(Message msg) {
         dsTaint.addTaint(msg.dsTaint);
@@ -513,8 +492,8 @@ public class UsimPhoneBookManager extends Handler implements IccConstants {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:10.034 -0400", hash_original_method = "B26CBB1291A6152D9C092C7AC934B437", hash_generated_method = "094EA10445171343C6E13B6CC8A5E0C4")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:17.065 -0400", hash_original_method = "B26CBB1291A6152D9C092C7AC934B437", hash_generated_method = "112A9B9653C1FE3B4D0C73B1DFE11696")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     private void log(String msg) {
         dsTaint.addTaint(msg);
         Log.d(LOG_TAG, msg);
@@ -526,7 +505,7 @@ public class UsimPhoneBookManager extends Handler implements IccConstants {
     private class PbrFile {
         HashMap<Integer,Map<Integer,Integer>> mFileIds;
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:10.034 -0400", hash_original_method = "D67956DDFF065803AA18EDD362DE0213", hash_generated_method = "B871843A8375300E34788F36795E26D6")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:17.069 -0400", hash_original_method = "D67956DDFF065803AA18EDD362DE0213", hash_generated_method = "A4BF0C4EB4B73F5F8F5A972A73F0D889")
         //DSFIXME:  CODE0002: Requires DSC value to be set
          PbrFile(ArrayList<byte[]> records) {
             dsTaint.addTaint(records.dsTaint);
@@ -535,13 +514,12 @@ public class UsimPhoneBookManager extends Handler implements IccConstants {
             int recNum;
             recNum = 0;
             {
-                Iterator<byte[]> seatecAstronomy42 = records.iterator();
-                seatecAstronomy42.hasNext();
-                byte[] record = seatecAstronomy42.next();
+                Iterator<byte[]> varC5932E3C459EC5D6F84D20C1CA8BC089_1461625655 = (records).iterator();
+                varC5932E3C459EC5D6F84D20C1CA8BC089_1461625655.hasNext();
+                byte[] record = varC5932E3C459EC5D6F84D20C1CA8BC089_1461625655.next();
                 {
                     recTlv = new SimTlv(record, 0, record.length);
                     parseTag(recTlv, recNum);
-                    recNum ++;
                 } //End block
             } //End collapsed parenthetic
             // ---------- Original Method ----------
@@ -556,11 +534,11 @@ public class UsimPhoneBookManager extends Handler implements IccConstants {
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:10.034 -0400", hash_original_method = "D93ED3119C94191277253FF2EE0C71AD", hash_generated_method = "84EE2E78380F8B9DA3DA5CC5CFCDE525")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:17.070 -0400", hash_original_method = "D93ED3119C94191277253FF2EE0C71AD", hash_generated_method = "07A166E3C585A000A7951D97FFC6592F")
         //DSFIXME:  CODE0002: Requires DSC value to be set
          void parseTag(SimTlv tlv, int recNum) {
-            dsTaint.addTaint(tlv.dsTaint);
             dsTaint.addTaint(recNum);
+            dsTaint.addTaint(tlv.dsTaint);
             SimTlv tlvEf;
             int tag;
             byte[] data;
@@ -579,7 +557,7 @@ public class UsimPhoneBookManager extends Handler implements IccConstants {
                 //End case USIM_TYPE1_TAG USIM_TYPE3_TAG USIM_TYPE2_TAG 
             } //End block
             {
-                boolean var2BD20FFFB0EEC59B00776BE63CF9A28E_1403364554 = (tlv.nextObject());
+                boolean var2BD20FFFB0EEC59B00776BE63CF9A28E_1143732730 = (tlv.nextObject());
             } //End collapsed parenthetic
             mFileIds.put(recNum, val);
             // ---------- Original Method ----------
@@ -603,7 +581,7 @@ public class UsimPhoneBookManager extends Handler implements IccConstants {
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:10.034 -0400", hash_original_method = "27E6C520D8DED1C5B5FE1A348EAE7100", hash_generated_method = "104D7624EE6D90370904734FA89962D8")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:17.071 -0400", hash_original_method = "27E6C520D8DED1C5B5FE1A348EAE7100", hash_generated_method = "24070EA960C7F73A7B6C72DDA895D078")
         //DSFIXME:  CODE0002: Requires DSC value to be set
          void parseEf(SimTlv tlv, Map<Integer, Integer> val, int parentTag) {
             dsTaint.addTaint(val.dsTaint);
@@ -629,10 +607,9 @@ public class UsimPhoneBookManager extends Handler implements IccConstants {
                 //Begin case USIM_EFEMAIL_TAG USIM_EFADN_TAG USIM_EFEXT1_TAG USIM_EFANR_TAG USIM_EFPBC_TAG USIM_EFGRP_TAG USIM_EFAAS_TAG USIM_EFGSD_TAG USIM_EFUID_TAG USIM_EFCCP1_TAG USIM_EFIAP_TAG USIM_EFSNE_TAG 
                 val.put(tag, efid);
                 //End case USIM_EFEMAIL_TAG USIM_EFADN_TAG USIM_EFEXT1_TAG USIM_EFANR_TAG USIM_EFPBC_TAG USIM_EFGRP_TAG USIM_EFAAS_TAG USIM_EFGSD_TAG USIM_EFUID_TAG USIM_EFCCP1_TAG USIM_EFIAP_TAG USIM_EFSNE_TAG 
-                tagNumberWithinParentTag ++;
             } //End block
             {
-                boolean var2BD20FFFB0EEC59B00776BE63CF9A28E_513750295 = (tlv.nextObject());
+                boolean var2BD20FFFB0EEC59B00776BE63CF9A28E_1710057037 = (tlv.nextObject());
             } //End collapsed parenthetic
             // ---------- Original Method ----------
             // Original Method Too Long, Refer to Original Implementation
@@ -643,6 +620,26 @@ public class UsimPhoneBookManager extends Handler implements IccConstants {
 
 
     
+    private static final String LOG_TAG = "GSM";
+    private static final boolean DBG = true;
+    private static final int EVENT_PBR_LOAD_DONE = 1;
+    private static final int EVENT_USIM_ADN_LOAD_DONE = 2;
+    private static final int EVENT_IAP_LOAD_DONE = 3;
+    private static final int EVENT_EMAIL_LOAD_DONE = 4;
+    private static final int USIM_TYPE1_TAG   = 0xA8;
+    private static final int USIM_TYPE2_TAG   = 0xA9;
+    private static final int USIM_TYPE3_TAG   = 0xAA;
+    private static final int USIM_EFADN_TAG   = 0xC0;
+    private static final int USIM_EFIAP_TAG   = 0xC1;
+    private static final int USIM_EFEXT1_TAG  = 0xC2;
+    private static final int USIM_EFSNE_TAG   = 0xC3;
+    private static final int USIM_EFANR_TAG   = 0xC4;
+    private static final int USIM_EFPBC_TAG   = 0xC5;
+    private static final int USIM_EFGRP_TAG   = 0xC6;
+    private static final int USIM_EFAAS_TAG   = 0xC7;
+    private static final int USIM_EFGSD_TAG   = 0xC8;
+    private static final int USIM_EFUID_TAG   = 0xC9;
+    private static final int USIM_EFEMAIL_TAG = 0xCA;
+    private static final int USIM_EFCCP1_TAG  = 0xCB;
 }
-
 

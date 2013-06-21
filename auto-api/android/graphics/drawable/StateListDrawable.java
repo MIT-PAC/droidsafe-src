@@ -17,13 +17,10 @@ import android.util.AttributeSet;
 import android.util.StateSet;
 
 public class StateListDrawable extends DrawableContainer {
-    private static final boolean DEBUG = false;
-    private static final String TAG = "StateListDrawable";
-    private static final boolean DEFAULT_DITHER = true;
-    private final StateListState mStateListState;
+    private StateListState mStateListState;
     private boolean mMutated;
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 11:47:18.261 -0400", hash_original_method = "2C05F8B66F3CA072BC0F3CED1F3E988B", hash_generated_method = "57BDC9932C72BB7F89F2D35B0EA8E519")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:48.684 -0400", hash_original_method = "2C05F8B66F3CA072BC0F3CED1F3E988B", hash_generated_method = "3034A7A547BD403E1E0F238C476B9227")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public StateListDrawable() {
         this(null, null);
@@ -31,7 +28,7 @@ public class StateListDrawable extends DrawableContainer {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 11:47:18.266 -0400", hash_original_method = "90179FAF2CD102672779F3C6B59674D6", hash_generated_method = "A37468667581AB0BBDA7559E1C90E851")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:48.685 -0400", hash_original_method = "90179FAF2CD102672779F3C6B59674D6", hash_generated_method = "9D06A6347D0D0A65F4815F27A262D128")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     private StateListDrawable(StateListState state, Resources res) {
         dsTaint.addTaint(res.dsTaint);
@@ -49,10 +46,10 @@ public class StateListDrawable extends DrawableContainer {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 11:47:18.296 -0400", hash_original_method = "AF6407614B20F66E7E774377847CB658", hash_generated_method = "A9C902C0F6BA1D0F0B46D3D6A4DE3936")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:48.686 -0400", hash_original_method = "AF6407614B20F66E7E774377847CB658", hash_generated_method = "E8E9017D72466D8B23C1B28CC7285495")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public void addState(int[] stateSet, Drawable drawable) {
-        dsTaint.addTaint(stateSet);
+        dsTaint.addTaint(stateSet[0]);
         dsTaint.addTaint(drawable.dsTaint);
         {
             mStateListState.addStateSet(stateSet, drawable);
@@ -66,7 +63,7 @@ public class StateListDrawable extends DrawableContainer {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 11:47:18.321 -0400", hash_original_method = "DFB1FDC7F6EFB1E210EFD5F6F91EF45F", hash_generated_method = "EB21AB6AE4E195FC4556C6CA3C08562D")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:48.687 -0400", hash_original_method = "DFB1FDC7F6EFB1E210EFD5F6F91EF45F", hash_generated_method = "E6F1FDAC01A30B0B9FE155C3D5B9FBA8")
     @DSModeled(DSC.SAFE)
     @Override
     public boolean isStateful() {
@@ -76,12 +73,12 @@ public class StateListDrawable extends DrawableContainer {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 11:47:18.356 -0400", hash_original_method = "3B1FAED12170A69A129A87EF9824D4D4", hash_generated_method = "74F5CC441243D43C11657DCD58D38584")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:48.690 -0400", hash_original_method = "3B1FAED12170A69A129A87EF9824D4D4", hash_generated_method = "A097EB62E36BA270966940D576092C98")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     @Override
     protected boolean onStateChange(int[] stateSet) {
         //DSFIXME:  CODE0009: Possible callback target function detected
-        dsTaint.addTaint(stateSet);
+        dsTaint.addTaint(stateSet[0]);
         int idx;
         idx = mStateListState.indexOfStateSet(stateSet);
         android.util.Log.i(TAG, "onStateChange " + this + " states "
@@ -90,9 +87,9 @@ public class StateListDrawable extends DrawableContainer {
             idx = mStateListState.indexOfStateSet(StateSet.WILD_CARD);
         } //End block
         {
-            boolean var3E2B49468750734D46A6120849432D6B_187609782 = (selectDrawable(idx));
+            boolean var3E2B49468750734D46A6120849432D6B_1721070692 = (selectDrawable(idx));
         } //End collapsed parenthetic
-        boolean var6096784E4C4CB866A4D8B9C324F426C5_255486814 = (super.onStateChange(stateSet));
+        boolean var6096784E4C4CB866A4D8B9C324F426C5_713656416 = (super.onStateChange(stateSet));
         return dsTaint.getTaintBoolean();
         // ---------- Original Method ----------
         //int idx = mStateListState.indexOfStateSet(stateSet);
@@ -108,7 +105,7 @@ public class StateListDrawable extends DrawableContainer {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 11:47:18.528 -0400", hash_original_method = "60A0EEC92FC73D4C3C226304BAFE6ED2", hash_generated_method = "1562296C2C77CF7DAF40408CE9C316B3")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:48.692 -0400", hash_original_method = "60A0EEC92FC73D4C3C226304BAFE6ED2", hash_generated_method = "5F315D6B4713078FE8B8380ECDE45110")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     @Override
     public void inflate(Resources r, XmlPullParser parser,
@@ -133,30 +130,30 @@ public class StateListDrawable extends DrawableContainer {
                                DEFAULT_DITHER));
         a.recycle();
         int type;
-        final int innerDepth;
+        int innerDepth;
         innerDepth = parser.getDepth() + 1;
-        int depth = 0;
+        int depth;
         {
-            boolean var5C2AD857B4870B6E82338097BA87AA78_653164263 = ((type = parser.next()) != XmlPullParser.END_DOCUMENT
+            boolean var5C2AD857B4870B6E82338097BA87AA78_44815995 = ((type = parser.next()) != XmlPullParser.END_DOCUMENT
                 && ((depth = parser.getDepth()) >= innerDepth
                 || type != XmlPullParser.END_TAG));
             {
                 {
-                    boolean var03C44ADC0346A0FD12ECFE38D2A0612F_1962448831 = (depth > innerDepth || !parser.getName().equals("item"));
+                    boolean var03C44ADC0346A0FD12ECFE38D2A0612F_1218620000 = (depth > innerDepth || !parser.getName().equals("item"));
                 } //End collapsed parenthetic
                 int drawableRes;
                 drawableRes = 0;
                 int i;
                 int j;
                 j = 0;
-                final int numAttrs;
+                int numAttrs;
                 numAttrs = attrs.getAttributeCount();
                 int[] states;
                 states = new int[numAttrs];
                 {
                     i = 0;
                     {
-                        final int stateResId;
+                        int stateResId;
                         stateResId = attrs.getAttributeNameResource(i);
                         {
                             drawableRes = attrs.getAttributeResourceValue(i, 0);
@@ -175,7 +172,7 @@ public class StateListDrawable extends DrawableContainer {
                 } //End block
                 {
                     {
-                        boolean var16E7483EB4C069010E58346DA2B7701B_50183729 = ((type = parser.next()) == XmlPullParser.TEXT);
+                        boolean var16E7483EB4C069010E58346DA2B7701B_644948207 = ((type = parser.next()) == XmlPullParser.TEXT);
                     } //End collapsed parenthetic
                     {
                         if (DroidSafeAndroidRuntime.control) throw new XmlPullParserException(
@@ -194,7 +191,7 @@ public class StateListDrawable extends DrawableContainer {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 11:47:18.560 -0400", hash_original_method = "C30AAB7A53F4234B41E4C7F0859B0584", hash_generated_method = "D6D7E3BB5A925FB4604F74F0E1C31DAE")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:48.694 -0400", hash_original_method = "C30AAB7A53F4234B41E4C7F0859B0584", hash_generated_method = "C4F56AAF6AB7DA1224CF0E04C2C62639")
     @DSModeled(DSC.SAFE)
      StateListState getStateListState() {
         return (StateListState)dsTaint.getTaint();
@@ -203,17 +200,17 @@ public class StateListDrawable extends DrawableContainer {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 11:47:18.578 -0400", hash_original_method = "D9E3394F970F5413D258086831B5CB36", hash_generated_method = "775708237AC1D1980418B2E00C2B0A18")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:48.694 -0400", hash_original_method = "D9E3394F970F5413D258086831B5CB36", hash_generated_method = "5EE768A0478587AFCB13E22F16501D00")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public int getStateCount() {
-        int var11CFE54020BD6DC70972CFC97D6175DA_1534358312 = (mStateListState.getChildCount());
+        int var11CFE54020BD6DC70972CFC97D6175DA_1793501235 = (mStateListState.getChildCount());
         return dsTaint.getTaintInt();
         // ---------- Original Method ----------
         //return mStateListState.getChildCount();
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 11:47:18.603 -0400", hash_original_method = "55D68A9E9C260DCF60D1CBBC77B3FC0F", hash_generated_method = "F765AD00E0D1DF7A3BC8919208DCCA1F")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:48.694 -0400", hash_original_method = "55D68A9E9C260DCF60D1CBBC77B3FC0F", hash_generated_method = "65DA230116B0A168FBA3B80981BCEA41")
     @DSModeled(DSC.SAFE)
     public int[] getStateSet(int index) {
         dsTaint.addTaint(index);
@@ -225,45 +222,45 @@ public class StateListDrawable extends DrawableContainer {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 11:47:18.614 -0400", hash_original_method = "266BB2A523416F0BDAD03984AE85B606", hash_generated_method = "119BFE854E6E28FB4963DB374E826B8A")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:48.695 -0400", hash_original_method = "266BB2A523416F0BDAD03984AE85B606", hash_generated_method = "23CD9A485D8DB13E8A43D06EDF25C2C9")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public Drawable getStateDrawable(int index) {
         dsTaint.addTaint(index);
-        Drawable var4D2933E8B473DAEA8ABC6C3F4184D7F9_430946251 = (mStateListState.getChildren()[index]);
+        Drawable var4D2933E8B473DAEA8ABC6C3F4184D7F9_644185624 = (mStateListState.getChildren()[index]);
         return (Drawable)dsTaint.getTaint();
         // ---------- Original Method ----------
         //return mStateListState.getChildren()[index];
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 11:47:18.639 -0400", hash_original_method = "410013485164C1DC2E995A85C1D3348C", hash_generated_method = "6F34B89C14DF29978A0D9D9BFB997B7F")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:48.695 -0400", hash_original_method = "410013485164C1DC2E995A85C1D3348C", hash_generated_method = "A370B7224D60A5F1D618FF3B0A0EB308")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public int getStateDrawableIndex(int[] stateSet) {
-        dsTaint.addTaint(stateSet);
-        int var32B7534748596CE25EEA3B111D541A0E_405367514 = (mStateListState.indexOfStateSet(stateSet));
+        dsTaint.addTaint(stateSet[0]);
+        int var32B7534748596CE25EEA3B111D541A0E_548736405 = (mStateListState.indexOfStateSet(stateSet));
         return dsTaint.getTaintInt();
         // ---------- Original Method ----------
         //return mStateListState.indexOfStateSet(stateSet);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 11:47:18.679 -0400", hash_original_method = "92CD1CD82DD5DEA6E7693E9ED80EE90B", hash_generated_method = "FDD6C77DF1181A6ED18F519693B0FC60")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:48.695 -0400", hash_original_method = "92CD1CD82DD5DEA6E7693E9ED80EE90B", hash_generated_method = "FF02BDD35AA44F02F790D1D91B180720")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     @Override
     public Drawable mutate() {
         {
-            boolean varC94B19053599294E7944C8C841976773_844723751 = (!mMutated && super.mutate() == this);
+            boolean varC94B19053599294E7944C8C841976773_1506581810 = (!mMutated && super.mutate() == this);
             {
-                final int[][] sets;
+                int[][] sets;
                 sets = mStateListState.mStateSets;
-                final int count;
+                int count;
                 count = sets.length;
                 mStateListState.mStateSets = new int[count][];
                 {
                     int i;
                     i = 0;
                     {
-                        final int[] set;
+                        int[] set;
                         set = sets[i];
                         {
                             mStateListState.mStateSets[i] = set.clone();
@@ -294,7 +291,7 @@ public class StateListDrawable extends DrawableContainer {
     static final class StateListState extends DrawableContainerState {
         int[][] mStateSets;
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 11:47:18.698 -0400", hash_original_method = "51F130A45558C85B3D3E7CFC8D91F8BC", hash_generated_method = "E042BD7E7FD9ED17F9B78FE71FC8BFA2")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:48.696 -0400", hash_original_method = "51F130A45558C85B3D3E7CFC8D91F8BC", hash_generated_method = "5E92358E9CC140E614C430CA96BD3ADB")
         //DSFIXME:  CODE0002: Requires DSC value to be set
          StateListState(StateListState orig, StateListDrawable owner, Resources res) {
             super(orig, owner, res);
@@ -316,12 +313,12 @@ public class StateListDrawable extends DrawableContainer {
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 11:47:18.737 -0400", hash_original_method = "E4505B2AE7EA07FF537AEC799B3546D0", hash_generated_method = "3F417263D062E2BDCC565A717F2CBE5B")
-        @DSModeled(DSC.SAFE)
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:48.696 -0400", hash_original_method = "E4505B2AE7EA07FF537AEC799B3546D0", hash_generated_method = "F43A71FDFCF3E2001970F49F0D51FDDB")
+        //DSFIXME:  CODE0002: Requires DSC value to be set
          int addStateSet(int[] stateSet, Drawable drawable) {
-            dsTaint.addTaint(stateSet);
+            dsTaint.addTaint(stateSet[0]);
             dsTaint.addTaint(drawable.dsTaint);
-            final int pos;
+            int pos;
             pos = addChild(drawable);
             mStateSets[pos] = stateSet;
             return dsTaint.getTaintInt();
@@ -332,20 +329,20 @@ public class StateListDrawable extends DrawableContainer {
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 11:47:18.837 -0400", hash_original_method = "A182AEBDD3B8E6EFB499434DA2A68669", hash_generated_method = "23E492A19BE69B52D6AF4D23E395CB33")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:48.696 -0400", hash_original_method = "A182AEBDD3B8E6EFB499434DA2A68669", hash_generated_method = "1A5CC947C9C943D39184EB4EB5C453C0")
         //DSFIXME:  CODE0002: Requires DSC value to be set
         private int indexOfStateSet(int[] stateSet) {
-            dsTaint.addTaint(stateSet);
-            final int[][] stateSets;
+            dsTaint.addTaint(stateSet[0]);
+            int[][] stateSets;
             stateSets = mStateSets;
-            final int N;
+            int N;
             N = getChildCount();
             {
                 int i;
                 i = 0;
                 {
                     {
-                        boolean var6FDC262EEEF0E02068C5811E55176A45_661977856 = (StateSet.stateSetMatches(stateSets[i], stateSet));
+                        boolean var6FDC262EEEF0E02068C5811E55176A45_2143775936 = (StateSet.stateSetMatches(stateSets[i], stateSet));
                     } //End collapsed parenthetic
                 } //End block
             } //End collapsed parenthetic
@@ -362,35 +359,37 @@ public class StateListDrawable extends DrawableContainer {
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 11:47:18.861 -0400", hash_original_method = "56C51D0FF73BF2A3F52E87DDE967AFF6", hash_generated_method = "6D7DE045809C7E40CE06200A0A3ED968")
-        @DSModeled(DSC.SAFE)
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:48.697 -0400", hash_original_method = "56C51D0FF73BF2A3F52E87DDE967AFF6", hash_generated_method = "E34A4AC231C9E1D71F15ABA128443F39")
+        //DSFIXME:  CODE0002: Requires DSC value to be set
         @Override
         public Drawable newDrawable() {
+            Drawable var00232C0D01FA12107A07EF8718771E39_1421403883 = (new StateListDrawable(this, null));
             return (Drawable)dsTaint.getTaint();
             // ---------- Original Method ----------
             //return new StateListDrawable(this, null);
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 11:47:18.877 -0400", hash_original_method = "DF4CF834DF74C8FC36C20E482CEB7672", hash_generated_method = "901E7F817897F2588D726C9A618787FF")
-        @DSModeled(DSC.SAFE)
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:48.697 -0400", hash_original_method = "DF4CF834DF74C8FC36C20E482CEB7672", hash_generated_method = "35916BAA32696F60FF6215DC30DFEBE4")
+        //DSFIXME:  CODE0002: Requires DSC value to be set
         @Override
         public Drawable newDrawable(Resources res) {
             dsTaint.addTaint(res.dsTaint);
+            Drawable var656A2D02C8834B70B43AF8D98AC71401_448461709 = (new StateListDrawable(this, res));
             return (Drawable)dsTaint.getTaint();
             // ---------- Original Method ----------
             //return new StateListDrawable(this, res);
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 11:47:18.888 -0400", hash_original_method = "CF45914111E05D752375948053626E9D", hash_generated_method = "EA9DF54E5E3AFBA00F5765C3293ED9AB")
-        @DSModeled(DSC.SAFE)
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:48.697 -0400", hash_original_method = "CF45914111E05D752375948053626E9D", hash_generated_method = "DC87373F52CAA2DB4A96829C5AFD90F5")
+        //DSFIXME:  CODE0002: Requires DSC value to be set
         @Override
         public void growArray(int oldSize, int newSize) {
             dsTaint.addTaint(oldSize);
             dsTaint.addTaint(newSize);
             super.growArray(oldSize, newSize);
-            final int[][] newStateSets;
+            int[][] newStateSets;
             newStateSets = new int[newSize][];
             System.arraycopy(mStateSets, 0, newStateSets, 0, oldSize);
             mStateSets = newStateSets;
@@ -406,6 +405,8 @@ public class StateListDrawable extends DrawableContainer {
 
 
     
+    private static final boolean DEBUG = false;
+    private static final String TAG = "StateListDrawable";
+    private static final boolean DEFAULT_DITHER = true;
 }
-
 

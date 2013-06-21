@@ -3,12 +3,379 @@ package libcore.io;
 // Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
+import droidsafe.runtime.*;
 
-// import Iterator to deal with enhanced for loop translation
+// needed for enhanced for control translations
 import java.util.Iterator;
 
-
 public final class OsConstants {
+    
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:38.980 -0400", hash_original_method = "0498D6F7A9D700EE7D091D4440C7A579", hash_generated_method = "A197106530DC08E504EC74CDFEA7722E")
+    @DSModeled(DSC.SAFE)
+    private OsConstants() {
+        // ---------- Original Method ----------
+    }
+
+    
+        public static boolean S_ISBLK(int mode) {
+        return (mode & S_IFMT) == S_IFBLK;
+    }
+
+    
+        public static boolean S_ISCHR(int mode) {
+        return (mode & S_IFMT) == S_IFCHR;
+    }
+
+    
+        public static boolean S_ISDIR(int mode) {
+        return (mode & S_IFMT) == S_IFDIR;
+    }
+
+    
+        public static boolean S_ISFIFO(int mode) {
+        return (mode & S_IFMT) == S_IFIFO;
+    }
+
+    
+        public static boolean S_ISREG(int mode) {
+        return (mode & S_IFMT) == S_IFREG;
+    }
+
+    
+        public static boolean S_ISLNK(int mode) {
+        return (mode & S_IFMT) == S_IFLNK;
+    }
+
+    
+        public static boolean S_ISSOCK(int mode) {
+        return (mode & S_IFMT) == S_IFSOCK;
+    }
+
+    
+        public static int WEXITSTATUS(int status) {
+        return (status & 0xff00) >> 8;
+    }
+
+    
+        public static boolean WCOREDUMP(int status) {
+        return (status & 0x80) != 0;
+    }
+
+    
+        public static int WTERMSIG(int status) {
+        return status & 0x7f;
+    }
+
+    
+        public static int WSTOPSIG(int status) {
+        return WEXITSTATUS(status);
+    }
+
+    
+        public static boolean WIFEXITED(int status) {
+        return (WTERMSIG(status) == 0);
+    }
+
+    
+        public static boolean WIFSTOPPED(int status) {
+        return (WTERMSIG(status) == 0x7f);
+    }
+
+    
+        public static boolean WIFSIGNALED(int status) {
+        return (WTERMSIG(status + 1) >= 2);
+    }
+
+    
+        public static String gaiName(int error) {
+        if (error == EAI_AGAIN) {
+            return "EAI_AGAIN";
+        }
+        if (error == EAI_BADFLAGS) {
+            return "EAI_BADFLAGS";
+        }
+        if (error == EAI_FAIL) {
+            return "EAI_FAIL";
+        }
+        if (error == EAI_FAMILY) {
+            return "EAI_FAMILY";
+        }
+        if (error == EAI_MEMORY) {
+            return "EAI_MEMORY";
+        }
+        if (error == EAI_NODATA) {
+            return "EAI_NODATA";
+        }
+        if (error == EAI_NONAME) {
+            return "EAI_NONAME";
+        }
+        if (error == EAI_OVERFLOW) {
+            return "EAI_OVERFLOW";
+        }
+        if (error == EAI_SERVICE) {
+            return "EAI_SERVICE";
+        }
+        if (error == EAI_SOCKTYPE) {
+            return "EAI_SOCKTYPE";
+        }
+        if (error == EAI_SYSTEM) {
+            return "EAI_SYSTEM";
+        }
+        return null;
+    }
+
+    
+        public static String errnoName(int errno) {
+        if (errno == E2BIG) {
+            return "E2BIG";
+        }
+        if (errno == EACCES) {
+            return "EACCES";
+        }
+        if (errno == EADDRINUSE) {
+            return "EADDRINUSE";
+        }
+        if (errno == EADDRNOTAVAIL) {
+            return "EADDRNOTAVAIL";
+        }
+        if (errno == EAFNOSUPPORT) {
+            return "EAFNOSUPPORT";
+        }
+        if (errno == EAGAIN) {
+            return "EAGAIN";
+        }
+        if (errno == EALREADY) {
+            return "EALREADY";
+        }
+        if (errno == EBADF) {
+            return "EBADF";
+        }
+        if (errno == EBADMSG) {
+            return "EBADMSG";
+        }
+        if (errno == EBUSY) {
+            return "EBUSY";
+        }
+        if (errno == ECANCELED) {
+            return "ECANCELED";
+        }
+        if (errno == ECHILD) {
+            return "ECHILD";
+        }
+        if (errno == ECONNABORTED) {
+            return "ECONNABORTED";
+        }
+        if (errno == ECONNREFUSED) {
+            return "ECONNREFUSED";
+        }
+        if (errno == ECONNRESET) {
+            return "ECONNRESET";
+        }
+        if (errno == EDEADLK) {
+            return "EDEADLK";
+        }
+        if (errno == EDESTADDRREQ) {
+            return "EDESTADDRREQ";
+        }
+        if (errno == EDOM) {
+            return "EDOM";
+        }
+        if (errno == EDQUOT) {
+            return "EDQUOT";
+        }
+        if (errno == EEXIST) {
+            return "EEXIST";
+        }
+        if (errno == EFAULT) {
+            return "EFAULT";
+        }
+        if (errno == EFBIG) {
+            return "EFBIG";
+        }
+        if (errno == EHOSTUNREACH) {
+            return "EHOSTUNREACH";
+        }
+        if (errno == EIDRM) {
+            return "EIDRM";
+        }
+        if (errno == EILSEQ) {
+            return "EILSEQ";
+        }
+        if (errno == EINPROGRESS) {
+            return "EINPROGRESS";
+        }
+        if (errno == EINTR) {
+            return "EINTR";
+        }
+        if (errno == EINVAL) {
+            return "EINVAL";
+        }
+        if (errno == EIO) {
+            return "EIO";
+        }
+        if (errno == EISCONN) {
+            return "EISCONN";
+        }
+        if (errno == EISDIR) {
+            return "EISDIR";
+        }
+        if (errno == ELOOP) {
+            return "ELOOP";
+        }
+        if (errno == EMFILE) {
+            return "EMFILE";
+        }
+        if (errno == EMLINK) {
+            return "EMLINK";
+        }
+        if (errno == EMSGSIZE) {
+            return "EMSGSIZE";
+        }
+        if (errno == EMULTIHOP) {
+            return "EMULTIHOP";
+        }
+        if (errno == ENAMETOOLONG) {
+            return "ENAMETOOLONG";
+        }
+        if (errno == ENETDOWN) {
+            return "ENETDOWN";
+        }
+        if (errno == ENETRESET) {
+            return "ENETRESET";
+        }
+        if (errno == ENETUNREACH) {
+            return "ENETUNREACH";
+        }
+        if (errno == ENFILE) {
+            return "ENFILE";
+        }
+        if (errno == ENOBUFS) {
+            return "ENOBUFS";
+        }
+        if (errno == ENODATA) {
+            return "ENODATA";
+        }
+        if (errno == ENODEV) {
+            return "ENODEV";
+        }
+        if (errno == ENOENT) {
+            return "ENOENT";
+        }
+        if (errno == ENOEXEC) {
+            return "ENOEXEC";
+        }
+        if (errno == ENOLCK) {
+            return "ENOLCK";
+        }
+        if (errno == ENOLINK) {
+            return "ENOLINK";
+        }
+        if (errno == ENOMEM) {
+            return "ENOMEM";
+        }
+        if (errno == ENOMSG) {
+            return "ENOMSG";
+        }
+        if (errno == ENOPROTOOPT) {
+            return "ENOPROTOOPT";
+        }
+        if (errno == ENOSPC) {
+            return "ENOSPC";
+        }
+        if (errno == ENOSR) {
+            return "ENOSR";
+        }
+        if (errno == ENOSTR) {
+            return "ENOSTR";
+        }
+        if (errno == ENOSYS) {
+            return "ENOSYS";
+        }
+        if (errno == ENOTCONN) {
+            return "ENOTCONN";
+        }
+        if (errno == ENOTDIR) {
+            return "ENOTDIR";
+        }
+        if (errno == ENOTEMPTY) {
+            return "ENOTEMPTY";
+        }
+        if (errno == ENOTSOCK) {
+            return "ENOTSOCK";
+        }
+        if (errno == ENOTSUP) {
+            return "ENOTSUP";
+        }
+        if (errno == ENOTTY) {
+            return "ENOTTY";
+        }
+        if (errno == ENXIO) {
+            return "ENXIO";
+        }
+        if (errno == EOPNOTSUPP) {
+            return "EOPNOTSUPP";
+        }
+        if (errno == EOVERFLOW) {
+            return "EOVERFLOW";
+        }
+        if (errno == EPERM) {
+            return "EPERM";
+        }
+        if (errno == EPIPE) {
+            return "EPIPE";
+        }
+        if (errno == EPROTO) {
+            return "EPROTO";
+        }
+        if (errno == EPROTONOSUPPORT) {
+            return "EPROTONOSUPPORT";
+        }
+        if (errno == EPROTOTYPE) {
+            return "EPROTOTYPE";
+        }
+        if (errno == ERANGE) {
+            return "ERANGE";
+        }
+        if (errno == EROFS) {
+            return "EROFS";
+        }
+        if (errno == ESPIPE) {
+            return "ESPIPE";
+        }
+        if (errno == ESRCH) {
+            return "ESRCH";
+        }
+        if (errno == ESTALE) {
+            return "ESTALE";
+        }
+        if (errno == ETIME) {
+            return "ETIME";
+        }
+        if (errno == ETIMEDOUT) {
+            return "ETIMEDOUT";
+        }
+        if (errno == ETXTBSY) {
+            return "ETXTBSY";
+        }
+        if (errno == EWOULDBLOCK) {
+            return "EWOULDBLOCK";
+        }
+        if (errno == EXDEV) {
+            return "EXDEV";
+        }
+        return null;
+    }
+
+    
+        private static void initConstants() {
+    }
+
+    
+        private static int placeholder() {
+        return 0;
+    }
+
+    
     public static final int AF_INET = placeholder();
     public static final int AF_INET6 = placeholder();
     public static final int AF_UNIX = placeholder();
@@ -408,396 +775,9 @@ public final class OsConstants {
     public static final int _SC_XOPEN_UNIX = placeholder();
     public static final int _SC_XOPEN_VERSION = placeholder();
     public static final int _SC_XOPEN_XCU_VERSION = placeholder();
-    
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:17.490 -0400", hash_original_method = "0498D6F7A9D700EE7D091D4440C7A579", hash_generated_method = "37A2B48FD1F58B59F4C9A911E71F99AB")
-    @DSModeled(DSC.SAFE)
-    private OsConstants() {
-        // ---------- Original Method ----------
-    }
-
-    
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:17.490 -0400", hash_original_method = "6FBD45B2EC49C3532B2A383542F004C9", hash_generated_method = "BECA4FADD60375FF883204962270EC05")
-    public static boolean S_ISBLK(int mode) {
-        return (mode & S_IFMT) == S_IFBLK;
-    }
-
-    
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:17.490 -0400", hash_original_method = "75A6C09D50B78A7E066A87C97D7F2C86", hash_generated_method = "3D734EC988B6821896E8350413963FB8")
-    public static boolean S_ISCHR(int mode) {
-        return (mode & S_IFMT) == S_IFCHR;
-    }
-
-    
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:17.490 -0400", hash_original_method = "27999EF9B355FE00BFD3F19E0247E66F", hash_generated_method = "61123434991B0AAC1C3BFF3DF19AAFB0")
-    public static boolean S_ISDIR(int mode) {
-        return (mode & S_IFMT) == S_IFDIR;
-    }
-
-    
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:17.490 -0400", hash_original_method = "AEB7632998EE01A4F3281B8657D9E5D3", hash_generated_method = "6266A6BC6CCE89B50A3C7CE69FD0988C")
-    public static boolean S_ISFIFO(int mode) {
-        return (mode & S_IFMT) == S_IFIFO;
-    }
-
-    
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:17.490 -0400", hash_original_method = "972D3B2E46340018C527E1154F3167D2", hash_generated_method = "4A786707D4D29E2E34822EC4129D9E89")
-    public static boolean S_ISREG(int mode) {
-        return (mode & S_IFMT) == S_IFREG;
-    }
-
-    
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:17.490 -0400", hash_original_method = "1CF5A4CB88456E82FF9CD0E58E92EACB", hash_generated_method = "8D2B3D09DFDD15BBE5CDACAE72BB2F93")
-    public static boolean S_ISLNK(int mode) {
-        return (mode & S_IFMT) == S_IFLNK;
-    }
-
-    
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:17.490 -0400", hash_original_method = "693E3BBB558BEACE567A30F01F127355", hash_generated_method = "5A1EBECA633E1265DEEC8AC85C2995BF")
-    public static boolean S_ISSOCK(int mode) {
-        return (mode & S_IFMT) == S_IFSOCK;
-    }
-
-    
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:17.490 -0400", hash_original_method = "7265A183623C1B7655F66D7720AC9885", hash_generated_method = "3BDFDB45BEC72E773052BDCC88CE7927")
-    public static int WEXITSTATUS(int status) {
-        return (status & 0xff00) >> 8;
-    }
-
-    
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:17.490 -0400", hash_original_method = "1F545C20977CE91288194D26B79358B2", hash_generated_method = "36E190B2ED8E5DD4195F4FCDB325CB9E")
-    public static boolean WCOREDUMP(int status) {
-        return (status & 0x80) != 0;
-    }
-
-    
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:17.490 -0400", hash_original_method = "B60BFB6C0F446069236CAE2C76701814", hash_generated_method = "1502042B4E03D36D008575D59271247D")
-    public static int WTERMSIG(int status) {
-        return status & 0x7f;
-    }
-
-    
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:17.490 -0400", hash_original_method = "F522AEA5FB6766147D1222FB42A28E21", hash_generated_method = "D144AF06888D7BFD86185DA1C260AD3D")
-    public static int WSTOPSIG(int status) {
-        return WEXITSTATUS(status);
-    }
-
-    
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:17.490 -0400", hash_original_method = "37813A3787992D7DD1D2B70B07491038", hash_generated_method = "B060458B87E21F64E4715EE2AC9A7DDE")
-    public static boolean WIFEXITED(int status) {
-        return (WTERMSIG(status) == 0);
-    }
-
-    
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:17.490 -0400", hash_original_method = "495761AFADA0822BBC79B1906BC0C77E", hash_generated_method = "ACA2F84F2DE55964FFB8891C12DBB573")
-    public static boolean WIFSTOPPED(int status) {
-        return (WTERMSIG(status) == 0x7f);
-    }
-
-    
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:17.490 -0400", hash_original_method = "361E3DCA43EB386BBDF0415C21375804", hash_generated_method = "EF47DD3AA9A5D00092FA7AF16054103B")
-    public static boolean WIFSIGNALED(int status) {
-        return (WTERMSIG(status + 1) >= 2);
-    }
-
-    
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:17.490 -0400", hash_original_method = "CA6E12AB409431E0F71B9735038F5085", hash_generated_method = "7E4EE6CB3518AAB1F86C3F301F109F04")
-    public static String gaiName(int error) {
-        if (error == EAI_AGAIN) {
-            return "EAI_AGAIN";
-        }
-        if (error == EAI_BADFLAGS) {
-            return "EAI_BADFLAGS";
-        }
-        if (error == EAI_FAIL) {
-            return "EAI_FAIL";
-        }
-        if (error == EAI_FAMILY) {
-            return "EAI_FAMILY";
-        }
-        if (error == EAI_MEMORY) {
-            return "EAI_MEMORY";
-        }
-        if (error == EAI_NODATA) {
-            return "EAI_NODATA";
-        }
-        if (error == EAI_NONAME) {
-            return "EAI_NONAME";
-        }
-        if (error == EAI_OVERFLOW) {
-            return "EAI_OVERFLOW";
-        }
-        if (error == EAI_SERVICE) {
-            return "EAI_SERVICE";
-        }
-        if (error == EAI_SOCKTYPE) {
-            return "EAI_SOCKTYPE";
-        }
-        if (error == EAI_SYSTEM) {
-            return "EAI_SYSTEM";
-        }
-        return null;
-    }
-
-    
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:17.490 -0400", hash_original_method = "C99BF098EAFCFD142E84E172974A3402", hash_generated_method = "66D4EAA01242C9F463381EE3DBE8784A")
-    public static String errnoName(int errno) {
-        if (errno == E2BIG) {
-            return "E2BIG";
-        }
-        if (errno == EACCES) {
-            return "EACCES";
-        }
-        if (errno == EADDRINUSE) {
-            return "EADDRINUSE";
-        }
-        if (errno == EADDRNOTAVAIL) {
-            return "EADDRNOTAVAIL";
-        }
-        if (errno == EAFNOSUPPORT) {
-            return "EAFNOSUPPORT";
-        }
-        if (errno == EAGAIN) {
-            return "EAGAIN";
-        }
-        if (errno == EALREADY) {
-            return "EALREADY";
-        }
-        if (errno == EBADF) {
-            return "EBADF";
-        }
-        if (errno == EBADMSG) {
-            return "EBADMSG";
-        }
-        if (errno == EBUSY) {
-            return "EBUSY";
-        }
-        if (errno == ECANCELED) {
-            return "ECANCELED";
-        }
-        if (errno == ECHILD) {
-            return "ECHILD";
-        }
-        if (errno == ECONNABORTED) {
-            return "ECONNABORTED";
-        }
-        if (errno == ECONNREFUSED) {
-            return "ECONNREFUSED";
-        }
-        if (errno == ECONNRESET) {
-            return "ECONNRESET";
-        }
-        if (errno == EDEADLK) {
-            return "EDEADLK";
-        }
-        if (errno == EDESTADDRREQ) {
-            return "EDESTADDRREQ";
-        }
-        if (errno == EDOM) {
-            return "EDOM";
-        }
-        if (errno == EDQUOT) {
-            return "EDQUOT";
-        }
-        if (errno == EEXIST) {
-            return "EEXIST";
-        }
-        if (errno == EFAULT) {
-            return "EFAULT";
-        }
-        if (errno == EFBIG) {
-            return "EFBIG";
-        }
-        if (errno == EHOSTUNREACH) {
-            return "EHOSTUNREACH";
-        }
-        if (errno == EIDRM) {
-            return "EIDRM";
-        }
-        if (errno == EILSEQ) {
-            return "EILSEQ";
-        }
-        if (errno == EINPROGRESS) {
-            return "EINPROGRESS";
-        }
-        if (errno == EINTR) {
-            return "EINTR";
-        }
-        if (errno == EINVAL) {
-            return "EINVAL";
-        }
-        if (errno == EIO) {
-            return "EIO";
-        }
-        if (errno == EISCONN) {
-            return "EISCONN";
-        }
-        if (errno == EISDIR) {
-            return "EISDIR";
-        }
-        if (errno == ELOOP) {
-            return "ELOOP";
-        }
-        if (errno == EMFILE) {
-            return "EMFILE";
-        }
-        if (errno == EMLINK) {
-            return "EMLINK";
-        }
-        if (errno == EMSGSIZE) {
-            return "EMSGSIZE";
-        }
-        if (errno == EMULTIHOP) {
-            return "EMULTIHOP";
-        }
-        if (errno == ENAMETOOLONG) {
-            return "ENAMETOOLONG";
-        }
-        if (errno == ENETDOWN) {
-            return "ENETDOWN";
-        }
-        if (errno == ENETRESET) {
-            return "ENETRESET";
-        }
-        if (errno == ENETUNREACH) {
-            return "ENETUNREACH";
-        }
-        if (errno == ENFILE) {
-            return "ENFILE";
-        }
-        if (errno == ENOBUFS) {
-            return "ENOBUFS";
-        }
-        if (errno == ENODATA) {
-            return "ENODATA";
-        }
-        if (errno == ENODEV) {
-            return "ENODEV";
-        }
-        if (errno == ENOENT) {
-            return "ENOENT";
-        }
-        if (errno == ENOEXEC) {
-            return "ENOEXEC";
-        }
-        if (errno == ENOLCK) {
-            return "ENOLCK";
-        }
-        if (errno == ENOLINK) {
-            return "ENOLINK";
-        }
-        if (errno == ENOMEM) {
-            return "ENOMEM";
-        }
-        if (errno == ENOMSG) {
-            return "ENOMSG";
-        }
-        if (errno == ENOPROTOOPT) {
-            return "ENOPROTOOPT";
-        }
-        if (errno == ENOSPC) {
-            return "ENOSPC";
-        }
-        if (errno == ENOSR) {
-            return "ENOSR";
-        }
-        if (errno == ENOSTR) {
-            return "ENOSTR";
-        }
-        if (errno == ENOSYS) {
-            return "ENOSYS";
-        }
-        if (errno == ENOTCONN) {
-            return "ENOTCONN";
-        }
-        if (errno == ENOTDIR) {
-            return "ENOTDIR";
-        }
-        if (errno == ENOTEMPTY) {
-            return "ENOTEMPTY";
-        }
-        if (errno == ENOTSOCK) {
-            return "ENOTSOCK";
-        }
-        if (errno == ENOTSUP) {
-            return "ENOTSUP";
-        }
-        if (errno == ENOTTY) {
-            return "ENOTTY";
-        }
-        if (errno == ENXIO) {
-            return "ENXIO";
-        }
-        if (errno == EOPNOTSUPP) {
-            return "EOPNOTSUPP";
-        }
-        if (errno == EOVERFLOW) {
-            return "EOVERFLOW";
-        }
-        if (errno == EPERM) {
-            return "EPERM";
-        }
-        if (errno == EPIPE) {
-            return "EPIPE";
-        }
-        if (errno == EPROTO) {
-            return "EPROTO";
-        }
-        if (errno == EPROTONOSUPPORT) {
-            return "EPROTONOSUPPORT";
-        }
-        if (errno == EPROTOTYPE) {
-            return "EPROTOTYPE";
-        }
-        if (errno == ERANGE) {
-            return "ERANGE";
-        }
-        if (errno == EROFS) {
-            return "EROFS";
-        }
-        if (errno == ESPIPE) {
-            return "ESPIPE";
-        }
-        if (errno == ESRCH) {
-            return "ESRCH";
-        }
-        if (errno == ESTALE) {
-            return "ESTALE";
-        }
-        if (errno == ETIME) {
-            return "ETIME";
-        }
-        if (errno == ETIMEDOUT) {
-            return "ETIMEDOUT";
-        }
-        if (errno == ETXTBSY) {
-            return "ETXTBSY";
-        }
-        if (errno == EWOULDBLOCK) {
-            return "EWOULDBLOCK";
-        }
-        if (errno == EXDEV) {
-            return "EXDEV";
-        }
-        return null;
-    }
-
-    
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:17.490 -0400", hash_original_method = "3AB8212983BF0429B17CE24DC73FC45D", hash_generated_method = "F070490F32023BDEF984396E0AA7019D")
-    private static void initConstants() {
-        //DSFIXME:  CODE0012: Native static method requires manual modeling
-    }
-
-    
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:17.491 -0400", hash_original_method = "DAE024EA6D6BB39319E6D500BD21C97F", hash_generated_method = "9EC037694603E2A7AF82232FD6D0B452")
-    private static int placeholder() {
-        return 0;
-    }
-
-    
     static {
         initConstants();
     }
     
 }
-
 

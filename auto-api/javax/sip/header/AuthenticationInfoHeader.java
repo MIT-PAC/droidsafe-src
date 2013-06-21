@@ -1,0 +1,29 @@
+package javax.sip.header;
+
+// Droidsafe Imports
+import droidsafe.helpers.*;
+import droidsafe.annotations.*;
+import droidsafe.runtime.*;
+
+// needed for enhanced for control translations
+import java.util.Iterator;
+import java.text.ParseException;
+
+public interface AuthenticationInfoHeader extends Header, Parameters {
+    String NAME = "Authentication-Info";
+
+    String getCNonce();
+    void setCNonce(String cNonce) throws ParseException;
+
+    String getNextNonce();
+    void setNextNonce(String nextNonce) throws ParseException;
+
+    int getNonceCount();
+    void setNonceCount(int nonceCount) throws ParseException;
+
+    String getQop();
+    void setQop(String qop) throws ParseException;
+
+    String getResponse();
+    void setResponse(String response) throws ParseException;
+}

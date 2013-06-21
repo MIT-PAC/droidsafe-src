@@ -3,10 +3,10 @@ package javax.sip.address;
 // Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
+import droidsafe.runtime.*;
 
-// import Iterator to deal with enhanced for loop translation
+// needed for enhanced for control translations
 import java.util.Iterator;
-
 import java.text.ParseException;
 import java.util.Iterator;
 import javax.sip.header.Parameters;
@@ -57,4 +57,3 @@ public interface SipURI extends URI, Parameters {
     String getMethodParam();
     void setMethodParam(String methodParam) throws ParseException;
 }
-

@@ -3,10 +3,10 @@ package android.text;
 // Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
+import droidsafe.runtime.*;
 
-// import Iterator to deal with enhanced for loop translation
+// needed for enhanced for control translations
 import java.util.Iterator;
-
 import android.graphics.Bitmap;
 import android.graphics.Paint;
 import android.text.style.LeadingMarginSpan;
@@ -18,46 +18,17 @@ import android.util.Log;
 import com.android.internal.util.ArrayUtils;
 
 public class StaticLayout extends Layout {
-    static final String TAG = "StaticLayout";
     private int mLineCount;
     private int mTopPadding, mBottomPadding;
     private int mColumns;
     private int mEllipsizedWidth;
-    private static final int COLUMNS_NORMAL = 3;
-    private static final int COLUMNS_ELLIPSIZE = 5;
-    private static final int START = 0;
-    private static final int DIR = START;
-    private static final int TAB = START;
-    private static final int TOP = 1;
-    private static final int DESCENT = 2;
-    private static final int ELLIPSIS_START = 3;
-    private static final int ELLIPSIS_COUNT = 4;
     private int[] mLines;
     private Directions[] mLineDirections;
     private int mMaximumVisibleLineCount = Integer.MAX_VALUE;
-    private static final int START_MASK = 0x1FFFFFFF;
-    private static final int DIR_SHIFT  = 30;
-    private static final int TAB_MASK   = 0x20000000;
-    private static final int TAB_INCREMENT = 20;
-    private static final char CHAR_FIRST_CJK = '\u2E80';
-    private static final char CHAR_NEW_LINE = '\n';
-    private static final char CHAR_TAB = '\t';
-    private static final char CHAR_SPACE = ' ';
-    private static final char CHAR_DOT = '.';
-    private static final char CHAR_COMMA = ',';
-    private static final char CHAR_COLON = ':';
-    private static final char CHAR_SEMICOLON = ';';
-    private static final char CHAR_SLASH = '/';
-    private static final char CHAR_HYPHEN = '-';
-    private static final double EXTRA_ROUNDING = 0.5;
-    private static final String ELLIPSIS_NORMAL = "\u2026";
-    private static final String ELLIPSIS_TWO_DOTS = "\u2025";
-    private static final int CHAR_FIRST_HIGH_SURROGATE = 0xD800;
-    private static final int CHAR_LAST_LOW_SURROGATE = 0xDFFF;
     private MeasuredText mMeasured;
     private Paint.FontMetricsInt mFontMetricsInt = new Paint.FontMetricsInt();
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:04.282 -0400", hash_original_method = "C77149727B404FEFD5CB3129B7BB45BF", hash_generated_method = "CE02C004567478013C4AA2CBD934E768")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:56.588 -0400", hash_original_method = "C77149727B404FEFD5CB3129B7BB45BF", hash_generated_method = "9013D52857101A1735BF9C5B735B67E8")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public StaticLayout(CharSequence source, TextPaint paint,
                         int width,
@@ -67,8 +38,8 @@ public class StaticLayout extends Layout {
              spacingmult, spacingadd, includepad);
         dsTaint.addTaint(includepad);
         dsTaint.addTaint(source);
-        dsTaint.addTaint(width);
         dsTaint.addTaint(align.dsTaint);
+        dsTaint.addTaint(width);
         dsTaint.addTaint(paint.dsTaint);
         dsTaint.addTaint(spacingadd);
         dsTaint.addTaint(spacingmult);
@@ -76,7 +47,7 @@ public class StaticLayout extends Layout {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:04.282 -0400", hash_original_method = "81565FB766EC1D266415894033F3BC38", hash_generated_method = "54DA659AB03CD677F8C5BDA3BB49588E")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:56.588 -0400", hash_original_method = "81565FB766EC1D266415894033F3BC38", hash_generated_method = "CE8FF33AE05DB3C6A9D3C28B6511CFAD")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public StaticLayout(CharSequence source, TextPaint paint,
             int width, Alignment align, TextDirectionHeuristic textDir,
@@ -84,11 +55,11 @@ public class StaticLayout extends Layout {
             boolean includepad) {
         this(source, 0, source.length(), paint, width, align, textDir,
                 spacingmult, spacingadd, includepad);
-        dsTaint.addTaint(textDir.dsTaint);
         dsTaint.addTaint(includepad);
+        dsTaint.addTaint(textDir.dsTaint);
         dsTaint.addTaint(source);
-        dsTaint.addTaint(width);
         dsTaint.addTaint(align.dsTaint);
+        dsTaint.addTaint(width);
         dsTaint.addTaint(paint.dsTaint);
         dsTaint.addTaint(spacingadd);
         dsTaint.addTaint(spacingmult);
@@ -96,7 +67,7 @@ public class StaticLayout extends Layout {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:04.282 -0400", hash_original_method = "BF066121E6D6D3B30CB2E4FB82D6E631", hash_generated_method = "C8DB12B9FD2CBA8BA8BBA17C5C752430")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:56.588 -0400", hash_original_method = "BF066121E6D6D3B30CB2E4FB82D6E631", hash_generated_method = "33F7ADD7A31168F5E32AB99DF7084617")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public StaticLayout(CharSequence source, int bufstart, int bufend,
                         TextPaint paint, int outerwidth,
@@ -106,11 +77,11 @@ public class StaticLayout extends Layout {
         this(source, bufstart, bufend, paint, outerwidth, align,
              spacingmult, spacingadd, includepad, null, 0);
         dsTaint.addTaint(includepad);
-        dsTaint.addTaint(source);
         dsTaint.addTaint(outerwidth);
+        dsTaint.addTaint(source);
         dsTaint.addTaint(align.dsTaint);
-        dsTaint.addTaint(bufstart);
         dsTaint.addTaint(paint.dsTaint);
+        dsTaint.addTaint(bufstart);
         dsTaint.addTaint(spacingadd);
         dsTaint.addTaint(spacingmult);
         dsTaint.addTaint(bufend);
@@ -118,7 +89,7 @@ public class StaticLayout extends Layout {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:04.282 -0400", hash_original_method = "683465774808809C7366667F354731A1", hash_generated_method = "A0985A0A511AAE6A103020BC781FDC15")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:56.588 -0400", hash_original_method = "683465774808809C7366667F354731A1", hash_generated_method = "3D18D7CE38C8BAB79BFC25B9C6C9E03D")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public StaticLayout(CharSequence source, int bufstart, int bufend,
             TextPaint paint, int outerwidth,
@@ -127,13 +98,13 @@ public class StaticLayout extends Layout {
             boolean includepad) {
         this(source, bufstart, bufend, paint, outerwidth, align, textDir,
                 spacingmult, spacingadd, includepad, null, 0, Integer.MAX_VALUE);
-        dsTaint.addTaint(textDir.dsTaint);
         dsTaint.addTaint(includepad);
-        dsTaint.addTaint(source);
+        dsTaint.addTaint(textDir.dsTaint);
         dsTaint.addTaint(outerwidth);
+        dsTaint.addTaint(source);
         dsTaint.addTaint(align.dsTaint);
-        dsTaint.addTaint(bufstart);
         dsTaint.addTaint(paint.dsTaint);
+        dsTaint.addTaint(bufstart);
         dsTaint.addTaint(spacingadd);
         dsTaint.addTaint(spacingmult);
         dsTaint.addTaint(bufend);
@@ -141,7 +112,7 @@ public class StaticLayout extends Layout {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:04.282 -0400", hash_original_method = "D92F1C5E6D18A86EA341983F1D2D5889", hash_generated_method = "16020C86E5373C138B2B2B27D1276E35")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:56.589 -0400", hash_original_method = "D92F1C5E6D18A86EA341983F1D2D5889", hash_generated_method = "8E9FFCAEBC0ED7FBA8D6D614FC1A4700")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public StaticLayout(CharSequence source, int bufstart, int bufend,
             TextPaint paint, int outerwidth,
@@ -154,20 +125,20 @@ public class StaticLayout extends Layout {
                 spacingmult, spacingadd, includepad, ellipsize, ellipsizedWidth, Integer.MAX_VALUE);
         dsTaint.addTaint(includepad);
         dsTaint.addTaint(ellipsizedWidth);
-        dsTaint.addTaint(source);
         dsTaint.addTaint(outerwidth);
+        dsTaint.addTaint(source);
         dsTaint.addTaint(align.dsTaint);
-        dsTaint.addTaint(bufstart);
         dsTaint.addTaint(paint.dsTaint);
+        dsTaint.addTaint(bufstart);
         dsTaint.addTaint(spacingadd);
         dsTaint.addTaint(spacingmult);
-        dsTaint.addTaint(bufend);
         dsTaint.addTaint(ellipsize.dsTaint);
+        dsTaint.addTaint(bufend);
         // ---------- Original Method ----------
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:04.282 -0400", hash_original_method = "67715870CA89D1E43E3638ABED5B90D0", hash_generated_method = "211A3F25332C9F0BAA3DF58CD0E91AAC")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:56.589 -0400", hash_original_method = "67715870CA89D1E43E3638ABED5B90D0", hash_generated_method = "3D4453AD44B9C312045E29EF3E9F4113")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public StaticLayout(CharSequence source, int bufstart, int bufend,
                         TextPaint paint, int outerwidth,
@@ -188,8 +159,8 @@ public class StaticLayout extends Layout {
         dsTaint.addTaint(spacingadd);
         dsTaint.addTaint(spacingmult);
         dsTaint.addTaint(bufend);
-        dsTaint.addTaint(includepad);
         dsTaint.addTaint(textDir.dsTaint);
+        dsTaint.addTaint(includepad);
         dsTaint.addTaint(ellipsizedWidth);
         dsTaint.addTaint(source);
         dsTaint.addTaint(bufstart);
@@ -219,7 +190,7 @@ public class StaticLayout extends Layout {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:04.282 -0400", hash_original_method = "F6D0B9C991ED85508405BA894E3CF311", hash_generated_method = "AE57E80444DC5375D2E1A3F9963BECBE")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:56.589 -0400", hash_original_method = "F6D0B9C991ED85508405BA894E3CF311", hash_generated_method = "A4718F43F8A33BCAD2F26F604E94A7C1")
     //DSFIXME:  CODE0002: Requires DSC value to be set
      StaticLayout(CharSequence text) {
         super(text, null, 0, null, 0, 0);
@@ -238,7 +209,7 @@ public class StaticLayout extends Layout {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:04.284 -0400", hash_original_method = "36200F938D6B110E70DA8FCD0A142EF7", hash_generated_method = "689D9FD2B537437E52E56BD0BC52C67F")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:56.593 -0400", hash_original_method = "36200F938D6B110E70DA8FCD0A142EF7", hash_generated_method = "1A354DF24E67B46B5CC0EF3AC991E65A")
     //DSFIXME:  CODE0002: Requires DSC value to be set
      void generate(CharSequence source, int bufStart, int bufEnd,
                         TextPaint paint, int outerWidth,
@@ -246,8 +217,8 @@ public class StaticLayout extends Layout {
                         float spacingadd, boolean includepad,
                         boolean trackpad, float ellipsizedWidth,
                         TextUtils.TruncateAt ellipsize) {
-        dsTaint.addTaint(textDir.dsTaint);
         dsTaint.addTaint(includepad);
+        dsTaint.addTaint(textDir.dsTaint);
         dsTaint.addTaint(ellipsizedWidth);
         dsTaint.addTaint(source);
         dsTaint.addTaint(bufStart);
@@ -256,8 +227,8 @@ public class StaticLayout extends Layout {
         dsTaint.addTaint(paint.dsTaint);
         dsTaint.addTaint(spacingadd);
         dsTaint.addTaint(spacingmult);
-        dsTaint.addTaint(outerWidth);
         dsTaint.addTaint(ellipsize.dsTaint);
+        dsTaint.addTaint(outerWidth);
         mLineCount = 0;
         int v;
         v = 0;
@@ -278,10 +249,10 @@ public class StaticLayout extends Layout {
         {
             int paraStart;
             paraStart = bufStart;
+            paraStart = paraEnd;
             {
                 paraEnd = TextUtils.indexOf(source, CHAR_NEW_LINE, paraStart, bufEnd);
                 paraEnd = bufEnd;
-                paraEnd++;
                 int firstWidthLineLimit;
                 firstWidthLineLimit = mLineCount + 1;
                 int firstWidth;
@@ -378,6 +349,7 @@ public class StaticLayout extends Layout {
                     int spanStart, spanEnd, nextSpanStart;
                     spanStart = paraStart;
                     spanEnd = spanStart;
+                    spanStart = nextSpanStart;
                     {
                         {
                             spanEnd = paraEnd;
@@ -449,7 +421,6 @@ public class StaticLayout extends Layout {
                                             wid = bm.getWidth() * -whichPaint.ascent() / bm.getHeight();
                                             w += wid;
                                             hasTabOrEmoji = true;
-                                            j++;
                                         } //End block
                                         {
                                             w += widths[j - paraStart];
@@ -470,7 +441,7 @@ public class StaticLayout extends Layout {
                                     fitDescent = fmDescent;
                                     fitBottom = fmBottom;
                                     {
-                                        boolean varB520B0E4FB3D6569062BDD8343CF19D9_85076828 = (c == CHAR_SPACE || c == CHAR_TAB ||
+                                        boolean varB520B0E4FB3D6569062BDD8343CF19D9_906318993 = (c == CHAR_SPACE || c == CHAR_TAB ||
                             ((c == CHAR_DOT || c == CHAR_COMMA ||
                                     c == CHAR_COLON || c == CHAR_SEMICOLON) &&
                              (j - 1 < here || !Character.isDigit(chs[j - 1 - paraStart])) &&
@@ -490,16 +461,13 @@ public class StaticLayout extends Layout {
                                     } //End collapsed parenthetic
                                 } //End block
                                 {
-                                    final boolean moreChars;
+                                    boolean moreChars;
                                     moreChars = (j + 1 < spanEnd);
                                     int endPos;
                                     int above, below, top, bottom;
                                     float currentTextWidth;
                                     {
                                         ok = j + 1;
-                                        {
-                                            ok++;
-                                        } //End block
                                         endPos = ok;
                                         above = okAscent;
                                         below = okDescent;
@@ -571,7 +539,7 @@ public class StaticLayout extends Layout {
             } //End block
         } //End collapsed parenthetic
         {
-            boolean varD6A6A425370B61445227FF156BD0D4E6_238748169 = ((bufEnd == bufStart || source.charAt(bufEnd - 1) == CHAR_NEW_LINE) &&
+            boolean varD6A6A425370B61445227FF156BD0D4E6_14320594 = ((bufEnd == bufStart || source.charAt(bufEnd - 1) == CHAR_NEW_LINE) &&
                 mLineCount < mMaximumVisibleLineCount);
             {
                 paint.getFontMetricsInt(fm);
@@ -592,8 +560,7 @@ public class StaticLayout extends Layout {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:04.285 -0400", hash_original_method = "D4C81D48070585F36B5352844546D049", hash_generated_method = "EE4065571B374199AEBEA00FE9B62F65")
-    private static final boolean isIdeographic(char c, boolean includeNonStarters) {
+        private static final boolean isIdeographic(char c, boolean includeNonStarters) {
         if (c >= '\u2E80' && c <= '\u2FFF') {
             return true; 
         }
@@ -674,7 +641,7 @@ public class StaticLayout extends Layout {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:04.286 -0400", hash_original_method = "478F3FA593939ABCBF542030DE605E96", hash_generated_method = "CCB1D711D4B64F438D2A78D2700647F2")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:56.595 -0400", hash_original_method = "478F3FA593939ABCBF542030DE605E96", hash_generated_method = "4D4A79FABBBF3A8ED97688E993F9D5A7")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     private int out(CharSequence text, int start, int end,
                       int above, int below, int top, int bottom, int v,
@@ -688,10 +655,10 @@ public class StaticLayout extends Layout {
                       float ellipsisWidth, float textWidth,
                       TextPaint paint, boolean moreChars) {
         dsTaint.addTaint(needMultiply);
-        dsTaint.addTaint(widths);
+        dsTaint.addTaint(widths[0]);
         dsTaint.addTaint(hasTabOrEmoji);
         dsTaint.addTaint(spacingadd);
-        dsTaint.addTaint(chooseHtv);
+        dsTaint.addTaint(chooseHtv[0]);
         dsTaint.addTaint(fm.dsTaint);
         dsTaint.addTaint(easy);
         dsTaint.addTaint(dir);
@@ -707,13 +674,13 @@ public class StaticLayout extends Layout {
         dsTaint.addTaint(textWidth);
         dsTaint.addTaint(trackPad);
         dsTaint.addTaint(v);
-        dsTaint.addTaint(chdirs);
         dsTaint.addTaint(chooseHt[0].dsTaint);
+        dsTaint.addTaint(chdirs[0]);
         dsTaint.addTaint(start);
-        dsTaint.addTaint(bufEnd);
         dsTaint.addTaint(bottom);
+        dsTaint.addTaint(bufEnd);
         dsTaint.addTaint(widthStart);
-        dsTaint.addTaint(chs);
+        dsTaint.addTaint(chs[0]);
         dsTaint.addTaint(ellipsisWidth);
         dsTaint.addTaint(ellipsize.dsTaint);
         int j;
@@ -826,30 +793,29 @@ public class StaticLayout extends Layout {
                         textWidth, paint, forceEllipsis);
             } //End block
         } //End block
-        mLineCount++;
         return dsTaint.getTaintInt();
         // ---------- Original Method ----------
         // Original Method Too Long, Refer to Original Implementation
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:04.287 -0400", hash_original_method = "12884526F2C70C1C98137C0940B4D04E", hash_generated_method = "464EBBF880131D0D01E772A23E27BBCF")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:56.596 -0400", hash_original_method = "12884526F2C70C1C98137C0940B4D04E", hash_generated_method = "CE1481225FDC832811305AD420FC72D9")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     private void calculateEllipsis(int lineStart, int lineEnd,
                                    float[] widths, int widthStart,
                                    float avail, TextUtils.TruncateAt where,
                                    int line, float textWidth, TextPaint paint,
                                    boolean forceEllipsis) {
-        dsTaint.addTaint(lineStart);
         dsTaint.addTaint(forceEllipsis);
-        dsTaint.addTaint(widths);
+        dsTaint.addTaint(lineStart);
         dsTaint.addTaint(line);
-        dsTaint.addTaint(avail);
+        dsTaint.addTaint(widths[0]);
         dsTaint.addTaint(paint.dsTaint);
+        dsTaint.addTaint(avail);
         dsTaint.addTaint(widthStart);
         dsTaint.addTaint(where.dsTaint);
-        dsTaint.addTaint(lineEnd);
         dsTaint.addTaint(textWidth);
+        dsTaint.addTaint(lineEnd);
         {
             mLines[mColumns * line + ELLIPSIS_START] = 0;
             mLines[mColumns * line + ELLIPSIS_COUNT] = 0;
@@ -881,7 +847,7 @@ public class StaticLayout extends Layout {
             } //End block
             {
                 {
-                    boolean varDB9C000D9EED0EBC5F67F0C4656298B5_1390921729 = (Log.isLoggable(TAG, Log.WARN));
+                    boolean varDB9C000D9EED0EBC5F67F0C4656298B5_1030081387 = (Log.isLoggable(TAG, Log.WARN));
                 } //End collapsed parenthetic
             } //End block
         } //End block
@@ -937,7 +903,7 @@ public class StaticLayout extends Layout {
             } //End block
             {
                 {
-                    boolean varDB9C000D9EED0EBC5F67F0C4656298B5_1422933518 = (Log.isLoggable(TAG, Log.WARN));
+                    boolean varDB9C000D9EED0EBC5F67F0C4656298B5_732735056 = (Log.isLoggable(TAG, Log.WARN));
                 } //End collapsed parenthetic
             } //End block
         } //End block
@@ -948,7 +914,7 @@ public class StaticLayout extends Layout {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:04.287 -0400", hash_original_method = "98509D881029C8DC6B023EB0DACF92F5", hash_generated_method = "806E9A581A1D3CB01E7C5077F16AD9EE")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:56.597 -0400", hash_original_method = "98509D881029C8DC6B023EB0DACF92F5", hash_generated_method = "301EFD089F32DB50496671004A13734F")
     @DSModeled(DSC.SAFE)
     @Override
     public int getLineForVertical(int vertical) {
@@ -991,7 +957,7 @@ public class StaticLayout extends Layout {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:04.287 -0400", hash_original_method = "DCA25DE9CB635243C23A0D258AEAA6C9", hash_generated_method = "FA646B18E85A6C48B63FE7D3DAC61E5F")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:56.597 -0400", hash_original_method = "DCA25DE9CB635243C23A0D258AEAA6C9", hash_generated_method = "CB9409C68204607BE138705FC9041DCB")
     @DSModeled(DSC.SAFE)
     @Override
     public int getLineCount() {
@@ -1001,7 +967,7 @@ public class StaticLayout extends Layout {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:04.287 -0400", hash_original_method = "79A8E86A0E5ABFEF4F09B2D188FA97FB", hash_generated_method = "B0D88231609104664B7DE92392009B8A")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:56.597 -0400", hash_original_method = "79A8E86A0E5ABFEF4F09B2D188FA97FB", hash_generated_method = "7902ED830C5D2AC52382B276CC11FB58")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     @Override
     public int getLineTop(int line) {
@@ -1022,7 +988,7 @@ public class StaticLayout extends Layout {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:04.287 -0400", hash_original_method = "24456204DB122ABBCF95E31F6A475D1C", hash_generated_method = "A84E316CD50D3426B0786965EED6E952")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:56.597 -0400", hash_original_method = "24456204DB122ABBCF95E31F6A475D1C", hash_generated_method = "8CC395E91B5E075308A81711B4674C42")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     @Override
     public int getLineDescent(int line) {
@@ -1043,7 +1009,7 @@ public class StaticLayout extends Layout {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:04.287 -0400", hash_original_method = "839417F6B69B5423927C3B8DBF7A6F42", hash_generated_method = "036868D9B6A2E11E149DA6BF32A0AA21")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:56.598 -0400", hash_original_method = "839417F6B69B5423927C3B8DBF7A6F42", hash_generated_method = "5FE20E49237D5F124734BF20C9EDA5E1")
     @DSModeled(DSC.SAFE)
     @Override
     public int getLineStart(int line) {
@@ -1054,7 +1020,7 @@ public class StaticLayout extends Layout {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:04.287 -0400", hash_original_method = "4D44D66A6DA9E0A8739F807A61ABAF65", hash_generated_method = "344BB10E3E7E9560E5BD88CA715E3805")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:56.598 -0400", hash_original_method = "4D44D66A6DA9E0A8739F807A61ABAF65", hash_generated_method = "59AA1D523F64E93C48A7006236A3851A")
     @DSModeled(DSC.SAFE)
     @Override
     public int getParagraphDirection(int line) {
@@ -1065,7 +1031,7 @@ public class StaticLayout extends Layout {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:04.288 -0400", hash_original_method = "F549BE615B108927B3399A138AFD2460", hash_generated_method = "9B61F4EAA8BF3B3E0B109926323E9D7D")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:56.598 -0400", hash_original_method = "F549BE615B108927B3399A138AFD2460", hash_generated_method = "C0011C9BD8B3423E3A9DD8D147ADBC40")
     @DSModeled(DSC.SAFE)
     @Override
     public boolean getLineContainsTab(int line) {
@@ -1076,7 +1042,7 @@ public class StaticLayout extends Layout {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:04.288 -0400", hash_original_method = "E4C2D852DF30293005E76B99E82745CD", hash_generated_method = "C43AE843B3514BBD625999ADE949ECE3")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:56.598 -0400", hash_original_method = "E4C2D852DF30293005E76B99E82745CD", hash_generated_method = "1AC26AB6514246841B657C22B953EA7C")
     @DSModeled(DSC.SAFE)
     @Override
     public final Directions getLineDirections(int line) {
@@ -1087,7 +1053,7 @@ public class StaticLayout extends Layout {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:04.288 -0400", hash_original_method = "0410F05B3F48387C42DB277B8067D4A9", hash_generated_method = "3206C3D5D64093B50F5E3C44B092BEB6")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:56.598 -0400", hash_original_method = "0410F05B3F48387C42DB277B8067D4A9", hash_generated_method = "FA47B026F2C44A937D9C405114C71495")
     @DSModeled(DSC.SAFE)
     @Override
     public int getTopPadding() {
@@ -1097,7 +1063,7 @@ public class StaticLayout extends Layout {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:04.288 -0400", hash_original_method = "A7597317BC8A3102F80AD4E9AD038652", hash_generated_method = "4F019809A7F04C0B6EB7FDA42C7B930F")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:56.599 -0400", hash_original_method = "A7597317BC8A3102F80AD4E9AD038652", hash_generated_method = "6889C8E9FBF2C0906C69CE0D62BF8388")
     @DSModeled(DSC.SAFE)
     @Override
     public int getBottomPadding() {
@@ -1107,7 +1073,7 @@ public class StaticLayout extends Layout {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:04.288 -0400", hash_original_method = "7EEFC0E209C4C423B00930C7C3F48104", hash_generated_method = "96364E5D27375B465DC524C75D60E1C9")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:56.599 -0400", hash_original_method = "7EEFC0E209C4C423B00930C7C3F48104", hash_generated_method = "3C2F5785755A843F8229FFC7E9080B8A")
     @DSModeled(DSC.SAFE)
     @Override
     public int getEllipsisCount(int line) {
@@ -1121,7 +1087,7 @@ public class StaticLayout extends Layout {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:04.288 -0400", hash_original_method = "3E84E442932041329DEDBD7573FAD5F7", hash_generated_method = "BD51B0A3B2081D9C08BEF4DB1EB09D7D")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:56.599 -0400", hash_original_method = "3E84E442932041329DEDBD7573FAD5F7", hash_generated_method = "F4EB801C398DB67A1495737169B2083F")
     @DSModeled(DSC.SAFE)
     @Override
     public int getEllipsisStart(int line) {
@@ -1135,7 +1101,7 @@ public class StaticLayout extends Layout {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:04.288 -0400", hash_original_method = "5CA9F8625BABB74DD57E485BAAAC3103", hash_generated_method = "9A9295147C4E56EF5CDEDCCF5DF22A7F")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:56.599 -0400", hash_original_method = "5CA9F8625BABB74DD57E485BAAAC3103", hash_generated_method = "1883110F0CECE5EEE366F4E7139C3405")
     @DSModeled(DSC.SAFE)
     @Override
     public int getEllipsizedWidth() {
@@ -1145,7 +1111,7 @@ public class StaticLayout extends Layout {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:04.288 -0400", hash_original_method = "B52C8C631677053C363ACE90856C8484", hash_generated_method = "F6B54211C2119DFDF857B040ABA378CC")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:56.599 -0400", hash_original_method = "B52C8C631677053C363ACE90856C8484", hash_generated_method = "95EDBE59F598FE401B87F39CB299AF78")
     //DSFIXME:  CODE0002: Requires DSC value to be set
      void prepare() {
         mMeasured = MeasuredText.obtain();
@@ -1154,7 +1120,7 @@ public class StaticLayout extends Layout {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:04.288 -0400", hash_original_method = "C0F6C3CAFEEBD4E75E81773515CBCC0B", hash_generated_method = "38AD215787FF4C2F54747833C7012FD3")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:56.600 -0400", hash_original_method = "C0F6C3CAFEEBD4E75E81773515CBCC0B", hash_generated_method = "25F76FF05D99A4E8F3EC719ABEED0A6E")
     //DSFIXME:  CODE0002: Requires DSC value to be set
      void finish() {
         mMeasured = MeasuredText.recycle(mMeasured);
@@ -1163,6 +1129,34 @@ public class StaticLayout extends Layout {
     }
 
     
+    static final String TAG = "StaticLayout";
+    private static final int COLUMNS_NORMAL = 3;
+    private static final int COLUMNS_ELLIPSIZE = 5;
+    private static final int START = 0;
+    private static final int DIR = START;
+    private static final int TAB = START;
+    private static final int TOP = 1;
+    private static final int DESCENT = 2;
+    private static final int ELLIPSIS_START = 3;
+    private static final int ELLIPSIS_COUNT = 4;
+    private static final int START_MASK = 0x1FFFFFFF;
+    private static final int DIR_SHIFT  = 30;
+    private static final int TAB_MASK   = 0x20000000;
+    private static final int TAB_INCREMENT = 20;
+    private static final char CHAR_FIRST_CJK = '\u2E80';
+    private static final char CHAR_NEW_LINE = '\n';
+    private static final char CHAR_TAB = '\t';
+    private static final char CHAR_SPACE = ' ';
+    private static final char CHAR_DOT = '.';
+    private static final char CHAR_COMMA = ',';
+    private static final char CHAR_COLON = ':';
+    private static final char CHAR_SEMICOLON = ';';
+    private static final char CHAR_SLASH = '/';
+    private static final char CHAR_HYPHEN = '-';
+    private static final double EXTRA_ROUNDING = 0.5;
+    private static final String ELLIPSIS_NORMAL = "\u2026";
+    private static final String ELLIPSIS_TWO_DOTS = "\u2025";
+    private static final int CHAR_FIRST_HIGH_SURROGATE = 0xD800;
+    private static final int CHAR_LAST_LOW_SURROGATE = 0xDFFF;
 }
-
 

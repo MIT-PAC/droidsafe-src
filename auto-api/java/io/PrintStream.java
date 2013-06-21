@@ -2,12 +2,11 @@ package java.io;
 
 // Droidsafe Imports
 import droidsafe.helpers.*;
-import droidsafe.runtime.DroidSafeAndroidRuntime;
 import droidsafe.annotations.*;
+import droidsafe.runtime.*;
 
-// import Iterator to deal with enhanced for loop translation
+// needed for enhanced for control translations
 import java.util.Iterator;
-
 import java.nio.charset.Charset;
 import java.nio.charset.IllegalCharsetNameException;
 import java.util.Arrays;
@@ -20,13 +19,13 @@ public class PrintStream extends FilterOutputStream implements Appendable, Close
     private boolean autoFlush;
     private String encoding;
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:11.655 -0400", hash_original_method = "DA75705BB6C20C2B5C6B266426BAE0E0", hash_generated_method = "AB6066D56F2E951618470CB5CB0A7191")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:25.203 -0400", hash_original_method = "DA75705BB6C20C2B5C6B266426BAE0E0", hash_generated_method = "EE77332F8FCFC3D4A07F5F4827DD80ED")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public PrintStream(OutputStream out) {
         super(out);
         dsTaint.addTaint(out.dsTaint);
         {
-            throw new NullPointerException();
+            if (DroidSafeAndroidRuntime.control) throw new NullPointerException();
         } //End block
         // ---------- Original Method ----------
         //if (out == null) {
@@ -35,14 +34,14 @@ public class PrintStream extends FilterOutputStream implements Appendable, Close
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:11.655 -0400", hash_original_method = "4DF55F7DB2EC2DB5AB84BECA03073608", hash_generated_method = "63E4D51A9BA7919FFD1FC6BFF497E8FA")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:25.203 -0400", hash_original_method = "4DF55F7DB2EC2DB5AB84BECA03073608", hash_generated_method = "F3833DD2E36B6CE119636F2447F05E3F")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public PrintStream(OutputStream out, boolean autoFlush) {
         super(out);
         dsTaint.addTaint(autoFlush);
         dsTaint.addTaint(out.dsTaint);
         {
-            throw new NullPointerException();
+            if (DroidSafeAndroidRuntime.control) throw new NullPointerException();
         } //End block
         // ---------- Original Method ----------
         //if (out == null) {
@@ -52,28 +51,28 @@ public class PrintStream extends FilterOutputStream implements Appendable, Close
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:11.655 -0400", hash_original_method = "88526CF0A98EC9AB97C7088D88161C3A", hash_generated_method = "009E2FCC37FAADDF2A601539C9F9D443")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:25.203 -0400", hash_original_method = "88526CF0A98EC9AB97C7088D88161C3A", hash_generated_method = "64669F19FE4B1D28F43AF8FF313B6874")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public PrintStream(OutputStream out, boolean autoFlush, String enc) throws UnsupportedEncodingException {
         super(out);
         dsTaint.addTaint(autoFlush);
-        dsTaint.addTaint(out.dsTaint);
         dsTaint.addTaint(enc);
-        if(DroidSafeAndroidRuntime.control) {
-            throw new NullPointerException();
+        dsTaint.addTaint(out.dsTaint);
+        {
+            if (DroidSafeAndroidRuntime.control) throw new NullPointerException();
         } //End block
         try 
         {
             {
-                boolean var1619D1065190E523D5CEB80A273EC718_1735836820 = (!Charset.isSupported(enc));
-                if(DroidSafeAndroidRuntime.control) {
-                    throw new UnsupportedEncodingException(enc);
+                boolean var1619D1065190E523D5CEB80A273EC718_1294283824 = (!Charset.isSupported(enc));
+                {
+                    if (DroidSafeAndroidRuntime.control) throw new UnsupportedEncodingException(enc);
                 } //End block
             } //End collapsed parenthetic
         } //End block
         catch (IllegalCharsetNameException e)
         {
-            throw new UnsupportedEncodingException(enc);
+            if (DroidSafeAndroidRuntime.control) throw new UnsupportedEncodingException(enc);
         } //End block
         // ---------- Original Method ----------
         //if (out == null || enc == null) {
@@ -91,7 +90,7 @@ public class PrintStream extends FilterOutputStream implements Appendable, Close
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:11.655 -0400", hash_original_method = "029BA830A503765157243541D9849231", hash_generated_method = "A0698BBDA212481B4E27AD2F6DFB7ED2")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:25.204 -0400", hash_original_method = "029BA830A503765157243541D9849231", hash_generated_method = "4BAC6560C58F049B141A2427954C4A6A")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public PrintStream(File file) throws FileNotFoundException {
         super(new FileOutputStream(file));
@@ -100,20 +99,20 @@ public class PrintStream extends FilterOutputStream implements Appendable, Close
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:11.655 -0400", hash_original_method = "7BD29578480474358E31B9B912D3F437", hash_generated_method = "A7D5B7ED3ECB24D7F5C19534B924A9C0")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:25.204 -0400", hash_original_method = "7BD29578480474358E31B9B912D3F437", hash_generated_method = "9FD7041C64BE31615D795A4A661366B8")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public PrintStream(File file, String csn) throws FileNotFoundException,
             UnsupportedEncodingException {
         super(new FileOutputStream(file));
         dsTaint.addTaint(file.dsTaint);
         dsTaint.addTaint(csn);
-        if(DroidSafeAndroidRuntime.control) {
-            throw new NullPointerException();
+        {
+            if (DroidSafeAndroidRuntime.control) throw new NullPointerException();
         } //End block
         {
-            boolean var74A236C162A967F1ECD5EFC7D6467A04_1873561063 = (!Charset.isSupported(csn));
-            if(DroidSafeAndroidRuntime.control) {
-                throw new UnsupportedEncodingException(csn);
+            boolean var74A236C162A967F1ECD5EFC7D6467A04_930048867 = (!Charset.isSupported(csn));
+            {
+                if (DroidSafeAndroidRuntime.control) throw new UnsupportedEncodingException(csn);
             } //End block
         } //End collapsed parenthetic
         // ---------- Original Method ----------
@@ -127,7 +126,7 @@ public class PrintStream extends FilterOutputStream implements Appendable, Close
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:11.655 -0400", hash_original_method = "75348CDEFC68D9839C10010605892932", hash_generated_method = "55F0D009FBB9AFAAFA7A7BD035F5E3D2")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:25.204 -0400", hash_original_method = "75348CDEFC68D9839C10010605892932", hash_generated_method = "23AD6DE68F3866D8777D3B1E7369AE58")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public PrintStream(String fileName) throws FileNotFoundException {
         this(new File(fileName));
@@ -136,7 +135,7 @@ public class PrintStream extends FilterOutputStream implements Appendable, Close
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:11.655 -0400", hash_original_method = "8131D7469DBCAB446E9D65623F4F3558", hash_generated_method = "EFD2551B5281D07868CB42725537FEF1")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:25.204 -0400", hash_original_method = "8131D7469DBCAB446E9D65623F4F3558", hash_generated_method = "C24FC24E900BC3D05EBD791013539D7C")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public PrintStream(String fileName, String csn) throws FileNotFoundException, UnsupportedEncodingException {
         this(new File(fileName), csn);
@@ -146,13 +145,13 @@ public class PrintStream extends FilterOutputStream implements Appendable, Close
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:11.655 -0400", hash_original_method = "DD851A8041FFB3055294FF15D1DC9C59", hash_generated_method = "0B11F86C6DB2DBCF14C9CE2175C92081")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:25.205 -0400", hash_original_method = "DD851A8041FFB3055294FF15D1DC9C59", hash_generated_method = "5AC41315BEA926E01D067C6C05B9A6DC")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public boolean checkError() {
         OutputStream delegate;
         delegate = out;
         flush();
-        boolean var1828C5393F7AF357FCA50D6B6EE1E98D_1598929895 = (ioError || delegate.checkError());
+        boolean var1828C5393F7AF357FCA50D6B6EE1E98D_2118335973 = (ioError || delegate.checkError());
         return dsTaint.getTaintBoolean();
         // ---------- Original Method ----------
         //OutputStream delegate = out;
@@ -164,7 +163,7 @@ public class PrintStream extends FilterOutputStream implements Appendable, Close
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:11.655 -0400", hash_original_method = "785F4CCF429F72C42E20A1AABCB6C5CE", hash_generated_method = "29ADE1EBB541916272C7A4B7A78A5015")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:25.205 -0400", hash_original_method = "785F4CCF429F72C42E20A1AABCB6C5CE", hash_generated_method = "CC852D7FE95E7B5290039A783A243D73")
     @DSModeled(DSC.SAFE)
     protected void clearError() {
         ioError = false;
@@ -173,8 +172,8 @@ public class PrintStream extends FilterOutputStream implements Appendable, Close
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:11.655 -0400", hash_original_method = "43C4845D6E61D29AF25E893F4FEF10C8", hash_generated_method = "5E2C234C3DEB489F241C3D076A14D86C")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:25.205 -0400", hash_original_method = "43C4845D6E61D29AF25E893F4FEF10C8", hash_generated_method = "60AC52D337431F56BE65D46EF65784B9")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     @Override
     public synchronized void close() {
         flush();
@@ -202,8 +201,8 @@ public class PrintStream extends FilterOutputStream implements Appendable, Close
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:11.655 -0400", hash_original_method = "02B2E054E74BF295FB5EB637205E6B35", hash_generated_method = "1335EEBB7FD7A052CD45019ECA640F5F")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:25.206 -0400", hash_original_method = "02B2E054E74BF295FB5EB637205E6B35", hash_generated_method = "2E5844F294C2AA82ABDA4B68E8A3C411")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     @Override
     public synchronized void flush() {
         {
@@ -227,26 +226,26 @@ public class PrintStream extends FilterOutputStream implements Appendable, Close
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:11.655 -0400", hash_original_method = "05D45546979F5891D35AE44E50FD3553", hash_generated_method = "4C0E41AEFAEDE5A1DE01BFE6F3035A4C")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:25.206 -0400", hash_original_method = "05D45546979F5891D35AE44E50FD3553", hash_generated_method = "D467D6854BDADC247DE5A4062893D981")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public PrintStream format(String format, Object... args) {
-        dsTaint.addTaint(args);
+        dsTaint.addTaint(args[0].dsTaint);
         dsTaint.addTaint(format);
-        PrintStream varD8F2A1654CF3ACCC2BDB72B521CFFC4B_1653345004 = (format(Locale.getDefault(), format, args));
+        PrintStream varD8F2A1654CF3ACCC2BDB72B521CFFC4B_520069600 = (format(Locale.getDefault(), format, args));
         return (PrintStream)dsTaint.getTaint();
         // ---------- Original Method ----------
         //return format(Locale.getDefault(), format, args);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:11.655 -0400", hash_original_method = "A0786364FBC116E551740BAAD4532E24", hash_generated_method = "28CB37B1E97B086834A5BC5F996C4054")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:25.206 -0400", hash_original_method = "A0786364FBC116E551740BAAD4532E24", hash_generated_method = "82D45203C514F8037F2F98B9965E2215")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     public PrintStream format(Locale l, String format, Object... args) {
-        dsTaint.addTaint(args);
+        dsTaint.addTaint(args[0].dsTaint);
         dsTaint.addTaint(l.dsTaint);
         dsTaint.addTaint(format);
-        if(DroidSafeAndroidRuntime.control) {
-            throw new NullPointerException("format == null");
+        {
+            if (DroidSafeAndroidRuntime.control) throw new NullPointerException("format == null");
         } //End block
         new Formatter(this, l).format(format, args);
         return (PrintStream)dsTaint.getTaint();
@@ -259,32 +258,32 @@ public class PrintStream extends FilterOutputStream implements Appendable, Close
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:11.656 -0400", hash_original_method = "AF1C3DC823982E73CFCD03CCF036C65E", hash_generated_method = "DBE300366D9A509D47712B4B771DD88B")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:25.206 -0400", hash_original_method = "AF1C3DC823982E73CFCD03CCF036C65E", hash_generated_method = "6CEBB0EAB97CAA8E3102AC628638CAC1")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public PrintStream printf(String format, Object... args) {
-        dsTaint.addTaint(args);
+        dsTaint.addTaint(args[0].dsTaint);
         dsTaint.addTaint(format);
-        PrintStream var332B80BC927C6FFEEC76D8998999F86B_593620557 = (format(format, args));
+        PrintStream var332B80BC927C6FFEEC76D8998999F86B_1296980124 = (format(format, args));
         return (PrintStream)dsTaint.getTaint();
         // ---------- Original Method ----------
         //return format(format, args);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:11.656 -0400", hash_original_method = "F50C21D98ADC94B4526029B9C256D54E", hash_generated_method = "D1007D2B1FB89999B7A20982FC00B5A4")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:25.206 -0400", hash_original_method = "F50C21D98ADC94B4526029B9C256D54E", hash_generated_method = "61B117781EC37CB63377567936F42A9C")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public PrintStream printf(Locale l, String format, Object... args) {
-        dsTaint.addTaint(args);
+        dsTaint.addTaint(args[0].dsTaint);
         dsTaint.addTaint(l.dsTaint);
         dsTaint.addTaint(format);
-        PrintStream var2451FE83B7001C97A9C60A0560E8EC1F_1171272312 = (format(l, format, args));
+        PrintStream var2451FE83B7001C97A9C60A0560E8EC1F_868010917 = (format(l, format, args));
         return (PrintStream)dsTaint.getTaint();
         // ---------- Original Method ----------
         //return format(l, format, args);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:11.656 -0400", hash_original_method = "171496FE667133D572716C296277B927", hash_generated_method = "7C92933E23B45C9E9321614C5E78ACC8")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:25.207 -0400", hash_original_method = "171496FE667133D572716C296277B927", hash_generated_method = "26FA29E3F019DA8274A7A58369323ED3")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     private void newline() {
         print(System.lineSeparator());
@@ -293,17 +292,17 @@ public class PrintStream extends FilterOutputStream implements Appendable, Close
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:11.656 -0400", hash_original_method = "4DD9E13DA9D3ED57FA18E838A052301E", hash_generated_method = "FA8C7FD7CB16E948D0805FCEE88DC865")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:25.207 -0400", hash_original_method = "4DD9E13DA9D3ED57FA18E838A052301E", hash_generated_method = "6942F02D5421F15E99CDFD019539C701")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     public void print(char[] chars) {
-        dsTaint.addTaint(chars);
+        dsTaint.addTaint(chars[0]);
         print(new String(chars, 0, chars.length));
         // ---------- Original Method ----------
         //print(new String(chars, 0, chars.length));
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:11.656 -0400", hash_original_method = "C9EF4F31D0CD27922D7B220DA437A7D8", hash_generated_method = "C4E498C40EAB31FD92D2956B0A50A618")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:25.207 -0400", hash_original_method = "C9EF4F31D0CD27922D7B220DA437A7D8", hash_generated_method = "88EC2B2A0CB540803B2C3D3D61C0BF69")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public void print(char c) {
         dsTaint.addTaint(c);
@@ -313,7 +312,7 @@ public class PrintStream extends FilterOutputStream implements Appendable, Close
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:11.656 -0400", hash_original_method = "7C6D053B4D54D80C9838D841006F1F5C", hash_generated_method = "6340FBE3971BF988C2F918CA6565B6CF")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:25.207 -0400", hash_original_method = "7C6D053B4D54D80C9838D841006F1F5C", hash_generated_method = "C0024FA889A10BC22E9D7BDEE85E3A7C")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public void print(double d) {
         dsTaint.addTaint(d);
@@ -323,7 +322,7 @@ public class PrintStream extends FilterOutputStream implements Appendable, Close
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:11.656 -0400", hash_original_method = "A190B4C4751A586A57985573C64F773B", hash_generated_method = "A098C4ED3D39AEB945C1857DEA9A6867")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:25.207 -0400", hash_original_method = "A190B4C4751A586A57985573C64F773B", hash_generated_method = "F4446CA2399538EC0F0F6FE29B0639D9")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public void print(float f) {
         dsTaint.addTaint(f);
@@ -333,7 +332,7 @@ public class PrintStream extends FilterOutputStream implements Appendable, Close
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:11.656 -0400", hash_original_method = "9B0E5210436ABAF1CDC241F3CE945D0E", hash_generated_method = "2B60B18E90BC7281059E303F573ABE57")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:25.207 -0400", hash_original_method = "9B0E5210436ABAF1CDC241F3CE945D0E", hash_generated_method = "FEA266DE46543E312379D9C9963513FC")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public void print(int i) {
         dsTaint.addTaint(i);
@@ -343,7 +342,7 @@ public class PrintStream extends FilterOutputStream implements Appendable, Close
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:11.656 -0400", hash_original_method = "ABA84580B4C740A85A05D502E7787C38", hash_generated_method = "1CAD6A84BE2B52DA56B96DD13A78C64A")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:25.208 -0400", hash_original_method = "ABA84580B4C740A85A05D502E7787C38", hash_generated_method = "72E12FF63C477DDE10FD4E56574E38E6")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public void print(long l) {
         dsTaint.addTaint(l);
@@ -353,7 +352,7 @@ public class PrintStream extends FilterOutputStream implements Appendable, Close
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:11.656 -0400", hash_original_method = "56B00C0EF01C99C01A3E7CAB0AC14873", hash_generated_method = "30F93CC9A78B51DDC265E2C8C53FB483")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:25.208 -0400", hash_original_method = "56B00C0EF01C99C01A3E7CAB0AC14873", hash_generated_method = "A9AB2FA8C73AD2D33DE32AB97978F82B")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public void print(Object o) {
         dsTaint.addTaint(o.dsTaint);
@@ -363,7 +362,7 @@ public class PrintStream extends FilterOutputStream implements Appendable, Close
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:11.656 -0400", hash_original_method = "EC0BC9FFC97B234EE7DA16C4D893B8BD", hash_generated_method = "1C35C56375BD6BADFF89818A765BA576")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:25.208 -0400", hash_original_method = "EC0BC9FFC97B234EE7DA16C4D893B8BD", hash_generated_method = "2856719A109727B2D05055A46EDEB24C")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public synchronized void print(String str) {
         dsTaint.addTaint(str);
@@ -407,7 +406,7 @@ public class PrintStream extends FilterOutputStream implements Appendable, Close
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:11.656 -0400", hash_original_method = "D26761927DA4C2D28104AACA6719892E", hash_generated_method = "2A04358684A0D3EA6312A55F02330096")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:25.208 -0400", hash_original_method = "D26761927DA4C2D28104AACA6719892E", hash_generated_method = "C00F9A7256866A81FCB68389755910BE")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public void print(boolean b) {
         dsTaint.addTaint(b);
@@ -417,8 +416,8 @@ public class PrintStream extends FilterOutputStream implements Appendable, Close
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:11.656 -0400", hash_original_method = "9182DD9F41FA957369047C0FC9C79FCF", hash_generated_method = "A9BBBED5486837BD341675E2D04C34E7")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:25.209 -0400", hash_original_method = "9182DD9F41FA957369047C0FC9C79FCF", hash_generated_method = "AE04CE77FFF014604388A9A7F5E28EEF")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     public void println() {
         newline();
         // ---------- Original Method ----------
@@ -426,17 +425,17 @@ public class PrintStream extends FilterOutputStream implements Appendable, Close
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:11.656 -0400", hash_original_method = "C86060CC83A142ED26FEFD1C4AFF06F6", hash_generated_method = "C8C77177669095C0F059E09BE1E5EA29")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:25.209 -0400", hash_original_method = "C86060CC83A142ED26FEFD1C4AFF06F6", hash_generated_method = "9C892FBC543F24826B8D00180AF9048D")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     public void println(char[] chars) {
-        dsTaint.addTaint(chars);
+        dsTaint.addTaint(chars[0]);
         println(new String(chars, 0, chars.length));
         // ---------- Original Method ----------
         //println(new String(chars, 0, chars.length));
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:11.656 -0400", hash_original_method = "0AD803DE0349B67DF3766F5E61BB22D0", hash_generated_method = "6BB00F7D4545ED5BE9F7D1CAAB2A253B")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:25.209 -0400", hash_original_method = "0AD803DE0349B67DF3766F5E61BB22D0", hash_generated_method = "3A6C5DC280D96FF7C0684D155150DB1B")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public void println(char c) {
         dsTaint.addTaint(c);
@@ -446,7 +445,7 @@ public class PrintStream extends FilterOutputStream implements Appendable, Close
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:11.656 -0400", hash_original_method = "1C71B315F5691439EEEA0D1A39435B84", hash_generated_method = "5E9413D0CA35917C6285D38A258A7754")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:25.209 -0400", hash_original_method = "1C71B315F5691439EEEA0D1A39435B84", hash_generated_method = "F327D202DFD11CF95D0F45E8471D436B")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public void println(double d) {
         dsTaint.addTaint(d);
@@ -456,7 +455,7 @@ public class PrintStream extends FilterOutputStream implements Appendable, Close
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:11.656 -0400", hash_original_method = "303071589A63282B34174CD2B6A3FE64", hash_generated_method = "B2938AFE1B036263C8D105B7996C2937")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:25.209 -0400", hash_original_method = "303071589A63282B34174CD2B6A3FE64", hash_generated_method = "DC5BB6B36D91691C8E97CE3E64016A70")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public void println(float f) {
         dsTaint.addTaint(f);
@@ -466,7 +465,7 @@ public class PrintStream extends FilterOutputStream implements Appendable, Close
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:11.656 -0400", hash_original_method = "5AD4BE5FC276B9D22B3857BC3A21F6AF", hash_generated_method = "FD5923EF14B202B2D7267FEA825202CA")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:25.210 -0400", hash_original_method = "5AD4BE5FC276B9D22B3857BC3A21F6AF", hash_generated_method = "90757B8AA542FCBC922C8F389651D5E0")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public void println(int i) {
         dsTaint.addTaint(i);
@@ -476,7 +475,7 @@ public class PrintStream extends FilterOutputStream implements Appendable, Close
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:11.656 -0400", hash_original_method = "13C762985E9CE0F97BF4916754E07523", hash_generated_method = "081851FA16F728B43506981E4542923C")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:25.210 -0400", hash_original_method = "13C762985E9CE0F97BF4916754E07523", hash_generated_method = "12860BB855BD16E1889526FA2BCAAF48")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public void println(long l) {
         dsTaint.addTaint(l);
@@ -486,7 +485,7 @@ public class PrintStream extends FilterOutputStream implements Appendable, Close
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:11.656 -0400", hash_original_method = "320F49F677524EBEDCEEC6E202E646D4", hash_generated_method = "4E491CF0CBB06E66E5B302D776734708")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:25.211 -0400", hash_original_method = "320F49F677524EBEDCEEC6E202E646D4", hash_generated_method = "A9CBB1591237C4E71CD2336BB7B9967F")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public void println(Object o) {
         dsTaint.addTaint(o.dsTaint);
@@ -496,8 +495,8 @@ public class PrintStream extends FilterOutputStream implements Appendable, Close
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:11.657 -0400", hash_original_method = "0E73500566456C691BD3FFBE8C8D630F", hash_generated_method = "FBABD5B0D1AAE1BE6A010AF7C8A83967")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:25.211 -0400", hash_original_method = "0E73500566456C691BD3FFBE8C8D630F", hash_generated_method = "768D4E574A1D1F7F59FB08A30F22AFBB")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     public synchronized void println(String str) {
         dsTaint.addTaint(str);
         print(str);
@@ -508,7 +507,7 @@ public class PrintStream extends FilterOutputStream implements Appendable, Close
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:11.657 -0400", hash_original_method = "63B90E61F0F8C1638BDCBB4A882302BD", hash_generated_method = "D1EECBC180331F35E44B8AD48F2BE37F")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:25.212 -0400", hash_original_method = "63B90E61F0F8C1638BDCBB4A882302BD", hash_generated_method = "574B48D0122E997DB9C999CD27C06395")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public void println(boolean b) {
         dsTaint.addTaint(b);
@@ -518,7 +517,7 @@ public class PrintStream extends FilterOutputStream implements Appendable, Close
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:11.657 -0400", hash_original_method = "203605AE3CB77711209DB798B89166F2", hash_generated_method = "F594F78FAF6CE475A242148327C0EDCE")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:25.212 -0400", hash_original_method = "203605AE3CB77711209DB798B89166F2", hash_generated_method = "F8950940439079B93D22633B21205292")
     @DSModeled(DSC.SAFE)
     protected void setError() {
         ioError = true;
@@ -527,11 +526,11 @@ public class PrintStream extends FilterOutputStream implements Appendable, Close
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:11.657 -0400", hash_original_method = "F607EA18611E8A10720BC492B203762D", hash_generated_method = "B031609521015005694E7A24A877662F")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:25.212 -0400", hash_original_method = "F607EA18611E8A10720BC492B203762D", hash_generated_method = "B7A2AADF0146045B22E18A2498839103")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     @Override
     public void write(byte[] buffer, int offset, int length) {
-        dsTaint.addTaint(buffer);
+        dsTaint.addTaint(buffer[0]);
         dsTaint.addTaint(length);
         dsTaint.addTaint(offset);
         Arrays.checkOffsetAndCount(buffer.length, offset, length);
@@ -570,8 +569,8 @@ public class PrintStream extends FilterOutputStream implements Appendable, Close
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:11.657 -0400", hash_original_method = "18F006677191AEE023EC3E30B84DCBEE", hash_generated_method = "6AA723967A472FE23604428C2719CE83")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:25.213 -0400", hash_original_method = "18F006677191AEE023EC3E30B84DCBEE", hash_generated_method = "D13FE8C0CF47B59D3E170AD1EE23DCB5")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     @Override
     public synchronized void write(int oneByte) {
         dsTaint.addTaint(oneByte);
@@ -611,8 +610,8 @@ public class PrintStream extends FilterOutputStream implements Appendable, Close
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:11.657 -0400", hash_original_method = "C72D2A095158FF2DF7FBE0880B8BD63F", hash_generated_method = "7F5249B0BA37C4B24B89EF19FCDA7DEF")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:25.213 -0400", hash_original_method = "C72D2A095158FF2DF7FBE0880B8BD63F", hash_generated_method = "3335E3B74E999CA3803203811CADA7EF")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     public PrintStream append(char c) {
         dsTaint.addTaint(c);
         print(c);
@@ -623,7 +622,7 @@ public class PrintStream extends FilterOutputStream implements Appendable, Close
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:11.657 -0400", hash_original_method = "FC28086FFC8546AD8E2DD12638EADD5B", hash_generated_method = "CF7A107895280C71E90F32CE98BE4B4D")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:25.213 -0400", hash_original_method = "FC28086FFC8546AD8E2DD12638EADD5B", hash_generated_method = "C7D59C410879DBEFA633BA03D741427B")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public PrintStream append(CharSequence charSequence) {
         dsTaint.addTaint(charSequence);
@@ -644,7 +643,7 @@ public class PrintStream extends FilterOutputStream implements Appendable, Close
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:11.657 -0400", hash_original_method = "E6E1D45C488E30FA7AAEB51CD532F3E9", hash_generated_method = "4123A78A854C2CA1824C89BF9DA13246")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:25.214 -0400", hash_original_method = "E6E1D45C488E30FA7AAEB51CD532F3E9", hash_generated_method = "5B5D6551E3A10CAC4F7F3D30D2416AE0")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public PrintStream append(CharSequence charSequence, int start, int end) {
         dsTaint.addTaint(start);
@@ -665,5 +664,4 @@ public class PrintStream extends FilterOutputStream implements Appendable, Close
 
     
 }
-
 

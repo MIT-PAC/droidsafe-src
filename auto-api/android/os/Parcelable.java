@@ -36,4 +36,3 @@ public interface Parcelable {
         public T createFromParcel(Parcel source, ClassLoader loader);
     }
 }
-

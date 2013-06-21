@@ -18,4 +18,3 @@ public interface Animatable {
     
     boolean isRunning();
 }
-

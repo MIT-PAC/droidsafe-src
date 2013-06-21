@@ -1,6 +1,12 @@
 package android.widget;
 
 // Droidsafe Imports
+import droidsafe.helpers.*;
+import droidsafe.annotations.*;
+import droidsafe.runtime.*;
+
+// needed for enhanced for control translations
+import java.util.Iterator;
 import android.content.ContentResolver;
 import android.content.Context;
 import android.content.res.Resources;
@@ -17,15 +23,12 @@ import android.graphics.drawable.Drawable;
 import android.net.Uri;
 import android.text.TextUtils;
 import android.util.AttributeSet;
+import android.util.Log;
 import android.view.RemotableViewMethod;
 import android.view.View;
 import android.view.ViewDebug;
 import android.view.accessibility.AccessibilityEvent;
-import droidsafe.annotations.DSC;
-import droidsafe.annotations.DSGenerator;
-import droidsafe.annotations.DSModeled;
-import droidsafe.runtime.DroidSafeAndroidRuntime;
-// import Iterator to deal with enhanced for loop translation
+import android.widget.RemoteViews.RemoteView;
 
 public class ImageView extends View {
     private Uri mUri;
@@ -52,24 +55,8 @@ public class ImageView extends View {
     private boolean mCropToPadding;
     private int mBaseline = -1;
     private boolean mBaselineAlignBottom = false;
-    private static final ScaleType[] sScaleTypeArray = {
-        ScaleType.MATRIX,
-        ScaleType.FIT_XY,
-        ScaleType.FIT_START,
-        ScaleType.FIT_CENTER,
-        ScaleType.FIT_END,
-        ScaleType.CENTER,
-        ScaleType.CENTER_CROP,
-        ScaleType.CENTER_INSIDE
-    };
-    private static final Matrix.ScaleToFit[] sS2FArray = {
-        Matrix.ScaleToFit.FILL,
-        Matrix.ScaleToFit.START,
-        Matrix.ScaleToFit.CENTER,
-        Matrix.ScaleToFit.END
-    };
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:07.651 -0400", hash_original_method = "3103DD3B06C95633A5076C8A302A640B", hash_generated_method = "26F39DB4E67F66C7D8FDA3BE8C5195B8")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:07.151 -0400", hash_original_method = "3103DD3B06C95633A5076C8A302A640B", hash_generated_method = "F36BA7DE6603F76565B8D5009D458FAE")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public ImageView(Context context) {
         super(context);
@@ -80,7 +67,7 @@ public class ImageView extends View {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:07.652 -0400", hash_original_method = "67FF47760B585BF8195A474475D955DB", hash_generated_method = "2806DE573F273E120206E119394D9106")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:07.151 -0400", hash_original_method = "67FF47760B585BF8195A474475D955DB", hash_generated_method = "60B5E61905F65F9F024DFC95A6722F65")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public ImageView(Context context, AttributeSet attrs) {
         this(context, attrs, 0);
@@ -90,7 +77,7 @@ public class ImageView extends View {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:07.652 -0400", hash_original_method = "8CC4CE610519C30A909B4E591A3E5936", hash_generated_method = "A66755DE1E8D980CE466C9848E87D555")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:07.152 -0400", hash_original_method = "8CC4CE610519C30A909B4E591A3E5936", hash_generated_method = "8DC5EB877A7F3AFE879077D9D3856DAB")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public ImageView(Context context, AttributeSet attrs, int defStyle) {
         super(context, attrs, defStyle);
@@ -140,8 +127,8 @@ public class ImageView extends View {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:07.652 -0400", hash_original_method = "1C158315B1207DD6F7DBD78E9AF6090A", hash_generated_method = "E3C02E34DEDD65D9A31106A989E9021E")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:07.153 -0400", hash_original_method = "1C158315B1207DD6F7DBD78E9AF6090A", hash_generated_method = "6C86BA293E0B26AF0AEC484FE877D701")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     private void initImageView() {
         mMatrix     = new Matrix();
         mScaleType  = ScaleType.FIT_CENTER;
@@ -151,20 +138,20 @@ public class ImageView extends View {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:07.652 -0400", hash_original_method = "D798939B4195D6D5668E5F7C7E8DA2D2", hash_generated_method = "64BAF6CF0D3E3C4C6400CA0C7828B130")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:07.154 -0400", hash_original_method = "D798939B4195D6D5668E5F7C7E8DA2D2", hash_generated_method = "FEF1AC186315A1A8FC8DA849FAD77C3D")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     @Override
     protected boolean verifyDrawable(Drawable dr) {
         dsTaint.addTaint(dr.dsTaint);
-        boolean var6F0BA58C8588BA95FEB13B8735D08D03_1059234565 = (mDrawable == dr || super.verifyDrawable(dr));
+        boolean var6F0BA58C8588BA95FEB13B8735D08D03_35118283 = (mDrawable == dr || super.verifyDrawable(dr));
         return dsTaint.getTaintBoolean();
         // ---------- Original Method ----------
         //return mDrawable == dr || super.verifyDrawable(dr);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:07.652 -0400", hash_original_method = "EFC358D3732AB4D7E168E7965D2C4CA0", hash_generated_method = "B3315DAB3C70F8B3E172FAD12F0D7DE8")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:07.154 -0400", hash_original_method = "EFC358D3732AB4D7E168E7965D2C4CA0", hash_generated_method = "647FF0158A8AD6165B9B2605A87B9B49")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     @Override
     public void jumpDrawablesToCurrentState() {
         super.jumpDrawablesToCurrentState();
@@ -175,8 +162,8 @@ public class ImageView extends View {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:07.652 -0400", hash_original_method = "EB3EC256D00C5FC794745B960350792B", hash_generated_method = "CF6460F1E45333DAEDBD9DC79A87B983")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:07.154 -0400", hash_original_method = "EB3EC256D00C5FC794745B960350792B", hash_generated_method = "107A4C61F7BCA7446DC1DB66B72DEA31")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     @Override
     public void invalidateDrawable(Drawable dr) {
         dsTaint.addTaint(dr.dsTaint);
@@ -195,14 +182,14 @@ public class ImageView extends View {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:07.652 -0400", hash_original_method = "792DD4F5E748125528D3BF6C27B77C70", hash_generated_method = "48334B807FD203F62430D816DADEA546")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:07.154 -0400", hash_original_method = "792DD4F5E748125528D3BF6C27B77C70", hash_generated_method = "321758C25BFCEEDF9CA8A5D153509A20")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     @Override
     public int getResolvedLayoutDirection(Drawable dr) {
         dsTaint.addTaint(dr.dsTaint);
         {
-            Object varAFC6EB2C684D509A17B3A4EFF5D9CB9D_808279197 = (getResolvedLayoutDirection());
-            Object varE1F279108E97B96264B9D15008FD7CD5_248246161 = (super.getResolvedLayoutDirection(dr));
+            Object varAFC6EB2C684D509A17B3A4EFF5D9CB9D_1958165602 = (getResolvedLayoutDirection());
+            Object varE1F279108E97B96264B9D15008FD7CD5_911876142 = (super.getResolvedLayoutDirection(dr));
         } //End flattened ternary
         return dsTaint.getTaintInt();
         // ---------- Original Method ----------
@@ -211,14 +198,14 @@ public class ImageView extends View {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:07.652 -0400", hash_original_method = "000365A595FBC289F16F7AD48241010C", hash_generated_method = "31DC0D0B2510F3C42CC3D6BB4B7D48D6")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:07.155 -0400", hash_original_method = "000365A595FBC289F16F7AD48241010C", hash_generated_method = "99EAF92B268A84C27584CDD651ADC231")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     @Override
     protected boolean onSetAlpha(int alpha) {
         //DSFIXME:  CODE0009: Possible callback target function detected
         dsTaint.addTaint(alpha);
         {
-            boolean varF9737FBB3FA84CB9364E87D929DD087B_766390136 = (getBackground() == null);
+            boolean varF9737FBB3FA84CB9364E87D929DD087B_1617759860 = (getBackground() == null);
             {
                 int scale;
                 scale = alpha + (alpha >> 7);
@@ -244,7 +231,7 @@ public class ImageView extends View {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:07.653 -0400", hash_original_method = "9770981DD4DB73204B697C6119742B6F", hash_generated_method = "BC6ABCBCDC983D4C0796D3ED7457DBA1")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:07.155 -0400", hash_original_method = "9770981DD4DB73204B697C6119742B6F", hash_generated_method = "86D682FEF33B9F8D45561549383A3DDB")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     @Override
     public void onPopulateAccessibilityEvent(AccessibilityEvent event) {
@@ -254,7 +241,7 @@ public class ImageView extends View {
         CharSequence contentDescription;
         contentDescription = getContentDescription();
         {
-            boolean var38FE545BF2449F0AB422311DB9C21872_2006843734 = (!TextUtils.isEmpty(contentDescription));
+            boolean var38FE545BF2449F0AB422311DB9C21872_804254571 = (!TextUtils.isEmpty(contentDescription));
             {
                 event.getText().add(contentDescription);
             } //End block
@@ -268,8 +255,8 @@ public class ImageView extends View {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:07.653 -0400", hash_original_method = "3F8BE319328C68420F5075492EAAB722", hash_generated_method = "9795D3904079F2C93B5C9E7A53513747")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:07.155 -0400", hash_original_method = "3F8BE319328C68420F5075492EAAB722", hash_generated_method = "3C2A0FF4E426AD938301723D6AA3BA08")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     @android.view.RemotableViewMethod
     public void setAdjustViewBounds(boolean adjustViewBounds) {
         dsTaint.addTaint(adjustViewBounds);
@@ -284,7 +271,7 @@ public class ImageView extends View {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:07.653 -0400", hash_original_method = "EB73857FE18ECB168F084B0FAC346FEA", hash_generated_method = "8A43C975926F87E2EE81C4653449316F")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:07.155 -0400", hash_original_method = "EB73857FE18ECB168F084B0FAC346FEA", hash_generated_method = "2A41EDF54CDFE0B0E8F4E98CA32FAE29")
     @DSModeled(DSC.SAFE)
     @android.view.RemotableViewMethod
     public void setMaxWidth(int maxWidth) {
@@ -294,7 +281,7 @@ public class ImageView extends View {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:07.653 -0400", hash_original_method = "9473C5CB1AE9899AEC7CB726EABA77F7", hash_generated_method = "6758ADE70D36ECEBCE1C9874D3B54D7A")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:07.156 -0400", hash_original_method = "9473C5CB1AE9899AEC7CB726EABA77F7", hash_generated_method = "97369DC5DB19DF6D3AD5F14797F14CD1")
     @DSModeled(DSC.SAFE)
     @android.view.RemotableViewMethod
     public void setMaxHeight(int maxHeight) {
@@ -304,7 +291,7 @@ public class ImageView extends View {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:07.653 -0400", hash_original_method = "53D05784890C72350FD6879A6582F7F3", hash_generated_method = "60A7BE3085B581B0B3D414416142ADE4")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:07.156 -0400", hash_original_method = "53D05784890C72350FD6879A6582F7F3", hash_generated_method = "B5F9F41234C8CCCA82177D4642DCCCC7")
     @DSModeled(DSC.SAFE)
     public Drawable getDrawable() {
         return (Drawable)dsTaint.getTaint();
@@ -313,8 +300,8 @@ public class ImageView extends View {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:07.653 -0400", hash_original_method = "FEA329647011282E5AA15854AC819C8B", hash_generated_method = "84A6C2A51EDA5BB27E26FECD824E26F5")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:07.156 -0400", hash_original_method = "FEA329647011282E5AA15854AC819C8B", hash_generated_method = "31AB81930118AF4A39DA395686DA2360")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     @android.view.RemotableViewMethod
     public void setImageResource(int resId) {
         dsTaint.addTaint(resId);
@@ -337,13 +324,13 @@ public class ImageView extends View {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:07.653 -0400", hash_original_method = "796039DEA15F6465B0D947F27F5B4F32", hash_generated_method = "5E7D78AB5C78D86CA6AA4EA5A888FA16")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:07.156 -0400", hash_original_method = "796039DEA15F6465B0D947F27F5B4F32", hash_generated_method = "D43F6513ED8BA24EED66C53D5B530DAF")
     @DSModeled(DSC.SPEC)
     @android.view.RemotableViewMethod
     public void setImageURI(Uri uri) {
         dsTaint.addTaint(uri.dsTaint);
         {
-            boolean var90AB53EB1D53155B41BCD7E227FE479A_26508229 = (mResource != 0 ||
+            boolean var90AB53EB1D53155B41BCD7E227FE479A_223875114 = (mResource != 0 ||
                 (mUri != uri &&
                  (uri == null || mUri == null || !uri.equals(mUri))));
             {
@@ -368,8 +355,8 @@ public class ImageView extends View {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:07.653 -0400", hash_original_method = "5426F5FAF3C8635D29ADE0169269A6F9", hash_generated_method = "53B0FC7EBCC62BFFD21D24B6E4EB03B0")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:07.156 -0400", hash_original_method = "5426F5FAF3C8635D29ADE0169269A6F9", hash_generated_method = "0B044FDA4637448E03EFB0ED0B7A18E6")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     public void setImageDrawable(Drawable drawable) {
         dsTaint.addTaint(drawable.dsTaint);
         {
@@ -400,7 +387,7 @@ public class ImageView extends View {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:07.653 -0400", hash_original_method = "5EFFAF8EE29E35792B081E6E83A7DFE3", hash_generated_method = "BA54DF731F5DDC7AC8D7E88722B9B394")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:07.157 -0400", hash_original_method = "5EFFAF8EE29E35792B081E6E83A7DFE3", hash_generated_method = "3660A10A3E42B02A4C65EE7B407F8876")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     @android.view.RemotableViewMethod
     public void setImageBitmap(Bitmap bm) {
@@ -411,11 +398,11 @@ public class ImageView extends View {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:07.653 -0400", hash_original_method = "B00DD17D168377A844733E90ECCFE75B", hash_generated_method = "6BAA6D9BC84BAED00EFF5BEBFDF8DD87")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:07.157 -0400", hash_original_method = "B00DD17D168377A844733E90ECCFE75B", hash_generated_method = "D7248738CB9AC46549E35C72C74D4FFE")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     public void setImageState(int[] state, boolean merge) {
         dsTaint.addTaint(merge);
-        dsTaint.addTaint(state);
+        dsTaint.addTaint(state[0]);
         {
             refreshDrawableState();
             resizeFromDrawable();
@@ -430,8 +417,8 @@ public class ImageView extends View {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:07.653 -0400", hash_original_method = "44CE6C01D324B2DC91AFD69B5F1BB742", hash_generated_method = "0F98536D5FBA486DB69CCD502A4BF4E2")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:07.157 -0400", hash_original_method = "44CE6C01D324B2DC91AFD69B5F1BB742", hash_generated_method = "663C7E24119D9014E8D18D19555D2203")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     @Override
     public void setSelected(boolean selected) {
         dsTaint.addTaint(selected);
@@ -443,8 +430,8 @@ public class ImageView extends View {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:07.653 -0400", hash_original_method = "0A74FF8303919E2F74751A8C668C95F0", hash_generated_method = "3300BC90354DD517FCB84B437A54188D")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:07.158 -0400", hash_original_method = "0A74FF8303919E2F74751A8C668C95F0", hash_generated_method = "B2D249632B9363178E1AAD266C94DCC9")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     @android.view.RemotableViewMethod
     public void setImageLevel(int level) {
         dsTaint.addTaint(level);
@@ -461,8 +448,8 @@ public class ImageView extends View {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:07.654 -0400", hash_original_method = "63CC1440F0B24F3C6377C34C34E172F5", hash_generated_method = "79697A6909709BA3C6E4A3BFA058E8B8")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:07.158 -0400", hash_original_method = "63CC1440F0B24F3C6377C34C34E172F5", hash_generated_method = "4A4EA342FBDFFE73B6794DB2B9339264")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     public void setScaleType(ScaleType scaleType) {
         dsTaint.addTaint(scaleType.dsTaint);
         {
@@ -486,7 +473,7 @@ public class ImageView extends View {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:07.654 -0400", hash_original_method = "84B4F1338E9C8554FC089CA7254325E0", hash_generated_method = "45894C0EF48640DCAA1099EE781EB99B")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:07.158 -0400", hash_original_method = "84B4F1338E9C8554FC089CA7254325E0", hash_generated_method = "0C08ED2FCEF71CBAA70551470B38BDD6")
     @DSModeled(DSC.SAFE)
     public ScaleType getScaleType() {
         return (ScaleType)dsTaint.getTaint();
@@ -495,7 +482,7 @@ public class ImageView extends View {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:07.654 -0400", hash_original_method = "5B9FD9A0A164EA90D695E910523F6E96", hash_generated_method = "6DCA45033D3AB376F7423810119A1D28")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:07.158 -0400", hash_original_method = "5B9FD9A0A164EA90D695E910523F6E96", hash_generated_method = "93CD8AF37EB7808E6A8E11714C6C2B01")
     @DSModeled(DSC.SAFE)
     public Matrix getImageMatrix() {
         return (Matrix)dsTaint.getTaint();
@@ -504,18 +491,18 @@ public class ImageView extends View {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:07.654 -0400", hash_original_method = "A32A82AEE544A388BA62C8178AC7E88C", hash_generated_method = "0D7504A481301042022267846507533C")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:07.159 -0400", hash_original_method = "A32A82AEE544A388BA62C8178AC7E88C", hash_generated_method = "2EE75A7A4FCABEB89128856D7888B65E")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public void setImageMatrix(Matrix matrix) {
         dsTaint.addTaint(matrix.dsTaint);
         {
-            boolean var43647054FCC5E2FEA67BA4DB2B5CFDEC_681900499 = (matrix != null && matrix.isIdentity());
+            boolean var43647054FCC5E2FEA67BA4DB2B5CFDEC_69277073 = (matrix != null && matrix.isIdentity());
             {
                 matrix = null;
             } //End block
         } //End collapsed parenthetic
         {
-            boolean var07BF5E6DF09B8E40E54FCB7189DEE131_845197669 = (matrix == null && !mMatrix.isIdentity() ||
+            boolean var07BF5E6DF09B8E40E54FCB7189DEE131_2052611687 = (matrix == null && !mMatrix.isIdentity() ||
                 matrix != null && !mMatrix.equals(matrix));
             {
                 mMatrix.set(matrix);
@@ -536,7 +523,7 @@ public class ImageView extends View {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:07.654 -0400", hash_original_method = "16B1589372902AF87B2F0F65CBDC5B57", hash_generated_method = "038644DAA2AD7A44F3F5B6BA39CFF410")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:07.160 -0400", hash_original_method = "16B1589372902AF87B2F0F65CBDC5B57", hash_generated_method = "B679C91FCB5FAF18586CC5B6714C46E2")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     private void resolveUri() {
         Resources rsrc;
@@ -557,7 +544,7 @@ public class ImageView extends View {
             String scheme;
             scheme = mUri.getScheme();
             {
-                boolean varF1920ADB7A324A214864F4BBBDD05F45_437958698 = (ContentResolver.SCHEME_ANDROID_RESOURCE.equals(scheme));
+                boolean varF1920ADB7A324A214864F4BBBDD05F45_1061228299 = (ContentResolver.SCHEME_ANDROID_RESOURCE.equals(scheme));
                 {
                     try 
                     {
@@ -569,7 +556,7 @@ public class ImageView extends View {
                     { }
                 } //End block
                 {
-                    boolean varECE6BF2CA2A924F44A15A349FCEFEEC1_754272359 = (ContentResolver.SCHEME_CONTENT.equals(scheme)
+                    boolean varECE6BF2CA2A924F44A15A349FCEFEEC1_951485979 = (ContentResolver.SCHEME_CONTENT.equals(scheme)
                     || ContentResolver.SCHEME_FILE.equals(scheme));
                     {
                         try 
@@ -598,17 +585,17 @@ public class ImageView extends View {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:07.654 -0400", hash_original_method = "F00D7A8DB32B373F9AAF90A3CC19DF16", hash_generated_method = "1570B21118177FAB240AB1AD44B62399")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:07.161 -0400", hash_original_method = "F00D7A8DB32B373F9AAF90A3CC19DF16", hash_generated_method = "6425BF7F64D242F0B3B7E3D3ACC23AC7")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     @Override
     public int[] onCreateDrawableState(int extraSpace) {
         //DSFIXME:  CODE0009: Possible callback target function detected
         dsTaint.addTaint(extraSpace);
         {
-            int[] varEB7CD746CBB534A0BF67F4323334429E_1956859212 = (super.onCreateDrawableState(extraSpace));
+            int[] varEB7CD746CBB534A0BF67F4323334429E_444474114 = (super.onCreateDrawableState(extraSpace));
         } //End block
         {
-            int[] varB6313CC42B6FF045E4878C3B3E985625_699951108 = (mergeDrawableStates(
+            int[] varB6313CC42B6FF045E4878C3B3E985625_648147291 = (mergeDrawableStates(
                     super.onCreateDrawableState(extraSpace + mState.length), mState));
         } //End block
         int[] retVal = new int[1];
@@ -626,7 +613,7 @@ public class ImageView extends View {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:07.655 -0400", hash_original_method = "ADE7139D7C0A9B2AE00EA96739AFBDE5", hash_generated_method = "225B8FE1245D904CC529311A108A9AEC")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:07.162 -0400", hash_original_method = "ADE7139D7C0A9B2AE00EA96739AFBDE5", hash_generated_method = "3DCFD4C46290B342190DD90F555039A3")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     private void updateDrawable(Drawable d) {
         dsTaint.addTaint(d.dsTaint);
@@ -637,7 +624,7 @@ public class ImageView extends View {
         {
             d.setCallback(this);
             {
-                boolean var732D4E5C808363BC9BF454DD27943961_1412696817 = (d.isStateful());
+                boolean var732D4E5C808363BC9BF454DD27943961_2034255788 = (d.isStateful());
                 {
                     d.setState(getDrawableState());
                 } //End block
@@ -673,8 +660,8 @@ public class ImageView extends View {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:07.655 -0400", hash_original_method = "E1DD34F979587974CF0EAF8DF3CFC3FF", hash_generated_method = "A55753560A78AA4E6639522D32B4D0FA")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:07.162 -0400", hash_original_method = "E1DD34F979587974CF0EAF8DF3CFC3FF", hash_generated_method = "85EC587581ED12F4914FA264FC10AA13")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     private void resizeFromDrawable() {
         Drawable d;
         d = mDrawable;
@@ -707,13 +694,12 @@ public class ImageView extends View {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:07.655 -0400", hash_original_method = "794DDCD2F1CC379DC73569DF9A81912A", hash_generated_method = "757E7EA00B76428F957F5DEAB245C086")
-    private static Matrix.ScaleToFit scaleTypeToScaleToFit(ScaleType st) {
+        private static Matrix.ScaleToFit scaleTypeToScaleToFit(ScaleType st) {
         return sS2FArray[st.nativeInt - 1];
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:07.655 -0400", hash_original_method = "5D5C8E0C5B3B131983F43D2E85F23CCE", hash_generated_method = "5D1CE0ABB0A093CFFE6A0C46024E25C8")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:07.163 -0400", hash_original_method = "5D5C8E0C5B3B131983F43D2E85F23CCE", hash_generated_method = "B3474E2F69C7D9B2A76254F25E44091E")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     @Override
     protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
@@ -729,9 +715,9 @@ public class ImageView extends View {
         resizeWidth = false;
         boolean resizeHeight;
         resizeHeight = false;
-        final int widthSpecMode;
+        int widthSpecMode;
         widthSpecMode = MeasureSpec.getMode(widthMeasureSpec);
-        final int heightSpecMode;
+        int heightSpecMode;
         heightSpecMode = MeasureSpec.getMode(heightMeasureSpec);
         {
             mDrawableWidth = -1;
@@ -767,7 +753,7 @@ public class ImageView extends View {
                 actualAspect = (float)(widthSize - pleft - pright) /
                                         (heightSize - ptop - pbottom);
                 {
-                    boolean var659D7277B9251B22E516EA6035BDC5A3_2071670853 = (Math.abs(actualAspect - desiredAspect) > 0.0000001);
+                    boolean var659D7277B9251B22E516EA6035BDC5A3_1671696522 = (Math.abs(actualAspect - desiredAspect) > 0.0000001);
                     {
                         boolean done;
                         done = false;
@@ -806,7 +792,7 @@ public class ImageView extends View {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:07.656 -0400", hash_original_method = "6790E6B3204D72187344DF3593244181", hash_generated_method = "0EF50D4659960E4011E9C6784D4CD44E")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:07.163 -0400", hash_original_method = "6790E6B3204D72187344DF3593244181", hash_generated_method = "0B46DBC756D546EFC133E66BF07B9FBA")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     private int resolveAdjustedSize(int desiredSize, int maxSize,
                                    int measureSpec) {
@@ -848,8 +834,8 @@ public class ImageView extends View {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:07.656 -0400", hash_original_method = "7ED99727E4B1435AFDB83292B92819BD", hash_generated_method = "8DE0DEBA169266AE7362666E893FAF73")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:07.164 -0400", hash_original_method = "7ED99727E4B1435AFDB83292B92819BD", hash_generated_method = "47EF5188C16C53828BFDBF43CEEF826A")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     @Override
     protected boolean setFrame(int l, int t, int r, int b) {
         dsTaint.addTaint(t);
@@ -869,7 +855,7 @@ public class ImageView extends View {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:07.656 -0400", hash_original_method = "3A8E22D575255E0F3266968983CC3C02", hash_generated_method = "3888ED1F13293C17FCBAEE52BEB916CE")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:07.164 -0400", hash_original_method = "3A8E22D575255E0F3266968983CC3C02", hash_generated_method = "B9255EF90A38C27375CC19059AD7BE1B")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     private void configureBounds() {
         int dwidth;
@@ -891,7 +877,7 @@ public class ImageView extends View {
             mDrawable.setBounds(0, 0, dwidth, dheight);
             {
                 {
-                    boolean var807A3C6E5DF9AC9E8557F287A85C43B9_480051969 = (mMatrix.isIdentity());
+                    boolean var807A3C6E5DF9AC9E8557F287A85C43B9_1847773553 = (mMatrix.isIdentity());
                     {
                         mDrawMatrix = null;
                     } //End block
@@ -954,7 +940,7 @@ public class ImageView extends View {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:07.656 -0400", hash_original_method = "D78E25577A68DABE40154D5E4D97E50D", hash_generated_method = "CBA7CBB376455CF140A572545D66C038")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:07.165 -0400", hash_original_method = "D78E25577A68DABE40154D5E4D97E50D", hash_generated_method = "858A04265A84EB68A7F396B056EB4244")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     @Override
     protected void drawableStateChanged() {
@@ -962,7 +948,7 @@ public class ImageView extends View {
         Drawable d;
         d = mDrawable;
         {
-            boolean var9E4512E9555DA1255DDDA9AE20837176_887843274 = (d != null && d.isStateful());
+            boolean var9E4512E9555DA1255DDDA9AE20837176_309758588 = (d != null && d.isStateful());
             {
                 d.setState(getDrawableState());
             } //End block
@@ -976,8 +962,8 @@ public class ImageView extends View {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:07.657 -0400", hash_original_method = "355C7834E61DDE917A6F527556974749", hash_generated_method = "8F7C65222E842DBA7868765304947C5B")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:07.165 -0400", hash_original_method = "355C7834E61DDE917A6F527556974749", hash_generated_method = "EE9608787EFFB9733E817B6FEFAE073E")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     @Override
     protected void onDraw(Canvas canvas) {
         //DSFIXME:  CODE0009: Possible callback target function detected
@@ -991,9 +977,9 @@ public class ImageView extends View {
             saveCount = canvas.getSaveCount();
             canvas.save();
             {
-                final int scrollX;
+                int scrollX;
                 scrollX = mScrollX;
-                final int scrollY;
+                int scrollY;
                 scrollY = mScrollY;
                 canvas.clipRect(scrollX + mPaddingLeft, scrollY + mPaddingTop,
                         scrollX + mRight - mLeft - mPaddingRight,
@@ -1011,13 +997,13 @@ public class ImageView extends View {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:07.657 -0400", hash_original_method = "697E0DCA3A40ADA0E60547E8AD02CB08", hash_generated_method = "FF1EECB673E9D337216020770DDA49E4")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:07.165 -0400", hash_original_method = "697E0DCA3A40ADA0E60547E8AD02CB08", hash_generated_method = "00E68D305682646ECDFDF86A5E9E17D9")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     @Override
     @ViewDebug.ExportedProperty(category = "layout")
     public int getBaseline() {
         {
-            int var0FD144A91B49367E40CB3EFF8BA82D53_631024188 = (getMeasuredHeight());
+            int var0FD144A91B49367E40CB3EFF8BA82D53_824688140 = (getMeasuredHeight());
         } //End block
         return dsTaint.getTaintInt();
         // ---------- Original Method ----------
@@ -1029,8 +1015,8 @@ public class ImageView extends View {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:07.657 -0400", hash_original_method = "8108AC4FDDF644F63A2CB47972E74B33", hash_generated_method = "891F6D902D98F428760A01C558D2C6B4")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:07.166 -0400", hash_original_method = "8108AC4FDDF644F63A2CB47972E74B33", hash_generated_method = "DB705DE326C5C2008E4F8F68CB908BFF")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     public void setBaseline(int baseline) {
         dsTaint.addTaint(baseline);
         {
@@ -1044,8 +1030,8 @@ public class ImageView extends View {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:07.657 -0400", hash_original_method = "ACC3D162C0B2FC40FF806607AF970BEE", hash_generated_method = "475D2E7DB705CA7D17E9647442F89A22")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:07.166 -0400", hash_original_method = "ACC3D162C0B2FC40FF806607AF970BEE", hash_generated_method = "DD00A680FDC4772E581D4E87E63FB1BF")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     public void setBaselineAlignBottom(boolean aligned) {
         dsTaint.addTaint(aligned);
         {
@@ -1059,7 +1045,7 @@ public class ImageView extends View {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:07.657 -0400", hash_original_method = "7D3365C5D6F47846F65EFD0480835D79", hash_generated_method = "17071F89740CDB440818686C72E71F5D")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:07.166 -0400", hash_original_method = "7D3365C5D6F47846F65EFD0480835D79", hash_generated_method = "342B1F5B5B1976312C0D1DF23B7D693B")
     @DSModeled(DSC.SAFE)
     public boolean getBaselineAlignBottom() {
         return dsTaint.getTaintBoolean();
@@ -1068,8 +1054,8 @@ public class ImageView extends View {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:07.657 -0400", hash_original_method = "F0522F608E5F96C5D99BDA1CF055B16B", hash_generated_method = "858E5431416BB9217CB31D73FF0C19DB")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:07.166 -0400", hash_original_method = "F0522F608E5F96C5D99BDA1CF055B16B", hash_generated_method = "F13F98BF38B6E18B418A48DDAE22783E")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     public final void setColorFilter(int color, PorterDuff.Mode mode) {
         dsTaint.addTaint(color);
         dsTaint.addTaint(mode.dsTaint);
@@ -1079,8 +1065,8 @@ public class ImageView extends View {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:07.657 -0400", hash_original_method = "50A13570451A3C69931555EF0FE8C15D", hash_generated_method = "CF6E7C5D81D0000A623F4CFB112283AB")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:07.166 -0400", hash_original_method = "50A13570451A3C69931555EF0FE8C15D", hash_generated_method = "7CF83BEBC71793332725DBB49B867316")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     @RemotableViewMethod
     public final void setColorFilter(int color) {
         dsTaint.addTaint(color);
@@ -1090,8 +1076,8 @@ public class ImageView extends View {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:07.657 -0400", hash_original_method = "B358CFD4AAFD748C624F742F21F12081", hash_generated_method = "D21DFD6FA2D25FBCE6F3CB562CF280F1")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:07.167 -0400", hash_original_method = "B358CFD4AAFD748C624F742F21F12081", hash_generated_method = "5C5D223E65BC6100D1D7D1061123E386")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     public final void clearColorFilter() {
         setColorFilter(null);
         // ---------- Original Method ----------
@@ -1099,8 +1085,8 @@ public class ImageView extends View {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:07.657 -0400", hash_original_method = "0E997722FEDD3E607A6B49B3558418D6", hash_generated_method = "27ED19DBD8876CB8C42DD6612BEB270E")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:07.167 -0400", hash_original_method = "0E997722FEDD3E607A6B49B3558418D6", hash_generated_method = "81D7239A204E6DB701D3AE7DF31B4863")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     public void setColorFilter(ColorFilter cf) {
         dsTaint.addTaint(cf.dsTaint);
         {
@@ -1118,8 +1104,8 @@ public class ImageView extends View {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:07.657 -0400", hash_original_method = "F29539FC5DE82D33A1732D8CBDF1B3F0", hash_generated_method = "6998F994372715015E73FCAF753D04C7")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:07.167 -0400", hash_original_method = "F29539FC5DE82D33A1732D8CBDF1B3F0", hash_generated_method = "2E5F9DA2F7AEA457AF585C68506263F8")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     @RemotableViewMethod
     public void setAlpha(int alpha) {
         dsTaint.addTaint(alpha);
@@ -1140,7 +1126,7 @@ public class ImageView extends View {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:07.657 -0400", hash_original_method = "91840135D820437FBAEF19E5465CA144", hash_generated_method = "1F70CD2C7C9427C6307860110F7A00C6")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:07.167 -0400", hash_original_method = "91840135D820437FBAEF19E5465CA144", hash_generated_method = "D82B0E771B88C4DF60816FA3343812D8")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     private void applyColorMod() {
         {
@@ -1157,8 +1143,8 @@ public class ImageView extends View {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:07.657 -0400", hash_original_method = "C6B07741C64FD260DDE5C02AC0455E05", hash_generated_method = "35A7D3A2842154FC596C066729A3EB6F")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:07.167 -0400", hash_original_method = "C6B07741C64FD260DDE5C02AC0455E05", hash_generated_method = "FA65269A14BACDD30794DE3C2B01FB68")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     @RemotableViewMethod
     @Override
     public void setVisibility(int visibility) {
@@ -1175,7 +1161,7 @@ public class ImageView extends View {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:07.658 -0400", hash_original_method = "3717E0990FC85EED7B1343A97507698D", hash_generated_method = "2622E2FC9BBEA8D7C89854C804BFD3D8")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:07.168 -0400", hash_original_method = "3717E0990FC85EED7B1343A97507698D", hash_generated_method = "EC1E159C12789844B8825972D42E1432")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     @Override
     protected void onAttachedToWindow() {
@@ -1192,8 +1178,8 @@ public class ImageView extends View {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:07.658 -0400", hash_original_method = "66E6E711A91B2172E1C35BB591AC6445", hash_generated_method = "FDE46F7B1B736239174A814F5D8E1D98")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:07.168 -0400", hash_original_method = "66E6E711A91B2172E1C35BB591AC6445", hash_generated_method = "432FDA0B484BC398E47027374674B201")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     @Override
     protected void onDetachedFromWindow() {
         //DSFIXME:  CODE0009: Possible callback target function detected
@@ -1225,6 +1211,21 @@ public class ImageView extends View {
     }
 
     
+    private static final ScaleType[] sScaleTypeArray = {
+        ScaleType.MATRIX,
+        ScaleType.FIT_XY,
+        ScaleType.FIT_START,
+        ScaleType.FIT_CENTER,
+        ScaleType.FIT_END,
+        ScaleType.CENTER,
+        ScaleType.CENTER_CROP,
+        ScaleType.CENTER_INSIDE
+    };
+    private static final Matrix.ScaleToFit[] sS2FArray = {
+        Matrix.ScaleToFit.FILL,
+        Matrix.ScaleToFit.START,
+        Matrix.ScaleToFit.CENTER,
+        Matrix.ScaleToFit.END
+    };
 }
-
 

@@ -3,10 +3,10 @@ package android.app;
 // Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
+import droidsafe.runtime.*;
 
-// import Iterator to deal with enhanced for loop translation
+// needed for enhanced for control translations
 import java.util.Iterator;
-
 import android.content.ComponentName;
 import android.content.Intent;
 import android.content.IntentFilter;
@@ -36,34 +36,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 public abstract class ActivityManagerNative extends Binder implements IActivityManager {
-    static boolean sSystemReady = false;
     
-    private static final Singleton<IActivityManager> gDefault = new Singleton<IActivityManager>() {        
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:14:58.112 -0400", hash_original_method = "DB2B8F5A0363FA0CE3E5AA87CCE94A22", hash_generated_method = "5F634EB5E7A91D65EEED9646F10827FF")
-        @DSModeled(DSC.SAFE)
-        protected IActivityManager create() {
-            IBinder b;
-            b = ServiceManager.getService("activity");
-            IActivityManager am;
-            am = asInterface(b);
-            return (IActivityManager)dsTaint.getTaint();
-            // ---------- Original Method ----------
-            //IBinder b = ServiceManager.getService("activity");
-            //if (false) {
-                //Log.v("ActivityManager", "default service binder = " + b);
-            //}
-            //IActivityManager am = asInterface(b);
-            //if (false) {
-                //Log.v("ActivityManager", "default service = " + am);
-            //}
-            //return am;
-        }
-
-        
-}; //Transformed anonymous class
-    
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:14:58.112 -0400", hash_original_method = "444DC66B3432907DFEA55328E5B69649", hash_generated_method = "30CD594F8BAA7A8B4311B57BDC55146C")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:34.702 -0400", hash_original_method = "444DC66B3432907DFEA55328E5B69649", hash_generated_method = "FF0B4D083A157B879D7CD5A2215454A9")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     public ActivityManagerNative() {
         attachInterface(this, descriptor);
         // ---------- Original Method ----------
@@ -71,9 +46,7 @@ public abstract class ActivityManagerNative extends Binder implements IActivityM
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:14:58.113 -0400", hash_original_method = "2F0865077D68737A7D6F441D3CAC24D9", hash_generated_method = "C5B42A1DFCEB823A5136B429CF9AC9B1")
-    @DSModeled(DSC.SAFE)
-    static public IActivityManager asInterface(IBinder obj) {
+        static public IActivityManager asInterface(IBinder obj) {
         if (obj == null) {
             return null;
         }
@@ -86,15 +59,12 @@ public abstract class ActivityManagerNative extends Binder implements IActivityM
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:14:58.113 -0400", hash_original_method = "C581351462D87A5CA19EFFE73691D6B8", hash_generated_method = "8A940506F46A34A8E626D5A708A565C0")
-    @DSModeled(DSC.SAFE)
-    static public IActivityManager getDefault() {
+        static public IActivityManager getDefault() {
         return gDefault.get();
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:14:58.113 -0400", hash_original_method = "5FC4B6592318F4C948D38B5B79469552", hash_generated_method = "CE9217ADD286B0464C74DC335EE97C68")
-    static public boolean isSystemReady() {
+        static public boolean isSystemReady() {
         if (!sSystemReady) {
             sSystemReady = getDefault().testIsSystemReady();
         }
@@ -102,8 +72,7 @@ public abstract class ActivityManagerNative extends Binder implements IActivityM
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:14:58.114 -0400", hash_original_method = "60868BAA36991408EA660689C2535FBD", hash_generated_method = "C6F9133322E85E6275008944D6F01C02")
-    static public void broadcastStickyIntent(Intent intent, String permission) {
+        static public void broadcastStickyIntent(Intent intent, String permission) {
         try {
             getDefault().broadcastIntent(
                 null, intent, null, null, Activity.RESULT_OK, null, null,
@@ -113,8 +82,7 @@ public abstract class ActivityManagerNative extends Binder implements IActivityM
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:14:58.114 -0400", hash_original_method = "966DD9810BB71B16CA7135B6EC37DFA9", hash_generated_method = "E166A6FE65574D56C7D063F976139987")
-    static public void noteWakeupAlarm(PendingIntent ps) {
+        static public void noteWakeupAlarm(PendingIntent ps) {
         try {
             getDefault().noteWakeupAlarm(ps.getTarget());
         } catch (RemoteException ex) {
@@ -122,7 +90,7 @@ public abstract class ActivityManagerNative extends Binder implements IActivityM
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:14:58.135 -0400", hash_original_method = "796B52B1E8846F7CCEC22CD4B5B906A8", hash_generated_method = "C245D84D3CEAE6300820A3B2C400EDCC")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:34.730 -0400", hash_original_method = "796B52B1E8846F7CCEC22CD4B5B906A8", hash_generated_method = "46CA0508563A5F250E3816C4345CF709")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public boolean onTransact(int code, Parcel data, Parcel reply, int flags) throws RemoteException {
         //DSFIXME:  CODE0009: Possible callback target function detected
@@ -158,7 +126,7 @@ public abstract class ActivityManagerNative extends Binder implements IActivityM
             String profileFile;
             profileFile = data.readString();
             ParcelFileDescriptor profileFd;
-            boolean varC24E3AE203992FDEC0DEADDC729AF4C8_925494371 = (data.readInt() != 0);
+            boolean varC24E3AE203992FDEC0DEADDC729AF4C8_1044515712 = (data.readInt() != 0);
             profileFd = data.readFileDescriptor();
             profileFd = null;
             boolean autoStopProfiler;
@@ -199,7 +167,7 @@ public abstract class ActivityManagerNative extends Binder implements IActivityM
             String profileFile;
             profileFile = data.readString();
             ParcelFileDescriptor profileFd;
-            boolean varC24E3AE203992FDEC0DEADDC729AF4C8_1208993228 = (data.readInt() != 0);
+            boolean varC24E3AE203992FDEC0DEADDC729AF4C8_4023179 = (data.readInt() != 0);
             profileFd = data.readFileDescriptor();
             profileFd = null;
             boolean autoStopProfiler;
@@ -259,7 +227,7 @@ public abstract class ActivityManagerNative extends Binder implements IActivityM
             Intent fillInIntent;
             fillInIntent = null;
             {
-                boolean varE6AB5F2F920478433EF302793CCFF01F_1917924451 = (data.readInt() != 0);
+                boolean varE6AB5F2F920478433EF302793CCFF01F_1635863834 = (data.readInt() != 0);
                 {
                     fillInIntent = Intent.CREATOR.createFromParcel(data);
                 } //End block
@@ -307,7 +275,7 @@ public abstract class ActivityManagerNative extends Binder implements IActivityM
             int resultCode;
             resultCode = data.readInt();
             {
-                boolean varE6AB5F2F920478433EF302793CCFF01F_93326975 = (data.readInt() != 0);
+                boolean varE6AB5F2F920478433EF302793CCFF01F_1194911282 = (data.readInt() != 0);
                 {
                     resultData = Intent.CREATOR.createFromParcel(data);
                 } //End block
@@ -472,7 +440,7 @@ public abstract class ActivityManagerNative extends Binder implements IActivityM
             Configuration config;
             config = null;
             {
-                boolean varE6AB5F2F920478433EF302793CCFF01F_859167292 = (data.readInt() != 0);
+                boolean varE6AB5F2F920478433EF302793CCFF01F_611955592 = (data.readInt() != 0);
                 {
                     config = Configuration.CREATOR.createFromParcel(data);
                 } //End block
@@ -502,7 +470,7 @@ public abstract class ActivityManagerNative extends Binder implements IActivityM
             Bundle map;
             map = data.readBundle();
             Bitmap thumbnail;
-            boolean varC24E3AE203992FDEC0DEADDC729AF4C8_900690897 = (data.readInt() != 0);
+            boolean varC24E3AE203992FDEC0DEADDC729AF4C8_1737483190 = (data.readInt() != 0);
             thumbnail = Bitmap.CREATOR.createFromParcel(data);
             thumbnail = null;
             CharSequence description;
@@ -738,7 +706,7 @@ public abstract class ActivityManagerNative extends Binder implements IActivityM
             IBinder token;
             token = data.readStrongBinder();
             Bitmap thumbnail;
-            boolean varC24E3AE203992FDEC0DEADDC729AF4C8_573263410 = (data.readInt() != 0);
+            boolean varC24E3AE203992FDEC0DEADDC729AF4C8_957929502 = (data.readInt() != 0);
             thumbnail = Bitmap.CREATOR.createFromParcel(data);
             thumbnail = null;
             CharSequence description;
@@ -866,7 +834,7 @@ public abstract class ActivityManagerNative extends Binder implements IActivityM
             Notification notification;
             notification = null;
             {
-                boolean varE6AB5F2F920478433EF302793CCFF01F_1962001002 = (data.readInt() != 0);
+                boolean varE6AB5F2F920478433EF302793CCFF01F_1747146396 = (data.readInt() != 0);
                 {
                     notification = Notification.CREATOR.createFromParcel(data);
                 } //End block
@@ -1067,7 +1035,7 @@ public abstract class ActivityManagerNative extends Binder implements IActivityM
             Intent[] requestIntents;
             String[] requestResolvedTypes;
             {
-                boolean varE6AB5F2F920478433EF302793CCFF01F_2060141108 = (data.readInt() != 0);
+                boolean varE6AB5F2F920478433EF302793CCFF01F_865379532 = (data.readInt() != 0);
                 {
                     requestIntents = data.createTypedArray(Intent.CREATOR);
                     requestResolvedTypes = data.createStringArray();
@@ -1451,7 +1419,7 @@ public abstract class ActivityManagerNative extends Binder implements IActivityM
             String path;
             path = data.readString();
             ParcelFileDescriptor fd;
-            boolean varC24E3AE203992FDEC0DEADDC729AF4C8_184758331 = (data.readInt() != 0);
+            boolean varC24E3AE203992FDEC0DEADDC729AF4C8_1671285845 = (data.readInt() != 0);
             fd = data.readFileDescriptor();
             fd = null;
             boolean res;
@@ -1737,7 +1705,7 @@ public abstract class ActivityManagerNative extends Binder implements IActivityM
             Uri uri;
             uri = null;
             {
-                boolean varE6AB5F2F920478433EF302793CCFF01F_678913429 = (data.readInt() != 0);
+                boolean varE6AB5F2F920478433EF302793CCFF01F_889671811 = (data.readInt() != 0);
                 {
                     Uri.CREATOR.createFromParcel(data);
                 } //End block
@@ -1775,7 +1743,7 @@ public abstract class ActivityManagerNative extends Binder implements IActivityM
             String path;
             path = data.readString();
             ParcelFileDescriptor fd;
-            boolean varC24E3AE203992FDEC0DEADDC729AF4C8_205868448 = (data.readInt() != 0);
+            boolean varC24E3AE203992FDEC0DEADDC729AF4C8_2130464006 = (data.readInt() != 0);
             fd = data.readFileDescriptor();
             fd = null;
             boolean res;
@@ -1988,14 +1956,14 @@ public abstract class ActivityManagerNative extends Binder implements IActivityM
             reply.writeNoException();
         } //End block
         //End case DISMISS_KEYGUARD_ON_NEXT_ACTIVITY_TRANSACTION 
-        boolean var3746A99EF74DBE66CD43EDAE5F9B6D9F_1129675894 = (super.onTransact(code, data, reply, flags));
+        boolean var3746A99EF74DBE66CD43EDAE5F9B6D9F_439545789 = (super.onTransact(code, data, reply, flags));
         return dsTaint.getTaintBoolean();
         // ---------- Original Method ----------
         // Original Method Too Long, Refer to Original Implementation
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:14:58.145 -0400", hash_original_method = "2E6ED031FA2AB47CC2982E0232E351E2", hash_generated_method = "ACC1BEBA79475825CC8A93A9C0BD1CF3")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:34.734 -0400", hash_original_method = "2E6ED031FA2AB47CC2982E0232E351E2", hash_generated_method = "1992535F0C7EB8757F965477F5292EC0")
     @DSModeled(DSC.SAFE)
     public IBinder asBinder() {
         return (IBinder)dsTaint.getTaint();
@@ -2004,12 +1972,36 @@ public abstract class ActivityManagerNative extends Binder implements IActivityM
     }
 
     
+    static boolean sSystemReady = false;
+    private static final Singleton<IActivityManager> gDefault = new Singleton<IActivityManager>() {        
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:34.734 -0400", hash_original_method = "DB2B8F5A0363FA0CE3E5AA87CCE94A22", hash_generated_method = "32FD73111A46EEF3C09661B8912ECC56")
+        //DSFIXME:  CODE0002: Requires DSC value to be set
+        protected IActivityManager create() {
+            IBinder b;
+            b = ServiceManager.getService("activity");
+            IActivityManager am;
+            am = asInterface(b);
+            return (IActivityManager)dsTaint.getTaint();
+            // ---------- Original Method ----------
+            //IBinder b = ServiceManager.getService("activity");
+            //if (false) {
+                //Log.v("ActivityManager", "default service binder = " + b);
+            //}
+            //IActivityManager am = asInterface(b);
+            //if (false) {
+                //Log.v("ActivityManager", "default service = " + am);
+            //}
+            //return am;
+        }
+
+        
+}; //Transformed anonymous class
 }
 
 class ActivityManagerProxy implements IActivityManager {
     private IBinder mRemote;
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:14:58.146 -0400", hash_original_method = "3287CA7C2EB4AADDF2EFFF2704D2BE9E", hash_generated_method = "B93B19746CC1D1C185A3413052E62F35")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:34.736 -0400", hash_original_method = "3287CA7C2EB4AADDF2EFFF2704D2BE9E", hash_generated_method = "5A4E575C39FA9C6FCC76D9C9D27DF084")
     @DSModeled(DSC.SAFE)
     public ActivityManagerProxy(IBinder remote) {
         dsTaint.addTaint(remote.dsTaint);
@@ -2018,7 +2010,7 @@ class ActivityManagerProxy implements IActivityManager {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:14:58.146 -0400", hash_original_method = "315E1319E410798CBDE68A27410B7DFB", hash_generated_method = "117DDE791BEA1B91BCA97AE8A36628B3")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:34.736 -0400", hash_original_method = "315E1319E410798CBDE68A27410B7DFB", hash_generated_method = "DD6FDB77557F0A5920AFCE061E8D4085")
     @DSModeled(DSC.SAFE)
     public IBinder asBinder() {
         return (IBinder)dsTaint.getTaint();
@@ -2027,7 +2019,7 @@ class ActivityManagerProxy implements IActivityManager {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:14:58.147 -0400", hash_original_method = "ECBE4259B26F016D18C1CACD48E02238", hash_generated_method = "CC68F77DB3BD6CAC7979465987DB411B")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:34.737 -0400", hash_original_method = "ECBE4259B26F016D18C1CACD48E02238", hash_generated_method = "E882E700741BF1076C6C13990556E93F")
     @DSModeled(DSC.SPEC)
     public int startActivity(IApplicationThread caller, Intent intent,
             String resolvedType, Uri[] grantedUriPermissions, int grantedMode,
@@ -2038,16 +2030,16 @@ class ActivityManagerProxy implements IActivityManager {
         dsTaint.addTaint(caller.dsTaint);
         dsTaint.addTaint(onlyIfNeeded);
         dsTaint.addTaint(requestCode);
+        dsTaint.addTaint(grantedUriPermissions[0].dsTaint);
+        dsTaint.addTaint(resultTo.dsTaint);
         dsTaint.addTaint(autoStopProfiler);
+        dsTaint.addTaint(profileFd.dsTaint);
         dsTaint.addTaint(profileFile);
         dsTaint.addTaint(debug);
         dsTaint.addTaint(resultWho);
         dsTaint.addTaint(grantedMode);
-        dsTaint.addTaint(intent.dsTaint);
-        dsTaint.addTaint(grantedUriPermissions[0].dsTaint);
-        dsTaint.addTaint(resultTo.dsTaint);
-        dsTaint.addTaint(profileFd.dsTaint);
         dsTaint.addTaint(resolvedType);
+        dsTaint.addTaint(intent.dsTaint);
         Parcel data;
         data = Parcel.obtain();
         Parcel reply;
@@ -2084,7 +2076,7 @@ class ActivityManagerProxy implements IActivityManager {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:14:58.148 -0400", hash_original_method = "BF42E410BABF1DD283EC1102C9637003", hash_generated_method = "E4E8110535E7C1A482E4ED69DF02A1F2")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:34.739 -0400", hash_original_method = "BF42E410BABF1DD283EC1102C9637003", hash_generated_method = "C1D40167EDF9946D9ACEE4CF70943F05")
     @DSModeled(DSC.SPEC)
     public WaitResult startActivityAndWait(IApplicationThread caller, Intent intent,
             String resolvedType, Uri[] grantedUriPermissions, int grantedMode,
@@ -2095,16 +2087,16 @@ class ActivityManagerProxy implements IActivityManager {
         dsTaint.addTaint(caller.dsTaint);
         dsTaint.addTaint(onlyIfNeeded);
         dsTaint.addTaint(requestCode);
+        dsTaint.addTaint(grantedUriPermissions[0].dsTaint);
+        dsTaint.addTaint(resultTo.dsTaint);
         dsTaint.addTaint(autoStopProfiler);
+        dsTaint.addTaint(profileFd.dsTaint);
         dsTaint.addTaint(profileFile);
         dsTaint.addTaint(debug);
         dsTaint.addTaint(resultWho);
         dsTaint.addTaint(grantedMode);
-        dsTaint.addTaint(intent.dsTaint);
-        dsTaint.addTaint(grantedUriPermissions[0].dsTaint);
-        dsTaint.addTaint(resultTo.dsTaint);
-        dsTaint.addTaint(profileFd.dsTaint);
         dsTaint.addTaint(resolvedType);
+        dsTaint.addTaint(intent.dsTaint);
         Parcel data;
         data = Parcel.obtain();
         Parcel reply;
@@ -2141,7 +2133,7 @@ class ActivityManagerProxy implements IActivityManager {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:14:58.149 -0400", hash_original_method = "47F7B475943E725D61EF4FCECF2C263D", hash_generated_method = "A4F94387626B06471AF157C4FC81BB6A")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:34.740 -0400", hash_original_method = "47F7B475943E725D61EF4FCECF2C263D", hash_generated_method = "0DD10315EAB092E6CB1F8D10EDD5CCB4")
     @DSModeled(DSC.SPEC)
     public int startActivityWithConfig(IApplicationThread caller, Intent intent,
             String resolvedType, Uri[] grantedUriPermissions, int grantedMode,
@@ -2149,14 +2141,14 @@ class ActivityManagerProxy implements IActivityManager {
             int requestCode, boolean onlyIfNeeded,
             boolean debug, Configuration config) throws RemoteException {
         dsTaint.addTaint(caller.dsTaint);
-        dsTaint.addTaint(grantedUriPermissions[0].dsTaint);
-        dsTaint.addTaint(requestCode);
         dsTaint.addTaint(onlyIfNeeded);
+        dsTaint.addTaint(requestCode);
+        dsTaint.addTaint(grantedUriPermissions[0].dsTaint);
         dsTaint.addTaint(resultTo.dsTaint);
         dsTaint.addTaint(config.dsTaint);
-        dsTaint.addTaint(grantedMode);
-        dsTaint.addTaint(resultWho);
         dsTaint.addTaint(debug);
+        dsTaint.addTaint(resultWho);
+        dsTaint.addTaint(grantedMode);
         dsTaint.addTaint(resolvedType);
         dsTaint.addTaint(intent.dsTaint);
         Parcel data;
@@ -2206,7 +2198,7 @@ class ActivityManagerProxy implements IActivityManager {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:14:58.150 -0400", hash_original_method = "FD56EAF7591CCE02A2449EB3C30AEF02", hash_generated_method = "969A7408A455E1A62E2910E03E788532")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:34.741 -0400", hash_original_method = "FD56EAF7591CCE02A2449EB3C30AEF02", hash_generated_method = "ED439F38C468AC7FFC3881EE9CF1E2E5")
     @DSModeled(DSC.SPEC)
     public int startActivityIntentSender(IApplicationThread caller,
             IntentSender intent, Intent fillInIntent, String resolvedType,
@@ -2219,8 +2211,8 @@ class ActivityManagerProxy implements IActivityManager {
         dsTaint.addTaint(flagsValues);
         dsTaint.addTaint(resultWho);
         dsTaint.addTaint(resolvedType);
-        dsTaint.addTaint(intent.dsTaint);
         dsTaint.addTaint(fillInIntent.dsTaint);
+        dsTaint.addTaint(intent.dsTaint);
         Parcel data;
         data = Parcel.obtain();
         Parcel reply;
@@ -2253,7 +2245,7 @@ class ActivityManagerProxy implements IActivityManager {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:14:58.151 -0400", hash_original_method = "A532370FCCB6C359BF27FA22D92F73F5", hash_generated_method = "EBBDFDC14C81800E57242F20E440C136")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:34.742 -0400", hash_original_method = "A532370FCCB6C359BF27FA22D92F73F5", hash_generated_method = "C9C4DEE4AAD0951DE1A71FF1827BB116")
     @DSModeled(DSC.SPEC)
     public boolean startNextMatchingActivity(IBinder callingActivity,
             Intent intent) throws RemoteException {
@@ -2288,7 +2280,7 @@ class ActivityManagerProxy implements IActivityManager {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:14:58.152 -0400", hash_original_method = "91E82D39E0DA0BAF3D9668B58FD8BE2D", hash_generated_method = "3B0F386B0E441F7D83ED3E28813D504D")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:34.744 -0400", hash_original_method = "91E82D39E0DA0BAF3D9668B58FD8BE2D", hash_generated_method = "9DF9A47E2CB05B388C195F70FC5DF574")
     @DSModeled(DSC.SPEC)
     public boolean finishActivity(IBinder token, int resultCode, Intent resultData) throws RemoteException {
         dsTaint.addTaint(resultData.dsTaint);
@@ -2336,11 +2328,11 @@ class ActivityManagerProxy implements IActivityManager {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:14:58.153 -0400", hash_original_method = "352728C633440E8BBFDE1A24B12C26C6", hash_generated_method = "236A56940993BF76E83E5C3B24EF321B")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:34.745 -0400", hash_original_method = "352728C633440E8BBFDE1A24B12C26C6", hash_generated_method = "BA6728E40BDC3DC94D74C8C36833858A")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     public void finishSubActivity(IBinder token, String resultWho, int requestCode) throws RemoteException {
-        dsTaint.addTaint(token.dsTaint);
         dsTaint.addTaint(requestCode);
+        dsTaint.addTaint(token.dsTaint);
         dsTaint.addTaint(resultWho);
         Parcel data;
         data = Parcel.obtain();
@@ -2368,7 +2360,7 @@ class ActivityManagerProxy implements IActivityManager {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:14:58.154 -0400", hash_original_method = "03769BB85CE515FA0FB5B3DCD0709D8A", hash_generated_method = "C15A44C479519BEBD7740FBDEC9EC2BD")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:34.746 -0400", hash_original_method = "03769BB85CE515FA0FB5B3DCD0709D8A", hash_generated_method = "12EF168DE47A96C59F0E735648680D15")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public boolean willActivityBeVisible(IBinder token) throws RemoteException {
         dsTaint.addTaint(token.dsTaint);
@@ -2399,15 +2391,15 @@ class ActivityManagerProxy implements IActivityManager {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:14:58.155 -0400", hash_original_method = "D0EC9750E66DC0864B7AF9A5D43ED043", hash_generated_method = "9B7D740DA6370600207DC57C73D89A87")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:34.746 -0400", hash_original_method = "D0EC9750E66DC0864B7AF9A5D43ED043", hash_generated_method = "11D83DE7DB61C830B05AF621F0A294B0")
     @DSModeled(DSC.SPEC)
     public Intent registerReceiver(IApplicationThread caller, String packageName,
             IIntentReceiver receiver,
             IntentFilter filter, String perm) throws RemoteException {
         //DSFIXME: CODE0010: Possible callback registration function detected
         dsTaint.addTaint(caller.dsTaint);
-        dsTaint.addTaint(packageName);
         dsTaint.addTaint(receiver.dsTaint);
+        dsTaint.addTaint(packageName);
         dsTaint.addTaint(perm);
         dsTaint.addTaint(filter.dsTaint);
         Parcel data;
@@ -2454,10 +2446,9 @@ class ActivityManagerProxy implements IActivityManager {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:14:58.155 -0400", hash_original_method = "CF62E9563222E9365AE1815E546E05AA", hash_generated_method = "2FB9F42755C2696ACE90777FDA78B2FB")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:34.747 -0400", hash_original_method = "CF62E9563222E9365AE1815E546E05AA", hash_generated_method = "1191E34AF227EC7704F73B39AAA1D578")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public void unregisterReceiver(IIntentReceiver receiver) throws RemoteException {
-        //DSFIXME: CODE0010: Possible callback registration function detected
         dsTaint.addTaint(receiver.dsTaint);
         Parcel data;
         data = Parcel.obtain();
@@ -2481,23 +2472,23 @@ class ActivityManagerProxy implements IActivityManager {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:14:58.156 -0400", hash_original_method = "189D2A1B1A14BF35BFCC0BB8AD6C1CE5", hash_generated_method = "F590001B0D3C5021ED9E9A5737DE0457")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:34.748 -0400", hash_original_method = "189D2A1B1A14BF35BFCC0BB8AD6C1CE5", hash_generated_method = "8BE66A25C9B1C954A5877E1A727C87E1")
     @DSModeled(DSC.SPEC)
     public int broadcastIntent(IApplicationThread caller,
             Intent intent, String resolvedType,  IIntentReceiver resultTo,
             int resultCode, String resultData, Bundle map,
             String requiredPermission, boolean serialized,
             boolean sticky) throws RemoteException {
-        dsTaint.addTaint(caller.dsTaint);
         dsTaint.addTaint(resultData);
-        dsTaint.addTaint(serialized);
+        dsTaint.addTaint(caller.dsTaint);
         dsTaint.addTaint(sticky);
-        dsTaint.addTaint(resultTo.dsTaint);
-        dsTaint.addTaint(resultCode);
+        dsTaint.addTaint(serialized);
         dsTaint.addTaint(map.dsTaint);
+        dsTaint.addTaint(resultCode);
+        dsTaint.addTaint(resultTo.dsTaint);
         dsTaint.addTaint(resolvedType);
-        dsTaint.addTaint(intent.dsTaint);
         dsTaint.addTaint(requiredPermission);
+        dsTaint.addTaint(intent.dsTaint);
         Parcel data;
         data = Parcel.obtain();
         Parcel reply;
@@ -2543,7 +2534,7 @@ class ActivityManagerProxy implements IActivityManager {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:14:58.157 -0400", hash_original_method = "84F4ECE33F63E245917246490F7877AA", hash_generated_method = "7C53B9C9E23DB1F651FD3CEC221A0740")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:34.749 -0400", hash_original_method = "84F4ECE33F63E245917246490F7877AA", hash_generated_method = "9D5CAA8E2B8AC9E8861D15788F659A19")
     @DSModeled(DSC.SPEC)
     public void unbroadcastIntent(IApplicationThread caller, Intent intent) throws RemoteException {
         dsTaint.addTaint(caller.dsTaint);
@@ -2572,13 +2563,13 @@ class ActivityManagerProxy implements IActivityManager {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:14:58.158 -0400", hash_original_method = "8BFF18A0F9A8EDDD76A319C280B21CDC", hash_generated_method = "50F63A928BB397EF7C498FD03153BF9F")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:34.750 -0400", hash_original_method = "8BFF18A0F9A8EDDD76A319C280B21CDC", hash_generated_method = "FB158A0E7730707C02B7C28AF7F47D8F")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     public void finishReceiver(IBinder who, int resultCode, String resultData, Bundle map, boolean abortBroadcast) throws RemoteException {
         dsTaint.addTaint(resultData);
         dsTaint.addTaint(abortBroadcast);
-        dsTaint.addTaint(resultCode);
         dsTaint.addTaint(map.dsTaint);
+        dsTaint.addTaint(resultCode);
         dsTaint.addTaint(who.dsTaint);
         Parcel data;
         data = Parcel.obtain();
@@ -2610,7 +2601,7 @@ class ActivityManagerProxy implements IActivityManager {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:14:58.159 -0400", hash_original_method = "1E67E239E5F2A2540F1E032AB272605E", hash_generated_method = "0FE42CD215456332ADAB98F4C9896AA1")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:34.750 -0400", hash_original_method = "1E67E239E5F2A2540F1E032AB272605E", hash_generated_method = "AD9F9664D0C23196C8E08D6ADBC5040A")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public void attachApplication(IApplicationThread app) throws RemoteException {
         dsTaint.addTaint(app.dsTaint);
@@ -2636,8 +2627,8 @@ class ActivityManagerProxy implements IActivityManager {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:14:58.159 -0400", hash_original_method = "BC9E49082B5DC06C707641FC7F3E31F5", hash_generated_method = "198929BBF27D65077DCEBFF8A489E956")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:34.751 -0400", hash_original_method = "BC9E49082B5DC06C707641FC7F3E31F5", hash_generated_method = "54D172787950CCDBA25E9D91FAA6D8FC")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     public void activityIdle(IBinder token, Configuration config, boolean stopProfiling) throws RemoteException {
         dsTaint.addTaint(stopProfiling);
         dsTaint.addTaint(token.dsTaint);
@@ -2679,8 +2670,8 @@ class ActivityManagerProxy implements IActivityManager {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:14:58.159 -0400", hash_original_method = "4914FFC78B966DEBED0BDBFF9D70FB17", hash_generated_method = "F63B1F9C2B3410B9A4E631A71F9E4959")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:34.752 -0400", hash_original_method = "4914FFC78B966DEBED0BDBFF9D70FB17", hash_generated_method = "0E05C9CF82B895F565894CB12D96976F")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     public void activityPaused(IBinder token) throws RemoteException {
         dsTaint.addTaint(token.dsTaint);
         Parcel data;
@@ -2705,8 +2696,8 @@ class ActivityManagerProxy implements IActivityManager {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:14:58.160 -0400", hash_original_method = "F5DE3AC45B6CCF74477AF45EB0878099", hash_generated_method = "C09E043F8A568EBDE872BBA0EC7062B9")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:34.754 -0400", hash_original_method = "F5DE3AC45B6CCF74477AF45EB0878099", hash_generated_method = "778945DDAEC878C1C29DF4CE2EF6EA1F")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     public void activityStopped(IBinder token, Bundle state,
             Bitmap thumbnail, CharSequence description) throws RemoteException {
         dsTaint.addTaint(thumbnail.dsTaint);
@@ -2752,8 +2743,8 @@ class ActivityManagerProxy implements IActivityManager {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:14:58.160 -0400", hash_original_method = "CA8224B1DA5730B462FB3F604509C1DB", hash_generated_method = "BAEE1EF89DD345FAD107A9F73FF47627")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:34.754 -0400", hash_original_method = "CA8224B1DA5730B462FB3F604509C1DB", hash_generated_method = "3C2A1B245C86D9E85214090EF5DF5C5D")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     public void activitySlept(IBinder token) throws RemoteException {
         dsTaint.addTaint(token.dsTaint);
         Parcel data;
@@ -2778,8 +2769,8 @@ class ActivityManagerProxy implements IActivityManager {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:14:58.161 -0400", hash_original_method = "9A100D49A0D535BB686DAA00CAC541FF", hash_generated_method = "25C1385D81FCECEF9ACB506AC6DD2500")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:34.755 -0400", hash_original_method = "9A100D49A0D535BB686DAA00CAC541FF", hash_generated_method = "6384DB46C4366D09FAD7D034B77FDC3C")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     public void activityDestroyed(IBinder token) throws RemoteException {
         dsTaint.addTaint(token.dsTaint);
         Parcel data;
@@ -2804,8 +2795,8 @@ class ActivityManagerProxy implements IActivityManager {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:14:58.161 -0400", hash_original_method = "7637EF2082F6942F953796EFCEAA3730", hash_generated_method = "70F6BFB85E0D129ABCD5FCDF6DC5E9A9")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:34.756 -0400", hash_original_method = "7637EF2082F6942F953796EFCEAA3730", hash_generated_method = "B898DD01A71FE7D39D9CA3EE65A2A933")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     public String getCallingPackage(IBinder token) throws RemoteException {
         dsTaint.addTaint(token.dsTaint);
         Parcel data;
@@ -2835,8 +2826,8 @@ class ActivityManagerProxy implements IActivityManager {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:14:58.162 -0400", hash_original_method = "0E9D91A20FCD3BCFB3517DB475147FAB", hash_generated_method = "63C22BCA6623FF12D702F03864428BF3")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:34.756 -0400", hash_original_method = "0E9D91A20FCD3BCFB3517DB475147FAB", hash_generated_method = "B715688E20FB0253D77477191718F162")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     public ComponentName getCallingActivity(IBinder token) throws RemoteException {
         dsTaint.addTaint(token.dsTaint);
         Parcel data;
@@ -2866,7 +2857,7 @@ class ActivityManagerProxy implements IActivityManager {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:14:58.162 -0400", hash_original_method = "FAA1C4AE039868246AED533CDCA15CD7", hash_generated_method = "3B187183822A1E87ED7E3BDEA65ED93C")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:34.757 -0400", hash_original_method = "FAA1C4AE039868246AED533CDCA15CD7", hash_generated_method = "C4FE69A667446AC6790C14FB5BDC013C")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public List getTasks(int maxNum, int flags,
             IThumbnailReceiver receiver) throws RemoteException {
@@ -2894,7 +2885,6 @@ class ActivityManagerProxy implements IActivityManager {
                 info = ActivityManager.RunningTaskInfo.CREATOR
                         .createFromParcel(reply);
                 list.add(info);
-                N--;
             } //End block
         } //End block
         data.recycle();
@@ -2905,8 +2895,8 @@ class ActivityManagerProxy implements IActivityManager {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:14:58.163 -0400", hash_original_method = "9D3E8FF17F102376D7C7BE9D34CE4F93", hash_generated_method = "C5A86ADACFBADC51E7BD9821CCD5D34D")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:34.758 -0400", hash_original_method = "9D3E8FF17F102376D7C7BE9D34CE4F93", hash_generated_method = "D1B710F7B2D20A62AF23D1C1697516DE")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     public List<ActivityManager.RecentTaskInfo> getRecentTasks(int maxNum,
             int flags) throws RemoteException {
         dsTaint.addTaint(flags);
@@ -2941,7 +2931,7 @@ class ActivityManagerProxy implements IActivityManager {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:14:58.164 -0400", hash_original_method = "10D095A12B52FE928E4AEC7C3F42A832", hash_generated_method = "9E25804B64442FB791A1FAFA386881B8")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:34.759 -0400", hash_original_method = "10D095A12B52FE928E4AEC7C3F42A832", hash_generated_method = "10F7E3391FD5E3406A8CE5D9F169C5BC")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public ActivityManager.TaskThumbnails getTaskThumbnails(int id) throws RemoteException {
         dsTaint.addTaint(id);
@@ -2956,7 +2946,7 @@ class ActivityManagerProxy implements IActivityManager {
         ActivityManager.TaskThumbnails bm;
         bm = null;
         {
-            boolean varB04A284F06B56929F38634A7F4C6A0D7_93687130 = (reply.readInt() != 0);
+            boolean varB04A284F06B56929F38634A7F4C6A0D7_1954819183 = (reply.readInt() != 0);
             {
                 bm = ActivityManager.TaskThumbnails.CREATOR.createFromParcel(reply);
             } //End block
@@ -2981,8 +2971,8 @@ class ActivityManagerProxy implements IActivityManager {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:14:58.164 -0400", hash_original_method = "7671DD1471581027B2C414BE0E3CE4A6", hash_generated_method = "6B2028FA8A450F934A7ED87DE62EBDF5")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:34.759 -0400", hash_original_method = "7671DD1471581027B2C414BE0E3CE4A6", hash_generated_method = "BBC5B45D799A90BC82599E954F21DA04")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     public List getServices(int maxNum, int flags) throws RemoteException {
         dsTaint.addTaint(flags);
         dsTaint.addTaint(maxNum);
@@ -3006,7 +2996,6 @@ class ActivityManagerProxy implements IActivityManager {
                 info = ActivityManager.RunningServiceInfo.CREATOR
                         .createFromParcel(reply);
                 list.add(info);
-                N--;
             } //End block
         } //End block
         data.recycle();
@@ -3038,8 +3027,8 @@ class ActivityManagerProxy implements IActivityManager {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:14:58.165 -0400", hash_original_method = "2AE453A6460D5AF368C9AC4C4862314B", hash_generated_method = "A87B6B5FAEEB28C9BCF46723743A2A63")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:34.760 -0400", hash_original_method = "2AE453A6460D5AF368C9AC4C4862314B", hash_generated_method = "91CA7351E8D8AB491E1BBB2DF65A305A")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     public List<ActivityManager.ProcessErrorStateInfo> getProcessesInErrorState() throws RemoteException {
         Parcel data;
         data = Parcel.obtain();
@@ -3067,8 +3056,8 @@ class ActivityManagerProxy implements IActivityManager {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:14:58.165 -0400", hash_original_method = "8E45CD57BE18A4B76C3A3E0DA22BC8B7", hash_generated_method = "8DFD2579266E32B4C89F6598C6032E2D")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:34.761 -0400", hash_original_method = "8E45CD57BE18A4B76C3A3E0DA22BC8B7", hash_generated_method = "2EDF991D285FB0F46841FFAE3814B60F")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     public List<ActivityManager.RunningAppProcessInfo> getRunningAppProcesses() throws RemoteException {
         Parcel data;
         data = Parcel.obtain();
@@ -3096,8 +3085,8 @@ class ActivityManagerProxy implements IActivityManager {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:14:58.166 -0400", hash_original_method = "2FAC851B003A84469F94E88A81DA29C3", hash_generated_method = "107E507F53CB530A5CB915E75DF87132")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:34.844 -0400", hash_original_method = "2FAC851B003A84469F94E88A81DA29C3", hash_generated_method = "EA9AE24906CCAD3B3A7C7C7299BB5FFA")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     public List<ApplicationInfo> getRunningExternalApplications() throws RemoteException {
         Parcel data;
         data = Parcel.obtain();
@@ -3125,8 +3114,8 @@ class ActivityManagerProxy implements IActivityManager {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:14:58.166 -0400", hash_original_method = "DABF13B8F45F6A065880490CD0DBD1A0", hash_generated_method = "DDB9A26C6359E4263693328DA5FDBA1E")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:34.845 -0400", hash_original_method = "DABF13B8F45F6A065880490CD0DBD1A0", hash_generated_method = "1E7ADA48D66919D8D2C5CFBB15B3470B")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     public void moveTaskToFront(int task, int flags) throws RemoteException {
         dsTaint.addTaint(flags);
         dsTaint.addTaint(task);
@@ -3154,8 +3143,8 @@ class ActivityManagerProxy implements IActivityManager {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:14:58.166 -0400", hash_original_method = "7FFB6E49EA553237E0A3F53A2CDFD87F", hash_generated_method = "4C09F3794B3A07B65A1FB02304B537A3")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:34.845 -0400", hash_original_method = "7FFB6E49EA553237E0A3F53A2CDFD87F", hash_generated_method = "524A8575C0FF0FC9DB7771602AC3E385")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     public void moveTaskToBack(int task) throws RemoteException {
         dsTaint.addTaint(task);
         Parcel data;
@@ -3180,7 +3169,7 @@ class ActivityManagerProxy implements IActivityManager {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:14:58.167 -0400", hash_original_method = "7F4F39C4D7AB58BCB5DB152705A9F80A", hash_generated_method = "98E3B8948CE58CA3B6E68549556CEC04")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:34.846 -0400", hash_original_method = "7F4F39C4D7AB58BCB5DB152705A9F80A", hash_generated_method = "F6B1CE69B8C848387692B1B6D90A99B4")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public boolean moveActivityTaskToBack(IBinder token, boolean nonRoot) throws RemoteException {
         dsTaint.addTaint(token.dsTaint);
@@ -3214,8 +3203,8 @@ class ActivityManagerProxy implements IActivityManager {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:14:58.167 -0400", hash_original_method = "48BD6DC2300FE39DD3A4B34C3DD91993", hash_generated_method = "F2FA2FC59B103E0B192FEFE094FC5B73")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:34.847 -0400", hash_original_method = "48BD6DC2300FE39DD3A4B34C3DD91993", hash_generated_method = "129748059E00D05B7C3428EAD3D1B16D")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     public void moveTaskBackwards(int task) throws RemoteException {
         dsTaint.addTaint(task);
         Parcel data;
@@ -3240,8 +3229,8 @@ class ActivityManagerProxy implements IActivityManager {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:14:58.168 -0400", hash_original_method = "3FABC29A3C68690EBF6B4F44EE4A5D23", hash_generated_method = "7658F650AC5E3C686775051AA41EA253")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:34.848 -0400", hash_original_method = "3FABC29A3C68690EBF6B4F44EE4A5D23", hash_generated_method = "10AB9922091C3B48A20A6CC6D5B306E8")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     public int getTaskForActivity(IBinder token, boolean onlyRoot) throws RemoteException {
         dsTaint.addTaint(token.dsTaint);
         dsTaint.addTaint(onlyRoot);
@@ -3274,8 +3263,8 @@ class ActivityManagerProxy implements IActivityManager {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:14:58.168 -0400", hash_original_method = "AF696C3AA9BD79AC1F2D6780E820F3FA", hash_generated_method = "9DA5E14544F18B1DF0BCDD2603351E83")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:34.849 -0400", hash_original_method = "AF696C3AA9BD79AC1F2D6780E820F3FA", hash_generated_method = "26140FB49CC725BB17A1E250652B6F77")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     public void finishOtherInstances(IBinder token, ComponentName className) throws RemoteException {
         dsTaint.addTaint(token.dsTaint);
         dsTaint.addTaint(className.dsTaint);
@@ -3303,8 +3292,8 @@ class ActivityManagerProxy implements IActivityManager {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:14:58.169 -0400", hash_original_method = "4B3E31ABB8C007E1B3828F729DFD9393", hash_generated_method = "27A8D3EDA1550EA975044EC1087B6E9D")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:34.849 -0400", hash_original_method = "4B3E31ABB8C007E1B3828F729DFD9393", hash_generated_method = "1AF3BE8A99D3941EF3E3FA1165D2CE6B")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     public void reportThumbnail(IBinder token,
                                 Bitmap thumbnail, CharSequence description) throws RemoteException {
         dsTaint.addTaint(thumbnail.dsTaint);
@@ -3347,7 +3336,7 @@ class ActivityManagerProxy implements IActivityManager {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:14:58.169 -0400", hash_original_method = "EC6CF87E25124312A62325C5F062E996", hash_generated_method = "7EF95140A794E9F414D7C4A82009CA88")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:34.850 -0400", hash_original_method = "EC6CF87E25124312A62325C5F062E996", hash_generated_method = "E81E1ECBAA02ECFD1D5A3381975B8B53")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public ContentProviderHolder getContentProvider(IApplicationThread caller,
                                                     String name) throws RemoteException {
@@ -3391,7 +3380,7 @@ class ActivityManagerProxy implements IActivityManager {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:14:58.169 -0400", hash_original_method = "9C5D73DEFA4B6B21F8A4E01DC5E46521", hash_generated_method = "A9CBCDD3D5855B4DAD250988D9CC5EDC")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:34.851 -0400", hash_original_method = "9C5D73DEFA4B6B21F8A4E01DC5E46521", hash_generated_method = "B97795E3FC6E703EB7792CAD2ADD8D7B")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public void publishContentProviders(IApplicationThread caller,
                                         List<ContentProviderHolder> providers) throws RemoteException {
@@ -3421,7 +3410,7 @@ class ActivityManagerProxy implements IActivityManager {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:14:58.170 -0400", hash_original_method = "6E983079D2A10BB8E3DF4E66B032EE6D", hash_generated_method = "D5A149FC188C8B1540B87E0CF6B30F29")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:34.852 -0400", hash_original_method = "6E983079D2A10BB8E3DF4E66B032EE6D", hash_generated_method = "B737EBA14FC21D662EA548FBCF231622")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public void removeContentProvider(IApplicationThread caller,
             String name) throws RemoteException {
@@ -3451,8 +3440,8 @@ class ActivityManagerProxy implements IActivityManager {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:14:58.170 -0400", hash_original_method = "E5355EA6A0F8270964E816C69524096C", hash_generated_method = "FEFA23F808CA161FEE329D7D61F74E07")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:34.854 -0400", hash_original_method = "E5355EA6A0F8270964E816C69524096C", hash_generated_method = "4B3D8EB6EAB9BB050D25CC95B3E9F2D8")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     public PendingIntent getRunningServiceControlPanel(ComponentName service) throws RemoteException {
         dsTaint.addTaint(service.dsTaint);
         Parcel data;
@@ -3482,7 +3471,7 @@ class ActivityManagerProxy implements IActivityManager {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:14:58.171 -0400", hash_original_method = "A683CF3BA039B3B97AA6ADC23E6FBDCC", hash_generated_method = "E3C3CC8061D6BC34BF5A49F83ED568E8")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:34.856 -0400", hash_original_method = "A683CF3BA039B3B97AA6ADC23E6FBDCC", hash_generated_method = "33C0D41E0D285222ACB0968AF980E569")
     @DSModeled(DSC.SPEC)
     public ComponentName startService(IApplicationThread caller, Intent service,
             String resolvedType) throws RemoteException {
@@ -3520,7 +3509,7 @@ class ActivityManagerProxy implements IActivityManager {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:14:58.171 -0400", hash_original_method = "B5D9E3A4F6ABA893303F2F02B64751B8", hash_generated_method = "C876434122A9F2A1B2AD3D8471CDFAB8")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:34.858 -0400", hash_original_method = "B5D9E3A4F6ABA893303F2F02B64751B8", hash_generated_method = "88C8219AF98AE0F911581434E74CC702")
     @DSModeled(DSC.SPEC)
     public int stopService(IApplicationThread caller, Intent service,
             String resolvedType) throws RemoteException {
@@ -3558,7 +3547,7 @@ class ActivityManagerProxy implements IActivityManager {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:14:58.172 -0400", hash_original_method = "DB1BCCF2CB5E2532E24072B1F607F963", hash_generated_method = "36763CC528CE16F661E8A50315DE426F")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:34.858 -0400", hash_original_method = "DB1BCCF2CB5E2532E24072B1F607F963", hash_generated_method = "413471B5F3C4CD71CAC37D7A714A01F3")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public boolean stopServiceToken(ComponentName className, IBinder token,
             int startId) throws RemoteException {
@@ -3596,13 +3585,13 @@ class ActivityManagerProxy implements IActivityManager {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:14:58.172 -0400", hash_original_method = "9DE0D26C134349F3DA011E11517F3FF5", hash_generated_method = "8723E8FFE49C81C8A2808E1563B4C9F5")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:34.859 -0400", hash_original_method = "9DE0D26C134349F3DA011E11517F3FF5", hash_generated_method = "144C950787211370FA7E0A4221BDB1BC")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     public void setServiceForeground(ComponentName className, IBinder token,
             int id, Notification notification, boolean removeNotification) throws RemoteException {
         dsTaint.addTaint(id);
-        dsTaint.addTaint(token.dsTaint);
         dsTaint.addTaint(removeNotification);
+        dsTaint.addTaint(token.dsTaint);
         dsTaint.addTaint(notification.dsTaint);
         dsTaint.addTaint(className.dsTaint);
         Parcel data;
@@ -3646,7 +3635,7 @@ class ActivityManagerProxy implements IActivityManager {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:14:58.173 -0400", hash_original_method = "A1E6D6F237E88697017FA79FBE451840", hash_generated_method = "AA04AB472C7E63792E5D5796CFB23827")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:34.861 -0400", hash_original_method = "A1E6D6F237E88697017FA79FBE451840", hash_generated_method = "7792CD2A4D13BD00C617CAA8E70D9B5C")
     @DSModeled(DSC.SPEC)
     public int bindService(IApplicationThread caller, IBinder token,
             Intent service, String resolvedType, IServiceConnection connection,
@@ -3694,7 +3683,7 @@ class ActivityManagerProxy implements IActivityManager {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:14:58.173 -0400", hash_original_method = "E0BD37EB96539E724DE863D335954DC9", hash_generated_method = "38D310A26338A32788898A6D93744942")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:34.862 -0400", hash_original_method = "E0BD37EB96539E724DE863D335954DC9", hash_generated_method = "362B28546B4DF2E09AF0F78D4923836A")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public boolean unbindService(IServiceConnection connection) throws RemoteException {
         dsTaint.addTaint(connection.dsTaint);
@@ -3725,7 +3714,7 @@ class ActivityManagerProxy implements IActivityManager {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:14:58.174 -0400", hash_original_method = "87A207496B270585D5EEA34C1AF57170", hash_generated_method = "E9541155E5C5AA70A0827CA342ACD084")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:34.863 -0400", hash_original_method = "87A207496B270585D5EEA34C1AF57170", hash_generated_method = "F87CFF3D875B097736E2C4666F5C6007")
     @DSModeled(DSC.SPEC)
     public void publishService(IBinder token,
             Intent intent, IBinder service) throws RemoteException {
@@ -3758,7 +3747,7 @@ class ActivityManagerProxy implements IActivityManager {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:14:58.174 -0400", hash_original_method = "3796516624A8D493E471933ECF7A3CD3", hash_generated_method = "85F17004D8948AF3D8ECC2A43F6CE4D8")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:34.863 -0400", hash_original_method = "3796516624A8D493E471933ECF7A3CD3", hash_generated_method = "75602478168C005A74908A00AD0FE0DD")
     @DSModeled(DSC.SPEC)
     public void unbindFinished(IBinder token, Intent intent, boolean doRebind) throws RemoteException {
         dsTaint.addTaint(token.dsTaint);
@@ -3790,8 +3779,8 @@ class ActivityManagerProxy implements IActivityManager {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:14:58.175 -0400", hash_original_method = "1CB80C62A00C622E35F1B57A132292E9", hash_generated_method = "BF561A4323424DB78120561F0618F57C")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:34.864 -0400", hash_original_method = "1CB80C62A00C622E35F1B57A132292E9", hash_generated_method = "F2D81E1DEAB02D0453F072387B15F45E")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     public void serviceDoneExecuting(IBinder token, int type, int startId,
             int res) throws RemoteException {
         dsTaint.addTaint(res);
@@ -3826,7 +3815,7 @@ class ActivityManagerProxy implements IActivityManager {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:14:58.175 -0400", hash_original_method = "BEF476EE5F43517187661CDC39F2A448", hash_generated_method = "5280CB63B4C266213C940776879C16C6")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:34.865 -0400", hash_original_method = "BEF476EE5F43517187661CDC39F2A448", hash_generated_method = "FEE9313C356ECAECD1D572654D896920")
     @DSModeled(DSC.SPEC)
     public IBinder peekService(Intent service, String resolvedType) throws RemoteException {
         dsTaint.addTaint(service.dsTaint);
@@ -3860,7 +3849,7 @@ class ActivityManagerProxy implements IActivityManager {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:14:58.175 -0400", hash_original_method = "7AACC08C389BEE0061373162626F356D", hash_generated_method = "12FD4E600EB02CF703A8BF8F49CFDAD2")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:34.865 -0400", hash_original_method = "7AACC08C389BEE0061373162626F356D", hash_generated_method = "699554264B126CF9E6DF2146CBBFF2E6")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public boolean bindBackupAgent(ApplicationInfo app, int backupRestoreMode) throws RemoteException {
         dsTaint.addTaint(app.dsTaint);
@@ -3894,8 +3883,8 @@ class ActivityManagerProxy implements IActivityManager {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:14:58.176 -0400", hash_original_method = "ADE4561AB0FC3828104C329F05A9B88C", hash_generated_method = "13568CB7C69AD3BC61D4F79B4A9C563B")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:34.866 -0400", hash_original_method = "ADE4561AB0FC3828104C329F05A9B88C", hash_generated_method = "9DE87FA74B00E30A21AE91260BD3E928")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     public void backupAgentCreated(String packageName, IBinder agent) throws RemoteException {
         dsTaint.addTaint(packageName);
         dsTaint.addTaint(agent.dsTaint);
@@ -3921,8 +3910,8 @@ class ActivityManagerProxy implements IActivityManager {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:14:58.176 -0400", hash_original_method = "80BB0DB939AA2A14DC79CE879293739F", hash_generated_method = "5E5975CEC10A9AFDB17FB1757DC01838")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:34.867 -0400", hash_original_method = "80BB0DB939AA2A14DC79CE879293739F", hash_generated_method = "4B421914749EB031298FB707FE7F55BF")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     public void unbindBackupAgent(ApplicationInfo app) throws RemoteException {
         dsTaint.addTaint(app.dsTaint);
         Parcel data;
@@ -3947,12 +3936,12 @@ class ActivityManagerProxy implements IActivityManager {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:14:58.177 -0400", hash_original_method = "7977DF3866173BBD9227641CB70C5B9A", hash_generated_method = "8C3E25AC077581CD3E786F0C92A0D48D")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:34.867 -0400", hash_original_method = "7977DF3866173BBD9227641CB70C5B9A", hash_generated_method = "A5B981BF492A59584482CE7900B066C9")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public boolean startInstrumentation(ComponentName className, String profileFile,
             int flags, Bundle arguments, IInstrumentationWatcher watcher) throws RemoteException {
-        dsTaint.addTaint(flags);
         dsTaint.addTaint(arguments.dsTaint);
+        dsTaint.addTaint(flags);
         dsTaint.addTaint(className.dsTaint);
         dsTaint.addTaint(profileFile);
         dsTaint.addTaint(watcher.dsTaint);
@@ -3991,13 +3980,13 @@ class ActivityManagerProxy implements IActivityManager {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:14:58.177 -0400", hash_original_method = "D76B5F1B397FC7028B59F12CA3604783", hash_generated_method = "492A497C09453E10378E9BACDEE0883F")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:34.868 -0400", hash_original_method = "D76B5F1B397FC7028B59F12CA3604783", hash_generated_method = "AADB0C9978DE97C4B0F452FB493A3DDA")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public void finishInstrumentation(IApplicationThread target,
             int resultCode, Bundle results) throws RemoteException {
         dsTaint.addTaint(results.dsTaint);
-        dsTaint.addTaint(target.dsTaint);
         dsTaint.addTaint(resultCode);
+        dsTaint.addTaint(target.dsTaint);
         Parcel data;
         data = Parcel.obtain();
         Parcel reply;
@@ -4024,8 +4013,8 @@ class ActivityManagerProxy implements IActivityManager {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:14:58.178 -0400", hash_original_method = "E824FA9DB2D76671E24682EC782F4756", hash_generated_method = "69C01CA385D3A75A3EE205D46926BF80")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:34.869 -0400", hash_original_method = "E824FA9DB2D76671E24682EC782F4756", hash_generated_method = "7A2E0DABD3E1F4C83145E223390BC3D6")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     public Configuration getConfiguration() throws RemoteException {
         Parcel data;
         data = Parcel.obtain();
@@ -4052,8 +4041,8 @@ class ActivityManagerProxy implements IActivityManager {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:14:58.178 -0400", hash_original_method = "76911A2717FEEEC7D6B4E93DC7F2427C", hash_generated_method = "7CF2CA9D87215C9A34E95239456F9DAF")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:34.869 -0400", hash_original_method = "76911A2717FEEEC7D6B4E93DC7F2427C", hash_generated_method = "998CB5FEDFA5C1A1467D186C13856BCA")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     public void updateConfiguration(Configuration values) throws RemoteException {
         dsTaint.addTaint(values.dsTaint);
         Parcel data;
@@ -4078,8 +4067,8 @@ class ActivityManagerProxy implements IActivityManager {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:14:58.179 -0400", hash_original_method = "65FC5D17EF9FF3BF1BFFDA9CCA9A4BE1", hash_generated_method = "D2BAB516206DD395D0AAE62DA64D8EFD")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:34.870 -0400", hash_original_method = "65FC5D17EF9FF3BF1BFFDA9CCA9A4BE1", hash_generated_method = "8B14598D16DA7DD1B2E3C32894EFD50C")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     public void setRequestedOrientation(IBinder token, int requestedOrientation) throws RemoteException {
         dsTaint.addTaint(requestedOrientation);
         dsTaint.addTaint(token.dsTaint);
@@ -4107,8 +4096,8 @@ class ActivityManagerProxy implements IActivityManager {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:14:58.179 -0400", hash_original_method = "505D3FD7966F547E2BAA16E1C1C5F05B", hash_generated_method = "728548D7403AB3FC9DC370128096C32A")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:34.871 -0400", hash_original_method = "505D3FD7966F547E2BAA16E1C1C5F05B", hash_generated_method = "276297112ED725E879D1631273BBF75C")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     public int getRequestedOrientation(IBinder token) throws RemoteException {
         dsTaint.addTaint(token.dsTaint);
         Parcel data;
@@ -4138,8 +4127,8 @@ class ActivityManagerProxy implements IActivityManager {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:14:58.179 -0400", hash_original_method = "BCB55F79D75B3B83E49A75043EE249A9", hash_generated_method = "623E3D1F39FB8B0C4FEFA4764FA47530")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:34.871 -0400", hash_original_method = "BCB55F79D75B3B83E49A75043EE249A9", hash_generated_method = "70D56B92B36957672DFB961B99478132")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     public ComponentName getActivityClassForToken(IBinder token) throws RemoteException {
         dsTaint.addTaint(token.dsTaint);
         Parcel data;
@@ -4169,8 +4158,8 @@ class ActivityManagerProxy implements IActivityManager {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:14:58.180 -0400", hash_original_method = "9BAE752D062408101ED2F689CF20DDD1", hash_generated_method = "0E1C609DF05FBAEC9455CD4117589328")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:34.872 -0400", hash_original_method = "9BAE752D062408101ED2F689CF20DDD1", hash_generated_method = "E4CF5C61B0B4FA85F9988AB7AE5C0119")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     public String getPackageForToken(IBinder token) throws RemoteException {
         dsTaint.addTaint(token.dsTaint);
         Parcel data;
@@ -4200,18 +4189,18 @@ class ActivityManagerProxy implements IActivityManager {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:14:58.180 -0400", hash_original_method = "AE56AE3D6914251F9FFFA7E33C698EB6", hash_generated_method = "1D2691C7F636DE8358F62A26DDD8AD7D")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:34.873 -0400", hash_original_method = "AE56AE3D6914251F9FFFA7E33C698EB6", hash_generated_method = "FC64389942B9028D5357C04A34BE4295")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public IIntentSender getIntentSender(int type,
             String packageName, IBinder token, String resultWho,
             int requestCode, Intent[] intents, String[] resolvedTypes, int flags) throws RemoteException {
-        dsTaint.addTaint(intents[0].dsTaint);
         dsTaint.addTaint(flags);
+        dsTaint.addTaint(intents[0].dsTaint);
         dsTaint.addTaint(packageName);
-        dsTaint.addTaint(token.dsTaint);
         dsTaint.addTaint(requestCode);
+        dsTaint.addTaint(token.dsTaint);
+        dsTaint.addTaint(resolvedTypes[0]);
         dsTaint.addTaint(resultWho);
-        dsTaint.addTaint(resolvedTypes);
         dsTaint.addTaint(type);
         Parcel data;
         data = Parcel.obtain();
@@ -4267,7 +4256,7 @@ class ActivityManagerProxy implements IActivityManager {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:14:58.181 -0400", hash_original_method = "D459AA1ADAE84FC2B7BB3BA73C047FDB", hash_generated_method = "71978516D025D64CA1003C2C64E7F0C7")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:34.873 -0400", hash_original_method = "D459AA1ADAE84FC2B7BB3BA73C047FDB", hash_generated_method = "1520714943AD3A7FA08DCA0922F5016B")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public void cancelIntentSender(IIntentSender sender) throws RemoteException {
         dsTaint.addTaint(sender.dsTaint);
@@ -4293,7 +4282,7 @@ class ActivityManagerProxy implements IActivityManager {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:14:58.181 -0400", hash_original_method = "1993496C4F183452017D412A9B9C5C29", hash_generated_method = "A262C26261344A8F02710F2BEFD1204B")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:34.874 -0400", hash_original_method = "1993496C4F183452017D412A9B9C5C29", hash_generated_method = "73E15D2ABAB0375B7E532F2450453811")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public String getPackageForIntentSender(IIntentSender sender) throws RemoteException {
         dsTaint.addTaint(sender.dsTaint);
@@ -4324,8 +4313,8 @@ class ActivityManagerProxy implements IActivityManager {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:14:58.182 -0400", hash_original_method = "92B622DC0CB7ED23BB116E8953A0A90A", hash_generated_method = "C1D4B8D65591A66D0B537DDEB9CBF9A7")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:34.875 -0400", hash_original_method = "92B622DC0CB7ED23BB116E8953A0A90A", hash_generated_method = "EF4FE26D5FA8672CA2DAFA59568D15EA")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     public void setProcessLimit(int max) throws RemoteException {
         dsTaint.addTaint(max);
         Parcel data;
@@ -4350,8 +4339,8 @@ class ActivityManagerProxy implements IActivityManager {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:14:58.182 -0400", hash_original_method = "4FA932EFF1C9BAC6AA973FE979D6B75F", hash_generated_method = "FA06C5EC971362F5D91332A1B48FCBF2")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:34.875 -0400", hash_original_method = "4FA932EFF1C9BAC6AA973FE979D6B75F", hash_generated_method = "E6664579BB7564E9D10E5D13536C2D53")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     public int getProcessLimit() throws RemoteException {
         Parcel data;
         data = Parcel.obtain();
@@ -4378,8 +4367,8 @@ class ActivityManagerProxy implements IActivityManager {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:14:58.182 -0400", hash_original_method = "16F5E36D0F576E8CD2EC3F6B33B5169D", hash_generated_method = "2A50D8B8B8E777455FD1085C3BE5E99D")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:34.876 -0400", hash_original_method = "16F5E36D0F576E8CD2EC3F6B33B5169D", hash_generated_method = "273A557B5B278CDEC97A89519EF91DAB")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     public void setProcessForeground(IBinder token, int pid,
             boolean isForeground) throws RemoteException {
         dsTaint.addTaint(isForeground);
@@ -4411,12 +4400,12 @@ class ActivityManagerProxy implements IActivityManager {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:14:58.183 -0400", hash_original_method = "A50C503DC3495EB643680A38372DD1F5", hash_generated_method = "0B4558EE8E4905A3E6187C728BFA84D9")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:34.877 -0400", hash_original_method = "A50C503DC3495EB643680A38372DD1F5", hash_generated_method = "C5B5FC1BFAADA762B1EB21AE23FA39F5")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     public int checkPermission(String permission, int pid, int uid) throws RemoteException {
         dsTaint.addTaint(uid);
-        dsTaint.addTaint(permission);
         dsTaint.addTaint(pid);
+        dsTaint.addTaint(permission);
         Parcel data;
         data = Parcel.obtain();
         Parcel reply;
@@ -4448,11 +4437,10 @@ class ActivityManagerProxy implements IActivityManager {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:14:58.183 -0400", hash_original_method = "BE5C38AE92A5EE5CE45944FF93295090", hash_generated_method = "E7AFA44D352A0D7DEB7C8B4E6B5B271E")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:34.877 -0400", hash_original_method = "BE5C38AE92A5EE5CE45944FF93295090", hash_generated_method = "1CBD4D4AB74702153CF786DED6DFC795")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public boolean clearApplicationUserData(final String packageName,
             final IPackageDataObserver observer) throws RemoteException {
-        //DSFIXME:  CODE0009: Possible callback target function detected
         dsTaint.addTaint(packageName);
         dsTaint.addTaint(observer.dsTaint);
         Parcel data;
@@ -4484,7 +4472,7 @@ class ActivityManagerProxy implements IActivityManager {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:14:58.184 -0400", hash_original_method = "FEF4F93E5B02F55707A11B36638BBB59", hash_generated_method = "D1FCD611AC93EA346F263366BD08B23A")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:34.878 -0400", hash_original_method = "FEF4F93E5B02F55707A11B36638BBB59", hash_generated_method = "45332C78B7FA8121B126C7B7CB934EC7")
     @DSModeled(DSC.SPEC)
     public int checkUriPermission(Uri uri, int pid, int uid, int mode) throws RemoteException {
         dsTaint.addTaint(uid);
@@ -4524,7 +4512,7 @@ class ActivityManagerProxy implements IActivityManager {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:14:58.184 -0400", hash_original_method = "2CEB2CA82A36297F49BF5DB3286E579B", hash_generated_method = "4DEB2F7FE83555248D4BCF923ADDC207")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:34.879 -0400", hash_original_method = "2CEB2CA82A36297F49BF5DB3286E579B", hash_generated_method = "485848987272A1B3DAA13119D643BE82")
     @DSModeled(DSC.SPEC)
     public void grantUriPermission(IApplicationThread caller, String targetPkg,
             Uri uri, int mode) throws RemoteException {
@@ -4560,7 +4548,7 @@ class ActivityManagerProxy implements IActivityManager {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:14:58.185 -0400", hash_original_method = "84D534ABCBC85608735C63399D2C9E1E", hash_generated_method = "DD8EF6395103B40CE801BEAF9E097887")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:34.881 -0400", hash_original_method = "84D534ABCBC85608735C63399D2C9E1E", hash_generated_method = "EFD455D57A0118692B172296ADA42E9A")
     @DSModeled(DSC.SPEC)
     public void revokeUriPermission(IApplicationThread caller, Uri uri,
             int mode) throws RemoteException {
@@ -4593,7 +4581,7 @@ class ActivityManagerProxy implements IActivityManager {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:14:58.185 -0400", hash_original_method = "7FC96553233904C2463E3D793E528211", hash_generated_method = "B22808D3FB2A1ED349DAC3CECA093F5A")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:34.882 -0400", hash_original_method = "7FC96553233904C2463E3D793E528211", hash_generated_method = "F90430D97DDD5002E6394A359837D5E2")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public void showWaitingForDebugger(IApplicationThread who, boolean waiting) throws RemoteException {
         dsTaint.addTaint(waiting);
@@ -4622,8 +4610,8 @@ class ActivityManagerProxy implements IActivityManager {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:14:58.186 -0400", hash_original_method = "40DDB58D1BE7B54E85772ACF1AA60D8F", hash_generated_method = "A2AF7ACB7256FDFE2BAF8B26DBDB643D")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:34.883 -0400", hash_original_method = "40DDB58D1BE7B54E85772ACF1AA60D8F", hash_generated_method = "91AE7A81FA97ECA52ABDFE3A9B0257C4")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     public void getMemoryInfo(ActivityManager.MemoryInfo outInfo) throws RemoteException {
         dsTaint.addTaint(outInfo.dsTaint);
         Parcel data;
@@ -4648,8 +4636,8 @@ class ActivityManagerProxy implements IActivityManager {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:14:58.186 -0400", hash_original_method = "805F881D84830966D1AD0B083D69DA9A", hash_generated_method = "67E69D1FEE61F1F57A0A7F9030D04920")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:34.884 -0400", hash_original_method = "805F881D84830966D1AD0B083D69DA9A", hash_generated_method = "42784F3026C0A0D25A2A024B2E27B1F2")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     public void unhandledBack() throws RemoteException {
         Parcel data;
         data = Parcel.obtain();
@@ -4671,7 +4659,7 @@ class ActivityManagerProxy implements IActivityManager {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:14:58.187 -0400", hash_original_method = "1E46E6C9628834765008140B25990D23", hash_generated_method = "66FEE9714124F096C85ADF5CE2F151F3")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:34.885 -0400", hash_original_method = "1E46E6C9628834765008140B25990D23", hash_generated_method = "026029A3DF68336AC7EDC5705648E3F9")
     @DSModeled(DSC.SPEC)
     public ParcelFileDescriptor openContentUri(Uri uri) throws RemoteException {
         dsTaint.addTaint(uri.dsTaint);
@@ -4685,7 +4673,7 @@ class ActivityManagerProxy implements IActivityManager {
         ParcelFileDescriptor pfd;
         pfd = null;
         {
-            boolean varB04A284F06B56929F38634A7F4C6A0D7_1731953791 = (reply.readInt() != 0);
+            boolean varB04A284F06B56929F38634A7F4C6A0D7_2070967451 = (reply.readInt() != 0);
             {
                 pfd = ParcelFileDescriptor.CREATOR.createFromParcel(reply);
             } //End block
@@ -4709,8 +4697,8 @@ class ActivityManagerProxy implements IActivityManager {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:14:58.187 -0400", hash_original_method = "E3BC510BF36E68FD23494212AB6E7B33", hash_generated_method = "2A81B783B4C313B5650DE44BAB4430F5")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:34.886 -0400", hash_original_method = "E3BC510BF36E68FD23494212AB6E7B33", hash_generated_method = "FFBC3DEB08C7FC6E579AF592A878016E")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     public void goingToSleep() throws RemoteException {
         Parcel data;
         data = Parcel.obtain();
@@ -4732,8 +4720,8 @@ class ActivityManagerProxy implements IActivityManager {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:14:58.187 -0400", hash_original_method = "CAFF51A84FC631E180A23D0F5290B43F", hash_generated_method = "2B6BE591B6182B82FADB6F72EA1A9541")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:34.888 -0400", hash_original_method = "CAFF51A84FC631E180A23D0F5290B43F", hash_generated_method = "BE931B7C3EDD7251D16E613C4E055624")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     public void wakingUp() throws RemoteException {
         Parcel data;
         data = Parcel.obtain();
@@ -4755,12 +4743,12 @@ class ActivityManagerProxy implements IActivityManager {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:14:58.188 -0400", hash_original_method = "482C4468B37AD6CEF12EA376A273F16E", hash_generated_method = "30FE926BC1241DBBB0D04453D5C07547")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:34.892 -0400", hash_original_method = "482C4468B37AD6CEF12EA376A273F16E", hash_generated_method = "23CEADF52CF89293EC9A3652F4687FC7")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     public void setDebugApp(
         String packageName, boolean waitForDebugger, boolean persistent) throws RemoteException {
-        dsTaint.addTaint(packageName);
         dsTaint.addTaint(persistent);
+        dsTaint.addTaint(packageName);
         dsTaint.addTaint(waitForDebugger);
         Parcel data;
         data = Parcel.obtain();
@@ -4788,8 +4776,8 @@ class ActivityManagerProxy implements IActivityManager {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:14:58.188 -0400", hash_original_method = "DE27B8A416D8E1FF87F079AFA1567A6E", hash_generated_method = "C67CB1C0418A38130483B4900B0C9E60")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:34.893 -0400", hash_original_method = "DE27B8A416D8E1FF87F079AFA1567A6E", hash_generated_method = "D8193F6FE058B6BD615D5ADEF53A6203")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     public void setAlwaysFinish(boolean enabled) throws RemoteException {
         dsTaint.addTaint(enabled);
         Parcel data;
@@ -4814,7 +4802,7 @@ class ActivityManagerProxy implements IActivityManager {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:14:58.188 -0400", hash_original_method = "D7DBDAD7386DC1F45D7A9AB12513A49B", hash_generated_method = "966B23DB98A6A28162EF954D37F5B6F3")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:34.893 -0400", hash_original_method = "D7DBDAD7386DC1F45D7A9AB12513A49B", hash_generated_method = "A66C16F541053FC177F54B99DF14749B")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public void setActivityController(IActivityController watcher) throws RemoteException {
         dsTaint.addTaint(watcher.dsTaint);
@@ -4840,8 +4828,8 @@ class ActivityManagerProxy implements IActivityManager {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:14:58.189 -0400", hash_original_method = "FF7EEF7728CACAD7286D113A3CF07513", hash_generated_method = "54ACAD2DB830A980853103620F39B865")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:34.894 -0400", hash_original_method = "FF7EEF7728CACAD7286D113A3CF07513", hash_generated_method = "8BE9FBF4A7C7869BD53D6F6EF7FEFE7F")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     public void enterSafeMode() throws RemoteException {
         Parcel data;
         data = Parcel.obtain();
@@ -4856,7 +4844,7 @@ class ActivityManagerProxy implements IActivityManager {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:14:58.189 -0400", hash_original_method = "72F87C80970F6885E4DCD6DA1B2F19E8", hash_generated_method = "E33958316F1E5F8D214976D541A68ABA")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:34.894 -0400", hash_original_method = "72F87C80970F6885E4DCD6DA1B2F19E8", hash_generated_method = "3E6417CC44EA069B60A9C056CC8CEF85")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public void noteWakeupAlarm(IIntentSender sender) throws RemoteException {
         dsTaint.addTaint(sender.dsTaint);
@@ -4875,11 +4863,11 @@ class ActivityManagerProxy implements IActivityManager {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:14:58.190 -0400", hash_original_method = "DB2721BD1E4C8F1064AA0461CF2A490B", hash_generated_method = "7A6A64590408FBF7D919AC23E2A38404")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:34.895 -0400", hash_original_method = "DB2721BD1E4C8F1064AA0461CF2A490B", hash_generated_method = "C85005A1D96F19B3966A50CA4A2E4125")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public boolean killPids(int[] pids, String reason, boolean secure) throws RemoteException {
-        dsTaint.addTaint(pids);
         dsTaint.addTaint(reason);
+        dsTaint.addTaint(pids[0]);
         dsTaint.addTaint(secure);
         Parcel data;
         data = Parcel.obtain();
@@ -4910,8 +4898,8 @@ class ActivityManagerProxy implements IActivityManager {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:14:58.190 -0400", hash_original_method = "9964526F9DDC53538E50ED934A9D4009", hash_generated_method = "C2EF8DF6EB90ABF5B16DA727A97672F1")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:34.896 -0400", hash_original_method = "9964526F9DDC53538E50ED934A9D4009", hash_generated_method = "637F89B3D3E47DE599A150B92D4B0C8C")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     public void startRunning(String pkg, String cls, String action,
             String indata) throws RemoteException {
         dsTaint.addTaint(cls);
@@ -4946,7 +4934,7 @@ class ActivityManagerProxy implements IActivityManager {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:14:58.190 -0400", hash_original_method = "6C8B2FE75A3BFFE16EADA916F678A09D", hash_generated_method = "784AB7847DEB4495A44921651C6BB7EB")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:34.896 -0400", hash_original_method = "6C8B2FE75A3BFFE16EADA916F678A09D", hash_generated_method = "03B0F501F3E778B0A344ED28A7B26878")
     @DSModeled(DSC.SAFE)
     public boolean testIsSystemReady() {
         return dsTaint.getTaintBoolean();
@@ -4955,11 +4943,10 @@ class ActivityManagerProxy implements IActivityManager {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:14:58.191 -0400", hash_original_method = "523AF9597115E332AF2A1F534C49483C", hash_generated_method = "B105E5039AF6BFAC09A0044BDE492B76")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:34.897 -0400", hash_original_method = "523AF9597115E332AF2A1F534C49483C", hash_generated_method = "2F82F8F832A56A6994B87E7BC023503A")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     public void handleApplicationCrash(IBinder app,
             ApplicationErrorReport.CrashInfo crashInfo) throws RemoteException {
-        //DSFIXME:  CODE0009: Possible callback target function detected
         dsTaint.addTaint(app.dsTaint);
         dsTaint.addTaint(crashInfo.dsTaint);
         Parcel data;
@@ -4986,11 +4973,10 @@ class ActivityManagerProxy implements IActivityManager {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:14:58.191 -0400", hash_original_method = "84EFC78EC4B379D270C222A7BC31C5F7", hash_generated_method = "249575D1FCA2A7FB146964943F6E6DE8")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:34.898 -0400", hash_original_method = "84EFC78EC4B379D270C222A7BC31C5F7", hash_generated_method = "E31B0A68D58584589A927CC2BEDA780F")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public boolean handleApplicationWtf(IBinder app, String tag,
             ApplicationErrorReport.CrashInfo crashInfo) throws RemoteException {
-        //DSFIXME:  CODE0009: Possible callback target function detected
         dsTaint.addTaint(app.dsTaint);
         dsTaint.addTaint(tag);
         dsTaint.addTaint(crashInfo.dsTaint);
@@ -5025,15 +5011,14 @@ class ActivityManagerProxy implements IActivityManager {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:14:58.192 -0400", hash_original_method = "7AC27E481709B1F0B25AE2BA23B3BECF", hash_generated_method = "F0977F95DE4C42BC35FA73739A2A9066")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:34.898 -0400", hash_original_method = "7AC27E481709B1F0B25AE2BA23B3BECF", hash_generated_method = "9E5A60AAA908153B3860702C9DD2535E")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     public void handleApplicationStrictModeViolation(IBinder app,
             int violationMask,
             StrictMode.ViolationInfo info) throws RemoteException {
-        //DSFIXME:  CODE0009: Possible callback target function detected
         dsTaint.addTaint(app.dsTaint);
-        dsTaint.addTaint(violationMask);
         dsTaint.addTaint(info.dsTaint);
+        dsTaint.addTaint(violationMask);
         Parcel data;
         data = Parcel.obtain();
         Parcel reply;
@@ -5060,8 +5045,8 @@ class ActivityManagerProxy implements IActivityManager {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:14:58.192 -0400", hash_original_method = "22BD8EFAE7A36DA76D8B0F7F297E970D", hash_generated_method = "CAAFE057E6C47282227B2F1447CD17D1")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:34.899 -0400", hash_original_method = "22BD8EFAE7A36DA76D8B0F7F297E970D", hash_generated_method = "9E388D3CF96771780A977A16D003A26B")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     public void signalPersistentProcesses(int sig) throws RemoteException {
         dsTaint.addTaint(sig);
         Parcel data;
@@ -5086,8 +5071,8 @@ class ActivityManagerProxy implements IActivityManager {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:14:58.192 -0400", hash_original_method = "3D80332C8A0FCAFBCE220FADA30302CB", hash_generated_method = "D24B167F43561ED4A19240D2924EAAB4")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:34.900 -0400", hash_original_method = "3D80332C8A0FCAFBCE220FADA30302CB", hash_generated_method = "AB391C3E2A42CDB9426D9722F3F8A16C")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     public void killBackgroundProcesses(String packageName) throws RemoteException {
         dsTaint.addTaint(packageName);
         Parcel data;
@@ -5112,8 +5097,8 @@ class ActivityManagerProxy implements IActivityManager {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:14:58.193 -0400", hash_original_method = "C7F5D3EA775AD04DD438191F0B4D22C4", hash_generated_method = "640E17E0A5937ECFE02F00E24D30F03C")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:34.900 -0400", hash_original_method = "C7F5D3EA775AD04DD438191F0B4D22C4", hash_generated_method = "FD2D18652BBA0B48AEE79B10FADB04B0")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     public void killAllBackgroundProcesses() throws RemoteException {
         Parcel data;
         data = Parcel.obtain();
@@ -5135,8 +5120,8 @@ class ActivityManagerProxy implements IActivityManager {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:14:58.193 -0400", hash_original_method = "CB4D9E734B2DC6A00C763BA9D15D84CC", hash_generated_method = "18425EC1243D997DA6ECFBC70F0E6906")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:34.901 -0400", hash_original_method = "CB4D9E734B2DC6A00C763BA9D15D84CC", hash_generated_method = "72AB7140B7FE11BEDB448A42523E6E6C")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     public void forceStopPackage(String packageName) throws RemoteException {
         dsTaint.addTaint(packageName);
         Parcel data;
@@ -5161,10 +5146,9 @@ class ActivityManagerProxy implements IActivityManager {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:14:58.194 -0400", hash_original_method = "9F4AADDAC8F1648FD8C80C6B88BBF25F", hash_generated_method = "EE458C6B24B72B882C12BECE18EFC105")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:34.902 -0400", hash_original_method = "9F4AADDAC8F1648FD8C80C6B88BBF25F", hash_generated_method = "DCDD536A2AC015737ECCB944F189885D")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     public ConfigurationInfo getDeviceConfigurationInfo() throws RemoteException {
-        //DSFIXME:  CODE0009: Possible callback target function detected
         Parcel data;
         data = Parcel.obtain();
         Parcel reply;
@@ -5190,7 +5174,7 @@ class ActivityManagerProxy implements IActivityManager {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:14:58.194 -0400", hash_original_method = "10D7A082C97EAFB331405B7841F1651D", hash_generated_method = "9C719EFEFC0489F297DEAE06B730AF6B")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:34.902 -0400", hash_original_method = "10D7A082C97EAFB331405B7841F1651D", hash_generated_method = "6D7B5F96086AEDE28D1B3049DADC6167")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public boolean profileControl(String process, boolean start,
             String path, ParcelFileDescriptor fd, int profileType) throws RemoteException {
@@ -5245,7 +5229,7 @@ class ActivityManagerProxy implements IActivityManager {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:14:58.195 -0400", hash_original_method = "52F9DB0BA2A0AB8C52093D208807035C", hash_generated_method = "7EEB2225F0C35739E002A94828257952")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:34.903 -0400", hash_original_method = "52F9DB0BA2A0AB8C52093D208807035C", hash_generated_method = "B12CF0839310F1D1CB1908A15314B7ED")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public boolean shutdown(int timeout) throws RemoteException {
         dsTaint.addTaint(timeout);
@@ -5276,8 +5260,8 @@ class ActivityManagerProxy implements IActivityManager {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:14:58.195 -0400", hash_original_method = "BE7DD92CBAD030A60DB7090E3408574C", hash_generated_method = "E50E1E32B91F26749E07F8A0858BF1DC")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:34.904 -0400", hash_original_method = "BE7DD92CBAD030A60DB7090E3408574C", hash_generated_method = "6EFAFF2991D8E27886C5EB3C2C0F7776")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     public void stopAppSwitches() throws RemoteException {
         Parcel data;
         data = Parcel.obtain();
@@ -5299,8 +5283,8 @@ class ActivityManagerProxy implements IActivityManager {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:14:58.195 -0400", hash_original_method = "0EC9793095E20007EC76AB5DDDE4E54A", hash_generated_method = "71553085449D6A29F93E1EE388313011")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:34.904 -0400", hash_original_method = "0EC9793095E20007EC76AB5DDDE4E54A", hash_generated_method = "4D88D03CA17C616451D2F78971E5DDDE")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     public void resumeAppSwitches() throws RemoteException {
         Parcel data;
         data = Parcel.obtain();
@@ -5322,7 +5306,7 @@ class ActivityManagerProxy implements IActivityManager {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:14:58.196 -0400", hash_original_method = "7B78E2FEC61CC471A8E07C6C34C74BD6", hash_generated_method = "13724491DA7B0266AFC8E048E1A4E231")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:34.905 -0400", hash_original_method = "7B78E2FEC61CC471A8E07C6C34C74BD6", hash_generated_method = "2BC679AB7D162BC06DABD7D91A9EF986")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public void registerActivityWatcher(IActivityWatcher watcher) throws RemoteException {
         //DSFIXME: CODE0010: Possible callback registration function detected
@@ -5349,10 +5333,9 @@ class ActivityManagerProxy implements IActivityManager {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:14:58.196 -0400", hash_original_method = "8E5D6F085FE02A1442C5A617ADA012EC", hash_generated_method = "7A5D314E0F91307F72729A7AC91F8946")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:34.905 -0400", hash_original_method = "8E5D6F085FE02A1442C5A617ADA012EC", hash_generated_method = "C8F3F7B1CF006535EC9337D23DF918A0")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public void unregisterActivityWatcher(IActivityWatcher watcher) throws RemoteException {
-        //DSFIXME: CODE0010: Possible callback registration function detected
         dsTaint.addTaint(watcher.dsTaint);
         Parcel data;
         data = Parcel.obtain();
@@ -5376,14 +5359,14 @@ class ActivityManagerProxy implements IActivityManager {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:14:58.197 -0400", hash_original_method = "C65F778BCD540838D47FE4E4412CD25E", hash_generated_method = "D47A264E52CE11FD9B17C8C97ECD6B8E")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:34.906 -0400", hash_original_method = "C65F778BCD540838D47FE4E4412CD25E", hash_generated_method = "5286DB005B8D8E7770FC82FC426117FD")
     @DSModeled(DSC.SPEC)
     public int startActivityInPackage(int uid,
             Intent intent, String resolvedType, IBinder resultTo,
             String resultWho, int requestCode, boolean onlyIfNeeded) throws RemoteException {
         dsTaint.addTaint(uid);
-        dsTaint.addTaint(requestCode);
         dsTaint.addTaint(onlyIfNeeded);
+        dsTaint.addTaint(requestCode);
         dsTaint.addTaint(resultTo.dsTaint);
         dsTaint.addTaint(resultWho);
         dsTaint.addTaint(resolvedType);
@@ -5427,10 +5410,9 @@ class ActivityManagerProxy implements IActivityManager {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:14:58.197 -0400", hash_original_method = "9BA7CBE5CC5118373D7AAA1497A47635", hash_generated_method = "E05CEA6BC6234F36F894E0ABAFCCBD3A")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:34.907 -0400", hash_original_method = "9BA7CBE5CC5118373D7AAA1497A47635", hash_generated_method = "20FFD8C1634C8E875203E24F5D5B9B9C")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     public void killApplicationWithUid(String pkg, int uid) throws RemoteException {
-        //DSFIXME:  CODE0009: Possible callback target function detected
         dsTaint.addTaint(uid);
         dsTaint.addTaint(pkg);
         Parcel data;
@@ -5457,8 +5439,8 @@ class ActivityManagerProxy implements IActivityManager {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:14:58.197 -0400", hash_original_method = "2A680A4513BB1B95074F3F876F148BA8", hash_generated_method = "A964DFB03F1E116B40B4A427D752FA4B")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:34.907 -0400", hash_original_method = "2A680A4513BB1B95074F3F876F148BA8", hash_generated_method = "B399EA975BCCA5EF74E7FC8F91016636")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     public void closeSystemDialogs(String reason) throws RemoteException {
         dsTaint.addTaint(reason);
         Parcel data;
@@ -5483,10 +5465,10 @@ class ActivityManagerProxy implements IActivityManager {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:14:58.198 -0400", hash_original_method = "BD88F62F5112FCE1DE930509EBB83FD2", hash_generated_method = "31ADCDB185FBAE47DD3C1345BEB2540E")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:34.908 -0400", hash_original_method = "BD88F62F5112FCE1DE930509EBB83FD2", hash_generated_method = "76F393E6E227EF149BC31AA24A843CE9")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     public Debug.MemoryInfo[] getProcessMemoryInfo(int[] pids) throws RemoteException {
-        dsTaint.addTaint(pids);
+        dsTaint.addTaint(pids[0]);
         Parcel data;
         data = Parcel.obtain();
         Parcel reply;
@@ -5514,10 +5496,9 @@ class ActivityManagerProxy implements IActivityManager {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:14:58.198 -0400", hash_original_method = "0F16B6E02208618C1D3EE91B8DD80482", hash_generated_method = "CC6D99FE47B640E04F95B233F508E4BC")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:34.909 -0400", hash_original_method = "0F16B6E02208618C1D3EE91B8DD80482", hash_generated_method = "5242A5524720E7909AB5BD7AF9C2D58B")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     public void killApplicationProcess(String processName, int uid) throws RemoteException {
-        //DSFIXME:  CODE0009: Possible callback target function detected
         dsTaint.addTaint(uid);
         dsTaint.addTaint(processName);
         Parcel data;
@@ -5544,8 +5525,8 @@ class ActivityManagerProxy implements IActivityManager {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:14:58.199 -0400", hash_original_method = "00D6B54E331AC7AA3DC1F40B928FA3FD", hash_generated_method = "0CAED4F3C948C5F0C7F20F19A96B3A0C")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:34.909 -0400", hash_original_method = "00D6B54E331AC7AA3DC1F40B928FA3FD", hash_generated_method = "6706D9C157131DDE74DE593F59E0E609")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     public void overridePendingTransition(IBinder token, String packageName,
             int enterAnim, int exitAnim) throws RemoteException {
         dsTaint.addTaint(exitAnim);
@@ -5580,7 +5561,7 @@ class ActivityManagerProxy implements IActivityManager {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:14:58.199 -0400", hash_original_method = "0F906B538EF84DE09E15BAB8CDAE69C4", hash_generated_method = "208694F24402F9168CCB9511A0350DC4")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:34.910 -0400", hash_original_method = "0F906B538EF84DE09E15BAB8CDAE69C4", hash_generated_method = "6AD24C497BCC3DB24B0530E7BC504585")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public boolean isUserAMonkey() throws RemoteException {
         Parcel data;
@@ -5608,8 +5589,8 @@ class ActivityManagerProxy implements IActivityManager {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:14:58.199 -0400", hash_original_method = "CE9EE2ABB9C16E19ED0FB5ECED80A2D8", hash_generated_method = "EC77879103AB2979510755CACEC0BEC9")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:34.911 -0400", hash_original_method = "CE9EE2ABB9C16E19ED0FB5ECED80A2D8", hash_generated_method = "CFAA5D9A843B28C86BB6ABBF49358560")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     public void finishHeavyWeightApp() throws RemoteException {
         Parcel data;
         data = Parcel.obtain();
@@ -5631,8 +5612,8 @@ class ActivityManagerProxy implements IActivityManager {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:14:58.200 -0400", hash_original_method = "468B67BFEE008B6CDEC37F42802988FA", hash_generated_method = "2FAAC77C035082A592C3CB5ACB228386")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:34.911 -0400", hash_original_method = "468B67BFEE008B6CDEC37F42802988FA", hash_generated_method = "F390A391E735E6452CD64D89630A15DB")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     public void setImmersive(IBinder token, boolean immersive) throws RemoteException {
         dsTaint.addTaint(token.dsTaint);
         dsTaint.addTaint(immersive);
@@ -5660,7 +5641,7 @@ class ActivityManagerProxy implements IActivityManager {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:14:58.200 -0400", hash_original_method = "12E814937BEB239BDABA8A5EE4F6D00D", hash_generated_method = "A8F1E4758CEF05F6132414C373090703")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:34.912 -0400", hash_original_method = "12E814937BEB239BDABA8A5EE4F6D00D", hash_generated_method = "F7F27B20D2826434A216857200653E32")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public boolean isImmersive(IBinder token) throws RemoteException {
         dsTaint.addTaint(token.dsTaint);
@@ -5691,7 +5672,7 @@ class ActivityManagerProxy implements IActivityManager {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:14:58.201 -0400", hash_original_method = "0342E1772D9E2D527D167E41870AA176", hash_generated_method = "CAF2E87D6DCE386EF3E5824F34F02C94")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:34.912 -0400", hash_original_method = "0342E1772D9E2D527D167E41870AA176", hash_generated_method = "21A46AC917409F7B5C525A447D9BE90F")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public boolean isTopActivityImmersive() throws RemoteException {
         Parcel data;
@@ -5719,12 +5700,12 @@ class ActivityManagerProxy implements IActivityManager {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:14:58.201 -0400", hash_original_method = "574D561A4B99545A454A313F9DD764D8", hash_generated_method = "54CC419C1854B6059AD38F8059020462")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:34.913 -0400", hash_original_method = "574D561A4B99545A454A313F9DD764D8", hash_generated_method = "5C747CAC33CE8A61FA9F841EC0F1A807")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     public void crashApplication(int uid, int initialPid, String packageName,
             String message) throws RemoteException {
-        dsTaint.addTaint(uid);
         dsTaint.addTaint(message);
+        dsTaint.addTaint(uid);
         dsTaint.addTaint(initialPid);
         dsTaint.addTaint(packageName);
         Parcel data;
@@ -5755,7 +5736,7 @@ class ActivityManagerProxy implements IActivityManager {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:14:58.201 -0400", hash_original_method = "CF06029063749F4266D5EFBB16694E04", hash_generated_method = "710E9B7BDE06825D63C8590377A0DB53")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:34.914 -0400", hash_original_method = "CF06029063749F4266D5EFBB16694E04", hash_generated_method = "CEDE213CB8771755DD7EF3F1EA317ADD")
     @DSModeled(DSC.SPEC)
     public String getProviderMimeType(Uri uri) throws RemoteException {
         dsTaint.addTaint(uri.dsTaint);
@@ -5786,10 +5767,9 @@ class ActivityManagerProxy implements IActivityManager {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:14:58.202 -0400", hash_original_method = "A975CD5E1392FBC42C40F56501282DDB", hash_generated_method = "241ECC7D8D1A22865717290C10804425")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:34.914 -0400", hash_original_method = "A975CD5E1392FBC42C40F56501282DDB", hash_generated_method = "F2C017FE7219E490DD9F6B8936BDE175")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     public IBinder newUriPermissionOwner(String name) throws RemoteException {
-        //DSFIXME:  CODE0009: Possible callback target function detected
         dsTaint.addTaint(name);
         Parcel data;
         data = Parcel.obtain();
@@ -5818,11 +5798,10 @@ class ActivityManagerProxy implements IActivityManager {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:14:58.202 -0400", hash_original_method = "1C35FE424D422C73471D9ECEE35C4093", hash_generated_method = "87F369FCF0E07B2AA7C2AF37D5DFDCD5")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:34.915 -0400", hash_original_method = "1C35FE424D422C73471D9ECEE35C4093", hash_generated_method = "8F71D96908F954953E1C354ECBC268AA")
     @DSModeled(DSC.SPEC)
     public void grantUriPermissionFromOwner(IBinder owner, int fromUid, String targetPkg,
             Uri uri, int mode) throws RemoteException {
-        //DSFIXME:  CODE0009: Possible callback target function detected
         dsTaint.addTaint(fromUid);
         dsTaint.addTaint(targetPkg);
         dsTaint.addTaint(owner.dsTaint);
@@ -5858,11 +5837,10 @@ class ActivityManagerProxy implements IActivityManager {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:14:58.203 -0400", hash_original_method = "D07898A73558FBA66858F774589B082E", hash_generated_method = "1ABF942FE96175673468AF37ED280FA9")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:34.916 -0400", hash_original_method = "D07898A73558FBA66858F774589B082E", hash_generated_method = "18075F30F5042EA0A8331452ED6E2B25")
     @DSModeled(DSC.SPEC)
     public void revokeUriPermissionFromOwner(IBinder owner, Uri uri,
             int mode) throws RemoteException {
-        //DSFIXME:  CODE0009: Possible callback target function detected
         dsTaint.addTaint(owner.dsTaint);
         dsTaint.addTaint(uri.dsTaint);
         dsTaint.addTaint(mode);
@@ -5903,14 +5881,14 @@ class ActivityManagerProxy implements IActivityManager {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:14:58.203 -0400", hash_original_method = "3DAB9C9F42020370AD19E1FE0AC1BDCE", hash_generated_method = "538123456B016536EECABC1FF609BA31")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:34.917 -0400", hash_original_method = "3DAB9C9F42020370AD19E1FE0AC1BDCE", hash_generated_method = "9D91DE7C6DECBDC4B1F1008C7E33B19B")
     @DSModeled(DSC.SPEC)
     public int checkGrantUriPermission(int callingUid, String targetPkg,
             Uri uri, int modeFlags) throws RemoteException {
         dsTaint.addTaint(modeFlags);
         dsTaint.addTaint(targetPkg);
-        dsTaint.addTaint(callingUid);
         dsTaint.addTaint(uri.dsTaint);
+        dsTaint.addTaint(callingUid);
         Parcel data;
         data = Parcel.obtain();
         Parcel reply;
@@ -5944,7 +5922,7 @@ class ActivityManagerProxy implements IActivityManager {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:14:58.204 -0400", hash_original_method = "2510375C73B367DE6AAF634BB948BB50", hash_generated_method = "6AFC1C91CF01098E65848FD4CB1D425C")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:34.917 -0400", hash_original_method = "2510375C73B367DE6AAF634BB948BB50", hash_generated_method = "12E21D3F21EFE394547527CB71585E27")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public boolean dumpHeap(String process, boolean managed,
             String path, ParcelFileDescriptor fd) throws RemoteException {
@@ -5996,14 +5974,14 @@ class ActivityManagerProxy implements IActivityManager {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:14:58.204 -0400", hash_original_method = "D5FED7EEA920B3F53E1885BDA832FF44", hash_generated_method = "A376B22B0404DDB3620B99E1CC6B2378")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:34.918 -0400", hash_original_method = "D5FED7EEA920B3F53E1885BDA832FF44", hash_generated_method = "C2B3AD0DCD3FB4B58FF30CE9C2890A2F")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public int startActivities(IApplicationThread caller,
             Intent[] intents, String[] resolvedTypes, IBinder resultTo) throws RemoteException {
         dsTaint.addTaint(caller.dsTaint);
         dsTaint.addTaint(intents[0].dsTaint);
         dsTaint.addTaint(resultTo.dsTaint);
-        dsTaint.addTaint(resolvedTypes);
+        dsTaint.addTaint(resolvedTypes[0]);
         Parcel data;
         data = Parcel.obtain();
         Parcel reply;
@@ -6037,14 +6015,14 @@ class ActivityManagerProxy implements IActivityManager {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:14:58.205 -0400", hash_original_method = "7A44848B4F4A570D7B280FD97AA3F11F", hash_generated_method = "A4814C7B044B0B13A19A06057EA4BBB0")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:34.920 -0400", hash_original_method = "7A44848B4F4A570D7B280FD97AA3F11F", hash_generated_method = "816C2F5471F2A59E267D6688BB60BA14")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     public int startActivitiesInPackage(int uid,
             Intent[] intents, String[] resolvedTypes, IBinder resultTo) throws RemoteException {
         dsTaint.addTaint(uid);
         dsTaint.addTaint(intents[0].dsTaint);
         dsTaint.addTaint(resultTo.dsTaint);
-        dsTaint.addTaint(resolvedTypes);
+        dsTaint.addTaint(resolvedTypes[0]);
         Parcel data;
         data = Parcel.obtain();
         Parcel reply;
@@ -6078,8 +6056,8 @@ class ActivityManagerProxy implements IActivityManager {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:14:58.205 -0400", hash_original_method = "11A1C93F201BB77459CE48D94392036A", hash_generated_method = "EDDFA11B0855525DE8245684525B1C8A")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:34.922 -0400", hash_original_method = "11A1C93F201BB77459CE48D94392036A", hash_generated_method = "D934C5AAC8CD5B603B5051858B4E5B0C")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     public int getFrontActivityScreenCompatMode() throws RemoteException {
         Parcel data;
         data = Parcel.obtain();
@@ -6106,8 +6084,8 @@ class ActivityManagerProxy implements IActivityManager {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:14:58.205 -0400", hash_original_method = "984BA2CED473A0F45E8080D25CCDF41F", hash_generated_method = "1C1D94F1DCDBD1A395EAF39537FF235C")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:34.923 -0400", hash_original_method = "984BA2CED473A0F45E8080D25CCDF41F", hash_generated_method = "0754638C837ABC79A18B604B032A55F2")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     public void setFrontActivityScreenCompatMode(int mode) throws RemoteException {
         dsTaint.addTaint(mode);
         Parcel data;
@@ -6132,8 +6110,8 @@ class ActivityManagerProxy implements IActivityManager {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:14:58.206 -0400", hash_original_method = "AFAFCB6FF2EC7CDD310E0CDC4C512BE7", hash_generated_method = "6FCE35F672EF7803BB1ABE6417C04ED4")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:34.924 -0400", hash_original_method = "AFAFCB6FF2EC7CDD310E0CDC4C512BE7", hash_generated_method = "6FA557D5056073DB5D210AB7CC0BF48B")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     public int getPackageScreenCompatMode(String packageName) throws RemoteException {
         dsTaint.addTaint(packageName);
         Parcel data;
@@ -6163,8 +6141,8 @@ class ActivityManagerProxy implements IActivityManager {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:14:58.206 -0400", hash_original_method = "5B0C9EEE90D8463E1DCC15B68E3829E8", hash_generated_method = "F9DB8BDB790C6A20DCCB2A75625C3228")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:34.925 -0400", hash_original_method = "5B0C9EEE90D8463E1DCC15B68E3829E8", hash_generated_method = "57F4C2CE5CDB534CD9DA47AEA6A68089")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     public void setPackageScreenCompatMode(String packageName, int mode) throws RemoteException {
         dsTaint.addTaint(packageName);
         dsTaint.addTaint(mode);
@@ -6192,7 +6170,7 @@ class ActivityManagerProxy implements IActivityManager {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:14:58.207 -0400", hash_original_method = "7AFCEC9BC7A2DAB54F3EFFA101044309", hash_generated_method = "B9F322E75738320BFAEA86988148376E")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:34.925 -0400", hash_original_method = "7AFCEC9BC7A2DAB54F3EFFA101044309", hash_generated_method = "C2CD44B7662F4641450EB03FF9E53AC5")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public boolean getPackageAskScreenCompat(String packageName) throws RemoteException {
         dsTaint.addTaint(packageName);
@@ -6223,8 +6201,8 @@ class ActivityManagerProxy implements IActivityManager {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:14:58.207 -0400", hash_original_method = "8C9BAA94A3976358AA466F180A11AE45", hash_generated_method = "7C03B2C1BD13AF9791F6E56CDEA43B49")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:34.926 -0400", hash_original_method = "8C9BAA94A3976358AA466F180A11AE45", hash_generated_method = "EA78E62D840160A38BF2730F91BF6230")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     public void setPackageAskScreenCompat(String packageName, boolean ask) throws RemoteException {
         dsTaint.addTaint(packageName);
         dsTaint.addTaint(ask);
@@ -6252,7 +6230,7 @@ class ActivityManagerProxy implements IActivityManager {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:14:58.207 -0400", hash_original_method = "0A8E6FD2F20689E2107BCC0911A72467", hash_generated_method = "19C96DB5EA930E0386D8D698A1C9AD82")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:34.928 -0400", hash_original_method = "0A8E6FD2F20689E2107BCC0911A72467", hash_generated_method = "2BDD4287D540FC631E2462FA893A80A0")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public boolean switchUser(int userid) throws RemoteException {
         dsTaint.addTaint(userid);
@@ -6283,11 +6261,11 @@ class ActivityManagerProxy implements IActivityManager {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:14:58.208 -0400", hash_original_method = "4161F4F4B6F51E7616ED3E0F5DA99E10", hash_generated_method = "52FC5CD2E2EEF49E5DC58FF5CA0CE825")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:34.929 -0400", hash_original_method = "4161F4F4B6F51E7616ED3E0F5DA99E10", hash_generated_method = "5317C103DD26EF971BAC00D66C58ABDD")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public boolean removeSubTask(int taskId, int subTaskIndex) throws RemoteException {
-        dsTaint.addTaint(taskId);
         dsTaint.addTaint(subTaskIndex);
+        dsTaint.addTaint(taskId);
         Parcel data;
         data = Parcel.obtain();
         Parcel reply;
@@ -6317,7 +6295,7 @@ class ActivityManagerProxy implements IActivityManager {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:14:58.208 -0400", hash_original_method = "D75556E86E98C9E69E5D8B6835FF1B1D", hash_generated_method = "DBE95F600346C6541BF064D9AB19915B")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:34.930 -0400", hash_original_method = "D75556E86E98C9E69E5D8B6835FF1B1D", hash_generated_method = "75E51F97D1469B301BEA2389F50D6D6C")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public boolean removeTask(int taskId, int flags) throws RemoteException {
         dsTaint.addTaint(taskId);
@@ -6351,7 +6329,7 @@ class ActivityManagerProxy implements IActivityManager {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:14:58.209 -0400", hash_original_method = "AD040AF08607A87C88C9CB9BE1E3C408", hash_generated_method = "216B005BBF418B91112A86F67527C850")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:34.931 -0400", hash_original_method = "AD040AF08607A87C88C9CB9BE1E3C408", hash_generated_method = "265D7622E3F06C2456CF2891D5CB5D3D")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public void registerProcessObserver(IProcessObserver observer) throws RemoteException {
         //DSFIXME: CODE0010: Possible callback registration function detected
@@ -6378,10 +6356,9 @@ class ActivityManagerProxy implements IActivityManager {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:14:58.209 -0400", hash_original_method = "6FB2BE2D02A98F343D51290C94466533", hash_generated_method = "2381AD93721DE6D0D00A5FDD3252A832")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:34.931 -0400", hash_original_method = "6FB2BE2D02A98F343D51290C94466533", hash_generated_method = "527A54D2B43C91093781954807313867")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public void unregisterProcessObserver(IProcessObserver observer) throws RemoteException {
-        //DSFIXME: CODE0010: Possible callback registration function detected
         dsTaint.addTaint(observer.dsTaint);
         Parcel data;
         data = Parcel.obtain();
@@ -6405,7 +6382,7 @@ class ActivityManagerProxy implements IActivityManager {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:14:58.210 -0400", hash_original_method = "A45994938B7DA24AED12FFC5B3B3DD69", hash_generated_method = "40657F16404DABA4A5F933DFE3A8BC50")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:34.932 -0400", hash_original_method = "A45994938B7DA24AED12FFC5B3B3DD69", hash_generated_method = "C36727F6F1AFE8EC0BB6F930B95FC5A0")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public boolean isIntentSenderTargetedToPackage(IIntentSender sender) throws RemoteException {
         dsTaint.addTaint(sender.dsTaint);
@@ -6436,8 +6413,8 @@ class ActivityManagerProxy implements IActivityManager {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:14:58.210 -0400", hash_original_method = "ACD180EA48DE1CCAABBA4B90AA3470B8", hash_generated_method = "CAE054A6C0F003AB2C27B5975F083B77")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:34.933 -0400", hash_original_method = "ACD180EA48DE1CCAABBA4B90AA3470B8", hash_generated_method = "29F870555D5948292693CCEBFCBB571F")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     public void updatePersistentConfiguration(Configuration values) throws RemoteException {
         dsTaint.addTaint(values.dsTaint);
         Parcel data;
@@ -6462,10 +6439,10 @@ class ActivityManagerProxy implements IActivityManager {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:14:58.210 -0400", hash_original_method = "0E9D1ED4F0E7DC85612AA1E9A3EC65BE", hash_generated_method = "164275A62A5A042327CDEF3D445DEF1C")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:34.933 -0400", hash_original_method = "0E9D1ED4F0E7DC85612AA1E9A3EC65BE", hash_generated_method = "10B6A34C89E9E0CA3E3E987112E79D93")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     public long[] getProcessPss(int[] pids) throws RemoteException {
-        dsTaint.addTaint(pids);
+        dsTaint.addTaint(pids[0]);
         Parcel data;
         data = Parcel.obtain();
         Parcel reply;
@@ -6495,8 +6472,8 @@ class ActivityManagerProxy implements IActivityManager {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:14:58.211 -0400", hash_original_method = "F6DDBF719DC0D2BCB3D721A826004A98", hash_generated_method = "777E088A18AF17C8E50E9FFD2EE6B723")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:34.934 -0400", hash_original_method = "F6DDBF719DC0D2BCB3D721A826004A98", hash_generated_method = "5600B76EA515D86B981F7C7495987C06")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     public void showBootMessage(CharSequence msg, boolean always) throws RemoteException {
         dsTaint.addTaint(always);
         dsTaint.addTaint(msg);
@@ -6524,8 +6501,8 @@ class ActivityManagerProxy implements IActivityManager {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:14:58.211 -0400", hash_original_method = "C6C48FDB33104FCE337F1D8C3A233E89", hash_generated_method = "900A830BA78A161FBBC1C4E9C1664CD8")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:34.934 -0400", hash_original_method = "C6C48FDB33104FCE337F1D8C3A233E89", hash_generated_method = "8A31AF607B349BB8BE78B082564FEFB1")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     public void dismissKeyguardOnNextActivity() throws RemoteException {
         Parcel data;
         data = Parcel.obtain();
@@ -6548,5 +6525,4 @@ class ActivityManagerProxy implements IActivityManager {
 
     
 }
-
 

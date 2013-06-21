@@ -2,34 +2,32 @@ package java.util;
 
 // Droidsafe Imports
 import droidsafe.helpers.*;
-import droidsafe.runtime.DroidSafeAndroidRuntime;
 import droidsafe.annotations.*;
+import droidsafe.runtime.*;
 
-// import Iterator to deal with enhanced for loop translation
+// needed for enhanced for control translations
 import java.util.Iterator;
 
-
 public class Stack<E> extends Vector<E> {
-    private static final long serialVersionUID = 1224463164541339165L;
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:15.173 -0400", hash_original_method = "625E2B3812BBF73AC690F7D19F4288A9", hash_generated_method = "B7A8D4F7258DC2E318AC32EB246BB471")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:33.669 -0400", hash_original_method = "625E2B3812BBF73AC690F7D19F4288A9", hash_generated_method = "C931746C59237A3AA8E23B4112671D1E")
     @DSModeled(DSC.SAFE)
     public Stack() {
         // ---------- Original Method ----------
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:15.173 -0400", hash_original_method = "3F97FF544B92201B8032D3FE94BC3E20", hash_generated_method = "F0C21648DDF732226F1BB51711F8A71F")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:33.670 -0400", hash_original_method = "3F97FF544B92201B8032D3FE94BC3E20", hash_generated_method = "1515E1C604C11272B26F173A83A7BFE4")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public boolean empty() {
-        boolean var01C4B8CA5F9B0005C1DAF7083100DB15_466294694 = (isEmpty());
+        boolean var01C4B8CA5F9B0005C1DAF7083100DB15_427725347 = (isEmpty());
         return dsTaint.getTaintBoolean();
         // ---------- Original Method ----------
         //return isEmpty();
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:15.173 -0400", hash_original_method = "FF35E7A3F40F4BCE3A9B7A35AFC11586", hash_generated_method = "E779835E077ED545D7DE1D1E56A16B6D")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:33.670 -0400", hash_original_method = "FF35E7A3F40F4BCE3A9B7A35AFC11586", hash_generated_method = "BB1848B70AC98B4515BA38C55BCBAC63")
     @DSModeled(DSC.SAFE)
     @SuppressWarnings("unchecked")
     public synchronized E peek() {
@@ -43,19 +41,18 @@ public class Stack<E> extends Vector<E> {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:15.173 -0400", hash_original_method = "47AB8756F2D7E98B3A47AFF9902921A8", hash_generated_method = "53F559972B8F26C34BB5985B5C26E28F")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:33.670 -0400", hash_original_method = "47AB8756F2D7E98B3A47AFF9902921A8", hash_generated_method = "3A7900C4E358BD5D57B346D876311A13")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     @SuppressWarnings("unchecked")
     public synchronized E pop() {
-        if (DroidSafeAndroidRuntime.control) {
-            throw new EmptyStackException();
+        {
+            if (DroidSafeAndroidRuntime.control) throw new EmptyStackException();
         } //End block
-        final int index;
+        int index;
         index = --elementCount;
-        final E obj;
+        E obj;
         obj = (E) elementData[index];
         elementData[index] = null;
-        modCount++;
         return (E)dsTaint.getTaint();
         // ---------- Original Method ----------
         //if (elementCount == 0) {
@@ -69,8 +66,8 @@ public class Stack<E> extends Vector<E> {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:15.173 -0400", hash_original_method = "FB7AFAD158F104C5EE0D062F7452B9D0", hash_generated_method = "278D005F1A060EAFC7FCC6E2A7E6433E")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:33.670 -0400", hash_original_method = "FB7AFAD158F104C5EE0D062F7452B9D0", hash_generated_method = "E9378772B16FACE2999E83B2FEF00522")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     public E push(E object) {
         dsTaint.addTaint(object.dsTaint);
         addElement(object);
@@ -81,13 +78,13 @@ public class Stack<E> extends Vector<E> {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:15.173 -0400", hash_original_method = "F96799DE4EC4413EE3D35D731594FD43", hash_generated_method = "1D304371CCE9C6969686854547733EC1")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:33.671 -0400", hash_original_method = "F96799DE4EC4413EE3D35D731594FD43", hash_generated_method = "8EBB7D83C405C62E566994FCBB7D513C")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public synchronized int search(Object o) {
         dsTaint.addTaint(o.dsTaint);
-        final Object[] dumpArray;
+        Object[] dumpArray;
         dumpArray = elementData;
-        final int size;
+        int size;
         size = elementCount;
         {
             {
@@ -95,7 +92,7 @@ public class Stack<E> extends Vector<E> {
                 i = size - 1;
                 {
                     {
-                        boolean var06A92C5E21E25F3BAB1286AD17EBE32A_942737710 = (o.equals(dumpArray[i]));
+                        boolean var06A92C5E21E25F3BAB1286AD17EBE32A_1687564101 = (o.equals(dumpArray[i]));
                     } //End collapsed parenthetic
                 } //End block
             } //End collapsed parenthetic
@@ -127,6 +124,6 @@ public class Stack<E> extends Vector<E> {
     }
 
     
+    private static final long serialVersionUID = 1224463164541339165L;
 }
-
 

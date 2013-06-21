@@ -3,10 +3,10 @@ package android.database;
 // Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
+import droidsafe.runtime.*;
 
-// import Iterator to deal with enhanced for loop translation
+// needed for enhanced for control translations
 import java.util.Iterator;
-
 import android.os.Binder;
 import android.os.Bundle;
 import android.os.IBinder;
@@ -16,8 +16,8 @@ import android.os.RemoteException;
 
 public abstract class BulkCursorNative extends Binder implements IBulkCursor {
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:00.560 -0400", hash_original_method = "DBBF6D4FB94E7243F8FE13872836805D", hash_generated_method = "68A23A1B9FC854ED47BDB3909A9EE65E")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:45.878 -0400", hash_original_method = "DBBF6D4FB94E7243F8FE13872836805D", hash_generated_method = "49E124CE99C124C9C743BD828F75C77A")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     public BulkCursorNative() {
         attachInterface(this, descriptor);
         // ---------- Original Method ----------
@@ -25,8 +25,7 @@ public abstract class BulkCursorNative extends Binder implements IBulkCursor {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:00.560 -0400", hash_original_method = "C54B271CE44B8B3CA02F34CEBF170328", hash_generated_method = "1D619AF2715A1536034540225DAE3B98")
-    static public IBulkCursor asInterface(IBinder obj) {
+        static public IBulkCursor asInterface(IBinder obj) {
         if (obj == null) {
             return null;
         }
@@ -38,7 +37,7 @@ public abstract class BulkCursorNative extends Binder implements IBulkCursor {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:00.561 -0400", hash_original_method = "974E69C0AD1811D8FB0AF6277EF80D39", hash_generated_method = "994C0125E85DD37BAE63A218112E1775")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:45.880 -0400", hash_original_method = "974E69C0AD1811D8FB0AF6277EF80D39", hash_generated_method = "8B4EC2A890BCC4F3052F3CDCF599658B")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     @Override
     public boolean onTransact(int code, Parcel data, Parcel reply, int flags) throws RemoteException {
@@ -162,14 +161,14 @@ public abstract class BulkCursorNative extends Binder implements IBulkCursor {
         {
             DatabaseUtils.writeExceptionToParcel(reply, e);
         } //End block
-        boolean var3746A99EF74DBE66CD43EDAE5F9B6D9F_2146369534 = (super.onTransact(code, data, reply, flags));
+        boolean var3746A99EF74DBE66CD43EDAE5F9B6D9F_1805517518 = (super.onTransact(code, data, reply, flags));
         return dsTaint.getTaintBoolean();
         // ---------- Original Method ----------
         // Original Method Too Long, Refer to Original Implementation
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:00.561 -0400", hash_original_method = "2E6ED031FA2AB47CC2982E0232E351E2", hash_generated_method = "ACC1BEBA79475825CC8A93A9C0BD1CF3")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:45.880 -0400", hash_original_method = "2E6ED031FA2AB47CC2982E0232E351E2", hash_generated_method = "1992535F0C7EB8757F965477F5292EC0")
     @DSModeled(DSC.SAFE)
     public IBinder asBinder() {
         return (IBinder)dsTaint.getTaint();
@@ -184,7 +183,7 @@ final class BulkCursorProxy implements IBulkCursor {
     private IBinder mRemote;
     private Bundle mExtras;
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:00.561 -0400", hash_original_method = "D55E49E568C2A68373E38CCE4CBFBB39", hash_generated_method = "87C0DDB2B19834FF9F73D475484B257F")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:45.881 -0400", hash_original_method = "D55E49E568C2A68373E38CCE4CBFBB39", hash_generated_method = "4CD313E3D7158D5FAE82B39C4042DA46")
     @DSModeled(DSC.SAFE)
     public BulkCursorProxy(IBinder remote) {
         dsTaint.addTaint(remote.dsTaint);
@@ -195,7 +194,7 @@ final class BulkCursorProxy implements IBulkCursor {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:00.562 -0400", hash_original_method = "315E1319E410798CBDE68A27410B7DFB", hash_generated_method = "117DDE791BEA1B91BCA97AE8A36628B3")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:45.881 -0400", hash_original_method = "315E1319E410798CBDE68A27410B7DFB", hash_generated_method = "DD6FDB77557F0A5920AFCE061E8D4085")
     @DSModeled(DSC.SAFE)
     public IBinder asBinder() {
         return (IBinder)dsTaint.getTaint();
@@ -204,7 +203,7 @@ final class BulkCursorProxy implements IBulkCursor {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:00.562 -0400", hash_original_method = "7540C72731403A44B035590E58ED3901", hash_generated_method = "EC0A489E70EBB68F6A2EBFF584C3A462")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:45.881 -0400", hash_original_method = "7540C72731403A44B035590E58ED3901", hash_generated_method = "32D79DBDDF49B36EF300DAC5DBEC6F7D")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public CursorWindow getWindow(int startPos) throws RemoteException {
         dsTaint.addTaint(startPos);
@@ -221,7 +220,7 @@ final class BulkCursorProxy implements IBulkCursor {
             CursorWindow window;
             window = null;
             {
-                boolean varE5AB1DE09562BE89A9CEF4B0E885340F_529424341 = (reply.readInt() == 1);
+                boolean varE5AB1DE09562BE89A9CEF4B0E885340F_1385018455 = (reply.readInt() == 1);
                 {
                     window = CursorWindow.newFromParcel(reply);
                 } //End block
@@ -253,8 +252,8 @@ final class BulkCursorProxy implements IBulkCursor {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:00.562 -0400", hash_original_method = "874529548DF9EED6A9EA45E2FAC51D8E", hash_generated_method = "B5B29DE475E3545378381DC655B13DBC")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:45.882 -0400", hash_original_method = "874529548DF9EED6A9EA45E2FAC51D8E", hash_generated_method = "9D224631750C674955BF80608BD5CCC3")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     public void onMove(int position) throws RemoteException {
         //DSFIXME:  CODE0009: Possible callback target function detected
         dsTaint.addTaint(position);
@@ -289,7 +288,7 @@ final class BulkCursorProxy implements IBulkCursor {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:00.562 -0400", hash_original_method = "0FF3A241CF7700F047C406946FE227F4", hash_generated_method = "637C3B7841183948E9953ABC64983FAA")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:45.882 -0400", hash_original_method = "0FF3A241CF7700F047C406946FE227F4", hash_generated_method = "88B650FC2EA998CE8E039F39907A4CBC")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public int count() throws RemoteException {
         Parcel data;
@@ -337,7 +336,7 @@ final class BulkCursorProxy implements IBulkCursor {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:00.563 -0400", hash_original_method = "55D53D666D124D26189F4C995847EE3B", hash_generated_method = "AEB0ABAB4797F8CC26F01A2DF8734263")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:45.883 -0400", hash_original_method = "55D53D666D124D26189F4C995847EE3B", hash_generated_method = "0A3269757865CDD8BAD7673CBBAC00F3")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public String[] getColumnNames() throws RemoteException {
         Parcel data;
@@ -391,8 +390,8 @@ final class BulkCursorProxy implements IBulkCursor {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:00.563 -0400", hash_original_method = "FD5E9EEC36BE8B65B5A00AF714CC54E0", hash_generated_method = "6757FC85C6297E27300026EEA69BE058")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:45.884 -0400", hash_original_method = "FD5E9EEC36BE8B65B5A00AF714CC54E0", hash_generated_method = "CDAFF3ED5790FA0038070B1C60526E4F")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     public void deactivate() throws RemoteException {
         Parcel data;
         data = Parcel.obtain();
@@ -423,8 +422,8 @@ final class BulkCursorProxy implements IBulkCursor {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:00.563 -0400", hash_original_method = "C12FD550BDAC8145B3664A864E5B60A0", hash_generated_method = "451422968C16055F2F9E234EFB7C81DC")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:45.884 -0400", hash_original_method = "C12FD550BDAC8145B3664A864E5B60A0", hash_generated_method = "89AC4AD4697E47D38008003C3F93C60F")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     public void close() throws RemoteException {
         Parcel data;
         data = Parcel.obtain();
@@ -455,7 +454,7 @@ final class BulkCursorProxy implements IBulkCursor {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:00.564 -0400", hash_original_method = "1C7F55EE59A84877DC54C93F1BEC1640", hash_generated_method = "5AECEAB8C6A293686815EA2786873DBF")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:45.885 -0400", hash_original_method = "1C7F55EE59A84877DC54C93F1BEC1640", hash_generated_method = "716805CE7D177483A4534561BE597A54")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public int requery(IContentObserver observer) throws RemoteException {
         dsTaint.addTaint(observer.dsTaint);
@@ -508,8 +507,8 @@ final class BulkCursorProxy implements IBulkCursor {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:00.564 -0400", hash_original_method = "A152C23C891E00FCA22CAEB49B705CFA", hash_generated_method = "59BF813359C3637A4060D7A4568D915F")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:45.885 -0400", hash_original_method = "A152C23C891E00FCA22CAEB49B705CFA", hash_generated_method = "BE6E47F7EB3074394F85685C7AA68C08")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     public boolean getWantsAllOnMoveCalls() throws RemoteException {
         Parcel data;
         data = Parcel.obtain();
@@ -545,7 +544,7 @@ final class BulkCursorProxy implements IBulkCursor {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:00.564 -0400", hash_original_method = "0BFE1C1B4E3A75686DCBF1FFC3B2E52B", hash_generated_method = "CC9202882577988A9BBE16EF4CD6BFE7")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:45.886 -0400", hash_original_method = "0BFE1C1B4E3A75686DCBF1FFC3B2E52B", hash_generated_method = "246BE69D3F023C68B2C5495AF22B4530")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public Bundle getExtras() throws RemoteException {
         {
@@ -585,8 +584,8 @@ final class BulkCursorProxy implements IBulkCursor {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:00.564 -0400", hash_original_method = "482AF4EBF0254C22A07B37919043D33E", hash_generated_method = "A59EB965F7B14B5BFEB036ECFC9AE0D7")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:45.896 -0400", hash_original_method = "482AF4EBF0254C22A07B37919043D33E", hash_generated_method = "30C7C5F8F5824A1B9A8C07C1B9B9F20C")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     public Bundle respond(Bundle extras) throws RemoteException {
         dsTaint.addTaint(extras.dsTaint);
         Parcel data;
@@ -626,5 +625,4 @@ final class BulkCursorProxy implements IBulkCursor {
 
     
 }
-
 

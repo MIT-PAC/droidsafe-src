@@ -13,4 +13,3 @@ public interface IInterface
     
     public IBinder asBinder();
 }
-

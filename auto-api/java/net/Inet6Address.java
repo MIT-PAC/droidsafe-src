@@ -3,10 +3,10 @@ package java.net;
 // Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
+import droidsafe.runtime.*;
 
-// import Iterator to deal with enhanced for loop translation
+// needed for enhanced for control translations
 import java.util.Iterator;
-
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
@@ -16,31 +16,18 @@ import java.util.Enumeration;
 import static libcore.io.OsConstants.*;
 
 public final class Inet6Address extends InetAddress {
-    private static final long serialVersionUID = 6880410070516793377L;
-    public static final InetAddress ANY =
-            new Inet6Address(new byte[] {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 }, null, 0);
-    public static final InetAddress LOOPBACK =
-            new Inet6Address(new byte[] {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1 },
-                    "localhost", 0);
     private boolean scope_id_set;
     private int scope_id;
     private boolean scope_ifname_set;
     private String ifname;
-    private static final ObjectStreamField[] serialPersistentFields = {
-        new ObjectStreamField("ipaddress", byte[].class),
-        new ObjectStreamField("scope_id", int.class),
-        new ObjectStreamField("scope_id_set", boolean.class),
-        new ObjectStreamField("scope_ifname_set", boolean.class),
-        new ObjectStreamField("ifname", String.class),
-    };
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:12.213 -0400", hash_original_method = "FCC74B21AAC45508B8719673A0766005", hash_generated_method = "DE2AB1B64B0FF3FE8CEEF1ADC532FC51")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:27.843 -0400", hash_original_method = "FCC74B21AAC45508B8719673A0766005", hash_generated_method = "723D3B981D49EAE017A0049E19569619")
     //DSFIXME:  CODE0002: Requires DSC value to be set
      Inet6Address(byte[] ipaddress, String hostName, int scope_id) {
         super(AF_INET6, ipaddress, hostName);
         dsTaint.addTaint(hostName);
         dsTaint.addTaint(scope_id);
-        dsTaint.addTaint(ipaddress);
+        dsTaint.addTaint(ipaddress[0]);
         this.scope_id_set = (scope_id != 0);
         // ---------- Original Method ----------
         //this.scope_id = scope_id;
@@ -48,8 +35,7 @@ public final class Inet6Address extends InetAddress {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:12.213 -0400", hash_original_method = "3EBBCEDEC56E7AB88FDFBBA10A7277EC", hash_generated_method = "FCDB711A096C8CAC88147329DFEA012F")
-    public static Inet6Address getByAddress(String host, byte[] addr, int scope_id) throws UnknownHostException {
+        public static Inet6Address getByAddress(String host, byte[] addr, int scope_id) throws UnknownHostException {
         if (addr == null || addr.length != 16) {
             throw new UnknownHostException("Not an IPv6 address: " + Arrays.toString(addr));
         }
@@ -60,8 +46,7 @@ public final class Inet6Address extends InetAddress {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:12.213 -0400", hash_original_method = "A49AD0F17226A2518E05AA9E7B3D7401", hash_generated_method = "BA5D4ADEE8721C92611979DD001B4826")
-    public static Inet6Address getByAddress(String host, byte[] addr,
+        public static Inet6Address getByAddress(String host, byte[] addr,
             NetworkInterface nif) throws UnknownHostException {
         Inet6Address address = Inet6Address.getByAddress(host, addr, 0);
         if (nif == null) {
@@ -89,18 +74,18 @@ public final class Inet6Address extends InetAddress {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:12.213 -0400", hash_original_method = "5C85837CE4C7853B5C8DB05F5798B94D", hash_generated_method = "18E2C22583A23EE1CFFA435A0CABF256")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:27.844 -0400", hash_original_method = "5C85837CE4C7853B5C8DB05F5798B94D", hash_generated_method = "323A55B9B9A88F10DD8BBD03BEEF44B1")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     private boolean compareLocalType(Inet6Address ia) {
         dsTaint.addTaint(ia.dsTaint);
         {
-            boolean var55ABA625F481830BD34F8B5466690BF7_1944000043 = (ia.isSiteLocalAddress() && isSiteLocalAddress());
+            boolean var55ABA625F481830BD34F8B5466690BF7_743380146 = (ia.isSiteLocalAddress() && isSiteLocalAddress());
         } //End collapsed parenthetic
         {
-            boolean var71EB32049A5AB07C1504847D1DCB7BE5_152933377 = (ia.isLinkLocalAddress() && isLinkLocalAddress());
+            boolean var71EB32049A5AB07C1504847D1DCB7BE5_1078455818 = (ia.isLinkLocalAddress() && isLinkLocalAddress());
         } //End collapsed parenthetic
         {
-            boolean var438C605FD4250DE117DD86CFD9F1B343_700960469 = (!ia.isSiteLocalAddress() && !ia.isLinkLocalAddress());
+            boolean var438C605FD4250DE117DD86CFD9F1B343_1934224979 = (!ia.isSiteLocalAddress() && !ia.isLinkLocalAddress());
         } //End collapsed parenthetic
         return dsTaint.getTaintBoolean();
         // ---------- Original Method ----------
@@ -117,18 +102,18 @@ public final class Inet6Address extends InetAddress {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:12.213 -0400", hash_original_method = "CB6B527FFA2A204FDEA9D4C37A9B03D5", hash_generated_method = "9BD90AE18B6D5B310A6347D570AC1FC1")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:27.844 -0400", hash_original_method = "CB6B527FFA2A204FDEA9D4C37A9B03D5", hash_generated_method = "8D347710B0517B4D71E012FD6CB8AE51")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     @Override
     public boolean isAnyLocalAddress() {
-        boolean varB01692C366B404EF7C26158B42FD3EB5_1147711637 = (Arrays.equals(ipaddress, Inet6Address.ANY.ipaddress));
+        boolean varB01692C366B404EF7C26158B42FD3EB5_162557699 = (Arrays.equals(ipaddress, Inet6Address.ANY.ipaddress));
         return dsTaint.getTaintBoolean();
         // ---------- Original Method ----------
         //return Arrays.equals(ipaddress, Inet6Address.ANY.ipaddress);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:12.213 -0400", hash_original_method = "0048D9C1E27FFD1D482DB9672EA3AE03", hash_generated_method = "8500CF7DBD4086D4D9BB67A2E65B0A03")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:27.845 -0400", hash_original_method = "0048D9C1E27FFD1D482DB9672EA3AE03", hash_generated_method = "325D1D40392A12047ECD9BA303CEC533")
     @DSModeled(DSC.SAFE)
     public boolean isIPv4CompatibleAddress() {
         {
@@ -146,7 +131,7 @@ public final class Inet6Address extends InetAddress {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:12.213 -0400", hash_original_method = "9F5F5CEBE580C822E7F3125E303D498E", hash_generated_method = "C0673A07361B4C6F4A79E05004F8DA5C")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:27.845 -0400", hash_original_method = "9F5F5CEBE580C822E7F3125E303D498E", hash_generated_method = "E928F4054F7842AF63091134CFAF8261")
     @DSModeled(DSC.SAFE)
     @Override
     public boolean isLinkLocalAddress() {
@@ -156,18 +141,18 @@ public final class Inet6Address extends InetAddress {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:12.214 -0400", hash_original_method = "29BC59263985E8B6D4DC540BD2555DBE", hash_generated_method = "C2FB0F7477F5BF5EA58909DB34D8F8B8")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:27.845 -0400", hash_original_method = "29BC59263985E8B6D4DC540BD2555DBE", hash_generated_method = "80B28074A0A7E67A502CAB2E0EED72CD")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     @Override
     public boolean isLoopbackAddress() {
-        boolean var1253ED8B41F2F9545D66C1E325A06412_59269934 = (Arrays.equals(ipaddress, Inet6Address.LOOPBACK.ipaddress));
+        boolean var1253ED8B41F2F9545D66C1E325A06412_1061983996 = (Arrays.equals(ipaddress, Inet6Address.LOOPBACK.ipaddress));
         return dsTaint.getTaintBoolean();
         // ---------- Original Method ----------
         //return Arrays.equals(ipaddress, Inet6Address.LOOPBACK.ipaddress);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:12.214 -0400", hash_original_method = "54D483B8739F01A2815B2B8F656686DE", hash_generated_method = "342A50DB462165A56B4DEF4788B04971")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:27.845 -0400", hash_original_method = "54D483B8739F01A2815B2B8F656686DE", hash_generated_method = "D96CA96BF90A1F3F0CF6765020AE6C3A")
     @DSModeled(DSC.SAFE)
     @Override
     public boolean isMCGlobal() {
@@ -177,7 +162,7 @@ public final class Inet6Address extends InetAddress {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:12.214 -0400", hash_original_method = "DCFE2D7DF3B86ED730BA1C809E9E7D4A", hash_generated_method = "4CF9EE78BF94429D14CECA0FCF4FA61F")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:27.846 -0400", hash_original_method = "DCFE2D7DF3B86ED730BA1C809E9E7D4A", hash_generated_method = "10CAFA204B588E9F0203A2E8494CD129")
     @DSModeled(DSC.SAFE)
     @Override
     public boolean isMCLinkLocal() {
@@ -187,7 +172,7 @@ public final class Inet6Address extends InetAddress {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:12.217 -0400", hash_original_method = "A2CA5CB23BE5DDD68CAA7DA2135DB2EA", hash_generated_method = "C9BD28BE70E7663A3E999E9393D84358")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:27.846 -0400", hash_original_method = "A2CA5CB23BE5DDD68CAA7DA2135DB2EA", hash_generated_method = "6CDE1A6174BAEB3160404EF773F26B1D")
     @DSModeled(DSC.SAFE)
     @Override
     public boolean isMCNodeLocal() {
@@ -197,7 +182,7 @@ public final class Inet6Address extends InetAddress {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:12.217 -0400", hash_original_method = "54DE0BED5AB4157674DB2DAF2389E694", hash_generated_method = "904F2C8FCAA81221BB3022E1F43389F3")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:27.846 -0400", hash_original_method = "54DE0BED5AB4157674DB2DAF2389E694", hash_generated_method = "323EB5EA616CCFECA8F00BEDB7C8408F")
     @DSModeled(DSC.SAFE)
     @Override
     public boolean isMCOrgLocal() {
@@ -207,7 +192,7 @@ public final class Inet6Address extends InetAddress {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:12.217 -0400", hash_original_method = "F3FC244CCF2BE8692CC93BDBE33FAF7E", hash_generated_method = "11FC563E422A6BF3F456CFE328310704")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:27.846 -0400", hash_original_method = "F3FC244CCF2BE8692CC93BDBE33FAF7E", hash_generated_method = "0C8C1B83E0CC2A890CB560C77CAB5D8E")
     @DSModeled(DSC.SAFE)
     @Override
     public boolean isMCSiteLocal() {
@@ -217,7 +202,7 @@ public final class Inet6Address extends InetAddress {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:12.217 -0400", hash_original_method = "421AE0BE80F642901B6D5A89B5DB9DC1", hash_generated_method = "2EE1B06F4EE9DFD20CBAF59067908CBF")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:27.846 -0400", hash_original_method = "421AE0BE80F642901B6D5A89B5DB9DC1", hash_generated_method = "EF10D2714682F8AD34DAA13480CB8C2D")
     @DSModeled(DSC.SAFE)
     @Override
     public boolean isMulticastAddress() {
@@ -227,7 +212,7 @@ public final class Inet6Address extends InetAddress {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:12.217 -0400", hash_original_method = "3C2D74882AEFA2EBBC23E3A728C5AE01", hash_generated_method = "4BCA56E9003743E61E800E60C443D5B6")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:27.847 -0400", hash_original_method = "3C2D74882AEFA2EBBC23E3A728C5AE01", hash_generated_method = "9122789057EE6AC0381974CF9DD81C6F")
     @DSModeled(DSC.SAFE)
     @Override
     public boolean isSiteLocalAddress() {
@@ -237,7 +222,7 @@ public final class Inet6Address extends InetAddress {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:12.217 -0400", hash_original_method = "50E705BC98343A8115E00AFCB06615D7", hash_generated_method = "FFE8722A26B1EBEB9940043E81E03387")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:27.847 -0400", hash_original_method = "50E705BC98343A8115E00AFCB06615D7", hash_generated_method = "3861AE8C21C83AAC1AFF9EC283A6CB6D")
     @DSModeled(DSC.SAFE)
     public int getScopeId() {
         return dsTaint.getTaintInt();
@@ -246,13 +231,13 @@ public final class Inet6Address extends InetAddress {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:12.217 -0400", hash_original_method = "F4AA364893CE5E0A3EC053A0FC0AB68A", hash_generated_method = "516F54C5B1C0B633387CF598FCD35360")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:27.847 -0400", hash_original_method = "F4AA364893CE5E0A3EC053A0FC0AB68A", hash_generated_method = "786BF5F60FE251D0EB0AD3795DA1F1B3")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public NetworkInterface getScopedInterface() {
         try 
         {
             {
-                Object var6A1A8B3CC2BCE2D0DCC6E7BB80A5AD67_313198236 = (NetworkInterface.getByName(ifname));
+                Object var6A1A8B3CC2BCE2D0DCC6E7BB80A5AD67_1370999644 = (NetworkInterface.getByName(ifname));
             } //End flattened ternary
         } //End block
         catch (SocketException ex)
@@ -267,8 +252,8 @@ public final class Inet6Address extends InetAddress {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:12.217 -0400", hash_original_method = "080327AC5673C5B50BEA99966675EA0A", hash_generated_method = "4C43BA961287476E15F0B48C66EE475E")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:27.848 -0400", hash_original_method = "080327AC5673C5B50BEA99966675EA0A", hash_generated_method = "9FB13B46DF4D485DD9F3CF2C781CE576")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     private void writeObject(ObjectOutputStream stream) throws IOException {
         dsTaint.addTaint(stream.dsTaint);
         ObjectOutputStream.PutField fields;
@@ -299,7 +284,7 @@ public final class Inet6Address extends InetAddress {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:12.218 -0400", hash_original_method = "6B9730D7168B0E96ABCC55BBF7E32967", hash_generated_method = "A0190F44DEA0C4A93C1BCE4B402C2B44")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:27.848 -0400", hash_original_method = "6B9730D7168B0E96ABCC55BBF7E32967", hash_generated_method = "AF4AD2E14B4C975F4CFAA74129FA72A7")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     private void readObject(ObjectInputStream stream) throws IOException, ClassNotFoundException {
         dsTaint.addTaint(stream.dsTaint);
@@ -320,17 +305,17 @@ public final class Inet6Address extends InetAddress {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:12.218 -0400", hash_original_method = "3CCDE4F93DD898D7C7483D8BBE2EDADA", hash_generated_method = "C8A8087D438CDF545858FD44B29A515A")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:27.848 -0400", hash_original_method = "3CCDE4F93DD898D7C7483D8BBE2EDADA", hash_generated_method = "3B09BC9427DC413281FFC715924C77B5")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     @Override
     public String toString() {
         {
-            String varC03A2F8C14EEE12344CD8F1674F876C8_1812494208 = (super.toString() + "%" + ifname);
+            String varC03A2F8C14EEE12344CD8F1674F876C8_158969045 = (super.toString() + "%" + ifname);
         } //End block
         {
-            String var7C2F65A4D8FA61FE8A45FB334EBA1A17_1110787201 = (super.toString() + "%" + scope_id);
+            String var7C2F65A4D8FA61FE8A45FB334EBA1A17_1913669358 = (super.toString() + "%" + scope_id);
         } //End block
-        String var68E86BD9F434ADE8AAF95F248D77470C_405132409 = (super.toString());
+        String var68E86BD9F434ADE8AAF95F248D77470C_1777291270 = (super.toString());
         return dsTaint.getTaintString();
         // ---------- Original Method ----------
         //if (ifname != null) {
@@ -343,6 +328,18 @@ public final class Inet6Address extends InetAddress {
     }
 
     
+    private static final long serialVersionUID = 6880410070516793377L;
+    public static final InetAddress ANY =
+            new Inet6Address(new byte[] {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 }, null, 0);
+    public static final InetAddress LOOPBACK =
+            new Inet6Address(new byte[] {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1 },
+                    "localhost", 0);
+    private static final ObjectStreamField[] serialPersistentFields = {
+        new ObjectStreamField("ipaddress", byte[].class),
+        new ObjectStreamField("scope_id", int.class),
+        new ObjectStreamField("scope_id_set", boolean.class),
+        new ObjectStreamField("scope_ifname_set", boolean.class),
+        new ObjectStreamField("ifname", String.class),
+    };
 }
-
 

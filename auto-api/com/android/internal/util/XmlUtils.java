@@ -24,8 +24,13 @@ import android.util.Xml;
 
 public class XmlUtils {
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 12:28:48.537 -0400", hash_original_method = "AAAAEA56462AF9647E1BBB323C7E0DC3", hash_generated_method = "BF6C3D6BE0175CB56641BBB5BD104A0E")
-    public static void skipCurrentTag(XmlPullParser parser) throws XmlPullParserException, IOException {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:17.947 -0400", hash_original_method = "9157BBA435EF1FA215ADEF61EA8EA0EC", hash_generated_method = "9157BBA435EF1FA215ADEF61EA8EA0EC")
+        public XmlUtils ()
+    {
+    }
+
+
+        public static void skipCurrentTag(XmlPullParser parser) throws XmlPullParserException, IOException {
         int outerDepth = parser.getDepth();
         int type;
         while ((type=parser.next()) != XmlPullParser.END_DOCUMENT
@@ -35,8 +40,7 @@ public class XmlUtils {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 12:28:48.555 -0400", hash_original_method = "CEA4F2349B1AF02E53BDCE47DAEA0832", hash_generated_method = "18579B65D4C88824A5262ECC09CB6905")
-    public static final int convertValueToList(CharSequence value, String[] options, int defaultValue) {
+        public static final int convertValueToList(CharSequence value, String[] options, int defaultValue) {
         if (null != value) {
             for (int i = 0; i < options.length; i++) {
                 if (value.equals(options[i]))
@@ -47,8 +51,7 @@ public class XmlUtils {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 12:28:48.557 -0400", hash_original_method = "3FF7585B3B7CE0B0EE1E2CE21C873C38", hash_generated_method = "E911B9BB6D4FFC396E28FED90EBC72D0")
-    public static final boolean convertValueToBoolean(CharSequence value, boolean defaultValue) {
+        public static final boolean convertValueToBoolean(CharSequence value, boolean defaultValue) {
         boolean result = false;
         if (null == value)
             return defaultValue;
@@ -60,8 +63,7 @@ public class XmlUtils {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 12:28:48.561 -0400", hash_original_method = "2E04B7905BBBF700C063C4642034E5CE", hash_generated_method = "987E7622BB53CFF0E0C796C2583E3C9A")
-    public static final int convertValueToInt(CharSequence charSeq, int defaultValue) {
+        public static final int convertValueToInt(CharSequence charSeq, int defaultValue) {
         if (null == charSeq)
             return defaultValue;
         String nm = charSeq.toString();
@@ -95,16 +97,14 @@ public class XmlUtils {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 12:28:48.580 -0400", hash_original_method = "310351CE76B02D900E15BA3893E99AAD", hash_generated_method = "77A80CDC3EFAA054166C7585805D36C7")
-    public static final int convertValueToUnsignedInt(String value, int defaultValue) {
+        public static final int convertValueToUnsignedInt(String value, int defaultValue) {
         if (null == value)
             return defaultValue;
         return parseUnsignedIntAttribute(value);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 12:28:48.586 -0400", hash_original_method = "8EEFD3D2E773D28D0CAF601396FACD8F", hash_generated_method = "FEF5B0DE40490ED740D1FFF114820AE2")
-    public static final int parseUnsignedIntAttribute(CharSequence charSeq) {
+        public static final int parseUnsignedIntAttribute(CharSequence charSeq) {
         String  value = charSeq.toString();
         long    bits;
         int     index = 0;
@@ -129,8 +129,7 @@ public class XmlUtils {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 12:28:48.618 -0400", hash_original_method = "3A41E533E80D7A4F61EC20E09048E25D", hash_generated_method = "A3AD6319741F8351F483F49E450B8FDE")
-    public static final void writeMapXml(Map val, OutputStream out) throws XmlPullParserException, java.io.IOException {
+        public static final void writeMapXml(Map val, OutputStream out) throws XmlPullParserException, java.io.IOException {
         XmlSerializer serializer = new FastXmlSerializer();
         serializer.setOutput(out, "utf-8");
         serializer.startDocument(null, true);
@@ -140,8 +139,7 @@ public class XmlUtils {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 12:28:48.620 -0400", hash_original_method = "5262AF3A3D91A961322B712D06005470", hash_generated_method = "6B68E47CC3AEC199022B116C7B53404D")
-    public static final void writeListXml(List val, OutputStream out) throws XmlPullParserException, java.io.IOException {
+        public static final void writeListXml(List val, OutputStream out) throws XmlPullParserException, java.io.IOException {
         XmlSerializer serializer = Xml.newSerializer();
         serializer.setOutput(out, "utf-8");
         serializer.startDocument(null, true);
@@ -151,8 +149,7 @@ public class XmlUtils {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 12:28:48.628 -0400", hash_original_method = "1F52FCAAB51DEA0E76EDD9355166CAE1", hash_generated_method = "40C3CF3F8DFF4C81E9E075CCE96C2488")
-    public static final void writeMapXml(Map val, String name, XmlSerializer out) throws XmlPullParserException, java.io.IOException {
+        public static final void writeMapXml(Map val, String name, XmlSerializer out) throws XmlPullParserException, java.io.IOException {
         if (val == null) {
             out.startTag(null, "null");
             out.endTag(null, "null");
@@ -172,8 +169,7 @@ public class XmlUtils {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 12:28:48.674 -0400", hash_original_method = "4666B536C7E29DA76F907E136B605459", hash_generated_method = "28AE349BF3C72FCB010F5933B5A32B1C")
-    public static final void writeListXml(List val, String name, XmlSerializer out) throws XmlPullParserException, java.io.IOException {
+        public static final void writeListXml(List val, String name, XmlSerializer out) throws XmlPullParserException, java.io.IOException {
         if (val == null) {
             out.startTag(null, "null");
             out.endTag(null, "null");
@@ -193,8 +189,7 @@ public class XmlUtils {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 12:28:48.680 -0400", hash_original_method = "A2C1C26CCC3813840932FEF29BA390A5", hash_generated_method = "A44F3D2EA745E7EA7B801D4586126E0E")
-    public static final void writeSetXml(Set val, String name, XmlSerializer out) throws XmlPullParserException, java.io.IOException {
+        public static final void writeSetXml(Set val, String name, XmlSerializer out) throws XmlPullParserException, java.io.IOException {
         if (val == null) {
             out.startTag(null, "null");
             out.endTag(null, "null");
@@ -211,8 +206,7 @@ public class XmlUtils {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 12:28:48.701 -0400", hash_original_method = "A07009E9A7F898B8C8462F16115B27B1", hash_generated_method = "4875565CCE8D6061402A1696DEC4F9F1")
-    public static final void writeByteArrayXml(byte[] val, String name,
+        public static final void writeByteArrayXml(byte[] val, String name,
             XmlSerializer out) throws XmlPullParserException, java.io.IOException {
         if (val == null) {
             out.startTag(null, "null");
@@ -238,8 +232,7 @@ public class XmlUtils {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 12:28:48.735 -0400", hash_original_method = "315921815F3785081F27F3FE625DBCCB", hash_generated_method = "AE064EEE3C35883093FB37E32995DB8A")
-    public static final void writeIntArrayXml(int[] val, String name,
+        public static final void writeIntArrayXml(int[] val, String name,
             XmlSerializer out) throws XmlPullParserException, java.io.IOException {
         if (val == null) {
             out.startTag(null, "null");
@@ -261,8 +254,7 @@ public class XmlUtils {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 12:28:48.740 -0400", hash_original_method = "82F216345EA52FCB5807D6A46DE8445B", hash_generated_method = "B756F51666BED5C20E82019B49DE7D8B")
-    public static final void writeValueXml(Object v, String name, XmlSerializer out) throws XmlPullParserException, java.io.IOException {
+        public static final void writeValueXml(Object v, String name, XmlSerializer out) throws XmlPullParserException, java.io.IOException {
         String typeStr;
         if (v == null) {
             out.startTag(null, "null");
@@ -324,32 +316,28 @@ public class XmlUtils {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 12:28:48.778 -0400", hash_original_method = "451981095A31CF98AA2EA47B21E89F45", hash_generated_method = "C2609DB0CA95220C32D6204568743EA7")
-    public static final HashMap readMapXml(InputStream in) throws XmlPullParserException, java.io.IOException {
+        public static final HashMap readMapXml(InputStream in) throws XmlPullParserException, java.io.IOException {
         XmlPullParser   parser = Xml.newPullParser();
         parser.setInput(in, null);
         return (HashMap)readValueXml(parser, new String[1]);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 12:28:48.802 -0400", hash_original_method = "19DDCF7A36CDD152C7A6B2FBD995EBB5", hash_generated_method = "9FD32910B0D0512DCF2D5BDEF96DEF28")
-    public static final ArrayList readListXml(InputStream in) throws XmlPullParserException, java.io.IOException {
+        public static final ArrayList readListXml(InputStream in) throws XmlPullParserException, java.io.IOException {
         XmlPullParser   parser = Xml.newPullParser();
         parser.setInput(in, null);
         return (ArrayList)readValueXml(parser, new String[1]);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 12:28:48.844 -0400", hash_original_method = "02FA7C1768B1D5902CFE928A1217987E", hash_generated_method = "284C1DF475CEF71A0B1EFDF0CC6151DE")
-    public static final HashSet readSetXml(InputStream in) throws XmlPullParserException, java.io.IOException {
+        public static final HashSet readSetXml(InputStream in) throws XmlPullParserException, java.io.IOException {
         XmlPullParser parser = Xml.newPullParser();
         parser.setInput(in, null);
         return (HashSet) readValueXml(parser, new String[1]);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 12:28:48.847 -0400", hash_original_method = "B94D225452D6F3859CEDE3BC9422CB6B", hash_generated_method = "814D0E1096504D0768C80D40D92B25C3")
-    public static final HashMap readThisMapXml(XmlPullParser parser, String endTag, String[] name) throws XmlPullParserException, java.io.IOException {
+        public static final HashMap readThisMapXml(XmlPullParser parser, String endTag, String[] name) throws XmlPullParserException, java.io.IOException {
         HashMap map = new HashMap();
         int eventType = parser.getEventType();
         do {
@@ -375,8 +363,7 @@ public class XmlUtils {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 12:28:48.866 -0400", hash_original_method = "B65038280E8BB44BE238AA107D896C14", hash_generated_method = "4F2C8601228751C601578B4B64E3653F")
-    public static final ArrayList readThisListXml(XmlPullParser parser, String endTag, String[] name) throws XmlPullParserException, java.io.IOException {
+        public static final ArrayList readThisListXml(XmlPullParser parser, String endTag, String[] name) throws XmlPullParserException, java.io.IOException {
         ArrayList list = new ArrayList();
         int eventType = parser.getEventType();
         do {
@@ -397,8 +384,7 @@ public class XmlUtils {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 12:28:48.911 -0400", hash_original_method = "6B9B1F7769DAE5AF421D5FA08BCA9A98", hash_generated_method = "855A4E5B0F8BB4AF8B079BC522533564")
-    public static final HashSet readThisSetXml(XmlPullParser parser, String endTag, String[] name) throws XmlPullParserException, java.io.IOException {
+        public static final HashSet readThisSetXml(XmlPullParser parser, String endTag, String[] name) throws XmlPullParserException, java.io.IOException {
         HashSet set = new HashSet();
         int eventType = parser.getEventType();
         do {
@@ -419,8 +405,7 @@ public class XmlUtils {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 12:28:48.927 -0400", hash_original_method = "59A4CBE51FAECBB8E991947ECCA70099", hash_generated_method = "D12E2A5527E75FF44873F1FD8DA7F714")
-    public static final int[] readThisIntArrayXml(XmlPullParser parser,
+        public static final int[] readThisIntArrayXml(XmlPullParser parser,
             String endTag, String[] name) throws XmlPullParserException, java.io.IOException {
         int num;
         try {
@@ -470,8 +455,7 @@ public class XmlUtils {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 12:28:48.935 -0400", hash_original_method = "0ED240205957B5EB6254FD7A63F6E825", hash_generated_method = "8F4EA45266DAC1BF7A58EC1925D492DD")
-    public static final Object readValueXml(XmlPullParser parser, String[] name) throws XmlPullParserException, java.io.IOException {
+        public static final Object readValueXml(XmlPullParser parser, String[] name) throws XmlPullParserException, java.io.IOException {
         int eventType = parser.getEventType();
         do {
             if (eventType == parser.START_TAG) {
@@ -490,8 +474,7 @@ public class XmlUtils {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 12:28:48.975 -0400", hash_original_method = "16BF65FFEAF4EB8C9C23A818A2EB822A", hash_generated_method = "B1E3908D4372ED34896F230A8C84C9E2")
-    private static final Object readThisValueXml(XmlPullParser parser, String[] name) throws XmlPullParserException, java.io.IOException {
+        private static final Object readThisValueXml(XmlPullParser parser, String[] name) throws XmlPullParserException, java.io.IOException {
         final String valueName = parser.getAttributeValue(null, "name");
         final String tagName = parser.getName();
         Object res;
@@ -573,8 +556,7 @@ public class XmlUtils {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 12:28:49.021 -0400", hash_original_method = "2250E45F489CDF629FB35C26D8361AB6", hash_generated_method = "2E2921BAAE83F0A7976E0CD91CC590E4")
-    public static final void beginDocument(XmlPullParser parser, String firstElementName) throws XmlPullParserException, IOException {
+        public static final void beginDocument(XmlPullParser parser, String firstElementName) throws XmlPullParserException, IOException {
         int type;
         while ((type=parser.next()) != parser.START_TAG
                    && type != parser.END_DOCUMENT) {
@@ -590,8 +572,7 @@ public class XmlUtils {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-12 12:28:49.030 -0400", hash_original_method = "517AA30663FDFFE58192CA2D8B409F2D", hash_generated_method = "E51EB2080B57A8C42BE0C6BC762A9968")
-    public static final void nextElement(XmlPullParser parser) throws XmlPullParserException, IOException {
+        public static final void nextElement(XmlPullParser parser) throws XmlPullParserException, IOException {
         int type;
         while ((type=parser.next()) != parser.START_TAG
                    && type != parser.END_DOCUMENT) {
@@ -601,5 +582,4 @@ public class XmlUtils {
 
     
 }
-
 

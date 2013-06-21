@@ -3,10 +3,10 @@ package android.preference;
 // Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
+import droidsafe.runtime.*;
 
-// import Iterator to deal with enhanced for loop translation
+// needed for enhanced for control translations
 import java.util.Iterator;
-
 import android.app.Activity;
 import android.content.Context;
 import android.content.DialogInterface;
@@ -24,9 +24,6 @@ import java.util.HashSet;
 import java.util.List;
 
 public class PreferenceManager {
-    private static final String TAG = "PreferenceManager";
-    public static final String METADATA_KEY_PREFERENCES = "android.preference";
-    public static final String KEY_HAS_SET_DEFAULT_VALUES = "_has_set_default_values";
     private Activity mActivity;
     private PreferenceFragment mFragment;
     private Context mContext;
@@ -44,8 +41,8 @@ public class PreferenceManager {
     private List<DialogInterface> mPreferencesScreens;
     private OnPreferenceTreeClickListener mOnPreferenceTreeClickListener;
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:03.061 -0400", hash_original_method = "A48679E26B4CF910ADEF8C7563331346", hash_generated_method = "0CD5B784FC72712A9B8465294F522308")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:54.711 -0400", hash_original_method = "A48679E26B4CF910ADEF8C7563331346", hash_generated_method = "F1A1FC919AD83AD718B307E6FA0A66BC")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
      PreferenceManager(Activity activity, int firstRequestCode) {
         dsTaint.addTaint(firstRequestCode);
         dsTaint.addTaint(activity.dsTaint);
@@ -57,8 +54,8 @@ public class PreferenceManager {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:03.061 -0400", hash_original_method = "962D66AE85693F6FF77A2DEF54D76478", hash_generated_method = "4E4E29884F9E8BD74D109E7B3E0FBC2E")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:54.711 -0400", hash_original_method = "962D66AE85693F6FF77A2DEF54D76478", hash_generated_method = "60C7F53D564457DA6DBBAB8EDCDC4F5F")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     private PreferenceManager(Context context) {
         dsTaint.addTaint(context.dsTaint);
         init(context);
@@ -67,7 +64,7 @@ public class PreferenceManager {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:03.061 -0400", hash_original_method = "2AA94A8F94EE739DE2B0DB27540BEB34", hash_generated_method = "BFC40005270BE59BD860986AAB28F224")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:54.711 -0400", hash_original_method = "2AA94A8F94EE739DE2B0DB27540BEB34", hash_generated_method = "AFB7A4C1C3C9A877FC2426FF8D6E0EC8")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     private void init(Context context) {
         dsTaint.addTaint(context.dsTaint);
@@ -78,7 +75,7 @@ public class PreferenceManager {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:03.061 -0400", hash_original_method = "922F3E36F99E52FA3036E92080002B11", hash_generated_method = "393016288E80EDF41EF6ECE457756A15")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:54.722 -0400", hash_original_method = "922F3E36F99E52FA3036E92080002B11", hash_generated_method = "5C947397308360EA5448AED093FF6222")
     @DSModeled(DSC.SAFE)
      void setFragment(PreferenceFragment fragment) {
         dsTaint.addTaint(fragment.dsTaint);
@@ -87,7 +84,7 @@ public class PreferenceManager {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:03.062 -0400", hash_original_method = "11BC570017448843B9A9A22E52E0E479", hash_generated_method = "44F25367683A4B109E22290432689097")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:54.722 -0400", hash_original_method = "11BC570017448843B9A9A22E52E0E479", hash_generated_method = "1B5ACEB7DE464FF793E0B10ECAC7F390")
     @DSModeled(DSC.SAFE)
      PreferenceFragment getFragment() {
         return (PreferenceFragment)dsTaint.getTaint();
@@ -96,11 +93,11 @@ public class PreferenceManager {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:03.062 -0400", hash_original_method = "6682C9F88019B1A37FE99B0D2B3B34A2", hash_generated_method = "F4E123FAA9A12E9744390F6534D436A2")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:54.722 -0400", hash_original_method = "6682C9F88019B1A37FE99B0D2B3B34A2", hash_generated_method = "89F5805D4EAD8A1BA85784348688ADB2")
     @DSModeled(DSC.SPEC)
     private List<ResolveInfo> queryIntentActivities(Intent queryIntent) {
         dsTaint.addTaint(queryIntent.dsTaint);
-        List<ResolveInfo> var59F2D462372FAD99326B1574628BE656_2134041030 = (mContext.getPackageManager().queryIntentActivities(queryIntent,
+        List<ResolveInfo> var59F2D462372FAD99326B1574628BE656_340260773 = (mContext.getPackageManager().queryIntentActivities(queryIntent,
                 PackageManager.GET_META_DATA));
         return (List<ResolveInfo>)dsTaint.getTaint();
         // ---------- Original Method ----------
@@ -109,43 +106,43 @@ public class PreferenceManager {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:03.062 -0400", hash_original_method = "96A93C80BB9070BDED20D9AB85FFA8E8", hash_generated_method = "6E1B2166D0EA80079C53F93AFF4362AD")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:54.724 -0400", hash_original_method = "96A93C80BB9070BDED20D9AB85FFA8E8", hash_generated_method = "094C09BC7501B43D3FCCBFDADFE6BF34")
     @DSModeled(DSC.SPEC)
      PreferenceScreen inflateFromIntent(Intent queryIntent, PreferenceScreen rootPreferences) {
-        dsTaint.addTaint(queryIntent.dsTaint);
         dsTaint.addTaint(rootPreferences.dsTaint);
-        final List<ResolveInfo> activities;
+        dsTaint.addTaint(queryIntent.dsTaint);
+        List<ResolveInfo> activities;
         activities = queryIntentActivities(queryIntent);
-        final HashSet<String> inflatedRes;
+        HashSet<String> inflatedRes;
         inflatedRes = new HashSet<String>();
         {
             int i;
             i = activities.size() - 1;
             {
-                final ActivityInfo activityInfo;
+                ActivityInfo activityInfo;
                 activityInfo = activities.get(i).activityInfo;
-                final Bundle metaData;
+                Bundle metaData;
                 metaData = activityInfo.metaData;
                 {
-                    boolean varCCFE5DA33F498B61582829F1A271E4A2_1123070625 = ((metaData == null) || !metaData.containsKey(METADATA_KEY_PREFERENCES));
+                    boolean varCCFE5DA33F498B61582829F1A271E4A2_472991252 = ((metaData == null) || !metaData.containsKey(METADATA_KEY_PREFERENCES));
                 } //End collapsed parenthetic
-                final String uniqueResId;
+                String uniqueResId;
                 uniqueResId = activityInfo.packageName + ":"
                     + activityInfo.metaData.getInt(METADATA_KEY_PREFERENCES);
                 {
-                    boolean varC3FF154FA48BC17A0ABB9C1087AA7414_2056907977 = (!inflatedRes.contains(uniqueResId));
+                    boolean varC3FF154FA48BC17A0ABB9C1087AA7414_958699933 = (!inflatedRes.contains(uniqueResId));
                     {
                         inflatedRes.add(uniqueResId);
-                        Context context = null;
+                        Context context;
                         try 
                         {
                             context = mContext.createPackageContext(activityInfo.packageName, 0);
                         } //End block
                         catch (NameNotFoundException e)
                         { }
-                        final PreferenceInflater inflater;
+                        PreferenceInflater inflater;
                         inflater = new PreferenceInflater(context, this);
-                        final XmlResourceParser parser;
+                        XmlResourceParser parser;
                         parser = activityInfo.loadXmlMetaData(context
                         .getPackageManager(), METADATA_KEY_PREFERENCES);
                         rootPreferences = (PreferenceScreen) inflater
@@ -162,7 +159,7 @@ public class PreferenceManager {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:03.062 -0400", hash_original_method = "94F9DF66CFF516C2DE1B651AB9A3388E", hash_generated_method = "1A5DB1711652475BE602A0AA78D99476")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:54.725 -0400", hash_original_method = "94F9DF66CFF516C2DE1B651AB9A3388E", hash_generated_method = "4D98C39F75698B84755CFA115AFA358D")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public PreferenceScreen inflateFromResource(Context context, int resId,
             PreferenceScreen rootPreferences) {
@@ -170,7 +167,7 @@ public class PreferenceManager {
         dsTaint.addTaint(context.dsTaint);
         dsTaint.addTaint(resId);
         setNoCommit(true);
-        final PreferenceInflater inflater;
+        PreferenceInflater inflater;
         inflater = new PreferenceInflater(context, this);
         rootPreferences = (PreferenceScreen) inflater.inflate(resId, rootPreferences, true);
         rootPreferences.onAttachedToHierarchy(this);
@@ -186,11 +183,11 @@ public class PreferenceManager {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:03.062 -0400", hash_original_method = "AE92D4BACEE41B351C64A7E59B1B4342", hash_generated_method = "470CBC251362424D274FF41E16271A4B")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:54.726 -0400", hash_original_method = "AE92D4BACEE41B351C64A7E59B1B4342", hash_generated_method = "4D03463E35418353F08648C5A5E8DECB")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     public PreferenceScreen createPreferenceScreen(Context context) {
         dsTaint.addTaint(context.dsTaint);
-        final PreferenceScreen preferenceScreen;
+        PreferenceScreen preferenceScreen;
         preferenceScreen = new PreferenceScreen(context, null);
         preferenceScreen.onAttachedToHierarchy(this);
         return (PreferenceScreen)dsTaint.getTaint();
@@ -201,7 +198,7 @@ public class PreferenceManager {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:03.063 -0400", hash_original_method = "D904EAF0B6D90BB52E1F8594EC3F4D15", hash_generated_method = "93439A2ACC296768EFCC2F6BB2AC3251")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:54.726 -0400", hash_original_method = "D904EAF0B6D90BB52E1F8594EC3F4D15", hash_generated_method = "87F105B1C2FA2D479FDCF184A1D52FEA")
     @DSModeled(DSC.SAFE)
      long getNextId() {
         return dsTaint.getTaintLong();
@@ -212,7 +209,7 @@ public class PreferenceManager {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:03.063 -0400", hash_original_method = "BDB110631059975A566BD4AA87A106E8", hash_generated_method = "985A05232EEEEE6F44E1E5EACF2591F0")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:54.726 -0400", hash_original_method = "BDB110631059975A566BD4AA87A106E8", hash_generated_method = "4A2AA660B4A58148FAC39018919FFD5A")
     @DSModeled(DSC.SAFE)
     public String getSharedPreferencesName() {
         return dsTaint.getTaintString();
@@ -221,7 +218,7 @@ public class PreferenceManager {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:03.063 -0400", hash_original_method = "F8FB75CAC643ECF72FE6E9CDE35245C6", hash_generated_method = "6FC547B1361DAED3096469986525036A")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:54.727 -0400", hash_original_method = "F8FB75CAC643ECF72FE6E9CDE35245C6", hash_generated_method = "F131E3F51277D6986DA599F63368AE8D")
     @DSModeled(DSC.SAFE)
     public void setSharedPreferencesName(String sharedPreferencesName) {
         dsTaint.addTaint(sharedPreferencesName);
@@ -232,7 +229,7 @@ public class PreferenceManager {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:03.063 -0400", hash_original_method = "D2CF6E8640E20A030077A21285843C05", hash_generated_method = "9D13635F1D7D52D9FE5CAF1096C24C8F")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:54.727 -0400", hash_original_method = "D2CF6E8640E20A030077A21285843C05", hash_generated_method = "3B42FDCF79D4A2E53EDDAAFF3B2890C3")
     @DSModeled(DSC.SAFE)
     public int getSharedPreferencesMode() {
         return dsTaint.getTaintInt();
@@ -241,7 +238,7 @@ public class PreferenceManager {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:03.063 -0400", hash_original_method = "6988E36A0998B14CBE7D70DCBAB74FF8", hash_generated_method = "48C98A9A2EDD269A1FC1C2A55B926703")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:54.728 -0400", hash_original_method = "6988E36A0998B14CBE7D70DCBAB74FF8", hash_generated_method = "F22ADE2CD1746C004D4B2CA2290B3BF4")
     @DSModeled(DSC.SAFE)
     public void setSharedPreferencesMode(int sharedPreferencesMode) {
         dsTaint.addTaint(sharedPreferencesMode);
@@ -252,7 +249,7 @@ public class PreferenceManager {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:03.063 -0400", hash_original_method = "B901A30CD0A7131EC29E8BD072ADC21D", hash_generated_method = "09EB085536F260B5478B258E29E49362")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:54.729 -0400", hash_original_method = "B901A30CD0A7131EC29E8BD072ADC21D", hash_generated_method = "4282D51885CE70C7DAECFC9E5A228A5F")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public SharedPreferences getSharedPreferences() {
         {
@@ -269,26 +266,23 @@ public class PreferenceManager {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:03.063 -0400", hash_original_method = "DEE839A83C4B35ACEA8CCC2B71E2B5D1", hash_generated_method = "2B16C131215B04C3D72C14303B6B379E")
-    public static SharedPreferences getDefaultSharedPreferences(Context context) {
+        public static SharedPreferences getDefaultSharedPreferences(Context context) {
         return context.getSharedPreferences(getDefaultSharedPreferencesName(context),
                 getDefaultSharedPreferencesMode());
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:03.063 -0400", hash_original_method = "42C9CE230DD05245AC0F1F15B9BA0F77", hash_generated_method = "C0A43771BC0878E5F7FF1D24F0A68563")
-    private static String getDefaultSharedPreferencesName(Context context) {
+        private static String getDefaultSharedPreferencesName(Context context) {
         return context.getPackageName() + "_preferences";
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:03.063 -0400", hash_original_method = "9A4A0B76FBD75A7A2387EF85E0D2FD54", hash_generated_method = "D84FC8AF76E7CF2269D44A6A6D9A3736")
-    private static int getDefaultSharedPreferencesMode() {
+        private static int getDefaultSharedPreferencesMode() {
         return Context.MODE_PRIVATE;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:03.063 -0400", hash_original_method = "60967B21FA602EB86E9B5EB647B08AF2", hash_generated_method = "B4224F97C6B2686705A2D2DD2EC1E61B")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:54.731 -0400", hash_original_method = "60967B21FA602EB86E9B5EB647B08AF2", hash_generated_method = "C7E350ADEAD6667DA66C920F4F68BD02")
     @DSModeled(DSC.SAFE)
      PreferenceScreen getPreferenceScreen() {
         return (PreferenceScreen)dsTaint.getTaint();
@@ -297,7 +291,7 @@ public class PreferenceManager {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:03.063 -0400", hash_original_method = "72F330353D1AAD0C361FC98ABB0551E0", hash_generated_method = "373DDEB0A9CAFBED76CF4B5A776324F7")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:54.731 -0400", hash_original_method = "72F330353D1AAD0C361FC98ABB0551E0", hash_generated_method = "7CFAEAB8CCD2BC5214A49A53B479627F")
     @DSModeled(DSC.SAFE)
      boolean setPreferences(PreferenceScreen preferenceScreen) {
         dsTaint.addTaint(preferenceScreen.dsTaint);
@@ -311,11 +305,11 @@ public class PreferenceManager {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:03.064 -0400", hash_original_method = "313075D13AC6A3D78BD3127C39A86211", hash_generated_method = "6DEA6063A1472153FAB699D2FC0DB6D7")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:54.731 -0400", hash_original_method = "313075D13AC6A3D78BD3127C39A86211", hash_generated_method = "44D9B1E7167D93F6032DACAA507DEEC5")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     public Preference findPreference(CharSequence key) {
         dsTaint.addTaint(key);
-        Preference var87C1A986291E6AFED7D02EAECE847A62_1781227010 = (mPreferenceScreen.findPreference(key));
+        Preference var87C1A986291E6AFED7D02EAECE847A62_1229405968 = (mPreferenceScreen.findPreference(key));
         return (Preference)dsTaint.getTaint();
         // ---------- Original Method ----------
         //if (mPreferenceScreen == null) {
@@ -325,15 +319,13 @@ public class PreferenceManager {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:03.064 -0400", hash_original_method = "1B08E289995C6C21F5C2BC4F9B6F5187", hash_generated_method = "F724C524DB65805B1F61E415B268DBA7")
-    public static void setDefaultValues(Context context, int resId, boolean readAgain) {
+        public static void setDefaultValues(Context context, int resId, boolean readAgain) {
         setDefaultValues(context, getDefaultSharedPreferencesName(context),
                 getDefaultSharedPreferencesMode(), resId, readAgain);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:03.064 -0400", hash_original_method = "9646A9372ECC55871733A680E62A72CA", hash_generated_method = "79B0073DD25D6B22E6CDE97A8130A2AB")
-    public static void setDefaultValues(Context context, String sharedPreferencesName,
+        public static void setDefaultValues(Context context, String sharedPreferencesName,
             int sharedPreferencesMode, int resId, boolean readAgain) {
         final SharedPreferences defaultValueSp = context.getSharedPreferences(
                 KEY_HAS_SET_DEFAULT_VALUES, Context.MODE_PRIVATE);
@@ -353,7 +345,7 @@ public class PreferenceManager {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:03.064 -0400", hash_original_method = "D4733D45210A4F96431F976F3F9AB3C2", hash_generated_method = "3A28711AF5F266F8228EB37362E8D913")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:54.732 -0400", hash_original_method = "D4733D45210A4F96431F976F3F9AB3C2", hash_generated_method = "4BF20F5164EA8F1920F78678EFE0E4CB")
     //DSFIXME:  CODE0002: Requires DSC value to be set
      SharedPreferences.Editor getEditor() {
         {
@@ -362,7 +354,7 @@ public class PreferenceManager {
             } //End block
         } //End block
         {
-            SharedPreferences.Editor var0948B81E09E41A32904748A17BADC880_1325004192 = (getSharedPreferences().edit());
+            SharedPreferences.Editor var0948B81E09E41A32904748A17BADC880_209456008 = (getSharedPreferences().edit());
         } //End block
         return (SharedPreferences.Editor)dsTaint.getTaint();
         // ---------- Original Method ----------
@@ -377,7 +369,7 @@ public class PreferenceManager {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:03.064 -0400", hash_original_method = "47C154426E8AAB84597A7B272BF8D2FA", hash_generated_method = "F087DB9A50A559093DDFC7D273D880DF")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:54.732 -0400", hash_original_method = "47C154426E8AAB84597A7B272BF8D2FA", hash_generated_method = "14DB7925FB81714B3B9DDBA7699CE625")
     @DSModeled(DSC.SAFE)
      boolean shouldCommit() {
         return dsTaint.getTaintBoolean();
@@ -386,8 +378,8 @@ public class PreferenceManager {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:03.064 -0400", hash_original_method = "2ED947FD2CD87E45A298D362CE1C3C54", hash_generated_method = "0FD0B338AC910C42DA26C73B8965BD34")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:54.733 -0400", hash_original_method = "2ED947FD2CD87E45A298D362CE1C3C54", hash_generated_method = "73D5291BD17138FD579A1D4775AF8634")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
     private void setNoCommit(boolean noCommit) {
         dsTaint.addTaint(noCommit);
         {
@@ -412,7 +404,7 @@ public class PreferenceManager {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:03.064 -0400", hash_original_method = "3F17133E8D63AE8C7414DC58966291E3", hash_generated_method = "F13DE7409A763AE70FF83E6BDADA6995")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:54.733 -0400", hash_original_method = "3F17133E8D63AE8C7414DC58966291E3", hash_generated_method = "0CCA83D1B90B580ED5B3B87A35D20A5D")
     @DSModeled(DSC.SAFE)
      Activity getActivity() {
         return (Activity)dsTaint.getTaint();
@@ -421,7 +413,7 @@ public class PreferenceManager {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:03.064 -0400", hash_original_method = "4F4EBC54D108D66F416C93B46580E117", hash_generated_method = "984B688B58AB4EF934D2048ACA6C1BFF")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:54.733 -0400", hash_original_method = "4F4EBC54D108D66F416C93B46580E117", hash_generated_method = "B0B2DDBEB77BA94D0A4C33C64B71FA82")
     @DSModeled(DSC.SAFE)
      Context getContext() {
         return (Context)dsTaint.getTaint();
@@ -430,7 +422,7 @@ public class PreferenceManager {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:03.065 -0400", hash_original_method = "8C7924F669844968ABD2440B12D35A69", hash_generated_method = "16BEF104E488EFDD6547E490D24BC1C7")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:54.733 -0400", hash_original_method = "8C7924F669844968ABD2440B12D35A69", hash_generated_method = "0486B16E44BEA324F97CDA6DC417BE4A")
     //DSFIXME:  CODE0002: Requires DSC value to be set
      void registerOnActivityResultListener(OnActivityResultListener listener) {
         //DSFIXME: CODE0010: Possible callback registration function detected
@@ -440,7 +432,7 @@ public class PreferenceManager {
                 mActivityResultListeners = new ArrayList<OnActivityResultListener>();
             } //End block
             {
-                boolean var15DEA0801B4CA66F31C20D5EEB846813_708634244 = (!mActivityResultListeners.contains(listener));
+                boolean var15DEA0801B4CA66F31C20D5EEB846813_1638686088 = (!mActivityResultListeners.contains(listener));
                 {
                     mActivityResultListeners.add(listener);
                 } //End block
@@ -458,10 +450,9 @@ public class PreferenceManager {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:03.065 -0400", hash_original_method = "2F16D3A7CC67220808B5AF6C63D00415", hash_generated_method = "580A6798449A0331C003E1F328F715C4")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:54.734 -0400", hash_original_method = "2F16D3A7CC67220808B5AF6C63D00415", hash_generated_method = "8A4BA236B108C9C27B10E7B2C6D7D8A8")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
      void unregisterOnActivityResultListener(OnActivityResultListener listener) {
-        //DSFIXME: CODE0010: Possible callback registration function detected
         dsTaint.addTaint(listener.dsTaint);
         {
             {
@@ -477,24 +468,24 @@ public class PreferenceManager {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:03.065 -0400", hash_original_method = "A3EFE32034D38DFF1A90F9A5F45D56A6", hash_generated_method = "CB39EE6880327BB5677DC0300C3E65C7")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:54.734 -0400", hash_original_method = "A3EFE32034D38DFF1A90F9A5F45D56A6", hash_generated_method = "4F3AD123455C8A6386459835978FDBE7")
     @DSModeled(DSC.SPEC)
      void dispatchActivityResult(int requestCode, int resultCode, Intent data) {
         dsTaint.addTaint(requestCode);
-        dsTaint.addTaint(resultCode);
         dsTaint.addTaint(data.dsTaint);
+        dsTaint.addTaint(resultCode);
         List<OnActivityResultListener> list;
         {
             list = new ArrayList<OnActivityResultListener>(mActivityResultListeners);
         } //End block
-        final int N;
+        int N;
         N = list.size();
         {
             int i;
             i = 0;
             {
                 {
-                    boolean varA0E378DB28F1EA78419E01C6630E728F_198805583 = (list.get(i).onActivityResult(requestCode, resultCode, data));
+                    boolean varA0E378DB28F1EA78419E01C6630E728F_262653364 = (list.get(i).onActivityResult(requestCode, resultCode, data));
                 } //End collapsed parenthetic
             } //End block
         } //End collapsed parenthetic
@@ -513,7 +504,7 @@ public class PreferenceManager {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:03.065 -0400", hash_original_method = "2A0808589AAB6A9778EC4C51EF499853", hash_generated_method = "F47F9C3AA87BDFED7F8554C52D9613E0")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:54.734 -0400", hash_original_method = "2A0808589AAB6A9778EC4C51EF499853", hash_generated_method = "8CC75838EFAD6ECE4B06457F9FDDB473")
     //DSFIXME:  CODE0002: Requires DSC value to be set
      void registerOnActivityStopListener(OnActivityStopListener listener) {
         //DSFIXME: CODE0010: Possible callback registration function detected
@@ -523,7 +514,7 @@ public class PreferenceManager {
                 mActivityStopListeners = new ArrayList<OnActivityStopListener>();
             } //End block
             {
-                boolean var8DD9D2AD16524FCA9AA66A5DFCB0DD9D_1579565971 = (!mActivityStopListeners.contains(listener));
+                boolean var8DD9D2AD16524FCA9AA66A5DFCB0DD9D_1051852772 = (!mActivityStopListeners.contains(listener));
                 {
                     mActivityStopListeners.add(listener);
                 } //End block
@@ -541,10 +532,9 @@ public class PreferenceManager {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:03.065 -0400", hash_original_method = "D042C49681BB57CB7E14977DE37ED6E0", hash_generated_method = "23C86C7F196756618CFE9C25D38AAD2E")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:54.735 -0400", hash_original_method = "D042C49681BB57CB7E14977DE37ED6E0", hash_generated_method = "8775F4BB202879E1E078AC09E845B36F")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
      void unregisterOnActivityStopListener(OnActivityStopListener listener) {
-        //DSFIXME: CODE0010: Possible callback registration function detected
         dsTaint.addTaint(listener.dsTaint);
         {
             {
@@ -560,14 +550,14 @@ public class PreferenceManager {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:03.065 -0400", hash_original_method = "6FD57C464C4DA57829A6C2B52E45A452", hash_generated_method = "2A8A9975AE1719E32505337FE218814F")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:54.735 -0400", hash_original_method = "6FD57C464C4DA57829A6C2B52E45A452", hash_generated_method = "1EE8CF8BE53B75A860C2D0AF79A8F057")
     //DSFIXME:  CODE0002: Requires DSC value to be set
      void dispatchActivityStop() {
         List<OnActivityStopListener> list;
         {
             list = new ArrayList<OnActivityStopListener>(mActivityStopListeners);
         } //End block
-        final int N;
+        int N;
         N = list.size();
         {
             int i;
@@ -589,7 +579,7 @@ public class PreferenceManager {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:03.066 -0400", hash_original_method = "8932A6D76CD73EDD58651F522607034F", hash_generated_method = "7D78193A30AF330B3EF69F7515B9E97A")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:54.735 -0400", hash_original_method = "8932A6D76CD73EDD58651F522607034F", hash_generated_method = "95336ACE419DCDF5FB162A66D49FDC14")
     //DSFIXME:  CODE0002: Requires DSC value to be set
      void registerOnActivityDestroyListener(OnActivityDestroyListener listener) {
         //DSFIXME: CODE0010: Possible callback registration function detected
@@ -599,7 +589,7 @@ public class PreferenceManager {
                 mActivityDestroyListeners = new ArrayList<OnActivityDestroyListener>();
             } //End block
             {
-                boolean var7376631AC503E8DE4340FDE7CD8C5D8E_2110719021 = (!mActivityDestroyListeners.contains(listener));
+                boolean var7376631AC503E8DE4340FDE7CD8C5D8E_1059191747 = (!mActivityDestroyListeners.contains(listener));
                 {
                     mActivityDestroyListeners.add(listener);
                 } //End block
@@ -617,10 +607,9 @@ public class PreferenceManager {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:03.066 -0400", hash_original_method = "221E9A8BD7E96AD4198B64196703C2D4", hash_generated_method = "DCEBF7BAA73B93C3F231FDB86169F570")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:54.736 -0400", hash_original_method = "221E9A8BD7E96AD4198B64196703C2D4", hash_generated_method = "2AA1D139DDE3989254DA51FF31FF108D")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
      void unregisterOnActivityDestroyListener(OnActivityDestroyListener listener) {
-        //DSFIXME: CODE0010: Possible callback registration function detected
         dsTaint.addTaint(listener.dsTaint);
         {
             {
@@ -636,7 +625,7 @@ public class PreferenceManager {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:03.066 -0400", hash_original_method = "ABC0DFC11A448AE601035D9520ECAF99", hash_generated_method = "6CDDD4D45603E2C8A623923281C9E61F")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:54.736 -0400", hash_original_method = "ABC0DFC11A448AE601035D9520ECAF99", hash_generated_method = "A64C00776B9121AB8FE450CA2FC38987")
     //DSFIXME:  CODE0002: Requires DSC value to be set
      void dispatchActivityDestroy() {
         List<OnActivityDestroyListener> list;
@@ -647,7 +636,7 @@ public class PreferenceManager {
             } //End block
         } //End block
         {
-            final int N;
+            int N;
             N = list.size();
             {
                 int i;
@@ -675,7 +664,7 @@ public class PreferenceManager {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:03.066 -0400", hash_original_method = "74A43F7F50012109C1C50A128DECA709", hash_generated_method = "FB28D754B50B76B2D7814A250870D70F")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:54.736 -0400", hash_original_method = "74A43F7F50012109C1C50A128DECA709", hash_generated_method = "A65CE946D475406A4228D2B498960A90")
     @DSModeled(DSC.SAFE)
      int getNextRequestCode() {
         return dsTaint.getTaintInt();
@@ -686,8 +675,8 @@ public class PreferenceManager {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:03.066 -0400", hash_original_method = "64532379007357BDD2B5A06E80A12A41", hash_generated_method = "A4FC2390433A6D33629A8D0B472631CB")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:54.736 -0400", hash_original_method = "64532379007357BDD2B5A06E80A12A41", hash_generated_method = "8CAC2631453AF676A880573578D3CBA9")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
      void addPreferencesScreen(DialogInterface screen) {
         dsTaint.addTaint(screen.dsTaint);
         {
@@ -706,8 +695,8 @@ public class PreferenceManager {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:03.066 -0400", hash_original_method = "98728EB5C20211F6C02CB983C1971CE8", hash_generated_method = "CA18FF1D93E3F597C21505D53217B773")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:54.737 -0400", hash_original_method = "98728EB5C20211F6C02CB983C1971CE8", hash_generated_method = "A8DA7F15E77F7B8E4862939D0859EC07")
+    //DSFIXME:  CODE0002: Requires DSC value to be set
      void removePreferencesScreen(DialogInterface screen) {
         dsTaint.addTaint(screen.dsTaint);
         {
@@ -723,7 +712,7 @@ public class PreferenceManager {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:03.066 -0400", hash_original_method = "4573B347852C64DB794205DBF1F726CF", hash_generated_method = "0DF392DA56DAB40D998B219EE28D1CF0")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:54.737 -0400", hash_original_method = "4573B347852C64DB794205DBF1F726CF", hash_generated_method = "3A542A35A42CC8020FB45A9268E15EAF")
     @DSModeled(DSC.SPEC)
      void dispatchNewIntent(Intent intent) {
         dsTaint.addTaint(intent.dsTaint);
@@ -733,7 +722,7 @@ public class PreferenceManager {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:03.066 -0400", hash_original_method = "9025418B8BBAFCD2E271951C43610D69", hash_generated_method = "20FE1B2F10D922049CD36A6B96621DBB")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:54.737 -0400", hash_original_method = "9025418B8BBAFCD2E271951C43610D69", hash_generated_method = "7EE7BB55892756091976079355014E54")
     //DSFIXME:  CODE0002: Requires DSC value to be set
     private void dismissAllScreens() {
         ArrayList<DialogInterface> screensToDismiss;
@@ -763,7 +752,7 @@ public class PreferenceManager {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:03.067 -0400", hash_original_method = "285310B7C58E8A2220B6B265614A6D90", hash_generated_method = "056A9C8FAC23A7C7C77E5545B95A4349")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:54.738 -0400", hash_original_method = "285310B7C58E8A2220B6B265614A6D90", hash_generated_method = "F2E8DBE802782E8A8624E0E4A08FD122")
     @DSModeled(DSC.SAFE)
      void setOnPreferenceTreeClickListener(OnPreferenceTreeClickListener listener) {
         dsTaint.addTaint(listener.dsTaint);
@@ -772,7 +761,7 @@ public class PreferenceManager {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4", generated_on = "2013-06-11 11:15:03.067 -0400", hash_original_method = "44D09E26591D5A19BD471058A1477B47", hash_generated_method = "011D839EEB1C5FF85A344F7D72B5AF3B")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:54.738 -0400", hash_original_method = "44D09E26591D5A19BD471058A1477B47", hash_generated_method = "F0FC5B3415D6F65342AB96DAF7FC05FC")
     @DSModeled(DSC.SAFE)
      OnPreferenceTreeClickListener getOnPreferenceTreeClickListener() {
         return (OnPreferenceTreeClickListener)dsTaint.getTaint();
@@ -804,6 +793,8 @@ public class PreferenceManager {
         void onActivityDestroy();
     }
     
+    private static final String TAG = "PreferenceManager";
+    public static final String METADATA_KEY_PREFERENCES = "android.preference";
+    public static final String KEY_HAS_SET_DEFAULT_VALUES = "_has_set_default_values";
 }
-
 

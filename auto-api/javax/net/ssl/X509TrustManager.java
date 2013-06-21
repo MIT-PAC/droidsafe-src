@@ -3,10 +3,10 @@ package javax.net.ssl;
 // Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
+import droidsafe.runtime.*;
 
-// import Iterator to deal with enhanced for loop translation
+// needed for enhanced for control translations
 import java.util.Iterator;
-
 import java.security.cert.CertificateException;
 import java.security.cert.X509Certificate;
 
@@ -24,4 +24,3 @@ public interface X509TrustManager extends TrustManager {
     
     public X509Certificate[] getAcceptedIssuers();
 }
-

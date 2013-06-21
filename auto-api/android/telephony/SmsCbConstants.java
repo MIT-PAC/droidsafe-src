@@ -3,10 +3,10 @@ package android.telephony;
 // Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
+import droidsafe.runtime.*;
 
-// import Iterator to deal with enhanced for loop translation
+// needed for enhanced for control translations
 import java.util.Iterator;
-
 
 public interface SmsCbConstants {
     
@@ -102,4 +102,3 @@ public interface SmsCbConstants {
     
     public static final int ETWS_WARNING_TYPE_OTHER                         = 0x04;
 }
-
