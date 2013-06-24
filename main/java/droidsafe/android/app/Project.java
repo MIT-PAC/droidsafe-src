@@ -1,28 +1,34 @@
 package droidsafe.android.app;
 
 
+import droidsafe.main.Config;
+import droidsafe.main.Main;
+import droidsafe.main.SootConfig;
+
+import droidsafe.utils.Utils;
+
 import java.io.File;
 import java.io.IOException;
+
+import java.net.MalformedURLException;
 import java.net.URL;
 import java.net.URLClassLoader;
+
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.Enumeration;
+import java.util.jar.JarEntry;
+import java.util.jar.JarFile;
 import java.util.LinkedHashSet;
 import java.util.List;
 import java.util.Set;
-import java.util.jar.JarEntry;
-import java.util.jar.JarFile;
 
 import org.apache.commons.io.*;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import soot.SootClass;
-
-import droidsafe.main.Config;
-import droidsafe.main.Main;
-import droidsafe.main.SootConfig;
-import droidsafe.utils.Utils;
 
 /** 
  * Represent an Android project including the source files, resource files,
@@ -127,17 +133,20 @@ public class Project {
      * Initialize the java class loader used to load application classes
      */
     private void createJavaClassLoader() {
+        List<URL> urls = new ArrayList<URL>();
         try {
             File classesDir = new File(Config.v().APP_ROOT_DIR, CLASSES_DIR);
-            URL classesDirURL = classesDir.toURI().toURL();
+            urls.add(classesDir.toURI().toURL());
             File androidJar = new File(Config.v().ANDROID_LIB_DIR, Config.v().ANDROID_JAR);
-            URL androidJarURL = androidJar.toURI().toURL();
-            javaAppClassLoader = new URLClassLoader(new URL[]{classesDirURL, androidJarURL});
-        } catch (Exception e) {
-            logger.error("Unable to create java class loader for application: {}  Exiting...", e);
+            urls.add(androidJar.toURI().toURL());
+            for(File f : getAppLibJars()) {
+                urls.add(f.toURI().toURL());
+            }
+        } catch(MalformedURLException e) {
+            logger.error("Encountered a malformed url when creating java class laoder for application: {}", e);
             System.exit(1);
         }
-
+        javaAppClassLoader = new URLClassLoader(urls.toArray(new URL[0]));
     }
 
     /** 
@@ -180,12 +189,7 @@ public class Project {
      * Add all classes from any jar files into the set for library classes.
      */
     private void setLibClasses() {
-        libClasses = new LinkedHashSet<String>();
-
-        if (!this.appLibDir.exists())
-            return;
-
-        for (File f : FileUtils.listFiles(this.appLibDir, new String[]{"jar"}, true)) {
+        for (File f : getAppLibJars()) {
             JarFile jarFile = null;
             try {
                 jarFile = new JarFile(f);
@@ -209,6 +213,15 @@ public class Project {
      */
     public File getAppLibDir() {
         return appLibDir;
+    }
+
+    public Collection<File> getAppLibJars() {
+        libClasses = new LinkedHashSet<String>();
+       
+        if (!this.appLibDir.exists())
+            return null;
+
+        return FileUtils.listFiles(this.appLibDir, new String[]{"jar"}, true);
     }
 
     /**
