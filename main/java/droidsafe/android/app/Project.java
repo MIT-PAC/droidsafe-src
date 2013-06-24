@@ -71,7 +71,8 @@ public class Project {
     /** Set of all src class names (fully qualified) */
     private Set<String> srcClasses;
     /** Set of all lib class names (fully qualified) */
-    private Set<String> libClasses;
+    private Set<String> libClasses = new LinkedHashSet<String>();
+
     /** Set of all gen class names (fully qualified) */
     private Set<String> genClasses;
     /** Class loader for loading modeled classes */
@@ -215,13 +216,14 @@ public class Project {
         return appLibDir;
     }
 
+    /**
+     * Returns a collection of files, one for each of the jar files in the app's lib folder
+     */
     public Collection<File> getAppLibJars() {
-        libClasses = new LinkedHashSet<String>();
-       
-        if (!this.appLibDir.exists())
-            return null;
-
-        return FileUtils.listFiles(this.appLibDir, new String[]{"jar"}, true);
+        Collection<File> appLibJars = new ArrayList<File>();
+        if (this.appLibDir.exists())
+            appLibJars = FileUtils.listFiles(this.appLibDir, new String[]{"jar"}, true);
+        return appLibJars;
     }
 
     /**
