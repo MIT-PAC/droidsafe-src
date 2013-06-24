@@ -88,15 +88,15 @@ public class BuiltinMethodCallTranslator implements MethodCallTranslator {
 	private static final Automaton UNSIGNED_HEX_AUTOMATON = new RegExp("0|[1-9a-f][0-9a-f]*").toAutomaton();
 	private static final Automaton UNSIGNED_OCTAL_AUTOMATON = new RegExp("0|[1-7][0-7]*").toAutomaton();
 	private static final Automaton UNSIGNED_BINARY_AUTOMATON = new RegExp("0|1[01]*").toAutomaton();
-	
+
 	/**
-	 * List of collection types we trust. Invoking a constructor on a
-	 * collection-type not in this list will produce a corrupt collection.
-	 * <p/>
-	 * Note that this ONLY affects constructor call! Collections returned by
-	 * eg. Collections.unmodifiableList() may be considered valid even though
-	 * its type is not in this list.
-	 */
+         * List of collection types we trust. Invoking a constructor on a
+         * collection-type not in this list will produce a corrupt collection.
+         * <p/>
+         * Note that this ONLY affects constructor call! Collections returned by
+         * eg. Collections.unmodifiableList() may be considered valid even though
+         * its type is not in this list.
+         */
 	private static final String[] TRUSTED_COLLECTIONS = {
 		"java.util.ArrayList",
 		"java.util.Vector",
@@ -113,28 +113,28 @@ public class BuiltinMethodCallTranslator implements MethodCallTranslator {
 		}
 		trustedCollections = Collections.unmodifiableSet(set);
 	}
-	
+
 	/**
-	 * List of StringBuffer methods that have no side-effects and return uninteresting objects. This technique only works
-	 * because all overloads of a pure method in StringBuffer are pure.
-	 * <p/>
-	 * Does *not* include those declared in Object, but does include those inherited from interfaces.
-	 */
-	private static final String STRING_BUFFER_IGNORED_METHODS = 
+         * List of StringBuffer methods that have no side-effects and return uninteresting objects. This technique only works
+         * because all overloads of a pure method in StringBuffer are pure.
+         * <p/>
+         * Does *not* include those declared in Object, but does include those inherited from interfaces.
+         */
+	private static final String STRING_BUFFER_IGNORED_METHODS =
 		"capacity|charAt|codePointAt|codePointBefore|codePointCount|ensureCapacity|getChars|indexOf|"
 	+	"lastIndexOf|length|offsetByCodePoints|subSequence|trimToSize"
 	;
-	
+
 	/**
-	 * Accepts names of StringBuffer methods that have no side-effects and return uninteresting objects.
-	 */
+         * Accepts names of StringBuffer methods that have no side-effects and return uninteresting objects.
+         */
 	private static final Automaton STRING_BUFFER_IGNORED_METHODS_AUTO = new RegExp(STRING_BUFFER_IGNORED_METHODS).toAutomaton();
-	
+
 	public Variable translateMethodCall(InstanceInvokeExpr expr, SootMethod target, Variable callee, List<Variable> arguments, IntermediateFactory factory) {
 		String methodName = target.getName();
 		int numArgs = arguments.size();
 		SootClass declaringClass = target.getDeclaringClass();
-		
+
 		//
 		//	STRING
 		//
@@ -142,11 +142,11 @@ public class BuiltinMethodCallTranslator implements MethodCallTranslator {
 			// String.toString()
             if (methodName.equals("toString") && numArgs == 0) {
                 return callee;
-                
+
             // String.intern()
             } else if (methodName.equals("intern") && numArgs == 0) {
                 return callee;
-                
+
             // String.concat(String)	[explicit, not invoked by + operator]
             } else if (methodName.equals("concat") && numArgs == 1 && isString(target.getParameterType(0))) {
                 // translate the argument
@@ -154,7 +154,7 @@ public class BuiltinMethodCallTranslator implements MethodCallTranslator {
                 Variable result = factory.createVariable(VariableType.STRING);
                 factory.addStatement(new StringConcat(result, callee, rvar));
                 return result;
-                
+
             // String.replace(char,char)
             } else if (methodName.equals("replace") && numArgs == 2 &&
                     isChar(target.getParameterType(0)) &&
@@ -175,14 +175,14 @@ public class BuiltinMethodCallTranslator implements MethodCallTranslator {
                         op = new Replace4();
                     }
                 }
-                
+
                 Variable temp = factory.createVariable(VariableType.STRINGBUFFER);
                 Variable result = factory.createVariable(VariableType.STRING);
                 factory.addStatement(new StringBufferInit(temp, callee));
                 factory.addStatement(new StringBufferUnaryOp(temp, op));
                 factory.addStatement(new StringFromStringBuffer(result, temp));
                 return result;
-                
+
             // String.replace(CharSequence, CharSequence)
             } else if (methodName.equals("replace") && numArgs == 2 &&
                     isCharSequence(target.getParameterType(0)) &&
@@ -190,20 +190,20 @@ public class BuiltinMethodCallTranslator implements MethodCallTranslator {
                 String arg1 = trackString(expr.getArg(0));
                 String arg2 = trackString(expr.getArg(1));
                 Variable result = factory.createVariable(VariableType.STRING);
-                
+
                 // if either argument is unknown, give up.	[TODO make this better]
                 if (arg1 == null || arg2 == null) {
                 	factory.addStatement(new StringInit(result, Basic.makeAnyString()));
                 	return result;
                 }
-                
+
                 Replace6 rep = new Replace6(arg1, arg2);
                 Variable temp = factory.createVariable(VariableType.STRINGBUFFER);
                 factory.addStatement(new StringBufferInit(temp, callee));
                 factory.addStatement(new StringBufferUnaryOp(temp, rep));
                 factory.addStatement(new StringFromStringBuffer(result, temp));
                 return result;
-                
+
             // String.trim()
             } else if (methodName.equals("trim") && numArgs == 0) {
                 UnaryOperation op = new Trim();
@@ -213,7 +213,7 @@ public class BuiltinMethodCallTranslator implements MethodCallTranslator {
                 factory.addStatement(new StringBufferUnaryOp(temp, op));
                 factory.addStatement(new StringFromStringBuffer(result, temp));
                 return result;
-            
+
             // String.substring(int)		[this method returns a suffix of the string, starting at the specified index]
             } else if (methodName.equals("substring") && numArgs == 1) {
                 UnaryOperation op;
@@ -230,7 +230,7 @@ public class BuiltinMethodCallTranslator implements MethodCallTranslator {
                 factory.addStatement(new StringBufferUnaryOp(temp, op));
                 factory.addStatement(new StringFromStringBuffer(result, temp));
                 return result;
-            
+
             // String.substring(int,int)
             } else if (methodName.equals("substring") && numArgs == 2) {
                 UnaryOperation op;
@@ -249,7 +249,7 @@ public class BuiltinMethodCallTranslator implements MethodCallTranslator {
                 factory.addStatement(new StringBufferUnaryOp(temp, op));
                 factory.addStatement(new StringFromStringBuffer(result, temp));
                 return result;
-            
+
             // String.toLowerCase()
             } else if (methodName.equals("toLowerCase") && numArgs == 0) {
                 UnaryOperation op = new ToLowerCase();
@@ -259,7 +259,7 @@ public class BuiltinMethodCallTranslator implements MethodCallTranslator {
                 factory.addStatement(new StringBufferUnaryOp(temp, op));
                 factory.addStatement(new StringFromStringBuffer(result, temp));
                 return result;
-            
+
             // String.toUpperCase()
             } else if (methodName.equals("toUpperCase") && numArgs == 0) {
                 UnaryOperation op = new ToUpperCase();
@@ -269,13 +269,13 @@ public class BuiltinMethodCallTranslator implements MethodCallTranslator {
                 factory.addStatement(new StringBufferUnaryOp(temp, op));
                 factory.addStatement(new StringFromStringBuffer(result, temp));
                 return result;
-            
+
             // String.split(String)
             } else if (methodName.equals("split") && numArgs == 1) {
                 Variable result = factory.createVariable(VariableType.ARRAY);
                 factory.addStatement(new BasicUnaryOp(result, callee, new Split()));
                 return result;
-            
+
             // String.charAt(int)
             } else if (methodName.equals("charAt") && numArgs == 1) {
                 UnaryOperation op;
@@ -288,15 +288,15 @@ public class BuiltinMethodCallTranslator implements MethodCallTranslator {
                 Variable result = factory.createVariable(VariableType.PRIMITIVE);
                 factory.addStatement(new BasicUnaryOp(result, callee, op));
                 return result;
-                
+
             // String.contains(CharSequence)
             } else if (methodName.equals("contains") && numArgs == 1) {
                 // this is experimental stuff. it is working, but probably not that useful
                 Variable result = factory.createVariable(VariableType.PRIMITIVE);
                 factory.addStatement(new BasicBinaryOp(result, callee, arguments.get(0), new Contains()));
                 return result;
-            
-            
+
+
             // String.contentEquals(CharSequence) and String.contentEquals(StringBuffer)
             } else if (methodName.equals("contentEquals") && numArgs == 1) {
                 // we can't say anything meaningful except the argument is NOT corrupted
@@ -305,7 +305,7 @@ public class BuiltinMethodCallTranslator implements MethodCallTranslator {
                 factory.addStatement(new PrimitiveInit(result, Basic.getBinaryBooleans()));
                 return result;
             }
-            
+
             // String.toCharArray()
             else if (methodName.equals("toCharArray") && numArgs == 0) {
                 Variable result = factory.createVariable(VariableType.ARRAY);
@@ -315,12 +315,12 @@ public class BuiltinMethodCallTranslator implements MethodCallTranslator {
                 factory.addStatement(new ArrayWriteElement(result, charAt));
                 return result;
             }
-            
-			
+
+
         	return null;
-			
+
 		}
-		
+
 		//
 		//		STRINGBUFFER
 		//
@@ -329,13 +329,13 @@ public class BuiltinMethodCallTranslator implements MethodCallTranslator {
 				Variable result = factory.createVariable(VariableType.STRING);
                 factory.addStatement(new StringFromStringBuffer(result, callee));
                 return result;
-            } 
+            }
             // StringBuffer.append(<any type>)
             else if (methodName.equals("append") && numArgs == 1) {
                 Variable rvar = valueOf(expr.getArgBox(0), arguments.get(0), 10, target.getParameterType(0), factory);
                 factory.addStatement(new StringBufferAppend(callee, rvar));
                 return callee;
-            } 
+            }
             // StringBuffer.insert(int, <any type>)
             else if (methodName.equals("insert") && numArgs == 2 &&
                     isInt(target.getParameterType(0))) {
@@ -347,32 +347,32 @@ public class BuiltinMethodCallTranslator implements MethodCallTranslator {
                 	factory.addStatement(new StringBufferBinaryOp(callee, new Insert(), rvar));
                 }
                 return callee;
-            } 
+            }
             // StringBuffer.delete(int,int)
             else if (methodName.equals("delete") && numArgs == 2) {
                 UnaryOperation op = new Delete();
                 factory.addStatement(new StringBufferUnaryOp(callee, op));
                 return callee;
-            } 
+            }
             // StringBuffer.deleteCharAt(int)
             else if (methodName.equals("deleteCharAt") && numArgs == 1) {
                 UnaryOperation op = new DeleteCharAt();
                 factory.addStatement(new StringBufferUnaryOp(callee, op));
                 return callee;
-            } 
+            }
             // StringBuffer.replace(int start, int end, String replacement)
             else if (methodName.equals("replace") && numArgs == 3) {
                 BinaryOperation op = new Replace5();
                 Variable rvar = valueOf(expr.getArgBox(2), arguments.get(2), 10, target.getParameterType(2), factory);
                 factory.addStatement(new StringBufferBinaryOp(callee, op, rvar));
                 return callee;
-            } 
+            }
             // StringBuffer.reverse()
             else if (methodName.equals("reverse") && numArgs == 0) {
                 UnaryOperation op = new Reverse();
                 factory.addStatement(new StringBufferUnaryOp(callee, op));
                 return callee;
-            } 
+            }
             // StringBuffer.setCharAt(int, char)	[NOTE: This method returns void]
             else if (methodName.equals("setCharAt") && numArgs == 2) {
                 Integer c = trackInteger(expr.getArg(1));
@@ -384,30 +384,30 @@ public class BuiltinMethodCallTranslator implements MethodCallTranslator {
                     factory.addStatement(new StringBufferUnaryOp(callee, op));
                 }
                 return factory.getNothing();
-            } 
+            }
             // StringBuffer.setLength(int)			[NOTE: This method returns void]
             else if (methodName.equals("setLength") && numArgs == 1) {
                 UnaryOperation op = new SetLength();
                 factory.addStatement(new StringBufferUnaryOp(callee, op));
                 return factory.getNothing();// returns void
-            } 
+            }
             // StringBuffer.substring(int)			[NOTE: Returns a string]
             else if (methodName.equals("substring") && numArgs == 1) {
                 UnaryOperation op = new Postfix();
 
                 Variable result = factory.createVariable(VariableType.STRING);
-                
+
                 // clone the stringbuffer
                 Variable clone = makeStringBufferClone(callee, factory);
-                
+
                 // perform the substring operation on the clone
                 factory.addStatement(new StringBufferUnaryOp(clone, op));
-                
+
                 // now put the clone's value back into the result variable
                 factory.addStatement(new StringFromStringBuffer(result, clone));
-                
+
                 return result;
-            }  
+            }
             // StringBuffer.substring(int,int)		[NOTE: Returns a string]
             else if (methodName.equals("substring") && numArgs == 2) {
                 UnaryOperation op;
@@ -417,29 +417,29 @@ public class BuiltinMethodCallTranslator implements MethodCallTranslator {
                 } else {
                     op = new Substring();
                 }
-                
+
                 Variable result = factory.createVariable(VariableType.STRING);
-                
+
                 // clone the stringbuffer
                 Variable clone = makeStringBufferClone(callee, factory);
-                
+
                 // perform the substring operation on the clone
                 factory.addStatement(new StringBufferUnaryOp(clone, op));
-                
+
                 // now put the clone's value back into the result variable
                 factory.addStatement(new StringFromStringBuffer(result, clone));
-                
+
                 return result;
             }
-			
+
             else if (STRING_BUFFER_IGNORED_METHODS_AUTO.run(methodName)) {
             	// A method without side-effects. Just return something.
             	return factory.createVariable(factory.fromSootType(target.getReturnType()));
             }
-			
+
 			System.err.println("Unknown StringBuffer method: " + target.getSignature());
 		}
-		
+
 		//
 		//	WRAPPERS
 		//
@@ -448,15 +448,15 @@ public class BuiltinMethodCallTranslator implements MethodCallTranslator {
 				Automaton typeAuto = Automatons.fromType(declaringClass.getName());
 				if (typeAuto == null)
 					throw new RuntimeException("Unknown wrapper class " + declaringClass.getName());
-				
+
 				Variable result = factory.createVariable(VariableType.STRING);
 				factory.addStatement(new StringInit(result, typeAuto));
 				return result;
 			}
-			
+
 			//System.err.println("Unknown wrapper method: " + target.getSignature());
 		}
-		
+
 		//
 		//	OBJECT
 		//
@@ -466,17 +466,17 @@ public class BuiltinMethodCallTranslator implements MethodCallTranslator {
 				return factory.createVariable(factory.fromSootType(target.getReturnType()));
 			}
 		}
-		
+
 		return null;
 	}
-	
+
 	public Variable translateAbstractMethodCall(InstanceInvokeExpr expr,
 			SootMethod target, Variable callee, List<Variable> arguments,
 			IntermediateFactory factory) {
 		SootClass declaringClass = target.getDeclaringClass();
 		String methodName = target.getName();
 		int numArgs = expr.getArgCount();
-		
+
 		//
 		//	COLLECTIONS
 		//
@@ -512,14 +512,14 @@ public class BuiltinMethodCallTranslator implements MethodCallTranslator {
 			// set(int,String)
 			else if (methodName.equals("set") && numArgs == 2 && isInt(expr.getArg(0).getType()) && isString(expr.getArg(1).getType())) {
 				// note: List.set returns the element previously at the position
-				
+
 				// get the old element
 				Variable old = factory.createVariable(VariableType.STRING);
 				factory.addStatement(new StringFromArray(old, callee));
-				
+
 				// insert the new element
 				factory.addStatement(new ArrayWriteElement(callee, arguments.get(1)));
-				
+
 				return old;
 			}
 			// get(int)
@@ -549,9 +549,17 @@ public class BuiltinMethodCallTranslator implements MethodCallTranslator {
 			// remove() and removeAll() are just identity operations for now
 			else if (methodName.equals("remove")
 					|| methodName.equals("removeAll")) {
+
+                            if (numArgs == 1 && isInt(expr.getArg(0).getType()) && isString(expr.getType())) {
+				Variable result = factory.createVariable(VariableType.STRING);
+				factory.addStatement(new StringFromArray(result, callee));
+				return result;
+                            } else {
+                                // signature is boolean remove(Object o)
 				return anybool(factory);
+                            }
 			}
-			// size() 
+			// size()
 			else if (methodName.equals("size")) {
 				return factory.getNothing();
 			}
@@ -563,7 +571,7 @@ public class BuiltinMethodCallTranslator implements MethodCallTranslator {
 			}
 			else if (methodName.equals("toArray") && numArgs == 1) {
 				Variable result = factory.createVariable(VariableType.ARRAY);
-				
+
 				// the elements MIGHT be stored into the argument
 				factory.startBranch();
 				// 1) not stored in argument
@@ -580,13 +588,13 @@ public class BuiltinMethodCallTranslator implements MethodCallTranslator {
 					factory.useBranch();
 				}
 				factory.endBranch();
-				
+
 				factory.addStatement(new ArrayAddAll(result, callee));
-				
+
 				return result;
 			}
 		}
-		
+
 		//
 		// ITERATORS
 		//
@@ -620,23 +628,23 @@ public class BuiltinMethodCallTranslator implements MethodCallTranslator {
 				return factory.getNothing();
 			}
 		}
-		
+
 		return null;
 	}
-	
+
 	private Variable anybool(IntermediateFactory factory) {
 		Variable var = factory.createVariable(VariableType.PRIMITIVE);
 		factory.addStatement(new PrimitiveInit(var, Basic.getBinaryBooleans()));
 		return var;
 	}
-	
+
 	public Variable translateStaticMethodCall(InvokeExpr expr, List<Variable> arguments, IntermediateFactory factory) {
 		SootMethod method = expr.getMethod();
 		SootClass declaringClass = method.getDeclaringClass();
 		String methodName = method.getName();
 		int numArgs = arguments.size();
 		String className = declaringClass.getName();
-		
+
 		if (isString(declaringClass)) {
 			if (methodName.equals("valueOf") && numArgs == 1) {
 				return valueOf(expr.getArgBox(0), arguments.get(0), 10, method.getParameterType(0), factory);
@@ -646,8 +654,8 @@ public class BuiltinMethodCallTranslator implements MethodCallTranslator {
 			return valueOf(expr.getArgBox(0), arguments.get(0), 10, method.getParameterType(0), factory);
 			// make sure wrapper classes try the remaining else-ifs
 			// do not nest methodName.equals("toString") in an inner if here
-		} 
-		
+		}
+
 		else if (className.equals("java.lang.Integer")) {
 			if (methodName.equals("toHexString") && numArgs == 1) {
 				Integer arg = trackInteger(expr.getArg(0));
@@ -656,7 +664,7 @@ public class BuiltinMethodCallTranslator implements MethodCallTranslator {
 				}
 				return makeStringVariable(UNSIGNED_HEX_AUTOMATON, factory);
 			}
-			
+
 			else if (methodName.equals("toOctalString") && numArgs == 1) {
 				Integer arg = trackInteger(expr.getArg(0));
 				if (arg != null) {
@@ -664,7 +672,7 @@ public class BuiltinMethodCallTranslator implements MethodCallTranslator {
 				}
 				return makeStringVariable(UNSIGNED_OCTAL_AUTOMATON, factory);
 			}
-			
+
 			else if (methodName.equals("toBinaryString") && numArgs == 1) {
 				Integer arg = trackInteger(expr.getArg(0));
 				if (arg != null) {
@@ -673,7 +681,7 @@ public class BuiltinMethodCallTranslator implements MethodCallTranslator {
 				return makeStringVariable(UNSIGNED_BINARY_AUTOMATON, factory);
 			}
 		}
-		
+
 		else if (className.equals("java.util.Arrays")) {
 			if (methodName.equals("asList")) {
 				return arguments.get(0);
@@ -681,14 +689,14 @@ public class BuiltinMethodCallTranslator implements MethodCallTranslator {
 			else if (methodName.equals("equals")) {
 				return anybool(factory);
 			}
-			else if (methodName.equals("binarySearch") 
-					|| methodName.equals("deepHashCode") 
-					|| methodName.equals("hashCode") 
+			else if (methodName.equals("binarySearch")
+					|| methodName.equals("deepHashCode")
+					|| methodName.equals("hashCode")
 					|| methodName.equals("sort")) {
 				return factory.getNothing();
 			}
 		}
-		
+
 		else if (className.equals("java.util.Collections")) {
 			if (methodName.equals("unmodifiableList") && numArgs == 1) {
 				// the returned collection is immutable but right now it can still get corrupt
@@ -744,34 +752,34 @@ public class BuiltinMethodCallTranslator implements MethodCallTranslator {
 				return v;
 			}
 		}
-		
+
 		return null;
 	}
-	
+
 	public boolean translateConstructorCall(InstanceInvokeExpr expr, Variable callee, List<Variable> arguments, IntermediateFactory factory) {
 		SootMethod method = expr.getMethod();
 		SootClass declaringClass = method.getDeclaringClass();
 		int numArgs = arguments.size();
-		
+
 		if (isString(declaringClass)) {
 			// new String()
 			if (numArgs == 0) {
 				factory.addStatement(new StringInit(callee, Basic.makeEmptyString()));
 				return true;
 			}
-			
+
 			// new String(String)
 			if (numArgs == 1 && isString(method.getParameterType(0))) {
                 factory.addStatement(new StringAssignment(callee, arguments.get(0)));
                 return true;
-			}   
-			
+			}
+
 			// new String(StringBuffer); new String(StringBuilder)
             if (numArgs == 1 && isBufferOrBuilder(method.getParameterType(0))) {
 				factory.addStatement(new StringFromStringBuffer(callee, arguments.get(0)));
                 return true;
             }
-			
+
         	// unsupported constructor
         	// make any string. this is slightly better than returning false,
         	// because here we can guarantee that the arguments are not corrupted.
@@ -785,13 +793,13 @@ public class BuiltinMethodCallTranslator implements MethodCallTranslator {
 				factory.addStatement(new StringBufferInit(callee, empty));
 				return true;
 			}
-			
+
 			// new StringBuffer(String)
 			if (numArgs == 1 && isString(method.getParameterType(0))) {
 				factory.addStatement(new StringBufferInit(callee, arguments.get(0)));
 				return true;
 			}
-			
+
 			// new StringBuffer(CharSequence)
 			if (numArgs == 1 && isCharSequence(method.getParameterType(0))) {
 				// use the valueOf of the CharSequence, which will be its ToString-method, or
@@ -810,68 +818,68 @@ public class BuiltinMethodCallTranslator implements MethodCallTranslator {
 			}
 			//TODO more constructors
 		}
-		
-		
+
+
 		return false;
 	}
-	
+
 	/**
-	 * Returns a variable with the possible strings returned by <tt>valueOf</tt> with the specified argument.
-	 * @param box the jimple-expression containing the argument.
-	 * @param argument variable holding the argument (it has already been evaluated).
-	 * @param radix for integers, this is the base of the number system. Unused for other types.
-	 * @param type type of the formal parameter. This identifies which overload of <tt>valueOf</tt> is being called.
-	 * @return a variable holding the possible return values
-	 */
+         * Returns a variable with the possible strings returned by <tt>valueOf</tt> with the specified argument.
+         * @param box the jimple-expression containing the argument.
+         * @param argument variable holding the argument (it has already been evaluated).
+         * @param radix for integers, this is the base of the number system. Unused for other types.
+         * @param type type of the formal parameter. This identifies which overload of <tt>valueOf</tt> is being called.
+         * @return a variable holding the possible return values
+         */
 	private Variable valueOf(ValueBox box, Variable argument, int radix, Type type, IntermediateFactory factory) {
         // determine whether the value might be null
         boolean canBeNull = false;
-        
+
         Value val = box.getValue();
-        
+
         // only referene-types can be null
-        // we only consider locals, because only locals and constants may occur, 
+        // we only consider locals, because only locals and constants may occur,
         // 		and null-constants are treated by valueOfNonNull (ironically)
         // do not consider strings here, since we assign them to the string "null" instead of null
         // note: use RefLikeType to include arrays -- RefType only includes declared types
         if (val instanceof Local && val.getType() instanceof RefLikeType && !(isString(val.getType()))) {
         	canBeNull = factory.canBeNull((Local)val);
         }
-        
+
         if (canBeNull) {
         	Variable resultVar = factory.createVariable(VariableType.STRING);
-        	
+
         	// if the variable might be null, split the graph in two, one for the case
         	// where it is non-null, and one where it is null.
         	// both branches should assign to 'resultVar' so we can return a variable
         	factory.startBranch();
-        	
+
         	// not null
         	Variable notNull = valueOfNonNull(box, argument, radix, type, factory);
         	factory.addStatement(new StringAssignment(resultVar, notNull));
         	factory.useBranch();
-        	
+
         	// null
         	factory.addStatement(new StringInit(resultVar, Automatons.getNull()));
         	factory.useBranch();
-        	
+
         	factory.endBranch();
-        	
+
         	return resultVar;
         } else {
         	return valueOfNonNull(box, argument, radix, type, factory);
         }
 	}
-	
+
 	/**
-	 * Like {@link #valueOf}, except this assumes the argument is not a variable with value <tt>null</tt>, at runtime.
-	 * The argument may, however, be a <tt>null</tt>-constant.
-	 */
+         * Like {@link #valueOf}, except this assumes the argument is not a variable with value <tt>null</tt>, at runtime.
+         * The argument may, however, be a <tt>null</tt>-constant.
+         */
     private Variable valueOfNonNull(ValueBox box, Variable argument, int radix, Type type, IntermediateFactory factory) {
         // don't create a new variable if the type is STRING
         if (argument.getType() == VariableType.STRING)
         	return argument;
-        
+
         Value val = box.getValue();
         Variable result = factory.createVariable(VariableType.STRING);
         switch (argument.getType()) {
@@ -883,7 +891,7 @@ public class BuiltinMethodCallTranslator implements MethodCallTranslator {
         		factory.addStatement(new StringInit(result, Basic.makeAnyString()));
         	}
         	break;
-        	
+
         case ARRAY:
         	if (val.getType() instanceof ArrayType) {	// the argument's type only says it *might* be an array
         		// TODO because of covariant arrays, we might not actually know it is a String array??
@@ -892,15 +900,15 @@ public class BuiltinMethodCallTranslator implements MethodCallTranslator {
         		factory.addStatement(new StringInit(result, Basic.makeAnyString()));
         	}
         	break;
-        	
+
         case OBJECT:
         	factory.addStatement(new StringInit(result, Basic.makeAnyString()));
         	break;
-        	
+
         case NULL:
         	factory.addStatement(new StringInit(result, Automatons.getNull()));
         	break;
-        	
+
         case NONE:
             if (val instanceof Constant) {
             	String s = constantToString((Constant) val, radix, type);
@@ -908,11 +916,11 @@ public class BuiltinMethodCallTranslator implements MethodCallTranslator {
             		factory.addStatement(new StringInit(result, Basic.makeConstString(s)));
             	else
             		factory.addStatement(new StringInit(result, Basic.makeAnyString()));
-                
+
             } else if (radix == 10 && Automatons.fromType(type.toString()) != null) { // TODO: handle radix!=10
-            	
+
             	factory.addStatement(new StringInit(result, Automatons.fromType(type.toString())));
-            	
+
             } else if (val.getType() instanceof RefType) {
                 // Call the corresponding toString method
                 Method tostring_method = factory.getToStringMethod(((RefType) val.getType()).getSootClass());
@@ -924,42 +932,42 @@ public class BuiltinMethodCallTranslator implements MethodCallTranslator {
             } else { // If all else fails, give any string
             	factory.addStatement(new StringInit(result, Basic.makeAnyString())); // not currently reachable, but good to have here
             }
-            
+
             break;
-            
+
         case PRIMITIVE:
             // TODO: If type is another primitive type, add a UnaryOp to extract this primitive type as a boolean, int, etc.
             if (val instanceof Constant) {
                 // NOTE: This for char-variables, this does the same as the if-clause below, but is a bit more efficient
                 factory.addStatement(new StringInit(result, Basic.makeConstString(constantToString((Constant) val, radix, type))));
-                
+
             } else if (type.equals(CharType.v())) {
                 // create a string buffer, append the char, convert it to a string and return that
                 Variable tmp = factory.createVariable(VariableType.STRINGBUFFER);
                 factory.addStatement(new StringBufferInit(tmp, makeStringConstant("", factory)));
                 factory.addStatement(new StringBufferAppendChar(tmp, argument));
                 factory.addStatement(new StringFromStringBuffer(result, tmp));
-            
+
             } else if (type.equals(BooleanType.v())) {
                 // use a BooleanToString operation
                 factory.addStatement(new BasicUnaryOp(result, argument, new BooleanToString()));
-                
+
             } else if (radix == 10 && Automatons.fromType(type.toString()) != null) { // TODO: handle radix!=10
                 // unknown primitive type. use the known automaton for this type
                 factory.addStatement(new StringInit(result, Automatons.fromType(type.toString())));
-                
+
             } else {
                 factory.addStatement(new StringInit(result, Basic.makeAnyString())); // not currently reachable, but good to have here
             }
             break;
-            
+
         default:
         	throw new RuntimeException("Unknown variable type: " + argument.getType());
         } // end switch
-        
+
         return result;
     }
-	
+
     /**
      * Returns whether the specified type is an interface type.
      */
@@ -969,14 +977,14 @@ public class BuiltinMethodCallTranslator implements MethodCallTranslator {
     	}
 		return false;
 	}
-    
+
     /**
      * Converts a constant to a string, according to the <tt>toString</tt> method of
      * the type's wrapper object. For example, <tt>Integer.toString</tt> is used to convert
      * integers.
      * @param c the constant to convert to a string
      * @param radix for integers, this is the base of the number system. Unused for other types.
-     * @param type the static type of the constant. This may differ from <tt>c</tt>'s type; 
+     * @param type the static type of the constant. This may differ from <tt>c</tt>'s type;
      * 			for example because booleans are treated as integer constants.
      * @return result of <tt>toString</tt> of the specified constant.
      */
@@ -984,10 +992,10 @@ public class BuiltinMethodCallTranslator implements MethodCallTranslator {
     	String s;
     	if (c instanceof soot.jimple.NullConstant) {
             s = "null";
-            
+
         } else if (c instanceof soot.jimple.IntConstant) {
             int value = ((soot.jimple.IntConstant) c).value;
-            
+
             // booleans and chars are treated as integer constants, so we must check
             // which overload of valueOf was invoked, to see how it is converted to a string
             if (type instanceof BooleanType)
@@ -996,22 +1004,22 @@ public class BuiltinMethodCallTranslator implements MethodCallTranslator {
             	s = "" + (char)value;
             else
             	s = Integer.toString(value, radix);
-            
+
         } else if (c instanceof soot.jimple.LongConstant) {
             long value = ((soot.jimple.LongConstant) c).value;
             s = Long.toString(value, radix);
-            
+
         } else if (c instanceof soot.jimple.DoubleConstant) {
             double value = ((soot.jimple.DoubleConstant) c).value;
             s = Double.toString(value);
-            
+
         } else if (c instanceof soot.jimple.FloatConstant) {
             float value = ((soot.jimple.FloatConstant) c).value;
             s = Float.toString(value);
-            
+
         } else if (c instanceof soot.jimple.StringConstant) {
             s = ((soot.jimple.StringConstant) c).value;
-            
+
         } else if (c instanceof soot.jimple.ClassConstant) {
         	return null; // simulating this takes a lot of code
         	// this currently works, but gives the <any string> language
@@ -1028,7 +1036,7 @@ public class BuiltinMethodCallTranslator implements MethodCallTranslator {
     private boolean isCharSequence(Type t) {
         return t.equals(RefType.v("java.lang.CharSequence"));
     }
-    
+
 //	/**
 //     * Checks whether the given class is <code>java.lang.CharSequence</code>.
 //     */
@@ -1049,7 +1057,7 @@ public class BuiltinMethodCallTranslator implements MethodCallTranslator {
     private boolean isString(SootClass c) {
         return c.getName().equals("java.lang.String");
     }
-    
+
     private boolean isBufferOrBuilder(Type t) {
     	return isStringBuffer(t) || isStringBuilder(t);
     }
@@ -1057,7 +1065,7 @@ public class BuiltinMethodCallTranslator implements MethodCallTranslator {
     private boolean isBufferOrBuilder(SootClass t) {
     	return isStringBuffer(t) || isStringBuilder(t);
     }
-    
+
 //    private boolean isObjectClass(Type t) {
 //    	return t.equals(RefType.v("java.lang.Object"));
 //    }
@@ -1065,28 +1073,28 @@ public class BuiltinMethodCallTranslator implements MethodCallTranslator {
     private boolean isObjectClass(SootClass c) {
     	return c.getName().equals("java.lang.Object");
     }
-    
+
 //    /**
 //     * Checks whether the given type is <code>Collection</code>.
 //     */
 //    private boolean isCollection(Type t) {
 //        return t.equals(RefType.v("java.util.Collection"));
 //    }
-//    
+//
 //    /**
 //     * Checks whether the given type is <code>List</code>.
 //     */
 //    private boolean isList(Type t) {
 //        return t.equals(RefType.v("java.util.List"));
 //    }
-//    
+//
 //    /**
 //     * Checks whether the given type is <code>Set</code>.
 //     */
 //    private boolean isSet(Type t) {
 //        return t.equals(RefType.v("java.util.Set"));
 //    }
-    
+
     /**
      * Checks whether the given type is <code>StringBuffer</code>.
      */
@@ -1114,7 +1122,7 @@ public class BuiltinMethodCallTranslator implements MethodCallTranslator {
     private boolean isStringBuilder(SootClass c) {
         return c.getName().equals("java.lang.StringBuilder");
     }
-    
+
 //    /**
 //     * Checks whether the given class is <code>Appendable</code>.
 //     */
@@ -1149,7 +1157,7 @@ public class BuiltinMethodCallTranslator implements MethodCallTranslator {
                 || c.getName().equals("java.lang.Long")
                 || c.getName().equals("java.lang.Short");
     }
-	
+
 
     /**
      * Attempts to find a constant string value. Returns null if unable to determine constant
@@ -1172,7 +1180,7 @@ public class BuiltinMethodCallTranslator implements MethodCallTranslator {
         // TODO: make some more intelligent tracking of integers
         return null;
     }
-	
+
 
     /**
      * Creates a clone of the stringbuffer in the specified variable, such that the
@@ -1188,11 +1196,11 @@ public class BuiltinMethodCallTranslator implements MethodCallTranslator {
     	// get the current possible values of the buffer
     	Variable currentValue = factory.createVariable(VariableType.STRING);
     	factory.addStatement(new StringFromStringBuffer(currentValue, buffer));
-    	
+
     	// create a new string buffer with this initial value
     	Variable clone = factory.createVariable(VariableType.STRINGBUFFER);
     	factory.addStatement(new StringBufferInit(clone, currentValue));
-    	
+
     	return clone;
     }
 
@@ -1206,5 +1214,5 @@ public class BuiltinMethodCallTranslator implements MethodCallTranslator {
     	factory.addStatement(new StringInit(var, Automaton.makeString(value)));
     	return var;
     }
-    
+
 }
