@@ -119,7 +119,9 @@ public class Looper {
     }
     
     public String toString(){
-        return getTaintString();
+        String str = new String();
+        str.addTaint(getTaint());
+        return str;
     }
     
     public static interface Profiler {

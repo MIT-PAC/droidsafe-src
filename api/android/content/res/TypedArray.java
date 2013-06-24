@@ -61,7 +61,9 @@ public class TypedArray {
 	}
 	
 	public CharSequence getText(int index){
-		return getTaintString();
+        String str = new String();
+        str.addTaint(getTaint());
+        return str;
 		// Original method
 		/*
 		{
@@ -88,7 +90,9 @@ public class TypedArray {
 	
 	@DSModeled(DSC.SAFE)
 	public String getString(int index){
-		return getTaintString();
+        String str = new String();
+        str.addTaint(getTaint());
+        return str;
 		// Original method
 		/*
 		{
@@ -115,7 +119,9 @@ public class TypedArray {
 	}
 	
 	public String getNonResourceString(int index){
-		return getTaintString();
+        String str = new String();
+        str.addTaint(getTaint());
+        return str;
 		// Original method
 		/*
 		{
@@ -135,7 +141,9 @@ public class TypedArray {
 	}
 	
 	public String getNonConfigurationString(int index, int allowedChangingConfigs){
-		return getTaintString();
+        String str = new String();
+        str.addTaint(getTaint());
+        return str;
 		// Original method
 		/* Original Method Too Long, Refer to Original Implementation */
 	}
@@ -473,7 +481,9 @@ public class TypedArray {
 	}
 	
 	public String getPositionDescription(){
-		return getTaintString();
+        String str = new String();
+        str.addTaint(getTaint());
+        return str;
 		// Original method
 		/*
 		{
@@ -530,7 +540,9 @@ public class TypedArray {
 	}
 	
 	private CharSequence loadStringValueAt(int index){
-		return getTaintString();
+        String str = new String();
+        str.addTaint(getTaint());
+        return str;
 		// Original method
 		/*
 		{
@@ -564,7 +576,9 @@ public class TypedArray {
 	}
 	
 	public String toString(){
-		return getTaintString();
+        String str = new String();
+        str.addTaint(getTaint());
+        return str;
 		// Original method
 		/*
 		{

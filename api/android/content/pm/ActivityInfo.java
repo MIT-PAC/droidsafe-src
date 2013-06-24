@@ -137,7 +137,9 @@ public class ActivityInfo extends ComponentInfo implements Parcelable {
 	}
 	
 	public String toString(){
-		return getTaintString();
+        String str = new String();
+        str.addTaint(getTaint());
+        return str;
 		// Original method
 		/*
 		{

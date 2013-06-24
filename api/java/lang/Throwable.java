@@ -6,7 +6,9 @@ import droidsafe.annotations.DSModeled;
 public class Throwable implements java.io.Serializable {
 	
 	public String getMessage() {
-        return getTaintString();
+        String str = new String();
+        str.addTaint(getTaint());
+        return str;
     }
 	
 	@DSModeled(DSC.SAFE)

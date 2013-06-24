@@ -55,14 +55,18 @@ public class File implements Serializable, Comparable<File> {
 	
 	@DSModeled(DSC.SAFE)
 	public String getPath() {
-		return getTaintString();
+            String str = new String();
+            str.addTaint(getTaint());
+            return str;
         //return path;
     }
 	
 	@DSModeled(DSC.SAFE)
     @Override
     public String toString() {
-    	return getTaintString();
+        String str = new String();
+        str.addTaint(getTaint());
+        return str;
         //return path;
     }
 }

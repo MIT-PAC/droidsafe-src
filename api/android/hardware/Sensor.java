@@ -47,14 +47,18 @@ public class Sensor {
     // GITI DSModeled - just returning a string
     @DSModeled(DSC.SAFE)
     public String getName() {
-    	return getTaintString();
+        String str = new String();
+        str.addTaint(getTaint());
+        return str;
         //return mName;
     }
 
     // GITI DSModeled - just returning a string 
     @DSModeled(DSC.SAFE)
     public String getVendor() {
-    	return getTaintString();
+        String str = new String();
+        str.addTaint(getTaint());
+        return str;
         //return mVendor;
     }
 

@@ -117,7 +117,9 @@ public final class Bundle implements Parcelable, Cloneable {
 	}
 	
 	public String getPairValue(){
-		return getTaintString();
+        String str = new String();
+        str.addTaint(getTaint());
+        return str;
 		// Original method
 		/*
 		{
@@ -1660,7 +1662,9 @@ public final class Bundle implements Parcelable, Cloneable {
 	}
 	
 	@Override public synchronized String toString(){
-		return getTaintString();
+        String str = new String();
+        str.addTaint(getTaint());
+        return str;
 		// Original method
 		/*
 		{

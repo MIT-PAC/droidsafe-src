@@ -101,7 +101,9 @@ public abstract class AbstractMap<K, V> implements Map<K,V> {
         }
         
         @Override public String toString(){
-            return getTaintString();
+            String str = new String();
+            str.addTaint(getTaint());
+            return str;
 
             // Original method
             /*
@@ -209,7 +211,9 @@ public abstract class AbstractMap<K, V> implements Map<K,V> {
         }
         
         @Override public String toString(){
-            return getTaintString();
+            String str = new String();
+            str.addTaint(getTaint());
+            return str;
 
             // Original method
             /*
@@ -472,7 +476,9 @@ public abstract class AbstractMap<K, V> implements Map<K,V> {
         //buffer.append("(this Map)");
         //buffer.append(", ");
         //buffer.append('}');
-        return getTaintString();
+        String str = new String();
+        str.addTaint(getTaint());
+        return str;
 
         // Original method
         /* Original Method Too Long, Refer to Original Implementation */

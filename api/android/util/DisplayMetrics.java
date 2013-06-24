@@ -38,7 +38,9 @@ public class DisplayMetrics {
     @Override
 	@DSModeled(DSC.SAFE)
     public String toString() {
-        return getTaintString();
+        String str = new String();
+        str.addTaint(getTaint());
+        return str;
     }
     
 	@DSModeled(DSC.SAFE)

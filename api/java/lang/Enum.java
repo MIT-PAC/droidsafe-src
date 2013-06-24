@@ -78,7 +78,9 @@ public abstract class Enum<E extends Enum<E>> implements Serializable, Comparabl
 	@DSModeled(DSC.SAFE)
 	@Override
 	public String toString() {
-		return getTaintString();
+                String str = new String();
+                str.addTaint(getTaint());
+		return str;
 	}
 	
 }
