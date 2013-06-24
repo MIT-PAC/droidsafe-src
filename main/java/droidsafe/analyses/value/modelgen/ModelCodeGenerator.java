@@ -252,8 +252,11 @@ public class ModelCodeGenerator {
                             methodCodeMap.put(member, code);
                         }
                         if (member instanceof MethodDeclaration) {
-                            String code = getMethodCode(reader, ((MethodDeclaration) member).getBody());
-                            methodCodeMap.put(member, code);
+                            BlockStmt body = ((MethodDeclaration) member).getBody();
+                            if (body != null) {
+                                String code = getMethodCode(reader, body);
+                                methodCodeMap.put(member, code);
+                            }
                         }
                     }
                 }
@@ -361,8 +364,10 @@ public class ModelCodeGenerator {
             if (member instanceof MethodDeclaration) {
                 MethodDeclaration method = (MethodDeclaration) member;
                 SootMethod sootMethod = getSootMethod(method.getName(), method.getParameters());
-                String oldCode = methodCodeMap.get(method);
-                convertMethod(modelCoi, method, sootMethod, oldCode);
+                if (sootMethod.isConcrete()) {
+                    String oldCode = methodCodeMap.get(method);
+                    convertMethod(modelCoi, method, sootMethod, oldCode);
+                }
             }
         }
     }
@@ -487,6 +492,7 @@ public class ModelCodeGenerator {
         List<Parameter> params = constr.getParameters();
         MethodDeclaration method = new MethodDeclaration(constr.getModifiers(), ASTHelper.VOID_TYPE, "_init_", params);
         method.setJavaDoc(constr.getJavaDoc());
+        method.setComment(constr.getComment());
         method.setThrows(constr.getThrows());
         method.setBody(constr.getBlock());
         SootMethod sootMethod = getSootMethod("<init>", params);
