@@ -9,6 +9,8 @@ import java.util.List;
 import java.util.Map;
 import java.util.Map.Entry;
 import java.util.Set;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -66,13 +68,20 @@ public class RCFG {
     private CallGraph sparkCG;
     /** The forrest of rCFG nodes */
     private Set<RCFGNode> rCFG;
-    /** list of names of methods to ignore when creating the RCFG output events */
-    private static final Set<String> IGNORE_SYS_METHOD_WITH_NAME = new HashSet(Arrays.asList("<clinit>", "finalize"));
     /** Singleton of this class */
     private static RCFG v;
     /** methods we have visiting while building the rCFG */
     private Set<SootMethod> visitedMethods;
 
+    /** list of names of methods to ignore when creating the RCFG output events */
+    private static final Set<String> IGNORE_SYS_METHOD_WITH_NAME = 
+            new HashSet<String>(Arrays.asList("<clinit>", "finalize"));
+    
+    /** list of package name REs in which to ignore output events */
+    private static final Pattern[] IGNORE_INPUT_EVENTS_IN = 
+            {Pattern.compile("android.support.*")};
+    
+    
     /**
      * Return the singleton of this class.
      */
@@ -125,6 +134,10 @@ public class RCFG {
             if (!Project.v().isLibClass(tgtClass) && !Project.v().isSrcClass(tgtClass))
                 continue;
 
+            //ignore input events from classes in the ignore list
+            if (shouldIgnoreInputEventFromClass(tgtClass.getName()))
+                continue;
+            
             SootClass srcClass = e.src().getDeclaringClass();
             //find edges from harness to user code
             if (srcClass.equals(Harness.v().getHarnessClass()) ||
@@ -149,6 +162,7 @@ public class RCFG {
             logger.info("For RCFG, ignoring entry point: {}", method);
             return;
         }
+        
 
         //create node, and add to it the RCFG
         RCFGNode node = new RCFGNode(edge);
@@ -208,7 +222,9 @@ public class RCFG {
         allEdges.add(edge);
         //logger.info("Looking at method call for: {}->{} ({}).", edge.src(), edge.tgt(), edge.srcStmt());
         if (API.v().isSystemMethod(edge.tgt())) {
-            if (!IGNORE_SYS_METHOD_WITH_NAME.contains(edge.tgt().getName())) {
+            //add output events for interesting methods only
+            if (API.v().isInterestingMethod(edge.tgt()) &&
+                    !IGNORE_SYS_METHOD_WITH_NAME.contains(edge.tgt().getName())) {
                 logger.debug("Found output event: {} {}", edge.tgt(), receiver );
                 //System.out.printf("OE (%s): %s %s (%s)\n", debug, edge.tgt(), receiver, rCFGNode.getEntryPoint());
                 SourceLocationTag line = SootUtils.getSourceLocation(edge.srcStmt(), edge.src().getDeclaringClass());
@@ -433,6 +449,19 @@ public class RCFG {
         }
     }
 
+    /** 
+     * Return true if the class of the input event is in the ignore list, and thus the 
+     * input event should be ignored.
+     */
+    private boolean shouldIgnoreInputEventFromClass(String clzName) {
+        for (Pattern re : IGNORE_INPUT_EVENTS_IN) {
+            Matcher matcher = re.matcher(clzName); 
+            if (matcher.matches())
+                return true;
+        }
+        return false;
+    }
+    
     /**
      * Return string representation of RCFG.
      */
