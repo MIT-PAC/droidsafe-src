@@ -12,7 +12,7 @@ public class StringBuilder {
 	@DSModeled(DSC.SAFE)
 	public StringBuilder(int i) {
 		this();
-		addTaint(i.getTaint());
+		addTaint(i);
 	}
 	
 	@DSModeled(DSC.SAFE)
@@ -41,7 +41,7 @@ public class StringBuilder {
 	
 	@DSModeled(DSC.SAFE)
 	public StringBuilder append(int obj) {
-		addTaint(obj.getTaint());
+		addTaint(obj);
 		return this;
 	}
 
@@ -55,8 +55,8 @@ public class StringBuilder {
 	@DSModeled(DSC.SAFE)
 	public void append(char[] buf, int i, int left) {
 		addTaint(new String(buf).getTaint());
-		addTaint(i.getTaint());
-		addTaint(left.getTaint());
+		addTaint(i);
+		addTaint(left);
 	}
 	
 }

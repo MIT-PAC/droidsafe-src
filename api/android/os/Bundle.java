@@ -164,7 +164,7 @@ public final class Bundle implements Parcelable, Cloneable {
 	}
 	
 	public boolean setAllowFds(boolean allowFds){
-		addTaint(allowFds.getTaint());
+		addTaint(allowFds);
 		return getTaintBoolean();
 		
 		// Original method
@@ -327,7 +327,7 @@ public final class Bundle implements Parcelable, Cloneable {
 	
 	public void putBoolean(String key, boolean value){
 		mKey = key;
-		addTaint(value.getTaint());
+		addTaint(value);
 		// Original method
 		/*
 		{
@@ -340,7 +340,7 @@ public final class Bundle implements Parcelable, Cloneable {
 	
 	public void putByte(String key, byte value){
 		mKey = key;
-		addTaint(value.getTaint());
+		addTaint(value);
 		// Original method
 		/*
 		{
@@ -353,7 +353,7 @@ public final class Bundle implements Parcelable, Cloneable {
 	
 	public void putChar(String key, char value){
 		mKey = key;
-		addTaint(value.getTaint());
+		addTaint(value);
 		// Original method
 		/*
 		{
@@ -366,7 +366,7 @@ public final class Bundle implements Parcelable, Cloneable {
 	
 	public void putShort(String key, short value){
 		mKey = key;
-		addTaint(value.getTaint());
+		addTaint(value);
 		// Original method
 		/*
 		{
@@ -379,7 +379,7 @@ public final class Bundle implements Parcelable, Cloneable {
 	
 	public void putInt(String key, int value){
 		mKey = key;
-		addTaint(value.getTaint());
+		addTaint(value);
 		// Original method
 		/*
 		{
@@ -392,7 +392,7 @@ public final class Bundle implements Parcelable, Cloneable {
 	
 	public void putLong(String key, long value){
 		mKey = key;
-		addTaint(value.getTaint());
+		addTaint(value);
 		// Original method
 		/*
 		{
@@ -405,7 +405,7 @@ public final class Bundle implements Parcelable, Cloneable {
 	
 	public void putFloat(String key, float value){
 		mKey = key;
-		addTaint(value.getTaint());
+		addTaint(value);
 		// Original method
 		/*
 		{

@@ -22,8 +22,8 @@ public class Transformation {
         mAlpha = 1.0f;
         mTransformationType = TYPE_BOTH;
         mMatrix.reset();
-        addTaint(mAlpha.getTaint());
-        addTaint(mTransformationType.getTaint());
+        addTaint(mAlpha);
+        addTaint(mTransformationType);
     }
     
     public int getTransformationType() {

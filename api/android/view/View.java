@@ -1614,7 +1614,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
 	}
 	
 	public void setNextFocusLeftId(int nextFocusLeftId){
-		addTaint(nextFocusLeftId.getTaint());
+		addTaint(nextFocusLeftId);
 		
 		// Original method
 		/*
@@ -1637,7 +1637,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
 	}
 	
 	public void setNextFocusRightId(int nextFocusRightId){
-		addTaint(nextFocusRightId.getTaint());
+		addTaint(nextFocusRightId);
 		
 		// Original method
 		/*
@@ -1660,7 +1660,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
 	}
 	
 	public void setNextFocusUpId(int nextFocusUpId){
-		addTaint(nextFocusUpId.getTaint());
+		addTaint(nextFocusUpId);
 		
 		// Original method
 		/*
@@ -1683,7 +1683,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
 	}
 	
 	public void setNextFocusDownId(int nextFocusDownId){
-		addTaint(nextFocusDownId.getTaint());
+		addTaint(nextFocusDownId);
 		
 		// Original method
 		/*
@@ -1706,7 +1706,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
 	}
 	
 	public void setNextFocusForwardId(int nextFocusForwardId){
-		addTaint(nextFocusForwardId.getTaint());
+		addTaint(nextFocusForwardId);
 		
 		// Original method
 		/*
@@ -1800,7 +1800,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
 	@DSModeled(DSC.SAFE)
 	@RemotableViewMethod 
 	public void setVisibility(int visibility){
-		addTaint(visibility.getTaint());
+		addTaint(visibility);
 		// Original method
 		/*
 		{
@@ -3463,7 +3463,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
 	
 	@DSModeled(DSC.SAFE)
 	public void setScrollX(int value){
-	    addTaint(value.getTaint());
+	    addTaint(value);
 		// Original method
 		/*
 		{
@@ -5541,7 +5541,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
 	}
 	
 	public void setLayerType(int layerType, Paint paint){
-		addTaint(layerType.getTaint());
+		addTaint(layerType);
 		
 		// Original method
 		/* Original Method Too Long, Refer to Original Implementation */
@@ -6220,7 +6220,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
 	
 	@RemotableViewMethod 
 	public void setBackgroundResource(int resid){
-		addTaint(resid.getTaint());
+		addTaint(resid);
 		
 		// Original method
 		/*
@@ -6249,20 +6249,13 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
 	}
 	
 	public Drawable getBackground(){
-		return (Drawable)getTaint();
-		
-		// Original method
-		/*
-		{
-        return mBGDrawable;
-    }
-		*/
+		return mBGDrawable;
 	}
 	
 	public void setPadding(int left, int top, int right, int bottom){
-		addTaint(left.getTaint());
-		addTaint(right.getTaint());
-		addTaint(bottom.getTaint());
+		addTaint(left);
+		addTaint(right);
+		addTaint(bottom);
 		
 		// Original method
 		/* Original Method Too Long, Refer to Original Implementation */
@@ -6270,8 +6263,8 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
 	}
 	
 	public void setPaddingRelative(int start, int top, int end, int bottom){
-		addTaint(start.getTaint());
-		addTaint(end.getTaint());
+		addTaint(start);
+		addTaint(end);
 		
 		// Original method
 		/*
@@ -6382,7 +6375,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
 	
 	@DSModeled(DSC.SAFE)
 	public void setSelected(boolean selected){
-	    addTaint(selected.getTaint()); 
+	    addTaint(selected); 
 		
 		// Original method
 		/*
@@ -6423,7 +6416,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
 	
 	@DSModeled(DSC.SAFE)
 	public void setActivated(boolean activated){
-	    addTaint(activated.getTaint());
+	    addTaint(activated);
 	}
 	
 	@DSModeled(DSC.SAFE)
@@ -6648,7 +6641,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
 	}
 	
 	public void setId(int id){
-		addTaint(id.getTaint());
+		addTaint(id);
 		
 		// Original method
 		/*
@@ -6887,8 +6880,8 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
 	}
 	
 	public final void measure(int widthMeasureSpec, int heightMeasureSpec){
-		addTaint(widthMeasureSpec.getTaint());
-		addTaint(heightMeasureSpec.getTaint());
+		addTaint(widthMeasureSpec);
+		addTaint(heightMeasureSpec);
 		
 		// Original method
 		/* Original Method Too Long, Refer to Original Implementation */
@@ -6908,8 +6901,8 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
 	}
 	
 	protected final void setMeasuredDimension(int measuredWidth, int measuredHeight){
-		addTaint(measuredWidth.getTaint());
-		addTaint(measuredHeight.getTaint());
+		addTaint(measuredWidth);
+		addTaint(measuredHeight);
 		
 		// Original method
 		/*
@@ -7039,7 +7032,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
 	}
 	
 	public void setMinimumHeight(int minHeight){
-		addTaint(minHeight.getTaint());
+		addTaint(minHeight);
 		
 		// Original method
 		/*
@@ -7051,7 +7044,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
 	}
 	
 	public void setMinimumWidth(int minWidth){
-		addTaint(minWidth.getTaint());
+		addTaint(minWidth);
 		
 		// Original method
 		/*
@@ -7490,7 +7483,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
 	}
 	
 	public void setOverScrollMode(int overScrollMode){
-		addTaint(overScrollMode.getTaint());
+		addTaint(overScrollMode);
 		
 		// Original method
 		/*
@@ -8096,7 +8089,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
 			}
 			
 			public void setPooled(boolean isPooled){
-				addTaint(isPooled.getTaint());
+				addTaint(isPooled);
 				
 				// Original method
 				/*

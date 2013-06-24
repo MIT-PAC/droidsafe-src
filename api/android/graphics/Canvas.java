@@ -25,21 +25,21 @@ public class Canvas {
 		 * operation happens in real time, so tracking taint is difficult
 		 * on the upflow.
 		 */
-		addTaint(startX.getTaint());
-		addTaint(startY.getTaint());
-		addTaint(stopX.getTaint());
-		addTaint(stopY.getTaint());
+		addTaint(startX);
+		addTaint(startY);
+		addTaint(stopX);
+		addTaint(stopY);
 		addTaint(paint.getTaint());
 	}
 	
 	@DSModeled(DSC.SAFE)
 	public void drawColor(int i) {
-		addTaint(i.getTaint());
+		addTaint(i);
 	}
 	
 	@DSModeled(DSC.SAFE)
 	public int save(int i) {
-		addTaint(i.getTaint());
+		addTaint(i);
 		return getTaintInt();
 	}
 	
@@ -51,7 +51,7 @@ public class Canvas {
 	
 	@DSModeled(value = DSC.SAFE)
 	public void setDensity(int density) {
-		addTaint(density.getTaint());  //Density is saved both here and in the bitmap
+		addTaint(density);  //Density is saved both here and in the bitmap
 		mBitmap.setDensity(density);  //setDensity will track the taint in the Bitmap object
 		/*
         if (mBitmap != null) {
@@ -64,7 +64,7 @@ public class Canvas {
 	@DSModeled(value = DSC.SAFE)
 	public void setBitmap(Bitmap bitmap) {
 		addTaint(bitmap.getTaint());
-		addTaint(bitmap.getDensity().getTaint()); //getDensity will return a tainted value
+		addTaint(bitmap.getDensity()); //getDensity will return a tainted value
 		/*
         if (isHardwareAccelerated()) {
             throw new RuntimeException("Can't set a bitmap device on a GL canvas");
@@ -88,8 +88,8 @@ public class Canvas {
 	@DSModeled(DSC.SAFE)
     public void drawBitmap(Bitmap bitmap, float left, float top, Paint paint) {
 		addTaint(bitmap.getTaint());
-		addTaint(left.getTaint());
-		addTaint(top.getTaint());
+		addTaint(left);
+		addTaint(top);
 		addTaint(paint.getTaint());
 		
 		/*
@@ -136,24 +136,24 @@ public class Canvas {
 	
 	@DSModeled(DSC.SAFE)
 	public void rotate(float degrees) {
-		addTaint(degrees.getTaint());
+		addTaint(degrees);
 	}
 	
 	@DSModeled(DSC.SAFE)
 	public void scale(float sx, float sy) {
-		addTaint(sx.getTaint());
-		addTaint(sy.getTaint());
+		addTaint(sx);
+		addTaint(sy);
 	}
 	
 	@DSModeled(DSC.SAFE)
 	public void translate(float dx, float dy) {
-		addTaint(dx.getTaint());
-		addTaint(dy.getTaint());
+		addTaint(dx);
+		addTaint(dy);
 	}
 	
 	@DSModeled(DSC.SAFE)
 	public void concat(Matrix matrix) {
-		addTaint(matrix.native_instance.getTaint());
+		addTaint(matrix.native_instance);
     }
 	
 	@DSModeled(DSC.SAFE)

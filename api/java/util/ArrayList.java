@@ -15,7 +15,7 @@ public class ArrayList<E> extends AbstractList<E> implements Cloneable, Serializ
 
     @DSModeled(DSC.SAFE)
     public ArrayList(int capacity) {
-    	addTaint(capacity.getTaint());
+    	addTaint(capacity);
         array = new Object[1];
     }
 
@@ -121,7 +121,7 @@ public class ArrayList<E> extends AbstractList<E> implements Cloneable, Serializ
     
     @DSModeled(DSC.SAFE)
     public E remove(int index) {
-    	addTaint(index.getTaint());
+    	addTaint(index);
     	/*
         rangeCheck(index);
 

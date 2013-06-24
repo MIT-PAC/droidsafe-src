@@ -554,7 +554,7 @@ public class TypedArray {
 		mResources = resources;  //Preserved
 		mData = data;  //Preserved
 		mIndices = indices;  //Preserved
-		addTaint(len.getTaint());
+		addTaint(len);
 		/*
 		mResources = resources;
 		mData = data;

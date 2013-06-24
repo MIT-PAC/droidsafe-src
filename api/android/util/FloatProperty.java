@@ -18,7 +18,7 @@ public abstract class FloatProperty<T> extends Property<T, Float> {
 	
 	@DSModeled(DSC.SAFE)
     public void setValue(T object, float value) {
-        addTaint(value.getTaint());
+        addTaint(value);
     }
     
 	@DSModeled(DSC.SAFE)

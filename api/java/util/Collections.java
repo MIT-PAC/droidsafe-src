@@ -43,7 +43,7 @@ public class Collections {
         
         CopiesList(int length, E object){
             //throw new IllegalArgumentException();
-            addTaint(length.getTaint());
+            addTaint(length);
             element = object;  //DSFIXME:  CODE0003: Field assignment should be reviewed
             /*
             if (length < 0) {

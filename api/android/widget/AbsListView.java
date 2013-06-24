@@ -393,7 +393,7 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
 	}
 	
 	public void setChoiceMode(int choiceMode){
-		addTaint(choiceMode.getTaint());
+		addTaint(choiceMode);
 		mChoiceMode = choiceMode;  //Preserved
 		
 		// Original method
@@ -453,7 +453,7 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
 	}
 	
 	public void setFastScrollEnabled(boolean enabled){
-		addTaint(enabled.getTaint());
+		addTaint(enabled);
 		mFastScrollEnabled = enabled;  //Preserved
 		
 		// Original method
@@ -557,7 +557,7 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
 	}
 	
 	public void setSmoothScrollbarEnabled(boolean enabled){
-		addTaint(enabled.getTaint());
+		addTaint(enabled);
 		mSmoothScrollbarEnabled = enabled;  //Preserved
 		
 		// Original method
@@ -648,7 +648,7 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
 	}
 	
 	public void setScrollingCacheEnabled(boolean enabled){
-		addTaint(enabled.getTaint());
+		addTaint(enabled);
 		mScrollingCacheEnabled = enabled;  //Preserved
 		
 		// Original method
@@ -664,7 +664,7 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
 	}
 	
 	public void setTextFilterEnabled(boolean textFilterEnabled){
-		addTaint(textFilterEnabled.getTaint());
+		addTaint(textFilterEnabled);
 		mTextFilterEnabled = textFilterEnabled;  //Preserved
 		
 		// Original method
@@ -1378,7 +1378,7 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
 	}
 	
 	public void setDrawSelectorOnTop(boolean onTop){
-		addTaint(onTop.getTaint());
+		addTaint(onTop);
 		mDrawSelectorOnTop = onTop;  //Preserved
 		
 		// Original method
@@ -1961,9 +1961,9 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
 	}
 	
 	public void setOverScrollEffectPadding(int leftPadding, int rightPadding){
-		addTaint(leftPadding.getTaint());
+		addTaint(leftPadding);
 		mGlowPaddingLeft = leftPadding;  //Preserved
-		addTaint(rightPadding.getTaint());
+		addTaint(rightPadding);
 		mGlowPaddingRight = rightPadding;  //Preserved
 		
 		// Original method
@@ -2288,7 +2288,7 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
 		}
 		
 		void start(int position){
-			addTaint(position.getTaint());
+			addTaint(position);
 			mTargetPos = position;  //Preserved
 			
 			// Original method
@@ -2297,9 +2297,9 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
 		}
 		
 		void start(int position, int boundPosition){
-			addTaint(position.getTaint());
+			addTaint(position);
 			mTargetPos = position;  //Preserved
-			addTaint(boundPosition.getTaint());
+			addTaint(boundPosition);
 			mBoundPos = boundPosition;  //Preserved
 			
 			// Original method
@@ -2319,9 +2319,9 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
 		}
 		
 		void startWithOffset(int position, int offset, int duration){
-			addTaint(position.getTaint());
+			addTaint(position);
 			mTargetPos = position;  //Preserved
-			addTaint(offset.getTaint());
+			addTaint(offset);
 			mOffsetFromTop = offset;  //Preserved
 			
 			// Original method
@@ -2364,7 +2364,7 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
 	}
 	
 	public void setVelocityScale(float scale){
-		addTaint(scale.getTaint());
+		addTaint(scale);
 		mVelocityScale = scale;  //Preserved
 		
 		// Original method
@@ -2879,7 +2879,7 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
 	}
 	
 	public void setTranscriptMode(int mode){
-		addTaint(mode.getTaint());
+		addTaint(mode);
 		mTranscriptMode = mode;  //Preserved
 		
 		// Original method
@@ -3284,7 +3284,7 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
 		private ArrayList<View> mCurrentScrap;
 		
 		public void setViewTypeCount(int viewTypeCount){
-			addTaint(viewTypeCount.getTaint());
+			addTaint(viewTypeCount);
 			mViewTypeCount = viewTypeCount;  //Preserved
 			
 			// Original method
@@ -3370,7 +3370,7 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
 		}
 		
 		void fillActiveViews(int childCount, int firstActivePosition){
-			addTaint(firstActivePosition.getTaint());
+			addTaint(firstActivePosition);
 			mFirstActivePosition = firstActivePosition;  //Preserved
 			
 			// Original method

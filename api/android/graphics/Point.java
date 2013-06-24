@@ -16,8 +16,8 @@ public class Point implements Parcelable {
     
     @DSModeled(DSC.SAFE)
     public Point(int x, int y){
-        addTaint(x.getTaint());
-        addTaint(y.getTaint());
+        addTaint(x);
+        addTaint(y);
     }
     
     @DSModeled(DSC.SAFE)
@@ -31,8 +31,8 @@ public class Point implements Parcelable {
     
     @DSModeled(DSC.SAFE)
     public void set(int x, int y){
-        addTaint(x.getTaint());
-        addTaint(y.getTaint());
+        addTaint(x);
+        addTaint(y);
         // Original method
         /*
         {
@@ -44,8 +44,8 @@ public class Point implements Parcelable {
     
     @DSModeled(DSC.SAFE)
     public final void negate(){
-        addTaint(x.getTaint());
-        addTaint(y.getTaint());
+        addTaint(x);
+        addTaint(y);
     }
     
     public final void offset(int dx, int dy){

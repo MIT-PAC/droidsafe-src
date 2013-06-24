@@ -36,7 +36,7 @@ public class Sensor {
     // requested by the application (via SensorManager.java)
     @DSModeled(DSC.BAN)
     public Sensor(int type) {
-    	addTaint(type.getTaint());
+    	addTaint(type);
     }
 
     // GITI DSModeled
@@ -106,12 +106,12 @@ public class Sensor {
     }
 
     void setRange(float max, float res) {
-    	addTaint(max.getTaint());
-    	addTaint(res.getTaint());
+    	addTaint(max);
+    	addTaint(res);
     }
 
     void setLegacyType(int legacyType) {
-    	addTaint(legacyType.getTaint());
+    	addTaint(legacyType);
     }
 
     int getLegacyType() {

@@ -202,19 +202,19 @@ public class ActivityInfo extends ComponentInfo implements Parcelable {
 	
     private ActivityInfo(Parcel source) {
     	super(source);
-        addTaint(source.readInt().getTaint()); //theme
-        addTaint(source.readInt().getTaint()); //launchMode
+        addTaint(source.readInt()); //theme
+        addTaint(source.readInt()); //launchMode
         permission = source.readString();
         //addTaint(source.readString().getTaint()); //permission
         taskAffinity = source.readString();
         //addTaint(source.readString().getTaint()); //taskAffinity
         targetActivity = source.readString();
         //addTaint(source.readString().getTaint()); //targetActivity
-        addTaint(source.readInt().getTaint()); //flags
-        addTaint(source.readInt().getTaint()); //screenOrientation
-        addTaint(source.readInt().getTaint()); //configChanges
-        addTaint(source.readInt().getTaint()); //softInputMode
-        addTaint(source.readInt().getTaint()); //uiOptions
+        addTaint(source.readInt()); //flags
+        addTaint(source.readInt()); //screenOrientation
+        addTaint(source.readInt()); //configChanges
+        addTaint(source.readInt()); //softInputMode
+        addTaint(source.readInt()); //uiOptions
     }
 }
 

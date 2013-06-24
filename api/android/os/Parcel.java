@@ -133,19 +133,19 @@ public final class Parcel {
 	public final void setDataSize(int size){
 		//Formerly a native function
 		//Return nothing
-		addTaint(size.getTaint());
+		addTaint(size);
 	}
 	
 	public final void setDataPosition(int pos){
 		//Formerly a native function
 		//Return nothing
-		addTaint(pos.getTaint());
+		addTaint(pos);
 	}
 	
 	public final void setDataCapacity(int size){
 		//Formerly a native function
 		//Return nothing
-		addTaint(size.getTaint());
+		addTaint(size);
 	}
 	
 	public final boolean pushAllowFds(boolean allowFds){
@@ -156,7 +156,7 @@ public final class Parcel {
 	public final void restoreAllowFds(boolean lastValue){
 		//Formerly a native function
 		//Return nothing
-		addTaint(lastValue.getTaint());
+		addTaint(lastValue);
 	}
 	
 	private byte[] mData;
@@ -233,25 +233,25 @@ public final class Parcel {
 	public final void writeInt(int val){
 		//Formerly a native function
 		//Return nothing
-		addTaint(val.getTaint());
+		addTaint(val);
 	}
 	
 	public final void writeLong(long val){
 		//Formerly a native function
 		//Return nothing
-		addTaint(val.getTaint());
+		addTaint(val);
 	}
 	
 	public final void writeFloat(float val){
 		//Formerly a native function
 		//Return nothing
-		addTaint(val.getTaint());
+		addTaint(val);
 	}
 	
 	public final void writeDouble(double val){
 		//Formerly a native function
 		//Return nothing
-		addTaint((float)val.getTaint());
+		addTaint((float)val);
 	}
 	
 	private String mValueString;
@@ -306,7 +306,7 @@ public final class Parcel {
 	}
 	
 	public final void writeByte(byte val){
-		addTaint(val.getTaint());
+		addTaint(val);
 		// Original method
 		/*
 		{

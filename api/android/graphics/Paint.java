@@ -15,7 +15,7 @@ public class Paint {
 	
 	@DSModeled(DSC.SAFE)
     public void setFlags(int flags) {  //Originally a native method, converted over
-		addTaint(flags.getTaint());
+		addTaint(flags);
 	}
 	
 	@DSModeled(value = DSC.SAFE)
@@ -40,7 +40,7 @@ public class Paint {
 	
 	@DSModeled(value = DSC.SAFE)
 	public void setColor(int color) { //Originally a native method, converted over
-		addTaint(color.getTaint());
+		addTaint(color);
 	}
 	
 	@DSModeled(value = DSC.SAFE)
@@ -98,7 +98,7 @@ public class Paint {
 	@DSModeled(DSC.SAFE)
 	public void setAntiAlias(boolean aa) {
 		//Helper for setFlags(), setting or clearing the ANTI_ALIAS_FLAG bit
-		addTaint(aa.getTaint());
+		addTaint(aa);
 	}
 	
 	public void setFilterBitmap(boolean filter) {

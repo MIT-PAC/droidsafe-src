@@ -115,7 +115,7 @@ public class Intent implements Parcelable, Cloneable {
 	
 	@DSModeled(value = DSC.SAFE)
 	public Intent addFlags(int flags) {
-        addTaint(flags.getTaint());
+        addTaint(flags);
         return this;
     }
 	
@@ -161,7 +161,7 @@ public class Intent implements Parcelable, Cloneable {
 	@DSModeled(value = DSC.SAFE)
 	public void setAllowFds(boolean allowFds) {
 		// NOTE:  mExtras is a Bundle, perhaps it is best to push the taint down to that level
-		addTaint(allowFds.getTaint());
+		addTaint(allowFds);
 		/*
         if (mExtras != null) {
             mExtras.setAllowFds(allowFds);

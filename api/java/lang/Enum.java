@@ -16,7 +16,7 @@ public abstract class Enum<E extends Enum<E>> implements Serializable, Comparabl
     @DSModeled(DSC.SAFE)
 	protected Enum(String name, int ordinal) {
 		addTaint(name.getTaint());
-		addTaint(ordinal.getTaint());
+		addTaint(ordinal);
     }
 	
 	public final int compareTo(E o) {

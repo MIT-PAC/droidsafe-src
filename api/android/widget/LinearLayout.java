@@ -117,7 +117,7 @@ public class LinearLayout extends ViewGroup {
     
     @DSModeled
     public void setShowDividers(int showDividers) {
-        addTaint(showDividers.getTaint());
+        addTaint(showDividers);
         requestLayout();
     }
     
@@ -140,12 +140,12 @@ public class LinearLayout extends ViewGroup {
             mDividerWidth = 0;
             mDividerHeight = 0;
         }
-        addTaint(divider.getIntrinsicWidth().getTaint());
+        addTaint(divider.getIntrinsicWidth());
     }
     
     @DSModeled(DSC.SAFE)
     public void setDividerPadding(int padding) {
-        addTaint(padding.getTaint());
+        addTaint(padding);
     }
     
 	@DSModeled(DSC.SAFE)

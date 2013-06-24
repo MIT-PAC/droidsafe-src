@@ -24,10 +24,10 @@ public final class Rect implements Parcelable {
 	
 	@DSModeled(DSC.SAFE)
 	public Rect(int left, int top, int right, int bottom){
-		addTaint(left.getTaint());
-		addTaint(top.getTaint());
-		addTaint(right.getTaint());
-		addTaint(bottom.getTaint());
+		addTaint(left);
+		addTaint(top);
+		addTaint(right);
+		addTaint(bottom);
 		/*
 		this.left = left;
 		this.top = top;
@@ -286,9 +286,9 @@ public final class Rect implements Parcelable {
 	}
 	
 	public void offsetTo(int newLeft, int newTop){
-		addTaint(newLeft.getTaint());
+		addTaint(newLeft);
 		left = newLeft;  //Preserved
-		addTaint(newTop.getTaint());
+		addTaint(newTop);
 		top = newTop;  //Preserved
 		
 		// Original method

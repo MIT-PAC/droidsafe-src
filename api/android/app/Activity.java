@@ -936,7 +936,7 @@ public class Activity extends ContextThemeWrapper implements LayoutInflater.Fact
 	static public final int DEFAULT_KEYS_SEARCH_GLOBAL = 4;
 	
 	public final void setDefaultKeyMode(int mode){
-		addTaint(mode.getTaint());
+		addTaint(mode);
 		mDefaultKeySsb = new SpannableStringBuilder();
 		Selection.setSelection(mDefaultKeySsb,0);
 		// Original method
@@ -2104,7 +2104,7 @@ public class Activity extends ContextThemeWrapper implements LayoutInflater.Fact
 	}
 	
 	public final void setResult(int resultCode){
-		addTaint(resultCode.getTaint());
+		addTaint(resultCode);
 		// Original method
 		/*
 		{
@@ -2118,7 +2118,7 @@ public class Activity extends ContextThemeWrapper implements LayoutInflater.Fact
 	}
 	
 	public final void setResult(int resultCode, Intent data){
-		addTaint(resultCode.getTaint());
+		addTaint(resultCode);
 		mResultData = data;
 		// Original method
 		/*
@@ -2169,7 +2169,7 @@ public class Activity extends ContextThemeWrapper implements LayoutInflater.Fact
 	}
 	
 	public void setVisible(boolean visible){
-		addTaint(visible.getTaint());
+		addTaint(visible);
 		makeVisible();
 		mDecor.setVisibility(View.INVISIBLE);
 		// Original method
@@ -2612,7 +2612,7 @@ public class Activity extends ContextThemeWrapper implements LayoutInflater.Fact
 	}
 	
 	public void setTitleColor(int textColor){
-		addTaint(textColor.getTaint());
+		addTaint(textColor);
 		onTitleChanged(mTitle, textColor);
 		
 		// Original method
@@ -2920,7 +2920,7 @@ public class Activity extends ContextThemeWrapper implements LayoutInflater.Fact
 		mMainThread = aThread;  //Preserved
 		mInstrumentation = instr;  //Preserved
 		mToken = token;  //Preserved
-		addTaint(ident.getTaint());
+		addTaint(ident);
 		mApplication = application;  //Preserved
 		mIntent = intent;  //Preserved
 		mActivityInfo = info;  //Preserved
