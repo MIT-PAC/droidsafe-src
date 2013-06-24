@@ -206,10 +206,15 @@ public class ModelCodeGenerator {
         System.setProperty("soot.class.path", cp);
         Scene.v().loadNecessaryClasses();
         sootClass = Scene.v().getSootClass(className);
-        // If no field is specified in the command arguments, model all the fields.
-//        if (fieldNames.isEmpty()) {
-//            for (SootField field: sootClass.getFields())
-//                fieldNames.add(field.getName());
+        // If no field is specified in the command arguments, model all the non-constant fields.
+        if (fieldNames.isEmpty()) {
+            for (SootField field: sootClass.getFields()) {
+                if (!field.isPublic() || !field.isStatic() || !field.isFinal())
+                fieldNames.add(field.getName());
+            }
+        }
+//        for (SootMethod meth: sootClass.getMethods()) {
+//            System.out.println(meth.getSignature());
 //        }
     }
 
@@ -675,7 +680,12 @@ public class ModelCodeGenerator {
 
     private String getUnqualifiedName(String name) {
         int index = name.lastIndexOf('.');
-        return name.substring(index + 1);
+        if (index >= 0)
+            name = name.substring(index + 1);
+        index = name.lastIndexOf('$');
+        if (index >= 0)
+            name = name.substring(index + 1);
+        return name;
     }
 
     private String getQualifier(String name) {
