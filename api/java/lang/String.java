@@ -24,8 +24,9 @@ public class String implements java.io.Serializable, Comparable<String>, CharSeq
 	
 	@DSModeled(DSC.SAFE)
 	public char[] toCharArray() {
-		char[] ret = (char[])getTaint();
-		return ret;
+        char[] charArray = new char[0];
+        charArray.addTaint(getTaint());
+        return charArray;
 	}
 	
 	@DSModeled(DSC.SAFE)
@@ -40,7 +41,7 @@ public class String implements java.io.Serializable, Comparable<String>, CharSeq
 	
 	@DSModeled(DSC.SAFE)
 	public String toString() {
-        return getTaintString();
+        return this;
     }
 
 	@Override

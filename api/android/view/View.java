@@ -2963,14 +2963,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
 	
 	@ViewDebug.CapturedViewProperty 
 	public final Context getContext(){
-		return (Context)getTaint();
-		
-		// Original method
-		/*
-		{
-        return mContext;
-    }
-		*/
+		return mContext;
 	}
 	
 	public boolean onKeyPreIme(int keyCode, KeyEvent event){
@@ -3373,14 +3366,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
 	}
 	
 	public TouchDelegate getTouchDelegate(){
-		return (TouchDelegate)getTaint();
-		
-		// Original method
-		/*
-		{
-        return mTouchDelegate;
-    }
-		*/
+		return mTouchDelegate;
 	}
 	
 	void setFlags(int flags, int mask){
@@ -4412,15 +4398,8 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
 	
 	@ViewDebug.ExportedProperty(deepExport=true,prefix="layout_") 
 	public ViewGroup.LayoutParams getLayoutParams(){
-		return (ViewGroup.LayoutParams)getTaint();
-		
-		// Original method
-		/*
-		{
         return mLayoutParams;
     }
-		*/
-	}
 	
 	public void setLayoutParams(ViewGroup.LayoutParams params){
 		mLayoutParams = params;
@@ -5599,7 +5578,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
 	}
 	
 	HardwareLayer getHardwareLayer(){
-		return (HardwareLayer)getTaint();
+		return mHardwareLayer;
 		
 		// Original method
 		/* Original Method Too Long, Refer to Original Implementation */
@@ -5707,7 +5686,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
 	}
 	
 	public DisplayList getDisplayList(){
-		return (DisplayList)getTaint();
+		return mDisplayList;
 		
 		// Original method
 		/* Original Method Too Long, Refer to Original Implementation */
@@ -6020,14 +5999,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
 	}
 	
 	public Resources getResources(){
-		return (Resources)getTaint();
-		
-		// Original method
-		/*
-		{
-        return mResources;
-    }
-		*/
+		return mResources;
 	}
 	
 	public void invalidateDrawable(Drawable drawable){
@@ -6444,7 +6416,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
 	}
 	
 	public ViewTreeObserver getViewTreeObserver(){
-		return (ViewTreeObserver)getTaint();
+		return mFloatingTreeObserver;
 		
 		// Original method
 		/*
@@ -7056,14 +7028,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
 	}
 	
 	public Animation getAnimation(){
-		return (Animation)getTaint();
-		
-		// Original method
-		/*
-		{
         return mCurrentAnimation;
-    }
-		*/
 	}
 	
 	public void startAnimation(Animation animation){

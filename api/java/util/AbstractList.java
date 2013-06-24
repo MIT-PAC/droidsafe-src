@@ -101,9 +101,10 @@ public abstract class AbstractList<E> extends AbstractCollection<E> implements L
     
     @DSModeled(DSC.SAFE)
 	public Iterator<E> iterator() {
-        Itr itr = new Itr();
-        itr.addTaint(this.getTaint().getTaint());
-        return (Iterator<E>) itr;
+        /* FIXME: this should be reimplemented so that it uses SimpleListIterator. */
+        Object obj = new Object();
+        obj.addTaint(getTaint());
+        return (Iterator<E>)obj;
      }
 	
     @DSModeled(DSC.SAFE)

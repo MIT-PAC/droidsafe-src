@@ -942,7 +942,7 @@ public class Resources {
 	}
 	
 	public DisplayMetrics getDisplayMetrics(){
-		return (DisplayMetrics)getTaint();
+		return mMetrics;
 		
 		// Original method
 		/*
@@ -955,14 +955,7 @@ public class Resources {
 	}
 	
 	public Configuration getConfiguration(){
-		return (Configuration)getTaint();
-		
-		// Original method
-		/*
-		{
         return mConfiguration;
-    }
-		*/
 	}
 	
 	public CompatibilityInfo getCompatibilityInfo(){
@@ -1099,14 +1092,7 @@ public class Resources {
 	}
 	
 	public final AssetManager getAssets(){
-		return (AssetManager)getTaint();
-		
-		// Original method
-		/*
-		{
         return mAssets;
-    }
-		*/
 	}
 	
 	public final void flushLayoutCache(){

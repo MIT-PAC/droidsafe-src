@@ -177,13 +177,13 @@ public class LinearLayout extends ViewGroup {
     
 	@DSModeled(DSC.SAFE)
     void drawHorizontalDivider(Canvas canvas, int top) {
-        mDivider.setBounds(thisgetTaintInt(), top, 0, 0);
+        mDivider.setBounds(getTaintInt(), top, 0, 0);
         mDivider.draw(canvas);
     }
 	
 	@DSModeled(DSC.SAFE)
     void drawVerticalDivider(Canvas canvas, int left) {
-        mDivider.setBounds(thisgetTaintInt(), left, 0, 0);
+        mDivider.setBounds(getTaintInt(), left, 0, 0);
         mDivider.draw(canvas);
     }
     public boolean isBaselineAligned() {

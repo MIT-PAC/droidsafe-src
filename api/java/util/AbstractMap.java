@@ -494,7 +494,7 @@ public abstract class AbstractMap<K, V> implements Map<K,V> {
     @SuppressWarnings("unchecked") @Override protected Object clone(){
         //DSFIXME:  CODE0004: Local variable requires review, uncomment if needed
         //AbstractMap<K, V> result = (AbstractMap<K, V>) super.clone();
-        return ;  //DSFIXME:  CODE0001: Unresolved return type/value combination
+        return this;  //DSFIXME:  CODE0001: Unresolved return type/value combination
 
         // Original method
         /*

@@ -410,7 +410,10 @@ public class Collections {
         
         @Override public E get(int location){
             //throw new IndexOutOfBoundsException();
-            return (E);  //DSFIXME:  CODE0001: Unresolved return type/value combination
+            // FIXME
+            Object obj = new Object();
+            obj.addTaint(getTaint());
+            return (E)obj;  //DSFIXME:  CODE0001: Unresolved return type/value combination
 
             // Original method
             /*
@@ -3681,20 +3684,12 @@ public class Collections {
         }
         
         @Override public Iterator<E> iterator(){
-            //DSFIXME:  CODE0004: Local variable requires review, uncomment if needed
-            //Iterator<E> i = c.iterator();
-            return (Iterator);  //DSFIXME:  CODE0001: Unresolved return type/value combination
-
-            // Original method
-            /*
-            {
+            // FIXME
             Iterator<E> i = c.iterator();
             if (i instanceof ListIterator) {
                 i = new CheckedListIterator<E>((ListIterator<E>) i, type);
             }
             return i;
-        }
-            */
         }
         
         @Override public Object[] toArray(){

@@ -102,13 +102,12 @@ public class Intent implements Parcelable, Cloneable {
 	
 	@DSModeled(DSC.SAFE) // Marked as SPEC per the original implementation from MIT
 	public String getAction() {
-		return getTaintString();
-        //return mAction;
+		return mAction;
     }
 	
 	@DSModeled(value = DSC.SAFE)
 	public Intent setAction(String action) {
-		addTaint(action.getTaint());
+		mAction = action;
         //mAction = action != null ? action.intern() : null;
         return this;
     }
@@ -121,15 +120,13 @@ public class Intent implements Parcelable, Cloneable {
 	
 	@DSModeled(DSC.SAFE) // Marked as SPEC per the original implementation from MIT
 	public String getType() {
-		return getTaintString();
-        //return mType;
+        return mType;
     }
 	
 	@DSModeled(value = DSC.SAFE)
 	public Intent setType(String type) {
-		addTaint(type.getTaint());
         //mData = null;
-        //mType = type;
+        mType = type;
         return this;
     }
 	
@@ -149,7 +146,7 @@ public class Intent implements Parcelable, Cloneable {
 	
 	@DSModeled(value = DSC.SAFE)
 	public ComponentName getComponent() {
-		return (ComponentName)getTaint();
+		return mComponent;
     }
 	
 	@DSModeled(value = DSC.SAFE)
@@ -198,38 +195,26 @@ public class Intent implements Parcelable, Cloneable {
 	
 	@DSModeled(value = DSC.SAFE)
 	public String getPackage() {
-		//return mPackage;
-        return getTaintString();
+		return mPackage;
     }
 	
 	@DSModeled(value = DSC.SAFE)
 	public Intent setPackage(String packageName) {
-		addTaint(packageName.getTaint());
-		/*
         if (packageName != null && mSelector != null) {
             throw new IllegalArgumentException(
                     "Can't set package name when selector is already set");
         }
         mPackage = packageName;
-        */
         return this;
     }
 	
 	@DSModeled(value = DSC.SAFE)
 	public Set<String> getCategories() {
-		/*
-		 * Since the initial tainting of the category data happens through
-		 * the controlled method "addCategory", this (hopefully) will produce
-		 * an effective model for a tainted string returned as a part of a Set
-		 * object
-		 */
-		HashSet<String> mCategories = new HashSet<String>();
-		mCategories.add(getTaintString());
 		return mCategories;
     }
 	
 	public Intent addCategory(String category) {
-		addTaint(category.getTaint());
+		mCategories.addTaint(category.getTaint());
 		/*
         if (mCategories == null) {
             mCategories = new HashSet<String>();
@@ -248,7 +233,7 @@ public class Intent implements Parcelable, Cloneable {
 	
 	@DSModeled(value = DSC.SAFE)
 	public String getDataString() {
-		return getTaintString();
+		return mData.toString();
         //return mData != null ? mData.toString() : null;
     }
 }

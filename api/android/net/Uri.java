@@ -54,7 +54,7 @@ public class Uri {
 
 	@DSModeled()
 	public void writeToParcel(Parcel dest, int flags) {
-		destaddTaint();
+		dest.addTaint(getTaint());
 	}
 
 	@DSModeled(DSC.SAFE)
@@ -171,7 +171,7 @@ public class Uri {
 
 	@DSModeled(DSC.SAFE)
 	public String toString() {
-		return getTaintString() + this.uriString;
+		return uriString;
 	}
 	
 	public static class Builder { 

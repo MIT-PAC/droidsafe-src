@@ -1426,14 +1426,7 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
 	}
 	
 	public Drawable getSelector(){
-		return (Drawable)getTaint();
-		
-		// Original method
-		/*
-		{
         return mSelector;
-    }
-		*/
 	}
 	
 	void keyPressed(){

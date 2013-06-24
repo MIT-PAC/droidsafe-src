@@ -434,14 +434,7 @@ public abstract class ViewGroup extends View implements ViewParent, ViewManager 
 	}
 	
 	public View getFocusedChild(){
-		return (View)getTaint();
-		
-		// Original method
-		/*
-		{
         return mFocused;
-    }
-		*/
 	}
 	
 	@Override public boolean hasFocus(){
@@ -2286,14 +2279,7 @@ public abstract class ViewGroup extends View implements ViewParent, ViewManager 
 	}
 	
 	public LayoutTransition getLayoutTransition(){
-		return (LayoutTransition)getTaint();
-		
-		// Original method
-		/*
-		{
         return mTransition;
-    }
-		*/
 	}
 	
 	private void removeViewsInternal(int start, int count){
@@ -2570,14 +2556,7 @@ public abstract class ViewGroup extends View implements ViewParent, ViewManager 
 	}
 	
 	public LayoutAnimationController getLayoutAnimation(){
-		return (LayoutAnimationController)getTaint();
-		
-		// Original method
-		/*
-		{
-        return mLayoutAnimationController;
-    }
-		*/
+		return mLayoutAnimationController;
 	}
 	
 	@ViewDebug.ExportedProperty public boolean isAnimationCacheEnabled(){

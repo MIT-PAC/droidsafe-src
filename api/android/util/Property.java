@@ -25,7 +25,7 @@ public abstract class Property<T, V> {
     
     @DSModeled (DSC.SAFE)
     public String getName() {
-        return getTaintString();
+        return mName;
     }
     public Class<V> getType() {
         return mType;

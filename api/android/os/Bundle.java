@@ -306,9 +306,9 @@ public final class Bundle implements Parcelable, Cloneable {
 	}
 	
 	public Set<String> keySet(){
-		Set<String> retVal = new HashSet<String>();
-		retVal.add(getTaintString());
-		return retVal;
+		Set<String> keys = new HashSet<String>();
+		keys.addTaint(getTaint());
+		return keys;
 		// Original method
 		/*
 		{
