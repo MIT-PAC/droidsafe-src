@@ -5,6 +5,8 @@ package droidsafe.eclipse.plugin.core.specmodel;
 
 import java.beans.PropertyChangeListener;
 import java.beans.PropertyChangeSupport;
+import java.util.ArrayList;
+import java.util.List;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -29,7 +31,7 @@ public class CodeLocationModel extends SourceLocationTag implements IModelChange
    */
   @SuppressWarnings("unused")
   private static final Logger logger = LoggerFactory.getLogger(CodeLocationModel.class);
-  
+
   /**
    * Current status of the code location.
    */
@@ -37,6 +39,9 @@ public class CodeLocationModel extends SourceLocationTag implements IModelChange
 
   /** Element to support updates to the object to be communicated to the UI. */
   private PropertyChangeSupport changeSupport = new PropertyChangeSupport(this);
+
+
+  private List<HotspotModel> hotspots = new ArrayList<HotspotModel>();
 
   public CodeLocationModel(String clz, int line) {
     super(clz, line);
@@ -56,7 +61,7 @@ public class CodeLocationModel extends SourceLocationTag implements IModelChange
    */
   public void setStatus(DroidsafeIssueResolutionStatus newStatus) {
     if (newStatus != getStatus()) {
-      //logger.debug("Firing propertyChange event for "+this);
+      // logger.debug("Firing propertyChange event for "+this);
       firePropertyChange("status", this.status, this.status = newStatus);
     }
   }
@@ -119,7 +124,17 @@ public class CodeLocationModel extends SourceLocationTag implements IModelChange
     return (this.status == DroidsafeIssueResolutionStatus.UNRESOLVED);
   }
 
+  public void addHotspot(HotspotModel hot) {
+    this.hotspots.add(hot);
+  }
 
+  public void removeHotspot(HotspotModel hot) {
+    this.hotspots.remove(hot);
+  }
+  
+  public List<HotspotModel>getHotspots(){
+    return this.hotspots;
+  }
 
   public void addPropertyChangeListener(PropertyChangeListener listener) {
     changeSupport.addPropertyChangeListener(listener);
@@ -141,4 +156,5 @@ public class CodeLocationModel extends SourceLocationTag implements IModelChange
     changeSupport.firePropertyChange(propertyName, oldValue, newValue);
   }
 
+ 
 }

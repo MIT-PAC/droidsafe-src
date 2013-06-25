@@ -32,14 +32,18 @@ public class ExpandNode extends AbstractHandler {
         for (Object selection : structuredSelection.toList()) {
           if (selection instanceof TreeElement<?, ?>) {
             TreeElement<?, ?> element = (TreeElement<?, ?>) selection;
-            viewer.setExpandedState(element, true);
-            for (TreeElement<?,?> child : element.getChildren()){
-              viewer.setExpandedState(child, true);
-            }
+            expandNode(viewer, element);
           }
         }
       }
     }
     return null;
+  }
+
+  protected void expandNode(TreeViewer viewer, TreeElement<?, ?> element) {
+    viewer.setExpandedState(element, true);
+    for (TreeElement<?, ?> child : element.getChildren()) {
+      expandNode(viewer, child);
+    }
   }
 }

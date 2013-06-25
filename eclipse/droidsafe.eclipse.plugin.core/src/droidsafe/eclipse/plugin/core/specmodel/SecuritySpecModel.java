@@ -15,6 +15,7 @@ import java.io.ObjectOutputStream;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.HashMap;
 import java.util.LinkedHashMap;
 import java.util.LinkedHashSet;
 import java.util.List;
@@ -24,6 +25,9 @@ import java.util.Set;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import soot.ValueBox;
+import droidsafe.analyses.strings.JSAStrings;
+import droidsafe.analyses.strings.JSAStrings.Hotspot;
 import droidsafe.android.app.Project;
 import droidsafe.speclang.Method;
 import droidsafe.speclang.SecuritySpecification;
@@ -97,6 +101,13 @@ public class SecuritySpecModel extends ModelChangeSupport
   private transient Map<CodeLocationModel, Map<MethodModel, List<MethodModel>>> codeLocationEventBlocks =
       new LinkedHashMap<CodeLocationModel, Map<MethodModel, List<MethodModel>>>();
 
+
+  /**
+   * Map from method soot signature to hotspots.
+   */
+  Map<String, List<HotspotModel>> methodToHotspotMap = new HashMap<String, List<HotspotModel>>();
+
+
   /**
    * Main constructor for the spec model. Translate the original droidsafe spec into a simpler
    * representation that can be used by the eclipse plugin.
@@ -120,28 +131,114 @@ public class SecuritySpecModel extends ModelChangeSupport
     return this.inputEventBlocks.get(method);
   }
 
+
+  public Map<String, List<HotspotModel>> getHotspotMap() {
+    return this.methodToHotspotMap;
+  }
+
+  /**
+   * Auxiliary method to add all previously computed hotspots to the spec.
+   * 
+   * @param signatureToHotspotMap A map from soot method signature to a list of soot value boxes.
+   */
+  private void addHotspotsToSpec(Map<String, List<Hotspot>> signatureToHotspotMap) {
+    for (String sig : signatureToHotspotMap.keySet()) {
+      for (Hotspot hot : signatureToHotspotMap.get(sig)) {
+        for (ValueBox vb : hot.getHotspots()) {
+          HotspotModel model = new HotspotModel(hot, vb);
+          addHotspotToSpec(sig, model);
+        }
+      }
+    }
+  }
+
+
+  private void addHotspotToSpec(String sig, HotspotModel model) {
+    List<HotspotModel> hotspotList = this.methodToHotspotMap.get(sig);
+    if (hotspotList == null) {
+      hotspotList = new ArrayList<HotspotModel>();
+      this.methodToHotspotMap.put(sig, hotspotList);
+    }
+    hotspotList.add(model);
+  }
+
+  public void addHotspot(MethodModel method, int argPosition) {
+    addHotspotToSpec(method.getSootMethodSignature(), new HotspotModel(method, argPosition));
+    serializeSpecToFile(this, this.projectRootPath);
+  }
+
+
+  public void removeHotspot(MethodModel method) {
+    this.methodToHotspotMap.remove(method);
+    serializeSpecToFile(this, this.projectRootPath);
+  }
+
+
+
   private void translateModel(SecuritySpecification originalSpec) {
     for (Method m : originalSpec.getWhitelist()) {
       MethodModel model = new MethodModel(m);
       this.whitelist.add(model);
       model.addPropertyChangeListener(this);
     }
+    Map<String, List<Hotspot>> signatureToHotspotMap = JSAStrings.v().getSignatureToHotspotMap();
+    addHotspotsToSpec(signatureToHotspotMap);
+
     for (Map.Entry<Method, List<Method>> entry : originalSpec.getEventBlocks().entrySet()) {
       Method inputEvent = entry.getKey();
       List<Method> outputEvents = entry.getValue();
       ArrayList<MethodModel> modelOutputEvents = new ArrayList<MethodModel>();
       MethodModel model = new MethodModel(inputEvent);
+      if (this.inputEventBlocks.get(model) != null) {
+        logger.debug("Method {} already in event blocks", model);
+      }
       this.inputEventBlocks.put(model, modelOutputEvents);
       model.addPropertyChangeListener(this);
+
+      List<HotspotModel> hotspots = this.methodToHotspotMap.get(model.getSootMethodSignature());
+      if (hotspots != null) {
+        logger.debug("Hotspot for method {} is in map", model);
+        for (HotspotModel hot : hotspots) {
+          logger
+              .debug(
+                  "String analysis \nSignature {}\nArgument Position {}\nClass {} \nSource File {} \nMethodName {} \nSource Line {} \nRegex {}\n",
+                  new Object[] {hot.getMethodSignature(), hot.getArgumentPosition(),
+                      hot.getValueClass(), hot.getValueSourceFile(), hot.getValueMethodName(),
+                      hot.getValueSourceLine(), hot.getValueRegularExpression()});
+        }
+      }
 
       for (Method outputEvent : outputEvents) {
         MethodModel methodModel = new MethodModel(outputEvent);
         modelOutputEvents.add(methodModel);
         methodModel.addPropertyChangeListener(this);
-        for (CodeLocationModel line : methodModel.getLines()) {
-          line.addPropertyChangeListener(this);
+        List<HotspotModel> apiHotspots =
+            this.methodToHotspotMap.get(methodModel.getSootMethodSignature());
+
+        if (apiHotspots != null) {
+          logger.debug("Hotspot for method {} is in map", methodModel);
+          for (HotspotModel hot : apiHotspots) {
+            logger
+                .debug(
+                    "String analysis \nSignature {}\nArgument Position {}\nClass {} \nSource File {} \nMethodName {} \nSource Line {} \nRegex {}\n",
+                    new Object[] {hot.getMethodSignature(), hot.getArgumentPosition(),
+                        hot.getValueClass(), hot.getValueSourceFile(), hot.getValueMethodName(),
+                        hot.getValueSourceLine(), hot.getValueRegularExpression()});
+          }
         }
 
+        for (CodeLocationModel line : methodModel.getLines()) {
+          line.addPropertyChangeListener(this);
+          if (apiHotspots != null) {
+            logger.debug("Hotspot for method {} is in map", methodModel);
+            for (HotspotModel hot : apiHotspots) {
+              if (line.getClz().equals(hot.getValueClass())
+                  && line.getLine() == Integer.parseInt(hot.getValueSourceLine())) {
+                line.addHotspot(hot);
+              }
+            }
+          }
+        }
       }
       Collections.sort(modelOutputEvents);
       // logger.debug("Input Method {}", inputEvent);

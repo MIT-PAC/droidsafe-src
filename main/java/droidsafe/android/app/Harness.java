@@ -344,9 +344,15 @@ public class Harness {
 			//if this is not a constructor call then add the call, constructor calls are taken care of
 			// on the first instance of an object above
 			if (!entryPoint.isConstructor()){
-				Local receiver = localsMap.get(clazz);
-				//create the call to the entry point method
-				createCallWithNewArgs(entryPoint, body, receiver);
+			    //find the closest overriden method from the api
+                SootMethod closestParent = API.v().getClosestOverridenAPIMethod(entryPoint);
+                //don't add a call for overrides that override a method that is modeled
+                //if modeled, it means we have modeled all registrations of the method
+                if (closestParent == null || !API.v().isAPIModeledMethod(closestParent)) {
+                    Local receiver = localsMap.get(clazz);
+                    //create the call to the entry point method
+                    createCallWithNewArgs(entryPoint, body, receiver);
+                }
 			}
 		}
 	}

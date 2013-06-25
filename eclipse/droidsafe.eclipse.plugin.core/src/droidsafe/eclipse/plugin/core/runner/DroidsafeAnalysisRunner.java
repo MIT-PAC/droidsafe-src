@@ -6,6 +6,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.LinkedList;
 import java.util.List;
+import java.util.Map;
 
 import org.eclipse.core.resources.IFile;
 import org.eclipse.core.resources.IMarker;
@@ -35,11 +36,13 @@ import ch.qos.logback.core.util.StatusPrinter;
 import droidsafe.analyses.GeoPTA;
 import droidsafe.analyses.RCFGToSSL;
 import droidsafe.analyses.RequiredModeling;
-import droidsafe.analyses.attr.AttributeModeling;
 import droidsafe.analyses.infoflow.InformationFlowAnalysis;
 import droidsafe.analyses.infoflow.InterproceduralControlFlowGraph;
 import droidsafe.analyses.rcfg.RCFG;
 import droidsafe.analyses.strings.JSAStrings;
+import droidsafe.analyses.strings.JSAStrings.Hotspot;
+import droidsafe.analyses.strings.JSAUtils;
+import droidsafe.analyses.value.ValueAnalysis;
 import droidsafe.android.app.EntryPoints;
 import droidsafe.android.app.Harness;
 import droidsafe.android.app.Project;
@@ -49,6 +52,7 @@ import droidsafe.android.system.API;
 import droidsafe.android.system.Permissions;
 import droidsafe.eclipse.plugin.core.Activator;
 import droidsafe.eclipse.plugin.core.preferences.PreferenceConstants;
+import droidsafe.eclipse.plugin.core.specmodel.HotspotModel;
 import droidsafe.eclipse.plugin.core.specmodel.SecuritySpecModel;
 import droidsafe.eclipse.plugin.core.util.DroidsafePluginUtilities;
 import droidsafe.main.Config;
@@ -56,6 +60,8 @@ import droidsafe.main.SootConfig;
 import droidsafe.speclang.Method;
 import droidsafe.speclang.SecuritySpecification;
 import droidsafe.transforms.AddAllocsForAPICalls;
+import droidsafe.transforms.InsertDSTaintAllocs;
+import droidsafe.transforms.IntegrateXMLLayouts;
 import droidsafe.transforms.LocalForStringConstantArguments;
 import droidsafe.transforms.ResolveStringConstants;
 import droidsafe.transforms.ScalarAppOptimizations;
@@ -199,49 +205,21 @@ public class DroidsafeAnalysisRunner {
     }
 
     if (Config.v().runStringAnalysis) {
-
-      JSAStrings.init(Config.v());
-      // Predefined hotspots. Should be removed.
-      JSAStrings.v().addArgumentHotspots("<android.content.Intent: void <init>(java.lang.String)>",
-          0);
-      JSAStrings.v().addArgumentHotspots(
-          "<android.content.Intent: android.content.Intent addCategory(java.lang.String)>", 0);
-
-      JSAStrings.v().addArgumentHotspots(
-          "<android.content.Intent: android.content.Intent setAction(java.lang.String)>", 0);
-
-      JSAStrings.v().addArgumentHotspots("<java.net.URI: void <init>(java.lang.String)>", 0);
-      JSAStrings.v().addArgumentHotspots(
-          "<android.content.Intent: android.content.Intent setType(java.lang.String)>", 0);
-
-      JSAStrings
-          .v()
-          .addArgumentHotspots(
-              "<android.widget.Toast: android.widget.Toast makeText(android.content.Context,java.lang.CharSequence,int)>",
-              1);
-
-      JSAStrings
-          .v()
-          .addArgumentHotspots(
-              "<com.example.android.apis.content.PickContact$ResultDisplayer: void <init>(com.example.android.apis.content.PickContact,java.lang.String,java.lang.String)>",
-              1);
-      JSAStrings
-          .v()
-          .addArgumentHotspots(
-              "<com.example.android.apis.content.PickContact$ResultDisplayer: void <init>(com.example.android.apis.content.PickContact,java.lang.String,java.lang.String)>",
-              2);
-
-      JSAStrings.v().addArgumentHotspots(
-          "<android.app.Activity: void setTitle(java.lang.CharSequence)>", 0);
-      JSAStrings.run();
+      jsaAnalysis();
       monitor.worked(1);
       if (monitor.isCanceled()) {
         return Status.CANCEL_STATUS;
       }
-      // Debugging.
-      JSAStrings.v().log();
     }
 
+    logger.info("Inserting DSTaintObject allocations at each new expression...");
+    monitor.subTask("Inserting DSTaintObject allocations at each new expression");
+    InsertDSTaintAllocs.run();
+    monitor.worked(1);
+    if (monitor.isCanceled()) {
+      return Status.CANCEL_STATUS;
+    }
+    
     AddAllocsForAPICalls.run();
     monitor.worked(1);
     if (monitor.isCanceled()) {
@@ -257,6 +235,13 @@ public class DroidsafeAnalysisRunner {
       return Status.CANCEL_STATUS;
     }
 
+    logger.info("Incorporating XML layout information");
+    monitor.subTask("Incorporating XML layout information");
+    IntegrateXMLLayouts.run();
+    monitor.worked(1);
+    if (monitor.isCanceled()) {
+      return Status.CANCEL_STATUS;
+    }    
 
     logger.info("Resolving String Constants");
     monitor.subTask("Resolving String Constants");
@@ -289,8 +274,8 @@ public class DroidsafeAnalysisRunner {
     }
 
     logger.info("Starting Attribute Modeling");
-    monitor.subTask("Attribute Modeling");
-    AttributeModeling.run();
+    monitor.subTask("Value Analysis");
+    ValueAnalysis.run();
     monitor.worked(1);
     logger.info("Finished Attribute Modeling");
     if (monitor.isCanceled()) {
@@ -339,29 +324,89 @@ public class DroidsafeAnalysisRunner {
     } else if (Config.v().target.equals("confcheck")) {
       logger.error("Not implemented yet!");
     }
-    
-    
+
+
     List<ValueBox> hs = JSAStrings.v().getHotspots();
-    for(ValueBox vb : hs) {
-      logger.debug("String analysis Source {} Source Line {} \nRegex {}", new String[]{
-        JSAStrings.v().getSourceFile(vb),
-        JSAStrings.v().getSourceLine(vb),
-        JSAStrings.v().getRegex(vb.getValue())});
+    for (ValueBox vb : hs) {
+      logger
+          .debug(
+              "String analysis \nClass {} \nSource File {} \nMethodName {} \nSource Line {} \nRegex {}\n",
+              new String[] {JSAStrings.v().getClassName(vb), JSAStrings.v().getSourceFile(vb),
+                  JSAStrings.v().getMetodName(vb), JSAStrings.v().getSourceLine(vb),
+                  JSAStrings.v().getRegex(vb.getValue())});
     }
-    
-    
-    
+
+    Map<String, List<Hotspot>> signatureToHotspotMap = JSAStrings.v().getSignatureToHotspotMap();
+    for (String sig : signatureToHotspotMap.keySet()) {
+      for (Hotspot hot : signatureToHotspotMap.get(sig)) {
+        for (ValueBox vb : hot.getHotspots()) {
+          logger
+              .debug(
+                  "String analysis \nSignature {}\nArgument Position {}\nClass {} \nSource File {} \nMethodName {} \nSource Line {} \nRegex {}\n",
+                  new Object[] {sig, hot.getArgumentPosition(), JSAStrings.v().getClassName(vb),
+                      JSAStrings.v().getSourceFile(vb), JSAStrings.v().getMetodName(vb),
+                      JSAStrings.v().getSourceLine(vb), JSAStrings.v().getRegex(vb.getValue())});
+        }
+      }
+    }
+
     monitor.worked(1);
     return Status.OK_STATUS;
   }
 
+
+  /**
+   * Run the JSA analysis
+   */
+  private static void jsaAnalysis() {
+    JSAStrings.init(Config.v());
+    JSAUtils.setUpHotspots();
+
+    // Adds hotspots added manually by the user.
+    SecuritySpecModel previousSpec =
+        SecuritySpecModel.deserializeSpecFromFile(Config.v().APP_ROOT_DIR);
+    if (previousSpec != null) {
+      Map<String, List<HotspotModel>> hotspotMap = previousSpec.getHotspotMap();
+      if (hotspotMap != null) {
+        for (String sig : hotspotMap.keySet()) {
+          List<HotspotModel> hotspots = hotspotMap.get(sig);
+          List<Integer> argumentsAlreadySeen = new ArrayList<Integer>();
+          if (hotspots != null) {
+            for (HotspotModel hotspot : hotspots) {
+              int position = hotspot.getArgumentPosition();
+              if (!argumentsAlreadySeen.contains(position)) {
+                if (position == -1) {
+                  // JSAStrings.v().addReturnHotspot(sig);
+                  logger.debug("\n\nJSAStrings.v().addReturnHotspot({});\n", sig);
+                  argumentsAlreadySeen.add(position);
+                } else {
+                  JSAStrings.v().addArgumentHotspots(sig, position);
+                  logger.debug("\n\nJSAStrings.v().addArgumentHotspot({},{});\n", sig, position);
+                  argumentsAlreadySeen.add(position);
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+    JSAStrings.run();
+    JSAStrings.v().log();
+  }
+
+
+  /**
+   * Set's harness as entry point for Soot. Run after EntryPoints.
+   */
   private void setHarnessMainAsEntryPoint() {
     List<SootMethod> entryPoints = new LinkedList<SootMethod>();
     entryPoints.add(Harness.v().getMain());
     Scene.v().setEntryPoints(entryPoints);
-
   }
 
+  /**
+   * Dump jimple files for all application classes.
+   */
   private void writeAllAppClasses() {
     for (SootClass clz : Scene.v().getClasses()) {
       if (clz.isApplicationClass()) {
@@ -371,6 +416,11 @@ public class DroidsafeAnalysisRunner {
     }
   }
 
+  /**
+   * Sets the location of the xml file to be used by the logging infrastructure.
+   * 
+   * @param debugLog
+   */
   public void configureDebugLog(boolean debugLog) {
     // we want to create a debug log file, so load the
     // logback-debug.xml from the config files directory
@@ -392,7 +442,11 @@ public class DroidsafeAnalysisRunner {
   }
 
 
-
+  /**
+   * Creates eclipse task markers for all input events locations in the selected app.
+   * 
+   * @param spec
+   */
   private void generateMarkersForSecuritySpecification(SecuritySpecification spec) {
     String markerId = Activator.PLUGIN_ID + ".droidsafemarker";
     IMarker markers[];
@@ -405,15 +459,15 @@ public class DroidsafeAnalysisRunner {
       ex.printStackTrace();
     }
 
-    for (Method m : spec.getWhitelist()) {
-      SourceLocationTag line = m.getDeclSourceLocation();
-      if (line != null) {
-        String clz = line.getClz();
-        int lineNbr = line.getLine();
-        logger.info("White List Method " + m.toString(true) + " class " + clz + " Line Number = "
-            + lineNbr);
-      }
-    }
+    // for (Method m : spec.getWhitelist()) {
+    // SourceLocationTag line = m.getDeclSourceLocation();
+    // if (line != null) {
+    // String clz = line.getClz();
+    // int lineNbr = line.getLine();
+    // //logger.info("White List Method " + m.toString(true) + " class " + clz + " Line Number = "
+    // // + lineNbr);
+    // }
+    // }
 
     List<Method> methods = new ArrayList<Method>(spec.getEventBlocks().keySet());
     Collections.sort(methods);
@@ -425,37 +479,39 @@ public class DroidsafeAnalysisRunner {
         String classPath = DroidsafePluginUtilities.classNamePath(clz);
         IFile file = this.project.getFile(classPath);
         int lineNbr = line.getLine();
-        logger.info("Main Method " + inputMethod.toString(true) + " class " + clz
-            + " Line Number = " + lineNbr + "\n Class Name path = " + classPath + " \n File = "
-            + file);
-        try {
-          IMarker marker = file.createMarker(markerId);
-          marker.setAttribute(IMarker.LINE_NUMBER, lineNbr);
-          marker.setAttribute(IMarker.MESSAGE, inputMethod.toString(true));
-          marker.setAttribute(IMarker.SEVERITY, IMarker.SEVERITY_INFO);
-          marker.setAttribute("methodName", inputMethod.getName());
-          marker.setAttribute("methodClass", inputMethod.getCname());
-          if (inputMethod.getReceiver() != null) {
-            marker.setAttribute("methodReceiver", inputMethod.getReceiver());
+        // logger.info("Main Method " + inputMethod.toString(true) + " class " + clz
+        // + " Line Number = " + lineNbr + "\n Class Name path = " + classPath + " \n File = "
+        // + file);
+        if (file.exists()) {
+          try {
+            IMarker marker = file.createMarker(markerId);
+            marker.setAttribute(IMarker.LINE_NUMBER, lineNbr);
+            marker.setAttribute(IMarker.MESSAGE, inputMethod.toString(true));
+            marker.setAttribute(IMarker.SEVERITY, IMarker.SEVERITY_INFO);
+            marker.setAttribute("methodName", inputMethod.getName());
+            marker.setAttribute("methodClass", inputMethod.getCname());
+            if (inputMethod.getReceiver() != null) {
+              marker.setAttribute("methodReceiver", inputMethod.getReceiver());
+            }
+          } catch (CoreException ex) {
+            ex.printStackTrace();
           }
-        } catch (CoreException ex) {
-          ex.printStackTrace();
         }
       }
 
-      List<Method> outputMethods = new ArrayList<Method>(spec.getEventBlocks().get(inputMethod));
-      Collections.sort(outputMethods);
-      for (Method outputMethod : outputMethods) {
-        SourceLocationTag outputMethodLine = outputMethod.getDeclSourceLocation();
+      // List<Method> outputMethods = new ArrayList<Method>(spec.getEventBlocks().get(inputMethod));
+      // Collections.sort(outputMethods);
+      // for (Method outputMethod : outputMethods) {
+      // SourceLocationTag outputMethodLine = outputMethod.getDeclSourceLocation();
 
-        if (outputMethodLine != null) {
-          String clz = outputMethodLine.getClz();
-          int lineNbr = outputMethodLine.getLine();
-          logger.info("Output Method " + outputMethod.toString(true) + " class " + clz
-              + " Line Number = " + lineNbr + "\n Class Name path = "
-              + DroidsafePluginUtilities.classNamePath(clz));
-        }
-      }
+      // if (outputMethodLine != null) {
+      // String clz = outputMethodLine.getClz();
+      // int lineNbr = outputMethodLine.getLine();
+      // logger.info("Output Method " + outputMethod.toString(true) + " class " + clz
+      // + " Line Number = " + lineNbr + "\n Class Name path = "
+      // + DroidsafePluginUtilities.classNamePath(clz));
+      // }
+      // }
     }
   }
 

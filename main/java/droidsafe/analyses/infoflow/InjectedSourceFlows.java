@@ -1,8 +1,8 @@
 package droidsafe.analyses.infoflow;
 
-import droidsafe.analyses.attr.AttributeModeling;
-import droidsafe.analyses.attr.AttrModeledClass;
-import droidsafe.analyses.attr.models.android.net.Uri.StringUri;
+import droidsafe.analyses.value.ValueAnalysis;
+import droidsafe.analyses.value.ValueAnalysisModeledObject;
+import droidsafe.analyses.value.models.android.net.Uri;
 
 import java.lang.reflect.Field;
 
@@ -33,7 +33,7 @@ public class InjectedSourceFlows {
     private static InjectedSourceFlows v;
 
     /** local to store the attribute modeling results in */
-    private final Map<AllocNode, AttrModeledClass> attrModelingResults;
+    private final Map<AllocNode, ValueAnalysisModeledObject> attrModelingResults;
 
     /**
      * runs the analysis
@@ -53,13 +53,13 @@ public class InjectedSourceFlows {
      * Private (to enforce singleton pattern) class constructor that runs the analysis
      */
     private InjectedSourceFlows() {
-        this.attrModelingResults = AttributeModeling.v().getResults();
+        this.attrModelingResults = ValueAnalysis.v().getResults();
     }
 
     /**
      * returns a mapping from AllocNode's field to a set of information kinds
      *
-     * @param node AllocNode that we want to check for information kind
+     * @param allocNode AllocNode that we want to check for information kind
      * @param context The context in which we want to check for information kind
      *
      * @return a mapping from each field to a set of information kinds
@@ -92,15 +92,15 @@ public class InjectedSourceFlows {
         Set<String> stringsToInspect = new HashSet<String>();
         
         if(this.attrModelingResults.containsKey(node)){
-            AttrModeledClass modeledClass = this.attrModelingResults.get(node);
+            ValueAnalysisModeledObject modeledClass = this.attrModelingResults.get(node);
             try {
                 Class<?> c = modeledClass.getClass();
                 Field fld = c.getDeclaredField(field.getName());
                 Object object = fld.get(modeledClass);
 
-                if (object instanceof StringUri){
-                    StringUri stringUri = (StringUri)object;
-                    stringsToInspect.addAll(stringUri.dsToString());
+                if (object instanceof Uri){
+                    Uri uri = (Uri)object;
+                    stringsToInspect.addAll(uri.uriString);
                 }
             } catch (NoSuchFieldException | IllegalAccessException e) {
                 // do nothing
