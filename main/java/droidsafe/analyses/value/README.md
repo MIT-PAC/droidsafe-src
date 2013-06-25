@@ -128,11 +128,11 @@ follow the set of rules below -
 There is a tool for automatically generating a model Class template. Given the name of a Class and the names of its 
 fields to be modeled, the tool generates a .java file for the model Class. The command line for invoking this tool is
 
-    * <APAC_HOME>/bin/attrmodelgen <android source path> <class name> <field_1 name> ... <field_n name>
+    * <APAC_HOME>/bin/valuemodelgen <android source path> <class name> <field_1 name> ... <field_n name>
 
 The generated code will reside in the 'generated' subdirectory of the current directory. For example, the command
 
-    * <APAC_HOME>/bin/attrmodelgen <android source path> android.content.Intent mAction mData mType mPackage mComponent mFlags mExtras
+    * <APAC_HOME>/bin/valuemodelgen <android source path> android.content.Intent mAction mData mType mPackage mComponent mFlags mExtras
 
 will generate a file named
 
