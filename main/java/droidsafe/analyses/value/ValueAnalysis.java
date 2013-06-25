@@ -244,7 +244,6 @@ public class ValueAnalysis {
             System.exit(1);
         }      if (am == null)
         am = new ValueAnalysis();
-
         Set<SootMethod> reachableMethods = GeoPTA.v().getAllReachableMethods();
 
         // loop over all code, creating models and simulating whichever invokeExprs we can as we go
@@ -700,40 +699,44 @@ public class ValueAnalysis {
                         paramObjectSets.get(i).add(null);
                     } else {
                         Object obj;
-                        try {
-                            if(arg instanceof NullConstant) {
-                                obj = null;
-                            } else if (arg instanceof IntConstant) {
-                                obj = new ValueAnalysisInt(((IntConstant)arg).value);
-                            } else if (arg instanceof StringConstant) {
-                                obj = new String(((StringConstant)arg).value);
-                            } else if (arg instanceof LongConstant) {
-                                obj = new ValueAnalysisLong(((LongConstant)arg).value);
-                            } else if (arg instanceof DoubleConstant) {
-                                obj = new ValueAnalysisDouble(((DoubleConstant)arg).value);
-                            } else if (arg instanceof FloatConstant) {
-                                obj = new ValueAnalysisFloat(((FloatConstant)arg).value);
-                            } else if (arg instanceof ClassConstant) {
-                                String className = ((ClassConstant)arg).value.replace("/", ".");
-                                obj = Project.v().getAppJavaClass(className);
-                            } else {
-                                throw new RuntimeException("Unhandled SootConstant parameter: " + arg);
+                        if(valueToModelAttrMap.containsKey(arg)){
+                            obj = valueToModelAttrMap.get(arg);
+                        } else {
+                            try {
+                                if(arg instanceof NullConstant) {
+                                    obj = null;
+                                } else if (arg instanceof IntConstant) {
+                                    obj = new ValueAnalysisInt(((IntConstant)arg).value);
+                                } else if (arg instanceof StringConstant) {
+                                    obj = new String(((StringConstant)arg).value);
+                                } else if (arg instanceof LongConstant) {
+                                    obj = new ValueAnalysisLong(((LongConstant)arg).value);
+                                } else if (arg instanceof DoubleConstant) {
+                                    obj = new ValueAnalysisDouble(((DoubleConstant)arg).value);
+                                } else if (arg instanceof FloatConstant) {
+                                    obj = new ValueAnalysisFloat(((FloatConstant)arg).value);
+                                } else if (arg instanceof ClassConstant) {
+                                    String className = ((ClassConstant)arg).value.replace("/", ".");
+                                    obj = Project.v().getAppJavaClass(className);
+                                } else {
+                                    throw new RuntimeException("Unhandled SootConstant parameter: " + arg);
+                                }
+                                valueToModelAttrMap.put(arg, obj);
+                            } catch (ClassNotFoundException cnfe){
+                                ValueAnalysis.this.logError("Couldn't convert constant value " + arg + " to object: "
+                                        + cnfe + "\n");
+                                for(ValueAnalysisModeledObject modeledObject : paramObjectModels){
+                                    modeledObject.invalidate();
+                                }
+                                return;
                             }
-                            obj = Sets.newHashSet(obj);
-                        } catch (ClassNotFoundException cnfe){
-                            ValueAnalysis.this.logError("Couldn't convert constant value " + arg + " to object: "
-                                    + cnfe + "\n");
-                            for(ValueAnalysisModeledObject modeledObject : paramObjectModels){
-                                modeledObject.invalidate();
-                            }
-                            return;
                         }
                         try {
                             paramClasses.get(i);
                         } catch(IndexOutOfBoundsException e) {
                             paramClasses.add(i, Set.class);
                         }
-                        paramObjectSets.get(i).add(obj);
+                        paramObjectSets.get(i).add(Sets.newHashSet(obj));
                     }
                 } else if(type instanceof RefType) {
 
@@ -801,37 +804,44 @@ public class ValueAnalysis {
                         }
                     }
                 } else if(arg.getType() instanceof PrimType) {
-                    ValueAnalysisModeledObject valueAnalysisPrimitiveObject = null;
-                    if(type instanceof BooleanType) {
-                        valueAnalysisPrimitiveObject = new ValueAnalysisBoolean();
-                    } else if (type instanceof ByteType) {
-                        valueAnalysisPrimitiveObject = new ValueAnalysisByte();
-                    } else if (type instanceof CharType) {
-                        valueAnalysisPrimitiveObject = new ValueAnalysisChar();
-                    } else if (type instanceof DoubleType) {
-                        valueAnalysisPrimitiveObject = new ValueAnalysisDouble();
-                    } else if(type instanceof FloatType) {
-                        valueAnalysisPrimitiveObject = new ValueAnalysisFloat();
-                    } else if(type instanceof Integer127Type) {
-                        logger.error("unhandled Integer127Type: {}", type);
-                        System.exit(1);
-                    } else if(type instanceof Integer1Type) {
-                        logger.error("unhandled Integer1Type: {}", type);
-                        System.exit(1);
-                    } else if (type instanceof Integer32767Type) {
-                        logger.error("unhandled Integer32676Type: {}", type);
-                        System.exit(1);
-                    } else if (type instanceof IntType) {
-                        valueAnalysisPrimitiveObject =  new ValueAnalysisInt();
-                    } else if (type instanceof LongType) {
-                        valueAnalysisPrimitiveObject = new ValueAnalysisLong();
-                    } else if (type instanceof ShortType) {
-                        valueAnalysisPrimitiveObject = new ValueAnalysisShort();
+                    Object obj = null;
+                    if(valueToModelAttrMap.containsKey(arg)) {
+                        //System.out.println("valueToModelAttrMap has key arg");
+                        obj = valueToModelAttrMap.get(arg);
                     } else {
-                        logger.error("unhandled PrimType: {}", type);
-                        System.exit(1);
+                        //System.out.println("valueToModelAttrMap doesn't have key arg");
+                        if(type instanceof BooleanType) {
+                            obj = new ValueAnalysisBoolean();
+                        } else if (type instanceof ByteType) {
+                            obj = new ValueAnalysisByte();
+                        } else if (type instanceof CharType) {
+                            obj = new ValueAnalysisChar();
+                        } else if (type instanceof DoubleType) {
+                            obj = new ValueAnalysisDouble();
+                        } else if(type instanceof FloatType) {
+                            obj = new ValueAnalysisFloat();
+                        } else if(type instanceof Integer127Type) {
+                            logger.error("unhandled Integer127Type: {}", type);
+                            System.exit(1);
+                        } else if(type instanceof Integer1Type) {
+                            logger.error("unhandled Integer1Type: {}", type);
+                            System.exit(1);
+                        } else if (type instanceof Integer32767Type) {
+                            logger.error("unhandled Integer32676Type: {}", type);
+                            System.exit(1);
+                        } else if (type instanceof IntType) {
+                            obj =  new ValueAnalysisInt();
+                        } else if (type instanceof LongType) {
+                            obj = new ValueAnalysisLong();
+                        } else if (type instanceof ShortType) {
+                            obj = new ValueAnalysisShort();
+                        } else {
+                            logger.error("unhandled PrimType: {}", type);
+                            System.exit(1);
+                        }
+                        valueToModelAttrMap.put(arg, obj);
                     }
-                    paramObjectSets.get(i).add(Sets.newHashSet(valueAnalysisPrimitiveObject));
+                    paramObjectSets.get(i).add(Sets.newHashSet(obj));
                     paramClasses.add(i, Set.class);
                 } else {
                     ValueAnalysis.this.logError("Arg #" + i + " of method " + invokeExpr 
