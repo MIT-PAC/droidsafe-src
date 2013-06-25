@@ -24,18 +24,16 @@ import soot.jimple.spark.pag.AllocNode;
 import soot.jimple.toolkits.callgraph.Edge;
 
 public class States {
-    private final DefaultHashMap<Edge, FrameHeapStatics> contextToFrameHeapStatics;
-
-    private static final FrameHeapStatics emptyFrameHeapStatics = new FrameHeapStatics();
+    private final DefaultHashMap<Context, FrameHeapStatics> contextToFrameHeapStatics;
 
     States() {
-        contextToFrameHeapStatics = new DefaultHashMap<Edge, FrameHeapStatics>(emptyFrameHeapStatics);
+        contextToFrameHeapStatics = new DefaultHashMap<Context, FrameHeapStatics>(FrameHeapStatics.EMPTY);
     }
 
     States merge(States that) {
         States states = new States();
-        for (Map.Entry<Edge, FrameHeapStatics> contextFrameHeapStatics : this.contextToFrameHeapStatics.entrySet()) {
-            Edge context = contextFrameHeapStatics.getKey();
+        for (Map.Entry<Context, FrameHeapStatics> contextFrameHeapStatics : this.contextToFrameHeapStatics.entrySet()) {
+            Context context = contextFrameHeapStatics.getKey();
             FrameHeapStatics frameHeapStatics = contextFrameHeapStatics.getValue();
             if (that.contextToFrameHeapStatics.containsKey(context)) {
                 states.contextToFrameHeapStatics.put(context, frameHeapStatics.merge(that.contextToFrameHeapStatics.get(context)));
@@ -43,8 +41,8 @@ public class States {
                 states.contextToFrameHeapStatics.put(context, frameHeapStatics);
             }
         }
-        for (Map.Entry<Edge, FrameHeapStatics> contextFrameHeapStatics : that.contextToFrameHeapStatics.entrySet()) {
-            Edge context = contextFrameHeapStatics.getKey();
+        for (Map.Entry<Context, FrameHeapStatics> contextFrameHeapStatics : that.contextToFrameHeapStatics.entrySet()) {
+            Context context = contextFrameHeapStatics.getKey();
             if (!this.contextToFrameHeapStatics.containsKey(context)) {
                 states.contextToFrameHeapStatics.put(context, contextFrameHeapStatics.getValue());
             }
@@ -52,19 +50,19 @@ public class States {
         return states;
     }
 
-    FrameHeapStatics put(Edge context, FrameHeapStatics frameHeapStatics) {
+    FrameHeapStatics put(Context context, FrameHeapStatics frameHeapStatics) {
         return contextToFrameHeapStatics.put(context, frameHeapStatics);
     }
 
-    FrameHeapStatics get(Edge context) {
+    FrameHeapStatics get(Context context) {
         return contextToFrameHeapStatics.get(context);
     }
 
-    Set<Map.Entry<Edge, FrameHeapStatics>> entrySet() {
+    Set<Map.Entry<Context, FrameHeapStatics>> entrySet() {
         return contextToFrameHeapStatics.entrySet();
     }
 
-    Set<Edge> keySet() {
+    Set<Context> keySet() {
         return contextToFrameHeapStatics.keySet();
     }
 
@@ -89,7 +87,7 @@ public class States {
     public String toString() {
         StringBuffer str = new StringBuffer();
         str.append('{');
-        for (Map.Entry<Edge, FrameHeapStatics> contextFrameHeapStatics : this.contextToFrameHeapStatics.entrySet()) {
+        for (Map.Entry<Context, FrameHeapStatics> contextFrameHeapStatics : this.contextToFrameHeapStatics.entrySet()) {
             str.append(contextFrameHeapStatics.getKey().toString());
             str.append("=\\l");
             str.append(contextFrameHeapStatics.getValue().toString());
@@ -104,7 +102,55 @@ public class States {
     }
 }
 
+class Context {
+    private static final HashMap<ImmutablePair<Edge, Edge>, Context> cache = new HashMap<ImmutablePair<Edge, Edge>, Context>();
+
+    Edge entryEdge;
+    Edge callEdge;
+
+    private Context(Edge entryEdge, Edge callEdge) {
+        assert entryEdge != null && callEdge != null;
+        this.entryEdge = entryEdge;
+        this.callEdge = callEdge;
+    }
+
+    static Context v(Edge entryEdge, Edge callEdge) {
+        ImmutablePair<Edge, Edge> key = ImmutablePair.of(entryEdge, callEdge);
+        Context context = cache.get(key);
+        if (context == null) {
+            context = new Context(entryEdge, callEdge);
+            cache.put(key, context);
+        }
+        return context;
+    }
+
+    @Override
+    public boolean equals(Object that) {
+        if (this == that) {
+            return true;
+        }
+        if (!(that instanceof Context)) {
+            return false;
+        }
+        Context context = (Context)that;
+
+        return this.callEdge.equals(context.callEdge) && this.entryEdge.equals(context.entryEdge);
+    }
+
+    @Override
+    public int hashCode() {
+        return callEdge.hashCode();
+    }
+
+    @Override
+    public String toString() {
+        return "(" + entryEdge + ", " + callEdge + ")";
+    }
+}
+
 class FrameHeapStatics {
+    static final FrameHeapStatics EMPTY = new FrameHeapStatics();
+
     Frame frame;
     Heap heap;
     Statics statics;
