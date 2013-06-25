@@ -25,6 +25,14 @@ public class DroidsafePluginUtilities {
     return "src/" + filename + ".java";
   }
 
+  /**
+   * Return the terminal classname from a fully specified classname
+   * 
+   */
+  public static String extractClassname(String fullname) {
+    return fullname.replaceFirst("^.*[.]", "");
+  }
+
   public static void removeAllDroidsafeMarkers(IProject project) {
     Activator.getDefault();
     String markerId = Activator.PLUGIN_ID + ".droidsafemarker";

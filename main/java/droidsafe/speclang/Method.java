@@ -348,21 +348,29 @@ public class Method implements Comparable<Method> {
 		return sootMethod.getParameterType(i);
 	}
 
-	/** Sort by class and method name **/
+	/**
+	 * Return a string of all the information of this method object: line numbers, receiver and signature.
+	 */
+	public String toCompleteString() {
+	    String ret = "";
+        
+        if (!lines.isEmpty() && !Config.v().noSourceInfo) {
+            for (SourceLocationTag line : lines) {
+                ret += "// " + line + "\n";
+            }
+        }
+        
+        ret += toSignatureString();
+        
+        return ret;
+	}
+	
+	/** 
+	 * Compare method m to this method.  Right now it puts them in order based on line
+	 * number annotation, but if that is not present, it does a lexigraphical order of 
+	 * the receiver and method name.
+	 */
 	public int compareTo (Method m) {
-		//if both method have lines, then compare them on lines
-		if (!this.lines.isEmpty() && !m.lines.isEmpty()) {
-			return this.lines.get(0).compareTo(m.lines.get(0));
-		}
-
-		//otherwise, compare them on class name then arg
-		String str1 = getCname() + " " + getName();
-		for (ArgumentValue arg : args)
-			str1 += " " + arg.toString();
-		
-		String str2 = m.getCname() + " " + m.getName();
-		for (ArgumentValue arg : m.args)
-			str2 += " " + arg.toString();
-		return str1.compareTo(str2);
+		return this.toCompleteString().compareTo(m.toCompleteString());
 	}
 }

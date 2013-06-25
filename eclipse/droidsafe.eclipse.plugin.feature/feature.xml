@@ -6,7 +6,7 @@
       provider-name="Kestrel Institute">
 
    <description url="http://www.example.com/description">
-      Plugin to generate droidsafe security spec and assist malware discover.
+      Plugin to generate droidsafe security spec and assist in malware discovery.
    </description>
 
    <copyright url="http://www.example.com/copyright">
@@ -29,13 +29,18 @@ All rights reserved.
       <import plugin="ch.qos.logback.classic"/>
       <import plugin="ch.qos.logback.core"/>
       <import plugin="org.eclipse.ui.editors"/>
+      <import plugin="org.eclipse.jdt.core"/>
+      <import plugin="org.eclipse.core.databinding" version="1.4.1" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.core.databinding.beans" version="1.2.200" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.core.databinding.observable" version="1.4.1" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.core.databinding.property" version="1.4.100" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.jface.databinding" version="1.6.0" match="greaterOrEqual"/>
    </requires>
 
    <plugin
          id="droidsafe.eclipse.plugin.core"
          download-size="0"
          install-size="0"
-         version="1.0.0"
-         unpack="false"/>
+         version="1.0.0"/>
 
 </feature>

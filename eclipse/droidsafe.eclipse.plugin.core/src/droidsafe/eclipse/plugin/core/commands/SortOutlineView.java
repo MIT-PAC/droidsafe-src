@@ -41,6 +41,8 @@ public class SortOutlineView extends AbstractHandler {
         } else if (currentState.equals("class")) {
           // sort entries by class name
           droidsafeView.sortViewByClassName();
+        } else if (currentState.equals("status")){
+          droidsafeView.sortViewByStatusAndClassName();
         }
         // and finally update the current state
         HandlerUtil.updateRadioState(event.getCommand(), currentState);

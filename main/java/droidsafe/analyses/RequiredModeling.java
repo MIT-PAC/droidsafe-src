@@ -18,7 +18,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import droidsafe.analyses.GeoPTA;
-import droidsafe.analyses.attr.AttributeModeling;
+import droidsafe.analyses.value.ValueAnalysis;
 import droidsafe.analyses.rcfg.OutputEvent;
 import droidsafe.analyses.rcfg.RCFG;
 import droidsafe.analyses.rcfg.RCFGNode;
@@ -69,8 +69,10 @@ public class RequiredModeling {
         for (SootMethod method : GeoPTA.v().getAllReachableMethods()) {
             //loop through all reachable methods, and find system methods that are not modeled
             //or system methods that do not exist (but are called)
+            //ignore clinits
             if (API.v().isSystemClass(method.getDeclaringClass()) && 
-                    !API.v().isAPIModeledMethod(method))
+                    !API.v().isAPIModeledMethod(method) &&
+                    !SootMethod.staticInitializerName.equals(method.getName()))
                 toModel.add(method.getSignature());
         }
 
@@ -158,7 +160,7 @@ public class RequiredModeling {
 
             Class<?> absClz = null;
             try {
-                absClz = Class.forName(AttributeModeling.PACKAGE_PREFIX + "." + 
+                absClz = Class.forName(ValueAnalysis.MODEL_PACKAGE_PREFIX + "." + 
                         concreteClz.getName());
             } catch (ClassNotFoundException e) {
                 //could not find class, so ignore
@@ -172,8 +174,8 @@ public class RequiredModeling {
                     //from the abstract semantics
                     String typeStr = absField.getType().getName();
                     //remove the modeling package name from the type if it exists
-                    if (typeStr.startsWith(AttributeModeling.PACKAGE_PREFIX))
-                        typeStr = typeStr.substring(AttributeModeling.PACKAGE_PREFIX.length() + 1);
+                    if (typeStr.startsWith(ValueAnalysis.MODEL_PACKAGE_PREFIX))
+                        typeStr = typeStr.substring(ValueAnalysis.MODEL_PACKAGE_PREFIX.length() + 1);
 
                     //ignore logger fields
                     if ("org.slf4j.Logger".equals(typeStr)) {

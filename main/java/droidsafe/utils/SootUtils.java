@@ -1,9 +1,5 @@
 package droidsafe.utils;
 
-import com.google.common.collect.Sets;
-
-import droidsafe.android.app.Project;
-
 import java.io.FileOutputStream;
 import java.io.OutputStream;
 import java.io.OutputStreamWriter;
@@ -42,7 +38,6 @@ import soot.Hierarchy;
 
 import soot.IntType;
 
-import soot.jimple.ClassConstant;
 import soot.jimple.DoubleConstant;
 import soot.jimple.FloatConstant;
 import soot.jimple.InstanceInvokeExpr;
@@ -52,7 +47,6 @@ import soot.jimple.LongConstant;
 import soot.jimple.NullConstant;
 import soot.jimple.Stmt;
 import soot.jimple.StmtBody;
-import soot.jimple.StringConstant;
 
 import soot.LongType;
 
@@ -100,35 +94,6 @@ public class SootUtils {
     private static final Logger logger = LoggerFactory.getLogger(SootUtils.class);
 
     public static final Pattern sigRE = Pattern.compile("<(\\S+): (\\S+) (\\S+)\\((.*)\\)>");
-
-    /**
-     * Returns a boxed primitive of the value of the passed-in soot constant
-     *
-     * @param sootValue   a Soot Value that must be a subclass of soot.jimple.Constant 
-     * @return boxed primitive of the value of the soot constant. 
-     *         If Value is an instanceof NullConstant, returns null.
-     */
-    public static Object constantValueToObject(Value sootValue) throws ClassNotFoundException {
-        if(sootValue instanceof NullConstant) {
-            return null;
-        } else if (sootValue instanceof IntConstant) {
-            return new Integer(((IntConstant)sootValue).value);
-        } else if (sootValue instanceof StringConstant) {
-            String strVal = new String(((StringConstant)sootValue).value);
-            return Sets.newHashSet(strVal);
-        } else if (sootValue instanceof LongConstant) {
-            return new Long(((LongConstant)sootValue).value);
-        } else if (sootValue instanceof DoubleConstant) {
-            return new Double(((DoubleConstant)sootValue).value);
-        } else if (sootValue instanceof FloatConstant) {
-            return new Float(((FloatConstant)sootValue).value);
-        } else if (sootValue instanceof ClassConstant) {
-            String className = ((ClassConstant)sootValue).value.replace("/", ".");
-            return Project.v().getAppJavaClass(className);
-        }
-
-        throw new RuntimeException("Unhandled java primitive sootValue: " + sootValue);
-    }
 
     /*
      * Given a string representing a type in soot, (ex: int, java.lang.Class[]), return 
@@ -696,7 +661,7 @@ public class SootUtils {
      * have one, return null.
      */
     public static InstanceInvokeExpr getInstanceInvokeExpr(Stmt stmt) {
-        if (!stmt.containsInvokeExpr()) 
+        if (stmt == null || !stmt.containsInvokeExpr()) 
             return null;
 
         InvokeExpr expr = (InvokeExpr)stmt.getInvokeExpr();

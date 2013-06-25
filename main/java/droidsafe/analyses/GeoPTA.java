@@ -9,6 +9,7 @@ import java.util.Collections;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Iterator;
+import java.util.LinkedHashMap;
 import java.util.LinkedHashSet;
 import java.util.LinkedList;
 import java.util.Map;
@@ -24,6 +25,7 @@ import soot.Local;
 import soot.RefLikeType;
 import soot.RefType;
 import soot.Scene;
+import soot.SootClass;
 import soot.SootField;
 import soot.SootMethod;
 import soot.Type;
@@ -349,17 +351,16 @@ public class GeoPTA {
         return resolveVirtualInvoke(invoke, null);
     }
 
-
-
     /**
      * Use the PTA to resolve the set of methods that an instance invoke could call.  Use the 
      * parameter edge as the context to query the context sensitive PTA result for the receiver.
+     * Return a map of the allocnode to the resolved method.
      * 
      * If the method cannot be found, then throw a specialized exception.
      */
-    public Set<SootMethod> resolveVirtualInvoke(InstanceInvokeExpr invoke, Edge context) 
+    public Map<AllocNode, SootMethod> resolveVirtualInvokeMap(InstanceInvokeExpr invoke, Edge context) 
             throws CannotFindMethodException {
-        Set<SootMethod> methods = new HashSet<SootMethod>();
+        Map<AllocNode, SootMethod> methods = new LinkedHashMap<AllocNode, SootMethod>();
 
         Set<AllocNode> allocs = null;
         //get either the context sensitive or insensitive result based on the context param 
@@ -371,17 +372,72 @@ public class GeoPTA {
         //loop over alloc nodes and resolve the concrete dispatch for each, placing in the set
         for (AllocNode an : allocs) {
             Type t = an.getType();
+            SootClass clz = null;
             //some type that we don't understand, so throw that we cannot find the method
-            if ( t instanceof AnySubType ||
-                    t instanceof ArrayType ) {
+            if ( t instanceof AnySubType ) {
                 throw new CannotFindMethodException(t, invoke.getMethod());
-            }
-
-            methods.add(SootUtils.resolveConcreteDispatch( ((RefType)t).getSootClass(), 
-                invoke.getMethod()));
+            } else if (t instanceof ArrayType) {
+                //if array type then we have to get a reference to the Object class
+                //because in java one can invoke methods of Object on arrays
+                clz = Scene.v().getSootClass("java.lang.Object");
+            } else {
+                //normal reference type, just get the soot class
+                clz = ((RefType)t).getSootClass();
+            }   
+            
+            methods.put(an, SootUtils.resolveConcreteDispatch(clz, invoke.getMethod()));
+            
         }
 
         return methods;
+    }
+    
+
+    /**
+     * Use the PTA to resolve the set of methods that an instance invoke could call.  Use the 
+     * parameter edge as the context to query the context sensitive PTA result for the receiver.
+     * 
+     * If the method cannot be found, then throw a specialized exception.
+     */
+    public Set<SootMethod> resolveVirtualInvoke(InstanceInvokeExpr invoke, Edge context) 
+            throws CannotFindMethodException {
+        Set<SootMethod> methods = new LinkedHashSet<SootMethod>();
+
+        Set<AllocNode> allocs = null;
+        //get either the context sensitive or insensitive result based on the context param 
+        if (context == null) 
+            allocs = getPTSetContextIns(invoke.getBase());
+        else
+            allocs = getPTSet(invoke.getBase(), context);
+
+        //loop over alloc nodes and resolve the concrete dispatch for each, placing in the set
+        for (AllocNode an : allocs) {
+            Type t = an.getType();
+            SootClass clz = null;
+            //some type that we don't understand, so throw that we cannot find the method
+            if ( t instanceof AnySubType ) {
+                throw new CannotFindMethodException(t, invoke.getMethod());
+            } else if (t instanceof ArrayType) {
+                //if array type then we have to get a reference to the Object class
+                //because in java one can invoke methods of Object on arrays
+                clz = Scene.v().getSootClass("java.lang.Object");
+            } else {
+                //normal reference type, just get the soot class
+                clz = ((RefType)t).getSootClass();
+            }   
+            
+            methods.add(SootUtils.resolveConcreteDispatch(clz, invoke.getMethod()));
+        }
+
+        return methods;
+    }
+    
+    /**
+     * The Geometric PTA has its own internal call graph edge IR that mirrors the soot call graph edge.
+     * Use this method to retrieve the internal geo call graph edge from a soot edge.
+     */
+    public CgEdge getInternalEdgeFromSootEdge(Edge edge) {
+        return ptsProvider.getInternalEdgeFromSootEdge(edge);
     }
 
     /**
@@ -508,7 +564,7 @@ public class GeoPTA {
                     for ( CallsiteContextVar cobj : contextObjsVisitor.outList ) {
                         //cobj.inQ = false;
                         if (cobj != null && cobj.var != null)
-                            file.printf( "%s: %s\n", cobj.var.getClass(), cobj.var);
+                            file.printf( "%s: %s %s\n", cobj.var.getClass(), cobj.var, cobj.var.hashCode());
                         else 
                             file.printf( "%s: %s\n", cobj, "No Var");
                     }
