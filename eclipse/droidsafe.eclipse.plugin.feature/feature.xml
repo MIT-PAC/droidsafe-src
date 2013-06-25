@@ -6,7 +6,7 @@
       provider-name="Kestrel Institute">
 
    <description url="http://www.example.com/description">
-      Plugin to generate droidsafe security spec and assist malware discover.
+      Plugin to generate droidsafe security spec and assist in malware discovery.
    </description>
 
    <copyright url="http://www.example.com/copyright">
@@ -41,7 +41,6 @@ All rights reserved.
          id="droidsafe.eclipse.plugin.core"
          download-size="0"
          install-size="0"
-         version="1.0.0"
-         unpack="false"/>
+         version="1.0.0"/>
 
 </feature>

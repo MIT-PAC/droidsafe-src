@@ -30,6 +30,7 @@ import japa.parser.ast.stmt.ReturnStmt;
 import japa.parser.ast.stmt.Statement;
 import japa.parser.ast.type.ClassOrInterfaceType;
 import japa.parser.ast.type.PrimitiveType;
+import japa.parser.ast.type.PrimitiveType.Primitive;
 import japa.parser.ast.type.ReferenceType;
 import japa.parser.ast.type.Type;
 import japa.parser.ast.type.VoidType;
@@ -70,39 +71,39 @@ public class ModelCodeGenerator {
     
     public static final ReferenceType SET_OF_STRING_TYPE = makeGenericReferenceType("Set", "String");
     
-    public static final ReferenceType SET_OF_BOOLEAN_TYPE = makeGenericReferenceType("Set", "Boolean");
+    public static final ReferenceType SET_OF_BOOLEAN_TYPE = makeGenericReferenceType("Set", "ValueAnalysisBoolean");
     
-    public static final ReferenceType SET_OF_CHARACTER_TYPE = makeGenericReferenceType("Set", "Character");
+    public static final ReferenceType SET_OF_CHARACTER_TYPE = makeGenericReferenceType("Set", "ValueAnalysisChar");
     
-    public static final ReferenceType SET_OF_BYTE_TYPE = makeGenericReferenceType("Set", "Byte");
+    public static final ReferenceType SET_OF_BYTE_TYPE = makeGenericReferenceType("Set", "ValueAnalysisByte");
     
-    public static final ReferenceType SET_OF_SHORT_TYPE = makeGenericReferenceType("Set", "Short");
+    public static final ReferenceType SET_OF_SHORT_TYPE = makeGenericReferenceType("Set", "ValueAnalysisShort");
     
-    public static final ReferenceType SET_OF_INTEGER_TYPE = makeGenericReferenceType("Set", "Integer");
+    public static final ReferenceType SET_OF_INTEGER_TYPE = makeGenericReferenceType("Set", "ValueAnalysisInt");
     
-    public static final ReferenceType SET_OF_LONG_TYPE = makeGenericReferenceType("Set", "Long");
+    public static final ReferenceType SET_OF_LONG_TYPE = makeGenericReferenceType("Set", "ValueAnalysisLong");
     
-    public static final ReferenceType SET_OF_DOUBLE_TYPE = makeGenericReferenceType("Set", "Double");
+    public static final ReferenceType SET_OF_DOUBLE_TYPE = makeGenericReferenceType("Set", "ValueAnalysisDouble");
     
-    public static final ReferenceType SET_OF_FLOAT_TYPE = makeGenericReferenceType("Set", "Float");
+    public static final ReferenceType SET_OF_FLOAT_TYPE = makeGenericReferenceType("Set", "ValueAnalysisFloat");
     
     public static final Expression SET_OF_STRING_INIT = makeGenericObjectCreationExpr("ValueAnalysisModelingSet", "String");
     
-    public static final Expression SET_OF_BOOLEAN_INIT = makeGenericObjectCreationExpr("ValueAnalysisModelingSet", "Boolean");
+    public static final Expression SET_OF_BOOLEAN_INIT = makeGenericObjectCreationExpr("ValueAnalysisModelingSet", "ValueAnalysisBoolean");
     
-    public static final Expression SET_OF_CHARACTER_INIT = makeGenericObjectCreationExpr("ValueAnalysisModelingSet", "Character");
+    public static final Expression SET_OF_CHARACTER_INIT = makeGenericObjectCreationExpr("ValueAnalysisModelingSet", "ValueAnalysisChar");
     
-    public static final Expression SET_OF_BYTE_INIT = makeGenericObjectCreationExpr("ValueAnalysisModelingSet", "Byte");
+    public static final Expression SET_OF_BYTE_INIT = makeGenericObjectCreationExpr("ValueAnalysisModelingSet", "ValueAnalysisByte");
     
-    public static final Expression SET_OF_SHORT_INIT = makeGenericObjectCreationExpr("ValueAnalysisModelingSet", "Short");
+    public static final Expression SET_OF_SHORT_INIT = makeGenericObjectCreationExpr("ValueAnalysisModelingSet", "ValueAnalysisShort");
     
-    public static final Expression SET_OF_INTEGER_INIT = makeGenericObjectCreationExpr("ValueAnalysisModelingSet", "Integer");
+    public static final Expression SET_OF_INTEGER_INIT = makeGenericObjectCreationExpr("ValueAnalysisModelingSet", "ValueAnalysisInt");
     
-    public static final Expression SET_OF_LONG_INIT = makeGenericObjectCreationExpr("ValueAnalysisModelingSet", "Long");
+    public static final Expression SET_OF_LONG_INIT = makeGenericObjectCreationExpr("ValueAnalysisModelingSet", "ValueAnalysisLong");
     
-    public static final Expression SET_OF_DOUBLE_INIT = makeGenericObjectCreationExpr("ValueAnalysisModelingSet", "Double");
+    public static final Expression SET_OF_DOUBLE_INIT = makeGenericObjectCreationExpr("ValueAnalysisModelingSet", "ValueAnalysisDouble");
     
-    public static final Expression SET_OF_FLOAT_INIT = makeGenericObjectCreationExpr("ValueAnalysisModelingSet", "Float");
+    public static final Expression SET_OF_FLOAT_INIT = makeGenericObjectCreationExpr("ValueAnalysisModelingSet", "ValueAnalysisFloat");
     
     private static final Logger logger = LoggerFactory.getLogger(ModelCodeGenerator.class);
 
@@ -145,6 +146,7 @@ public class ModelCodeGenerator {
         this.imports.add("soot.jimple.spark.pag.AllocNode");
         this.imports.add("droidsafe.analyses.value.ValueAnalysisModeledObject");
         this.imports.add("droidsafe.analyses.value.ValueAnalysisModelingSet");
+        this.importsProcessed.add(className);
         this.apacHome = System.getenv("APAC_HOME");
         logger.debug("APAC_HOME = {}", apacHome);
         if (this.apacHome == null) {
@@ -205,10 +207,15 @@ public class ModelCodeGenerator {
         System.setProperty("soot.class.path", cp);
         Scene.v().loadNecessaryClasses();
         sootClass = Scene.v().getSootClass(className);
-        // If no field is specified in the command arguments, model all the fields.
-//        if (fieldNames.isEmpty()) {
-//            for (SootField field: sootClass.getFields())
-//                fieldNames.add(field.getName());
+        // If no field is specified in the command arguments, model all the non-constant fields.
+        if (fieldNames.isEmpty()) {
+            for (SootField field: sootClass.getFields()) {
+                if (!field.isPublic() || !field.isStatic() || !field.isFinal())
+                fieldNames.add(field.getName());
+            }
+        }
+//        for (SootMethod meth: sootClass.getMethods()) {
+//            System.out.println(meth.getSignature());
 //        }
     }
 
@@ -251,8 +258,11 @@ public class ModelCodeGenerator {
                             methodCodeMap.put(member, code);
                         }
                         if (member instanceof MethodDeclaration) {
-                            String code = getMethodCode(reader, ((MethodDeclaration) member).getBody());
-                            methodCodeMap.put(member, code);
+                            BlockStmt body = ((MethodDeclaration) member).getBody();
+                            if (body != null) {
+                                String code = getMethodCode(reader, body);
+                                methodCodeMap.put(member, code);
+                            }
                         }
                     }
                 }
@@ -360,8 +370,10 @@ public class ModelCodeGenerator {
             if (member instanceof MethodDeclaration) {
                 MethodDeclaration method = (MethodDeclaration) member;
                 SootMethod sootMethod = getSootMethod(method.getName(), method.getParameters());
-                String oldCode = methodCodeMap.get(method);
-                convertMethod(modelCoi, method, sootMethod, oldCode);
+                if (sootMethod.isConcrete()) {
+                    String oldCode = methodCodeMap.get(method);
+                    convertMethod(modelCoi, method, sootMethod, oldCode);
+                }
             }
         }
     }
@@ -419,27 +431,61 @@ public class ModelCodeGenerator {
         if (type instanceof ReferenceType) {
             ReferenceType refType = (ReferenceType) type;
             if (refType.getArrayCount() == 0 && refType.getType() instanceof ClassOrInterfaceType) {
-                String name = ((ClassOrInterfaceType) refType.getType()).getName();
-                if (name.equals("String"))
+                String name = ((RefType) sootType).getClassName();
+                if (name.equals("java.lang.String")) {
+                    imports.add("java.util.Set");
                     return SET_OF_STRING_TYPE;
+                }
+                if (name.equals("java.lang.Boolean"))
+                    return convertPrimitive(Primitive.Boolean);
+                if (name.equals("java.lang.Character"))
+                    return convertPrimitive(Primitive.Char);
+                if (name.equals("java.lang.Byte"))
+                    return convertPrimitive(Primitive.Byte);
+                if (name.equals("java.lang.Short"))
+                    return convertPrimitive(Primitive.Short);
+                if (name.equals("java.lang.Integer"))
+                    return convertPrimitive(Primitive.Int);
+                if (name.equals("java.lang.Long"))
+                    return convertPrimitive(Primitive.Long);
+                if (name.equals("java.lang.Float"))
+                    return convertPrimitive(Primitive.Float);
+                if (name.equals("java.lang.Double"))
+                    return convertPrimitive(Primitive.Double);
                 collectImports(sootType, isFieldType);
-           }
-            return type;
-        }
-        if (type instanceof PrimitiveType) {
-            PrimitiveType primType = (PrimitiveType) type;
-            switch (primType.getType()) {
-                case Boolean: return SET_OF_BOOLEAN_TYPE;
-                case Char: return SET_OF_CHARACTER_TYPE;
-                case Byte: return SET_OF_BYTE_TYPE;
-                case Short: return SET_OF_SHORT_TYPE;
-                case Int: return SET_OF_INTEGER_TYPE;
-                case Long: return SET_OF_LONG_TYPE;
-                case Float: return SET_OF_FLOAT_TYPE;
-                case Double: return SET_OF_DOUBLE_TYPE;
             }
+        } else if (type instanceof PrimitiveType) {
+            PrimitiveType primType = (PrimitiveType) type;
+            return convertPrimitive(primType.getType());
         }
         return type;
+    }
+
+    private Type convertPrimitive(Primitive prim) {
+        imports.add("java.util.Set");
+        imports.add("droidsafe.analyses.value.models.droidsafe.primitives.ValueAnalysis" + prim);
+        switch (prim) {
+            case Boolean:
+                return SET_OF_BOOLEAN_TYPE;
+            case Char:
+                return SET_OF_CHARACTER_TYPE;
+            case Byte:
+                return SET_OF_BYTE_TYPE;
+            case Short:
+                return SET_OF_SHORT_TYPE;
+            case Int:
+                return SET_OF_INTEGER_TYPE;
+            case Long:
+                return SET_OF_LONG_TYPE;
+            case Float:
+                return SET_OF_FLOAT_TYPE;
+            case Double:
+                return SET_OF_DOUBLE_TYPE;
+            default:
+                logger.error("Unknown primitive: " + prim);
+                System.exit(1);
+        }
+        return null;
     }
 
     private void collectImports(List<SootClass> sootClasses) {
@@ -483,6 +529,7 @@ public class ModelCodeGenerator {
         List<Parameter> params = constr.getParameters();
         MethodDeclaration method = new MethodDeclaration(constr.getModifiers(), ASTHelper.VOID_TYPE, "_init_", params);
         method.setJavaDoc(constr.getJavaDoc());
+        method.setComment(constr.getComment());
         method.setThrows(constr.getThrows());
         method.setBody(constr.getBlock());
         SootMethod sootMethod = getSootMethod("<init>", params);
@@ -665,7 +712,12 @@ public class ModelCodeGenerator {
 
     private String getUnqualifiedName(String name) {
         int index = name.lastIndexOf('.');
-        return name.substring(index + 1);
+        if (index >= 0)
+            name = name.substring(index + 1);
+        index = name.lastIndexOf('$');
+        if (index >= 0)
+            name = name.substring(index + 1);
+        return name;
     }
 
     private String getQualifier(String name) {

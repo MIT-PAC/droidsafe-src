@@ -3,9 +3,17 @@ package droidsafe.analyses.value;
 import com.google.common.base.Throwables;
 import com.google.common.collect.Sets;
 
-import droidsafe.analyses.value.ValueAnalysisModeledObject;
 import droidsafe.analyses.GeoPTA;
 import droidsafe.analyses.strings.JSAStrings;
+import droidsafe.analyses.value.models.droidsafe.primitives.ValueAnalysisBoolean;
+import droidsafe.analyses.value.models.droidsafe.primitives.ValueAnalysisByte;
+import droidsafe.analyses.value.models.droidsafe.primitives.ValueAnalysisChar;
+import droidsafe.analyses.value.models.droidsafe.primitives.ValueAnalysisDouble;
+import droidsafe.analyses.value.models.droidsafe.primitives.ValueAnalysisFloat;
+import droidsafe.analyses.value.models.droidsafe.primitives.ValueAnalysisInt;
+import droidsafe.analyses.value.models.droidsafe.primitives.ValueAnalysisLong;
+import droidsafe.analyses.value.models.droidsafe.primitives.ValueAnalysisShort;
+import droidsafe.analyses.value.ValueAnalysisModeledObject;
 
 import droidsafe.android.app.Harness;
 import droidsafe.android.app.Project;
@@ -15,8 +23,6 @@ import droidsafe.main.Config;
 import droidsafe.speclang.Method;
 
 import droidsafe.transforms.AddAllocsForAPICalls;
-
-import droidsafe.utils.SootUtils;
 
 import java.io.BufferedWriter;
 import java.io.File;
@@ -40,30 +46,53 @@ import java.util.Set;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import soot.BooleanType;
+
+import soot.ByteType;
+
+import soot.CharType;
+
+import soot.DoubleType;
+
+import soot.FloatType;
+
+import soot.IntType;
+
 import soot.jimple.AssignStmt;
+import soot.jimple.ClassConstant;
 import soot.jimple.Constant;
+import soot.jimple.DoubleConstant;
+import soot.jimple.FloatConstant;
 import soot.jimple.InstanceInvokeExpr;
+import soot.jimple.IntConstant;
 import soot.jimple.InvokeExpr;
+import soot.jimple.LongConstant;
 import soot.jimple.NullConstant;
 import soot.jimple.spark.pag.AllocNode;
 import soot.jimple.StaticInvokeExpr;
 import soot.jimple.Stmt;
 import soot.jimple.StmtBody;
+import soot.jimple.StringConstant;
+import soot.jimple.toolkits.typing.fast.Integer127Type;
+import soot.jimple.toolkits.typing.fast.Integer1Type;
+import soot.jimple.toolkits.typing.fast.Integer32767Type;
+
+import soot.LongType;
+
+import soot.PrimType;
 
 import soot.RefType;
 
 import soot.Scene;
 
+import soot.ShortType;
+
 import soot.SootClass;
 
 import soot.SootMethod;
 
-import soot.tagkit.AnnotationEnumElem;
-import soot.tagkit.AnnotationTag;
 import soot.tagkit.LineNumberTag;
 import soot.tagkit.SourceFileTag;
-import soot.tagkit.Tag;
-import soot.tagkit.VisibilityAnnotationTag;
 
 import soot.Type;
 
@@ -110,7 +139,7 @@ public class ValueAnalysis {
 
     /** Set of methods to not invalidate */
     private Set<String> sigsOfMethodsToNotInvalidate = new HashSet<String>(Arrays.asList("startActivityForResult"));
-     
+
     /** FileWriter used to log what we still don't model but perhaps should */
     private FileWriter attrModelingTodoLog;
 
@@ -235,7 +264,8 @@ public class ValueAnalysis {
 
             for (SootMethod meth : clazz.getMethods()) {
                 if (meth.isConcrete() && reachableMethods.contains(meth) && !am.simulatedMethods.contains(meth)) {
-                    StmtBody stmtBody = (StmtBody)meth.retrieveActiveBody();
+                   am.logError("analyzing meth " + meth);
+                   StmtBody stmtBody = (StmtBody)meth.retrieveActiveBody();
 
                     // get body's unit as a chain
                     Chain units = stmtBody.getUnits();
@@ -262,6 +292,7 @@ public class ValueAnalysis {
                             continue;
                         }
                         InvokeExpr invokeExpr = (InvokeExpr)stmt.getInvokeExpr();
+                        am.logError("InvokeExpr " + invokeExpr);
 
                         SootMethod sootMethod = invokeExpr.getMethod();
                         SootClass sootClass = sootMethod.getDeclaringClass();
@@ -409,7 +440,7 @@ public class ValueAnalysis {
         } catch (Exception e) {
             if(!this.sigsOfMethodsToNotInvalidate.contains(methodName)) {
                 String error = "The InvokeExpr " + invokeExpr + this.sourceLocation + " hasn't been modeled: " 
-                               + e.toString() + "\n";
+                    + e.toString() + "\n";
                 error += Throwables.getStackTraceAsString(e);
                 // The method isn't modeled, so we must invalidate every argument that we modeled
                 this.invalidateParamObjects(paramObjectCartesianProduct);
@@ -559,14 +590,14 @@ public class ValueAnalysis {
             logger.info("Corresponding AllocNode: {}", entry.getKey());
         }
         /*
-        File attrModelingStatsFile = new File(Config.v().getApacHome() + "/doc/attr-modeling-stats.txt");
-        
-        try {
-            attrModelingStatsFile.createNewFile();
-        } catch(IOException ioe){
-            logger.error("Couldn't write to attr-modeling-stats file:", ioe);
-        }
-        */
+           File attrModelingStatsFile = new File(Config.v().getApacHome() + "/doc/attr-modeling-stats.txt");
+
+           try {
+           attrModelingStatsFile.createNewFile();
+           } catch(IOException ioe){
+           logger.error("Couldn't write to attr-modeling-stats file:", ioe);
+           }
+           */
         String stats = "";
         stats += "Intents: " + validModeledIntentsNum + "/" + totalModeledIntentsNum;
         stats += " Uri: " + validModeledUriNum + "/" + totalModeledUriNum;
@@ -575,15 +606,15 @@ public class ValueAnalysis {
         logger.info(stats);
 
         /*
-        try {
-            stats = Project.v().getAppSrcDir() + "\n" + stats;
-            PrintWriter out = new PrintWriter(new BufferedWriter(new FileWriter(attrModelingStatsFile, true)));
-            out.println(stats);
-            out.close();
-        } catch (IOException ioe) {
-            logger.error("Couldn't write to attr-modeling-stats file:", ioe);
-        }
-        */
+           try {
+           stats = Project.v().getAppSrcDir() + "\n" + stats;
+           PrintWriter out = new PrintWriter(new BufferedWriter(new FileWriter(attrModelingStatsFile, true)));
+           out.println(stats);
+           out.close();
+           } catch (IOException ioe) {
+           logger.error("Couldn't write to attr-modeling-stats file:", ioe);
+           }
+           */
     }
 
     //=================================================================================================================
@@ -640,6 +671,7 @@ public class ValueAnalysis {
                 paramObjectSets.add(i, new HashSet<Object>());
 
                 Value arg = invokeExpr.getArg(i);
+                Type type = arg.getType();
 
                 // we ignore parameters that are instances of inner classes
                 // TODO: figure out how to properly handle inner classes
@@ -658,8 +690,7 @@ public class ValueAnalysis {
                             try {
                                 paramClasses.get(i);
                             } catch (IndexOutOfBoundsException e) {
-                                paramClasses.add(i, 
-                                        ValueAnalysis.this.getDroidsafeClass((RefType)paramTypes.get(i)));
+                                paramClasses.add(i, ValueAnalysis.this.getDroidsafeClass((RefType)paramTypes.get(i)));
                             }
                         } catch(Exception e) {
                             ValueAnalysis.this.logError("Type of parameter #" + i + " of method " + invokeExpr 
@@ -668,9 +699,27 @@ public class ValueAnalysis {
                         }
                         paramObjectSets.get(i).add(null);
                     } else {
-                        Object object;
+                        Object obj;
                         try {
-                            object = SootUtils.constantValueToObject(arg);
+                            if(arg instanceof NullConstant) {
+                                obj = null;
+                            } else if (arg instanceof IntConstant) {
+                                obj = new ValueAnalysisInt(((IntConstant)arg).value);
+                            } else if (arg instanceof StringConstant) {
+                                obj = new String(((StringConstant)arg).value);
+                            } else if (arg instanceof LongConstant) {
+                                obj = new ValueAnalysisLong(((LongConstant)arg).value);
+                            } else if (arg instanceof DoubleConstant) {
+                                obj = new ValueAnalysisDouble(((DoubleConstant)arg).value);
+                            } else if (arg instanceof FloatConstant) {
+                                obj = new ValueAnalysisFloat(((FloatConstant)arg).value);
+                            } else if (arg instanceof ClassConstant) {
+                                String className = ((ClassConstant)arg).value.replace("/", ".");
+                                obj = Project.v().getAppJavaClass(className);
+                            } else {
+                                throw new RuntimeException("Unhandled SootConstant parameter: " + arg);
+                            }
+                            obj = Sets.newHashSet(obj);
                         } catch (ClassNotFoundException cnfe){
                             ValueAnalysis.this.logError("Couldn't convert constant value " + arg + " to object: "
                                     + cnfe + "\n");
@@ -682,14 +731,14 @@ public class ValueAnalysis {
                         try {
                             paramClasses.get(i);
                         } catch(IndexOutOfBoundsException e) {
-                            paramClasses.add(i, object.getClass());
+                            paramClasses.add(i, Set.class);
                         }
-                        paramObjectSets.get(i).add(object);
+                        paramObjectSets.get(i).add(obj);
                     }
-                } else if(arg.getType() instanceof RefType) {
+                } else if(type instanceof RefType) {
 
                     // If the argument is a reference to a java.lang.String, look up its value in JSA's results
-                    RefType refType = (RefType)arg.getType();
+                    RefType refType = (RefType)type;
                     String className = refType.getClassName();
                     if(className.equals("java.lang.String")){
                         String strVal = new String(jsa.getRegex(arg));
@@ -751,6 +800,39 @@ public class ValueAnalysis {
                             }
                         }
                     }
+                } else if(arg.getType() instanceof PrimType) {
+                    ValueAnalysisModeledObject valueAnalysisPrimitiveObject = null;
+                    if(type instanceof BooleanType) {
+                        valueAnalysisPrimitiveObject = new ValueAnalysisBoolean();
+                    } else if (type instanceof ByteType) {
+                        valueAnalysisPrimitiveObject = new ValueAnalysisByte();
+                    } else if (type instanceof CharType) {
+                        valueAnalysisPrimitiveObject = new ValueAnalysisChar();
+                    } else if (type instanceof DoubleType) {
+                        valueAnalysisPrimitiveObject = new ValueAnalysisDouble();
+                    } else if(type instanceof FloatType) {
+                        valueAnalysisPrimitiveObject = new ValueAnalysisFloat();
+                    } else if(type instanceof Integer127Type) {
+                        logger.error("unhandled Integer127Type: {}", type);
+                        System.exit(1);
+                    } else if(type instanceof Integer1Type) {
+                        logger.error("unhandled Integer1Type: {}", type);
+                        System.exit(1);
+                    } else if (type instanceof Integer32767Type) {
+                        logger.error("unhandled Integer32676Type: {}", type);
+                        System.exit(1);
+                    } else if (type instanceof IntType) {
+                        valueAnalysisPrimitiveObject =  new ValueAnalysisInt();
+                    } else if (type instanceof LongType) {
+                        valueAnalysisPrimitiveObject = new ValueAnalysisLong();
+                    } else if (type instanceof ShortType) {
+                        valueAnalysisPrimitiveObject = new ValueAnalysisShort();
+                    } else {
+                        logger.error("unhandled PrimType: {}", type);
+                        System.exit(1);
+                    }
+                    paramObjectSets.get(i).add(Sets.newHashSet(valueAnalysisPrimitiveObject));
+                    paramClasses.add(i, Set.class);
                 } else {
                     ValueAnalysis.this.logError("Arg #" + i + " of method " + invokeExpr 
                             + " isn't a constant or a RefType." 
