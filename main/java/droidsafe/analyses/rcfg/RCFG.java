@@ -424,10 +424,6 @@ public class RCFG {
                 continue;
             }
 
-            //if always obsoleted, then continue
-            if (cgEdge.is_obsoleted)
-                continue;
-
             InstanceInvokeExpr iie = SootUtils.getInstanceInvokeExpr(curEdge.srcStmt());
             if (iie != null) {    
                 try {

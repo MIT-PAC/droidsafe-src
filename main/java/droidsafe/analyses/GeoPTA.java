@@ -824,9 +824,7 @@ public class GeoPTA {
             CgEdge p = ptsProvider.getCallEgesOutFrom(i);
             while (p != null) {
                 if ( p.sootEdge != null ) {
-                    if (p.is_obsoleted == false ) {
-                        allCSEdges.add(p.sootEdge);
-                    }
+                    allCSEdges.add(p.sootEdge);
                 }
                 p = p.next;
             }
