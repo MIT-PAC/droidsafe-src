@@ -1,6 +1,7 @@
 package droidsafe.analyses.rcfg;
 
 import java.util.Formatter;
+import java.util.LinkedHashSet;
 import java.util.Locale;
 import java.util.Set;
 
@@ -20,6 +21,7 @@ import soot.jimple.spark.pag.AllocNode;
 import soot.jimple.spark.pag.StringConstantNode;
 import soot.jimple.toolkits.callgraph.Edge;
 import droidsafe.analyses.GeoPTA;
+import droidsafe.analyses.PTAMethodInformation;
 import droidsafe.utils.SourceLocationTag;
 import droidsafe.utils.Utils;
 
@@ -31,7 +33,7 @@ import droidsafe.utils.Utils;
  * @author mgordon
  *
  */
-public class OutputEvent {
+public class OutputEvent implements PTAMethodInformation {
     /** logger field */
     private static final Logger logger = LoggerFactory.getLogger(OutputEvent.class);
     /** the cg edge from caller to API */
@@ -155,12 +157,21 @@ public class OutputEvent {
      * Return the points to set of the receiver (if it exists) in the context of this
      * output event.
      */
-    public AllocNode getReceiverAlloc() {
+    public Set<AllocNode> getReceiverPTSet() {
         getReceiver();
 
-        return receiverNode; 
+        LinkedHashSet<AllocNode> node = new LinkedHashSet<AllocNode>();
+        node.add(receiverNode);
+        return node; 
     }
 
+    /**
+     * Return true if the receiver is a pointer.
+     */
+    public boolean isReceiverPointer() {
+        return GeoPTA.v().isPointer(getReceiver());
+    }
+    
     /**
      * Return the type in the points to set of the receiver.
      */
@@ -222,7 +233,7 @@ public class OutputEvent {
     public boolean isArgPointer(int i) {
         return GeoPTA.v().isPointer(getArgValue(i));
     }
-
+    
     /**
      * Return the enclosing RCFGNode.
      */

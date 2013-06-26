@@ -211,10 +211,11 @@ public class ValueAnalysis {
 
     
     /**
-     * Return true if this alloc node has an analysis result.
+     * Return true if this alloc node has an analysis result (and is not invalidated)
      */
     public boolean hasResult(AllocNode node) {
-        return this.objectToModelMap.containsKey(node);
+        return this.objectToModelMap.containsKey(node) &&
+                !this.objectToModelMap.get(node).invalidated();
     }
     
     /**

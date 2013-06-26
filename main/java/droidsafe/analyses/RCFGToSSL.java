@@ -108,10 +108,30 @@ public class RCFGToSSL {
 	private void createSSL(RCFG rcfg) {
 		for (RCFGNode node : rcfg.getNodes()) {
 		    logger.info("Converting rCFG Node: " + node);
-		    Method ie = new Method(node.getEntryPoint());
+		    Method ie = makeInputEventMethod(node);
 			for (OutputEvent oe : node.getOutputEvents())
 				spec.addToInputEventCombine(ie, methodsFromOutputEvent(oe));
 		}
+	}
+	
+	/**
+	 * Create a method from the rCFG node's entry point (input event).
+	 */
+	private Method makeInputEventMethod(RCFGNode node) {
+	    Object receiver = makeMethodReceiver(node);
+
+	    ArgumentValue[] args = new ArgumentValue[node.getNumArgs()];
+
+        for (int i = 0; i < node.getNumArgs(); i++) {
+            if (node.isArgPointer(i)) {
+                args[i] = getArgumentValueForPointer(node, i);
+            } else {
+                args[i] = getArgumentValueForPrimitive(node.getArgValue(i), node.getArgumentType(i));
+            }
+        }
+	    
+	    Method method = new Method(node.getEntryPoint(), args, receiver);
+	    return method;
 	}
 	
 	private boolean shouldIgnore(OutputEvent oe) {	
@@ -143,12 +163,8 @@ public class RCFGToSSL {
 			}
 		}
 
-		Method method = null;
-		if (oe.hasReceiver()) {
-			method = new Method(oe.getTarget(), args, oe.getReceiverType());	
-		} else {
-			method = new Method(oe.getTarget(), args, null);
-		}
+		Object receiver = makeMethodReceiver(oe);
+		Method method = new Method(oe.getTarget(), args, receiver);	
 		
 		logger.info("Created method with target: {}", method.getSootMethod());
 		//transfer over the source location information of the call
@@ -158,6 +174,44 @@ public class RCFGToSSL {
 		methods.add(method);
 
 		return methods;
+	}
+	
+	/**
+	 * Given the possible presence of a receiver for a method, query the VA for a result
+	 * and if no result, just return type.
+	 */
+	private Object makeMethodReceiver(PTAMethodInformation method) {
+	    //if no receiver, then return null
+	    if (!method.hasReceiver())
+	        return null;
+
+	    boolean allVAResults = true;
+	    List<ConcreteArgumentValue> vaResults = new LinkedList<ConcreteArgumentValue>();
+        
+        //iterate over all the nodes pointed to and see if they are all va results
+        //if not, break and remember
+        for (AllocNode node : method.getReceiverPTSet()) {
+            if (ValueAnalysis.v().hasResult(node)) {
+                //check to see if we have a value analysis result for this alloc node
+                //and if so, add it to the concrete list of values.
+                ValueAnalysisValue vav = new ValueAnalysisValue(ValueAnalysis.v().getResult(node), node);
+                vaResults.add(vav);             
+            } else {
+                allVAResults = false;
+                break;
+            }
+        }
+        
+	    if (allVAResults && method.getReceiverPTSet().size() > 0) {
+            //if we have all va results, create the concrete argument list from the results
+            ConcreteListArgumentValue clrv = new ConcreteListArgumentValue(method.getReceiverType());
+            for (ConcreteArgumentValue s : vaResults) 
+                clrv.add(s);
+            return clrv;
+	    } else {
+	        //cannot conclude va results because not all nodes have them, so just return type
+	        return new TypeValue(method.getReceiverType());
+	    }
 	}
 	
 	private static void writeSpecToFile(String secspec, String fname) {
@@ -173,18 +227,18 @@ public class RCFGToSSL {
 	
 	//given a pta set for an arg and type for the arg, create the appropriate value
 	//for the Method object of the specification language.
-	private ArgumentValue getArgumentValueForPointer(OutputEvent oe, int i) {
-	    Type t = oe.getArgumentType(i);
+	private ArgumentValue getArgumentValueForPointer(PTAMethodInformation methodInfo, int i) {
+	    Type t = methodInfo.getArgumentType(i);
 	   
 	    //set the argument value if it is a value tracked by JSA
-	    if (JSAStrings.v().isHotspotValue(oe.getArgValue(i))) {
-	        JSAValue jsav = new JSAValue(JSAStrings.v().getRegex(oe.getArgValue(i)));
+	    if (JSAStrings.v().isHotspotValue(methodInfo.getArgValue(i))) {
+	        JSAValue jsav = new JSAValue(JSAStrings.v().getRegex(methodInfo.getArgValue(i)));
 	        ConcreteListArgumentValue clrv = new ConcreteListArgumentValue(t);
 	        clrv.add(jsav);
 	        return clrv;
 	    }
 	    
-	    Set<AllocNode> ptsToSet = oe.getArgPTSet(i); 
+	    Set<AllocNode> ptsToSet = methodInfo.getArgPTSet(i); 
 		boolean allConstants = true;
 		//here we consider Value Analysis results as constants
 		List<ConcreteArgumentValue> constants = new LinkedList<ConcreteArgumentValue>();

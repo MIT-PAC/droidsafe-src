@@ -19,7 +19,7 @@ import soot.jimple.spark.pag.AllocNode;
  * @author dpetters
  */
 public abstract class ValueAnalysisModeledObject {
-
+    
     ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     // Attributes
     ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -102,20 +102,25 @@ public abstract class ValueAnalysisModeledObject {
     }
 
     /**
-     * toString just returns dsDisplay().
+     * toString is used for printing to the spec.
      */
     public String toString() {
-        return this.dsDisplay();
+        Class cls = this.getClass();
+        String str = "<" + cls.getName().substring(ValueAnalysis.MODEL_PACKAGE_PREFIX.length()) + ": "; 
+        if (!this.invalidated())
+            str += "{" + fieldsString() + "}";
+        else
+            str += "INV";
+        return str + ">";
     }
     
     /**
-     * Display method for the model that says whether the model is invalidated.
-     * 
-     * @returns model description as a String
+     * Return a string of just the resolved field values for this modeled object.
      */
-    public String dsDisplay(){
+    private String fieldsString() {
         Class cls = this.getClass();
-        String str = "<modeled " + cls.getSimpleName() +  this.getId() + "> {";
+        
+        String str = "";
         if (this.invalidated) {
             str += "invalidated";
         } else {
@@ -142,6 +147,18 @@ public abstract class ValueAnalysisModeledObject {
             }
             str = str + StringUtils.join(attrs.toArray(), ", ");
         }
+        return str;
+    }
+    
+    /**
+     * Display method for the model that says whether the model is invalidated.
+     * 
+     * @returns model description as a String
+     */
+    public String dsDisplay(){
+        Class cls = this.getClass();
+        String str = "<modeled " + cls.getSimpleName() +  this.getId() + "> {";
+        str += fieldsString();
         return str + "}";
     }
 }
