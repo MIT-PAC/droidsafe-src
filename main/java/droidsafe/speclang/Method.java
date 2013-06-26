@@ -131,10 +131,13 @@ public class Method implements Comparable<Method> {
 	 * @param meth2
 	 */
 	public void incorporateMethod(Method meth2) {
-		if (!isSameMethod(meth2))
-			Utils.logErrorAndExit(logger,"Error: Trying to combine concrete value restrictions on different methods!");
-		
-		//logger.info("Calling incorporate method on: {}", meth2);
+	    logger.info("Calling incorporate method on: {}", meth2);
+	    
+	    if (!isSameMethod(meth2)) {
+		    logger.error("Error: Trying to combine concrete value restrictions on different methods!");
+			System.exit(1);
+		}
+	
 		
 		for (int i = 0; i < args.length; i++) {
 			args[i] = ArgumentValue.combine(args[i], meth2.args[i], getActualArgType(i)); 

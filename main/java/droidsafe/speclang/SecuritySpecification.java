@@ -128,13 +128,6 @@ public class SecuritySpecification  {
 		if (!eventBlocks.containsKey(inputEvent))
 			eventBlocks.put(inputEvent, new ArrayList<Method>());
 		
-		//should not see multiple output events in same input event in the spec
-		for (Method m : eventBlocks.get(inputEvent)) {
-			if (m.isSameMethod(outputEvent)) {
-			    logger.error("More than one appearance of a method (output event) in event block: {}", inputEvent);
-			}
-		}
-
 		eventBlocks.get(inputEvent).add(outputEvent);
 	}
 	

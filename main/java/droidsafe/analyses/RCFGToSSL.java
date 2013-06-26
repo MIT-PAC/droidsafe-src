@@ -27,6 +27,7 @@ import soot.jimple.spark.pag.StringConstantNode;
 import droidsafe.analyses.rcfg.OutputEvent;
 import droidsafe.analyses.rcfg.RCFG;
 import droidsafe.analyses.rcfg.RCFGNode;
+import droidsafe.analyses.strings.JSAStrings;
 import droidsafe.android.app.Project;
 import droidsafe.speclang.ArgumentValue;
 import droidsafe.speclang.BooleanValue;
@@ -35,6 +36,7 @@ import droidsafe.speclang.ClassValue;
 import droidsafe.speclang.ConcreteArgumentValue;
 import droidsafe.speclang.ConcreteListArgumentValue;
 import droidsafe.speclang.IntValue;
+import droidsafe.speclang.JSAValue;
 import droidsafe.speclang.Method;
 import droidsafe.speclang.SecuritySpecification;
 import droidsafe.speclang.StringValue;
@@ -79,6 +81,7 @@ public class RCFGToSSL {
 		
 		v.createSSL(RCFG.v());
 		
+		logger.info("Writing spec to file");
 		String fname = Project.v().getOutputDir() + File.separator + SSL_FILE_NAME;
 		writeSpecToFile(v.getSpec().toString(), fname);
 
@@ -102,7 +105,8 @@ public class RCFGToSSL {
 	
 	private void createSSL(RCFG rcfg) {
 		for (RCFGNode node : rcfg.getNodes()) {
-			Method ie = new Method(node.getEntryPoint());
+		    logger.info("Converting rCFG Node: " + node);
+		    Method ie = new Method(node.getEntryPoint());
 			for (OutputEvent oe : node.getOutputEvents())
 				spec.addToInputEventCombine(ie, methodsFromOutputEvent(oe));
 		}
@@ -131,7 +135,7 @@ public class RCFGToSSL {
 
 		for (int i = 0; i < oe.getNumArgs(); i++) {
 			if (oe.isArgPointer(i)) {
-				args[i] = getArgumentValueForPointer(oe.getArgPTSet(i), oe.getArgumentType(i));
+				args[i] = getArgumentValueForPointer(oe, i);
 			} else {
 				args[i] = getArgumentValueForPrimitive(oe.getArgValue(i), oe.getTarget().getParameterType(i));
 			}
@@ -144,7 +148,7 @@ public class RCFGToSSL {
 			method = new Method(oe.getTarget(), args, null);
 		}
 		
-		//logger.info("Created method with target: {}", method.getSootMethod());
+		logger.info("Created method with target: {}", method.getSootMethod());
 		//transfer over the source location information of the call
 		if (oe.getSourceLocationTag() != null)
 			method.addLineTag(oe.getSourceLocationTag());
@@ -160,14 +164,25 @@ public class RCFGToSSL {
 			BufferedWriter out = new BufferedWriter(fstream);
 			out.write(secspec);
 			out.close();
-		}catch (Exception e){//Catch exception if any
-          logger.error("Writing specification file.", e.getMessage());
+		} catch (Exception e){//Catch exception if any
+          logger.error("Writing specification file.", e);
 		}
 	}
 	
 	//given a pta set for an arg and type for the arg, create the appropriate value
 	//for the Method object of the specification language.
-	private ArgumentValue getArgumentValueForPointer(Set<AllocNode> ptsToSet, Type t) {
+	private ArgumentValue getArgumentValueForPointer(OutputEvent oe, int i) {
+	    Type t = oe.getArgumentType(i);
+	   
+	    //set the argument value if it is a value tracked by JSA
+	    if (JSAStrings.v().isHotspotValue(oe.getArgValue(i))) {
+	        JSAValue jsav = new JSAValue(JSAStrings.v().getRegex(oe.getArgValue(i)));
+	        ConcreteListArgumentValue clrv = new ConcreteListArgumentValue(t);
+	        clrv.add(jsav);
+	        return clrv;
+	    }
+	    
+	    Set<AllocNode> ptsToSet = oe.getArgPTSet(i); 
 		boolean allConstants = true;
 		List<ConcreteArgumentValue> constants = new LinkedList<ConcreteArgumentValue>();
 		

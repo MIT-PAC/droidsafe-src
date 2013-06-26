@@ -6,7 +6,7 @@ import java.text.StringCharacterIterator;
 import soot.RefType;
 
 public class StringValue extends ConcreteArgumentValue {
-	private String value;
+	protected String value;
 
 	public StringValue(String value) {
 		super();

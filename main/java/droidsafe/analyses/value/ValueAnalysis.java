@@ -196,6 +196,20 @@ public class ValueAnalysis {
         }
     }
 
+
+    //==================================================================================================================
+    // Public Methods
+    //==================================================================================================================
+
+    
+    /**
+     * Getter for analysis result
+     */
+    public Map<AllocNode, ValueAnalysisModeledObject> getResults() {
+        return this.objectToModelMap;
+    }
+
+
     //==================================================================================================================
     // Static Methods
     //==================================================================================================================
@@ -375,14 +389,6 @@ public class ValueAnalysis {
     //=================================================================================================================
     // Private Methods
     //=================================================================================================================
-
-    /**
-     * Getter for analysis result
-     */
-    public Map<AllocNode, ValueAnalysisModeledObject> getResults() {
-        return this.objectToModelMap;
-    }
-
 
     /**
      *  Invalidate any param that we modeled and log each invalidation.

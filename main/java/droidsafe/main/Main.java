@@ -125,12 +125,14 @@ public class Main {
         if (Config.v().writeJimpleAppClasses) {
             writeAllAppClasses();
         }
-
-        RCFG.generate();
        
         logger.info("Starting Attribute Modeling");
         ValueAnalysis.run();
         logger.info("Finished Attribute Modeling");
+        
+        logger.info("Starting Generate RCFG...");
+        RCFG.generate();
+        logger.info("Finished Generating RCFG.");
 
         // print out what modeling is required for this application
         RequiredModeling.run();
@@ -160,6 +162,7 @@ public class Main {
         }
 
         if (Config.v().target.equals("specdump")) {
+            logger.info("Converting RCFG to SSL and dumping...");
             RCFGToSSL.run();
 
         } else if (Config.v().target.equals("confcheck")) {
