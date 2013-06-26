@@ -31,14 +31,14 @@ public class ValueAnalysisValue extends ConcreteArgumentValue {
      * Return a string value for printing in spec.
      */
     public String toStringValue() {
-        return mObj.toString();
+        return mObj.__ds__toString();
     }
     
     /**
      * Return a string rep of the modeled object.
      */
     public String toString() {
-        return mObj.toString();
+        return mObj.__ds__toString();
     }
 
     @Override

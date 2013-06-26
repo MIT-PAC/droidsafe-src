@@ -104,7 +104,7 @@ public abstract class ValueAnalysisModeledObject {
     /**
      * toString is used for printing to the spec.
      */
-    public String toString() {
+    public String __ds__toString() {
         Class cls = this.getClass();
         String str = "<" + cls.getName().substring(ValueAnalysis.MODEL_PACKAGE_PREFIX.length()) + ": "; 
         if (!this.invalidated())
