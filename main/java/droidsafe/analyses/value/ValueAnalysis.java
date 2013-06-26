@@ -263,7 +263,7 @@ public class ValueAnalysis {
 
             for (SootMethod meth : clazz.getMethods()) {
                 if (meth.isConcrete() && reachableMethods.contains(meth) && !am.simulatedMethods.contains(meth)) {
-                   am.logError("analyzing meth " + meth);
+                    am.logError("analyzing meth " + meth);
                    StmtBody stmtBody = (StmtBody)meth.retrieveActiveBody();
 
                     // get body's unit as a chain
@@ -292,7 +292,6 @@ public class ValueAnalysis {
                         }
                         InvokeExpr invokeExpr = (InvokeExpr)stmt.getInvokeExpr();
                         am.logError("InvokeExpr " + invokeExpr);
-
                         SootMethod sootMethod = invokeExpr.getMethod();
                         SootClass sootClass = sootMethod.getDeclaringClass();
 
@@ -806,10 +805,8 @@ public class ValueAnalysis {
                 } else if(arg.getType() instanceof PrimType) {
                     Object obj = null;
                     if(valueToModelAttrMap.containsKey(arg)) {
-                        //System.out.println("valueToModelAttrMap has key arg");
                         obj = valueToModelAttrMap.get(arg);
                     } else {
-                        //System.out.println("valueToModelAttrMap doesn't have key arg");
                         if(type instanceof BooleanType) {
                             obj = new ValueAnalysisBoolean();
                         } else if (type instanceof ByteType) {
