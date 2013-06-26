@@ -45,15 +45,5 @@ public class Utils {
         }
         
         return classes;
-    }
-    
-    /**
-     * Log an error with the given logger and exit the application with status 1.
-     */
-    public static void logErrorAndExit(Logger logger, String str, Object... args) {
-    	logger.error(str, args);
-    	System.exit(1);
-    }
-    
-    
+    }   
 }

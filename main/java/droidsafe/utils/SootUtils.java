@@ -126,7 +126,8 @@ public class SootUtils {
             Matcher matcher = typeSig.matcher(str);
             boolean b = matcher.matches();
             if (!b || matcher.groupCount() != 2) {
-                Utils.logErrorAndExit(logger, "Something very wrong with parsing type: {}", str);
+                logger.error("Something very wrong with parsing type: {}", str);
+                System.exit(1);
             }
 
             String baseType = matcher.group(1);
@@ -141,7 +142,8 @@ public class SootUtils {
                 //class type
                 return RefType.v(baseType);
             } else {
-                Utils.logErrorAndExit(logger, "Cannot parse type: {}", str);
+                logger.error("Cannot parse type: {}", str);
+                System.exit(1);
                 return null;
             }
         }
@@ -387,8 +389,10 @@ public class SootUtils {
         Matcher matcher = sigRE.matcher(signature);
         boolean b = matcher.matches();
 
-        if (!b && matcher.groupCount() != 4)
-            Utils.logErrorAndExit(logger,"Cannot create Method from DroidBlaze Signature");
+        if (!b && matcher.groupCount() != 4) {
+            logger.error("Cannot create Method from DroidBlaze Signature");
+            System.exit(1);
+        }
 
         return matcher.group(2);
 
@@ -523,8 +527,10 @@ public class SootUtils {
      * Return a concrete implementor of a given interface.  Try to find direct implementors first
      */
     public static SootClass getCloseSubclass(SootClass clz) {
-        if (!clz.isAbstract() && !clz.isInterface())
-            Utils.logErrorAndExit(logger, "Trying to get close subclass of a non abstract class: {}", clz);
+        if (!clz.isAbstract() && !clz.isInterface()) {
+            logger.error("Trying to get close subclass of a non abstract class: {}", clz);
+            System.exit(1);
+        }
 
         logger.debug("Trying to get direct subclasses for: {}", clz);
         //try to get direct implementors by adding them first
@@ -546,8 +552,10 @@ public class SootUtils {
      * Return a concrete implementor of a given interface.  Try to find direct implementors first
      */
     public static SootClass getCloseImplementor(SootClass clz) {
-        if (!clz.isInterface())
-            Utils.logErrorAndExit(logger, "Trying to get implementor of a non interface: {}", clz);
+        if (!clz.isInterface()) {
+            logger.error("Trying to get implementor of a non interface: {}", clz);
+            System.exit(1);
+        }
 
         //try to get direct implementors by adding them first
         List<SootClass> implementors = new LinkedList<SootClass>();

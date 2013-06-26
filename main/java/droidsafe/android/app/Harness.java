@@ -83,15 +83,19 @@ public class Harness {
 	 * all the entry points of the android application.
 	 */
 	public static void create() {
-		if (!EntryPoints.v().isCalculated())
-			Utils.logErrorAndExit(logger, "Entrypoints need to be calculated before harness created");		
+		if (!EntryPoints.v().isCalculated()) {
+			logger.error("Entrypoints need to be calculated before harness created");
+			System.exit(1);
+		}
 		
 		v = new Harness();
 	}
 	
 	public static Harness v() {
-		if (v == null)
-			Utils.logErrorAndExit(logger, "Harness not created!");
+		if (v == null) {
+			logger.error("Harness not created!");
+			System.exit(1);
+		}
 		return v;
 	}
 

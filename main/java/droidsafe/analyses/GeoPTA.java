@@ -207,10 +207,13 @@ public class GeoPTA {
             IVarAbstraction internalNode = ptsProvider.findInternalNode(node);
             return internalNode;
         } else if (val instanceof SootField) {
-            Utils.logErrorAndExit(logger, "Unknown type for pointer: {}", val.getClass());
+            logger.error("Unknown type for pointer: {}", val.getClass());
+            System.exit(1);
         }
 
-        Utils.logErrorAndExit(logger, "Unknown type for pointer: {}", val.getClass());
+        logger.error("Unknown type for pointer: {}", val.getClass());
+        System.exit(1);
+        
         return null;
     }
 
@@ -235,13 +238,15 @@ public class GeoPTA {
         Set<AllocNode> allocNodes = new LinkedHashSet<AllocNode>();
 
         try {
-            if (context == null) 
-                Utils.logErrorAndExit(logger, "Null context edge for pta query.");
+            if (context == null) {
+                logger.error("Null context edge for pta query.");
+                System.exit(1);
+            }
 
-
-            if (ivar == null) 
-                Utils.logErrorAndExit(logger, "Error getting internal PTA node for {} of {}.", ivar);
-
+            if (ivar == null) { 
+                logger.error("Error getting internal PTA node for {} of {}.", ivar);
+                System.exit(1);
+            }
 
             //don't really know why this is needed, sometimes maybe the internal analysis
             //delegates some nodes
@@ -273,9 +278,10 @@ public class GeoPTA {
                 } else if (sparkNode == null) {
                     logger.info("Null sparkNode for ivar query: {} in {}", ivar, context);
                 } else {
-                    Utils.logErrorAndExit(logger, "Unknown type of spark node for points to query for value v {}, " +
+                    logger.error("Unknown type of spark node for points to query for value v {}, " +
                             "ivar {} spark node {}.", 
                             val, ivar, sparkNode);
+                    System.exit(1);
                 }
 
                 if (allocNodes.isEmpty()) {

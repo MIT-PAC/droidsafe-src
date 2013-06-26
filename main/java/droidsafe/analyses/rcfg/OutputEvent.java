@@ -82,9 +82,11 @@ public class OutputEvent implements PTAMethodInformation {
                 logger.debug("Found invoke in output event {} matches {}?", ie, this.getTarget());
                 //old check that does not work for threads since start calls run...
                 //if (Hierarchy.v().canResolveTo(ie.getMethodRef(), this.getTarget())) 
-                if (invokeExpr != null)
-                    Utils.logErrorAndExit(logger, "Found multiple matches for calling context in context statement {}.",
+                if (invokeExpr != null) {
+                    logger.error("Found multiple matches for calling context in context statement {}.",
                         context);
+                    System.exit(1);
+                }
                 invokeExpr = ie;
             }
         }
@@ -107,7 +109,8 @@ public class OutputEvent implements PTAMethodInformation {
 
         //do some checks for things we might not fully understand yet.
         if (invokeExpr instanceof DynamicInvokeExpr) {
-            Utils.logErrorAndExit(logger, "Do not understand type of invoke expr: {}", invokeExpr.getClass());
+            logger.error("Do not understand type of invoke expr: {}", invokeExpr.getClass());
+            System.exit(1);
         }
     }
 
@@ -221,8 +224,10 @@ public class OutputEvent implements PTAMethodInformation {
      * Return the argument expression for the call to the API method.
      */
     public Value getArgValue(int i) {
-        if (i > getNumArgs()) 
-            Utils.logErrorAndExit(logger, "Trying to invalid argument {} for output event {}.", i, getTarget());
+        if (i > getNumArgs()) { 
+            logger.error("Trying to invalid argument {} for output event {}.", i, getTarget());
+            System.exit(1);
+        }
 
         return invokeExpr.getArg(i);
     }

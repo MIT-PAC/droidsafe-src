@@ -19,7 +19,9 @@ import droidsafe.android.app.resources.Resources;
 import droidsafe.android.app.TagImplementedSystemMethods;
 import droidsafe.android.system.API;
 import droidsafe.android.system.Permissions;
+import droidsafe.eclipse.plugin.core.specmodel.SecuritySpecModel;
 
+import droidsafe.speclang.SecuritySpecification;
 import droidsafe.transforms.AddAllocsForAPICalls;
 import droidsafe.transforms.InsertDSTaintAllocs;
 import droidsafe.transforms.IntegrateXMLLayouts;
@@ -164,6 +166,13 @@ public class Main {
         if (Config.v().target.equals("specdump")) {
             logger.info("Converting RCFG to SSL and dumping...");
             RCFGToSSL.run();
+            SecuritySpecification spec = RCFGToSSL.v().getSpec();
+
+            if (spec != null) {
+              SecuritySpecModel securitySpecModel = new SecuritySpecModel(spec, Config.v().APP_ROOT_DIR);
+              SecuritySpecModel.serializeSpecToFile(securitySpecModel, Config.v().APP_ROOT_DIR);
+            }
+
 
         } else if (Config.v().target.equals("confcheck")) {
             logger.error("Not implemented yet!");
@@ -205,4 +214,7 @@ public class Main {
         }
     }
 
+    public static void exit(int status) {
+        System.exit(1);
+    }
 }

@@ -272,7 +272,8 @@ public class API {
             SootUtils.loadClassesFromJar(dsJar, true, new LinkedHashSet<String>());
             all_sys_methods.addAllMethods(dsJar);			
         } catch (Exception e) {
-            Utils.logErrorAndExit(logger, "Error loading droidsafe call jar (maybe it does not exist).");
+            logger.error("Error loading droidsafe call jar (maybe it does not exist).");
+            System.exit(1);
         }
     }
 
