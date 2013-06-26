@@ -209,6 +209,20 @@ public class ValueAnalysis {
         return this.objectToModelMap;
     }
 
+    
+    /**
+     * Return true if this alloc node has an analysis result.
+     */
+    public boolean hasResult(AllocNode node) {
+        return this.objectToModelMap.containsKey(node);
+    }
+    
+    /**
+     * Return the ModeledObject result for a given alloc node.
+     */
+    public ValueAnalysisModeledObject getResult(AllocNode node) {
+        return this.objectToModelMap.get(node);
+    }
 
     //==================================================================================================================
     // Static Methods

@@ -102,6 +102,13 @@ public abstract class ValueAnalysisModeledObject {
     }
 
     /**
+     * toString just returns dsDisplay().
+     */
+    public String toString() {
+        return this.dsDisplay();
+    }
+    
+    /**
      * Display method for the model that says whether the model is invalidated.
      * 
      * @returns model description as a String

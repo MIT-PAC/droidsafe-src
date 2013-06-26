@@ -28,6 +28,7 @@ import droidsafe.analyses.rcfg.OutputEvent;
 import droidsafe.analyses.rcfg.RCFG;
 import droidsafe.analyses.rcfg.RCFGNode;
 import droidsafe.analyses.strings.JSAStrings;
+import droidsafe.analyses.value.ValueAnalysis;
 import droidsafe.android.app.Project;
 import droidsafe.speclang.ArgumentValue;
 import droidsafe.speclang.BooleanValue;
@@ -41,6 +42,7 @@ import droidsafe.speclang.Method;
 import droidsafe.speclang.SecuritySpecification;
 import droidsafe.speclang.StringValue;
 import droidsafe.speclang.TypeValue;
+import droidsafe.speclang.ValueAnalysisValue;
 
 
 public class RCFGToSSL {
@@ -184,6 +186,7 @@ public class RCFGToSSL {
 	    
 	    Set<AllocNode> ptsToSet = oe.getArgPTSet(i); 
 		boolean allConstants = true;
+		//here we consider Value Analysis results as constants
 		List<ConcreteArgumentValue> constants = new LinkedList<ConcreteArgumentValue>();
 		
 		//iterate over all the nodes pointed to and see if they are all constants
@@ -196,6 +199,11 @@ public class RCFGToSSL {
 			} else if (node instanceof ClassConstantNode) {
 				//create a new concrete arg value just in case this is all constants
 				constants.add(new ClassValue(((ClassConstantNode)node).getClassConstant().getValue()));
+			} else if (ValueAnalysis.v().hasResult(node)) {
+			    //check to see if we have a value analysis result for this alloc node
+			    //and if so, add it to the concrete list of values.
+			    ValueAnalysisValue vav = new ValueAnalysisValue(ValueAnalysis.v().getResult(node), node);
+			    constants.add(vav);			    
 			} else {
 				allConstants = false;
 				break;
