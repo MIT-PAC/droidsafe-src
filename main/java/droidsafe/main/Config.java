@@ -181,7 +181,7 @@ public class Config {
   private void setVars(Options options, CommandLine cmd) {
     if (cmd.hasOption("help")) {
       printOptions(options);
-      System.exit(0);
+      droidsafe.main.Main.exit(0);
     }
 
     if (cmd.hasOption("target")) {
@@ -190,7 +190,7 @@ public class Config {
 
     if (!Config.TARGETS.contains(target)) {
       logger.error("Unsupported Target: {}.", target);
-      System.exit(1);
+      droidsafe.main.Main.exit(1);
     }
 
     if (cmd.hasOption("nosourceinfo")) {
@@ -271,12 +271,12 @@ public class Config {
       fpath = new File(fpath.getCanonicalPath());
     } catch (Exception e) {
       logger.error("Error getting canonical path for app root", e);
-      System.exit(1);
+      droidsafe.main.Main.exit(1);
     }
 
     if (!fpath.exists()) {
       logger.error("App root directory does not exist: {}", ret);
-      System.exit(1);
+      droidsafe.main.Main.exit(1);
     }
 
     return fpath.toString();
@@ -297,13 +297,13 @@ public class Config {
     logger.info("APAC_HOME = {}", apacHome);
     if (this.apacHome == null) {
       logger.error("Environment variable $APAC_HOME not set!");
-      System.exit(1);
+      droidsafe.main.Main.exit(1);
     }
 
     this.ANDROID_LIB_DIR = new File(this.apacHome + File.separator + ANDROID_LIB_DIR_REL);
     if (!this.ANDROID_LIB_DIR.exists()) {
       logger.error("Android library directory for DroidSafe {} does not exist.", ANDROID_LIB_DIR);
-      System.exit(1);
+      droidsafe.main.Main.exit(1);
     }
 
     Options options = setOptions();
@@ -314,7 +314,7 @@ public class Config {
     } catch (Exception e) {
       logger.error("Error parsing command line options", e);
       printOptions(e.getMessage(), options);
-      System.exit(1);
+      droidsafe.main.Main.exit(1);
     }
   }
 

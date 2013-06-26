@@ -60,7 +60,7 @@ public class CallGraphFromEntryPoints {
 					System.out.printf("  %s\n",meth);
 			} else {
 				logger.error("Unknown edge in callgraph {}", meth);
-				System.exit(1);
+				droidsafe.main.Main.exit(1);
 			}
 		}
 	}

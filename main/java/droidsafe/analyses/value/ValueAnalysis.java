@@ -192,7 +192,7 @@ public class ValueAnalysis {
         jsa = JSAStrings.v();
         if(!jsa.hasRun()){
             logger.error("JSA's results are not available. Attribute analysis requires them.");
-            System.exit(1);
+            droidsafe.main.Main.exit(1);
         }
     }
 
@@ -270,7 +270,7 @@ public class ValueAnalysis {
     public static void runOnce() {
         if (GeoPTA.v() == null) {
             logger.error("The GeoPTA pass has not been run. Attribute modeling / requires it.");
-            System.exit(1);
+            droidsafe.main.Main.exit(1);
         }      if (am == null)
         am = new ValueAnalysis();
         Set<SootMethod> reachableMethods = GeoPTA.v().getAllReachableMethods();
@@ -840,13 +840,13 @@ public class ValueAnalysis {
                             obj = new ValueAnalysisFloat();
                         } else if(type instanceof Integer127Type) {
                             logger.error("unhandled Integer127Type: {}", type);
-                            System.exit(1);
+                            droidsafe.main.Main.exit(1);
                         } else if(type instanceof Integer1Type) {
                             logger.error("unhandled Integer1Type: {}", type);
-                            System.exit(1);
+                            droidsafe.main.Main.exit(1);
                         } else if (type instanceof Integer32767Type) {
                             logger.error("unhandled Integer32676Type: {}", type);
-                            System.exit(1);
+                            droidsafe.main.Main.exit(1);
                         } else if (type instanceof IntType) {
                             obj =  new ValueAnalysisInt();
                         } else if (type instanceof LongType) {
@@ -855,7 +855,7 @@ public class ValueAnalysis {
                             obj = new ValueAnalysisShort();
                         } else {
                             logger.error("unhandled PrimType: {}", type);
-                            System.exit(1);
+                            droidsafe.main.Main.exit(1);
                         }
                         valueToModelAttrMap.put(arg, obj);
                     }

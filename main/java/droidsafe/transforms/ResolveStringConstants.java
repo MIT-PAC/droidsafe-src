@@ -112,7 +112,7 @@ public class ResolveStringConstants extends BodyTransformer {
                 if(parent.getName().equals("android.content.res.Resources")) {
                     logger.error("Found class that inherits from android.content.res.Resources: {}", 
                         clazz);
-                    System.exit(1);
+                    droidsafe.main.Main.exit(1);
                 }
             }
         }
@@ -295,7 +295,7 @@ public class ResolveStringConstants extends BodyTransformer {
                 return GeoPTA.v().resolveVirtualInvoke((InstanceInvokeExpr)expr);
             } catch (CannotFindMethodException e) {
                logger.error("Error resolving virtual call: {}", e);
-               System.exit(1);
+               droidsafe.main.Main.exit(1);
             }
         } else if (expr instanceof StaticInvokeExpr) {
             Set<SootMethod> method = new HashSet<SootMethod>();
@@ -303,7 +303,7 @@ public class ResolveStringConstants extends BodyTransformer {
             return method;
         } else {
             logger.error("Unknown invoke expr {}", expr);
-            System.exit(1);
+            droidsafe.main.Main.exit(1);
         }
         return null;
     }

@@ -135,7 +135,7 @@ public class Method implements Comparable<Method> {
 	    
 	    if (!isSameMethod(meth2)) {
 		    logger.error("Error: Trying to combine concrete value restrictions on different methods!");
-			System.exit(1);
+			droidsafe.main.Main.exit(1);
 		}
 	
 		

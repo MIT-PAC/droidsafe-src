@@ -746,7 +746,7 @@ public class SecuritySpecification  {
 			return specCreator.api_call();
 		} catch (Exception e) {
 			logger.error("Error while parsing spec method from Action: " + meth);
-			System.exit(1);
+			droidsafe.main.Main.exit(1);
 		}
 		return null;
 	}

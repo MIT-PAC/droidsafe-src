@@ -123,7 +123,7 @@ public class IntegrateXMLLayouts extends BodyTransformer {
 			
 			if (GeoPTA.v() == null) {
 				logger.error("IntegrateXMLLayouts must be called after PTA!");
-				System.exit(1);
+				droidsafe.main.Main.exit(1);
 			}
 
 			v = new IntegrateXMLLayouts();

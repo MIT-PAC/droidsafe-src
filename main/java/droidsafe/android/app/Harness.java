@@ -85,7 +85,7 @@ public class Harness {
 	public static void create() {
 		if (!EntryPoints.v().isCalculated()) {
 			logger.error("Entrypoints need to be calculated before harness created");
-			System.exit(1);
+			droidsafe.main.Main.exit(1);
 		}
 		
 		v = new Harness();
@@ -94,7 +94,7 @@ public class Harness {
 	public static Harness v() {
 		if (v == null) {
 			logger.error("Harness not created!");
-			System.exit(1);
+			droidsafe.main.Main.exit(1);
 		}
 		return v;
 	}
@@ -200,7 +200,7 @@ public class Harness {
 							continue;
 						} else {
 							logger.error("Unknown error in building Harness", e);
-							System.exit(1);
+							droidsafe.main.Main.exit(1);
 						}
 					}
 					Chain<Unit> units = stmtBody.getUnits();

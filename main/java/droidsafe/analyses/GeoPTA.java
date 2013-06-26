@@ -208,11 +208,11 @@ public class GeoPTA {
             return internalNode;
         } else if (val instanceof SootField) {
             logger.error("Unknown type for pointer: {}", val.getClass());
-            System.exit(1);
+            droidsafe.main.Main.exit(1);
         }
 
         logger.error("Unknown type for pointer: {}", val.getClass());
-        System.exit(1);
+        droidsafe.main.Main.exit(1);
         
         return null;
     }
@@ -240,12 +240,12 @@ public class GeoPTA {
         try {
             if (context == null) {
                 logger.error("Null context edge for pta query.");
-                System.exit(1);
+                droidsafe.main.Main.exit(1);
             }
 
             if (ivar == null) { 
                 logger.error("Error getting internal PTA node for {} of {}.", ivar);
-                System.exit(1);
+                droidsafe.main.Main.exit(1);
             }
 
             //don't really know why this is needed, sometimes maybe the internal analysis
@@ -281,7 +281,7 @@ public class GeoPTA {
                     logger.error("Unknown type of spark node for points to query for value v {}, " +
                             "ivar {} spark node {}.", 
                             val, ivar, sparkNode);
-                    System.exit(1);
+                    droidsafe.main.Main.exit(1);
                 }
 
                 if (allocNodes.isEmpty()) {
@@ -797,7 +797,7 @@ public class GeoPTA {
             fw.close();
         } catch (IOException e) {
             logger.error("Error writing call graph dot file");
-            System.exit(1);
+            droidsafe.main.Main.exit(1);
         }
     }
 

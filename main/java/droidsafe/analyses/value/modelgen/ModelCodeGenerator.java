@@ -140,7 +140,7 @@ public class ModelCodeGenerator {
         logger.debug("APAC_HOME = {}", apacHome);
         if (this.apacHome == null) {
           logger.error("Environment variable $APAC_HOME not set!");
-          System.exit(1);
+          droidsafe.main.Main.exit(1);
         }
         androidImplJar = new File(constructPath(this.apacHome, Config.ANDROID_LIB_DIR_REL, "android-impl.jar"));
    }
@@ -151,7 +151,7 @@ public class ModelCodeGenerator {
     public static void main(String[] args) {
         if (args.length < 2) {
             logger.error("Usage: ModelCodeGen <source path> <class name> <field1 name> <field2 name> ...");
-            System.exit(1);
+            droidsafe.main.Main.exit(1);
         } else {
             Reflections reflections = new Reflections(MODEL_PACKAGE);
             Set<Class<? extends ValueAnalysisModeledObject>> modeledClasses = 
@@ -189,7 +189,7 @@ public class ModelCodeGenerator {
         // set soot classpath to android-impl.jar
         if (!androidImplJar.exists()) {
             logger.error("android-impl.jar does not exist");
-            System.exit(1);
+            droidsafe.main.Main.exit(1);
         }
         String cp = androidImplJar.getPath();
         soot.options.Options.v().set_soot_classpath(cp);
@@ -220,14 +220,14 @@ public class ModelCodeGenerator {
             computeMethodCodeMap(cu, javaFileName);
         } catch (Exception e) {
             logger.error("parseClass() failed", e);
-            System.exit(1);
+            droidsafe.main.Main.exit(1);
         } finally {
             if (in != null)  
                 try {
                     in.close();
                 } catch (IOException e) {
                     logger.error("Failed to close the Java source file", e);
-                    System.exit(1);
+                    droidsafe.main.Main.exit(1);
                 }
         }
         return cu;
@@ -258,14 +258,14 @@ public class ModelCodeGenerator {
             }
         } catch (Exception e) {
             logger.error("parseClass() failed", e);
-            System.exit(1);
+            droidsafe.main.Main.exit(1);
         } finally {
             if (reader != null) 
                 try {
                     reader.close();
                 } catch (IOException e) {
                     logger.error("Failed to close the Java source file", e);
-                    System.exit(1);
+                    droidsafe.main.Main.exit(1);
                 }
         }
     }
@@ -299,7 +299,7 @@ public class ModelCodeGenerator {
             }
         } catch (IOException e) {
             logger.error("Failed to get method code", e);
-            System.exit(1);
+            droidsafe.main.Main.exit(1);
         }
         return buf.toString();
     }
@@ -534,7 +534,7 @@ public class ModelCodeGenerator {
                 }
                 buf.append(')');
                 logger.error("Failed to find soot method " + buf);
-                System.exit(1);
+                droidsafe.main.Main.exit(1);
             }
        }
         return sootMethod;
@@ -621,7 +621,7 @@ public class ModelCodeGenerator {
             out.print(cu.toString());
         } catch (FileNotFoundException e) {
             logger.error("generateCodeForModeledClass failed", e);
-            System.exit(1);
+            droidsafe.main.Main.exit(1);
         } finally {
             if (out != null)
                 out.close();

@@ -70,7 +70,7 @@ public class SootConfig {
 	
 		if (!aj.exists()) {
 			logger.error("android.jar does not exist");
-			System.exit(1);
+			droidsafe.main.Main.exit(1);
 		}
 		
 		cp.append(File.pathSeparator + aj.toString());

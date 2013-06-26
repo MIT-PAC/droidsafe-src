@@ -74,7 +74,7 @@ public abstract class ArgumentValue {
 			if (!(val1.isType() && val2.isType())) {
 			    logger.error("Trying to combine unknown Types {} ({}) != {} ({})", 
 			        val1.getType(), val2, val2.getType());
-				System.exit(1);
+				droidsafe.main.Main.exit(1);
 			}
 			ret = val1;
 		}

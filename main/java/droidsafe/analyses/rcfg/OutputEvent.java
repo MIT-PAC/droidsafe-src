@@ -85,7 +85,7 @@ public class OutputEvent implements PTAMethodInformation {
                 if (invokeExpr != null) {
                     logger.error("Found multiple matches for calling context in context statement {}.",
                         context);
-                    System.exit(1);
+                    droidsafe.main.Main.exit(1);
                 }
                 invokeExpr = ie;
             }
@@ -93,11 +93,11 @@ public class OutputEvent implements PTAMethodInformation {
 
         if (invokeExpr == null) {
             logger.error("Cannot find context invoke expr in context: {}.", context);
-            System.exit(1);
+            droidsafe.main.Main.exit(1);
         }
         if (invokeExpr instanceof SpecialInvokeExpr && !hasReceiver()) {
             logger.error("Found special invoke expr without a receiver {}", invokeExpr);
-            System.exit(1);
+            droidsafe.main.Main.exit(1);
         }
 
         //ever instance invoke should have a receiver, unless something wrong with user code or with modeling or with
@@ -110,7 +110,7 @@ public class OutputEvent implements PTAMethodInformation {
         //do some checks for things we might not fully understand yet.
         if (invokeExpr instanceof DynamicInvokeExpr) {
             logger.error("Do not understand type of invoke expr: {}", invokeExpr.getClass());
-            System.exit(1);
+            droidsafe.main.Main.exit(1);
         }
     }
 
@@ -136,7 +136,7 @@ public class OutputEvent implements PTAMethodInformation {
     public Value getReceiver() {
         if (!hasReceiver()) {
             logger.error("Trying to get receiver for output event without one: {}.", this.toString());
-            System.exit(1);
+            droidsafe.main.Main.exit(1);
         }
 
         return ((InstanceInvokeExpr)invokeExpr).getBase();
@@ -226,7 +226,7 @@ public class OutputEvent implements PTAMethodInformation {
     public Value getArgValue(int i) {
         if (i > getNumArgs()) { 
             logger.error("Trying to invalid argument {} for output event {}.", i, getTarget());
-            System.exit(1);
+            droidsafe.main.Main.exit(1);
         }
 
         return invokeExpr.getArg(i);

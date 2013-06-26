@@ -127,7 +127,7 @@ public class SootUtils {
             boolean b = matcher.matches();
             if (!b || matcher.groupCount() != 2) {
                 logger.error("Something very wrong with parsing type: {}", str);
-                System.exit(1);
+                droidsafe.main.Main.exit(1);
             }
 
             String baseType = matcher.group(1);
@@ -143,7 +143,7 @@ public class SootUtils {
                 return RefType.v(baseType);
             } else {
                 logger.error("Cannot parse type: {}", str);
-                System.exit(1);
+                droidsafe.main.Main.exit(1);
                 return null;
             }
         }
@@ -192,7 +192,7 @@ public class SootUtils {
 
             if (!curr.isInterface()) {
                 logger.error("getSuperInterfacesOf inspecting non interface: {}", curr);
-                System.exit(1);
+                droidsafe.main.Main.exit(1);
             }
 
             ret.add(curr);
@@ -391,7 +391,7 @@ public class SootUtils {
 
         if (!b && matcher.groupCount() != 4) {
             logger.error("Cannot create Method from DroidBlaze Signature");
-            System.exit(1);
+            droidsafe.main.Main.exit(1);
         }
 
         return matcher.group(2);
@@ -529,7 +529,7 @@ public class SootUtils {
     public static SootClass getCloseSubclass(SootClass clz) {
         if (!clz.isAbstract() && !clz.isInterface()) {
             logger.error("Trying to get close subclass of a non abstract class: {}", clz);
-            System.exit(1);
+            droidsafe.main.Main.exit(1);
         }
 
         logger.debug("Trying to get direct subclasses for: {}", clz);
@@ -554,7 +554,7 @@ public class SootUtils {
     public static SootClass getCloseImplementor(SootClass clz) {
         if (!clz.isInterface()) {
             logger.error("Trying to get implementor of a non interface: {}", clz);
-            System.exit(1);
+            droidsafe.main.Main.exit(1);
         }
 
         //try to get direct implementors by adding them first
@@ -705,7 +705,7 @@ public class SootUtils {
 
         if (c1.isInterface() && c2.isInterface()) {
             logger.error("Cannot find a narrower concrete class for {} and {}", c1, c2);
-            System.exit(1);
+            droidsafe.main.Main.exit(1);
         }
 
         if (c1.isInterface())
