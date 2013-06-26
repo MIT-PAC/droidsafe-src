@@ -101,6 +101,7 @@ public class SecuritySpecOutlineViewPart extends ViewPart {
     this.selectedProject = getSelectedProject();
     if (this.selectedProject == null) {
       disposeTreeViewer();
+      disposeTextViewer();
       this.textViewer = new TextViewer(parent, SWT.MULTI | SWT.H_SCROLL | SWT.V_SCROLL);
       IDocument document = new Document();
       document.set("No Android Project selected. "
@@ -114,6 +115,7 @@ public class SecuritySpecOutlineViewPart extends ViewPart {
 
       if (this.securitySpecModel == null) {
         disposeTreeViewer();
+        disposeTextViewer();
         this.textViewer = new TextViewer(parent, SWT.MULTI | SWT.H_SCROLL | SWT.V_SCROLL);
         IDocument document = new Document();
         document.set("Droidsafe spec for selected project has not been computed yet. "
