@@ -39,7 +39,7 @@ public class ExifInterface {
         loadAttributes();
     }
 	
-	@DSModeled(value = DSC.SAFE)
+	@DSModeled(value = DSC.SPEC)
 	public String getAttribute(String tag) {
 		return dsTaint.getTaintString();
         //return mAttributes.get(tag);
